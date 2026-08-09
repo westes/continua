@@ -1,0 +1,27 @@
+# Vulgate/Gallican numbering. PLACEHOLDER content: only verses 1-2 are
+# filled in, to prove the loading/rendering pipeline end to end. Marked
+# `draft` (not `verified`) because this hasn't been checked against a
+# primary source yet — real content acquisition (from Divinum Officium
+# and/or period breviaries, per the plan's content-sourcing note) is a
+# separate task from this scaffolding work.
+number: 1
+verses:
+  - n: 1
+    text:
+      la: "Beatus vir, qui non abiit in consilio impiorum, et in via peccatorum non stetit, et in cathedra pestilentiae non sedit;"
+      en: "Blessed is the man who hath not walked in the counsel of the ungodly, nor stood in the way of sinners, nor sat in the chair of pestilence."
+    status:
+      la: draft
+      en: draft
+  - n: 2
+    text:
+      la: "Sed in lege Domini voluntas ejus, et in lege ejus meditabitur die ac nocte."
+      en: "But his will is in the law of the Lord, and on his law he shall meditate day and night."
+    status:
+      la: draft
+      en: draft
+  - n: 3
+    text: {}
+    status:
+      la: missing
+      en: missing

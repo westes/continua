@@ -1,0 +1,18 @@
+# Fixed civil-calendar dates (MM-DD) that anchor part of the temporal cycle
+# and don't move with Easter at all — unlike easter-offsets.yml.
+#
+# Deliberately NOT covering Advent or the Sundays after Epiphany here, even
+# though they're "near" these fixed points — both have a wrinkle that isn't
+# a plain fixed date:
+#   - Advent's start is "the Sunday nearest Nov 30" (equivalently, the 4th
+#     Sunday before Christmas) — a nearest-weekday-to-a-fixed-date rule, not
+#     a fixed date or a numeric offset.
+#   - Epiphanytide's *start* is fixed (Jan 6), but its *length* is secretly
+#     Easter-dependent: how many Sundays after Epiphany you get before
+#     Septuagesima cuts in varies with how early Easter falls that year —
+#     i.e. this file's fixed end and easter-offsets.yml's Septuagesima
+#     start have to arbitrate a boundary at resolution time.
+# Both are milestone 4 occurrence-resolution logic, not data-file entries.
+dates:
+  "12-25": christmas-day
+  "01-06": epiphany

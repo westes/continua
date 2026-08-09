@@ -1,0 +1,12 @@
+# Maps a calendar day (MM-DD — the sanctoral cycle repeats every civil year
+# regardless of weekday, unlike the temporal cycle) to the saint-id(s)
+# celebrated that day. This indirection is the whole point: to move a saint
+# to a different day, edit this mapping. The saint's own record
+# (data/calendar/saints/<id>.yml) never changes — it's the same record
+# whichever day points at it.
+#
+# PLACEHOLDER: "01-01" -> example-confessor is fake data proving the shape,
+# not a real calendar assignment. Real sanctoral content-authoring
+# (a pre-1910-leaning calendar, per the plan) is a separate task.
+days:
+  "01-01": [example-confessor]

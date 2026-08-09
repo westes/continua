@@ -1,0 +1,47 @@
+name: Deploy
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm test
+
+      - name: Build and smoke-test the container
+        # vu has no server-side logic, so there's nothing an integration
+        # test would exercise beyond "does the built bundle actually get
+        # served correctly under the /vu/ base path" — this is that check,
+        # run against the exact image that ships.
+        run: |
+          docker build -t vu:ci .
+          docker run -d --name vu-smoke -p 8080:80 vu:ci
+          sleep 1
+          curl -sf http://localhost:8080/ | grep -q 'vu — Divine Office'
+          docker stop vu-smoke
+
+      - name: Trigger redeploy via SSH
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$VU_DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          # Forced-command key, same pattern as eec/bookshop/drip: the
+          # server-side sudoers grant runs the vu redeploy script regardless
+          # of what's requested here — see the vu Ansible role.
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new vu-deploy@reground.org true
+        env:
+          VU_DEPLOY_SSH_KEY: ${{ secrets.VU_DEPLOY_SSH_KEY }}

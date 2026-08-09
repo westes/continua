@@ -1,0 +1,18 @@
+# Offsets in days from Easter Sunday (0). Negative = before Easter, positive
+# = after. Covers the whole Easter-anchored span: Septuagesima through the
+# last Sunday of Trinitytide. A temporal-id's *name* (and hence whether it
+# reads "trinitytide" or "time after pentecost") lives here as data, not as
+# a compiled TS enum — see calendar/types.ts's Season type.
+#
+# PLACEHOLDER: only a handful of anchor points, to prove the shape. The full
+# set of Sundays/ferias between anchors is content-authoring work for
+# milestone 4.
+offsets:
+  -63: septuagesima-sunday
+  -56: sexagesima-sunday
+  -49: quinquagesima-sunday
+  -46: ash-wednesday
+  0: easter-sunday
+  39: ascension-thursday
+  49: pentecost-sunday
+  56: trinity-sunday

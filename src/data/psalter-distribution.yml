@@ -1,0 +1,16 @@
+# PLACEHOLDER distribution: real Benedictine Prime actually distributes
+# multiple fixed psalms plus a rotating section of Ps 118 across the week,
+# and the user has modifications in mind on top of that — none of that is
+# designed yet. This file exists only to prove the (hourId, weekday) -> psalm
+# numbers lookup works end to end, using the one psalm we have sample data
+# for. Expect this file to be rewritten entirely once real content-authoring
+# starts (see plan: "psalter modifications are edits to this data, not
+# engine changes").
+prime:
+  sunday: [1]
+  monday: [1]
+  tuesday: [1]
+  wednesday: [1]
+  thursday: [1]
+  friday: [1]
+  saturday: [1]

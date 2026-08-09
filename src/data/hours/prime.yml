@@ -1,0 +1,14 @@
+# PLACEHOLDER structure: proves the fixed-parts + weekday-variable-psalm
+# pipeline works. The hymn/chapter/prayer textRefs don't resolve to real
+# text yet (data/propers/ doesn't exist yet) — they render as "pending"
+# in the UI. Real content is a separate task from this scaffolding.
+id: prime
+parts:
+  - kind: hymn
+    textRef: { source: common, id: hymn-iam-lucis-orto-sidere }
+  - kind: variable
+    resolve: by-weekday
+  - kind: chapter
+    textRef: { source: common, id: prime-chapter-ferial }
+  - kind: prayer
+    textRef: { source: common, id: prime-collect }

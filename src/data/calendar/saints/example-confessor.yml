@@ -1,0 +1,9 @@
+# PLACEHOLDER — demonstrates the saint-record shape only. Not a real saint,
+# not a real rank, not a real day assignment (see sanctoral-calendar.yml for
+# where this id gets pointed at a day). Which day(s) point here can change
+# freely without ever touching this file.
+id: example-confessor
+name: "Example Confessor (placeholder)"
+rank: placeholder # real rank scheme is a milestone 4 decision, not made yet
+common: common-of-a-confessor-not-bishop
+propers: null # set to a propers id once/if this saint has a full proper
