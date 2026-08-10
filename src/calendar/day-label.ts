@@ -11,7 +11,7 @@
 // forever — just not built yet.
 import type { LiturgicalDay } from './types';
 import { easterSunday } from './easter';
-import { adventStart } from './temporal';
+import { adventStart, firstSundayStrictlyAfter, sundayOnOrBefore } from './temporal';
 import { addDays, daysBetween, toIsoDate } from './date-math';
 
 function capitalize(text: string): string {
@@ -33,20 +33,6 @@ function ordinal(n: number): string {
     default:
       return `${n}th`;
   }
-}
-
-function weekdayOf(isoDate: string): number {
-  return new Date(`${isoDate}T00:00:00Z`).getUTCDay(); // 0 = Sunday
-}
-
-/** The first Sunday strictly after `isoDate` (even if `isoDate` is itself a Sunday). */
-function firstSundayStrictlyAfter(isoDate: string): string {
-  const dow = weekdayOf(isoDate);
-  return addDays(isoDate, dow === 0 ? 7 : 7 - dow);
-}
-
-function sundayOnOrBefore(isoDate: string): string {
-  return addDays(isoDate, -weekdayOf(isoDate));
 }
 
 interface OrdinalSeason {

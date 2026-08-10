@@ -25,3 +25,8 @@ export function daysBetween(fromIsoDate: string, toIsoDate: string): number {
   const to = new Date(`${toIsoDate}T00:00:00Z`).getTime();
   return Math.round((to - from) / 86_400_000);
 }
+
+/** 0 = Sunday, ..., 6 = Saturday. */
+export function dayOfWeek(isoDate: string): number {
+  return new Date(`${isoDate}T00:00:00Z`).getUTCDay();
+}

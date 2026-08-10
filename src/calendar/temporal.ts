@@ -13,7 +13,7 @@
 // separate, larger project.
 import type { Season, TemporalCategory, Weekday } from './types';
 import { easterSunday } from './easter';
-import { addDays, daysBetween, toIsoDate } from './date-math';
+import { addDays, daysBetween, dayOfWeek, toIsoDate } from './date-math';
 import fixedDateData from '../data/calendar/fixed-date-calendar.yml';
 import easterOffsetsData from '../data/calendar/easter-offsets.yml';
 import temporalCategoriesData from '../data/calendar/temporal-categories.yml';
@@ -45,9 +45,27 @@ const EPIPHANY = fixedDateFor('epiphany');
 /** The Sunday nearest Nov 30 (St. Andrew's Day) — Advent's real start rule. */
 export function adventStart(year: number): string {
   const nov30 = `${year}-11-30`;
-  const dow = new Date(`${nov30}T00:00:00Z`).getUTCDay(); // 0 = Sunday
+  const dow = dayOfWeek(nov30);
   const delta = dow <= 3 ? -dow : 7 - dow;
   return addDays(nov30, delta);
+}
+
+/**
+ * The Sunday on or before `isoDate` — "which week does this feria belong
+ * to." Shared by calendar/day-label.ts (display) and, eventually, whatever
+ * resolves temporal-propers content ids (calendar/types.ts's `PropersRef`
+ * `source: 'temporal'` branch) — both need the same "which Sunday governs
+ * this feria" answer, just for different purposes, so it lives here rather
+ * than in either consumer.
+ */
+export function sundayOnOrBefore(isoDate: string): string {
+  return addDays(isoDate, -dayOfWeek(isoDate));
+}
+
+/** The first Sunday strictly after `isoDate`, even if `isoDate` is itself a Sunday. */
+export function firstSundayStrictlyAfter(isoDate: string): string {
+  const dow = dayOfWeek(isoDate);
+  return addDays(isoDate, dow === 0 ? 7 : 7 - dow);
 }
 
 function seasonFromEasterOffset(offset: number): Season {
