@@ -130,6 +130,7 @@ export function renderHourView(container: HTMLElement): void {
   container.innerHTML = `
     <div class="hour-view">
       <h2>${hourLabel(selectedHour)}</h2>
+      ${ordo.dayLabel ? `<p class="day-label">${escapeHtml(ordo.dayLabel)}</p>` : ''}
       ${ordo.parts.map((part) => renderPart(part, languages)).join('')}
     </div>
   `;

@@ -1,6 +1,7 @@
 import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart } from './types';
 import type { LiturgicalDay } from '../calendar/types';
 import { resolveEveningDay } from '../calendar/vespers';
+import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getCommonProper } from '../propers';
 import { getHymnDoxologyId } from './hymn-doxology';
@@ -97,5 +98,5 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // need to keep a separate "real" day around.
   const day = resolveEveningDay(date);
   const parts = complineDefinition.parts.flatMap((part) => resolvePart(part, day));
-  return { hourId: 'compline', date, parts };
+  return { hourId: 'compline', date, parts, dayLabel: getDayLabel(day) };
 }

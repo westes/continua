@@ -1,6 +1,7 @@
 import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart } from './types';
 import type { LiturgicalDay, Weekday } from '../calendar/types';
 import { resolveDay, isSundayOrFeast } from '../calendar';
+import { getDayLabel } from '../calendar/day-label';
 import { getPsalmsFor } from '../psalter/distribution';
 import { getPsalmVerses } from '../psalter';
 import { getMartyrologyEntryFor } from '../martyrology';
@@ -117,5 +118,5 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
 export function resolveOrdo(date: string): ResolvedOrdo {
   const day = resolveDay(date);
   const parts = primeDefinition.parts.flatMap((part) => resolvePart(part, date, day));
-  return { hourId: 'prime', date, parts };
+  return { hourId: 'prime', date, parts, dayLabel: getDayLabel(day) };
 }

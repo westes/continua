@@ -85,11 +85,12 @@ describe('resolveOrdo("compline", ...)', () => {
     expect(last?.kind === 'preces' ? last.text.text.en : undefined).toContain('Hail holy Queen');
   });
 
-  it('anticipates Advent I: the Saturday evening before switches to the Alma Redemptoris Mater', () => {
+  it('anticipates Advent I: the Saturday evening before switches to the Alma Redemptoris Mater and shows the anticipated day label', () => {
     // Nov 30, 2025 is Advent I Sunday.
     const eve = resolveOrdo('compline', '2025-11-29');
     const last = eve.parts[eve.parts.length - 1];
     expect(last?.kind === 'preces' ? last.label : undefined).toBe('Alma Redemptoris Mater');
+    expect(eve.dayLabel).toBe('The 1st Sunday of Advent');
 
     const dayBefore = resolveOrdo('compline', '2025-11-28');
     const lastBefore = dayBefore.parts[dayBefore.parts.length - 1];

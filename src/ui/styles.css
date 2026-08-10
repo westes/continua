@@ -261,6 +261,14 @@ button:focus-visible {
   margin: 0 0 var(--space-1);
 }
 
+.day-label {
+  font-family: var(--font-ui);
+  font-size: 0.9em;
+  font-style: italic;
+  color: var(--color-brass);
+  margin: 0 0 var(--space-2);
+}
+
 .ordo-part-citation {
   font-family: var(--font-ui);
   font-size: 0.85em;
