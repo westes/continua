@@ -1,6 +1,6 @@
 import type { Season, OccurringFeast } from '../calendar/types';
 import { resolveSeasonalPropersId } from './seasonal-propers';
-import bySeasonData from '../data/hours/prime-opening-by-season.yml';
+import bySeasonData from '../data/hours/opening-by-season.yml';
 
 const bySeason = bySeasonData as { perAnnum: string; bySeason: Record<string, string> };
 

@@ -1,11 +1,12 @@
 # Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25
-# run. The opening "Deus in adiutorium" versicle, said aloud right after the
-# (dropped, see data/hours/prime.yml's note) silent Pater/Ave/Credo.
+# run. The opening "Deus in adiutorium" versicle — shared across every hour
+# that has one (Prime drops the silent Pater/Ave/Credo that would normally
+# precede it; Compline says it aloud right after its own pre-psalm Confiteor).
 #
 # This is the default (per-annum) ending — Septuagesima through Holy
 # Saturday swaps "Allelúja" for "Laus tibi..." instead; see
-# prime-opening-laus-tibi.yml and hours/opening-versicle.ts.
-id: prime-opening-alleluia
+# opening-laus-tibi.yml and hours/opening-versicle.ts.
+id: opening-alleluia
 text:
   la: |
     V. Deus ✠ in adjutórium meum inténde.

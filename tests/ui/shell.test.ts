@@ -41,13 +41,27 @@ describe('shell', () => {
     const root = document.getElementById('app')!;
     mountShell(root);
 
+    const terceBtn = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-hour]')).find(
+      (btn) => btn.dataset.hour === 'terce',
+    );
+    terceBtn?.click();
+
+    expect(root.querySelector('.hour-view h2')?.textContent).toBe('Terce');
+    expect(root.querySelector('.hour-view-pending')).not.toBeNull();
+  });
+
+  it('switches to Compline and shows its real content, not the pending message', () => {
+    const root = document.getElementById('app')!;
+    mountShell(root);
+
     const complineBtn = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-hour]')).find(
       (btn) => btn.dataset.hour === 'compline',
     );
     complineBtn?.click();
 
     expect(root.querySelector('.hour-view h2')?.textContent).toBe('Compline');
-    expect(root.querySelector('.hour-view-pending')).not.toBeNull();
+    expect(root.querySelector('.hour-view-pending')).toBeNull();
+    expect(root.querySelectorAll('.ordo-part-psalm').length).toBe(3);
   });
 
   it('moving to the next day updates the displayed date', () => {

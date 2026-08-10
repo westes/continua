@@ -96,13 +96,20 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
         </section>
       `;
     }
-    case 'canticle':
+    case 'canticle': {
+      const title = part.canticleId
+        .split('-')
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(' ');
       return `
         <section class="ordo-part ordo-part-canticle">
           ${part.antiphon ? renderColumns(part.antiphon, languages) : ''}
-          <h3 class="ordo-part-label">Canticle</h3>
+          <h3 class="ordo-part-label">${escapeHtml(title)}</h3>
+          ${renderCitation(part.text)}
+          ${renderColumns(part.text, languages)}
         </section>
       `;
+    }
   }
 }
 

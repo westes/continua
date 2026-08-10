@@ -1,9 +1,11 @@
 # Which common proper supplies the hymn's final doxology stanza, by season.
-# Advent has no special doxology in the source data — it falls through to
-# perAnnum, same as any season not listed here. Same PLACEHOLDER caveat as
+# Shared across every hymn (Divinum Officium's own Doxologies.txt table is
+# hymn-agnostic) — each hymn's own per-annum default is supplied by the
+# caller instead (see hours/hymn-doxology.ts). Advent has no special
+# doxology in the source data — it falls through to the caller's per-annum
+# default, same as any season not listed here. Same PLACEHOLDER caveat as
 # prime-chapter-responsory-by-season.yml: real season resolution doesn't
 # exist until milestone 4, so this can't be exercised by real data yet.
-perAnnum: hymn-doxology-per-annum
 bySeason:
   christmastide: hymn-doxology-nat
   epiphanytide: hymn-doxology-epi

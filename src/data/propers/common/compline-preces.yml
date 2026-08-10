@@ -1,0 +1,69 @@
+# Verified against Divinum Officium (Tridentine 1906), 2026-08-25 run —
+# used by explicit choice instead of Monastic's own (shorter) Compline
+# Preces, which drop the "Benedíctus es, Dómine..." triple exchange at the
+# start and the "Miserére nostri, Dómine.../Fiat misericórdia..." exchange
+# near the end (both marked "(sed rubrica ^Monastic omittitur)" in the
+# source). Compline has no separate ferial/Sunday form the way Prime does —
+# this is the only text; the only variable is whether Preces are said at
+# all (see calendar/isDoubleOrHigher — dropped on a Double-or-higher feast).
+id: compline-preces
+text:
+  la: |
+    Kýrie, eléison. Christe, eléison. Kýrie, eléison.
+
+    Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum quotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris:
+    V. Et ne nos indúcas in tentatiónem:
+    R. Sed líbera nos a malo.
+
+    Credo in Deum, Patrem omnipoténtem, Creatórem cæli et terræ. Et in Jesum Christum, Fílium ejus únicum, Dóminum nostrum: qui concéptus est de Spíritu Sancto, natus ex María Vírgine, passus sub Póntio Piláto, crucifíxus, mórtuus, et sepúltus: descéndit ad ínferos; tértia die resurréxit a mórtuis; ascéndit ad cælos; sedet ad déxteram Dei Patris omnipoténtis: inde ventúrus est judicáre vivos et mórtuos. Credo in Spíritum Sanctum, sanctam Ecclésiam cathólicam, Sanctórum communiónem, remissiónem peccatórum.
+    V. Carnis resurrectiónem.
+    R. Vitam ætérnam. Amen.
+
+    V. Benedíctus es, Dómine, Deus patrum nostrórum.
+    R. Et laudábilis et gloriósus in sǽcula.
+    V. Benedicámus Patrem et Fílium cum Sancto Spíritu.
+    R. Laudémus, et superexaltémus eum in sǽcula.
+    V. Benedíctus es, Dómine, in firmaménto cæli.
+    R. Et laudábilis, et gloriósus, et superexaltátus in sǽcula.
+    V. Benedícat et custódiat nos omnípotens et miséricors Dóminus.
+    R. Amen.
+
+    V. Dignáre, Dómine, nocte ista.
+    R. Sine peccáto nos custodíre.
+    V. Miserére nostri, Dómine.
+    R. Miserére nostri.
+    V. Fiat misericórdia tua, Dómine, super nos.
+    R. Quemádmodum sperávimus in te.
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+  en: |
+    Lord have mercy upon us, Christ have mercy upon us, Lord have mercy upon us.
+
+    Our Father, who art in heaven, Hallowed be thy name. Thy kingdom come. Thy will be done on earth as it is in heaven. Give us this day our daily bread. And forgive us our trespasses, as we forgive those who trespass against us.
+    V. And lead us not into temptation:
+    R. But deliver us from evil.
+
+    I believe in God, the Father almighty, Creator of heaven and earth. And in Jesus Christ, his only Son, our Lord; who was conceived by the Holy Ghost, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried: he descended into hell; the third day he arose again from the dead; he ascended into heaven; sitteth at the right hand of God the Father almighty: from thence he shall come to judge the living and the dead. I believe in the Holy Ghost, the holy catholic Church, the communion of Saints, the forgiveness of sins.
+    V. The resurrection of the body.
+    R. And life everlasting. Amen.
+
+    V. Blessed are you, Lord, God of our fathers.
+    R. Worthy of praise, and glorious for ever.
+    V. Let us bless the Father, the Son and the Holy Spirit.
+    R. Let us praise and exalt him above all for ever.
+    V. Blessed art thou in the firmament of heaven:
+    R. Worthy of praise, and glorious for ever.
+    V. May the almighty and merciful God bless us and keep us.
+    R. Amen.
+
+    V. Vouchsafe, O Lord,
+    R. To keep us this night without sin.
+    V. O Lord, have mercy upon us.
+    R. Have mercy upon us.
+    V. O Lord, let thy mercy lighten upon us
+    R. As our trust is in you.
+    V. O Lord, hear my prayer.
+    R. And let my cry come unto thee.
+status:
+  la: verified
+  en: verified

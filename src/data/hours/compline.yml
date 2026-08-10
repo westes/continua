@@ -1,0 +1,62 @@
+# Ordo verified against Divinum Officium (Monastic Tridentinum 1617 *and*
+# Tridentine 1906), 2026-08-25 runs — see src/hours/compline.ts for how
+# each part resolves.
+#
+# Base is Monastic 1617, per explicit choice, with several deliberate
+# additions from Tridentine 1906 (Monastic Compline has none of these):
+#   - The "In manus tuas" short responsory, right after the capitulum.
+#   - The Nunc Dimittis, framed by its "Salva nos" antiphon, right after
+#     the responsory's versicle.
+#   - The fuller Tridentine Preces, in place of Monastic's own shorter form
+#     (which drops the "Benedíctus es, Dómine..." triple exchange and the
+#     "Miserére nostri, Dómine.../Fiat misericórdia..." exchange — both
+#     marked "(sed rubrica ^Monastic omittitur)" in the source). Compline
+#     has no separate ferial/Sunday Preces text the way Prime does — one
+#     form, gated only by omitOnDouble (see calendar/isDoubleOrHigher).
+#   - Lent's distinct hymn replacement ("Christe, qui lux es et dies") —
+#     see hours/compline.ts's 'hymn' case for a caveat on how confident to
+#     be that this actually triggers automatically in real practice.
+#
+# Unlike Prime, Compline's psalms (4, 90, 133) are fixed every day — no
+# weekday rotation — and have no antiphon of their own at all in ferial use.
+# The capitulum and Preces are likewise not split Sunday-vs-ferial.
+#
+# The closing Marian antiphon is genuinely seasonal in real practice (Alma
+# Redemptoris Mater / Ave Regina Caelorum / Regina Caeli / Salve Regina) —
+# see hours/marian-antiphon.ts.
+id: compline
+parts:
+  - kind: preces
+    textRef: { source: common, id: compline-incipit }
+  - kind: lesson
+    textRef: { source: common, id: compline-lectio-brevis }
+    label: Short Reading
+  - kind: preces
+    textRef: { source: common, id: lesson-close }
+  - kind: preces
+    textRef: { source: common, id: compline-confiteor }
+  - kind: opening-versicle
+  - kind: psalm
+    psalmNumber: 4
+  - kind: psalm
+    psalmNumber: 90
+  - kind: psalm
+    psalmNumber: 133
+  - kind: hymn
+    textRef: { source: common, id: compline-hymn }
+  - kind: chapter
+    textRef: { source: common, id: compline-capitulum }
+  - kind: responsory
+    textRef: { source: common, id: compline-responsory }
+  - kind: versicle
+    textRef: { source: common, id: compline-versicle }
+  - kind: nunc-dimittis
+  - kind: preces
+    textRef: { source: common, id: compline-preces }
+    omitOnDouble: true
+  - kind: prayer
+    textRef: { source: common, id: compline-collect }
+  - kind: preces
+    textRef: { source: common, id: compline-conclusio }
+    label: Conclusion
+  - kind: marian-antiphon

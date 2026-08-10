@@ -1,0 +1,36 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25
+# run. "Te lucis ante terminum" — only 2 body stanzas (the doxology, its 3rd
+# stanza, is stored separately since it varies by season — see
+# compline-hymn-doxology-per-annum.yml and hours/hymn-doxology.ts, same
+# mechanism as Prime's hymn).
+#
+# Monastic wording ("sólita"/"ad custódiam") differs slightly from the
+# Roman "pro tua"/"et custódia" — this is the Monastic form.
+#
+# Lent has its own distinct 6-stanza hymn ("Christe, qui lux es et dies")
+# rather than just a different doxology on this one — not modeled yet.
+id: compline-hymn
+text:
+  la: |
+    Te lucis ante términum,
+    Rerum Creátor, póscimus,
+    Ut sólita cleméntia
+    Sis præsul ad custódiam.
+
+    Procul recédant sómnia,
+    Et nóctium phantásmata;
+    Hostémque nostrum cómprime,
+    Ne polluántur córpora.
+  en: |
+    Before the ending of the day,
+    Creator of the world, we pray
+    That with thy wonted favor thou
+    Wouldst be our guard and keeper now.
+
+    From all ill dreams defend our eyes,
+    From nightly fears and fantasies;
+    Tread under foot our ghostly foe,
+    That no pollution we may know.
+status:
+  la: verified
+  en: verified

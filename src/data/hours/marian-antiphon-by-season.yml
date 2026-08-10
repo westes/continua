@@ -1,0 +1,23 @@
+# Which common proper supplies Compline's closing Marian antiphon, by
+# season. Only 4 real forms exist regardless of how finely other mechanisms
+# (chapter responsory, hymn doxology) slice the year — Ascensiontide and
+# Pentecost don't get their own Marian antiphon, they're still "Paschalis"
+# (Regina Caeli); Epiphanytide is still "Nativiti" (Alma Redemptoris Mater).
+#
+# Ave Regina Caelorum's real window (Candlemas, Feb 2, through Wednesday of
+# Holy Week) doesn't line up with any single `season` value — it starts
+# mid-Epiphanytide and ends mid-Lent or mid-Passiontide depending on the
+# year, cutting across three of the mutually-exclusive season buckets used
+# everywhere else in this app. So it's NOT a key in this table at all;
+# hours/marian-antiphon.ts checks that window directly against the real
+# date before ever consulting bySeason below. See calendar/types.ts's
+# Season doc comment for the general overlapping-windows problem this is
+# one instance of.
+perAnnum: marian-antiphon-salve-regina
+bySeason:
+  advent: marian-antiphon-alma-redemptoris-advent
+  christmastide: marian-antiphon-alma-redemptoris-nativity
+  epiphanytide: marian-antiphon-alma-redemptoris-nativity
+  eastertide: marian-antiphon-regina-caeli
+  ascensiontide: marian-antiphon-regina-caeli
+  pentecost: marian-antiphon-regina-caeli

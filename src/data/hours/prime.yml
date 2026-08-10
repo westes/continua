@@ -47,6 +47,7 @@ parts:
     textRef: { source: common, id: prime-versicle }
   - kind: by-day-kind
     resolvedKind: preces
+    omitOnDouble: true
     sundayOrFeastRef: { source: common, id: prime-preces-dominicales }
     ferialRef: { source: common, id: prime-preces-feriales }
   - kind: prayer
@@ -59,7 +60,7 @@ parts:
     textRef: { source: common, id: prime-lectio-brevis-per-annum }
     label: Short Reading
   - kind: preces
-    textRef: { source: common, id: prime-lesson-close }
+    textRef: { source: common, id: lesson-close }
   - kind: preces
     textRef: { source: common, id: prime-conclusio }
     label: Conclusion

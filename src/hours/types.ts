@@ -34,9 +34,12 @@ export type HourPart =
   // `label`, when given, is shown as a heading (e.g. "Preces", "Pretiosa") —
   // omitted for parts that are just connective tissue around a reading
   // (a blessing, a closing dialogue) that don't read as their own section.
-  | { kind: 'preces'; textRef: PropersRef; label?: string }
+  // `omitOnDouble` drops the whole part on a Double-or-higher feast (real
+  // Preces are suppressed above a certain rank) — see calendar/
+  // isDoubleOrHigher for how far that's actually wired up today.
+  | { kind: 'preces'; textRef: PropersRef; label?: string; omitOnDouble?: true }
   | { kind: 'psalm'; psalmNumber: number; verses?: string; antiphonRef?: PropersRef }
-  | { kind: 'canticle'; canticleId: string; antiphonRef?: PropersRef }
+  | { kind: 'canticle'; canticleId: string; textRef: PropersRef; antiphonRef?: PropersRef }
   | {
       kind: 'lesson';
       textRef: PropersRef;
@@ -57,6 +60,7 @@ export type HourPart =
       kind: 'by-day-kind';
       resolvedKind: 'chapter' | 'preces';
       label?: string;
+      omitOnDouble?: true;
       sundayOrFeastRef: PropersRef;
       ferialRef: PropersRef;
     }
@@ -72,6 +76,16 @@ export type HourPart =
   // in full here, distinct from the incipit-or-full opening attached to the
   // first psalm. See hours/antiphon.ts.
   | { kind: 'closing-antiphon' }
+  // Compline's canticle — fixed year-round (not weekday-variable the way
+  // Prime's psalm antiphon is), framed by "Salva nos" incipit-or-full
+  // before and full after, same rank rule as any other antiphon. Resolves
+  // to a 'canticle' ResolvedPart (with the opening antiphon inline) plus a
+  // standalone 'antiphon' ResolvedPart for the closing repeat.
+  | { kind: 'nunc-dimittis' }
+  // Compline's closing Marian antiphon (with its own versicle and collect
+  // baked into the same text block) — resolved by season, defaulting to
+  // Salve Regina. See hours/marian-antiphon.ts.
+  | { kind: 'marian-antiphon' }
   // Unused by Prime/Compline/the little hours — exercised starting milestone 4.
   | { kind: 'variable'; resolve: 'by-weekday' | 'by-season' | 'by-feast-rank' };
 
@@ -85,7 +99,7 @@ export type ResolvedPart =
   | { kind: 'hymn' | 'chapter' | 'responsory' | 'versicle' | 'prayer'; text: ResolvedText }
   | { kind: 'preces'; text: ResolvedText; label?: string }
   | { kind: 'psalm'; psalmNumber: number; antiphon?: ResolvedText; verses: ResolvedVerse[] }
-  | { kind: 'canticle'; canticleId: string; antiphon?: ResolvedText }
+  | { kind: 'canticle'; canticleId: string; text: ResolvedText; antiphon?: ResolvedText }
   // A standalone antiphon, said on its own rather than framing a psalm —
   // see 'closing-antiphon' above.
   | { kind: 'antiphon'; text: ResolvedText }

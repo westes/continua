@@ -188,8 +188,8 @@ describe('resolveOrdo("prime", ...)', () => {
 });
 
 describe('resolveOrdo for not-yet-built hours', () => {
-  it('flags compline as not implemented rather than throwing', () => {
-    const ordo = resolveOrdo('compline', MONDAY);
+  it('flags terce as not implemented rather than throwing', () => {
+    const ordo = resolveOrdo('terce', MONDAY);
     expect(ordo.notImplemented).toBe(true);
     expect(ordo.parts).toEqual([]);
   });
