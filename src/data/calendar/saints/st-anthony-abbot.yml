@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617,
+# web/www/horas/Latin/Sancti/01-17.txt's untagged/default [Rank] block --
+# Duplex;;3 -- ignoring its own "(sed rubrica cisterciensis)" alternate, same
+# convention as every other saint file in this set). No unique Oratio/Antiphon
+# in the source -- Common of an Abbot only. This is the same St. Anthony whose
+# real occurrence-engine behavior was used earlier to calibrate the Duplex-vs-
+# ordinary-Sunday precedence rule (calendar/commemorations.ts).
+id: st-anthony-abbot
+name: "St. Anthony, Abbot"
+rank: duplex
+common: common-of-an-abbot
+propers: null
