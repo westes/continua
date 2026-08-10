@@ -15,6 +15,18 @@
 # easter-offsets.yml) and `fixedDates` (MM-DD) override that default for
 # specific privileged ferias that don't line up with a whole season.
 #
+# `privileged-feria` vs `privileged-feria-major`: two real tiers, not one
+# — see calendar/types.ts's TemporalCategory doc comment for how this was
+# found and calendar/commemorations.ts for the rule each gets. Lent's Ember
+# days are directly verified as the lesser tier (a plain Duplex wins
+# outright there); Ash Wednesday, Holy Week, and the Easter Octave are the
+# major tier (Easter Octave directly verified — Holy Week and Ash
+# Wednesday are strong prior knowledge, not independently re-verified
+# here). Where this app *doesn't* have direct evidence either way —
+# Pentecost's own Ember days/Vigil/Octave, the Vigil of Christmas — it
+# defaults to the major (stricter) tier as the safer guess, pending
+# verification.
+#
 # Known gap: Advent Ember days (Wed/Fri/Sat after Dec 13) and September
 # Ember days (Wed/Fri/Sat near the Exaltation of the Cross, Sept 14) are
 # NOT modeled here — both are fixed-calendar "nearest such-and-such a date"
@@ -36,24 +48,28 @@ bySeason:
   pentecost: { sunday: privileged-sunday, feria: ordinary-feria }
   trinitytide: { sunday: ordinary-sunday, feria: ordinary-feria }
   # Corpus Christi/Sacred Heart are themselves "feasts of the Lord" that
-  # shouldn't cede to an ordinary saint — modeled here as privileged-feria
-  # (rather than injecting a separate synthetic FeastClass) since with the
-  # small sanctoral calendar this app has, a real clash is unlikely and the
-  # practical effect (temporal wins) is the same either way.
-  corpus-christi: { sunday: ordinary-sunday, feria: privileged-feria }
-  sacred-heart: { sunday: ordinary-sunday, feria: privileged-feria }
+  # shouldn't cede to an ordinary saint — modeled here as
+  # privileged-feria-major (rather than injecting a separate synthetic
+  # FeastClass) since with the small sanctoral calendar this app has, a
+  # real clash is unlikely and the practical effect (temporal wins) is the
+  # same either way.
+  corpus-christi: { sunday: ordinary-sunday, feria: privileged-feria-major }
+  sacred-heart: { sunday: ordinary-sunday, feria: privileged-feria-major }
 
 offsets:
-  -46: privileged-feria # Ash Wednesday
-  -39: privileged-feria # Lent Ember Wednesday (Wed after 1st Sunday of Lent)
+  -46: privileged-feria-major # Ash Wednesday
+  -39: privileged-feria # Lent Ember Wednesday (Wed after 1st Sunday of Lent) — verified: Duplex wins outright here
   -37: privileged-feria # Lent Ember Friday
-  -36: privileged-feria # Lent Ember Saturday
-  48: privileged-feria # Vigil of Pentecost
+  -36: privileged-feria # Lent Ember Saturday — verified: Duplex wins outright here (St. Gregory the Great)
+  48: privileged-feria-major # Vigil of Pentecost — unverified, defaulted to the stricter tier
 
 offsetRanges:
-  - { fromOffset: -6, toOffset: -1, category: privileged-feria } # ferias of Holy Week
-  - { fromOffset: 1, toOffset: 6, category: privileged-feria } # Easter octave
-  - { fromOffset: 50, toOffset: 55, category: privileged-feria } # Pentecost octave (also covers Pentecost's own Ember days)
+  - { fromOffset: -6, toOffset: -1, category: privileged-feria-major } # ferias of Holy Week
+  - { fromOffset: 1, toOffset: 6, category: privileged-feria-major } # Easter octave — verified: even Duplex II. classis (St. Mark) only gets commemorated, never wins
+  # Pentecost octave (also covers Pentecost's own Ember days) — unverified,
+  # defaulted to the stricter tier; Lent's Ember days are confirmed
+  # lesser-tier, but that hasn't been checked for Pentecost's specifically.
+  - { fromOffset: 50, toOffset: 55, category: privileged-feria-major }
 
 fixedDates:
-  "12-24": privileged-feria # Vigil of Christmas
+  "12-24": privileged-feria-major # Vigil of Christmas — unverified, defaulted to the stricter tier

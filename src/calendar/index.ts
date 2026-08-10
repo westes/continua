@@ -48,12 +48,14 @@ function applyIncomingTransfer(
   winner: DayWinner,
   commemorations: Commemoration[],
 ): DayWinner {
-  if (temporalCategory === 'privileged-feria') {
-    // Deferred: a transfer landing on a privileged feria (the concrete
-    // case is Holy Week, right after Palm Sunday) needs its own
-    // Easter-date-keyed lookup table, the same way the reference engine
-    // handles it — not modeled yet. The transfer is simply not delivered
-    // here rather than guessed at.
+  if (temporalCategory === 'privileged-feria-major') {
+    // Deferred: a transfer landing on one of these (the concrete case is
+    // Holy Week, right after Palm Sunday) needs its own Easter-date-keyed
+    // lookup table, the same way the reference engine handles it — not
+    // modeled yet. The transfer is simply not delivered here rather than
+    // guessed at. The lesser privileged-feria tier doesn't need this —
+    // ordinary collision/transfer logic is fine there, same as any
+    // ordinary-sunday landing.
     return winner;
   }
   if (winner.kind === 'temporal') {

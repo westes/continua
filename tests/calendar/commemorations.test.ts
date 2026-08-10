@@ -42,13 +42,43 @@ describe('decideOccurrence — ordinary-feria', () => {
 });
 
 describe('decideOccurrence — privileged-feria', () => {
-  it('yields to nothing short of the top class', () => {
-    const majus = decideOccurrence('privileged-feria', 'id', saint('duplex-2-classis'));
-    expect(majus.winner).toEqual({ kind: 'temporal', id: 'id' });
-    expect(majus.commemorations).toEqual([]);
+  it('behaves exactly like an ordinary Sunday — duplex or higher wins outright, the feria is commemorated in return', () => {
+    // Verified: St. Gregory the Great, plain Duplex, outright wins against
+    // a Lenten Ember Saturday in the real Monastic 1617 engine.
+    const result = decideOccurrence('privileged-feria', 'id', saint('duplex'));
+    expect(result.winner).toEqual({ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank: 'duplex' });
+    expect(result.commemorations).toEqual([{ kind: 'temporal', id: 'id' }]);
+  });
 
-    const top = decideOccurrence('privileged-feria', 'id', saint('duplex-1-classis'));
-    expect(top.commemorations).toEqual([{ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank: 'duplex-1-classis' }]);
+  it('simplex stays and is commemorated, not transferred', () => {
+    const result = decideOccurrence('privileged-feria', 'id', saint('simplex'));
+    expect(result.winner).toEqual({ kind: 'temporal', id: 'id' });
+    expect(result.commemorations).toEqual([{ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank: 'simplex' }]);
+  });
+
+  it('semiduplex/vigil get nothing here — transfer instead', () => {
+    const result = decideOccurrence('privileged-feria', 'id', saint('semiduplex'));
+    expect(result.commemorations).toEqual([]);
+    expect(result.transfer).toEqual({ candidate: saint('semiduplex'), direction: 'forward' });
+  });
+});
+
+describe('decideOccurrence — privileged-feria-major', () => {
+  it('is never displaced, same as privileged-sunday — duplex-majus and up are commemorated', () => {
+    // Verified: St. Mark, Duplex II. classis, only ever commemorated —
+    // never wins outright — within the Easter Octave.
+    for (const rank of ['duplex-majus', 'duplex-2-classis', 'duplex-1-classis'] as const) {
+      const result = decideOccurrence('privileged-feria-major', 'id', saint(rank));
+      expect(result.winner).toEqual({ kind: 'temporal', id: 'id' });
+      expect(result.commemorations).toEqual([{ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank }]);
+    }
+  });
+
+  it('yields nothing short of duplex-majus — transfers instead', () => {
+    const result = decideOccurrence('privileged-feria-major', 'id', saint('duplex'));
+    expect(result.winner).toEqual({ kind: 'temporal', id: 'id' });
+    expect(result.commemorations).toEqual([]);
+    expect(result.transfer).toEqual({ candidate: saint('duplex'), direction: 'forward' });
   });
 });
 

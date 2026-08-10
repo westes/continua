@@ -70,7 +70,24 @@ export type FeastClass =
 // category — reconstructed from general knowledge of the pre-1955
 // tradition, not yet verified against a primary source, so expect
 // corrections.
-export type TemporalCategory = 'ordinary-feria' | 'privileged-feria' | 'ordinary-sunday' | 'privileged-sunday';
+// `privileged-feria` and `privileged-feria-major` are two real, distinct
+// tiers (confirmed by finding a plain Duplex saint, St. Gregory the Great,
+// outright winning against a Lenten Ember Saturday in the real Monastic
+// 1617 engine, which the original single-tier model wrongly forbade) —
+// see calendar/commemorations.ts's rules for `privileged-feria` (behaves
+// like `ordinary-sunday`: Duplex+ wins outright) vs `privileged-feria-major`
+// (behaves like `privileged-sunday`: never displaced at all, confirmed by
+// checking St. Mark, Duplex II. classis, merely commemorated rather than
+// winning within the Easter Octave). See data/calendar/temporal-
+// categories.yml for exactly which days fall in which tier — some of that
+// split (e.g. whether Pentecost's own Ember days share Lent's lesser tier
+// or Easter's major one) is still a reconstructed guess, not verified.
+export type TemporalCategory =
+  | 'ordinary-feria'
+  | 'privileged-feria'
+  | 'privileged-feria-major'
+  | 'ordinary-sunday'
+  | 'privileged-sunday';
 
 export interface SanctoralIdentity {
   id: string;

@@ -8,10 +8,14 @@
 // Modeled as explicit rules per category, not a numeric-weight comparison
 // like the reference engine's occurrence()/concurrence() — see
 // data/calendar/temporal-categories.yml's header for why. Verified in part
-// against real dates (the Sunday-vs-Duplex threshold below was corrected
-// after finding St. Anthony Abbot, plain Duplex, outright winning against
-// an ordinary Sunday in the real Monastic 1617 engine — a genuine
-// correction, not a guess); the rest is the result of a design discussion,
+// against real dates: the Sunday-vs-Duplex threshold was corrected after
+// finding St. Anthony Abbot, plain Duplex, outright winning against an
+// ordinary Sunday in the real Monastic 1617 engine, and privileged-feria
+// was later split into two real tiers after finding St. Gregory the Great,
+// also plain Duplex, outright winning against a Lenten Ember Saturday
+// (which the original single-tier model wrongly forbade) while St. Mark,
+// Duplex II. classis, only ever gets commemorated — never wins outright —
+// within the Easter Octave. The rest is the result of a design discussion,
 // not yet independently verified against a primary source.
 
 import type { Commemoration, DayWinner, FeastClass, SanctoralIdentity, TemporalCategory } from './types';
@@ -81,11 +85,33 @@ export function decideOccurrence(
       return { winner: sanctoralWinner(sanctoral), commemorations: [] };
 
     case 'privileged-feria':
-      // Preferred to any feast whatsoever; admits no commemoration except
-      // one of the very highest class.
+      // The lesser of the two privileged-feria tiers (Ember days outside
+      // Holy Week/the Easter Octave, etc.) — behaves exactly like an
+      // ordinary Sunday: real standing of its own, but not enough to
+      // resist a sufficiently ranked feast the way privileged-feria-major
+      // does.
+      if (isAtLeast(sanctoral.rank, 'duplex')) {
+        return { winner: sanctoralWinner(sanctoral), commemorations: [{ kind: 'temporal', id: temporalId }] };
+      }
+      if (sanctoral.rank === 'simplex') {
+        return { winner: temporalWinner, commemorations: [sanctoralCommemoration(sanctoral)] };
+      }
       return {
         winner: temporalWinner,
-        commemorations: isAtLeast(sanctoral.rank, 'duplex-1-classis') ? [sanctoralCommemoration(sanctoral)] : [],
+        commemorations: [],
+        transfer: { candidate: sanctoral, direction: transferDirectionOf(sanctoral.rank) },
+      };
+
+    case 'privileged-feria-major':
+      // Ash Wednesday, Holy Week, the Easter Octave, the Vigil of
+      // Christmas — never displaced, same as privileged-sunday.
+      if (isAtLeast(sanctoral.rank, 'duplex-majus')) {
+        return { winner: temporalWinner, commemorations: [sanctoralCommemoration(sanctoral)] };
+      }
+      return {
+        winner: temporalWinner,
+        commemorations: [],
+        transfer: { candidate: sanctoral, direction: transferDirectionOf(sanctoral.rank) },
       };
 
     case 'ordinary-sunday':

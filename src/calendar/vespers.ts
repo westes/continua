@@ -42,7 +42,12 @@ function hasFirstVespers(day: LiturgicalDay): boolean {
 
 /** Does this day keep its own Second Vespers regardless of what tomorrow is? */
 function keepsOwnSecondVespers(day: LiturgicalDay): boolean {
-  if (day.weekday === 'sunday' || day.temporalCategory === 'privileged-feria' || isMajorFixedFeastOfTheLord(day.date)) {
+  if (
+    day.weekday === 'sunday' ||
+    day.temporalCategory === 'privileged-feria' ||
+    day.temporalCategory === 'privileged-feria-major' ||
+    isMajorFixedFeastOfTheLord(day.date)
+  ) {
     return true;
   }
   return day.winner.kind === 'sanctoral' && isAtLeast(day.winner.rank, 'duplex-2-classis');
