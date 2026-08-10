@@ -59,7 +59,17 @@ function applyIncomingTransfer(
     return winner;
   }
   if (winner.kind === 'temporal') {
-    return { kind: 'sanctoral', id: candidate.id, name: candidate.name, rank: candidate.rank };
+    // Found via real data: a transferred-in Simplex saint was blindly
+    // winning outright even when it landed on a privileged Sunday (Trinity
+    // Sunday, specifically) — the arriving candidate needs to go through
+    // the *same* precedence rules a native occurrence would have used,
+    // not just take over because nothing else was assigned here.
+    const decided = decideOccurrence(temporalCategory, winner.id, candidate);
+    commemorations.push(...decided.commemorations);
+    // If the candidate fails here too (decided.transfer set), that's a
+    // transfer chain — not modeled, same "not delivered rather than
+    // guessed at" stance as the privileged-feria-major case above.
+    return decided.winner;
   }
   const collision = resolveCollision(candidate, winner);
   commemorations.push(...collision.commemorations);

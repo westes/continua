@@ -31,4 +31,26 @@ describe('transfer mechanism (resolveDay integration)', () => {
       rank: 'duplex-2-classis',
     });
   });
+
+  // Found via real data (the May sanctoral pull): a transferred-in
+  // candidate was blindly winning outright whenever the receiving day's
+  // own native winner was temporal, regardless of that day's own
+  // precedence category — so a transferred-in Simplex was overwriting
+  // Trinity Sunday itself instead of going through the same ordinary-
+  // Sunday rule a native candidate would have.
+  it('a simplex saint impeded by a privileged feria transfers forward and is merely commemorated, not made to win, on the ordinary Sunday it lands on', () => {
+    // St. Felix I (May 30, Simplex) is impeded by that date's own
+    // Pentecost Ember Saturday (privileged-feria-major) and transfers
+    // forward into Trinity Sunday 2026 (May 31, an ordinary Sunday).
+    const saturday = resolveDay('2026-05-30');
+    const sunday = resolveDay('2026-05-31');
+
+    expect(saturday.winner).toEqual({ kind: 'temporal', id: 'pentecost-sunday' });
+    expect(saturday.commemorations).toEqual([]);
+
+    expect(sunday.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-01' });
+    expect(sunday.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'st-felix-i', name: 'St. Felix I, Pope and Martyr', rank: 'simplex' },
+    ]);
+  });
 });
