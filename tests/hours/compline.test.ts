@@ -85,6 +85,17 @@ describe('resolveOrdo("compline", ...)', () => {
     expect(last?.kind === 'preces' ? last.text.text.en : undefined).toContain('Hail holy Queen');
   });
 
+  it('anticipates Advent I: the Saturday evening before switches to the Alma Redemptoris Mater', () => {
+    // Nov 30, 2025 is Advent I Sunday.
+    const eve = resolveOrdo('compline', '2025-11-29');
+    const last = eve.parts[eve.parts.length - 1];
+    expect(last?.kind === 'preces' ? last.label : undefined).toBe('Alma Redemptoris Mater');
+
+    const dayBefore = resolveOrdo('compline', '2025-11-28');
+    const lastBefore = dayBefore.parts[dayBefore.parts.length - 1];
+    expect(lastBefore?.kind === 'preces' ? lastBefore.label : undefined).toBe('Salve Regina');
+  });
+
   it('switches to the Ave Regina Caelorum from Candlemas through the day before Maundy Thursday', () => {
     const marianLabel = (date: string) => {
       const ordo = resolveOrdo('compline', date);
@@ -92,7 +103,11 @@ describe('resolveOrdo("compline", ...)', () => {
       return last?.kind === 'preces' ? last.label : undefined;
     };
     // Easter 2026 is Apr 5, so Maundy Thursday is Apr 2.
-    expect(marianLabel('2026-02-01')).toBe('Salve Regina'); // day before Candlemas
+    expect(marianLabel('2026-01-31')).toBe('Salve Regina'); // well before Candlemas
+    // Candlemas (Feb 2) has First Vespers — Compline on Feb 1 evening
+    // already anticipates it, same as Advent I and Easter do (see
+    // calendar/vespers.ts).
+    expect(marianLabel('2026-02-01')).toBe('Ave Regina Caelorum'); // eve of Candlemas, anticipated
     expect(marianLabel('2026-02-02')).toBe('Ave Regina Caelorum'); // Candlemas itself
     expect(marianLabel('2026-03-10')).toBe('Ave Regina Caelorum'); // mid-Lent
     expect(marianLabel('2026-04-01')).toBe('Ave Regina Caelorum'); // eve of Maundy Thursday

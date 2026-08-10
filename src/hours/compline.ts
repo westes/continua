@@ -1,6 +1,6 @@
 import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart } from './types';
 import type { LiturgicalDay } from '../calendar/types';
-import { resolveDay } from '../calendar';
+import { resolveEveningDay } from '../calendar/vespers';
 import { getPsalmVerses } from '../psalter';
 import { getCommonProper } from '../propers';
 import { getHymnDoxologyId } from './hymn-doxology';
@@ -89,7 +89,13 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
 }
 
 export function resolveOrdo(date: string): ResolvedOrdo {
-  const day = resolveDay(date);
+  // Every season/occurring-dependent part below (hymn, doxology, Preces
+  // omitOnDouble, opening versicle, Nunc Dimittis rank, Marian antiphon) is
+  // an evening-hour concern, so the whole ordo resolves off whichever day's
+  // identity actually governs tonight — see calendar/vespers.ts. Nothing
+  // here is date-literal the way Prime's Martyrology is, so there's no
+  // need to keep a separate "real" day around.
+  const day = resolveEveningDay(date);
   const parts = complineDefinition.parts.flatMap((part) => resolvePart(part, day));
   return { hourId: 'compline', date, parts };
 }
