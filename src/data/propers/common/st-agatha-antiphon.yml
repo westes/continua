@@ -1,0 +1,13 @@
+# Verified against Divinum Officium (Latin/English Sancti/02-05.txt's own
+# [Ant 1] — the Lauds-hour antiphon, not Terce's, which falls back to a
+# generic Common text instead). She has no unique collect of her own in
+# the source (only Common of a Virgin Martyr) — propers is still set on
+# her saint record since this antiphon exists, but her -collect id is
+# deliberately not authored, resolving as honestly missing.
+id: st-agatha-antiphon
+text:
+  la: "Stans beáta Agatha * in médio cárceris, expánsis mánibus orábat ad Dóminum: Dómine Jesu Christe, magíster bone, grátias tibi ago, qui me fecísti víncere torménta carníficum: jube me, Dómine, ad tuam immarcescíbilem glóriam felíciter perveníre."
+  en: "The blessed Agatha * stood in the midst of the prison, and stretched forth her hands, and prayed unto the Lord, saying: O Lord Jesus Christ, my Good Master, I thank thee because thou hast made me to overcome the cruelty of the executioners; and now, O Lord, may it please thee that I should happily attain unto thy glory, which fadeth not away."
+status:
+  la: verified
+  en: verified
