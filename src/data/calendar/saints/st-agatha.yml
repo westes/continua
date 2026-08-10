@@ -1,0 +1,10 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live kalendar
+# check (2029-02-05, no Sunday collision) -- winner outright, Semiduplex. Own
+# proper antiphon (see propers/common/st-agatha-antiphon.yml) but no unique
+# collect of her own -- Common of a Virgin Martyr supplies that instead, so
+# getDayCollect resolves honestly missing for her despite propers being set.
+id: st-agatha
+name: "St. Agatha, Virgin and Martyr"
+rank: semiduplex
+common: common-of-a-virgin-martyr
+propers: "st-agatha"

@@ -1,0 +1,11 @@
+# A real vigil (see vigil-of-st-lawrence.yml for the pattern this follows) --
+# in most years suppressed by the Lenten Ember Friday (Feria Sexta Quattuor
+# Temporum Quadragesimae, a privileged feria) landing on the same date, which
+# is exactly the kind of collision this rank exists to let the occurrence
+# engine reason about rather than guess at. No live query needed for rank --
+# 'vigil' is a fixed FeastClass, not something that varies by saint.
+id: vigil-of-st-matthias
+name: "Vigil of St. Matthias"
+rank: vigil
+common: common-of-a-vigil
+propers: null

@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live kalendar
+# check (2029-02-24, no Sunday collision) -- winner outright, Duplex II.
+# classis. Own proper collect, no unique antiphon of his own. In leap years
+# this feast (and its vigil, see vigil-of-st-matthias.yml) shift to Feb 25/24
+# respectively per the old calendar's leap-day-insertion convention -- not
+# modeled by this app's flat MM-DD sanctoral-calendar.yml, a known gap left
+# for later, same as the fixed Lord/BVM feasts.
+id: st-matthias
+name: "St. Matthias, Apostle"
+rank: duplex-2-classis
+common: common-of-an-apostle
+propers: "st-matthias"

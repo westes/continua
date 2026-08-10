@@ -1,0 +1,11 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live kalendar
+# check (2029-02-01, no Sunday collision) -- winner outright, Duplex. No
+# unique Oratio/Antiphon in the source -- Common of a Martyr Bishop only.
+# (A different year, 2026, shows him transferred to Feb 3 instead when Feb 1
+# is a Sunday and Feb 2's Purification blocks the usual next-day slot -- the
+# transfer mechanism this app already models, not re-verified here.)
+id: st-ignatius-of-antioch
+name: "St. Ignatius of Antioch, Bishop and Martyr"
+rank: duplex
+common: common-of-a-martyr-bishop
+propers: null
