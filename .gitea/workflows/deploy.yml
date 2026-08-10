@@ -27,12 +27,20 @@ jobs:
         # test would exercise beyond "does the built bundle actually get
         # served correctly under the /vu/ base path" — this is that check,
         # run against the exact image that ships.
+        #
+        # The shell runs with `-e`, so a failed curl/grep on a past run
+        # could skip `docker stop`/`rm` and leave vu-smoke bound to 8080,
+        # blocking every run after it — clean up any leftover first,
+        # unconditionally, rather than relying on the previous run's own
+        # cleanup having succeeded.
         run: |
+          docker rm -f vu-smoke 2>/dev/null || true
           docker build -t vu:ci .
           docker run -d --name vu-smoke -p 8080:80 vu:ci
           sleep 1
           curl -sf http://localhost:8080/ | grep -q 'vu — Divine Office'
           docker stop vu-smoke
+          docker rm vu-smoke
 
       - name: Trigger redeploy via SSH
         run: |
