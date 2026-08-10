@@ -108,9 +108,10 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
         { kind: 'preces', text: resolveCommon('lesson-close') },
       ];
     }
-    // Not used by Prime — Compline-only.
+    // Not used by Prime — Compline-only, or Little-Hours-only.
     case 'nunc-dimittis':
     case 'marian-antiphon':
+    case 'day-collect':
       throw new Error(`Prime's ordo doesn't support a '${part.kind}' part`);
   }
 }

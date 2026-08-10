@@ -1,0 +1,19 @@
+# See terce-antiphons.yml for the full explanation of this table's shape,
+# sourcing, and the Friday/Saturday derivation caveat.
+sunday:
+  la: "Allelúja."
+  en: "Alleluia."
+monday:
+  la: "Fiat manus tua."
+  en: "Let thy hand be with me to save me."
+tuesday: &gradual-none-ant
+  la: "Beáti omnes."
+  en: "Blessed are all they."
+wednesday: *gradual-none-ant
+thursday: *gradual-none-ant
+friday:
+  la: "Si vere útique justítiam loquímini."
+  en: "If in very deed you speak justice."
+saturday:
+  la: "Dóminus regnávit."
+  en: "The Lord hath reigned."

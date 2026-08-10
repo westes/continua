@@ -85,6 +85,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'closing-antiphon':
     case 'by-day-kind':
     case 'variable':
+    case 'day-collect':
       throw new Error(`Compline's ordo doesn't support a '${part.kind}' part`);
   }
 }

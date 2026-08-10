@@ -1,0 +1,29 @@
+# Ordo verified against Divinum Officium (Monastic Tridentinum 1617), clean
+# per-annum runs with no sanctoral override (2026-08-09 Sun, 2026-08-31 Mon,
+# 2026-10-13 Tue) — see src/hours/terce.ts for how each part resolves.
+#
+# Deliberately deviates from that verified source in one place, matching
+# Prime's own precedent: the opening Pater/Ave (said silently before "Deus
+# in adjutórium") is dropped, to keep the hour shorter.
+#
+# Real structure, confirmed directly against the engine: opening versicle,
+# hymn (self-contained, no seasonal doxology swap — see terce-hymn.yml),
+# one antiphon framing all three psalms, capitulum with its own embedded
+# short versicle/response (*not* a separate elaborate responsory the way
+# Prime's chapter-responsory.ts adds one — Monastic Terce doesn't have
+# one), the day's own collect, and a closing that's identical across all
+# three Little Hours (see little-hour-conclusio.yml). No Preces, no Creed —
+# real Monastic Terce/Sext/None have neither.
+id: terce
+parts:
+  - kind: opening-versicle
+  - kind: hymn
+    textRef: { source: common, id: terce-hymn }
+  - kind: variable
+    resolve: by-weekday
+  - kind: chapter
+    textRef: { source: common, id: terce-capitulum-per-annum }
+  - kind: day-collect
+  - kind: preces
+    textRef: { source: common, id: little-hour-conclusio }
+    label: Conclusion

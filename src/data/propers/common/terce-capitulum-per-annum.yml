@@ -1,0 +1,20 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), clean
+# per-annum runs (2026-08-31, a Monday with no sanctoral override — see
+# hours/terce.ts). "Capitulum Versus" in the source is one combined block:
+# the chapter, then R. Deo grátias, then a short versicle/response pair —
+# unlike Prime, the Little Hours have no separate elaborate short
+# responsory, so all of that is kept together here as one 'chapter' part.
+#
+# Per-annum only for now — real practice varies this by season (confirmed
+# by comparing against a Lenten Ember Wednesday run, which showed different
+# capitulum text entirely), but that seasonal table isn't built yet.
+id: terce-capitulum-per-annum
+text:
+  la: "Sana me, Dómine, et sanábor: salvum me fac, et salvus ero: quóniam laus mea tu es. R. Deo grátias. V. Adjútor meus, esto, ne derelínquas me. R. Neque despícias me, Deus, salutáris meus."
+  en: "Heal me, O Lord, and I shall be healed: save me, and I shall be saved, for thou art my praise. R. Thanks be to God. V. Be thou my helper, forsake me not. R. Do not thou despise me, O God my Saviour."
+citation:
+  la: "Jer. 17:14"
+  en: "Jer. 17:14"
+status:
+  la: verified
+  en: verified

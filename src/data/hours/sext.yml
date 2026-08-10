@@ -1,0 +1,16 @@
+# See terce.yml for the full explanation of this ordo's structure and
+# deliberate deviations — Sext is identical in shape, only its hymn,
+# antiphon/psalms, and capitulum differ.
+id: sext
+parts:
+  - kind: opening-versicle
+  - kind: hymn
+    textRef: { source: common, id: sext-hymn }
+  - kind: variable
+    resolve: by-weekday
+  - kind: chapter
+    textRef: { source: common, id: sext-capitulum-per-annum }
+  - kind: day-collect
+  - kind: preces
+    textRef: { source: common, id: little-hour-conclusio }
+    label: Conclusion

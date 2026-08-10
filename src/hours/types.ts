@@ -87,7 +87,13 @@ export type HourPart =
   // Salve Regina. See hours/marian-antiphon.ts.
   | { kind: 'marian-antiphon' }
   // Unused by Prime/Compline/the little hours — exercised starting milestone 4.
-  | { kind: 'variable'; resolve: 'by-weekday' | 'by-season' | 'by-feast-rank' };
+  | { kind: 'variable'; resolve: 'by-weekday' | 'by-season' | 'by-feast-rank' }
+  // The day's own Proper-of-season/Proper-of-saints collect — resolved by
+  // day, not by textRef. First used by the Little Hours' "Oratio {ex
+  // Proprio de Tempore}" via hours/resolve-common.ts's getDayCollect;
+  // Prime/Compline both still use a fixed collect (`prayer` + textRef).
+  // Renders as a plain 'prayer' ResolvedPart.
+  | { kind: 'day-collect' };
 
 export interface HourDefinition {
   id: HourId;

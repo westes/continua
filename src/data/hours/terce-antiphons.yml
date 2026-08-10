@@ -1,0 +1,38 @@
+# One antiphon per weekday, framing that day's whole psalm group (see
+# hours/terce.ts and psalter/distribution.ts's 'terce' table) — same shape
+# and convention as data/hours/prime-antiphons.yml (inline text, no
+# separate common-propers id, incipit/full split via an embedded "*" where
+# the source has one). None of these happen to have a "*" — each is a
+# short single-clause antiphon and splitAntiphon() already degrades
+# gracefully (incipit == full) when there isn't one.
+#
+# Verified against Divinum Officium (Monastic Tridentinum 1617):
+#   - sunday/monday/tuesday: clean per-annum runs with no sanctoral
+#     override (2026-08-09 Sun, 2026-08-31 Mon, 2026-10-13 Tue).
+#   - wednesday/thursday: share Tuesday's antiphon — same native psalms
+#     (119-121), confirmed identical across all three.
+#   - friday/saturday: these two days' psalms were editorially
+#     redistributed (see psalter-distribution.yml's long comment on
+#     'terce'), so there's no real historical antiphon for this specific
+#     grouping. Per explicit decision, each is instead derived from the
+#     opening phrase of that day's first psalm (Ps 41 for Friday, Ps 69 for
+#     Saturday) — editorial, not independently verified against the
+#     reference engine as a real antiphon, same caveat as the
+#     redistribution itself.
+sunday:
+  la: "Allelúja."
+  en: "Alleluia."
+monday:
+  la: "Ádjuva me."
+  en: "Help me."
+tuesday: &gradual-terce-ant
+  la: "Clamávi."
+  en: "I cried unto the Lord."
+wednesday: *gradual-terce-ant
+thursday: *gradual-terce-ant
+friday:
+  la: "Quemádmodum desíderat cervus."
+  en: "As the hart panteth."
+saturday:
+  la: "Deus, in adjutórium meum inténde."
+  en: "O God, come to my assistance."

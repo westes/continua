@@ -78,9 +78,9 @@ prime:
 #
 # Sunday, Monday, and Tuesday's Terce/Sext/None are untouched by any of
 # this (still whatever Divinum Officium gives natively — Ps 118 sections
-# for Sunday/Monday, 119-127 for Tuesday) and so aren't recorded here;
-# source them from the reference engine directly when those hours are
-# built, the same as Wednesday/Thursday's unchanged 119-127 below.
+# for Sunday/Monday, 119-127 for Tuesday) — now recorded below, verified
+# against clean per-annum runs with no sanctoral override (2026-08-09 Sun,
+# 2026-08-31 Mon, 2026-10-13 Tue).
 matins:
   monday:
     - { number: 32 }
@@ -147,10 +147,19 @@ matins:
   # redistribution; source it directly from the reference engine.
 
 terce:
-  wednesday: &gradual-terce
+  sunday:
+    - { number: 118, verses: "33-40" }
+    - { number: 118, verses: "41-48" }
+    - { number: 118, verses: "49-56" }
+  monday:
+    - { number: 118, verses: "105-112" }
+    - { number: 118, verses: "113-120" }
+    - { number: 118, verses: "121-128" }
+  tuesday: &gradual-terce
     - { number: 119 }
     - { number: 120 }
     - { number: 121 }
+  wednesday: *gradual-terce
   thursday: *gradual-terce
   friday:
     - { number: 41 }
@@ -162,10 +171,19 @@ terce:
     - { number: 81 }
 
 sext:
-  wednesday: &gradual-sext
+  sunday:
+    - { number: 118, verses: "57-64" }
+    - { number: 118, verses: "65-72" }
+    - { number: 118, verses: "73-80" }
+  monday:
+    - { number: 118, verses: "129-136" }
+    - { number: 118, verses: "137-144" }
+    - { number: 118, verses: "145-152" }
+  tuesday: &gradual-sext
     - { number: 122 }
     - { number: 123 }
     - { number: 124 }
+  wednesday: *gradual-sext
   thursday: *gradual-sext
   friday:
     - { number: 51 }
@@ -177,10 +195,19 @@ sext:
     - { number: 97 }
 
 none:
-  wednesday: &gradual-none
+  sunday:
+    - { number: 118, verses: "81-88" }
+    - { number: 118, verses: "89-96" }
+    - { number: 118, verses: "97-104" }
+  monday:
+    - { number: 118, verses: "153-160" }
+    - { number: 118, verses: "161-168" }
+    - { number: 118, verses: "169-176" }
+  tuesday: &gradual-none
     - { number: 125 }
     - { number: 126 }
     - { number: 127 }
+  wednesday: *gradual-none
   thursday: *gradual-none
   friday:
     - { number: 57 }
