@@ -1,16 +1,38 @@
-# PLACEHOLDER distribution: real Benedictine Prime actually distributes
-# multiple fixed psalms plus a rotating section of Ps 118 across the week,
-# and the user has modifications in mind on top of that — none of that is
-# designed yet. This file exists only to prove the (hourId, weekday) -> psalm
-# numbers lookup works end to end, using the one psalm we have sample data
-# for. Expect this file to be rewritten entirely once real content-authoring
-# starts (see plan: "psalter modifications are edits to this data, not
-# engine changes").
+# Verified against Divinum Officium (Monastic Tridentinum 1617). Confirmed by
+# running the real engine (not just reading its data files) that this table
+# is used unconditionally by weekday, regardless of feast rank — Monastic
+# Prime has no "Festis" override the way secular/Roman Prime does, so a
+# Duplex-rank feast still gets the plain weekday psalms. Antiphons aren't
+# modeled yet (each day has its own, e.g. Monday's "Servíte Dómino in
+# timóre") — that's propers content-authoring, not a distribution-table
+# concern.
 prime:
-  sunday: [1]
-  monday: [1]
-  tuesday: [1]
-  wednesday: [1]
-  thursday: [1]
-  friday: [1]
-  saturday: [1]
+  sunday:
+    - { number: 118, verses: "1-8" }
+    - { number: 118, verses: "9-16" }
+    - { number: 118, verses: "17-24" }
+    - { number: 118, verses: "25-32" }
+  monday:
+    - { number: 1 }
+    - { number: 2 }
+    - { number: 6 }
+  tuesday:
+    - { number: 7 }
+    - { number: 8 }
+    - { number: 9, verses: "2-19" }
+  wednesday:
+    - { number: 9, verses: "20-39" }
+    - { number: 10 }
+    - { number: 11 }
+  thursday:
+    - { number: 12 }
+    - { number: 13 }
+    - { number: 14 }
+  friday:
+    - { number: 15 }
+    - { number: 16 }
+    - { number: 17, verses: "2-25" }
+  saturday:
+    - { number: 17, verses: "26-51" }
+    - { number: 18 }
+    - { number: 19 }

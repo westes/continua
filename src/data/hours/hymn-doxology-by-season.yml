@@ -1,0 +1,14 @@
+# Which common proper supplies the hymn's final doxology stanza, by season.
+# Advent has no special doxology in the source data — it falls through to
+# perAnnum, same as any season not listed here. Same PLACEHOLDER caveat as
+# prime-chapter-responsory-by-season.yml: real season resolution doesn't
+# exist until milestone 4, so this can't be exercised by real data yet.
+perAnnum: hymn-doxology-per-annum
+bySeason:
+  christmastide: hymn-doxology-nat
+  epiphanytide: hymn-doxology-epi
+  eastertide: hymn-doxology-pasch
+  ascensiontide: hymn-doxology-asc
+  pentecost: hymn-doxology-pent
+  corpus-christi: hymn-doxology-corp
+  sacred-heart: hymn-doxology-heart

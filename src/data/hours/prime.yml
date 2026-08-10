@@ -1,14 +1,70 @@
-# PLACEHOLDER structure: proves the fixed-parts + weekday-variable-psalm
-# pipeline works. The hymn/chapter/prayer textRefs don't resolve to real
-# text yet (data/propers/ doesn't exist yet) — they render as "pending"
-# in the UI. Real content is a separate task from this scaffolding.
+# Ordo verified against Divinum Officium (Monastic Tridentinum 1617),
+# 2026-08-25 run — see src/hours/prime.ts for how each part resolves.
+#
+# Deliberately deviates from that verified source in several places, all by
+# explicit decision:
+#   - The opening Pater/Ave/Credo (said silently before "Deus in adiutorium")
+#     is dropped entirely, to keep the hour shorter.
+#   - The Regula reading and the generic Lectio Brevis are both said, in
+#     sequence — historically these are alternatives (Regula in choir, OR
+#     Lectio Brevis alone outside choir), not both.
+#   - A short responsory ("Christe, Fili Dei vivi") is said after the
+#     chapter — Monastic Prime doesn't actually have one (it goes straight
+#     from chapter to versicle); this is the Roman/secular breviary's,
+#     added by choice. See hours/chapter-responsory.ts for its seasonal
+#     (and eventually per-feast) variants.
+#   - The Athanasian Creed is included on qualifying Sundays even though
+#     Monastic Prime doesn't traditionally have it either — see
+#     hours/prime.ts's 'creed' case for the inclusion rule (a deliberate
+#     simplification of the real, much more tangled rubric).
+#   - The Pretiosa (the versicle/response said right after the Martyrology
+#     in choir) is dropped — a deliberate cut, not an oversight.
+#
+# The capitulum and Preces both use calendar/isSundayOrFeast to pick between
+# a Sunday/feast form and a ferial form (see hours/types.ts's 'by-day-kind').
+# By explicit choice, the ferial Preces are said on *every* ferial day, not
+# just Advent/Lent/vigils/Ember days the way later rubrics restricted them.
+#
+# The dead-commemoration psalm (129, De profundis) is dropped by explicit
+# choice — a deliberate time-saving cut, not an oversight. The intro/close
+# responsory and collect around it are kept.
 id: prime
 parts:
+  - kind: opening-versicle
   - kind: hymn
     textRef: { source: common, id: hymn-iam-lucis-orto-sidere }
   - kind: variable
     resolve: by-weekday
-  - kind: chapter
-    textRef: { source: common, id: prime-chapter-ferial }
+  - kind: creed
+  - kind: closing-antiphon
+  - kind: by-day-kind
+    resolvedKind: chapter
+    sundayOrFeastRef: { source: common, id: prime-capitulum-dominica }
+    ferialRef: { source: common, id: prime-capitulum-feria }
+  - kind: variable
+    resolve: by-season
+  - kind: versicle
+    textRef: { source: common, id: prime-versicle }
+  - kind: by-day-kind
+    resolvedKind: preces
+    sundayOrFeastRef: { source: common, id: prime-preces-dominicales }
+    ferialRef: { source: common, id: prime-preces-feriales }
   - kind: prayer
     textRef: { source: common, id: prime-collect }
+  - kind: martyrology
+  - kind: preces
+    textRef: { source: common, id: prime-chapter-office }
+  - kind: rule-reading
+  - kind: lesson
+    textRef: { source: common, id: prime-lectio-brevis-per-annum }
+    label: Short Reading
+  - kind: preces
+    textRef: { source: common, id: prime-lesson-close }
+  - kind: preces
+    textRef: { source: common, id: prime-conclusio }
+    label: Conclusion
+  - kind: preces
+    textRef: { source: common, id: commemoratio-defunctorum-intro }
+    label: Commemoration of the Dead
+  - kind: preces
+    textRef: { source: common, id: commemoratio-defunctorum-close }

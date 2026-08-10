@@ -261,6 +261,14 @@ button:focus-visible {
   margin: 0 0 var(--space-1);
 }
 
+.ordo-part-citation {
+  font-family: var(--font-ui);
+  font-size: 0.85em;
+  font-style: italic;
+  color: var(--color-brass);
+  margin: 0 0 var(--space-1);
+}
+
 .psalm-verses {
   list-style: none;
   margin: 0;
@@ -288,6 +296,14 @@ button:focus-visible {
   .lang-columns-2 {
     grid-template-columns: 1fr;
   }
+}
+
+.lang-column {
+  /* Hymn stanzas, Preces, and other multi-line propers are authored with
+     meaningful line breaks (poetry lines, one versicle/response per line) —
+     preserve them instead of letting HTML collapse everything to one run-on
+     line, while still wrapping normally on narrow screens (unlike `pre`). */
+  white-space: pre-line;
 }
 
 .lang-column[lang='la'] {

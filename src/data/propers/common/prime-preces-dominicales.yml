@@ -1,0 +1,59 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25
+# run — used on Sundays and feast days (see calendar/isSundayOrFeast); plain
+# ferial days use prime-preces-feriales.yml instead. Real Prime also drops
+# Preces entirely above a certain feast rank — that suppression isn't wired
+# up yet (needs milestone 4's feast-rank data), so today Preces are always
+# shown, just choosing between these two forms.
+id: prime-preces-dominicales
+text:
+  la: |
+    Kýrie, eléison. Christe, eléison. Kýrie, eléison.
+
+    Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum quotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris:
+    V. Et ne nos indúcas in tentatiónem:
+    R. Sed líbera nos a malo.
+
+    Credo in Deum, Patrem omnipoténtem, Creatórem cæli et terræ. Et in Jesum Christum, Fílium ejus únicum, Dóminum nostrum: qui concéptus est de Spíritu Sancto, natus ex María Vírgine, passus sub Póntio Piláto, crucifíxus, mórtuus, et sepúltus: descéndit ad ínferos; tértia die resurréxit a mórtuis; ascéndit ad cælos; sedet ad déxteram Dei Patris omnipoténtis: inde ventúrus est judicáre vivos et mórtuos. Credo in Spíritum Sanctum, sanctam Ecclésiam cathólicam, Sanctórum communiónem, remissiónem peccatórum.
+    V. Carnis resurrectiónem.
+    R. Vitam ætérnam. Amen.
+
+    V. Adjutórium nostrum ✠ in nómine Dómini.
+    R. Qui fecit cælum et terram.
+
+    Confíteor Deo omnipoténti, beátæ Maríæ semper Vírgini, beáto Michaéli Archángelo, beáto Joánni Baptístæ, sanctis Apóstolis Petro et Paulo, beáto Patri nostro Benedícto, et ómnibus Sanctis, quia peccávi nimis, cogitatióne, verbo et ópere: mea culpa, mea culpa, mea máxima culpa. Ídeo precor beátam Maríam semper Vírginem, beátum Michaélem Archángelum, beátum Joánnem Baptístam, sanctos Apóstolos Petrum et Paulum, beátum Patrem nostrum Benedíctum, et omnes Sanctos, oráre pro me ad Dóminum Deum nostrum.
+
+    Misereátur nostri omnípotens Deus, et dimíssis peccátis nostris, perdúcat nos ad vitam ætérnam. Amen.
+
+    Indulgéntiam, ✠ absolutiónem et remissiónem peccatórum nostrórum tríbuat nobis omnípotens et miséricors Dóminus. Amen.
+
+    V. Dignáre, Dómine, die isto.
+    R. Sine peccáto nos custodíre.
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+  en: |
+    Lord have mercy upon us, Christ have mercy upon us, Lord have mercy upon us.
+
+    Our Father, who art in heaven, Hallowed be thy name. Thy kingdom come. Thy will be done on earth as it is in heaven. Give us this day our daily bread. And forgive us our trespasses, as we forgive those who trespass against us.
+    V. And lead us not into temptation:
+    R. But deliver us from evil.
+
+    I believe in God, the Father almighty, Creator of heaven and earth. And in Jesus Christ, his only Son, our Lord; who was conceived by the Holy Ghost, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried: he descended into hell; the third day he arose again from the dead; he ascended into heaven; sitteth at the right hand of God the Father almighty: from thence he shall come to judge the living and the dead. I believe in the Holy Ghost, the holy catholic Church, the communion of Saints, the forgiveness of sins.
+    V. The resurrection of the body.
+    R. And life everlasting. Amen.
+
+    V. Our help is ✠ in the name of the Lord,
+    R. Who made heaven and earth.
+
+    I confess to almighty God, to blessed Mary ever Virgin, to blessed Michael the Archangel, to blessed John the Baptist, to the holy Apostles Peter and Paul, our holy Father Benedict, and to all the Saints, that I have sinned exceedingly in thought, word and deed: through my fault, through my fault, through my most grievous fault. Therefore I beseech blessed Mary ever Virgin, blessed Michael the Archangel, blessed John the Baptist, the holy Apostles Peter and Paul, our holy Father Benedict, and all the Saints, to pray for me to the Lord our God.
+
+    May almighty God have mercy on us, forgive us our sins, and bring us to everlasting life. Amen.
+
+    May the almighty ✠ and merciful Lord grant us pardon, absolution and remission of our sins. Amen.
+
+    V. Vouchsafe, O Lord,
+    R. To keep us this day without sin.
+    V. O Lord, hear my prayer.
+    R. And let my cry come unto thee.
+status:
+  la: verified
+  en: verified

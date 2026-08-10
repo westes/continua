@@ -1,0 +1,22 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25
+# run. The opening "Deus in adiutorium" versicle, said aloud right after the
+# (dropped, see data/hours/prime.yml's note) silent Pater/Ave/Credo.
+#
+# This is the default (per-annum) ending — Septuagesima through Holy
+# Saturday swaps "Allelúja" for "Laus tibi..." instead; see
+# prime-opening-laus-tibi.yml and hours/opening-versicle.ts.
+id: prime-opening-alleluia
+text:
+  la: |
+    V. Deus ✠ in adjutórium meum inténde.
+    R. Dómine, ad adjuvándum me festína.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen. Allelúja.
+  en: |
+    V. O God, ✠ come to my assistance;
+    R. O Lord, make haste to help me.
+    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    R. As it was in the beginning, is now, * and ever shall be, world without end. Amen. Alleluia.
+status:
+  la: verified
+  en: verified

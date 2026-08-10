@@ -1,0 +1,27 @@
+# Verified against Divinum Officium ("Psalmi minor.txt", [Monastic_]
+# section, both languages). One antiphon per weekday, framing that day's
+# whole psalm group. Each string carries its own incipit/full split via an
+# embedded "*" (same convention as the source) — see hours/antiphon.ts for
+# how that's used: incipit (or full, on a Double-or-higher feast) before the
+# first psalm, full text always after the last.
+sunday:
+  la: "Allelúja, * allelúja, allelúja (allelúja)."
+  en: "Alleluia, * alleluia, alleluia (alleluia)."
+monday:
+  la: "Servíte Dómino * in timóre: et exsultáte ei cum tremóre."
+  en: "Serve ye the Lord with fear: * and rejoice unto him with trembling."
+tuesday:
+  la: "Deus judex justus, * fortis et longánimis: numquid irascétur per síngulos dies?"
+  en: "God is a just judge * strong and patient, will He be angry every day?"
+wednesday:
+  la: "Exsúrge, Dómine * non præváleat homo."
+  en: "Arise, O Lord, * let not man be strengthened."
+thursday:
+  la: "Cantábo Dómino, * qui bona tríbuit mihi."
+  en: "I shall sing to the Lord, * who hath given good things to me."
+friday:
+  la: "Bonórum meórum * non indiges, in te sperávi, consérva me, Dómine."
+  en: "Thou hast no need of my goods * preserve me, O Lord, for I have put my trust in thee."
+saturday:
+  la: "Vivit Dóminus, * et benedíctus Deus salútis meæ."
+  en: "The Lord liveth, and blessed be my God, my salvation."

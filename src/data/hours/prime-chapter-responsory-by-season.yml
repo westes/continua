@@ -1,0 +1,20 @@
+# Which common proper (see data/propers/common/prime-chapter-responsory-*)
+# supplies the short responsory's variable verse, by season.
+#
+# PLACEHOLDER keys: calendar/index.ts's season resolution is a hardcoded
+# stub until milestone 4 (see calendar/types.ts's Season comment), so this
+# table can't actually be exercised by real season data yet — it always
+# falls through to "per-annum" (see src/hours/chapter-responsory.ts). The
+# season *names* here are provisional guesses at what milestone 4's
+# temporal-cycle ids will actually be called; expect to revisit the keys
+# once that's real, not just fill in more of them.
+perAnnum: prime-chapter-responsory-per-annum
+bySeason:
+  advent: prime-chapter-responsory-adv
+  christmastide: prime-chapter-responsory-nat
+  epiphanytide: prime-chapter-responsory-epi
+  eastertide: prime-chapter-responsory-pasch
+  ascensiontide: prime-chapter-responsory-asc
+  pentecost: prime-chapter-responsory-pent
+  corpus-christi: prime-chapter-responsory-corp
+  sacred-heart: prime-chapter-responsory-heart

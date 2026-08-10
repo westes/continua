@@ -1,0 +1,8 @@
+# Per-feast override of the chapter responsory's verse — some sanctoral
+# feasts replace the seasonal verse with their own (real Divinum Officium's
+# `winner{'Versum Prima'}` mechanism). Empty until milestone 4's sanctoral
+# propers store exists (LiturgicalDay.occurring is always [] until then, so
+# this table has nothing to key against yet) — see
+# src/hours/chapter-responsory.ts for how a lookup miss falls back to the
+# season table above.
+byFeastId: {}
