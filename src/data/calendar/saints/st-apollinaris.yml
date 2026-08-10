@@ -1,0 +1,14 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live kalendar
+# check (2026-07-23 and again 2029-07-23) -- winner outright, Semiduplex,
+# over St. Liborius (see st-liborius.yml). His own genuine fixed date is
+# the 23rd, not the 24th -- an earlier live-query pass on a year he'd
+# transferred (Jul 23 fell on a Sunday that year) initially mis-recorded
+# him under the 24th; the raw calendar text file
+# (divinum-officium-reference/web/www/Tabulae/Kalendaria/1570.txt) was
+# what caught and corrected this. Own proper collect, no unique antiphon
+# of his own.
+id: st-apollinaris
+name: "St. Apollinaris, Bishop and Martyr"
+rank: semiduplex
+common: common-of-a-martyr-bishop
+propers: "st-apollinaris"

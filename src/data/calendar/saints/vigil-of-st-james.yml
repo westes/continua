@@ -1,0 +1,10 @@
+# A real vigil (see vigil-of-st-lawrence.yml for the pattern this follows).
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# kalendar check (2028-07-24) -- winner outright, matching the fixed
+# 'vigil' FeastClass (no rank query needed). Over St. Christina (see
+# st-christina.yml) when present.
+id: vigil-of-st-james
+name: "Vigil of St. James the Greater"
+rank: vigil
+common: common-of-a-vigil
+propers: null
