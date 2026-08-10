@@ -1,0 +1,13 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live kalendar
+# check (2042-04-25, no Sunday collision) -- winner outright, Duplex II.
+# classis. When this date falls within the Easter Octave instead (see
+# calendar/temporal-categories.yml's privileged-feria-major note), he's
+# merely commemorated, never wins -- the case that helped verify the
+# privileged-feria/privileged-feria-major split. Own proper collect, no
+# unique antiphon of his own. An Evangelist but not an Apostle, so a new
+# category: "common-of-an-evangelist".
+id: st-mark
+name: "St. Mark, Evangelist"
+rank: duplex-2-classis
+common: common-of-an-evangelist
+propers: "st-mark"

@@ -1,0 +1,17 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live kalendar
+# check (2029-04-29 and again 2043-04-29, confirming this is a fixed
+# monastic-calendar reassignment, not year-dependent like St. Francis of
+# Paola's transfer) -- winner outright, Duplex, over St. Catherine of
+# Siena (see st-catherine-of-siena.yml). Own proper collect, no unique
+# antiphon of his own. Genuine methodological note: this app's base Latin
+# source data files the Roman-calendar content for this date (04-29.txt)
+# under St. Peter Martyr instead -- Robert's own real content lives
+# somewhere the monastic-specific delta correctly resolves to, which the
+# live-engine query reaches even though a naive raw-file lookup by MM-DD
+# wouldn't have. Worth remembering if a future month's raw-file check
+# ever seems to contradict what a live query actually shows.
+id: st-robert
+name: "St. Robert, Abbot"
+rank: duplex
+common: common-of-an-abbot
+propers: "st-robert"
