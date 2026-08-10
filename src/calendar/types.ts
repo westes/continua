@@ -36,13 +36,28 @@ export type Weekday =
 // third case shows up and the duplication starts to hurt.
 export type Season = string;
 
-// The old (pre-1955) rank scale, six levels, low to high. Deliberately a
-// closed union rather than an open string like Season — the whole point of
+// The old (pre-1955) rank scale, low to high. Deliberately a closed union
+// rather than an open string like Season — the whole point of
 // calendar/commemorations.ts's decideOccurrence is to compare two of these
 // with explicit, readable rules, which only works if the set of values is
 // fixed and known. See calendar/types.ts's TemporalCategory doc comment for
 // the other half of that comparison.
-export type FeastClass = 'simplex' | 'semiduplex' | 'duplex' | 'duplex-majus' | 'duplex-2-classis' | 'duplex-1-classis';
+//
+// `vigil` sits between `simplex` and `semiduplex` on purpose — it's the
+// same strength as `simplex` for the "does this win against a Sunday"
+// question (both lose and get transferred rather than fighting the day
+// directly), but ranks strictly above `simplex` for the *separate*
+// "two saints collide on the same landing day" comparison
+// (calendar/collision.ts). One ordering serves both; see the design
+// discussion in project history for why that isn't a coincidence.
+export type FeastClass =
+  | 'simplex'
+  | 'vigil'
+  | 'semiduplex'
+  | 'duplex'
+  | 'duplex-majus'
+  | 'duplex-2-classis'
+  | 'duplex-1-classis';
 
 // A day's own precedence class *before* any sanctoral feast is considered —
 // i.e. what the temporal cycle alone says this day is entitled to. This is
@@ -57,16 +72,31 @@ export type FeastClass = 'simplex' | 'semiduplex' | 'duplex' | 'duplex-majus' | 
 // corrections.
 export type TemporalCategory = 'ordinary-feria' | 'privileged-feria' | 'ordinary-sunday' | 'privileged-sunday';
 
-export interface OccurringFeast {
+export interface SanctoralIdentity {
   id: string;
   name: string;
   rank: FeastClass;
-  commemorated: boolean;
-  // Set by calendar/vespers.ts's resolveEveningDay when this feast's First
-  // Vespers is being anticipated this evening (i.e. this OccurringFeast
-  // belongs to *tomorrow*, but is winning tonight's Vespers/Compline).
-  vespersFrom?: 'today' | 'firstVespersOfTomorrow';
 }
+
+export type DayWinner =
+  | { kind: 'temporal'; id: string }
+  | ({
+      kind: 'sanctoral';
+      // Set by calendar/vespers.ts's resolveEveningDay when this feast's
+      // First Vespers is being anticipated this evening (i.e. this feast
+      // belongs to *tomorrow*, but is winning tonight's Vespers/Compline).
+      vespersFrom?: 'firstVespersOfTomorrow';
+    } & SanctoralIdentity);
+
+/**
+ * A day can have more than one of these at once (a transferred feast can
+ * displace a native saint who then also gets commemorated, alongside the
+ * Sunday whose own occurrence pushed the transfer in the first place) —
+ * hence a list, not a single flag. Extensible on purpose: a future
+ * `{ kind: 'octave'; id: string }` variant joins this union once octaves
+ * are modeled, without changing the shape callers already rely on.
+ */
+export type Commemoration = { kind: 'temporal'; id: string } | ({ kind: 'sanctoral' } & SanctoralIdentity);
 
 export interface LiturgicalDay {
   /** ISO date, e.g. "2026-08-09" */
@@ -76,6 +106,8 @@ export interface LiturgicalDay {
   season: Season;
   /** This day's own precedence class, before any sanctoral feast wins or loses against it. */
   temporalCategory: TemporalCategory;
-  /** The feast(s) actually occurring — real, via calendar/feasts.ts + calendar/commemorations.ts. */
-  occurring: OccurringFeast[];
+  /** Whichever office actually governs the day. */
+  winner: DayWinner;
+  /** Everything else commemorated alongside the winner — see the doc comment on Commemoration. */
+  commemorations: Commemoration[];
 }

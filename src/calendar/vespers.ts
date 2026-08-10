@@ -8,7 +8,7 @@
 // Same reconstruction caveat as commemorations.ts/temporal-categories.yml:
 // best-effort, not sourced from a primary text for this era, expect
 // corrections.
-import type { LiturgicalDay, OccurringFeast } from './types';
+import type { LiturgicalDay } from './types';
 import { resolveDay } from './index';
 import { addDays } from './date-math';
 import { easterOffsetOf } from './temporal';
@@ -32,17 +32,12 @@ function isMajorFixedFeastOfTheLord(isoDate: string): boolean {
   return offset === 0 || offset === 39 || offset === 60 || offset === 68; // Easter, Ascension, Corpus Christi, Sacred Heart
 }
 
-function winningFeast(day: LiturgicalDay): OccurringFeast | undefined {
-  return day.occurring.find((feast) => !feast.commemorated);
-}
-
 /** Does this day's evening claim First Vespers at all (for the day *after* it)? */
 function hasFirstVespers(day: LiturgicalDay): boolean {
   if (day.weekday === 'sunday' || isMajorFixedFeastOfTheLord(day.date)) {
     return true;
   }
-  const winner = winningFeast(day);
-  return winner ? isAtLeast(winner.rank, 'duplex-majus') : false;
+  return day.winner.kind === 'sanctoral' && isAtLeast(day.winner.rank, 'duplex-majus');
 }
 
 /** Does this day keep its own Second Vespers regardless of what tomorrow is? */
@@ -50,17 +45,14 @@ function keepsOwnSecondVespers(day: LiturgicalDay): boolean {
   if (day.weekday === 'sunday' || day.temporalCategory === 'privileged-feria' || isMajorFixedFeastOfTheLord(day.date)) {
     return true;
   }
-  const winner = winningFeast(day);
-  return winner ? isAtLeast(winner.rank, 'duplex-2-classis') : false;
+  return day.winner.kind === 'sanctoral' && isAtLeast(day.winner.rank, 'duplex-2-classis');
 }
 
 function anticipated(tomorrow: LiturgicalDay): LiturgicalDay {
-  return {
-    ...tomorrow,
-    occurring: tomorrow.occurring.map((feast) =>
-      feast.commemorated ? feast : { ...feast, vespersFrom: 'firstVespersOfTomorrow' },
-    ),
-  };
+  if (tomorrow.winner.kind === 'sanctoral') {
+    return { ...tomorrow, winner: { ...tomorrow.winner, vespersFrom: 'firstVespersOfTomorrow' } };
+  }
+  return tomorrow;
 }
 
 /**
@@ -68,10 +60,10 @@ function anticipated(tomorrow: LiturgicalDay): LiturgicalDay {
  * Returns `resolveDay(isoDate)` unchanged unless tomorrow has First
  * Vespers *and* today doesn't keep its own Second Vespers regardless — in
  * which case returns tomorrow's `LiturgicalDay`, with `vespersFrom:
- * 'firstVespersOfTomorrow'` set on its winning feast (if any) so callers
+ * 'firstVespersOfTomorrow'` set on its winner (if sanctoral) so callers
  * can tell the difference from an ordinary day.
  *
- * One deliberate exception to that ordering: a day on
+ * One deliberate absolute exception, caught by a failing test: a day on
  * `isMajorFixedFeastOfTheLord`'s list always wins tomorrow's Vespers,
  * *before* checking whether today would otherwise keep its own — Easter
  * displaces even Holy Saturday's privileged-feria status (the classic

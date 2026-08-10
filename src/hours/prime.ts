@@ -21,7 +21,7 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
   switch (part.kind) {
     case 'hymn': {
       const body = resolveCommon(part.textRef.id);
-      const doxology = resolveCommon(getHymnDoxologyId(day.season, day.occurring, 'hymn-doxology-per-annum'));
+      const doxology = resolveCommon(getHymnDoxologyId(day.season, day.winner, 'hymn-doxology-per-annum'));
       return [{ kind: 'hymn', text: appendDoxology(body, doxology) }];
     }
     case 'chapter':
@@ -30,14 +30,14 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
     case 'prayer':
       return [{ kind: part.kind, text: resolveCommon(part.textRef.id) }];
     case 'preces':
-      if (part.omitOnDouble && isDoubleOrHigher(day.occurring)) {
+      if (part.omitOnDouble && isDoubleOrHigher(day.winner)) {
         return [];
       }
       return [{ kind: 'preces', text: resolveCommon(part.textRef.id), label: part.label }];
     case 'lesson':
       return [{ kind: 'lesson', text: resolveCommon(part.textRef.id), label: part.label }];
     case 'opening-versicle':
-      return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.occurring)) }];
+      return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) }];
     case 'creed':
       // Real Divinum Officium's actual inclusion rule tangles together
       // rank, commemorations, and version-specific rubrics in a way that
@@ -45,7 +45,7 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
       // Sunday and not a Double-or-higher feast. Octaves aren't modeled at
       // all yet (milestone 4), so they can't suppress it either, same as
       // isDoubleOrHigher's own limitation.
-      if (day.weekday !== 'sunday' || isDoubleOrHigher(day.occurring)) {
+      if (day.weekday !== 'sunday' || isDoubleOrHigher(day.winner)) {
         return [];
       }
       return [{ kind: 'lesson', text: resolveCommon('athanasian-creed'), label: 'Athanasian Creed' }];
@@ -55,7 +55,7 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
       if (part.resolve === 'by-season') {
         // Currently only the chapter responsory's verse uses this — see
         // hours/chapter-responsory.ts. by-feast-rank doesn't apply to Prime.
-        return [{ kind: 'responsory', text: resolveCommon(getChapterResponsoryId(day.season, day.occurring)) }];
+        return [{ kind: 'responsory', text: resolveCommon(getChapterResponsoryId(day.season, day.winner)) }];
       }
       {
         const psalmRefs = getPsalmsFor('prime', day.weekday);
@@ -63,7 +63,7 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
         // Full text on a Double-or-higher feast, otherwise just the incipit
         // — see hours/antiphon.ts. The full repeat comes later, after the
         // Creed (see 'closing-antiphon'), not tacked onto the last psalm.
-        const opening = isDoubleOrHigher(day.occurring) ? full : incipit;
+        const opening = isDoubleOrHigher(day.winner) ? full : incipit;
         return psalmRefs.map((ref, i) => ({
           kind: 'psalm' as const,
           psalmNumber: ref.number,
@@ -86,7 +86,7 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
     case 'canticle':
       return [{ kind: 'canticle', canticleId: part.canticleId, text: resolveCommon(part.textRef.id) }];
     case 'by-day-kind': {
-      if (part.omitOnDouble && isDoubleOrHigher(day.occurring)) {
+      if (part.omitOnDouble && isDoubleOrHigher(day.winner)) {
         return [];
       }
       const ref = isSundayOrFeast(day) ? part.sundayOrFeastRef : part.ferialRef;

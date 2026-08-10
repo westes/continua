@@ -1,19 +1,24 @@
 // Precedence/occurrence resolution: given a day's temporal-cycle standing
 // (calendar/types.ts's TemporalCategory) and a candidate sanctoral feast (if
-// any), which one is actually kept, and whether the loser is commemorated.
+// any), which one is actually kept, what (if anything) is commemorated
+// alongside it, and whether the candidate needs to be transferred to an
+// adjacent day instead (see calendar/transfer.ts for what actually happens
+// with that signal).
 //
 // Modeled as explicit rules per category, not a numeric-weight comparison
 // like the reference engine's occurrence()/concurrence() — see
-// data/calendar/temporal-categories.yml's header for why. The thresholds
-// below are a best-effort reconstruction of the pre-1955 tradition (partly
-// grounded in General Rubrics §15/§16/§23, though that document is itself a
-// later, differently-numbered edition — see that file's header), not
-// verified against a primary source for this exact era. Expect corrections.
+// data/calendar/temporal-categories.yml's header for why. Verified in part
+// against real dates (the Sunday-vs-Duplex threshold below was corrected
+// after finding St. Anthony Abbot, plain Duplex, outright winning against
+// an ordinary Sunday in the real Monastic 1617 engine — a genuine
+// correction, not a guess); the rest is the result of a design discussion,
+// not yet independently verified against a primary source.
 
-import type { FeastClass, TemporalCategory } from './types';
+import type { Commemoration, DayWinner, FeastClass, SanctoralIdentity, TemporalCategory } from './types';
 
 const FEAST_CLASS_ORDER: FeastClass[] = [
   'simplex',
+  'vigil',
   'semiduplex',
   'duplex',
   'duplex-majus',
@@ -29,47 +34,91 @@ export function isAtLeast(rank: FeastClass, threshold: FeastClass): boolean {
   return compareFeastClass(rank, threshold) >= 0;
 }
 
+/** Vigils belong to the day *before* their feast, so an impeded vigil is
+ * shifted backward rather than forward like everything else — see
+ * calendar/transfer.ts. */
+function transferDirectionOf(rank: FeastClass): 'forward' | 'backward' {
+  return rank === 'vigil' ? 'backward' : 'forward';
+}
+
 export interface OccurrenceResult {
-  winner: 'temporal' | 'sanctoral';
-  commemorated: boolean;
+  /** This day's own resolution, with the candidate absent if it's being transferred. */
+  winner: DayWinner;
+  commemorations: Commemoration[];
+  /** Set when `sanctoral` doesn't win or get commemorated here at all — it
+   * needs to be resolved against an adjacent day instead. */
+  transfer?: { candidate: SanctoralIdentity; direction: 'forward' | 'backward' };
+}
+
+function sanctoralCommemoration(candidate: SanctoralIdentity): Commemoration {
+  return { kind: 'sanctoral', id: candidate.id, name: candidate.name, rank: candidate.rank };
+}
+
+function sanctoralWinner(candidate: SanctoralIdentity): DayWinner {
+  return { kind: 'sanctoral', id: candidate.id, name: candidate.name, rank: candidate.rank };
 }
 
 /**
- * `sanctoral === null` means no feast is assigned to this date at all —
- * temporal wins trivially, nothing to decide.
+ * `temporalId` is this day's own temporal-propers id (see
+ * calendar/temporal-id.ts) — needed so a temporal winner or commemoration
+ * can actually be looked up later (`propers.getTemporalProper`), not just
+ * named "temporal" in the abstract.
  */
-export function decideOccurrence(temporal: TemporalCategory, sanctoral: FeastClass | null): OccurrenceResult {
+export function decideOccurrence(
+  temporal: TemporalCategory,
+  temporalId: string,
+  sanctoral: SanctoralIdentity | null,
+): OccurrenceResult {
+  const temporalWinner: DayWinner = { kind: 'temporal', id: temporalId };
   if (!sanctoral) {
-    return { winner: 'temporal', commemorated: false };
+    return { winner: temporalWinner, commemorations: [] };
   }
 
   switch (temporal) {
     case 'ordinary-feria':
       // An ordinary feria has no standing of its own to defend — any real
       // feast, however low-ranked, is kept in its place.
-      return { winner: 'sanctoral', commemorated: false };
+      return { winner: sanctoralWinner(sanctoral), commemorations: [] };
 
     case 'privileged-feria':
-      // "These ferias are preferred to any feasts whatsoever, and they
-      // admit of no commemoration, except one of the privileged class"
-      // (General Rubrics §23) — read here as: only the very highest class
-      // even gets a mention.
-      return { winner: 'temporal', commemorated: isAtLeast(sanctoral, 'duplex-1-classis') };
+      // Preferred to any feast whatsoever; admits no commemoration except
+      // one of the very highest class.
+      return {
+        winner: temporalWinner,
+        commemorations: isAtLeast(sanctoral.rank, 'duplex-1-classis') ? [sanctoralCommemoration(sanctoral)] : [],
+      };
 
     case 'ordinary-sunday':
-      // An ordinary Sunday yields outright only to the highest class; a
-      // Double of the 2nd Class or a Greater Double is kept as a
-      // commemoration instead of displacing the Sunday; anything lower
-      // isn't even mentioned.
-      if (isAtLeast(sanctoral, 'duplex-1-classis')) {
-        return { winner: 'sanctoral', commemorated: false };
+      if (isAtLeast(sanctoral.rank, 'duplex')) {
+        // Duplex+ wins outright; the Sunday itself is commemorated in return.
+        return { winner: sanctoralWinner(sanctoral), commemorations: [{ kind: 'temporal', id: temporalId }] };
       }
-      return { winner: 'temporal', commemorated: isAtLeast(sanctoral, 'duplex-majus') };
+      if (sanctoral.rank === 'simplex') {
+        // Too minor to warrant its own day, but a plain commemoration
+        // doesn't cheapen it the way it would a Semiduplex.
+        return { winner: temporalWinner, commemorations: [sanctoralCommemoration(sanctoral)] };
+      }
+      // Semiduplex or Vigil: no room here at all, in either direction —
+      // better to preserve the feast whole on another day than downgrade
+      // it to a bare commemoration.
+      return {
+        winner: temporalWinner,
+        commemorations: [],
+        transfer: { candidate: sanctoral, direction: transferDirectionOf(sanctoral.rank) },
+      };
 
     case 'privileged-sunday':
-      // "A Sunday of the 1st class is preferred to any feast whatsoever"
-      // (General Rubrics §15) — never displaced; commemorated only if the
-      // feast is otherwise of the very top ranks.
-      return { winner: 'temporal', commemorated: isAtLeast(sanctoral, 'duplex-2-classis') };
+      if (isAtLeast(sanctoral.rank, 'duplex-majus')) {
+        // Never displaced, but a sufficiently high feast still gets a nod.
+        return { winner: temporalWinner, commemorations: [sanctoralCommemoration(sanctoral)] };
+      }
+      // Below duplex-majus, a privileged Sunday wants nothing at all —
+      // not even the bare commemoration an ordinary Sunday would allow a
+      // Simplex — so everything here transfers.
+      return {
+        winner: temporalWinner,
+        commemorations: [],
+        transfer: { candidate: sanctoral, direction: transferDirectionOf(sanctoral.rank) },
+      };
   }
 }

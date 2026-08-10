@@ -38,13 +38,14 @@ describe('getDayLabel — feast name combination', () => {
     weekday: 'monday',
     season: 'trinitytide',
     temporalCategory: 'ordinary-feria',
-    occurring: [],
+    winner: { kind: 'temporal', id: 'post-pentecost-02' },
+    commemorations: [],
   };
 
   it('shows just the feast name when it wins outright', () => {
     const day: LiturgicalDay = {
       ...base,
-      occurring: [{ id: 'x', name: 'St. Ereden', rank: 'duplex', commemorated: false }],
+      winner: { kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank: 'duplex' },
     };
     expect(getDayLabel(day)).toBe('St. Ereden');
   });
@@ -52,12 +53,12 @@ describe('getDayLabel — feast name combination', () => {
   it('shows both, feast first, when the feast is merely commemorated', () => {
     const day: LiturgicalDay = {
       ...base,
-      occurring: [{ id: 'x', name: 'St. Ereden', rank: 'duplex-2-classis', commemorated: true }],
+      commemorations: [{ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank: 'duplex-2-classis' }],
     };
     expect(getDayLabel(day)).toBe('St. Ereden — Monday in the 2nd week after Trinity');
   });
 
-  it('shows just the temporal label when nothing is occurring at all', () => {
+  it('shows just the temporal label when nothing is commemorated at all', () => {
     expect(getDayLabel(base)).toBe('Monday in the 2nd week after Trinity');
   });
 });

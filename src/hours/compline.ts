@@ -32,7 +32,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       }
       const body = resolveCommon(part.textRef.id);
       const doxology = resolveCommon(
-        getHymnDoxologyId(day.season, day.occurring, 'compline-hymn-doxology-per-annum'),
+        getHymnDoxologyId(day.season, day.winner, 'compline-hymn-doxology-per-annum'),
       );
       return [{ kind: 'hymn', text: appendDoxology(body, doxology) }];
     }
@@ -42,14 +42,14 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'prayer':
       return [{ kind: part.kind, text: resolveCommon(part.textRef.id) }];
     case 'preces':
-      if (part.omitOnDouble && isDoubleOrHigher(day.occurring)) {
+      if (part.omitOnDouble && isDoubleOrHigher(day.winner)) {
         return [];
       }
       return [{ kind: 'preces', text: resolveCommon(part.textRef.id), label: part.label }];
     case 'lesson':
       return [{ kind: 'lesson', text: resolveCommon(part.textRef.id), label: part.label }];
     case 'opening-versicle':
-      return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.occurring)) }];
+      return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) }];
     case 'psalm':
       return [
         {
@@ -64,7 +64,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       ];
     case 'nunc-dimittis': {
       const { incipit, full } = splitNamedAntiphon(getCommonProper('nunc-dimittis-antiphon').text);
-      const opening = isDoubleOrHigher(day.occurring) ? full : incipit;
+      const opening = isDoubleOrHigher(day.winner) ? full : incipit;
       return [
         { kind: 'canticle', canticleId: 'nunc-dimittis', text: resolveCommon('nunc-dimittis'), antiphon: opening },
         { kind: 'antiphon', text: full },

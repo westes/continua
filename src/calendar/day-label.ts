@@ -132,12 +132,11 @@ function temporalLabel(day: LiturgicalDay): string {
  * came from for the three cases.
  */
 export function getDayLabel(day: LiturgicalDay): string {
-  const winner = day.occurring.find((feast) => !feast.commemorated);
-  if (winner) {
-    return winner.name;
+  if (day.winner.kind === 'sanctoral') {
+    return day.winner.name;
   }
 
   const temporal = temporalLabel(day);
-  const commemorated = day.occurring.find((feast) => feast.commemorated);
+  const commemorated = day.commemorations.find((c) => c.kind === 'sanctoral');
   return commemorated ? `${commemorated.name} — ${temporal}` : temporal;
 }

@@ -34,7 +34,7 @@ export function getMarianAntiphonId(day: LiturgicalDay): string {
   if (isCandlemasToHolyWednesday(day.date)) {
     return AVE_REGINA_CAELORUM_ID;
   }
-  return resolveSeasonalPropersId(day.season, day.occurring, bySeason);
+  return resolveSeasonalPropersId(day.season, day.winner, bySeason);
 }
 
 const LABELS: Record<string, string> = {

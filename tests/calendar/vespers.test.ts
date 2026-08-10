@@ -33,8 +33,10 @@ describe('resolveEveningDay', () => {
     // Duplex I classis.
     const day = resolveEveningDay('2026-08-14');
     expect(day.date).toBe('2026-08-15');
-    const winner = day.occurring.find((f) => !f.commemorated);
-    expect(winner?.id).toBe('assumption');
-    expect(winner?.vespersFrom).toBe('firstVespersOfTomorrow');
+    expect(day.winner.kind).toBe('sanctoral');
+    if (day.winner.kind === 'sanctoral') {
+      expect(day.winner.id).toBe('assumption');
+      expect(day.winner.vespersFrom).toBe('firstVespersOfTomorrow');
+    }
   });
 });

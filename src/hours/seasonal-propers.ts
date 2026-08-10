@@ -1,4 +1,4 @@
-import type { Season, OccurringFeast } from '../calendar/types';
+import type { Season, DayWinner } from '../calendar/types';
 
 export interface SeasonalPropersTable {
   perAnnum: string;
@@ -9,18 +9,13 @@ export interface SeasonalPropersTable {
 /**
  * Shared by everything that picks a common-propers id by season with a
  * per-feast override (the chapter responsory's verse, the hymn doxology,
- * and presumably more once milestone 4 lands) — feast overrides win over
- * season, which wins over the "per annum" default. `occurring` is always
- * [] until milestone 4, so today this always returns a season match or
- * perAnnum.
+ * and presumably more once milestone 4 lands) — a feast override wins only
+ * when that feast is the day's actual *winner* (not merely commemorated),
+ * which wins over season, which wins over the "per annum" default.
  */
-export function resolveSeasonalPropersId(
-  season: Season,
-  occurring: OccurringFeast[],
-  table: SeasonalPropersTable,
-): string {
-  for (const feast of occurring) {
-    const override = table.byFeastId?.[feast.id];
+export function resolveSeasonalPropersId(season: Season, winner: DayWinner, table: SeasonalPropersTable): string {
+  if (winner.kind === 'sanctoral') {
+    const override = table.byFeastId?.[winner.id];
     if (override) {
       return override;
     }

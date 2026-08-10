@@ -1,0 +1,10 @@
+# A real vigil, used as the concrete first test case for the vigil rank
+# and its backward-transfer rule (see calendar/commemorations.ts and
+# calendar/index.ts) — vigils are the day *before* their feast (St.
+# Lawrence is Aug 10, so this is Aug 9), and if that date is impeded (e.g.
+# falls on a Sunday), it transfers to the day before instead of forward.
+id: vigil-of-st-lawrence
+name: "Vigil of St. Lawrence"
+rank: vigil
+common: common-of-a-vigil
+propers: null

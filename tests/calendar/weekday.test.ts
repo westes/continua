@@ -31,10 +31,11 @@ describe('weekdayOf', () => {
 });
 
 describe('resolveDay', () => {
-  it('stubs season and occurring until milestone 4', () => {
+  it('resolves a plain Sunday with no occurring feast', () => {
     const day = resolveDay('2026-08-09');
     expect(day.date).toBe('2026-08-09');
     expect(day.weekday).toBe('sunday');
-    expect(day.occurring).toEqual([]);
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-11' });
+    expect(day.commemorations).toEqual([]);
   });
 });
