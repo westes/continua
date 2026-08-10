@@ -12,7 +12,7 @@
 import type { FeastClass } from './types';
 import sanctoralCalendarData from '../data/calendar/sanctoral-calendar.yml';
 
-interface SaintRecord {
+export interface SaintRecord {
   id: string;
   name: string;
   rank: FeastClass;
@@ -38,6 +38,13 @@ export interface SanctoralCandidate {
 }
 
 /** Which saint(s) (if any) are assigned to this date. `isoDate`'s year is ignored — the sanctoral cycle repeats every civil year. */
+/** The saint's full record — used when something more than id/name/rank is
+ * needed, e.g. hours/resolve-common.ts's getDayCollect looking up whether
+ * a real collect has been authored for a winning saint. */
+export function getSaintRecord(id: string): SaintRecord | undefined {
+  return saintsById.get(id);
+}
+
 export function getSanctoralCandidatesFor(isoDate: string): SanctoralCandidate[] {
   const monthDay = isoDate.slice(5);
   const ids = sanctoralCalendar.days[monthDay] ?? [];

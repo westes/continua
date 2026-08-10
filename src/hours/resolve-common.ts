@@ -1,12 +1,38 @@
 import type { ResolvedText } from './types';
-import { getCommonProper } from '../propers';
+import type { LiturgicalDay } from '../calendar/types';
+import type { ProperText } from '../propers';
+import { getCommonProper, getTemporalProper } from '../propers';
+import { getSaintRecord } from '../calendar/feasts';
 import { splitAntiphon } from './antiphon';
+
+function toResolvedText(proper: ProperText): ResolvedText {
+  return { text: proper.text, status: proper.status, citation: proper.citation };
+}
 
 /** Shared by every hour's resolver — looks up a common proper by id and
  * shapes it as a ResolvedText. */
 export function resolveCommon(id: string): ResolvedText {
-  const proper = getCommonProper(id);
-  return { text: proper.text, status: proper.status, citation: proper.citation };
+  return toResolvedText(getCommonProper(id));
+}
+
+/**
+ * The day's own collect — real for the vast majority of days (a temporal
+ * winner always resolves, since all 52 Sunday collects are authored and
+ * ferias inherit the governing Sunday's via calendar/temporal-id.ts), and
+ * honestly "missing" for the handful of days a saint wins outright until
+ * that saint's own propers are authored (`saints/<id>.yml`'s `propers`
+ * field is still `null` for all of them today) — same "resolve as
+ * pending" convention as everywhere else, not a special case to handle.
+ */
+export function getDayCollect(day: LiturgicalDay): ResolvedText {
+  if (day.winner.kind === 'temporal') {
+    return toResolvedText(getTemporalProper(`${day.winner.id}-collect`));
+  }
+  const saint = getSaintRecord(day.winner.id);
+  if (saint?.propers) {
+    return resolveCommon(`${saint.propers}-collect`);
+  }
+  return { text: {}, status: { la: 'missing', en: 'missing' } };
 }
 
 export function verifiedText(text: Partial<Record<string, string>>): ResolvedText {
