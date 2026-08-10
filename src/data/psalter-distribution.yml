@@ -36,3 +36,157 @@ prime:
     - { number: 17, verses: "26-51" }
     - { number: 18 }
     - { number: 19 }
+
+# Editorial redistribution, worked out day-by-day in conversation before
+# Matins/Terce/Sext/None existed as hours — recorded here so the decision
+# survives until milestone 3/5 actually consumes it, not because any code
+# reads `matins`/`terce`/`sext`/`none` yet.
+#
+# The problem: Monastic ferial Matins has 12 psalms/day, which felt like
+# too many; ferial Terce/Sext/None always repeats the same 9 short psalms
+# (119-127) regardless of weekday, which felt monotonous. The fix: cut
+# non-Sunday Matins to 9/day, and give the freed-up capacity to Friday and
+# Saturday's Terce/Sext/None instead of just discarding it.
+#
+# Method (do not re-derive without this context, the reasoning isn't
+# obvious from the numbers alone):
+#   1. Classify every non-Sunday Matins psalm as "must-stay" (>~15 verses,
+#      or blocked because it's half of a split psalm whose other half is
+#      too long — a split psalm always moves as a pair or not at all) or
+#      "could-move" (short and free to relocate). 43 must-stay, 29
+#      could-move, verified against a real Monastic 1617 Tue-Sat run
+#      (Mon/Sat cross-checked directly; the verse-count table this was
+#      built from is in the conversation, not repeated here).
+#   2. Non-Sunday Matins needs 9*6=54 psalms total; only 43 were
+#      naturally must-stay, so the 11 *longest* could-move psalms were
+#      promoted back to must-stay (bringing the total to exactly 54) —
+#      pragmatic, not a liturgical principle: given a forced choice
+#      between two "short enough" psalms, keep the longer one in Matins
+#      and let the truly shortest ones be the ones that actually move.
+#   3. The resulting 54 were resliced into six fresh groups of 9, in
+#      continuous psalm order, *not* respecting original day boundaries —
+#      this is why e.g. Tuesday's Matins below includes psalms that were
+#      originally Monday's. One adjustment was needed by hand: the raw
+#      reslice split Psalm 103 across Friday and Saturday, so Ps 96 (the
+#      shortest non-103 psalm on Friday) was swapped out to Saturday to
+#      let both halves of 103 land together on Friday.
+#   4. The remaining 18 could-move psalms are exactly 2 days' worth of
+#      Terce+Sext+None (3+3+3=9 per day) — enough to replace Friday's and
+#      Saturday's, in the same continuous psalm order, filling Terce then
+#      Sext then None. Not enough to also replace Wednesday's or
+#      Thursday's, which keep the traditional 119-127 unchanged.
+#
+# Sunday, Monday, and Tuesday's Terce/Sext/None are untouched by any of
+# this (still whatever Divinum Officium gives natively — Ps 118 sections
+# for Sunday/Monday, 119-127 for Tuesday) and so aren't recorded here;
+# source them from the reference engine directly when those hours are
+# built, the same as Wednesday/Thursday's unchanged 119-127 below.
+matins:
+  monday:
+    - { number: 32 }
+    - { number: 33 }
+    - { number: 34 }
+    - { number: 36, verses: "1-26" }
+    - { number: 36, verses: "27-40" }
+    - { number: 37 }
+    - { number: 38 }
+    - { number: 39 }
+    - { number: 40 }
+  tuesday:
+    - { number: 43 }
+    - { number: 44 }
+    - { number: 47 }
+    - { number: 48 }
+    - { number: 49 }
+    - { number: 54 }
+    - { number: 55 }
+    - { number: 58 }
+    - { number: 59 }
+  wednesday:
+    - { number: 65 }
+    - { number: 67, verses: "2-19" }
+    - { number: 67, verses: "20-36" }
+    - { number: 68, verses: "2-16" }
+    - { number: 68, verses: "17-37" }
+    - { number: 70 }
+    - { number: 71 }
+    - { number: 72 }
+    - { number: 73 }
+  thursday:
+    - { number: 76 }
+    - { number: 77, verses: "1-35" }
+    - { number: 77, verses: "36-72" }
+    - { number: 78 }
+    - { number: 79 }
+    - { number: 80 }
+    - { number: 82 }
+    - { number: 83 }
+    - { number: 84 }
+  friday:
+    - { number: 85 }
+    - { number: 88, verses: "2-19" }
+    - { number: 88, verses: "20-53" }
+    - { number: 93 }
+    - { number: 95 }
+    - { number: 101 }
+    - { number: 102 }
+    - { number: 103, verses: "1-24" }
+    - { number: 103, verses: "25-35" }
+  saturday:
+    - { number: 96 }
+    - { number: 104, verses: "1-22" }
+    - { number: 104, verses: "23-45" }
+    - { number: 105, verses: "1-31" }
+    - { number: 105, verses: "32-48" }
+    - { number: 106, verses: "1-24" }
+    - { number: 106, verses: "25-43" }
+    - { number: 107 }
+    - { number: 108 }
+  # Sunday deliberately not modeled here — real Sunday Matins is
+  # structurally different (3 nocturns, canticles) and untouched by this
+  # redistribution; source it directly from the reference engine.
+
+terce:
+  wednesday: &gradual-terce
+    - { number: 119 }
+    - { number: 120 }
+    - { number: 121 }
+  thursday: *gradual-terce
+  friday:
+    - { number: 41 }
+    - { number: 45 }
+    - { number: 46 }
+  saturday:
+    - { number: 69 }
+    - { number: 74 }
+    - { number: 81 }
+
+sext:
+  wednesday: &gradual-sext
+    - { number: 122 }
+    - { number: 123 }
+    - { number: 124 }
+  thursday: *gradual-sext
+  friday:
+    - { number: 51 }
+    - { number: 52 }
+    - { number: 53 }
+  saturday:
+    - { number: 86 }
+    - { number: 92 }
+    - { number: 97 }
+
+none:
+  wednesday: &gradual-none
+    - { number: 125 }
+    - { number: 126 }
+    - { number: 127 }
+  thursday: *gradual-none
+  friday:
+    - { number: 57 }
+    - { number: 60 }
+    - { number: 61 }
+  saturday:
+    - { number: 98 }
+    - { number: 99 }
+    - { number: 100 }
