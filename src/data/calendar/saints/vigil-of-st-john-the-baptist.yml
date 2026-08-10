@@ -1,0 +1,10 @@
+# A real vigil (see vigil-of-st-lawrence.yml for the pattern this follows).
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# kalendar check (2035-06-23) -- winner outright, matching the fixed
+# 'vigil' FeastClass (no rank query needed, same as St. Lawrence's and
+# St. Matthias's vigils).
+id: vigil-of-st-john-the-baptist
+name: "Vigil of St. John the Baptist"
+rank: vigil
+common: common-of-a-vigil
+propers: null
