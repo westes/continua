@@ -1,0 +1,13 @@
+# Verified against Divinum Officium (Latin/English Sancti/01-18.txt's own
+# [Ant 1], which cross-references Sancti/02-22.txt for the actual text —
+# the two Chair-of-Peter feasts, Rome and Antioch, share this antiphon).
+# Not yet consumed by any hour's resolver (Terce/Sext/None only branch by
+# weekday today — see hours/terce.ts) — stored ready for whenever a
+# Lauds/Vespers-style commemoration or a feast-id override is built.
+id: chair-of-st-peter-at-rome-antiphon
+text:
+  la: "Tu es pastor óvium, * Princeps Apostolórum, tibi tráditæ sunt claves regni cælórum."
+  en: "Thou art the Shepherd * of the sheep, and the Prince of the Apostles, and unto thee are given the keys of the kingdom of heaven."
+status:
+  la: verified
+  en: verified
