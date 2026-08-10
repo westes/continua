@@ -36,18 +36,35 @@ export type Weekday =
 // third case shows up and the duplication starts to hurt.
 export type Season = string;
 
-// Open-ended on purpose — the actual ranking scheme (double/semidouble/simple,
-// or whatever the finalized rank system turns out to be) is a rule decision for
-// milestone 4, not a type decision for milestone 0.
-export type FeastRank = string;
+// The old (pre-1955) rank scale, six levels, low to high. Deliberately a
+// closed union rather than an open string like Season — the whole point of
+// calendar/commemorations.ts's decideOccurrence is to compare two of these
+// with explicit, readable rules, which only works if the set of values is
+// fixed and known. See calendar/types.ts's TemporalCategory doc comment for
+// the other half of that comparison.
+export type FeastClass = 'simplex' | 'semiduplex' | 'duplex' | 'duplex-majus' | 'duplex-2-classis' | 'duplex-1-classis';
+
+// A day's own precedence class *before* any sanctoral feast is considered —
+// i.e. what the temporal cycle alone says this day is entitled to. This is
+// coarser than `season` on purpose: several different seasons share the
+// same precedence behavior (Advent/Septuagesima/Lent/Passiontide Sundays
+// are all "privileged" in the same way; Epiphanytide/Trinitytide Sundays
+// are all "ordinary" in the same way), and decideOccurrence only cares
+// about that behavior, not which season produced it. See
+// data/calendar/temporal-categories.yml for which season maps to which
+// category — reconstructed from general knowledge of the pre-1955
+// tradition, not yet verified against a primary source, so expect
+// corrections.
+export type TemporalCategory = 'ordinary-feria' | 'privileged-feria' | 'ordinary-sunday' | 'privileged-sunday';
 
 export interface OccurringFeast {
   id: string;
   name: string;
-  rank: FeastRank;
+  rank: FeastClass;
   commemorated: boolean;
-  // Placeholder for the first/second-Vespers overlap wrinkle — unresolved until
-  // milestone 4 actually needs it.
+  // Set by calendar/vespers.ts's resolveEveningDay when this feast's First
+  // Vespers is being anticipated this evening (i.e. this OccurringFeast
+  // belongs to *tomorrow*, but is winning tonight's Vespers/Compline).
   vespersFrom?: 'today' | 'firstVespersOfTomorrow';
 }
 
@@ -57,6 +74,8 @@ export interface LiturgicalDay {
   weekday: Weekday;
   /** Real temporal-cycle season, computed via calendar/temporal.ts. */
   season: Season;
-  /** Always [] until milestone 4 wires up calendar/feasts.ts. */
+  /** This day's own precedence class, before any sanctoral feast wins or loses against it. */
+  temporalCategory: TemporalCategory;
+  /** The feast(s) actually occurring — real, via calendar/feasts.ts + calendar/commemorations.ts. */
   occurring: OccurringFeast[];
 }

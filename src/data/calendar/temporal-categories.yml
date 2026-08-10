@@ -1,0 +1,59 @@
+# A day's precedence category under the temporal cycle alone, before any
+# sanctoral feast is weighed against it — see calendar/types.ts's
+# TemporalCategory doc comment for why this is coarser than `season`, and
+# calendar/commemorations.ts for how it's actually used (decideOccurrence).
+#
+# RECONSTRUCTED, not verified against a primary source: the two rubric
+# documents actually present in the reference engine
+# (divinum-officium-reference/web/www/horas/Help/Rubrics/) are both later
+# editions (~1960) with a different, renumbered classification than the
+# pre-1955 system this app targets. This is a best-effort reconstruction
+# from general knowledge of that older tradition — expect corrections.
+#
+# `bySeason` gives the default for an ordinary Sunday/feria falling in that
+# season. `offsets`/`offsetRanges` (from Easter, same convention as
+# easter-offsets.yml) and `fixedDates` (MM-DD) override that default for
+# specific privileged ferias that don't line up with a whole season.
+#
+# Known gap: Advent Ember days (Wed/Fri/Sat after Dec 13) and September
+# Ember days (Wed/Fri/Sat near the Exaltation of the Cross, Sept 14) are
+# NOT modeled here — both are fixed-calendar "nearest such-and-such a date"
+# rules, not a plain offset, and weren't worth guessing at without a source.
+# Lent's and Pentecost's Ember days *are* modeled, since those are clean
+# Easter offsets.
+bySeason:
+  advent: { sunday: privileged-sunday, feria: ordinary-feria }
+  # Christmastide's ferias are folded into the privileged-feria default for
+  # the whole season as a simplification of "the Octave of Christmas (Dec
+  # 25 - Jan 1) is privileged" — slightly overbroad into Jan 2-5, harmless.
+  christmastide: { sunday: privileged-sunday, feria: privileged-feria }
+  epiphanytide: { sunday: ordinary-sunday, feria: ordinary-feria }
+  septuagesima: { sunday: privileged-sunday, feria: ordinary-feria }
+  lent: { sunday: privileged-sunday, feria: ordinary-feria }
+  passiontide: { sunday: privileged-sunday, feria: ordinary-feria }
+  eastertide: { sunday: privileged-sunday, feria: ordinary-feria }
+  ascensiontide: { sunday: ordinary-sunday, feria: ordinary-feria }
+  pentecost: { sunday: privileged-sunday, feria: ordinary-feria }
+  trinitytide: { sunday: ordinary-sunday, feria: ordinary-feria }
+  # Corpus Christi/Sacred Heart are themselves "feasts of the Lord" that
+  # shouldn't cede to an ordinary saint — modeled here as privileged-feria
+  # (rather than injecting a separate synthetic FeastClass) since with the
+  # small sanctoral calendar this app has, a real clash is unlikely and the
+  # practical effect (temporal wins) is the same either way.
+  corpus-christi: { sunday: ordinary-sunday, feria: privileged-feria }
+  sacred-heart: { sunday: ordinary-sunday, feria: privileged-feria }
+
+offsets:
+  -46: privileged-feria # Ash Wednesday
+  -39: privileged-feria # Lent Ember Wednesday (Wed after 1st Sunday of Lent)
+  -37: privileged-feria # Lent Ember Friday
+  -36: privileged-feria # Lent Ember Saturday
+  48: privileged-feria # Vigil of Pentecost
+
+offsetRanges:
+  - { fromOffset: -6, toOffset: -1, category: privileged-feria } # ferias of Holy Week
+  - { fromOffset: 1, toOffset: 6, category: privileged-feria } # Easter octave
+  - { fromOffset: 50, toOffset: 55, category: privileged-feria } # Pentecost octave (also covers Pentecost's own Ember days)
+
+fixedDates:
+  "12-24": privileged-feria # Vigil of Christmas

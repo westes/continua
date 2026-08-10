@@ -5,8 +5,17 @@
 # (data/calendar/saints/<id>.yml) never changes — it's the same record
 # whichever day points at it.
 #
-# PLACEHOLDER: "01-01" -> example-confessor is fake data proving the shape,
-# not a real calendar assignment. Real sanctoral content-authoring
-# (a pre-1910-leaning calendar, per the plan) is a separate task.
+# A small, growable subset, not a full year — see the plan discussion this
+# came out of. Each entry's rank is verified directly against Divinum
+# Officium (see the saint's own file for which one) rather than
+# reconstructed from memory, unlike data/calendar/temporal-categories.yml's
+# privileged-day lists. `example-confessor` is deliberately NOT mapped to
+# any day here — it's fictional, kept only to document the record shape.
 days:
-  "01-01": [example-confessor]
+  "08-10": [st-lawrence]
+  "08-15": [assumption]
+  "08-28": [st-augustine]
+  "09-08": [nativity-bvm]
+  "09-29": [st-michael]
+  "11-01": [all-saints]
+  "12-08": [immaculate-conception]

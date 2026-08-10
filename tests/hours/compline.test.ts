@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { resolveOrdo } from '../../src/hours';
 
-const MONDAY = '2026-08-10';
-const SUNDAY = '2026-08-09';
+const MONDAY = '2026-06-15';
+const SUNDAY = '2026-06-14';
 
 describe('resolveOrdo("compline", ...)', () => {
   it('is implemented, with fixed psalms 4, 90, 133 regardless of weekday', () => {

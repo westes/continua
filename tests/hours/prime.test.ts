@@ -5,7 +5,7 @@ import { resolveOrdo } from '../../src/hours';
 // whole psalms (1, 2, 6), the first of which (Psalm 1) has real sample
 // content in data/psalms/001.yml, so these tests can check real verse data
 // without needing every psalm authored.
-const MONDAY = '2026-08-10';
+const MONDAY = '2026-06-15';
 const SUNDAY = '2026-08-09';
 
 describe('resolveOrdo("prime", ...)', () => {

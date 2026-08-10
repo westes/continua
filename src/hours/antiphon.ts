@@ -1,4 +1,5 @@
 import type { OccurringFeast } from '../calendar/types';
+import { isAtLeast } from '../calendar/commemorations';
 
 export interface SplitAntiphon {
   incipit: string;
@@ -30,13 +31,13 @@ export function splitAntiphon(text: string): SplitAntiphon {
  * said before the psalms (the full text is always said after, regardless
  * of rank).
  *
- * FeastRank is an open string with no defined hierarchy yet (see
- * calendar/types.ts), and `occurring` is always [] until milestone 4 wires
- * up real feast data — so this can only ever return false today. That's
- * the *correct* answer for every day currently reachable (a plain ferial
- * day is below Double), not a stub papering over missing logic; it starts
- * doing real work the moment FeastRank has an ordering to compare against.
+ * Only asks whether the day's *winning* feast (not a merely-commemorated
+ * one) is Double-or-higher — a privileged Sunday with nothing occurring,
+ * or a commemorated low-rank saint, both correctly return false here. A
+ * Sunday being "privileged" doesn't by itself make this true; that's a
+ * `TemporalCategory` question, not a `FeastClass` one.
  */
-export function isDoubleOrHigher(_occurring: OccurringFeast[]): boolean {
-  return false;
+export function isDoubleOrHigher(occurring: OccurringFeast[]): boolean {
+  const winner = occurring.find((feast) => !feast.commemorated);
+  return winner ? isAtLeast(winner.rank, 'duplex') : false;
 }
