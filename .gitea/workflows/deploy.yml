@@ -30,14 +30,18 @@ jobs:
         #
         # The runner shares the host's Docker daemon, so a hardcoded host
         # port (this used to be -p 8080:80) is contended across every repo's
-        # CI on the same host, not scoped to this job — hence the previous
+        # CI on the same host, not scoped to this job — hence the earlier
         # "port already allocated" failures even after cleaning up any
-        # leftover vu-smoke container. Curl the container's own bridge IP
-        # instead, so no host port is published at all.
+        # leftover vu-smoke container. Curl the container's own IP instead,
+        # so no host port is published at all — but this job's own sandbox
+        # container lives on the "reground" network, not the default bridge,
+        # so vu-smoke has to join that same network or the two can't reach
+        # each other at all (that's why the first attempt at this just hung
+        # for 2 minutes before timing out, rather than failing fast).
         run: |
           docker rm -f vu-smoke 2>/dev/null || true
           docker build -t vu:ci .
-          docker run -d --name vu-smoke vu:ci
+          docker run -d --name vu-smoke --network reground vu:ci
           sleep 1
           container_ip=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' vu-smoke)
           curl -sf "http://${container_ip}/" | grep -q 'vu — Divine Office'
