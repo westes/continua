@@ -28,17 +28,19 @@ jobs:
         # served correctly under the /vu/ base path" — this is that check,
         # run against the exact image that ships.
         #
-        # The shell runs with `-e`, so a failed curl/grep on a past run
-        # could skip `docker stop`/`rm` and leave vu-smoke bound to 8080,
-        # blocking every run after it — clean up any leftover first,
-        # unconditionally, rather than relying on the previous run's own
-        # cleanup having succeeded.
+        # The runner shares the host's Docker daemon, so a hardcoded host
+        # port (this used to be -p 8080:80) is contended across every repo's
+        # CI on the same host, not scoped to this job — hence the previous
+        # "port already allocated" failures even after cleaning up any
+        # leftover vu-smoke container. Curl the container's own bridge IP
+        # instead, so no host port is published at all.
         run: |
           docker rm -f vu-smoke 2>/dev/null || true
           docker build -t vu:ci .
-          docker run -d --name vu-smoke -p 8080:80 vu:ci
+          docker run -d --name vu-smoke vu:ci
           sleep 1
-          curl -sf http://localhost:8080/ | grep -q 'vu — Divine Office'
+          container_ip=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' vu-smoke)
+          curl -sf "http://${container_ip}/" | grep -q 'vu — Divine Office'
           docker stop vu-smoke
           docker rm vu-smoke
 
