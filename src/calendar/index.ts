@@ -1,21 +1,20 @@
 import type { LiturgicalDay } from './types';
 import { weekdayOf } from './weekday';
+import { resolveSeason } from './temporal';
 
 /**
  * Resolves everything about a given day *except* hour content — weekday,
- * season, and any occurring feasts. Season and occurring feasts are stubs
- * until calendar/easter.ts and calendar/feasts.ts land at milestone 4;
- * hours that only need weekday (Prime, Compline, Terce, Sext, None) can
- * already rely on this fully.
+ * season, and any occurring feasts. Season is real (see
+ * calendar/temporal.ts); occurring feasts are still a stub until
+ * calendar/feasts.ts lands (the sanctoral calendar — which saint, if any,
+ * is kept on a given day, and Double-vs-not ranking — is a separate,
+ * larger project from temporal-cycle season resolution).
  */
 export function resolveDay(isoDate: string): LiturgicalDay {
   return {
     date: isoDate,
     weekday: weekdayOf(isoDate),
-    // Placeholder string, not a real resolution — real season/temporal-id
-    // lookup (data/calendar/easter-offsets.yml + fixed-date-calendar.yml)
-    // lands at milestone 4.
-    season: 'trinitytide',
+    season: resolveSeason(isoDate),
     occurring: [],
   };
 }

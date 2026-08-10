@@ -1,18 +1,30 @@
 # Offsets in days from Easter Sunday (0). Negative = before Easter, positive
 # = after. Covers the whole Easter-anchored span: Septuagesima through the
-# last Sunday of Trinitytide. A temporal-id's *name* (and hence whether it
-# reads "trinitytide" or "time after pentecost") lives here as data, not as
-# a compiled TS enum — see calendar/types.ts's Season type.
+# last Sunday of Trinitytide. A season's *name* (and hence whether it reads
+# "trinitytide" or "time after pentecost") lives here as data, not as a
+# compiled TS enum — see calendar/types.ts's Season type.
 #
-# PLACEHOLDER: only a handful of anchor points, to prove the shape. The full
-# set of Sundays/ferias between anchors is content-authoring work for
-# milestone 4.
-offsets:
-  -63: septuagesima-sunday
-  -56: sexagesima-sunday
-  -49: quinquagesima-sunday
-  -46: ash-wednesday
-  0: easter-sunday
-  39: ascension-thursday
-  49: pentecost-sunday
-  56: trinity-sunday
+# `ranges` gives the season that starts at each offset and runs until the
+# next range's offset (or, for the last entry, until Advent cuts it off —
+# see calendar/temporal.ts). `days` overrides a single specific offset with
+# its own one-day season, for movable feasts that aren't a whole season
+# but that other by-season tables (prime-chapter-responsory-by-season.yml,
+# hymn-doxology-by-season.yml) already reference by name.
+ranges:
+  - season: septuagesima
+    fromOffset: -63
+  - season: lent
+    fromOffset: -46
+  - season: passiontide
+    fromOffset: -14
+  - season: eastertide
+    fromOffset: 0
+  - season: ascensiontide
+    fromOffset: 39
+  - season: pentecost
+    fromOffset: 49
+  - season: trinitytide
+    fromOffset: 56
+days:
+  60: corpus-christi # Thursday after Trinity Sunday
+  68: sacred-heart # Friday after the octave of Corpus Christi
