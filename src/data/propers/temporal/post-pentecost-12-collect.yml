@@ -1,0 +1,27 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+#
+# A real saint outranks this Sunday on every candidate year checked (2020-
+# 2060), so this was read directly from the Latin/English Tempora source
+# file plus the standard closing-formula macro
+# (Psalterium/Common/Prayers.txt's [Per Dominum]/[Per eumdem]) rather than
+# a live date query.
+id: post-pentecost-12-collect
+text:
+  la: |
+    Orémus.
+    Omnípotens et miséricors Deus, de cujus múnere venit, ut tibi a fidélibus tuis digne et laudabíliter serviátur: tríbue, quǽsumus, nobis; ut ad promissiónes tuas sine offensióne currámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Let us pray.
+    Almighty and merciful God, of Whose only gift it cometh that thy faithful people do unto thee true and laudable service, grant, we beseech thee, that we may so faithfully serve thee in this life, that we fail not finally to attain thy heavenly promises.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified
