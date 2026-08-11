@@ -13,6 +13,7 @@ import type { LiturgicalDay } from './types';
 import { easterSunday } from './easter';
 import { adventStart, firstSundayStrictlyAfter, sundayOnOrBefore } from './temporal';
 import { addDays, daysBetween, toIsoDate } from './date-math';
+import { getTemporalFeastRecord } from './temporal-feasts';
 
 function capitalize(text: string): string {
   return text.charAt(0).toUpperCase() + text.slice(1);
@@ -134,6 +135,16 @@ function temporalLabel(day: LiturgicalDay): string {
 export function getDayLabel(day: LiturgicalDay): string {
   if (day.winner.kind === 'sanctoral') {
     return day.winner.name;
+  }
+
+  // A named temporal feast (Christmas, Pentecost, Marian Saturday, ...)
+  // shows its own name rather than the ordinal week label — same
+  // "winner displaces, doesn't combine" rule a sanctoral winner gets
+  // above. Most temporal ids don't have a record at all (see
+  // temporal-feasts.ts) and fall through to the ordinal label as before.
+  const namedFeast = getTemporalFeastRecord(day.winner.id);
+  if (namedFeast) {
+    return namedFeast.name;
   }
 
   const temporal = temporalLabel(day);

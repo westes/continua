@@ -1,9 +1,10 @@
 import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart, ResolvedText } from './types';
 import type { LiturgicalDay, Weekday } from '../calendar/types';
-import { resolveDay } from '../calendar';
+import { resolveDay, isAtLeast } from '../calendar';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getCanticle } from './lauds-canticles';
+import { getLaudsPsalmodyOverride } from './lauds-psalmody-overrides';
 import { getOpeningVersicleId } from './opening-versicle';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { isDoubleOrHigher } from './antiphon';
@@ -18,16 +19,40 @@ interface LaudsGroup {
   psalms: number[];
   antiphon: BilingualText;
 }
-interface LaudsWeekdayAntiphons {
+/** Shared by both the plain per-weekday default (data/hours/lauds-
+ * antiphons.yml) and a duplex-majus+/Marian-Saturday override (hours/
+ * lauds-psalmody-overrides.ts) — resolvePsalmody doesn't care which one
+ * produced it. */
+interface PsalmodyBlock {
   groups: LaudsGroup[];
   // `split`: verse count of the canticle's first part, when it's said in
   // two pieces (own Gloria Patri each) rather than continuously — see
-  // lauds-antiphons.yml's saturday.canticle comment. Absent every other
-  // weekday.
+  // lauds-antiphons.yml's saturday.canticle comment. Only Saturday's
+  // plain default uses this today; no override needs it yet.
   canticle: { id: string; antiphon: BilingualText; split?: number };
   laudate: { antiphon: BilingualText };
 }
-const laudsAntiphons = laudsAntiphonsData as Record<Weekday, LaudsWeekdayAntiphons>;
+const laudsAntiphons = laudsAntiphonsData as Record<Weekday, PsalmodyBlock>;
+
+/**
+ * A duplex-majus+ saint's own proper psalmody (per-feast, not per-Common —
+ * explicit choice), or Marian Saturday's (unconditional whenever it wins,
+ * no rank threshold — it isn't "a saint" competing with the weekday
+ * default the way one is). Falls back to `undefined` — the plain weekday
+ * default — for a duplex-majus+ saint with no override authored yet, same
+ * honest incremental-content convention as everywhere else in this
+ * codebase; it's not gated behind whether content exists, just behind
+ * whether it's *eligible* to override at all.
+ */
+function getPsalmodyOverrideFor(day: LiturgicalDay): PsalmodyBlock | undefined {
+  if (day.winner.kind === 'temporal' && day.winner.id === 'marian-saturday') {
+    return getLaudsPsalmodyOverride('marian-saturday');
+  }
+  if (day.winner.kind === 'sanctoral' && isAtLeast(day.winner.rank, 'duplex-majus')) {
+    return getLaudsPsalmodyOverride(day.winner.id);
+  }
+  return undefined;
+}
 
 // Mon-Fri share one capitulum verbatim (confirmed against the live engine
 // — see lauds-capitulum-ferial.yml); Sunday and Saturday each have their
@@ -92,9 +117,10 @@ function canticleText(canticleId: string, slice?: [number, number]): ResolvedTex
 }
 
 /** Ps 66 through the Laudate psalms — see hours/types.ts's 'lauds-psalmody'
- * doc comment for the scope and the known Commune-override gap. */
+ * doc comment for the scope, and getPsalmodyOverrideFor above for when the
+ * plain weekday default below gets substituted. */
 function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
-  const wd = laudsAntiphons[day.weekday];
+  const wd = getPsalmodyOverrideFor(day) ?? laudsAntiphons[day.weekday];
   const opening = (antiphon: BilingualText) => {
     const { incipit, full } = splitNamedAntiphon(antiphon);
     return isDoubleOrHigher(day.winner) ? full : incipit;
@@ -177,15 +203,25 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       return [{ kind: 'preces', text: resolveCommon(part.textRef.id), label: part.label }];
     case 'day-collects':
       return getDayCollects(day).map((text) => ({ kind: 'prayer' as const, text }));
-    case 'suffrages':
+    case 'suffrages': {
       if (part.omitOnDouble && isDoubleOrHigher(day.winner)) {
         return [];
       }
-      return SUFFRAGES.map((id) => ({
+      // Confirmed live: Our Lady's Saturday drops both "Of the Holy Cross"
+      // and "Of the Blessed Virgin Mary" (the latter redundant with the
+      // day's own theme; the former for reasons the reference engine
+      // doesn't explain and this doesn't try to re-derive), keeping only
+      // the Apostles and Peace suffrages.
+      const ids =
+        day.winner.kind === 'temporal' && day.winner.id === 'marian-saturday'
+          ? SUFFRAGES.filter((id) => id !== 'lauds-suffrage-cross' && id !== 'lauds-suffrage-bvm')
+          : SUFFRAGES;
+      return ids.map((id) => ({
         kind: 'preces' as const,
         text: resolveCommon(id),
         label: SUFFRAGE_LABELS[id],
       }));
+    }
     case 'versicle':
     case 'chapter':
     case 'responsory':

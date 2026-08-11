@@ -58,12 +58,13 @@ describe('resolveOrdo("lauds", ...)', () => {
   });
 
   it("resolves Saturday's own psalmody: only one weekday psalm (142), and the Canticle of Moses said in two pieces (RB 13's own division), one shared antiphon framing both", () => {
-    // Any Saturday works here: lauds-psalmody doesn't yet model the
-    // Commune/feast override real practice would apply on a Marian-
-    // Sabbato Saturday (see hours/types.ts's 'lauds-psalmody' doc comment)
-    // -- the plain weekday distribution is always used, so this is
-    // exercising the real, current behavior, not a stand-in for it.
-    const ordo = resolveOrdo('lauds', '2026-06-20');
+    // Needs a Saturday that ISN'T Our Lady's Saturday, which now wins
+    // (and substitutes its own psalmody) on every ordinary-feria Saturday
+    // — see calendar/index.ts's applyMarianSaturday and tests/calendar/
+    // marian-saturday.test.ts. A privileged-feria Saturday (Lenten Ember
+    // Saturday, 2026-02-28) has real standing of its own that Marian
+    // Saturday doesn't touch, so it still shows the plain weekday default.
+    const ordo = resolveOrdo('lauds', '2026-02-28');
     const psalmNumbers = ordo.parts
       .filter((p) => p.kind === 'psalm')
       .map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
@@ -139,10 +140,10 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(canticle?.kind === 'canticle' ? canticle.antiphon?.status?.la : undefined).toBeUndefined();
   });
 
-  it("resolves a real Benedictus antiphon on St. Lawrence's own octave day, from the saint's already-authored proper", () => {
+  it("resolves a real Benedictus antiphon on St. Lawrence's own day, from the saint's already-authored proper", () => {
     const ordo = resolveOrdo('lauds', '2026-08-10'); // St. Lawrence's own day
     const canticle = ordo.parts.find((p) => p.kind === 'canticle' && p.canticleId === 'benedictus');
-    expect(canticle?.kind === 'canticle' ? canticle.antiphon?.text.la : undefined).toContain('Levíta Lauréntius');
+    expect(canticle?.kind === 'canticle' ? canticle.antiphon?.text.la : undefined).toContain('In cratícula');
   });
 
   it('includes the short litany (Kyrie + Our Father) right after the Benedictus, before the day collect', () => {

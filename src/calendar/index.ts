@@ -101,8 +101,54 @@ export function resolveDay(isoDate: string): LiturgicalDay {
   }
 
   winner = applyOctaves(isoDate, winner, commemorations);
+  winner = applyMarianSaturday(isoDate, weekday, temporalCategory, winner, commemorations);
 
   return { date: isoDate, weekday, season, temporalCategory, winner, commemorations };
+}
+
+/**
+ * Layered on top of everything above, same spirit as applyOctaves: never
+ * changes decideOccurrence's own rules, just relabels the result on a free
+ * Saturday. Real standing of its own (per direct instruction, mirrors
+ * privileged-feria-minor exactly) — a Semiduplex-or-higher saint still
+ * wins outright and this never applies; a Simplex (or Vigil) saint loses
+ * to it and is commemorated instead, same as an Advent feria would demote
+ * one. `ordinary-feria` is the only category this touches — every
+ * privileged season/day (Ember Saturdays, Advent, Lent, ...) already has
+ * its own real standing and keeps it untouched.
+ *
+ * The relabel (not just leaving `winner` as the plain temporal id) is
+ * what lets getDayLabel/getBenedictusAntiphon/getDayCollects/getLaudsPsalmodyOverride
+ * all recognize this day as "Our Lady's Saturday" rather than an
+ * anonymous feria — see data/calendar/temporal-feasts/marian-saturday.yml.
+ *
+ * Also gated on no octave being active: `ordinary-feria` isn't only "a
+ * genuinely free Saturday" — Pentecost's own Ember Saturday is
+ * deliberately classified this way too (see data/calendar/temporal-
+ * categories.yml), specifically so the octave layer above can reach it.
+ * Found via a real regression: without this gate, Pentecost's Ember
+ * Saturday got relabeled "Our Lady's Saturday" right out from under the
+ * octave commemoration that's supposed to govern it.
+ */
+function applyMarianSaturday(
+  isoDate: string,
+  weekday: ReturnType<typeof weekdayOf>,
+  temporalCategory: TemporalCategory,
+  winner: DayWinner,
+  commemorations: Commemoration[],
+): DayWinner {
+  if (weekday !== 'saturday' || temporalCategory !== 'ordinary-feria' || activeOctavesFor(isoDate).length > 0) {
+    return winner;
+  }
+  const MARIAN_SATURDAY: DayWinner = { kind: 'temporal', id: 'marian-saturday' };
+  if (winner.kind === 'temporal') {
+    return MARIAN_SATURDAY;
+  }
+  if (isAtLeast(winner.rank, 'semiduplex')) {
+    return winner;
+  }
+  commemorations.push({ kind: 'sanctoral', id: winner.id, name: winner.name, rank: winner.rank });
+  return MARIAN_SATURDAY;
 }
 
 /**

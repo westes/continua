@@ -1,0 +1,7 @@
+# Not a real calendar date the way Christmas/Pentecost are — this record
+# exists purely so getDayLabel (and getBenedictusAntiphon/getDayCollects,
+# via the same {kind:'temporal', id:'marian-saturday'} winner identity)
+# have a real name to show. See calendar/index.ts's applyMarianSaturday
+# for how a day actually becomes this.
+id: marian-saturday
+name: "Our Lady's Saturday"

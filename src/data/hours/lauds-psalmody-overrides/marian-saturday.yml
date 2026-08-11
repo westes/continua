@@ -1,0 +1,29 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Sanctæ Mariæ Sabbato (2026-09-05). Applies unconditionally
+# whenever Marian Saturday wins the day (see calendar/index.ts's
+# applyMarianSaturday) -- not gated by the duplex-majus+ rank threshold
+# the sanctoral overrides use, since Marian Saturday isn't itself ranked
+# in competition with the weekday default the way a saint is.
+id: marian-saturday
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Dum esset Rex * in accúbitu suo, nardus mea dedit odórem suavitátis."
+      en: "While the King was at his repose, * my spikenard sent forth the odour thereof."
+  - psalms: [99]
+    antiphon:
+      la: "Læva ejus * sub cápite meo, et déxtera illíus amplexábitur me."
+      en: "His left hand is under my head, * and his right hand shall embrace me."
+  - psalms: [62]
+    antiphon:
+      la: "Nigra sum, * sed formósa, fíliæ Jerúsalem; ídeo diléxit me Rex, et introdúxit me in cubículum suum."
+      en: "I am black, * but beautiful, O ye daughters of Jerusalem; therefore hath the King loved me, and brought me into his chamber."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Jam hiems tránsiit, * imber ábiit et recéssit: surge, amíca mea, et veni."
+    en: "For winter is now past, * the rain is over and gone: arise, my love, and come."
+laudate:
+  antiphon:
+    la: "Speciósa * facta es et suávis in delíciis tuis, sancta Dei Génitrix."
+    en: "Beautiful and sweet * thou art become in thy delights, O holy Mother of God."

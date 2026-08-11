@@ -89,13 +89,16 @@ export type HourPart =
   // number of antiphoned psalm groups, then a weekday-variable OT canticle,
   // then the Laudate psalms under one more shared antiphon) doesn't fit any
   // existing part kind, and hardcoding psalm numbers in lauds.yml can't
-  // work since they differ by weekday. Known, deliberate gap: does NOT
-  // model the Commune/feast override of this whole block (real practice
-  // substitutes an entirely different set of psalms+antiphons+canticle on
-  // a Semiduplex-or-higher day) — every day currently gets the plain
-  // ferial weekday distribution regardless of who wins. Fixing that is a
-  // separate, larger propers-authoring task (a full Common-of-Saints psalm
-  // set per Common), not started yet.
+  // work since they differ by weekday. A duplex-majus-or-higher sanctoral
+  // winner, or Marian Saturday, substitutes its own proper psalmody
+  // instead — see hours/lauds-psalmody-overrides.ts's
+  // getPsalmodyOverrideFor, gated by direct instruction at duplex-majus+
+  // rather than every rank real historical practice would (most saints
+  // were added in ways that override the daily psalms — not wanted here).
+  // Authored per-feast, not per-Common (explicit choice) — known,
+  // deliberate gap: most duplex-majus+ saints across the year don't have
+  // one of these authored yet and fall back to the plain weekday default
+  // until they do (same incremental-content pattern as everywhere else).
   | { kind: 'lauds-psalmody' }
   // Lauds only. The weekday-resolved chapter/short-responsory/hymn/closing
   // versicle bundle that follows the psalmody — see hours/lauds.ts and

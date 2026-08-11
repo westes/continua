@@ -1,9 +1,14 @@
-# Verified against Divinum Officium (Latin/English Sancti/08-10.txt's own
-# [Ant 1] — the Lauds-hour antiphon, not Terce's.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Lawrence's own day (2026-08-10) -- the Benedictus
+# antiphon. Corrects an earlier version of this file, which had been
+# sourced from the Roman/secular rite's Sancti/08-10.txt's own [Ant 1]
+# instead: real, wrong text for this project's Monastic base (found while
+# building the duplex-majus+ Lauds psalmody override, which needed a real
+# worked example and so needed this checked directly rather than assumed).
 id: st-lawrence-antiphon
 text:
-  la: "Levíta Lauréntius * bonum opus operátus est, qui per signum crucis cæcos illuminávit, et thesáuros Ecclésiæ dedit paupéribus."
-  en: "Lawrence the Deacon * performed a pious act by giving sight to the blind through the Sign of the Cross, and by bestowing on the poor the riches of the Church."
+  la: "In cratícula * te Deum non negávi, et ad ignem applicátus te Christum conféssus sum: probásti cor meum, et visitásti nocte: igne me examinásti, et non est invénta in me iníquitas."
+  en: "Upon the bars I denied thee not, O God. * And when they put me to the fire, I acknowledged thee to be the Lord, O Christ. Thou hast proved mine heart, and visited it by night; Thou hast tried me with fire, and found no wickedness in me."
 status:
   la: verified
   en: verified
