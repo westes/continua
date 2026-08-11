@@ -1,0 +1,16 @@
+# A monastic-calendar-specific reassignment, not a mistake: the base
+# Tridentine table (1570.txt) has St. Marcus, Pope, as Oct 7's primary,
+# but the monastic-specific delta table (M1617.txt) overrides that day
+# with this saint instead, demoting Marcus to a commemoration (see
+# st-marcus.yml) -- confirmed live (Monastic Tridentinum 1617,
+# 2025-10-07 and 2026-10-07), winning outright at Duplex. Same class of
+# finding as April's St. Robert/St. Catherine and September's St.
+# Nicholas of Tolentino reassignments. No unique collect: the raw file at
+# this MM-DD slot (Sancti/10-07.txt) is actually Our Lady of the Rosary's
+# (a later, 1573+ feast) -- a live prayTertia query for the Monastic 1617
+# track returns no Oratio at all, confirming propers: null is correct.
+id: st-justina
+name: "St. Justina, Virgin and Martyr"
+rank: duplex
+common: common-of-a-virgin-martyr
+propers: null

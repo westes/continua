@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# kalendar check on a clean weekday (2027-10-25, a Monday) -- wins
+# outright at Simplex. On a Saturday this date is instead outranked by
+# the generic "Sanctae Mariae Sabbato" votive (confirmed re-checking
+# 2025-10-25, a Saturday, where the votive won instead) -- an artifact of
+# the tested weekday, same pattern as several saints in August. Own
+# proper collect, no unique antiphon of their own.
+id: ss-chrysanthus-and-daria
+name: "Ss. Chrysanthus and Daria, Martyrs"
+rank: simplex
+common: common-of-several-martyrs
+propers: "ss-chrysanthus-and-daria"

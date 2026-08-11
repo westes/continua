@@ -1,0 +1,14 @@
+# A monastic-calendar-specific addition: absent from the base Tridentine
+# table (1570.txt) entirely, added by the monastic-specific delta table
+# (M1617.txt) -- fittingly, St. Gall (founder of the abbey of St. Gallen)
+# is one of the most distinctly monastic saints in this whole pull.
+# Verified live (Monastic Tridentinum 1617, 2025-10-16) -- winner
+# outright, Duplex, alone. No unique collect: the raw file at this MM-DD
+# slot (Sancti/10-16.txt) is actually St. Hedwig's (a later addition to
+# this filename slot) -- a live prayTertia query for the Monastic 1617
+# track returns no Oratio at all, confirming propers: null is correct.
+id: st-gall
+name: "St. Gall, Abbot"
+rank: duplex
+common: common-of-an-abbot
+propers: null
