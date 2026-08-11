@@ -1,0 +1,23 @@
+# Verified against Divinum Officium (web/www/horas/Latin+English/Sancti/
+# 11-01.txt) directly -- the live prayTertia query's English side didn't
+# render an Oratio translation for this date for reasons not fully
+# understood (the Latin side rendered correctly; every other saint this
+# pull has queried the same way), so the raw source files were read
+# directly instead this one time. The closing formula ("$Per Dominum" in
+# the raw file) is expanded to the standard form used throughout this
+# project, matching every other Duplex-rank collect.
+id: all-saints-collect
+text:
+  la: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui nos ómnium Sanctórum tuórum mérita sub una tribuísti celebritáte venerári: quǽsumus; ut desiderátam nobis tuæ propitiatiónis abundántiam, multiplicátis intercessóribus, largiáris.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    ℟. Amen.
+  en: |
+    Let us pray.
+    Almighty, eternal God, Who granted us to honor the merits of all Thy Saints in a single solemn festival, bestow on us, we beseech Thee, through their manifold intercession, that abundance of Thy mercy for which we yearn.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    ℟. Amen.
+status:
+  la: verified
+  en: verified

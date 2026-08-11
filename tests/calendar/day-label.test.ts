@@ -27,7 +27,13 @@ describe('getDayLabel — ordinal temporal label', () => {
   });
 
   it("Advent's own anchor Sunday is already week 1, not a separate anchor-week case", () => {
-    expect(getDayLabel(resolveDay('2025-11-30'))).toBe('The 1st Sunday of Advent');
+    // 2025-11-30 is also St. Andrew's own day (Duplex II. classis) — since
+    // the November sanctoral pull, he's correctly commemorated alongside
+    // Advent I rather than simply absent (confirmed against the live
+    // reference engine, which shows the same pairing), so the label
+    // reflects both, feast name first, same pattern as Trinity Sunday's
+    // own St. Felix I case above.
+    expect(getDayLabel(resolveDay('2025-11-30'))).toBe('St. Andrew, Apostle — The 1st Sunday of Advent');
     expect(getDayLabel(resolveDay('2025-12-01'))).toBe('Monday in the 1st week of Advent');
   });
 

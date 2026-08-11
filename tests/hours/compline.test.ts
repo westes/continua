@@ -86,11 +86,13 @@ describe('resolveOrdo("compline", ...)', () => {
   });
 
   it('anticipates Advent I: the Saturday evening before switches to the Alma Redemptoris Mater and shows the anticipated day label', () => {
-    // Nov 30, 2025 is Advent I Sunday.
+    // Nov 30, 2025 is Advent I Sunday -- also St. Andrew's own day
+    // (Duplex II. classis), correctly commemorated alongside it since the
+    // November sanctoral pull (see tests/calendar/day-label.test.ts).
     const eve = resolveOrdo('compline', '2025-11-29');
     const last = eve.parts[eve.parts.length - 1];
     expect(last?.kind === 'preces' ? last.label : undefined).toBe('Alma Redemptoris Mater');
-    expect(eve.dayLabel).toBe('The 1st Sunday of Advent');
+    expect(eve.dayLabel).toBe('St. Andrew, Apostle — The 1st Sunday of Advent');
 
     const dayBefore = resolveOrdo('compline', '2025-11-28');
     const lastBefore = dayBefore.parts[dayBefore.parts.length - 1];
