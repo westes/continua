@@ -20,7 +20,11 @@ interface LaudsGroup {
 }
 interface LaudsWeekdayAntiphons {
   groups: LaudsGroup[];
-  canticle: { id: string; antiphon: BilingualText };
+  // `split`: verse count of the canticle's first part, when it's said in
+  // two pieces (own Gloria Patri each) rather than continuously — see
+  // lauds-antiphons.yml's saturday.canticle comment. Absent every other
+  // weekday.
+  canticle: { id: string; antiphon: BilingualText; split?: number };
   laudate: { antiphon: BilingualText };
 }
 const laudsAntiphons = laudsAntiphonsData as Record<Weekday, LaudsWeekdayAntiphons>;
@@ -51,28 +55,32 @@ function psalmParts(numbers: number[], antiphon: BilingualText, opening: Resolve
 
 const STATUS_RANK = { verified: 0, draft: 1, missing: 2 } as const;
 
-/** Joins a canticle's verse array into one flowing text block, the same
+const GLORIA_PATRI = {
+  la: 'V. Glória Patri, et Fílio, * et Spirítui Sancto.\nR. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen.',
+  en: 'V. Glory be to the Father, and to the Son, * and to the Holy Ghost.\nR. As it was in the beginning, is now, * and ever shall be, world without end. Amen.',
+};
+
+/** Joins a canticle's verse array (or a `[start, end)` slice of it — see
+ * Saturday's split canticle below) into one flowing text block, the same
  * shape nunc-dimittis/benedictus already use — Lauds' weekday canticles
  * are stored verse-by-verse (see lauds-canticles.ts) purely because that's
  * how they were transcribed, not because callers need per-verse access.
- * Appends the fixed Gloria Patri line every canticle ends with in real
- * practice, same wording as benedictus.yml's own trailing line. */
-function canticleText(canticleId: string): ResolvedText {
+ * Appends the fixed Gloria Patri line every canticle (or canticle part)
+ * ends with in real practice, same wording as benedictus.yml's own
+ * trailing line. */
+function canticleText(canticleId: string, slice?: [number, number]): ResolvedText {
   const canticle = getCanticle(canticleId);
+  const verses = slice ? canticle.verses.slice(slice[0], slice[1]) : canticle.verses;
   const text: Partial<Record<string, string>> = {};
   const status: Partial<Record<string, 'verified' | 'draft' | 'missing'>> = {};
-  const GLORIA = {
-    la: 'V. Glória Patri, et Fílio, * et Spirítui Sancto.\nR. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen.',
-    en: 'V. Glory be to the Father, and to the Son, * and to the Holy Ghost.\nR. As it was in the beginning, is now, * and ever shall be, world without end. Amen.',
-  };
   for (const lang of ['la', 'en'] as const) {
-    const lines = canticle.verses.map((v) => v.text[lang]).filter((t): t is string => Boolean(t));
+    const lines = verses.map((v) => v.text[lang]).filter((t): t is string => Boolean(t));
     if (lines.length === 0) {
       continue;
     }
-    text[lang] = `${lines.join('\n')}\n${GLORIA[lang]}`;
+    text[lang] = `${lines.join('\n')}\n${GLORIA_PATRI[lang]}`;
     let worst: 'verified' | 'draft' | 'missing' = 'verified';
-    for (const v of canticle.verses) {
+    for (const v of verses) {
       const s = v.status[lang] ?? 'missing';
       if (STATUS_RANK[s] > STATUS_RANK[worst]) {
         worst = s;
@@ -102,13 +110,32 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
     parts.push(...psalmParts(group.psalms, group.antiphon, opening(group.antiphon)));
   }
   const canticle = getCanticle(wd.canticle.id);
-  parts.push({
-    kind: 'canticle',
-    canticleId: canticle.id,
-    antiphon: opening(wd.canticle.antiphon),
-    text: canticleText(canticle.id),
-  });
-  parts.push({ kind: 'antiphon', text: splitNamedAntiphon(wd.canticle.antiphon).full });
+  const canticleOpening = opening(wd.canticle.antiphon);
+  const canticleClosing = splitNamedAntiphon(wd.canticle.antiphon).full;
+  if (wd.canticle.split) {
+    // Said in two pieces, own Gloria Patri each, one shared antiphon
+    // framing both (opening before the first, full repeated only after
+    // the second) — see lauds-antiphons.yml's saturday.canticle comment.
+    parts.push({
+      kind: 'canticle',
+      canticleId: canticle.id,
+      antiphon: canticleOpening,
+      text: canticleText(canticle.id, [0, wd.canticle.split]),
+    });
+    parts.push({
+      kind: 'canticle',
+      canticleId: canticle.id,
+      text: canticleText(canticle.id, [wd.canticle.split, canticle.verses.length]),
+    });
+  } else {
+    parts.push({
+      kind: 'canticle',
+      canticleId: canticle.id,
+      antiphon: canticleOpening,
+      text: canticleText(canticle.id),
+    });
+  }
+  parts.push({ kind: 'antiphon', text: canticleClosing });
   parts.push(...psalmParts([148, 149, 150], wd.laudate.antiphon, opening(wd.laudate.antiphon)));
   return parts;
 }

@@ -96,6 +96,14 @@ saturday:
       antiphon: { la: "In veritáte tua * exáudi me, Dómine.", en: "In thy truth, O Lord, * listen unto me." }
   canticle:
     id: canticum-moysis-deuteronomii
+    # Split across two D.O. Lauds slots (own doc comment on the split, own
+    # Gloria Patri each -- confirmed live) rather than joined into one
+    # continuous canticle the way every other weekday's is: per direct
+    # instruction, this is the older monastic practice, matching how the
+    # Rule of St. Benedict itself divides it (RB 13's "Canticum de
+    # Deuteronomio... in duas glorias"). `split: 32` is the verse count of
+    # the first part (Deut 32:1-32); the rest (32:33-65) is the second.
+    split: 32
     antiphon: { la: "Date magnitúdinem * Deo nostro.", en: "Ascribe greatness * to our God." }
   laudate:
     antiphon: { la: "In cýmbalis * benesonántibus laudáte Deum.", en: "Praise God * upon the resounding cymbals." }

@@ -57,7 +57,7 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(canticle?.kind === 'canticle' ? canticle.canticleId : undefined).toBe('canticum-trium-puerorum');
   });
 
-  it("resolves Saturday's own psalmody: only one weekday psalm (142), and the Canticle of Moses split across two D.O. slots joins into one continuous canticle", () => {
+  it("resolves Saturday's own psalmody: only one weekday psalm (142), and the Canticle of Moses said in two pieces (RB 13's own division), one shared antiphon framing both", () => {
     // Any Saturday works here: lauds-psalmody doesn't yet model the
     // Commune/feast override real practice would apply on a Marian-
     // Sabbato Saturday (see hours/types.ts's 'lauds-psalmody' doc comment)
@@ -69,9 +69,21 @@ describe('resolveOrdo("lauds", ...)', () => {
       .map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
     expect(psalmNumbers).toEqual([66, 50, 142, 148, 149, 150]);
 
-    const canticle = ordo.parts.find((p) => p.kind === 'canticle' && p.canticleId !== 'benedictus');
-    expect(canticle?.kind === 'canticle' ? canticle.canticleId : undefined).toBe('canticum-moysis-deuteronomii');
-    expect(canticle?.kind === 'canticle' ? canticle.text.text.la : undefined).toContain('Audíte, cæli');
+    const canticles = ordo.parts.filter((p) => p.kind === 'canticle' && p.canticleId === 'canticum-moysis-deuteronomii');
+    expect(canticles.length).toBe(2);
+    const [part1, part2] = canticles;
+    expect(part1?.kind === 'canticle' ? part1.antiphon?.text.la : undefined).toBe('Ant. Date magnitúdinem');
+    expect(part2?.kind === 'canticle' ? part2.antiphon : 'should be undefined -- shares part 1s opening antiphon').toBeUndefined();
+    expect(part1?.kind === 'canticle' ? part1.text.text.la : undefined).toContain('Audíte, cæli');
+    expect(part2?.kind === 'canticle' ? part2.text.text.la : undefined).toContain('Ignis succénsus est');
+    // Each part gets its own Gloria Patri.
+    expect(part1?.kind === 'canticle' ? part1.text.text.la : undefined).toContain('Glória Patri');
+    expect(part2?.kind === 'canticle' ? part2.text.text.la : undefined).toContain('Glória Patri');
+
+    const repeatIndex = ordo.parts.indexOf(part2!) + 1;
+    const repeat = ordo.parts[repeatIndex];
+    expect(repeat?.kind).toBe('antiphon');
+    expect(repeat?.kind === 'antiphon' ? repeat.text.text.la : undefined).toBe('Ant. Date magnitúdinem * Deo nostro.');
   });
 
   it('gives the Laudate psalms (148-150) one shared antiphon, opening before 148 and repeated in full after 150', () => {
