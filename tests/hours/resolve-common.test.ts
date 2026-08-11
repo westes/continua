@@ -18,7 +18,7 @@ describe('getDayCollect', () => {
   });
 
   it('resolves as honestly missing for a saint with no authored propers yet', () => {
-    const day = resolveDay('2026-08-10'); // St. Lawrence wins outright, propers: null
+    const day = resolveDay('2026-08-07'); // St. Donatus wins outright, propers: null
     expect(day.winner.kind).toBe('sanctoral');
     const collect = getDayCollect(day);
     expect(collect.status.la).toBe('missing');

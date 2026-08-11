@@ -6,22 +6,40 @@ describe('transfer mechanism (resolveDay integration)', () => {
   // added to exercise this — Aug 9, 2026 is a Sunday, so the vigil (rank
   // 'vigil') can't win or be commemorated there (see
   // commemorations.ts's ordinary-sunday rule) and must transfer backward.
-  it('a vigil impeded by an ordinary Sunday transfers backward to Saturday, leaving the Sunday untouched', () => {
+  // Since the August pull, Aug 8 is no longer an empty landing day — Ss.
+  // Cyriacus, Largus, and Smaragdus (Semiduplex, a fixed, non-movable
+  // date) natively occupy it every year, so the backward-transferred
+  // vigil runs into collision.ts's sanctoral-vs-sanctoral rules instead of
+  // landing untouched: Semiduplex outranks 'vigil' on the shared
+  // FeastClass scale, so Cyriacus wins and the vigil is commemorated
+  // rather than displacing him — real transfer+collision interaction, not
+  // a data error, same class of finding as July's Apollinaris/Vigil-of-
+  // St.-James case.
+  it('a vigil impeded by an ordinary Sunday transfers backward to Saturday and collides with the real feast already there', () => {
     const saturday = resolveDay('2026-08-08');
     const sunday = resolveDay('2026-08-09');
     const monday = resolveDay('2026-08-10');
 
     expect(saturday.winner).toEqual({
       kind: 'sanctoral',
-      id: 'vigil-of-st-lawrence',
-      name: 'Vigil of St. Lawrence',
-      rank: 'vigil',
+      id: 'ss-cyriacus-largus-and-smaragdus',
+      name: 'Ss. Cyriacus, Largus, and Smaragdus, Martyrs',
+      rank: 'semiduplex',
     });
-    expect(saturday.commemorations).toEqual([]);
+    expect(saturday.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'vigil-of-st-lawrence', name: 'Vigil of St. Lawrence', rank: 'vigil' },
+    ]);
 
-    // The Sunday's own resolution is exactly as if the vigil didn't exist.
+    // The Sunday's own winner is unaffected by the vigil, but St. Romanus
+    // (the vigil's own stub secondary, see st-romanus.yml) still surfaces
+    // as a commemoration here: he lost his own local clash against the
+    // vigil before the vigil transferred away, and that loss stands
+    // independently of the transfer -- confirmed against the live
+    // reference engine, which shows the same commemoration on this date.
     expect(sunday.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-11' });
-    expect(sunday.commemorations).toEqual([]);
+    expect(sunday.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'st-romanus', name: 'St. Romanus, Martyr', rank: 'simplex' },
+    ]);
 
     // St. Lawrence's own day (Monday) is unaffected by the backward transfer.
     expect(monday.winner).toEqual({
