@@ -28,4 +28,19 @@ describe('getOctaveReading', () => {
     expect(reading?.status.en).toBe('missing');
     expect(reading?.text.en).toBeUndefined();
   });
+
+  it('resolves a reading declared as scripture passages into continuous text, one paragraph per passage', () => {
+    const reading = getOctaveReading('all-saints', 2);
+    const paragraphs = reading?.text.la?.split('\n\n') ?? [];
+    expect(paragraphs.length).toBe(3);
+    expect(paragraphs[0]).toContain('1 Et factum est');
+    expect(reading?.text.en).toContain('1 Now it came to pass');
+  });
+
+  it('resolves a scripture passage reading that spans two chapters', () => {
+    const reading = getOctaveReading('all-saints', 7);
+    const paragraphs = reading?.text.la?.split('\n\n') ?? [];
+    expect(paragraphs.length).toBe(3); // Ezek 15:1-5, 15:6-8, 16:1-5
+    expect(paragraphs[2]).toContain('notas fac Jerúsalem');
+  });
 });

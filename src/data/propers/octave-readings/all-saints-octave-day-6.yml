@@ -1,31 +1,13 @@
 # Verified against Divinum Officium (Monastic Tridentinum 1617), live
-# prayMatutinum query (2025-11-6). Matins reading for day 6 of All Saints' own
-# octave -- collapsed into one continuous reading per project convention. A
-# continuous reading from the book of Ezechiel, read straight through across
-# the whole octave (a different excerpt each day), not repeated -- confirmed
-# via each day's own Invitatory (the same distinctive All Saints antiphon
-# every day, Nov 2 included, so this app's own exclusion of All Souls' Day as
-# a different liturgical genre doesn't conflict with this octave's real Matins
-# content). The source's own English translation is used as-is, including gaps
-# in its own punctuation (some older "oct"/"bmv"-suffixed variant files drop
-# question marks entirely in places) -- not corrected here, since guessing
-# where they belong isn't the same class of fix as an isolated single-
-# character typo.
+# prayMatutinum query (2025-11-06). Matins reading for day 6 of All Saints'
+# own octave -- a direct Scripture reading (Ezekiel 13:1-14), resolved from
+# data/scripture/ezek-13.yml.
 id: all-saints-octave-day-6
 source: "De Ezechiéle Prophéta"
-text:
-  la: |
-    De Ezechiéle Prophéta Ezek 13:1-6 1 Et factus est sermo Dómini ad me, dicens: 2 Fili hóminis, vaticináre ad prophétas Israël, qui prophétant, et dices prophetántibus de corde suo: Audíte verbum Dómini. 3 Hæc dicit Dóminus Deus: Væ prophétis insipiéntibus, qui sequúntur spíritum suum, et nihil vident! 4 Quasi vulpes in desértis prophétæ tui, Israël, erant. 5 Non ascendístis ex advérso, neque opposuístis murum pro domo Israël, ut starétis in prǽlio in die Dómini. 6 Vident vana, et divínant mendácium, dicéntes: Ait Dóminus, cum Dóminus non míserit eos, et perseveravérunt confirmáre sermónem.
-
-    Ezek 13:7-10 7 Numquid non visiónem cassam vidístis, et divinatiónem mendácem locúti estis, et dícitis: Ait Dóminus, cum ego non sim locútus? 8 Proptérea hæc dicit Dóminus Deus: Quia locúti estis vana, et vidístis mendácium, ídeo ecce ego ad vos, dicit Dóminus Deus. 9 Et erit manus mea super prophétas, qui vident vana et divínant mendácium: in consílio pópuli mei non erunt, et in scriptúra domus Israël non scribéntur, nec in terram Israël ingrediéntur, et sciétis quia ego Dóminus Deus. 10 Eo quod decéperint pópulum meum, dicéntes: Pax, et non est pax, et ipse ædificábat paríetem, illi autem liniébant eum luto absque páleis.
-
-    Ezek 13:11-14 11 Dic ad eos qui líniunt absque temperatúra, quod casúrus sit; erit enim imber inúndans et dabo lápides prægrándes désuper irruéntes et ventum procéllæ dissipántem. 12 Síquidem ecce cécidit páries; numquid non dicétur vobis: Ubi est litúra quam linístis? 13 Proptérea hæc dicit Dóminus Deus: Et erúmpere fáciam spíritum tempestátum in indignatióne mea, et imber inúndans in furóre meo erit, et lápides grandes in ira in consumptiónem, 14 Et déstruam paríetem, quem linístis absque temperaménto.
-  en: |
-    Lesson from the book of Ezekiel Ezek 13:1-6 1 And the word of the Lord came to me, saying: 2 Son of man, prophesy thou against the prophets of Israel that prophesy: and thou shalt say to them that prophesy out of their own heart: Hear ye the word of the Lord: 3 Thus saith the Lord God: Woe to the foolish prophets that follow their own spirit, and see nothing. 4 Thy prophets, O Israel, were like foxes in the deserts. 5 You have not gone up to face the enemy, nor have you set up a wall for the house of Israel, to stand in battle in the day of the Lord. 6 They see vain things, and they foretell lies, saying: The Lord saith: whereas the Lord hath not sent them: and they have persisted to confirm what they have said.
-
-    Ezek 13:7-10 7 Have you not seen a vain vision and spoken a lying divination: and you say: The Lord saith: whereas I have not spoken. 8 Therefore thus saith the Lord God: Because you have spoken vain things, and have seen lies: therefore behold I come against you, saith the Lord God. 9 And my hand shall be upon the prophets that see vain things, and that divine lies: they shall not be in the council of my people, nor shall they be written in the writing of the house of Israel, neither shall they enter into the land of Israel, and you shall know that I am the Lord God. 10 Because they have deceived my people, saying: Peace, and there is no peace: and the people built up a wall, and they daubed it with dirt without straw.
-
-    Ezek 13:11-14 11 Say to them that daub without tempering, that it shall fall: for there shall be an overflowing shower, and I will cause great hailstones to fall violently from above, and a stormy wind to throw it down. 12 Behold, when the wall is fallen: shall it not be said to you: Where is the daubing wherewith you have daubed it? 13 Therefore thus saith the Lord God: Lo, I will cause a stormy wind to break forth in my indignation, and there shall be an overflowing shower in my anger: and great hailstones in my wrath to consume. 14 And I will break down the wall that you have daubed with untempered mortar.
+passages:
+  - { book: ezek, chapter: 13, verses: "1-6" }
+  - { book: ezek, chapter: 13, verses: "7-10" }
+  - { book: ezek, chapter: 13, verses: "11-14" }
 responsory:
   la: |
     ℟. Vidi Dóminum sedéntem super sólium excélsum et elevátum, et plena erat omnis terra majestáte ejus: * Et ea, quæ sub ipso erant, replébant templum. ℣. Séraphim stabant super illud: sex alæ uni, et sex alæ álteri. ℟. Et ea, quæ sub ipso erant, replébant templum.

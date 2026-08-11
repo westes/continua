@@ -8,6 +8,15 @@
 // broken up the way the sources present it — a project-specific
 // simplification, not how these are actually prayed historically.
 import type { LanguageCode, TranslationStatus } from '../psalter/types';
+import { getScriptureVerses } from '../scripture';
+
+/** A citation into scripture/index.ts's own store — `verses` e.g. "1-13",
+ * omitted for a whole (authored) chapter. */
+export interface ScriptureCitation {
+  book: string;
+  chapter: number;
+  verses?: string;
+}
 
 export interface OctaveReadingText {
   id: string;
@@ -26,14 +35,64 @@ export interface OctaveReadingText {
   status: Partial<Record<LanguageCode, TranslationStatus>>;
 }
 
-const octaveReadingModules = import.meta.glob<{ default: OctaveReadingText }>(
+/**
+ * The shape actually authored in data/propers/octave-readings/*.yml: either
+ * `text` directly (patristic prose that isn't scripture itself, embedded
+ * per this project's usual duplication convention — 2026-08 decision: "we
+ * actually want the scripture there in the way those readings cite it" for
+ * quotes *within* prose, so those stay inline) or `passages`, a "pull this
+ * passage" reference into the scripture store for readings that
+ * are scripture start to finish — each entry becomes its own paragraph, in
+ * order, letting a reading built from several verse ranges (e.g. three
+ * consecutive Nocturn-I lessons) keep its original paragraph breaks.
+ * Exactly one of the two is present; `getOctaveReading` always hands
+ * callers a fully-resolved `OctaveReadingText` regardless of which was
+ * used, so nothing downstream needs to know the difference.
+ */
+interface OctaveReadingRecord {
+  id: string;
+  source: string;
+  text?: Partial<Record<LanguageCode, string>>;
+  passages?: ScriptureCitation[];
+  responsory?: Partial<Record<LanguageCode, string>>;
+  status: Partial<Record<LanguageCode, TranslationStatus>>;
+}
+
+function resolvePassages(passages: ScriptureCitation[]): Partial<Record<LanguageCode, string>> {
+  const laParagraphs: string[] = [];
+  const enParagraphs: string[] = [];
+  for (const citation of passages) {
+    const verses = getScriptureVerses(citation.book, citation.chapter, citation.verses);
+    const la = verses
+      .map((v) => (v.text.la ? `${v.n} ${v.text.la}` : undefined))
+      .filter((s): s is string => !!s)
+      .join(' ');
+    const en = verses
+      .map((v) => (v.text.en ? `${v.n} ${v.text.en}` : undefined))
+      .filter((s): s is string => !!s)
+      .join(' ');
+    if (la) laParagraphs.push(la);
+    if (en) enParagraphs.push(en);
+  }
+  const result: Partial<Record<LanguageCode, string>> = {};
+  if (laParagraphs.length) result.la = laParagraphs.join('\n\n');
+  if (enParagraphs.length) result.en = enParagraphs.join('\n\n');
+  return result;
+}
+
+function resolveReading(record: OctaveReadingRecord): OctaveReadingText {
+  const { passages, text, ...rest } = record;
+  return { ...rest, text: text ?? (passages ? resolvePassages(passages) : {}) };
+}
+
+const octaveReadingModules = import.meta.glob<{ default: OctaveReadingRecord }>(
   '../data/propers/octave-readings/*.yml',
   { eager: true },
 );
 
 const octaveReadingsById = new Map<string, OctaveReadingText>();
 for (const mod of Object.values(octaveReadingModules)) {
-  octaveReadingsById.set(mod.default.id, mod.default);
+  octaveReadingsById.set(mod.default.id, resolveReading(mod.default));
 }
 
 /** Undefined, not a "missing" placeholder, when this octave day has no

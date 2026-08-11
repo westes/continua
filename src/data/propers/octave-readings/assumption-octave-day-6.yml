@@ -1,28 +1,16 @@
 # Verified against Divinum Officium (Monastic Tridentinum 1617), live
 # prayMatutinum query (2025-08-20). Matins reading for day 6 of the
-# Assumption's own octave -- collapsed into one continuous reading per project
-# convention. A direct Scripture reading (Wisdom 4:7-12), so its English is
-# the source's own Douay-Rheims-style translation, same convention as every
-# other scripture citation this pull has captured. The source's own English
-# translation is used as-is, including gaps in its own punctuation (some older
-# "oct"/"bmv"-suffixed variant files drop question marks entirely in places)
-# -- not corrected here, since guessing where they belong isn't the same class
-# of fix as an isolated single-character typo.
+# Assumption's own octave -- a direct Scripture reading (Wisdom 4:7-20),
+# resolved from data/scripture/sap-4.yml (2026-08 decision: whole-passage
+# Scripture readings pull from a dedicated store instead of embedding text,
+# unlike prose that merely cites a verse or two). Each entry below is its
+# own paragraph, preserving the source's original three-lesson breaks.
 id: assumption-octave-day-6
 source: "De libro Sapiéntiæ"
-text:
-  la: |
-    De libro Sapiéntiæ Sap 4:7-12 7 Justus si morte præoccupátus fúerit, in refrigério erit; 8 Senéctus enim venerábilis est non diutúrna, neque annórum número computáta: cani autem sunt sensus hóminis, 9 Et ætas senectútis vita immaculáta. 10 Placens Deo factus est diléctus, et vivens inter peccatóres translátus est. 11 Raptus est, ne malítia mutáret intelléctum ejus, aut ne fíctio decíperet ánimam illíus. 12 Fascinátio enim nugacitátis obscúrat bona, et inconstántia concupiscéntiæ transvértit sensum sine malítia.
-
-    De libro Sapiéntiæ Sap 4:13-16 13 Consummátus in brevi, explévit témpora multa; 14 Plácita enim erat Deo ánima illíus: propter hoc properávit edúcere illum de médio iniquitátum. 14 Pópuli autem vidéntes, et non intelligéntes, nec ponéntes in præcórdiis tália, 15 Quóniam grátia Dei et misericórdia est in sanctos ejus, et respéctus in eléctos illíus. 16 Condémnat autem justus mórtuus vivos ímpios, et juvéntus celérius consummáta longam vitam injústi.
-
-    Sap 4:17-20 17 Vidébunt enim finem sapiéntis, et non intélligent quid cogitáverit de illo Deus, et quare muníerit illum Dóminus. 18 Vidébunt, et contémnent eum; illos autem Dóminus irridébit. 19 Et erunt post hæc decidéntes sine honóre, et in contumélia inter mórtuos in perpétuum: quóniam disrúmpet illos inflátos sine voce, et commovébit illos a fundaméntis, et usque ad suprémum desolabúntur: 19 Et erunt geméntes, et memória illórum períbit. 20 Vénient in cogitatióne peccatórum suórum tímidi, et tradúcent illos ex advérso iniquitátes ipsórum.
-  en: |
-    Lesson from the book of Wisdom Wis 4:7-12 7 But the just man, if he be prevented with death, shall be in rest. 8 For venerable old age is not that of long time, nor counted by the number of years: but the understanding of a man is grey hairs. 9 And a spotless life is old age. 10 He pleased God and was beloved, and living among sinners he was translated. 11 He was taken away lest wickedness should alter his understanding, or deceit beguile his soul. 12 For the bewitching of vanity obscureth good things, and the wandering of concupiscence overturneth the innocent mind.
-
-    Lesson from the book of Wisdom Wis 4:13-16 13 Being made perfect in a short space, he fulfilled a long time: 14 For his soul pleased God: therefore he hastened to bring him out of the midst of iniquities: 14 But the people see this, and understand not, nor lay up such things in their hearts: 15 That the grace of God, and his mercy is with his saints, and that he hath respect to his chosen. 16 But the just that is dead, condemneth the wicked that are living, and youth soon ended, the long life of the unjust.
-
-    Wis 4:17-20 17 For they shall see the end of the wise man, and shall not understand what God hath designed for him, and why the Lord hath set him in safety. 18 They shall see him, and shall despise him: but the Lord shall laugh them to scorn. 19 And they shall fall after this without honour, and be a reproach among the dead for ever: for he shall burst them puffed up and speechless, and shall shake them from the foundations, and they shall be utterly laid waste: 19 They shall be in sorrow, and their memory shall perish. 20 They shall come with fear at the thought of their sins, and their iniquities shall stand against them to convict them.
+passages:
+  - { book: sap, chapter: 4, verses: "7-12" }
+  - { book: sap, chapter: 4, verses: "13-16" }
+  - { book: sap, chapter: 4, verses: "17-20" }
 responsory:
   la: |
     ℟. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: * Intra in gáudium Dómini tui. ℣. Dómine, quinque talénta tradidísti mihi, ecce ália quinque superlucrátus sum. ℟. Intra in gáudium Dómini tui.

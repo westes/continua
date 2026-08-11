@@ -1,31 +1,16 @@
 # Verified against Divinum Officium (Monastic Tridentinum 1617), live
 # prayMatutinum query (2026-11-02, year adjusted to avoid a Sunday collision).
-# Matins reading for day 2 of All Saints' own octave -- collapsed into one
-# continuous reading per project convention. A continuous reading from the
-# book of Ezechiel, read straight through across the whole octave (a different
-# excerpt each day), not repeated -- confirmed via each day's own Invitatory
-# (the same distinctive All Saints antiphon every day, Nov 2 included, so this
-# app's own exclusion of All Souls' Day as a different liturgical genre
-# doesn't conflict with this octave's real Matins content). The source's own
-# English translation is used as-is, including gaps in its own punctuation
-# (some older "oct"/"bmv"-suffixed variant files drop question marks entirely
-# in places) -- not corrected here, since guessing where they belong isn't the
-# same class of fix as an isolated single-character typo.
+# Matins reading for day 2 of All Saints' own octave -- a direct Scripture
+# reading (Ezekiel 1:1-9), resolved from data/scripture/ezek-1.yml (2026-08
+# decision). A continuous reading from Ezekiel, read straight through across
+# the whole octave (a different excerpt each day), confirmed via each day's
+# own Invitatory.
 id: all-saints-octave-day-2
 source: "Incipit liber Ezechiélis Prophétæ"
-text:
-  la: |
-    Incipit liber Ezechiélis Prophétæ Ezech 1:1-3 1 Et factum est in trigésimo anno, in quarto, in quinta mensis, cum essem in médio captivórum juxta flúvium Chobar, apérti sunt cæli, et vidi visiónes Dei. 2 In quinta mensis, ipse est annus quintus transmigratiónis regis Jóachim, 3 Factum est verbum Dómini ad Ezechiélem fílium Buzi sacerdótem, in terra Chaldæórum, secus flumen Chobar: et facta est super eum ibi manus Dómini.
-
-    Ezech 1:4-6 4 Et vidi, et ecce ventus túrbinis veniébat ab Aquilóne, et nubes magna, et ignis invólvens, et splendor in circúitu ejus: et de médio ejus, quasi spécies eléctri, id est, de médio ignis: 5 Et in médio ejus similitúdo quátuor animálium, et hic aspéctus eórum, similitúdo hóminis in eis. 6 Quátuor fácies uni, et quátuor pennæ uni.
-
-    Ezech 1:7-9 7 Pedes eórum, pedes recti, et planta pedis eórum quasi planta pedis vítuli: et scintíllæ quasi aspéctus æris candéntis. 8 Et manus hóminis sub pennis eórum, in quátuor pártibus: et fácies et pennas per quátuor partes habébant, 9 Junctǽque erant pennæ eórum altérius ad álterum. Non revertebántur cum incéderent, sed unumquódque ante fáciem suam gradiebátur.
-  en: |
-    Lesson from the book of Ezekiel Ezek 1:1-3 1 Now it came to pass in the thirtieth year, in the fourth month, on the fifth day of the month, when I was in the midst of the captives by the river Chobar, the heavens were opened, and I saw the visions of God. 2 On the fifth day of the month, the same was the fifth year of the captivity of king Joachin, 3 The word of the Lord came to Ezechiel the priest the son of Buzi in the land of the Chaldeans, by the river Chobar: and the hand of the Lord was there upon him.
-
-    Ezek 1:4-6 4 And I saw, and behold a whirlwind came out of the north: and a great cloud, and a fire infolding it, and brightness was about it: and out of the midst thereof, that is, out of the midst of the fire, as it were the resemblance of amber. 5 And in the midst thereof the likeness of four living creatures: and this was their appearance: there was the likeness of a man in them. 6 Every one had four faces, and every one four wings.
-
-    Ezek 1:7-9 7 Their feet were straight feet, and the sole of their foot was like the sole of a calf's foot, and they sparkled like the appearance of glowing brass. 8 And they had the hands of a man under their wings on their four sides: and they had faces, and wings on the four sides, 9 And the wings of one were joined to the wings of another. They turned not when they went: but every one went straight forward.
+passages:
+  - { book: ezek, chapter: 1, verses: "1-3" }
+  - { book: ezek, chapter: 1, verses: "4-6" }
+  - { book: ezek, chapter: 1, verses: "7-9" }
 responsory:
   la: |
     ℟. Vidi Dóminum sedéntem super sólium excélsum et elevátum, et plena erat omnis terra majestáte ejus: * Et ea, quæ sub ipso erant, replébant templum. ℣. Séraphim stabant super illud: sex alæ uni, et sex alæ álteri. ℟. Et ea, quæ sub ipso erant, replébant templum.

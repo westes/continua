@@ -1,27 +1,14 @@
 # Verified against Divinum Officium (Monastic Tridentinum 1617), live
 # prayMatutinum query (2025-08-22). Matins reading for day 8, "In Octava
-# Assumptionis," the Assumption's own octave-concluding day -- collapsed into
-# one continuous reading per project convention. A direct Scripture reading
-# (Canticles 8:5-6). The source's own English translation is used as-is,
-# including gaps in its own punctuation (some older "oct"/"bmv"-suffixed
-# variant files drop question marks entirely in places) -- not corrected here,
-# since guessing where they belong isn't the same class of fix as an isolated
-# single-character typo.
+# Assumptionis," the Assumption's own octave-concluding day -- a direct
+# Scripture reading (Canticles 8:5-10), resolved from
+# data/scripture/cant-8.yml (2026-08 decision).
 id: assumption-octave-day-8
 source: "De Canticis canticorum"
-text:
-  la: |
-    De Canticis canticorum Cant 8:5-6 5 Quæ est ista quæ ascendit de deserto, deliciis affluens, innixa super dilectum suum? Sub arbore malo suscitavi te; ibi corrupta est mater tua, ibi violata est genitrix tua. 6 Pone me ut signaculum super cor tuum, ut signaculum super brachium tuum, quia fortis est ut mors dilectio, dura sicut infernus æmulatio: lampades ejus lampades ignis atque flammarum.
-
-    Cant 8:7-8 7 Aquæ multæ non potuerunt extinguere caritatem, nec flumina obruent illam. Si dederit homo omnem substantiam domus suæ pro dilectione, quasi nihil despiciet eam. 8 Soror nostra parva, et ubera non habet; quid faciemus sorori nostræ in die quando alloquenda est?
-
-    Cant 8:9-10 9 Si murus est, ædificemus super eum propugnacula argentea; si ostium est, compingamus illud tabulis cedrinis. 10 Ego murus, et ubera mea sicut turris, ex quo facta sum coram eo, quasi pacem reperiens.
-  en: |
-    Lesson from the book of Canticles Song 8:5-6 5 Who is this that cometh up from the desert, flowing with delights, leaning upon her beloved? Under the apple tree I raised thee up: there thy mother was corrupted, there she was defloured that bore thee. 6 Put me as a seal upon thy heart, as a seal upon thy arm, for love is strong as death, jealousy as hard as hell, the lamps thereof are fire and flames.
-
-    Song 8:7-8 7 Many waters cannot quench charity, neither can the floods drown it: if a man should give all the substance of his house for love, he shall despise it as nothing. 8 Our sister is little, and hath no breasts. What shall we do to our sister in the day when she is to be spoken to?
-
-    Song 8:9-10 9 If she be a wall: let us build upon it bulwarks of silver: if she be a door, let us join it together with boards or cedar 10 I am a wall: and my breasts are as a tower since I am become in his presence as one finding peace.
+passages:
+  - { book: cant, chapter: 8, verses: "5-6" }
+  - { book: cant, chapter: 8, verses: "7-8" }
+  - { book: cant, chapter: 8, verses: "9-10" }
 responsory:
   la: |
     ℟. Vidi speciósam sicut colúmbam, ascendéntem désuper rivos aquárum, cujus inæstimábilis odor erat nimis in vestiméntis ejus; * Et sicut dies verni circúmdabant eam flores rosárum et lília convállium. ℣. Quæ est ista quæ ascéndit per desértum sicut vírgula fumi ex aromátibus myrrhæ et thuris? ℟. Et sicut dies verni circúmdabant eam flores rosárum et lília convállium.
