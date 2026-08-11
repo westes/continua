@@ -1,11 +1,14 @@
-# Verified against Divinum Officium (Latin/English Sancti/01-25.txt's own
-# [Ant 1] — the Lauds-hour antiphon, not Terce's, which falls back to a
-# generic Common-of-an-Apostle text instead. See chair-of-st-peter-at-
-# rome-antiphon.yml's note on this not being consumed by any hour yet.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, the Conversion of St. Paul's own day (2026-01-25) -- the
+# Benedictus antiphon. Corrects the previous version of this file, which
+# had been sourced from the Roman/secular rite's Sancti/01-25.txt's own
+# [Ant 1] instead: confirmed, like St. Lawrence's own antiphon before it,
+# to be real but different text from what Monastic 1617 actually renders
+# at Lauds.
 id: conversion-of-st-paul-antiphon
 text:
-  la: "Vade, Ananía, * et quǽre Saulum: ecce enim orat: quia vas electiónis est mihi, ut portet nomen meum coram géntibus, et régibus, et fíliis Israël."
-  en: "Ananias, go thy way, * and seek Saul, for behold, he prayeth; for he is a chosen vessel unto me, to bear my name before the Gentiles, and kings, and the children of Israel."
+  la: "Vos qui secúti estis me, sedébitis super sedes, judicántes duódecim tribus Israël, dicit Dóminus."
+  en: "Thus saith the Lord: Ye, which have followed Me, shall sit upon twelve thrones, judging the twelve tribes of Israel."
 status:
   la: verified
   en: verified

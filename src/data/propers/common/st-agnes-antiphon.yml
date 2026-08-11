@@ -1,11 +1,13 @@
-# Verified against Divinum Officium (Latin/English Sancti/01-21.txt's own
-# [Ant 1] — the Lauds-hour antiphon, not Terce's, which falls back to a
-# generic Common-of-Virgin-Martyrs text instead. See chair-of-st-peter-
-# at-rome-antiphon.yml's note on this not being consumed by any hour yet.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Agnes's own day (2026-01-21) -- the Benedictus antiphon.
+# Corrects the previous version of this file, which had been sourced
+# from the Roman/secular rite's Sancti/01-21.txt's own [Ant 1] instead:
+# confirmed, like St. Lawrence's own antiphon before it, to be real but
+# different text from what Monastic 1617 actually renders at Lauds.
 id: st-agnes-antiphon
 text:
-  la: "Beáta Agnes * in médio flammárum expánsis mánibus orábat: Te déprecor, omnípotens, adoránde, colénde, Pater metuénde, quia per sanctum Fílium tuum evási minas sacrílegi tyránni, et carnis spurcítias immaculáto calle transívi: et ecce vénio ad te, quem amávi, quem quæsívi, quem semper optávi."
-  en: "The blessed Agnes * stood in the midst of the fire, and stretched forth her hands, and prayed, saying: O Father! Who alone art almighty! Who alone art to be adored! Who alone art to be worshipped! Who alone art to be feared! I thank thee because that through thy Holy Son thou hast delivered me from the threatenings of the godless tyrant, and hast made me to walk with clean feet over the filthy slough of fleshly sin; and now, behold, I come unto thee, unto thee whom I have loved, whom I have sought, whom I have ever desired."
+  la: "Ecce, quod concupívi, jam vídeo: quod sperávi, jam téneo: ipsi sum juncta in cælis, quem in terris pósita, tota devotióne diléxi."
+  en: "Behold, now I see that which I have desired; now I possess that for which I have hoped now am I united in heaven to Him Whom I loved with my whole heart upon earth."
 status:
   la: verified
   en: verified

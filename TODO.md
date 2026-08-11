@@ -56,31 +56,59 @@ collect has ever been authored for an octave (the octave-reading pull only
 ever sourced Matins content). Every octave commemoration currently
 contributes zero text to Lauds'/Vespers' collect sequence.
 
-## Correctness risk — needs verification, not just authoring
+## Benedictus antiphons for every sanctoral/temporal entry (in progress)
 
-### Per-saint Benedictus antiphons may be sourced from the wrong rite
+Full scope, corrected after actually enumerating it (an earlier pass here
+under-counted): **109 sanctoral entries have `propers` set** (a saint id
+that both a collect and an antiphon key off) and need a real Benedictus
+antiphon; **94 more saints have `propers: null`** (no collect *or* antiphon
+authored, ever) and are a separate, bigger prerequisite — see below. Plus
+**~52 temporal entries** (every numbered Sunday/feria) need one too.
 
-`<saint>-antiphon.yml` files (17 of them, see below) were pulled during the
-original sanctoral-content sessions, months before Lauds existed to consume
-them. Building St. Lawrence's psalmody override surfaced, by accident, that
-his had been read from the **Roman/secular rite's `[Ant 1]`**, not Monastic
-1617's actual Benedictus antiphon for that day — two genuinely different
-texts. Fixed for Lawrence. **Not checked for any of the other 16**:
+### Confirmed systemic bug, not just "unverified"
 
-apparition-of-st-michael, chair-of-st-peter-at-antioch, chair-of-st-peter-at-rome,
-conversion-of-st-paul, holy-innocents, nativity-bvm, nativity-of-st-john-the-baptist,
-ss-peter-and-paul, ss-philip-and-james, st-andrew, st-john-apostle,
-st-john-before-the-latin-gate, st-martin-of-tours, st-peter-ad-vincula,
-st-stephen-protomartyr, st-thomas-apostle.
+Every pre-existing `<saint>-antiphon.yml` file (there were 17, pulled during
+the original sanctoral-content sessions, months before Lauds existed) was
+sourced from the **Roman/secular rite's raw `[Ant 1]`**, not a live Monastic
+1617 query. St. Lawrence's turned out wrong this way; going back and
+correcting 3 more (Chair of St. Peter at Rome, St. Agnes, Conversion of St.
+Paul) while working January confirms it's the same mistake every time, not
+a one-off — **treat all pre-existing antiphon files as wrong until
+re-verified against a live Monastic query**, not just flagged for a look.
 
-Each needs a live `command=prayLaudes` query on the saint's own day (Monastic
-1617) to confirm or correct — same check that caught Lawrence's.
+### Method, worked out the hard way this pass
 
-The other 12 duplex-majus+ saints with `propers` set have **no antiphon file
-at all yet** (st-scholastica, st-matthias, st-matthew, st-mark, st-luke,
-st-james-the-greater, st-bartholomew, st-barnabas, ss-simon-and-jude,
-immaculate-conception, assumption, all-saints) — these don't have the wrong-rite
-risk, they just don't exist yet.
+A saint's raw per-date file (`Latin/SanctiM/MM-DD.txt`, falling back to
+`Latin/Sancti/MM-DD.txt`) is *not* a reliable shortcut — Monastic doesn't
+always compute the Benedictus antiphon from a literal `[Ant 1]` field (major
+feasts like Lawrence draw it from elsewhere entirely), and a shared date
+with two co-assigned saints only has *one* real file, which may belong to
+whichever saint reliably loses the day, not the one this app's calendar
+means to ask about. What actually works: a live `command=prayLaudes` query
+on the saint's own date, checked by eye against 2-3 different years for a
+title that plausibly names the saint and stays consistent — full automation
+kept producing false positives/negatives on exactly these edge cases, so
+each result needs a human read, not just a script.
+
+Also found along the way: **this app's calendar and the reference engine's
+own calendar don't always agree on dates.** St. Hilary of Poitiers is
+assigned Jan 23 here, but Divinum Officium's actual calendar has him on Jan
+14 (confirmed: nothing resembling Hilary appears under Jan 23 in any tested
+year). Not fixed — flagged. Worth a pass at some point checking whether any
+other already-authored saints have a similar date mismatch, since it would
+affect their existing collects too, not just a pending antiphon.
+
+### Progress
+
+- **January (9 total): done.** 8 antiphons authored/corrected (St. Marcellus
+  I, Chair of St. Peter at Rome, St. Paul the Hermit, Ss. Fabian and
+  Sebastian, St. Agnes, Ss. Vincent and Anastasius, Conversion of St. Paul,
+  St. John Chrysostom). St. Hilary of Poitiers left `missing`, see the date
+  mismatch above.
+- **February-December (100 saints): not started.**
+- **~52 temporal entries: not started.**
+- **94 `propers: null` saints: not started** — need a collect authored (a
+  bigger, separate task) before an antiphon id even has anywhere to attach.
 
 ## Mechanism not built at all
 

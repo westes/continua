@@ -1,13 +1,14 @@
-# Verified against Divinum Officium (Latin/English Sancti/01-18.txt's own
-# [Ant 1], which cross-references Sancti/02-22.txt for the actual text —
-# the two Chair-of-Peter feasts, Rome and Antioch, share this antiphon).
-# Not yet consumed by any hour's resolver (Terce/Sext/None only branch by
-# weekday today — see hours/terce.ts) — stored ready for whenever a
-# Lauds/Vespers-style commemoration or a feast-id override is built.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, the Chair of St. Peter at Rome's own day (2026-01-18) --
+# the Benedictus antiphon. Corrects the previous version of this file,
+# which had been sourced from the Roman/secular rite's Sancti/01-18.txt's
+# own [Ant 1] instead: confirmed, like St. Lawrence's own antiphon before
+# it, to be real but different text from what Monastic 1617 actually
+# renders at Lauds.
 id: chair-of-st-peter-at-rome-antiphon
 text:
-  la: "Tu es pastor óvium, * Princeps Apostolórum, tibi tráditæ sunt claves regni cælórum."
-  en: "Thou art the Shepherd * of the sheep, and the Prince of the Apostles, and unto thee are given the keys of the kingdom of heaven."
+  la: "Quodcúmque ligáveris super terram, erit ligátum et in cælis; et quodcúmque sólveris super terram, erit solútum et in cælis: dicit Dóminus Simóni Petro."
+  en: "Thus saith the Lord unto Simon Peter: Whatsoever thou shalt bind on earth, shall be bound in heaven; and whatsoever thou shalt loose on earth, shall be loosed in heaven."
 status:
   la: verified
   en: verified
