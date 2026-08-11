@@ -1,0 +1,102 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query.
+# Antiphons reconstructed with an embedded '*' from the engine's separately-
+# rendered incipit/full lines (the rendering strips the '*' the raw source data
+# has; see hours/antiphon.ts's splitAntiphon for the convention this matches).
+# 'groups' lists each variable psalm-group with its own antiphon, in the order
+# said; Ps 66 (always first, no antiphon at all) and Ps 148-150 (always last,
+# one shared antiphon, see 'laudate') aren't part of 'groups'.
+
+sunday:
+  groups:
+    - psalms: [50, 117]
+      antiphon: { la: "Allelúja.", en: "Alleluia." }
+    - psalms: [62]
+      antiphon: { la: "Allelúja, allelúja.", en: "Alleluia alleluia." }
+  canticle:
+    id: canticum-trium-puerorum
+    antiphon: { la: "Tres púeri * jussu regis in fornácem missi sunt, non timéntes flammam ignis dicéntes: Benedíctus Deus.", en: "The three young boys * cast into the furnace by the king, fearing not the flames of fire, said: Blessed be God." }
+  laudate:
+    antiphon: { la: "Allelúja, * allelúja, allelúja.", en: "Alleluia * alleluia, alleluia." }
+
+monday:
+  groups:
+    - psalms: [50]
+      antiphon: { la: "Miserére * mei, Deus.", en: "Have mercy upon me, * O God." }
+    - psalms: [5]
+      antiphon: { la: "Intéllege * clamórem meum, Dómine.", en: "Hearken to my cry * O Lord." }
+    - psalms: [35]
+      antiphon: { la: "Dómine, * in cælo misericórdia tua.", en: "Thy mercy, * O Lord, is in the heavens." }
+  canticle:
+    id: canticum-isaiae
+    antiphon: { la: "Convérsus est * furor tuus, Dómine, et consolátus es me.", en: "Thy wrath is turned away, * O Lord, and Thou hast comforted me." }
+  laudate:
+    antiphon: { la: "Laudáte * Dóminum de cælis.", en: "Praise ye * the Lord from the heavens." }
+
+tuesday:
+  groups:
+    - psalms: [50]
+      antiphon: { la: "Dele, Dómine, * iniquitátem meam.", en: "Blot out, O Lord * my iniquity." }
+    - psalms: [42]
+      antiphon: { la: "Salutáre * vultus mei, et Deus meus.", en: "The salvation of my countenance * and my God." }
+    - psalms: [56]
+      antiphon: { la: "Quóniam * in te confídit ánima mea.", en: "For in thee * my soul trusteth." }
+  canticle:
+    id: canticum-ezechiae
+    antiphon: { la: "Cunctis diébus * vitæ nostræ salvos nos fac, Dómine.", en: "Keep us safe, O Lord * all the days of our life." }
+  laudate:
+    antiphon: { la: "Omnes Ángeli ejus, * laudáte Dóminum de cælis.", en: "Praise ye the Lord * from the heavens, all His angels." }
+
+wednesday:
+  groups:
+    - psalms: [50]
+      antiphon: { la: "Ámplius lava me, * Dómine ab injustítia mea.", en: "Wash me yet more, O Lord * from my iniquity." }
+    - psalms: [63]
+      antiphon: { la: "A timóre * inimíci éripe, Dómine ánimam meam.", en: "Deliver my soul * O Lord, from the fear of the enemy." }
+    - psalms: [64]
+      antiphon: { la: "Te decet hymnus, * Deus in Sion.", en: "A hymn, O God * becometh thee in Sion." }
+  canticle:
+    id: canticum-annae
+    antiphon: { la: "Dóminus * judicábit fines terræ.", en: "The Lord will judge * all the ends of the earth." }
+  laudate:
+    antiphon: { la: "Cæli cælórum, * laudáte Deum.", en: "Ye heavens of heavens * praise the Lord." }
+
+thursday:
+  groups:
+    - psalms: [50]
+      antiphon: { la: "Tibi soli * peccávi, Dómine, miserére mei.", en: "Before thee only have I sinned, * O Lord, have mercy on me." }
+    - psalms: [87]
+      antiphon: { la: "Intret * orátio mea, in conspéctu tuo, Dómine.", en: "Let my prayer * come in before thee." }
+    - psalms: [89]
+      antiphon: { la: "Dómine, * refúgium factus es nobis.", en: "Lord, * thou hast been our refuge." }
+  canticle:
+    id: canticum-moysis-exodi
+    antiphon: { la: "Cantémus Dómino * glorióse.", en: "Let us sing unto the Lord, * for He hath triumphed gloriously." }
+  laudate:
+    antiphon: { la: "In sanctis ejus * laudáte Deum.", en: "Praise ye the Lord * in his holy places." }
+
+friday:
+  groups:
+    - psalms: [50]
+      antiphon: { la: "Spíritu principáli * confírma cor meum, Deus.", en: "With a perfect spirit * strengthen my heart, O God." }
+    - psalms: [75]
+      antiphon: { la: "In Israël * magnum nomen ejus.", en: "His name * is great in Israel." }
+    - psalms: [91]
+      antiphon: { la: "Bonum est * confitéri Dómino.", en: "It is a good thing * to give thanks unto the Lord." }
+  canticle:
+    id: canticum-habacuc
+    antiphon: { la: "Dómine, * audívi audítum tuam, et tímui.", en: "O Lord, I have heard thy hearing, * and was afraid." }
+  laudate:
+    antiphon: { la: "In týmpano et choro, * in chordis et órgano laudáte Deum.", en: "Praise him with timbrel and choir: * praise him with strings and organs." }
+
+saturday:
+  groups:
+    - psalms: [50]
+      antiphon: { la: "Benígne fac * in bona voluntáte tua, Dómine.", en: "In thy good will, O Lord, * deal favourably with Sion." }
+    - psalms: [142]
+      antiphon: { la: "In veritáte tua * exáudi me, Dómine.", en: "In thy truth, O Lord, * listen unto me." }
+  canticle:
+    id: canticum-moysis-deuteronomii
+    antiphon: { la: "Date magnitúdinem * Deo nostro.", en: "Ascribe greatness * to our God." }
+  laudate:
+    antiphon: { la: "In cýmbalis * benesonántibus laudáte Deum.", en: "Praise God * upon the resounding cymbals." }
+

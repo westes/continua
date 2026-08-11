@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query.
+# Every ordinary-time Saturday is either Marian-Sabbato-overridden or
+# falls in a privileged season (Lenten/Advent Ember Saturday) whose hymn is
+# itself swapped for the season's own -- there's no achievable date that
+# shows a genuinely per-annum, unprivileged Saturday Lauds hymn. Left
+# missing rather than presenting a season-specific hymn as if it were the
+# plain weekday default.
+id: lauds-hymn-saturday
+text: {}
+status:
+  la: missing
+  en: missing

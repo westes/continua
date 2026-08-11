@@ -1,0 +1,26 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live
+# query. What Benedict calls the "Kyrie eleison" (RB 9, 17) plus the Lord's
+# Prayer said aloud with the choir completing only the last line — the
+# fixed lead-in that always precedes the day's own collect (see
+# hours/resolve-common.ts's getDayCollects for the collect(s) themselves,
+# not stored here). Distinct from the second, fully silent Pater Noster
+# near the very end of Lauds — see lauds-closing-versicle.yml.
+id: lauds-short-litany
+text:
+  la: |
+    Kýrie, eléison. Christe, eléison. Kýrie, eléison.
+    Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum quotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris:
+    V. Et ne nos indúcas in tentatiónem:
+    R. Sed líbera nos a malo.
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+  en: |
+    Lord have mercy upon us, Christ have mercy upon us, Lord have mercy upon us.
+    Our Father, who art in heaven, Hallowed be thy name. Thy kingdom come. Thy will be done on earth as it is in heaven. Give us this day our daily bread. And forgive us our trespasses, as we forgive those who trespass against us.
+    V. And lead us not into temptation:
+    R. But deliver us from evil.
+    V. O Lord, hear my prayer.
+    R. And let my cry come unto thee.
+status:
+  la: verified
+  en: verified

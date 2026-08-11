@@ -1,0 +1,17 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live
+# query. Real practice: a second Our Father, said entirely in silence
+# ("dicitur totum secreto"), comes right before this versicle — by explicit
+# choice its text isn't rendered here (it's silent, and its text was
+# already rendered once, aloud, at lauds-short-litany.yml); only the
+# versicle that follows it is.
+id: lauds-closing-versicle
+text:
+  la: |
+    V. Dóminus det nobis suam pacem.
+    R. Et vitam ætérnam. Amen.
+  en: |
+    V. May the Lord grant us his peace.
+    R. And life everlasting. Amen.
+status:
+  la: verified
+  en: verified
