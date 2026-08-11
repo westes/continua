@@ -11,7 +11,9 @@
 export interface LaudsPsalmodyOverride {
   id: string;
   groups: { psalms: number[]; antiphon: Partial<Record<string, string>> }[];
-  canticle: { id: string; antiphon: Partial<Record<string, string>> };
+  // `split`: see hours/lauds.ts's PsalmodyBlock — no current override
+  // needs it, but the shape stays aligned with the plain weekday default.
+  canticle: { id: string; antiphon: Partial<Record<string, string>>; split?: number };
   laudate: { antiphon: Partial<Record<string, string>> };
 }
 

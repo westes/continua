@@ -4,7 +4,7 @@ import { resolveDay, isAtLeast } from '../calendar';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getCanticle } from './lauds-canticles';
-import { getLaudsPsalmodyOverride } from './lauds-psalmody-overrides';
+import { getLaudsPsalmodyOverride, type LaudsPsalmodyOverride } from './lauds-psalmody-overrides';
 import { getOpeningVersicleId } from './opening-versicle';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { isDoubleOrHigher } from './antiphon';
@@ -34,19 +34,25 @@ interface PsalmodyBlock {
 }
 const laudsAntiphons = laudsAntiphonsData as Record<Weekday, PsalmodyBlock>;
 
+// Named temporal winners with real standing of their own, unconditionally
+// override-eligible (no rank check — they aren't "a saint" competing with
+// the weekday default the way one is, and neither carries a FeastClass at
+// all since DayWinner's temporal variant never does). Grows one entry at
+// a time as each is built, same as everywhere else in this codebase.
+const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set(['marian-saturday', 'christ-the-king']);
+
 /**
  * A duplex-majus+ saint's own proper psalmody (per-feast, not per-Common —
- * explicit choice), or Marian Saturday's (unconditional whenever it wins,
- * no rank threshold — it isn't "a saint" competing with the weekday
- * default the way one is). Falls back to `undefined` — the plain weekday
- * default — for a duplex-majus+ saint with no override authored yet, same
- * honest incremental-content convention as everywhere else in this
- * codebase; it's not gated behind whether content exists, just behind
- * whether it's *eligible* to override at all.
+ * explicit choice), or one of the named temporal feasts above. Falls back
+ * to `undefined` — the plain weekday default — for a duplex-majus+ saint
+ * with no override authored yet, same honest incremental-content
+ * convention as everywhere else in this codebase; it's not gated behind
+ * whether content exists, just behind whether it's *eligible* to override
+ * at all.
  */
-function getPsalmodyOverrideFor(day: LiturgicalDay): PsalmodyBlock | undefined {
-  if (day.winner.kind === 'temporal' && day.winner.id === 'marian-saturday') {
-    return getLaudsPsalmodyOverride('marian-saturday');
+function getPsalmodyOverrideFor(day: LiturgicalDay): LaudsPsalmodyOverride | undefined {
+  if (day.winner.kind === 'temporal' && ALWAYS_OVERRIDE_TEMPORAL_IDS.has(day.winner.id)) {
+    return getLaudsPsalmodyOverride(day.winner.id);
   }
   if (day.winner.kind === 'sanctoral' && isAtLeast(day.winner.rank, 'duplex-majus')) {
     return getLaudsPsalmodyOverride(day.winner.id);
@@ -166,12 +172,31 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
   return parts;
 }
 
-function resolveOffice(weekday: Weekday): ResolvedPart[] {
+/** A duplex-majus+/Marian-Saturday override's own capitulum/responsory/
+ * hymn/versicle (data/propers/common/lauds-{part}-${id}.yml), when
+ * authored — most overrides only bother with the psalmody (see
+ * getPsalmodyOverrideFor) and leave this bundle at its plain weekday
+ * default, which is exactly what falls back here when the id-keyed
+ * capitulum doesn't exist (same dual-missing-status "not authored"
+ * signal used throughout this codebase, not a special case). */
+function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
+  const overrideId = getPsalmodyOverrideFor(day)?.id;
+  if (overrideId) {
+    const chapter = resolveCommon(`lauds-capitulum-${overrideId}`);
+    if (chapter.status.la !== 'missing' || chapter.status.en !== 'missing') {
+      return [
+        { kind: 'chapter', text: chapter },
+        { kind: 'responsory', text: resolveCommon(`lauds-responsory-${overrideId}`) },
+        { kind: 'hymn', text: resolveCommon(`lauds-hymn-${overrideId}`) },
+        { kind: 'versicle', text: resolveCommon(`lauds-versicle-${overrideId}`) },
+      ];
+    }
+  }
   return [
-    { kind: 'chapter', text: resolveCommon(capitulumId(weekday)) },
-    { kind: 'responsory', text: resolveCommon(`lauds-responsory-${weekday}`) },
-    { kind: 'hymn', text: resolveCommon(`lauds-hymn-${weekday}`) },
-    { kind: 'versicle', text: resolveCommon(`lauds-versicle-${weekday}`) },
+    { kind: 'chapter', text: resolveCommon(capitulumId(day.weekday)) },
+    { kind: 'responsory', text: resolveCommon(`lauds-responsory-${day.weekday}`) },
+    { kind: 'hymn', text: resolveCommon(`lauds-hymn-${day.weekday}`) },
+    { kind: 'versicle', text: resolveCommon(`lauds-versicle-${day.weekday}`) },
   ];
 }
 
@@ -190,7 +215,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'lauds-psalmody':
       return resolvePsalmody(day);
     case 'lauds-office':
-      return resolveOffice(day.weekday);
+      return resolveOffice(day);
     case 'benedictus': {
       const { incipit, full } = splitNamedAntiphon(getBenedictusAntiphon(day).text);
       const opening = isDoubleOrHigher(day.winner) ? full : incipit;
@@ -204,7 +229,14 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'day-collects':
       return getDayCollects(day).map((text) => ({ kind: 'prayer' as const, text }));
     case 'suffrages': {
-      if (part.omitOnDouble && isDoubleOrHigher(day.winner)) {
+      // isDoubleOrHigher only ever looks at a sanctoral rank — Christ the
+      // King is modeled as a named temporal winner (see
+      // ALWAYS_OVERRIDE_TEMPORAL_IDS above) with no FeastClass to check at
+      // all, so it needs its own explicit inclusion here. Confirmed live:
+      // "Suffragium{omittitur}" — the whole set drops, same as any other
+      // Double-or-higher day.
+      const isChristTheKing = day.winner.kind === 'temporal' && day.winner.id === 'christ-the-king';
+      if (part.omitOnDouble && (isDoubleOrHigher(day.winner) || isChristTheKing)) {
         return [];
       }
       // Confirmed live: Our Lady's Saturday drops both "Of the Holy Cross"

@@ -51,4 +51,35 @@ describe('Lauds psalmody override (duplex-majus+ sanctoral, and Marian Saturday)
     const labels = ordo.parts.filter((p) => p.kind === 'preces' && p.label).map((p) => (p.kind === 'preces' ? p.label : undefined));
     expect(labels).toEqual(['Of the Holy Apostles Peter and Paul', 'For Peace', 'Salve Regina']);
   });
+
+  it("substitutes Christ the King's own proper psalmody and office bundle, and omits the suffrages entirely (Duplex I. classis)", () => {
+    const ordo = resolveOrdo('lauds', '2026-10-25');
+    const psalmNumbers = ordo.parts
+      .filter((p) => p.kind === 'psalm')
+      .map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(psalmNumbers).toEqual([66, 92, 99, 62, 148, 149, 150]);
+
+    const ps92 = ordo.parts.find((p) => p.kind === 'psalm' && p.psalmNumber === 92);
+    expect(ps92?.kind === 'psalm' ? ps92.antiphon?.text.en : undefined).toContain('The God of heaven');
+
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Col 1:12-13');
+
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Vexílla Christus ínclita');
+
+    const benedictus = ordo.parts.find((p) => p.kind === 'canticle' && p.canticleId === 'benedictus');
+    expect(benedictus?.kind === 'canticle' ? benedictus.antiphon?.text.en : undefined).toContain(
+      'He hath made us',
+    );
+
+    // Two extra collects: the commemorated Sunday's own, and the Simplex
+    // saint already commemorated under that Sunday before Christ the King
+    // displaced it too -- see tests/calendar/christ-the-king.test.ts.
+    const collects = ordo.parts.filter((p) => p.kind === 'prayer');
+    expect(collects.length).toBe(3);
+
+    const suffrages = ordo.parts.filter((p) => p.kind === 'preces' && p.label && p.label !== 'Salve Regina');
+    expect(suffrages).toEqual([]);
+  });
 });
