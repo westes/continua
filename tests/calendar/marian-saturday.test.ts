@@ -2,11 +2,11 @@ import { describe, expect, it } from 'vitest';
 import { resolveDay } from '../../src/calendar';
 import { getDayLabel } from '../../src/calendar/day-label';
 
-// Direct instruction: on a free Saturday, "Our Lady's Saturday" mirrors
-// privileged-feria-minor exactly — Semiduplex-or-higher still wins
-// outright (Marian Saturday doesn't happen); below that (Simplex, and
-// Vigil, since both are below semiduplex in the FeastClass scale), the
-// saint loses and is commemorated instead.
+// Direct instruction: on a free Saturday, "Our Lady's Saturday" is really
+// only a Simplex-strength standing — a Simplex saint alone loses to it
+// and is commemorated instead; anything Semiduplex-or-higher, or a Vigil
+// (which keeps forcing its own primacy the same way it does any other
+// day), still wins outright and Marian Saturday doesn't apply at all.
 describe('Marian Saturday (applyMarianSaturday)', () => {
   it('wins outright, with no commemoration, on a Saturday with nothing else at all going on', () => {
     const day = resolveDay('2026-10-24');
@@ -23,12 +23,21 @@ describe('Marian Saturday (applyMarianSaturday)', () => {
     ]);
   });
 
-  it('wins over a Vigil too (below semiduplex, same as Simplex) -- can commemorate more than one loser at once', () => {
-    const day = resolveDay('2025-11-29'); // St. Saturninus (Simplex) + Vigil of St. Andrew
-    expect(day.winner).toEqual({ kind: 'temporal', id: 'marian-saturday' });
+  it('loses to a Vigil, which keeps forcing its own primacy on a Saturday same as any other day -- Marian Saturday does not apply', () => {
+    // 2025-11-29: Vigil of St. Andrew collides with St. Saturninus
+    // (Simplex) via calendar/collision.ts (Vigil outranks Simplex there)
+    // before Marian Saturday even gets a look-in -- Vigil wins outright,
+    // Saturninus is commemorated as the collision's loser, not by Marian
+    // Saturday's own demotion rule.
+    const day = resolveDay('2025-11-29');
+    expect(day.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'vigil-of-st-andrew',
+      name: 'Vigil of St. Andrew',
+      rank: 'vigil',
+    });
     expect(day.commemorations).toEqual([
       { kind: 'sanctoral', id: 'st-saturninus', name: 'St. Saturninus, Martyr', rank: 'simplex' },
-      { kind: 'sanctoral', id: 'vigil-of-st-andrew', name: 'Vigil of St. Andrew', rank: 'vigil' },
     ]);
   });
 

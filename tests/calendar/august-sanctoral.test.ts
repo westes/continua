@@ -53,10 +53,7 @@ describe('August sanctoral pull (first pass)', () => {
   });
 
   it("the Vigil of St. Lawrence's own vigil rank forces primacy over a real, otherwise-unranked secondary saint", () => {
-    // 2025-08-09 is a Saturday -- collides with the generic Saturday-of-
-    // Mary votive this test isn't about (see tests/calendar/marian-
-    // saturday.test.ts); 2024 keeps it a plain midweek day.
-    const day = resolveDay('2024-08-09');
+    const day = resolveDay('2025-08-09');
     expect(day.winner).toEqual({
       kind: 'sanctoral',
       id: 'vigil-of-st-lawrence',

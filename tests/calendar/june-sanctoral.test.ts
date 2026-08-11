@@ -40,11 +40,8 @@ describe('June sanctoral pull (first pass)', () => {
   });
 
   it('the Nativity of St. John the Baptist wins outright at Duplex I. classis, distinct from his Vigil the day before', () => {
-    // 2035-06-23 is a Saturday -- collides with the generic Saturday-of-
-    // Mary votive this test isn't about (see tests/calendar/marian-
-    // saturday.test.ts); 2027 keeps both dates on plain midweek days.
-    const vigil = resolveDay('2027-06-23');
-    const nativity = resolveDay('2027-06-24');
+    const vigil = resolveDay('2035-06-23');
+    const nativity = resolveDay('2035-06-24');
     expect(vigil.winner).toEqual({
       kind: 'sanctoral',
       id: 'vigil-of-st-john-the-baptist',

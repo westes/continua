@@ -140,13 +140,18 @@ function applyChristTheKing(isoDate: string, winner: DayWinner, commemorations: 
 /**
  * Layered on top of everything above, same spirit as applyOctaves: never
  * changes decideOccurrence's own rules, just relabels the result on a free
- * Saturday. Real standing of its own (per direct instruction, mirrors
- * privileged-feria-minor exactly) — a Semiduplex-or-higher saint still
- * wins outright and this never applies; a Simplex (or Vigil) saint loses
- * to it and is commemorated instead, same as an Advent feria would demote
- * one. `ordinary-feria` is the only category this touches — every
- * privileged season/day (Ember Saturdays, Advent, Lent, ...) already has
- * its own real standing and keeps it untouched.
+ * Saturday. Real standing of its own, but only really a Simplex-strength
+ * one (per direct instruction, refined from an earlier "mirrors
+ * privileged-feria-minor exactly" pass that also swept in Vigils, which
+ * turned out wrong: a Vigil keeps forcing its own primacy on a Saturday
+ * the same way it already does any other day, same as Simplex always has
+ * — see calendar/commemorations.ts's own transferDirectionOf for Vigil's
+ * usual special standing elsewhere) — a Simplex saint alone loses to it
+ * and is commemorated instead; anything Semiduplex-or-higher, or a Vigil,
+ * still wins outright and this never applies. `ordinary-feria` is the
+ * only category this touches — every privileged season/day (Ember
+ * Saturdays, Advent, Lent, ...) already has its own real standing and
+ * keeps it untouched.
  *
  * The relabel (not just leaving `winner` as the plain temporal id) is
  * what lets getDayLabel/getBenedictusAntiphon/getDayCollects/getLaudsPsalmodyOverride
@@ -175,7 +180,7 @@ function applyMarianSaturday(
   if (winner.kind === 'temporal') {
     return MARIAN_SATURDAY;
   }
-  if (isAtLeast(winner.rank, 'semiduplex')) {
+  if (winner.rank !== 'simplex') {
     return winner;
   }
   commemorations.push({ kind: 'sanctoral', id: winner.id, name: winner.name, rank: winner.rank });
