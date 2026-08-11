@@ -191,7 +191,45 @@ days:
   "08-28": [st-augustine, st-hermes]
   "08-29": [decollation-of-st-john-baptist, st-sabina]
   "08-30": [ss-felix-and-adauctus]
-  "09-08": [nativity-bvm]
+  # September — 9/12 of the pre-1955 pull. Same octave-gap exclusions as
+  # August, this time around the Nativity of the BVM's own Sep 8-15
+  # octave: Ss. Gorgonius (Sep 9), Proti and Hyacinthus (Sep 11), and
+  # Nicomedes (Sep 15, the octave's own final day) are real named
+  # secondaries excluded for the same reason St. Clare was in August.
+  # St. Hadrian (Sep 8) is the one exception -- he's blocked by the
+  # Nativity's own day, not its octave, and that day IS already a mapped
+  # sanctoral entry, so the ordinary collision engine handles him
+  # correctly. The Exaltation of the Holy Cross (Sep 14) is excluded as a
+  # fixed feast of the Lord, same convention as the Finding of the Holy
+  # Cross. St. Nicholas of Tolentino (Sep 10) and St. Januarius (Sep 19)
+  # are both monastic-calendar-specific: the former overrides what the
+  # base Tridentine table treats as a plain Nativity-octave continuation,
+  # the latter is added outright, present in neither the base table nor
+  # (for Nicholas) its own octave slot.
+  #
+  # FLAGGED FOR REVIEW: the pre-existing "09-29": [st-michael] mapping
+  # below (added before this pull initiative, sourced from the raw
+  # Sancti/09-29.txt file directly rather than a live query) does not
+  # appear to hold in this pull's actual target track -- a live kalendar
+  # check across 6 different years (2025-2030) shows nothing at all on
+  # Sep 29 in "Monastic Tridentinum 1617" (not even a commemoration),
+  # and that file's own [Rank] block has no untagged/default entry for
+  # this date, only rubric-tagged alternates (tridentina, cisterciensis).
+  # The already-correctly-pulled May 8 Apparition of St. Michael (see
+  # apparition-of-st-michael.yml) may be this tradition's only real
+  # Michaelmas. Left as-is pending a decision -- see this month's summary.
+  "09-01": [st-giles, ss-twelve-brothers]
+  "09-08": [nativity-bvm, st-hadrian]
+  "09-10": [st-nicholas-of-tolentino]
+  "09-16": [ss-cornelius-and-cyprian, ss-euphemia-lucia-and-geminianus]
+  "09-19": [st-januarius]
+  "09-20": [vigil-of-st-matthew]
+  "09-21": [st-matthew]
+  "09-22": [ss-maurice-and-companions]
+  "09-23": [st-linus, st-thecla]
+  "09-26": [ss-cyprian-and-justina]
+  "09-27": [ss-cosmas-and-damian]
   "09-29": [st-michael]
+  "09-30": [st-jerome]
   "11-01": [all-saints]
   "12-08": [immaculate-conception]

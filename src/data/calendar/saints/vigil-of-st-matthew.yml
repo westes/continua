@@ -1,0 +1,17 @@
+# A real vigil. Sep 20 sometimes coincides with the movable September
+# Ember Saturday (privileged-feria, already modeled -- which specific
+# week in September Ember falls in shifts year to year, confirmed by
+# comparing 2025, where Sep 20 IS Ember Saturday, against 2026, where
+# Sep 20 is an ordinary Sunday instead). In the *real* engine, on an
+# Ember-Saturday year this vigil is commemorated Mass-only rather than
+# fully displaced (2025-09-20, live check) -- this app doesn't model that
+# Office-vs-Mass distinction anywhere, so here it simply transfers per the
+# ordinary privileged-feria/vigil rule instead, a known, already-accepted
+# simplification (not specific to this saint) rather than a guess. No
+# unique collect: the raw file at this MM-DD slot (Sancti/09-20.txt) is
+# empty.
+id: vigil-of-st-matthew
+name: "Vigil of St. Matthew"
+rank: vigil
+common: common-of-a-vigil
+propers: null

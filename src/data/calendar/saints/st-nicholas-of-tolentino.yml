@@ -1,0 +1,15 @@
+# A monastic-calendar-specific reassignment, not a mistake: the base
+# Tridentine table (1570.txt) has Sep 10 as a plain continuation of the
+# Nativity of the BVM's octave, but the monastic-specific delta table
+# (M1617.txt) overrides that day entirely with this saint -- confirmed
+# live (Monastic Tridentinum 1617, 2025-09-10), winning outright at
+# Semiduplex, alone (the octave continuation is demoted to a mere
+# commemoration, itself not independently named so not modeled). Same
+# class of finding as April's St. Robert/St. Catherine reassignment. No
+# unique collect: the raw file at this MM-DD slot (Sancti/09-10.txt) is
+# empty.
+id: st-nicholas-of-tolentino
+name: "St. Nicholas of Tolentino, Confessor"
+rank: semiduplex
+common: common-of-a-confessor-not-bishop
+propers: null
