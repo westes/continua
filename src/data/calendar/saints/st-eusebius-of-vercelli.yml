@@ -1,0 +1,16 @@
+# A monastic-calendar-specific placement: the base Tridentine table
+# (1570.txt) doesn't have this saint at all; the monastic-specific delta
+# table (M1617.txt) places him here via a same-day redirect notation
+# ("12-15=12-16=..."). Verified live (Monastic Tridentinum 1617,
+# 2025-12-15) -- an ordinary Advent feria (privileged-feria-minor),
+# Semiduplex wins outright, feria commemorated in return. No unique
+# collect: the raw file actually found at this MM-DD slot
+# (Sancti/12-15.txt) is the later (post-1854) Octave of the Immaculate
+# Conception's, not this saint's at all -- a live prayTertia query for
+# the Monastic 1617 track returns no Oratio, confirming propers: null is
+# correct.
+id: st-eusebius-of-vercelli
+name: "St. Eusebius of Vercelli, Bishop and Martyr"
+rank: semiduplex
+common: common-of-a-martyr-bishop
+propers: null

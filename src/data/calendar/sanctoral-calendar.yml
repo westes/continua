@@ -304,4 +304,36 @@ days:
   "11-26": [st-silvester-abbot, st-peter-of-alexandria]
   "11-29": [vigil-of-st-andrew, st-saturninus]
   "11-30": [st-andrew]
+  # December — 12/12, the final month of the pre-1955 pull. Every
+  # non-excluded date this month falls within a season this app now
+  # models as `privileged-feria-minor` (Advent through Dec 20, Christmas's
+  # own Octave from Dec 26) -- this month's own pull is what surfaced and
+  # verified that temporal-category fix (see calendar/types.ts and this
+  # repo's commit history). Immaculate Conception's own propers were
+  # backfilled this month. Excluded: Dec 24 (Vigil of Christmas) and Dec
+  # 25 (Christmas itself) aren't sanctoral entries at all -- Christmas is
+  # a fixed-date temporal anchor (see data/calendar/fixed-date-
+  # calendar.yml) and its Vigil is a distinct privileged-feria-major
+  # temporal category, neither modeled as a saint. St. Eusebius of
+  # Vercelli (Dec 15) is a monastic-calendar-specific placement, reached
+  # via a same-day redirect notation in M1617.txt rather than a plain
+  # date entry. The Vigil of St. Thomas (Dec 20) always lands on Advent's
+  # Ember Saturday -- a known Mass-vs-Office simplification, same pattern
+  # as September's Vigil of St. Matthew.
+  "12-02": [st-bibiana]
+  "12-04": [st-barbara]
+  "12-05": [st-sabbas]
+  "12-06": [st-nicholas]
+  "12-07": [st-ambrose]
   "12-08": [immaculate-conception]
+  "12-10": [st-melchiades]
+  "12-11": [st-damasus]
+  "12-13": [st-lucy]
+  "12-15": [st-eusebius-of-vercelli]
+  "12-20": [vigil-of-st-thomas]
+  "12-21": [st-thomas-apostle]
+  "12-26": [st-stephen-protomartyr]
+  "12-27": [st-john-apostle]
+  "12-28": [holy-innocents]
+  "12-29": [st-thomas-becket]
+  "12-31": [st-silvester-i]

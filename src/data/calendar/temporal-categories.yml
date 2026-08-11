@@ -39,10 +39,15 @@ bySeason:
   # comment) -- weaker than the Ember-day `privileged-feria` tier, but real
   # standing nonetheless, unlike a plain `ordinary-feria`.
   advent: { sunday: privileged-sunday, feria: privileged-feria-minor }
-  # Christmastide's ferias are folded into the privileged-feria default for
-  # the whole season as a simplification of "the Octave of Christmas (Dec
-  # 25 - Jan 1) is privileged" — slightly overbroad into Jan 2-5, harmless.
-  christmastide: { sunday: privileged-sunday, feria: privileged-feria }
+  # Christmastide's ferias are folded into the privileged-feria-minor
+  # default for the whole season as a simplification of "the Octave of
+  # Christmas (Dec 25 - Jan 1) is privileged" — slightly overbroad into Jan
+  # 2-5, harmless. Verified `privileged-feria-minor` specifically (not the
+  # stronger `privileged-feria`) during the December pull: St. Thomas of
+  # Canterbury, Semiduplex, wins outright within the Octave (Dec 29) in the
+  # real Monastic 1617 engine, which `privileged-feria`'s Duplex+ threshold
+  # would wrongly forbid.
+  christmastide: { sunday: privileged-sunday, feria: privileged-feria-minor }
   epiphanytide: { sunday: ordinary-sunday, feria: ordinary-feria }
   septuagesima: { sunday: privileged-sunday, feria: ordinary-feria }
   lent: { sunday: privileged-sunday, feria: ordinary-feria }

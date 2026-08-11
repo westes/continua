@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# kalendar check (2025-12-13) -- an ordinary Advent feria
+# (privileged-feria-minor), Duplex wins outright, feria commemorated in
+# return. Own proper antiphon; its own [Oratio] is a plain cross-
+# reference to a generic Common formula (@Commune/C7a), not unique text,
+# so getDayCollect resolves honestly missing for her despite propers
+# being set -- same pattern as February's St. Agatha.
+id: st-lucy
+name: "St. Lucy, Virgin and Martyr"
+rank: duplex
+common: common-of-a-virgin-martyr
+propers: "st-lucy"

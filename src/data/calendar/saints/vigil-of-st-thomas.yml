@@ -1,0 +1,15 @@
+# A real vigil, landing on Advent's Ember Saturday every year (Dec 20 is
+# fixed, and Advent Ember Saturday is defined relative to it -- see the
+# raw table's own "(in missa tantum)" tag, meaning the *real* engine
+# commemorates this vigil at Mass only, keeping Ember Saturday
+# (privileged-feria, see calendar/types.ts) as the Office's primary. This
+# app doesn't model the Mass-vs-Office distinction anywhere (same known
+# simplification as September's Vigil of St. Matthew), so here it simply
+# follows the ordinary privileged-feria/vigil transfer rule instead. No
+# unique collect: the raw file at this MM-DD slot (Sancti/12-20.txt) is
+# empty.
+id: vigil-of-st-thomas
+name: "Vigil of St. Thomas"
+rank: vigil
+common: common-of-a-vigil
+propers: null
