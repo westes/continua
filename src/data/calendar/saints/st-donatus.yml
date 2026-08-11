@@ -1,0 +1,22 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# kalendar check on a clean year (2026-08-07, 2029-08-07) -- wins outright
+# at Simplex, alone. On a year where Aug 3 (the Finding of St. Stephen,
+# see finding-of-st-stephen.yml) falls on a Sunday, the *real* engine
+# transfers that Semiduplex feast forward past several higher-rank fixed
+# feasts (Dominic, Our Lady of the Snows, the Transfiguration) and lands
+# it here instead, reducing this saint to a mere commemoration for that
+# one year (confirmed live in both 2025 and 2031, both Aug-3-Sunday
+# years). This app's own transfer machinery doesn't chase a multi-day
+# skip search like that, so in this app Donatus wins here every year,
+# including ones where the real engine would displace him -- a known,
+# documented simplification, not a guess; see the regression test in
+# tests/calendar/august-sanctoral.test.ts. No unique collect regardless:
+# the raw file at this MM-DD slot (Sancti/08-07.txt) is actually St.
+# Cajetan's (a later, post-1617 addition to this filename slot, added
+# 1671) -- a live prayTertia query for the Monastic 1617 track returns no
+# Oratio at all, confirming propers: null is correct.
+id: st-donatus
+name: "St. Donatus, Bishop and Martyr"
+rank: simplex
+common: common-of-a-martyr-bishop
+propers: null

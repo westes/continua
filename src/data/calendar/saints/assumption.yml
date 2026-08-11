@@ -1,7 +1,11 @@
 # Verified against Divinum Officium (web/www/horas/Latin/Sancti/08-15.txt,
-# untagged/default [Rank] block).
+# untagged/default [Rank] block). Propers backfilled during the August
+# pull (live kalendar/prayTertia check, 2025-08-15) now that the
+# collect-pulling methodology exists -- own proper collect. Its own
+# [Ant 1] is itself a cross-reference (@Sancti/08-15t, a Tridentine-
+# specific block) rather than plain text, so left unpulled this pass.
 id: assumption
 name: "The Assumption of the Blessed Virgin Mary"
 rank: duplex-1-classis
 common: common-of-the-bvm
-propers: null
+propers: "assumption"

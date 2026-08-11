@@ -1,8 +1,11 @@
 # Verified against Divinum Officium (web/www/horas/Latin/Sancti/08-10.txt,
 # untagged/default [Rank] block — the pre-1955 value, not the "(sed rubrica
-# 196)" alternate given alongside it in that file).
+# 196)" alternate given alongside it in that file). Propers backfilled
+# during the August pull (live kalendar/prayTertia check, 2026-08-10) now
+# that the collect-pulling methodology exists -- own proper collect and
+# antiphon.
 id: st-lawrence
 name: "St. Lawrence, Martyr"
 rank: duplex-2-classis
 common: common-of-a-martyr
-propers: null
+propers: "st-lawrence"

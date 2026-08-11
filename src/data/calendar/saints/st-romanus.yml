@@ -1,0 +1,17 @@
+# Genuinely unwinnable stub (verified 2025-08-09) -- always commemorated
+# under the Vigil of St. Lawrence (see vigil-of-st-lawrence.yml), never
+# wins outright, even though the Vigil's own rank (Simplex/vigil) is low --
+# vigils carry special forced-primacy rubrics regardless of ordinary rank
+# comparison. Both dates are fixed and non-movable, so this isn't an
+# artifact of the tested year. In years where Aug 9 is a Sunday, the vigil
+# itself is impeded and transfers backward to Saturday (see
+# tests/calendar/transfer.test.ts) -- Romanus still surfaces as a
+# commemoration on the Sunday even then (his loss to the vigil is a
+# separate local clash, independent of the vigil's own later transfer),
+# confirmed identically against the live reference engine (2026-08-09).
+# rank/propers unverified placeholders.
+id: st-romanus
+name: "St. Romanus, Martyr"
+rank: simplex
+common: common-of-a-martyr
+propers: null

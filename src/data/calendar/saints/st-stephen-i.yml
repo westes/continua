@@ -1,0 +1,18 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# kalendar check on a clean weekday (2027-08-02, a Monday) -- wins
+# outright at Simplex. On a Saturday this date is instead outranked by
+# the generic "Sanctae Mariae Sabbato" votive (see st-blaise.yml for the
+# same pattern first found in February), confirmed by re-checking a
+# Saturday year (2025-08-02) where the votive won instead -- an artifact
+# of the tested weekday, not a real block, same as June's Ss. Marcellinus/
+# Peter/Erasmus case. No unique collect: the raw file at this MM-DD slot
+# (Sancti/08-02.txt) is actually St. Alphonsus Liguori's (a later,
+# post-1617 addition to this filename slot, not this saint) -- a live
+# prayTertia query for the Monastic 1617 track returns no Oratio at all,
+# confirming propers: null is correct rather than a mismatch to chase
+# down, per the file-naming caution first documented in April/July.
+id: st-stephen-i
+name: "St. Stephen I, Pope and Martyr"
+rank: simplex
+common: common-of-a-martyr-bishop
+propers: null

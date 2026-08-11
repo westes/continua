@@ -1,0 +1,18 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# kalendar check (2026-08-03, a clean weekday). In the real engine, Aug 3
+# falling on a Sunday transfers this forward to Aug 7 (see st-donatus.yml)
+# -- this app's transfer machinery doesn't chase that multi-day skip
+# search, so in this app that Sunday simply displaces this feast entirely
+# for that year (same "not delivered rather than guessed at" stance as
+# other unmodeled transfer chains) rather than landing it on Aug 7. About
+# St. Stephen the Protomartyr's relics, not a feast of the Lord/BVM, so
+# kept in scope like the Conversion of St. Paul. Own collect: a deliberate
+# cross-reference to St. Stephen's own Dec 26 feast (@Sancti/12-26) with
+# one word substituted ("natalícia" -> "Inventiónem") -- the reference
+# engine expands this to full text automatically. Its [Ant 1] is the same
+# Dec 26 antiphon reused verbatim, no substitution this time.
+id: finding-of-st-stephen
+name: "The Finding of St. Stephen, Protomartyr"
+rank: semiduplex
+common: common-of-a-martyr
+propers: "finding-of-st-stephen"

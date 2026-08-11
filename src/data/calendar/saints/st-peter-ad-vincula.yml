@@ -1,0 +1,14 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live kalendar
+# check (2026-08-01 and again 2029-08-01) -- winner outright, Duplex majus,
+# over Ss. Machabaeorum (see ss-machabees.yml). About St. Peter's own
+# deliverance from prison (Acts 12), not a feast of the Lord/BVM, so kept
+# in scope like the Conversion of St. Paul/Chair-of-Peter feasts. Own
+# proper collect; its [Ant 1] is a deliberate cross-reference to the
+# Chair-of-Peter-at-Antioch antiphon (@Sancti/02-22, already its own file
+# per the one-file-per-id convention), same reuse pattern as Ss. Peter and
+# Paul in June.
+id: st-peter-ad-vincula
+name: "St. Peter's Chains"
+rank: duplex-majus
+common: common-of-an-apostle
+propers: "st-peter-ad-vincula"
