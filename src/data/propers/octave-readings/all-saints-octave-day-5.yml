@@ -1,0 +1,36 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-11-5). Matins reading for day 5 of All Saints' own
+# octave -- collapsed into one continuous reading per project convention. A
+# continuous reading from the book of Ezechiel, read straight through across
+# the whole octave (a different excerpt each day), not repeated -- confirmed
+# via each day's own Invitatory (the same distinctive All Saints antiphon
+# every day, Nov 2 included, so this app's own exclusion of All Souls' Day as
+# a different liturgical genre doesn't conflict with this octave's real Matins
+# content). The source's own English translation is used as-is, including gaps
+# in its own punctuation (some older "oct"/"bmv"-suffixed variant files drop
+# question marks entirely in places) -- not corrected here, since guessing
+# where they belong isn't the same class of fix as an isolated single-
+# character typo.
+id: all-saints-octave-day-5
+source: "De Ezechiéle Prophéta"
+text:
+  la: |
+    De Ezechiéle Prophéta Ezek 7:1-4 1 Et factus est sermo Dómini ad me, dicens: 2 Et tu, fili hóminis, hæc dicit Dóminus Deus terræ Israël: Finis venit, venit finis super quátuor plagas terræ. 3 Nunc finis super te, et immíttam furórem meum in te: et judicábo te juxta vias tuas, et ponam contra te omnes abominatiónes tuas. 4 Et non parcet óculus meus super te, et non miserébor; sed vias tuas ponam super te, et abominatiónes tuæ in médio tui erunt, et sciétis quia ego Dóminus.
+
+    Ezek 7:5-9 5 Hæc dicit Dóminus Deus: Afflíctio una, afflíctio ecce venit. 6 Finis venit, venit finis, evigilávit advérsum te, ecce venit: 7 Venit contrítio super te, qui hábitas in terra; venit tempus, prope est dies occisiónis, et non glóriæ móntium. 8 Nunc de propínquo effúndam iram meam super te, et complébo furórem meum in te: et judicábo te juxta vias tuas, et impónam tibi ómnia scélera tua, 9 Et non parcet óculus meus, nec miserébor; sed vias tuas impónam tibi, et abominatiónes tuæ in médio tui erunt, et sciétis quia ego sum Dóminus percútiens.
+
+    Ezek 7:10-13 10 Ecce dies, ecce venit; egréssa est contrítio, flóruit virga, germinávit supérbia, 11 Iníquitas surréxit in virga impietátis; non ex eis et non ex pópulo neque ex sónitu eórum, et non erit réquies in eis. 12 Venit tempus, appropinquávit dies: qui emit non lætétur, et qui vendit, non lúgeat: quia ira super omnem pópulum ejus; 13 Quia qui vendit, ad id quod véndidit non revertétur: et adhuc in vivéntibus vita eórum.
+  en: |
+    Lesson from the book of Ezekiel Ezek 7:1-4 1 And the word of the Lord came to me, saying: 2 And thou son of man, thus saith the Lord God to the land of Israel: The end is come, the end is come upon the four quarters of the land. 3 Now is an end come upon thee, and I will send my wrath upon thee, and I will judge thee according to thy ways: and I will set all thy abominations against thee. 4 And my eye shall not spare thee, and I will shew thee no pity: but I will lay thy ways upon thee, and thy abominations shall be in the midst of thee: and you shall know that I am the Lord.
+
+    Ezek 7:5-9 5 Thus saith the Lord God: One affliction, behold an affliction is come. 6 An end is come, the end is come, it hath awaked against thee: behold it is come. 7 Destruction is come upon thee that dwellest in the land: the time is come, the day of slaughter is near, and not of the joy of mountains. 8 Now very shortly I will pour out my wrath upon thee, and I will accomplish my anger in thee: and I will judge thee according to thy ways, and I will lay upon thee all thy crimes. 9 And my eye shall not spare, neither will I shew mercy: but I will lay thy ways upon thee, and thy abominations shall be in the midst of thee: and you shall know that I am the Lord that strike.
+
+    Ezek 7:10-13 10 Behold the day, behold it is come: destruction is gone forth, the rod hath blossomed, pride hath budded. 11 Iniquity is risen up into a rod of impiety: nothing of them shall remain, nor of their people, nor of the noise of them: and there shall be no rest among them. 12 The time is come, the day is at hand: let not the buyer rejoice: nor the seller mourn: for wrath is upon all the people thereof. 13 For the seller shall not return to that which he hath sold, although their life be yet among the living. For the vision which regardeth all the multitude thereof, shall not go back: neither shall man be strengthened in the iniquity of his life.
+responsory:
+  la: |
+    ℟. Vidi Dóminum sedéntem super sólium excélsum et elevátum, et plena erat omnis terra majestáte ejus: * Et ea, quæ sub ipso erant, replébant templum. ℣. Séraphim stabant super illud: sex alæ uni, et sex alæ álteri. ℟. Et ea, quæ sub ipso erant, replébant templum.
+  en: |
+    ℟. I saw the Lord sitting upon a throne, high and lifted up, and the whole earth was full of His glory; * And His train filled the temple. ℣. Above it stood the Seraphim each one had six wings. ℟. And His train filled the temple.
+status:
+  la: verified
+  en: verified

@@ -33,6 +33,11 @@ export default defineConfig({
         // Precache everything the shell needs so a day's office renders
         // fully offline once visited once.
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        // Default cap (2 MiB) is too small once the sanctoral pull's real
+        // propers/octave-reading text (all eagerly bundled, by design, for
+        // offline use) pushes the main chunk past it -- raised with
+        // headroom for the octaves still being transcribed.
+        maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
       },
     }),
   ],
