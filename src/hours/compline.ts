@@ -86,6 +86,11 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'by-day-kind':
     case 'variable':
     case 'day-collect':
+    case 'lauds-psalmody':
+    case 'lauds-office':
+    case 'benedictus':
+    case 'suffrages':
+    case 'day-collects':
       throw new Error(`Compline's ordo doesn't support a '${part.kind}' part`);
   }
 }

@@ -82,6 +82,48 @@ export type HourPart =
   // to a 'canticle' ResolvedPart (with the opening antiphon inline) plus a
   // standalone 'antiphon' ResolvedPart for the closing repeat.
   | { kind: 'nunc-dimittis' }
+  // Lauds only. Everything from Ps 66 through the Laudate psalms (148-150)
+  // inclusive, resolved by weekday — see hours/lauds.ts's resolvePsalmody
+  // and data/hours/lauds-antiphons.yml. Opaque here on purpose: the real
+  // shape (a fixed Ps 66 with no antiphon at all, then a weekday-variable
+  // number of antiphoned psalm groups, then a weekday-variable OT canticle,
+  // then the Laudate psalms under one more shared antiphon) doesn't fit any
+  // existing part kind, and hardcoding psalm numbers in lauds.yml can't
+  // work since they differ by weekday. Known, deliberate gap: does NOT
+  // model the Commune/feast override of this whole block (real practice
+  // substitutes an entirely different set of psalms+antiphons+canticle on
+  // a Semiduplex-or-higher day) — every day currently gets the plain
+  // ferial weekday distribution regardless of who wins. Fixing that is a
+  // separate, larger propers-authoring task (a full Common-of-Saints psalm
+  // set per Common), not started yet.
+  | { kind: 'lauds-psalmody' }
+  // Lauds only. The weekday-resolved chapter/short-responsory/hymn/closing
+  // versicle bundle that follows the psalmody — see hours/lauds.ts and
+  // data/propers/common/lauds-{capitulum,responsory,hymn,versicle}-*.yml.
+  // Expands into 4 ResolvedParts (chapter, responsory, hymn, versicle).
+  | { kind: 'lauds-office' }
+  // Lauds only. Benedictus (Luke 1:68-79), fixed text (see propers/common/
+  // benedictus.yml) framed by a day-resolved antiphon (see hours/
+  // resolve-common.ts's getBenedictusAntiphon) — same incipit-or-full/
+  // full-after-Creed... no Creed at Lauds, just before+after framing shape
+  // as nunc-dimittis, gated the same way by isDoubleOrHigher.
+  | { kind: 'benedictus' }
+  // Lauds only. The four fixed Tridentine suffrages (Holy Cross, BVM,
+  // Ss. Peter & Paul, Peace) said after the day's collect(s) — see
+  // data/propers/common/lauds-suffrage-*.yml. `omitOnDouble` gates the
+  // whole set at once (real practice: suffrages drop on a Double-or-higher
+  // feast) — an honest simplification, see hours/lauds.ts for the caveat
+  // on what real practice also suppresses them for that isn't modeled.
+  | { kind: 'suffrages'; omitOnDouble?: true }
+  // Lauds/Vespers. The day's own collect *and* one more per commemoration
+  // (calendar/types.ts's LiturgicalDay.commemorations) — see hours/
+  // resolve-common.ts's getDayCollects. Distinct from the singular
+  // 'day-collect' the Little Hours use (which only ever renders the
+  // winner's own collect, never a commemoration's). Simplification: each
+  // collect renders as its own complete "Let us pray ... Amen." block
+  // rather than the more compressed real form (one "Let us pray," only the
+  // last collect closes with the full doxology) — see hours/lauds.ts.
+  | { kind: 'day-collects' }
   // Compline's closing Marian antiphon (with its own versicle and collect
   // baked into the same text block) — resolved by season, defaulting to
   // Salve Regina. See hours/marian-antiphon.ts.

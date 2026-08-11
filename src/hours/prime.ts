@@ -112,6 +112,11 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
     case 'nunc-dimittis':
     case 'marian-antiphon':
     case 'day-collect':
+    case 'lauds-psalmody':
+    case 'lauds-office':
+    case 'benedictus':
+    case 'suffrages':
+    case 'day-collects':
       throw new Error(`Prime's ordo doesn't support a '${part.kind}' part`);
   }
 }

@@ -35,6 +35,62 @@ export function getDayCollect(day: LiturgicalDay): ResolvedText {
   return { text: {}, status: { la: 'missing', en: 'missing' } };
 }
 
+/**
+ * The day's own collect, plus one more per commemoration (calendar/
+ * types.ts's LiturgicalDay.commemorations) — Lauds/Vespers say all of
+ * these in sequence, unlike the Little Hours' single getDayCollect.
+ *
+ * Simplification, not yet corrected: real practice compresses this into
+ * one "Orémus" and lets only the *last* collect close with the full
+ * doxology, with earlier ones trailing straight into the next ("And:").
+ * Each collect file (data/propers/temporal/*-collect.yml, the per-saint
+ * *-collect.yml files) already bakes in its own "Orémus."/"Per Dóminum...
+ * Amen." for the single-collect case every other hour uses today, and
+ * stripping that back out per-collect to chain them properly would need
+ * text surgery this doesn't attempt — so on a commemorated day, each
+ * collect here renders as its own complete, separate block instead. An
+ * octave commemoration never contributes a collect (none authored — the
+ * octave content pull only ever sourced Matins readings, see propers/
+ * octave-readings.ts), so those are silently skipped, same as a
+ * not-yet-authored saint's own collect resolves to "missing" rather than
+ * throwing.
+ */
+export function getDayCollects(day: LiturgicalDay): ResolvedText[] {
+  const collects = [getDayCollect(day)];
+  for (const commemoration of day.commemorations) {
+    if (commemoration.kind === 'temporal') {
+      collects.push(toResolvedText(getTemporalProper(`${commemoration.id}-collect`)));
+    } else if (commemoration.kind === 'sanctoral') {
+      const saint = getSaintRecord(commemoration.id);
+      collects.push(
+        saint?.propers
+          ? resolveCommon(`${saint.propers}-collect`)
+          : { text: {}, status: { la: 'missing', en: 'missing' } },
+      );
+    }
+  }
+  return collects;
+}
+
+/**
+ * Lauds' Benedictus antiphon, resolved the same way as getDayCollect: a
+ * per-saint `${propers}-antiphon` (already authored during the sanctoral
+ * pull, sourced from each saint's own raw [Ant 1] — see e.g.
+ * st-lawrence-antiphon.yml) for a sanctoral winner, `${id}-benedictus-
+ * antiphon` (not authored yet for any temporal id — resolves "missing",
+ * same pending convention as everywhere else) for a temporal one.
+ */
+export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
+  if (day.winner.kind === 'temporal') {
+    return toResolvedText(getTemporalProper(`${day.winner.id}-benedictus-antiphon`));
+  }
+  const saint = getSaintRecord(day.winner.id);
+  if (saint?.propers) {
+    return resolveCommon(`${saint.propers}-antiphon`);
+  }
+  return { text: {}, status: { la: 'missing', en: 'missing' } };
+}
+
 export function verifiedText(text: Partial<Record<string, string>>): ResolvedText {
   const status: Partial<Record<string, 'verified'>> = {};
   for (const lang of Object.keys(text)) {

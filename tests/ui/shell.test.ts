@@ -41,12 +41,12 @@ describe('shell', () => {
     const root = document.getElementById('app')!;
     mountShell(root);
 
-    const laudsBtn = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-hour]')).find(
-      (btn) => btn.dataset.hour === 'lauds',
+    const vespersBtn = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-hour]')).find(
+      (btn) => btn.dataset.hour === 'vespers',
     );
-    laudsBtn?.click();
+    vespersBtn?.click();
 
-    expect(root.querySelector('.hour-view h2')?.textContent).toBe('Lauds');
+    expect(root.querySelector('.hour-view h2')?.textContent).toBe('Vespers');
     expect(root.querySelector('.hour-view-pending')).not.toBeNull();
   });
 

@@ -1,0 +1,25 @@
+# Ordo verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-11 — see src/hours/lauds.ts for how each part
+# resolves, and data/hours/lauds-antiphons.yml / lauds-canticles/*.yml /
+# propers/common/lauds-*.yml for the underlying weekday content.
+#
+# The suffrages (Holy Cross, BVM, Ss. Peter & Paul, Peace) are gated by
+# omitOnDouble — see hours/types.ts's 'suffrages' doc comment for the
+# caveat on what else real practice also suppresses them for that isn't
+# modeled yet.
+id: lauds
+parts:
+  - kind: opening-versicle
+  - kind: lauds-psalmody
+  - kind: lauds-office
+  - kind: benedictus
+  - kind: preces
+    textRef: { source: common, id: lauds-short-litany }
+  - kind: day-collects
+  - kind: suffrages
+    omitOnDouble: true
+  - kind: preces
+    textRef: { source: common, id: lauds-conclusio }
+  - kind: versicle
+    textRef: { source: common, id: lauds-closing-versicle }
+  - kind: marian-antiphon

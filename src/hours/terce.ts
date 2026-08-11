@@ -54,6 +54,11 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'closing-antiphon':
     case 'nunc-dimittis':
     case 'marian-antiphon':
+    case 'lauds-psalmody':
+    case 'lauds-office':
+    case 'benedictus':
+    case 'suffrages':
+    case 'day-collects':
       throw new Error(`Terce's ordo doesn't support a '${part.kind}' part`);
   }
 }
