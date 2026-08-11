@@ -1,0 +1,30 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-08-16) -- Aug 16 is day 2 of the Assumption's own
+# octave (started Aug 15), not day 7 of St. Lawrence's (which it's also
+# nominally within, but Lawrence's weaker octave is entirely overshadowed
+# here). Matins reading collapsed into one continuous reading per project
+# convention. No English translation exists in the source at all for this
+# reading -- its own English page falls back to showing the Latin text under
+# the "Reading" header, so en is left honestly missing rather than duplicated
+# or translated here. The source's own English translation is used as-is,
+# including gaps in its own punctuation (some older "oct"/"bmv"-suffixed
+# variant files drop question marks entirely in places) -- not corrected here,
+# since guessing where they belong isn't the same class of fix as an isolated
+# single-character typo.
+id: assumption-octave-day-2
+source: "Sermo sancti Joannis Damasceni"
+text:
+  la: |
+    Sermo sancti Joannis Damasceni Orat. 2 de Dorm. Deiparæ Jubilemus in arca Domini Dei toto animo, et muri cadent Hiericontini, contrariarum, inquam potestatum infestæ munitiones. Cum David exsultemus spiritu. Arca enim Domini hodie requievit. Clamemus cum Gabriele, qui primum locum obtinet inter angelos: Ave gratia plena: dominus tecum. Ave gaudii pelagus inexhaustum. Ave unicum molestiarum levamen. Aue omnium cordis dolorum medicamentum. Ave sancta virgo per quam mors quidem fuit expulsa, vita autem introducta.
+
+    Tu vero o sacrorum sepulcrorum sacratissimum, post domini quidem sepulcrum, quod uitæ dedit principium, quod fuit fons resurrectionis, (tecum enim loquar tamquam cum animato) ubinam est aurum illud purum, quod manus apostolorum in te condiderunt! Ubi divitiæ, quæ consumi nequeunt! Ubi novum uolumen, in quo ineffabiliter deus uerbum sine manu inscriptum fuit! Ubi abyssus gratiæ? Ubi pelagus curationum? Ubi est desiderabile illud deiparæ uirginis corpus?
+
+    Quid quæritis in sepulcro eam, quæ ad cælestia translata est tabernacula? cur a me custodiæ rationem exposcitis? Non possum ego divinis jussis resistere. Sacrosanctum corpus mihi quoque sanctitatem impertivit quod me pretiosissimi unguenti fragrantia replevit, et divinum templum effecit relictis sindonibus, abiit raptum sublime, comitantibus angelis, archangelis, et omnibus cælestibus potentiis. Nunc me circumdant angeli; nunc divina in me habitat gratia. Ergo evasi officina medicinæ ægrotantibus. Ego sum fons perennis curationum: Ego remedium aduersus dæmones: Ego civitas refugii omnibus ad me confugientibus.
+responsory:
+  la: |
+    ℟. Vidi speciósam sicut colúmbam, ascendéntem désuper rivos aquárum, cujus inæstimábilis odor erat nimis in vestiméntis ejus; * Et sicut dies verni circúmdabant eam flores rosárum et lília convállium. ℣. Quæ est ista quæ ascéndit per desértum sicut vírgula fumi ex aromátibus myrrhæ et thuris? ℟. Et sicut dies verni circúmdabant eam flores rosárum et lília convállium.
+  en: |
+    ℟. Isaw her, when, fair like a dove, she winged her flight above the rivers of waters. The priceless savour of her perfumes hung heavy in her garments. * And about her it was as the flower of roses in the spring of the year, and lilies of the valleys. ℣. Who is this that cometh out of the wilderness like a pillar of smoke, perfumed with myrrh and frankincense? ℟. And about her it was as the flower of roses in the spring of the year, and lilies of the valleys.
+status:
+  la: verified
+  en: missing

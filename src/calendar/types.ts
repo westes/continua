@@ -116,6 +116,14 @@ export interface SanctoralIdentity {
  * satisfying the "turned on but no octave data authored yet" case —
  * calendar/octaves.ts is the "generic way to commemorate an octave" that
  * makes that minimal declaration meaningful on its own.
+ *
+ * Matins readings, where sourced, are looked up separately by convention
+ * (propers/octave-readings.ts's `getOctaveReading(octaveId, dayNumber)`,
+ * id `${octaveId}-octave-day-${dayNumber}`) rather than declared here —
+ * they vary day to day within a single octave (confirmed: the Assumption's
+ * own octave gives different patristic sermon excerpts on day 2 vs. day
+ * 5), so there's no single id to put on this config, and it's normal for
+ * some days to have none authored at all.
  */
 export interface OctaveConfig {
   enabled: boolean;
@@ -129,9 +137,6 @@ export interface OctaveConfig {
    * data/calendar/temporal-feasts/pentecost-sunday.yml), which is
    * stricter (`duplex`). */
   wins?: FeastClass;
-  /** Matins reading proper id, if one has been sourced. Absent by default
-   * — most octaves checked so far have none. */
-  readingId?: string;
 }
 
 export type DayWinner =

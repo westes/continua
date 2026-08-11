@@ -1,0 +1,29 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-08-12). Matins reading for day 3 of St. Lawrence's
+# own octave -- collapsed into one continuous reading per project convention.
+# Same recurring responsory as day 2 (see st-lawrence-octave-day-2.yml). No
+# English translation exists in the source at all for this reading -- its own
+# English page falls back to showing the Latin text under the "Reading"
+# header, so en is left honestly missing rather than duplicated or translated
+# here. The source's own English translation is used as-is, including gaps in
+# its own punctuation (some older "oct"/"bmv"-suffixed variant files drop
+# question marks entirely in places) -- not corrected here, since guessing
+# where they belong isn't the same class of fix as an isolated single-
+# character typo.
+id: st-lawrence-octave-day-3
+source: "De Sermone S. Augustini Episcopi"
+text:
+  la: |
+    De Sermone S. Augustini Episcopi Ex Sermo 30, de Sanctis Legimus Ananiam, Azariam et Misaelem beatissimos pueros a rege in camino ignis inclusos in poenarum suarum deambulasse flammis, et igneos globos pedibus conculcasse. Unde et beatus Laurentius non minori gloria est praeferendus; siquidem illi in poenarum suarum flammis ambulant, hic et in ipso supplicii sui igne discumbit; illi vestigiis pedum conculcaverunt incendia, iste laterum suorum diffusione extinxit.
+
+    Iterum beatus Laurentius in dorsum supinus vertitur, et renes ejus ignibus exuruntur; ut impleretur psalmi prophetia quae dicit ex persona Laurentii: Proba me, Domine, et tenta me; ure renes meos, et cor meum. Duplici se utique postulat igne comburi. Nam si de uno et solo mundi igne loqueretur, sufficeret renes tantum exurendos incendiis obtulisse. Cor autem nisi Christi flamma non urit.
+
+    Oremus igitur, fratres, beatum Laurentium, qui dum fide sua persecutoris flammas vicit, ostendit nobis per ignem fidei gehennae incendia superare, et amore Christi diem judicii non timere. Nos vero, fratres dilectissimi, si ad consortium sanctorum martyrum pervenire volumus, de imitatione martyrum cogitemus. Debent enim in nobis aliquid de suis virtutibus recognoscere, ut pro nobis dignentur Dominum supplicare.
+responsory:
+  la: |
+    ℟. Levíta Lauréntius bonum opus operátus est, qui per signum crucis cæcos illuminávit, * Et thesáuros Ecclésiæ dedit paupéribus. ℣. Dispérsit, dedit paupéribus: justítia ejus manet in sǽculum sǽculi. ℟. Et thesáuros Ecclésiæ dedit paupéribus.
+  en: |
+    ℟. The Levite Lawrence wrought a good work, in that with the sign of the Cross he gave sight to the blind, * And dispersed among the needy the riches of the Church. ℣. He hath dispersed, he hath given to the poor his righteousness endureth forever. ℟. And dispersed among the needy the riches of the Church.
+status:
+  la: verified
+  en: missing

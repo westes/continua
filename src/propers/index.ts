@@ -47,4 +47,6 @@ export function getTemporalProper(id: string): ProperText {
   return resolve(temporalPropers, id);
 }
 
+export { getOctaveReading } from './octave-readings';
 export type { ProperText } from './types';
+export type { OctaveReadingText } from './octave-readings';
