@@ -1,0 +1,15 @@
+# A monastic-calendar-specific reassignment, not a mistake: the base
+# Tridentine table (1570.txt) has St. Peter of Alexandria as Nov 26's
+# sole entry, but the monastic-specific delta table (M1617.txt) overrides
+# that day with this saint instead, demoting Peter to a commemoration
+# (see st-peter-of-alexandria.yml) -- confirmed live (Monastic
+# Tridentinum 1617, 2032-11-26), winning outright at Duplex. Own proper
+# collect, no unique antiphon of his own. Distinct from October's St.
+# Sylvester I, Pope (not in this pull's data) and December's St.
+# Sylvester I feast (Dec 31, not yet pulled) -- this is Sylvester Gozzolini,
+# founder of the Sylvestrine Benedictines.
+id: st-silvester-abbot
+name: "St. Silvester, Abbot"
+rank: duplex
+common: common-of-an-abbot
+propers: "st-silvester-abbot"

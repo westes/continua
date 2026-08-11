@@ -1,0 +1,16 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# kalendar check on a clean year (2032-11-24, chosen so Nov 23 isn't a
+# Sunday that year) -- winner outright, Simplex, alone. In years where
+# Nov 23 (St. Clement's own date) falls on a Sunday, Clement transfers
+# forward and displaces this saint entirely for that year instead (see
+# st-clement.yml and the regression test in
+# tests/calendar/november-sanctoral.test.ts) -- a real, single-day
+# transfer this app's existing machinery models correctly. No unique
+# collect: the raw file's own [Oratio] is an unusual bare cross-reference
+# notation ("@:Oratio_") that doesn't resolve to any text via a live
+# query for the Monastic 1617 track, confirming propers: null is correct.
+id: st-chrysogonus
+name: "St. Chrysogonus, Martyr"
+rank: simplex
+common: common-of-a-martyr
+propers: null

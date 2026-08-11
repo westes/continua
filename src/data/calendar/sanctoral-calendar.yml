@@ -254,5 +254,54 @@ days:
   "10-27": [vigil-of-ss-simon-and-jude]
   "10-28": [ss-simon-and-jude]
   "10-31": [vigil-of-all-saints]
+  # November — 11/12 of the pre-1955 pull. All Saints' own propers were
+  # backfilled this month (see all-saints-collect.yml). New exclusion
+  # categories this month: All Souls' Day (Nov 2) is a fundamentally
+  # different liturgical genre -- the Office of the Dead, not a saint's
+  # feast at all, no Common-of-Saints structure to fall back on -- out of
+  # scope the same way this app doesn't model the Requiem/funeral rite
+  # anywhere else. Nov 3-7 are pure All-Saints-octave continuations (no
+  # named saint). Ss. Four Crowned Martyrs (Nov 8, the octave's own final
+  # day) hit the same unmodeled-octave gap as several saints in August/
+  # September. The Dedication of the Basilica of the Most Holy Savior
+  # (Nov 9, i.e. the Lateran) is a fixed feast of the Lord (named for the
+  # Savior directly), excluded the same way the Transfiguration was in
+  # August -- its secondary, St. Theodore, is excluded along with it for
+  # the same unmodeled-primary reason. Unlike that one, the Nov 18
+  # Dedication of the Basilicas of Ss. Peter and Paul is about the
+  # Apostles, not the Lord, so it's kept in scope, same as the
+  # Commemoration of St. Paul and the two Chair-of-Peter feasts. The
+  # Presentation of the BVM (Nov 21, itself a monastic-calendar-only
+  # addition) is a fixed BVM feast, excluded per the usual convention.
+  #
+  # Three monastic-calendar-specific reassignments this month, the most
+  # of any month so far: St. Emilian (Nov 12) displaces St. Martin I,
+  # Pope, who moves to Nov 14; St. Odo (Nov 19) is added outright,
+  # demoting St. Pontian; St. Silvester, Abbot (Nov 26) displaces St.
+  # Peter of Alexandria. Plus All Saints of the Benedictine Order (Nov
+  # 13, Duplex II. classis) -- absent from the base table entirely, one
+  # of the highest-ranked monastic-only additions in this whole pull.
+  #
+  # Also notable: St. Clement (Nov 23) transferring forward into St.
+  # Chrysogonus's day (Nov 24) whenever Nov 23 falls on a Sunday is this
+  # pull's first *single-day* transfer-plus-collision case (unlike
+  # August's Finding-of-St.-Stephen situation, which needed an unmodeled
+  # multi-day skip) -- this app's existing transfer machinery handles it
+  # correctly; see tests/calendar/november-sanctoral.test.ts.
   "11-01": [all-saints]
+  "11-10": [ss-tryphon-and-companions]
+  "11-11": [st-martin-of-tours, st-menna]
+  "11-12": [st-emilian]
+  "11-13": [all-saints-of-the-benedictine-order]
+  "11-14": [st-martin-i]
+  "11-17": [st-gregory-thaumaturgus]
+  "11-18": [dedication-of-the-basilicas-of-ss-peter-and-paul]
+  "11-19": [st-odo, st-pontian]
+  "11-22": [st-cecilia]
+  "11-23": [st-clement, st-felicitas]
+  "11-24": [st-chrysogonus]
+  "11-25": [st-catherine]
+  "11-26": [st-silvester-abbot, st-peter-of-alexandria]
+  "11-29": [vigil-of-st-andrew, st-saturninus]
+  "11-30": [st-andrew]
   "12-08": [immaculate-conception]

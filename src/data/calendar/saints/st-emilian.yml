@@ -1,0 +1,14 @@
+# A monastic-calendar-specific reassignment, not a mistake: the base
+# Tridentine table (1570.txt) has St. Martin I, Pope and Martyr, on Nov
+# 12, but the monastic-specific delta table (M1617.txt) overrides that
+# day with this saint instead, and separately redirects Martin's own
+# content to Nov 14 (see st-martin-i.yml) -- confirmed live (Monastic
+# Tridentinum 1617, 2025-11-12), winning outright at Duplex, alone. Same
+# class of finding as October's St. Justina/St. Marcus reassignment. No
+# unique collect: the raw file at this MM-DD slot (Sancti/11-12.txt) is
+# empty.
+id: st-emilian
+name: "St. Emilian, Abbot"
+rank: duplex
+common: common-of-an-abbot
+propers: null

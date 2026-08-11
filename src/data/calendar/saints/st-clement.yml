@@ -1,0 +1,16 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# kalendar check on a clean year (2032-11-23) -- winner outright,
+# Semiduplex, over the stub St. Felicitas (see st-felicitas.yml). In
+# years where Nov 23 itself falls on a Sunday (e.g. 2025), this feast
+# transfers forward to Nov 24 instead, outranking St. Chrysogonus that
+# day (see st-chrysogonus.yml) -- unlike August's multi-day-skip transfer
+# gap, this is a plain single-day forward transfer, well within this
+# app's existing transfer machinery; see the regression test in
+# tests/calendar/november-sanctoral.test.ts. Own proper collect, no
+# unique antiphon of his own (his own [Ant 1] is a fragment referencing a
+# well-related legend, not usable as a standalone antiphon text).
+id: st-clement
+name: "St. Clement I, Pope and Martyr"
+rank: semiduplex
+common: common-of-a-martyr-bishop
+propers: "st-clement"

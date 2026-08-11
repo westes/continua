@@ -1,0 +1,15 @@
+# A monastic-calendar-specific redirect: the base Tridentine table
+# (1570.txt) has this saint's content on Nov 12, but the monastic-
+# specific delta table (M1617.txt) moves it here to Nov 14 instead, since
+# Nov 12 in the monastic calendar belongs to St. Emilian (see
+# st-emilian.yml) -- confirmed live (Monastic Tridentinum 1617,
+# 2025-11-14), winning outright at Semiduplex, alone. No unique collect:
+# the raw file at this MM-DD slot (Sancti/11-14.txt) is actually St.
+# Josaphat's (a much later, 1867 canonization) -- a live prayTertia query
+# for the Monastic 1617 track returns no Oratio at all, confirming
+# propers: null is correct.
+id: st-martin-i
+name: "St. Martin I, Pope and Martyr"
+rank: semiduplex
+common: common-of-a-martyr-bishop
+propers: null

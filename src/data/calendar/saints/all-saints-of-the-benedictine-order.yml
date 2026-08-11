@@ -1,0 +1,16 @@
+# A monastic-calendar-specific addition, absent from the base Tridentine
+# table (1570.txt) entirely -- unsurprisingly, since this feast (all the
+# saints of St. Benedict's own Order) exists only in Benedictine-family
+# calendars. Verified live (Monastic Tridentinum 1617, 2025-11-13) --
+# winner outright, Duplex II. classis, alone; one of the highest-ranked
+# monastic-only additions found in this pull, alongside Ss. Placid and
+# Companions (October). No unique collect: the raw file at this MM-DD
+# slot (Sancti/11-13.txt) is actually St. Didacus's (a later, 1588+
+# addition to this filename slot) -- a live prayTertia query for the
+# Monastic 1617 track returns no Oratio at all, confirming propers: null
+# is correct.
+id: all-saints-of-the-benedictine-order
+name: "All Saints of the Order of St. Benedict"
+rank: duplex-2-classis
+common: proper-to-all-saints
+propers: null

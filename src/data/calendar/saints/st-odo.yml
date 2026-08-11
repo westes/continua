@@ -1,0 +1,14 @@
+# A monastic-calendar-specific addition: the base Tridentine table
+# (1570.txt) has St. Pontian as Nov 19's sole entry, but the monastic-
+# specific delta table (M1617.txt) adds this saint as primary instead,
+# demoting Pontian to a commemoration (see st-pontian.yml) -- confirmed
+# live (Monastic Tridentinum 1617, 2025-11-19), winning outright at
+# Duplex. No unique collect: the raw file at this MM-DD slot
+# (Sancti/11-19.txt) is actually St. Elizabeth of Hungary's (a later,
+# 1235 canonization) -- a live prayTertia query for the Monastic 1617
+# track returns no Oratio at all, confirming propers: null is correct.
+id: st-odo
+name: "St. Odo, Abbot"
+rank: duplex
+common: common-of-an-abbot
+propers: null
