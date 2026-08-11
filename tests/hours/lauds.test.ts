@@ -105,10 +105,11 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Ales diéi núntius');
   });
 
-  it("marks Saturday's hymn honestly missing rather than presenting a privileged season's swapped hymn as the default", () => {
+  it("uses the Marian Sabbato hymn as Saturday's own default (explicit choice, since a genuinely unprivileged Saturday isn't achievable)", () => {
     const ordo = resolveOrdo('lauds', '2026-06-20');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
-    expect(hymn?.kind === 'hymn' ? hymn.text.status.la : undefined).toBe('missing');
+    expect(hymn?.kind === 'hymn' ? hymn.text.status.la : undefined).toBe('verified');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('O gloriósa Dómina');
   });
 
   it('resolves the Benedictus as a canticle with an opening antiphon and a full repeat, same shape as Compline\'s Nunc Dimittis', () => {

@@ -1,12 +1,52 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query.
-# Every ordinary-time Saturday is either Marian-Sabbato-overridden or
-# falls in a privileged season (Lenten/Advent Ember Saturday) whose hymn is
-# itself swapped for the season's own -- there's no achievable date that
-# shows a genuinely per-annum, unprivileged Saturday Lauds hymn. Left
-# missing rather than presenting a season-specific hymn as if it were the
-# plain weekday default.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live
+# query, Sanctæ Mariæ Sabbato (2026-09-05). By explicit choice, this --
+# not a genuinely per-annum unprivileged Saturday, which isn't achievable
+# (see hours/types.ts's 'lauds-psalmody' doc comment on the Marian
+# Saturday) -- is Saturday's own default hymn.
 id: lauds-hymn-saturday
-text: {}
+text:
+  la: |
+    O gloriósa Dómina,
+    Excélsa super sídera:
+    Qui te creávit, próvide
+    Lactásti sacro úbere.
+
+    Quod Heva tristis ábstulit,
+    Tu reddis almo gérmine:
+    Intrent ut astra flébiles,
+    Cæli fenéstra facta es.
+
+    Tu Regis alti jánua,
+    Et porta lucis fúlgida:
+    Vitam datam per Vírginem,
+    Gentes redémptæ, pláudite.
+
+    Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  en: |
+    O glorious lady! throned on high
+    Above the star-illumined sky;
+    Thereto ordained, thy bosom lent
+    To thy Creator nourishment.
+
+    Through thy sweet offspring we receive
+    The bliss once lost through hapless Eve;
+    And heaven to mortals open lies
+    Now thou art portal of the skies.
+
+    Thou art the door of heaven's high King,
+    Light's gateway fair and glistering;
+    Life through a Virgin is restored;
+    Ye ransomed nations, praise the Lord!
+
+    All honour, laud, and glory be,
+    O Jesu, Virgin-born, to thee;
+    All glory, as is ever meet,
+    To Father and to Paraclete.
+    Amen.
 status:
-  la: missing
-  en: missing
+  la: verified
+  en: verified
