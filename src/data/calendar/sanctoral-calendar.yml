@@ -207,17 +207,19 @@ days:
   # the latter is added outright, present in neither the base table nor
   # (for Nicholas) its own octave slot.
   #
-  # FLAGGED FOR REVIEW: the pre-existing "09-29": [st-michael] mapping
-  # below (added before this pull initiative, sourced from the raw
-  # Sancti/09-29.txt file directly rather than a live query) does not
-  # appear to hold in this pull's actual target track -- a live kalendar
-  # check across 6 different years (2025-2030) shows nothing at all on
-  # Sep 29 in "Monastic Tridentinum 1617" (not even a commemoration),
-  # and that file's own [Rank] block has no untagged/default entry for
-  # this date, only rubric-tagged alternates (tridentina, cisterciensis).
-  # The already-correctly-pulled May 8 Apparition of St. Michael (see
+  # The pre-existing "09-29": [st-michael] mapping below (added before
+  # this pull initiative, sourced from the raw Sancti/09-29.txt file
+  # directly rather than a live query) does not appear to hold in this
+  # pull's actual target track -- a live kalendar check across 6 different
+  # years (2025-2030) shows nothing at all on Sep 29 in "Monastic
+  # Tridentinum 1617" (not even a commemoration), and that file's own
+  # [Rank] block has no untagged/default entry for this date, only
+  # rubric-tagged alternates (tridentina, cisterciensis). The already-
+  # correctly-pulled May 8 Apparition of St. Michael (see
   # apparition-of-st-michael.yml) may be this tradition's only real
-  # Michaelmas. Left as-is pending a decision -- see this month's summary.
+  # Michaelmas. Kept mapped here anyway as a deliberate, informed
+  # simplification (explicit user decision, 2026-08), not an oversight --
+  # see st-michael.yml.
   "09-01": [st-giles, ss-twelve-brothers]
   "09-08": [nativity-bvm, st-hadrian]
   "09-10": [st-nicholas-of-tolentino]

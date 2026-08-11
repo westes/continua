@@ -2,6 +2,14 @@
 # untagged/default [Rank] block — that file's own "(sed rubrica tridentina)"
 # alternate gives Duplex II classis instead; the plain default is used here
 # for consistency with how every other saint file in this set was read).
+# FLAGGED (September pull): a live kalendar query against this pull's
+# actual target track ("Monastic Tridentinum 1617") shows nothing at all
+# on Sep 29 across 6 different years, and this file's own [Rank] block has
+# no untagged/default entry for Sep 29 specifically -- only rubric-tagged
+# alternates. The already-verified May 8 Apparition of St. Michael (see
+# apparition-of-st-michael.yml) may be this tradition's only real
+# Michaelmas. Kept mapped to Sep 29 anyway as a deliberate, informed
+# simplification (explicit user decision, 2026-08), not an oversight.
 id: st-michael
 name: "St. Michael the Archangel"
 rank: duplex-1-classis
