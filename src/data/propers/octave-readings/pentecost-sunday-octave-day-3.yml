@@ -1,0 +1,36 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2026-05-26). Matins reading for day 3 of Pentecost's
+# own octave -- collapsed into one continuous reading per project convention.
+# A direct Scripture reading (Joel 2:23-28, the same prophecy Pentecost's own
+# feast draws on). The source's own English page didn't render a translation
+# for this direct Scripture passage; its English here is the standard Douay-
+# Rheims wording (a known, recognized translation, not a draft) rather than
+# left missing, same convention as every other Scripture citation already in
+# this project. The source's own English translation is used as-is, including
+# gaps in its own punctuation (some older "oct"/"bmv"-suffixed variant files
+# drop question marks entirely in places) -- not corrected here, since
+# guessing where they belong isn't the same class of fix as an isolated
+# single-character typo.
+id: pentecost-sunday-octave-day-3
+source: "De Joéle Prophéta"
+text:
+  la: |
+    De Joéle Prophéta Joël 2:23-24 23 Et fílii Sion exsultáte, et lætámini in Dómino Deo vestro: quia dedit vobis doctórem justítiæ, et descéndere fáciet ad vos imbrem matutínum et serótinum, sicut in princípio. 24 Et implebúntur áreæ fruménto, et redundábunt torculária vino et óleo.
+
+    Joël 2:25-26 25 Et reddam vobis annos, quos comédit locústa, bruchus, et rubígo, et erúca: fortitúdo mea magna quam misi in vos. 26 Et comedétis vescéntes, et saturabímini: et laudábitis nomen Dómini Dei vestri, qui fecit mirabília vobíscum: et non confundétur pópulus meus in sempitérnum.
+
+    Joël 2:27-28 27 Et sciétis quia in médio Israël ego sum, et ego Dóminus Deus vester, et non est ámplius: et non confundétur pópulus meus in ætérnum. 28 Et erit post hæc: effúndam spíritum meum super omnem carnem, et prophetábunt fílii vestri et fíliæ vestræ: senes vestri sómnia somniábunt, et júvenes vestri visiónes vidébunt.
+  en: |
+    23 And you, O children of Sion, rejoice, and be joyful in the Lord your God: because he hath given you a teacher of justice, and he will make the early and the latter rain to come down to you as in the beginning. 24 And the floors shall be full of wheat, and the presses shall overflow with wine and oil.
+
+    25 And I will restore to you the years which the locust, and the bruchus, and the mildew, and the palmerworm hath eaten; my great host which I sent upon you. 26 And you shall eat in plenty, and shall be filled: and you shall praise the name of the Lord your God, who hath done wonders with you: and my people shall not be confounded for ever.
+
+    27 And you shall know that I am in the midst of Israel: and I am the Lord your God, and there is none besides: and my people shall not be confounded for ever. 28 And it shall come to pass after this, that I will pour out my spirit upon all flesh: and your sons and your daughters shall prophesy: your old men shall dream dreams, and your young men shall see visions.
+responsory:
+  la: |
+    ℟. Apparuérunt Apóstolis dispertítæ linguæ tamquam ignis, allelúja: * Sedítque supra síngulos eórum Spíritus Sanctus, allelúja, allelúja. ℣. Et cœpérunt loqui váriis linguis, prout Spíritus Sanctus dabat éloqui illis. ℟. Sedítque supra síngulos eórum Spíritus Sanctus, allelúja, allelúja.
+  en: |
+    ℟. There appeared unto the Apostles cloven tongues, like as of fire. Alleluia. * And the Holy Ghost sat upon each of them. Alleluia, Alleluia. ℣. And they began to speak with other tongues, as the Holy Ghost gave them utterance. ℟. And the Holy Ghost sat upon each of them. Alleluia, Alleluia.
+status:
+  la: verified
+  en: verified

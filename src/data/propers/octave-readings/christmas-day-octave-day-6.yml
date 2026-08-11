@@ -1,0 +1,40 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2025-12-30). Matins reading for day 6 of Christmas's
+# own octave -- the one day in this app's own modeled range (Dec 26-31) with
+# no other saint winning outright, confirmed via its own distinctive Christmas
+# Invitatory ("Christus natus est nobis"). Collapsed into one continuous
+# reading per project convention. St. Stephen, St. John, and the Holy
+# Innocents' own octaves (also active here, stacking, see calendar/octaves.ts)
+# have no separate Matins reading content of their own anywhere in this Dec
+# 26-31 range -- every other day is dominated either by another named saint's
+# own feast or, on this one day, by Christmas's own content directly; their
+# octaves work as commemorations only in this stretch, same as several octaves
+# checked this pull (Immaculate Conception, most of Ss.
+# Stephen/John/Innocents' own continuation days). The source's own English
+# translation is used as-is, including gaps in its own punctuation (some older
+# "oct"/"bmv"-suffixed variant files drop question marks entirely in places)
+# -- not corrected here, since guessing where they belong isn't the same class
+# of fix as an isolated single-character typo.
+id: christmas-day-octave-day-6
+source: "Léctio sancti Evangélii secúndum Lucam"
+text:
+  la: |
+    Léctio sancti Evangélii secúndum Lucam Luc 2:33-40 In illo témpore: Erat Joseph, et María mater Jesu, mirántes super his, quæ dicebántur de illo. Et réliqua. Homilía sancti Ambrósii Epíscopi Lib. 2 in cap. 2 Lucæ, prope finem Vides úberem in omnes grátiam, Dómini generatióne diffúsam, et prophetíam incrédulis negátam esse, non justis. Ecce et Símeon prophétat, in ruínam et resurrectiónem plurimórum venísse Dóminum Jesum Christum, ut justórum, iniquorúmque mérita discérnat; et pro nostrórum qualitáte factórum, judex verus et justus aut supplícia decérnat, aut prǽmia.
+
+    Et tuam ipsíus ánimam pertransíbit gládius. Nec littera, nec historia docet, ex hac vita Mariam corporalis necis passióne migrasse. Non enim anima, sed corpus materiali gládio transverberátur. Et ideo prudéntiam Maríæ haud ignaram mysterii cæléstis osténdit. Vivum enim verbum Dei, et válidum, et acutius omni gládio acutíssimo, pénetrans usque ad divisiónem ánimæ et spíritus, artuum quoque et medullárum, cogitatiónes cordis et secreta scrutátur animórum, quia nuda et apérta sunt ómnia Dei Fílio, quem consciéntiæ secreta non fallunt.
+
+    Prophetávit ítaque Simeon, prophetáverat virgo, prophetáverat copuláta conjugio; prophétare debuit étiam vidua, ne qua aut proféssio deésset, aut sexus. Et ideo Anna et stipendiis viduitátis, et móribus talis inducitur, ut digna plane fuísse credátur, quæ Redemptórem ómnium venisse nuntiáret. Cujus mérita cum álibi descripsérimus, cum víduas hortarémur, hoc loco, quóniam ad ália properámus, non putámus iteránda.
+  en: |
+    From the Holy Gospel according to Luke Luke 2:33-40 In that time, his father and mother were wondering at those things which were spoken concerning him. And so on. Homily by St. Ambrose, Bishop of Milan. Bk. ii on Luke ii We see that God's abounding grace is poured forth on all by the birth of the Lord, and that the gift of prophecy is not denied to the righteous, but to the unbelieving. Simeon prophesieth that our Lord Jesus Christ is set for the fall and rising again of many in Israel, setting forth that the just and the unjust reap different fruits from the coming of the Saviour; so will it be with us; according to our individual works will the True and Just Judge apportion to us punishment or reward.
+
+    See, a sword shall pierce through thine own soul also. We have no record or tradition that Mary left this world by suffering a violent death, and the material sword can pierce the body only, and not the soul. Wherefore here we see the wisdom of Mary in that she was not ignorant of the heavenly mysteries. For, the word of God is quick, and powerful, and sharper than any two-edged sword, piercing even to the dividing asunder of soul and spirit, and of the joints and marrow, and is a discerner of the thoughts and intents of the heart for all things are naked and opened unto the eyes of the Son of God, from Whom also the secret things of our conscience are not hidden.
+
+    There had been a triple prophecy; the prophecy of Simeon had followed the prophecy of the virgin, and the prophecy of the wife; those, namely, of Mary and Elizabeth. And now ought the widow also to prophesy, that no sex nor state might be wanting. And Anna is brought before us with such a title from her widowhood and her life, that we may well believe that she received the grace to announce the Advent of the Redeemer. In our exhortation addressed to widows we have already treated of her gifts at length, and, as we have much matter before us, we will not now again enter on the subject.
+responsory:
+  la: |
+    ℟. In princípio erat Verbum, et Verbum erat apud Deum, † et Deus erat Verbum. * Hoc erat in princípio apud Deum. ℣. Omnia per ipsum facta sunt, et sine ipso factum est nihil. ℟. Hoc erat in princípio apud Deum.
+  en: |
+    ℟. In the beginning was the Word, and the Word was with God, and the Word was God. * The same was in the beginning with God. ℣. All things were made by him: and without him nothing was made ℟. The same was in the beginning with God.
+status:
+  la: verified
+  en: verified

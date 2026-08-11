@@ -1,0 +1,35 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query (2026-05-25). Matins reading for day 2 of Pentecost's
+# own octave -- collapsed into one continuous reading per project convention.
+# A direct Scripture reading (Acts 19:1-9). The source's own English page
+# didn't render a translation for this direct Scripture passage; its English
+# here is the standard Douay-Rheims wording (a known, recognized translation,
+# not a draft) rather than left missing, same convention as every other
+# Scripture citation already in this project. The source's own English
+# translation is used as-is, including gaps in its own punctuation (some older
+# "oct"/"bmv"-suffixed variant files drop question marks entirely in places)
+# -- not corrected here, since guessing where they belong isn't the same class
+# of fix as an isolated single-character typo.
+id: pentecost-sunday-octave-day-2
+source: "De Actibus Apostolórum"
+text:
+  la: |
+    De Actibus Apostolórum Act. 19:1-3 1 Factum est autem cum Apóllo esset Corínthi, ut Paulus peragrátis superióribus pártibus veníret Ephesum, et inveníret quosdam discípulos: 2 Dixítque ad eos: Si Spíritum Sanctum accepístis credéntes? At illi dixérunt ad eum: Sed neque si Spíritus Sanctus est, audívimus. 3 Ille vero ait: In quo ergo baptizáti estis? Qui dixérunt: In Ioánnis baptísmate.
+
+    Act. 19:4-7 4 Dixit autem Paulus: Joánnes baptizávit baptísmo pœniténtiæ pópulum, dicens in eum qui ventúrus esset post ipsum ut créderent, hoc est, in Jesum. 5 His audítis, baptizáti sunt in nómine Dómini Jesu. 6 Et cum imposuísset illis manus Paulus, venit Spíritus Sanctus super eos, et loquebántur linguis, et prophetábant. 7 Erant autem omnes viri fere duódecim.
+
+    Act. 19:8-9 8 Introgréssus autem synagógam, cum fidúcia loquebátur per tres menses, dísputans et suádens de regno Dei. 9 Cum autem quidam induraréntur, et non créderent, maledicéntes viam Dómini coram multitúdine, discédens ab eis, segregávit discípulos, quotídie dísputans in schola tyránni cujúsdam.
+  en: |
+    1 And it came to pass, while Apollo was at Corinth, that Paul having passed through the upper coasts, came to Ephesus, and found certain disciples: 2 And he said to them: Have you received the Holy Ghost since ye believed? But they said to him: We have not so much as heard whether there be a Holy Ghost. 3 And he said: In what then were you baptized? Who said: In John's baptism.
+
+    4 Then Paul said: John baptized the people with the baptism of penance, saying: That they should believe in him who was to come after him, that is to say, in Jesus. 5 Having heard these things, they were baptized in the name of the Lord Jesus. 6 And when Paul had imposed his hands on them, the Holy Ghost came upon them, and they spoke with tongues, and prophesied. 7 And all the men were about twelve.
+
+    8 And entering into the synagogue, he spoke boldly for the space of three months, disputing and exhorting concerning the kingdom of God. 9 But when some were hardened, and believed not, speaking evil of the way of the Lord before the multitude, departing from them, he separated the disciples, disputing daily in the school of one Tyrannus.
+responsory:
+  la: |
+    ℟. Cum compleréntur dies Pentecóstes, erant omnes páriter in eódem loco, allelúja: et súbito factus est sonus de cælo, allelúja, * Tamquam spíritus veheméntis, et replévit totam domum, allelúja, allelúja. ℣. Dum ergo essent in unum discípuli congregáti propter metum Judæórum, sonus repénte de cælo, venit super eos. ℟. Tamquam spíritus veheméntis, et replévit totam domum, allelúja, allelúja.
+  en: |
+    ℟. When the day of Pentecost was fully come, they were all with one accord in one place, alleluia, and suddenly there came a sound from heaven, alleluia. * as of a mighty rushing wind, and it filled all the house, alleluia, alleluia. ℣. Where the disciples were assembled for fear of the Jews, there suddenly came upon them a sound from heaven. ℟. As of a rushing mighty wind, and it filled all the house, alleluia, alleluia.
+status:
+  la: verified
+  en: verified
