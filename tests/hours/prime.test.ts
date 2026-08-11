@@ -1,14 +1,17 @@
 import { describe, expect, it } from 'vitest';
 import { resolveOrdo } from '../../src/hours';
 
-// 2026-10-05 is a Monday, and (as of the pre-1955 sanctoral pull reaching
-// October) still ordinary/ferial — the Monastic 1617 distribution gives
-// Monday three whole psalms (1, 2, 6), the first of which (Psalm 1) has
-// real sample content in data/psalms/001.yml, so these tests can check
-// real verse data without needing every psalm authored. Already had to
-// move once (from a June Monday that got real sanctoral content) — if a
-// future month's pull lands here too, it'll need to move again.
-const MONDAY = '2026-10-05';
+// 2026-11-16 is a Monday, and (as of the pre-1955 sanctoral pull reaching
+// October, with November/December still unpulled) still ordinary/ferial —
+// the Monastic 1617 distribution gives Monday three whole psalms (1, 2,
+// 6), the first of which (Psalm 1) has real sample content in
+// data/psalms/001.yml, so these tests can check real verse data without
+// needing every psalm authored. Already had to move twice (first from a
+// June Monday, then from an October Monday that got real sanctoral
+// content — Ss. Placid and Companions, see
+// data/calendar/saints/ss-placid-and-companions.yml) — if November's own
+// pull lands here too, it'll need to move again.
+const MONDAY = '2026-11-16';
 const SUNDAY = '2026-08-09';
 
 describe('resolveOrdo("prime", ...)', () => {

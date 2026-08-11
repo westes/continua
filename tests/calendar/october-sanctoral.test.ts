@@ -1,0 +1,89 @@
+import { describe, expect, it } from 'vitest';
+import { resolveDay } from '../../src/calendar';
+import { getDayCollect } from '../../src/hours/resolve-common';
+
+// Clean per-annum years for these dates (no Sunday collision) — see
+// data/calendar/saints/*.yml for per-saint source detail.
+describe('October sanctoral pull (first pass)', () => {
+  it('a monastic-calendar-specific addition (Ss. Placid and Companions, St. Benedict\'s own disciple) wins outright at Duplex II. classis', () => {
+    const day = resolveDay('2026-10-05');
+    expect(day.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'ss-placid-and-companions',
+      name: 'Ss. Placid and Companions, Martyrs',
+      rank: 'duplex-2-classis',
+    });
+    expect(day.commemorations).toEqual([]);
+  });
+
+  it('a monastic-calendar-specific reassignment (St. Justina) displaces what the base Tridentine table gives to St. Marcus, Pope', () => {
+    const day = resolveDay('2025-10-07');
+    expect(day.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-justina',
+      name: 'St. Justina, Virgin and Martyr',
+      rank: 'duplex',
+    });
+    expect(day.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'st-marcus', name: 'St. Marcus, Pope and Confessor', rank: 'simplex' },
+    ]);
+  });
+
+  it('St. Gall, a monastic-calendar-specific addition, wins outright at Duplex, alone', () => {
+    const day = resolveDay('2025-10-16');
+    expect(day.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-gall',
+      name: 'St. Gall, Abbot',
+      rank: 'duplex',
+    });
+    expect(day.commemorations).toEqual([]);
+  });
+
+  it('St. Luke wins outright at Duplex II. classis with a real proper collect, alone', () => {
+    const day = resolveDay('2025-10-18');
+    expect(day.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-luke',
+      name: 'St. Luke, Evangelist',
+      rank: 'duplex-2-classis',
+    });
+    expect(getDayCollect(day).status.en).toBe('verified');
+  });
+
+  it('Ss. Simon and Jude win outright at Duplex II. classis with a real proper collect, distinct from their own Vigil the day before', () => {
+    const vigil = resolveDay('2025-10-27');
+    const day = resolveDay('2025-10-28');
+    expect(vigil.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'vigil-of-ss-simon-and-jude',
+      name: 'Vigil of Ss. Simon and Jude',
+      rank: 'vigil',
+    });
+    expect(day.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'ss-simon-and-jude',
+      name: 'Ss. Simon and Jude, Apostles',
+      rank: 'duplex-2-classis',
+    });
+    expect(getDayCollect(day).status.en).toBe('verified');
+  });
+
+  it('the Vigil of All Saints resolves distinctly from All Saints itself the next day', () => {
+    const vigil = resolveDay('2025-10-31');
+    const day = resolveDay('2025-11-01');
+    expect(vigil.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'vigil-of-all-saints',
+      name: 'Vigil of All Saints',
+      rank: 'vigil',
+    });
+    expect(getDayCollect(vigil).status.en).toBe('verified');
+    expect(day.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'all-saints',
+      name: 'All Saints',
+      rank: 'duplex-1-classis',
+    });
+  });
+});

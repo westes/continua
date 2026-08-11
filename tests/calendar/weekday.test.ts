@@ -37,9 +37,12 @@ describe('resolveDay', () => {
     // winning by the Vigil of St. Lawrence, itself impeded by the Sunday
     // and transferred away — see tests/calendar/transfer.test.ts, and
     // confirmed against the live reference engine, which shows the same
-    // commemoration despite the vigil's own absence that day).
-    const day = resolveDay('2026-10-04');
-    expect(day.date).toBe('2026-10-04');
+    // commemoration despite the vigil's own absence that day). Also not
+    // 2026-10-04 (moved here from there): since the October pull, that
+    // date is St. Francis's own day (Duplex), which wins outright even on
+    // an ordinary Sunday.
+    const day = resolveDay('2026-11-15');
+    expect(day.date).toBe('2026-11-15');
     expect(day.weekday).toBe('sunday');
     expect(day.winner.kind).toBe('temporal');
     expect(day.commemorations).toEqual([]);
