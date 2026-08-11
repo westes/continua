@@ -7,3 +7,6 @@ name: "The Immaculate Conception of the Blessed Virgin Mary"
 rank: duplex-1-classis
 common: common-of-the-bvm
 propers: "immaculate-conception"
+# Has a real octave (Dec 8-15) -- see calendar/types.ts's OctaveConfig.
+octave:
+  enabled: true

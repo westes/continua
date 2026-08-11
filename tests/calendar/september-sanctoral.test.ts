@@ -27,13 +27,18 @@ describe('September sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it("dates within the Nativity's own octave are excluded entirely, even where the source names a real secondary saint, pending octave support", () => {
+  it("dates within the Nativity's own octave still exclude the real secondary saints the source names (Ss. Gorgonius, Nicomedes) -- neither is modeled yet -- but the octave itself (now modeled, see calendar/octaves.ts) correctly commemorates through it", () => {
     const gorgoniusDay = resolveDay('2025-09-09');
     expect(gorgoniusDay.winner.kind).toBe('temporal');
-    expect(gorgoniusDay.commemorations).toEqual([]);
+    expect(gorgoniusDay.commemorations).toEqual([
+      { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary' },
+    ]);
+    // Sep 15 is also day 8 of the Nativity's own octave (started Sep 8).
     const nicomedesDay = resolveDay('2025-09-15');
     expect(nicomedesDay.winner.kind).toBe('temporal');
-    expect(nicomedesDay.commemorations).toEqual([]);
+    expect(nicomedesDay.commemorations).toEqual([
+      { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary' },
+    ]);
   });
 
   it('a monastic-calendar-specific reassignment replaces what the base Tridentine table treats as a plain Nativity-octave continuation', () => {

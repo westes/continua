@@ -76,13 +76,18 @@ describe('August sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it('dates within St. Lawrence and the Assumption\'s own octaves still exclude the real secondary saint the source names (St. Clare, Aug 12) -- Clare herself isn\'t modeled yet -- but St. Lawrence\'s own octave (now modeled, see calendar/octaves.ts) correctly keeps commemorating him through it regardless. The Assumption\'s own octave isn\'t populated with octave data yet, so Aug 22 stays plain.', () => {
+  it("dates within St. Lawrence and the Assumption's own octaves still exclude the real secondary saint the source names (St. Clare, Aug 12) -- Clare herself isn't modeled yet -- but both octaves themselves (now modeled, see calendar/octaves.ts) correctly keep commemorating through them regardless", () => {
     const clareDay = resolveDay('2025-08-12');
     expect(clareDay.winner.kind).toBe('temporal');
     expect(clareDay.commemorations).toEqual([{ kind: 'octave', id: 'st-lawrence', name: 'St. Lawrence, Martyr' }]);
+    // Aug 22 is the Assumption's own octave day (In Octava Assumptionis),
+    // Duplex, blocking Ss. Timothy/Hippolytus/Symphorian the same way --
+    // it's also day 8 of the Assumption's own octave.
     const assumptionOctaveDay = resolveDay('2025-08-22');
     expect(assumptionOctaveDay.winner.kind).toBe('temporal');
-    expect(assumptionOctaveDay.commemorations).toEqual([]);
+    expect(assumptionOctaveDay.commemorations).toEqual([
+      { kind: 'octave', id: 'assumption', name: 'The Assumption of the Blessed Virgin Mary' },
+    ]);
   });
 
   it('the Beheading of St. John the Baptist wins outright at Duplex with a real proper collect and antiphon, over a genuinely unwinnable stub', () => {

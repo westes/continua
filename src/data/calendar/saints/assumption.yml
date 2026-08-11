@@ -9,3 +9,6 @@ name: "The Assumption of the Blessed Virgin Mary"
 rank: duplex-1-classis
 common: common-of-the-bvm
 propers: "assumption"
+# Has a real octave (Aug 15-22) -- see calendar/types.ts's OctaveConfig.
+octave:
+  enabled: true

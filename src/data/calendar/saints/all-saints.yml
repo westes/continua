@@ -8,3 +8,6 @@ name: "All Saints"
 rank: duplex-1-classis
 common: proper-to-all-saints
 propers: "all-saints"
+# Has a real octave (Nov 1-8) -- see calendar/types.ts's OctaveConfig.
+octave:
+  enabled: true

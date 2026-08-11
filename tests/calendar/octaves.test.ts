@@ -10,10 +10,17 @@ describe('activeOctavesFor', () => {
     const day1 = activeOctavesFor('2026-08-10'); // St. Lawrence's own day
     expect(day1).toEqual([{ id: 'st-lawrence', name: 'St. Lawrence, Martyr', wins: 'semiduplex', dayNumber: 1 }]);
 
+    // Aug 17 is also day 3 of the Assumption's own octave (started Aug 15) --
+    // the two run concurrently this time of year.
     const day8 = activeOctavesFor('2026-08-17');
-    expect(day8).toEqual([{ id: 'st-lawrence', name: 'St. Lawrence, Martyr', wins: 'semiduplex', dayNumber: 8 }]);
+    expect(day8).toEqual([
+      { id: 'st-lawrence', name: 'St. Lawrence, Martyr', wins: 'semiduplex', dayNumber: 8 },
+      { id: 'assumption', name: 'The Assumption of the Blessed Virgin Mary', wins: 'semiduplex', dayNumber: 3 },
+    ]);
 
-    expect(activeOctavesFor('2026-08-18')).toEqual([]);
+    // Aug 23: past both Lawrence's (ended Aug 17) and the Assumption's
+    // (ended Aug 22) windows.
+    expect(activeOctavesFor('2026-08-23')).toEqual([]);
   });
 
   it("Pentecost's octave uses its own configured threshold (duplex), not the default (semiduplex)", () => {
