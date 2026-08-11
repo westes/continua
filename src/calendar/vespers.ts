@@ -44,6 +44,7 @@ function hasFirstVespers(day: LiturgicalDay): boolean {
 function keepsOwnSecondVespers(day: LiturgicalDay): boolean {
   if (
     day.weekday === 'sunday' ||
+    day.temporalCategory === 'privileged-feria-minor' ||
     day.temporalCategory === 'privileged-feria' ||
     day.temporalCategory === 'privileged-feria-major' ||
     isMajorFixedFeastOfTheLord(day.date)

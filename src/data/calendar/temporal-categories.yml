@@ -34,7 +34,11 @@
 # Lent's and Pentecost's Ember days *are* modeled, since those are clean
 # Easter offsets.
 bySeason:
-  advent: { sunday: privileged-sunday, feria: ordinary-feria }
+  # Advent's ordinary ferias verified `privileged-feria-minor` during the
+  # December sanctoral pull (see calendar/types.ts's TemporalCategory doc
+  # comment) -- weaker than the Ember-day `privileged-feria` tier, but real
+  # standing nonetheless, unlike a plain `ordinary-feria`.
+  advent: { sunday: privileged-sunday, feria: privileged-feria-minor }
   # Christmastide's ferias are folded into the privileged-feria default for
   # the whole season as a simplification of "the Octave of Christmas (Dec
   # 25 - Jan 1) is privileged" — slightly overbroad into Jan 2-5, harmless.

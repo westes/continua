@@ -82,8 +82,19 @@ export type FeastClass =
 // categories.yml for exactly which days fall in which tier — some of that
 // split (e.g. whether Pentecost's own Ember days share Lent's lesser tier
 // or Easter's major one) is still a reconstructed guess, not verified.
+// `privileged-feria-minor` is a third, weaker tier, added during the
+// December sanctoral pull after finding Advent's own ordinary (non-Ember)
+// ferias have real standing of their own in the live engine — a Simplex
+// saint (e.g. St. Bibiana, Dec 2) is merely commemorated there, while a
+// Semiduplex+ saint (e.g. St. Nicholas, Dec 6) wins outright with the
+// feria itself commemorated in return — neither of which the original
+// `ordinary-feria` fallback (any saint wins, nothing ever commemorated)
+// could represent. Lent's own ordinary ferias are documented as sharing
+// this same real-world property but are NOT switched to this tier yet —
+// unverified this session, left as `ordinary-feria` pending a future check.
 export type TemporalCategory =
   | 'ordinary-feria'
+  | 'privileged-feria-minor'
   | 'privileged-feria'
   | 'privileged-feria-major'
   | 'ordinary-sunday'

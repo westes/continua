@@ -84,6 +84,18 @@ export function decideOccurrence(
       // feast, however low-ranked, is kept in its place.
       return { winner: sanctoralWinner(sanctoral), commemorations: [] };
 
+    case 'privileged-feria-minor':
+      // Advent's own ordinary ferias (verified: St. Bibiana, Simplex,
+      // merely commemorated under an Advent feria; St. Nicholas,
+      // Semiduplex, wins outright with the feria commemorated in return).
+      // Weaker than `privileged-feria`'s Duplex+ threshold — Semiduplex is
+      // already enough here — and unlike every other feria tier, nothing
+      // ever transfers: whichever side loses still gets a commemoration.
+      if (isAtLeast(sanctoral.rank, 'semiduplex')) {
+        return { winner: sanctoralWinner(sanctoral), commemorations: [{ kind: 'temporal', id: temporalId }] };
+      }
+      return { winner: temporalWinner, commemorations: [sanctoralCommemoration(sanctoral)] };
+
     case 'privileged-feria':
       // The lesser of the two privileged-feria tiers (Ember days outside
       // Holy Week/the Easter Octave, etc.) — behaves exactly like an

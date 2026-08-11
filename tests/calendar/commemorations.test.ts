@@ -41,6 +41,31 @@ describe('decideOccurrence — ordinary-feria', () => {
   });
 });
 
+describe('decideOccurrence — privileged-feria-minor', () => {
+  it('semiduplex or higher wins outright, the feria is commemorated in return', () => {
+    // Verified: St. Nicholas, Semiduplex, outright wins against an
+    // ordinary (non-Ember) Advent Saturday in the real Monastic 1617
+    // engine, with the feria itself commemorated back.
+    for (const rank of ['semiduplex', 'duplex', 'duplex-1-classis'] as const) {
+      const result = decideOccurrence('privileged-feria-minor', 'id', saint(rank));
+      expect(result.winner).toEqual({ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank });
+      expect(result.commemorations).toEqual([{ kind: 'temporal', id: 'id' }]);
+      expect(result.transfer).toBeUndefined();
+    }
+  });
+
+  it('simplex or vigil stays and is commemorated, not transferred', () => {
+    // Verified: St. Bibiana, Simplex, merely commemorated under an
+    // ordinary Advent feria in the real Monastic 1617 engine.
+    for (const rank of ['simplex', 'vigil'] as const) {
+      const result = decideOccurrence('privileged-feria-minor', 'id', saint(rank));
+      expect(result.winner).toEqual({ kind: 'temporal', id: 'id' });
+      expect(result.commemorations).toEqual([{ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank }]);
+      expect(result.transfer).toBeUndefined();
+    }
+  });
+});
+
 describe('decideOccurrence — privileged-feria', () => {
   it('behaves exactly like an ordinary Sunday — duplex or higher wins outright, the feria is commemorated in return', () => {
     // Verified: St. Gregory the Great, plain Duplex, outright wins against
