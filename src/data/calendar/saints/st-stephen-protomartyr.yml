@@ -10,3 +10,10 @@ name: "St. Stephen, Protomartyr"
 rank: duplex-2-classis
 common: common-of-a-martyr
 propers: "st-stephen-protomartyr"
+# Has his own real octave, stacking within Christmas's (see
+# christmas-day.yml and calendar/octaves.ts) -- one of the three
+# "Comites Christi" (with St. John and the Holy Innocents) that do; St.
+# Thomas of Canterbury, also within the Christmas Octave, deliberately
+# does not (user-confirmed, 2026-08).
+octave:
+  enabled: true

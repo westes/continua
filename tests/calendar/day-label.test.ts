@@ -11,11 +11,13 @@ describe('getDayLabel — ordinal temporal label', () => {
   });
 
   it('names the anchor day itself, not "day after itself"', () => {
-    // St. Felix I (May 30, Simplex) is impeded by that date's own Pentecost
-    // Ember Saturday and transfers forward into Trinity Sunday, where he's
-    // commemorated (not displacing the Sunday) — real sanctoral content
-    // now populates this date, so the label reflects both, feast name first.
-    expect(getDayLabel(resolveDay('2026-05-31'))).toBe('St. Felix I, Pope and Martyr — Trinity Sunday');
+    // Trinity Sunday no longer carries a sanctoral commemoration of its
+    // own (St. Felix I, May 30, is now commemorated in place on his own
+    // day within Pentecost's octave instead of transferring here — see
+    // calendar/octaves.ts and tests/calendar/transfer.test.ts), so this
+    // is back to a plain temporal label; the "feast — temporal" combined
+    // form is covered separately below with synthetic data.
+    expect(getDayLabel(resolveDay('2026-05-31'))).toBe('Trinity Sunday');
     expect(getDayLabel(resolveDay('2026-04-05'))).toBe('Easter');
     expect(getDayLabel(resolveDay('2026-02-18'))).toBe('Ash Wednesday');
   });

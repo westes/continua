@@ -9,7 +9,7 @@
 // practice has its own precedence/commemoration rules for that too, not
 // modeled here. If a day has more than one candidate, calendar/index.ts
 // just picks the highest-ranked as the day's sole sanctoral contender.
-import type { FeastClass } from './types';
+import type { FeastClass, OctaveConfig } from './types';
 import sanctoralCalendarData from '../data/calendar/sanctoral-calendar.yml';
 
 export interface SaintRecord {
@@ -18,6 +18,9 @@ export interface SaintRecord {
   rank: FeastClass;
   common: string;
   propers: string | null;
+  /** See calendar/types.ts's OctaveConfig doc comment. Absent for the vast
+   * majority of saints — only ones with a real octave declare it. */
+  octave?: OctaveConfig;
 }
 
 const sanctoralCalendar = sanctoralCalendarData as { days: Record<string, string[]> };

@@ -106,6 +106,34 @@ export interface SanctoralIdentity {
   rank: FeastClass;
 }
 
+/**
+ * Attached to a saint's own record (calendar/feasts.ts's SaintRecord) or a
+ * temporal feast's (calendar/temporal-feasts.ts's TemporalFeastRecord) to
+ * declare that it carries an octave — commemorated daily for `days` days
+ * after its own feast, layered on top of whatever normally wins each of
+ * those days. `enabled: false` (or the field simply absent) means no
+ * octave; `{ enabled: true }` alone is valid and uses every default below,
+ * satisfying the "turned on but no octave data authored yet" case —
+ * calendar/octaves.ts is the "generic way to commemorate an octave" that
+ * makes that minimal declaration meaningful on its own.
+ */
+export interface OctaveConfig {
+  enabled: boolean;
+  /** Length of the octave in days, inclusive of the feast's own day. Default 8. */
+  days?: number;
+  /** Rank threshold: an occurring saint at this rank or higher keeps the
+   * day for itself (the octave is merely commemorated back); below it, the
+   * octave wins the day instead and the saint is commemorated. Default
+   * 'semiduplex' — i.e. only a Simplex loses to the octave — matching
+   * every octave checked so far except Pentecost's (see
+   * data/calendar/temporal-feasts/pentecost-sunday.yml), which is
+   * stricter (`duplex`). */
+  wins?: FeastClass;
+  /** Matins reading proper id, if one has been sourced. Absent by default
+   * — most octaves checked so far have none. */
+  readingId?: string;
+}
+
 export type DayWinner =
   | { kind: 'temporal'; id: string }
   | ({
@@ -119,12 +147,15 @@ export type DayWinner =
 /**
  * A day can have more than one of these at once (a transferred feast can
  * displace a native saint who then also gets commemorated, alongside the
- * Sunday whose own occurrence pushed the transfer in the first place) —
- * hence a list, not a single flag. Extensible on purpose: a future
- * `{ kind: 'octave'; id: string }` variant joins this union once octaves
- * are modeled, without changing the shape callers already rely on.
+ * Sunday whose own occurrence pushed the transfer in the first place, or —
+ * since octaves were modeled — several overlapping octaves stacking on one
+ * date, e.g. Christmas + St. Stephen + St. John all commemorated together
+ * within the Christmas Octave) — hence a list, not a single flag.
  */
-export type Commemoration = { kind: 'temporal'; id: string } | ({ kind: 'sanctoral' } & SanctoralIdentity);
+export type Commemoration =
+  | { kind: 'temporal'; id: string }
+  | ({ kind: 'sanctoral' } & SanctoralIdentity)
+  | { kind: 'octave'; id: string; name: string };
 
 export interface LiturgicalDay {
   /** ISO date, e.g. "2026-08-09" */

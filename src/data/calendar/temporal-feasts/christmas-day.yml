@@ -1,0 +1,16 @@
+# Christmas's own Octave (Dec 25 - Jan 1), the one exception this pull's
+# other octaves aren't: it already has partial standing via the
+# `privileged-feria-minor` temporal category (see
+# data/calendar/temporal-categories.yml's christmastide entry), which
+# governs *ordinary* days within it. This record adds the generic octave
+# layer on top so Christmas itself keeps accumulating as a commemoration
+# on the days that belong to someone else within the Octave (Stephen,
+# John, Holy Innocents, Thomas of Canterbury, Silvester) — those days
+# already resolve correctly without this, this is what makes "Christmas"
+# itself keep showing up alongside them. `wins` left at the default
+# (semiduplex) deliberately, not yet independently verified for Christmas
+# specifically.
+id: christmas-day
+name: "Christmas"
+octave:
+  enabled: true

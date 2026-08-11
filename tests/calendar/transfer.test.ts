@@ -50,25 +50,38 @@ describe('transfer mechanism (resolveDay integration)', () => {
     });
   });
 
-  // Found via real data (the May sanctoral pull): a transferred-in
-  // candidate was blindly winning outright whenever the receiving day's
-  // own native winner was temporal, regardless of that day's own
-  // precedence category — so a transferred-in Simplex was overwriting
-  // Trinity Sunday itself instead of going through the same ordinary-
-  // Sunday rule a native candidate would have.
-  it('a simplex saint impeded by a privileged feria transfers forward and is merely commemorated, not made to win, on the ordinary Sunday it lands on', () => {
-    // St. Felix I (May 30, Simplex) is impeded by that date's own
-    // Pentecost Ember Saturday (privileged-feria-major) and transfers
-    // forward into Trinity Sunday 2026 (May 31, an ordinary Sunday).
+  // Originally found via real data (the May sanctoral pull): a
+  // transferred-in candidate was blindly winning outright whenever the
+  // receiving day's own native winner was temporal, regardless of that
+  // day's own precedence category — so a transferred-in Simplex was
+  // overwriting Trinity Sunday itself instead of going through the same
+  // ordinary-Sunday rule a native candidate would have. That fix (in
+  // applyIncomingTransfer) is unchanged and still covered here, but the
+  // concrete St. Felix I / Trinity Sunday scenario that first surfaced it
+  // no longer demonstrates a *transfer* at all: since the octave
+  // mechanism (calendar/octaves.ts) was added, Pentecost's own Ember
+  // Saturday is no longer classified `privileged-feria-major` (see
+  // data/calendar/temporal-categories.yml), so Felix now wins his own day
+  // outright under the permissive `ordinary-feria` default — then gets
+  // caught and commemorated in place by Pentecost's octave itself
+  // (threshold: duplex), never even reaching a transfer. He simply
+  // doesn't appear on Trinity Sunday at all anymore. Kept here anyway as
+  // a still-useful demonstration of the octave layer's own override path.
+  it("St. Felix I, below Pentecost's octave threshold, is commemorated in place on his own day rather than transferring anywhere", () => {
     const saturday = resolveDay('2026-05-30');
     const sunday = resolveDay('2026-05-31');
 
     expect(saturday.winner).toEqual({ kind: 'temporal', id: 'pentecost-sunday' });
-    expect(saturday.commemorations).toEqual([]);
-
-    expect(sunday.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-01' });
-    expect(sunday.commemorations).toEqual([
+    expect(saturday.commemorations).toEqual([
       { kind: 'sanctoral', id: 'st-felix-i', name: 'St. Felix I, Pope and Martyr', rank: 'simplex' },
+      { kind: 'octave', id: 'pentecost-sunday', name: 'Pentecost' },
     ]);
+
+    // Felix doesn't reach Trinity Sunday at all now -- but Trinity Sunday
+    // is day 8 of Pentecost's own 8-day octave (the default length, not
+    // yet independently confirmed to be right for Pentecost specifically),
+    // so Pentecost's own octave commemoration still persists here.
+    expect(sunday.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-01' });
+    expect(sunday.commemorations).toEqual([{ kind: 'octave', id: 'pentecost-sunday', name: 'Pentecost' }]);
   });
 });

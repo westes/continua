@@ -9,3 +9,12 @@ name: "St. Lawrence, Martyr"
 rank: duplex-2-classis
 common: common-of-a-martyr
 propers: "st-lawrence"
+# Has a real octave (Aug 10-17) -- see calendar/types.ts's OctaveConfig
+# and calendar/octaves.ts. `wins` left at the default (semiduplex, i.e.
+# only a Simplex loses to it) pending its own direct verification; this
+# is also the concrete octave that repeatedly cost real saints their spot
+# during the August pull (Ss. Tiburtius & Susanna, St. Clare, Ss.
+# Hippolytus & Cassian) before this mechanism existed to commemorate them
+# instead of just excluding them outright.
+octave:
+  enabled: true

@@ -23,16 +23,21 @@
 # major tier (Easter Octave directly verified — Holy Week and Ash
 # Wednesday are strong prior knowledge, not independently re-verified
 # here). Where this app *doesn't* have direct evidence either way —
-# Pentecost's own Ember days/Vigil/Octave, the Vigil of Christmas — it
-# defaults to the major (stricter) tier as the safer guess, pending
-# verification.
+# Pentecost's own Ember days, the Vigil of Christmas — it defaults to the
+# major (stricter) tier as the safer guess, pending verification. Pentecost's
+# own *Octave* (as opposed to its Ember days) is the one exception: it's
+# no longer classified via this table at all — see the offsetRanges
+# section below and calendar/octaves.ts.
 #
 # Known gap: Advent Ember days (Wed/Fri/Sat after Dec 13) and September
 # Ember days (Wed/Fri/Sat near the Exaltation of the Cross, Sept 14) are
 # NOT modeled here — both are fixed-calendar "nearest such-and-such a date"
 # rules, not a plain offset, and weren't worth guessing at without a source.
-# Lent's and Pentecost's Ember days *are* modeled, since those are clean
-# Easter offsets.
+# Lent's Ember days *are* modeled (clean Easter offsets, directly
+# verified). Pentecost's own Ember days share this same offset-based
+# fixability but currently fall to the plain `ordinary-feria` default
+# instead (see the offsetRanges comment below) — unverified, a real gap,
+# not a guess dressed up as one.
 bySeason:
   # Advent's ordinary ferias verified `privileged-feria-minor` during the
   # December sanctoral pull (see calendar/types.ts's TemporalCategory doc
@@ -75,10 +80,20 @@ offsets:
 offsetRanges:
   - { fromOffset: -6, toOffset: -1, category: privileged-feria-major } # ferias of Holy Week
   - { fromOffset: 1, toOffset: 6, category: privileged-feria-major } # Easter octave — verified: even Duplex II. classis (St. Mark) only gets commemorated, never wins
-  # Pentecost octave (also covers Pentecost's own Ember days) — unverified,
-  # defaulted to the stricter tier; Lent's Ember days are confirmed
-  # lesser-tier, but that hasn't been checked for Pentecost's specifically.
-  - { fromOffset: 50, toOffset: 55, category: privileged-feria-major }
+  # Pentecost's own Octave (offsets 50-55) is deliberately absent from
+  # this table now -- it used to be classified privileged-feria-major
+  # here, but user-confirmed rule (2026-08) is that a Duplex+ saint wins
+  # outright within it, which the generic octave layer
+  # (calendar/octaves.ts, data/calendar/temporal-feasts/pentecost-
+  # sunday.yml) now handles directly. Leaving these offsets unlisted lets
+  # them fall through to the `pentecost` season default (ordinary-feria,
+  # see bySeason above), so a real sanctoral candidate reaches the octave
+  # layer intact instead of being transferred away by a stricter feria
+  # tier first. Pentecost's own Ember days (within this same range, in
+  # years they land there) get the same ordinary-feria default as a
+  # result -- still unverified for Pentecost specifically, not the
+  # Lent-Ember-day privileged-feria treatment; a real gap, just an
+  # existing one, not introduced by this change.
 
 fixedDates:
   "12-24": privileged-feria-major # Vigil of Christmas — unverified, defaulted to the stricter tier

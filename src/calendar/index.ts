@@ -3,9 +3,10 @@ import { weekdayOf } from './weekday';
 import { resolveSeason, resolveTemporalCategory } from './temporal';
 import { resolveTemporalId } from './temporal-id';
 import { getSanctoralCandidatesFor } from './feasts';
-import { decideOccurrence, type OccurrenceResult } from './commemorations';
+import { decideOccurrence, isAtLeast, type OccurrenceResult } from './commemorations';
 import { resolveCollision } from './collision';
 import { addDays } from './date-math';
+import { activeOctavesFor, strictestThreshold } from './octaves';
 
 /**
  * A day's occurrence considered on its own — no awareness of what an
@@ -99,7 +100,48 @@ export function resolveDay(isoDate: string): LiturgicalDay {
     winner = applyIncomingTransfer(tomorrow.result.transfer.candidate, temporalCategory, winner, commemorations);
   }
 
+  winner = applyOctaves(isoDate, winner, commemorations);
+
   return { date: isoDate, weekday, season, temporalCategory, winner, commemorations };
+}
+
+/**
+ * Layered on top of everything above, not part of it: an octave doesn't
+ * change how a single day's own precedence contest is decided, it just
+ * (a) adds a commemoration for every octave still active on this date, and
+ * (b) occasionally overrides the winner when the occurring saint is too
+ * minor to clear the strictest active octave's threshold, in which case
+ * the day reverts to its own temporal identity and the saint is
+ * commemorated instead — same "demoted, not dropped" shape as every other
+ * commemoration rule in this file.
+ */
+function applyOctaves(isoDate: string, winner: DayWinner, commemorations: Commemoration[]): DayWinner {
+  const octaves = activeOctavesFor(isoDate);
+  if (octaves.length === 0) {
+    return winner;
+  }
+
+  let resolvedWinner = winner;
+  if (winner.kind === 'sanctoral' && !isAtLeast(winner.rank, strictestThreshold(octaves))) {
+    const isOneOfTheseOctaves = octaves.some((o) => o.id === winner.id);
+    if (!isOneOfTheseOctaves) {
+      commemorations.push({ kind: 'sanctoral', id: winner.id, name: winner.name, rank: winner.rank });
+      resolvedWinner = { kind: 'temporal', id: resolveTemporalId(isoDate) };
+    }
+  }
+
+  for (const octave of octaves) {
+    const isSelf = resolvedWinner.kind === 'sanctoral' && resolvedWinner.id === octave.id;
+    // An octave's own day-1, when nothing displaced it, already *is* that
+    // feast (via the day's own temporal identity) — commemorating it
+    // again alongside itself would be redundant.
+    const isOwnStartDay = octave.dayNumber === 1 && resolvedWinner.kind === 'temporal';
+    if (!isSelf && !isOwnStartDay) {
+      commemorations.push({ kind: 'octave', id: octave.id, name: octave.name });
+    }
+  }
+
+  return resolvedWinner;
 }
 
 /**
@@ -115,6 +157,8 @@ export function isSundayOrFeast(day: LiturgicalDay): boolean {
 export { compareFeastClass, isAtLeast, decideOccurrence } from './commemorations';
 export { resolveCollision } from './collision';
 export { resolveTemporalId } from './temporal-id';
+export { activeOctavesFor, strictestThreshold } from './octaves';
+export type { ActiveOctave } from './octaves';
 export type {
   LiturgicalDay,
   DayWinner,
@@ -124,4 +168,5 @@ export type {
   Weekday,
   FeastClass,
   TemporalCategory,
+  OctaveConfig,
 } from './types';

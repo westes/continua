@@ -76,10 +76,10 @@ describe('August sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it('dates within St. Lawrence and the Assumption\'s own octaves are excluded entirely, even where the source names a real secondary saint (St. Clare, Aug 12), pending octave support', () => {
+  it('dates within St. Lawrence and the Assumption\'s own octaves still exclude the real secondary saint the source names (St. Clare, Aug 12) -- Clare herself isn\'t modeled yet -- but St. Lawrence\'s own octave (now modeled, see calendar/octaves.ts) correctly keeps commemorating him through it regardless. The Assumption\'s own octave isn\'t populated with octave data yet, so Aug 22 stays plain.', () => {
     const clareDay = resolveDay('2025-08-12');
     expect(clareDay.winner.kind).toBe('temporal');
-    expect(clareDay.commemorations).toEqual([]);
+    expect(clareDay.commemorations).toEqual([{ kind: 'octave', id: 'st-lawrence', name: 'St. Lawrence, Martyr' }]);
     const assumptionOctaveDay = resolveDay('2025-08-22');
     expect(assumptionOctaveDay.winner.kind).toBe('temporal');
     expect(assumptionOctaveDay.commemorations).toEqual([]);

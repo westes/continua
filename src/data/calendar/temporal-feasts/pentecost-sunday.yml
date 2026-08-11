@@ -1,0 +1,15 @@
+# Pentecost's Octave (Pentecost Sunday + 7 days). Stricter threshold than
+# the default: user-confirmed rule (2026-08) is that a saint needs to be
+# Duplex or higher to keep the day for itself here -- Semiduplex and below
+# are commemorated, with the Octave winning the day instead. This replaces
+# the previous approximation of folding Pentecost's octave into the
+# `privileged-feria-major` temporal category (which never let *any* rank
+# win outright) -- see data/calendar/temporal-categories.yml, where those
+# offsets were downgraded to `ordinary-feria` so a real sanctoral
+# candidate reaches this octave layer instead of being transferred away
+# before it gets the chance.
+id: pentecost-sunday
+name: "Pentecost"
+octave:
+  enabled: true
+  wins: duplex

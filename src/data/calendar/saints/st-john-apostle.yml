@@ -7,3 +7,7 @@ name: "St. John, Apostle and Evangelist"
 rank: duplex-2-classis
 common: common-of-an-evangelist
 propers: "st-john-apostle"
+# Has his own real octave, one of the three "Comites Christi" (with St.
+# Stephen and the Holy Innocents) -- see st-stephen-protomartyr.yml.
+octave:
+  enabled: true

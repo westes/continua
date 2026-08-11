@@ -9,3 +9,7 @@ name: "The Holy Innocents, Martyrs"
 rank: duplex-2-classis
 common: common-of-several-martyrs
 propers: "holy-innocents"
+# Has its own real octave, one of the three "Comites Christi" (with St.
+# Stephen and St. John) -- see st-stephen-protomartyr.yml.
+octave:
+  enabled: true

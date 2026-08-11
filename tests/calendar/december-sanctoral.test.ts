@@ -53,9 +53,11 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
   });
 
   it('the Christmas Octave "Comites Christi" days each win outright with real propers, the Octave day commemorated in return', () => {
-    const stephen = resolveDay('2025-12-26');
-    const john = resolveDay('2025-12-27');
-    const innocents = resolveDay('2026-12-28');
+    // 2033 has no Sunday collision anywhere in Dec 26-31, so each of
+    // these resolves without a privileged-Sunday complication.
+    const stephen = resolveDay('2033-12-26');
+    const john = resolveDay('2033-12-27');
+    const innocents = resolveDay('2033-12-28');
     expect(stephen.winner).toEqual({
       kind: 'sanctoral',
       id: 'st-stephen-protomartyr',
@@ -75,21 +77,48 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
       rank: 'duplex-2-classis',
     });
     for (const day of [stephen, john, innocents]) {
-      expect(day.commemorations.length).toBe(1);
-      expect(day.commemorations[0]?.kind).toBe('temporal');
       expect(getDayCollect(day).status.en).toBe('verified');
     }
+    // Each also carries the day's own Octave-of-the-Nativity commemoration
+    // plus Christmas's own octave, which keeps accumulating -- see the
+    // dedicated stacking test below for the full week's build-up.
+    expect(stephen.commemorations).toEqual([
+      { kind: 'temporal', id: expect.any(String) },
+      { kind: 'octave', id: 'christmas-day', name: 'Christmas' },
+    ]);
   });
 
   it('St. Thomas of Canterbury, only Semiduplex, still wins outright within the Christmas Octave -- the concrete case behind this month\'s temporal-category fix', () => {
-    const day = resolveDay('2025-12-29');
+    const day = resolveDay('2033-12-29');
     expect(day.winner).toEqual({
       kind: 'sanctoral',
       id: 'st-thomas-becket',
       name: 'St. Thomas of Canterbury, Bishop and Martyr',
       rank: 'semiduplex',
     });
-    expect(day.commemorations.length).toBe(1);
-    expect(day.commemorations[0]?.kind).toBe('temporal');
+    // Thomas himself has no octave (user-confirmed, 2026-08), but by his
+    // own day, Christmas + Stephen + John + Holy Innocents' octaves have
+    // all stacked up and commemorate alongside him.
+    expect(day.commemorations).toEqual([
+      { kind: 'temporal', id: expect.any(String) },
+      { kind: 'octave', id: 'christmas-day', name: 'Christmas' },
+      { kind: 'octave', id: 'st-stephen-protomartyr', name: 'St. Stephen, Protomartyr' },
+      { kind: 'octave', id: 'st-john-apostle', name: 'St. John, Apostle and Evangelist' },
+      { kind: 'octave', id: 'holy-innocents', name: 'The Holy Innocents, Martyrs' },
+    ]);
+  });
+
+  it('the Christmas Octave commemorations build up day by day as each Comites Christi feast starts its own octave', () => {
+    // Same clean year (2033) as above, walking the whole week to show the
+    // accumulation directly -- this is the concrete shape of "commemorations
+    // build up" the octave mechanism was built for.
+    const dec30 = resolveDay('2033-12-30'); // no saint of its own -- a plain Octave-of-the-Nativity day
+    expect(dec30.winner.kind).toBe('temporal');
+    expect(dec30.commemorations).toEqual([
+      { kind: 'octave', id: 'christmas-day', name: 'Christmas' },
+      { kind: 'octave', id: 'st-stephen-protomartyr', name: 'St. Stephen, Protomartyr' },
+      { kind: 'octave', id: 'st-john-apostle', name: 'St. John, Apostle and Evangelist' },
+      { kind: 'octave', id: 'holy-innocents', name: 'The Holy Innocents, Martyrs' },
+    ]);
   });
 });
