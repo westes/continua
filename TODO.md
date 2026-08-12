@@ -126,7 +126,13 @@ saint has the same kind of mismatch.
 - **April (8 total): done, all 8.** St. Francis of Paola, St. Leo I,
   Ss. Tiburtius/Valerian/Maximus, St. George, St. Mark, St. Vitalis,
   St. Robert, St. Peter Martyr.
-- **May-December (79 saints): not started.**
+- **May (13 total): done, all 13.** 3 corrected (Ss. Philip and James,
+  St. John Before the Latin Gate, the Apparition of St. Michael), 10
+  authored fresh (Athanasius, Monica, Stanislaus, Nereus/Achilleus/
+  Domitilla/Pancras, Boniface, Ubald, Peter Celestine, Urban I,
+  Eleutherius, John I). Urban I/Eleutherius/John I needed 2038 to find a
+  year not governed by Ascensiontide/Pentecost/Trinity/Corpus Christi.
+- **June-December (66 saints): not started.**
 - **~52 temporal entries: not started.**
 - **94 `propers: null` saints: not started** — need a collect authored (a
   bigger, separate task) before an antiphon id even has anywhere to attach.
