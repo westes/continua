@@ -365,16 +365,32 @@ saint winning on the three verified collision dates, and St. Thomas
 Becket (Semiduplex) still transferring off the Sunday rather than
 winning, unchanged by the fix.
 
-### Bug found while checking February's results, not yet fixed
+### Bug found while checking February's results — fixed (2026-08)
 
-`hours/resolve-common.ts`'s `splitNamedAntiphon` always marks its output
-`verified` regardless of the input status (`verifiedText()` hardcodes it) —
+`hours/resolve-common.ts`'s `splitNamedAntiphon` always marked its output
+`verified` regardless of the input status (`verifiedText()` hardcoded it) —
 so a `draft`-marked antiphon (Scholastica's translation, Matthias's
-reworded English) renders as if fully verified everywhere it's actually
-displayed, even though the source YAML correctly says `draft`. Affects
-every split antiphon across every hour (Prime, Terce, Compline, Lauds), not
-just these two — pre-existing, just never surfaced until content with a
-real `draft` status went through it.
+reworded English, and every other reworded/translated antiphon from the
+sanctoral pull) rendered as if fully verified everywhere it's actually
+displayed — silently dropping the "unverified draft text" UI marker
+(`src/ui/styles.css`'s `.text-draft`, a dashed underline + tooltip) — even
+though the source YAML correctly said `draft`. Affected every split
+antiphon across every hour (Prime, Terce, Sext, None, Compline, Lauds),
+not just Scholastica/Matthias — pre-existing, just never surfaced until
+content with a real `draft` status went through it.
+
+Fixed by having `splitNamedAntiphon` take a real `ResolvedText` (not just
+bare text) and carry its actual per-language status through to both the
+incipit and full outputs. Callers that only ever had a plain
+`Partial<Record<string,string>>` with no status of its own to begin with
+(the plain weekday-default antiphons, Lauds psalmody overrides — neither
+type tracks a status field, always implicitly verified by their own
+live-checked file convention) now wrap with `verifiedText()` explicitly
+at the call site instead of that being silently baked into
+`splitNamedAntiphon` itself. `resolveMinorHourAntiphon` (Prime/Terce/
+Sext/None's own override lookup) now returns a full `ResolvedText` too,
+for the same reason. Verified end-to-end with St. Scholastica's own
+draft-English antiphon (`tests/hours/resolve-common.test.ts`).
 
 ## Mechanism not built at all
 

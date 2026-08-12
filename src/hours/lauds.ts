@@ -16,6 +16,7 @@ import {
   splitNamedAntiphon,
   resolveOfficeWinner,
   ALWAYS_OVERRIDE_TEMPORAL_IDS,
+  verifiedText,
 } from './resolve-common';
 import laudsDefinitionData from '../data/hours/lauds.yml';
 import laudsAntiphonsData from '../data/hours/lauds-antiphons.yml';
@@ -88,7 +89,7 @@ function psalmParts(numbers: number[], antiphon: BilingualText, opening: Resolve
     antiphon: i === 0 ? opening : undefined,
     verses: getPsalmVerses(number).map((v) => ({ n: v.n, text: v.text, status: v.status })),
   }));
-  parts.push({ kind: 'antiphon', text: splitNamedAntiphon(antiphon).full });
+  parts.push({ kind: 'antiphon', text: splitNamedAntiphon(verifiedText(antiphon)).full });
   return parts;
 }
 
@@ -136,7 +137,7 @@ function canticleText(canticleId: string, slice?: [number, number]): ResolvedTex
 function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
   const wd = getPsalmodyOverrideFor(day) ?? laudsAntiphons[day.weekday];
   const opening = (antiphon: BilingualText) => {
-    const { incipit, full } = splitNamedAntiphon(antiphon);
+    const { incipit, full } = splitNamedAntiphon(verifiedText(antiphon));
     return isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
   };
   const parts: ResolvedPart[] = [
@@ -151,7 +152,7 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
   }
   const canticle = getCanticle(wd.canticle.id);
   const canticleOpening = opening(wd.canticle.antiphon);
-  const canticleClosing = splitNamedAntiphon(wd.canticle.antiphon).full;
+  const canticleClosing = splitNamedAntiphon(verifiedText(wd.canticle.antiphon)).full;
   if (wd.canticle.split) {
     // Said in two pieces, own Gloria Patri each, one shared antiphon
     // framing both (opening before the first, full repeated only after
@@ -232,7 +233,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'lauds-office':
       return resolveOffice(day);
     case 'benedictus': {
-      const { incipit, full } = splitNamedAntiphon(getBenedictusAntiphon(day).text);
+      const { incipit, full } = splitNamedAntiphon(getBenedictusAntiphon(day));
       const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
       return [
         { kind: 'canticle', canticleId: 'benedictus', text: resolveCommon('benedictus'), antiphon: opening },

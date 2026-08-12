@@ -121,15 +121,18 @@ export function resolveMinorHourAntiphon(
   hourId: string,
   day: LiturgicalDay,
   weekdayDefault: Partial<Record<string, string>>,
-): Partial<Record<string, string>> {
+): ResolvedText {
   const overrideId = getMinorHourOverrideId(day);
   if (overrideId) {
-    const proper = getCommonProper(`${hourId}-antiphon-${overrideId}`);
+    const proper = resolveCommon(`${hourId}-antiphon-${overrideId}`);
     if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
-      return proper.text;
+      return proper;
     }
   }
-  return weekdayDefault;
+  // The plain weekday default (data/hours/{hour}-antiphons.yml) never
+  // carries its own status field at all — always implicitly verified by
+  // the file's own live-checked convention, not a guess.
+  return verifiedText(weekdayDefault);
 }
 
 /** Same idea as resolveMinorHourAntiphon, for the chapter
@@ -277,20 +280,34 @@ export function appendDoxology(body: ResolvedText, doxology: ResolvedText): Reso
 /** Splits a bilingual antiphon (one string per language, each with an
  * embedded "*") into its incipit and full forms, per language — each
  * prefixed "Ant. " inline, the same way "V."/"R." are baked directly into
- * versicle text rather than rendered as a separate UI marker. */
-export function splitNamedAntiphon(text: Partial<Record<string, string>>): {
+ * versicle text rather than rendered as a separate UI marker.
+ *
+ * Takes the antiphon's real status and carries it through to both
+ * outputs unchanged — previously hardcoded `verified` on everything it
+ * touched regardless of the source's actual status (`verifiedText()`),
+ * so a `draft` antiphon (e.g. St. Scholastica's, self-translated — see
+ * TODO.md) silently lost its "unverified draft text" marker
+ * (`src/ui/styles.css`'s `.text-draft`, a dashed underline + tooltip)
+ * the moment it passed through here — which every antiphon does, since
+ * this is the shared incipit/full split used by every hour. */
+export function splitNamedAntiphon(antiphon: ResolvedText): {
   incipit: ResolvedText;
   full: ResolvedText;
 } {
   const incipitText: Partial<Record<string, string>> = {};
   const fullText: Partial<Record<string, string>> = {};
-  for (const [lang, t] of Object.entries(text)) {
+  const incipitStatus: Partial<Record<string, 'verified' | 'draft' | 'missing'>> = {};
+  const fullStatus: Partial<Record<string, 'verified' | 'draft' | 'missing'>> = {};
+  for (const [lang, t] of Object.entries(antiphon.text)) {
     if (!t) {
       continue;
     }
     const split = splitAntiphon(t);
     incipitText[lang] = `Ant. ${split.incipit}`;
     fullText[lang] = `Ant. ${split.full}`;
+    const status = antiphon.status[lang] ?? 'missing';
+    incipitStatus[lang] = status;
+    fullStatus[lang] = status;
   }
-  return { incipit: verifiedText(incipitText), full: verifiedText(fullText) };
+  return { incipit: { text: incipitText, status: incipitStatus }, full: { text: fullText, status: fullStatus } };
 }

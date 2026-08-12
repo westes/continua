@@ -3,7 +3,6 @@ import type { LiturgicalDay } from '../calendar/types';
 import { resolveEveningDay } from '../calendar/vespers';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
-import { getCommonProper } from '../propers';
 import { getHymnDoxologyId } from './hymn-doxology';
 import { getOpeningVersicleId } from './opening-versicle';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
@@ -63,7 +62,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
         },
       ];
     case 'nunc-dimittis': {
-      const { incipit, full } = splitNamedAntiphon(getCommonProper('nunc-dimittis-antiphon').text);
+      const { incipit, full } = splitNamedAntiphon(resolveCommon('nunc-dimittis-antiphon'));
       const opening = isDoubleOrHigher(day.winner) ? full : incipit;
       return [
         { kind: 'canticle', canticleId: 'nunc-dimittis', text: resolveCommon('nunc-dimittis'), antiphon: opening },
