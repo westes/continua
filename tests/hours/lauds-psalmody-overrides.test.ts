@@ -46,10 +46,10 @@ describe('Lauds psalmody override (duplex-majus+ sanctoral, and Marian Saturday)
     expect(collect?.kind === 'prayer' ? collect.text.text.en : undefined).toContain('glorious intercession of the Blessed Mary');
   });
 
-  it("drops the Holy Cross and Blessed Virgin Mary suffrages on Our Lady's Saturday, keeping Apostles and Peace", () => {
+  it("drops the Holy Cross and Blessed Virgin Mary suffrages on Our Lady's Saturday (the latter redundant with the day's already-Marian office; the former because Marian Saturday isn't a bare ferial office either), keeping Joseph, Apostles, and Peace", () => {
     const ordo = resolveOrdo('lauds', '2026-10-24');
     const labels = ordo.parts.filter((p) => p.kind === 'preces' && p.label).map((p) => (p.kind === 'preces' ? p.label : undefined));
-    expect(labels).toEqual(['Of the Holy Apostles Peter and Paul', 'For Peace', 'Salve Regina']);
+    expect(labels).toEqual(['Of St. Joseph', 'Of the Holy Apostles Peter and Paul', 'For Peace', 'Salve Regina']);
   });
 
   it("substitutes Christ the King's own proper psalmody and office bundle, and omits the suffrages entirely (Duplex I. classis)", () => {

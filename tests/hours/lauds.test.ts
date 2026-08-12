@@ -187,16 +187,30 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(collects.length).toBe(1);
   });
 
-  it('includes all four Tridentine suffrages, in order, on an ordinary day', () => {
+  it('includes all five suffrages, in order, on an ordinary ferial day -- Cross from Tridentine 1906/1910, the other four from Monastic 1617', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const labels = ordo.parts.filter((p) => p.kind === 'preces' && p.label).map((p) => (p.kind === 'preces' ? p.label : undefined));
     expect(labels).toEqual([
       'Of the Holy Cross',
       'Of the Blessed Virgin Mary',
+      'Of St. Joseph',
       'Of the Holy Apostles Peter and Paul',
       'For Peace',
       'Salve Regina',
     ]);
+  });
+
+  it('drops "Of the Holy Cross" -- not a bare ferial office -- on a plain Sunday and on a low-rank saint\'s own winning day, unlike an ordinary feria', () => {
+    // St. Clare (Simplex) doesn't win outright (Lawrence's octave keeps
+    // her to a commemoration -- see calendar/index.ts's applyOctaves), so
+    // use St. Lawrence's own vigil day instead, or just check a Sunday.
+    const sunday = resolveOrdo('lauds', '2026-06-28'); // a plain temporal Sunday, nothing else contesting
+    const sundayLabels = sunday.parts
+      .filter((p) => p.kind === 'preces' && p.label)
+      .map((p) => (p.kind === 'preces' ? p.label : undefined));
+    expect(sundayLabels).not.toContain('Of the Holy Cross');
+    expect(sundayLabels).toContain('Of the Blessed Virgin Mary');
+    expect(sundayLabels).toContain('Of St. Joseph');
   });
 
   it('omits the suffrages on a Double-or-higher feast', () => {

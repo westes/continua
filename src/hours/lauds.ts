@@ -1,7 +1,8 @@
 import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart, ResolvedText } from './types';
 import type { LiturgicalDay, Weekday } from '../calendar/types';
-import { resolveDay, isAtLeast } from '../calendar';
+import { resolveDay, isAtLeast, isSundayOrFeast } from '../calendar';
 import { getDayLabel } from '../calendar/day-label';
+import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { getPsalmVerses } from '../psalter';
 import { getCanticle } from './lauds-canticles';
 import { getLaudsPsalmodyOverride, type LaudsPsalmodyOverride } from './lauds-psalmody-overrides';
@@ -200,10 +201,17 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
   ];
 }
 
-const SUFFRAGES = ['lauds-suffrage-cross', 'lauds-suffrage-bvm', 'lauds-suffrage-apostles', 'lauds-suffrage-peace'];
+const SUFFRAGES = [
+  'lauds-suffrage-cross',
+  'lauds-suffrage-bvm',
+  'lauds-suffrage-joseph',
+  'lauds-suffrage-apostles',
+  'lauds-suffrage-peace',
+];
 const SUFFRAGE_LABELS: Record<string, string> = {
   'lauds-suffrage-cross': 'Of the Holy Cross',
   'lauds-suffrage-bvm': 'Of the Blessed Virgin Mary',
+  'lauds-suffrage-joseph': 'Of St. Joseph',
   'lauds-suffrage-apostles': 'Of the Holy Apostles Peter and Paul',
   'lauds-suffrage-peace': 'For Peace',
 };
@@ -239,15 +247,33 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       if (part.omitOnDouble && (isDoubleOrHigher(day.winner) || isChristTheKing)) {
         return [];
       }
-      // Confirmed live: Our Lady's Saturday drops both "Of the Holy Cross"
-      // and "Of the Blessed Virgin Mary" (the latter redundant with the
-      // day's own theme; the former for reasons the reference engine
-      // doesn't explain and this doesn't try to re-derive), keeping only
-      // the Apostles and Peace suffrages.
-      const ids =
-        day.winner.kind === 'temporal' && day.winner.id === 'marian-saturday'
-          ? SUFFRAGES.filter((id) => id !== 'lauds-suffrage-cross' && id !== 'lauds-suffrage-bvm')
-          : SUFFRAGES;
+      // "Of the Holy Cross" is the real *ferial*-office suffrage, sourced
+      // from Tridentine 1906/1910 (a different track than the other four,
+      // which come from Monastic 1617 -- that track has no Cross suffrage
+      // at Lauds at all) -- live-verified against a plain ferial win, a
+      // plain Sunday win, a low-rank saint's own win (even bare Simplex),
+      // and Marian Saturday: Cross shows only when the bare temporal
+      // feria itself is what's being prayed -- the exact *opposite* of
+      // "Sunday or a feast of the Lord." In this app's own vocabulary,
+      // that's `!isSundayOrFeast(day)` (the same ferial/festive split
+      // Prime's capitulum already keys off) with one more exclusion for a
+      // named temporal identity like Marian Saturday, which isn't Sunday
+      // or a sanctoral winner either but still isn't a bare ferial office.
+      const showCross = !isSundayOrFeast(day) && !(day.winner.kind === 'temporal' && getTemporalFeastRecord(day.winner.id));
+      // "Of the Blessed Virgin Mary" is omitted specifically when the
+      // day's own office is already Marian (would be redundant to
+      // suffrage Mary again on her own day) -- confirmed live on Marian
+      // Saturday (Simplex-strength, so it reaches this far rather than
+      // being excluded outright above); the only case this app currently
+      // has of a day using the Marian common below the suffrage-omitting
+      // Duplex+ threshold (every actual Marian *feast* modeled so far is
+      // Duplex-majus+ and already returns above).
+      const isMarianSaturday = day.winner.kind === 'temporal' && day.winner.id === 'marian-saturday';
+      const ids = SUFFRAGES.filter((id) => {
+        if (id === 'lauds-suffrage-cross') return showCross;
+        if (id === 'lauds-suffrage-bvm') return !isMarianSaturday;
+        return true;
+      });
       return ids.map((id) => ({
         kind: 'preces' as const,
         text: resolveCommon(id),

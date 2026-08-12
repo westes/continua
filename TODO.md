@@ -272,8 +272,13 @@ real `draft` status went through it.
   complete "Let us pray ... Amen." block, not the more compressed real form
   (one "Let us pray," only the last collect's doxology).
 - Suffrage omission only checks `omitOnDouble` (+ Marian Saturday's own
-  Cross/BVM filter, + Christ the King's explicit id check). Real seasonal
-  suppression (e.g. during Advent/Lent) isn't modeled.
+  Cross/BVM filter, + Christ the King's explicit id check, + the Cross-only
+  ferial-office check added 2026-08). Real seasonal suppression is still
+  missing: per the Tridentine 1906/1910 source (`specials.pl`'s
+  `checksuffragium`), suffrages are omitted *entirely* during Advent,
+  Christmastide, and Passiontide, and whenever any octave is active — none
+  of that is modeled, so e.g. an Advent feria currently still shows all
+  five suffrages when the real office would have none.
 - `data/calendar/temporal-categories.yml`'s season→category reconstruction
   is from general knowledge of the pre-1955 tradition, not independently
   verified against a primary source for every entry (flagged inline where
