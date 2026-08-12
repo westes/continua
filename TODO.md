@@ -144,7 +144,13 @@ saint has the same kind of mismatch.
   Margaret of Antioch, Apollinaris, James the Greater [reworded English,
   same fix as Matthias/Barnabas], Anne, Nazarius/Celsus/Victor I/
   Innocent I, Abdon and Sennen).
-- **August-December (41 saints): not started.**
+- **August (12 total): done, all 12.** 1 corrected (Peter's Chains), 9
+  authored fresh (Dominic, Ss. Cyriacus/Largus/Smaragdus, Assumption,
+  Bernard, Bartholomew [reworded English, same fix as Matthias/Barnabas/
+  James the Greater], Louis, Zephyrinus, Augustine), 2 already correct as
+  found (Finding of St. Stephen, the Decollation of St. John the Baptist
+  — both plain unmodified matches against the live query, no fix needed).
+- **September-December (29 saints): not started.**
 - **~52 temporal entries: not started.**
 - **94 `propers: null` saints: not started** — need a collect authored (a
   bigger, separate task) before an antiphon id even has anywhere to attach.
