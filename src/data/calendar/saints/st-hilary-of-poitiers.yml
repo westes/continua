@@ -1,9 +1,13 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), live kalendar
-# check (2029-01-23, no Sunday collision) -- winner outright, Semiduplex. Own
-# proper collect, no unique antiphon of his own. (Picked 2029 deliberately --
-# 2027's Jan 23 turned out to already be governed by that week's temporal day
-# instead, a reminder that a fixed fest's *rank* is year-independent but
-# whether it actually wins isn't.)
+# Corrected: this app had him on Jan 23, sourced from a 2029 live-query
+# check that, in hindsight, was itself a red herring -- Jan 23, 2029 only
+# shows Hilary because 2029 is a year where Jan 14 (his real, raw-file-
+# confirmed fixed date) falls on a Sunday and every day from the 15th
+# through the 22nd is already occupied by another real feast that year,
+# forcing an unusually long transfer chain. Moved to his actual date,
+# Jan 14, confirmed directly against Latin/Sancti/01-14.txt's own
+# [Officium] (Latin/Sancti/01-23.txt is St. Raymond of Peñafort, not
+# Hilary at all). Verified against Divinum Officium (Monastic Tridentinum
+# 1617), live query, 2026-01-14 -- winner outright, Semiduplex.
 id: st-hilary-of-poitiers
 name: "St. Hilary of Poitiers, Bishop, Confessor and Doctor of the Church"
 rank: semiduplex

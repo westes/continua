@@ -90,21 +90,27 @@ title that plausibly names the saint and stays consistent — full automation
 kept producing false positives/negatives on exactly these edge cases, so
 each result needs a human read, not just a script.
 
-Also found along the way: **this app's calendar and the reference engine's
-own calendar don't always agree on dates.** St. Hilary of Poitiers is
-assigned Jan 23 here, but Divinum Officium's actual calendar has him on Jan
-14 (confirmed: nothing resembling Hilary appears under Jan 23 in any tested
-year). Not fixed — flagged. Worth a pass at some point checking whether any
-other already-authored saints have a similar date mismatch, since it would
-affect their existing collects too, not just a pending antiphon.
+Also found along the way, now fixed: **this app's calendar and the
+reference engine's own calendar don't always agree on dates.** St. Hilary
+of Poitiers was assigned Jan 23 here; Divinum Officium's own calendar has
+him fixed on Jan 14, confirmed directly against the raw `[Officium]` file
+(Jan 23's own file is St. Raymond of Peñafort, not Hilary at all). The
+original Jan-23 sourcing wasn't fabricated — 2029 is a real year where
+Jan 14 lands on a Sunday and every day through the 22nd is already taken,
+so Hilary genuinely transfers all the way to the 23rd *that one year* —
+but the app had mistaken a transfer-year artifact for his real date. Moved
+to Jan 14 in `sanctoral-calendar.yml`; his collect text (unaffected by
+which day it's said on) re-confirmed identical; antiphon pulled fresh.
+Worth a pass at some point checking whether any other already-authored
+saint has the same kind of mismatch.
 
 ### Progress
 
-- **January (9 total): done.** 8 antiphons authored/corrected (St. Marcellus
-  I, Chair of St. Peter at Rome, St. Paul the Hermit, Ss. Fabian and
-  Sebastian, St. Agnes, Ss. Vincent and Anastasius, Conversion of St. Paul,
-  St. John Chrysostom). St. Hilary of Poitiers left `missing`, see the date
-  mismatch above.
+- **January (9 total): done, all 9.** St. Marcellus I, Chair of St. Peter at
+  Rome, St. Paul the Hermit, Ss. Fabian and Sebastian, St. Agnes, Ss.
+  Vincent and Anastasius, Conversion of St. Paul, St. John Chrysostom, and
+  St. Hilary of Poitiers (moved to his real date, Jan 14, per direct
+  correction — see above).
 - **February-December (100 saints): not started.**
 - **~52 temporal entries: not started.**
 - **94 `propers: null` saints: not started** — need a collect authored (a
