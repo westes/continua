@@ -14,6 +14,7 @@ import { easterSunday } from './easter';
 import { adventStart, firstSundayStrictlyAfter, sundayOnOrBefore } from './temporal';
 import { addDays, daysBetween, toIsoDate } from './date-math';
 import { getTemporalFeastRecord } from './temporal-feasts';
+import { activeOctavesFor, type ActiveOctave } from './octaves';
 
 function capitalize(text: string): string {
   return text.charAt(0).toUpperCase() + text.slice(1);
@@ -88,6 +89,26 @@ const ORDINAL_SEASONS: Partial<Record<string, OrdinalSeason>> = {
   },
 };
 
+/** The anchor day itself (Ash Wednesday, Epiphany, Easter Sunday, Trinity
+ * Sunday) is its own named day, not "day after itself" — and outranks
+ * everything else this module computes (an active octave, an ordinal week
+ * label), since it's the day's real primary identity in the live engine
+ * too (e.g. Trinity Sunday is also technically day 8 of Pentecost's own
+ * octave, but nobody calls it that). Advent's own anchor (Advent I Sunday)
+ * doesn't take this branch — it's already "the 1st Sunday of Advent" via
+ * the ordinal path below. */
+function anchorDayName(day: LiturgicalDay): string | undefined {
+  const config = ORDINAL_SEASONS[day.season];
+  if (!config || config.includeAnchorWeek) {
+    return undefined;
+  }
+  const year = Number(day.date.slice(0, 4));
+  if (day.date === config.anchorDate(year)) {
+    return config.anchorName;
+  }
+  return undefined;
+}
+
 function temporalLabel(day: LiturgicalDay): string {
   const weekdayName = capitalize(day.weekday);
   const config = ORDINAL_SEASONS[day.season];
@@ -102,14 +123,9 @@ function temporalLabel(day: LiturgicalDay): string {
 
   const year = Number(day.date.slice(0, 4));
   const anchor = config.anchorDate(year);
-  if (!config.includeAnchorWeek && day.date === anchor) {
-    // The anchor day itself (Ash Wednesday, Epiphany, Easter Sunday,
-    // Trinity Sunday) is its own named day, not "day after itself" — only
-    // reachable here at all when nothing in `occurring` already covers it
-    // (none of these are modeled as sanctoral entries yet). Advent's own
-    // anchor (Advent I Sunday) doesn't take this branch — it's already
-    // "the 1st Sunday of Advent" via the ordinal path below.
-    return config.anchorName;
+  const anchorName = anchorDayName(day);
+  if (anchorName) {
+    return anchorName;
   }
 
   const firstNumberedSunday = config.includeAnchorWeek ? anchor : firstSundayStrictlyAfter(anchor);
@@ -123,6 +139,17 @@ function temporalLabel(day: LiturgicalDay): string {
     return `The ${ordinalStr} Sunday ${config.preposition} ${config.ordinalName}`;
   }
   return `${weekdayName} in the ${ordinalStr} week ${config.preposition} ${config.ordinalName}`;
+}
+
+/** "Third Day within the Octave of St. Lawrence" — the real DO title an
+ * octave day carries on its own (e.g. "Tertia die infra Octavam S.
+ * Laurentii Martyris") when nothing else has displaced it. Day 1 shouldn't
+ * normally reach this (that day's own winner is the feast itself, handled
+ * above before this is ever called) — kept simple rather than
+ * special-cased for that rare edge case (see applyOctaves's own
+ * `isOwnStartDay` comment in calendar/index.ts for when it can happen). */
+function octaveLabel(octave: ActiveOctave): string {
+  return `${ordinal(octave.dayNumber)} Day within the Octave of ${octave.name}`;
 }
 
 /**
@@ -147,7 +174,31 @@ export function getDayLabel(day: LiturgicalDay): string {
     return namedFeast.name;
   }
 
+  const commemoratedSaint = day.commemorations.find((c) => c.kind === 'sanctoral');
+
+  // A season's own named anchor day (Trinity Sunday, Easter, Ash
+  // Wednesday, Epiphany) outranks an active octave, same reasoning as
+  // anchorDayName's own doc comment — checked before the octave case
+  // below since Trinity Sunday, e.g., also happens to be day 8 of
+  // Pentecost's octave, and the anchor name is what actually governs.
+  const anchorName = anchorDayName(day);
+  if (anchorName) {
+    return commemoratedSaint ? `${commemoratedSaint.name} — ${anchorName}` : anchorName;
+  }
+
+  // An active octave (St. Lawrence's, Christmas's own stack, ...) is this
+  // day's real primary identity in the live engine, not a footnote — e.g.
+  // "Tertia die infra Octavam S. Laurentii Martyris", not "Wednesday in
+  // the 11th week after Trinity". Picks the oldest-started octave when
+  // several are stacked (activeOctavesFor's own ordering) as the headline;
+  // the others still ride along as ordinary octave commemorations, just
+  // not separately named here.
+  const octaves = activeOctavesFor(day.date);
+  if (octaves.length > 0) {
+    const primary = octaveLabel(octaves[0]!);
+    return commemoratedSaint ? `${primary} — ${commemoratedSaint.name}` : primary;
+  }
+
   const temporal = temporalLabel(day);
-  const commemorated = day.commemorations.find((c) => c.kind === 'sanctoral');
-  return commemorated ? `${commemorated.name} — ${temporal}` : temporal;
+  return commemoratedSaint ? `${commemoratedSaint.name} — ${temporal}` : temporal;
 }

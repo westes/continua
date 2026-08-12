@@ -1,0 +1,17 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# Lauds query (2026/2027/2028-08-12, all clean years with no Sunday
+# collision) -- always commemorated, never wins outright: St. Lawrence's
+# own octave (Aug 10-17, semiduplex threshold) reliably takes the day
+# from her ("Tertia die infra Octavam S. Laurentii Martyris ~
+# Semiduplex", with "Commemoratio: S. Claræ Virginis"). Her own rank here
+# is the Monastic-specific one (the raw file's "sed rubrica 1570 aut
+# rubrica ^Monastica" branch, Simplex) rather than the later, higher
+# Roman/secular Duplex given alongside it in the same file -- consistent
+# with this app's general Monastic-track sourcing discipline.
+# No unique collect/antiphon authored yet -- one of the remaining
+# `propers: null` saints (see TODO.md).
+id: st-clare
+name: "St. Clare, Virgin"
+rank: simplex
+common: common-of-a-virgin
+propers: null

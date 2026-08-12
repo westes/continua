@@ -76,13 +76,22 @@ describe('August sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it("dates within St. Lawrence and the Assumption's own octaves still exclude the real secondary saint the source names (St. Clare, Aug 12) -- Clare herself isn't modeled yet -- but both octaves themselves (now modeled, see calendar/octaves.ts) correctly keep commemorating through them regardless", () => {
+  it("St. Lawrence's own octave correctly keeps St. Clare (Simplex) to a commemoration, and the Assumption's octave does the same for its own date", () => {
+    // St. Clare is now modeled (added directly off this gap) -- Simplex
+    // under Monastic 1617, below the octave's semiduplex `wins` threshold,
+    // so she's commemorated rather than winning outright, matching the
+    // live engine's own "Tertia die infra Octavam S. Laurentii Martiris ~
+    // Semiduplex" / "Commemoratio: S. Claræ Virginis" for this date.
     const clareDay = resolveDay('2025-08-12');
     expect(clareDay.winner.kind).toBe('temporal');
-    expect(clareDay.commemorations).toEqual([{ kind: 'octave', id: 'st-lawrence', name: 'St. Lawrence, Martyr' }]);
+    expect(clareDay.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'st-clare', name: 'St. Clare, Virgin', rank: 'simplex' },
+      { kind: 'octave', id: 'st-lawrence', name: 'St. Lawrence, Martyr' },
+    ]);
     // Aug 22 is the Assumption's own octave day (In Octava Assumptionis),
     // Duplex, blocking Ss. Timothy/Hippolytus/Symphorian the same way --
-    // it's also day 8 of the Assumption's own octave.
+    // it's also day 8 of the Assumption's own octave. Those three still
+    // aren't modeled, so this stays a bare octave commemoration.
     const assumptionOctaveDay = resolveDay('2025-08-22');
     expect(assumptionOctaveDay.winner.kind).toBe('temporal');
     expect(assumptionOctaveDay.commemorations).toEqual([

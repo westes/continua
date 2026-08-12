@@ -44,6 +44,26 @@ describe('getDayLabel — ordinal temporal label', () => {
   });
 });
 
+describe('getDayLabel — active octave', () => {
+  it('shows the octave day itself as the primary label, plus a lesser saint commemorated alongside it', () => {
+    // St. Lawrence's own octave (Aug 10-17); Aug 12 is day 3, and also St.
+    // Clare's own day -- Simplex, below the octave's semiduplex threshold,
+    // so she's commemorated rather than winning. Matches the live engine's
+    // own title for this date directly (see saints/st-clare.yml).
+    expect(getDayLabel(resolveDay('2026-08-12'))).toBe('3rd Day within the Octave of St. Lawrence, Martyr — St. Clare, Virgin');
+  });
+
+  it('shows the octave day alone when nothing is separately commemorated that day', () => {
+    // Aug 17 is day 8 (the last day) of St. Lawrence's octave, with no
+    // sanctoral candidate of its own in this app's calendar.
+    expect(getDayLabel(resolveDay('2026-08-17'))).toBe('8th Day within the Octave of St. Lawrence, Martyr');
+  });
+
+  it("a season's own named anchor day outranks an active octave, even though Trinity Sunday is technically also day 8 of Pentecost's own octave", () => {
+    expect(getDayLabel(resolveDay('2026-05-31'))).toBe('Trinity Sunday');
+  });
+});
+
 describe('getDayLabel — feast name combination', () => {
   const base: LiturgicalDay = {
     date: '2026-06-15',
