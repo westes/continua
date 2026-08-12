@@ -159,7 +159,11 @@ saint has the same kind of mismatch.
   Greater/Bartholomew/Matthew], Ss. Chrysanthus and Daria, Vigil of
   Ss. Simon and Jude, Ss. Simon and Jude [same reworded-English fix],
   Vigil of All Saints.
-- **November-December (17 saints): not started.**
+- **November (7 total): done, all 7.** 2 corrected (Cecilia, Andrew), 4
+  authored fresh (All Saints, Clement I, Catherine of Alexandria,
+  Silvester Abbot). Martin of Tours already matched the live query as
+  found, no change needed.
+- **December (10 saints): not started.**
 - **~52 temporal entries: not started.**
 - **94 `propers: null` saints: not started** — need a collect authored (a
   bigger, separate task) before an antiphon id even has anywhere to attach.

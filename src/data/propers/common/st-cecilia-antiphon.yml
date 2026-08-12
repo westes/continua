@@ -1,10 +1,14 @@
-# Verified against Divinum Officium (Latin/English Sancti/11-22.txt's own
-# [Ant 1] — the Lauds-hour antiphon, not Terce's. Refers to Valerian, her
-# husband in the traditional legend.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Cecilia's own day (2027-11-22 -- 2026's own Nov 22 is
+# the last Sunday after Pentecost). The Benedictus antiphon. Corrects the
+# previous version of this file, which had been sourced from the Roman/
+# secular rite's Sancti/11-22.txt's own [Ant 1] instead: real but
+# different text from what Monastic 1617 actually renders at Lauds, same
+# mistake as St. Lawrence's earlier fix.
 id: st-cecilia-antiphon
 text:
-  la: "Est secrétum, * Valeriáne, quod tibi volo dícere: Angelum Dei hábeo amatórem, qui nímio zelo custódit corpus meum."
-  en: "Valerian! there is a secret * which I wish to tell thee. I have an Angel of God for a lover, and he is very jealous to keep my body."
+  la: "Dum auróra * finem daret, Cæcília exclamávit dicens: Eja, mílites Christi, abjícite ópera tenebrárum et induímini arma lucis."
+  en: "As dawn was fading * into day, Cecilia cried and said: Arise, O soldiers of Christ, cast away the works of darkness, and put on the armour of light."
 status:
   la: verified
   en: verified
