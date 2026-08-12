@@ -1,0 +1,15 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-02-10, clean year. Same reading and English translation
+# already used at her Terce capitulum (terce-capitulum-st-scholastica.yml)
+# -- no English rendering exists in the reference engine's data, translated
+# there per Douay-Rheims Cant 2:13-14, reused here as the same text.
+id: lauds-capitulum-st-scholastica
+text:
+  la: "Surge, amíca mea, speciósa mea, et veni, colúmba mea, in foramínibus petræ, in cavérna macériæ, osténde mihi fáciem tuam, sonet vox tua in áuribus meis: vox enim tua dulcis, et fácies tua decóra."
+  en: "Arise, my love, my beautiful one, and come: my dove, in the clefts of the rock, in the hollow places of the wall, shew me thy face, let thy voice sound in my ears; for thy voice is sweet, and thy face comely."
+citation:
+  la: "Cant 2:13-14"
+  en: "Cant 2:13-14"
+status:
+  la: verified
+  en: draft

@@ -6,39 +6,55 @@ into "only findable by reading commit messages."
 
 ## Content gaps — mechanism built, data incomplete
 
-### Lauds psalmody overrides (duplex-majus+ per-feast psalms/antiphons/canticle)
+### Lauds psalmody overrides + office-bundle overrides — done (2026-08)
 
 Mechanism: `src/hours/lauds-psalmody-overrides.ts`, gated in
-`hours/lauds.ts`'s `getPsalmodyOverrideFor`. Only fires for a saint ranked
-duplex-majus or higher (per direct instruction) or a named temporal feast
-(`marian-saturday`, `christ-the-king`).
+`hours/lauds.ts`'s `getPsalmodyOverrideFor`; office bundle
+(`lauds-capitulum-/-responsory-/-hymn-/-versicle-<id>.yml` in
+`data/propers/common/`) falls back to the plain weekday bundle
+independently of whether the psalmody override exists. Fires for a saint
+ranked duplex-majus or higher, or a named temporal feast
+(`marian-saturday`, `christ-the-king`, `christmas-octave-sunday`).
 
-**Authored (3):** `st-lawrence`, `marian-saturday`, `christ-the-king`.
+**Authored — all 28 non-`propers: null` duplex-majus+ saints/temporal
+ids, plus the 4 already done going in (`st-lawrence`, `marian-saturday`,
+`christ-the-king`, `christmas-octave-sunday`) — full 32/32.** Same
+methodology as the P/T/S/N batch: one live `command=prayLaudes` query per
+saint's own already-established clean date, Monastic Tridentinum 1617.
+Extraction automated this time via a purpose-built HTML parser
+(`scratchpad/parse_lauds_html.py`, not committed — a one-off tool, not
+application code) after manual grep/sed proved too slow at this volume;
+cross-validated against 5 saints' worth of already-known-correct content
+before trusting it for the rest, then spot-checked further plus an
+automated la==en/HTML-leftover sweep across all 28 outputs. Verified
+end-to-end with a runtime smoke test resolving each id's actual
+`getLaudsPsalmodyOverride` + all four bundle parts through the real
+mechanism, not just checking the YAML files exist.
 
-**Not authored yet (32 duplex-majus+ saints, sorted roughly by calendar
-order)** — each needs a live `command=prayLaudes` query on the saint's own
-date, Monastic Tridentinum 1617, same method as the three done so far:
+The 5 antiphons cycle through a fixed pool matching the psalm scheme
+every one of these major feasts uses ("Psalmi Dominica"): psalms
+92/99/62, the Canticle of the Three Young Men, then the Laudate group
+(Ps 148-150, one shared antiphon) — confirmed via the reference engine's
+own psalm-number labels, not assumed. This is the *same* 5-antiphon pool
+Prime/Terce/Sext/None draw from (Prime=group 1, Terce=2, Sext=3, None=5,
+skipping the canticle's own group 4) — real, confirmed structurally (see
+St. Scholastica below), not a coincidence.
 
-conversion-of-st-paul, chair-of-st-peter-at-rome, apparition-of-st-michael,
-st-matthias, st-benedict\*, st-mark, ss-philip-and-james, st-john-before-the-latin-gate,
-st-john-apostle (Dec 27, distinct from st-john-before-the-latin-gate May 6),
-st-barnabas, nativity-of-st-john-the-baptist, ss-peter-and-paul, chair-of-st-peter-at-antioch,
-st-james-the-greater, st-martin-of-tours, holy-innocents, st-thomas-apostle,
-all-saints, all-saints-of-the-benedictine-order\*, st-andrew, st-stephen-protomartyr,
-ss-simon-and-jude, st-luke, st-matthew, st-michael\*, st-maurus-abbot\*,
-ss-placid-and-companions\*, st-scholastica, st-bartholomew, st-peter-ad-vincula,
-assumption, nativity-bvm, immaculate-conception.
-
-\* = `propers: null` in the saint's own record — needs collect + antiphon
-authored too, not just the psalmody override, before any of this is useful.
-
-### Lauds office-bundle overrides (capitulum/responsory/hymn/versicle)
-
-Same override id, separate files (`lauds-capitulum-<id>.yml` etc. in
-`data/propers/common/`) — falls back to the plain weekday bundle when
-absent, *independently* of whether the psalmody override exists.
-**Authored (2): `st-lawrence`, `christ-the-king`.** 31 duplex-majus+ saints
-left — same list as the psalmody overrides above, minus Lawrence.
+St. Scholastica needed the same treatment as her P/T/S/N content: no
+English exists in the reference engine's data for her Lauds antiphons,
+capitulum, versicle, or hymn. Four of her five antiphons and her
+capitulum reuse the exact English already translated and verified for
+her Terce/Sext/None content (confirmed same Latin, since Lauds and the
+minor hours share this pool); the canticle antiphon, versicle, and
+6-stanza hymn ("Jam noctis umbræ cóncidunt") are newly translated here.
+**Real gap surfaced by this: the Lauds psalmody-override schema
+(`hours/lauds.ts`'s `BilingualText`) has no per-language status field the
+way `hours/resolve-common.ts`'s `ResolvedText` does** — `psalmParts`
+unconditionally wraps every psalmody antiphon in `verifiedText()`, so her
+self-translated antiphon English can't carry the "draft" marker
+(`.text-draft`) the same content does at Prime/Terce/Sext/None. Flagged
+here, not fixed — would need `BilingualText` (or the override schema
+generally) to carry a status field through to `psalmParts`/`resolvePsalmody`.
 
 ### Prime/Terce/Sext/None minor-hour overrides (2026-08, new mechanism)
 
