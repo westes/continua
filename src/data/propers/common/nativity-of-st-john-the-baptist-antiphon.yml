@@ -1,10 +1,15 @@
-# Verified against Divinum Officium (Latin/English Sancti/06-24.txt's own
-# [Ant 1] — the Lauds-hour antiphon, not Terce's, which falls back to a
-# generic Common text instead.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, the Nativity of St. John the Baptist's own day
+# (2026-06-24) -- the Benedictus antiphon (Luke 1:64,68, the very verse
+# the Benedictus canticle itself opens with). Corrects the previous
+# version of this file, which had been sourced from the Roman/secular
+# rite's Sancti/06-24.txt's own [Ant 1] instead: real but different text
+# from what Monastic 1617 actually renders at Lauds, same mistake as
+# St. Lawrence's earlier fix.
 id: nativity-of-st-john-the-baptist-antiphon
 text:
-  la: "Ingrésso * Zacharía templum Dómini, appáruit ei Gábriel Angelus stans a dextris altáris incénsi."
-  en: "When Zacharias went * into the Temple of the Lord, the Angel Gabriel appeared unto him, standing on the right side of the altar of incense."
+  la: "Apértum est os Zacharíæ, et prophetávit dicens: Benedíctus Deus Israël."
+  en: "And the mouth of Zacharias was opened, and he prophesied, saying: Blessed be the Lord God of Israel."
 status:
   la: verified
   en: verified

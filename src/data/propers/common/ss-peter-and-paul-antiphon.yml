@@ -1,13 +1,15 @@
-# Verified against Divinum Officium (Latin/English Sancti/06-29.txt's own
-# [Ant 1] — a deliberate cross-reference to Sancti/02-22 (the Chair of St.
-# Peter at Antioch's own antiphon), same text reused for the same reason:
-# both are about St. Peter's own office. Duplicated here, not shared,
-# matching this project's one-file-per-id convention (see
-# chair-of-st-peter-at-rome-antiphon.yml's own note on the same pattern).
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, Ss. Peter and Paul's own day (2026-06-29) -- the Benedictus
+# antiphon. Corrects the previous version of this file, which had been
+# sourced from the Roman/secular rite's Sancti/06-29.txt's own [Ant 1]
+# instead: real but different text from what Monastic 1617 actually
+# renders at Lauds, same mistake as St. Lawrence's earlier fix -- shares
+# the same text as the two Chair-of-Peter feasts' own (already
+# corrected), confirmed independently rather than assumed.
 id: ss-peter-and-paul-antiphon
 text:
-  la: "Tu es pastor óvium, * Princeps Apostolórum, tibi tráditæ sunt claves regni cælórum."
-  en: "Thou art the Shepherd * of the sheep, and the Prince of the Apostles, and unto thee are given the keys of the kingdom of heaven."
+  la: "Quodcúmque ligáveris super terram, erit ligátum et in cælis; et quodcúmque sólveris super terram, erit solútum et in cælis: dicit Dóminus Simóni Petro."
+  en: "Thus saith the Lord unto Simon Peter: Whatsoever thou shalt bind on earth, shall be bound in heaven; and whatsoever thou shalt loose on earth, shall be loosed in heaven."
 status:
   la: verified
   en: verified

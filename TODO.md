@@ -132,7 +132,14 @@ saint has the same kind of mismatch.
   Domitilla/Pancras, Boniface, Ubald, Peter Celestine, Urban I,
   Eleutherius, John I). Urban I/Eleutherius/John I needed 2038 to find a
   year not governed by Ascensiontide/Pentecost/Trinity/Corpus Christi.
-- **June-December (66 saints): not started.**
+- **June (16 total): done, all 16.** 5 corrected (Ss. Basilides/Cyrinus/
+  Nabor/Nazarius, the Nativity of St. John the Baptist, Ss. John and Paul,
+  Ss. Peter and Paul, Commemoration of St. Paul), 11 authored fresh
+  (Ss. Marcellinus/Peter/Erasmus, Ss. Primus and Felicianus, Barnabas
+  [reworded English, same register fix as Matthias], Anthony of Padua,
+  Basil the Great, Ss. Vitus/Modestus/Crescentia, Ss. Mark and Marcellian,
+  Ss. Gervase and Protase, Paulinus of Nola, William Abbot, Leo II).
+- **July-December (50 saints): not started.**
 - **~52 temporal entries: not started.**
 - **94 `propers: null` saints: not started** — need a collect authored (a
   bigger, separate task) before an antiphon id even has anywhere to attach.
