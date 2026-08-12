@@ -154,7 +154,12 @@ saint has the same kind of mismatch.
   4 authored fresh (Matthew [reworded English, same fix as Matthias/
   Barnabas/James the Greater/Bartholomew], Ss. Cyprian and Justina,
   Ss. Cosmas and Damian, Jerome).
-- **October-December (24 saints): not started.**
+- **October (7 total): done, all 7.** Francis of Assisi, Callistus I,
+  Luke [reworded English, same fix as Matthias/Barnabas/James the
+  Greater/Bartholomew/Matthew], Ss. Chrysanthus and Daria, Vigil of
+  Ss. Simon and Jude, Ss. Simon and Jude [same reworded-English fix],
+  Vigil of All Saints.
+- **November-December (17 saints): not started.**
 - **~52 temporal entries: not started.**
 - **94 `propers: null` saints: not started** — need a collect authored (a
   bigger, separate task) before an antiphon id even has anywhere to attach.
