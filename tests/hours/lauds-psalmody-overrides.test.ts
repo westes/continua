@@ -73,13 +73,27 @@ describe('Lauds psalmody override (duplex-majus+ sanctoral, and Marian Saturday)
       'He hath made us',
     );
 
-    // Two extra collects: the commemorated Sunday's own, and the Simplex
-    // saint already commemorated under that Sunday before Christ the King
-    // displaced it too -- see tests/calendar/christ-the-king.test.ts.
+    // One extra collect (the commemorated Sunday's own, still an
+    // unlabeled 'prayer' -- a temporal commemoration, not a sanctoral
+    // one) plus the Simplex saint already commemorated under that Sunday
+    // before Christ the King displaced it too, now a labeled 'preces'
+    // block rather than a third bare 'prayer' -- see
+    // tests/calendar/christ-the-king.test.ts.
     const collects = ordo.parts.filter((p) => p.kind === 'prayer');
-    expect(collects.length).toBe(3);
+    expect(collects.length).toBe(2);
+    const sanctoralCommemoration = ordo.parts.find(
+      (p) => p.kind === 'preces' && p.label?.startsWith('Commemoration of'),
+    );
+    expect(sanctoralCommemoration).toBeDefined();
 
-    const suffrages = ordo.parts.filter((p) => p.kind === 'preces' && p.label && p.label !== 'Salve Regina');
+    const SUFFRAGE_LABELS = new Set([
+      'Of the Holy Cross',
+      'Of the Blessed Virgin Mary',
+      'Of St. Joseph',
+      'Of the Holy Apostles Peter and Paul',
+      'For Peace',
+    ]);
+    const suffrages = ordo.parts.filter((p) => p.kind === 'preces' && p.label && SUFFRAGE_LABELS.has(p.label));
     expect(suffrages).toEqual([]);
   });
 });

@@ -9,7 +9,14 @@ import { getLaudsPsalmodyOverride, type LaudsPsalmodyOverride } from './lauds-ps
 import { getOpeningVersicleId } from './opening-versicle';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { isDoubleOrHigher } from './antiphon';
-import { resolveCommon, getDayCollects, getBenedictusAntiphon, splitNamedAntiphon } from './resolve-common';
+import {
+  resolveCommon,
+  getDayCollects,
+  getBenedictusAntiphon,
+  splitNamedAntiphon,
+  resolveOfficeWinner,
+  ALWAYS_OVERRIDE_TEMPORAL_IDS,
+} from './resolve-common';
 import laudsDefinitionData from '../data/hours/lauds.yml';
 import laudsAntiphonsData from '../data/hours/lauds-antiphons.yml';
 
@@ -35,28 +42,28 @@ interface PsalmodyBlock {
 }
 const laudsAntiphons = laudsAntiphonsData as Record<Weekday, PsalmodyBlock>;
 
-// Named temporal winners with real standing of their own, unconditionally
-// override-eligible (no rank check — they aren't "a saint" competing with
-// the weekday default the way one is, and neither carries a FeastClass at
-// all since DayWinner's temporal variant never does). Grows one entry at
-// a time as each is built, same as everywhere else in this codebase.
-const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set(['marian-saturday', 'christ-the-king']);
-
 /**
  * A duplex-majus+ saint's own proper psalmody (per-feast, not per-Common —
- * explicit choice), or one of the named temporal feasts above. Falls back
- * to `undefined` — the plain weekday default — for a duplex-majus+ saint
- * with no override authored yet, same honest incremental-content
- * convention as everywhere else in this codebase; it's not gated behind
- * whether content exists, just behind whether it's *eligible* to override
- * at all.
+ * explicit choice), or one of the named temporal feasts in
+ * ALWAYS_OVERRIDE_TEMPORAL_IDS. Falls back to `undefined` — the plain
+ * weekday default — for a duplex-majus+ saint with no override authored
+ * yet, same honest incremental-content convention as everywhere else in
+ * this codebase; it's not gated behind whether content exists, just
+ * behind whether it's *eligible* to override at all.
+ *
+ * Checks resolveOfficeWinner(day), not the raw `day.winner` — on an
+ * octave day this is the octave's own feast (e.g. St. Lawrence, days 2-8
+ * of his own octave), which is exactly what should supply the psalmody
+ * override there too, live-verified alongside the collect/Benedictus-
+ * antiphon fix (see resolve-common.ts's resolveOfficeWinner doc comment).
  */
 function getPsalmodyOverrideFor(day: LiturgicalDay): LaudsPsalmodyOverride | undefined {
-  if (day.winner.kind === 'temporal' && ALWAYS_OVERRIDE_TEMPORAL_IDS.has(day.winner.id)) {
-    return getLaudsPsalmodyOverride(day.winner.id);
+  const winner = resolveOfficeWinner(day);
+  if (winner.kind === 'temporal' && ALWAYS_OVERRIDE_TEMPORAL_IDS.has(winner.id)) {
+    return getLaudsPsalmodyOverride(winner.id);
   }
-  if (day.winner.kind === 'sanctoral' && isAtLeast(day.winner.rank, 'duplex-majus')) {
-    return getLaudsPsalmodyOverride(day.winner.id);
+  if (winner.kind === 'sanctoral' && isAtLeast(winner.rank, 'duplex-majus')) {
+    return getLaudsPsalmodyOverride(winner.id);
   }
   return undefined;
 }
@@ -130,7 +137,7 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
   const wd = getPsalmodyOverrideFor(day) ?? laudsAntiphons[day.weekday];
   const opening = (antiphon: BilingualText) => {
     const { incipit, full } = splitNamedAntiphon(antiphon);
-    return isDoubleOrHigher(day.winner) ? full : incipit;
+    return isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
   };
   const parts: ResolvedPart[] = [
     {
@@ -226,7 +233,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       return resolveOffice(day);
     case 'benedictus': {
       const { incipit, full } = splitNamedAntiphon(getBenedictusAntiphon(day).text);
-      const opening = isDoubleOrHigher(day.winner) ? full : incipit;
+      const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
       return [
         { kind: 'canticle', canticleId: 'benedictus', text: resolveCommon('benedictus'), antiphon: opening },
         { kind: 'antiphon', text: full },
@@ -235,7 +242,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'preces':
       return [{ kind: 'preces', text: resolveCommon(part.textRef.id), label: part.label }];
     case 'day-collects':
-      return getDayCollects(day).map((text) => ({ kind: 'prayer' as const, text }));
+      return getDayCollects(day);
     case 'suffrages': {
       // isDoubleOrHigher only ever looks at a sanctoral rank — Christ the
       // King is modeled as a named temporal winner (see
@@ -310,10 +317,16 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       // temporal identity like Marian Saturday or Christ the King (which
       // aren't Sunday or a sanctoral winner either, but still aren't a
       // bare ferial office -- same reasoning as the Cross suffrage's own
-      // gate just above).
+      // gate just above). Also excludes any day within an active octave
+      // -- live-verified (Tridentine 1910, day 3 of St. Lawrence's own
+      // octave): "Preces Feriales{omittitur}", same exclusion the
+      // suffrages already have, for the same reason -- an octave day
+      // isn't a bare ferial office even though nothing else is winning
+      // it outright.
       const isVigil = day.winner.kind === 'sanctoral' && day.winner.rank === 'vigil';
       const isBareFeria = day.winner.kind === 'temporal' && !getTemporalFeastRecord(day.winner.id);
-      const isFerialOrVigil = day.weekday !== 'sunday' && (isVigil || isBareFeria);
+      const isWithinAnOctave = activeOctavesFor(day.date).length > 0;
+      const isFerialOrVigil = day.weekday !== 'sunday' && !isWithinAnOctave && (isVigil || isBareFeria);
       const id = isFerialOrVigil ? 'lauds-preces-feriales' : 'lauds-short-litany';
       return [{ kind: 'preces', text: resolveCommon(id) }];
     }

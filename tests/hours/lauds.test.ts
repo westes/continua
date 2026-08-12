@@ -194,20 +194,36 @@ describe('resolveOrdo("lauds", ...)', () => {
   it('resolves both the winners collect and a commemorated saints collect on a day with a real commemoration', () => {
     // 2025-11-30: Advent I (the winner) with St. Andrew, Duplex II. classis,
     // commemorated alongside it (see tests/calendar/day-label.test.ts) --
-    // an octave commemoration (like LAWRENCE_OCTAVE_DAY's) never
-    // contributes a collect (none authored yet), so this needs a real
-    // sanctoral/temporal commemoration instead to exercise getDayCollects
-    // pushing a second entry.
+    // he has only a bare collect authored (no st-andrew-commemoration.yml
+    // Ant+V/R bundle yet), so this renders as a labeled 'preces' block
+    // (see resolve-common.ts's sanctoralCommemorationPart), not a second
+    // unlabeled 'prayer' the way it used to.
     const ordo = resolveOrdo('lauds', '2025-11-30');
     const collects = ordo.parts.filter((p) => p.kind === 'prayer');
-    expect(collects.length).toBe(2);
-    expect(collects[1]?.kind === 'prayer' ? collects[1].text.text.en : undefined).toContain('Andrew');
+    expect(collects.length).toBe(1);
+    const andrewCommemoration = ordo.parts.find((p) => p.kind === 'preces' && p.label?.includes('Andrew'));
+    expect(andrewCommemoration?.kind === 'preces' ? andrewCommemoration.text.text.en : undefined).toContain(
+      'Andrew',
+    );
   });
 
-  it("skips a straight octave commemoration for collect purposes (no octave collect authored)", () => {
-    const ordo = resolveOrdo('lauds', LAWRENCE_OCTAVE_DAY);
+  it("gives St. Lawrence's octave day 2 the full Lawrence office (per resolveOfficeWinner), no Clare commemoration since she's only assigned Aug 12 specifically", () => {
+    const ordo = resolveOrdo('lauds', LAWRENCE_OCTAVE_DAY); // 2026-08-11, day 2
     const collects = ordo.parts.filter((p) => p.kind === 'prayer');
     expect(collects.length).toBe(1);
+    expect(collects[0]?.kind === 'prayer' ? collects[0].text.text.en : undefined).toContain('Lawrence');
+    expect(ordo.parts.some((p) => p.kind === 'preces' && p.label?.includes('Clare'))).toBe(false);
+  });
+
+  it("gives St. Lawrence's octave day 3 (Aug 12) St. Clare's own commemoration bundle alongside Lawrence's own office", () => {
+    const ordo = resolveOrdo('lauds', '2026-08-12');
+    const collects = ordo.parts.filter((p) => p.kind === 'prayer');
+    expect(collects.length).toBe(1);
+    expect(collects[0]?.kind === 'prayer' ? collects[0].text.text.en : undefined).toContain('Lawrence');
+    const clareCommemoration = ordo.parts.find((p) => p.kind === 'preces' && p.label?.includes('Clare'));
+    expect(clareCommemoration?.kind === 'preces' ? clareCommemoration.text.text.en : undefined).toContain(
+      'kingdom of heaven',
+    );
   });
 
   it('includes all five suffrages, in order, on an ordinary ferial day -- Cross from Tridentine 1906/1910, the other four from Monastic 1617', () => {

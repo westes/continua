@@ -1,8 +1,9 @@
-import type { ResolvedText } from './types';
-import type { LiturgicalDay } from '../calendar/types';
+import type { ResolvedPart, ResolvedText } from './types';
+import type { Commemoration, DayWinner, LiturgicalDay } from '../calendar/types';
 import type { ProperText } from '../propers';
 import { getCommonProper, getTemporalProper } from '../propers';
 import { getSaintRecord } from '../calendar/feasts';
+import { activeOctavesFor } from '../calendar';
 import { splitAntiphon } from './antiphon';
 
 function toResolvedText(proper: ProperText): ResolvedText {
@@ -15,6 +16,59 @@ export function resolveCommon(id: string): ResolvedText {
   return toResolvedText(getCommonProper(id));
 }
 
+// Named temporal winners with real standing of their own, unconditionally
+// override-eligible — see hours/lauds.ts's getPsalmodyOverrideFor, which
+// shares this set (imported from here, not duplicated) since it's the
+// same "does this temporal identity carry its own real office" question.
+export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set(['marian-saturday', 'christ-the-king']);
+
+/**
+ * Which identity's own propers actually supply the office's content
+ * (collect, Benedictus antiphon, psalmody override) — usually just
+ * `day.winner`, but *not* on a day within an active octave where the
+ * temporal day itself has no real standing of its own (`ordinary-feria`)
+ * and the winner stayed temporal — an ordinary day within St. Lawrence's
+ * own octave, e.g.: live-verified (Tridentine 1910, 2026-08-12) that the
+ * chapter/responsory/hymn/versicle, psalms' antiphons, Benedictus
+ * antiphon, and day collect all come from the octave's own feast
+ * ("{ex Commune aut Festo}" / "{ex Proprio Sanctorum}"), not from the
+ * plain temporal day underneath it.
+ *
+ * Deliberately gated on `ordinary-feria` specifically, not just "an
+ * octave is active": the Christmas Octave's own stacked octaves
+ * (Christmas + Stephen + John + Holy Innocents, e.g. on Dec 30) are the
+ * live-verified counterexample — that day's own temporal identity
+ * ("Dominica Infra Octavam Nativitatis", `privileged-feria-minor`) is
+ * itself a real, named standing, and *keeps* the office
+ * ("{ex Proprio de Tempore}"); the four octaves there each become their
+ * own separate "Commemoratio Octavæ ..." block instead (not yet modeled
+ * — see TODO.md), rather than any one of them taking over content the
+ * way Lawrence's octave does. The dividing line is real standing, not
+ * merely "is an octave active."
+ *
+ * `day.winner`/`day.commemorations` themselves stay exactly as
+ * calendar/index.ts computed them either way — this is purely a
+ * content-lookup detail, not a recomputation of who "wins." Picks the
+ * oldest-started active octave with an authored saint record
+ * (activeOctavesFor's own ordering) — matches calendar/day-label.ts's
+ * same choice for the display label, for the same reason.
+ */
+export function resolveOfficeWinner(day: LiturgicalDay): DayWinner {
+  if (day.winner.kind === 'sanctoral' || ALWAYS_OVERRIDE_TEMPORAL_IDS.has(day.winner.id)) {
+    return day.winner;
+  }
+  if (day.temporalCategory !== 'ordinary-feria') {
+    return day.winner;
+  }
+  for (const octave of activeOctavesFor(day.date)) {
+    const saint = getSaintRecord(octave.id);
+    if (saint) {
+      return { kind: 'sanctoral', id: saint.id, name: saint.name, rank: saint.rank };
+    }
+  }
+  return day.winner;
+}
+
 /**
  * The day's own collect — real for the vast majority of days (a temporal
  * winner always resolves, since all 52 Sunday collects are authored and
@@ -23,16 +77,41 @@ export function resolveCommon(id: string): ResolvedText {
  * that saint's own propers are authored (`saints/<id>.yml`'s `propers`
  * field is still `null` for all of them today) — same "resolve as
  * pending" convention as everywhere else, not a special case to handle.
+ * Uses resolveOfficeWinner, not the raw `day.winner` — see its own doc
+ * comment for why those two differ on an octave day.
  */
 export function getDayCollect(day: LiturgicalDay): ResolvedText {
-  if (day.winner.kind === 'temporal') {
-    return toResolvedText(getTemporalProper(`${day.winner.id}-collect`));
+  const winner = resolveOfficeWinner(day);
+  if (winner.kind === 'temporal') {
+    return toResolvedText(getTemporalProper(`${winner.id}-collect`));
   }
-  const saint = getSaintRecord(day.winner.id);
+  const saint = getSaintRecord(winner.id);
   if (saint?.propers) {
     return resolveCommon(`${saint.propers}-collect`);
   }
   return { text: {}, status: { la: 'missing', en: 'missing' } };
+}
+
+/** A sanctoral commemoration's own rendering: the fuller Ant+V/R+collect
+ * bundle (`${propers}-commemoration`, e.g. st-clare-commemoration.yml)
+ * when authored — live-verified this is the real shape a commemoration
+ * takes, not a bare collect — falling back to just the collect alone
+ * (still labeled, unlike the old unlabeled bare-collect rendering this
+ * replaces) when only that's been authored, and to an honestly labeled
+ * "missing" block when neither has. Always labeled ("Commemoration of St.
+ * X") so an unauthored one reads as "this saint's commemoration isn't
+ * written up yet," not as a mystery blank prayer. */
+function sanctoralCommemorationPart(commemoration: Extract<Commemoration, { kind: 'sanctoral' }>): ResolvedPart {
+  const label = `Commemoration of ${commemoration.name}`;
+  const saint = getSaintRecord(commemoration.id);
+  if (saint?.propers) {
+    const combined = resolveCommon(`${saint.propers}-commemoration`);
+    if (combined.status.la !== 'missing' || combined.status.en !== 'missing') {
+      return { kind: 'preces', text: combined, label };
+    }
+    return { kind: 'preces', text: resolveCommon(`${saint.propers}-collect`), label };
+  }
+  return { kind: 'preces', text: { text: {}, status: { la: 'missing', en: 'missing' } }, label };
 }
 
 /**
@@ -49,27 +128,20 @@ export function getDayCollect(day: LiturgicalDay): ResolvedText {
  * stripping that back out per-collect to chain them properly would need
  * text surgery this doesn't attempt — so on a commemorated day, each
  * collect here renders as its own complete, separate block instead. An
- * octave commemoration never contributes a collect (none authored — the
- * octave content pull only ever sourced Matins readings, see propers/
- * octave-readings.ts), so those are silently skipped, same as a
- * not-yet-authored saint's own collect resolves to "missing" rather than
- * throwing.
+ * octave commemoration never contributes anything of its own here — once
+ * resolveOfficeWinner is in play, its content is already the primary
+ * collect above, so a separate entry would just be a redundant repeat.
  */
-export function getDayCollects(day: LiturgicalDay): ResolvedText[] {
-  const collects = [getDayCollect(day)];
+export function getDayCollects(day: LiturgicalDay): ResolvedPart[] {
+  const parts: ResolvedPart[] = [{ kind: 'prayer', text: getDayCollect(day) }];
   for (const commemoration of day.commemorations) {
     if (commemoration.kind === 'temporal') {
-      collects.push(toResolvedText(getTemporalProper(`${commemoration.id}-collect`)));
+      parts.push({ kind: 'prayer', text: toResolvedText(getTemporalProper(`${commemoration.id}-collect`)) });
     } else if (commemoration.kind === 'sanctoral') {
-      const saint = getSaintRecord(commemoration.id);
-      collects.push(
-        saint?.propers
-          ? resolveCommon(`${saint.propers}-collect`)
-          : { text: {}, status: { la: 'missing', en: 'missing' } },
-      );
+      parts.push(sanctoralCommemorationPart(commemoration));
     }
   }
-  return collects;
+  return parts;
 }
 
 /**
@@ -78,13 +150,19 @@ export function getDayCollects(day: LiturgicalDay): ResolvedText[] {
  * pull, sourced from each saint's own raw [Ant 1] — see e.g.
  * st-lawrence-antiphon.yml) for a sanctoral winner, `${id}-benedictus-
  * antiphon` (not authored yet for any temporal id — resolves "missing",
- * same pending convention as everywhere else) for a temporal one.
+ * same pending convention as everywhere else) for a temporal one. Uses
+ * resolveOfficeWinner, not the raw `day.winner` — on an octave day this
+ * is the octave's own feast's antiphon (live-verified: St. Lawrence's
+ * "In cratícula", not the commemorated St. Clare's, and not the plain
+ * temporal day's), not a *commemorated* saint's, which is a separate,
+ * weaker standing (see getDayCollects/sanctoralCommemorationPart).
  */
 export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
-  if (day.winner.kind === 'temporal') {
-    return toResolvedText(getTemporalProper(`${day.winner.id}-benedictus-antiphon`));
+  const winner = resolveOfficeWinner(day);
+  if (winner.kind === 'temporal') {
+    return toResolvedText(getTemporalProper(`${winner.id}-benedictus-antiphon`));
   }
-  const saint = getSaintRecord(day.winner.id);
+  const saint = getSaintRecord(winner.id);
   if (saint?.propers) {
     return resolveCommon(`${saint.propers}-antiphon`);
   }

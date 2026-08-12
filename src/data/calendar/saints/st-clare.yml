@@ -8,10 +8,11 @@
 # rubrica ^Monastica" branch, Simplex) rather than the later, higher
 # Roman/secular Duplex given alongside it in the same file -- consistent
 # with this app's general Monastic-track sourcing discipline.
-# No unique collect/antiphon authored yet -- one of the remaining
-# `propers: null` saints (see TODO.md).
+# Own collect + commemoration bundle (antiphon + versicle/response +
+# collect) authored from that same live query -- see
+# st-clare-collect.yml and st-clare-commemoration.yml.
 id: st-clare
 name: "St. Clare, Virgin"
 rank: simplex
 common: common-of-a-virgin
-propers: null
+propers: "st-clare"

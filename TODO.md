@@ -80,12 +80,37 @@ some by-date saint win there, e.g. St. Mark on Easter V some years, "Our
 Lady of the Snows" — not modeled in this app at all — landing on
 Post-Pentecost XI whenever the date lines up with Aug 5).
 
-### Octave collects
+### Octave content — mostly fixed (2026-08), one real gap left
 
-`getDayCollects` skips a `kind: 'octave'` commemoration entirely — no
-collect has ever been authored for an octave (the octave-reading pull only
-ever sourced Matins content). Every octave commemoration currently
-contributes zero text to Lauds'/Vespers' collect sequence.
+Was: `getDayCollects` skipped a `kind: 'octave'` commemoration entirely,
+and every other office part (psalmody, hymn, chapter, Benedictus
+antiphon) stayed keyed off the plain temporal day underneath the octave
+— so an ordinary day within e.g. St. Lawrence's own octave showed nothing
+of his at all, not even a label beyond the day-label line. Root cause:
+found live (Tridentine 1910, 2026-08-12) that on a day like this, the
+*whole* office — chapter/responsory/hymn/versicle, psalm antiphons,
+Benedictus antiphon, day collect — comes from the octave's own feast, not
+the plain temporal day; only a *weaker* commemorated saint on top of that
+(St. Clare, that same date) gets a separate Ant+V/R+collect block of her
+own. Fixed via `hours/resolve-common.ts`'s `resolveOfficeWinner`, used
+everywhere `getDayCollect`/`getDayCollects`/`getBenedictusAntiphon`/
+`getPsalmodyOverrideFor` used to key off `day.winner` directly — and
+`getDayCollects` now renders a real Ant+V/R+collect bundle for a
+sanctoral commemoration (`${propers}-commemoration.yml`, e.g.
+st-clare-commemoration.yml) when authored, falling back to a *labeled*
+bare collect (or a labeled "missing" placeholder) rather than the old
+unlabeled one that just read "PRAYER … (translation pending)" with no
+indication whose it was.
+
+Real remaining gap: `resolveOfficeWinner` deliberately only kicks in when
+`temporalCategory === 'ordinary-feria'` (the octave day has no standing
+of its own) — the live-verified counterexample is the Christmas Octave's
+own stack (Christmas + Stephen + John + Holy Innocents, e.g. on Dec 30,
+`privileged-feria-minor`): the *temporal* day itself keeps the office
+there ("Dominica Infra Octavam Nativitatis", `{ex Proprio de Tempore}`),
+and each of the four octaves gets its own separate "Commemoratio Octavæ
+…" Ant+V/R+collect block instead — not yet modeled; those four octave
+commemorations still contribute nothing but a name in the day label.
 
 ## Benedictus antiphons for every sanctoral/temporal entry (in progress)
 
