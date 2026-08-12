@@ -1,6 +1,6 @@
 import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart, ResolvedText } from './types';
 import type { LiturgicalDay, Weekday } from '../calendar/types';
-import { resolveDay, isAtLeast, isSundayOrFeast } from '../calendar';
+import { resolveDay, isAtLeast, isSundayOrFeast, activeOctavesFor } from '../calendar';
 import { getDayLabel } from '../calendar/day-label';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { getPsalmVerses } from '../psalter';
@@ -244,7 +244,19 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       // "Suffragium{omittitur}" — the whole set drops, same as any other
       // Double-or-higher day.
       const isChristTheKing = day.winner.kind === 'temporal' && day.winner.id === 'christ-the-king';
-      if (part.omitOnDouble && (isDoubleOrHigher(day.winner) || isChristTheKing)) {
+      // Confirmed live against Monastic Tridentinum 1617 directly (this
+      // isn't a Tridentine-1906-only quirk -- the same exclusions hold
+      // under the app's own primary rubric track): suffrages are omitted
+      // *entirely* during Advent, Christmastide, and Passiontide (not all
+      // of Lent -- ordinary Lent ferias still get them, checked directly
+      // against 2026-02-20; only the last two weeks), and on any day
+      // within an active octave, however low that octave's own rank is
+      // -- checked directly against day 3 of St. Lawrence's own
+      // (Semiduplex) octave, which still omits them despite being well
+      // below the Duplex+ rank threshold below.
+      const isSeasonallyExcluded = day.season === 'advent' || day.season === 'christmastide' || day.season === 'passiontide';
+      const isWithinAnOctave = activeOctavesFor(day.date).length > 0;
+      if (part.omitOnDouble && (isDoubleOrHigher(day.winner) || isChristTheKing || isSeasonallyExcluded || isWithinAnOctave)) {
         return [];
       }
       // "Of the Holy Cross" is the real *ferial*-office suffrage, sourced

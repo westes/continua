@@ -271,14 +271,20 @@ real `draft` status went through it.
 - `getDayCollects`: each collect in a multi-collect day renders as its own
   complete "Let us pray ... Amen." block, not the more compressed real form
   (one "Let us pray," only the last collect's doxology).
-- Suffrage omission only checks `omitOnDouble` (+ Marian Saturday's own
-  Cross/BVM filter, + Christ the King's explicit id check, + the Cross-only
-  ferial-office check added 2026-08). Real seasonal suppression is still
-  missing: per the Tridentine 1906/1910 source (`specials.pl`'s
-  `checksuffragium`), suffrages are omitted *entirely* during Advent,
-  Christmastide, and Passiontide, and whenever any octave is active — none
-  of that is modeled, so e.g. an Advent feria currently still shows all
-  five suffrages when the real office would have none.
+- Suffrage omission (`lauds.ts`'s `suffrages` case) now checks: Double-or-
+  higher rank, Christ the King, Advent/Christmastide/Passiontide season,
+  any active octave (however low its own rank), Marian Saturday's own
+  Cross/BVM filter, and the Cross-only ferial-office check — all
+  confirmed directly against **Monastic Tridentinum 1617** itself, not
+  just the Tridentine 1906/1910 track the suffrage content and the
+  Joseph/Cross-gating logic were sourced from (checked Advent 2026-12-03,
+  Christmastide 2026-12-30, Passiontide 2026-03-23, an active octave via
+  St. Lawrence's own Aug 11-12, and ordinary Lent 2026-02-20 specifically
+  *not* excluded, to confirm it's Passiontide-only, not all of Lent).
+  Still not modeled: the Paschaltide *substitution* (real practice
+  replaces the whole suffrage set with a single alleluia-form "Suffragium
+  Paschale" during Eastertide rather than omitting or showing the
+  ordinary set) — flagged, not built.
 - `data/calendar/temporal-categories.yml`'s season→category reconstruction
   is from general knowledge of the pre-1955 tradition, not independently
   verified against a primary source for every entry (flagged inline where

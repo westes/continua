@@ -219,6 +219,26 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(crossSuffrage).toBeUndefined();
   });
 
+  it('omits the suffrages entirely during Advent, Christmastide, and Passiontide -- confirmed against Monastic Tridentinum 1617 directly, not just Tridentine 1906/1910', () => {
+    const advent = resolveOrdo('lauds', '2026-12-03'); // plain Advent feria
+    const christmastide = resolveOrdo('lauds', '2026-12-30'); // plain day within the Christmas Octave
+    const passiontide = resolveOrdo('lauds', '2026-03-23'); // Monday of Passion Week
+    for (const ordo of [advent, christmastide, passiontide]) {
+      expect(ordo.parts.some((p) => p.kind === 'preces' && p.label === 'Of the Holy Cross')).toBe(false);
+      expect(ordo.parts.some((p) => p.kind === 'preces' && p.label === 'For Peace')).toBe(false);
+    }
+  });
+
+  it('shows the suffrages on an ordinary Lent feria (not Passiontide) -- only the last two weeks of Lent are excluded, not all of it', () => {
+    const ordo = resolveOrdo('lauds', '2026-02-20'); // Friday after Ash Wednesday, week 1 of Lent
+    expect(ordo.parts.some((p) => p.kind === 'preces' && p.label === 'For Peace')).toBe(true);
+  });
+
+  it('omits the suffrages entirely on any day within an active octave, however low the octave\'s own rank is', () => {
+    const ordo = resolveOrdo('lauds', LAWRENCE_OCTAVE_DAY); // day 2 of St. Lawrence's own (Semiduplex) octave
+    expect(ordo.parts.some((p) => p.kind === 'preces' && p.label === 'For Peace')).toBe(false);
+  });
+
   it('closes with the Conclusio, the closing versicle ("may the Lord grant us his peace... and life everlasting"), and the Marian antiphon -- without spelling out the silent Our Father', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const closingVersicle = ordo.parts.find(
