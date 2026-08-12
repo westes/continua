@@ -122,24 +122,44 @@ assumed from category alone:
   really is identical, just named honestly rather than dressed up as a
   Common of Saints class.
 
-**Deliberately left un-extracted — a genuine open question, not an
-oversight:** st-mark and st-john-before-the-latin-gate share identical
-antiphons *and* chapters across all 4 hours, and ss-philip-and-james
-shares just the chapters with those two — but live-checking the season
-line on each saint's own queried date showed all three landing *within
-Paschaltide* that year ("infra Hebdomadam N post Octavam Paschæ"), for
-three otherwise-unrelated saints (an Evangelist and two separate Apostle
-feasts) whose overall `common` classification doesn't even agree with
-each other. That strongly suggests this shared "Alleluia" text is a
-Paschaltide *seasonal* override, not a fixed per-saint-category Common —
-meaning the app has no mechanism today to know whether it's still
-correct in a year where Easter lands late enough to push these fixed
-dates (Apr 25, May 1, May 6) past Pentecost. Left as three small,
-individually-authored (already diff-verified) per-saint files rather than
-folded into `minorHoursCommon`, which would misrepresent this as
-timeless, unconditional content. Fixing it properly needs a real
-Paschaltide-awareness mechanism for minor-hour content (this app has none
-yet for any hour) — flagged here, not attempted.
+### Paschaltide commons — done (2026-08)
+
+The Mark/John-Before-the-Latin-Gate/Philip-and-James "Alleluia" text
+flagged above as an open question is confirmed real, not a coincidence:
+the reference engine's own source has explicit Paschaltide variants —
+`Commune/C1p.txt`/`C2p.txt`/`C3p.txt` ("Commune Apostolorum/Unius
+Martyris Pontificis/Plurimorum Martyrum tempore Paschali") — for exactly
+3 of its 12 Common categories: Apostles, a Martyr-Bishop, Several
+Martyrs. Confessors/Virgins/Doctors/BVM never get one — Alleluia/victory
+imagery is restricted to apostles and martyrs specifically, a real
+liturgical distinction, not an app gap.
+
+Mechanism: `resolveMinorHourAntiphon`/`resolveMinorHourChapter`
+(`hours/resolve-common.ts`) now try `${hourId}-antiphon-
+${minorHoursCommon}-paschaltide` (etc.) first whenever `day.season` is
+`eastertide`, `ascensiontide`, or `pentecost` — the same three-season
+window as Compline's own Regina Caeli table
+(`data/hours/marian-antiphon-by-season.yml`), not just `eastertide`
+alone, since "tempore paschali" runs through the Pentecost octave in
+both cases. Falls back to the plain (non-Paschaltide) Common when no
+`-paschaltide` variant is authored, same silent-fallback convention as
+everywhere else.
+
+`common-of-apostles-paschaltide` (7 files) ported directly from
+`Commune/C1p.txt`/English `Commune/C1p.txt` — not live-queried — and
+cross-checked against st-mark's already-authored, live-queried content
+(2026-04-25): identical except the source's own Prime-antiphon asterisk
+falls one word earlier than the live-rendered incipit had suggested,
+corrected here to match the source. st-mark and st-john-before-the-
+latin-gate's own duplicate per-saint files removed (all 7 each);
+ss-philip-and-james's chapter files removed (its own antiphons stay
+proper — its own Gospel-referencing text, not shared even in
+Paschaltide). Only `C1p` (Apostles) ported so far, since no currently-
+authored saint sits on a Martyr-Bishop or Several-Martyrs common that
+could fall in Paschaltide — `common-of-a-confessor-bishop` and any
+future Martyr-common saint don't need one (Confessors never get a
+Paschaltide variant at all; a Martyr one would need porting `C2p`/`C3p`
+the same way, if and when a saint needing it is authored).
 
 ### Overlapping octaves — done (2026-08)
 

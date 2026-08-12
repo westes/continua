@@ -111,14 +111,31 @@ export function getMinorHourOverrideId(day: LiturgicalDay): string | undefined {
   return undefined;
 }
 
+/**
+ * "Tempore Paschali" — the reference engine's own window for a Common's
+ * Paschaltide variant (Commune/C1p.txt etc.: only Apostles, a Martyr-
+ * Bishop, and Several Martyrs get one — Confessors/Virgins/Doctors never
+ * do, matching the real tradition's own restriction of Alleluia/victory
+ * imagery to apostles and martyrs specifically). Deliberately the same
+ * three-season set as Compline's own Marian-antiphon table
+ * (`data/hours/marian-antiphon-by-season.yml`'s `eastertide`/
+ * `ascensiontide`/`pentecost` all mapping to Regina Caeli, not just
+ * `eastertide` alone) — "Paschalis" runs through the end of the Pentecost
+ * octave in both cases, not just to Ascension.
+ */
+const PASCHALTIDE_SEASONS = new Set(['eastertide', 'ascensiontide', 'pentecost']);
+
 /** A Little Hour's (or Prime's) plain per-weekday antiphon, overridden by
  * a duplex-majus+ feast's own proper (`${hourId}-antiphon-${id}`) when
  * authored, then by that saint's shared Common (`${hourId}-antiphon-
- * ${minorHoursCommon}`, see SaintRecord's own doc comment) when a proper
- * one hasn't been authored — same honest "not gated behind whether
- * content exists, just eligible to override at all" fallback as every
- * other override in this codebase: an eligible feast with neither
- * authored yet just falls through to the plain weekday default silently.
+ * ${minorHoursCommon}`, see SaintRecord's own doc comment) — tried first
+ * in its Paschaltide-variant form (`${minorHoursCommon}-paschaltide`)
+ * when the day falls in Paschaltide and that variant has been authored,
+ * per PASCHALTIDE_SEASONS's own doc comment — when a proper one hasn't
+ * been authored — same honest "not gated behind whether content exists,
+ * just eligible to override at all" fallback as every other override in
+ * this codebase: an eligible feast with none of these authored yet just
+ * falls through to the plain weekday default silently.
  */
 export function resolveMinorHourAntiphon(
   hourId: string,
@@ -133,6 +150,12 @@ export function resolveMinorHourAntiphon(
     }
     const commonId = getSaintRecord(overrideId)?.minorHoursCommon;
     if (commonId) {
+      if (PASCHALTIDE_SEASONS.has(day.season)) {
+        const paschal = resolveCommon(`${hourId}-antiphon-${commonId}-paschaltide`);
+        if (paschal.status.la !== 'missing' || paschal.status.en !== 'missing') {
+          return paschal;
+        }
+      }
       const common = resolveCommon(`${hourId}-antiphon-${commonId}`);
       if (common.status.la !== 'missing' || common.status.en !== 'missing') {
         return common;
@@ -147,9 +170,10 @@ export function resolveMinorHourAntiphon(
 
 /** Same idea as resolveMinorHourAntiphon, for the chapter
  * (`${hourId}-capitulum-${id}`, then `${hourId}-capitulum-
- * ${minorHoursCommon}`) — falls back to `fallbackId` (the plain
- * per-annum/per-weekday one already in place for that hour) when nothing
- * eligible is authored, either proper or shared-Common. */
+ * ${minorHoursCommon}`, tried Paschaltide-variant-first the same way) —
+ * falls back to `fallbackId` (the plain per-annum/per-weekday one already
+ * in place for that hour) when nothing eligible is authored, either
+ * proper or shared-Common. */
 export function resolveMinorHourChapter(hourId: string, day: LiturgicalDay, fallbackId: string): ResolvedText {
   const overrideId = getMinorHourOverrideId(day);
   if (overrideId) {
@@ -159,6 +183,12 @@ export function resolveMinorHourChapter(hourId: string, day: LiturgicalDay, fall
     }
     const commonId = getSaintRecord(overrideId)?.minorHoursCommon;
     if (commonId) {
+      if (PASCHALTIDE_SEASONS.has(day.season)) {
+        const paschal = resolveCommon(`${hourId}-capitulum-${commonId}-paschaltide`);
+        if (paschal.status.la !== 'missing' || paschal.status.en !== 'missing') {
+          return paschal;
+        }
+      }
       const common = resolveCommon(`${hourId}-capitulum-${commonId}`);
       if (common.status.la !== 'missing' || common.status.en !== 'missing') {
         return common;
