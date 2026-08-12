@@ -62,10 +62,24 @@ Prime's capitulum stays the Sunday/feast form (1 Tim 1:17) throughout an
 octave, not just the feast's own actual day, so no separate override file
 was needed there, just the existing Sunday-form file reached correctly.
 
-**Authored (1 saint, all four hours): `st-lawrence`.** Antiphon + chapter
-for Terce/Sext/None, antiphon only for Prime (its chapter needed no new
-file — see above). The same 31-saint backlog above applies here too, one
-id at a time, as each gets a Lauds override.
+**Authored — all 29 duplex-majus+ saints, done (2026-08).** Antiphon +
+chapter for Terce/Sext/None, antiphon only for Prime (its chapter needed
+no new file — see above), for every id in the Lauds backlog list above
+except the 5 `propers: null`-blocked saints (`st-benedict`,
+`all-saints-of-the-benedictine-order`, `st-michael`, `st-maurus-abbot`,
+`ss-placid-and-companions`) — those still need a collect authored first.
+Two saints (`st-scholastica`, `immaculate-conception`) needed corrections
+to the reference engine's own data: Scholastica's minor hours have no
+English rendering at all in the source (Matins-only English coverage for
+that saint) — translated directly, `status.en: draft` throughout;
+Immaculate Conception's antiphons render with diacritics stripped
+compared to the word-for-word-parallel Nativity BVM antiphon — restored
+accentuation to match, `status.la: draft`. Several saints share identical
+Common-of-Apostles or Common-of-BVM content, confirmed via `diff` before
+reuse rather than assumed (Matthias/Barnabas/James-the-Greater/Thomas-
+Apostle/Simon-and-Jude/Luke/Matthew/Bartholomew all share one Common of
+Apostles set; Assumption/Nativity-BVM/Immaculate-Conception share Sext/
+None capitula from the Common of the BVM).
 
 ### Overlapping octaves — done (2026-08)
 

@@ -1,0 +1,13 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None
+# live query, the Immaculate Conception's own day (2026-12-08, clean year).
+# The live-rendered Latin lacks diacritics throughout, unlike the
+# word-for-word parallel Nativity BVM antiphon (verified against source
+# data file web/www/horas/Latin/Sancti/09-08.txt). Restored accentuation
+# and asterisk position to match that parallel; status: draft.
+id: none-antiphon-immaculate-conception
+text:
+  la: "Cum jucunditáte * Conceptiónem beátæ Maríæ celebrémus, ut ipsa pro nobis intercédat ad Dóminum Jesum Christum."
+  en: "Let us keep with rejoicing * the Conception of the Blessed Virgin Mary, that she may pray for us to our Lord Jesus Christ."
+status:
+  la: draft
+  en: verified

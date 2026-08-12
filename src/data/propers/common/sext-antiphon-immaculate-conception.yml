@@ -1,0 +1,13 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Sext
+# live query, the Immaculate Conception's own day (2026-12-08, clean year).
+# The live-rendered Latin lacks diacritics throughout, unlike the
+# word-for-word parallel Nativity BVM antiphon (verified against source
+# data file web/www/horas/Latin/Sancti/09-08.txt). Restored accentuation
+# and asterisk position to match that parallel; status: draft.
+id: sext-antiphon-immaculate-conception
+text:
+  la: "Regáli ex progénie * María exórta refúlget: cujus précibus nos adjuvári mente et spíritu devotíssime póscimus."
+  en: "Mary was a maiden of illustrious birth, * the daughter of a Kingly race. We earnestly entreat her to help our minds and souls by her prayers."
+status:
+  la: draft
+  en: verified
