@@ -116,7 +116,14 @@ saint has the same kind of mismatch.
   St. Valentine, Chair of St. Peter at Antioch, St. Matthias (source's own
   English existed but was jarringly modern next to everything else's
   archaic register — reworded to match, marked `draft`).
-- **March-December (93 saints): not started.**
+- **March (6 total): done, 5 authored/corrected, 1 flagged.** St. Lucius I,
+  St. Thomas Aquinas, the Forty Holy Martyrs, St. Gregory the Great
+  (translated, source had no English — the "non Angli sed Angeli" antiphon),
+  St. Joseph (corrected). St. Frances of Rome left `missing`: Simplex rank,
+  and March 9 always falls within Lent every tested year (2026-2035) — she
+  structurally can never win her own day outright under this app's own
+  calendar rules, so there's no live-rendered antiphon to source at all.
+- **April-December (87 saints): not started.**
 - **~52 temporal entries: not started.**
 - **94 `propers: null` saints: not started** — need a collect authored (a
   bigger, separate task) before an antiphon id even has anywhere to attach.
