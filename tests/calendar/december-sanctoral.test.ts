@@ -108,34 +108,15 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
     ]);
   });
 
-  it('the Christmas Octave Sunday loses outright to a Duplex+ Comites Christi feast when the two collide -- ordinary-sunday, not privileged-sunday', () => {
-    // Corrects a real bug: christmastide's Sunday was originally coded
-    // privileged-sunday (Advent's own tier), which would have kept the
-    // Sunday primary here with the saint merely commemorated -- backwards
-    // from the live Monastic 1617 engine, which was checked directly
-    // against all three Duplex-II-classis collision dates and shows the
-    // saint winning outright every time, the Sunday only commemorated.
-    const stephenSunday = resolveDay('2021-12-26');
-    expect(stephenSunday.winner).toEqual({
-      kind: 'sanctoral',
-      id: 'st-stephen-protomartyr',
-      name: 'St. Stephen, Protomartyr',
-      rank: 'duplex-2-classis',
-    });
-    expect(stephenSunday.commemorations).toContainEqual({ kind: 'temporal', id: 'christmas-octave-sunday' });
-
-    const innocentsSunday = resolveDay('2025-12-28');
-    expect(innocentsSunday.winner).toEqual({
-      kind: 'sanctoral',
-      id: 'holy-innocents',
-      name: 'The Holy Innocents, Martyrs',
-      rank: 'duplex-2-classis',
-    });
-    expect(innocentsSunday.commemorations).toContainEqual({ kind: 'temporal', id: 'christmas-octave-sunday' });
-
-    // A plain Duplex (not just Duplex-II-classis) is still enough: St.
-    // Silvester (Dec 31) wins outright the same way when it falls on the
-    // Sunday, also live-verified.
+  it('the underlying ordinary-sunday classification still governs Dec 31 (outside the Dec 26-30 window applyChristmasOctaveSunday owns) -- a Duplex still beats the Sunday there, live-verified', () => {
+    // St. Silvester (Dec 31) wins outright when it falls on the Sunday --
+    // unaffected by applyChristmasOctaveSunday, which is deliberately
+    // scoped to exactly Dec 26-30 (see tests/calendar/
+    // christmas-octave-sunday.test.ts for that window's own, different
+    // rule). This is what confirms christmastide's own `ordinary-sunday`
+    // temporal-category classification (see data/calendar/
+    // temporal-categories.yml) is still real and still needed, not
+    // superseded outright by the newer Dec 26-30 rule.
     const silvesterSunday = resolveDay('2023-12-31');
     expect(silvesterSunday.winner).toEqual({
       kind: 'sanctoral',
@@ -146,11 +127,14 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
     expect(silvesterSunday.commemorations).toContainEqual({ kind: 'temporal', id: 'christmas-octave-sunday' });
   });
 
-  it('the Christmas Octave Sunday still keeps a lesser feast from winning, same as before the ordinary-sunday fix', () => {
+  it('the Christmas Octave Sunday still keeps a lesser feast from winning, now via applyChristmasOctaveSunday specifically', () => {
     // St. Thomas Becket (Semiduplex, Dec 29) transfers off the Sunday
-    // rather than winning it -- unaffected by the privileged->ordinary
-    // change, since both tiers transfer a Semiduplex here; this test
-    // guards against a regression the other direction.
+    // rather than winning it -- per calendar/index.ts's
+    // applyChristmasOctaveSunday (see its own dedicated test file), which
+    // now unconditionally wins the Sunday over *any* rank within Dec
+    // 26-29, superseding the plain ordinary-sunday rule for this narrow
+    // window specifically (that rule is still real outside it -- see the
+    // Dec 31/St. Silvester test above).
     const beckettSunday = resolveDay('2024-12-29');
     expect(beckettSunday.winner.kind).toBe('temporal');
     expect(beckettSunday.commemorations.some((c) => c.kind === 'sanctoral')).toBe(false);

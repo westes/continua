@@ -103,6 +103,7 @@ export function resolveDay(isoDate: string): LiturgicalDay {
   winner = applyOctaves(isoDate, winner, commemorations);
   winner = applyMarianSaturday(isoDate, weekday, temporalCategory, winner, commemorations);
   winner = applyChristTheKing(isoDate, winner, commemorations);
+  winner = applyChristmasOctaveSunday(isoDate, weekday, winner, commemorations);
 
   return { date: isoDate, weekday, season, temporalCategory, winner, commemorations };
 }
@@ -135,6 +136,65 @@ function applyChristTheKing(isoDate: string, winner: DayWinner, commemorations: 
     commemorations.push({ kind: 'sanctoral', id: winner.id, name: winner.name, rank: winner.rank });
   }
   return { kind: 'temporal', id: 'christ-the-king' };
+}
+
+/**
+ * Per direct instruction, scoped to exactly Dec 26-30 — every year
+ * contains exactly one real Sunday somewhere in that 5-day window.
+ *
+ * On whichever of Dec 26-29 it actually falls, Nat1-0 (the Sunday within
+ * the Octave of the Nativity) always wins outright, full stop — no rank
+ * check at all, a deliberate departure from what Monastic 1617 itself
+ * does there (a Duplex-II-classis saint — Stephen/John/Innocents — beats
+ * the Sunday there in the real engine; see TODO.md). The displaced
+ * saint isn't even commemorated in place; he reappears in full on Dec
+ * 30 instead — the block's one date with no fixed saint of its own —
+ * rather than the general privileged-sunday transfer/commemorate split
+ * used everywhere else. Dec 30 itself, on a year it's the *actual*
+ * Sunday (nothing displaced), resolves normally: Nat1-0 wins clean since
+ * nothing was ever assigned there to begin with.
+ */
+function applyChristmasOctaveSunday(
+  isoDate: string,
+  weekday: ReturnType<typeof weekdayOf>,
+  winner: DayWinner,
+  commemorations: Commemoration[],
+): DayWinner {
+  const [year, monthStr, dayStr] = isoDate.split('-');
+  if (monthStr !== '12') {
+    return winner;
+  }
+  const day = Number(dayStr);
+
+  if (day >= 26 && day <= 29 && weekday === 'sunday') {
+    return { kind: 'temporal', id: 'christmas-octave-sunday' };
+  }
+
+  if (day === 30) {
+    for (let d = 26; d <= 29; d++) {
+      const candidateDate = `${year}-12-${String(d).padStart(2, '0')}`;
+      if (weekdayOf(candidateDate) !== 'sunday') {
+        continue;
+      }
+      const displaced = getSanctoralCandidatesFor(candidateDate)[0];
+      if (!displaced) {
+        break;
+      }
+      // Drop the now-redundant "Octave of <displaced>" commemoration —
+      // applyOctaves already pushed one above, using Dec 30's *original*
+      // temporal winner; now that the displaced saint is winning the day
+      // outright instead, commemorating his own octave alongside himself
+      // would be the same redundancy applyOctaves' own `isSelf` check
+      // already avoids on a saint's actual day.
+      const idx = commemorations.findIndex((c) => c.kind === 'octave' && c.id === displaced.id);
+      if (idx !== -1) {
+        commemorations.splice(idx, 1);
+      }
+      return { kind: 'sanctoral', id: displaced.id, name: displaced.name, rank: displaced.rank };
+    }
+  }
+
+  return winner;
 }
 
 /**

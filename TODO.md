@@ -116,6 +116,37 @@ instead of the correct plain temporal label. Fixed by having
 `resolveActiveOctave` call as `resolveOfficeWinner`, so the two can never
 disagree about which identity governs a day.
 
+### Dec 26-30's own Sunday rule — done (2026-08), a deliberate remix
+
+Per direct instruction — a real, admitted departure from Monastic 1617
+itself, not something independently verified live the way almost
+everything else here is: within Dec 26-30 inclusive (every year contains
+exactly one real Sunday somewhere in that 5-day window), whichever date
+is the actual Sunday always celebrates Nat1-0 (the Sunday within the
+Octave of the Nativity) outright, with **no rank check at all** — even a
+Duplex-II-classis saint (Stephen/John/Innocents) is fully displaced, not
+just commemorated. The displaced saint isn't commemorated in place
+either; he reappears in full as the day's own winner on Dec 30 instead —
+the block's one date with no fixed saint of its own. On a year Dec 30
+itself is the actual Sunday, nothing is displaced and it resolves clean.
+
+This intentionally diverges from what Monastic 1617 itself does on Dec
+26-29 (there, live-verified, the Duplex-II-classis saint wins and the
+Sunday is merely commemorated — see the December-sanctoral tests) and
+from the general `privileged-sunday` transfer rule elsewhere in this app
+(which only transfers ranks below duplex-majus and commemorates
+everything at or above it in place) — this window transfers *every*
+rank, full stop, and never commemorates the loser in place.
+
+Implemented as its own dedicated, narrowly-scoped layer
+(`calendar/index.ts`'s `applyChristmasOctaveSunday`, same architectural
+pattern as `applyMarianSaturday`/`applyChristTheKing`) rather than by
+changing the shared `decideOccurrence`/transfer machinery other Sundays
+rely on — deliberately contained blast radius. Dec 31 and everything
+outside Dec 26-30 is untouched; christmastide's Sunday there still uses
+the plain `ordinary-sunday` category as before (St. Silvester still
+beats the Sunday on Dec 31, live-verified, unaffected by this).
+
 ### Benedictus antiphons for temporal (non-sanctoral) days — done
 
 `<id>-benedictus-antiphon.yml` in `data/propers/temporal/` — all 54

@@ -141,7 +141,11 @@ describe('resolveOrdo("lauds", ...)', () => {
   });
 
   it('resolves a real Benedictus antiphon for christmas-octave-sunday too, pulled from the reference engine\'s own dedicated Tempora/Nat1-0 proper rather than any individual octave-day saint\'s page', () => {
-    const ordo = resolveOrdo('lauds', '2026-12-30');
+    // 2029-12-30 specifically: the year Dec 30 itself is the real Sunday
+    // within the Octave, so nothing gets bumped there by
+    // calendar/index.ts's applyChristmasOctaveSunday (see its own tests) --
+    // a genuinely clean case for this content, unlike most years.
+    const ordo = resolveOrdo('lauds', '2029-12-30');
     const canticle = ordo.parts.find((p) => p.kind === 'canticle' && p.canticleId === 'benedictus');
     expect(canticle?.kind === 'canticle' ? canticle.antiphon?.text.la : undefined).toContain('Dum médium siléntium');
     expect(canticle?.kind === 'canticle' ? canticle.antiphon?.status?.la : undefined).toBe('verified');
