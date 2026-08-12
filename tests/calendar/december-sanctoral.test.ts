@@ -108,6 +108,62 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
     ]);
   });
 
+  it('the Christmas Octave Sunday loses outright to a Duplex+ Comites Christi feast when the two collide -- ordinary-sunday, not privileged-sunday', () => {
+    // Corrects a real bug: christmastide's Sunday was originally coded
+    // privileged-sunday (Advent's own tier), which would have kept the
+    // Sunday primary here with the saint merely commemorated -- backwards
+    // from the live Monastic 1617 engine, which was checked directly
+    // against all three Duplex-II-classis collision dates and shows the
+    // saint winning outright every time, the Sunday only commemorated.
+    const stephenSunday = resolveDay('2021-12-26');
+    expect(stephenSunday.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-stephen-protomartyr',
+      name: 'St. Stephen, Protomartyr',
+      rank: 'duplex-2-classis',
+    });
+    expect(stephenSunday.commemorations).toContainEqual({ kind: 'temporal', id: 'christmas-octave-sunday' });
+
+    const innocentsSunday = resolveDay('2025-12-28');
+    expect(innocentsSunday.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'holy-innocents',
+      name: 'The Holy Innocents, Martyrs',
+      rank: 'duplex-2-classis',
+    });
+    expect(innocentsSunday.commemorations).toContainEqual({ kind: 'temporal', id: 'christmas-octave-sunday' });
+
+    // A plain Duplex (not just Duplex-II-classis) is still enough: St.
+    // Silvester (Dec 31) wins outright the same way when it falls on the
+    // Sunday, also live-verified.
+    const silvesterSunday = resolveDay('2023-12-31');
+    expect(silvesterSunday.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-silvester-i',
+      name: 'St. Silvester I, Pope and Confessor',
+      rank: 'duplex',
+    });
+    expect(silvesterSunday.commemorations).toContainEqual({ kind: 'temporal', id: 'christmas-octave-sunday' });
+  });
+
+  it('the Christmas Octave Sunday still keeps a lesser feast from winning, same as before the ordinary-sunday fix', () => {
+    // St. Thomas Becket (Semiduplex, Dec 29) transfers off the Sunday
+    // rather than winning it -- unaffected by the privileged->ordinary
+    // change, since both tiers transfer a Semiduplex here; this test
+    // guards against a regression the other direction.
+    const beckettSunday = resolveDay('2024-12-29');
+    expect(beckettSunday.winner.kind).toBe('temporal');
+    expect(beckettSunday.commemorations.some((c) => c.kind === 'sanctoral')).toBe(false);
+    // St. Thomas still gets his day -- pushed to the next open one.
+    const transferred = resolveDay('2024-12-30');
+    expect(transferred.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-thomas-becket',
+      name: 'St. Thomas of Canterbury, Bishop and Martyr',
+      rank: 'semiduplex',
+    });
+  });
+
   it('the Christmas Octave commemorations build up day by day as each Comites Christi feast starts its own octave', () => {
     // Same clean year (2033) as above, walking the whole week to show the
     // accumulation directly -- this is the concrete shape of "commemorations

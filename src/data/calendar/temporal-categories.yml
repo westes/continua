@@ -52,7 +52,21 @@ bySeason:
   # Canterbury, Semiduplex, wins outright within the Octave (Dec 29) in the
   # real Monastic 1617 engine, which `privileged-feria`'s Duplex+ threshold
   # would wrongly forbid.
-  christmastide: { sunday: privileged-sunday, feria: privileged-feria-minor }
+  #
+  # The Sunday itself is `ordinary-sunday`, NOT `privileged-sunday` —
+  # originally miscoded as privileged-sunday (Advent's own Sundays' tier),
+  # which was backwards: live-verified against all six possible collision
+  # dates (Dec 26 St. Stephen, 27 St. John, 28 Holy Innocents — all
+  # Duplex-II-classis — plus 31 St. Silvester, plain Duplex), every one of
+  # them wins outright over the Sunday, which is merely commemorated in
+  # return — exactly ordinary-sunday's Duplex+ rule, and the reverse of
+  # privileged-sunday's (which would keep the Sunday primary and only nod
+  # to the saint). Dec 29 (St. Thomas Becket, Semiduplex) still transfers
+  # off the Sunday rather than winning, and a day with no saint at all
+  # (e.g. Dec 30) still resolves to the Sunday cleanly — both of those
+  # match ordinary-sunday too, so nothing here actually depended on the
+  # stronger tier.
+  christmastide: { sunday: ordinary-sunday, feria: privileged-feria-minor }
   epiphanytide: { sunday: ordinary-sunday, feria: ordinary-feria }
   septuagesima: { sunday: privileged-sunday, feria: ordinary-feria }
   lent: { sunday: privileged-sunday, feria: ordinary-feria }

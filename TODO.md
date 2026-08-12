@@ -213,10 +213,27 @@ Urban I/Eleutherius/John I do have content -- they just needed a very
 late test year). Every pre-existing antiphon file that predated this
 pass has now been checked against a live Monastic query; most needed
 correction (confirmed Roman-rite sourced), a handful already matched.
-- **All ~52 temporal entries: done** (see the section above for method and
-  the one deliberate exception, `christmas-octave-sunday`).
+- **All ~52 temporal entries: done, including `christmas-octave-sunday`**
+  (see the section above for method and its own correction).
 - **94 `propers: null` saints: not started** — need a collect authored (a
   bigger, separate task) before an antiphon id even has anywhere to attach.
+
+### Bug found and fixed while pulling christmas-octave-sunday's antiphon
+
+`data/calendar/temporal-categories.yml` had christmastide's own Sunday
+coded `privileged-sunday` (Advent's tier — never displaced short of
+Duplex-majus+, and even then only commemorated in return). Live-checking
+all three Duplex-II-classis "Comites Christi" collision dates (St.
+Stephen/John/Holy Innocents falling on the Sunday, plus St. Silvester,
+plain Duplex) showed the exact reverse: the saint wins outright every
+time, the Sunday only commemorated — `ordinary-sunday`'s rule, not
+`privileged-sunday`'s. Fixed by reclassifying christmastide's `sunday` to
+`ordinary-sunday` (the `feria` side, `privileged-feria-minor`, was
+already correct and untouched). New tests in
+`tests/calendar/december-sanctoral.test.ts` cover both directions: the
+saint winning on the three verified collision dates, and St. Thomas
+Becket (Semiduplex) still transferring off the Sunday rather than
+winning, unchanged by the fix.
 
 ### Bug found while checking February's results, not yet fixed
 
