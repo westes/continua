@@ -1,0 +1,15 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Prime
+# live query, St. Lawrence's own day (2026-08-10), also shown on every
+# day of his own octave (see hours/resolve-common.ts's
+# resolveOfficeWinner). Prime's own chapter stays "ex Psalterio secundum
+# diem" even on his own day -- live-verified it's the same text as the
+# existing prime-capitulum-dominica.yml, so no separate override file was
+# needed for that, just the Sunday/feast selection reaching this day too
+# (see hours/resolve-common.ts's isSundayOrFeastOffice).
+id: prime-antiphon-st-lawrence
+text:
+  la: "Lauréntius * ingréssus est Martyr, et conféssus est nomen Dómini Jesu Christi."
+  en: "Lawrence * went in to be a martyr, and acknowledged the name of our Lord Jesus Christ."
+status:
+  la: verified
+  en: verified

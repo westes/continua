@@ -16,6 +16,22 @@ describe('Lauds psalmody override (duplex-majus+ sanctoral, and Marian Saturday)
     expect(canticle?.kind === 'canticle' ? canticle.canticleId : undefined).toBe('canticum-trium-puerorum');
   });
 
+  it("resolves St. Lawrence's own office bundle (capitulum/responsory/hymn/versicle) on his own day, not the plain weekday default -- a real gap flagged in TODO.md, now filled", () => {
+    const ordo = resolveOrdo('lauds', '2026-08-10');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.la : undefined).toBe('2 Cor 9:6');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Martyr Dei');
+    const responsory = ordo.parts.find((p) => p.kind === 'responsory');
+    expect(responsory?.kind === 'responsory' ? responsory.text.text.la : undefined).toContain('Glória et honóre');
+  });
+
+  it("resolves the same office bundle on day 3 of St. Lawrence's own octave, not the plain weekday default -- resolveOfficeWinner", () => {
+    const ordo = resolveOrdo('lauds', '2026-08-12');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.la : undefined).toBe('2 Cor 9:6');
+  });
+
   it("doesn't override a saint below duplex-majus (e.g. Semiduplex) -- plain weekday psalmody still used", () => {
     // 2026-09-19: St. Januarius, Semiduplex (below duplex-majus) -- see
     // tests/calendar/marian-saturday.test.ts for confirming he wins

@@ -1,6 +1,6 @@
 import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart } from './types';
 import type { LiturgicalDay, Weekday } from '../calendar/types';
-import { resolveDay, isSundayOrFeast } from '../calendar';
+import { resolveDay } from '../calendar';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmsFor } from '../psalter/distribution';
 import { getPsalmVerses } from '../psalter';
@@ -10,7 +10,14 @@ import { getChapterResponsoryId } from './chapter-responsory';
 import { getHymnDoxologyId } from './hymn-doxology';
 import { getOpeningVersicleId } from './opening-versicle';
 import { isDoubleOrHigher } from './antiphon';
-import { resolveCommon, appendDoxology, splitNamedAntiphon } from './resolve-common';
+import {
+  resolveCommon,
+  appendDoxology,
+  splitNamedAntiphon,
+  resolveOfficeWinner,
+  resolveMinorHourAntiphon,
+  isSundayOrFeastOffice,
+} from './resolve-common';
 import primeDefinitionData from '../data/hours/prime.yml';
 import antiphonsData from '../data/hours/prime-antiphons.yml';
 
@@ -30,7 +37,7 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
     case 'prayer':
       return [{ kind: part.kind, text: resolveCommon(part.textRef.id) }];
     case 'preces':
-      if (part.omitOnDouble && isDoubleOrHigher(day.winner)) {
+      if (part.omitOnDouble && isDoubleOrHigher(resolveOfficeWinner(day))) {
         return [];
       }
       return [{ kind: 'preces', text: resolveCommon(part.textRef.id), label: part.label }];
@@ -42,15 +49,13 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
       // Real Divinum Officium's actual inclusion rule tangles together
       // rank, commemorations, and version-specific rubrics in a way that
       // isn't worth replicating exactly — this is the honest simplification:
-      // Sunday and not a Double-or-higher feast. Octaves aren't modeled at
-      // all yet (milestone 4), so they can't suppress it either, same as
-      // isDoubleOrHigher's own limitation.
-      if (day.weekday !== 'sunday' || isDoubleOrHigher(day.winner)) {
+      // Sunday and not a Double-or-higher feast.
+      if (day.weekday !== 'sunday' || isDoubleOrHigher(resolveOfficeWinner(day))) {
         return [];
       }
       return [{ kind: 'lesson', text: resolveCommon('athanasian-creed'), label: 'Athanasian Creed' }];
     case 'closing-antiphon':
-      return [{ kind: 'antiphon', text: splitNamedAntiphon(antiphons[day.weekday]).full }];
+      return [{ kind: 'antiphon', text: splitNamedAntiphon(resolveMinorHourAntiphon('prime', day, antiphons[day.weekday])).full }];
     case 'variable':
       if (part.resolve === 'by-season') {
         // Currently only the chapter responsory's verse uses this — see
@@ -59,11 +64,11 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
       }
       {
         const psalmRefs = getPsalmsFor('prime', day.weekday);
-        const { incipit, full } = splitNamedAntiphon(antiphons[day.weekday]);
+        const { incipit, full } = splitNamedAntiphon(resolveMinorHourAntiphon('prime', day, antiphons[day.weekday]));
         // Full text on a Double-or-higher feast, otherwise just the incipit
         // — see hours/antiphon.ts. The full repeat comes later, after the
         // Creed (see 'closing-antiphon'), not tacked onto the last psalm.
-        const opening = isDoubleOrHigher(day.winner) ? full : incipit;
+        const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
         return psalmRefs.map((ref, i) => ({
           kind: 'psalm' as const,
           psalmNumber: ref.number,
@@ -86,10 +91,10 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
     case 'canticle':
       return [{ kind: 'canticle', canticleId: part.canticleId, text: resolveCommon(part.textRef.id) }];
     case 'by-day-kind': {
-      if (part.omitOnDouble && isDoubleOrHigher(day.winner)) {
+      if (part.omitOnDouble && isDoubleOrHigher(resolveOfficeWinner(day))) {
         return [];
       }
-      const ref = isSundayOrFeast(day) ? part.sundayOrFeastRef : part.ferialRef;
+      const ref = isSundayOrFeastOffice(day) ? part.sundayOrFeastRef : part.ferialRef;
       if (part.resolvedKind === 'preces') {
         return [{ kind: 'preces', text: resolveCommon(ref.id), label: part.label }];
       }

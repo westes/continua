@@ -79,4 +79,45 @@ describe.each(LITTLE_HOURS)('resolveOrdo(%s, ...)', (hourId) => {
       'Let us bless the Lord.',
     );
   });
+
+  // 2026-08-10: St. Lawrence's own day (Duplex II. classis). Live-verified
+  // each hour has its own real proper antiphon and chapter (2026-08),
+  // previously falling back all the way to the plain weekday default with
+  // no override mechanism at all.
+  const LAWRENCE_ANTIPHON_INCIPIT: Record<(typeof LITTLE_HOURS)[number], string> = {
+    terce: 'Lauréntius',
+    sext: 'Adhǽsit',
+    none: 'Beátus Lauréntius',
+  };
+  const LAWRENCE_CHAPTER_CITATION: Record<(typeof LITTLE_HOURS)[number], string> = {
+    terce: '2 Cor 9:6',
+    sext: '2 Cor 9:7',
+    none: '2 Cor 9:8-9',
+  };
+
+  it("resolves St. Lawrence's own proper antiphon and chapter on his own feast day", () => {
+    const ordo = resolveOrdo(hourId, '2026-08-10');
+    const antiphon = ordo.parts.find((p) => p.kind === 'psalm')?.antiphon;
+    expect(antiphon?.text.la).toContain(LAWRENCE_ANTIPHON_INCIPIT[hourId]);
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter && chapter.kind === 'chapter' ? chapter.text.citation?.la : undefined).toBe(
+      LAWRENCE_CHAPTER_CITATION[hourId],
+    );
+  });
+
+  it("resolves the same proper antiphon and chapter on day 3 of St. Lawrence's own octave, not the plain weekday default -- the concrete bug this override mechanism (resolveOfficeWinner) was built to fix", () => {
+    const ordo = resolveOrdo(hourId, '2026-08-12');
+    const antiphon = ordo.parts.find((p) => p.kind === 'psalm')?.antiphon;
+    expect(antiphon?.text.la).toContain(LAWRENCE_ANTIPHON_INCIPIT[hourId]);
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter && chapter.kind === 'chapter' ? chapter.text.citation?.la : undefined).toBe(
+      LAWRENCE_CHAPTER_CITATION[hourId],
+    );
+  });
+
+  it('still falls back to the plain weekday default on an ordinary day with no eligible override', () => {
+    const ordo = resolveOrdo(hourId, TUESDAY);
+    const antiphon = ordo.parts.find((p) => p.kind === 'psalm')?.antiphon;
+    expect(antiphon?.text.la).not.toContain(LAWRENCE_ANTIPHON_INCIPIT[hourId]);
+  });
 });

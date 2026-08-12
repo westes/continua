@@ -3,7 +3,7 @@ import type { Commemoration, DayWinner, LiturgicalDay } from '../calendar/types'
 import type { ProperText } from '../propers';
 import { getCommonProper, getTemporalProper } from '../propers';
 import { getSaintRecord } from '../calendar/feasts';
-import { activeOctavesFor } from '../calendar';
+import { activeOctavesFor, isAtLeast } from '../calendar';
 import { splitAntiphon } from './antiphon';
 
 function toResolvedText(proper: ProperText): ResolvedText {
@@ -67,6 +67,76 @@ export function resolveOfficeWinner(day: LiturgicalDay): DayWinner {
     }
   }
   return day.winner;
+}
+
+/** Like calendar/index.ts's own isSundayOrFeast, but resolveOfficeWinner-
+ * aware — an octave day counts as a "feast" for this purpose too.
+ * Live-verified: Prime's capitulum/Preces stay in the Sunday/feast form
+ * throughout St. Lawrence's octave (2026-08-12), not just his own actual
+ * day (2026-08-10) — both show the identical "ex Psalterio secundum
+ * diem" 1 Tim 1:17 text. Deliberately a separate function, not a
+ * replacement for the plain isSundayOrFeast: Lauds' own Cross-suffrage
+ * gate (hours/lauds.ts) needs the *narrower*, non-office-aware version,
+ * since Marian Saturday and an octave day both need to land on the
+ * ferial side there despite not being Sunday or a sanctoral `day.winner`
+ * either. */
+export function isSundayOrFeastOffice(day: LiturgicalDay): boolean {
+  return day.weekday === 'sunday' || resolveOfficeWinner(day).kind === 'sanctoral';
+}
+
+/**
+ * Whether today's office winner (resolveOfficeWinner) is a strong enough
+ * feast to carry its own proper minor-hour content (antiphon + chapter)
+ * — duplex-majus+, the same threshold Lauds' own psalmody override uses
+ * (hours/lauds.ts's getPsalmodyOverrideFor), kept in sync deliberately:
+ * as each remaining duplex-majus+ saint gets a Lauds override authored,
+ * the same id is what Prime/Terce/Sext/None would look for too, so it's
+ * one shared backlog (see TODO.md), not per-hour lists that can drift.
+ * Returns the id to look up (`${hourId}-antiphon-${id}` etc.), or
+ * `undefined` when nothing eligible is happening today.
+ */
+export function getMinorHourOverrideId(day: LiturgicalDay): string | undefined {
+  const winner = resolveOfficeWinner(day);
+  if (winner.kind === 'sanctoral' && isAtLeast(winner.rank, 'duplex-majus')) {
+    return winner.id;
+  }
+  return undefined;
+}
+
+/** A Little Hour's (or Prime's) plain per-weekday antiphon, overridden by
+ * a duplex-majus+ feast's own proper (`${hourId}-antiphon-${id}`) when
+ * authored — same honest "not gated behind whether content exists, just
+ * eligible to override at all" fallback as every other override in this
+ * codebase: an eligible feast without one authored yet just falls
+ * through to the plain weekday default silently. */
+export function resolveMinorHourAntiphon(
+  hourId: string,
+  day: LiturgicalDay,
+  weekdayDefault: Partial<Record<string, string>>,
+): Partial<Record<string, string>> {
+  const overrideId = getMinorHourOverrideId(day);
+  if (overrideId) {
+    const proper = getCommonProper(`${hourId}-antiphon-${overrideId}`);
+    if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
+      return proper.text;
+    }
+  }
+  return weekdayDefault;
+}
+
+/** Same idea as resolveMinorHourAntiphon, for the chapter
+ * (`${hourId}-capitulum-${id}`) — falls back to `fallbackId` (the plain
+ * per-annum/per-weekday one already in place for that hour) when no
+ * override is eligible, or none has been authored yet for one that is. */
+export function resolveMinorHourChapter(hourId: string, day: LiturgicalDay, fallbackId: string): ResolvedText {
+  const overrideId = getMinorHourOverrideId(day);
+  if (overrideId) {
+    const proper = resolveCommon(`${hourId}-capitulum-${overrideId}`);
+    if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
+      return proper;
+    }
+  }
+  return resolveCommon(fallbackId);
 }
 
 /**

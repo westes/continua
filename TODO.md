@@ -36,11 +36,71 @@ authored too, not just the psalmody override, before any of this is useful.
 
 Same override id, separate files (`lauds-capitulum-<id>.yml` etc. in
 `data/propers/common/`) — falls back to the plain weekday bundle when
-absent, *independently* of whether the psalmody override exists. Right now
-**only `christ-the-king` has this** — St. Lawrence's own day shows his
-proper psalms but the plain ferial capitulum/hymn, which is inconsistent
-with what the live engine actually shows for him (`2 Cor 9:6`, his own
-hymn). Worth fixing even before tackling the other 32.
+absent, *independently* of whether the psalmody override exists.
+**Authored (2): `st-lawrence`, `christ-the-king`.** 31 duplex-majus+ saints
+left — same list as the psalmody overrides above, minus Lawrence.
+
+### Prime/Terce/Sext/None minor-hour overrides (2026-08, new mechanism)
+
+Found while investigating why St. Lawrence's octave showed none of his own
+content at Prime/Terce/Sext/None either — these four hours had *no*
+per-feast override mechanism at all before this, unlike Lauds: the psalm
+antiphon always came from the plain weekday default
+(`data/hours/{hour}-antiphons.yml`), and the chapter was always a single
+fixed per-annum/per-weekday text, regardless of what was actually being
+celebrated — even on a saint's own actual feast day, not just during an
+octave.
+
+Mechanism: `hours/resolve-common.ts`'s `getMinorHourOverrideId` (same
+duplex-majus+ threshold as Lauds' own override, deliberately kept in sync
+so it's one shared backlog, not per-hour lists that can drift — see
+`resolveOfficeWinner`, which makes this octave-aware the same way Lauds'
+already is), `resolveMinorHourAntiphon`, `resolveMinorHourChapter`. Prime
+additionally needed `isSundayOrFeastOffice` (its capitulum/Preces choice
+between Sunday/feast and ferial forms) made octave-aware — live-verified
+Prime's capitulum stays the Sunday/feast form (1 Tim 1:17) throughout an
+octave, not just the feast's own actual day, so no separate override file
+was needed there, just the existing Sunday-form file reached correctly.
+
+**Authored (1 saint, all four hours): `st-lawrence`.** Antiphon + chapter
+for Terce/Sext/None, antiphon only for Prime (its chapter needed no new
+file — see above). The same 31-saint backlog above applies here too, one
+id at a time, as each gets a Lauds override.
+
+### Overlapping octaves — real gap found, not yet fixed
+
+`resolveOfficeWinner` (and `getDayLabel`) currently pick whichever active
+octave started *first* (`activeOctavesFor`'s own ordering) whenever more
+than one is active on a day with no temporal standing of its own — purely
+an accident of insertion order, not a real precedence rule. St. Lawrence's
+octave (Aug 10-17) and the Assumption's octave (Aug 15-22) genuinely
+overlap on Aug 16-17 every year, so this isn't a hypothetical.
+
+Live-checked both overlap days (Monastic Tridentinum 1617, 2026): Aug 16
+that year happens to be a Sunday, so the *temporal* Sunday wins outright
+and both octaves are merely commemorated (already correctly handled by
+the existing `ordinary-feria` gate — not actually a two-octave contest at
+all). Aug 17 is the real case: "**In Octava S. Laurentii Martyris ~
+Duplex**" wins outright, with "*Tertia die infra Octavam S. Assumptionis*"
+merely commemorated — Lawrence's octave beats the Assumption's despite the
+Assumption being the far higher-ranked feast overall (Duplex I. classis vs.
+Lawrence's Duplex II. classis). Why: Aug 17 is specifically Lawrence's own
+**final octave day** ("in Octava," the 8th and closing day), which real
+practice elevates to its own higher rank (Duplex here, above the ordinary
+Semiduplex of the days in between) — a concept this app doesn't model at
+all yet (`OctaveConfig` has no notion of an elevated final day, every day
+of an octave is currently treated as uniform strength).
+
+Proposed design (not yet built, needs a decision): when multiple octaves
+are active with no temporal standing to yield to, compare them by rank
+the same way a single octave already compares against a rival saint —
+highest rank wins outright, the rest are commemorated instead of silently
+dropped to "whichever came first." Needs `OctaveConfig` to carry an
+elevated final-day rank (distinct from the ordinary in-between-days rank)
+to get Aug 17 right for a real reason rather than by lucky insertion
+order. Low urgency in practice (currently only this one real overlap
+pair), but worth fixing before adding more octaves that could collide the
+same way.
 
 ### Benedictus antiphons for temporal (non-sanctoral) days — done
 

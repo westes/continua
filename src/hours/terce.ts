@@ -6,7 +6,14 @@ import { getPsalmsFor } from '../psalter/distribution';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
 import { isDoubleOrHigher } from './antiphon';
-import { resolveCommon, getDayCollect, splitNamedAntiphon } from './resolve-common';
+import {
+  resolveCommon,
+  getDayCollect,
+  splitNamedAntiphon,
+  resolveOfficeWinner,
+  resolveMinorHourAntiphon,
+  resolveMinorHourChapter,
+} from './resolve-common';
 import terceDefinitionData from '../data/hours/terce.yml';
 import antiphonsData from '../data/hours/terce-antiphons.yml';
 
@@ -21,7 +28,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       // Self-contained, no appendDoxology — see terce-hymn.yml.
       return [{ kind: 'hymn', text: resolveCommon(part.textRef.id) }];
     case 'chapter':
-      return [{ kind: 'chapter', text: resolveCommon(part.textRef.id) }];
+      return [{ kind: 'chapter', text: resolveMinorHourChapter('terce', day, part.textRef.id) }];
     case 'day-collect':
       return [{ kind: 'prayer', text: getDayCollect(day) }];
     case 'preces':
@@ -31,8 +38,8 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       // psalms, no closing repeat (unlike Prime): confirmed directly
       // against the engine, Capitulum follows the third psalm immediately.
       const psalmRefs = getPsalmsFor('terce', day.weekday);
-      const { incipit, full } = splitNamedAntiphon(antiphons[day.weekday]);
-      const opening = isDoubleOrHigher(day.winner) ? full : incipit;
+      const { incipit, full } = splitNamedAntiphon(resolveMinorHourAntiphon('terce', day, antiphons[day.weekday]));
+      const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
       return psalmRefs.map((ref, i) => ({
         kind: 'psalm' as const,
         psalmNumber: ref.number,

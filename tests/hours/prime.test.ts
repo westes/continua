@@ -191,6 +191,24 @@ describe('resolveOrdo("prime", ...)', () => {
       'All laud to God the Father be',
     );
   });
+
+  it("resolves St. Lawrence's own proper antiphon, on both his own day and his own octave -- previously always fell back to the plain weekday one with no override mechanism at all", () => {
+    for (const date of ['2026-08-10', '2026-08-12']) {
+      const ordo = resolveOrdo('prime', date);
+      const antiphon = ordo.parts.find((p) => p.kind === 'psalm')?.antiphon;
+      expect(antiphon?.text.la).toContain('Lauréntius');
+      const closing = ordo.parts.find((p) => p.kind === 'antiphon');
+      expect(closing?.kind === 'antiphon' ? closing.text.text.la : undefined).toContain('Lauréntius');
+    }
+  });
+
+  it("still resolves the Sunday/feast capitulum (1 Tim 1:17) throughout St. Lawrence's own octave, matching his actual day, via isSundayOrFeastOffice", () => {
+    for (const date of ['2026-08-10', '2026-08-12']) {
+      const ordo = resolveOrdo('prime', date);
+      const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+      expect(chapter?.kind === 'chapter' ? chapter.text.text.la : undefined).toContain('Regi sæculórum');
+    }
+  });
 });
 
 describe('resolveOrdo for not-yet-built hours', () => {

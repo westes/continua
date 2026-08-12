@@ -1,0 +1,16 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Lawrence's own day (2026-08-10) -- "Capitulum
+# Responsorium Hymnus Versus {ex Commune aut Festo}". Was still falling
+# back to the plain weekday default before this (see TODO.md) -- the
+# concrete gap that also turned out to affect every day of his own octave
+# too (see hours/resolve-common.ts's resolveOfficeWinner).
+id: lauds-capitulum-st-lawrence
+text:
+  la: "Fratres: Qui parce séminat, parce et metet; et qui séminat in benedictiónibus, de benedictiónibus et metet."
+  en: "Brethren: He which soweth sparingly shall reap also sparingly, and he which soweth bountifully shall reap also bountifully."
+citation:
+  la: "2 Cor 9:6"
+  en: "2 Cor 9:6"
+status:
+  la: verified
+  en: verified

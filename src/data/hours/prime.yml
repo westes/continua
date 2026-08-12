@@ -20,10 +20,15 @@
 #   - The Pretiosa (the versicle/response said right after the Martyrology
 #     in choir) is dropped — a deliberate cut, not an oversight.
 #
-# The capitulum and Preces both use calendar/isSundayOrFeast to pick between
-# a Sunday/feast form and a ferial form (see hours/types.ts's 'by-day-kind').
-# By explicit choice, the ferial Preces are said on *every* ferial day, not
-# just Advent/Lent/vigils/Ember days the way later rubrics restricted them.
+# The capitulum and Preces both use hours/resolve-common.ts's
+# isSundayOrFeastOffice to pick between a Sunday/feast form and a ferial
+# form (see hours/types.ts's 'by-day-kind') — resolveOfficeWinner-aware, so
+# a day within a duplex-majus+ saint's own octave (e.g. St. Lawrence's)
+# gets the feast form too, not just his own actual day; live-verified
+# directly (2026-08-12, day 3 of his octave: still "ex Psalterio secundum
+# diem" / 1 Tim 1:17, identical to his own day). By explicit choice, the
+# ferial Preces are said on *every* ferial day, not just Advent/Lent/
+# vigils/Ember days the way later rubrics restricted them.
 #
 # The dead-commemoration psalm (129, De profundis) is dropped by explicit
 # choice — a deliberate time-saving cut, not an oversight. The intro/close
