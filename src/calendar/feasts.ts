@@ -18,6 +18,21 @@ export interface SaintRecord {
   rank: FeastClass;
   common: string;
   propers: string | null;
+  /** Fallback id for Prime/Terce/Sext/None's antiphon/chapter when this
+   * saint has no proper file of their own for a given hour (see
+   * hours/resolve-common.ts's resolveMinorHourAntiphon/Chapter) — a
+   * *different* id than `common` above, deliberately: live-verified that
+   * the minor hours don't always draw from the same Common category as
+   * the saint's overall classification. E.g. both Chair of St. Peter
+   * feasts are `common: common-of-an-apostle` (Peter's own rank/collect
+   * classification), but their Prime/Terce/Sext/None content is drawn
+   * from the Common of a Confessor Bishop instead (Peter considered as
+   * bishop, for that specific commemoration) — `minorHoursCommon:
+   * common-of-a-confessor-bishop` captures that without corrupting the
+   * saint's real `common` field. Absent for saints with no shared-Common
+   * minor-hour content (either fully proper, or not yet authored).
+   */
+  minorHoursCommon?: string;
   /** See calendar/types.ts's OctaveConfig doc comment. Absent for the vast
    * majority of saints — only ones with a real octave declare it. */
   octave?: OctaveConfig;

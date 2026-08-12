@@ -113,10 +113,13 @@ export function getMinorHourOverrideId(day: LiturgicalDay): string | undefined {
 
 /** A Little Hour's (or Prime's) plain per-weekday antiphon, overridden by
  * a duplex-majus+ feast's own proper (`${hourId}-antiphon-${id}`) when
- * authored — same honest "not gated behind whether content exists, just
- * eligible to override at all" fallback as every other override in this
- * codebase: an eligible feast without one authored yet just falls
- * through to the plain weekday default silently. */
+ * authored, then by that saint's shared Common (`${hourId}-antiphon-
+ * ${minorHoursCommon}`, see SaintRecord's own doc comment) when a proper
+ * one hasn't been authored — same honest "not gated behind whether
+ * content exists, just eligible to override at all" fallback as every
+ * other override in this codebase: an eligible feast with neither
+ * authored yet just falls through to the plain weekday default silently.
+ */
 export function resolveMinorHourAntiphon(
   hourId: string,
   day: LiturgicalDay,
@@ -128,6 +131,13 @@ export function resolveMinorHourAntiphon(
     if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
       return proper;
     }
+    const commonId = getSaintRecord(overrideId)?.minorHoursCommon;
+    if (commonId) {
+      const common = resolveCommon(`${hourId}-antiphon-${commonId}`);
+      if (common.status.la !== 'missing' || common.status.en !== 'missing') {
+        return common;
+      }
+    }
   }
   // The plain weekday default (data/hours/{hour}-antiphons.yml) never
   // carries its own status field at all — always implicitly verified by
@@ -136,15 +146,23 @@ export function resolveMinorHourAntiphon(
 }
 
 /** Same idea as resolveMinorHourAntiphon, for the chapter
- * (`${hourId}-capitulum-${id}`) — falls back to `fallbackId` (the plain
- * per-annum/per-weekday one already in place for that hour) when no
- * override is eligible, or none has been authored yet for one that is. */
+ * (`${hourId}-capitulum-${id}`, then `${hourId}-capitulum-
+ * ${minorHoursCommon}`) — falls back to `fallbackId` (the plain
+ * per-annum/per-weekday one already in place for that hour) when nothing
+ * eligible is authored, either proper or shared-Common. */
 export function resolveMinorHourChapter(hourId: string, day: LiturgicalDay, fallbackId: string): ResolvedText {
   const overrideId = getMinorHourOverrideId(day);
   if (overrideId) {
     const proper = resolveCommon(`${hourId}-capitulum-${overrideId}`);
     if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
       return proper;
+    }
+    const commonId = getSaintRecord(overrideId)?.minorHoursCommon;
+    if (commonId) {
+      const common = resolveCommon(`${hourId}-capitulum-${commonId}`);
+      if (common.status.la !== 'missing' || common.status.en !== 'missing') {
+        return common;
+      }
     }
   }
   return resolveCommon(fallbackId);

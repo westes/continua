@@ -74,12 +74,72 @@ English rendering at all in the source (Matins-only English coverage for
 that saint) — translated directly, `status.en: draft` throughout;
 Immaculate Conception's antiphons render with diacritics stripped
 compared to the word-for-word-parallel Nativity BVM antiphon — restored
-accentuation to match, `status.la: draft`. Several saints share identical
-Common-of-Apostles or Common-of-BVM content, confirmed via `diff` before
-reuse rather than assumed (Matthias/Barnabas/James-the-Greater/Thomas-
-Apostle/Simon-and-Jude/Luke/Matthew/Bartholomew all share one Common of
-Apostles set; Assumption/Nativity-BVM/Immaculate-Conception share Sext/
-None capitula from the Common of the BVM).
+accentuation to match, `status.la: draft`.
+
+### Prime/Terce/Sext/None Commons extraction (2026-08)
+
+After the P/T/S/N batch above landed, a systematic diff across all 29
+saints' files (not just the pairs noticed in passing during authoring)
+turned up real shared-Common groups, extracted into `data/propers/common/
+{hour}-antiphon-common-of-*.yml` / `{hour}-capitulum-common-of-*.yml`
+files and wired via a new `SaintRecord.minorHoursCommon` field
+(`calendar/feasts.ts`) — `resolveMinorHourAntiphon`/`resolveMinorHourChapter`
+(`hours/resolve-common.ts`) now fall back to it when a saint has no proper
+file of their own for a given hour. Deliberately a *separate* field from
+the existing (until now unused) `common` field: live-verified the minor
+hours don't always draw from the same Common category as the saint's
+overall classification (see the Confessor-Bishop group below) — reusing
+`common` directly would have gotten that case wrong.
+
+Four groups extracted, all confirmed byte-identical via `diff` first, none
+assumed from category alone:
+
+- **`common-of-apostles`** (all 4 hours, antiphon + chapter): st-matthias,
+  st-barnabas, st-james-the-greater, st-thomas-apostle, ss-simon-and-jude,
+  st-luke, st-matthew, st-bartholomew — 8 saints, 56 duplicate files
+  collapsed to 7 shared ones.
+- **`common-of-a-confessor-bishop`**: chair-of-st-peter-at-rome and
+  chair-of-st-peter-at-antioch share all 4 hours' antiphons *and*
+  chapters; st-martin-of-tours shares only the chapters (his own
+  antiphons are proper, about his own life). Real finding, not a
+  modeling choice: both Chair feasts are `common: common-of-an-apostle`
+  in their own saint record (Peter's rank/collect classification), but
+  their P/T/S/N content comes from the Common of a Confessor Bishop
+  instead — Peter considered *as bishop* of that particular see, for
+  that specific commemoration.
+- **`common-of-the-bvm`** (chapter only, Terce/Sext/None): nativity-bvm
+  and immaculate-conception share all three; their own antiphons stay
+  proper (per-mystery). The Assumption's Sext/None chapters share the
+  same *reading body* (Sir 24:15-16, 24:19-20) but close with her own
+  proper versicles rather than the Common's plain ones, and her Terce
+  chapter is a different reading entirely (Sir 24:11-12, not 24:14) — a
+  first-class feast's proper office outranking the plain Common, kept as
+  her own fully proper files rather than force-fit into the shared one.
+- **`common-of-st-peter`** (None antiphon, all 3 chapters): st-peter-ad-
+  vincula and ss-peter-and-paul. Not a real liturgical Common category —
+  both feasts are specifically about St. Peter himself, so his own
+  proper texts get reused directly. Extracted anyway since the content
+  really is identical, just named honestly rather than dressed up as a
+  Common of Saints class.
+
+**Deliberately left un-extracted — a genuine open question, not an
+oversight:** st-mark and st-john-before-the-latin-gate share identical
+antiphons *and* chapters across all 4 hours, and ss-philip-and-james
+shares just the chapters with those two — but live-checking the season
+line on each saint's own queried date showed all three landing *within
+Paschaltide* that year ("infra Hebdomadam N post Octavam Paschæ"), for
+three otherwise-unrelated saints (an Evangelist and two separate Apostle
+feasts) whose overall `common` classification doesn't even agree with
+each other. That strongly suggests this shared "Alleluia" text is a
+Paschaltide *seasonal* override, not a fixed per-saint-category Common —
+meaning the app has no mechanism today to know whether it's still
+correct in a year where Easter lands late enough to push these fixed
+dates (Apr 25, May 1, May 6) past Pentecost. Left as three small,
+individually-authored (already diff-verified) per-saint files rather than
+folded into `minorHoursCommon`, which would misrepresent this as
+timeless, unconditional content. Fixing it properly needs a real
+Paschaltide-awareness mechanism for minor-hour content (this app has none
+yet for any hour) — flagged here, not attempted.
 
 ### Overlapping octaves — done (2026-08)
 

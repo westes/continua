@@ -1,0 +1,16 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), None.
+# Extracted (2026-08) from St. Peter ad Vincula and Ss. Peter and Paul's
+# independently-authored content, confirmed identical via diff (their own
+# per-saint files differed only by a stray missing comma in one of the
+# two English transcriptions, reconciled here to match the Latin's own
+# punctuation). Not a generic liturgical "Common" category — both feasts
+# are specifically about St. Peter himself, so his own proper texts get
+# reused directly rather than drawing from an actual Common of Saints.
+# See SaintRecord.minorHoursCommon (calendar/feasts.ts).
+id: none-antiphon-common-of-st-peter
+text:
+  la: "Tu es Petrus, * et super hanc petram ædificábo Ecclésiam meam."
+  en: "Thou art Peter, * and upon this Rock I will build My Church."
+status:
+  la: verified
+  en: verified
