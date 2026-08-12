@@ -111,10 +111,26 @@ saint has the same kind of mismatch.
   Vincent and Anastasius, Conversion of St. Paul, St. John Chrysostom, and
   St. Hilary of Poitiers (moved to his real date, Jan 14, per direct
   correction — see above).
-- **February-December (100 saints): not started.**
+- **February (7 total): done, all 7.** St. Agatha, St. Dorothea, St.
+  Apollonia, St. Scholastica (translated, source had no English),
+  St. Valentine, Chair of St. Peter at Antioch, St. Matthias (source's own
+  English existed but was jarringly modern next to everything else's
+  archaic register — reworded to match, marked `draft`).
+- **March-December (93 saints): not started.**
 - **~52 temporal entries: not started.**
 - **94 `propers: null` saints: not started** — need a collect authored (a
   bigger, separate task) before an antiphon id even has anywhere to attach.
+
+### Bug found while checking February's results, not yet fixed
+
+`hours/resolve-common.ts`'s `splitNamedAntiphon` always marks its output
+`verified` regardless of the input status (`verifiedText()` hardcodes it) —
+so a `draft`-marked antiphon (Scholastica's translation, Matthias's
+reworded English) renders as if fully verified everywhere it's actually
+displayed, even though the source YAML correctly says `draft`. Affects
+every split antiphon across every hour (Prime, Terce, Compline, Lauds), not
+just these two — pre-existing, just never surfaced until content with a
+real `draft` status went through it.
 
 ## Mechanism not built at all
 
