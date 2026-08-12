@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-10-10 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: post-pentecost-21-benedictus-antiphon
+text:
+  la: "Dixit autem * dóminus servo: Redde quod debes. Prócidens autem servus ille rogábat eum, dicens: Patiéntiam habe in me, et ómnia reddam tibi."
+  en: "The lord said unto his servant: Pay me * that thou owest. But the servant fell down and besought him, saying: Have patience with me, and I will pay thee all."
+status:
+  la: verified
+  en: verified

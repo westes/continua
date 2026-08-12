@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-03-21 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: palm-sunday-benedictus-antiphon
+text:
+  la: "Turba multa, * quæ convénerat ad diem festum, clamábat Dómino: Benedíctus qui venit in nómine Dómini: Hosánna in excélsis."
+  en: "Much people that were come to the Feast, cried * unto the Lord: Blessed is He That cometh in the Name of the Lord! Hosanna in the highest!"
+status:
+  la: verified
+  en: verified

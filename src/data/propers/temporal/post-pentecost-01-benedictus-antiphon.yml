@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-05-23 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: post-pentecost-01-benedictus-antiphon
+text:
+  la: "Benedícta sit sancta creátrix et gubernátrix ómnium, sancta et indivídua Trínitas, nunc, et semper, et per infiníta sǽcula sæculórum."
+  en: "Blessed be the Holy One the Maker and Lord of all things. Blessed be the Holy and Undivided Trinity, now and always, and unto unending ages of ages."
+status:
+  la: verified
+  en: verified

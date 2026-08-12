@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-04-11 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: easter-3-benedictus-antiphon
+text:
+  la: "Ego sum pastor óvium: * ego sum via, véritas, et vita: ego sum pastor bonus, et cognósco oves meas, et cognóscunt me meæ, allelúja, allelúja."
+  en: "I am the Shepherd of the Sheep: * I am the Way, the Truth, and the Life: I am the Good Shepherd, and know My Sheep, and am known of Mine. Alleluia, Alleluia."
+status:
+  la: verified
+  en: verified

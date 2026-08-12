@@ -42,12 +42,30 @@ proper psalms but the plain ferial capitulum/hymn, which is inconsistent
 with what the live engine actually shows for him (`2 Cor 9:6`, his own
 hymn). Worth fixing even before tackling the other 32.
 
-### Benedictus antiphons for temporal (non-sanctoral) days
+### Benedictus antiphons for temporal (non-sanctoral) days — done
 
-`<id>-benedictus-antiphon.yml` in `data/propers/temporal/` — only
-`marian-saturday` and `christ-the-king` exist. Every plain numbered Sunday
-(52 of them) and feria is `missing`. Real practice has a proper antiphon
-for every one of these; not started, and it's a big pull if done exhaustively.
+`<id>-benedictus-antiphon.yml` in `data/propers/temporal/` — all 53
+temporal ids now have one (`marian-saturday`/`christ-the-king` from
+earlier, plus the 51 numbered Sundays/seasons done in one pass), except
+**`christmas-octave-sunday`**, left deliberately unauthored: every
+possible date this id can resolve to in the real calendar collides with
+a specific named octave-day feast (St. John's own octave on Jan 3, e.g.)
+— there's no date where the live engine shows generic "Sunday within the
+Christmas Octave" content rather than that day's own specific saint, so
+there's nothing honest to source.
+
+Method: rather than hunting for "clean years" one at a time, wrote a
+script that iterates every day of a test year through this app's own
+`resolveDay`, buckets each Sunday by which temporal id actually won, and
+picks one real date per id straight from the app's own logic — then
+cross-checked each date's *live* D.O. title for a saint collision before
+trusting the content (a handful, mostly on privileged Eastertide/
+post-Pentecost Sundays, needed a different year: this app's own
+privileged-Sunday rule never lets a saint displace those Sundays, but the
+live reference engine's calendar is bigger than this app's and does let
+some by-date saint win there, e.g. St. Mark on Easter V some years, "Our
+Lady of the Snows" — not modeled in this app at all — landing on
+Post-Pentecost XI whenever the date lines up with Aug 5).
 
 ### Octave collects
 
@@ -182,7 +200,8 @@ Urban I/Eleutherius/John I do have content -- they just needed a very
 late test year). Every pre-existing antiphon file that predated this
 pass has now been checked against a live Monastic query; most needed
 correction (confirmed Roman-rite sourced), a handful already matched.
-- **~52 temporal entries: not started.**
+- **All ~52 temporal entries: done** (see the section above for method and
+  the one deliberate exception, `christmas-octave-sunday`).
 - **94 `propers: null` saints: not started** — need a collect authored (a
   bigger, separate task) before an antiphon id even has anywhere to attach.
 

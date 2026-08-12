@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-09-26 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: post-pentecost-19-benedictus-antiphon
+text:
+  la: "Dícite invitátis: * Ecce prándium meum parávi, veníte ad núptias, allelúja."
+  en: "Tell them which are bidden: * Behold, I have prepared my dinner; Come unto the marriage. Alleluia."
+status:
+  la: verified
+  en: verified

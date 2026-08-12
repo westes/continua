@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2025-05-18 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: easter-5-benedictus-antiphon
+text:
+  la: "Vado ad eum * qui misit me: et nemo ex vobis intérrogat me: Quo vadis? allelúja, allelúja."
+  en: "I go My way to Him That sent Me, * and none of you asketh Me: Whither goest Thou? Alleluia, Alleluia."
+status:
+  la: verified
+  en: verified

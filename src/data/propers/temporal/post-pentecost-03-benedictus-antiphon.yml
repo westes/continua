@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-06-06 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: post-pentecost-03-benedictus-antiphon
+text:
+  la: "Quis ex vobis * homo, qui habet centum oves et, si perdíderit unam ex illis, nonne dimíttit nonagínta novem in desérto et vadit ad illam quæ períerat, donec invéniat eam? Allelúja."
+  en: "What man of you * that hath an hundred sheep, and if he shall lose one of them, doth he not leave the ninety-nine in the desert and go after that which was lost, until he find it? Alleluia."
+status:
+  la: verified
+  en: verified

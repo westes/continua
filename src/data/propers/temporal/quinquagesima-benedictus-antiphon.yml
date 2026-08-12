@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-02-07 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: quinquagesima-benedictus-antiphon
+text:
+  la: "Ecce ascéndimus * Jerosólymam, et consummabúntur ómnia quæ scripta sunt de Fílio hóminis: tradétur enim géntibus, et illudétur, et conspuétur: et postquam flagelláverint, occídent eum, et tértia die resúrget."
+  en: "Behold, we go up to Jerusalem, * and all things that are written by the Prophets concerning the Son of man shall be accomplished; for He shall be delivered unto the Gentiles, and shall be mocked and spitted on; and they shall scourge Him, and put Him to death, and the third day He shall rise again."
+status:
+  la: verified
+  en: verified

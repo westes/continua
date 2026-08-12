@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2031-09-07 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: post-pentecost-14-benedictus-antiphon
+text:
+  la: "Nolíte sollíciti esse * dicéntes: Quid manducábimus aut quid bibémus? scit enim Pater vester quid vobis necésse sit, allelúja."
+  en: "Take no thought, saying: What shall we eat? * or: What shall we drink? For your Father knoweth what things ye have need of, alleluia."
+status:
+  la: verified
+  en: verified

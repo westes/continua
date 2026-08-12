@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-07-18 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: post-pentecost-09-benedictus-antiphon
+text:
+  la: "Cum appropinquáret * Dóminus Jerúsalem videns civitátem flevit super illam, et dixit: Quia si cognovísses et tu, quia vénient dies in te, et circúmdabunt te inimíci tui vallo et circúmdabunt te et coangustábunt te úndique et ad terram prostérnent te: eo quod non cognovísti tempus visitatiónis tuæ, allelúja."
+  en: "When the Lord was come near to Jerusalem, He beheld the city, and wept * over it, saying: If thou hadst known, even thou! For the days shall come upon thee, that thine enemies shall cast a trench about thee, and compass thee round, and keep thee in on every side and shall lay thee even with the ground because thou knewest not the time of thy visitation, alleluia."
+status:
+  la: verified
+  en: verified

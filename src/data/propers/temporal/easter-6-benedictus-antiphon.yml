@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2025-05-25 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: easter-6-benedictus-antiphon
+text:
+  la: "Usque modo * non petístis quidquam in nómine meo: pétite, et accipiétis, allelúja."
+  en: "Hitherto * have ye asked nothing in My Name, ask, and ye shall receive. Alleluia."
+status:
+  la: verified
+  en: verified
