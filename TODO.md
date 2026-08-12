@@ -123,7 +123,10 @@ saint has the same kind of mismatch.
   and March 9 always falls within Lent every tested year (2026-2035) — she
   structurally can never win her own day outright under this app's own
   calendar rules, so there's no live-rendered antiphon to source at all.
-- **April-December (87 saints): not started.**
+- **April (8 total): done, all 8.** St. Francis of Paola, St. Leo I,
+  Ss. Tiburtius/Valerian/Maximus, St. George, St. Mark, St. Vitalis,
+  St. Robert, St. Peter Martyr.
+- **May-December (79 saints): not started.**
 - **~52 temporal entries: not started.**
 - **94 `propers: null` saints: not started** — need a collect authored (a
   bigger, separate task) before an antiphon id even has anywhere to attach.
