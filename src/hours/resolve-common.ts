@@ -3,7 +3,7 @@ import type { Commemoration, DayWinner, LiturgicalDay } from '../calendar/types'
 import type { ProperText } from '../propers';
 import { getCommonProper, getTemporalProper } from '../propers';
 import { getSaintRecord } from '../calendar/feasts';
-import { activeOctavesFor, isAtLeast } from '../calendar';
+import { resolveActiveOctave, isAtLeast } from '../calendar';
 import { splitAntiphon } from './antiphon';
 
 function toResolvedText(proper: ProperText): ResolvedText {
@@ -60,8 +60,16 @@ export function resolveOfficeWinner(day: LiturgicalDay): DayWinner {
   if (day.temporalCategory !== 'ordinary-feria') {
     return day.winner;
   }
-  for (const octave of activeOctavesFor(day.date)) {
-    const saint = getSaintRecord(octave.id);
+  // When more than one octave is active at once (St. Lawrence's and the
+  // Assumption's genuinely overlap every Aug 16-17), resolveActiveOctave
+  // picks the one that actually governs the day — see its own doc
+  // comment for the precedence rule. Falls through to the plain temporal
+  // default if that octave turns out to be a temporal-only one with no
+  // saint record (e.g. Christmas's or Pentecost's own octave id) — no
+  // sanctoral content to synthesize from those.
+  const activeOctave = resolveActiveOctave(day.date);
+  if (activeOctave) {
+    const saint = getSaintRecord(activeOctave.id);
     if (saint) {
       return { kind: 'sanctoral', id: saint.id, name: saint.name, rank: saint.rank };
     }

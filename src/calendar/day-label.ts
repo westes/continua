@@ -14,7 +14,7 @@ import { easterSunday } from './easter';
 import { adventStart, firstSundayStrictlyAfter, sundayOnOrBefore } from './temporal';
 import { addDays, daysBetween, toIsoDate } from './date-math';
 import { getTemporalFeastRecord } from './temporal-feasts';
-import { activeOctavesFor, type ActiveOctave } from './octaves';
+import { resolveActiveOctave, type ActiveOctave } from './octaves';
 
 function capitalize(text: string): string {
   return text.charAt(0).toUpperCase() + text.slice(1);
@@ -186,16 +186,26 @@ export function getDayLabel(day: LiturgicalDay): string {
     return commemoratedSaint ? `${commemoratedSaint.name} — ${anchorName}` : anchorName;
   }
 
-  // An active octave (St. Lawrence's, Christmas's own stack, ...) is this
-  // day's real primary identity in the live engine, not a footnote — e.g.
-  // "Tertia die infra Octavam S. Laurentii Martyris", not "Wednesday in
-  // the 11th week after Trinity". Picks the oldest-started octave when
-  // several are stacked (activeOctavesFor's own ordering) as the headline;
-  // the others still ride along as ordinary octave commemorations, just
-  // not separately named here.
-  const octaves = activeOctavesFor(day.date);
-  if (octaves.length > 0) {
-    const primary = octaveLabel(octaves[0]!);
+  // An active octave (St. Lawrence's, ...) is this day's real primary
+  // identity in the live engine, not a footnote — e.g. "Tertia die infra
+  // Octavam S. Laurentii Martyris", not "Wednesday in the 11th week after
+  // Trinity" — but *only* when the temporal day itself has no standing of
+  // its own (`ordinary-feria`), same gate as hours/resolve-common.ts's
+  // resolveOfficeWinner and for the same reason: live-verified
+  // counterexample is the Christmas Octave's own stack (Dec 30, e.g.,
+  // `privileged-feria-minor`), where the real title stays the temporal
+  // Sunday's own ("De Dominica Infra Octavam Nativitatis") with no octave
+  // name in it at all — this label agreeing with resolveOfficeWinner
+  // about which one wins is what makes "the office is Lawrence's" and
+  // "the label says Lawrence" consistent instead of two independent
+  // guesses that can disagree. When more than one octave is active at
+  // once (resolveActiveOctave), the highest-ranked wins the headline
+  // (ties broken by whichever started more recently) — the others still
+  // ride along as ordinary octave commemorations, just not separately
+  // named here.
+  const activeOctave = day.temporalCategory === 'ordinary-feria' ? resolveActiveOctave(day.date) : undefined;
+  if (activeOctave) {
+    const primary = octaveLabel(activeOctave);
     return commemoratedSaint ? `${primary} — ${commemoratedSaint.name}` : primary;
   }
 

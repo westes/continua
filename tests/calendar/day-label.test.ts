@@ -62,6 +62,26 @@ describe('getDayLabel — active octave', () => {
   it("a season's own named anchor day outranks an active octave, even though Trinity Sunday is technically also day 8 of Pentecost's own octave", () => {
     expect(getDayLabel(resolveDay('2026-05-31'))).toBe('Trinity Sunday');
   });
+
+  it("a temporal day with real standing of its own (not ordinary-feria) never shows an octave name at all, even with one active -- live-verified counterexample: the Christmas Octave's own stack (Dec 30) titles itself off the Sunday, never any of the four octaves layered on top of it", () => {
+    const day = resolveDay('2033-12-30');
+    expect(day.temporalCategory).toBe('privileged-feria-minor');
+    expect(getDayLabel(day)).not.toContain('Octave');
+    expect(getDayLabel(day)).toBe('Friday in Christmastide');
+  });
+
+  it("picks the higher-ranked of two genuinely overlapping octaves for the label -- St. Lawrence's own elevated closing day (Aug 17) over the Assumption's ordinary day 3, even though the Assumption's octave started later and the Assumption is the higher-ranked feast overall", () => {
+    expect(getDayLabel(resolveDay('2026-08-17'))).toBe('8th Day within the Octave of St. Lawrence, Martyr');
+    expect(getDayLabel(resolveDay('2026-08-18'))).toBe('4th Day within the Octave of The Assumption of the Blessed Virgin Mary');
+  });
+
+  it('a real Sunday with standing of its own wins over both octaves entirely, showing the plain ordinal Sunday label -- not an octave name at all', () => {
+    // 2026-08-16 is a Sunday genuinely within both St. Lawrence's and the
+    // Assumption's overlapping octave windows.
+    const day = resolveDay('2026-08-16');
+    expect(day.weekday).toBe('sunday');
+    expect(getDayLabel(day)).not.toContain('Octave');
+  });
 });
 
 describe('getDayLabel — feast name combination', () => {

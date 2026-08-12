@@ -137,6 +137,15 @@ export interface OctaveConfig {
    * data/calendar/temporal-feasts/pentecost-sunday.yml), which is
    * stricter (`duplex`). */
   wins?: FeastClass;
+  /** The octave's own effective rank on its *last* day specifically (the
+   * "in Octava" closing day) instead of `wins` — live-verified as a real,
+   * general pattern rather than a per-saint quirk: both St. Lawrence's
+   * own Aug 17 and the Assumption's own Aug 22 show as Duplex, elevated
+   * above their otherwise-Semiduplex ordinary in-between days. Default
+   * 'duplex'. Feeds both the rival-saint threshold (calendar/octaves.ts's
+   * `strictestThreshold`) and octave-vs-octave precedence
+   * (`resolveActiveOctave`) on that one day. */
+  closingDayRank?: FeastClass;
 }
 
 export type DayWinner =

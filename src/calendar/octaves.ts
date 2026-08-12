@@ -17,7 +17,13 @@ import { compareFeastClass } from './commemorations';
 export interface ActiveOctave {
   id: string;
   name: string;
-  /** Rank threshold below which the occurring saint loses the day to this octave. */
+  /** This octave's own effective rank *today* — the ordinary `wins`
+   * threshold on every day except its own closing day, where it's
+   * `closingDayRank` instead (see calendar/types.ts's OctaveConfig).
+   * Doubles as both "how strong a rival saint must be to displace this
+   * octave" and "this octave's own strength when compared against
+   * another simultaneously-active octave" (resolveActiveOctave) — same
+   * underlying question, two different comparison partners. */
   wins: FeastClass;
   /** 1 on the feast's own day, counting up from there. */
   dayNumber: number;
@@ -25,6 +31,7 @@ export interface ActiveOctave {
 
 const DEFAULT_DAYS = 8;
 const DEFAULT_WINS: FeastClass = 'semiduplex';
+const DEFAULT_CLOSING_DAY_RANK: FeastClass = 'duplex';
 /** How far back to look for an octave's own start date — must cover the
  * longest configured `days` a caller might use; 7 covers the standard
  * 8-day octave (day 1 = the start itself, day 8 = 7 days later). */
@@ -48,7 +55,10 @@ function considerCandidate(
     return;
   }
   seen.add(id);
-  active.push({ id, name, wins: octave.wins ?? DEFAULT_WINS, dayNumber: offset + 1 });
+  const dayNumber = offset + 1;
+  const isClosingDay = dayNumber === days;
+  const wins = isClosingDay ? (octave.closingDayRank ?? DEFAULT_CLOSING_DAY_RANK) : (octave.wins ?? DEFAULT_WINS);
+  active.push({ id, name, wins, dayNumber });
 }
 
 /** Every octave (sanctoral or temporal) whose window covers `isoDate`,
@@ -88,4 +98,50 @@ export function strictestThreshold(octaves: ActiveOctave[]): FeastClass {
     (max, o) => (compareFeastClass(o.wins, max) > 0 ? o.wins : max),
     octaves[0]?.wins ?? DEFAULT_WINS,
   );
+}
+
+/**
+ * Which single active octave actually governs a day's own content/label
+ * when more than one is active at once (this app's first real case: St.
+ * Lawrence's, Aug 10-17, and the Assumption's, Aug 15-22, genuinely
+ * overlap every year) and no rival saint has already displaced all of
+ * them outright (that's calendar/index.ts's applyOctaves — this only
+ * runs octave-vs-octave). Per direct instruction:
+ *
+ * - Highest effective rank (`wins`, already elevated on either octave's
+ *   own closing day) wins outright.
+ * - Tied rank: the more recently *started* octave wins (smaller
+ *   `dayNumber` today) — the reasoning given was that day 1 of a newly
+ *   started octave needs to be fully present, which is the whole point
+ *   of it starting; the older octave that's already been running is
+ *   commemorated instead, same as any octave that loses this comparison.
+ *
+ * Undefined when no octave is active at all. Every other active octave
+ * still gets commemorated regardless of which one wins here — this
+ * function only decides whose *content* (and day-label name) governs,
+ * not who gets left out of the commemoration list entirely (see
+ * calendar/index.ts's applyOctaves, unchanged by this).
+ */
+export function resolveActiveOctave(isoDate: string): ActiveOctave | undefined {
+  return pickWinningOctave(activeOctavesFor(isoDate));
+}
+
+/** The comparison itself, factored out from resolveActiveOctave so the
+ * precedence rule (rank, then recency) is directly unit-testable against
+ * synthetic ActiveOctave data — no real equal-rank overlap exists yet in
+ * this app's own calendar to exercise the tie-break against. */
+export function pickWinningOctave(active: ActiveOctave[]): ActiveOctave | undefined {
+  return active.reduce<ActiveOctave | undefined>((best, candidate) => {
+    if (!best) {
+      return candidate;
+    }
+    const rankCmp = compareFeastClass(candidate.wins, best.wins);
+    if (rankCmp > 0) {
+      return candidate;
+    }
+    if (rankCmp < 0) {
+      return best;
+    }
+    return candidate.dayNumber < best.dayNumber ? candidate : best;
+  }, undefined);
 }

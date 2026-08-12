@@ -67,40 +67,54 @@ for Terce/Sext/None, antiphon only for Prime (its chapter needed no new
 file — see above). The same 31-saint backlog above applies here too, one
 id at a time, as each gets a Lauds override.
 
-### Overlapping octaves — real gap found, not yet fixed
+### Overlapping octaves — done (2026-08)
 
-`resolveOfficeWinner` (and `getDayLabel`) currently pick whichever active
-octave started *first* (`activeOctavesFor`'s own ordering) whenever more
-than one is active on a day with no temporal standing of its own — purely
-an accident of insertion order, not a real precedence rule. St. Lawrence's
-octave (Aug 10-17) and the Assumption's octave (Aug 15-22) genuinely
-overlap on Aug 16-17 every year, so this isn't a hypothetical.
+Was: `resolveOfficeWinner`/`getDayLabel` picked whichever active octave
+started *first* whenever more than one was active — an accident of
+insertion order, not a real precedence rule. St. Lawrence's octave (Aug
+10-17) and the Assumption's (Aug 15-22) genuinely overlap on Aug 16-17
+every year, so this wasn't hypothetical.
 
-Live-checked both overlap days (Monastic Tridentinum 1617, 2026): Aug 16
-that year happens to be a Sunday, so the *temporal* Sunday wins outright
-and both octaves are merely commemorated (already correctly handled by
-the existing `ordinary-feria` gate — not actually a two-octave contest at
-all). Aug 17 is the real case: "**In Octava S. Laurentii Martyris ~
-Duplex**" wins outright, with "*Tertia die infra Octavam S. Assumptionis*"
-merely commemorated — Lawrence's octave beats the Assumption's despite the
-Assumption being the far higher-ranked feast overall (Duplex I. classis vs.
-Lawrence's Duplex II. classis). Why: Aug 17 is specifically Lawrence's own
-**final octave day** ("in Octava," the 8th and closing day), which real
-practice elevates to its own higher rank (Duplex here, above the ordinary
-Semiduplex of the days in between) — a concept this app doesn't model at
-all yet (`OctaveConfig` has no notion of an elevated final day, every day
-of an octave is currently treated as uniform strength).
+Design (per direct instruction, not independently re-derived from a
+primary source the way most of this project is): when more than one
+octave is active on a day with no temporal standing of its own to yield
+to first, compare them by rank — highest wins outright, exactly like a
+single octave already out-ranks a weak rival saint; every other active
+octave still gets commemorated, never silently dropped. A rank tie goes
+to whichever octave started more *recently* — reasoning given: day 1 of
+a newly started octave needs to be fully present, which is the whole
+point of an octave starting, so the older one yields instead. No real
+tied-rank case exists yet in this app's calendar to verify that
+empirically, unlike almost everything else in this project — flagged as
+a stated, unverified-by-evidence design decision, not a live finding.
 
-Proposed design (not yet built, needs a decision): when multiple octaves
-are active with no temporal standing to yield to, compare them by rank
-the same way a single octave already compares against a rival saint —
-highest rank wins outright, the rest are commemorated instead of silently
-dropped to "whichever came first." Needs `OctaveConfig` to carry an
-elevated final-day rank (distinct from the ordinary in-between-days rank)
-to get Aug 17 right for a real reason rather than by lucky insertion
-order. Low urgency in practice (currently only this one real overlap
-pair), but worth fixing before adding more octaves that could collide the
-same way.
+Also needed `OctaveConfig.closingDayRank` (default `duplex`): an
+octave's own *closing* day ("in Octava," the 8th/final day) is elevated
+above its ordinary in-between-days rank — live-verified as a real,
+general pattern (not a St. Lawrence quirk): both his own Aug 17 and the
+Assumption's own Aug 22 show as Duplex, above their otherwise-Semiduplex
+ordinary days. This is *why* Lawrence's octave beats the Assumption's on
+their one real overlap day (Aug 17) despite the Assumption being the far
+higher-ranked feast overall (Duplex I. classis vs. Lawrence's Duplex II.
+classis) — his closing-day elevation (Duplex) beats her ordinary day-3
+strength (Semiduplex). Feeds both `strictestThreshold` (a rival saint
+now needs Duplex+, not just Semiduplex+, to beat an octave specifically
+on its own closing day) and the new octave-vs-octave comparison
+(`calendar/octaves.ts`'s `resolveActiveOctave`/`pickWinningOctave`) —
+same underlying "how strong is this octave today" question, two
+different comparison partners.
+
+`getDayLabel` was carrying its own separate, never-actually-correct
+octave-selection logic that additionally never checked
+`temporalCategory` at all — found while testing the real Aug 16 overlap
+(a Sunday that year): it was showing an octave name even though the
+*temporal* Sunday has real standing and wins outright, live-verified
+counterexample being the Christmas Octave's own stack (Dec 30), which
+was wrongly showing "3rd Day within the Octave of The Holy Innocents"
+instead of the correct plain temporal label. Fixed by having
+`getDayLabel` share the exact same `ordinary-feria` gate and
+`resolveActiveOctave` call as `resolveOfficeWinner`, so the two can never
+disagree about which identity governs a day.
 
 ### Benedictus antiphons for temporal (non-sanctoral) days — done
 
