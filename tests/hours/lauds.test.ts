@@ -140,10 +140,11 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(canticle?.kind === 'canticle' ? canticle.antiphon?.status?.la : undefined).toBe('verified');
   });
 
-  it("falls back to a missing Benedictus antiphon for christmas-octave-sunday specifically -- every possible date for it collides with a specific named octave-day feast in the real calendar, so there's no clean generic content to source", () => {
+  it('resolves a real Benedictus antiphon for christmas-octave-sunday too, pulled from the reference engine\'s own dedicated Tempora/Nat1-0 proper rather than any individual octave-day saint\'s page', () => {
     const ordo = resolveOrdo('lauds', '2026-12-30');
     const canticle = ordo.parts.find((p) => p.kind === 'canticle' && p.canticleId === 'benedictus');
-    expect(canticle?.kind === 'canticle' ? canticle.antiphon?.status?.la : undefined).toBeUndefined();
+    expect(canticle?.kind === 'canticle' ? canticle.antiphon?.text.la : undefined).toContain('Dum médium siléntium');
+    expect(canticle?.kind === 'canticle' ? canticle.antiphon?.status?.la : undefined).toBe('verified');
   });
 
   it("resolves a real Benedictus antiphon on St. Lawrence's own day, from the saint's already-authored proper", () => {

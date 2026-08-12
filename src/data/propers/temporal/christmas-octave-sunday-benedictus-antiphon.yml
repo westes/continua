@@ -1,0 +1,20 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2029-12-30 -- the Sunday within the Octave of Christmas,
+# found via the reference engine's own dedicated Tempora/Nat1-0 proper
+# (its actual identity in the reference engine, distinct from any of the
+# individual octave-day saints' own pages, e.g. Nat02/Nat03/Nat04 for
+# Dec 26/27/28). This particular date was picked because it's the one
+# clean case in range where the Sunday actually wins outright with no
+# saint commemorated at all ("Dominica Infra Octavam Nativitatis ~
+# Semiduplex Dominica minor", no Commemoratio line) -- on most years the
+# Sunday instead falls on one of the Duplex-II-classis octave-day feasts
+# (St. Stephen, St. John, Holy Innocents) and is itself only commemorated,
+# which is what earlier searches this session kept running into and
+# concluded (wrongly) meant there was no clean date at all.
+id: christmas-octave-sunday-benedictus-antiphon
+text:
+  la: "Dum médium siléntium * tenérent ómnia, et nox in suo cursu médium iter perágeret, omnípotens Sermo tuus, Dómine, a regálibus sédibus venit, allelúja."
+  en: "While all things were in quiet silence * and that night was in the midst of her swift course, thine Almighty Word, O Lord, leapt down out of thy Royal Throne."
+status:
+  la: verified
+  en: verified

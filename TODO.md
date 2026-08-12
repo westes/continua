@@ -44,15 +44,28 @@ hymn). Worth fixing even before tackling the other 32.
 
 ### Benedictus antiphons for temporal (non-sanctoral) days — done
 
-`<id>-benedictus-antiphon.yml` in `data/propers/temporal/` — all 53
+`<id>-benedictus-antiphon.yml` in `data/propers/temporal/` — all 54
 temporal ids now have one (`marian-saturday`/`christ-the-king` from
-earlier, plus the 51 numbered Sundays/seasons done in one pass), except
-**`christmas-octave-sunday`**, left deliberately unauthored: every
-possible date this id can resolve to in the real calendar collides with
-a specific named octave-day feast (St. John's own octave on Jan 3, e.g.)
-— there's no date where the live engine shows generic "Sunday within the
-Christmas Octave" content rather than that day's own specific saint, so
-there's nothing honest to source.
+earlier, the 51 numbered Sundays/seasons done in one pass, plus
+`christmas-octave-sunday` itself, corrected below).
+
+**`christmas-octave-sunday` correction**: originally left unauthored
+here, on the theory that every date this id can resolve to collides with
+a specific octave-day saint. Wrong — the reference engine has its own
+dedicated proper for this Sunday specifically, `Tempora/Nat1-0`
+(`web/www/horas/Latin/Tempora/Nat1-0.txt` in the reference repo, and its
+Monastic counterpart under `TemporaM/`), distinct from the individual
+per-weekday octave pages (`Nat02`..`Nat09` = the ferias, keyed by day
+offset from Christmas). Most years the Sunday does lose outright to a
+Duplex-II-classis octave saint (St. Stephen/St. John/Holy Innocents,
+whichever Dec 26–28 lands on) and only gets a bare commemoration — that's
+what the earlier searches kept finding — but 2029-12-30 is a clean year
+where the Sunday itself wins outright (`Dominica Infra Octavam
+Nativitatis ~ Semiduplex Dominica minor`, no commemoration line at all),
+so that's the date the content was pulled from. Benedictus antiphon:
+"Dum médium siléntium" / "While all things were in quiet silence" — note
+the source's own English translation genuinely omits the closing
+"alleluia" that the Latin has; transcribed as-is, not smoothed over.
 
 Method: rather than hunting for "clean years" one at a time, wrote a
 script that iterates every day of a test year through this app's own
