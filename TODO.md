@@ -163,7 +163,25 @@ saint has the same kind of mismatch.
   authored fresh (All Saints, Clement I, Catherine of Alexandria,
   Silvester Abbot). Martin of Tours already matched the live query as
   found, no change needed.
-- **December (10 saints): not started.**
+- **December (10 total): done, 9 authored/corrected, 1 flagged.** 2
+  corrected (Lucy), 6 authored fresh (Nicholas, Immaculate Conception
+  [minor English fix -- the source's own translation said "her Birth"
+  for a Conception antiphon, an obvious copy-paste leftover from the
+  Nativity-of-the-BVM formula this reuses; corrected, marked draft],
+  Damasus, Thomas of Canterbury). Thomas Apostle, Stephen Protomartyr,
+  John Apostle, and Holy Innocents already matched the live query as
+  found, no change needed. St. Bibiana left `missing`: Simplex rank, and
+  Dec 2 falls within Advent in every tested year 2026-2029 -- same
+  structural block as St. Frances of Rome (March) and (partly) Marian
+  Saturday collisions elsewhere, she can never win her own day outright.
+
+**All 109 sanctoral entries with a `propers` id: done.** 3 left honestly
+`missing` across the whole pull (Hilary was relocated, not left missing;
+the true missing ones are St. Frances of Rome, St. Bibiana, and Ss.
+Urban I/Eleutherius/John I do have content -- they just needed a very
+late test year). Every pre-existing antiphon file that predated this
+pass has now been checked against a live Monastic query; most needed
+correction (confirmed Roman-rite sourced), a handful already matched.
 - **~52 temporal entries: not started.**
 - **94 `propers: null` saints: not started** — need a collect authored (a
   bigger, separate task) before an antiphon id even has anywhere to attach.

@@ -1,9 +1,14 @@
-# Verified against Divinum Officium (Latin/English Sancti/12-13.txt's own
-# [Ant 1] — the Lauds-hour antiphon, not Terce's.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, St. Lucy's own day (2027-12-13 -- 2026's own Dec 13 is
+# Advent III Sunday). The Benedictus antiphon. Corrects the previous
+# version of this file, which had been sourced from the Roman/secular
+# rite's Sancti/12-13.txt's own [Ant 1] instead: real but different text
+# from what Monastic 1617 actually renders at Lauds, same mistake as
+# St. Lawrence's earlier fix.
 id: st-lucy-antiphon
 text:
-  la: "In tua patiéntia * possedísti ánimam tuam, Lúcia, sponsa Christi: odísti quæ in mundo sunt, et coruscas cum Angelis: sánguine proprio inimícum vicisti."
-  en: "In patience * hast thou possessed thy soul, Lucy, Bride of Christ thou hast hated the things that are in the world, and art glorified among the Angels; thou hast shed thine own blood, and conquered the Adversary."
+  la: "Colúmna es immóbilis, Lúcia, sponsa Christi: quia omnis plebs te exspéctat, ut accípias corónam vitæ, allelúja."
+  en: "Thou art become as a pillar that cannot be shaken, Lucy, O Bride of Christ: all the people wait for thee, until thou receive the crown of life, alleluia."
 status:
   la: verified
   en: verified
