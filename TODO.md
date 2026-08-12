@@ -139,7 +139,12 @@ saint has the same kind of mismatch.
   [reworded English, same register fix as Matthias], Anthony of Padua,
   Basil the Great, Ss. Vitus/Modestus/Crescentia, Ss. Mark and Marcellian,
   Ss. Gervase and Protase, Paulinus of Nola, William Abbot, Leo II).
-- **July-December (50 saints): not started.**
+- **July (9 total): done, all 9.** 1 corrected (Mary Magdalene), 8 authored
+  fresh (the Seven Brothers/Rufina/Secunda, Symphorosa and Her Seven Sons,
+  Margaret of Antioch, Apollinaris, James the Greater [reworded English,
+  same fix as Matthias/Barnabas], Anne, Nazarius/Celsus/Victor I/
+  Innocent I, Abdon and Sennen).
+- **August-December (41 saints): not started.**
 - **~52 temporal entries: not started.**
 - **94 `propers: null` saints: not started** — need a collect authored (a
   bigger, separate task) before an antiphon id even has anywhere to attach.
