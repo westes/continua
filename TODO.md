@@ -251,7 +251,10 @@ real `draft` status went through it.
 - **Vespers** (`src/hours/vespers.ts` is still a stub). First/Second Vespers
   overlap (`DayWinner.vespersFrom`) already exists as a type but nothing
   populates it for Vespers itself yet (only Compline uses `resolveEveningDay`
-  so far).
+  so far). Also owes its own ferial Preces once built — real 1906/1910
+  practice has a distinct "Preces feriales Vespera" (see
+  `lauds-preces-feriales.yml`'s header for the Lauds one, which now
+  exists) with mostly-overlapping but not identical content.
 - **Matins** (`src/hours/matins.ts` is still a stub) — needs its own
   resolution path (reading-candidate pool, nocturn structure), not the
   static parts-array pattern the other hours use.
@@ -285,6 +288,12 @@ real `draft` status went through it.
   replaces the whole suffrage set with a single alleluia-form "Suffragium
   Paschale" during Eastertide rather than omitting or showing the
   ordinary set) — flagged, not built.
+- `lauds-preces` (2026-08): real Tridentine 1906/1910 practice restricts
+  the fuller ferial Preces to Advent/Lent/Ember days plus Vigils, not
+  every ferial day — widened to every ferial-or-vigil day here by
+  explicit choice, mirroring Prime's own identical earlier choice (see
+  `data/hours/prime.yml`'s header). Also doesn't model Paschaltide's own
+  substitution here either, same gap as the suffrages above.
 - `data/calendar/temporal-categories.yml`'s season→category reconstruction
   is from general knowledge of the pre-1955 tradition, not independently
   verified against a primary source for every entry (flagged inline where

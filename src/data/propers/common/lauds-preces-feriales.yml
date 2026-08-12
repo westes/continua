@@ -1,0 +1,126 @@
+# Verified against Divinum Officium ("Tridentine - 1906", i.e. `version=
+# Tridentine 1910`), Lauds live query, clean Advent feria 2026-12-17.
+# Monastic 1617 has no ferial Preces at Lauds at all -- sourced from this
+# different track per direct instruction, same as lauds-suffrage-
+# joseph.yml. Replaces `lauds-short-litany` (the short Sunday/feast form)
+# on a ferial or vigil day -- see hours/types.ts's 'lauds-preces' doc
+# comment for the exact day-kind predicate and how it differs from the
+# real 1906/1910 rubric (which restricts this further, to Advent/Lent/
+# Ember days specifically) by direct, explicit choice.
+#
+# The Pope/Bishop versicle pair and the benefactors' versicle, both
+# present in the underlying template (Psalterium/Special/Preces.txt), are
+# both actually omitted in the live Tridentine 1910 render for this date
+# -- transcribed as rendered, not reconstructed from the template's own
+# conditional markup. The King/nation versicle pair, by contrast, *is*
+# rendered live despite the template's own rubric note suggesting
+# otherwise -- same live-over-template discipline.
+id: lauds-preces-feriales
+text:
+  la: |
+    Kýrie, eléison. Christe, eléison. Kýrie, eléison.
+    Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum quotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris:
+    V. Et ne nos indúcas in tentatiónem:
+    R. Sed líbera nos a malo.
+    V. Ego dixi: Dómine, miserére mei.
+    R. Sana ánimam meam quia peccávi tibi.
+    V. Convértere, Dómine, úsquequo?
+    R. Et deprecábilis esto super servos tuos.
+    V. Fiat misericórdia tua, Dómine, super nos.
+    R. Quemádmodum sperávimus in te.
+    V. Sacerdótes tui induántur justítiam.
+    R. Et sancti tui exsúltent.
+    V. Dómine, salvum fac regem.
+    R. Et exáudi nos in die, qua invocavérimus te.
+    V. Salvum fac pópulum tuum, Dómine, et bénedic hereditáti tuæ.
+    R. Et rege eos, et extólle illos usque in ætérnum.
+    V. Meménto Congregatiónis tuæ.
+    R. Quam possedísti ab inítio.
+    V. Fiat pax in virtúte tua.
+    R. Et abundántia in túrribus tuis.
+    V. Orémus pro fidélibus defúnctis.
+    R. Réquiem ætérnam dona eis, Dómine, et lux perpétua lúceat eis.
+    V. Requiéscant in pace.
+    R. Amen.
+    V. Pro frátribus nostris abséntibus.
+    R. Salvos fac servos tuos, Deus meus, sperántes in te.
+    V. Pro afflíctis et captívis.
+    R. Líbera eos, Deus Israël, ex ómnibus tribulatiónibus suis.
+    V. Mitte eis, Dómine, auxílium de sancto.
+    R. Et de Sion tuére eos.
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+
+    Psalmus 129.
+    De profúndis clamávi ad te, Dómine: Dómine, exáudi vocem meam.
+    Fiant aures tuæ intendéntes, in vocem deprecatiónis meæ.
+    Si iniquitátes observáveris, Dómine: Dómine, quis sustinébit?
+    Quia apud te propitiátio est: et propter legem tuam sustínui te, Dómine.
+    Sustínuit ánima mea in verbo ejus: sperávit ánima mea in Dómino.
+    A custódia matutína usque ad noctem: speret Israël in Dómino.
+    Quia apud Dóminum misericórdia: et copiósa apud eum redémptio.
+    Et ipse rédimet Israël, ex ómnibus iniquitátibus ejus.
+    V. Glória Patri, et Fílio, et Spirítui Sancto.
+    R. Sicut erat in princípio, et nunc, et semper, et in sǽcula sæculórum. Amen.
+
+    V. Dómine, Deus virtútum, convérte nos.
+    R. Et osténde fáciem tuam, et salvi érimus.
+    V. Exsúrge, Christe, ádjuva nos.
+    R. Et líbera nos propter nomen tuum.
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+  en: |
+    Lord have mercy upon us, Christ have mercy upon us, Lord have mercy upon us.
+    Our Father, who art in heaven, Hallowed be thy name. Thy kingdom come. Thy will be done on earth as it is in heaven. Give us this day our daily bread. And forgive us our trespasses, as we forgive those who trespass against us.
+    V. And lead us not into temptation:
+    R. But deliver us from evil.
+    V. I said: Lord, be merciful unto me:
+    R. Heal my soul, for I have sinned against thee.
+    V. Turn thee again, O Lord; how long will it be?
+    R. And be gracious unto thy servants.
+    V. Let thy mercy, O Lord, be upon us.
+    R. As we have hoped in thee.
+    V. Let thy priests be clothed with justice:
+    R. And may thy saints rejoice.
+    V. O Lord, save our leaders.
+    R. And mercifully hear us when we call upon thee.
+    V. O Lord, save thy people, and bless thine inheritance:
+    R. Govern them and lift them up for ever.
+    V. Remember thy congregation,
+    R. Which thou hast possessed from the beginning.
+    V. Let peace be in thy strength:
+    R. And abundance in thy towers.
+    V. Let us pray for the faithful departed.
+    R. Eternal rest grant unto them, O Lord, and let perpetual light shine upon them.
+    V. May they rest in peace.
+    R. Amen.
+    V. Let us pray for our absent brothers.
+    R. Save thy servants, O God, who put their trust in thee.
+    V. Let us pray for the afflicted and imprisoned.
+    R. Deliver them, God of Israel, from all their tribulations.
+    V. O Lord, send them help from thy sanctuary.
+    R. And defend them out of Sion.
+    V. O Lord, hear my prayer.
+    R. And let my cry come unto thee.
+
+    Psalm 129.
+    Out of the depths I have cried to thee, O Lord: Lord, hear my voice.
+    Let thy ears be attentive to the voice of my supplication.
+    If thou, O Lord, wilt mark iniquities: Lord, who shall stand it.
+    For with thee there is merciful forgiveness: and by reason of thy law, I have waited for thee, O Lord.
+    My soul hath relied on his word: my soul hath hoped in the Lord.
+    From the morning watch even until night, let Israel hope in the Lord.
+    Because with the Lord there is mercy: and with him plentiful redemption.
+    And he shall redeem Israel from all his iniquities.
+    V. Glory be to the Father, and to the Son, and to the Holy Ghost.
+    R. As it was in the beginning, is now, and ever shall be, world without end. Amen.
+
+    V. Turn us again, O Lord, God of Hosts.
+    R. Show us thy face, and we shall be whole.
+    V. Arise, O Christ, and help us.
+    R. And redeem us for thy name's sake.
+    V. O Lord, hear my prayer.
+    R. And let my cry come unto thee.
+status:
+  la: verified
+  en: verified

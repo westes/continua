@@ -118,6 +118,20 @@ export type HourPart =
   // feast) — an honest simplification, see hours/lauds.ts for the caveat
   // on what real practice also suppresses them for that isn't modeled.
   | { kind: 'suffrages'; omitOnDouble?: true }
+  // Lauds only. The Tridentine 1906/1910 "Preces feriales" litany (Kyrie,
+  // Pater noster, a long chain of versicles, Psalm 129, closing versicles)
+  // -- content Monastic 1617 doesn't have at Lauds at all, sourced from a
+  // different track per direct instruction, same as lauds-suffrage-
+  // joseph.yml. Real 1906/1910 practice restricts this further still
+  // (Advent/Lent/Ember days, or an explicit day's own rubric flag) --
+  // deliberately widened here to *every* ferial or vigil day, mirroring
+  // the same explicit choice already made for Prime's own ferial Preces
+  // (see data/hours/prime.yml's header). Replaces `lauds-short-litany` on
+  // those days rather than stacking with it -- see hours/lauds.ts's
+  // 'lauds-preces' case for the exact ferial-or-vigil predicate, which is
+  // deliberately not the shared `isSundayOrFeast` (a Vigil counts as a
+  // "feast" there; here it needs to count as ferial-like instead).
+  | { kind: 'lauds-preces' }
   // Lauds/Vespers. The day's own collect *and* one more per commemoration
   // (calendar/types.ts's LiturgicalDay.commemorations) — see hours/
   // resolve-common.ts's getDayCollects. Distinct from the singular

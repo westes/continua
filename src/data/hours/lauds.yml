@@ -3,18 +3,22 @@
 # resolves, and data/hours/lauds-antiphons.yml / lauds-canticles/*.yml /
 # propers/common/lauds-*.yml for the underlying weekday content.
 #
-# The suffrages (Holy Cross, BVM, Ss. Peter & Paul, Peace) are gated by
-# omitOnDouble — see hours/types.ts's 'suffrages' doc comment for the
-# caveat on what else real practice also suppresses them for that isn't
-# modeled yet.
+# The suffrages (Holy Cross, BVM, Joseph, Ss. Peter & Paul, Peace) are
+# gated by omitOnDouble — see hours/types.ts's 'suffrages' doc comment for
+# the fuller list of what else omits them (Advent/Christmastide/
+# Passiontide, any active octave).
+#
+# `lauds-preces` picks between the short Sunday/feast litany
+# (lauds-short-litany, Benedict's own Kyrie+Pater lead-in) and the fuller
+# Tridentine 1906/1910 ferial Preces on a ferial or vigil day — see
+# hours/types.ts's 'lauds-preces' doc comment.
 id: lauds
 parts:
   - kind: opening-versicle
   - kind: lauds-psalmody
   - kind: lauds-office
   - kind: benedictus
-  - kind: preces
-    textRef: { source: common, id: lauds-short-litany }
+  - kind: lauds-preces
   - kind: day-collects
   - kind: suffrages
     omitOnDouble: true

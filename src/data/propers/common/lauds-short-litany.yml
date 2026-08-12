@@ -5,6 +5,10 @@
 # hours/resolve-common.ts's getDayCollects for the collect(s) themselves,
 # not stored here). Distinct from the second, fully silent Pater Noster
 # near the very end of Lauds — see lauds-closing-versicle.yml.
+#
+# Used on Sundays and feasts specifically — see hours/lauds.ts's
+# 'lauds-preces' case, which swaps in the fuller lauds-preces-feriales.yml
+# instead on a ferial or vigil day.
 id: lauds-short-litany
 text:
   la: |

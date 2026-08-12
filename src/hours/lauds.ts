@@ -301,6 +301,22 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       const id = getMarianAntiphonId(day);
       return [{ kind: 'preces', text: resolveCommon(id), label: getMarianAntiphonLabel(id) }];
     }
+    case 'lauds-preces': {
+      // Deliberately not `isSundayOrFeast` -- that treats any sanctoral
+      // winner, Vigils included, as a "feast." Here a Vigil needs to land
+      // on the ferial side instead (per direct instruction), so it's
+      // checked for explicitly: a Vigil-ranked sanctoral winner, or a
+      // bare temporal winner that isn't Sunday and isn't a named
+      // temporal identity like Marian Saturday or Christ the King (which
+      // aren't Sunday or a sanctoral winner either, but still aren't a
+      // bare ferial office -- same reasoning as the Cross suffrage's own
+      // gate just above).
+      const isVigil = day.winner.kind === 'sanctoral' && day.winner.rank === 'vigil';
+      const isBareFeria = day.winner.kind === 'temporal' && !getTemporalFeastRecord(day.winner.id);
+      const isFerialOrVigil = day.weekday !== 'sunday' && (isVigil || isBareFeria);
+      const id = isFerialOrVigil ? 'lauds-preces-feriales' : 'lauds-short-litany';
+      return [{ kind: 'preces', text: resolveCommon(id) }];
+    }
     // Not used by Lauds.
     case 'hymn':
     case 'lesson':

@@ -153,13 +153,36 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(canticle?.kind === 'canticle' ? canticle.antiphon?.text.la : undefined).toContain('In cratícula');
   });
 
-  it('includes the short litany (Kyrie + Our Father) right after the Benedictus, before the day collect', () => {
+  it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
     const benedictusIndex = ordo.parts.findIndex((p) => p.kind === 'canticle' && p.canticleId === 'benedictus');
     const collectIndex = ordo.parts.findIndex((p) => p.kind === 'prayer');
     expect(litanyIndex).toBeGreaterThan(benedictusIndex);
     expect(collectIndex).toBeGreaterThan(litanyIndex);
+  });
+
+  it('uses the fuller Tridentine 1906/1910 ferial Preces (with Psalm 129) on a plain ferial day, not the short Sunday/feast litany', () => {
+    const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
+    const preces = ordo.parts.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
+    expect(preces?.kind === 'preces' ? preces.text.text.la : undefined).toContain('De profúndis clamávi');
+    expect(preces?.kind === 'preces' ? preces.text.text.en : undefined).toContain('Out of the depths');
+  });
+
+  it('uses the short Sunday/feast litany, without Psalm 129, on a Sunday and on a real saint\'s own winning day', () => {
+    const sunday = resolveOrdo('lauds', '2026-06-28'); // plain temporal Sunday
+    const sundayPreces = sunday.parts.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
+    expect(sundayPreces?.kind === 'preces' ? sundayPreces.text.text.la : undefined).not.toContain('Psalmus 129');
+
+    const saintsDay = resolveOrdo('lauds', '2026-08-10'); // St. Lawrence, Duplex II. classis
+    const saintsDayPreces = saintsDay.parts.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
+    expect(saintsDayPreces?.kind === 'preces' ? saintsDayPreces.text.text.la : undefined).not.toContain('Psalmus 129');
+  });
+
+  it('still uses the fuller ferial Preces on a Vigil, even though a Vigil is a sanctoral winner (unlike isSundayOrFeast elsewhere)', () => {
+    const ordo = resolveOrdo('lauds', '2028-08-09'); // Vigil of St. Lawrence wins outright this year (not a Sunday)
+    const preces = ordo.parts.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
+    expect(preces?.kind === 'preces' ? preces.text.text.la : undefined).toContain('Psalmus 129');
   });
 
   it('resolves just the winners own collect on a plain day with nothing commemorated', () => {
