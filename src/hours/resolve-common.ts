@@ -20,7 +20,7 @@ export function resolveCommon(id: string): ResolvedText {
 // override-eligible — see hours/lauds.ts's getPsalmodyOverrideFor, which
 // shares this set (imported from here, not duplicated) since it's the
 // same "does this temporal identity carry its own real office" question.
-export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set(['marian-saturday', 'christ-the-king']);
+export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set(['marian-saturday', 'christ-the-king', 'christmas-octave-sunday']);
 
 /**
  * Which identity's own propers actually supply the office's content
@@ -100,11 +100,22 @@ export function isSundayOrFeastOffice(day: LiturgicalDay): boolean {
  * as each remaining duplex-majus+ saint gets a Lauds override authored,
  * the same id is what Prime/Terce/Sext/None would look for too, so it's
  * one shared backlog (see TODO.md), not per-hour lists that can drift.
+ * Also honors ALWAYS_OVERRIDE_TEMPORAL_IDS the same way
+ * getPsalmodyOverrideFor does — a named temporal feast (`christ-the-
+ * king`, `christmas-octave-sunday`) is eligible regardless of rank, since
+ * it has no FeastClass to compare against duplex-majus in the first
+ * place. Missing until 2026-08: this function only checked the sanctoral
+ * branch, so a temporal id in that set got a Lauds psalmody override but
+ * silently no Prime/Terce/Sext/None one, however much was authored for
+ * it — a real gap, not by design.
  * Returns the id to look up (`${hourId}-antiphon-${id}` etc.), or
  * `undefined` when nothing eligible is happening today.
  */
 export function getMinorHourOverrideId(day: LiturgicalDay): string | undefined {
   const winner = resolveOfficeWinner(day);
+  if (winner.kind === 'temporal' && ALWAYS_OVERRIDE_TEMPORAL_IDS.has(winner.id)) {
+    return winner.id;
+  }
   if (winner.kind === 'sanctoral' && isAtLeast(winner.rank, 'duplex-majus')) {
     return winner.id;
   }

@@ -1,0 +1,30 @@
+# Verified against Divinum Officium ("Divino Afflatu 1954" -- not Monastic
+# Tridentinum 1617, which has no real "Dominica Infra Octavam Nativitatis"
+# identity of its own under its own calendar rules; see christmas-octave-
+# sunday-benedictus-antiphon.yml's header and TODO.md for the Dec 26-30
+# Sunday rule this is a deliberate remix around), Lauds live query,
+# 2026-12-27 (the actual Sunday that year, St. John's own day commemorated
+# in return).
+id: christmas-octave-sunday
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Quem vidístis, * pastóres? dícite, annuntiáte nobis, in terris quis appáruit? Natum vídimus, et choros Angelórum collaudántes Dóminum, allelúia, allelúia."
+      en: "O ye shepherds, speak, * and tell us what ye have seen; who is appeared in the earth? We saw the newborn Child, and angels singing praise to the Lord, alleluia, alleluia."
+  - psalms: [99]
+    antiphon:
+      la: "Génuit puérpera * Regem, cui nomen ætérnum, et gáudia matris habens cum virginitátis honóre: nec primam símilem visa est, nec habére sequéntem, allelúia."
+      en: "The Mother brought forth the King, * Whose name is called The Eternal; the joy of a Mother was hers, remaining a Virgin unsullied; neither before nor henceforth hath there been or shall be such another, alleluia."
+  - psalms: [62]
+    antiphon:
+      la: "Angelus ad pastóres * ait: Annúntio vobis gáudium magnum: quia natus est vobis hódie Salvátor mundi, allelúia."
+      en: "The Angel said unto the shepherds * I bring you good tidings of great joy; for unto you is born this day a Saviour of the world, alleluia."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Facta est cum Angelo * multitúdo cæléstis exércitus laudántium Deum, et dicéntium: Glória in excélsis Deo, et in terra pax homínibus bonæ voluntátis, allelúia."
+    en: "There was with the Angel a multitude of the heavenly host, * praising God, and saying Glory to God in the highest, and on earth peace, to men of good will, alleluia."
+laudate:
+  antiphon:
+    la: "Párvulus fílius * hódie natus est nobis: et vocábitur Deus, Fortis, allelúia, allelúia."
+    en: "Unto us this day a little Child is born, * and His name shall be called the Mighty God, alleluia, alleluia."

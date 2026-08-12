@@ -161,6 +161,62 @@ future Martyr-common saint don't need one (Confessors never get a
 Paschaltide variant at all; a Martyr one would need porting `C2p`/`C3p`
 the same way, if and when a saint needing it is authored).
 
+### Christmas-Octave Sunday content — done (2026-08)
+
+Was: only the Benedictus antiphon existed for `christmas-octave-sunday`
+(`christmas-octave-sunday-benedictus-antiphon.yml`) — no collect (a
+separate, older file, `christmas-octave-sunday-collect.yml`, did already
+exist and was untouched here), no Lauds psalmody override or office
+bundle, no Prime/Terce/Sext/None content at all.
+
+Real code gap found and fixed along the way: `getMinorHourOverrideId`
+(`hours/resolve-common.ts`) only ever checked the *sanctoral* branch of
+`resolveOfficeWinner`'s result — a named temporal feast in
+`ALWAYS_OVERRIDE_TEMPORAL_IDS` (`marian-saturday`, `christ-the-king`) got
+a Lauds psalmody override via `getPsalmodyOverrideFor`'s own separate
+check of that set, but silently *never* a Prime/Terce/Sext/None one,
+however much content got authored for it — nothing had actually
+exercised that path until now. Fixed by mirroring `getPsalmodyOverrideFor`
+`hours/lauds.ts`'s own temporal-id branch.
+
+Content itself needed a different source than every other pull this
+session: Monastic Tridentinum 1617 has no real "Dominica Infra Octavam
+Nativitatis" identity of its own under its own calendar rules on most
+Dec 26-29 Sundays (verified live: 2026-12-27 renders as "S. Joannis
+Apostoli," not the Sunday, under `version=Monastic Tridentinum 1617` —
+only the collect happens to be old enough to have been pulled from a
+date, 2029-12-30, where 1617 *did* render it outright). Lauds psalmody,
+office bundle, and Prime/Terce/Sext/None content instead pulled live
+under `version=Divino Afflatu 1954` (2026-12-27), consistent with this
+app's own stated precedent of following D.A. for the calendar/precedence
+layer even while keeping Monastic 1617's shape for the hours themselves —
+this is one of the rare days where that split genuinely can't be
+maintained, since 1617 has nothing of its own to shape. `christmas-
+octave-sunday-collect.yml`'s existing 1617-sourced text was kept as-is
+(cross-checked identical against both the new D.A. query and the raw
+Monastic Tridentinum 1617 source file, `Tempora/Nat1-0.txt`'s own
+`[Oratio]`) rather than replaced.
+
+Files: `lauds-psalmody-overrides/christmas-octave-sunday.yml` (3 psalms +
+Canticle of the Three Young Men + Laudate, all distinct antiphons),
+`lauds-capitulum-/-versicle-/-hymn-christmas-octave-sunday.yml` ("A solis
+ortus cardine"). No `lauds-responsory-christmas-octave-sunday.yml`
+authored — genuinely absent from the live rendering (hymn leads straight
+into the versicle, no short responsory in between), not an oversight;
+left "missing" honestly rather than invented. Prime/Terce/Sext/None all
+four get a proper antiphon (a short "Allelúia, ..." set drawn from the
+day psalter, distinct per hour); Terce/Sext/None each get a proper
+chapter (Gal 4:1-2/4:4-5/4:7, matching the raw 1617 source's own
+`Nat1-0.txt` exactly) with its own versicle per the D.A. live rendering
+(not the 1617 source's own versicle, which reuses one versicle across
+all three hours — a cross-era mismatch flagged here, not silently
+papered over, since this whole day's content already mixes eras out of
+necessity).
+
+Not attempted: `Nat2-0` (Feast of the Holy Name of Jesus) isn't in this
+app's sanctoral/temporal calendar at all yet — a separate, bigger ask if
+wanted (see the original scoping discussion this session).
+
 ### Overlapping octaves — done (2026-08)
 
 Was: `resolveOfficeWinner`/`getDayLabel` picked whichever active octave
