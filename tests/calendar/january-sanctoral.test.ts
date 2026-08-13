@@ -20,7 +20,7 @@ describe('January sanctoral pull (first pass)', () => {
     expect(collect.text.en).toContain('Marcellus');
   });
 
-  it('a saint with no unique propers (Common of Saints only) still wins outright, honestly missing a collect', () => {
+  it('a saint with no unique propers (Common of Saints only) still wins outright, and resolves via the Common', () => {
     const day = resolveDay('2026-01-17'); // St. Anthony Abbot
     expect(day.winner).toEqual({
       kind: 'sanctoral',
@@ -29,7 +29,7 @@ describe('January sanctoral pull (first pass)', () => {
       rank: 'duplex',
     });
     const collect = getDayCollect(day);
-    expect(collect.status.en).toBe('missing');
+    expect(collect.status.en).toBe('verified');
   });
 
   it('resolves a real multi-saint day as a winner plus a commemoration, not a collision error', () => {

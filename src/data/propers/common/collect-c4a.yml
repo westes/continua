@@ -1,0 +1,20 @@
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C4a.txt ("Commune Doctoris Pontificis") and
+# its English counterpart, 2026-08. A Common-collect template — `{N}`
+# stands for the saint's own name, substituted by getDayCollect
+# (hours/resolve-common.ts) via SaintRecord.collectCommon/collectName.
+id: collect-c4a
+text:
+  la: |
+    Orémus.
+    Deus, qui pópulo tuo ætérnæ salútis beátum {N} minístrum tribuísti: præsta, quǽsumus; ut, quem Doctórem vitæ habúimus in terris, intercessórem habére mereámur in cælis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Let us pray.
+    O God, who didst give blessed {N} to be thy people's minister in eternal salvation; grant, we pray, that we who have him for teacher of life here on earth, may also deserve now that he is in heaven to have him for an advocate.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

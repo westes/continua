@@ -1,0 +1,22 @@
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C1v.txt ("Vigilia Apostolorum"), 2026-08. A
+# Common-collect template for an Apostle's Vigil — `{N}` stands for the
+# saint's own name, substituted by getDayCollect (hours/resolve-common.ts)
+# via SaintRecord.collectCommon/collectName. No English rendering exists
+# in the reference engine's data for this one — translated here,
+# status: draft.
+id: collect-c1v
+text:
+  la: |
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut beáti {N} Apóstoli tui, quam prævénimus, veneránda solémnitas, et devotiónem nobis áugeat et salútem.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Let us pray.
+    Grant, we beseech thee, almighty God, that the venerable solemnity of thy blessed Apostle {N}, whose vigil we anticipate, may both increase our devotion and further our salvation.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: draft

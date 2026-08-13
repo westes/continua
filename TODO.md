@@ -177,6 +177,101 @@ future Martyr-common saint don't need one (Confessors never get a
 Paschaltide variant at all; a Martyr one would need porting `C2p`/`C3p`
 the same way, if and when a saint needing it is authored).
 
+### 94 `propers: null` saints — collects authored (2026-08)
+
+**The reference engine's per-date `Sancti/`/`SanctiM/MM-DD.txt` files are
+era-merged, not era-specific — blind extraction from them is unreliable.**
+Live-querying (`version=Monastic Tridentinum 1617`) always resolved this
+correctly elsewhere in this project because the *engine itself* applies
+the right rubric filtering; reading a raw `Sancti/MM-DD.txt` file
+directly bypasses that filtering entirely. Those files accumulate
+centuries of saints assigned to the same calendar date across different
+eras, gated behind `(rubrica ...)`-tagged conditional blocks — reading
+the file's own untagged/default content silently returns whichever saint
+is *currently* primary there (often a post-1617, sometimes post-1888
+addition), not necessarily the one relevant to this app's target era.
+Confirmed the hard way: an initial blind pull returned St. Didacus's
+collect for All Saints of the Benedictine Order, St. Rose of Lima's for
+Ss. Felix and Adauctus, St. Josaphat's for St. Martin I, and 9 more
+wrong matches out of 13 "clean, unambiguous" test cases — all real
+saints, just centuries later than 1617, and none of them what this
+app's own calendar actually intends for that date.
+
+**The fix**: `web/www/Tabulae/Kalendaria/` has real, era-specific
+calendar *tables* (not per-date files) — `1570.txt` (Tridentine base)
+and `M1617.txt` (Monastic 1617's own diffs against it) — giving a
+direct, unambiguous answer for "which saint(s), what rank, commemorated
+with whom" on every date this app cares about, plus a `fileref` field
+(e.g. `01-15t`, `08-23o`, sometimes pointing at a wholly different
+MM-DD) identifying *exactly* which source file variant actually holds
+that entry's content — including cross-file (`ex Sancti/05-08`,
+`Commune/C1v:Oratio 2 loco`) and whole-file (`@Sancti/05-08` as the
+file's own first line, no `[Section]` around it) inheritance, all
+resolved by a purpose-built parser (`scratchpad/parse_kalendaria.py` +
+`extract_final.py`, not committed — see the P/T/S/N and Lauds batches'
+own parser scripts for the established one-off-tool convention).
+
+Cross-referencing all ~205 saints in `data/calendar/saints/*.yml`
+against this table (not just the 94) found the existing calendar data
+essentially sound — 204/205 confirmed correctly dated (only the
+deliberate `example-confessor` placeholder didn't match, as expected);
+the earlier wrong-saint problem was specific to *this* extraction
+method, not a systemic issue with the app's own calendar. No corrections
+to `sanctoral-calendar.yml` were needed.
+
+**Resolved St. Michael's own long-flagged uncertainty** (`st-michael.yml`
+used to carry a "FLAGGED" comment about Sep 29 showing nothing live
+across 6 tested years): the table confirms Sep 29 genuinely is his day
+under Monastic 1617, rank 3 — it just never won outright in any tested
+year. His own source file is a whole-file cross-reference to the
+Apparition of St. Michael's (`ex Sancti/05-08`), confirmed word-for-word
+identical live — `propers` now points directly at
+`apparition-of-st-michael`'s own id rather than duplicating content.
+
+**Two collect shapes, both now complete for all 94:**
+- **34 have a genuine proper collect** — Latin pulled directly from
+  source (`{id}-collect.yml` in `data/propers/common/`), English
+  translated and marked `status.en: draft` for the ~11 where no source
+  rendering exists at all (same convention as St. Scholastica's content
+  earlier this session), verified/reused where the source does have one.
+- **60 draw from a Common template** — a real architectural addition,
+  not a workaround: `SaintRecord.collectCommon`/`collectName`
+  (`calendar/feasts.ts`) plus a substitution step in `getDayCollect`
+  (`hours/resolve-common.ts`) fill a Common collect's literal `{N}`
+  placeholder(s) with the saint's own name(s), positionally — most
+  templates need one name, a few (two co-named saints sharing a
+  collect, e.g. Ss. Cornelius and Cyprian) need two. 21 distinct
+  Common-collect templates now exist (`collect-c*.yml`), named after the
+  reference source's own `C`-numbering (`C2`, `C2-1`, `C2a-1`, `C3b`,
+  etc.) rather than an invented semantic label, since no clean
+  after-the-fact explanation was recoverable for why the tradition
+  splits e.g. "Common of a Martyr Bishop" into five differently-worded
+  variants. Each saint's own `[Name]` section supplies its declined
+  form already in the exact grammatical case that saint's specific
+  template needs (confirmed empirically — Ambrose's own `[Name]` is
+  accusative, matching his template's own accusative `{N}` slot). One
+  real wrinkle: Ss. Popes among the Martyr-Bishop groups (Cletus &
+  Marcellinus, Soter & Caius, Anacletus, Anicetus) need the *second*,
+  `"(sed communi Summorum Pontificum)"`-tagged declension in their own
+  `[Name]` section, not the first — a real, source-documented
+  distinction (Popes get their own template variant), not a parsing
+  quirk to work around.
+
+One genuine judgment call, flagged rather than silently resolved: St.
+Martha's own Monastic-specific source file (`SanctiM/07-29.txt`)
+overrides her base Tridentine assignment (`collect-c6a`, one name) with
+`collect-c6b` (two names) instead — a plural "Several Virgins and
+Martyrs" template that doesn't fit a single saint. Kept the singular
+`collect-c6a` assignment as the more sensible reading (see her own
+file's comment), treating the Monastic override as likely an
+inconsistency in that one file rather than a real joint-commemoration
+convention this app doesn't otherwise model.
+
+Verified end-to-end: a runtime smoke test resolving `getDayCollect` for
+all 94 ids via a synthetic sanctoral-winner day, confirming a real
+(non-`missing`, no leftover `{N}`) collect for every one — not just that
+the YAML files parse.
+
 ### Christmas-Octave Sunday content — done (2026-08)
 
 Was: only the Benedictus antiphon existed for `christmas-octave-sunday`
@@ -511,8 +606,10 @@ pass has now been checked against a live Monastic query; most needed
 correction (confirmed Roman-rite sourced), a handful already matched.
 - **All ~52 temporal entries: done, including `christmas-octave-sunday`**
   (see the section above for method and its own correction).
-- **94 `propers: null` saints: not started** — need a collect authored (a
-  bigger, separate task) before an antiphon id even has anywhere to attach.
+- **94 `propers: null` saints: done (2026-08)** — see the dedicated section
+  below for the collect-authoring pass and the era-specific-calendar
+  discovery it took to do reliably. Antiphons for these 94 (the natural
+  next step this unblocks) not yet started.
 
 ### Bug found and fixed while pulling christmas-octave-sunday's antiphon
 

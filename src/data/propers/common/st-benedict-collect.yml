@@ -1,0 +1,20 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08.
+# Pulled from the reference engine's own era-specific calendar table
+# (web/www/Tabulae/Kalendaria/1570.txt + M1617.txt, own title
+# "S. Benedicti Abbatis") and its own source file, not the merged per-date
+# files those tables' fileref points at directly -- see TODO.md.
+id: st-benedict-collect
+text:
+  la: |
+    Orémus.
+    Omnípotens sempitérne Deus, qui hodiérna die carnis edúctum ergástulo sanctíssimum Confessórem tuum Benedíctum sublevásti ad cælum: † concéde, quǽsumus, hæc festa tuis fámulis celebrántibus cunctórum véniam delictórum; * ut, qui exsultántibus ánimis ejus claritáti congáudent, ipso apud te interveniénte, consociéntur et méritis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Let us pray.
+    Almighty and everlasting God, who on this day didst raise up to heaven thy most holy Confessor Benedict, delivered from the prison-house of the flesh: grant, we beseech thee, unto thy servants keeping this feast, forgiveness of all their sins; that they who with exultant souls rejoice in his glory may, through his intercession with thee, be joined also to his merits.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: draft

@@ -48,9 +48,9 @@ describe('May sanctoral pull (first pass)', () => {
     ]);
   });
 
-  it('a saint with no dedicated Sancti file at all still resolves cleanly, honestly missing a collect', () => {
+  it('a saint with no proper collect of his own resolves via the Common of an Abbot instead', () => {
     const day = resolveDay('2038-05-22'); // St. Romanus, Abbot
     expect(day.winner).toEqual({ kind: 'sanctoral', id: 'st-romanus-abbot', name: 'St. Romanus, Abbot', rank: 'duplex' });
-    expect(getDayCollect(day).status.en).toBe('missing');
+    expect(getDayCollect(day).status.en).toBe('verified');
   });
 });

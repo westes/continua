@@ -1,0 +1,20 @@
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C6-1.txt and its English counterpart,
+# 2026-08. A Common-collect template — `{N}` stands for the saint's own
+# name, substituted by getDayCollect (hours/resolve-common.ts) via
+# SaintRecord.collectCommon/collectName.
+id: collect-c6-1
+text:
+  la: |
+    Orémus.
+    Indulgéntiam nobis, quǽsumus, Dómine, beáta {N} Virgo et Martyr implóret: quæ tibi grata semper éxstitit, et mérito castitátis, et tuæ professióne virtútis.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Let us pray.
+    We beseech thee, O Lord, that thy blessed Virgin and Martyr {N} may entreat thy pardon for us: she who was ever pleasing unto thee, both by the merit of her chastity and by her profession of thy power.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

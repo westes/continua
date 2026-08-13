@@ -2,9 +2,20 @@
 # check (2028-07-29, no Sunday collision) -- winner outright, Semiduplex,
 # over Ss. Felix/Simplicius/Faustinus/Beatrix (see ss-felix-simplicius-
 # faustinus-and-beatrix.yml). No unique Oratio/Antiphon in the source --
-# Common of a Holy Woman only.
+# Common of a Holy Woman only. Her own Monastic-specific source file
+# (SanctiM/07-29.txt) overrides the base Tridentine file's own "vide C6a"
+# with "vide C6b" instead -- a plural ("Several Virgins and Martyrs")
+# template needing two names, which doesn't fit a single saint. Kept the
+# base C6a (singular) assignment here as the more sensible reading,
+# treating the Monastic file's own override as likely an inconsistency
+# rather than a real joint-commemoration convention -- flagged, not
+# fully explained.
 id: st-martha
 name: "St. Martha, Virgin"
 rank: semiduplex
 common: common-of-a-holy-woman
 propers: null
+collectCommon: collect-c6a
+collectName:
+  la: ["Marthæ"]
+  en: ["Martha"]

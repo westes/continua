@@ -1,17 +1,23 @@
-# Verified against Divinum Officium (web/www/horas/Latin/Sancti/09-29.txt,
-# untagged/default [Rank] block — that file's own "(sed rubrica tridentina)"
-# alternate gives Duplex II classis instead; the plain default is used here
-# for consistency with how every other saint file in this set was read).
-# FLAGGED (September pull): a live kalendar query against this pull's
-# actual target track ("Monastic Tridentinum 1617") shows nothing at all
-# on Sep 29 across 6 different years, and this file's own [Rank] block has
-# no untagged/default entry for Sep 29 specifically -- only rubric-tagged
-# alternates. The already-verified May 8 Apparition of St. Michael (see
-# apparition-of-st-michael.yml) may be this tradition's only real
-# Michaelmas. Kept mapped to Sep 29 anyway as a deliberate, informed
-# simplification (explicit user decision, 2026-08), not an oversight.
+# RESOLVED (2026-08): the earlier "flagged" uncertainty below is now
+# settled by the reference engine's own era-specific calendar table
+# (web/www/Tabulae/Kalendaria/1570.txt, unchanged by M1617.txt's own
+# diffs) — Sep 29 genuinely is St. Michael's day under Monastic 1617
+# (rank 3, "In dedicatione S. Michaelis Archangelis"), it just never won
+# outright against a stronger day in any of the 6 years spot-checked
+# live. Its own source file (Sancti/09-29.txt) is a whole-file
+# cross-reference to Sancti/05-08.txt — the Apparition of St. Michael's
+# own file — confirmed live: the two saints' collects are word-for-word
+# identical. `propers` points at Apparition's own id directly rather than
+# duplicating the content, matching that cross-reference exactly.
+#
+# Prior comment, kept for the record: a live kalendar query against
+# "Monastic Tridentinum 1617" showed nothing at all on Sep 29 across 6
+# different years, and Sancti/09-29.txt's own [Rank] block has no
+# untagged/default entry for Sep 29 specifically — only rubric-tagged
+# alternates. That's just this feast's real rank (3, fairly low) losing
+# every tested year, not an absence from the calendar.
 id: st-michael
 name: "St. Michael the Archangel"
 rank: duplex-1-classis
 common: common-of-an-angel
-propers: null
+propers: "apparition-of-st-michael"

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { resolveDay } from '../../src/calendar';
 import { getDayCollect, splitNamedAntiphon } from '../../src/hours/resolve-common';
+import type { LiturgicalDay } from '../../src/calendar/types';
 
 describe('getDayCollect', () => {
   it('resolves a real, verified collect for an ordinary Sunday', () => {
@@ -17,9 +18,20 @@ describe('getDayCollect', () => {
     expect(collect.status.la).toBe('verified');
   });
 
-  it('resolves as honestly missing for a saint with no authored propers yet', () => {
-    const day = resolveDay('2026-08-07'); // St. Donatus wins outright, propers: null
-    expect(day.winner.kind).toBe('sanctoral');
+  it('resolves as honestly missing for a saint with neither a proper collect nor a Common fallback authored', () => {
+    // Every real saint in data/calendar/saints/*.yml now has either a
+    // proper collect or a collectCommon fallback (see TODO.md's
+    // Kalendaria-table pull, 2026-08) -- so this exercises the "missing"
+    // path with a synthetic winner rather than hunting for a real
+    // example that no longer exists.
+    const day: LiturgicalDay = {
+      date: '2026-01-01',
+      weekday: 'thursday',
+      season: 'trinitytide',
+      temporalCategory: 'ordinary-feria',
+      winner: { kind: 'sanctoral', id: 'example-confessor', name: 'Example Confessor (placeholder)', rank: 'simplex' },
+      commemorations: [],
+    };
     const collect = getDayCollect(day);
     expect(collect.status.la).toBe('missing');
     expect(collect.status.en).toBe('missing');

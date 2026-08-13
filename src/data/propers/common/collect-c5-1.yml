@@ -1,0 +1,25 @@
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C5-1.txt, 2026-08. A Common-collect
+# template — `{N}` stands for the saint's own name, substituted by
+# getDayCollect (hours/resolve-common.ts) via
+# SaintRecord.collectCommon/collectName. The source's own English
+# ("Be mindful, O Lord, of our humble prayers in this commemoration of
+# Your Saints...") doesn't match this Latin closely (wrong number --
+# plural "Saints"/"those" for a singular-Confessor prayer -- looks like a
+# near-match from a related but different Latin original in that
+# database entry), so translated fresh here instead; status: draft.
+id: collect-c5-1
+text:
+  la: |
+    Orémus.
+    Adésto, Dómine, supplicatiónibus nostris, quas in beáti {N} Confessóris tui sollemnitáte deférimus: ut, qui nostræ justítiæ fidúciam non habémus, ejus, qui tibi plácuit, précibus adjuvémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Let us pray.
+    Be near, O Lord, to our humble prayers, which we offer in the solemnity of thy blessed Confessor {N}: that we, who have no confidence in our own righteousness, may be helped by the prayers of him who was pleasing unto thee.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: draft

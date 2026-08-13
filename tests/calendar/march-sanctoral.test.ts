@@ -28,7 +28,7 @@ describe('March sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it("St. Benedict wins outright at Duplex I. classis despite having no unique propers at all", () => {
+  it("St. Benedict wins outright at Duplex I. classis, with a proper collect (English self-translated, no source rendering exists)", () => {
     const day = resolveDay('2033-03-21');
     expect(day.winner).toEqual({
       kind: 'sanctoral',
@@ -36,6 +36,7 @@ describe('March sanctoral pull (first pass)', () => {
       name: 'St. Benedict, Abbot (Transitus)',
       rank: 'duplex-1-classis',
     });
-    expect(getDayCollect(day).status.en).toBe('missing');
+    expect(getDayCollect(day).status.la).toBe('verified');
+    expect(getDayCollect(day).status.en).toBe('draft');
   });
 });

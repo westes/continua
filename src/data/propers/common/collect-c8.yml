@@ -1,0 +1,22 @@
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C8.txt ("In Anniversario Dedicationis
+# Ecclesiae") and its English counterpart, 2026-08. Not a name-templated
+# Common — a Dedication-of-a-Church collect has no "{N}" to substitute,
+# so this file is used directly via a saint's own `propers`, not through
+# the collectCommon/collectName mechanism the other collect-c*.yml files
+# use.
+id: collect-c8
+text:
+  la: |
+    Orémus.
+    Deus, qui nobis per síngulos annos hujus sancti templi tui consecratiónis réparas diem, et sacris semper mystériis repræséntas incólumes: exáudi preces pópuli tui, et præsta; ut quisquis hoc templum benefíciis petitúrus ingréditur, cuncta se impetrásse lætétur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Let us pray.
+    O God, who dost bring round unto us again, year by year, the day of the consecration of this thy holy temple, and dost bring us back again in safety to thine holy mysteries, graciously hear the prayers of thy people, and grant that whosoever enters this temple to ask for blessings may rejoice to obtain them all.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

@@ -33,6 +33,34 @@ export interface SaintRecord {
    * minor-hour content (either fully proper, or not yet authored).
    */
   minorHoursCommon?: string;
+  /**
+   * Fallback id for the day collect (`getDayCollect`) when this saint has
+   * no proper collect of their own (`propers` may still be non-null —
+   * e.g. St. Agatha and St. Lucy both have a proper antiphon but a
+   * Common-sourced collect) — the *full* id of a `data/propers/common/
+   * collect-c*.yml` file (e.g. `collect-c2-1`, not `c2-1` — no suffix
+   * gets appended), a *template* with a literal `{N}` standing in for
+   * the saint's own name, substituted via `collectName` below.
+   * Deliberately more granular than `common` above: the reference
+   * source's own Commune files split e.g. "Common of a Martyr Bishop"
+   * into several differently-worded collect templates (its own `C2`,
+   * `C2-1`, `C2a-1`, `C2b`, `C2b-1` — no clean semantic label recovered
+   * for *why* each saint gets a particular one, so these ids trace
+   * straight back to the source's own naming, e.g. `collect-c2-1`,
+   * rather than inventing a name that might be wrong.
+   */
+  collectCommon?: string;
+  /** The `{N}` substitution values for `collectCommon`'s template, in
+   * whatever grammatical case that specific template's own placeholder
+   * position needs — taken directly from the reference source's own
+   * per-saint `[Name]` section (Latin/English/Sancti or SanctiM
+   * `MM-DD.txt`), not re-declined by hand. Arrays, filled in
+   * left-to-right against the template's own `{N}` occurrences in
+   * document order — most saints need exactly one name, but several
+   * Common templates (e.g. `collect-c3`, two co-named Martyr-Bishops)
+   * have two or more `{N}` placeholders for a group commemorated
+   * together, one array entry per saint in the group. */
+  collectName?: { la: string[]; en: string[] };
   /** See calendar/types.ts's OctaveConfig doc comment. Absent for the vast
    * majority of saints — only ones with a real octave declare it. */
   octave?: OctaveConfig;

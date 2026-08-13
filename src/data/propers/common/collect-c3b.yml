@@ -1,0 +1,23 @@
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C3b.txt ("Commune plurium Summorum
+# Pontificum Martyrum") and its English counterpart, 2026-08. A
+# Common-collect template for TWO saints named together — `{N}` appears
+# twice, substituted with each of their own names by getDayCollect
+# (hours/resolve-common.ts). Source's own text has a stray leading "v. "
+# before the prayer (a formatting artifact, not real content) — dropped
+# here, same as this project's usual "Orémus."-omission convention.
+id: collect-c3b
+text:
+  la: |
+    Orémus.
+    Gregem tuum, Pastor ætérne, placátus inténde: et per beátos {N} et {N} Mártyres tuos atque Summos Pontífices perpétua protectióne custódi; quos totíus Ecclésiæ præstitísti esse pastóres.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Let us pray.
+    Look forgivingly on thy flock, Eternal Shepherd, and keep it in thy constant protection, by the intercession of blessed {N} and {N}, thy Martyrs and Sovereign Pontiffs, whom thou didst constitute Shepherds of the whole Church.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

@@ -209,16 +209,46 @@ export function resolveMinorHourChapter(hourId: string, day: LiturgicalDay, fall
   return resolveCommon(fallbackId);
 }
 
+/** Fills a Common collect template's literal `{N}` placeholders with a
+ * saint's own name(s) per language (SaintRecord.collectName) — the same
+ * substitution the reference source's own Commune files perform
+ * (`beáti N. Confessóris tui` etc.), just resolved at authoring-adjacent
+ * read time here instead of duplicating the same template text once per
+ * saint who shares it. Positional: the template's `{N}` occurrences fill
+ * left-to-right from `names`, in document order — most templates have
+ * one, a few (two co-named saints commemorated together) have two. */
+function substituteName(text: ResolvedText, name: { la: string[]; en: string[] }): ResolvedText {
+  const substituted: Partial<Record<string, string>> = {};
+  for (const [lang, t] of Object.entries(text.text)) {
+    if (!t) {
+      continue;
+    }
+    const values = lang === 'la' ? name.la : lang === 'en' ? name.en : undefined;
+    if (!values) {
+      substituted[lang] = t;
+      continue;
+    }
+    let i = 0;
+    substituted[lang] = t.replace(/\{N\}/g, () => values[i++] ?? '{N}');
+  }
+  return { text: substituted, status: text.status };
+}
+
 /**
  * The day's own collect — real for the vast majority of days (a temporal
  * winner always resolves, since all 52 Sunday collects are authored and
- * ferias inherit the governing Sunday's via calendar/temporal-id.ts), and
- * honestly "missing" for the handful of days a saint wins outright until
- * that saint's own propers are authored (`saints/<id>.yml`'s `propers`
- * field is still `null` for all of them today) — same "resolve as
- * pending" convention as everywhere else, not a special case to handle.
- * Uses resolveOfficeWinner, not the raw `day.winner` — see its own doc
- * comment for why those two differ on an octave day.
+ * ferias inherit the governing Sunday's via calendar/temporal-id.ts), a
+ * Common-template collect with the saint's own name substituted in when
+ * they have no proper collect of their own but a `collectCommon` fallback
+ * is authored (`SaintRecord.collectCommon`/`collectName`, e.g. St. Agatha
+ * and St. Lucy — a proper antiphon but a Common-sourced collect, live-
+ * verified), and honestly "missing" for the remaining days a saint wins
+ * outright until either is authored. `collectCommon` is the *full*
+ * `resolveCommon` id already (`collect-c2`, not `c2` — no suffix gets
+ * appended, unlike `minorHoursCommon` above), matching how the
+ * `collect-c*.yml` files are actually named. Uses resolveOfficeWinner,
+ * not the raw `day.winner` — see its own doc comment for why those two
+ * differ on an octave day.
  */
 export function getDayCollect(day: LiturgicalDay): ResolvedText {
   const winner = resolveOfficeWinner(day);
@@ -227,7 +257,16 @@ export function getDayCollect(day: LiturgicalDay): ResolvedText {
   }
   const saint = getSaintRecord(winner.id);
   if (saint?.propers) {
-    return resolveCommon(`${saint.propers}-collect`);
+    const proper = resolveCommon(`${saint.propers}-collect`);
+    if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
+      return proper;
+    }
+  }
+  if (saint?.collectCommon && saint.collectName) {
+    const template = resolveCommon(saint.collectCommon);
+    if (template.status.la !== 'missing' || template.status.en !== 'missing') {
+      return substituteName(template, saint.collectName);
+    }
   }
   return { text: {}, status: { la: 'missing', en: 'missing' } };
 }
