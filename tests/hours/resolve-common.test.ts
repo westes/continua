@@ -9,6 +9,17 @@ import {
 } from '../../src/hours/resolve-common';
 import type { LiturgicalDay } from '../../src/calendar/types';
 
+function syntheticSanctoralDay(id: string): LiturgicalDay {
+  return {
+    date: '2026-01-01',
+    weekday: 'thursday',
+    season: 'trinitytide',
+    temporalCategory: 'ordinary-feria',
+    winner: { kind: 'sanctoral', id, name: id, rank: 'simplex' },
+    commemorations: [],
+  };
+}
+
 describe('getDayCollect', () => {
   it('resolves a real, verified collect for an ordinary Sunday', () => {
     const day = resolveDay('2026-08-09'); // post-pentecost-11
@@ -30,17 +41,49 @@ describe('getDayCollect', () => {
     // Kalendaria-table pull, 2026-08) -- so this exercises the "missing"
     // path with a synthetic winner rather than hunting for a real
     // example that no longer exists.
-    const day: LiturgicalDay = {
-      date: '2026-01-01',
-      weekday: 'thursday',
-      season: 'trinitytide',
-      temporalCategory: 'ordinary-feria',
-      winner: { kind: 'sanctoral', id: 'example-confessor', name: 'Example Confessor (placeholder)', rank: 'simplex' },
-      commemorations: [],
-    };
-    const collect = getDayCollect(day);
+    const collect = getDayCollect(syntheticSanctoralDay('example-confessor'));
     expect(collect.status.la).toBe('missing');
     expect(collect.status.en).toBe('missing');
+  });
+});
+
+describe('genuinely unwinnable stubs still get a Benedictus antiphon (2026-08)', () => {
+  // These saints are always commemorated, never the day's own rendered
+  // title (see e.g. st-marcus.yml's own comment) -- so unlike the rest of
+  // this project's content, their own [Ant 1] (or lack of one) had to be
+  // pulled directly from source rather than confirmed against a live
+  // Lauds query, since no such query is ever possible for them. A
+  // synthetic winner is used here for the same reason: resolveDay would
+  // never actually pick one of these as day.winner.
+  it("resolves via its Common category when the saint's own file has no [Ant 1] at all", () => {
+    // St. Marcus -- [Rule] says "vide C4b" with no override; C4b is a
+    // whole-file inherit of C4 (just the title relabeled "of the Popes"),
+    // the same family already live-query-verified for
+    // common-of-a-confessor-bishop.yml.
+    const ben = getBenedictusAntiphon(syntheticSanctoralDay('st-marcus'));
+    expect(ben.status).toEqual({ la: 'verified', en: 'verified' });
+  });
+
+  it('resolves via a cross-referenced Common category (C7 -> Commune/C6:Ant 2)', () => {
+    // St. Felicitas -- [Rule] says "vide C7", a category this project
+    // hadn't touched before; C7's own [Ant 1] is itself a reference to
+    // Commune/C6:Ant 2, which resolves to text byte-identical to
+    // common-of-a-virgin's own already-verified Benedictus antiphon.
+    const ben = getBenedictusAntiphon(syntheticSanctoralDay('st-felicitas'));
+    expect(ben.status).toEqual({ la: 'verified', en: 'verified' });
+  });
+
+  it("resolves its own file's [Ant 1] as draft, not verified, when it can't be checked against a live rendering", () => {
+    // Ss. Euphemia, Lucy, and Geminian -- her own file *does* have an
+    // [Ant 1], but St. Alexius (a winnable saint checked earlier in this
+    // same 2026-08 pass) proved a real [Ant 1] doesn't always end up the
+    // rendered Benedictus antiphon either (his own live Lauds query uses
+    // common-of-an-abbot's text instead) -- so a raw-file [Ant 1] read is
+    // never enough on its own to claim `verified`, and even less so for a
+    // saint no live query can ever confirm.
+    const ben = getBenedictusAntiphon(syntheticSanctoralDay('ss-euphemia-lucia-and-geminianus'));
+    expect(ben.status).toEqual({ la: 'draft', en: 'draft' });
+    expect(ben.text.la).toContain('Gaudent');
   });
 });
 

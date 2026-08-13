@@ -7,3 +7,8 @@ name: "St. Saturninus, Martyr"
 rank: simplex
 common: common-of-a-martyr
 propers: "st-saturninus"
+# No [Ant 1] of its own in the source (11-29r.txt) -- [Rule]/[Rank] point to
+# Commune/C2a-1 instead, the same C-number family already live-query-verified
+# for common-of-a-martyr.yml (see that section of TODO.md).
+minorHoursCommon: common-of-a-martyr
+benedictusCommon: common-of-a-martyr

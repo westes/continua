@@ -425,6 +425,76 @@ P/T/S/N for these 26 not attempted in this pass — a further layer on
 top, same as how the original 109 got Benedictus antiphons long before
 their own later, separate P/T/S/N pass (duplex-majus+ subset only).
 
+### The 15 "unwinnable" stubs' Benedictus antiphons, resolved from source (2026-08)
+
+Direct feedback on the section above: "unwinnable" was describing an
+artifact of Divinum Officium's own single-winner precedence model, not
+a real content gap — the app doesn't need a saint to *win* a live query
+to have real content, since this app already renders commemorated
+saints on their own terms (`day.commemorations`) rather than only ever
+showing the day's outright winner. The fix: read each of the 15 saints'
+own already-validated fileref directly (`extract_final.py`'s
+`load_file`/`resolve`, the exact same fileref their collect was already
+sourced from during the Kalendaria-table pull — no live query, no
+"does this saint ever win" requirement at all) for its `[Ant 1]`
+section, falling back to whatever Common its own `[Rule]`/`[Rank]`
+"`vide`/`ex CXX`" reference names when there isn't one — the same
+proper-then-Common shape `getDayCollect`/`collectCommon` already uses,
+just applied to the Benedictus antiphon too.
+
+**14 of the 15 had no `[Ant 1]` of their own at all** — clean Common
+fallback, and every one of their `[Rule]`/`[Rank]` C-numbers (`C2a`,
+`C2a-1`, `C3`, `C3a`, `C3a-1`, `C4b`, `C6`, `C6-1`, `C6a`, `C7`) falls
+inside a family already live-query-verified in the section above, so
+`minorHoursCommon`/`benedictusCommon` were wired directly with full
+confidence, no new content needed: St. Marcus (`C4b` — a whole-file
+`@Commune/C4` inherit, just the title relabeled "of the Popes" — into
+`common-of-a-confessor-bishop`); St. Felix (Presbyter), St. Hermes, St.
+Saturninus (`C2a`/`C2a-1` into `common-of-a-martyr`); St. Prisca, St.
+Thecla, St. Catherine of Siena (`C6`/`C6-1`/`C6a` into
+`common-of-a-virgin`); Ss. Machabees, Ss. Marius/Martha/Audifax/Abachum,
+Ss. Twelve Brothers, Ss. Alexander/Eventius/Theodulus/Juvenal, Ss.
+Felix/Simplicius/Faustinus/Beatrix, Ss. Nabor and Felix
+(`C3`/`C3a`/`C3a-1` into `common-of-several-martyrs`). St. Felicitas is
+the one genuine new finding: her file points to `C7` ("Commune Unius
+non Virginis Martyris"), which isn't a category this project had
+touched yet — but `C7`'s own `[Ant 1]` is itself a cross-reference
+(`@Commune/C6:Ant 2`) that resolves to text byte-identical to
+`common-of-a-virgin`'s own already-verified Benedictus antiphon, so no
+new Common file was needed even there.
+
+**The 1 remaining (Ss. Euphemia, Lucy, and Geminian) does have her own
+real `[Ant 1]`** — but marked `status.la: draft`, not `verified`, on
+principle: a real counterexample turned up in the *same* pass while
+double-checking a winnable saint for comparison — St. Alexius's own
+file also has a genuine `[Ant 1]` ("Similábo eum..."), yet his actual
+live-rendered Benedictus antiphon (already confirmed in the section
+above) uses `common-of-an-abbot`'s text instead, not his own `[Ant 1]`
+at all. So a raw `[Ant 1]` read is demonstrably not sufficient proof by
+itself that it's what the Benedictus canticle actually uses (Vespers'
+Magnificat is a live candidate for what it's *actually* for), even for
+a saint that *can* be live-checked — and for one that never can be, that
+uncertainty can't be resolved at all. Used the text anyway (better than
+nothing, and plausibly correct), just honestly flagged rather than
+claimed as confirmed.
+
+All 15 now have real content — none left "honestly missing." St.
+Frances of Rome and St. Bibiana (the original, pre-Kalendaria-table
+109-saint pass) are still left missing and are good candidates for this
+exact same fix — this pass didn't touch them since their own fileref
+was never derived (they predate the Kalendaria-table work this session
+built), not because they're any less resolvable in principle. Ss.
+Ursula and Companions (the section above) is the one case that's
+actually different in kind: no other calendar member shares her
+`C6b`/plural-Virgins-and-Martyrs category to cross-check a Common
+against, so even a clean file read wouldn't have anything solid to
+verify itself against.
+
+Two vigils (Vigil of St. John the Baptist, Vigil of St. Lawrence) didn't
+resolve via this file-based method at all (their particular file format
+wasn't handled by this pass's parser) — no impact, both already had
+real content from the live-query batch above.
+
 ### Christmas-Octave Sunday content — done (2026-08)
 
 Was: only the Benedictus antiphon existed for `christmas-octave-sunday`
@@ -761,13 +831,19 @@ correction (confirmed Roman-rite sourced), a handful already matched.
   (see the section above for method and its own correction).
 - **94 `propers: null` saints: done (2026-08)** — see the dedicated
   section below for the collect-authoring pass and the era-specific-
-  calendar discovery it took to do reliably. Benedictus antiphon: done
-  for all 94 (own dedicated sections below) — 66 via a shared Common; of
-  the other 26 (own proper collect), 15 are genuinely unwinnable stubs
-  left honestly missing, 7 share an existing Common, and 4 have real
-  unique text. P/T/S/N: done for the 66-saint batch; the 26 propers-set
-  saints' own P/T/S/N not yet attempted, a further layer on top (see
-  that section's own note).
+  calendar discovery it took to do reliably. Benedictus antiphon: real
+  content for all of them except the deliberate `example-confessor` test
+  placeholder and Ss. Ursula and Companions (left honestly unset, no way
+  to verify a category of one — see her own file's comment) — 66 via a
+  shared Common (own dedicated section below); of the other 26 (own
+  proper collect), 21 share an existing Common (7 live-query-verified
+  directly, 14 more resolved straight from source once "unwinnable"
+  stopped being treated as a content blocker — see that section's own
+  note) and 5 have real unique text (one, Ss. Euphemia/Lucy/Geminian,
+  honestly marked `draft` rather than `verified` since it can never be
+  checked against a live rendering). P/T/S/N: done for the 66-saint
+  batch; the 26 propers-set saints' own P/T/S/N not yet attempted, a
+  further layer on top (see that section's own note).
 
 ### Bug found and fixed while pulling christmas-octave-sunday's antiphon
 

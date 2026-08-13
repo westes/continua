@@ -8,3 +8,8 @@ name: "St. Marcus, Pope and Confessor"
 rank: simplex
 common: common-of-a-confessor-bishop
 propers: "st-marcus"
+# No [Ant 1] of its own in the source (10-07t.txt) -- [Rule]/[Rank] point to
+# Commune/C4b instead, the same C-number family already live-query-verified
+# for common-of-a-confessor-bishop.yml (see that section of TODO.md).
+minorHoursCommon: common-of-a-confessor-bishop
+benedictusCommon: common-of-a-confessor-bishop

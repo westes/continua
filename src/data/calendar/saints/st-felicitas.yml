@@ -7,3 +7,10 @@ name: "St. Felicitas, Martyr"
 rank: simplex
 common: common-of-a-martyr
 propers: "st-felicitas"
+# No [Ant 1] of its own in the source (11-23cc.txt) -- [Rule]/[Rank] point to
+# Commune/C7 instead, the same C-number family already live-query-verified
+# for common-of-a-virgin.yml (see that section of TODO.md). C7 itself
+# resolves via a cross-reference to Commune/C6:Ant 2, confirmed byte-
+# identical to common-of-a-virgin's own already-verified text.
+minorHoursCommon: common-of-a-virgin
+benedictusCommon: common-of-a-virgin
