@@ -7,13 +7,13 @@ import {
   resolveMinorHourChapter,
   splitNamedAntiphon,
 } from '../../src/hours/resolve-common';
-import type { LiturgicalDay } from '../../src/calendar/types';
+import type { LiturgicalDay, Season } from '../../src/calendar/types';
 
-function syntheticSanctoralDay(id: string): LiturgicalDay {
+function syntheticSanctoralDay(id: string, season: Season = 'trinitytide'): LiturgicalDay {
   return {
     date: '2026-01-01',
     weekday: 'thursday',
-    season: 'trinitytide',
+    season,
     temporalCategory: 'ordinary-feria',
     winner: { kind: 'sanctoral', id, name: id, rank: 'simplex' },
     commemorations: [],
@@ -254,5 +254,54 @@ describe('splitNamedAntiphon', () => {
     const repeat = ordo.parts[idx + 1];
     expect(canticle?.kind === 'canticle' ? canticle.antiphon?.status.en : undefined).toBe('draft');
     expect(repeat?.kind === 'antiphon' ? repeat.text.status.en : undefined).toBe('draft');
+  });
+});
+
+describe('Paschaltide alleluia suffix on Common-category antiphons (2026-08)', () => {
+  // Live-query-verified (St. Athanasius/Confessor-Bishop, St. Robert/Abbot,
+  // St. Catherine of Siena/Virgin): a Common category with no dedicated
+  // wholesale-different Paschaltide text still gets a mechanical single
+  // ", allelúja"/", alleluia" appended to its otherwise-unchanged base text
+  // during Eastertide/Ascensiontide/Pentecost-octave-week. St. Ambrose
+  // (common-of-a-confessor-bishop, propers: null) exercises the Common
+  // fallback branch directly rather than a per-saint proper file.
+  it("appends the seasonal alleluia to a Common Benedictus antiphon in Paschaltide", () => {
+    const eastertide = getBenedictusAntiphon(syntheticSanctoralDay('st-ambrose', 'eastertide'));
+    expect(eastertide.text.la).toBe(
+      'Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus, allelúja.',
+    );
+    expect(eastertide.text.en).toBe(
+      'Well done, thou good and faithful servant * thou hast been faithful over a few things, I will make thee ruler over many things, saith the Lord, alleluia.',
+    );
+    expect(eastertide.status).toEqual({ la: 'verified', en: 'verified' });
+  });
+
+  it('leaves the same Common Benedictus antiphon unchanged outside Paschaltide', () => {
+    const ordinary = getBenedictusAntiphon(syntheticSanctoralDay('st-ambrose', 'trinitytide'));
+    expect(ordinary.text.la).toBe(
+      'Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.',
+    );
+    expect(ordinary.text.la).not.toContain('allelúja');
+  });
+
+  it('appends the suffix on the minor-hour Common fallback too (ascensiontide, not just eastertide)', () => {
+    const prime = resolveMinorHourAntiphon('prime', syntheticSanctoralDay('st-ambrose', 'ascensiontide'), {});
+    expect(prime.text.la?.endsWith('allelúja.')).toBe(true);
+    expect(prime.text.la).not.toMatch(/allelúja.*allelúja/); // never doubled for this category
+  });
+
+  it("doesn't double up on a Common category whose stored text is already the (unavoidably Paschaltide-only) native text", () => {
+    // common-of-pope-martyrs (Ss. Soter and Caius) -- its own stored files
+    // were necessarily captured from a live query already inside
+    // Paschaltide (see TODO.md: their fixed dates can only ever land in
+    // real Eastertide or the Sacred Triduum, never elsewhere), so the
+    // text already ends "allelúja, allelúja." -- appending again would be
+    // wrong.
+    const day = syntheticSanctoralDay('ss-soter-and-caius', 'eastertide');
+    const benedictus = getBenedictusAntiphon(day);
+    expect(benedictus.text.la).toBe(
+      'Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúja, allelúja.',
+    );
+    expect(benedictus.text.la?.match(/allelúja/g)?.length).toBe(2);
   });
 });

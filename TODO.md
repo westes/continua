@@ -606,18 +606,74 @@ tries his own id first). English wasn't rendered at all for any of his
 6 new texts (same Latin-duplicated-into-English gap as St. Scholastica/
 St. Benedict), so all 6 are `status.en: draft`.
 
-**One loose thread noticed, not chased**: St. Athanasius (May 2) and
-St. Leo I (April 11), both tested in years that happened to fall within
-Eastertide, rendered their shared `common-of-a-confessor-bishop` text
-with a trailing "`allelúja`" appended to every antiphon — but the other
-4 Doctor saints (tested in non-Paschaltide months) didn't. This isn't
-the same kind of thing as the already-modeled `-paschaltide` Common
-variants (`common-of-apostles-paschaltide` etc., which are *wholly
-different wording*, not the same text plus a suffix) — looks more like
-a general seasonal "append allelúja in Paschaltide" rule this app
-doesn't model at any level yet. Not blocking (the plain, correctly-
-verified text still renders in every other season, which is most of the
-year), but worth a look if Eastertide rendering fidelity matters later.
+**A loose thread noticed, then chased down and fixed (2026-08)**: St.
+Athanasius (May 2) and St. Leo I (April 11), both tested in years that
+happened to fall within Eastertide, rendered their shared
+`common-of-a-confessor-bishop` text with a trailing "`allelúja`"
+appended to every antiphon — but the other 4 Doctor saints (tested in
+non-Paschaltide months) didn't. Live-querying further (a full sweep of
+Common categories across the Easter/Ascension/Pentecost octaves and the
+ordinary weeks around them, reading the reference source's raw
+`Commune/*p.txt` chains directly rather than guessing from rendered
+pages) settled it precisely:
+
+- A handful of categories (Apostles, Martyr, Martyr-Bishop, Several
+  Martyrs, Pope-Martyrs) have their own dedicated `Cxxp.txt` source
+  chain — a genuinely *different* text for Paschaltide, not the same
+  text plus a suffix (confirmed by reading the raw files: e.g. the
+  "Fíliæ Jerúsalem..." Pope-Martyrs Benedictus antiphon comes from a
+  Matins responsory reused for Lauds specifically during this window,
+  nowhere near the non-Paschaltide chain's own "Mártyrum chorus..."
+  text). Only `common-of-apostles` has this wholesale text actually
+  authored into this app's data (`*-paschaltide.yml`, from an earlier
+  pass) — the other four still fall through to the mechanical suffix
+  below until someone authors their real text, which is a strictly
+  better approximation than the unmodified default.
+- Every *other* category (Confessor-Bishop/Doctor, Abbot, Virgin, and
+  presumably Dedication/Vigil/Angel, untested but structurally the
+  same) has no dedicated chain at all — the reference engine just
+  mechanically appends a single ", allelúja"/", alleluia" to the
+  otherwise-unchanged base text, for the whole Eastertide → Ascensiontide
+  → Pentecost-octave-week span. Live-verified across three unrelated
+  categories (St. Athanasius/Confessor-Bishop, St. Robert/Abbot, St.
+  Catherine of Siena/Virgin) — never doubled.
+- The "sometimes 1, sometimes 2" appearance wasn't actually the same
+  category flipping — it was different *ranks of saint* getting
+  different octave privileges. Only martyr-class saints (already in the
+  dedicated-chain group above) are ever eligible for even a
+  commemoration inside a true privileged octave (confirmed: St.
+  Anicetus, commemorated on a Semiduplex day inside the actual Easter
+  octave, correctly showing the doubled dedicated-chain text).
+  Confessor/Abbot/Virgin-class saints never get that far — checked St.
+  Leo I and St. Basil the Great both landing on/near a real octave in
+  some year, and both are fully transferred, no commemoration at all —
+  so the plain-suffix categories structurally can never be observed
+  inside a real octave, only in the ordinary weeks around it.
+- One practical check this settled without needing a code change:
+  `common-of-pope-martyrs` (Ss. Soter & Caius, Ss. Cletus & Marcellinus)
+  is itself one of the dedicated-chain categories, so its one stored
+  file is technically the Paschaltide-only text, not a universal
+  default — but tracing both saints' fixed dates against every possible
+  Easter date confirms this is harmless: whenever their date would fall
+  outside Eastertide, it lands inside the Sacred Triduum instead
+  (always fully transferred, never rendered), so the stored text is
+  correct for every real occurrence.
+
+Built: `hours/resolve-common.ts`'s `appendPaschaltideAlleluia`/
+`withPaschaltideAlleluia`, applied to the Common-category fallback
+branch of `getBenedictusAntiphon` and `resolveMinorHourAntiphon` (not
+the `-paschaltide`-file branch, which already had its own correct
+wholesale text; not a saint's own unique `${propers}-antiphon`, which
+would need its own live-requery to confirm one way or the other rather
+than assuming the Common-category finding transfers; not capitula,
+whose closing versicles get the same suffix in the reference engine too
+— confirmed, St. Robert's Terce capitulum — but whose text is one
+embedded R./V. blob per language rather than a clean appendable tail,
+not attempted this pass). Guards against double-appending on a category
+whose stored text already ends in "allelúja" (`common-of-pope-martyrs`,
+per above). 4 new tests in `tests/hours/resolve-common.test.ts`
+(`Paschaltide alleluia suffix on Common-category antiphons`), 300 tests
+passing.
 
 Verified end-to-end: a runtime smoke test (folded into
 `tests/hours/resolve-common.test.ts`) covering the same-person reuse

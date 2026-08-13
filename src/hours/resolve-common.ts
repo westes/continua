@@ -132,18 +132,94 @@ export function getMinorHourOverrideId(day: LiturgicalDay): string | undefined {
 }
 
 /**
- * "Tempore Paschali" — the reference engine's own window for a Common's
- * Paschaltide variant (Commune/C1p.txt etc.: only Apostles, a Martyr-
- * Bishop, and Several Martyrs get one — Confessors/Virgins/Doctors never
- * do, matching the real tradition's own restriction of Alleluia/victory
- * imagery to apostles and martyrs specifically). Deliberately the same
- * three-season set as Compline's own Marian-antiphon table
- * (`data/hours/marian-antiphon-by-season.yml`'s `eastertide`/
- * `ascensiontide`/`pentecost` all mapping to Regina Caeli, not just
- * `eastertide` alone) — "Paschalis" runs through the end of the Pentecost
- * octave in both cases, not just to Ascension.
+ * "Tempore Paschali" — the reference engine's own window for Paschaltide
+ * text changes. Deliberately the same three-season set as Compline's own
+ * Marian-antiphon table (`data/hours/marian-antiphon-by-season.yml`'s
+ * `eastertide`/`ascensiontide`/`pentecost` all mapping to Regina Caeli, not
+ * just `eastertide` alone) — "Paschalis" runs through the end of the
+ * Pentecost octave in both cases, not just to Ascension.
+ *
+ * RESOLVED (2026-08): the earlier version of this comment claimed only
+ * Apostles/Martyr-Bishop/Several-Martyrs get a Paschaltide change at all,
+ * and that Confessors/Virgins/Doctors never do. Live-querying settled
+ * this more precisely, per the "St. Athanasius/allelúja" investigation
+ * (TODO.md): the reference source (Commune/C1p.txt, C2p.txt, C2bp.txt,
+ * C3p.txt, C3bp.txt) really does give *some* categories — Apostles,
+ * Martyr, Martyr-Bishop, Several Martyrs, Pope-Martyrs — their own
+ * wholesale-different Paschaltide text (often, not always, doubling the
+ * alleluia as genuinely different content, confirmed by reading the raw
+ * chain rather than guessing from the rendered page). But categories
+ * *without* one of those (Confessor-Bishop/Doctor, Abbot, Virgin — all
+ * three live-verified this pass: St. Athanasius, St. Robert, St.
+ * Catherine of Siena) still change during this same window: the engine
+ * mechanically appends a single ", allelúja"/", alleluia" to the closing
+ * clause of the otherwise-unchanged base text. `appendPaschaltideAlleluia`
+ * below models that fallback; the dedicated-chain categories are still
+ * handled the older way, by trying a same-id `-paschaltide` file first
+ * (only authored for `common-of-apostles` so far — the other four
+ * dedicated-chain categories fall through to the mechanical suffix too
+ * until someone authors their real wholesale text, which is a strictly
+ * better approximation than rendering the bare non-Paschaltide default).
  */
 const PASCHALTIDE_SEASONS = new Set(['eastertide', 'ascensiontide', 'pentecost']);
+
+/**
+ * The reference engine's mechanical Paschaltide fallback for a Common
+ * antiphon with no dedicated wholesale-different text of its own: a
+ * single ", allelúja."/", alleluia." tacked onto the closing clause,
+ * text otherwise byte-identical to the non-Paschaltide default. Live-
+ * verified across three unrelated categories (St. Athanasius/Confessor-
+ * Bishop, St. Robert/Abbot, St. Catherine of Siena/Virgin) — never
+ * doubled, and the app's stored antiphon text already carries the
+ * incipit/full split as one string with an embedded "*"
+ * (`splitNamedAntiphon`/`splitAntiphon`), so appending to the very end
+ * only ever lands in the "full" half, matching the reference engine's own
+ * behavior exactly (its *incipit*-only rendering, sung before the psalm,
+ * never carries the suffix — only the closing, full-text rendering after
+ * it does).
+ *
+ * Skips a language whose stored text already ends in "allelúja"/
+ * "alleluia" — `common-of-pope-martyrs` is the one category this
+ * actually matters for: its own stored files were, unavoidably, captured
+ * from a live query already inside Paschaltide (its only two members'
+ * fixed dates structurally can never be queried at any other real point
+ * in the calendar without landing in the Sacred Triduum instead, where
+ * they're always fully transferred and never render at all — see
+ * TODO.md) — so what's stored there already *is* the Paschaltide text,
+ * and blindly appending here would double up.
+ *
+ * Deliberately scoped to antiphons only, not capitula: a capitulum's own
+ * closing versicles get the same suffix in the reference engine too
+ * (confirmed, St. Robert's Terce capitulum), but that text is one
+ * embedded R./V. blob per language, not a clean appendable tail, and
+ * reproducing that safely wasn't attempted this pass — see TODO.md.
+ */
+function appendPaschaltideAlleluia(resolved: ResolvedText): ResolvedText {
+  const suffixByLang: Partial<Record<string, string>> = { la: 'allelúja', en: 'alleluia' };
+  const text: Partial<Record<string, string>> = { ...resolved.text };
+  for (const [lang, suffix] of Object.entries(suffixByLang)) {
+    const t = text[lang];
+    if (!t || /allel(?:úja|uia)\.?\s*$/i.test(t)) {
+      continue;
+    }
+    text[lang] = `${t.replace(/\.\s*$/, '')}, ${suffix}.`;
+  }
+  return { ...resolved, text };
+}
+
+/** Applies appendPaschaltideAlleluia only when the day actually falls in
+ * Paschaltide and there's real text to append it to — the shared guard
+ * both resolveMinorHourAntiphon's Common fallback and getBenedictusAntiphon
+ * use, so neither has to repeat the two checks inline. */
+function withPaschaltideAlleluia(resolved: ResolvedText, day: LiturgicalDay): ResolvedText {
+  if (!PASCHALTIDE_SEASONS.has(day.season)) {
+    return resolved;
+  }
+  if (resolved.status.la === 'missing' && resolved.status.en === 'missing') {
+    return resolved;
+  }
+  return appendPaschaltideAlleluia(resolved);
+}
 
 /** A Little Hour's (or Prime's) plain per-weekday antiphon, overridden by
  * a duplex-majus+ feast's own proper (`${hourId}-antiphon-${id}`) when
@@ -155,7 +231,9 @@ const PASCHALTIDE_SEASONS = new Set(['eastertide', 'ascensiontide', 'pentecost']
  * been authored — same honest "not gated behind whether content exists,
  * just eligible to override at all" fallback as every other override in
  * this codebase: an eligible feast with none of these authored yet just
- * falls through to the plain weekday default silently.
+ * falls through to the plain weekday default silently. The plain (non-
+ * `-paschaltide`) Common fallback itself still picks up a seasonal change
+ * in Paschaltide — see `withPaschaltideAlleluia`.
  */
 export function resolveMinorHourAntiphon(
   hourId: string,
@@ -178,7 +256,7 @@ export function resolveMinorHourAntiphon(
       }
       const common = resolveCommon(`${hourId}-antiphon-${commonId}`);
       if (common.status.la !== 'missing' || common.status.en !== 'missing') {
-        return common;
+        return withPaschaltideAlleluia(common, day);
       }
     }
   }
@@ -340,12 +418,18 @@ export function getDayCollects(day: LiturgicalDay): ResolvedPart[] {
  * antiphon` (not authored yet for any temporal id — resolves "missing",
  * same pending convention as everywhere else) for a temporal one, then
  * `saint.benedictusCommon` (`benedictus-antiphon-${benedictusCommon}.yml`,
- * see SaintRecord's own doc comment) when neither exists. Uses
- * resolveOfficeWinner, not the raw `day.winner` — on an octave day this
- * is the octave's own feast's antiphon (live-verified: St. Lawrence's
- * "In cratícula", not the commemorated St. Clare's, and not the plain
- * temporal day's), not a *commemorated* saint's, which is a separate,
- * weaker standing (see getDayCollects/sanctoralCommemorationPart).
+ * see SaintRecord's own doc comment) when neither exists — run through
+ * `withPaschaltideAlleluia` on the way out, so a Common-category
+ * Benedictus antiphon picks up the same seasonal suffix its Prime/Terce/
+ * Sext/None counterparts do (see PASCHALTIDE_SEASONS's own doc comment);
+ * a saint's own unique `${propers}-antiphon` deliberately isn't — that
+ * would need its own live-requery to confirm one way or the other, not
+ * assumed from the Common-category finding. Uses resolveOfficeWinner, not
+ * the raw `day.winner` — on an octave day this is the octave's own
+ * feast's antiphon (live-verified: St. Lawrence's "In cratícula", not the
+ * commemorated St. Clare's, and not the plain temporal day's), not a
+ * *commemorated* saint's, which is a separate, weaker standing (see
+ * getDayCollects/sanctoralCommemorationPart).
  */
 export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
   const winner = resolveOfficeWinner(day);
@@ -360,7 +444,7 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
     }
   }
   if (saint?.benedictusCommon) {
-    return resolveCommon(`benedictus-antiphon-${saint.benedictusCommon}`);
+    return withPaschaltideAlleluia(resolveCommon(`benedictus-antiphon-${saint.benedictusCommon}`), day);
   }
   return { text: {}, status: { la: 'missing', en: 'missing' } };
 }
