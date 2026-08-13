@@ -386,6 +386,45 @@ the original 109-saint pass (own `[Ant 1]`/live-rendered text, not a
 shared Common), since a saint with a genuine proper collect usually has
 a genuine proper antiphon too. Not yet started.
 
+### The other 26 propers-set saints' Benedictus antiphons — done (2026-08)
+
+Turned out **most of these don't have unique antiphon text either** —
+a genuine proper collect doesn't imply a genuine proper antiphon, same
+finding as St. Martin of Tours's mixed proper-antiphon/shared-chapter
+split from the original 29-saint pass. Live-queried Lauds
+(`prayLaudes`) for each of the 26, same title-verified method as the
+Common-category batch above.
+
+**15 of the 26 are genuinely unwinnable stubs** (already documented as
+such from the collects pass — always commemorated, never the day's own
+title, so nothing to query) — same "honestly missing" treatment as St.
+Frances of Rome/St. Bibiana in the original 109-saint pass, not
+guessed at.
+
+**Of the 11 that do win outright**, 7 turned out to share existing
+Common-category text — `benedictusCommon` wired directly to the already-
+authored files from the section above, no new content needed: Ss.
+Dionysius and Companions, Ss. Felix and Adauctus, Ss. Maurice and
+Companions, Ss. Tryphon and Companions (`common-of-several-martyrs`,
+despite Dionysius's own `common` field saying `common-of-a-martyr-
+bishop` — another case, like Chair of St. Peter earlier, where the two
+fields genuinely diverge), St. Chrysogonus and St. Donatus
+(`common-of-a-martyr`), the Vigil of St. Lawrence (`common-of-a-vigil`).
+
+The remaining 4 have real, unique proper text — new
+`{id}-antiphon.yml` files: All Saints of the Benedictine Order ("Vos
+qui reliquístis ómnia..."), St. Agnes (secunda) ("Ecce, quod
+concupívi..."), St. Benedict ("Sanctíssime Conféssor Dómini..." — no
+English in the source, same gap as St. Scholastica's, translated and
+marked `draft`), and the Vigil of St. John the Baptist ("Eréxit nobis
+* Dóminus cornu salútis..." — deliberately echoing the Benedictus
+canticle's own opening words, fitting for the Vigil of the saint whose
+father, Zechariah, first spoke that canticle).
+
+P/T/S/N for these 26 not attempted in this pass — a further layer on
+top, same as how the original 109 got Benedictus antiphons long before
+their own later, separate P/T/S/N pass (duplex-majus+ subset only).
+
 ### Christmas-Octave Sunday content — done (2026-08)
 
 Was: only the Benedictus antiphon existed for `christmas-octave-sunday`
@@ -720,12 +759,15 @@ pass has now been checked against a live Monastic query; most needed
 correction (confirmed Roman-rite sourced), a handful already matched.
 - **All ~52 temporal entries: done, including `christmas-octave-sunday`**
   (see the section above for method and its own correction).
-- **94 `propers: null` saints: done (2026-08)** — see the dedicated section
-  below for the collect-authoring pass and the era-specific-calendar
-  discovery it took to do reliably. Benedictus antiphon + P/T/S/N: done
-  for the 66 that draw from a shared Common (own dedicated section
-  below); the other 26 (own proper collect, from the same batch) still
-  need their own individually-authored Benedictus antiphon, not started.
+- **94 `propers: null` saints: done (2026-08)** — see the dedicated
+  section below for the collect-authoring pass and the era-specific-
+  calendar discovery it took to do reliably. Benedictus antiphon: done
+  for all 94 (own dedicated sections below) — 66 via a shared Common; of
+  the other 26 (own proper collect), 15 are genuinely unwinnable stubs
+  left honestly missing, 7 share an existing Common, and 4 have real
+  unique text. P/T/S/N: done for the 66-saint batch; the 26 propers-set
+  saints' own P/T/S/N not yet attempted, a further layer on top (see
+  that section's own note).
 
 ### Bug found and fixed while pulling christmas-octave-sunday's antiphon
 

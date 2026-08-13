@@ -10,3 +10,10 @@ name: "St. Dionysius, Bishop, and Companions, Martyrs"
 rank: semiduplex
 common: common-of-a-martyr-bishop
 propers: "ss-dionysius-and-companions"
+# Benedictus antiphon live-verified (2026-08, Lauds query, 2025-10-09,
+# winner outright) as byte-identical to common-of-several-martyrs's own
+# ("Vestri capílli cápitis...") -- despite `common` above saying
+# martyr-*bishop*, not several-martyrs; the two fields aren't always the
+# same category (see calendar/feasts.ts's SaintRecord.benedictusCommon
+# doc comment).
+benedictusCommon: common-of-several-martyrs

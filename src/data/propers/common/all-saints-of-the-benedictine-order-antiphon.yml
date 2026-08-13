@@ -1,0 +1,15 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query (2025-11-13, winner outright) -- the Benedictus antiphon.
+# Own proper text, not shared with any other saint on this app's
+# calendar. No embedded "*": this feast is Duplex II. classis (double-
+# or-higher), so its own query shows the antiphon in full at both open
+# and close with no separate incipit marker, and there's no lower-rank
+# saint sharing this text to reconstruct the split from (same situation
+# as benedictus-antiphon-common-of-a-dedication.yml).
+id: all-saints-of-the-benedictine-order-antiphon
+text:
+  la: "Vos qui reliquístis ómnia, et secúti estis me, céntuplum accipiétis, et vitam ætérnam possidébitis."
+  en: "You who left all and follow me, you will receive hundredfolds, and you will have eternal life."
+status:
+  la: verified
+  en: verified

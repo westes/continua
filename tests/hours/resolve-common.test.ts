@@ -71,6 +71,31 @@ describe('minorHoursCommon/benedictusCommon fallback (2026-08, the 94 propers:nu
   });
 });
 
+describe('the 26 propers-set saints from the 94-saint batch (2026-08)', () => {
+  it('a saint with a genuine proper collect can still share its Benedictus antiphon with a Common category (benedictusCommon)', () => {
+    // Ss. Dionysius and Companions -- own proper collect (propers is
+    // set), but live-verified byte-identical to common-of-several-
+    // martyrs's Benedictus antiphon, so getBenedictusAntiphon falls
+    // through to benedictusCommon rather than a nonexistent
+    // ss-dionysius-and-companions-antiphon.yml.
+    const day = resolveDay('2025-10-09');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'ss-dionysius-and-companions' });
+    expect(getBenedictusAntiphon(day).status).toEqual({ la: 'verified', en: 'verified' });
+  });
+
+  it("a saint with genuinely unique Benedictus antiphon text resolves its own proper file, not a Common", () => {
+    // St. Benedict -- own proper text ("Sanctíssime Conféssor Dómini...",
+    // st-benedict-antiphon.yml), sourced from the source's Latin-only
+    // page (no English rendering, same gap as St. Scholastica's), so
+    // English is a translation and stays `draft`.
+    const day = resolveDay('2025-03-21');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-benedict' });
+    const ben = getBenedictusAntiphon(day);
+    expect(ben.status).toEqual({ la: 'verified', en: 'draft' });
+    expect(ben.text.la).toContain('Benedícte');
+  });
+});
+
 describe('splitNamedAntiphon', () => {
   it('carries a verified status through to both the incipit and full forms', () => {
     const { incipit, full } = splitNamedAntiphon({
