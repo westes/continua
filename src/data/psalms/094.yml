@@ -1,0 +1,82 @@
+# Vulgate/Gallican numbering. The Invitatory psalm ("Venite exsultemus"),
+# used only at Matins. Its own source file (Latin+English
+# Psalterium/Psalmorum/Psalm94.txt) interleaves a repeating `$ant` macro
+# mid-psalm for the real Invitatorium's antiphon-repeat structure — this
+# app's own Matins doesn't need that (deliberate simplification), so the
+# markers are dropped here and it's stored as plain continuous verses like
+# every other psalm. Verse 6 is genuinely absent from the source itself
+# (jumps 5 -> 7), not an artifact of dropping the markers — transcribed
+# that way on purpose, not an omission.
+#
+# The English is the traditional Coverdale/BCP "Venite" translation, not
+# Douay-Rheims like every other psalm in this store (colon-pointed, not
+# asterisk-pointed; noticeably different register — "O come, let us sing"
+# vs. the rest of the store's "Come let us praise the Lord with joy").
+# Marked `draft` rather than reworded to match, pending a deliberate
+# register pass later (same treatment as Matthias/Barnabas/etc.'s reworded
+# antiphons — see TODO.md).
+number: 94
+verses:
+  - n: 1
+    text:
+      la: "Veníte, exsultémus Dómino: * jubilémus Deo salutári nostro:"
+      en: "O come, let us sing unto the Lord: let us make a joyful noise to the God of our salvation."
+    status:
+      la: verified
+      en: draft
+  - n: 2
+    text:
+      la: "Præoccupémus fáciem ejus in confessióne: * et in psalmis jubilémus ei."
+      en: "Let us come before His presence with thanksgiving, and make a joyful noise unto Him with psalms."
+    status:
+      la: verified
+      en: draft
+  - n: 3
+    text:
+      la: "Quóniam Deus magnus Dóminus: * et Rex magnus super omnes deos."
+      en: "For the Lord is a great God, and a great King above all gods."
+    status:
+      la: verified
+      en: draft
+  - n: 4
+    text:
+      la: "Quia in manu ejus sunt omnes fines terræ: * et altitúdines móntium ipsíus sunt."
+      en: "In His hand are the inmost depths of the earth: and the heights of the hills are His also."
+    status:
+      la: verified
+      en: draft
+  - n: 5
+    text:
+      la: "Quóniam ipsíus est mare, et ipse fecit illud: * et siccam manus ejus formavérunt."
+      en: "For the sea is His, and He made it, and His hands formed the dry land."
+    status:
+      la: verified
+      en: draft
+  - n: 7
+    text:
+      la: "Et nos pópulus páscuæ ejus, et oves manus ejus. * Hódie si vocem ejus audiéritis, nolíte obduráre corda vestra:"
+      en: "And we are the people of His pasture, and the sheep of His hand. Today if ye will hear His voice, harden not your heart."
+    status:
+      la: verified
+      en: draft
+  - n: 8
+    text:
+      la: "Sicut in irritatióne secúndum diem tentatiónis in desérto: * ubi tentavérunt me patres vestri, probavérunt me, et vidérunt ópera mea."
+      en: "As in the Provocation, and as in the day of Temptation in the wilderness, when your fathers tempted Me, and proved Me, and saw My works."
+    status:
+      la: verified
+      en: draft
+  - n: 9
+    text:
+      la: "Quadragínta annis offénsus fui generatióni illi, * et dixi: Semper hi errant corde."
+      en: "Forty years long was I grieved with that generation, and said: It is a people that do alway err in their heart."
+    status:
+      la: verified
+      en: draft
+  - n: 10
+    text:
+      la: "Et isti non cognovérunt vias meas, ut jurávi in ira mea: * Si introíbunt in réquiem meam."
+      en: "And they have not known My ways; unto whom I sware in My wrath that they should not enter into My rest."
+    status:
+      la: verified
+      en: draft

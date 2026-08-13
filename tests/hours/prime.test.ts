@@ -1,14 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import { resolveOrdo } from '../../src/hours';
+import { getPsalm } from '../../src/psalter';
 
 // 2026-11-16 is a Monday, and (as of the pre-1955 sanctoral pull reaching
 // October, with November/December still unpulled) still ordinary/ferial —
 // the Monastic 1617 distribution gives Monday three whole psalms (1, 2,
-// 6), the first of which (Psalm 1) has real sample content in
-// data/psalms/001.yml, so these tests can check real verse data without
-// needing every psalm authored. Already had to move twice (first from a
-// June Monday, then from an October Monday that got real sanctoral
-// content — Ss. Placid and Companions, see
+// 6), all fully verified since the whole Psalter got bulk-pulled from
+// Divinum Officium's own Psalmorum text (2026-08). Already had to move
+// twice (first from a June Monday, then from an October Monday that got
+// real sanctoral content — Ss. Placid and Companions, see
 // data/calendar/saints/ss-placid-and-companions.yml) — if November's own
 // pull lands here too, it'll need to move again.
 const MONDAY = '2026-11-16';
@@ -34,14 +34,28 @@ describe('resolveOrdo("prime", ...)', () => {
     }
   });
 
-  it('surfaces verified/draft/missing status per language, per verse', () => {
-    const ordo = resolveOrdo('prime', MONDAY);
-    const psalm = ordo.parts.find((p) => p.kind === 'psalm' && p.psalmNumber === 1);
-    expect(psalm && psalm.kind === 'psalm' ? psalm.verses.length : 0).toBe(3);
-    if (psalm && psalm.kind === 'psalm') {
-      expect(psalm.verses[0]?.status.en).toBe('draft');
-      expect(psalm.verses[2]?.status.en).toBe('missing');
-    }
+  it('surfaces verified/draft status per language, per verse — via the psalm store directly', () => {
+    // Monday's Prime psalms (1, 2, 6) are all fully verified now (the
+    // whole Psalter got bulk-pulled from Divinum Officium's own Psalmorum
+    // text, 2026-08), so there's no draft/missing content left in this
+    // ordo to exercise the fallback against — test the store directly
+    // instead. Ps 94 (the Invitatory, used only at Matins) is the one
+    // psalm with a real per-language split: its Latin is verified but its
+    // English is the traditional Coverdale/BCP "Venite" translation
+    // rather than this store's usual Douay-Rheims register, so it's
+    // marked `draft` pending a deliberate reword (see 094.yml, TODO.md).
+    const psalm = getPsalm(94);
+    expect(psalm.verses[0]?.status.la).toBe('verified');
+    expect(psalm.verses[0]?.status.en).toBe('draft');
+  });
+
+  it('surfaces missing status for a genuinely unauthored psalm number', () => {
+    // 151 isn't a real Vulgate/Gallican psalm (that numbering tops out at
+    // 150) — exercises getPsalm's pending-verse fallback now that every
+    // real psalm 1-150 is authored.
+    const psalm = getPsalm(151);
+    expect(psalm.verses).toHaveLength(1);
+    expect(psalm.verses[0]?.status.en).toBe('missing');
   });
 
   it('slices a verse range out of a longer psalm on days that split one across the week', () => {
