@@ -536,6 +536,93 @@ resolve via this file-based method at all (their particular file format
 wasn't handled by this pass's parser) — no impact, both already had
 real content from the live-query batch above.
 
+### `minorHoursCommon` gap swept across the whole calendar (2026-08)
+
+The pieces above all fixed Benedictus-antiphon/collect gaps. This pass
+does the same thing for Prime/Terce/Sext/None specifically, and widens
+scope from just the 94-saint batch to the **whole** calendar — the
+original 29-saint P/T/S/N pass (an earlier session) only ever covered
+duplex-majus+ saints; every below-majus saint from the *original*,
+pre-94-batch 109-saint pass had never had P/T/S/N attempted at all,
+same gap as the one already found and fixed for the 94-batch's own
+below-majus saints.
+
+**Method**: reused the Kalendaria-table-validated fileref approach
+(same as the collects pass), not a blind `Sancti/MM-DD.txt` read — a
+real near-miss caught this early: St. Apollonia's `Sancti/02-09.txt` is
+*currently* St. Cyril of Alexandria's (a 19th-century addition to that
+filename slot); blind reading would have silently attributed his
+Doctor-of-the-Church Common to her. The Kalendaria table's own
+validated fileref (`02-09o`) gives her real content instead. Also fixed
+a second, unrelated regex bug the same pass turned up: the original
+"`vide`/`ex CXX`" pattern matched the bare word "`Commune`" (no number)
+and reading-specific sub-references like "`ex C4 in 2 loco`" (which
+only says where *that nocturn's readings* come from, not the overall
+antiphon Common) — found via St. Clement, whose Monastic-specific
+`[Rule]` override has neither a clean `vide CXX` nor a number after
+"Commune." Fixed by requiring a digit right after `C` and skipping any
+match immediately followed by `"in N loco"`.
+
+**90 below-majus saints swept, ~82 wired directly** into the categories
+already established above (mostly `common-of-a-martyr` and
+`common-of-several-martyrs`, the two largest families) — no new content
+needed, since every C-number variant found (`C2`/`C2-1`/`C2a`/`C2a-1`/
+`C2b`/`C2b-1`/`C2-1b`, `C3`/`C3a`/`C3a-1`, `C5`/`C5-1`/`C5a`/`C5b`,
+`C6`/`C6-1`/`C6a`/`C7a`, `C4`/`C4b`, `C1`, `C1v`) already falls inside a
+family live-query-verified earlier.
+
+**A real bug this pass caught and fixed**: Ss. Ursula and Companions
+(deliberately left `minorHoursCommon`-unwired, see her own section
+above) got swept up and *wrongly* wired to `common-of-an-abbot` by this
+pass's own script, since she has `collectCommon` set (making her look
+like a normal, resolvable batch member) despite `propers: null` and
+being a genuine commemoration-only stub — the underlying
+Kalendaria-table lookup silently defaulted to St. Hilarion's own
+`primary` slot at her shared date rather than her own (nonexistent)
+one. Caught by cross-checking every swept saint's `propers` field for
+this exact `null`-but-`collectCommon`-set pattern before trusting a
+default-to-primary assumption; reverted, she's still correctly unwired.
+
+**A real, new category found: Doctors of the Church are not one thing.**
+7 saints' own `[Rule]` says "`vide C4a`" (`Commune Doctoris Pontificis`)
+— but live-querying showed this doesn't mean what it looks like it
+means. St. Athanasius, St. Augustine, St. Basil the Great, St. Hilary of
+Poitiers, St. John Chrysostom, and St. Leo I all render P/T/S/N
+byte-identical to `common-of-a-confessor-bishop`'s already-verified
+text (their own `C4a` reference just inherits `C4`'s content
+underneath, per the same "the referenced file's raw fields don't
+reliably predict the live-rendered text" lesson from every other
+category this session) — wired directly, no new content. **St. Gregory
+the Great is the one genuine exception**: his own live-rendered
+P/T/S/N is real, unique proper text (alluding to his own election,
+his *Liber Regulæ Pastoralis*, the dove-and-quill legend, and the
+"non Angli sed Angeli" episode already known from his Benedictus
+antiphon) — 7 new files (`{hour}-antiphon-st-gregory-the-great.yml`,
+`{terce,sext,none}-capitulum-st-gregory-the-great.yml`), no
+`minorHoursCommon` needed at all (`getMinorHourOverrideId` already
+tries his own id first). English wasn't rendered at all for any of his
+6 new texts (same Latin-duplicated-into-English gap as St. Scholastica/
+St. Benedict), so all 6 are `status.en: draft`.
+
+**One loose thread noticed, not chased**: St. Athanasius (May 2) and
+St. Leo I (April 11), both tested in years that happened to fall within
+Eastertide, rendered their shared `common-of-a-confessor-bishop` text
+with a trailing "`allelúja`" appended to every antiphon — but the other
+4 Doctor saints (tested in non-Paschaltide months) didn't. This isn't
+the same kind of thing as the already-modeled `-paschaltide` Common
+variants (`common-of-apostles-paschaltide` etc., which are *wholly
+different wording*, not the same text plus a suffix) — looks more like
+a general seasonal "append allelúja in Paschaltide" rule this app
+doesn't model at any level yet. Not blocking (the plain, correctly-
+verified text still renders in every other season, which is most of the
+year), but worth a look if Eastertide rendering fidelity matters later.
+
+Verified end-to-end: a runtime smoke test (folded into
+`tests/hours/resolve-common.test.ts`) covering the same-person reuse
+case (Finding of St. Stephen → St. Stephen Protomartyr's own files),
+Gregory's unique content, and a shared-Doctor case, plus 8 more spot
+checks across the newly-wired families during the pass itself.
+
 ### Christmas-Octave Sunday content — done (2026-08)
 
 Was: only the Benedictus antiphon existed for `christmas-octave-sunday`

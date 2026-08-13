@@ -12,3 +12,8 @@ name: "St. Urban I, Pope and Martyr"
 rank: simplex
 common: common-of-a-martyr-bishop
 propers: "st-urban-i"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (05-25o.txt) --
+# [Rule]/[Rank] point to Commune/C2b instead, the same C-number family
+# already live-query-verified for common-of-a-martyr.yml (see TODO.md's
+# 'minor hour content gaps' section).
+minorHoursCommon: common-of-a-martyr

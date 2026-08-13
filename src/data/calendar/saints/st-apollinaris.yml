@@ -12,3 +12,8 @@ name: "St. Apollinaris, Bishop and Martyr"
 rank: semiduplex
 common: common-of-a-martyr-bishop
 propers: "st-apollinaris"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (07-23.txt) --
+# [Rule]/[Rank] point to Commune/C2-1 instead, the same C-number family
+# already live-query-verified for common-of-a-martyr.yml (see TODO.md's
+# 'minor hour content gaps' section).
+minorHoursCommon: common-of-a-martyr

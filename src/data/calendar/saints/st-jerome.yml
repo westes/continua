@@ -6,3 +6,8 @@ name: "St. Jerome, Priest, Confessor and Doctor of the Church"
 rank: duplex
 common: common-of-a-confessor-not-bishop
 propers: "st-jerome"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (09-30.txt) --
+# [Rule]/[Rank] point to Commune/C5a instead, the same C-number family
+# already live-query-verified for common-of-an-abbot.yml (see TODO.md's
+# 'minor hour content gaps' section).
+minorHoursCommon: common-of-an-abbot

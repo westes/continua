@@ -16,3 +16,7 @@ name: "The Finding of St. Stephen, Protomartyr"
 rank: semiduplex
 common: common-of-a-martyr
 propers: "finding-of-st-stephen"
+# P/T/S/N: [Rule] points directly at st-stephen-protomartyr's own file
+# (Sancti/12-26), not a Commune category -- reuses his own already-authored
+# proper P/T/S/N wholesale (see TODO.md's 'minor hour content gaps' section).
+minorHoursCommon: st-stephen-protomartyr

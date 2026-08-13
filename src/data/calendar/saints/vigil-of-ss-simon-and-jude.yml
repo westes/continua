@@ -5,3 +5,8 @@ name: "Vigil of Ss. Simon and Jude"
 rank: vigil
 common: common-of-a-vigil
 propers: "vigil-of-ss-simon-and-jude"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (10-27.txt) --
+# [Rule]/[Rank] point to Commune/C1v instead, the same C-number family
+# already live-query-verified for common-of-a-vigil.yml (see TODO.md's 'minor
+# hour content gaps' section).
+minorHoursCommon: common-of-a-vigil

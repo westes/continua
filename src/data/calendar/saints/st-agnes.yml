@@ -7,3 +7,8 @@ name: "St. Agnes, Virgin and Martyr"
 rank: duplex
 common: common-of-a-virgin-martyr
 propers: "st-agnes"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (01-21.txt) --
+# [Rule]/[Rank] point to Commune/C6-1 instead, the same C-number family
+# already live-query-verified for common-of-a-virgin.yml (see TODO.md's
+# 'minor hour content gaps' section).
+minorHoursCommon: common-of-a-virgin

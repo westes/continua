@@ -6,3 +6,8 @@ name: "St. Anthony of Padua, Confessor"
 rank: semiduplex
 common: common-of-a-confessor
 propers: "st-anthony-of-padua"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (06-13.txt) --
+# [Rule]/[Rank] point to Commune/C5 instead, the same C-number family already
+# live-query-verified for common-of-an-abbot.yml (see TODO.md's 'minor hour
+# content gaps' section).
+minorHoursCommon: common-of-an-abbot

@@ -6,3 +6,8 @@ name: "Ss. Cosmas and Damian, Martyrs"
 rank: semiduplex
 common: common-of-several-martyrs
 propers: "ss-cosmas-and-damian"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (09-27.txt) --
+# [Rule]/[Rank] point to Commune/C3a instead, the same C-number family
+# already live-query-verified for common-of-several-martyrs.yml (see
+# TODO.md's 'minor hour content gaps' section).
+minorHoursCommon: common-of-several-martyrs

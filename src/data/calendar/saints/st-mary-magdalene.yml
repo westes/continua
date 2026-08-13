@@ -9,3 +9,8 @@ name: "St. Mary Magdalene, Penitent"
 rank: duplex
 common: common-of-a-holy-woman
 propers: "st-mary-magdalene"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (07-22.txt) --
+# [Rule]/[Rank] point to Commune/C7a instead, the same C-number family
+# already live-query-verified for common-of-a-virgin.yml (see TODO.md's
+# 'minor hour content gaps' section).
+minorHoursCommon: common-of-a-virgin

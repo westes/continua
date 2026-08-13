@@ -6,3 +6,9 @@ name: "Vigil of All Saints"
 rank: vigil
 common: common-of-a-vigil
 propers: "vigil-of-all-saints"
+# P/T/S/N: not confirmed via this pass's own file parser (this vigil's
+# particular file format wasn't handled by it), but every other vigil on
+# this calendar shares common-of-a-vigil (live-query-verified via the
+# Vigil of St. Andrew/St. Bartholomew, see that section of TODO.md) --
+# wired directly on that overwhelming precedent.
+minorHoursCommon: common-of-a-vigil

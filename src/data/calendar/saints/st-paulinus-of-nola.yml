@@ -6,3 +6,8 @@ name: "St. Paulinus of Nola, Bishop and Confessor"
 rank: simplex
 common: common-of-a-confessor-bishop
 propers: "st-paulinus-of-nola"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (06-22t.txt) --
+# [Rule]/[Rank] point to Commune/C4 instead, the same C-number family already
+# live-query-verified for common-of-a-confessor-bishop.yml (see TODO.md's
+# 'minor hour content gaps' section).
+minorHoursCommon: common-of-a-confessor-bishop

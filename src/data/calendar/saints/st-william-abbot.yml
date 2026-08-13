@@ -7,3 +7,8 @@ name: "St. William, Abbot"
 rank: duplex
 common: common-of-an-abbot
 propers: "st-william-abbot"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (06-25.txt) --
+# [Rule]/[Rank] point to Commune/C5b instead, the same C-number family
+# already live-query-verified for common-of-an-abbot.yml (see TODO.md's
+# 'minor hour content gaps' section).
+minorHoursCommon: common-of-an-abbot

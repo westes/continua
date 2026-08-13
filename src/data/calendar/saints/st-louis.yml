@@ -6,3 +6,8 @@ name: "St. Louis, King of France, Confessor"
 rank: simplex
 common: common-of-a-confessor-not-bishop
 propers: "st-louis"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (08-25.txt) --
+# [Rule]/[Rank] point to Commune/C5 instead, the same C-number family already
+# live-query-verified for common-of-an-abbot.yml (see TODO.md's 'minor hour
+# content gaps' section).
+minorHoursCommon: common-of-an-abbot

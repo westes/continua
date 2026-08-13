@@ -8,3 +8,8 @@ name: "St. Anne, Mother of the Blessed Virgin Mary"
 rank: duplex
 common: common-of-a-holy-woman
 propers: "st-anne"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (07-26.txt) --
+# [Rule]/[Rank] point to Commune/C7a instead, the same C-number family
+# already live-query-verified for common-of-a-virgin.yml (see TODO.md's
+# 'minor hour content gaps' section).
+minorHoursCommon: common-of-a-virgin

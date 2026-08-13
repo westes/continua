@@ -8,3 +8,8 @@ name: "Commemoration of St. Paul, Apostle"
 rank: duplex
 common: common-of-an-apostle
 propers: "commemoration-of-st-paul"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (06-30.txt) --
+# [Rule]/[Rank] point to Commune/C1 instead, the same C-number family already
+# live-query-verified for common-of-apostles.yml (see TODO.md's 'minor hour
+# content gaps' section).
+minorHoursCommon: common-of-apostles

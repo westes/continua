@@ -97,6 +97,42 @@ describe('genuinely unwinnable stubs still get a Benedictus antiphon (2026-08)',
     const ben = getBenedictusAntiphon(syntheticSanctoralDay('st-frances-of-rome'));
     expect(ben.status).toEqual({ la: 'verified', en: 'verified' });
   });
+});
+
+describe('minorHoursCommon for the *whole* calendar, not just the 94-saint batch (2026-08)', () => {
+  it("reuses another saint's own proper P/T/S/N wholesale when [Rule] points at their file directly, not a Commune category", () => {
+    // Finding of St. Stephen -- her own [Rule] is "vide Sancti/12-26"
+    // (St. Stephen Protomartyr's own Dec 26 file), not a Commune
+    // reference at all, so minorHoursCommon is his own id
+    // (st-stephen-protomartyr) -- reuses his already-authored proper
+    // files directly, same pattern as common-of-st-peter earlier.
+    const day = resolveDay('2026-08-03');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'finding-of-st-stephen' });
+    expect(resolveMinorHourAntiphon('prime', day, {}).status.la).toBe('verified');
+  });
+
+  it('a Doctor of the Church can have genuinely unique proper P/T/S/N, not shared with any Common', () => {
+    // St. Gregory the Great -- his own [Rule] says "vide C4a" (Doctor),
+    // the same reference 5 of the 6 other Doctor saints on this
+    // calendar have too, but his own live-rendered P/T/S/N is real,
+    // unique text ("Beátus Gregórius in cáthedra Petri...") -- not
+    // shared with common-of-a-confessor-bishop.yml the way St. Hilary
+    // of Poitiers's, St. Athanasius's, etc. all are (see
+    // st-hilary-of-poitiers.yml's own comment).
+    const day = resolveDay('2033-03-12');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-gregory-the-great' });
+    const prime = resolveMinorHourAntiphon('prime', day, {});
+    expect(prime.status.la).toBe('verified');
+    expect(prime.text.la).toContain('Gregórius');
+  });
+
+  it('most Doctor-of-the-Church saints share common-of-a-confessor-bishop despite their own [Rule] pointing at C4a (Doctor)', () => {
+    const day = resolveDay('2026-01-14'); // St. Hilary of Poitiers
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-hilary-of-poitiers' });
+    const prime = resolveMinorHourAntiphon('prime', day, {});
+    expect(prime.status.la).toBe('verified');
+    expect(prime.text.la).toContain('Ecce sacérdos magnus');
+  });
 
   it("resolves its own file's [Ant 1] as draft, not verified, when it can't be checked against a live rendering", () => {
     // Ss. Euphemia, Lucy, and Geminian -- her own file *does* have an

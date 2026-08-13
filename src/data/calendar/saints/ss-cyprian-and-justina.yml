@@ -9,3 +9,8 @@ name: "Ss. Cyprian and Justina, Martyrs"
 rank: simplex
 common: common-of-several-martyrs
 propers: "ss-cyprian-and-justina"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (09-26.txt) --
+# [Rule]/[Rank] point to Commune/C3a-1 instead, the same C-number family
+# already live-query-verified for common-of-several-martyrs.yml (see
+# TODO.md's 'minor hour content gaps' section).
+minorHoursCommon: common-of-several-martyrs

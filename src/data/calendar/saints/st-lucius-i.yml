@@ -11,3 +11,8 @@ name: "St. Lucius I, Pope and Martyr"
 rank: simplex
 common: common-of-a-martyr-bishop
 propers: "st-lucius-i"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (03-04cc.txt) --
+# [Rule]/[Rank] point to Commune/C2b-1 instead, the same C-number family
+# already live-query-verified for common-of-a-martyr.yml (see TODO.md's
+# 'minor hour content gaps' section).
+minorHoursCommon: common-of-a-martyr

@@ -8,3 +8,8 @@ name: "St. Cecilia, Virgin and Martyr"
 rank: semiduplex
 common: common-of-a-virgin-martyr
 propers: "st-cecilia"
+# P/T/S/N: no [Ant Prima]/etc of its own in the source (11-22.txt) --
+# [Rule]/[Rank] point to Commune/C6 instead, the same C-number family already
+# live-query-verified for common-of-a-virgin.yml (see TODO.md's 'minor hour
+# content gaps' section).
+minorHoursCommon: common-of-a-virgin
