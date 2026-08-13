@@ -39,4 +39,37 @@ describe('resolveEveningDay', () => {
       expect(day.winner.vespersFrom).toBe('firstVespersOfTomorrow');
     }
   });
+
+  // The three cases below are live-verified against the real Monastic
+  // Tridentinum 1617 engine (see commemorationOf's own doc comment in
+  // calendar/vespers.ts) — "commemoratio de præcedenti/sequenti" vs.
+  // "nihil de præcedenti" in the raw output, not just inferred from the
+  // daytime rule.
+  it('a Semiduplex loser is still commemorated when tomorrow claims First Vespers', () => {
+    // Aug 8, 2026 (Ss. Cyriacus/Largus/Smaragdus, Semiduplex) loses the
+    // evening to Aug 9 (Sunday); still commemorated.
+    const day = resolveEveningDay('2026-08-08');
+    expect(day.date).not.toBe('2026-08-08');
+    expect(day.commemorations).toContainEqual(
+      expect.objectContaining({ kind: 'sanctoral', id: 'ss-cyriacus-largus-and-smaragdus' }),
+    );
+  });
+
+  it('a Simplex loser is not commemorated when tomorrow claims First Vespers', () => {
+    // Aug 7, 2026 (St. Donatus, Simplex) loses the evening to Aug 8
+    // (Ss. Cyriacus/Largus/Smaragdus, now Semiduplex-threshold-eligible
+    // for First Vespers — see hasFirstVespers); not commemorated.
+    const day = resolveEveningDay('2026-08-07');
+    expect(day.date).not.toBe('2026-08-07');
+    expect(day.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-donatus')).toBe(false);
+  });
+
+  it('a winning day still commemorates a non-Simplex loser on the other side', () => {
+    // Jul 25, 2026 (St. James the Greater, Duplex II. classis) keeps its
+    // own Second Vespers outright, but still commemorates Jul 26
+    // (St. Anne).
+    const day = resolveEveningDay('2026-07-25');
+    expect(day.date).toBe('2026-07-25');
+    expect(day.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'st-anne' }));
+  });
 });
