@@ -21,3 +21,12 @@ name: "St. Michael the Archangel"
 rank: duplex-1-classis
 common: common-of-an-angel
 propers: "apparition-of-st-michael"
+# P/T/S/N: unlike getDayCollect/getBenedictusAntiphon, resolveMinorHourAntiphon
+# doesn't follow `propers` -- it keys off the day's own winner id
+# (getMinorHourOverrideId), which for this feast is "st-michael" itself,
+# not "apparition-of-st-michael". Since the two are word-for-word
+# identical (see above) and Apparition's own P/T/S/N is already fully
+# authored, reuse it directly the same way Finding of St. Stephen reuses
+# St. Stephen Protomartyr's (see TODO.md's "minor hour content gaps"
+# section) -- found by a final calendar-wide sweep, 2026-08.
+minorHoursCommon: apparition-of-st-michael

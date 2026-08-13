@@ -134,6 +134,19 @@ describe('minorHoursCommon for the *whole* calendar, not just the 94-saint batch
     expect(prime.text.la).toContain('Ecce sacérdos magnus');
   });
 
+  it('the last 2 duplex-majus+ saints held back from the original 29-saint P/T/S/N pass now have their own proper content too', () => {
+    // St. Benedict and All Saints of the Benedictine Order were excluded
+    // from that earlier pass for lacking a collect at the time (see
+    // TODO.md); now that they have one, they get the same individual
+    // live-query treatment as their peers -- own real text, not a shared
+    // Common, matching their rank.
+    const day = resolveDay('2033-03-21'); // St. Benedict
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-benedict' });
+    const terce = resolveMinorHourAntiphon('terce', day, {});
+    expect(terce.status).toEqual({ la: 'verified', en: 'draft' });
+    expect(terce.text.la).toContain('Benedíctus');
+  });
+
   it("resolves its own file's [Ant 1] as draft, not verified, when it can't be checked against a live rendering", () => {
     // Ss. Euphemia, Lucy, and Geminian -- her own file *does* have an
     // [Ant 1], but St. Alexius (a winnable saint checked earlier in this
@@ -145,6 +158,20 @@ describe('minorHoursCommon for the *whole* calendar, not just the 94-saint batch
     const ben = getBenedictusAntiphon(syntheticSanctoralDay('ss-euphemia-lucia-and-geminianus'));
     expect(ben.status).toEqual({ la: 'draft', en: 'draft' });
     expect(ben.text.la).toContain('Gaudent');
+  });
+
+  it("follows a saint's own propers-redirect for P/T/S/N too, not just the collect/Benedictus antiphon", () => {
+    // St. Michael's propers points at Apparition of St. Michael's own id
+    // (the two are word-for-word identical, see st-michael.yml), but
+    // getMinorHourOverrideId keys off the day's own winner id
+    // ("st-michael" itself) rather than following propers the way
+    // getDayCollect/getBenedictusAntiphon do -- a real gap a final
+    // calendar-wide sweep caught, fixed the same way as Finding of St.
+    // Stephen: minorHoursCommon points directly at his delegate's id.
+    const day = resolveDay('2028-09-29');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-michael' });
+    const prime = resolveMinorHourAntiphon('prime', day, {});
+    expect(prime.status.la).toBe('verified');
   });
 });
 

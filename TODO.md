@@ -423,7 +423,9 @@ father, Zechariah, first spoke that canticle).
 
 P/T/S/N for these 26 not attempted in this pass — a further layer on
 top, same as how the original 109 got Benedictus antiphons long before
-their own later, separate P/T/S/N pass (duplex-majus+ subset only).
+their own later, separate P/T/S/N pass (duplex-majus+ subset only). Done
+in a later pass, see "`minorHoursCommon` gap swept across the whole
+calendar" below — it covers these 26 too, not just the original 109.
 
 ### The 15 "unwinnable" stubs' Benedictus antiphons, resolved from source (2026-08)
 
@@ -622,6 +624,46 @@ Verified end-to-end: a runtime smoke test (folded into
 case (Finding of St. Stephen → St. Stephen Protomartyr's own files),
 Gregory's unique content, and a shared-Doctor case, plus 8 more spot
 checks across the newly-wired families during the pass itself.
+
+### The last 2 duplex-majus+ P/T/S/N gaps, and a final-sweep bug (2026-08)
+
+Closes out `minorHoursCommon`/P/T/S/N entirely: the original 29-saint
+pass held back 5 saints for lacking a collect at the time (`st-benedict`,
+`all-saints-of-the-benedictine-order`, `st-michael`, `st-maurus-abbot`,
+`ss-placid-and-companions`) — the latter two already got Common
+fallbacks wired in earlier sections above, and St. Michael redirects to
+Apparition of St. Michael's own content (see below). That left **St.
+Benedict and All Saints of the Benedictine Order** as the only two
+duplex-majus+ saints on the whole calendar with no P/T/S/N at all.
+Live-queried both the same way the original 29 were: real, unique
+proper text for each (Benedict's own Prime antiphon is the opening line
+of St. Gregory the Great's *Life of St. Benedict*; All Saints of the
+Benedictine Order draws on Matt 13:43, Luke 6:22-23, and a well-known
+All Saints antiphon) — 14 new files total, English translated
+throughout (`status.en: draft`) since the source rendered none for
+either saint's own texts.
+
+**A final calendar-wide sweep** (every saint's `resolveMinorHourAntiphon`/
+`resolveMinorHourChapter`, synthetic-winner methodology) turned up one
+more real gap: **St. Michael himself**. His `propers` field points at
+Apparition of St. Michael's own id (the two feasts are word-for-word
+identical, already established), and `getDayCollect`/
+`getBenedictusAntiphon` both explicitly follow `propers` when looking
+up their own content — but `getMinorHourOverrideId` doesn't; it keys
+off the day's own winner id directly (`"st-michael"`, not
+`"apparition-of-st-michael"`), so `resolveMinorHourAntiphon` was looking
+for a `prime-antiphon-st-michael.yml` that was never going to exist.
+Fixed the same way as Finding of St. Stephen: `minorHoursCommon:
+apparition-of-st-michael` on his own record, reusing his delegate's
+already-authored proper files directly. A real, narrow gap in the
+mechanism itself (not just missing data) — worth remembering if any
+other saint's `propers` ever points somewhere other than its own id.
+
+**Every real saint on this app's calendar now has real P/T/S/N
+content.** The only remaining absence is Ss. Ursula and Companions
+(deliberately left unwired, no way to verify a category of one) and
+the `example-confessor` test placeholder, which was never meant to
+have any.
 
 ### Christmas-Octave Sunday content — done (2026-08)
 
@@ -969,9 +1011,11 @@ correction (confirmed Roman-rite sourced), a handful already matched.
   stopped being treated as a content blocker — see that section's own
   note) and 5 have real unique text (one, Ss. Euphemia/Lucy/Geminian,
   honestly marked `draft` rather than `verified` since it can never be
-  checked against a live rendering). P/T/S/N: done for the 66-saint
-  batch; the 26 propers-set saints' own P/T/S/N not yet attempted, a
-  further layer on top (see that section's own note).
+  checked against a live rendering). P/T/S/N: done for all 94, and for
+  the whole rest of the calendar besides — see "`minorHoursCommon` gap
+  swept across the whole calendar" and "The last 2 duplex-majus+ P/T/S/N
+  gaps" below; every real saint on this app's calendar has real P/T/S/N
+  content now except Ss. Ursula and Companions, same reason as above.
 
 ### Bug found and fixed while pulling christmas-octave-sunday's antiphon
 
