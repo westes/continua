@@ -17,7 +17,11 @@ describe('February sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it("a saint with a proper antiphon but no proper collect resolves the collect as honestly missing", () => {
+  it('a saint with a proper antiphon but no proper collect resolves the collect via its Common category (collectCommon), not missing', () => {
+    // Her own [Oratio] is @Commune/C6::s/N\./Agathæ/ -- a name-substituted
+    // reference, not unique text -- confirmed identical to collect-c6.yml's
+    // own template; wired via collectCommon (2026-08), postdating this
+    // saint's own original authoring, which is why this used to be missing.
     const day = resolveDay('2029-02-05'); // St. Agatha
     expect(day.winner).toEqual({
       kind: 'sanctoral',
@@ -25,7 +29,9 @@ describe('February sanctoral pull (first pass)', () => {
       name: 'St. Agatha, Virgin and Martyr',
       rank: 'semiduplex',
     });
-    expect(getDayCollect(day).status.en).toBe('missing');
+    const collect = getDayCollect(day);
+    expect(collect.status.en).toBe('verified');
+    expect(collect.text.en).toContain('Agatha');
   });
 
   it('the two Chair-of-Peter feasts (Rome, Antioch) are separate records with independently authored, matching content', () => {

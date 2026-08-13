@@ -35,6 +35,20 @@ describe('getDayCollect', () => {
     expect(collect.status.la).toBe('verified');
   });
 
+  it("resolves St. Lucy's own collect, read directly from her source file rather than a shared template (2026-08)", () => {
+    // Her own [Oratio] is @Commune/C7a, unedited -- unlike
+    // collect-c6a.yml's own C7a-derived text, no "Vírginis tuæ" insertion
+    // -- so her own [Name] section supplies the whole descriptive phrase,
+    // making her file's own text effectively proper even though it's
+    // built from a Common formula underneath. No English in the source at
+    // all, so status.en stays draft.
+    const day = resolveDay('2025-12-13');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-lucy' });
+    const collect = getDayCollect(day);
+    expect(collect.status).toEqual({ la: 'verified', en: 'draft' });
+    expect(collect.text.en).toContain('Lucy');
+  });
+
   it('resolves as honestly missing for a saint with neither a proper collect nor a Common fallback authored', () => {
     // Every real saint in data/calendar/saints/*.yml now has either a
     // proper collect or a collectCommon fallback (see TODO.md's
@@ -70,6 +84,17 @@ describe('genuinely unwinnable stubs still get a Benedictus antiphon (2026-08)',
     // Commune/C6:Ant 2, which resolves to text byte-identical to
     // common-of-a-virgin's own already-verified Benedictus antiphon.
     const ben = getBenedictusAntiphon(syntheticSanctoralDay('st-felicitas'));
+    expect(ben.status).toEqual({ la: 'verified', en: 'verified' });
+  });
+
+  it('resolves via the same fallback for a saint from the *original*, pre-Kalendaria-table 109-saint pass', () => {
+    // St. Frances of Rome and St. Bibiana predate the 94-saint batch's
+    // collectCommon/minorHoursCommon mechanism entirely, but the same
+    // file-read method applies once a fileref is derived for them too --
+    // Frances of Rome's own file points to C7a (a whole-file inherit of
+    // C7, just relabeled "of a Widow"), resolving to the same
+    // common-of-a-virgin text as St. Felicitas above.
+    const ben = getBenedictusAntiphon(syntheticSanctoralDay('st-frances-of-rome'));
     expect(ben.status).toEqual({ la: 'verified', en: 'verified' });
   });
 

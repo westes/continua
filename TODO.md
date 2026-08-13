@@ -478,17 +478,58 @@ uncertainty can't be resolved at all. Used the text anyway (better than
 nothing, and plausibly correct), just honestly flagged rather than
 claimed as confirmed.
 
-All 15 now have real content — none left "honestly missing." St.
-Frances of Rome and St. Bibiana (the original, pre-Kalendaria-table
-109-saint pass) are still left missing and are good candidates for this
-exact same fix — this pass didn't touch them since their own fileref
-was never derived (they predate the Kalendaria-table work this session
-built), not because they're any less resolvable in principle. Ss.
+All 15 now have real content — none left "honestly missing." Ss.
 Ursula and Companions (the section above) is the one case that's
 actually different in kind: no other calendar member shares her
 `C6b`/plural-Virgins-and-Martyrs category to cross-check a Common
 against, so even a clean file read wouldn't have anything solid to
 verify itself against.
+
+### A full sweep for the same pattern elsewhere, and 2 more real fixes (2026-08)
+
+Same feedback, applied more broadly: swept every saint in
+`data/calendar/saints/*.yml` (not just the 94-batch's own lineage) for
+a still-`missing` collect or Benedictus antiphon, via a synthetic-winner
+smoke test. Found 4 hits; 2 were real, 2 were false positives from the
+sweep's own synthetic-day methodology (forcing a saint to be `day.winner`
+when in reality it's *never* the winner doesn't correctly exercise its
+real content path):
+
+- **St. Frances of Rome and St. Bibiana** (Benedictus antiphon) —
+  exactly the fix from the section above, just predating the
+  Kalendaria-table work (no fileref had been derived for either yet).
+  Both resolve to `common-of-a-virgin` once one is: Bibiana's file
+  points to `C6-1` directly; Frances of Rome's points to `C7a` (a
+  whole-file inherit of `C7`, just the `[Officium]` title relabeled "of
+  a Widow" — fitting, since she's a widow, not a virgin — with no
+  override of the same `[Ant 1]` cross-reference, so it resolves
+  identically).
+- **St. Agatha and St. Lucy** (collect) — a real, older gap, from
+  *before* `collectCommon` existed at all: both saints' own file
+  comments already documented "no unique collect... resolves honestly
+  missing... despite propers being set," written back when that was the
+  only option. Agatha's own `[Oratio]` is `@Commune/C6::s/N\./Agathæ/` —
+  confirmed identical to the already-existing `collect-c6.yml` template
+  — so `collectCommon: collect-c6` was simply wired in. Lucy's own
+  `[Oratio]` is `@Commune/C7a`, *unedited* (unlike `collect-c6a.yml`'s
+  own C7a-derived text, which has a `"Vírginis tuæ"` insertion baked
+  in) — her own `[Name]` section supplies the whole descriptive phrase
+  instead ("Lúciæ Vírginis et Mártyris tuæ", not just her bare name),
+  making her resolved text effectively proper even though the
+  underlying formula is a shared Common one; written as her own
+  `st-lucy-collect.yml` (she already had `propers: "st-lucy"` set)
+  rather than a new single-use `collect-c7a` template. No English
+  `[Oratio]` in the source for either saint's own unedited form, so
+  Lucy's stays `status.en: draft`.
+- **St. Clare** (false positive) — the sweep's synthetic day forced her
+  to be `day.winner`, but she never actually is one (always
+  commemorated under St. Lawrence's octave); her real content lives in
+  `st-clare-commemoration.yml`, used via a completely different code
+  path (`sanctoralCommemorationPart`, not `getBenedictusAntiphon`) that
+  the sweep doesn't exercise. Already fully authored and live-verified;
+  no gap.
+- **Ss. Ursula and Companions** (already covered above) — the one
+  genuine, currently-irresolvable case.
 
 Two vigils (Vigil of St. John the Baptist, Vigil of St. Lawrence) didn't
 resolve via this file-based method at all (their particular file format
