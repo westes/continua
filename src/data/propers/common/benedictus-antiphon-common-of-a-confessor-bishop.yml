@@ -1,0 +1,15 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query (St. Gregory Thaumaturgus, 11-17-2025) -- confirms this
+# saint's P/T/S/N also matches the already-authored
+# {prime,terce,sext,none}-{antiphon,capitulum}-common-of-a-confessor-
+# bishop.yml files (from the original 29-saint pass, extracted from Chair
+# of St. Peter/St. Martin of Tours) -- no Benedictus-antiphon fallback
+# existed yet for this Common, since both of those saints have their own
+# proper Lauds antiphon.
+id: benedictus-antiphon-common-of-a-confessor-bishop
+text:
+  la: "Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus."
+  en: "Well done, thou good and faithful servant * thou hast been faithful over a few things, I will make thee ruler over many things, saith the Lord."
+status:
+  la: verified
+  en: verified

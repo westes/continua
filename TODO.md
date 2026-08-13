@@ -272,6 +272,120 @@ all 94 ids via a synthetic sanctoral-winner day, confirming a real
 (non-`missing`, no leftover `{N}`) collect for every one — not just that
 the YAML files parse.
 
+### 94 `propers: null` saints — Benedictus antiphon + P/T/S/N Commons (2026-08)
+
+The natural next step the collects batch unblocked. Two more real gaps
+found and fixed along the way, both explained below.
+
+**Raw `Commune/*.txt` fields don't reliably match what the engine
+actually renders per hour, same lesson as the collects pass but for
+antiphons this time.** `Commune/C2.txt`'s (Martyr-Bishop) own `[Ant 1]`/
+`[Ant 2]`/`[Ant 3]` fields don't correspond 1:1 to Prime/Terce/Sext/None
+the way a naive reading would suggest, and no `CommuneM/*.txt` file
+defines explicit `[Ant Prima]`/`[Ant Tertia]`/`[Ant Sexta]`/`[Ant Nona]`
+fields for any of the categories this batch needed (only `C10`, BVM
+Saturday, has them). Confirmed independently: the already-authored
+`common-of-a-confessor-bishop` P/T/S/N content (from the original
+29-saint pass) doesn't match `Commune/C4.txt`'s own raw `[Ant 1]` either
+— it was live-query-sourced from Chair of St. Peter/St. Martin's own
+rendered pages, not read from the Commune file directly, which is
+exactly why. Fix: queried `web/cgi-bin/horas/officium.pl` directly
+(local Perl, not a network fetch — `prayPrima`/`prayTertia`/`praySexta`/
+`prayNona`/`prayLaudes`, `version=Monastic Tridentinum 1617`) for one
+representative `propers: null` saint per Common category, parsing the
+antiphon (incipit + full, reconstructing the `*` split point) and
+chapter (citation, text, closing versicles) out of the rendered HTML —
+new scratchpad tool `query_hours.py`/`batch_hours.py`, not committed,
+same one-off-tool convention as the rest of this project's extraction
+scripts. Caught its own version of the collects batch's "wrong saint"
+bug this way too: St. Emerentiana's stored clean-year comment
+(2029-01-23) actually rendered St. Hilary of Poitiers's office by that
+year (a stale date after his own earlier Jan 23 → Jan 14 correction,
+see above) — every representative's title is now verified against an
+accent-insensitive name-stem match before its content is trusted, with a
+fallback year search when the stored date doesn't check out.
+
+**The real liturgical categories are coarser than `SaintRecord.common`'s
+naming suggests — verified by cross-querying multiple saints per
+category, not assumed.** `common-of-a-martyr-bishop` and
+`common-of-a-martyr` render byte-identical P/T/S/N and Benedictus
+antiphon content (confirmed: St. Anacletus, St. Simeon, St. Blaise, St.
+Pantaleon — four different collect-template variants, one shared minor-
+hour Common); so do `common-of-an-abbot`, `common-of-a-confessor-not-
+bishop`, and `common-of-a-confessor` (St. Odo, St. John Gualbert, St.
+Nicholas of Tolentino, St. Alexius); so do `common-of-a-virgin-martyr`,
+`common-of-a-virgin`, and `common-of-a-holy-woman` (St. Justina, St.
+Emerentiana, St. Praxedes, St. Martha). `common-of-several-martyrs`
+splits further than its own name suggests, though: plain groups of
+martyrs (Ss. Cornelius and Cyprian, Ss. Faustinus and Jovita, Ss. Placid
+and Companions — the last a real Duplex II. classis feast, not just a
+low-rank stub, confirming the fallback isn't only reached by minor
+saints) share one Common, but groups of *Pope*-martyrs (Ss. Cletus and
+Marcellinus, Ss. Soter and Caius) render distinct, more triumphal,
+allelúja-toned text of their own — a real category the collect
+templates already knew about (`collect-c3b`) that the `common` field
+alone doesn't surface. One saint, the Dedication of the Basilicas of Ss.
+Peter and Paul, turned out *not* to share its `common` field's nominal
+category (`common-of-an-apostle`) at all: live-verified its P/T/S/N and
+Benedictus antiphon are the Dedication-of-a-Church Common instead (about
+the building, matching its own `collect-c8`), not shared with any
+apostle content. Net result: 7 new shared Common categories
+(`common-of-a-martyr`, `common-of-an-abbot`, `common-of-several-
+martyrs`, `common-of-pope-martyrs`, `common-of-a-vigil`, `common-of-a-
+virgin`, `common-of-a-dedication`) plus the pre-existing `common-of-a-
+confessor-bishop` cover 66 of the 94 saints; the 7th confessor-bishop
+saint's own Benedictus antiphon Common file was also new (the original
+29-saint pass never needed it — Chair of St. Peter/St. Martin both have
+their own proper Lauds antiphon, only their chapters were shared).
+
+**New mechanism**: `SaintRecord.benedictusCommon` (`calendar/feasts.ts`)
+— `getBenedictusAntiphon` (`hours/resolve-common.ts`) now falls back to
+`benedictus-antiphon-${benedictusCommon}.yml` when a saint has neither a
+proper collect-antiphon pair nor... (see below) — deliberately no name-
+substitution mechanism built for it (unlike `collectCommon`): every
+Common category in current use renders name-free Benedictus-antiphon
+text; only the Doctor Common (`C4a`, not used by any saint here) has a
+`{N}`-shaped placeholder in the source.
+
+**Real bug found and fixed while wiring this in**: `getMinorHourOverrideId`
+gated *all* Prime/Terce/Sext/None lookup — both the per-saint proper file
+and the shared-Common fallback — behind the same duplex-majus+ threshold
+Lauds' own *psalmody* override uses, on the assumption that only a
+strong feast carries its own minor-hour content at all. Live-querying
+this batch proved that wrong: a winning Semiduplex saint (St. Anacletus)
+still renders its own proper/Common antiphons at Prime/Terce/Sext/None,
+not the plain ferial default — the majus+ gate was only ever a proxy for
+"this app has authored proper content," not a real liturgical rule, and
+became actively wrong once Common-category content started covering
+lower ranks too. Fixed by making `getMinorHourOverrideId` eligible for
+*any* sanctoral winner; Lauds' own psalmody override
+(`hours/lauds.ts`'s `getPsalmodyOverrideFor`) is unaffected and correctly
+stays majus+-gated, since that's a real, much bigger per-saint authored
+commitment (the whole psalm-antiphon block), not something this batch
+adds a Common fallback for.
+
+One saint, Ss. Ursula and Companions, deliberately left without
+`minorHoursCommon`/`benedictusCommon`: her collect template
+(`collect-c6b`, plural Virgins and Martyrs) has no other member on this
+app's calendar to verify a shared minor-hour text against, and she can
+never be queried directly herself (a genuinely unwinnable stub, always
+commemorated under St. Hilarion) — left honestly unauthored rather than
+guessed from the singular `common-of-a-virgin` category, moot in
+practice since a commemoration's own minor hours are never rendered.
+
+Verified end-to-end: a runtime smoke test (folded into
+`tests/hours/resolve-common.test.ts`) resolving `getBenedictusAntiphon`/
+`resolveMinorHourAntiphon`/`resolveMinorHourChapter` for a sample across
+categories, including the Duplex II. classis case to confirm the
+majus+-gate fix isn't just a low-rank special case.
+
+**Not done in this pass**: the other 26 of the 94 (`propers` now set to
+their own id, from the collects batch's proper-collect saints) still
+need their own individual Benedictus antiphon authored — same shape as
+the original 109-saint pass (own `[Ant 1]`/live-rendered text, not a
+shared Common), since a saint with a genuine proper collect usually has
+a genuine proper antiphon too. Not yet started.
+
 ### Christmas-Octave Sunday content — done (2026-08)
 
 Was: only the Benedictus antiphon existed for `christmas-octave-sunday`
@@ -608,8 +722,10 @@ correction (confirmed Roman-rite sourced), a handful already matched.
   (see the section above for method and its own correction).
 - **94 `propers: null` saints: done (2026-08)** — see the dedicated section
   below for the collect-authoring pass and the era-specific-calendar
-  discovery it took to do reliably. Antiphons for these 94 (the natural
-  next step this unblocks) not yet started.
+  discovery it took to do reliably. Benedictus antiphon + P/T/S/N: done
+  for the 66 that draw from a shared Common (own dedicated section
+  below); the other 26 (own proper collect, from the same batch) still
+  need their own individually-authored Benedictus antiphon, not started.
 
 ### Bug found and fixed while pulling christmas-octave-sunday's antiphon
 

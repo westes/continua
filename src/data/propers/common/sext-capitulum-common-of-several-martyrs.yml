@@ -1,0 +1,18 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Ss. Faustinus and Jovita, 02-15-2038) -- common-of-several-martyrs.
+# For groups of martyrs who are not Popes (see
+# common-of-pope-martyrs.yml for that distinct, allelúja-toned set) --
+# cross-checked against Ss. Cornelius and Cyprian, Ss. Placid and
+# Companions (a real Duplex II. classis feast, not just a stub --
+# confirms this fallback applies at any rank, per
+# resolveMinorHourAntiphon's own "eligible, not gated" design).
+id: sext-capitulum-common-of-several-martyrs
+text:
+  la: "Réddidit Deus mercédem labórum sanctórum suórum, et dedúxit illos in via mirábili: et fuit illis in velaménto diéi, et in luce stellárum nocte. R. Deo grátias. V. Exsúltent justi in conspéctu Dei. R. Et delecténtur in lætítia."
+  en: "And she rendered to the just the wages of their labours, and conducted them in a wonderful way: and she was to them for a covert by day, and for the light of stars by night. R. Thanks be to God. V. Let the righteous rejoice before God. R. Yea, let them exceedingly rejoice."
+citation:
+  la: "Sap 10:17"
+  en: "Wis 10:17"
+status:
+  la: verified
+  en: verified

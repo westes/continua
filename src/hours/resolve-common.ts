@@ -3,7 +3,7 @@ import type { Commemoration, DayWinner, LiturgicalDay } from '../calendar/types'
 import type { ProperText } from '../propers';
 import { getCommonProper, getTemporalProper } from '../propers';
 import { getSaintRecord } from '../calendar/feasts';
-import { resolveActiveOctave, isAtLeast } from '../calendar';
+import { resolveActiveOctave } from '../calendar';
 import { splitAntiphon } from './antiphon';
 
 function toResolvedText(proper: ProperText): ResolvedText {
@@ -93,30 +93,39 @@ export function isSundayOrFeastOffice(day: LiturgicalDay): boolean {
 }
 
 /**
- * Whether today's office winner (resolveOfficeWinner) is a strong enough
- * feast to carry its own proper minor-hour content (antiphon + chapter)
- * — duplex-majus+, the same threshold Lauds' own psalmody override uses
- * (hours/lauds.ts's getPsalmodyOverrideFor), kept in sync deliberately:
- * as each remaining duplex-majus+ saint gets a Lauds override authored,
- * the same id is what Prime/Terce/Sext/None would look for too, so it's
- * one shared backlog (see TODO.md), not per-hour lists that can drift.
+ * The id to look up for today's office winner's (resolveOfficeWinner)
+ * minor-hour content (antiphon + chapter) — `${hourId}-antiphon-${id}`/
+ * `${hourId}-capitulum-${id}` first (a per-saint proper file, only ever
+ * authored for duplex-majus+ saints in practice), then that saint's
+ * `minorHoursCommon` fallback (see resolveMinorHourAntiphon/Chapter
+ * below), tried regardless of rank: live-querying the reference engine
+ * directly (2026-08, the 94 `propers: null` saints' P/T/S/N pass)
+ * confirmed a winning Simplex/Semiduplex saint's own minor hours *do*
+ * carry proper/Common antiphons, not the plain ferial default — a real
+ * liturgical fact, not an app gap. Any sanctoral winner is therefore
+ * eligible here; it's `resolveMinorHourAntiphon`/`resolveMinorHourChapter`
+ * that decide, per hour, whether anything's actually been authored for
+ * that id (falling through to the weekday default when not). Until
+ * 2026-08 this was gated at duplex-majus+ (the same threshold Lauds'
+ * own *psalmody* override uses, hours/lauds.ts's getPsalmodyOverrideFor)
+ * — that threshold remains correct for the *psalmody* override
+ * specifically (a much bigger authored-content commitment, still
+ * majus+-only), but was wrongly reused here as if it were a general
+ * "is this saint's office strong enough" rule.
  * Also honors ALWAYS_OVERRIDE_TEMPORAL_IDS the same way
  * getPsalmodyOverrideFor does — a named temporal feast (`christ-the-
  * king`, `christmas-octave-sunday`) is eligible regardless of rank, since
- * it has no FeastClass to compare against duplex-majus in the first
- * place. Missing until 2026-08: this function only checked the sanctoral
- * branch, so a temporal id in that set got a Lauds psalmody override but
- * silently no Prime/Terce/Sext/None one, however much was authored for
- * it — a real gap, not by design.
- * Returns the id to look up (`${hourId}-antiphon-${id}` etc.), or
- * `undefined` when nothing eligible is happening today.
+ * it has no FeastClass to compare against in the first place.
+ * Returns the id to look up, or `undefined` when nothing sanctoral or
+ * named-temporal is happening today (a plain temporal day just stays on
+ * its own weekday default, same as always).
  */
 export function getMinorHourOverrideId(day: LiturgicalDay): string | undefined {
   const winner = resolveOfficeWinner(day);
   if (winner.kind === 'temporal' && ALWAYS_OVERRIDE_TEMPORAL_IDS.has(winner.id)) {
     return winner.id;
   }
-  if (winner.kind === 'sanctoral' && isAtLeast(winner.rank, 'duplex-majus')) {
+  if (winner.kind === 'sanctoral') {
     return winner.id;
   }
   return undefined;
@@ -329,7 +338,9 @@ export function getDayCollects(day: LiturgicalDay): ResolvedPart[] {
  * pull, sourced from each saint's own raw [Ant 1] — see e.g.
  * st-lawrence-antiphon.yml) for a sanctoral winner, `${id}-benedictus-
  * antiphon` (not authored yet for any temporal id — resolves "missing",
- * same pending convention as everywhere else) for a temporal one. Uses
+ * same pending convention as everywhere else) for a temporal one, then
+ * `saint.benedictusCommon` (`benedictus-antiphon-${benedictusCommon}.yml`,
+ * see SaintRecord's own doc comment) when neither exists. Uses
  * resolveOfficeWinner, not the raw `day.winner` — on an octave day this
  * is the octave's own feast's antiphon (live-verified: St. Lawrence's
  * "In cratícula", not the commemorated St. Clare's, and not the plain
@@ -343,7 +354,13 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
   }
   const saint = getSaintRecord(winner.id);
   if (saint?.propers) {
-    return resolveCommon(`${saint.propers}-antiphon`);
+    const proper = resolveCommon(`${saint.propers}-antiphon`);
+    if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
+      return proper;
+    }
+  }
+  if (saint?.benedictusCommon) {
+    return resolveCommon(`benedictus-antiphon-${saint.benedictusCommon}`);
   }
   return { text: {}, status: { la: 'missing', en: 'missing' } };
 }

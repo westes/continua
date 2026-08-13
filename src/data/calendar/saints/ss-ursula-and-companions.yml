@@ -2,6 +2,17 @@
 # commemorated under St. Hilarion (see st-hilarion.yml), never wins
 # outright; both are fixed, non-movable dates, so this isn't an artifact
 # of the tested year. rank/propers unverified placeholders.
+#
+# No minorHoursCommon/benedictusCommon: her collect template (collect-c6b,
+# plural Virgins and Martyrs) has no other member on this app's calendar
+# to cross-verify a shared P/T/S/N/Benedictus text against, and she can
+# never be queried directly herself (never the day's own winner) -- rather
+# than guess she shares common-of-a-virgin's singular text (2026-08's
+# live-verified category, built from St. Justina/St. Emerentiana/
+# St. Praxedes/St. Martha, all singular), left unset, same "honestly
+# missing" convention as every other unauthored fallback in this codebase.
+# Moot in practice: a commemoration's minor hours are never rendered
+# anyway (resolveOfficeWinner only ever returns the day's actual winner).
 id: ss-ursula-and-companions
 name: "Ss. Ursula and Companions, Virgins and Martyrs"
 rank: simplex

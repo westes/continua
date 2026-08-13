@@ -1,0 +1,21 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# query (Dedication of the Basilicas of Ss. Peter and Paul, 11-18-2025) --
+# common-of-a-dedication. For the Dedication of a Church (Commune/C8.txt)
+# -- currently only one saint on this app's calendar uses it.
+# `SaintRecord.common` calls it `common-of-an-apostle` (Peter and Paul's
+# own basilicas), but its actual P/T/S/N and Benedictus antiphon draw
+# from the Dedication Common instead (about the building, not the
+# apostles) -- confirmed live, not assumed from the collect's own
+# `collect-c8`. No embedded "*": this feast is Duplex (double-or-higher),
+# so its own query shows the antiphon in full at both open and close with
+# no separate incipit marker -- correct as-is for its only current user,
+# but worth reconstructing from a lower-rank source if this Common ever
+# gains a Simplex/Semiduplex member (see the analogous fix in
+# benedictus-antiphon-common-of-an-abbot.yml/-a-virgin.yml).
+id: benedictus-antiphon-common-of-a-dedication
+text:
+  la: "Zachǽe, festínans descénde, quia hódie in domo tua opórtet me manére. At ille festínans descéndit, et suscépit illum gaudens in domum suam. Hódie huic dómui salus a Deo facta est, allelúja."
+  en: "Zacchaeus, make haste and come down, for today I must abide at thy house. And he made haste and came down, and received Him joyfully into his house. This day is salvation come from God to this house. Alleluia."
+status:
+  la: verified
+  en: verified

@@ -1,0 +1,15 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (Ss. Faustinus and Jovita, 02-15-2038) -- common-of-several-martyrs.
+# For groups of martyrs who are not Popes (see
+# common-of-pope-martyrs.yml for that distinct, allelúja-toned set) --
+# cross-checked against Ss. Cornelius and Cyprian, Ss. Placid and
+# Companions (a real Duplex II. classis feast, not just a stub --
+# confirms this fallback applies at any rank, per
+# resolveMinorHourAntiphon's own "eligible, not gated" design).
+id: terce-antiphon-common-of-several-martyrs
+text:
+  la: "Cum palma * ad regna pervenérunt Sancti, corónas decóris meruérunt de manu Dei."
+  en: "The Saints have attained unto the kingdom, * with palms in their hands; they have earned crowns of Majesty from the Lord's hand."
+status:
+  la: verified
+  en: verified

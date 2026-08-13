@@ -61,6 +61,20 @@ export interface SaintRecord {
    * have two or more `{N}` placeholders for a group commemorated
    * together, one array entry per saint in the group. */
   collectName?: { la: string[]; en: string[] };
+  /**
+   * Fallback id for Lauds' Benedictus antiphon (`getBenedictusAntiphon`)
+   * when this saint has no proper `${propers}-antiphon` of their own —
+   * `data/propers/common/benedictus-antiphon-${id}.yml`. Unlike
+   * `collectCommon`, no name-substitution template: live-verified every
+   * Common category's Benedictus antiphon in current use is name-free
+   * text (the source's own `Commune/C4a.txt`, Doctor, is the one
+   * exception — has a `{N}`-shaped "beáte N." — but no saint on this
+   * calendar draws from it yet, so no substitution mechanism was built
+   * for this field; revisit if that changes). Often, but not always, the
+   * same category as `minorHoursCommon` below (both were live-verified
+   * independently per saint, not assumed identical).
+   */
+  benedictusCommon?: string;
   /** See calendar/types.ts's OctaveConfig doc comment. Absent for the vast
    * majority of saints — only ones with a real octave declare it. */
   octave?: OctaveConfig;

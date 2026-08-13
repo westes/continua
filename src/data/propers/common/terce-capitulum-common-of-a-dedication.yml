@@ -1,0 +1,18 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (dedication of the basilicas of ss peter and paul, 11-18-2025) -- common-of-a-dedication.
+# For the Dedication of a Church (Commune/C8.txt) -- currently only
+# one saint on this app's calendar uses it. `SaintRecord.common` calls
+# it `common-of-an-apostle` (Peter and Paul's own basilicas), but its
+# actual P/T/S/N and Benedictus antiphon draw from the Dedication
+# Common instead (about the building, not the apostles) -- confirmed
+# live, not assumed from the collect's own `collect-c8`.
+id: terce-capitulum-common-of-a-dedication
+text:
+  la: "Vidi civitátem sanctam, Jerúsalem novam, descendéntem de cælo a Deo, parátam sicut sponsam ornátam viro suo. R. Deo grátias. V. Domum tuam, Dómine, decet sanctitúdo. R. In longitúdinem diérum."
+  en: "I saw the holy city, New Jerusalem, coming down from God out of heaven, prepared as a Bride adorned for her husband. R. Thanks be to God. V. Holiness becometh thine house, O Lord. R. For ever."
+citation:
+  la: "Apo 21:2"
+  en: "Rev 21:2"
+status:
+  la: verified
+  en: verified

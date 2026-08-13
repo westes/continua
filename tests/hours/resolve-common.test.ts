@@ -1,6 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import { resolveDay } from '../../src/calendar';
-import { getDayCollect, splitNamedAntiphon } from '../../src/hours/resolve-common';
+import {
+  getDayCollect,
+  getBenedictusAntiphon,
+  resolveMinorHourAntiphon,
+  resolveMinorHourChapter,
+  splitNamedAntiphon,
+} from '../../src/hours/resolve-common';
 import type { LiturgicalDay } from '../../src/calendar/types';
 
 describe('getDayCollect', () => {
@@ -35,6 +41,33 @@ describe('getDayCollect', () => {
     const collect = getDayCollect(day);
     expect(collect.status.la).toBe('missing');
     expect(collect.status.en).toBe('missing');
+  });
+});
+
+describe('minorHoursCommon/benedictusCommon fallback (2026-08, the 94 propers:null saints)', () => {
+  it('a below-duplex-majus saint still gets a real Benedictus antiphon and P/T/S/N content via its Common category', () => {
+    // St. Anacletus, Semiduplex -- below the duplex-majus+ threshold that
+    // gates a *proper* psalmody override (hours/lauds.ts's
+    // getPsalmodyOverrideFor), but getMinorHourOverrideId no longer
+    // requires that threshold for the shared-Common fallback (see its own
+    // doc comment for why: live-querying confirmed even a winning Simplex
+    // saint keeps proper/Common minor-hour content, not the ferial
+    // default).
+    const day = resolveDay('2028-07-13');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-anacletus' });
+    expect(getBenedictusAntiphon(day).status).toEqual({ la: 'verified', en: 'verified' });
+    expect(resolveMinorHourAntiphon('prime', day, {}).status.la).toBe('verified');
+    expect(resolveMinorHourChapter('terce', day, 'terce-capitulum-ferial').status.la).toBe('verified');
+  });
+
+  it('a Duplex-II-classis saint with no proper minor-hour content of its own still resolves via the Common, not just below-majus saints', () => {
+    // Ss. Placid and Companions -- confirms the fallback isn't only
+    // reached by low ranks; a real major feast with no *proper*
+    // Prime/Terce/Sext/None file authored falls through to its
+    // minorHoursCommon (common-of-several-martyrs) exactly the same way.
+    const day = resolveDay('2025-10-05');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'ss-placid-and-companions' });
+    expect(resolveMinorHourAntiphon('none', day, {}).status.la).toBe('verified');
   });
 });
 
