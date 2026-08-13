@@ -1,0 +1,108 @@
+# Sourced from Divinum Officium's own explicitly-labeled Monastic block:
+# divinum-officium-reference/web/www/horas/Latin/Psalterium/Psalmi/Psalmi
+# major.txt, "[Monastic Vespera]" (Sunday) through "[Monastic Vespera]
+# (feria 7)" (Saturday) — English parallel at the same section names in
+# .../English/Psalterium/Psalmi/Psalmi major.txt. Not a per-day live
+# prayVespera query (unlike lauds-antiphons.yml) — instead cross-checked
+# against Monday's Lauds antiphons, which *are* already live-verified:
+# "[Monastic Laudes] (feria 2)" in that same source file matches
+# lauds-antiphons.yml's monday entry word-for-word, including its Ps 35
+# antiphon, which two other unlabeled candidate tables earlier in the same
+# file ("Day1 Laudes1/2", "Daya1 Laudes") both got wrong. That match is
+# what confirms "[Monastic Vespera]" is the right block to use here, not
+# those unlabeled Day/Daya ones.
+#
+# Only 4 psalms a day (Rule of Benedict ch. 17), not Roman's 5. Two real
+# wrinkles in how those 4 "slots" map to psalm numbers:
+#   - Monday's third slot joins Ps 115 and 116 under one shared antiphon
+#     (both short psalms, said back-to-back) — 'psalms' lists both.
+#   - Thursday's first slot (Ps 138) and Friday's second slot (Ps 143) are
+#     each one psalm split into two verse-ranges under one shared
+#     antiphon, each range getting its own Gloria Patri — 'psalms' lists
+#     two `{number, verses}` entries. Ps 144 is *also* split (1-9/10-21),
+#     but across two different days (Friday's last slot / Saturday's
+#     first), each with its own distinct antiphon — that's just two
+#     ordinary single-psalm slots, not a shared-antiphon pair.
+#
+# Underlying psalm texts for this range (109-147, minus the few already
+# authored for other hours) aren't transcribed yet — src/data/psalms only
+# has what Prime/Terce/Sext/None/Matins/Lauds/Compline needed so far.
+
+sunday:
+  groups:
+    - psalms: [109]
+      antiphon: { la: "Dixit Dóminus * Dómino meo: Sede a dextris meis.", en: "The Lord said * to my Lord: Sit thou at my right hand." }
+    - psalms: [110]
+      antiphon: { la: "Fidélia * ómnia mandáta ejus: confirmáta in sæculum sæculi.", en: "All his commandments are faithful: * confirmed for ever and ever." }
+    - psalms: [111]
+      antiphon: { la: "In mandátis * ejus cupit nimis.", en: "He shall delight * exceedingly in his commandments." }
+    - psalms: [112]
+      antiphon: { la: "Sit nomen Dómini * benedíctum in sæcula.", en: "Blessed be the name of the Lord * from henceforth now and for ever." }
+
+monday:
+  groups:
+    - psalms: [113]
+      antiphon: { la: "Nos qui vívimus, * benedícimus Dómino.", en: "But we that live * bless the Lord." }
+    - psalms: [114]
+      antiphon: { la: "Inclinávit * Dóminus aurem suam mihi.", en: "The Lord hath inclined * his ear unto me." }
+    - psalms: [115, 116]
+      antiphon: { la: "Crédidi, * propter quod locútus sum.", en: "I have believed * therefore have I spoken." }
+    - psalms: [128]
+      antiphon: { la: "Sæpe * expugnavérunt me a juventúte mea.", en: "Often * have they fought against me from my youth." }
+
+tuesday:
+  groups:
+    - psalms: [129]
+      antiphon: { la: "De profúndis * clamávi ad te, Dómine.", en: "Out of the depths * have I cried unto thee, O Lord!" }
+    - psalms: [130]
+      antiphon: { la: "Speret * Israël in Dómino.", en: "Let Israel * hope in the Lord." }
+    - psalms: [131]
+      antiphon: { la: "Et omnis * mansuetúdinis ejus.", en: "O Lord, remember Israel * and all his meekness." }
+    - psalms: [132]
+      antiphon: { la: "Ecce quam bonum, * et quam jucúndum, habitáre fratres in unum!", en: "Behold * how good and how pleasant it is for brethren to dwell together in unity." }
+
+wednesday:
+  groups:
+    - psalms: [134]
+      antiphon: { la: "Ómnia * quæcúmque vóluit, Dóminus fecit.", en: "Whatsoever * the Lord hath pleased he hath done." }
+    - psalms: [135]
+      antiphon: { la: "Quóniam * in ætérnum misericórdia ejus.", en: "For his mercy * endureth for ever." }
+    - psalms: [136]
+      antiphon: { la: "Hymnum cantáte nobis * de cánticis Sion.", en: "Sing ye to us * a hymn of the songs of Sion." }
+    - psalms: [137]
+      antiphon: { la: "In conspéctu * Angelórum psallam tibi, Deus meus.", en: "Before the Angels will * I sing praise unto thee, O my God." }
+
+thursday:
+  groups:
+    - psalms:
+        - { number: 138, verses: "1-10" }
+        - { number: 138, verses: "11-24" }
+      antiphon: { la: "Dómine, * probásti me, et cognovísti me.", en: "O Lord * thou hast proved me, and known me." }
+    - psalms: [139]
+      antiphon: { la: "A viro iníquo * líbera me, Dómine.", en: "Deliver me, O Lord * from the evil man." }
+    - psalms: [140]
+      antiphon: { la: "Dómine, * clamávi ad te, exáudi me.", en: "I have cried to thee, * O Lord, hearken to my voice." }
+
+friday:
+  groups:
+    - psalms: [141]
+      antiphon: { la: "Pórtio mea, * Dómine, sit in terra vivéntium.", en: "May my portion * O Lord, be in the land of the living." }
+    - psalms:
+        - { number: 143, verses: "1-8" }
+        - { number: 143, verses: "9-15" }
+      antiphon: { la: "Benedíctus * Dóminus, Deus meus.", en: "Blessed be * the Lord my God." }
+    - psalms:
+        - { number: 144, verses: "1-9" }
+      antiphon: { la: "Per síngulos dies * benedícam te, Dómine.", en: "Day by day * I shall bless thee, O Lord." }
+
+saturday:
+  groups:
+    - psalms:
+        - { number: 144, verses: "10-21" }
+      antiphon: { la: "Regnum tuum, * Dómine, regnum ómnium sæculórum.", en: "Thy kingdom, * O Lord, is a kingdom for all ages." }
+    - psalms: [145]
+      antiphon: { la: "Laudábo * Deum meum in vita mea.", en: "I shall praise the Lord * in my life." }
+    - psalms: [146]
+      antiphon: { la: "Deo nostro * jucúnda sit laudátio.", en: "To our God * be joyful and fitting praise." }
+    - psalms: [147]
+      antiphon: { la: "Lauda, * Jerúsalem Dóminum.", en: "Praise the Lord, * O Jerusalem." }
