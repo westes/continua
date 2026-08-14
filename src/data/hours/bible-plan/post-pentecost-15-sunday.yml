@@ -1,0 +1,21 @@
+# The user's own continuous scripture-reading plan, row "14th Sunday
+# after Trinity" -> "Tob 1-2, Sir 45" (temporalId post-pentecost-15 =
+# "14th Sunday after Trinity" in this app's own Trinity-counted display
+# label — Trinity Sunday itself is post-pentecost-01, so "Nth Sunday
+# after Trinity" is always post-pentecost-(N+1); see calendar/
+# day-label.ts and calendar/temporal-id.ts). No Gospel reading on this
+# Sunday row — confirmed a deliberate editorial choice across the whole
+# plan (the user's plan never puts a Gospel reading on a Sunday), not a
+# gap. This Sunday's own Nocturn 1 (see hours/matins.ts) uses this data;
+# Nocturns 2-3 use the day's own patristic/Gospel content instead (see
+# src/propers/nocturn-readings.ts).
+temporalId: post-pentecost-15
+weekday: sunday
+readings:
+  - passages:
+      - { book: tob, chapter: 1 }
+      - { book: tob, chapter: 2 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: sir, chapter: 45 }
+    status: { la: missing, en: missing }

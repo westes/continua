@@ -204,10 +204,42 @@ export type ResolvedPart =
   // A standalone antiphon, said on its own rather than framing a psalm —
   // see 'closing-antiphon' above.
   | { kind: 'antiphon'; text: ResolvedText }
+  // Matins only. Groups a nocturn's psalms for the UI — each entry is a
+  // plain 'psalm' ResolvedPart (Sunday/Duplex+ nocturns 1-2 use the fixed
+  // Ps 20-31 table, nocturn 3 uses 'canticle' entries instead; ferial days
+  // have a single unnumbered nocturn and don't use this wrapper at all —
+  // see hours/matins.ts). `nocturn` is 1-3.
+  | { kind: 'nocturn-psalmody'; nocturn: number; psalms: ResolvedPart[] }
+  // Matins only. Sung after the last lesson on a 3-nocturn day (Sunday or
+  // a Duplex+ sanctoral winner) — see hours/matins.ts. Never present on a
+  // plain ferial (1-nocturn) day.
+  | { kind: 'te-deum'; text: ResolvedText }
   // Martyrology and Regula both render as a block of prose text with a
   // label (a fixed section name for Martyrology, a date-derived chapter
   // title for Regula) rather than a fixed textRef.
-  | { kind: 'lesson'; text: ResolvedText; label?: string };
+  // `nocturn`/`source` are Matins-only (see hours/matins.ts): `nocturn`
+  // groups a reading under its 'nocturn-psalmody' sibling for the UI (1-3,
+  // omitted on a ferial 1-nocturn day); `source` is a human-readable
+  // attribution ("St. John Chrysostom, Homily 3 on Matthew"; the user's
+  // own bible-reading plan doesn't carry one). `isGospel` flags a reading
+  // as a Gospel pericope (from either the user's own continuous-reading
+  // plan or the day's own proper Gospel+homily — never a Common-of-Saints
+  // fallback Gospel, which this app deliberately excludes for Matins, see
+  // hours/matins.ts) rather than a distinct part kind, since a Gospel
+  // reading is still fundamentally a lesson — just one worth marking.
+  // `responsory` is the short responsory said after the reading, when one
+  // was sourced (matched loosely by scriptural book for the user's own
+  // plan, live-queried directly for patristic/hagiographic readings) —
+  // absent, not fabricated, when none could be sourced.
+  | {
+      kind: 'lesson';
+      text: ResolvedText;
+      label?: string;
+      nocturn?: number;
+      source?: string;
+      isGospel?: boolean;
+      responsory?: ResolvedText;
+    };
 
 export interface ResolvedVerse {
   n: number;

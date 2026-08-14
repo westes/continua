@@ -1,0 +1,17 @@
+# Live-verified (Monastic Tridentinum 1617, 2026-09-06 and 2026-12-15).
+# Real practice repeats this antiphon as an interspersed refrain between
+# verse groups of Psalm 94 (the historical "Venite" invitatory shape) —
+# deliberately not modeled that way here, per direct instruction: this app
+# frames it like any other psalm antiphon instead, one opening
+# (incipit-or-full, same rank rule as everywhere else) and one full
+# repeat after, via hours/matins.ts's plain 'psalm' + 'antiphon' parts.
+# Fixed year-round for now — real practice does vary this by season/feast
+# (`{Antiphona ex Psalterio secundum tempora}` in the source); not yet
+# modeled, a deferred follow-on (see TODO.md).
+id: matins-invitatory-antiphon
+text:
+  la: "Veníte, * Exsultémus Dómino."
+  en: "O come, * let us sing unto the Lord."
+status:
+  la: verified
+  en: verified

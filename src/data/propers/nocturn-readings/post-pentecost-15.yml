@@ -1,0 +1,202 @@
+# Nocturn 2-3 content for an ordinary Sunday with no saint of its own
+# (post-pentecost-15 = "14th Sunday after Trinity" in this app's own
+# display labeling — see calendar/day-label.ts). Live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, 2026-09-06, a plain Sunday
+# with no feast collision — confirmed by cross-checking the same date
+# against data/calendar/sanctoral-calendar.yml).
+#
+# Nocturn 1 for this same Sunday comes from the user's own bible-plan
+# instead (data/hours/bible-plan/post-pentecost-15-sunday.yml, Tob 1-2 /
+# Sir 45) — historically this Sunday's real Nocturn 1 continuous reading
+# is the Book of Job (confirmed live), but the user's plan deliberately
+# substitutes its own reading there. Nocturn 2 below is still the real
+# historical St. Gregory commentary *on Job*, even though this app's own
+# Nocturn 1 no longer reads Job that week — kept as-is (real, valuable
+# patristic content proper to the ordinary-time cycle, not tied to a
+# specific saint) rather than dropped for no longer lining up thematically
+# with Nocturn 1. Flagged, not silently resolved — a real seam between
+# the historical Moralia-in-Job commentary cycle and this app's own
+# substituted Nocturn 1 plan.
+#
+# Combined per the user's "recombine where the source doesn't genuinely
+# split" instruction: Nocturn 2's 4 lessons (Lectio 5-8) are one
+# continuous excerpt from the same work (Moralia, Bk. 9, ch. 2) — no real
+# source break between them, so one reading. Nocturn 3's Lectio 9 is
+# genuinely two different sources in the one numbered lesson (the Gospel
+# pericope itself, then the opening of St. Augustine's homily on it) —
+# kept split into two readings here; the homily then continues unbroken
+# through Lectio 10-12, recombined into that second reading.
+#
+# Responsory: this project's own established convention (see
+# octave-readings.ts) is "the first one, when several collapse" — applied
+# here per resulting reading: Nocturn 2's reading uses Lectio 5's
+# responsory; the Gospel reading uses Lectio 9's (the only one that's
+# genuinely its own, since Lectio 9 itself split across both new
+# readings); the homily reading uses Lectio 10's (the first responsory
+# that's unambiguously the homily's own). Known simplification, flagged
+# not fixed: Lectio 12's own closing "Duo Seraphim" responsory (with its
+# own Gloria Patri, sung specially before the Te Deum) isn't represented
+# here at all — this schema only carries one responsory per reading, and
+# that grand closing responsory doesn't belong to any single one of these
+# readings the way the others do.
+id: post-pentecost-15
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Gregory the Great, Moralia in Job, Book 9, ch. 2"
+    text:
+      la: >-
+        Vero scio quod ita sit, et quod non justificábitur homo compósitus Deo. Homo quippe Deo non
+        compósitus justítiam pércipit, compósitus amíttit; quia quisquis se auctóri bonórum cómparat,
+        bono se, quod accéperat, privat. Qui enim accépta bona sibi árrogat, suis contra Deum donis
+        pugnat. Unde ergo despéctus erígitur, dignum est ut eréctus inde destruátur.
+
+
+        Sanctus autem vir, quia omne virtútis nostræ méritum esse vítium cónspicit, si ab intérno
+        árbitro distrícte judicétur, recte subjúngit: Si volúerit conténdere cum eo, non póterit
+        respondére ei unum pro mille.
+
+
+        In Scriptúra sancta millenárius númerus pro universitáte solet intélligi. Hinc étenim
+        Psalmísta ait: Verbi, quod mandávit in mille generatiónes: cum profécto constet, quod ab ipso
+        mundi exórdio usque ad Redemptiónis advéntum per Evangelístam non ámplius quam septuagínta et
+        septem propágines numeréntur. Quid ergo in millenário número nisi ad proferéndam novam
+        sóbolem perfécta univérsitas præscítæ generatiónis exprímitur? Hinc et per Joánnem dícitur: Et
+        regnábunt cum eo mille annis: quia vidélicet regnum sanctæ Ecclésiæ universitátis perfectióne
+        solidátur.
+
+
+        Quia vero monas décies multiplicáta in denárium dúcitur, denárius per semetípsum ductus in
+        centenárium dilatátur, qui rursus per denárium ductus in millenárium ténditur; cum ab uno
+        incípimus, ut ad millenárium veniámus, quid hoc loco uníus appellatióne, nisi bene vivéndi
+        inítium? quid millenárii númeri amplitúdine, nisi ejúsdem bonæ vitæ perféctio designátur? Cum
+        Deo autem conténdere, est, non ei tribúere, sed sibi glóriam suæ virtútis arrogáre. Sed
+        sanctus vir conspíciat, quia et qui summa jam dona percépit, si de accéptis extóllitur, cuncta
+        quæ accéperat, amíttit.
+      en: >-
+        We know that it is so of a truth, and that a man cannot be justified as against God. When God
+        is put out of the consideration, a man may be considered to be just, but considered as against
+        God, his righteousness vanisheth away. When a man measureth himself by his relation to Him,
+        Who is the Author of all good, he doth thereby acknowledge that of himself he hath no good in
+        him, but hath received from God whatsoever he hath. He that glorifieth himself because of good
+        which hath been given him, fighteth against God with God's own gifts. It is just therefore
+        that the grounds upon which he ought to have been humbled, but upon which he hath puffed
+        himself up, should be used to humble his vain-glory.
+
+
+        But an holy man, because he perceiveth that the worth of our own good deeds falleth short,
+        when he considereth his own spiritual man, justly saith If He will contend with him, he cannot
+        answer Him one of a thousand.
+
+
+        In the Holy Scriptures the numeral a thousand is used to be taken as signifying a
+        generalization. Thus, the Psalmist saith The word which He commanded to a thousand generations
+        (Ps. civ. 8), whereas it is notorious that the Evangelist doth not reckon more then
+        seventy-and-seven generations between the very beginning of the world and the coming of our
+        Redeemer. What therefore is to be understood here by a thousand? The general ripeness of the
+        old generation to bring forth a new offspring. Hence also it is said by John And shall reign
+        with Him a thousand years (Apoc. xx. 6), because the reign of the Holy Church will be over all
+        mankind made perfect.
+
+
+        When times one is ten, and ten times ten is an hundred, and ten times an hundred is a
+        thousand. Observing therefore this connection between one and a thousand, what are we to
+        understand by the one (in the text, connected as it is with the thousand whereby we understand
+        perfection)? Is it not the beginning of a good life, even as the thousand representeth
+        perfection? The contending with God (which is spoken of in the text) is the non-acknowledgment
+        of that which is owed to Him, and the vain-glorying instead in our own strength. But an holy
+        man should see, that even if one had received the gifts of perfection, and were to make them
+        the grounds of self-glorifying, such an one would thereby lose all that he had received.
+    responsory:
+      la: "Indúta est caro mea putrédine, et sórdibus púlveris cutis mea áruit et contrácta est: * Meménto mei, Dómine, quóniam ventus est vita mea.\nV. Dies mei velócius transiérunt quam a texénte tela succíditur, et consúmpti sunt absque ulla spe.\nR. Meménto mei, Dómine, quóniam ventus est vita mea."
+      en: "My flesh is clothed with worms and clods of dust. My skin is dry and drawn together. * Remember me, O Lord, for my life is wind.\nV. My days are swifter than a weaver's shuttle, and are spent without hope.\nR. Remember me, Lord, for my life is wind."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 7:11-16", en: "Luke 7:11-16" }
+    # Full text, not the "Et réliqua" incipit Lectio 9 itself uses — the
+    # live rendering has this same Gospel read out in full a second time,
+    # right after the Te Deum, closing with its own "Te decet laus"
+    # versicle rather than the usual "Tu autem, Dómine, miserére nobis" —
+    # using that fuller form here rather than modeling the two Gospel
+    # readings (incipit-only at Lectio 9, full after Te Deum) as separate
+    # parts, a known simplification (see hours/matins.ts).
+    text:
+      la: "In illo témpore: Ibat Jesus in civitátem, quæ vocátur Naim: et ibant cum eo discípuli ejus et turba copiósa. Cum autem appropinquáret portæ civitátis, ecce, defúnctus efferebátur fílius únicus matris suæ: et hæc vídua erat, et turba civitátis multa cum illa. Quam cum vidísset Dóminus, misericórdia motus super eam, dixit illi: Noli flere. Et accéssit et tétigit lóculum. Hi autem, qui portábant, stetérunt. Et ait: Adoléscens, tibi dico, surge. Et resédit, qui erat mórtuus, et cœpit loqui. Et dedit illum matri suæ. Accépit autem omnes timor: et magnificábant Deum, dicéntes: Quia Prophéta magnus surréxit in nobis: et quia Deus visitávit plebem suam."
+      en: "At that time, Jesus went to a town called Naim; and His disciples and a large crowd went with Him. And as He drew near the gate of the town, behold, a dead man was being carried out, the only son of his mother, and she was a widow; and a large gathering from the town was with her. And the Lord, seeing her, had compassion on her, and said to her, Do not weep. And He went up and touched the stretcher; and the bearers stood still. And He said, Young man, I say to you, arise. And he who was dead, sat up, and began to speak. And He gave him to his mother. But fear seized upon all, and they began to glorify God, saying, A great prophet has risen among us, and God has visited His people."
+    responsory:
+      la: "Quis mihi tríbuat, ut in inférno prótegas me et abscóndas me, donec pertránseat furor tuus, Dómine, nisi tu, qui solus es Deus? * Et constítuas mihi tempus, in quo recordéris mei?\nV. Numquid sicut dies hóminis dies tui, ut quæras iniquitátem meam; cum sit nemo, qui de manu tua possit erúere.\nR. Et constítuas mihi tempus, in quo recordéris mei?"
+      en: "O that Thou wouldest hide me in the grave; that Thou wouldest keep me secret, until thy wrath be past, even thine, O Lord, Thou That alone art God; * That Thou wouldest appoint me a set time, and remember me!\nV. Are thy days as the days of man, that Thou inquirest after mine iniquity, and there is none that can deliver out of thine hand.\nR. That Thou wouldest appoint me a set time, and remember me!"
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Augustine, Bishop of Hippo, Sermon 44 on the Words of the Lord"
+    text:
+      la: >-
+        De júvene illo resuscitáto gavísa est mater vídua; de homínibus in spíritu quotídie suscitátis
+        gaudet mater Ecclésia. Ille quidem mórtuus erat córpore; illi autem mente. Illíus mors
+        visíbilis visibíliter plangebátur; illórum mors invisíbilis nec quærebátur, nec videbátur.
+        Quæsívit ille, qui nóverat mórtuos. Ille solus nóverat mórtuos, qui póterat fácere vivos. Nisi
+        enim ad mórtuos suscitándos venísset, Apóstolus non díceret: Surge, qui dormis, et exsúrge a
+        mórtuis, et illuminábit te Christus.
+
+
+        Tres autem mórtuos invenímus a Dómino resuscitátos visibíliter, míllia invisibíliter. Quot
+        autem mórtuos visibíliter suscitáverit, quis novit? Non enim ómnia, quæ fecit, scripta sunt.
+        Joánnes hoc dixit: Multa ália fecit Jesus, quæ si scripta essent, árbitror totum mundum non
+        posse libros cápere. Multi ergo sunt álii sine dúbio suscitáti, sed non tres frustra
+        commemoráti.
+
+
+        Dóminus enim noster Jesus Christus ea quæ faciébat corporáliter, étiam spiritáliter volébat
+        intélligi. Neque enim tantum mirácula propter mirácula faciébat; sed ut illa, quæ faciébat,
+        mira essent vidéntibus, vera essent intelligéntibus. Quemádmodum qui videt lítteras in códice
+        óptime scripto, et non novit légere, laudat quidem antiquárii manum, admírans ápicum
+        pulchritúdinem; sed quid sibi velint, quid índicent illi ápices, nescit, et est óculis
+        laudátor, mente non cógnitor.
+
+
+        Alius autem et laudat artifícium, et capit intelléctum: ille útique, qui non solum vidére quod
+        commúne est ómnibus, potest, sed étiam légere; quod qui non dídicit, non potest. Ita qui
+        vidérunt Christi mirácula, et non intellexérunt quid sibi vellent, et quid intelligéntibus
+        quodámmodo innúerent, miráti sunt tantum quia facta sunt; álii vero et facta miráti, et
+        intellécta assecúti. Tales nos in schola Christi esse debémus.
+      en: >-
+        That her son was called again to life was the joy of that widowed mother; that souls of men
+        are every day called to life is the joy of our Mother the Church. He was dead in body they
+        have been dead in mind. His death was outward, and was outwardly bewailed; their inward. Death
+        hath been neither mourned for nor seen. But He hath sought for them, Who hath seen that they
+        are dead, and He only hath seen that they are dead, Who hath been able to make them alive. If
+        He had not come to raise the dead, the Apostle had not said: "Awake, thou that sleepest, and
+        arise from the dead, and Christ shall give thee light." (Eph. v. 14.)
+
+
+        We find written how the Lord raised from the dead three persons visibly, but thousands
+        invisibly. But how many they may have been whom He raised visibly, who knoweth? For all the
+        things which He did are not written. John saith thus: "There are also many other things which
+        Jesus did, the which, if they should be written every one, I suppose that even the world
+        itself could not contain the books that should be written." (John xxi. 25.) There were then,
+        doubtless, many more raised to life, but it is not meaningless that three are recorded.
+
+
+        For our Lord Jesus Christ hath willed that those things which He did carnally, we should
+        understand also spiritually. He worked not miracles only for the sake of working wonders, but
+        that His works might be at once wonderful to them that beheld, and true to them that
+        understand them. Even as one that looketh upon a scroll right fairly written, and knoweth not
+        how to read therein, praiseth the hand of the old scribe when he seeth the beauty of the
+        points, but what it saith, what those points mean, he knoweth not, and praiseth by the eye,
+        without understanding by the mind.
+
+
+        Another both praiseth the workmanship, and grasps the meaning: that is, he who can not only
+        see what is common to all, but can also read; which he who hath not learned cannot do. So they
+        who saw the miracles of Christ, and understood not what they meant, and what they intimated in
+        some sort to those who understand, only marvelled that they were done; but others both
+        marvelled at the deeds, and grasped what they meant. Such ought we to be in the school of
+        Christ.
+    responsory:
+      la: "Numquid supplántat judícium? aut Omnípotens subvértit quod iustum est? † Líbera me, Dómine, et pone me juxta te: * Et cujúsvis manus pugnet contra me.\nV. Apprehénde arma et scutum, et exsúrge in adjutórium mihi.\nR. Et cujúsvis manus pugnet contra me."
+      en: "Does God pervert judgment, or does the Almighty overthrow that which is just? Deliver me, O Lord, and set me beside you, * And let any man's hand fight against me.\nV. Take hold of arms and shield: and rise up to help me.\nR. And let any man's hand fight against me."
+    status: { la: verified, en: verified }

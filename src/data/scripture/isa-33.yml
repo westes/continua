@@ -1,0 +1,94 @@
+# Isaiah 33 — verses 2-10 and 13-18 transcribed from a live Divinum
+# Officium query (Monastic Tridentinum 1617, 2026-09-06, Sunday Matins
+# Nocturn III canticles) — see data/hours/matins-sunday-antiphons.yml.
+# Only the two verse ranges actually used by that canticle are authored;
+# the rest of the chapter is unauthored (empty per src/scripture's own
+# "unauthored -> not present" convention).
+book: isa
+chapter: 33
+verses:
+  - n: 2
+    text:
+      la: "Dómine, miserére nostri, te enim exspectávimus; esto bráchium nostrum in mane, * et salus nostra in témpore tribulatiónis."
+      en: "O Lord, have mercy on us: for we have waited for thee: be thou our arm in the morning, and our salvation in the time of trouble."
+    status: { la: verified, en: verified }
+  - n: 3
+    text:
+      la: "A voce Angeli fugérunt pópuli, * et ab exaltatióne tua dispérsæ sunt gentes."
+      en: "At the voice of the angel the people fled, and at the lifting up thyself the nations are scattered."
+    status: { la: verified, en: verified }
+  - n: 4
+    text:
+      la: "Et congregabúntur spólia vestra sicut collígitur bruchus, * velut cum fossæ plenæ fúerint de eo."
+      en: "And your spoils shall be gathered together as the locusts are gathered, as when the ditches are full of them."
+    status: { la: verified, en: verified }
+  - n: 5
+    text:
+      la: "Magnificátus est Dóminus, quóniam habitávit in excélso; * implévit Sion judício et justítia."
+      en: "The Lord is magnified, for he hath dwelt on high: he hath filled Sion with judgment and justice."
+    status: { la: verified, en: verified }
+  - n: 6
+    text:
+      la: "Et erit fides in tempóribus tuis: divítiæ salútis sapiéntia: * et sciéntia; timor Dómini ipse est thesáurus ejus."
+      en: "And there shall be faith in thy times: riches of salvation, wisdom and knowledge: the fear of the Lord is his treasure."
+    status: { la: verified, en: verified }
+  - n: 7
+    text:
+      la: "Ecce vidéntes clamábunt foris; * ángeli pacis amáre flebunt."
+      en: "Behold they that see shall cry without, the angels of peace shall weep bitterly."
+    status: { la: verified, en: verified }
+  - n: 8
+    text:
+      la: "Dissipátæ sunt viæ, cessávit tránsiens per sémitam: írritum factum est pactum, * projécit civitátes, non reputávit hómines."
+      en: "The ways are made desolate, no one passeth by the road, the covenant is made void, he hath rejected the cities, he hath not regarded the men."
+    status: { la: verified, en: verified }
+  - n: 9
+    text:
+      la: "Luxit et elánguit terra; * confúsus est Líbanus, et obsórduit."
+      en: "The land hath mourned, and languished: Libanus is confounded and become foul, and Saron is become as a desert: and Basan and Carmel are shaken."
+    status: { la: verified, en: verified }
+  - n: 9
+    text:
+      la: "Et factus est Saron sicut desértum, * et concússa est Basan, et Carmélus."
+      en: ""
+    status: { la: verified, en: missing }
+  - n: 10
+    text:
+      la: "Nunc consúrgam, dicit Dóminus; * nunc exaltábor, nunc sublevábor."
+      en: "Now will I rise up, saith the Lord: now will I be exalted, now will I lift up myself."
+    status: { la: verified, en: verified }
+  - n: 13
+    text:
+      la: "Audíte, qui longe estis, quæ fécerim; * et cognóscite, vicíni, fortitúdinem meam."
+      en: "Hear, you that are far off, what I have done, and you that are near know my strength."
+    status: { la: verified, en: verified }
+  - n: 14
+    text:
+      la: "Contérriti sunt in Sion peccatóres; * possédit tremor hypócritas."
+      en: "The sinners in Sion are afraid, trembling hath seized upon the hypocrites. Which of you can dwell with devouring fire? which of you shall dwell with everlasting burnings?"
+    status: { la: verified, en: verified }
+  - n: 14
+    text:
+      la: "Quis póterit habitáre de vobis cum igne devoránte? * quis habitábit ex vobis cum ardóribus sempitérnis?"
+      en: ""
+    status: { la: verified, en: missing }
+  - n: 15
+    text:
+      la: "Qui ámbulat in justítiis et lóquitur veritátem, qui próicit avarítiam ex calúmnia, * et éxcutit manus suas ab omni múnere,"
+      en: "He that walketh in justices, and speaketh truth, that casteth away avarice by oppression, and shaketh his hands from all bribes, that stoppeth his ears lest he hear blood, and shutteth his eyes that he may see no evil."
+    status: { la: verified, en: verified }
+  - n: 16
+    text:
+      la: "Qui obtúrat aures suas ne áudiat sánguinem, * et claudit óculos suos ne vídeat malum."
+      en: "He shall dwell on high, the fortifications of rocks shall be his highness: bread is given him, his waters are sure."
+    status: { la: verified, en: verified }
+  - n: 17
+    text:
+      la: "Iste in excélsis habitábit; muniménta saxórum sublímitas ejus: * panis ei datus est, aquæ ejus fidéles sunt."
+      en: "His eyes shall see the king in his beauty, they shall see the land far off."
+    status: { la: verified, en: verified }
+  - n: 18
+    text:
+      la: "Regem in decóre suo vidébunt óculi ejus, cernent terram de longe. * Cor tuum meditábitur timórem."
+      en: "Thy heart shall meditate fear: where is the learned? where is he that pondereth the words of the law? where is the teacher of little ones?"
+    status: { la: verified, en: verified }

@@ -1,0 +1,73 @@
+# Sunday Matins' fixed 12-psalm/3-canticle psalmody (Rule of Benedict ch.
+# 18's own Sunday arrangement, distinct from Roman Matins' 9-psalm Sunday
+# scheme). Sourced from Divinum Officium's Monastic-labeled block,
+# `Latin/Psalterium/Psalmi/Psalmi matutinum.txt`'s `[Daym0]` section
+# (English parallel at the same section name in the `English/` tree), and
+# live-verified against a real `prayMatutinum` query (Monastic Tridentinum
+# 1617, 2026-09-06, an ordinary Sunday with no feast collision) — the
+# psalm numbers, canticle citations, and lesson/Te Deum sequence all
+# matched exactly.
+#
+# Unlike the ferial weekday table (psalter-distribution.yml's `matins:`),
+# this doesn't vary by weekday — it's the same every Sunday, but the
+# antiphon *text* does vary by season even though the psalm numbers don't:
+# `[Advm0]` right after `[Daym0]` in the same source file has its own
+# Advent-specific antiphon set. Only the plain (non-seasonal) `[Daym0]` set
+# is authored here; seasonal variants are a deferred follow-on, not
+# required for this build (see TODO.md).
+#
+# Nocturn 3's 3 canticles are identified via `Psalterium/Monastic
+# canticles.txt`'s internal numbering key (266 = Isa 33:2-10, 267 = Isa
+# 33:13-18, 268 = Sirach/Ecclesiasticus 36:14-19, cited "sir" per this
+# project's own scripture-store convention), confirmed by the live query
+# ("Canticum Isaiæ" / "Canticum Isaiae" / "Canticum Ecclesiasticae").
+# Unlike nocturns 1-2 (each psalm pair under its own antiphon), all 3
+# canticles share a single antiphon ("Allelúja, allelúja, allelúja").
+
+nocturn1:
+  groups:
+    - psalms: [20, 21]
+      antiphon:
+        la: "Dómine * in virtúte tua lætábitur rex."
+        en: "The king rejoices * in Thy strength, O Lord."
+    - psalms: [22, 23]
+      antiphon:
+        la: "Dóminus regit me * et nihil mihi déerit: in loco páscuæ ibi me collocávit."
+        en: "The Lord ruleth me * and I shall want nothing. He hath set me in a place of pasture."
+    - psalms: [24, 25]
+      antiphon:
+        la: "Óculi mei * semper ad Dóminum."
+        en: "My eyes * are ever towards the Lord."
+  versicle:
+    v: { la: "Memor fui nocte nóminis tui Dómine.", en: "In the night I have remembered thy name, O Lord:" }
+    r: { la: "Et custodívi legem tuam.", en: "And have kept thy law." }
+
+nocturn2:
+  groups:
+    - psalms: [26, 27]
+      antiphon:
+        la: "Dóminus * defénsor vitæ meæ."
+        en: "The Lord is the defence * of my life."
+    - psalms: [28, 29]
+      antiphon:
+        la: "Adoráte * Dóminum in aula sancta ejus."
+        en: "Worship the Lord * in His holy courts."
+    - psalms: [30, 31]
+      antiphon:
+        la: "In tua justítia * líbera me, Dómine."
+        en: "Deliver me * in Thy righteousness."
+  versicle:
+    v: { la: "Média nocte surgébam ad confiténdum tibi.", en: "I rose at midnight to give praise to thee." }
+    r: { la: "Super justítia justificatiónis tuæ.", en: "For the judgments of thy justification." }
+
+nocturn3:
+  canticles:
+    - { book: isa, chapter: 33, verses: "2-10" }
+    - { book: isa, chapter: 33, verses: "13-18" }
+    - { book: sir, chapter: 36, verses: "14-19" }
+  antiphon:
+    la: "Allelúja, allelúja, allelúja."
+    en: "Alleluia, alleluia, alleluia."
+  versicle:
+    v: { la: "Exaltáre Dómine in virtúte tua.", en: "Be Thou exalted, O Lord, in Thine own strength." }
+    r: { la: "Cantábimus et psallémus virtútes tuas.", en: "We will sing and praise Thy power." }

@@ -58,7 +58,11 @@ interface OctaveReadingRecord {
   status: Partial<Record<LanguageCode, TranslationStatus>>;
 }
 
-function resolvePassages(passages: ScriptureCitation[]): Partial<Record<LanguageCode, string>> {
+/** Exported for reuse by src/propers/bible-plan.ts and
+ * src/propers/nocturn-readings.ts, which need the same "pull several
+ * scripture passages and join them as paragraphs" behavior for Matins
+ * readings outside the octave-day-keyed store this file owns. */
+export function resolvePassages(passages: ScriptureCitation[]): Partial<Record<LanguageCode, string>> {
   const laParagraphs: string[] = [];
   const enParagraphs: string[] = [];
   for (const citation of passages) {

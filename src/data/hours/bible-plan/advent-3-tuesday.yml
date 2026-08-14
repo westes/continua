@@ -1,0 +1,24 @@
+# The user's own continuous scripture-reading plan (source: personal TSV,
+# not a historical lectionary — see src/propers/bible-plan.ts's header),
+# row "Tuesday of III Advent" -> "Isa 36-37, Wis 14". Two readings, no
+# Gospel that day. Each `passages` list becomes one combined Matins
+# reading (see hours/matins.ts) — Isa 36-37 is one continuous 2-chapter
+# reading, not two separate ones, matching the user's own "recombine
+# where the source doesn't genuinely split" instruction (there's no
+# source split here at all; this is just how the plan cites a multi-
+# chapter passage).
+#
+# Verse text for these chapters isn't authored in src/data/scripture yet
+# (the full Vulgate/Douay-Rheims import is a deferred, separate project) —
+# these readings resolve with real citations and honestly `missing` body
+# text, which is expected for this proof pass.
+temporalId: advent-3
+weekday: tuesday
+readings:
+  - passages:
+      - { book: isa, chapter: 36 }
+      - { book: isa, chapter: 37 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: sap, chapter: 14 }
+    status: { la: missing, en: missing }
