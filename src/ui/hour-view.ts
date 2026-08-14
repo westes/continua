@@ -69,10 +69,11 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
       `;
     case 'lesson':
       return `
-        <section class="ordo-part ordo-part-lesson">
-          <h3 class="ordo-part-label">${part.label ? escapeHtml(part.label) : 'Reading'}</h3>
+        <section class="ordo-part ordo-part-lesson${part.isGospel ? ' ordo-part-lesson-gospel' : ''}">
+          <h3 class="ordo-part-label">${part.isGospel ? 'Gospel' : part.label ? escapeHtml(part.label) : 'Reading'}</h3>
           ${renderCitation(part.text)}
           ${renderColumns(part.text, languages)}
+          ${part.responsory ? `<div class="ordo-part-responsory">${renderColumns(part.responsory, languages)}</div>` : ''}
         </section>
       `;
     case 'psalm': {
@@ -110,6 +111,24 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
         </section>
       `;
     }
+    // Matins only. Not currently emitted by hours/matins.ts (its psalms
+    // render as a flat sequence of plain 'psalm'/'antiphon'/'versicle'
+    // parts instead) — handled here for the ResolvedPart union's sake,
+    // ready for whenever nocturn-grouped UI treatment is wanted.
+    case 'nocturn-psalmody':
+      return `
+        <section class="ordo-part ordo-part-nocturn-psalmody">
+          <h3 class="ordo-part-label">Nocturn ${part.nocturn}</h3>
+          ${part.psalms.map((p) => renderPart(p, languages)).join('')}
+        </section>
+      `;
+    case 'te-deum':
+      return `
+        <section class="ordo-part ordo-part-te-deum">
+          <h3 class="ordo-part-label">Te Deum</h3>
+          ${renderColumns(part.text, languages)}
+        </section>
+      `;
   }
 }
 
