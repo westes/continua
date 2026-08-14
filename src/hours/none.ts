@@ -70,6 +70,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'vespers-psalmody':
     case 'vespers-office':
     case 'magnificat':
+    case 'vespers-preces':
       throw new Error(`None's ordo doesn't support a '${part.kind}' part`);
   }
 }

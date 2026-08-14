@@ -18,6 +18,7 @@ import {
   ALWAYS_OVERRIDE_TEMPORAL_IDS,
   verifiedText,
   seasonalOfficeSuffix,
+  isFerialOrVigil,
 } from './resolve-common';
 import laudsDefinitionData from '../data/hours/lauds.yml';
 import laudsAntiphonsData from '../data/hours/lauds-antiphons.yml';
@@ -317,25 +318,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       return [{ kind: 'preces', text: resolveCommon(id), label: getMarianAntiphonLabel(id) }];
     }
     case 'lauds-preces': {
-      // Deliberately not `isSundayOrFeast` -- that treats any sanctoral
-      // winner, Vigils included, as a "feast." Here a Vigil needs to land
-      // on the ferial side instead (per direct instruction), so it's
-      // checked for explicitly: a Vigil-ranked sanctoral winner, or a
-      // bare temporal winner that isn't Sunday and isn't a named
-      // temporal identity like Marian Saturday or Christ the King (which
-      // aren't Sunday or a sanctoral winner either, but still aren't a
-      // bare ferial office -- same reasoning as the Cross suffrage's own
-      // gate just above). Also excludes any day within an active octave
-      // -- live-verified (Tridentine 1910, day 3 of St. Lawrence's own
-      // octave): "Preces Feriales{omittitur}", same exclusion the
-      // suffrages already have, for the same reason -- an octave day
-      // isn't a bare ferial office even though nothing else is winning
-      // it outright.
-      const isVigil = day.winner.kind === 'sanctoral' && day.winner.rank === 'vigil';
-      const isBareFeria = day.winner.kind === 'temporal' && !getTemporalFeastRecord(day.winner.id);
-      const isWithinAnOctave = activeOctavesFor(day.date).length > 0;
-      const isFerialOrVigil = day.weekday !== 'sunday' && !isWithinAnOctave && (isVigil || isBareFeria);
-      const id = isFerialOrVigil ? 'lauds-preces-feriales' : 'lauds-short-litany';
+      const id = isFerialOrVigil(day) ? 'lauds-preces-feriales' : 'lauds-short-litany';
       return [{ kind: 'preces', text: resolveCommon(id) }];
     }
     // Not used by Lauds.
@@ -354,6 +337,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'vespers-psalmody':
     case 'vespers-office':
     case 'magnificat':
+    case 'vespers-preces':
       throw new Error(`Lauds' ordo doesn't support a '${part.kind}' part`);
   }
 }

@@ -13,6 +13,7 @@ import {
   resolveOfficeWinner,
   verifiedText,
   seasonalOfficeSuffix,
+  isFerialOrVigil,
 } from './resolve-common';
 import vespersDefinitionData from '../data/hours/vespers.yml';
 import vespersAntiphonsData from '../data/hours/vespers-antiphons.yml';
@@ -121,6 +122,10 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
         { kind: 'canticle', canticleId: 'magnificat', text: resolveCommon('magnificat'), antiphon: opening },
         { kind: 'antiphon', text: full },
       ];
+    }
+    case 'vespers-preces': {
+      const id = isFerialOrVigil(day) ? 'vespers-preces-feriales' : 'lauds-short-litany';
+      return [{ kind: 'preces', text: resolveCommon(id) }];
     }
     case 'day-collects':
       return getDayCollects(day);

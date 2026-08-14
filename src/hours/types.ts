@@ -155,6 +155,19 @@ export type HourPart =
   // deliberately not the shared `isSundayOrFeast` (a Vigil counts as a
   // "feast" there; here it needs to count as ferial-like instead).
   | { kind: 'lauds-preces' }
+  // Vespers only. Mirrors 'lauds-preces' exactly — the Tridentine
+  // 1906/1910 "Preces feriales Vespera" (source: `@:Preces feriales
+  // Laudes:s/129/50/` — byte-for-byte the Lauds ferial Preces with Psalm
+  // 129 swapped for Psalm 50, live-verified against a clean Advent feria
+  // 2026-12-17) on a ferial or vigil day, replacing the short Sunday/feast
+  // litany otherwise said before the day's collect(s) — see hours/
+  // resolve-common.ts's isFerialOrVigil (shared with 'lauds-preces') and
+  // hours/vespers.ts's 'vespers-preces' case. Unlike Lauds, the short form
+  // here reuses `lauds-short-litany` directly rather than a Vespers-named
+  // duplicate — confirmed byte-identical by live query at both hours,
+  // same reuse discipline as data/hours/vespers.yml's `lauds-conclusio`
+  // closing.
+  | { kind: 'vespers-preces' }
   // Lauds/Vespers. The day's own collect *and* one more per commemoration
   // (calendar/types.ts's LiturgicalDay.commemorations) — see hours/
   // resolve-common.ts's getDayCollects. Distinct from the singular

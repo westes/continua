@@ -3,7 +3,8 @@ import type { Commemoration, DayWinner, LiturgicalDay, Weekday } from '../calend
 import type { ProperText } from '../propers';
 import { getCommonProper, getTemporalProper } from '../propers';
 import { getSaintRecord } from '../calendar/feasts';
-import { resolveActiveOctave } from '../calendar';
+import { resolveActiveOctave, activeOctavesFor } from '../calendar';
+import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { splitAntiphon } from './antiphon';
 import vespersMagnificatAntiphonsData from '../data/hours/vespers-magnificat-antiphons.yml';
 
@@ -103,6 +104,31 @@ export function resolveOfficeWinner(day: LiturgicalDay): DayWinner {
  * either. */
 export function isSundayOrFeastOffice(day: LiturgicalDay): boolean {
   return day.weekday === 'sunday' || resolveOfficeWinner(day).kind === 'sanctoral';
+}
+
+/**
+ * A day/hour is "ferial or vigil" — the predicate both Lauds' and Vespers'
+ * ferial Preces (`lauds-preces`/`vespers-preces`) key off to pick the
+ * fuller Tridentine 1906/1910 litany over the short Sunday/feast one.
+ * Deliberately not `isSundayOrFeast`/`isSundayOrFeastOffice` — those treat
+ * any sanctoral winner, Vigils included, as a "feast." Here a Vigil needs
+ * to land on the ferial side instead (per direct instruction), so it's
+ * checked for explicitly: a Vigil-ranked sanctoral winner, or a bare
+ * temporal winner that isn't Sunday and isn't a named temporal identity
+ * like Marian Saturday or Christ the King (which aren't Sunday or a
+ * sanctoral winner either, but still aren't a bare ferial office — same
+ * reasoning as Lauds' own Cross-suffrage gate). Also excludes any day
+ * within an active octave — live-verified (Tridentine 1910, day 3 of St.
+ * Lawrence's own octave, both Lauds and Vespers): "Preces Feriales
+ * {omittitur}", same exclusion the suffrages already have, for the same
+ * reason — an octave day isn't a bare ferial office even though nothing
+ * else is winning it outright.
+ */
+export function isFerialOrVigil(day: LiturgicalDay): boolean {
+  const isVigil = day.winner.kind === 'sanctoral' && day.winner.rank === 'vigil';
+  const isBareFeria = day.winner.kind === 'temporal' && !getTemporalFeastRecord(day.winner.id);
+  const isWithinAnOctave = activeOctavesFor(day.date).length > 0;
+  return day.weekday !== 'sunday' && !isWithinAnOctave && (isVigil || isBareFeria);
 }
 
 /**

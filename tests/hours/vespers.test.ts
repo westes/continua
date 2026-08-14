@@ -125,6 +125,38 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Vexílla Regis pródeunt');
   });
 
+  it('includes the Kyrie + Our Father lead-in right after the Magnificat, before the day collect (either form)', () => {
+    // 2026-06-16 is a Tuesday, plain ordinary trinitytide -- same bare
+    // ferial already used above for the Magnificat weekday-default test.
+    const ordo = resolveOrdo('vespers', '2026-06-16');
+    const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
+    const magnificatIndex = ordo.parts.findIndex((p) => p.kind === 'canticle' && p.canticleId === 'magnificat');
+    const collectIndex = ordo.parts.findIndex((p) => p.kind === 'prayer');
+    expect(litanyIndex).toBeGreaterThan(magnificatIndex);
+    expect(collectIndex).toBeGreaterThan(litanyIndex);
+  });
+
+  it('uses the fuller Tridentine 1906/1910 ferial Preces (with Psalm 50) on a plain ferial day, not the short Sunday/feast litany', () => {
+    const ordo = resolveOrdo('vespers', '2026-06-16');
+    const preces = ordo.parts.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
+    expect(preces?.kind === 'preces' ? preces.text.text.la : undefined).toContain('Miserére mei, Deus');
+    expect(preces?.kind === 'preces' ? preces.text.text.en : undefined).toContain('Have mercy on me, O God');
+  });
+
+  it("uses the short Sunday/feast litany, without Psalm 50, on a Sunday and on a real saint's own winning day", () => {
+    // 2026-08-16 is a plain temporal Sunday -- no First Vespers claim from
+    // the following Monday (a plain feria), so this stays Sunday's own.
+    const sunday = resolveOrdo('vespers', '2026-08-16');
+    const sundayPreces = sunday.parts.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
+    expect(sundayPreces?.kind === 'preces' ? sundayPreces.text.text.la : undefined).not.toContain('Psalmus 50');
+
+    // 2026-08-15 is the Assumption (Duplex I. classis), a real saint's own
+    // Saturday -- same date already used above for the weekday-office test.
+    const saintsDay = resolveOrdo('vespers', '2026-08-15');
+    const saintsDayPreces = saintsDay.parts.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
+    expect(saintsDayPreces?.kind === 'preces' ? saintsDayPreces.text.text.la : undefined).not.toContain('Psalmus 50');
+  });
+
   it("renders Paschaltide's seasonal office, sharing its chapter with Lauds", () => {
     // 2026-04-20 is in eastertide (Easter 2026-04-05).
     const ordo = resolveOrdo('vespers', '2026-04-20');

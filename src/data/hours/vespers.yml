@@ -12,12 +12,19 @@
 # version of this exact closing turned up in the source, and it's the
 # same fixed formula in real practice after either hour; flagged here in
 # case that assumption turns out wrong.
+#
+# `vespers-preces` mirrors Lauds' own `lauds-preces` exactly: the short
+# Sunday/feast litany (reusing `lauds-short-litany` — confirmed byte-
+# identical at both hours by live query) versus the fuller Tridentine
+# 1906/1910 ferial Preces on a ferial or vigil day — see hours/types.ts's
+# 'vespers-preces' doc comment.
 id: vespers
 parts:
   - kind: opening-versicle
   - kind: vespers-psalmody
   - kind: vespers-office
   - kind: magnificat
+  - kind: vespers-preces
   - kind: day-collects
   - kind: preces
     textRef: { source: common, id: lauds-conclusio }
