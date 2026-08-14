@@ -1,10 +1,23 @@
 import type { ResolvedPart, ResolvedText } from './types';
-import type { Commemoration, DayWinner, LiturgicalDay } from '../calendar/types';
+import type { Commemoration, DayWinner, LiturgicalDay, Weekday } from '../calendar/types';
 import type { ProperText } from '../propers';
 import { getCommonProper, getTemporalProper } from '../propers';
 import { getSaintRecord } from '../calendar/feasts';
 import { resolveActiveOctave } from '../calendar';
 import { splitAntiphon } from './antiphon';
+import vespersMagnificatAntiphonsData from '../data/hours/vespers-magnificat-antiphons.yml';
+
+type BilingualText = Partial<Record<string, string>>;
+type TranslationStatus = 'verified' | 'draft' | 'missing';
+interface MagnificatWeekdayDefault {
+  antiphon: BilingualText;
+  status?: Partial<Record<string, TranslationStatus>>;
+}
+// Monday-Saturday only — Sunday has no fixed weekday default (its own
+// antiphon varies by Proper of the Time; see the data file's own header).
+const vespersMagnificatAntiphons = vespersMagnificatAntiphonsData as Partial<
+  Record<Weekday, MagnificatWeekdayDefault>
+>;
 
 function toResolvedText(proper: ProperText): ResolvedText {
   return { text: proper.text, status: proper.status, citation: proper.citation };
@@ -162,6 +175,25 @@ export function getMinorHourOverrideId(day: LiturgicalDay): string | undefined {
  * better approximation than rendering the bare non-Paschaltide default).
  */
 const PASCHALTIDE_SEASONS = new Set(['eastertide', 'ascensiontide', 'pentecost']);
+
+/**
+ * Which seasonal office-content suffix (if any) a day's season maps to —
+ * shared by Lauds' and Vespers' own resolveOffice, both of which fall
+ * back to the plain weekday default when this is undefined (and both
+ * check a per-feast/octave override first, ahead of this). Paschaltide
+ * covers eastertide/ascensiontide/pentecost uniformly, matching the
+ * source's own single "Pasch" block for both hours — no separate
+ * Ascension/Pentecost-specific chapter/hymn exists there.
+ */
+export function seasonalOfficeSuffix(season: string): string | undefined {
+  if (season === 'advent' || season === 'lent' || season === 'passiontide') {
+    return season;
+  }
+  if (PASCHALTIDE_SEASONS.has(season)) {
+    return 'paschaltide';
+  }
+  return undefined;
+}
 
 /**
  * The reference engine's mechanical Paschaltide fallback for a Common
@@ -445,6 +477,48 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
   }
   if (saint?.benedictusCommon) {
     return withPaschaltideAlleluia(resolveCommon(`benedictus-antiphon-${saint.benedictusCommon}`), day);
+  }
+  return { text: {}, status: { la: 'missing', en: 'missing' } };
+}
+
+/**
+ * Vespers' Magnificat antiphon — mirrors getBenedictusAntiphon's lookup
+ * order exactly (temporal id, then a saint's own `${propers}-magnificat-
+ * antiphon`, then their Common category's `magnificat-antiphon-${common}`
+ * — none of that content authored yet, a separate future pass the same
+ * shape as the Benedictus one was), but with one real difference: a bare
+ * ferial weekday (Mon-Sat) has actual content to fall back to —
+ * data/hours/vespers-magnificat-antiphons.yml's classic "quote the
+ * Magnificat's own text in sequence" set — which Benedictus has no
+ * equivalent of. `withPaschaltideAlleluia` applied to that fallback too,
+ * by analogy with the Common-category treatment above; not independently
+ * confirmed for this specific case.
+ */
+export function getMagnificatAntiphon(day: LiturgicalDay): ResolvedText {
+  const winner = resolveOfficeWinner(day);
+  if (winner.kind === 'temporal') {
+    const named = toResolvedText(getTemporalProper(`${winner.id}-magnificat-antiphon`));
+    if (named.status.la !== 'missing' || named.status.en !== 'missing') {
+      return named;
+    }
+    const weekdayDefault = vespersMagnificatAntiphons[day.weekday];
+    if (weekdayDefault) {
+      const resolved = weekdayDefault.status
+        ? { text: weekdayDefault.antiphon, status: weekdayDefault.status }
+        : verifiedText(weekdayDefault.antiphon);
+      return withPaschaltideAlleluia(resolved, day);
+    }
+    return named;
+  }
+  const saint = getSaintRecord(winner.id);
+  if (saint?.propers) {
+    const proper = resolveCommon(`${saint.propers}-magnificat-antiphon`);
+    if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
+      return proper;
+    }
+  }
+  if (saint?.benedictusCommon) {
+    return withPaschaltideAlleluia(resolveCommon(`magnificat-antiphon-${saint.benedictusCommon}`), day);
   }
   return { text: {}, status: { la: 'missing', en: 'missing' } };
 }

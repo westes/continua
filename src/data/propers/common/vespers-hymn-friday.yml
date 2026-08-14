@@ -1,0 +1,63 @@
+# Sourced from Divinum Officium's Monastic block ("[HymnusM Day5 Vespera]",
+# Psalterium/Special/Major Special.txt): six substitutions against the base
+# "[Hymnus Day5 Vespera]" text (replacing the opening line entirely,
+# "Hóminis superne Cónditor" -> "Plasmátor hóminis Deus", and rewording
+# most of stanzas 2-3), applied by hand here — not live-query-verified
+# (see TODO.md). English has no separate Monastic variant in the source.
+id: vespers-hymn-friday
+text:
+  la: |
+    Plasmátor hóminis Deus,
+    Qui cuncta solus órdinans,
+    Humum jubes prodúcere
+    Reptántis et feræ genus:
+
+    Qui magna rerum córpora,
+    Dictu jubéntis vívida,
+    Ut sérviant per órdinem,
+    Subdens dedísti hómini:
+
+    Repélle, a servis tuis,
+    Quidquid per immundítiam
+    Aut móribus se súggerit,
+    Aut áctibus se intérserit.
+
+    Da gaudiórum prǽmia,
+    Da gratiárum múnera:
+    Dissólve litis víncula:
+    Astrínge pacis fœ́dera.
+
+    Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum.
+    Amen.
+  en: |
+    Maker of man, who from thy throne
+    Dost order all things, God alone;
+    By whose decree the teeming earth
+    To reptile and to beast gave birth:
+
+    The mighty forms that fill the land,
+    Instinct with life at thy command,
+    Are given subdued to humankind
+    For service in their rank assigned.
+
+    From all thy servants drive away
+    Whate'er of thought impure to-day
+    Hath been with open action blent,
+    Or mingled with the heart's intent.
+
+    In heaven thine endless joys bestow,
+    And grant thy gifts of grace below;
+    From chains of strife our souls release,
+    Bind fast the gentle bands of peace.
+
+    Grant this, O Father, ever One
+    With Christ, thy sole-begotten Son,
+    Whom, with the Spirit we adore,
+    One God, both now and evermore.
+    Amen.
+status:
+  la: draft
+  en: draft

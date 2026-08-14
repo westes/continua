@@ -105,6 +105,29 @@ export type HourPart =
   // data/propers/common/lauds-{capitulum,responsory,hymn,versicle}-*.yml.
   // Expands into 4 ResolvedParts (chapter, responsory, hymn, versicle).
   | { kind: 'lauds-office' }
+  // Vespers only. The weekday-resolved 4-psalm-group psalmody — see
+  // hours/vespers.ts and data/hours/vespers-antiphons.yml. Opaque for the
+  // same reason as 'lauds-psalmody': each group's antiphon covers either
+  // one whole psalm, two whole psalms said together under one shared
+  // antiphon (Ps 115+116, Monday), or two verse-ranges of one psalm split
+  // under one shared antiphon (Ps 138/143, Thu/Fri) — no existing part
+  // kind represents that. No per-feast override mechanism yet (unlike
+  // Lauds' getPsalmodyOverrideFor) — every day renders the plain weekday
+  // default for now.
+  | { kind: 'vespers-psalmody' }
+  // Vespers only. The weekday-resolved chapter/short-responsory/hymn/
+  // versicle bundle that follows the psalmody — see hours/vespers.ts and
+  // data/propers/common/vespers-{capitulum,responsory,hymn,versicle}-*.yml.
+  // Expands into 4 ResolvedParts (chapter, responsory, hymn, versicle).
+  | { kind: 'vespers-office' }
+  // Vespers only. Magnificat (Luke 1:46-55), fixed text, framed by a
+  // day-resolved antiphon — see hours/resolve-common.ts's
+  // getMagnificatAntiphon, which mirrors getBenedictusAntiphon's
+  // saint/temporal-id lookup but also falls back to a real weekday
+  // default (data/hours/vespers-magnificat-antiphons.yml, Mon-Sat) that
+  // Benedictus has no equivalent of. Same incipit-or-full/full-after
+  // framing as benedictus/nunc-dimittis, gated by isDoubleOrHigher.
+  | { kind: 'magnificat' }
   // Lauds only. Benedictus (Luke 1:68-79), fixed text (see propers/common/
   // benedictus.yml) framed by a day-resolved antiphon (see hours/
   // resolve-common.ts's getBenedictusAntiphon) — same incipit-or-full/

@@ -1,0 +1,64 @@
+# Sourced from Divinum Officium's Monastic block ("[HymnusM Day2 Vespera]",
+# Psalterium/Special/Major Special.txt): four word substitutions against
+# the base "[Hymnus Day2 Vespera]" text ("alme" -> "ingens"; "séparans" ->
+# "éruens"; "dedísti" -> "dedíst[i]" — the source's own bracket notation,
+# kept as-is; "ictum" -> "actum"), applied by hand here — not
+# live-query-verified (see TODO.md). English has no separate Monastic
+# variant in the source.
+id: vespers-hymn-tuesday
+text:
+  la: |
+    Tellúris ingens Cónditor,
+    Mundi solum qui éruens,
+    Pulsis aquæ moléstiis,
+    Terram dedíst[i] immóbilem:
+
+    Ut germen aptum próferens,
+    Fulvis decóra flóribus,
+    Fecúnda fructu sísteret,
+    Pastúmque gratum rédderet.
+
+    Mentis perústæ vúlnera
+    Munda viróre grátiæ:
+    Ut facta fletu díluat,
+    Motúsque pravos átterat.
+
+    Jussis tuis obtémperet:
+    Nullis malis appróximet:
+    Bonis repléri gáudeat,
+    Et mortis actum nésciat.
+
+    Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum.
+    Amen.
+  en: |
+    Earth's mighty Maker, whose command
+    Raised from the sea the solid land;
+    And drove each billowy heap away,
+    And bade the earth stand firm for aye:
+
+    That so, with flowers of golden hue,
+    The seeds of each it might renew;
+    And fruit-trees bearing fruit might yield,
+    And pleasant pasture of the field:
+
+    Our spirit's rankling wounds efface
+    With dewy freshness of thy grace:
+    That grief may cleanse each deed of ill,
+    And o'er each lust may triumph still.
+
+    Let every soul thy law obey,
+    And keep from every evil way;
+    Rejoice each promised good to win,
+    And flee from every mortal sin.
+
+    Hear thou our prayer, Almighty King!
+    Hear thou our praises, while we sing,
+    Adoring with the heavenly host,
+    The Father, Son, and Holy Ghost!
+    Amen.
+status:
+  la: draft
+  en: draft

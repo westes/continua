@@ -1,0 +1,23 @@
+# Ordo assembled from Divinum Officium's Monastic block (see the
+# individual data/propers/common/vespers-*.yml and data/hours/vespers-
+# antiphons.yml/vespers-magnificat-antiphons.yml files for sourcing) — not
+# live-query-verified end-to-end (see TODO.md).
+#
+# Resolves off resolveEveningDay, not resolveDay — see hours/vespers.ts —
+# so First/Second Vespers precedence and the cross-day commemoration both
+# apply before any part below ever runs.
+#
+# The closing reuses `lauds-conclusio` (Benedicamus Domino / Fidelium
+# animae) rather than a Vespers-specific id — no distinct "Vespera"
+# version of this exact closing turned up in the source, and it's the
+# same fixed formula in real practice after either hour; flagged here in
+# case that assumption turns out wrong.
+id: vespers
+parts:
+  - kind: opening-versicle
+  - kind: vespers-psalmody
+  - kind: vespers-office
+  - kind: magnificat
+  - kind: day-collects
+  - kind: preces
+    textRef: { source: common, id: lauds-conclusio }

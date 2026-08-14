@@ -123,6 +123,9 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
     case 'suffrages':
     case 'lauds-preces':
     case 'day-collects':
+    case 'vespers-psalmody':
+    case 'vespers-office':
+    case 'magnificat':
       throw new Error(`Prime's ordo doesn't support a '${part.kind}' part`);
   }
 }

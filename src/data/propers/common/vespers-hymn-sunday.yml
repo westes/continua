@@ -1,0 +1,65 @@
+# Sourced from Divinum Officium's Monastic block ("[HymnusM Day0 Vespera]",
+# Psalterium/Special/Major Special.txt). The Monastic Latin is stored there
+# as two word-order/wording substitutions against the base "[Hymnus Day0
+# Vespera]" text ("Illábitur tetrum chaos" -> "Tetrum chaos illábitur";
+# "Cæléste pulset óstium:" -> "Cælórum pulset íntimum,"), applied by hand
+# here rather than left as a diff — not live-query-verified (see TODO.md).
+# English has no separate Monastic variant in the source (the wording
+# differences don't affect translation), so it's the same text either way.
+id: vespers-hymn-sunday
+text:
+  la: |
+    Lucis Creátor óptime,
+    Lucem diérum próferens,
+    Primórdiis lucis novæ,
+    Mundi parans oríginem:
+
+    Qui mane junctum vésperi
+    Diem vocári prǽcipis:
+    Tetrum chaos illábitur,
+    Audi preces cum flétibus.
+
+    Ne mens graváta crímine,
+    Vitæ sit exsul múnere,
+    Dum nil perénne cógitat,
+    Seséque culpis ílligat.
+
+    Cælórum pulset íntimum,
+    Vitále tollat prǽmium:
+    Vitémus omne nóxium:
+    Purgémus omne péssimum.
+
+    Præsta, Pater piíssime,
+    Patríque compar Únice,
+    Cum Spíritu Paráclito
+    Regnans per omne sǽculum.
+    Amen.
+  en: |
+    O blest Creator of the light,
+    Who mak'st the day with radiance bright,
+    And o'er the forming world didst call
+    The light from chaos first of all;
+
+    Whose wisdom joined in meet array
+    The morn and eve, and named them day:
+    Night comes with all its darkling fears;
+    Regard thy people's prayers and tears.
+
+    Lest, sunk in sin, and whelmed with strife,
+    They lose the gift of endless life;
+    While thinking but the thoughts of time,
+    They weave new chains of woe and crime.
+
+    But grant them grace that they may strain
+    The heavenly gate and prize to gain:
+    Each harmful lure aside to cast,
+    And purge away each error past.
+
+    O Father, that we ask be done,
+    Through Jesus Christ, thine only Son;
+    Who, with the Holy Ghost and thee,
+    Doth live and reign eternally.
+    Amen.
+status:
+  la: draft
+  en: draft

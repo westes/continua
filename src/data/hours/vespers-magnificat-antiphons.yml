@@ -1,0 +1,64 @@
+# The classic ferial Magnificat-antiphon set: each weekday quotes the
+# Magnificat's own text in sequence (Monday = its opening verse, Tuesday =
+# the next, and so on through Saturday). Sourced from Divinum Officium's
+# Monastic block ("[Feria2 Ant 3]" through "[Feria7 Ant 3]", Psalterium/
+# Special/Major Special.txt). Sunday has no entry here on purpose — its own
+# source ("[Dominica Ant 3] = @:Dominica Ant 2 = /:ut in Proprio de
+# Tempore:/") draws from that specific Sunday's own Proper of the Time, not
+# a fixed weekly default; unauthored content for now (see
+# hours/resolve-common.ts's getMagnificatAntiphon).
+#
+# Four of the six weekdays have a real Monastic-specific Latin variant,
+# marked in the source "(sed rubrica tridentina aut rubrica monastica)" —
+# used here in place of the plain/Roman line above it, per direct
+# instruction to read this app's target rubric (pre-1955, Monastic
+# Tridentinum 1617) straight from these branch labels rather than treat
+# them as optional. The English source only tracks that same variant for
+# Saturday; Tuesday's only differs by a verb ending (no translation
+# impact), but Thursday's and Friday's Monastic Latin diverge from the
+# English enough in *content* (not just wording) that the given English
+# would misrepresent them — those two are translated fresh here instead,
+# marked `draft` for that reason specifically, not just the general
+# not-live-verified caveat the rest of this file carries.
+#
+# Not live-query-verified (see TODO.md) — read directly from source.
+
+monday:
+  antiphon:
+    la: "Magníficat * ánima mea Dóminum, quia respéxit Deus humilitátem meam."
+    en: "My soul * magnifies the Lord, because God has regarded my lowliness."
+
+tuesday:
+  antiphon:
+    la: "Exsúltet * spíritus meus in Deo salutári meo."
+    en: "My spirit rejoices * in God, in my Saviour."
+
+wednesday:
+  antiphon:
+    la: "Respéxit Dóminus * humilitátem meam, et fecit in me magna, qui potens est."
+    en: "The Lord has regarded * my lowliness, and he who is mighty has done great things through me."
+
+thursday:
+  # Monastic Latin diverges from the given (Roman-track) English in mood
+  # and content — translated fresh to match it; see file header. `status`
+  # marks the translation itself draft, distinct from the rest of this
+  # file's blanket "not live-verified" caveat.
+  antiphon:
+    la: "Fac Deus, * poténtiam in brácchio tuo: dispérde supérbos, et exálta húmiles."
+    en: "Shew, O God, * power in thy arm: scatter the proud, and exalt the humble."
+  status: { la: draft, en: draft }
+
+friday:
+  # Monastic Latin diverges from the given (Roman-track) English in
+  # content — translated fresh to match it; see file header. `status`
+  # marks the translation itself draft, distinct from the rest of this
+  # file's blanket "not live-verified" caveat.
+  antiphon:
+    la: "Depósuit poténtes, * Sanctos persequéntes: et exaltávit húmiles, Christum confiténtes."
+    en: "He hath put down the mighty, * who persecuted the Saints: and exalted the humble, who confessed Christ."
+  status: { la: draft, en: draft }
+
+saturday:
+  antiphon:
+    la: "Suscépit Deus * Israël, púerum suum: sicut locútus est ad Ábraham, et semen ejus: exaltáre húmiles usque in sǽculum."
+    en: "God hath received * Israel his servant: as he spoke to our fathers, to Abraham and to his seed, and hath exalted the humble forever."

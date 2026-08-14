@@ -1,0 +1,16 @@
+# Sourced from Divinum Officium's Monastic block: "[Pasch Vespera] =
+# @:Pasch Laudes" — a bare alias, so Paschaltide Vespers shares its
+# chapter with Paschaltide Lauds (see lauds-capitulum-paschaltide.yml).
+# Covers the whole Easter-to-Pentecost span uniformly — no separate
+# Ascensiontide/Pentecost-specific chapter exists in the source. Not
+# live-query-verified (see TODO.md) — read directly from source.
+id: vespers-capitulum-paschaltide
+text:
+  la: "Christus resúrgens ex mórtuis jam non móritur, mors illi ultra non dominábitur. Quod enim mórtuus est peccáto, mórtuus est semel: quod autem vivit, vivit Deo."
+  en: "Knowing that Christ rising again from the dead, dieth now no more, death shall no more have dominion over him. For in that he died to sin, he died once; but in that he liveth, he liveth unto God."
+citation:
+  la: "Rom 6:9-10"
+  en: "Rom 6:9-10"
+status:
+  la: draft
+  en: draft

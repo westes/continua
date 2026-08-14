@@ -1,0 +1,17 @@
+# The versicle right before the Magnificat, in Lent. Sourced from Divinum
+# Officium's Monastic block ("[Quad Versum 3]", Psalterium/Special/Major
+# Special.txt) — "[Quad Versum 2]" (Lauds' own) is a bare alias to this
+# same text, so Lauds and Vespers share it here too (see
+# lauds-versicle-lent.yml). Not live-query-verified (see TODO.md) — read
+# directly from source.
+id: vespers-versicle-lent
+text:
+  la: |
+    V. Ángelis suis Deus mandávit de te.
+    R. Ut custódiant te in ómnibus viis tuis.
+  en: |
+    V. God hath given His Angels charge over thee.
+    R. To keep thee in all thy ways.
+status:
+  la: draft
+  en: draft

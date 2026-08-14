@@ -344,6 +344,9 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'variable':
     case 'day-collect':
     case 'nunc-dimittis':
+    case 'vespers-psalmody':
+    case 'vespers-office':
+    case 'magnificat':
       throw new Error(`Lauds' ordo doesn't support a '${part.kind}' part`);
   }
 }
