@@ -1,6 +1,6 @@
 import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart, ResolvedText } from './types';
 import type { LiturgicalDay, Weekday } from '../calendar/types';
-import { resolveDay, isAtLeast, isSundayOrFeast, activeOctavesFor } from '../calendar';
+import { resolveDay, isSundayOrFeast, activeOctavesFor } from '../calendar';
 import { getDayLabel } from '../calendar/day-label';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { getPsalmVerses } from '../psalter';
@@ -15,10 +15,10 @@ import {
   getBenedictusAntiphon,
   splitNamedAntiphon,
   resolveOfficeWinner,
-  ALWAYS_OVERRIDE_TEMPORAL_IDS,
   verifiedText,
   seasonalOfficeSuffix,
   isFerialOrVigil,
+  getOfficeOverrideId,
 } from './resolve-common';
 import laudsDefinitionData from '../data/hours/lauds.yml';
 import laudsAntiphonsData from '../data/hours/lauds-antiphons.yml';
@@ -47,28 +47,23 @@ const laudsAntiphons = laudsAntiphonsData as Record<Weekday, PsalmodyBlock>;
 
 /**
  * A duplex-majus+ saint's own proper psalmody (per-feast, not per-Common —
- * explicit choice), or one of the named temporal feasts in
- * ALWAYS_OVERRIDE_TEMPORAL_IDS. Falls back to `undefined` — the plain
- * weekday default — for a duplex-majus+ saint with no override authored
+ * explicit choice), or one of the named temporal feasts eligible via
+ * resolve-common.ts's getOfficeOverrideId. Falls back to `undefined` — the
+ * plain weekday default — for an eligible feast with no override authored
  * yet, same honest incremental-content convention as everywhere else in
  * this codebase; it's not gated behind whether content exists, just
  * behind whether it's *eligible* to override at all.
  *
- * Checks resolveOfficeWinner(day), not the raw `day.winner` — on an
- * octave day this is the octave's own feast (e.g. St. Lawrence, days 2-8
- * of his own octave), which is exactly what should supply the psalmody
- * override there too, live-verified alongside the collect/Benedictus-
- * antiphon fix (see resolve-common.ts's resolveOfficeWinner doc comment).
+ * getOfficeOverrideId itself checks resolveOfficeWinner(day), not the raw
+ * `day.winner` — on an octave day this is the octave's own feast (e.g. St.
+ * Lawrence, days 2-8 of his own octave), which is exactly what should
+ * supply the psalmody override there too, live-verified alongside the
+ * collect/Benedictus-antiphon fix (see resolve-common.ts's
+ * resolveOfficeWinner doc comment).
  */
 function getPsalmodyOverrideFor(day: LiturgicalDay): LaudsPsalmodyOverride | undefined {
-  const winner = resolveOfficeWinner(day);
-  if (winner.kind === 'temporal' && ALWAYS_OVERRIDE_TEMPORAL_IDS.has(winner.id)) {
-    return getLaudsPsalmodyOverride(winner.id);
-  }
-  if (winner.kind === 'sanctoral' && isAtLeast(winner.rank, 'duplex-majus')) {
-    return getLaudsPsalmodyOverride(winner.id);
-  }
-  return undefined;
+  const id = getOfficeOverrideId(day);
+  return id ? getLaudsPsalmodyOverride(id) : undefined;
 }
 
 // Mon-Fri share one capitulum verbatim (confirmed against the live engine

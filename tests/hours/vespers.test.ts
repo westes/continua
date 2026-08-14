@@ -1,6 +1,64 @@
 import { describe, expect, it } from 'vitest';
 import { resolveOrdo } from '../../src/hours';
 
+// Every id with an authored Vespers office override (2026-08 sweep) —
+// same ids, same clean per-saint dates already established for each
+// one's Lauds office-bundle override — see hours/vespers.ts's
+// vespersCapitulumForOverride. One live `command=prayVespera` query each,
+// Monastic Tridentinum 1617 except christ-the-king (Monastic Divino
+// 1930, same as its Lauds counterpart).
+const VESPERS_OFFICE_OVERRIDE_DATES: Record<string, string> = {
+  'all-saints': '2026-11-01',
+  'apparition-of-st-michael': '2026-05-08',
+  assumption: '2026-08-15',
+  'chair-of-st-peter-at-antioch': '2029-02-22',
+  'chair-of-st-peter-at-rome': '2029-01-18',
+  'christ-the-king': '2026-10-25',
+  'conversion-of-st-paul': '2026-01-25',
+  'holy-innocents': '2029-12-28',
+  'immaculate-conception': '2026-12-08',
+  'nativity-bvm': '2026-09-08',
+  'nativity-of-st-john-the-baptist': '2026-06-24',
+  'ss-peter-and-paul': '2026-06-29',
+  'ss-philip-and-james': '2026-05-01',
+  'ss-simon-and-jude': '2025-10-28',
+  'st-andrew': '2026-11-30',
+  'st-barnabas': '2035-06-11',
+  'st-bartholomew': '2026-08-24',
+  'st-james-the-greater': '2028-07-25',
+  'st-john-apostle': '2029-12-27',
+  'st-john-before-the-latin-gate': '2029-05-06',
+  'st-lawrence': '2026-08-10',
+  'st-luke': '2025-10-18',
+  'st-mark': '2026-04-25',
+  'st-martin-of-tours': '2026-11-11',
+  'st-matthew': '2026-09-21',
+  'st-matthias': '2029-02-24',
+  'st-peter-ad-vincula': '2026-08-01',
+  'st-scholastica': '2026-02-10',
+  'st-stephen-protomartyr': '2029-12-26',
+  'st-thomas-apostle': '2026-12-21',
+};
+
+describe('resolveOrdo("vespers", ...) office-override sweep', () => {
+  it.each(Object.entries(VESPERS_OFFICE_OVERRIDE_DATES))(
+    "resolves %s's own chapter/responsory/hymn/versicle bundle through the real mechanism, not just checking the YAML files exist",
+    (id, date) => {
+      const ordo = resolveOrdo('vespers', date);
+      const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+      const responsory = ordo.parts.find((p) => p.kind === 'responsory');
+      const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+      const versicle = ordo.parts.find((p) => p.kind === 'versicle');
+      for (const part of [chapter, responsory, hymn, versicle]) {
+        expect(part, `${id}: part missing from resolved ordo`).toBeDefined();
+        const status = part && 'text' in part ? part.text.status : undefined;
+        expect(status?.la, `${id}: Latin unexpectedly missing`).not.toBe('missing');
+        expect(status?.en, `${id}: English unexpectedly missing`).not.toBe('missing');
+      }
+    },
+  );
+});
+
 describe('resolveOrdo("vespers", ...)', () => {
   it('is implemented and resolves Sunday psalmody in order', () => {
     // 2026-08-16 is a Sunday, in ordinary time — no First Vespers claim
@@ -44,22 +102,24 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(secondHalf?.kind === 'psalm' ? secondHalf.antiphon : undefined).toBeUndefined();
   });
 
-  it("resolves Saturday's own distinct chapter, responsory, hymn, and versicle", () => {
+  it("uses the Assumption's own per-feast office override on her own Saturday, not the plain Saturday weekday default", () => {
     // 2026-08-15 is a Saturday and the Assumption (Duplex I. classis) —
     // well above keepsOwnSecondVespers's threshold, so it keeps its own
-    // Vespers (weekday stays 'saturday') rather than ceding to tomorrow.
-    // No per-feast Vespers-office override exists yet (see hours/
-    // vespers.ts), so the plain Saturday weekday default still renders
-    // here regardless of the Assumption's own rank — exactly what this
-    // test wants to check.
+    // Vespers (weekday stays 'saturday') rather than ceding to tomorrow —
+    // and well above getOfficeOverrideId's duplex-majus+ threshold too,
+    // so her own authored chapter/responsory/hymn/versicle bundle
+    // (vespers-{part}-assumption.yml, live-verified 2026-08) wins over the
+    // plain Saturday default, same chapter text as her already-authored
+    // lauds-capitulum-assumption.yml (see hours/vespers.ts's
+    // vespersCapitulumForOverride).
     const ordo = resolveOrdo('vespers', '2026-08-15');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
-    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Rom 11:33');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 24:11-12');
 
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
-    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('O lux beáta Trínitas');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).not.toContain('O lux beáta Trínitas');
 
-    const versicle = ordo.parts.find((p) => p.kind === 'versicle' && p.text.text.la?.includes('Vespertína'));
+    const versicle = ordo.parts.find((p) => p.kind === 'versicle' && p.text.text.la?.includes('Exaltáta est sancta Dei Génitrix'));
     expect(versicle).toBeDefined();
   });
 

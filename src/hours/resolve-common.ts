@@ -3,7 +3,7 @@ import type { Commemoration, DayWinner, LiturgicalDay, Weekday } from '../calend
 import type { ProperText } from '../propers';
 import { getCommonProper, getTemporalProper } from '../propers';
 import { getSaintRecord } from '../calendar/feasts';
-import { resolveActiveOctave, activeOctavesFor } from '../calendar';
+import { resolveActiveOctave, activeOctavesFor, isAtLeast } from '../calendar';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { splitAntiphon } from './antiphon';
 import vespersMagnificatAntiphonsData from '../data/hours/vespers-magnificat-antiphons.yml';
@@ -129,6 +129,30 @@ export function isFerialOrVigil(day: LiturgicalDay): boolean {
   const isBareFeria = day.winner.kind === 'temporal' && !getTemporalFeastRecord(day.winner.id);
   const isWithinAnOctave = activeOctavesFor(day.date).length > 0;
   return day.weekday !== 'sunday' && !isWithinAnOctave && (isVigil || isBareFeria);
+}
+
+/**
+ * A duplex-majus+ saint's own id, or one of the named temporal feasts in
+ * ALWAYS_OVERRIDE_TEMPORAL_IDS — the same rank-eligibility test
+ * hours/lauds.ts's getPsalmodyOverrideFor uses (and originally
+ * duplicated), factored out here so hours/vespers.ts's own per-feast
+ * office override (chapter/responsory/hymn/versicle — Vespers has no
+ * psalmody-override table of its own to piggyback eligibility on, unlike
+ * Lauds) can share the identical eligibility rule. Callers still decide
+ * for themselves whether anything's actually been authored for the id
+ * returned — same honest incremental-content convention as everywhere
+ * else; this only answers "is this day's winner eligible to override at
+ * all," not "does an override exist."
+ */
+export function getOfficeOverrideId(day: LiturgicalDay): string | undefined {
+  const winner = resolveOfficeWinner(day);
+  if (winner.kind === 'temporal' && ALWAYS_OVERRIDE_TEMPORAL_IDS.has(winner.id)) {
+    return winner.id;
+  }
+  if (winner.kind === 'sanctoral' && isAtLeast(winner.rank, 'duplex-majus')) {
+    return winner.id;
+  }
+  return undefined;
 }
 
 /**

@@ -1,0 +1,69 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-04-25, the same clean date already used for lauds-capitulum-st-mark.yml. This hymn's closing doxology stanza is seasonally variable in the source (tagged `{Doxology: PaschT}`); what's captured here is whatever rendered live on the query date above, not a season-aware substitution -- same known-not-modeled gap as the Paschaltide alleluia suffix elsewhere (see TODO.md).
+id: vespers-hymn-st-mark
+text:
+  la: |
+    Tristes erant Apóstoli
+    De nece sui Dómini,
+    Quem pœna mortis crudéli
+    Servi damnárant ímpii.
+
+    Sermóne blando Angelus
+    Prædíxit muliéribus:
+    In Galilǽa Dóminus
+    Vidéndus est quantócius.
+
+    Illæ dum pergunt cóncitæ,
+    Apóstolis hoc dícere,
+    Vidéntes eum vívere,
+    Osculántur pedes Dómini.
+
+    Quo ágnito, discípuli
+    In Galilǽam própere
+    Pergunt vidére fáciem
+    Desiderátam Dómini.
+
+    Quǽsumus, Auctor ómnium,
+    In hoc pascháli gáudio,
+    Ab omni mortis ímpetu
+    Tuum defénde pópulum.
+
+    Glória tibi Dómine,
+    Qui surrexísti a mórtuis,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  en: |
+    While Christ's disciples, grieving, sad,
+    Their master's painful death deplore,
+    Whom faithless servants' cruel hands,
+    Had bathed in his own crimson gore;
+
+    Quick from the happy realms above,
+    An angel comes on joyful wing,
+    And to the women tells the joy
+    That to his flock their Lord will bring.
+
+    As they with eager steps make haste,
+    Their joyous message to repeat,
+    Their master's glorious form they see,
+    And falling clasp his sacred feet.
+
+    Cheered by this tale, his faithful flock
+    The Galilean mount ascend,
+    And there with loving awe behold
+    Their heart's sole wish, their truest friend.
+
+    That thou mayst be our Paschal joy
+    Through happy, never-ending years,
+    thine own poor children, Jesu, free
+    From sin's sad death with all its fears.
+
+    To Thee Who, dead, again dost live,
+    All glory, Lord, Thy people give;
+    All glory, as is ever meet,
+    To Father and to Paraclete.
+    Amen.
+status:
+  la: verified
+  en: verified

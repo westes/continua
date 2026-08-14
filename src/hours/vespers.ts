@@ -1,4 +1,4 @@
-import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart } from './types';
+import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart, ResolvedText } from './types';
 import type { LiturgicalDay, Weekday } from '../calendar/types';
 import { resolveEveningDay } from '../calendar/vespers';
 import { getDayLabel } from '../calendar/day-label';
@@ -14,6 +14,7 @@ import {
   verifiedText,
   seasonalOfficeSuffix,
   isFerialOrVigil,
+  getOfficeOverrideId,
 } from './resolve-common';
 import vespersDefinitionData from '../data/hours/vespers.yml';
 import vespersAntiphonsData from '../data/hours/vespers-antiphons.yml';
@@ -81,13 +82,52 @@ function vespersVersicleId(weekday: Weekday): string {
   return weekday === 'saturday' ? 'vespers-versicle-saturday' : 'vespers-versicle-sunday-ferial';
 }
 
+/** A per-feast override's chapter: `vespers-capitulum-${id}` when
+ * authored, else the already-authored `lauds-capitulum-${id}` directly —
+ * live-verified across all 30 duplex-majus+ saints/named-temporal ids
+ * with a Vespers office override (2026-08 sweep, `command=prayVespera`,
+ * each saint's own already-established clean date): the capitulum is
+ * byte-identical between Lauds and Vespers for every one of them, a real
+ * Monastic-rite fact (the reading doesn't change between the two hours,
+ * only the responsory/hymn/versicle do), not a coincidence specific to
+ * the ones checked. So no `vespers-capitulum-<id>.yml` files were
+ * authored at all — this falls straight through to the Lauds one instead
+ * of duplicating identical content into a second file per id. */
+function vespersCapitulumForOverride(id: string): ResolvedText {
+  const proper = resolveCommon(`vespers-capitulum-${id}`);
+  if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
+    return proper;
+  }
+  return resolveCommon(`lauds-capitulum-${id}`);
+}
+
 /** The chapter/responsory/hymn/versicle bundle following the psalmody —
- * see hours/types.ts's 'vespers-office' doc comment. No per-feast
- * override mechanism yet, unlike Lauds' resolveOffice. Falls to a
- * *seasonal* default first (Advent/Lent/Passiontide/Paschaltide — see
- * resolve-common.ts's seasonalOfficeSuffix), then the plain weekday
- * default. */
+ * see hours/types.ts's 'vespers-office' doc comment. A duplex-majus+
+ * saint's own proper bundle (chapter via vespersCapitulumForOverride
+ * above, responsory/hymn/versicle via `vespers-{part}-${id}`), or one of
+ * the named temporal feasts eligible via resolve-common.ts's
+ * getOfficeOverrideId, wins first when authored — same eligible-but-not-
+ * gated-on-content pattern as Lauds' resolveOffice, just without a
+ * psalmody-override table of its own to piggyback eligibility on
+ * (Vespers has no per-feast psalmody override mechanism — see TODO.md).
+ * Falls to a *seasonal* default next (Advent/Lent/Passiontide/
+ * Paschaltide — see resolve-common.ts's seasonalOfficeSuffix), and only
+ * then the plain weekday default — a feast's own override always wins
+ * over the season it happens to fall in, same as everywhere else in this
+ * codebase. */
 function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
+  const overrideId = getOfficeOverrideId(day);
+  if (overrideId) {
+    const chapter = vespersCapitulumForOverride(overrideId);
+    if (chapter.status.la !== 'missing' || chapter.status.en !== 'missing') {
+      return [
+        { kind: 'chapter', text: chapter },
+        { kind: 'responsory', text: resolveCommon(`vespers-responsory-${overrideId}`) },
+        { kind: 'hymn', text: resolveCommon(`vespers-hymn-${overrideId}`) },
+        { kind: 'versicle', text: resolveCommon(`vespers-versicle-${overrideId}`) },
+      ];
+    }
+  }
   const seasonSuffix = seasonalOfficeSuffix(day.season);
   const key = seasonSuffix ?? day.weekday;
   return [
