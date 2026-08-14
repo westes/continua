@@ -17,6 +17,7 @@ import {
   resolveOfficeWinner,
   ALWAYS_OVERRIDE_TEMPORAL_IDS,
   verifiedText,
+  seasonalOfficeSuffix,
 } from './resolve-common';
 import laudsDefinitionData from '../data/hours/lauds.yml';
 import laudsAntiphonsData from '../data/hours/lauds-antiphons.yml';
@@ -187,7 +188,11 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
  * getPsalmodyOverrideFor) and leave this bundle at its plain weekday
  * default, which is exactly what falls back here when the id-keyed
  * capitulum doesn't exist (same dual-missing-status "not authored"
- * signal used throughout this codebase, not a special case). */
+ * signal used throughout this codebase, not a special case). Falls to a
+ * *seasonal* default next (Advent/Lent/Passiontide/Paschaltide — see
+ * resolve-common.ts's seasonalOfficeSuffix), and only then the plain
+ * weekday default — a feast's own override always wins over the season
+ * it happens to fall in, same as everywhere else in this codebase. */
 function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
   const overrideId = getPsalmodyOverrideFor(day)?.id;
   if (overrideId) {
@@ -201,11 +206,13 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
       ];
     }
   }
+  const seasonSuffix = seasonalOfficeSuffix(day.season);
+  const key = seasonSuffix ?? day.weekday;
   return [
-    { kind: 'chapter', text: resolveCommon(capitulumId(day.weekday)) },
-    { kind: 'responsory', text: resolveCommon(`lauds-responsory-${day.weekday}`) },
-    { kind: 'hymn', text: resolveCommon(`lauds-hymn-${day.weekday}`) },
-    { kind: 'versicle', text: resolveCommon(`lauds-versicle-${day.weekday}`) },
+    { kind: 'chapter', text: resolveCommon(seasonSuffix ? `lauds-capitulum-${key}` : capitulumId(day.weekday)) },
+    { kind: 'responsory', text: resolveCommon(`lauds-responsory-${key}`) },
+    { kind: 'hymn', text: resolveCommon(`lauds-hymn-${key}`) },
+    { kind: 'versicle', text: resolveCommon(`lauds-versicle-${key}`) },
   ];
 }
 

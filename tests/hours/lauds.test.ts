@@ -298,4 +298,25 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(last?.kind).toBe('preces');
     expect(last?.kind === 'preces' ? last.label : undefined).toBe('Salve Regina');
   });
+
+  it("renders Advent's seasonal chapter/hymn/versicle instead of the plain weekday default", () => {
+    // 2025-12-02 is a Tuesday in Advent (St. Bibiana, Simplex, merely
+    // commemorated — the day's own winner stays temporal either way).
+    const ordo = resolveOrdo('lauds', '2025-12-02');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Isa 2:3');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Vox clara ecce íntonat');
+    const versicle = ordo.parts.find((p) => p.kind === 'versicle' && p.text.text.la?.includes('Vox clamántis'));
+    expect(versicle).toBeDefined();
+  });
+
+  it("renders Paschaltide's seasonal office, sharing its chapter with Vespers", () => {
+    // 2026-04-20 is in eastertide (Easter 2026-04-05).
+    const ordo = resolveOrdo('lauds', '2026-04-20');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Rom 6:9-10');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Auróra lucis rútilat');
+  });
 });

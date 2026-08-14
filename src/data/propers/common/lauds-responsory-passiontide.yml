@@ -1,0 +1,23 @@
+# Sourced from Divinum Officium's Monastic block ("[Responsory Quad5
+# Laudes_]", the non-Cistercian branch "[Responsory Quad5 Laudes]"
+# resolves to — Psalterium/Special/Major Special.txt). Real Passiontide
+# practice omits the Gloria Patri here too — matches the source exactly
+# (see vespers-responsory-passiontide.yml). Not live-query-verified (see
+# TODO.md).
+id: lauds-responsory-passiontide
+text:
+  la: |
+    R.br. Érue a frámea * Deus ánimam meam.
+    R. Érue a frámea * Deus ánimam meam.
+    V. Et de manu canis únicam meam.
+    R. Deus ánimam meam.
+    R. Érue a frámea * Deus ánimam meam.
+  en: |
+    R.br. Deliver, * O God, my soul from the sword.
+    R. Deliver, * O God, my soul from the sword.
+    V. My only one from the hand of the dog.
+    R. O God, my soul from the sword.
+    R. Deliver, * O God, my soul from the sword.
+status:
+  la: draft
+  en: draft

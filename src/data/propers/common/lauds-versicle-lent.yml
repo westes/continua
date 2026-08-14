@@ -1,0 +1,15 @@
+# The versicle right before the Benedictus, in Lent. Sourced from Divinum
+# Officium's Monastic block: "[Quad Versum 2] = @:Quad Versum 3" — a bare
+# alias to the same text used at Vespers (see vespers-versicle-lent.yml).
+# Not live-query-verified (see TODO.md) — read directly from source.
+id: lauds-versicle-lent
+text:
+  la: |
+    V. Ángelis suis Deus mandávit de te.
+    R. Ut custódiant te in ómnibus viis tuis.
+  en: |
+    V. God hath given His Angels charge over thee.
+    R. To keep thee in all thy ways.
+status:
+  la: draft
+  en: draft
