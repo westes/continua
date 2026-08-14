@@ -1119,13 +1119,22 @@ draft-English antiphon (`tests/hours/resolve-common.test.ts`).
 
 ## Mechanism not built at all
 
-- **Vespers** (`src/hours/vespers.ts` is still a stub). First/Second Vespers
-  overlap (`DayWinner.vespersFrom`) already exists as a type but nothing
-  populates it for Vespers itself yet (only Compline uses `resolveEveningDay`
-  so far). Also owes its own ferial Preces once built — real 1906/1910
-  practice has a distinct "Preces feriales Vespera" (see
-  `lauds-preces-feriales.yml`'s header for the Lauds one, which now
-  exists) with mostly-overlapping but not identical content.
+- **Vespers ordo — built (2026-08)**: `src/hours/vespers.ts` now resolves a
+  full ordo (opening versicle, weekday/seasonal psalmody with the 115+116
+  join and 138 split, chapter/responsory/hymn/versicle bundle with
+  Advent/Lent/Passiontide/Paschaltide overrides, Magnificat with weekday-
+  default antiphon fallback, day-collects) off `resolveEveningDay`, so
+  First/Second Vespers precedence and the cross-day commemoration
+  (`commemorationOf` — "the loser is commemorated unless the loser is
+  simplex", live-verified) both apply before any part runs. See
+  `data/hours/vespers.yml`'s header and `tests/hours/vespers.test.ts`.
+  **Still owes**: its own distinct ferial Preces — currently reuses
+  `lauds-conclusio` for the closing only; real 1906/1910 practice has a
+  distinct "Preces feriales Vespera" (see `lauds-preces-feriales.yml`'s
+  header for the Lauds one, which exists) with mostly-overlapping but not
+  identical content. Also has no per-feast Vespers-office override
+  mechanism yet (chapter/responsory/hymn/versicle are weekday/season-only,
+  unlike Lauds' `resolveOffice` which checks per-feast overrides first).
 - **Matins** (`src/hours/matins.ts` is still a stub) — needs its own
   resolution path (reading-candidate pool, nocturn structure), not the
   static parts-array pattern the other hours use.
