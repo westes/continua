@@ -1128,13 +1128,67 @@ draft-English antiphon (`tests/hours/resolve-common.test.ts`).
   (`commemorationOf` — "the loser is commemorated unless the loser is
   simplex", live-verified) both apply before any part runs. See
   `data/hours/vespers.yml`'s header and `tests/hours/vespers.test.ts`.
-  **Still owes**: its own distinct ferial Preces — currently reuses
-  `lauds-conclusio` for the closing only; real 1906/1910 practice has a
-  distinct "Preces feriales Vespera" (see `lauds-preces-feriales.yml`'s
-  header for the Lauds one, which exists) with mostly-overlapping but not
-  identical content. Also has no per-feast Vespers-office override
-  mechanism yet (chapter/responsory/hymn/versicle are weekday/season-only,
-  unlike Lauds' `resolveOffice` which checks per-feast overrides first).
+
+### Vespers ferial Preces + per-feast office overrides — done (2026-08)
+
+**Ferial Preces**: `vespers-preces-feriales.yml`, sourced from Tridentine
+1906/1910 (`[Preces feriales Vespera] = @:Preces feriales Laudes:s/129/50/`
+— byte-for-byte the Lauds ferial Preces with Psalm 129 swapped for Psalm
+50, live-verified against the same clean Advent feria 2026-12-17 already
+used for Lauds). The short Sunday/feast form reuses `lauds-short-litany`
+directly rather than a Vespers-named duplicate — confirmed byte-identical
+at both hours by live query (Monastic Tridentinum 1617, both a plain
+Sunday and a plain ferial). The ferial-or-vigil predicate itself
+(`isFerialOrVigil`) was factored out of `hours/lauds.ts` into
+`hours/resolve-common.ts` so both hours' `-preces` cases share one
+definition instead of two copies. See `hours/vespers.ts`'s `vespers-preces`
+case and `hours/types.ts`'s doc comment.
+
+**Per-feast office overrides**: same eligibility rule as Lauds'
+`getPsalmodyOverrideFor` (a duplex-majus+ saint, or a named temporal id in
+`ALWAYS_OVERRIDE_TEMPORAL_IDS`), factored out to `resolve-common.ts`'s
+`getOfficeOverrideId` since Vespers has no psalmody-override table of its
+own to piggyback eligibility on the way Lauds does. **Authored — all 30
+ids with an existing Lauds office-bundle override, full 30/30**, one live
+`command=prayVespera` query each (Monastic Tridentinum 1617, except
+`christ-the-king`: Monastic Divino 1930, same as its Lauds counterpart),
+same clean per-saint dates already established for the Lauds sweep.
+Extraction automated via a purpose-built parser
+(`scratchpad/fetch_vespers.py`, not committed) after the first hand-check
+(St. Lawrence) confirmed the page structure; validated by diffing every
+extracted capitulum against its already-authored `lauds-capitulum-<id>`
+counterpart before trusting the rest, plus an automated missing-field/
+leaked-response-marker sweep across all 30 outputs, plus a runtime smoke
+test resolving each id's actual chapter/responsory/hymn/versicle bundle
+through `resolveOrdo`, not just checking the YAML files exist.
+
+**Real finding, not assumed**: the capitulum is byte-identical between
+Lauds and Vespers for every one of the 30 ids checked — a genuine
+Monastic-rite fact (the day's reading doesn't change between the two
+hours, only the responsory/hymn/versicle do). So no `vespers-capitulum-
+<id>.yml` files exist at all; `hours/vespers.ts`'s
+`vespersCapitulumForOverride` falls through to the already-authored
+`lauds-capitulum-<id>` directly instead of duplicating identical content.
+
+St. Scholastica needed the same hand-translation treatment her Lauds/
+Terce/Sext/None content did: no English exists in the reference engine's
+data for her Vespers responsory, hymn ("Te beáta sponsa Christi"), or
+versicle — translated here (`status: draft` on the English), distinct text
+from her Lauds hymn since Vespers' proper content doesn't overlap with the
+minor hours' shared pool the way a Common-category saint's does. Also two
+one-line English gaps unrelated to her (`immaculate-conception`,
+`nativity-bvm`'s shared Ave Maria responsory — the reference engine left
+"Benedícta tu in muliéribus..." untranslated for both): filled with the
+standard Douay-Rheims/Ave Maria wording, not a free translation.
+
+**Known, not modeled**: 5 of the 30 hymns (`ss-philip-and-james`,
+`st-john-apostle`, `st-john-before-the-latin-gate`, `st-mark`,
+`st-stephen-protomartyr`) carry a `{Doxology: PaschT}`/`{Doxology: NatT}`
+tag in the source, meaning their closing doxology stanza is itself
+seasonally variable — what's stored is whichever form rendered live on
+each one's already-chosen clean query date, not a season-aware
+substitution. Same class of gap as the Paschaltide alleluia suffix
+elsewhere in this file, flagged not fixed.
 - **Matins** (`src/hours/matins.ts` is still a stub) — needs its own
   resolution path (reading-candidate pool, nocturn structure), not the
   static parts-array pattern the other hours use.
