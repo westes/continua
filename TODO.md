@@ -1129,6 +1129,144 @@ draft-English antiphon (`tests/hours/resolve-common.test.ts`).
   simplex", live-verified) both apply before any part runs. See
   `data/hours/vespers.yml`'s header and `tests/hours/vespers.test.ts`.
 
+### Matins ordo — mechanism built, small content slice (2026-08)
+
+`src/hours/matins.ts` was the last stub hour. Built as a genuinely different
+shape from every other hour: no static `data/hours/matins.yml` parts list —
+the ordo is assembled programmatically per day, since the real structure (1
+nocturn on a plain ferial day, 3 on a Sunday or Duplex-and-higher feast,
+with a *variable* number of readings) doesn't fit the static-array pattern
+every other hour uses.
+
+**Explicit, direct-instruction departures from the historical office** (see
+memory `vu-not-a-reconstruction`/`vu-matins-design` — this app was never
+meant to reconstruct any one historical form, Matins least of all):
+- **Nocturn 1 is always the user's own continuous scripture-reading plan**
+  (`src/propers/bible-plan.ts`, sourced from a personal TSV outside this
+  repo), never the historical per-day lectionary — a variable number of
+  readings per day, and deliberately *not* the Rule of Benedict's own
+  "summer" reading contraction (Low Sunday–1st Sunday of November): this
+  app reads in full year-round, live-confirmed the reference engine's own
+  Monastic 1617 data does apply that contraction (`monastic.pl`'s
+  `brevis_monastic`/`legend_monastic`) before deciding not to reproduce it.
+- **Recombine, don't reproduce the historical lesson split**: where the
+  source splits one continuous work across several numbered lessons purely
+  to fill a fixed lesson-count slot, this app joins them into one reading
+  (`src/propers/octave-readings.ts`'s `resolvePassages`, now reused outside
+  the octave-day store it was built for — extended via the new
+  `src/propers/nocturn-readings.ts`). Split only kept where the underlying
+  source genuinely changes (e.g. a Gospel pericope vs. the homily on it).
+- **Nocturn 3 gated at Duplex-and-higher**, plus every Sunday
+  unconditionally — the user's own chosen threshold (real Monastic 1617 is
+  more permissive), reusing the already-existing `isDoubleOrHigher` (which
+  already means rank ≥ `duplex`, so no new rank helper was needed).
+- **Generous multi-source reading inclusion, not winner-takes-all**: every
+  commemorated saint (not just the office winner) and every active octave
+  contributes its own Nocturn 2/3 reading when authored — mirrors
+  `getDayCollects`'s existing "one collect per commemoration" pattern,
+  applied to readings. Wired `src/propers/octave-readings.ts`'s
+  `getOctaveReading` into a real caller for the first time — it had zero
+  callers anywhere in the codebase before this, clearly built ahead of
+  Matins and left unwired until now.
+- **Gospel sourcing has exactly two allowed sources**: the user's own plan
+  (flagged via `isGospel`, book-derived — confirmed the user's plan never
+  assigns one on a Sunday, a deliberate editorial choice, not a gap) and
+  the day's own genuine *proper* Gospel+homily. **A Common-of-Saints
+  fallback Gospel is never used** — `nocturn-readings.ts` has no
+  Common-fallback mechanism at all (unlike `collectCommon`/
+  `benedictusCommon` elsewhere), so the exclusion falls out of the store's
+  own shape rather than needing special-case code.
+- **Invitatory (Ps 94) framed like an ordinary antiphoned psalm** — one
+  opening (incipit-or-full), one full repeat after — not the historical
+  interspersed-refrain shape (confirmed live: real practice repeats the
+  antiphon between every verse group). Direct instruction, not an
+  oversight.
+- **Responsories matched loosely by scriptural book**, not exact citation —
+  per the user's own description of how they actually worked historically.
+  New seeded pool, `data/hours/matins-responsories-by-book.yml` +
+  `src/propers/matins-responsories.ts` (currently just `isa`, from a live
+  Advent-ferial query — a real seed, not a full pool).
+
+**Sunday's fixed 12-psalm/3-canticle psalmody** (`data/hours/matins-sunday-
+antiphons.yml`) — Nocturn 1 = Ps 20-21/22-23/24-25, Nocturn 2 = Ps
+26-27/28-29/30-31 (Rule of Benedict ch. 18's own arrangement, distinct from
+Roman Matins' 9-psalm Sunday scheme), Nocturn 3 = 3 OT canticles (Isa
+33:2-10, Isa 33:13-18, Sir 36:14-19) under one shared antiphon. Transcribed
+from the reference engine's own Monastic-labeled block (`Psalterium/Psalmi/
+Psalmi matutinum.txt`'s `[Daym0]`), then live-verified end-to-end
+(`command=prayMatutinum`, 2026-09-06) — psalm numbers, canticle citations,
+and the 12-lesson/Te Deum sequence all matched exactly. Real gap found
+along the way: the reference engine's own UI flags Monastic 1617 Matins as
+"still incomplete and under construction" — the pieces actually queried
+checked out regardless, but worth remembering if a future pull comes back
+looking wrong.
+
+**Real content authored for two clean proof dates** (one per branch, per
+this project's usual "mechanism first, minimal live-verified proof, content
+later" build order):
+- **Ferial**: 2026-12-15 (Tuesday of Advent III) — the user's own plan's
+  "Isa 36-37, Wis 14" (citation-only for now; full Vulgate/Douay-Rheims
+  import is a deferred separate project, see below), matched against the
+  seeded Isaiah responsory pool.
+- **Sunday**: 2026-09-06 ("14th Sunday after Trinity", `post-pentecost-15`
+  — the Trinity-counted display label and the Pentecost-offset storage id
+  are a fixed, already-computed one-off relationship, not something new
+  built here) — Nocturn 1 from the user's plan ("Tob 1-2, Sir 45",
+  citation-only), Nocturn 2 a real, fully-translated patristic reading
+  (St. Gregory the Great, *Moralia in Job*, Bk. 9 — live-transcribed, both
+  languages), Nocturn 3 the day's own proper Gospel (Luke 7:11-16, the
+  raising of the widow's son at Naim) plus St. Augustine's homily on it
+  (Sermon 44), also fully transcribed. Real seam flagged, not papered over:
+  this Sunday's *real* historical Nocturn 1 is the Book of Job (confirmed
+  live) — Nocturn 2's Job commentary is kept as-is even though this app's
+  own Nocturn 1 no longer reads Job that week, since it's real, valuable,
+  season-proper patristic content, not tied to any specific saint.
+- Two Isaiah chapters actually populated in `src/data/scripture/` (33,
+  live-transcribed for the Sunday canticles) — small, real progress against
+  the eventual bulk Bible import, not just placeholders.
+
+Verified end-to-end: `tests/hours/matins.test.ts`, both branches, resolving
+real dates through the actual `resolveOrdo` mechanism (psalm/canticle
+counts, Te Deum presence, reading citations and statuses, Gospel flagging
+and its Common-fallback exclusion, responsory matching) — not just checking
+the YAML files exist. `npm test` (359 tests) and `npm run build` both pass.
+
+**Not done in this pass — explicitly deferred, not silently dropped:**
+- All ~390 rows of the user's own bible-plan TSV — only the two proof
+  dates' rows are converted so far.
+- Full Sunday/feast-calendar patristic-reading authoring (the ~75 Duplex+
+  saints eligible for Nocturn 3, per the user's own threshold).
+- Pre-1955-but-post-1617 saints' differently-structured readings (source
+  confirmed as Tridentine/Divino Afflatu rather than Monastic 1617,
+  combine-where-sensible rule confirmed to apply the same way — the actual
+  sourcing pass not started).
+- The per-book responsory pool beyond its one seeded book (`isa`).
+- The bulk Vulgate (Latin) + Douay-Rheims (English) import into
+  `src/data/scripture/` — in scope for the project long-term, explicitly
+  deferred past this pass per direct instruction.
+- Seasonal variants of the invitatory antiphon, the ferial hymn, and
+  Sunday's own psalmody antiphons — all currently one fixed year-round
+  text each, even though the source confirms at least the invitatory
+  antiphon and Sunday psalmody genuinely do vary by season (e.g. `[Advm0]`
+  right after `[Daym0]` in the source).
+- Whether any real supported year reaches a 6th Sunday of Epiphany
+  (`post-epiphany-6`) — the user's own plan has no row for it by design;
+  confirmed real (some years have it, some don't) but not yet checked
+  against which years this app actually needs to support. Resolved
+  separately: on such a date, the bible-plan loader returns honestly
+  `missing` rather than reusing the 5th week's rows — a deliberate,
+  direct-instruction exception to this project's usual "prefer real text
+  over missing" stance.
+- The grand closing "Duo Seraphim" responsory before Te Deum (sung after
+  the very last lesson, distinct from that lesson's own responsory) isn't
+  modeled — the schema only carries one responsory per reading, and that
+  closing one doesn't belong to any single reading the way the others do.
+  Flagged in `post-pentecost-15.yml`'s own header, not fixed.
+- What "a Gospel reading is its own kind" should mean beyond the `isGospel`
+  flag on a plain `lesson` — the user wasn't sure yet what that distinction
+  should look like; worth a follow-up once there's a UI to evaluate it
+  against.
+
 ### Vespers ferial Preces + per-feast office overrides — done (2026-08)
 
 **Ferial Preces**: `vespers-preces-feriales.yml`, sourced from Tridentine
@@ -1189,9 +1327,6 @@ seasonally variable — what's stored is whichever form rendered live on
 each one's already-chosen clean query date, not a season-aware
 substitution. Same class of gap as the Paschaltide alleluia suffix
 elsewhere in this file, flagged not fixed.
-- **Matins** (`src/hours/matins.ts` is still a stub) — needs its own
-  resolution path (reading-candidate pool, nocturn structure), not the
-  static parts-array pattern the other hours use.
 - **The "which Sunday governs this date" temporal-id algorithm** — the fixed
   23rd-Sunday-before-Advent rule, Epiphany Sundays transferring to the end
   of the liturgical year when they don't fit before Septuagesima, and the
