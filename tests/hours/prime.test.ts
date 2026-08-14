@@ -224,11 +224,3 @@ describe('resolveOrdo("prime", ...)', () => {
     }
   });
 });
-
-describe('resolveOrdo for not-yet-built hours', () => {
-  it('flags matins as not implemented rather than throwing', () => {
-    const ordo = resolveOrdo('matins', MONDAY);
-    expect(ordo.notImplemented).toBe(true);
-    expect(ordo.parts).toEqual([]);
-  });
-});

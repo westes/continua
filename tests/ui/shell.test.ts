@@ -37,7 +37,7 @@ describe('shell', () => {
     expect(root.querySelectorAll('.ordo-part-psalm').length).toBeGreaterThan(0);
   });
 
-  it('switches to a not-yet-built hour and shows the pending message', () => {
+  it('switches to Matins and shows its real content, not the pending message', () => {
     const root = document.getElementById('app')!;
     mountShell(root);
 
@@ -47,7 +47,11 @@ describe('shell', () => {
     matinsBtn?.click();
 
     expect(root.querySelector('.hour-view h2')?.textContent).toBe('Matins');
-    expect(root.querySelector('.hour-view-pending')).not.toBeNull();
+    expect(root.querySelector('.hour-view-pending')).toBeNull();
+    // Ferial psalmody always resolves regardless of date (unauthored
+    // reading content is the only genuinely date-gated part) — see
+    // hours/matins.ts.
+    expect(root.querySelectorAll('.ordo-part-psalm').length).toBeGreaterThan(0);
   });
 
   it('switches to Compline and shows its real content, not the pending message', () => {
