@@ -11,19 +11,33 @@
 // reconstruction. The reference engine's Monastic 1617 data is a content
 // and structure source, not a spec to reproduce — several real, deliberate
 // departures from it are built in here:
-//   - Nocturn 1 is always the user's own continuous scripture-reading plan
-//     (src/propers/bible-plan.ts), never the historical per-day lectionary
-//     — a *variable* number of readings, not the historical fixed 3 (or 1,
-//     in the source's own "summer" contraction — deliberately not
-//     reproduced here; this app reads in full year-round).
+//   - Readings are pool-assembled, not fixed-slotted (user, 2026-08,
+//     superseding this file's original "Nocturn 1 = plan, Nocturns 2-3 =
+//     patristic" design): every source that can contribute for the day —
+//     the user's own scripture-reading plan (src/propers/bible-plan.ts,
+//     a *variable* number of readings, not the historical fixed 3 or the
+//     Rule's own "summer" contraction, deliberately not reproduced —
+//     this app reads in full year-round), the office winner's and every
+//     commemorated saint's own patristic/hagiographic/Gospel content, the
+//     plain temporal day's own content, and every active octave's own
+//     reading — is gathered into one ordered pool (`buildReadingPool`),
+//     then sliced into however many nocturns the day's psalmody has
+//     (`distributeIntoNocturns`), with no reading kind pinned to a
+//     particular nocturn number.
 //   - Where the historical office splits one continuous source across
 //     several numbered lessons, this app recombines them into one reading
 //     (see src/propers/octave-readings.ts's resolvePassages / src/propers/
 //     nocturn-readings.ts) — split only where the underlying source
 //     genuinely changes (e.g. a Gospel pericope vs. the homily on it).
-//   - Nocturn 3 is gated at Duplex-and-higher (plus every Sunday,
-//     unconditionally) — the user's own choice (2026-08), not the
-//     historical Rule's own more permissive threshold.
+//   - The *number* of nocturns (1 vs. 3) is still gated at Duplex-and-higher
+//     (plus every Sunday, unconditionally) — the user's own choice
+//     (2026-08), not the historical Rule's own more permissive threshold.
+//     This is a psalmody-structure decision only; it no longer limits which
+//     days get patristic reading content authored — a sub-Duplex day's
+//     single nocturn can and should include patristic/hagiographic content
+//     from the pool whenever it's been sourced for that day (user, 2026-08:
+//     "patristic readings for every saint where we can source one, not
+//     just duplex+").
 //   - A Gospel reading is sourced from exactly two places: the user's own
 //     plan (flagged via BiblePlanReading.isGospel — never present on a
 //     Sunday, a deliberate editorial choice in the user's own plan, not a
@@ -34,10 +48,10 @@
 //     benedictusCommon elsewhere), so this exclusion falls out of the
 //     store's own shape rather than needing special-case code.
 //   - Every commemorated saint (not just the office winner) and every
-//     active octave gets its own Nocturn 2/3 contribution, when authored —
-//     "be generous, not winner-takes-all" (user, 2026-08) — mirroring
-//     getDayCollects's own "one collect per commemoration" pattern, applied
-//     to readings instead.
+//     active octave contributes its own reading to the pool, when
+//     authored — "be generous, not winner-takes-all" (user, 2026-08) —
+//     mirroring getDayCollects's own "one collect per commemoration"
+//     pattern, applied to readings instead.
 //
 // Only a small, growable slice of content is authored so far (one clean
 // ferial day, one clean Sunday) — this is the mechanism build, not the
@@ -151,26 +165,14 @@ function ferialPsalmody(day: LiturgicalDay): ResolvedPart[] {
   return psalmRefParts(getPsalmsFor('matins', day.weekday));
 }
 
-/** Nocturn 1 — always the user's own reading plan, on every kind of day
- * (see this file's header). Empty when nothing's authored for this
- * (temporalId, weekday) yet — an honest absence, not a placeholder. */
-function nocturn1ReadingParts(temporalId: string, day: LiturgicalDay): ResolvedPart[] {
-  const readings = getBiblePlanReadings(temporalId, day.weekday);
-  return readings.map((r) => ({
-    kind: 'lesson',
-    text: { text: r.text, status: r.status, citation: r.citation },
-    nocturn: 1,
-    isGospel: r.isGospel,
-    responsory: r.responsory ? { text: r.responsory, status: { la: 'verified', en: 'verified' } } : undefined,
-  }));
-}
-
-/** Every id whose own Nocturn 2/3 content should be gathered for `day` —
- * the office winner (if sanctoral), every commemorated saint, and the
- * plain temporal id itself (for an ordinary day's own patristic content,
- * e.g. a plain Sunday's Moralia-in-Job-style commentary) — deliberately
- * inclusive, not just the winner, per the user's own "be generous, not
- * winner-takes-all" instruction (2026-08). */
+/** Every id whose own patristic/hagiographic/Gospel content should be
+ * gathered for `day` — the office winner (if sanctoral), every
+ * commemorated saint (a transferred-in feast already appears as `day.winner`
+ * once `resolveDay` has applied the transfer, so it needs no separate
+ * lookup here), and the plain temporal id itself (for an ordinary day's own
+ * patristic content, e.g. a plain Sunday's Moralia-in-Job-style
+ * commentary) — deliberately inclusive, not just the winner, per the
+ * user's own "be generous, not winner-takes-all" instruction (2026-08). */
 function nocturnReadingIds(day: LiturgicalDay, temporalId: string): string[] {
   const ids = new Set<string>();
   if (day.winner.kind === 'sanctoral') ids.add(day.winner.id);
@@ -186,42 +188,75 @@ function nocturnReadingPart(r: NocturnReading): ResolvedPart {
     kind: 'lesson',
     text: { text: r.text, status: r.status, citation: r.citation },
     label: r.source,
-    nocturn: r.nocturn,
     isGospel: r.isGospel,
     responsory: r.responsory ? { text: r.responsory, status: { la: 'verified', en: 'verified' } } : undefined,
   };
 }
 
-/** Nocturns 2-3's patristic/hagiographic/Gospel content for a 3-nocturn
- * day — gathered from every relevant id (see nocturnReadingIds) plus every
- * currently active octave's own already-authored octave-day reading (see
- * src/propers/octave-readings.ts — built well ahead of this file, never
- * wired to anything until now). Filtered to the requested nocturn number. */
-function nocturnReadingParts(nocturn: number, day: LiturgicalDay, temporalId: string, date: string): ResolvedPart[] {
+/** The full pool of readings available for `day` — every source that can
+ * contribute (see this file's header): the user's own scripture-plan
+ * readings, the office winner's and every commemorated saint's own
+ * patristic/hagiographic/Gospel content, the plain temporal id's own
+ * content (e.g. an ordinary Sunday's patristic commentary), and every
+ * currently active octave's own reading. No source is pinned to a
+ * particular nocturn — `distributeIntoNocturns` slots the whole pool
+ * across however many nocturns the day's psalmody has, per the user's own
+ * "assemble everything, then slot it in" instruction (2026-08), a
+ * deliberate departure from this file's earlier "Nocturn 1 = plan,
+ * Nocturns 2-3 = patristic" design. Order here is preserved by
+ * `distributeIntoNocturns`, so it doubles as reading priority: the user's
+ * own scripture reading first, then each id's authored content in its own
+ * file order (patristic commentary typically precedes a Gospel+homily —
+ * see data/propers/nocturn-readings/*.yml), then active octaves. */
+function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string): ResolvedPart[] {
   const parts: ResolvedPart[] = [];
+  for (const r of getBiblePlanReadings(temporalId, day.weekday, date)) {
+    parts.push({
+      kind: 'lesson',
+      text: { text: r.text, status: r.status, citation: r.citation },
+      isGospel: r.isGospel,
+      responsory: r.responsory ? { text: r.responsory, status: { la: 'verified', en: 'verified' } } : undefined,
+    });
+  }
   for (const id of nocturnReadingIds(day, temporalId)) {
     for (const reading of getNocturnReadings(id)) {
-      if (reading.nocturn === nocturn) parts.push(nocturnReadingPart(reading));
+      parts.push(nocturnReadingPart(reading));
     }
   }
-  if (nocturn === 2) {
-    for (const octave of activeOctavesFor(date)) {
-      const reading = getOctaveReading(octave.id, octave.dayNumber);
-      if (reading) {
-        parts.push({
-          kind: 'lesson',
-          text: { text: reading.text, status: reading.status },
-          label: reading.source,
-          nocturn: 2,
-          isGospel: false,
-          responsory: reading.responsory
-            ? { text: reading.responsory, status: { la: 'verified', en: 'verified' } }
-            : undefined,
-        });
-      }
+  for (const octave of activeOctavesFor(date)) {
+    const reading = getOctaveReading(octave.id, octave.dayNumber);
+    if (reading) {
+      parts.push({
+        kind: 'lesson',
+        text: { text: reading.text, status: reading.status },
+        label: reading.source,
+        isGospel: false,
+        responsory: reading.responsory
+          ? { text: reading.responsory, status: { la: 'verified', en: 'verified' } }
+          : undefined,
+      });
     }
   }
   return parts;
+}
+
+/** Splits `pool` into `nocturnCount` contiguous, as-even-as-possible
+ * chunks (ceiling division), preserving pool order within each chunk —
+ * "depending on how many we have" (user, 2026-08), not a fixed count per
+ * nocturn. A pool of 5 across 3 nocturns lands 2/2/1, not the historical
+ * fixed lesson-count-per-nocturn scheme. */
+function distributeIntoNocturns(pool: ResolvedPart[], nocturnCount: number): ResolvedPart[][] {
+  const chunks: ResolvedPart[][] = [];
+  const size = Math.ceil(pool.length / nocturnCount);
+  for (let i = 0; i < nocturnCount; i++) {
+    const chunk = pool.slice(i * size, (i + 1) * size);
+    // Stamp each reading with the nocturn slot it actually landed in —
+    // only meaningful once distribution has happened, not while the pool
+    // is still unordered-by-nocturn (see ResolvedPart's own 'lesson'
+    // variant, `nocturn?: number`).
+    chunks.push(nocturnCount > 1 ? chunk.map((part) => ({ ...part, nocturn: i + 1 })) : chunk);
+  }
+  return chunks;
 }
 
 export function resolveOrdo(date: string): ResolvedOrdo {
@@ -234,6 +269,8 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // convention every other per-feast override in this app already uses
   // (see hours/resolve-common.ts's getOfficeOverrideId).
   const threeNocturns = day.weekday === 'sunday' || isDoubleOrHigher(winner);
+  const pool = buildReadingPool(day, temporalId, date);
+  const [nocturn1Readings, nocturn2Readings, nocturn3Readings] = distributeIntoNocturns(pool, threeNocturns ? 3 : 1);
 
   const parts: ResolvedPart[] = [
     { kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) },
@@ -244,15 +281,15 @@ export function resolveOrdo(date: string): ResolvedOrdo {
 
   if (threeNocturns) {
     parts.push(...sundayPsalmNocturn(sundayAntiphons.nocturn1, day));
-    parts.push(...nocturn1ReadingParts(temporalId, day));
+    parts.push(...(nocturn1Readings ?? []));
     parts.push(...sundayPsalmNocturn(sundayAntiphons.nocturn2, day));
-    parts.push(...nocturnReadingParts(2, day, temporalId, date));
+    parts.push(...(nocturn2Readings ?? []));
     parts.push(...sundayCanticleNocturn(sundayAntiphons.nocturn3, day));
-    parts.push(...nocturnReadingParts(3, day, temporalId, date));
+    parts.push(...(nocturn3Readings ?? []));
     parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
   } else {
     parts.push(...ferialPsalmody(day));
-    parts.push(...nocturn1ReadingParts(temporalId, day));
+    parts.push(...(nocturn1Readings ?? []));
     parts.push({ kind: 'chapter', text: resolveCommon('matins-capitulum-ferial') });
   }
 

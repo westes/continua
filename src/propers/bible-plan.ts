@@ -1,20 +1,22 @@
-// The user's own continuous scripture-reading plan for Matins Nocturn 1 —
-// deliberately not the historical per-day lectionary (see hours/matins.ts's
-// header and TODO.md's Matins section): a personal year-round reading plan,
-// keyed by the same (temporalId, weekday) pair every other content store in
-// this project already uses to identify a day, sourced from a TSV the user
-// maintains outside this repo. Replaces the historical Nocturn-1 lesson
-// count entirely — a *variable* number of readings per day, no RB summer
-// contraction (see calendar/temporal-id.ts's resolveTemporalId for the
-// id scheme this keys off).
+// The user's own continuous scripture-reading plan, one contributor among
+// several to Matins' pooled reading list (see hours/matins.ts's header and
+// TODO.md's Matins section) — deliberately not the historical per-day
+// lectionary. Most rows key off the same (temporalId, weekday) pair every
+// other content store in this project already uses to identify a day, but
+// the source TSV's Christmastide/Epiphanytide stretch (Dec 25 - Jan 13)
+// keys off a fixed calendar date (MM-DD) instead, since that stretch is
+// read straight through regardless of which temporal Sunday governs the
+// day. The two key types can both apply to the same date (e.g. a Sunday
+// after Epiphany landing inside Jan 1-13) — `getBiblePlanReadings` checks
+// both and pools whatever each produces, rather than one overriding the
+// other.
 //
 // Only a small, growable subset is authored so far — this is the mechanism
 // build, not the full-calendar content pass (~390 rows total in the
 // source TSV); see TODO.md for what's deferred. Every entry not yet
 // authored here simply resolves to no readings (honest absence, not a
-// placeholder) — matins.ts falls back to whatever nocturn-2/3 content
-// exists for the day, or renders nothing for Nocturn 1 on a day with
-// neither.
+// placeholder) — matins.ts's reading pool just has nothing from this
+// source that day.
 import type { LanguageCode, TranslationStatus } from '../psalter/types';
 import { resolvePassages, type ScriptureCitation } from './octave-readings';
 import { getResponsoryForBook } from './matins-responsories';
@@ -49,8 +51,13 @@ interface BiblePlanReadingRecord {
 }
 
 interface BiblePlanDayRecord {
-  temporalId: string;
-  weekday: string;
+  /** Mutually exclusive with `calendarDate` — a row keys off one or the
+   * other, never both (see this file's header). */
+  temporalId?: string;
+  weekday?: string;
+  /** "MM-DD", for the Dec 25 - Jan 13 stretch that reads straight through
+   * regardless of which temporal Sunday governs the day. */
+  calendarDate?: string;
   readings: BiblePlanReadingRecord[];
 }
 
@@ -85,9 +92,10 @@ const modules = import.meta.glob<{ default: BiblePlanDayRecord }>('../data/hours
   eager: true,
 });
 
-const readingsByKey = new Map<string, BiblePlanReading[]>();
+const readingsByTemporalKey = new Map<string, BiblePlanReading[]>();
+const readingsByCalendarDate = new Map<string, BiblePlanReading[]>();
 for (const mod of Object.values(modules)) {
-  const { temporalId, weekday, readings } = mod.default;
+  const { temporalId, weekday, calendarDate, readings } = mod.default;
   // Cycles independently per book (not per reading) so two same-day
   // readings from the same book don't collide on the pool's first entry —
   // see matins-responsories.ts's own cycling doc comment.
@@ -98,13 +106,23 @@ for (const mod of Object.values(modules)) {
     seenPerBook.set(book, index + 1);
     return resolveReading(record, index);
   });
-  readingsByKey.set(`${temporalId}-${weekday}`, resolved);
+  if (calendarDate) {
+    readingsByCalendarDate.set(calendarDate, resolved);
+  } else {
+    readingsByTemporalKey.set(`${temporalId}-${weekday}`, resolved);
+  }
 }
 
-/** Empty array, not undefined, when nothing's authored for this day yet —
+/** Every reading this plan contributes to Matins' pooled reading list for
+ * `date` — both the (temporalId, weekday) row and the fixed-calendar-date
+ * row (if any), pooled together rather than one overriding the other, since
+ * both can genuinely apply to the same date (see this file's header).
+ * Empty array, not undefined, when nothing's authored for this day yet —
  * every caller already treats "no readings" as a valid, renderable state
  * (see hours/matins.ts), so there's no separate "missing entirely" signal
  * to preserve here the way getOctaveReading needs `undefined` for. */
-export function getBiblePlanReadings(temporalId: string, weekday: string): BiblePlanReading[] {
-  return readingsByKey.get(`${temporalId}-${weekday}`) ?? [];
+export function getBiblePlanReadings(temporalId: string, weekday: string, date: string): BiblePlanReading[] {
+  const byTemporal = readingsByTemporalKey.get(`${temporalId}-${weekday}`) ?? [];
+  const byCalendarDate = readingsByCalendarDate.get(date.slice(5)) ?? [];
+  return [...byTemporal, ...byCalendarDate];
 }

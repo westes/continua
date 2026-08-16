@@ -4,6 +4,62 @@ A real backlog, not scattered code comments. Update this file when something
 here gets done, and add to it when new gaps turn up — don't let it drift back
 into "only findable by reading commit messages."
 
+## Priority
+
+Work in this file follows one methodology, repeated every time a new hour or content type
+gets built: **mechanism first, then a minimal live-verified proof (1-2 clean dates/entries
+authored fully, end-to-end) to confirm the mechanism is right, then bulk content
+authoring/import against the whole calendar once it's trusted.** A section marked "mechanism
+built" but not yet "full sweep" or "all N done" is mid-pipeline, not stalled — its next work
+is more content in the same already-proven shape, not a design change. This file's dated
+build log (below "Open work, in priority order") is the record of that pipeline running
+across every hour and content type in this app.
+
+## Open work, in priority order
+
+1. **Mechanism gaps** — a real design/code piece not built yet, blocking any content pass on
+   it from starting:
+   - Pre-1955-but-post-1617 saints' differently-structured Matins readings — source confirmed
+     (Tridentine/Divino Afflatu, combine-where-sensible applies the same way), but the actual
+     sourcing/modeling pass hasn't started — see "Matins ordo" below.
+   - The "which Sunday governs this date" temporal-id algorithm (23rd-Sunday-before-Advent
+     rule, Epiphany-Sunday transfer to the end of the liturgical year, the
+     Saturday-before-Septuagesima 6th-Epiphany-Sunday commemoration edge case) — tabled, not
+     started.
+   - Easter's own octave — tabled, "a whole different discussion."
+   - What "a Gospel reading is its own kind" should mean structurally/in the UI, beyond the
+     `isGospel` flag on a plain Matins `lesson` — open; deferred until there's a UI to
+     evaluate it against.
+
+2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
+   date/entry already resolves correctly end-to-end); what's left is authoring/importing more
+   content in that same shape across the rest of the calendar:
+   - Matins: convert the rest of the user's ~390-row bible-plan TSV (2 proof dates converted
+     so far); author patristic/hagiographic readings for every saint where one can be
+     sourced — no longer Duplex+-gated, content is pooled and shown regardless of rank (see
+     "Reading-pool redesign"); expand the per-book Matins responsory pool beyond its one
+     seeded book (`isa`); once the pre-1955 mechanism gap above is resolved, source those
+     saints' readings too.
+   - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
+     `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
+     citations resolve to `missing` text until it lands.
+   - A handful of individually-flagged content gaps, each already flagged in place rather than
+     silently dropped: St. Frances of Rome's and St. Bibiana's Benedictus antiphons
+     (structurally can't win their own day under this app's calendar in any near-term year,
+     needs a very late test year to check); Ss. Ursula and Companions' Benedictus antiphon
+     (a category-of-one, no live rendering to verify against); "Our Lady of the Snows" (not
+     modeled at all); the four "…benedícta…" octave-day Ant+V/R+collect blocks (not yet
+     modeled).
+
+3. **Known, deliberate simplifications** — flagged as intentional, not a bug, no plan to
+   revisit unless priorities change: see "Known, deliberate simplifications" at the end of
+   this file, plus the Matins "Duo Seraphim" closing-responsory gap and the 5 Vespers hymns
+   whose seasonal doxology substitution isn't modeled (both flagged in their own sections
+   below, not repeated here).
+
+Everything from here down is the dated build log this priority list is drawn from — kept for
+the sourcing/verification detail behind each decision, not itself in priority order.
+
 ## Content gaps — mechanism built, data incomplete
 
 ### Lauds psalmody overrides + office-bundle overrides — done (2026-08)
@@ -1231,11 +1287,41 @@ counts, Te Deum presence, reading citations and statuses, Gospel flagging
 and its Common-fallback exclusion, responsory matching) — not just checking
 the YAML files exist. `npm test` (359 tests) and `npm run build` both pass.
 
+### Reading-pool redesign — done (2026-08)
+
+**Corrected a miscommunication in the original mechanism build above**: readings are now
+pool-assembled, not fixed-slotted. Every source that can contribute for a day — the office
+winner, every commemorated saint, a transferred-in feast (already folded into `day.winner`
+by `resolveDay`, no separate lookup needed), every active octave, the plain temporal id, and
+the user's own scripture-plan reading — is gathered into one ordered pool
+(`buildReadingPool` in `src/hours/matins.ts`), then sliced into however many nocturns the
+day's psalmody has (`distributeIntoNocturns`, ceiling division, pool order preserved). No
+reading kind is pinned to a specific nocturn anymore — scripture is no longer reserved for
+Nocturn 1, patristic content no longer reserved for Nocturns 2-3.
+
+The 1-vs-3-nocturn psalmody gate (Duplex+/Sunday) is unchanged — it governs psalm/canticle/
+Te Deum structure only. It no longer limits which days get patristic content authored or
+shown: a sub-Duplex ferial day's single nocturn now pools in patristic/hagiographic content
+whenever it's been sourced, alongside the scripture-plan reading — direct instruction, "we
+want patristic readings for every saint where we can source one, not just duplex+."
+
+`src/propers/bible-plan.ts`'s `getBiblePlanReadings` is now dual-keyed: most rows still key
+off `(temporalId, weekday)`, but the source TSV's Dec 25 - Jan 13 stretch keys off a fixed
+`MM-DD` calendar date instead (read straight through regardless of which temporal Sunday
+governs the day) — a date can match both keys at once (e.g. a Sunday after Epiphany landing
+inside Jan 1-13), and both are pooled rather than one overriding the other. No calendar-date
+rows are authored yet (mechanism only); see memory `vu-matins-design` for the full design
+writeup. `npm test` (359 tests, unchanged — the two proof dates still resolve the same
+content, just via the new pool/distribute path) and `npm run build` both pass.
+
 **Not done in this pass — explicitly deferred, not silently dropped:**
 - All ~390 rows of the user's own bible-plan TSV — only the two proof
-  dates' rows are converted so far.
-- Full Sunday/feast-calendar patristic-reading authoring (the ~75 Duplex+
-  saints eligible for Nocturn 3, per the user's own threshold).
+  dates' rows are converted so far (both temporal-id-keyed; no
+  calendar-date-keyed rows for the Dec 25 - Jan 13 stretch yet).
+- Full Sunday/feast-calendar patristic-reading authoring — now framed as
+  "every saint where a reading can be sourced," not just the ~75 Duplex+
+  saints that get their own Nocturn 3 slot (see the reading-pool redesign
+  above: content is no longer rank-gated, only nocturn *count* is).
 - Pre-1955-but-post-1617 saints' differently-structured readings (source
   confirmed as Tridentine/Divino Afflatu rather than Monastic 1617,
   combine-where-sensible rule confirmed to apply the same way — the actual
