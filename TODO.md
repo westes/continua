@@ -35,8 +35,9 @@ across every hour and content type in this app.
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
    - Matins: bible-plan TSV bulk conversion is done (see "Bible-plan TSV — bulk conversion
-     done" below) — not yet spot-verified against a live reference breviary or added to a test
-     table, unlike other content in this project. Still open: author patristic/hagiographic
+     done" below) — not yet added to a test table, though (unlike sanctoral/temporal content)
+     there's no reference breviary to spot-check this plan against by design. Still open:
+     author patristic/hagiographic
      readings for every saint where one can be sourced — no longer Duplex+-gated, content is
      pooled and shown regardless of rank (see "Reading-pool redesign"); expand the per-book
      Matins responsory pool beyond its one seeded book (`isa`); once the pre-1955 mechanism gap
@@ -1359,18 +1360,22 @@ trailing garbage; not fixed in the source file itself since it wasn't touched.
 One real content question, not a bug: "Sunday after Ascension" 's row has a Gospel reading
 (Jn 17) as its third column — the only Sunday row in the whole TSV with one, seemingly
 contradicting the design note that the user's plan "never assigns a Gospel on a Sunday" (see
-memory `vu-matins-design`). Confirmed with the user (2026-08) to keep it as authored rather
-than drop it — read as a deliberate exception for this specific Sunday, not an authoring slip.
+memory `vu-matins-design`). Confirmed with the user (2026-08) as an intended, remembered
+exception, not an authoring slip — keep it as authored.
 `npm test` (359 tests, unchanged — these are new content files, not yet covered by any test
 table) and `npm run build` both pass.
+
+Unlike sanctoral/temporal content elsewhere in this project, this plan is the user's own
+reading design (see "Not a reconstruction" in CLAUDE.md), not sourced from a historical
+breviary — there is no reference engine to spot-check these rows against, by design; that's
+not a verification gap to close later.
 
 **Not done in this pass:**
 - No verse text was imported — every row still resolves its scripture citation against
   whatever's authored in `src/data/scripture/` (a handful of chapters) and otherwise renders
   `missing`, per the deferred bulk Vulgate/Douay-Rheims import above.
 - Not yet added to any test table (`tests/hours/matins.test.ts` still only covers the two
-  original proof dates) — bulk content isn't spot-verified against a live reference breviary
-  the way individual saints/feasts are elsewhere in this project.
+  original proof dates).
 
 - Seasonal variants of the invitatory antiphon, the ferial hymn, and
   Sunday's own psalmody antiphons — all currently one fixed year-round
