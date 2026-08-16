@@ -1,0 +1,10 @@
+# Generic production compose file — builds the static bundle and serves it
+# with Caddy on port 8080. Not tied to any particular host's network/proxy
+# setup; put a reverse proxy or TLS terminator in front of it as needed.
+services:
+  vu:
+    build: .
+    container_name: vu
+    restart: unless-stopped
+    ports:
+      - "8080:80"
