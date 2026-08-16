@@ -1,0 +1,12 @@
+# Bulk-imported from the user's bible-plan TSV, row "Friday of V Epiphany".
+temporalId: post-epiphany-5
+weekday: friday
+readings:
+  - passages:
+      - { book: titus, chapter: 1 }
+      - { book: titus, chapter: 2 }
+      - { book: titus, chapter: 3 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: mark, chapter: 15, verses: "26-47" }
+    status: { la: missing, en: missing }

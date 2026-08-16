@@ -1,0 +1,11 @@
+# Bulk-imported from the user's bible-plan TSV, row "Friday of IV Epiphany".
+temporalId: post-epiphany-4
+weekday: friday
+readings:
+  - passages:
+      - { book: 1thess, chapter: 4 }
+      - { book: 1thess, chapter: 5 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: mark, chapter: 13, verses: "1-20" }
+    status: { la: missing, en: missing }

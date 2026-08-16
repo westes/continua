@@ -1,0 +1,16 @@
+# Bulk-imported from the user's bible-plan TSV, row "Monday of Week after Ascension".
+temporalId: sunday-after-ascension
+weekday: monday
+readings:
+  - passages:
+      - { book: judg, chapter: 15 }
+      - { book: judg, chapter: 16 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: 1pet, chapter: 3 }
+      - { book: 1pet, chapter: 4 }
+      - { book: 1pet, chapter: 5 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: john, chapter: 18, verses: "1-18" }
+    status: { la: missing, en: missing }

@@ -1,0 +1,11 @@
+# Bulk-imported from the user's bible-plan TSV, row "Easter Tuesday".
+temporalId: easter-sunday
+weekday: tuesday
+readings:
+  - passages:
+      - { book: ezra, chapter: 5 }
+      - { book: ezra, chapter: 6 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: hag, chapter: 2, verses: "1-9" }
+    status: { la: missing, en: missing }

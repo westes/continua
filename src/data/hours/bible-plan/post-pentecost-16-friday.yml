@@ -1,0 +1,16 @@
+# Bulk-imported from the user's bible-plan TSV, row "Friday after 15th Sunday after Trinity".
+temporalId: post-pentecost-16
+weekday: friday
+readings:
+  - passages:
+      - { book: jdt, chapter: 11 }
+      - { book: jdt, chapter: 12 }
+      - { book: jdt, chapter: 13 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: ezek, chapter: 11 }
+      - { book: ezek, chapter: 12 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: luke, chapter: 24, verses: "1-35" }
+    status: { la: missing, en: missing }

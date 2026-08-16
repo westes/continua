@@ -1,0 +1,11 @@
+# Bulk-imported from the user's bible-plan TSV, row "Monday of II Epiphany".
+temporalId: post-epiphany-2
+weekday: monday
+readings:
+  - passages:
+      - { book: 2cor, chapter: 2 }
+      - { book: 2cor, chapter: 3 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: mark, chapter: 4, verses: "21-41" }
+    status: { la: missing, en: missing }

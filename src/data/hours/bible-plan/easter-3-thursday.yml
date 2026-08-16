@@ -1,0 +1,15 @@
+# Bulk-imported from the user's bible-plan TSV, row "Thursday of 2nd Week after Easter".
+temporalId: easter-3
+weekday: thursday
+readings:
+  - passages:
+      - { book: deut, chapter: 27 }
+      - { book: deut, chapter: 28 }
+      - { book: deut, chapter: 29 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: act, chapter: 12 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: john, chapter: 6, verses: "1-21" }
+    status: { la: missing, en: missing }

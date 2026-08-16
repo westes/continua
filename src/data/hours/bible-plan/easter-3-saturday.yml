@@ -1,0 +1,14 @@
+# Bulk-imported from the user's bible-plan TSV, row "Saturday of 2nd Week after Easter".
+temporalId: easter-3
+weekday: saturday
+readings:
+  - passages:
+      - { book: deut, chapter: 33 }
+      - { book: deut, chapter: 34 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: act, chapter: 14 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: john, chapter: 6, verses: "45-71" }
+    status: { la: missing, en: missing }

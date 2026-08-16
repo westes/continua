@@ -1,0 +1,14 @@
+# Bulk-imported from the user's bible-plan TSV, row "Tuesday of 3rd Week after Easter".
+temporalId: easter-4
+weekday: tuesday
+readings:
+  - passages:
+      - { book: josh, chapter: 3 }
+      - { book: josh, chapter: 4 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: act, chapter: 17 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: john, chapter: 7, verses: "28-53" }
+    status: { la: missing, en: missing }

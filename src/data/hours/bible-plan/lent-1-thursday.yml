@@ -1,0 +1,13 @@
+# Bulk-imported from the user's bible-plan TSV, row "Thursday of I Lent".
+temporalId: lent-1
+weekday: thursday
+readings:
+  - passages:
+      - { book: exod, chapter: 12 }
+      - { book: exod, chapter: 13 }
+      - { book: exod, chapter: 14 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: jer, chapter: 9 }
+      - { book: jer, chapter: 10 }
+    status: { la: missing, en: missing }

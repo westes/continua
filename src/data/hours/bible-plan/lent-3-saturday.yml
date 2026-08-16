@@ -1,0 +1,11 @@
+# Bulk-imported from the user's bible-plan TSV, row "Saturday of III Lent".
+temporalId: lent-3
+weekday: saturday
+readings:
+  - passages:
+      - { book: lev, chapter: 12 }
+      - { book: lev, chapter: 13 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: jer, chapter: 34 }
+    status: { la: missing, en: missing }

@@ -1,0 +1,12 @@
+# Bulk-imported from the user's bible-plan TSV, row "Wednesday after Pentecost".
+temporalId: pentecost-sunday
+weekday: wednesday
+readings:
+  - passages:
+      - { book: neh, chapter: 6 }
+      - { book: neh, chapter: 7 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: zech, chapter: 7 }
+      - { book: zech, chapter: 8 }
+    status: { la: missing, en: missing }

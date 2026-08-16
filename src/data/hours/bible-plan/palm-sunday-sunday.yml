@@ -1,0 +1,12 @@
+# Bulk-imported from the user's bible-plan TSV, row "Palm Sunday".
+temporalId: palm-sunday
+weekday: sunday
+readings:
+  - passages:
+      - { book: num, chapter: 25 }
+      - { book: num, chapter: 26 }
+      - { book: num, chapter: 27 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: jer, chapter: 49 }
+    status: { la: missing, en: missing }

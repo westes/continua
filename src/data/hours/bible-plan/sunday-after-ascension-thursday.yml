@@ -1,0 +1,14 @@
+# Bulk-imported from the user's bible-plan TSV, row "Thursday of Week after Ascension".
+temporalId: sunday-after-ascension
+weekday: thursday
+readings:
+  - passages:
+      - { book: judg, chapter: 20 }
+      - { book: judg, chapter: 21 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: 2john, chapter: 1 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: john, chapter: 19, verses: "23-42" }
+    status: { la: missing, en: missing }

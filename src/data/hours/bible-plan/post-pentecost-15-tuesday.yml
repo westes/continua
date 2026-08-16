@@ -1,0 +1,14 @@
+# Bulk-imported from the user's bible-plan TSV, row "Tuesday after 14th Sunday after Trinity".
+temporalId: post-pentecost-15
+weekday: tuesday
+readings:
+  - passages:
+      - { book: tob, chapter: 5 }
+      - { book: tob, chapter: 6 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: sir, chapter: 47 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: luke, chapter: 20, verses: "1-26" }
+    status: { la: missing, en: missing }

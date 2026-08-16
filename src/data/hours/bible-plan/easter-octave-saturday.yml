@@ -1,0 +1,14 @@
+# Bulk-imported from the user's bible-plan TSV, row "Saturday of Low Sunday Week".
+temporalId: easter-octave
+weekday: saturday
+readings:
+  - passages:
+      - { book: deut, chapter: 16 }
+      - { book: deut, chapter: 17 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: act, chapter: 7 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: john, chapter: 4, verses: "1-30" }
+    status: { la: missing, en: missing }

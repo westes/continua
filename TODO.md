@@ -34,12 +34,13 @@ across every hour and content type in this app.
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
-   - Matins: convert the rest of the user's ~390-row bible-plan TSV (2 proof dates converted
-     so far); author patristic/hagiographic readings for every saint where one can be
-     sourced — no longer Duplex+-gated, content is pooled and shown regardless of rank (see
-     "Reading-pool redesign"); expand the per-book Matins responsory pool beyond its one
-     seeded book (`isa`); once the pre-1955 mechanism gap above is resolved, source those
-     saints' readings too.
+   - Matins: bible-plan TSV bulk conversion is done (see "Bible-plan TSV — bulk conversion
+     done" below) — not yet spot-verified against a live reference breviary or added to a test
+     table, unlike other content in this project. Still open: author patristic/hagiographic
+     readings for every saint where one can be sourced — no longer Duplex+-gated, content is
+     pooled and shown regardless of rank (see "Reading-pool redesign"); expand the per-book
+     Matins responsory pool beyond its one seeded book (`isa`); once the pre-1955 mechanism gap
+     above is resolved, source those saints' readings too.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1315,9 +1316,6 @@ writeup. `npm test` (359 tests, unchanged — the two proof dates still resolve 
 content, just via the new pool/distribute path) and `npm run build` both pass.
 
 **Not done in this pass — explicitly deferred, not silently dropped:**
-- All ~390 rows of the user's own bible-plan TSV — only the two proof
-  dates' rows are converted so far (both temporal-id-keyed; no
-  calendar-date-keyed rows for the Dec 25 - Jan 13 stretch yet).
 - Full Sunday/feast-calendar patristic-reading authoring — now framed as
   "every saint where a reading can be sourced," not just the ~75 Duplex+
   saints that get their own Nocturn 3 slot (see the reading-pool redesign
@@ -1330,6 +1328,50 @@ content, just via the new pool/distribute path) and `npm run build` both pass.
 - The bulk Vulgate (Latin) + Douay-Rheims (English) import into
   `src/data/scripture/` — in scope for the project long-term, explicitly
   deferred past this pass per direct instruction.
+### Bible-plan TSV — bulk conversion done (2026-08)
+
+All ~369 non-blank rows of the user's own bible-plan TSV (`~/Downloads/bible-plan.tsv`, 390
+lines including section headers/blanks) are now converted into `data/hours/bible-plan/*.yml`
+— 366 newly generated this pass, plus the 2 proof-date files already authored (`advent-3-tuesday`,
+`post-pentecost-15-sunday`). One row (Ascension Thursday) has no readings in the source and
+was correctly skipped — an honest gap in the user's own plan, not a conversion miss.
+
+Conversion was mechanical (script, not hand-authored per file): each TSV "Day" label maps to
+this app's `(temporalId, weekday)` scheme via the same rules `calendar/temporal-id.ts` uses
+(ferias inherit their governing Sunday's id — e.g. "Ash Wednesday" → `quinquagesima`/`wednesday`,
+"Nth Sunday after Trinity" → `post-pentecost-(N+1)` per the existing display-label convention),
+or to a fixed `calendarDate` for the Dec 25 - Jan 13 stretch per the reading-pool redesign
+above. Each `Reading N` column becomes its own `passages` entry; a chapter range like "Isa 36-37"
+expands to one passage per chapter, matching the two proof files' own convention. Every
+generated file sets `status: { la: missing, en: missing }` explicitly (not inferred), same as
+the proof files — correct even where a handful of citations happen to land on already-authored
+`src/data/scripture/*.yml` chapters (e.g. `cant-1`, `cant-8`, `sap-4`), since "verified" should
+mean a human confirmed the reading, not that text merely happened to resolve.
+
+A handful of book-abbreviation typos in the source TSV were fixed during conversion (not
+preserved as authored): "Dt 19-2020" → Dt 19-20, "1 Mach 9-10-11" → 1 Mach 9-11, two
+trailing-colon citations ("Mt 7:", "lk 17:") → whole-chapter references. Two day labels were
+garbled by an apparent TSV row-merge artifact ("4th Sunday after Easter of 4th Week after
+Easter", "Sunday after Ascension of Week after Ascension") — both parsed correctly by matching
+just the leading "Nth Sunday after Easter"/"Sunday after Ascension" phrase and ignoring the
+trailing garbage; not fixed in the source file itself since it wasn't touched.
+
+One real content question, not a bug: "Sunday after Ascension" 's row has a Gospel reading
+(Jn 17) as its third column — the only Sunday row in the whole TSV with one, seemingly
+contradicting the design note that the user's plan "never assigns a Gospel on a Sunday" (see
+memory `vu-matins-design`). Confirmed with the user (2026-08) to keep it as authored rather
+than drop it — read as a deliberate exception for this specific Sunday, not an authoring slip.
+`npm test` (359 tests, unchanged — these are new content files, not yet covered by any test
+table) and `npm run build` both pass.
+
+**Not done in this pass:**
+- No verse text was imported — every row still resolves its scripture citation against
+  whatever's authored in `src/data/scripture/` (a handful of chapters) and otherwise renders
+  `missing`, per the deferred bulk Vulgate/Douay-Rheims import above.
+- Not yet added to any test table (`tests/hours/matins.test.ts` still only covers the two
+  original proof dates) — bulk content isn't spot-verified against a live reference breviary
+  the way individual saints/feasts are elsewhere in this project.
+
 - Seasonal variants of the invitatory antiphon, the ferial hymn, and
   Sunday's own psalmody antiphons — all currently one fixed year-round
   text each, even though the source confirms at least the invitatory

@@ -1,0 +1,15 @@
+# Bulk-imported from the user's bible-plan TSV, row "Thursday after 12th Sunday after Trinity".
+temporalId: post-pentecost-13
+weekday: thursday
+readings:
+  - passages:
+      - { book: job, chapter: 12 }
+      - { book: job, chapter: 13 }
+      - { book: job, chapter: 14 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: sir, chapter: 35 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: luke, chapter: 13, verses: "23-35" }
+    status: { la: missing, en: missing }

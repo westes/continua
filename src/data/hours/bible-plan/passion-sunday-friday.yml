@@ -1,0 +1,13 @@
+# Bulk-imported from the user's bible-plan TSV, row "Friday of Passion Week".
+temporalId: passion-sunday
+weekday: friday
+readings:
+  - passages:
+      - { book: num, chapter: 17 }
+      - { book: num, chapter: 18 }
+      - { book: num, chapter: 19 }
+      - { book: num, chapter: 20 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: jer, chapter: 47 }
+    status: { la: missing, en: missing }

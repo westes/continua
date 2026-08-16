@@ -1,0 +1,11 @@
+# Bulk-imported from the user's bible-plan TSV, row "Saturday of I Advent".
+temporalId: advent-1
+weekday: saturday
+readings:
+  - passages:
+      - { book: isa, chapter: 14 }
+      - { book: isa, chapter: 15 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: sap, chapter: 6 }
+    status: { la: missing, en: missing }

@@ -1,0 +1,14 @@
+# Bulk-imported from the user's bible-plan TSV, row "Saturday after 2nd Sunday after Trinity".
+temporalId: post-pentecost-03
+weekday: saturday
+readings:
+  - passages:
+      - { book: 2sam, chapter: 13 }
+      - { book: 2sam, chapter: 14 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: prov, chapter: 18 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: matt, chapter: 12, verses: "1-21" }
+    status: { la: missing, en: missing }

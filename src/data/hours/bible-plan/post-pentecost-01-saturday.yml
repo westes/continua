@@ -1,0 +1,14 @@
+# Bulk-imported from the user's bible-plan TSV, row "Saturday after Trinity Sunday".
+temporalId: post-pentecost-01
+weekday: saturday
+readings:
+  - passages:
+      - { book: 1sam, chapter: 13 }
+      - { book: 1sam, chapter: 14 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: prov, chapter: 6 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: matt, chapter: 5, verses: "26-48" }
+    status: { la: missing, en: missing }

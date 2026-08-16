@@ -1,0 +1,14 @@
+# Bulk-imported from the user's bible-plan TSV, row "Friday after 14th Sunday after Trinity".
+temporalId: post-pentecost-15
+weekday: friday
+readings:
+  - passages:
+      - { book: tob, chapter: 11 }
+      - { book: tob, chapter: 12 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: sir, chapter: 50 }
+    status: { la: missing, en: missing }
+  - passages:
+      - { book: luke, chapter: 21, verses: "20-38" }
+    status: { la: missing, en: missing }
