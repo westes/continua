@@ -1,0 +1,14 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/03-08.txt` -- "vide C5;;Duplex;;3;;".
+# Own proper [Oratio]; no [Ant 1] of its own, so the Benedictus antiphon
+# falls back to Common of a Confessor (C5), matching st-alexius.yml/
+# st-john-bosco.yml/st-gabriel-of-our-lady-of-sorrows.yml. Nocturn 3
+# (Lectio7-9) is his own proper text (Matt 22:34-46 + Chrysostom), not a
+# Common cross-reference.
+id: st-john-of-god
+name: "St. John of God, Confessor"
+rank: duplex
+common: common-of-a-confessor
+propers: "st-john-of-god"
+minorHoursCommon: common-of-a-confessor
+benedictusCommon: common-of-a-confessor

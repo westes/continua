@@ -1,0 +1,15 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/03-06.txt` -- "vide C7b;;Duplex;;3;;".
+# No [Oratio]/[Ant 1] of her own -- both fall back to Common of several
+# women Martyrs (C7b), newly authored here (collect-c7b.yml,
+# benedictus-antiphon-common-of-several-women-martyrs.yml).
+id: ss-perpetua-and-felicity
+name: "Ss. Perpetua and Felicity, Martyrs"
+rank: duplex
+common: common-of-several-women-martyrs
+propers: null
+collectCommon: collect-c7b
+collectName:
+  la: ["Perpétuæ", "Felicitátis"]
+  en: ["Perpetua", "Felicitas"]
+benedictusCommon: common-of-several-women-martyrs

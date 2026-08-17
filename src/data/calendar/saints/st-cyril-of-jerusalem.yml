@@ -1,0 +1,15 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/03-18.txt` -- "vide C4a;;Duplex;;3;;".
+# Own proper [Oratio]; no [Ant 1] of its own, so the Benedictus antiphon
+# falls back to Common of a Confessor Bishop who is a Doctor (C4a),
+# matching st-ambrose.yml. Nocturn 3's Lectio8-9 cross-reference
+# `@Sancti/05-02` (St. Athanasius's own feast) for the homily's
+# continuation, not fetched here -- only Lectio7's own homily portion
+# (a complete paragraph, not a fragment) is authored.
+id: st-cyril-of-jerusalem
+name: "St. Cyril of Jerusalem, Confessor and Doctor of the Church"
+rank: duplex
+common: common-of-a-confessor-bishop
+propers: "st-cyril-of-jerusalem"
+minorHoursCommon: common-of-a-confessor-bishop
+benedictusCommon: common-of-a-confessor-bishop
