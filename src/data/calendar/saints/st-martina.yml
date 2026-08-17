@@ -1,0 +1,17 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/01-30.txt` --
+# "vide C6;;Semiduplex;;2.2;;". No [Oratio]/[Ant 1] of her own in the
+# source -- both fall back to Common of a Virgin Martyr (C6), the same
+# family already live-query-verified for st-barbara.yml.
+id: st-martina
+name: "St. Martina, Virgin and Martyr"
+rank: semiduplex
+common: common-of-a-virgin-martyr
+propers: null
+collectCommon: collect-c6
+collectName:
+  la: ["Martínæ"]
+  en: ["Martina"]
+minorHoursCommon: common-of-a-virgin
+benedictusCommon: common-of-a-virgin

@@ -1,0 +1,15 @@
+# Read directly from the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C5.txt ("Commune Confessoris non
+# pontificis") and its English counterpart — matches this project's own
+# `common-of-a-confessor` category label (see collect-c5.yml's own
+# header). First saint to need this Common's own Benedictus antiphon
+# (st-alexius.yml, the only prior `common-of-a-confessor` saint, used a
+# Cistercian-specific alternate for his minor hours instead and had no
+# Benedictus antiphon recorded at all).
+id: benedictus-antiphon-common-of-a-confessor
+text:
+  la: "Similábo eum * viro sapiénti, qui ædificávit domum suam supra petram."
+  en: "I will liken him unto a wise man, * which built his house upon a rock."
+status:
+  la: verified
+  en: verified

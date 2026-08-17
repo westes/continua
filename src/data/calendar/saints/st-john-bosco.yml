@@ -1,0 +1,13 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/01-31.txt` --
+# "vide C5;;Duplex;;3;;". Own proper [Oratio]; no [Ant 1] of its own, so
+# the Benedictus antiphon falls back to Common of a Confessor (C5), the
+# same family already live-query-verified for st-alexius.yml.
+id: st-john-bosco
+name: "St. John Bosco, Confessor"
+rank: duplex
+common: common-of-a-confessor
+propers: "st-john-bosco"
+minorHoursCommon: common-of-a-confessor
+benedictusCommon: common-of-a-confessor
