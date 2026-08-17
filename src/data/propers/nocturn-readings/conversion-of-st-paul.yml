@@ -1,0 +1,80 @@
+# Matins Nocturn 2 reading for the Conversion of St. Paul (Jan 25) —
+# SanctiM/01-25.txt inherits the whole day (`@Sancti/01-25`) with no
+# Nocturn 2/3 override, so this feast's own proper content is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints). A second Tridentine suffix variant
+# (`Sancti/01-25r.txt`) also exists for this same feast, but is a later
+# rubric variant with less of its own text (its Lectio4 is itself
+# `@Sancti/01-25:Lectio3`) — the plain `01-25.txt` has the fuller,
+# earlier proper text and is used here.
+# web/www/horas/Latin/Sancti/01-25.txt, English/Sancti/01-25.txt.
+# Lectio4-6 (St. Augustine's sermon on Paul's conversion) combined into
+# one reading, one continuous excerpt — Lectio7-9 fall back to Common
+# of an Apostle (`Commune/C1`), not proper text, so not authored here.
+# No responsory given in the source for these lessons.
+id: conversion-of-st-paul
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Augustine, Bishop of Hippo, Sermon 14 on the Saints"
+    text:
+      la: >-
+        Hódie de Actibus Apostolórum léctio hæc pronuntiáta est, ubi Paulus Apóstolus, ex
+        persecutóre Christianórum, annuntiátor factus est Christi. Prostrávit enim Christus
+        persecutórem, ut fáceret Ecclésiæ doctórem: percútiens eum, et sanans; occídens, et
+        vivíficans: occísus agnus a lupis, et fáciens agnos de lupis. Ita enim in præclára
+        prophetía cum Jacob Patriárcha benedíceret fíliis suis (præséntes tangens, futúra
+        prospíciens) prædíctum erat quod in Paulo cóntigit. Erat autem Paulus, sicut ipse testátur,
+        de tribu Bénjamin. Cum autem Jacob, benedícens fílios suos, venísset ad benedicéndum
+        Bénjamin, ait de illo: Bénjamin lupus rapax.
+
+
+        Quid ergo? lupus rapax semper? Absit; sed qui mane rapit prædam, ad vésperam dívidit
+        escas. Hoc in Apóstolo Paulo implétum est, quia et de illo dictum erat. Jam, si placet,
+        audiámus illum mane rapiéntem, ad vésperam escas dividéntem. Mane et véspere pósita sunt
+        pro eo, ac si dicerétur, prius et póstea. Sic ergo accipiámus: Prius rápiet, póstea
+        dívidet escas. Atténdite raptórem: Saulus, inquit, accéptis epístolis a princípibus
+        sacerdótum, ibat, ut ubicúmque inveníret Christiános, ad sacerdótes attráheret et
+        addúceret, útique puniéndos.
+
+
+        Ibat spirans et anhélans cædes: hoc est, mane rápiens. Nam et quando lapidátus est
+        Stéphanus primus Martyr pro nómine Christi, evidéntius áderat et Saulus; et sic áderat
+        lapidántibus, ut non ei suffíceret, si tantum suis mánibus lapidáret. Ut enim esset in
+        ómnium lapidántium mánibus, ipse ómnium vestiménta servábat; magis sǽviens omnes
+        adjuvándo, quam suis mánibus lapidándo. Audívimus, mane rápiet: videámus ad vésperam
+        quáliter dívidat escas. Voce Christi prostrátus de cælo, et accípiens désuper interdíctum
+        jam sæviéndi, cécidit in fáciem suam, prius prosternéndus, póstea erigéndus; prius
+        percutiéndus, póstea sanándus.
+      en: >-
+        We have this day heard read out of the Acts of the Apostles how that the Apostle Paul, from
+        being a persecutor of the Christians, was changed into a preacher of Christ. Christ laid
+        low the persecutor, that He might raise him up a teacher of His Church. He smote and healed
+        him, slew him and made him alive again. For the Lord Christ is that Lamb That was Himself
+        slain by the wolves, and That now turneth the wolves into lambs. Now was fulfilled in Paul
+        that which was clearly spoken in prophecy by the Patriarch Jacob, when he blessed his
+        children, laying hands indeed on them which then were, but looking forward to the things
+        which were yet for to come. Paul beareth witness of himself that he was of the tribe of
+        Benjamin, and when Jacob blessed his sons, and came to bless Benjamin, he said: Benjamin
+        shall ravin as a wolf.
+
+
+        What then? Is Benjamin a wolf that shall ravin for ever? God forbid. In the morning he
+        shall devour the prey, and at night he shall divide the spoil. This is exactly what was
+        fulfilled in the Apostle Paul. If it please you, we will now consider how in the morning he
+        devoured the prey, and at night divided the spoil. Here morning and evening are put for the
+        beginning and the end. So we may read, In the beginning he shall devour the prey, and at
+        the end he shall divide the spoil. First, then, in the beginning, he devoured the prey. So
+        it is written that he received letters from the chief priests and went forth, that
+        wheresoever he should find any Christians, he might bring them bound unto the priests, that
+        they might be punished.
+
+
+        He went breathing out threatenings and slaughter, yea, truly, devouring the prey. When also
+        they stoned Stephen, the first Martyr that laid down his life for Christ's name's sake,
+        Saul was consenting unto his death, and, as though it contented him not to stone him, he
+        kept the clothes of all them that did it, urging them on more than if he had joined them.
+        So in the morning he devoured the prey. How in the evening did he divide the spoil? Struck
+        down by the voice of Christ from heaven, ravining no more, he falleth upon his face, cast
+        down to be raised up, smitten to be healed.
+    status: { la: verified, en: verified }

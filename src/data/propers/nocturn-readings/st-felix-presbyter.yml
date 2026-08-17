@@ -1,0 +1,46 @@
+# Matins Nocturn 2 reading for St. Felix of Nola, Priest and Confessor
+# (Jan 14, sharing the date with St. Hilary — see st-hilary-of-poitiers.yml).
+# No SanctiM/01-14cc*.txt (only the plain SanctiM/01-14.txt exists, and
+# that one bases on Sancti/01-14 i.e. Hilary, not Felix) — same
+# "check every suffix variant, the shared plain file isn't necessarily
+# yours" wrinkle as the pre-1955 pass (memory vu-matins-pre1955-saints).
+# Felix's own content survives only at the suffixed Tridentine file:
+# web/www/horas/Latin/Sancti/01-14cc.txt, English/Sancti/01-14cc.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+id: st-felix-presbyter
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Felix Nolanus presbyter, cum in idola vehementius inveherétur, ab infidelibus varie
+        vexatus, in carcerem conjícitur. Unde ab Angelo nocte edúctus, quærere jussus est
+        Maximianum Nolæ episcopum: qui cum senio confectus desperáret se ferre posse supplícia
+        persequéntium, se abdíderat in silvam. Quo cum Felix Deo duce pervenísset, sanctum
+        episcopum humi jacéntem pene mortuum videt; quem recreátum ac sublátum in humeros, apud
+        fidélem víduam reficiéndum curávit. Sed cum is íterum idolórum cultores impietátis
+        argúeret, facto in ipsum ímpetu, fúgiens in angusto duórum paríetum intervállo se
+        occultávit; qui áditus cum repénte araneárum telis pertextus visus esset, némini recentis
+        látebræ suspiciónem relíquit. Inde ígitur evádens Felix in ædibus piæ mulíeris tres menses
+        látuit. Cum vero Dei Ecclésia requiéscere cœpísset, Nolam rédiens, multisque ibi vitæ
+        exemplis, et doctrinæ præceptis, miraculisque ad Christi fidem conversis, constanter étiam
+        recusato ejus urbis episcopatu, obdormívit in Dómino, sepultúsque est prope Nolam in loco,
+        quem in Pincis appellábant.
+      en: >-
+        Felix was a Priest of Nola, who on account of his fiery zeal against idolatry, suffered
+        much persecution from the heathens, and was cast into prison. From thence an angel
+        delivered him by night, and bade him go to Maximian, Bishop of Nola. This Bishop, enfeebled
+        by old age, had at length despaired of power to withstand the torments of the persecutors,
+        and had hidden himself in a wood. Thither came Felix, by the will of God, and found the
+        holy bishop lying half-dead upon the ground. He succoured him, and carried him upon his
+        shoulders to the house of an holy widow. On another occasion, Felix, having again provoked
+        the anger of the devil-worshippers, became an object of their pursuit, from which he hid
+        himself in a narrow place between two walls. Hardly had he entered, when some spiders wove
+        their webs across the entrance, which the enemy perceiving, concluded that no man had
+        entered, and passed by. After leaving this hiding-place, Felix lay for three months in the
+        house of an holy woman. After the Lord gave peace to His Church, the Saint returned to
+        Nola, where he turned many to Christ by his life, his preaching, and his miracles. He
+        steadily refused to accept the Bishopric, fell asleep in the Lord, and was buried at Nola
+        in the place called The Pines.
+    status: { la: verified, en: verified }

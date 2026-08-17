@@ -1,0 +1,64 @@
+# Matins Nocturn reading for St. Maurus, Abbot (Jan 15) — a genuine
+# Monastic-only saint: no Sancti/01-15*.txt names him at all (that slot
+# belongs to Ss. Marius/Martha/Audifax/Abachum and, off-date, St. Paul
+# the Hermit — see memory vu-matins-pre1955-saints); his own proper
+# vita exists only at web/www/horas/Latin/SanctiM/01-15t.txt. Lectio1-4
+# of that file fall back to Common of a Confessor (`CommuneM/C5`), not
+# proper text; Lectio5-8 are St. Maurus's own vita, one continuous
+# account (a disciple-of-Benedict biography), combined into a single
+# reading, no genuine source break.
+# No English/SanctiM/01-15t.txt exists in the reference engine at all
+# (the English SanctiM tree only covers a subset of dates) — English
+# text below is this project's own translation of the Latin, not a
+# reference-engine translation, so marked draft rather than verified
+# per vu-prefer-text-over-missing. No responsory given in the source.
+id: st-maurus-abbot
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Maurus nobilis Romanus, puer a patre Eutychio Deo sub sancti Benedicti disciplína oblatus,
+        brevi tantum divina grátia profecit, ut ipsi magistro admiratióni esset; qui illum sæpe,
+        véluti regularis observantiæ et virtútum ómnium specimen, ceteris discípulis ad imitándum
+        proponebat.
+
+
+        Cujus adhuc adolescentis illud admirábilis obediéntiæ exemplum a sancto Gregório Papa
+        commemorátur. Nam, cum Placidus mónachus in lacum prolapsus, aquárum ímpetu raperétur,
+        sancti Patris jussu accurrens Maurus, et super aquas incédens, socium capíllis apprehénsum,
+        ad terram attraxit.
+
+
+        Continentiæ tantá fuit, ut per Quadragesimam bis tantum in hebdomada, et quidem
+        parcissime cibum sumeret. Somnum stando, vel cum nimia eum lassitudo compulísset, sedendo,
+        super aggéstum calcis et fabuli strato cilício capiébat.
+
+
+        Missus in Gálliam ab eodem sancto Benedicto, célebri monasterio exstructo, cui annos
+        quadragínta præfuit, monasticam disciplínam mirifice propagávit. Denique sanctitáte et
+        miraculis clarus, septuagenario major migrávit in cælum, anno salútis quingentésimo
+        sexagésimo quinto.
+      en: >-
+        Maurus, a Roman of noble birth, was offered to God as a boy by his father Eutychius, to be
+        formed under the discipline of St. Benedict. So swiftly did he advance by divine grace that
+        he became a wonder to his own master, who often held him up to the other disciples as a
+        model of regular observance and of every virtue, for them to imitate.
+
+
+        While Maurus was yet a youth, Pope St. Gregory records this instance of his admirable
+        obedience: when the monk Placid fell into a lake and was being swept away by the force of
+        the waters, Maurus, running at the command of the holy Father and walking upon the water,
+        caught his companion by the hair and drew him safe to land.
+
+
+        So great was his self-restraint that during Lent he took food only twice in the week, and
+        that most sparingly. For sleep, he either stood, or, when overcome by excessive weariness,
+        sat upon a heap of lime and rubble spread with a hair shirt.
+
+
+        Sent into Gaul by the same St. Benedict, he built a renowned monastery, over which he
+        presided for forty years, wonderfully spreading monastic discipline. At length, renowned
+        for holiness and miracles, he passed to heaven past the age of seventy, in the five hundred
+        and sixty-fifth year of salvation.
+    status: { la: verified, en: draft }

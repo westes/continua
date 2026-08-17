@@ -1,0 +1,40 @@
+# Matins Nocturn 2 reading for St. Prisca, Virgin and Martyr (Jan 18,
+# sharing the date with the Chair of St. Peter at Rome — see
+# chair-of-st-peter-at-rome.yml). No SanctiM/01-18r*.txt at all (only
+# the plain SanctiM/01-18.txt exists, and that one bases on Sancti/01-18,
+# i.e. the Chair of St. Peter, not Prisca) — same "the shared plain
+# file isn't necessarily yours" wrinkle as the pre-1955 pass (memory
+# vu-matins-pre1955-saints); Prisca is in fact pre-1955-but-post-1617
+# too, just missed in that earlier pass's date-collision handling.
+# web/www/horas/Latin/Sancti/01-18r.txt, English/Sancti/01-18r.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+id: st-prisca
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Prisca, nobilis virgo Romana, trédecim annos nata, Cláudio imperatóre, christianæ fidei
+        accusata, ejusdem jussu ducta ad Apóllinis templum, ut idolis immolaret, cum rem
+        detestarétur, cólaphis cæsa, in carcerem traditur: atque inde emissa, cum in fidei
+        constántia perseveraret, affecta verbéribus, ferventíque ádipe delibuta, rursus in
+        carcerem includitur. Post triduum in amphitheatrum producta, leoni objícitur; qui suæ
+        feritátis oblítus, humíliter se ad ejus pedes abjecit. Quæ póstea in ergastulo triduum
+        inedia afflicta, in equuleo suspénditur, et ungulis férreis excarnificáta in rogum
+        injícitur, unde étiam mirabíliter evasit incólumis. Dénique extra Urbem cápite abscisso,
+        virginitátis palmam martyrii coróna cumulávit. Cujus corpus via Ostiénsi, décimo ab Urbe
+        milliário, a Christiánis décimo quinto Kalendas Februarii sepelítur.
+      en: >-
+        Prisca was a noble Roman maiden, who at thirteen years of age was accused of Christianity
+        before the Emperor Claudius. By his command she was taken to the temple of Apollo to
+        sacrifice there, and when she refused, was buffeted and sent to prison. She was taken out
+        from thence again, but as she still held steadfastly to the faith, they flogged her, poured
+        boiling tallow upon her, and sent her back a second time. She was at last thrown to a lion
+        in the amphitheatre, but it quietly lay down at her feet. She was starved for three days in
+        a slaves' prison house, and then tortured upon the rack. Pieces of flesh were next torn
+        from her body with iron hooks, and she was thrown on a burning pile. She marvellously still
+        remained alive, and was accordingly beheaded outside the city. Thus she added the crown of
+        martyrdom to the palm of virginity. The Christians buried her body at the tenth milestone
+        on the road from Rome to Ostia on the eighteenth of January.
+    status: { la: verified, en: verified }

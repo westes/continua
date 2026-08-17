@@ -1,0 +1,89 @@
+# Matins Nocturn 2 reading for St. Hilary of Poitiers, Bishop, Confessor,
+# Doctor (Jan 14) — SanctiM/01-14.txt inherits the whole day (`@Sancti/01-14`)
+# with no Nocturn 2/3 override, so this saint's own vita is sourced from
+# the Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints/vu-reference-engine-file-layout).
+# web/www/horas/Latin/Sancti/01-14.txt, English/Sancti/01-14.txt.
+# Lectio4-5 combined with Lectio6 (itself internally split into
+# `Lectio6beginning`/`Lectio6recentaddition` by the source, purely to
+# splice in a later Vatican-added closing paragraph about his 1851
+# Doctor-of-the-Church declaration) — all one continuous vita, no
+# genuine source change. Lectio7-9 fall back to Common of a Doctor
+# (`Commune/C4a`), not proper text, so not authored here. No responsory
+# given in the source for these lessons.
+id: st-hilary-of-poitiers
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Hilárius, in Aquitánia nóbili génere natus, doctrína et eloquéntia excélluit. Qui primum in
+        matrimónio quasi mónachi vitam egit: deínde propter singuláres virtútes Pictavórum epíscopus
+        creátur: quod munus episcopále sic gessit, ut a fidélibus summam laudem consequerétur. Quo
+        témpore, cum terróribus, bonórum spoliatióne, exsílio, et omni crudelitáte Constántius
+        imperátor Cathólicos vexáret, nisi ad Ariánas partes transírent; Hilárius tamquam
+        firmíssimum murum se Ariánis oppónens, illórum furórem in se concitávit. Itaque multis
+        petítus insídiis, tandem dolo Saturníni Arelaténsis epíscopi, de sýnodo Biterrénsi in
+        Phrýgiam relegátus est: ubi et mórtuum suscitávit, et libros duódecim scripsit de Trinitáte
+        contra Ariános.
+
+
+        Quadriénnio post coácto concílio ad Seléuciam, Isáuriæ urbem, Hilárius adésse compúlsus est:
+        ac deínde Constantinópolim proféctus, ubi extrémum fídei perículum animadvértit, tribus
+        libéllis públice datis, audiéntiam imperatóris popóscit, ut de fide cum adversáriis coram
+        disputáret. Verum cum Ursácius et Valens Ariáni epíscopi, quos Hilárius scriptis
+        confutárat, præséntis eruditiónem pertiméscerent, Constántio persuasérunt, ut spécie
+        honóris eum in suum episcopátum restitúeret. Tunc Hilárium e prǽlio hæreticórum
+        reverténtem, ut inquit sanctus Hierónymus, Galliárum ecclésia cómplexa est: quem ad
+        episcopátum secútus est Martínus, qui póstea Turonénsi prǽfuit ecclésiæ; tantúmque illo
+        doctóre profécit, quantum ejus póstea sánctitas declarávit.
+
+
+        Magna deínceps tranquillitáte Pictavórum ecclésiam administrávit: Galliámque univérsam
+        addúxit, ut Arianórum impietátem condemnáret. Multos libros scripsit mira eruditióne; quos
+        omnes sanctus Hierónymus ad Lætam, sine ulla erróris suspicióne legi posse testátur illis
+        verbis: Hilárii libros inoffénso decúrrat pede. Migrávit in cælum Idibus Januárii,
+        Valentiniáno et Valénte imperatóribus, anno post Christum natum trecentésimo sexagésimo
+        nono. Eum a multis Pátribus et concíliis insígnem Ecclésiæ Doctórem nuncupátum, atque uti
+        talem in áliquot diœcésibus cultum, tandem instánte sýnodo Burdigalénsi Pius nonus Póntifex
+        máximus, ex sacrórum Rítuum Congregatiónis consúlto, universális Ecclésiæ Doctórem
+        declarávit et confirmávit, ac ipsíus festo die Missam et Offícium de Doctóribus ab ómnibus
+        recitári jussit.
+      en: >-
+        This Hilary was born of a noble family in Aquitaine, and is distinguished as a divine and
+        an orator. He was married in his earlier life, but even then lived the life of a monk, and
+        on account of his remarkable holiness, was ultimately made Bishop of Poitiers, in which
+        office he did his duty so as to gain the universal praise of the faithful. At that time the
+        Emperor Constantius was persecuting the Catholics by threats, by the plundering of their
+        goods, by exile, and at length, by every species of cruelty, in order to force them to
+        yield to the Arian heresy. Against the Arians Hilary set himself up as a brazen wall, and
+        turned upon himself the fierceness of their anger. They assailed him by many artifices, and
+        at last Saturnine, Bishop of Arles, at the Council of Beziers, procured his banishment to
+        Phrygia. During this exile he raised a dead man to life, and wrote a work in twelve books
+        on the Trinity, against the Arians.
+
+
+        In the fourth year of his exile took place the Council of Seleucia in Isauria, at which
+        Hilary was obliged to be present, but afterwards withdrew to Constantinople. Here he
+        realised more sharply the awful nature of this crisis in the history of Christianity,
+        published three pamphlets in the form of letters to the Emperor, and demanded from that
+        Prince leave to hold a public disputation in his presence. The Arian Bishops Ursacius and
+        Valens, whom Hilary had already confuted in writing, were afraid to meet him in debate, and
+        therefore induced Constantius, under pretence of pardon, to send him back to his Bishopric.
+        His mother, the Church of Gaul, to use the language of Jerome, received him with open arms
+        on his return from the battle with the heretics. He was followed to Poitiers by Martin,
+        afterwards Bishop of Tours, whose after holiness was a fruit of his teaching.
+
+
+        Henceforth he ruled the Church of Poitiers in great peace. By his exertions the Church of
+        Gaul was led to denounce the Arian blasphemy. His wonderful learning is seen in his
+        numerous works, of which Jerome writes to Laeta that he deemeth them quite faultless. One
+        can follow Hilary in his books, saith he, without tripping once. He passed from earth to
+        heaven upon the thirteenth day of January, in the year of our Lord 369, in the reign of the
+        Emperors Valentinian and Valens. He had already been called an illustrious Doctor of the
+        Church by many Fathers and Councils, and was so styled in the Liturgy in some Dioceses,
+        when at length Pope Pius IX., at the prayer of the Synod of Bordeaux, and in accordance
+        with a resolution of the Sacred Congregation of Rites, proclaimed and confirmed the title,
+        and commanded that the Mass and Office of his Feast should be everywhere said as those of a
+        Doctor.
+    status: { la: verified, en: verified }

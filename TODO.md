@@ -35,8 +35,9 @@ across every hour and content type in this app.
      pooled and shown regardless of rank (see "Reading-pool redesign"); expand the per-book
      Matins responsory pool beyond its one seeded book (`isa`). The pre-1955-but-post-1617
      saints (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are now done — see
-     "Pre-1955 saints' Matins readings" below — what's left is the larger pool of saints that
-     *do* have a Monastic 1617 track (`SanctiM/`), same authoring shape, not yet started.
+     "Pre-1955 saints' Matins readings" below. The larger pool of saints that *do* have a
+     Monastic 1617 track (`SanctiM/`) is in progress — see "SanctiM-track saints' Matins
+     readings" below — January done (11/13), ~140 candidates remain (February onward).
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1361,6 +1362,53 @@ the bible-plan bulk conversion) and `npm run build`/`tsc --noEmit` both pass.
 
 **Not done in this pass**: the larger pool of saints that *do* have a Monastic 1617
 (`SanctiM/`) track — same authoring shape, separate/older backlog item (see priority §2 above).
+
+### SanctiM (Monastic 1617)-track saints' Matins readings — started, January done (2026-08)
+
+The complementary pool to the pre-1955 pass above: saints with a `SanctiM/MM-DD*.txt` file.
+**Method finding, worth recording**: a `SanctiM/MM-DD.txt` file almost always turns out to be
+a thin *rule override* (`@Sancti/MM-DD` plus tweaks to psalmody/lesson-count/antiphons), not
+independent content — when it doesn't override the Nocturn 2/3 `[LectioN]` sections, that
+saint's Monastic-office vita reading is **the same text as the Tridentine `Sancti/MM-DD.txt`
+file**, sourced exactly as in the pre-1955 pass above. Only a real Monastic-only saint (one
+with no `Sancti/MM-DD*.txt` at all, e.g. `st-maurus-abbot`, who isn't on the general
+Tridentine calendar) needs content read directly out of the `SanctiM/` file itself.
+
+**A second wrinkle, on top of the pre-1955 pass's "don't trust the plain file" one**: the
+"does a `SanctiM/MM-DD*.txt` exist for this date" scope check has to be done **per saint, not
+per date** — a shared calendar date (two ids mapped to the same `MM-DD`) can have a `SanctiM`
+file for one saint's own Tridentine slot while the other saint has no Monastic office at all.
+Naively globbing "any `SanctiM/MM-DD*.txt` exists for this date" over-counts: found this by
+hand for Jan 18 (`chair-of-st-peter-at-rome` has `SanctiM/01-18.txt`; `st-prisca`, sharing the
+date, does not — she was actually a missed pre-1955-pool candidate) and Jan 14
+(`st-hilary-of-poitiers` has `SanctiM/01-14.txt`; `st-felix-presbyter`, sharing the date via
+`Sancti/01-14cc.txt`, does not — likewise a missed pre-1955-pool candidate). Both were authored
+this pass using the pre-1955 pattern instead. **The 52/117 pre-1955/SanctiM split recorded
+above is therefore an undercount on the pre-1955 side** by at least these two; the true
+per-saint (not per-date) recomputation used for this pass found **152 ids with a genuine,
+correctly-suffix-matched `SanctiM` file** — see memory `vu-matins-pre1955-saints` for the
+running correction note.
+
+**A third finding**: a `Sancti`/`SanctiM` date landing inside the Christmas or Epiphany octave
+(e.g. `st-telesphorus` Jan 5, `st-hyginus` Jan 11 — both early popes commemorated on octave
+days) can have its entire Nocturn 2/3 given over to octave-of-the-season homiletic content
+(a Nativity/Epiphany sermon), with **no proper vita text for the saint at all** in either
+track. Correctly left unauthored for these two — not a gap, same category as the pre-1955
+pass's 9 pure-Common exceptions, just a different underlying reason (octave-absorbed, not
+Common-of-X).
+
+**January done (11 saints, 2 left unauthored per the octave finding above)**:
+`st-hilary-of-poitiers`, `st-felix-presbyter`, `st-maurus-abbot` (Monastic-only; no English
+source translation exists in the reference engine at all for this file, so `en` is this
+project's own translation, marked `draft`), `st-anthony-abbot`, `chair-of-st-peter-at-rome`
+(Nocturn 2 patristic + Nocturn 3 genuine Gospel-and-homily, both authored),
+`st-prisca`, `ss-fabian-and-sebastian`, `st-agnes`, `ss-vincent-and-anastasius`,
+`conversion-of-st-paul`, `st-john-chrysostom`. Left unauthored: `st-telesphorus`,
+`st-hyginus` (octave-absorbed, see above). `npm test`/`tsc --noEmit` both pass; none of these
+are in a test table yet, same as the pre-1955 pass.
+
+**Not done in this pass**: the remaining ~140 SanctiM-track candidates (February onward) —
+same authoring shape, continue month by month.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)
 
