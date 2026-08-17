@@ -1,0 +1,12 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/04-05.txt` -- "vide C5;;Duplex;;3;;".
+# Own proper [Oratio]; no [Ant 1] of its own, so the Benedictus antiphon
+# falls back to Common of a Confessor (C5), matching st-alexius.yml.
+# No Lectio7-9 in the source (6-lesson office).
+id: st-vincent-ferrer
+name: "St. Vincent Ferrer, Confessor"
+rank: duplex
+common: common-of-a-confessor
+propers: "st-vincent-ferrer"
+minorHoursCommon: common-of-a-confessor
+benedictusCommon: common-of-a-confessor

@@ -1,0 +1,12 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/04-24.txt` -- "vide C2a;;Duplex;;3;;".
+# Own proper [Oratio]; no [Ant 1] of its own, so the Benedictus antiphon
+# falls back to Common of a Martyr (C2a), matching st-hermenegild.yml.
+# No Lectio7-9 in the source (6-lesson office).
+id: st-fidelis-of-sigmaringen
+name: "St. Fidelis of Sigmaringen, Martyr"
+rank: duplex
+common: common-of-a-martyr
+propers: "st-fidelis-of-sigmaringen"
+minorHoursCommon: common-of-a-martyr
+benedictusCommon: common-of-a-martyr

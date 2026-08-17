@@ -1,0 +1,13 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/04-13.txt` -- "vide C2a;;Semiduplex;;2.2;;".
+# Own proper [Oratio]; no [Ant 1] of its own, so the Benedictus antiphon
+# falls back to Common of a Martyr (C2a), matching st-christopher.yml.
+# Nocturn 3 (Lectio7-9) is a direct `@Commune/C2:LectioN` cross-reference,
+# not transcribed here.
+id: st-hermenegild
+name: "St. Hermenegild, Martyr"
+rank: semiduplex
+common: common-of-a-martyr
+propers: "st-hermenegild"
+minorHoursCommon: common-of-a-martyr
+benedictusCommon: common-of-a-martyr

@@ -1,0 +1,13 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/04-27.txt` -- "vide C5a;;Duplex;;3;;"
+# ("Commune Doctoris non Pontificis"). Own proper [Oratio] and Nocturn
+# 2-3 content. No [Ant 1] of its own; benedictusCommon points at the
+# already-authored `benedictus-antiphon-common-of-a-confessor-
+# bishop.yml` directly, same reasoning as st-john-damascene.yml (C5a's
+# own [Ant 1] is itself a cross-reference to C4a).
+id: st-peter-canisius
+name: "St. Peter Canisius, Confessor and Doctor of the Church"
+rank: duplex
+common: common-of-a-confessor-doctor
+propers: "st-peter-canisius"
+benedictusCommon: common-of-a-confessor-bishop

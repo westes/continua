@@ -1,0 +1,18 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/04-21.txt` -- "vide C4a;;Duplex;;3;;".
+# No [Oratio]/[Ant 1] of its own in this file at all -- both fall back
+# to Common of a Confessor Bishop who is a Doctor (C4a), matching
+# st-ambrose.yml/st-isidore-of-seville.yml. Nocturn 3 (Lectio7-9) is a
+# direct `@Commune/C4a:LectioN in 2 loco` cross-reference, not
+# transcribed here.
+id: st-anselm
+name: "St. Anselm, Bishop, Confessor and Doctor of the Church"
+rank: duplex
+common: common-of-a-confessor-bishop
+propers: null
+collectCommon: collect-c4a
+collectName:
+  la: ["Ansélmum"]
+  en: ["Anselm"]
+minorHoursCommon: common-of-a-confessor-bishop
+benedictusCommon: common-of-a-confessor-bishop

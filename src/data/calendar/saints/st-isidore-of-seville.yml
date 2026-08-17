@@ -1,0 +1,16 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/04-04.txt` -- "vide C4a;;Duplex;;3;;".
+# No [Oratio]/[Ant 1] of its own in this file at all -- both fall back
+# to Common of a Confessor Bishop who is a Doctor (C4a), matching
+# st-ambrose.yml.
+id: st-isidore-of-seville
+name: "St. Isidore of Seville, Bishop, Confessor and Doctor of the Church"
+rank: duplex
+common: common-of-a-confessor-bishop
+propers: null
+collectCommon: collect-c4a
+collectName:
+  la: ["Isidórum"]
+  en: ["Isidore"]
+minorHoursCommon: common-of-a-confessor-bishop
+benedictusCommon: common-of-a-confessor-bishop
