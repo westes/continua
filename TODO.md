@@ -37,7 +37,7 @@ across every hour and content type in this app.
      saints (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are now done — see
      "Pre-1955 saints' Matins readings" below. The larger pool of saints that *do* have a
      Monastic 1617 track (`SanctiM/`) is in progress — see "SanctiM-track saints' Matins
-     readings" below — January-July done (71/82), ~78 candidates remain (August onward).
+     readings" below — January-August done (84/98), ~65 candidates remain (September onward).
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1501,7 +1501,21 @@ July) — every SanctiM file at these dates that isn't a saint's own real match 
 puzzle over. Recognize this pattern (`In Octava S. P. N. Benedicti Abbatis`) and move on
 quickly rather than re-investigating it saint by saint.
 
-**Not done in this pass**: the remaining ~78 SanctiM-track candidates (August onward) — same
+**August done (13/16 saints, 3 left unauthored as no-proper-content)**: `st-peter-ad-vincula`,
+`ss-machabees` (missed pre-1955-pool candidate), `st-stephen-i` (missed pre-1955-pool, "plain
+file is a different, later saint" trap), `st-dominic`, `ss-cyriacus-largus-and-smaragdus`,
+`st-clare` (missed pre-1955-pool candidate), `st-lawrence` (Duplex I class), `st-bernard`,
+`st-bartholomew`, `st-augustine`, `decollation-of-st-john-baptist`, `st-sabina` (missed
+pre-1955-pool candidate), and `assumption` — the Duplex I class feast of the B.V.M. itself,
+confirming this app's calendar does map the Assumption despite the parent CLAUDE.md's older
+note that fixed BVM/Lord feasts were "not modeled by this app at all yet"; Nocturn 1's own
+scripture (Song of Songs) left to the bible-plan store per this project's usual split, only
+Nocturn 2/3 patristic/Gospel content authored here. Left unauthored (no proper content at all
+in the source, same category as prior Common-only/Vigil exceptions): `ss-nabor-and-felix`-style
+`st-romanus` and `st-hermes` (both Common-only), `vigil-of-st-lawrence` (Nocturn 1 only, no
+Nocturn 2/3 content in either track). `npm test`/`tsc --noEmit` both pass.
+
+**Not done in this pass**: the remaining ~65 SanctiM-track candidates (September onward) — same
 authoring shape, continue month by month.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)

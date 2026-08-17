@@ -1,0 +1,121 @@
+# Matins Nocturn 2-3 readings for St. Peter's Chains (Jul... Aug 1) —
+# SanctiM/08-01.txt inherits the whole day (`@Sancti/08-01`) with no
+# Nocturn 2/3 override, so this feast's own proper content is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/08-01.txt, English/Sancti/08-01.txt.
+#
+# Nocturn 2: Lectio4-6 (the legend of the two chains) combined into
+# one reading, one continuous account.
+# Nocturn 3: Lectio7's Gospel citation (Matt 16:13-19) is a bare
+# incipit ("Et réliqua") with no full pericope text given (this day's
+# own version of the same pericope already given in full for
+# `chair-of-st-peter-at-rome.yml`) — per the pre-1955 pass's
+# convention of not transcribing bare incipits, only the homily
+# portion is authored (not marked isGospel), combined with Lectio8 as
+# one continuous excerpt of St. Augustine's sermon. No responsory
+# given for either reading.
+id: st-peter-ad-vincula
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Theodósio junióre imperánte, cum Eudócia ejus uxor Jerosólymam solvéndi voti causa
+        venísset, ibi multis est affécta munéribus. Præ céteris insígne donum accépit férreæ
+        caténæ, auro gemmísque ornátæ, quam illam esse affirmábant, qua Petrus Apóstolus ab
+        Heróde vinctus fúerat. Eudócia, caténam pie veneráta, eam póstea Romam ad fíliam
+        Eudóxiam misit; quæ illam Pontífici máximo détulit. Isque vicíssim illi monstrávit
+        álteram caténam, qua, Neróne imperatóre, idem Apóstolus constríctus fúerat.
+
+
+        Cum ígitur Póntifex Románam caténam cum ea, quæ Jerosólymis alláta fúerat, contulísset,
+        factum est ut illæ inter se sic connecteréntur, ut non duæ, sed una caténa ab eódem
+        artífice confécta esse viderétur. Quo miráculo tantus honor sacris illis vínculis
+        habéri cœpit, ut proptérea hoc nómine sancti Petri ad víncula ecclésia, título
+        Eudóxiæ, dedicáta sit in Exquíliis, ejúsque memóriæ dies festus institútus Kaléndis
+        Augústi.
+
+
+        Quo ex témpore honos, qui eo die profánis Gentílium celebritátibus tríbui sólitus
+        erat, Petri vínculis habéri cœpit, quæ tacta ægros sanábant et dǽmones ejiciébant. Quo
+        in génere, anno salútis humánæ nongentésimo sexagésimo nono áccidit, ut quidam comes,
+        Ottónis imperatóris familiáris, occupátus ab immúndo spíritu, seípsum déntibus
+        dilaniáret. Quare is jussu imperatóris ad Joánnem Pontíficem dúcitur, qui ut sacra
+        caténa cómitis collum áttigit, erúmpens nefárius spíritus hóminem líberum reliquit; ac
+        deínceps in Urbe sanctórum vinculórum relígio propagáta est.
+      en: >-
+        In the reign of the Emperor Theodosius the younger, his wife went to Jerusalem in
+        fulfilment of a vow, and there was gifted with many presents. Among other things, they
+        gave her in especial an iron chain, adorned with gold and precious stones, which they
+        affirmed to be the same wherewith the Apostle Peter had been bound by King Herod.
+        Eudocia, with godly reverence, afterwards sent this chain to Rome, to her daughter
+        Eudoxia, who brought it to the Pope, and the Pope in return showed to her another chain
+        wherewith the same Apostle had been shackled under the Emperor Nero.
+
+
+        When then the Pope put together the Roman chain and that which had been brought from
+        Jerusalem, it came to pass that they got so entangled the one with the other that they
+        seemed no longer two but one chain. From this wonder these holy fetters began to receive
+        such honour, that Eudoxia's Church of St. Peter on the Esquiline Mount was dedicated
+        under the name of St. Peter in Chains, and a Feast-Day instituted upon the first day of
+        August in memory of it.
+
+
+        From that time forth the honour which before had used to be paid to the profane
+        festivity of the Gentiles began to be turned to the Chains of Peter, whose very touch
+        healed the sick, and drove out devils. Among other such cases there befell in the year of
+        man's Redemption 969, that of a certain Count, a servant of the Emperor Otho, who was
+        possessed by an unclean spirit, and tore himself with his own teeth. This man the Emperor
+        ordered to be taken to Pope John, and as soon as he had touched the Count's neck with the
+        hallowed chains, the foul spirit came out of him, and left him free. And thenceforward the
+        reverence for these holy chains greatly increased in the City.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Augustine, Bishop of Hippo, Sermon 29 on the Saints (on Matt 16:13-19)"
+    text:
+      la: >-
+        Solus Petrus inter Apóstolos méruit audíre: Amen dico tibi, quia tu es Petrus, et super
+        hanc petram ædificábo Ecclésiam meam; dignus certe, qui ædificándis in domo Dei
+        pópulis lapis esset ad fundaméntum, colúmna ad sustentáculum, clavis ad regnum. De hoc
+        ait sermo divínus: Et ponébant, inquit, infírmos suos, ut umbra saltem transeúntis
+        Petri obumbráret eos. Si tunc opem ferre póterat umbra córporis, quanto magis nunc
+        plenitúdo virtútis? si tunc supplicántibus próderat aura quædam pertranseúntis, quanto
+        magis grátia nunc permanéntis? Mérito per omnes Christi ecclésias auro pretiósius
+        habétur ferrum illud pœnálium vinculórum.
+
+
+        Si tam medicábilis fuit obumbrátio visitántis, quanto magis caténa vinciéntis? Si
+        inánis quædam spécies vácuæ imáginis habére pótuit in se vim salútis, quanto plus de
+        córpore meruérunt attráhere salubritátis, férreo póndere sacris impréssa membris,
+        víncula passiónis? Si ad præsídia supplicántium tam potens fuit ante martýrium, quanto
+        magis éfficax post triúmphum? Felíces illi nexus, qui, de mánicis et compédibus in
+        corónam mutándi, Apóstolum contingéntes, Mártyrem reddidérunt! Felícia víncula, quæ
+        reum suum usque ad Christi crucem, non tam condemnatúra quam consecratúra, misérunt!
+      en: >-
+        Peter was the only one of the Apostles who was worthy to hear the words: Amen, I say
+        unto thee that thou art Peter, and upon this rock I will build My Church. Worthy indeed
+        must he be, who, when the nations are to be built up into a Temple of God, is chosen as
+        the ground-stone whereon the building is to stand, the pillar whereby it is to be held
+        up, and the key wherethrough entrance is to be made into the kingdom. Concerning him the
+        Word of God saith: That they brought forth the sick into the streets, and laid them on
+        beds and couches, that at the least the shadow of Peter passing by might overshadow some
+        of them. If the shadow of his body then could give help, how much more shall the fulness
+        of his strength give help now. If the very air, as he passed by, was then profitable to
+        such as besought him, how much more shall his favour profit where now he abideth. It is
+        with reason that, throughout all the Churches of Christ, the iron chains wherewith he was
+        afflicted are reckoned more precious than gold.
+
+
+        If his shadow as a visitor was so healthful, what is his chain now that he bindeth and
+        looseth. If his empty image in the air had healing power, how much power must have been
+        contracted from his body by those chains, whose iron weight sank into his holy limbs
+        during his suffering. If, before he testified, he was so mighty to aid them that called
+        upon him, how much mightier is he now since his victory. Blessed were the links, doomed
+        to be changed from fetters and shackles, into a crown, which by touching the Apostle,
+        made him a Martyr. Blessed were the chains, whose prisoner left them for the Cross of
+        Christ, and which brought him thither, not as the instruments of condemnation, but of
+        sanctification.
+    status: { la: verified, en: verified }

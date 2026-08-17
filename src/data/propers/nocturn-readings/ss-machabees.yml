@@ -1,0 +1,42 @@
+# Matins Nocturn 2 reading for the Holy Machabees, Martyrs (Aug 1,
+# sharing the date with St. Peter's Chains — see st-peter-ad-vincula.yml).
+# No genuine SanctiM match: the only SanctiM file for this date,
+# `SanctiM/08-01.txt`, bases `@Sancti/08-01` (Peter's Chains, not the
+# Machabees) — a missed pre-1955-pool candidate rather than a genuine
+# SanctiM case (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/08-01r.txt, English/Sancti/08-01r.txt.
+# Single lesson (Lectio93), one continuous excerpt of St. Gregory
+# Nazianzen's sermon, no responsory given in the source.
+id: ss-machabees
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Gregory Nazianzen, Sermon 20 on the Machabees"
+    text:
+      la: >-
+        Quidnam Machabǽi? Horum enim nómine dies festus præsénti frequéntia celebrátur. Qui,
+        etsi apud multos non sunt in honóre, quod illud certámen post Christum non
+        suscepérunt; tamen digni sunt qui ab ómnibus honoréntur, quia pro pátriis légibus et
+        institútis fortes constantésque se præbuérunt. Nam qui martýrium subiére ante Christi
+        passiónem, quid factúri erant, si post Christum persecutiónem passi fuíssent, ejúsque
+        mortem, nostræ salútis causa suscéptam, ad imitándum propósitam habuíssent? Quorum
+        enim, nullo propósito exémplo, talis tántaque virtus fuit; an non ii, exémplum illud
+        intuéntes, fórtius in certámen descendíssent? Quin étiam mýstica quædam et occúlta
+        rátio, mihi quidem atque ómnibus Dei amatóribus valde probábilis est, néminem eórum qui
+        ante Christi advéntum martýrio consummáti sunt, id sine fide in Christum cónsequi
+        potuísse.
+      en: >-
+        What were the Machabees? For it is under their name that the Festival at which you are
+        this day assembled is kept. It is true that many persons do not hold them in honour,
+        because they fought before the coming of Christ; nevertheless they deserve to be
+        venerated by all men, for they bore themselves bravely and faithfully in defence of the
+        laws and ordinances of their people. They that underwent martyrdom before Christ came,
+        what would not have been their deeds, if they had suffered persecution after He came, and
+        had had before them for a pattern the Death which He embraced for the sake of man's
+        salvation? With no example to lead them, their bravery was what it was; had they had the
+        example before their eyes, would they not have gone down with double nerve to the battle?
+        There is a mystic and subtle idea, which seemeth very likely to me and to all lovers of
+        God, that none of those who were crowned with martyrdom before Christ came, could have
+        been so, unless they had had faith in Christ.
+    status: { la: verified, en: verified }

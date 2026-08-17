@@ -1,0 +1,127 @@
+# Matins Nocturn 2-3 readings for the Decollation of St. John the
+# Baptist (Aug 29) — SanctiM/08-29.txt inherits the whole day
+# (`@Sancti/08-29`) with no Nocturn 2/3 override, so this feast's own
+# proper content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/08-29.txt, English/Sancti/08-29.txt.
+#
+# Nocturn 2: Lectio4-6 (St. Ambrose's treatise On Virgins) combined
+# into one reading, one continuous excerpt.
+# Nocturn 3: Lectio7's Gospel citation (Mark 6:17-29) is a bare
+# incipit ("Et réliqua") with no full pericope text given, so — per
+# the pre-1955 pass's convention of not transcribing bare incipits —
+# only the homily portion is authored (not marked isGospel), combined
+# with Lectio8 as one continuous excerpt of St. Augustine's sermon.
+# No responsory given for either reading.
+id: decollation-of-st-john-baptist
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Ambrose, Bishop of Milan, On Virgins, Bk. 3"
+    text:
+      la: >-
+        Quóniam beáti Joánnis Baptistæ non strictim prætereunda est recordátio, interest ut
+        quis et a quibus et quam ob causam, quo modo et quo témpore sit occisus, advertere
+        debeamus. Ab adúlteris justus occíditur, et a reis in judicem capitális sceleris pœna
+        convértitur. Deínde præmium saltatricis, mors est Prophetæ. Postremo (quod étiam
+        omnes bárbari horrére consuevérunt) inter epulas atque convivia consummandæ
+        crudelitátis profertur edictum; et a convívio ad carcerem, de carcere ad convivium
+        feralis flagitii circumfertur obsequium. Quanta in uno facínore sunt crimina!
+
+
+        Quis non, cum e convívio ad carcerem cursari vidéret, putaret Prophétam jussum esse
+        dimitti? Quis, inquam, cum audísset natalem esse Herodis, solemne convivium, puellæ
+        optiónem eligéndi quod vellet datam; missum ad Joánnem ob solutiónem non arbitrarétur?
+        Quid crudelitáti cum deliciis? quid cum funéribus voluptati? Rápitur ad pœnam Prophéta
+        convivali témpore, convivali præcépto, quo non cuperet vel absolvi: perímitur gládio,
+        caput ejus affertur in disco. Hoc crudelitáti férculum debebátur, quo insatiáta épulis
+        féritas vescerétur.
+
+
+        Intuére, rex acerbíssime, tuo spectacula digna convivio. Pórrige déxteram, ne quid
+        sævítiæ tuæ desit; ut inter digitos tuos rivi défluant sacri cruoris. Et, quóniam non
+        exsaturari épulis fames, non restingui póculis pótuit inauditæ sævítiæ sitis; bibe
+        sánguinem scaturiéntibus adhuc venis exsecti cápitis profluentem. Cerne óculos in ipsa
+        morte sceleris tui testes, aversántes conspéctum deliciárum. Claudúntur lúmina non
+        tam mortis necessitate quam horrore luxuriæ. Os aureum illud exsangue, cujus
+        senténtiam ferre non poteras, conticescit, et adhuc timétur.
+      en: >-
+        We must not hurry by the record of the Blessed Baptist John. We must ask what he was,
+        and by whom, and why, and how, and when he was slain. He was a righteous man murdered by
+        adulterers. The guilty passed upon their judge the sentence of death. Moreover, the death
+        of the Prophet was the fee of a dancing-girl. And lastly, there was a feature about it
+        from which even savages shrink; the order for completing the atrocity was given amid the
+        merriment of a dinner-party. From banquet to prison, from prison to banquet, that was the
+        course run by the servants of the murderer. How many horrors does this simple crime
+        embrace within its details?
+
+
+        Who is there, that, on seeing the messenger hasten from the dinner-table to the prison,
+        would not have forthwith concluded that he carried an order for the Prophet's release. If
+        any one had heard that it was Herod's birth-day, and that he was giving a great feast,
+        and that he had offered a damsel the choice of whatever she listed, and that thereupon a
+        messenger had been sent to John's dungeon. If any one, I say, had heard this, what would
+        he have supposed? He would have concluded that the damsel had asked and obtained John's
+        freedom. What have executions in common with dinners, or death with gaiety? While the
+        banquet was going on, the Prophet was hurried to death, by an order from the reveller
+        whom he had not troubled even by a prayer for release. He was slain with the sword, and
+        his head was served up in a plate. This was the new dish demanded by a cruelty which the
+        Feast had been powerless to glut.
+
+
+        Look, savage King, look at a decoration which suiteth well with thy banquet. Put out
+        thine hand, so as to lose no part of the luxury of cruelty, and let the streams of the
+        sacred blood run between thy fingers. Thine hunger the dinner hath been unable to
+        satisfy, thy cups have not been able to quench thine inhuman thirst. Suck, suck the blood
+        which the still palpitating veins are discharging from the place where the neck has been
+        severed. Look at the eyes. Even in death they remain the eyes of a witness of thine
+        uncleanness, but they are closing themselves upon the spectacle of thy pleasures. Those
+        eyes indeed are shutting, but it seems not so much from the laws of natural death, as
+        from horror at the scene of thine enjoyment. The golden mouth, whose bloodless lips are
+        silent now, can repeat no more the denunciation which thou couldest not bear to hear, and
+        still thou art afraid of it.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Augustine, Bishop of Hippo, New Sermons (on Mark 6:17-29)"
+    text:
+      la: >-
+        Cum sanctum Evangélium legerétur, crudele spectaculum ante óculos nostros constitutum
+        est: caput sancti Joánnis in disco, feralis missus crudelitátis propter ódium
+        veritátis. Puella saltat, et sævit mater; et inter lascivias et delicias convivántium
+        témere jurátur, et ímpie, quod jurátur, implétur. Factum est Joánni, quod ipse
+        prædixerat; de Dómino enim Jesu Christo dixerat: Illum oportet crescere, me autem
+        minui. Iste minutus est in cápite, ille crevit in cruce. Odium péperit véritas. Non
+        pótuit æquo animo tolerári quod homo Dei sanctus monebat; qui útique salútem eórum
+        quærebat, quos sic monebat. Respondérunt illi mala pro bonis.
+
+
+        Quid enim ille diceret, nisi quo plenus erat? et quid illi respondérent, nisi quo pleni
+        erant? Ille tríticum seminávit, sed spinas invénit. Dicebat regi: Non licet tibi habere
+        uxórem fratris tui. Vincebat enim regem libído: tenebat apud se prohíbitam uxórem
+        fratris sui. Sed eum tamen sic libebat, ut non sæviret; honorábat eum, a quo verum
+        audiebat. Sed mulier detestábilis ódium concipiebat, quod aliquándo dato témpore
+        páreret. Quando autem parturiebat, péperit filiam, filiam saltántem.
+      en: >-
+        The reading of the Holy Gospel hath set a scene of cruelty before our eyes: even the
+        head of St. John in a charger; a message of death sent forth to discharge the bloody
+        commands of one that hateth the truth; a damsel dancing, and a mother rabid; a rash oath
+        sworn in the midst of uncleanness and the revels of a supper, and a wicked fulfillment of
+        the oath so sworn. It befell unto John according to his own saying. For he had said
+        concerning the Lord Jesus Christ: He must increase, but I must decrease; so John
+        decreased by an head, and Christ's height was made higher upon the Cross. The truth drew
+        hatred. It could not be borne in patience that the holy man of God should utter a
+        rebuke, albeit he sought by his rebuke nothing but the soul's health of them to whom he
+        addressed it. They repaid him evil for good.
+
+
+        For what could he say but that whereof he was full? And what could they answer him but
+        that whereof they were full? He sowed wheat, and found thorns. He had said unto the
+        King: It is not lawful for thee to have thy brother's wife. Lust had got the better of
+        the King, and he kept a woman whom it was not lawful for him to have, even his brother's
+        wife. But she pleased him, so that his cruelty was lulled. He respected the Saint who had
+        spoken the truth to him. But the horrible woman conceived hatred, and by-and-by brought
+        it forth. When she brought forth, she brought forth a girl, a dancing-girl.
+    status: { la: verified, en: verified }
