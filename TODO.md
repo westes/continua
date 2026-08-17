@@ -37,7 +37,7 @@ across every hour and content type in this app.
      saints (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are now done — see
      "Pre-1955 saints' Matins readings" below. The larger pool of saints that *do* have a
      Monastic 1617 track (`SanctiM/`) is in progress — see "SanctiM-track saints' Matins
-     readings" below — January-August done (84/98), ~65 candidates remain (September onward).
+     readings" below — January-September done (93/107), ~56 candidates remain (October onward).
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1515,7 +1515,14 @@ in the source, same category as prior Common-only/Vigil exceptions): `ss-nabor-a
 `st-romanus` and `st-hermes` (both Common-only), `vigil-of-st-lawrence` (Nocturn 1 only, no
 Nocturn 2/3 content in either track). `npm test`/`tsc --noEmit` both pass.
 
-**Not done in this pass**: the remaining ~65 SanctiM-track candidates (September onward) — same
+**September done (9/9 saints, full month)**: `nativity-bvm`, `st-hadrian` (missed pre-1955-pool
+candidate), `st-matthew`, `ss-maurice-and-companions` (missed pre-1955-pool), `st-linus`,
+`st-thecla` (missed pre-1955-pool), `ss-cosmas-and-damian`, `st-michael` (Dedication of St.
+Michael the Archangel — its SanctiM file structurally borrows from his own separate May 8
+Apparition file but the actual Lectio content resolves back to this day's own Sancti file),
+`st-jerome`. `npm test`/`tsc --noEmit` both pass.
+
+**Not done in this pass**: the remaining ~56 SanctiM-track candidates (October onward) — same
 authoring shape, continue month by month.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)

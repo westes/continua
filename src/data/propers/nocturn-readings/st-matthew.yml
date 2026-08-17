@@ -1,0 +1,83 @@
+# Matins Nocturn 2-3 readings for St. Matthew, Apostle, Evangelist
+# (Sep 21) — SanctiM/09-21.txt inherits the whole day (`@Sancti/09-21`)
+# with no Nocturn 2/3 override, so this saint's own proper content is
+# sourced from the Tridentine track exactly as for a pre-1955 saint
+# (see memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/09-21.txt, English/Sancti/09-21.txt.
+#
+# Nocturn 2: Lectio4-5 combined into one reading, one continuous vita
+# — Lectio6 falls back to Common of an Evangelist, not proper text, so
+# not authored here.
+# Nocturn 3: Lectio7's Gospel citation (Matt 9:9-13) is a bare incipit
+# ("Et réliqua") with no full pericope text given, so — per the
+# pre-1955 pass's convention of not transcribing bare incipits — only
+# the homily portion is authored (not marked isGospel), a single
+# excerpt of St. Jerome's commentary. No responsory given for either
+# reading.
+id: st-matthew
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Matthǽus, qui et Levi, Apóstolus et Evangelísta, Caphárnai cum ad telónium sedéret, a
+        Christo vocátus, statim secútus est ipsum; quem étiam cum réliquis discípulis convívio
+        excépit. Post Christi resurrectiónem, ántequam in provínciam proficiscerétur, quæ ei
+        ad prædicándum obtígerat, primus in Judǽa, propter eos qui ex circumcisióne
+        credíderant, Evangélium Jesu Christi Hebráice scripsit. Mox in Æthiópiam proféctus,
+        Evangélium prædicávit, ac prædicatiónem multis miráculis confirmávit.
+
+
+        Illo ígitur in primis miráculo, quo regis fíliam a mórtuis excitávit, regem patrem et
+        uxórem ejus cum univérsa província ad Christi fidem convértit. Rege mórtuo, Hírtacus,
+        ejus succéssor, cum Iphigeníam, régiam fíliam, vellet sibi dari in matrimónium;
+        Matthǽum, cujus ópera illa virginitátem Deo vóverat et in sancto propósito
+        perseverábat, ad altáre mystérium celebrántem jussit occídi. Qui undécimo caléndas
+        octóbris munus apostólicum martýrii glória cumulávit. Cujus corpus Salérnum
+        translátum, ac póstmodum in ecclésia ejus nómine dedicáta, Gregório séptimo summo
+        Pontífice, cónditum, ibídem magno hóminum concúrsu ac pietáte cólitur.
+      en: >-
+        It came to pass one day at Capernaum, that Christ went forth, and saw a publican, named
+        Levi, sitting at the receipt of custom; and He said unto him: Follow Me. And he left
+        all, rose up, and followed Him. And Levi made Him a great feast in his own house. This
+        Levi is the Apostle and Evangelist Matthew. After that Christ was risen again from the
+        dead, and while he was yet in Judea, before he set forth for that land which had fallen
+        to the lot of his preaching, he wrote the Gospel of Jesus Christ in the Hebrew tongue,
+        for the sake of them of the circumcision who had believed. His was the first written of
+        the four Gospels. Thereafter he went to Ethiopia, and there preached the Gospel,
+        confirming his preaching with many miracles.
+
+
+        Of his miracles, the most notable was that he raised the King's daughter from the dead,
+        and thereby brought to believe in Christ the King her father, his wife, and all that
+        region. After that the King was dead, Hirtacus, who came after him, was fain to take his
+        daughter Iphigenia to wife, but by the exhortation of Matthew she had made vow of her
+        maidenhood to God, and stood firm to that holy resolution, for which cause Hirtacus
+        commanded to slay the Apostle at the Altar while he was performing the mystery. He
+        crowned the dignity of the Apostleship with the glory of martyrdom upon the 21st day of
+        September. His body had been brought to Salerno, where it was afterwards buried in a
+        Church dedicated in his name during the papacy of Gregory VII, and there it is held in
+        great worship and sought to by great gatherings of people.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Jerome, Priest, Commentary on Matthew, Bk. 1 (on Matt 9:9-13)"
+    text:
+      la: >-
+        Céteri Evangelístæ, propter verecúndiam et honórem Matthǽi, noluérunt eum nómine
+        appelláre vulgáto, sed dixérunt, Levi; dúplici quippe vocábulo fuit. Ipse autem
+        Matthǽus (secúndum illud quod dícitur a Salomóne: Justus accusátor est sui in
+        princípio sermónis; et in álio loco: Dic tu peccáta tua, ut justificéris) Matthǽum se
+        et publicanum nóminat, ut osténdat legéntibus nullum debére salútem desperáre, si ad
+        melióra convérsus sit, cum ipse de publicáno in Apóstolum sit repénte mutátus.
+      en: >-
+        The other Evangelists, out of tenderness towards the reputation and honour of Matthew,
+        have abstained from speaking of him as a publican by his ordinary name, and have called
+        him Levi. Both names were his. But Matthew himself, according to what Solomon saith: The
+        just man is the first to accuse himself, and again, in another place: Declare thou thy
+        sins that thou mayest be justified, doth plainly call himself Matthew the publican, to
+        show unto his readers that none need be hopeless of salvation if he will but strive to do
+        better, since he himself had been all of a sudden changed from a publican into an
+        Apostle.
+    status: { la: verified, en: verified }

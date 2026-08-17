@@ -1,0 +1,84 @@
+# Matins Nocturn 2 reading for St. Linus, Pope, Martyr (Sep 23,
+# sharing the date with St. Thecla — see st-thecla.yml) —
+# SanctiM/09-23.txt inherits the whole day (`@Sancti/09-23`) with no
+# Nocturn 2/3 override, so this saint's own content is sourced from
+# the Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/09-23.txt, English/Sancti/09-23.txt.
+# Lectio4 (Linus's own vita) and Lectio5-6 (St. Ambrose's exposition
+# of Psalm 118 — the same excerpt already used, from a different
+# sermon number, for `st-anacletus.yml`'s own Nocturn 2 in July; the
+# reference engine reuses this exposition across several pope-martyr
+# feasts) kept split. No responsory given in the source.
+id: st-linus
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Linus Pontifex, Volaterris in Etruria natus, primus post Petrum gubernávit Ecclésiam.
+        Cujus tanta fides et sanctitas fuit, ut non solum dæmones ejiceret, sed étiam mórtuos
+        revocaret ad vitam. Scripsit res gestas beáti Petri, et ea maxime quæ ab illo acta sunt
+        contra Simónem magum. Sancívit ne qua mulier, nisi velato cápite, in ecclésiam
+        introíret. Huic Pontifici caput amputátum est ob constantiam fidei, jussu Saturnini
+        ímpii et ingratíssimi consularis, cujus filiam a dæmonum vexatióne liberaverat.
+        Sepultus est in Vaticano prope sepúlcrum Principis Apostolórum, nono Kalendas
+        Octobris. Sedit annos undecim, menses duos, dies viginti tres, creatis, bis mense
+        Decembri, epíscopis quindecim, presbyteris decem et octo.
+      en: >-
+        Pope Linus was by birth a native of Velletri in Tuscany, and was the first after Peter
+        who governed the Church. His faith and holiness were such that he not only cast out
+        devils, but also raised the dead. He wrote the acts of Blessed Peter, and especially the
+        history of his strife with Simon Magus. He forbade women to enter the Church without
+        having a veil upon their heads. His own head was cut off, on account of his firmness in
+        confessing Christ, by command of the godless Consular Saturninus, an unthankful wretch
+        whose own daughter he had delivered from being tormented by a devil. He was buried upon
+        the Vatican Mount, hard by the grave of the Prince of the Apostles, upon the 23rd day of
+        September. He sat as Pope eleven years, two months, and twenty-three days. He held two
+        December ordinations, wherein he made fifteen Bishops, and eighteen Priests.
+    status: { la: verified, en: verified }
+
+  - nocturn: 2
+    isGospel: false
+    source: "St. Ambrose, Bishop of Milan, Exposition of Psalm 118, Sermon 1"
+    text:
+      la: >-
+        Príncipes persecúti sunt me gratis: et a verbis tuis trepidávit cor meum. Bene hoc
+        Martyr dicit, quod injúste persecutiónum torménta sustineat; qui nihil rapúerit, nullum
+        violentus oppresserit, nullius sánguinem fuderit, nullius torum putaverit esse
+        violándum; qui nihil légibus debeat, et gravióra latronum sustinere cogátur supplícia;
+        qui loquátur juste, et non audiátur; qui loquátur plena salútis, et impugnétur, ut
+        possit dicere: Cum loquébar illis, impugnábant me gratis. Gratis ígitur persecutiónem
+        pátitur, qui impugnátur sine crimine; impugnátur ut noxius cum sit in tali confessióne
+        laudábilis; impugnátur quasi veneficus, qui in nómine Dómini gloriátur, cum pietas
+        virtútum ómnium fundaméntum sit.
+
+
+        Vere frustra impugnátur, qui apud ímpios et infidos impietátis arcessitur, cum fidei
+        sit magister. Verum, qui gratis impugnátur, fortis debet esse et constans; quómodo
+        ergo subtexuit: Et a verbis tuis trepidávit cor meum? Trepidare infirmitátis est,
+        timoris atque formidinis. Sed est étiam infirmitas ad salútem, est étiam timor
+        sanctórum: Timéte Dóminum, omnes sancti ejus; et, Beátus vir, qui timet Dóminum. Qua
+        ratióne beatus? Quia in mandatis ejus cupit nimis.
+      en: >-
+        Princes have persecuted me without a cause; but my heart standeth in awe of thy word.
+        These are rightly the words of a martyr, who beareth unjustly the torments of the
+        persecutors, who hath robbed no man, who hath violently oppressed no man, who hath shed
+        the blood of no man, who hath imagined to defile the bed of no man, who is debtor to the
+        laws in nothing, and who is punished more grievously than if he were a robber; who
+        speaketh righteousness, and there is none that will hear; who speaketh salvation, and
+        all men fight against him; who is able to say: When I spoke unto them, they fought
+        against me without a cause. They fight against him without a cause, who can lay no sin
+        to his charge; they fight against him as an evildoer, who is by their own acknowledgement
+        righteous; they fight against him as a warlock, who glorieth in the name of the Lord, and
+        who doeth all things well because he doeth all things for God's sake.
+
+
+        They fight against him in vain who is accused of ungodliness among the ungodly and the
+        unfaithful, because he teacheth Faith. Verily, him that is fought against without a cause
+        it behoveth to be strong and patient. Wherefore then saith he: My heart standeth in awe
+        of thy word? Awe is the mark of the weak, the timid, and the fearful. But there is also
+        a weakness unto salvation, there is a fear which is an holy fear. O fear the Lord, all
+        ye His Saints. And again: Blessed is the man that feareth the Lord. And wherefore is he
+        blessed? Because he delighteth greatly in His commandments.
+    status: { la: verified, en: verified }
