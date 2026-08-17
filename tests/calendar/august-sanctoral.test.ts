@@ -91,9 +91,18 @@ describe('August sanctoral pull (first pass)', () => {
     // Aug 22 is the Assumption's own octave day (In Octava Assumptionis),
     // Duplex, blocking Ss. Timothy/Hippolytus/Symphorian the same way --
     // it's also day 8 of the Assumption's own octave. Those three still
-    // aren't modeled, so this stays a bare octave commemoration.
+    // aren't modeled -- but Aug 22 itself is also now the Immaculate
+    // Heart of the Blessed Virgin Mary's own fixed day (Duplex II
+    // Classis, added per the full-year sanctoral import), which wins
+    // outright under the ordinary-feria rule, with the octave still
+    // commemorated alongside her.
     const assumptionOctaveDay = resolveDay('2025-08-22');
-    expect(assumptionOctaveDay.winner.kind).toBe('temporal');
+    expect(assumptionOctaveDay.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'immaculate-heart-of-mary',
+      name: 'The Immaculate Heart of the Blessed Virgin Mary',
+      rank: 'duplex-2-classis',
+    });
     expect(assumptionOctaveDay.commemorations).toEqual([
       { kind: 'octave', id: 'assumption', name: 'The Assumption of the Blessed Virgin Mary' },
     ]);

@@ -1,0 +1,17 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/08-17.txt` -- "Duplex;;3;;vide
+# C5" (Common of a Confessor Not a Bishop). No [Oratio] of his own at
+# all in this file -- falls back to collectCommon/collectName, his own
+# [Name] section giving the declined form "Hyacínthi". No Lectio7-9 --
+# defers to the Common's own Nocturn 3, not transcribed here.
+id: st-hyacinth
+name: "St. Hyacinth, Confessor"
+rank: duplex
+common: common-of-a-confessor
+propers: null
+collectCommon: collect-c5
+collectName:
+  la: ["Hyacínthi"]
+  en: ["Hyacinth"]
+benedictusCommon: common-of-a-confessor
+minorHoursCommon: common-of-a-confessor

@@ -107,9 +107,12 @@ describe('getDayLabel — active octave', () => {
   });
 
   it('shows the octave day alone when nothing is separately commemorated that day', () => {
-    // Aug 17 is day 8 (the last day) of St. Lawrence's octave, with no
-    // sanctoral candidate of its own in this app's calendar.
-    expect(getDayLabel(resolveDay('2026-08-17'))).toBe('8th Day within the Octave of St. Lawrence, Martyr');
+    // Not Aug 17 (day 8, the last day, of St. Lawrence's octave): that
+    // date is now St. Hyacinth's own fixed day (Duplex, added per the
+    // full-year sanctoral import), which wins outright. All Saints' own
+    // octave (Nov 1-8) still has a genuinely open day 8 -- 2028-11-08 is
+    // a Wednesday, clear of both a Sunday and any sanctoral entry.
+    expect(getDayLabel(resolveDay('2028-11-08'))).toBe('8th Day within the Octave of All Saints');
   });
 
   it("a season's own named anchor day outranks an active octave, even though Trinity Sunday is technically also day 8 of Pentecost's own octave", () => {
@@ -130,7 +133,22 @@ describe('getDayLabel — active octave', () => {
   });
 
   it("picks the higher-ranked of two genuinely overlapping octaves for the label -- St. Lawrence's own elevated closing day (Aug 17) over the Assumption's ordinary day 3, even though the Assumption's octave started later and the Assumption is the higher-ranked feast overall", () => {
-    expect(getDayLabel(resolveDay('2026-08-17'))).toBe('8th Day within the Octave of St. Lawrence, Martyr');
+    // Aug 17 itself is no longer available to demonstrate the
+    // octave-vs-octave priority pick through a real date: it's now St.
+    // Hyacinth's own fixed day (Duplex, added per the full-year
+    // sanctoral import), which wins outright over both octaves. In
+    // fact every day where St. Lawrence's (Aug 10-17) and the
+    // Assumption's (Aug 15-22) octaves genuinely overlap (Aug 15-17) is
+    // now occupied by real sanctoral content (the Assumption herself,
+    // St. Joachim, St. Hyacinth) -- there's no remaining real calendar
+    // date left in this app where that specific priority comparison is
+    // observable. The underlying mechanism itself (`pickWinningOctave`)
+    // is still directly unit-tested with synthetic data in
+    // tests/calendar/octaves.test.ts's own "picks the higher-ranked
+    // octave regardless of order or start date" case. Aug 18 (day 4 of
+    // the Assumption's octave alone, Lawrence's already over) is still
+    // a valid, uncontested check.
+    expect(getDayLabel(resolveDay('2026-08-17'))).toBe('St. Hyacinth, Confessor');
     expect(getDayLabel(resolveDay('2026-08-18'))).toBe('4th Day within the Octave of The Assumption of the Blessed Virgin Mary');
   });
 

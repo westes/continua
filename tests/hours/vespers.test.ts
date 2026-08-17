@@ -90,8 +90,13 @@ describe('resolveOrdo("vespers", ...)', () => {
   });
 
   it('splits Ps 138 into two verse-ranges under one shared antiphon on Thursday', () => {
-    // 2026-08-20 is a Thursday, in ordinary time.
-    const ordo = resolveOrdo('vespers', '2026-08-20');
+    // Not 2026-08-20: that date's own first Vespers is now claimed by
+    // St. Jane Frances de Chantal's own fixed day (Duplex, Aug 21,
+    // added per the full-year sanctoral import), so it no longer falls
+    // back to the plain ferial Thursday scheme this test wants to
+    // isolate. 2026-09-03 is also a Thursday in ordinary time, clear of
+    // any such collision.
+    const ordo = resolveOrdo('vespers', '2026-09-03');
     const psalmParts = ordo.parts.filter((p) => p.kind === 'psalm');
     const numbers = psalmParts.map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
     expect(numbers).toEqual([138, 138, 139, 140]);
