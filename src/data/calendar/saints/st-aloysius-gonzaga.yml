@@ -1,0 +1,15 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/06-21.txt` -- "Duplex;;3;;vide
+# C5" (Common of a Confessor Not a Bishop). Own real proper [Oratio]
+# and own Nocturn 2-3 content (Nocturn 3 is St. John Chrysostom's own
+# homily on virginity, not a cross-reference). No [Ant 1] of his own
+# -- benedictusCommon/minorHoursCommon fall back to the plain Common
+# of a Confessor. Officium name also carries a monastic rubric variant
+# -- ignored per the untagged-block convention.
+id: st-aloysius-gonzaga
+name: "St. Aloysius Gonzaga, Confessor"
+rank: duplex
+common: common-of-a-confessor
+propers: "st-aloysius-gonzaga"
+benedictusCommon: common-of-a-confessor
+minorHoursCommon: common-of-a-confessor

@@ -5,8 +5,12 @@ import type { LiturgicalDay } from '../../src/calendar/types';
 
 describe('getDayLabel — ordinal temporal label', () => {
   it("labels an anchor's own partial week as \"Weekday after {Anchor}\"", () => {
-    // Trinity Sunday 2026 is May 31.
-    expect(getDayLabel(resolveDay('2026-06-01'))).toBe('Monday after Trinity Sunday');
+    // Not 2026 (Trinity Sunday May 31, so Trinity Monday June 1): that
+    // date is now St. Angela Merici's own fixed day (Duplex, added per
+    // the full-year sanctoral import), which would win outright and hide
+    // this purely-temporal label case. 2027's Trinity Sunday is May 23,
+    // so Trinity Monday is May 24 -- free of any sanctoral entry.
+    expect(getDayLabel(resolveDay('2027-05-24'))).toBe('Monday after Trinity Sunday');
     expect(getDayLabel(resolveDay('2026-01-07'))).toBe('Wednesday after Epiphany'); // Epiphany 2026 is a Tuesday
   });
 
@@ -106,14 +110,13 @@ describe('getDayLabel — active octave', () => {
   });
 
   it("a season's own named anchor day outranks an active octave, even though Trinity Sunday is technically also day 8 of Pentecost's own octave", () => {
-    // Not 2026 (May 31): that year's Trinity Sunday now coincides with the
-    // Queenship of the Blessed Virgin Mary's own fixed day (Duplex II
-    // Classis, added per the full-year sanctoral import), which wins
-    // outright and would muddy this specifically octave-vs-anchor-day
-    // check (see tests/calendar/transfer.test.ts's own May 31 case for
-    // that). 2023's Trinity Sunday (June 4) has no sanctoral entry at all,
-    // isolating the octave interaction cleanly.
-    expect(getDayLabel(resolveDay('2023-06-04'))).toBe('Trinity Sunday');
+    // Not 2026 (May 31, the Queenship of the Blessed Virgin Mary's own
+    // fixed day, see tests/calendar/transfer.test.ts) and not 2023
+    // (June 4, now St. Francis Caracciolo's own fixed day) -- both would
+    // muddy this specifically octave-vs-anchor-day check with a sanctoral
+    // winner. 2030's Trinity Sunday (June 16) has no sanctoral entry at
+    // all, isolating the octave interaction cleanly.
+    expect(getDayLabel(resolveDay('2030-06-16'))).toBe('Trinity Sunday');
   });
 
   it("a temporal day with real standing of its own (not ordinary-feria) never shows an octave name at all, even with one active -- live-verified counterexample: the Christmas Octave's own stack (Dec 30) titles itself off the Sunday, never any of the four octaves layered on top of it", () => {

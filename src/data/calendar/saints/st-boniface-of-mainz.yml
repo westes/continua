@@ -1,0 +1,18 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/06-05.txt` -- "Duplex;;3;;vide
+# C2" (Common of a Martyr Bishop). Own real proper [Oratio] and own
+# Nocturn 2-3 content (Nocturn 3 is St. Augustine's own homily, not a
+# cross-reference). No [Ant 1] of his own -- benedictusCommon/
+# minorHoursCommon fall back to the plain Common of a Martyr, matching
+# st-timothy.yml. Distinct saint/id from st-boniface.yml (May 14's "S.
+# Bonifatii Martyris" -- a different, earlier Boniface, Simplex,
+# Commune C2a) -- no collision. Officium name also carries monastic/
+# altovadensis rubric variants -- ignored per the untagged-block
+# convention.
+id: st-boniface-of-mainz
+name: "St. Boniface, Bishop and Martyr"
+rank: duplex
+common: common-of-a-martyr-bishop
+propers: "st-boniface-of-mainz"
+benedictusCommon: common-of-a-martyr
+minorHoursCommon: common-of-a-martyr

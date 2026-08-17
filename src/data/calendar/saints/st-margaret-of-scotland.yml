@@ -1,0 +1,16 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/06-10.txt` -- "Semiduplex;;2.2;;
+# vide C7a" (Commune non Virginum non Martyrum). Own real proper
+# [Oratio]. No [Ant 1] of her own -- benedictusCommon/minorHoursCommon
+# fall back to the Common of a Virgin, same C-number-family fallback
+# already established for st-monica.yml/st-frances-of-rome.yml (no
+# benedictus-antiphon-common-of-a-widow.yml exists). No Lectio7-9 in
+# her own file -- defers to the Common's own Nocturn 3, not
+# transcribed here.
+id: st-margaret-of-scotland
+name: "St. Margaret, Queen and Widow"
+rank: semiduplex
+common: common-of-a-widow
+propers: "st-margaret-of-scotland"
+benedictusCommon: common-of-a-virgin
+minorHoursCommon: common-of-a-virgin
