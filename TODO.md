@@ -37,7 +37,7 @@ across every hour and content type in this app.
      saints (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are now done — see
      "Pre-1955 saints' Matins readings" below. The larger pool of saints that *do* have a
      Monastic 1617 track (`SanctiM/`) is in progress — see "SanctiM-track saints' Matins
-     readings" below — January and February done (19/23), ~130 candidates remain (March onward).
+     readings" below — January-March done (25/29), ~124 candidates remain (April onward).
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1429,7 +1429,18 @@ incipit line under `isGospel: true` despite not having the full pericope text. T
 file is left as-is (not wrong, just an earlier, less clean judgment call) — this convention
 applies going forward.
 
-**Not done in this pass**: the remaining ~130 SanctiM-track candidates (March onward) — same
+**March done (6/6 saints)**: `st-thomas-aquinas`, `st-frances-of-rome`, `forty-holy-martyrs`,
+`st-gregory-the-great` (Lectio7-9's Gospel+homily is generic Chair-of-Peter content copied
+verbatim into this file, unrelated to Gregory — same lessons as
+`chair-of-st-peter-at-rome.yml`'s own sourcing, not proper to this feast, so not authored
+here), `st-joseph`, `st-benedict` (Duplex I class patronal feast — the richest SanctiM case yet:
+Nocturn 2 sourced from `Sancti/03-21.txt`'s own vita per the usual pattern, but Nocturn 3 is
+**genuinely Monastic-only content not found in `Sancti/` at all** — a St. Peter Damian sermon
+preached specifically for Benedict's own feast; no `English/SanctiM/03-21.txt` exists in the
+reference engine, so `en` for that reading is this project's own translation, marked `draft`).
+`npm test`/`tsc --noEmit` both pass.
+
+**Not done in this pass**: the remaining ~124 SanctiM-track candidates (April onward) — same
 authoring shape, continue month by month.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)
