@@ -1,0 +1,130 @@
+# Matins Nocturn 2 readings for the Finding of St. Stephen, Protomartyr
+# (Aug 3) — pre-1955-but-post-1617 (no SanctiM/08-03*.txt at all).
+# web/www/horas/Latin/Sancti/08-03.txt, English/Sancti/08-03.txt.
+#
+# Lectio1-3 (Acts 7:51-54, 55-58, 59 + 8:1-2) is one continuous
+# scriptural excerpt (Stephen's own martyrdom, from Acts), no internal
+# break, combined into one reading with citation. Lectio4-5 (the finding
+# of the relics under Honorius) is a second continuous account, combined.
+# Lectio6 (St. Augustine, City of God, Bk. 22 ch. 8) is a third, distinct
+# source. Responsories are all `@Sancti/12-26` cross-references (this
+# day's proper is otherwise borrowed wholesale from St. Stephen's Dec 26
+# feast) — not transcribed here since that source file's own responsory
+# text wasn't independently pulled for this pass.
+id: finding-of-st-stephen
+readings:
+  - nocturn: 2
+    isGospel: false
+    citation: { la: "Act 7:51-54; 55-58; 59; 8:1-2", en: "Acts 7:51-54; 55-58; 59; 8:1-2" }
+    text:
+      la: >-
+        Dura cervice et incircumcisis córdibus et áuribus, vos semper Spiritui Sancto resístitis:
+        sicut patres vestri, ita et vos. Quem prophetárum non sunt persecúti patres vestri? Et
+        occidérunt eos, qui prænuntiábunt de adventu Justi, cujus vos nunc proditores et homicidæ
+        fuistis, qui accepístis legem in dispositióne Angelórum et non custodistis. Audiéntes autem
+        hæc, disseccabántur córdibus suis, et stridébant déntibus in eum.
+
+
+        Cum autem esset plenus Spíritu Sancto, inténdens in cælum, vidit glóriam Dei, et Jesum
+        stantem a dextris Dei. Et ait: Ecce video cælos apertos, et Fílium hóminis stantem a dextris
+        Dei. Exclamántes autem voce magna, continuérunt aures suas, et ímpetum fecérunt unanímiter in
+        eum. Et ejiciéntes eum extra civitátem lapidábant: et testes deposuérunt vestiménta sua secus
+        pedes adolescentis, qui vocabátur Saulus. Et lapidábant Stephanum, invocántem et dicéntem:
+        Dómine Jesu, suscipe spíritum meum.
+
+
+        Positis autem genibus, clamávit voce magna: Dómine, ne statuas illis hoc peccátum. Et cum hoc
+        dixísset, obdormívit in Dómino. Saulus autem erat consentiens neci ejus. Facta est autem in
+        illa die persecútio magna in ecclésia quæ erat Jerosolymis; et omnes dispersi sunt per
+        regiónes Judææ et Samaríæ, præter Apóstolos. Curavérunt autem Stephanum viri timorati, et
+        fecérunt planctum magnum super eum.
+      en: >-
+        You stiffnecked and uncircumcised in heart and ears, you always resist the Holy Ghost: as
+        your fathers did, so do you also. Which of the prophets have not your fathers persecuted?
+        And they have slain them who foretold of the coming of the Just One; of whom you have been
+        now the betrayers and murderers: who have received the law by the disposition of angels, and
+        have not kept it. Now hearing these things, they were cut to the heart, and they gnashed
+        with their teeth at him.
+
+
+        But he, being full of the Holy Ghost, looking up steadfastly to heaven, saw the glory of
+        God, and Jesus standing on the right hand of God. And he said: Behold, I see the heavens
+        opened, and the Son of man standing on the right hand of God. And they crying out with a
+        loud voice, stopped their ears, and with one accord ran violently upon him. And casting him
+        forth without the city, they stoned him; and the witnesses laid down their garments at the
+        feet of a young man, whose name was Saul. And they stoned Stephen, invoking, and saying:
+        Lord Jesus, receive my spirit.
+
+
+        And falling on his knees, he cried with a loud voice, saying: Lord, lay not this sin to their
+        charge. And when he had said this, he fell asleep in the Lord. And Saul was consenting to his
+        death. And at that time there was raised a great persecution against the church which was at
+        Jerusalem; and they were all dispersed through the countries of Judea, and Samaria, except
+        the apostles. And devout men took order for Stephen's funeral, and made great mourning over
+        him.
+    status: { la: verified, en: verified }
+
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Sanctórum córpora Stephani Protomártyris, Gamaliélis, Nicodémi et Abibónis, quæ diu in
+        obscúro ac sórdido loco jacúerant, Honorio imperatóre, Luciáno presbytero divínitus admónito,
+        invénta sunt prope Jerosolymam. Cui Gamaliel cum in somnis apparuísset, gravi quadam et
+        præclára senis spécie, locum jacéntium córporum commonstrávit, imperans ut Joánnem
+        Jerosolymitanum antístitem adíret, agerétque cum eo ut honestius illa córpora sepelirentur.
+
+
+        Quibus auditis Jerosolymórum antístes, finitimárum urbium epíscopis presbyterisque
+        convocatis, ad locum pergit; defossos lóculos ínvenit, unde suavíssimus odor efflabátur.
+        Cujus rei fama commóta, magna hóminum multitúdo eo convénit, multique ex variis morbis ægroti
+        ac débiles sani et íntegri domum rediérunt. Sacrum autem sancti Stephani corpus, quod summa
+        tunc celebritate in sanctam ecclésiam Sion illátum est, sub Theodosio junióre
+        Constantinópolim, inde Romam, Pelagio primo summo Pontífice, translátum, in agro Verano in
+        sepúlcro sancti Lauréntii Mártyris collocátum est.
+      en: >-
+        In the reign of the Emperor Honorius, a Priest named Lucian received a message from God, in
+        consequence of which discovery was made of the bodies of the Saints Stephen the First
+        Martyr, Gamaliel, Nicodemus, and Abibon, which had long been lying unknown and unheeded.
+        Lucian was asleep when Gamaliel appeared to him in a dream as a tall comely old man of
+        worshipful presence, told him where the bodies were lying, and bade him go to John, Patriarch
+        of Jerusalem, and deal with him that they might have more honourable burial.
+
+
+        When the Patriarch of Jerusalem heard it, he called together Bishops and Priests from the
+        neighbouring cities, and betook himself to the place, where he found the tombs hewn in the
+        rock, and a right sweet savour flowing forth from them. The thing being noised abroad, a
+        great multitude of people came together, and many that were sick and weak of diverse
+        diseases returned home whole. The sacred body of holy Stephen was then carried with great
+        pomp to the holy Church of Zion. Under the Emperor Theodosius the Younger it was taken to
+        Constantinople, and during the Popedom of Pelagius I it was brought to Rome, where it has
+        been laid in the sepulchre of the holy Martyr Lawrence in the Veranian Field.
+    status: { la: verified, en: verified }
+
+  - nocturn: 2
+    isGospel: false
+    source: "St. Augustine, Bishop of Hippo, City of God, Book 22, ch. 8"
+    text:
+      la: >-
+        Ad aquas Tibilitanas, episcopo afferénte Projecto relíquias Mártyris gloriosíssimi Stephani,
+        ad ejus memóriam veniebat magnæ multitúdinis concursus et occúrsus. Ibi cæca mulier, ut ad
+        episcopum portántem pígnora sacra ducerétur, orávit: flores, quos ferebat, dedit; recepit,
+        óculis admóvit, prótinus vidit. Stupéntibus qui áderant, præibat exsultans, viam carpens et
+        viæ ducem ulterius non requírens. Memoráti memóriam Mártyris, quæ pósita est in castello
+        Synicénsi, quod Hipponénsi coloniæ vicinum est, ejusdem loci Lucillus epíscopus, pópulo
+        præcedénte atque sequente, portábat; fístula, cujus molestia jamdiu laboraverat, et
+        familiaríssimi sui médici, qui eam secaret, opperiebátur manus, illíus piæ sarcinæ vectatióne
+        repénte sanáta est.
+      en: >-
+        When the Bishop Projectus brought some relics of that most glorious Martyr Stephen to
+        Tibilis, a great multitude came together and went out to meet the shrine. A blind woman
+        prayed to be led to the Bishop who was bearing the hallowed deposit. She laid on the relics
+        the flowers which she was carrying, took them up again, touched her eyes with them and
+        forthwith saw. She went forward rejoicing, at the head of the amazed procession, choosing her
+        own path, and needing no more that any should lead her. I remember also the shrine of this
+        same Martyr which hath been placed in the town of Synica, hard by this city of Hippo.
+        Lucillus, Bishop of that place, was carrying it, with a multitude going before and following
+        after when, all of a sudden, by bearing this hallowed burden, he was healed of the emerods,
+        from which he was even then suffering, and which were being treated by a physician, an
+        intimate friend of his, who was about to cut them.
+    status: { la: verified, en: verified }
