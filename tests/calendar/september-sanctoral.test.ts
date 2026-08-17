@@ -27,15 +27,22 @@ describe('September sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it("dates within the Nativity's own octave still exclude the real secondary saints the source names (Ss. Gorgonius, Nicomedes) -- neither is modeled yet -- but the octave itself (now modeled, see calendar/octaves.ts) correctly commemorates through it", () => {
+  it("a date within the Nativity's own octave still excludes the real secondary saint the source names (Ss. Gorgonius) -- not modeled yet -- but the octave itself (now modeled, see calendar/octaves.ts) correctly commemorates through it", () => {
     const gorgoniusDay = resolveDay('2025-09-09');
     expect(gorgoniusDay.winner.kind).toBe('temporal');
     expect(gorgoniusDay.commemorations).toEqual([
       { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary' },
     ]);
-    // Sep 15 is also day 8 of the Nativity's own octave (started Sep 8).
+  });
+
+  it('Sep 15 (day 8 of the Nativity octave) is now the Seven Sorrows of the BVM\'s own fixed day (Duplex II Classis, added per the full-year sanctoral import), which wins outright, with the Nativity octave still commemorated alongside her -- St. Nicomedes, the source\'s other named secondary for this date, still is not modeled', () => {
     const nicomedesDay = resolveDay('2025-09-15');
-    expect(nicomedesDay.winner.kind).toBe('temporal');
+    expect(nicomedesDay.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'seven-sorrows-of-the-bvm',
+      name: 'The Seven Sorrows of the Blessed Virgin Mary',
+      rank: 'duplex-2-classis',
+    });
     expect(nicomedesDay.commemorations).toEqual([
       { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary' },
     ]);

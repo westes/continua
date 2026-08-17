@@ -1,0 +1,18 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/09-17.txt` -- "Duplex;;3;;vide
+# C5" (Common of a Confessor Not a Bishop). Own real proper [Oratio].
+# Own Nocturn 2 content (St. Bonaventure's own Legenda of St. Francis,
+# ch. 13). Nocturn 1 (Lectio1-3) is plain scripture (Gal 5-6), not
+# modeled per this app's Nocturn-2/3-only convention. Nocturn 3
+# (Lectio7/9) is a direct `@Commune/C2:LectioN in 2 loco` cross-
+# reference (Common of a Martyr, since this feast borrows that Common's
+# Gospel/homily for a Cross-themed Nocturn 3) -- not this feast's own
+# content, not transcribed. No [Ant 1] of its own -- benedictusCommon/
+# minorHoursCommon fall back to the plain Common of a Confessor.
+id: stigmata-of-st-francis
+name: "The Impression of the Sacred Stigmata of St. Francis"
+rank: duplex
+common: common-of-a-confessor
+propers: "stigmata-of-st-francis"
+benedictusCommon: common-of-a-confessor
+minorHoursCommon: common-of-a-confessor

@@ -1,0 +1,17 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/09-05.txt` -- "Semiduplex;;2.2;;
+# vide C4" (Common of a Confessor Bishop). No [Oratio] of his own at
+# all in this file -- falls back to collectCommon/collectName, his own
+# [Name] section giving the declined form "Lauréntii". No Lectio7-9 --
+# defers to the Common's own Nocturn 3, not transcribed here.
+id: st-lawrence-justinian
+name: "St. Lawrence Justinian, Bishop and Confessor"
+rank: semiduplex
+common: common-of-a-confessor-bishop
+propers: null
+collectCommon: collect-c4
+collectName:
+  la: ["Lauréntii"]
+  en: ["Lawrence"]
+benedictusCommon: common-of-a-confessor-bishop
+minorHoursCommon: common-of-a-confessor-bishop

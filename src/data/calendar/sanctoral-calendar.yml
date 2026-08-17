@@ -281,10 +281,16 @@ days:
   "08-31": [st-raymond-nonnatus]
   # September — 9/12 of the pre-1955 pull. Same octave-gap exclusions as
   # August, this time around the Nativity of the BVM's own Sep 8-15
-  # octave: Ss. Gorgonius (Sep 9), Proti and Hyacinthus (Sep 11), and
-  # Nicomedes (Sep 15, the octave's own final day) are real named
-  # secondaries excluded for the same reason St. Clare was in August.
-  # St. Hadrian (Sep 8) is the one exception -- he's blocked by the
+  # octave: Ss. Gorgonius (Sep 9) and Nicomedes (Sep 15, the octave's own
+  # final day, also now the Seven Sorrows of the BVM's own fixed day)
+  # are real named secondaries still excluded for the same reason St.
+  # Clare was in August. Ss. Protus and Hyacinth (Sep 11) were also
+  # excluded here at first under that same reasoning -- wrong, corrected
+  # 2026-08 alongside the rest of the full-year sanctoral import (see
+  # ss-protus-and-hyacinth.yml): the octave-window exclusion was never a
+  # real rule, just an earlier gatekeeping habit this app has since moved
+  # away from (see vu-feedback-import-available-content memory). St.
+  # Hadrian (Sep 8) is the one exception -- he's blocked by the
   # Nativity's own day, not its octave, and that day IS already a mapped
   # sanctoral entry, so the ordinary collision engine handles him
   # correctly. The Exaltation of the Holy Cross (Sep 14) was also
@@ -311,17 +317,27 @@ days:
   # simplification (explicit user decision, 2026-08), not an oversight --
   # see st-michael.yml.
   "09-01": [st-giles, ss-twelve-brothers]
+  "09-02": [st-stephen-of-hungary]
+  "09-03": [st-pius-x]
+  "09-05": [st-lawrence-justinian]
   "09-08": [nativity-bvm, st-hadrian]
   "09-10": [st-nicholas-of-tolentino]
+  "09-11": [ss-protus-and-hyacinth]
+  "09-12": [holy-name-of-mary]
   "09-14": [exaltation-of-the-holy-cross]
+  "09-15": [seven-sorrows-of-the-bvm]
   "09-16": [ss-cornelius-and-cyprian, ss-euphemia-lucia-and-geminianus]
+  "09-17": [stigmata-of-st-francis]
+  "09-18": [st-joseph-of-cupertino]
   "09-19": [st-januarius]
   "09-20": [vigil-of-st-matthew]
   "09-21": [st-matthew]
   "09-22": [ss-maurice-and-companions]
   "09-23": [st-linus, st-thecla]
+  "09-24": [our-lady-of-ransom]
   "09-26": [ss-cyprian-and-justina]
   "09-27": [ss-cosmas-and-damian]
+  "09-28": [st-wenceslaus]
   "09-29": [st-michael]
   "09-30": [st-jerome]
   # October — 10/12 of the pre-1955 pull. Three monastic-calendar-specific

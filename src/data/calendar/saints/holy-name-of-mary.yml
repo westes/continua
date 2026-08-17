@@ -1,0 +1,15 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/09-12.txt` -- "S. Nominis
+# Beatæ Mariæ Virginis;;Duplex majus;;4;;ex C11". Own real [Oratio]
+# and own untagged [Ant 1] (shared verbatim with our-lady-of-mount-
+# carmel-antiphon.yml -- a coincidental reuse of the same formulaic
+# BVM-commemoration text already present in the reference source
+# itself, not a copy-paste error introduced here). Own Nocturn 2-3
+# content (Nocturn 3 is St. Peter Chrysologus's own homily on the
+# Annunciation, not a cross-reference). Instituted 1683 by Innocent XI
+# after the relief of Vienna.
+id: holy-name-of-mary
+name: "The Holy Name of the Blessed Virgin Mary"
+rank: duplex-majus
+common: common-of-the-bvm
+propers: "holy-name-of-mary"
