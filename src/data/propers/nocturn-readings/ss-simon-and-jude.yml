@@ -1,0 +1,66 @@
+# Matins Nocturn 2-3 readings for Ss. Simon and Jude, Apostles (Oct
+# 28) — SanctiM/10-28.txt inherits the whole day (`@Sancti/10-28`)
+# with no Nocturn 2/3 override, so this feast's own proper content is
+# sourced from the Tridentine track exactly as for a pre-1955 saint
+# (see memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/10-28.txt, English/Sancti/10-28.txt.
+#
+# Nocturn 2: Lectio4 (both Apostles' vita, single lesson — Lectio5-6
+# fall back to Common of Apostles, not proper text, so not authored
+# here).
+# Nocturn 3: Lectio7's Gospel citation (John 15:17-25) is a bare
+# incipit ("Et réliqua") with no full pericope text given, so — per
+# the pre-1955 pass's convention of not transcribing bare incipits —
+# only the homily portion is authored (not marked isGospel), a single
+# excerpt of St. Augustine's Tract 87 on John. No responsory given for
+# either reading.
+id: ss-simon-and-jude
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Simon Chananǽus, qui et Zelótes, et Thaddǽus, qui et Judas Jacóbi appellátur in
+        Evangélio, uníus ex cathólicis Epístolis scriptor; hic Mesopotámiam, ille Ægýptum
+        evangélica prædicatióne peragrávit. Póstea in Pérsidem conveniéntes, cum
+        innumerábiles fílios Jesu Christo peperíssent fidémque in vastíssimis illis
+        regiónibus et efferátis géntibus disseminássent, doctrína et miráculis, ac dénique
+        glorióso martýrio, simul sanctíssimum Jesu Christi nomen illustrárunt.
+      en: >-
+        Simon the Canaanite, called also Zelotes, went through Egypt preaching the Gospel,
+        whileas the like was done in Mesopotamia by Thaddaeus, called also in the Gospel Judas
+        the brother of James, and the writer of one of the Catholic Epistles. They met together
+        afterwards in Persia, where they begat countless children in Jesus Christ, spread the
+        faith far and wide in those lands, amid raging heathens, and glorified together by
+        their teaching and miracles, and, in the end, by a glorious martyrdom, the most holy
+        name of Jesus Christ.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Augustine, Bishop of Hippo, Tract 87 on John (on John 15:17-25)"
+    text:
+      la: >-
+        In lectióne evangélica quæ hanc antecédit, díxerat Dóminus: Non vos me elegístis; sed
+        ego elégi vos et pósui vos, ut eátis, et fructum afferátis, et fructus vester máneat:
+        ut quodcúmque petiéritis Patrem in nómine meo, det vobis. Hic autem dicit: Hæc mando
+        vobis, ut diligátis ínvicem. Ac per hoc intellégere debémus hunc esse fructum nostrum,
+        de quo ait: Ego vos elégi, ut eátis, et fructum afferátis, et fructus vester máneat. Et
+        quod adjúnxit, Ut quodcúmque petiéritis Patrem in nómine meo, det vobis, tunc útique
+        dabit nobis, si diligámus ínvicem; cum et hoc ipsum ipse déderit nobis, qui nos elégit
+        non habéntes fructum, quia non eum nos elegerámus, et pósuit nos ut fructum afferámus,
+        hoc est, ínvicem diligámus.
+      en: >-
+        In the reading from the Gospel, the last before this, the Lord had said: Ye have not
+        chosen Me, but I have chosen you, and ordained you, that ye should go, and bring forth
+        fruit, and that your fruit should remain; that whatsoever ye shall ask of the Father in
+        My Name, He may give it you. And here He saith: These things I command you, that ye
+        love one another. And by this it is that we must understand what fruit from us it is,
+        whereof He saith: I have chosen, that ye should go, and bring forth fruit, and that
+        your fruit should remain, and so the words added: That whatsoever ye shall ask of the
+        Father in My Name, He may give it you. He will give unto us when we love one another,
+        since this mutual love is itself the gift of Him Who hath chosen us when as yet we were
+        fruitless, since it hath not been we who have chosen Him, but He Who hath chosen us,
+        and ordained us, that we should go, and bring forth fruit, that is to say, should love
+        one another.
+    status: { la: verified, en: verified }

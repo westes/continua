@@ -37,7 +37,7 @@ across every hour and content type in this app.
      saints (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are now done — see
      "Pre-1955 saints' Matins readings" below. The larger pool of saints that *do* have a
      Monastic 1617 track (`SanctiM/`) is in progress — see "SanctiM-track saints' Matins
-     readings" below — January-September done (93/107), ~56 candidates remain (October onward).
+     readings" below — January-October done (102/120), ~43 candidates remain (November onward).
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1522,7 +1522,17 @@ Michael the Archangel — its SanctiM file structurally borrows from his own sep
 Apparition file but the actual Lectio content resolves back to this day's own Sancti file),
 `st-jerome`. `npm test`/`tsc --noEmit` both pass.
 
-**Not done in this pass**: the remaining ~56 SanctiM-track candidates (October onward) — same
+**October done (9/13 saints, 4 left unauthored as Common-only or no-content)**: `st-remigius`,
+`st-francis`, `ss-placid-and-companions`, `st-marcus` (missed pre-1955-pool candidate),
+`st-callistus`, `st-luke`, `st-hilarion`, `ss-chrysanthus-and-daria`, `ss-simon-and-jude`. Left
+unauthored: `st-justina` and `st-gall` (both genuinely Monastic-only — no `Sancti/` file at all
+— but their own `SanctiM` files are themselves Common-only, `vide C6`/`vide C5b`, no proper
+Lectio content to source), `ss-ursula-and-companions` (Common-only, no proper content — matches
+this file's own earlier flag in the "individually-flagged content gaps" section), and
+`vigil-of-all-saints` (Nocturn 1 only, no Nocturn 2/3 content in either track). `npm test`/`tsc
+--noEmit` both pass.
+
+**Not done in this pass**: the remaining ~43 SanctiM-track candidates (November onward) — same
 authoring shape, continue month by month.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)
