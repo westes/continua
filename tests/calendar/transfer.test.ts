@@ -77,11 +77,23 @@ describe('transfer mechanism (resolveDay integration)', () => {
       { kind: 'octave', id: 'pentecost-sunday', name: 'Pentecost' },
     ]);
 
-    // Felix doesn't reach Trinity Sunday at all now -- but Trinity Sunday
-    // is day 8 of Pentecost's own 8-day octave (the default length, not
-    // yet independently confirmed to be right for Pentecost specifically),
-    // so Pentecost's own octave commemoration still persists here.
-    expect(sunday.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-01' });
-    expect(sunday.commemorations).toEqual([{ kind: 'octave', id: 'pentecost-sunday', name: 'Pentecost' }]);
+    // Felix doesn't reach Trinity Sunday at all now. Trinity Sunday 2026
+    // (May 31) is also the Queenship of the Blessed Virgin Mary's own
+    // fixed day (Duplex II Classis) -- since this app models Trinitytide
+    // Sundays as plain `ordinary-sunday` (no special first-class standing
+    // of their own, see temporal-categories.yml), a Duplex+ sanctoral
+    // feast wins outright here per the normal ordinary-Sunday rule, with
+    // both the day's own temporal id and Pentecost's octave commemorated
+    // in return.
+    expect(sunday.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'queenship-of-the-bvm',
+      name: 'The Queenship of the Blessed Virgin Mary',
+      rank: 'duplex-2-classis',
+    });
+    expect(sunday.commemorations).toEqual([
+      { kind: 'temporal', id: 'post-pentecost-01' },
+      { kind: 'octave', id: 'pentecost-sunday', name: 'Pentecost' },
+    ]);
   });
 });

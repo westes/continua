@@ -11,13 +11,16 @@ describe('getDayLabel — ordinal temporal label', () => {
   });
 
   it('names the anchor day itself, not "day after itself"', () => {
-    // Trinity Sunday no longer carries a sanctoral commemoration of its
-    // own (St. Felix I, May 30, is now commemorated in place on his own
-    // day within Pentecost's octave instead of transferring here — see
-    // calendar/octaves.ts and tests/calendar/transfer.test.ts), so this
-    // is back to a plain temporal label; the "feast — temporal" combined
-    // form is covered separately below with synthetic data.
-    expect(getDayLabel(resolveDay('2026-05-31'))).toBe('Trinity Sunday');
+    // Trinity Sunday 2026 (May 31) is now also the Queenship of the
+    // Blessed Virgin Mary's own fixed day (Duplex II Classis, added per
+    // the full-year sanctoral import) — since this app models Trinitytide
+    // Sundays as plain `ordinary-sunday` with no special first-class
+    // standing of their own, the Duplex+ sanctoral feast wins outright
+    // here per the normal ordinary-Sunday rule (see
+    // tests/calendar/transfer.test.ts's own May 31 case for the full
+    // winner/commemorations breakdown), so the label now reflects her,
+    // not Trinity Sunday itself.
+    expect(getDayLabel(resolveDay('2026-05-31'))).toBe('The Queenship of the Blessed Virgin Mary');
     expect(getDayLabel(resolveDay('2026-04-05'))).toBe('Easter');
     expect(getDayLabel(resolveDay('2026-02-18'))).toBe('Ash Wednesday');
   });
@@ -40,7 +43,11 @@ describe('getDayLabel — ordinal temporal label', () => {
   });
 
   it('falls back to weekday + season name for seasons with no ordinal convention modeled', () => {
-    expect(getDayLabel(resolveDay('2026-05-15'))).toContain('in Ascensiontide');
+    // 2026-05-15 is now St. John Baptist de la Salle's own fixed day
+    // (Duplex, added per the full-year sanctoral import) -- moved to
+    // May 21, still within Ascensiontide 2026 (May 14-23) and still
+    // free of any sanctoral entry.
+    expect(getDayLabel(resolveDay('2026-05-21'))).toContain('in Ascensiontide');
   });
 });
 
@@ -99,7 +106,14 @@ describe('getDayLabel — active octave', () => {
   });
 
   it("a season's own named anchor day outranks an active octave, even though Trinity Sunday is technically also day 8 of Pentecost's own octave", () => {
-    expect(getDayLabel(resolveDay('2026-05-31'))).toBe('Trinity Sunday');
+    // Not 2026 (May 31): that year's Trinity Sunday now coincides with the
+    // Queenship of the Blessed Virgin Mary's own fixed day (Duplex II
+    // Classis, added per the full-year sanctoral import), which wins
+    // outright and would muddy this specifically octave-vs-anchor-day
+    // check (see tests/calendar/transfer.test.ts's own May 31 case for
+    // that). 2023's Trinity Sunday (June 4) has no sanctoral entry at all,
+    // isolating the octave interaction cleanly.
+    expect(getDayLabel(resolveDay('2023-06-04'))).toBe('Trinity Sunday');
   });
 
   it("a temporal day with real standing of its own (not ordinary-feria) never shows an octave name at all, even with one active -- live-verified counterexample: the Christmas Octave's own stack (Dec 30) titles itself off the Sunday, never any of the four octaves layered on top of it", () => {

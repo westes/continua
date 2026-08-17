@@ -1,0 +1,23 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/05-31.txt` -- "Beatæ Mariæ
+# Virginis Reginæ;;Duplex II classis;;5.1;;ex C11" (Common of Feasts
+# of the BVM). Instituted 1954 by Pius XII's encyclical "Ad cæli
+# Reginam" -- her own file has full, real, proper content throughout:
+# own [Oratio], own [Ant 1] (not a Common substitution, unlike
+# presentation-of-the-bvm.yml), and a full nine-lesson Matins office of
+# her own. Nocturn 1 (Sir 24, plain scripture) isn't modeled, per this
+# app's established convention (getNocturnReadings only ever carries
+# Nocturn 2/3 across the whole calendar). Nocturn 2 (Lectio4-6): a
+# three-part patristic/magisterial anthology (Peter Canisius,
+# Athanasius via Canisius, Pius XII's "Ad cæli Reginam" itself) rather
+# than one continuous narrative -- still combined into a single
+# reading, matching how this app already treats other multi-source
+# Nocturn 2 content. Nocturn 3: her own Gospel citation ends "Et
+# réliqua"/"And so on" with no full pericope given -- per the
+# bare-incipit convention, only the homily (Lectio7-9, St. Bonaventure)
+# is authored, isGospel: false, no citation field.
+id: queenship-of-the-bvm
+name: "The Queenship of the Blessed Virgin Mary"
+rank: duplex-2-classis
+common: common-of-the-bvm
+propers: "queenship-of-the-bvm"
