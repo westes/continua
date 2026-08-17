@@ -1,0 +1,14 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/03-25.txt` -- "In Annuntiatione
+# Beatæ Mariæ Virginis;;Duplex I classis;;6.92;;ex C11". Own proper
+# [Oratio]/[Ant 1]/Nocturn 2-3 content of her own (real, unique text
+# throughout), not a bare Common fallback -- same pattern as
+# our-lady-of-the-snows.yml's siblings (assumption, immaculate-
+# conception, nativity-bvm). One of the four "fixed BVM feast, excluded
+# per the usual convention" items literally named alongside Purification
+# in this app's original stale exclusion note.
+id: annunciation
+name: "The Annunciation of the Blessed Virgin Mary"
+rank: duplex-1-classis
+common: common-of-the-bvm
+propers: "annunciation"

@@ -1,0 +1,13 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/03-28.txt` -- "vide C5;;Semiduplex;;2.2;;".
+# Own proper [Oratio] and Nocturn 2-3 content. No [Ant 1] of its own, so
+# the Benedictus antiphon falls back to Common of a Confessor (C5),
+# matching st-alexius.yml/st-john-bosco.yml/st-john-of-god.yml/
+# st-gabriel-of-our-lady-of-sorrows.yml.
+id: st-john-capistrano
+name: "St. John Capistrano, Confessor"
+rank: semiduplex
+common: common-of-a-confessor
+propers: "st-john-capistrano"
+minorHoursCommon: common-of-a-confessor
+benedictusCommon: common-of-a-confessor
