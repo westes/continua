@@ -1,0 +1,41 @@
+# Matins Nocturn 2 reading for St. George, Martyr (Apr 23) —
+# SanctiM/04-23.txt inherits the whole day (`@Sancti/04-23`) with no
+# Nocturn 2/3 override, so this saint's own content is sourced from the
+# Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints); simplex-feast
+# single lesson, Lectio94.
+# web/www/horas/Latin/Sancti/04-23.txt, English/Sancti/04-23.txt.
+# Data bug in the reference engine's own Latin file: the `[Lectio94]`
+# section under `Latin/Sancti/04-23.txt` actually contains English
+# prose, not Latin (same kind of transcription bug as `st-anicetus` in
+# the pre-1955 pass — see memory vu-matins-pre1955-saints). This
+# project's own Latin translation is used instead, marked `draft`; the
+# English (the text genuinely present in the source, just filed under
+# the wrong heading) is `verified`. No responsory given in the source.
+id: st-george
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Martyr Georgius apud Orientáles sancti et gloriósi Archimártyris título appellátur. Sub
+        Diocletiáno persecutóre, propter Christum, gloriósa morte occúbuit. Mox pace Ecclésiæ
+        reddíta sub Constantíno, mártyris memória celebrári cœpit, et ecclésiæ sub ejus
+        invocatióne exstrúctæ sunt Lyddæ in Palæstína et Constantinópoli. Inde ingens apud
+        fidéles erga eum stúdium exórtum est, primum in ómnibus Oriéntis pártibus, deínde in
+        Occidénte. Antíquitus, cum exércitus christiáni pugnatúri essent, sanctos Geórgium,
+        Mauritium et Sebastiánum patrónos invocáre solébant. Jam olim in Anglia peculiári honóre
+        sanctus mártyr Geórgius colebátur, quem Benedíctus décimus quartus Póntifex máximus
+        totíus regni patrónum declarávit.
+      en: >-
+        The martyr George beareth among the Easterns the title of the holy and glorious
+        Archmartyr. He suffered a glorious death, for Christ's sake, in the persecution under
+        Diocletian. When peace was given to the Church soon after, under Constantine, the memory
+        of the martyr began to be celebrated, and churches were built under his invocation at
+        Lydda in Palestine and at Constantinople. For thenceforth an extraordinary enthusiasm with
+        regard to him grew up among the faithful, first in all parts of the East, and afterwards
+        in the West. Of old time, when Christian armies had been about to fight, they have been
+        used to call as patrons upon holy George, Maurice, and Sebastian. There had been already
+        special honour paid in England to the holy martyr George, and the supreme Pontiff Benedict
+        XIV declared him the protector of the whole kingdom.
+    status: { la: draft, en: verified }

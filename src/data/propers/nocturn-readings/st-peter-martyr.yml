@@ -1,0 +1,75 @@
+# Matins Nocturn 2 reading for St. Peter Martyr (of Verona), Martyr
+# (Apr 30 on this app's own calendar) — an off-date sourcing case: the
+# general Tridentine calendar keeps Peter Martyr on Apr 29 instead
+# (this app's own Apr 29 slot going to St. Robert and St. Catherine of
+# Siena — see st-catherine-of-siena.yml's note on this same date
+# swap). No `SanctiM/04-29*.txt` matches Peter Martyr at all (the two
+# variants found there, `04-29M.txt` and `04-29oM.txt`, are Ss.
+# Odo/Maiolus/Odilo/Hugh and St. Robert respectively — neither is
+# Peter Martyr) — a missed pre-1955-pool candidate rather than a
+# genuine SanctiM case (see memory vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/04-29.txt, English/Sancti/04-29.txt.
+# Lectio4-6 combined into one reading, one continuous vita, no genuine
+# source break. No responsory given in the source.
+id: st-peter-martyr
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Petrus, Veronæ paréntibus Manichæórum hæresi infectis natus, ab ipsa pæne infántia
+        contra hæreses pugnávit. Puer annórum septem, cum scholas frequentaret, aliquándo a
+        patruo hæretico interrogátus quid tandem in iis didicísset, christianæ fidei symbolum se
+        didicisse respóndit; neque ullis umquam patris patruíve blanditiis aut minis a fidei
+        constanti dimoveri pótuit. Adoléscens Bonóniam studiórum causa venit; ubi, a Spíritu
+        Sancto ad sublimioris vitæ formam vocatus, ordinis Prædicatórum institutum suscépit.
+
+
+        Magno virtútum splendore in religióne eluxit: corpus et ánimum ab omni impuritate ita
+        custodívit, ut nullius mortíferi peccáti labe se inquinátum umquam sénserit. Carnem
+        jejuniis et vigiliis macerábat; mentem divinis contemplatiónibus exercebat. In salúte
+        animárum procuranda assidue versabátur; peculiáris gratiæ dono hæreticos ácriter
+        confutábat. Tantam in concionando vim hábuit, ut innumerábilis hóminum multitúdo ad eum
+        audiéndum conflúeret, multique ad pœniténtiam converteréntur.
+
+
+        Tanto fidei ardore incénsus erat, ut pro ea mortem subire optaret, eamque a Deo grátiam
+        enixe precarétur. Itaque hæretici necem, quam is paulo ante concionando prædixerat, illi
+        intulérunt. Nam cum sanctæ Inquisitiónis munus géreret, illum Como Mediolanum
+        redeuntem ímpius sicarius semel atque íterum in cápite gládio vulnerávit; jamque pene
+        mórtuus, symbolórum fidei, quam infans virili fortitúdine conféssus fuerat, in ipso
+        supremo spíritu pronuntiávit; iterúmque látera mucrone transverberatus, ad martyrii
+        palmam migrávit in cælum, anno salútis millesimo ducentésimo quinquagesimo secundo. Quem
+        multis, illustrem miraculis Innocentius quartus anno sequénti sanctórum Mártyrum número
+        adscripsit.
+      en: >-
+        Peter was born at Verona, of parents polluted with the Manichaean heresy, but he himself
+        began his lifelong strife against error when he was but a little child. When he was seven
+        years old he went to school, and was asked by his heretic uncle what he learnt there; he
+        answered that he had learnt the Christian Creed, and neither his father nor his uncle were
+        ever able to shake his constancy in the faith, either by cajolements or threats. When he
+        was a young lad he went to Bologna to study, and there he was called by the Holy Ghost to
+        an higher state of life, and entered the Order of Friars Preachers, at fifteen years of
+        age.
+
+
+        He was marked by great perfection as a Friar; so watchful was he over the purity of his
+        body and soul, that he never felt himself defiled by a mortal sin. He chastened his body
+        by fasting and watching, and ennobled his soul by the contemplation of the things of God.
+        He was constantly busied in works for furthering the salvation of souls, and had a
+        peculiar gift of grace for clearly convincing heretics. Such was his power as a preacher,
+        that countless crowds were drawn together to hear him, and many were moved to repentance.
+
+
+        The faith which was in him burnt so hotly, that he longed to seal his confession with his
+        blood, and oftentimes he earnestly besought from God the grace to do so. It was but a
+        little while before the heretics murdered him, that he foretold, in preaching, his own
+        approaching death. While he was intrusted with the duties of the Holy Inquisition, he was
+        returning from Como to Milan, when an ungodly ruffian assailed him and wounded him once
+        and again in the head with a sword. Peter, to whom these blows were nearly fatal, began
+        with his last breath to recite that Profession of the Faith, to which as a little child he
+        had clung with such manly courage, but the murderer thrust the weapon into his side, and
+        he passed away to receive a Martyr's palm in heaven, in the year of salvation 1252. In the
+        following year, Innocent IV., seeing by how many miracles God had been pleased to glorify
+        him, added his name to the sacred roll of Martyrs.
+    status: { la: verified, en: verified }

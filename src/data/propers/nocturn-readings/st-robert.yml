@@ -1,0 +1,108 @@
+# Matins Nocturn reading for St. Robert of Molesme, Abbot, founder of
+# Cîteaux (Apr 29) — a genuine Monastic-only saint: no `Sancti/04-29*.txt`
+# names him at all (that plain file is St. Peter Martyr — see
+# `st-peter-martyr.yml`'s own note on the date swap between this app's
+# calendar and the general Tridentine one); his own proper vita exists
+# only at web/www/horas/Latin/SanctiM/04-29oM.txt. Lectio1-4 (Nocturn
+# 1) fall back to Common of a Confessor; Lectio5-8 are his own vita
+# (the founding of Cîteaux), one continuous account, combined into a
+# single reading, no genuine source break.
+# No English/SanctiM/04-29oM.txt exists in the reference engine at
+# all, so `en` is this project's own translation, marked `draft` per
+# vu-prefer-text-over-missing. Two evident OCR slips in the Latin
+# source ("matri su@" for "matri suæ"; "ad quibusdam Eremitis" for "a
+# quibusdam Eremitis") silently corrected in transcription. No
+# responsory given in the source.
+id: st-robert
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Robertus in Campania, nobilibus ortus parentibus, cum matri suæ de illo prægnanti, Dei
+        Mater apparuisset, et digitum ejus annulo subarrasset dicens, velle, ut suus esset
+        sponsus filius, quem in utero portabat: quod fuit causa, ut omnia sua Monasteria ipsius
+        Dei Matris nomini consecrarentur: annum agens undecimum apud sanctum Petrum de Cella
+        suscepit habitum regularem. Ubi jejuniis, et orationibus vacans nocte, et die gratum Deo
+        exhibebat obsequium, carnem spiritui, spiritum Creatori subjiciens. Ipso sic disponente,
+        a Monachis illius Monasterii electus in Priorem, a Tornodorensibus in Abbatem cooptatur.
+
+
+        Postea a quibusdam Eremitis fuit rogatus, ut idem munus super eis admitteret; quorum
+        votis satisfecisset, nisi Tornodorenses Monachi reclamassent. Dimittens nuntios spem
+        illis certam dedit se quam cito facultas tribueretur ei a Domino, ad eos profecturum.
+        Assumptis posteà duobus sociis, iit ad nemus, cujus nomen Molismus erat, ubi propriis
+        manibus laborantes, ex ramis arborum domicilia, et oratorium construxerunt, in eoque
+        Domino salutares hostias, et sacrificium contriti cordis offerebant. Sed cum maxime
+        desideraret ubicumque servi Dei reperiebantur, ipse quoque reperiri, venit ad locum
+        Hauz, et devote ab istis Monachis susceptus, paulo post Abbatem illum elegerunt.
+
+
+        De suo tamen secessu Molismenses contristati Summum Pontificem adjerunt; ejusque
+        auctoritate freti virum Dei revocavere Molismum, in quo aliqui, ut Albericus, et
+        Stephanus, et alii duo, cum Eremiticam vitam appeterent, ad locum, Vivicus dictum
+        profecti sunt; sed ab illo pulsi, ad sylvam Cistertium vocatam, devenerunt, ubi ædificato
+        Oratorio in honorem Beatæ Mariæ, perseveraverunt. Audiens autem beatus Robertus sanctam
+        ipsorum conversationem, assumptis secum vigintiduobus monachis perrexit ad eos, ut sancti
+        eorum propositi esset particeps, et adjutor, a quibuscum summa devotione susceptus,
+        eisdem aliquandiu paterna solicitudine præfuit.
+
+
+        Tanto pastore destitui ægre ferentes Monachi Molismi, Summum Pontificem adjerunt, ut
+        beatum Robertum Molismum regredi cogeret. Annuens eis pontifex Cabilonensi Episcopo
+        scripsit, quatenus alio Abbate Cisterciensibus ordinato, Robertum cogeret reverti
+        Molismum. Dispositis ergo quæ ad observantiam, secundum regulam sancti Benedicti
+        pertinebant, Abbatem eis loco sui præfecit Albericum, et eo mortuo Stephanum subrogavit.
+        Sicque novellæ illius plantationis institutor existens beatus Robertus, cum utriusque
+        Monasterii, Molismensis scilicet, et Cisterciensis, regimen haberet, Molismum secundo
+        rediit. Tandem cum jam suum obitum appeteret, ejus horam illi Dominus revelavit, et anno
+        ætatis suæ nonagesimotertio, clarus miraculis spiritum transmisit ad cælos, tertio
+        Kalendas Maii, anno Domini millesimo nonagesimo octavo.
+      en: >-
+        Robert was born in Champagne of noble parents; when his mother was with child of him, the
+        Mother of God appeared to her, and betrothed her finger with a ring, saying that she
+        willed the son she was carrying in her womb to be her own spouse — for which cause all his
+        monasteries were consecrated to the name of that same Mother of God. At the age of eleven
+        he took the religious habit at the monastery of Saint-Pierre-de-Cella. There, devoting
+        himself to fasting and prayer by night and by day, he rendered service pleasing to God,
+        subjecting the flesh to the spirit, and the spirit to the Creator. By God's own disposing
+        he was chosen Prior by the monks of that monastery, and afterwards co-opted Abbot by
+        those of Tonnerre.
+
+
+        Afterwards he was asked by certain hermits to take up the same office over them; whose
+        wishes he would have granted, had not the monks of Tonnerre protested. Sending back their
+        messengers, he gave them sure hope that he would come to them as soon as the Lord should
+        grant him the means. Later, taking two companions with him, he went to the forest called
+        Molesme, where, labouring with their own hands, they built dwellings and an oratory out
+        of the branches of trees, and there offered to the Lord saving sacrifices and the
+        sacrifice of a contrite heart. But as he greatly desired that, wherever servants of God
+        were to be found, he himself might also be found among them, he came to the place called
+        Aux, and being devoutly received by those monks, was shortly afterwards chosen their
+        Abbot.
+
+
+        The monks of Molesme, grieved at his withdrawal, went to the Supreme Pontiff; and,
+        relying on his authority, recalled the man of God to Molesme. Meanwhile certain of the
+        brethren — Alberic, Stephen, and two others — desiring the eremitical life, set out for
+        the place called Vivicus; but being driven from there, they came to the forest called
+        Cîteaux, where, having built an Oratory in honour of the Blessed Mary, they persevered.
+        When blessed Robert heard of their holy manner of life, he took with him twenty-two monks
+        and went to join them, that he might share in and assist their holy purpose; and, being
+        received by them with the greatest devotion, he governed them for a time with fatherly
+        solicitude.
+
+
+        The monks of Molesme, taking it ill to be deprived of so great a shepherd, went again to
+        the Supreme Pontiff, that he might compel blessed Robert to return to Molesme. The
+        Pontiff, granting their request, wrote to the Bishop of Châlons that, another Abbot
+        having been ordained for the Cistercians, he should compel Robert to return to Molesme.
+        Having therefore settled what pertained to the observance according to the Rule of St.
+        Benedict, he set Alberic over them in his own place as Abbot, and upon his death Stephen
+        succeeded him. And so blessed Robert, having been the founder of that new planting, while
+        holding the government of both monasteries — that of Molesme, and that of Cîteaux —
+        returned a second time to Molesme. At length, when his death drew near, the Lord revealed
+        to him the hour of it, and in the ninety-third year of his age, renowned for miracles, he
+        sent forth his spirit to heaven, on the third day before the Kalends of May, in the year
+        of the Lord one thousand ninety-eight.
+    status: { la: verified, en: draft }

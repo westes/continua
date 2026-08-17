@@ -37,7 +37,7 @@ across every hour and content type in this app.
      saints (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are now done — see
      "Pre-1955 saints' Matins readings" below. The larger pool of saints that *do* have a
      Monastic 1617 track (`SanctiM/`) is in progress — see "SanctiM-track saints' Matins
-     readings" below — January-March done (25/29), ~124 candidates remain (April onward).
+     readings" below — January-April done (34/38), ~115 candidates remain (May onward).
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1440,7 +1440,22 @@ preached specifically for Benedict's own feast; no `English/SanctiM/03-21.txt` e
 reference engine, so `en` for that reading is this project's own translation, marked `draft`).
 `npm test`/`tsc --noEmit` both pass.
 
-**Not done in this pass**: the remaining ~124 SanctiM-track candidates (April onward) — same
+**April done (9/9 saints)**: `st-leo-i`, `ss-tiburtius-valerian-and-maximus` (missed
+pre-1955-pool candidate — the date's only SanctiM file belongs to St. Justin, who shares Apr 14
+and isn't sourced this way), `st-george` (a reference-engine data bug: `Sancti/04-23.txt`'s own
+`[Lectio94]` Latin section actually contains English prose — same kind of bug as `st-anicetus`
+in the pre-1955 pass — so `la` here is this project's own translation, marked `draft`;
+`en` is the source text, genuinely present just filed under the wrong heading, `verified`),
+`st-mark`, `ss-cletus-and-marcellinus`, `st-vitalis`, `st-robert` (genuinely Monastic-only, no
+`Sancti/04-29*.txt` at all; no English source translation exists either, so `en` is this
+project's own translation, `draft`), `st-catherine-of-siena` and `st-peter-martyr` (a newly
+found **date-swap wrinkle**: this app's calendar has Catherine on Apr 29 and Peter Martyr on
+Apr 30, the *opposite* of the general Tridentine calendar's own Apr 29/Apr 30 pair — both
+sourced from their real, off-date Tridentine files, the same off-date pattern as St. Paul the
+Hermit in the pre-1955 pass; Peter Martyr in particular has no genuine SanctiM match at either
+date, so also a missed pre-1955-pool candidate). `npm test`/`tsc --noEmit` both pass.
+
+**Not done in this pass**: the remaining ~115 SanctiM-track candidates (May onward) — same
 authoring shape, continue month by month.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)

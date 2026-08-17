@@ -1,0 +1,92 @@
+# Matins Nocturn 2 readings for Ss. Cletus and Marcellinus, Popes and
+# Martyrs (Apr 26) — SanctiM/04-26.txt inherits the whole day
+# (`@Sancti/04-26`) with no Nocturn 2/3 override, so this feast's own
+# proper content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints). A second SanctiM variant
+# (`SanctiM/04-26M.txt`) demotes this to a Cletus-only commemoration,
+# the same "Monastic office narrows a joint feast" pattern already
+# seen for `ss-vincent-and-anastasius.yml` — real proper text about
+# both martyrs is used here per vu-prefer-text-over-missing, not the
+# rank-driven demotion.
+# web/www/horas/Latin/Sancti/04-26.txt, English/Sancti/04-26.txt.
+# Lectio4 (Cletus's own vita) and Lectio5 (Marcellinus's, a genuinely
+# distinct martyr) kept split; Lectio6 (St. Ambrose's sermon on the
+# Easter-season martyrs generally) is its own distinct source, kept
+# separate too. No responsory given in the source.
+id: ss-cletus-and-marcellinus
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Cletus Romanus, patre Æmiliano, de regione quinta, e vico Patricio, imperatoribus
+        Vespasiano et Tito, Ecclesiam gubernavit. Is ex præcepto Principis Apostolorum in Urbe
+        viginti quinque presbyteros ordinavit. Primus in litteris verbis illis usus est: Salutem
+        et apostolicam benedictionem. Qui Ecclesia optime constituta, cum ei præfuísset annos
+        duodecim, menses septem, dies duos, Domitiano imperatore, secunda post Neronem
+        persecutione, martyrio coronatus est, et in Vaticano juxta corpus beati Petri sepultus.
+      en: >-
+        Cletus was a Roman, the son of Emilian, of the Fifth Region of the city, and the street
+        called Noble. He ruled the Church in the time of the Emperors Vespasian and Titus. In
+        accordance with the precept of the Prince of the Apostles He ordained twenty-five Priests
+        for the city. He was the first Pope who made use in his letters of the phrase "Health and
+        Apostolic Benediction." When he had ruled the Church for twelve years, seven months, and
+        two days, and brought it into an excellent state of order, in the reign of the Emperor
+        Domitian, and the second persecution since the time of Nero, he was crowned with
+        martyrdom, and buried on the Vatican mount, hard by the body of blessed Peter.
+    status: { la: verified, en: verified }
+
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Marcellinus Romanus, ab anno ducentesimo nonagesimo sexto ad annum trecentesimum quartum
+        in immani imperatoris Diocletiani persecutione Ecclesiæ præfuit. Multas pertulit
+        angustias ob improbam eorum severitatem, qui eum redarguebant de nimia indulgentia erga
+        lapsos in idololatriam, quæque causa fuit, ut per calumniam infamatus fuerit, quasi thus
+        idolis adhibuisset. Verum hic beatus Pontifex in confessione fidei, una cum tribus aliis
+        Christianis, Claudio, Cyrino et Antonino, capite plexus est. Quorum projecta corpora, cum
+        triginta sex dies jussu imperatoris sepultura caruissent, beatus Marcellus a sancto Petro
+        in somnis admonitus, cum presbyteris et diaconis, hymnis et luminibus adhibitis,
+        honorifice sepelienda curavit in cœmeterio Priscillæ via Salaria. Rexit Ecclesiam annos
+        septem, menses undecim, dies viginti tres: quo tempore fecit ordinationes duas mense
+        Decembri, quibus creavit presbyteros quatuor, episcopos per diversa loca quinque.
+      en: >-
+        Marcellinus was a Roman; he ruled the Church from the year 296 to the year 304, during the
+        savage persecution which was ordered by the Emperor Diocletian. He suffered through the
+        false severity of those who blamed him as being too indulgent toward them who had fallen
+        into idolatry, and for this reason also hath been slandered to the effect that he himself
+        burnt incense to idols; but this blessed Pope, on account of his confession of the faith,
+        was put to death along with three other Christians, whose names are Claudius, Cyrinus, and
+        Antoninus. At the command of the Emperor their bodies were cast out unburied, and lay so
+        for thirty-six days. At the end of that time St. Peter appeared in a dream to Blessed
+        Marcellus, and in obedience to his command the said Marcellus went with certain Priests
+        and Deacons, singing hymns, and carrying lights, and buried these four bodies honourably
+        in the Cemetery of Priscilla upon the Salarian Way. Marcellinus ruled the Church for seven
+        years, eleven months, and twenty-three days. During this time he held two Advent
+        ordinations, and ordained at them four Priests, and five Bishops for diverse Sees.
+    status: { la: verified, en: verified }
+
+  - nocturn: 2
+    isGospel: false
+    source: "St. Ambrose, Bishop of Milan, Sermon 22"
+    text:
+      la: >-
+        Dignum et congruum est, fratres, ut post lætitiam Paschæ, quam in Ecclesia celebravimus,
+        gaudia nostra cum sanctis Martyribus conferamus: et iis annuntiemus Dominicæ
+        resurrectionis gloriam, qui consortes sunt Dominicæ passionis. Qui enim socii sunt
+        contumeliæ, debent et participes esse lætitiæ. Ita enim dicit beatus Apostolus: Sicut
+        socii passionum estis, et resurrectionis eritis; si tolerabimus, inquit, et
+        conregnabimus. Qui ergo toleraverunt mala propter Christum, debent et gloriam habere cum
+        Christo.
+      en: >-
+        Dearly beloved brethren, it is very meet and right that after the gladness of Easter,
+        which we have celebrated in the Church, we should mingle our own joy with the joy of the
+        holy Martyrs; yea, that we should tell of the glory of the Lord's rising again, to them
+        that have been made partakers of the Lord's sufferings. It truly must needs be that they
+        which have been partakers of His sufferings, should be also of His joy. For thus saith the
+        blessed Apostle: As ye are partakers of the sufferings, so shall ye be also of the
+        consolation. And again: If we suffer, we shall also reign with Him. He, therefore, that
+        endureth sorrow for Christ, must needs also have glory with Christ.
+    status: { la: verified, en: verified }
