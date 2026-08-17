@@ -37,7 +37,7 @@ across every hour and content type in this app.
      saints (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are now done — see
      "Pre-1955 saints' Matins readings" below. The larger pool of saints that *do* have a
      Monastic 1617 track (`SanctiM/`) is in progress — see "SanctiM-track saints' Matins
-     readings" below — January-May done (46/51), ~103 candidates remain (June onward).
+     readings" below — January-June done (58/64), ~91 candidates remain (July onward).
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1471,7 +1471,20 @@ later saint" wrinkle). Left unauthored: `st-romanus-abbot` — turns out to have
 pre-1955 pass), but it carries no Lectio content at all, only `vide C5b` (Common of a
 Confessor) — Common-only, not a gap. `npm test`/`tsc --noEmit` both pass.
 
-**Not done in this pass**: the remaining ~103 SanctiM-track candidates (June onward) — same
+**June done (12/13 saints, 1 left unauthored as no-proper-content)**:
+`ss-marcellinus-peter-and-erasmus`, `ss-primus-and-felicianus`, `st-barnabas`,
+`st-basil-the-great`, `ss-vitus-modestus-and-crescentia`, `ss-mark-and-marcellian` (missed
+pre-1955-pool candidate), `nativity-of-st-john-the-baptist`, `st-william-abbot` (a genuine
+Monastic-only vita exists too, but its content is essentially identical to the Tridentine
+track's own account and only the Tridentine track has an English translation, so sourced from
+there instead), `ss-john-and-paul`, `st-leo-ii` (off-date, like St. Paul the Hermit in the
+pre-1955 pass — the general calendar keeps him on Jul 3, not Jun 28), `ss-peter-and-paul`
+(Duplex I class), `commemoration-of-st-paul`. Left unauthored: `vigil-of-st-john-the-baptist` —
+its Tridentine file has only a Nocturn 1 (`Lectio1-3`, scripture) and no Nocturn 2/3 content at
+all in either track, so nothing to source, same category as the pre-1955 pass's Common-only
+exceptions but for a Vigil rather than a Common fallback. `npm test`/`tsc --noEmit` both pass.
+
+**Not done in this pass**: the remaining ~91 SanctiM-track candidates (July onward) — same
 authoring shape, continue month by month.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)

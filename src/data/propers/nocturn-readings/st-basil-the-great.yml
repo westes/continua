@@ -1,0 +1,148 @@
+# Matins Nocturn 2-3 readings for St. Basil the Great, Bishop,
+# Confessor, Doctor (Jun 14) — SanctiM/06-14.txt inherits the whole day
+# (`@Sancti/06-14`) with no Nocturn 2/3 override, so this saint's own
+# content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/06-14.txt, English/Sancti/06-14.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous vita,
+# no genuine source break.
+# Nocturn 3: Lectio7's Gospel citation (Luke 14:26-35) quotes only the
+# opening sentence before "Et réliqua", not the full pericope, so —
+# per the pre-1955 pass's convention of not transcribing bare incipits
+# — only the homily portion is authored (not marked isGospel),
+# combined with Lectio8-9 as one continuous excerpt of St. Basil's own
+# Rule. No responsory given for either reading.
+id: st-basil-the-great
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Basilíus, nobilis Cáppadox, Athénis una cum Gregório Nazianzéno, ejus amicíssimo,
+        sæculáribus lítteris, deínde in monastério sacris mirabíliter erudítus, eum brevi cursum
+        fecit ad omnem doctrínæ et morum excelléntiam, ut inde Magni cognómen invénerit. Is ad
+        prædicándum Jesu Christi Evangélium in Pontum accersítus, eam provínciam, a christiánis
+        institútis aberrántem, ad viam salútis revocávit. Mox ab Eusébio Cæsaréæ epíscopo ad
+        erudiéndam eam civitátem adjútor adhibétur: in cujus locum póstea succéssit. Is Fílium
+        Patri consubstantiálem esse in primis deféndit, ac Valéntem imperatórem, sibi irátum,
+        miráculis ádeo flexit, ut, incumbéntem ad voluntátem ejiciéndi ipsum in exsílium, a
+        senténtia discédere coégerit.
+
+
+        Nam et Valéntis sella, in qua factúrus decrétum de ejiciéndo e civitáte Basilío sedére
+        volébat, confrácta est. Et tribus ab eo cálamis adhíbitis ad scribéndam exsílii legem,
+        nullus eórum réddidit atraméntum; et, cum nihilóminus in propósito scribéndi ímpium
+        decrétum persísteret, ipsíus déxtera, dissolútis nervis, tota contrémuit. His commótus
+        Valens chartam utráque manu conscídit. Ea autem nocte, quæ ad deliberándum Basilío data
+        est, Valéntis uxor íntimis est cruciáta dolóribus, et únicus fílius in gravem morbum
+        íncidit. Quibus ille pertérritus, iniquitátem suam recognóscens, Basilíum accérsit, quo
+        præsénte, puer cœpit convaléscere; verum, vocátis a Valénte ad viséndum púerum
+        hæréticis, paulo post móritur.
+
+
+        Abstinéntia et continéntia fuit admirábili; una túnica conténtus erat: in jejúnio
+        servándo diligentíssimus, in oratióne assíduus, in qua sæpe totam noctem consumébat.
+        Virginitátem perpétuo cóluit. Monastériis exstrúctis, ita monachórum institútum
+        temperávit, ut solitáriæ atque actuósæ vitæ utilitátes præcláre simul conjúngeret. Multa
+        erudíte scripsit; ac nemo, teste Gregório Nazianzéno, sacræ Scriptúræ libros vérius aut
+        ubérius explicávit. Obiit Kaléndis Januárii, cum tantum spíritu vivens, præter ossa et
+        pellem, nulla prætérea córporis parte constáre viderétur.
+      en: >-
+        This Basil was a noble Cappadocian who studied earthly learning at Athens, in company
+        with Gregory of Nazianzus, to whom he was united in a warm and tender friendship. He
+        afterwards studied things sacred in a monastery, where he quickly attained an eminent
+        degree of excellence in doctrine and life, whereby he gained to himself the surname of the
+        Great. He was called to Pontus to preach the Gospel of Christ Jesus, and brought back into
+        the way of salvation that country which before had been wandering astray from the rules
+        of Christian discipline. He was shortly united as coadjutor to Eusebius, Bishop of
+        Caesarea, for the edification of that city, and afterwards became his successor in the
+        see. One of his greatest labours was to maintain that the Son is of one Substance with
+        the Father, and when the Emperor Valens, moved to wrath against him, was willing to send
+        him into exile, he so bent him by dint of the miracles which he worked that he forced him
+        to forego his intention.
+
+
+        The chair upon which Valens sat down, in order to sign the decree of Basil's ejectment
+        from the city, broke down under him, and three pens which he took one after the other to
+        sign the edict of banishment, all would not write; and when nevertheless he remained firm
+        to write the ungodly order, his right hand shook. Valens was so frightened at these
+        omens, that he tore the paper in two. During the night which was allowed to Basil to make
+        up his mind, Valens' wife had a severe stomach-ache, and their only son was taken
+        seriously ill. These things alarmed Valens so much that he acknowledged his wickedness,
+        and sent for Basil, during whose visit the child began to get better. However, when Valens
+        sent for some heretics to see it, it presently died.
+
+
+        The abstinence and self-control of Basil were truly wonderful. He was content to wear
+        nothing but one single garment. In observance of fasting he was most earnest, and so
+        instant in prayer, that he would oftentimes pass the whole night therein. His virginity he
+        kept always unsullied. He built monasteries, wherein he so adapted the institution of
+        monasticism, that he exquisitely united for the inmates the advantages of the
+        contemplative and of the active life. He was the author of many learned writings, and,
+        according to the witness of Gregory of Nazianzus, no one hath ever composed more faithful
+        and edifying explanations of the books of the Holy Scripture. He died upon the 1st day of
+        January, at which time so essentially spiritual was his life, that his body showed
+        nothing but skin and bones.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Basil, Archbishop of Caesarea, Paraphrase of his Rule, Q. 8 (on Luke 14:26-35)"
+    text:
+      la: >-
+        Perfécta quidem renuntiátio in eo consístit, ut id assequámur, ne ad ipsíus étiam vitæ
+        affectiónem propénsi simus, et respónsum mortis habeámus, ut non simus fidéntes in
+        nobis ipsis. Hujúsmodi autem renuntiátio inítium sumit ab alienatióne rerum externárum,
+        véluti a possessiónibus, ab ináni glória, a vivéndi consuetúdine, a rerum inutílium
+        amóre; quemádmodum étiam suo exémplo nobis ostendérunt sancti Dómini nostri discípuli,
+        Jacóbus quidem et Joánnes, relícto patre Zebedǽo et ipsa quoque navícula, de qua omnis
+        illórum victus rátio pendébat; Matthǽus vero, cum ab ipso telónio surréxit ac Dóminum
+        secútus est.
+
+
+        Sed quid opus est nostris ratiónibus aut sanctórum virórum exémplis id quod dícimus
+        confirmáre, cum ipsa Dómini verba in médium líceat afférre, iísque ipsis religiósam ac
+        Deum timéntem ánimam commovére, quibus ille perspícue et sine controvérsia protestátur,
+        dicens: Sic ígitur quicúmque ex vobis non renuntiáverit ómnibus quæ póssidet, non potest
+        meus esse discípulus? Et álio in loco, cum prius dixísset: Si vis perféctus esse, vade, et
+        vende ómnia quæ habes, et da paupéribus; póstea subjúnxit: Veni, séquere me.
+
+
+        Est ígitur renuntiátio, quemádmodum docúimus, vinculórum terrénæ hujus ac temporális
+        vitæ solútio, atque ab humánis negótiis liberátio, per quam ad ineúndam viam, qua ad
+        Deum pervenítur, aptióres et promptióres effícimur; et expedíta rátio ad acquisitiónem
+        usúmque rerum, quæ super aurum et lápidem pretiósum multum longe sunt pretiosióres. Et
+        in summa, cordis humáni ad cæléstem conversatiónem translátio, ita ut dícere líceat:
+        Nostra conversátio in cælis est; et, quod máximum est, inítium unde ad Christi similitúdinem
+        evádimus, qui cum dives esset, propter nos pauper est factus.
+      en: >-
+        This is perfect self-renunciation, when we attain to indifference as regards our own
+        lives, and wring from death himself the confession that our trust is not in our own
+        strength. The first step toward this crown of abnegation is to estrange ourselves from
+        outward things, such as property, public reputation, habits of life, and affection for
+        things unnecessary, whereof the immediate disciples of our Holy Lord have left us a fine
+        example: James, for instance, and John, who left their father Zebedee and the boats which
+        were their only means of getting their daily bread; or Matthew, who got up from the
+        receipt of custom, and straightway followed the Lord.
+
+
+        But what need have we for our own arguments, or for the examples of holy men to confirm
+        what we say, when we are able to cite the very words of the Lord Himself, and by them to
+        move any earnest soul that loveth God? Such were they unto whom He plainly and
+        unhesitatingly declared: Whosoever he be of you that forsaketh not all that he hath, he
+        cannot be My disciple. And again, in another place, when He had said: If thou wilt be
+        perfect, go, and sell that thou hast, and give to the poor; the completion of the sentence
+        was: And come and follow Me.
+
+
+        This then, as we have taught, is self-renunciation: to unlock the chains of this earthly
+        life, which passeth away, and to set oneself free from the business of men, and so to make
+        ourselves lither and meeter to enter on that path which leadeth to God, and let our reason
+        be more unhampered to gain and to use those things which are far more precious than gold
+        or precious stones. In short, it is to have our heart in heaven and not on earth, so as to
+        be able to say: Our conversation is in heaven. And, which is the great thing, this is the
+        first step towards the attaining to be like Christ, who, though He was rich, yet for our
+        sakes He became poor.
+    status: { la: verified, en: verified }

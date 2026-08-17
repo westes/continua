@@ -1,0 +1,69 @@
+# Matins Nocturn 2 reading for Ss. Marcellinus, Peter, and Erasmus,
+# Martyrs (Jun 2) — SanctiM/06-02.txt inherits the whole day
+# (`@Sancti/06-02`) with no Nocturn 2/3 override, so this feast's own
+# proper content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints). A second SanctiM variant
+# (`SanctiM/06-02M.txt`) narrows this to Marcellinus and Peter alone,
+# the same "Monastic office narrows a joint feast" pattern already
+# seen for `ss-vincent-and-anastasius.yml`, `ss-cletus-and-marcellinus.yml`,
+# and `ss-alexander-eventius-theodulus-and-juvenal.yml` — the full
+# three-martyr text is used here per vu-prefer-text-over-missing.
+# web/www/horas/Latin/Sancti/06-02.txt, English/Sancti/06-02.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account
+# covering Marcellinus and Peter together, then Erasmus, no genuine
+# internal break (both stories told in immediate succession in the
+# source). No responsory given in the source.
+id: ss-marcellinus-peter-and-erasmus
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Petrus exorcísta, Diocletiáno imperatóre, Romæ a Seréno júdice propter christiánæ fídei
+        confessiónem missus in cárcerem, Paulínam Artémii, qui cárceri præerat, filiam a dæmone
+        agitátam liberávit. Quo facto et paréntes puéllæ cum tota família, et vicínos qui ad rei
+        novitátem concúrrerant, Jesu Christo conciliátos ad Marcellínum presbyterum addúxit, a
+        quo omnes baptizáti sunt. Quod ubi rescívit Serénus, Petrum et Marcellínum ad se vocátos
+        aspérius objúrgat, et ad verbórum acerbitátem minas ac terróres adjúngit, nisi Christo
+        renúntient. Cui cum Marcellínus christiána libertáte respondéret, pugnis contúsum, et a
+        Petro sejúnctum, nudum inclúdit in cárcerem stratum vitri fragméntis, sine cibo ac sine
+        lúmine. Petrum item constríngi ímperat arctíssimis vínculis. Sed cum utríque ex
+        torméntis fides et ánimus crésceret, constánti confessióne, et abscísso cápite, illústre
+        testimónium Jesu Christo dedérunt.
+
+
+        Erásmus epíscopus, imperatóribus Diocletiáno et Maximiáno, in Campánia plumbátis et
+        fústibus cæsus, resína quoque, súlphure, plumbo liquefácto, et fervénti pice, cera,
+        oleóque perfúsus, inde tamen ínteger et inviolátus evásit. Quo miráculo multi se ad
+        Christi fidem convertérunt. Verum is, íterum detrúsus in cárcerem, constríctus férreis
+        gravissimísque vínculis, inde ab Angelo mirabíliter eréptus est. Deínde Fórmiis a
+        Maximiáno váriis afféctus supplíciis, tunicáque ærea candénti indútus, illa étiam
+        torménta, divína virtúte superávit. Dénique, plúrimis et in fide confirmátis, et ad fidem
+        convérsis, insígnem martyrii palmam adéptus est.
+      en: >-
+        This Peter was an exorcist, whom, in the reign of the Emperor Diocletian, Serenus the
+        Judge cast into prison at Rome because he confessed the Christian faith. He there set
+        free Paulina, the daughter of Artemius, the keeper of the prison, from an evil spirit
+        which tormented her. Upon this, Artemius and his wife and all their house, with their
+        neighbours who had run together to see the strange thing, would fain be made friends with
+        Jesus Christ. Peter therefore brought them to Marcellinus, the Priest, who baptized them
+        all. When Serenus heard of it, he called Peter and Marcellinus before him, and sharply
+        rebuked them, adding to his bitter words threats and terrors, unless they would deny
+        Christ. Marcellinus answered him with Christian boldness, whereupon he caused him to be
+        buffeted, separated him from Peter and shut him up naked in a prison strewn with broken
+        glass, without either food or light. Peter also he straitly confined. But when both of
+        them were found to wax faithfuller and braver in their bonds, they were beheaded,
+        unshaken in their testimony, and confessing Jesus Christ gloriously by their blood.
+
+
+        Elmo was a Bishop in Campania who, in the reign of the Emperors Diocletian and Maximian
+        was beaten with clubs and whips loaded with lead, and afterwards anointed with melted
+        pitch, sulphur, and lead, and boiling resin, wax, and oil. From all this he came forth
+        whole and sound; which wonder turned many to believe in Christ. He was remanded again to
+        prison, and straitly bound in heavy iron fetters. But from these he was wondrously
+        delivered by an angel. At last, at Formi, Maximian caused him to be subjected to diverse
+        torments, and in the end being clad in a coat of redhot brass, the power of God made him
+        to be more than conqueror in this thing also, and to grasp the palm-branch of a glorious
+        testimony, whereby he strengthened many in the faith and turned many to it.
+    status: { la: verified, en: verified }

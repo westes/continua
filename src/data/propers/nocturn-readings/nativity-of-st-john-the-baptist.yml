@@ -1,0 +1,153 @@
+# Matins Nocturn 2-3 readings for the Nativity of St. John the Baptist
+# (Jun 24) — SanctiM/06-24.txt's own Lectio4-9 all resolve back to
+# `@Sancti/06-24:LectioN` (resliced), so this feast's own proper
+# content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/06-24.txt, English/Sancti/06-24.txt.
+#
+# Nocturn 2: Lectio4-6 (St. Augustine's sermon) combined into one
+# reading, one continuous excerpt.
+# Nocturn 3: Lectio7's Gospel citation (Luke 1:57-69) quotes only the
+# opening sentence before "Et réliqua", not the full pericope, so —
+# per the pre-1955 pass's convention of not transcribing bare incipits
+# — only the homily portion is authored (not marked isGospel),
+# combined with Lectio8-9 as one continuous excerpt of St. Ambrose's
+# commentary. No responsory given for either reading.
+id: nativity-of-st-john-the-baptist
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Augustine, Bishop of Hippo, Sermon 20 on the Saints"
+    text:
+      la: >-
+        Post illum sacrosánctum Dómini natális diem, nullíus hóminum nativitátem légimus
+        celebrári, nisi solíus beáti Joánnis Baptístæ. In áliis Sanctis et eléctis Dei nóvimus
+        illum diem coli, quo illos, post consummatiónem labórum et devíctum triumphatúmque
+        mundum, in perpétuas æternitátes præsens hæc vita partúriit. In áliis consummáta últimi
+        diéi mérita celebrántur: in hoc étiam prima dies, et ipsa étiam hóminis inítia
+        consecrántur; pro hac absque dúbio causa, quia per hunc Dóminus advéntum suum, ne súbito
+        hómines insperátum non agnóscerent, vóluit esse testátum. Joánnes autem figúra fuit
+        véteris Testaménti, et in se formam prǽtulit legis; et ídeo Joánnes prænuntiávit
+        Salvatórem, sicut lex grátiam præcucúrrit.
+
+
+        Quod autem nondum natus de secréto matérni úteri prophetávit, et expers lucis jam testis
+        est veritátis; hoc est intellegéndum, quod latens sub velámine et carne lítteræ, et
+        Redemptórem mundo spíritu prædicávit, et nobis Dóminum nostrum de quodam legis útero
+        proclamávit. Ergo quia Judǽi erravérunt a ventre, id est, a lege quæ a Christo grávida
+        erat, erravérunt a ventre, locúti sunt falsa; ídeo hic venit in testimónium, ut
+        testimónium perhibéret de lúmine.
+
+
+        Quod autem Joánnes in cárcere constitútus ad Christum discípulos suos órdinat; lex ad
+        Evangélium transmíttit. Quæ lex juxta typum Joánnis, quasi ignorántiæ clausa cárcere, in
+        obscúro et in occúlto jacébat, et Judáica cæcitáte sensus intra lítteram tenebátur
+        inclúsus. De hoc beátus Evangelísta prolóquitur: Ille erat lucérna ardens, id est,
+        Spíritus Sancti igne succénsus, ut mundo ignorántiæ nocte possésso lumen salútis
+        osténderet, et quasi inter densíssimas delictórum ténebras splendidíssimus justítiæ
+        solem lucis suæ rádio demonstráret, et de seípso dicens: Ego vox clamántis in desérto.
+      en: >-
+        Outside the most holy Birthday of the Lord, we find celebrated in the Gospel the birth of
+        only one other, namely, that of the blessed Baptist, John. As regardeth all others among
+        God's holy and chosen ones we know that that day is observed whereon, with their work
+        finished, and the world conquered and finally trampled down, they were born from this
+        into a better life, even one of everlasting blessedness. In others is honoured the
+        crowning of the struggle on their last day of dying life, but in John is honoured the
+        first day; in him the very beginning is found hallowed. And the reason of this is, without
+        doubt, because he was sent from God to bear witness to the coming of the Light, lest when
+        It came It might take the darkness by surprise, and the darkness might not comprehend It.
+        Now, John was a figure of the Old Testament, and showed in his own person a typical
+        embodiment of the Law; and therefore John heralded beforehand the coming of the Saviour,
+        even as the Law was our schoolmaster to bring us to the grace of Christ.
+
+
+        But as touching this, that he prophesied while yet in the hidden depths of his mother's
+        womb, and while himself lightless bore testimony to the truth, we are to understand it as
+        a figure how that while himself wrapped round with the veil and carnal ordinances of the
+        letter, he by the spirit preached unto the world a Redeemer, and testified that Jesus is
+        our Lord even while for himself, working under the law, the birth of the new dispensation
+        was still in the womb of the future, and not come to day. The Jews were estranged from the
+        womb, that is from the Law, that womb heavy with the Christ That was to be; they went
+        astray from the belly, speaking lies; and therefore John came for a witness, to bear
+        witness of the Light, that all men through him might believe.
+
+
+        But as for this, that when John had heard in the prison the works of Christ, he sent two
+        of his disciples; this is the Law sending to the Gospel. For John here was a figure of the
+        Law, imprisoned in ignorance, lying in the dark, and in a hidden place, and he was
+        fettered through Jewish misunderstanding within the bonds of the letter. But of him was it
+        said, as is written in the Blessed Evangelist: He was a burning and a shining light; that
+        is to say, that, when the whole world was wrapt in the night of ignorance, this Saint was
+        kindled by the fire of the Holy Ghost, to show before men the light of salvation, and at
+        the hour of the thickest darkness of sin, appeared like a bright morning star to herald
+        the rising of that Sun so right gloriously radiant, the Son of righteousness, Christ our
+        Lord. And this is why John said of himself: I am the voice of one crying in the
+        wilderness, Make straight the way of the Lord.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Ambrose, Bishop of Milan, Commentary on Luke, Bk. 2 (on Luke 1:57-69)"
+    text:
+      la: >-
+        Péperit fílium Elísabeth, et congratulabántur vicíni. Habet Sanctórum edítio lætítiam
+        plurimórum, quia commúne est bonum; justítia enim commúnis est virtus. Et ídeo in ortu
+        justi futúræ vitæ insígne præmíttitur, et grátia secutúræ virtútis exsultatióne
+        vicinórum præfiguránte signátur. Pulchre autem tempus, quo fuit in útero Prophéta,
+        descríbitur, ne Maríæ præséntia taceátur; sed tempus silétur infántiæ, eo quia infántiæ
+        impediménta nescívit. Et ídeo in Evangélio nihil super eo légimus, nisi ortum ejus, et
+        oráculum, exsultatiónem in útero, vocem in desérto.
+
+
+        Neque enim ullam infántiæ sensit ætátem, qui supra natúram, supra ætátem in útero
+        pósitus matris, a mensúra cœpit ætátis plenitúdinis Christi. Mire sanctus Evangelísta
+        præmitténdum putávit, quod plúrimi infántem patris nómine Zacharíam appellándum
+        putáverint; ut advértas matri non nomen alicújus displicuísse degéneris, sed id Sancto
+        infúsum Spíritu, quod ab Angelo ante Zacharíæ fúerat prænuntiátum. Et quidem ille mutus
+        intimáre vocábulum fílii nequívit uxóri; sed per prophetíam Elísabeth dídicit, quod non
+        didícerat a maríto.
+
+
+        Joánnes est, inquit, nomen ejus; hoc est, non nos ei nomen impónimus, qui jam a Deo
+        nomen accépit. Habet vocábulum suum, quod agnóvimus, non quod elégimus. Habent hoc
+        mérita Sanctórum, ut a Deo nomen accípiant. Sic Jacob Israël dícitur, quia Deum vidit.
+        Sic Dóminus noster Jesus nominátus est, ántequam natus; cui non Angelus, sed Pater nomen
+        impósuit. Vides Angelos quæ audíerint, non quæ usurpáverint, nuntiáre. Nec miréris, si
+        nomen múlier, quod non audívit, asséruit; quando Spíritus ei Sanctus, qui Angelo
+        mandáverat, revelávit.
+      en: >-
+        Elizabeth's full time came that she should be delivered, and she brought forth a son.
+        And her neighbours rejoiced with her. The birth of a Saint is a joy for many, for it is a
+        good to all. Righteousness is an help to all, and therefore when a righteous man is born
+        it is an heralding of his life, which is still to come, that the helpful excellency of his
+        future should be hailed by the, as it were, prophetic joy of the neighbours. It is well
+        that we should be told concerning the prophet, while he was yet in the womb, that we may
+        know how that Mary was there; but we hear nothing of his childhood, because we know that
+        it was safe and strong through the nearness of the Lord, Himself then in that womb which
+        was free from the sorrows of pregnancy. And therefore we read in the Gospel nothing
+        touching him save his coming, the annunciation thereof to his father, the leap which he
+        gave in the womb, and his crying in the wilderness.
+
+
+        It was not for him to feel childishness, who beyond all use of nature or of his age, when
+        as yet he lay in his mother's womb, leapt at once unto the measure of the stature of the
+        fullness of Christ. It is strange how that the Holy Evangelist hath judged meet to tell us
+        that they thought to call the child Zacharias, after the name of his father, that thou
+        mayest notice that the mother would have none of the names whereby their kindred were
+        called, but only that name which the Holy Ghost had dictated, and which the Angel had told
+        before unto Zacharias. The dumb man had certainly not been able to tell his wife by what
+        name to call the child, and Elizabeth must needs have learnt by revelation what she could
+        not have heard from her husband.
+
+
+        His name is John; that is, it is not for us to choose a name now for him to whom God hath
+        given a name already. He hath a name, which we know, but it is not one of our choosing. To
+        receive a name from God is one of the honours of the Saints. Thus was it that Jacob's name
+        was no more called Jacob but Israel, because he saw God face to face. Thus was it that our
+        Lord Jesus was named before He was born, with a name not given by an Angel, but by the
+        Father. Thou seest that Angels tell that which they have been bidden to tell, not matters
+        of their own choosing. Nor oughtest thou to wonder that Elizabeth named a name which she
+        had not heard, since it had been revealed to her by the same Holy Ghost Who had commanded
+        the Angel to tell it.
+    status: { la: verified, en: verified }
