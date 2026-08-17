@@ -37,7 +37,7 @@ across every hour and content type in this app.
      saints (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are now done — see
      "Pre-1955 saints' Matins readings" below. The larger pool of saints that *do* have a
      Monastic 1617 track (`SanctiM/`) is in progress — see "SanctiM-track saints' Matins
-     readings" below — January done (11/13), ~140 candidates remain (February onward).
+     readings" below — January and February done (19/23), ~130 candidates remain (March onward).
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1407,8 +1407,30 @@ project's own translation, marked `draft`), `st-anthony-abbot`, `chair-of-st-pet
 `st-hyginus` (octave-absorbed, see above). `npm test`/`tsc --noEmit` both pass; none of these
 are in a test table yet, same as the pre-1955 pass.
 
-**Not done in this pass**: the remaining ~140 SanctiM-track candidates (February onward) —
-same authoring shape, continue month by month.
+**February done (8 saints, 1 left unauthored as Common-only, 1 vigil left unauthored as
+Common-only)**: `st-ignatius-of-antioch` (Nocturn 2 patristic vita + Nocturn 3 homily-only,
+bare Gospel incipit not transcribed per convention), `st-agatha`, `st-dorothea` (turned out to
+be a missed pre-1955-pool candidate, not a real SanctiM case — the SanctiM file for this date
+belongs to St. Titus, who shares Feb 6 and isn't on vu's own calendar), `st-romuald`,
+`st-scholastica`, `st-simeon` (also a missed pre-1955-pool candidate — the SanctiM file at this
+date is unrelated content for St. Bernadette Soubirous, not Simeon),
+`chair-of-st-peter-at-antioch` (Nocturn 2 patristic + Nocturn 3 homily-only), `st-matthias`
+(Nocturn 3 homily-only; Nocturn 2's own Lectio4-6 falls back to Common of an Apostle, not
+proper text). Left unauthored: `st-valentine` (Lectio93 itself is `@Commune/C2:Lectio4` —
+Common-only, no proper text in the source at all) and `vigil-of-st-matthias` (Vigilia rank,
+`ex C1v`, no Lectio content at all — Common-only). `npm test`/`tsc --noEmit` both pass.
+
+**A fourth SanctiM-pass finding, from this month**: a bare Gospel incipit ("Et réliqua") with
+a genuine patristic homily following it (`st-ignatius-of-antioch`'s Nocturn 3,
+`chair-of-st-peter-at-antioch`'s Nocturn 3, `st-matthias`'s Nocturn 3) is now authored as the
+homily alone, `isGospel: false`, not combined with the bare incipit line and not marked
+`isGospel: true` — cleaner than `chair-of-st-peter-at-rome`'s January file, which included the
+incipit line under `isGospel: true` despite not having the full pericope text. That January
+file is left as-is (not wrong, just an earlier, less clean judgment call) — this convention
+applies going forward.
+
+**Not done in this pass**: the remaining ~130 SanctiM-track candidates (March onward) — same
+authoring shape, continue month by month.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)
 
