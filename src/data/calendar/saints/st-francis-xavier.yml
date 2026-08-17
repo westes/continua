@@ -1,0 +1,20 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/12-03.txt` -- "Duplex
+# majus;;4;;vide C5-1" (an alternate-Oratio variant of the Common of a
+# Confessor Not a Bishop, C5 -- not a distinct Common category, same
+# reasoning as st-augustine-of-canterbury.yml's C4-1; this saint's own
+# file supplies a real proper [Oratio], so C5's template collect is
+# not actually used). Own Nocturn 2-3 content: Lectio4-6 combined into
+# one reading; Lectio7's Gospel citation (Mark 16:15-18) ends "Et
+# réliqua" with no full pericope given -- per the bare-incipit
+# convention, only the homily (St. Gregory the Great) is authored,
+# isGospel: false, no citation field. No [Ant 1] of his own; falls
+# back to the plain Common of a Confessor for benedictusCommon/
+# minorHoursCommon, same reasoning as st-hyacinth.yml.
+id: st-francis-xavier
+name: "St. Francis Xavier, Confessor"
+rank: duplex-majus
+common: common-of-a-confessor
+propers: "st-francis-xavier"
+benedictusCommon: common-of-a-confessor
+minorHoursCommon: common-of-a-confessor
