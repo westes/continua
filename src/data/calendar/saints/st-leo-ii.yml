@@ -1,17 +1,15 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), live kalendar
-# check (2035-06-28, no Sunday collision) -- winner outright, Semiduplex.
-# A different pope from St. Leo I (April 11, Duplex, Doctor of the
-# Church) -- kept as a separate record. Own proper collect; his only
-# [Ant 1] is tagged for a different rubric ("rubrica cisterciensis") and is
-# itself a cross-reference with a name-substitution pattern for a
-# different saint entirely, so no antiphon is recorded.
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/07-03.txt` -- "Semiduplex;;2.2;;
+# vide C4b" (Common of Confessor Popes, same category as
+# st-pius-v.yml). Own real proper [Oratio]. No [Ant 1] of his own --
+# benedictusCommon/minorHoursCommon fall back to the plain Common of a
+# Confessor Bishop, same fallback reasoning as st-pius-v.yml. No
+# Lectio7-9 in his own file -- defers to the Common's own Nocturn 3,
+# not transcribed here.
 id: st-leo-ii
 name: "St. Leo II, Pope and Confessor"
 rank: semiduplex
-common: common-of-a-confessor-bishop
+common: common-of-a-confessor-pope
 propers: "st-leo-ii"
-# P/T/S/N: no [Ant Prima]/etc of its own in the source (06-28t.txt) --
-# [Rule]/[Rank] point to Commune/C4b instead, the same C-number family
-# already live-query-verified for common-of-a-confessor-bishop.yml (see
-# TODO.md's 'minor hour content gaps' section).
+benedictusCommon: common-of-a-confessor-bishop
 minorHoursCommon: common-of-a-confessor-bishop

@@ -150,7 +150,14 @@ days:
   # two normally blocked by the generic Saturday-of-Mary votive). 06-27
   # (the 4th day of St. John the Baptist's octave) is a pure temporal
   # continuation with no named secondary saint, so it's excluded, same as
-  # every other octave-continuation day this pull has skipped.
+  # every other octave-continuation day this pull has skipped. (A
+  # "06-28": [st-leo-ii] entry from that original pull was a wrong-date
+  # artifact -- his own vita text mentions his burial "upon the 28th day
+  # of June," but his real liturgical feast day, per
+  # web/www/horas/Latin/Sancti/07-03.txt, is July 3; removed here now
+  # that he's properly authored there, same class of fix as St.
+  # Apollinaris's wrong-date artifact noted in
+  # tests/calendar/july-sanctoral.test.ts.)
   "06-01": [st-angela-merici]
   "06-02": [ss-marcellinus-peter-and-erasmus]
   "06-04": [st-francis-caracciolo]
@@ -172,22 +179,38 @@ days:
   "06-24": [nativity-of-st-john-the-baptist]
   "06-25": [st-william-abbot]
   "06-26": [ss-john-and-paul]
-  "06-28": [st-leo-ii]
   "06-29": [ss-peter-and-paul]
   "06-30": [commemoration-of-st-paul]
-  # July — 7/12 of the pre-1955 pull. 07-01 through 07-06 are all pure
-  # octave-continuation labels (St. John the Baptist's own octave, then
-  # Ss. Peter and Paul's) with no independently named saint at all, so
-  # they're excluded, same as every other octave-continuation day this
-  # pull has skipped. Five stubs this month, all genuinely unwinnable —
-  # see their own files for which fixed-date competitor blocks each.
+  # July — 7/12 of the pre-1955 pull. Five stubs this month, all
+  # genuinely unwinnable — see their own files for which fixed-date
+  # competitor blocks each. Separately, the full-year sanctoral import
+  # (see vu-sanctoral-sweep-progress memory) added 07-01 through 07-08
+  # and 07-15/07-16/07-19/07-31 — previously excluded entirely under a
+  # stale "pure octave-continuation label, no independently named
+  # saint" note, which was wrong for these dates: each has real,
+  # complete own content (the Most Precious Blood and the Visitation
+  # of the BVM are fully proper Duplex-class feasts of their own; the
+  # Octave Day of Ss. Peter and Paul, July 6, likewise has real proper
+  # content even though it's an octave day). The remaining days within
+  # those two octaves (July 4, 7, 9) genuinely are bare
+  # octave-continuation with no independent content, and stay excluded.
+  "07-01": [most-precious-blood]
+  "07-02": [visitation-of-the-bvm]
+  "07-03": [st-leo-ii]
+  "07-05": [st-anthony-mary-zaccaria]
+  "07-06": [octave-of-ss-peter-and-paul]
+  "07-07": [ss-cyril-and-methodius]
+  "07-08": [st-elizabeth-of-portugal]
   "07-10": [ss-seven-brothers-rufina-and-secunda]
   "07-11": [st-pius-i]
   "07-12": [st-john-gualbert, ss-nabor-and-felix]
   "07-13": [st-anacletus]
   "07-14": [st-bonaventure]
+  "07-15": [st-henry]
+  "07-16": [our-lady-of-mount-carmel]
   "07-17": [st-alexius]
   "07-18": [ss-symphorosa-and-seven-sons]
+  "07-19": [st-vincent-de-paul]
   "07-20": [st-margaret-of-antioch]
   "07-21": [st-praxedes]
   "07-22": [st-mary-magdalene]
@@ -199,6 +222,7 @@ days:
   "07-28": [ss-nazarius-celsus-victor-and-innocent]
   "07-29": [st-martha, ss-felix-simplicius-faustinus-and-beatrix]
   "07-30": [ss-abdon-and-sennen]
+  "07-31": [st-ignatius-of-loyola]
   # August — 8/12 of the pre-1955 pull. Four pre-existing entries from
   # before this pull initiative (vigil-of-st-lawrence, st-lawrence,
   # assumption, st-augustine) got their propers backfilled this month; see

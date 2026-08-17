@@ -1,0 +1,13 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/07-02.txt` -- "In Visitatione
+# Beatæ Mariæ Virginis;;Duplex II classis;;5.1;;ex C11" -- but unlike
+# the plain-Common BVM feasts (Our Lady of the Snows etc.), this file
+# has full, real, proper content throughout: own [Oratio], own [Ant 1],
+# and a full nine-lesson Matins office of her own (Nocturn 1, the Song
+# of Songs, isn't modeled -- see queenship-of-the-bvm.yml's own note on
+# this app's Nocturn-2/3-only convention).
+id: visitation-of-the-bvm
+name: "The Visitation of the Blessed Virgin Mary"
+rank: duplex-2-classis
+common: proper-to-the-visitation-of-the-bvm
+propers: "visitation-of-the-bvm"

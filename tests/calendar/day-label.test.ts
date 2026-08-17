@@ -30,9 +30,12 @@ describe('getDayLabel — ordinal temporal label', () => {
   });
 
   it('gives the correct week-after-Trinity ordinal', () => {
-    // Trinity Sunday 2026 is May 31; Jul 6 falls 5 full weeks after the
-    // first Sunday-after-Trinity (Jun 7).
-    expect(getDayLabel(resolveDay('2026-07-06'))).toBe('Monday in the 5th week after Trinity');
+    // Not 2026 (Jul 6): that date is now the Octave Day of Ss. Peter and
+    // Paul's own fixed day (Duplex majus, added per the full-year
+    // sanctoral import), which wins outright. 2027's Trinity Sunday is
+    // May 23, so 5 full weeks after the first Sunday-after-Trinity
+    // (May 30) is Jun 28 -- free of any sanctoral entry.
+    expect(getDayLabel(resolveDay('2027-06-28'))).toBe('Monday in the 5th week after Trinity');
   });
 
   it("Advent's own anchor Sunday is already week 1, not a separate anchor-week case", () => {

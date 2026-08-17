@@ -1,0 +1,23 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/07-06.txt` -- "In Octava Ss.
+# Apostolorum Petri et Pauli;;Duplex majus;;4.1;;vide C1" (Common of
+# Apostles). The Octave Day itself of Ss. Peter and Paul (June 29 + 7),
+# with its own real proper [Oratio] and own Nocturn 2-3 content
+# (Chrysostom's sermon on both Apostles; Jerome's homily on Christ
+# walking on the water). Its [Ant 1]/[Ant 2]/[Ant 3] are all a
+# cross-reference (`@Sancti/07-03oct`) to the file for the Octave's
+# 5th day, which has its own real proper antiphon text -- authored
+# here directly since it is the actual text this day uses, not a
+# private duplicate (the Matins nocturn-readings mechanism has no
+# cross-id lookup the way collect/antiphon do via `propers`, so this
+# mirrors the same reasoning as exaltation-of-the-holy-cross.yml's
+# collect/antiphon pointer, just inlined since there's no saint id to
+# point at here). Rest of the Octave's own continuation days (July 4,
+# 7-8 minus named saints) aren't modeled -- pure octave-continuation
+# content remains a separate, not-yet-built mechanism (see
+# vu-sanctoral-sweep-progress memory).
+id: octave-of-ss-peter-and-paul
+name: "The Octave Day of Ss. Peter and Paul, Apostles"
+rank: duplex-majus
+common: common-of-apostles
+propers: "octave-of-ss-peter-and-paul"

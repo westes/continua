@@ -1,0 +1,16 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/07-08.txt` -- "Semiduplex;;2.2;;
+# vide C7a" (Commune non Virginum non Martyrum). Own real proper
+# [Oratio] and own [Ant 1]. benedictusCommon/minorHoursCommon fall
+# back to the Common of a Virgin, same C-number-family fallback
+# already established for st-monica.yml/st-margaret-of-scotland.yml
+# (no benedictus-antiphon-common-of-a-widow.yml exists). No Lectio7-9
+# in her own file -- defers to the Common's own Nocturn 3, not
+# transcribed here.
+id: st-elizabeth-of-portugal
+name: "St. Elizabeth of Portugal, Queen and Widow"
+rank: semiduplex
+common: common-of-a-widow
+propers: "st-elizabeth-of-portugal"
+benedictusCommon: common-of-a-virgin
+minorHoursCommon: common-of-a-virgin

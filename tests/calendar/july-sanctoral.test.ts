@@ -45,10 +45,14 @@ describe('July sanctoral pull (first pass)', () => {
   });
 
   it('pure octave-continuation days with no named saint at all are excluded entirely', () => {
-    // 07-01 through 07-06 are St. John the Baptist's and Ss. Peter and
-    // Paul's octave continuations — no independent saint, so nothing in
-    // sanctoral-calendar.yml maps to them.
-    const day = resolveDay('2028-07-03');
+    // 07-01 through 07-08 mostly turned out to have real independent
+    // content after all (see vu-sanctoral-sweep-progress memory) --
+    // Most Precious Blood, the Visitation, St. Leo II, St. Anthony Mary
+    // Zaccaria, the Octave Day of Ss. Peter and Paul itself, Ss. Cyril
+    // and Methodius, and St. Elizabeth of Portugal are all now mapped.
+    // 07-04 and 07-09, within those same two octaves, genuinely have no
+    // independent content in the reference engine and remain excluded.
+    const day = resolveDay('2028-07-04');
     expect(day.winner.kind).toBe('temporal');
     expect(day.commemorations).toEqual([]);
   });

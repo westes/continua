@@ -1,64 +1,63 @@
-# Matins Nocturn 2 reading for St. Leo II, Pope, Confessor (Jun 28 on
-# this app's own calendar) — an off-date sourcing case like St. Paul
-# the Hermit in the pre-1955 pass (memory vu-matins-pre1955-saints):
-# the general Tridentine calendar keeps Leo II on Jul 3 instead
-# (`Sancti/07-03.txt`). The suffixed `Sancti/06-28t.txt` at this app's
-# own date simply redirects there (`@Sancti/07-03`). No genuine
-# SanctiM match at either date: the only SanctiM file for Jun 28,
-# `SanctiM/06-28oct.txt`, is an unrelated day within the Nativity of
-# St. John the Baptist's own octave — a missed pre-1955-pool candidate
-# rather than a genuine SanctiM case (see memory vu-matins-sanctim-saints).
-# web/www/horas/Latin/Sancti/07-03.txt, English/Sancti/07-03.txt.
-# Lectio4-6 combined into one reading, one continuous vita, no genuine
-# source break. No responsory given in the source.
+# Matins Nocturn 2 reading for St. Leo II, Pope and Confessor (July 3).
+# Sourced directly from web/www/horas/Latin/Sancti/07-03.txt,
+# English/Sancti/07-03.txt. Lectio4-6 combined into one reading, one
+# continuous vita. No Lectio7-9 in his own file (his `[Rule]` is `vide
+# C4b`) -- defers to the Common's own Nocturn 3, not transcribed here.
 id: st-leo-ii
 readings:
   - nocturn: 2
     isGospel: false
     text:
       la: >-
-        Leo secúndus, Póntifex máximus, Sículus, humánis et divínis lítteris Græce et Latíne
-        doctus, músicis étiam erudítus fuit; ipse enim sacros Hymnos et Psalmos in Ecclésia ad
-        concéntum meliórem redúxit. Probávit acta sextæ Synodi, quæ Constantinópoli celebráta
-        est, præsidéntibus legátis apostólicæ Sedis, præsénte quoque Constantíno imperatóre, et
-        duobus patriárchis, Constantinopolitáno et Antiochéno, ac centum septuagínta epíscopis;
-        quam et in Latínum tránstulit.
+        Leo secúndus, Póntifex máximus, Sículus, humánis et divínis lítteris Græce et
+        Latíne doctus, músicis étiam erudítus fuit; ipse enim sacros Hymnos et
+        Psalmos in Ecclésia ad concéntum meliórem redúxit. Probávit acta sextæ
+        Synodi, quæ Constantinópoli celebráta est, præsidéntibus legátis apostólicæ
+        Sedis, præsénte quoque Constantíno imperatóre, et duobus patriárchis,
+        Constantinopolitáno et Antiochéno, ac centum septuagínta epíscopis; quam et
+        in Latínum tránstulit.
 
 
-        In eo concílio Cyrus, Sergius et Pyrrhus condemnáti sunt, unam tantúmmodo voluntátem et
-        operatiónem in Christo prædicántes. Hic fregit supérbiam antístitum Ravennátum, qui,
-        exarchórum freti poténtia, Sedi apostólicæ non obtemperábant. Quam ob rem decrévit ut
-        eléctio cleri Ravennátis írrita esset, nisi Románi Pontíficis auctoritáte comprobarétur.
+        In eo concílio Cyrus, Sergius et Pyrrhus condemnáti sunt, unam tantúmmodo
+        voluntátem et operatiónem in Christo prædicántes. Hic fregit supérbiam
+        antístitum Ravennátum, qui, exarchórum freti poténtia, Sedi apostólicæ non
+        obtemperábant. Quam ob rem decrévit ut eléctio cleri Ravennátis írrita esset,
+        nisi Románi Pontíficis auctoritáte comprobarétur.
 
 
-        Vere pater páuperum fuit; non enim pecúnia solum, sed opera, labóre et consíliis,
-        egéntium viduárum et pupillórum inópiam ac solitúdinem sublevábat. Qui, dum síngulos non
-        magis prædicatióne quam vita ad pie sanctéque vivéndum adhortarétur, obdormívit in
-        Dómino mense sui pontificátus undécimo, quinto Nonas Julii, sepultúsque est in basílica
-        sancti Petri. Ordinatióne una, mense Júnio, creávit presbýteros novem, diáconos tres,
-        epíscopos divérsis in locis vigínti tres.
+        Vere pater páuperum fuit; non enim pecúnia solum, sed opera, labóre et
+        consíliis, egéntium viduárum et pupillórum inópiam ac solitúdinem
+        sublevábat. Qui, dum síngulos non magis prædicatióne quam vita ad pie
+        sanctéque vivéndum adhortarétur, obdormívit in Dómino mense sui pontificátus
+        undécimo, quinto Nonas Julii, anno sexcentésimo octogésimo tertio,
+        sepultúsque est in basilica sancti Petri. Ordinatióne una, mense Junio,
+        creávit presbýteros novem, diáconos tres, epíscopos divérsis in locis
+        vigínti tres.
       en: >-
-        Leo II was a Sicilian. He was learned in sacred and worldly letters in the Greek and
-        Latin tongues, and was moreover an excellent musician. He re-arranged and improved the
-        music of the sacred hymns and Psalms used in the Church. He approved the acts of the
-        sixth general Council, which was held at Constantinople, under the Presidency of the
-        Legates of the Apostolic See, in the presence of the Emperor Constantine, the Patriarchs
-        of Constantinople and Antioch, and one hundred and seventy Bishops. Leo also translated
-        the decrees of the Council from Greek into Latin.
+        Leo II was a Sicilian. He was learned in sacred and worldly letters in the
+        Greek and Latin tongues, and was moreover an excellent musician. He
+        re-arranged and improved the music of the sacred hymns and Psalms used in the
+        Church. He approved the acts of the sixth general Council, which was held at
+        Constantinople, under the Presidency of the Legates of the Apostolic See, in
+        the presence of the Emperor Constantine, the Patriarchs of Constantinople and
+        Antioch, and one hundred and seventy Bishops. Leo also translated the decrees
+        of the Council from Greek into Latin.
 
 
-        It was in this Council that Cyrus, Sergius, and Pyrrhus were condemned for teaching that
-        there is in Christ only one Will and one Working. Leo broke the pride of the Archbishops
-        of Ravenna, who had puffed themselves up under the power of the Exarchs to set at naught
-        the power of the Apostolic See. Wherefore he decreed that the elections of the clergy of
-        Ravenna should be nothing worth, until they had been confirmed by the authority of the
-        Bishop of Rome.
+        It was in this Council that Cyrus, Sergius, and Pyrrhus were condemned for
+        teaching that there is in Christ only one Will and one Working. Leo broke the
+        pride of the Archbishops of Ravenna, who had puffed themselves up under the
+        power of the Exarchs to set at naught the power of the Apostolic See.
+        Wherefore he decreed that the elections of the clergy of Ravenna should be
+        nothing worth, until they had been confirmed by the authority of the Bishop
+        of Rome.
 
 
-        He was a very father to the poor. Not by money only, but by his work, his labours, and
-        his advice he relieved the poverty and loneliness of widows and orphans. He was leading
-        all to live holy and godly lives, not by mere preaching, but by his own life, when he fell
-        asleep in the Lord, having sat as Pope nine months and twenty-seven days. He was buried in
-        the Church of St. Peter. In the month of June he held one ordination whereat he ordained
-        nine Priests, three Deacons, and twenty-three Bishops for diverse places.
+        He was a very father to the poor. Not by money only, but by his work, his
+        labours, and his advice he relieved the poverty and loneliness of widows and
+        orphans. He was leading all to live holy and godly lives, not by mere
+        preaching, but by his own life, when he fell asleep in the Lord, having sat as
+        Pope nine months and twenty-seven days. He was buried in the Church of St.
+        Peter. In the month of June he held one ordination whereat he ordained nine
+        Priests, three Deacons, and twenty-three Bishops for diverse places.
     status: { la: verified, en: verified }

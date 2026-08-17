@@ -1,0 +1,15 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/07-16.txt` -- "In
+# Commemoratione Beatæ Mariæ Virgine de Monte Carmelo;;Duplex majus;;
+# 4;;ex C11". Own real [Oratio] and own untagged [Ant 1] ("Sancta
+# María, succúrre míseris..." -- a separate `(rubrica cisterciensis)`
+# variant cross-references `@CommuneCist/C11` instead, ignored per the
+# untagged-block convention). Own Nocturn 2 vita content. No Lectio7-9
+# in her own file (only a `Responsory7` cross-ref) -- defers to the
+# Common of the BVM's own Nocturn 3, not transcribed here, same pattern
+# as our-lady-of-the-snows.yml/presentation-of-the-bvm.yml.
+id: our-lady-of-mount-carmel
+name: "Our Lady of Mount Carmel"
+rank: duplex-majus
+common: common-of-the-bvm
+propers: "our-lady-of-mount-carmel"
