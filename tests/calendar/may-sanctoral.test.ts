@@ -18,20 +18,27 @@ describe('May sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it('two stubs are genuinely unwinnable in the real historical calendar, not just an artifact of the year checked', () => {
+  it('genuinely unwinnable stubs correctly lose to their real competitor, now that both are modeled', () => {
     // Ss. Alexander/Eventius/Theodulus/Juvenal always lose to the Finding
-    // of the Holy Cross (May 3) in real practice — but that's a fixed
-    // feast of the Lord, which this app doesn't model at all (same known
-    // gap as Circumcision/Epiphany/Purification/Annunciation), so the stub
-    // wins by default here rather than being displaced the way it really
-    // would be.
+    // of the Holy Cross (May 3) in real practice — both are now modeled
+    // (see finding-of-the-holy-cross.yml), so the collision engine
+    // correctly demotes the stub to a commemoration instead of letting it
+    // win by default.
     const may3 = resolveDay('2033-05-03');
     expect(may3.winner).toEqual({
       kind: 'sanctoral',
-      id: 'ss-alexander-eventius-theodulus-and-juvenal',
-      name: 'Ss. Alexander I, Eventius, and Theodulus, Martyrs, and Juvenal, Bishop and Confessor',
-      rank: 'simplex',
+      id: 'finding-of-the-holy-cross',
+      name: 'The Finding of the Holy Cross',
+      rank: 'duplex-2-classis',
     });
+    expect(may3.commemorations).toEqual([
+      {
+        kind: 'sanctoral',
+        id: 'ss-alexander-eventius-theodulus-and-juvenal',
+        name: 'Ss. Alexander I, Eventius, and Theodulus, Martyrs, and Juvenal, Bishop and Confessor',
+        rank: 'simplex',
+      },
+    ]);
 
     // St. Pudentiana always loses to St. Peter Celestine (May 19, also fixed-date) —
     // this one *is* modeled (both are real sanctoral records), so it

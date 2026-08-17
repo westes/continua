@@ -1,0 +1,190 @@
+# Matins Nocturn 2-3 readings for the Dedication of the Basilica of the
+# Most Holy Savior (the Lateran), Nov 9. Sourced directly from
+# web/www/horas/Latin/Sancti/11-09.txt, English/Sancti/11-09.txt.
+#
+# Nocturn 2: Lectio4-6 plus Lectio6a combined into one reading -- one
+# continuous chronological account (Pope St. Sylvester's original
+# dedication through the 1726 and 1884 restorations), no genuine source
+# break. (Lectio1-3, the Book of Revelation excerpt on the heavenly
+# Jerusalem, is left to the bible-plan store as usual, per this app's
+# split between Nocturn 1 scripture and Nocturn 2/3 patristic content.)
+# Nocturn 3: no Lectio7-9 override in this saint's own file at all (only
+# Lectio1-6a + a Commemoratio block) -- her `ex C8` Rule means these come
+# straight from the Common of a Dedication (Commune/C8.txt) instead.
+# Lectio7's Gospel citation (Luke 19:1-10) is a bare incipit ("Et
+# réliqua") with no full pericope text given, so — per the established
+# convention of not transcribing bare incipits — only the homily portion
+# is authored (not marked isGospel), St. Ambrose's homily on Zacchaeus
+# (Lectio7's homily + Lectio8-9 combined, one continuous piece). This is
+# the *plain* C8 homily (Ambrose) — distinct from
+# dedication-of-the-basilicas-of-ss-peter-and-paul.yml's own Nocturn 3,
+# which overrides with a different homilist (Gregory's Moralia) in its
+# own file; the Lateran has no such override, so it gets the Common's
+# own default instead.
+id: dedication-of-the-basilica-of-the-most-holy-savior
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Ritus, quos in consecrándis ecclésiis et altáribus Romána servat Ecclésia, beátus
+        Silvéster Papa primus instítuit. Nam, etsi jam ab Apostolórum témpore loca fuérunt
+        Deo dicáta, quæ a quibúsdam oratória, ab áliis ecclésiæ dicebántur, ubi colléctæ
+        fiébant per unam sábbati, et christiánus pópulus oráre, Dei verbum audíre et
+        Eucharístiam súmere sólitus erat; non tamen illa ádeo solémni ritu consecrabántur,
+        nec in eis adhuc in títulum eréctum erat altáre, quod chrísmate delibútum, Dómini
+        nostri Jesu Christi, qui altáre, hóstia et sacérdos noster est, figúram exprímeret.
+
+
+        Sed, ubi Constantínus imperátor per baptísmi sacraméntum sanitátem salutémque
+        consecútus est, tum primum lege ab eo lata concéssum est toto orbe terrárum,
+        Christiáni ut ecclésias ædificárent; quos ille, non solum edícto, sed étiam exémplo
+        ad sacram ædificatiónem est cohortátus. Nam, et in suo Lateranénsi palátio ecclésiam
+        Salvatóri dedicávit, et ei continéntem basílicam nómine sancti Joánnis Baptístæ
+        cóndidit, eo loco quo ipse, baptizátus a sancto Silvéstro, ab infidelitátis lepra
+        mundátus est; quam idem Póntifex consecrávit quinto idus novémbris. Cujus
+        consecratiónis memória celebrátur hodiérno die, quo primum Romæ públice ecclésia
+        consecráta est, et imágo Salvatóris, in paríete depícta, pópulo Románo appáruit.
+
+
+        Quod, si beátus Silvéster póstea in consecratióne altáris Príncipis Apostolórum
+        decrévit ut deínceps nisi ex lápide altária non ædificaréntur; tamen basílicæ
+        Lateranénsis altáre fuit e ligno eréctum. Quod mirum non est; nam, cum a sancto
+        Petro usque ad Silvéstrum, propter persecutiónes, Pontífices certo loco consístere
+        non possent, quocúmque eos necéssitas compulísset, sive in cryptas, sive in
+        cœmetéria, sive in ædes piórum, super illo altári lígneo ad arcæ similitúdinem
+        cóncavo, sacra faciébant. Quo altári sanctus Silvéster, réddita Ecclésiæ pace,
+        honóris causa Príncipis Apostolórum, qui in illo sacrificásse dícitur, et
+        reliquórum Pontíficum, qui usque ad id tempus ad mystéria conficiénda eo usi
+        fúerant, in Lateranénsi prima ecclésia collocáto, sancívit ne quisquam in eo,
+        præter Románum Pontíficem, Missam deínceps celebráret.
+
+
+        Eándem ecclésiam incéndiis, vastatiónibus, terræ ínsuper mótibus disjéctam
+        eversámque, ac sédula summórum Pontíficum cura reparátam, nova póstmodum molitióne
+        restitútam, Benedíctus décimus tértius, Póntifex máximus, órdinis Prædicatórum, die
+        vigésima octáva aprílis anni millésimi septingentésimi vigésimi sexti, ritu solémni
+        consecrávit, ejúsque celebritátis memóriam hac die recoléndam státuit. Quod autem
+        Pius nonus perficiéndum censúerat, Leo décimus tértius cellam máximam, vetustáte
+        fatiscéntem, ingénti molitióne producéndam laxandámque curávit; vetus musívum,
+        multis jam ántea pártibus instaurátum, ad antíquum exémplar restítui et in novam
+        ábsidem, ópere cultúque magnífico exornátam, transférri; aulam transvérsam, laqueári
+        et contignatióne reféctis, expolíri jussit, anno millésimo octingentésimo
+        octuagésimo quarto; sacrário, æde canonicórum, perpetuáque ad baptistérium
+        Constantiniánum pórticu adjéctis.
+      en: >-
+        The Rites whereof the Church of Rome maketh use for the hallowing of Churches and
+        Altars were first instituted by the blessed Pope Sylvester. From the very time of the
+        Apostles there had been places set apart for God, where assemblies took place upon
+        the first day of every week, and where the Christians were used to pray, to hear the
+        word of God, and to receive the Eucharist, which places were by some called
+        Oratories and by others Churches. But these places were not dedicated with so solemn
+        a form, nor did they set up therein an Altar for a pillar, and pour chrism thereon,
+        for a figure of our Lord Jesus Christ, Who is Himself our Altar, our Victim, and our
+        Priest.
+
+
+        But when the Emperor Constantine had by the Sacrament of Baptism received health
+        both of body and soul, then first in a law by him published was it allowed to the
+        Christians throughout the whole world to build Churches, to the which holy building
+        he exhorted them by his example as well as by his decree. He dedicated in his own
+        Lateran Palace a Church to the Saviour, and built hard by it a Cathedral in the name
+        of St. John the Baptist, upon the place where he had been baptized by holy Sylvester
+        and cleansed from his leprosy. This Cathedral was hallowed by the said Pope upon the
+        9th day of November. It is this consecration, the memory whereof is still celebrated
+        upon this day, the first whereon the public consecration of a Church ever took place
+        in Rome, and the image of the Saviour was seen by the Roman people painted upon the
+        wall.
+
+
+        The Blessed Sylvester afterwards decreed, when he was consecrating the Altar of the
+        Prince of the Apostles, that Altars were thenceforward to be made of stone only, but
+        notwithstanding this the Lateran Cathedral hath the altar made of wood. This is not
+        surprising. From St. Peter to Sylvester the Popes had not been able, by reason of
+        persecutions, to abide fixedly in one place, and they celebrated the Holy Liturgy in
+        cellars, in burying-places, in the houses of godly persons, or wherever need drove
+        them, upon a wooden altar made like an empty box. When peace was given to the Church,
+        holy Sylvester took this box, and to do honour to the Prince of the Apostles, who is
+        said to have offered sacrifice thereon, and to the other Popes who thereon had been
+        used to execute the mystery even unto that time, set it in the first Church, even the
+        Lateran, and ordained that no one but the Bishop of Rome should celebrate the Liturgy
+        thereon for all time coming.
+
+
+        The original Lateran Cathedral, cast down and destroyed by fires, pillage, and
+        earthquakes, and renewed by the constant care of the Popes, was at last rebuilt
+        afresh, and solemnly consecrated by Pope Benedict XIII, a Friar Preacher, upon the
+        28th day of April, in the year 1726, the memory of which Festival he ordained to be
+        kept upon this day. In the year 1884 Leo XIII took in hand a work which had received
+        the sanction of his predecessor Pius IX. The great sanctuary, the walls of which were
+        giving way with age, was lengthened and widened, a task of immense labour. The
+        ancient mosaic had been renewed previously in several places; it was now restored
+        according to the original design, and transferred to the new apse, the embellishment
+        of which was carried out with great magnificence. The transept was redecorated, and
+        its ceiling and woodwork repaired. A sacristy, a residence for the canons, and a
+        portico connecting with the baptistery of Constantine, were added to the existing
+        buildings.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Ambrose, Commentary on Luke, Book VIII (on Luke 19:1-10)"
+    text:
+      la: >-
+        Zachǽus, statúra pusíllus, hoc est, nulla nobilitátis ingénitæ dignitáte sublímis,
+        exíguus méritis sicut pópulus natiónum, audíto Dómini Salvatóris advéntu, quem sui
+        non recéperant, vidére cupiébat. Sed nemo fácile Jesum videt; nemo potest Jesum
+        vidére constitútus in terra. Et, quia non prophétas, non legem habébat, tamquam
+        formæ grátiam naturális, ascéndit in sycómorum, vanitátem scílicet Judæórum vestígio
+        suo próterens, erráta quoque córrigens superióris ætátis. Et ídeo Jesum in
+        interióris domus recépit hospítio.
+
+
+        Et bene ascéndit in árborem, ut arbor bona bonos fructus fáceret, ac, naturáli
+        excísus oleástro et contra natúram insértus in bonam olívam, fructum posset legis
+        afférre. Radix enim sancta, etsi rami inútiles. Quorum infructuósam glóriam plebs
+        géntium, fide resurrectiónis, quasi quadam córporis elevatióne, transcéndit.
+        Zachǽus ergo in sycómoro, cæcus in via: quorum álterum Dóminus miseratúrus
+        exspéctat, álterum mansiónis suæ claritáte nobílitat; álterum sanatúrus intérrogat,
+        apud álterum se, non invitátus, invítat. Sciébat enim úberem hospítii sui esse
+        mercédem. Sed tamen, etsi nondum vocem invitántis audíerat, jam víderat afféctum.
+
+
+        Verum, ne cæcum illum, tamquam fastidiósi páuperum, cito reliquísse videámur et
+        transísse ad dívitem, exspectémus eum, quia exspectávit et Dóminus; interrogémus
+        eum, quia interrogávit et Christus. Nos interrogémus, quia nescímus: ille, quia
+        nóverat. Nos interrogémus, ut sciámus unde iste curátus sit: ille interrogávit, ut
+        in uno plures discerémus unde Dóminum vidére mereámur. Interrogávit enim, ut
+        crederémus, néminem, nisi confiténtem, posse salvári.
+      en: >-
+        Zacchaeus was little of stature, that is, he was not raised aloft among men by
+        nobility of birth, and, like the most of the world, he possessed few merits. When he
+        heard that the Lord and Saviour, Who had come unto His Own, and Whom His Own had not
+        received, was coming, he desired to see Him. But the sight of Jesus is not easy; to
+        any on the earth it is impossible. And since Zacchaeus had neither the Prophets, nor
+        yet the Law, as a gracious help to his nature, he climbed up into a sycamore tree,
+        raising his feet above the vanity of the Jews, and straightening the crooked
+        branches of his former life, and therefore he received Jesus to lodge within his
+        house.
+
+
+        He did well to climb up into a tree, that a good tree might bring forth good fruits,
+        and that the slip of the wild olive, grafted, contrary to nature, into the good
+        olive, might bring forth the fruits of the law. For the root is holy, however
+        unprofitable the branches. Their barren beauty hath now been overshadowed by the
+        belief of the Gentiles in the Resurrection, as by a material upgrowth. Zacchaeus,
+        then, was in the sycamore tree, and the blind man by the way-side. For the one, Jesus
+        stood waiting to show mercy, and asked him before He healed him, what he would that
+        He should do for him; being unbidden of the other, He bade Himself to be his Guest,
+        knowing how rich was the reward of receiving Him. Nevertheless, albeit He had heard
+        no words of invitation, yet had He seen how his heart went.
+
+
+        But lest we should seem haughtily to pass by the poor blind man, and to hurry on to
+        the rich one, let us stand waiting for him, as the Lord stood and waited; let us ask
+        of him, as Christ asked of him. Let us ask, because we are ignorant; Christ asked,
+        because He knew. Let us ask, that we may know whence he received his cure; Christ
+        asked, that all of us may know from one example where through we are to earn a sight
+        of the Lord. Christ asked, that we might believe that none, save they that confess
+        Him, can be saved.
+    status: { la: verified, en: verified }

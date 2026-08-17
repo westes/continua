@@ -1,0 +1,29 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/11-09.txt` -- "In
+# Dedicatione Archibasilicæ Ss. Salvatoris;;Duplex II. classis;;5;;ex C8".
+# Previously excluded entirely under a stale "fixed feast of the Lord,
+# not modeled" note in sanctoral-calendar.yml's own November comment --
+# wrong, same class of error as our-lady-of-the-snows.yml: she has real,
+# unique Lectio1-6(+6a) content of her own (the history of the Lateran
+# basilica's dedication under Pope St. Sylvester, through its later
+# restorations), and her `ex C8` Rule just means her collect/antiphon/
+# Nocturn-3-Gospel-and-homily come from the existing Common of a
+# Dedication (`collect-c8.yml`, `benedictus-antiphon-common-of-a-
+# dedication.yml` -- already authored, reused directly here, not
+# duplicated) -- the same Common already used by
+# dedication-of-the-basilicas-of-ss-peter-and-paul.yml.
+id: dedication-of-the-basilica-of-the-most-holy-savior
+name: "Dedication of the Basilica of the Most Holy Savior (the Lateran)"
+rank: duplex-2-classis
+common: common-of-a-dedication
+propers: null
+collectCommon: collect-c8
+# collect-c8's own text has no {N} placeholder to substitute (it's about
+# the building, not a saint) -- collectName is still required by
+# getDayCollect's own lookup, but its value is never actually used.
+collectName:
+  la: []
+  en: []
+minorHoursCommon: common-of-a-dedication
+benedictusCommon: common-of-a-dedication

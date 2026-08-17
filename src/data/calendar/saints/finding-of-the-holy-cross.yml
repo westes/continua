@@ -1,0 +1,18 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/05-03.txt` --
+# "Inventione Sanctæ Crucis;;Duplex II classis;;5.2;;". Previously
+# excluded entirely under a stale "fixed feast of the Lord, not modeled"
+# note in sanctoral-calendar.yml's own May comment -- wrong, same class
+# of error as our-lady-of-the-snows.yml: her [Rule] says `proprium` -- a
+# fully proper feast with real, complete unique text throughout
+# (collect, antiphon, 8 Matins lessons -- the file itself has no
+# Lectio9 at all, an unusual but genuine structural feature, not an
+# omission on this app's part). `Sancti/09-14.txt`'s Exaltation of the
+# Holy Cross reuses this same content wholesale (`ex Sancti/05-03`) --
+# see exaltation-of-the-holy-cross.yml.
+id: finding-of-the-holy-cross
+name: "The Finding of the Holy Cross"
+rank: duplex-2-classis
+common: proper-to-the-finding-of-the-holy-cross
+propers: "finding-of-the-holy-cross"

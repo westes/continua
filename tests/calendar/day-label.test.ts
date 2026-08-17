@@ -50,7 +50,16 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // Sundays) -- see calendar/temporal-id.test.ts for the id-level
     // coverage this label check builds on.
     expect(getDayLabel(resolveDay('2026-11-08'))).toBe('The 5th Sunday after Epiphany');
-    expect(getDayLabel(resolveDay('2026-11-09'))).toBe('Monday in the 5th week after Epiphany');
+    // 2026-11-09 is also the Dedication of the Basilica of the Most Holy
+    // Savior (Duplex II Classis, added 2026-08 — see
+    // dedication-of-the-basilica-of-the-most-holy-savior.yml) — an
+    // ordinary (non-privileged) Monday fully yields to a real winning
+    // saint, so the label is just her name, not the ferial fallback; the
+    // 11-16 assertion below covers that fallback format on a genuinely
+    // saint-free day instead.
+    expect(getDayLabel(resolveDay('2026-11-09'))).toBe(
+      'Dedication of the Basilica of the Most Holy Savior (the Lateran)',
+    );
     expect(getDayLabel(resolveDay('2026-11-15'))).toBe('The 6th Sunday after Epiphany');
     expect(getDayLabel(resolveDay('2026-11-16'))).toBe('Monday in the 6th week after Epiphany');
   });
@@ -63,7 +72,14 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // before Advent, so this ordinal is fixed, not overflow-year-specific
     // -- confirmed against a non-overflow year (1943) too.
     expect(getDayLabel(resolveDay('2026-11-22'))).toBe('The 23rd Sunday after Trinity');
-    expect(getDayLabel(resolveDay('1943-11-21'))).toBe('The 23rd Sunday after Trinity');
+    // 1943-11-21 is also the Presentation of the BVM (Duplex Majus, added
+    // 2026-08 — see presentation-of-the-bvm.yml), which meets this app's
+    // existing privileged-Sunday rank threshold (commemorations.ts's
+    // `privileged-sunday` case requires only duplex-majus+) and so wins
+    // outright rather than being commemorated — a pre-existing rule, not
+    // new behavior from adding her. 2026-11-22 above (no saint collision)
+    // still covers the fixed-ordinal label itself.
+    expect(getDayLabel(resolveDay('1943-11-21'))).toBe('The Presentation of the Blessed Virgin Mary');
   });
 });
 

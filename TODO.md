@@ -42,13 +42,18 @@ across every hour and content type in this app.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
-   - A handful of individually-flagged content gaps, each already flagged in place rather than
-     silently dropped: St. Frances of Rome's and St. Bibiana's Benedictus antiphons
-     (structurally can't win their own day under this app's calendar in any near-term year,
-     needs a very late test year to check); Ss. Ursula and Companions' Benedictus antiphon
-     (a category-of-one, no live rendering to verify against); the four "…benedícta…"
-     octave-day Ant+V/R+collect blocks (not yet modeled). "Our Lady of the Snows" — formerly
-     listed here as "not modeled at all" — is now added; see "Our Lady of the Snows added"
+   - The four "…benedícta…" octave-day Ant+V/R+collect blocks (Christmas Octave's own
+     Nativity/Stephen/John/Holy-Innocents commemorations, e.g. on Dec 30) — not yet modeled;
+     see "Octave content" below for the real mechanism gap this needs. St. Frances of Rome's/
+     St. Bibiana's Benedictus antiphons and Ss. Ursula and Companions' were also once flagged
+     here — the first two turned out already resolved (verified live, see memory
+     `vu-todo-priority`'s own correction note), the third is a settled non-gap (no unique text
+     exists to author, see her own file's comment) — not carried forward as open items.
+     Five "fixed Lord's/BVM feast, not modeled" exclusions across the calendar (Our Lady of the
+     Snows, the Finding of the Holy Cross, the Transfiguration, the Exaltation of the Holy
+     Cross, the Dedication of the Lateran, the Presentation of the BVM) turned out to be the
+     same stale mistake repeated six times — all six now added with real content; see "Our
+     Lady of the Snows added" and "Four more 'not modeled' fixed Lord's/BVM feasts added"
      below.
 
 3. **Known, deliberate simplifications** — flagged as intentional, not a bug, no plan to
@@ -1650,6 +1655,71 @@ Live-checked via direct resolution (not a browser query, per
 [[vu-reference-engine-file-layout]]): she wins outright on 2026-08-05 and 2027-08-05, with her
 Benedictus antiphon, day collect, and Matins reading all resolving `verified`. `npm test` (365
 tests) and `tsc --noEmit` both pass.
+
+### Four more "not modeled" fixed Lord's/BVM feasts added (2026-08)
+
+Per direct instruction ("import the sanctoral content that exists" — this app isn't
+reconstructing any one calendar, and content beyond what the user's own final calendar keeps is
+still worth having so others can build their own): swept every remaining "fixed Lord's/BVM
+feast, not modeled" exclusion in `sanctoral-calendar.yml` the same way Our Lady of the Snows was
+just fixed, rather than treating that as a one-off. All four turned out to have real, complete
+source content too:
+
+- **Finding of the Holy Cross** (May 3, Duplex II Classis) — her `[Rule]` is `proprium`: fully
+  own text throughout (collect, antiphon, Nocturn 2/3). Now wins outright over
+  `ss-alexander-eventius-theodulus-and-juvenal`, exactly matching what that saint's own file
+  already documented as the live-verified reality ("loses the day to the Finding of the Holy
+  Cross... this isn't just an artifact of the specific year checked") — her file had simply
+  never been given a real competitor to lose to until now.
+- **The Transfiguration of Our Lord** (Aug 6, Duplex II Classis) — same `proprium` shape, fully
+  own text throughout. Its three subordinate saints (Ss. Xystus/Felicissimus/Agapitus) are
+  still excluded — no longer because the Transfiguration itself is unmodeled, but because of
+  the same real, separate octave/subordination-rendering gap that already blocks St. Clare et
+  al.
+- **The Exaltation of the Holy Cross** (Sep 14, Duplex Majus) — her `[Rule]` is
+  `ex Sancti/05-03`: reuses the Finding of the Holy Cross's content wholesale. Collect/antiphon
+  reuse via a cross-id `propers` pointer (`propers: finding-of-the-holy-cross`, same pattern as
+  `st-michael.yml`'s `apparition-of-st-michael`) rather than duplicate files; the Matins
+  nocturn-readings mechanism has no equivalent cross-id lookup (`getNocturnReadings` keys
+  strictly off the saint's own id), so `exaltation-of-the-holy-cross.yml` duplicates
+  `finding-of-the-holy-cross.yml`'s reading content instead.
+- **Dedication of the Basilica of the Most Holy Savior** (Nov 9, i.e. the Lateran, Duplex II
+  Classis) — her `[Rule]` is `ex C8` (Common of the Dedication of a Church, already modeled —
+  `collect-c8.yml`/`benedictus-antiphon-common-of-a-dedication.yml` already existed from
+  `dedication-of-the-basilicas-of-ss-peter-and-paul.yml`, reused directly here, not duplicated),
+  but real unique `Lectio1-6(+6a)` vita content of her own. Her secondary, St. Theodore, is
+  still excluded — same real octave/subordination gap as the Transfiguration's secondaries
+  above (her own embedded `[Commemoratio 5]` block already carries his real collect too, ready
+  to use once that mechanism exists).
+- **The Presentation of the BVM** (Nov 21, Duplex Majus, itself a Monastic-1617-only addition)
+  — has a real, unique `[Oratio]` of her own (unlike Our Lady of the Snows), but her
+  `[Ant 1]` is a *substituted* Common reference (`@Commune/C10:Ant 2_`, with a
+  feast-specific `s/Christo:.*/Christo, allelúja./` truncation applied and computed by hand,
+  not shared verbatim by any other saint) — authored as her own file via `propers`, same
+  "substitution makes shared-formula text effectively proper" reasoning as
+  `st-lucy-collect.yml`.
+
+**Correction to Our Lady of the Snows found during this same sweep**: her own file had no
+Lectio7-9 either, and — like the Presentation of the BVM — this means she defers to
+Commune/C11's own Nocturn 3 (a bare Gospel incipit, Luke 11:27-28, plus the Venerable Bede's
+homily). Missed in the first pass (only her Nocturn 2 vita was authored); added now, identical
+content to `presentation-of-the-bvm.yml`'s own Nocturn 3, duplicated for the same
+no-cross-id-lookup reason as Exaltation/Finding of the Holy Cross above.
+
+**One real bug caught before committing**: Finding of the Holy Cross's own collect/antiphon
+files were never actually created in the first draft (only Exaltation's cross-id pointer to
+them was written) — both resolved `missing` on live verification. Caught by re-checking every
+new feast end-to-end via direct resolution before committing, not assumed correct from the
+file list alone; fixed immediately, re-verified.
+
+**Test updates, not regressions**: three tests had fixed proof dates that happen to collide
+with the newly-added feasts, all updated to reflect the new, correct behavior rather than the
+old absence: `tests/calendar/may-sanctoral.test.ts` (Finding of the Holy Cross now correctly
+outranks its stub competitor instead of winning by the stub's own default), and
+`tests/calendar/day-label.test.ts` (two dates — Nov 9 and 1943-11-21 — now show the new saint's
+name instead of a ferial fallback label, the latter because Duplex Majus already meets this
+app's own pre-existing privileged-Sunday rank threshold in `commemorations.ts`, not new
+behavior). `npm test` (365 tests) and `tsc --noEmit` both pass.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)
 

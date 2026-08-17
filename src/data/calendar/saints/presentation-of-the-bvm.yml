@@ -1,0 +1,24 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/11-21.txt` -- "In
+# Præsentatione Beatæ Mariæ Virginis;;Duplex majus;;4;;ex C11". Previously
+# excluded entirely under a stale "fixed BVM feast, excluded per the
+# usual convention" note in sanctoral-calendar.yml's own November comment
+# -- wrong, same class of error as our-lady-of-the-snows.yml. Unlike her,
+# this feast DOES have a real, unique [Oratio] of its own (see
+# presentation-of-the-bvm-collect.yml) and Nocturn 2 vita content
+# (Lectio4-6, St. John Damascene + St. Ambrose on the Blessed Virgin).
+# Her [Ant 1] is a substituted Common text (`@Commune/C10:Ant 2_`, with a
+# truncate-and-add-alleluia edit specific to this feast -- see
+# presentation-of-the-bvm-antiphon.yml), effectively proper by the same
+# "own [Name]/edit makes shared-formula text proper" reasoning as
+# st-lucy-collect.yml, so authored via `propers` rather than a Common
+# fallback. No Lectio7-9 override in her own file (defers to Commune/
+# C11's own Nocturn 3, same as our-lady-of-the-snows.yml's — see that
+# file's own Nocturn 3 comment for why it's duplicated rather than
+# cross-referenced).
+id: presentation-of-the-bvm
+name: "The Presentation of the Blessed Virgin Mary"
+rank: duplex-majus
+common: common-of-the-bvm
+propers: "presentation-of-the-bvm"

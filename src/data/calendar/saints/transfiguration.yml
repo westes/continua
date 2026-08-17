@@ -1,0 +1,19 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/08-06.txt` -- "In
+# Transfiguratione Domini Nostri Jesu Christi;;Duplex II classis;;5.1;;".
+# Previously excluded entirely under a stale "fixed feast of the Lord,
+# not modeled" note in sanctoral-calendar.yml's own August comment --
+# wrong, same class of error as our-lady-of-the-snows.yml: her [Rule]
+# says `proper`/`Festum Domini` -- a fully proper feast with real,
+# complete unique text throughout (collect, antiphon, all 9 Matins
+# lessons), not a Common fallback at all. Three secondary saints (Ss.
+# Xystus/Felicissimus/Agapitus, Aug 6) are still excluded, subordinate to
+# this feast under a real, separate mechanism gap (octave/subordination
+# rendering isn't built for a non-octave "loses outright to a Duplex II
+# Classis feast of the Lord" case) -- not fixed by this addition alone.
+id: transfiguration
+name: "The Transfiguration of Our Lord Jesus Christ"
+rank: duplex-2-classis
+common: proper-to-the-transfiguration
+propers: "transfiguration"

@@ -83,16 +83,20 @@ days:
   "04-28": [st-vitalis]
   "04-29": [st-robert, st-catherine-of-siena]
   "04-30": [st-peter-martyr]
-  # May — 5/12 of the pre-1955 pull. Same exclusions as before: fixed
-  # feasts of the Lord (Finding of the Holy Cross May 3), and movable
-  # ones (Ascension, Trinity Sunday, Corpus Christi — all skipped as
-  # primary, since they're temporal, not sanctoral). Two stubs this month
-  # (Ss. Alexander/Eventius/Theodulus/Juvenal, St. Pudentiana) are
-  # genuinely un-winnable in any year, not just an artifact of which year
-  # was checked — see their own files.
+  # May — 5/12 of the pre-1955 pull. Movable feasts (Ascension, Trinity
+  # Sunday, Corpus Christi) are skipped as primary, since they're
+  # temporal, not sanctoral. The Finding of the Holy Cross (May 3) was
+  # also excluded here at first as "a fixed feast of the Lord, not
+  # modeled" — wrong, corrected 2026-08 (see finding-of-the-holy-cross.yml)
+  # — she has real, complete content and now wins the day outright, which
+  # is exactly what her competitor Ss. Alexander/Eventius/Theodulus/
+  # Juvenal's own file already documented as the live-verified reality
+  # ("loses the day to the Finding of the Holy Cross... this isn't just
+  # an artifact of the specific year checked"). St. Pudentiana is the
+  # remaining genuinely un-winnable stub this month — see her own file.
   "05-01": [ss-philip-and-james]
   "05-02": [st-athanasius]
-  "05-03": [ss-alexander-eventius-theodulus-and-juvenal]
+  "05-03": [finding-of-the-holy-cross, ss-alexander-eventius-theodulus-and-juvenal]
   "05-04": [st-monica]
   "05-06": [st-john-before-the-latin-gate]
   "05-07": [st-stanislaus]
@@ -161,29 +165,32 @@ days:
   # their own files. A genuinely new wrinkle this month: several dates
   # have a real, named secondary saint permanently subordinate to a
   # fixed, non-movable *octave* day (Lawrence's own Aug 10-17 octave, the
-  # Assumption's Aug 15-22 octave) or to the fixed Transfiguration (Aug
-  # 6) -- octaves and fixed Lord's feasts aren't modeled by this app (a
-  # known, explicitly deferred gap), so unlike the "genuinely unwinnable
-  # stub" pattern used elsewhere (where both competitors ARE modeled and
-  # the engine can correctly show the subordination), these can't be
-  # represented without incorrectly letting them win outright. Excluded
-  # entirely rather than guessed at: Ss. Xystus/Felicissimus/Agapitus
-  # (Aug 6, under the Transfiguration), Ss. Tiburtius and Susanna (Aug
-  # 11), St. Clare (Aug 12 -- notable: a genuinely major saint, not an
-  # obscure one, caught by this same gap), Ss. Hippolytus and Cassian
-  # (Aug 13), St. Agapitus (Aug 18), Ss. Timothy/Hippolytus/Symphorian
-  # (Aug 22). Our Lady of the Snows (Aug 5) was also excluded here at
-  # first under the same "fixed BVM feast" reasoning -- wrong, corrected
-  # 2026-08: unlike the genuinely-unmodeled cases above, she has real,
-  # complete content (Matins readings + Common-of-the-BVM collect/
-  # antiphon) and this app already models three other fixed BVM feasts
-  # the same way (assumption, immaculate-conception, nativity-bvm) -- see
-  # our-lady-of-the-snows.yml's own header. Added below.
+  # Assumption's Aug 15-22 octave) -- octaves aren't modeled by this app
+  # (a known, explicitly deferred gap; see "Octave content" in TODO.md),
+  # so unlike the "genuinely unwinnable stub" pattern used elsewhere
+  # (where both competitors ARE modeled and the engine can correctly show
+  # the subordination), these can't be represented without incorrectly
+  # letting them win outright. Excluded entirely rather than guessed at:
+  # Ss. Tiburtius and Susanna (Aug 11), St. Clare (Aug 12 -- notable: a
+  # genuinely major saint, not an obscure one, caught by this same gap),
+  # Ss. Hippolytus and Cassian (Aug 13), St. Agapitus (Aug 18), Ss.
+  # Timothy/Hippolytus/Symphorian (Aug 22). Our Lady of the Snows (Aug 5)
+  # and the Transfiguration (Aug 6) were also excluded here at first,
+  # each under a stale "fixed BVM/Lord feast, not modeled" note -- wrong,
+  # corrected 2026-08: both have real, complete content, and this app
+  # already models three other fixed BVM feasts the same way (assumption,
+  # immaculate-conception, nativity-bvm) -- see our-lady-of-the-snows.yml
+  # and transfiguration.yml's own headers. Added below. Ss.
+  # Xystus/Felicissimus/Agapitus, formerly excluded here as subordinate
+  # to an unmodeled Transfiguration, are still excluded -- now blocked by
+  # the same real octave/subordination-rendering gap as St. Clare et al.
+  # above, not by the Transfiguration itself being unmodeled.
   "08-01": [st-peter-ad-vincula, ss-machabees]
   "08-02": [st-stephen-i]
   "08-03": [finding-of-st-stephen]
   "08-04": [st-dominic]
   "08-05": [our-lady-of-the-snows]
+  "08-06": [transfiguration]
   "08-07": [st-donatus]
   "08-08": [ss-cyriacus-largus-and-smaragdus]
   "08-09": [vigil-of-st-lawrence, st-romanus]
@@ -206,9 +213,11 @@ days:
   # St. Hadrian (Sep 8) is the one exception -- he's blocked by the
   # Nativity's own day, not its octave, and that day IS already a mapped
   # sanctoral entry, so the ordinary collision engine handles him
-  # correctly. The Exaltation of the Holy Cross (Sep 14) is excluded as a
-  # fixed feast of the Lord, same convention as the Finding of the Holy
-  # Cross. St. Nicholas of Tolentino (Sep 10) and St. Januarius (Sep 19)
+  # correctly. The Exaltation of the Holy Cross (Sep 14) was also
+  # excluded here at first, same "fixed feast of the Lord" reasoning as
+  # the Finding of the Holy Cross -- wrong, corrected 2026-08 alongside
+  # it (see exaltation-of-the-holy-cross.yml). St. Nicholas of Tolentino
+  # (Sep 10) and St. Januarius (Sep 19)
   # are both monastic-calendar-specific: the former overrides what the
   # base Tridentine table treats as a plain Nativity-octave continuation,
   # the latter is added outright, present in neither the base table nor
@@ -230,6 +239,7 @@ days:
   "09-01": [st-giles, ss-twelve-brothers]
   "09-08": [nativity-bvm, st-hadrian]
   "09-10": [st-nicholas-of-tolentino]
+  "09-14": [exaltation-of-the-holy-cross]
   "09-16": [ss-cornelius-and-cyprian, ss-euphemia-lucia-and-geminianus]
   "09-19": [st-januarius]
   "09-20": [vigil-of-st-matthew]
@@ -271,15 +281,20 @@ days:
   # named saint). Ss. Four Crowned Martyrs (Nov 8, the octave's own final
   # day) hit the same unmodeled-octave gap as several saints in August/
   # September. The Dedication of the Basilica of the Most Holy Savior
-  # (Nov 9, i.e. the Lateran) is a fixed feast of the Lord (named for the
-  # Savior directly), excluded the same way the Transfiguration was in
-  # August -- its secondary, St. Theodore, is excluded along with it for
-  # the same unmodeled-primary reason. Unlike that one, the Nov 18
-  # Dedication of the Basilicas of Ss. Peter and Paul is about the
-  # Apostles, not the Lord, so it's kept in scope, same as the
-  # Commemoration of St. Paul and the two Chair-of-Peter feasts. The
-  # Presentation of the BVM (Nov 21, itself a monastic-calendar-only
-  # addition) is a fixed BVM feast, excluded per the usual convention.
+  # (Nov 9, i.e. the Lateran) and the Presentation of the BVM (Nov 21,
+  # itself a monastic-calendar-only addition) were also excluded here at
+  # first, each under a stale "fixed Lord's/BVM feast, not modeled" note
+  # -- wrong, corrected 2026-08: both have real, complete content -- see
+  # dedication-of-the-basilica-of-the-most-holy-savior.yml and
+  # presentation-of-the-bvm.yml's own headers. Added below. Its
+  # secondary, St. Theodore, is still excluded -- now blocked by the same
+  # real octave/subordination-rendering gap as St. Clare et al. in
+  # August, not by the Dedication itself being unmodeled (her own
+  # embedded `[Commemoratio 5]` block even carries St. Theodore's real
+  # collect already, ready to use once that mechanism exists). The
+  # Nov 18 Dedication of the Basilicas of Ss. Peter and Paul was already
+  # kept in scope (it's about the Apostles, not the Lord), same as the
+  # Commemoration of St. Paul and the two Chair-of-Peter feasts.
   #
   # Three monastic-calendar-specific reassignments this month, the most
   # of any month so far: St. Emilian (Nov 12) displaces St. Martin I,
@@ -296,6 +311,7 @@ days:
   # multi-day skip) -- this app's existing transfer machinery handles it
   # correctly; see tests/calendar/november-sanctoral.test.ts.
   "11-01": [all-saints]
+  "11-09": [dedication-of-the-basilica-of-the-most-holy-savior]
   "11-10": [ss-tryphon-and-companions]
   "11-11": [st-martin-of-tours, st-menna]
   "11-12": [st-emilian]
@@ -304,6 +320,7 @@ days:
   "11-17": [st-gregory-thaumaturgus]
   "11-18": [dedication-of-the-basilicas-of-ss-peter-and-paul]
   "11-19": [st-odo, st-pontian]
+  "11-21": [presentation-of-the-bvm]
   "11-22": [st-cecilia]
   "11-23": [st-clement, st-felicitas]
   "11-24": [st-chrysogonus]

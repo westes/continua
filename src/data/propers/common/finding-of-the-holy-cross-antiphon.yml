@@ -1,0 +1,12 @@
+# Read directly from web/www/horas/Latin/Sancti/05-03.txt's own [Ant 1]
+# and its English counterpart -- fully proper text, not a Common
+# template. Also used by exaltation-of-the-holy-cross.yml, which points
+# its own `propers` here directly rather than duplicating this file
+# (her `ex Sancti/05-03` Rule reuses this content wholesale).
+id: finding-of-the-holy-cross-antiphon
+text:
+  la: "O Crux, * splendídior cunctis astris, mundo célebris, homínibus multum amábilis, sánctior univérsis: quæ sola fuísti digna portáre taléntum mundi, dulce lignum, dulces clavos, dúlcia ferens póndera; salva præséntem catérvam in tuis hódie láudibus congregátam. (Allelúja, allelúja.)"
+  en: "O Cross, * surpassing all the stars in splendour, exceeding dear to all Christian people and world-renowned, holiest of earth's treasures: which only wast counted worthy to hold aloft the Price of our Redemption: sweet is thy wood and sweet thine iron, but sweetest of all the Burden that hung on thee! O that all who come this day to celebrate thy praises may find in thee salvation. (Alleluia, Alleluia.)"
+status:
+  la: verified
+  en: verified

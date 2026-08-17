@@ -1,0 +1,20 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/09-14.txt` -- "In
+# Exaltatione Sanctæ Crucis;;Duplex majus;;4;;ex Sancti/05-03". Previously
+# excluded entirely under a stale "fixed feast of the Lord, same
+# convention as the Finding of the Holy Cross" note in
+# sanctoral-calendar.yml's own September comment -- wrong, same class of
+# error, now fixed alongside it (see finding-of-the-holy-cross.yml). Her
+# own [Rule] is `ex Sancti/05-03` -- she reuses the Finding of the Holy
+# Cross's content wholesale, so `propers` points at that saint's own
+# collect/antiphon files directly rather than duplicating them (same
+# cross-id-reuse pattern as st-michael.yml's `apparition-of-st-michael`).
+# The Matins nocturn-readings mechanism has no equivalent cross-id
+# lookup, so exaltation-of-the-holy-cross.yml duplicates
+# finding-of-the-holy-cross.yml's own reading content instead.
+id: exaltation-of-the-holy-cross
+name: "The Exaltation of the Holy Cross"
+rank: duplex-majus
+common: proper-to-the-finding-of-the-holy-cross
+propers: "finding-of-the-holy-cross"
