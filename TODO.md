@@ -22,10 +22,6 @@ across every hour and content type in this app.
    - Pre-1955-but-post-1617 saints' differently-structured Matins readings — source confirmed
      (Tridentine/Divino Afflatu, combine-where-sensible applies the same way), but the actual
      sourcing/modeling pass hasn't started — see "Matins ordo" below.
-   - The "which Sunday governs this date" temporal-id algorithm (23rd-Sunday-before-Advent
-     rule, Epiphany-Sunday transfer to the end of the liturgical year, the
-     Saturday-before-Septuagesima 6th-Epiphany-Sunday commemoration edge case) — tabled, not
-     started.
    - Easter's own octave — tabled, "a whole different discussion."
    - What "a Gospel reading is its own kind" should mean structurally/in the UI, beyond the
      `isGospel` flag on a plain Matins `lesson` — open; deferred until there's a UI to
@@ -1460,16 +1456,71 @@ seasonally variable — what's stored is whichever form rendered live on
 each one's already-chosen clean query date, not a season-aware
 substitution. Same class of gap as the Paschaltide alleluia suffix
 elsewhere in this file, flagged not fixed.
-- **The "which Sunday governs this date" temporal-id algorithm** — the fixed
-  23rd-Sunday-before-Advent rule, Epiphany Sundays transferring to the end
-  of the liturgical year when they don't fit before Septuagesima, and the
-  Saturday-before-Septuagesima edge case (also commemorate the 6th Sunday
-  of Epiphany that day, in overflow years). Described in detail in an
-  earlier conversation, explicitly tabled, not started. Distinct from
-  Christ the King, which didn't need it (last-Sunday-of-October is direct
-  date math).
 - **Easter's own octave** — explicitly tabled ("easter needs a whole
   different discussion").
+
+### The "which Sunday governs this date" temporal-id algorithm — done (2026-08)
+
+Overflow years (Easter early enough that fewer than 6 Sundays after Epiphany occur before
+Septuagesima cuts in) previously just clamped every excess post-Pentecost Sunday to
+`post-pentecost-24` — wrong for every week between XXIII and the real last Sunday of the
+year, only accidentally right for that final Sunday itself.
+
+`calendar/temporal-id.ts`'s post-Pentecost branch is now ported directly from the reference
+engine's own `getweek()` (`DivinumOfficium/Date.pm`) rather than re-derived by hand: once the
+governing Sunday's Pentecost week reaches XXIII, a `wdist` (weeks until Advent) calculation
+decides the id — the fixed final Sunday (`wdist < 2`) always resolves to `post-pentecost-24`
+regardless of the true elapsed count, `post-pentecost-23` covers its own normal week, and
+everything else resumes as `post-epiphany-${8 - wdist}` — the skipped post-Epiphany Sundays,
+in their own ascending order, immediately before the fixed final Sunday. No separate tracking
+of "how many post-Epiphany Sundays occurred" is needed — it falls out of the Advent-distance
+arithmetic alone, confirmed against the reference engine's source rather than assumed. Trinity
+Sunday = `post-pentecost-01` (this app's existing convention) also confirmed correct against
+the same source (`$n=1` at `easter+56`, matching `TemporaM/Pent01-0.txt`'s own Trinity-Sunday
+content).
+
+Separately, `calendar/index.ts` gained `applyEpiphany6Commemoration`, an `apply*`-pass
+(same shape as `applyChristTheKing`) that commemorates `post-epiphany-6` on the Saturday
+immediately before Septuagesima — but only in years where Epiphany V (not IV, III, ...) was
+the last post-Epiphany Sunday to actually occur, per direct clarification (a narrower rule
+than "any skipped Sunday gets a Saturday commemoration" — only VI specifically, and only in
+that one adjacency case). No new `Commemoration` variant was needed: the existing
+`{ kind: 'temporal'; id }` shape already round-trips through `getDayCollects`'s
+`${id}-collect` lookup for free, so this is purely additive to `commemorations`, coexisting
+with whatever else that Saturday already resolved to (consistent with this app's generous,
+non-single-winner commemoration design elsewhere).
+
+Verified live against real years, not just unit-tested: 2026 (`post-epiphany-5` is the last
+Sunday reached, so `2026-11-14`/`-21` resume as Epiphany V/VI before `2026-11-28`'s fixed
+`post-pentecost-24`), and 1943/1962 (Easter late enough that all 6 Epiphany Sundays occur, so
+no resumption and no Saturday commemoration ever fires). New test file
+`tests/calendar/temporal-id.test.ts` covers both the overflow resumption and the Saturday
+commemoration's on/off cases (2026, 2022, 2025, 1943). `npm test` (363 tests, 4 new) and
+`npm run build` both pass.
+
+**Follow-up done same day:** `calendar/day-label.ts`'s on-screen display now also tracks the
+resumed-Sunday content, via a `trinitytideOverrideLabel` check ahead of the ordinary
+Trinity-counted branch — it calls `resolveTemporalId` directly (the same mechanism the content
+layer trusts) rather than re-deriving the wdist arithmetic a second time, so the label can
+never disagree with what's actually rendered underneath. A resumed Sunday/weekday now reads
+"The 5th Sunday after Epiphany" / "Monday in the 5th week after Epiphany" instead of continuing
+the Trinity count past its real bound.
+
+**Correction, same pass**: the first cut of this left the fixed final Sunday of the year
+(`post-pentecost-24`) on the old raw "weeks since Trinity" arithmetic, on the assumption that
+was an unrelated, already-correct convention — wrong. Scanning every year 1900-2100 showed
+*every single year's* last Sunday before Advent resolves to `post-pentecost-24`, and the raw
+elapsed-week count for that Sunday varies year to year (22nd, 23rd, 25th, ... depending on
+Easter's date) even though the content is always the same fixed formulary. Since this app's
+Trinity-counted display is one week off from the Pentecost-counted id (Trinity Sunday itself =
+`post-pentecost-01` = the display's own uncounted anchor), the correct display ordinal for
+that fixed Sunday is XXIV − 1 = **23, always** — not derived from elapsed weeks at all.
+`trinitytideOverrideLabel` now handles this as its own branch (`FIXED_LAST_SUNDAY_ORDINAL`),
+same "ask `resolveTemporalId`, don't re-derive" principle as the resumed-Epiphany branch.
+Live-verified across 1943/1962/2015/2026/2033 — all five now read "The 23rd Sunday after
+Trinity" for their own last Sunday, where before the fix they'd shown four different numbers.
+Tests in `tests/calendar/day-label.test.ts` updated accordingly. `npm test` (365 tests) and
+`tsc --noEmit` both pass.
 
 ## Known, deliberate simplifications (not bugs — working as designed)
 

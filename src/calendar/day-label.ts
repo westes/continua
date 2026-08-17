@@ -15,6 +15,7 @@ import { adventStart, firstSundayStrictlyAfter, sundayOnOrBefore } from './tempo
 import { addDays, daysBetween, toIsoDate } from './date-math';
 import { getTemporalFeastRecord } from './temporal-feasts';
 import { resolveActiveOctave, type ActiveOctave } from './octaves';
+import { resolveTemporalId } from './temporal-id';
 
 function capitalize(text: string): string {
   return text.charAt(0).toUpperCase() + text.slice(1);
@@ -109,7 +110,66 @@ function anchorDayName(day: LiturgicalDay): string | undefined {
   return undefined;
 }
 
+/** The fixed final Sunday of the liturgical year (temporal-id.ts's
+ * `post-pentecost-24`) always carries "Sunday XXIV after Pentecost"'s own
+ * formulary, regardless of how many Sundays actually elapsed since
+ * Trinity — confirmed by scanning every year 1900-2100, every single one
+ * lands on this id for its own last Sunday before Advent, never a raw
+ * elapsed-week count. This app's Trinity-counted display is one week off
+ * from that Pentecost-counted id (Trinity Sunday itself = post-pentecost-
+ * 01 = the display's own uncounted anchor day), so the fixed display
+ * ordinal here is XXIV - 1 = 23, not whatever a plain "weeks since
+ * Trinity" calculation would produce. */
+const FIXED_LAST_SUNDAY_ORDINAL = 23;
+
+/**
+ * Trinitytide's ordinal display can't be pure "weeks since Trinity's own
+ * first Sunday" arithmetic once the season gets late enough — see
+ * temporal-id.ts's own post-Pentecost-XXIII-plus branch. Two cases, both
+ * driven by `resolveTemporalId` directly (the same mechanism the content
+ * layer already trusts, rather than re-deriving the wdist arithmetic here
+ * a second time, so the label can never disagree with what's actually
+ * rendered underneath):
+ *   - A resumed post-Epiphany Sunday/week (an overflow year's skipped
+ *     Epiphany Sundays, reappearing here) — reads "after Epiphany", not
+ *     the next Trinity-counted number in line.
+ *   - The fixed final Sunday/week of the year itself — always the fixed
+ *     23rd-after-Trinity ordinal (see FIXED_LAST_SUNDAY_ORDINAL above),
+ *     every year, not just overflow ones.
+ * Only ever fires within trinitytide, since that's the only season
+ * resolveTemporalId can return either of these ids for a date outside
+ * their own native season.
+ */
+function trinitytideOverrideLabel(day: LiturgicalDay): string | undefined {
+  if (day.season !== 'trinitytide') {
+    return undefined;
+  }
+  const id = resolveTemporalId(day.date);
+  const weekdayName = capitalize(day.weekday);
+
+  const epiphanyMatch = id.match(/^post-epiphany-(\d)$/);
+  if (epiphanyMatch) {
+    const n = Number(epiphanyMatch[1]);
+    return day.weekday === 'sunday'
+      ? `The ${ordinal(n)} Sunday after Epiphany`
+      : `${weekdayName} in the ${ordinal(n)} week after Epiphany`;
+  }
+
+  if (id === 'post-pentecost-24') {
+    return day.weekday === 'sunday'
+      ? `The ${ordinal(FIXED_LAST_SUNDAY_ORDINAL)} Sunday after Trinity`
+      : `${weekdayName} in the ${ordinal(FIXED_LAST_SUNDAY_ORDINAL)} week after Trinity`;
+  }
+
+  return undefined;
+}
+
 function temporalLabel(day: LiturgicalDay): string {
+  const trinitytideOverride = trinitytideOverrideLabel(day);
+  if (trinitytideOverride) {
+    return trinitytideOverride;
+  }
+
   const weekdayName = capitalize(day.weekday);
   const config = ORDINAL_SEASONS[day.season];
   if (!config) {

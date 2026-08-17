@@ -5,7 +5,8 @@ import { resolveTemporalId } from './temporal-id';
 import { getSanctoralCandidatesFor } from './feasts';
 import { decideOccurrence, isAtLeast, type OccurrenceResult } from './commemorations';
 import { resolveCollision } from './collision';
-import { addDays } from './date-math';
+import { addDays, toIsoDate } from './date-math';
+import { easterSunday } from './easter';
 import { activeOctavesFor, strictestThreshold } from './octaves';
 
 /**
@@ -104,8 +105,37 @@ export function resolveDay(isoDate: string): LiturgicalDay {
   winner = applyMarianSaturday(isoDate, weekday, temporalCategory, winner, commemorations);
   winner = applyChristTheKing(isoDate, winner, commemorations);
   winner = applyChristmasOctaveSunday(isoDate, weekday, winner, commemorations);
+  applyEpiphany6Commemoration(isoDate, commemorations);
 
   return { date: isoDate, weekday, season, temporalCategory, winner, commemorations };
+}
+
+/**
+ * Real rubric, confirmed 2026-08: when the 6th Sunday after Epiphany is
+ * bumped by Septuagesima — i.e. only in years where the 5th Sunday after
+ * Epiphany was the last one to actually occur — it's commemorated on the
+ * Saturday immediately before Septuagesima, on top of whatever else that
+ * Saturday already resolved to. Distinct from (and doesn't imply) the
+ * later "resumed post-Epiphany Sunday" transfer handled in
+ * temporal-id.ts's post-Pentecost overflow branch — that one applies to
+ * *every* skipped post-Epiphany Sunday, not just VI; this Saturday
+ * commemoration is VI's alone. Purely additive: no `Commemoration` variant
+ * needed beyond the existing `{ kind: 'temporal' }` one, since
+ * hours/resolve-common.ts's getDayCollects already resolves any temporal
+ * commemoration's own `${id}-collect` for free.
+ */
+function applyEpiphany6Commemoration(isoDate: string, commemorations: Commemoration[]): void {
+  const year = Number(isoDate.slice(0, 4));
+  const septuagesimaStart = addDays(toIsoDate(easterSunday(year)), -63);
+  const saturdayBeforeSeptuagesima = addDays(septuagesimaStart, -1);
+  if (isoDate !== saturdayBeforeSeptuagesima) {
+    return;
+  }
+  const lastEpiphanySunday = addDays(septuagesimaStart, -7);
+  if (resolveTemporalId(lastEpiphanySunday) !== 'post-epiphany-5') {
+    return;
+  }
+  commemorations.push({ kind: 'temporal', id: 'post-epiphany-6' });
 }
 
 /** The Sunday on or before Oct 31 — always lands in October since Oct 31

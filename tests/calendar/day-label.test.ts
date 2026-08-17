@@ -44,6 +44,29 @@ describe('getDayLabel — ordinal temporal label', () => {
   });
 });
 
+describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => {
+  it('labels a resumed Sunday/weekday as "after Epiphany", not the next Trinity-counted number', () => {
+    // 2026: post-epiphany-5 is Nov 8, post-epiphany-6 is Nov 15 (both
+    // Sundays) -- see calendar/temporal-id.test.ts for the id-level
+    // coverage this label check builds on.
+    expect(getDayLabel(resolveDay('2026-11-08'))).toBe('The 5th Sunday after Epiphany');
+    expect(getDayLabel(resolveDay('2026-11-09'))).toBe('Monday in the 5th week after Epiphany');
+    expect(getDayLabel(resolveDay('2026-11-15'))).toBe('The 6th Sunday after Epiphany');
+    expect(getDayLabel(resolveDay('2026-11-16'))).toBe('Monday in the 6th week after Epiphany');
+  });
+
+  it('the fixed final Sunday of the year always shows the fixed 23rd-after-Trinity ordinal, not a raw elapsed-week count', () => {
+    // 2026-11-22 is the fixed post-pentecost-24 Sunday (Sunday XXIV after
+    // Pentecost's own fixed formulary; this app's Trinity-counted display
+    // is one week off from that Pentecost-counted id, so XXIV - 1 = 23).
+    // Every year 1900-2100 lands on this same id for its own last Sunday
+    // before Advent, so this ordinal is fixed, not overflow-year-specific
+    // -- confirmed against a non-overflow year (1943) too.
+    expect(getDayLabel(resolveDay('2026-11-22'))).toBe('The 23rd Sunday after Trinity');
+    expect(getDayLabel(resolveDay('1943-11-21'))).toBe('The 23rd Sunday after Trinity');
+  });
+});
+
 describe('getDayLabel — active octave', () => {
   it('shows the octave day itself as the primary label, plus a lesser saint commemorated alongside it', () => {
     // St. Lawrence's own octave (Aug 10-17); Aug 12 is day 3, and also St.

@@ -11,16 +11,23 @@
 // header and propers/index.ts's getTemporalProper for the fuller version
 // of this reasoning.
 //
-// Two known, deliberately unfixed gaps: the ferias between Christmas Day
+// One known, deliberately unfixed gap: the ferias between Christmas Day
 // and the Sunday within its octave, and between Epiphany and its own
 // first Sunday, fall back to that season's first named Sunday a few days
 // early — Christmas Day's and Epiphany's own collects aren't authored as
 // separate temporal-propers entries (only Sunday collects were pulled), so
-// this is a deliberate approximation, not an oversight. Likewise, a real
-// overflow year (early Easter, more than 24 weeks between Trinity and
-// Advent) would traditionally reuse the unused post-Epiphany Sundays'
-// collects for the excess weeks — not modeled; this just clamps at
-// post-pentecost-24.
+// this is a deliberate approximation, not an oversight.
+//
+// Overflow years (Easter early enough that fewer than 6 Sundays after
+// Epiphany occur before Septuagesima cuts in) are handled below: the
+// skipped post-Epiphany Sundays "resume" after Sunday XXIII after
+// Pentecost, in their own numeric order, right before the fixed final
+// Sunday of the year (always Sunday XXIV's own formulary, regardless of
+// how many Sundays actually elapsed since Pentecost). Ported directly
+// from the reference engine's own `getweek()`
+// (DivinumOfficium/Date.pm) — same rubric, same arithmetic (weeks-until-
+// Advent, not a separately-tracked count of skipped Epiphany Sundays);
+// confirmed against that source rather than re-derived by hand.
 import { resolveSeason, sundayOnOrBefore, firstSundayStrictlyAfter, adventStart, easterOffsetOf } from './temporal';
 import { daysBetween } from './date-math';
 
@@ -43,12 +50,29 @@ const EASTER_OFFSET_IDS: [number, string][] = [
   [42, 'sunday-after-ascension'],
   [49, 'pentecost-sunday'],
 ];
-for (let n = 1; n <= 24; n++) {
+// Sundays I-XXII after Pentecost only — XXIII and XXIV are handled by
+// resolvePostPentecost23Plus below, since (unlike I-XXII) which id a given
+// week gets can depend on distance-to-Advent, not just its own offset.
+for (let n = 1; n <= 22; n++) {
   EASTER_OFFSET_IDS.push([56 + 7 * (n - 1), `post-pentecost-${String(n).padStart(2, '0')}`]);
 }
 const EASTER_OFFSET_ID_MAP = new Map(EASTER_OFFSET_IDS);
-const MAX_EASTER_OFFSET = EASTER_OFFSET_IDS[EASTER_OFFSET_IDS.length - 1]![0];
-const MAX_EASTER_OFFSET_ID = EASTER_OFFSET_IDS[EASTER_OFFSET_IDS.length - 1]![1];
+
+/**
+ * A governing Sunday at or beyond Pentecost week XXIII. `pentecostWeek` is
+ * the reference engine's own `$n` (1 = Trinity Sunday, verified against
+ * DivinumOfficium/Date.pm and its Tempora/PentNN file naming).
+ */
+function resolvePostPentecost23Plus(governingSunday: string, year: number, pentecostWeek: number): string {
+  const wdist = Math.floor((daysBetween(governingSunday, adventStart(year)) + 6) / 7);
+  if (wdist < 2) {
+    return 'post-pentecost-24';
+  }
+  if (pentecostWeek === 23) {
+    return 'post-pentecost-23';
+  }
+  return `post-epiphany-${8 - wdist}`;
+}
 
 export function resolveTemporalId(isoDate: string): string {
   const season = resolveSeason(isoDate);
@@ -78,9 +102,11 @@ export function resolveTemporalId(isoDate: string): string {
   // regardless of which `season` bucket the feria itself falls in (the
   // ferias right after Ash Wednesday genuinely reuse Quinquagesima's
   // collect, crossing what resolveSeason calls two different seasons).
-  const offset = easterOffsetOf(sundayOnOrBefore(isoDate));
-  if (offset > MAX_EASTER_OFFSET) {
-    return MAX_EASTER_OFFSET_ID;
+  const governingSunday = sundayOnOrBefore(isoDate);
+  const offset = easterOffsetOf(governingSunday);
+  const pentecostWeek = Math.round((offset - 49) / 7);
+  if (pentecostWeek >= 23) {
+    return resolvePostPentecost23Plus(governingSunday, year, pentecostWeek);
   }
   return EASTER_OFFSET_ID_MAP.get(offset) ?? 'septuagesima';
 }
