@@ -1,0 +1,140 @@
+# Matins Nocturn 2-3 readings for St. Januarius, Bishop, and Companions,
+# Martyrs (Sep 19) — pre-1955-but-post-1617 (no SanctiM/09-19*.txt at
+# all). web/www/horas/Latin/Sancti/09-19.txt,
+# English/Sancti/09-19.txt.
+#
+# Lectio4-6 is this saint's own proper vita, one continuous account, no
+# internal break, combined into a single reading.
+#
+# Nocturn 3's Lectio7 gives only the Gospel incipit ("Et réliqua", Matt
+# 24:3-13) with no full pericope text, so the bare Gospel reading isn't
+# authored here (deferred, pending the bulk Vulgate/Douay-Rheims
+# import). Lectio7's own homily portion + Lectio8-9 is one continuous
+# excerpt from St. Hilary's commentary, combined into a single reading.
+# No responsory given for either reading in the source.
+id: st-januarius
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Januarius, Benevénti epíscopus, Diocletiáno et Maximiáno in Christiános sæviéntibus, ad
+        Timotheum Campaniæ præsidem ob christianæ fidei professiónem Nolam perducitur. Ibi, ejus
+        constántia varie tentata, in ardentem fornacem conjéctus, ita illæsus evasit, ut ne
+        vestiméntum aut capillum quidem flamma violáverit. Hinc præses, accénsus iracúndia, Mártyris
+        corpus imperat usque eo dístrahi, quoad nervórum compages artuumque solvántur. Festus interea
+        ejus diaconus et Desiderius lector, comprehénsi vinctique, una cum episcopo ante rhedam
+        præsidis Puteleos pertrahúntur, et in eumdem carcerem, in quo Sosius Misenas et Próculus
+        Puteolánus diáconus, Eutyches et Acutius láici, ad bestias damnati, detinebántur, simul
+        conjiciúntur.
+
+
+        Postero die omnes in amphitheatro feris objecti sunt; quæ, naturalis oblitæ feritátis, ad
+        Januarii pedes se prostravére. Id Timótheus mágicis cantiónibus tribuens, cum senténtiam
+        cápitis in Christi Mártyres pronuntiásset, óculis repénte captus, orante mox beato Januario,
+        lumen recepit; quo miraculo hóminum míllia fere quinque Christi fidem suscepérunt. Verum
+        ingrátus judex, níhilo placatior factus beneficio, sed conversióne tantæ multitúdinis actus
+        in rábiem; véritus maxime príncipum decreta, sanctum Episcopum cum sociis gládio pércuti
+        jussit.
+
+
+        Horum córpora finítimæ urbes, pro suo quæque studio certum sibi patronum ex iis apud Deum
+        adoptándi, sepelienda curarunt. Januarii corpus Neapolitani divino admónitu extulére; quod,
+        primo Benevéntum, inde ad monastérium montis Vírginis, postremo Neapolim translátum et in
+        majori ecclésia cónditum, multis miraculis cláruit. Sed illud in primis memorándum, quod
+        erumpéntes olim e monte Vesuvio flammárum globos, nec vicínis modo sed longinquis étiam
+        regiónibus vastitátis metum afferéntes, exstinxit. Præclárum illud quoque, quod ejus sanguis,
+        qui in ampulla vitrea concretus asservátur, cum in conspéctu cápitis ejusdem Mártyris
+        pónitur, admirándum in modum colliquefíeri et ebullire, perinde atque recens effúsus, ad hæc
+        usque témpora cernitur.
+      en: >-
+        At that time the Emperors Diocletian and Maximian were furiously raging against Christians,
+        Januarius, Bishop of Benevento, was taken to Nola, to Timothy, President of Campania, on the
+        charge of professing the Christian faith. There his firmness was tried diverse ways, and he
+        was cast into a burning fiery furnace, but came forth thence unhurt, for neither upon his
+        raiment nor upon the hairs of his head did the flame take any hold. Thereupon the wrath of
+        the President was enkindled, and he commanded the martyr to be torn limb from limb. But in
+        the meanwhile Januarius' Deacon Festus and his Reader Desiderius were taken, and the whole
+        three were led in bonds to Puzzuoli in front of the President's carriage, and there thrown
+        into the same prison wherein were already held four other Christians condemned to be
+        devoured by wild beasts, that is to say, Sosius, a Deacon of Miseno, Proculus, a Deacon of
+        Puzzuoli, and two laymen, named respectively Eutyches and Acutius.
+
+
+        The next day all seven were exposed to the wild beasts in the amphitheatre, but these
+        creatures forgot their natural fierceness, and lay down at the feet of Januarius. Timothy
+        would have it that this came from charms, and commanded the witnesses of Christ to be
+        beheaded. Thereupon he became of a sudden blind, until Januarius had prayed for him, by the
+        which miracle nearly five thousand persons were turned to Christ. But this good turn roused
+        up no gratitude in the President, yea, rather, the conversion of so many drave him wild, and
+        in his hot fear to obey the decrees of the Emperors he commanded that the holy Bishop and his
+        companions should be smitten with the sword.
+
+
+        The cities of those coasts strove to obtain their bodies for honourable burial, so as to
+        make sure of having in them advocates with God. By God's will the relics of Januarius were
+        taken to Naples at last, after having been carried from Puzzuoli to Benevento, and from
+        Benevento to Monte Vergine; when they were brought thence to Naples, they were laid in the
+        chief Church there, and there have been famous on account of many miracles. Among these is
+        remarkable the stopping of eruptions of Mount Vesuvius, whereby both that neighbourhood and
+        also places afar off have been like to have been brought to desolation. It is also well
+        known, and is the plain fact, seen even unto this day, that when the blood of Januarius, kept
+        dried up in a small glass phial, is put in sight of the head of the same martyr, it is used
+        to melt and bubble in a very strange way, as though it had but freshly been shed.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Hilary, Bishop of Poitiers, Commentary on Matthew, ch. 25"
+    text:
+      la: >-
+        Discipuli Dóminum intérrogant quando hæc fíerent, quodve signum et adventus sui et
+        consummatiónis sæculi nóscerent. Et, quia tria hæc in unum quæsíta sunt, distinctis et
+        témporis et intelligéntiæ significatiónibus separántur. Respondétur ígitur primum de
+        civitátis occasu, et confirmántur veritáte doctrinæ, ne quis fallax ignorántibus posset
+        obrépere; venturi enim erant étiam eórum témpore, qui se Christum essent nuncupatúri. Ut
+        ígitur fides pestífero mendácio détrahi posset, admonítio præcessit.
+
+
+        Confírmat ígitur eos ad tolerántiam passiónum, fugæ, verberatiónis, intéritus et publici in
+        eos odii propter nomen ejus. Atque his quidem vexatiónibus multi turbabúntur, et, tantis
+        insurgéntibus malis scandalizabúntur, et usque in mutuum ódium excitabúntur. Et falsi
+        prophetæ erunt, multosque ementíta veritáte pervertent; et, abundante nequitia, caritas
+        refrigéscet.
+
+
+        Sed usque in finem perseverántibus salus reserváta est; ac tum, per omnes orbis partes viris
+        apostolicis dispersis, Evangélii véritas prædicábitur. Et, cum univérsis fúerit cognítio
+        sacraménti cæléstis invecta, tum Jerúsalem occasus et finis incumbet; ut prædicatiónis fidem,
+        et infidelium pœna et metus civitátis érutæ consequátur. Hæc ígitur in eam, ut fuerant
+        prædicta, perfécta sunt; et, lapidatis, fugatis, peremptis Apóstolis, fame, bello,
+        captivitáte consumpta est. Ac tum fuit digna non esse, cum, ejectis prædicatóribus Christi,
+        indignam Dei prædicatióne se præbuit.
+      en: >-
+        His disciples came unto Him privately, saying: "Tell us, when shall these things be, and
+        what shall be the sign of thy coming and of the end of the world?" Here are in one question
+        three several points, and the answers are to be understood of three several times, and by
+        three several interpretations. "When shall these things be?" And herein He taught them
+        concerning the fall of the city, whereof He made plain announcement, lest the unlearned
+        might fall a prey to any deceiver. For within the lifetime of His then hearers were to come
+        many, saying: I am Christ. He giveth warning therefore beforehand, lest such pestilential
+        liars should gain any belief.
+
+
+        He confirms them, therefore, to endure sufferings, flight, scourging, death, and the public
+        hatred of all men for His Name's sake. And by these very troubles many shall be troubled, and
+        as such great evils arise they shall be offended, and shall even be stirred up to hatred of
+        one another. And false prophets shall arise, and shall deceive many by their pretended truth;
+        and because iniquity shall abound, the love of many shall wax cold.
+
+
+        But unto them that endure unto the end salvation is reserved; and then, the apostolic men
+        having been scattered through every part of the world, the truth of the Gospel shall be
+        preached. And when the knowledge of the heavenly mystery has been carried to all, then the
+        fall and end of Jerusalem shall come to pass; so that the faith of the preaching, and the
+        punishment and terror of the unbelievers, may follow from the destroyed city. These things
+        therefore were fulfilled in her, just as they had been foretold; and, the Apostles having
+        been stoned, put to flight, and slain, she was consumed by famine, war, and captivity. And
+        she then proved unworthy to continue, when, having cast out the preachers of Christ, she
+        showed herself unworthy of God's preaching.
+    status: { la: verified, en: verified }
