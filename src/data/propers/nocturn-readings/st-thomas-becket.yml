@@ -1,0 +1,171 @@
+# Matins Nocturn 2-3 readings for St. Thomas of Canterbury, Bishop,
+# Martyr (Dec 29) — SanctiM/12-29.txt inherits the whole day
+# (`@Sancti/12-29`) with no Nocturn 2/3 override, so this feast's own
+# proper content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/12-29.txt, English/Sancti/12-29.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous vita
+# (through his martyrdom in the cathedral).
+# Nocturn 3: Lectio7's Gospel citation (John 10:11-16) is a bare
+# incipit ("Et réliqua") with no full pericope text given, so — per
+# the established convention of not transcribing bare incipits — only
+# the homily portion is authored (not marked isGospel), St. John
+# Chrysostom's homily (Lectio7's homily + Lectio8-9 combined, one
+# continuous piece).
+id: st-thomas-becket
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Thomas, Londíni in Anglia natus, Theobáldo succéssit Cantuariénsi epíscopo: et qui
+        ántea in administrándo cancelláriæ múnere præcláre se gésserat, in episcopáli offício
+        fortis et invíctus fuit. Cum enim Henrícus secúndus Angliæ rex, convocátis ad se
+        epíscopis et procéribus regni, leges ferret utilitáti ac dignitáti ecclesiásticæ
+        repugnántes, ádeo constánter óbstitit régiæ cupiditáti, ut neque pollicitatiónibus,
+        neque terróribus de senténtia decédens, próxime conjiciéndus in cárcerem clam
+        recésserit. Inde propínqui ejus omnis ætátis ejécti, amíci, fautóres omnes, iis,
+        quibus per ætátem licéret, jurejurándo adstríctis, univérsos Thomam aditúros, si
+        fortásse miserábili suórum calamitátis aspéctu moverétur, qui a sancto propósito
+        privátis incómmodis deterréri mínime potuísset. Non respéxit carnem aut sánguinem,
+        neque ullus in eo humanitátis sensus offícii constántiam labefactávit.
+
+
+        Cóntulit ígitur se ad Alexándrum tértium Pontíficem, a quo benígne accéptus est: et
+        inde proféctus, mónachis Pontiniacénsis monastérii, Cisterciénsis órdinis, ab eódem
+        commendátus. Quod ut cognóvit Henrícus, missis ad convéntum fratrum Cisterciénsium
+        minácibus lítteris, Thomam e Pontiníaco monastério exturbáre conátur. Quare vir
+        sanctus, véritus ne sua causa mali áliquid Cisterciénsis família paterétur, sponte
+        discéssit, et Ludovícum Gálliæ regem ejus invitátu convénit; ubi támdiu fuit, quoad,
+        Pontífice máximo et ipso rege agéntibus, ab exsílio, summa totíus regnis
+        gratulatióne revocátur. Quid dum boni pastóris offícium secúrus exséquitur, ecce
+        calumniatóres ad regem déferunt, eum multa contra regnum et públicam quiétem molíri,
+        ut proptérea sǽpius conquererétur rex, se in suo regno cum uno sacerdóte pacem habére
+        non posse.
+
+
+        Ex qua regis voce nefárii satéllites sperántes gratum se regi factúros, si Thomam e
+        médio tóllerent, clam conveniéntes Cantuáriam, epíscopum in templo vespertínis horis
+        óperam dantem aggrediúntur. Qui cléricis templi áditus præclúdere conántibus
+        accúrrens, óstium apéruit, illis usus verbis ad suos: Non est Dei Ecclésia
+        custodiénda more castrórum; et ego pro Ecclésia Dei libénter mortem subíbo. Tum ad
+        mílites: Vos Dei jussu cavéte, ne cuípiam meórum noceátis. Deínde flexis génibus, Deo,
+        beátæ Maríæ, sancto Dionýsio et réliquis Sanctis ejus ecclésiæ patrónis, Ecclésiam et
+        seípsum comméndans, sacrum caput eádem constántia, qua iniquíssimi regis légibus
+        restíterat, ímpio ferro præcidéndum óbtulit, quarto Kaléndas Januárii, anno Dómini
+        millésimo centésimo septuagésimo primo: cujus cérebro respérsum est totíus templi
+        paviméntum. Quem multis póstea illústrem miráculis idem Alexánder Póntifex rétulit in
+        Sanctórum númerum.
+      en: >-
+        Thomas was born in London, and succeeded Theobald in the Archbishopric of Canterbury.
+        He had previously filled with great distinction the office of Lord Chancellor, and
+        showed an indomitable firmness in his duty as Primate. When Henry II., King of
+        England, in an assembly of the Bishops and great men of his realm, endeavoured to pass
+        laws detrimental to the advantage and dignity of the Church, he opposed himself so
+        steadily to the king's wishes, that, neither promises, nor threats availing to shake
+        him, he was about to be cast into prison, had he not made good his escape in time. The
+        whole of his kinsfolk without regard to age or sex, his friends, and his advisers, were
+        then banished the kingdom, and those who were able, were bound by an oath to make their
+        way to the presence of Thomas, in the hope that though careless of his own sufferings,
+        he might yield at the sight of their misery. But neither flesh and blood, nor the
+        pleadings of natural affection could make him swerve from the line of his pastoral
+        duty.
+
+
+        He betook himself to Pope Alexander III., by whom he was graciously received, and who
+        committed him to the care of the Cistercians at Pontigni. As soon as this came to the
+        knowledge of King Henry, he sent threatening letters to the monks, in order to drive
+        Thomas from this shelter. The saint was unwilling that the Cistercian Order should
+        suffer on his account, and therefore voluntarily withdrew from Pontigni, and accepted
+        the invitation of Lewis VII., King of France, to go to his court. He remained here,
+        until his banishment was recalled at the intercession of the Pope and of the King of
+        France, and he returned to England amid great public joy. He was quietly continuing
+        the work of a faithful shepherd of souls, when certain calumniators denounced him to
+        the king as a plotter against the crown and the public peace. Henry, deceived by these
+        libels, cried out that it was hard that one priest should never let him have quiet in
+        his kingdom.
+
+
+        Come wicked servants of the king, hearing his words, and thinking to do him pleasure,
+        betook themselves to Canterbury to rid him of the Archbishop. They entered the
+        cathedral in the evening as Thomas was proceeding to assist at Evensong. The clergy in
+        attendance on him, conscious of the attempt about to be made, wished to bolt the doors.
+        But the saint caused them to be again opened, saying, The Church of God is not to be
+        made a castle of, and for the cause of God's Church I am willing to die. He then said
+        to his murderers, I charge you in the name of the Almighty God to hurt none of my
+        people. With these words he fell on his knees, and commended himself to God, to the
+        Blessed Virgin Mary, to St Denis, and to the other holy Patrons of the Church of
+        Canterbury. He presently offered his sacred head for the stroke of death, and received
+        it from the swords of those wicked men with the same constancy with which he had
+        withstood the commands of the unrighteous king. The murderers pulled out his brains and
+        strewed them all about the floor of the Church. He testified on the 29th day of
+        December, and, being afterwards honoured with many miracles, was canonised by Pope
+        Alexander III.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. John Chrysostom, Homily 59 on John (on John 10:11-16)"
+    text:
+      la: >-
+        Magnum quiddam, dilectíssimi, magnum, inquam, est Ecclésiæ prælátio, et quæ multa
+        índiget sapiéntia et fortitúdine, qualem Christus propósuit: ut ánimam pro óvibus
+        ponámus, et numquam illas deserámus; ut lupo generóse resistámus. Hæc enim inter
+        pastórem et mercenárium est differéntia: alter própriæ, contémptis óvibus; alter, sua
+        contémpta, óvium semper salúti invígilat. Pastóris ergo exémplo demonstráto,
+        deceptóres duos méminit: furem mactántem et rapiéntem oves; et mercenárium
+        permitténtem, neque defendéntem commíssas.
+
+
+        Quod superióri témpore Ezéchiel his verbis insectátus est: Væ pastóribus Israël:
+        nonne pascébant semetípsos? Nonne greges pascúntur a pastóribus? Sed illi contrárium
+        faciébant, quod máximæ malítiæ genus est, et plurimórum causa malórum. Idcírco
+        inquit: Neque quod abjéctum erat, reducébant: neque quod períerat, quærébant: neque
+        confráctum alligábant: neque infírmum consolidábant: quóniam se, non gregem
+        pascébant. Idem et Paulus áliis verbis signíficat: Omnes quæ sua sunt, quærunt, non
+        quæ Jesu Christi.
+
+
+        Verum ab utróque se dissidére osténdit Christus: ab illis quidem, qui in aliórum
+        perníciem véniunt, cum dicat, se proptérea venísse, ut vitam habérent, et abundántius
+        habérent: ab his autem, qui oves a lupis rapi negligébant, dicéndo se propter eas
+        ánimam pónere, ne oves perírent. Nam cum Judǽi ipsum interímere vellent, non proptérea
+        déstitit a doctrína, neque credéntes trádidit, sed pérstitit, et pértulit mortem:
+        ídeo frequénter inquit: Ego sum pastor bonus. Quæ cum nullo niti testimónio
+        viderentur, (quod enim póneret ánimam suam, non multo post re monstrátum est; quod
+        autem vitam habérent, et abundántius habérent, eventúrum erat in futúro sǽculo)
+        álterum ab áltero confírmat.
+      en: >-
+        Dearly beloved brethren, the Bishops of the Church hold a great office, an office that
+        needeth much that wisdom and strength whereof Christ hath given us an example. We must
+        learn of Him to lay down our lives for the sheep and never to leave them; and to fight
+        bravely against the wolf. This is the difference between the true shepherd and the
+        hireling. The one leaveth the sheep and seeketh his own safety, but the other recketh
+        not of his own safety, so as he may watch over the sheep. Christ then having given us
+        the pattern of a good shepherd, warneth us against two enemies; first, the thief that
+        cometh not but to kill and to steal, and, secondly, the hireling that standeth by, and
+        defendeth not them that are committed to his charge.
+
+
+        Ezechiel hath said of old time: Woe be to the shepherds of Israel! do they not feed
+        themselves? Should not the shepherds feed the flocks? But they did the contrary, a
+        great wickedness and the root of many evils. Therefore, he saith, they brought not back
+        that which was gone astray neither did they search for that which was lost neither did
+        they bind up that which was broken, nor strengthen that which was sick; for they fed
+        themselves, and not the flock. And Paul hath the same in other words, where he saith:
+        All seek their own, not the things which are Jesus Christ's.
+
+
+        Christ showeth Himself very different from either the thief or the hireling; whereas
+        the thief cometh to destroy, He came that they might have life, and that they might
+        have it more abundantly. The hireling fleeth, but He layeth down His life for the
+        sheep, that the sheep perish not. When then the Jews went about to kill Him, He ceased
+        not to teach He gave not up them that believed in Him, but stood steadfast and died.
+        Wherefore He hath good title often to say, I am the Good Shepherd. It was but a little
+        while, and He showed us how He could lay down His life for the sheep. And if it
+        appeareth not as yet how they have life, and have it more abundantly, (but it shall
+        appear, in the world which is to come,) we may well be persuaded of the truth of the
+        second promise, who have seen the fulfilment of the first.
+    status: { la: verified, en: verified }

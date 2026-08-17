@@ -1,0 +1,157 @@
+# Matins Nocturn 2-3 readings for St. Stephen, Protomartyr (Dec 26) —
+# SanctiM/12-26.txt inherits the whole day (`@Sancti/12-26`) with no
+# Nocturn 2/3 override, so this feast's own proper content is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/12-26.txt, English/Sancti/12-26.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, St. Fulgentius's
+# sermon contrasting yesterday's Nativity with today's martyrdom — one
+# continuous piece, no genuine source break.
+# Nocturn 3: Lectio7's Gospel citation (Matt 23:34-39) is a bare
+# incipit ("Et réliqua") with no full pericope text given, so — per
+# the established convention of not transcribing bare incipits — only
+# the homily portion is authored (not marked isGospel), St. Jerome's
+# commentary (Lectio7's homily + Lectio8-9 combined, one continuous
+# piece on "Zacharias son of Barachias").
+id: st-stephen-protomartyr
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Fulgentius of Ruspe, Sermon 3 on St. Stephen"
+    text:
+      la: >-
+        Heri celebrávimus temporálem sempitérni Regis nostri natálem: hódie celebrámus
+        triumphálem mílitis passiónem. Heri enim Rex noster trábea carnis indútus, de aula
+        úteri virginális egrédiens, visitáre dignátus est mundum: hódie miles de tabernáculo
+        córporis éxiens, triumphátor migrávit ad cælum. Ille, sempitérnæ Deitátis majestáte
+        serváta, servíle cinctórium carnis assúmens, in hujus sǽculi campum pugnatúrus
+        intrávit; iste, depósitis corruptibílibus córporis induméntis, ad cæli palátium
+        perénniter regnatúrus ascéndit. Ille descéndit carne velátus, iste ascéndit sánguine
+        laureátus.
+
+
+        Ascéndit iste lapidántibus Judǽis, quia ille descéndit lætántibus Angelis. Glória in
+        excélsis Deo, heri sancti Angeli exsultántes cantavérunt: hódie Stéphanum lætántes in
+        suum consórtium suscepérunt. Heri Dóminus exívit de útero Vírginis: hódie miles
+        egréssus est de ergástulo carnis. Heri Christus pro nobis pannis est involútus: hódie
+        Stéphanus stola est ab eo immortalitátis indútus. Heri præsépis angústia Christum
+        portávit infántem: hódie imménsitas cæli suscépit Stéphanum triumphántem. Solus
+        Dóminus descéndit, ut multos eleváret: humiliávit se Rex noster, ut suos mílites
+        exaltáret.
+
+
+        Necessárium tamen nobis est, fratres, agnóscere, quibus armis præcínctus Stéphanus
+        sævítiam Judæórum pótuit superáre, ut ita meruísset felíciter triumpháre. Stéphanus
+        ergo, ut nóminis sui corónam meruísset accípere, caritátem pro armis habébat, et per
+        ipsam ubíque vincébat. Per caritátem Dei sæviéntibus Judǽis non cessit: per caritátem
+        próximi pro lapidántibus intercéssit. Per caritátem arguébat errántes, ut
+        corrigeréntur: per caritátem pro lapidántibus orábat, ne puniréntur. Caritátis virtúte
+        subníxus, vicit Saulum crudéliter sæviéntem; et quem hábuit in terra persecutórem, in
+        cælo méruit habére consórtem.
+      en: >-
+        Yesterday we were celebrating the birth in time of our Eternal King; today we
+        celebrate the victory, through suffering, of one of His soldiers. Yesterday our King
+        was pleased to come forth from His royal palace of the Virgin's womb, clothed in a
+        robe of flesh, to visit the world; today His soldier, laying aside the tabernacle of
+        the body, entereth in triumph into the heavenly palaces. The One, preserving unchanged
+        that glory of the Godhead which He had before the world was, girded Himself with the
+        form of a servant, and entered the arena of this world to fight sin; the other taketh
+        off the garments of this corruptible body, and entereth into the heavenly mansions,
+        where he will reign for ever. The One cometh down, veiled in flesh; the other goeth
+        up, clothed in a robe of glory, red with blood.
+
+
+        The One cometh down amid the jubilation of angels; the other goeth up amid the stoning
+        of the Jews. Yesterday the holy angels were singing, Glory to God in the highest;
+        today there is joy among them, for they receive Stephen into their company. Yesterday
+        the Lord came forth from the Virgin's womb; today His soldier is delivered from the
+        prison of the body. Yesterday Christ was for our sakes wrapped in swaddling bands;
+        today He girdeth Stephen with a robe of immortality. Yesterday the new-born Christ lay
+        in a narrow manger; today Stephen entereth victorious into the boundless heavens. The
+        Lord came down alone that He might raise many up; our King humbled Himself that He
+        might set His soldiers in high places.
+
+
+        Why brethren, it behoveth us to consider with what arms Stephen was able, amid all the
+        cruelty of the Jews, to remain more than conqueror, and worthily to attain to so
+        blessed a triumph. Stephen, in that struggle which brought him to the crown whereof
+        his name is a prophecy, had for armour the love of God and man, and by it he remained
+        victorious on all hands. The love of God strengthened him against the cruelty of the
+        Jews; and the love of his neighbour made him pray even for his murderers. Through love
+        he rebuked the wandering, that they might be corrected; through love he prayed for
+        them that stoned him, that they might not be punished. By the might of his love he
+        overcame Saul his cruel persecutor; and earned for a comrade in heaven, the very man
+        who had done him to death upon earth.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Jerome, Commentary on Matthew, Book IV, on Matt 23:34-39"
+    text:
+      la: >-
+        Hoc quod ántea dixerámus, Impléte mensúram patrum vestrórum; ad persónam Dómini
+        pertinére, eo quod occidéndus esset ab eis, potest et ad discípulos ejus reférri, de
+        quibus nunc dicit: Ecce ego mitto ad vos prophétas, et sapiéntes, et scribas. Simúlque
+        obsérva, juxta Apóstolum scribéntem ad Corínthios, vária esse dona discipulórum
+        Christi; álios prophétas, qui ventúra prædícent; álios sapiéntes, qui novérunt quando
+        débeant proférre sermónem; álios scribas in lege doctíssimos, ex quibus lapidátus est
+        Stéphanus, Paulus occísus, crucifíxus Petrus, flagelláti in Actibus Apostolórum
+        discípuli.
+
+
+        Quǽrimus, quis iste sit Zacharías fílius Barachíæ: quia multos légimus Zacharías. Et
+        ne líbera nobis tribuerétur erróris facúltas, ádditum est: Quem occidístis inter
+        templum et altáre. In divérsis divérsa legi: et débeo singulórum opiniónes pónere.
+        Alii Zacharíam fílium Barachíæ dicunt, qui in duódecim prophétis undécimus est,
+        patrísque in eo nomen conséntit: sed ubi occísus sit inter templum et altáre,
+        Scriptúra non lóquitur; máxime cum tempóribus ejus vix ruínæ templi fúerint. Alii
+        Zacharíam patrem Joánnis intellégi volunt, ex quibúsdam apocryphórum sómniis
+        approbántes, quod proptérea occísus sit, quia Salvatóris prædicáverit advéntum.
+
+
+        Alii istum volunt esse Zacharíam, qui occísus est a Joas rege Judæ inter templum et
+        altáre, sicut Regum narrat história. Sed observándum, quod ille Zacharías non sit
+        fílius Barachíæ, sed fílius Jójadæ sacerdótis: unde et Scriptúra refert: Non fuit
+        recordátus Joas patris ejus Jójadæ, quia sibi fecísset bona. Cum ergo et Zacharíam
+        teneámus et occisiónis conséntiat locus: quǽrimus, quare Barachíæ dicátur fílius, et
+        non Jójadæ? Barachía lingua nostra Benedíctus Dómini dícitur, et sacerdótis Jójadæ
+        justítia Hebrǽo nómine demonstrátur. In Evangélio, quo utúntur Nazaréni, pro fílio
+        Barachíæ, fílium Jójadæ reperímus scriptum.
+      en: >-
+        We have already remarked that the Lord's words, Fill ye up the measure of your
+        fathers, refer in the first place to Himself, Whom the Jews afterwards put to death.
+        In a secondary sense it may likewise be applied to His disciples, of whom He saith,
+        Behold, I send unto you Prophets, and wise men, and Scribes. Here observe that,
+        according to the Apostle writing to the Corinthians, there are diversities of gifts
+        among Christ's followers. Some are Prophets of that which is to come; some are wise
+        men, who know the due season for rebuke and exhortation; some are Scribes learned in
+        the law. And of these they stoned Stephen, slew Paul with the sword, crucified Peter,
+        and scourged the Disciples mentioned in the Acts of the Apostles.
+
+
+        It is a subject of dispute among commentators who is meant by Zacharias the son of
+        Barachias. We read of several persons of the name of Zacharias. But here, in order to
+        prevent any mistake, it is particularly said, Whom ye slew between the temple and the
+        altar. I have read various opinions in various places upon this question, and I will
+        give each. First, some hold that Zacharias the son of Barachias is the eleventh of the
+        twelve Minor Prophets; and this opinion is supported by the father's name. But the
+        Bible nowhere telleth us that this Prophet was slain between the temple and the altar;
+        and it is hardly possible that he can have been, for in his time it could scarcely be
+        said that even the ruins of the temple were in existence. Secondly, others maintain
+        that this Zacharias was Zacharias, the father of John the Baptist. This interpretation
+        is derived from the dreams of the Apocryphal Gospels, wherein it is asserted that he
+        was martyred for preaching Christ's coming.
+
+
+        A third school will have it that this Zacharias, the son of Barachias, was that
+        Zacharias of whom we read, in Chron. xxiv. 22, that he was slain by Joash, king of
+        Judah, between the temple and the altar. Against this it is to be remarked, that that
+        Zacharias was not the son of Barachias, but of Jehoiada the priest; whence it is
+        written, Joash remembered not the kindness which Jehoiada his father had done to him.
+        The question therefore ariseth, if this opinion be true, why, the name and manner of
+        death both agreeing with this explanation, Zacharias is called the son, not of
+        Jehoiada, but of Barachias. In Hebrew, Barachias signifieth the Blessed of the Lord,
+        and Jehoiada proves his Righteousness. In the Gospel used by the Nazarenes the name of
+        Jehoiada is used instead of Barachias.
+    status: { la: verified, en: verified }

@@ -1,0 +1,123 @@
+# Matins Nocturn 2-3 readings for the Holy Innocents (Dec 28) —
+# SanctiM/12-28.txt inherits the whole day (`@Sancti/12-28`) with no
+# Nocturn 2/3 override, so this feast's own proper content is sourced
+# from the Tridentine track exactly as for a pre-1955 saint (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/12-28.txt, English/Sancti/12-28.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, St. Augustine's
+# sermon — one continuous piece, no genuine source break.
+# Nocturn 3: Lectio7's Gospel citation (Matt 2:13-18) is a bare
+# incipit ("Et réliqua") with no full pericope text given, so — per
+# the established convention of not transcribing bare incipits — only
+# the homily portion is authored (not marked isGospel), St. Jerome's
+# commentary (Lectio7's homily + Lectio8-9 combined, one continuous
+# piece).
+id: holy-innocents
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Augustine of Hippo, Sermon 10 on the Saints"
+    text:
+      la: >-
+        Hódie, fratres caríssimi, natálem illórum infántium cólimus, quos ab Heróde
+        crudelíssimo rege interféctos esse, Evangélii textus elóquitur. Et ídeo cum summa
+        exsultatióne gáudeat terra, cæléstium mílitum et tantárum parens fecúnda virtútum.
+        Ecce profánus hostis nunquam beátis párvulis tantum prodésse potuísset obséquio,
+        quantum prófuit ódio. Nam, sicut sacratíssimum præséntis diéi festum maniféstat,
+        quantum in beátos párvulos iníquitas abundávit, tantum in eis grátia benedictiónis
+        refúdit.
+
+
+        Beáta es, o Béthlehem terra Juda, quæ Heródis regis immanitátem in puerórum
+        exstinctióne perpéssa es: quæ sub uno témpore candidátam plebem imbéllis infántiæ Deo
+        offérre meruísti. Digne tamen natálem illórum cólimus, quos beátius ætérnæ vitæ mundus
+        édidit, quam quos maternórum víscerum partus effúdit. Síquidem ante vitæ perpétuæ
+        adépti sunt dignitátem, quam usúram præséntis accéperint.
+
+
+        Aliórum quidem pretiósa mors Mártyrum laudem in confessióne proméruit, horum in
+        consummatióne complácuit; quia incipiéntis vitæ primórdiis, ipse eis occásus inítium
+        glóriæ dedit, qui præséntis términum impósuit. Quos Heródis impíetas lactántes matrum
+        ubéribus abstráxit; qui jure dicúntur Mártyrum flores, quos in médio frígore
+        infidelitátis exórtos, velut primas erumpéntes Ecclésiæ gemmas, quædam persecutiónis
+        pruína decóxit.
+      en: >-
+        Dearly beloved brethren, today we keep the birthday of those children, who, as we are
+        informed by the Gospel, were massacred by the savage King Herod. Therefore let earth
+        rejoice with exceeding joy, for she is the mother of these heavenly soldiers, and of
+        this numerous host. The love of the vile Herod could never have crowned these blessed
+        ones as hath his hatred. For the Church testifieth by this holy solemnity, that whereas
+        iniquity did specially abound against these little saints, so much the more were
+        heavenly blessings poured out upon them.
+
+
+        Blessed art thou, O Bethlehem in the land of Judah, which hast suffered the cruelty of
+        King Herod in the slaughter of thy children; who art found worthy to offer at once to
+        God a whole white-robed army of guileless martyrs! Surely, it is well to keep their
+        birthday, even that blessed birthday which gave them from earth to heaven, more blessed
+        than the day that brought them out of their mother's womb. Scarcely had they entered on
+        the life that now is, when they obtained that glorious life which is to come.
+
+
+        We praise the death of other martyrs because it was the crowning act of an undaunted
+        and persistent testimony; but these were crowned at once. He That maketh an end to
+        this present life, gave to them at its very gates that eternal blessedness which we
+        hope for at its close. They whom the wickedness of Herod tore from their mothers'
+        breasts are rightfully called the flowers of martyrdom; hardly had these buds of the
+        Church shown their heads above the soil, in the winter of unbelief, when the frost of
+        persecution nipped them.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Jerome, Commentary on Matthew, Book I, on Matt 2:13-18"
+    text:
+      la: >-
+        Quando tulit Púerum et Matrem ejus, ut in Ægýptum tránseat, nocte tulit, et in
+        ténebris: quia noctem ignorántiæ his, a quibus ipse recéssit, relíquit incrédulis.
+        Quando vero revértitur in Judǽam, nec nox, nec ténebræ ponúntur in Evangélio: quia in
+        fine mundi Judǽi fidem, tamquam Christum ab Ægýpto reverténtem suscipiéntes,
+        illuminabúntur.
+
+
+        Ut adimplerétur quod dictum est a Dómino per prophétam dicéntem: Ex Ægýpto vocávi
+        Fílium meum. Respóndeant, qui Hebræórum volúminum dénegant veritátem, ubi hoc in
+        Septuagínta legátur interprétibus. Quod cum non invénerint, nos eis dicémus, in Osée
+        prophéta scriptum, sicut et exemplária probáre possunt, quæ nuper edídimus.
+
+
+        Tunc adimplétum est, quod dictum est per Jeremíam prophétam dicéntem: Vox in Rama
+        audíta est, plorátus et ululátus multus, Rachel plorans fílios suos. De Rachel natus
+        est Bénjamin, in cujus tribu non est Béthlehem. Quǽritur ergo, quómodo Rachel fílios
+        Judæ, id est Béthlehem, quasi suos ploret. Respondébimus bréviter, quia sepúlta sit
+        juxta Béthlehem in Ephrata; et ex matérno corpúsculi hospítio matris nomen accéperit;
+        sive quóniam Juda et Bénjamin duæ tribus junctæ erant, et Heródes præcéperat non solum
+        in Béthlehem intérfici púeros, sed et in ómnibus fínibus ejus.
+      en: >-
+        He took the young Child, and His mother, and fled into Egypt, by night and in
+        darkness; and the darkness of that night was a figure of the darkness of ignorance in
+        which they left the unbelievers from whom they fled. But when they returned into
+        Judaea, we learn not from the Gospel that it was by night, or in darkness; which is an
+        image of that light which will lighten the Jews, when, at the end of the world, they
+        shall receive back the faith, which now lighteneth the Gentiles, even as Judaea
+        received Christ returning from Egypt.
+
+
+        That it might be fulfilled which was spoken of the Lord by the Prophet, saying Out of
+        Egypt have I called My Son. Those who go about to deny the authority of the Hebrew
+        Scriptures, ask where any such passage is to be found in the Septuagint. But, although
+        they find it not there, I tell them that the fact of its being written in the Prophet
+        Hosea can be proved by the texts which I have lately published.
+
+
+        Then was fulfilled that which was spoken by Jeremias the Prophet, saying; In Rama was
+        there a voice heard, weeping and great mourning; Rachel weeping for her children. The
+        child of Rachel was Benjamin, and Bethlehem is not a town belonging to his tribe. We
+        must therefore seek another reason why Rachel should weep for the children of Judah, to
+        whom Bethlehem belongeth, as for her own. The plain answer is that she is buried at
+        Ephrath close to Bethlehem, and she is called Mother on account of the resting-place of
+        her earthly tabernacle being there. It is possible also that she is called Mother
+        because the tribes of Judah and Benjamin were joined together, and Herod slew not only
+        all the children that were in Bethlehem, but also in all the coasts thereof.
+    status: { la: verified, en: verified }

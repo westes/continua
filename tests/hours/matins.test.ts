@@ -38,9 +38,14 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
 
   it("resolves the user's own bible-plan readings for Advent III Tuesday, not the historical lectionary", () => {
     const lessons = ordo.parts.filter((p) => p.kind === 'lesson');
-    expect(lessons).toHaveLength(2);
+    // 2 bible-plan readings, plus a 3rd: St. Eusebius of Vercelli's own
+    // commemoration reading, generously surfaced per the "commemorations
+    // get their own reading" design (see hours/matins.ts's own header) —
+    // vu places him Dec 15 (a Monastic 1617 same-day redirect), commemorated
+    // under this Advent III Tuesday ferial.
+    expect(lessons).toHaveLength(3);
     const citations = lessons.map((l) => (l as { text: { citation?: { en?: string } } }).text.citation?.en);
-    expect(citations).toEqual(['Isa 36; Isa 37', 'Sap 14']);
+    expect(citations).toEqual(['Isa 36; Isa 37', 'Sap 14', undefined]);
     // Real content isn't imported yet (Vulgate/Douay-Rheims bulk import is
     // a deferred follow-on) — honest `missing`, not fabricated text.
     expect((lessons[0] as { text: { status: { en?: string } } }).text.status.en).toBe('missing');

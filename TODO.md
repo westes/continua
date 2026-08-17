@@ -36,8 +36,9 @@ across every hour and content type in this app.
      Matins responsory pool beyond its one seeded book (`isa`). The pre-1955-but-post-1617
      saints (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are now done — see
      "Pre-1955 saints' Matins readings" below. The larger pool of saints that *do* have a
-     Monastic 1617 track (`SanctiM/`) is in progress — see "SanctiM-track saints' Matins
-     readings" below — January-November done (116/136), ~29 candidates remain (December).
+     Monastic 1617 track (`SanctiM/`) is now also done — see "SanctiM-track saints' Matins
+     readings" below — all 12 months complete, 129 saints authored, the rest correctly left
+     unauthored as Common-only/no-content cases.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1363,7 +1364,7 @@ the bible-plan bulk conversion) and `npm run build`/`tsc --noEmit` both pass.
 **Not done in this pass**: the larger pool of saints that *do* have a Monastic 1617
 (`SanctiM/`) track — same authoring shape, separate/older backlog item (see priority §2 above).
 
-### SanctiM (Monastic 1617)-track saints' Matins readings — started, January done (2026-08)
+### SanctiM (Monastic 1617)-track saints' Matins readings — done, all 12 months (2026-08)
 
 The complementary pool to the pre-1955 pass above: saints with a `SanctiM/MM-DD*.txt` file.
 **Method finding, worth recording**: a `SanctiM/MM-DD.txt` file almost always turns out to be
@@ -1546,8 +1547,29 @@ proper text at all in the source): `st-emilian`, `st-odo` — both genuinely Mon
 with no Lectio content in their own SanctiM files, the same wrinkle as `st-justina`/`st-gall`
 in October. `npm test`/`tsc --noEmit` both pass.
 
-**Not done in this pass**: the remaining ~29 SanctiM-track candidates (December) — same
-authoring shape, continue month by month.
+**December done (13/15 saints, 2 left unauthored as Common-only) — final month, pass
+complete**: `st-bibiana`, `st-nicholas`, `st-ambrose`, `immaculate-conception` (two genuinely
+distinct Nocturn 2 sources kept as separate readings — St. Jerome's sermon, and the Acts of Pius
+IX defining the dogma in 1854), `st-damasus`, `st-lucy`, `st-thomas-apostle`,
+`st-stephen-protomartyr`, `st-john-apostle`, `holy-innocents`, `st-thomas-becket`,
+`st-silvester-i`, `st-eusebius-of-vercelli` (off-date, missed pre-1955-pool candidate — vu
+places him Dec 15 via Monastic 1617's own same-day redirect, but his real proper content is at
+the general Tridentine calendar's Dec 16; no SanctiM file exists for him at either date). Left
+unauthored (Common-only, no proper text at all in the source): `st-barbara` (correct file
+`Sancti/12-04o.txt`) and `st-melchiades` (correct file `Sancti/12-10o.txt` — this also corrects
+an earlier wrong "neither Sancti nor SanctiM file" claim about him in memory
+`vu-matins-pre1955-saints`, the same "verify by opening the file, not just checking existence"
+lesson as November's St. Romanus Abbot correction). Adding `st-eusebius-of-vercelli`'s content
+surfaced a 3rd Matins lesson on the fixed Advent III Tuesday proof date (`tests/hours/
+matins.test.ts`, Dec 15 falls under his commemoration) — updated that test's expected lesson
+count from 2 to 3, not a regression: exactly the "commemorations get their own reading" design
+working as intended once real content exists to surface. `npm test` (365 tests) and `tsc
+--noEmit` both pass.
+
+**Pass complete**: all 12 months (January-December) of the SanctiM-track saints' Matins
+readings are now done — 129 saints authored across the whole year, the rest correctly left
+unauthored as Common-only/no-content cases. See memory `vu-matins-sanctim-saints` for the full
+per-month record and the twelve method findings this pass turned up.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)
 
