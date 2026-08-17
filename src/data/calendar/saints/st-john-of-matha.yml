@@ -1,0 +1,14 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/02-08.txt` -- "vide C5;;Duplex;;3;;".
+# Own proper [Oratio] and Nocturn 2 vita; Nocturn 3 (Lectio7-9) is a
+# direct `@Commune/C5:LectioN` cross-reference, i.e. shares the Common
+# of a Confessor's own Gospel-and-homily verbatim. No [Ant 1] of its
+# own, so the Benedictus antiphon falls back to that same Common
+# (common-of-a-confessor, matching st-alexius.yml/st-john-bosco.yml).
+id: st-john-of-matha
+name: "St. John of Matha, Confessor"
+rank: duplex
+common: common-of-a-confessor
+propers: "st-john-of-matha"
+minorHoursCommon: common-of-a-confessor
+benedictusCommon: common-of-a-confessor

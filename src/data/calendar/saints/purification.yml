@@ -1,0 +1,15 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/02-02.txt` -- "In
+# Purificatione Beatæ Mariæ Virginis;;Duplex 2 class;;5.1;;ex C11". Real
+# unique [Oratio]/[Ant 1]/Nocturn 2-3 content of her own (not a bare
+# Common fallback the way our-lady-of-the-snows.yml was) -- same
+# fixed-BVM-feast pattern as that pass, previously excluded under the
+# same stale "not modeled" convention this app has now dropped
+# per direct instruction (2026-08): import available content regardless
+# of rubric-era markers.
+id: purification
+name: "The Purification of the Blessed Virgin Mary (Candlemas)"
+rank: duplex-2-classis
+common: common-of-the-bvm
+propers: "purification"

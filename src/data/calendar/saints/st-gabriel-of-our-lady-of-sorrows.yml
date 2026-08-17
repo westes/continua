@@ -1,0 +1,12 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/02-27.txt` -- "vide C5;;Duplex;;3;;".
+# Own proper [Oratio]; no [Ant 1] of its own, so the Benedictus antiphon
+# falls back to Common of a Confessor (C5), matching st-alexius.yml/
+# st-john-bosco.yml.
+id: st-gabriel-of-our-lady-of-sorrows
+name: "St. Gabriel of Our Lady of Sorrows, Confessor"
+rank: duplex
+common: common-of-a-confessor
+propers: "st-gabriel-of-our-lady-of-sorrows"
+minorHoursCommon: common-of-a-confessor
+benedictusCommon: common-of-a-confessor

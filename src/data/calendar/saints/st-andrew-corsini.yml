@@ -1,0 +1,12 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/02-04.txt` -- "vide C4;;Duplex;;3;;".
+# Own proper [Oratio]; no [Ant 1] of its own, so the Benedictus antiphon
+# falls back to Common of a Confessor Bishop (C4), same family as
+# st-ambrose.yml.
+id: st-andrew-corsini
+name: "St. Andrew Corsini, Bishop and Confessor"
+rank: duplex
+common: common-of-a-confessor-bishop
+propers: "st-andrew-corsini"
+minorHoursCommon: common-of-a-confessor-bishop
+benedictusCommon: common-of-a-confessor-bishop

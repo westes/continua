@@ -22,7 +22,12 @@ describe('February sanctoral pull (first pass)', () => {
     // reference, not unique text -- confirmed identical to collect-c6.yml's
     // own template; wired via collectCommon (2026-08), postdating this
     // saint's own original authoring, which is why this used to be missing.
-    const day = resolveDay('2029-02-05'); // St. Agatha
+    // 2029 was the original proof year, but St. Andrew Corsini (added
+    // 2026-08 -- see st-andrew-corsini.yml) transfers onto Feb 5 in years
+    // where Sexagesima falls on his own Feb 4, and outranks Agatha
+    // (Duplex vs. Semiduplex) when it does -- 2029 is now one of those
+    // years. 2025 has no such collision.
+    const day = resolveDay('2025-02-05'); // St. Agatha
     expect(day.winner).toEqual({
       kind: 'sanctoral',
       id: 'st-agatha',
