@@ -37,7 +37,7 @@ across every hour and content type in this app.
      saints (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are now done — see
      "Pre-1955 saints' Matins readings" below. The larger pool of saints that *do* have a
      Monastic 1617 track (`SanctiM/`) is in progress — see "SanctiM-track saints' Matins
-     readings" below — January-June done (58/64), ~91 candidates remain (July onward).
+     readings" below — January-July done (71/82), ~78 candidates remain (August onward).
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1484,7 +1484,24 @@ its Tridentine file has only a Nocturn 1 (`Lectio1-3`, scripture) and no Nocturn
 all in either track, so nothing to source, same category as the pre-1955 pass's Common-only
 exceptions but for a Vigil rather than a Common fallback. `npm test`/`tsc --noEmit` both pass.
 
-**Not done in this pass**: the remaining ~91 SanctiM-track candidates (July onward) — same
+**July done (13/18 saints, 5 left unauthored as Common-only)**: `ss-seven-brothers-rufina-and-secunda`,
+`st-pius-i`, `st-john-gualbert`, `st-anacletus`, `st-alexius`, `ss-symphorosa-and-seven-sons`
+(the last four missed pre-1955-pool candidates — see the ninth finding below), `st-bonaventure`
+(a reference-engine translation-misalignment bug — its English section boundaries don't line up
+with the Latin, so `en` here is this project's own translation, `draft`), `st-mary-magdalene`,
+`st-apollinaris`, `st-james-the-greater`, `st-anne`, `st-martha`, `ss-abdon-and-sennen`. Left
+unauthored (Common-only, no proper text at all in the source): `ss-nabor-and-felix`,
+`st-margaret-of-antioch`, `st-liborius`, `st-christopher`, `ss-felix-simplicius-faustinus-and-beatrix`.
+`npm test`/`tsc --noEmit` both pass.
+
+**A ninth finding, from July**: the Monastic calendar keeps a full **Octave of St. Benedict**
+(Jul 11-18, since his own feast is Mar 21 but his Monastic-only "Transitus" observance sits in
+July) — every SanctiM file at these dates that isn't a saint's own real match turns out to be
+"Nth day within the Octave of St. Benedict" content, not a genuine candidate mismatch to
+puzzle over. Recognize this pattern (`In Octava S. P. N. Benedicti Abbatis`) and move on
+quickly rather than re-investigating it saint by saint.
+
+**Not done in this pass**: the remaining ~78 SanctiM-track candidates (August onward) — same
 authoring shape, continue month by month.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)

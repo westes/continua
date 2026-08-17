@@ -1,0 +1,138 @@
+# Matins Nocturn 2-3 readings for St. Apollinaris, Bishop, Martyr (Jul
+# 23) — SanctiM/07-23.txt inherits the whole day (`@Sancti/07-23`) with
+# no Nocturn 2/3 override, so this saint's own vita is sourced from the
+# Tridentine track exactly as for a pre-1955 saint (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/07-23.txt, English/Sancti/07-23.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous vita,
+# no genuine source break.
+# Nocturn 3: Lectio7's Gospel citation (Luke 22:24-30) is a bare
+# incipit ("Et réliqua") with no full pericope text given, so — per
+# the pre-1955 pass's convention of not transcribing bare incipits —
+# only the homily portion is authored (not marked isGospel), combined
+# with Lectio8-9 as one continuous excerpt of St. Ambrose's commentary.
+# No responsory given for either reading.
+id: st-apollinaris
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Apollináris cum Príncipe Apostolórum Antiochía Romam venit; a quo, ordinátus epíscopus,
+        Ravennam ad Christi Dómini Evangélium prædicándum mittitur; ubi, cum ad Christi fidem
+        plurimos convérteret, captus ab idolórum sacerdótibus gráviter cæsus est. Cumque ipso
+        orante Bonifatius nobilis vir, qui diu mutus fuerat, loquerétur, ejusque fília immundo
+        spíritu liberáta esset; íterum est in illum commóta seditio. Itaque virgis cæsus,
+        ardéntes carbónes nudis pédibus prémere cogitur; quem cum subjéctus ignis nihil
+        læderet, ejícitur extra urbem.
+
+
+        Is vero latens aliquámdiu cum quibusdam Christiánis, inde profectus est in Æmiliam,
+        ubi Rufini patricii filiam mortuam ad vitam revocávit; ut proptérea tota Rufini família
+        in Jesum Christum crederet. Quare veheméntius incénsus præfectus accersit Apollinarem,
+        et cum eo gravius agit, ut finem fáciat disseminándi in urbe Christi fidem. Cujus cum
+        Apollináris jussa neglígeret, equuleo cruciátur; in cujus plagas aqua fervens
+        infúnditur, saxoque os túnditur: mox férreis vinculis constrictus includitur in
+        carcere. Quarto die impositus in navem, mittitur in exsílium; ac facto naufragio venit
+        in Mysiam, inde ad ripam Danubii, póstea in Thraciam.
+
+
+        Cum autem in Serápidis templo dæmon se responsa datúrum negaret, dum ibidem Petri
+        Apóstoli discipulus morarétur; diu conquisítus, invéntus est Apollináris: qui íterum
+        jubétur navigare. Ita reversus Ravennam, ab iisdem illis idolórum sacerdótibus
+        accusatus, centurióni custodiendus tráditur; qui, cum occulte Christum cóleret, noctu
+        Apollinarem dimísit. Re cógnita, satéllites eum persequúntur, et plagis in itinere
+        confectum, quod mortuum crederent, relinquunt. Quem cum inde Christiáni sustulissent,
+        septimo die exhortans illos ad fidei constantiam, martyrii glória clarus migrávit e
+        vita. Cujus corpus prope murum urbis sepúltum est.
+      en: >-
+        Apollinaris came from Antioch to Rome with the Prince of the Apostles, and was by him
+        ordained a Bishop, and sent to Ravenna to preach the Gospel of the Lord Christ. He had
+        already converted a great number of persons to the Christian Faith, when the idolatrous
+        priests caught him and gave him a sharp flogging. A second riot was got up against him on
+        account of one Boniface, a nobleman who had long been dumb, speaking, and his daughter
+        being delivered from an unclean spirit. On this occasion Apollinaris was flogged again,
+        and made to walk barefoot over hot embers. The fire did him no harm, and he was expelled
+        from the city.
+
+
+        Apollinaris lay hid for a while with certain Christians. Thence he went to Emilia, where
+        he restored to life the dead daughter of the Patrician Rufinus, so that the whole
+        household of Rufinus might believe in Jesus Christ. This affair greatly incensed the
+        Praefect, who sent for Apollinaris, and earnestly dealt with him to induce him to cease
+        spreading the Christian Faith in that city. As Apollinaris paid no heed to the Prefect's
+        orders, he was tortured on the rack, boiling water poured on his wounds, and his mouth
+        bruised with a stone, after which he was ironed and cast into prison. On the fourth day
+        he was put on board a ship and sent into banishment. The ship was wrecked, and he so came
+        to Mysia, thence to the shores of the Danube, and afterwards into Thrace.
+
+
+        However, the devil in the temple of Serapis declared that he could not give oracles,
+        while the disciple of the Apostle Peter abode in these parts, and after a long search
+        Apollinaris was found and commanded again to take ship. Thus he went back to Ravenna,
+        where he was denounced by the same idolatrous priests as before, and given into the
+        keeping of a centurion. This centurion was a secret worshipper of Christ, and in the
+        night he let Apollinaris go. When it became known some of the officers of justice
+        followed after him, caught him on the road, beat him till they thought he was dead, and
+        left him. Some Christians took him up, but on the seventh day, still exhorting them to
+        stand firm in the Faith, he departed this life with the glorious splendour of martyrdom.
+        His body was buried hard by the wall of the city.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Ambrose, Bishop of Milan, Commentary on Luke, Bk. 10 (on Luke 22:24-30)"
+    text:
+      la: >-
+        Regnum Dei non est de hoc mundo. Non ergo æqualitátis hómini ad Deum, sed similitúdinis
+        æmulátio est. Solus enim Christus est plena imago Dei, propter expressam in se Paternæ
+        claritúdinis unitátem. Justus autem homo ad imáginem Dei est, si propter imitandam
+        divinæ conversatiónis similitúdinem mundum hunc Dei cognitióne contemnat,
+        voluptatesque terrenas verbi perceptióne despíciat, quo álimur in vitam: unde et corpus
+        Christi édimus, ut vitæ ætérnæ possímus esse participes.
+
+
+        Non enim victus et potus nobis præmii loco spondétur et honoris, sed communicátio
+        gratiæ cæléstis et vitæ. Neque duodecim throni tamquam áliqua corporalis sunt
+        receptácula sessiónis. Sed, quia sicut secúndum divinam similitúdinem júdicat Christus
+        cognitióne cordium, non interrogatióne factórum, virtútem remúnerans, impietatémque
+        condemnans; ita et Apóstoli in judícium spiritale formántur remuneratióne fidei et
+        exsecratióne perfidiæ, virtúte errórem redarguéntes, sacrílegos ódio persequéntes.
+
+
+        Convertámur ígitur, et caveámus, ne in perditiónem aliqua inter nos de prælatióne
+        possit esse contentio. Si enim contendébant Apóstoli, non excusatióni obténditur, sed
+        cautióni propónitur. Si Petrus aliquándo convértitur, qui ad primam Dómini secutus est
+        vocem; quis potest dicere, cito se esse conversum? Cave ergo jactantiam, cave sæculum.
+        Ille enim confírmare jubétur fratres suos, qui dixit: Omnia dimísimus, et secúti sumus
+        te.
+      en: >-
+        My kingdom, our God hath said, is not of this world. Man, then, must strive, not to be
+        equal with God, but to be like unto God. Christ alone is the full image of God, as being
+        the brightness of His Father's glory, and the express image of His Person. But the
+        righteous man is made after the image of God, in so far as, for the sake of following
+        the example of his God, he, through knowledge of God, setteth no esteem upon this world,
+        and looketh down upon all carnal motions of the will, through having taken in that Word
+        whereby we are fed unto life everlasting; and this is the end whereto we eat the Body of
+        Christ, namely, that we may have eternal life.
+
+
+        The reward which is promised unto us is not meat and drink, but a part in that grace and
+        that life which come down from heaven. Neither are the twelve thrones to be understood
+        as meaning chairs for bodies to sit in, but as meaning a dignity like that of God
+        Himself, wherein they that have left all and followed Christ shall judge as Christ doth,
+        not by dint of cross-examinations, but by simple knowledge of the heart, rewarding the
+        good, and condemning the evil. Thus are the Apostles erected into a ghostly tribunal, for
+        the rewarding of faith and the cursing of unbelief, by their might breaking back errors,
+        and laying upon blasphemers the just punishment of hatred.
+
+
+        Let us, then, turn about, and look well to it that there be no strife among us, which of
+        us shall be accounted the greatest. That this strife arose among the Apostles, is not an
+        excuse but a caution for us. If it was only after a while that Peter was converted —
+        Peter, who had started up at the first command of the Lord — who can promise himself to
+        be converted forthwith? Have a care, then, of boasting; have a care of the world. He who
+        was commanded to strengthen his brethren was he who was able to say, Behold, we have
+        forsaken all, and have followed thee.
+    status: { la: verified, en: verified }
