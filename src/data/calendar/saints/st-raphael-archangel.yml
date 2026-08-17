@@ -1,0 +1,18 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/10-24.txt` -- "ex Sancti/05-08;;
+# Duplex majus;;4;;" (his own file redirects wholesale to the
+# Apparition of St. Michael's own date, per its own [Rule] -- same
+# non-distinct-category cross-reference reasoning as
+# st-gabriel-archangel.yml -- but this saint's real Officium/Oratio/
+# Ant1/Matins content is proper to Raphael specifically, not shared).
+# Real, unique collect/antiphon/Nocturn 2-3 content (Nocturn 2: St.
+# Bonaventure's own sermon on Raphael; Nocturn 3: the Gospel citation
+# ends "Et réliqua"/"And so on" with no full pericope given -- per the
+# bare-incipit convention, only the homily, St. John Chrysostom, is
+# authored). Nocturn 1 (Lectio1-3, the book of Tobias) not modeled per
+# this app's established convention.
+id: st-raphael-archangel
+name: "St. Raphael the Archangel"
+rank: duplex-majus
+common: common-of-an-angel
+propers: "st-raphael-archangel"

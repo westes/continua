@@ -9,7 +9,12 @@ import { getDayLabel } from '../../src/calendar/day-label';
 // day), still wins outright and Marian Saturday doesn't apply at all.
 describe('Marian Saturday (applyMarianSaturday)', () => {
   it('wins outright, with no commemoration, on a Saturday with nothing else at all going on', () => {
-    const day = resolveDay('2026-10-24');
+    // Not 2026-10-24: that date is now St. Raphael the Archangel's own
+    // fixed day (Duplex majus, added per the full-year sanctoral
+    // import), which wins outright. 2026-07-04 is a genuinely clean
+    // Saturday with no sanctoral entry at all (not even a commemorated
+    // Simplex).
+    const day = resolveDay('2026-07-04');
     expect(day.winner).toEqual({ kind: 'temporal', id: 'marian-saturday' });
     expect(day.commemorations).toEqual([]);
     expect(getDayLabel(day)).toBe("Our Lady's Saturday");

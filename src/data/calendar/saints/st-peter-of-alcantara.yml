@@ -1,0 +1,16 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/10-19.txt` -- "Duplex;;3;;vide
+# C5-1" (a variant Oratio of the Common of a Confessor, C5 -- not a
+# distinct Common category, same non-distinct-category reasoning as
+# st-vincent-de-paul.yml's own C5-1). Own real proper [Oratio]. No
+# [Ant 1] of his own -- benedictusCommon/minorHoursCommon fall back to
+# the plain Common of a Confessor. Nocturn 3 is a direct
+# `@Commune/C5:LectioN in 2 loco` cross-reference, not this saint's own
+# content -- not transcribed, per the bare-cross-reference convention.
+id: st-peter-of-alcantara
+name: "St. Peter of Alcantara, Confessor"
+rank: duplex
+common: common-of-a-confessor
+propers: "st-peter-of-alcantara"
+benedictusCommon: common-of-a-confessor
+minorHoursCommon: common-of-a-confessor

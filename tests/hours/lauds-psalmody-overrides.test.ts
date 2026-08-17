@@ -46,7 +46,11 @@ describe('Lauds psalmody override (duplex-majus+ sanctoral, and Marian Saturday)
   });
 
   it("substitutes Our Lady's Saturday own proper psalmody, unconditionally, whenever it wins", () => {
-    const ordo = resolveOrdo('lauds', '2026-10-24'); // a clean, otherwise-empty Marian Saturday
+    // Not 2026-10-24: that date is now St. Raphael the Archangel's own
+    // fixed day (Duplex majus, added per the full-year sanctoral
+    // import), which wins outright. 2026-07-04 is a clean, otherwise-
+    // empty Marian Saturday (see tests/calendar/marian-saturday.test.ts).
+    const ordo = resolveOrdo('lauds', '2026-07-04');
     const psalmNumbers = ordo.parts
       .filter((p) => p.kind === 'psalm')
       .map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
@@ -63,7 +67,7 @@ describe('Lauds psalmody override (duplex-majus+ sanctoral, and Marian Saturday)
   });
 
   it("drops the Holy Cross and Blessed Virgin Mary suffrages on Our Lady's Saturday (the latter redundant with the day's already-Marian office; the former because Marian Saturday isn't a bare ferial office either), keeping Joseph, Apostles, and Peace", () => {
-    const ordo = resolveOrdo('lauds', '2026-10-24');
+    const ordo = resolveOrdo('lauds', '2026-07-04');
     const labels = ordo.parts.filter((p) => p.kind === 'preces' && p.label).map((p) => (p.kind === 'preces' ? p.label : undefined));
     expect(labels).toEqual(['Of St. Joseph', 'Of the Holy Apostles Peter and Paul', 'For Peace', 'Salve Regina']);
   });

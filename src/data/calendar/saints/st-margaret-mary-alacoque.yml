@@ -1,0 +1,13 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/10-17.txt` -- "Duplex;;3;;vide
+# C6a" (Common of Virgins only). Own real proper [Oratio] and own
+# Nocturn 2-3 content (Nocturn 3 is St. Francis de Sales's own homily,
+# not a cross-reference). No [Ant 1] of her own -- benedictusCommon/
+# minorHoursCommon fall back to the plain Common of a Virgin.
+id: st-margaret-mary-alacoque
+name: "St. Margaret Mary Alacoque, Virgin"
+rank: duplex
+common: common-of-a-virgin
+propers: "st-margaret-mary-alacoque"
+benedictusCommon: common-of-a-virgin
+minorHoursCommon: common-of-a-virgin

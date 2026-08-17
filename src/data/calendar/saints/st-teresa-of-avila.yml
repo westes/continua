@@ -1,0 +1,15 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/10-15.txt` -- "Duplex;;3;;vide
+# C6a" (Common of Virgins only). Own real proper [Oratio]. No [Ant 1]
+# of her own -- benedictusCommon/minorHoursCommon fall back to the
+# plain Common of a Virgin. No Lectio7-9 in her own file -- defers to
+# the Common's own Nocturn 3, not transcribed here. Distinct saint/id
+# from st-therese-of-lisieux.yml (Oct 3) -- two different Carmelite
+# saints who happen to share the name Teresa.
+id: st-teresa-of-avila
+name: "St. Teresa of Avila, Virgin"
+rank: duplex
+common: common-of-a-virgin
+propers: "st-teresa-of-avila"
+benedictusCommon: common-of-a-virgin
+minorHoursCommon: common-of-a-virgin
