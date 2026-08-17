@@ -41,8 +41,11 @@ describe('resolveDay', () => {
     // 2026-10-04 (moved here from there): since the October pull, that
     // date is St. Francis's own day (Duplex), which wins outright even on
     // an ordinary Sunday.
-    const day = resolveDay('2026-11-15');
-    expect(day.date).toBe('2026-11-15');
+    // Not 2026-11-15 either (moved here from there): since the November
+    // pull, that date is St. Albert the Great's own day (Duplex), same
+    // reason. 2026-09-06 (post-pentecost-15) is genuinely clean.
+    const day = resolveDay('2026-09-06');
+    expect(day.date).toBe('2026-09-06');
     expect(day.weekday).toBe('sunday');
     expect(day.winner.kind).toBe('temporal');
     expect(day.commemorations).toEqual([]);

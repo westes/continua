@@ -2,16 +2,16 @@ import { describe, expect, it } from 'vitest';
 import { resolveOrdo } from '../../src/hours';
 import { getPsalm } from '../../src/psalter';
 
-// 2026-11-16 is a Monday, and (as of the pre-1955 sanctoral pull reaching
-// October, with November/December still unpulled) still ordinary/ferial —
-// the Monastic 1617 distribution gives Monday three whole psalms (1, 2,
-// 6), all fully verified since the whole Psalter got bulk-pulled from
-// Divinum Officium's own Psalmorum text (2026-08). Already had to move
-// twice (first from a June Monday, then from an October Monday that got
-// real sanctoral content — Ss. Placid and Companions, see
-// data/calendar/saints/ss-placid-and-companions.yml) — if November's own
-// pull lands here too, it'll need to move again.
-const MONDAY = '2026-11-16';
+// 2026-09-07 is a Monday, plain ferial (post-Pentecost 15's own week,
+// no sanctoral entry, no commemoration) — the Monastic 1617 distribution
+// gives Monday three whole psalms (1, 2, 6), all fully verified since the
+// whole Psalter got bulk-pulled from Divinum Officium's own Psalmorum
+// text (2026-08). Already had to move three times now (first from a June
+// Monday, then an October Monday that got real sanctoral content — Ss.
+// Placid and Companions — then 2026-11-16 itself, which the November
+// sanctoral pull claimed for St. Gertrude) — pick with care if it needs
+// to move again.
+const MONDAY = '2026-09-07';
 const SUNDAY = '2026-08-09';
 
 describe('resolveOrdo("prime", ...)', () => {

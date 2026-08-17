@@ -1,0 +1,15 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/11-20.txt` -- "Duplex;;3;;vide
+# C5-1" (an alternate-Oratio variant of the Common of a Confessor Not
+# a Bishop, C5 -- not a distinct Common category, same reasoning as
+# st-augustine-of-canterbury.yml's C4-1; this saint's own file
+# supplies a real proper [Oratio], so C5's template collect is not
+# actually used). Own Nocturn 2 content (Lectio4-6, one continuous
+# vita). [Lectio7]-[Lectio9] are all bare `@Commune/C5:LectioN in 2
+# loco` cross-references -- per the bare-cross-reference convention,
+# not transcribed (not this saint's own text).
+id: st-felix-of-valois
+name: "St. Felix of Valois, Confessor"
+rank: duplex
+common: common-of-a-confessor
+propers: "st-felix-of-valois"

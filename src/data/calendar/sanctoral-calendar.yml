@@ -413,15 +413,25 @@ days:
   # multi-day skip) -- this app's existing transfer machinery handles it
   # correctly; see tests/calendar/november-sanctoral.test.ts.
   "11-01": [all-saints]
+  # Nov 2 (All Souls' Day) deliberately excluded from this full-year
+  # sanctoral sweep: it's a Requiem office (own psalms, no Te Deum,
+  # three full nocturns of Job readings), not a normal saint's office
+  # -- a genuine mechanism gap, not an oversight. See
+  # vu-sanctoral-sweep-progress memory.
+  "11-04": [st-charles-borromeo]
+  "11-08": [octave-of-all-saints]
   "11-09": [dedication-of-the-basilica-of-the-most-holy-savior]
   "11-10": [ss-tryphon-and-companions]
   "11-11": [st-martin-of-tours, st-menna]
   "11-12": [st-emilian]
   "11-13": [all-saints-of-the-benedictine-order]
   "11-14": [st-martin-i]
+  "11-15": [st-albert-the-great]
+  "11-16": [st-gertrude]
   "11-17": [st-gregory-thaumaturgus]
   "11-18": [dedication-of-the-basilicas-of-ss-peter-and-paul]
   "11-19": [st-odo, st-pontian]
+  "11-20": [st-felix-of-valois]
   "11-21": [presentation-of-the-bvm]
   "11-22": [st-cecilia]
   "11-23": [st-clement, st-felicitas]

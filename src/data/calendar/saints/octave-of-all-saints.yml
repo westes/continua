@@ -1,0 +1,18 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/11-08.txt` -- "In Octava Omnium
+# Sanctorum;;Duplex majus;;4.1;;vide Sancti/11-01" (cross-references
+# All Saints' own file for Rank/Rule). No [Oratio] at all in this
+# file, unlike octave-of-ss-peter-and-paul.yml -- collect reuses All
+# Saints' own real proper collect via the cross-id `propers` pointer
+# (same reasoning as the Finding/Exaltation of the Holy Cross and
+# Gabriel/Raphael Archangel pattern). But this day does have genuine
+# own Nocturn 2-3 content (St. Cyprian's "De mortalitate", St.
+# Augustine's homily on the Beatitudes) -- see
+# nocturn-readings/octave-of-all-saints.yml, since the Matins
+# nocturn-readings mechanism has no cross-id lookup the way
+# collect/antiphon do.
+id: octave-of-all-saints
+name: "The Octave Day of All Saints"
+rank: duplex-majus
+common: proper-to-all-saints
+propers: "all-saints"

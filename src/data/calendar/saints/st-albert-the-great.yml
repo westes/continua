@@ -1,0 +1,16 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/11-15.txt` -- "Duplex;;3;;vide
+# C4a" (Commune Doctoris Pontificis). Own real proper [Oratio] and own
+# Nocturn 2 content (Lectio4-6, one continuous vita). No [Lectio7] at
+# all in the source -- no own Nocturn 3. No [Ant 1] of his own;
+# benedictusCommon/minorHoursCommon fall back to the plain Common of a
+# Confessor Bishop, same reasoning as st-robert-bellarmine.yml/
+# st-john-damascene.yml/st-peter-canisius.yml (C4a's own [Ant 1] is
+# itself a cross-reference to C4).
+id: st-albert-the-great
+name: "St. Albert the Great, Bishop, Confessor and Doctor of the Church"
+rank: duplex
+common: common-of-a-confessor-doctor
+propers: "st-albert-the-great"
+benedictusCommon: common-of-a-confessor-bishop
+minorHoursCommon: common-of-a-confessor-bishop

@@ -60,22 +60,39 @@ describe('getDayLabel — ordinal temporal label', () => {
 
 describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => {
   it('labels a resumed Sunday/weekday as "after Epiphany", not the next Trinity-counted number', () => {
-    // 2026: post-epiphany-5 is Nov 8, post-epiphany-6 is Nov 15 (both
+    // Not 2026 any more: the November sanctoral pull gave fixed real
+    // content to Nov 8 (Octave Day of All Saints, Duplex majus) and Nov
+    // 15 (St. Albert the Great, Duplex) -- both now permanently win
+    // outright over whatever post-Epiphany-overflow Sunday lands there in
+    // any given year, the same "real content closed the gap" shape as
+    // several other months' collisions. 2024 is a clean overflow year
+    // instead: post-epiphany-5 is Nov 10, post-epiphany-6 is Nov 17 (both
     // Sundays) -- see calendar/temporal-id.test.ts for the id-level
-    // coverage this label check builds on.
-    expect(getDayLabel(resolveDay('2026-11-08'))).toBe('The 5th Sunday after Epiphany');
-    // 2026-11-09 is also the Dedication of the Basilica of the Most Holy
-    // Savior (Duplex II Classis, added 2026-08 — see
-    // dedication-of-the-basilica-of-the-most-holy-savior.yml) — an
-    // ordinary (non-privileged) Monday fully yields to a real winning
-    // saint, so the label is just her name, not the ferial fallback; the
-    // 11-16 assertion below covers that fallback format on a genuinely
-    // saint-free day instead.
-    expect(getDayLabel(resolveDay('2026-11-09'))).toBe(
-      'Dedication of the Basilica of the Most Holy Savior (the Lateran)',
+    // coverage this label check builds on. Nov 10 itself also carries a
+    // Simplex commemoration (Ss. Tryphon, Respicius, and Nympha), shown
+    // appended to the Sunday's own label per this app's usual
+    // commemorated-Simplex display.
+    expect(getDayLabel(resolveDay('2024-11-10'))).toBe(
+      'Ss. Tryphon, Respicius, and Nympha, Martyrs — The 5th Sunday after Epiphany',
     );
-    expect(getDayLabel(resolveDay('2026-11-15'))).toBe('The 6th Sunday after Epiphany');
-    expect(getDayLabel(resolveDay('2026-11-16'))).toBe('Monday in the 6th week after Epiphany');
+    // 2024-11-11 is St. Martin of Tours (Duplex, pre-existing content) --
+    // an ordinary (non-privileged) Monday fully yields to a real winning
+    // saint, so the label is just his name, not the ferial fallback; see
+    // the 2035-10-29 assertion below for that fallback format on a
+    // genuinely saint-free overflow-week Monday instead (no single
+    // Nov-dated Monday near this Sunday pair is clean any more, now that
+    // Nov 4/8/15/16/20 are all fixed real content).
+    expect(getDayLabel(resolveDay('2024-11-11'))).toBe('St. Martin of Tours, Bishop and Confessor');
+    expect(getDayLabel(resolveDay('2024-11-17'))).toBe('The 6th Sunday after Epiphany');
+    // 2024-11-18 is the Dedication of the Basilicas of Ss. Peter and Paul
+    // (pre-existing fixed content) -- again a real winning saint, not the
+    // ferial fallback.
+    expect(getDayLabel(resolveDay('2024-11-18'))).toBe('Dedication of the Basilicas of Ss. Peter and Paul');
+    // 2035-10-29, a Monday in the 3rd week of a different overflow
+    // stretch, is genuinely clean (no sanctoral entry, no commemoration)
+    // -- covers the ferial "Monday in the Nth week after Epiphany" format
+    // itself, independent of the specific 5th/6th Sunday pair above.
+    expect(getDayLabel(resolveDay('2035-10-29'))).toBe('Monday in the 3rd week after Epiphany');
   });
 
   it('the fixed final Sunday of the year always shows the fixed 23rd-after-Trinity ordinal, not a raw elapsed-week count', () => {
@@ -109,10 +126,16 @@ describe('getDayLabel — active octave', () => {
   it('shows the octave day alone when nothing is separately commemorated that day', () => {
     // Not Aug 17 (day 8, the last day, of St. Lawrence's octave): that
     // date is now St. Hyacinth's own fixed day (Duplex, added per the
-    // full-year sanctoral import), which wins outright. All Saints' own
-    // octave (Nov 1-8) still has a genuinely open day 8 -- 2028-11-08 is
-    // a Wednesday, clear of both a Sunday and any sanctoral entry.
-    expect(getDayLabel(resolveDay('2028-11-08'))).toBe('8th Day within the Octave of All Saints');
+    // full-year sanctoral import), which wins outright. Not Nov 8 either
+    // (day 8, the last day, of All Saints' own octave): the November
+    // sanctoral pull gave that day its own real feast, the Octave Day of
+    // All Saints itself (Duplex majus, own proper Nocturn 2-3 content --
+    // see saints/octave-of-all-saints.yml), which now wins outright there
+    // too -- every year's Nov 8 is permanently claimed by it, the same
+    // "real content closed the gap" shape as August's Lawrence/Assumption
+    // overlap. Day 3 of the same octave (2028-11-03, a Friday) is still
+    // genuinely open -- no sanctoral entry, no separate commemoration.
+    expect(getDayLabel(resolveDay('2028-11-03'))).toBe('3rd Day within the Octave of All Saints');
   });
 
   it("a season's own named anchor day outranks an active octave, even though Trinity Sunday is technically also day 8 of Pentecost's own octave", () => {
