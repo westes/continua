@@ -37,7 +37,7 @@ across every hour and content type in this app.
      saints (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are now done — see
      "Pre-1955 saints' Matins readings" below. The larger pool of saints that *do* have a
      Monastic 1617 track (`SanctiM/`) is now also done — see "SanctiM-track saints' Matins
-     readings" below — all 12 months complete, 129 saints authored, the rest correctly left
+     readings" below — all 12 months complete, 133 saints authored, the rest correctly left
      unauthored as Common-only/no-content cases.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
@@ -1404,9 +1404,10 @@ source translation exists in the reference engine at all for this file, so `en` 
 project's own translation, marked `draft`), `st-anthony-abbot`, `chair-of-st-peter-at-rome`
 (Nocturn 2 patristic + Nocturn 3 genuine Gospel-and-homily, both authored),
 `st-prisca`, `ss-fabian-and-sebastian`, `st-agnes`, `ss-vincent-and-anastasius`,
-`conversion-of-st-paul`, `st-john-chrysostom`. Left unauthored: `st-telesphorus`,
-`st-hyginus` (octave-absorbed, see above). `npm test`/`tsc --noEmit` both pass; none of these
-are in a test table yet, same as the pre-1955 pass.
+`conversion-of-st-paul`, `st-john-chrysostom`. `st-telesphorus`, `st-hyginus` (octave-absorbed,
+see above) were originally left unauthored here — **since authored, see "Octave-absorbed and
+Vigil-only readings" below.** `npm test`/`tsc --noEmit` both pass; none of these are in a test
+table yet, same as the pre-1955 pass.
 
 **February done (8 saints, 1 left unauthored as Common-only, 1 vigil left unauthored as
 Common-only)**: `st-ignatius-of-antioch` (Nocturn 2 patristic vita + Nocturn 3 homily-only,
@@ -1480,10 +1481,10 @@ Monastic-only vita exists too, but its content is essentially identical to the T
 track's own account and only the Tridentine track has an English translation, so sourced from
 there instead), `ss-john-and-paul`, `st-leo-ii` (off-date, like St. Paul the Hermit in the
 pre-1955 pass — the general calendar keeps him on Jul 3, not Jun 28), `ss-peter-and-paul`
-(Duplex I class), `commemoration-of-st-paul`. Left unauthored: `vigil-of-st-john-the-baptist` —
-its Tridentine file has only a Nocturn 1 (`Lectio1-3`, scripture) and no Nocturn 2/3 content at
-all in either track, so nothing to source, same category as the pre-1955 pass's Common-only
-exceptions but for a Vigil rather than a Common fallback. `npm test`/`tsc --noEmit` both pass.
+(Duplex I class), `commemoration-of-st-paul`. `vigil-of-st-john-the-baptist` was originally left
+unauthored here as "only a Nocturn 1, no content" — **wrong: `Lectio1-3` turned out to be real
+homiletic content, just filling the Vigil's simpler single-nocturn slot; since authored, see
+"Octave-absorbed and Vigil-only readings" below.** `npm test`/`tsc --noEmit` both pass.
 
 **July done (13/18 saints, 5 left unauthored as Common-only)**: `ss-seven-brothers-rufina-and-secunda`,
 `st-pius-i`, `st-john-gualbert`, `st-anacletus`, `st-alexius`, `ss-symphorosa-and-seven-sons`
@@ -1513,8 +1514,10 @@ note that fixed BVM/Lord feasts were "not modeled by this app at all yet"; Noctu
 scripture (Song of Songs) left to the bible-plan store per this project's usual split, only
 Nocturn 2/3 patristic/Gospel content authored here. Left unauthored (no proper content at all
 in the source, same category as prior Common-only/Vigil exceptions): `ss-nabor-and-felix`-style
-`st-romanus` and `st-hermes` (both Common-only), `vigil-of-st-lawrence` (Nocturn 1 only, no
-Nocturn 2/3 content in either track). `npm test`/`tsc --noEmit` both pass.
+`st-romanus` and `st-hermes` (both Common-only). `vigil-of-st-lawrence` was originally left
+unauthored here as "Nocturn 1 only, no content" — **wrong, same correction as
+`vigil-of-st-john-the-baptist`; since authored, see "Octave-absorbed and Vigil-only readings"
+below.** `npm test`/`tsc --noEmit` both pass.
 
 **September done (9/9 saints, full month)**: `nativity-bvm`, `st-hadrian` (missed pre-1955-pool
 candidate), `st-matthew`, `ss-maurice-and-companions` (missed pre-1955-pool), `st-linus`,
@@ -1530,7 +1533,9 @@ unauthored: `st-justina` and `st-gall` (both genuinely Monastic-only — no `San
 — but their own `SanctiM` files are themselves Common-only, `vide C6`/`vide C5b`, no proper
 Lectio content to source), `ss-ursula-and-companions` (Common-only, no proper content — matches
 this file's own earlier flag in the "individually-flagged content gaps" section), and
-`vigil-of-all-saints` (Nocturn 1 only, no Nocturn 2/3 content in either track). `npm test`/`tsc
+`vigil-of-all-saints` (re-checked per "Octave-absorbed and Vigil-only readings" below: its
+`Lectio1-3` are genuinely a bare `@Commune/C3:Lectio7-9 in 2 loco` rubric, not real content like
+the other two vigils below turned out to be — correctly still unauthored). `npm test`/`tsc
 --noEmit` both pass.
 
 **November done (14/16 saints, 2 left unauthored as Common-only)**: `all-saints`,
@@ -1567,9 +1572,42 @@ working as intended once real content exists to surface. `npm test` (365 tests) 
 --noEmit` both pass.
 
 **Pass complete**: all 12 months (January-December) of the SanctiM-track saints' Matins
-readings are now done — 129 saints authored across the whole year, the rest correctly left
+readings are now done — 133 saints authored across the whole year, the rest correctly left
 unauthored as Common-only/no-content cases. See memory `vu-matins-sanctim-saints` for the full
 per-month record and the twelve method findings this pass turned up.
+
+### Octave-absorbed and Vigil-only readings — corrected policy, 4 saints authored (2026-08)
+
+**Direct instruction, correcting this pass's own earlier judgment call**: "octave-absorbed"
+(the day's Nocturn 2/3 given over to a Nativity/Epiphany homily instead of the saint's own
+vita) and "Vigil, Nocturn 1 only" were both being treated as "no content, correctly left
+unauthored" — wrong. This app pools readings first and figures out how/where to display them
+later (see `hours/matins.ts`'s own `buildReadingPool` header); real, sourceable text at a
+saint's own calendar slot should go into that pool even when it isn't proper to that particular
+saint, rather than being withheld because it came from "a different rubric variant." Four
+saints previously left unauthored for these two reasons are now authored, flagged in each
+file's own header as not-proper-to-the-saint:
+
+- `st-telesphorus` (Jan 5) — St. Augustine's Christmas-octave sermon (Nocturn 2) + St. Jerome's
+  homily on Matt 2:19-23 (Nocturn 3), neither proper to Telesphorus himself.
+- `st-hyginus` (Jan 11) — St. Fulgentius's Epiphany sermon (Nocturn 2) + St. Ambrose's homily on
+  Matt 2:1-12 (Nocturn 3), neither proper to Hyginus himself.
+- `vigil-of-st-john-the-baptist` (Jun 23) — St. Ambrose's homily on Zachary and Elisabeth
+  (Luke 1:5-17), authored from `Lectio1-3`, the Vigil's own single 3-lesson nocturn (not the
+  usual `Lectio4-9` Nocturn 2/3 slot a full feast uses).
+- `vigil-of-st-lawrence` (Aug 9) — Pope St. Gregory the Great's homily on self-denial
+  (Matt 16:24-27), same `Lectio1-3` single-nocturn source.
+
+`vigil-of-all-saints` (Oct 31) was re-checked under this same corrected policy and confirmed
+still genuinely contentless — its `Lectio1-3` are a bare `@Commune/C3:Lectio7-9 in 2 loco`
+rubric with no proper text at all, unlike the two Vigils above. Not every "left unauthored"
+case from this pass needs revisiting — only the octave-absorbed and Vigil-only categories were
+affected by this policy correction; genuine Common-only cases (a bare `@Commune` rubric with no
+Lectio text anywhere) are unaffected and remain correctly unauthored.
+
+Adding these introduced no new lesson-count regressions in `tests/hours/matins.test.ts` (none
+of its fixed proof dates fall on Jan 5/11 or Jun 23/Aug 9). `npm test` (365 tests) and `tsc
+--noEmit` both pass.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)
 

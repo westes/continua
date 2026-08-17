@@ -1,0 +1,93 @@
+# Matins reading for the Vigil of St. John the Baptist (Jun 23) —
+# `Sancti/06-23.txt` ("In Vigilia S. Joannis Baptistæ"). A Vigil's own
+# office is a single, simpler nocturn of just 3 lessons (`Lectio1-3`),
+# not the usual 9-lesson ferial/feast structure — earlier characterized
+# as "Nocturn 1 only, nothing to source" (see TODO.md/memory
+# vu-matins-sanctim-saints), which undersold it: `Lectio1-3` genuinely
+# *is* homiletic content here (a bare Gospel incipit + a real patristic
+# homily), just filling the Vigil's only lesson slot rather than the
+# Nocturn-2/3 slot a full feast would use. Per direct instruction
+# (2026-08), pool it in rather than treat "only 3 lessons" as "no
+# content" — the specific `nocturn` number is a display detail to sort
+# out later, not a reason to withhold real sourceable text.
+# web/www/horas/Latin/Sancti/06-23.txt, English/Sancti/06-23.txt.
+#
+# Lectio1's Gospel citation (Luke 1:5-17) is a bare incipit ("Et
+# réliqua") with no full pericope text given, so — per the established
+# convention of not transcribing bare incipits — only the homily
+# portion is authored (not marked isGospel), St. Ambrose's commentary
+# on Zachary and Elisabeth (Lectio1's homily + Lectio2-3 combined, one
+# continuous piece).
+id: vigil-of-st-john-the-baptist
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Ambrose, Commentary on Luke, Book I (on Luke 1:5-17)"
+    text:
+      la: >-
+        Docet nos Scriptúra divína non solum mores in iis qui prædicábiles sunt, sed étiam
+        paréntes oportére laudári; ut véluti transmíssa immaculátæ puritátis heréditas, in iis
+        quos vólumus laudáre, præcéllat. Quæ enim ália inténtio hoc loco sancti Evangelístæ,
+        nisi ut sanctus Joánnes Baptísta nobilitétur paréntibus, miráculis, móribus, múnere,
+        passióne? Sic étiam sancti Sámuel mater Anna laudátur; sic Isaac a paréntibus
+        nobilitátem pietátis accépit, quam pósteris derelíquit. Sacérdos ítaque Zacharías, nec
+        solum sacérdos, sed étiam de vice Abía, id est, nóbilis inter superióres famílias.
+
+
+        Et uxor, inquit, illi de filiábus Aaron. Non solum ígitur a paréntibus, sed étiam a
+        majóribus sancti Joánnis nobílitas propagátur, non sæculári potestáte sublímis, sed
+        religiónis successióne venerábilis. Tales enim majóres habére débuit prænúntius
+        Christi; ut non repénte concéptam, sed a majóribus accéptam et ipso infúsam jure
+        natúræ, prædicáre fidem Domínici viderétur advéntus. Erant, inquit, ambo justi ante
+        Deum, incedéntes in ómnibus mandátis et justificatiónibus Dómini sine queréla. Quid ad
+        hoc réferunt qui, peccátis suis solátia præferéntes, sine peccátis frequéntibus
+        hóminem putant esse non posse; et utúntur versículo, quia scriptum est in Job: Nemo
+        mundus a sorde, nec si uníus diéi vita ejus sit in terra?
+
+
+        Quibus respondéndum est, prius ut quid sit hóminem sine peccáto esse defíniant: utrum
+        nunquam omníno peccásse, an desiísse peccáre. Si enim hoc putant sine peccáto esse,
+        nunquam omníno peccásse; et ipse conséntio. Omnes enim peccavérunt, et egent glória
+        Dei. Sin autem eum qui véterem errórem corréxerit, et in eam se vitæ transformáverit
+        qualitátem, ut témperet a peccáto, negant abstinére a delíctis; non possum in eórum
+        conveníre senténtiam, cum legámus, quia Sic Dóminus diléxit Ecclésiam, ut exhíbeat
+        ipsam sibi gloriósam, et non habéntem máculam, aut rugam, aut áliquid ejúsmodi; sed ut
+        sit sancta et immaculáta.
+      en: >-
+        The Divine Scriptures teach us that we are behoven to praise the lives, not only of
+        those concerning whom we are to speak honourably, but the lives also of their fathers,
+        so as to show that that which we will praise in our subjects was in them a gift
+        inherited from the bright purity of the source from which they came. What other
+        meaning can the holy Evangelist have had in this place but to glorify St. John the
+        Baptist, as well for having been the offspring of such parents, as for his miracles,
+        his life, his gifts, and his sufferings? So likewise is praise ascribed to Hannah, the
+        mother of Samuel so also did Isaac draw from his parents that noble godliness which he
+        in his turn bequeathed to his children. Thus it is told not only that Zacharias was a
+        Priest, but a Priest of the course of Abia, that is to say, of a family noble among
+        the noblest.
+
+
+        And his wife was of the daughters of Aaron. Thus we see that the noble blood of St.
+        John was inherited not only from parents, but from an ancient ancestry, not
+        illustrious indeed by worldly power, but worshipful for the tradition of a sacred
+        succession. Such were the forefathers whom it well became the Fore-runner of the
+        Christ to have, that it might manifestly fall to his lot, not as a sudden gift, but as
+        an heir-loom, to preach belief in the coming of the Lord. And they were both righteous
+        before God, walking in all the commandments and ordinances of the Lord, blameless.
+        What do they make of this text who, to take them some consolation for their own sins,
+        hold that man cannot exist without oftentimes sinning, and quote to that end that
+        which is written in Job: Not one is clean, even though his life on the earth be but
+        one day?
+
+
+        To such we must reply by asking them first to tell us what they mean by a man without
+        sin whether it be one who hath never sinned, or one who hath ceased to sin. If they
+        mean by a man without sin one who hath never sinned, I myself agree in their position,
+        for all have sinned and come short of the glory of God. But if they mean to deny that
+        he who hath reformed his old crooked ways, and changed his life for a new one, on
+        purpose to avoid sin, cannot avoid sin, I am not able to subscribe to their opinion
+        while I read that Christ loved the Church and gave Himself for it, that He might
+        sanctify and cleanse it with the washing of water by the word, that He might present
+        it to Himself a glorious Church, not having spot, or wrinkle, or any such thing but
+        that it should be holy and without blemish.
+    status: { la: verified, en: verified }
