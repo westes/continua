@@ -1,0 +1,156 @@
+# Matins Nocturn 2-3 readings for Ss. Nereus, Achilleus, and Domitilla,
+# Virgin, and Pancras, Martyrs (May 12) — SanctiM/05-12.txt inherits
+# the whole day (`@Sancti/05-12`) with no Nocturn 2/3 override, so this
+# feast's own proper content is sourced from the Tridentine track
+# exactly as for a pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/05-12.txt, English/Sancti/05-12.txt.
+#
+# Nocturn 2: Lectio4 (Nereus and Achilleus, brothers, kept together),
+# Lectio5 (Domitilla, a genuinely distinct martyr), and Lectio6
+# (Pancras, likewise distinct) kept split.
+# Nocturn 3: Lectio7's Gospel citation (John 4:46-53) is a bare incipit
+# ("Et réliqua") with no full pericope text given, so — per the
+# pre-1955 pass's convention of not transcribing bare incipits — only
+# the homily portion is authored (not marked isGospel), combined with
+# Lectio8-9 as one continuous excerpt of Pope St. Gregory the Great's
+# sermon. No responsory given for either.
+id: ss-nereus-achilleus-domitilla-and-pancras
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Nereus et Achilleus fratres eunuchi Flaviæ Domitillæ, a beato Petro una cum ipsa
+        ejusque matre Plautilla baptizati, cum Domitillæ persuasissent, ut virginitátem suam Deo
+        consecraret, ab ejus sponso Aureliáno tamquam Christiáni accusati, ob præcláram fidei
+        confessiónem in Pontiam insulam relegántur. Ubi ad quæstiónem íterum vocáti et verbéribus
+        cæsi, mox Tarracinam perducti, a Minucio Rufo equuleo et flammis cruciati, cum constanter
+        negarent se, a sancto Petro Apóstolo baptizatos, ullis tormentis cogi posse ut idolis
+        immolarent, secúri percússi sunt. Quorum córpora ab Auspicio, eórum discipulo et
+        Domitillæ educatore, Romam delata, via Ardeatina sepúlta sunt.
+      en: >-
+        Nereus and Achilles were brethren, eunuchs belonging to Flavia Domitilla, who were
+        baptized by blessed Peter, along with her and her mother Plautilla. They had advised
+        Domitilla to consecrate her virginity to God, and on this account Aurelian, to whom she
+        was betrothed, accused them of being Christians. They nobly confessed the faith, and were
+        banished to the island of Ponza. Then they were again put to the torture, and after being
+        scourged, were taken to Terracina. At Terracina, Minutius Rufus tormented them with the
+        rack and with fire, but as they constantly affirmed that having once been baptized by the
+        blessed Apostle Peter, no torture could ever make them sacrifice to idols, they were
+        beheaded. Auspicius, their own disciple and the tutor of Domitilla, took their bodies to
+        Rome, where they were buried on the road to Ardea.
+    status: { la: verified, en: verified }
+
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Flavia Domitilla virgo Romana, Titi et Domitiáni imperatórum neptis, cum sacrum
+        virginitátis velámen a beato Cleménte Papa accepísset, ab Aureliáno sponso, Titi Aurelii
+        consulis fílio, deláta quod Christiana esset, a Domitiáno imperatóre in insulam
+        Pontiam est deportata, ubi in carcere longum martyrium duxit. Demum Tarracinam deducta,
+        íterum Christum confessa, cum semper constantior apparéret, sub Trajano imperatóre,
+        júdicis jussu incénso ejus cubiculo, una cum Theodora et Euphrosyna virgínibus et
+        collactaneis suis, gloriosi martyrii cursum confecit, Nonis Maji: quarum corpora, integra
+        invénta, a Cæsario diacono sepúlta sunt.
+      en: >-
+        The Virgin Flavia Domitilla was a Roman, the niece of the Emperors Titus and Domitian,
+        and was veiled by the blessed Pope Clement. Aurelian, son of the Consul Titus Aurelius, to
+        whom she was betrothed, accused her of being a Christian, and the Emperor Domitian
+        banished her into the island of Ponza, where she long suffered and testified in prison.
+        At length she was taken to Terracina, where she again confessed Christ, and as she seemed
+        ever to grow firmer, the judge, under the Emperor Trajan, caused her chamber to be set on
+        fire, and there Domitilla, with her foster-sisters the maidens Theodora and Euphrosyne,
+        finished the race of faith by grasping the crown of glory, on the 7th day of May. Their
+        bodies were found whole, and were buried by the Deacon Caesarius.
+    status: { la: verified, en: verified }
+
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Pancratius, in Phrygia nobili genere natus, puer quatuordecim annórum Romam venit
+        Diocletiáno et Maximiáno imperatóribus. Ubi a Pontifice Romano baptizátus et in fide
+        christiana eruditus, ob eamdem paulo post comprehénsus; cum diis sacrificáre constanter
+        renuísset, virili fortitúdine datis cervicibus, illustrem martyrii corónam consecutus
+        est. Cujus corpus Octavilla matrona noctu sústulit, et unguentis delibutum via Aurelia
+        sepelívit.
+      en: >-
+        Pancras was the son of a noble family of Phrygia. He came to Rome in the reign of the
+        Emperors Diocletian and Maximian, being then a boy of fourteen years of age. There he was
+        baptized by the Bishop of Rome, and brought up in the Christian faith. On this account he
+        was soon after taken, and having constantly refused to sacrifice to the gods, he offered
+        his neck to the executioner with manly courage, and won a glorious crown of martyrdom.
+        The Lady Octavilla took his body by night, embalmed it with precious ointments, and
+        buried it on the Aurelian Way.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "Pope St. Gregory the Great, Homily 28 (preached in the Basilica of these Martyrs on their feast day, on John 4:46-53)"
+    text:
+      la: >-
+        Quid est quod regulus Dominum rogat ut ad ejus filium veniat, et tamen ire corporaliter
+        recusat: ad servum vero centurionis non invitatur, et tamen se corporaliter ire
+        pollicetur? Reguli filio per corporalem præsentiam non dignatur adesse, centurionis servo
+        non dedignatur occurrere. Quid est hoc, nisi quod superbia nostra retunditur, qui in
+        hominibus non naturam, qua ad imaginem Dei facti sunt, sed honores et divitias veneramur?
+        Redemptor vero noster ut ostenderet, quia quæ alta sunt hominum, despicienda sunt, et
+        quæ despecta sunt hominum, despicienda non sunt: ad filium reguli ire noluit, ad servum
+        centurionis ire paratus fuit.
+
+
+        Increpata est ergo superbia nostra, quæ nescit pensare homines propter homines. Sola, ut
+        diximus, quæ circumstant hominibus, pensat, naturam non aspicit, honorem Dei in hominibus
+        non agnoscit. Ecce ire non vult Filius Dei ad filium reguli: et tamen venire paratus est
+        ad salutem servi. Certe si nos cujuspiam servus rogaret, ut ad eum ire deberemus, protinus
+        nobis nostra superbia in cogitatione tacita responderet, dicens: Non eas, quia temetipsum
+        degeneras, honor tuus despicitur, locus vilescit. Ecce de cælo venit, qui servo in terra
+        occurrere non despicit: et tamen humiliari in terra contemnimus, qui de terra sumus.
+
+
+        Nolite ergo intra vosmetipsos pensare quod habetis, sed quid estis. Ecce mundus qui
+        diligitur, fugit. Sancti isti, ad quorum tumbam consistimus, florentem mundum mentis
+        despectu calcaverunt. Erat tunc vita longa, salus continua, opulentia in rebus, fœcunditas
+        in propagine, tranquillitas in diuturna pace: et tamen cum in seipso floreret, jam in
+        eorum cordibus mundus aruerat. Ecce jam mundus in seipso aruit, et adhuc in cordibus
+        nostris floret. Ubique mors, ubique luctus, ubique desolatio: undique percutimur, undique
+        amaritudinibus replemur: et tamen cæca mente carnalis concupiscentiæ ipsas ejus
+        amaritudines amamus, fugientem sequimur, labenti inhæremus.
+      en: >-
+        Wherefore was it that when this nobleman besought the Lord to come down where his child
+        died, the Lord, albeit He healed him, would not come, and yet, when the Centurion prayed
+        Him to heal his servant, albeit not asked to come down, He went with them? He deemed not
+        that the nobleman's son was worthy of His bodily presence, but He refused not to go to
+        help the Centurion's servant. What is this but a rebuke to earthly pride, which maketh us
+        to respect in men their honours and riches rather than that Divine image wherein they are
+        created? It was not so with our Redeemer, who would not go to the son of the nobleman, but
+        was ready to come down for the Centurion's servant, to show that to Him the things which
+        are great among men are but of little moment, and the things which are little esteemed
+        among men are not beneath His notice.
+
+
+        Our pride then standeth rebuked, that pride which maketh us forget for the sake of one
+        man that another man is a man at all. This pride, as we have said, looketh only at the
+        surroundings of men, not at their nature, and seeth not that God is to be honoured in a
+        man because he is a man. Lo, how the Son of God will not go unto the nobleman's son, but
+        is ready to go and heal the servant. Of myself I know that if any one's servant were to
+        ask me to go to him, I have a sort of pride which would say to me silently inside my
+        heart: Go not, thou wilt lower thyself; the Papal dignity will be lightly esteemed, thy
+        exalted station will be degraded. Behold how He Which came down from heaven, doth not
+        deem it below Him to go to help a servant, and yet I who am of the earth earthly, shrink
+        from being trodden on.
+
+
+        Think not therefore within yourselves what ye have, but what ye are. Behold, the world
+        which I love, is a world which passeth away. Those holy servants of God, by whose grave I
+        am standing, ennobled themselves mentally above the world at its fairest. To them was
+        offered length of days, robust health, plenty in possessions, fruitfulness in offspring,
+        comfort under perpetual peace: and yet while the spring-tide of life was unfolding before
+        them, their hearts had already condemned it to an arid winter. Behold, winter in their
+        hearts, spring in mine! Death, and pain, and barrenness occur all around me, I am attacked
+        on all sides, and I feel very bitter, and yet the sting of fleshly lust so blindeth me,
+        that I love the bitter feelings, I hunt after that which flees from me, and cling to that
+        which would leave me.
+    status: { la: verified, en: verified }

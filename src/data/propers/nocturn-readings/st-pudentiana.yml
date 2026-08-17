@@ -1,0 +1,39 @@
+# Matins Nocturn 2 reading for St. Pudentiana, Virgin (May 19, sharing
+# the date with St. Peter Celestine — see st-peter-celestine.yml). No
+# genuine SanctiM match: the only SanctiM file for this date,
+# `SanctiM/05-19.txt`, bases `@Sancti/05-19` (Peter Celestine, not
+# Pudentiana) — same "the shared plain file isn't necessarily yours"
+# wrinkle as the pre-1955 pass (memory vu-matins-pre1955-saints); a
+# missed pre-1955-pool candidate rather than a genuine SanctiM case
+# (see memory vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/05-19o.txt, English/Sancti/05-19o.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+id: st-pudentiana
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Pudentiana virgo, Pudentis Romani filia, parentibus orbata, cum admirabili pietate
+        christianam religionem coleret, una cum sorore Praxede pecuniam ex vendito patrimonio
+        redactam pauperibus distribuit, seque jejuniis et orationibus dedit. Cujus étiam opera,
+        tota ejus familia, in qua erant nonaginta sex homines, a Pio Pontifice baptizata est.
+        Quod autem ab Antonino imperatore sancitum erat, ne Christiani publice sacrificia
+        facerent, Pius Pontifex in sedibus Pudentianæ cum Christianis sacra celebrabat. Quibus
+        illa benigne acceptis, quæ ad vitam necessaria essent, suppeditabat. Itaque in his
+        christianæ pietatis officiis migravit e vita, et in sepulcro patris ad cemeterium
+        Priscillæ via Salaria sepulta est, decimo quarto Kalendas Junii.
+      en: >-
+        The maiden Pudentiana was the orphan daughter of Pudens the Roman Senator. She was a
+        Christian of eminent godliness. She with her sister Praxedes distributed to the poor the
+        money which they obtained by the sale of their inheritance. She gave herself continually
+        to fasting and prayer. By her care the whole of the household, being ninety-six persons,
+        were baptized by Pope Pius. Whereas the Emperor Antonine had forbidden the Christians to
+        offer sacrifice in public, Pope Pius used to meet with them in Pudentiana's house, to
+        celebrate the holy rites. She was a gracious hostess to them, and ministered to them in
+        such things as are needful for the body. She thus busied herself in works of Christian
+        godliness until she passed from this present life to a better. She was buried in her
+        father's sepulchre in the cemetery of Priscilla on the Salarian Way upon the 19th day of
+        May.
+    status: { la: verified, en: verified }

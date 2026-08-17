@@ -1,0 +1,173 @@
+# Matins Nocturn 2-3 readings for Ss. Philip and James, Apostles (May
+# 1). No genuine SanctiM match: `SanctiM/05-01b.txt` bases
+# `@TemporaM/Pasc2-3` (a paschaltide-feria filler, not this feast at
+# all) and `SanctiM/05-01r.txt` bases `@Sancti/05-01r` (St. Joseph the
+# Worker, a different, later feast sharing this date's suffix scheme)
+# — neither matches; a missed pre-1955-pool candidate rather than a
+# genuine SanctiM case (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/05-01.txt, English/Sancti/05-01.txt.
+#
+# Nocturn 2: Lectio4 (Philip's own vita) and Lectio5-6 (James's, a
+# genuinely distinct Apostle) kept split.
+# Nocturn 3: Lectio7-9's Gospel pericope (John 14:1-13) is given in
+# full, not a bare incipit, so authored as a genuine Gospel reading,
+# `isGospel: true`; combined with St. Augustine's homily (Lectio7's
+# remainder + Lectio8-9), one continuous excerpt. No responsory given
+# in the source.
+id: ss-philip-and-james
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Philíppus Bethsáidæ natus, unus ex duódecim Apóstolis, qui primum a Christo Dómino
+        vocáti sunt: a quo cum accepísset Nathánaël, venísse Messíam in lege promíssum, ad
+        Dóminum dedúctus est. Quam vero Christus eum familiáriter adhibéret, illud fácile
+        declárat, quod gentíles Salvatórem vidére cupiéntes, ad Philíppum accessérunt; et
+        Dóminus, cum in solitúdine hóminum multitúdinem páscere vellet, sic Philíppum affátus
+        est: Unde emémus panes, ut mandúcent hi? Is, accépto Spíritu Sancto, cum ei Scýthia ad
+        prædicándum Evangélium obtigísset, omnem fere illam gentem ad christiánam fidem
+        convértit. Postrémo, cum Hierápolim Phrýgiæ venísset, pro Christi nómine cruci affíxus
+        lapidibúsque óbrutus est, Kaléndis Maji. Ejus corpus ibídem a Christiánis sepúltum,
+        póstea Romam delátum, in basílica duódecim Apostolórum una cum córpore beáti Jacóbi
+        Apóstoli cónditum est.
+      en: >-
+        Philip was born in the town of Bethsaida, and was one of the first of the twelve Apostles
+        who were called by the Lord Christ. Then Philip findeth Nathanael, and saith unto him: We
+        have found Him of Whom Moses in the Law, and the Prophets, did write. And so he brought
+        him to the Lord. How familiarly he was in the company of Christ, is manifest from that
+        which is written: There were certain Greeks among them that came up to worship at the
+        Feast; the same came therefore to Philip, and desired him, saying: Sir, we would see Jesus.
+        When the Lord was in the wilderness, and was about to feed a great multitude, He said unto
+        Philip: Whence shall we buy bread, that these may eat? Philip, after that he had received
+        the Holy Ghost, took Scythia, by lot, as the land wherein he was to preach the Gospel, and
+        brought nearly all that people to believe in Christ. At the last he came to Hierapolis in
+        Phrygia, and there, for Christ's Name's sake, he was fastened to a cross and stoned to
+        death. The day was the first of May. The Christians of Hierapolis buried his body at that
+        place, but it was afterwards brought to Rome and laid in the Basilica of the Twelve
+        Apostles, beside that of the blessed Apostle James.
+    status: { la: verified, en: verified }
+
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Jacóbus frater Dómini, cognoménto Justus, ab ineúnte ætáte vinum et síceram non bibit,
+        carne abstínuit, nunquam tonsus est, nec unguénto nec bálneo usus. Huic uni licébat
+        íngredi in Sancta sanctórum. Idem líneis véstibus utebátur: cui étiam assidúitas orándi
+        ita callum génibus obdúxerat, ut durítie caméli pellem imitarétur. Eum post Christi
+        ascensiónem Apóstoli Jerosolymórum epíscopum creavérunt; ad quem étiam Princeps
+        Apostolórum misit qui nuntiáret se e cárcere ab Angelo edúctum fuísse. Cum autem in
+        concílio Jerosólymis controvérsia esset orta de lege et circumcisióne; Jacóbus, Petri
+        senténtiam secútus, ad fratres hábuit conciónem, in qua vocatiónem géntium probávit,
+        fratribúsque abséntibus scribéndum esse dixit, ne géntibus jugum Mosáicæ legis
+        impónerent. De quo et lóquitur Apóstolus ad Gálatas: Alium autem Apostolórum vidi néminem,
+        nisi Jacóbum fratrem Dómini.
+
+
+        Tanta autem erat Jacóbi vitæ sánctitas, ut fímbriam vestiménti ejus certátim hómines
+        cúperent attíngere. Nam is nonagínta sex annos natus, cum trigínta annis illi Ecclésiæ
+        sanctíssime præfuísset, Christum Dei Fílium constantíssime prǽdicans, lapídibus primum
+        appétitur; mox in altíssimum Templi locum addúctus, inde præcipitátus est. Qui,
+        confráctis crúribus, jacens semivívus, manus tendébat ad cælum, Deúmque pro illórum
+        salúte deprecabátur his verbis: Ignósce eis, Dómine, quia nésciunt quid fáciunt. Qua in
+        oratióne, gráviter ejus cápite fullónis fuste percússo, ánimam Deo réddidit, séptimo
+        Nerónis anno, et juxta Templum, ubi præcipitátus fúerat, sepúltus est. Unam scripsit
+        Epístolam, quæ de septem cathólicis est.
+      en: >-
+        James, surnamed the Just, the brother of our Lord Jesus Christ, was a Nazarite from the
+        womb. During his whole life he never drank wine or strong drink, never ate meat, never
+        shaved, and never took a bath. He was the only man who was allowed to go into the Holy of
+        Holies. His raiment was always linen. So continually did he kneel in prayer, that the skin
+        of his knees became horny, like a camel's knees. After Christ was ascended, the Apostles
+        made James Bishop of Jerusalem; and even the Prince of the Apostles gave special
+        intelligence to him after that he was delivered from prison by an angel. When in the
+        Council of Jerusalem certain questions were mooted touching the law and circumcision,
+        James, following the opinion of Peter, addressed a discourse to the brethren, wherein he
+        proved the call of the Gentiles, and commanded letters to be sent to such brethren as were
+        absent, that they might take heed not to lay upon the Gentiles the yoke of the Law of
+        Moses. It is of him that the Apostle Paul saith, writing to the Galatians: Other of the
+        Apostles saw I none, save James the Lord's brother.
+
+
+        So great was James' holiness of life that men strove one with another to touch the hem of
+        his garment. When he was ninety-six years old, and had most holily governed the Church of
+        Jerusalem for thirty years, ever most constantly preaching Christ the Son of God, he laid
+        down his life for the faith. He was first stoned, and afterward taken up on to a pinnacle
+        of the Temple and cast down from thence. His legs were broken by the fall, and he was
+        well-nigh dead, but he lifted up his hands towards heaven, and prayed to God for the
+        salvation of his murderers, saying: Lord, forgive them, for they know not what they do. As
+        he said this, one that stood by smote him grievously upon the head with a fuller's club,
+        and he resigned his spirit to God. He testified in the seventh year of Nero, and was
+        buried hard by the Temple, in the place where he had fallen. He wrote one of the Seven
+        Epistles which are called Catholic.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joann 14:1-13", en: "John 14:1-13" }
+    source: "St. Augustine, Bishop of Hippo, Tract 67 on John"
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Non turbétur cor vestrum. Créditis in Deum,
+        et in me crédite. In domo Patris mei mansiónes multæ sunt. Et réliqua.
+
+
+        Erigénda est nobis, fratres, ad Deum major inténtio, ut verba sancti Evangélii, quæ modo
+        in nostris áuribus sonuérunt, étiam mente cápere utcúmque possímus. Ait enim Dóminus
+        Jesus: Non turbétur cor vestrum. Créditis in Deum, et in me crédite. Ne mortem tamquam
+        hómines timérent, et ídeo turbaréntur, consolátur eos, étiam se Deum esse contéstans.
+        Créditis, inquit, in Deum, et in me crédite. Cónsequens est enim, ut, si in Deum créditis,
+        et in me crédere debeátis: quod non esset cónsequens, si Christus non esset Deus.
+
+
+        Créditis in Deum, et in eum crédite, cui natúra est, non rapína, esse æquálem Deo;
+        semetípsum enim exinanívit, non tamen formam Dei amíttens, sed formam servi accípiens.
+        Mortem metúitis huic formæ servi: non turbétur cor vestrum; suscitábit illam forma Dei.
+        Sed quid est, quod séquitur: In domo Patris mei mansiónes multæ sunt; nisi quia et sibi
+        metuébant? Unde audíre debuérunt: Non turbétur cor vestrum. Quis enim eórum non
+        metúeret, cum Petro dictum esset, fidentióri atque promptióri: Non cantábit gallus, donec
+        ter me neges?
+
+
+        Tamquam ergo essent ab illo peritúri, mérito turbabántur; sed cum áudiunt, In domo Patris
+        mei mansiónes multæ sunt; si quo minus, dixíssem vobis: Quia vado paráre vobis locum; a
+        perturbatióne recreántur, certi ac fidéntes, étiam post perícula tentatiónum, se apud Deum
+        cum Christo esse mansúros. Quia etsi álius est álio fórtior, álius álio sapiéntior, álius
+        álio jústior, álius álio sánctior, in domo Patris mei mansiónes multæ sunt. Nullus eórum
+        alienábitur ab illa domo, ubi mansiónem pro suo quisque acceptúrus est mérito.
+      en: >-
+        At that time, Jesus said unto His disciples: Let not your heart be troubled. Ye believe in
+        God, believe also in Me. In My Father's house there are many mansions. And so on.
+
+
+        It behoveth us, my brethren, to have our minds more given toward God, if we would that
+        those words of the Holy Gospel which have just sounded in our ears, should become a living
+        reality for our understandings. The Lord Jesus saith: Let not your heart be troubled. Ye
+        believe in God, believe also in Me. Lest, being but men, their heart should be troubled by
+        the fear of death, He strengtheneth them, even by the reminder that He is God. He saith:
+        Ye believe in God, believe also in Me, for if ye believe in God, ye must needs believe in
+        Me. And this were not so, if Christ were not God.
+
+
+        We believe in God, believe also in Him Who is by nature and not by robbery equal with
+        God, for in that He emptied Himself, He did it not by laying aside the form of God, but by
+        taking upon Him the form of a servant. Ye fear death for this form of a servant, but let
+        not your heart be troubled, the form of God will raise it up again. But what signifieth
+        that which followeth: In My Father's house there are many mansions. Was it not that they
+        had fear on their own account, and needed for themselves to hear Him say, Let not your
+        heart be troubled? Which of them trembled not when they had heard Him say to Peter, the
+        lealest and boldest of them all: The cock shall not crow this day, before that thou shalt
+        thrice deny that thou knowest Me.
+
+
+        Meetly were they troubled, for that they were about to be scattered from Him, but when
+        they heard Him say, In My Father's house are many mansions, they had been comforted even
+        if He had not also said, I go to prepare a place for you, for then they believed and knew,
+        that, when all dangers and all trials were for ever over, they should be for ever with the
+        Lord, with Christ and with God. Yea, though one man be stronger than another, though one
+        be wiser than another, though one be holier than another, yet in My Father's house are
+        many mansions. That house is an house wherein none are strangers, but every man shall
+        receive a mansion therein according as his work shall be.
+    status: { la: verified, en: verified }

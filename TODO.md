@@ -37,7 +37,7 @@ across every hour and content type in this app.
      saints (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are now done — see
      "Pre-1955 saints' Matins readings" below. The larger pool of saints that *do* have a
      Monastic 1617 track (`SanctiM/`) is in progress — see "SanctiM-track saints' Matins
-     readings" below — January-April done (34/38), ~115 candidates remain (May onward).
+     readings" below — January-May done (46/51), ~103 candidates remain (June onward).
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1455,7 +1455,23 @@ sourced from their real, off-date Tridentine files, the same off-date pattern as
 Hermit in the pre-1955 pass; Peter Martyr in particular has no genuine SanctiM match at either
 date, so also a missed pre-1955-pool candidate). `npm test`/`tsc --noEmit` both pass.
 
-**Not done in this pass**: the remaining ~115 SanctiM-track candidates (May onward) — same
+**May done (12/13 saints, 1 left unauthored as Common-only)**: `ss-philip-and-james` (Nocturn 3
+has a *full* Gospel pericope, John 14:1-13, not a bare incipit — the first case since
+`chair-of-st-peter-at-rome` in January where `isGospel: true` was actually warranted),
+`st-athanasius`, `ss-alexander-eventius-theodulus-and-juvenal` (missed pre-1955-pool candidate —
+SanctiM's own suffix-matched file just narrows the joint feast, same pattern as
+`ss-vincent-and-anastasius`/`ss-cletus-and-marcellinus`), `st-john-before-the-latin-gate`,
+`st-gregory-nazianzen`, `ss-nereus-achilleus-domitilla-and-pancras`, `st-boniface` (missed
+pre-1955-pool candidate — the date's only SanctiM file is a different, later saint), `st-ubald`
+(same), `st-peter-celestine`, `st-pudentiana` (missed pre-1955-pool candidate — shares its date
+with Peter Celestine, whose SanctiM file the naive per-date check matched instead), `st-urban-i`
+and `st-john-i` (both missed pre-1955-pool candidates via the "plain file is the wrong,
+later saint" wrinkle). Left unauthored: `st-romanus-abbot` — turns out to have a real
+`SanctiM/05-22M.txt` file after all (resolving the earlier "neither file" mystery from the
+pre-1955 pass), but it carries no Lectio content at all, only `vide C5b` (Common of a
+Confessor) — Common-only, not a gap. `npm test`/`tsc --noEmit` both pass.
+
+**Not done in this pass**: the remaining ~103 SanctiM-track candidates (June onward) — same
 authoring shape, continue month by month.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)

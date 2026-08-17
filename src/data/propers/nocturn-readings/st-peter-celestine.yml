@@ -1,0 +1,51 @@
+# Matins Nocturn 2 reading for St. Peter Celestine, Pope, Confessor
+# (May 19, sharing the date with St. Pudentiana — see
+# st-pudentiana.yml) — SanctiM/05-19.txt inherits the whole day
+# (`@Sancti/05-19`) with no Nocturn 2/3 override, so this saint's own
+# vita is sourced from the Tridentine track exactly as for a pre-1955
+# saint (see memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/05-19.txt, English/Sancti/05-19.txt.
+# Single lesson (Lectio4 — Lectio5-6 fall back to Common of a
+# Confessor-Pope, not proper text, so not authored here). No responsory
+# given in the source.
+id: st-peter-celestine
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Petrus, a nomine quo Pontifex est appellatus, Cælestinus dictus, honestis catholicisque
+        parentibus Aeserniæ in Samnitibus natus, adolescentiam vix ingressus, ut ánimum a mundi
+        illecebris custodiret, in solitudinem secessit. Ibi contemplationibus mentem mitriens,
+        corpus in servitutem redigens, ferream catenam ad nudam carnem adhibebat.
+        Congregationem, quæ postea Cælestinorum dicta est, sub regula sancti Benedicti
+        instituit. Hinc quasi lucerna supra candelabrum posita, cum abscondi nequiret, (Romana
+        Ecclesia diu viduata pastore) in Petri cathedram ignorans et absens ascitus, magna
+        novitatis admiratione non minus quam repentino gaudio cunctos affecit. Cum autem in
+        pontificatus sublimitate collocatus, variis distentus curis, assuitis incumbere
+        meditationibus vix posse cognosceret, oneri pariter et honori voluntarie cessit. Indeque
+        priscam vitæ rationem repetens, obdormivit in Domino, ejusque pretiosam mortem crux
+        præfulgens in aëre ante cubiculi ostium reddidit amplius gloriosam. Miraculis multis
+        tam vivens, quam post obitum claruit; quibus rite examinatis, Clemens quintus anno
+        postquam decessit undecimo, sanctorum numero adscripsit.
+      en: >-
+        This Peter, who is called Peter Celestine, because when he became Pope he did so under
+        the title of Celestine V, was the son of respectable Catholic parents, and was born at
+        Isernia in Apulia. He was hardly entered on boyhood, when he withdrew into a desert, in
+        order to keep his soul safe from the snares of the world. In solitude he fed his mind with
+        heavenly meditation, and brought his body into subjection, even by wearing an iron chain
+        next to his bare flesh. He founded, under the Rule of St. Benedict, that congregation
+        which was afterwards known as the Celestine. His light, as of a candle set upon a
+        candlestick, could not be kept hidden, and after the Church of Rome had for a long while
+        been widowed of a shepherd, he was chosen without his knowledge and in his absence, to
+        fill the chair of Peter. The news of his election filled himself with as great amazement,
+        as it did all others with sudden joy. When, however, he was seated in the exalted place
+        of the Papal dignity, he found that the many cares by which he was beset made it well-nigh
+        impossible for him to give himself to his accustomed meditations; of his own free will he
+        resigned the burden and the honour together; and, while he sought to return to his old
+        way of life, he fell asleep in the Lord. How precious his death was in His sight was
+        gloriously manifested by a Cross which appeared shining in the air before the door of the
+        cell. He was illustrious for miracles both during his life and after his death, and when
+        these had been duly investigated, Clement V., in the eleventh year after his departure
+        hence, enrolled his name among those of the Saints.
+    status: { la: verified, en: verified }

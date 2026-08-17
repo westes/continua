@@ -1,0 +1,108 @@
+# Matins Nocturn 2-3 readings for St. John before the Latin Gate (May
+# 6) — SanctiM/05-06.txt's own Lectio5-9 all resolve back to
+# `@Sancti/05-06:LectioN` (resliced), so this feast's own proper
+# content is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/05-06.txt, English/Sancti/05-06.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous
+# excerpt from St. Jerome.
+# Nocturn 3: Lectio7's Gospel citation (Matt 20:20-23) is a bare
+# incipit ("Et réliqua") with no full pericope text given, so — per the
+# pre-1955 pass's convention of not transcribing bare incipits — only
+# the homily portion is authored (not marked isGospel), a single
+# excerpt of St. Jerome's own commentary. No responsory given for
+# either reading.
+id: st-john-before-the-latin-gate
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Jerome, Priest, Against Jovinian, Bk. 1"
+    text:
+      la: >-
+        Joánnes Apóstolus, unus ex discípulis Dómini, qui mínimus natu tráditur fuísse inter
+        Apóstolos, et quem fides Christi vírginem repérerat, virgo permánsit; et ídeo plus amátur
+        a Dómino, et recúmbit super pectus Jesu; et, quod Petrus, qui uxórem habúerat,
+        interrogáre non audet, illum rogat, ut intérroget; et post resurrectiónem, nuntiánte
+        María Magdaléne quod Dóminus resurrexísset, utérque cucúrrit ad sepúlcrum, sed ille
+        prævénit; cumque essent in navi, et piscaréntur in lacu Genésareth, Jesus stabat in
+        líttore, nec sciébant Apóstoli quem vidérent; solus virgo Vírginem agnóscit, et dicit
+        Petro: Dóminus est.
+
+
+        Fuit autem Joánnes et Apóstolus, et Evangelísta, et Prophéta: Apóstolus, quia scripsit
+        ad ecclésias ut magíster; Evangelísta, quia librum Evangélii cóndidit, quod, excépto
+        Matthǽo, álii ex duódecim Apóstoli non fecérunt; Prophéta, vidit enim in Patmos ínsula,
+        in qua fúerat a Domitiáno príncipe ob Dómini martýrium relegátus, Apocalýpsim, infiníta
+        futurórum mystéria continéntem. Refert autem Tertulliánus, quod Romæ missus in
+        fervéntis ólei dólium, púrior et vegétior exíverit, quam intráverit.
+
+
+        Sed et ipsum ejus Evangélium multum distat a céteris. Matthǽus quasi de hómine íncipit
+        scríbere: Liber generatiónis Jesu Christi, fílii David, fílii Abraham; Lucas a sacerdótio
+        Zacharíæ; Marcus a prophetía Malachíæ et Isaíæ. Primus habet fáciem hóminis, propter
+        genealogíam; secúndus fáciem vítuli, propter sacerdótium; tértius fáciem leónis, propter
+        vocem clamántis in desérto, Paráte viam Dómini, rectas fácite sémitas ejus. Joánnes vero
+        noster quasi áquila ad supérna volat, et ad ipsum Patrem pervénit, dicens: In princípio
+        erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum.
+      en: >-
+        The Apostle John was one of the disciples of the Lord. There is a tradition that he was
+        the youngest of the Apostles. He was a virgin when the Faith of Christ found him, and he
+        hath remained a virgin for ever. This is why he was the disciple whom Jesus loved more
+        than any of the others, and why he leaned on Jesus' Breast. When Peter, who had been
+        married, wished to ask the Lord who it was that was about to betray Him, he dared not ask
+        for himself, but beckoned to John, that he should ask it. After the Resurrection, when
+        Mary Magdalene came and told the disciples that the Lord was risen, Peter and John ran
+        both together to the sepulchre, but John did outrun Peter. Later on, when the Apostles
+        were on the Sea of Galilee, in a ship, fishing, Jesus stood on the shore, but the disciples
+        knew not that it was Jesus, till virgin knew Virgin, and that disciple whom Jesus loved
+        saith unto Peter: It is the Lord.
+
+
+        John was both an Apostle, and an Evangelist, and a Prophet. He was an Apostle, in that he
+        wrote to the Churches, as their Teacher. He was an Evangelist, in that he wrote one of the
+        Gospels, the like whereto was not done by any other of the twelve Apostles, save Matthew.
+        He was a Prophet, in that when he was in the isle of Patmos, whither he had been banished
+        by Domitian on account of his uplifting of his testimony for the Lord, he saw there that
+        Apocalypse which containeth such unfathomable mysteries concerning things which shall be
+        hereafter. Tertullian also saith that when he was at Rome, he was put into a vessel of
+        boiling oil, but that he came out cleaner and healthier than he went in.
+
+
+        There is a great difference between his Gospel and the three others. Matthew beginneth to
+        write as of a man: The Book of the Generation of Jesus Christ, the Son of David, the son
+        of Abraham. Luke's first words of history relate to the priesthood of Zacharias; Mark
+        commenceth with the prophecies of Malachi and Isaiah. The first hath the face of a man,
+        with an human genealogy; the second hath the face of a calf, being a victim offered by
+        priests; the third hath the face of a lion, even the voice of one crying in the
+        wilderness, Prepare ye the way of the Lord, make His paths straight; but the John of whom
+        I write is like a flying eagle, whose kingly flight beareth him up above earth-gathered
+        clouds, an eagle that wingeth his way toward the Father Himself, and which crieth: In the
+        beginning was the Word, and the Word was with God, and the Word was God.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Jerome, Priest, Commentary on Matthew, Bk. 3 (on Matt 20:20-23)"
+    text:
+      la: >-
+        Unde opiniónem regni habet mater filiórum Zebedǽi, ut cum Dóminus díxerit: Fílius hóminis
+        tradétur princípibus sacerdótum et scribis, et condemnábunt eum morte, et tradent
+        Géntibus ad illudéndum et flagellándum et crucifigéndum; et ignomíniam passiónis
+        timéntibus discípulis nuntiáret, illa glóriam póstulet triumphántis? Hac, ut reor, ex
+        causa, quia post ómnia díxerat Dóminus, Et tértia die resúrget; putávit eum múlier post
+        resurrectiónem íllico regnatúrum, et hoc, quod in secúndo advéntu promíttitur, in primo
+        esse compléndum; et, aviditáte femínea præséntia cupit, ímmemor futurórum.
+      en: >-
+        Whence had the mother of Zebedee's children gotten her idea of the Lord's kingdom? He had
+        but just said: The Son of man shall be betrayed unto the chief priests and unto the
+        scribes, and they shall condemn Him to death, and shall deliver Him to the Gentiles to
+        mock, and to scourge, and to crucify Him. He had told His trembling disciples of the
+        outrages that awaited Him in His Passion, and yet that mother came to Him to ask for her
+        sons a share in the glory of His Triumph. I think it was because the Lord, after He had
+        said all the rest, had said also: And the third day He shall rise again. The woman
+        supposed that after His resurrection His kingdom would immediately be established, and
+        that that would be fulfilled at His first coming which is promised at His second. And so,
+        with womanly haste, she forgetteth the future, and catcheth at the present.
+    status: { la: verified, en: verified }
