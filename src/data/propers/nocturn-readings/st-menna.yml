@@ -1,0 +1,38 @@
+# Matins Nocturn 2 reading for St. Menna, Martyr (Nov 11, sharing the
+# date with St. Martin of Tours — see st-martin-of-tours.yml). No
+# genuine SanctiM match: the only SanctiM file for this date bases
+# `@Sancti/11-11` (Martin, not Menna) — a missed pre-1955-pool
+# candidate rather than a genuine SanctiM case (see memory
+# vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/11-11cc.txt, English/Sancti/11-11cc.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+id: st-menna
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Mennas Ægýptius, christiánus miles, in persecutióne Diocletiáni et Maximiáni
+        imperatórum, cum pœniténtiæ causa in solitúdinem secessísset, natáli die
+        imperatórum, quo pópulus célebri spectáculo tenebátur, in theátrum prosíliens,
+        líbera voce Gentílium superstitiónem insectabátur. Quam ob rem comprehénsus, et,
+        Pyrrho prǽside, in metrópoli Cottiénsium Phrýgiæ vinctus, loris crudéliter cœditur.
+        Deínde, equúleo tortus, lampádibus ardéntibus ad corpus admótis plagísque cilício
+        confricátis, tum per tríbulos et virgas férreas mánibus ac pédibus colligátis
+        tractus, plumbátis étiam contúsus, demum gládio interfícitur in ignémque conjícitur.
+        Corpus, inde a Christiánis eréptum, sepúltum est ac póstea Constantinópolim
+        translátum.
+      en: >-
+        Mennas was a Christian Egyptian soldier who had withdrawn himself into a desert place
+        to do penance, but one day, during the persecution under the Emperors Diocletian and
+        Maximian, upon the said Emperors' birthday, when the people were gathered together at
+        a great show, stood forth in the theatre, and reviled with a loud voice the idolatries
+        of the Gentiles. Thereupon he was arrested, and being bound at Cotyasus, the chief city
+        of Phrygia, under the authority of the President Pyrrhus, was first savagely lashed
+        with thongs, then racked, then scarified with fire applied to his naked body, then had
+        his wounds lacerated by rubbing with hair-cloth, then dragged through thorns and iron
+        spikes with hands and feet tied, then lashed again with whips loaded with lead, and
+        lastly slain with the sword, and thrown into a fire. The Christians saved his body
+        thence and buried it, and it hath in after times been carried to Constantinople.
+    status: { la: verified, en: verified }

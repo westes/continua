@@ -37,7 +37,7 @@ across every hour and content type in this app.
      saints (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are now done — see
      "Pre-1955 saints' Matins readings" below. The larger pool of saints that *do* have a
      Monastic 1617 track (`SanctiM/`) is in progress — see "SanctiM-track saints' Matins
-     readings" below — January-October done (102/120), ~43 candidates remain (November onward).
+     readings" below — January-November done (116/136), ~29 candidates remain (December).
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1532,7 +1532,21 @@ this file's own earlier flag in the "individually-flagged content gaps" section)
 `vigil-of-all-saints` (Nocturn 1 only, no Nocturn 2/3 content in either track). `npm test`/`tsc
 --noEmit` both pass.
 
-**Not done in this pass**: the remaining ~43 SanctiM-track candidates (November onward) — same
+**November done (14/16 saints, 2 left unauthored as Common-only)**: `all-saints`,
+`st-martin-of-tours`, `st-menna` (missed pre-1955-pool), `st-martin-i` (off-date, like St. Paul
+the Hermit — general calendar keeps him Nov 12, this app's own Nov 12 goes to St. Emilian),
+`all-saints-of-the-benedictine-order` (genuinely Monastic-only, and unusually one of the few
+such cases with both rich content *and* an available English translation),
+`dedication-of-the-basilicas-of-ss-peter-and-paul` (missed pre-1955-pool; one sentence of the
+source's own English translation was left untranslated, so `en` for that reading is `draft`),
+`st-pontian` (missed pre-1955-pool), `st-cecilia`, `st-clement`, `st-felicitas` (missed
+pre-1955-pool), `st-chrysogonus` (missed pre-1955-pool), `st-silvester-abbot`,
+`st-peter-of-alexandria` (missed pre-1955-pool), `st-andrew`. Left unauthored (Common-only, no
+proper text at all in the source): `st-emilian`, `st-odo` — both genuinely Monastic-only but
+with no Lectio content in their own SanctiM files, the same wrinkle as `st-justina`/`st-gall`
+in October. `npm test`/`tsc --noEmit` both pass.
+
+**Not done in this pass**: the remaining ~29 SanctiM-track candidates (December) — same
 authoring shape, continue month by month.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)

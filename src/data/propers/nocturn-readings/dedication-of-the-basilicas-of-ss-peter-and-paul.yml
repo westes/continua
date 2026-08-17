@@ -1,0 +1,153 @@
+# Matins Nocturn 2-3 readings for the Dedication of the Basilicas of
+# Ss. Peter and Paul (Nov 18). No genuine SanctiM match: the correct
+# Tridentine file is the suffixed `Sancti/11-18o.txt` (the plain
+# `Sancti/11-18.txt` just redirects there, `@Sancti/11-18o`), and the
+# only SanctiM file for this date, `SanctiM/11-18r.txt`, bases
+# `@Sancti/11-18r`, a Common-only rubric variant (`vide C8`, no proper
+# text) — a missed pre-1955-pool candidate rather than a genuine
+# SanctiM case (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/11-18o.txt, English/Sancti/11-18o.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous
+# account. The reference engine's own English translation leaves the
+# last sentence of Lectio6 untranslated (Latin text left verbatim in
+# the English file) — that one sentence is this project's own
+# translation, marked `draft`; the rest is the source's own
+# translation, `verified`.
+# Nocturn 3: Lectio7's Gospel citation (Luke 19:1-10) is a bare
+# incipit ("Et réliqua") with no full pericope text given, so — per
+# the pre-1955 pass's convention of not transcribing bare incipits —
+# only the homily portion is authored (not marked isGospel), combined
+# with Lectio8-9 as one continuous excerpt of Pope St. Gregory the
+# Great's Moralia.
+id: dedication-of-the-basilicas-of-ss-peter-and-paul
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Ex locis sacris quæ olim apud Christiános veneratiónem habuérunt, illa celebérrima
+        et frequentíssima fuérunt, in quibus cóndita Sanctórum córpora, vel áliquod
+        Mártyrum vestígium aut monuméntum esset. In quorum número sanctórum locórum, in
+        primis semper fuit insígnis ea Vaticáni pars, quam sancti Petri Confessiónem
+        appellábant. Nam eo Christiáni ex ómnibus orbis terræ pártibus, tamquam ad fídei
+        petram et Ecclésiæ fundaméntum conveniéntes, locum, Príncipis Apostolórum sepúlcro
+        consecrátum, summa religióne ac pietáte venerabántur.
+
+
+        Illuc Constantínus Magnus imperátor octávo die post suscéptum baptísmum venit,
+        depositóque diadémate, et humi jacens, vim lacrimárum profúdit. Mox, sumpto ligóne
+        ac bidénte, terram éruit; indéque duódecim terræ cóphinis, honóris causa duódecim
+        Apostolórum, ablátis, ac loco basílicæ Príncipis Apostolórum designáto, ecclésiam
+        ædificávit. Quam sanctus Silvéster Papa décimo quarto Kaléndas Decémbris, eo modo
+        quo Lateranénsem ecclésiam quinto Idus Novémbris consecráverat, dedicávit, et in
+        ea altáre lapídeum, chrísmate delibútum, eréxit; atque ex eo témpore sancívit ne
+        deínceps altária nisi ex lápide fíerent.
+
+
+        Basílicam item Pauli apóstoli via Ostiénsi ab eódem Constantíno Imp.
+        magnificentíssime ædificátam dedicávit: quas basílicas Imperátor, multis prǽdiis
+        attribútis locupletávit, ac munéribus amplíssimis exornávit. Cujus Imperatóris
+        tantus fuit ardor religiónis, ut delétis idolórum templis multis ubíque terrárum
+        extrúxerit ecclésias, et præcípue Romæ, in quibus fuérunt basílica sanctæ Crucis
+        ad Hierúsalem in agro Sessoriáno, sancti Lauréntii extra muros in agro Veráno,
+        sanctórum Petri et Marcéllini in via Lavicána, áliquæ permúltæ.
+      en: >-
+        Among the hallowed places which have from of old time been held in honour among
+        Christians, the most famous and sought after were those where the bodies of the
+        Saints were buried, or where there was some trace or token of the Martyrs. Among
+        these spots so hallowed hath been ever among the most noteworthy that place on the
+        Vatican Hill which is called the Confession of St. Peter. Thither Christians do come
+        from all parts of the earth as unto the rock of faith and the foundation-stone of the
+        Church, and surround with godly reverence and love the spot hallowed by the grave of
+        the Prince of the Apostles.
+
+
+        Whither came the Emperor Constantine the Great upon the eighth day after his Baptism,
+        and, taking off his crown, cast himself down upon the ground, and wept abundantly.
+        Then presently he took a spade and pick-axe, and began to break up the earth,
+        whereof he carried away twelve baskets-full in honour of the twelve Apostles, and
+        built a Church upon that spot, appointed for the Cathedral Church of the Prince of
+        the Apostles. This Church was hallowed by holy Pope Silvester, in like manner as he
+        had hallowed the Church of the Lateran. In this Church did the Pope set up an altar
+        of stone, and pour ointment thereon, and ordain that from thenceforth no altars
+        should be set up, save of stone.
+
+
+        The same Emperor Constantine likewise built a very stately Church upon the road to
+        Ostia, in honour of the holy Apostle Paul, which Church also was hallowed by the
+        blessed Sylvester. These Churches the Emperor enriched by grants of much land, and
+        adorned with exceedingly rich gifts. So great was this Emperor's zeal for religion
+        that, having destroyed the temples of idols, he built churches in many places
+        throughout the earth, and especially at Rome, among which were the Basilica of the
+        Holy Cross at Jerusalem in the Sessorian estate, that of St. Lawrence outside the
+        walls in the Verano field, that of Ss. Peter and Marcellinus on the Lavican Way, and
+        very many others.
+    status: { la: verified, en: draft }
+
+  - nocturn: 3
+    isGospel: false
+    source: "Pope St. Gregory the Great, Moralia in Job, Bk. 28, ch. 27 (on Luke 19:1-10)"
+    text:
+      la: >-
+        Si veráciter sapiéntes esse, atque ipsam sapiéntiam contemplári appétimus, stultos
+        nos humíliter cognoscámus. Relinquámus nóxiam sapiéntiam, discámus laudábilem
+        fatuitátem. Hinc quippe scriptum est: Stulta mundi elégit Deus, ut confúndat
+        sapiéntes. Hinc rursum dícitur: Si quis vidétur inter vos sápiens esse in hoc
+        sǽculo, stultus fiat, ut sit sápiens. Hinc evangélicæ históriæ verba testántur:
+        quia Zachǽus cum vidére præ turba nihil posset, sycómori árborem ascéndit, ut
+        transeúntem Dóminum cérneret. Sycómorus quippe ficus fátua dícitur.
+
+
+        Pusíllus ítaque Zachǽus sycómorum súbiit, et Dóminum vidit: quia qui mundi
+        stultítiam humíliter éligunt, ipsi Dei sapiéntiam subtíliter contemplántur.
+        Pusillitátem namque nostram ad vidéndum Dóminum turba prǽpedit: quia infirmitátem
+        humánæ mentis, ne lucem veritátis inténdat, curárum sæculárium tumúltus premit. Sed
+        prudénter sycómorum ascéndimus, si próvide eam quæ divínitus præcípitur, stultítiam
+        mente tenémus. Quid enim in hoc mundo stúltius quam amíssa non quǽrere, posséssa
+        rapiéntibus relaxáre, nullam pro accéptis injúriis injúriam réddere, immo adjúnctis
+        áliis patiéntiam præbére?
+
+
+        Quasi enim sycómorum nos ascéndere Dóminus prǽcipit, cum dicit: Qui aufert quæ tua
+        sunt, ne répetas. Et rursum: Si quis te percússerit in déxteram maxíllam, præbe illi
+        et álteram. Per sycómorum Dóminus tránsiens cérnitur: quia per hanc sapiéntem
+        stultítiam, etsi necdum, ut est, sólide, jam tamen per contemplatiónis lumen Dei
+        sapiéntia quasi in tránsitu vidétur, quam vidére néqueunt qui sibi sapiéntes esse
+        vidéntur: quia ad conspiciéndum Dóminum, in eláta cogitatiónum suárum turba
+        deprehénsi, adhuc sycómori árborem non invenérunt.
+      en: >-
+        If we would be truly wise, and behold wisdom herself, we must humbly acknowledge
+        ourselves to be fools. Let us cast away harmful wisdom, and learn praiseworthy folly.
+        For this reason indeed is it written: God hath chosen the foolish things of the
+        world, to confound the wise. And again it is said: If any man among you seemeth to be
+        wise in this world, let him become a fool, that he may be wise. And unto this doth
+        the very Gospel bear witness, wherein it is said that Zacchaeus sought to see Jesus,
+        Who He was; and could not for the press, because he was little of stature. And he ran
+        before, and climbed up into a sycamore tree to see Him; for He was to pass that way.
+        For this name Sycamore, being interpreted, signifieth the Foolish Fig.
+
+
+        Little Zacchaeus therefore accepted the humiliation of having recourse to the
+        sycamore and saw the Lord. They who humbly choose to be fools in the estimation of
+        the world, have a deep insight into the wisdom of God. The press standeth in our way,
+        on account of our little stature, when we are fain to see the Lord; for the toilsome
+        din of worldly business tormenteth our weak minds, so as to hinder our perceiving the
+        light of the truth. But we climb up wisely into the sycamore tree, if we willingly
+        give up our minds to that folly which God giveth unto us. What can be more utter
+        folly in this world than not to seek for that we have lost, to leave that whereof we
+        have been robbed in the hands of our despoilers, to take no revenge for wrongs which
+        have been done us, yea, even to offer to him that taketh away our cloak, our coat
+        also, and be patient?
+
+
+        The Lord biddeth us, as it were, to climb up into the sycamore, where He saith: Of
+        him that taketh away thy goods, ask them not again. And again: Whosoever shall smite
+        thee on thy right cheek, turn to him the other also. From the boughs of this sycamore
+        tree, the Lord is seen passing by. He may indeed, as yet, not be seen face to face,
+        but by this wise folly the inward eye may see the Wisdom of God, as it were, passing
+        by, even that Wisdom Which they that are wise in their own conceit cannot see. They
+        are mixed up in the overbearing press of their own imaginations, and have not yet
+        found the sycamore tree whereinto to climb up, if they would see the Lord.
+    status: { la: verified, en: verified }

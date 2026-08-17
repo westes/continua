@@ -1,0 +1,134 @@
+# Matins Nocturn 2-3 readings for St. Martin of Tours, Bishop,
+# Confessor (Nov 11, sharing the date with St. Menna — see
+# st-menna.yml) — SanctiM/11-11.txt inherits the whole day
+# (`@Sancti/11-11`) with no Nocturn 2/3 override, so this saint's own
+# vita is sourced from the Tridentine track exactly as for a
+# pre-1955 saint (see memory vu-matins-pre1955-saints,
+# vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/11-11.txt, English/Sancti/11-11.txt.
+#
+# Nocturn 2: Lectio4-6 combined into one reading, one continuous vita
+# (the famous cloak-sharing and death narratives).
+# Nocturn 3: Lectio7's Gospel citation (Luke 11:33-36) is a bare
+# incipit ("Et réliqua") with no full pericope text given, so — per
+# the pre-1955 pass's convention of not transcribing bare incipits —
+# only the homily portion is authored (not marked isGospel), a single
+# excerpt of St. Ambrose's commentary. No responsory given for either
+# reading.
+id: st-martin-of-tours
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Martínus, Sabáriæ in Pannónia natus, cum décimum attigísset annum, invítis paréntibus
+        ad ecclésiam confúgiens, in catechumenórum númerum adscríbi vóluit. Quíndecim annos
+        natus in milítiam proféctus, primum in Constántii, deínde Juliáni exércitu militávit.
+        Qui, cum nihil habéret præter arma et vestiméntum quo tegebátur, Ambiáni, páuperi ac
+        nudo, ab eo peténti ut Christi nómine sibi eleemósynam tribúeret, partem chlámydis
+        dedit. Cui sequénti nocte Christus, dimidiáta illa veste indútus, appáruit, hanc
+        mittens vocem: Martínus catechúmenus hac me veste contéxit.
+
+
+        Decem et octo annos cum habéret, baptizátus est. Quare, relícta militári vita, ad
+        Hilárium Pictaviénsem epíscopum se cóntulit, a quo in acolythórum númerum redáctus
+        est. Post, factus epíscopus Turonénsis, monastérium ædificávit, ubi cum octogínta
+        mónachis sanctíssime aliquámdiu vixit. Qui, cum póstea ad Candacénsem vicum suæ
+        diœcésis in gravem febrim incidísset, assídua Deum oratióne precabátur, ut se ex illo
+        mortáli cárcere liberáret. Quem audiéntes discípuli, sic rogábant: Cur nos, pater
+        déseris? cui nos míseros derelínquis? Quorum voce commótus Martínus, ita Deum orábat:
+        Dómine, si adhuc pópulo tuo sum necessárius, non recúso labórem.
+
+
+        Sed, cum eum in illa veheménti febre supínum orántem vidérent discípuli, supplíciter
+        ab eo petiérunt, ut, convérso córpore, tantísper, dum remítteret morbi vis, pronus
+        conquiésceret. Quibus Martínus, Sínite me, inquit, cælum pótius quam terram
+        aspícere, ut, suo jam itínere itúrus ad Dóminum, spíritus dirigátur. Instánte jam
+        morte, viso humáni géneris hoste, Quid, inquit, astas, cruénta béstia? nihil in me
+        funéste repéries. Ea in voce, unum et octogínta annos natus, ánimam Deo réddidit;
+        quam Angelórum chorus excépit, eósque divínas canéntes laudes multi, in primísque
+        sanctus Severínus Coloniénsis epíscopus, audiérunt.
+      en: >-
+        Martin was born at Sabaria in Pannonia. When he was ten years old he went to the
+        Church, in the spite of his heathen father and mother, and by his own will was
+        numbered among the Catechumens. At fifteen years of age he joined the army, and
+        served as a soldier first under Constantius and then under Julian. Once at the gate of
+        Amiens a poor man asked him for an alms for Christ's name's sake, and since he had
+        nothing to his hand but his arms and his clothes, he gave him half of his cloak. In the
+        night following Christ appeared to him clad in the half of his cloak, and saying (to
+        the angels who bare Him company): While Martin is yet a Catechumen, he hath clad Me in
+        this garment.
+
+
+        At eighteen years of age he was baptized. He gave up thereupon the life of a soldier,
+        and betook himself to Hilary, Bishop of Poietiers, by whom he was placed in the order of
+        Acolytes. Being afterwards made Bishop of Tours, he built a monastery wherein he lived
+        in holiness for a while in company of four-score monks. At the last he fell sick of a
+        grievous fever at Cande, a village in his diocese, and besought God in constant prayer
+        to set him free from the prison of this dying body. His disciples heard him and said:
+        Father, why wilt thou go away from us? unto whom wilt thou bequeath us in our sorrow?
+        Their words moved Martin, and he said: Lord, if I be still needful to thy people, I
+        refuse not to work.
+
+
+        When his disciples saw him, in the height of the fever, lying upon his back and
+        praying, they entreated him to turn over and take a little rest upon his side while
+        the violence of his sickness would allow him. But Martin answered them: Suffer me to
+        look heavenward rather than earthward, that my spirit may see the way whereby it is so
+        soon going to the Lord. At the moment of death he saw the enemy of mankind, and cried
+        out: What are you come here for, you bloody brute? You murderer, you'll find nothing in
+        me. With these words on his lips, he gave up his soul to God, being aged eighty years.
+        He was received by a company of Angels, who were heard praising God by many persons,
+        especially by holy Severinus, Bishop of Cologne.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Ambrose, Bishop of Milan, Commentary on Luke, Bk. 7 (on Luke 11:33-36)"
+    text:
+      la: >-
+        Quia in superióribus Ecclésiam Synagógæ prǽtulit, hortátur nos ut fidem pótius
+        nostram ad Ecclésiam transferámus. Lucérna enim fides est, juxta quod scriptum est:
+        Lucérna pédibus meis verbum tuum, Dómine. Verbum enim Dei fides nostra est; Verbum
+        Dei lux est; Lucérna est fides: Erat Lux vera, quæ illúminat omnem hóminem veniéntem
+        in hunc mundum. Lucérna autem lucére non potest, nisi aliúnde lumen accéperit.
+
+
+        Hæc est Lucérna quæ accénditur, virtus scílicet nostræ mentis et sensus, ut drachma
+        illa possit, quæ períerat, reperíri. Nemo ergo fidem sub lege constítuat; lex enim
+        intra mensúram est, ultra mensúram grátia; lex obúmbrat, grátia claríficat. Et ídeo
+        nemo fidem suam intra mensúram legis inclúdat, sed ad Ecclésiam cónferat, in qua
+        septifórmis Spíritus relúcet grátia, quam Princeps ille sacerdótum fulgóre supérnæ
+        divinitátis illúminat, ne eam legis umbra restínguat. Dénique lucérna illa, quam
+        matutínis vespertinísque tempóribus, ritu véteri Judæórum, princeps sacerdótum
+        solébat accéndere, velut sub módio sita legis, evánuit; et cívitas illa Jerúsalem quæ
+        in terris est, quæ occídit prophétas, quasi in conválle fletus pósita delitéscit.
+        Illa autem Jerúsalem quæ in cælo est, in qua mílitat fides nostra, in illo altíssimo
+        ómnium locáta monte, hoc est Christo, non potest ténebris et ruínis hujus mundi
+        abscóndi; sed fulgens candóre Solis ætérni, luce nos grátiæ spiritális illúminat.
+      en: >-
+        In that which goeth before, Christ hath set the Church before the synagogue, and He
+        exhorteth us rather to trust in the Church. The candle is faith, even as it is
+        written: thy word is a lamp unto my feet, and a light unto my path. Our faith is the
+        word of God. The word of God is light. Faith is the candle. It is written concerning
+        the Word of God, that That was the true Light, Which lighteth every man that cometh
+        into this world. But a candle cannot shine, unless it be lighted from some other fire.
+
+
+        Also it is written: What woman, having ten pieces of silver, if she lose one piece,
+        doth not light a candle, and sweep the house, and seek diligently till she find it?
+        And here the candle lighted to find the lost piece is the strength in our
+        understandings and affections. Let no man therefore seek faith under the law. For the
+        law is by measure, but grace without measure; the law overshadoweth, but grace
+        enlighteneth. And therefore let no man shut up his faith within the measure of the
+        law, but give it unto the Church, wherein shineth the sevenfold grace of the Spirit,
+        and whereon the Divine glory of the Great High Priest doth strike from heaven, lest the
+        shadow of the law should rest any more at all upon her. Under the old law there was
+        the sevenfold lamp which the Priest of the Jews lighted every morning and every
+        evening, and this was as it were a candle put under a bushel. That Jerusalem which is
+        upon earth, that Jerusalem which killed the Prophets, lieth hid, as it were, in a dark
+        place in the valley of tears. But that Jerusalem which is in heaven, whereof by faith
+        we are soldiers, is a city set upon the highest of all mountains, even upon Christ.
+        Her the darkness and tempests of earth cannot hide, but she blazeth with the glory of
+        the Eternal Sun, and maketh to fall upon us the light of spiritual grace.
+    status: { la: verified, en: verified }

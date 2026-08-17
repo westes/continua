@@ -1,0 +1,36 @@
+# Matins Nocturn 2 reading for St. Pontian, Pope, Martyr (Nov 19,
+# sharing the date with St. Odo — no reading authored for that feast,
+# it turns out Common-only, see memory vu_matins_sanctim_saints). No
+# genuine SanctiM match: the correct Tridentine file is the suffixed
+# `Sancti/11-19o.txt` (the plain `Sancti/11-19.txt` is St. Elizabeth
+# of Hungary instead), and the only SanctiM file for this date,
+# `SanctiM/11-19M.txt`, is St. Odo's own Common-only file — a missed
+# pre-1955-pool candidate rather than a genuine SanctiM case (see
+# memory vu-matins-pre1955-saints, vu-matins-sanctim-saints).
+# web/www/horas/Latin/Sancti/11-19o.txt, English/Sancti/11-19o.txt.
+# Single lesson (simplex-feast Lectio93), one continuous account, no
+# responsory given in the source.
+id: st-pontian
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Pontianus, Romanus, præfuit Ecclésiæ Alexandro imperatóre; qui sanctum Pontificem,
+        propter christianæ fidei confessiónem, in Sardiniam insulam cum Hippólyto presbytero
+        relegávit. Ubi is, pro Christi fide multis calamitátibus afflíctus, tertio Kalendas
+        Novembris e vita migrávit. Ejus corpus, Fabiáno Pontifice, cum clero Romam delátum,
+        in cœmeterio Callísti via Appia sepelítur. Sedit annos quatuor, menses quatuor, dies
+        viginti quinque. Fecit ordinatiónes duas mense Decembri, quibus creávit presbyteros
+        sex, diaconos quinque, episcopos per diversa loca sex.
+      en: >-
+        Pontian was a Roman, who ruled the Church in the reign of the Emperor Alexander. This
+        Emperor banished him into the Island of Sardinia, along with the Priest Hippolytus,
+        on account of their profession of the Christian faith. There he endured many
+        hardships because of his belief in Christ, and departed this life upon the 19th day
+        of November. His body was brought to Rome by Pope Fabian and his clergy, and buried
+        in the cemetery of Kallistus, upon the Appian Way. He sat in the seat of Peter four
+        years, four months, and twenty-five days. He held two Ordinations in the month of
+        December, wherein he made six Priests, five Deacons, and six Bishops for diverse
+        places.
+    status: { la: verified, en: verified }
