@@ -19,9 +19,6 @@ across every hour and content type in this app.
 
 1. **Mechanism gaps** — a real design/code piece not built yet, blocking any content pass on
    it from starting:
-   - Pre-1955-but-post-1617 saints' differently-structured Matins readings — source confirmed
-     (Tridentine/Divino Afflatu, combine-where-sensible applies the same way), but the actual
-     sourcing/modeling pass hasn't started — see "Matins ordo" below.
    - Easter's own octave — tabled, "a whole different discussion."
    - What "a Gospel reading is its own kind" should mean structurally/in the UI, beyond the
      `isGospel` flag on a plain Matins `lesson` — open; deferred until there's a UI to
@@ -36,8 +33,10 @@ across every hour and content type in this app.
      author patristic/hagiographic
      readings for every saint where one can be sourced — no longer Duplex+-gated, content is
      pooled and shown regardless of rank (see "Reading-pool redesign"); expand the per-book
-     Matins responsory pool beyond its one seeded book (`isa`); once the pre-1955 mechanism gap
-     above is resolved, source those saints' readings too.
+     Matins responsory pool beyond its one seeded book (`isa`). The pre-1955-but-post-1617
+     saints (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are now done — see
+     "Pre-1955 saints' Matins readings" below — what's left is the larger pool of saints that
+     *do* have a Monastic 1617 track (`SanctiM/`), same authoring shape, not yet started.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1317,14 +1316,52 @@ content, just via the new pool/distribute path) and `npm run build` both pass.
   "every saint where a reading can be sourced," not just the ~75 Duplex+
   saints that get their own Nocturn 3 slot (see the reading-pool redesign
   above: content is no longer rank-gated, only nocturn *count* is).
-- Pre-1955-but-post-1617 saints' differently-structured readings (source
-  confirmed as Tridentine/Divino Afflatu rather than Monastic 1617,
-  combine-where-sensible rule confirmed to apply the same way — the actual
-  sourcing pass not started).
 - The per-book responsory pool beyond its one seeded book (`isa`).
 - The bulk Vulgate (Latin) + Douay-Rheims (English) import into
   `src/data/scripture/` — in scope for the project long-term, explicitly
   deferred past this pass per direct instruction.
+
+### Pre-1955-but-post-1617 saints' Matins readings — done (2026-08)
+
+Resolved the former "mechanism gap" above into a concrete, scoped content pass — no new
+mechanism was actually needed, since `nocturn-readings.ts`/`buildReadingPool` already accept
+content from any source once authored (see the reading-pool redesign above); this was a
+sourcing gap, not a design gap.
+
+**Method**: read the reference engine's own files directly on disk (`../divinum-officium-reference`),
+not live queries — `web/www/horas/Latin/Sancti/MM-DD.txt` is the Tridentine track (Sancti, no
+`M`), `web/www/horas/Latin/SanctiM/MM-DD*.txt` the Monastic track. A saint with a `Sancti/`
+file but no `SanctiM/` file at all (any suffix) never existed in Monastic 1617, confirming the
+pre-1955-but-post-1617 case. **Critical wrinkle found and now memory'd** (see memory
+`vu-reference-engine-file-layout`, `vu-matins-pre1955-saints`): the plain, unsuffixed
+`Sancti/MM-DD.txt` is very often the *wrong* saint — the general/Tridentine calendar keeps
+piling later canonizations onto the same date slot in that file, displacing the older saint
+into a suffixed sibling file (`01-23o.txt`, `03-04cc.txt`, etc.) or, in one case (St. Paul the
+Hermit), an entirely different date. Every one of the ~52 candidates was individually verified
+by `[Officium]` match, not assumed from the filename.
+
+**Scope, computed against `sanctoral-calendar.yml`'s 204 saint-day entries**: 52 pre-1955-only
+candidates (`Sancti/` present, no `SanctiM/` at all, any suffix); of these, 43 had real proper
+lesson content to author, 9 turned out to be pure Common-of-X with no proper text in the
+source at all (`st-lucius-i`, `vigil-of-st-james`, `st-christina`, `vigil-of-st-bartholomew`,
+`ss-twelve-brothers`, `vigil-of-ss-simon-and-jude`, `st-saturninus`, `st-sabbas`,
+`vigil-of-st-thomas` — correctly left unauthored, not a gap). All 43 authored as
+`src/data/propers/nocturn-readings/<id>.yml`, same shape and combine-where-sensible rule as
+the two original proof dates. A few readings reuse already-verified text from
+`post-pentecost-15.yml` where the source file itself cross-references another day's lessons
+(e.g. `st-monica`'s Nocturn 3 Gospel, the same Luke 7:11-16 pericope). A handful of bare
+Gospel pericopes were left unauthored where the source gives only an incipit ("Et réliqua")
+and no full text was available to transcribe (flagged per-file, not silently dropped) — same
+deferral as the bulk Vulgate/Douay-Rheims import. One saint (`st-anicetus`) has an
+English-source transcription bug (Latin duplicated under the English heading) — this
+project's own translation used instead, marked `draft`.
+
+`npm test` (365 tests, all passing — none of the new saints are in a test table yet, same as
+the bible-plan bulk conversion) and `npm run build`/`tsc --noEmit` both pass.
+
+**Not done in this pass**: the larger pool of saints that *do* have a Monastic 1617
+(`SanctiM/`) track — same authoring shape, separate/older backlog item (see priority §2 above).
+
 ### Bible-plan TSV — bulk conversion done (2026-08)
 
 All ~369 non-blank rows of the user's own bible-plan TSV (`~/Downloads/bible-plan.tsv`, 390
