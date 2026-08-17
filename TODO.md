@@ -46,9 +46,10 @@ across every hour and content type in this app.
      silently dropped: St. Frances of Rome's and St. Bibiana's Benedictus antiphons
      (structurally can't win their own day under this app's calendar in any near-term year,
      needs a very late test year to check); Ss. Ursula and Companions' Benedictus antiphon
-     (a category-of-one, no live rendering to verify against); "Our Lady of the Snows" (not
-     modeled at all); the four "…benedícta…" octave-day Ant+V/R+collect blocks (not yet
-     modeled).
+     (a category-of-one, no live rendering to verify against); the four "…benedícta…"
+     octave-day Ant+V/R+collect blocks (not yet modeled). "Our Lady of the Snows" — formerly
+     listed here as "not modeled at all" — is now added; see "Our Lady of the Snows added"
+     below.
 
 3. **Known, deliberate simplifications** — flagged as intentional, not a bug, no plan to
    revisit unless priorities change: see "Known, deliberate simplifications" at the end of
@@ -1608,6 +1609,47 @@ Lectio text anywhere) are unaffected and remain correctly unauthored.
 Adding these introduced no new lesson-count regressions in `tests/hours/matins.test.ts` (none
 of its fixed proof dates fall on Jan 5/11 or Jun 23/Aug 9). `npm test` (365 tests) and `tsc
 --noEmit` both pass.
+
+### Aug 5 martyrology English gap, and "Our Lady of the Snows" added (2026-08)
+
+Two separate fixes, both discovered by re-checking a claim in this file that turned out stale.
+
+**Martyrology, Aug 5**: `src/data/martyrology/08-05.yml`'s Latin text opens with "Romæ, in
+Exquíliis, Dedicátio Basílicæ sanctæ Maríæ ad Nives" (the dedication of St. Mary Major, i.e.
+Our Lady of the Snows) — but the file's own English translation silently dropped the
+corresponding sentence, starting straight in on the day's other martyrs instead, even though
+the reference engine's own `English/Martyrologium/08-05.txt` has it ("Upon the 5th day of
+August is kept the dedication of the Church of St. Mary in the Snow upon the Esquiline Hill at
+Rome, in the year 366."). Restored.
+
+**"Our Lady of the Snows" (Aug 5) added to the calendar.** `sanctoral-calendar.yml`'s own
+August comment had excluded her entirely as "a fixed BVM feast, same convention as
+Purification/Annunciation" — wrong, on re-reading the actual source: unlike the truly
+unmodeled cases in that same comment (saints permanently subordinate to an unmodeled octave or
+to the fixed Transfiguration), she isn't blocked by any of that, and this app already models
+three other fixed BVM feasts identically (`assumption`, `immaculate-conception`,
+`nativity-bvm`). `Sancti/08-05.txt`'s untagged `[Rank]` block gives her a real Duplex Majus
+rank with real Nocturn 2/3 content (`Lectio4-6`, the miraculous-snowfall founding legend of the
+basilica of St. Mary Major — both Latin and English present, plus a simplex-fallback
+`[Lectio94]` retelling not separately authored). `SanctiM/08-05.txt` confirms she's on the
+Monastic 1617 track too, inheriting `@Sancti/08-05` and reslicing the same Lectio4-6 into its
+own 12-lesson structure — no separate Monastic-only content.
+
+Unlike the other three BVM feasts, she has **no proper collect or Benedictus antiphon of her
+own** — her `[Rule]` says `ex C11` (Common of Feasts of the BVM), and `Commune/C11.txt`'s own
+`[Oratio]`/`[Ant 1]` (with full English) supplied both. First pass at this wrongly authored
+that Common text as if it were her own private file via `propers:` — corrected per direct
+feedback: `collect-c11.yml` and `benedictus-antiphon-common-of-the-bvm.yml` are real, reusable
+Common templates now, wired in via `SaintRecord.collectCommon`/`benedictusCommon` exactly like
+any other Common-only saint (e.g. St. Barbara), not a one-off duplicate. `collect-c11`'s own
+text has no `{N}` name placeholder (it addresses "fámulis tuis" generically, not the saint by
+name, unlike every other `collect-c*.yml`) — `collectName` is still required by
+`getDayCollect`'s own lookup, so set to empty arrays, never actually substituted.
+
+Live-checked via direct resolution (not a browser query, per
+[[vu-reference-engine-file-layout]]): she wins outright on 2026-08-05 and 2027-08-05, with her
+Benedictus antiphon, day collect, and Matins reading all resolving `verified`. `npm test` (365
+tests) and `tsc --noEmit` both pass.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)
 

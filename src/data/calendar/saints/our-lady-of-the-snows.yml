@@ -1,0 +1,31 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/08-05.txt` --
+# "Sanctæ Mariæ Virginis ad Nives;;Duplex majus;;4;;ex C11". Previously
+# excluded from this app's calendar entirely under a stale "fixed BVM
+# feasts aren't modeled" note in sanctoral-calendar.yml's own August
+# comment -- wrong: this app already models three other fixed BVM feasts
+# the same way (assumption, immaculate-conception, nativity-bvm), and
+# this one has real, complete content too (Matins readings, sourced
+# directly; collect/antiphon via the Common-of-the-BVM fallback her own
+# `[Rule]` already points to, `ex C11` -- see collect-c11.yml and
+# benedictus-antiphon-common-of-the-bvm.yml). No `propers` of her own:
+# unlike the other three BVM feasts (each of which has real unique
+# collect/antiphon text), her file has none, so `collectCommon`/
+# `benedictusCommon` is the correct mechanism here, same as any other
+# `propers: null` saint falling back to a shared Common.
+id: our-lady-of-the-snows
+name: "Our Lady of the Snows (Dedication of St. Mary Major)"
+rank: duplex-majus
+common: common-of-the-bvm
+propers: null
+collectCommon: collect-c11
+# collect-c11's own text has no {N} placeholder to substitute (it
+# addresses "fámulis tuis" generically, not the saint by name) --
+# collectName is still required by getDayCollect's own lookup, but its
+# value is never actually used for this particular Common.
+collectName:
+  la: []
+  en: []
+minorHoursCommon: common-of-the-bvm
+benedictusCommon: common-of-the-bvm

@@ -172,12 +172,18 @@ days:
   # 11), St. Clare (Aug 12 -- notable: a genuinely major saint, not an
   # obscure one, caught by this same gap), Ss. Hippolytus and Cassian
   # (Aug 13), St. Agapitus (Aug 18), Ss. Timothy/Hippolytus/Symphorian
-  # (Aug 22). Also excluded: Our Lady of the Snows (Aug 5, fixed BVM
-  # feast, same convention as Purification/Annunciation).
+  # (Aug 22). Our Lady of the Snows (Aug 5) was also excluded here at
+  # first under the same "fixed BVM feast" reasoning -- wrong, corrected
+  # 2026-08: unlike the genuinely-unmodeled cases above, she has real,
+  # complete content (Matins readings + Common-of-the-BVM collect/
+  # antiphon) and this app already models three other fixed BVM feasts
+  # the same way (assumption, immaculate-conception, nativity-bvm) -- see
+  # our-lady-of-the-snows.yml's own header. Added below.
   "08-01": [st-peter-ad-vincula, ss-machabees]
   "08-02": [st-stephen-i]
   "08-03": [finding-of-st-stephen]
   "08-04": [st-dominic]
+  "08-05": [our-lady-of-the-snows]
   "08-07": [st-donatus]
   "08-08": [ss-cyriacus-largus-and-smaragdus]
   "08-09": [vigil-of-st-lawrence, st-romanus]

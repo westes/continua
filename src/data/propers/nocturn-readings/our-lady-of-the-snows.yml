@@ -1,0 +1,72 @@
+# Matins Nocturn 2 reading for Our Lady of the Snows (Dedication of St.
+# Mary Major), Aug 5 — Duplex Majus. `Sancti/08-05.txt`'s untagged
+# [Rank] block. SanctiM/08-05.txt inherits the whole day (`@Sancti/08-05`)
+# with no Nocturn 2/3 override (just reslicing Lectio4-6 into a 12-lesson
+# Monastic structure via `@Sancti/08-05:LectioN` cross-references), so
+# this feast's own content is sourced from the Tridentine track directly.
+# web/www/horas/Latin/Sancti/08-05.txt, English/Sancti/08-05.txt.
+# Lectio4-6 combined into one reading — the miraculous-snowfall founding
+# legend of the basilica of St. Mary Major, one continuous narrative, no
+# genuine source break. (The source's own `[Lectio94]` is a shorter,
+# alternate simplex-rank retelling of the same story, not additional
+# content — not authored separately.)
+id: our-lady-of-the-snows
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Liberio summo Pontifice, Joánnes patricius Romanus et uxor pari nobilitate, cum
+        liberos non suscepíssent, quos bonórum herédes relínquerent, suam hereditátem
+        sanctíssimæ Virgini Dei Matri vovérunt, ab ea summis precibus assidue peténtes, ut in
+        quod pium opus eam pecúniam potíssimum erogari vellet aliquo modo significaret.
+        Quorum preces et vota, ex animo facta, beáta Virgo Maria, benígne áudiens, miraculo
+        comprobávit.
+
+
+        Nonis ígitur Augusti, quo témpore in Urbi maximi calóres esse solent, noctu nix
+        partem collis Exquilini contéxit. Qua nocte Dei Mater separatim Joánnem et conjugem
+        in somnis admonuit ut quem locum nive conspersum vidérent, in eo ecclésiam
+        ædificarent, quæ Maríæ vírginis nómine dedicarétur; se enim ita velle ab ipsis
+        herédem institui. Quod Joánnes ad Libérium Pontificem détulit, qui idem per sómnium
+        sibi contigisse affirmávit.
+
+
+        Quare solemni sacerdotum et pópuli supplicatióne ad collem venit nive coopertum, et
+        in eo locum ecclésiæ designávit, quæ Joánnis et uxoris pecúnia exstructa est, póstea
+        a Xysto tertio restituta. Variis nomínibus primum est appellata, basilica Liberii,
+        sancta Maria ad Præsepe; sed, cum multæ jam essent in Urbe ecclésiæ sub nómine sanctæ
+        Maríæ Vírginis, ut quæ basilica novitate miraculi ac dignitate ceteris ejusdem
+        nóminis basilicis præstaret, vocabuli étiam excelléntia significarétur, ecclésia
+        sanctæ Maríæ majoris dicta est. Cujus dedicatiónis memória ex nive, quæ hac die
+        mirabíliter cécidit, anniversaria celebritate cólitur.
+      en: >-
+        In the time of Pope Liberius, there lived at Rome a certain nobleman named John and a
+        noble lady his wife, who had no children to whom to leave their substance. Then they
+        vowed that they would make the most holy Virgin Mother of God their heiress, and
+        earnestly besought her in some way to make known to them upon what godly work she
+        would that the money should be spent. The Blessed Virgin Mary graciously listened to
+        their prayers and heart-felt earnestness, and by a miracle assured them of her will.
+
+
+        On the 5th day of August, which is that time when the heat of summer waxeth greatest
+        in Rome, a part of the Esquiline Hill was covered by night with snow. And on this
+        same night the Mother of God appeared in a dream to John and his wife separately, and
+        told them that on that spot, which in the morning they should see clad with snow,
+        they should build a Church, to be dedicated in the name of the Virgin Mary, for that
+        this was the way in which she chose that they should make her their heiress. John
+        went and told it to Pope Liberius, who declared that he also had been visited by a
+        like dream.
+
+
+        Therefore he came in a solemn procession of Priests and people to the snow-clad hill,
+        and traced upon that spot the plan of a Church which was built with the money of John
+        and his wife. It was afterwards rebuilt by Sixtus III. At the beginning it was called
+        by diverse names, sometimes the Liberian Basilica, sometimes the Church of St.
+        Mary-at-the-Manger. Howbeit, since there are in Rome many Churches called after the
+        Holy Virgin Mary, and this Church doth excel them all, both in honour, and because of
+        the strange sign wherewith it was dedicated, it hath come to be called the Church of
+        St. Mary, the Greater. The memory of the dedication thereof is kept every year by a
+        Feast-day that taketh name from the wonderful fall of snow which on this day took
+        place.
+    status: { la: verified, en: verified }
