@@ -122,11 +122,16 @@ describe('decideOccurrence — ordinary-sunday', () => {
     expect(result.transfer).toBeUndefined();
   });
 
-  it('semiduplex gets nothing here — transfers forward', () => {
+  it('semiduplex stays and is commemorated, not transferred', () => {
+    // Live-verified (both Tridentine 1906 and Divino Afflatu 1954): St.
+    // Gregory Thaumaturgus (Semiduplex) lands on the 6th Sunday after
+    // Epiphany and is commemorated right there, not pushed to the next
+    // open day — same treatment as Simplex above, not a separate
+    // "too important to merely commemorate" tier.
     const result = decideOccurrence('ordinary-sunday', 'post-epiphany-2', saint('semiduplex'));
     expect(result.winner).toEqual({ kind: 'temporal', id: 'post-epiphany-2' });
-    expect(result.commemorations).toEqual([]);
-    expect(result.transfer).toEqual({ candidate: saint('semiduplex'), direction: 'forward' });
+    expect(result.commemorations).toEqual([{ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank: 'semiduplex' }]);
+    expect(result.transfer).toBeUndefined();
   });
 
   it('vigil gets nothing here — transfers backward', () => {

@@ -23,8 +23,13 @@ describe('getDayLabel — ordinal temporal label', () => {
     // here per the normal ordinary-Sunday rule (see
     // tests/calendar/transfer.test.ts's own May 31 case for the full
     // winner/commemorations breakdown), so the label now reflects her,
-    // not Trinity Sunday itself.
-    expect(getDayLabel(resolveDay('2026-05-31'))).toBe('The Queenship of the Blessed Virgin Mary (Duplex II Class)');
+    // not Trinity Sunday itself — but Trinity Sunday is still
+    // commemorated in return (`decideOccurrence`'s own `ordinary-sunday`
+    // branch), by bare name only — a commemoration never carries a rank
+    // parenthetical, only the day's own winner does.
+    expect(getDayLabel(resolveDay('2026-05-31'))).toBe(
+      'The Queenship of the Blessed Virgin Mary (Duplex II Class) — Trinity Sunday',
+    );
     expect(getDayLabel(resolveDay('2026-04-05'))).toBe('Easter (Duplex I Class)');
     expect(getDayLabel(resolveDay('2026-02-18'))).toBe('Ash Wednesday');
   });
@@ -77,16 +82,29 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     );
     // 2024-11-11 is St. Martin of Tours (Duplex, pre-existing content) --
     // an ordinary (non-privileged) Monday fully yields to a real winning
-    // saint, so the label is just his name, not the ferial fallback; see
-    // the 2035-10-29 assertion below for that fallback format on a
-    // genuinely saint-free overflow-week Monday instead (no single
-    // Nov-dated Monday near this Sunday pair is clean any more, now that
-    // Nov 4/8/15/16/20 are all fixed real content).
-    expect(getDayLabel(resolveDay('2024-11-11'))).toBe('St. Martin of Tours, Bishop and Confessor (Duplex Majus)');
-    expect(getDayLabel(resolveDay('2024-11-17'))).toBe('The 6th Sunday after Epiphany (Semiduplex)');
+    // saint, so the label is just his name (plus St. Menna, Simplex, also
+    // real and commemorated alongside him -- live-verified, Divino
+    // Afflatu 1954), not the ferial fallback; see the 2035-10-29 assertion
+    // below for that fallback format on a genuinely saint-free
+    // overflow-week Monday instead (no single Nov-dated Monday near this
+    // Sunday pair is clean any more, now that Nov 4/8/15/16/20 are all
+    // fixed real content).
+    expect(getDayLabel(resolveDay('2024-11-11'))).toBe(
+      'St. Martin of Tours, Bishop and Confessor (Duplex Majus) — St. Menna, Martyr',
+    );
+    // St. Gregory Thaumaturgus (Semiduplex, his real date) is commemorated
+    // right here, not transferred to Nov 18 -- live-verified (both
+    // Tridentine 1906 and Divino Afflatu 1954): a Semiduplex saint landing
+    // on an ordinary Sunday stays and is commemorated there, the same as
+    // Simplex, not pushed to the next open day (see
+    // calendar/commemorations.ts's `ordinary-sunday` case).
+    expect(getDayLabel(resolveDay('2024-11-17'))).toBe(
+      'St. Gregory Thaumaturgus, Bishop and Confessor — The 6th Sunday after Epiphany (Semiduplex)',
+    );
     // 2024-11-18 is the Dedication of the Basilicas of Ss. Peter and Paul
-    // (pre-existing fixed content) -- again a real winning saint, not the
-    // ferial fallback.
+    // (pre-existing fixed content) alone now -- again a real winning
+    // saint, not the ferial fallback, and no longer also carrying St.
+    // Gregory Thaumaturgus (he stays on his own real day, Nov 17, above).
     expect(getDayLabel(resolveDay('2024-11-18'))).toBe('Dedication of the Basilicas of Ss. Peter and Paul (Duplex)');
     // 2035-10-29, a Monday in the 3rd week of a different overflow
     // stretch, is genuinely clean (no sanctoral entry, no commemoration)
@@ -102,15 +120,39 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // Every year 1900-2100 lands on this same id for its own last Sunday
     // before Advent, so this ordinal is fixed, not overflow-year-specific
     // -- confirmed against a non-overflow year (1943) too.
-    expect(getDayLabel(resolveDay('2026-11-22'))).toBe('The 23rd Sunday after Trinity (Semiduplex)');
+    // St. Cecilia (Semiduplex, her real date) is commemorated right here
+    // too, not transferred -- live-verified (Divino Afflatu 1954), same
+    // rule as St. Gregory Thaumaturgus above.
+    expect(getDayLabel(resolveDay('2026-11-22'))).toBe(
+      'St. Cecilia, Virgin and Martyr — The 23rd Sunday after Trinity (Semiduplex)',
+    );
     // 1943-11-21 is also the Presentation of the BVM (Duplex Majus, added
-    // 2026-08 — see presentation-of-the-bvm.yml), which meets this app's
-    // existing privileged-Sunday rank threshold (commemorations.ts's
-    // `privileged-sunday` case requires only duplex-majus+) and so wins
-    // outright rather than being commemorated — a pre-existing rule, not
-    // new behavior from adding her. 2026-11-22 above (no saint collision)
-    // still covers the fixed-ordinal label itself.
-    expect(getDayLabel(resolveDay('1943-11-21'))).toBe('The Presentation of the Blessed Virgin Mary (Duplex Majus)');
+    // 2026-08 — see presentation-of-the-bvm.yml). It's `ordinary-sunday`
+    // here (this app's Trinitytide Sundays, including the fixed final
+    // one, carry no special first-class standing of their own), so
+    // commemorations.ts's `ordinary-sunday` case's plain Duplex+ threshold
+    // is what lets her win outright rather than being commemorated — a
+    // pre-existing rule, not new behavior from adding her. This case
+    // additionally confirms the displaced Sunday is still commemorated in
+    // return, using the same fixed 23rd-after-Trinity ordinal, not a raw
+    // elapsed-week count recomputed for 1943.
+    expect(getDayLabel(resolveDay('1943-11-21'))).toBe(
+      'The Presentation of the Blessed Virgin Mary (Duplex Majus) — The 23rd Sunday after Trinity',
+    );
+  });
+});
+
+describe('getDayLabel — commemorated Sunday/feria under a sanctoral winner', () => {
+  it('a saint winning outright on a privileged-feria-minor day still leaves that feria commemorated', () => {
+    // 2027-12-07, a Tuesday of Advent: St. Ambrose (Duplex) clears
+    // privileged-feria-minor's own Semiduplex+ threshold and wins
+    // outright, but Advent's own feria is still commemorated in return
+    // (`decideOccurrence`'s `privileged-feria-minor` branch) -- live-
+    // verified shape, same mechanism as the ordinary-Sunday case above,
+    // for the feria-tier branch instead.
+    expect(getDayLabel(resolveDay('2027-12-07'))).toBe(
+      'St. Ambrose, Bishop, Confessor and Doctor of the Church (Duplex) — Tuesday in the 2nd week of Advent',
+    );
   });
 });
 
@@ -171,20 +213,39 @@ describe('getDayLabel — active octave', () => {
     // occurring saint (see octaves.test.ts and the December/September
     // sanctoral tests for those counterexamples). The Assumption's own
     // day 3 (semiduplex, genuinely active but outranked by Lawrence's
-    // elevated duplex) still gets named, not dropped, alongside it.
+    // elevated duplex) still gets named, not dropped, alongside it -- with
+    // its own full "Nth Day within the Octave of X" phrasing, not a bare
+    // name: live-verified directly (Divino Afflatu 1954, where Aug 17's
+    // real winner is Hyacinth himself, not Lawrence's octave -- a
+    // different rubric-track outcome, but the same commemoration phrasing
+    // question): "Commemoratio: Tertia die infra Octavam S. Assumptionis
+    // Beatæ Mariæ Virginis", not a bare "The Assumption of the Blessed
+    // Virgin Mary".
     expect(getDayLabel(resolveDay('2026-08-17'))).toBe(
-      'Octave of St. Lawrence, Martyr (Duplex) — The Assumption of the Blessed Virgin Mary — St. Hyacinth, Confessor',
+      'Octave of St. Lawrence, Martyr (Duplex) — 3rd Day within the Octave of The Assumption of the Blessed Virgin Mary — St. Hyacinth, Confessor',
     );
     expect(getDayLabel(resolveDay('2026-08-18'))).toBe(
       '4th Day within the Octave of The Assumption of the Blessed Virgin Mary (Semiduplex)',
     );
   });
 
-  it('a real Sunday with standing of its own wins over both octaves entirely, showing the plain ordinal Sunday label -- not an octave name at all', () => {
+  it('a sanctoral winner on a Sunday still leaves the Sunday commemorated, but neither octave it also happens to overlap -- not an octave name at all', () => {
     // 2026-08-16 is a Sunday genuinely within both St. Lawrence's and the
-    // Assumption's overlapping octave windows.
+    // Assumption's overlapping octave windows -- St. Joachim (Duplex II
+    // Class) wins outright per the ordinary-Sunday Duplex+ threshold, not
+    // the Sunday itself (this test's own name was wrong about that before
+    // this case existed). Live-verified against Divino Afflatu 1954: the
+    // commemoration line reads only "Dominica XII Post Pentecosten" (this
+    // app's own Trinity-counted display is one week off from that
+    // Pentecost-counted number, so "11th ... after Trinity" here) -- no
+    // octave named at all, even though both are technically active, same
+    // as this app's own established `ordinary-feria`-only gate for
+    // octave mentions alongside a sanctoral winner.
     const day = resolveDay('2026-08-16');
     expect(day.weekday).toBe('sunday');
+    expect(getDayLabel(day)).toBe(
+      'St. Joachim, Confessor, Father of the Blessed Virgin Mary (Duplex II Class) — The 11th Sunday after Trinity',
+    );
     expect(getDayLabel(day)).not.toContain('Octave');
   });
 

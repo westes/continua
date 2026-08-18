@@ -197,6 +197,23 @@ function applyChristmasOctaveSunday(
   const day = Number(dayStr);
 
   if (day >= 26 && day <= 29 && weekday === 'sunday') {
+    // The displaced saint isn't commemorated in place (per this
+    // function's own doc comment, "he reappears in full on Dec 30
+    // instead") — strip the sanctoral commemoration `decideOccurrence`
+    // already pushed for him before this override ran, the same
+    // candidate the Dec 30 branch below will look up again to revive.
+    // Only became reachable once `commemorations.ts`'s `ordinary-sunday`
+    // case started commemorating Semiduplex/Simplex in place instead of
+    // transferring them (see its own doc comment) — before that fix, a
+    // `transfer` signal carried the candidate forward instead of a
+    // commemoration, so there was nothing here to strip.
+    const displaced = getSanctoralCandidatesFor(isoDate)[0];
+    if (displaced) {
+      const idx = commemorations.findIndex((c) => c.kind === 'sanctoral' && c.id === displaced.id);
+      if (idx !== -1) {
+        commemorations.splice(idx, 1);
+      }
+    }
     return { kind: 'temporal', id: 'christmas-octave-sunday' };
   }
 

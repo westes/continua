@@ -159,14 +159,22 @@ export function decideOccurrence(
         // Duplex+ wins outright; the Sunday itself is commemorated in return.
         return { winner: sanctoralWinner(sanctoral), commemorations: [{ kind: 'temporal', id: temporalId }] };
       }
-      if (sanctoral.rank === 'simplex') {
-        // Too minor to warrant its own day, but a plain commemoration
-        // doesn't cheapen it the way it would a Semiduplex.
+      if (sanctoral.rank !== 'vigil') {
+        // Semiduplex or Simplex: commemorated, not transferred — live-
+        // verified (both Tridentine 1906 and Divino Afflatu 1954, the two
+        // calendar tracks this app blends): St. Gregory Thaumaturgus
+        // (Semiduplex) lands on the 6th Sunday after Epiphany, 2024-11-17,
+        // and is commemorated right there ("Commemoratio: S. Gregorii
+        // Thaumaturgi..."), not pushed to the next open day. Corrects an
+        // earlier, unverified guess that Semiduplex was "too important to
+        // merely commemorate" — Monastic Tridentinum 1617's own structural
+        // rubric *does* transfer him, but precedence here follows Divino
+        // Afflatu, not Monastic 1617's own (see CLAUDE.md).
         return { winner: temporalWinner, commemorations: [sanctoralCommemoration(sanctoral)] };
       }
-      // Semiduplex or Vigil: no room here at all, in either direction —
-      // better to preserve the feast whole on another day than downgrade
-      // it to a bare commemoration.
+      // A Vigil still transfers (backward, per transferDirectionOf) — a
+      // distinct rule from Semiduplex/Simplex above, not verified against
+      // this same live case and left as-is.
       return {
         winner: temporalWinner,
         commemorations: [],

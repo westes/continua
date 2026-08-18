@@ -9,7 +9,7 @@
 // become a configurable choice later (the same day->id indirection
 // philosophy already used for the sanctoral calendar), not hardcoded here
 // forever — just not built yet.
-import type { Commemoration, FeastClass, LiturgicalDay, TemporalCategory } from './types';
+import type { FeastClass, LiturgicalDay, TemporalCategory } from './types';
 import { easterSunday } from './easter';
 import { adventStart, firstSundayStrictlyAfter, sundayOnOrBefore } from './temporal';
 import { addDays, daysBetween, toIsoDate } from './date-math';
@@ -107,14 +107,14 @@ const ORDINAL_SEASONS: Partial<Record<string, OrdinalSeason>> = {
  * octave, but nobody calls it that). Advent's own anchor (Advent I Sunday)
  * doesn't take this branch — it's already "the 1st Sunday of Advent" via
  * the ordinal path below. */
-function anchorDayName(day: LiturgicalDay): string | undefined {
+function anchorDayName(day: LiturgicalDay, withRank = true): string | undefined {
   const config = ORDINAL_SEASONS[day.season];
   if (!config || config.includeAnchorWeek) {
     return undefined;
   }
   const year = Number(day.date.slice(0, 4));
   if (day.date === config.anchorDate(year)) {
-    return config.anchorRank ? `${config.anchorName} (${formatRank(config.anchorRank)})` : config.anchorName;
+    return withRank && config.anchorRank ? `${config.anchorName} (${formatRank(config.anchorRank)})` : config.anchorName;
   }
   return undefined;
 }
@@ -242,43 +242,65 @@ function octaveCommemorationLabel(octave: ActiveOctave): string {
   return octaveCoreName(octave);
 }
 
-/** Every `kind: 'octave'` commemoration on `day` other than `excludeId` —
- * an octave already serving as the day's own headline (a sanctoral
- * winner sharing an octave's id, or the octave `resolveActiveOctave`
- * itself picked as primary below) would be redundant to list again.
- * Plain names, not `octaveLabel`'s "Nth Day within the Octave of ..."
- * phrasing — that fuller phrasing is reserved for an octave that's
- * actually the day's own primary identity, not a secondary mention
- * alongside it (same plain-name convention `commemoratedSaint` already
- * uses below). Real gap this closes: a *second*, non-winning active
- * octave (e.g. the Assumption's own day 3, alongside St. Lawrence's
- * winning closing day) was previously dropped from the label entirely,
- * regardless of which branch below actually renders the primary name. */
-function otherActiveOctaveNames(day: LiturgicalDay, excludeId: string | undefined): string[] {
-  return day.commemorations
-    .filter((c): c is Extract<Commemoration, { kind: 'octave' }> => c.kind === 'octave' && c.id !== excludeId)
-    .map((c) => c.name);
-}
-
-/** Same commemoration-filtering as `otherActiveOctaveNames`, but rendered
- * with `octaveCommemorationLabel`'s fuller "Nth Day within the Octave of X"
- * phrasing rather than a plain name — the real DO title an octave day
- * carries even when it *lost* outright to an occurring saint (e.g. Aug 19's
- * real Divino Afflatu 1954 title is "S. Joannis Eudes Confessoris ~ Duplex"
- * with the commemoration read as "Quinta die infra Octavam S. Assumptionis
- * Beatæ Mariæ Virginis", not a bare "The Assumption of the Blessed Virgin
- * Mary"). Only used from the sanctoral-winner branch below — the
- * octave-vs-octave secondary mention (`otherActiveOctaveNames` itself,
- * still used in the octave-headline branch further down) keeps its plain
- * name on purpose, per that function's own doc comment. */
-function commemoratedOctaveDayLabels(day: LiturgicalDay, excludeId: string | undefined): string[] {
-  const active = activeOctavesFor(day.date);
-  return day.commemorations
-    .filter((c): c is Extract<Commemoration, { kind: 'octave' }> => c.kind === 'octave' && c.id !== excludeId)
-    .map((c) => {
-      const octave = active.find((a) => a.id === c.id);
-      return octave ? octaveCommemorationLabel(octave) : c.name;
-    });
+/** Every commemoration on `day`, resolved to display strings and grouped
+ * by kind — the single place that decides both "is this commemoration
+ * eligible to show at all here" and "how is it formatted", so every
+ * caller below shares the same answer instead of each hand-rolling its
+ * own filter/format pass (that duplication is exactly how Aug 19's octave
+ * phrasing, Aug 17's closing-day title, and Aug 16's missing Sunday
+ * commemoration ended up as three separate bugs instead of one). Callers
+ * still decide their own *order* — e.g. the octave-headline branch wants
+ * octaves before a commemorated saint, while a plain Sunday/feria wants a
+ * commemorated saint *before* its own temporal label — since that
+ * ordering reflects a real, deliberate liturgical convention per branch,
+ * not an accident to unify away.
+ *
+ * - `sanctoral`: every commemorated saint, plain name, no rank (multiple
+ *   real ones can coexist — e.g. two colliding saints on the same date —
+ *   this app's own "generous commemorations" design keeps every one of
+ *   them, not just the first).
+ * - `temporal`: the day's own real Sunday/feria identity, if
+ *   `decideOccurrence` demoted it to a commemoration (`ordinary-sunday`/
+ *   `privileged-feria`/`privileged-feria-minor`) — matched by id against
+ *   `resolveTemporalId(day.date)` specifically, not "any temporal-kind
+ *   commemoration present", so unrelated side-notes like
+ *   `applyEpiphany6Commemoration`'s fixed `post-epiphany-6` don't get
+ *   mistaken for it. Rendered via `anchorDayName`/`temporalLabel`, the
+ *   same machinery a primary temporal label uses, minus the rank.
+ * - `octave`: every active octave other than `excludeOctaveId` (the
+ *   octave already serving as the day's own headline, if any) — only
+ *   when `showOctaves` is true. Live-verified this is *not* simply "is an
+ *   octave active": on a Sunday or privileged feria a saint won outright
+ *   against, an unrelated active octave isn't commemorated at all (Aug
+ *   16's St. Joachim names only the Sunday, not St. Lawrence's/the
+ *   Assumption's octaves, even though both are technically active) —
+ *   octaves are only shown on `ordinary-feria` (no real standing of its
+ *   own to prefer instead) or when the octave itself is governing the
+ *   headline. Rendered via `octaveCommemorationLabel` — the "Nth Day
+ *   within the Octave of X" phrasing, no rank.
+ */
+function collectCommemorations(
+  day: LiturgicalDay,
+  opts: { showOctaves: boolean; excludeOctaveId?: string },
+): { sanctoral: string[]; temporal: string[]; octaves: string[] } {
+  const temporalId = resolveTemporalId(day.date);
+  const activeOctaves = opts.showOctaves ? activeOctavesFor(day.date) : [];
+  const sanctoral: string[] = [];
+  const temporal: string[] = [];
+  const octaves: string[] = [];
+  for (const c of day.commemorations) {
+    if (c.kind === 'sanctoral') {
+      sanctoral.push(c.name);
+    } else if (c.kind === 'temporal') {
+      if (c.id === temporalId) {
+        temporal.push(anchorDayName(day, false) ?? temporalLabel(day));
+      }
+    } else if (opts.showOctaves && c.id !== opts.excludeOctaveId) {
+      const octave = activeOctaves.find((a) => a.id === c.id);
+      octaves.push(octave ? octaveCommemorationLabel(octave) : c.name);
+    }
+  }
+  return { sanctoral, temporal, octaves };
 }
 
 const RANK_LABELS: Record<FeastClass, string> = {
@@ -319,49 +341,54 @@ const TEMPORAL_CATEGORY_RANK_LABELS: Record<TemporalCategory, string> = {
 };
 
 /**
- * The full "day being celebrated" label: a feast name when
- * calendar/commemorations.ts says the day has one, combined with (or
- * replaced by) the ordinal temporal label depending on whether the feast
- * won outright or was merely commemorated. See the plan discussion this
- * came from for the three cases.
+ * The full "day being celebrated" label: the day's own primary identity
+ * (a sanctoral winner, a named temporal feast, a season's own anchor day,
+ * an octave governing the day, or the plain ordinal temporal label — in
+ * that precedence order) plus whatever `collectCommemorations` finds
+ * eligible to ride along with it. Each branch below only decides two
+ * things: what the primary label is, and what commemoration *groups* are
+ * eligible here and in what order — the actual filtering/formatting work
+ * is `collectCommemorations`'s alone, shared by every branch.
  */
 export function getDayLabel(day: LiturgicalDay): string {
   if (day.winner.kind === 'sanctoral') {
-    // A sanctoral winner can still share the day with an active octave
-    // it didn't come from (e.g. winning a tie-break against one octave
-    // while a second, unrelated octave is also active) — append those,
-    // same "winner is primary, commemorations ride along" shape every
-    // other branch below already uses. Gated on `ordinary-feria`, same
-    // as the octave-headline branch further down: a day with real
-    // standing of its own (e.g. Trinity Sunday, which is incidentally
-    // also day 8 of Pentecost's own octave) never mentions an octave —
-    // same "nobody calls it that" convention anchorDayName's own doc
-    // comment already established for the anchor-day case.
-    const otherOctaves = day.temporalCategory === 'ordinary-feria' ? commemoratedOctaveDayLabels(day, undefined) : [];
+    // Octaves only ride along here on `ordinary-feria` — a day with real
+    // standing of its own (a Sunday, a privileged feria) doesn't mention
+    // an unrelated active octave even though it's technically active
+    // (live-verified: Aug 16, 2026, St. Joachim wins outright on a Sunday
+    // that's also within both St. Lawrence's and the Assumption's octave
+    // windows, and Divino Afflatu 1954's own commemoration line names
+    // only the Sunday, no octave).
+    const { sanctoral, temporal, octaves } = collectCommemorations(day, {
+      showOctaves: day.temporalCategory === 'ordinary-feria',
+    });
     const winnerName = `${day.winner.name} (${formatRank(day.winner.rank)})`;
-    return [winnerName, ...otherOctaves].join(' — ');
+    return [winnerName, ...temporal, ...sanctoral, ...octaves].join(' — ');
   }
 
   // A named temporal feast (Christmas, Pentecost, Marian Saturday, ...)
   // shows its own name rather than the ordinal week label — same
   // "winner displaces, doesn't combine" rule a sanctoral winner gets
   // above. Most temporal ids don't have a record at all (see
-  // temporal-feasts.ts) and fall through to the ordinal label as before.
+  // temporal-feasts.ts) and fall through further down.
   const namedFeast = getTemporalFeastRecord(day.winner.id);
   if (namedFeast) {
-    return namedFeast.rank ? `${namedFeast.name} (${formatRank(namedFeast.rank)})` : namedFeast.name;
+    const primary = namedFeast.rank ? `${namedFeast.name} (${formatRank(namedFeast.rank)})` : namedFeast.name;
+    const { sanctoral } = collectCommemorations(day, { showOctaves: false });
+    return [primary, ...sanctoral].join(' — ');
   }
-
-  const commemoratedSaint = day.commemorations.find((c) => c.kind === 'sanctoral');
 
   // A season's own named anchor day (Trinity Sunday, Easter, Ash
   // Wednesday, Epiphany) outranks an active octave, same reasoning as
   // anchorDayName's own doc comment — checked before the octave case
   // below since Trinity Sunday, e.g., also happens to be day 8 of
   // Pentecost's octave, and the anchor name is what actually governs.
+  // Existing convention: a commemorated saint *leads* here, before the
+  // anchor name — not "winner first" like every branch above.
   const anchorName = anchorDayName(day);
   if (anchorName) {
-    return commemoratedSaint ? `${commemoratedSaint.name} — ${anchorName}` : anchorName;
+    const { sanctoral } = collectCommemorations(day, { showOctaves: false });
+    return [...sanctoral, anchorName].join(' — ');
   }
 
   // An active octave (St. Lawrence's, ...) is this day's real primary
@@ -387,20 +414,20 @@ export function getDayLabel(day: LiturgicalDay): string {
   // disagree. When more than one octave is active at once
   // (resolveActiveOctave), the highest-ranked wins the headline (ties
   // broken by whichever started more recently) — every other active
-  // octave still gets named too (otherActiveOctaveNames), not dropped:
-  // live-verified real case, Aug 17 -- St. Lawrence's own elevated
-  // closing day wins the headline, but the Assumption's own day 3 (a
-  // real, distinct, simultaneously-active octave, not a duplicate of
-  // Lawrence's) still belongs in the label alongside St. Hyacinth's
-  // commemoration.
+  // octave still gets named too, not dropped: live-verified real case,
+  // Aug 17 -- St. Lawrence's own elevated closing day wins the headline,
+  // but the Assumption's own day 3 (a real, distinct, simultaneously-
+  // active octave, not a duplicate of Lawrence's) still belongs in the
+  // label alongside St. Hyacinth's commemoration.
   const activeOctave =
     day.temporalCategory === 'ordinary-feria' ? resolveActiveOctave(day.date) : octaveGoverningPrivilegedDay(day);
   if (activeOctave) {
+    const { sanctoral, octaves } = collectCommemorations(day, { showOctaves: true, excludeOctaveId: activeOctave.id });
     const primary = octaveLabel(activeOctave);
-    const rest = [...otherActiveOctaveNames(day, activeOctave.id), ...(commemoratedSaint ? [commemoratedSaint.name] : [])];
-    return [primary, ...rest].join(' — ');
+    return [primary, ...octaves, ...sanctoral].join(' — ');
   }
 
   const temporal = `${temporalLabel(day)} (${TEMPORAL_CATEGORY_RANK_LABELS[day.temporalCategory]})`;
-  return commemoratedSaint ? `${commemoratedSaint.name} — ${temporal}` : temporal;
+  const { sanctoral } = collectCommemorations(day, { showOctaves: false });
+  return [...sanctoral, temporal].join(' — ');
 }
