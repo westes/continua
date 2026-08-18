@@ -49,20 +49,11 @@ describe('January sanctoral pull (first pass)', () => {
     // Jan 14, 2029 is the Second Sunday after Epiphany (ordinary, not
     // privileged) — St. Felix (simplex) is commemorated per the ordinary-
     // Sunday rule, matching the historical calendar exactly. St. Hilary of
-    // Poitiers (Semiduplex, also native to this date) is commemorated too
-    // -- live-verified (Divino Afflatu 1954) as the real, sole
-    // commemoration named there; this app's own generous-commemoration
-    // design (see CLAUDE.md) additionally keeps St. Felix rather than
-    // dropping him now that Hilary no longer needs the day to himself.
+    // Poitiers (Semiduplex, also native to this date) transfers off the
+    // Sunday instead, per direct instruction, so he doesn't appear here.
     const day = resolveDay('2029-01-14');
     expect(day.winner).toEqual({ kind: 'temporal', id: 'post-epiphany-2' });
     expect(day.commemorations).toEqual([
-      {
-        kind: 'sanctoral',
-        id: 'st-hilary-of-poitiers',
-        name: 'St. Hilary of Poitiers, Bishop, Confessor and Doctor of the Church',
-        rank: 'semiduplex',
-      },
       { kind: 'sanctoral', id: 'st-felix-presbyter', name: 'St. Felix, Priest and Martyr', rank: 'simplex' },
     ]);
   });

@@ -53,15 +53,12 @@ describe('November sanctoral pull (first pass)', () => {
     expect(day.commemorations).toEqual([]);
   });
 
-  it("St. Clement (Semiduplex) is commemorated on his own Sunday rather than transferring, so St. Chrysogonus's own following day is unaffected either way", () => {
-    // Corrects an earlier, unverified assumption that a Semiduplex saint
-    // landing on an ordinary Sunday transfers forward -- live-verified
-    // (Divino Afflatu 1954) St. Clement is commemorated right there on
-    // Nov 23 ("Commemoratio: S. Clementis Papæ et Martyris"), same
-    // treatment Simplex already got (see calendar/commemorations.ts's
-    // `ordinary-sunday` case). St. Felicitas (Simplex, also native to
-    // Nov 23) is commemorated alongside him too, per this app's own
-    // generous-commemoration design.
+  it('St. Clement transfers forward into St. Chrysogonus\'s day whenever his own date falls on a Sunday -- a single-day transfer this app models correctly, unlike August\'s multi-day-skip case', () => {
+    // Per direct instruction: a Semiduplex feast (St. Clement) on an
+    // ordinary Sunday transfers to the next open day rather than being
+    // commemorated in place -- St. Felicitas (Simplex, also native to
+    // Nov 23) stays behind and is commemorated under the Sunday itself,
+    // since Simplex still gets the plain-commemoration treatment.
     const clean = resolveDay('2032-11-24'); // Nov 23, 2032 is not a Sunday
     expect(clean.winner).toEqual({
       kind: 'sanctoral',
@@ -72,19 +69,20 @@ describe('November sanctoral pull (first pass)', () => {
     const onceASunday = resolveDay('2025-11-23'); // a Sunday
     expect(onceASunday.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-24' });
     expect(onceASunday.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-clement', name: 'St. Clement I, Pope and Martyr', rank: 'semiduplex' },
       { kind: 'sanctoral', id: 'st-felicitas', name: 'St. Felicitas, Martyr', rank: 'simplex' },
     ]);
-    // St. Chrysogonus's own following day is untouched either way -- no
-    // incoming transfer any more.
+    // St. Clement transfers into Nov 24 and wins the collision against
+    // St. Chrysogonus (native there, Simplex).
     const followingDay = resolveDay('2025-11-24');
     expect(followingDay.winner).toEqual({
       kind: 'sanctoral',
-      id: 'st-chrysogonus',
-      name: 'St. Chrysogonus, Martyr',
-      rank: 'simplex',
+      id: 'st-clement',
+      name: 'St. Clement I, Pope and Martyr',
+      rank: 'semiduplex',
     });
-    expect(followingDay.commemorations).toEqual([]);
+    expect(followingDay.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'st-chrysogonus', name: 'St. Chrysogonus, Martyr', rank: 'simplex' },
+    ]);
   });
 
   it('St. Andrew wins outright at Duplex II. classis with a real proper collect and antiphon, commemorating the Advent feria itself in years his fixed date falls within Advent', () => {

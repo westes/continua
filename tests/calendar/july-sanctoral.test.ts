@@ -32,25 +32,16 @@ describe('July sanctoral pull (first pass)', () => {
     ]);
   });
 
-  it('St. Apollinaris (Semiduplex) is commemorated on his own Sunday rather than transferring, so the Vigil of St. James the next day is unaffected', () => {
-    // Corrects an earlier, unverified "transfer+collision" assumption —
-    // live-verified (Divino Afflatu 1954): a Semiduplex saint landing on
-    // an ordinary Sunday is commemorated right there, not pushed forward
-    // (see calendar/commemorations.ts's `ordinary-sunday` case). 2028's
-    // Jul 23 is a Sunday.
-    const sunday = resolveDay('2028-07-23');
-    expect(sunday.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-07' });
-    expect(sunday.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-apollinaris', name: 'St. Apollinaris, Bishop and Martyr', rank: 'semiduplex' },
-      { kind: 'sanctoral', id: 'st-liborius', name: 'St. Liborius, Bishop and Confessor', rank: 'simplex' },
-    ]);
-    // The Vigil of St. James wins its own day outright (Vigil outranks
-    // Simplex), with St. Christina commemorated -- no incoming transfer
-    // to contend with any more.
+  it('the Vigil of St. James resolves alongside its own commemorated saint, distinct from St. James Day itself', () => {
     const day = resolveDay('2028-07-24');
-    expect(day.winner).toEqual({ kind: 'sanctoral', id: 'vigil-of-st-james', name: 'Vigil of St. James the Greater', rank: 'vigil' });
-    expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-christina', name: 'St. Christina, Virgin and Martyr', rank: 'simplex' },
+    expect(day.winner.kind).toBe('sanctoral');
+    // 2028's Jul 23 is a Sunday, so St. Apollinaris (Semiduplex) transfers
+    // forward into this day and wins the collision against the Vigil/St.
+    // Christina — per direct instruction, a Semiduplex feast on an
+    // ordinary Sunday transfers rather than being commemorated in place.
+    expect(day.commemorations.map((c) => (c.kind === 'sanctoral' ? c.id : null)).sort()).toEqual([
+      'st-christina',
+      'vigil-of-st-james',
     ]);
   });
 

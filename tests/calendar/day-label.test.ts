@@ -92,20 +92,17 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     expect(getDayLabel(resolveDay('2024-11-11'))).toBe(
       'St. Martin of Tours, Bishop and Confessor (Duplex Majus) — St. Menna, Martyr',
     );
-    // St. Gregory Thaumaturgus (Semiduplex, his real date) is commemorated
-    // right here, not transferred to Nov 18 -- live-verified (both
-    // Tridentine 1906 and Divino Afflatu 1954): a Semiduplex saint landing
-    // on an ordinary Sunday stays and is commemorated there, the same as
-    // Simplex, not pushed to the next open day (see
-    // calendar/commemorations.ts's `ordinary-sunday` case).
-    expect(getDayLabel(resolveDay('2024-11-17'))).toBe(
-      'St. Gregory Thaumaturgus, Bishop and Confessor — The 6th Sunday after Epiphany (Semiduplex)',
-    );
+    expect(getDayLabel(resolveDay('2024-11-17'))).toBe('The 6th Sunday after Epiphany (Semiduplex)');
     // 2024-11-18 is the Dedication of the Basilicas of Ss. Peter and Paul
-    // (pre-existing fixed content) alone now -- again a real winning
-    // saint, not the ferial fallback, and no longer also carrying St.
-    // Gregory Thaumaturgus (he stays on his own real day, Nov 17, above).
-    expect(getDayLabel(resolveDay('2024-11-18'))).toBe('Dedication of the Basilicas of Ss. Peter and Paul (Duplex)');
+    // (pre-existing fixed content) -- again a real winning saint, not the
+    // ferial fallback -- with St. Gregory Thaumaturgus (Semiduplex,
+    // native to Nov 17 above) commemorated alongside it instead: per
+    // direct instruction, a Semiduplex feast on an ordinary Sunday
+    // transfers to the next open day rather than being commemorated in
+    // place, and Nov 18 is that day.
+    expect(getDayLabel(resolveDay('2024-11-18'))).toBe(
+      'Dedication of the Basilicas of Ss. Peter and Paul (Duplex) — St. Gregory Thaumaturgus, Bishop and Confessor',
+    );
     // 2035-10-29, a Monday in the 3rd week of a different overflow
     // stretch, is genuinely clean (no sanctoral entry, no commemoration)
     // -- covers the ferial "Monday in the Nth week after Epiphany" format
@@ -120,11 +117,14 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // Every year 1900-2100 lands on this same id for its own last Sunday
     // before Advent, so this ordinal is fixed, not overflow-year-specific
     // -- confirmed against a non-overflow year (1943) too.
-    // St. Cecilia (Semiduplex, her real date) is commemorated right here
-    // too, not transferred -- live-verified (Divino Afflatu 1954), same
-    // rule as St. Gregory Thaumaturgus above.
-    expect(getDayLabel(resolveDay('2026-11-22'))).toBe(
-      'St. Cecilia, Virgin and Martyr — The 23rd Sunday after Trinity (Semiduplex)',
+    // St. Cecilia (Semiduplex, her real date) transfers off this Sunday
+    // rather than being commemorated in place -- same rule as St. Gregory
+    // Thaumaturgus above -- landing on 2026-11-23 instead, where St.
+    // Clement already natively wins; Cecilia loses that tied collision
+    // (both Semiduplex) and joins St. Felicitas as a commemoration there.
+    expect(getDayLabel(resolveDay('2026-11-22'))).toBe('The 23rd Sunday after Trinity (Semiduplex)');
+    expect(getDayLabel(resolveDay('2026-11-23'))).toBe(
+      'St. Clement I, Pope and Martyr (Semiduplex) — St. Felicitas, Martyr — St. Cecilia, Virgin and Martyr',
     );
     // 1943-11-21 is also the Presentation of the BVM (Duplex Majus, added
     // 2026-08 — see presentation-of-the-bvm.yml). It's `ordinary-sunday`
