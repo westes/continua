@@ -69,6 +69,7 @@ import { resolveCommon, getDayCollect, resolveOfficeWinner, verifiedText, splitN
 import { getBiblePlanReadings } from '../propers/bible-plan';
 import { getNocturnReadings, type NocturnReading } from '../propers/nocturn-readings';
 import { getOctaveReading } from '../propers/octave-readings';
+import { getMatinsPsalmodyOverride } from './matins-psalmody-overrides';
 import matinsSundayAntiphonsData from '../data/hours/matins-sunday-antiphons.yml';
 
 type BilingualText = Partial<Record<string, string>>;
@@ -76,9 +77,20 @@ interface SundayGroup {
   psalms: number[];
   antiphon: BilingualText;
 }
+interface ScriptureRef {
+  book: string;
+  chapter: number;
+  verses?: string;
+}
 interface SundayNocturn {
   groups?: SundayGroup[];
-  canticles?: { book: string; chapter: number; verses?: string }[];
+  // Usually one ref per canticle; more than one when the source cites a
+  // single canticle across a chapter boundary (e.g. St. Lawrence's own
+  // Nocturn 3, "Eccli 14:22;15:3-4;15:6" — one canticle, two Sirach
+  // chapters) — concatenated in order, not rendered as separate
+  // canticles, matching how the source itself presents it as one entry
+  // under one heading.
+  canticles?: { refs: ScriptureRef[] }[];
   antiphon?: BilingualText;
   versicle: { v: BilingualText; r: BilingualText };
 }
@@ -144,14 +156,14 @@ function sundayCanticleNocturn(group: SundayNocturn, day: LiturgicalDay): Resolv
   const { incipit, full } = splitNamedAntiphon(verifiedText(group.antiphon ?? {}));
   const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
   const parts: ResolvedPart[] = (group.canticles ?? []).map((c, i) => {
-    const verses = getScriptureVerses(c.book, c.chapter, c.verses);
+    const verses = c.refs.flatMap((ref) => getScriptureVerses(ref.book, ref.chapter, ref.verses));
     const text: BilingualText = {
       la: verses.map((v) => v.text.la).filter(Boolean).join(' '),
       en: verses.map((v) => v.text.en).filter(Boolean).join(' '),
     };
     return {
       kind: 'canticle' as const,
-      canticleId: `${c.book}-${c.chapter}${c.verses ? `-${c.verses}` : ''}`,
+      canticleId: c.refs.map((ref) => `${ref.book}-${ref.chapter}${ref.verses ? `-${ref.verses}` : ''}`).join('_'),
       text: verifiedText(text),
       antiphon: i === 0 ? opening : undefined,
     };
@@ -163,6 +175,20 @@ function sundayCanticleNocturn(group: SundayNocturn, day: LiturgicalDay): Resolv
 
 function ferialPsalmody(day: LiturgicalDay): ResolvedPart[] {
   return psalmRefParts(getPsalmsFor('matins', day.weekday));
+}
+
+/** Fallback for a Duplex+ weekday feast with no matins-psalmody-overrides
+ * entry authored for its winner yet (most of them, until the bulk-content
+ * pass — see hours/matins-psalmody-overrides.ts's own doc comment): the
+ * plain ferial weekday table, chunked into 3 nocturns instead of 1 (no
+ * antiphons, no canticles — that content doesn't exist for the ferial
+ * table at all, unlike a real per-category override). Direct instruction:
+ * never blank, but honestly not that saint's own real proper psalmody
+ * until it's authored. */
+function ferialPsalmodyThreeNocturns(day: LiturgicalDay): [ResolvedPart[], ResolvedPart[], ResolvedPart[]] {
+  const psalms = ferialPsalmody(day);
+  const size = Math.ceil(psalms.length / 3);
+  return [psalms.slice(0, size), psalms.slice(size, size * 2), psalms.slice(size * 2)];
 }
 
 /** Every id whose own patristic/hagiographic/Gospel content should be
@@ -279,13 +305,37 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     { kind: 'hymn', text: resolveCommon('matins-hymn-ferial') },
   ];
 
-  if (threeNocturns) {
+  if (threeNocturns && day.weekday === 'sunday') {
     parts.push(...sundayPsalmNocturn(sundayAntiphons.nocturn1, day));
     parts.push(...(nocturn1Readings ?? []));
     parts.push(...sundayPsalmNocturn(sundayAntiphons.nocturn2, day));
     parts.push(...(nocturn2Readings ?? []));
     parts.push(...sundayCanticleNocturn(sundayAntiphons.nocturn3, day));
     parts.push(...(nocturn3Readings ?? []));
+    parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
+  } else if (threeNocturns) {
+    // A Duplex+ weekday feast — genuinely different psalmody from a real
+    // Sunday's (see hours/matins-psalmody-overrides.ts's own doc
+    // comment), not the same content reused. Uses that saint's own
+    // Common-category override when authored, falling back to the plain
+    // ferial weekday table (redistributed into 3 nocturns) otherwise.
+    const override = winner.kind === 'sanctoral' ? getMatinsPsalmodyOverride(winner.id) : undefined;
+    if (override) {
+      parts.push(...sundayPsalmNocturn(override.nocturn1, day));
+      parts.push(...(nocturn1Readings ?? []));
+      parts.push(...sundayPsalmNocturn(override.nocturn2, day));
+      parts.push(...(nocturn2Readings ?? []));
+      parts.push(...sundayCanticleNocturn(override.nocturn3, day));
+      parts.push(...(nocturn3Readings ?? []));
+    } else {
+      const [n1, n2, n3] = ferialPsalmodyThreeNocturns(day);
+      parts.push(...n1);
+      parts.push(...(nocturn1Readings ?? []));
+      parts.push(...n2);
+      parts.push(...(nocturn2Readings ?? []));
+      parts.push(...n3);
+      parts.push(...(nocturn3Readings ?? []));
+    }
     parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
   } else {
     parts.push(...ferialPsalmody(day));

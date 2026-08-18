@@ -1,0 +1,25 @@
+# Sirach (Ecclesiasticus) 15:3-4,6, transcribed from a live Divinum
+# Officium query (Monastic Tridentinum 1617, command=prayMatutinum,
+# 2026-08-17 — St. Lawrence's own octave closing day, Matins Nocturn
+# III's first canticle, "Eccli 14:22;15:3-4;15:6" — see
+# data/hours/matins-psalmody-overrides/st-lawrence.yml). Verse 5 is
+# skipped by the citation itself, not an authoring gap; only 3-4 and 6
+# are authored, the rest of the chapter is unauthored.
+book: sir
+chapter: 15
+verses:
+  - n: 3
+    text:
+      la: "Cibábit illum pane vitæ et intelléctus, * et aqua sapiéntiæ salutáris potábit illum:"
+      en: "With the bread of life and understanding, * she shall feed him, and give him the water of wholesome wisdom to drink."
+    status: { la: verified, en: verified }
+  - n: 4
+    text:
+      la: "Et firmábitur in illo, et non flectétur: et continébit illum, et non confundétur: * et exaltábit illum apud próximos suos."
+      en: "And she shall be made strong in him, and he shall not be moved: And she shall hold him fast, and he shall not be confounded: * and she shall exalt him among his neighbours."
+    status: { la: verified, en: verified }
+  - n: 6
+    text:
+      la: "Et nómine ætérno hæreditábit illum * Dóminus Deus noster."
+      en: "And shall cause him to inherit an everlasting name * the Lord our God."
+    status: { la: verified, en: verified }

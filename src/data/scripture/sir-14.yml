@@ -1,0 +1,14 @@
+# Sirach (Ecclesiasticus) 14:22, transcribed from a live Divinum Officium
+# query (Monastic Tridentinum 1617, command=prayMatutinum, 2026-08-17 —
+# St. Lawrence's own octave closing day, Matins Nocturn III's first
+# canticle, "Eccli 14:22;15:3-4;15:6" — see
+# data/hours/matins-psalmody-overrides/st-lawrence.yml). Only this verse
+# is authored; the rest of the chapter is unauthored.
+book: sir
+chapter: 14
+verses:
+  - n: 22
+    text:
+      la: "Beátus vir qui in sapiéntia morábitur, et qui in justítia sua meditábitur, * et in sensu cogitábit circumspectiónem Dei."
+      en: "Blessed is the man that shall continue in wisdom, and that shall meditate in his justice, * and in his mind shall think of the all-seeing eye of God."
+    status: { la: verified, en: verified }

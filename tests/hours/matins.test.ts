@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { resolveOrdo } from '../../src/hours';
+import { getPsalmsFor } from '../../src/psalter/distribution';
 
 // Two clean proof dates, one per branch — see hours/matins.ts's own header
 // and TODO.md for why this is a mechanism build with a small content slice,
@@ -118,5 +119,67 @@ describe('resolveOrdo("matins", ...) Sunday (3-nocturn) branch', () => {
     const prayerIndex = ordo.parts.findIndex((p) => p.kind === 'prayer');
     expect(teDeumIndex).toBeGreaterThan(lastLessonIndex);
     expect(prayerIndex).toBeGreaterThan(teDeumIndex);
+  });
+});
+
+describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunday) branch', () => {
+  // 2026-08-17 -- St. Lawrence's own octave closing day ("In Octava S.
+  // Laurentii Martyris ~ Duplex"), live-verified directly against the
+  // reference engine (Monastic Tridentinum 1617, command=prayMatutinum).
+  // The mechanism bug this proves fixed: a Duplex+ weekday feast used to
+  // fall through to reusing the literal *Sunday* psalmody (Ps 20-31)
+  // unconditionally -- confirmed wrong, since a real Duplex+ weekday
+  // feast has its own genuinely different psalmody (see
+  // hours/matins-psalmody-overrides.ts and its own st-lawrence.yml proof
+  // data for the full sourcing detail).
+  const ordo = resolveOrdo('matins', '2026-08-17');
+
+  it("uses St. Lawrence's own proper psalmody, not the Sunday scheme, across 3 nocturns plus a Te Deum", () => {
+    const psalms = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
+    // Ps 3 + 94 (opening/invitatory), then his own Nocturn 1 (1,2,4,5,8,10)
+    // and Nocturn 2 (14,16,20,23,63,91) -- confirmed live, not the Sunday
+    // scheme's Ps 20-31 at all.
+    expect(psalms).toEqual([3, 94, 1, 2, 4, 5, 8, 10, 14, 16, 20, 23, 63, 91]);
+    expect(ordo.parts.some((p) => p.kind === 'te-deum')).toBe(true);
+  });
+
+  it("every Nocturn 1/2 psalm carries St. Lawrence's own proper antiphon, verified in both languages", () => {
+    const psalmParts = ordo.parts.filter((p) => p.kind === 'psalm') as { psalmNumber: number; antiphon?: { status: Record<string, string> } }[];
+    // Skip Ps 3 (opening, no antiphon) and Ps 94 (the Invitatory, its own
+    // separate antiphon convention) -- the remaining 12 are his own.
+    const nocturnPsalms = psalmParts.filter((p) => ![3, 94].includes(p.psalmNumber));
+    expect(nocturnPsalms).toHaveLength(12);
+    for (const p of nocturnPsalms) {
+      expect(p.antiphon?.status.la).toBe('verified');
+      expect(p.antiphon?.status.en).toBe('verified');
+    }
+  });
+
+  it('has 3 real OT canticles in Nocturn 3, verified in both languages, sourced from the newly-authored Sirach/Jeremiah chapters', () => {
+    const canticles = ordo.parts.filter((p) => p.kind === 'canticle') as { canticleId: string; text: { status: Record<string, string> } }[];
+    expect(canticles).toHaveLength(3);
+    // The first canticle spans two Sirach chapters under one heading in
+    // the source -- kept as one canticle with two refs, not split.
+    expect(canticles[0]?.canticleId).toBe('sir-14-22_sir-15-3-4_sir-15-6');
+    for (const c of canticles) {
+      expect(c.text.status.la).toBe('verified');
+      expect(c.text.status.en).toBe('verified');
+    }
+  });
+
+  it("falls back to the plain ferial weekday table, redistributed into 3 nocturns, for a Duplex+ weekday winner with no override authored", () => {
+    // St. Ignatius of Antioch (Duplex, Common of a Martyr-Bishop, no
+    // matins-psalmody-overrides entry authored) -- Feb 1 2029, confirmed
+    // clean (no Sunday collision) per his own saint-file comment.
+    const fallback = resolveOrdo('matins', '2029-02-01');
+    const psalms = fallback.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
+    // Ps 3 + 94, then Thursday's own 9-psalm ferial table (psalter-
+    // distribution.yml), not St. Lawrence's proper psalmody and not the
+    // Sunday scheme either.
+    expect(psalms[0]).toBe(3);
+    expect(psalms[1]).toBe(94);
+    expect(psalms.slice(2)).toEqual(getPsalmsFor('matins', 'thursday').map((r) => r.number));
+    expect(fallback.parts.some((p) => p.kind === 'te-deum')).toBe(true);
+    expect(fallback.parts.some((p) => p.kind === 'canticle')).toBe(false);
   });
 });

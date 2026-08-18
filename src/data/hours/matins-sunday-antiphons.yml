@@ -62,9 +62,9 @@ nocturn2:
 
 nocturn3:
   canticles:
-    - { book: isa, chapter: 33, verses: "2-10" }
-    - { book: isa, chapter: 33, verses: "13-18" }
-    - { book: sir, chapter: 36, verses: "14-19" }
+    - refs: [{ book: isa, chapter: 33, verses: "2-10" }]
+    - refs: [{ book: isa, chapter: 33, verses: "13-18" }]
+    - refs: [{ book: sir, chapter: 36, verses: "14-19" }]
   antiphon:
     la: "Allelúja, allelúja, allelúja."
     en: "Alleluia, alleluia, alleluia."
