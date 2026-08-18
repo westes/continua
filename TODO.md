@@ -1842,6 +1842,30 @@ Confessor-Bishop, Virgin, Doctor, etc. — the largest population, per the earli
 each needs its own category file (one live `prayMatutinum` query against a no-proper-antiphon
 saint) before any of its own saints' proper antiphons can be authored against it.
 
+### Matins psalmody overrides — category tier wired in as a real fallback (2026-08)
+
+Reversed the "category files are documentation-only" decision above now that two categories
+are trusted: `getMatinsPsalmodyOverride` is now a real three-tier lookup — **proper**
+(`saints/*.yml`) → **Common** (`categories/*.yml`, joined via the winner's own
+`SaintRecord.common` through a new `getSaintRecord` import) → **ferial fallback**
+(`matins.ts`'s own plain weekday table, unchanged, now genuinely the last resort rather than
+the default for every unauthored saint). This is "prefer real text over missing" applied one
+tier further, once the tier itself had proof behind it. `MatinsPsalmodyOverride` and
+`MatinsPsalmodyCategory` now share a `MatinsPsalmodyScheme` base (`nocturn1/2/3`) so the lookup
+can return either without a cast.
+
+Category files gained an `aliases` field: `common-of-a-martyr.yml` lists
+`common-of-a-martyr-bishop`, so all three of its Duplex+ saints (Ignatius, Callistus, Boniface —
+confirmed none has proper text of his own) now resolve to real, verified Common psalmody instead
+of the ferial table, with zero new authoring.
+
+`tests/hours/matins.test.ts`'s old "falls back to ferial" case (St. Ignatius, 2029-02-01) is
+rewritten as a Common-tier proof (his Nocturn 2 correctly using the Common default's Ps 64, not
+Lawrence's own proper Ps 16); a fresh genuine ferial-fallback proof was added (St. John Bosco,
+Common of a Confessor — no category authored yet for that Common — 2026-01-31, confirmed a
+clean Saturday with no Sunday collision). `npm test` (375 tests), `npm run build`, and
+`tsc --noEmit` all pass.
+
 ### Calendar precedence: a tie against an octave's own elevated closing day now favors the octave (2026-08)
 
 Real bug found and fixed, same session as the Matins psalmody fix above, discovered while

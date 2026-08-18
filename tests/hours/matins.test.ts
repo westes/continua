@@ -167,18 +167,44 @@ describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunda
     }
   });
 
-  it("falls back to the plain ferial weekday table, redistributed into 3 nocturns, for a Duplex+ weekday winner with no override authored", () => {
+  it("falls through to its Common category's own generic psalmody for a Duplex+ weekday winner with no proper antiphon authored", () => {
     // St. Ignatius of Antioch (Duplex, Common of a Martyr-Bishop, no
-    // matins-psalmody-overrides entry authored) -- Feb 1 2029, confirmed
-    // clean (no Sunday collision) per his own saint-file comment.
-    const fallback = resolveOrdo('matins', '2029-02-01');
+    // proper antiphon of his own) -- Feb 1 2029, confirmed clean (no
+    // Sunday collision) per his own saint-file comment.
+    // getMatinsPsalmodyOverride's Common tier resolves
+    // common-of-a-martyr-bishop via common-of-a-martyr.yml's own
+    // `aliases` (the reference engine's own Matins psalmody for
+    // Martyr-Bishop redirects outright to plain Martyr) -- real,
+    // verified Common text, not the plain ferial table.
+    const common = resolveOrdo('matins', '2029-02-01');
+    const psalms = common.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
+    // Same Nocturn 1 as St. Lawrence's own (1,2,4,5,8,10), but Nocturn 2
+    // uses the Common default's Ps 64, not Lawrence's own proper Ps 16.
+    expect(psalms).toEqual([3, 94, 1, 2, 4, 5, 8, 10, 14, 20, 23, 63, 64, 91]);
+    expect(common.parts.some((p) => p.kind === 'te-deum')).toBe(true);
+    expect(common.parts.some((p) => p.kind === 'canticle')).toBe(true);
+
+    const psalmParts = common.parts.filter((p) => p.kind === 'psalm') as { psalmNumber: number; antiphon?: { status: Record<string, string> } }[];
+    const nocturnPsalms = psalmParts.filter((p) => ![3, 94].includes(p.psalmNumber));
+    // The generic Common antiphon text is real and verified, even though
+    // it is not proper to Ignatius himself.
+    for (const p of nocturnPsalms) {
+      expect(p.antiphon?.status.la).toBe('verified');
+      expect(p.antiphon?.status.en).toBe('verified');
+    }
+  });
+
+  it('falls all the way back to the plain ferial weekday table, redistributed into 3 nocturns, when neither a proper nor a Common entry is authored', () => {
+    // St. John Bosco (Duplex, Common of a Confessor -- no
+    // matins-psalmody-overrides category authored yet for either tier)
+    // -- 2026-01-31, a Saturday, confirmed clean (no Sunday collision).
+    const fallback = resolveOrdo('matins', '2026-01-31');
     const psalms = fallback.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
-    // Ps 3 + 94, then Thursday's own 9-psalm ferial table (psalter-
-    // distribution.yml), not St. Lawrence's proper psalmody and not the
-    // Sunday scheme either.
+    // Ps 3 + 94, then Saturday's own 9-psalm ferial table
+    // (psalter-distribution.yml), not any Common-of-a-Confessor scheme.
     expect(psalms[0]).toBe(3);
     expect(psalms[1]).toBe(94);
-    expect(psalms.slice(2)).toEqual(getPsalmsFor('matins', 'thursday').map((r) => r.number));
+    expect(psalms.slice(2)).toEqual(getPsalmsFor('matins', 'saturday').map((r) => r.number));
     expect(fallback.parts.some((p) => p.kind === 'te-deum')).toBe(true);
     expect(fallback.parts.some((p) => p.kind === 'canticle')).toBe(false);
   });

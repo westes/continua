@@ -315,10 +315,12 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
   } else if (threeNocturns) {
     // A Duplex+ weekday feast — genuinely different psalmody from a real
-    // Sunday's (see hours/matins-psalmody-overrides.ts's own doc
-    // comment), not the same content reused. Uses that saint's own
-    // Common-category override when authored, falling back to the plain
-    // ferial weekday table (redistributed into 3 nocturns) otherwise.
+    // Sunday's, not the same content reused. getMatinsPsalmodyOverride
+    // itself does the proper -> Common -> (nothing) tiering; only the
+    // final "nothing authored at all" tier — the plain ferial weekday
+    // table, redistributed into 3 nocturns — lives here (see
+    // hours/matins-psalmody-overrides.ts's own doc comment for the full
+    // three-tier picture).
     const override = winner.kind === 'sanctoral' ? getMatinsPsalmodyOverride(winner.id) : undefined;
     if (override) {
       parts.push(...sundayPsalmNocturn(override.nocturn1, day));

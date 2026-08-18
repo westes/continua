@@ -9,19 +9,23 @@
 # this same Common-of-a-Martyr file -- the two categories share one
 # scheme, not two.
 #
-# This file is documentation/reference content only, not yet wired into
-# `hours/matins-psalmody-overrides.ts`'s resolution -- per this project's
-# "stay on the ferial fallback until proper antiphon text is authored
-# per-saint" decision (2026-08), a saint with no entry under
-# matins-psalmody-overrides/saints/ still falls all the way back to the
-# plain ferial weekday table, never to this generic Common text. Recorded
-# here so the next Common-of-a-Martyr(-Bishop) saint's own proper file
-# doesn't have to re-derive/re-verify these same shared psalm numbers and
-# versicles from scratch, and as the reference point for what "differs
-# from Common" means when authoring one (see
+# `aliases` registers `common-of-a-martyr-bishop` under this same scheme
+# per the redirect confirmed above, rather than duplicating this file --
+# checked all 3 Duplex+ Common-of-a-Martyr-Bishop saints on the calendar
+# (Ignatius, Callistus I, Boniface of Mainz) and none has a proper
+# antiphon of his own, so this alias is how each of them gets real
+# psalmody at all (`hours/matins-psalmody-overrides.ts`'s tiered
+# lookup falls through proper -> Common -> ferial; this is their Common
+# tier).
+#
+# Recorded so the next Common-of-a-Martyr(-Bishop) saint's own proper
+# file doesn't have to re-derive/re-verify these same shared psalm
+# numbers and versicles from scratch, and as the reference point for
+# what "differs from Common" means when authoring one (see
 # matins-psalmody-overrides/saints/st-lawrence.yml's own note on its one
 # genuine deviation, Ps 16 vs this file's Ps 64 in Nocturn 2).
 id: common-of-a-martyr
+aliases: [common-of-a-martyr-bishop]
 nocturn1:
   groups:
     - psalms: [1]
