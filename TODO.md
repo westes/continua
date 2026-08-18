@@ -43,11 +43,13 @@ across every hour and content type in this app.
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
    - Matins psalmody overrides for a Duplex+ weekday feast (see "Matins psalmody overrides"
-     below): mechanism refactored to category-keyed (`categories/*.yml` + `saints/*.yml`), two
+     below): mechanism refactored to category-keyed (`categories/*.yml` + `saints/*.yml`), four
      categories authored (Common of a Martyr via St. Lawrence, Common of an Apostle via St.
-     Andrew). Every other Common category (~73 saints across Confessor, Virgin, Doctor, etc.)
-     still falls back to the plain ferial weekday table, redistributed into 3 nocturns, until
-     its own category's real psalmody is authored.
+     Andrew, Common of a Confessor via St. Francis of Paola, Common of a Confessor-Bishop via
+     St. Basil the Great). Every other Common category (Virgin, Doctor, Common of Several
+     Martyrs, etc. — the largest remaining population) still falls back to the plain ferial
+     weekday table, redistributed into 3 nocturns, until its own category's real psalmody is
+     authored.
    - The four "Commemoratio Octavæ" Ant+V/R+collect blocks (Christmas Octave's own
      Nativity/Stephen/John/Holy-Innocents commemorations, e.g. on Dec 30) are now done —
      see "Octave content" below. St. Frances of Rome's/
@@ -1865,6 +1867,55 @@ Lawrence's own proper Ps 16); a fresh genuine ferial-fallback proof was added (S
 Common of a Confessor — no category authored yet for that Common — 2026-01-31, confirmed a
 clean Saturday with no Sunday collision). `npm test` (375 tests), `npm run build`, and
 `tsc --noEmit` all pass.
+
+### Matins psalmody overrides — Confessor categories authored, both tiers identical apart from versicles (2026-08)
+
+Two more Common categories authored, following the same live-verify-a-saint-with-no-proper-
+antiphon method as Martyr/Apostle:
+
+- **`common-of-a-confessor`** (Confessor Not a Bishop, "vide C5"): from St. Francis of Paola
+  (2030-04-02, confirmed clean — safely outside Holy Week/Easter octave that year, per his own
+  saint-file comment). Nocturn 1 = Ps 1,2,4,5,8,10; Nocturn 2 = Ps 14,20,23,95,96,97; Nocturn 3
+  = one antiphon over 3 OT canticles (Sirach 14/15, Jeremiah 17, Sirach 31 — same refs already
+  authored for `common-of-a-martyr`, reused as-is).
+- **`common-of-a-confessor-bishop`** ("vide C4"): from St. Basil the Great (2035-06-14, already
+  live-verified clean per his own saint-file's note that his rendered Matins is byte-identical
+  to this Common despite his own `[Rule]` saying "vide C4a"/Doctor). Live-verified this Common's
+  psalm numbers and antiphon text are **word-for-word identical** to `common-of-a-confessor` in
+  all three nocturns — the only real difference is the three nocturn-closing versicles, which
+  swap plain-confessor imagery for priestly/episcopal imagery (e.g. Nocturn 3's "Tu es sacérdos
+  in ætérnum * secúndum órdinem Melchísedech"). Not modeled as an `aliases` redirect (unlike
+  Common-of-a-Martyr-Bishop → Common-of-a-Martyr, a genuine zero-difference redirect) because the
+  versicles really do differ and the mechanism has no partial-override/diff support — kept as
+  its own full duplicate file instead.
+
+Checked every Duplex+ saint on the calendar in both Common categories (St. Aloysius Gonzaga,
+St. Anthony of Padua, St. Paschal Baylon, St. John Cantius, St. Bernardine of Siena, St. Joseph
+Calasanctius, St. Raymond Nonnatus, St. Anthony Mary Zaccaria for `common-of-a-confessor`; St.
+Norbert, St. Andrew Corsini for `common-of-a-confessor-bishop`) — none has a proper antiphon of
+his own, so (same as Common-of-a-Martyr-Bishop before it) neither category currently has a
+saint eligible for its own `saints/` entry; a real, not accidental, gap, matching the existing
+policy of only authoring `saints/*.yml` where a genuine proper deviation exists.
+
+Two live saints, St. Aloysius Gonzaga (June 21) and St. Norbert (June 6), turned out **not** to
+be on the Monastic Tridentinum 1617 calendar at all despite having a `SanctiM/MM-DD.txt` file —
+confirmed via `Tabulae/Kalendaria/M1617.txt` (no entry) and `Tabulae/Kalendaria/M1930.txt` (only
+Norbert, added there) — both were canonized well after 1617 (Aloysius 1726, though pre-1617 in
+Norbert's case his 1582 canonization still postdates the M1617 calendar's fixed content). Their
+`SanctiM` stub files are shared infrastructure for later Monastic versions (1930/1963), not
+proof the saint was ever actually prayed under M1617 itself — a live `Pofficium.pl` query on
+their own date just falls through to a plain feria. Not a blocker for authoring the Common
+category files themselves (the Common content is shared infrastructure regardless of which
+Monastic version's kalendar wires a given saint into it), but worth remembering next time a
+"vide C" saint's own date doesn't reproduce under `version=Monastic Tridentinum 1617` — check
+`Tabulae/Kalendaria/M1617.txt` before assuming the date/year picked was wrong.
+
+`tests/hours/matins.test.ts` gained two new Common-tier proofs (Francis of Paola,
+`common-of-a-confessor`; Basil the Great, `common-of-a-confessor-bishop` — same psalm numbers as
+the other, checked directly). The old ferial-fallback proof (St. John Bosco, `common-of-a-
+confessor`, now superseded) was swapped for Ss. Fabian and Sebastian (`common-of-several-
+martyrs`, still unauthored, 2029-01-20, already live-verified clean). `npm test` (377 tests),
+`tsc --noEmit` pass.
 
 ### Calendar precedence: a tie against an octave's own elevated closing day now favors the octave (2026-08)
 
