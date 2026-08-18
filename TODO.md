@@ -42,9 +42,9 @@ across every hour and content type in this app.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
-   - The four "…benedícta…" octave-day Ant+V/R+collect blocks (Christmas Octave's own
-     Nativity/Stephen/John/Holy-Innocents commemorations, e.g. on Dec 30) — not yet modeled;
-     see "Octave content" below for the real mechanism gap this needs. St. Frances of Rome's/
+   - The four "Commemoratio Octavæ" Ant+V/R+collect blocks (Christmas Octave's own
+     Nativity/Stephen/John/Holy-Innocents commemorations, e.g. on Dec 30) are now done —
+     see "Octave content" below. St. Frances of Rome's/
      St. Bibiana's Benedictus antiphons and Ss. Ursula and Companions' were also once flagged
      here — the first two turned out already resolved (verified live, see memory
      `vu-todo-priority`'s own correction note), the third is a settled non-gap (no unique text
@@ -956,7 +956,7 @@ some by-date saint win there, e.g. St. Mark on Easter V some years, "Our
 Lady of the Snows" — not modeled in this app at all — landing on
 Post-Pentecost XI whenever the date lines up with Aug 5).
 
-### Octave content — mostly fixed (2026-08), one real gap left
+### Octave content — done (2026-08)
 
 Was: `getDayCollects` skipped a `kind: 'octave'` commemoration entirely,
 and every other office part (psalmody, hymn, chapter, Benedictus
@@ -978,15 +978,37 @@ bare collect (or a labeled "missing" placeholder) rather than the old
 unlabeled one that just read "PRAYER … (translation pending)" with no
 indication whose it was.
 
-Real remaining gap: `resolveOfficeWinner` deliberately only kicks in when
-`temporalCategory === 'ordinary-feria'` (the octave day has no standing
-of its own) — the live-verified counterexample is the Christmas Octave's
-own stack (Christmas + Stephen + John + Holy Innocents, e.g. on Dec 30,
-`privileged-feria-minor`): the *temporal* day itself keeps the office
-there ("Dominica Infra Octavam Nativitatis", `{ex Proprio de Tempore}`),
-and each of the four octaves gets its own separate "Commemoratio Octavæ
-…" Ant+V/R+collect block instead — not yet modeled; those four octave
-commemorations still contribute nothing but a name in the day label.
+Remaining gap, now closed (2026-08): `resolveOfficeWinner` deliberately
+only kicks in when `temporalCategory === 'ordinary-feria'` (the octave
+day has no standing of its own) — the live-verified counterexample was
+the Christmas Octave's own stack (Christmas + Stephen + John + Holy
+Innocents, e.g. on Dec 30, `privileged-feria-minor`): the *temporal* day
+itself keeps the office there ("Dominica Infra Octavam Nativitatis", `{ex
+Proprio de Tempore}`), and each of the four octaves gets its own separate
+"Commemoratio Octavæ …" Ant+V/R+collect block instead. Fixed by adding a
+`kind === 'octave'` branch to `getDayCollects` (gated on
+`day.temporalCategory !== 'ordinary-feria'`, the same condition
+`resolveOfficeWinner` uses, so an ordinary octave day's already-rendered
+primary content never gets a redundant repeat), plus one new
+`${id}-octave-commemoration.yml` proper file per octave for the four
+Christmas-stack ids (`christmas-day`, `st-stephen-protomartyr`,
+`st-john-apostle`, `holy-innocents`), sourced from each Sancti file's own
+`[Octava 3]` section in `../divinum-officium-reference` (Second Vespers'
+own variant — the reference engine has three slightly different
+Octava 1/2/3 texts per octave, roughly Vespers I/Lauds/Vespers II, but
+this app's `getDayCollects` renders one shared block regardless of hour,
+matching the pre-existing "one Orémus per commemoration, not chained"
+simplification already noted above). The Holy Innocents' own English
+Octava 3 block turned out to carry a mismatched antiphon in the reference
+engine itself (the Common-of-Many-Martyrs "Isti sunt" text, not a
+translation of the Latin antiphon printed beside it) — worked around by
+sourcing the correct English from that same file's own `[Ant 3]`/
+`[Versum 3]` sections instead (same Latin text, correctly paired
+translation) — see that file's own comment. Live-verified end-to-end via
+`tests/hours/vespers.test.ts`'s `2033-12-30` stacking case (all four
+blocks resolve `verified` in both languages, not `missing`). This closes
+the octave-content gap listed at the top of this file's "Open work"
+section — no octave content work remains open.
 
 ## Benedictus antiphons for every sanctoral/temporal entry (in progress)
 
