@@ -78,6 +78,16 @@ export interface SaintRecord {
   /** See calendar/types.ts's OctaveConfig doc comment. Absent for the vast
    * majority of saints — only ones with a real octave declare it. */
   octave?: OctaveConfig;
+  /** For a `rank: vigil` record only — the real id of the feast this is
+   * the eve of (e.g. `st-andrew`, not derivable from this record's own id
+   * by stripping a `vigil-of-` prefix: several vigils' ids don't match
+   * their feast's id exactly — `vigil-of-the-assumption` vs `assumption`,
+   * `vigil-of-st-james` vs `st-james-the-greater`). Lets
+   * calendar/vespers.ts's evening-anticipation merge recognize "today's
+   * Vigil is being displaced by the very feast it's the eve of" precisely
+   * (rather than guessing from date adjacency alone) and skip
+   * commemorating the Vigil redundantly alongside its own feast. */
+  vigilOf?: string;
 }
 
 const sanctoralCalendar = sanctoralCalendarData as { days: Record<string, string[]> };

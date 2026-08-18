@@ -13,6 +13,7 @@ import { resolveDay } from './index';
 import { addDays } from './date-math';
 import { easterOffsetOf } from './temporal';
 import { isAtLeast } from './commemorations';
+import { getSaintRecord } from './feasts';
 
 /**
  * Fixed/movable "feasts of the Lord" load-bearing elsewhere in this app
@@ -95,6 +96,38 @@ function tagVespersFrom(tomorrow: LiturgicalDay): LiturgicalDay {
   return { ...tomorrow, winner: { ...tomorrow.winner, vespersFrom: 'firstVespersOfTomorrow' } };
 }
 
+/** Today's own Vigil isn't commemorated alongside the very feast it's the
+ * eve of — e.g. Nov 29's Vigil of St. Andrew shouldn't also show up next
+ * to St. Andrew himself once this evening has already adopted his First
+ * Vespers, whether St. Andrew governs it outright or is merely
+ * commemorated there himself (2025-11-30: he's only commemorated under
+ * Advent I, a `privileged-sunday`, per commemorations.ts's own threshold
+ * — the Vigil would otherwise show up redundantly alongside him even
+ * though neither one is tomorrow's actual winner). Matched via each
+ * Vigil's own explicit `vigilOf` field (calendar/feasts.ts's
+ * `SaintRecord`) against tomorrow's winner *and* its commemorations, not
+ * date adjacency or name-guessing — several vigils' own ids don't map
+ * cleanly to their feast's id (`vigil-of-the-assumption` vs `assumption`,
+ * `vigil-of-st-james` vs `st-james-the-greater`), so this needs the
+ * explicit link. Scoped to this evening-anticipation merge specifically,
+ * not `commemorationOf` itself — the reverse direction
+ * (`keepsOwnSecondVespers`, commemorating *tomorrow's* Vigil while today
+ * keeps its own Vespers) can't hit this collision: a Vigil dated tomorrow
+ * belongs to a feast the day after tomorrow, never today. */
+function isVigilOfTomorrow(today: LiturgicalDay, tomorrow: LiturgicalDay): boolean {
+  if (today.winner.kind !== 'sanctoral' || today.winner.rank !== 'vigil') {
+    return false;
+  }
+  const feastId = getSaintRecord(today.winner.id)?.vigilOf;
+  if (!feastId) {
+    return false;
+  }
+  return (
+    (tomorrow.winner.kind === 'sanctoral' && tomorrow.winner.id === feastId) ||
+    tomorrow.commemorations.some((c) => c.kind === 'sanctoral' && c.id === feastId)
+  );
+}
+
 /** The ordinary anticipation path: tag tomorrow's identity, then layer in
  * today's commemoration if it's eligible (see commemorationOf). Not used
  * by the isMajorFixedFeastOfTheLord override below — whether Christmas/
@@ -104,7 +137,7 @@ function tagVespersFrom(tomorrow: LiturgicalDay): LiturgicalDay {
  * commemorations.ts), so it deliberately doesn't inherit this behavior. */
 function anticipated(today: LiturgicalDay, tomorrow: LiturgicalDay): LiturgicalDay {
   const tagged = tagVespersFrom(tomorrow);
-  const commemoration = commemorationOf(today.winner);
+  const commemoration = isVigilOfTomorrow(today, tomorrow) ? undefined : commemorationOf(today.winner);
   if (!commemoration) {
     return tagged;
   }

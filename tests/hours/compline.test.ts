@@ -88,7 +88,12 @@ describe('resolveOrdo("compline", ...)', () => {
   it('anticipates Advent I: the Saturday evening before switches to the Alma Redemptoris Mater and shows the anticipated day label', () => {
     // Nov 30, 2025 is Advent I Sunday -- also St. Andrew's own day
     // (Duplex II. classis), correctly commemorated alongside it since the
-    // November sanctoral pull (see tests/calendar/day-label.test.ts).
+    // November sanctoral pull (see tests/calendar/day-label.test.ts). This
+    // evening also anticipates Advent I from Nov 29, itself the Vigil of
+    // St. Andrew -- but the Vigil isn't also shown alongside his own
+    // feast (calendar/vespers.ts's own isVigilOfTomorrow check, keyed off
+    // each Vigil's explicit `vigilOf` field): showing both would just be
+    // redundant, the same feast named twice.
     const eve = resolveOrdo('compline', '2025-11-29');
     const last = eve.parts[eve.parts.length - 1];
     expect(last?.kind === 'preces' ? last.label : undefined).toBe('Alma Redemptoris Mater');
