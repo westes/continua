@@ -1,0 +1,102 @@
+# Generic Common-of-an-Apostle Matins psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayMatutinum,
+# 2026-08-24 -- St. Bartholomew, whose own Nocturn 1 opens with the
+# generic "In omnem terram" antiphon rather than a proper one of his own,
+# i.e. this Common's own default scheme). Cross-checked against St.
+# Andrew's own proper Matins (2026-11-30): identical psalm numbers in
+# every slot across all three nocturns, only the antiphon text differs
+# (his own proper text narrating his call and martyrdom) -- confirming
+# the psalm *numbers* here are the shared Common-of-an-Apostle pool, same
+# pattern already established for Common-of-a-Martyr (see that category
+# file's own doc comment).
+#
+# Reference/documentation content only, not wired into
+# `hours/matins-psalmody-overrides.ts`'s resolution -- see
+# common-of-a-martyr.yml's own doc comment for why (the "stay on the
+# ferial fallback until proper antiphon text is authored per-saint"
+# decision, 2026-08).
+id: common-of-an-apostle
+nocturn1:
+  groups:
+    - psalms: [18]
+      antiphon:
+        la: "In omnem terram * exívit sonus eórum, et in fines orbis terræ verba eórum."
+        en: "Their sound * hath gone forth into all the earth: and their words unto the ends of the world."
+    - psalms: [33]
+      antiphon:
+        la: "Clamavérunt justi, * et Dóminus exaudívit eos."
+        en: "The just cried * and the Lord heard them."
+    - psalms: [44]
+      antiphon:
+        la: "Constítues eos * príncipes super omnem terram: mémores erunt nóminis tui, Dómine."
+        en: "Thou shalt make them princes * over all the earth. They shall remember thy name, O Lord."
+    - psalms: [46]
+      antiphon:
+        la: "Príncipes populórum * congregáti sunt cum Deo Ábraham."
+        en: "The princes of the people * are gathered together, with the God of Abraham."
+    - psalms: [60]
+      antiphon:
+        la: "Dedísti hereditátem * timéntibus nomen tuum, Dómine."
+        en: "Thou hast given an inheritance * to them that fear thy name, O Lord."
+    - psalms: [63]
+      antiphon:
+        la: "Annuntiavérunt * ópera Dei, et facta ejus intellexérunt."
+        en: "They declared * the works of God, and understood his doings."
+  versicle:
+    v:
+      la: "In omnem terram exívit sonus eórum."
+      en: "Their sound hath gone forth into all the earth:"
+    r:
+      la: "Et in fines orbis terræ verba eórum."
+      en: "And their words unto the ends of the world."
+nocturn2:
+  groups:
+    - psalms: [74]
+      antiphon:
+        la: "Exaltabúntur * córnua justi, allelúja."
+        en: "The horns of the just * shall be exalted. Alleluia."
+    - psalms: [95]
+      antiphon:
+        la: "Annuntiavérunt * inter gentes glóriam Dómini, in ómnibus pópulis mirabília ejus."
+        en: "Declare his glory among the Gentiles: * his wonders among all people."
+    - psalms: [96]
+      antiphon:
+        la: "Lux orta est * justo, allelúja, rectis corde lætítia, allelúja."
+        en: "Light is risen * to the just, alleluia, and joy to the right of heart. Alleluia."
+    - psalms: [97]
+      antiphon:
+        la: "Déxtera Dómini * salvávit eos, et bráchium sanctum ejus, allelúja."
+        en: "His right hand hath wrought for him salvation, * and his arm is holy, alleluia."
+    - psalms: [98]
+      antiphon:
+        la: "Custodiébant * testimónia ejus, et præcépta ejus, allelúja."
+        en: "They kept his testimonies, * and the commandment which he gave them. Alleluia."
+    - psalms: [100]
+      antiphon:
+        la: "Perambulábant * in innocéntia cordis sui, in medio domus tuæ."
+        en: "I walked in the innocence of my heart, * in the midst of my house."
+  versicle:
+    v:
+      la: "Constítues eos príncipes super omnem terram."
+      en: "Thou shalt make them princes over all the earth."
+    r:
+      la: "Mémores erunt nóminis tui, Dómine."
+      en: "They shall remember thy name, O Lord."
+nocturn3:
+  antiphon:
+    la: "Gaudéte * et exsultáte, quia nómina vestra scripta sunt in cælis, dicit Dóminus."
+    en: "Be glad and rejoice, * for your names are written in heaven, said the Lord."
+  canticles:
+    - refs:
+        - { book: isa, chapter: 61, verses: "6-9" }
+    - refs:
+        - { book: sap, chapter: 3, verses: "7-9" }
+    - refs:
+        - { book: sap, chapter: 10, verses: "17-21" }
+  versicle:
+    v:
+      la: "Nimis honoráti sunt amíci tui, Deus."
+      en: "Thy friends, O Lord, are made exceedingly honourable."
+    r:
+      la: "Nimis confortátus est principátus eórum."
+      en: "Their principality is exceedingly strengthened."

@@ -1,0 +1,110 @@
+# Generic Common-of-a-Martyr Matins psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayMatutinum,
+# 2029-02-01 -- St. Ignatius of Antioch, Common of a Martyr-Bishop, whose
+# own rule file is "vide C2" i.e. entirely from this Common, no proper
+# antiphon of his own -- so his output *is* this category's generic
+# scheme, not a saint-specific deviation). Also confirmed
+# (data/hours/CommuneM/C2a.txt in the reference engine) that
+# Common-of-a-Martyr-Bishop's own Matins psalmody redirects outright to
+# this same Common-of-a-Martyr file -- the two categories share one
+# scheme, not two.
+#
+# This file is documentation/reference content only, not yet wired into
+# `hours/matins-psalmody-overrides.ts`'s resolution -- per this project's
+# "stay on the ferial fallback until proper antiphon text is authored
+# per-saint" decision (2026-08), a saint with no entry under
+# matins-psalmody-overrides/saints/ still falls all the way back to the
+# plain ferial weekday table, never to this generic Common text. Recorded
+# here so the next Common-of-a-Martyr(-Bishop) saint's own proper file
+# doesn't have to re-derive/re-verify these same shared psalm numbers and
+# versicles from scratch, and as the reference point for what "differs
+# from Common" means when authoring one (see
+# matins-psalmody-overrides/saints/st-lawrence.yml's own note on its one
+# genuine deviation, Ps 16 vs this file's Ps 64 in Nocturn 2).
+id: common-of-a-martyr
+nocturn1:
+  groups:
+    - psalms: [1]
+      antiphon:
+        la: "In lege Dómini * fuit volúntas ejus die ac nocte."
+        en: "His delight * was in the law of the Lord day and night."
+    - psalms: [2]
+      antiphon:
+        la: "Prǽdicans * præcéptum Dómini constitútus est in monte sancto ejus."
+        en: "The Lord hath set him * upon His holy hill, to declare His decree."
+    - psalms: [4]
+      antiphon:
+        la: "Fílii hóminum * scitóte quia Dóminus sanctum suum mirificávit."
+        en: "O ye sons of men, * know that the Lord hath set apart him that is holy for Himself."
+    - psalms: [5]
+      antiphon:
+        la: "Scuto bonæ voluntátis * tuæ coronásti eum Dómine."
+        en: "O Lord, Thou hast compassed him * with thy favour as with a shield."
+    - psalms: [8]
+      antiphon:
+        la: "In univérsa terra * glória et honóre coronásti eum."
+        en: "Thou hast crowned him * with glory and honour in all the earth."
+    - psalms: [10]
+      antiphon:
+        la: "Justus Dóminus, * et justítiam diléxit: æquitátem vidit vultus ejus."
+        en: "The righteous Lord * loveth righteousness; His countenance doth behold uprightness."
+  versicle:
+    v:
+      la: "Glória et honóre coronásti eum, Dómine."
+      en: "Thou hast crowned him with glory and honour, O Lord."
+    r:
+      la: "Et constituísti eum super ópera mánuum tuárum."
+      en: "And madest him to have dominion over the works of thy hands."
+nocturn2:
+  groups:
+    - psalms: [14]
+      antiphon:
+        la: "Habitábit * in tabernáculo tuo: requiéscet in monte sancto tuo."
+        en: "He shall dwell * in thy tabernacle, He shall rest upon thy holy hill."
+    - psalms: [20]
+      antiphon:
+        la: "Posuísti, Dómine, * super caput ejus corónam de lápide pretióso."
+        en: "O Lord, Thou hast set a crown * of precious stones upon his head."
+    - psalms: [23]
+      antiphon:
+        la: "Hic accípiet * benedictiónem a Dómino, et misericórdiam a Deo salutári suo; qui hæc est generátio quæréntium Dóminum."
+        en: "He shall receive * a blessing from the Lord, and mercy from God his Saviour."
+    - psalms: [63]
+      antiphon:
+        la: "Lætábitur justus * in Dómino et sperábit in eo, et laudabúntur omnes recti corde."
+        en: "The just shall rejoice * in the Lord, and shall hope in him: and all the upright in heart shall be praised."
+    - psalms: [64]
+      antiphon:
+        la: "Beátus * quem elegísti Dómine, habitábit in átriis tuis."
+        en: "Blessed is * he whom thou hast chosen: he shall dwell in thy courts."
+    - psalms: [91]
+      antiphon:
+        la: "Justus ut palma florébit: sicut cedrus Líbani multiplicábitur."
+        en: "The just shall flourish * like the palm tree: he shall grow up like the cedar of Libanus."
+  versicle:
+    v:
+      la: "Posuísti, Dómine, super caput ejus."
+      en: "O Lord, Thou hast set a crown of precious stones."
+    r:
+      la: "Corónam de lápide pretióso."
+      en: "Upon his head."
+nocturn3:
+  antiphon:
+    la: "Qui vult veníre post me, * ábnegat semetípsum, et tollet crucem suam, et sequátur me."
+    en: "If any man will come after me, * let him deny himself, and take up his cross daily, and follow me."
+  canticles:
+    - refs:
+        - { book: sir, chapter: 14, verses: "22" }
+        - { book: sir, chapter: 15, verses: "3-4" }
+        - { book: sir, chapter: 15, verses: "6" }
+    - refs:
+        - { book: jer, chapter: 17, verses: "7-8" }
+    - refs:
+        - { book: sir, chapter: 31, verses: "8-11" }
+  versicle:
+    v:
+      la: "Magna est glória ejus in salutári tuo."
+      en: "His glory is great in thy salvation."
+    r:
+      la: "Glóriam et magnum decórem impónes super eum."
+      en: "Honour and great majesty shalt Thou lay upon him."

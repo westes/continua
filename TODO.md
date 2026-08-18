@@ -43,10 +43,11 @@ across every hour and content type in this app.
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
    - Matins psalmody overrides for a Duplex+ weekday feast (see "Matins psalmody overrides"
-     below): mechanism built, keyed per-Common-category, one proof authored (St. Lawrence).
-     Every other Common category (~75 saints across Apostle, Martyr(s), Confessor, Virgin,
-     Doctor, etc.) still falls back to the plain ferial weekday table, redistributed into 3
-     nocturns, until its own category's real psalmody is authored.
+     below): mechanism refactored to category-keyed (`categories/*.yml` + `saints/*.yml`), two
+     categories authored (Common of a Martyr via St. Lawrence, Common of an Apostle via St.
+     Andrew). Every other Common category (~73 saints across Confessor, Virgin, Doctor, etc.)
+     still falls back to the plain ferial weekday table, redistributed into 3 nocturns, until
+     its own category's real psalmody is authored.
    - The four "Commemoratio Octavæ" Ant+V/R+collect blocks (Christmas Octave's own
      Nativity/Stephen/John/Holy-Innocents commemorations, e.g. on Dec 30) are now done —
      see "Octave content" below. St. Frances of Rome's/
@@ -1795,6 +1796,51 @@ Live-verified end-to-end: `tests/hours/matins.test.ts`'s new "Duplex+ weekday-fe
 block (Lawrence's own psalmody resolving `verified` in both languages across all 12 psalms +
 3 canticles, plus the ferial-fallback case via St. Ignatius). `npm test` (371 tests), `npm run
 build`, and `tsc --noEmit` all pass.
+
+### Matins psalmody overrides — category-keyed refactor + second proof, St. Andrew (2026-08)
+
+Refactored `hours/matins-psalmody-overrides.ts` per its own doc comment's flagged next step:
+`data/hours/matins-psalmody-overrides/` now splits into `saints/*.yml` (per-saint proper
+antiphon overrides, same shape as before, St. Lawrence migrated in place unchanged) and a new
+`categories/*.yml` store recording each Common category's own generic psalm-number/versicle/
+canticle-ref scheme, live-verified from a saint with *no* proper antiphon of his own (so his
+output is the category default outright). Two categories authored this pass:
+
+- **`common-of-a-martyr`**: from St. Ignatius of Antioch (2029-02-01, "vide C2" — entirely
+  Common, no proper text). Confirms Lawrence's one real deviation from the shared scheme worth
+  remembering: his own Nocturn 2 has Ps 16 where the Common default (and Ignatius) has Ps 64 —
+  a genuine proper substitution, not a transcription slip. Also confirmed (reference engine's
+  `CommuneM/C2a.txt`) that **Common-of-a-Martyr-Bishop's own Matins psalmody redirects outright
+  to Common-of-a-Martyr** — the two share one scheme, not two; checked all three Duplex+
+  Common-of-a-Martyr-Bishop saints on the calendar (Ss. Ignatius, Callistus I, Boniface of
+  Mainz) and none has a proper antiphon of his own, so this category currently has no saint
+  eligible for its own `saints/` entry under the proper-only policy below — a real, not
+  accidental, gap.
+- **`common-of-an-apostle`**: from St. Bartholomew (2026-08-24, generic "In omnem terram"
+  antiphon). Second live proof authored against it: **St. Andrew** (`saints/st-andrew.yml`,
+  2026-11-30, his own day outright that year), whose psalm numbers match the category's
+  generic scheme in every one of the 12 Nocturn-1/2 slots — only the antiphon text is his own
+  proper narration of his call and martyrdom. New scripture chapters authored for his Nocturn 3
+  canticles: `data/scripture/{isa-61,sap-3,sap-10}.yml`.
+
+**Category files are reference/documentation content only** — not consulted by
+`getMatinsPsalmodyOverride`, which still does a plain per-saint lookup exactly as before.
+Direct decision from the user (2026-08): a saint without their own `saints/` entry stays on the
+plain ferial-table fallback, never falls through to a category's generic antiphon text, even
+though that text is real and verified — "prefer real text over missing" is deliberately *not*
+extended to this case yet. The category files exist so the next proper-antiphon saint authored
+in an already-proven category doesn't have to re-derive/re-verify the same shared psalm numbers
+and versicles from scratch, and as the reference point for spotting a saint's real deviations
+(like Lawrence's Ps 16) from noise.
+
+Live-verified end-to-end: `tests/hours/matins.test.ts`'s new "second Duplex+ weekday-feast
+proof" describe block (Andrew's own psalmody resolving `verified` in both languages across all
+12 psalms + 3 canticles). `npm test` (374 tests), `npm run build`, and `tsc --noEmit` all pass.
+
+**Still open**: ~73 remaining Duplex+ saints across the other Common categories (Confessor,
+Confessor-Bishop, Virgin, Doctor, etc. — the largest population, per the earlier estimate) —
+each needs its own category file (one live `prayMatutinum` query against a no-proper-antiphon
+saint) before any of its own saints' proper antiphons can be authored against it.
 
 ### Calendar precedence: a tie against an octave's own elevated closing day now favors the octave (2026-08)
 

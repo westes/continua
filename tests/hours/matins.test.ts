@@ -183,3 +183,40 @@ describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunda
     expect(fallback.parts.some((p) => p.kind === 'canticle')).toBe(false);
   });
 });
+
+describe('resolveOrdo("matins", ...) second Duplex+ weekday-feast proof — St. Andrew, Common of an Apostle', () => {
+  // 2026-11-30 -- St. Andrew's own day outright ("S. Andreæ Apostoli",
+  // not transferred that year: Nov 30 falls on a Monday, not a Sunday),
+  // live-verified directly against the reference engine. Second proof
+  // for the matins-psalmody-overrides mechanism after St. Lawrence, this
+  // one for the Common-of-an-Apostle category (see
+  // matins-psalmody-overrides/categories/common-of-an-apostle.yml and
+  // its own st-andrew.yml).
+  const ordo = resolveOrdo('matins', '2026-11-30');
+
+  it("uses St. Andrew's own proper psalmody across 3 nocturns plus a Te Deum", () => {
+    const psalms = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
+    expect(psalms).toEqual([3, 94, 18, 33, 44, 46, 60, 63, 74, 95, 96, 97, 98, 100]);
+    expect(ordo.parts.some((p) => p.kind === 'te-deum')).toBe(true);
+  });
+
+  it("every Nocturn 1/2 psalm carries St. Andrew's own proper antiphon, verified in both languages", () => {
+    const psalmParts = ordo.parts.filter((p) => p.kind === 'psalm') as { psalmNumber: number; antiphon?: { status: Record<string, string> } }[];
+    const nocturnPsalms = psalmParts.filter((p) => ![3, 94].includes(p.psalmNumber));
+    expect(nocturnPsalms).toHaveLength(12);
+    for (const p of nocturnPsalms) {
+      expect(p.antiphon?.status.la).toBe('verified');
+      expect(p.antiphon?.status.en).toBe('verified');
+    }
+  });
+
+  it('has 3 real OT canticles in Nocturn 3, verified in both languages, sourced from the newly-authored Isaiah/Wisdom chapters', () => {
+    const canticles = ordo.parts.filter((p) => p.kind === 'canticle') as { canticleId: string; text: { status: Record<string, string> } }[];
+    expect(canticles).toHaveLength(3);
+    expect(canticles.map((c) => c.canticleId)).toEqual(['isa-61-6-9', 'sap-3-7-9', 'sap-10-17-21']);
+    for (const c of canticles) {
+      expect(c.text.status.la).toBe('verified');
+      expect(c.text.status.en).toBe('verified');
+    }
+  });
+});
