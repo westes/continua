@@ -157,6 +157,34 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(anne).toBeDefined();
   });
 
+  it("renders each of the Christmas Octave's own stacked 'Commemoratio Octavæ' blocks on a day the temporal office itself keeps standing", () => {
+    // 2033-12-30 -- one day past the '2033-12-29' stacking fixture already
+    // used in tests/calendar/octaves.test.ts (St. Thomas of Canterbury's
+    // day, itself outside this app's calendar so the day stays plain
+    // temporal). All four of Christmas/Stephen/John/Holy Innocents' own
+    // octaves are active and none of them wins the day outright (the
+    // temporal day itself, "privileged-feria-minor", keeps the office) --
+    // see hours/resolve-common.ts's getDayCollects, kind === 'octave'
+    // branch, and its own doc comment for why this is the one case an
+    // octave commemoration renders its own Ant+V/R+collect block here.
+    const ordo = resolveOrdo('vespers', '2033-12-30');
+    const octaveParts = ordo.parts.filter(
+      (p): p is Extract<typeof p, { kind: 'preces' }> => p.kind === 'preces' && (p.label?.includes('Octave of') ?? false),
+    );
+    expect(octaveParts.map((p) => p.label).sort()).toEqual(
+      [
+        'Commemoration of the Octave of Christmas',
+        'Commemoration of the Octave of The Holy Innocents, Martyrs',
+        'Commemoration of the Octave of St. John, Apostle and Evangelist',
+        'Commemoration of the Octave of St. Stephen, Protomartyr',
+      ].sort(),
+    );
+    for (const part of octaveParts) {
+      expect(part.text.status.la).toBe('verified');
+      expect(part.text.status.en).toBe('verified');
+    }
+  });
+
   it("renders Advent's seasonal chapter/hymn/versicle instead of the plain weekday default", () => {
     // 2025-12-02 is a Tuesday in Advent (St. Bibiana, Simplex, merely
     // commemorated — the day's own winner stays temporal either way).

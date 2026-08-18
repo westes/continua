@@ -462,6 +462,22 @@ function sanctoralCommemorationPart(commemoration: Extract<Commemoration, { kind
   return { kind: 'preces', text: { text: {}, status: { la: 'missing', en: 'missing' } }, label };
 }
 
+/** An octave commemoration's own rendering — the fuller "Commemoratio
+ * Octavæ ..." Ant+V/R+collect bundle (`${id}-octave-commemoration`, e.g.
+ * christmas-day-octave-commemoration.yml), same shape and fallback
+ * pattern as sanctoralCommemorationPart. No per-saint `propers`
+ * indirection needed: an octave commemoration's id already is the base
+ * feast/saint id (`christmas-day`, `st-stephen-protomartyr`, ...),
+ * matching the proper file's own id 1:1. */
+function octaveCommemorationPart(commemoration: Extract<Commemoration, { kind: 'octave' }>): ResolvedPart {
+  const label = `Commemoration of the Octave of ${commemoration.name}`;
+  const combined = resolveCommon(`${commemoration.id}-octave-commemoration`);
+  if (combined.status.la !== 'missing' || combined.status.en !== 'missing') {
+    return { kind: 'preces', text: combined, label };
+  }
+  return { kind: 'preces', text: { text: {}, status: { la: 'missing', en: 'missing' } }, label };
+}
+
 /**
  * The day's own collect, plus one more per commemoration (calendar/
  * types.ts's LiturgicalDay.commemorations) — Lauds/Vespers say all of
@@ -475,10 +491,22 @@ function sanctoralCommemorationPart(commemoration: Extract<Commemoration, { kind
  * Amen." for the single-collect case every other hour uses today, and
  * stripping that back out per-collect to chain them properly would need
  * text surgery this doesn't attempt — so on a commemorated day, each
- * collect here renders as its own complete, separate block instead. An
- * octave commemoration never contributes anything of its own here — once
- * resolveOfficeWinner is in play, its content is already the primary
- * collect above, so a separate entry would just be a redundant repeat.
+ * collect here renders as its own complete, separate block instead.
+ *
+ * An octave commemoration only renders its own block here when
+ * `day.temporalCategory !== 'ordinary-feria'` — the same gate
+ * resolveOfficeWinner uses (see its own doc comment). On an *ordinary*
+ * octave day (e.g. an in-between day of St. Lawrence's own octave),
+ * resolveOfficeWinner has already substituted that octave's content as
+ * the primary collect above, so rendering it again here would be a
+ * redundant repeat (or worse, an honestly-"missing" duplicate for the
+ * many octaves without their own `-octave-commemoration.yml` authored).
+ * On a day the temporal identity itself keeps real standing (the
+ * Christmas Octave's own stacking days, e.g. Dec 26-31, where Christmas
+ * + Stephen + John + Holy Innocents are each merely commemorated
+ * alongside the day's own temporal office), resolveOfficeWinner does
+ * *not* touch the primary collect at all, so this is the only place
+ * these four octaves' real "Commemoratio Octavæ ..." content surfaces.
  */
 export function getDayCollects(day: LiturgicalDay): ResolvedPart[] {
   const parts: ResolvedPart[] = [{ kind: 'prayer', text: getDayCollect(day) }];
@@ -487,6 +515,8 @@ export function getDayCollects(day: LiturgicalDay): ResolvedPart[] {
       parts.push({ kind: 'prayer', text: toResolvedText(getTemporalProper(`${commemoration.id}-collect`)) });
     } else if (commemoration.kind === 'sanctoral') {
       parts.push(sanctoralCommemorationPart(commemoration));
+    } else if (commemoration.kind === 'octave' && day.temporalCategory !== 'ordinary-feria') {
+      parts.push(octaveCommemorationPart(commemoration));
     }
   }
   return parts;
