@@ -356,10 +356,10 @@ export function isSundayOrFeast(day: LiturgicalDay): boolean {
   return day.weekday === 'sunday' || day.winner.kind === 'sanctoral';
 }
 
-export { compareFeastClass, isAtLeast, decideOccurrence } from './commemorations';
+export { compareFeastClass, isAtLeast, decideOccurrence, minimumOutrightWinningRank } from './commemorations';
 export { resolveCollision } from './collision';
 export { resolveTemporalId } from './temporal-id';
-export { activeOctavesFor, strictestThreshold, resolveActiveOctave } from './octaves';
+export { activeOctavesFor, strictestThreshold, resolveActiveOctave, octaveGoverningPrivilegedDay } from './octaves';
 export type { ActiveOctave } from './octaves';
 export type {
   LiturgicalDay,

@@ -3,7 +3,7 @@ import type { Commemoration, DayWinner, LiturgicalDay, Weekday } from '../calend
 import type { ProperText } from '../propers';
 import { getCommonProper, getTemporalProper } from '../propers';
 import { getSaintRecord } from '../calendar/feasts';
-import { resolveActiveOctave, activeOctavesFor, isAtLeast } from '../calendar';
+import { resolveActiveOctave, activeOctavesFor, octaveGoverningPrivilegedDay, isAtLeast } from '../calendar';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { splitAntiphon } from './antiphon';
 import vespersMagnificatAntiphonsData from '../data/hours/vespers-magnificat-antiphons.yml';
@@ -40,25 +40,35 @@ export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set(['marian-saturday', 'christ-
  * Which identity's own propers actually supply the office's content
  * (collect, Benedictus antiphon, psalmody override) — usually just
  * `day.winner`, but *not* on a day within an active octave where the
- * temporal day itself has no real standing of its own (`ordinary-feria`)
- * and the winner stayed temporal — an ordinary day within St. Lawrence's
- * own octave, e.g.: live-verified (Tridentine 1910, 2026-08-12) that the
+ * temporal day itself has no real standing of its own (`ordinary-feria`),
+ * or where a *foreign* octave's own effective rank is strong enough to
+ * clear even a privileged day's real threshold
+ * (`octaveGoverningPrivilegedDay` — the Immaculate Conception's own
+ * octave outright winning several of its days against Advent's
+ * privileged-feria-minor ferias, live-verified: Dec 9/10/12/14 at the
+ * octave's ordinary Semiduplex, Dec 15 at its own elevated Duplex majus
+ * closing day) — an ordinary day within St. Lawrence's own octave, e.g.:
+ * live-verified (Tridentine 1910, 2026-08-12) that the
  * chapter/responsory/hymn/versicle, psalms' antiphons, Benedictus
  * antiphon, and day collect all come from the octave's own feast
  * ("{ex Commune aut Festo}" / "{ex Proprio Sanctorum}"), not from the
  * plain temporal day underneath it.
  *
- * Deliberately gated on `ordinary-feria` specifically, not just "an
- * octave is active": the Christmas Octave's own stacked octaves
- * (Christmas + Stephen + John + Holy Innocents, e.g. on Dec 30) are the
- * live-verified counterexample — that day's own temporal identity
- * ("Dominica Infra Octavam Nativitatis", `privileged-feria-minor`) is
- * itself a real, named standing, and *keeps* the office
- * ("{ex Proprio de Tempore}"); the four octaves there each become their
- * own separate "Commemoratio Octavæ ..." block instead (not yet modeled
- * — see TODO.md), rather than any one of them taking over content the
- * way Lawrence's octave does. The dividing line is real standing, not
- * merely "is an octave active."
+ * Deliberately excludes `christmastide` even though it's otherwise a
+ * `privileged-feria-minor` season same as Advent: the Christmas Octave's
+ * own stacked octaves (Christmas + Stephen + John + Holy Innocents, e.g.
+ * on Dec 30) are the live-verified counterexample — that day's own
+ * temporal identity ("Dominica Infra Octavam Nativitatis",
+ * `privileged-feria-minor`) is itself a real, named standing, and
+ * *keeps* the office ("{ex Proprio de Tempore}") regardless of any of
+ * those octaves' own rank; the four octaves there each become their own
+ * separate "Commemoratio Octavæ ..." block instead (not yet modeled —
+ * see TODO.md), rather than any one of them taking over content the way
+ * Lawrence's or the Immaculate Conception's octave does. The dividing
+ * line is real standing (own temporal identity vs. a foreign octave
+ * merely overlapping a season's ordinary ferias), not merely "is an
+ * octave active" — see `octaveGoverningPrivilegedDay`'s own doc comment
+ * for the fuller reasoning.
  *
  * `day.winner`/`day.commemorations` themselves stay exactly as
  * calendar/index.ts computed them either way — this is purely a
@@ -71,9 +81,6 @@ export function resolveOfficeWinner(day: LiturgicalDay): DayWinner {
   if (day.winner.kind === 'sanctoral' || ALWAYS_OVERRIDE_TEMPORAL_IDS.has(day.winner.id)) {
     return day.winner;
   }
-  if (day.temporalCategory !== 'ordinary-feria') {
-    return day.winner;
-  }
   // When more than one octave is active at once (St. Lawrence's and the
   // Assumption's genuinely overlap every Aug 16-17), resolveActiveOctave
   // picks the one that actually governs the day — see its own doc
@@ -81,7 +88,8 @@ export function resolveOfficeWinner(day: LiturgicalDay): DayWinner {
   // default if that octave turns out to be a temporal-only one with no
   // saint record (e.g. Christmas's or Pentecost's own octave id) — no
   // sanctoral content to synthesize from those.
-  const activeOctave = resolveActiveOctave(day.date);
+  const activeOctave =
+    day.temporalCategory === 'ordinary-feria' ? resolveActiveOctave(day.date) : octaveGoverningPrivilegedDay(day);
   if (activeOctave) {
     const saint = getSaintRecord(activeOctave.id);
     if (saint) {

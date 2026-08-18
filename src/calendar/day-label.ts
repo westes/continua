@@ -14,7 +14,7 @@ import { easterSunday } from './easter';
 import { adventStart, firstSundayStrictlyAfter, sundayOnOrBefore } from './temporal';
 import { addDays, daysBetween, toIsoDate } from './date-math';
 import { getTemporalFeastRecord } from './temporal-feasts';
-import { resolveActiveOctave, type ActiveOctave } from './octaves';
+import { activeOctavesFor, octaveGoverningPrivilegedDay, resolveActiveOctave, type ActiveOctave } from './octaves';
 import { resolveTemporalId } from './temporal-id';
 
 function capitalize(text: string): string {
@@ -210,15 +210,36 @@ function temporalLabel(day: LiturgicalDay): string {
   return `${weekdayName} in the ${ordinalStr} week ${config.preposition} ${config.ordinalName}`;
 }
 
-/** "Third Day within the Octave of St. Lawrence" — the real DO title an
- * octave day carries on its own (e.g. "Tertia die infra Octavam S.
- * Laurentii Martyris") when nothing else has displaced it. Day 1 shouldn't
- * normally reach this (that day's own winner is the feast itself, handled
+/** "Third Day within the Octave of St. Lawrence" for an ordinary mid-octave
+ * day (e.g. "Tertia die infra Octavam S. Laurentii Martyris"), or plain
+ * "Octave of St. Lawrence" for the octave's own closing day — real DO
+ * Latin distinguishes "infra octavam" (within the octave, days 2-7) from
+ * "in octava" (on the octave day itself, day 8), live-verified: Aug 17
+ * (St. Lawrence's closing day) titles itself "In Octava S. Laurentii
+ * Martyris", not "Octava die infra Octavam...". Day 1 shouldn't normally
+ * reach either branch (that day's own winner is the feast itself, handled
  * above before this is ever called) — kept simple rather than
  * special-cased for that rare edge case (see applyOctaves's own
  * `isOwnStartDay` comment in calendar/index.ts for when it can happen). */
+function octaveCoreName(octave: ActiveOctave): string {
+  return octave.isClosingDay ? `Octave of ${octave.name}` : `${ordinal(octave.dayNumber)} Day within the Octave of ${octave.name}`;
+}
+
 function octaveLabel(octave: ActiveOctave): string {
-  return `${ordinal(octave.dayNumber)} Day within the Octave of ${octave.name} (${formatRank(octave.wins)})`;
+  return `${octaveCoreName(octave)} (${formatRank(octave.wins)})`;
+}
+
+/** Same phrasing as `octaveLabel`, but without the parenthesized rank —
+ * the real DO commemoration line for a displaced octave day carries no
+ * rank at all (e.g. Aug 19's real Divino Afflatu 1954 commemoration reads
+ * plain "Quinta die infra Octavam S. Assumptionis Beatæ Mariæ Virginis",
+ * no "~ Semiduplex"). `octaveLabel`'s own rank parenthetical only belongs
+ * to an octave day when it's the day's own primary winner (rank is what
+ * it *won as*, not a fact worth restating once a duplex-or-higher saint
+ * has displaced it and it's just riding along as a commemoration
+ * instead). */
+function octaveCommemorationLabel(octave: ActiveOctave): string {
+  return octaveCoreName(octave);
 }
 
 /** Every `kind: 'octave'` commemoration on `day` other than `excludeId` —
@@ -237,6 +258,27 @@ function otherActiveOctaveNames(day: LiturgicalDay, excludeId: string | undefine
   return day.commemorations
     .filter((c): c is Extract<Commemoration, { kind: 'octave' }> => c.kind === 'octave' && c.id !== excludeId)
     .map((c) => c.name);
+}
+
+/** Same commemoration-filtering as `otherActiveOctaveNames`, but rendered
+ * with `octaveCommemorationLabel`'s fuller "Nth Day within the Octave of X"
+ * phrasing rather than a plain name — the real DO title an octave day
+ * carries even when it *lost* outright to an occurring saint (e.g. Aug 19's
+ * real Divino Afflatu 1954 title is "S. Joannis Eudes Confessoris ~ Duplex"
+ * with the commemoration read as "Quinta die infra Octavam S. Assumptionis
+ * Beatæ Mariæ Virginis", not a bare "The Assumption of the Blessed Virgin
+ * Mary"). Only used from the sanctoral-winner branch below — the
+ * octave-vs-octave secondary mention (`otherActiveOctaveNames` itself,
+ * still used in the octave-headline branch further down) keeps its plain
+ * name on purpose, per that function's own doc comment. */
+function commemoratedOctaveDayLabels(day: LiturgicalDay, excludeId: string | undefined): string[] {
+  const active = activeOctavesFor(day.date);
+  return day.commemorations
+    .filter((c): c is Extract<Commemoration, { kind: 'octave' }> => c.kind === 'octave' && c.id !== excludeId)
+    .map((c) => {
+      const octave = active.find((a) => a.id === c.id);
+      return octave ? octaveCommemorationLabel(octave) : c.name;
+    });
 }
 
 const RANK_LABELS: Record<FeastClass, string> = {
@@ -295,7 +337,7 @@ export function getDayLabel(day: LiturgicalDay): string {
     // also day 8 of Pentecost's own octave) never mentions an octave —
     // same "nobody calls it that" convention anchorDayName's own doc
     // comment already established for the anchor-day case.
-    const otherOctaves = day.temporalCategory === 'ordinary-feria' ? otherActiveOctaveNames(day, undefined) : [];
+    const otherOctaves = day.temporalCategory === 'ordinary-feria' ? commemoratedOctaveDayLabels(day, undefined) : [];
     const winnerName = `${day.winner.name} (${formatRank(day.winner.rank)})`;
     return [winnerName, ...otherOctaves].join(' — ');
   }
@@ -326,24 +368,33 @@ export function getDayLabel(day: LiturgicalDay): string {
   // identity in the live engine, not a footnote — e.g. "Tertia die infra
   // Octavam S. Laurentii Martyris", not "Wednesday in the 11th week after
   // Trinity" — but *only* when the temporal day itself has no standing of
-  // its own (`ordinary-feria`), same gate as hours/resolve-common.ts's
+  // its own (`ordinary-feria`), or a foreign octave's own effective rank
+  // is strong enough to clear a privileged day's real threshold anyway
+  // (`octaveGoverningPrivilegedDay` — the Immaculate Conception's own
+  // octave outright winning several of its days against Advent's
+  // privileged-feria-minor ferias, live-verified: Dec 9/10/12/14 at the
+  // octave's ordinary Semiduplex, Dec 15 at its own elevated Duplex majus
+  // closing day). Same gate as hours/resolve-common.ts's
   // resolveOfficeWinner and for the same reason: live-verified
   // counterexample is the Christmas Octave's own stack (Dec 30, e.g.,
   // `privileged-feria-minor`), where the real title stays the temporal
   // Sunday's own ("De Dominica Infra Octavam Nativitatis") with no octave
-  // name in it at all — this label agreeing with resolveOfficeWinner
-  // about which one wins is what makes "the office is Lawrence's" and
-  // "the label says Lawrence" consistent instead of two independent
-  // guesses that can disagree. When more than one octave is active at
-  // once (resolveActiveOctave), the highest-ranked wins the headline
-  // (ties broken by whichever started more recently) — every other
-  // active octave still gets named too (otherActiveOctaveNames), not
-  // dropped: live-verified real case, Aug 17 -- St. Lawrence's own
-  // elevated closing day wins the headline, but the Assumption's own
-  // day 3 (a real, distinct, simultaneously-active octave, not a
-  // duplicate of Lawrence's) still belongs in the label alongside St.
-  // Hyacinth's commemoration.
-  const activeOctave = day.temporalCategory === 'ordinary-feria' ? resolveActiveOctave(day.date) : undefined;
+  // name in it at all, regardless of rank — `octaveGoverningPrivilegedDay`
+  // excludes `christmastide` for exactly this reason (see its own doc
+  // comment) — this label agreeing with resolveOfficeWinner about which
+  // one wins is what makes "the office is Lawrence's" and "the label says
+  // Lawrence" consistent instead of two independent guesses that can
+  // disagree. When more than one octave is active at once
+  // (resolveActiveOctave), the highest-ranked wins the headline (ties
+  // broken by whichever started more recently) — every other active
+  // octave still gets named too (otherActiveOctaveNames), not dropped:
+  // live-verified real case, Aug 17 -- St. Lawrence's own elevated
+  // closing day wins the headline, but the Assumption's own day 3 (a
+  // real, distinct, simultaneously-active octave, not a duplicate of
+  // Lawrence's) still belongs in the label alongside St. Hyacinth's
+  // commemoration.
+  const activeOctave =
+    day.temporalCategory === 'ordinary-feria' ? resolveActiveOctave(day.date) : octaveGoverningPrivilegedDay(day);
   if (activeOctave) {
     const primary = octaveLabel(activeOctave);
     const rest = [...otherActiveOctaveNames(day, activeOctave.id), ...(commemoratedSaint ? [commemoratedSaint.name] : [])];

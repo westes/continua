@@ -6,7 +6,12 @@ import { getPsalmsFor } from '../../src/psalter/distribution';
 // and TODO.md for why this is a mechanism build with a small content slice,
 // not full-calendar content. Both live-verified against the reference
 // engine (Monastic Tridentinum 1617) before authoring.
-const FERIAL_DATE = '2026-12-15'; // Tuesday of Advent III — plain ferial, no feast collision.
+const FERIAL_DATE = '2026-12-01'; // Tuesday of Advent I — plain ferial, no feast collision.
+// Not Dec 15 (formerly used here): that's actually the Immaculate
+// Conception's own octave closing day (Duplex majus per Divino Afflatu
+// 1954), which now correctly wins outright over Advent's own
+// privileged-feria-minor ferias — see calendar/octaves.ts's
+// octaveGoverningPrivilegedDay — so it's no longer a clean ferial date.
 const SUNDAY_DATE = '2026-09-06'; // 14th Sunday after Trinity — plain Sunday, no feast collision.
 
 describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
@@ -37,18 +42,31 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
     expect(ordo.parts.some((p) => p.kind === 'canticle')).toBe(false);
   });
 
-  it("resolves the user's own bible-plan readings for Advent III Tuesday, not the historical lectionary", () => {
+  it("resolves the user's own bible-plan readings for the day, not the historical lectionary", () => {
     const lessons = ordo.parts.filter((p) => p.kind === 'lesson');
-    // 2 bible-plan readings, plus a 3rd: St. Eusebius of Vercelli's own
-    // commemoration reading, generously surfaced per the "commemorations
-    // get their own reading" design (see hours/matins.ts's own header) —
-    // vu places him Dec 15 (a Monastic 1617 same-day redirect), commemorated
-    // under this Advent III Tuesday ferial.
-    expect(lessons).toHaveLength(3);
+    // Plain 2 bible-plan readings on this particular clean ferial (no
+    // commemorated saint here) — see the next test for the 3-reading case.
+    expect(lessons).toHaveLength(2);
     const citations = lessons.map((l) => (l as { text: { citation?: { en?: string } } }).text.citation?.en);
-    expect(citations).toEqual(['Isa 36; Isa 37', 'Sap 14', undefined]);
+    expect(citations).toEqual(['Isa 6; Isa 7', 'Sap 2']);
     // Real content isn't imported yet (Vulgate/Douay-Rheims bulk import is
     // a deferred follow-on) — honest `missing`, not fabricated text.
+    expect((lessons[0] as { text: { status: { en?: string } } }).text.status.en).toBe('missing');
+  });
+
+  it("adds a 3rd reading for a commemorated saint, generously surfaced per the 'commemorations get their own reading' design (see hours/matins.ts's own header)", () => {
+    // Not FERIAL_DATE: needs an ordinary Advent ferial with a real
+    // commemorated saint and no active octave. St. Bibiana (Simplex) is
+    // the exact case calendar/commemorations.ts's own header cites as
+    // live-verified: merely commemorated under an Advent feria, never
+    // winning outright (Simplex is below privileged-feria-minor's own
+    // Semiduplex threshold). 2025-12-02, a Tuesday, keeps the same 9-psalm
+    // ferial shape as the other tests in this block.
+    const commemoratedOrdo = resolveOrdo('matins', '2025-12-02');
+    const lessons = commemoratedOrdo.parts.filter((p) => p.kind === 'lesson');
+    expect(lessons).toHaveLength(3);
+    const citations = lessons.map((l) => (l as { text: { citation?: { en?: string } } }).text.citation?.en);
+    expect(citations).toEqual(['Isa 6; Isa 7', 'Sap 2', undefined]);
     expect((lessons[0] as { text: { status: { en?: string } } }).text.status.en).toBe('missing');
   });
 

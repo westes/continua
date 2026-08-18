@@ -38,6 +38,34 @@ export function isAtLeast(rank: FeastClass, threshold: FeastClass): boolean {
   return compareFeastClass(rank, threshold) >= 0;
 }
 
+/**
+ * The minimum rank a real sanctoral candidate needs to win each temporal
+ * category outright, per `decideOccurrence`'s own branches above —
+ * factored out so calendar/octaves.ts can ask the identical question of an
+ * *octave*'s own effective standing (not a real occurring saint) on a day
+ * where nothing else won. `undefined` where nothing ever wins outright no
+ * matter how high-ranked (`privileged-feria-major`/`privileged-sunday` —
+ * Ash Wednesday, Holy Week, a privileged Sunday — only ever get a
+ * commemoration at best, per those branches above). `ordinary-feria` has
+ * no real threshold at all (any real content wins), included here as
+ * `'simplex'` (the weakest real rank) only for completeness — callers
+ * needing that case already have their own unconditional path and don't
+ * need to call this. */
+export function minimumOutrightWinningRank(category: TemporalCategory): FeastClass | undefined {
+  switch (category) {
+    case 'ordinary-feria':
+      return 'simplex';
+    case 'privileged-feria-minor':
+      return 'semiduplex';
+    case 'privileged-feria':
+    case 'ordinary-sunday':
+      return 'duplex';
+    case 'privileged-feria-major':
+    case 'privileged-sunday':
+      return undefined;
+  }
+}
+
 /** Vigils belong to the day *before* their feast, so an impeded vigil is
  * shifted backward rather than forward like everything else — see
  * calendar/transfer.ts. */

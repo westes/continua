@@ -173,7 +173,7 @@ describe('getDayLabel — active octave', () => {
     // day 3 (semiduplex, genuinely active but outranked by Lawrence's
     // elevated duplex) still gets named, not dropped, alongside it.
     expect(getDayLabel(resolveDay('2026-08-17'))).toBe(
-      '8th Day within the Octave of St. Lawrence, Martyr (Duplex) — The Assumption of the Blessed Virgin Mary — St. Hyacinth, Confessor',
+      'Octave of St. Lawrence, Martyr (Duplex) — The Assumption of the Blessed Virgin Mary — St. Hyacinth, Confessor',
     );
     expect(getDayLabel(resolveDay('2026-08-18'))).toBe(
       '4th Day within the Octave of The Assumption of the Blessed Virgin Mary (Semiduplex)',
@@ -186,6 +186,58 @@ describe('getDayLabel — active octave', () => {
     const day = resolveDay('2026-08-16');
     expect(day.weekday).toBe('sunday');
     expect(getDayLabel(day)).not.toContain('Octave');
+  });
+
+  it("a foreign octave superimposed on a privileged season still governs the label when its own effective rank clears that season's real threshold, with the season's own losing saint commemorated alongside it", () => {
+    // The Immaculate Conception's own octave (Dec 8-15) always falls
+    // inside Advent, a `privileged-feria-minor` season -- unlike every
+    // other octave here (Lawrence/Assumption/All Saints/Nativity BVM),
+    // which always sit entirely within ordinary time. Live-verified
+    // (Divino Afflatu 1954): Dec 15, the octave's own closing day, is
+    // "In Octava Concept. Immac. Beatæ Mariæ Virginis ~ Duplex majus" --
+    // outright winning against Advent -- with St. Eusebius of Vercelli
+    // (Semiduplex, real per calendar/data/calendar/saints/
+    // st-eusebius-of-vercelli.yml -- Monastic Tridentinum 1617 places him
+    // here via a same-day kalendar redirect, not Dec 16 like the general
+    // Roman calendar) merely commemorated, not winning, since he's below
+    // the octave's own closing-day threshold. See
+    // calendar/octaves.ts's octaveGoverningPrivilegedDay for the shared
+    // mechanism (also used by hours/resolve-common.ts's
+    // resolveOfficeWinner for the actual office content, not just this
+    // label).
+    expect(getDayLabel(resolveDay('2026-12-15'))).toBe(
+      'Octave of The Immaculate Conception of the Blessed Virgin Mary (Duplex) — St. Eusebius of Vercelli, Bishop and Martyr',
+    );
+  });
+
+  it("the Christmas Octave's own stack never lets any of its four constituent octaves outrank Christmastide's own temporal identity, even though it's the same privileged-feria-minor category the Immaculate Conception's octave *does* outrank Advent with", () => {
+    // Same live-verified Dec 30 counterexample as the test above (Friday
+    // in Christmastide) -- restated here specifically against the new
+    // octaveGoverningPrivilegedDay mechanism, to pin down that its
+    // `christmastide` exclusion actually holds now that privileged
+    // categories are no longer an unconditional "never" for every octave.
+    const day = resolveDay('2033-12-30');
+    expect(day.temporalCategory).toBe('privileged-feria-minor');
+    expect(day.season).toBe('christmastide');
+    expect(getDayLabel(day)).not.toContain('Octave');
+  });
+
+  it('a sanctoral winner that outright displaces the only active octave still shows that octave with its full "Nth Day within the Octave" phrasing, not a bare feast name -- and without a rank, since the octave is riding along under the winning duplex rather than asserting its own rank', () => {
+    // Live-verified against the reference engine (Divino Afflatu 1954,
+    // prayMatutinum): Aug 19 is "S. Joannis Eudes Confessoris ~ Duplex"
+    // with the commemoration read as plain "Quinta die infra Octavam S.
+    // Assumptionis Beatæ Mariæ Virginis" -- no rank at all -- i.e. the
+    // octave's real DO title even when it lost outright, not a bare "The
+    // Assumption of the Blessed Virgin Mary" (this app's previous
+    // behavior, reusing `otherActiveOctaveNames`'s plain-name formatting
+    // -- correct for a *secondary* octave alongside another *octave* that
+    // won, see the Aug 17/18 cases above, but wrong here where the octave
+    // itself is what's being commemorated against a winning saint) and
+    // also not `octaveLabel`'s own rank parenthetical (that belongs only
+    // to an octave day when it's the day's own primary winner).
+    expect(getDayLabel(resolveDay('2026-08-19'))).toBe(
+      'St. John Eudes, Confessor (Duplex) — 5th Day within the Octave of The Assumption of the Blessed Virgin Mary',
+    );
   });
 });
 

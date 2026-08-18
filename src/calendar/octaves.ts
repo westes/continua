@@ -8,11 +8,11 @@
 // contest is decided, it just adds commemorations on top of whatever that
 // contest already produced, and occasionally overrides the winner when a
 // too-minor saint would otherwise have taken the day from it.
-import type { FeastClass, OctaveConfig } from './types';
+import type { FeastClass, LiturgicalDay, OctaveConfig } from './types';
 import { getSanctoralCandidatesFor, getSaintRecord } from './feasts';
 import { getTemporalFeastRecord, temporalFeastIdsStartingOn } from './temporal-feasts';
 import { addDays, daysBetween } from './date-math';
-import { compareFeastClass } from './commemorations';
+import { compareFeastClass, minimumOutrightWinningRank } from './commemorations';
 
 export interface ActiveOctave {
   id: string;
@@ -129,6 +129,46 @@ export function strictestThreshold(octaves: ActiveOctave[]): FeastClass {
  */
 export function resolveActiveOctave(isoDate: string): ActiveOctave | undefined {
   return pickWinningOctave(activeOctavesFor(isoDate));
+}
+
+/**
+ * Whether an active octave's own effective rank clears the bar a real
+ * sanctoral candidate would need to win `day`'s temporal category outright
+ * — i.e. whether the octave governs the day's content/label even though
+ * no *saint* occurring there was strong enough to (a "foreign" octave
+ * superimposed on a season it doesn't belong to, e.g. the Immaculate
+ * Conception's own octave running Dec 8-15, squarely inside Advent).
+ * Live-verified against Divino Afflatu 1954: Dec 9/10/12/14 (ordinary
+ * octave days, Semiduplex) and Dec 15 (the octave's own elevated closing
+ * day, Duplex majus) all win outright over Advent's own privileged-feria-
+ * minor ferias, exactly the same threshold `decideOccurrence` already
+ * uses for a real Semiduplex+ saint there (St. Nicholas, Dec 6).
+ *
+ * Deliberately excludes `ordinary-feria` (unconditional there already —
+ * any active octave governs regardless of rank, handled separately by
+ * each caller via `resolveActiveOctave` directly) and `christmastide`
+ * (Christmas's own stacked octaves — Christmas, St. Stephen, St. John,
+ * Holy Innocents — are structurally already that season's own temporal
+ * content, not a foreign add-on contesting it the way the Immaculate
+ * Conception's octave contests Advent: live-verified, Dec 30 keeps
+ * "Dominica Infra Octavam Nativitatis" as the real DO title regardless of
+ * actual weekday or which of the four octaves is active, never an octave
+ * name — see calendar/day-label.ts's and hours/resolve-common.ts's own
+ * Dec-30 doc comments for the fuller reasoning already established
+ * there). */
+export function octaveGoverningPrivilegedDay(day: LiturgicalDay): ActiveOctave | undefined {
+  if (day.temporalCategory === 'ordinary-feria' || day.season === 'christmastide') {
+    return undefined;
+  }
+  const minRank = minimumOutrightWinningRank(day.temporalCategory);
+  if (!minRank) {
+    return undefined;
+  }
+  const octave = resolveActiveOctave(day.date);
+  if (octave && compareFeastClass(octave.wins, minRank) >= 0) {
+    return octave;
+  }
+  return undefined;
 }
 
 /** The comparison itself, factored out from resolveActiveOctave so the
