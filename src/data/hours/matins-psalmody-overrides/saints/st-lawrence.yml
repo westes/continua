@@ -29,7 +29,24 @@
 # chapters authored for this: data/scripture/{sir-14,sir-15,jer-17,sir-31}.yml
 # (all sparse, only the cited verses -- same convention as sir-36.yml's
 # own Sunday-canticle transcription).
+#
+# `category: common-of-a-martyr` links this to
+# data/hours/matins-psalmody-overrides/categories/common-of-a-martyr.yml,
+# the generic Common-of-a-Martyr scheme authored from St. Ignatius of
+# Antioch's own live-verified Matins (2029-02-01 -- his own file has no
+# proper antiphon, "vide C2" i.e. entirely from Common, confirming his
+# psalmody *is* the category default). Lawrence's own file stays fully
+# self-contained (own psalm numbers + antiphons, not merged with the
+# category file at load time) -- the category link is documentation/
+# cross-reference only, not a runtime merge, per this project's "stay on
+# the ferial fallback until proper antiphon text is authored per-saint"
+# decision (2026-08): a saint without an entry here still gets no
+# override, never the category's generic antiphon text. Note one real
+# divergence from the category default worth remembering: Lawrence's own
+# Nocturn 2 has Ps 16 in the slot where the plain Common default (and
+# Ignatius) has Ps 64 -- his own proper psalm selection, not a typo.
 id: st-lawrence
+category: common-of-a-martyr
 nocturn1:
   groups:
     - psalms: [1]
