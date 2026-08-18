@@ -493,29 +493,34 @@ function octaveCommemorationPart(commemoration: Extract<Commemoration, { kind: '
  * text surgery this doesn't attempt — so on a commemorated day, each
  * collect here renders as its own complete, separate block instead.
  *
- * An octave commemoration only renders its own block here when
- * `day.temporalCategory !== 'ordinary-feria'` — the same gate
- * resolveOfficeWinner uses (see its own doc comment). On an *ordinary*
- * octave day (e.g. an in-between day of St. Lawrence's own octave),
- * resolveOfficeWinner has already substituted that octave's content as
- * the primary collect above, so rendering it again here would be a
- * redundant repeat (or worse, an honestly-"missing" duplicate for the
- * many octaves without their own `-octave-commemoration.yml` authored).
- * On a day the temporal identity itself keeps real standing (the
- * Christmas Octave's own stacking days, e.g. Dec 26-31, where Christmas
- * + Stephen + John + Holy Innocents are each merely commemorated
- * alongside the day's own temporal office), resolveOfficeWinner does
- * *not* touch the primary collect at all, so this is the only place
- * these four octaves' real "Commemoratio Octavæ ..." content surfaces.
+ * An octave commemoration skips rendering its own block here only when
+ * it's the *specific* octave whose content resolveOfficeWinner already
+ * substituted as the primary collect above (same
+ * `day.temporalCategory === 'ordinary-feria'` gate, same
+ * `resolveActiveOctave` pick — see resolveOfficeWinner's own doc
+ * comment) — rendering it again would be a redundant repeat. Every
+ * *other* simultaneously-active octave still gets its own block: e.g.
+ * Aug 17, St. Lawrence's own elevated closing day and the Assumption's
+ * ordinary day 3 genuinely overlap — Lawrence's own content governs the
+ * primary collect (the higher-ranked of the two, resolveActiveOctave's
+ * own pick), but the Assumption's octave is still real and distinct, not
+ * a duplicate of Lawrence's, so it still renders its own commemoration
+ * block here (once authored). On a day the temporal identity itself
+ * keeps real standing (the Christmas Octave's own stacking days, e.g.
+ * Dec 26-31), resolveOfficeWinner never substitutes anything, so no
+ * octave is skipped and every active one renders here — the only place
+ * those four octaves' real "Commemoratio Octavæ ..." content surfaces.
  */
 export function getDayCollects(day: LiturgicalDay): ResolvedPart[] {
   const parts: ResolvedPart[] = [{ kind: 'prayer', text: getDayCollect(day) }];
+  const substitutedOctaveId =
+    day.temporalCategory === 'ordinary-feria' ? resolveActiveOctave(day.date)?.id : undefined;
   for (const commemoration of day.commemorations) {
     if (commemoration.kind === 'temporal') {
       parts.push({ kind: 'prayer', text: toResolvedText(getTemporalProper(`${commemoration.id}-collect`)) });
     } else if (commemoration.kind === 'sanctoral') {
       parts.push(sanctoralCommemorationPart(commemoration));
-    } else if (commemoration.kind === 'octave' && day.temporalCategory !== 'ordinary-feria') {
+    } else if (commemoration.kind === 'octave' && commemoration.id !== substitutedOctaveId) {
       parts.push(octaveCommemorationPart(commemoration));
     }
   }

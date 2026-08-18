@@ -27,6 +27,11 @@ export interface ActiveOctave {
   wins: FeastClass;
   /** 1 on the feast's own day, counting up from there. */
   dayNumber: number;
+  /** Whether `dayNumber` is this octave's own final ("in Octava") day —
+   * i.e. whether `wins` above came from `closingDayRank` rather than the
+   * ordinary `wins` config. Used by calendar/index.ts's applyOctaves to
+   * decide which side a *tied* rank favors — see its own doc comment. */
+  isClosingDay: boolean;
 }
 
 const DEFAULT_DAYS = 8;
@@ -58,7 +63,7 @@ function considerCandidate(
   const dayNumber = offset + 1;
   const isClosingDay = dayNumber === days;
   const wins = isClosingDay ? (octave.closingDayRank ?? DEFAULT_CLOSING_DAY_RANK) : (octave.wins ?? DEFAULT_WINS);
-  active.push({ id, name, wins, dayNumber });
+  active.push({ id, name, wins, dayNumber, isClosingDay });
 }
 
 /** Every octave (sanctoral or temporal) whose window covers `isoDate`,

@@ -3,7 +3,7 @@ import { weekdayOf } from './weekday';
 import { resolveSeason, resolveTemporalCategory, sundayOnOrBefore } from './temporal';
 import { resolveTemporalId } from './temporal-id';
 import { getSanctoralCandidatesFor } from './feasts';
-import { decideOccurrence, isAtLeast, type OccurrenceResult } from './commemorations';
+import { decideOccurrence, compareFeastClass, type OccurrenceResult } from './commemorations';
 import { resolveCollision } from './collision';
 import { addDays, toIsoDate } from './date-math';
 import { easterSunday } from './easter';
@@ -281,11 +281,36 @@ function applyMarianSaturday(
  * Layered on top of everything above, not part of it: an octave doesn't
  * change how a single day's own precedence contest is decided, it just
  * (a) adds a commemoration for every octave still active on this date, and
- * (b) occasionally overrides the winner when the occurring saint is too
- * minor to clear the strictest active octave's threshold, in which case
- * the day reverts to its own temporal identity and the saint is
- * commemorated instead — same "demoted, not dropped" shape as every other
+ * (b) occasionally overrides the winner when the occurring saint doesn't
+ * outrank the strictest active octave's threshold, in which case the day
+ * reverts to its own temporal identity and the saint is commemorated
+ * instead — same "demoted, not dropped" shape as every other
  * commemoration rule in this file.
+ *
+ * A *tie against an octave's own elevated closing day* goes to the
+ * octave, not the occurring saint — live-verified counterexample: St.
+ * Hyacinth (plain Duplex, Aug 17) against St. Lawrence's own octave
+ * closing day that same date (also Duplex, via `closingDayRank`'s
+ * default) — the reference engine's own alternate block for that date is
+ * titled "Commemoratio S. Hyacinthi Confessoris", i.e. Hyacinth is the
+ * one merely commemorated there, Lawrence's own elevated closing day
+ * keeps the office. Matches this file's own `collision.ts` precedent for
+ * the analogous sanctoral-vs-sanctoral tie ("Ties favor `native` — the
+ * incoming feast is the guest here"): the closing day is the
+ * already-running incumbent's own elevated day, an occurring saint is
+ * the guest, and a guest needs to actually outrank it to displace it,
+ * not just match it.
+ *
+ * A tie against an *ordinary* (non-closing) octave day's threshold still
+ * favors the occurring saint, unchanged from the original behavior —
+ * confirmed by two already-verified, live-sourced counterexamples this
+ * file's own tests carry: St. Thomas of Canterbury (plain Semiduplex,
+ * Dec 29) wins outright against the Christmas Octave's own ordinary
+ * `wins: semiduplex` default that day (not its closing day, Jan 1), and
+ * St. Nicholas of Tolentino (plain Semiduplex, Sep 10) likewise against
+ * the Nativity of the BVM's octave (day 3 of 8, not closing). Only a
+ * closing day's own elevated rank carries the "already the incumbent"
+ * weight that breaks a tie in the octave's favor.
  */
 function applyOctaves(isoDate: string, winner: DayWinner, commemorations: Commemoration[]): DayWinner {
   const octaves = activeOctavesFor(isoDate);
@@ -294,11 +319,16 @@ function applyOctaves(isoDate: string, winner: DayWinner, commemorations: Commem
   }
 
   let resolvedWinner = winner;
-  if (winner.kind === 'sanctoral' && !isAtLeast(winner.rank, strictestThreshold(octaves))) {
-    const isOneOfTheseOctaves = octaves.some((o) => o.id === winner.id);
-    if (!isOneOfTheseOctaves) {
-      commemorations.push({ kind: 'sanctoral', id: winner.id, name: winner.name, rank: winner.rank });
-      resolvedWinner = { kind: 'temporal', id: resolveTemporalId(isoDate) };
+  if (winner.kind === 'sanctoral') {
+    const threshold = strictestThreshold(octaves);
+    const cmp = compareFeastClass(winner.rank, threshold);
+    const tiedAgainstClosingDay = cmp === 0 && octaves.some((o) => o.isClosingDay && compareFeastClass(o.wins, threshold) === 0);
+    if (cmp < 0 || tiedAgainstClosingDay) {
+      const isOneOfTheseOctaves = octaves.some((o) => o.id === winner.id);
+      if (!isOneOfTheseOctaves) {
+        commemorations.push({ kind: 'sanctoral', id: winner.id, name: winner.name, rank: winner.rank });
+        resolvedWinner = { kind: 'temporal', id: resolveTemporalId(isoDate) };
+      }
     }
   }
 

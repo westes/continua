@@ -1,0 +1,31 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) --
+# read directly from the reference engine's own SanctiM/08-17bmv.txt
+# ("Tertia die infra Octavam S. Assumptionis Beatæ Mariæ Virginis," per
+# Sancti/08-17bmv.txt's own [Rank] line). Same recurring "Sermo sancti
+# Joannis Damasceni" Nocturn 2 homily excerpt already used on day 2
+# (assumption-octave-day-2.yml) and days 4-5 -- confirmed a standing,
+# day-independent reading reused across the octave, not a copy-paste
+# mistake -- collapsed into one continuous reading per project
+# convention. No English translation exists in the source at all for
+# this reading (English/Sancti/08-17bmv.txt has only the day's own
+# [Rank] line, no lesson text), so en is left honestly missing rather
+# than duplicated or translated here, same as day 2. Responsory is the
+# same recurring "Vidi speciosam" already used on days 2, 4, and 5 --
+# a standing octave-wide responsory, not day-specific.
+id: assumption-octave-day-3
+source: "Sermo sancti Joannis Damasceni"
+text:
+  la: |
+    Sermo sancti Joánnis Damascéni Orat. 2 de Dormit. Deíparæ Jubilémus in arca Dómini Dei toto ánimo, et muri cadent Jerichuntíni, contrariárum, inquam, potestátum inféstæ munitiónes. Cum David exsultémus spíritu: Arca enim Dómini hódie requiévit. Clamémus cum Gabriéle, qui primum locum óbtinet inter Angelos: Ave, grátia plena; Dóminus tecum. Ave, gáudii pélagus inexháustum: ave, únicum molestiárum levámen: ave, ómnium cordis dolórum medicaméntum. Ave, sancta Virgo, per quam mors quidem fuit expúlsa, vita autem introdúcta.
+
+    Tu vero, o sacrórum sepulcrórum sacratíssimum post Dómini quidem sepúlcrum, quod vitæ dedit princípium, quod fuit fons resurrectiónis (tecum enim loquar, tamquam cum animáto): úbinam est aurum illud purum, quod manus Apostolórum in te condidérunt? Ubi divítiæ, quæ consúmi néqueunt? Ubi pretiósus ille thesáurus, qui vitam suscépit? Ubi novum volúmen, in quo ineffabíliter Dei Verbum sine manu inscríptum fuit? Ubi abýssus grátiæ, ubi pélagus curatiónum? Ubi est desiderábile illud Deíparæ Vírginis corpus?
+
+    Quid quǽritis in sepúlcro eam, quæ ad cæléstia transláta est tabernácula? Cur a me custódiæ ratiónem expóscitis? Non possum ego divínis jussis resístere. Sacrosánctum illud corpus, quod mihi quoque sanctitátem impertívit, ac pretiosíssimi unguénti fragrántia me replévit, et divínum templum effécit, relíctis sindónibus, ábiit raptum sublíme, comitántibus Angelis, Archángelis et ómnibus cæléstibus poténtiis. Nunc me circúmdant Angeli, nunc divína in me hábitat grátia. Ego evási officína medicínæ ægrotántibus: ego fons perénnis curatiónum: ego remédium advérsus dæmones: ego cívitas refúgii ómnibus ad me confugiéntibus.
+responsory:
+  la: |
+    ℟. Vidi speciósam sicut colúmbam, ascendéntem désuper rivos aquárum, cujus inæstimábilis odor erat nimis in vestiméntis ejus; * Et sicut dies verni circúmdabant eam flores rosárum et lília convállium. ℣. Quæ est ista quæ ascéndit per desértum sicut vírgula fumi ex aromátibus myrrhæ et thuris? ℟. Et sicut dies verni circúmdabant eam flores rosárum et lília convállium.
+  en: |
+    ℟. I saw her, when, fair like a dove, she winged her flight above the rivers of waters. The priceless savour of her perfumes hung heavy in her garments. * And about her it was as the flower of roses in the spring of the year, and lilies of the valleys. ℣. Who is this that cometh out of the wilderness like a pillar of smoke, perfumed with myrrh and frankincense? ℟. And about her it was as the flower of roses in the spring of the year, and lilies of the valleys.
+status:
+  la: verified
+  en: missing

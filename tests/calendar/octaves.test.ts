@@ -9,7 +9,9 @@ describe('activeOctavesFor', () => {
 
   it("finds a saint's own octave on its own day (day 1) and through day 8, not on day 9", () => {
     const day1 = activeOctavesFor('2026-08-10'); // St. Lawrence's own day
-    expect(day1).toEqual([{ id: 'st-lawrence', name: 'St. Lawrence, Martyr', wins: 'semiduplex', dayNumber: 1 }]);
+    expect(day1).toEqual([
+      { id: 'st-lawrence', name: 'St. Lawrence, Martyr', wins: 'semiduplex', dayNumber: 1, isClosingDay: false },
+    ]);
 
     // Aug 17 is also day 3 of the Assumption's own octave (started Aug 15) --
     // the two run concurrently this time of year. Day 8 is Lawrence's own
@@ -17,8 +19,14 @@ describe('activeOctavesFor', () => {
     // pattern, not a per-saint quirk (see calendar/types.ts's OctaveConfig).
     const day8 = activeOctavesFor('2026-08-17');
     expect(day8).toEqual([
-      { id: 'st-lawrence', name: 'St. Lawrence, Martyr', wins: 'duplex', dayNumber: 8 },
-      { id: 'assumption', name: 'The Assumption of the Blessed Virgin Mary', wins: 'semiduplex', dayNumber: 3 },
+      { id: 'st-lawrence', name: 'St. Lawrence, Martyr', wins: 'duplex', dayNumber: 8, isClosingDay: true },
+      {
+        id: 'assumption',
+        name: 'The Assumption of the Blessed Virgin Mary',
+        wins: 'semiduplex',
+        dayNumber: 3,
+        isClosingDay: false,
+      },
     ]);
 
     // Aug 23: past both Lawrence's (ended Aug 17) and the Assumption's
@@ -28,7 +36,9 @@ describe('activeOctavesFor', () => {
 
   it("Pentecost's octave uses its own configured threshold (duplex), not the default (semiduplex)", () => {
     const octaves = activeOctavesFor('2026-05-29'); // within Pentecost's octave, 2026
-    expect(octaves).toEqual([{ id: 'pentecost-sunday', name: 'Pentecost', wins: 'duplex', dayNumber: 6 }]);
+    expect(octaves).toEqual([
+      { id: 'pentecost-sunday', name: 'Pentecost', wins: 'duplex', dayNumber: 6, isClosingDay: false },
+    ]);
     expect(strictestThreshold(octaves)).toBe('duplex');
   });
 
@@ -62,10 +72,34 @@ describe('resolveActiveOctave / pickWinningOctave -- overlapping-octave preceden
 
   // pickWinningOctave directly, since no real equal-rank overlap exists yet
   // in this app's own calendar to exercise the tie-break against live data.
-  const higher = (dayNumber: number): ActiveOctave => ({ id: 'higher', name: 'Higher', wins: 'duplex', dayNumber });
-  const lower = (dayNumber: number): ActiveOctave => ({ id: 'lower', name: 'Lower', wins: 'semiduplex', dayNumber });
-  const equalA = (dayNumber: number): ActiveOctave => ({ id: 'equal-a', name: 'Equal A', wins: 'duplex', dayNumber });
-  const equalB = (dayNumber: number): ActiveOctave => ({ id: 'equal-b', name: 'Equal B', wins: 'duplex', dayNumber });
+  const higher = (dayNumber: number): ActiveOctave => ({
+    id: 'higher',
+    name: 'Higher',
+    wins: 'duplex',
+    dayNumber,
+    isClosingDay: false,
+  });
+  const lower = (dayNumber: number): ActiveOctave => ({
+    id: 'lower',
+    name: 'Lower',
+    wins: 'semiduplex',
+    dayNumber,
+    isClosingDay: false,
+  });
+  const equalA = (dayNumber: number): ActiveOctave => ({
+    id: 'equal-a',
+    name: 'Equal A',
+    wins: 'duplex',
+    dayNumber,
+    isClosingDay: false,
+  });
+  const equalB = (dayNumber: number): ActiveOctave => ({
+    id: 'equal-b',
+    name: 'Equal B',
+    wins: 'duplex',
+    dayNumber,
+    isClosingDay: false,
+  });
 
   it('picks the higher-ranked octave regardless of order or start date', () => {
     expect(pickWinningOctave([lower(2), higher(6)])?.id).toBe('higher');

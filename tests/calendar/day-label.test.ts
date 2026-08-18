@@ -24,7 +24,7 @@ describe('getDayLabel — ordinal temporal label', () => {
     // tests/calendar/transfer.test.ts's own May 31 case for the full
     // winner/commemorations breakdown), so the label now reflects her,
     // not Trinity Sunday itself.
-    expect(getDayLabel(resolveDay('2026-05-31'))).toBe('The Queenship of the Blessed Virgin Mary');
+    expect(getDayLabel(resolveDay('2026-05-31'))).toBe('The Queenship of the Blessed Virgin Mary (Duplex II Class)');
     expect(getDayLabel(resolveDay('2026-04-05'))).toBe('Easter');
     expect(getDayLabel(resolveDay('2026-02-18'))).toBe('Ash Wednesday');
   });
@@ -82,12 +82,12 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // genuinely saint-free overflow-week Monday instead (no single
     // Nov-dated Monday near this Sunday pair is clean any more, now that
     // Nov 4/8/15/16/20 are all fixed real content).
-    expect(getDayLabel(resolveDay('2024-11-11'))).toBe('St. Martin of Tours, Bishop and Confessor');
+    expect(getDayLabel(resolveDay('2024-11-11'))).toBe('St. Martin of Tours, Bishop and Confessor (Duplex Majus)');
     expect(getDayLabel(resolveDay('2024-11-17'))).toBe('The 6th Sunday after Epiphany');
     // 2024-11-18 is the Dedication of the Basilicas of Ss. Peter and Paul
     // (pre-existing fixed content) -- again a real winning saint, not the
     // ferial fallback.
-    expect(getDayLabel(resolveDay('2024-11-18'))).toBe('Dedication of the Basilicas of Ss. Peter and Paul');
+    expect(getDayLabel(resolveDay('2024-11-18'))).toBe('Dedication of the Basilicas of Ss. Peter and Paul (Duplex)');
     // 2035-10-29, a Monday in the 3rd week of a different overflow
     // stretch, is genuinely clean (no sanctoral entry, no commemoration)
     // -- covers the ferial "Monday in the Nth week after Epiphany" format
@@ -110,7 +110,7 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // outright rather than being commemorated — a pre-existing rule, not
     // new behavior from adding her. 2026-11-22 above (no saint collision)
     // still covers the fixed-ordinal label itself.
-    expect(getDayLabel(resolveDay('1943-11-21'))).toBe('The Presentation of the Blessed Virgin Mary');
+    expect(getDayLabel(resolveDay('1943-11-21'))).toBe('The Presentation of the Blessed Virgin Mary (Duplex Majus)');
   });
 });
 
@@ -125,8 +125,10 @@ describe('getDayLabel — active octave', () => {
 
   it('shows the octave day alone when nothing is separately commemorated that day', () => {
     // Not Aug 17 (day 8, the last day, of St. Lawrence's octave): that
-    // date is now St. Hyacinth's own fixed day (Duplex, added per the
-    // full-year sanctoral import), which wins outright. Not Nov 8 either
+    // date is also within the Assumption's own overlapping octave (day 3)
+    // and St. Hyacinth's own fixed day (Duplex) is commemorated there too
+    // — see the "picks the higher-ranked octave" case below for that
+    // three-way combination. Not Nov 8 either
     // (day 8, the last day, of All Saints' own octave): the November
     // sanctoral pull gave that day its own real feast, the Octave Day of
     // All Saints itself (Duplex majus, own proper Nocturn 2-3 content --
@@ -155,23 +157,22 @@ describe('getDayLabel — active octave', () => {
     expect(getDayLabel(day)).toBe('Friday in Christmastide');
   });
 
-  it("picks the higher-ranked of two genuinely overlapping octaves for the label -- St. Lawrence's own elevated closing day (Aug 17) over the Assumption's ordinary day 3, even though the Assumption's octave started later and the Assumption is the higher-ranked feast overall", () => {
-    // Aug 17 itself is no longer available to demonstrate the
-    // octave-vs-octave priority pick through a real date: it's now St.
-    // Hyacinth's own fixed day (Duplex, added per the full-year
-    // sanctoral import), which wins outright over both octaves. In
-    // fact every day where St. Lawrence's (Aug 10-17) and the
-    // Assumption's (Aug 15-22) octaves genuinely overlap (Aug 15-17) is
-    // now occupied by real sanctoral content (the Assumption herself,
-    // St. Joachim, St. Hyacinth) -- there's no remaining real calendar
-    // date left in this app where that specific priority comparison is
-    // observable. The underlying mechanism itself (`pickWinningOctave`)
-    // is still directly unit-tested with synthetic data in
-    // tests/calendar/octaves.test.ts's own "picks the higher-ranked
-    // octave regardless of order or start date" case. Aug 18 (day 4 of
-    // the Assumption's octave alone, Lawrence's already over) is still
-    // a valid, uncontested check.
-    expect(getDayLabel(resolveDay('2026-08-17'))).toBe('St. Hyacinth, Confessor');
+  it("picks the higher-ranked of two genuinely overlapping octaves for the label -- St. Lawrence's own elevated closing day (Aug 17) over the Assumption's ordinary day 3, even though the Assumption's octave started later and the Assumption is the higher-ranked feast overall -- with St. Hyacinth (Duplex, tied with Lawrence's own elevated rank) commemorated rather than winning outright", () => {
+    // Live-verified against the reference engine directly (Monastic
+    // Tridentinum 1617, command=prayMatutinum): Aug 17 is "In Octava S.
+    // Laurentii Martyris ~ Duplex" -- Lawrence's own elevated closing day
+    // wins outright, with Hyacinth's own alternate-rubric block titled
+    // "Commemoratio S. Hyacinthi Confessoris" confirming he's the one
+    // merely commemorated there. A tie against an octave's own elevated
+    // closing day favors the octave (calendar/index.ts's applyOctaves),
+    // unlike an ordinary mid-octave day's tie, which still favors an
+    // occurring saint (see octaves.test.ts and the December/September
+    // sanctoral tests for those counterexamples). The Assumption's own
+    // day 3 (semiduplex, genuinely active but outranked by Lawrence's
+    // elevated duplex) still gets named, not dropped, alongside it.
+    expect(getDayLabel(resolveDay('2026-08-17'))).toBe(
+      '8th Day within the Octave of St. Lawrence, Martyr — The Assumption of the Blessed Virgin Mary — St. Hyacinth, Confessor',
+    );
     expect(getDayLabel(resolveDay('2026-08-18'))).toBe('4th Day within the Octave of The Assumption of the Blessed Virgin Mary');
   });
 
@@ -199,7 +200,7 @@ describe('getDayLabel — feast name combination', () => {
       ...base,
       winner: { kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank: 'duplex' },
     };
-    expect(getDayLabel(day)).toBe('St. Ereden');
+    expect(getDayLabel(day)).toBe('St. Ereden (Duplex)');
   });
 
   it('shows both, feast first, when the feast is merely commemorated', () => {
