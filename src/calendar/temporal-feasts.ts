@@ -5,13 +5,14 @@
 // don't need a record at all (they're just collect-text lookups via
 // propers/index.ts's getTemporalProper); this only exists for the ones
 // that do.
-import type { OctaveConfig } from './types';
+import type { FeastClass, OctaveConfig } from './types';
 import { easterOffsetOf } from './temporal';
 
 export interface TemporalFeastRecord {
   id: string;
   name: string;
   octave?: OctaveConfig;
+  rank?: FeastClass;
 }
 
 const temporalFeastModules = import.meta.glob<{ default: TemporalFeastRecord }>(
