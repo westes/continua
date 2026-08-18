@@ -10,8 +10,8 @@ describe('getDayLabel — ordinal temporal label', () => {
     // the full-year sanctoral import), which would win outright and hide
     // this purely-temporal label case. 2027's Trinity Sunday is May 23,
     // so Trinity Monday is May 24 -- free of any sanctoral entry.
-    expect(getDayLabel(resolveDay('2027-05-24'))).toBe('Monday after Trinity Sunday');
-    expect(getDayLabel(resolveDay('2026-01-07'))).toBe('Wednesday after Epiphany'); // Epiphany 2026 is a Tuesday
+    expect(getDayLabel(resolveDay('2027-05-24'))).toBe('Monday after Trinity Sunday (Feria)');
+    expect(getDayLabel(resolveDay('2026-01-07'))).toBe('Wednesday after Epiphany (Feria)'); // Epiphany 2026 is a Tuesday
   });
 
   it('names the anchor day itself, not "day after itself"', () => {
@@ -25,7 +25,7 @@ describe('getDayLabel — ordinal temporal label', () => {
     // winner/commemorations breakdown), so the label now reflects her,
     // not Trinity Sunday itself.
     expect(getDayLabel(resolveDay('2026-05-31'))).toBe('The Queenship of the Blessed Virgin Mary (Duplex II Class)');
-    expect(getDayLabel(resolveDay('2026-04-05'))).toBe('Easter');
+    expect(getDayLabel(resolveDay('2026-04-05'))).toBe('Easter (Duplex I Class)');
     expect(getDayLabel(resolveDay('2026-02-18'))).toBe('Ash Wednesday');
   });
 
@@ -35,7 +35,7 @@ describe('getDayLabel — ordinal temporal label', () => {
     // sanctoral import), which wins outright. 2027's Trinity Sunday is
     // May 23, so 5 full weeks after the first Sunday-after-Trinity
     // (May 30) is Jun 28 -- free of any sanctoral entry.
-    expect(getDayLabel(resolveDay('2027-06-28'))).toBe('Monday in the 5th week after Trinity');
+    expect(getDayLabel(resolveDay('2027-06-28'))).toBe('Monday in the 5th week after Trinity (Feria)');
   });
 
   it("Advent's own anchor Sunday is already week 1, not a separate anchor-week case", () => {
@@ -45,8 +45,8 @@ describe('getDayLabel — ordinal temporal label', () => {
     // reference engine, which shows the same pairing), so the label
     // reflects both, feast name first, same pattern as Trinity Sunday's
     // own St. Felix I case above.
-    expect(getDayLabel(resolveDay('2025-11-30'))).toBe('St. Andrew, Apostle — The 1st Sunday of Advent');
-    expect(getDayLabel(resolveDay('2025-12-01'))).toBe('Monday in the 1st week of Advent');
+    expect(getDayLabel(resolveDay('2025-11-30'))).toBe('St. Andrew, Apostle — The 1st Sunday of Advent (Semiduplex)');
+    expect(getDayLabel(resolveDay('2025-12-01'))).toBe('Monday in the 1st week of Advent (Feria)');
   });
 
   it('falls back to weekday + season name for seasons with no ordinal convention modeled', () => {
@@ -73,7 +73,7 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // appended to the Sunday's own label per this app's usual
     // commemorated-Simplex display.
     expect(getDayLabel(resolveDay('2024-11-10'))).toBe(
-      'Ss. Tryphon, Respicius, and Nympha, Martyrs — The 5th Sunday after Epiphany',
+      'Ss. Tryphon, Respicius, and Nympha, Martyrs — The 5th Sunday after Epiphany (Semiduplex)',
     );
     // 2024-11-11 is St. Martin of Tours (Duplex, pre-existing content) --
     // an ordinary (non-privileged) Monday fully yields to a real winning
@@ -83,7 +83,7 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // Nov-dated Monday near this Sunday pair is clean any more, now that
     // Nov 4/8/15/16/20 are all fixed real content).
     expect(getDayLabel(resolveDay('2024-11-11'))).toBe('St. Martin of Tours, Bishop and Confessor (Duplex Majus)');
-    expect(getDayLabel(resolveDay('2024-11-17'))).toBe('The 6th Sunday after Epiphany');
+    expect(getDayLabel(resolveDay('2024-11-17'))).toBe('The 6th Sunday after Epiphany (Semiduplex)');
     // 2024-11-18 is the Dedication of the Basilicas of Ss. Peter and Paul
     // (pre-existing fixed content) -- again a real winning saint, not the
     // ferial fallback.
@@ -92,7 +92,7 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // stretch, is genuinely clean (no sanctoral entry, no commemoration)
     // -- covers the ferial "Monday in the Nth week after Epiphany" format
     // itself, independent of the specific 5th/6th Sunday pair above.
-    expect(getDayLabel(resolveDay('2035-10-29'))).toBe('Monday in the 3rd week after Epiphany');
+    expect(getDayLabel(resolveDay('2035-10-29'))).toBe('Monday in the 3rd week after Epiphany (Feria)');
   });
 
   it('the fixed final Sunday of the year always shows the fixed 23rd-after-Trinity ordinal, not a raw elapsed-week count', () => {
@@ -102,7 +102,7 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // Every year 1900-2100 lands on this same id for its own last Sunday
     // before Advent, so this ordinal is fixed, not overflow-year-specific
     // -- confirmed against a non-overflow year (1943) too.
-    expect(getDayLabel(resolveDay('2026-11-22'))).toBe('The 23rd Sunday after Trinity');
+    expect(getDayLabel(resolveDay('2026-11-22'))).toBe('The 23rd Sunday after Trinity (Semiduplex)');
     // 1943-11-21 is also the Presentation of the BVM (Duplex Majus, added
     // 2026-08 — see presentation-of-the-bvm.yml), which meets this app's
     // existing privileged-Sunday rank threshold (commemorations.ts's
@@ -120,7 +120,9 @@ describe('getDayLabel — active octave', () => {
     // Clare's own day -- Simplex, below the octave's semiduplex threshold,
     // so she's commemorated rather than winning. Matches the live engine's
     // own title for this date directly (see saints/st-clare.yml).
-    expect(getDayLabel(resolveDay('2026-08-12'))).toBe('3rd Day within the Octave of St. Lawrence, Martyr — St. Clare, Virgin');
+    expect(getDayLabel(resolveDay('2026-08-12'))).toBe(
+      '3rd Day within the Octave of St. Lawrence, Martyr (Semiduplex) — St. Clare, Virgin',
+    );
   });
 
   it('shows the octave day alone when nothing is separately commemorated that day', () => {
@@ -137,7 +139,7 @@ describe('getDayLabel — active octave', () => {
     // "real content closed the gap" shape as August's Lawrence/Assumption
     // overlap. Day 3 of the same octave (2028-11-03, a Friday) is still
     // genuinely open -- no sanctoral entry, no separate commemoration.
-    expect(getDayLabel(resolveDay('2028-11-03'))).toBe('3rd Day within the Octave of All Saints');
+    expect(getDayLabel(resolveDay('2028-11-03'))).toBe('3rd Day within the Octave of All Saints (Semiduplex)');
   });
 
   it("a season's own named anchor day outranks an active octave, even though Trinity Sunday is technically also day 8 of Pentecost's own octave", () => {
@@ -147,14 +149,14 @@ describe('getDayLabel — active octave', () => {
     // muddy this specifically octave-vs-anchor-day check with a sanctoral
     // winner. 2030's Trinity Sunday (June 16) has no sanctoral entry at
     // all, isolating the octave interaction cleanly.
-    expect(getDayLabel(resolveDay('2030-06-16'))).toBe('Trinity Sunday');
+    expect(getDayLabel(resolveDay('2030-06-16'))).toBe('Trinity Sunday (Duplex I Class)');
   });
 
   it("a temporal day with real standing of its own (not ordinary-feria) never shows an octave name at all, even with one active -- live-verified counterexample: the Christmas Octave's own stack (Dec 30) titles itself off the Sunday, never any of the four octaves layered on top of it", () => {
     const day = resolveDay('2033-12-30');
     expect(day.temporalCategory).toBe('privileged-feria-minor');
     expect(getDayLabel(day)).not.toContain('Octave');
-    expect(getDayLabel(day)).toBe('Friday in Christmastide');
+    expect(getDayLabel(day)).toBe('Friday in Christmastide (Feria)');
   });
 
   it("picks the higher-ranked of two genuinely overlapping octaves for the label -- St. Lawrence's own elevated closing day (Aug 17) over the Assumption's ordinary day 3, even though the Assumption's octave started later and the Assumption is the higher-ranked feast overall -- with St. Hyacinth (Duplex, tied with Lawrence's own elevated rank) commemorated rather than winning outright", () => {
@@ -171,9 +173,11 @@ describe('getDayLabel — active octave', () => {
     // day 3 (semiduplex, genuinely active but outranked by Lawrence's
     // elevated duplex) still gets named, not dropped, alongside it.
     expect(getDayLabel(resolveDay('2026-08-17'))).toBe(
-      '8th Day within the Octave of St. Lawrence, Martyr — The Assumption of the Blessed Virgin Mary — St. Hyacinth, Confessor',
+      '8th Day within the Octave of St. Lawrence, Martyr (Duplex) — The Assumption of the Blessed Virgin Mary — St. Hyacinth, Confessor',
     );
-    expect(getDayLabel(resolveDay('2026-08-18'))).toBe('4th Day within the Octave of The Assumption of the Blessed Virgin Mary');
+    expect(getDayLabel(resolveDay('2026-08-18'))).toBe(
+      '4th Day within the Octave of The Assumption of the Blessed Virgin Mary (Semiduplex)',
+    );
   });
 
   it('a real Sunday with standing of its own wins over both octaves entirely, showing the plain ordinal Sunday label -- not an octave name at all', () => {
@@ -182,6 +186,19 @@ describe('getDayLabel — active octave', () => {
     const day = resolveDay('2026-08-16');
     expect(day.weekday).toBe('sunday');
     expect(getDayLabel(day)).not.toContain('Octave');
+  });
+});
+
+describe('getDayLabel — named temporal feast rank', () => {
+  it('shows rank after a named temporal feast winner, sourced from its own TemporalFeastRecord', () => {
+    // Not Christmas Day itself: `resolveTemporalId` maps every day of
+    // christmastide (Dec 25 included) to `christmas-octave-sunday`, not
+    // `christmas-day` — a pre-existing, separate gap (`christmas-day`'s
+    // own record only ever surfaces via the octave layer, never as a
+    // direct winner id) out of scope here. Pentecost Sunday's own id
+    // *does* resolve as the direct winner (`temporal-id.ts`'s
+    // EASTER_OFFSET_IDS), so it's a real, clean case for this branch.
+    expect(getDayLabel(resolveDay('2026-05-24'))).toBe('Pentecost (Duplex I Class)');
   });
 });
 
@@ -208,10 +225,10 @@ describe('getDayLabel — feast name combination', () => {
       ...base,
       commemorations: [{ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank: 'duplex-2-classis' }],
     };
-    expect(getDayLabel(day)).toBe('St. Ereden — Monday in the 2nd week after Trinity');
+    expect(getDayLabel(day)).toBe('St. Ereden — Monday in the 2nd week after Trinity (Feria)');
   });
 
   it('shows just the temporal label when nothing is commemorated at all', () => {
-    expect(getDayLabel(base)).toBe('Monday in the 2nd week after Trinity');
+    expect(getDayLabel(base)).toBe('Monday in the 2nd week after Trinity (Feria)');
   });
 });

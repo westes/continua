@@ -11,7 +11,7 @@ describe('Christ the King (applyChristTheKing)', () => {
     const day = resolveDay('2026-10-25'); // last Sunday of October 2026
     expect(day.winner).toEqual({ kind: 'temporal', id: 'christ-the-king' });
     expect(day.commemorations).toContainEqual({ kind: 'temporal', id: 'post-pentecost-22' });
-    expect(getDayLabel(day)).toBe('Christ the King');
+    expect(getDayLabel(day)).toBe('Christ the King (Duplex I Class)');
   });
 
   it('preserves a nested commemoration: a Simplex saint already commemorated under the ordinary Sunday stays commemorated', () => {

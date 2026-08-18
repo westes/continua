@@ -9,7 +9,7 @@
 // become a configurable choice later (the same day->id indirection
 // philosophy already used for the sanctoral calendar), not hardcoded here
 // forever — just not built yet.
-import type { Commemoration, FeastClass, LiturgicalDay } from './types';
+import type { Commemoration, FeastClass, LiturgicalDay, TemporalCategory } from './types';
 import { easterSunday } from './easter';
 import { adventStart, firstSundayStrictlyAfter, sundayOnOrBefore } from './temporal';
 import { addDays, daysBetween, toIsoDate } from './date-math';
@@ -50,6 +50,12 @@ interface OrdinalSeason {
   /** Used in "the Nth Sunday/week {preposition} {ordinalName}". */
   ordinalName: string;
   preposition: 'after' | 'of';
+  /** The season's own anchor day's rank, if it sits on the closed
+   * pre-1955 duplex scale at all — Ash Wednesday (Lent's anchor) doesn't;
+   * a privileged feria has no duplex-scale rank, so it's left undefined
+   * and shows no parenthetical, same "omit rather than guess" convention
+   * `formatRank`/`status` fields use elsewhere. */
+  anchorRank?: FeastClass;
 }
 
 const ORDINAL_SEASONS: Partial<Record<string, OrdinalSeason>> = {
@@ -66,6 +72,7 @@ const ORDINAL_SEASONS: Partial<Record<string, OrdinalSeason>> = {
     anchorName: 'Epiphany',
     ordinalName: 'Epiphany',
     preposition: 'after',
+    anchorRank: 'duplex-1-classis',
   },
   lent: {
     anchorDate: (year) => addDays(toIsoDate(easterSunday(year)), -46),
@@ -80,6 +87,7 @@ const ORDINAL_SEASONS: Partial<Record<string, OrdinalSeason>> = {
     anchorName: 'Easter',
     ordinalName: 'Easter',
     preposition: 'after',
+    anchorRank: 'duplex-1-classis',
   },
   trinitytide: {
     anchorDate: (year) => addDays(toIsoDate(easterSunday(year)), 56),
@@ -87,6 +95,7 @@ const ORDINAL_SEASONS: Partial<Record<string, OrdinalSeason>> = {
     anchorName: 'Trinity Sunday',
     ordinalName: 'Trinity',
     preposition: 'after',
+    anchorRank: 'duplex-1-classis',
   },
 };
 
@@ -105,7 +114,7 @@ function anchorDayName(day: LiturgicalDay): string | undefined {
   }
   const year = Number(day.date.slice(0, 4));
   if (day.date === config.anchorDate(year)) {
-    return config.anchorName;
+    return config.anchorRank ? `${config.anchorName} (${formatRank(config.anchorRank)})` : config.anchorName;
   }
   return undefined;
 }
@@ -209,7 +218,7 @@ function temporalLabel(day: LiturgicalDay): string {
  * special-cased for that rare edge case (see applyOctaves's own
  * `isOwnStartDay` comment in calendar/index.ts for when it can happen). */
 function octaveLabel(octave: ActiveOctave): string {
-  return `${ordinal(octave.dayNumber)} Day within the Octave of ${octave.name}`;
+  return `${ordinal(octave.dayNumber)} Day within the Octave of ${octave.name} (${formatRank(octave.wins)})`;
 }
 
 /** Every `kind: 'octave'` commemoration on `day` other than `excludeId` —
@@ -249,6 +258,24 @@ function formatRank(rank: FeastClass): string {
   return RANK_LABELS[rank];
 }
 
+/** Sundays/ferias aren't on the `FeastClass` duplex scale at all (that
+ * scale is for feasts), so this is a separate, plain-string lookup rather
+ * than another `formatRank` case — used for the final ordinal-temporal-
+ * label fallback (weekdays, Sundays with no named-feast/anchor-day/octave
+ * standing of their own). Pre-1955, an ordinary Sunday's own rank is
+ * Semiduplex regardless of whether it's additionally "privileged"
+ * (privilege is about resisting supersession, a property of
+ * `temporalCategory`, not a higher spot on the duplex scale) — so both
+ * Sunday categories share one label here. */
+const TEMPORAL_CATEGORY_RANK_LABELS: Record<TemporalCategory, string> = {
+  'ordinary-sunday': 'Semiduplex',
+  'privileged-sunday': 'Semiduplex',
+  'ordinary-feria': 'Feria',
+  'privileged-feria-minor': 'Feria',
+  'privileged-feria': 'Feria',
+  'privileged-feria-major': 'Feria',
+};
+
 /**
  * The full "day being celebrated" label: a feast name when
  * calendar/commemorations.ts says the day has one, combined with (or
@@ -280,7 +307,7 @@ export function getDayLabel(day: LiturgicalDay): string {
   // temporal-feasts.ts) and fall through to the ordinal label as before.
   const namedFeast = getTemporalFeastRecord(day.winner.id);
   if (namedFeast) {
-    return namedFeast.name;
+    return namedFeast.rank ? `${namedFeast.name} (${formatRank(namedFeast.rank)})` : namedFeast.name;
   }
 
   const commemoratedSaint = day.commemorations.find((c) => c.kind === 'sanctoral');
@@ -323,6 +350,6 @@ export function getDayLabel(day: LiturgicalDay): string {
     return [primary, ...rest].join(' — ');
   }
 
-  const temporal = temporalLabel(day);
+  const temporal = `${temporalLabel(day)} (${TEMPORAL_CATEGORY_RANK_LABELS[day.temporalCategory]})`;
   return commemoratedSaint ? `${commemoratedSaint.name} — ${temporal}` : temporal;
 }
