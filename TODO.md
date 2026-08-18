@@ -42,6 +42,11 @@ across every hour and content type in this app.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
+   - Matins psalmody overrides for a Duplex+ weekday feast (see "Matins psalmody overrides"
+     below): mechanism built, keyed per-Common-category, one proof authored (St. Lawrence).
+     Every other Common category (~75 saints across Apostle, Martyr(s), Confessor, Virgin,
+     Doctor, etc.) still falls back to the plain ferial weekday table, redistributed into 3
+     nocturns, until its own category's real psalmody is authored.
    - The four "Commemoratio Octavæ" Ant+V/R+collect blocks (Christmas Octave's own
      Nativity/Stephen/John/Holy-Innocents commemorations, e.g. on Dec 30) are now done —
      see "Octave content" below. St. Frances of Rome's/
@@ -1742,6 +1747,96 @@ outranks its stub competitor instead of winning by the stub's own default), and
 name instead of a ferial fallback label, the latter because Duplex Majus already meets this
 app's own pre-existing privileged-Sunday rank threshold in `commemorations.ts`, not new
 behavior). `npm test` (365 tests) and `tsc --noEmit` both pass.
+
+### Matins psalmody overrides — mechanism built, one proof (2026-08)
+
+Real bug found and fixed: `hours/matins.ts`'s `threeNocturns` gate (Sunday, or a Duplex+
+sanctoral winner) correctly governed *nocturn count*, but the code also unconditionally reused
+the literal Sunday psalmody (`matins-sunday-antiphons.yml`, Ps 20-31) as *content* for every
+three-nocturn day — including a Duplex+ weekday feast, which is wrong. Confirmed live (Monastic
+Tridentinum 1617, `command=prayMatutinum`) against St. Lawrence's own octave closing day
+(2026-08-17, "In Octava S. Laurentii Martyris ~ Duplex"): the real psalmody is Nocturn 1 = Ps
+1,2,4,5,8,10, Nocturn 2 = Ps 14,16,20,23,63,91, each with its own antiphon, plus 3 OT canticles
+in Nocturn 3 (Sirach 14/15, Jeremiah 17, Sirach 31) — a genuinely different scheme from both
+the real-Sunday one and the plain ferial weekday table.
+
+Cross-checked against a second Duplex saint (St. Ignatius of Antioch, Common of a
+Martyr-Bishop, no proper content of his own, 2029-02-01): Nocturn 1 identical to Lawrence's
+own; Nocturn 2 nearly identical (only one of six slots differs). So the psalm *numbers* are a
+shared per-Common-category pool, not unique per saint — only the antiphon text is proper to
+the individual saint when authored.
+
+Mechanism: `hours/matins-psalmody-overrides.ts` (mirrors `hours/lauds-psalmody-overrides.ts`'s
+shape, but keyed differently — see its own doc comment for why per-category, not per-feast,
+is the right key here) + `data/hours/matins-psalmody-overrides/*.yml`. `matins.ts`'s
+three-nocturn branch now splits on `day.weekday === 'sunday'` first; a non-Sunday three-nocturn
+day looks up an override by the office winner's id, falling back to the plain ferial weekday
+table (redistributed into 3 nocturns instead of 1) when none is authored yet — never blank, but
+honest about not yet having that saint's real proper psalmody.
+
+**Proof authored**: St. Lawrence only (`matins-psalmody-overrides/st-lawrence.yml`) — the live-
+verified content above. New scripture chapters added for the canticles:
+`data/scripture/{sir-14,sir-15,jer-17,sir-31}.yml` (sparse, only the cited verses, same
+convention as the pre-existing `sir-36.yml`). `matins.ts`'s canticle shape was generalized from
+one scripture ref per canticle to a list of refs (`canticles: { refs: [...] }[]`), since
+Lawrence's own first canticle cites two Sirach chapters under one heading in the source
+("Eccli 14:22;15:3-4;15:6") — kept as one canticle, not split; `matins-sunday-antiphons.yml`
+migrated to the same shape (each existing single ref wrapped in `refs: [...]`), no content
+change.
+
+**Still open** (bulk-content work, same shape as the Lauds override sweep): every other
+Duplex+ Common category (Apostle, Martyr(s), Confessor, Virgin, Doctor, etc. — ~75 saints per
+the earlier Matins design-memory estimate) has no override authored yet and uses the ferial-
+table fallback in the meantime. A real Common-category key (vs. the per-saint key `st-lawrence`
+uses now, since only proper content has been authored so far) is the natural next step once a
+second category's content is authored — see `matins-psalmody-overrides.ts`'s own doc comment.
+
+Live-verified end-to-end: `tests/hours/matins.test.ts`'s new "Duplex+ weekday-feast" describe
+block (Lawrence's own psalmody resolving `verified` in both languages across all 12 psalms +
+3 canticles, plus the ferial-fallback case via St. Ignatius). `npm test` (371 tests), `npm run
+build`, and `tsc --noEmit` all pass.
+
+### Calendar precedence: a tie against an octave's own elevated closing day now favors the octave (2026-08)
+
+Real bug found and fixed, same session as the Matins psalmody fix above, discovered while
+checking why 2026-08-17's Matins/label looked wrong: `calendar/index.ts`'s `applyOctaves` let a
+*tie* between an occurring saint's rank and an active octave's threshold go to the saint
+(`isAtLeast`, `>=`). Live-verified against the reference engine that this is wrong specifically
+for an octave's own elevated *closing* day: St. Hyacinth (plain Duplex, Aug 17) against St.
+Lawrence's own octave closing day (also Duplex, via `closingDayRank`'s default) — the engine's
+own alternate rubric block for that date is titled "Commemoratio S. Hyacinthi Confessoris",
+i.e. Hyacinth is the one merely commemorated, Lawrence's elevated closing day wins outright.
+Matches `collision.ts`'s own existing tie precedent for sanctoral-vs-sanctoral collisions
+("ties favor the incumbent").
+
+Fix scoped precisely to closing days, not every octave tie: a tie against an octave's
+*ordinary* (non-closing) threshold still favors the occurring saint, unchanged — confirmed by
+two already-verified counterexamples this app's own tests already carried (St. Thomas of
+Canterbury, Dec 29, against the Christmas Octave's ordinary threshold; St. Nicholas of
+Tolentino, Sep 10, against the Nativity-BVM octave's ordinary threshold) — both would have
+broken under a blanket tie-flip, confirming the closing-day-specific scope is correct.
+`calendar/octaves.ts`'s `ActiveOctave` gained an `isClosingDay` field to make this
+distinguishable.
+
+Two related display bugs fixed alongside it: `calendar/day-label.ts`'s `getDayLabel` dropped
+every commemoration (octave or sanctoral) whenever the day's winner was a plain sanctoral
+saint, and dropped every *other* active octave besides the one picked as headline even when an
+octave itself was the winner — both fixed (`otherActiveOctaveNames`), gated the same
+`ordinary-feria`/anchor-day rules the rest of the function already uses so Trinity Sunday's own
+technical overlap with Pentecost's octave still doesn't get named ("nobody calls it that", per
+the function's own pre-existing convention). Rank was also not displayed anywhere in this app's
+UI at all, for any saint — added (`formatRank`), shown after the day's own winner's name, e.g.
+"St. Hyacinth, Confessor (Duplex)".
+
+Also closed a real content gap surfaced along the way: `assumption-octave-day-3.yml` (Aug 17,
+the Assumption's own day 3) had never been authored — days 2 and 4-8 existed, day 3 didn't —
+sourced from the reference engine's own recurring Nocturn 2 homily + the octave-wide "Vidi
+speciosam" responsory already used elsewhere in her octave.
+
+`tests/calendar/octaves.test.ts` and `tests/calendar/day-label.test.ts` updated to the
+corrected behavior (not weakened) — 2026-08-17 is now a real, live demonstrable date for the
+octave-vs-octave priority pick this app's mechanism already implements, rather than the
+stand-in synthetic-data test that was the only option before.
 
 ### Bible-plan TSV — bulk conversion done (2026-08)
 
