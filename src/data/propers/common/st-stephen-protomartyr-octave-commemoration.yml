@@ -1,0 +1,32 @@
+# Verified against the reference engine (Monastic Tridentinum 1617,
+# ../divinum-officium-reference) -- read directly from Sancti/12-26.txt's
+# own [Octava 3] section (Latin/Sancti/12-26.txt:249-258, English/Sancti/
+# 12-26.txt:164-173), the non-Cistercian rubric -- see christmas-day-
+# octave-commemoration.yml's own comment for why Octava 3 (Second
+# Vespers' own text) was picked as the single shared version this app
+# renders regardless of hour. Collect body + doxology reused verbatim
+# from the already-authored st-stephen-protomartyr-collect.yml (same
+# text, `$Qui tecum` macro), rather than re-translating -- the reference
+# engine's own English for this collect is a close paraphrase of that
+# file's already-verified wording.
+id: st-stephen-protomartyr-octave-commemoration
+text:
+  la: |
+    Ant. Sepeliérunt Stéphanum viri timoráti, et fecérunt planctum magnum super eum.
+    V. Stéphanus vidit cælos apértos.
+    R. Vidit, et introívit: beátus homo, cui cæli patébant.
+    Orémus.
+    Da nobis, quǽsumus, Dómine, imitári quod cólimus: ut discámus et inimícos dilígere; quia ejus natalícia celebrámus, qui novit étiam pro persecutóribus exoráre Dóminum nostrum Jesum Christum Fílium tuum:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    ℟. Amen.
+  en: |
+    Ant. Devout men buried Stephen, and made great mourning over him.
+    V. Stephen saw the heavens opened:
+    R. He saw and entered: blessed man, to whom the heavens were opened.
+    Let us pray.
+    Grant us, we beseech thee, O Lord, so to imitate what we revere, that we may learn to love even our enemies; for we celebrate the heavenly birthday of him who knew how to pray for his very persecutors to our Lord Jesus Christ:
+    Who with thee liveth and reigneth, in the unity of the Holy Spirit, God, world without end.
+    ℟. Amen.
+status:
+  la: verified
+  en: verified
