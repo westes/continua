@@ -21,9 +21,13 @@
 //     commemorated saint's own patristic/hagiographic/Gospel content, the
 //     plain temporal day's own content, and every active octave's own
 //     reading — is gathered into one ordered pool (`buildReadingPool`),
-//     then sliced into however many nocturns the day's psalmody has
+//     then slotted across however many nocturns the day's psalmody has
 //     (`distributeIntoNocturns`), with no reading kind pinned to a
-//     particular nocturn number.
+//     particular nocturn number. On a 3-nocturn day the slotting is
+//     front-light: Nocturn 1 gets one reading, Nocturn 2 gets one, and
+//     Nocturn 3 absorbs the rest of the pool, however large (user, 2026-08)
+//     — not an even chunking of the pool. A pool of only one reading total
+//     goes in Nocturn 3, not Nocturn 1.
 //   - Where the historical office splits one continuous source across
 //     several numbered lessons, this app recombines them into one reading
 //     (see src/propers/octave-readings.ts's resolvePassages / src/propers/
@@ -266,23 +270,20 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string):
   return parts;
 }
 
-/** Splits `pool` into `nocturnCount` contiguous, as-even-as-possible
- * chunks (ceiling division), preserving pool order within each chunk —
- * "depending on how many we have" (user, 2026-08), not a fixed count per
- * nocturn. A pool of 5 across 3 nocturns lands 2/2/1, not the historical
- * fixed lesson-count-per-nocturn scheme. */
+/** Splits `pool` across `nocturnCount` nocturns. A single nocturn takes the
+ * whole pool. Three nocturns use a front-light, back-heavy split — Nocturn 1
+ * gets exactly one reading, Nocturn 2 gets exactly one, and Nocturn 3
+ * absorbs everything else, however many that is (user, 2026-08: "nocturn,
+ * one reading, nocturn, one reading, nocturn, remaining readings") — a
+ * deliberate departure from evenly chunking the pool, and from the
+ * historical fixed lesson-count-per-nocturn scheme. Special case: a pool
+ * with only one reading total puts it in Nocturn 3, not Nocturn 1 — a bare
+ * single reading reads better closing the hour than opening it. */
 function distributeIntoNocturns(pool: ResolvedPart[], nocturnCount: number): ResolvedPart[][] {
-  const chunks: ResolvedPart[][] = [];
-  const size = Math.ceil(pool.length / nocturnCount);
-  for (let i = 0; i < nocturnCount; i++) {
-    const chunk = pool.slice(i * size, (i + 1) * size);
-    // Stamp each reading with the nocturn slot it actually landed in —
-    // only meaningful once distribution has happened, not while the pool
-    // is still unordered-by-nocturn (see ResolvedPart's own 'lesson'
-    // variant, `nocturn?: number`).
-    chunks.push(nocturnCount > 1 ? chunk.map((part) => ({ ...part, nocturn: i + 1 })) : chunk);
-  }
-  return chunks;
+  if (nocturnCount === 1) return [pool];
+  const chunks: ResolvedPart[][] =
+    pool.length <= 1 ? [[], [], pool] : [[pool[0]!], [pool[1]!], pool.slice(2)];
+  return chunks.map((chunk, i) => chunk.map((part) => ({ ...part, nocturn: i + 1 })));
 }
 
 export function resolveOrdo(date: string): ResolvedOrdo {
