@@ -10,5 +10,16 @@ rank: duplex-1-classis
 common: common-of-the-bvm
 propers: "assumption"
 # Has a real octave (Aug 15-22) -- see calendar/types.ts's OctaveConfig.
+# Strengthened to `wins: duplex` (2026-08 user decision), same pattern
+# as pentecost-sunday.yml's own override -- a Semiduplex saint no
+# longer just ties (and, by the ordinary-day tie rule, wins) an
+# ordinary octave day here; it loses outright to the octave instead.
+# Concrete motivation: st-john-eudes.yml's demotion to Semiduplex only
+# actually cedes Aug 19 to the octave because of this. Side effect
+# accepted by the user: st-damasus.yml (Dec 11, Immaculate Conception's
+# octave) and st-nicholas-of-tolentino.yml (Sep 10, Nativity of the
+# BVM's octave) are unrelated octaves not touched by this change, so
+# they're unaffected -- this only strengthens Assumption's own octave.
 octave:
   enabled: true
+  wins: duplex

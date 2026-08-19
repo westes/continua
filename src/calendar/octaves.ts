@@ -115,11 +115,19 @@ export function strictestThreshold(octaves: ActiveOctave[]): FeastClass {
  *
  * - Highest effective rank (`wins`, already elevated on either octave's
  *   own closing day) wins outright.
- * - Tied rank: the more recently *started* octave wins (smaller
- *   `dayNumber` today) — the reasoning given was that day 1 of a newly
- *   started octave needs to be fully present, which is the whole point
- *   of it starting; the older octave that's already been running is
- *   commemorated instead, same as any octave that loses this comparison.
+ * - Tied rank, one of them on its own closing day: the closing day wins
+ *   — its "in Octava" day is the octave's own culminating day, so it
+ *   takes precedence over an ordinary day of an equally-ranked octave
+ *   even if that other octave started more recently (2026-08 user
+ *   instruction, concrete case: Aug 17, St. Lawrence's own closing day,
+ *   vs. the Assumption's ordinary day 3, both `duplex` once Assumption's
+ *   octave was strengthened — Lawrence's closing day wins).
+ * - Tied rank, neither (or both) on their own closing day: the more
+ *   recently *started* octave wins (smaller `dayNumber` today) — the
+ *   reasoning given was that day 1 of a newly started octave needs to be
+ *   fully present, which is the whole point of it starting; the older
+ *   octave that's already been running is commemorated instead, same as
+ *   any octave that loses this comparison.
  *
  * Undefined when no octave is active at all. Every other active octave
  * still gets commemorated regardless of which one wins here — this
@@ -186,6 +194,9 @@ export function pickWinningOctave(active: ActiveOctave[]): ActiveOctave | undefi
     }
     if (rankCmp < 0) {
       return best;
+    }
+    if (candidate.isClosingDay !== best.isClosingDay) {
+      return candidate.isClosingDay ? candidate : best;
     }
     return candidate.dayNumber < best.dayNumber ? candidate : best;
   }, undefined);

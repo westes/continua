@@ -66,7 +66,7 @@ describe('applyChristmasOctaveSunday', () => {
     expect(dec30.commemorations.some((c) => c.kind === 'octave' && c.id === 'holy-innocents')).toBe(false);
   });
 
-  it('Sunday on Dec 29 (St. Thomas Becket, only Semiduplex): still fully displaced to Dec 30, same as the Duplex-II-classis saints -- rank never matters for this rule', () => {
+  it('Sunday on Dec 29 (St. Thomas Becket): still fully displaced to Dec 30, same as the Duplex-II-classis saints -- rank never matters for this rule', () => {
     const sunday = resolveDay('2024-12-29');
     expect(sunday.winner).toEqual({ kind: 'temporal', id: 'christmas-octave-sunday' });
 
@@ -75,7 +75,7 @@ describe('applyChristmasOctaveSunday', () => {
       kind: 'sanctoral',
       id: 'st-thomas-becket',
       name: 'St. Thomas of Canterbury, Bishop and Martyr',
-      rank: 'semiduplex',
+      rank: 'duplex',
     });
   });
 
@@ -105,7 +105,7 @@ describe('applyChristmasOctaveSunday', () => {
       kind: 'sanctoral',
       id: 'st-thomas-becket',
       name: 'St. Thomas of Canterbury, Bishop and Martyr',
-      rank: 'semiduplex',
+      rank: 'duplex',
     });
   });
 

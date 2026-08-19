@@ -222,7 +222,7 @@ describe('getDayLabel — active octave', () => {
     expect(getDayLabel(day).en).toBe('Friday in Christmastide (Feria)');
   });
 
-  it("picks the higher-ranked of two genuinely overlapping octaves for the label -- St. Lawrence's own elevated closing day (Aug 17) over the Assumption's ordinary day 3, even though the Assumption's octave started later and the Assumption is the higher-ranked feast overall -- with St. Hyacinth (Duplex, tied with Lawrence's own elevated rank) commemorated rather than winning outright", () => {
+  it("picks St. Lawrence's own elevated closing day (Aug 17) over the Assumption's ordinary day 3, both duplex now that Assumption's octave is strengthened, via the closing-day tie-break -- with St. Hyacinth (Duplex, tied with Lawrence's own elevated rank) commemorated rather than winning outright", () => {
     // Live-verified against the reference engine directly (Monastic
     // Tridentinum 1617, command=prayMatutinum): Aug 17 is "In Octava S.
     // Laurentii Martyris ~ Duplex" -- Lawrence's own elevated closing day
@@ -232,12 +232,16 @@ describe('getDayLabel — active octave', () => {
     // closing day favors the octave (calendar/index.ts's applyOctaves),
     // unlike an ordinary mid-octave day's tie, which still favors an
     // occurring saint (see octaves.test.ts and the December/September
-    // sanctoral tests for those counterexamples). The Assumption's own
-    // day 3 (semiduplex, genuinely active but outranked by Lawrence's
-    // elevated duplex) still gets named, not dropped, alongside it -- with
-    // its own full "Nth Day within the Octave of X" phrasing, not a bare
-    // name: live-verified directly (Divino Afflatu 1954, where Aug 17's
-    // real winner is Hyacinth himself, not Lawrence's octave -- a
+    // sanctoral tests for those counterexamples). Octave-vs-octave, the
+    // same closing-day precedence applies (2026-08 user instruction,
+    // octaves.ts's pickWinningOctave): now that Assumption's own octave
+    // is strengthened to `wins: duplex`, its ordinary day 3 ties
+    // Lawrence's elevated closing day in rank, and the closing day wins
+    // that tie regardless of which octave started more recently. The
+    // Assumption's own day 3 still gets named, not dropped, alongside
+    // it -- with its own full "Nth Day within the Octave of X" phrasing,
+    // not a bare name: live-verified directly (Divino Afflatu 1954, where
+    // Aug 17's real winner is Hyacinth himself, not Lawrence's octave -- a
     // different rubric-track outcome, but the same commemoration phrasing
     // question): "Commemoratio: Tertia die infra Octavam S. Assumptionis
     // Beatæ Mariæ Virginis", not a bare "The Assumption of the Blessed
@@ -246,7 +250,7 @@ describe('getDayLabel — active octave', () => {
       'Octave of St. Lawrence, Martyr (Duplex) — 3rd Day within the Octave of The Assumption of the Blessed Virgin Mary — St. Hyacinth, Confessor',
     );
     expect(getDayLabel(resolveDay('2026-08-18')).en).toBe(
-      '4th Day within the Octave of The Assumption of the Blessed Virgin Mary (Semiduplex)',
+      '4th Day within the Octave of The Assumption of the Blessed Virgin Mary (Duplex)',
     );
   });
 
@@ -304,21 +308,19 @@ describe('getDayLabel — active octave', () => {
     expect(getDayLabel(day).en).not.toContain('Octave');
   });
 
-  it('a sanctoral winner that outright displaces the only active octave still shows that octave with its full "Nth Day within the Octave" phrasing, not a bare feast name -- and without a rank, since the octave is riding along under the winning duplex rather than asserting its own rank', () => {
-    // Live-verified against the reference engine (Divino Afflatu 1954,
-    // prayMatutinum): Aug 19 is "S. Joannis Eudes Confessoris ~ Duplex"
-    // with the commemoration read as plain "Quinta die infra Octavam S.
-    // Assumptionis Beatæ Mariæ Virginis" -- no rank at all -- i.e. the
-    // octave's real DO title even when it lost outright, not a bare "The
-    // Assumption of the Blessed Virgin Mary" (this app's previous
-    // behavior, reusing `otherActiveOctaveNames`'s plain-name formatting
-    // -- correct for a *secondary* octave alongside another *octave* that
-    // won, see the Aug 17/18 cases above, but wrong here where the octave
-    // itself is what's being commemorated against a winning saint) and
-    // also not `octaveLabel`'s own rank parenthetical (that belongs only
-    // to an octave day when it's the day's own primary winner).
+  it('the Assumption octave, strengthened to `wins: duplex`, now outright displaces St. John Eudes (demoted to Semiduplex) on its own ordinary day 5 -- he is merely commemorated, not won as the day\'s own winner', () => {
+    // 2026-08 user decision: St. John Eudes demoted from the reference
+    // engine's own Duplex to Semiduplex (see st-john-eudes.yml), and the
+    // Assumption's octave strengthened from the shared default
+    // (`wins: semiduplex`) to `wins: duplex` (see assumption.yml, same
+    // pattern as pentecost-sunday.yml's own override) specifically so an
+    // ordinary-day tie no longer favors the occurring saint here: Eudes's
+    // Semiduplex now loses outright to the octave's Duplex threshold,
+    // rather than tying and winning. This deliberately diverges from the
+    // reference engine's own live behavior (which has Eudes winning
+    // outright as Duplex) -- see CLAUDE.md's "not a reconstruction" note.
     expect(getDayLabel(resolveDay('2026-08-19')).en).toBe(
-      'St. John Eudes, Confessor (Duplex) — 5th Day within the Octave of The Assumption of the Blessed Virgin Mary',
+      '5th Day within the Octave of The Assumption of the Blessed Virgin Mary (Duplex) — St. John Eudes, Confessor',
     );
   });
 });

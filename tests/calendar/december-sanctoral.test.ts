@@ -88,13 +88,13 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
     ]);
   });
 
-  it('St. Thomas of Canterbury, only Semiduplex, still wins outright within the Christmas Octave -- the concrete case behind this month\'s temporal-category fix', () => {
+  it('St. Thomas of Canterbury still wins outright within the Christmas Octave -- the concrete case behind this month\'s temporal-category fix', () => {
     const day = resolveDay('2033-12-29');
     expect(day.winner).toEqual({
       kind: 'sanctoral',
       id: 'st-thomas-becket',
       name: 'St. Thomas of Canterbury, Bishop and Martyr',
-      rank: 'semiduplex',
+      rank: 'duplex',
     });
     // Thomas himself has no octave (user-confirmed, 2026-08), but by his
     // own day, Christmas + Stephen + John + Holy Innocents' octaves have
@@ -128,7 +128,7 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
   });
 
   it('the Christmas Octave Sunday still keeps a lesser feast from winning, now via applyChristmasOctaveSunday specifically', () => {
-    // St. Thomas Becket (Semiduplex, Dec 29) transfers off the Sunday
+    // St. Thomas Becket (Dec 29) transfers off the Sunday
     // rather than winning it -- per calendar/index.ts's
     // applyChristmasOctaveSunday (see its own dedicated test file), which
     // now unconditionally wins the Sunday over *any* rank within Dec
@@ -144,7 +144,7 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
       kind: 'sanctoral',
       id: 'st-thomas-becket',
       name: 'St. Thomas of Canterbury, Bishop and Martyr',
-      rank: 'semiduplex',
+      rank: 'duplex',
     });
   });
 

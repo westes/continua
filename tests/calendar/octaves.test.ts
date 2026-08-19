@@ -23,7 +23,7 @@ describe('activeOctavesFor', () => {
       {
         id: 'assumption',
         name: 'The Assumption of the Blessed Virgin Mary',
-        wins: 'semiduplex',
+        wins: 'duplex',
         dayNumber: 3,
         isClosingDay: false,
       },
@@ -60,7 +60,7 @@ describe('resolveActiveOctave / pickWinningOctave -- overlapping-octave preceden
     expect(resolveActiveOctave('2026-08-10')?.id).toBe('st-lawrence');
   });
 
-  it("St. Lawrence's own elevated closing day (duplex) outranks the Assumption's ordinary day 3 (semiduplex) on their one real overlap, Aug 17", () => {
+  it("St. Lawrence's own elevated closing day (duplex) wins the closing-day tie-break over the Assumption's ordinary day 3 (also duplex) on their one real overlap, Aug 17", () => {
     const winner = resolveActiveOctave('2026-08-17');
     expect(winner?.id).toBe('st-lawrence');
     expect(winner?.wins).toBe('duplex');
