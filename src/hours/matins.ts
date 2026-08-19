@@ -371,5 +371,12 @@ export function resolveOrdo(date: string): ResolvedOrdo {
 
   parts.push({ kind: 'prayer', text: getDayCollect(day) });
 
+  // Conclusio: live-verified against Divinum Officium (Monastic Tridentinum
+  // 1617) to be byte-identical to `lauds-conclusio` (Domine exaudi / Benedicamus
+  // Domino / Fidelium animae) — same reuse Vespers already makes (see
+  // data/hours/vespers.yml's own header). Not dropped in the Triduum: the
+  // Triduum only omits the opening block (see isInTriduum comment above).
+  parts.push({ kind: 'preces', text: resolveCommon('lauds-conclusio') });
+
   return { hourId: 'matins', date, parts, dayLabel: getDayLabel(day) };
 }
