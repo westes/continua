@@ -9,14 +9,14 @@ export type HourId =
   | 'matins';
 
 export const HOUR_IDS: readonly HourId[] = [
+  'matins',
+  'lauds',
   'prime',
-  'compline',
   'terce',
   'sext',
   'none',
-  'lauds',
   'vespers',
-  'matins',
+  'compline',
 ];
 
 /** Reference into one of the proper-text stores (data/propers/**). Not built yet — placeholder shape. */

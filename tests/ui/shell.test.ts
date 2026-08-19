@@ -26,14 +26,14 @@ describe('shell', () => {
 
     const hourNames = Array.from(root.querySelectorAll('.hour-name')).map((el) => el.textContent);
     expect(hourNames).toEqual([
+      'Matins',
+      'Lauds',
       'Prime',
-      'Compline',
       'Terce',
       'Sext',
       'None',
-      'Lauds',
       'Vespers',
-      'Matins',
+      'Compline',
     ]);
 
     expect(root.querySelector('.hour-item.is-selected .hour-name')?.textContent).toBe('Prime');
