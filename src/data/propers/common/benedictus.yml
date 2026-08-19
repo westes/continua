@@ -1,7 +1,10 @@
 # Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live
 # query. Fixed year-round, same shape as nunc-dimittis.yml — the framing
 # antiphon is resolved separately, by day (see hours/resolve-common.ts's
-# getBenedictusAntiphon), not stored here.
+# getBenedictusAntiphon), not stored here. The closing Gloria Patri isn't
+# stored here either — it's attached centrally (hours/index.ts) so it can
+# be omitted during the Sacred Triduum (live-verified: Divino Afflatu 1954
+# and Tridentine 1906 both omit it at Lauds of Holy Thursday).
 id: benedictus
 text:
   la: |
@@ -17,8 +20,6 @@ text:
     Ad dandam sciéntiam salútis plebi ejus: * in remissiónem peccatórum eórum:
     Per víscera misericórdiæ Dei nostri: * in quibus visitávit nos, óriens ex alto:
     Illumináre his, qui in ténebris, et in umbra mortis sedent: * ad dirigéndos pedes nostros in viam pacis.
-    V. Glória Patri, et Fílio, * et Spirítui Sancto.
-    R. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen.
   en: |
     Blessed be the Lord ✠ God of Israel; * because he hath visited and wrought the redemption of his people:
     And hath raised up an horn of salvation to us, * in the house of David his servant:
@@ -32,8 +33,6 @@ text:
     To give knowledge of salvation to his people, * unto the remission of their sins:
     Through the bowels of the mercy of our God, * in which the Orient from on high hath visited us:
     To enlighten them that sit in darkness, and in the shadow of death: * to direct our feet into the way of peace.
-    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
-    R. As it was in the beginning, is now, * and ever shall be, world without end. Amen.
 citation:
   la: "Luc. 1:68-79"
   en: "Luke 1:68-79"

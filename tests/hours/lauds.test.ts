@@ -78,8 +78,8 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(part1?.kind === 'canticle' ? part1.text.text.la : undefined).toContain('Audíte, cæli');
     expect(part2?.kind === 'canticle' ? part2.text.text.la : undefined).toContain('Ignis succénsus est');
     // Each part gets its own Gloria Patri.
-    expect(part1?.kind === 'canticle' ? part1.text.text.la : undefined).toContain('Glória Patri');
-    expect(part2?.kind === 'canticle' ? part2.text.text.la : undefined).toContain('Glória Patri');
+    expect(part1?.kind === 'canticle' ? part1.gloriaPatri?.text.la : undefined).toContain('Glória Patri');
+    expect(part2?.kind === 'canticle' ? part2.gloriaPatri?.text.la : undefined).toContain('Glória Patri');
 
     const repeatIndex = ordo.parts.indexOf(part2!) + 1;
     const repeat = ordo.parts[repeatIndex];

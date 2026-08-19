@@ -204,7 +204,9 @@ export type ResolvedPart =
   // Sacred Triduum (calendar/temporal.ts's isInTriduum) — never omit it
   // when building a psalm part yourself.
   | { kind: 'psalm'; psalmNumber: number; antiphon?: ResolvedText; verses: ResolvedVerse[]; gloriaPatri?: ResolvedText }
-  | { kind: 'canticle'; canticleId: string; text: ResolvedText; antiphon?: ResolvedText }
+  // `gloriaPatri` filled in centrally, same as the 'psalm' kind above —
+  // see that field's doc comment.
+  | { kind: 'canticle'; canticleId: string; text: ResolvedText; antiphon?: ResolvedText; gloriaPatri?: ResolvedText }
   // A standalone antiphon, said on its own rather than framing a psalm —
   // see 'closing-antiphon' above.
   | { kind: 'antiphon'; text: ResolvedText }

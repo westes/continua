@@ -1,7 +1,6 @@
 import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart, ResolvedText } from './types';
 import type { LiturgicalDay, Weekday } from '../calendar/types';
 import { resolveDay, isSundayOrFeast, activeOctavesFor } from '../calendar';
-import { isInTriduum } from '../calendar/temporal';
 import { getDayLabel } from '../calendar/day-label';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { getPsalmVerses } from '../psalter';
@@ -93,22 +92,16 @@ function psalmParts(numbers: number[], antiphon: BilingualText, opening: Resolve
 
 const STATUS_RANK = { verified: 0, draft: 1, missing: 2 } as const;
 
-const GLORIA_PATRI = {
-  la: 'V. Glória Patri, et Fílio, * et Spirítui Sancto.\nR. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen.',
-  en: 'V. Glory be to the Father, and to the Son, * and to the Holy Ghost.\nR. As it was in the beginning, is now, * and ever shall be, world without end. Amen.',
-};
-
 /** Joins a canticle's verse array (or a `[start, end)` slice of it — see
  * Saturday's split canticle below) into one flowing text block, the same
  * shape nunc-dimittis/benedictus already use — Lauds' weekday canticles
  * are stored verse-by-verse (see lauds-canticles.ts) purely because that's
  * how they were transcribed, not because callers need per-verse access.
- * Appends the fixed Gloria Patri line every canticle (or canticle part)
- * ends with in real practice, same wording as benedictus.yml's own
- * trailing line — omitted during the Sacred Triduum, live-verified against
- * both Divino Afflatu 1954 and Tridentine 1906 (Benedictus at Lauds of
- * Holy Thursday omits it same as any psalm). */
-function canticleText(canticleId: string, slice: [number, number] | undefined, omitGloriaPatri: boolean): ResolvedText {
+ * Does NOT append a closing Gloria Patri — that's attached centrally
+ * (hours/index.ts) as its own 'canticle' field, same as every other
+ * canticle/psalm, so the Sacred Triduum omission only has to be handled
+ * in one place. */
+function canticleText(canticleId: string, slice?: [number, number]): ResolvedText {
   const canticle = getCanticle(canticleId);
   const verses = slice ? canticle.verses.slice(slice[0], slice[1]) : canticle.verses;
   const text: Partial<Record<string, string>> = {};
@@ -118,7 +111,7 @@ function canticleText(canticleId: string, slice: [number, number] | undefined, o
     if (lines.length === 0) {
       continue;
     }
-    text[lang] = omitGloriaPatri ? lines.join('\n') : `${lines.join('\n')}\n${GLORIA_PATRI[lang]}`;
+    text[lang] = lines.join('\n');
     let worst: 'verified' | 'draft' | 'missing' = 'verified';
     for (const v of verses) {
       const s = v.status[lang] ?? 'missing';
@@ -153,7 +146,6 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
   const canticle = getCanticle(wd.canticle.id);
   const canticleOpening = opening(wd.canticle.antiphon);
   const canticleClosing = splitNamedAntiphon(verifiedText(wd.canticle.antiphon)).full;
-  const omitGloriaPatri = isInTriduum(day.date);
   if (wd.canticle.split) {
     // Said in two pieces, own Gloria Patri each, one shared antiphon
     // framing both (opening before the first, full repeated only after
@@ -162,19 +154,19 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
       kind: 'canticle',
       canticleId: canticle.id,
       antiphon: canticleOpening,
-      text: canticleText(canticle.id, [0, wd.canticle.split], omitGloriaPatri),
+      text: canticleText(canticle.id, [0, wd.canticle.split]),
     });
     parts.push({
       kind: 'canticle',
       canticleId: canticle.id,
-      text: canticleText(canticle.id, [wd.canticle.split, canticle.verses.length], omitGloriaPatri),
+      text: canticleText(canticle.id, [wd.canticle.split, canticle.verses.length]),
     });
   } else {
     parts.push({
       kind: 'canticle',
       canticleId: canticle.id,
       antiphon: canticleOpening,
-      text: canticleText(canticle.id, undefined, omitGloriaPatri),
+      text: canticleText(canticle.id),
     });
   }
   parts.push({ kind: 'antiphon', text: canticleClosing });

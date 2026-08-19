@@ -26,13 +26,16 @@ const registry: Record<HourId, Resolver> = {
   matins: matins.resolveOrdo,
 };
 
-/** Attaches the closing Gloria Patri to every plain psalm part (recursing
- * into 'nocturn-psalmody' groups), so no per-hour builder has to remember
- * to do it — and so the Sacred Triduum omission (resolveGloriaPatri) is
- * enforced in exactly one place rather than once per hour file. */
+/** Attaches the closing Gloria Patri to every plain psalm and canticle part
+ * (recursing into 'nocturn-psalmody' groups), so no per-hour builder has to
+ * remember to do it — and so the Sacred Triduum omission
+ * (resolveGloriaPatri) is enforced in exactly one place rather than once
+ * per hour file. Live-verified (Divino Afflatu 1954, Tridentine 1906) that
+ * canticles (e.g. Benedictus at Lauds of Holy Thursday) follow the exact
+ * same Triduum-only omission as plain psalms — not a separate rule. */
 function withGloriaPatri(parts: ResolvedPart[], gloriaPatri: ResolvedText | undefined): ResolvedPart[] {
   return parts.map((part) => {
-    if (part.kind === 'psalm') {
+    if (part.kind === 'psalm' || part.kind === 'canticle') {
       return { ...part, gloriaPatri };
     }
     if (part.kind === 'nocturn-psalmody') {

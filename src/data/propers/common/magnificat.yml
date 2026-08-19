@@ -4,7 +4,9 @@
 # year-round, same shape as benedictus.yml/nunc-dimittis.yml — the framing
 # antiphon is resolved separately, by day (see hours/resolve-common.ts's
 # getMagnificatAntiphon), not stored here. Not live-query-verified (see
-# TODO.md) — read directly from source.
+# TODO.md) — read directly from source. The closing Gloria Patri isn't
+# stored here either — it's attached centrally (hours/index.ts) so it can
+# be omitted during the Sacred Triduum, same as every other canticle/psalm.
 id: magnificat
 text:
   la: |
@@ -18,8 +20,6 @@ text:
     Esuriéntes implévit bonis: * et dívites dimísit inánes.
     Suscépit Israël púerum suum: * recordátus misericórdiæ suæ.
     Sicut locútus est ad patres nostros: * Ábraham, et sémini ejus in sǽcula.
-    V. Glória Patri, et Fílio, * et Spirítui Sancto.
-    R. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen.
   en: |
     My soul ✠ doth magnify the Lord.
     And my spirit hath rejoiced * in God my Saviour.
@@ -31,8 +31,6 @@ text:
     He hath filled the hungry with good things; * and the rich he hath sent empty away.
     He hath received Israel his servant, * being mindful of his mercy:
     As he spoke to our fathers, * to Abraham and to his seed for ever.
-    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
-    R. As it was in the beginning, is now, * and ever shall be, world without end. Amen.
 status:
   la: verified
   en: verified

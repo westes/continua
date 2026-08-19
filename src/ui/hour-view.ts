@@ -109,6 +109,7 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
           <h3 class="ordo-part-label">${escapeHtml(title)}</h3>
           ${renderCitation(part.text)}
           ${renderColumns(part.text, languages)}
+          ${part.gloriaPatri ? `<div class="ordo-part-gloria-patri">${renderColumns(part.gloriaPatri, languages)}</div>` : ''}
         </section>
       `;
     }
