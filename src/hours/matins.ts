@@ -105,6 +105,8 @@ interface MatinsSundayAntiphons {
 }
 const sundayAntiphons = matinsSundayAntiphonsData as unknown as MatinsSundayAntiphons;
 
+const NOCTURN_NUMERAL = ['I', 'II', 'III'] as const;
+
 type PsalmPart = Extract<ResolvedPart, { kind: 'psalm' }>;
 
 function plainPsalm(number: number): PsalmPart {
@@ -302,15 +304,19 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   const parts: ResolvedPart[] = [
     { kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) },
     plainPsalm(3),
+    { kind: 'section-heading', label: 'Invitatory' },
     ...invitatoryParts(day),
     { kind: 'hymn', text: resolveCommon('matins-hymn-ferial') },
   ];
 
   if (threeNocturns && day.weekday === 'sunday') {
+    parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
     parts.push(...sundayPsalmNocturn(sundayAntiphons.nocturn1, day));
     parts.push(...(nocturn1Readings ?? []));
+    parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[1]}` });
     parts.push(...sundayPsalmNocturn(sundayAntiphons.nocturn2, day));
     parts.push(...(nocturn2Readings ?? []));
+    parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[2]}` });
     parts.push(...sundayCanticleNocturn(sundayAntiphons.nocturn3, day));
     parts.push(...(nocturn3Readings ?? []));
     parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
@@ -324,18 +330,24 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     // three-tier picture).
     const override = winner.kind === 'sanctoral' ? getMatinsPsalmodyOverride(winner.id) : undefined;
     if (override) {
+      parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
       parts.push(...sundayPsalmNocturn(override.nocturn1, day));
       parts.push(...(nocturn1Readings ?? []));
+      parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[1]}` });
       parts.push(...sundayPsalmNocturn(override.nocturn2, day));
       parts.push(...(nocturn2Readings ?? []));
+      parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[2]}` });
       parts.push(...sundayCanticleNocturn(override.nocturn3, day));
       parts.push(...(nocturn3Readings ?? []));
     } else {
       const [n1, n2, n3] = ferialPsalmodyThreeNocturns(day);
+      parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
       parts.push(...n1);
       parts.push(...(nocturn1Readings ?? []));
+      parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[1]}` });
       parts.push(...n2);
       parts.push(...(nocturn2Readings ?? []));
+      parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[2]}` });
       parts.push(...n3);
       parts.push(...(nocturn3Readings ?? []));
     }

@@ -210,6 +210,11 @@ export type ResolvedPart =
   // have a single unnumbered nocturn and don't use this wrapper at all —
   // see hours/matins.ts). `nocturn` is 1-3.
   | { kind: 'nocturn-psalmody'; nocturn: number; psalms: ResolvedPart[] }
+  // A standalone structural heading with no content of its own — marks the
+  // start of a larger named section that doesn't correspond to one specific
+  // part kind (Matins' "Invitatory", "Nocturn I/II/III"). Distinct from the
+  // per-part `<h3 class="ordo-part-label">` every other kind already uses.
+  | { kind: 'section-heading'; label: string }
   // Matins only. Sung after the last lesson on a 3-nocturn day (Sunday or
   // a Duplex+ sanctoral winner) — see hours/matins.ts. Never present on a
   // plain ferial (1-nocturn) day.

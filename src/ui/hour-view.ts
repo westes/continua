@@ -122,6 +122,8 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
           ${part.psalms.map((p) => renderPart(p, languages)).join('')}
         </section>
       `;
+    case 'section-heading':
+      return `<h2 class="section-heading">${escapeHtml(part.label)}</h2>`;
     case 'te-deum':
       return `
         <section class="ordo-part ordo-part-te-deum">

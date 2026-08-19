@@ -24,8 +24,9 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
   it('opens with the Deus in adjutorium versicle, then Psalm 3, then the Invitatory (Psalm 94)', () => {
     expect(ordo.parts[0]?.kind).toBe('versicle');
     expect(ordo.parts[1]).toMatchObject({ kind: 'psalm', psalmNumber: 3 });
-    expect(ordo.parts[2]).toMatchObject({ kind: 'psalm', psalmNumber: 94 });
-    const invitatoryAntiphon = (ordo.parts[2] as { antiphon?: { text: Record<string, string> } }).antiphon;
+    expect(ordo.parts[2]).toMatchObject({ kind: 'section-heading', label: 'Invitatory' });
+    expect(ordo.parts[3]).toMatchObject({ kind: 'psalm', psalmNumber: 94 });
+    const invitatoryAntiphon = (ordo.parts[3] as { antiphon?: { text: Record<string, string> } }).antiphon;
     expect(invitatoryAntiphon?.text.la).toContain('Veníte');
     // Real practice repeats the invitatory antiphon between verse groups —
     // deliberately not modeled that way here (see hours/matins.ts's own
