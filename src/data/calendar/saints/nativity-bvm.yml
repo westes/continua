@@ -10,5 +10,12 @@ common: common-of-the-bvm
 propers: "nativity-bvm"
 minorHoursCommon: common-of-the-bvm
 # Has a real octave (Sep 8-15) -- see calendar/types.ts's OctaveConfig.
+# Strengthened to `wins: duplex` (2026-08 user decision), same pattern
+# as pentecost-sunday.yml's and assumption.yml's own overrides. Side
+# effect accepted by the user: St. Nicholas of Tolentino (Sep 10,
+# semiduplex) no longer ties and wins an ordinary octave day here -- he
+# now loses outright to the octave instead (see
+# st-nicholas-of-tolentino.yml).
 octave:
   enabled: true
+  wins: duplex

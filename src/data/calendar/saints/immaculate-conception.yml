@@ -9,5 +9,11 @@ common: common-of-the-bvm
 propers: "immaculate-conception"
 minorHoursCommon: common-of-the-bvm
 # Has a real octave (Dec 8-15) -- see calendar/types.ts's OctaveConfig.
+# Strengthened to `wins: duplex` (2026-08 user decision), same pattern
+# as pentecost-sunday.yml's and assumption.yml's own overrides. Side
+# effect accepted by the user: St. Damasus (Dec 11, semiduplex) no
+# longer ties and wins an ordinary octave day here -- he now loses
+# outright to the octave instead (see st-damasus.yml).
 octave:
   enabled: true
+  wins: duplex

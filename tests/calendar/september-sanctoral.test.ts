@@ -48,14 +48,13 @@ describe('September sanctoral pull (first pass)', () => {
     ]);
   });
 
-  it('a monastic-calendar-specific reassignment replaces what the base Tridentine table treats as a plain Nativity-octave continuation', () => {
+  it('a monastic-calendar-specific reassignment places St. Nicholas of Tolentino here, but the Nativity octave (strengthened to `wins: duplex`, 2026-08 user decision) now outranks his Semiduplex outright, commemorating him instead of losing the day to him', () => {
     const day = resolveDay('2025-09-10');
-    expect(day.winner).toEqual({
-      kind: 'sanctoral',
-      id: 'st-nicholas-of-tolentino',
-      name: 'St. Nicholas of Tolentino, Confessor',
-      rank: 'semiduplex',
-    });
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-13' });
+    expect(day.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'st-nicholas-of-tolentino', name: 'St. Nicholas of Tolentino, Confessor', rank: 'semiduplex' },
+      { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary' },
+    ]);
   });
 
   it('St. Matthew wins outright at Duplex II. classis with a real proper collect, distinct from his own Vigil the day before', () => {
