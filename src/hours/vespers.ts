@@ -15,6 +15,7 @@ import {
   seasonalOfficeSuffix,
   isFerialOrVigil,
   getOfficeOverrideId,
+  resolveResponsory,
 } from './resolve-common';
 import vespersDefinitionData from '../data/hours/vespers.yml';
 import vespersAntiphonsData from '../data/hours/vespers-antiphons.yml';
@@ -122,7 +123,7 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
     if (chapter.status.la !== 'missing' || chapter.status.en !== 'missing') {
       return [
         { kind: 'chapter', text: chapter },
-        { kind: 'responsory', text: resolveCommon(`vespers-responsory-${overrideId}`) },
+        { kind: 'responsory', text: resolveResponsory(resolveCommon(`vespers-responsory-${overrideId}`), day) },
         { kind: 'hymn', text: resolveCommon(`vespers-hymn-${overrideId}`) },
         { kind: 'versicle', text: resolveCommon(`vespers-versicle-${overrideId}`) },
       ];
@@ -137,7 +138,7 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
     },
     {
       kind: 'responsory',
-      text: resolveCommon(seasonSuffix ? `vespers-responsory-${key}` : vespersResponsoryId(day.weekday)),
+      text: resolveResponsory(resolveCommon(seasonSuffix ? `vespers-responsory-${key}` : vespersResponsoryId(day.weekday)), day),
     },
     { kind: 'hymn', text: resolveCommon(`vespers-hymn-${key}`) },
     {

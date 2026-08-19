@@ -7,7 +7,7 @@ import { getHymnDoxologyId } from './hymn-doxology';
 import { getOpeningVersicleId } from './opening-versicle';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { isDoubleOrHigher } from './antiphon';
-import { resolveCommon, appendDoxology, splitNamedAntiphon } from './resolve-common';
+import { resolveCommon, appendDoxology, splitNamedAntiphon, resolveResponsory } from './resolve-common';
 import complineDefinitionData from '../data/hours/compline.yml';
 
 const complineDefinition = complineDefinitionData as HourDefinition;
@@ -36,10 +36,11 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       return [{ kind: 'hymn', text: appendDoxology(body, doxology) }];
     }
     case 'chapter':
-    case 'responsory':
     case 'versicle':
     case 'prayer':
       return [{ kind: part.kind, text: resolveCommon(part.textRef.id) }];
+    case 'responsory':
+      return [{ kind: 'responsory', text: resolveResponsory(resolveCommon(part.textRef.id), day) }];
     case 'preces':
       if (part.omitOnDouble && isDoubleOrHigher(day.winner)) {
         return [];

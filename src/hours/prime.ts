@@ -17,6 +17,7 @@ import {
   resolveOfficeWinner,
   resolveMinorHourAntiphon,
   isSundayOrFeastOffice,
+  resolveResponsory,
 } from './resolve-common';
 import primeDefinitionData from '../data/hours/prime.yml';
 import antiphonsData from '../data/hours/prime-antiphons.yml';
@@ -60,7 +61,7 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
       if (part.resolve === 'by-season') {
         // Currently only the chapter responsory's verse uses this — see
         // hours/chapter-responsory.ts. by-feast-rank doesn't apply to Prime.
-        return [{ kind: 'responsory', text: resolveCommon(getChapterResponsoryId(day.season, day.winner)) }];
+        return [{ kind: 'responsory', text: resolveResponsory(resolveCommon(getChapterResponsoryId(day.season, day.winner)), day) }];
       }
       {
         const psalmRefs = getPsalmsFor('prime', day.weekday);

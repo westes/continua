@@ -143,3 +143,38 @@ describe('resolveOrdo("compline", ...)', () => {
     );
   });
 });
+
+describe('resolveOrdo("compline", ...) responsory Gloria omission', () => {
+  // Passiontide (Passion Sunday through Holy Saturday) is a wider window
+  // than the psalm/canticle Gloria's own Triduum-only rule, and doesn't
+  // apply on a Sancti feast's own day even within that window --
+  // live-verified: 2027-03-19 is St. Joseph (Duplex I), landing inside
+  // Passiontide that year, keeping "In manus tuas"'s Gloria; 2027-03-15
+  // is a plain ferial in the same window, and omits it.
+  const FERIAL_PASSIONTIDE = '2027-03-15';
+  const FEAST_IN_PASSIONTIDE = '2027-03-19'; // St. Joseph, Duplex I.
+  const ORDINARY_DATE = '2026-08-20';
+
+  it('omits the Gloria on a ferial Passiontide day', () => {
+    const ordo = resolveOrdo('compline', FERIAL_PASSIONTIDE);
+    const responsory = ordo.parts.find((p) => p.kind === 'responsory');
+    expect(responsory?.kind === 'responsory' ? responsory.text.text.la : undefined).not.toContain('Glória Patri');
+    expect(responsory?.kind === 'responsory' ? responsory.text.text.en : undefined).not.toContain(
+      'Glory be to the Father',
+    );
+    // Everything else about the responsory is untouched.
+    expect(responsory?.kind === 'responsory' ? responsory.text.text.en : undefined).toContain('Into thy hands, O Lord');
+  });
+
+  it("keeps the Gloria on a Sancti feast's own day, even inside Passiontide", () => {
+    const ordo = resolveOrdo('compline', FEAST_IN_PASSIONTIDE);
+    const responsory = ordo.parts.find((p) => p.kind === 'responsory');
+    expect(responsory?.kind === 'responsory' ? responsory.text.text.la : undefined).toContain('Glória Patri');
+  });
+
+  it('keeps the Gloria on an ordinary date outside Passiontide', () => {
+    const ordo = resolveOrdo('compline', ORDINARY_DATE);
+    const responsory = ordo.parts.find((p) => p.kind === 'responsory');
+    expect(responsory?.kind === 'responsory' ? responsory.text.text.la : undefined).toContain('Glória Patri');
+  });
+});

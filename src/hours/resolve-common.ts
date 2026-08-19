@@ -697,3 +697,46 @@ export function resolveGloriaPatri(day: LiturgicalDay): ResolvedText | undefined
   }
   return verifiedText(GLORIA_PATRI);
 }
+
+// The responsory's own closing Gloria is a DIFFERENT rule from the psalm/
+// canticle one above: wider window (all of Passiontide, Passion Sunday
+// through Holy Saturday -- `season === 'passiontide'` already covers
+// exactly that span, no separate date-window helper needed), and it
+// doesn't apply to a Sancti (saint) feast's own day even within that
+// window -- live-verified: St. Joseph (Duplex I, 2027-03-19, landing in
+// Passiontide that year) keeps "In manus tuas"'s Gloria at Compline, while
+// an ordinary ferial day in the same window (2027-03-15) omits it, at both
+// Compline and Prime's chapter-responsory.
+//
+// Every currently-authored responsory -- Gloria-bearing or already
+// Gloria-free (e.g. lauds-responsory-passiontide.yml, a genuinely
+// different proper-of-season chant, not a stripped copy of the ordinary
+// one) -- ends the same way regardless: a short "R. [repetenda]" after
+// the verse, then (only when shown) this same fixed Gloria line, then
+// always a final "R. [full repetenda]" line. So the two forms differ by
+// exactly one known, fixed-wording line -- omitting it is a filter, not a
+// data migration.
+const RESPONSORY_GLORIA_LINE: BilingualText = {
+  la: 'V. Glória Patri, et Fílio, * et Spirítui Sancto.',
+  en: 'V. Glory be to the Father, and to the Son, * and to the Holy Ghost.',
+};
+
+export function omitResponsoryGloria(day: LiturgicalDay): boolean {
+  return day.season === 'passiontide' && day.winner.kind !== 'sanctoral';
+}
+
+/** Strips the responsory's closing Gloria line from `text` when the day
+ * calls for its omission (see omitResponsoryGloria); returns `text`
+ * unchanged otherwise. Safe to call on already-Gloria-free text (e.g. the
+ * proper-of-season responsories) -- the line just won't be found. */
+export function resolveResponsory(text: ResolvedText, day: LiturgicalDay): ResolvedText {
+  if (!omitResponsoryGloria(day)) {
+    return text;
+  }
+  const stripped: Partial<Record<string, string>> = {};
+  for (const [lang, t] of Object.entries(text.text)) {
+    const gloriaLine = RESPONSORY_GLORIA_LINE[lang];
+    stripped[lang] = t && gloriaLine ? t.split('\n').filter((line) => line !== gloriaLine).join('\n') : t;
+  }
+  return { ...text, text: stripped };
+}

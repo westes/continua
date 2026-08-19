@@ -261,3 +261,16 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(versicle).toBeDefined();
   });
 });
+
+describe('resolveOrdo("vespers", ...) responsory Gloria omission', () => {
+  // Same shared mechanism/rule as Lauds' — see tests/hours/lauds.test.ts's
+  // and tests/hours/compline.test.ts's own describe blocks.
+  it('has no Gloria on a ferial Passiontide day, has one on an ordinary date', () => {
+    const passiontideResponsory = resolveOrdo('vespers', '2027-03-15').parts.find((p) => p.kind === 'responsory');
+    const ordinaryResponsory = resolveOrdo('vespers', '2026-08-20').parts.find((p) => p.kind === 'responsory');
+    expect(passiontideResponsory?.kind === 'responsory' ? passiontideResponsory.text.text.la : undefined).not.toContain(
+      'Glória Patri',
+    );
+    expect(ordinaryResponsory?.kind === 'responsory' ? ordinaryResponsory.text.text.la : undefined).toContain('Glória Patri');
+  });
+});

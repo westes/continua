@@ -224,3 +224,23 @@ describe('resolveOrdo("prime", ...)', () => {
     }
   });
 });
+
+describe('resolveOrdo("prime", ...) chapter-responsory Gloria omission', () => {
+  // Same Passiontide-wide, Sancti-exempt rule as Compline's — see
+  // tests/hours/compline.test.ts's own describe block for the live-
+  // verification dates.
+  it('omits the Gloria on a ferial Passiontide day, keeps it on an ordinary date', () => {
+    const passiontideResponsory = resolveOrdo('prime', '2027-03-15').parts.find((p) => p.kind === 'responsory');
+    const ordinaryResponsory = resolveOrdo('prime', '2026-08-20').parts.find((p) => p.kind === 'responsory');
+    expect(passiontideResponsory?.kind === 'responsory' ? passiontideResponsory.text.text.la : undefined).not.toContain(
+      'Glória Patri',
+    );
+    expect(ordinaryResponsory?.kind === 'responsory' ? ordinaryResponsory.text.text.la : undefined).toContain('Glória Patri');
+  });
+
+  it("keeps the Gloria on a Sancti feast's own day, even inside Passiontide", () => {
+    const ordo = resolveOrdo('prime', '2027-03-19'); // St. Joseph, Duplex I.
+    const responsory = ordo.parts.find((p) => p.kind === 'responsory');
+    expect(responsory?.kind === 'responsory' ? responsory.text.text.la : undefined).toContain('Glória Patri');
+  });
+});

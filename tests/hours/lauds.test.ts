@@ -320,3 +320,22 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Auróra lucis rútilat');
   });
 });
+
+describe('resolveOrdo("lauds", ...) responsory Gloria omission', () => {
+  // Real Passiontide already routes to a wholesale different proper-of-
+  // season responsory (lauds-responsory-passiontide.yml, "Érue a frámea")
+  // that was already transcribed without a Gloria line -- this just
+  // confirms the shared mechanism (resolve-common.ts's resolveResponsory)
+  // doesn't break that, and still applies correctly on an ordinary date.
+  // Same Passiontide-wide, Sancti-exempt rule as Compline's -- see
+  // tests/hours/compline.test.ts's own describe block for the live-
+  // verification dates.
+  it('has no Gloria on a ferial Passiontide day, has one on an ordinary date', () => {
+    const passiontideResponsory = resolveOrdo('lauds', '2027-03-15').parts.find((p) => p.kind === 'responsory');
+    const ordinaryResponsory = resolveOrdo('lauds', '2026-08-20').parts.find((p) => p.kind === 'responsory');
+    expect(passiontideResponsory?.kind === 'responsory' ? passiontideResponsory.text.text.la : undefined).not.toContain(
+      'Glória Patri',
+    );
+    expect(ordinaryResponsory?.kind === 'responsory' ? ordinaryResponsory.text.text.la : undefined).toContain('Glória Patri');
+  });
+});

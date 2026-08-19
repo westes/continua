@@ -19,6 +19,7 @@ import {
   seasonalOfficeSuffix,
   isFerialOrVigil,
   getOfficeOverrideId,
+  resolveResponsory,
 } from './resolve-common';
 import laudsDefinitionData from '../data/hours/lauds.yml';
 import laudsAntiphonsData from '../data/hours/lauds-antiphons.yml';
@@ -192,7 +193,7 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
     if (chapter.status.la !== 'missing' || chapter.status.en !== 'missing') {
       return [
         { kind: 'chapter', text: chapter },
-        { kind: 'responsory', text: resolveCommon(`lauds-responsory-${overrideId}`) },
+        { kind: 'responsory', text: resolveResponsory(resolveCommon(`lauds-responsory-${overrideId}`), day) },
         { kind: 'hymn', text: resolveCommon(`lauds-hymn-${overrideId}`) },
         { kind: 'versicle', text: resolveCommon(`lauds-versicle-${overrideId}`) },
       ];
@@ -202,7 +203,7 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
   const key = seasonSuffix ?? day.weekday;
   return [
     { kind: 'chapter', text: resolveCommon(seasonSuffix ? `lauds-capitulum-${key}` : capitulumId(day.weekday)) },
-    { kind: 'responsory', text: resolveCommon(`lauds-responsory-${key}`) },
+    { kind: 'responsory', text: resolveResponsory(resolveCommon(`lauds-responsory-${key}`), day) },
     { kind: 'hymn', text: resolveCommon(`lauds-hymn-${key}`) },
     { kind: 'versicle', text: resolveCommon(`lauds-versicle-${key}`) },
   ];
