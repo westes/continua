@@ -199,7 +199,11 @@ export interface HourDefinition {
 export type ResolvedPart =
   | { kind: 'hymn' | 'chapter' | 'responsory' | 'versicle' | 'prayer'; text: ResolvedText }
   | { kind: 'preces'; text: ResolvedText; label?: string }
-  | { kind: 'psalm'; psalmNumber: number; antiphon?: ResolvedText; verses: ResolvedVerse[] }
+  // `gloriaPatri` is filled in centrally (hours/index.ts, after every hour
+  // builder returns) rather than per-hour, so it's absent only during the
+  // Sacred Triduum (calendar/temporal.ts's isInTriduum) — never omit it
+  // when building a psalm part yourself.
+  | { kind: 'psalm'; psalmNumber: number; antiphon?: ResolvedText; verses: ResolvedVerse[]; gloriaPatri?: ResolvedText }
   | { kind: 'canticle'; canticleId: string; text: ResolvedText; antiphon?: ResolvedText }
   // A standalone antiphon, said on its own rather than framing a psalm —
   // see 'closing-antiphon' above.

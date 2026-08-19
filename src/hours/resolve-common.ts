@@ -5,6 +5,7 @@ import { getCommonProper, getTemporalProper } from '../propers';
 import { getSaintRecord } from '../calendar/feasts';
 import { resolveActiveOctave, activeOctavesFor, octaveGoverningPrivilegedDay, isAtLeast } from '../calendar';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
+import { isInTriduum } from '../calendar/temporal';
 import { splitAntiphon } from './antiphon';
 import vespersMagnificatAntiphonsData from '../data/hours/vespers-magnificat-antiphons.yml';
 
@@ -676,4 +677,23 @@ export function splitNamedAntiphon(antiphon: ResolvedText): {
     fullStatus[lang] = status;
   }
   return { incipit: { text: incipitText, status: incipitStatus }, full: { text: fullText, status: fullStatus } };
+}
+
+/** Fixed wording, same as lauds.ts's weekday-canticle Gloria Patri —
+ * appended after every psalm (hours/index.ts) except during the Sacred
+ * Triduum. Not "verified" via verifiedText() because it's boilerplate
+ * used everywhere, not a sourced proper text. */
+const GLORIA_PATRI: BilingualText = {
+  la: 'V. Glória Patri, et Fílio, * et Spirítui Sancto.\nR. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen.',
+  en: 'V. Glory be to the Father, and to the Son, * and to the Holy Ghost.\nR. As it was in the beginning, is now, * and ever shall be, world without end. Amen.',
+};
+
+/** The closing Gloria Patri for a psalm, or `undefined` during the Sacred
+ * Triduum (calendar/temporal.ts's isInTriduum) when it's omitted
+ * entirely — not just seasonally varied wording, an actual omission. */
+export function resolveGloriaPatri(day: LiturgicalDay): ResolvedText | undefined {
+  if (isInTriduum(day.date)) {
+    return undefined;
+  }
+  return verifiedText(GLORIA_PATRI);
 }

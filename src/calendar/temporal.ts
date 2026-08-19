@@ -126,6 +126,18 @@ export function easterOffsetOf(isoDate: string): number {
   return daysBetween(toIsoDate(easterSunday(year)), isoDate);
 }
 
+/** The Sacred Triduum: Maundy/Holy Thursday through Holy Saturday
+ * (inclusive). Doesn't line up with `season` (which resolves this window
+ * to 'passiontide', same as the two weeks before it) — see
+ * hours/marian-antiphon.ts's isCandlemasToHolyWednesday for the same
+ * direct-date-check pattern used for another window `season` can't
+ * represent. Gloria Patri is omitted after psalms only in this narrower
+ * window, not throughout Passiontide/Holy Week generally. */
+export function isInTriduum(isoDate: string): boolean {
+  const offset = easterOffsetOf(isoDate);
+  return offset >= -3 && offset <= -1;
+}
+
 /**
  * A day's precedence category under the temporal cycle alone — see
  * calendar/types.ts's TemporalCategory doc comment and

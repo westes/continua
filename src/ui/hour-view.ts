@@ -94,6 +94,7 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
           <ol class="psalm-verses">
             ${part.verses.map((v) => `<li class="psalm-verse">${renderColumns(v, languages)}</li>`).join('')}
           </ol>
+          ${part.gloriaPatri ? `<div class="ordo-part-gloria-patri">${renderColumns(part.gloriaPatri, languages)}</div>` : ''}
         </section>
       `;
     }

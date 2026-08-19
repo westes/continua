@@ -1,6 +1,7 @@
 import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart, ResolvedText } from './types';
 import type { LiturgicalDay, Weekday } from '../calendar/types';
 import { resolveDay, isSundayOrFeast, activeOctavesFor } from '../calendar';
+import { isInTriduum } from '../calendar/temporal';
 import { getDayLabel } from '../calendar/day-label';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { getPsalmVerses } from '../psalter';
@@ -104,8 +105,10 @@ const GLORIA_PATRI = {
  * how they were transcribed, not because callers need per-verse access.
  * Appends the fixed Gloria Patri line every canticle (or canticle part)
  * ends with in real practice, same wording as benedictus.yml's own
- * trailing line. */
-function canticleText(canticleId: string, slice?: [number, number]): ResolvedText {
+ * trailing line — omitted during the Sacred Triduum, live-verified against
+ * both Divino Afflatu 1954 and Tridentine 1906 (Benedictus at Lauds of
+ * Holy Thursday omits it same as any psalm). */
+function canticleText(canticleId: string, slice: [number, number] | undefined, omitGloriaPatri: boolean): ResolvedText {
   const canticle = getCanticle(canticleId);
   const verses = slice ? canticle.verses.slice(slice[0], slice[1]) : canticle.verses;
   const text: Partial<Record<string, string>> = {};
@@ -115,7 +118,7 @@ function canticleText(canticleId: string, slice?: [number, number]): ResolvedTex
     if (lines.length === 0) {
       continue;
     }
-    text[lang] = `${lines.join('\n')}\n${GLORIA_PATRI[lang]}`;
+    text[lang] = omitGloriaPatri ? lines.join('\n') : `${lines.join('\n')}\n${GLORIA_PATRI[lang]}`;
     let worst: 'verified' | 'draft' | 'missing' = 'verified';
     for (const v of verses) {
       const s = v.status[lang] ?? 'missing';
@@ -150,6 +153,7 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
   const canticle = getCanticle(wd.canticle.id);
   const canticleOpening = opening(wd.canticle.antiphon);
   const canticleClosing = splitNamedAntiphon(verifiedText(wd.canticle.antiphon)).full;
+  const omitGloriaPatri = isInTriduum(day.date);
   if (wd.canticle.split) {
     // Said in two pieces, own Gloria Patri each, one shared antiphon
     // framing both (opening before the first, full repeated only after
@@ -158,19 +162,19 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
       kind: 'canticle',
       canticleId: canticle.id,
       antiphon: canticleOpening,
-      text: canticleText(canticle.id, [0, wd.canticle.split]),
+      text: canticleText(canticle.id, [0, wd.canticle.split], omitGloriaPatri),
     });
     parts.push({
       kind: 'canticle',
       canticleId: canticle.id,
-      text: canticleText(canticle.id, [wd.canticle.split, canticle.verses.length]),
+      text: canticleText(canticle.id, [wd.canticle.split, canticle.verses.length], omitGloriaPatri),
     });
   } else {
     parts.push({
       kind: 'canticle',
       canticleId: canticle.id,
       antiphon: canticleOpening,
-      text: canticleText(canticle.id),
+      text: canticleText(canticle.id, undefined, omitGloriaPatri),
     });
   }
   parts.push({ kind: 'antiphon', text: canticleClosing });
