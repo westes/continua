@@ -299,3 +299,36 @@ describe('resolveOrdo("matins", ...) second Duplex+ weekday-feast proof — St. 
     }
   });
 });
+
+describe('resolveOrdo("matins", ...) Sacred Triduum', () => {
+  // Tenebrae's real rubric drops the whole opening (versicle, Ps 3,
+  // Invitatory, hymn) in favor of a silently-said Pater/Ave/Credo —
+  // live-verified against both Monastic Tridentinum 1617 and Divino
+  // Afflatu 1954 (Holy Thursday: "Invitatorium{omittitur}",
+  // "Hymnus{omittitur}", no Ps 3 or versicle either). This app never
+  // renders that silent block anywhere (see data/hours/prime.yml's own
+  // header), so the fix is a pure omission -- straight into Nocturn 1.
+  const HOLY_THURSDAY = '2026-04-02';
+  const GOOD_FRIDAY = '2026-04-03';
+  const HOLY_SATURDAY = '2026-04-04';
+
+  it.each([HOLY_THURSDAY, GOOD_FRIDAY, HOLY_SATURDAY])('drops the opening versicle/Ps 3/Invitatory/hymn on %s', (date) => {
+    const ordo = resolveOrdo('matins', date);
+    expect(ordo.parts.some((p) => p.kind === 'versicle')).toBe(false);
+    expect(ordo.parts.some((p) => p.kind === 'psalm' && p.psalmNumber === 3)).toBe(false);
+    expect(ordo.parts.some((p) => p.kind === 'psalm' && p.psalmNumber === 94)).toBe(false);
+    expect(ordo.parts.some((p) => p.kind === 'section-heading' && p.label === 'Invitatory')).toBe(false);
+    expect(ordo.parts.some((p) => p.kind === 'hymn')).toBe(false);
+  });
+
+  it('goes straight into Nocturn 1 psalmody as the very first part', () => {
+    const ordo = resolveOrdo('matins', HOLY_THURSDAY);
+    expect(ordo.parts[0]?.kind).toBe('psalm');
+  });
+
+  it("leaves an ordinary day's opening block untouched", () => {
+    const ordo = resolveOrdo('matins', '2026-08-20');
+    expect(ordo.parts[0]?.kind).toBe('versicle');
+    expect(ordo.parts[1]).toMatchObject({ kind: 'psalm', psalmNumber: 3 });
+  });
+});

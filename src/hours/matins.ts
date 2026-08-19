@@ -63,6 +63,7 @@
 import type { ResolvedOrdo, ResolvedPart, ResolvedVerse } from './types';
 import type { LiturgicalDay } from '../calendar/types';
 import { resolveDay, resolveTemporalId, activeOctavesFor } from '../calendar';
+import { isInTriduum } from '../calendar/temporal';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getPsalmsFor, type PsalmRef } from '../psalter/distribution';
@@ -301,13 +302,23 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   const pool = buildReadingPool(day, temporalId, date);
   const [nocturn1Readings, nocturn2Readings, nocturn3Readings] = distributeIntoNocturns(pool, threeNocturns ? 3 : 1);
 
-  const parts: ResolvedPart[] = [
-    { kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) },
-    plainPsalm(3),
-    { kind: 'section-heading', label: 'Invitatory' },
-    ...invitatoryParts(day),
-    { kind: 'hymn', text: resolveCommon('matins-hymn-ferial') },
-  ];
+  // Tenebrae's real rubric: during the Sacred Triduum the whole opening
+  // (versicle, Ps 3, Invitatory, hymn) is dropped, replaced by a silently-
+  // said Pater/Ave/Credo — live-verified against both Monastic Tridentinum
+  // 1617 and Divino Afflatu 1954 (Holy Thursday: "Invitatorium{omittitur}",
+  // "Hymnus{omittitur}", no Ps 3 or versicle either). This app already
+  // never renders that silent Pater/Ave/Credo elsewhere (see
+  // data/hours/prime.yml's own header: dropped "to keep the hour
+  // shorter"), so the fix here is a pure omission, not a new part kind.
+  const parts: ResolvedPart[] = isInTriduum(day.date)
+    ? []
+    : [
+        { kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) },
+        plainPsalm(3),
+        { kind: 'section-heading', label: 'Invitatory' },
+        ...invitatoryParts(day),
+        { kind: 'hymn', text: resolveCommon('matins-hymn-ferial') },
+      ];
 
   if (threeNocturns && day.weekday === 'sunday') {
     parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
