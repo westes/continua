@@ -269,11 +269,11 @@ export interface ResolvedOrdo {
   /** Set when this hour hasn't been built yet — UI shows "coming soon" instead of empty content. */
   notImplemented?: true;
   /**
-   * "Monday in the 10th week after Trinity", "St. Ereden — ...", etc. —
-   * see calendar/day-label.ts. Computed from whichever LiturgicalDay the
-   * hour actually resolved against, which can differ from `date` itself
-   * (Compline may anticipate tomorrow — see calendar/vespers.ts). Absent
-   * on not-yet-built hours.
+   * "Monday in the 10th week after Trinity", "St. Ereden — ...", etc.,
+   * keyed by language code (`en`/`la`) — see calendar/day-label.ts.
+   * Computed from whichever LiturgicalDay the hour actually resolved
+   * against, which can differ from `date` itself (Compline may anticipate
+   * tomorrow — see calendar/vespers.ts). Absent on not-yet-built hours.
    */
-  dayLabel?: string;
+  dayLabel?: Partial<Record<string, string>>;
 }

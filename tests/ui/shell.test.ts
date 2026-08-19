@@ -19,6 +19,10 @@ describe('shell', () => {
     mountShell(root);
 
     expect(root.querySelector('.day-nav-date')?.textContent).toContain('August 9, 2026');
+    // The "day being celebrated" text now lives in the merged day-nav
+    // header, not repeated inside each hour's own view.
+    expect(root.querySelector('.day-nav-label')?.textContent).toBeTruthy();
+    expect(root.querySelector('.hour-view .day-label')).toBeNull();
 
     const hourNames = Array.from(root.querySelectorAll('.hour-name')).map((el) => el.textContent);
     expect(hourNames).toEqual([

@@ -165,10 +165,24 @@ button:focus-visible {
   cursor: pointer;
 }
 
-.day-nav-date {
-  font-weight: 600;
+.day-nav-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
   min-width: 16rem;
   text-align: center;
+}
+
+.day-nav-date {
+  font-weight: 600;
+}
+
+.day-nav-label {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--color-brass);
 }
 
 /* --------------------------------------------------------------------------
@@ -259,14 +273,6 @@ button:focus-visible {
   color: var(--color-brass);
   font-family: var(--font-ui);
   margin: 0 0 var(--space-1);
-}
-
-.day-label {
-  font-family: var(--font-ui);
-  font-size: 0.9em;
-  font-style: italic;
-  color: var(--color-brass);
-  margin: 0 0 var(--space-2);
 }
 
 .ordo-part-citation {

@@ -97,7 +97,7 @@ describe('resolveOrdo("compline", ...)', () => {
     const eve = resolveOrdo('compline', '2025-11-29');
     const last = eve.parts[eve.parts.length - 1];
     expect(last?.kind === 'preces' ? last.label : undefined).toBe('Alma Redemptoris Mater');
-    expect(eve.dayLabel).toBe('St. Andrew, Apostle — The 1st Sunday of Advent (Semiduplex)');
+    expect(eve.dayLabel?.en).toBe('St. Andrew, Apostle — The 1st Sunday of Advent (Semiduplex)');
 
     const dayBefore = resolveOrdo('compline', '2025-11-28');
     const lastBefore = dayBefore.parts[dayBefore.parts.length - 1];

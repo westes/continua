@@ -9,13 +9,42 @@
 // become a configurable choice later (the same day->id indirection
 // philosophy already used for the sanctoral calendar), not hardcoded here
 // forever — just not built yet.
-import type { FeastClass, LiturgicalDay, TemporalCategory } from './types';
+//
+// Bilingual: every label is built as a `Bi` (`{en, la}`) pair throughout.
+// Proper names (a saint's name, an octave's name, a named temporal feast's
+// name) have no authored Latin form anywhere in `data/` today — those use
+// the English string as their own `la` value too (same "surface real text
+// rather than block on missing" convention used elsewhere in this app),
+// rather than leaving Latin mode showing blanks. Only the closed,
+// mechanism-level vocabulary here (weekdays, ranks, season/ordinal
+// phrasing) has real Latin authored.
+import type { FeastClass, LiturgicalDay, TemporalCategory, Weekday } from './types';
 import { easterSunday } from './easter';
 import { adventStart, firstSundayStrictlyAfter, sundayOnOrBefore } from './temporal';
 import { addDays, daysBetween, toIsoDate } from './date-math';
 import { getTemporalFeastRecord } from './temporal-feasts';
 import { activeOctavesFor, octaveGoverningPrivilegedDay, resolveActiveOctave, type ActiveOctave } from './octaves';
 import { resolveTemporalId } from './temporal-id';
+
+interface Bi {
+  en: string;
+  la: string;
+  [lang: string]: string;
+}
+
+function bi(en: string, la: string): Bi {
+  return { en, la };
+}
+
+/** A proper name with no authored Latin form yet — the English string
+ * stands in for `la` too. See file-header note. */
+function biFallback(name: string): Bi {
+  return { en: name, la: name };
+}
+
+function joinBi(items: Bi[], sep = ' — '): Bi {
+  return { en: items.map((i) => i.en).join(sep), la: items.map((i) => i.la).join(sep) };
+}
 
 function capitalize(text: string): string {
   return text.charAt(0).toUpperCase() + text.slice(1);
@@ -38,6 +67,56 @@ function ordinal(n: number): string {
   }
 }
 
+// Feminine Latin ordinal adjectives (agreeing with "Dominica"/"Hebdomada"/
+// "die", all feminine) — covers 1st through 24th, the full range this app
+// ever counts to (Trinitytide's fixed last week is the 23rd). Not a general
+// Latin-numerals utility, just this app's own closed display vocabulary.
+const ORDINAL_LA = [
+  '',
+  'prima',
+  'secunda',
+  'tertia',
+  'quarta',
+  'quinta',
+  'sexta',
+  'septima',
+  'octava',
+  'nona',
+  'decima',
+  'undecima',
+  'duodecima',
+  'decima tertia',
+  'decima quarta',
+  'decima quinta',
+  'decima sexta',
+  'decima septima',
+  'decima octava',
+  'decima nona',
+  'vicesima',
+  'vicesima prima',
+  'vicesima secunda',
+  'vicesima tertia',
+  'vicesima quarta',
+];
+
+function ordinalLa(n: number): string {
+  return ORDINAL_LA[n] ?? `${n}a`;
+}
+
+const WEEKDAY_LABELS: Record<Weekday, Bi> = {
+  sunday: bi('Sunday', 'Dominica'),
+  monday: bi('Monday', 'Feria Secunda'),
+  tuesday: bi('Tuesday', 'Feria Tertia'),
+  wednesday: bi('Wednesday', 'Feria Quarta'),
+  thursday: bi('Thursday', 'Feria Quinta'),
+  friday: bi('Friday', 'Feria Sexta'),
+  saturday: bi('Saturday', 'Sabbato'),
+};
+
+function weekdayLabel(day: LiturgicalDay): Bi {
+  return WEEKDAY_LABELS[day.weekday];
+}
+
 interface OrdinalSeason {
   /** ISO date of the season's own anchor day, for a given calendar year. */
   anchorDate(year: number): string;
@@ -45,10 +124,16 @@ interface OrdinalSeason {
    * Lent: the anchor is its own named day, excluded from the count — the
    * numbered weeks start the following Sunday. */
   includeAnchorWeek: boolean;
-  /** Used in "Weekday after {anchorName}" for the anchor's own partial week. */
-  anchorName: string;
-  /** Used in "the Nth Sunday/week {preposition} {ordinalName}". */
-  ordinalName: string;
+  /** Used in "Weekday after {anchorName}" for the anchor's own partial week,
+   * and as the anchor day's own standalone name. */
+  anchorName: Bi;
+  /** Used in "the Nth Sunday/week {preposition} {ordinalName}". For
+   * `preposition: 'of'`, `ordinalName.la` is already the correct genitive
+   * form (glued directly after the ordinal, no linking word — Latin
+   * idiom). For `preposition: 'after'`, `ordinalName.la` is the form used
+   * after "post" (traditionally accusative, or an idiomatic fixed phrase
+   * like "post Cineres"). */
+  ordinalName: Bi;
   preposition: 'after' | 'of';
   /** The season's own anchor day's rank, if it sits on the closed
    * pre-1955 duplex scale at all — Ash Wednesday (Lent's anchor) doesn't;
@@ -56,44 +141,61 @@ interface OrdinalSeason {
    * and shows no parenthetical, same "omit rather than guess" convention
    * `formatRank`/`status` fields use elsewhere. */
   anchorRank?: FeastClass;
+  /** Advent and Lent only: once the header always shows the day's weekday
+   * on its own, repeating it at the front of this label is redundant — so
+   * those two seasons drop it here, in both languages. Every other season
+   * keeps the weekday prefix (explicit, narrower scope decision). */
+  dropWeekdayPrefix?: boolean;
 }
 
 const ORDINAL_SEASONS: Partial<Record<string, OrdinalSeason>> = {
   advent: {
     anchorDate: adventStart,
     includeAnchorWeek: true,
-    anchorName: 'Advent',
-    ordinalName: 'Advent',
+    anchorName: bi('Advent', 'Adventus'),
+    // Genitive of 4th-declension "adventus" is also "Adventus" — no
+    // linking word needed: "Hebdomada II Adventus".
+    ordinalName: bi('Advent', 'Adventus'),
     preposition: 'of',
+    dropWeekdayPrefix: true,
   },
   epiphanytide: {
     anchorDate: (year) => `${year}-01-06`,
     includeAnchorWeek: false,
-    anchorName: 'Epiphany',
-    ordinalName: 'Epiphany',
+    anchorName: bi('Epiphany', 'Epiphania'),
+    // Accusative, for "post Epiphaniam".
+    ordinalName: bi('Epiphany', 'Epiphaniam'),
     preposition: 'after',
     anchorRank: 'duplex-1-classis',
   },
   lent: {
     anchorDate: (year) => addDays(toIsoDate(easterSunday(year)), -46),
     includeAnchorWeek: false,
-    anchorName: 'Ash Wednesday',
-    ordinalName: 'Lent',
+    anchorName: bi('Ash Wednesday', 'Feria Quarta Cinerum'),
+    // Genitive of 1st-declension "Quadragesima": "Hebdomada II
+    // Quadragesimae". The pre-Lent-I days use the real traditional idiom
+    // "post Cineres" instead (see temporalLabel below), not this field.
+    ordinalName: bi('Lent', 'Quadragesimae'),
     preposition: 'of',
+    dropWeekdayPrefix: true,
   },
   eastertide: {
     anchorDate: (year) => toIsoDate(easterSunday(year)),
     includeAnchorWeek: false,
-    anchorName: 'Easter',
-    ordinalName: 'Easter',
+    anchorName: bi('Easter', 'Pascha'),
+    // "Pascha" is indeclinable — same form after "post".
+    ordinalName: bi('Easter', 'Pascha'),
     preposition: 'after',
     anchorRank: 'duplex-1-classis',
   },
   trinitytide: {
     anchorDate: (year) => addDays(toIsoDate(easterSunday(year)), 56),
     includeAnchorWeek: false,
-    anchorName: 'Trinity Sunday',
-    ordinalName: 'Trinity',
+    anchorName: bi('Trinity Sunday', 'Dominica Sanctissimae Trinitatis'),
+    // Accusative, for "post Sanctissimam Trinitatem" — this app's own
+    // Trinity-counted convention (see file header), not the historical
+    // Pentecost-counted "post Pentecosten".
+    ordinalName: bi('Trinity', 'Sanctissimam Trinitatem'),
     preposition: 'after',
     anchorRank: 'duplex-1-classis',
   },
@@ -107,14 +209,16 @@ const ORDINAL_SEASONS: Partial<Record<string, OrdinalSeason>> = {
  * octave, but nobody calls it that). Advent's own anchor (Advent I Sunday)
  * doesn't take this branch — it's already "the 1st Sunday of Advent" via
  * the ordinal path below. */
-function anchorDayName(day: LiturgicalDay, withRank = true): string | undefined {
+function anchorDayName(day: LiturgicalDay, withRank = true): Bi | undefined {
   const config = ORDINAL_SEASONS[day.season];
   if (!config || config.includeAnchorWeek) {
     return undefined;
   }
   const year = Number(day.date.slice(0, 4));
   if (day.date === config.anchorDate(year)) {
-    return withRank && config.anchorRank ? `${config.anchorName} (${formatRank(config.anchorRank)})` : config.anchorName;
+    return withRank && config.anchorRank
+      ? bi(`${config.anchorName.en} (${formatRank(config.anchorRank).en})`, `${config.anchorName.la} (${formatRank(config.anchorRank).la})`)
+      : config.anchorName;
   }
   return undefined;
 }
@@ -147,47 +251,57 @@ const FIXED_LAST_SUNDAY_ORDINAL = 23;
  *     every year, not just overflow ones.
  * Only ever fires within trinitytide, since that's the only season
  * resolveTemporalId can return either of these ids for a date outside
- * their own native season.
+ * their own native season. Trinitytide isn't in the weekday-drop set, so
+ * both languages keep their weekday prefix here.
  */
-function trinitytideOverrideLabel(day: LiturgicalDay): string | undefined {
+function trinitytideOverrideLabel(day: LiturgicalDay): Bi | undefined {
   if (day.season !== 'trinitytide') {
     return undefined;
   }
   const id = resolveTemporalId(day.date);
-  const weekdayName = capitalize(day.weekday);
+  const weekdayName = weekdayLabel(day);
 
   const epiphanyMatch = id.match(/^post-epiphany-(\d)$/);
   if (epiphanyMatch) {
     const n = Number(epiphanyMatch[1]);
     return day.weekday === 'sunday'
-      ? `The ${ordinal(n)} Sunday after Epiphany`
-      : `${weekdayName} in the ${ordinal(n)} week after Epiphany`;
+      ? bi(`The ${ordinal(n)} Sunday after Epiphany`, `Dominica ${ordinalLa(n)} post Epiphaniam`)
+      : bi(`${weekdayName.en} in the ${ordinal(n)} week after Epiphany`, `${weekdayName.la} in hebdomada ${ordinalLa(n)} post Epiphaniam`);
   }
 
   if (id === 'post-pentecost-24') {
     return day.weekday === 'sunday'
-      ? `The ${ordinal(FIXED_LAST_SUNDAY_ORDINAL)} Sunday after Trinity`
-      : `${weekdayName} in the ${ordinal(FIXED_LAST_SUNDAY_ORDINAL)} week after Trinity`;
+      ? bi(
+          `The ${ordinal(FIXED_LAST_SUNDAY_ORDINAL)} Sunday after Trinity`,
+          `Dominica ${ordinalLa(FIXED_LAST_SUNDAY_ORDINAL)} post Sanctissimam Trinitatem`,
+        )
+      : bi(
+          `${weekdayName.en} in the ${ordinal(FIXED_LAST_SUNDAY_ORDINAL)} week after Trinity`,
+          `${weekdayName.la} in hebdomada ${ordinalLa(FIXED_LAST_SUNDAY_ORDINAL)} post Sanctissimam Trinitatem`,
+        );
   }
 
   return undefined;
 }
 
-function temporalLabel(day: LiturgicalDay): string {
+function temporalLabel(day: LiturgicalDay): Bi {
   const trinitytideOverride = trinitytideOverrideLabel(day);
   if (trinitytideOverride) {
     return trinitytideOverride;
   }
 
-  const weekdayName = capitalize(day.weekday);
+  const weekdayName = weekdayLabel(day);
   const config = ORDINAL_SEASONS[day.season];
   if (!config) {
     // No ordinal convention modeled for this season (Septuagesima-tide,
     // Passiontide, Ascensiontide, Pentecost, Christmastide, the
     // Corpus-Christi/Sacred-Heart single-day seasons) — their few days
     // mostly have their own proper names rather than ordinal counting, so
-    // this fallback is expected to be seen, not a gap to fill later.
-    return `${weekdayName} in ${capitalize(day.season.replace(/-/g, ' '))}`;
+    // this fallback is expected to be seen, not a gap to fill later. No
+    // authored Latin season name exists for these yet, so `la` falls back
+    // to the same English season word.
+    const seasonName = capitalize(day.season.replace(/-/g, ' '));
+    return bi(`${weekdayName.en} in ${seasonName}`, `${weekdayName.la} in ${seasonName}`);
   }
 
   const year = Number(day.date.slice(0, 4));
@@ -199,34 +313,54 @@ function temporalLabel(day: LiturgicalDay): string {
 
   const firstNumberedSunday = config.includeAnchorWeek ? anchor : firstSundayStrictlyAfter(anchor);
   if (day.date < firstNumberedSunday) {
-    return `${weekdayName} after ${config.anchorName}`;
+    // Lent's own pre-Lent-I days use the real traditional idiom "post
+    // Cineres" rather than the season's genitive `ordinalName` (which is
+    // built for the "of Lent" construction, not "after Ash Wednesday").
+    const afterAnchorLa = day.season === 'lent' ? 'Cineres' : config.anchorName.la;
+    return config.dropWeekdayPrefix
+      ? bi(`After ${config.anchorName.en}`, `Post ${afterAnchorLa}`)
+      : bi(`${weekdayName.en} after ${config.anchorName.en}`, `${weekdayName.la} post ${afterAnchorLa}`);
   }
 
   const weeksSince = daysBetween(firstNumberedSunday, sundayOnOrBefore(day.date)) / 7;
   const ordinalStr = ordinal(weeksSince + 1);
+  const ordinalStrLa = ordinalLa(weeksSince + 1);
   if (day.weekday === 'sunday') {
-    return `The ${ordinalStr} Sunday ${config.preposition} ${config.ordinalName}`;
+    return config.preposition === 'of'
+      ? bi(`The ${ordinalStr} Sunday of ${config.ordinalName.en}`, `Dominica ${ordinalStrLa} ${config.ordinalName.la}`)
+      : bi(`The ${ordinalStr} Sunday after ${config.ordinalName.en}`, `Dominica ${ordinalStrLa} post ${config.ordinalName.la}`);
   }
-  return `${weekdayName} in the ${ordinalStr} week ${config.preposition} ${config.ordinalName}`;
+  const weekPhraseLa =
+    config.preposition === 'of' ? `hebdomada ${ordinalStrLa} ${config.ordinalName.la}` : `hebdomada ${ordinalStrLa} post ${config.ordinalName.la}`;
+  return config.dropWeekdayPrefix
+    ? bi(`In the ${ordinalStr} week ${config.preposition} ${config.ordinalName.en}`, `In ${weekPhraseLa}`)
+    : bi(`${weekdayName.en} in the ${ordinalStr} week ${config.preposition} ${config.ordinalName.en}`, `${weekdayName.la} in ${weekPhraseLa}`);
 }
 
 /** "Third Day within the Octave of St. Lawrence" for an ordinary mid-octave
- * day (e.g. "Tertia die infra Octavam S. Laurentii Martyris"), or plain
- * "Octave of St. Lawrence" for the octave's own closing day — real DO
- * Latin distinguishes "infra octavam" (within the octave, days 2-7) from
- * "in octava" (on the octave day itself, day 8), live-verified: Aug 17
- * (St. Lawrence's closing day) titles itself "In Octava S. Laurentii
- * Martyris", not "Octava die infra Octavam...". Day 1 shouldn't normally
- * reach either branch (that day's own winner is the feast itself, handled
- * above before this is ever called) — kept simple rather than
- * special-cased for that rare edge case (see applyOctaves's own
- * `isOwnStartDay` comment in calendar/index.ts for when it can happen). */
-function octaveCoreName(octave: ActiveOctave): string {
-  return octave.isClosingDay ? `Octave of ${octave.name}` : `${ordinal(octave.dayNumber)} Day within the Octave of ${octave.name}`;
+ * day ("Tertia die infra Octavam S. Laurentii Martyris"), or plain "Octave
+ * of St. Lawrence" for the octave's own closing day ("In Octava S.
+ * Laurentii Martyris") — real DO Latin distinguishes "infra octavam"
+ * (within the octave, days 2-7) from "in octava" (on the octave day
+ * itself, day 8), live-verified: Aug 17 (St. Lawrence's closing day)
+ * titles itself "In Octava S. Laurentii Martyris", not "Octava die infra
+ * Octavam...". Day 1 shouldn't normally reach either branch (that day's
+ * own winner is the feast itself, handled above before this is ever
+ * called) — kept simple rather than special-cased for that rare edge case
+ * (see applyOctaves's own `isOwnStartDay` comment in calendar/index.ts for
+ * when it can happen). The octave's own `name` has no authored Latin form
+ * (see file header), so both languages currently show the same name text
+ * — only the surrounding phrasing differs. */
+function octaveCoreName(octave: ActiveOctave): Bi {
+  return octave.isClosingDay
+    ? bi(`Octave of ${octave.name}`, `In Octava ${octave.name}`)
+    : bi(`${ordinal(octave.dayNumber)} Day within the Octave of ${octave.name}`, `${ordinalLa(octave.dayNumber)} die infra Octavam ${octave.name}`);
 }
 
-function octaveLabel(octave: ActiveOctave): string {
-  return `${octaveCoreName(octave)} (${formatRank(octave.wins)})`;
+function octaveLabel(octave: ActiveOctave): Bi {
+  const core = octaveCoreName(octave);
+  const rank = formatRank(octave.wins);
+  return bi(`${core.en} (${rank.en})`, `${core.la} (${rank.la})`);
 }
 
 /** Same phrasing as `octaveLabel`, but without the parenthesized rank —
@@ -238,7 +372,7 @@ function octaveLabel(octave: ActiveOctave): string {
  * it *won as*, not a fact worth restating once a duplex-or-higher saint
  * has displaced it and it's just riding along as a commemoration
  * instead). */
-function octaveCommemorationLabel(octave: ActiveOctave): string {
+function octaveCommemorationLabel(octave: ActiveOctave): Bi {
   return octaveCoreName(octave);
 }
 
@@ -258,7 +392,8 @@ function octaveCommemorationLabel(octave: ActiveOctave): string {
  * - `sanctoral`: every commemorated saint, plain name, no rank (multiple
  *   real ones can coexist — e.g. two colliding saints on the same date —
  *   this app's own "generous commemorations" design keeps every one of
- *   them, not just the first).
+ *   them, not just the first). No authored Latin saint names exist yet
+ *   (see file header), so `la` falls back to the same English name.
  * - `temporal`: the day's own real Sunday/feria identity, if
  *   `decideOccurrence` demoted it to a commemoration (`ordinary-sunday`/
  *   `privileged-feria`/`privileged-feria-minor`) — matched by id against
@@ -282,35 +417,35 @@ function octaveCommemorationLabel(octave: ActiveOctave): string {
 function collectCommemorations(
   day: LiturgicalDay,
   opts: { showOctaves: boolean; excludeOctaveId?: string },
-): { sanctoral: string[]; temporal: string[]; octaves: string[] } {
+): { sanctoral: Bi[]; temporal: Bi[]; octaves: Bi[] } {
   const temporalId = resolveTemporalId(day.date);
   const activeOctaves = opts.showOctaves ? activeOctavesFor(day.date) : [];
-  const sanctoral: string[] = [];
-  const temporal: string[] = [];
-  const octaves: string[] = [];
+  const sanctoral: Bi[] = [];
+  const temporal: Bi[] = [];
+  const octaves: Bi[] = [];
   for (const c of day.commemorations) {
     if (c.kind === 'sanctoral') {
-      sanctoral.push(c.name);
+      sanctoral.push(biFallback(c.name));
     } else if (c.kind === 'temporal') {
       if (c.id === temporalId) {
         temporal.push(anchorDayName(day, false) ?? temporalLabel(day));
       }
     } else if (opts.showOctaves && c.id !== opts.excludeOctaveId) {
       const octave = activeOctaves.find((a) => a.id === c.id);
-      octaves.push(octave ? octaveCommemorationLabel(octave) : c.name);
+      octaves.push(octave ? octaveCommemorationLabel(octave) : biFallback(c.name));
     }
   }
   return { sanctoral, temporal, octaves };
 }
 
-const RANK_LABELS: Record<FeastClass, string> = {
-  simplex: 'Simplex',
-  vigil: 'Vigil',
-  semiduplex: 'Semiduplex',
-  duplex: 'Duplex',
-  'duplex-majus': 'Duplex Majus',
-  'duplex-2-classis': 'Duplex II Class',
-  'duplex-1-classis': 'Duplex I Class',
+const RANK_LABELS: Record<FeastClass, Bi> = {
+  simplex: bi('Simplex', 'Simplex'),
+  vigil: bi('Vigil', 'Vigilia'),
+  semiduplex: bi('Semiduplex', 'Semiduplex'),
+  duplex: bi('Duplex', 'Duplex'),
+  'duplex-majus': bi('Duplex Majus', 'Duplex Majus'),
+  'duplex-2-classis': bi('Duplex II Class', 'Duplex II. Classis'),
+  'duplex-1-classis': bi('Duplex I Class', 'Duplex I. Classis'),
 };
 
 /** The day's own winning saint's rank, parenthesized after their name —
@@ -318,7 +453,7 @@ const RANK_LABELS: Record<FeastClass, string> = {
  * saint. Only the day's own *winner* gets this treatment, not every
  * commemoration, matching the "winner is primary, commemorations are
  * secondary" distinction this file already draws throughout. */
-function formatRank(rank: FeastClass): string {
+function formatRank(rank: FeastClass): Bi {
   return RANK_LABELS[rank];
 }
 
@@ -330,14 +465,15 @@ function formatRank(rank: FeastClass): string {
  * Semiduplex regardless of whether it's additionally "privileged"
  * (privilege is about resisting supersession, a property of
  * `temporalCategory`, not a higher spot on the duplex scale) — so both
- * Sunday categories share one label here. */
-const TEMPORAL_CATEGORY_RANK_LABELS: Record<TemporalCategory, string> = {
-  'ordinary-sunday': 'Semiduplex',
-  'privileged-sunday': 'Semiduplex',
-  'ordinary-feria': 'Feria',
-  'privileged-feria-minor': 'Feria',
-  'privileged-feria': 'Feria',
-  'privileged-feria-major': 'Feria',
+ * Sunday categories share one label here. Both "Semiduplex" and "Feria"
+ * are already the real Latin words, so `en`/`la` coincide here too. */
+const TEMPORAL_CATEGORY_RANK_LABELS: Record<TemporalCategory, Bi> = {
+  'ordinary-sunday': bi('Semiduplex', 'Semiduplex'),
+  'privileged-sunday': bi('Semiduplex', 'Semiduplex'),
+  'ordinary-feria': bi('Feria', 'Feria'),
+  'privileged-feria-minor': bi('Feria', 'Feria'),
+  'privileged-feria': bi('Feria', 'Feria'),
+  'privileged-feria-major': bi('Feria', 'Feria'),
 };
 
 /**
@@ -348,9 +484,12 @@ const TEMPORAL_CATEGORY_RANK_LABELS: Record<TemporalCategory, string> = {
  * eligible to ride along with it. Each branch below only decides two
  * things: what the primary label is, and what commemoration *groups* are
  * eligible here and in what order — the actual filtering/formatting work
- * is `collectCommemorations`'s alone, shared by every branch.
+ * is `collectCommemorations`'s alone, shared by every branch. Returns a
+ * `Partial<Record<string, string>>` keyed by language code (`en`/`la`),
+ * the same convention `hours/types.ts`'s `ResolvedText`/`ResolvedVerse`
+ * already use.
  */
-export function getDayLabel(day: LiturgicalDay): string {
+export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>> {
   if (day.winner.kind === 'sanctoral') {
     // Octaves only ride along here on `ordinary-feria` — a day with real
     // standing of its own (a Sunday, a privileged feria) doesn't mention
@@ -362,8 +501,10 @@ export function getDayLabel(day: LiturgicalDay): string {
     const { sanctoral, temporal, octaves } = collectCommemorations(day, {
       showOctaves: day.temporalCategory === 'ordinary-feria',
     });
-    const winnerName = `${day.winner.name} (${formatRank(day.winner.rank)})`;
-    return [winnerName, ...temporal, ...sanctoral, ...octaves].join(' — ');
+    const rank = formatRank(day.winner.rank);
+    const winnerName = biFallback(day.winner.name);
+    const winner = bi(`${winnerName.en} (${rank.en})`, `${winnerName.la} (${rank.la})`);
+    return joinBi([winner, ...temporal, ...sanctoral, ...octaves]);
   }
 
   // A named temporal feast (Christmas, Pentecost, Marian Saturday, ...)
@@ -373,9 +514,12 @@ export function getDayLabel(day: LiturgicalDay): string {
   // temporal-feasts.ts) and fall through further down.
   const namedFeast = getTemporalFeastRecord(day.winner.id);
   if (namedFeast) {
-    const primary = namedFeast.rank ? `${namedFeast.name} (${formatRank(namedFeast.rank)})` : namedFeast.name;
+    const name = biFallback(namedFeast.name);
+    const primary = namedFeast.rank
+      ? bi(`${name.en} (${formatRank(namedFeast.rank).en})`, `${name.la} (${formatRank(namedFeast.rank).la})`)
+      : name;
     const { sanctoral } = collectCommemorations(day, { showOctaves: false });
-    return [primary, ...sanctoral].join(' — ');
+    return joinBi([primary, ...sanctoral]);
   }
 
   // A season's own named anchor day (Trinity Sunday, Easter, Ash
@@ -388,7 +532,7 @@ export function getDayLabel(day: LiturgicalDay): string {
   const anchorName = anchorDayName(day);
   if (anchorName) {
     const { sanctoral } = collectCommemorations(day, { showOctaves: false });
-    return [...sanctoral, anchorName].join(' — ');
+    return joinBi([...sanctoral, anchorName]);
   }
 
   // An active octave (St. Lawrence's, ...) is this day's real primary
@@ -424,10 +568,12 @@ export function getDayLabel(day: LiturgicalDay): string {
   if (activeOctave) {
     const { sanctoral, octaves } = collectCommemorations(day, { showOctaves: true, excludeOctaveId: activeOctave.id });
     const primary = octaveLabel(activeOctave);
-    return [primary, ...octaves, ...sanctoral].join(' — ');
+    return joinBi([primary, ...octaves, ...sanctoral]);
   }
 
-  const temporal = `${temporalLabel(day)} (${TEMPORAL_CATEGORY_RANK_LABELS[day.temporalCategory]})`;
+  const temporalRank = TEMPORAL_CATEGORY_RANK_LABELS[day.temporalCategory];
+  const label = temporalLabel(day);
+  const temporal = bi(`${label.en} (${temporalRank.en})`, `${label.la} (${temporalRank.la})`);
   const { sanctoral } = collectCommemorations(day, { showOctaves: false });
-  return [...sanctoral, temporal].join(' — ');
+  return joinBi([...sanctoral, temporal]);
 }

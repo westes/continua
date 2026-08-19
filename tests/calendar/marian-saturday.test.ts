@@ -17,7 +17,7 @@ describe('Marian Saturday (applyMarianSaturday)', () => {
     const day = resolveDay('2026-07-04');
     expect(day.winner).toEqual({ kind: 'temporal', id: 'marian-saturday' });
     expect(day.commemorations).toEqual([]);
-    expect(getDayLabel(day)).toBe("Our Lady's Saturday (Simplex)");
+    expect(getDayLabel(day).en).toBe("Our Lady's Saturday (Simplex)");
   });
 
   it('wins over a Simplex saint, who is commemorated instead of winning outright', () => {

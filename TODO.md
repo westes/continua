@@ -27,6 +27,11 @@ across every hour and content type in this app.
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
+   - Latin saint/octave/named-feast names for the bilingual date/day-label header (see
+     "Bilingual, merged date/day-label header" below) — the `{en, la}` mechanism is built and
+     every proper name falls back to English gracefully, but zero saints, octaves, or named
+     temporal feasts have an authored Latin name anywhere in `src/data/**`. Weekday names,
+     month names, rank labels, and season/ordinal phrasing already have real Latin.
    - Matins: bible-plan TSV bulk conversion is done (see "Bible-plan TSV — bulk conversion
      done" below) — not yet added to a test table, though (unlike sanctoral/temporal content)
      there's no reference breviary to spot-check this plan against by design. Still open:
@@ -2155,6 +2160,37 @@ Live-verified across 1943/1962/2015/2026/2033 — all five now read "The 23rd Su
 Trinity" for their own last Sunday, where before the fix they'd shown four different numbers.
 Tests in `tests/calendar/day-label.test.ts` updated accordingly. `npm test` (365 tests) and
 `tsc --noEmit` both pass.
+
+### Bilingual, merged date/day-label header — done (2026-08-18)
+
+The civil date/weekday (`day-nav`'s date span) and the "day being celebrated" text
+(`getDayLabel`, previously repeated inside every hour's own view) are now merged into one
+header block in `day-nav.ts`, and both are bilingual. `getDayLabel()` returns
+`Partial<Record<string,string>>` (`{en, la}`) instead of a plain English string, matching
+`hours/types.ts`'s existing bilingual convention; `formatDateLong()` (`src/ui/format.ts`) is
+bilingual too, since `Intl` has no Latin locale data (`MONTH_LABELS_LA` authored directly).
+Latin weekday names are spelled out per direct instruction — "Feria Tertia", not "Feria III"
+— `Dominica`/`Feria Secunda`...`Sexta`/`Sabbato`. Advent and Lent specifically drop the
+redundant leading weekday word from `temporalLabel()` now that the header always shows the
+weekday on its own ("Tuesday in the 2nd week of Advent" → "In the 2nd week of Advent") — every
+other season (Epiphanytide, Eastertide, Trinitytide, the plain fallback) keeps its weekday
+prefix, a deliberate narrower-scope decision, not an oversight.
+
+**Real content gap, left open on purpose**: no Latin form exists anywhere for saint names
+(`SanctoralIdentity.name`), octave names, or named-temporal-feast names — only rank labels,
+weekday names, month names, and season/ordinal phrasing have authored Latin. Every saint/
+octave/feast name currently falls back to its English string as its own `la` value too (same
+"surface real text over missing" convention used elsewhere), so Latin mode never shows a blank
+where a proper name belongs — but it also means Latin mode still reads mostly-English for any
+day with a real winner. Authoring actual Latin names per saint/octave/feast is separate future
+content work (hundreds of records), not started here.
+
+`tests/calendar/day-label.test.ts` rewritten for the `{en, la}` shape (all `.en` values
+unchanged except the Advent/Lent weekday-drop cases), plus new representative `.la`
+assertions (weekday, rank, season-ordinal genitive construction, English-fallback-for-a-
+saint-name). `tests/hours/compline.test.ts` and `tests/ui/shell.test.ts` updated too. `npm
+test` (383 tests) and `tsc --noEmit` both pass; manually verified in the browser (English,
+Latin, and both-language modes) against an Advent date with an active octave.
 
 ## Known, deliberate simplifications (not bugs — working as designed)
 
