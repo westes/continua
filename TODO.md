@@ -23,6 +23,15 @@ across every hour and content type in this app.
    - What "a Gospel reading is its own kind" should mean structurally/in the UI, beyond the
      `isGospel` flag on a plain Matins `lesson` — open; deferred until there's a UI to
      evaluate it against.
+   - Date picker: `day-nav.ts` currently only steps a day at a time (prev/next); there's no
+     way to jump to an arbitrary date without walking there one day at a time or editing the
+     URL. Needs a calendar-grid picker UI — open, not started.
+   - Audio ("read it to me") interface: a button per hour/text that plays the office aloud
+     instead of requiring reading — e.g. via the Web Speech API (`SpeechSynthesis`), which
+     would keep this offline-first (no server-side TTS call, no added deploy dependency) but
+     needs bilingual voice selection (La/En) worked out, and quality for Latin pronunciation
+     is an open question. Open, not started — needs its own design pass before content/UI work
+     begins.
 
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
