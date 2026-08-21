@@ -60,7 +60,7 @@
 // Only a small, growable slice of content is authored so far (one clean
 // ferial day, one clean Sunday) — this is the mechanism build, not the
 // full-calendar content pass. See TODO.md for what's deferred.
-import type { ResolvedOrdo, ResolvedPart, ResolvedVerse } from './types';
+import type { ResolvedOrdo, ResolvedPart, ResolvedText, ResolvedVerse } from './types';
 import type { LiturgicalDay } from '../calendar/types';
 import { resolveDay, resolveTemporalId, activeOctavesFor } from '../calendar';
 import { isInTriduum } from '../calendar/temporal';
@@ -70,7 +70,15 @@ import { getPsalmsFor, type PsalmRef } from '../psalter/distribution';
 import { getScriptureVerses } from '../scripture';
 import { getOpeningVersicleId } from './opening-versicle';
 import { isDoubleOrHigher } from './antiphon';
-import { resolveCommon, getDayCollect, resolveOfficeWinner, verifiedText, splitNamedAntiphon } from './resolve-common';
+import {
+  resolveCommon,
+  getDayCollect,
+  getOfficeOverrideId,
+  resolveOfficeWinner,
+  seasonalOfficeSuffix,
+  verifiedText,
+  splitNamedAntiphon,
+} from './resolve-common';
 import { getBiblePlanReadings } from '../propers/bible-plan';
 import { getNocturnReadings, type NocturnReading } from '../propers/nocturn-readings';
 import { getOctaveReading } from '../propers/octave-readings';
@@ -178,6 +186,35 @@ function sundayCanticleNocturn(group: SundayNocturn, day: LiturgicalDay): Resolv
   parts.push({ kind: 'antiphon', text: full });
   parts.push({ kind: 'versicle', text: verifiedText(group.versicle.v) });
   return parts;
+}
+
+/** The Matins hymn — a duplex-majus+ saint's or eligible named temporal
+ * feast's own proper hymn (`matins-hymn-${overrideId}`, via the same
+ * getOfficeOverrideId eligibility Lauds/Vespers' own resolveOffice uses),
+ * when authored, else falls to a *seasonal* default (Advent/Lent/
+ * Passiontide/Paschaltide, none authored yet), else the plain year-round
+ * ferial hymn — same override > season > ferial precedence every other
+ * hour's own office bundle uses (see lauds.ts's resolveOffice), just never
+ * wired up here before. Concrete motivating case (user, 2026-08-21): the
+ * Assumption's octave (`Sancti/08-21bmv.txt`'s own `[Rule] ex Sancti/
+ * 08-15`) genuinely keeps the feast's own proper hymn all week, not the
+ * ferial one this always rendered previously. */
+function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
+  const overrideId = getOfficeOverrideId(day);
+  if (overrideId) {
+    const proper = resolveCommon(`matins-hymn-${overrideId}`);
+    if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
+      return proper;
+    }
+  }
+  const seasonSuffix = seasonalOfficeSuffix(day.season);
+  if (seasonSuffix) {
+    const seasonal = resolveCommon(`matins-hymn-${seasonSuffix}`);
+    if (seasonal.status.la !== 'missing' || seasonal.status.en !== 'missing') {
+      return seasonal;
+    }
+  }
+  return resolveCommon('matins-hymn-ferial');
 }
 
 function ferialPsalmody(day: LiturgicalDay): ResolvedPart[] {
@@ -317,7 +354,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
         plainPsalm(3),
         { kind: 'section-heading', label: 'Invitatory' },
         ...invitatoryParts(day),
-        { kind: 'hymn', text: resolveCommon('matins-hymn-ferial') },
+        { kind: 'hymn', text: resolveMatinsHymn(day) },
       ];
 
   if (threeNocturns && day.weekday === 'sunday') {
