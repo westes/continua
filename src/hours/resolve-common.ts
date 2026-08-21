@@ -522,8 +522,16 @@ function octaveCommemorationPart(commemoration: Extract<Commemoration, { kind: '
  */
 export function getDayCollects(day: LiturgicalDay): ResolvedPart[] {
   const parts: ResolvedPart[] = [{ kind: 'prayer', text: getDayCollect(day) }];
+  // Mirrors resolveOfficeWinner's own gate: an octave only actually
+  // supplied the primary collect when the day's winner itself wasn't a
+  // real sanctoral feast (or one of the ALWAYS_OVERRIDE_TEMPORAL_IDS) —
+  // otherwise the winner's own content stood on its own (e.g. St.
+  // Bernard, Aug 20, outright beats the Assumption octave's threshold)
+  // and the octave still needs its own commemoration block below.
   const substitutedOctaveId =
-    day.temporalCategory === 'ordinary-feria' ? resolveActiveOctave(day.date)?.id : undefined;
+    day.winner.kind !== 'sanctoral' && !ALWAYS_OVERRIDE_TEMPORAL_IDS.has(day.winner.id) && day.temporalCategory === 'ordinary-feria'
+      ? resolveActiveOctave(day.date)?.id
+      : undefined;
   for (const commemoration of day.commemorations) {
     if (commemoration.kind === 'temporal') {
       parts.push({ kind: 'prayer', text: toResolvedText(getTemporalProper(`${commemoration.id}-collect`)) });
