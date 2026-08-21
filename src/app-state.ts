@@ -16,9 +16,22 @@ export function todayIso(): string {
   return `${yyyy}-${mm}-${dd}`;
 }
 
+/** Which hour to default to when the URL doesn't specify one, based on local wall-clock time. */
+export function defaultHourForTime(date: Date): HourId {
+  const h = date.getHours();
+  if (h < 6) return 'matins';
+  if (h < 8) return 'lauds';
+  if (h < 9) return 'prime';
+  if (h < 12) return 'terce';
+  if (h < 15) return 'sext';
+  if (h < 17) return 'none';
+  if (h < 21) return 'vespers';
+  return 'compline';
+}
+
 const state: AppState = {
   date: todayIso(),
-  selectedHour: 'prime',
+  selectedHour: defaultHourForTime(new Date()),
   languages: ['en'],
 };
 
