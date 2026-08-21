@@ -129,6 +129,17 @@ const ferialAntiphons = matinsFerialAntiphonsData as unknown as MatinsFerialAnti
 
 const NOCTURN_NUMERAL = ['I', 'II', 'III'] as const;
 
+/** Combines a versicle's V. and R. lines into one rendered block — every
+ * nocturn versicle in this file goes through this (previously
+ * `sundayPsalmNocturn`/`sundayCanticleNocturn` only rendered the V. line,
+ * silently dropping the responsory; fixed here, 2026-08-21). */
+function versicleText(versicle: { v: BilingualText; r: BilingualText }): ResolvedText {
+  return verifiedText({
+    la: `V. ${versicle.v.la}\nR. ${versicle.r.la}`,
+    en: `V. ${versicle.v.en}\nR. ${versicle.r.en}`,
+  });
+}
+
 type PsalmPart = Extract<ResolvedPart, { kind: 'psalm' }>;
 
 function plainPsalm(number: number): PsalmPart {
@@ -174,7 +185,7 @@ function sundayPsalmNocturn(group: SundayNocturn, day: LiturgicalDay): ResolvedP
     });
     parts.push({ kind: 'antiphon', text: full });
   }
-  parts.push({ kind: 'versicle', text: verifiedText({ la: group.versicle.v.la, en: group.versicle.v.en }) });
+  parts.push({ kind: 'versicle', text: versicleText(group.versicle) });
   return parts;
 }
 
@@ -197,7 +208,7 @@ function sundayCanticleNocturn(group: SundayNocturn, day: LiturgicalDay): Resolv
     };
   });
   parts.push({ kind: 'antiphon', text: full });
-  parts.push({ kind: 'versicle', text: verifiedText(group.versicle.v) });
+  parts.push({ kind: 'versicle', text: versicleText(group.versicle) });
   return parts;
 }
 
@@ -241,9 +252,7 @@ function ferialPsalmody(day: LiturgicalDay): ResolvedPart[] {
  * per-weekday psalm set). Every psalm-group carries its own antiphon
  * (incipit-or-full opening, same rank rule as Sunday's own nocturns), and
  * exactly one group per weekday carries a versicle+responsory, rendered
- * as one combined V./R. block (not just the V. line — see the sibling
- * `sundayPsalmNocturn`'s own versicle handling, which drops the R. line
- * entirely; not replicated here on purpose). */
+ * as one combined V./R. block via `versicleText`. */
 function ferialAntiphonedNocturn(day: LiturgicalDay): ResolvedPart[] {
   const nocturn = ferialAntiphons[day.weekday as Exclude<Weekday, 'sunday'>];
   const isDouble = isDoubleOrHigher(resolveOfficeWinner(day));
@@ -261,14 +270,7 @@ function ferialAntiphonedNocturn(day: LiturgicalDay): ResolvedPart[] {
     });
     parts.push({ kind: 'antiphon', text: full });
     if (group.versicle) {
-      const { v, r } = group.versicle;
-      parts.push({
-        kind: 'versicle',
-        text: verifiedText({
-          la: `V. ${v.la}\nR. ${r.la}`,
-          en: `V. ${v.en}\nR. ${r.en}`,
-        }),
-      });
+      parts.push({ kind: 'versicle', text: versicleText(group.versicle) });
     }
   }
   return parts;

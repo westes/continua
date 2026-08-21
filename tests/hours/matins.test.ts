@@ -123,6 +123,16 @@ describe('resolveOrdo("matins", ...) Sunday (3-nocturn) branch', () => {
     expect(ordo.parts.some((p) => p.kind === 'te-deum')).toBe(true);
   });
 
+  it('renders each nocturn versicle with both its V. and R. lines (real bug: sundayPsalmNocturn/sundayCanticleNocturn used to drop the R. line entirely)', () => {
+    const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
+    // Opening Deus-in-adjutorium versicle + one per nocturn (1, 2, 3).
+    expect(versicles).toHaveLength(4);
+    const [, nocturn1, nocturn2, nocturn3] = versicles;
+    expect(nocturn1?.text.text.la).toBe('V. Memor fui nocte nóminis tui Dómine.\nR. Et custodívi legem tuam.');
+    expect(nocturn2?.text.text.la).toBe('V. Média nocte surgébam ad confiténdum tibi.\nR. Super justítia justificatiónis tuæ.');
+    expect(nocturn3?.text.text.la).toBe('V. Exaltáre Dómine in virtúte tua.\nR. Cantábimus et psallémus virtútes tuas.');
+  });
+
   it("resolves the user's own bible-plan reading (Tobit/Sirach) for Nocturn 1", () => {
     const lessons = ordo.parts.filter((p) => p.kind === 'lesson');
     const citations = lessons.map((l) => (l as { text: { citation?: { en?: string } } }).text.citation?.en);

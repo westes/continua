@@ -2229,10 +2229,16 @@ New `data/hours/matins-ferial-antiphons.yml` (6 weekdays, 5-6 antiphon groups ea
 group per weekday carrying a versicle) + `hours/matins.ts`'s new `ferialAntiphonedNocturn`,
 replacing the old bare `ferialPsalmody` call in the plain-ferial branch (`ferialPsalmody` itself
 stays, still used by `ferialPsalmodyThreeNocturns`'s intentionally antiphon-less fallback).
-Versicle rendered as one combined V./R. block (`"V. ...\nR. ..."`), not just the V. line —
-`sundayPsalmNocturn`'s own versicle handling drops the R. line entirely (only pushes
-`group.versicle.v`), which looks like a pre-existing real bug there, not replicated here on
-purpose; not yet fixed, since it's Sunday's own code, out of scope for this pass.
+Versicle rendered as one combined V./R. block (`"V. ...\nR. ..."`) via a new shared
+`versicleText` helper.
+
+**Follow-up, same day: fixed the pre-existing Sunday versicle bug too.** `sundayPsalmNocturn`/
+`sundayCanticleNocturn` (used by both Sunday Matins and every Duplex+ weekday feast's
+`matins-psalmody-overrides` content) only ever pushed `group.versicle.v` — the V. line — never
+the R. line, so every Sunday/override nocturn versicle has been silently missing its responsory
+since the Sunday psalmody was first authored. Both functions now go through the same
+`versicleText` helper the ferial nocturn code above uses. `tests/hours/matins.test.ts` gained a
+regression test asserting all 3 Sunday nocturn versicles render both lines.
 
 `tests/hours/matins.test.ts` gained a new assertion (on the existing `FERIAL_DATE` proof,
 2026-12-01, Tuesday of Advent I) confirming every nocturn psalm gets its own antiphon,
@@ -2240,8 +2246,8 @@ correctly grouped, and exactly one versicle appears at the right point. Also fix
 Triduum tests that asserted "no versicle part anywhere in the whole ordo" — true only because
 ferial nocturns had no versicles at all before this change; now checks specifically that the
 dropped *opening* versicle (and Ps 3, which it precedes) is gone, via `ordo.parts[0]` being the
-nocturn's own first psalm, rather than asserting zero versicles exist. `npm test` (420 tests)
-and `tsc --noEmit` both pass.
+nocturn's own first psalm, rather than asserting zero versicles exist. `npm test` (421 tests,
+including the Sunday-versicle regression test above) and `tsc --noEmit` both pass.
 
 ## Known, deliberate simplifications (not bugs — working as designed)
 
