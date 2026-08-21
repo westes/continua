@@ -84,6 +84,8 @@ import { getNocturnReadings, type NocturnReading } from '../propers/nocturn-read
 import { getOctaveReading } from '../propers/octave-readings';
 import { getMatinsPsalmodyOverride } from './matins-psalmody-overrides';
 import matinsSundayAntiphonsData from '../data/hours/matins-sunday-antiphons.yml';
+import matinsFerialAntiphonsData from '../data/hours/matins-ferial-antiphons.yml';
+import type { Weekday } from '../calendar/types';
 
 type BilingualText = Partial<Record<string, string>>;
 interface SundayGroup {
@@ -113,6 +115,17 @@ interface MatinsSundayAntiphons {
   nocturn3: SundayNocturn;
 }
 const sundayAntiphons = matinsSundayAntiphonsData as unknown as MatinsSundayAntiphons;
+
+interface FerialGroup {
+  psalms: PsalmRef[];
+  antiphon: BilingualText;
+  versicle?: { v: BilingualText; r: BilingualText };
+}
+interface FerialNocturn {
+  groups: FerialGroup[];
+}
+type MatinsFerialAntiphons = Record<Exclude<Weekday, 'sunday'>, FerialNocturn>;
+const ferialAntiphons = matinsFerialAntiphonsData as unknown as MatinsFerialAntiphons;
 
 const NOCTURN_NUMERAL = ['I', 'II', 'III'] as const;
 
@@ -219,6 +232,46 @@ function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
 
 function ferialPsalmody(day: LiturgicalDay): ResolvedPart[] {
   return psalmRefParts(getPsalmsFor('matins', day.weekday));
+}
+
+/** The plain ferial weekday nocturn's real antiphoned psalmody (see
+ * data/hours/matins-ferial-antiphons.yml's own header for how each
+ * weekday's groups/versicle were reconciled against psalter-
+ * distribution.yml's own "editorial redistribution" of the historical
+ * per-weekday psalm set). Every psalm-group carries its own antiphon
+ * (incipit-or-full opening, same rank rule as Sunday's own nocturns), and
+ * exactly one group per weekday carries a versicle+responsory, rendered
+ * as one combined V./R. block (not just the V. line — see the sibling
+ * `sundayPsalmNocturn`'s own versicle handling, which drops the R. line
+ * entirely; not replicated here on purpose). */
+function ferialAntiphonedNocturn(day: LiturgicalDay): ResolvedPart[] {
+  const nocturn = ferialAntiphons[day.weekday as Exclude<Weekday, 'sunday'>];
+  const isDouble = isDoubleOrHigher(resolveOfficeWinner(day));
+  const parts: ResolvedPart[] = [];
+  for (const group of nocturn.groups) {
+    const { incipit, full } = splitNamedAntiphon(verifiedText(group.antiphon));
+    const opening = isDouble ? full : incipit;
+    group.psalms.forEach((ref, i) => {
+      parts.push({
+        kind: 'psalm',
+        psalmNumber: ref.number,
+        verses: getPsalmVerses(ref.number, ref.verses).map((v): ResolvedVerse => ({ n: v.n, text: v.text, status: v.status })),
+        antiphon: i === 0 ? opening : undefined,
+      });
+    });
+    parts.push({ kind: 'antiphon', text: full });
+    if (group.versicle) {
+      const { v, r } = group.versicle;
+      parts.push({
+        kind: 'versicle',
+        text: verifiedText({
+          la: `V. ${v.la}\nR. ${r.la}`,
+          en: `V. ${v.en}\nR. ${r.en}`,
+        }),
+      });
+    }
+  }
+  return parts;
 }
 
 /** Fallback for a Duplex+ weekday feast with no matins-psalmody-overrides
@@ -401,7 +454,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     }
     parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
   } else {
-    parts.push(...ferialPsalmody(day));
+    parts.push(...ferialAntiphonedNocturn(day));
     parts.push(...(nocturn1Readings ?? []));
     parts.push({ kind: 'chapter', text: resolveCommon('matins-capitulum-ferial') });
   }

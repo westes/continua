@@ -43,6 +43,30 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
     expect(ordo.parts.some((p) => p.kind === 'canticle')).toBe(false);
   });
 
+  it("gives every nocturn psalm its own antiphon and includes Tuesday's own versicle (data/hours/matins-ferial-antiphons.yml)", () => {
+    // The nocturn's own psalms start at index 4 (after versicle/Ps3/heading/Ps94).
+    const nocturnPsalms = ordo.parts.slice(4).filter((p) => p.kind === 'psalm') as {
+      psalmNumber: number;
+      antiphon?: { text: Record<string, string> };
+    }[];
+    expect(nocturnPsalms.map((p) => p.psalmNumber)).toEqual([43, 44, 47, 48, 49, 54, 55, 58, 59]);
+    // Groups: [43,44] [47,48] [49] [54,55] [58] [59] — antiphon only on
+    // each group's first psalm.
+    const withAntiphon = nocturnPsalms.filter((p) => p.antiphon !== undefined).map((p) => p.psalmNumber);
+    expect(withAntiphon).toEqual([43, 47, 49, 54, 58, 59]);
+    for (const p of nocturnPsalms) {
+      if (p.antiphon) {
+        expect(p.antiphon.text.la).toBeTruthy();
+        expect(p.antiphon.text.en).toBeTruthy();
+      }
+    }
+    const nocturnVersicles = ordo.parts.slice(4).filter((p) => p.kind === 'versicle');
+    expect(nocturnVersicles).toHaveLength(1);
+    const versicleText = (nocturnVersicles[0] as { text: { text: Record<string, string> } }).text.text;
+    expect(versicleText.la).toContain('Ímmola Deo sacrifícium laudis');
+    expect(versicleText.la).toContain('Et redde Altíssimo vota tua');
+  });
+
   it("resolves the user's own bible-plan readings for the day, not the historical lectionary", () => {
     const lessons = ordo.parts.filter((p) => p.kind === 'lesson');
     // Plain 2 bible-plan readings on this particular clean ferial (no
@@ -314,7 +338,12 @@ describe('resolveOrdo("matins", ...) Sacred Triduum', () => {
 
   it.each([HOLY_THURSDAY, GOOD_FRIDAY, HOLY_SATURDAY])('drops the opening versicle/Ps 3/Invitatory/hymn on %s', (date) => {
     const ordo = resolveOrdo('matins', date);
-    expect(ordo.parts.some((p) => p.kind === 'versicle')).toBe(false);
+    // The opening versicle itself is gone -- Ps 3 (which it precedes) is
+    // gone too, and the nocturn's own psalmody starts the ordo straight
+    // off (see the "goes straight into Nocturn 1" test below). A versicle
+    // further in belongs to the ferial nocturn's own antiphoned psalmody
+    // (matins-ferial-antiphons.yml), not the dropped opening block.
+    expect(ordo.parts[0]?.kind).toBe('psalm');
     expect(ordo.parts.some((p) => p.kind === 'psalm' && p.psalmNumber === 3)).toBe(false);
     expect(ordo.parts.some((p) => p.kind === 'psalm' && p.psalmNumber === 94)).toBe(false);
     expect(ordo.parts.some((p) => p.kind === 'section-heading' && p.label === 'Invitatory')).toBe(false);

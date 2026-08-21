@@ -2201,6 +2201,48 @@ saint-name). `tests/hours/compline.test.ts` and `tests/ui/shell.test.ts` updated
 test` (383 tests) and `tsc --noEmit` both pass; manually verified in the browser (English,
 Latin, and both-language modes) against an Advent date with an active octave.
 
+### Ferial weekday Matins nocturn antiphons + versicle — done (2026-08-21)
+
+Real gap found (user flagged it directly): the plain ferial weekday Matins nocturn
+(`hours/matins.ts`'s single-nocturn branch, no Sunday/Duplex+ override) rendered bare psalms
+with no antiphon at all — not a documented design choice like `ferialPsalmodyThreeNocturns`'s
+antiphon-less fallback, just an oversight from before antiphons existed anywhere in this hour.
+
+Source: Divinum Officium's Monastic-labeled Matins psalter, `Latin/Psalterium/Psalmi/Psalmi
+matutinum.txt`'s `[Daym1_]`-`[Daym6_]` sections (the Latin file's own unsuffixed `[Daym1]` etc.
+just redirects to these via `@:` references), English parallel at the *unsuffixed*
+`[Daym1]`-`[Daym6]` keys in the `English/` tree (no indirection there). Real wrinkle:
+`psalter-distribution.yml`'s own `matins:` table isn't the historical per-weekday psalm set —
+its own header documents a deliberate "editorial redistribution" (54 non-Sunday psalms
+reclassified must-stay/could-move by length, then resliced into 6 fresh groups of 9 in
+continuous psalm order), which breaks several of the source's own antiphon-sharing pairs across
+weekday boundaries (e.g. Ps 43/44, originally Monday's own closing pair, now open Tuesday
+instead). Resolved by keeping vu's existing 9-psalm weekday lists untouched and regrouping:
+every psalm keeps its own original antiphon text, consecutive same-antiphon psalms stay grouped
+whenever their pair survived the reslice intact, and a psalm whose original partner moved
+elsewhere now stands alone under its own antiphon. Each weekday's single versicle is taken from
+whichever source day contributes the majority of that weekday's 9 psalms, placed at the same
+relative position it held there (verified group-by-group against both parallel source files —
+see each weekday's own comment in the new data file for the exact reasoning).
+
+New `data/hours/matins-ferial-antiphons.yml` (6 weekdays, 5-6 antiphon groups each, exactly one
+group per weekday carrying a versicle) + `hours/matins.ts`'s new `ferialAntiphonedNocturn`,
+replacing the old bare `ferialPsalmody` call in the plain-ferial branch (`ferialPsalmody` itself
+stays, still used by `ferialPsalmodyThreeNocturns`'s intentionally antiphon-less fallback).
+Versicle rendered as one combined V./R. block (`"V. ...\nR. ..."`), not just the V. line —
+`sundayPsalmNocturn`'s own versicle handling drops the R. line entirely (only pushes
+`group.versicle.v`), which looks like a pre-existing real bug there, not replicated here on
+purpose; not yet fixed, since it's Sunday's own code, out of scope for this pass.
+
+`tests/hours/matins.test.ts` gained a new assertion (on the existing `FERIAL_DATE` proof,
+2026-12-01, Tuesday of Advent I) confirming every nocturn psalm gets its own antiphon,
+correctly grouped, and exactly one versicle appears at the right point. Also fixed 3 stale
+Triduum tests that asserted "no versicle part anywhere in the whole ordo" — true only because
+ferial nocturns had no versicles at all before this change; now checks specifically that the
+dropped *opening* versicle (and Ps 3, which it precedes) is gone, via `ordo.parts[0]` being the
+nocturn's own first psalm, rather than asserting zero versicles exist. `npm test` (420 tests)
+and `tsc --noEmit` both pass.
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own
