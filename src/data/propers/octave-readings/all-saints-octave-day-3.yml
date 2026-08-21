@@ -3,7 +3,9 @@
 # own octave -- a direct Scripture reading (Ezekiel 2:2-9), resolved from
 # data/scripture/ezek-2.yml.
 id: all-saints-octave-day-3
-source: "De Ezechiéle Prophéta"
+source:
+  la: "De Ezechiéle Prophéta"
+  en: "From the Prophet Ezekiel"
 passages:
   - { book: ezek, chapter: 2, verses: "2-5" }
   - { book: ezek, chapter: 2, verses: "6-7" }

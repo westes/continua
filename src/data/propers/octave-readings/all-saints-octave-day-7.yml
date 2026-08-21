@@ -3,7 +3,9 @@
 # own octave -- spans two chapters (Ezekiel 15:1-8 and 16:1-5), resolved from
 # data/scripture/ezek-15.yml and ezek-16.yml.
 id: all-saints-octave-day-7
-source: "De Ezechiéle Prophéta"
+source:
+  la: "De Ezechiéle Prophéta"
+  en: "From the Prophet Ezekiel"
 passages:
   - { book: ezek, chapter: 15, verses: "1-5" }
   - { book: ezek, chapter: 15, verses: "6-8" }

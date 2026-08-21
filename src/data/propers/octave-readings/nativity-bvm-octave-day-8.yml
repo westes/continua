@@ -4,7 +4,9 @@
 # Scripture reading (Canticles 1:1-10), resolved from
 # data/scripture/cant-1.yml (2026-08 decision).
 id: nativity-bvm-octave-day-8
-source: "Incípiunt Cántica canticórum"
+source:
+  la: "Incípiunt Cántica canticórum"
+  en: "Here begins the Song of Songs"
 passages:
   - { book: cant, chapter: 1, verses: "1-3" }
   - { book: cant, chapter: 1, verses: "4-6" }

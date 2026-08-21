@@ -3,7 +3,9 @@
 # own octave -- a direct Scripture reading (Ezekiel 3:1-13), resolved from
 # data/scripture/ezek-3.yml.
 id: all-saints-octave-day-4
-source: "De Ezechiéle Prophéta"
+source:
+  la: "De Ezechiéle Prophéta"
+  en: "From the Prophet Ezekiel"
 passages:
   - { book: ezek, chapter: 3, verses: "1-4" }
   - { book: ezek, chapter: 3, verses: "5-9" }

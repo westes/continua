@@ -3,7 +3,9 @@
 # own octave -- a direct Scripture reading (Ezekiel 19:1-14), resolved from
 # data/scripture/ezek-19.yml.
 id: all-saints-octave-day-8
-source: "De Ezechiéle Prophéta"
+source:
+  la: "De Ezechiéle Prophéta"
+  en: "From the Prophet Ezekiel"
 passages:
   - { book: ezek, chapter: 19, verses: "1-7" }
   - { book: ezek, chapter: 19, verses: "8-11" }
