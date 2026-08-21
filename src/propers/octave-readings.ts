@@ -21,9 +21,11 @@ export interface ScriptureCitation {
 export interface OctaveReadingText {
   id: string;
   /** Attribution for the reading — author and work, e.g. "St. John
-   * Damascene, 2nd Sermon on the Dormition of the Mother of God". Not
-   * itself translated/localized. */
-  source: string;
+   * Damascene, 2nd Sermon on the Dormition of the Mother of God". Bilingual
+   * like everything else here since it's rendered as the reading's own
+   * heading in both language columns (2026-08-21 fix: it used to be a bare
+   * Latin incipit shown verbatim in the English column too). */
+  source: Partial<Record<LanguageCode, string>>;
   text: Partial<Record<LanguageCode, string>>;
   /** The first responsory following the reading in the source, where one
    * was found — which one to use when several lessons (and several
@@ -51,7 +53,7 @@ export interface OctaveReadingText {
  */
 interface OctaveReadingRecord {
   id: string;
-  source: string;
+  source: Partial<Record<LanguageCode, string>>;
   text?: Partial<Record<LanguageCode, string>>;
   passages?: ScriptureCitation[];
   responsory?: Partial<Record<LanguageCode, string>>;

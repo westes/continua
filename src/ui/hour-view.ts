@@ -34,6 +34,27 @@ function renderCitation(text: ResolvedText): string {
   return values.length ? `<p class="ordo-part-citation">${escapeHtml(values.join(' / '))}</p>` : '';
 }
 
+// A lesson's `label` is either a plain string (an editorial attribution
+// written once and reused in both language columns) or a per-language
+// object (a genuine translation, e.g. an octave reading's Latin incipit
+// vs. its English title) — render the latter as its own lang-columns row
+// matching the body text underneath it.
+function renderLessonLabel(
+  label: string | Partial<Record<string, string>> | undefined,
+  languages: readonly string[],
+): string {
+  if (!label) {
+    return '<h3 class="ordo-part-label">Reading</h3>';
+  }
+  if (typeof label === 'string') {
+    return `<h3 class="ordo-part-label">${escapeHtml(label)}</h3>`;
+  }
+  const cols = languages
+    .map((lang) => `<span class="lang-column" lang="${lang}">${escapeHtml(label[lang] ?? '')}</span>`)
+    .join('');
+  return `<h3 class="ordo-part-label lang-columns lang-columns-${languages.length}">${cols}</h3>`;
+}
+
 function renderPart(part: ResolvedPart, languages: readonly string[]): string {
   switch (part.kind) {
     case 'hymn':
@@ -70,7 +91,7 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
     case 'lesson':
       return `
         <section class="ordo-part ordo-part-lesson${part.isGospel ? ' ordo-part-lesson-gospel' : ''}">
-          <h3 class="ordo-part-label">${part.isGospel ? 'Gospel' : part.label ? escapeHtml(part.label) : 'Reading'}</h3>
+          ${part.isGospel ? '<h3 class="ordo-part-label">Gospel</h3>' : renderLessonLabel(part.label, languages)}
           ${renderCitation(part.text)}
           ${renderColumns(part.text, languages)}
           ${part.responsory ? `<div class="ordo-part-responsory">${renderColumns(part.responsory, languages)}</div>` : ''}

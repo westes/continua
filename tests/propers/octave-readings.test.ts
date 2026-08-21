@@ -4,7 +4,8 @@ import { getOctaveReading } from '../../src/propers';
 describe('getOctaveReading', () => {
   it('resolves a real reading for a day that has one, collapsed into one continuous text', () => {
     const reading = getOctaveReading('st-lawrence', 2);
-    expect(reading?.source).toBe('Sermo sancti Augustíni Epíscopi.');
+    expect(reading?.source.la).toBe('Sermo sancti Augustíni Epíscopi.');
+    expect(reading?.source.en).toBe('Sermon of St. Augustine, Bishop');
     expect(reading?.text.la).toContain('Beatissimi Laurentii Martyris');
     expect(reading?.text.en).toContain('most blessed Martyr, Lawrence');
     expect(reading?.status.la).toBe('verified');

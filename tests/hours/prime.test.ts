@@ -90,7 +90,9 @@ describe('resolveOrdo("prime", ...)', () => {
   it('resolves a Regula reading for the day, via the canonical-date table', () => {
     const ordo = resolveOrdo('prime', '2026-08-25');
     // 08-25 maps to canonical 04-25 (Rule ch. 67) in data/regula/table.yml.
-    const rule = ordo.parts.find((p) => p.kind === 'lesson' && p.label?.includes('67'));
+    const rule = ordo.parts.find(
+      (p) => p.kind === 'lesson' && typeof p.label === 'string' && p.label.includes('67'),
+    );
     expect(rule).toBeDefined();
   });
 

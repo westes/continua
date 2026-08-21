@@ -232,7 +232,13 @@ export type ResolvedPart =
   // groups a reading under its 'nocturn-psalmody' sibling for the UI (1-3,
   // omitted on a ferial 1-nocturn day); `source` is a human-readable
   // attribution ("St. John Chrysostom, Homily 3 on Matthew"; the user's
-  // own bible-reading plan doesn't carry one). `isGospel` flags a reading
+  // own bible-reading plan doesn't carry one). `label` is usually that same
+  // plain string (nocturn-readings' own `source`, already written once in
+  // English and reused as-is in both language columns), but octave
+  // readings' own `source` is a genuine bilingual attribution (their
+  // English title is a real translation of a Latin incipit, not an
+  // editorial description written once) so `label` accepts either shape —
+  // see hour-view.ts's renderLessonLabel. `isGospel` flags a reading
   // as a Gospel pericope (from either the user's own continuous-reading
   // plan or the day's own proper Gospel+homily — never a Common-of-Saints
   // fallback Gospel, which this app deliberately excludes for Matins, see
@@ -245,7 +251,7 @@ export type ResolvedPart =
   | {
       kind: 'lesson';
       text: ResolvedText;
-      label?: string;
+      label?: string | Partial<Record<string, string>>;
       nocturn?: number;
       source?: string;
       isGospel?: boolean;
