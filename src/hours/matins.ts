@@ -329,7 +329,11 @@ function nocturnReadingIds(day: LiturgicalDay, temporalId: string): string[] {
   // already equals `temporalId`, so the Set just dedupes.
   ids.add(day.winner.id);
   for (const c of day.commemorations) {
-    if (c.kind === 'sanctoral') ids.add(c.id);
+    // Same reasoning as day.winner.id just above: a commemorated *temporal*
+    // identity (an Ember day merely commemorated under a stronger-ranked
+    // saint, e.g. calendar/ember-days.ts's applyEmberDay) has its own real
+    // nocturn-readings content too, not just a commemorated sanctoral one.
+    if (c.kind === 'sanctoral' || c.kind === 'temporal') ids.add(c.id);
   }
   ids.add(temporalId);
   return [...ids];

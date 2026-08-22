@@ -9,6 +9,7 @@ import { addDays, toIsoDate } from './date-math';
 import { easterSunday } from './easter';
 import { activeOctavesFor, strictestThreshold } from './octaves';
 import { applyMovableFeasts } from './movable-feasts';
+import { applyEmberDay } from './ember-days';
 
 /**
  * A day's occurrence considered on its own — no awareness of what an
@@ -103,6 +104,7 @@ export function resolveDay(isoDate: string): LiturgicalDay {
   }
 
   winner = applyOctaves(isoDate, winner, commemorations);
+  winner = applyEmberDay(isoDate, winner, commemorations);
   winner = applyMarianSaturday(isoDate, weekday, temporalCategory, winner, commemorations);
   winner = applyChristmasOctaveSunday(isoDate, weekday, winner, commemorations);
   winner = applyMovableFeasts(isoDate, winner, commemorations);

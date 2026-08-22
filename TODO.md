@@ -2368,6 +2368,75 @@ today.
 No behavior change — `tests/calendar/immaculate-heart-of-mary.test.ts` (unchanged) still passes
 end-to-end through the new generic path. `npm test` (430 tests) and `tsc --noEmit` both pass.
 
+### September + Advent Ember days — new mechanism + real content authored (2026-08-22)
+
+Follow-on from the movable-feasts generalization above: researched whether Ember days belonged
+in that same table (they don't — see below) and, once that was settled, built their actual
+mechanism and authored real Matins content for all 6 days as the first two proof cases.
+
+**Not a `movable-feasts.ts` entry.** Live-verified against the reference engine (Monastic
+Tridentinum 1617): September Ember Wednesday 2026 was won outright by Ss. Cornelius & Cyprian
+(Semiduplex) with the Ember feria demoted to `Commemoratio ad Laudes tantum` — i.e. Ember days
+are **privileged ferias**, not named feasts contesting the day by `FeastClass` rank the way
+Christ the King/Immaculate Heart of Mary do. Two separate, smaller pieces of new mechanism
+instead:
+
+- **Precedence**: `calendar/temporal.ts`'s new `septemberEmberDayOffset` (the Sunday nearest
+  Sept 14, i.e. the Exaltation of the Holy Cross, +3/+5/+6 for Wed/Fri/Sat — same "nearest"
+  arithmetic `adventStart` already used for "Sunday nearest Nov 30," factored out into a shared
+  `nearestSunday` helper) feeds a new check in `resolveTemporalCategory`, giving those 3 dates
+  `privileged-feria-minor` — live-verified as the correct tier. Advent Ember days needed **no**
+  precedence change at all: Advent's own season default is already `privileged-feria-minor`,
+  and no live evidence turned up that Advent Ember days need a stronger tier (`adventEmberDayOffset`
+  only exists for the content-id side below, not this one). Note this settles the "not
+  worth guessing at" gap flagged in `temporal-categories.yml`'s own header comment, added back
+  when this was still unmodeled.
+- **Content identity**: new `calendar/ember-days.ts`'s `applyEmberDay`, run right after
+  `applyOctaves` in `resolveDay`'s chain (same octave-guard `applyMarianSaturday` uses — the
+  Nativity of the BVM's own octave, Sep 8-15, can genuinely overlap a late-anchored September
+  Ember week in some years). When the feria itself is what's winning (no saint strong enough to
+  clear the `privileged-feria-minor` threshold), its `winner.id` is relabeled to the Ember day's
+  own id (`ember-september-wednesday`, etc.) so its real proper collect/readings are found
+  instead of inheriting whatever Sunday governs that week; when a saint wins outright instead,
+  the Ember day is pushed as a `{kind: 'temporal', ...}` commemoration alongside it (this app
+  doesn't model the "Laudes only" hour-scoping nuance the live rubric shows — same
+  simplification level as every other commemoration here).
+
+**Real bug found and fixed along the way**: `hours/matins.ts`'s `nocturnReadingIds` only ever
+pulled in a *sanctoral* commemoration's own id, never a *temporal* one's — so a commemorated
+Ember day (the common case: most Ember days lose the precedence contest to whatever saint
+occurs) would never have surfaced its own nocturn readings at all. Fixed by extending that
+check to `c.kind === 'sanctoral' || c.kind === 'temporal'`. Same root cause, same fix shape, as
+the day.winner.id gap the Immaculate Heart of Mary relocation surfaced above — this one just
+hid in the commemorations loop instead.
+
+**Content authored**: all 6 days' real collect + 3 Matins readings (Gospel-citation-plus-homily
+pattern, bare Gospel incipits skipped per this store's own established convention — see
+st-lawrence.yml/st-andrew.yml — only the homily portion transcribed), read directly from
+`Tempora/093-{3,5,6}.txt` (September) and `Tempora/Adv3-{3,5,6}.txt` (Advent, whose Lectio1-3
+are themselves a cross-reference to the Annunciation's own Common, `Sancti/03-25.txt` — followed
+and transcribed from there). Kept as 3 separate readings per day rather than combining into one
+(this store's usual default when several lessons share one continuous source) because each
+carries its own genuinely distinct, proper responsory — collapsing them would have discarded
+real, valuable content for no good reason, unlike the cases that default was written for.
+September Wednesday/Saturday use the Monastic-track's own override responsories (drawn from
+`TemporaM/093-0`'s Tobias-sermon texts) in place of the secular ones, per this project's
+Monastic-1617-first structure preference — Friday and both Advent Ember days are identical in
+both tracks (no `TemporaM/Adv3-{3,5,6}` override files exist at all).
+
+**Not authored, logged instead**: the Ember-day-specific `[Ant 2]`/`[Ant 3]` Lauds antiphons
+found during research — scoped out deliberately, same "collect + Matins first, other hours
+later" incremental pattern used throughout this project's sanctoral sweep. Also not modeled:
+the Monastic track's fuller 12-lesson/12-responsory Matins structure (a 12th responsory exists
+in the source for all 3 September days) — this app's reading-pool mechanism doesn't preserve a
+literal historical lesson count for any day, sanctoral or temporal alike, so this isn't a new
+gap specific to Ember days.
+
+New `tests/calendar/ember-days.test.ts` covers the precedence contest (September, live-verified
+saint-wins-Ember-commemorated cases) and content resolution (Advent, wins-outright cases; real
+verified Matins content on all 6 days) end-to-end. `npm test` (435 tests) and `tsc --noEmit`
+both pass.
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own

@@ -1,0 +1,100 @@
+# Matins Nocturn content for September Ember Wednesday (Feria IV Quattuor
+# Temporum Septembris) — read directly from
+# web/www/horas/Latin/Tempora/093-3.txt, English/Tempora/093-3.txt, and
+# their Monastic-track override web/www/horas/Latin/TemporaM/093-3.txt
+# (which inherits Lectio1-3/Oratio/Ant unchanged from the secular file but
+# substitutes its own Responsory2/3, drawn from TemporaM/093-0's own
+# Tobias-sermon responsories — used here per this project's Monastic
+# 1617-first structure preference; Responsory1 is identical in both
+# tracks).
+#
+# Lectio1's Gospel citation (Mark 9:16-28) is a bare incipit ("Et
+# réliqua") with no full pericope text given, so — per this store's own
+# established convention (see st-lawrence.yml/st-andrew.yml) — only the
+# homily portion is authored, not marked isGospel. Kept as 3 separate
+# readings (not combined into one, despite being one continuous homily by
+# Bede) because each carries its own genuinely distinct, proper
+# responsory rather than one reused across a merely-chopped source — see
+# post-pentecost-15.yml's own doc comment for the "recombine only where
+# the source doesn't genuinely change" default this deliberately departs
+# from here, given the real content loss combining would cause.
+id: ember-september-wednesday
+readings:
+  - nocturn: 1
+    isGospel: false
+    source: "The Venerable Bede, Priest, homily on Mark 9:16-28"
+    text:
+      la: >-
+        Dæmoníacum hunc, quem descéndens de monte Dóminus sanávit, Marcus quidem surdum mutúmque, Matthǽus vero
+        lunáticum fuísse commémorat. Signíficat autem eos, de quibus scriptum est: Stultus ut luna mutátur. Qui
+        nunquam in eódem statu permanéntes, nunc ad illa vítia mutáti, crescunt atque decréscunt. Qui muti sunt, non
+        confiténdo fidem; surdi, nec ipsum aliquátenus veritátis audiéndo sermónem. Spumant autem, cum stultítia
+        tabéscunt; stultórum namque et languéntium atque hébetum est, spumas salivárum ex ore dimíttere. Strident
+        déntibus, cum iracúndiæ furóre flamméscunt: aréscunt, cum ótio torpénte languéscunt, et nulla virtútis
+        indústria confortáti enérviter vivunt.
+      en: >-
+        Concerning this possessed person whom the Lord healed, after that He was come down from the mount, Mark
+        saith that he was deaf and dumb, and Matthew that he was lunatic. He was a figure of them of whom it is
+        said: A fool changeth as the moon. These are they who continue never in one stay, but change now to one
+        sin, and now to another, waxing and waning dumb, in that they confess not the faith deaf, in that they have
+        no ears for the word of truth. They foam at the mouth also, and pine away with folly. For it is the way
+        with idiots, and swooners, and stupified, to foam their spittle out at their mouths. They gnash their teeth
+        when they are inflamed with the heat of passion. They wither up in the paralysis of sloth and live nerveless
+        lives unbraced by any strong exercise.
+    responsory:
+      la: "Tribulatiónes civitátum audívimus, quas passæ sunt, et defécimus: timor et hebetúdo mentis cécidit super nos et super líberos nostros: ipsi montes nolunt recípere fugam nostram: * Dómine, miserére.\nV. Peccávimus cum pátribus nostris, injúste égimus, iniquitátem fécimus.\nR. Dómine, miserére."
+      en: "We have heard of the tribulation of those cities, which they have suffered, and we have fainted. Fear and confusion of mind are fallen upon us. Even the mountains will not give us a refuge. * Lord, have mercy.\nV. We have sinned like our forefathers, we have done unjustly, and wrought iniquity.\nR. Lord, have mercy."
+    status: { la: verified, en: verified }
+
+  - nocturn: 2
+    isGospel: false
+    source: "The Venerable Bede, Priest, homily on Mark 9:16-28"
+    text:
+      la: >-
+        Quod autem ait: Et dixi discípulis tuis ut eícerent illum, et non potuérunt; laténter Apóstolos accúsat, cum
+        impossibílitas curándi, intérdum non ad imbecillitátem curántium, sed ad eórum, qui curándi sunt, fidem
+        referátur, dicénte Dómino: Fiat tibi secúndum fidem tuam. Qui respóndens eis, dixit: O generátio incrédula,
+        quámdiu apud vos ero? quámdiu vos pátiar? Non quod tǽdio superátus sit mansuétus ac mitis, qui non apéruit
+        sicut agnus coram tondénte os suum, nec in verba furóris erúpit; sed quo in similitúdinem médici, si ægrótum
+        vídeat contra sua præcépta se gérere, dicat: Usquequo accédam ad domum tuam? quoúsque artis meæ perdam
+        indústriam, me áliud jubénte, et te áliud perpetránte?
+      en: >-
+        The father saith: And I spake to thy disciples, that they should cast him out, and they could not. Here he
+        maketh a sort of accusation against the Apostles. But that cures cannot be wrought is sometimes owing, not
+        to the powerlessness of them that would heal, but to the want of faith in them that are to be healed as
+        saith the Lord: According to your faith be it unto you. He answereth him, and saith: O faithless
+        generation, how long shall I be with you The meek and lowly One, Who, as a lamb before his shearers, is
+        dumb, so opened not His Mouth, was not wearied out of patience, nor did He break out into words of passion,
+        but He spake as a physician might speak, who saw that the sick man did contrary to his commands. Wherefore
+        should I come unto thine house? How long am I to throw away the exercise of my skill, while I order one
+        thing and thou dost another?
+    responsory:
+      la: "Audíte, fílii mei, patrem vestrum: † servíte Dómino in veritáte, et inquírite ut faciátis quæ plácita sunt illi: et fíliis vestris mandáte * Ut fáciant justítias et eleemósynas.\nV. Ut sint mémores Dei, et benedícant eum in omni témpore † in veritáte, et in tota virtúte sua.\nR. Ut fáciant justítias et eleemósynas."
+      en: "Hearken my children, to your father: serve the Lord in truth, and seek to do the things that please him: and command your children: * That they do justice and almsdeeds.\nV. That they be mindful of God, and bless him at all times in truth, and with all their power.\nR. That they do justice and almsdeeds."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "The Venerable Bede, Priest, homily on Mark 9:16-28"
+    text:
+      la: >-
+        Et dixit illis: Hoc genus in nullo potest exíre, nisi in oratióne et jejúnio. Dum docet Apóstolos quómodo
+        dæmon nequíssimus débeat expélli, omnes instítuit ad vitam; ut scílicet novérimus, gravíssima quæque vel
+        immundórum spirítuum, vel hóminum tentaménta jejúniis et oratiónibus esse superánda: iram quoque Dómini,
+        cum in ultiónem nostrórum scélerum fúerit accénsa, hoc remédio singulári posse placári. Jejúnium autem
+        generále est, non solum ab escis, sed et a cunctis illécebris abstinére carnálibus, immo ab ómnibus
+        vitiórum continére se passiónibus. Sic et orátio generális non in verbis solum est, quibus divínam
+        cleméntiam invocámus, verum étiam in ómnibus, quæ in obséquium nostri Conditóris fídei devotióne gérimus.
+      en: >-
+        And He said unto them: This kind can come forth by nothing but by prayer and fasting. While He teacheth the
+        Apostles how the very worst kind of devil must be driven out, He giveth unto all of us an instruction unto
+        life, that we may know that the most grievous trials, either from unclean spirits, or from men, are to be
+        overcome by fasting and prayer. The wrath of the Lord also, when it is kindled to take vengeance of our
+        sins, can be turned away by this remedy only. To fast, in a general sense, is not only to abstain from
+        meats, but to restrain oneself from all the enticements of the flesh, and from all evil passions. So also,
+        to pray, is not only to call in words for the mercy of God, but also, in all things which we do, in
+        earnestness of faith to worship our Maker.
+    responsory:
+      la: "Benedícat te Dóminus in virtúte sua, † qui per te ad níhilum redégit inimícos nostros: * Ut non defíciat laus tua de ore hóminum.\nV. Benedíctus Dóminus qui creávit cælum et terram: † quia hódie nomen tuum ita magnificávit.\nR. Ut non defíciat laus tua de ore hóminum."
+      en: "The Lord bless you by His power, Who hath brought our enemies to nought through you. * And may the praise of you never fail from the mouth of men.\nV. Blessed be the Lord, Who hath created the heaven and the earth, because that He hath so glorified your name this day.\nR. And may the praise of you never fail from the mouth of men."
+    status: { la: verified, en: verified }

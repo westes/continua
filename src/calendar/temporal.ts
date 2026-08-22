@@ -42,12 +42,21 @@ function fixedDateFor(id: string): { month: number; day: number } {
 const CHRISTMAS = fixedDateFor('christmas-day');
 const EPIPHANY = fixedDateFor('epiphany');
 
+/** The Sunday nearest `isoDate` — ties (exactly 3-4 days either way can't
+ * happen; a week has one middle point, Wednesday, which is always closer
+ * to one side or the other) resolved the usual "nearest" way: on or
+ * before if `isoDate` is Sun-Wed, the next one if Thu-Sat. Shared by
+ * `adventStart` (nearest Nov 30) and calendar/ember-days.ts's own
+ * September Ember anchor (nearest Sept 14). */
+export function nearestSunday(isoDate: string): string {
+  const dow = dayOfWeek(isoDate);
+  const delta = dow <= 3 ? -dow : 7 - dow;
+  return addDays(isoDate, delta);
+}
+
 /** The Sunday nearest Nov 30 (St. Andrew's Day) — Advent's real start rule. */
 export function adventStart(year: number): string {
-  const nov30 = `${year}-11-30`;
-  const dow = dayOfWeek(nov30);
-  const delta = dow <= 3 ? -dow : 7 - dow;
-  return addDays(nov30, delta);
+  return nearestSunday(`${year}-11-30`);
 }
 
 /**
@@ -147,6 +156,41 @@ export function isInTriduum(isoDate: string): boolean {
   return offset >= -3 && offset <= -1;
 }
 
+const SEPTEMBER_EMBER_OFFSETS = [3, 5, 6]; // Wed, Fri, Sat after the anchor Sunday
+const ADVENT_EMBER_OFFSETS = [3, 5, 6]; // Wed, Fri, Sat after the 3rd Sunday of Advent
+
+/** The Sunday nearest Sept 14 (Exaltation of the Holy Cross) — anchors
+ * September's Ember days, same "nearest" rule as Advent's own start.
+ * Live-verified (2026, 2019) against the reference engine: genuinely
+ * "nearest," not "3rd Sunday of the calendar month" — those two
+ * computations disagree in some years (e.g. 2025). */
+export function septemberEmberAnchor(year: number): string {
+  return nearestSunday(`${year}-09-14`);
+}
+
+/** Which of September's 3 Ember-day offsets (3/5/6 = Wed/Fri/Sat)
+ * `isoDate` is, if any — shared by resolveTemporalCategory below (the
+ * precedence side: these get `privileged-feria-minor`) and
+ * calendar/ember-days.ts (the content-id side: each gets its own proper
+ * collect/readings instead of inheriting the governing Sunday's). */
+export function septemberEmberDayOffset(isoDate: string): number | undefined {
+  const year = Number(isoDate.slice(0, 4));
+  const anchor = septemberEmberAnchor(year);
+  return SEPTEMBER_EMBER_OFFSETS.find((offset) => addDays(anchor, offset) === isoDate);
+}
+
+/** Which of Advent's 3 Ember-day offsets `isoDate` is, if any. Unlike
+ * September's, this doesn't need its own resolveTemporalCategory entry —
+ * Advent's ordinary `privileged-feria-minor` season default already
+ * covers it (no live evidence found that Advent Ember days need a
+ * stronger tier) — but it still needs its own content id, same as
+ * September's, hence still exported for calendar/ember-days.ts. */
+export function adventEmberDayOffset(isoDate: string): number | undefined {
+  const year = Number(isoDate.slice(0, 4));
+  const thirdAdventSunday = addDays(adventStart(year), 14);
+  return ADVENT_EMBER_OFFSETS.find((offset) => addDays(thirdAdventSunday, offset) === isoDate);
+}
+
 /**
  * A day's precedence category under the temporal cycle alone — see
  * calendar/types.ts's TemporalCategory doc comment and
@@ -170,6 +214,15 @@ export function resolveTemporalCategory(isoDate: string, season: Season, weekday
   const fixedOverride = temporalCategories.fixedDates?.[isoDate.slice(5)];
   if (fixedOverride) {
     return fixedOverride;
+  }
+
+  // September Ember days: live-verified privileged-feria-minor (Ss.
+  // Cornelius & Cyprian, Semiduplex, won outright there with the feria
+  // demoted to a commemoration) — see septemberEmberDayOffset's own doc
+  // comment for why this can't be expressed as a plain Easter offset or
+  // fixed MM-DD the way every other override in this function is.
+  if (septemberEmberDayOffset(isoDate) !== undefined) {
+    return 'privileged-feria-minor';
   }
 
   const offset = easterOffsetOf(isoDate);

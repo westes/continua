@@ -1,0 +1,78 @@
+# Matins Nocturn content for Advent Ember Wednesday (Feria IV Quattuor
+# Temporum Adventus) — read directly from
+# web/www/horas/Latin/Tempora/Adv3-3.txt and English/Tempora/Adv3-3.txt.
+# No Monastic-track override file exists for this day (only Adv3-0/1/2/4
+# have one) — confirms the Monastic 1617 track uses this same text.
+#
+# Unlike the other 5 Ember days, Lectio1-3 here are cross-references
+# (`@Sancti/03-25:Lectio7/8/9`) to the Annunciation's own Common
+# (web/www/horas/Latin/Sancti/03-25.txt) — St. Ambrose's homily on Luke
+# 1:26-38, not a Gospel-pericope-plus-homily pattern of its own. Kept as
+# 3 separate readings, each with its own genuinely distinct proper
+# responsory (Responsory3 is this Ember day's own text, not further
+# cross-referenced) — same "don't collapse where each carries real,
+# distinct content" reasoning as the other 5 Ember days.
+id: ember-advent-wednesday
+readings:
+  - nocturn: 1
+    isGospel: false
+    source: "St. Ambrose, Bishop of Milan, Commentary on Luke, Book 2 (from the Annunciation's own Common)"
+    text:
+      la: >-
+        Latent quidem divína mystéria, nec fácile, juxta prophéticum dictum, quisquam hóminum potest scire
+        consílium Dei. Sed tamen ex céteris factis, atque præcéptis Dómini Salvatóris póssumus intellégere, et hoc
+        propensióris fuísse consílii, quod ea potíssimum elécta est, ut Dóminum páreret, quæ erat desponsáta viro.
+        Cur autem non ántequam desponsarétur, impléta est? Fortásse ne dicerétur quod concéperat ex adultério.
+      en: >-
+        The mysteries of God are unsearchable, and it is especially declared by a Prophet, that a man can hardly
+        know His counsels. Nevertheless, some things have been revealed to us, and we may gather from some of the
+        words and works of the Lord our Saviour, that there was a special purpose of God, in the fact that she who
+        was chosen to be the mother of the Lord was espoused to a man. Why did not the power of the Highest
+        overshadow her before she was so espoused? Perhaps it was lest any might blasphemously say that she had
+        conceived in fornication the Holy One.
+    responsory:
+      la: "Clama in fortitúdine, qui annúntias pacem in Jerúsalem: * Dic civitátibus Judæ, et habitatóribus Sion: Ecce Deus noster, quem exspectabámus, advéniet.\nV. Supra montem excélsum ascénde tu, qui evangelízas Sion, exálta in fortitúdine vocem tuam.\nR. Ecce Deus noster, quem exspectabámus, advéniet."
+      en: "O thou that bringest good tidings of peace to Jerusalem, lift up thy voice with strength! * Say unto the cities of Judah, and to the inhabitants of Jerusalem: Behold, our God will come, for Whom we waited.\nV. O thou that tellest good tidings to Zion, get thee up into the high mountain, lift up thy voice with strength.\nR. Behold, our God will come, for Whom we waited."
+    status: { la: verified, en: verified }
+
+  - nocturn: 2
+    isGospel: false
+    source: "St. Ambrose, Bishop of Milan, Commentary on Luke, Book 2 (from the Annunciation's own Common)"
+    text:
+      la: >-
+        Et ingréssus ad eam Angelus. Disce vírginem móribus, disce vírginem verecúndia, disce oráculo, disce
+        mystério. Trepidáre vírginum est, et ad omnes viri ingréssus pavére, omnes viri affátus veréri. Discant
+        mulíeres propósitum pudóris imitári. Sola in penetrálibus, quam nemo virórum víderit, solus Angelus
+        répererit: sola sine cómite, sola sine teste, ne quo degénere depravarétur affátu, ab Angelo salutátur.
+      en: >-
+        And the angel came in unto her. Let us learn from this Virgin how to bear ourselves, let us learn her
+        modesty, let us learn by her devout utterance, above all let us learn by the holy mystery enacted. It is
+        the part of a maiden to be timid, to avoid the advances of men, and to shrink from men's addresses. Would
+        that our women would learn from the example of modesty here set before us. She upon whom the stare of men
+        had never been fixed was alone in her chamber, and was found only by an angel. There was neither companion
+        nor witness there, that what passed might not be debased in gossip and the angel saluted her.
+    responsory:
+      la: "Oriétur stella ex Jacob, et exsúrget homo de Israël, et confrínget omnes duces alienigenárum: * Et erit omnis terra posséssio ejus.\nV. Adorábunt eum omnes reges terræ, omnes gentes sérvient ei.\nR. Et erit omnis terra posséssio ejus."
+      en: "There shall come a Star out of Jacob, and a Man shall rise out of Israel, and shall smite through all the princes of the aliens. * And all the earth shall be His possession.\nV. All kings shall fall down before Him, all nations shall serve Him.\nR. And all the earth shall be His possession."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Ambrose, Bishop of Milan, Commentary on Luke, Book 2 (from the Annunciation's own Common)"
+    text:
+      la: >-
+        Tanti namque mandáti mystérium non hóminis fuit, sed Angeli ore proméndum. Hódie primum audítur: Spíritus
+        Sanctus supervéniet in te. Et audítur, et créditur. Dénique, Ecce, inquit, ancílla Dómini: contíngat mihi
+        secúndum verbum tuum. Vide humilitátem, vide devotiónem. Ancíllam se dicit Dómini, quæ mater elígitur: nec
+        repentíno exaltáta promísso est.
+      en: >-
+        The message of God to the Virgin was a mystery, which it was not lawful for the mouth of men, but only of
+        angels, to utter. For the first time on earth the words are spoken The Holy Ghost shall come upon thee.
+        The holy maiden heareth, and believeth. At length she saith Behold the handmaid of the Lord be it unto me
+        according to thy word. Here is an example of lowliness, here is a pattern of true devotion. At the very
+        moment that she is told she is chosen to be the mother of the Lord she at once declareth herself His
+        handmaid. The knowledge that she was Mother of God caused in the heart of Mary only an act of humility.
+    responsory:
+      la: "Modo véniet Dominátor Dóminus: * Et nomen ejus Emmánuel vocábitur.\nV. Oriétur in diébus ejus justítia, et abundántia pacis.\nR. Et nomen ejus Emmánuel vocábitur."
+      en: "The Lord, the Ruler, cometh quickly. * And His name shall be called Emmanuel.\nV. In His days shall righteousness flourish, and abundance of peace.\nR. And His name shall be called Emmanuel."
+    status: { la: verified, en: verified }

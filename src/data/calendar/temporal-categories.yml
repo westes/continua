@@ -29,10 +29,20 @@
 # no longer classified via this table at all — see the offsetRanges
 # section below and calendar/octaves.ts.
 #
-# Known gap: Advent Ember days (Wed/Fri/Sat after Dec 13) and September
-# Ember days (Wed/Fri/Sat near the Exaltation of the Cross, Sept 14) are
-# NOT modeled here — both are fixed-calendar "nearest such-and-such a date"
-# rules, not a plain offset, and weren't worth guessing at without a source.
+# September Ember days (Wed/Fri/Sat nearest the Exaltation of the Cross,
+# Sept 14) are now modeled too, live-verified `privileged-feria-minor` —
+# see calendar/temporal.ts's septemberEmberDayOffset, called directly from
+# resolveTemporalCategory below (can't be expressed as a plain
+# offset/fixedDate entry in this table: the anchor is "nearest Sept 14,"
+# a fixed-calendar-date rule with its own year-dependent Sunday-finding
+# math, same shape as adventStart's "nearest Nov 30"). Advent Ember days
+# don't need any entry here at all — Advent's own `privileged-feria-minor`
+# season default below already covers them, no live evidence found that
+# they need a stronger tier (see calendar/temporal.ts's
+# adventEmberDayOffset, used only for their own content id, not
+# precedence). Both get their own distinct proper content
+# (collect/Matins readings) via calendar/ember-days.ts, separate from this
+# precedence-only table.
 # Lent's Ember days *are* modeled (clean Easter offsets, directly
 # verified). Pentecost's own Ember days share this same offset-based
 # fixability but currently fall to the plain `ordinary-feria` default
