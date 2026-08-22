@@ -1,6 +1,6 @@
 import type { Commemoration, DayWinner, LiturgicalDay, SanctoralIdentity, TemporalCategory } from './types';
 import { weekdayOf } from './weekday';
-import { resolveSeason, resolveTemporalCategory, sundayOnOrBefore } from './temporal';
+import { resolveSeason, resolveTemporalCategory } from './temporal';
 import { resolveTemporalId } from './temporal-id';
 import { getSanctoralCandidatesFor } from './feasts';
 import { decideOccurrence, compareFeastClass, type OccurrenceResult } from './commemorations';
@@ -104,7 +104,6 @@ export function resolveDay(isoDate: string): LiturgicalDay {
 
   winner = applyOctaves(isoDate, winner, commemorations);
   winner = applyMarianSaturday(isoDate, weekday, temporalCategory, winner, commemorations);
-  winner = applyChristTheKing(isoDate, winner, commemorations);
   winner = applyChristmasOctaveSunday(isoDate, weekday, winner, commemorations);
   winner = applyMovableFeasts(isoDate, winner, commemorations);
   applyEpiphany6Commemoration(isoDate, commemorations);
@@ -138,36 +137,6 @@ function applyEpiphany6Commemoration(isoDate: string, commemorations: Commemorat
     return;
   }
   commemorations.push({ kind: 'temporal', id: 'post-epiphany-6' });
-}
-
-/** The Sunday on or before Oct 31 — always lands in October since Oct 31
- * is at most 6 days after the month's last Sunday. */
-function lastSundayOfOctober(year: number): string {
-  return sundayOnOrBefore(`${year}-10-31`);
-}
-
-/**
- * Per direct instruction: the last Sunday of October is always Christ the
- * King, full stop — unlike every other layer in this file, nothing here
- * loses gracefully or gets a rank check; whatever was winning (a plain
- * numbered Sunday after Pentecost in every ordinary year, but modeled
- * generally in case a high-ranked sanctoral candidate is ever assigned to
- * that date too) is demoted straight to a commemoration. Confirmed live
- * (see data/calendar/temporal-feasts/christ-the-king.yml): Duplex I.
- * classis, well above anything that could contest it under this
- * project's own calendar.
- */
-function applyChristTheKing(isoDate: string, winner: DayWinner, commemorations: Commemoration[]): DayWinner {
-  const year = Number(isoDate.slice(0, 4));
-  if (isoDate !== lastSundayOfOctober(year)) {
-    return winner;
-  }
-  if (winner.kind === 'temporal') {
-    commemorations.push({ kind: 'temporal', id: winner.id });
-  } else {
-    commemorations.push({ kind: 'sanctoral', id: winner.id, name: winner.name, rank: winner.rank });
-  }
-  return { kind: 'temporal', id: 'christ-the-king' };
 }
 
 /**

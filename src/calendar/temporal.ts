@@ -68,6 +68,15 @@ export function firstSundayStrictlyAfter(isoDate: string): string {
   return addDays(isoDate, dow === 0 ? 7 : 7 - dow);
 }
 
+/** The Sunday on or after `isoDate` — `isoDate` itself, if it's already a
+ * Sunday. Used by calendar/movable-feasts.ts's "Nth Sunday of month"
+ * anchor (the 1st Sunday of a month counts the month's own 1st day if
+ * that's a Sunday, unlike firstSundayStrictlyAfter above). */
+export function sundayOnOrAfter(isoDate: string): string {
+  const dow = dayOfWeek(isoDate);
+  return dow === 0 ? isoDate : addDays(isoDate, 7 - dow);
+}
+
 function seasonFromEasterOffset(offset: number): Season {
   const dayOverride = easterOffsets.days?.[String(offset)];
   if (dayOverride) {

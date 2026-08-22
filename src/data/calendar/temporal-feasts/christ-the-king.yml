@@ -3,7 +3,14 @@
 # instead (the Monastic-lineage version of the era that actually carries
 # it), confirmed live: last Sunday of October, Duplex I. classis,
 # commemorating whichever Sunday after Pentecost it would otherwise be.
-# See calendar/index.ts's applyChristTheKing for the occurrence rule.
+# Per direct instruction, `unconditional: true` -- always wins the last
+# Sunday of October full stop, no rank check at all, unlike every other
+# movable feast. See calendar/movable-feasts.ts for the occurrence rule.
 id: christ-the-king
 name: "Christ the King"
 rank: duplex-1-classis
+anchor:
+  kind: nth-sunday-of-month
+  month: 10
+  nth: -1
+unconditional: true
