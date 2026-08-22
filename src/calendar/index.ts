@@ -105,6 +105,7 @@ export function resolveDay(isoDate: string): LiturgicalDay {
   winner = applyMarianSaturday(isoDate, weekday, temporalCategory, winner, commemorations);
   winner = applyChristTheKing(isoDate, winner, commemorations);
   winner = applyChristmasOctaveSunday(isoDate, weekday, winner, commemorations);
+  winner = applyImmaculateHeart(isoDate, winner, commemorations);
   applyEpiphany6Commemoration(isoDate, commemorations);
 
   return { date: isoDate, weekday, season, temporalCategory, winner, commemorations };
@@ -242,6 +243,54 @@ function applyChristmasOctaveSunday(
   }
 
   return winner;
+}
+
+/**
+ * User decision, 2026-08-22: relocated off the fixed Aug 22 date (which
+ * collided outright with the Assumption's own octave-closing day —
+ * Pius XII's 1944 decree fixed it there, but this project keeps the
+ * older Tridentine "Octave Day of the Assumption" too) to the *other*
+ * well-documented historical assignment: the Saturday after the Feast
+ * of the Sacred Heart. Real history (not a guess): this was the
+ * feast's actual diocesan date from 1914 until the 1944 fixed-date
+ * decree, and is also the date Paul VI's 1969 reform returned to — so
+ * it has continuity on both sides of the Aug-22 interlude, unlike
+ * inventing a "Saturday after the octave of Sacred Heart" pattern (no
+ * such rule was ever real; Sacred Heart itself doesn't even have an
+ * octave modeled in this codebase). Sacred Heart is Easter+68 (always
+ * a Friday, see data/calendar/easter-offsets.yml's own derivation
+ * comment) — this is the very next day, Easter+69.
+ *
+ * Runs last, after applyMarianSaturday, deliberately: Easter+69 is
+ * always a Saturday, so absent this override the day would otherwise
+ * just fall to the generic "Our Lady's Saturday" default — a specific
+ * named Marian feast should always supersede that generic filler, not
+ * lose to whichever ran first. Any temporal winner reaching here
+ * (marian-saturday or a plain post-Pentecost Sunday-of-the-week id)
+ * has no real standing of its own and is simply superseded, same as
+ * applyChristTheKing's unconditional-when-temporal branch. Rank
+ * compared via compareFeastClass, same as every other override in this
+ * file — a duplex-2-classis feast displaces anything weaker, but a
+ * higher-ranked sanctoral saint who happens to land on the same
+ * Saturday keeps the day and Immaculate Heart is commemorated instead.
+ */
+function applyImmaculateHeart(isoDate: string, winner: DayWinner, commemorations: Commemoration[]): DayWinner {
+  const year = Number(isoDate.slice(0, 4));
+  const targetDate = addDays(toIsoDate(easterSunday(year)), 69);
+  if (isoDate !== targetDate) {
+    return winner;
+  }
+  const IMMACULATE_HEART: DayWinner = { kind: 'temporal', id: 'immaculate-heart-of-mary' };
+  if (winner.kind === 'temporal') {
+    commemorations.push({ kind: 'temporal', id: winner.id });
+    return IMMACULATE_HEART;
+  }
+  if (compareFeastClass(winner.rank, 'duplex-2-classis') >= 0) {
+    commemorations.push({ kind: 'temporal', id: 'immaculate-heart-of-mary' });
+    return winner;
+  }
+  commemorations.push({ kind: 'sanctoral', id: winner.id, name: winner.name, rank: winner.rank });
+  return IMMACULATE_HEART;
 }
 
 /**

@@ -35,7 +35,12 @@ export function resolveCommon(id: string): ResolvedText {
 // override-eligible — see hours/lauds.ts's getPsalmodyOverrideFor, which
 // shares this set (imported from here, not duplicated) since it's the
 // same "does this temporal identity carry its own real office" question.
-export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set(['marian-saturday', 'christ-the-king', 'christmas-octave-sunday']);
+export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set([
+  'marian-saturday',
+  'christ-the-king',
+  'christmas-octave-sunday',
+  'immaculate-heart-of-mary',
+]);
 
 /**
  * Which identity's own propers actually supply the office's content

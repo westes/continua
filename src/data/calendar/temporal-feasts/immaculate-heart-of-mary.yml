@@ -1,0 +1,14 @@
+# Relocated off the fixed Aug 22 date (2026-08-22 user decision) -- that
+# date collided outright with the Assumption's own octave-closing day,
+# which this project also deliberately keeps (see saints/assumption.yml).
+# Moved to the Saturday after the Feast of the Sacred Heart (Easter+69,
+# see calendar/index.ts's applyImmaculateHeart) -- the feast's own real
+# diocesan date from 1914 until Pius XII's 1944 fixed-date decree, and
+# also the date Paul VI's 1969 reform returned to, so it has continuity
+# on both sides of the Aug-22 interlude. Rank/name still sourced from
+# `web/www/horas/Latin/Sancti/08-22.txt`'s own [Rank] block, same as
+# before the move -- only the date assignment changed, not the office's
+# own content.
+id: immaculate-heart-of-mary
+name: "The Immaculate Heart of the Blessed Virgin Mary"
+rank: duplex-2-classis

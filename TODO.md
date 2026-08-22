@@ -2249,6 +2249,53 @@ dropped *opening* versicle (and Ps 3, which it precedes) is gone, via `ordo.part
 nocturn's own first psalm, rather than asserting zero versicles exist. `npm test` (421 tests,
 including the Sunday-versicle regression test above) and `tsc --noEmit` both pass.
 
+### Immaculate Heart of Mary relocated off Aug 22 (2026-08-22)
+
+User-flagged, same day: Aug 22 (the Assumption's octave-closing day) was being won outright by
+Immaculate Heart of Mary (Duplex II classis, fixed there since Pius XII's 1944 decree),
+permanently demoting the octave day to a commemoration — a real collision between this
+project's two blended calendar tracks (Divino Afflatu fixes IHM there; the older Tridentine
+track has no IHM at all, just the octave day). Per this project's "generous, not
+reconstructionist" design, the fix is relocation, not picking a permanent winner.
+
+Researched the real history rather than guessing: Immaculate Heart of Mary was actually
+celebrated on the **Saturday after the Feast of the Sacred Heart** from 1914 until the 1944
+fixed-date decree, and that's also the date the 1969 reform returned to — continuity on both
+sides of the Aug-22 interlude, unlike an initially-considered but unverifiable "Saturday after
+the *octave* of Sacred Heart" guess (no such rule was ever real, and Sacred Heart itself has no
+octave modeled in this codebase — see `data/calendar/easter-offsets.yml`, where it's only a
+season-label entry, `68: sacred-heart`).
+
+Moved: `data/calendar/saints/immaculate-heart-of-mary.yml` deleted, its `sanctoral-calendar.yml`
+`"08-22"` entry removed. New `data/calendar/temporal-feasts/immaculate-heart-of-mary.yml`
+(id/name/rank only, no octave). New `calendar/index.ts` function `applyImmaculateHeart` —
+computes Easter+69 (Sacred Heart, Easter+68, is always a Friday; this is the Saturday right
+after), overriding the day's winner there via the same rank-compared, commemorate-the-loser
+pattern `applyChristTheKing`/`applyMarianSaturday` already use, run last in `resolveDay`'s chain
+so a specific named feast always supersedes the generic "Our Lady's Saturday" default rather
+than losing to whichever ran first. Added `immaculate-heart-of-mary` to `hours/resolve-
+common.ts`'s `ALWAYS_OVERRIDE_TEMPORAL_IDS` so its own chapter/responsory/hymn/versicle/
+antiphon overrides are actually eligible (a temporal-kind winner is otherwise ignored by
+`getOfficeOverrideId`).
+
+Propers content moved stores, not just files — temporal feasts resolve via a physically
+different store than sanctoral saints (`getTemporalProper`/`data/propers/temporal/*.yml`, keyed
+`${id}-${suffix}`, vs. sanctoral's `common`/`propers`-field indirection into `data/propers/
+common/*.yml`). Collect moved as-is (suffix already matched); the single shared antiphon file
+was split into `-benedictus-antiphon`/`-magnificat-antiphon` (temporal's two-suffix convention,
+vs. sanctoral's one file reused for both) — same duplicated text, no new content authored.
+Nocturn readings needed no file change, but did surface a real bug in `hours/matins.ts`'s
+`nocturnReadingIds`: it only ever added `day.winner.id` when `day.winner.kind === 'sanctoral'`,
+so a named *temporal* override (IHM now, or `marian-saturday`/`christ-the-king` already, neither
+of which happened to have nocturn-readings content authored yet to expose this) would never
+have picked up its own reading file — fixed by adding `day.winner.id` unconditionally (harmless
+dedup via the existing `Set` on an ordinary day, where it already equals the plain temporal id).
+
+`tests/calendar/immaculate-heart-of-mary.test.ts` (new) proves the relocation end-to-end across
+two years' Easter dates, and `tests/calendar/august-sanctoral.test.ts`'s existing Aug 22 test
+was updated to match (the day now reverts to the plain Assumption octave, same shape as St.
+Lawrence's own Aug 12 case). `npm test` (429 tests) and `tsc --noEmit` both pass.
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own

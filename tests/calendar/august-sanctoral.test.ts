@@ -91,18 +91,17 @@ describe('August sanctoral pull (first pass)', () => {
     // Aug 22 is the Assumption's own octave day (In Octava Assumptionis),
     // Duplex, blocking Ss. Timothy/Hippolytus/Symphorian the same way --
     // it's also day 8 of the Assumption's own octave. Those three still
-    // aren't modeled -- but Aug 22 itself is also now the Immaculate
-    // Heart of the Blessed Virgin Mary's own fixed day (Duplex II
-    // Classis, added per the full-year sanctoral import), which wins
-    // outright under the ordinary-feria rule, with the octave still
-    // commemorated alongside her.
+    // aren't modeled. The Immaculate Heart of the Blessed Virgin Mary used
+    // to be fixed here too (Pius XII's 1944 decree), but was relocated
+    // (2026-08-22 user decision, see TODO.md) to Easter+69 -- the
+    // Saturday after the Feast of the Sacred Heart, its own real
+    // historical date on both sides of that fixed-date interlude -- so it
+    // no longer contests this date at all. With no sanctoral candidate
+    // left here, the day's own temporal identity wins outright and the
+    // octave is commemorated alongside it, same shape as St. Lawrence's
+    // own Aug 12 case just above.
     const assumptionOctaveDay = resolveDay('2025-08-22');
-    expect(assumptionOctaveDay.winner).toEqual({
-      kind: 'sanctoral',
-      id: 'immaculate-heart-of-mary',
-      name: 'The Immaculate Heart of the Blessed Virgin Mary',
-      rank: 'duplex-2-classis',
-    });
+    expect(assumptionOctaveDay.winner.kind).toBe('temporal');
     expect(assumptionOctaveDay.commemorations).toEqual([
       { kind: 'octave', id: 'assumption', name: 'The Assumption of the Blessed Virgin Mary' },
     ]);
