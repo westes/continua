@@ -2296,6 +2296,38 @@ two years' Easter dates, and `tests/calendar/august-sanctoral.test.ts`'s existin
 was updated to match (the day now reverts to the plain Assumption octave, same shape as St.
 Lawrence's own Aug 12 case). `npm test` (429 tests) and `tsc --noEmit` both pass.
 
+### Assumption-octave Matins hymn fixed (2026-08-22)
+
+Separately, the "no antiphons and a weird hymn today" complaint that prompted the investigation
+above turned out to be a distinct, narrower bug: `resolveMatinsHymn`'s own doc comment
+already claimed the Assumption's octave "keeps the feast's own proper hymn all week," but the
+code never implemented that — it only fired when the day's own winner literally *was*
+`assumption` (Aug 15 only). Every other octave day (16, 17, 19, 20, 21 — St. Joachim, St.
+Hyacinth, St. John Eudes, St. Bernard, St. Jane Frances de Chantal, none of whom has a Matins
+hymn of their own authored) fell straight to the plain ferial hymn. Fixed by adding a real
+octave-fallback tier (`resolveActiveOctave(day.date)` → `matins-hymn-${octave.id}`) between the
+existing per-feast override and the seasonal tier. Confirmed against the reference engine that
+Monastic 1617 itself doesn't do this either (no octave day there has its own `[Hymnus
+Matutinum]` override) — this is a deliberate departure, not a restoration, consistent with how
+this project already treats octave readings/commemorations more generously than any one source
+track. Aug 18 (no sanctoral winner) and Aug 22 (once IHM moved) needed no change — both already
+reached `matins-hymn-assumption` via the pre-existing `resolveOfficeWinner` octave-substitution
+path, which only fires when the day's own winner isn't sanctoral.
+
+**Not fixed, logged instead** (user decision): the deeper reason Matins had *zero* nocturn
+antiphons at all on Aug 22 — no `matins-psalmody-overrides` entry exists for `assumption` or
+`immaculate-heart-of-mary` (or, generally, any Duplex-2-classis+ feast lacking one), so Matins
+falls all the way to the bare ferial psalm table, which by design carries no antiphons — is a
+broader content gap than today's date, tracked in the "Matins psalmody overrides" bullet above
+rather than authored now. Also newly true because of this change: `hours/matins.ts`'s psalmody
+override lookup is hard-gated to `winner.kind === 'sanctoral'`, so even if IHM's psalmody were
+authored later, it wouldn't apply as a temporal-kind winner without that gate being loosened
+too — noted for whoever picks this up.
+
+New tests in `tests/hours/matins.test.ts` cover the fallback across Aug 16-22, including the
+Aug 17 edge case (correctly still ferial, since that day is actually governed by St. Lawrence's
+own octave, not the Assumption's). `npm test` (430 tests) and `tsc --noEmit` both pass.
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own

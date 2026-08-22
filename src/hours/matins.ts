@@ -62,7 +62,7 @@
 // full-calendar content pass. See TODO.md for what's deferred.
 import type { ResolvedOrdo, ResolvedPart, ResolvedText, ResolvedVerse } from './types';
 import type { LiturgicalDay } from '../calendar/types';
-import { resolveDay, resolveTemporalId, activeOctavesFor } from '../calendar';
+import { resolveDay, resolveTemporalId, activeOctavesFor, resolveActiveOctave } from '../calendar';
 import { isInTriduum } from '../calendar/temporal';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
@@ -215,20 +215,41 @@ function sundayCanticleNocturn(group: SundayNocturn, day: LiturgicalDay): Resolv
 /** The Matins hymn — a duplex-majus+ saint's or eligible named temporal
  * feast's own proper hymn (`matins-hymn-${overrideId}`, via the same
  * getOfficeOverrideId eligibility Lauds/Vespers' own resolveOffice uses),
- * when authored, else falls to a *seasonal* default (Advent/Lent/
+ * when authored; else, on a day within an active octave whose own feast
+ * has a hymn authored, that octave's hymn (`matins-hymn-${octave.id}`) —
+ * see below; else falls to a *seasonal* default (Advent/Lent/
  * Passiontide/Paschaltide, none authored yet), else the plain year-round
- * ferial hymn — same override > season > ferial precedence every other
- * hour's own office bundle uses (see lauds.ts's resolveOffice), just never
- * wired up here before. Concrete motivating case (user, 2026-08-21): the
- * Assumption's octave (`Sancti/08-21bmv.txt`'s own `[Rule] ex Sancti/
- * 08-15`) genuinely keeps the feast's own proper hymn all week, not the
- * ferial one this always rendered previously. */
+ * ferial hymn — same override > octave > season > ferial precedence every
+ * other hour's own office bundle uses (see lauds.ts's resolveOffice), just
+ * never fully wired up here before.
+ *
+ * Concrete motivating case (user, 2026-08-21/22): the Assumption's octave
+ * (`Sancti/08-21bmv.txt`'s own `[Rule] ex Sancti/08-15`) genuinely keeps
+ * the feast's own proper hymn all week — a claim this comment already
+ * made before the octave tier below actually existed, which only ever
+ * fired on Aug 15 itself (the one day `overrideId` literally *is*
+ * `assumption`). Every other octave day (16, 17, 19, 20, 21, each with
+ * its own named saint who has no Matins hymn of their own authored) fell
+ * straight through to the plain ferial hymn instead. This is a deliberate
+ * departure from the reference engine, which doesn't do this either
+ * (Monastic 1617's own octave days have no `[Hymnus Matutinum]` override
+ * at all, live-checked 2026-08-22) — not a restoration of source
+ * behavior, just this project's own generous octave design (see
+ * "Not a reconstruction" in the repo's CLAUDE.md) applied to the hymn the
+ * same way it's already applied to readings/commemorations elsewhere. */
 function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
   const overrideId = getOfficeOverrideId(day);
   if (overrideId) {
     const proper = resolveCommon(`matins-hymn-${overrideId}`);
     if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
       return proper;
+    }
+  }
+  const octave = resolveActiveOctave(day.date);
+  if (octave) {
+    const octaveHymn = resolveCommon(`matins-hymn-${octave.id}`);
+    if (octaveHymn.status.la !== 'missing' || octaveHymn.status.en !== 'missing') {
+      return octaveHymn;
     }
   }
   const seasonSuffix = seasonalOfficeSuffix(day.season);

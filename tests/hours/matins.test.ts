@@ -371,3 +371,39 @@ describe('resolveOrdo("matins", ...) Sacred Triduum', () => {
     expect(ordo.parts[1]).toMatchObject({ kind: 'psalm', psalmNumber: 3 });
   });
 });
+
+describe('resolveOrdo("matins", ...) Assumption-octave hymn fallback (2026-08-22 fix)', () => {
+  // Real bug: resolveMatinsHymn's own doc comment already claimed the
+  // Assumption's octave "keeps the feast's own proper hymn all week," but
+  // the code only ever matched when the day's own winner literally *was*
+  // `assumption` (Aug 15 itself) -- every other octave day fell straight
+  // through to the plain ferial hymn instead. Fixed by adding a real
+  // octave-fallback tier (resolveActiveOctave -> `matins-hymn-${octave.id}`).
+  function hymnLatin(date: string): string | undefined {
+    const ordo = resolveOrdo('matins', date);
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn') as { text: { text: { la: string } } } | undefined;
+    return hymn?.text.text.la;
+  }
+
+  it("St. Bernard's own day (Aug 20, no hymn of his own authored) picks up the Assumption's octave hymn, not the plain ferial one", () => {
+    expect(hymnLatin('2026-08-20')).toContain('Surge');
+  });
+
+  it('every other interior day governed by the Assumption octave (16, 19, 21 — none with a hymn of their own) also picks up the octave hymn', () => {
+    for (const date of ['2026-08-16', '2026-08-19', '2026-08-21']) {
+      expect(hymnLatin(date)).toContain('Surge');
+    }
+  });
+
+  it("Aug 17 is instead governed by St. Lawrence's own octave (its own elevated closing day, outranking the Assumption's ordinary day here) — no hymn authored for it, so it still falls to the plain ferial one, correctly", () => {
+    expect(hymnLatin('2026-08-17')).toContain('Somno');
+  });
+
+  it('Aug 22, the octave-closing day (Immaculate Heart of Mary relocated away), also gets the Assumption hymn via the pre-existing sanctoral-substitution path', () => {
+    expect(hymnLatin('2026-08-22')).toContain('Surge');
+  });
+
+  it("a plain ferial day outside the octave still gets the plain ferial hymn, unaffected", () => {
+    expect(hymnLatin(FERIAL_DATE)).toContain('Somno');
+  });
+});
