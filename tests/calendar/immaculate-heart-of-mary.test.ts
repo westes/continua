@@ -8,7 +8,7 @@ import { getDayCollect, getBenedictusAntiphon, getMagnificatAntiphon } from '../
 // the Sacred Heart (Easter+68, always a Friday), the feast's own real
 // diocesan date from 1914 until Pius XII's 1944 fixed-date decree, and
 // also the date the 1969 reform returned to.
-describe('Immaculate Heart of Mary (applyImmaculateHeart)', () => {
+describe('Immaculate Heart of Mary (calendar/movable-feasts.ts, generic Easter-offset resolver)', () => {
   it('wins outright on Easter+69, with real content resolved via the temporal propers store', () => {
     const day = resolveDay('2026-06-13'); // Easter 2026-04-05 + 69 days
     expect(day.winner).toEqual({ kind: 'temporal', id: 'immaculate-heart-of-mary' });

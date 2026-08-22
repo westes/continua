@@ -13,6 +13,19 @@ export interface TemporalFeastRecord {
   name: string;
   octave?: OctaveConfig;
   rank?: FeastClass;
+  /** Days from Easter Sunday (0) this feast's own date falls on, for a
+   * feast that ISN'T itself a Sunday -- see calendar/movable-feasts.ts.
+   * `resolveTemporalId`'s own Easter-offset resolution only ever finds
+   * one of the 52 canonical *Sunday* ids (it works by finding the
+   * governing Sunday on-or-before a date, then looking that Sunday's own
+   * offset up); a weekday-anchored feast like Immaculate Heart of Mary
+   * (Easter+69, always a Saturday) is invisible to that lookup no matter
+   * what, so it needs this separate field plus calendar/movable-feasts.ts's
+   * own override pass instead. A feast that *is* a Sunday (Pentecost)
+   * doesn't need this at all -- it's already covered by the ordinary
+   * Sunday lookup, and by EASTER_OFFSET_STARTS below if it also has an
+   * octave to start. */
+  easterOffset?: number;
 }
 
 const temporalFeastModules = import.meta.glob<{ default: TemporalFeastRecord }>(
@@ -27,6 +40,16 @@ for (const mod of Object.values(temporalFeastModules)) {
 
 export function getTemporalFeastRecord(id: string): TemporalFeastRecord | undefined {
   return temporalFeastsById.get(id);
+}
+
+/** Every temporal feast record carrying its own `easterOffset` -- the
+ * table calendar/movable-feasts.ts's applyMovableFeasts scans. Adding a
+ * new weekday-anchored movable feast (an Ember/Rogation day, a Sacred-
+ * Heart-family Marian feast, a Lenten Friday devotion, ...) is just a new
+ * `data/calendar/temporal-feasts/<id>.yml` file with `rank` and
+ * `easterOffset` set -- no new code. */
+export function movableTemporalFeasts(): TemporalFeastRecord[] {
+  return [...temporalFeastsById.values()].filter((f) => f.easterOffset !== undefined);
 }
 
 /** Fixed-calendar-date starts (MM-DD -> temporal feast id). Only Christmas

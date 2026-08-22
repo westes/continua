@@ -2278,6 +2278,11 @@ common.ts`'s `ALWAYS_OVERRIDE_TEMPORAL_IDS` so its own chapter/responsory/hymn/v
 antiphon overrides are actually eligible (a temporal-kind winner is otherwise ignored by
 `getOfficeOverrideId`).
 
+**Superseded the same day** — see "Generic Easter-offset movable-feast mechanism" below:
+`applyImmaculateHeart` itself no longer exists; the same behavior now runs through
+`calendar/movable-feasts.ts`'s generic `applyMovableFeasts`, with IHM as its first data-driven
+entry (`easterOffset: 69` on its own temporal-feasts YAML record).
+
 Propers content moved stores, not just files — temporal feasts resolve via a physically
 different store than sanctoral saints (`getTemporalProper`/`data/propers/temporal/*.yml`, keyed
 `${id}-${suffix}`, vs. sanctoral's `common`/`propers`-field indirection into `data/propers/
@@ -2327,6 +2332,41 @@ too — noted for whoever picks this up.
 New tests in `tests/hours/matins.test.ts` cover the fallback across Aug 16-22, including the
 Aug 17 edge case (correctly still ferial, since that day is actually governed by St. Lawrence's
 own octave, not the Assumption's). `npm test` (430 tests) and `tsc --noEmit` both pass.
+
+### Generic Easter-offset movable-feast mechanism (2026-08-22)
+
+User feedback, same day: a bespoke `calendar/index.ts` function per non-Sunday movable feast
+(`applyImmaculateHeart`, following the `applyMarianSaturday`/`applyChristTheKing` precedent) was
+flagged as fragile going forward — real plans exist for several more feasts that are all
+"weekday N days from Easter Sunday": Ember/Rogation days, more Sacred-Heart-family Marian
+devotions, St. Joseph's own pre-1955 Eastertide feast, and the Lenten Friday Passion devotions.
+Writing a new function per feast doesn't scale and invites the same subtle ordering bugs
+(`applyImmaculateHeart` had to be sequenced *after* `applyMarianSaturday` specifically, or a
+Saturday-anchored feast would have been silently clobbered by the generic "Our Lady's Saturday"
+default — easy to get wrong once there are several of these).
+
+Replaced with a single generic resolver, `calendar/movable-feasts.ts`'s `applyMovableFeasts`,
+run in `applyImmaculateHeart`'s old spot in `resolveDay`'s chain. No new data table: it scans
+`calendar/temporal-feasts.ts`'s existing per-feast YAML records (`data/calendar/
+temporal-feasts/*.yml`, already carrying `id`/`name`/`rank`/`octave`) for a new optional
+`easterOffset` field, added to the `TemporalFeastRecord` type. Immaculate Heart of Mary's own
+record gained `easterOffset: 69`; adding the next feast is a new YAML file with `rank` and
+`easterOffset` set, not a new TypeScript function. Same rank-compared, commemorate-the-loser
+semantics as before, applied generically instead of duplicated per feast.
+
+Deliberately doesn't try to unify everything: `christ-the-king` (last Sunday of October),
+`marian-saturday` (a generic "nothing else assigned" fallback, not date-anchored at all), and
+`christmas-octave-sunday` (whichever of Dec 26-29 is a Sunday) are structurally different rules,
+not Easter-offset ones — they stay as their own small functions in `calendar/index.ts` rather
+than being force-fit into this table for the sake of a single mechanism. Ember days for the
+September and Advent quarters are anchored to a *fixed civil date's* nearest Sunday, not Easter,
+so they'll need a second anchor kind on `TemporalFeastRecord` when they're actually authored —
+not modeled yet, deliberately: the other two Ember quarters (Lent I, Pentecost) and Rogation
+days, on the other hand, *are* plain Easter offsets and are already covered by this mechanism
+today.
+
+No behavior change — `tests/calendar/immaculate-heart-of-mary.test.ts` (unchanged) still passes
+end-to-end through the new generic path. `npm test` (430 tests) and `tsc --noEmit` both pass.
 
 ## Known, deliberate simplifications (not bugs — working as designed)
 

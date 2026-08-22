@@ -322,7 +322,7 @@ function ferialPsalmodyThreeNocturns(day: LiturgicalDay): [ResolvedPart[], Resol
 function nocturnReadingIds(day: LiturgicalDay, temporalId: string): string[] {
   const ids = new Set<string>();
   // Not gated to `kind === 'sanctoral'` -- a named temporal override (e.g.
-  // Immaculate Heart of Mary, calendar/index.ts's applyImmaculateHeart)
+  // Immaculate Heart of Mary, calendar/movable-feasts.ts's applyMovableFeasts)
   // has its own authored nocturn-readings file keyed by its own id too,
   // distinct from the plain governing-Sunday `temporalId` added below.
   // Harmless to include unconditionally: on an ordinary day `day.winner.id`
