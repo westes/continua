@@ -349,6 +349,7 @@ export function isSundayOrFeast(day: LiturgicalDay): boolean {
 export { compareFeastClass, isAtLeast, decideOccurrence, minimumOutrightWinningRank } from './commemorations';
 export { resolveCollision } from './collision';
 export { resolveTemporalId } from './temporal-id';
+export { monthWeekId } from './month-week-id';
 export { activeOctavesFor, strictestThreshold, resolveActiveOctave, octaveGoverningPrivilegedDay } from './octaves';
 export type { ActiveOctave } from './octaves';
 export type {

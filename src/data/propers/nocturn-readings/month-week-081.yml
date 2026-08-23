@@ -1,0 +1,76 @@
+# Matins Nocturn 2 for the reference engine's "1st Sunday of August"
+# (Tempora/081-0.txt) — this app's own calendar-month/week reading cycle
+# (calendar/month-week-id.ts's monthWeekId, distinct from the Easter-offset
+# post-pentecost-NN ids), pooled alongside them by hours/matins.ts's
+# buildReadingPool. See that function's header and month-week-id.ts's own
+# header for why this id exists at all: which month/week governs a given
+# Sunday shifts with Easter's date, so there's no fixed post-pentecost-NN
+# correspondence to author against — this id is computed straight from the
+# calendar date instead. Live-verified (2026-08-02, Monastic Tridentinum
+# 1617): "Dominica X Post Pentecosten I. Augusti", homily is St. Ambrose on
+# Ps. 118, matching this file's own Lectio4-6.
+#
+# Nocturn 1 deliberately not imported here — the user's own bible-plan
+# store already owns that slot (see propers/bible-plan.ts).
+#
+# Combined per the recombine rule: Lectio4-6 are one continuous excerpt
+# from the same sermon, no real source break between them.
+id: month-week-081
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Ambrose, Bishop of Milan, Enarrationes in Psalmum CXVIII, Sermon 5"
+    text:
+      la: >-
+        Inítium esse sapiéntiæ timórem Dómini, dicit prophéta. Quid est autem inítium sapiéntiæ, nisi
+        sǽculo renuntiáre? Quia sápere sæculária, stultítia est. Dénique sapiéntiam hujus mundi,
+        stultítiam esse apud Deum, Apóstolus dicit. Sed et ipse timor Dómini, nisi secúndum sciéntiam
+        sit, nihil prodest, immo obest plúrimum. Síquidem Judǽi habent zelum Dei; sed quia non habent
+        secúndum sciéntiam, in ipso zelo et timóre majórem cóntrahunt divinitátis offénsam. Quod
+        circumcídunt infántulos suos, quod sábbata custódiunt, timórem Dei habent; sed quia nesciunt
+        legem spiritálem esse, circumcídunt corpus, non cor suum.
+
+
+        Et quid de Judǽis dico? Sunt étiam in nobis qui habent timórem Dei, sed non secúndum
+        sciéntiam, statuéntes durióra præcépta, quæ non possit humána condítio sustinére. Timor in eo
+        est, quia vidéntur sibi consúlere disciplínæ, opus virtútis exígere; sed inscítia in eo est,
+        quia non compatiúntur natúræ, non ǽstimant possibilitátem. Non sit ergo irrationábilis timor.
+        Etenim vera sapiéntia a timóre Dei íncipit, nec est sapiéntia spiritális sine timóre Dei; ita
+        timor sine sapiéntia esse non debet.
+
+
+        Basis quædam verbi est timor sanctus. Sicut enim simulácrum áliquod in basi statúitur, et tunc
+        majórem habet grátiam, cum in basi státua fúerit collocáta, standíque áccipit firmitátem: ita
+        verbum Dei in timóre sancto mélius statúitur, fórtius radicátur in péctore timéntis Dóminum; ne
+        labátur verbum de corde viri, ne véniant vólucres et áuferant illud de incuriósi et
+        dissimulántis afféctu.
+      en: >-
+        The Prophet saith that "the fear of the Lord is the beginning of wisdom." And what is the
+        first act of wisdom but to renounce the world, since to love the things of the world is folly?
+        So indeed saith the Apostle, "The wisdom of this world is foolishness with God." (1 Cor. 3:19.)
+        But the very fear of the Lord itself is useless, nay, harmful, if it be not according to
+        knowledge. The Jews have a truly fervent zeal for God, but since they have not knowledge, their
+        very zeal and fear do cause them to do things contrary to God's will. That they circumcise
+        their children, that they keep holy the Sabbath-Day, showeth how they fear the Lord, but
+        knowing not the spiritual meaning of the Law, they circumcise the body and not the heart.
+
+
+        But wherefore should I speak of Jews? There are those among ourselves who have the fear of
+        God, but not according to knowledge, and set up hard ordinances which the weakness of man is
+        not able to bear. They fear God in this, that they seem to themselves to be looking to
+        discipline, and to be enforcing the practice of godliness, but they lack knowledge, in that
+        they feel not for the weakness of nature, nor consider whether a thing can, or cannot be done.
+        Let not then the fear of God be unreasonable. True wisdom beginneth with the fear of God,
+        neither is it spiritual wisdom without the fear of God, but neither ought the fear of God to be
+        without wisdom.
+
+
+        Holy fear is the foundation of all good instruction. Just as a statue is set up upon a
+        pedestal, and thereby receiveth both beauty and strength, even so doth it become the word of
+        God to be set forth based upon an holy fear, and it is in the heart of him that feareth that it
+        getteth the firmest root, even an home wherefrom it droppeth not, neither do the fowls of the
+        air come and carry it away, as from the heart of him that is careless and deceiving.
+    responsory:
+      la: "Da mihi, Dómine, sédium tuárum assistrícem sapiéntiam, et noli me reprobáre a púeris tuis: * Quóniam servus tuus sum ego, et fílius ancíllæ tuæ.\nV. Mitte illam de sede magnitúdinis tuæ, ut mecum sit et mecum labóret.\nR. Quóniam servus tuus sum ego, et fílius ancíllæ tuæ."
+      en: "Give me wisdom, O Lord, that sitteth by thy throne, and reject me not from among thy children. * For I am thy servant and son of thine handmaid.\nV. O send her out from the throne of thy glory, to be with me and to labour with me.\nR. For I am thy servant and son of thine handmaid."
+    status: { la: verified, en: verified }

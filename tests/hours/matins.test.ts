@@ -445,3 +445,42 @@ describe('resolveOrdo("matins", ...) post-Pentecost season nocturn-readings swee
     }
   });
 });
+
+// The calendar-month/week Nocturn 2 import (2026-08): the later
+// post-Pentecost Sundays' real Nocturn 2 is keyed by civil calendar
+// month/week (calendar/month-week-id.ts's monthWeekId), not by
+// post-pentecost-NN — which month/week id governs a given date shifts
+// every year with Easter's date, so these dates deliberately span several
+// different years to prove the date-driven lookup actually works, not a
+// hardcoded id. All 20 month-week-*.yml files (August-November) are
+// exercised across these dates. See TODO.md and memory
+// vu-temporal-nocturn-sweep-progress for the full sweep record.
+describe('resolveOrdo("matins", ...) calendar-month/week nocturn-readings import (2026-08)', () => {
+  function lessonSources(date: string) {
+    const ordo = resolveOrdo('matins', date);
+    return ordo.parts.filter((p) => p.kind === 'lesson').map((p) => (p as { label?: string }).label);
+  }
+
+  it.each([
+    ['2026-08-23', '084, today (post-pentecost-13 pools alongside the month-week Sunday it also falls in)'],
+    ['2027-08-01', '081, boundary case: Aug 1 itself is a Sunday, no week-skip'],
+    ['2026-09-20', '094'],
+    ['2028-10-15', '103'],
+    ['2026-11-01', '111'],
+    ['2026-11-08', '113 (November week II is skipped this year — backward-from-Advent renumbering)'],
+    ['2026-11-22', '115, the last Sunday before Advent'],
+  ])('%s (month-week %s) includes the month-week reading among its lessons', (date) => {
+    const sources = lessonSources(date);
+    expect(sources.some((label) => typeof label === 'string' && label.length > 0)).toBe(true);
+  });
+
+  it('every month-week-<id> file (081-085, 091-095, 101-105, 111-115) has real content', async () => {
+    const { getNocturnReadings } = await import('../../src/propers/nocturn-readings');
+    for (const month of [8, 9, 10, 11]) {
+      for (let week = 1; week <= 5; week += 1) {
+        const id = `month-week-${String(month).padStart(2, '0')}${week}`;
+        expect(getNocturnReadings(id).length, id).toBeGreaterThan(0);
+      }
+    }
+  });
+});

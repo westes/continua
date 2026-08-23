@@ -1445,14 +1445,60 @@ changes).
   (`passion-sunday`, `palm-sunday`), and Eastertide (`easter-sunday`, `easter-octave`,
   `easter-3..6`, `sunday-after-ascension`, `pentecost-sunday`) — same shape of gap, same
   pipeline, just not yet worked through season by season.
-- Sourcing real Nocturn 2 content for `post-pentecost-12` onward (the continuous
-  Old-Testament-book-and-commentary cycle) — would need live-CGI verification per date, not
-  just static-file reading, per the `vu-reference-engine-file-layout` memory's own note on
-  when static files can't answer a question.
+- Sourcing real Nocturn 2 content for `post-pentecost-12` onward via the Pentecost-offset id
+  itself — **resolved differently, not left open**, see "Calendar-month/week nocturn-readings
+  import" immediately below: that content turned out to be keyed by civil calendar month, not
+  Pentecost offset, at the source, so it needed a second id scheme, not a live-CGI lookup.
 - Ferial-specific (non-Sunday) content within a post-Pentecost week — not applicable here,
   since the whole week already shares one temporal id/file by design (see above); flagged only
   so a future reader doesn't go looking for `post-pentecost-13-tuesday.yml`-style files that
   were never meant to exist.
+
+### Calendar-month/week nocturn-readings import — done (2026-08)
+
+Follow-up to the post-Pentecost sweep above: the user asked about the "Nocturn 3 only, from
+`post-pentecost-12` onward" gap it left open, correctly guessing that the reference engine's
+real Nocturn 2 content for those later Sundays lives in older, month-labeled files rather than
+being genuinely absent.
+
+Confirmed: `Tempora/08N-0.txt` through `11N-0.txt` (N = 1-5, August-November, ~20 files) — the
+old "Scriptura occurrens" reading cycle, "Dominica I-V Augusti/Septembris/Octobris/Novembris."
+Each has `[Lectio1]`-`[Lectio3]` (Nocturn 1 scripture — **not imported**, the user's own
+bible-plan store already owns that slot) and `[Lectio4]`-`[Lectio6]` (Nocturn 2 patristic
+commentary — the actual target).
+
+**The real complication, and why this needed a mechanism addition, not just content files**:
+which month-week file governs a given Sunday is *not* a fixed `post-pentecost-NN`
+correspondence — it's computed straight from the civil calendar (first Sunday of each month,
+with irregularities), and shifts every year with Easter's date. Ported the reference engine's
+own `Date.pm::monthday()` sub faithfully into `src/calendar/month-week-id.ts` (`monthWeekId`),
+using this app's pre-1955/Tridentine rubric baseline (`Date.pm`'s own `$modernstyle = false`):
+no 1960-rubric October week-III vanishing (skipped entirely, since that whole adjustment is
+modernstyle-gated); November's backward-from-Advent renumbering for week > 0 *does* still
+apply (that part of the source isn't modernstyle-gated). Live-verified against the localhost
+CGI instance across 3 different years (2026, 2027, 2028) including the August 1st-falls-on-a-
+Saturday skip case and November's real week-II-vanishes case (2026: Nov 1/8/15/22 render "I.
+/III./IV./V. Novembris" — II is genuinely skipped that year, matching the ported algorithm
+exactly).
+
+Wired in as a **third, independent pooling source** in `hours/matins.ts`'s
+`nocturnReadingIds`/`buildReadingPool` — `month-week-<id>` (e.g. `month-week-081`), pooled
+alongside (not replacing) the ordinary `temporalId`-keyed lookup, same dual-key precedent as
+`propers/bible-plan.ts`'s Dec25-Jan13 calendar-date stretch. All 20 ids authored as
+`data/propers/nocturn-readings/month-week-<MMN>.yml`; each file's 3 lessons are one continuous
+work (recombined per the standing rule), so one `NocturnReading` per file. `month-week-092`
+turned out to cite the exact same Moralia-in-Job passage already authored for
+`post-pentecost-15` — reused that existing translation rather than re-transcribing it.
+
+Live-verified via `npx tsc --noEmit`, `npm test` (460 tests, up from 452 — a new "calendar-
+month/week nocturn-readings import" describe block in `tests/hours/matins.test.ts` spanning
+2026-2028 to prove the date-driven lookup, not a hardcoded id), and `npm run build`. No fixture
+collisions (pure content + one new pooling source, no calendar changes).
+
+**Not done in this pass**: the same month-week treatment for whatever Sundays this pass didn't
+reach (there are none within Aug-Nov — all 20 files are authored); the rest of the temporal
+cycle (Advent through Eastertide, per the post-Pentecost sweep's own "not done" list above)
+remains open and is unrelated to this particular gap.
 
 ### Pre-1955-but-post-1617 saints' Matins readings — done (2026-08)
 

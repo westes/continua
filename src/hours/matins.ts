@@ -62,7 +62,7 @@
 // full-calendar content pass. See TODO.md for what's deferred.
 import type { ResolvedOrdo, ResolvedPart, ResolvedText, ResolvedVerse } from './types';
 import type { LiturgicalDay } from '../calendar/types';
-import { resolveDay, resolveTemporalId, activeOctavesFor, resolveActiveOctave } from '../calendar';
+import { resolveDay, resolveTemporalId, monthWeekId, activeOctavesFor, resolveActiveOctave } from '../calendar';
 import { isInTriduum } from '../calendar/temporal';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
@@ -326,11 +326,18 @@ function ferialPsalmodyThreeNocturns(day: LiturgicalDay): [ResolvedPart[], Resol
  * gathered for `day` — the office winner (if sanctoral), every
  * commemorated saint (a transferred-in feast already appears as `day.winner`
  * once `resolveDay` has applied the transfer, so it needs no separate
- * lookup here), and the plain temporal id itself (for an ordinary day's own
+ * lookup here), the plain temporal id itself (for an ordinary day's own
  * patristic content, e.g. a plain Sunday's Moralia-in-Job-style
- * commentary) — deliberately inclusive, not just the winner, per the
- * user's own "be generous, not winner-takes-all" instruction (2026-08). */
-function nocturnReadingIds(day: LiturgicalDay, temporalId: string): string[] {
+ * commentary), and — for dates from the 1st Sunday of August through the
+ * eve of Advent — the calendar-month/week id (`month-week-<id>`,
+ * calendar/month-week-id.ts's monthWeekId): the real historical Nocturn 2
+ * for the later post-Pentecost Sundays is keyed by civil calendar month,
+ * not Easter offset (see that function's own header for why), so it's
+ * pooled here as a second, independent source alongside `temporalId`,
+ * same dual-key precedent as propers/bible-plan.ts's Dec25-Jan13 stretch —
+ * deliberately inclusive, not just the winner, per the user's own "be
+ * generous, not winner-takes-all" instruction (2026-08). */
+function nocturnReadingIds(day: LiturgicalDay, temporalId: string, date: string): string[] {
   const ids = new Set<string>();
   // Not gated to `kind === 'sanctoral'` -- a named temporal override (e.g.
   // Immaculate Heart of Mary, calendar/movable-feasts.ts's applyMovableFeasts)
@@ -347,6 +354,8 @@ function nocturnReadingIds(day: LiturgicalDay, temporalId: string): string[] {
     if (c.kind === 'sanctoral' || c.kind === 'temporal') ids.add(c.id);
   }
   ids.add(temporalId);
+  const monthWeek = monthWeekId(date);
+  if (monthWeek) ids.add(`month-week-${monthWeek}`);
   return [...ids];
 }
 
@@ -385,7 +394,7 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string):
       responsory: r.responsory ? { text: r.responsory, status: { la: 'verified', en: 'verified' } } : undefined,
     });
   }
-  for (const id of nocturnReadingIds(day, temporalId)) {
+  for (const id of nocturnReadingIds(day, temporalId, date)) {
     for (const reading of getNocturnReadings(id)) {
       parts.push(nocturnReadingPart(reading));
     }
