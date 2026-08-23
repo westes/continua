@@ -1,0 +1,123 @@
+# Nocturn 2-3, 11th Sunday after Pentecost. Sourced from Tempora/Pent11-0.txt.
+# See post-pentecost-02.yml for sweep method/responsory-reuse note. This is
+# the last Sunday of the season with its own proper Nocturn 2 content in the
+# source (Pent12 onward have Lectio7-9 only).
+# Nocturn 2: St. Jerome's Exposition of Isaiah, on Hezekiah's illness as a
+# type - one continuous excerpt (Lectio4-6). Nocturn 3: Lectio7 bare incipit
+# (Mark 7:31-37, the healing of the deaf-mute, "Ephphetha") skipped;
+# Lectio8-9 one continuous homily by Pope St. Gregory the Great, combined.
+id: post-pentecost-11
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Jerome, Priest, Exposition of the Prophet Isaiah, Book 11, ch. 38"
+    text:
+      la: >-
+        Ne elevarétur cor Ezechíæ post incredíbiles triúmphos et de média captivitáte victóriam,
+        infirmitáte córporis sui visitátur, et audit se esse moritúrum; ut convérsus ad Dóminum flectat
+        senténtiam ejus. Quod quidem et in Jona prophéta légimus, et in comminatiónibus contra David: quæ
+        dicúntur futúra, nec facta sunt, non Deo mutánte senténtiam, sed provocánte humánum genus ad
+        notítiam sui. Dóminus enim pœ́nitens est super malítiis. Convertítque Ezechías fáciem suam ad
+        paríetem, quia ad templum ire non póterat.
+
+
+        Audiénsque se esse moritúrum, non precátur vitam et annos plúrimos, sed in Dei judício, quid
+        velit præstáre, dimíttit. Nóverat enim idcírco Deo placuísse Salomónem, quod annos vitæ non
+        petíerit amplióres; sed itúrus ad Dóminum narrat ópera sua, quómodo ambuláverit coram eo in
+        veritáte et in corde perfécto. Felix consciéntia, quæ afflictiónis témpore bonórum óperum
+        recordátur. Beáti enim mundo corde: quóniam ipsi Deum vidébunt.
+
+
+        Flevit autem fletu magno, propter promissiónem Dómini ad David, quam vidébat in sua morte
+        peritúram. Eo enim témpore Ezechías fílios non habébat; nam post mortem ejus Manásses cum
+        duódecim esset annórum, regnáre cœpit in Judǽa: ex quo perspícuum est, post tértium annum
+        concéssæ vitæ Manássen esse generátum. Ergo iste omnis est fletus, quod desperábat Christum de
+        suo sémine nascitúrum.
+      en: >-
+        Lest the heart of Hezekiah should be puffed up by his strange and unlooked for triumphs, and by
+        his victory when he was but a prisoner, he was visited by bodily weakness, and told that he was
+        to die that he might betake himself to the Lord, and turn Him from carrying out the sentence.
+        This is not because that God is a Being capable of changing His mind, but because He willeth to
+        mankind to know Him, how that "He repenteth Him of the evil" (Joel ii. 13). Hezekiah turned his
+        face unto the wall, not being able to go up to the Temple.
+
+
+        Having been told that he was about to die, he prayed not for life and many years, but left it to
+        God to do as in His good judgment He was pleased to will. He knew how this had pleased God on
+        the part of Solomon (3 Kings iii. 11). So, when he betook him to the Lord, he only made mention
+        of his works, how he had walked before Him in truth, and with a perfect heart. Happy is he whose
+        conscience in the hour of affliction can assure him of good works. Yea, "blessed are the pure in
+        heart, for they shall see God" (Matth. v. 8).
+
+
+        "And Hezekiah wept sore." He had then no children, and it seemed as though the promise which God
+        had made unto David, that his seed should endure for ever, was about to fail in his own death.
+        It is written that "Manasseh was twelve years old when he began to reign" (xxi. 1) - whence it is
+        evident that Hezekiah begat him not till after three years of his new lease of life. Sore
+        therefore wept he, when all hope was torn from him that the Messiah should spring from his seed.
+    responsory:
+      la: "Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.\nV. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?\nR. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël."
+      en: "Saul hath slain his thousands, and David his ten thousands. * Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel.\nV. Is not this David? Did they not sing one to another of him in dances, saying: Saul hath slain his thousands, and David his ten thousands?\nR. Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "Pope St. Gregory the Great, Homily 10, Book 1 on Ezekiel"
+    text:
+      la: >-
+        Quid est quod creátor ómnium Deus, cum surdum et mutum sanáre voluísset, in aures illíus suos
+        dígitos misit, et éxspuens linguam ejus tétigit? Quid per dígitos Redemptóris, nisi dona Sancti
+        Spíritus designántur? Unde cum in álio loco ejecísset dæmónium, dixit: Si in dígito Dei eício
+        dæmónia, profécto pervénit in vos regnum Dei. Ex quo utróque loco collígitur, quia dígitus
+        Spíritus vocátur. Dígitos ergo in aurículas míttere, est per dona Spíritus Sancti mentem surdi ad
+        obediéndum aperíre.
+
+
+        Quid est vero, quod éxspuens linguam ejus tétigit? Salíva nobis est ex ore Redemptóris, accépta
+        sapiéntia in elóquio divíno. Salíva quippe ex cápite défluit in ore. Ea ergo sapiéntia, quæ ipse
+        est, dum lingua nostra tángitur, mox ad prædicatiónis verba formátur. Qui suspíciens in cælum,
+        ingémuit: non quod ipse necessárium gémitum habéret, qui dabat quod postulábat; sed nos ad eum
+        gémere, qui cælo prǽsidet, dócuit: ut et aures nostræ per donum Spíritus Sancti aperíri, et
+        lingua per salívam oris, id est, per sciéntiam divínæ locutiónis, solvi débeat ad verba
+        prædicatiónis.
+
+
+        Cui mox, Ephphétha, id est, Adaperíre dícitur: et statim apértæ sunt aures ejus, et solútum est
+        vínculum linguæ ejus. Qua in re notándum est, quia propter clausas aures dictum est, Adaperíre.
+        Sed cui aures cordis ad obediéndum apértæ fúerint, ex subsequénti procul dúbio étiam linguæ ejus
+        vínculum sólvitur; ut bona quæ ipse fécerit, étiam faciénda áliis loquátur. Ubi bene ádditur: Et
+        loquebátur recte. Ille enim recte lóquitur, qui prius obediéndo fécerit quæ loquéndo ádmonet esse
+        faciénda.
+      en: >-
+        What signifieth it that when God, the Maker of all, would heal a deaf and dumb man, "He put His
+        Fingers into his ears, and He spit, and touched his tongue." What is figured by the Fingers of
+        the Redeemer but the gifts of the Holy Ghost? Hence it is written in another place (Luke xi. 20)
+        that after He had cast out an evil spirit, He said: "If I with the finger of God cast out
+        devils, no doubt the kingdom of God is come upon you." By setting this passage together with
+        another (Matth. xii. 28) we see that the Spirit is called the Finger. For our Lord, then, to put
+        His Fingers into the deaf man's ears was by the gift of the Holy Spirit to enlighten his dark
+        mind unto obedience.
+
+
+        That signifieth it also that "He spit and touched his tongue." We receive spittle out of the
+        Redeemer's mouth upon our tongues when we receive wisdom to speak God's truth. Spittle is a
+        secretion of the head which floweth into the mouth. And so, that wisdom, which is Himself, the
+        great Head of His Church, as soon as it hath touched our tongue, doth straightway take the form
+        of preaching. "And looking up to heaven, He sighed," not that He had any need to sigh, Who gave
+        whatsoever He asked, but that He was fain to teach us to look up and sigh toward Him Whose
+        throne is in heaven, confessing our need, that our ears should be opened by the gift of the Holy
+        Spirit, and our tongue loosed by the spittle of our Saviour's Mouth, before we can use it to
+        preach to others.
+
+
+        "And He said unto him: Ephphatha, that is, be opened. And straightway his ears were opened, and
+        the string of his tongue was loosed." Herein we must remark the command, "Be opened" was
+        addressed to the deaf ears, but the tongue also was immediately loosed. Just so, when the ears of
+        a man's heart have been opened to learn the obedience of faith, the string of his tongue also is
+        thereupon loosed, that he may exhort others to do the good things which himself doth. It is well
+        added "And he spake plain." He only doth well preach obedience to others who hath first learnt
+        himself to obey.
+    responsory:
+      la: "Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.\nV. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.\nR. Plena est omnis terra glória ejus."
+      en: "One Seraph cried unto another: * Holy, Holy, Holy is the Lord God of hosts; * The whole earth is full of His glory.\nV. There are Three That bear record in heaven: the Father, the Word, and the Holy Ghost, and these Three are One.\nR. The whole earth is full of His glory."
+    status: { la: verified, en: verified }

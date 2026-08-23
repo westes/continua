@@ -1,0 +1,162 @@
+# Nocturn 2-3, Trinity Sunday (temporalId post-pentecost-01, the Sunday
+# after Pentecost - Duplex I classis, own full proper office, unlike the
+# ordinary Sundays that follow it). Sourced from Tempora/Pent01-0.txt. See
+# post-pentecost-02.yml for general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Fulgentius' book on
+# the Faith addressed to Peter, on the Trinity. Responsory: Lectio4's own
+# (the same "Percússit Saul" text reused for the Nocturn 2 slot every week
+# this season, transcribed directly here rather than left as a
+# cross-reference - Pent01 is itself the source the other weeks point back
+# to via @Tempora/Pent01-2:ResponsoryN).
+#
+# Nocturn 3 has two distinct readings, since this is a major feast with its
+# own extra "Commemoratio Dominicae" for the First Sunday after Pentecost it
+# displaces: (a) Lectio7 bare incipit (Matt 28:18-20) skipped; Lectio7-8a is
+# one continuous homily by St. Gregory Nazianzen, on the Trinity, combined,
+# using the "Duo Séraphim" responsory (Responsory8), reused every week; (b)
+# Lectio9 is a wholly separate single-lesson reading, explicitly marked in
+# the source as "Commemoratio Dominicae" - St. Augustine's homily on the
+# displaced First Sunday after Pentecost's own Gospel (Luke 6:36-42). Its
+# Gospel incipit is likewise bare and skipped, leaving the homily alone. No
+# responsory is proper to this final lesson in the source (it runs straight
+# to the Te Deum after Responsory8's Gloria repeat), so none is authored
+# here.
+id: post-pentecost-01
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Fulgentius, Bishop of Ruspe, On the Faith, Addressed to Peter"
+    text:
+      la: >-
+        Fides, quam sancti Patriárchæ atque Prophétæ ante incarnatiónem Fílii Dei divínitus accepérunt,
+        quam étiam sancti Apóstoli ab ipso Dómino in carne pósito audiérunt, et Spíritus Sancti magistério
+        instrúcti non solum sermóne prædicavérunt, verum étiam ad instructiónem salubérrimam posterórum
+        scriptis suis índitam reliquérunt; unum Deum prǽdicat Trinitátem, id est, Patrem, et Fílium, et
+        Spíritum Sanctum. Sed Trínitas vera non esset, si una eadémque persóna dicerétur Pater et Fílius
+        et Spíritus Sanctus.
+
+
+        Si enim, sicut est Patris, et Fílii, et Spíritus Sancti una substántia, sic esset una persóna;
+        nihil omníno esset in quo veráciter Trínitas dicerétur. Rursus quidem Trínitas esset vera, sed
+        unus Deus Trínitas ipsa non esset, si quemádmodum Pater, et Fílius, et Spíritus Sanctus personárum
+        sunt ab ínvicem proprietáte distíncti, sic fuíssent naturárum quoque diversitáte discréti. Sed
+        quia in illo uno vero Deo Trinitáte, non solum quod unus Deus est, sed étiam quod Trínitas est,
+        naturáliter verum est; proptérea ipse verus Deus in persónis Trínitas est, et in una natúra unus
+        est.
+
+
+        Per hanc unitátem naturálem totus Pater in Fílio et Spíritu Sancto est, totus Fílius in Patre et
+        Spíritu Sancto est, totus quoque Spíritus Sanctus in Patre et Fílio. Nullus horum extra
+        quémlibet ipsórum est: quia nemo álium aut præcédit æternitáte, aut excédit magnitúdine, aut
+        súperat potestáte: quia nec Fílio nec Spíritu Sancto, quantum ad natúræ divínæ unitátem pértinet,
+        aut antérior aut major Pater est; nec Fílii ætérnitas atque imménsitas, velut antérior aut major,
+        Spíritus Sancti immensitátem æternitatémque aut præcédere aut excédere naturáliter potest.
+      en: >-
+        The Faith which the holy Patriarchs and Prophets received from God before His Son was made
+        Flesh, the Faith which the holy Apostles heard from the Lord Himself when Present in the Flesh,
+        the Faith which the same Apostles learnt by the teaching of the Holy Ghost not only to preach by
+        word of mouth, but also to leave behind them in their writings for the healthful instruction of
+        all that should come after, that Faith teacheth that the Trinity, that is to say, the Father,
+        the Son, and the Holy Ghost, is but One God. But we could not truly call the Father, the Son,
+        and the Holy Ghost a Trinity, if One and the Selfsame Person were named Father, Son, and Holy
+        Ghost.
+
+
+        Nor if as the Being of the Father, the Son, and the Holy Ghost is One Being, so were there but
+        One Person, then were it untrue to say that God is a Trinity. On the other hand, if, as the
+        Persons of the Father, the Son, and the Holy Ghost are distinguished One from Another by that
+        which is proper to Each, so were They diverse by difference of nature, then were it untrue to say
+        that God is One. But since concerning the nature of the One True God, Who is a Trinity, it is the
+        Truth to say that God is One, and the Truth to say that God is a Trinity, therefore the True God
+        is a Trinity in Persons, and an Unity in nature.
+
+
+        Through this Oneness of nature All That the Father is is in the Son and the Holy Ghost, All That
+        the Son is is in the Father and the Holy Ghost, and All That the Holy Ghost is is in the Father
+        and the Son. Of the Father, the Son, and the Holy Ghost, None is without Other, None is before
+        Other, None is Greater than Other, None is Mightier than Other. The Father, as touching the One
+        Divine Nature, is neither before nor greater than the Son and the Holy Ghost neither is it
+        possible that the Eternity and Infinity of the Son, whether as before or greater, should be
+        before or greater than the Eternity and Infinity of the Spirit.
+    responsory:
+      la: "Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.\nV. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?\nR. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël."
+      en: "Saul hath slain his thousands, and David his ten thousands. * Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel.\nV. Is not this David? Did they not sing one to another of him in dances, saying: Saul hath slain his thousands, and David his ten thousands?\nR. Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Gregory Nazianzen, Patriarch of Constantinople, Treatise on the Faith"
+    text:
+      la: >-
+        Quis catholicórum ignórat Patrem vere esse Patrem, Fílium vere esse Fílium, et Spíritum Sanctum
+        vere esse Spíritum Sanctum? sicut ipse Dóminus ad Apóstolos suos dicit: Eúntes baptizáte omnes
+        gentes in nómine Patris, et Fílii, et Spíritus Sancti. Hæc est perfécta Trínitas in unitáte
+        consístens, quam scílicet uníus substántiæ profitémur. Non enim nos secúndum córporum
+        conditiónem, divisiónem in Deo fácimus; sed secúndum divínæ natúræ poténtiam, quæ in matéria non
+        est, et nóminum persónas vere constáre crédimus, et unitátem divinitátis esse testámur.
+
+
+        Nec extensiónem partis alicújus ex parte, ut quidam putavérunt, Dei Fílium dícimus: nec verbum
+        sine re, velut sonum vocis, accípimus: sed tria nómina et tres persónas uníus esse esséntiæ,
+        uníus majestátis atque poténtiæ crédimus. Et ídeo unum Deum confitémur: quia únitas majestátis,
+        plúrium vocábulo deos próhibet appellári. Dénique Patrem et Fílium cathólice nominámus; duos
+        autem Deos dícere, nec póssumus, nec debémus. Non quod Fílius Dei Deus non sit, immo verus Deus
+        de Deo vero; sed quia non aliúnde, quam de ipso uno Patre, Dei Fílium nóvimus, perínde unum Deum
+        dícimus. Hoc enim Prophétæ, hoc Apóstoli tradidérunt: hoc ipse Dóminus dócuit, cum dicit: Ego et
+        Pater unum sumus. Unum ad unitátem divinitátis, ut dixi, refert; Sumus autem, persónis assígnat.
+      en: >-
+        There is no Catholic but knoweth that the Father is a Very Father, the Son a Very Son, and the
+        Holy Ghost a Very Holy Ghost, even as the Lord Himself saith unto His Apostles: "Go ye and
+        baptize all nations in the Name of the Father, and of the Son, and of the Holy Ghost." This is
+        that Perfect Trinity Who is but One being, and of Whom therefore we testify that His Substance is
+        one. For we make no division in God, as divisions are made in bodies, but we testify, that,
+        according to the power of the Divine Nature, Which standeth not in matter, the Persons named have
+        a real existence, and that God is One.
+
+
+        We do not say, as some have dreamt, that the Begetting of the Son of God is an outgrowing from
+        one part to another part neither do we say that He is the Word in the sense of a mere sound
+        uttered by a voice, but we do believe that these three Names and the Persons meant by them are
+        all of only One Being, One Majesty, and One Power. And therefore we testify that God is one,
+        because this One-ness of His Majesty forbiddeth that we should use the Plural form of speech and
+        say, "Gods." It is Catholic language to say, "Father and Son," but we cannot and must not say
+        that the Father and the Son are two gods. And that, not because the Son of God is not by Himself
+        God; yea, He is Very God of Very God but because we know that the Son of God is not from
+        elsewhere, but from the One Father Himself, and therefore we say that God is One. This is the
+        doctrine which Prophets and Apostles have delivered; this is the doctrine which the Lord Himself
+        taught when He said: "I and the Father are One" (John x. 30), that is, He meant, as touching the
+        one Divine Being, but as touching Persons, We are distinct.
+    responsory:
+      la: "Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.\nV. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.\nR. Plena est omnis terra glória ejus."
+      en: "One Seraph cried unto another: * Holy, Holy, Holy is the Lord God of hosts; * The whole earth is full of His glory.\nV. There are Three That bear record in heaven: the Father, the Word, and the Holy Ghost, and these Three are One.\nR. The whole earth is full of His glory."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "Commemoration of the First Sunday after Pentecost: St. Augustine, Bishop of Hippo, Sermon 15 on the Words of the Lord in Matthew"
+    text:
+      la: >-
+        Duo sunt ópera misericórdiæ, quæ nos líberant, quæ bréviter ipse Dóminus pósuit in Evangélio:
+        Dimíttite, et dimittétur vobis: date, et dábitur vobis. Dimíttite, et dimittétur vobis, ad
+        ignoscéndum pértinet: Date, et dábitur vobis, ad præstándum benefícium pértinet. Quod ait de
+        ignoscéndo, et tu vis tibi ignósci quod peccas, et habes álium, cui tu possis ignóscere. Rursus,
+        quod pértinet ad tribuéndum benefícium, petit te mendícus, et tu es Dei mendícus. Omnes enim
+        quando orámus, mendíci Dei sumus: ante jánuam magni Patrisfamílias stamus, immo et prostérnimur,
+        súpplices ingemíscimus, áliquid voléntes accípere; et ipsum áliquid ipse Deus est. Quid a te
+        petit mendícus? Panem. Et tu quid petis a Deo, nisi Christum, qui dicit: Ego sum panis vivus, qui
+        de cælo descéndi? Ignósci vobis vultis? ignóscite: Remíttite, et remittétur vobis. Accípere
+        vultis? date, et dábitur vobis.
+      en: >-
+        There are two works of mercy which free us, and which the Lord Himself hath briefly named in the
+        Gospel "Forgive, and ye shall be forgiven give, and it shall be given unto you." "Forgive, and ye
+        shall be forgiven", such is the promise of pardon. "Give, and it shall be given unto you", such
+        is the promise of favour. As touching forgiveness thou hast trespasses which thou wouldest fain
+        have forgiven, and them which have trespassed against thee, whom thou canst forgive. As touching
+        favour, there are beggars that beg from thee, and thou art a beggar to God. When we pray, we are
+        all beggars to God, standing at the door of the Great Householder, yea, falling down on our
+        knees, and beseeching Him to give us somewhat and that somewhat is God Himself. What doth a
+        beggar ask of thee Bread. And what dost thou ask of God but that Christ Who saith: "I am the
+        Living Bread Which came down from heaven?" If ye will be forgiven, forgive ye. If ye will be
+        pardoned, pardon ye. If ye will receive, "give, and it shall be given unto you."
+    status: { la: verified, en: verified }

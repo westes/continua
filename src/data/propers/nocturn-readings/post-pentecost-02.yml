@@ -1,0 +1,159 @@
+# Nocturn 2-3 content for the 2nd Sunday after Pentecost (temporalId
+# post-pentecost-02), sourced from the reference engine's own Tempora/
+# Pent02-0.txt (Latin) / English/Tempora/Pent02-0.txt. Part of the
+# temporal-cycle nocturn-readings sweep (2026-08) that extended the single
+# post-pentecost-15 proof date to the rest of the post-Pentecost season —
+# see TODO.md and memory vu-temporal-nocturn-sweep-progress.
+#
+# Nocturn 2 (Lectio4-6): one continuous homily by St. John Chrysostom on
+# the Eucharist ("Hoc est corpus meum") - no source break, combined into
+# one reading. Responsory: Lectio4's own (Responsory4, which the source
+# itself cross-references to Pent01-2's Responsory1 - the same responsory
+# reused every week of this season for the Nocturn 2 slot; text transcribed
+# directly rather than left as a cross-reference).
+#
+# Nocturn 3 (Lectio7-9): Lectio7 is a bare "Et réliqua" Gospel incipit only
+# (Luke 14:16-24, the parable of the great supper) - per this project's
+# convention, not authored as its own Gospel reading. Lectio8-9 is one
+# continuous homily by Pope St. Gregory the Great, combined into one
+# reading, isGospel: false. Responsory: Lectio8's own (Responsory8, again
+# a cross-reference in the source to Pent01-0's own "Duo Séraphim" -
+# reused every week of the season for this slot).
+id: post-pentecost-02
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. John Chrysostom, Homily 60 to the People of Antioch"
+    text:
+      la: >-
+        Quóniam Verbum dicit: Hoc est corpus meum; et assentiámur et credámus et intellectuálibus ipsum
+        óculis intueámur. Nihil enim sensíbile nobis Christus trádidit; sed sensibílibus quidem rebus, at
+        ómnia intelligibília. Itidem et in baptísmate: per rem nempe sensíbilem, aquam, donum confértur;
+        intelligíbile vero quod perfícitur, generátio et renovátio. Si enim incorpóreus esses, nuda et
+        incorpórea tibi dedísset ipse dona; sed quóniam ánima córpori consérta est, in sensibílibus
+        intelligibília tibi præbet. Quot nunc dicunt: Vellem ipsíus formam aspícere, figúram, vestiménta,
+        calceaménta? Ecce eum vides, ipsum tangis, ipsum mandúcas. Et tu quidem vestiménta cupis vidére;
+        ipse vero tibi concédit non tantum vidére, verum et manducáre, et tángere, et intra te súmere.
+
+
+        Igitur accédat nemo cum náusea, nemo resolútus; omnes accénsi, omnes fervéntes et excitáti. Nam
+        si Judǽi stantes, et calceaménta in pédibus habéntes, et báculos mánibus gestántes, agnum cum
+        festinatióne comedébant; te multo magis opórtet esse solértem. Nam illi quidem in Palæstínam
+        erant profectúri, et proptérea viatórum figúram habébant: tu vero debes in cælum migráre.
+        Quaprópter in ómnibus opórtet te vigiláre; nec enim parva pœna propónitur indígne suméntibus.
+        Cógita quantum advérsus proditórem indignáris, et contra eos qui illum crucifixérunt: ítaque
+        consídera, ne tu quoque sis reus córporis et sánguinis Christi. Illi sanctíssimum corpus
+        occidérunt, tu vero pollúta súscipis ánima, post tot benefícia. Neque enim illi satis fuit,
+        hóminem fíeri, cólaphis cædi, et crucifígi; verum et semetípsum nobis commíscet; et non fide
+        tantum, verum et ipsa re, nos suum éfficit corpus.
+
+
+        Quo non opórtet ígitur esse puriórem, tali fruéntem sacrifício? quo solári rádio non
+        splendidiórem manum, carnem hanc dividéntem? os quod igni spiritáli replétur, linguam quæ
+        treméndo nimis sánguine rubéscit? Cógita quali sis insignítus honóre, quali mensa fruáris. Quod
+        Angeli vidéntes horréscunt, neque líbere audent intuéri propter emicántem inde splendórem; hoc
+        nos páscimur, huic nos unímur, et facti sumus unum Christi corpus, et una caro.
+      en: >-
+        His Word saith: "This is My Body." This we confess, and believe, and, with spiritual eyes, do
+        see. Christ hath not left unto us Himself in such form as that we can see, hear, touch, smell,
+        or taste Him and yet hath He left Himself unto us in things which we can see, hear, touch,
+        smell, and taste, and which all men may understand. Thus also is it in baptism by mean of water,
+        which men perceive outwardly, is given unto them a gift which they can grasp only inwardly, that
+        is, a new birth. If we had no bodies, then would these things be given us without any outward
+        and visible signs, but since we are here made up of souls and bodies, there are given unto our
+        souls gifts which they can grasp, in outward signs which our bodies may perceive. How many there
+        be which say I would that I could see His comely presence, His Face, His garments, even His
+        shoes Behold, thou dost see and touch Him, yea, thou dost feed upon Him. And wouldest thou
+        behold His raiment Lo, He hath given unto thee not only to behold it, but to feed upon it, and
+        handle it, and take it into thyself.
+
+
+        At this table of the Lord let none dare to draw near with squeamishness or carelessness. Let all
+        be fiery, all hot, all roused. To the Jews it was commanded touching the Paschal lamb (Exod. xii.
+        11): "And thus shall ye eat it with your loins girded, your shoes on your feet, and your staff
+        in your hand and ye shall eat it in haste it is the Lord's Passover." But thou needest to be more
+        watchful than they. They were just about to travel from Egypt to Palestine, and therefore they
+        bore the guise of travellers but the journey that lieth before thee is from earth to heaven. And
+        therefore it behoveth thee in all things to be on thy guard, for the punishment of him that
+        eateth or drinketh unworthily is no light one (1 Cor. xi. 27.) Bethink thee how thou art
+        indignant against him which betrayed, and them that crucified the Lord and look to it well that
+        thou also be not "guilty of the Body and Blood of the Lord." As for them, they slew His Most
+        Holy Body but thou, after all that He hath done for thee, dost thrust Him into thy polluted
+        soul. For His love, it was not enough to be made Man, to be buffeted, and to be crucified He
+        hath also mingled Himself with us, by making us His Body, and that not by faith only, but
+        verily and indeed.
+
+
+        Anything be purer than that man ought to be, who eateth of this great Sacrifice? Can sun-beam be
+        clearer than that hand ought to be which breaketh this Flesh? that mouth, which is filled with
+        that spiritual fire? that tongue, which is reddened by that Blood, awful exceedingly? That
+        whereon the Angels quail to look, neither dare to gaze steadfastly upon It, because of the
+        blinding glory that shineth therefrom, upon This we feed, with This we become one, and are made
+        one body of Christ, and one flesh.
+    responsory:
+      la: "Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.\nV. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?\nR. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël."
+      en: "Saul hath slain his thousands, and David his ten thousands. * Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel.\nV. Is not this David? Did they not sing one to another of him in dances, saying: Saul hath slain his thousands, and David his ten thousands?\nR. Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "Pope St. Gregory the Great, Homily 36 on the Gospels"
+    text:
+      la: >-
+        Hoc distáre, fratres caríssimi, inter delícias córporis et cordis solet: quod corporáles
+        delíciæ, cum non habéntur, grave in se desidérium accéndunt; cum vero ávide edúntur, comedéntem
+        prótinus in fastídium per satietátem vertunt. At contra, spiritáles delíciæ, cum non habéntur,
+        in fastídio sunt; cum vero habéntur, in desidério: tantóque a comedénte ámplius esuriúntur,
+        quanto et ab esuriénte ámplius comedúntur. In illis appetítus placet, experiéntia dísplicet; in
+        istis appetítus saturitátem, satúritas fastídium génerat: in istis autem appetítus saturitátem,
+        satúritas appetítum parit.
+
+
+        Augent enim spiritáles delíciæ desidérium in mente, dum sátiant: quia quanto magis eárum sapor
+        percípitur, eo ámplius cognóscitur quod avídius amétur; et idcírco non hábitæ amári non possunt,
+        quia eárum sapor ignorátur. Quis enim amáre váleat quod ignórat? Proínde Psalmísta nos ádmonet,
+        dicens: Gustáte et vidéte, quóniam suávis est Dóminus. Ac si apérte dicat: Suavitátem ejus non
+        cognóscitis, si hanc mínime gustátis; sed cibum vitæ ex paláto cordis tángite, ut probántes ejus
+        dulcédinem, amáre valeátis. Has autem homo delícias tunc amísit, cum in paradíso peccávit; extra
+        éxiit, cum os a cibo ætérnæ dulcédinis clausit.
+
+
+        Unde nos quoque, nati in hujus peregrinatiónis ærúmna, huc fastidiósi jam vénimus, nescímus quid
+        desideráre debeámus. Tantóque se ámplius fastídii nostri morbus exággerat, quanto se magis ab
+        esu illíus dulcédinis ánimus elóngat; et eo jam intérnas delícias non áppetit, quo eas comédere,
+        diu longéque desuévit. Fastídio ergo nostro tabéscimus, et longa inédiæ peste fatigámur. Et quia
+        gustáre intus nólumus parátam dulcédinem, amámus foris míseri famem nostram.
+      en: >-
+        Dearly beloved brethren, between the dainties of the body and the dainties of the mind there is
+        this difference, that the dainties of the body, when we lack them, raise up a great hunger after
+        them, and when we devour them, straightway our fulness worketh in us niceness. But about the
+        dainties of the mind we are nice while as yet we lack them, and when we fill ourselves with
+        them, then are we an-hungered after them, and the more, being an-hungered, we feed thereon, the
+        more are we an-hungered thereafter. In the bodily dainties, the hunger is keener than the
+        fullness, but in the spiritual the fulness is keener than the hunger. In the bodily, hunger
+        gendereth fullness, and fulness niceness in the spiritual, hunger indeed gendereth fullness, but
+        fullness gendereth hunger.
+
+
+        Spiritual dainties, in the very eating, do stir up the keenness of hunger in the mind which they
+        fill, for, the more we taste their sweetness, the better we know how well they deserve to be
+        loved and, if we taste them not, we cannot love them, for we know not how sweet they be. And who
+        can love that whereof he knoweth nothing? Hence saith the Psalmist "O taste and see that the
+        Lord is good" (Ps. xxxiii. 9), that is, as it were, "If ye taste not, ye shall not see His
+        goodness but let your heart once taste the bread of life, and then indeed, having tasted and
+        proved His sweetness, ye shall be able to love Him." But these were the dainties which man lost
+        when he sinned in Eden, and when he had shut his own mouth against the sweet bread whereof if
+        any man eat he shall live for ever, he forsook paradise.
+
+
+        And we that, from the first man, are born under the afflictions of this pilgrimage, are come
+        into the world smitten with niceness we know not what we ought to want, and the disease of our
+        niceness groweth the worse, as our soul draweth itself the more away from that bread of
+        sweetness. We are no longer an-hungered after inward dainties, since we have lost the use of
+        feeding on them. And so in our niceness we starve, and the sickness of long famishing maketh
+        prey of our health. We will not eat of that inward sweetness which is made ready for us, and
+        being enamoured only of things outward we sink into the wretchedness of loving starvation.
+    responsory:
+      la: "Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.\nV. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.\nR. Plena est omnis terra glória ejus."
+      en: "One Seraph cried unto another: * Holy, Holy, Holy is the Lord God of hosts; * The whole earth is full of His glory.\nV. There are Three That bear record in heaven: the Father, the Word, and the Holy Ghost, and these Three are One.\nR. The whole earth is full of His glory."
+    status: { la: verified, en: verified }

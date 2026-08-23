@@ -53,6 +53,12 @@ across every hour and content type in this app.
      Monastic 1617 track (`SanctiM/`) is now also done — see "SanctiM-track saints' Matins
      readings" below — all 12 months complete, 133 saints authored, the rest correctly left
      unauthored as Common-only/no-content cases.
+   - Matins: the **temporal-cycle** side of this same gap (as opposed to the sanctoral side
+     above) — the post-Pentecost season (`post-pentecost-01` through `-24`) is now fully
+     authored (see "Temporal-cycle nocturn-readings sweep" below); the rest of the year's
+     temporal ids (Advent, Christmastide, post-Epiphany, Septuagesima through Lent/Passiontide,
+     Eastertide) still have no Nocturn 2/3 content of their own — same shape of gap, not yet
+     started.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1367,11 +1373,86 @@ content, just via the new pool/distribute path) and `npm run build` both pass.
 - Full Sunday/feast-calendar patristic-reading authoring — now framed as
   "every saint where a reading can be sourced," not just the ~75 Duplex+
   saints that get their own Nocturn 3 slot (see the reading-pool redesign
-  above: content is no longer rank-gated, only nocturn *count* is).
+  above: content is no longer rank-gated, only nocturn *count* is). **Update
+  (2026-08): the post-Pentecost season side of this is now done — see
+  "Temporal-cycle nocturn-readings sweep" below.**
 - The per-book responsory pool beyond its one seeded book (`isa`).
 - The bulk Vulgate (Latin) + Douay-Rheims (English) import into
   `src/data/scripture/` — in scope for the project long-term, explicitly
   deferred past this pass per direct instruction.
+
+### Temporal-cycle nocturn-readings sweep — post-Pentecost season done (2026-08)
+
+The user noticed 2026-08-23's Matins (a plain Sunday, `post-pentecost-13`) was missing its
+Nocturn 2/3 patristic reading entirely. Root cause: `post-pentecost-15` (above) was the *only*
+temporal id with any `nocturn-readings` content authored — every other ordinary Sunday/week
+across the whole year had none, a gap distinct from (and larger than) the sanctoral-saint gaps
+tracked elsewhere in this file.
+
+Scope turned out bounded: `calendar/temporal-id.ts`'s `resolveTemporalId` maps every day in a
+liturgical week (Sunday and its ferias alike) to the same id, and `hours/matins.ts`'s
+`buildReadingPool` already keys nocturn-readings lookup by that shared id — so **one file per
+temporal id covers its entire week**, not one file per date. Authored all 23 remaining
+`post-pentecost-NN` ids (01-14, 16-24; `-15` already existed) from the reference engine's own
+`Tempora/PentNN-0.txt` (Latin) / `English/Tempora/PentNN-0.txt` files:
+
+- **`post-pentecost-01` (Trinity Sunday, Duplex I classis)**: has its own full 9-lesson proper
+  office, unlike every other Sunday in the season — Nocturn 2 (St. Fulgentius on the Trinity)
+  plus *two* separate Nocturn 3 readings (St. Gregory Nazianzen's homily on Matt 28, and a
+  distinct "Commemoratio Dominicæ" — St. Augustine's homily for the displaced First Sunday
+  after Pentecost's own Gospel, Luke 6:36-42, which the Duplex I classis feast bumps into a
+  commemoration rather than dropping — consistent with this project's generous-commemorations
+  principle).
+- **`post-pentecost-02` through `-11`**: each has real, unique proper content for *both*
+  Nocturn 2 (a patristic/theological excerpt, one continuous author per week — St. John
+  Chrysostom, St. Augustine, Pius XI, St. Ambrose, St. Jerome, St. Gregory the Great, etc.) and
+  Nocturn 3 (that week's own Gospel pericope + homily). `-11` is the last week in the source
+  with its own proper Nocturn 2; every week after it has Nocturn 3 only.
+- **`post-pentecost-12` through `-14`, `-16` through `-24`**: Nocturn 3 only (no proper
+  Nocturn 2 in the source from here on — the historical Nocturn 1/2 for these weeks is a
+  continuous Old Testament book reading with commentary that isn't written out per-Sunday in
+  the static files the way the Gospel+homily slot is; sourcing that properly would need
+  live-CGI queries per date, out of scope for this pass, left as a known gap rather than
+  guessed at). Every week's Lectio7 in the source is a bare "Et réliqua" Gospel incipit, not a
+  full pericope — per this project's standing convention, not authored as its own Gospel
+  reading; only the homily (Lectio7's own opening paragraph plus Lectio8-9, one continuous
+  work) is authored, `isGospel: false`.
+- **Responsory reuse discovered and followed**: the source itself cross-references the *same*
+  two responsories for the Nocturn 2 and Nocturn 3 homily slots in nearly every week
+  (`@Tempora/Pent01-2:ResponsoryN` for Nocturn 2, `@Tempora/Pent01-0:Responsory8` — "Duo
+  Séraphim" — for the Nocturn 3 homily), rather than a fresh responsory each week. Resolved
+  those cross-references once (from `Pent01-2`/`Pent01-3`/`Pent01-0`) and reused the resulting
+  text verbatim across every file that points at them, rather than re-deriving per week.
+- **A genuine authoring bug found and fixed mid-pass**: three of the first Nocturn-3-only
+  files (`post-pentecost-13`, `-14`, `-16`) initially omitted the homily's own opening
+  paragraph — it lives inside the source's `[Lectio7]` section (right after the bare Gospel
+  incipit), not `[Lectio8]`, and an early extraction pass started from Lectio8 by mistake.
+  Caught by re-diffing each file's opening sentence against the source before moving on;
+  fixed by prepending the missing paragraph (Latin + English) to all three. Worth remembering
+  for any future pass over this same source shape: always check that a Nocturn 3 homily
+  reading's first sentence matches Lectio7's own prose, not Lectio8's.
+
+Live-verified via `npx tsc --noEmit`, `npm test` (452 tests, up from 447 — 5 new cases in
+`tests/hours/matins.test.ts`'s new "post-Pentecost season nocturn-readings sweep" describe
+block, including a spot-check of 2026-08-23 itself), and `npm run build`. No fixture
+collisions from this pass (pure content addition under already-existing ids, no calendar
+changes).
+
+**Not done in this pass — explicitly deferred, not silently dropped:**
+- The rest of the temporal cycle: Advent (`advent-1..4`), Christmastide
+  (`christmas-octave-sunday`), post-Epiphany (`post-epiphany-1..6`), Septuagesima through Lent
+  (`septuagesima`, `sexagesima`, `quinquagesima`, `lent-1..4`), Passiontide/Holy Week
+  (`passion-sunday`, `palm-sunday`), and Eastertide (`easter-sunday`, `easter-octave`,
+  `easter-3..6`, `sunday-after-ascension`, `pentecost-sunday`) — same shape of gap, same
+  pipeline, just not yet worked through season by season.
+- Sourcing real Nocturn 2 content for `post-pentecost-12` onward (the continuous
+  Old-Testament-book-and-commentary cycle) — would need live-CGI verification per date, not
+  just static-file reading, per the `vu-reference-engine-file-layout` memory's own note on
+  when static files can't answer a question.
+- Ferial-specific (non-Sunday) content within a post-Pentecost week — not applicable here,
+  since the whole week already shares one temporal id/file by design (see above); flagged only
+  so a future reader doesn't go looking for `post-pentecost-13-tuesday.yml`-style files that
+  were never meant to exist.
 
 ### Pre-1955-but-post-1617 saints' Matins readings — done (2026-08)
 

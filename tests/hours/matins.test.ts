@@ -407,3 +407,41 @@ describe('resolveOrdo("matins", ...) Assumption-octave hymn fallback (2026-08-22
     expect(hymnLatin(FERIAL_DATE)).toContain('Somno');
   });
 });
+
+// Temporal-cycle nocturn-readings sweep (2026-08): src/data/propers/
+// nocturn-readings/post-pentecost-{01..24}.yml, sourced from the reference
+// engine's Tempora files. post-pentecost-15 was the original mechanism
+// proof date (see above); this sweep authored the other 23 post-Pentecost
+// ids. Every id is keyed by temporalId, which resolveTemporalId maps
+// identically for every day in that liturgical week (Sunday and its
+// ferias), so one file's content is exercised regardless of which weekday
+// is checked. post-pentecost-13 is the date that originally surfaced the
+// gap (2026-08-23, a real Sunday). See TODO.md and memory
+// vu-temporal-nocturn-sweep-progress for the full sweep record.
+describe('resolveOrdo("matins", ...) post-Pentecost season nocturn-readings sweep (2026-08)', () => {
+  function lessonStatuses(date: string) {
+    const ordo = resolveOrdo('matins', date);
+    return ordo.parts
+      .filter((p) => p.kind === 'lesson')
+      .map((p) => (p as { text: { status: Record<string, string> } }).text.status);
+  }
+
+  it.each([
+    ['2026-08-23', 'post-pentecost-13 (today, the reported gap)'],
+    ['2027-05-23', 'post-pentecost-01, Trinity Sunday'],
+    ['2026-06-14', 'post-pentecost-02'],
+    ['2026-11-08', 'post-pentecost-24 (season tail)'],
+  ])('%s (%s) resolves at least one non-missing lesson', (date) => {
+    const statuses = lessonStatuses(date);
+    expect(statuses.length).toBeGreaterThan(0);
+    expect(statuses.some((s) => s.la !== 'missing' && s.en !== 'missing')).toBe(true);
+  });
+
+  it('every post-pentecost-NN id (01-24) has an authored nocturn-readings file', async () => {
+    const { getNocturnReadings } = await import('../../src/propers/nocturn-readings');
+    for (let n = 1; n <= 24; n += 1) {
+      const id = `post-pentecost-${String(n).padStart(2, '0')}`;
+      expect(getNocturnReadings(id).length, id).toBeGreaterThan(0);
+    }
+  });
+});

@@ -1,0 +1,72 @@
+# Nocturn 3, 24th (and final, when reached) Sunday after Pentecost. Sourced
+# from Tempora/Pent24-0.txt. See post-pentecost-02.yml/post-pentecost-12.yml
+# for sweep method note (no proper Nocturn 2 in the source). Lectio7 bare
+# incipit (Matt 24:15-35, the abomination of desolation) skipped;
+# Lectio7-9's homily by St. Jerome is one continuous work, combined. Per
+# temporal-id.ts's resolvePostPentecost23Plus, this id is used both for the
+# literal 24th week (when the season runs that long) and as the fixed final
+# Sunday-of-the-year formulary in overflow years - either way, this is the
+# content that slot resolves to.
+id: post-pentecost-24
+readings:
+  - nocturn: 3
+    isGospel: false
+    source: "St. Jerome, Priest, Book 4, Commentary on Matthew 24"
+    text:
+      la: >-
+        Quando ad intellegéntiam provocámur, mýsticum monstrátur esse quod dictum est. Légimus autem in
+        Daniéle hoc modo: Et in dimídio hebdómadis auferétur sacrifícium et libámina; et in templo
+        abominátio desolatiónum erit, usque ad consummatiónem témporis, et consummátio dábitur super
+        solitúdinem. De hoc et Apóstolus lóquitur, quod homo iniquitátis, et adversárius elevándus sit
+        contra omne quod dícitur Deus et cólitur; ita ut áudeat stare in templo Dei, et osténdere quod
+        ipse sit Deus: cujus advéntus secúndum operatiónem sátanæ déstruat eos, et ad Dei solitúdinem
+        rédigat, qui se suscéperint.
+
+
+        Potest autem simpliciter aut de Antichristo accipi, aut de imagine Cæsaris, quam Pilátus pósuit
+        in templo, aut de Hadriáni equestri státua, quæ in ipso sancto sanctórum loco usque in præséntem
+        diem stetit. Abominátio quoque secúndum veterem Scripturam idolum nuncupátur; et idcirco additur,
+        desolatiónis, quod in desolato templo atque destructo idolum positum sit.
+
+
+        Abominátio desolatiónis intelligi potest et omne dogma perversum: quod cum vidérimus stare in
+        loco sancto, hoc est in Ecclésia, et se osténdere Deum, debémus fugere de Judæa ad montes, hoc
+        est, dimissa occidénte littera, et Judáica pravitáte, appropinquare móntibus ætérnis, de quibus
+        illúminat mirabíliter Deus; et esse in tecto et in dómate, quo non possint igníta diaboli jácula
+        perveníre, nec descéndere et tóllere aliquid de domo conversatiónis prístinæ, nec quærere quæ
+        retrórsum sunt, sed magis sérere in agro spiritualium Scripturárum, ut fructus capiámus ex eo;
+        nec tóllere álteram túnicam, quam Apóstoli habére prohibentur.
+      en: >-
+        This injunction to whoso readeth, to understand, showeth that there is here something mysterious.
+        In Daniel we read as followeth: "And in the midst of the week the sacrifice and the oblations
+        shall be taken away and in the temple there shall be the abomination of desolation, even until
+        the consummation of the time and a consummation shall be given to the desolation" (ix. 27). It is
+        of this same thing that the Apostle speaketh, when he saith that a man of iniquity, even an
+        adversary, shall be exalted against whatsoever is called God, or is worshipped so that he shall
+        even dare to stand in the temple of God, and to show himself as God whose coming shall, according
+        to the working of Satan, destroy and banish away from God all who shall receive him.
+
+
+        This prophecy may be understood either (first) simply of Antichrist, (secondly) of the statue of
+        Caesar, which Pilate set up in the Temple, or (thirdly) of the statue of Hadrian on horse-back,
+        which hath stood, even until our own day, upon the site of the Holy of Holies. In the Scriptures
+        of the Old Testament "abomination" is a word very often used for an idol, and the farther title
+        "of desolation" is added to identify an idol erected upon the site of the desolate and ruined
+        temple.
+
+
+        But we may also understand by the abomination of desolation, any bad doctrine and when we see
+        such a thing get a standing in the Holy Place, that is, in the Church, and showing itself that it
+        is God, that is, pretending that it is His revealed truth, then will be the time when it will be
+        our duty to flee from Judea into the mountains, that is to say, to leave the letter, which
+        passeth away, and all guise of Jewish superstition, and to hie us unto the everlasting hills,
+        from whence God doth right wondrously cause His light to shine forth (Ps. lxxv. 5). Then will it
+        be our duty to find ourselves under a roof and in an house, wherethrough the fiery darts of the
+        wicked one can never pierce to smite us, and not to come down to take anything out of the house
+        of our old conversation, or to have regard unto those things which are behind but rather to sow
+        in the field of the spiritual Scriptures, that we may reap thereof a bountiful harvest neither to
+        have two coats, that thing forbidden to Apostles (Matth. x. 10).
+    responsory:
+      la: "Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.\nV. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.\nR. Plena est omnis terra glória ejus."
+      en: "One Seraph cried unto another: * Holy, Holy, Holy is the Lord God of hosts; * The whole earth is full of His glory.\nV. There are Three That bear record in heaven: the Father, the Word, and the Holy Ghost, and these Three are One.\nR. The whole earth is full of His glory."
+    status: { la: verified, en: verified }
