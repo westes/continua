@@ -40,21 +40,8 @@ across every hour and content type in this app.
      and where in the Matins ordo it renders (after the Gospel-reading-again-in-full that
      currently closes Nocturn 3, before/instead of the existing Benedicamus/Fidelium close —
      see memory `vu-matins-closing`). Not started.
-   - Matins nocturn-readings responsory formatting is inconsistent with octave-readings':
-     `data/propers/octave-readings/*.yml` responsories are written with explicit `℟.`/`℣.`
-     marks at the start of each line (e.g. `all-saints-octave-day-6.yml`), but every
-     `data/propers/nocturn-readings/*.yml` responsory (both the original two proof dates and
-     everything from the 2026-08-23 temporal-cycle/month-week sweeps) starts straight into the
-     Latin/English text with no leading marker at all — confirmed by grepping every responsory
-     `la:` line in that directory, not an isolated miss on one file. User flagged this
-     (2026-08-23) via "the responsory after the Augustine reading needs to start with the R.;
-     that R. is missing" — real, but the fix is either (a) prepend `℟.`/`R.` (and `℣.`/`V.`)
-     to every existing nocturn-readings responsory's text, matching octave-readings' convention
-     exactly, or (b) inject the marker at render time in `ui/hour-view.ts`'s lesson-responsory
-     rendering instead of in content, which would fix every file (old and new) in one place but
-     needs the responsory text's internal `\nV. ...\nR. ...` structure parsed rather than
-     treated as opaque text. Needs a decision before either bulk-editing ~30+ content files or
-     touching the renderer — not started.
+   - ~~Matins nocturn-readings responsory formatting~~ — done (2026-08-23), see "Nocturn-
+     readings responsory marker fix" below.
    - Lauds/Vespers ferial Preces (`data/propers/common/lauds-preces-feriales.yml`,
      `vespers-preces-feriales.yml`) each embed a full psalm inline within the Preces text
      itself — Psalm 129 (De profundis) at Lauds, Psalm 50 (Miserere) at Vespers, per the
@@ -1550,6 +1537,23 @@ bucket, id order (and each file's own reading order) is preserved, matching this
 priority rule. `npm test` green at 460 tests — no fixture changes needed, since every
 previously-authored id's own file already had its readings correctly ordered internally; only
 the cross-source case this pass introduced was actually broken.
+
+### Nocturn-readings responsory marker fix — done (2026-08-23)
+
+Every `data/propers/nocturn-readings/*.yml` responsory with a `responsory:` field (53 files:
+all 24 `post-pentecost-*`, all 20 `month-week-*`, the 6 Ember-day files, plus `st-monica`,
+`st-marcellus-i`, `apparition-of-st-michael`) started straight into the Latin/English text with
+no leading marker, unlike `data/propers/octave-readings/*.yml`'s own convention of an explicit
+`℟.`/`℣.` at the start of each line. User flagged this via the Augustine reading on
+2026-08-23's date and explicitly chose to fix it in content, not by injecting a marker at
+render time. Given each file already uses plain `V.`/`R.` (not the `℣.`/`℟.` glyphs) for the
+versicle and the mid-responsory repeat, `R. ` was prepended to just the opening `la`/`en` text
+of each responsory to match that same plain-letter convention already used internally by these
+same files — not a switch to octave-readings' Unicode-glyph convention, which remains a
+separate, still-open reconciliation between the two stores if it's ever wanted. Mechanical,
+scripted edit (53 files, idempotent — skips any responsory already starting `R. `), verified no
+unexpected format by having the script flag anything it couldn't parse (none found). `npm test`
+(460), `tsc`, and `npm run build` all still green — pure content edit, no code/mechanism change.
 
 ### Pre-1955-but-post-1617 saints' Matins readings — done (2026-08)
 
