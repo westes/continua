@@ -491,6 +491,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     parts.push(...sundayCanticleNocturn(sundayAntiphons.nocturn3, day));
     parts.push(...(nocturn3Readings ?? []));
     parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
+    parts.push({ kind: 'versicle', text: resolveCommon('te-decet-laus') });
   } else if (threeNocturns) {
     // A Duplex+ weekday feast — genuinely different psalmody from a real
     // Sunday's, not the same content reused. getMatinsPsalmodyOverride
@@ -523,6 +524,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
       parts.push(...(nocturn3Readings ?? []));
     }
     parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
+    parts.push({ kind: 'versicle', text: resolveCommon('te-decet-laus') });
   } else {
     parts.push(...ferialAntiphonedNocturn(day));
     parts.push(...(nocturn1Readings ?? []));

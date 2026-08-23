@@ -41,6 +41,9 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
     expect(psalms).toEqual([3, 94, 43, 44, 47, 48, 49, 54, 55, 58, 59]);
     expect(ordo.parts.some((p) => p.kind === 'te-deum')).toBe(false);
     expect(ordo.parts.some((p) => p.kind === 'canticle')).toBe(false);
+    // "Te decet laus" is sung only right after the Te Deum on a 3-nocturn
+    // day (2026-08) — absent here along with the Te Deum itself.
+    expect(ordo.parts.some((p) => p.kind === 'versicle' && p.text.text.la?.includes('Te decet laus'))).toBe(false);
   });
 
   it("gives every nocturn psalm its own antiphon and includes Tuesday's own versicle (data/hours/matins-ferial-antiphons.yml)", () => {
@@ -125,12 +128,15 @@ describe('resolveOrdo("matins", ...) Sunday (3-nocturn) branch', () => {
 
   it('renders each nocturn versicle with both its V. and R. lines (real bug: sundayPsalmNocturn/sundayCanticleNocturn used to drop the R. line entirely)', () => {
     const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
-    // Opening Deus-in-adjutorium versicle + one per nocturn (1, 2, 3).
-    expect(versicles).toHaveLength(4);
+    // Opening Deus-in-adjutorium versicle + one per nocturn (1, 2, 3) +
+    // the closing "Te decet laus" versicle after the Te Deum (2026-08).
+    expect(versicles).toHaveLength(5);
     const [, nocturn1, nocturn2, nocturn3] = versicles;
     expect(nocturn1?.text.text.la).toBe('V. Memor fui nocte nóminis tui Dómine.\nR. Et custodívi legem tuam.');
     expect(nocturn2?.text.text.la).toBe('V. Média nocte surgébam ad confiténdum tibi.\nR. Super justítia justificatiónis tuæ.');
     expect(nocturn3?.text.text.la).toBe('V. Exaltáre Dómine in virtúte tua.\nR. Cantábimus et psallémus virtútes tuas.');
+    // The 5th versicle is "Te decet laus", right after the Te Deum (2026-08).
+    expect(versicles[4]?.text.text.la).toContain('Te decet laus');
   });
 
   it("resolves the user's own bible-plan reading (Tobit/Sirach) for Nocturn 1", () => {

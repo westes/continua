@@ -229,11 +229,15 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(collectIndex).toBeGreaterThan(litanyIndex);
   });
 
-  it('uses the fuller Tridentine 1906/1910 ferial Preces (with Psalm 50) on a plain ferial day, not the short Sunday/feast litany', () => {
+  it('uses the fuller Tridentine 1906/1910 ferial Preces on a plain ferial day, not the short Sunday/feast litany', () => {
+    // Psalm 50 (Miserere), present in the live render, is deliberately
+    // dropped from this app's own text (2026-08) — 'Ego dixi' is the next
+    // versicle after where the psalm used to sit, still unique to the
+    // fuller ferial form vs. the short litany.
     const ordo = resolveOrdo('vespers', '2026-06-16');
     const preces = ordo.parts.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
-    expect(preces?.kind === 'preces' ? preces.text.text.la : undefined).toContain('Miserére mei, Deus');
-    expect(preces?.kind === 'preces' ? preces.text.text.en : undefined).toContain('Have mercy on me, O God');
+    expect(preces?.kind === 'preces' ? preces.text.text.la : undefined).toContain('Ego dixi: Dómine, miserére mei');
+    expect(preces?.kind === 'preces' ? preces.text.text.en : undefined).toContain('I said: Lord, be merciful');
   });
 
   it("uses the short Sunday/feast litany, without Psalm 50, on a Sunday and on a real saint's own winning day", () => {

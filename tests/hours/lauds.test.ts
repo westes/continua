@@ -166,11 +166,15 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(collectIndex).toBeGreaterThan(litanyIndex);
   });
 
-  it('uses the fuller Tridentine 1906/1910 ferial Preces (with Psalm 129) on a plain ferial day, not the short Sunday/feast litany', () => {
+  it('uses the fuller Tridentine 1906/1910 ferial Preces on a plain ferial day, not the short Sunday/feast litany', () => {
+    // Psalm 129 (De profundis), present in the live render, is deliberately
+    // dropped from this app's own text (2026-08) — 'Ego dixi' is the next
+    // versicle after where the psalm used to sit, still unique to the
+    // fuller ferial form vs. the short litany.
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const preces = ordo.parts.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
-    expect(preces?.kind === 'preces' ? preces.text.text.la : undefined).toContain('De profúndis clamávi');
-    expect(preces?.kind === 'preces' ? preces.text.text.en : undefined).toContain('Out of the depths');
+    expect(preces?.kind === 'preces' ? preces.text.text.la : undefined).toContain('Ego dixi: Dómine, miserére mei');
+    expect(preces?.kind === 'preces' ? preces.text.text.en : undefined).toContain('I said: Lord, be merciful');
   });
 
   it('uses the short Sunday/feast litany, without Psalm 129, on a Sunday and on a real saint\'s own winning day', () => {
@@ -186,7 +190,7 @@ describe('resolveOrdo("lauds", ...)', () => {
   it('still uses the fuller ferial Preces on a Vigil, even though a Vigil is a sanctoral winner (unlike isSundayOrFeast elsewhere)', () => {
     const ordo = resolveOrdo('lauds', '2028-08-09'); // Vigil of St. Lawrence wins outright this year (not a Sunday)
     const preces = ordo.parts.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
-    expect(preces?.kind === 'preces' ? preces.text.text.la : undefined).toContain('Psalmus 129');
+    expect(preces?.kind === 'preces' ? preces.text.text.la : undefined).toContain('Ego dixi: Dómine, miserére mei');
   });
 
   it('resolves just the winners own collect on a plain day with nothing commemorated', () => {

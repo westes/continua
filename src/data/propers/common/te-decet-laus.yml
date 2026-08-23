@@ -1,0 +1,17 @@
+# Sourced from Psalterium/Common/Prayers.txt's [Te decet] block. Rule of
+# Benedict ch. 11: after the abbot reads the closing Gospel following the
+# Te Deum, all reply Amen, then the abbot begins this versicle, closing
+# Vigils — sung only on a 3-nocturn day (Sunday or Duplex+), right after
+# the Te Deum, same gating as `te-deum` itself. This app doesn't model the
+# Gospel-read-again-in-full step that precedes it live (a known
+# simplification, see data/propers/nocturn-readings/post-pentecost-15.yml's
+# own header comment) — this versicle is added directly after the Te Deum.
+id: te-decet-laus
+text:
+  la: |
+    V. Te decet laus, te decet hymnus: tibi glória Deo Patri, et Fílio, cum Spíritu Sancto in sǽcula sæculórum. Amen.
+  en: |
+    V. Thou art worthy of praise, thou art worthy of hymns, to Thee be glory: to God the Father and the Son with the Holy Ghost, world without end. Amen.
+status:
+  la: verified
+  en: verified

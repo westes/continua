@@ -32,25 +32,27 @@ across every hour and content type in this app.
      needs bilingual voice selection (La/En) worked out, and quality for Latin pronunciation
      is an open question. Open, not started — needs its own design pass before content/UI work
      begins.
-   - Matins: "Te decet laus" (the short versicle sung right after the closing Gospel+"Amen",
-     opening Lauds — Rule of Benedict ch. 13, `data/regula/02-13.yml`) isn't modeled or
-     displayed anywhere. `post-pentecost-15.yml`'s own header comment already flagged this as
-     "a known simplification"; the user asked (2026-08-23) for it to actually be shown. Needs a
-     text/part decided (own `ResolvedPart` kind vs. reusing an existing one like `versicle`)
-     and where in the Matins ordo it renders (after the Gospel-reading-again-in-full that
-     currently closes Nocturn 3, before/instead of the existing Benedicamus/Fidelium close —
-     see memory `vu-matins-closing`). Not started.
+   - ~~Matins: "Te decet laus"~~ — done (2026-08-23). Added as a new common text
+     (`data/propers/common/te-decet-laus.yml`, sourced from `Psalterium/Common/Prayers.txt`'s
+     `[Te decet]` block) rendered as a `versicle` part immediately after the Te Deum on every
+     3-nocturn day (Sunday or Duplex+), in both `hours/matins.ts` branches that push a Te Deum.
+     Not modeled: the historical Gospel-read-again-in-full step that live-precedes it (a
+     pre-existing, separate known simplification — see
+     `data/propers/nocturn-readings/post-pentecost-15.yml`'s own header comment). Absent on
+     ferial (1-nocturn) days, same gating as the Te Deum itself. `tests/hours/matins.test.ts`
+     covers both the Sunday branch's presence/content and the ferial branch's absence.
    - ~~Matins nocturn-readings responsory formatting~~ — done (2026-08-23), see "Nocturn-
      readings responsory marker fix" below.
-   - Lauds/Vespers ferial Preces (`data/propers/common/lauds-preces-feriales.yml`,
-     `vespers-preces-feriales.yml`) each embed a full psalm inline within the Preces text
-     itself — Psalm 129 (De profundis) at Lauds, Psalm 50 (Miserere) at Vespers, per the
-     reference engine's own `[Preces feriales Vespera] @:Preces feriales Laudes:s/129/50/`
-     substitution (see each file's own header comment). User asked (2026-08-23) to remove
-     both psalms from the Preces. Not started — needs deciding whether to just delete the
-     psalm block (and its own trailing Gloria Patri line) from each file's `text.la`/`text.en`
-     wholesale, or whether the surrounding V/R litany needs any adjustment once the psalm's
-     gone.
+   - ~~Lauds/Vespers ferial Preces psalms~~ — done (2026-08-23). Psalm 129 (De profundis) and
+     its own trailing Gloria Patri deleted wholesale from
+     `data/propers/common/lauds-preces-feriales.yml`'s `text.la`/`text.en`; Psalm 50 (Miserere)
+     and its own Gloria Patri likewise from `vespers-preces-feriales.yml`. Surrounding V/R
+     litany needed no adjustment — the psalm block sat between two already-independent V/R
+     sequences. Both files' header comments updated to flag the drop as deliberate, not a
+     transcription gap. `tests/hours/lauds.test.ts` and `vespers.test.ts` updated to
+     distinguish the fuller ferial Preces from the short Sunday/feast litany via a versicle
+     that survives the psalm's removal ("Ego dixi: Dómine, miserére mei") instead of the now-
+     absent psalm text.
 
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
