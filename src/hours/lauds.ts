@@ -8,7 +8,7 @@ import { getCanticle } from './lauds-canticles';
 import { getLaudsPsalmodyOverride, type LaudsPsalmodyOverride } from './lauds-psalmody-overrides';
 import { getOpeningVersicleId } from './opening-versicle';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
-import { isDoubleOrHigher } from './antiphon';
+import { isDoubleOrHigher, applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
   getDayCollects,
@@ -81,12 +81,16 @@ function capitulumId(weekday: Weekday): string {
 }
 
 function psalmParts(numbers: number[], antiphon: BilingualText, opening: ResolvedText): ResolvedPart[] {
-  const parts: ResolvedPart[] = numbers.map((number, i) => ({
-    kind: 'psalm' as const,
-    psalmNumber: number,
-    antiphon: i === 0 ? opening : undefined,
-    verses: getPsalmVerses(number).map((v) => ({ n: v.n, text: v.text, status: v.status })),
-  }));
+  const parts: ResolvedPart[] = numbers.map((number, i) => {
+    const rawVerses = getPsalmVerses(number).map((v) => ({ n: v.n, text: v.text, status: v.status }));
+    const { verses, antiphon: psalmAntiphon } = applyFlexaMark(rawVerses, i === 0 ? opening : undefined);
+    return {
+      kind: 'psalm' as const,
+      psalmNumber: number,
+      antiphon: psalmAntiphon,
+      verses,
+    };
+  });
   parts.push({ kind: 'antiphon', text: splitNamedAntiphon(verifiedText(antiphon)).full });
   return parts;
 }

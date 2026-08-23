@@ -5,7 +5,7 @@ import { getDayLabel } from '../calendar/day-label';
 import { getPsalmsFor } from '../psalter/distribution';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
-import { isDoubleOrHigher } from './antiphon';
+import { isDoubleOrHigher, applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
   getDayCollect,
@@ -40,12 +40,16 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       const psalmRefs = getPsalmsFor('none', day.weekday);
       const { incipit, full } = splitNamedAntiphon(resolveMinorHourAntiphon('none', day, antiphons[day.weekday]));
       const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
-      return psalmRefs.map((ref, i) => ({
-        kind: 'psalm' as const,
-        psalmNumber: ref.number,
-        antiphon: i === 0 ? opening : undefined,
-        verses: getPsalmVerses(ref.number, ref.verses).map((v) => ({ n: v.n, text: v.text, status: v.status })),
-      }));
+      return psalmRefs.map((ref, i) => {
+        const rawVerses = getPsalmVerses(ref.number, ref.verses).map((v) => ({ n: v.n, text: v.text, status: v.status }));
+        const { verses, antiphon } = applyFlexaMark(rawVerses, i === 0 ? opening : undefined);
+        return {
+          kind: 'psalm' as const,
+          psalmNumber: ref.number,
+          antiphon,
+          verses,
+        };
+      });
     }
     // Not used by None.
     case 'prayer':

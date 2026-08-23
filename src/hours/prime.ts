@@ -9,7 +9,7 @@ import { getRegulaReadingFor } from '../regula';
 import { getChapterResponsoryId } from './chapter-responsory';
 import { getHymnDoxologyId } from './hymn-doxology';
 import { getOpeningVersicleId } from './opening-versicle';
-import { isDoubleOrHigher } from './antiphon';
+import { isDoubleOrHigher, applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
   appendDoxology,
@@ -70,12 +70,16 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
         // — see hours/antiphon.ts. The full repeat comes later, after the
         // Creed (see 'closing-antiphon'), not tacked onto the last psalm.
         const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
-        return psalmRefs.map((ref, i) => ({
-          kind: 'psalm' as const,
-          psalmNumber: ref.number,
-          antiphon: i === 0 ? opening : undefined,
-          verses: getPsalmVerses(ref.number, ref.verses).map((v) => ({ n: v.n, text: v.text, status: v.status })),
-        }));
+        return psalmRefs.map((ref, i) => {
+          const rawVerses = getPsalmVerses(ref.number, ref.verses).map((v) => ({ n: v.n, text: v.text, status: v.status }));
+          const { verses, antiphon } = applyFlexaMark(rawVerses, i === 0 ? opening : undefined);
+          return {
+            kind: 'psalm' as const,
+            psalmNumber: ref.number,
+            antiphon,
+            verses,
+          };
+        });
       }
     case 'psalm':
       return [

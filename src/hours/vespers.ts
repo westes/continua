@@ -4,7 +4,7 @@ import { resolveEveningDay } from '../calendar/vespers';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
-import { isDoubleOrHigher } from './antiphon';
+import { isDoubleOrHigher, applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
   getDayCollects,
@@ -50,12 +50,16 @@ function psalmParts(group: VespersGroup, day: LiturgicalDay): ResolvedPart[] {
   const { incipit, full } = splitNamedAntiphon(verifiedText(group.antiphon));
   const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
   const refs = group.psalms.map(normalizePsalmRef);
-  const parts: ResolvedPart[] = refs.map((ref, i) => ({
-    kind: 'psalm' as const,
-    psalmNumber: ref.number,
-    antiphon: i === 0 ? opening : undefined,
-    verses: getPsalmVerses(ref.number, ref.verses).map((v) => ({ n: v.n, text: v.text, status: v.status })),
-  }));
+  const parts: ResolvedPart[] = refs.map((ref, i) => {
+    const rawVerses = getPsalmVerses(ref.number, ref.verses).map((v) => ({ n: v.n, text: v.text, status: v.status }));
+    const { verses, antiphon } = applyFlexaMark(rawVerses, i === 0 ? opening : undefined);
+    return {
+      kind: 'psalm' as const,
+      psalmNumber: ref.number,
+      antiphon,
+      verses,
+    };
+  });
   parts.push({ kind: 'antiphon', text: full });
   return parts;
 }

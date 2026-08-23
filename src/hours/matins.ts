@@ -69,7 +69,7 @@ import { getPsalmVerses } from '../psalter';
 import { getPsalmsFor, type PsalmRef } from '../psalter/distribution';
 import { getScriptureVerses } from '../scripture';
 import { getOpeningVersicleId } from './opening-versicle';
-import { isDoubleOrHigher } from './antiphon';
+import { isDoubleOrHigher, applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
   getDayCollect,
@@ -150,6 +150,15 @@ function plainPsalm(number: number): PsalmPart {
   };
 }
 
+/** `plainPsalm` plus the given antiphon, with the flexa mark (see
+ * hours/antiphon.ts's `applyFlexaMark`) applied to the first verse against
+ * that antiphon — a no-op when `antiphon` is undefined. */
+function psalmPartWithAntiphon(number: number, rawAntiphon: ResolvedText | undefined): PsalmPart {
+  const base = plainPsalm(number);
+  const { verses, antiphon } = applyFlexaMark(base.verses, rawAntiphon);
+  return { ...base, antiphon, verses };
+}
+
 function psalmRefParts(refs: PsalmRef[]): ResolvedPart[] {
   return refs.map((ref) => ({
     kind: 'psalm' as const,
@@ -167,7 +176,7 @@ function invitatoryParts(day: LiturgicalDay): ResolvedPart[] {
   const { incipit, full } = splitNamedAntiphon(resolveCommon('matins-invitatory-antiphon'));
   const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
   return [
-    { ...plainPsalm(94), antiphon: opening },
+    psalmPartWithAntiphon(94, opening),
     { kind: 'antiphon', text: full },
   ];
 }
@@ -181,7 +190,7 @@ function sundayPsalmNocturn(group: SundayNocturn, day: LiturgicalDay): ResolvedP
     const { incipit, full } = splitNamedAntiphon(verifiedText(g.antiphon));
     const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
     g.psalms.forEach((n, i) => {
-      parts.push({ ...plainPsalm(n), antiphon: i === 0 ? opening : undefined });
+      parts.push(psalmPartWithAntiphon(n, i === 0 ? opening : undefined));
     });
     parts.push({ kind: 'antiphon', text: full });
   }
@@ -282,11 +291,13 @@ function ferialAntiphonedNocturn(day: LiturgicalDay): ResolvedPart[] {
     const { incipit, full } = splitNamedAntiphon(verifiedText(group.antiphon));
     const opening = isDouble ? full : incipit;
     group.psalms.forEach((ref, i) => {
+      const rawVerses = getPsalmVerses(ref.number, ref.verses).map((v): ResolvedVerse => ({ n: v.n, text: v.text, status: v.status }));
+      const { verses, antiphon } = applyFlexaMark(rawVerses, i === 0 ? opening : undefined);
       parts.push({
         kind: 'psalm',
         psalmNumber: ref.number,
-        verses: getPsalmVerses(ref.number, ref.verses).map((v): ResolvedVerse => ({ n: v.n, text: v.text, status: v.status })),
-        antiphon: i === 0 ? opening : undefined,
+        verses,
+        antiphon,
       });
     });
     parts.push({ kind: 'antiphon', text: full });
