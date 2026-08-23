@@ -32,6 +32,38 @@ across every hour and content type in this app.
      needs bilingual voice selection (La/En) worked out, and quality for Latin pronunciation
      is an open question. Open, not started — needs its own design pass before content/UI work
      begins.
+   - Matins: "Te decet laus" (the short versicle sung right after the closing Gospel+"Amen",
+     opening Lauds — Rule of Benedict ch. 13, `data/regula/02-13.yml`) isn't modeled or
+     displayed anywhere. `post-pentecost-15.yml`'s own header comment already flagged this as
+     "a known simplification"; the user asked (2026-08-23) for it to actually be shown. Needs a
+     text/part decided (own `ResolvedPart` kind vs. reusing an existing one like `versicle`)
+     and where in the Matins ordo it renders (after the Gospel-reading-again-in-full that
+     currently closes Nocturn 3, before/instead of the existing Benedicamus/Fidelium close —
+     see memory `vu-matins-closing`). Not started.
+   - Matins nocturn-readings responsory formatting is inconsistent with octave-readings':
+     `data/propers/octave-readings/*.yml` responsories are written with explicit `℟.`/`℣.`
+     marks at the start of each line (e.g. `all-saints-octave-day-6.yml`), but every
+     `data/propers/nocturn-readings/*.yml` responsory (both the original two proof dates and
+     everything from the 2026-08-23 temporal-cycle/month-week sweeps) starts straight into the
+     Latin/English text with no leading marker at all — confirmed by grepping every responsory
+     `la:` line in that directory, not an isolated miss on one file. User flagged this
+     (2026-08-23) via "the responsory after the Augustine reading needs to start with the R.;
+     that R. is missing" — real, but the fix is either (a) prepend `℟.`/`R.` (and `℣.`/`V.`)
+     to every existing nocturn-readings responsory's text, matching octave-readings' convention
+     exactly, or (b) inject the marker at render time in `ui/hour-view.ts`'s lesson-responsory
+     rendering instead of in content, which would fix every file (old and new) in one place but
+     needs the responsory text's internal `\nV. ...\nR. ...` structure parsed rather than
+     treated as opaque text. Needs a decision before either bulk-editing ~30+ content files or
+     touching the renderer — not started.
+   - Lauds/Vespers ferial Preces (`data/propers/common/lauds-preces-feriales.yml`,
+     `vespers-preces-feriales.yml`) each embed a full psalm inline within the Preces text
+     itself — Psalm 129 (De profundis) at Lauds, Psalm 50 (Miserere) at Vespers, per the
+     reference engine's own `[Preces feriales Vespera] @:Preces feriales Laudes:s/129/50/`
+     substitution (see each file's own header comment). User asked (2026-08-23) to remove
+     both psalms from the Preces. Not started — needs deciding whether to just delete the
+     psalm block (and its own trailing Gloria Patri line) from each file's `text.la`/`text.en`
+     wholesale, or whether the surrounding V/R litany needs any adjustment once the psalm's
+     gone.
 
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
@@ -1499,6 +1531,25 @@ collisions (pure content + one new pooling source, no calendar changes).
 reach (there are none within Aug-Nov — all 20 files are authored); the rest of the temporal
 cycle (Advent through Eastertide, per the post-Pentecost sweep's own "not done" list above)
 remains open and is unrelated to this particular gap.
+
+**Ordering bug found and fixed same day**: pooling a `temporalId`'s own file (Nocturn 3 only,
+for a late post-Pentecost Sunday) alongside a separately-sourced `month-week-<id>` file
+(Nocturn 2 only) put the Nocturn 3 reading ahead of the Nocturn 2 reading in the pool — the two
+sources were being concatenated in `nocturnReadingIds` set order, not grouped by each reading's
+own `nocturn` tag, so `distributeIntoNocturns`'s front-light positional slotting (1st pool
+reading -> Nocturn 1, 2nd -> Nocturn 2, rest -> Nocturn 3) put the Nocturn-3-tagged reading into
+the Nocturn 2 slot and vice versa. Confirmed live on the date that surfaced the whole month-week
+gap in the first place (2026-08-23, `post-pentecost-13` + `month-week-084`): St. Gregory's
+Moralia commentary (tagged `nocturn: 2`) was showing up after St. Augustine's homily (tagged
+`nocturn: 3`) instead of before it. Fixed in `buildReadingPool` (`hours/matins.ts`) by bucketing
+every contributing id's readings by `reading.nocturn` and emitting the buckets in ascending
+numeric order — not hardcoded to `[2, 3]`, since Ember days' own nocturn-readings files use
+`nocturn: 1` for their single-nocturn structure, and an initial `[2, 3]`-only version of this
+fix silently dropped those (caught by `tests/calendar/ember-days.test.ts` failing). Within each
+bucket, id order (and each file's own reading order) is preserved, matching this pool's usual
+priority rule. `npm test` green at 460 tests — no fixture changes needed, since every
+previously-authored id's own file already had its readings correctly ordered internally; only
+the cross-source case this pass introduced was actually broken.
 
 ### Pre-1955-but-post-1617 saints' Matins readings — done (2026-08)
 

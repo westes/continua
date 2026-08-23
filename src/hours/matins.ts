@@ -394,10 +394,27 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string):
       responsory: r.responsory ? { text: r.responsory, status: { la: 'verified', en: 'verified' } } : undefined,
     });
   }
-  for (const id of nocturnReadingIds(day, temporalId, date)) {
+  // Grouped by the reading's own `nocturn` tag (ascending), not by which id
+  // contributed it — a later post-Pentecost Sunday's Nocturn 2 now comes
+  // from a different source (the month-week id) than its Nocturn 3 (its own
+  // temporalId file), and pooling in plain id order would put that Nocturn
+  // 3 content ahead of the Nocturn 2 content supplied by a later-processed
+  // id. Within each nocturn-number group, id order (and each file's own
+  // reading order) is preserved, matching this pool's usual priority rule.
+  // Not hardcoded to [2, 3]: Ember days' own nocturn-readings files use
+  // `nocturn: 1` (their single-nocturn structure), so every tag present
+  // must be handled, not just the usual Sunday/feast pair.
+  const ids = nocturnReadingIds(day, temporalId, date);
+  const byNocturn = new Map<number, ResolvedPart[]>();
+  for (const id of ids) {
     for (const reading of getNocturnReadings(id)) {
-      parts.push(nocturnReadingPart(reading));
+      const bucket = byNocturn.get(reading.nocturn) ?? [];
+      bucket.push(nocturnReadingPart(reading));
+      byNocturn.set(reading.nocturn, bucket);
     }
+  }
+  for (const nocturnNumber of [...byNocturn.keys()].sort((a, b) => a - b)) {
+    parts.push(...byNocturn.get(nocturnNumber)!);
   }
   for (const octave of activeOctavesFor(date)) {
     const reading = getOctaveReading(octave.id, octave.dayNumber);
