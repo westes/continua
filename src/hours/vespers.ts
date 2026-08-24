@@ -4,12 +4,13 @@ import { resolveEveningDay } from '../calendar/vespers';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
-import { isDoubleOrHigher, applyFlexaMark } from './antiphon';
+import { applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
   getDayCollects,
   getMagnificatAntiphon,
   splitNamedAntiphon,
+  openingAntiphon,
   resolveOfficeWinner,
   verifiedText,
   seasonalOfficeSuffix,
@@ -47,8 +48,9 @@ function normalizePsalmRef(ref: PsalmRefLike): { number: number; verses?: string
  * in full once, after the last. Mirrors lauds.ts's psalmParts, extended
  * for verse-range entries (see PsalmRefLike). */
 function psalmParts(group: VespersGroup, day: LiturgicalDay): ResolvedPart[] {
-  const { incipit, full } = splitNamedAntiphon(verifiedText(group.antiphon));
-  const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
+  const antiphonText = verifiedText(group.antiphon);
+  const opening = openingAntiphon(antiphonText, resolveOfficeWinner(day));
+  const { full } = splitNamedAntiphon(antiphonText);
   const refs = group.psalms.map(normalizePsalmRef);
   const parts: ResolvedPart[] = refs.map((ref, i) => {
     const rawVerses = getPsalmVerses(ref.number, ref.verses).map((v) => ({ n: v.n, text: v.text, status: v.status }));
@@ -161,8 +163,9 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'vespers-office':
       return resolveOffice(day);
     case 'magnificat': {
-      const { incipit, full } = splitNamedAntiphon(getMagnificatAntiphon(day));
-      const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
+      const antiphonText = getMagnificatAntiphon(day);
+      const opening = openingAntiphon(antiphonText, resolveOfficeWinner(day));
+      const { full } = splitNamedAntiphon(antiphonText);
       return [
         { kind: 'canticle', canticleId: 'magnificat', text: resolveCommon('magnificat'), antiphon: opening },
         { kind: 'antiphon', text: full },

@@ -14,6 +14,7 @@ import {
   getDayCollects,
   getBenedictusAntiphon,
   splitNamedAntiphon,
+  openingAntiphon,
   resolveOfficeWinner,
   verifiedText,
   seasonalOfficeSuffix,
@@ -134,10 +135,8 @@ function canticleText(canticleId: string, slice?: [number, number]): ResolvedTex
  * plain weekday default below gets substituted. */
 function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
   const wd = getPsalmodyOverrideFor(day) ?? laudsAntiphons[day.weekday];
-  const opening = (antiphon: BilingualText) => {
-    const { incipit, full } = splitNamedAntiphon(verifiedText(antiphon));
-    return isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
-  };
+  const winner = resolveOfficeWinner(day);
+  const opening = (antiphon: BilingualText) => openingAntiphon(verifiedText(antiphon), winner);
   const parts: ResolvedPart[] = [
     {
       kind: 'psalm',
@@ -237,8 +236,9 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'lauds-office':
       return resolveOffice(day);
     case 'benedictus': {
-      const { incipit, full } = splitNamedAntiphon(getBenedictusAntiphon(day));
-      const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
+      const antiphonText = getBenedictusAntiphon(day);
+      const opening = openingAntiphon(antiphonText, resolveOfficeWinner(day));
+      const { full } = splitNamedAntiphon(antiphonText);
       return [
         { kind: 'canticle', canticleId: 'benedictus', text: resolveCommon('benedictus'), antiphon: opening },
         { kind: 'antiphon', text: full },

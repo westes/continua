@@ -14,6 +14,7 @@ import {
   resolveCommon,
   appendDoxology,
   splitNamedAntiphon,
+  openingAntiphon,
   resolveOfficeWinner,
   resolveMinorHourAntiphon,
   isSundayOrFeastOffice,
@@ -65,11 +66,11 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
       }
       {
         const psalmRefs = getPsalmsFor('prime', day.weekday);
-        const { incipit, full } = splitNamedAntiphon(resolveMinorHourAntiphon('prime', day, antiphons[day.weekday]));
+        const antiphonText = resolveMinorHourAntiphon('prime', day, antiphons[day.weekday]);
         // Full text on a Double-or-higher feast, otherwise just the incipit
         // — see hours/antiphon.ts. The full repeat comes later, after the
         // Creed (see 'closing-antiphon'), not tacked onto the last psalm.
-        const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
+        const opening = openingAntiphon(antiphonText, resolveOfficeWinner(day));
         return psalmRefs.map((ref, i) => {
           const rawVerses = getPsalmVerses(ref.number, ref.verses).map((v) => ({ n: v.n, text: v.text, status: v.status }));
           const { verses, antiphon } = applyFlexaMark(rawVerses, i === 0 ? opening : undefined);

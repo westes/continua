@@ -78,6 +78,7 @@ import {
   seasonalOfficeSuffix,
   verifiedText,
   splitNamedAntiphon,
+  openingAntiphon,
 } from './resolve-common';
 import { getBiblePlanReadings } from '../propers/bible-plan';
 import { getNocturnReadings, type NocturnReading } from '../propers/nocturn-readings';
@@ -187,8 +188,9 @@ function invitatoryParts(day: LiturgicalDay): ResolvedPart[] {
 function sundayPsalmNocturn(group: SundayNocturn, day: LiturgicalDay): ResolvedPart[] {
   const parts: ResolvedPart[] = [];
   for (const g of group.groups ?? []) {
-    const { incipit, full } = splitNamedAntiphon(verifiedText(g.antiphon));
-    const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
+    const antiphonText = verifiedText(g.antiphon);
+    const opening = openingAntiphon(antiphonText, resolveOfficeWinner(day));
+    const { full } = splitNamedAntiphon(antiphonText);
     g.psalms.forEach((n, i) => {
       parts.push(psalmPartWithAntiphon(n, i === 0 ? opening : undefined));
     });
@@ -201,8 +203,9 @@ function sundayPsalmNocturn(group: SundayNocturn, day: LiturgicalDay): ResolvedP
 /** Nocturn 3's 3 fixed OT canticles under one shared antiphon — see
  * data/hours/matins-sunday-antiphons.yml's own header. */
 function sundayCanticleNocturn(group: SundayNocturn, day: LiturgicalDay): ResolvedPart[] {
-  const { incipit, full } = splitNamedAntiphon(verifiedText(group.antiphon ?? {}));
-  const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
+  const antiphonText = verifiedText(group.antiphon ?? {});
+  const opening = openingAntiphon(antiphonText, resolveOfficeWinner(day));
+  const { full } = splitNamedAntiphon(antiphonText);
   const parts: ResolvedPart[] = (group.canticles ?? []).map((c, i) => {
     const verses = c.refs.flatMap((ref) => getScriptureVerses(ref.book, ref.chapter, ref.verses));
     const text: BilingualText = {
@@ -285,11 +288,12 @@ function ferialPsalmody(day: LiturgicalDay): ResolvedPart[] {
  * as one combined V./R. block via `versicleText`. */
 function ferialAntiphonedNocturn(day: LiturgicalDay): ResolvedPart[] {
   const nocturn = ferialAntiphons[day.weekday as Exclude<Weekday, 'sunday'>];
-  const isDouble = isDoubleOrHigher(resolveOfficeWinner(day));
+  const winner = resolveOfficeWinner(day);
   const parts: ResolvedPart[] = [];
   for (const group of nocturn.groups) {
-    const { incipit, full } = splitNamedAntiphon(verifiedText(group.antiphon));
-    const opening = isDouble ? full : incipit;
+    const antiphonText = verifiedText(group.antiphon);
+    const opening = openingAntiphon(antiphonText, winner);
+    const { full } = splitNamedAntiphon(antiphonText);
     group.psalms.forEach((ref, i) => {
       const rawVerses = getPsalmVerses(ref.number, ref.verses).map((v): ResolvedVerse => ({ n: v.n, text: v.text, status: v.status }));
       const { verses, antiphon } = applyFlexaMark(rawVerses, i === 0 ? opening : undefined);

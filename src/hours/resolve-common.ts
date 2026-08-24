@@ -6,7 +6,7 @@ import { getSaintRecord } from '../calendar/feasts';
 import { resolveActiveOctave, activeOctavesFor, octaveGoverningPrivilegedDay, isAtLeast } from '../calendar';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { isInTriduum } from '../calendar/temporal';
-import { splitAntiphon } from './antiphon';
+import { splitAntiphon, isDoubleOrHigher } from './antiphon';
 import vespersMagnificatAntiphonsData from '../data/hours/vespers-magnificat-antiphons.yml';
 
 type BilingualText = Partial<Record<string, string>>;
@@ -690,6 +690,19 @@ export function splitNamedAntiphon(antiphon: ResolvedText): {
     fullStatus[lang] = status;
   }
   return { incipit: { text: incipitText, status: incipitStatus }, full: { text: fullText, status: fullStatus } };
+}
+
+/** The antiphon actually shown *before* a psalm/canticle: full text on a
+ * Double-rank winner or higher, incipit only below that (see
+ * `isDoubleOrHigher`'s own doc comment for the underlying rule) — the one
+ * idiom every hour's psalmody independently repeated (`splitNamedAntiphon`
+ * + `isDoubleOrHigher(...) ? full : incipit`) before being centralized
+ * here. The closing repeat after the psalm/canticle is always `full`,
+ * unconditionally, at each call site — this helper only decides the
+ * opening. */
+export function openingAntiphon(antiphon: ResolvedText, winner: DayWinner): ResolvedText {
+  const { incipit, full } = splitNamedAntiphon(antiphon);
+  return isDoubleOrHigher(winner) ? full : incipit;
 }
 
 /** Fixed wording, same as lauds.ts's weekday-canticle Gloria Patri —

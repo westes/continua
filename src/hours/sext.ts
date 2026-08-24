@@ -5,11 +5,11 @@ import { getDayLabel } from '../calendar/day-label';
 import { getPsalmsFor } from '../psalter/distribution';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
-import { isDoubleOrHigher, applyFlexaMark } from './antiphon';
+import { applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
   getDayCollect,
-  splitNamedAntiphon,
+  openingAntiphon,
   resolveOfficeWinner,
   resolveMinorHourAntiphon,
   resolveMinorHourChapter,
@@ -38,8 +38,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       // psalms, no closing repeat (unlike Prime): confirmed directly
       // against the engine, Capitulum follows the third psalm immediately.
       const psalmRefs = getPsalmsFor('sext', day.weekday);
-      const { incipit, full } = splitNamedAntiphon(resolveMinorHourAntiphon('sext', day, antiphons[day.weekday]));
-      const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
+      const opening = openingAntiphon(resolveMinorHourAntiphon('sext', day, antiphons[day.weekday]), resolveOfficeWinner(day));
       return psalmRefs.map((ref, i) => {
         const rawVerses = getPsalmVerses(ref.number, ref.verses).map((v) => ({ n: v.n, text: v.text, status: v.status }));
         const { verses, antiphon } = applyFlexaMark(rawVerses, i === 0 ? opening : undefined);

@@ -7,7 +7,7 @@ import { getHymnDoxologyId } from './hymn-doxology';
 import { getOpeningVersicleId } from './opening-versicle';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { isDoubleOrHigher } from './antiphon';
-import { resolveCommon, appendDoxology, splitNamedAntiphon, resolveResponsory } from './resolve-common';
+import { resolveCommon, appendDoxology, splitNamedAntiphon, openingAntiphon, resolveResponsory } from './resolve-common';
 import complineDefinitionData from '../data/hours/compline.yml';
 
 const complineDefinition = complineDefinitionData as HourDefinition;
@@ -63,8 +63,9 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
         },
       ];
     case 'nunc-dimittis': {
-      const { incipit, full } = splitNamedAntiphon(resolveCommon('nunc-dimittis-antiphon'));
-      const opening = isDoubleOrHigher(day.winner) ? full : incipit;
+      const antiphonText = resolveCommon('nunc-dimittis-antiphon');
+      const opening = openingAntiphon(antiphonText, day.winner);
+      const { full } = splitNamedAntiphon(antiphonText);
       return [
         { kind: 'canticle', canticleId: 'nunc-dimittis', text: resolveCommon('nunc-dimittis'), antiphon: opening },
         { kind: 'antiphon', text: full },
