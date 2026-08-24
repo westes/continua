@@ -2621,6 +2621,82 @@ saint-wins-Ember-commemorated cases) and content resolution (Advent, wins-outrig
 verified Matins content on all 6 days) end-to-end. `npm test` (435 tests) and `tsc --noEmit`
 both pass.
 
+### Matins nocturn-reading temporal/month-week suppression bug, hymn Common-tier + real invitatory mechanism, antiphon-doubling dedup (2026-08-24)
+
+**Bug fixed**: `nocturnReadingIds` (`hours/matins.ts`) unconditionally pooled the plain
+temporal-cycle reading id and the calendar-month/week id into every day's nocturn reading
+pool, even on a day where a real feast wins outright with zero commemorations
+(`calendar/commemorations.ts`'s `decideOccurrence`, `ordinary-feria` branch — correctly
+suppressing the temporal identity entirely). St. Bartholomew (duplex-2-classis, 2026-08-24, a
+Monday) has no Nocturn 3 content of his own, so the leftover 13th-Sunday-after-Pentecost
+(`post-pentecost-13.yml`) and month-week (`month-week-084.yml`) readings wrongly filled his
+Nocturn 3. Fixed by gating that pooling on whether the day's own occurrence decision actually
+retained the temporal identity (`day.winner.kind === 'temporal'`, or a `kind: 'temporal'` entry
+in `day.commemorations`) — mirrors `getDayCollects`'s own long-standing pattern for the same
+question. New tests in `tests/hours/matins.test.ts` cover both the regression (Bartholomew) and
+the non-regression case (a plain ferial weekday with no sanctoral winner, 2026-09-04).
+
+**Matins hymn + invitatory antiphon — new Common-of-Saints tier, real invitatory mechanism**:
+also fixed while investigating the same report. `resolveMatinsHymn` gained a Common-category
+tier (override → octave → **Common category** → season → ferial), reusing
+`matins-psalmody-overrides.ts`'s own `getSaintRecord(id)?.common` lookup pattern. The invitatory
+antiphon (`invitatoryParts`), previously one hardcoded fixed text for every day of the year with
+only full-vs-incipit doubling varying by rank, now goes through a real
+`resolveMatinsInvitatoryText` (override → Common category → season → ferial, no octave tier —
+no per-octave invitatory override exists anywhere in the reference source) before the
+pre-existing doubling step is applied. Content authored this pass: Common-of-an-Apostle only,
+both hymn (`matins-hymn-common-of-an-apostle.yml`, "Ætérna Christi múnera") and invitatory
+antiphon (`matins-invitatory-common-of-an-apostle.yml`, "Regem Apostolórum Dóminum"), both read
+directly from the reference engine's `Commune/C1.txt` (Latin + English both present there).
+Live-verified: St. Bartholomew (2026-08-24) and St. Andrew (2026-11-30) both now resolve to this
+Common's text for hymn + invitatory.
+
+**Not authored, logged as explicit backlog**, same incremental-content pattern as everywhere
+else in this project:
+- Hymn + invitatory Common tiers for: Martyrs (C2), Confessors (C4), Virgins (C6), Holy Women
+  (C7), Dedication (C8), General/All Saints (C9) — all confirmed to have their own distinct
+  `[Invit]`/`[Hymnus Matutinum]` text in the reference source, not yet transcribed.
+- Seasonal invitatory-antiphon tier content (Advent/Lent/Passiontide/Paschaltide/Christmastide)
+  — mechanism now exists (same `seasonalOfficeSuffix`-keyed lookup the hymn's own long-standing
+  seasonal tier already uses), but no seasonal invitatory file is authored yet; every season
+  currently still falls through to the plain ferial invitatory antiphon. Confirmed varying
+  content exists in the reference source for at least Paschaltide (`Tempora/Pasc0-0.txt`,
+  "Surréxit Dóminus vere") and Christmastide (`Tempora/Nat2-0.txt`, "Admirábile nomen Jesu").
+- Seasonal Matins-hymn content itself (Advent/Lent/Passiontide/Paschaltide) — this gap predates
+  this pass (already noted in `resolveMatinsHymn`'s own doc comment) and is unchanged here.
+
+**Cross-hour antiphon-doubling dedup**: the same idiom (`splitNamedAntiphon` +
+`isDoubleOrHigher(...) ? full : incipit`) was copy-pasted at 11 call sites across 8 hour files
+(matins.ts x4, lauds.ts x2, vespers.ts x2, compline.ts x1, prime/terce/sext/none.ts x1 each).
+Centralized into one new `openingAntiphon(antiphon, winner)` helper in `hours/resolve-common.ts`
+(alongside `splitNamedAntiphon`, which it wraps); every call site now uses it. Pure dedup, no
+behavior change — confirmed by the full existing test suite passing unchanged.
+
+**Cross-hour hymn-resolution dedup — partial**: investigated whether hymn resolution across all
+8 hours could collapse into one shared resolver the same way antiphon-doubling did. Found it
+does *not* fit a single universal helper — hymn resolution falls into 4 genuinely different tier
+shapes (Matins's standalone 4-tier hymn-only resolver; Lauds/Vespers's bundled
+hymn+chapter+responsory+versicle resolver; Prime/Compline's fixed-id-plus-`appendDoxology`;
+Terce/Sext/None's flat one-liner with the doxology baked into the static hymn text). Of these,
+only Terce/Sext/None's case was genuinely byte-identical and safe to collapse — done, via a new
+`resolveSelfContainedHymn` helper in `resolve-common.ts`. **Lauds and Vespers's own bundle
+resolvers turned out NOT to be byte-identical either**, despite looking that way at a glance:
+Lauds gates its whole bundle on whether a `LaudsPsalmodyOverride` exists for the winning saint
+(`getPsalmodyOverrideFor(day)?.id`), while Vespers gates purely on duplex-majus+ rank via
+`getOfficeOverrideId` directly (it has no separate per-feast psalmody-override table to check
+against). Collapsing them into one parameterized helper risks silently changing eligibility
+behavior for one of the two hours, so this was deliberately left alone rather than risked — a
+real follow-on refactor, but one that needs an explicit "eligibility" plugin point designed
+first, not a same-day mechanical extraction. Also checked: Matins's own explicit
+`resolveActiveOctave` hymn tier looked at first like it might be redundant with
+`resolveOfficeWinner`'s own octave-folding (which Lauds/Vespers rely on instead of a separate
+octave check) — confirmed it is *not* redundant: `resolveOfficeWinner`'s fold-in only fires for
+`ordinary-feria` days or via `octaveGoverningPrivilegedDay` (which explicitly excludes
+Christmastide's own stacked octaves), so Matins's separate check still covers real cases (e.g.
+Christmas/Stephen/John/Innocents octave days) the other path doesn't reach. Left unchanged.
+
+`npm test` (470 tests) and `tsc --noEmit` both pass.
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own
