@@ -353,9 +353,24 @@ function nocturnReadingIds(day: LiturgicalDay, temporalId: string, date: string)
     // nocturn-readings content too, not just a commemorated sanctoral one.
     if (c.kind === 'sanctoral' || c.kind === 'temporal') ids.add(c.id);
   }
-  ids.add(temporalId);
-  const monthWeek = monthWeekId(date);
-  if (monthWeek) ids.add(`month-week-${monthWeek}`);
+  // The plain temporalId/month-week content is only pooled when the day's
+  // own occurrence decision (calendar/commemorations.ts's decideOccurrence)
+  // actually retained the temporal identity in some form: the temporal
+  // cycle won outright (day.winner.kind === 'temporal' -- a plain ferial/
+  // Sunday, or a named temporal override like Christ the King), or it
+  // survives as a commemoration alongside a sanctoral winner. Excluded:
+  // decideOccurrence's `ordinary-feria` branch, where a real feast --
+  // however low-ranked -- wins with zero commemorations, correctly
+  // suppressing the temporal identity entirely (e.g. St. Bartholomew,
+  // duplex-2-classis, 2026-08-24 -- his own proper reading has no Nocturn
+  // 3 content, and without this gate the leftover 13th-Sunday-after-
+  // Pentecost/month-week content wrongly filled Nocturn 3 instead).
+  const temporalKept = day.winner.kind === 'temporal' || day.commemorations.some((c) => c.kind === 'temporal');
+  if (temporalKept) {
+    ids.add(temporalId);
+    const monthWeek = monthWeekId(date);
+    if (monthWeek) ids.add(`month-week-${monthWeek}`);
+  }
   return [...ids];
 }
 

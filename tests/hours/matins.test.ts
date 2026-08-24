@@ -490,3 +490,38 @@ describe('resolveOrdo("matins", ...) calendar-month/week nocturn-readings import
     }
   });
 });
+
+// Real bug (2026-08-24 fix): nocturnReadingIds unconditionally pooled the
+// plain temporalId/month-week ids into every day's nocturn-reading pool,
+// even on a day where a real feast wins outright with zero commemorations
+// (decideOccurrence's `ordinary-feria` branch) -- correctly suppressing the
+// temporal identity entirely. St. Bartholomew (duplex-2-classis, 2026-08-24,
+// a Monday) has no Nocturn 3 content of his own, so the leftover 13th-
+// Sunday-after-Pentecost (post-pentecost-13.yml) and month-week (month-
+// week-084.yml) readings wrongly filled his Nocturn 3. Fixed by gating that
+// pooling on whether the day's own occurrence decision actually retained
+// the temporal identity (day.winner.kind === 'temporal', or a `kind:
+// 'temporal'` entry in day.commemorations).
+describe('resolveOrdo("matins", ...) nocturn-reading temporal/month-week suppression (2026-08-24 fix)', () => {
+  function lessonLabels(date: string) {
+    const ordo = resolveOrdo('matins', date);
+    return ordo.parts.filter((p) => p.kind === 'lesson').map((p) => (p as { label?: string }).label);
+  }
+
+  it("St. Bartholomew (2026-08-24, duplex-2-classis, zero commemorations) does not pool the suppressed Sunday/month-week readings", () => {
+    const labels = lessonLabels('2026-08-24');
+    expect(labels).not.toContain('St. Augustine, Bishop of Hippo, Book 2, Questions on the Gospels, ch. 40');
+    expect(labels).not.toContain('St. Gregory the Great, Moralia in Job, Book 1, ch. 10');
+  });
+
+  it("St. Bartholomew's own Nocturn 2 still carries his own proper vita reading", () => {
+    const ordo = resolveOrdo('matins', '2026-08-24');
+    const lessons = ordo.parts.filter((p) => p.kind === 'lesson') as { text: { text: Record<string, string> } }[];
+    expect(lessons.some((l) => l.text.text.la?.includes('Bartholomǽus Apóstolus'))).toBe(true);
+  });
+
+  it('a plain ferial weekday with no sanctoral winner (2026-09-04, a gap day in sanctoral-calendar.yml) still pools the plain temporal/month-week readings, unaffected by the gate', () => {
+    const ordo = resolveOrdo('matins', '2026-09-04');
+    const lessons = ordo.parts.filter((p) => p.kind === 'lesson') as { text: { status: Record<string, string> } }[];
+    expect(lessons.length).toBeGreaterThan(0);
+    expect(lessons.some((l) => l.text.status.la !== 'missing' && l.text.status.en !== 'missing')).toBe(true);
