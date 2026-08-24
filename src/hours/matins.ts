@@ -80,6 +80,7 @@ import {
   splitNamedAntiphon,
   openingAntiphon,
 } from './resolve-common';
+import { getSaintRecord } from '../calendar/feasts';
 import { getBiblePlanReadings } from '../propers/bible-plan';
 import { getNocturnReadings, type NocturnReading } from '../propers/nocturn-readings';
 import { getOctaveReading } from '../propers/octave-readings';
@@ -168,14 +169,56 @@ function psalmRefParts(refs: PsalmRef[]): ResolvedPart[] {
   }));
 }
 
+/** The invitatory antiphon's own text — same override > Common-category >
+ * seasonal > ferial precedence as `resolveMatinsHymn`, minus the octave
+ * tier: no per-octave invitatory-antiphon override exists anywhere in the
+ * reference source (unlike the hymn, which genuinely persists all week on
+ * some octaves) — an octave day already falls through correctly to its
+ * governing saint's own Common/season tier here, so adding an octave tier
+ * would have nothing to fire on. Keeps the existing ferial fallback id
+ * (`matins-invitatory-antiphon`) as-is rather than renaming it to match
+ * the hymn's `-ferial` convention — it's already `verified` and its own
+ * header already documents itself as the fallback-of-record; renaming
+ * would be pure churn.
+ *
+ * Doubling (`isDoubleOrHigher`, via `openingAntiphon`) is a separate, final
+ * step applied to whichever tier's text wins here — never part of content
+ * selection itself. */
+function resolveMatinsInvitatoryText(day: LiturgicalDay): ResolvedText {
+  const overrideId = getOfficeOverrideId(day);
+  if (overrideId) {
+    const proper = resolveCommon(`matins-invitatory-${overrideId}`);
+    if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
+      return proper;
+    }
+  }
+  const winner = resolveOfficeWinner(day);
+  const commonId = winner.kind === 'sanctoral' ? getSaintRecord(winner.id)?.common : undefined;
+  if (commonId) {
+    const common = resolveCommon(`matins-invitatory-${commonId}`);
+    if (common.status.la !== 'missing' || common.status.en !== 'missing') {
+      return common;
+    }
+  }
+  const seasonSuffix = seasonalOfficeSuffix(day.season);
+  if (seasonSuffix) {
+    const seasonal = resolveCommon(`matins-invitatory-${seasonSuffix}`);
+    if (seasonal.status.la !== 'missing' || seasonal.status.en !== 'missing') {
+      return seasonal;
+    }
+  }
+  return resolveCommon('matins-invitatory-antiphon');
+}
+
 /** The Invitatory (Ps 94) — real practice interleaves its antiphon as a
  * repeating refrain between verse groups; per direct instruction this app
  * frames it like any other psalm antiphon instead (one opening, one full
  * repeat after) — see data/propers/common/matins-invitatory-antiphon.yml's
  * own header. */
 function invitatoryParts(day: LiturgicalDay): ResolvedPart[] {
-  const { incipit, full } = splitNamedAntiphon(resolveCommon('matins-invitatory-antiphon'));
-  const opening = isDoubleOrHigher(resolveOfficeWinner(day)) ? full : incipit;
+  const text = resolveMatinsInvitatoryText(day);
+  const opening = openingAntiphon(text, resolveOfficeWinner(day));
+  const { full } = splitNamedAntiphon(text);
   return [
     psalmPartWithAntiphon(94, opening),
     { kind: 'antiphon', text: full },
@@ -229,11 +272,16 @@ function sundayCanticleNocturn(group: SundayNocturn, day: LiturgicalDay): Resolv
  * getOfficeOverrideId eligibility Lauds/Vespers' own resolveOffice uses),
  * when authored; else, on a day within an active octave whose own feast
  * has a hymn authored, that octave's hymn (`matins-hymn-${octave.id}`) —
- * see below; else falls to a *seasonal* default (Advent/Lent/
- * Passiontide/Paschaltide, none authored yet), else the plain year-round
- * ferial hymn — same override > octave > season > ferial precedence every
- * other hour's own office bundle uses (see lauds.ts's resolveOffice), just
- * never fully wired up here before.
+ * see below; else the winner's Common-of-Saints hymn (`matins-hymn-
+ * ${commonId}`, via `SaintRecord.common`, e.g. "Aeterna Christi munera"
+ * for any Apostle with no proper hymn of his own — same category-lookup
+ * pattern as matins-psalmody-overrides.ts's getMatinsPsalmodyOverride);
+ * else falls to a *seasonal* default (Advent/Lent/Passiontide/
+ * Paschaltide, none authored yet), else the plain year-round ferial hymn —
+ * override > octave > Common > season > ferial. Common slots between
+ * octave and season: an octave's own proper hymn is more specific than any
+ * Common and must keep winning; a Common-of-Saints hymn is more specific
+ * than a bare season and must win over it.
  *
  * Concrete motivating case (user, 2026-08-21/22): the Assumption's octave
  * (`Sancti/08-21bmv.txt`'s own `[Rule] ex Sancti/08-15`) genuinely keeps
@@ -262,6 +310,23 @@ function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
     const octaveHymn = resolveCommon(`matins-hymn-${octave.id}`);
     if (octaveHymn.status.la !== 'missing' || octaveHymn.status.en !== 'missing') {
       return octaveHymn;
+    }
+  }
+  // Common-of-Saints tier (2026-08): a winning saint with no proper hymn of
+  // his own (most of them) still often shares a real, generic hymn with
+  // every other saint of his Common (e.g. "Aeterna Christi munera" for any
+  // Apostle) — same getSaintRecord(id)?.common lookup already proven by
+  // matins-psalmody-overrides.ts's getMatinsPsalmodyOverride. Keyed off the
+  // actual winner, not `overrideId` above: `getOfficeOverrideId` only
+  // returns an id for duplex-majus+ winners (an eligibility gate for the
+  // per-saint-proper tier), so reusing it here would silently skip this
+  // tier for any lower-ranked sanctoral winner.
+  const winner = resolveOfficeWinner(day);
+  const commonId = winner.kind === 'sanctoral' ? getSaintRecord(winner.id)?.common : undefined;
+  if (commonId) {
+    const commonHymn = resolveCommon(`matins-hymn-${commonId}`);
+    if (commonHymn.status.la !== 'missing' || commonHymn.status.en !== 'missing') {
+      return commonHymn;
     }
   }
   const seasonSuffix = seasonalOfficeSuffix(day.season);

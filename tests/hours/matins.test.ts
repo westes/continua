@@ -525,3 +525,76 @@ describe('resolveOrdo("matins", ...) nocturn-reading temporal/month-week suppres
     const lessons = ordo.parts.filter((p) => p.kind === 'lesson') as { text: { status: Record<string, string> } }[];
     expect(lessons.length).toBeGreaterThan(0);
     expect(lessons.some((l) => l.text.status.la !== 'missing' && l.text.status.en !== 'missing')).toBe(true);
+  });
+});
+
+// Coverage gap fix (no bug found): the pre-existing ferial-branch test
+// above only asserted the opening invitatory antiphon *contains* "Veníte,"
+// true for both the incipit ("Ant. Veníte.") and full ("Ant. Veníte, *
+// Exsultémus Dómino.") forms -- it never actually distinguished doubled vs.
+// undoubled. isDoubleOrHigher/openingAntiphon traced out correct in source
+// for every rank tested here; these tests just make the distinction real.
+describe('resolveOrdo("matins", ...) invitatory antiphon doubling by rank', () => {
+  function openingAntiphonLatin(date: string): string | undefined {
+    const ordo = resolveOrdo('matins', date);
+    const invitatoryPsalm = ordo.parts.find((p) => p.kind === 'psalm' && (p as { psalmNumber: number }).psalmNumber === 94) as
+      | { antiphon?: { text: Record<string, string> } }
+      | undefined;
+    return invitatoryPsalm?.antiphon?.text.la;
+  }
+
+  it('a Duplex+ weekday winner opens with the FULL (not incipit-only) invitatory antiphon (St. Lawrence, 2026-08-17: ferial text, no proper/Common of his own; St. Bartholomew, duplex-2-classis, 2026-08-24: Common-of-an-Apostle text)', () => {
+    expect(openingAntiphonLatin('2026-08-17')).toContain('Exsultémus');
+    expect(openingAntiphonLatin('2026-08-24')).toContain('Regem Apostolórum Dóminum, * Veníte');
+  });
+
+  it('a plain ferial day opens with the incipit only', () => {
+    expect(openingAntiphonLatin(FERIAL_DATE)).not.toContain('Exsultémus');
+  });
+
+  it("a Simplex saint merely commemorated (not winning) under an Advent feria still opens with the incipit only — the winner's own rank governs, not any commemorated saint's (St. Bibiana, 2025-12-02)", () => {
+    expect(openingAntiphonLatin('2025-12-02')).not.toContain('Exsultémus');
+  });
+});
+
+// New mechanism (2026-08): resolveMatinsHymn gained a Common-of-Saints
+// tier (override -> octave -> Common category -> season -> ferial), and
+// the invitatory antiphon -- previously one hardcoded fixed text for every
+// day of the year -- now goes through the same shape of tiering
+// (resolveMatinsInvitatoryText: override -> Common category -> season ->
+// ferial). Both confirmed against the reference engine's own Commune/
+// C1.txt (Common of an Apostle): hymn "Ætérna Christi múnera," invitatory
+// "Regem Apostolórum Dóminum." St. Bartholomew has no proper Matins hymn
+// or invitatory of his own authored, so this Common tier is what actually
+// renders for him.
+describe('resolveOrdo("matins", ...) Common-of-an-Apostle hymn + invitatory (2026-08-24 fix)', () => {
+  function hymnLatin(date: string): string | undefined {
+    const ordo = resolveOrdo('matins', date);
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn') as { text: { text: { la: string } } } | undefined;
+    return hymn?.text.text.la;
+  }
+  function invitatoryFullLatin(date: string): string | undefined {
+    const ordo = resolveOrdo('matins', date);
+    const antiphonParts = ordo.parts.filter((p) => p.kind === 'antiphon') as { text: { text: Record<string, string> } }[];
+    return antiphonParts[0]?.text.text.la;
+  }
+
+  it("St. Bartholomew's own day (2026-08-24, no proper Matins hymn of his own) picks up the Common-of-an-Apostle hymn", () => {
+    expect(hymnLatin('2026-08-24')).toContain('Ætérna Christi múnera');
+  });
+
+  it("St. Bartholomew's invitatory antiphon resolves to the Common-of-an-Apostle text", () => {
+    expect(invitatoryFullLatin('2026-08-24')).toContain('Regem Apostolórum Dóminum');
+  });
+
+  it('St. Andrew (2026-11-30, also common-of-an-apostle, no proper hymn/invitatory of his own) resolves to the same Common text -- confirms the tier generalizes beyond Bartholomew', () => {
+    expect(hymnLatin('2026-11-30')).toContain('Ætérna Christi múnera');
+    expect(invitatoryFullLatin('2026-11-30')).toContain('Regem Apostolórum Dóminum');
+  });
+
+  it('a plain ferial day is unaffected -- still falls through to the plain ferial hymn and invitatory antiphon', () => {
+    expect(hymnLatin(FERIAL_DATE)).toContain('Somno');
+    expect(invitatoryFullLatin(FERIAL_DATE)).toContain('Veníte');
+    expect(invitatoryFullLatin(FERIAL_DATE)).not.toContain('Regem Apostolórum');
+  });
+});
