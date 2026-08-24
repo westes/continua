@@ -13,6 +13,7 @@ import {
   resolveOfficeWinner,
   resolveMinorHourAntiphon,
   resolveMinorHourChapter,
+  resolveSelfContainedHymn,
 } from './resolve-common';
 import terceDefinitionData from '../data/hours/terce.yml';
 import antiphonsData from '../data/hours/terce-antiphons.yml';
@@ -25,8 +26,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'opening-versicle':
       return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) }];
     case 'hymn':
-      // Self-contained, no appendDoxology — see terce-hymn.yml.
-      return [{ kind: 'hymn', text: resolveCommon(part.textRef.id) }];
+      return resolveSelfContainedHymn(part);
     case 'chapter':
       return [{ kind: 'chapter', text: resolveMinorHourChapter('terce', day, part.textRef.id) }];
     case 'day-collect':

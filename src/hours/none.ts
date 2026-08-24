@@ -13,6 +13,7 @@ import {
   resolveOfficeWinner,
   resolveMinorHourAntiphon,
   resolveMinorHourChapter,
+  resolveSelfContainedHymn,
 } from './resolve-common';
 import noneDefinitionData from '../data/hours/none.yml';
 import antiphonsData from '../data/hours/none-antiphons.yml';
@@ -25,8 +26,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'opening-versicle':
       return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) }];
     case 'hymn':
-      // Self-contained, no appendDoxology — see none-hymn.yml.
-      return [{ kind: 'hymn', text: resolveCommon(part.textRef.id) }];
+      return resolveSelfContainedHymn(part);
     case 'chapter':
       return [{ kind: 'chapter', text: resolveMinorHourChapter('none', day, part.textRef.id) }];
     case 'day-collect':

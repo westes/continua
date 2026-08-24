@@ -1,4 +1,4 @@
-import type { ResolvedPart, ResolvedText } from './types';
+import type { PropersRef, ResolvedPart, ResolvedText } from './types';
 import type { Commemoration, DayWinner, LiturgicalDay, Weekday } from '../calendar/types';
 import type { ProperText } from '../propers';
 import { getCommonProper, getTemporalProper } from '../propers';
@@ -29,6 +29,15 @@ function toResolvedText(proper: ProperText): ResolvedText {
  * shapes it as a ResolvedText. */
 export function resolveCommon(id: string): ResolvedText {
   return toResolvedText(getCommonProper(id));
+}
+
+/** Terce/Sext/None's own Matins-less hymn 'hymn' case — a plain, fixed,
+ * self-contained text with no doxology mechanism at all (the closing
+ * doxology is baked directly into each hour's own hymn text file; see
+ * {terce,sext,none}-hymn.yml) and no override/season tiering. Byte-
+ * identical across all three files before being centralized here. */
+export function resolveSelfContainedHymn(part: { textRef: PropersRef }): ResolvedPart[] {
+  return [{ kind: 'hymn', text: resolveCommon(part.textRef.id) }];
 }
 
 // Named temporal winners with real standing of their own, unconditionally
