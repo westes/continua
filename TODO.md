@@ -2768,6 +2768,50 @@ unauthored — 2029-01-17, confirmed clean). `npm test` (471 tests), `tsc --noEm
 Virgin-Martyr [17], Abbot [16], Holy Woman [3], Widow [6], Angel [5], Evangelist [3], and the
 smaller one-off Commons — none has a category file yet.
 
+### Lauds/Vespers chapter-responsory-hymn-versicle bundle: rank-agnostic Common fallback (2026-08-25)
+
+**Bug fixed**: St. Louis (2026-08-25, `common-of-a-confessor-not-bishop`, Simplex, wins
+outright) was showing the plain ferial chapter/hymn at Lauds instead of his own Common's —
+`hours/lauds.ts`'s `resolveOffice` only substituted a feast's own proper bundle
+(`lauds-{part}-<id>.yml`), gated at duplex-majus+ (piggybacking eligibility on the Lauds
+psalmody-override table, itself majus+-only by design), with no Common-level fallback at all.
+Same gap existed in `hours/vespers.ts`'s identical `resolveOffice`. Fixed by adding
+`resolve-common.ts`'s `resolveOfficeBundle`: tries the winner's own proper bundle first, then
+falls back to their Common's bundle (`SaintRecord.common`, the same id driving the day
+collect — not `minorHoursCommon`, a deliberately different id for P/T/S/N), eligibility tested
+rank-agnostically via the existing `getMinorHourOverrideId` (any sanctoral winner, not just
+duplex-majus+) — a simplex feast's own or Common's chapter/hymn is real, distinct liturgical
+content, not something only strong feasts are entitled to. Vespers' own chapter lookup
+(`vespersCapitulumForOverride`, which already falls back to the byte-identical Lauds capitulum
+file when no separate Vespers one exists) is passed in and reused unchanged for both the
+proper and the Common id.
+
+**Proof authored**: `common-of-a-confessor-not-bishop`'s full Lauds bundle (chapter, short
+responsory, hymn "Jesu coróna célsior", versicle) and Vespers bundle (chapter reused from
+Lauds, short responsory, hymn "Iste Conféssor Dómini sacrátus" — Latin/English text reused
+verbatim from the already-authored Matins hymn file, same Monastic-track recension — versicle),
+live-verified against Divinum Officium (Monastic Tridentinum 1617). Lauds content cross-checked
+byte-identical between St. Louis's own day and St. Nicholas of Tolentino's (`propers: null`,
+clean year), confirming genuine shared Common content. Vespers content, unusually, had to be
+sourced via the reference engine's `votive=C5` ("Commune Confessoris non Pontificis") view
+instead of any real saint's own rendered Second Vespers — every one of this Common's 4 real
+saints (St. Louis, St. Francis, St. Dominic, St. Nicholas of Tolentino) turned out to have
+their own Second Vespers permanently outranked by a fixed adjacent feast (St. Zephyrinus's
+First Vespers, SS. Placid and Companions', Our Lady of the Snows', the Nativity-of-the-BVM
+octave, respectively) — a structural pattern for this category, not a query mistake. Also
+corrected a wrong lead from earlier in this investigation: `CommuneM/C4a.txt`'s file-inheritance
+structure (`@CommuneM/C4`) initially looked like it meant Confessor-Not-Bishop reuses
+Confessor-Bishop's Office bundle wholesale, but the reference engine's own votive-office naming
+(C4 = "Confessoris Pontificis", C5 = "Confessoris non Pontificis", C4a = "Doctoris Pontificis" —
+an unrelated category with a superficially similar filename) settles that these are two
+genuinely separate Common categories with their own distinct hymns ("Jesu Redémptor ómnium" vs
+"Jesu coróna célsior" at Lauds).
+
+`npm test` (471 tests), `tsc --noEmit` both pass. **Still open**: the other 10 Common
+categories in the "still open" list above have no Lauds/Vespers bundle authored yet either —
+same honest incremental-content gap, now on a mechanism that no longer silently drops to the
+ferial default for any rank.
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own
