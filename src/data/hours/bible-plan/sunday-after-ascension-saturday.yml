@@ -1,4 +1,7 @@
 # Bulk-imported from the user's bible-plan TSV, row "Saturday of Week after Ascension".
+# John 17 was moved here from the following Sunday (see sunday-after-ascension-sunday.yml) and
+# combined with this day's own John 21 gospel reading — the user's explicit choice, not the
+# source TSV.
 temporalId: sunday-after-ascension
 weekday: saturday
 readings:
@@ -10,5 +13,6 @@ readings:
       - { book: jude, chapter: 1 }
     status: { la: missing, en: missing }
   - passages:
+      - { book: john, chapter: 17 }
       - { book: john, chapter: 21 }
     status: { la: missing, en: missing }
