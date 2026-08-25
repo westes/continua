@@ -104,6 +104,13 @@ across every hour and content type in this app.
      same stale mistake repeated six times — all six now added with real content; see "Our
      Lady of the Snows added" and "Four more 'not modeled' fixed Lord's/BVM feasts added"
      below.
+   - Lauds/Vespers chapter/responsory/hymn/versicle bundle (see "Lauds/Vespers chapter-
+     responsory-hymn-versicle bundle" below): mechanism is now rank-agnostic (any sanctoral
+     winner falls back to their Common, not just duplex-majus+); one category authored so far
+     (Common-of-a-Confessor-Not-Bishop, via St. Louis/St. Nicholas of Tolentino). The other 10
+     Common categories (Confessor-Pope, Confessor-Doctor, Virgin, Virgin-Martyr, Abbot, Holy
+     Woman, Widow, Angel, Evangelist, and the smaller one-off Commons) still fall back to the
+     plain seasonal/ferial default until their own bundle is authored.
 
 3. **Known, deliberate simplifications** — flagged as intentional, not a bug, no plan to
    revisit unless priorities change: see "Known, deliberate simplifications" at the end of
