@@ -401,6 +401,66 @@ export function resolveMinorHourChapter(hourId: string, day: LiturgicalDay, fall
   return resolveCommon(fallbackId);
 }
 
+export interface OfficeBundle {
+  chapter: ResolvedText;
+  responsory: ResolvedText;
+  hymn: ResolvedText;
+  versicle: ResolvedText;
+}
+
+/**
+ * The chapter/responsory/hymn/versicle bundle following Lauds'/Vespers'
+ * psalmody (hours/lauds.ts's and hours/vespers.ts's own resolveOffice) —
+ * a saint's own proper bundle (`${hourId}-{part}-${id}`) when authored,
+ * else that saint's Common bundle (`${hourId}-{part}-${commonId}`,
+ * SaintRecord's main `common` field, not `minorHoursCommon` — this is the
+ * saint's overall classification, the same one driving their day collect).
+ * Eligibility is deliberately rank-agnostic, `getMinorHourOverrideId`'s
+ * test (any sanctoral winner, or a named ALWAYS_OVERRIDE_TEMPORAL_IDS
+ * feast) rather than resolveOffice's old duplex-majus+-only gate: a
+ * simplex feast's own or Common's chapter/hymn is real, distinct
+ * liturgical content, not something only strong feasts are entitled to —
+ * confirmed 2026-08-25 (St. Louis, King of France, simplex, was silently
+ * falling all the way to the plain ferial default instead of his Common
+ * of a Confessor Not Bishop). Same honest "eligible, not gated on whether
+ * content exists" convention as everywhere else: returns `undefined` when
+ * neither the proper nor the Common has this bundle authored yet, so the
+ * caller falls through to its own seasonal/weekday default.
+ *
+ * `resolveChapterFor` lets Vespers reuse its own chapter lookup (which
+ * itself falls back to the byte-identical Lauds capitulum file when no
+ * `vespers-capitulum-<id>.yml` exists — see vespersCapitulumForOverride)
+ * instead of the plain `${hourId}-capitulum-${id}` default used here.
+ */
+export function resolveOfficeBundle(
+  hourId: string,
+  day: LiturgicalDay,
+  resolveChapterFor: (id: string) => ResolvedText = (id) => resolveCommon(`${hourId}-capitulum-${id}`),
+): OfficeBundle | undefined {
+  const overrideId = getMinorHourOverrideId(day);
+  if (!overrideId) {
+    return undefined;
+  }
+  const tryId = (id: string): OfficeBundle | undefined => {
+    const chapter = resolveChapterFor(id);
+    if (chapter.status.la === 'missing' && chapter.status.en === 'missing') {
+      return undefined;
+    }
+    return {
+      chapter,
+      responsory: resolveResponsory(resolveCommon(`${hourId}-responsory-${id}`), day),
+      hymn: resolveCommon(`${hourId}-hymn-${id}`),
+      versicle: resolveCommon(`${hourId}-versicle-${id}`),
+    };
+  };
+  const proper = tryId(overrideId);
+  if (proper) {
+    return proper;
+  }
+  const commonId = getSaintRecord(overrideId)?.common;
+  return commonId ? tryId(commonId) : undefined;
+}
+
 /** Fills a Common collect template's literal `{N}` placeholders with a
  * saint's own name(s) per language (SaintRecord.collectName) — the same
  * substitution the reference source's own Commune files perform

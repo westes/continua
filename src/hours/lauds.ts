@@ -21,6 +21,7 @@ import {
   isFerialOrVigil,
   getOfficeOverrideId,
   resolveResponsory,
+  resolveOfficeBundle,
 } from './resolve-common';
 import laudsDefinitionData from '../data/hours/lauds.yml';
 import laudsAntiphonsData from '../data/hours/lauds-antiphons.yml';
@@ -178,29 +179,26 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
   return parts;
 }
 
-/** A duplex-majus+/Marian-Saturday override's own capitulum/responsory/
- * hymn/versicle (data/propers/common/lauds-{part}-${id}.yml), when
- * authored — most overrides only bother with the psalmody (see
- * getPsalmodyOverrideFor) and leave this bundle at its plain weekday
- * default, which is exactly what falls back here when the id-keyed
- * capitulum doesn't exist (same dual-missing-status "not authored"
- * signal used throughout this codebase, not a special case). Falls to a
- * *seasonal* default next (Advent/Lent/Passiontide/Paschaltide — see
- * resolve-common.ts's seasonalOfficeSuffix), and only then the plain
- * weekday default — a feast's own override always wins over the season
- * it happens to fall in, same as everywhere else in this codebase. */
+/** Any sanctoral winner's (or named-temporal feast's) own capitulum/
+ * responsory/hymn/versicle (data/propers/common/lauds-{part}-${id}.yml),
+ * else their Common's (`${part}-${common}`), when authored — see
+ * resolve-common.ts's resolveOfficeBundle for the eligibility/fallback
+ * rule (deliberately rank-agnostic as of 2026-08-25: a simplex feast's
+ * Common chapter/hymn is real content, not gated behind duplex-majus+
+ * like the psalmody override above is). Falls to a *seasonal* default
+ * next (Advent/Lent/Passiontide/Paschaltide — see resolve-common.ts's
+ * seasonalOfficeSuffix), and only then the plain weekday default — a
+ * feast's own override always wins over the season it happens to fall
+ * in, same as everywhere else in this codebase. */
 function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
-  const overrideId = getPsalmodyOverrideFor(day)?.id;
-  if (overrideId) {
-    const chapter = resolveCommon(`lauds-capitulum-${overrideId}`);
-    if (chapter.status.la !== 'missing' || chapter.status.en !== 'missing') {
-      return [
-        { kind: 'chapter', text: chapter },
-        { kind: 'responsory', text: resolveResponsory(resolveCommon(`lauds-responsory-${overrideId}`), day) },
-        { kind: 'hymn', text: resolveCommon(`lauds-hymn-${overrideId}`) },
-        { kind: 'versicle', text: resolveCommon(`lauds-versicle-${overrideId}`) },
-      ];
-    }
+  const bundle = resolveOfficeBundle('lauds', day);
+  if (bundle) {
+    return [
+      { kind: 'chapter', text: bundle.chapter },
+      { kind: 'responsory', text: bundle.responsory },
+      { kind: 'hymn', text: bundle.hymn },
+      { kind: 'versicle', text: bundle.versicle },
+    ];
   }
   const seasonSuffix = seasonalOfficeSuffix(day.season);
   const key = seasonSuffix ?? day.weekday;

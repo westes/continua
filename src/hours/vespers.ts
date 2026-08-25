@@ -15,8 +15,8 @@ import {
   verifiedText,
   seasonalOfficeSuffix,
   isFerialOrVigil,
-  getOfficeOverrideId,
   resolveResponsory,
+  resolveOfficeBundle,
 } from './resolve-common';
 import vespersDefinitionData from '../data/hours/vespers.yml';
 import vespersAntiphonsData from '../data/hours/vespers-antiphons.yml';
@@ -109,31 +109,30 @@ function vespersCapitulumForOverride(id: string): ResolvedText {
 }
 
 /** The chapter/responsory/hymn/versicle bundle following the psalmody —
- * see hours/types.ts's 'vespers-office' doc comment. A duplex-majus+
- * saint's own proper bundle (chapter via vespersCapitulumForOverride
- * above, responsory/hymn/versicle via `vespers-{part}-${id}`), or one of
- * the named temporal feasts eligible via resolve-common.ts's
- * getOfficeOverrideId, wins first when authored — same eligible-but-not-
- * gated-on-content pattern as Lauds' resolveOffice, just without a
- * psalmody-override table of its own to piggyback eligibility on
- * (Vespers has no per-feast psalmody override mechanism — see TODO.md).
- * Falls to a *seasonal* default next (Advent/Lent/Passiontide/
- * Paschaltide — see resolve-common.ts's seasonalOfficeSuffix), and only
- * then the plain weekday default — a feast's own override always wins
- * over the season it happens to fall in, same as everywhere else in this
- * codebase. */
+ * see hours/types.ts's 'vespers-office' doc comment. Any sanctoral
+ * winner's (or named-temporal feast's) own proper bundle (chapter via
+ * vespersCapitulumForOverride above, responsory/hymn/versicle via
+ * `vespers-{part}-${id}`), else their Common's bundle, wins first when
+ * authored — resolve-common.ts's resolveOfficeBundle, deliberately
+ * rank-agnostic (2026-08-25: matches Lauds' identical change, ditto for
+ * the same reason — a simplex feast's Common office is real content),
+ * not gated at duplex-majus+ the way this hour's lack of its own
+ * psalmody-override table might otherwise suggest (Vespers has no
+ * per-feast psalmody override mechanism — see TODO.md; that's unrelated
+ * to this bundle's own eligibility). Falls to a *seasonal* default next
+ * (Advent/Lent/Passiontide/Paschaltide — see resolve-common.ts's
+ * seasonalOfficeSuffix), and only then the plain weekday default — a
+ * feast's own override always wins over the season it happens to fall
+ * in, same as everywhere else in this codebase. */
 function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
-  const overrideId = getOfficeOverrideId(day);
-  if (overrideId) {
-    const chapter = vespersCapitulumForOverride(overrideId);
-    if (chapter.status.la !== 'missing' || chapter.status.en !== 'missing') {
-      return [
-        { kind: 'chapter', text: chapter },
-        { kind: 'responsory', text: resolveResponsory(resolveCommon(`vespers-responsory-${overrideId}`), day) },
-        { kind: 'hymn', text: resolveCommon(`vespers-hymn-${overrideId}`) },
-        { kind: 'versicle', text: resolveCommon(`vespers-versicle-${overrideId}`) },
-      ];
-    }
+  const bundle = resolveOfficeBundle('vespers', day, vespersCapitulumForOverride);
+  if (bundle) {
+    return [
+      { kind: 'chapter', text: bundle.chapter },
+      { kind: 'responsory', text: bundle.responsory },
+      { kind: 'hymn', text: bundle.hymn },
+      { kind: 'versicle', text: bundle.versicle },
+    ];
   }
   const seasonSuffix = seasonalOfficeSuffix(day.season);
   const key = seasonSuffix ?? day.weekday;
