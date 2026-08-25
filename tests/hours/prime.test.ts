@@ -113,7 +113,7 @@ describe('resolveOrdo("prime", ...)', () => {
     expect(ferialPreces).toBeDefined();
   });
 
-  it('uses the Sunday capitulum and Preces on a Sunday', () => {
+  it('uses the Sunday capitulum and the secular Preces (with Benedict kept in the Confiteor) on a Sunday', () => {
     const ordo = resolveOrdo('prime', SUNDAY);
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
     expect(chapter && chapter.kind === 'chapter' ? chapter.text.text.en : undefined).toBe(
@@ -122,6 +122,12 @@ describe('resolveOrdo("prime", ...)', () => {
     const preces = ordo.parts.filter((p) => p.kind === 'preces');
     const dominicalPreces = preces.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Confíteor Deo'));
     expect(dominicalPreces).toBeDefined();
+    expect(
+      dominicalPreces && dominicalPreces.kind === 'preces' ? dominicalPreces.text.text.la : undefined,
+    ).toContain('beáto Patri nostro Benedícto');
+    expect(
+      dominicalPreces && dominicalPreces.kind === 'preces' ? dominicalPreces.text.text.la : undefined,
+    ).toContain('Et ego ad te, Dómine, clamávi');
   });
 
   it('gives the capitulum its scripture citation', () => {

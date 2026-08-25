@@ -1,10 +1,13 @@
 # Verified against Divinum Officium ("Psalterium/Special/Preces.txt",
-# [Preces feriales Prima] section) — the same content is used regardless of
-# rubric (Monastic or Roman), unlike prime-preces.yml's Dominicales form
-# which the Monastic rubric shortens (skips straight to the Confiteor
-# cluster). Used on plain ferial days (see calendar/isSundayOrFeast) — by
-# explicit choice, every ferial day, not just Advent/Lent/vigils/Ember days
-# the way later rubrics restricted it.
+# [Preces feriales Prima] section) — the older, pre-1911-reform ferial-only
+# Preces form. Used on plain ferial days (see calendar/isSundayOrFeast) —
+# by explicit choice, currently *every* ferial day, not just the
+# Advent/Lent/vigils/Ember days later rubrics actually restricted it to;
+# under the live-verified secular Tridentine rubric this text doesn't
+# appear on an ordinary ferial day at all (that gets
+# prime-preces-dominicales.yml's unified form instead, same as Sunday) —
+# see hours/prime.yml's header. Narrowing when this file's text actually
+# applies is a known future fix, not done yet.
 id: prime-preces-feriales
 text:
   la: |

@@ -1,9 +1,18 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25
-# run — used on Sundays and feast days (see calendar/isSundayOrFeast); plain
-# ferial days use prime-preces-feriales.yml instead. Real Prime also drops
-# Preces entirely above a certain feast rank — that suppression isn't wired
-# up yet (needs milestone 4's feast-rank data), so today Preces are always
-# shown, just choosing between these two forms.
+# Secular Tridentine form (verified against Divinum Officium, version
+# "Tridentine - 1906", 2026-08-25 run) — used on Sundays and feast days
+# (see calendar/isSundayOrFeast); plain ferial days use
+# prime-preces-feriales.yml's older form instead (see that file's header
+# and hours/prime.yml's for the current, imperfect day-split rule).
+#
+# Chosen over Monastic Prime's own (shorter) Dominicales form by explicit
+# preference: this keeps the "Et ego ad te, Domine, clamavi..." versicle
+# block and the fuller "Miserere nostri, Domine... Fiat misericordia
+# tua..." close that Monastic Prime drops.
+#
+# The Confiteor keeps "beato Patri nostro Benedicto" in the saint list —
+# real secular/Roman Confiteors omit this (it's a Monastic-only addition
+# naming St. Benedict), but vu keeps it by explicit choice regardless of
+# which Preces form is otherwise in use.
 id: prime-preces-dominicales
 text:
   la: |
@@ -17,6 +26,19 @@ text:
     V. Carnis resurrectiónem.
     R. Vitam ætérnam. Amen.
 
+    V. Et ego ad te, Dómine, clamávi.
+    R. Et mane orátio mea prævéniet te.
+    V. Repleátur os meum laude.
+    R. Ut cantem glóriam tuam, tota die magnitúdinem tuam.
+    V. Dómine, avérte fáciem tuam a peccátis meis.
+    R. Et omnes iniquitátes meas dele.
+    V. Cor mundum crea in me, Deus.
+    R. Et spíritum rectum ínnova in viscéribus meis.
+    V. Ne projícias me a fácie tua.
+    R. Et spíritum sanctum tuum ne áuferas a me.
+    V. Redde mihi lætítiam salutáris tui.
+    R. Et spíritu principáli confírma me.
+
     V. Adjutórium nostrum ✠ in nómine Dómini.
     R. Qui fecit cælum et terram.
 
@@ -28,6 +50,10 @@ text:
 
     V. Dignáre, Dómine, die isto.
     R. Sine peccáto nos custodíre.
+    V. Miserére nostri, Dómine.
+    R. Miserére nostri.
+    V. Fiat misericórdia tua, Dómine, super nos.
+    R. Quemádmodum sperávimus in te.
     V. Dómine, exáudi oratiónem meam.
     R. Et clamor meus ad te véniat.
   en: |
@@ -41,6 +67,19 @@ text:
     V. The resurrection of the body.
     R. And life everlasting. Amen.
 
+    V. But I, O Lord, have cried unto thee:
+    R. And in the morning my prayer shall rise to thee.
+    V. Let my mouth be filled with praise,
+    R. That I may sing thy glory and thy greatness all the day long.
+    V. O Lord, turn away thy face from my sins,
+    R. And blot out all my iniquities.
+    V. Create a clean heart in me, O God,
+    R. And renew a right spirit within me.
+    V. Cast me not away from thy presence,
+    R. And take not thy Holy Spirit from me.
+    V. Restore unto me the joy of thy salvation,
+    R. And strengthen me with a perfect spirit.
+
     V. Our help is ✠ in the name of the Lord,
     R. Who made heaven and earth.
 
@@ -52,6 +91,10 @@ text:
 
     V. Vouchsafe, O Lord,
     R. To keep us this day without sin.
+    V. O Lord, have mercy upon us.
+    R. Have mercy upon us.
+    V. O Lord, let thy mercy lighten upon us,
+    R. As our trust is in thee.
     V. O Lord, hear my prayer.
     R. And let my cry come unto thee.
 status:
