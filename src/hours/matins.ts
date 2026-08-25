@@ -615,6 +615,13 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     parts.push({ kind: 'chapter', text: resolveCommon('matins-capitulum-ferial') });
   }
 
+  // Short litany (Kyrie eleison x3) + Pater noster, reusing the same fixed
+  // block Lauds/Vespers use (`lauds-short-litany`) rather than a Matins-named
+  // duplicate. Unlike Lauds' and Vespers' own preces, this is unconditional
+  // here — no ferial/Sunday swap, never omitted — per the user's explicit
+  // choice for Matins.
+  parts.push({ kind: 'preces', text: resolveCommon('lauds-short-litany') });
+
   parts.push({ kind: 'prayer', text: getDayCollect(day) });
 
   // Conclusio: live-verified against Divinum Officium (Monastic Tridentinum
