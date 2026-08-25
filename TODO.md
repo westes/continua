@@ -84,13 +84,13 @@ across every hour and content type in this app.
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
    - Matins psalmody overrides for a Duplex+ weekday feast (see "Matins psalmody overrides"
-     below): mechanism refactored to category-keyed (`categories/*.yml` + `saints/*.yml`), four
+     below): mechanism refactored to category-keyed (`categories/*.yml` + `saints/*.yml`), five
      categories authored (Common of a Martyr via St. Lawrence, Common of an Apostle via St.
      Andrew, Common of a Confessor via St. Francis of Paola, Common of a Confessor-Bishop via
-     St. Basil the Great). Every other Common category (Virgin, Doctor, Common of Several
-     Martyrs, etc. — the largest remaining population) still falls back to the plain ferial
-     weekday table, redistributed into 3 nocturns, until its own category's real psalmody is
-     authored.
+     St. Basil the Great, Common of Several Martyrs — the largest single category by population,
+     40 saints/groups — via Ss. Fabian and Sebastian). Every other Common category (Virgin,
+     Doctor, Abbot, etc.) still falls back to the plain ferial weekday table, redistributed into
+     3 nocturns, until its own category's real psalmody is authored.
    - The four "Commemoratio Octavæ" Ant+V/R+collect blocks (Christmas Octave's own
      Nativity/Stephen/John/Holy-Innocents commemorations, e.g. on Dec 30) are now done —
      see "Octave content" below. St. Frances of Rome's/
@@ -2728,6 +2728,45 @@ Sapphic 11.11.11.5-syllable shape as this project's other hymn translations), so
 textual variants of the same hymn, don't assume a single attached translation was written for
 whichever variant happens to be nearest it — check the imagery/vocabulary against each Latin
 candidate before trusting the pairing.
+
+### Matins psalmody overrides — Common-of-Several-Martyrs authored, largest remaining category (2026-08-25)
+
+Fifth Common category authored for `matins-psalmody-overrides`, same live-verify-a-saint-with-
+no-proper-antiphon method as the previous four: **`common-of-several-martyrs`**, from Ss. Fabian
+and Sebastian (2029-01-20, Duplex, confirmed clean — a Saturday, no Sunday collision — per their
+own saint-file comment). Live-verified (Monastic Tridentinum 1617, `command=prayMatutinum`)
+genuinely distinct from `common-of-a-martyr` (single martyr), not a duplicate: Nocturn 1 = Ps
+1,2,10,14,15,23 (vs 1,2,4,5,8,10), Nocturn 2 = Ps 32,33,45,60,63,78 (vs 14,20,23,63,64,91), and a
+different Nocturn 3 canticle source (Wisdom 3:1-6/3:7-9/10:17-21, one shared "Beáti, qui
+persecutiónem patiúntur" antiphon, vs Sirach 14/15 + Jeremiah 17 + Sirach 31). New scripture
+verses added: `data/scripture/sap-3.yml` gained 3:1-6 (3:7-9 already existed from St. Andrew's
+own canticle); `sap-10.yml`'s existing 10:17-21 reused as-is, no changes needed.
+
+This is the **largest single Common category by population** (40 saints/groups carry this
+`common` id per calendar-wide grep, more than `common-of-a-confessor`'s 37 or `common-of-a-
+martyr-bishop`'s 35) — authoring it unlocks real, non-ferial-fallback Matins psalmody for all 40
+at once. Checked every Duplex+ saint/group in the category (only Holy Innocents and Ss. Fabian
+and Sebastian themselves are Duplex+; Holy Innocents already has full proper content of its own,
+Fabian/Sebastian has none) — same as every category before it, no saint is currently eligible
+for its own `saints/*.yml` entry under the proper-only policy.
+
+**Wrinkle**: the reference engine's own English track has no translation at all for two of this
+category's antiphons (Nocturn 1's Ps 10 antiphon and Nocturn 3's "Beáti, qui persecutiónem"
+Beatitude antiphon, Matt 5:10) — its rendered English column just repeats the Latin for both.
+Original English translations supplied for both (matching this project's existing Douay-adjacent
+phrasing elsewhere, e.g. the Rule of Benedict's own "persecution for righteousness" wording) —
+flagged inline in the category file's own header comment, not silently passed through as
+`verified` without a note, even though the resolver's `verifiedText` helper doesn't distinguish
+draft from verified at this granularity (a pre-existing mechanism limitation, not new here).
+
+`tests/hours/matins.test.ts`'s old ferial-fallback proof (Ss. Fabian and Sebastian, now
+superseded now that their Common has real content) is rewritten as a Common-tier proof; a fresh
+genuine ferial-fallback proof was added instead (St. Anthony, Abbot, `common-of-an-abbot` — still
+unauthored — 2029-01-17, confirmed clean). `npm test` (471 tests), `tsc --noEmit` both pass.
+
+**Still open**: Confessor-Not-a-Bishop [6], Confessor-Pope [3], Confessor-Doctor [4], Virgin [11],
+Virgin-Martyr [17], Abbot [16], Holy Woman [3], Widow [6], Angel [5], Evangelist [3], and the
+smaller one-off Commons — none has a category file yet.
 
 ## Known, deliberate simplifications (not bugs — working as designed)
 
