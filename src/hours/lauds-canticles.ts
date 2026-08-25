@@ -34,3 +34,12 @@ export function getCanticle(id: string): Canticle {
   }
   return canticle;
 }
+
+// Non-throwing lookup for the UI's canticle title — unlike getCanticle,
+// callers here may pass ids (nunc-dimittis, benedictus, magnificat, or a
+// Matins nocturn-3 scripture-ref-derived id) that this store never holds,
+// since only the 7 Lauds weekday OT canticles have an authored English
+// `name` distinct from their Latin id.
+export function tryGetCanticleName(id: string): string | undefined {
+  return canticles.get(id)?.name;
+}

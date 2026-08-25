@@ -2,6 +2,7 @@ import { getState } from '../app-state';
 import { resolveOrdo } from '../hours';
 import type { ResolvedPart, ResolvedText, ResolvedVerse } from '../hours/types';
 import { hourLabel } from './format';
+import { tryGetCanticleName } from '../hours/lauds-canticles';
 
 function escapeHtml(value: string): string {
   return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -120,14 +121,27 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
       `;
     }
     case 'canticle': {
-      const title = part.canticleId
+      // The Latin title is always the id capitalized (it's already Latin —
+      // canticum-ezechiae -> "Canticum Ezechiae"). English only matches
+      // that pattern for names already conventional untranslated in
+      // English (Benedictus, Magnificat, Nunc Dimittis); the 7 Lauds
+      // weekday OT canticles have a real English name (e.g. "Canticle of
+      // Ezechias") authored separately — see lauds-canticles.ts.
+      const derivedTitle = part.canticleId
         .split('-')
         .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
         .join(' ');
+      const title: Partial<Record<string, string>> = {
+        la: derivedTitle,
+        en: tryGetCanticleName(part.canticleId) ?? derivedTitle,
+      };
+      const titleCols = languages
+        .map((lang) => `<span class="lang-column" lang="${lang}">${escapeHtml(title[lang] ?? derivedTitle)}</span>`)
+        .join('');
       return `
         <section class="ordo-part ordo-part-canticle">
           ${part.antiphon ? renderColumns(part.antiphon, languages) : ''}
-          <h3 class="ordo-part-label">${escapeHtml(title)}</h3>
+          <h3 class="ordo-part-label lang-columns lang-columns-${languages.length}">${titleCols}</h3>
           ${renderCitation(part.text)}
           ${renderColumns(part.text, languages)}
           ${part.gloriaPatri ? `<div class="ordo-part-gloria-patri">${renderColumns(part.gloriaPatri, languages)}</div>` : ''}
