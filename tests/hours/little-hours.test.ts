@@ -72,6 +72,14 @@ describe.each(LITTLE_HOURS)('resolveOrdo(%s, ...)', (hourId) => {
     expect(prayer && prayer.kind === 'prayer' ? prayer.text.text.en : undefined).toContain('Let us pray.');
   });
 
+  it('resolves a shared Preces (Kyrie/Pater Noster + short litany) after the chapter, identical across all three hours', () => {
+    const ordo = resolveOrdo(hourId, TUESDAY);
+    const preces = ordo.parts.find((p) => p.kind === 'preces' && p.label === 'Preces');
+    expect(preces && preces.kind === 'preces' ? preces.text.status.en : undefined).toBe('verified');
+    expect(preces && preces.kind === 'preces' ? preces.text.text.en : undefined).toContain('Lord, have mercy.');
+    expect(preces && preces.kind === 'preces' ? preces.text.text.en : undefined).toContain('Our Father');
+  });
+
   it('ends with the shared Little Hour conclusion, identical across all three hours', () => {
     const ordo = resolveOrdo(hourId, TUESDAY);
     const conclusion = ordo.parts.find((p) => p.kind === 'preces' && p.label === 'Conclusion');

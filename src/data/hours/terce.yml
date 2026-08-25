@@ -12,8 +12,14 @@
 # short versicle/response (*not* a separate elaborate responsory the way
 # Prime's chapter-responsory.ts adds one — Monastic Terce doesn't have
 # one), the day's own collect, and a closing that's identical across all
-# three Little Hours (see little-hour-conclusio.yml). No Preces, no Creed —
-# real Monastic Terce/Sext/None have neither.
+# three Little Hours (see little-hour-conclusio.yml). No Creed — real
+# Monastic Terce/Sext/None doesn't have one.
+#
+# Preces (Kyrie/Pater Noster + a short V/R litany) were added after the
+# chapter/collect, by deliberate choice, even though real Monastic
+# Terce/Sext/None has none — see minor-hour-preces-feriales.yml's header
+# for the reference-engine source and the "every day" simplification,
+# mirroring the same deviation already made for Prime.
 id: terce
 parts:
   - kind: opening-versicle
@@ -23,6 +29,9 @@ parts:
     resolve: by-weekday
   - kind: chapter
     textRef: { source: common, id: terce-capitulum-per-annum }
+  - kind: preces
+    textRef: { source: common, id: minor-hour-preces-feriales }
+    label: Preces
   - kind: day-collect
   - kind: preces
     textRef: { source: common, id: little-hour-conclusio }
