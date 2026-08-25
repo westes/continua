@@ -97,10 +97,13 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
     case 'canticle':
       return [{ kind: 'canticle', canticleId: part.canticleId, text: resolveCommon(part.textRef.id) }];
     case 'by-day-kind': {
-      if (part.omitOnDouble && isDoubleOrHigher(resolveOfficeWinner(day))) {
+      const winner = resolveOfficeWinner(day);
+      if (part.omitOnDouble && isDoubleOrHigher(winner)) {
         return [];
       }
-      const ref = isSundayOrFeastOffice(day) ? part.sundayOrFeastRef : part.ferialRef;
+      const isVigil = winner.kind === 'sanctoral' && winner.rank === 'vigil';
+      const useFeastForm = isSundayOrFeastOffice(day) && !(part.vigilIsFerial && isVigil);
+      const ref = useFeastForm ? part.sundayOrFeastRef : part.ferialRef;
       if (part.resolvedKind === 'preces') {
         return [{ kind: 'preces', text: resolveCommon(ref.id), label: part.label }];
       }

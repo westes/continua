@@ -130,6 +130,25 @@ describe('resolveOrdo("prime", ...)', () => {
     ).toContain('Et ego ad te, Dómine, clamávi');
   });
 
+  it('uses the ferial Preces (but the Sunday/feast capitulum) on a Vigil day', () => {
+    // 2025-11-29: a real, unimpeded Vigil of St. Andrew — day.winner is
+    // itself sanctoral/vigil (not merely commemorated), see
+    // data/calendar/saints/vigil-of-st-andrew.yml's own header comment.
+    const VIGIL = '2025-11-29';
+    const ordo = resolveOrdo('prime', VIGIL);
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    // The capitulum doesn't set vigilIsFerial, so it stays on the
+    // Sunday/feast form even on a Vigil day.
+    expect(chapter && chapter.kind === 'chapter' ? chapter.text.text.en : undefined).toBe(
+      'Now to the king of ages, immortal, invisible, the only God, be honour and glory for ever and ever. Amen.',
+    );
+    const preces = ordo.parts.filter((p) => p.kind === 'preces');
+    const ferialPreces = preces.find((p) => p.kind === 'preces' && p.text.text.la?.startsWith('V. Éripe me'));
+    expect(ferialPreces).toBeDefined();
+    const dominicalPreces = preces.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Confíteor Deo'));
+    expect(dominicalPreces).toBeUndefined();
+  });
+
   it('gives the capitulum its scripture citation', () => {
     const ordo = resolveOrdo('prime', MONDAY);
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');

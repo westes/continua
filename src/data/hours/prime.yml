@@ -30,6 +30,12 @@
 # ferial Preces are said on *every* ferial day, not just Advent/Lent/
 # vigils/Ember days the way later rubrics restricted them.
 #
+# Preces additionally set `vigilIsFerial: true` — isSundayOrFeastOffice on
+# its own treats any sanctoral winner, Vigils included, as a "feast," but
+# by explicit choice a Vigil day gets the ferial Preces instead. The
+# capitulum doesn't set this flag, so a Vigil still gets the Sunday/feast
+# capitulum, same as before.
+#
 # Preces deliberately use the *secular* Tridentine form
 # (propers/common/prime-preces-dominicales.yml), not Monastic Prime's own
 # shorter Dominicales form — chosen because the secular form keeps content
@@ -65,6 +71,7 @@ parts:
   - kind: by-day-kind
     resolvedKind: preces
     omitOnDouble: true
+    vigilIsFerial: true
     sundayOrFeastRef: { source: common, id: prime-preces-dominicales }
     ferialRef: { source: common, id: prime-preces-feriales }
   - kind: prayer

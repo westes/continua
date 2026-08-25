@@ -61,6 +61,12 @@ export type HourPart =
       resolvedKind: 'chapter' | 'preces';
       label?: string;
       omitOnDouble?: true;
+      // When true, a Vigil-ranked sanctoral winner takes the ferialRef
+      // instead of the sundayOrFeastRef isSundayOrFeastOffice would
+      // otherwise give it (that function treats any sanctoral winner,
+      // Vigils included, as a "feast"). Prime's Preces use this; its
+      // capitulum doesn't.
+      vigilIsFerial?: true;
       sundayOrFeastRef: PropersRef;
       ferialRef: PropersRef;
     }
