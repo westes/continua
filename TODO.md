@@ -2653,9 +2653,10 @@ Common's text for hymn + invitatory.
 
 **Not authored, logged as explicit backlog**, same incremental-content pattern as everywhere
 else in this project:
-- Hymn + invitatory Common tiers for: Martyrs (C2), Confessors (C4), Virgins (C6), Holy Women
+- Hymn + invitatory Common tiers for: Martyrs (C2), Virgins (C6), Holy Women
   (C7), Dedication (C8), General/All Saints (C9) — all confirmed to have their own distinct
-  `[Invit]`/`[Hymnus Matutinum]` text in the reference source, not yet transcribed.
+  `[Invit]`/`[Hymnus Matutinum]` text in the reference source, not yet transcribed. Confessors
+  (C4) hymn done 2026-08-25, see below — invitatory antiphon still open.
 - Seasonal invitatory-antiphon tier content (Advent/Lent/Passiontide/Paschaltide/Christmastide)
   — mechanism now exists (same `seasonalOfficeSuffix`-keyed lookup the hymn's own long-standing
   seasonal tier already uses), but no seasonal invitatory file is authored yet; every season
@@ -2696,6 +2697,37 @@ Christmastide's own stacked octaves), so Matins's separate check still covers re
 Christmas/Stephen/John/Innocents octave days) the other path doesn't reach. Left unchanged.
 
 `npm test` (470 tests) and `tsc --noEmit` both pass.
+
+### Common-of-a-Confessor Matins hymn authored, Monastic-vs-secular textual variant (2026-08-25)
+
+**Bug fixed**: St. Louis (2026-08-25, `common-of-a-confessor-not-bishop`, wins outright as a
+Simplex) was falling through `resolveMatinsHymn`'s Common-of-Saints tier straight to the plain
+ferial hymn, because none of the 5 confessor `common:` ids in use across `data/calendar/saints/*`
+(`common-of-a-confessor` [37 saints], `common-of-a-confessor-bishop` [33], `common-of-a-
+confessor-not-bishop` [6], `common-of-a-confessor-pope` [3], `common-of-a-confessor-doctor` [4])
+had a `matins-hymn-<id>.yml` authored yet — this was the "Confessors (C4)" gap logged in the
+2026-08-24 entry above. All 5 authored now, all sharing one text ("Iste Conféssor Dómini
+sacrátus" / "This is the Lord's own hallowed confessor").
+
+**Textual-variant wrinkle, worth remembering generally**: the reference engine's
+`Commune/C4.txt` actually contains two genuinely different Latin recensions of this hymn, not
+just formatting variants — a secular-breviary Urban VIII revision (`[Hymnus Vespera]`: "...
+coléntes... Hac die lætus méruit beátas Scándere sedes") and an older Monastic-track form
+(`[HymnusM Vespera]`: "...sacrátus... Hódie lætus méruit secréta Scándere cæli"), live-verified
+by querying `Pofficium.pl` both ways (St. Louis under `version=Monastic Tridentinum 1617`
+renders `sacrátus`; a Doctor confessor under `version=Divino Afflatu` renders `coléntes` — the
+split is Monastic-vs-secular, *not* doctor-vs-other, despite a Solesmes chant-archive gabc file
+being labeled "pro Doctoribus"). Since vu's Matins is Monastic-1617-structured throughout, the
+`sacrátus` form is correct for all 5 ids alike. Also: the reference engine's own English track
+has only one translation and reuses it for both Latin forms without distinction — sloppily,
+since its concrete imagery (visiting the saint's *tomb*; being helped by his *merits*, not his
+*prayers*) actually only matches the `sacrátus` Latin. Rather than trust that reused pairing,
+the English here is an original translation of the `sacrátus` Latin (kept in the same unrhymed
+Sapphic 11.11.11.5-syllable shape as this project's other hymn translations), so `status.en` is
+`draft` while `status.la` is `verified`. General lesson: when the reference source has multiple
+textual variants of the same hymn, don't assume a single attached translation was written for
+whichever variant happens to be nearest it — check the imagery/vocabulary against each Latin
+candidate before trusting the pairing.
 
 ## Known, deliberate simplifications (not bugs — working as designed)
 
