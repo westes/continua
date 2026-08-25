@@ -286,18 +286,43 @@ describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunda
     expect(common.parts.some((p) => p.kind === 'canticle')).toBe(true);
   });
 
+  it("falls through to Common-of-Several-Martyrs's own generic psalmody -- a genuinely different scheme from the single-martyr Common", () => {
+    // Ss. Fabian and Sebastian (Duplex, Common of Several Martyrs, no
+    // proper antiphon of their own) -- 2029-01-20, a Saturday, confirmed
+    // clean (no Sunday collision) per their own saint-file comment.
+    const common = resolveOrdo('matins', '2029-01-20');
+    const psalms = common.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
+    expect(psalms).toEqual([3, 94, 1, 2, 10, 14, 15, 23, 32, 33, 45, 60, 63, 78]);
+    expect(common.parts.some((p) => p.kind === 'te-deum')).toBe(true);
+    expect(common.parts.some((p) => p.kind === 'canticle')).toBe(true);
+
+    const psalmParts = common.parts.filter((p) => p.kind === 'psalm') as { psalmNumber: number; antiphon?: { status: Record<string, string> } }[];
+    const nocturnPsalms = psalmParts.filter((p) => ![3, 94].includes(p.psalmNumber));
+    for (const p of nocturnPsalms) {
+      expect(p.antiphon?.status.la).toBe('verified');
+      expect(p.antiphon?.status.en).toBe('verified');
+    }
+
+    const canticles = common.parts.filter((p) => p.kind === 'canticle') as { canticleId: string; text: { status: Record<string, string> } }[];
+    expect(canticles).toHaveLength(3);
+    expect(canticles[0]?.canticleId).toBe('sap-3-1-6');
+    for (const c of canticles) {
+      expect(c.text.status.la).toBe('verified');
+      expect(c.text.status.en).toBe('verified');
+    }
+  });
+
   it('falls all the way back to the plain ferial weekday table, redistributed into 3 nocturns, when neither a proper nor a Common entry is authored', () => {
-    // Ss. Fabian and Sebastian (Duplex, Common of Several Martyrs -- no
+    // St. Anthony, Abbot (Duplex, Common of an Abbot -- no
     // matins-psalmody-overrides category authored yet for either tier)
-    // -- 2029-01-20, a Saturday, confirmed clean (no Sunday collision)
-    // per their own saint-file comment.
-    const fallback = resolveOrdo('matins', '2029-01-20');
+    // -- 2029-01-17, a Wednesday, confirmed clean (no Sunday collision).
+    const fallback = resolveOrdo('matins', '2029-01-17');
     const psalms = fallback.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
-    // Ps 3 + 94, then Saturday's own 9-psalm ferial table
-    // (psalter-distribution.yml), not any Common-of-Several-Martyrs scheme.
+    // Ps 3 + 94, then Wednesday's own 9-psalm ferial table
+    // (psalter-distribution.yml), not any Common-of-an-Abbot scheme.
     expect(psalms[0]).toBe(3);
     expect(psalms[1]).toBe(94);
-    expect(psalms.slice(2)).toEqual(getPsalmsFor('matins', 'saturday').map((r) => r.number));
+    expect(psalms.slice(2)).toEqual(getPsalmsFor('matins', 'wednesday').map((r) => r.number));
     expect(fallback.parts.some((p) => p.kind === 'te-deum')).toBe(true);
     expect(fallback.parts.some((p) => p.kind === 'canticle')).toBe(false);
   });

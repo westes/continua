@@ -1,0 +1,111 @@
+# Generic Common-of-Several-Martyrs Matins psalmody, live-verified
+# against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayMatutinum, 2029-01-20 -- Ss. Fabian and Sebastian,
+# Martyrs, whose own rule is entirely Common, no proper antiphon of
+# their own -- so their own output *is* this category's generic
+# scheme). Confirmed genuinely distinct from `common-of-a-martyr.yml`'s
+# scheme (a single martyr), not a duplicate: different psalm numbers in
+# both nocturns (Nocturn 1: 1,2,10,14,15,23 here vs 1,2,4,5,8,10 there;
+# Nocturn 2: 32,33,45,60,63,78 here vs 14,20,23,63,64,91 there) and a
+# different Nocturn 3 canticle source (Wisdom 3/10 here vs Sirach 14/15
+# + Jeremiah 17 + Sirach 31 there).
+#
+# One wrinkle: the reference engine's own English track has no
+# translation for two antiphons here -- Nocturn 1's Psalm 10 antiphon
+# ("Oculi Dómini...") and Nocturn 3's ("Beáti, qui persecutiónem...",
+# the standard "Blessed are they that suffer persecution" Beatitude
+# text, Matt 5:10) -- its rendered "English" column just repeats the
+# Latin for both. The English given below for those two is an original
+# translation (matching this project's other Douay-adjacent psalm-
+# antiphon phrasing, e.g. Ps 10:5's own "His eyes look on the poor
+# man"), not reused reference-engine text.
+#
+# 40 saints/groups on the calendar carry this `common` id -- the
+# largest single Common category by population -- so this file unlocks
+# real (non-ferial-fallback) Matins psalmody for all of them at once,
+# even before any of them has its own proper `saints/*.yml` entry.
+id: common-of-several-martyrs
+nocturn1:
+  groups:
+    - psalms: [1]
+      antiphon:
+        la: "Secus decúrsus aquárum * plantávit víneam justórum, et in lege Dómini fuit volúntas eórum."
+        en: "By the rivers of water * hath the Lord planted the vineyard of the righteous, and in His Law do they meditate day and night."
+    - psalms: [2]
+      antiphon:
+        la: "Tamquam aurum * in fornáce probávit eléctos Dóminus: et quasi holocáusta accépit eos in ætérnum."
+        en: "As gold in the furnace * hath the Lord tried His chosen ones, and received them for ever as a burnt-offering."
+    - psalms: [10]
+      antiphon:
+        la: "Oculi Dómini * respexérunt in páuperes, † cum peccatóres arcus suos in eos inténderent."
+        en: "The eyes of the Lord * looked upon the poor, when the sinners bent their bow against them."
+    - psalms: [14]
+      antiphon:
+        la: "Dabo Sanctis meis * locum nominátum in regno Patris mei, dicit Dóminus."
+        en: "I will give unto My Saints a place * in the kingdom of My Father, every one by his own name, saith the Lord."
+    - psalms: [15]
+      antiphon:
+        la: "Sanctis, qui in terra sunt ejus, * mirificávit omnes voluntátes meas inter illos."
+        en: "To the Saints that are in the earth * Thou hast made all my counsels admirable."
+    - psalms: [23]
+      antiphon:
+        la: "Sancti qui sperant in Dómino, * habébunt fortitúdinem, assúment pennas ut áquilæ, volábunt, et non defícient."
+        en: "The Saints that wait upon the Lord * shall renew their strength; they shall mount up with wings as eagles, they shall fly and not faint."
+  versicle:
+    v:
+      la: "Lætámini in Dómino, et exsultáte justi."
+      en: "Be glad in the Lord, and rejoice, ye just,"
+    r:
+      la: "Et gloriámini omnes recti corde."
+      en: "And glory, all ye right of heart."
+nocturn2:
+  groups:
+    - psalms: [32]
+      antiphon:
+        la: "Justi autem * in perpétuum vivent, et apud Dóminum est merces eórum."
+        en: "The righteous live * for evermore; their reward also is with the Lord."
+    - psalms: [33]
+      antiphon:
+        la: "Tradidérunt * córpora sua in mortem, ne servírent idólis: ídeo coronáti póssident palmam."
+        en: "They gave up their bodies unto death * rather than serve idols and therefore have they crowns on their heads and palms in their hands."
+    - psalms: [45]
+      antiphon:
+        la: "Ecce merces * Sanctórum copiósa est apud Deum: ipsi vero mórtui sunt pro Christo, et vivent in ætérnum."
+        en: "Behold, how great with God is the reward * of His Saints; yea, they who died for Christ's sake shall live for ever and ever."
+    - psalms: [60]
+      antiphon:
+        la: "Istórum est enim * regnum cælórum, qui contempsérunt vitam mundi, et pervenérunt ad premia regni, et lavérunt stolas suas in sanguine Agni."
+        en: "For theirs is the Kingdom of heaven * who love not their lives in this world, and have attained unto the reward of the Kingdom, and have washed their robes in the blood of the Lamb."
+    - psalms: [63]
+      antiphon:
+        la: "Sanguis sanctórum mártyrum * pro Christo effúsus est in terra; ideo adépti sunt munera sempitérna."
+        en: "The blood * of the holy Martyrs was poured for Christ on earth, therefore they have obtained eternal rewards."
+    - psalms: [78]
+      antiphon:
+        la: "Víndica Domine * sánguinem Sanctórum tuórum, qui effúsus est super terram."
+        en: "Avenge, O Lord, the blood of thy saints, which is shed over the Earth."
+  versicle:
+    v:
+      la: "Exsúltent justi in conspéctu Dei."
+      en: "Let the righteous rejoice before God."
+    r:
+      la: "Et delecténtur in lætítia."
+      en: "Yea, let them exceedingly rejoice."
+nocturn3:
+  antiphon:
+    la: "Beáti, * qui persecutiónem patiúntur propter justítiam, quóniam ipsórum est regnum cælórum."
+    en: "Blessed are they * that suffer persecution for righteousness' sake, for theirs is the kingdom of heaven."
+  canticles:
+    - refs:
+        - { book: sap, chapter: 3, verses: "1-6" }
+    - refs:
+        - { book: sap, chapter: 3, verses: "7-9" }
+    - refs:
+        - { book: sap, chapter: 10, verses: "17-21" }
+  versicle:
+    v:
+      la: "Justi autem in perpétuum vivent."
+      en: "The righteous live for evermore."
+    r:
+      la: "Et apud Dóminum est merces eórum."
+      en: "Their reward also is with the Lord."
