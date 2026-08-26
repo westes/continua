@@ -2942,6 +2942,25 @@ classis) both on his own Lauds and via his real First-Vespers anticipation (Jan 
 `npm test` (486 tests), `tsc --noEmit` both pass. **Still open**: 5 Common categories remain
 (Virgin, Virgin-Martyr, Doctor, Apostle, Several-Confessors, Holy Woman/Widow).
 
+### Common-of-a-Virgin-Martyr / Common-of-a-Virgin Lauds/Vespers bundle authored (2026-08-26)
+
+Same fix pattern, another genuinely-distinct category (unlike Confessor/Abbot, this one has its
+own real content, not disguised Confessor-Not-Bishop). Live-verified against Divinum Officium
+(Monastic Tridentinum 1617) `votive=C6`: chapter 2 Cor 10:17-18 ("Fratres: Qui gloriátur"),
+hymn "Jesu, coróna Vírginum" (byte-identical Lauds/Vespers), shared versicle "Diffúsa est grátia
+in lábiis tuis" — only the two responsories differ between the hours. Cross-checked plain
+`common-of-a-virgin` (St. Praxedes) renders the identical content, matching TODO.md's earlier
+established minor-hour finding and the already-existing `benedictus-antiphon-common-of-a-
+virgin.yml` precedent — duplicated the same 7 files under that id too.
+
+Proof: St. Apollonia's own clean year (2029-02-09 — her actual 2026 date collides, St. John of
+Matha wins outright that year) for Lauds, St. Praxedes's real First-Vespers anticipation
+(Jul 20 → 21) for Vespers.
+
+`npm test` (488 tests), `tsc --noEmit` both pass. **Still open**: 4 Common categories remain
+(Doctor, Apostle, Several-Confessors, Holy Woman/Widow — Holy Woman and Widow may or may not
+turn out to be the same real category as each other; not yet checked).
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own

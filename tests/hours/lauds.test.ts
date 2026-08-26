@@ -201,6 +201,17 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu coróna célsior');
   });
 
+  it("uses common-of-a-virgin-martyr's real office bundle on St. Apollonia's own clean day, not the ferial default", () => {
+    // 2026-02-09 collides (St. John of Matha wins outright, Apollonia
+    // merely commemorated), so this uses her own already-verified clean
+    // year (2029-02-09, per her saint file's own comment).
+    const ordo = resolveOrdo('lauds', '2029-02-09');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('2 Cor 10:17-18');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu, coróna Vírginum');
+  });
+
   it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));

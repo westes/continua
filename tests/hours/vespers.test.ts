@@ -288,6 +288,17 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Iste Conféssor Dómini sacrátus');
   });
 
+  it("uses common-of-a-virgin(-martyr)'s real office bundle for St. Praxedes's First Vespers, not the ferial default", () => {
+    // St. Praxedes (Jul 21, Simplex, plain common-of-a-virgin -- see
+    // lauds-capitulum-common-of-a-virgin.yml's header) claims First
+    // Vespers over Jul 20's own evening.
+    const ordo = resolveOrdo('vespers', '2026-07-20');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('2 Cor 10:17-18');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu, coróna Vírginum');
+  });
+
   it("renders Passiontide's seasonal office, with the Gloria Patri omitted from the responsory", () => {
     // 2026-03-25 is a Wednesday in Passiontide (Passion Sunday 2026-03-22
     // through Holy Saturday 2026-04-04).
