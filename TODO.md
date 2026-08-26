@@ -3107,6 +3107,26 @@ imagery — nails, spear-wound, blood) tripped a content-filtering block on the 
 Splitting each file into a Latin-only `Write` followed by a separate `Edit` adding the English
 got past it reliably; a single combined bilingual `Write` did not.
 
+### All Saints of the Benedictine Order own proper content imported — individual-saint pass closed (2026-08-26)
+
+Last of the 12-saint individual-Proprio list. Live-verified against Divinum Officium (Monastic
+Tridentinum 1617), 2025-11-13 (clean year): own chapter (Isa 8:18, "Ecce ego et púeri mei") and
+own hymn ("Salvéte, cedri Líbani," same text both hours, no English rendering in the reference
+engine — own translation, marked draft); responsory and versicle byte-identical to Common-of-
+Several-Martyrs's own already-authored content.
+
+This closes the individual-saint Proprio pass started this session. Final tally: 10 real saints/
+feasts imported (St. Gregory the Great, St. Benedict, Commemoration of St. Paul, St. Agatha,
+St. Agnes, the Annunciation, the Purification, Finding/Exaltation of the Holy Cross, the
+Transfiguration, All Saints of the Benedictine Order); 2 flagged saints (Ss. Alexander/Eventius/
+Theodulus/Juvenal, Ss. Machabees) needed no new content — both are genuinely unwinnable stubs
+whose already-correct `common` field simply never gets exercised. Combined with the 10 Common
+categories and the Guardian-Angels/Archangels proper-content-reuse fix earlier this session,
+`resolveOfficeBundle` now has real, live-verified Lauds/Vespers content for every gap the
+original audit found.
+
+`npm test` (513 tests), `tsc --noEmit` both pass.
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own
