@@ -322,6 +322,18 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Exsúltet cælum láudibus');
   });
 
+  it("uses common-of-a-widow's real office bundle for St. Margaret of Scotland's First Vespers", () => {
+    // St. Margaret of Scotland (Jun 10, Semiduplex, common-of-a-widow --
+    // live-verified 2026-08-26 to be real content identical to Common-
+    // of-a-Holy-Woman's, see lauds-capitulum-common-of-a-holy-woman.yml's
+    // header) claims First Vespers over Jun 9's own evening.
+    const ordo = resolveOrdo('vespers', '2026-06-09');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Prov 31:10-11');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Fortem viríli péctore');
+  });
+
   it("renders Passiontide's seasonal office, with the Gloria Patri omitted from the responsory", () => {
     // 2026-03-25 is a Wednesday in Passiontide (Passion Sunday 2026-03-22
     // through Holy Saturday 2026-04-04).

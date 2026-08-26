@@ -2984,6 +2984,23 @@ Vespers) for Apostle.
 (Several-Confessors — 1 saint, Ss. Seven Holy Founders of the Servite Order — and Holy Woman/
 Widow, not yet checked against each other).
 
+### Common-of-a-Holy-Woman and Common-of-a-Widow Lauds/Vespers bundles authored (2026-08-26)
+
+Both categories genuinely distinct from Virgin(-Martyr) (different chapter Prov 31:10-11
+"Mulíerem fortem," different hymn "Fortem viríli péctore") but share that category's exact
+responsory pattern and versicle byte-for-byte in both hours — live-verified via St. Anne's own
+real day (Jul 26). Also live-verified St. Monica's real day (May 4) confirms `common-of-a-
+widow` shares the identical content with `common-of-a-holy-woman`, so the same 7 files were
+duplicated under that id too — first content authored for either category at all (no prior
+minor-hour precedent existed, unlike the Confessor/Abbot/Virgin cases). Proof: St. Anne's and
+St. Monica's own days for Lauds, St. Margaret of Scotland's real First-Vespers anticipation
+(Jun 9 → 10) for Vespers.
+
+`npm test` (494 tests), `tsc --noEmit` both pass. **Still open**: 1 Common category remains —
+Several-Confessors (Ss. Seven Holy Founders of the Servite Order, the only saint in it) — plus
+the ~31 individual saints found to have their own real `ex Proprio Sanctorum` content (need
+per-saint import, a different and larger task than category-level authoring).
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own

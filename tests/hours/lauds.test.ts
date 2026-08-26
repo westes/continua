@@ -233,6 +233,20 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Exsúltet cælum láudibus');
   });
 
+  it("uses common-of-a-holy-woman's real office bundle on St. Anne's own day, and common-of-a-widow's identical bundle on St. Monica's", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum 1617)
+    // that the two categories share real content -- see lauds-capitulum-
+    // common-of-a-holy-woman.yml's header.
+    const anne = resolveOrdo('lauds', '2026-07-26');
+    const monica = resolveOrdo('lauds', '2026-05-04');
+    for (const ordo of [anne, monica]) {
+      const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+      expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Prov 31:10-11');
+      const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+      expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Fortem viríli péctore');
+    }
+  });
+
   it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
