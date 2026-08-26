@@ -18,6 +18,13 @@
 # identical at both hours by live query) versus the fuller Tridentine
 # 1906/1910 ferial Preces on a ferial or vigil day — see hours/types.ts's
 # 'vespers-preces' doc comment.
+#
+# `suffrages` (Holy Cross, BVM, Joseph, Ss. Peter & Paul, Peace) reuses
+# Lauds' own mechanism and content ids wholesale — live-verified
+# 2026-08-25 against Monastic Tridentinum 1617 that the "Suffragium"
+# block after Vespers' collect is byte-identical to the one after Lauds',
+# not a Lauds-specific thing. See hours/resolve-common.ts's
+# resolveSuffrages for the full omission logic.
 id: vespers
 parts:
   - kind: opening-versicle
@@ -26,5 +33,7 @@ parts:
   - kind: magnificat
   - kind: vespers-preces
   - kind: day-collects
+  - kind: suffrages
+    omitOnDouble: true
   - kind: preces
     textRef: { source: common, id: lauds-conclusio }

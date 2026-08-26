@@ -140,12 +140,15 @@ export type HourPart =
   // full-after-Creed... no Creed at Lauds, just before+after framing shape
   // as nunc-dimittis, gated the same way by isDoubleOrHigher.
   | { kind: 'benedictus' }
-  // Lauds only. The four fixed Tridentine suffrages (Holy Cross, BVM,
-  // Ss. Peter & Paul, Peace) said after the day's collect(s) — see
-  // data/propers/common/lauds-suffrage-*.yml. `omitOnDouble` gates the
-  // whole set at once (real practice: suffrages drop on a Double-or-higher
-  // feast) — an honest simplification, see hours/lauds.ts for the caveat
-  // on what real practice also suppresses them for that isn't modeled.
+  // Lauds and Vespers. The four fixed Tridentine suffrages (Holy Cross,
+  // BVM, Ss. Peter & Paul, Peace) said after the day's collect(s) — see
+  // data/propers/common/lauds-suffrage-*.yml (reused byte-identical at
+  // Vespers, same fixed formula after either hour, live-verified
+  // 2026-08-25 — see hours/resolve-common.ts's resolveSuffrages).
+  // `omitOnDouble` gates the whole set at once (real practice: suffrages
+  // drop on a Double-or-higher feast) — an honest simplification, see
+  // resolveSuffrages for the caveat on what real practice also
+  // suppresses them for that isn't modeled.
   | { kind: 'suffrages'; omitOnDouble?: true }
   // Lauds only. The Tridentine 1906/1910 "Preces feriales" litany (Kyrie,
   // Pater noster, a long chain of versicles, Psalm 129, closing versicles)

@@ -3,7 +3,7 @@ import type { Commemoration, DayWinner, LiturgicalDay, Weekday } from '../calend
 import type { ProperText } from '../propers';
 import { getCommonProper, getTemporalProper } from '../propers';
 import { getSaintRecord } from '../calendar/feasts';
-import { resolveActiveOctave, activeOctavesFor, octaveGoverningPrivilegedDay, isAtLeast } from '../calendar';
+import { resolveActiveOctave, activeOctavesFor, octaveGoverningPrivilegedDay, isAtLeast, isSundayOrFeast } from '../calendar';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { isInTriduum } from '../calendar/temporal';
 import { splitAntiphon, isDoubleOrHigher } from './antiphon';
@@ -616,6 +616,84 @@ export function getDayCollects(day: LiturgicalDay): ResolvedPart[] {
     }
   }
   return parts;
+}
+
+const SUFFRAGE_IDS = ['lauds-suffrage-cross', 'lauds-suffrage-bvm', 'lauds-suffrage-joseph', 'lauds-suffrage-apostles', 'lauds-suffrage-peace'];
+const SUFFRAGE_LABELS: Record<string, string> = {
+  'lauds-suffrage-cross': 'Of the Holy Cross',
+  'lauds-suffrage-bvm': 'Of the Blessed Virgin Mary',
+  'lauds-suffrage-joseph': 'Of St. Joseph',
+  'lauds-suffrage-apostles': 'Of the Holy Apostles Peter and Paul',
+  'lauds-suffrage-peace': 'For Peace',
+};
+
+/**
+ * The four fixed Tridentine suffrages (Holy Cross, BVM, Joseph, Ss. Peter
+ * & Paul, Peace), said after the day's collect(s) — shared by Lauds and
+ * Vespers (live-verified 2026-08-25: Monastic Tridentinum 1617 renders
+ * the identical "Suffragium" block, same four antiphons/prayers, after
+ * *both* hours, not just Lauds — vu previously only had this mechanism
+ * wired up at Lauds, an honest content gap rather than a deliberate
+ * Lauds-only design). `omitOnDouble` gates the whole set at once (real
+ * practice: suffrages drop on a Double-or-higher feast) — see below for
+ * the caveat on what real practice also suppresses them for that isn't
+ * modeled.
+ */
+export function resolveSuffrages(day: LiturgicalDay, omitOnDouble: boolean | undefined): ResolvedPart[] {
+  // isDoubleOrHigher only ever looks at a sanctoral rank — Christ the
+  // King is modeled as a named temporal winner (see
+  // ALWAYS_OVERRIDE_TEMPORAL_IDS above) with no FeastClass to check at
+  // all, so it needs its own explicit inclusion here. Confirmed live:
+  // "Suffragium{omittitur}" — the whole set drops, same as any other
+  // Double-or-higher day.
+  const isChristTheKing = day.winner.kind === 'temporal' && day.winner.id === 'christ-the-king';
+  // Confirmed live against Monastic Tridentinum 1617 directly (this
+  // isn't a Tridentine-1906-only quirk -- the same exclusions hold
+  // under the app's own primary rubric track): suffrages are omitted
+  // *entirely* during Advent, Christmastide, and Passiontide (not all
+  // of Lent -- ordinary Lent ferias still get them, checked directly
+  // against 2026-02-20; only the last two weeks), and on any day
+  // within an active octave, however low that octave's own rank is
+  // -- checked directly against day 3 of St. Lawrence's own
+  // (Semiduplex) octave, which still omits them despite being well
+  // below the Duplex+ rank threshold below.
+  const isSeasonallyExcluded = day.season === 'advent' || day.season === 'christmastide' || day.season === 'passiontide';
+  const isWithinAnOctave = activeOctavesFor(day.date).length > 0;
+  if (omitOnDouble && (isDoubleOrHigher(day.winner) || isChristTheKing || isSeasonallyExcluded || isWithinAnOctave)) {
+    return [];
+  }
+  // "Of the Holy Cross" is the real *ferial*-office suffrage, sourced
+  // from Tridentine 1906/1910 (a different track than the other four,
+  // which come from Monastic 1617 -- that track has no Cross suffrage
+  // at Lauds at all) -- live-verified against a plain ferial win, a
+  // plain Sunday win, a low-rank saint's own win (even bare Simplex),
+  // and Marian Saturday: Cross shows only when the bare temporal
+  // feria itself is what's being prayed -- the exact *opposite* of
+  // "Sunday or a feast of the Lord." In this app's own vocabulary,
+  // that's `!isSundayOrFeast(day)` (the same ferial/festive split
+  // Prime's capitulum already keys off) with one more exclusion for a
+  // named temporal identity like Marian Saturday, which isn't Sunday
+  // or a sanctoral winner either but still isn't a bare ferial office.
+  const showCross = !isSundayOrFeast(day) && !(day.winner.kind === 'temporal' && getTemporalFeastRecord(day.winner.id));
+  // "Of the Blessed Virgin Mary" is omitted specifically when the
+  // day's own office is already Marian (would be redundant to
+  // suffrage Mary again on her own day) -- confirmed live on Marian
+  // Saturday (Simplex-strength, so it reaches this far rather than
+  // being excluded outright above); the only case this app currently
+  // has of a day using the Marian common below the suffrage-omitting
+  // Duplex+ threshold (every actual Marian *feast* modeled so far is
+  // Duplex-majus+ and already returns above).
+  const isMarianSaturday = day.winner.kind === 'temporal' && day.winner.id === 'marian-saturday';
+  const ids = SUFFRAGE_IDS.filter((id) => {
+    if (id === 'lauds-suffrage-cross') return showCross;
+    if (id === 'lauds-suffrage-bvm') return !isMarianSaturday;
+    return true;
+  });
+  return ids.map((id) => ({
+    kind: 'preces' as const,
+    text: resolveCommon(id),
+    label: SUFFRAGE_LABELS[id],
+  }));
 }
 
 /**

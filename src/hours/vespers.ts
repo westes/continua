@@ -17,6 +17,7 @@ import {
   isFerialOrVigil,
   resolveResponsory,
   resolveOfficeBundle,
+  resolveSuffrages,
 } from './resolve-common';
 import vespersDefinitionData from '../data/hours/vespers.yml';
 import vespersAntiphonsData from '../data/hours/vespers-antiphons.yml';
@@ -176,6 +177,8 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     }
     case 'day-collects':
       return getDayCollects(day);
+    case 'suffrages':
+      return resolveSuffrages(day, part.omitOnDouble);
     case 'preces':
       return [{ kind: 'preces', text: resolveCommon(part.textRef.id), label: part.label }];
     case 'versicle':
@@ -199,7 +202,6 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'lauds-psalmody':
     case 'lauds-office':
     case 'benedictus':
-    case 'suffrages':
     case 'lauds-preces':
     case 'marian-antiphon':
       throw new Error(`Vespers' ordo doesn't support a '${part.kind}' part`);
