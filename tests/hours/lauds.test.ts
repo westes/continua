@@ -212,6 +212,27 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu, coróna Vírginum');
   });
 
+  it("uses common-of-a-confessor-doctor's real office bundle on St. John Damascene's own day", () => {
+    // Live-verified 2026-08-26 to be Common-of-a-Confessor-Bishop's own
+    // content -- see lauds-capitulum-common-of-a-confessor-doctor.yml's
+    // header.
+    const ordo = resolveOrdo('lauds', '2026-03-27');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 44:16-17');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu Redémptor ómnium');
+  });
+
+  it("uses common-of-an-apostle's real office bundle on the Commemoration of St. Paul's own day", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum 1617)
+    // votive=C1 -- see lauds-capitulum-common-of-an-apostle.yml's header.
+    const ordo = resolveOrdo('lauds', '2026-06-30');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Eph 2:19-20');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Exsúltet cælum láudibus');
+  });
+
   it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));

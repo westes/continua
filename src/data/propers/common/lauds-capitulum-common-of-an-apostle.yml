@@ -1,0 +1,19 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C1` live query, 2026-08 -- same votive-office-view reasoning as
+# vespers-hymn-common-of-a-martyr-bishop.yml's header (real saints in
+# this small category -- Commemoration of St. Paul, Beheading of St.
+# John the Baptist, Dedication of the Basilicas of Ss. Peter and Paul --
+# have their own distinct standing and no clean un-outranked day to
+# sample from). Same chapter reused for Vespers -- no separate vespers-
+# capitulum-<id> file authored, per vespers.ts's vespersCapitulumForOverride
+# fallback.
+id: lauds-capitulum-common-of-an-apostle
+text:
+  la: "Fratres: Jam non estis hóspites et ádvenæ: sed estis cives Sanctórum et doméstici Dei: superædificáti super fundaméntum Apostolórum, et Prophetárum, ipso summo angulári lápide Christo Jesu."
+  en: "Brothers: Now therefore you are no more strangers and foreigners; but you are fellow citizens with the saints, and the domestics of God, built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone."
+citation:
+  la: "Eph 2:19-20"
+  en: "Eph 2:19-20"
+status:
+  la: verified
+  en: verified

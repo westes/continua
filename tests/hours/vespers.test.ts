@@ -299,6 +299,29 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu, coróna Vírginum');
   });
 
+  it("uses common-of-a-confessor-doctor's real office bundle for St. Robert Bellarmine's First Vespers", () => {
+    // St. Robert Bellarmine (May 13, Duplex, common-of-a-confessor-
+    // doctor -- live-verified 2026-08-26 to be Common-of-a-Confessor-
+    // Bishop's own content, see lauds-capitulum-common-of-a-confessor-
+    // doctor.yml's header) claims First Vespers over May 12's own
+    // evening.
+    const ordo = resolveOrdo('vespers', '2026-05-12');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 44:16-17');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Iste Conféssor Dómini sacrátus');
+  });
+
+  it("uses common-of-an-apostle's real office bundle for the Beheading of St. John the Baptist's First Vespers", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum 1617)
+    // votive=C1 -- see vespers-hymn-common-of-an-apostle.yml's header.
+    const ordo = resolveOrdo('vespers', '2026-08-28');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Eph 2:19-20');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Exsúltet cælum láudibus');
+  });
+
   it("renders Passiontide's seasonal office, with the Gloria Patri omitted from the responsory", () => {
     // 2026-03-25 is a Wednesday in Passiontide (Passion Sunday 2026-03-22
     // through Holy Saturday 2026-04-04).

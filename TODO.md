@@ -2961,6 +2961,29 @@ Matha wins outright that year) for Lauds, St. Praxedes's real First-Vespers anti
 (Doctor, Apostle, Several-Confessors, Holy Woman/Widow — Holy Woman and Widow may or may not
 turn out to be the same real category as each other; not yet checked).
 
+### Common-of-a-Confessor-Doctor and Common-of-an-Apostle Lauds/Vespers bundles authored (2026-08-26)
+
+Two more categories in one pass. `common-of-a-confessor-doctor` (4 saints: St. Albert the
+Great, St. John Damascene, St. Peter Canisius, St. Robert Bellarmine) is another "same content,
+different id" case like Confessor/Abbot: live-verified `votive=C4a` byte-identical to plain
+`votive=C4` (Common-of-a-Confessor-Bishop), so duplicated verbatim rather than authored fresh —
+matches the already-existing `matins-hymn-common-of-a-confessor-doctor.yml` precedent.
+
+`common-of-an-apostle` (3 saints/feasts: Commemoration of St. Paul, Beheading of St. John the
+Baptist, Dedication of the Basilicas of Ss. Peter and Paul) is genuinely distinct, own real
+content: chapter Eph 2:19-20 ("Fratres: Jam non estis hóspites"), hymn "Exsúltet cælum
+láudibus" (byte-identical Lauds/Vespers), shared versicle "Annuntiavérunt ópera Dei." Also
+duplicated under the separate `common-of-apostles` (plural) id used by the Octave of Ss. Peter
+and Paul, matching the existing minor-hour precedent for that id pair too.
+
+Proofs: St. John Damascene (own day) and St. Robert Bellarmine (First Vespers) for Confessor-
+Doctor; Commemoration of St. Paul (own day) and the Beheading of St. John the Baptist (First
+Vespers) for Apostle.
+
+`npm test` (492 tests), `tsc --noEmit` both pass. **Still open**: 2 Common categories remain
+(Several-Confessors — 1 saint, Ss. Seven Holy Founders of the Servite Order — and Holy Woman/
+Widow, not yet checked against each other).
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own
