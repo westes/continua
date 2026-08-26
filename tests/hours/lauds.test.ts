@@ -362,6 +362,23 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('O gloriósa Dómina');
   });
 
+  it("resolves the Finding and Exaltation of the Holy Cross's own proper chapter/hymn (shared content, two ids)", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum
+    // 1617): Finding, 2027-05-03 (2026 collides with a privileged
+    // Sunday); Exaltation, 2026-09-14 (its own real day). See lauds-
+    // capitulum-finding-of-the-holy-cross.yml's and -proper-to-the-
+    // finding-of-the-holy-cross.yml's headers.
+    const finding = resolveOrdo('lauds', '2027-05-03');
+    const findingChapter = finding.parts.find((p) => p.kind === 'chapter');
+    expect(findingChapter?.kind === 'chapter' ? findingChapter.text.citation?.en : undefined).toBe('Phil 2:5-7');
+    const findingHymn = finding.parts.find((p) => p.kind === 'hymn');
+    expect(findingHymn?.kind === 'hymn' ? findingHymn.text.text.la : undefined).toContain('Lustris sex qui jam peráctis');
+
+    const exaltation = resolveOrdo('lauds', '2026-09-14');
+    const exaltationHymn = exaltation.parts.find((p) => p.kind === 'hymn');
+    expect(exaltationHymn?.kind === 'hymn' ? exaltationHymn.text.text.la : undefined).toContain('Lustris sex qui jam peráctis');
+  });
+
   it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));

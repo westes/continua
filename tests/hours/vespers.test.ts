@@ -374,6 +374,15 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Ave maris stella');
   });
 
+  it("resolves the Finding of the Holy Cross's own proper Vespers hymn ('Vexilla Regis')", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum
+    // 1617), 2027-05-03 (Duplex II. classis, keeps own Second Vespers).
+    // See lauds-capitulum-finding-of-the-holy-cross.yml's header.
+    const ordo = resolveOrdo('vespers', '2027-05-03');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Vexílla Regis pródeunt');
+  });
+
   it("renders Passiontide's seasonal office, with the Gloria Patri omitted from the responsory", () => {
     // 2026-03-30 is Holy Monday (Passion Sunday 2026-03-22 through Holy
     // Saturday 2026-04-04) -- deliberately not 03-25, the Annunciation's
