@@ -1,0 +1,11 @@
+# Read from web/www/horas/Latin/Tempora/Nat2-0.txt's own [Versum 2]
+# ("@:Versum Nona: s/[\,\.] al.*/./ig" -- reuses [Versum Nona]'s own text
+# with the trailing ", allelúja" stripped) and its English counterpart,
+# same transform applied.
+id: lauds-versicle-holy-name-of-jesus
+text:
+  la: "V. Adjutórium nostrum in nómine Dómini.\nR. Qui fecit cælum et terram."
+  en: "V. Our help is in the Name of the Lord.\nR. Who made heaven and earth."
+status:
+  la: verified
+  en: verified

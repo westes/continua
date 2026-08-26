@@ -1,0 +1,13 @@
+# Read from web/www/horas/Latin/Tempora/Nat2-0.txt's own [Ant 2] (the
+# antiphon slotted after [Hymnus Laudes], i.e. Lauds' own Benedictus
+# antiphon) and its English counterpart. The source also carries a
+# distinct [Ant 3] ("Thou shalt call his Name Jesus...") for Second
+# Vespers' own Magnificat antiphon -- not modeled here, same reason as
+# circumcision-benedictus-antiphon.yml's own note.
+id: holy-name-of-jesus-benedictus-antiphon
+text:
+  la: "Dedit se, * ut liberáret pópulum, et acquíreret sibi nomen ætérnum, allelúja."
+  en: "He gave himself * to deliver his people, and to get himself an everlasting Name, alleluia."
+status:
+  la: verified
+  en: verified

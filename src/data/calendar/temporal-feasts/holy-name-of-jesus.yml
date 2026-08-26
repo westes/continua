@@ -1,0 +1,23 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Nat2-0.txt,
+# untagged/default [Rank] block — "Duplex 2 class;;5;;" (the Cistercian-
+# rubric variant instead calls it "Duplex majus" — a monastic-lineage
+# ranking this project doesn't otherwise follow for this feast, see
+# CLAUDE.md's pre-1955 calendar/rubrics note). Historically this feast is
+# a floating Sunday (the Sunday falling between Jan 2 and Jan 5
+# inclusive, fixed to Jan 2 itself when no such Sunday occurs) — per
+# direct instruction (2026-08-26) this project instead fixes it
+# unconditionally to Jan 2 every year, trading the historical
+# floating-Sunday anchor for simplicity. Jan 2 itself falls outside
+# Christmas's own Octave (which closes on Jan 1, the Circumcision — see
+# circumcision.yml) and has no other proper content of its own in the
+# reference source, so this doesn't collide with anything.
+# `anchor: fixed-date` — see circumcision.yml's own note on why this,
+# not data/calendar/fixed-date-calendar.yml, is what actually assigns
+# the day.
+id: holy-name-of-jesus
+name: "The Most Holy Name of Jesus"
+rank: duplex-2-classis
+anchor:
+  kind: fixed-date
+  month: 1
+  day: 2

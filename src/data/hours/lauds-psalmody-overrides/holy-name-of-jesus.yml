@@ -1,0 +1,29 @@
+# Read from web/www/horas/Latin/Tempora/Nat2-0.txt's own [Ant Laudes] (5
+# antiphons, a real proper set for this feast, unlike Circumcision's own
+# borrowed-from-Vespers set) and its English counterpart. Slotted onto
+# Lauds' own standard 5-antiphon scheme (Ps 92/99/62, the Canticle, and
+# Laudate) in source order — see christ-the-king.yml's own file for the
+# same structure.
+id: holy-name-of-jesus
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Oleum effúsum * nomen tuum, ídeo adolescéntulæ dilexérunt te."
+      en: "Thy Name is as oil * poured forth, therefore do the virgins love thee."
+  - psalms: [99]
+    antiphon:
+      la: "Scitóte, * quia Dóminus ipse est Deus, cujus nomen in ætérnum."
+      en: "Know ye that the Lord he is God, * and his Name endureth for ever."
+  - psalms: [62]
+    antiphon:
+      la: "Sitívit * ánima mea ad nomen sanctum tuum, Dómine."
+      en: "My soul thirsteth * for thy holy Name, O Lord."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Benedíctum * nomen glóriæ tuæ sanctum, et laudábile, et superexaltátum in sǽcula."
+    en: "Blessed * is the holy Name of thy glory, and worthy to be praised, and exalted above all for ever."
+laudate:
+  antiphon:
+    la: "Júvenes et vírgines, * senes cum junióribus laudáte nomen Dómini, quia exaltátum est nomen ejus solíus."
+    en: "Young men and maidens, * old men and children, praise the Name of the Lord, for his Name alone is exalted."
