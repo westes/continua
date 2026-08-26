@@ -329,6 +329,17 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu, coróna Vírginum');
   });
 
+  it("resolves St. Agnes's own proper chapter (shared verbatim with St. Agatha's), with Common-of-a-Virgin-Martyr's hymn", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum
+    // 1617), 2029-01-21 (clean year). See lauds-capitulum-st-agnes.yml's
+    // header.
+    const ordo = resolveOrdo('lauds', '2029-01-21');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 51:1-3');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu, coróna Vírginum');
+  });
+
   it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
