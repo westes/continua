@@ -114,13 +114,16 @@ across every hour and content type in this app.
      same stale mistake repeated six times — all six now added with real content; see "Our
      Lady of the Snows added" and "Four more 'not modeled' fixed Lord's/BVM feasts added"
      below.
-   - Lauds/Vespers chapter/responsory/hymn/versicle bundle (see "Lauds/Vespers chapter-
-     responsory-hymn-versicle bundle" below): mechanism is now rank-agnostic (any sanctoral
-     winner falls back to their Common, not just duplex-majus+); one category authored so far
-     (Common-of-a-Confessor-Not-Bishop, via St. Louis/St. Nicholas of Tolentino). The other 10
-     Common categories (Confessor-Pope, Confessor-Doctor, Virgin, Virgin-Martyr, Abbot, Holy
-     Woman, Widow, Angel, Evangelist, and the smaller one-off Commons) still fall back to the
-     plain seasonal/ferial default until their own bundle is authored.
+   - ~~Lauds/Vespers chapter/responsory/hymn/versicle bundle~~ — done (2026-08-26). Mechanism
+     is rank-agnostic (any sanctoral winner falls back to their Common, not just duplex-majus+);
+     all 11 Common categories now have a real, live-verified bundle authored (see the dated log
+     entries below, e.g. "Common-of-Several-Confessors Lauds/Vespers bundle authored — last
+     Common category closed"), plus the individual proper-content fixes swept up alongside it
+     (Guardian Angels/Archangels reuse, Finding/Exaltation of the Holy Cross, Transfiguration,
+     All Saints of the Benedictine Order). The same session also closed the *separate*
+     `resolveMatinsHymn` fallback chain's equivalent gap for every category/saint this pass
+     touched (see "Matins hymn gap closed for the same categories/saints" below) — Matins hymns
+     are a different mechanism from the Lauds/Vespers bundle and needed their own pass.
 
 3. **Known, deliberate simplifications** — flagged as intentional, not a bug, no plan to
    revisit unless priorities change: see "Known, deliberate simplifications" at the end of
@@ -3246,6 +3249,37 @@ given its torture imagery ("given to fire and the teeth of beasts," "bowels hang
 poured out") — went through cleanly on the first attempt that way.
 
 `npm test` (521 tests), `tsc --noEmit` both pass.
+
+### Circumcision's own Matins/Lauds/Vespers hymn authored (2026-08-26)
+
+Closed the specific gap flagged in the Circumcision/Holy Name addition (memory
+`vu-circumcision-holy-name-feasts`): Circumcision's rubric is "ex Sancti/12-25" (borrows
+Christmas Day's own propers wholesale), but Christmas Day itself has no authored hymn files of
+its own — Dec 25 doesn't resolve as its own winner id at all (`resolveTemporalId` maps every day
+of Christmastide, Dec 25 included, to `christmas-octave-sunday` — a separate, larger, still-open
+gap, see `day-label.test.ts`'s own comment on this). Rather than take on that larger mechanism
+change, authored the hymn content directly under Circumcision's own id, which already wins the
+day and already has its own Lauds/Vespers bundle (`lauds-capitulum-circumcision.yml` etc. were
+already authored — only the hymn piece was missing):
+
+- `lauds-hymn-circumcision.yml`: a direct copy of the already-verified `lauds-hymn-christmas-
+  octave-sunday.yml` text ("A solis ortus cárdine") — Christmas Day's own `[Hymnus Laudes]` is
+  byte-identical to the Octave Sunday's in the source. The Monastic form is only a handful of
+  word substitutions against this same text — not modeled, same "known, deliberate
+  simplification" as the doxology-substitution-only hymns below.
+- `vespers-hymn-circumcision.yml` / `matins-hymn-circumcision.yml`: the Monastic Vespers/Matins
+  hymn is a genuinely separate text from the secular one here — "Christe Redémptor ómnium"
+  (`[HymnusM Vespera]`, Sancti/12-25.txt), not "Jesu, Redémptor ómnium" — same house preference
+  already applied to `vespers-hymn-advent.yml`'s "Cónditor alme síderum". No English exists
+  anywhere in the reference engine for this Monastic variant (only for the secular text, whose
+  wording differs enough stanza-by-stanza that reusing it outright would misrepresent the
+  Latin), so the English is a new translation here, `draft` — Latin is `verified` (sourced
+  directly). Closing doxology stanza reuses this project's already-verified standard English for
+  "Glória tibi Dómine, Qui natus es de Vírgine..." (`lauds-hymn-holy-innocents.yml`).
+
+Verified end-to-end with a runtime smoke test resolving Matins/Lauds/Vespers for 2027-01-01
+through the real `resolveOrdo` mechanism, confirming the hymn part is no longer `missing` in
+either language. `npm test` (521 tests), `tsc --noEmit` both pass.
 
 ## Known, deliberate simplifications (not bugs — working as designed)
 
