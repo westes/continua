@@ -3022,6 +3022,21 @@ instead (proper content, not a Common fallback), live-verified end-to-end on the
 
 `npm test` (495 tests), `tsc --noEmit` both pass.
 
+### Common-of-Several-Confessors Lauds/Vespers bundle authored — last Common category closed (2026-08-26)
+
+Read straight from the source (`Sancti/02-12.txt`, Ss. Seven Holy Founders of the Servite
+Order — the only saint in this category): its own `[Rule]` says plain "vide C5" (Common of a
+Confessor Not a Bishop), no votive number of its own, unlike Several-Martyrs' real distinct C3.
+Duplicated the same 7 files under `common-of-several-confessors`. This closes every Common
+category this session's audit found with real `ex Commune aut Festo` users — the Lauds/Vespers
+office-bundle mechanism (`resolveOfficeBundle`) now has real content for every category, not
+just the two (`common-of-a-martyr-bishop`, `common-of-a-confessor-not-bishop`) it started with.
+
+`npm test` (496 tests), `tsc --noEmit` both pass. **Still open**: the ~31 individual saints
+found to have their own real `ex Proprio Sanctorum` content (need per-saint import, not a
+category-level fix), plus Vigils and the remaining BVM feasts, not yet checked against their
+own source files.
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own

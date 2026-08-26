@@ -1,0 +1,28 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query -- St. Louis's own day (2026-08-25) and St. Nicholas of
+# Tolentino's own day (2026-09-10, `propers: null`) cross-checked
+# byte-identical, confirming this is genuine shared Common content, not
+# either saint's own proper. Was falling all the way through to the
+# plain ferial default before this (see resolve-common.ts's
+# resolveOfficeBundle) -- Lauds' chapter/responsory/hymn/versicle bundle
+# was previously gated at duplex-majus+ like the psalmody-override table
+# it piggybacked eligibility on, wrongly excluding every lower-ranked
+# Common-of-a-Confessor-Not-Bishop saint (e.g. St. Louis, Simplex) from
+# their own Common's real content.
+#
+# Duplicated verbatim under this `common-of-several-confessors` id
+# (2026-08-26): read directly from the source (Sancti/02-12.txt, Ss.
+# Seven Holy Founders of the Servite Order -- the only saint in this
+# category) -- its own `[Rule]` says plain "vide C5" (Common of a
+# Confessor Not a Bishop), settling the question with no votive number
+# of its own, unlike Several-Martyrs' real distinct C3.
+id: lauds-capitulum-common-of-several-confessors
+text:
+  la: "Beátus vir, qui invéntus est sine mácula, et qui post aurum non ábiit, nec sperávit in pecúnia et thesáuris. Quis est hic, et laudábimus eum? fecit enim mirabília in vita sua."
+  en: "Blessed is the rich man that is found without blemish: and that hath not gone after gold, nor put his trust in money nor in treasures. Who is he, and we will praise him? for he hath done wonderful things in his life."
+citation:
+  la: "Sir 31:8-9"
+  en: "Sir 31:8-9"
+status:
+  la: verified
+  en: verified
