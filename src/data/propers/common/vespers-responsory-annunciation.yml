@@ -1,0 +1,26 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2026-03-25 -- her own proper responsory ("Ángelus Dómini *
+# Nuntiávit Maríæ," the opening line of the Angelus), distinct from
+# Common-of-the-BVM's own. No English rendering exists in the reference
+# engine for this text -- own translation of this well-known, standard
+# Angelus wording, marked draft. See lauds-capitulum-annunciation.yml's
+# header.
+id: vespers-responsory-annunciation
+text:
+  la: |
+    R.br. Ángelus Dómini * Nuntiávit Maríæ.
+    ℟. Ángelus Dómini * Nuntiávit Maríæ.
+    ℣. Et concépit de Spíritu Sancto.
+    ℟. Nuntiávit Maríæ.
+    ℣. Glória Patri, et Fílio, * et Spirítui Sancto.
+    ℟. Ángelus Dómini * Nuntiávit Maríæ.
+  en: |
+    R.br. The Angel of the Lord * declared unto Mary.
+    ℟. The Angel of the Lord * declared unto Mary.
+    ℣. And she conceived of the Holy Ghost.
+    ℟. Declared unto Mary.
+    ℣. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    ℟. The Angel of the Lord * declared unto Mary.
+status:
+  la: verified
+  en: draft
