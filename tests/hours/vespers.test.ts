@@ -344,6 +344,15 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Ave maris stella');
   });
 
+  it("resolves St. Gregory the Great's own proper Vespers hymn, distinct from the Lauds one", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum
+    // 1617), 2033-03-12 (clean year). See lauds-capitulum-st-gregory-
+    // the-great.yml's header.
+    const ordo = resolveOrdo('vespers', '2033-03-12');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Anglórum jam Apóstolus');
+  });
+
   it("renders Passiontide's seasonal office, with the Gloria Patri omitted from the responsory", () => {
     // 2026-03-30 is Holy Monday (Passion Sunday 2026-03-22 through Holy
     // Saturday 2026-04-04) -- deliberately not 03-25, the Annunciation's

@@ -289,6 +289,17 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('O gloriósa Dómina');
   });
 
+  it("resolves St. Gregory the Great's own proper chapter/hymn, not a Common fallback", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum
+    // 1617), 2033-03-12 (clean year). See lauds-capitulum-st-gregory-
+    // the-great.yml's header.
+    const ordo = resolveOrdo('lauds', '2033-03-12');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 50:1');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Mella cor obdulcántia');
+  });
+
   it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
