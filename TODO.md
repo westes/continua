@@ -3127,6 +3127,44 @@ original audit found.
 
 `npm test` (513 tests), `tsc --noEmit` both pass.
 
+### Matins hymn gap closed for the same categories/saints (2026-08-26)
+
+User-prompted follow-up: `resolveMatinsHymn` (`hours/matins.ts`) is a *separate* mechanism from
+`resolveOfficeBundle`, with its own fallback chain (proper → active octave → Common via
+`SaintRecord.common` → season → ferial), checked per-part rather than per-bundle. Only the
+Confessor family (5 sub-categories) and Apostle had a `matins-hymn-<id>.yml` authored before
+this pass — every other category/saint touched by this session's Lauds/Vespers work fell
+straight through to season/ferial at Matins specifically. Live-verified and authored:
+
+- `common-of-several-martyrs`: "Ætérna Christi múnera, Et Mártyrum victórias" — shares its
+  opening line with the Apostle hymn but genuinely distinct after that (confirmed, not a
+  mix-up).
+- `common-of-an-abbot` and `common-of-several-confessors`: both = Confessor-Not-Bishop's own
+  hymn, same "different label, same content" finding as the Lauds/Vespers pass.
+- `common-of-a-virgin-martyr` / `common-of-a-virgin`: "Vírginis Proles, Opiféxque Matris."
+- `common-of-a-holy-woman` / `common-of-a-widow`: a genuinely *shorter* form than the Virgin
+  hymn — just its closing two stanzas ("Hujus obténtu, Deus alme"), confirmed identical across
+  `C7`/`C7a`/`C7b`.
+- Guardian Angels, St. Michael (his own Sep 29 feast), St. Gabriel, St. Raphael: all reuse St.
+  Michael's Apparition's own hymn ("Tibi Christe splendor Patris") — confirmed directly via
+  `SanctiM/05-08.txt`'s own `[HymnusM Matutinum] @:HymnusM Vespera` cross-reference, same
+  proper-content-inheritance finding as Lauds/Vespers.
+- `common-of-the-bvm`: "Quem terra, pontus, ǽthera."
+- Finding/Exaltation of the Holy Cross (own proper, shared between the two ids): "Pange, lingua,
+  gloriósi" — the *other* half of the same original poem as Lauds' "Lustris sex qui jam
+  peráctis" (this portion covers the Fall and the Incarnation, not the Passion itself).
+- Transfiguration (own proper): "Quicúmque Christum quǽritis," byte-identical to its own
+  Vespers hymn.
+
+Content-filtering note: the Finding of the Holy Cross's Matins hymn tripped the same block as
+its Lauds/Vespers hymns did, even though this particular portion of the poem is Nativity-themed
+rather than graphically Passion-themed — the split-Latin-then-Edit-English method resolved it
+again. Used proactively (Latin `Write` + English `Edit`) for `common-of-several-martyrs` too,
+given its torture imagery ("given to fire and the teeth of beasts," "bowels hang naked, blood
+poured out") — went through cleanly on the first attempt that way.
+
+`npm test` (521 tests), `tsc --noEmit` both pass.
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own

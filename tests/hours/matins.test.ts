@@ -623,3 +623,52 @@ describe('resolveOrdo("matins", ...) Common-of-an-Apostle hymn + invitatory (202
     expect(invitatoryFullLatin(FERIAL_DATE)).not.toContain('Regem Apostolórum');
   });
 });
+
+describe('resolveOrdo("matins", ...) remaining Common categories\' Matins hymns (2026-08-26)', () => {
+  // Same tier this file's earlier "Common-of-an-Apostle hymn" describe
+  // block already proved (proper > octave > Common > season > ferial) --
+  // this just extends the same live-verified content to the categories
+  // authored alongside this session's Lauds/Vespers pass.
+  function hymnLatin(date: string): string | undefined {
+    const ordo = resolveOrdo('matins', date);
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn') as { text: { text: { la: string } } } | undefined;
+    return hymn?.text.text.la;
+  }
+
+  it('Ss. Placid and Companions (common-of-several-martyrs) resolve to "Ætérna Christi múnera, Et Mártyrum victórias" -- distinct from the Apostle hymn\'s shared opening line', () => {
+    expect(hymnLatin('2026-10-05')).toContain('Ætérna Christi múnera');
+    expect(hymnLatin('2026-10-05')).toContain('Mártyrum victórias');
+  });
+
+  it('St. Maurus (common-of-an-abbot) resolves to Common-of-a-Confessor-Not-Bishop\'s own hymn, same finding as the Lauds/Vespers pass', () => {
+    expect(hymnLatin('2026-01-15')).toContain('Iste Conféssor Dómini sacrátus');
+  });
+
+  it('St. Apollonia (common-of-a-virgin-martyr, her own clean year 2029-02-09) resolves to "Vírginis Proles"', () => {
+    expect(hymnLatin('2029-02-09')).toContain('Vírginis Proles');
+  });
+
+  it('the Guardian Angels, St. Michael, St. Gabriel, and St. Raphael all resolve to "Tibi Christe splendor Patris," reused from St. Michael\'s Apparition (same real proper-content-inheritance finding as Lauds/Vespers)', () => {
+    for (const date of ['2026-10-02', '2026-09-29', '2026-03-24', '2026-10-24']) {
+      expect(hymnLatin(date)).toContain('Tibi Christe splendor Patris');
+    }
+  });
+
+  it('St. Anne (common-of-a-holy-woman) and St. Monica (common-of-a-widow) resolve to the same shorter "Hujus obténtu, Deus alme" form (just the closing two stanzas of the Virgin hymn)', () => {
+    expect(hymnLatin('2026-07-26')).toContain('Hujus obténtu, Deus alme');
+    expect(hymnLatin('2026-05-04')).toContain('Hujus obténtu, Deus alme');
+  });
+
+  it('Our Lady of Mount Carmel (common-of-the-bvm) resolves to "Quem terra, pontus, ǽthera"', () => {
+    expect(hymnLatin('2026-07-16')).toContain('Quem terra, pontus, ǽthera');
+  });
+
+  it('the Finding and Exaltation of the Holy Cross resolve to their own proper "Pange, lingua, gloriósi" (shared between the two ids)', () => {
+    expect(hymnLatin('2027-05-03')).toContain('Pange, lingua, gloriósi');
+    expect(hymnLatin('2026-09-14')).toContain('Pange, lingua, gloriósi');
+  });
+
+  it('the Transfiguration resolves to its own proper "Quicúmque Christum quǽritis," byte-identical to its own Vespers hymn', () => {
+    expect(hymnLatin('2026-08-06')).toContain('Quicúmque Christum quǽritis');
+  });
+});
