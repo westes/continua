@@ -1314,6 +1314,52 @@ draft-English antiphon (`tests/hours/resolve-common.test.ts`).
     commemorated back, regardless of the winner's own rank. Not addressed
     here; this pass only covered the Vespers cross-day direction.
 
+- **Ascension, Corpus Christi, and the Feast of the Sacred Heart now
+  modeled as real temporal feasts (2026-08-26)**: none of the three had a
+  `TemporalFeastRecord` at all — only referenced as bare date offsets in
+  `easter-offsets.yml`/`temporal-categories.yml`/
+  `isMajorFixedFeastOfTheLord`. Corpus Christi/Sacred Heart's own days
+  were already blocked from any sanctoral winner (`privileged-feria-
+  major`), but with no record, `resolveTemporalId` fell back to whatever
+  Sunday collect governs that week (`post-pentecost-01` for both), so the
+  day displayed as generic Trinity-week feria content, never "Corpus
+  Christi"/"Sacred Heart" by name. Ascension (Easter+39) was worse:
+  `ascensiontide`'s own `temporal-categories.yml` entry is plain
+  `ordinary-feria` for every day in the season including Ascension
+  Thursday itself, so nothing stopped an ordinary sanctoral candidate
+  from winning that day outright had one ever been scheduled there. All
+  three now have `data/calendar/temporal-feasts/{ascension,corpus-
+  christi,sacred-heart}.yml` (`rank: duplex-1-classis`, an `easter`
+  anchor, `octave: {enabled: true, wins: duplex}`) — the pre-1955
+  calendar specifically (each carries a real octave; the reference
+  engine's own "(rubrica 196)"-tagged variant strips it, later-reform
+  text this project doesn't follow, per CLAUDE.md). Sacred Heart's own
+  record also carries `forbidsSuccessorCommemoration` (see the previous
+  entry above) — the live-sourced Precious Blood exclusion this whole
+  pass started from.
+  - `octave.wins: duplex` is matched to `pentecost-sunday.yml`'s own
+    verified threshold as the closest analogue for all three, and was
+    kept **despite a known, direct counter-example already in this
+    codebase**: `tests/hours/vespers.test.ts`'s St. Ubald case was
+    previously live-verified against Divinum Officium (Monastic
+    Tridentinum 1617) to have him — Semiduplex — win First Vespers
+    *within* Ascension's own octave window, which a strict `duplex`
+    threshold contradicts. Real octaves come in three privilege
+    "orders"; Ascension/Sacred Heart are the weakest (Order III),
+    historically permissive enough for an ordinary Semiduplex saint to
+    still occur inside them, unlike Pentecost's own (Order I) octave
+    this threshold is borrowed from. Kept at `duplex` anyway per direct
+    instruction — the Ubald test (and St. Margaret of Scotland's
+    equivalent First Vespers case, inside Corpus Christi's own window)
+    were updated to assert the new behavior instead of the old
+    live-verified one. Revisit if this turns out to misfire elsewhere;
+    see `ascension.yml`'s own comment for the full note.
+  - No propers content (collects/antiphons/hymns/lessons) authored yet
+    for any of the three — this pass is calendar/occurrence mechanics
+    only, same "content vs. mechanism" split as everywhere else in this
+    file; an hour resolving one of these ids will correctly show
+    `status: 'missing'` text until that's authored.
+
 ### Matins ordo — mechanism built, small content slice (2026-08)
 
 `src/hours/matins.ts` was the last stub hour. Built as a genuinely different

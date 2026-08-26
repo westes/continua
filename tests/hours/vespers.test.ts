@@ -129,10 +129,11 @@ describe('resolveOrdo("vespers", ...)', () => {
   });
 
   it('falls back to the classic weekday-default Magnificat antiphon on a bare ferial', () => {
-    // 2026-06-16 is a Tuesday, plain ordinary trinitytide, no saint, no
+    // 2033-09-06 is a Tuesday, plain ordinary trinitytide, no saint, no
     // active octave (same date already used by calendar/vespers.test.ts's
-    // "does not anticipate between two plain ferias").
-    const ordo = resolveOrdo('vespers', '2026-06-16');
+    // "does not anticipate between two plain ferias" -- see that test's
+    // own comment for why this moved off 2026-06-16).
+    const ordo = resolveOrdo('vespers', '2033-09-06');
     const magnificatIndex = ordo.parts.findIndex((p) => p.kind === 'canticle' && p.canticleId === 'magnificat');
     expect(magnificatIndex).toBeGreaterThanOrEqual(0);
     const magnificat = ordo.parts[magnificatIndex];
@@ -250,15 +251,24 @@ describe('resolveOrdo("vespers", ...)', () => {
     }
   });
 
-  it("uses Common-of-a-Confessor-Bishop's real office bundle for St. Ubald's First Vespers", () => {
-    // St. Ubald (May 16, Semiduplex, common-of-a-confessor-bishop) claims
-    // First Vespers over May 15's own evening (no stronger rival that
-    // year). Live-verified against Divinum Officium (Monastic Tridentinum
-    // 1617) votive=C4 -- see vespers-hymn-common-of-a-confessor-bishop.yml's
-    // header.
+  it("no longer gives St. Ubald First Vespers now that Ascension's own octave is modeled", () => {
+    // Historically (live-verified against Divinum Officium, Monastic
+    // Tridentinum 1617, votive=C4) St. Ubald (May 16, Semiduplex,
+    // common-of-a-confessor-bishop) claims First Vespers over May 15's
+    // own evening -- a real Order-III-octave permissiveness this app's
+    // own `ascension.yml` (added 2026-08-26) doesn't reproduce: its
+    // `octave.wins: duplex` is deliberately borrowed from Pentecost's own
+    // (Order I) threshold rather than modeled per privilege-order, a
+    // known, accepted conflict with this specific live-verified case
+    // (see ascension.yml's own comment). Semiduplex Ubald now loses to
+    // the octave outright on his own day (May 16), so May 15's evening is
+    // just St. John Baptist de la Salle's (Duplex, wins May 15 itself
+    // outright) own kept Second Vespers -- his own Common-of-a-Confessor
+    // (not Bishop) bundle, not Ubald's Confessor-Bishop one -- with
+    // Ascension's octave merely commemorated alongside him.
     const ordo = resolveOrdo('vespers', '2026-05-15');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
-    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 44:16-17');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 31:8-9');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Iste Conféssor Dómini sacrátus');
   });
@@ -322,16 +332,28 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Exsúltet cælum láudibus');
   });
 
-  it("uses common-of-a-widow's real office bundle for St. Margaret of Scotland's First Vespers", () => {
+  it("no longer gives St. Margaret of Scotland First Vespers now that Corpus Christi's own octave is modeled", () => {
     // St. Margaret of Scotland (Jun 10, Semiduplex, common-of-a-widow --
-    // live-verified 2026-08-26 to be real content identical to Common-
-    // of-a-Holy-Woman's, see lauds-capitulum-common-of-a-holy-woman.yml's
-    // header) claims First Vespers over Jun 9's own evening.
+    // content itself live-verified 2026-08-26 to be real, identical to
+    // Common-of-a-Holy-Woman's, see lauds-capitulum-common-of-a-holy-
+    // woman.yml's header) used to claim First Vespers over Jun 9's own
+    // evening. Now inside Corpus Christi's own octave (Jun 4-11, added
+    // 2026-08-26, `octave.wins: duplex` -- same deliberate, accepted
+    // conflict with a real Order-III-octave permissiveness as
+    // ascension.yml's own St. Ubald case, see corpus-christi.yml's own
+    // comment), Semiduplex Margaret loses her own day (Jun 10) outright
+    // to the octave -- and Jun 9 itself is *also* inside the same
+    // octave, already having lost its own Simplex saint (Ss. Primus and
+    // Felicianus) to it, so neither day has any sanctoral winner left to
+    // anticipate. Jun 9's evening falls all the way through to the plain
+    // ferial Vespers default (Trinity week's own governing chapter/hymn),
+    // with both Primus & Felicianus and Corpus Christi's octave merely
+    // commemorated, not any widow-specific content at all.
     const ordo = resolveOrdo('vespers', '2026-06-09');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
-    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Prov 31:10-11');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('2 Cor 1:3-4');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
-    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Fortem viríli péctore');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Tellúris ingens Cónditor');
   });
 
   it("uses common-of-the-bvm's real office bundle for Our Lady of Mount Carmel's First Vespers", () => {
@@ -409,9 +431,9 @@ describe('resolveOrdo("vespers", ...)', () => {
   });
 
   it('includes the Kyrie + Our Father lead-in right after the Magnificat, before the day collect (either form)', () => {
-    // 2026-06-16 is a Tuesday, plain ordinary trinitytide -- same bare
+    // 2033-09-06 is a Tuesday, plain ordinary trinitytide -- same bare
     // ferial already used above for the Magnificat weekday-default test.
-    const ordo = resolveOrdo('vespers', '2026-06-16');
+    const ordo = resolveOrdo('vespers', '2033-09-06');
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
     const magnificatIndex = ordo.parts.findIndex((p) => p.kind === 'canticle' && p.canticleId === 'magnificat');
     const collectIndex = ordo.parts.findIndex((p) => p.kind === 'prayer');
@@ -424,7 +446,7 @@ describe('resolveOrdo("vespers", ...)', () => {
     // dropped from this app's own text (2026-08) — 'Ego dixi' is the next
     // versicle after where the psalm used to sit, still unique to the
     // fuller ferial form vs. the short litany.
-    const ordo = resolveOrdo('vespers', '2026-06-16');
+    const ordo = resolveOrdo('vespers', '2033-09-06');
     const preces = ordo.parts.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
     expect(preces?.kind === 'preces' ? preces.text.text.la : undefined).toContain('Ego dixi: Dómine, miserére mei');
     expect(preces?.kind === 'preces' ? preces.text.text.en : undefined).toContain('I said: Lord, be merciful');

@@ -10,8 +10,12 @@ describe('resolveEveningDay', () => {
   });
 
   it('does not anticipate between two plain ferias', () => {
-    const day = resolveEveningDay('2026-06-16'); // Tuesday, ordinary trinitytide
-    expect(day.date).toBe('2026-06-16');
+    // 2033-09-06: Tuesday, ordinary trinitytide, genuinely free of any
+    // saint or active octave on both this date and the next (2026-06-16,
+    // used here previously, fell inside Sacred Heart's own octave once
+    // that was modeled 2026-08-26 -- see TODO.md).
+    const day = resolveEveningDay('2033-09-06');
+    expect(day.date).toBe('2033-09-06');
   });
 
   it('anticipates Easter from Holy Saturday', () => {

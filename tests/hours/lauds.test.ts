@@ -6,7 +6,7 @@ import { resolveOrdo } from '../../src/hours';
 // why these particular dates.
 const FERIAL_SUNDAY = '2026-06-21';
 const FERIAL_MONDAY = '2026-06-08'; // not 08-31 -- St. Raymond Nonnatus's own day (common-of-a-confessor)
-const FERIAL_TUESDAY = '2026-06-16';
+const FERIAL_TUESDAY = '2033-09-06'; // not 2026-06-16 -- that fell inside Sacred Heart's own octave once modeled 2026-08-26, see TODO.md
 const LAWRENCE_OCTAVE_DAY = '2026-08-11'; // Semiduplex -- exercises isDoubleOrHigher's false branch differently than a plain feria only in rank, not in psalms (Commune override not modeled, see below)
 
 describe('resolveOrdo("lauds", ...)', () => {
@@ -170,11 +170,17 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Martyr Dei, qui únicum');
   });
 
-  it("uses Common-of-a-Confessor-Bishop's real office bundle on St. Ubald's own day, not the ferial default", () => {
-    // St. Ubald (May 16, Semiduplex, common-of-a-confessor-bishop) has no
-    // proper Lauds content of his own -- see vespers-hymn-common-of-a-
-    // confessor-bishop.yml's header.
-    const ordo = resolveOrdo('lauds', '2026-05-16');
+  it("uses Common-of-a-Confessor-Bishop's real office bundle on St. Robert Bellarmine's own day, not the ferial default", () => {
+    // Was St. Ubald (May 16, Semiduplex, common-of-a-confessor-bishop) --
+    // moved to St. Robert Bellarmine (May 13, Duplex, same Common) once
+    // Ascension's own octave was modeled (2026-08-26, see TODO.md):
+    // Ubald now loses his own day outright to the octave (`octave.wins:
+    // duplex`, and Semiduplex Ubald falls short of it), so his own
+    // Common-of-a-Confessor-Bishop content no longer surfaces there at
+    // all. Bellarmine sits safely before the octave's own window (May
+    // 14-21) and has no proper Lauds content of his own either -- see
+    // vespers-hymn-common-of-a-confessor-bishop.yml's header.
+    const ordo = resolveOrdo('lauds', '2026-05-13');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
     expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 44:16-17');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');

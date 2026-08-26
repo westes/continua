@@ -75,10 +75,14 @@ describe('getDayLabel — ordinal temporal label', () => {
 
   it('falls back to weekday + season name for seasons with no ordinal convention modeled', () => {
     // 2026-05-15 is now St. John Baptist de la Salle's own fixed day
-    // (Duplex, added per the full-year sanctoral import) -- moved to
-    // May 21, still within Ascensiontide 2026 (May 14-23) and still
-    // free of any sanctoral entry.
-    expect(getDayLabel(resolveDay('2026-05-21')).en).toContain('in Ascensiontide');
+    // (Duplex, added per the full-year sanctoral import); May 21 is now
+    // Ascension's own octave closing day (Ascension now modeled as a
+    // real TemporalFeastRecord with an octave, Easter+39 through +46 —
+    // see TODO.md's 2026-08-26 entry), and May 22/23 both carry a fixed
+    // saint of their own -- 2028-06-03 (Easter+48, the day before
+    // Pentecost) is the nearest genuinely free Ascensiontide day: past
+    // Ascension's own octave, no fixed saint, still short of Pentecost.
+    expect(getDayLabel(resolveDay('2028-06-03')).en).toContain('in Ascensiontide');
   });
 });
 
@@ -339,12 +343,20 @@ describe('getDayLabel — named temporal feast rank', () => {
 });
 
 describe('getDayLabel — feast name combination', () => {
+  // 2026-06-15 (the "2nd week after Trinity" Monday, Easter+71) used to
+  // be free of any octave; now it's day 4 of Sacred Heart's own octave
+  // (Easter+68 through +75, added 2026-08-26 -- see TODO.md), and that
+  // offset range is fixed relative to Easter every year, not just this
+  // one, so no year-swap avoids it for "2nd week after Trinity"
+  // specifically. Moved to the "3rd week after Trinity" Monday
+  // (Easter+78) instead, clear of Ascension's (+39..+46) and the
+  // Corpus Christi/Sacred Heart combined (+60..+75) octave ranges.
   const base: LiturgicalDay = {
-    date: '2026-06-15',
+    date: '2026-06-22',
     weekday: 'monday',
     season: 'trinitytide',
     temporalCategory: 'ordinary-feria',
-    winner: { kind: 'temporal', id: 'post-pentecost-02' },
+    winner: { kind: 'temporal', id: 'post-pentecost-03' },
     commemorations: [],
   };
 
@@ -361,10 +373,10 @@ describe('getDayLabel — feast name combination', () => {
       ...base,
       commemorations: [{ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank: 'duplex-2-classis' }],
     };
-    expect(getDayLabel(day).en).toBe('St. Ereden — Monday in the 2nd week after Trinity (Feria)');
+    expect(getDayLabel(day).en).toBe('St. Ereden — Monday in the 3rd week after Trinity (Feria)');
   });
 
   it('shows just the temporal label when nothing is commemorated at all', () => {
-    expect(getDayLabel(base).en).toBe('Monday in the 2nd week after Trinity (Feria)');
+    expect(getDayLabel(base).en).toBe('Monday in the 3rd week after Trinity (Feria)');
   });
 });

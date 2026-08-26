@@ -1,0 +1,27 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Pent01-4.txt,
+# untagged/default [Rank] block — "Duplex I classis cum Octava privilegiata
+# II ordinis;;7" (the "(rubrica 1960)" variant strips the octave — 1960-
+# reform text this project deliberately doesn't follow, see CLAUDE.md's
+# pre-1955 calendar/rubrics note). `temporal-categories.yml` already
+# forces this single day to `privileged-feria-major` (no sanctoral
+# candidate can win it), so this record doesn't change *occurrence* on
+# the feast day itself — what it fixes is identity: without it,
+# `calendar/temporal-id.ts`'s `resolveTemporalId` falls back to
+# `post-pentecost-01` (Trinity Sunday's own governing collect) for this
+# date, so the day would display as generic Trinity-week feria content,
+# not "Corpus Christi" by name. `rank` here is enough for
+# `calendar/movable-feasts.ts`'s `applyMovableFeasts` to make this id the
+# day's real winner.
+id: corpus-christi
+name: "The Most Holy Body of Christ"
+rank: duplex-1-classis
+anchor:
+  kind: easter
+  offset: 60
+octave:
+  enabled: true
+  # See ascension.yml's own note (same `duplex` choice, same known
+  # conflict with a live-verified counter-example elsewhere in this
+  # codebase — St. Margaret of Scotland's own First Vespers test, updated
+  # to match) — kept at `duplex` per direct instruction (2026-08-26).
+  wins: duplex

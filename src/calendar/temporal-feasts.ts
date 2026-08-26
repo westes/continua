@@ -85,7 +85,12 @@ export function movableTemporalFeasts(): TemporalFeastRecord[] {
 const FIXED_DATE_STARTS: [string, string][] = [['12-25', 'christmas-day']];
 
 /** Easter-offset starts (offset -> temporal feast id). */
-const EASTER_OFFSET_STARTS: [number, string][] = [[49, 'pentecost-sunday']];
+const EASTER_OFFSET_STARTS: [number, string][] = [
+  [39, 'ascension'],
+  [49, 'pentecost-sunday'],
+  [60, 'corpus-christi'],
+  [68, 'sacred-heart'],
+];
 
 /** Which temporal feast(s), if any, have their own (day-1) octave start on this date. */
 export function temporalFeastIdsStartingOn(isoDate: string): string[] {

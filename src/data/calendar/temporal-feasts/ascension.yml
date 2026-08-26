@@ -1,0 +1,38 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Pasc5-4.txt,
+# untagged/default [Rank] block — "Duplex I classis cum Octava Privilegiata
+# III classis;;7" (the "(rubrica 196)" variant strips the octave entirely,
+# 1955/1960-reform text this project deliberately doesn't follow — see
+# CLAUDE.md's pre-1955 calendar/rubrics note). Previously not modeled as
+# its own record at all: `resolveSeason` already carves Easter+39 into its
+# own `ascensiontide` season, but nothing gave that Thursday itself a real
+# identity — `temporal-categories.yml`'s `ascensiontide` entry maps every
+# feria in the season (including Ascension Thursday itself) to plain
+# `ordinary-feria`, so before this record existed the day would have shown
+# generic "Thursday in Ascensiontide" content, with no recognition it's
+# the feast at all. Duplex I classis outranks any real sanctoral
+# candidate regardless, so this record's `rank` alone is enough to make
+# `calendar/movable-feasts.ts`'s `applyMovableFeasts` win the day outright
+# — the `ordinary-feria` category was never actually load-bearing here.
+id: ascension
+name: "The Ascension of Our Lord"
+rank: duplex-1-classis
+anchor:
+  kind: easter
+  offset: 39
+octave:
+  enabled: true
+  # Deliberately `duplex`, matching pentecost-sunday.yml's own verified
+  # threshold as the closest analogue — despite a real, pre-existing
+  # counter-example already in this codebase:
+  # tests/hours/vespers.test.ts's St. Ubald test ("Live-verified against
+  # Divinum Officium (Monastic Tridentinum 1617) votive=C4") has him
+  # (Semiduplex) winning First Vespers on May 15, *within* this octave's
+  # own window, which a strict `duplex` threshold contradicts — real
+  # octaves come in three privilege "orders", and Ascension/Sacred Heart
+  # are the weakest (Order III), historically permissive enough that an
+  # ordinary Semiduplex saint can still occur inside them, unlike
+  # Pentecost's own (Order I) octave this threshold is borrowed from.
+  # Kept at `duplex` anyway per direct instruction (2026-08-26) despite
+  # this known conflict — the Ubald test itself was updated to match, see
+  # its own comment. Revisit if this turns out to misfire elsewhere.
+  wins: duplex

@@ -1,0 +1,23 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Pent02-5.txt,
+# untagged/default [Rank] block — "Duplex I classis cum Octava
+# privilegiata III ordinis;;6.51" (the "(rubrica 196)" variant strips the
+# octave — 1955/1960-reform text this project deliberately doesn't
+# follow, see CLAUDE.md's pre-1955 calendar/rubrics note).
+# `temporal-categories.yml` already forces this single day to
+# `privileged-feria-major`; this record's job is identity (a real name
+# and rank instead of falling back to whatever Sunday governs that week's
+# collect) and giving `forbidsSuccessorCommemoration` (see
+# temporal-feasts.ts's own doc comment) a record to live on.
+id: sacred-heart
+name: "The Most Sacred Heart of Our Lord Jesus Christ"
+rank: duplex-1-classis
+anchor:
+  kind: easter
+  offset: 68
+octave:
+  enabled: true
+  # See ascension.yml's own note (same `duplex` choice, same known
+  # conflict with a live-verified counter-example, kept per direct
+  # instruction 2026-08-26).
+  wins: duplex
+forbidsSuccessorCommemoration: true
