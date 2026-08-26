@@ -3001,6 +3001,27 @@ Several-Confessors (Ss. Seven Holy Founders of the Servite Order, the only saint
 the ~31 individual saints found to have their own real `ex Proprio Sanctorum` content (need
 per-saint import, a different and larger task than category-level authoring).
 
+### Methodology upgrade: read the reference source's own `[Rank]`/`[Rule]` field directly (2026-08-26)
+
+User-prompted correction: the remaining "ferial/other" bucket from the earlier audit doesn't
+need per-saint clean-year hunting at all — each saint's own `Sancti/MM-DD.txt` file states its
+real Common assignment directly in its `[Rank]`/`[Rule]` block (`vide C5`, `ex Sancti/05-08`,
+etc.), with zero date/calendar dependency. Re-reading the raw file settles the question in one
+lookup; a live query is then only needed once per newly-discovered `CN` votive number to get
+its actual text (same method already used 8 times this session), not once per saint.
+
+This immediately paid off: Guardian Angels/St. Gabriel/St. Raphael the Archangels' own files
+say `vide C4`, but that's a Missal/Mass-propers designation — their real Monastic-breviary file
+(`SanctiM/10-02.txt`) cross-references St. Michael's Apparition (`Sancti/05-08`, already fully
+authored in this app) directly for the chapter/responsory at every hour, confirming Guardian
+Angels' own saint-file comment ("the feast's own content is fully proper throughout") was
+already right. No `common-of-an-angel` category exists in the source at all — duplicated
+St. Michael's Apparition's 7 Lauds/Vespers files under each of the three saints' own ids
+instead (proper content, not a Common fallback), live-verified end-to-end on their own real
+2026 days (all three clean/un-outranked that year).
+
+`npm test` (495 tests), `tsc --noEmit` both pass.
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own

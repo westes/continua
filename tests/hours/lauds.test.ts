@@ -247,6 +247,25 @@ describe('resolveOrdo("lauds", ...)', () => {
     }
   });
 
+  it("resolves the Guardian Angels' and Archangels' own real chapter/hymn, reused from St. Michael's Apparition", () => {
+    // Their own saint files' [Rank] says "vide C4," but the Monastic
+    // source's own SanctiM/10-02.txt cross-references St. Michael's
+    // Apparition (Sancti/05-08) directly for the chapter/responsory at
+    // every hour -- real proper content, not a Common fallback. See
+    // lauds-capitulum-guardian-angels.yml's header.
+    for (const [date, id] of [
+      ['2026-10-02', 'guardian-angels'],
+      ['2026-03-24', 'st-gabriel-archangel'],
+      ['2026-10-24', 'st-raphael-archangel'],
+    ] as const) {
+      const ordo = resolveOrdo('lauds', date);
+      const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+      expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Rev 1:1-2');
+      const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+      expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined, id).toContain('Christe sanctórum decus Angelórum');
+    }
+  });
+
   it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
