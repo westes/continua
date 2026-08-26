@@ -1,0 +1,96 @@
+# Circumcision's rubric ("ex Sancti/12-25", see lauds-hymn-circumcision.yml's
+# header for the fuller note) borrows Christmas Day's own Vespers/Matins
+# hymn. Unlike the Laudes hymn (a plain word-substitution of the secular
+# text), the Monastic Vespers/Matins hymn is a genuinely separate text --
+# "Christe Redémptor ómnium" ([HymnusM Vespera], Sancti/12-25.txt), not the
+# secular "Jesu, Redémptor ómnium" -- same house preference already applied
+# to vespers-hymn-advent.yml's "Cónditor alme síderum". Latin sourced
+# directly from that file; no English exists anywhere in the reference
+# engine for this Monastic variant (only for the secular "Jesu, Redémptor"
+# text, whose wording differs enough stanza-by-stanza -- Auctor/epithet
+# choices, "a sede Patris" vs "e sinu Patris", etc. -- that reusing it
+# outright would misrepresent the Latin), so the translation below is new,
+# `draft`, following this project's usual practice for an unattested
+# Monastic variant (cf. St. Scholastica's Lauds hymn). The closing doxology
+# stanza reuses this project's already-verified standard English for
+# "Glória tibi Dómine, Qui natus es de Vírgine..." (see lauds-hymn-holy-
+# innocents.yml). Matins reuses this same hymn verbatim (the source's own
+# "[HymnusM Matutinum] @:HymnusM Vespera" cross-reference) -- see the
+# matins- sibling file.
+id: vespers-hymn-circumcision
+text:
+  la: |
+    Christe Redémptor ómnium,
+    Ex Patre Patris únice,
+    Solus ante princípium
+    Natus ineffabíliter.
+
+    Tu lumen, tu splendor Patris,
+    Tu spes perénnis ómnium:
+    Inténde quas fundunt preces
+    Tui per orbem fámuli.
+
+    Meménto salútis Auctor,
+    Quod nostri quondam córporis,
+    Ex illibáta Vírgine
+    Nascéndo, formam súmpseris.
+
+    Sic præsens testátur dies,
+    Currens per anni círculum,
+    Quod solus a sede Patris
+    Mundi salus advéneris.
+
+    Hunc cælum, terra, hunc mare,
+    Hunc omne quod in eis est,
+    Auctórem advéntus tui,
+    Laudans exsúltat cántico.
+
+    Nos quoque, qui sancto tuo
+    Redémpti sánguine sumus,
+    Ob diem natális tui,
+    Hymnum novum concínimus.
+
+    Glória tibi Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre et Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  en: |
+    O Christ, Redeemer of us all,
+    The Father's own, on Thee we call:
+    Alone, before the world had place,
+    Born forth ineffably of grace.
+
+    Thou art the Father's Light and Splendor,
+    Their endless hope who to Thee render;
+    Accept the prayers and praise this day
+    That through the world Thy servants pay.
+
+    Salvation's Author, call to mind,
+    How, taking form of humankind,
+    Born of the Virgin undefiled,
+    Thou in our flesh becam'st a Child.
+
+    Thus testifies the present day,
+    Through all the circling years' array,
+    That Thou, the world's salvation, alone
+    Camest forth from the Father's throne.
+
+    Him heaven, and earth, and sea adore,
+    Him all that they contain, and more,
+    As Author of Thy coming here,
+    With joyful song exulting, clear.
+
+    And we, redeemed by that Thy Blood,
+    And made, through it, the sons of God,
+    Upon this day that saw Thy birth,
+    Together sing a hymn of worth.
+
+    All honor, laud, and glory be,
+    O Jesu, Virgin-born, to thee;
+    All glory, as is ever meet,
+    To Father and to Paraclete.
+    Amen.
+status:
+  la: verified
+  en: draft
