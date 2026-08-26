@@ -67,28 +67,40 @@ function keepsOwnSecondVespers(day: LiturgicalDay): boolean {
 }
 
 /**
- * Whichever of today/tomorrow does *not* govern tonight's Vespers is still
- * commemorated there, unless it's Simplex (or a bare temporal winner, with
- * no standing of its own — same "no standing to defend" idea
- * commemorations.ts's `ordinary-feria` case already uses during the day).
- * Live-verified both directions, 2026-08:
+ * Today lost the evening to tomorrow's First Vespers — is today still
+ * commemorated there? Not if it's Simplex (or a bare temporal winner,
+ * with no standing of its own — same "no standing to defend" idea
+ * commemorations.ts's `ordinary-feria` case already uses during the
+ * day). Live-verified:
  *   - Aug 8 -> 9 (Ss. Cyriaci/Largi/Smaragdi, Semiduplex, before an
  *     ordinary Sunday): today loses the evening, today is still
  *     commemorated ("commemoratio de præcedenti").
- *   - Jul 25 -> 26 (St. James, Duplex II. classis, kept second Vespers
- *     regardless): tomorrow (St. Anne) loses the evening but is still
- *     commemorated ("commemoratio de sequenti").
  *   - Aug 7 -> 8 (St. Donatus, Simplex, before Ss. Cyriaci/etc.): today
  *     loses the evening and is *not* commemorated ("nihil de
- *     præcedenti") — the one live case pinning down the Simplex
- *     exclusion specifically, not just inferred from the daytime rule.
- * Not yet checked against a case where the losing side is Simplex on the
- * *winning* side of the pair (i.e. today keeps its own Vespers and
- * tomorrow is the Simplex one) — inferred to behave the same way by
- * symmetry with the daytime rule, not independently live-verified.
+ *     præcedenti") — pins down the Simplex exclusion specifically for
+ *     this direction.
  */
-function commemorationOf(loser: DayWinner): Commemoration | undefined {
+function commemorationOfDisplacedPredecessor(loser: DayWinner): Commemoration | undefined {
   if (loser.kind !== 'sanctoral' || loser.rank === 'simplex') {
+    return undefined;
+  }
+  return { kind: 'sanctoral', id: loser.id, name: loser.name, rank: loser.rank };
+}
+
+/**
+ * Today keeps its own Second Vespers regardless — is tomorrow still
+ * commemorated there? Unlike the reverse direction above, Simplex is
+ * NOT excluded here: live-verified Aug 24 -> 25 (St. Bartholomew,
+ * Duplex II. classis, keeps his own evening; St. Louis, Simplex, on
+ * Aug 25) still reads "commemoratio de sequenti" — the same asymmetry
+ * this file's earlier version only guessed at by symmetry with the
+ * other direction and flagged as unverified. Also verified with a
+ * non-Simplex loser: Jul 25 -> 26 (St. James, Duplex II. classis, kept
+ * second Vespers regardless; St. Anne, Duplex, loses the evening but is
+ * still commemorated).
+ */
+function commemorationOfDisplacedSuccessor(loser: DayWinner): Commemoration | undefined {
+  if (loser.kind !== 'sanctoral') {
     return undefined;
   }
   return { kind: 'sanctoral', id: loser.id, name: loser.name, rank: loser.rank };
@@ -115,7 +127,7 @@ function tagVespersFrom(tomorrow: LiturgicalDay): LiturgicalDay {
  * cleanly to their feast's id (`vigil-of-the-assumption` vs `assumption`,
  * `vigil-of-st-james` vs `st-james-the-greater`), so this needs the
  * explicit link. Scoped to this evening-anticipation merge specifically,
- * not `commemorationOf` itself — the reverse direction
+ * not `commemorationOfDisplacedPredecessor` itself — the reverse direction
  * (`keepsOwnSecondVespers`, commemorating *tomorrow's* Vigil while today
  * keeps its own Vespers) can't hit this collision: a Vigil dated tomorrow
  * belongs to a feast the day after tomorrow, never today. */
@@ -134,15 +146,16 @@ function isVigilOfTomorrow(today: LiturgicalDay, tomorrow: LiturgicalDay): boole
 }
 
 /** The ordinary anticipation path: tag tomorrow's identity, then layer in
- * today's commemoration if it's eligible (see commemorationOf). Not used
- * by the isMajorFixedFeastOfTheLord override below — whether Christmas/
+ * today's commemoration if it's eligible (see
+ * commemorationOfDisplacedPredecessor). Not used by the
+ * isMajorFixedFeastOfTheLord override below — whether Christmas/
  * Easter/etc. commemorate the day they're displacing is a separate,
  * unverified question (these may well suppress it the way
  * privileged-sunday/privileged-feria-major do during the day — see
  * commemorations.ts), so it deliberately doesn't inherit this behavior. */
 function anticipated(today: LiturgicalDay, tomorrow: LiturgicalDay): LiturgicalDay {
   const tagged = tagVespersFrom(tomorrow);
-  const commemoration = isVigilOfTomorrow(today, tomorrow) ? undefined : commemorationOf(today.winner);
+  const commemoration = isVigilOfTomorrow(today, tomorrow) ? undefined : commemorationOfDisplacedPredecessor(today.winner);
   if (!commemoration) {
     return tagged;
   }
@@ -157,9 +170,10 @@ function anticipated(today: LiturgicalDay, tomorrow: LiturgicalDay): LiturgicalD
  * 'firstVespersOfTomorrow'` set on its winner (if sanctoral) so callers
  * can tell the difference from an ordinary day. Either way, whichever side
  * doesn't govern the evening is folded into the returned day's own
- * `commemorations` when it's eligible (see commemorationOf) — except
- * under the isMajorFixedFeastOfTheLord override just below, which doesn't
- * apply that at all yet.
+ * `commemorations` when it's eligible (see
+ * commemorationOfDisplacedPredecessor/-Successor) — except under the
+ * isMajorFixedFeastOfTheLord override just below, which doesn't apply
+ * that at all yet.
  *
  * One deliberate absolute exception, caught by a failing test: a day on
  * `isMajorFixedFeastOfTheLord`'s list always wins tomorrow's Vespers,
@@ -178,11 +192,11 @@ export function resolveEveningDay(isoDate: string): LiturgicalDay {
     return tagVespersFrom(tomorrow);
   }
   if (keepsOwnSecondVespers(today)) {
-    // Today wins outright, but tomorrow can still be commemorated here if
-    // it clears its own bar (live-verified: St. James, Duplex II.
-    // classis, keeps his own Second Vespers on Jul 25 and still
-    // commemorates St. Anne's Jul 26 — see commemorationOf).
-    const commemoration = commemorationOf(tomorrow.winner);
+    // Today wins outright, but tomorrow is still commemorated here as
+    // long as it's a real sanctoral winner — see
+    // commemorationOfDisplacedSuccessor's own doc comment for why this
+    // direction doesn't exclude Simplex the way the reverse one does.
+    const commemoration = commemorationOfDisplacedSuccessor(tomorrow.winner);
     return commemoration ? { ...today, commemorations: [...today.commemorations, commemoration] } : today;
   }
   if (!hasFirstVespers(tomorrow)) {

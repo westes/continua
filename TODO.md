@@ -3070,6 +3070,21 @@ Updated the Passiontide-seasonal-office Vespers test off Mar 25 onto the clean M
 entirely. **Still open**: the ~31 individual saints with their own real `ex Proprio Sanctorum`
 content, the actual next task.
 
+### Vespers commemoration bug fixed: a Simplex successor is commemorated too (2026-08-26)
+
+User-reported: Aug 24, 2026 Vespers (St. Bartholomew, Duplex II. classis, keeps his own evening)
+should have commemorated Aug 25's St. Louis (Simplex), but didn't. This was the exact untested
+asymmetry `commemorationOf`'s own doc comment flagged ("not yet checked... inferred by symmetry,
+not independently live-verified") — live-verifying it now shows the two directions are NOT
+symmetric: a Simplex *predecessor* losing to tomorrow's First Vespers is correctly excluded
+(Aug 7 Donatus case, "nihil de præcedenti"), but a Simplex *successor* displaced because today
+keeps its own Vespers IS still commemorated (Aug 24→25, "commemoratio de sequenti"). Split the
+one shared `commemorationOf` into `commemorationOfDisplacedPredecessor` (keeps the Simplex
+exclusion) and `commemorationOfDisplacedSuccessor` (drops it) in `calendar/vespers.ts`. New
+regression test in `tests/calendar/vespers.test.ts`.
+
+`npm test` (499 tests), `tsc --noEmit` both pass.
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own

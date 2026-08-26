@@ -40,11 +40,11 @@ describe('resolveEveningDay', () => {
     }
   });
 
-  // The three cases below are live-verified against the real Monastic
-  // Tridentinum 1617 engine (see commemorationOf's own doc comment in
-  // calendar/vespers.ts) — "commemoratio de præcedenti/sequenti" vs.
-  // "nihil de præcedenti" in the raw output, not just inferred from the
-  // daytime rule.
+  // The cases below are live-verified against the real Monastic
+  // Tridentinum 1617 engine (see commemorationOfDisplacedPredecessor/
+  // -Successor's own doc comments in calendar/vespers.ts) —
+  // "commemoratio de præcedenti/sequenti" vs. "nihil de præcedenti" in
+  // the raw output, not just inferred from the daytime rule.
   it('a Semiduplex loser is still commemorated when tomorrow claims First Vespers', () => {
     // Aug 8, 2026 (Ss. Cyriacus/Largus/Smaragdus, Semiduplex) loses the
     // evening to Aug 9 (Sunday); still commemorated.
@@ -71,5 +71,19 @@ describe('resolveEveningDay', () => {
     const day = resolveEveningDay('2026-07-25');
     expect(day.date).toBe('2026-07-25');
     expect(day.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'st-anne' }));
+  });
+
+  it('a winning day still commemorates a Simplex loser on the other side (asymmetric with the reverse direction)', () => {
+    // Aug 24, 2026 (St. Bartholomew, Duplex II. classis) keeps its own
+    // Second Vespers outright, but still commemorates Aug 25 (St. Louis,
+    // Simplex) -- live-verified "commemoratio de sequenti," unlike the
+    // reverse direction (a Simplex predecessor losing to tomorrow's First
+    // Vespers, see the Donatus case above) where Simplex IS excluded.
+    // Reported by the user 2026-08-26; previously both directions shared
+    // one Simplex-excluding commemorationOf, inferred symmetric but never
+    // independently verified for this direction.
+    const day = resolveEveningDay('2026-08-24');
+    expect(day.date).toBe('2026-08-24');
+    expect(day.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'st-louis' }));
   });
 });
