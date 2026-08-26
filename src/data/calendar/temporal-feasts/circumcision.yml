@@ -1,0 +1,27 @@
+# Read from the reference engine: web/www/horas/Latin/Sancti/01-01.txt,
+# untagged/default [Rank] block — "In Circumcisione Domini;;Duplex II
+# classis;;5.09;;ex Sancti/12-25" (the "(rubrica 196)" variant renames the
+# day "Die Octavæ Nativitatis Domini" and raises it to Duplex I classis —
+# 1960-reform text this project deliberately doesn't follow, see CLAUDE.md's
+# pre-1955 calendar/rubrics note).
+#
+# Previously not modeled at all: Jan 1 fell through to the generic
+# `christmastide`/`privileged-feria-minor` treatment with no identity of
+# its own, even though it's the Octave Day proper — closing Christmas's own
+# octave (data/calendar/temporal-feasts/christmas-day.yml), which keeps
+# contributing as a commemoration here the same way it already does on
+# Stephen's/John's/Holy Innocents' days within the octave.
+#
+# `anchor: fixed-date` (2026-08-26 addition to calendar/movable-feasts.ts's
+# MovableAnchor, this being its first user) is what actually makes this
+# win the day — data/calendar/fixed-date-calendar.yml is a red herring for
+# this purpose: it only feeds calendar/temporal.ts's two hardcoded
+# season-boundary lookups (`fixedDateFor('christmas-day')`/`('epiphany')`),
+# not winner resolution at all.
+id: circumcision
+name: "The Circumcision of Our Lord"
+rank: duplex-2-classis
+anchor:
+  kind: fixed-date
+  month: 1
+  day: 1

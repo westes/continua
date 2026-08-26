@@ -49,6 +49,7 @@ export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set([
   'christ-the-king',
   'christmas-octave-sunday',
   'immaculate-heart-of-mary',
+  'circumcision',
 ]);
 
 /**

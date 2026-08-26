@@ -51,6 +51,8 @@ function dateForAnchor(year: number, anchor: MovableAnchor): string {
     }
     case 'nth-sunday-of-advent':
       return addDays(adventStart(year), 7 * (anchor.nth - 1));
+    case 'fixed-date':
+      return toIsoDate({ year, month: anchor.month, day: anchor.day });
   }
 }
 

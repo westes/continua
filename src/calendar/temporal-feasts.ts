@@ -24,7 +24,8 @@ import { easterOffsetOf } from './temporal';
 export type MovableAnchor =
   | { kind: 'easter'; offset: number }
   | { kind: 'nth-sunday-of-month'; month: number; nth: number } // nth: 1-4, or -1 for "last"
-  | { kind: 'nth-sunday-of-advent'; nth: number }; // nth: 1-4 (Advent always has exactly 4 Sundays)
+  | { kind: 'nth-sunday-of-advent'; nth: number } // nth: 1-4 (Advent always has exactly 4 Sundays)
+  | { kind: 'fixed-date'; month: number; day: number }; // a plain civil-calendar date, not itself Easter- or Advent-anchored (e.g. the Circumcision, Jan 1)
 
 export interface TemporalFeastRecord {
   id: string;

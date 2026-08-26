@@ -1,0 +1,31 @@
+# Read from web/www/horas/Latin/Sancti/01-01.txt's own [Ant Vespera] (5
+# antiphons) via its own [Ant Laudes] rule ("@:Ant Vespera:s/;;.*//g" —
+# the reference engine's own instruction to reuse the Vespers antiphon
+# *text* wholesale at Lauds, stripped of the psalm-number tags that only
+# mattered for Vespers' own Ps 109/112/121/126/147 psalmody). Slotted onto
+# Lauds' own standard 5-antiphon scheme (Ps 92/99/62, the Canticle, and
+# Laudate), matching every other feast's lauds-psalmody-overrides shape —
+# see christ-the-king.yml's own file for the same structure.
+id: circumcision
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "O admirábile commércium: * Creátor géneris humáni, animátum corpus sumens, de Vírgine nasci dignátus est; et procédens homo sine sémine, largítus est nobis suam Deitátem."
+      en: "O wondrous interchange! * the Creator of mankind, taking upon him a living body, vouchsafed to be born of a pure Virgin: and by his Humanity, which was begotten in no earthly wise, hath made us partakers of his Divinity."
+  - psalms: [99]
+    antiphon:
+      la: "Quando natus es * ineffabíliter ex Vírgine, tunc implétæ sunt Scriptúræ: sicut plúvia in vellus descendísti, ut salvum fáceres genus humánum: te laudámus, Deus noster."
+      en: "When thou wast born * all ineffably of a Virgin, then were the Scriptures fulfilled; thou camest down like the dew upon the fleece of wool, to bring salvation unto all mankind; we praise thee, O our God."
+  - psalms: [62]
+    antiphon:
+      la: "Rubum, quem víderat Móyses * incombústum, conservátam agnóvimus tuam laudábilem virginitátem: Dei Génetrix, intercéde pro nobis."
+      en: "In the bush which Moses saw * unconsumed, we recognize the preservation of thy glorious virginity: holy Mother of God, intercede for us."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Germinávit radix Jesse, * orta est stella ex Jacob: Virgo péperit Salvatórem; te laudámus, Deus noster."
+    en: "The Root of Jesse hath budded, * the Star hath come out of Jacob, the Virgin hath borne the Saviour: we praise thee, O our God."
+laudate:
+  antiphon:
+    la: "Ecce María génuit * nobis Salvatórem, quem Joánnes videns, exclamávit, dicens: Ecce Agnus Dei, ecce qui tollit peccáta mundi, allelúja."
+    en: "Lo, Mary hath brought forth * the Saviour of whom when John saw him, he did proclaim: Behold the Lamb of God that taketh away the sins of the world, alleluia."
