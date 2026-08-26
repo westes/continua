@@ -234,6 +234,22 @@ describe('resolveOrdo("vespers", ...)', () => {
     }
   });
 
+  it("uses Common-of-Several-Martyrs' real office bundle on Ss. Placid and Companions' own day (Duplex II. classis, keeps own Vespers)", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum 1617)
+    // votive=C3 -- see vespers-hymn-common-of-several-martyrs.yml's header.
+    const ordo = resolveOrdo('vespers', '2026-10-05');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Wis 3:1-3');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Sanctórum méritis ínclyta gáudia');
+    for (const part of ordo.parts) {
+      if (part.kind === 'chapter' || part.kind === 'responsory' || part.kind === 'hymn' || part.kind === 'versicle') {
+        expect(part.text.status.la).toBe('verified');
+        expect(part.text.status.en).toBe('verified');
+      }
+    }
+  });
+
   it("renders Passiontide's seasonal office, with the Gloria Patri omitted from the responsory", () => {
     // 2026-03-25 is a Wednesday in Passiontide (Passion Sunday 2026-03-22
     // through Holy Saturday 2026-04-04).

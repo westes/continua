@@ -2860,6 +2860,26 @@ Matins-psalmody category tier does.
 with no Lauds/Vespers bundle authored (Confessor, Confessor-Bishop, Virgin, Virgin-Martyr,
 Doctor, Apostle, Several-Martyrs, Several-Confessors, Holy Woman/Widow).
 
+### Common-of-Several-Martyrs Lauds/Vespers bundle authored (2026-08-26)
+
+Same fix pattern as the two entries above, next by impact (22 real users found live, the
+largest of the remaining categories — see the "checked the reference source first" audit this
+session that corrected the earlier gap list into real-Commune/real-Proprio/collision buckets
+per category). Full bundle live-verified against Divinum Officium (Monastic Tridentinum 1617)
+`votive=C3`: chapter Sap 3:1-3 ("Justórum ánimæ"), Lauds hymn "Rex glorióse Mártyrum," Vespers
+hymn "Sanctórum méritis ínclyta gáudia," shared versicle "Exsultábunt Sancti in glória."
+Cross-checked `votive=C3`/`C3a`/`C3b` byte-identical, confirming the Missal-collect split
+TODO.md records elsewhere (plain-martyrs vs. Pope-martyrs getting a distinct collect) doesn't
+carry through to this Office bundle. Proof tested on Ss. Placid and Companions (Oct 5, Duplex
+II. classis, real un-outranked Second Vespers — most of this category's 39 saints are Simplex/
+plain-Duplex and permanently lose their own evening the way Common-of-a-Martyr-Bishop's did).
+
+`npm test` (480 tests), `tsc --noEmit` both pass. **Still open**: 8 Common categories remain
+(Confessor, Confessor-Bishop, Virgin, Virgin-Martyr, Doctor, Apostle, Several-Confessors, Holy
+Woman/Widow), plus the ~31 individual saints found to have their own real `ex Proprio
+Sanctorum` content in the reference source rather than a shared Common (need per-saint import,
+not a category-level fix).
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own
