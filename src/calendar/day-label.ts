@@ -477,6 +477,22 @@ const TEMPORAL_CATEGORY_RANK_LABELS: Record<TemporalCategory, Bi> = {
 };
 
 /**
+ * Explicit "which Vespers is this" status, for the Vespers hour header —
+ * distinct from `getDayLabel`'s name/rank/commemoration text, which is
+ * silent about *why* a given identity governs tonight (a reader has to
+ * already know, e.g., that St. Zephyrinus falls on tomorrow's date to
+ * realize this evening is anticipating him). Pass the result of
+ * `calendar/vespers.ts`'s `resolveEveningDay`, not a plain `resolveDay` —
+ * only that carries the `vespersFrom` tag this reads.
+ */
+export function getVespersStatusLabel(day: LiturgicalDay): Bi {
+  if (day.winner.kind === 'sanctoral' && day.winner.vespersFrom === 'firstVespersOfTomorrow') {
+    return bi('First Vespers (of tomorrow)', 'Vesperæ de sequenti');
+  }
+  return bi('Second Vespers (of today)', 'Vesperæ de hodierno');
+}
+
+/**
  * The full "day being celebrated" label: the day's own primary identity
  * (a sanctoral winner, a named temporal feast, a season's own anchor day,
  * an octave governing the day, or the plain ordinal temporal label — in

@@ -41,6 +41,34 @@ describe('shell', () => {
     expect(root.querySelectorAll('.ordo-part-psalm').length).toBeGreaterThan(0);
   });
 
+  it('shows tomorrow\'s saint (not today\'s) in the header when Vespers/Compline anticipate First Vespers', () => {
+    // Live-verified case (calendar/vespers.ts): Aug 25, 2026 is St. Louis
+    // (Simplex), but St. Zephyrinus (Aug 26, also Simplex) claims First
+    // Vespers over him -- the evening's real identity is tomorrow's, not
+    // today's. The header previously always used the daytime `resolveDay`
+    // regardless of selected hour, so it kept showing St. Louis even while
+    // the hour content itself had already switched to St. Zephyrinus.
+    setDate('2026-08-25');
+    setSelectedHour('vespers');
+    window.history.replaceState(null, '', '/vu/2026-08-25/vespers');
+    const root = document.getElementById('app')!;
+    mountShell(root);
+
+    expect(root.querySelector('.day-nav-label')?.textContent).toContain('Zephyrinus');
+    expect(root.querySelector('.day-nav-label')?.textContent).not.toContain('Louis');
+    expect(root.querySelector('.day-nav-vespers-status')?.textContent).toContain('First Vespers');
+  });
+
+  it('shows a plain Second Vespers status when Vespers is not anticipating tomorrow', () => {
+    setDate('2026-08-09');
+    setSelectedHour('vespers');
+    window.history.replaceState(null, '', '/vu/2026-08-09/vespers');
+    const root = document.getElementById('app')!;
+    mountShell(root);
+
+    expect(root.querySelector('.day-nav-vespers-status')?.textContent).toContain('Second Vespers');
+  });
+
   it('switches to Matins and shows its real content, not the pending message', () => {
     const root = document.getElementById('app')!;
     mountShell(root);

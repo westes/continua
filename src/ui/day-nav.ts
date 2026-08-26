@@ -1,6 +1,7 @@
 import { getState, shiftDate, goToToday, addDays, todayIso } from '../app-state';
 import { resolveDay } from '../calendar';
-import { getDayLabel } from '../calendar/day-label';
+import { resolveEveningDay } from '../calendar/vespers';
+import { getDayLabel, getVespersStatusLabel } from '../calendar/day-label';
 import { urlFor } from '../router';
 import { formatDateLong, renderBilingual } from './format';
 
@@ -8,14 +9,21 @@ import { formatDateLong, renderBilingual } from './format';
  * weekday and the liturgical day-being-celebrated, together in one place
  * — previously the date lived here while the day-being-celebrated text
  * was repeated separately inside every hour's own view. The day-being-
- * celebrated text is hour-independent (the same LiturgicalDay for every
- * hour on a given date), so it's resolved directly here via `resolveDay`
- * rather than through any particular hour's `resolveOrdo`. */
+ * celebrated text is hour-independent for the daytime hours (the same
+ * `LiturgicalDay` for every hour on a given date) but NOT for Vespers/
+ * Compline: those two can belong to *tomorrow's* identity instead (First
+ * Vespers anticipation — see `calendar/vespers.ts`'s `resolveEveningDay`),
+ * so this header must resolve through that function for those two hours
+ * specifically, or it shows the wrong saint (previously always used plain
+ * `resolveDay`, silently mismatched against what the hour itself was
+ * actually rendering). */
 export function renderDayNav(container: HTMLElement): void {
   const { date, selectedHour, languages } = getState();
-  const day = resolveDay(date);
+  const isEveningHour = selectedHour === 'vespers' || selectedHour === 'compline';
+  const day = isEveningHour ? resolveEveningDay(date) : resolveDay(date);
   const dateLabel = formatDateLong(date);
   const dayLabel = getDayLabel(day);
+  const vespersStatus = selectedHour === 'vespers' ? getVespersStatusLabel(day) : undefined;
   const prevUrl = urlFor(addDays(date, -1), selectedHour, languages);
   const nextUrl = urlFor(addDays(date, 1), selectedHour, languages);
   const todayUrl = urlFor(todayIso(), selectedHour, languages);
@@ -26,6 +34,7 @@ export function renderDayNav(container: HTMLElement): void {
       <div class="day-nav-header">
         ${renderBilingual(dateLabel, languages, 'day-nav-date')}
         ${renderBilingual(dayLabel, languages, 'day-nav-label')}
+        ${vespersStatus ? renderBilingual(vespersStatus, languages, 'day-nav-vespers-status') : ''}
       </div>
       <a href="${nextUrl}" class="day-nav-btn" data-action="next" aria-label="Next day">&rarr;</a>
     </nav>
