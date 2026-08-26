@@ -1,13 +1,21 @@
 import { getState, setSelectedHour } from '../app-state';
-import { HOUR_IDS, resolveOrdo, type HourId } from '../hours';
+import { resolveOrdo, type HourId } from '../hours';
 import { hourLabel } from './format';
 
 const BASE = import.meta.env.BASE_URL;
 
+// Traditional grouping into rows, each starting a "hinge" hour: night
+// office, day hours, evening — rather than one flat wrapped list.
+const HOUR_ROWS: readonly HourId[][] = [
+  ['matins', 'lauds'],
+  ['prime', 'terce', 'sext', 'none'],
+  ['vespers', 'compline'],
+];
+
 export function renderHourList(container: HTMLElement): void {
   const { date, selectedHour } = getState();
 
-  const items = HOUR_IDS.map((hourId) => {
+  const renderItem = (hourId: HourId): string => {
     const ordo = resolveOrdo(hourId, date);
     const isSelected = hourId === selectedHour;
     const isReady = !ordo.notImplemented;
@@ -24,9 +32,12 @@ export function renderHourList(container: HTMLElement): void {
         </a>
       </li>
     `;
-  }).join('');
+  };
 
-  container.innerHTML = `<ul class="hour-list">${items}</ul>`;
+  const separator = '<li class="hour-sep">&nbsp;</li>';
+  const rows = HOUR_ROWS.map((row) => `<ul class="hour-list">${row.map(renderItem).join(separator)}</ul>`).join('');
+
+  container.innerHTML = rows;
 
   container.querySelectorAll<HTMLAnchorElement>('[data-hour]').forEach((link) => {
     link.addEventListener('click', (event) => {

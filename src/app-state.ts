@@ -60,10 +60,14 @@ export function goToToday(): void {
   setDate(todayIso());
 }
 
-export function shiftDate(days: number): void {
-  const d = new Date(`${state.date}T00:00:00Z`);
+export function addDays(date: string, days: number): string {
+  const d = new Date(`${date}T00:00:00Z`);
   d.setUTCDate(d.getUTCDate() + days);
-  setDate(d.toISOString().slice(0, 10));
+  return d.toISOString().slice(0, 10);
+}
+
+export function shiftDate(days: number): void {
+  setDate(addDays(state.date, days));
 }
 
 export function setSelectedHour(hourId: HourId): void {
