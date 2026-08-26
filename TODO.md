@@ -2829,6 +2829,37 @@ categories in the "still open" list above have no Lauds/Vespers bundle authored 
 same honest incremental-content gap, now on a mechanism that no longer silently drops to the
 ferial default for any rank.
 
+### Common-of-a-Martyr(-Bishop) Lauds/Vespers bundle authored (2026-08-26)
+
+**Bug flagged by the user, live**: St. Zephyrinus (Aug 26, `common-of-a-martyr-bishop`,
+Simplex) claims First Vespers over St. Louis's Aug 25 (see `calendar/vespers.ts`'s
+`hasFirstVespers`), but that evening's Vespers/Compline were showing the plain Tuesday ferial
+hymn ("Cæli Deus sanctíssime") instead of a real Common-of-a-Martyr hymn — the same
+rank-agnostic Common-fallback mechanism from the entry above, just with no content authored yet
+for this category, so `resolveOfficeBundle` fell all the way through.
+
+**Proof authored, next category in the "still open" list**: `common-of-a-martyr-bishop`'s full
+Lauds bundle (chapter Jac 1:12, short responsory "Glória et honóre," hymn "Martyr Dei, qui
+únicum," versicle "Justus ut palma florébit") and Vespers bundle (chapter reused from Lauds,
+short responsory "Posuísti, Dómine," hymn "Deus tuórum mílitum," versicle same as Lauds's),
+live-verified against Divinum Officium (Monastic Tridentinum 1617) `votive=C2b` — the
+votive-office view was needed for the same structural reason as Confessor-Not-Bishop's own
+Vespers bundle: every real Common-of-a-Martyr-Bishop saint on this app's calendar either has
+proper content of his own (St. Lawrence, St. Stephen) or never reaches the rank needed to keep
+his own evening (St. Zephyrinus and St. Callistus, Simplex and plain Duplex respectively — both
+live-checked: Callistus's own real Vespers query resolved to "Vespera de Tempore occurente,"
+i.e. his own Second Vespers is itself always lost, confirming this isn't just a Simplex-rank
+quirk). Cross-checked `votive=C2`/`C2a`/`C2b`/`C2-1` all render byte-identical Vespers/Lauds
+hymn text, confirming the earlier Matins-psalmody finding (`common-of-a-martyr-bishop` and
+`common-of-a-martyr` share real content) extends to this bundle too — so the same 7 files were
+duplicated verbatim under the plain `common-of-a-martyr` id as well (St. Hadrian, St. Hermes,
+St. Fidelis of Sigmaringen), since `resolveOfficeBundle` has no alias mechanism the way the
+Matins-psalmody category tier does.
+
+`npm test` (479 tests), `tsc --noEmit` both pass. **Still open**: 9 Common categories remain
+with no Lauds/Vespers bundle authored (Confessor, Confessor-Bishop, Virgin, Virgin-Martyr,
+Doctor, Apostle, Several-Martyrs, Several-Confessors, Holy Woman/Widow).
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own

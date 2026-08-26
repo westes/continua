@@ -157,6 +157,19 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(canticle?.kind === 'canticle' ? canticle.antiphon?.text.la : undefined).toContain('In cratícula');
   });
 
+  it("uses Common-of-a-Martyr-Bishop's real office bundle on St. Zephyrinus's own day, not the ferial default", () => {
+    // St. Zephyrinus (Aug 26, Simplex, common-of-a-martyr-bishop) has no
+    // proper Lauds content of his own; before this Common's Lauds bundle
+    // was authored, the missing chapter made the whole bundle resolve to
+    // undefined and fall through to the plain ferial default -- see
+    // lauds-hymn-common-of-a-martyr-bishop.yml's header.
+    const ordo = resolveOrdo('lauds', '2026-08-26');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Jas 1:12');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Martyr Dei, qui únicum');
+  });
+
   it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));

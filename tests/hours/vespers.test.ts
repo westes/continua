@@ -198,12 +198,40 @@ describe('resolveOrdo("vespers", ...)', () => {
   });
 
   it("renders Lent's seasonal office", () => {
-    // 2026-03-03 is a Tuesday in Lent, before Passiontide.
-    const ordo = resolveOrdo('vespers', '2026-03-03');
+    // 2026-03-02 is a Monday in Lent, before Passiontide -- deliberately
+    // not 03-03, whose own evening (as of the Common-of-a-Martyr-Bishop
+    // office-bundle authoring below) now correctly anticipates St. Lucius
+    // I's First Vespers on 03-04 instead of falling through to this
+    // seasonal default; 03-02's own evening has no adjacent sanctoral
+    // saint at all, so it stays a clean plain-Lent proof.
+    const ordo = resolveOrdo('vespers', '2026-03-02');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
     expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Joel 2:17');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Audi, benígne Cónditor');
+  });
+
+  it("uses Common-of-a-Martyr-Bishop's real office bundle, not the ferial default, for a Simplex saint's First Vespers", () => {
+    // St. Zephyrinus (Aug 26, Simplex, common-of-a-martyr-bishop) claims
+    // First Vespers over St. Louis's Aug 25 -- see calendar/vespers.ts's
+    // hasFirstVespers comments. Before this Common's Lauds/Vespers bundle
+    // was authored, the missing chapter/hymn made the whole bundle
+    // resolve to undefined, silently falling through to the plain ferial
+    // default -- live-verified against Divinum Officium's `votive=C2b`
+    // view instead of a real saint's own day, same reasoning as Common-
+    // of-a-Confessor-Not-Bishop's own proof (see vespers-hymn-common-of-
+    // a-martyr-bishop.yml's header).
+    const ordo = resolveOrdo('vespers', '2026-08-25');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Jas 1:12');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Deus tuórum mílitum');
+    for (const part of ordo.parts) {
+      if (part.kind === 'chapter' || part.kind === 'responsory' || part.kind === 'hymn' || part.kind === 'versicle') {
+        expect(part.text.status.la).toBe('verified');
+        expect(part.text.status.en).toBe('verified');
+      }
+    }
   });
 
   it("renders Passiontide's seasonal office, with the Gloria Patri omitted from the responsory", () => {

@@ -1,0 +1,115 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# `votive=C2b` live query, 2026-08 -- the classic "Deus tuórum mílitum"
+# Common-of-a-Martyr Vespers hymn, previously entirely missing from this
+# app (no `vespers-hymn-common-of-a-martyr-bishop.yml`/`-common-of-a-
+# martyr.yml` at all), so any Vespers/Compline landing on an unauthored
+# Common-of-a-Martyr(-Bishop) saint fell all the way through to the plain
+# ferial default -- the gap this app's user flagged live, on St.
+# Zephyrinus's own Aug 26/25 evening (see calendar/vespers.ts's First-
+# Vespers-anticipation comments for that saint's own history). Bypasses
+# calendar concurrence entirely, same reasoning as Common-of-a-Confessor-
+# Not-Bishop's own Vespers file (see its header): no real Common-of-a-
+# Martyr(-Bishop) saint's own Second Vespers is ever un-outranked on this
+# app's merged calendar -- every real candidate either has proper content
+# of his own (St. Lawrence, St. Stephen) or never reaches the rank needed
+# to keep his own evening (St. Zephyrinus, St. Callistus both Simplex/
+# plain Duplex). Byte-identical to `votive=C2`/`C2a` (plain Common of a
+# Martyr), confirming TODO.md's earlier Matins-psalmody finding
+# (`common-of-a-martyr-bishop` and `common-of-a-martyr` share real
+# content) extends to this bundle too -- authored as two separate files
+# rather than an alias redirect only because this bundle's lookup
+# (`resolveOfficeBundle`) has no alias mechanism the way the Matins-
+# psalmody category tier does.
+id: vespers-hymn-common-of-a-martyr-bishop
+text:
+  la: >-
+    Deus tuórum mílitum
+
+    Sors, et córona, prǽmium,
+
+    Laudes canéntes Mártyris
+
+    Absólve nexu críminis.
+
+
+    Hic nempe mundi gáudia,
+
+    Et blandiménta nóxia
+
+    Cadúca rite députans,
+
+    Pervénit ad cæléstia.
+
+
+    Pœnas cucúrrit fórtiter,
+
+    Et sústulit viríliter,
+
+    Pro te effúndens sánguinem,
+
+    Ætérna dona póssidet.
+
+
+    Ob hoc precátu súpplici
+
+    Te póscimus, piíssime;
+
+    In hoc triúmpho Mártyris
+
+    Dimítte noxam sérvulis.
+
+
+    Laus et perénnis glória
+
+    Deo Patri, et Fílio,
+
+    Sancto simul Paráclito,
+
+    In sempitérna sǽcula. Amen.
+  en: >-
+    O God, of those that fought thy fight,
+
+    Portion, and prize, and crown of light,
+
+    Break every bond of sin and shame
+
+    As now we praise thy martyr's name.
+
+
+    He recked not of the world's allure,
+
+    But sin and pomp of sin forswore:
+
+    Knew all their gall, and passed them by,
+
+    And reached the throne prepared on high.
+
+
+    Bravely the course of pain he ran,
+
+    And bare his torments as a man:
+
+    For love of thee his blood outpoured,
+
+    And thus obtained the great reward.
+
+
+    With humble voice and suppliant word
+
+    We pray thee therefore, holy Lord,
+
+    While we thy martyr's feast-day keep,
+
+    Forgive thy loved and erring sheep.
+
+
+    Glory and praise for aye be done
+
+    To God the Father, and the Son,
+
+    And Holy Ghost, who reign on high,
+
+    One God, to all eternity. Amen.
+status:
+  la: verified
+  en: verified
