@@ -1,0 +1,24 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C11` live query, 2026-08 -- see lauds-capitulum-common-of-the-
+# bvm.yml's header. Same responsory text as Vespers (unusual for this
+# app's Common categories so far -- every other one so far had distinct
+# Lauds/Vespers responsories).
+id: lauds-responsory-purification
+text:
+  la: |
+    R.br. Ave María, grátia plena, * Dóminus tecum.
+    ℟. Ave María, grátia plena, * Dóminus tecum.
+    ℣. Benedícta tu in muliéribus, et benedíctus fructus ventris tui.
+    ℟. Dóminus tecum.
+    ℣. Glória Patri, et Fílio, * et Spirítui Sancto.
+    ℟. Ave María, grátia plena, * Dóminus tecum.
+  en: |
+    R.br. Hail Mary full of grace, * the Lord is with thee.
+    ℟. Hail Mary full of grace, * the Lord is with thee.
+    ℣. Blessed art thou among women, and blessed is the fruit of thy womb.
+    ℟. The Lord is with thee.
+    ℣. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    ℟. Hail Mary full of grace, * the Lord is with thee.
+status:
+  la: verified
+  en: verified
