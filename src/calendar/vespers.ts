@@ -40,11 +40,16 @@ function hasFirstVespers(day: LiturgicalDay): boolean {
   }
   // Live-verified (2026-08): Ss. Cyriacus/Largus/Smaragdus (Aug 8, plain
   // Semiduplex) claims First Vespers over St. Donatus's Aug 7 — "Vespera
-  // de sequenti" in the real Monastic 1617 engine — so Semiduplex clears
-  // this bar, not duplex-majus as originally guessed (unverified at the
-  // time). Matches keepsOwnSecondVespers's own privileged-feria-minor
-  // threshold just below, which uses the same cutoff.
-  return day.winner.kind === 'sanctoral' && isAtLeast(day.winner.rank, 'semiduplex');
+  // de sequenti" in the real Monastic 1617 engine. Originally thought
+  // Semiduplex was the actual cutoff, but re-verified 2026-08-25: St.
+  // Zephyrinus (Aug 26, plain Simplex) likewise claims First Vespers over
+  // St. Louis's Aug 25 (also Simplex) — "Vespera de sequenti; nihil de
+  // præcedenti" — so *any* real sanctoral winner, however low-ranked,
+  // clears this bar; there's no rank floor at all, only the separate
+  // keepsOwnSecondVespers question of whether the day *before* it
+  // outranks the claim. Every FeastClass (including `vigil`, untested
+  // directly but the same "lowest tier" logic) now qualifies.
+  return day.winner.kind === 'sanctoral';
 }
 
 /** Does this day keep its own Second Vespers regardless of what tomorrow is? */
