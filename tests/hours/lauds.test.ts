@@ -223,12 +223,15 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu Redémptor ómnium');
   });
 
-  it("uses common-of-an-apostle's real office bundle on the Commemoration of St. Paul's own day", () => {
-    // Live-verified against Divinum Officium (Monastic Tridentinum 1617)
-    // votive=C1 -- see lauds-capitulum-common-of-an-apostle.yml's header.
+  it("uses the Commemoration of St. Paul's own proper chapter, with Common-of-an-Apostle's hymn", () => {
+    // 2026-06-30 is the Commemoration of St. Paul's own real day (own
+    // chapter 2 Tim 4:7-8 -- "Bonum certámen certávi" -- wins over the
+    // Common's Eph 2:19-20, per the usual own-proper-always-wins-over-
+    // Common precedence); the hymn is genuinely the shared Common one --
+    // see lauds-capitulum-commemoration-of-st-paul.yml's header.
     const ordo = resolveOrdo('lauds', '2026-06-30');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
-    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Eph 2:19-20');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('2 Tim 4:7-8');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Exsúltet cælum láudibus');
   });
