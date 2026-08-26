@@ -316,6 +316,19 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Inter ætérnas súperum corónas');
   });
 
+  it("resolves St. Agatha's own proper chapter, with Common-of-a-Virgin-Martyr's hymn", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum
+    // 1617), 2026-02-05 (her file's own noted clean year, 2029, turned
+    // out to collide with St. Andrew Corsini in this app's own
+    // calendar -- not investigated further, out of scope here). See
+    // lauds-capitulum-st-agatha.yml's header.
+    const ordo = resolveOrdo('lauds', '2026-02-05');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 51:1-3');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu, coróna Vírginum');
+  });
+
   it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
