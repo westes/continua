@@ -379,6 +379,17 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(exaltationHymn?.kind === 'hymn' ? exaltationHymn.text.text.la : undefined).toContain('Lustris sex qui jam peráctis');
   });
 
+  it("resolves the Transfiguration's own proper chapter/hymn", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum
+    // 1617), 2026-08-06 (fixed date). See lauds-capitulum-
+    // transfiguration.yml's header.
+    const ordo = resolveOrdo('lauds', '2026-08-06');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Phil 3:20-21');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Amor Jesu dulcíssime');
+  });
+
   it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));

@@ -383,6 +383,15 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Vexílla Regis pródeunt');
   });
 
+  it("resolves the Transfiguration's own proper Vespers hymn, distinct from Lauds", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum
+    // 1617), 2026-08-06. See lauds-capitulum-transfiguration.yml's
+    // header.
+    const ordo = resolveOrdo('vespers', '2026-08-06');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Quicúmque Christum quǽritis');
+  });
+
   it("renders Passiontide's seasonal office, with the Gloria Patri omitted from the responsory", () => {
     // 2026-03-30 is Holy Monday (Passion Sunday 2026-03-22 through Holy
     // Saturday 2026-04-04) -- deliberately not 03-25, the Annunciation's

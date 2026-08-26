@@ -1,0 +1,16 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-06 (fixed date). Fully proper feast: own chapter
+# (Phil 3:20-21), own distinct responsory/hymn/versicle at each hour;
+# real Alleluias baked into the responsory text. Same chapter reused for
+# Vespers -- no separate vespers-capitulum-<id> file authored, per
+# vespers.ts's vespersCapitulumForOverride fallback.
+id: lauds-capitulum-transfiguration
+text:
+  la: "Salvatórem exspectámus Dóminum nostrum Jesum Christum, qui reformábit corpus humilitátis nostræ configurátum córpori claritátis suæ."
+  en: "We look for the Saviour, the Lord Jesus Christ, Who shall change our vile body, that it may be fashioned like unto His glorious Body."
+citation:
+  la: "Phil 3:20-21"
+  en: "Phil 3:20-21"
+status:
+  la: verified
+  en: verified
