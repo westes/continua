@@ -353,6 +353,17 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Anglórum jam Apóstolus');
   });
 
+  it("resolves St. Benedict's own proper Vespers responsory/hymn", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum
+    // 1617), 2033-03-21, cross-checked against SanctiM/03-21.txt's own
+    // [Responsory Vespera]. See lauds-capitulum-st-benedict.yml's header.
+    const ordo = resolveOrdo('vespers', '2033-03-21');
+    const responsory = ordo.parts.find((p) => p.kind === 'responsory');
+    expect(responsory?.kind === 'responsory' ? responsory.text.text.la : undefined).toContain('Sancte Pater Benedícte');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Láudibus cives résonent canóris');
+  });
+
   it("renders Passiontide's seasonal office, with the Gloria Patri omitted from the responsory", () => {
     // 2026-03-30 is Holy Monday (Passion Sunday 2026-03-22 through Holy
     // Saturday 2026-04-04) -- deliberately not 03-25, the Annunciation's
