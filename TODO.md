@@ -2880,6 +2880,28 @@ Woman/Widow), plus the ~31 individual saints found to have their own real `ex Pr
 Sanctorum` content in the reference source rather than a shared Common (need per-saint import,
 not a category-level fix).
 
+### Common-of-a-Confessor-Bishop Lauds/Vespers bundle authored (2026-08-26)
+
+Same fix pattern, third category (17 real users). Live-verified against Divinum Officium
+(Monastic Tridentinum 1617) `votive=C4`: chapter Sir 44:16-17 ("Ecce sacérdos magnus"), Lauds
+hymn "Jesu Redémptor ómnium," shared versicle "Justum dedúxit Dóminus per vias rectas." One real
+finding: this category's **Vespers hymn is byte-identical to Common-of-a-Confessor-Not-Bishop's
+own** ("Iste Conféssor Dómini sacrátus") even though the chapter, both responsories, and the
+Lauds hymn all genuinely differ between the two categories (confirmed via `votive=C4` vs `C5` —
+not a copy-paste mistake). Reused the already-authored Latin/English verbatim from `vespers-
+hymn-common-of-a-confessor-not-bishop.yml` rather than re-deriving it. No real Duplex-II-classis+
+saint exists in this category (all Simplex/Semiduplex/plain-Duplex, same structural pattern as
+the other categories so far), so the Vespers proof uses St. Ubald's real First-Vespers
+anticipation (May 15 evening → May 16) instead of a votive-only proof.
+
+Updates one existing test whose date turned out to also anticipate St. Anselm's First Vespers
+(04-20 → 04-21), previously masked by this same gap — the Paschaltide-seasonal-office proof,
+moved to the clean 04-18, same "collision unmasked by the fix" pattern as the Several-Martyrs
+entry above.
+
+`npm test` (482 tests), `tsc --noEmit` both pass. **Still open**: 7 Common categories remain
+(Confessor, Virgin, Virgin-Martyr, Doctor, Apostle, Several-Confessors, Holy Woman/Widow).
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own

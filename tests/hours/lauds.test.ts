@@ -170,6 +170,17 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Martyr Dei, qui únicum');
   });
 
+  it("uses Common-of-a-Confessor-Bishop's real office bundle on St. Ubald's own day, not the ferial default", () => {
+    // St. Ubald (May 16, Semiduplex, common-of-a-confessor-bishop) has no
+    // proper Lauds content of his own -- see vespers-hymn-common-of-a-
+    // confessor-bishop.yml's header.
+    const ordo = resolveOrdo('lauds', '2026-05-16');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 44:16-17');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu Redémptor ómnium');
+  });
+
   it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));

@@ -250,6 +250,19 @@ describe('resolveOrdo("vespers", ...)', () => {
     }
   });
 
+  it("uses Common-of-a-Confessor-Bishop's real office bundle for St. Ubald's First Vespers", () => {
+    // St. Ubald (May 16, Semiduplex, common-of-a-confessor-bishop) claims
+    // First Vespers over May 15's own evening (no stronger rival that
+    // year). Live-verified against Divinum Officium (Monastic Tridentinum
+    // 1617) votive=C4 -- see vespers-hymn-common-of-a-confessor-bishop.yml's
+    // header.
+    const ordo = resolveOrdo('vespers', '2026-05-15');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 44:16-17');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Iste Conféssor Dómini sacrátus');
+  });
+
   it("renders Passiontide's seasonal office, with the Gloria Patri omitted from the responsory", () => {
     // 2026-03-25 is a Wednesday in Passiontide (Passion Sunday 2026-03-22
     // through Holy Saturday 2026-04-04).
@@ -299,8 +312,13 @@ describe('resolveOrdo("vespers", ...)', () => {
   });
 
   it("renders Paschaltide's seasonal office, sharing its chapter with Lauds", () => {
-    // 2026-04-20 is in eastertide (Easter 2026-04-05).
-    const ordo = resolveOrdo('vespers', '2026-04-20');
+    // 2026-04-18 is in eastertide (Easter 2026-04-05) -- deliberately not
+    // 04-20, whose own evening (as of the Common-of-a-Confessor-Bishop
+    // office-bundle authoring below) now correctly anticipates St.
+    // Anselm's First Vespers on 04-21 instead of falling through to this
+    // seasonal default; 04-18's own evening has no adjacent sanctoral
+    // saint at all, so it stays a clean plain-Paschaltide proof.
+    const ordo = resolveOrdo('vespers', '2026-04-18');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
     expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Rom 6:9-10');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
