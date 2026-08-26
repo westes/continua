@@ -88,6 +88,27 @@ export interface SaintRecord {
    * (rather than guessing from date adjacency alone) and skip
    * commemorating the Vigil redundantly alongside its own feast. */
   vigilOf?: string;
+  /** This feast, when it keeps its own Second Vespers (see
+   * calendar/vespers.ts's keepsOwnSecondVespers), refuses to commemorate
+   * whatever wins the following day there — the feast-side mirror of a
+   * privileged Sunday/major-feria refusing a weak commemoration *back*
+   * (calendar/commemorations.ts), which vu had no equivalent of at all
+   * until this field. Modeled as an explicit per-feast flag rather than
+   * porting the reference engine's fractional-rank privilege matrix
+   * (crank/rank thresholds, a "Festum Domini" distinction, an outright
+   * hardcoded pair exception for Most Precious Blood vs. the Sacred
+   * Heart on the rare late-Easter date they collide) — that matches this
+   * repo's own "explicit per-feast fact, verified against the live
+   * engine one date at a time" convention (same as `vigilOf` above)
+   * rather than a general formula applied blanket and hoped correct.
+   * Absent (the default) preserves today's status quo: any sanctoral
+   * successor gets commemorated regardless of rank. Not yet set on any
+   * saint — add only after checking a specific date against the live
+   * reference engine, not speculatively for every `duplex-1-classis`
+   * feast. NOT a fit for the Precious Blood/Sacred Heart case itself
+   * (that exclusion is specific to one neighbor, not "never commemorate
+   * anyone" — see this field's own doc comment above) — see TODO.md. */
+  forbidsSuccessorCommemoration?: true;
 }
 
 const sanctoralCalendar = sanctoralCalendarData as { days: Record<string, string[]> };

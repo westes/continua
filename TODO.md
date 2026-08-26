@@ -1278,6 +1278,42 @@ draft-English antiphon (`tests/hours/resolve-common.test.ts`).
   simplex", live-verified) both apply before any part runs. See
   `data/hours/vespers.yml`'s header and `tests/hours/vespers.test.ts`.
 
+- **Vespers cross-day commemoration now labeled, and feast-side privilege
+  now has a mechanism (2026-08-26)**: a cross-day commemoration
+  (`Commemoration`'s `vespersNote: 'today' | 'tomorrow'`, set only by
+  `calendar/vespers.ts`'s two `commemorationOfDisplaced*` functions) now
+  renders as "(of today)"/"(of tomorrow)" in English, "de præcedenti"/"de
+  sequenti" in Latin (`calendar/day-label.ts`) — the real Divino Afflatu
+  phrasing, per `horascommon.pl`. Also added `forbidsSuccessorCommemoration`
+  to both `SaintRecord` (`calendar/feasts.ts`) and `TemporalFeastRecord`
+  (`calendar/temporal-feasts.ts`) — the feast-side mirror of the day-side
+  privilege `calendar/commemorations.ts` already modeled (a privileged
+  Sunday/major-feria can refuse a weak commemoration *back*; nothing
+  previously let a high-ranked feast refuse to commemorate *forward* at
+  its own kept Second Vespers). Deliberately a flag, not a ported
+  rank-threshold formula (the reference engine's own version is a messy
+  fractional-rank matrix) — set only after checking a specific date
+  against the live engine, same convention as `vigilOf`.
+  - The concrete case that motivated this: **Most Precious Blood (July 1,
+    Duplex I classis) vs. the Feast of the Sacred Heart** (Easter + 68
+    days), which only ever fall adjacent in a very-late-Easter year
+    (Easter in late April). Read the Perl variables carefully (initial
+    pass here got this backwards): it's **Sacred Heart's own kept Second
+    Vespers that refuses to commemorate Precious Blood** the next
+    evening ("Vespera de præcedenti; nihil de sequenti", `$winner` =
+    Sacred Heart/`Pent02-5` = *today* at that point in the branch,
+    `$cwinner` = Precious Blood/`07-01` = *tomorrow*), not the reverse.
+    The other direction — Precious Blood's own Vespers commemorating a
+    Sacred Heart that happens to fall the day *after* it, the other rare
+    late-Easter arrangement — has no matching carve-out in the reference
+    engine at all, so `forbidsSuccessorCommemoration` is deliberately set
+    only on `sacred-heart.yml`, not `most-precious-blood.yml`.
+  - Still open, separately: the reverse gap remains in daytime
+    `decideOccurrence` (`calendar/commemorations.ts`) — a sanctoral
+    winner there unconditionally gets its displaced Sunday/feria
+    commemorated back, regardless of the winner's own rank. Not addressed
+    here; this pass only covered the Vespers cross-day direction.
+
 ### Matins ordo — mechanism built, small content slice (2026-08)
 
 `src/hours/matins.ts` was the last stub hour. Built as a genuinely different

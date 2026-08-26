@@ -168,7 +168,18 @@ export type DayWinner =
  */
 export type Commemoration =
   | { kind: 'temporal'; id: string }
-  | ({ kind: 'sanctoral' } & SanctoralIdentity)
+  | ({
+      kind: 'sanctoral';
+      // Set by calendar/vespers.ts's resolveEveningDay when this
+      // commemoration exists only because Vespers/Compline crossed a day
+      // boundary (First Vespers anticipation, or a kept Second Vespers
+      // still noting the displaced neighbor) — 'today' for the real
+      // Divino Afflatu "commemoratio de præcedenti" case, 'tomorrow' for
+      // "commemoratio de sequenti". Left unset for an ordinary same-day
+      // commemoration (a real collision, an octave day, etc.), which
+      // carries no such qualifier.
+      vespersNote?: 'today' | 'tomorrow';
+    } & SanctoralIdentity)
   | { kind: 'octave'; id: string; name: string };
 
 export interface LiturgicalDay {

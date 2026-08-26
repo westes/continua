@@ -14,6 +14,7 @@ import { addDays } from './date-math';
 import { easterOffsetOf } from './temporal';
 import { isAtLeast } from './commemorations';
 import { getSaintRecord } from './feasts';
+import { getTemporalFeastRecord } from './temporal-feasts';
 
 /**
  * Fixed/movable "feasts of the Lord" load-bearing elsewhere in this app
@@ -84,7 +85,7 @@ function commemorationOfDisplacedPredecessor(loser: DayWinner): Commemoration | 
   if (loser.kind !== 'sanctoral' || loser.rank === 'simplex') {
     return undefined;
   }
-  return { kind: 'sanctoral', id: loser.id, name: loser.name, rank: loser.rank };
+  return { kind: 'sanctoral', id: loser.id, name: loser.name, rank: loser.rank, vespersNote: 'today' };
 }
 
 /**
@@ -98,12 +99,28 @@ function commemorationOfDisplacedPredecessor(loser: DayWinner): Commemoration | 
  * non-Simplex loser: Jul 25 -> 26 (St. James, Duplex II. classis, kept
  * second Vespers regardless; St. Anne, Duplex, loses the evening but is
  * still commemorated).
+ *
+ * `winner` (today's own, the one actually keeping this evening) can
+ * refuse the commemoration outright via its own record's
+ * `forbidsSuccessorCommemoration` — the feast-side mirror of the
+ * day-side privilege calendar/commemorations.ts already models (see that
+ * field's own doc comment, on both SaintRecord and TemporalFeastRecord,
+ * for why this is a flag rather than a rank threshold). Checked on
+ * whichever kind of record `winner` actually is — set today only on
+ * `sacred-heart` (a `temporal` winner), the live-verified case that
+ * motivated this field; every sanctoral saint is still unset, a no-op
+ * until a specific date is verified and flagged.
  */
-function commemorationOfDisplacedSuccessor(loser: DayWinner): Commemoration | undefined {
+function commemorationOfDisplacedSuccessor(winner: DayWinner, loser: DayWinner): Commemoration | undefined {
   if (loser.kind !== 'sanctoral') {
     return undefined;
   }
-  return { kind: 'sanctoral', id: loser.id, name: loser.name, rank: loser.rank };
+  const forbids =
+    winner.kind === 'sanctoral' ? getSaintRecord(winner.id)?.forbidsSuccessorCommemoration : getTemporalFeastRecord(winner.id)?.forbidsSuccessorCommemoration;
+  if (forbids) {
+    return undefined;
+  }
+  return { kind: 'sanctoral', id: loser.id, name: loser.name, rank: loser.rank, vespersNote: 'tomorrow' };
 }
 
 function tagVespersFrom(tomorrow: LiturgicalDay): LiturgicalDay {
@@ -196,7 +213,7 @@ export function resolveEveningDay(isoDate: string): LiturgicalDay {
     // long as it's a real sanctoral winner — see
     // commemorationOfDisplacedSuccessor's own doc comment for why this
     // direction doesn't exclude Simplex the way the reverse one does.
-    const commemoration = commemorationOfDisplacedSuccessor(tomorrow.winner);
+    const commemoration = commemorationOfDisplacedSuccessor(today.winner, tomorrow.winner);
     return commemoration ? { ...today, commemorations: [...today.commemorations, commemoration] } : today;
   }
   if (!hasFirstVespers(tomorrow)) {

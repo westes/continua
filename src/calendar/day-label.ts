@@ -376,6 +376,19 @@ function octaveCommemorationLabel(octave: ActiveOctave): Bi {
   return octaveCoreName(octave);
 }
 
+/** Real Divino Afflatu phrasing for a commemoration that only exists
+ * because Vespers/Compline crossed a day boundary — "commemoratio de
+ * præcedenti" (today, riding along on tomorrow's anticipated First
+ * Vespers) or "commemoratio de sequenti" (tomorrow, riding along on
+ * today's kept Second Vespers), per horascommon.pl. See
+ * `Commemoration`'s `vespersNote` field (calendar/types.ts) and
+ * calendar/vespers.ts's two `commemorationOfDisplaced*` functions, the
+ * only place that sets it. */
+const CROSS_DAY_VESPERS_LABELS: Record<'today' | 'tomorrow', Bi> = {
+  today: bi('of today', 'de præcedenti'),
+  tomorrow: bi('of tomorrow', 'de sequenti'),
+};
+
 /** Every commemoration on `day`, resolved to display strings and grouped
  * by kind — the single place that decides both "is this commemoration
  * eligible to show at all here" and "how is it formatted", so every
@@ -425,7 +438,12 @@ function collectCommemorations(
   const octaves: Bi[] = [];
   for (const c of day.commemorations) {
     if (c.kind === 'sanctoral') {
-      sanctoral.push(biFallback(c.name));
+      const name = biFallback(c.name);
+      sanctoral.push(
+        c.vespersNote
+          ? bi(`${name.en} (${CROSS_DAY_VESPERS_LABELS[c.vespersNote].en})`, `${name.la} (${CROSS_DAY_VESPERS_LABELS[c.vespersNote].la})`)
+          : name,
+      );
     } else if (c.kind === 'temporal') {
       if (c.id === temporalId) {
         temporal.push(anchorDayName(day, false) ?? temporalLabel(day));

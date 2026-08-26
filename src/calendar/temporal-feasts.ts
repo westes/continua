@@ -37,6 +37,22 @@ export interface TemporalFeastRecord {
    * every other movable feast instead loses to an equal-or-higher-ranked
    * sanctoral winner and is commemorated alongside it instead. */
   unconditional?: boolean;
+  /** The temporal-feast sibling of calendar/feasts.ts's SaintRecord field
+   * of the same name -- see that field's own doc comment for the full
+   * rationale (a feast-side mirror of the day-side privilege
+   * calendar/commemorations.ts already models, deliberately a flag
+   * rather than a ported rank-threshold formula). Set on sacred-heart.yml
+   * specifically -- live source (horascommon.pl, github #4586): on the
+   * rare late-Easter date the movable Feast of the Sacred Heart falls the
+   * day immediately before the fixed Most Precious Blood (July 1), Sacred
+   * Heart's own kept Second Vespers explicitly does *not* commemorate
+   * Precious Blood the next evening ("Vespera de præcedenti; nihil de
+   * sequenti") -- the reverse direction (Precious Blood's own Vespers
+   * commemorating a Sacred Heart that falls *after* it, the other rare
+   * late-Easter arrangement) has no such carve-out in the reference
+   * engine, so this flag is intentionally one-directional, not mirrored
+   * onto most-precious-blood.yml. */
+  forbidsSuccessorCommemoration?: true;
 }
 
 const temporalFeastModules = import.meta.glob<{ default: TemporalFeastRecord }>(
