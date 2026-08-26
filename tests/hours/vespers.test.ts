@@ -334,10 +334,24 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Fortem viríli péctore');
   });
 
+  it("uses common-of-the-bvm's real office bundle for Our Lady of Mount Carmel's First Vespers", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum 1617)
+    // votive=C11 -- see vespers-hymn-common-of-the-bvm.yml's header.
+    const ordo = resolveOrdo('vespers', '2026-07-15');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 24:14');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Ave maris stella');
+  });
+
   it("renders Passiontide's seasonal office, with the Gloria Patri omitted from the responsory", () => {
-    // 2026-03-25 is a Wednesday in Passiontide (Passion Sunday 2026-03-22
-    // through Holy Saturday 2026-04-04).
-    const ordo = resolveOrdo('vespers', '2026-03-25');
+    // 2026-03-30 is Holy Monday (Passion Sunday 2026-03-22 through Holy
+    // Saturday 2026-04-04) -- deliberately not 03-25, the Annunciation's
+    // own fixed date, whose evening now correctly resolves to real
+    // Common-of-the-BVM content instead of falling through to this
+    // seasonal default (the Annunciation's own proper content isn't
+    // imported yet, so this is still an interim improvement, not final).
+    const ordo = resolveOrdo('vespers', '2026-03-30');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
     expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Jer 11:20');
     const responsory = ordo.parts.find((p) => p.kind === 'responsory');

@@ -277,6 +277,18 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu coróna célsior');
   });
 
+  it("uses common-of-the-bvm's real office bundle on Our Lady of Mount Carmel's own day", () => {
+    // Read directly from the source: Sancti/07-16.txt, 02-11.txt,
+    // 05-31.txt, 09-24.txt, 10-11.txt (the 5 saints/feasts in this
+    // category) all say plain "ex C11"/"vide C11" -- see lauds-
+    // capitulum-common-of-the-bvm.yml's header.
+    const ordo = resolveOrdo('lauds', '2026-07-16');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 24:14');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('O gloriósa Dómina');
+  });
+
   it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));

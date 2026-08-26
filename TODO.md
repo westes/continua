@@ -3037,6 +3037,39 @@ found to have their own real `ex Proprio Sanctorum` content (need per-saint impo
 category-level fix), plus Vigils and the remaining BVM feasts, not yet checked against their
 own source files.
 
+### Vigils confirmed ferial-by-design (not a gap); Common-of-the-BVM authored (2026-08-26)
+
+Finished the "ferial/other" bucket, reading each saint's own source file (`[Rank]`/`[Rule]`)
+directly rather than hunting per-saint clean years, per the methodology upgrade above.
+
+**Vigils (9 saints): not a gap at all.** Every vigil's own `[Rule]` explicitly says "Responsory
+Feria" / "Versum Feria" — plain ferial content by deliberate rubric, live-confirmed on Vigil of
+St. Lawrence's real day (2025-08-09, Simplex, un-outranked): genuinely `ex Psalterio secundum
+diem`, not a masked gap. The 6 apostle vigils (James, Simon & Jude, Andrew, Bartholomew,
+Thomas, Matthew) carry an "ex C1v" tag, but `votive=C1v` itself resolves to the same plain
+ferial text — confirming C1v doesn't override the Lauds/Vespers bundle either. Matches this
+app's own already-established `isFerialOrVigil` convention (`resolve-common.ts`). No content
+authored, correctly.
+
+**Common-of-the-BVM (5 feasts: Apparition of the Immaculate BVM, Queenship, Our Lady of Mount
+Carmel, Our Lady of Ransom, the Maternity): real category, authored.** Each one's own source
+file says plain "ex C11"/"vide C11". Live-verified `votive=C11`: chapter Sir 24:14 ("Ab inítio
+et ante sǽcula creáta sum"), Lauds hymn "O gloriósa Dómina" (same pre-Urban-VIII text already
+found for the Annunciation's own separate proper — a real overlap, not a mix-up), Vespers hymn
+"Ave maris stella", same responsory text at both hours (unusual for this session's categories —
+every other one had distinct Lauds/Vespers responsories), distinct versicles per hour.
+
+One masked collision this surfaced: the Annunciation (Mar 25, `common: common-of-the-bvm`,
+`propers: "annunciation"` — but no `lauds-capitulum-annunciation.yml` authored yet) now
+resolves through this Common instead of falling through to Passiontide's seasonal default —
+a real improvement, though still interim until Annunciation's own real Proprio content (already
+found and queued in the individual-saints list) is imported and takes precedence over it.
+Updated the Passiontide-seasonal-office Vespers test off Mar 25 onto the clean Mar 30.
+
+`npm test` (498 tests), `tsc --noEmit` both pass. This closes the "ferial/other" bucket
+entirely. **Still open**: the ~31 individual saints with their own real `ex Proprio Sanctorum`
+content, the actual next task.
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own
