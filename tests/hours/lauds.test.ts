@@ -193,6 +193,14 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu coróna célsior');
   });
 
+  it("uses common-of-an-abbot's real office bundle on St. Maurus's own day, not the ferial default", () => {
+    const ordo = resolveOrdo('lauds', '2026-01-15');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 31:8-9');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu coróna célsior');
+  });
+
   it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));

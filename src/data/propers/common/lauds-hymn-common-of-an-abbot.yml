@@ -1,0 +1,101 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query -- St. Louis's own day (2026-08-25) and St. Nicholas of
+# Tolentino's own day (2026-09-10, `propers: null`) cross-checked
+# byte-identical -- see lauds-capitulum-common-of-a-confessor-not-
+# bishop.yml's header for the fuller note on this bundle's gap. "Jesu
+# coróna célsior" -- self-contained, including its own final doxology
+# stanza; distinct from the Common-of-a-Confessor-Bishop's own Lauds hymn
+# ("Jesu Redémptor ómnium") -- the reference engine's votive-office
+# dropdown separates the two categories as C4 ("Confessoris Pontificis")
+# and C5 ("Confessoris non Pontificis"), each with its own full Office
+# bundle, not (as CommuneM/C4a.txt's file-inheritance structure might
+# suggest at a skim) one category layered as a thin override of the
+# other -- C4a.txt is actually "Doctoris Pontificis", unrelated to this
+# category despite the superficially similar filename.
+id: lauds-hymn-common-of-an-abbot
+text:
+  la: |
+    Jesu coróna célsior,
+    Et véritas sublímior,
+    Qui confiténti sérvulo
+    Reddis perénne prǽmium:
+
+    Da supplicánti cœ́tui,
+    Obténtu hujus óptimi,
+    Remissiónem críminum
+    Rumpéndo nexum vínculi.
+
+    Anni recúrso témpore,
+    Dies illúxit lúmine,
+    Quo Sanctus hic de córpore
+    Polum migrávit prǽpotens.
+
+    Hic vana terræ gáudia
+    Et luculénta prǽdia,
+    Pollúta sorde députans,
+    Ovans tenet cæléstia.
+
+    Te, Christe Rex piíssime,
+    Hic confiténdo júgiter,
+    Calcávit hostem fórtiter,
+    Supérbum ac satéllitem.
+
+    Virtútum actu et fide,
+    Confessiónis órdine,
+    Jejúna membra déferens,
+    Dapes supérnas óbtinet.
+
+    Proínde te, piíssime,
+    Precámur omnes súpplices,
+    Ut hujus almi grátia
+    Nobis remíttas débita.
+
+    Glória Patri Dómino,
+    Glória Unigénito,
+    Una cum Sancto Spíritu,
+    In sempitérna sǽcula.
+    Amen.
+  en: |
+    Jesu, eternal truth sublime,
+    Through endless years the same!
+    Thou crown of those who through all time
+    Confess thy holy name:
+
+    Thy suppliant people, through the prayer
+    Of thy blest saint, forgive;
+    For his dear sake, thy wrath forbear,
+    And bid our spirits live.
+
+    Again returns the sacred day,
+    With heavenly glory bright,
+    Which saw him go upon his way
+    Into the realms of light.
+
+    All objects of our vain desire,
+    All earthly joys and gains,
+    To him were but as filthy mire;
+    And now with thee he reigns.
+
+    Thee, Jesu, his all-gracious Lord,
+    Confessing to the last,
+    He trod beneath him Satan's fraud,
+    And stood forever fast.
+
+    In holy deeds of faith and love,
+    In fastings and in prayers,
+    His days were spent; and now above
+    Thy heavenly feast he shares.
+
+    Then, for his sake thy wrath lay by,
+    And hear us while we pray;
+    And pardon us, O thou most high,
+    On this his festal day.
+
+    All glory to the Father be;
+    And sole Incarnate Son;
+    Praise, holy Paraclete, to thee;
+    While endless ages run.
+    Amen.
+status:
+  la: verified
+  en: verified

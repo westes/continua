@@ -276,6 +276,18 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Iste Conféssor Dómini sacrátus');
   });
 
+  it("uses common-of-an-abbot's real office bundle for St. Maurus's First Vespers, not the ferial default", () => {
+    // St. Maurus (Jan 15, Duplex II. classis, common-of-an-abbot -- live-
+    // verified 2026-08-26 to be Common-of-a-Confessor-Not-Bishop's own
+    // content, see lauds-capitulum-common-of-an-abbot.yml's header)
+    // claims First Vespers over Jan 14's own evening.
+    const ordo = resolveOrdo('vespers', '2026-01-14');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 31:8-9');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Iste Conféssor Dómini sacrátus');
+  });
+
   it("renders Passiontide's seasonal office, with the Gloria Patri omitted from the responsory", () => {
     // 2026-03-25 is a Wednesday in Passiontide (Passion Sunday 2026-03-22
     // through Holy Saturday 2026-04-04).

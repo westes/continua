@@ -2929,6 +2929,19 @@ to the clean 2026-06-08) and a new Vespers proof on St. Joseph's First Vespers (
 (Virgin, Virgin-Martyr, Doctor, Apostle, Several-Confessors, Holy Woman/Widow), plus the
 individual saints with their own real `ex Proprio Sanctorum` content (need per-saint import).
 
+### Common-of-an-Abbot Lauds/Vespers bundle authored — same content as Confessor-Not-Bishop (2026-08-26)
+
+Same "another id, same real content" finding as `common-of-a-confessor`'s entry above: live-
+verified (St. Maurus, Jan 15; St. Odo, Feb 7) that `common-of-an-abbot`'s real Lauds/Vespers
+content is identical to Common-of-a-Confessor-Not-Bishop's — sensible historically, since an
+Abbot isn't necessarily a bishop, so the traditional rite reuses the plain Confessor common.
+Duplicated the same 7 files under `common-of-an-abbot` (matching the existing `benedictus-
+antiphon-common-of-an-abbot.yml` precedent, same as before). Proof: St. Maurus (Duplex II.
+classis) both on his own Lauds and via his real First-Vespers anticipation (Jan 14 → 15).
+
+`npm test` (486 tests), `tsc --noEmit` both pass. **Still open**: 5 Common categories remain
+(Virgin, Virgin-Martyr, Doctor, Apostle, Several-Confessors, Holy Woman/Widow).
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own
