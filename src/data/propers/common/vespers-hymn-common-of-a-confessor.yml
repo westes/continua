@@ -1,0 +1,104 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers,
+# `votive=C5` live query, 2026-08 -- see vespers-responsory-common-of-a-
+# confessor-not-bishop.yml's header for why the votive-office view was
+# used instead of a real saint's own (outranked) Second Vespers. Same
+# "Iste Conféssor Dómini sacrátus" hymn (Monastic-track pre-Urban VIII
+# text) already authored for this Common's Matins hymn -- see matins-
+# hymn-common-of-a-confessor.yml's header for the Monastic-
+# vs-secular textual-variant note -- so its Latin and English (an
+# original translation, not the reference engine's own, for the same
+# reason recorded there) are reused verbatim here rather than
+# re-translated, for consistency across hours.
+id: vespers-hymn-common-of-a-confessor
+text:
+  la: >-
+    Iste Conféssor Dómini sacrátus,
+
+    Festa plebs cujus celébrat per orbem,
+
+    Hódie lætus méruit secréta
+
+    Scándere cæli.
+
+
+    Qui pius, prudens, húmilis, pudícus,
+
+    Sóbrius, castus fuit et quiétus,
+
+    Vita dum præsens vegetávit ejus
+
+    Córporis artus.
+
+
+    Ob sacrum cujus túmulum frequénter
+
+    Membra languéntum modo sanitáti,
+
+    Quólibet morbo fúerint graváta,
+
+    Restituúntur.
+
+
+    Unde nunc noster chorus in honórem
+
+    Ipsius, hymnum canit hunc libénter:
+
+    Ut piis ejus méritis juvémur
+
+    Omne per ævum.
+
+
+    Sit salus illi, decus atque virtus,
+
+    Qui supra cæli résidens cacúmen,
+
+    Tótius mundi máchinam gubérnat
+
+    Trinus et unus. Amen.
+  en: >-
+    This is the Lord's own hallowed confessor,
+
+    Whose feast today the nations round are keeping;
+
+    Joyful, he merited this day to enter
+
+    Heaven's hid glory.
+
+
+    Dutiful, prudent, humble, chaste, he flourished,
+
+    Sober and quiet, pure in all his living,
+
+    While in his body yet the breath of this life
+
+    Quickened his members.
+
+
+    Often at his consecrated tomb, the
+
+    Limbs of those worn by long and grievous sickness,
+
+    Whatsoever ill had laid them low, are
+
+    Wholly restored.
+
+
+    Therefore our choir today, in glad thanksgiving,
+
+    Sings in his honor this our joyful anthem:
+
+    That by his merits, freely won through goodness,
+
+    We may be aided.
+
+
+    Praise be to Him, all honor, might, dominion,
+
+    Who from the height of heaven's throne is reigning,
+
+    Governing all the fabric of creation,
+
+    Three and yet One. Amen.
+status:
+  la: verified
+  en: draft

@@ -263,6 +263,19 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Iste Conféssor Dómini sacrátus');
   });
 
+  it("uses common-of-a-confessor's real office bundle for St. Joseph's First Vespers, not the ferial default", () => {
+    // St. Joseph (Mar 19, Duplex, `common: common-of-a-confessor` --
+    // vu's own data label for what's really the Common-of-a-Confessor-
+    // Not-Bishop category, confirmed live 2026-08-26) claims First
+    // Vespers over Mar 18's own evening. See lauds-capitulum-common-of-
+    // a-confessor.yml's header for the fuller finding.
+    const ordo = resolveOrdo('vespers', '2026-03-18');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 31:8-9');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Iste Conféssor Dómini sacrátus');
+  });
+
   it("renders Passiontide's seasonal office, with the Gloria Patri omitted from the responsory", () => {
     // 2026-03-25 is a Wednesday in Passiontide (Passion Sunday 2026-03-22
     // through Holy Saturday 2026-04-04).

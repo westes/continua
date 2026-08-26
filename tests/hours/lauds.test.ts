@@ -5,7 +5,7 @@ import { resolveOrdo } from '../../src/hours';
 // and src/hours/lauds.ts's own generation-script provenance comments for
 // why these particular dates.
 const FERIAL_SUNDAY = '2026-06-21';
-const FERIAL_MONDAY = '2026-08-31';
+const FERIAL_MONDAY = '2026-06-08'; // not 08-31 -- St. Raymond Nonnatus's own day (common-of-a-confessor)
 const FERIAL_TUESDAY = '2026-06-16';
 const LAWRENCE_OCTAVE_DAY = '2026-08-11'; // Semiduplex -- exercises isDoubleOrHigher's false branch differently than a plain feria only in rank, not in psalms (Commune override not modeled, see below)
 
@@ -179,6 +179,18 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 44:16-17');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu Redémptor ómnium');
+  });
+
+  it("uses common-of-a-confessor's real office bundle on St. Joseph's own day, not the ferial default", () => {
+    // St. Joseph (Mar 19, `common: common-of-a-confessor`) -- see
+    // lauds-capitulum-common-of-a-confessor.yml's header for the finding
+    // that this plain id is really Common-of-a-Confessor-Not-Bishop
+    // under a different label in this app's own data.
+    const ordo = resolveOrdo('lauds', '2026-03-19');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 31:8-9');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu coróna célsior');
   });
 
   it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {

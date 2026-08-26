@@ -2902,6 +2902,33 @@ entry above.
 `npm test` (482 tests), `tsc --noEmit` both pass. **Still open**: 7 Common categories remain
 (Confessor, Virgin, Virgin-Martyr, Doctor, Apostle, Several-Confessors, Holy Woman/Widow).
 
+### Common-of-a-Confessor (plain id) Lauds/Vespers bundle authored — same content as -Not-Bishop (2026-08-26)
+
+**Methodology bug caught and fixed first**: the bulk gap-audit this session originally used
+`prayVespera` to sample each saint's own date, but Vespers reflects whatever saint claims First
+Vespers *that evening* — often a neighboring day's saint, not the sampled saint's own category.
+Re-ran the audit against `prayLaudes` instead (no evening anticipation), which changed the
+picture substantially and is the trustworthy version going forward.
+
+**Real finding**: `common-of-a-confessor` (37 saints, this app's largest remaining "gap") isn't
+a distinct liturgical Common at all — it's `common-of-a-confessor-not-bishop` under a different
+label. Confirmed live: St. Joseph's (Mar 19) and St. Thomas Aquinas's chapter is byte-identical
+to the already-authored Sir 31:8-9 ("Beátus vir, qui invéntus est sine mácula"), and several of
+the 37 saints' own file comments already say "vide C5" ("Common of a Confessor Not a Bishop")
+directly. Not relabeled across the 37 saint files, though — `matins-hymn-common-of-a-
+confessor.yml` and `benedictus-antiphon-common-of-a-confessor.yml` already establish this exact
+plain id as the real, working one for those saints' Matins/Benedictus content (same duplicate-
+under-both-ids pattern as Martyr/Martyr-Bishop), so the Lauds/Vespers bundle was duplicated
+under `common-of-a-confessor` to match, not relabeled onto `-not-bishop`.
+
+Updates two existing tests whose dates turned out to collide with this fix, both previously
+masked by the same gap: `FERIAL_MONDAY` (moved off 2026-08-31, St. Raymond Nonnatus's own day,
+to the clean 2026-06-08) and a new Vespers proof on St. Joseph's First Vespers (2026-03-18).
+
+`npm test` (484 tests), `tsc --noEmit` both pass. **Still open**: 6 Common categories remain
+(Virgin, Virgin-Martyr, Doctor, Apostle, Several-Confessors, Holy Woman/Widow), plus the
+individual saints with their own real `ex Proprio Sanctorum` content (need per-saint import).
+
 ## Known, deliberate simplifications (not bugs — working as designed)
 
 - `getDayCollects`: each collect in a multi-collect day renders as its own
