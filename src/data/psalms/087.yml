@@ -75,7 +75,9 @@ verses:
   - n: 11
     text:
       la: "Numquid mórtuis fácies mirabília: * aut médici suscitábunt, et confitebúntur tibi?"
-      en: "Wilt thou shew wonders to the dead? * or shall physicians raise to life, and give praise to thee?"
+      # "shades" replaces Douay-Rheims's "physicians" (a mistranslation of Hebrew
+      # Rephaim, the shades of Sheol, via the Vulgate's "medici") for clarity.
+      en: "Wilt thou shew wonders to the dead? * or shall shades raise to life, and give praise to thee?"
     status:
       la: verified
       en: verified
