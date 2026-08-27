@@ -2753,12 +2753,32 @@ directly from the reference engine's `Commune/C1.txt` (Latin + English both pres
 Live-verified: St. Bartholomew (2026-08-24) and St. Andrew (2026-11-30) both now resolve to this
 Common's text for hymn + invitatory.
 
-**Not authored, logged as explicit backlog**, same incremental-content pattern as everywhere
-else in this project:
-- Hymn + invitatory Common tiers for: Martyrs (C2), Virgins (C6), Holy Women
-  (C7), Dedication (C8), General/All Saints (C9) — all confirmed to have their own distinct
-  `[Invit]`/`[Hymnus Matutinum]` text in the reference source, not yet transcribed. Confessors
-  (C4) hymn done 2026-08-25, see below — invitatory antiphon still open.
+**Invitatory-antiphon Common tier filled in for Confessors/Martyrs/Virgins/Dedication
+(2026-08-27)**: `matins-invitatory-common-of-a-confessor{,-bishop,-not-bishop,-doctor,-pope}.yml`
+(Commune/C4's own `[Invit]`, "Regem Confessórum Dóminum" — C4a/C4b/C5 all inherit it verbatim,
+so duplicated under all 5 confessor ids, same convention as the hymn), `matins-invitatory-
+common-of-a-martyr{,-bishop}.yml` + `matins-invitatory-common-of-several-martyrs.yml`
+(Commune/C2's own `[Invit]`, "Regem Mártyrum Dóminum" — C3's own `[Invit]` is a literal
+`@Commune/C2` redirect), `matins-invitatory-common-of-a-virgin{,-martyr}.yml` (Commune/C6's own
+`[Invit]`, "Regem Vírginum Dóminum" — C6a inherits verbatim), and `matins-invitatory-common-of-
+a-dedication.yml` (Commune/C8's own `[Invit]`, "Domum Dei decet sanctitúdo"). Directly fixed
+St. Joseph Calasanctius (2026-08-27, Confessor, duplex) falling all the way to the plain
+ferial invitatory antiphon.
+
+**Still not authored, logged as explicit backlog**, same incremental-content pattern as
+everywhere else in this project:
+- Holy Women (C7) invitatory antiphon — Commune/C7.txt's own `[Invit]` ("Laudémus Deum nostrum
+  * In confessióne beátæ N..") is a name-template text (a literal "N." placeholder, like
+  `collectCommon`'s `{N}` substitution elsewhere) — this project's invitatory-antiphon files
+  have no substitution mechanism built yet, so authoring this one needs that groundwork first,
+  not just a transcription. Only 3 saints use `common-of-a-holy-woman`.
+- General/All Saints (C9) invitatory antiphon — re-investigated 2026-08-27: the reference
+  engine's own `Commune/C9.txt` is actually the Office of the Dead ("Regem, cui ómnia vivunt"),
+  not a General/All-Saints common — this backlog item's own C-number was mislabeled at the time
+  it was written. No saint's `common:` field maps to a C9-shaped category currently, so there's
+  nothing to author against yet; revisit if that changes.
+- Hymn Common tiers for: Martyrs (C2), Virgins (C6), Dedication (C8) — invitatory done above,
+  hymn still open for these three (Confessors' hymn was done 2026-08-25, see above).
 - Seasonal invitatory-antiphon tier content (Advent/Lent/Passiontide/Paschaltide/Christmastide)
   — mechanism now exists (same `seasonalOfficeSuffix`-keyed lookup the hymn's own long-standing
   seasonal tier already uses), but no seasonal invitatory file is authored yet; every season

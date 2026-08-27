@@ -585,8 +585,13 @@ describe('resolveOrdo("matins", ...) invitatory antiphon doubling by rank', () =
     return invitatoryPsalm?.antiphon?.text.la;
   }
 
-  it('a Duplex+ weekday winner opens with the FULL (not incipit-only) invitatory antiphon (St. Lawrence, 2026-08-17: ferial text, no proper/Common of his own; St. Bartholomew, duplex-2-classis, 2026-08-24: Common-of-an-Apostle text)', () => {
-    expect(openingAntiphonLatin('2026-08-17')).toContain('Exsultémus');
+  it('a Duplex+ weekday winner opens with the FULL (not incipit-only) invitatory antiphon (St. Lawrence, 2026-08-17: Common-of-a-Martyr text, no proper of his own; St. Bartholomew, duplex-2-classis, 2026-08-24: Common-of-an-Apostle text)', () => {
+    // St. Lawrence has his own full proper Matins psalmody
+    // (matins-psalmody-overrides/saints/st-lawrence.yml) but no proper
+    // invitatory antiphon of his own -- resolveMatinsInvitatoryText falls
+    // to his common-of-a-martyr Common tier (matins-invitatory-common-of-
+    // a-martyr.yml, authored 2026-08-27), not the plain ferial default.
+    expect(openingAntiphonLatin('2026-08-17')).toContain('Regem Mártyrum Dóminum, * Veníte');
     expect(openingAntiphonLatin('2026-08-24')).toContain('Regem Apostolórum Dóminum, * Veníte');
   });
 
