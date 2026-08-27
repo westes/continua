@@ -2765,13 +2765,21 @@ a-dedication.yml` (Commune/C8's own `[Invit]`, "Domum Dei decet sanctitúdo"). D
 St. Joseph Calasanctius (2026-08-27, Confessor, duplex) falling all the way to the plain
 ferial invitatory antiphon.
 
+**Holy Women (C7) invitatory antiphon authored, new name-template mechanism (2026-08-27)**:
+`matins-invitatory-common-of-a-holy-woman.yml` ("Laudémus Deum nostrum * In confessióne beátæ
+{N}..", Commune/C7.txt's own `[Invit]`) is the first Common invitatory antiphon needing a
+per-saint name substitution. Reused `hours/resolve-common.ts`'s existing `substituteName`
+helper (previously only called from `getDayCollect` for `collectCommon`/`collectName`) — now
+exported and wired into `hours/matins.ts`'s `resolveMatinsInvitatoryText` too, via a new
+`SaintRecord.invitatoryName` field (a separate field from `collectName` since the invitatory's
+own `{N}` position needs its own grammatical case — genitive singular here — not necessarily
+`collectName`'s case, though for these 3 saints it happens to be the same declension). All 3
+`common-of-a-holy-woman` saints given real genitive-singular Latin names (St. Anne → "Annæ",
+St. Martha → "Marthæ", reusing her existing `collectName` value; St. Mary Magdalene → "Maríæ
+Magdalénæ") and live-traced end to end.
+
 **Still not authored, logged as explicit backlog**, same incremental-content pattern as
 everywhere else in this project:
-- Holy Women (C7) invitatory antiphon — Commune/C7.txt's own `[Invit]` ("Laudémus Deum nostrum
-  * In confessióne beátæ N..") is a name-template text (a literal "N." placeholder, like
-  `collectCommon`'s `{N}` substitution elsewhere) — this project's invitatory-antiphon files
-  have no substitution mechanism built yet, so authoring this one needs that groundwork first,
-  not just a transcription. Only 3 saints use `common-of-a-holy-woman`.
 - General/All Saints (C9) invitatory antiphon — re-investigated 2026-08-27: the reference
   engine's own `Commune/C9.txt` is actually the Office of the Dead ("Regem, cui ómnia vivunt"),
   not a General/All-Saints common — this backlog item's own C-number was mislabeled at the time

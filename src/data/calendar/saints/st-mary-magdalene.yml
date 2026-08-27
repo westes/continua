@@ -14,3 +14,10 @@ propers: "st-mary-magdalene"
 # already live-query-verified for common-of-a-virgin.yml (see TODO.md's
 # 'minor hour content gaps' section).
 minorHoursCommon: common-of-a-virgin
+# Common-of-a-Holy-Woman's own Matins invitatory antiphon needs a
+# genitive-singular {N} ("beátæ N..", matins-invitatory-common-of-a-
+# holy-woman.yml) -- standard Latin genitive of "Maria Magdalena", both
+# parts declined.
+invitatoryName:
+  la: ["Maríæ Magdalénæ"]
+  en: ["Mary Magdalene"]

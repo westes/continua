@@ -75,6 +75,19 @@ export interface SaintRecord {
    * independently per saint, not assumed identical).
    */
   benedictusCommon?: string;
+  /**
+   * The `{N}` substitution value(s) for the Matins invitatory antiphon's
+   * own Common template (`hours/matins.ts`'s `resolveMatinsInvitatoryText`,
+   * via `hours/resolve-common.ts`'s `substituteName` — the same helper
+   * `getDayCollect` already uses for `collectCommon`/`collectName`, just a
+   * separate field here since the invitatory's own `{N}` position needs
+   * its own grammatical case, not necessarily the same one `collectName`
+   * was declined for). Currently only needed for Common-of-a-Holy-Woman
+   * (`Commune/C7.txt`'s own `[Invit]`, "Laudémus Deum nostrum * In
+   * confessióne beátæ N.." — genitive singular, e.g. "Marthæ") — every
+   * other Common category in use has name-free invitatory text. Absent
+   * for saints whose Common invitatory antiphon needs no substitution. */
+  invitatoryName?: { la: string[]; en: string[] };
   /** See calendar/types.ts's OctaveConfig doc comment. Absent for the vast
    * majority of saints — only ones with a real octave declare it. */
   octave?: OctaveConfig;

@@ -471,7 +471,7 @@ export function resolveOfficeBundle(
  * saint who shares it. Positional: the template's `{N}` occurrences fill
  * left-to-right from `names`, in document order — most templates have
  * one, a few (two co-named saints commemorated together) have two. */
-function substituteName(text: ResolvedText, name: { la: string[]; en: string[] }): ResolvedText {
+export function substituteName(text: ResolvedText, name: { la: string[]; en: string[] }): ResolvedText {
   const substituted: Partial<Record<string, string>> = {};
   for (const [lang, t] of Object.entries(text.text)) {
     if (!t) {

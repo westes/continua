@@ -1,0 +1,19 @@
+# The Common-of-a-Holy-Woman's own invitatory antiphon, read from the
+# reference engine's own Commune/C7.txt [Invit] line (both languages) --
+# a name-template text, not a fixed one like every other Common category's
+# invitatory antiphon in this app: the literal `{N}` here stands for the
+# winning saint's own name in genitive-singular Latin ("beátæ N.." =
+# "of blessed N."), substituted at read time by
+# hours/matins.ts's resolveMatinsInvitatoryText via hours/resolve-
+# common.ts's substituteName (SaintRecord.invitatoryName) -- the same
+# mechanism getDayCollect already uses for collectCommon/collectName,
+# just for this separate template family. Any winning holy woman with no
+# proper invitatory antiphon of her own authored falls to this Common
+# tier.
+id: matins-invitatory-common-of-a-holy-woman
+text:
+  la: "Laudémus Deum nostrum * In confessióne beátæ {N}.."
+  en: "Let us praise our God * for the confession of blessed {N}."
+status:
+  la: verified
+  en: verified

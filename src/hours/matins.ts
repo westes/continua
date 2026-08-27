@@ -79,6 +79,7 @@ import {
   verifiedText,
   splitNamedAntiphon,
   openingAntiphon,
+  substituteName,
 } from './resolve-common';
 import { getSaintRecord } from '../calendar/feasts';
 import { getBiblePlanReadings } from '../propers/bible-plan';
@@ -193,11 +194,17 @@ function resolveMatinsInvitatoryText(day: LiturgicalDay): ResolvedText {
     }
   }
   const winner = resolveOfficeWinner(day);
-  const commonId = winner.kind === 'sanctoral' ? getSaintRecord(winner.id)?.common : undefined;
+  const saint = winner.kind === 'sanctoral' ? getSaintRecord(winner.id) : undefined;
+  const commonId = saint?.common;
   if (commonId) {
     const common = resolveCommon(`matins-invitatory-${commonId}`);
     if (common.status.la !== 'missing' || common.status.en !== 'missing') {
-      return common;
+      // Common-of-a-Holy-Woman's own invitatory antiphon is a name
+      // template ("beátæ N..") -- the only Common invitatory antiphon
+      // currently in use that needs one (see matins-invitatory-common-
+      // of-a-holy-woman.yml's own header). Same substituteName idiom
+      // getDayCollect already uses for collectCommon/collectName.
+      return saint?.invitatoryName ? substituteName(common, saint.invitatoryName) : common;
     }
   }
   const seasonSuffix = seasonalOfficeSuffix(day.season);
