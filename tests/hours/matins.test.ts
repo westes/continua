@@ -226,90 +226,107 @@ describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunda
     }
   });
 
-  it("falls through to its Common category's own generic psalmody for a Duplex+ weekday winner with no proper antiphon authored", () => {
+  it("uses ferial psalms with its own Terce/Sext/None antiphons (one per nocturn) plus Common's own versicles, for a plain-Duplex weekday winner with no proper antiphon authored", () => {
     // St. Ignatius of Antioch (Duplex, Common of a Martyr-Bishop, no
-    // proper antiphon of his own) -- Feb 1 2029, confirmed clean (no
-    // Sunday collision) per his own saint-file comment.
-    // getMatinsPsalmodyOverride's Common tier resolves
-    // common-of-a-martyr-bishop via common-of-a-martyr.yml's own
-    // `aliases` (the reference engine's own Matins psalmody for
-    // Martyr-Bishop redirects outright to plain Martyr) -- real,
-    // verified Common text, not the plain ferial table.
+    // proper antiphon of his own) -- Feb 1 2029, a Thursday, confirmed
+    // clean (no Sunday collision) per his own saint-file comment.
+    // Duplex is the floor of 3-nocturn eligibility (user, 2026-08): the
+    // psalm numbers are Thursday's own real ferial table
+    // (psalter-distribution.yml), chunked into 3 -- not Common's own
+    // psalm numbers, which only duplex-majus+ winners still get in full.
+    // Each nocturn's versicle is Common's own (getMatinsCommonOverride's
+    // Common-of-a-Martyr-Bishop resolves via common-of-a-martyr.yml's
+    // `aliases`); each nocturn's antiphon is his own SaintRecord.
+    // minorHoursCommon (common-of-a-martyr, live-verified identical
+    // across the Bishop/non-Bishop split) own Terce/Sext/None antiphon --
+    // real, verified, non-psalm-specific text, one distinct antiphon per
+    // nocturn (user, 2026-08-27: "some antiphons from the feria and some
+    // from the commons feels off... use those antiphons, one per
+    // nocturn"), not Common's own Matins Nocturn 1/2 antiphons (those are
+    // 6 individual per-psalm paraphrases that would misquote a different
+    // ferial psalm).
     const common = resolveOrdo('matins', '2029-02-01');
     const psalms = common.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
-    // Same Nocturn 1 as St. Lawrence's own (1,2,4,5,8,10), but Nocturn 2
-    // uses the Common default's Ps 64, not Lawrence's own proper Ps 16.
-    expect(psalms).toEqual([3, 94, 1, 2, 4, 5, 8, 10, 14, 20, 23, 63, 64, 91]);
+    expect(psalms).toEqual([3, 94, 76, 77, 77, 78, 79, 80, 82, 83, 84]);
     expect(common.parts.some((p) => p.kind === 'te-deum')).toBe(true);
-    expect(common.parts.some((p) => p.kind === 'canticle')).toBe(true);
+    // No canticles -- the ferial table has none, and this tier doesn't
+    // borrow Common's own (unlike a duplex-majus+ winner's full scheme).
+    expect(common.parts.some((p) => p.kind === 'canticle')).toBe(false);
 
-    const psalmParts = common.parts.filter((p) => p.kind === 'psalm') as { psalmNumber: number; antiphon?: { status: Record<string, string> } }[];
+    const psalmParts = common.parts.filter((p) => p.kind === 'psalm') as { psalmNumber: number; antiphon?: { text: Record<string, string>; status: Record<string, string> } }[];
     const nocturnPsalms = psalmParts.filter((p) => ![3, 94].includes(p.psalmNumber));
-    // The generic Common antiphon text is real and verified, even though
-    // it is not proper to Ignatius himself.
-    for (const p of nocturnPsalms) {
-      expect(p.antiphon?.status.la).toBe('verified');
-      expect(p.antiphon?.status.en).toBe('verified');
+    // Nocturn 1 (76,77,77): Terce's own Common-of-a-Martyr antiphon.
+    expect(nocturnPsalms[0]?.antiphon?.text.la).toBe('Ant. Qui séquitur me, * non ámbulat in ténebris, sed habébit lumen vitæ, dicit Dóminus.');
+    expect(nocturnPsalms.slice(1, 3).every((p) => p.antiphon === undefined)).toBe(true);
+    // Nocturn 2 (78,79,80): Sext's own, a genuinely different antiphon.
+    expect(nocturnPsalms[3]?.antiphon?.text.la).toBe('Ant. Qui mihi minístrat, * me sequátur: et ubi ego sum, illic sit et miníster meus.');
+    expect(nocturnPsalms.slice(4, 6).every((p) => p.antiphon === undefined)).toBe(true);
+    // Nocturn 3 (82,83,84): None's own, different again.
+    expect(nocturnPsalms[6]?.antiphon?.text.la).toBe('Ant. Volo Pater, * ut ubi ego sum, illic sit et miníster meus.');
+    expect(nocturnPsalms.slice(7).every((p) => p.antiphon === undefined)).toBe(true);
+    for (const i of [0, 3, 6]) {
+      expect(nocturnPsalms[i]?.antiphon?.status.la).toBe('verified');
+      expect(nocturnPsalms[i]?.antiphon?.status.en).toBe('verified');
     }
   });
 
-  it("falls through to Common-of-a-Confessor's own generic psalmody for a Duplex+ weekday winner with no proper antiphon authored", () => {
-    // St. Francis of Paola (Duplex, Common of a Confessor Not a Bishop,
-    // no proper antiphon of his own) -- 2030-04-02, confirmed clean (no
-    // Sunday collision, safely outside Holy Week/Easter octave that year)
-    // per his own saint-file comment.
+  it("uses ferial psalms with Common-of-an-Abbot's own Terce/Sext/None antiphons (St. Francis of Paola's own minorHoursCommon, distinct from his Matins-classification common) for a plain-Duplex weekday winner with no proper antiphon authored", () => {
+    // St. Francis of Paola (Duplex, Common of a Confessor Not a Bishop
+    // for `common`, but `minorHoursCommon: common-of-an-abbot` -- his
+    // own P/T/S/N draw from the Abbot common instead, live-verified per
+    // his own saint-file comment) -- 2030-04-02, a Tuesday, confirmed
+    // clean (no Sunday collision, safely outside Holy Week/Easter octave
+    // that year).
     const common = resolveOrdo('matins', '2030-04-02');
     const psalms = common.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
-    expect(psalms).toEqual([3, 94, 1, 2, 4, 5, 8, 10, 14, 20, 23, 95, 96, 97]);
+    expect(psalms).toEqual([3, 94, 43, 44, 47, 48, 49, 54, 55, 58, 59]);
     expect(common.parts.some((p) => p.kind === 'te-deum')).toBe(true);
-    expect(common.parts.some((p) => p.kind === 'canticle')).toBe(true);
+    expect(common.parts.some((p) => p.kind === 'canticle')).toBe(false);
 
-    const psalmParts = common.parts.filter((p) => p.kind === 'psalm') as { psalmNumber: number; antiphon?: { status: Record<string, string> } }[];
+    const psalmParts = common.parts.filter((p) => p.kind === 'psalm') as { psalmNumber: number; antiphon?: { text: Record<string, string>; status: Record<string, string> } }[];
     const nocturnPsalms = psalmParts.filter((p) => ![3, 94].includes(p.psalmNumber));
-    for (const p of nocturnPsalms) {
-      expect(p.antiphon?.status.la).toBe('verified');
-      expect(p.antiphon?.status.en).toBe('verified');
+    expect(nocturnPsalms[0]?.antiphon?.text.la).toBe('Ant. Euge, serve bone * in módico fidélis, intra in gáudium Dómini tui.');
+    expect(nocturnPsalms[3]?.antiphon?.text.la).toBe('Ant. Fidélis servus * et prudens, quem constítuit Dóminus super famíliam suam.');
+    expect(nocturnPsalms[6]?.antiphon?.text.la).toBe('Ant. Serve bone * et fidélis, intra in gáudium Dómini tui.');
+    for (const i of [0, 3, 6]) {
+      expect(nocturnPsalms[i]?.antiphon?.status.la).toBe('verified');
+      expect(nocturnPsalms[i]?.antiphon?.status.en).toBe('verified');
     }
   });
 
-  it("falls through to Common-of-a-Confessor-Bishop's own generic psalmody -- same psalm numbers as Common of a Confessor, different Nocturn versicles", () => {
+  it("uses ferial psalms for a Common-of-a-Confessor-Bishop winner -- same weekday psalm numbers as any other plain-Duplex Thursday winner, since psalm numbers no longer come from Common at all", () => {
     // St. Basil the Great (Duplex, live-verified as byte-identical to
     // common-of-a-confessor-bishop.yml despite his own [Rule] saying
-    // "vide C4a") -- 2035-06-14, confirmed clean per his own saint-file
-    // comment.
+    // "vide C4a") -- 2035-06-14, a Thursday, confirmed clean per his own
+    // saint-file comment. Same Thursday ferial psalms as St. Ignatius of
+    // Antioch's own test above -- the two Commons only ever differed in
+    // versicles/antiphon, and psalm numbers are ferial now regardless of
+    // which Common category applies.
     const common = resolveOrdo('matins', '2035-06-14');
     const psalms = common.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
-    // Same psalm numbers in every slot as Common of a Confessor Not a
-    // Bishop above -- the two Commons only differ in their versicles.
-    expect(psalms).toEqual([3, 94, 1, 2, 4, 5, 8, 10, 14, 20, 23, 95, 96, 97]);
+    expect(psalms).toEqual([3, 94, 76, 77, 77, 78, 79, 80, 82, 83, 84]);
     expect(common.parts.some((p) => p.kind === 'te-deum')).toBe(true);
-    expect(common.parts.some((p) => p.kind === 'canticle')).toBe(true);
+    expect(common.parts.some((p) => p.kind === 'canticle')).toBe(false);
   });
 
-  it("falls through to Common-of-Several-Martyrs's own generic psalmody -- a genuinely different scheme from the single-martyr Common", () => {
+  it("uses ferial psalms with Common-of-Several-Martyrs's own Terce/Sext/None antiphons (one per nocturn) for a plain-Duplex weekday winner with no proper antiphon authored", () => {
     // Ss. Fabian and Sebastian (Duplex, Common of Several Martyrs, no
     // proper antiphon of their own) -- 2029-01-20, a Saturday, confirmed
     // clean (no Sunday collision) per their own saint-file comment.
     const common = resolveOrdo('matins', '2029-01-20');
     const psalms = common.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
-    expect(psalms).toEqual([3, 94, 1, 2, 10, 14, 15, 23, 32, 33, 45, 60, 63, 78]);
+    expect(psalms).toEqual([3, 94, 96, 104, 104, 105, 105, 106, 106, 107, 108]);
     expect(common.parts.some((p) => p.kind === 'te-deum')).toBe(true);
-    expect(common.parts.some((p) => p.kind === 'canticle')).toBe(true);
+    expect(common.parts.some((p) => p.kind === 'canticle')).toBe(false);
 
-    const psalmParts = common.parts.filter((p) => p.kind === 'psalm') as { psalmNumber: number; antiphon?: { status: Record<string, string> } }[];
+    const psalmParts = common.parts.filter((p) => p.kind === 'psalm') as { psalmNumber: number; antiphon?: { text: Record<string, string>; status: Record<string, string> } }[];
     const nocturnPsalms = psalmParts.filter((p) => ![3, 94].includes(p.psalmNumber));
-    for (const p of nocturnPsalms) {
-      expect(p.antiphon?.status.la).toBe('verified');
-      expect(p.antiphon?.status.en).toBe('verified');
-    }
-
-    const canticles = common.parts.filter((p) => p.kind === 'canticle') as { canticleId: string; text: { status: Record<string, string> } }[];
-    expect(canticles).toHaveLength(3);
-    expect(canticles[0]?.canticleId).toBe('sap-3-1-6');
-    for (const c of canticles) {
-      expect(c.text.status.la).toBe('verified');
-      expect(c.text.status.en).toBe('verified');
-    }
+    expect(nocturnPsalms[0]?.antiphon?.text.la).toBe('Ant. Cum palma * ad regna pervenérunt Sancti, corónas decóris meruérunt de manu Dei.');
+    expect(nocturnPsalms[3]?.antiphon?.text.la).toBe('Ant. Córpora Sanctórum * in pace sepúlta sunt: et vivent nómina eórum in ætérnum.');
+    expect(nocturnPsalms[6]?.antiphon?.text.la).toBe('Ant. Mártyrum chorus * laudáte Dóminum de cælis, allelúja.');
+    expect(nocturnPsalms[6]?.antiphon?.status.la).toBe('verified');
+    expect(nocturnPsalms[6]?.antiphon?.status.en).toBe('verified');
+    expect(nocturnPsalms.slice(7).every((p) => p.antiphon === undefined)).toBe(true);
   });
 
   it('falls all the way back to the plain ferial weekday table, redistributed into 3 nocturns, when neither a proper nor a Common entry is authored', () => {

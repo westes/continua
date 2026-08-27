@@ -93,5 +93,24 @@ for (const mod of Object.values(categoryModules)) {
 
 export function getMatinsPsalmodyOverride(id: string | undefined): MatinsPsalmodyScheme | undefined {
   if (!id) return undefined;
-  return overrides.get(id) ?? categories.get(getSaintRecord(id)?.common ?? '');
+  return getMatinsSaintOverride(id) ?? getMatinsCommonOverride(id);
+}
+
+/** Saint-specific proper only, skipping the Common-category tier — used
+ * where the caller needs to know specifically whether a *proper* exists,
+ * separately from a Common fallback (e.g. matins.ts's duplex-rank case,
+ * which treats "proper exists" and "only Common exists" differently). */
+export function getMatinsSaintOverride(id: string | undefined): MatinsPsalmodyOverride | undefined {
+  if (!id) return undefined;
+  return overrides.get(id);
+}
+
+/** Common-category lookup only, skipping the saint-specific `overrides`
+ * tier — used where the caller has already handled (or ruled out) a
+ * saint-specific proper separately, e.g. matins.ts's duplex-rank fallback,
+ * which only wants Common's per-nocturn versicle/Nocturn-3 antiphon, not
+ * a full scheme substitution. */
+export function getMatinsCommonOverride(id: string | undefined): MatinsPsalmodyScheme | undefined {
+  if (!id) return undefined;
+  return categories.get(getSaintRecord(id)?.common ?? '');
 }
