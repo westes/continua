@@ -87,6 +87,7 @@ const FIXED_DATE_STARTS: [string, string][] = [['12-25', 'christmas-day']];
 
 /** Easter-offset starts (offset -> temporal feast id). */
 const EASTER_OFFSET_STARTS: [number, string][] = [
+  [17, 'patronage-of-st-joseph'],
   [39, 'ascension'],
   [49, 'pentecost-sunday'],
   [60, 'corpus-christi'],

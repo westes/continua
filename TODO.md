@@ -2059,6 +2059,38 @@ before assuming it's still needed. `tsc --noEmit` and `npm test` (522 tests) bot
 live-verified via `activeOctavesFor`/`resolveOrdo` for representative dates in 2026 across all
 three octaves, confirming correct day-numbering and no residual duplicate readings in the pool.
 
+### The Patronage of St. Joseph — new movable feast + octave, added (2026-08-28)
+
+A real gap, not just a content pass: this feast (Duplex I classis, instituted by Pius IX 1847)
+didn't exist anywhere in the calendar at all. Per direct instruction, dated per the **older,
+pre-1955 Wednesday reckoning** — the Wednesday after the 2nd Sunday after Easter (Easter+17) —
+rather than the 1913 Pius X reform's later placement on the 3rd Sunday after Easter itself (the
+reference engine carries both: the primary, unsuffixed `Tempora/Pasc2-3.txt` is the Wednesday
+dating used here; `Pasc3-0t.txt`, a bare alias back to `Pasc2-3`, is the Sunday dating, not used).
+Added the mechanism — `data/calendar/temporal-feasts/patronage-of-st-joseph.yml` (rank, Easter+17
+anchor, `wins: duplex` octave) plus a new `[17, 'patronage-of-st-joseph']` entry in
+`calendar/temporal-feasts.ts`'s `EASTER_OFFSET_STARTS` table (the one piece of *code*, not data,
+this needed) — then authored the feast day's own Matins reading (`nocturn-readings/
+patronage-of-st-joseph.yml`, St. Bernardine of Siena + St. Augustine on the two genealogies) and
+its full movable octave: days 2/3/4 (Thu/Fri/Sat, real distinct content each day — Bernardine,
+Chrysostom, Bernard, Ambrose, John Damascene, Augustine sermons/homilies rotating through), day 6/
+7/8 (Mon/Tue/Wed, likewise), and day 5 (the Sunday, `Pasc3-0`) correctly left unauthored — the
+source itself has no override there at all, unlike Corpus Christi/Sacred Heart's own octaves.
+
+**One real test collision found and fixed**: `tests/calendar/may-sanctoral.test.ts`'s existing
+2038-05-19 proof date (St. Pudentiana losing to St. Peter Celestine) broke, because 2038-05-19
+happens to be this new octave's own closing day, and Celestine's `duplex` rank exactly ties the
+octave's own closing-day threshold — the app's own already-documented tie-break
+(`calendar/index.ts`'s `applyOctaves`) correctly favors the octave on a tie, displacing Celestine
+into a commemoration that year. Not a bug; moved the proof date to 2033 (clear of any octave) to
+keep testing what it was meant to test. Also bumped `vite.config.ts`'s PWA
+`maximumFileSizeToCacheInBytes` from 6 MiB to 8 MiB — this content pull pushed the main bundle
+(6.32 MB) past the previous cap; same deliberate-not-bloat headroom bump as every previous time
+this has happened (see that file's own comment). `tsc --noEmit`, `npm test` (522 tests), and
+`npm run build` all pass; live-verified via `resolveDay`/`activeOctavesFor`/`resolveOrdo` that the
+feast wins outright on its Wednesday, the octave stays active through the week without disturbing
+Sundays or stronger saints, and every reading surfaces correctly and exactly once.
+
 ### St. Felix I (May 30) — one missed pre-1955-pool candidate found, authored (2026-08-28)
 
 Re-auditing the full pre-1955/SanctiM two-pass sweep (diffing every id in

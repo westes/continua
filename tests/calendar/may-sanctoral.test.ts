@@ -42,8 +42,15 @@ describe('May sanctoral pull (first pass)', () => {
 
     // St. Pudentiana always loses to St. Peter Celestine (May 19, also fixed-date) —
     // this one *is* modeled (both are real sanctoral records), so it
-    // resolves correctly.
-    const may19 = resolveDay('2038-05-19');
+    // resolves correctly. 2033, not 2038: in 2038 May 19 falls on the
+    // closing day of the Patronage of St. Joseph's own movable octave
+    // (data/calendar/temporal-feasts/patronage-of-st-joseph.yml, added
+    // 2026-08-28), whose Duplex threshold ties Celestine's own rank — the
+    // app's own documented closing-day tie-break (calendar/index.ts's
+    // applyOctaves) then favors the octave, correctly displacing Celestine
+    // into a commemoration that year. Not a bug; just the wrong year to
+    // prove this particular tie-break with now that a real rival exists.
+    const may19 = resolveDay('2033-05-19');
     expect(may19.winner).toEqual({
       kind: 'sanctoral',
       id: 'st-peter-celestine',

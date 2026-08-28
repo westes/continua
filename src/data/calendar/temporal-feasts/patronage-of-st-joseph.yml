@@ -1,0 +1,40 @@
+# The Patronage of St. Joseph -- a Duplex I classis feast instituted by
+# Pius IX (1847), with its own privileged octave. Two distinct datings
+# exist in the reference engine: the primary, unsuffixed `Tempora/
+# Pasc2-3.txt` (used here, by direct instruction) keeps it on the
+# *Wednesday* after the Second Sunday after Easter -- the older, pre-1955
+# dating -- while `Pasc3-0t.txt` (a bare `@Tempora/Pasc2-3` alias sitting
+# at the Third Sunday after Easter's own slot) and Pasc2-3's own
+# "(rubrica Newcal)" `[Rank]` variant represent the later (1913 Pius X
+# reform) placement on that Sunday instead -- not used, per this
+# project's own pre-1955 calendar/rubrics baseline (see CLAUDE.md).
+# Monastic (`TemporaM/Pasc2-3.txt`) carries no independent content of its
+# own -- it just re-slices this same secular file's Lectio4-9 into 12
+# lessons (splitting several in half to fill the larger lesson count),
+# same "thin rule override" pattern as most SanctiM files (see memory
+# vu-matins-sanctim-saints) -- so the secular 9-lesson text is used
+# directly, not resliced.
+#
+# Wednesday of the 2nd week after Easter = Easter+17 (Pasc2-0, the 2nd
+# Sunday after Easter, is Easter+14; +3 more days to Wednesday). Verified
+# against the offset formula already confirmed elsewhere in this file
+# (PascN-D = Easter + 7N + D, e.g. Ascension = Pasc5-4 = Easter+39).
+id: patronage-of-st-joseph
+name: "The Patronage of St. Joseph"
+rank: duplex-1-classis
+anchor:
+  kind: easter
+  offset: 17
+octave:
+  enabled: true
+  # No live counter-example found for this feast specifically (unlike
+  # Ascension/Corpus Christi/Sacred Heart's own known Order-III-privilege
+  # conflict) -- `duplex` used as the same project-wide default anyway,
+  # for consistency with every other Duplex I classis octave modeled so
+  # far. The octave's own Sunday (day 5, Pasc3-0) genuinely has no
+  # override in the source at all -- it stays plain "Dominica III Post
+  # Pascha" -- so this threshold is never actually tested against a real
+  # rival on that day; nothing here forces an override where the source
+  # has none, since `octave-readings` is purely additive (see
+  # hours/matins.ts's own `buildReadingPool`).
+  wins: duplex

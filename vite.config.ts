@@ -35,9 +35,13 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
         // Default cap (2 MiB) is too small once the sanctoral pull's real
         // propers/octave-reading text (all eagerly bundled, by design, for
-        // offline use) pushes the main chunk past it -- raised with
-        // headroom for the octaves still being transcribed.
-        maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
+        // offline use) pushes the main chunk past it -- raised again
+        // (2026-08-28, was 6 MiB) once the movable-octave content (Ascension/
+        // Corpus Christi/Sacred Heart/Patronage of St. Joseph) pushed the
+        // bundle past the previous cap. Bump this again, with headroom, if
+        // a future content pull hits it -- this is deliberate bundling, not
+        // bloat to trim (see CLAUDE.md).
+        maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
       },
     }),
   ],
