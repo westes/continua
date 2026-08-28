@@ -36,6 +36,7 @@ across every hour and content type in this app.
      needs bilingual voice selection (La/En) worked out, and quality for Latin pronunciation
      is an open question. Open, not started — needs its own design pass before content/UI work
      begins.
+
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
@@ -44,25 +45,15 @@ across every hour and content type in this app.
      every proper name falls back to English gracefully, but zero saints, octaves, or named
      temporal feasts have an authored Latin name anywhere in `src/data/**`. Weekday names,
      month names, rank labels, and season/ordinal phrasing already have real Latin.
-   - Matins: bible-plan TSV bulk conversion is done (see "Bible-plan TSV — bulk conversion
-     done" below) — not yet added to a test table, though (unlike sanctoral/temporal content)
-     there's no reference breviary to spot-check this plan against by design. The
-     saint-level side of "author patristic/hagiographic readings for every saint where one can
-     be sourced" is now **fully done** — no longer Duplex+-gated, content is pooled and shown
-     regardless of rank (see "Reading-pool redesign"). The pre-1955-but-post-1617 saints
-     (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are done — see "Pre-1955
-     saints' Matins readings" below. The larger pool of saints that *do* have a Monastic 1617
-     track (`SanctiM/`) is also done — see "SanctiM-track saints' Matins readings" below — all
-     12 months complete, 134 saints authored (see "St. Felix I" below for the one missed
-     candidate found on re-audit), the rest correctly left unauthored as Common-only/no-content
-     cases. Still open: expand the per-book Matins responsory pool beyond its one seeded book
-     (`isa`); the temporal-cycle side of this same content type (see next bullet).
-   - Matins: the **temporal-cycle** side of this same gap (as opposed to the sanctoral side
-     above) — the post-Pentecost season (`post-pentecost-01` through `-24`) is now fully
-     authored (see "Temporal-cycle nocturn-readings sweep" below); the rest of the year's
-     temporal ids (Advent, Christmastide, post-Epiphany, Septuagesima through Lent/Passiontide,
-     Eastertide) still have no Nocturn 2/3 content of their own — same shape of gap, not yet
-     started.
+   - Matins sanctoral-side readings: the per-book Matins responsory pool has only one book
+     seeded (`isa`) — needs expanding. (Saint-level reading authoring itself is fully done; see
+     "Reading-pool redesign", "Pre-1955-but-post-1617 saints' Matins readings", and "SanctiM
+     (Monastic 1617)-track saints' Matins readings" below.) Bible-plan TSV content also isn't
+     yet in a test table (see "Bible-plan TSV — bulk conversion done" below).
+   - Matins temporal-cycle readings: only the post-Pentecost season (`post-pentecost-01`
+     through `-24`) is authored (see "Temporal-cycle nocturn-readings sweep" below) — the rest
+     of the year (Advent, Christmastide, post-Epiphany, Septuagesima through Lent/Passiontide,
+     Eastertide) has no Nocturn 2/3 content yet.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
