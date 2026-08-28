@@ -2007,6 +2007,40 @@ range overlaps Christmas's own already-authored Vespers/Lauds `octave-commemorat
 "Octave content — done" above, a different mechanism/hour), and it's not yet checked how much of
 that range has genuine Matins Lectio overrides vs. bare `vide` cross-references.
 
+### Movable-feast octaves (Ascension, Corpus Christi, Sacred Heart) — done (2026-08-28)
+
+Direct correction from the user: movable-feast octave content lives in the reference engine's
+`Tempora/`/`TemporaM/` directories, keyed by liturgical offset from Easter (e.g. `Pasc5-4.txt` for
+Ascension, `Pent02-5.txt` for Sacred Heart — each feast's own record in `data/calendar/
+temporal-feasts/*.yml` already cites its own file), not by calendar date — no representative year
+needs picking, contrary to what this file previously assumed. All three octaves' full 7 non-feast
+days (day 2 through the closing day 8) turned out to have genuine, distinct Lectio4-9 content —
+unlike the fixed-date octaves audited above, none of these turned out to be bare `vide`-only days.
+21 files authored: `ascension-octave-day-2` through `-8` (St. Leo/St. Augustine/St. John
+Chrysostom/St. Gregory of Nyssa sermons + Pope St. Gregory the Great's own homily on Mark
+16:14-20, reused across all 7 days), `corpus-christi-octave-day-2/3/5/6/7/8` (St. Thomas Aquinas/
+St. John Chrysostom/St. Ambrose/St. Cyril of Jerusalem/St. Cyril of Alexandria/St. Cyprian +
+St. Augustine's own Tractates on John 6, reused across all days), `sacred-heart-octave-day-2/4/5/
+6/7/8` (excerpts from Pius XI's "Miserentissimus Redemptor" + homilies on John 19:31-37 by
+St. John Chrysostom/St. Lawrence Justinian/St. Bernardine of Siena/St. Peter Canisius/St. Bernard/
+St. Augustine).
+
+**One real wrinkle found and fixed**: each octave's own day-4-or-day-3 (the Sunday falling within
+it) turned out to duplicate content *already authored* under a different id in the earlier
+temporal-cycle Sunday sweep (see "Temporal-cycle nocturn-readings sweep" below) —
+`corpus-christi-octave-day-4` duplicated `post-pentecost-02` (both source `Tempora/Pent02-0.txt`),
+`sacred-heart-octave-day-3` duplicated `post-pentecost-03` (`Tempora/Pent03-0.txt`) — because a
+numbered post-Pentecost Sunday and the Sunday within one of these two octaves are, by construction
+(both anchored to Easter with fixed offsets), always the same calendar day every year, not a
+one-off 2026 coincidence. Both duplicate files were deleted after live-verifying the reading
+already surfaced correctly (and only once) via the existing temporal id. Ascension's own Sunday
+(`ascension-octave-day-4`, `Pasc6-0`) has no such collision — Paschaltide's own temporal-cycle
+sweep hasn't been done yet, so no duplicate content exists there yet. If the Paschaltide sweep is
+picked up later, re-check `ascension-octave-day-4` against whatever gets authored for that Sunday
+before assuming it's still needed. `tsc --noEmit` and `npm test` (522 tests) both pass;
+live-verified via `activeOctavesFor`/`resolveOrdo` for representative dates in 2026 across all
+three octaves, confirming correct day-numbering and no residual duplicate readings in the pool.
+
 ### St. Felix I (May 30) — one missed pre-1955-pool candidate found, authored (2026-08-28)
 
 Re-auditing the full pre-1955/SanctiM two-pass sweep (diffing every id in

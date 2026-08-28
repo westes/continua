@@ -1,0 +1,47 @@
+# Sourced directly from the raw reference files (web/www/horas/Latin+English/
+# Tempora/Pasc6-4.txt) -- day 8, "In Octava," the Ascension's own octave
+# closing day, same shape/rationale as ascension-octave-day-2.yml. Joins
+# another sermon of St. Augustine on the Ascension (Lectio4-6, distinct from
+# day 4's own Augustine sermon -- a different numbered sermon in the source)
+# with the conclusion of Pope St. Gregory's homily on Mark 16:14-20
+# (Lectio7-9, same Gospel pericope as every other day; bare incipit
+# dropped). The source's own English for Lectio8-9 is visibly garbled near
+# the seam between the two lessons (a clause is missing outright -- the
+# Song of Songs allusion "Trahe nos: post te currémus..." has no English at
+# all -- and another sentence is transposed) -- reconstructed here following
+# the Latin closely rather than transcribed as-is; `en` marked `draft`
+# accordingly (a larger repair than the usual isolated-typo fix, see
+# memory vu-prefer-text-over-missing). Responsory not sourced, same reason
+# as day 2.
+id: ascension-octave-day-8
+source:
+  la: "Sermo sancti Augustíni Epíscopi; Homilía sancti Gregórii Papæ"
+  en: "Sermon of St. Augustine, Bishop; Homily of St. Gregory the Great, Pope"
+text:
+  la: |
+    Omnia, caríssimi, quæ Dóminus Jesus Christus in hoc mundo sub fragilitáte nostra mirácula édidit, nobis profíciunt: qui dum humánam conditiónem sidéribus importávit, credéntibus cælum patére posse monstrávit: et dum victórem mortis in cæléstia elevávit, victóribus quo sequántur osténdit. Ascénsio ergo Dómini cathólicæ fídei confirmátio fuit: ut secúri in pósterum crederémus miráculi illíus donum, cujus jam in præsénti percepissémus efféctum: et fidélis quisque cum jam tanta percéperit, per ea, quæ cognóscit prǽstita, discat speráre promíssa, ac Dei sui prætéritam præsentémque bonitátem, quasi futurórum téneat cautiónem.
+
+    Super excélsa ergo cæli terrénum corpus impónitur: ossa, intra sepúlcri angústias paulo ante conclúsa, Angelórum cœ́tibus interúntur: in grémium immortalitátis mortális natúra transfúnditur: et ídeo sacra apostólicæ lectiónis testátur história: Cum hæc dixísset, inquit, vidéntibus illis, elevátus est. Dum audis elevátum, agnósce milítiæ cæléstis obséquium: unde hodiérna festívitas hóminis nobis et Dei sacraménta manifestávit. Sub una eadémque persóna, in eo qui élevat, divínam poténtiam; in eo autem, qui elevátur, humánam cognósce substántiam.
+
+    Ideóque omnímodis detestánda sunt venéna Orientális erróris, qui ímpia novitáte præsúmit assérere Fílium Dei ac Fílium hóminis uníus esse natúræ. In altérutra enim parte, vel qui solum hóminem fuísse díxerit, negábit Conditóris glóriam: vel qui solum Deum, negábit misericórdiam Redemptóris. Quo génere non fácile Ariánus evangélicam póterit habére veritátem, ubi Fílium Dei nunc æquálem légimus, nunc minórem. Qui enim uníus natúræ Salvatórem nostrum mortífera persuasióne credíderit, solum hóminem, aut solum Deum cogétur dícere crucifíxum. Sed non ita est. Mortem enim nec solus Deus sentíre, nec solus homo superáre potuísset.
+
+    De hac ascensiónis ejus glória étiam Hábacuc ait: Elevátus est sol, et luna stetit in órdine suo. Quis enim solis nómine, nisi Dóminus; et quæ lunæ nómine, nisi Ecclésia designátur? Quoúsque enim Dóminus ascéndit ad cælos, sancta ejus Ecclésia advérsa mundi omnímodo formidávit: at postquam ejus ascensióne roboráta est, apérte prædicávit quod occúlte crédidit. Elevátus est ergo sol, et luna stetit in órdine suo: quia cum Dóminus cælum pétiit, sancta ejus Ecclésia in auctoritáte prædicatiónis excrévit.
+
+    Hinc ejúsdem Ecclésiæ voce per Salomónem dícitur: Ecce iste venit sáliens in móntibus, et transíliens colles. Considerávit namque tantórum óperum cúlmina, et ait: Ecce iste venit sáliens in móntibus. Veniéndo quippe ad redemptiónem nostram, quosdam, ut ita dicam, saltus dedit. Vultis, fratres caríssimi, ipsos ejus saltus agnóscere? De cælo venit in úterum, de útero venit in præsépe, de præsépe venit in crucem, de cruce venit in sepúlcrum, de sepúlcro rédiit in cælum. Ecce, ut nos post se cúrrere fáceret, quosdam pro nobis saltus manifestáta per carnem Véritas dedit: quia exsultávit ut gigas ad curréndam viam suam, ut nos ei dicerémus ex corde: Trahe nos: post te currémus in odórem unguentórum tuórum.
+
+    Unde, fratres caríssimi, opórtet, ut illuc sequámur corde, ubi eum córpore ascendísse crédimus. Desidéria terréna fugiámus: nihil nos jam deléctet in ínfimis, qui Patrem habémus in cælis. Et hoc nobis est magnópere perpendéndum: quia is qui plácidus ascéndit, terríbilis redíbit; et quidquid nobis cum mansuetúdine præcépit, hoc a nobis cum distinctióne éxiget. Nemo ergo indúlta pœniténtiæ témpora parvipéndat, nemo curam sui, dum valet, ágere négligat: quia Redémptor noster tanto tunc in judícium distríctior véniet, quanto nobis ante judícium magnam patiéntiam prærogávit.
+  en: |
+    Dearly beloved brethren, all the wonderful works which our Lord Jesus Christ did in this world, under the weakness of our nature, are profitable for us: when He exalted His Manhood above the stars, He showed that heaven may open for a believer; and while He, the Conqueror of death, went up into the heavenly mansions, He showed to him that overcometh, whither he also may follow. Therefore the Ascension of the Lord is the seal of the Catholic Faith, which assureth in us the hope of the gift which is yet to come to us, from a miracle whereof we already feel the fruits. Thus let every one that is faithful, having already received so much, learn to hope for that which is promised, on the ground of that which he knoweth to have been given, and hold the goodness of God in times which have been, and times which now are, as a sure pledge of the same in times to come.
+
+    An earthly Body, then, is now lifted up above the heights of heaven; the Bones, Which but a little while before had lain within the narrow walls of the grave, have made their entry among the angelic hosts; human nature hath been given a place in the lap of immortality; and therefore the Apostle, whose account we have heard read, saith: "When He had spoken these things, while they beheld, He was taken up." While thou hearest these words, "taken up," thou must understand thereby the ministry of the angelic army, whereby this Festival revealeth to us the Mystery of Him Who is both God and Man. United in One Person, we see in Him Who lifted up, Divine Power, and in Him Who was lifted up, very Man.
+
+    Therefore are utterly to be loathed those pestiferous teachings of Eastern falsehood, those brand-new inventions of ungodliness which dare to assert that He Who in One Person is both Son of God and Son of Man hath but one nature. On the one hand, if a man say that Christ is only man, he hath denied the glory of his Maker; on the other, he who saith He is only God, hath denied the mercy of his Redeemer. By this same error an Arian can hardly hold to the truth of the Gospel, where we read the Son of God now equal, now less, than the Father. For whoever, by this deadly persuasion, believeth our Saviour to be of one nature only, is forced to say that either only man, or only God, was crucified. But it is not so: for neither could God alone have felt death, nor man alone have overcome it.
+
+    The Prophet Habakkuk also hath spoken of the glory of Christ's Ascension in the words: "The sun was lifted up, and the moon stood still in her habitation." Who is here signified by the Sun, if not the Lord; or by the Moon, if not the Church? Until the Lord ascended to heaven, His holy Church was in every way fearful before the world's hostility; but after she was strengthened by His Ascension, she preached openly what she had believed in secret. "The sun was lifted up, and the moon stood still in her habitation": for when the Lord sought heaven, His holy Church grew in the authority of her preaching.
+
+    Hence it is that Solomon hath put into the mouth of that same Church the words: "Behold, He cometh leaping upon the mountains, skipping upon the hills." For she considered the heights of such great works, and said: "Behold, He cometh leaping upon the mountains." When He came to redeem us, He came, if I may so say, in leaps. My dearly beloved brethren, would you know what His leaps were? From heaven He leapt into the womb, from the womb into the manger, from the manger on to the Cross, from the Cross into the grave, and from the grave He returned into heaven. Lo, that He might make us run after Him, Truth made manifest in the Flesh gave, for our sakes, certain leaps: for He rejoiced as a strong man to run his course, that we might say to Him from our heart: "Draw us: we will run after thee, to the savour of thy good ointments."
+
+    Wherefore, dearly beloved brethren, it behoveth us to follow thither in heart, where we believe Him to have ascended in body. Let us flee earthly desires; let nothing here below delight us any more, we who have a Father in heaven. And this we must weigh most earnestly: that He Who ascended in gentleness will return in terror, and whatsoever He hath commanded us with meekness, that will He require of us with strict account. Let no man, therefore, think lightly of this season of granted repentance; let no man neglect to care for his own soul while he is able: for our Redeemer will come the more strict to judgment, the more patience He hath shown us before that judgment.
+status:
+  la: verified
+  en: draft
