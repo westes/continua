@@ -50,14 +50,13 @@ across every hour and content type in this app.
      from the list was the whole fix; no new suppress-mechanism needed. `st-hermes.yml` and
      `st-hermes-collect.yml` are untouched by this — deliberately left in place, restorable
      by re-adding the one list entry if ever wanted back.
-   - Accessibility: psalm verses render as a real `<ol>/<li>` list
-     (`src/ui/hour-view.ts`'s `'psalm'` case, `.psalm-verses`/`.psalm-verse`) — a screen
-     reader announces "list, N items" per verse, which is disruptive for continuous
-     liturgical text that isn't conceptually a list. Needs to render as plain markup that
-     preserves line breaks (e.g. paragraphs/divs per verse, or `white-space: pre-line`)
-     instead of `<ol>/<li>`. Audited the rest of `src/ui/**` for the same pattern — the only
-     other list markup is `hour-list.ts`'s `<ul class="hour-list">`, which is a real
-     navigational list of hours and should stay a list. Not started.
+   - ~~Accessibility: psalm verses render as a real `<ol>/<li>` list~~ — done (2026-08-28).
+     `src/ui/hour-view.ts`'s `'psalm'` case (`.psalm-verses`/`.psalm-verse`) now renders
+     plain `<div>`s instead of `<ol>/<li>`, so a screen reader no longer announces "list,
+     N items" for continuous liturgical text. Styling is entirely class-based, so
+     `styles.css` needed no changes. Audited the rest of `src/ui/**` for the same pattern —
+     the only other list markup is `hour-list.ts`'s `<ul class="hour-list">`, which is a
+     real navigational list of hours and correctly stays a list.
    - ~~Matins: "Te decet laus"~~ — done (2026-08-23). Added as a new common text
      (`data/propers/common/te-decet-laus.yml`, sourced from `Psalterium/Common/Prayers.txt`'s
      `[Te decet]` block) rendered as a `versicle` part immediately after the Te Deum on every

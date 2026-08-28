@@ -113,9 +113,9 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
         <section class="ordo-part ordo-part-psalm">
           ${part.antiphon ? renderColumns(part.antiphon, languages) : ''}
           <h3 class="ordo-part-label">${citation}</h3>
-          <ol class="psalm-verses">
-            ${part.verses.map((v) => `<li class="psalm-verse">${renderColumns(v, languages)}</li>`).join('')}
-          </ol>
+          <div class="psalm-verses">
+            ${part.verses.map((v) => `<div class="psalm-verse">${renderColumns(v, languages)}</div>`).join('')}
+          </div>
           ${part.gloriaPatri ? `<div class="ordo-part-gloria-patri">${renderColumns(part.gloriaPatri, languages)}</div>` : ''}
         </section>
       `;
