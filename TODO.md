@@ -67,11 +67,25 @@ across every hour and content type in this app.
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
 
-3. **Known, deliberate simplifications** — flagged as intentional, not a bug, no plan to
-   revisit unless priorities change: see "Known, deliberate simplifications" at the end of
-   this file, plus the Matins "Duo Seraphim" closing-responsory gap and the 5 Vespers hymns
-   whose seasonal doxology substitution isn't modeled (both flagged in their own sections
-   below, not repeated here).
+3. **Known, deliberate simplifications** — intentional, not bugs, no plan to revisit unless
+   priorities change:
+   - `getDayCollects` renders each collect on a multi-collect day as its own full "Let us
+     pray ... Amen," not the historically compressed form (one "Let us pray," only the last
+     doxology).
+   - Suffrage omission is live-verified against Monastic Tridentinum 1617 for every case except
+     Paschaltide, which should substitute the whole set with a single alleluia-form "Suffragium
+     Paschale" rather than showing the ordinary set — not modeled.
+   - Ferial Preces (Lauds, Vespers, Prime) run every ferial-or-vigil day, wider than history's
+     Advent/Lent/Ember/Vigil-only gating, by explicit choice. Same unmodeled Paschaltide
+     substitution as the suffrages.
+   - 5 of 30 Vespers hymns have a seasonally-variable closing doxology in the source; only
+     the form captured on each hymn's chosen proof date is stored, not a season-aware swap.
+   - The Matins "Duo Seraphim" responsory (sung after the final lesson, before Te Deum) isn't
+     modeled — the schema carries one responsory per reading, and this one belongs to none.
+   - `temporal-categories.yml`'s season→category mapping is from general pre-1955 knowledge,
+     not source-verified entry by entry.
+   - St. Michael's Sep 29 date is kept despite the live reference engine showing nothing there
+     across 6 tested years.
 
 Everything from here down is the dated build log this priority list is drawn from — kept for
 the sourcing/verification detail behind each decision, not itself in priority order.
@@ -3793,38 +3807,9 @@ Verified end-to-end with a runtime smoke test resolving Matins/Lauds/Vespers for
 through the real `resolveOrdo` mechanism, confirming the hymn part is no longer `missing` in
 either language. `npm test` (521 tests), `tsc --noEmit` both pass.
 
-## Known, deliberate simplifications (not bugs — working as designed)
+## Recently closed items
 
-- `getDayCollects`: each collect in a multi-collect day renders as its own
-  complete "Let us pray ... Amen." block, not the more compressed real form
-  (one "Let us pray," only the last collect's doxology).
-- Suffrage omission (`lauds.ts`'s `suffrages` case) now checks: Double-or-
-  higher rank, Christ the King, Advent/Christmastide/Passiontide season,
-  any active octave (however low its own rank), Marian Saturday's own
-  Cross/BVM filter, and the Cross-only ferial-office check — all
-  confirmed directly against **Monastic Tridentinum 1617** itself, not
-  just the Tridentine 1906/1910 track the suffrage content and the
-  Joseph/Cross-gating logic were sourced from (checked Advent 2026-12-03,
-  Christmastide 2026-12-30, Passiontide 2026-03-23, an active octave via
-  St. Lawrence's own Aug 11-12, and ordinary Lent 2026-02-20 specifically
-  *not* excluded, to confirm it's Passiontide-only, not all of Lent).
-  Still not modeled: the Paschaltide *substitution* (real practice
-  replaces the whole suffrage set with a single alleluia-form "Suffragium
-  Paschale" during Eastertide rather than omitting or showing the
-  ordinary set) — flagged, not built.
-- `lauds-preces` (2026-08): real Tridentine 1906/1910 practice restricts
-  the fuller ferial Preces to Advent/Lent/Ember days plus Vigils, not
-  every ferial day — widened to every ferial-or-vigil day here by
-  explicit choice, mirroring Prime's own identical earlier choice (see
-  `data/hours/prime.yml`'s header). Also doesn't model Paschaltide's own
-  substitution here either, same gap as the suffrages above.
-- `data/calendar/temporal-categories.yml`'s season→category reconstruction
-  is from general knowledge of the pre-1955 tradition, not independently
-  verified against a primary source for every entry (flagged inline where
-  it matters).
-- St. Michael's Sep 29 date — kept as a deliberate simplification despite
-  the live engine showing nothing there across 6 tested years (documented
-  in `st-michael.yml` and `sanctoral-calendar.yml`).
+Done items that didn't have a natural home under one of the sections above.
 
 ### St. Hermes dropped from 8/28 (2026-08-28)
 
