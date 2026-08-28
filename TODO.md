@@ -3807,10 +3807,6 @@ Verified end-to-end with a runtime smoke test resolving Matins/Lauds/Vespers for
 through the real `resolveOrdo` mechanism, confirming the hymn part is no longer `missing` in
 either language. `npm test` (521 tests), `tsc --noEmit` both pass.
 
-## Recently closed items
-
-Done items that didn't have a natural home under one of the sections above.
-
 ### St. Hermes dropped from 8/28 (2026-08-28)
 
 Dropped `st-hermes` from `data/calendar/sanctoral-calendar.yml`'s `"08-28"` entry, now just
