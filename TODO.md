@@ -36,40 +36,6 @@ across every hour and content type in this app.
      needs bilingual voice selection (La/En) worked out, and quality for Latin pronunciation
      is an open question. Open, not started — needs its own design pass before content/UI work
      begins.
-   - St. Hermes (8/28): done (2026-08-28) — dropped `st-hermes` from
-     `data/calendar/sanctoral-calendar.yml`'s `"08-28"` entry, now just `[st-augustine]`.
-     He was a genuinely unwinnable stub who always lost to St. Augustine and, per the
-     generous-commemoration design, only ever showed up as a commemoration — presence on
-     that date list and commemoration-eligibility are the same mechanism, so removing him
-     from the list was the whole fix; no new suppress-mechanism needed. `st-hermes.yml` and
-     `st-hermes-collect.yml` are untouched by this — deliberately left in place, restorable
-     by re-adding the one list entry if ever wanted back.
-   - ~~Accessibility: psalm verses render as a real `<ol>/<li>` list~~ — done (2026-08-28).
-     `src/ui/hour-view.ts`'s `'psalm'` case (`.psalm-verses`/`.psalm-verse`) now renders
-     plain `<div>`s instead of `<ol>/<li>`, so a screen reader no longer announces "list,
-     N items" for continuous liturgical text. Styling is entirely class-based, so
-     `styles.css` needed no changes. Audited the rest of `src/ui/**` for the same pattern —
-     the only other list markup is `hour-list.ts`'s `<ul class="hour-list">`, which is a
-     real navigational list of hours and correctly stays a list.
-   - ~~Matins: "Te decet laus"~~ — done (2026-08-23). Added as a new common text
-     (`data/propers/common/te-decet-laus.yml`, sourced from `Psalterium/Common/Prayers.txt`'s
-     `[Te decet]` block) rendered as a `versicle` part immediately after the Te Deum on every
-     3-nocturn day (Sunday or Duplex+), in both `hours/matins.ts` branches that push a Te Deum.
-     Absent on ferial (1-nocturn) days, same gating as the Te Deum itself. `tests/hours/matins.test.ts`
-     covers both the Sunday branch's presence/content and the ferial branch's absence.
-   - ~~Matins nocturn-readings responsory formatting~~ — done (2026-08-23), see "Nocturn-
-     readings responsory marker fix" below.
-   - ~~Lauds/Vespers ferial Preces psalms~~ — done (2026-08-23). Psalm 129 (De profundis) and
-     its own trailing Gloria Patri deleted wholesale from
-     `data/propers/common/lauds-preces-feriales.yml`'s `text.la`/`text.en`; Psalm 50 (Miserere)
-     and its own Gloria Patri likewise from `vespers-preces-feriales.yml`. Surrounding V/R
-     litany needed no adjustment — the psalm block sat between two already-independent V/R
-     sequences. Both files' header comments updated to flag the drop as deliberate, not a
-     transcription gap. `tests/hours/lauds.test.ts` and `vespers.test.ts` updated to
-     distinguish the fuller ferial Preces from the short Sunday/feast litany via a versicle
-     that survives the psalm's removal ("Ego dixi: Dómine, miserére mei") instead of the now-
-     absent psalm text.
-
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
@@ -3903,3 +3869,42 @@ either language. `npm test` (521 tests), `tsc --noEmit` both pass.
 - St. Michael's Sep 29 date — kept as a deliberate simplification despite
   the live engine showing nothing there across 6 tested years (documented
   in `st-michael.yml` and `sanctoral-calendar.yml`).
+
+### St. Hermes dropped from 8/28 (2026-08-28)
+
+Dropped `st-hermes` from `data/calendar/sanctoral-calendar.yml`'s `"08-28"` entry, now just
+`[st-augustine]`. He was a genuinely unwinnable stub who always lost to St. Augustine and,
+per the generous-commemoration design, only ever showed up as a commemoration — presence on
+that date list and commemoration-eligibility are the same mechanism, so removing him from the
+list was the whole fix; no new suppress-mechanism needed. `st-hermes.yml` and
+`st-hermes-collect.yml` are untouched by this — deliberately left in place, restorable by
+re-adding the one list entry if ever wanted back.
+
+### Accessibility: psalm verses render as plain divs, not a list — done (2026-08-28)
+
+`src/ui/hour-view.ts`'s `'psalm'` case (`.psalm-verses`/`.psalm-verse`) now renders plain
+`<div>`s instead of `<ol>/<li>`, so a screen reader no longer announces "list, N items" for
+continuous liturgical text. Styling is entirely class-based, so `styles.css` needed no
+changes. Audited the rest of `src/ui/**` for the same pattern — the only other list markup is
+`hour-list.ts`'s `<ul class="hour-list">`, which is a real navigational list of hours and
+correctly stays a list.
+
+### Matins: "Te decet laus" — done (2026-08-23)
+
+Added as a new common text (`data/propers/common/te-decet-laus.yml`, sourced from
+`Psalterium/Common/Prayers.txt`'s `[Te decet]` block) rendered as a `versicle` part
+immediately after the Te Deum on every 3-nocturn day (Sunday or Duplex+), in both
+`hours/matins.ts` branches that push a Te Deum. Absent on ferial (1-nocturn) days, same gating
+as the Te Deum itself. `tests/hours/matins.test.ts` covers both the Sunday branch's
+presence/content and the ferial branch's absence.
+
+### Lauds/Vespers ferial Preces psalms dropped — done (2026-08-23)
+
+Psalm 129 (De profundis) and its own trailing Gloria Patri deleted wholesale from
+`data/propers/common/lauds-preces-feriales.yml`'s `text.la`/`text.en`; Psalm 50 (Miserere) and
+its own Gloria Patri likewise from `vespers-preces-feriales.yml`. Surrounding V/R litany
+needed no adjustment — the psalm block sat between two already-independent V/R sequences. Both
+files' header comments updated to flag the drop as deliberate, not a transcription gap.
+`tests/hours/lauds.test.ts` and `vespers.test.ts` updated to distinguish the fuller ferial
+Preces from the short Sunday/feast litany via a versicle that survives the psalm's removal
+("Ego dixi: Dómine, miserére mei") instead of the now-absent psalm text.
