@@ -55,10 +55,7 @@ across every hour and content type in this app.
      (`data/propers/common/te-decet-laus.yml`, sourced from `Psalterium/Common/Prayers.txt`'s
      `[Te decet]` block) rendered as a `versicle` part immediately after the Te Deum on every
      3-nocturn day (Sunday or Duplex+), in both `hours/matins.ts` branches that push a Te Deum.
-     Not modeled: the historical Gospel-read-again-in-full step that live-precedes it (a
-     pre-existing, separate known simplification — see
-     `data/propers/nocturn-readings/post-pentecost-15.yml`'s own header comment). Absent on
-     ferial (1-nocturn) days, same gating as the Te Deum itself. `tests/hours/matins.test.ts`
+     Absent on ferial (1-nocturn) days, same gating as the Te Deum itself. `tests/hours/matins.test.ts`
      covers both the Sunday branch's presence/content and the ferial branch's absence.
    - ~~Matins nocturn-readings responsory formatting~~ — done (2026-08-23), see "Nocturn-
      readings responsory marker fix" below.
