@@ -1,0 +1,100 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), live
+# prayMatutinum query, 2029-02-10 (her own real day, confirmed clean --
+# no Sunday collision -- per her own calendar-file comment). Her own
+# `[Rank]` says "vide C6a" (Common-of-a-Virgin, plain), but the rendered
+# page is explicitly headed "{Antiphonæ et Psalmi ex Proprio Sanctorum}"
+# -- proper antiphons, not the generic Common text -- confirmed against
+# `SanctiM/02-10.txt`'s own `[Ant Matutinum]`-family blocks, which
+# override the Common wholesale with 9 antiphons narrating her own
+# life/miracle (the "prodigious rainstorm" episode with St. Benedict).
+# Psalm numbers and all three nocturn-closing versicles, though, are
+# byte-identical to `common-of-a-virgin-martyr.yml`'s own (see that
+# file's header) -- confirming they really are the shared Common-of-a-
+# Virgin pool, only the antiphon text itself is proper to her.
+id: st-scholastica
+category: common-of-a-virgin
+nocturn1:
+  groups:
+    - psalms: [8]
+      antiphon:
+        la: "O quam admirábile * nomen Dómini! In cujus virtúte beáta Virgo Scholástica tam ingéntem plúviam obtinére méruit."
+        en: "O how admirable is thy name, O Lord! * Through whose strength the blessed virgin Scholastica merited to obtain a prodigious fall of rain."
+    - psalms: [18]
+      antiphon:
+        la: "Cæli * enárrant glóriam Dei, et annúntiant mérita sanctæ Scholásticæ Vírginis."
+        en: "The heavens * show forth the glory of God, and announce the merits of the holy virgin Scholastica."
+    - psalms: [23]
+      antiphon:
+        la: "Hæc accépit * benedictiónem a Dómino, et misericórdiam a Deo salutári suo."
+        en: "She received * a blessing from the Lord, and mercy from God her Saviour."
+    - psalms: [44]
+      antiphon:
+        la: "Dilexísti * justítiam, et odísti iniquitátem; proptérea unxit te Deus, Deus tuus, óleo lætítiæ."
+        en: "Thou hast loved * justice, and hated iniquity: therefore God, thy God, hath anointed thee with the oil of gladness."
+    - psalms: [45]
+      antiphon:
+        la: "Flúminis ímpetus * lætíficat Scholásticam, Sponsam Dei."
+        en: "The stream of the river * maketh joyful Scholastica the spouse of God."
+    - psalms: [47]
+      antiphon:
+        la: "Circúmdate * Scholásticam, et narráte virtútes ejus."
+        en: "Surround * Scholastica, and tell of her excellence."
+  versicle:
+    v:
+      la: "Spécie tua et pulchritúdine tua."
+      en: "In thy comeliness and thy beauty."
+    r:
+      la: "Inténde, próspere procéde, et regna."
+      en: "Go forward, fare prosperously, and reign."
+nocturn2:
+  groups:
+    - psalms: [84]
+      antiphon:
+        la: "Dóminus * Scholásticæ dedit benignitátem et terra dedit fructum."
+        en: "The Lord * gave Scholastica his blessing: and the earth shall yield her fruit."
+    - psalms: [86]
+      antiphon:
+        la: "Sicut lætántium ómnium * habitátio est in te, o beáta mater Scholástica."
+        en: "All who rejoice * find their home in thee, O blessed mother Scholastica."
+    - psalms: [95]
+      antiphon:
+        la: "Conféssio * et pulchritúdo in conspéctu Dómini; sanctimónia et magnificéntia in sanctificatióne Scholásticæ sponsæ suæ."
+        en: "Praise and beauty * are before the Lord: holiness and majesty in his sanctuary, in the sanctification of Scholastica his bride."
+    - psalms: [96]
+      antiphon:
+        la: "Illuxérunt * fúlgura Dei, dum oráret ad eum sancta Virgo Scholástica."
+        en: "God's lightnings * flashed forth when the holy virgin Scholastica prayed to him."
+    - psalms: [97]
+      antiphon:
+        la: "Cantáte * Dómino cánticum novum, quia mirabília fecit in dilécta fília Scholástica."
+        en: "Sing ye * to the Lord a new canticle: because he hath done wonderful things through his beloved daughter Scholastica."
+    - psalms: [98]
+      antiphon:
+        la: "Invocábat * Scholástica Dóminum; et exaudiébat eam."
+        en: "Scholastica * called upon the Lord, and he heard her."
+  versicle:
+    v:
+      la: "Adjuvábit eam Deus vultu suo."
+      en: "God shall help her with His countenance."
+    r:
+      la: "Deus in médio ejus, non commovébitur."
+      en: "God is in the midst of her, she shall not be moved."
+nocturn3:
+  antiphon:
+    la: "Dóminus * Scholásticam quasi sponsum decorávit coróna, et ornávit monílibus suis."
+    en: "The Lord * as a bridegroom decked Scholastica with a crown, and as a bride adorned her with her jewels."
+  canticles:
+    - refs:
+        - { book: sir, chapter: 39, verses: "17-21" }
+    - refs:
+        - { book: isa, chapter: 61, verses: "10-11" }
+        - { book: isa, chapter: 62, verses: "1-3" }
+    - refs:
+        - { book: isa, chapter: 62, verses: "4-7" }
+  versicle:
+    v:
+      la: "Elégit eam Deus, et præelégit eam."
+      en: "God hath chosen her, and fore-chosen her."
+    r:
+      la: "In tabernáculo suo habitáre facit eam."
+      en: "He hath made her to dwell in His tabernacle."
