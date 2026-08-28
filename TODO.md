@@ -42,6 +42,22 @@ across every hour and content type in this app.
      needs bilingual voice selection (La/En) worked out, and quality for Latin pronunciation
      is an open question. Open, not started — needs its own design pass before content/UI work
      begins.
+   - St. Hermes (8/28): drop `st-hermes` from `data/calendar/sanctoral-calendar.yml`'s
+     `"08-28"` entry (currently `[st-augustine, st-hermes]`) so it's just `[st-augustine]`.
+     He's a genuinely unwinnable stub who always loses to St. Augustine and, per the
+     generous-commemoration design, only ever shows up as a commemoration — presence on
+     that date list and commemoration-eligibility are the same mechanism, so removing him
+     from the list is the whole fix; no new suppress-mechanism needed. `st-hermes.yml` and
+     `st-hermes-collect.yml` are untouched by this — deliberately left in place, restorable
+     by re-adding the one list entry if ever wanted back. Not started.
+   - Accessibility: psalm verses render as a real `<ol>/<li>` list
+     (`src/ui/hour-view.ts`'s `'psalm'` case, `.psalm-verses`/`.psalm-verse`) — a screen
+     reader announces "list, N items" per verse, which is disruptive for continuous
+     liturgical text that isn't conceptually a list. Needs to render as plain markup that
+     preserves line breaks (e.g. paragraphs/divs per verse, or `white-space: pre-line`)
+     instead of `<ol>/<li>`. Audited the rest of `src/ui/**` for the same pattern — the only
+     other list markup is `hour-list.ts`'s `<ul class="hour-list">`, which is a real
+     navigational list of hours and should stay a list. Not started.
    - ~~Matins: "Te decet laus"~~ — done (2026-08-23). Added as a new common text
      (`data/propers/common/te-decet-laus.yml`, sourced from `Psalterium/Common/Prayers.txt`'s
      `[Te decet]` block) rendered as a `versicle` part immediately after the Te Deum on every
