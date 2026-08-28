@@ -95,29 +95,31 @@ across every hour and content type in this app.
      citations resolve to `missing` text until it lands.
    - Matins psalmody overrides for a Duplex+ weekday feast (see "Matins psalmody overrides"
      below): mechanism refactored to category-keyed (`categories/*.yml` + `saints/*.yml`), now
-     eleven categories authored plus six genuine alias redirects across two passes (2026-08-27,
-     see "Matins psalmody overrides — nine more categories" and "— second pass, four more
-     categories" below): Martyr, Apostle (+ aliases Common-of-Apostles-plural and
-     Common-of-an-Evangelist), Confessor (+ aliases Common-of-an-Abbot,
-     Common-of-a-Confessor-not-Bishop, and Common-of-Several-Confessors), Confessor-Bishop,
-     Several Martyrs, Virgin-Martyr, the BVM, a Dedication, and a Holy Woman — plus, separately,
-     all 5 angel feasts now have their own saint-level proper Matins psalmody authored directly
-     (`saints/apparition-of-st-michael.yml`, `st-michael.yml`, `guardian-angels.yml`,
-     `st-gabriel-archangel.yml`, `st-raphael-archangel.yml` — see "Angel feasts' proper Matins
-     psalmody authored" below), closing the "Common-of-an-Angel doesn't exist" gap the second pass
-     found — there was never a missing category file here, just missing saint-level content, same
-     shape as `st-andrew.yml`/`st-lawrence.yml`. Still open, each with a specific blocker found
-     across both category-tier passes (privileged-feria/movable-feast collisions that ruled out
-     every representative saint tried across multiple years, or a genuine structural mismatch —
-     see the second pass's section for full detail rather than re-deriving): Virgin (plain, not
-     Virgin-Martyr — every Duplex+ candidate tried is either absent from the live Monastic 1617
-     calendar on her own date, or (St. Gertrude) carries real proper content of her own so isn't a
-     valid Common source), Widow (same "absent from the calendar on this specific track" problem —
-     confirmed via the reference engine's own votive index that this Common, C7a, has *zero*
-     SanctiM cross-references anywhere in the Monastic corpus, unlike every other category here),
-     Confessor-Doctor, Confessor-Pope, Several Women Martyrs (blocked by design, not oversight —
-     its one candidate, Ss. Perpetua and Felicity, is always in Lent and is only ever a
-     `Commemoratio`, never a full Duplex+ day, in every source file checked). These five still
+     **fourteen of nineteen categories authored, plus nine genuine alias redirects**, across three
+     passes (2026-08-27/28, see "Matins psalmody overrides — nine more categories", "— second
+     pass, four more categories", and "— third pass, source-file-first method" below): Martyr,
+     Apostle (+ aliases Apostles-plural and Evangelist), Confessor (+ aliases Abbot,
+     Confessor-not-Bishop, and Several-Confessors), Confessor-Bishop (+ aliases
+     Confessor-Doctor and Confessor-Pope, 2026-08-28), Several Martyrs, Virgin-Martyr (+ alias
+     Virgin, plain, 2026-08-28), the BVM, a Dedication, and a Holy Woman — plus, separately, all 5
+     angel feasts and St. Scholastica (Virgin, 2026-08-28) have their own saint-level proper
+     Matins psalmody authored directly (same shape as `st-andrew.yml`/`st-lawrence.yml`), each a
+     case where the saint's own `[Rank]` cites a Common but their real content is genuinely
+     proper. **Methodology change in the third pass**: reading the reference engine's own
+     `CommuneM/*.txt`/`Commune/*.txt` template source files directly (redirect-chain tracing, one
+     targeted live query per finding to confirm) replaced the earlier trial-and-error of querying
+     multiple candidate saints/years live — much faster, and it directly disproved two of the
+     second pass's own claims (Common-of-a-Virgin isn't a distinct scheme after all, and Ss.
+     Perpetua and Felicity are Duplex, not "only ever Commemoratio" — see the third pass's section
+     for both corrections). Still open, now down to **Widow, Several Women Martyrs**, both
+     genuinely blocked by the same underlying cause found via source-reading: the Monastic
+     corpus's own `C7`/`C7a`/`C7b` template family (Widow, and — through `C7b`'s own whole-file
+     inherit of `C7` — Several Women Martyrs too) is a synthetic patchwork stitched together from
+     secular-track fragments with psalm-number substitutions and cross-nocturn borrowing, and is
+     never actually invoked by any real saint anywhere in the Monastic Sancti/SanctiM corpus
+     (confirmed by exhaustive grep) — so there is no live rendering to check a hand-resolution
+     against, and hand-resolving the substitution chain blind risks getting the liturgical text
+     wrong. A genuinely different, harder problem than "no clean candidate found yet." Both still
      fall back to the plain ferial weekday table, redistributed into 3 nocturns.
    - The four "Commemoratio Octavæ" Ant+V/R+collect blocks (Christmas Octave's own
      Nativity/Stephen/John/Holy-Innocents commemorations, e.g. on Dec 30) are now done —
@@ -3144,6 +3146,92 @@ ids resolve through `getMatinsSaintOverride`, and `resolveOrdo('matins', ...)` a
 2026-10-02 (Guardian Angels) and 2029-05-08 (Apparition of St. Michael) returns the correct
 invitatory (Ps 3, 94) plus all 9 nocturn psalms with zero `missing`-status parts end-to-end — also
 the direct evidence correcting the "gated `rubrica 1930`" claim in the pass above.
+
+### Matins psalmody overrides — third pass, source-file-first method (2026-08-28)
+
+Directed explicitly: read the reference engine's own `CommuneM/*.txt` (Monastic) and
+`Commune/*.txt` (secular) template source files directly instead of live-CGI trial-and-error
+across candidate saints/years — much faster, and it also settled two open questions the second
+pass had gotten wrong by relying on live-query attempts alone. Also directed to use non-1617
+tracks where the Monastic one is silent (this project already blends tracks by design, see this
+file's own header/CLAUDE.md), and to prefer real saint-level propers over forcing a generic
+Common read wherever a saint turns out to have proper content of her own — same principle as the
+angel-feasts pass above.
+
+**Common-of-a-Virgin (plain, `C6a`) — closed as an alias, corrected from the prior pass's own
+"kept separate by design" claim.** Reading `CommuneM/C6a.txt` directly: the whole file is a
+top-level inherit of `@CommuneM/C6` (Virgin-Martyr, already authored) with no
+`[Ant Matutinum]`/`[Ant Matutinum 3N]` override anywhere — it only overrides
+Officium(secular)/Oratio/Hymn/Responsory1/Capitulum/Lectio-Prima, none of which is Matins nocturn
+psalmody. Live-confirmed against St. Scholastica (2029-02-10, her own real day, `vide C6a` in her
+`[Rank]`): her rendered psalm numbers (8,18,23,44,45,47 / 84,86,95,96,97,98) and all three
+nocturn-closing versicles are byte-identical to `common-of-a-virgin-martyr.yml`'s own. Added
+`common-of-a-virgin` as an alias there, with the earlier incorrect claim in that file's header
+corrected in place.
+
+**St. Scholastica herself needed her own proper file, not the Common** — her rendered page is
+explicitly headed "{Antiphonæ et Psalmi ex Proprio Sanctorum}": `SanctiM/02-10.txt` overrides the
+inherited Common wholesale with 9 antiphons narrating her own life (the "prodigious rainstorm"
+episode with St. Benedict). Psalm numbers and all three versicles still match the Common exactly
+(confirming they really are the shared pool); only the antiphon text is hers. Authored
+`saints/st-scholastica.yml` (`category: common-of-a-virgin`) from the same live query used to
+verify the alias above.
+
+**Common-of-a-Confessor-Doctor (`C4a`) and Common-of-a-Confessor-Pope (`C4b`) — both closed as
+aliases of `common-of-a-confessor-bishop`, genuine full redirects (versicles included, unlike the
+Confessor/Confessor-Bishop split, which differs only in versicles).**
+
+- `C4a`: `CommuneM/C4a.txt` whole-file inherits `@CommuneM/C4` with no Matins-nocturn-psalmody
+  override — its own `[Ant 1]`/`[Ant 3]` blocks turned out to be Lauds antiphon tags (confirmed by
+  cross-reference against `Commune/C4.txt`'s own `[Ant 3]`/`[Ant 3 summi Pontificis]` pair, the
+  same bare naming convention), not Matins Nocturn 3. Live-verified against St. Ambrose
+  (2026-12-07, `vide C4a`, real Duplex day, un-outranked): every antiphon, psalm number, and all
+  three versicles (`Amávit eum Dóminus...` / `Elégit eum Dóminus sacerdótem sibi...` / `Tu es
+  sacérdos in ætérnum...`) reproduce `common-of-a-confessor-bishop.yml` exactly — independently
+  corroborated by that file's own pre-existing St. Basil the Great data point (also `vide C4a`,
+  already recorded as byte-identical, but not previously connected to this category id).
+- `C4b`: `CommuneM/C4b.txt` whole-file inherits `@CommuneM/C4` and only overrides Oratio variants,
+  Lectio9-12 (redirected to St. Gregory the Great's own lessons, irrelevant to this psalmody-only
+  module), and a Lauds `[Ant 3]` cross-reference — again no Matins-nocturn override. Not
+  live-verifiable against a real Monastic-calendar saint: all three vu saints carrying this Common
+  (`st-leo-ii`, `st-pius-v`, `st-pius-x`) have no `SanctiM/*.txt` file at all — confirmed by
+  attempting a live query against St. Pius X's expected date (2026-09-03 and 2027-09-03 both
+  render plain ferial, no trace of him), meaning none of the three are observed under the
+  Monastic-1617 track vu's structure otherwise follows, only under the secular/Divino-Afflatu
+  tracks vu's calendar also draws from. Aliased on the strength of the source redirect chain
+  alone, consistent with the convention already established in all three saints' own files, which
+  already fall back to this same Common for their Benedictus/minor-hours content for the identical
+  reason.
+
+**Widow (`C7a`) and Several Women Martyrs (`C7b`) — still open, but the real blocker is now
+precisely identified, not just "no clean candidate found yet."** `CommuneM/C7a.txt`'s own
+`[Officium]` block redirects to `@CommuneM/C7` ("Commune Unius non Virginis Martyris"), not C6a —
+genuinely distinct content, not an alias to anything authored. `CommuneM/C7.txt` itself is a
+12-lesson Monastic structure stitched together from secular `Commune/C7` fragments with
+psalm-number substitutions (`s/95/84/ s/96/86/ s/97/95/`) and a cross-reference into
+`CommuneM/C6`'s own antiphon numbering — resolvable in principle by hand, but a full exhaustive
+grep across every `SanctiM/*.txt` file in the corpus for a `C7a` cross-reference returns zero
+hits: no saint in the Monastic tradition actually invokes this Common, so there is no live
+rendering to check a hand-resolution against. `CommuneM/C7b.txt` (Several Women Martyrs) compounds
+the same problem — it whole-file inherits `@CommuneM/C7` too (Widow's own unresolved scheme),
+layering further secular-track overrides (`Commune/C7b`) and a borrowed Nocturn-1 versicle from
+`CommuneM/C6`'s own secular file on top. Both are the same underlying gap, not two independent
+ones.
+
+**Correction to the second pass's own claim about Ss. Perpetua and Felicity**: their source file
+(`Sancti/03-06.txt`) shows rank **Duplex** (`;;Duplex;;3;;vide C7b`), not "only ever
+`Commemoratio`, never a full Duplex+ day" as previously logged here — that claim was simply wrong,
+caught by reading the file directly instead of relying on the earlier live-query attempts. Their
+own vu file (`ss-perpetua-and-felicity.yml`) already reflects the correct Duplex rank and has for
+some time; only this file's own prior claim about them was stale. Doesn't change the fact that
+they're still blocked by the `C7`/`C7b` template problem above, though — a clean calendar year for
+them was never actually the obstacle.
+
+`npm test` (522 tests) and `tsc --noEmit` both pass. A runtime smoke test confirmed
+`resolveOrdo('matins', ...)` for St. Scholastica (2029-02-10) and St. Ambrose (2026-12-07) returns
+zero `missing`-status psalm/antiphon/versicle/canticle parts (the only `missing` parts present are
+unrelated Matins scripture-reading lessons, the long-deferred bulk-Vulgate-import gap logged
+above), and that St. Pius X's Confessor-Pope Matins resolves without error.
 
 ### Lauds/Vespers chapter-responsory-hymn-versicle bundle: rank-agnostic Common fallback (2026-08-25)
 
