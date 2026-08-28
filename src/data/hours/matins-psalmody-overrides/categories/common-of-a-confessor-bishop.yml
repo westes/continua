@@ -18,7 +18,43 @@
 # doesn't support "same groups, different versicles" as a partial
 # override -- see matins-psalmody-overrides.ts's own doc comment on
 # category files being standalone, not diffed/merged.
+#
+# `aliases` also registers `common-of-a-confessor-doctor` and
+# `common-of-a-confessor-pope` here (2026-08-28), both genuine full
+# redirects (unlike the Confessor/Confessor-Bishop split above, these
+# really are zero-difference, versicles included):
+#
+# - Confessor-Doctor (`C4a`): `CommuneM/C4a.txt` whole-file inherits
+#   `@CommuneM/C4` (this file) with no `[AntMatutinumM]`/`[Ant
+#   Matutinum]`/versicle override anywhere -- its own `[Ant 1]`/`[Ant 3]`
+#   blocks are Lauds antiphon tags (same bare naming as `Commune/C4.txt`'s
+#   own `[Ant 3]`/`[Ant 3 summi Pontificis]` pair, confirmed Lauds-only by
+#   cross-reference), not Matins Nocturn 3. Live-verified against St.
+#   Ambrose (2026-12-07, `vide C4a`, real Duplex day): every antiphon,
+#   psalm number, AND all three versicles (`Amávit eum Dóminus...` /
+#   `Elégit eum Dóminus sacerdótem sibi...` / `Tu es sacérdos in
+#   ætérnum...`) reproduce this file exactly. Independently corroborated
+#   by St. Basil the Great's own case above (also `vide C4a`, also
+#   byte-identical) -- two saints, same finding.
+# - Confessor-Pope (`C4b`): `CommuneM/C4b.txt` whole-file inherits
+#   `@CommuneM/C4` and only overrides Oratio variants, Lectio9-12
+#   (redirected to `@SanctiM/03-12`, St. Gregory the Great's own
+#   lessons -- irrelevant to this psalmody-only module), and a Lauds
+#   `[Ant 3]` cross-reference into secular `Commune/C4:Ant 3 summi
+#   Pontificis` -- again no Matins-nocturn-psalmody override at all.
+#   Not live-verifiable against a real Monastic-calendar saint: all
+#   three vu saints carrying this Common (`st-leo-ii`, `st-pius-v`,
+#   `st-pius-x`) turn out to have no `SanctiM/*.txt` file at all -- none
+#   of them are observed under the Monastic-1617 track vu's structure
+#   otherwise follows, only under the secular/Divino-Afflatu tracks vu's
+#   calendar also draws from (per this repo's own CLAUDE.md). Aliased on
+#   the strength of the source redirect chain alone, consistent with the
+#   convention already established in all three of those saints' own
+#   files, which already fall back to this same Common for their
+#   Benedictus/minor-hours content for the identical reason (no
+#   Pope-specific content exists to fall back to instead).
 id: common-of-a-confessor-bishop
+aliases: [common-of-a-confessor-doctor, common-of-a-confessor-pope]
 nocturn1:
   groups:
     - psalms: [1]

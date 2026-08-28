@@ -21,12 +21,25 @@
 # All 6 Nocturn 1/2 antiphons draw on the Song of Songs (bridal imagery);
 # Nocturn 3's canticle is Sirach 39 + Isaiah 61-62 (garment-of-salvation/
 # bridal-adornment imagery), distinct from Common-of-a-Confessor's Sirach/
-# Jeremiah canticle set. Genuinely different from Common-of-a-Virgin
-# (`common-of-a-virgin.yml`, votive C6a "Unius Virginis tantum" -- a
-# different votive number, not the same scheme) -- not verified
-# byte-identical, kept as separate files by design (the reference index
-# itself lists them as separate Commons).
+# Jeremiah canticle set.
+#
+# `aliases` also registers `common-of-a-virgin` (2026-08-28), corrected
+# from an earlier note here claiming it was a separate, unverified
+# scheme under its own votive number (C6a, "Unius Virginis tantum").
+# Reading `CommuneM/C6a.txt` directly settles it: the whole file is a
+# top-level inherit from `@CommuneM/C6` (this file) with no `[Ant
+# Matutinum]`/`[Ant Matutinum 3N]` override of its own anywhere -- C6a
+# only overrides Officium(secular)/Oratio/Hymn/Responsory1/Capitulum/
+# Lectio-Prima, none of which is Matins nocturn psalmody. Confirmed live
+# against St. Scholastica (2029-02-10, `common: common-of-a-virgin`,
+# `vide C6a` in her own `[Rank]`): her rendered psalm numbers and all
+# three nocturn-closing versicles are byte-identical to this file's own
+# (8,18,23,44,45,47 / 84,86,95,96,97,98 / same Nocturn 3 canticle refs
+# and versicle) -- only her antiphon *text* differs, and that's because
+# she carries real proper antiphons of her own (see
+# `saints/st-scholastica.yml`), not because the Common itself differs.
 id: common-of-a-virgin-martyr
+aliases: [common-of-a-virgin]
 nocturn1:
   groups:
     - psalms: [8]
