@@ -20,9 +20,13 @@ across every hour and content type in this app.
 1. **Mechanism gaps** — a real design/code piece not built yet, blocking any content pass on
    it from starting:
    - Easter's own octave — tabled, "a whole different discussion."
-   - What "a Gospel reading is its own kind" should mean structurally/in the UI, beyond the
-     `isGospel` flag on a plain Matins `lesson` — open; deferred until there's a UI to
-     evaluate it against.
+   - Gospel pericope + paired homily rendered as one part: decided, not yet built. When a
+     Matins Nocturn 3 reading pairs a Gospel pericope with a patristic homily on it, render them
+     as two distinct parts, one after the other, with markup that visibly distinguishes pericope
+     from homily (not concatenated into a single `lesson` text as now). A bible-plan Gospel
+     reading has no paired homily — it renders as just the pericope, which is correct as-is.
+     Needs a schema change (splitting `lesson`+`isGospel` into a Gospel part with an optional
+     homily part) and matching UI treatment in `hour-view.ts`.
    - Date picker: `day-nav.ts` currently only steps a day at a time (prev/next); there's no
      way to jump to an arbitrary date without walking there one day at a time or editing the
      URL. Needs a calendar-grid picker UI — open, not started.
