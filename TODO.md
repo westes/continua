@@ -100,28 +100,25 @@ across every hour and content type in this app.
      categories" below): Martyr, Apostle (+ aliases Common-of-Apostles-plural and
      Common-of-an-Evangelist), Confessor (+ aliases Common-of-an-Abbot,
      Common-of-a-Confessor-not-Bishop, and Common-of-Several-Confessors), Confessor-Bishop,
-     Several Martyrs, Virgin-Martyr, the BVM, a Dedication, and a Holy Woman. Still open, each
-     with a specific blocker found across both passes (privileged-feria/movable-feast collisions
-     that ruled out every representative saint tried across multiple years, or a genuine
-     structural mismatch — see the second pass's section for full detail rather than
-     re-deriving): Virgin (plain, not Virgin-Martyr — every Duplex+ candidate tried is either
-     absent from the live Monastic 1617 calendar on her own date, or (St. Gertrude) carries real
-     proper content of her own so isn't a valid Common source), Widow (same "absent from the
-     calendar on this specific track" problem — confirmed via the reference engine's own votive
-     index that this Common, C7a, has *zero* SanctiM cross-references anywhere in the Monastic
-     corpus, unlike every other category here), Confessor-Doctor, Confessor-Pope, Several Women
-     Martyrs (blocked by design, not oversight — its one candidate, Ss. Perpetua and Felicity, is
-     always in Lent and is only ever a `Commemoratio`, never a full Duplex+ day, in every source
-     file checked), and an Angel — this last one is a different *kind* of gap, not a missing
-     Common: the reference engine has no Common-of-an-Angel scheme at all (confirmed via its own
-     votive index, which lists no angel entry, and via zero `CommuneM` cross-references site-wide)
-     because every angel feast (Guardian Angels, Michael, Gabriel, Raphael, the Apparition of St.
-     Michael) genuinely has its own full proper Matins psalmody instead — real antiphons/lessons
-     exist in the source (confirmed for Guardian Angels under the `Monastic Divino 1930` rubric
-     track, since her feast isn't recognized under plain `Monastic Tridentinum 1617` at all) but
-     authoring them is saint-level proper work via `saints/*.yml`, a different and larger task
-     than this category-file sweep — not started. All seven still fall back to the plain ferial
-     weekday table, redistributed into 3 nocturns.
+     Several Martyrs, Virgin-Martyr, the BVM, a Dedication, and a Holy Woman — plus, separately,
+     all 5 angel feasts now have their own saint-level proper Matins psalmody authored directly
+     (`saints/apparition-of-st-michael.yml`, `st-michael.yml`, `guardian-angels.yml`,
+     `st-gabriel-archangel.yml`, `st-raphael-archangel.yml` — see "Angel feasts' proper Matins
+     psalmody authored" below), closing the "Common-of-an-Angel doesn't exist" gap the second pass
+     found — there was never a missing category file here, just missing saint-level content, same
+     shape as `st-andrew.yml`/`st-lawrence.yml`. Still open, each with a specific blocker found
+     across both category-tier passes (privileged-feria/movable-feast collisions that ruled out
+     every representative saint tried across multiple years, or a genuine structural mismatch —
+     see the second pass's section for full detail rather than re-deriving): Virgin (plain, not
+     Virgin-Martyr — every Duplex+ candidate tried is either absent from the live Monastic 1617
+     calendar on her own date, or (St. Gertrude) carries real proper content of her own so isn't a
+     valid Common source), Widow (same "absent from the calendar on this specific track" problem —
+     confirmed via the reference engine's own votive index that this Common, C7a, has *zero*
+     SanctiM cross-references anywhere in the Monastic corpus, unlike every other category here),
+     Confessor-Doctor, Confessor-Pope, Several Women Martyrs (blocked by design, not oversight —
+     its one candidate, Ss. Perpetua and Felicity, is always in Lent and is only ever a
+     `Commemoratio`, never a full Duplex+ day, in every source file checked). These five still
+     fall back to the plain ferial weekday table, redistributed into 3 nocturns.
    - The four "Commemoratio Octavæ" Ant+V/R+collect blocks (Christmas Octave's own
      Nativity/Stephen/John/Holy-Innocents commemorations, e.g. on Dec 30) are now done —
      see "Octave content" below. St. Frances of Rome's/
@@ -3040,18 +3037,18 @@ Tridentinum 1617`).
 **Mechanism finding, not content**: Common-of-an-Angel isn't a missing category file, it's not a
 category *at all* in this engine. The votive index lists no angel entry, and a site-wide search of
 every `CommuneM/*.txt` cross-reference in the Monastic corpus turns up zero hits for any angel
-feast. Checked Guardian Angels' own SanctiM source directly instead (`SanctiM/10-02.txt`): it
-carries a full, genuine set of proper Matins antiphons (`Stetit Angelus`, `Mitte Domine`, `Angelus
-meus`, `Ecce ego` for Nocturn 3, `Vidit Jacob`/`Si audíeris` responsories) — real proper content,
-not Common-derived, confirming the earlier "not on the calendar" read from a rubric problem, not a
-content gap: her feast is gated `rubrica 1930 aut rubrica cisterciensis` and simply isn't
-recognized under plain `Monastic Tridentinum 1617` at all, only under `Monastic Divino 1930`
-(tried live, confirmed Duplex majus with this content there). vu's own `guardian-angels.yml`
-already independently found the same thing from the *secular* Sancti file's own comment ("feast's
-own content is fully proper throughout"). The fix here isn't a `categories/*.yml` file — it's
-proper saint-level psalmody via `saints/*.yml`, matching the `st-andrew.yml`/`st-lawrence.yml`
-precedent, for each of the five angel feasts individually. That's real, larger, not-yet-started
-work — not attempted this pass; flagged rather than forced.
+feast. Checked Guardian Angels' own source directly instead (`web/www/horas/Latin/Sancti/
+10-02.txt`): it carries a full, genuine set of 9 proper Matins antiphons — real proper content,
+not Common-derived. The fix isn't a `categories/*.yml` file — it's proper saint-level psalmody via
+`saints/*.yml`, matching the `st-andrew.yml`/`st-lawrence.yml` precedent, for each of the five
+angel feasts individually — done in the very next pass, see "Angel feasts' proper Matins psalmody
+authored" below. **Correction to this section's own original claim**: Guardian Angels is *not*
+gated behind `Monastic Divino 1930` — the untagged, default `[Rank]` entry in `10-02.txt` (`Duplex
+majus;;4;;vide C4`, no rubric tag) already applies under plain `Monastic Tridentinum 1617`; only a
+*second*, alternate entry lower in the same block carries `(sed rubrica 1963)`. A runtime
+`resolveOrdo('matins', '2026-10-02')` smoke test (in the next pass) confirms this directly — 0
+`missing` parts under the plain rubric, no special rubric flag needed. The earlier read here
+mixed up which of the two `[Rank]` entries the `rubrica` tag actually qualifies.
 
 **Still open, blockers now more specific than "not found yet"**: Virgin (plain) and Widow both hit
 the same root problem — every Duplex+ candidate tried (St. Margaret Mary Alacoque, St. Gertrude,
@@ -3074,6 +3071,79 @@ be no clean instance of this Common to extract from in vu's own calendar.
 `npm test` (521 tests) and `tsc --noEmit` both pass. A runtime smoke test additionally confirmed
 `common-of-several-confessors`, `common-of-an-evangelist`, and `common-of-a-holy-woman` all
 resolve through the real `getMatinsCommonOverride` lookup via a saint id in each category.
+
+### Angel feasts' proper Matins psalmody authored — all 5, saint-level (2026-08-27)
+
+Closes the "Common-of-an-Angel doesn't exist" finding from the pass above. Authored
+`saints/apparition-of-st-michael.yml`, `st-michael.yml`, `guardian-angels.yml`,
+`st-gabriel-archangel.yml`, and `st-raphael-archangel.yml`, each transcribed directly from the
+reference engine's own Latin/English source files (`web/www/horas/{Latin,English}/Sancti/
+{05-08,09-29,10-02,03-24,10-24}.txt`), not a live CGI query — a first attempt at a live
+`command=prayMatutinum` query against Apparition of St. Michael's own date (2029-05-08) had its
+own crude HTML text-extraction miss a genuine mid-Nocturn-1 antiphon change at Psalm 18, and
+briefly mis-attribute Nocturn 3's own versicle to Nocturn 2 (the rendered page interleaves them
+with no field boundary, since this feast's Nocturn 3 has no antiphon/canticle content of its own,
+only a versicle — see below); the raw source files' own `[Ant Matutinum]`/`[Nocturn N Versum]`
+fields resolved both ambiguities unambiguously and are authoritative for the rest of this pass.
+
+**Real structural finding, not a transcription gap**: Apparition of St. Michael's (and, by
+inheritance, Guardian Angels', St. Gabriel's, and St. Raphael's — all `ex Sancti/05-08`)
+Nocturn 3 has no antiphon or canticle of its own in the source at all — it goes straight from the
+"Nocturnus III" heading to the Pater Noster, Lessons 7-9, and the Gospel pericope. Only a
+`[Nocturn 3 Versum]` exists. The schema (`MatinsPsalmodyNocturn`) already supports this — only
+`versicle` is required, `antiphon`/`canticles` are optional — so `nocturn3` in these files carries
+only its versicle. St. Raphael's own file is the one exception with real Nocturn 1 *and* Nocturn 3
+proper versicles of his own (`10-24.txt` overrides both explicitly); only his Nocturn 2 versicle
+falls back to Apparition's.
+
+**Each feast's own sourcing, briefly:**
+
+- **Apparition of St. Michael** (May 8, `propers: null`) — fully proper. Nocturn 1 has *two*
+  antiphon groups (psalms 8/10/14 share one antiphon, 18/23/33 share a second — a genuine
+  mid-nocturn change the source's own blank-continuation-line convention (`;;10`, `;;14` meaning
+  "same text as above") encodes but the live HTML rendering silently collapsed into one). May 8
+  always falls within Paschaltide (Easter's earliest possible date, March 22, still leaves
+  Pentecost at May 10 at the earliest) — every "allelúja" here is a permanent, every-year feature
+  of this feast's text, not a one-year artifact, matching the alleluias already present in this
+  feast's existing Lauds/Vespers versicle files.
+- **St. Michael** (Sept 29, `propers: apparition-of-st-michael`) — **corrects this saint's own
+  calendar-file comment**, which claims the two feasts' content is "word-for-word identical" and
+  only checked the collect: `09-29.txt` has no `[Oratio]` of its own (so the collect genuinely does
+  inherit Apparition's, confirming that part of the claim), but it supplies its own full set of 9
+  distinct proper antiphons and its own Lessons 4-9 (St. Gregory's homily on the nine choirs of
+  Angels, not St. Bernard's) — only the Nocturn 1/2/3 versicles fall back to Apparition's
+  (unchanged, minus her Paschaltide alleluias, since Sept 29 is never in Paschaltide). Per
+  `hours/matins.ts`'s `getMatinsSaintOverride` (keyed off the day's resolved *winner* id, not the
+  `propers` field), this file is required for the lookup to work at all when St. Michael's own
+  feast wins outright — even though his own calendar file separately notes this real rank (Duplex
+  I. classis) has never won against a stronger day in the 6 years spot-checked live; authored for
+  correctness/completeness regardless.
+- **Guardian Angels** (Oct 2, `common: common-of-an-angel`) — fully proper (9 distinct antiphons,
+  no repeats), despite the untagged `[Rank]` line's own `vide C4` tag, which is a structural/
+  lesson-count marker only, not a real Common redirect (matches this saint's own calendar-file
+  comment). Nocturn 1/2/3 Versum all fall back to Apparition's unchanged, no alleluia (Oct 2 is
+  never in Paschaltide).
+- **St. Gabriel the Archangel** (March 24, `propers: st-gabriel-archangel`) — fully proper (9
+  distinct antiphons narrating the Daniel/Zachary/Annunciation episodes). **Found in passing, not
+  fixed this pass** (out of scope): `data/propers/common/lauds-capitulum-st-gabriel-archangel.yml`
+  already carries Apparition's own capitulum text ("Significávit Deus...") under Gabriel's id by
+  mistake — his own real capitulum is "Ecce vir Gábriel, quem víderam in visióne..." (Dan 9:21-22).
+  Flagged in that file's own new header comment for a future pass. Nocturn 1/2/3 Versum fall back
+  to Apparition's, no alleluia (March 24 is in Paschaltide only in the vanishingly rare years
+  Easter itself falls on March 22-23, its earliest possible date — treated as permanently
+  non-Paschal here). The English source file's own "(Alleluia.)" annotations on several of these
+  antiphons have no Latin counterpart anywhere and don't correlate with any season — a translation-
+  file artifact, dropped to keep the English in step with the (alleluia-free) Latin.
+- **St. Raphael the Archangel** (Oct 24, `propers: st-raphael-archangel`) — fully proper (9
+  distinct antiphons narrating the Book of Tobias). Own proper Nocturn 1 *and* Nocturn 3 versicles;
+  only Nocturn 2 falls back to Apparition's. Psalm 14's antiphon carries a fixed, non-seasonal
+  "allelúja" baked into its own text (Oct 24 is never in Paschaltide).
+
+`npm test` (521 tests) and `tsc --noEmit` both pass. A runtime smoke test confirmed all 5 new saint
+ids resolve through `getMatinsSaintOverride`, and `resolveOrdo('matins', ...)` against both
+2026-10-02 (Guardian Angels) and 2029-05-08 (Apparition of St. Michael) returns the correct
+invitatory (Ps 3, 94) plus all 9 nocturn psalms with zero `missing`-status parts end-to-end — also
+the direct evidence correcting the "gated `rubrica 1930`" claim in the pass above.
 
 ### Lauds/Vespers chapter-responsory-hymn-versicle bundle: rank-agnostic Common fallback (2026-08-25)
 
