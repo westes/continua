@@ -56,8 +56,25 @@ export function setDate(date: string): void {
   notify();
 }
 
+/**
+ * Which hour the "Today" link should point to: if we're already viewing
+ * today, the current time-of-day default (as if freshly visiting `/vu`
+ * right now); otherwise the hour currently selected, unchanged. Shared by
+ * `goToToday()` and the link's `href` (`day-nav.ts`) so a plain click and
+ * a right-click-open-in-new-tab land on the same target.
+ */
+export function todayTargetHour(): HourId {
+  return state.date === todayIso() ? defaultHourForTime(new Date()) : state.selectedHour;
+}
+
 export function goToToday(): void {
-  setDate(todayIso());
+  const today = todayIso();
+  const hour = todayTargetHour();
+  if (state.date === today) {
+    setSelectedHour(hour);
+  } else {
+    setDate(today);
+  }
 }
 
 export function addDays(date: string, days: number): string {

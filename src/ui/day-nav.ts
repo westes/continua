@@ -1,4 +1,4 @@
-import { getState, shiftDate, goToToday, addDays, todayIso } from '../app-state';
+import { getState, shiftDate, goToToday, addDays, todayIso, todayTargetHour } from '../app-state';
 import { resolveDay } from '../calendar';
 import { resolveEveningDay } from '../calendar/vespers';
 import { getDayLabel, getVespersStatusLabel } from '../calendar/day-label';
@@ -26,7 +26,7 @@ export function renderDayNav(container: HTMLElement): void {
   const vespersStatus = selectedHour === 'vespers' ? getVespersStatusLabel(day) : undefined;
   const prevUrl = urlFor(addDays(date, -1), selectedHour, languages);
   const nextUrl = urlFor(addDays(date, 1), selectedHour, languages);
-  const todayUrl = urlFor(todayIso(), selectedHour, languages);
+  const todayUrl = urlFor(todayIso(), todayTargetHour(), languages);
   container.innerHTML = `
     <nav class="day-nav" aria-label="Day navigation">
       <a href="${prevUrl}" class="day-nav-btn" data-action="prev" aria-label="Previous day">&larr;</a>

@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { defaultHourForTime } from '../src/app-state';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import { defaultHourForTime, goToToday, getState, setDate, setSelectedHour, todayTargetHour } from '../src/app-state';
 
 function at(hour: number, minute = 0): Date {
   const d = new Date();
@@ -35,5 +35,71 @@ describe('defaultHourForTime', () => {
     [23, 59, 'compline'],
   ] as const)('%i:%i -> %s', (hour, minute, expected) => {
     expect(defaultHourForTime(at(hour, minute))).toBe(expected);
+  });
+});
+
+describe('goToToday', () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date(2026, 7, 28, 10, 0, 0)); // 2026-08-28 10:00 local -> terce
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it('jumps to today and preserves the current hour when on a different date', () => {
+    setDate('2026-08-01');
+    setSelectedHour('vespers');
+
+    goToToday();
+
+    expect(getState().date).toBe('2026-08-28');
+    expect(getState().selectedHour).toBe('vespers');
+  });
+
+  it('snaps the hour to the current time-of-day default when already on today', () => {
+    setDate('2026-08-28');
+    setSelectedHour('vespers');
+
+    goToToday();
+
+    expect(getState().date).toBe('2026-08-28');
+    expect(getState().selectedHour).toBe('terce');
+  });
+
+  it('is idempotent-safe: a second click after jumping to today snaps the hour', () => {
+    setDate('2026-08-01');
+    setSelectedHour('vespers');
+
+    goToToday(); // -> today, hour still 'vespers'
+    goToToday(); // -> already today, snaps hour to time-of-day default
+
+    expect(getState().date).toBe('2026-08-28');
+    expect(getState().selectedHour).toBe('terce');
+  });
+});
+
+describe('todayTargetHour', () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date(2026, 7, 28, 10, 0, 0)); // 2026-08-28 10:00 local -> terce
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it('matches goToToday, so the Today link href agrees with its click behavior', () => {
+    // Different date: href should preserve the current hour, same as goToToday().
+    setDate('2026-08-01');
+    setSelectedHour('vespers');
+    expect(todayTargetHour()).toBe('vespers');
+
+    // Already on today: href should point at the time-of-day default,
+    // same as goToToday() — this is what a right-click "open in new tab"
+    // relies on, since it follows the href without running the click handler.
+    setDate('2026-08-28');
+    expect(todayTargetHour()).toBe('terce');
   });
 });
