@@ -66,50 +66,6 @@ across every hour and content type in this app.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
-   - ~~Matins psalmody overrides for a Duplex+ weekday feast~~ (see "Matins psalmody overrides"
-     below) — **done, all nineteen Common categories now authored, across four passes**
-     (2026-08-27/28, see "Matins psalmody overrides — nine more categories", "— second pass, four
-     more categories", "— third pass, source-file-first method", and "— fourth pass, Widow and
-     Several Women Martyrs closed via secular sourcing" below): Martyr, Apostle (+ aliases
-     Apostles-plural and Evangelist), Confessor (+ aliases Abbot, Confessor-not-Bishop, and
-     Several-Confessors), Confessor-Bishop (+ aliases Confessor-Doctor and Confessor-Pope),
-     Several Martyrs, Virgin-Martyr (+ alias Virgin, plain), the BVM, a Dedication, a Holy Woman,
-     and — closed in the fourth pass, 2026-08-28, by explicit user authorization to use secular-
-     track content directly — a Widow (+ alias Several Women Martyrs). Plus, separately, all 5
-     angel feasts and St. Scholastica (Virgin) have their own saint-level proper Matins psalmody
-     authored directly (same shape as `st-andrew.yml`/`st-lawrence.yml`), each a case where the
-     saint's own `[Rank]` cites a Common but their real content is genuinely proper. **Methodology
-     arc across the four passes**: live-CGI trial-and-error across candidate saints/years (passes
-     1-2) → reading the reference engine's own `CommuneM/*.txt`/`Commune/*.txt` template source
-     files directly, one targeted live query per finding to confirm (pass 3, much faster, directly
-     disproved two of pass 2's own claims) → combining direct source-reading of the Monastic
-     substitution rule with a live SECULAR-track query to supply the actual text, once explicitly
-     authorized that secular sourcing needs no special justification beyond this project's own
-     established blended-track design (pass 4, see that section for the Widow/Several-Women-
-     Martyrs resolution in full). No categories remain open.
-   - The four "Commemoratio Octavæ" Ant+V/R+collect blocks (Christmas Octave's own
-     Nativity/Stephen/John/Holy-Innocents commemorations, e.g. on Dec 30) are now done —
-     see "Octave content" below. St. Frances of Rome's/
-     St. Bibiana's Benedictus antiphons and Ss. Ursula and Companions' were also once flagged
-     here — the first two turned out already resolved (verified live, see memory
-     `vu-todo-priority`'s own correction note), the third is a settled non-gap (no unique text
-     exists to author, see her own file's comment) — not carried forward as open items.
-     Five "fixed Lord's/BVM feast, not modeled" exclusions across the calendar (Our Lady of the
-     Snows, the Finding of the Holy Cross, the Transfiguration, the Exaltation of the Holy
-     Cross, the Dedication of the Lateran, the Presentation of the BVM) turned out to be the
-     same stale mistake repeated six times — all six now added with real content; see "Our
-     Lady of the Snows added" and "Four more 'not modeled' fixed Lord's/BVM feasts added"
-     below.
-   - ~~Lauds/Vespers chapter/responsory/hymn/versicle bundle~~ — done (2026-08-26). Mechanism
-     is rank-agnostic (any sanctoral winner falls back to their Common, not just duplex-majus+);
-     all 11 Common categories now have a real, live-verified bundle authored (see the dated log
-     entries below, e.g. "Common-of-Several-Confessors Lauds/Vespers bundle authored — last
-     Common category closed"), plus the individual proper-content fixes swept up alongside it
-     (Guardian Angels/Archangels reuse, Finding/Exaltation of the Holy Cross, Transfiguration,
-     All Saints of the Benedictine Order). The same session also closed the *separate*
-     `resolveMatinsHymn` fallback chain's equivalent gap for every category/saint this pass
-     touched (see "Matins hymn gap closed for the same categories/saints" below) — Matins hymns
-     are a different mechanism from the Lauds/Vespers bundle and needed their own pass.
 
 3. **Known, deliberate simplifications** — flagged as intentional, not a bug, no plan to
    revisit unless priorities change: see "Known, deliberate simplifications" at the end of
@@ -3908,3 +3864,56 @@ files' header comments updated to flag the drop as deliberate, not a transcripti
 `tests/hours/lauds.test.ts` and `vespers.test.ts` updated to distinguish the fuller ferial
 Preces from the short Sunday/feast litany via a versicle that survives the psalm's removal
 ("Ego dixi: Dómine, miserére mei") instead of the now-absent psalm text.
+
+### Matins psalmody overrides for a Duplex+ weekday feast — all categories done (2026-08-27/28)
+
+All nineteen Common categories now authored, across four passes (see "Matins psalmody
+overrides — nine more categories", "— second pass, four more categories", "— third pass,
+source-file-first method", and "— fourth pass, Widow and Several Women Martyrs closed via
+secular sourcing" elsewhere in this file): Martyr, Apostle (+ aliases Apostles-plural and
+Evangelist), Confessor (+ aliases Abbot, Confessor-not-Bishop, and Several-Confessors),
+Confessor-Bishop (+ aliases Confessor-Doctor and Confessor-Pope), Several Martyrs,
+Virgin-Martyr (+ alias Virgin, plain), the BVM, a Dedication, a Holy Woman, and — closed in the
+fourth pass, 2026-08-28, by explicit user authorization to use secular-track content directly
+— a Widow (+ alias Several Women Martyrs). Plus, separately, all 5 angel feasts and St.
+Scholastica (Virgin) have their own saint-level proper Matins psalmody authored directly (same
+shape as `st-andrew.yml`/`st-lawrence.yml`), each a case where the saint's own `[Rank]` cites a
+Common but their real content is genuinely proper.
+
+**Methodology arc across the four passes**: live-CGI trial-and-error across candidate
+saints/years (passes 1-2) → reading the reference engine's own `CommuneM/*.txt`/`Commune/*.txt`
+template source files directly, one targeted live query per finding to confirm (pass 3, much
+faster, directly disproved two of pass 2's own claims) → combining direct source-reading of the
+Monastic substitution rule with a live SECULAR-track query to supply the actual text, once
+explicitly authorized that secular sourcing needs no special justification beyond this
+project's own established blended-track design (pass 4, see that section for the
+Widow/Several-Women-Martyrs resolution in full). No categories remain open.
+
+### Commemoratio Octavæ blocks + fixed Lord's/BVM feast exclusions — closed (2026-08)
+
+The four "Commemoratio Octavæ" Ant+V/R+collect blocks (Christmas Octave's own
+Nativity/Stephen/John/Holy-Innocents commemorations, e.g. on Dec 30) are done — see "Octave
+content" elsewhere in this file. St. Frances of Rome's/St. Bibiana's Benedictus antiphons and
+Ss. Ursula and Companions' were also once flagged here — the first two turned out already
+resolved (verified live, see memory `vu-todo-priority`'s own correction note), the third is a
+settled non-gap (no unique text exists to author, see her own file's comment) — not carried
+forward as open items.
+
+Five "fixed Lord's/BVM feast, not modeled" exclusions across the calendar (Our Lady of the
+Snows, the Finding of the Holy Cross, the Transfiguration, the Exaltation of the Holy Cross,
+the Dedication of the Lateran, the Presentation of the BVM) turned out to be the same stale
+mistake repeated six times — all six now added with real content; see "Our Lady of the Snows
+added" and "Four more 'not modeled' fixed Lord's/BVM feasts added" elsewhere in this file.
+
+### Lauds/Vespers chapter/responsory/hymn/versicle bundle — done (2026-08-26)
+
+Mechanism is rank-agnostic (any sanctoral winner falls back to their Common, not just
+duplex-majus+); all 11 Common categories now have a real, live-verified bundle authored (see
+the dated log entries elsewhere in this file, e.g. "Common-of-Several-Confessors Lauds/Vespers
+bundle authored — last Common category closed"), plus the individual proper-content fixes
+swept up alongside it (Guardian Angels/Archangels reuse, Finding/Exaltation of the Holy Cross,
+Transfiguration, All Saints of the Benedictine Order). The same session also closed the
+*separate* `resolveMatinsHymn` fallback chain's equivalent gap for every category/saint this
+pass touched (see "Matins hymn gap closed for the same categories/saints" elsewhere in this
+file) — Matins hymns are a different mechanism from the Lauds/Vespers bundle and needed their
+own pass.
