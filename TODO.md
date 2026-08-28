@@ -46,10 +46,8 @@ across every hour and content type in this app.
      temporal feasts have an authored Latin name anywhere in `src/data/**`. Weekday names,
      month names, rank labels, and season/ordinal phrasing already have real Latin.
    - Matins sanctoral-side readings: the per-book Matins responsory pool has only one book
-     seeded (`isa`) — needs expanding. (Saint-level reading authoring itself is fully done; see
-     "Reading-pool redesign", "Pre-1955-but-post-1617 saints' Matins readings", and "SanctiM
-     (Monastic 1617)-track saints' Matins readings" below.) Bible-plan TSV content also isn't
-     yet in a test table (see "Bible-plan TSV — bulk conversion done" below).
+     seeded (`isa`) — needs expanding. Bible-plan TSV content also isn't yet in a test table
+     (see "Bible-plan TSV — bulk conversion done" below).
    - Matins temporal-cycle readings: only the post-Pentecost season (`post-pentecost-01`
      through `-24`) is authored (see "Temporal-cycle nocturn-readings sweep" below) — the rest
      of the year (Advent, Christmastide, post-Epiphany, Septuagesima through Lent/Passiontide,
