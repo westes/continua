@@ -27,8 +27,18 @@
 # file's content exactly, confirming vu's own separately-named ids
 # collapse to one Matins scheme in the reference engine (Reference votive
 # numbers C5/C5b both point here per `horas.dialog`'s `[votives]` index).
+#
+# `common-of-several-confessors` also aliased here (2026-08-27),
+# live-verified against Ss. John of God and Camillus de Lellis
+# (2027-03-08, Duplex, SanctiM `vide C5c` = "Plurium Confessorum non
+# Pontificum" — the plural/several form of this same Common) — psalms,
+# antiphons, Nocturn 3 canticle citation (Sir 14:22;15:3-4;15:6, byte-
+# identical to this file's own), and all three versicles reproduce this
+# file's content exactly. The Rule of St. Benedict imposes no "several
+# confessors" nuance the reference engine's own C5c doesn't already fold
+# into the plain C5 scheme, so no separate file was warranted.
 id: common-of-a-confessor
-aliases: [common-of-an-abbot, common-of-a-confessor-not-bishop]
+aliases: [common-of-an-abbot, common-of-a-confessor-not-bishop, common-of-several-confessors]
 nocturn1:
   groups:
     - psalms: [1]

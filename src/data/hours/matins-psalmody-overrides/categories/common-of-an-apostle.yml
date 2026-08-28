@@ -17,8 +17,25 @@
 # byte-identical to this file, a genuine full redirect (reference votive
 # number C1 covers both per `horas.dialog`'s `[votives]` index, which
 # doesn't distinguish singular from plural Apostle commons).
+#
+# `common-of-an-evangelist` also aliased here (2026-08-27), live-verified
+# against St. Luke (2026-10-18, Duplex II. classis, clean/un-outranked):
+# every psalm number, every antiphon (La+En), every canticle citation
+# (Isa 61:6-9, Sap 3:7-9, Sap 10:17-21), and all three closing versicles
+# reproduce this file's content exactly. Matches the reference index's
+# own adjacency (`horas.dialog`'s `[votives]`: "Apostolorum/C1,
+# Evangelistarum/C1a" back-to-back) -- C1a shares C1's Matins scheme
+# outright, same relationship already found between Confessor/Abbot/
+# Confessor-not-Bishop and Several-Confessors above. (St. Mark, the
+# other candidate tried first, was ruled out as a source purely on
+# methodological grounds -- his fixed April 25 date sits inside
+# Paschaltide most years, which would have contaminated the "generic"
+# antiphon text with seasonal "allelúja" insertions not part of the
+# Common's own permanent text; Luke's October date carries no such risk
+# and independently confirms the antiphons already believed alleluia-free
+# outside psalms 74/95-98's own genuinely-alleluia-bearing text.)
 id: common-of-an-apostle
-aliases: [common-of-apostles]
+aliases: [common-of-apostles, common-of-an-evangelist]
 nocturn1:
   groups:
     - psalms: [18]
