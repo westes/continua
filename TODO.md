@@ -90,16 +90,17 @@ across every hour and content type in this app.
      month names, rank labels, and season/ordinal phrasing already have real Latin.
    - Matins: bible-plan TSV bulk conversion is done (see "Bible-plan TSV — bulk conversion
      done" below) — not yet added to a test table, though (unlike sanctoral/temporal content)
-     there's no reference breviary to spot-check this plan against by design. Still open:
-     author patristic/hagiographic
-     readings for every saint where one can be sourced — no longer Duplex+-gated, content is
-     pooled and shown regardless of rank (see "Reading-pool redesign"); expand the per-book
-     Matins responsory pool beyond its one seeded book (`isa`). The pre-1955-but-post-1617
-     saints (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are now done — see
-     "Pre-1955 saints' Matins readings" below. The larger pool of saints that *do* have a
-     Monastic 1617 track (`SanctiM/`) is now also done — see "SanctiM-track saints' Matins
-     readings" below — all 12 months complete, 133 saints authored, the rest correctly left
-     unauthored as Common-only/no-content cases.
+     there's no reference breviary to spot-check this plan against by design. The
+     saint-level side of "author patristic/hagiographic readings for every saint where one can
+     be sourced" is now **fully done** — no longer Duplex+-gated, content is pooled and shown
+     regardless of rank (see "Reading-pool redesign"). The pre-1955-but-post-1617 saints
+     (Tridentine/Divino Afflatu-sourced, no Monastic 1617 track) are done — see "Pre-1955
+     saints' Matins readings" below. The larger pool of saints that *do* have a Monastic 1617
+     track (`SanctiM/`) is also done — see "SanctiM-track saints' Matins readings" below — all
+     12 months complete, 134 saints authored (see "St. Felix I" below for the one missed
+     candidate found on re-audit), the rest correctly left unauthored as Common-only/no-content
+     cases. Still open: expand the per-book Matins responsory pool beyond its one seeded book
+     (`isa`); the temporal-cycle side of this same content type (see next bullet).
    - Matins: the **temporal-cycle** side of this same gap (as opposed to the sanctoral side
      above) — the post-Pentecost season (`post-pentecost-01` through `-24`) is now fully
      authored (see "Temporal-cycle nocturn-readings sweep" below); the rest of the year's
@@ -1973,6 +1974,57 @@ Lectio text anywhere) are unaffected and remain correctly unauthored.
 Adding these introduced no new lesson-count regressions in `tests/hours/matins.test.ts` (none
 of its fixed proof dates fall on Jan 5/11 or Jun 23/Aug 9). `npm test` (365 tests) and `tsc
 --noEmit` both pass.
+
+### Octave-readings audit — two real gaps found and closed, scope of the rest recorded (2026-08-28)
+
+Prompted by the user pointing out that the reference source keys octave-day content by
+**calendar date** (e.g. `08-11oct.txt` through `08-16oct.txt` for St. Lawrence's octave), not
+grouped by octave-day-number the way `data/propers/octave-readings/<feast>-octave-day-N.yml` is
+— a genuinely different question from the saint-level sweep above, not covered by it. Audited
+every fixed-date octave (`st-lawrence`, `assumption`, `all-saints`, `immaculate-conception`,
+`nativity-bvm`) for missing days: most gaps in the existing files (IC days 4/6, Nativity-BVM day
+7, Lawrence days 6/7) turned out to be days where the source's own `[Rank]` says `vide Sancti/
+MM-08` with **no Lectio override at all** — genuinely no distinct content to author, matching the
+existing precedent already set by St. Lawrence's own correctly-unauthored days. Two, however,
+were real gaps with genuine, un-authored Lectio content:
+- `immaculate-conception-octave-day-8.yml` (Dec 15, the octave's own closing/"In Octava" day) —
+  Pope Pius IX's dogmatic bull (a different excerpt than any other day in the octave) + a
+  homily of St. Epiphanius of Salamis on the BVM (Lectio7-9, bare Gospel incipit dropped per the
+  usual rule). Both languages present and verified in the source.
+- `nativity-bvm-octave-day-3.yml` (Sep 10) — St. Jerome's homily on Matthew's genealogy
+  (Matt 1:1-17, bare incipit dropped). No usable English exists in the reference engine for this
+  file — `English/Sancti/09-10bmv.txt` is a verbatim Latin duplicate, the same reference-engine
+  data-bug class as `st-anicetus`/`st-george` — so `en` is this project's own translation,
+  `draft`.
+
+Both live-resolved correctly (`resolveOrdo` on 2026-12-15 and 2026-09-10) and `tsc --noEmit`/
+`npm test` (522 tests) both pass.
+
+**Scope of what's still open, not yet started**: three Christmas-week saint octaves
+(`st-stephen-protomartyr`, `st-john-apostle`, `holy-innocents`, Dec 26/27/28's own 8-day octaves)
+have **zero** `octave-readings` files at all — unlike the other fixed-date octaves, their date
+range overlaps Christmas's own already-authored Vespers/Lauds `octave-commemoration` blocks (see
+"Octave content — done" above, a different mechanism/hour), and it's not yet checked how much of
+that range has genuine Matins Lectio overrides vs. bare `vide` cross-references.
+
+### St. Felix I (May 30) — one missed pre-1955-pool candidate found, authored (2026-08-28)
+
+Re-auditing the full pre-1955/SanctiM two-pass sweep (diffing every id in
+`sanctoral-calendar.yml` against `data/propers/nocturn-readings/*.yml`, then checking every
+"missing" id's suffix-matched `Sancti/SanctiM` files by hand) turned up one genuine gap neither
+pass's own per-month log had caught: `st-felix-i` (May 30). It fits the pre-1955-pool criterion
+exactly — a real `Sancti/05-30.txt` `[Lectio93]` vita (both languages present), no
+`SanctiM/05-30.txt` of its own (the only SanctiM file at that date, `05-30b.txt`, belongs to St.
+Joan of Arc, a different feast sharing the date) — but was absent from both memory records'
+scoping passes. Authored the same single-lesson shape as `st-pontian.yml` (a near-identical
+simplex Pope-Martyr case). Every other id absent from `nocturn-readings/` was re-confirmed
+against the existing "left unauthored" lists in both memory files and TODO.md's own log above —
+all genuinely Common-only/no-content, not further gaps. `tsc --noEmit` and
+`tests/hours/matins.test.ts` both pass; live-resolved on 2027-05-30 to confirm the new reading
+surfaces in the pool. This closes out the sanctoral (saint-level) side of "author
+patristic/hagiographic readings for every saint where one can be sourced" — the temporal-cycle
+side (Advent/Christmastide/post-Epiphany/Septuagesima-Lent-Passiontide/Eastertide Nocturn 2/3
+content) remains open, unstarted, see "Temporal-cycle nocturn-readings sweep" progress note.
 
 ### Aug 5 martyrology English gap, and "Our Lady of the Snows" added (2026-08)
 

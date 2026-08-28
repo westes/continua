@@ -1,0 +1,36 @@
+# Sourced directly from the raw reference files (web/www/horas/Latin/
+# Sancti/09-10bmv.txt) -- day 3 of the Nativity of the BVM's own octave, the
+# one day in this octave with a genuine Lectio override rather than a bare
+# "ex Sancti/09-08" cross-reference (see nativity-bvm-octave-day-7.yml's own
+# absence: day 7 has no override and correctly needs no file of its own,
+# same as immaculate-conception-octave-day-4/6). Lectio7's own Gospel
+# pericope (Matt 1:1-17, the genealogy) is a bare incipit ("Et réliqua," no
+# full text) -- per the established "don't transcribe bare incipits" rule
+# (see memory vu-matins-sanctim-saints, fourth finding), only St. Jerome's
+# homily on the genealogy (Lectio7's own homily portion through Lectio9) is
+# authored, isGospel: false. No English translation exists in the reference
+# engine for this file at all -- English/Sancti/09-10bmv.txt is a verbatim
+# duplicate of the Latin text, the same reference-engine data-bug class as
+# st-anicetus/st-george (see memory vu-matins-pre1955-saints /
+# vu-matins-sanctim-saints) -- so `en` is this project's own translation,
+# `draft`.
+id: nativity-bvm-octave-day-3
+source:
+  la: "De Homilia S. Hierónymi Presbýteri (in Matt. 1:1-17)"
+  en: "From a Homily of St. Jerome, Priest (on Matt. 1:1-17)"
+text:
+  la: |
+    Et post transmigrationem Babylonis Jechonias genuit Salathiel. Si voluerimus Jechoniam in fine primæ tessaradecadis ponere, in sequenti non erunt quattuordecim, sed tredecim. Sciamus igitur Jechoniam priorem ipsum esse quem et Joacim, secundum autem filium non patrem. Quorum prior describitur; quod scriptorum vitio et longitudine temporum apud Græcos Latinosque confusus est.
+
+    Jacob autem genuit Joseph. Hunc locum objecit nobis Julianus Augustus dissonantiæ evangelistarum, cur evangelista Matthæus Joseph dixerit filium Jacob, et Lucas eum filium appellarit Heli, non intelligens consuetudinem scripturarum, quod alter secundum naturam, alter secundum legem ei pater sit. Scimus enim hoc per Moysem deo jubente præceptum, ut si frater aut propinquus absque liberis mortuus fuerit, alius ejus frater accipiat uxorem ad suscitandum semen fratris, vel propinqui sui. Joseph virum Mariæ, cum utrum audieris, suspitio tibi non subeat nuptiarum, sed recordare consuetudinis scripturarum, quod sponsi viri, et sponsæ vocentur uxores.
+
+    Et a transmigratione Babylonis usque ad Christum generationes quattuordecim. Numera a Jechonia usque ad Joseph, et invenies generationes tredecim. Quartadecima ergo generatio in ipsum Christum reputabitur. Christi autem generatio sic erit. Quærat diligens lector, et dicat: Cum Joseph non sit pater domini salvatoris, quid pertinet ad dominum generationis ordo deductus usque ad Joseph? Cui respondebimus primum, non esse consuetudinis scripturarum, ut mulierum in generationis ordo texatur: deinde, ex una tribu fuisse Joseph et Mariam, unde ex lege eam accipere cogebatur ut propinquam.
+  en: |
+    And after the removal to Babylon, Jechonias begot Salathiel. If we wish to place Jechonias at the end of the first set of fourteen generations, the following set will not have fourteen, but thirteen. Let us understand, then, that this earlier Jechonias is the one also called Joachim, and is the father, not the son, of the second Jechonias; it is the first of the two who is described here — a confusion arising, among both Greeks and Latins, from the fault of copyists and the long lapse of time.
+
+    And Jacob begot Joseph. The emperor Julian raised this passage against us as a supposed disagreement among the evangelists: why does Matthew call Joseph the son of Jacob, while Luke calls him the son of Heli? He did not understand the usage of Scripture, whereby one is his father by nature, the other by the law. For we know that this was commanded through Moses at God's bidding: that if a brother or kinsman should die without children, another of his brothers should take the wife, to raise up seed for his brother or kinsman. So when you hear that Joseph is the husband of Mary, let no suspicion of ordinary marriage arise in you, but remember the usage of Scripture, whereby betrothed men and women are called husbands and wives.
+
+    And from the removal to Babylon unto Christ are fourteen generations. Count from Jechonias to Joseph, and you will find thirteen generations; the fourteenth generation, then, is reckoned in Christ himself. Now the birth of Christ was on this wise. Let the careful reader inquire and say: since Joseph was not the father of the Lord and Saviour, what does the line of descent traced down to Joseph have to do with the Lord? To this we answer, first, that it is not the usage of Scripture to weave the line of descent through women; and second, that Joseph and Mary were of one tribe, on account of which he was bound by the Law to take her as his kinswoman.
+status:
+  la: verified
+  en: draft
