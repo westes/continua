@@ -20,16 +20,6 @@ across every hour and content type in this app.
 1. **Mechanism gaps** — a real design/code piece not built yet, blocking any content pass on
    it from starting:
    - Easter's own octave — tabled, "a whole different discussion."
-   - Prime's ferial Preces (`data/propers/common/prime-preces-feriales.yml`, the older
-     pre-1911-reform "Eripe me, Domine" text) currently show on *every* plain ferial day and
-     every Vigil day (`hours/prime.yml`'s `by-day-kind` split, `vigilIsFerial: true`) — by
-     explicit choice, more generous than the historical rubric, which restricted this text to
-     Advent/Lent/vigils/Ember days only. Narrowing the gating further (e.g. to Advent/Lent/Ember
-     too) to match, if ever wanted, is open, not started. Prime's Sunday/feast Preces
-     (`prime-preces-dominicales.yml`) were separately switched from Monastic's own form to the
-     secular Tridentine form (2026-08-25, keeping Benedict in the Confiteor by explicit choice)
-     — see that file's header. The capitulum's own by-day-kind split is unaffected by
-     `vigilIsFerial` — a Vigil day still gets the Sunday/feast capitulum, only the Preces moved.
    - What "a Gospel reading is its own kind" should mean structurally/in the UI, beyond the
      `isGospel` flag on a plain Matins `lesson` — open; deferred until there's a UI to
      evaluate it against.
@@ -2493,6 +2483,20 @@ not a verification gap to close later.
   flag on a plain `lesson` — the user wasn't sure yet what that distinction
   should look like; worth a follow-up once there's a UI to evaluate it
   against.
+
+### Prime ferial Preces gating — settled, final (2026-08-25)
+
+Prime's ferial Preces (`data/propers/common/prime-preces-feriales.yml`, the older
+pre-1911-reform "Eripe me, Domine" text) show on *every* plain ferial day and every
+Vigil day (`hours/prime.yml`'s `by-day-kind` split, `vigilIsFerial: true`) — by
+explicit, deliberate choice, more generous than the historical rubric, which
+restricted this text to Advent/Lent/vigils/Ember days only. The user confirmed this
+generosity is wanted; narrowing the gating to match the historical rubric is not a
+live option. Prime's Sunday/feast Preces (`prime-preces-dominicales.yml`) were
+separately switched from Monastic's own form to the secular Tridentine form
+(2026-08-25, keeping Benedict in the Confiteor by explicit choice) — see that file's
+header. The capitulum's own by-day-kind split is unaffected by `vigilIsFerial` — a
+Vigil day still gets the Sunday/feast capitulum, only the Preces moved.
 
 ### Vespers ferial Preces + per-feast office overrides — done (2026-08)
 
