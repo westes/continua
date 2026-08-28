@@ -10,7 +10,15 @@
 # pattern already established for Common-of-a-Martyr (see that category
 # file's own doc comment).
 #
+# `aliases` also registers `common-of-apostles` (plural, vu's separate id
+# for feasts of two-or-more Apostles together) under this same scheme
+# (2026-08) — live-verified against the Octave of Ss. Peter and Paul
+# (2026-07-06, Duplex): psalms, antiphons, and versicles all
+# byte-identical to this file, a genuine full redirect (reference votive
+# number C1 covers both per `horas.dialog`'s `[votives]` index, which
+# doesn't distinguish singular from plural Apostle commons).
 id: common-of-an-apostle
+aliases: [common-of-apostles]
 nocturn1:
   groups:
     - psalms: [18]

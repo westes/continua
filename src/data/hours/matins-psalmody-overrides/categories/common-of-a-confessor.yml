@@ -16,7 +16,19 @@
 # redirect) because the versicles are a real, if small, difference —
 # `common-of-a-confessor-bishop.yml` is its own full file, duplicating
 # these same psalm/antiphon groups with its own versicles.
+#
+# `aliases` also registers `common-of-an-abbot` and
+# `common-of-a-confessor-not-bishop` under this same scheme (2026-08),
+# live-verified as a genuine full redirect (psalms, antiphons, AND
+# versicles all byte-identical, unlike the Bishop case above): St. Maurus
+# (2026-01-15, Duplex II. classis) and St. Gall (2026-10-16, Duplex) for
+# Abbot; St. Francis of Assisi (2026-10-04, Duplex) and St. Jerome
+# (2026-09-30, Duplex) for Confessor-non-Bishop — all four reproduce this
+# file's content exactly, confirming vu's own separately-named ids
+# collapse to one Matins scheme in the reference engine (Reference votive
+# numbers C5/C5b both point here per `horas.dialog`'s `[votives]` index).
 id: common-of-a-confessor
+aliases: [common-of-an-abbot, common-of-a-confessor-not-bishop]
 nocturn1:
   groups:
     - psalms: [1]

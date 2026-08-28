@@ -330,16 +330,19 @@ describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunda
   });
 
   it('falls all the way back to the plain ferial weekday table, redistributed into 3 nocturns, when neither a proper nor a Common entry is authored', () => {
-    // St. Anthony, Abbot (Duplex, Common of an Abbot -- no
-    // matins-psalmody-overrides category authored yet for either tier)
-    // -- 2029-01-17, a Wednesday, confirmed clean (no Sunday collision).
-    const fallback = resolveOrdo('matins', '2029-01-17');
+    // St. Monica, Widow (Duplex, Common of a Widow -- no
+    // matins-psalmody-overrides category authored yet for either tier;
+    // Common-of-an-Abbot no longer qualifies for this proof as of
+    // 2026-08-27, now aliased to Common-of-a-Confessor) -- 2029-05-04, a
+    // Friday, confirmed clean (no Sunday collision, per her own
+    // saint-file comment).
+    const fallback = resolveOrdo('matins', '2029-05-04');
     const psalms = fallback.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
-    // Ps 3 + 94, then Wednesday's own 9-psalm ferial table
-    // (psalter-distribution.yml), not any Common-of-an-Abbot scheme.
+    // Ps 3 + 94, then Friday's own 9-psalm ferial table
+    // (psalter-distribution.yml), not any Common-of-a-Widow scheme.
     expect(psalms[0]).toBe(3);
     expect(psalms[1]).toBe(94);
-    expect(psalms.slice(2)).toEqual(getPsalmsFor('matins', 'wednesday').map((r) => r.number));
+    expect(psalms.slice(2)).toEqual(getPsalmsFor('matins', 'friday').map((r) => r.number));
     expect(fallback.parts.some((p) => p.kind === 'te-deum')).toBe(true);
     expect(fallback.parts.some((p) => p.kind === 'canticle')).toBe(false);
   });
