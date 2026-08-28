@@ -1,6 +1,7 @@
 import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart, ResolvedText } from './types';
 import type { LiturgicalDay, Weekday } from '../calendar/types';
 import { resolveEveningDay } from '../calendar/vespers';
+import { weekdayOf } from '../calendar/weekday';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
@@ -70,9 +71,16 @@ function psalmParts(group: VespersGroup, day: LiturgicalDay): ResolvedPart[] {
 /** The 4 weekday-variable psalm groups — no fixed leading/trailing psalm
  * the way Lauds has (Ps 66 / the Laudate psalms); Vespers is just these 4
  * groups in sequence. No per-feast override mechanism yet — see
- * hours/types.ts's 'vespers-psalmody' doc comment. */
-function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
-  const wd = vespersAntiphons[day.weekday];
+ * hours/types.ts's 'vespers-psalmody' doc comment. Deliberately keyed off
+ * `weekday` (today's actual calendar weekday), not `day.weekday` — `day`
+ * may be tomorrow's identity when tonight anticipates First Vespers (see
+ * resolveEveningDay), but the psalm cycle has no per-feast override and
+ * must stay on today's place in the fixed 6-day rotation regardless of
+ * whose office governs the evening's propers. `day` is still threaded
+ * into psalmParts for antiphon-fullness resolution, which does care who
+ * governs tonight. */
+function resolvePsalmody(day: LiturgicalDay, weekday: Weekday): ResolvedPart[] {
+  const wd = vespersAntiphons[weekday];
   return wd.groups.flatMap((group) => psalmParts(group, day));
 }
 
@@ -154,12 +162,12 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
   ];
 }
 
-function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
+function resolvePart(part: HourPart, day: LiturgicalDay, weekday: Weekday): ResolvedPart[] {
   switch (part.kind) {
     case 'opening-versicle':
       return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) }];
     case 'vespers-psalmody':
-      return resolvePsalmody(day);
+      return resolvePsalmody(day, weekday);
     case 'vespers-office':
       return resolveOffice(day);
     case 'magnificat': {
@@ -216,6 +224,10 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // vespers.ts) — getDayCollects picks that up for free, no special
   // handling needed here.
   const day = resolveEveningDay(date);
-  const parts = vespersDefinition.parts.flatMap((part) => resolvePart(part, day));
+  // Today's own weekday, independent of the possibly-anticipated `day`
+  // above — see resolvePsalmody's doc comment for why psalm selection
+  // must not follow the evening's borrowed identity.
+  const weekday = weekdayOf(date);
+  const parts = vespersDefinition.parts.flatMap((part) => resolvePart(part, day, weekday));
   return { hourId: 'vespers', date, parts, dayLabel: getDayLabel(day) };
 }

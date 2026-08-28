@@ -235,6 +235,20 @@ describe('resolveOrdo("vespers", ...)', () => {
     }
   });
 
+  it('keeps ferial psalmody on the actual calendar weekday even while the office anticipates tomorrow\'s First Vespers', () => {
+    // 2026-08-25 is a Tuesday, but its evening anticipates St. Zephyrinus's
+    // First Vespers (Aug 26) per the test just above -- the psalm cycle has
+    // no per-feast override (see hours/vespers.ts's resolvePsalmody), so it
+    // must stay on Tuesday's own group [129, 130, 131, 132], not slip to
+    // Wednesday's [134, 135, 136, 137] just because the office borrowed
+    // Wednesday's identity.
+    const ordo = resolveOrdo('vespers', '2026-08-25');
+    const psalmNumbers = ordo.parts
+      .filter((p) => p.kind === 'psalm')
+      .map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(psalmNumbers).toEqual([129, 130, 131, 132]);
+  });
+
   it("uses Common-of-Several-Martyrs' real office bundle on Ss. Placid and Companions' own day (Duplex II. classis, keeps own Vespers)", () => {
     // Live-verified against Divinum Officium (Monastic Tridentinum 1617)
     // votive=C3 -- see vespers-hymn-common-of-several-martyrs.yml's header.
