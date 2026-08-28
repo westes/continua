@@ -2000,12 +2000,30 @@ were real gaps with genuine, un-authored Lectio content:
 Both live-resolved correctly (`resolveOrdo` on 2026-12-15 and 2026-09-10) and `tsc --noEmit`/
 `npm test` (522 tests) both pass.
 
-**Scope of what's still open, not yet started**: three Christmas-week saint octaves
-(`st-stephen-protomartyr`, `st-john-apostle`, `holy-innocents`, Dec 26/27/28's own 8-day octaves)
-have **zero** `octave-readings` files at all — unlike the other fixed-date octaves, their date
-range overlaps Christmas's own already-authored Vespers/Lauds `octave-commemoration` blocks (see
-"Octave content — done" above, a different mechanism/hour), and it's not yet checked how much of
-that range has genuine Matins Lectio overrides vs. bare `vide` cross-references.
+### Christmas-week saint octaves (Stephen, John, Holy Innocents) — done (2026-08-28)
+
+`st-stephen-protomartyr`, `st-john-apostle`, `holy-innocents` (Dec 26/27/28's own 8-day octaves)
+had zero `octave-readings` files. Their date range overlaps Christmas's own already-authored
+Vespers/Lauds `octave-commemoration` blocks (see "Octave content — done" above) — a different
+hour/mechanism, not a substitute for Matins content. Checked every suffix file at every date in
+the three overlapping ranges (Dec 27–Jan 4): the intervening days (2-7) carry **no Lectio
+override at all** in the source — every suffix file found (`12-27o`, `12-28o`/`12-28r`,
+`12-29o`/`12-29r`, `12-31o`/`12-31r`; Dec 30 has no suffix file whatsoever) is a bare
+`@Sancti/MM-DD` alias, correctly left unauthored, same "vide-only, not a gap" pattern as the
+fixed-date octaves above — these three minor commemorations simply have no standing against
+Christmas week's own dominant office on those days. Only each octave's own closing/"In Octava"
+day carries real content: `st-stephen-protomartyr-octave-day-8` (Jan 2 — St. Augustine's own
+sermon on Stephen + St. Jerome on Matt 23:34-35), `st-john-apostle-octave-day-8` (Jan 3 —
+St. Augustine's Tractate 36 on John, the "eagle" imagery + St. John Chrysostom on John 21:20-24),
+`holy-innocents-octave-day-8` (Jan 4 — St. Augustine's own first sermon for Childermas +
+St. John Chrysostom on Matt 2:13-18). Holy Innocents' own Lectio4 closing sentence in the
+source's English is garbled into an incoherent fragment (a legal-term wordplay on "pledges,"
+"Pígnora sunt, non crédita, sed creáta...") — reconstructed to match the Latin, `en` marked
+`draft` for that file. `tsc --noEmit` and `npm test` (522 tests) both pass; live-verified via
+`activeOctavesFor`/`resolveOrdo` on 2027-01-02/03/04, confirming all three readings surface
+correctly (and don't collide) even on dates where two or three of these octaves are
+simultaneously active. This closes out the last open item from the "octave-readings audit"
+above — no octave-reading gaps remain open anywhere in the calendar.
 
 ### Movable-feast octaves (Ascension, Corpus Christi, Sacred Heart) — done (2026-08-28)
 
