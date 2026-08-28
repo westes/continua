@@ -94,13 +94,20 @@ across every hour and content type in this app.
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
    - Matins psalmody overrides for a Duplex+ weekday feast (see "Matins psalmody overrides"
-     below): mechanism refactored to category-keyed (`categories/*.yml` + `saints/*.yml`), five
-     categories authored (Common of a Martyr via St. Lawrence, Common of an Apostle via St.
-     Andrew, Common of a Confessor via St. Francis of Paola, Common of a Confessor-Bishop via
-     St. Basil the Great, Common of Several Martyrs — the largest single category by population,
-     40 saints/groups — via Ss. Fabian and Sebastian). Every other Common category (Virgin,
-     Doctor, Abbot, etc.) still falls back to the plain ferial weekday table, redistributed into
-     3 nocturns, until its own category's real psalmody is authored.
+     below): mechanism refactored to category-keyed (`categories/*.yml` + `saints/*.yml`), now
+     nine categories authored plus three genuine alias redirects (2026-08-27 pass, see "Matins
+     psalmody overrides — nine more categories" below): Martyr, Apostle (+ alias
+     Common-of-Apostles-plural), Confessor (+ aliases Common-of-an-Abbot and
+     Common-of-a-Confessor-not-Bishop), Confessor-Bishop, Several Martyrs, Virgin-Martyr, the
+     BVM, and a Dedication. Still open, with specific blockers found this pass (privileged-feria/
+     movable-feast collisions or calendar-track absences that ruled out the obvious
+     representative saint — see that section for detail rather than re-deriving): Virgin (plain,
+     not Virgin-Martyr), Widow, Confessor-Doctor, Confessor-Pope, Evangelist (partial data
+     pulled — a different full-psalm-per-nocturn structure than every other category here, needs
+     its own extraction pass), Holy-Woman (partial data pulled, needs a clean re-verify), an
+     Angel (not on the Monastic 1617 calendar on its expected date at all), Several Women
+     Martyrs, Several Confessors — all still fall back to the plain ferial weekday table,
+     redistributed into 3 nocturns.
    - The four "Commemoratio Octavæ" Ant+V/R+collect blocks (Christmas Octave's own
      Nativity/Stephen/John/Holy-Innocents commemorations, e.g. on Dec 30) are now done —
      see "Octave content" below. St. Frances of Rome's/
@@ -2897,6 +2904,87 @@ unauthored — 2029-01-17, confirmed clean). `npm test` (471 tests), `tsc --noEm
 **Still open**: Confessor-Not-a-Bishop [6], Confessor-Pope [3], Confessor-Doctor [4], Virgin [11],
 Virgin-Martyr [17], Abbot [16], Holy Woman [3], Widow [6], Angel [5], Evangelist [3], and the
 smaller one-off Commons — none has a category file yet.
+
+### Matins psalmody overrides — nine more categories, three genuine alias redirects (2026-08-27)
+
+Continued the category-keyed `matins-psalmody-overrides` sweep past the five already-authored
+categories (Martyr, Apostle, Confessor, Confessor-Bishop, Several Martyrs). Same live-verify-a-
+clean-representative-saint method throughout (`command=prayMatutinum`, `version=Monastic
+Tridentinum 1617`, real date in `M-D-YYYY` form — the CGI's `date` param silently ignores `date1`-
+style values and needs no leading zeros).
+
+**Two mechanism findings worth recording**, both discovered the hard way this pass:
+
+- The CGI's `votive=CN` parameter (documented in `horas.dialog`'s own `[votives]`/`[communes]`
+  index, e.g. `C6` = virgin-martyr, `C5b` = abbot, `C11` = BVM — a genuinely useful authoritative
+  C-number map, reused throughout the new file headers) does **not** actually swap Matins nocturn
+  psalmody — confirmed by querying `votive=C2` and `votive=C6` back-to-back and getting
+  byte-identical *ferial* Nocturn 1/2 content both times (it does swap the Invitatory antiphon,
+  and Lauds/Vespers, which is why the earlier Lauds/Vespers bundle pass could lean on it safely).
+  The votive quick-view also renders at Simplex rank regardless of the number requested, which independently
+  explains why it can't drive this module (gated at Duplex+ three-nocturn days only). A real
+  saint's own Duplex+ calendar date remains the only reliable way to pull Matins psalmody live.
+- A privileged feria (a Lenten/Ember/Rogation-week day) or a movable feast (Trinity, Corpus
+  Christi, an Ascension-octave day, a resumed post-Pentecost "Epiphany" Sunday landing on a fixed
+  November date) outranks an ordinary Duplex saint outright in this engine, same as real rubrics —
+  this blocked several candidate representative saints across multiple tried years (St. Albert the
+  Great, St. Gertrude, St. Robert Bellarmine, St. John Damascene, St. Pius V, St. Pius X, Ss.
+  Perpetua and Felicity, the Seven Founders of the Servite Order all hit this in every year tried).
+  Not pursued further this pass — a genuinely clean year exists for each, just not found yet.
+
+**Nine categories authored** (new `categories/*.yml` files, each with its own live-verified
+psalms/antiphons/versicles/canticle-refs, full provenance in its own header):
+
+- `common-of-a-virgin-martyr` — St. Justina (2026-10-07, Duplex, `propers: null`). Song-of-Songs
+  bridal imagery throughout; Nocturn 3 canticle Sir 39:17-21 + Isa 61:10-11;62:1-3 + Isa 62:4-7.
+- `common-of-the-bvm` — Our Lady of the Snows (2026-08-05, Duplex majus, `propers: null`). Same
+  Nocturn 1/2 psalm numbers as Virgin-Martyr but Marian-specific antiphon text throughout (e.g.
+  "Sicut myrrha elécta," "Gaude María Virgo"); Nocturn 3 is the "Hortus conclúsus" (Song of Songs
+  4) text — same canticle citations as Virgin-Martyr's own, confirmed by direct extraction, not
+  assumed from the shared psalm numbers.
+- `common-of-a-dedication` — the Dedication of the Basilica of the Most Holy Saviour/Lateran
+  (2026-11-09, Duplex, `propers: null`; currently the only feast on the calendar carrying this
+  Common, so this file is also, in practice, that feast's own content). Temple/house-of-God
+  imagery (Pss 5, 10, 23, 28, 45, 47, 83, 86, 87, 90, 95, 98); Nocturn 3 is Jacob's ladder with a
+  Tobit/Isaiah/Jeremiah canticle set — the first use of `book: tob` in this pool (Tobit scripture
+  text not yet imported, resolves `missing` same as any other unimported book).
+
+**Three genuine full-redirect aliases** added to already-authored category files, live-verified
+byte-identical (psalms, antiphons, AND versicles, not just the psalm-number-only overlap already
+known between Confessor and Confessor-Bishop):
+
+- `common-of-a-confessor.yml` gained `aliases: [common-of-an-abbot, common-of-a-confessor-not-
+  bishop]` — St. Maurus (2026-01-15, Duplex II. classis) and St. Gall (2026-10-16, Duplex) for
+  Abbot; St. Francis of Assisi (2026-10-04, Duplex) and St. Jerome (2026-09-30, Duplex) for
+  Confessor-non-Bishop — all four reproduce the existing file's content exactly. (Reference votive
+  numbers C5/C5b both point to the same scheme per `horas.dialog`, consistent with this finding.)
+- `common-of-an-apostle.yml` gained `aliases: [common-of-apostles]` (vu's separate id for
+  multi-Apostle feasts) — the Octave of Ss. Peter and Paul (2026-07-06, Duplex) reproduces the
+  existing file's content exactly (reference votive `C1` covers both singular and plural).
+
+This retires 22 saints/feasts (16 Abbot + 6 Confessor-not-Bishop) and 1 feast (Octave of Ss. Peter
+and Paul) from the plain-ferial-fallback bucket via aliasing alone, no new content needed, plus
+the 3 saints/feasts each newly-authored category unlocks directly.
+
+`tests/hours/matins.test.ts`'s ferial-fallback proof used St. Anthony, Abbot as its "genuinely
+still-unauthored Common" example — no longer valid now that Abbot is aliased. Swapped to St.
+Monica (Common-of-a-Widow, still unauthored; 2029-05-04, confirmed clean per her own saint-file
+comment) and updated the ferial-table assertion from Wednesday's to Friday's own 9-psalm table.
+`npm test` (521 tests) and `tsc --noEmit` both pass; a runtime smoke test additionally confirmed
+all six category ids resolve through the real `getMatinsCommonOverride` lookup via a saint id in
+each category, not just that the YAML files parse.
+
+**Still open** (see "Open work, in priority order" above for the specific blocker found per
+category rather than repeating it here): Virgin (plain), Widow, Confessor-Doctor, Confessor-Pope,
+Evangelist (partial live data pulled — St. Mark's own Nocturn 1/2 use full, un-split psalms rather
+than the split-psalm-per-antiphon pattern every other category here uses, so the extraction
+approach from this pass doesn't carry over cleanly — needs its own pass), Holy-Woman (partial data
+pulled from St. Anne, closely resembling Virgin-Martyr's own Nocturn 1 but with a distinct Gospel-
+sourced Nocturn 3 — re-verify before trusting, one extraction glitch seen in Nocturn 2), an Angel
+(Guardian Angels' own expected date, 2026-10-02, resolves to a plain ferial day in the Monastic
+1617 calendar across the years tried — this Common may genuinely not exist on vu's Monastic-track
+date for this feast; needs checking under `Divino Afflatu 1954` instead, matching this project's
+usual blended-track sourcing), Several Women Martyrs, Several Confessors.
 
 ### Lauds/Vespers chapter-responsory-hymn-versicle bundle: rank-agnostic Common fallback (2026-08-25)
 
