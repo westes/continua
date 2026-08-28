@@ -159,16 +159,16 @@ terce:
     - { number: 119 }
     - { number: 120 }
     - { number: 121 }
-  wednesday: *gradual-terce
-  thursday: *gradual-terce
-  friday:
+  wednesday:
     - { number: 41 }
     - { number: 45 }
     - { number: 46 }
-  saturday:
+  thursday: *gradual-terce
+  friday:
     - { number: 69 }
     - { number: 74 }
     - { number: 81 }
+  saturday: *gradual-terce
 
 sext:
   sunday:
@@ -183,16 +183,16 @@ sext:
     - { number: 122 }
     - { number: 123 }
     - { number: 124 }
-  wednesday: *gradual-sext
-  thursday: *gradual-sext
-  friday:
+  wednesday:
     - { number: 51 }
     - { number: 52 }
     - { number: 53 }
-  saturday:
+  thursday: *gradual-sext
+  friday:
     - { number: 86 }
     - { number: 92 }
     - { number: 97 }
+  saturday: *gradual-sext
 
 none:
   sunday:
@@ -207,13 +207,13 @@ none:
     - { number: 125 }
     - { number: 126 }
     - { number: 127 }
-  wednesday: *gradual-none
-  thursday: *gradual-none
-  friday:
+  wednesday:
     - { number: 57 }
     - { number: 60 }
     - { number: 61 }
-  saturday:
+  thursday: *gradual-none
+  friday:
     - { number: 98 }
     - { number: 99 }
     - { number: 100 }
+  saturday: *gradual-none
