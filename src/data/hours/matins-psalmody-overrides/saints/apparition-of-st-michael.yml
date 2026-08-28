@@ -1,0 +1,78 @@
+# Transcribed directly from the reference engine's own source files
+# (Latin: web/www/horas/Latin/Sancti/05-08.txt, English:
+# web/www/horas/English/Sancti/05-08.txt), Monastic Tridentinum 1617
+# rubric (the untagged/default [Rank] block, "Duplex majus;;4;;" with no
+# "vide C" — fully proper content, not a Common). This is the first of
+# the 5 angel-feast proper-content files closing the "Common-of-an-Angel"
+# gap flagged in TODO.md's 2026-08-27 pass: that pass found there is no
+# Common-of-an-Angel in the reference engine at all (zero votive-index
+# entry, zero CommuneM cross-references) — every angel feast genuinely
+# has its own proper Matins content instead. This file supplies that
+# proper content directly, keyed by this saint's own id, not a category.
+#
+# Read from source, not a live HTML query, after a live `command=
+# prayMatutinum&date=5-8-2029` query's own crude text-extraction proved
+# unreliable (missed a genuine mid-Nocturn-1 antiphon change at Psalm 18,
+# and briefly mis-attributed Nocturn 3's own versicle to Nocturn 2 due to
+# how the rendered page interleaves them) — the raw [Ant Matutinum] field
+# below resolved both ambiguities unambiguously.
+#
+# Real structural finding, not a transcription gap: this feast's Nocturn
+# 3 has NO antiphon or canticle of its own in the source file at all —
+# `[Nocturn 3 Ant]`/an Old-Testament canticle set are simply absent;
+# Nocturn 3 goes straight from the "Nocturnus III" heading to the Pater
+# Noster, Lessons 7-9, and the Gospel pericope. Only `[Nocturn 3 Versum]`
+# exists (`@:Versum 3`), which happens to be word-for-word the same text
+# already authored as this feast's own Vespers versicle
+# (vespers-versicle-apparition-of-st-michael.yml) — the reference engine
+# genuinely reuses one versicle block across multiple hours of the same
+# day, not a copy-paste error on vu's part. `nocturn3` below therefore
+# carries only its `versicle`, with no `antiphon`/`canticles` fields —
+# the schema (`MatinsPsalmodyNocturn`) already allows this since only
+# `versicle` is required.
+#
+# May 8 always falls within Paschaltide (Easter's earliest possible date,
+# March 22, still leaves Pentecost at May 10 at the very earliest) — so
+# every "allelúja" below is a permanent, every-year feature of this
+# feast's Matins text, not a one-year artifact of the particular date
+# queried; already established the same way in this feast's own Lauds/
+# Vespers versicle files.
+id: apparition-of-st-michael
+nocturn1:
+  groups:
+    - psalms: [8, 10, 14]
+      antiphon:
+        la: "Concússum est mare, * et contrémuit terra, ubi Archángelus Míchaël descendébat de cælo, allelúja."
+        en: "The sea was moved and the earth quaked, when the Archangel Michael descended from heaven. Alleluia."
+    - psalms: [18, 23, 33]
+      antiphon:
+        la: "Míchaël Archángele, * veni in adjutórium pópulo Dei, allelúja."
+        en: "Archangel Michael, come to help God's people. Alleluia."
+  versicle:
+    v:
+      la: "Stetit Angelus juxta aram templi, allelúja."
+      en: "An Angel stood at the Altar of the Temple. Alleluia."
+    r:
+      la: "Habens thuríbulum áureum in manu sua, allelúja."
+      en: "Having a golden censer in his hand. Alleluia."
+nocturn2:
+  groups:
+    - psalms: [95, 96, 102]
+      antiphon:
+        la: "Angelus Archángelus Míchaël, * Dei núntius pro animábus justis, allelúja, allelúja."
+        en: "The Angel Michael the Archangel, he is the messenger whom God sendeth to all the souls of the righteous. Alleluia, Alleluia."
+  versicle:
+    v:
+      la: "Ascéndit fumus arómatum in conspéctu Dómini, allelúja."
+      en: "The smoke of the incense ascended up before the Lord. Alleluia."
+    r:
+      la: "De manu Angeli, allelúja."
+      en: "Out of the Angel's hand. Alleluia."
+nocturn3:
+  versicle:
+    v:
+      la: "In conspéctu Angelórum psallam tibi, Deus meus, allelúja."
+      en: "Before the Angels will I sing praise unto thee, O my God. Alleluia."
+    r:
+      la: "Adorábo ad templum sanctum tuum, et confitébor nómini tuo, allelúja."
+      en: "I will worship toward thy holy Temple, and praise thy Name. Alleluia."

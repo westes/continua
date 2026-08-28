@@ -1,0 +1,98 @@
+# Transcribed directly from the reference engine's own source files
+# (Latin: web/www/horas/Latin/Sancti/09-29.txt, English:
+# web/www/horas/English/Sancti/09-29.txt), Monastic Tridentinum 1617
+# rubric. Companion file to ../apparition-of-st-michael.yml — see that
+# file's own header for the "Common-of-an-Angel doesn't exist" context.
+#
+# **Correction to this saint's own calendar-file comment** (`src/data/
+# calendar/saints/st-michael.yml`, which says the two feasts' content is
+# "word-for-word identical" and that only the *collect* needed checking):
+# that claim holds for the Oratio (confirmed — 09-29.txt's own file has
+# no `[Oratio]` block at all, only `[Ant Matutinum]` and `[Lectio4]`
+# through `[Lectio9]` overrides, so the collect genuinely does fall back
+# to Apparition's via the file's own `ex Sancti/05-08` default), but the
+# Matins **psalmody antiphons are NOT shared** — 09-29.txt supplies its
+# own full set of 9 distinct proper antiphons (one per psalm, no repeats
+# across a group, unlike Apparition's grouped-repeat pattern), and
+# Lessons 4-9 are also this feast's own (St. Gregory's homily on the nine
+# choirs of Angels, not St. Bernard's). Only the Nocturn 1/2/3 **Versum**
+# (closing versicle) genuinely falls back unchanged to Apparition's own
+# (09-29.txt has no `[Nocturn N Versum]` override of its own) — reused
+# verbatim below, minus Apparition's Paschaltide alleluias, since Sept 29
+# is never in Paschaltide (Nocturn 2's third antiphon still keeps its own
+# built-in "allelúja, allelúja" — that's fixed text in the antiphon
+# itself, shared word-for-word with Apparition's own Nocturn 2 antiphon,
+# not a seasonal addition).
+#
+# Per this app's own established note (`hours/matins.ts`'s
+# `getMatinsSaintOverride`/`getMatinsPsalmodyOverride`, keyed off the
+# day's own resolved winner id, not the `propers` field), this file is
+# required even though `st-michael.yml`'s own comment records that this
+# feast's real rank (Duplex I. classis, "In dedicatione S. Michaëlis
+# Archangelis") has never won outright against a stronger day in any of
+# the 6 years spot-checked live — so this content may currently be
+# unreachable through the app's actual calendar resolution, but is
+# authored for completeness/correctness rather than left as a silent gap.
+id: st-michael
+nocturn1:
+  groups:
+    - psalms: [8]
+      antiphon:
+        la: "Concússum est mare, * et contrémuit terra, ubi Archángelus Míchaël descendébat de cælo."
+        en: "The sea was moved * and the earth quaked, when the Archangel Michael descended from heaven."
+    - psalms: [10]
+      antiphon:
+        la: "Laudémus Dóminum, * quem laudant Ángeli, quem Chérubim et Séraphim, Sanctus, Sanctus, Sanctus proclámant."
+        en: "Let us praise the Lord, * Whom the Angels do praise, unto Whom Cherubim and Seraphim do cry, Holy, Holy, Holy."
+    - psalms: [14]
+      antiphon:
+        la: "Ascéndit * fumus arómatum in conspéctu Dómini de manu Ángeli."
+        en: "The smoke of the incense ascended up * before the Lord, out of the Angel's hand."
+    - psalms: [18]
+      antiphon:
+        la: "Míchaël Archángele, * veni in adjutórium pópulo Dei."
+        en: "Archangel Michael, * come to help God's people."
+    - psalms: [23]
+      antiphon:
+        la: "Míchaël * præpósitus paradísi, quem honoríficant Angelórum cives."
+        en: "The Archangel Michael * is the Vice-Roy of Paradise, and the Angels that are the dwellers therein do hold him in worship."
+    - psalms: [33]
+      antiphon:
+        la: "Gloriósus * apparuísti in conspéctu Dómini: proptérea decórem índuit te Dóminus."
+        en: "Thou wast manifested in thy glory * in the Presence of the Lord. Therefore the Lord hath clothed thee with majesty."
+  versicle:
+    v:
+      la: "Stetit Angelus juxta aram templi."
+      en: "An Angel stood at the Altar of the Temple."
+    r:
+      la: "Habens thuríbulum áureum in manu sua."
+      en: "Having a golden censer in his hand."
+nocturn2:
+  groups:
+    - psalms: [95]
+      antiphon:
+        la: "Ángelus Archángelus Míchaël, * Dei núntius pro animábus justis, allelúja, allelúja."
+        en: "The Angel Michael the Archangel, * he is the messenger whom God sendeth to all the souls of the righteous. Alleluia, Alleluia."
+    - psalms: [96]
+      antiphon:
+        la: "Data sunt ei * incénsa multa, ut adoléret ea ante altáre áureum, quod est ante óculos Dómini."
+        en: "There was given unto him * much incense, that he should offer it upon the golden altar which is before the eyes of the Lord."
+    - psalms: [102]
+      antiphon:
+        la: "Multa magnália * de Michaéle Archángelo, qui, fortis in prǽlio, fecit victóriam."
+        en: "Great things are spoken * of Michael the Archangel, who waxed valiant in fight, and won the victory."
+  versicle:
+    v:
+      la: "Ascéndit fumus arómatum in conspéctu Dómini."
+      en: "The smoke of the incense ascended up before the Lord."
+    r:
+      la: "De manu Angeli."
+      en: "Out of the Angel's hand."
+nocturn3:
+  versicle:
+    v:
+      la: "In conspéctu Angelórum psallam tibi, Deus meus."
+      en: "Before the Angels will I sing praise unto thee, O my God."
+    r:
+      la: "Adorábo ad templum sanctum tuum, et confitébor nómini tuo."
+      en: "I will worship toward thy holy Temple, and praise thy Name."
