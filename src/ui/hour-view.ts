@@ -91,11 +91,39 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
       `;
     case 'lesson':
       return `
-        <section class="ordo-part ordo-part-lesson${part.isGospel ? ' ordo-part-lesson-gospel' : ''}">
-          ${part.isGospel ? '<h3 class="ordo-part-label">Gospel</h3>' : renderLessonLabel(part.label, languages)}
+        <section class="ordo-part ordo-part-lesson">
+          ${renderLessonLabel(part.label, languages)}
           ${renderCitation(part.text)}
           ${renderColumns(part.text, languages)}
           ${part.responsory ? `<div class="ordo-part-responsory">${renderColumns(part.responsory, languages)}</div>` : ''}
+        </section>
+      `;
+    // A Gospel pericope, with its paired patristic homily (when authored)
+    // nested right after it in the same section rather than as a separate
+    // pool entry — see hours/matins.ts's buildReadingPool, which combines
+    // the two into one atomic part specifically so they can never end up in
+    // different nocturns. `part.source` (rare — see the 'gospel' type's own
+    // doc comment) is homily attribution already folded into the pericope's
+    // own text at the data layer; `part.homily`, when present, is a
+    // genuinely separate reading, rendered with its own label underneath.
+    case 'gospel':
+      return `
+        <section class="ordo-part ordo-part-lesson ordo-part-gospel">
+          <h3 class="ordo-part-label">Gospel</h3>
+          ${renderCitation(part.text)}
+          ${renderColumns(part.text, languages)}
+          ${part.source ? `<p class="ordo-part-citation">${escapeHtml(part.source)}</p>` : ''}
+          ${part.responsory ? `<div class="ordo-part-responsory">${renderColumns(part.responsory, languages)}</div>` : ''}
+          ${
+            part.homily
+              ? `
+            <div class="ordo-part-homily">
+              ${renderLessonLabel(part.homily.source, languages)}
+              ${renderColumns(part.homily.text, languages)}
+            </div>
+          `
+              : ''
+          }
         </section>
       `;
     case 'psalm': {

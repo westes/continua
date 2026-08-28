@@ -20,13 +20,6 @@ across every hour and content type in this app.
 1. **Mechanism gaps** — a real design/code piece not built yet, blocking any content pass on
    it from starting:
    - Easter's own octave — tabled, "a whole different discussion."
-   - Gospel pericope + paired homily rendered as one part: decided, not yet built. When a
-     Matins Nocturn 3 reading pairs a Gospel pericope with a patristic homily on it, render them
-     as two distinct parts, one after the other, with markup that visibly distinguishes pericope
-     from homily (not concatenated into a single `lesson` text as now). A bible-plan Gospel
-     reading has no paired homily — it renders as just the pericope, which is correct as-is.
-     Needs a schema change (splitting `lesson`+`isGospel` into a Gospel part with an optional
-     homily part) and matching UI treatment in `hour-view.ts`.
    - Date picker: `day-nav.ts` currently only steps a day at a time (prev/next); there's no
      way to jump to an arbitrary date without walking there one day at a time or editing the
      URL. Needs a calendar-grid picker UI — open, not started.
@@ -3887,3 +3880,38 @@ Transfiguration, All Saints of the Benedictine Order). The same session also clo
 pass touched (see "Matins hymn gap closed for the same categories/saints" elsewhere in this
 file) — Matins hymns are a different mechanism from the Lauds/Vespers bundle and needed their
 own pass.
+
+### Gospel pericope + paired homily rendered as one part — done (2026-08-28)
+
+Closed the last open Matins mechanism gap. `ResolvedPart` gained its own `'gospel'` kind
+(`src/hours/types.ts`), replacing the old `lesson`+`isGospel` flag entirely — a Gospel pericope
+now carries an optional nested `homily` (`{ source?, text }`) instead of being a same-kind
+sibling `lesson` part next to it.
+
+The reason for nesting rather than keeping two adjacent pool entries: `distributeIntoNocturns`'s
+front-light 1/1/rest slicing (see "Reading distribution" elsewhere in this file) splits the
+reading pool by raw index, with no notion that two adjacent entries belong together — a Gospel
+pericope and its own homily, sourced as two separate array entries in
+`data/propers/nocturn-readings/*.yml`, could land in different nocturns purely by where they
+fell in the pool. Fixed at the pool-assembly step instead of patching the slicer:
+`buildReadingPool` (`src/hours/matins.ts`) now detects an `isGospel: true` NocturnReading
+immediately followed by a same-nocturn `isGospel: false` one and folds the pair into a single
+`gospel` pool entry before it ever reaches `distributeIntoNocturns` — the pairing is structural
+(one array element), not a convention the slicer has to know about. A bible-plan Gospel reading
+(never paired with a homily, per the user's own plan) becomes a bare `gospel` part with no
+`homily`, so it still gets the same "Gospel" UI treatment.
+
+One real data wrinkle surfaced, not touched: `chair-of-st-peter-at-rome.yml`'s Nocturn 3 has the
+homily prose already folded into the same `isGospel: true` entry's own `text` (an earlier, less
+clean authoring convention flagged in this file's own SanctiM-pass notes) rather than as a
+separate following reading — that file is left as-is per the earlier decision not to "fix" it;
+the new `'gospel'` type's `source` field (distinct from `homily`) exists specifically to carry
+that entry's own attribution without misrepresenting it as a separate homily reading.
+
+`hour-view.ts` renders the pericope with a "Gospel" heading, then the nested homily (when
+present) directly underneath in the same section, visually set off by a top border
+(`.ordo-part-homily` in `styles.css`) — one section, pericope then homily, rather than two
+separate `ordo-part` blocks that could be visually or structurally pulled apart.
+`tests/hours/matins.test.ts`'s Sunday proof (2026-09-06, Luke 7:11-16 + St. Augustine's homily)
+updated to assert against the new `gospel`/`homily` shape instead of two `isGospel`-flagged
+lessons. `npm test`/`npm run build` both pass.

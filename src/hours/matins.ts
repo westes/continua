@@ -515,8 +515,27 @@ function nocturnReadingPart(r: NocturnReading): ResolvedPart {
     kind: 'lesson',
     text: { text: r.text, status: r.status, citation: r.citation },
     label: r.source,
-    isGospel: r.isGospel,
     responsory: r.responsory ? { text: r.responsory, status: { la: 'verified', en: 'verified' } } : undefined,
+  };
+}
+
+/** Builds a single atomic 'gospel' pool entry from a Gospel-flagged
+ * NocturnReading, folding in `homily` (the immediately following reading in
+ * the same array, when it's a genuine separate homily on this pericope —
+ * see `buildReadingPool`'s own pairing check) as a nested field rather than
+ * a second pool entry. This is what makes the pairing structural: a single
+ * ResolvedPart can't be split across two nocturns by `distributeIntoNocturns`,
+ * whereas two adjacent pool entries could be (and, before this, sometimes
+ * were). */
+function gospelReadingPart(r: NocturnReading, homily: NocturnReading | undefined): ResolvedPart {
+  return {
+    kind: 'gospel',
+    text: { text: r.text, status: r.status, citation: r.citation },
+    source: r.source,
+    responsory: r.responsory ? { text: r.responsory, status: { la: 'verified', en: 'verified' } } : undefined,
+    homily: homily
+      ? { source: homily.source, text: { text: homily.text, status: homily.status, citation: homily.citation } }
+      : undefined,
   };
 }
 
@@ -538,12 +557,16 @@ function nocturnReadingPart(r: NocturnReading): ResolvedPart {
 function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string): ResolvedPart[] {
   const parts: ResolvedPart[] = [];
   for (const r of getBiblePlanReadings(temporalId, day.weekday, date)) {
-    parts.push({
-      kind: 'lesson',
-      text: { text: r.text, status: r.status, citation: r.citation },
-      isGospel: r.isGospel,
-      responsory: r.responsory ? { text: r.responsory, status: { la: 'verified', en: 'verified' } } : undefined,
-    });
+    const responsory = r.responsory ? { text: r.responsory, status: { la: 'verified' as const, en: 'verified' as const } } : undefined;
+    // The user's own reading plan never pairs a Gospel with a homily (see
+    // this file's own header) — a bare pericope, still its own 'gospel'
+    // kind so it gets the same distinguishing UI treatment as a proper
+    // Gospel+homily.
+    parts.push(
+      r.isGospel
+        ? { kind: 'gospel', text: { text: r.text, status: r.status, citation: r.citation }, responsory }
+        : { kind: 'lesson', text: { text: r.text, status: r.status, citation: r.citation }, responsory },
+    );
   }
   // Grouped by the reading's own `nocturn` tag (ascending), not by which id
   // contributed it — a later post-Pentecost Sunday's Nocturn 2 now comes
@@ -558,9 +581,25 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string):
   const ids = nocturnReadingIds(day, temporalId, date);
   const byNocturn = new Map<number, ResolvedPart[]>();
   for (const id of ids) {
-    for (const reading of getNocturnReadings(id)) {
+    const readings = getNocturnReadings(id);
+    for (let i = 0; i < readings.length; i++) {
+      const reading = readings[i]!;
       const bucket = byNocturn.get(reading.nocturn) ?? [];
-      bucket.push(nocturnReadingPart(reading));
+      if (reading.isGospel) {
+        // A genuine separate homily on this pericope is the very next
+        // reading in the same file, in the same nocturn, not itself flagged
+        // as a Gospel — the established authoring convention (see
+        // src/propers/nocturn-readings.ts's own header and this file's
+        // 'gospel' ResolvedPart doc comment). When found, fold it in and
+        // skip it as its own pool entry so the pair can never be split
+        // apart by distributeIntoNocturns.
+        const next = readings[i + 1];
+        const homily = next && !next.isGospel && next.nocturn === reading.nocturn ? next : undefined;
+        bucket.push(gospelReadingPart(reading, homily));
+        if (homily) i++;
+      } else {
+        bucket.push(nocturnReadingPart(reading));
+      }
       byNocturn.set(reading.nocturn, bucket);
     }
   }
@@ -574,7 +613,6 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string):
         kind: 'lesson',
         text: { text: reading.text, status: reading.status },
         label: reading.source,
-        isGospel: false,
         responsory: reading.responsory
           ? { text: reading.responsory, status: { la: 'verified', en: 'verified' } }
           : undefined,

@@ -247,24 +247,45 @@ export type ResolvedPart =
   // readings' own `source` is a genuine bilingual attribution (their
   // English title is a real translation of a Latin incipit, not an
   // editorial description written once) so `label` accepts either shape —
-  // see hour-view.ts's renderLessonLabel. `isGospel` flags a reading
-  // as a Gospel pericope (from either the user's own continuous-reading
-  // plan or the day's own proper Gospel+homily — never a Common-of-Saints
-  // fallback Gospel, which this app deliberately excludes for Matins, see
-  // hours/matins.ts) rather than a distinct part kind, since a Gospel
-  // reading is still fundamentally a lesson — just one worth marking.
-  // `responsory` is the short responsory said after the reading, when one
-  // was sourced (matched loosely by scriptural book for the user's own
-  // plan, live-queried directly for patristic/hagiographic readings) —
-  // absent, not fabricated, when none could be sourced.
+  // see hour-view.ts's renderLessonLabel. `responsory` is the short
+  // responsory said after the reading, when one was sourced (matched
+  // loosely by scriptural book for the user's own plan, live-queried
+  // directly for patristic/hagiographic readings) — absent, not
+  // fabricated, when none could be sourced. A Gospel pericope is never
+  // rendered with this kind — see 'gospel' below.
   | {
       kind: 'lesson';
       text: ResolvedText;
       label?: string | Partial<Record<string, string>>;
       nocturn?: number;
       source?: string;
-      isGospel?: boolean;
       responsory?: ResolvedText;
+    }
+  // Matins only. A Gospel pericope, from either the user's own continuous
+  // reading plan (no paired homily) or the day's own genuine proper
+  // Gospel+homily (src/propers/nocturn-readings.ts — never a
+  // Common-of-Saints fallback Gospel, which this app deliberately excludes
+  // for Matins, see hours/matins.ts). Split out from the generic 'lesson'
+  // kind (2026-08-28) so a Gospel and its paired homily can be modeled as
+  // one atomic part: when the source pairs a pericope with a patristic
+  // homily on it as two adjacent readings, hours/matins.ts's
+  // buildReadingPool combines them into a single 'gospel' part with
+  // `homily` nested, rather than two separate pool entries — this is what
+  // guarantees distributeIntoNocturns can never split a Gospel from its
+  // own homily across two different nocturns; the pool's earlier
+  // front-light 1/1/rest slicing could otherwise do exactly that. `source`
+  // is set only for the rare case where the pericope's own text already
+  // has homily prose folded into it at the data layer (an earlier, less
+  // clean authoring convention — see chair-of-st-peter-at-rome.yml's own
+  // header) — a genuinely separate homily reading, when authored, is
+  // `homily` instead.
+  | {
+      kind: 'gospel';
+      text: ResolvedText;
+      nocturn?: number;
+      source?: string;
+      responsory?: ResolvedText;
+      homily?: { source?: string; text: ResolvedText };
     };
 
 export interface ResolvedVerse {

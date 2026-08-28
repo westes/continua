@@ -146,35 +146,33 @@ describe('resolveOrdo("matins", ...) Sunday (3-nocturn) branch', () => {
     expect(citations).toContain('Sir 45');
   });
 
-  it('includes the real Nocturn 2 patristic reading (Gregory on Job) and Nocturn 3 Gospel + homily, both flagged correctly', () => {
-    const lessons = ordo.parts.filter(
-      (p) => p.kind === 'lesson',
-    ) as { label?: string; isGospel?: boolean; text: { text: { la?: string } } }[];
+  it('includes the real Nocturn 2 patristic reading (Gregory on Job) and Nocturn 3 Gospel + homily as one atomic gospel part', () => {
+    const lessons = ordo.parts.filter((p) => p.kind === 'lesson') as { label?: string }[];
     const gregory = lessons.find((l) => l.label?.includes('Gregory'));
     expect(gregory).toBeDefined();
-    expect(gregory?.isGospel).toBe(false);
 
-    const gospel = lessons.find((l) => l.isGospel);
-    expect(gospel).toBeDefined();
-    expect(gospel?.text.text.la).toContain('Naim');
-
-    const homily = lessons.find((l) => l.label?.includes('Augustine'));
-    expect(homily).toBeDefined();
-    expect(homily?.isGospel).toBe(false);
+    const gospels = ordo.parts.filter((p) => p.kind === 'gospel') as {
+      text: { text: { la?: string } };
+      homily?: { source?: string; text: { text: { la?: string } } };
+    }[];
+    expect(gospels).toHaveLength(1);
+    const gospel = gospels[0]!;
+    expect(gospel.text.text.la).toContain('Naim');
+    expect(gospel.homily?.source).toContain('Augustine');
+    expect(gospel.homily?.text.text.la).toBeTruthy();
   });
 
-  it('never sources a Gospel from a Common-of-Saints fallback — every Gospel-flagged reading traces to the bible-plan or a real proper', () => {
-    const lessons = ordo.parts.filter((p) => p.kind === 'lesson') as { isGospel?: boolean; label?: string }[];
-    const gospels = lessons.filter((l) => l.isGospel);
+  it('never sources a Gospel from a Common-of-Saints fallback — the only gospel part traces to the bible-plan or a real proper', () => {
+    const gospels = ordo.parts.filter((p) => p.kind === 'gospel');
     // This Sunday's own TSV row deliberately has no Gospel (confirmed
-    // editorial choice) — the only Gospel-flagged reading should be the
-    // day's own proper Nocturn 3 Gospel, not a substituted Common one.
+    // editorial choice) — the only gospel part should be the day's own
+    // proper Nocturn 3 Gospel, not a substituted Common one.
     expect(gospels).toHaveLength(1);
   });
 
-  it('orders Te Deum after every reading, and the day collect last', () => {
+  it('orders Te Deum after every reading (lesson or gospel), and the day collect last', () => {
     const teDeumIndex = ordo.parts.findIndex((p) => p.kind === 'te-deum');
-    const lastLessonIndex = ordo.parts.map((p) => p.kind).lastIndexOf('lesson');
+    const lastLessonIndex = ordo.parts.map((p) => p.kind).map((k, i) => ((k === 'lesson' || k === 'gospel') ? i : -1)).reduce((a, b) => Math.max(a, b), -1);
     const prayerIndex = ordo.parts.findIndex((p) => p.kind === 'prayer');
     expect(teDeumIndex).toBeGreaterThan(lastLessonIndex);
     expect(prayerIndex).toBeGreaterThan(teDeumIndex);
