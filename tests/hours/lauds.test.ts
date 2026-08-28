@@ -261,10 +261,11 @@ describe('resolveOrdo("lauds", ...)', () => {
     // source's own SanctiM/10-02.txt cross-references St. Michael's
     // Apparition (Sancti/05-08) directly for the chapter/responsory at
     // every hour -- real proper content, not a Common fallback. See
-    // lauds-capitulum-guardian-angels.yml's header.
+    // lauds-capitulum-guardian-angels.yml's header. St. Gabriel is NOT
+    // part of this group (see below) -- his own chapter is genuinely
+    // proper, not shared, despite sharing the same hymn.
     for (const [date, id] of [
       ['2026-10-02', 'guardian-angels'],
-      ['2026-03-24', 'st-gabriel-archangel'],
       ['2026-10-24', 'st-raphael-archangel'],
     ] as const) {
       const ordo = resolveOrdo('lauds', date);
@@ -273,6 +274,22 @@ describe('resolveOrdo("lauds", ...)', () => {
       const hymn = ordo.parts.find((p) => p.kind === 'hymn');
       expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined, id).toContain('Christe sanctórum decus Angelórum');
     }
+  });
+
+  it("resolves St. Gabriel's own genuinely proper chapter (Dan 9:21-22), not Apparition's", () => {
+    // lauds-capitulum-st-gabriel-archangel.yml previously carried
+    // Apparition's own capitulum ("Significávit Deus...") under
+    // Gabriel's id by mistake -- a copy-paste bug found while authoring
+    // his Matins psalmody (2026-08-28). His real Lauds/Vespers capitulum,
+    // read directly from Sancti/03-24.txt's own [Capitulum Laudes]
+    // block, is Daniel's account of the angel's visitation -- shares the
+    // hymn with the other Archangel feasts, but not this chapter.
+    const ordo = resolveOrdo('lauds', '2026-03-24');
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Dan 9:21-22');
+    expect(chapter?.kind === 'chapter' ? chapter.text.text.la : undefined).toContain('Ecce vir Gábriel');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Christe sanctórum decus Angelórum');
   });
 
   it("uses common-of-several-confessors's real office bundle (= Confessor-Not-Bishop content) on Ss. Seven Founders' own day", () => {
