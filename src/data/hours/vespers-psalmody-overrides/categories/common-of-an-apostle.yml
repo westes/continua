@@ -6,8 +6,14 @@
 # group of Apostles, e.g. Ss. Philip and James) under this same scheme --
 # both ids' existing vespers-hymn-*.yml office-bundle files already cite
 # the identical `votive=C1` source, so this is one scheme, not two.
+#
+# Also registers `common-of-an-evangelist`: St. Mark's and St. Luke's own
+# reference-engine rule files both say "ex C1a", and `votive=C1a` returned
+# byte-identical Lauds/Vespers psalmody to plain `votive=C1` (2026-08-28)
+# -- an Evangelist-not-Apostle genuinely reuses the Apostles' own scheme
+# in the Monastic tradition, not a separate Evangelist Common.
 id: common-of-an-apostle
-aliases: [common-of-apostles]
+aliases: [common-of-apostles, common-of-an-evangelist]
 groups:
   - psalms: [109]
     antiphon:
