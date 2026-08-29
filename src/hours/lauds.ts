@@ -50,18 +50,18 @@ interface PsalmodyBlock {
 const laudsAntiphons = laudsAntiphonsData as Record<Weekday, PsalmodyBlock>;
 
 /**
- * Two independent tiers, tried in order:
+ * Two independent tiers, tried in order, for a duplex-majus+ (or named-
+ * temporal) feast eligible to substitute its own psalm *numbers*, not
+ * just its antiphons — see resolvePsalmody below for the sub-duplex-majus
+ * case, which merges tier 1's antiphon text onto the ferial numbers
+ * instead of calling this at all:
  *
- * 1. **Proper** — this feast's own authored antiphons (per-feast, not
- *    per-Common — explicit choice), eligible at *any rank* via
- *    resolve-common.ts's getPsalmodyProperOverrideId. A saint's own real
- *    proper text is never gated behind rank — see that function's own
- *    doc comment for why this used to be wrongly bundled with tier 2's
- *    gate (fixed 2026-08-29).
- * 2. **Common category** — a generic-by-category substitute, still
- *    gated at duplex-majus+ via getOfficeOverrideId (a real, distinct,
- *    weaker tier: same conventional psalm numbers, not this feast's own
- *    text).
+ * 1. **Proper** — this feast's own authored antiphons+numbers (per-feast,
+ *    not per-Common — explicit choice), via resolve-common.ts's
+ *    getPsalmodyProperOverrideId.
+ * 2. **Common category** — a generic-by-category substitute, gated at
+ *    duplex-majus+ via getOfficeOverrideId (a real, distinct, weaker
+ *    tier: same conventional psalm numbers, not this feast's own text).
  *
  * Falls back to `undefined` — the plain weekday default — for an eligible
  * feast with no override authored yet in either tier, same honest
@@ -84,6 +84,35 @@ function getPsalmodyOverrideFor(day: LiturgicalDay): LaudsPsalmodyOverride | und
   }
   const categoryId = getOfficeOverrideId(day);
   return categoryId ? getLaudsCommonOverride(categoryId) : undefined;
+}
+
+/**
+ * Below duplex-majus, a feast's own proper psalm *numbers* never
+ * substitute for the ferial cycle (real Tridentine/Monastic rubric: only
+ * a strong-enough feast gets proper psalms — a lesser one keeps the
+ * ferial psalmody unchanged and gets its own proper text only at the
+ * Benedictus antiphon and chapter/responsory/hymn/versicle bundle,
+ * already-separate rank-agnostic mechanisms in resolve-common.ts). But a
+ * saint's own authored antiphon text for these same psalm slots is still
+ * real content worth showing (getPsalmodyProperOverrideId's own "any
+ * rank" eligibility) — so it's layered onto the ferial numbers here
+ * instead of being discarded outright.
+ *
+ * A proper override's own group count doesn't always match the ferial
+ * weekday's (e.g. Saturday's Monastic 2-group split vs. the usual 3), so
+ * pairing is by index against `ferial`'s own groups/canticle/laudate:
+ * ferial's numbers (and canticle id/split) always win; each slot's
+ * antiphon comes from `proper`'s same-index entry when one exists, else
+ * stays ferial's own. Any extra `proper` groups beyond `ferial`'s count
+ * are simply unused — confirmed with the user 2026-08-29 rather than
+ * assumed, since there's no rubric covering this specific mismatch.
+ */
+function mergeFerialNumbersWithProperAntiphons(ferial: PsalmodyBlock, proper: LaudsPsalmodyOverride): PsalmodyBlock {
+  return {
+    groups: ferial.groups.map((g, i) => ({ psalms: g.psalms, antiphon: proper.groups[i]?.antiphon ?? g.antiphon })),
+    canticle: { ...ferial.canticle, antiphon: proper.canticle?.antiphon ?? ferial.canticle.antiphon },
+    laudate: { antiphon: proper.laudate?.antiphon ?? ferial.laudate.antiphon },
+  };
 }
 
 // Mon-Fri share one capitulum verbatim (confirmed against the live engine
@@ -149,10 +178,21 @@ function canticleText(canticleId: string, slice?: [number, number]): ResolvedTex
 }
 
 /** Ps 66 through the Laudate psalms — see hours/types.ts's 'lauds-psalmody'
- * doc comment for the scope, and getPsalmodyOverrideFor above for when the
- * plain weekday default below gets substituted. */
+ * doc comment for the scope, getPsalmodyOverrideFor above for when the
+ * plain weekday default gets substituted wholesale (numbers and
+ * antiphons together, duplex-majus+ only), and
+ * mergeFerialNumbersWithProperAntiphons for the sub-duplex-majus case
+ * (ferial numbers, a saint's own antiphon text layered on top). */
 function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
-  const wd = getPsalmodyOverrideFor(day) ?? laudsAntiphons[day.weekday];
+  const ferial = laudsAntiphons[day.weekday];
+  let wd: PsalmodyBlock;
+  if (getOfficeOverrideId(day)) {
+    wd = getPsalmodyOverrideFor(day) ?? ferial;
+  } else {
+    const properId = getPsalmodyProperOverrideId(day);
+    const proper = properId ? getLaudsSaintOverride(properId) : undefined;
+    wd = proper ? mergeFerialNumbersWithProperAntiphons(ferial, proper) : ferial;
+  }
   const winner = resolveOfficeWinner(day);
   const opening = (antiphon: BilingualText) => openingAntiphon(verifiedText(antiphon), winner);
   const parts: ResolvedPart[] = [
