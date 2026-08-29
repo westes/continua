@@ -1,0 +1,35 @@
+# Generic Common-of-a-Confessor-Bishop Lauds psalmody, live-verified
+# against Divinum Officium (Monastic Tridentinum 1617, command=prayLaudes,
+# votive=C4). Psalm numbers (92, 99, 62, Canticum Trium Puerorum) are the
+# same fixed Duplex-majus+ set used by every Common (see
+# hours/lauds-psalmody-overrides.ts's own doc comment) -- only these
+# antiphons are specific to this Common.
+#
+# `aliases` registers `common-of-a-confessor-doctor` under this same
+# scheme -- votive=C4a at Lauds is byte-identical to C4 for these same
+# slots (the only difference between C4 and C4a shows up in the
+# Magnificat antiphon, handled separately, not this psalmody table).
+id: common-of-a-confessor-bishop
+aliases: [common-of-a-confessor-doctor]
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Ecce sacérdos magnus, * qui in diébus suis plácuit Deo, et invéntus est iustus."
+      en: "Behold an high priest, * who in his days pleased God, and was found righteous."
+  - psalms: [99]
+    antiphon:
+      la: "Non est invéntus * símilis illi, qui conserváret legem Excélsi."
+      en: "None was found like unto him, * to keep the Law of the Most High."
+  - psalms: [62]
+    antiphon:
+      la: "Ideo iureiurándo * fecit illum Dóminus créscere in plebem suam."
+      en: "Therefore the Lord assured him * by an oath that He would multiply his seed among His people."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Sacerdótes Dei, * benedícite Dóminum: servi Dómini, hymnum dícite Deo. Allelúia."
+    en: "O all ye Priests of God, * bless ye the Lord O all ye servants of the Lord, sing praises unto our God."
+laudate:
+  antiphon:
+    la: "Serve bone * et fidélis, intra in gáudium Dómini tui."
+    en: "Good and faithful servant, * enter thou into the joy of thy Lord."

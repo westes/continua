@@ -1,0 +1,29 @@
+# Generic Common-of-the-BVM Lauds psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayLaudes,
+# votive=C11). Psalm numbers (92, 99, 62, Canticum Trium Puerorum) are
+# the same fixed Duplex-majus+ set used by every Common (see
+# hours/lauds-psalmody-overrides.ts's own doc comment) -- only these
+# antiphons are specific to this Common.
+id: common-of-the-bvm
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Dum esset Rex * in accúbitu suo, nardus mea dedit odórem suavitátis."
+      en: "While the King sitteth at his table, * my spikenard sendeth forth the smell thereof."
+  - psalms: [99]
+    antiphon:
+      la: "Læva eius * sub cápite meo, et déxtera illíus amplexábitur me."
+      en: "His left hand is under my head, * and his right hand doth embrace me."
+  - psalms: [62]
+    antiphon:
+      la: "Nigra sum, * sed formósa, fíliæ Ierúsalem; ídeo diléxit me Rex, et introdúxit me in cubículum suum."
+      en: "I am black but comely, * O ye daughters of Jerusalem; therefore hath the King loved me, and brought me into his chamber."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Iam hiems tránsiit, * imber ábiit et recéssit: surge, amíca mea, et veni."
+    en: "Lo the winter is past, * the rain is over and gone. Rise up, my love, and come away."
+laudate:
+  antiphon:
+    la: "Speciósa * facta es et suávis in delíciis tuis, sancta Dei Génetrix."
+    en: "O Holy Mother of God, thou art become beautiful * and gentle in thy gladness."

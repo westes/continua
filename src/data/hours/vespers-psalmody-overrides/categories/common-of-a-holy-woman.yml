@@ -1,0 +1,30 @@
+# Generic Common-of-a-Holy-Woman (Not-Virgin) Vespers psalmody, live-
+# verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, votive=C7, 2026-08-28). Same four psalm numbers
+# as Common-of-a-Virgin (109, 112, 121, 126) -- only the antiphons
+# differ, so this is deliberately its own category file rather than an
+# alias of common-of-a-virgin.
+#
+# `aliases` registers `common-of-a-widow` under this same scheme --
+# votive=C7 is the shared source for both ids' existing matins-hymn-*.yml
+# office-bundle files (see matins-hymn-common-of-a-widow.yml's own
+# header).
+id: common-of-a-holy-woman
+aliases: [common-of-a-widow]
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Dum esset Rex * in accúbitu suo, nardus mea dedit odórem suavitátis."
+      en: "While the King sitteth at his table, * my spikenard sendeth forth the smell thereof."
+  - psalms: [112]
+    antiphon:
+      la: "In odórem * unguentórum tuórum cúrrimus: adolescéntulæ dilexérunt te nimis."
+      en: "We will run after thee, * in the savour of thy good ointments. The virgins love them exceedingly."
+  - psalms: [121]
+    antiphon:
+      la: "Iam hiems tránsiit, * imber ábiit et recéssit: surge, amíca mea, et veni."
+      en: "Lo the winter is past, * the rain is over and gone. Rise up, my love, and come away."
+  - psalms: [126]
+    antiphon:
+      la: "Ista est speciósa * inter fílias Ierúsalem."
+      en: "She is beautiful * among the daughters of Jerusalem."

@@ -5,6 +5,7 @@ import { weekdayOf } from '../calendar/weekday';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
+import { getVespersPsalmodyOverride } from './vespers-psalmody-overrides';
 import { applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
@@ -16,6 +17,7 @@ import {
   verifiedText,
   seasonalOfficeSuffix,
   isFerialOrVigil,
+  getOfficeOverrideId,
   resolveResponsory,
   resolveOfficeBundle,
   resolveSuffrages,
@@ -68,19 +70,35 @@ function psalmParts(group: VespersGroup, day: LiturgicalDay): ResolvedPart[] {
   return parts;
 }
 
+/** A duplex-majus+ saint's own proper Vespers psalmody (none authored
+ * yet), or their Common's (live-verified 2026-08-28, see
+ * hours/vespers-psalmody-overrides.ts's own doc comment for why this
+ * mechanism is genuinely per-Common — unlike Lauds, the psalm *numbers*
+ * themselves differ by Common here, not just the antiphons). Eligibility
+ * follows the evening's governing `day` (same getOfficeOverrideId test
+ * as the chapter/responsory/hymn/versicle bundle below) — a First
+ * Vespers of a majus+ feast should get that feast's own psalms, same as
+ * it gets that feast's own office. Falls back to `undefined` for an
+ * eligible feast with no override authored yet, same honest incremental-
+ * content convention as everywhere else. */
+function getPsalmodyOverrideFor(day: LiturgicalDay): VespersDay | undefined {
+  const id = getOfficeOverrideId(day);
+  return id ? getVespersPsalmodyOverride(id) : undefined;
+}
+
 /** The 4 weekday-variable psalm groups — no fixed leading/trailing psalm
  * the way Lauds has (Ps 66 / the Laudate psalms); Vespers is just these 4
- * groups in sequence. No per-feast override mechanism yet — see
- * hours/types.ts's 'vespers-psalmody' doc comment. Deliberately keyed off
- * `weekday` (today's actual calendar weekday), not `day.weekday` — `day`
- * may be tomorrow's identity when tonight anticipates First Vespers (see
- * resolveEveningDay), but the psalm cycle has no per-feast override and
- * must stay on today's place in the fixed 6-day rotation regardless of
- * whose office governs the evening's propers. `day` is still threaded
- * into psalmParts for antiphon-fullness resolution, which does care who
- * governs tonight. */
+ * groups in sequence, substituted wholesale by getPsalmodyOverrideFor
+ * above when eligible. Deliberately keyed off `weekday` (today's actual
+ * calendar weekday), not `day.weekday`, for the plain-ferial-fallback
+ * case — `day` may be tomorrow's identity when tonight anticipates First
+ * Vespers (see resolveEveningDay), but the ferial psalm cycle has no
+ * per-feast override of its own and must stay on today's place in the
+ * fixed 6-day rotation regardless of whose office governs the evening's
+ * propers. `day` is still threaded into psalmParts for antiphon-fullness
+ * resolution, which does care who governs tonight. */
 function resolvePsalmody(day: LiturgicalDay, weekday: Weekday): ResolvedPart[] {
-  const wd = vespersAntiphons[weekday];
+  const wd = getPsalmodyOverrideFor(day) ?? vespersAntiphons[weekday];
   return wd.groups.flatMap((group) => psalmParts(group, day));
 }
 

@@ -1,0 +1,29 @@
+# Generic Common-of-Several-Martyrs Lauds psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayLaudes,
+# votive=C3). Psalm numbers (92, 99, 62, Canticum Trium Puerorum) are the
+# same fixed Duplex-majus+ set used by every Common (see
+# hours/lauds-psalmody-overrides.ts's own doc comment) -- only these
+# antiphons (all plural "Sancti"/"Martyres") are specific to this Common.
+id: common-of-several-martyrs
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Omnes Sancti, * quanta passi sunt torménta, ut secúri pervenírent ad palmam martýrii."
+      en: "O how many torments have all the Saints suffered, * that they might attain safely unto the palm of martyrdom."
+  - psalms: [99]
+    antiphon:
+      la: "Cum palma * ad regna pervenérunt Sancti, corónas decóris meruérunt de manu Dei."
+      en: "The Saints have attained unto the kingdom, * with palms in their hands; they have earned crowns of Majesty from the Lord's hand."
+  - psalms: [62]
+    antiphon:
+      la: "Córpora Sanctórum * in pace sepúlta sunt: et vivent nómina eórum in ætérnum."
+      en: "The bodies of the Saints are buried in peace, * and their name liveth for evermore."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Mártyres Dómini * Dóminum benedícite in ætérnum."
+    en: "O all ye Martyrs of the Lord, bless ye the Lord * for ever."
+laudate:
+  antiphon:
+    la: "Mártyrum chorus * laudáte Dóminum de cælis, allelúia."
+    en: "O ye Martyrs, * praise ye the Lord from the heavens, praise Him with the dance, alleluia."

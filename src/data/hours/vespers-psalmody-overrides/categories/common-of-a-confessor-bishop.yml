@@ -1,0 +1,28 @@
+# Generic Common-of-a-Confessor-Bishop Vespers psalmody, live-verified
+# against Divinum Officium (Monastic Tridentinum 1617, command=
+# prayVespera, votive=C4, 2026-08-28).
+#
+# `aliases` registers `common-of-a-confessor-doctor` under this same
+# scheme -- `votive=C4a` at Vespers returned byte-identical psalms/
+# antiphons to `votive=C4` for these same four slots (only the
+# Magnificat antiphon differs, handled separately, not this psalmody
+# table).
+id: common-of-a-confessor-bishop
+aliases: [common-of-a-confessor-doctor]
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Ecce sacérdos magnus, * qui in diébus suis plácuit Deo, et invéntus est iustus."
+      en: "Behold an high priest, * who in his days pleased God, and was found righteous."
+  - psalms: [111]
+    antiphon:
+      la: "Non est invéntus * símilis illi, qui conserváret legem Excélsi."
+      en: "None was found like unto him, * to keep the Law of the Most High."
+  - psalms: [112]
+    antiphon:
+      la: "Ideo iureiurándo * fecit illum Dóminus créscere in plebem suam."
+      en: "Therefore the Lord assured him * by an oath that He would multiply his seed among His people."
+  - psalms: [131]
+    antiphon:
+      la: "Serve bone * et fidélis, intra in gáudium Dómini tui."
+      en: "Good and faithful servant, * enter thou into the joy of thy Lord."

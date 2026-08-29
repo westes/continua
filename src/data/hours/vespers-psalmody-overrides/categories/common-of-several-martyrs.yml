@@ -1,0 +1,24 @@
+# Generic Common-of-Several-Martyrs Vespers psalmody, live-verified
+# against Divinum Officium (Monastic Tridentinum 1617, command=
+# prayVespera, votive=C3, 2026-08-28). Same four psalm numbers as
+# Common-of-a-Martyr (109, 111, 112, 115) -- only the antiphons (all
+# plural "Sancti") differ, so this is deliberately its own category file
+# rather than an alias of common-of-a-martyr.
+id: common-of-several-martyrs
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Isti sunt Sancti, * qui pro testaménto Dei sua córpora tradidérunt, et in sánguine Agni lavérunt stolas suas."
+      en: "These men are holy, * for they have given up their bodies unto death for the sake of the covenant of their God, and have washed their robes in the Blood of the Lamb."
+  - psalms: [111]
+    antiphon:
+      la: "Sancti per fidem * vicérunt regna, operáti sunt iustítiam, adépti sunt repromissiónes."
+      en: "The Saints through faith subdued kingdoms, * wrought righteousness, obtained promises."
+  - psalms: [112]
+    antiphon:
+      la: "Sanctórum velut áquilæ * iuvéntus renovábitur: florébunt sicut lílium in civitáte Dómini."
+      en: "The youth of the Saints shall be renewed * like the eagle's they shall grow as the lily in the city of the Lord."
+  - psalms: [115]
+    antiphon:
+      la: "In cæléstibus regnis * Sanctórum habitátio est, et in ætérnum réquies eórum."
+      en: "In the heavenly kingdoms, * there is the dwelling of the Saints there shall be their rest for ever and ever."

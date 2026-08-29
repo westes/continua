@@ -1,0 +1,27 @@
+# Generic Common-of-a-Martyr Vespers psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayVespera,
+# votive=C2, 2026-08-28).
+#
+# `aliases` registers `common-of-a-martyr-bishop` under this same scheme
+# -- `votive=C2b` at Vespers returned byte-identical psalms/antiphons to
+# `votive=C2` for these same four slots (only the Magnificat antiphon
+# differs, handled separately, not this psalmody table).
+id: common-of-a-martyr
+aliases: [common-of-a-martyr-bishop]
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Qui me conféssus fúerit * coram homínibus, confitébor et ego eum coram Patre meo."
+      en: "Whosoever shall confess Me * before men, him will I confess also before My Father."
+  - psalms: [111]
+    antiphon:
+      la: "Qui séquitur me, * non ámbulat in ténebris, sed habébit lumen vitæ, dicit Dóminus."
+      en: "He that followeth Me * walketh not in darkness, but shall have the light of life, saith the Lord."
+  - psalms: [112]
+    antiphon:
+      la: "Qui mihi minístrat, * me sequátur: et ubi ego sum, illic sit et miníster meus."
+      en: "If any man serve Me, * let him follow Me and where I am, there shall also My servant be."
+  - psalms: [115]
+    antiphon:
+      la: "Volo Pater, * ut ubi ego sum, illic sit et miníster meus."
+      en: "Father, I will * that where I am, there shall also My servant be."

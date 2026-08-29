@@ -75,8 +75,14 @@ describe('resolveOrdo("vespers", ...)', () => {
   });
 
   it('joins Ps 115 and 116 under one shared antiphon on Monday', () => {
-    // 2026-08-17 is a Monday, in ordinary time.
-    const ordo = resolveOrdo('vespers', '2026-08-17');
+    // Not 2026-08-17: that Monday is actually the closing day of St.
+    // Lawrence's own octave (Aug 10-17, Duplex II. classis) -- now that
+    // Vespers has its own duplex-majus+ psalmody override (2026-08-28),
+    // that evening correctly gets Common-of-a-Martyr's own psalms
+    // instead of the plain ferial Monday set, same as Lauds' own
+    // octave-day override already did. 2026-09-28 is a Monday clear of
+    // any such collision.
+    const ordo = resolveOrdo('vespers', '2026-09-28');
     const psalmParts = ordo.parts.filter((p) => p.kind === 'psalm');
     const numbers = psalmParts.map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
     expect(numbers).toEqual([113, 114, 115, 116, 128]);
@@ -105,6 +111,58 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(firstHalf?.kind === 'psalm' ? firstHalf.verses.every((v) => v.n >= 1 && v.n <= 10) : false).toBe(true);
     expect(secondHalf?.kind === 'psalm' ? secondHalf.verses.every((v) => v.n >= 11 && v.n <= 24) : false).toBe(true);
     expect(secondHalf?.kind === 'psalm' ? secondHalf.antiphon : undefined).toBeUndefined();
+  });
+
+  it("uses Common-of-an-Apostle's own psalmody on St. Bartholomew's own day (Duplex II. classis, keeps own Vespers)", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+    // votive=C1), 2026-08-28 -- see data/hours/vespers-psalmody-overrides/
+    // categories/common-of-an-apostle.yml's own header. St. Bartholomew
+    // has no proper Vespers psalmody of his own authored yet, so this is
+    // his Common's own tier, not a per-feast override.
+    const ordo = resolveOrdo('vespers', '2026-08-24');
+    const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(numbers).toEqual([109, 112, 115, 138]);
+  });
+
+  it("uses Common-of-a-Martyr's own psalmody on St. Lawrence's octave closing day, not the plain ferial Monday default", () => {
+    // 2026-08-17 is the closing day of St. Lawrence's own octave (Aug
+    // 10-17, Duplex II. classis) -- resolveOfficeWinner substitutes his
+    // own identity there, so the new duplex-majus+ psalmody override
+    // (getOfficeOverrideId) picks up his Common (common-of-a-martyr) even
+    // though no per-feast Vespers override exists for him. See the
+    // "joins Ps 115 and 116" test above for why this date was moved off
+    // the plain-ferial-Monday proof.
+    const ordo = resolveOrdo('vespers', '2026-08-17');
+    const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(numbers).toEqual([109, 111, 112, 115]);
+  });
+
+  it("uses Common-of-a-Confessor-Bishop's own psalmody for St. Martin of Tours's First Vespers", () => {
+    // Not 2026-11-11 (his own day itself): St. Emilian (Nov 12, plain
+    // Duplex, below this override's duplex-majus+ threshold) claims First
+    // Vespers over Martin's own evening (Martin, Duplex Majus, falls
+    // short of keepsOwnSecondVespers's duplex-2-classis+ floor) -- so
+    // Nov 11's own evening resolves to Emilian's (below-threshold, plain
+    // ferial) identity instead, not Martin's. 2026-11-10 anticipates
+    // Martin's own First Vespers instead (Ss. Tryphon and Companions,
+    // Nov 10, plain Simplex, doesn't keep its own evening either), so
+    // that evening's governing day is Martin's, duplex-majus, eligible.
+    // Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+    // votive=C4), 2026-08-28 -- see data/hours/vespers-psalmody-overrides/
+    // categories/common-of-a-confessor-bishop.yml's own header.
+    const ordo = resolveOrdo('vespers', '2026-11-10');
+    const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(numbers).toEqual([109, 111, 112, 131]);
+  });
+
+  it('stays on the plain ferial default for a below-threshold feast (Semiduplex), even on its own kept evening', () => {
+    // 2026-08-08 (Ss. Cyriacus/Largus/Smaragdus, Semiduplex) is below the
+    // duplex-majus+ override threshold -- confirmed live against Divinum
+    // Officium, which also keeps this date on the plain ferial Saturday
+    // set, not any Common's own psalmody.
+    const ordo = resolveOrdo('vespers', '2026-08-08');
+    const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(numbers).toEqual([144, 145, 146, 147]);
   });
 
   it("uses the Assumption's own per-feast office override on her own Saturday, not the plain Saturday weekday default", () => {

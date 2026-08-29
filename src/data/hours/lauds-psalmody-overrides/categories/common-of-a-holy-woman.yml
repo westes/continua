@@ -1,0 +1,35 @@
+# Generic Common-of-a-Holy-Woman (Not-Virgin) Lauds psalmody, live-
+# verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayLaudes, votive=C7). Psalm numbers (92, 99, 62, Canticum
+# Trium Puerorum) are the same fixed Duplex-majus+ set used by every
+# Common (see hours/lauds-psalmody-overrides.ts's own doc comment) --
+# only these antiphons are specific to this Common.
+#
+# `aliases` registers `common-of-a-widow` under this same scheme --
+# votive=C7 is the shared source for both ids' existing matins-hymn-*.yml
+# office-bundle files (see matins-hymn-common-of-a-widow.yml's own
+# header).
+id: common-of-a-holy-woman
+aliases: [common-of-a-widow]
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Dum esset Rex * in accúbitu suo, nardus mea dedit odórem suavitátis."
+      en: "While the King sitteth at his table, * my spikenard sendeth forth the smell thereof."
+  - psalms: [99]
+    antiphon:
+      la: "In odórem * unguentórum tuórum cúrrimus: adolescéntulæ dilexérunt te nimis."
+      en: "We will run after thee, * in the savour of thy good ointments. The virgins love them exceedingly."
+  - psalms: [62]
+    antiphon:
+      la: "Iam hiems tránsiit, * imber ábiit et recéssit: surge, amíca mea, et veni."
+      en: "Lo the winter is past, * the rain is over and gone. Rise up, my love, and come away."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Veni, elécta mea, * et ponam in te thronum meum, allelúia."
+    en: "Come, O My chosen one, * and I will establish My throne in thee. Alleluia."
+laudate:
+  antiphon:
+    la: "Ista est speciósa * inter fílias Ierúsalem."
+    en: "She is beautiful * among the daughters of Jerusalem."

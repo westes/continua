@@ -48,6 +48,14 @@ across every hour and content type in this app.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
+   - Lauds/Vespers duplex-majus+ Common-category psalmody: 8 of 24 `SaintRecord.common`
+     categories authored (covering 16 ids via aliases) for both hours — see "Lauds/Vespers
+     duplex-majus+ Common-category psalmody" below. Remaining: `common-of-a-dedication`,
+     `common-of-an-angel`, `common-of-an-evangelist`, `common-of-a-vigil`,
+     `common-of-several-women-martyrs` (no votive code confirmed yet for any of these), plus
+     Vespers' own per-feast **proper** tier (`data/hours/vespers-psalmody-overrides/saints/`)
+     is mechanism-only, zero saints authored — unlike Lauds, no majus+ saint currently on the
+     calendar is known to have proper Vespers psalm antiphons distinct from their Common's.
 
 3. **Known, deliberate simplifications** — intentional, not bugs, no plan to revisit unless
    priorities change:
@@ -3915,3 +3923,77 @@ separate `ordo-part` blocks that could be visually or structurally pulled apart.
 `tests/hours/matins.test.ts`'s Sunday proof (2026-09-06, Luke 7:11-16 + St. Augustine's homily)
 updated to assert against the new `gospel`/`homily` shape instead of two `isGospel`-flagged
 lessons. `npm test`/`npm run build` both pass.
+
+### Vespers ferial psalmody weekday bug — fixed (2026-08-28)
+
+Vespers psalms on Monday-Saturday were silently following the *anticipated* (First-Vespers)
+day's weekday instead of the actual calendar date's weekday, on any evening where tomorrow
+claimed First Vespers (`hasFirstVespers` has no rank floor, so this fired on most such
+evenings). Root cause: `hours/vespers.ts`'s `resolvePsalmody` reused `resolveEveningDay`'s
+result — correct for propers/office (chapter/responsory/hymn/versicle/collects/Magnificat
+antiphon), which legitimately borrow tomorrow's identity — but the ferial psalm-distribution
+table has no per-feast override of its own, so it needs today's own place in the fixed 6-day
+cycle regardless of whose office governs the evening. Fixed by computing `weekdayOf(date)`
+(the actual calendar weekday, `calendar/weekday.ts`) separately in `resolveOrdo` and threading
+it through as its own parameter, used only for the psalm-table lookup; `resolveOffice`'s
+ferial-bundle fallback correctly keeps using the governing (possibly-anticipated) day's
+weekday, since that IS a legitimate per-office-bundle rule. Regression test:
+`tests/hours/vespers.test.ts`, 2026-08-25 (Tuesday anticipating St. Zephyrinus's Aug 26 First
+Vespers) — expects Tuesday's psalm group `[129, 130, 131, 132]`, not Wednesday's. `npm
+test`/`npm run build` both pass.
+
+### Lauds/Vespers duplex-majus+ Common-category psalmody — mechanism built, 8 categories authored (2026-08-28)
+
+Prompted by a design question: does it make sense to gate a Vespers psalm override at
+duplex-majus+, the same threshold Matins already uses? Checked against the live reference
+engine rather than assuming, and found two real, previously-undiscovered facts:
+
+- **Lauds already has this override** (`getPsalmodyOverrideFor`, duplex-majus+-gated), but only
+  a per-feast tier (`lauds-psalmody-overrides/*.yml`) — no per-Common fallback, so most
+  duplex-majus+ saints without their own authored proper fell straight through to the plain
+  ferial default even though the real rubric calls for an override. Confirmed live
+  (`votive=C1`..`C11`) that Lauds' override psalm *numbers* (92, 99, 62, Canticum Trium
+  Puerorum) are identical across every Common — only the antiphons vary — matching the existing
+  per-feast overrides' own doc comments (e.g. `st-lawrence.yml`'s note that its numbers "happen
+  to be the same 92/99/62... that most Common-of-Martyrs-shaped feasts reuse").
+- **Vespers had no psalmody-override mechanism at all** (flagged honestly in its own doc
+  comments as a known gap) — and unlike Lauds, its override psalm *numbers themselves* differ
+  by Common (Common-of-an-Apostle: 109/112/115/138; Common-of-a-Confessor-Bishop:
+  109/111/112/131; etc.), confirmed live the same way.
+
+Mechanism, mirroring `matins-psalmody-overrides.ts`'s existing saint/category two-tier
+precedent: `hours/lauds-psalmody-overrides.ts` gained a `categories` tier (`data/hours/
+lauds-psalmody-overrides/categories/*.yml`, keyed by `SaintRecord.common` with optional
+`aliases`) consulted after the existing per-feast tier — `getLaudsPsalmodyOverride` now does
+`getLaudsSaintOverride(id) ?? getLaudsCommonOverride(id)`, so `hours/lauds.ts` needed no changes
+at all. `hours/vespers-psalmody-overrides.ts` is a new file built from scratch with the
+identical saint/category shape (the saint tier is mechanism-only, zero files yet), wired into
+`hours/vespers.ts`'s `resolvePsalmody` via the same `getOfficeOverrideId` eligibility test
+`resolveOfficeBundle` already uses for the chapter/hymn bundle — eligibility follows the
+evening's *governing* day (so a First Vespers of a majus+ feast gets that feast's own psalms,
+same as it gets that feast's own office), while the plain-ferial-fallback path still uses the
+actual calendar weekday (see the bug fix above).
+
+**8 of 24 `SaintRecord.common` categories authored for both hours** (16 ids via aliases), each
+live-verified against Divinum Officium (Monastic Tridentinum 1617, `votive=C1`/`C2`/`C3`/`C4`/
+`C5`/`C6`/`C7`/`C11`, 2026-08-28): `common-of-an-apostle` (+`common-of-apostles`),
+`common-of-a-martyr` (+`common-of-a-martyr-bishop`), `common-of-several-martyrs`,
+`common-of-a-confessor-bishop` (+`common-of-a-confessor-doctor`),
+`common-of-a-confessor-not-bishop` (+`common-of-a-confessor`, `common-of-an-abbot`,
+`common-of-several-confessors`), `common-of-a-virgin` (+`common-of-a-virgin-martyr`),
+`common-of-a-holy-woman` (+`common-of-a-widow`), `common-of-the-bvm`. Remaining 5 categories
+(`common-of-a-dedication`, `common-of-an-angel`, `common-of-an-evangelist`,
+`common-of-a-vigil`, `common-of-several-women-martyrs`) have no confirmed votive code yet — see
+"Lauds/Vespers duplex-majus+ Common-category psalmody" in the Open-work list above.
+
+Regression tests added to both `tests/hours/lauds.test.ts` and `tests/hours/vespers.test.ts`:
+a real category-tier date per hour (Our Lady of Mount Carmel/St. Benedict/Ss. Placid and
+Companions for Lauds; St. Bartholomew/St. Lawrence's octave/St. Martin of Tours's First Vespers
+for Vespers — several needed a different date than their existing office-bundle tests once the
+actual governing evening was traced through `resolveEveningDay`/octave substitution), plus one
+below-threshold (Semiduplex/Duplex) negative case per hour confirming the plain ferial default
+still wins there. One pre-existing Vespers test (`2026-08-17`, "joins Ps 115 and 116... on
+Monday") had to move to a different date: that Monday turned out to be the closing day of St.
+Lawrence's own octave, which now correctly picks up Common-of-a-Martyr's psalms instead of the
+plain ferial set it was (incidentally, not intentionally) relying on before this mechanism
+existed. `npm test` (535 passed) and `npm run build` both pass.

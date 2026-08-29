@@ -1,13 +1,33 @@
+import { getSaintRecord } from '../calendar/feasts';
+
 /** Same shape as data/hours/lauds-antiphons.yml's per-weekday entries
  * (see hours/lauds.ts) — a whole-block substitute for the plain ferial
- * weekday psalmody, keyed by id: either a saint's own id (gated at
- * duplex-majus+, see hours/lauds.ts's getPsalmodyOverrideFor) or the
- * literal 'marian-saturday' (applies unconditionally whenever it wins).
- * Deliberately per-feast, not per-Common — explicit choice, even though
- * it means most duplex-majus+ saints across the year don't have one of
- * these authored yet and fall back to the plain weekday default until
- * they do (same "mechanism first, content incrementally" pattern as
- * everywhere else — not a bug, an expected, honest gap). */
+ * weekday psalmody. Two tiers, consulted in order by
+ * `getLaudsPsalmodyOverride` (mirrors matins-psalmody-overrides.ts's own
+ * saint/category split):
+ *
+ * 1. **Proper** — `data/hours/lauds-psalmody-overrides/*.yml`, keyed by a
+ *    saint's own id (gated at duplex-majus+, see hours/lauds.ts's
+ *    getPsalmodyOverrideFor) or the literal 'marian-saturday' (applies
+ *    unconditionally whenever it wins) — real proper antiphon text for a
+ *    saint who has one, live-verified.
+ * 2. **Common** — `data/hours/lauds-psalmody-overrides/categories/*.yml`,
+ *    one file per `SaintRecord.common` category (with optional `aliases`
+ *    for a second category id sharing the identical scheme, e.g. Common-
+ *    of-a-Confessor-Doctor reuses Common-of-a-Confessor-Bishop's Lauds
+ *    psalmody verbatim in the reference engine). Live-verified fact
+ *    (2026-08-28, `votive=C1`..`C11` queries): the psalm *numbers* here
+ *    (92, 99, 62, Canticum Trium Puerorum) are the same for every
+ *    Common — only the antiphons vary by category — which is exactly why
+ *    the existing per-feast overrides above (e.g. st-lawrence.yml) already
+ *    reuse those same three numbers with their own proper antiphons; the
+ *    category tier is just the generic version of that when no per-feast
+ *    proper has been authored yet.
+ *
+ * Falls through to the plain weekday default (data/hours/lauds-
+ * antiphons.yml) when neither tier has anything for this id — same
+ * "mechanism first, content incrementally" pattern as everywhere else,
+ * not a bug. */
 export interface LaudsPsalmodyOverride {
   id: string;
   groups: { psalms: number[]; antiphon: Partial<Record<string, string>> }[];
@@ -16,9 +36,16 @@ export interface LaudsPsalmodyOverride {
   canticle: { id: string; antiphon: Partial<Record<string, string>>; split?: number };
   laudate: { antiphon: Partial<Record<string, string>> };
 }
+export interface LaudsPsalmodyCategory extends LaudsPsalmodyOverride {
+  aliases?: string[];
+}
 
 const modules = import.meta.glob<{ default: LaudsPsalmodyOverride }>(
   '../data/hours/lauds-psalmody-overrides/*.yml',
+  { eager: true },
+);
+const categoryModules = import.meta.glob<{ default: LaudsPsalmodyCategory }>(
+  '../data/hours/lauds-psalmody-overrides/categories/*.yml',
   { eager: true },
 );
 
@@ -27,6 +54,27 @@ for (const mod of Object.values(modules)) {
   overrides.set(mod.default.id, mod.default);
 }
 
-export function getLaudsPsalmodyOverride(id: string): LaudsPsalmodyOverride | undefined {
+const categories = new Map<string, LaudsPsalmodyCategory>();
+for (const mod of Object.values(categoryModules)) {
+  categories.set(mod.default.id, mod.default);
+  for (const alias of mod.default.aliases ?? []) {
+    categories.set(alias, mod.default);
+  }
+}
+
+export function getLaudsPsalmodyOverride(id: string | undefined): LaudsPsalmodyOverride | undefined {
+  if (!id) return undefined;
+  return getLaudsSaintOverride(id) ?? getLaudsCommonOverride(id);
+}
+
+/** Saint-specific proper only, skipping the Common-category tier. */
+export function getLaudsSaintOverride(id: string | undefined): LaudsPsalmodyOverride | undefined {
+  if (!id) return undefined;
   return overrides.get(id);
+}
+
+/** Common-category lookup only, joining via `SaintRecord.common`. */
+export function getLaudsCommonOverride(id: string | undefined): LaudsPsalmodyOverride | undefined {
+  if (!id) return undefined;
+  return categories.get(getSaintRecord(id)?.common ?? '');
 }

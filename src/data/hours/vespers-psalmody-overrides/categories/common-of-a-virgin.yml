@@ -1,0 +1,27 @@
+# Generic Common-of-a-Virgin Vespers psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayVespera,
+# votive=C6, 2026-08-28).
+#
+# `aliases` registers `common-of-a-virgin-martyr` under this same scheme
+# -- votive=C6 is the shared source for both ids' existing office-bundle
+# files (see e.g. vespers-hymn-common-of-a-virgin-martyr.yml's own
+# header).
+id: common-of-a-virgin
+aliases: [common-of-a-virgin-martyr]
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Hæc est Virgo sápiens, * et una de número prudéntum."
+      en: "This is one of the wise virgins, * one chosen out of the number of the careful."
+  - psalms: [112]
+    antiphon:
+      la: "Hæc est Virgo sápiens, * quam Dóminus vigilántem invénit."
+      en: "This is one of the wise virgins, * whom the Lord found watching."
+  - psalms: [121]
+    antiphon:
+      la: "Hæc est quæ nescívit * torum in delícto: habébit fructum in respectióne animárum sanctárum."
+      en: "This, is one which hath not known the sinful bed, * she shall have fruit in the visitation of holy souls."
+  - psalms: [126]
+    antiphon:
+      la: "Ista est speciósa * inter fílias Ierúsalem."
+      en: "She is beautiful * among the daughters of Jerusalem."

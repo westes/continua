@@ -1,0 +1,35 @@
+# Generic Common-of-a-Martyr Lauds psalmody, live-verified against
+# Divinum Officium (Monastic Tridentinum 1617, command=prayLaudes,
+# votive=C2). Psalm numbers (92, 99, 62, Canticum Trium Puerorum) are the
+# same fixed Duplex-majus+ set used by every Common (see
+# hours/lauds-psalmody-overrides.ts's own doc comment) -- only these
+# antiphons are Martyr-specific.
+#
+# `aliases` registers `common-of-a-martyr-bishop` under this same scheme
+# -- votive=C2b at Lauds is byte-identical to C2 for these same slots
+# (matches matins-psalmody-overrides/categories/common-of-a-martyr.yml's
+# own finding that the two categories share one Matins scheme too).
+id: common-of-a-martyr
+aliases: [common-of-a-martyr-bishop]
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Qui me conféssus fúerit * coram homínibus, confitébor et ego eum coram Patre meo."
+      en: "Whosoever shall confess Me * before men, him will I confess also before My Father."
+  - psalms: [99]
+    antiphon:
+      la: "Qui séquitur me, * non ámbulat in ténebris, sed habébit lumen vitæ, dicit Dóminus."
+      en: "He that followeth Me * walketh not in darkness, but shall have the light of life, saith the Lord."
+  - psalms: [62]
+    antiphon:
+      la: "Qui mihi minístrat, * me sequátur: et ubi ego sum, illic sit et miníster meus."
+      en: "If any man serve Me, * let him follow Me and where I am, there shall also My servant be."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Si quis mihi ministráverit, * honorificábit eum Pater meus, qui est in cælis, dicit Dóminus."
+    en: "If any man serve Me, * him will My Father, who is in heaven, honour."
+laudate:
+  antiphon:
+    la: "Volo Pater, * ut ubi ego sum, illic sit et miníster meus."
+    en: "Father, I will * that where I am, there shall also My servant be."

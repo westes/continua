@@ -315,6 +315,52 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('O gloriósa Dómina');
   });
 
+  it("uses Common-of-the-BVM's own psalmody (92, 99, 62 antiphons + Trium Puerorum) on Our Lady of Mount Carmel's own day, not the ferial default", () => {
+    // Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+    // votive=C11), 2026-08-28 -- see data/hours/lauds-psalmody-overrides/
+    // categories/common-of-the-bvm.yml's own header. Same date as the
+    // office-bundle test just above; she has no per-feast Lauds psalmody
+    // override authored, so this is her Common's own tier.
+    const ordo = resolveOrdo('lauds', '2026-07-16');
+    const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(numbers).toEqual([66, 92, 99, 62, 148, 149, 150]);
+    const canticle = ordo.parts.find((p) => p.kind === 'canticle' && p.canticleId === 'canticum-trium-puerorum');
+    expect(canticle).toBeDefined();
+  });
+
+  it("uses Common-of-an-Abbot's own psalmody on St. Benedict's own day, not the ferial default (his proper chapter/hymn is separate, see below)", () => {
+    // St. Benedict (duplex-1-classis, common-of-an-abbot) has his own
+    // proper chapter/hymn (see the test below) but no per-feast Lauds
+    // psalmody override, so his psalm numbers/antiphons fall to his
+    // Common's own tier -- live-verified against Divinum Officium
+    // (Monastic Tridentinum 1617, votive=C5), 2026-08-28. Same clean year
+    // as the proper-chapter test below.
+    const ordo = resolveOrdo('lauds', '2033-03-21');
+    const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(numbers).toEqual([66, 92, 99, 62, 148, 149, 150]);
+  });
+
+  it("uses Common-of-Several-Martyrs' own psalmody on Ss. Placid and Companions' own day, not the ferial default", () => {
+    // 2026-10-05, Duplex II. classis, common-of-several-martyrs, no
+    // per-feast Lauds psalmody override authored -- same date as
+    // vespers.test.ts's own office-bundle proof for this Common.
+    // Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+    // votive=C3), 2026-08-28.
+    const ordo = resolveOrdo('lauds', '2026-10-05');
+    const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(numbers).toEqual([66, 92, 99, 62, 148, 149, 150]);
+  });
+
+  it('stays on the plain ferial default for a below-threshold feast (Duplex), even with a Common that has its own category psalmody', () => {
+    // St. Jerome (Sept 30, plain Duplex, common-of-a-confessor-not-bishop)
+    // is below the duplex-majus+ override threshold -- confirmed live
+    // against Divinum Officium, which keeps this date on the plain
+    // ferial Wednesday set, not his Common's own psalmody.
+    const ordo = resolveOrdo('lauds', '2026-09-30');
+    const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(numbers).toEqual([66, 50, 63, 64, 148, 149, 150]);
+  });
+
   it("resolves St. Gregory the Great's own proper chapter/hymn, not a Common fallback", () => {
     // Live-verified against Divinum Officium (Monastic Tridentinum
     // 1617), 2033-03-12 (clean year). See lauds-capitulum-st-gregory-
