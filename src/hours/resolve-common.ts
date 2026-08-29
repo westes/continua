@@ -181,6 +181,34 @@ export function getOfficeOverrideId(day: LiturgicalDay): string | undefined {
 }
 
 /**
+ * The id to look up for today's winner's own *proper* Lauds/Vespers
+ * psalmody antiphons (`hours/lauds.ts`'s and `hours/vespers.ts`'s own
+ * `getPsalmodyOverrideFor`) — eligible at **any rank**, unlike
+ * `getOfficeOverrideId` above. A saint's own authored proper antiphon
+ * text isn't something rank should ever gate — rank only has standing to
+ * gate the weaker, generic Common-category substitute (still looked up
+ * via `getOfficeOverrideId`'s duplex-majus+ threshold, a real distinct
+ * tier: same conventional psalm numbers, a generic-by-category antiphon,
+ * not this feast's own text). Mirrors `getMinorHourOverrideId`'s identical
+ * "any sanctoral winner is eligible, it's the caller that decides whether
+ * anything's actually authored for the id" reasoning — the psalmody
+ * override table previously reused `getOfficeOverrideId`'s single
+ * duplex-majus+ gate for both its proper and Common tiers at once, which
+ * silently discarded a proper antiphon whenever it happened to be
+ * authored for a sub-duplex-majus feast (fixed 2026-08-29).
+ */
+export function getPsalmodyProperOverrideId(day: LiturgicalDay): string | undefined {
+  const winner = resolveOfficeWinner(day);
+  if (winner.kind === 'temporal' && ALWAYS_OVERRIDE_TEMPORAL_IDS.has(winner.id)) {
+    return winner.id;
+  }
+  if (winner.kind === 'sanctoral') {
+    return winner.id;
+  }
+  return undefined;
+}
+
+/**
  * The id to look up for today's office winner's (resolveOfficeWinner)
  * minor-hour content (antiphon + chapter) — `${hourId}-antiphon-${id}`/
  * `${hourId}-capitulum-${id}` first (a per-saint proper file, only ever

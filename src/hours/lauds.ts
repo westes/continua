@@ -4,7 +4,7 @@ import { resolveDay } from '../calendar';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getCanticle } from './lauds-canticles';
-import { getLaudsPsalmodyOverride, type LaudsPsalmodyOverride } from './lauds-psalmody-overrides';
+import { getLaudsSaintOverride, getLaudsCommonOverride, type LaudsPsalmodyOverride } from './lauds-psalmody-overrides';
 import { getOpeningVersicleId } from './opening-versicle';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { applyFlexaMark } from './antiphon';
@@ -19,6 +19,7 @@ import {
   seasonalOfficeSuffix,
   isFerialOrVigil,
   getOfficeOverrideId,
+  getPsalmodyProperOverrideId,
   resolveResponsory,
   resolveOfficeBundle,
   resolveSuffrages,
@@ -49,24 +50,40 @@ interface PsalmodyBlock {
 const laudsAntiphons = laudsAntiphonsData as Record<Weekday, PsalmodyBlock>;
 
 /**
- * A duplex-majus+ saint's own proper psalmody (per-feast, not per-Common —
- * explicit choice), or one of the named temporal feasts eligible via
- * resolve-common.ts's getOfficeOverrideId. Falls back to `undefined` — the
- * plain weekday default — for an eligible feast with no override authored
- * yet, same honest incremental-content convention as everywhere else in
- * this codebase; it's not gated behind whether content exists, just
- * behind whether it's *eligible* to override at all.
+ * Two independent tiers, tried in order:
  *
- * getOfficeOverrideId itself checks resolveOfficeWinner(day), not the raw
- * `day.winner` — on an octave day this is the octave's own feast (e.g. St.
- * Lawrence, days 2-8 of his own octave), which is exactly what should
- * supply the psalmody override there too, live-verified alongside the
- * collect/Benedictus-antiphon fix (see resolve-common.ts's
+ * 1. **Proper** — this feast's own authored antiphons (per-feast, not
+ *    per-Common — explicit choice), eligible at *any rank* via
+ *    resolve-common.ts's getPsalmodyProperOverrideId. A saint's own real
+ *    proper text is never gated behind rank — see that function's own
+ *    doc comment for why this used to be wrongly bundled with tier 2's
+ *    gate (fixed 2026-08-29).
+ * 2. **Common category** — a generic-by-category substitute, still
+ *    gated at duplex-majus+ via getOfficeOverrideId (a real, distinct,
+ *    weaker tier: same conventional psalm numbers, not this feast's own
+ *    text).
+ *
+ * Falls back to `undefined` — the plain weekday default — for an eligible
+ * feast with no override authored yet in either tier, same honest
+ * incremental-content convention as everywhere else in this codebase;
+ * it's not gated behind whether content exists, just behind whether it's
+ * *eligible* to override at all.
+ *
+ * Both id-eligibility functions check resolveOfficeWinner(day), not the
+ * raw `day.winner` — on an octave day this is the octave's own feast
+ * (e.g. St. Lawrence, days 2-8 of his own octave), which is exactly what
+ * should supply the psalmody override there too, live-verified alongside
+ * the collect/Benedictus-antiphon fix (see resolve-common.ts's
  * resolveOfficeWinner doc comment).
  */
 function getPsalmodyOverrideFor(day: LiturgicalDay): LaudsPsalmodyOverride | undefined {
-  const id = getOfficeOverrideId(day);
-  return id ? getLaudsPsalmodyOverride(id) : undefined;
+  const properId = getPsalmodyProperOverrideId(day);
+  const proper = properId ? getLaudsSaintOverride(properId) : undefined;
+  if (proper) {
+    return proper;
+  }
+  const categoryId = getOfficeOverrideId(day);
+  return categoryId ? getLaudsCommonOverride(categoryId) : undefined;
 }
 
 // Mon-Fri share one capitulum verbatim (confirmed against the live engine
