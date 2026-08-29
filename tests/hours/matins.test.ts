@@ -596,6 +596,16 @@ describe('resolveOrdo("matins", ...) invitatory antiphon doubling by rank', () =
     expect(openingAntiphonLatin('2026-08-24')).toContain('Regem Apostolórum Dóminum, * Veníte');
   });
 
+  it("the Beheading of St. John the Baptist (2026-08-29, common corrected from apostle to martyr) opens with the martyr Common's invitatory antiphon, not the apostle one", () => {
+    // Regression test: decollation-of-st-john-baptist.yml's `common` field
+    // used to be common-of-an-apostle (a mistaken placeholder -- he isn't
+    // an apostle), which leaked into the Matins invitatory. Corrected to
+    // common-of-a-martyr, matching the file's own already-correct
+    // `minorHoursCommon`.
+    expect(openingAntiphonLatin('2026-08-29')).toContain('Regem Mártyrum Dóminum, * Veníte');
+    expect(openingAntiphonLatin('2026-08-29')).not.toContain('Regem Apostolórum');
+  });
+
   it('a plain ferial day opens with the incipit only', () => {
     expect(openingAntiphonLatin(FERIAL_DATE)).not.toContain('Exsultémus');
   });

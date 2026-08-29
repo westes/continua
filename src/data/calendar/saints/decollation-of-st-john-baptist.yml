@@ -2,14 +2,11 @@
 # kalendar check (2025-08-29) -- winner outright, Duplex, over the stub
 # St. Sabina (see st-sabina.yml). About St. John the Baptist's beheading,
 # not a feast of the Lord/BVM, so kept in scope like his Nativity in June.
-# "common-of-an-apostle" is a loose fit (he isn't one) but the closest
-# existing category to "a major male saint honored with his own high
-# feast" -- same judgment call as nativity-of-st-john-the-baptist.yml.
 # Own proper collect and antiphon.
 id: decollation-of-st-john-baptist
 name: "The Beheading of St. John the Baptist"
 rank: duplex
-common: common-of-an-apostle
+common: common-of-a-martyr
 propers: "decollation-of-st-john-baptist"
 # P/T/S/N: no [Ant Prima]/etc of its own in the source (08-29.txt) --
 # [Rule]/[Rank] point to Commune/C2a instead, the same C-number family

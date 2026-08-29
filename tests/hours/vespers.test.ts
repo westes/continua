@@ -456,14 +456,17 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Iste Conféssor Dómini sacrátus');
   });
 
-  it("uses common-of-an-apostle's real office bundle for the Beheading of St. John the Baptist's First Vespers", () => {
+  it("uses common-of-a-martyr's real office bundle for the Beheading of St. John the Baptist's First Vespers", () => {
     // Live-verified against Divinum Officium (Monastic Tridentinum 1617)
-    // votive=C1 -- see vespers-hymn-common-of-an-apostle.yml's header.
+    // votive=C2 -- see vespers-hymn-common-of-a-martyr.yml's header.
+    // decollation-of-st-john-baptist.yml's own `common` field was
+    // corrected from common-of-an-apostle to common-of-a-martyr (he
+    // isn't an apostle; his own `minorHoursCommon` already agreed).
     const ordo = resolveOrdo('vespers', '2026-08-28');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
-    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Eph 2:19-20');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Jas 1:12');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
-    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Exsúltet cælum láudibus');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Deus tuórum mílitum');
   });
 
   it("no longer gives St. Margaret of Scotland First Vespers now that Corpus Christi's own octave is modeled", () => {

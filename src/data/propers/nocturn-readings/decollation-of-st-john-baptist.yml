@@ -7,13 +7,18 @@
 # web/www/horas/Latin/Sancti/08-29.txt, English/Sancti/08-29.txt.
 #
 # Nocturn 2: Lectio4-6 (St. Ambrose's treatise On Virgins) combined
-# into one reading, one continuous excerpt.
+# into one reading, one continuous excerpt. Its closing responsory
+# ([Responsory6], marked &Gloria) is genuine proper text, not a
+# Commune reference, so it's authored below.
 # Nocturn 3: Lectio7's Gospel citation (Mark 6:17-29) is a bare
 # incipit ("Et réliqua") with no full pericope text given, so — per
 # the pre-1955 pass's convention of not transcribing bare incipits —
 # only the homily portion is authored (not marked isGospel), combined
 # with Lectio8 as one continuous excerpt of St. Augustine's sermon.
-# No responsory given for either reading.
+# [Responsory4], [Responsory7], [Responsory8] are all genuine Commune
+# references (@Commune/C2a:Responsory2/5/6 -- Common of a Martyr, per
+# decollation-of-st-john-baptist.yml's own `common` field), so Nocturn
+# 3 correctly has no proper responsory of its own.
 id: decollation-of-st-john-baptist
 readings:
   - nocturn: 2
@@ -82,6 +87,9 @@ readings:
         silent now, can repeat no more the denunciation which thou couldest not bear to hear, and
         still thou art afraid of it.
     status: { la: verified, en: verified }
+    responsory:
+      la: "R. Honéstum fecit illum Dóminus, et custodívit eum ab inimícis, et a seductóribus tutávit illum: * Et dedit illi claritátem ætérnam.\nV. Descendítque cum illo in fóveam, et in vínculis non derelíquit eum.\nR. Et dedit illi claritátem ætérnam."
+      en: "R. The Lord made him honourable, and kept him from his enemies, and defended him from seducers: * and gave him everlasting glory.\nV. He went down with him into the pit, and left him not in bonds.\nR. And gave him everlasting glory."
 
   - nocturn: 3
     isGospel: false
