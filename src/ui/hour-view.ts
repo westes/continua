@@ -26,12 +26,18 @@ function renderColumns(resolved: ResolvedText | ResolvedVerse, languages: readon
 }
 
 // Scripture quotations always carry a full citation (book, chapter, verse) —
-// shown once, deduplicated across languages when they happen to match.
-function renderCitation(text: ResolvedText): string {
+// shown once per currently-displayed language, deduplicated when they
+// happen to match (e.g. a plain "Psalm 118" citation reused verbatim in
+// both columns) — restricted to `languages` so a language-specific
+// abbreviation (Latin "Jac 1:12" vs. English "Jas 1:12") never leaks into
+// a single-language view.
+function renderCitation(text: ResolvedText, languages: readonly string[]): string {
   if (!text.citation) {
     return '';
   }
-  const values = [...new Set(Object.values(text.citation).filter((v): v is string => Boolean(v)))];
+  const values = [
+    ...new Set(languages.map((lang) => text.citation![lang]).filter((v): v is string => Boolean(v))),
+  ];
   return values.length ? `<p class="ordo-part-citation">${escapeHtml(values.join(' / '))}</p>` : '';
 }
 
@@ -64,7 +70,7 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
       return `
         <section class="ordo-part ordo-part-${part.kind}">
           <h3 class="ordo-part-label">${hourLabel(part.kind)}</h3>
-          ${renderCitation(part.text)}
+          ${renderCitation(part.text, languages)}
           ${renderColumns(part.text, languages)}
         </section>
       `;
@@ -93,7 +99,7 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
       return `
         <section class="ordo-part ordo-part-lesson">
           ${renderLessonLabel(part.label, languages)}
-          ${renderCitation(part.text)}
+          ${renderCitation(part.text, languages)}
           ${renderColumns(part.text, languages)}
           ${part.responsory ? `<div class="ordo-part-responsory">${renderColumns(part.responsory, languages)}</div>` : ''}
         </section>
@@ -110,7 +116,7 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
       return `
         <section class="ordo-part ordo-part-lesson ordo-part-gospel">
           <h3 class="ordo-part-label">Gospel</h3>
-          ${renderCitation(part.text)}
+          ${renderCitation(part.text, languages)}
           ${renderColumns(part.text, languages)}
           ${part.source ? `<p class="ordo-part-citation">${escapeHtml(part.source)}</p>` : ''}
           ${part.responsory ? `<div class="ordo-part-responsory">${renderColumns(part.responsory, languages)}</div>` : ''}
@@ -170,7 +176,7 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
         <section class="ordo-part ordo-part-canticle">
           ${part.antiphon ? renderColumns(part.antiphon, languages) : ''}
           <h3 class="ordo-part-label lang-columns lang-columns-${languages.length}">${titleCols}</h3>
-          ${renderCitation(part.text)}
+          ${renderCitation(part.text, languages)}
           ${renderColumns(part.text, languages)}
           ${part.gloriaPatri ? `<div class="ordo-part-gloria-patri">${renderColumns(part.gloriaPatri, languages)}</div>` : ''}
         </section>
