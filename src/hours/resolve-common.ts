@@ -542,7 +542,16 @@ function sanctoralCommemorationPart(commemoration: Extract<Commemoration, { kind
     if (combined.status.la !== 'missing' || combined.status.en !== 'missing') {
       return { kind: 'preces', text: combined, label };
     }
-    return { kind: 'preces', text: resolveCommon(`${saint.propers}-collect`), label };
+    const properCollect = resolveCommon(`${saint.propers}-collect`);
+    if (properCollect.status.la !== 'missing' || properCollect.status.en !== 'missing') {
+      return { kind: 'preces', text: properCollect, label };
+    }
+  }
+  if (saint?.collectCommon && saint.collectName) {
+    const template = resolveCommon(saint.collectCommon);
+    if (template.status.la !== 'missing' || template.status.en !== 'missing') {
+      return { kind: 'preces', text: substituteName(template, saint.collectName), label };
+    }
   }
   return { kind: 'preces', text: { text: {}, status: { la: 'missing', en: 'missing' } }, label };
 }
