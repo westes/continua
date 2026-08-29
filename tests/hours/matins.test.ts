@@ -705,3 +705,37 @@ describe('resolveOrdo("matins", ...) remaining Common categories\' Matins hymns 
     expect(hymnLatin('2026-08-06')).toContain('Quicúmque Christum quǽritis');
   });
 });
+
+describe('resolveOrdo("matins", ...) Nativity of St. John the Baptist (2026-06-24) real proper content', () => {
+  // Regression test: nativity-of-st-john-the-baptist.yml's `common`
+  // field (common-of-an-apostle) used to leak into the invitatory, hymn,
+  // and Nocturn psalmody since no proper override existed for any of
+  // them. The reference engine assigns this feast no Commune at all, so
+  // real proper text was authored for each instead of swapping the
+  // Common id.
+  const ordo = resolveOrdo('matins', '2026-06-24');
+
+  it("resolves the invitatory antiphon to its own proper text, not the apostle Common's", () => {
+    const antiphonParts = ordo.parts.filter((p) => p.kind === 'antiphon') as { text: { text: Record<string, string> } }[];
+    const invitatoryLatin = antiphonParts[0]?.text.text.la;
+    expect(invitatoryLatin).toContain('Regem Præcursóris Dóminum');
+    expect(invitatoryLatin).not.toContain('Regem Apostolórum');
+  });
+
+  it("resolves the Matins hymn to its own proper text, not the apostle Common's", () => {
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn') as { text: { text: { la: string } } } | undefined;
+    expect(hymn?.text.text.la).toContain('Antra desérti téneris sub annis');
+    expect(hymn?.text.text.la).not.toContain('Ætérna Christi múnera');
+  });
+
+  it("resolves Nocturn 1/2 psalmody to its own proper antiphons over the shared Sunday psalm pool, not the apostle Common's antiphons", () => {
+    const psalms = ordo.parts.filter((p) => p.kind === 'psalm') as {
+      psalmNumber: number;
+      antiphon?: { text: Record<string, string> };
+    }[];
+    const psalm1 = psalms.find((p) => p.psalmNumber === 1);
+    const psalm63 = psalms.find((p) => p.psalmNumber === 63);
+    expect(psalm1?.antiphon?.text.la).toContain('Priúsquam te formárem');
+    expect(psalm63?.antiphon?.text.la).toContain('Nazarǽus');
+  });
+});

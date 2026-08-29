@@ -469,6 +469,24 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Deus tuórum mílitum');
   });
 
+  it("resolves the Nativity of St. John the Baptist's own proper Vespers psalmody (2026-06-24), not the apostle Common's", () => {
+    // Regression test: nativity-of-st-john-the-baptist.yml's `common`
+    // field (common-of-an-apostle) used to leak into Vespers psalmody
+    // since no proper override existed. The reference engine's own
+    // Second Vespers (live-verified) uses only 4 psalms (109/110/111/112),
+    // each with its own proper antiphon.
+    const ordo = resolveOrdo('vespers', '2026-06-24');
+    const psalms = ordo.parts.filter((p) => p.kind === 'psalm') as {
+      psalmNumber: number;
+      antiphon?: { text: Record<string, string> };
+    }[];
+    const psalm109 = psalms.find((p) => p.psalmNumber === 109);
+    const psalm112 = psalms.find((p) => p.psalmNumber === 112);
+    expect(psalm109?.antiphon?.text.la).toContain('Elísabeth Zacharíæ');
+    expect(psalm112?.antiphon?.text.la).toContain('Tu, puer');
+    expect(psalms.some((p) => p.antiphon?.text.la?.includes('Cóllocet eum'))).toBe(false);
+  });
+
   it("no longer gives St. Margaret of Scotland First Vespers now that Corpus Christi's own octave is modeled", () => {
     // St. Margaret of Scotland (Jun 10, Semiduplex, common-of-a-widow --
     // content itself live-verified 2026-08-26 to be real, identical to

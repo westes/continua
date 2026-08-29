@@ -1,0 +1,104 @@
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayMatutinum, 2026-06-24). This feast's reference file
+# (Sancti/06-24.txt) says "Psalmi Dominica" (use Sunday's own psalm
+# pool), and the live render confirms it: Nocturn 1's psalm numbers
+# (1,2,4,5,8,10) and Nocturn 2's (14,20,33,63,64,91) are St. Lawrence's
+# own psalm sets exactly (see st-lawrence.yml's own note that this pool
+# is shared, not unique to one saint) -- only the antiphon text is
+# proper to this feast. Nocturn 3 uses the same three canticles already
+# authored for St. Lawrence (Eccli 14:22;15:3-4;15:6 / Jer 17:7-8 /
+# Eccli 31:8-11 -- data/scripture/{sir-14,sir-15,jer-17,sir-31}.yml,
+# reused verbatim, not re-transcribed), but under a single proper
+# antiphon repeated across all three canticles (the live render shows
+# one antiphon, not three), unlike Lawrence's own distinct nocturn-3
+# antiphon. No `category` cross-reference here (unlike st-lawrence.yml's
+# own `common-of-a-martyr`) since this feast draws on no Commune at all
+# -- see nativity-of-st-john-the-baptist.yml's own `common` field comment
+# in data/calendar/saints/.
+id: nativity-of-st-john-the-baptist
+nocturn1:
+  groups:
+    - psalms: [1]
+      antiphon:
+        la: "Priúsquam te formárem * in útero, novi te; et ántequam progrederéris, sanctificávi te."
+        en: "Before I formed thee in the belly, I knew thee, * and before thou camest forth out of the womb, I sanctified thee."
+    - psalms: [2]
+      antiphon:
+        la: "Ad ómnia quæ mittam te, * dicit Dóminus, ibis: ne tímeas, et quæ mandávero tibi, loquéris ad eos."
+        en: "The Lord said unto me: Thou shalt go to all that I shall send thee; * fear not; and whatsoever I command thee, thou shalt speak."
+    - psalms: [4]
+      antiphon:
+        la: "Ne tímeas * a fácie eórum, quia ego tecum sum, dicit Dóminus."
+        en: "Be not afraid of their faces; * for I am with thee, saith the Lord."
+    - psalms: [5]
+      antiphon:
+        la: "Misit Dóminus * manum suam, et tétigit os meum, et prophétam in géntibus dedit me Dóminus."
+        en: "The Lord put forth His hand, and touched my mouth, * and the Lord ordained me a Prophet unto the nations."
+    - psalms: [8]
+      antiphon:
+        la: "Ecce dedi verba mea * in ore tuo: ecce constítui te super gentes et regna."
+        en: "Behold, I have put My words in thy mouth; * see, I have this day set thee over the nations, and over the kingdoms."
+    - psalms: [10]
+      antiphon:
+        la: "Dóminus * ab útero vocávit me, de ventre matris meæ recordátus est nóminis mei."
+        en: "The Lord hath called me from the womb; * from the bowels of my mother hath He made mention of my name."
+  versicle:
+    v:
+      la: "Fuit homo missus a Deo."
+      en: "There was a man sent from God."
+    r:
+      la: "Cui nomen erat Joánnes."
+      en: "Whose name was John."
+nocturn2:
+  groups:
+    - psalms: [14]
+      antiphon:
+        la: "Pósuit os meum * Dóminus quasi gládium acútum: sub umbra manus suæ protéxit me."
+        en: "The Lord hath made my mouth * like a sharp sword; in the shadow of His hand hath He hid me."
+    - psalms: [20]
+      antiphon:
+        la: "Formans me * ex útero servum sibi Dóminus, dicit: Dedi te in lucem géntium, ut sis salus mea usque ad extrémum terræ."
+        en: "And now, saith the Lord That formed me from the womb * to be His servant: I will also give thee for a light to the Gentiles, that thou mayest be My salvation unto the end of the earth."
+    - psalms: [33]
+      antiphon:
+        la: "Reges vidébunt, * et consúrgent príncipes et adorábunt Dóminum Deum tuum, qui elégit te."
+        en: "Kings shall see, and princes shall arise, and worship the Lord thy God, Who hath chosen thee."
+    - psalms: [63]
+      antiphon:
+        la: "Nazarǽus * vocábitur puer iste: vinum et síceram non bibet, et omne immúndum non manducábit ex útero matris suæ."
+        en: "The child shall be called a Nazarite. He shall drink neither wine nor strong drink, neither shall he eat any unclean thing, even from his mother's womb."
+    - psalms: [64]
+      antiphon:
+        la: "Erit enim * magnus coram Dómino: nam et manus ejus cum ipso est."
+        en: "For he shall be great before the Lord: for his hand is with him."
+    - psalms: [91]
+      antiphon:
+        la: "Ipse præíbit * ante illum in spíritu et virtúte Elíæ paráre Dómino plebem perféctam."
+        en: "He shall go before him in the spirit and power of Elias, to make ready a people prepared for the Lord."
+  versicle:
+    v:
+      la: "Inter natos mulíerum non surréxit major."
+      en: "Among them that are born of women there hath not risen a greater."
+    r:
+      la: "Joánne Baptísta."
+      en: "Than John the Baptist."
+nocturn3:
+  antiphon:
+    la: "Descéndit * angelus Dómini ad Zacharíam, dicens: Accípe púerum in senectúte tua, et habébit nomen Joánnes Baptísta."
+    en: "The angel of the Lord descended to Zacharias, saying: Accept this child in your old age, and his name will be John the Baptist."
+  canticles:
+    - refs:
+        - { book: sir, chapter: 14, verses: "22" }
+        - { book: sir, chapter: 15, verses: "3-4" }
+        - { book: sir, chapter: 15, verses: "6" }
+    - refs:
+        - { book: jer, chapter: 17, verses: "7-8" }
+    - refs:
+        - { book: sir, chapter: 31, verses: "8-11" }
+  versicle:
+    v:
+      la: "Elísabeth Zacharíæ magnum virum génuit."
+      en: "Elizabeth, the wife of Zacharias, was the mother of a mighty man."
+    r:
+      la: "Joánnem Baptístam, præcursórem Dómini."
+      en: "Even of John the Baptist, the Fore-runner of the Lord."

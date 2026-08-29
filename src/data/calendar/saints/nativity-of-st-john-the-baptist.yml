@@ -3,10 +3,19 @@
 # classis, the highest rank pulled in this set. About St. John the
 # Baptist's own nativity, not a feast of the Lord/BVM, so kept in the
 # sanctoral store like the Conversion of St. Paul/Chair-of-Peter feasts
-# despite the very high rank. Own proper collect and antiphon. "common-
-# of-an-apostle" is a loose fit (he isn't one) but the closest existing
-# category to "a major male saint honored with his own high feast" --
-# worth reconsidering if a more precise category becomes worth adding.
+# despite the very high rank. Own proper collect and antiphon.
+#
+# `common: common-of-an-apostle` is a placeholder, not a liturgical
+# claim -- the reference engine assigns this feast no Commune at all
+# (every [Rule] line in Sancti/06-24.txt and SanctiM/06-24.txt points to
+# proper text, never a Commune category), so no better-fitting id exists
+# either. Now verified-inert: every part this field could ever be
+# consulted for (Matins invitatory/hymn/Nocturn psalmody, Vespers
+# psalmody, the Lauds/Vespers bundle, Benedictus antiphon, collect, all
+# four minor hours) has its own real proper text authored, so this field
+# is never actually reached by any resolver (see
+# data/hours/matins-psalmody-overrides/saints/nativity-of-st-john-the-baptist.yml's
+# own comment).
 id: nativity-of-st-john-the-baptist
 name: "The Nativity of St. John the Baptist"
 rank: duplex-1-classis

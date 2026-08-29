@@ -13,7 +13,13 @@
 # per the pre-1955 pass's convention of not transcribing bare incipits
 # — only the homily portion is authored (not marked isGospel),
 # combined with Lectio8-9 as one continuous excerpt of St. Ambrose's
-# commentary. No responsory given for either reading.
+# commentary.
+#
+# Both reading entries below carry their closing proper responsory:
+# Nocturn 2's is [Responsory6] (the last of Lectio4-6); Nocturn 3's is
+# [Responsory8] (the last of Lectio7-9 that has one — [Responsory9]
+# doesn't exist, since Te Deum is sung after Lectio9 at this
+# Duplex-1-classis rank).
 id: nativity-of-st-john-the-baptist
 readings:
   - nocturn: 2
@@ -85,6 +91,9 @@ readings:
         Lord. And this is why John said of himself: I am the voice of one crying in the
         wilderness, Make straight the way of the Lord.
     status: { la: verified, en: verified }
+    responsory:
+      la: "R. Innuébant patri ejus quem vellet vocári eum: et póstulans pugillárem, scripsit dicens: * Joánnes est nomen ejus.\nV. Apértum est os Zacharíæ, et prophetávit dicens.\nR. Joánnes est nomen ejus."
+      en: "R. They made signs to his father, how he would have him called; and he asked for a writing-table, and wrote, saying: * His name is John.\nV. The mouth of Zacharias was opened, and he prophesied, saying:\nR. His name is John."
 
   - nocturn: 3
     isGospel: false
@@ -151,3 +160,6 @@ readings:
         had not heard, since it had been revealed to her by the same Holy Ghost Who had commanded
         the Angel to tell it.
     status: { la: verified, en: verified }
+    responsory:
+      la: "R. Gábriel Angelus appáruit Zacharíæ dicens: Nascétur tibi fílius, nomen ejus Joánnes vocábitur: * Et multi in nativitáte ejus gaudébunt.\nV. Erit enim magnus coram Dómino, vinum et síceram non bibet.\nR. Et multi in nativitáte ejus gaudébunt."
+      en: "R. The Angel Gabriel appeared unto Zacharias, and said thy wife Elizabeth shall bear thee a son, and thou shalt call his name John; * And many shall rejoice at his birth.\nV. For he shall be great in the sight of the Lord, and shall drink neither wine nor strong drink.\nR. And many shall rejoice at his birth."
