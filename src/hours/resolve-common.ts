@@ -7,6 +7,7 @@ import { resolveActiveOctave, activeOctavesFor, octaveGoverningPrivilegedDay, is
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { isInTriduum } from '../calendar/temporal';
 import { splitAntiphon, isDoubleOrHigher } from './antiphon';
+import { getLaudsSaintOverride } from './lauds-psalmody-overrides';
 import vespersMagnificatAntiphonsData from '../data/hours/vespers-magnificat-antiphons.yml';
 
 type BilingualText = Partial<Record<string, string>>;
@@ -356,19 +357,52 @@ function withPaschaltideAlleluia(resolved: ResolvedText, day: LiturgicalDay): Re
   return appendPaschaltideAlleluia(resolved);
 }
 
+// The reference engine's own `getanthoras()` (specials.pl): when a saint
+// has no dedicated per-hour minor-hour antiphon of its own, one is
+// derived from that saint's 5-antiphon Lauds/Vespers set (`[Ant Laudes]`,
+// which for most saints is `@:Ant Vespera`) by fixed index — Prime takes
+// the first (the same antiphon as the first psalm-group), Terce/Sext the
+// second/third, None the fifth (the Laudate antiphon); the fourth
+// (canticle) antiphon is never used for a minor hour. vu's own
+// `LaudsPsalmodyOverride` already stores that same 5-antiphon set in that
+// exact order (`groups[0..2]`, `canticle`, `laudate`), so once a saint's
+// Lauds proper is authored, no separate per-hour file is needed for this
+// tier — same "mechanism first, content incrementally" pattern as
+// everywhere else in this codebase.
+const MINOR_HOUR_LAUDS_ANTIPHON_INDEX: Record<string, number> = { prime: 0, terce: 1, sext: 2, none: 4 };
+
+function deriveMinorHourAntiphonFromLauds(hourId: string, overrideId: string): ResolvedText | undefined {
+  const index = MINOR_HOUR_LAUDS_ANTIPHON_INDEX[hourId];
+  if (index === undefined) {
+    return undefined;
+  }
+  const lauds = getLaudsSaintOverride(overrideId);
+  if (!lauds) {
+    return undefined;
+  }
+  const antiphon = index === 4 ? lauds.laudate.antiphon : lauds.groups[index]?.antiphon;
+  if (!antiphon) {
+    return undefined;
+  }
+  return verifiedText(antiphon);
+}
+
 /** A Little Hour's (or Prime's) plain per-weekday antiphon, overridden by
  * a duplex-majus+ feast's own proper (`${hourId}-antiphon-${id}`) when
- * authored, then by that saint's shared Common (`${hourId}-antiphon-
+ * authored, then by that saint's own Lauds/Vespers antiphon set (see
+ * `deriveMinorHourAntiphonFromLauds` above — a real liturgical derivation,
+ * not a guess), then by that saint's shared Common (`${hourId}-antiphon-
  * ${minorHoursCommon}`, see SaintRecord's own doc comment) — tried first
  * in its Paschaltide-variant form (`${minorHoursCommon}-paschaltide`)
  * when the day falls in Paschaltide and that variant has been authored,
- * per PASCHALTIDE_SEASONS's own doc comment — when a proper one hasn't
- * been authored — same honest "not gated behind whether content exists,
- * just eligible to override at all" fallback as every other override in
- * this codebase: an eligible feast with none of these authored yet just
- * falls through to the plain weekday default silently. The plain (non-
- * `-paschaltide`) Common fallback itself still picks up a seasonal change
- * in Paschaltide — see `withPaschaltideAlleluia`.
+ * per PASCHALTIDE_SEASONS's own doc comment — when neither of the first
+ * two has been authored — same honest "not gated behind whether content
+ * exists, just eligible to override at all" fallback as every other
+ * override in this codebase: an eligible feast with none of these
+ * authored yet just falls through to the plain weekday default silently.
+ * The plain (non-`-paschaltide`) Common fallback itself still picks up a
+ * seasonal change in Paschaltide — see `withPaschaltideAlleluia`. (The
+ * derived-from-Lauds tier does not get that treatment — see TODO.md.)
  */
 export function resolveMinorHourAntiphon(
   hourId: string,
@@ -380,6 +414,10 @@ export function resolveMinorHourAntiphon(
     const proper = resolveCommon(`${hourId}-antiphon-${overrideId}`);
     if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
       return proper;
+    }
+    const derived = deriveMinorHourAntiphonFromLauds(hourId, overrideId);
+    if (derived) {
+      return derived;
     }
     const commonId = getSaintRecord(overrideId)?.minorHoursCommon;
     if (commonId) {
