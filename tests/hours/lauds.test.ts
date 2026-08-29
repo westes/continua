@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { resolveOrdo } from '../../src/hours';
+import { getLaudsCommonOverride } from '../../src/hours/lauds-psalmody-overrides';
 
 // Clean ferial dates, one per weekday — see data/psalter-distribution.yml
 // and src/hours/lauds.ts's own generation-script provenance comments for
@@ -359,6 +360,49 @@ describe('resolveOrdo("lauds", ...)', () => {
     const ordo = resolveOrdo('lauds', '2026-09-30');
     const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
     expect(numbers).toEqual([66, 50, 63, 64, 148, 149, 150]);
+  });
+
+  it("uses Common-of-an-Angel's own psalmody (reusing St. Michael's own proper text) on Guardian Angels' own day", () => {
+    // Guardian Angels (Oct 2, Duplex Majus) has no proper text of her own
+    // -- live-verified (2026-08-28) that her real Lauds antiphons are St.
+    // Michael's own, byte-for-byte, which is exactly what this category's
+    // content is (see data/hours/lauds-psalmody-overrides/categories/
+    // common-of-an-angel.yml's own header). Psalm numbers stay the usual
+    // fixed Duplex-majus+ set (92, 99, 62), unlike this Common's Vespers
+    // psalmody, which substitutes "Psalmi Dominica" instead.
+    const ordo = resolveOrdo('lauds', '2026-10-02');
+    const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(numbers).toEqual([66, 92, 99, 62, 148, 149, 150]);
+    const secondPsalm = ordo.parts.filter((p) => p.kind === 'psalm')[1];
+    expect(secondPsalm?.kind === 'psalm' ? secondPsalm.antiphon?.text.la : undefined).toContain('Stetit Angelus');
+  });
+
+  it('aliases common-of-an-evangelist onto common-of-an-apostle for Lauds psalmody', () => {
+    // Every Evangelist on this calendar (St. John Apostle, St. Luke, St.
+    // Mark) already has their own per-feast Lauds override authored, so
+    // the Common-category tier can never actually surface via
+    // resolveOrdo/a real date for Lauds specifically (unlike Vespers, see
+    // vespers.test.ts's own St. Mark test) -- test the alias wiring
+    // directly instead. St. Mark's and St. Luke's own reference-engine
+    // rule files both say "ex C1a", and votive=C1a returned byte-identical
+    // Lauds psalmody to plain votive=C1 (2026-08-28).
+    const override = getLaudsCommonOverride('st-mark');
+    expect(override?.id).toBe('common-of-an-apostle');
+    expect(override?.groups.map((g) => g.psalms)).toEqual([[92], [99], [62]]);
+  });
+
+  it('aliases common-of-several-women-martyrs onto common-of-a-holy-woman for Lauds psalmody', () => {
+    // No majus+ saint on this calendar actually carries this Common yet
+    // (Ss. Perpetua and Felicity, the only one, are plain Duplex -- below
+    // this override's threshold), so this can't be exercised via
+    // resolveOrdo/a real date; test the alias wiring directly instead.
+    // Ss. Perpetua and Felicity's own reference-engine file says "vide
+    // C7b", and votive=C7b returned these same groups/canticle/Laudate
+    // antiphons as plain votive=C7 (2026-08-28) -- only the Benedictus
+    // antiphon differs, a separate mechanism from this psalmody table.
+    const override = getLaudsCommonOverride('ss-perpetua-and-felicity');
+    expect(override?.id).toBe('common-of-a-holy-woman');
+    expect(override?.groups.map((g) => g.psalms)).toEqual([[92], [99], [62]]);
   });
 
   it("resolves St. Gregory the Great's own proper chapter/hymn, not a Common fallback", () => {

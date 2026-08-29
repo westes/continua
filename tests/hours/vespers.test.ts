@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { resolveOrdo } from '../../src/hours';
+import { getVespersCommonOverride } from '../../src/hours/vespers-psalmody-overrides';
 
 // Every id with an authored Vespers office override (2026-08 sweep) —
 // same ids, same clean per-saint dates already established for each
@@ -75,14 +76,15 @@ describe('resolveOrdo("vespers", ...)', () => {
   });
 
   it('joins Ps 115 and 116 under one shared antiphon on Monday', () => {
-    // Not 2026-08-17: that Monday is actually the closing day of St.
-    // Lawrence's own octave (Aug 10-17, Duplex II. classis) -- now that
-    // Vespers has its own duplex-majus+ psalmody override (2026-08-28),
-    // that evening correctly gets Common-of-a-Martyr's own psalms
-    // instead of the plain ferial Monday set, same as Lauds' own
-    // octave-day override already did. 2026-09-28 is a Monday clear of
-    // any such collision.
-    const ordo = resolveOrdo('vespers', '2026-09-28');
+    // Not 2026-08-17 (the closing day of St. Lawrence's own octave, Aug
+    // 10-17, Duplex II. classis) and not 2026-09-28 either (that Monday
+    // evening anticipates St. Michael's own First Vespers, Sept 29,
+    // Duplex I. classis) -- now that Vespers has its own duplex-majus+
+    // psalmody override (2026-08-28), both evenings correctly pick up a
+    // Common's own psalms instead of the plain ferial Monday set, same as
+    // Lauds' own octave-day override already did. 2026-10-12 is a Monday
+    // clear of any such collision.
+    const ordo = resolveOrdo('vespers', '2026-10-12');
     const psalmParts = ordo.parts.filter((p) => p.kind === 'psalm');
     const numbers = psalmParts.map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
     expect(numbers).toEqual([113, 114, 115, 116, 128]);
@@ -153,6 +155,66 @@ describe('resolveOrdo("vespers", ...)', () => {
     const ordo = resolveOrdo('vespers', '2026-11-10');
     const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
     expect(numbers).toEqual([109, 111, 112, 131]);
+  });
+
+  it("uses Common-of-an-Angel's own psalmody (reusing St. Michael's own proper text) on Guardian Angels' First Vespers", () => {
+    // Not Guardian Angels' own day itself (Oct 2, Duplex Majus): she
+    // falls short of keepsOwnSecondVespers's duplex-2-classis+ floor, and
+    // Oct 3 (St. Therese of Lisieux, plain Duplex, below this override's
+    // own threshold) claims First Vespers over her own evening, so Oct 2
+    // itself resolves to the plain ferial Friday default instead. Oct 1
+    // (St. Remigius, Simplex, doesn't keep his own evening either)
+    // anticipates Guardian Angels' own First Vespers instead, which does
+    // carry the override. Live-verified (2026-08-28) that her real
+    // Vespers antiphons are St. Michael's own, byte-for-byte, which is
+    // exactly what this category's content is (see data/hours/
+    // vespers-psalmody-overrides/categories/common-of-an-angel.yml's own
+    // header). Psalm numbers here are "Psalmi Dominica" (109-112), not a
+    // Common-specific set.
+    const ordo = resolveOrdo('vespers', '2026-10-01');
+    const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(numbers).toEqual([109, 110, 111, 112]);
+    const firstPsalm = ordo.parts.find((p) => p.kind === 'psalm');
+    expect(firstPsalm?.kind === 'psalm' ? firstPsalm.antiphon?.text.la : undefined).toContain('Stetit Angelus');
+  });
+
+  it("uses Common-of-a-Dedication's own psalmody on the Dedication of the Basilica of the Most Holy Saviour's own day", () => {
+    // Nov 9, Duplex II. classis -- keeps its own evening regardless of
+    // tomorrow (Ss. Tryphon and Companions, Simplex). Live-verified
+    // against Divinum Officium (Monastic Tridentinum 1617, votive=C8),
+    // 2026-08-28 -- genuinely its own scheme, not shared with any other
+    // Common (see the category file's own header).
+    const ordo = resolveOrdo('vespers', '2026-11-09');
+    const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(numbers).toEqual([109, 110, 111, 147]);
+  });
+
+  it("uses Common-of-an-Apostle's own psalmody on St. Mark Evangelist's own day, via the common-of-an-evangelist alias", () => {
+    // St. Mark (Apr 25, Duplex II. classis, common: common-of-an-
+    // evangelist) has no per-feast Vespers override authored -- his own
+    // reference-engine rule file says "ex C1a", and votive=C1a returned
+    // byte-identical Lauds/Vespers psalmody to plain votive=C1
+    // (2026-08-28), so common-of-an-evangelist is aliased onto
+    // common-of-an-apostle rather than duplicated (see
+    // data/hours/vespers-psalmody-overrides/categories/
+    // common-of-an-apostle.yml's own header).
+    const ordo = resolveOrdo('vespers', '2026-04-25');
+    const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(numbers).toEqual([109, 112, 115, 138]);
+  });
+
+  it('aliases common-of-several-women-martyrs onto common-of-a-holy-woman for Vespers psalmody', () => {
+    // No majus+ saint on this calendar actually carries this Common yet
+    // (Ss. Perpetua and Felicity, the only one, are plain Duplex --
+    // below this override's threshold), so this can't be exercised via
+    // resolveOrdo/a real date; test the alias wiring directly instead.
+    // Ss. Perpetua and Felicity's own reference-engine file says "vide
+    // C7b", and votive=C7b returned these same four psalm numbers/
+    // antiphons as plain votive=C7 (2026-08-28) -- only the Magnificat
+    // antiphon differs, a separate mechanism from this psalmody table.
+    const override = getVespersCommonOverride('ss-perpetua-and-felicity');
+    expect(override?.id).toBe('common-of-a-holy-woman');
+    expect(override?.groups.map((g) => g.psalms)).toEqual([[109], [112], [121], [126]]);
   });
 
   it('stays on the plain ferial default for a below-threshold feast (Semiduplex), even on its own kept evening', () => {
