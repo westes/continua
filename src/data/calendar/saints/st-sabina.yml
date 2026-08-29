@@ -1,14 +1,20 @@
-# Genuinely unwinnable stub (verified 2025-08-29) -- always commemorated
-# under the Beheading of St. John the Baptist (see
-# decollation-of-st-john-baptist.yml), never wins outright; both are
-# fixed, non-movable dates, so this isn't an artifact of the tested year.
-# rank/propers unverified placeholders.
+# Genuinely unwinnable stub -- always commemorated under the Beheading of
+# St. John the Baptist (see decollation-of-st-john-baptist.yml), never
+# wins outright; both are fixed, non-movable dates, so this isn't an
+# artifact of the tested year. rank unverified placeholder.
+# Own commemoration bundle (antiphon + versicle/response + collect)
+# authored from a live Lauds query (Divino Afflatu, 2026-08-29) -- see
+# st-sabina-commemoration.yml. collectCommon/collectName kept only as a
+# same-shape fallback (getDayCollect/sanctoralCommemorationPart) should
+# the commemoration bundle ever go missing; collect-c7 (not collect-c6 --
+# Sabina was a matron, not a virgin) is the live-verified correct
+# template.
 id: st-sabina
 name: "St. Sabina, Martyr"
 rank: simplex
 common: common-of-a-martyr
-propers: null
-collectCommon: collect-c6
+propers: "st-sabina"
+collectCommon: collect-c7
 collectName:
   la: ["Sabínæ"]
   en: ["Sabina"]
