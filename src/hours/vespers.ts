@@ -72,15 +72,18 @@ function psalmParts(group: VespersGroup, day: LiturgicalDay): ResolvedPart[] {
 }
 
 /** Two independent tiers, tried in order — same split as hours/lauds.ts's
- * own getPsalmodyOverrideFor, see its doc comment for the full rationale:
+ * own getPsalmodyOverrideFor, see its doc comment for the full rationale.
+ * Substitutes psalm *numbers*, not just antiphons, so only applies for a
+ * duplex-majus+ (or named-temporal) feast — see resolvePsalmody below for
+ * the sub-duplex-majus case, which merges tier 1's antiphons onto the
+ * ferial numbers instead of calling this at all:
  *
- * 1. **Proper** — this feast's own authored psalmody, eligible at *any
- *    rank* via resolve-common.ts's getPsalmodyProperOverrideId (a saint's
- *    own real proper text is never gated behind rank).
+ * 1. **Proper** — this feast's own authored psalmody, via resolve-
+ *    common.ts's getPsalmodyProperOverrideId.
  * 2. **Common category** — per hours/vespers-psalmody-overrides.ts's own
  *    doc comment, genuinely per-Common here (the psalm *numbers*
  *    themselves differ by Common, not just the antiphons, unlike Lauds)
- *    — still gated at duplex-majus+ via getOfficeOverrideId.
+ *    — gated at duplex-majus+ via getOfficeOverrideId.
  *
  * Eligibility follows the evening's governing `day` (same
  * resolveOfficeWinner-based test as the chapter/responsory/hymn/versicle
@@ -98,6 +101,18 @@ function getPsalmodyOverrideFor(day: LiturgicalDay): VespersDay | undefined {
   return categoryId ? getVespersCommonOverride(categoryId) : undefined;
 }
 
+/** Below duplex-majus, mirrors hours/lauds.ts's identical
+ * mergeFerialNumbersWithProperAntiphons — real proper psalm numbers stay
+ * gated at duplex-majus+, but a saint's own authored antiphon text is
+ * still layered onto the ferial numbers when authored, paired by index
+ * against `ferial`'s own groups (extra `proper` groups beyond `ferial`'s
+ * count go unused — same confirmed convention as Lauds). */
+function mergeFerialNumbersWithProperAntiphons(ferial: VespersDay, proper: VespersDay): VespersDay {
+  return {
+    groups: ferial.groups.map((g, i) => ({ psalms: g.psalms, antiphon: proper.groups[i]?.antiphon ?? g.antiphon })),
+  };
+}
+
 /** The 4 weekday-variable psalm groups — no fixed leading/trailing psalm
  * the way Lauds has (Ps 66 / the Laudate psalms); Vespers is just these 4
  * groups in sequence, substituted wholesale by getPsalmodyOverrideFor
@@ -110,7 +125,15 @@ function getPsalmodyOverrideFor(day: LiturgicalDay): VespersDay | undefined {
  * propers. `day` is still threaded into psalmParts for antiphon-fullness
  * resolution, which does care who governs tonight. */
 function resolvePsalmody(day: LiturgicalDay, weekday: Weekday): ResolvedPart[] {
-  const wd = getPsalmodyOverrideFor(day) ?? vespersAntiphons[weekday];
+  const ferial = vespersAntiphons[weekday];
+  let wd: VespersDay;
+  if (getOfficeOverrideId(day)) {
+    wd = getPsalmodyOverrideFor(day) ?? ferial;
+  } else {
+    const properId = getPsalmodyProperOverrideId(day);
+    const proper = properId ? getVespersSaintOverride(properId) : undefined;
+    wd = proper ? mergeFerialNumbersWithProperAntiphons(ferial, proper) : ferial;
+  }
   return wd.groups.flatMap((group) => psalmParts(group, day));
 }
 
