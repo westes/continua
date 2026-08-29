@@ -128,7 +128,7 @@ function canticleText(canticleId: string, slice?: [number, number]): ResolvedTex
     }
     status[lang] = worst;
   }
-  return { text, status };
+  return { text, status, citation: { la: canticle.citation, en: canticle.citation } };
 }
 
 /** Ps 66 through the Laudate psalms — see hours/types.ts's 'lauds-psalmody'
