@@ -680,6 +680,44 @@ describe('resolveOrdo("lauds", ...)', () => {
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Auróra lucis rútilat');
   });
+
+  it("keeps Saturday's ferial psalm numbers for the Beheading of St. John the Baptist (Duplex, below duplex-majus), while still using his own proper antiphons", () => {
+    // Regression test: decollation-of-st-john-baptist.yml's own psalm
+    // numbers (92/99/62) used to leak in below duplex-majus once
+    // getPsalmodyProperOverrideId (f3cf30c) made the antiphon tier
+    // rank-agnostic -- the psalm numbers themselves must stay gated at
+    // duplex-majus+ and fall back to Saturday's ferial cycle (50, split
+    // 142 canticle) instead, with the proper antiphons layered on top by
+    // group index.
+    const ordo = resolveOrdo('lauds', '2026-08-29');
+    const psalmNumbers = ordo.parts
+      .filter((p) => p.kind === 'psalm')
+      .map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(psalmNumbers).toEqual([66, 50, 142, 148, 149, 150]);
+
+    const ps50 = ordo.parts.find((p) => p.kind === 'psalm' && p.psalmNumber === 50);
+    expect(ps50?.kind === 'psalm' ? ps50.antiphon?.text.la : undefined).toBe(
+      'Ant. Heródes enim ténuit * et ligávit Joánnem et pósuit in cárcerem propter Herodíadem.',
+    );
+    const ps142 = ordo.parts.find((p) => p.kind === 'psalm' && p.psalmNumber === 142);
+    expect(ps142?.kind === 'psalm' ? ps142.antiphon?.text.la : undefined).toBe(
+      'Ant. Dómine mi rex, * da mihi in disco caput Joánnis Baptístæ.',
+    );
+
+    // decollation's own third group (Ps 62, "Puéllæ saltánti") has no
+    // matching slot in Saturday's own 2-group ferial default and is
+    // simply unused -- confirmed with the user 2026-08-29.
+    expect(psalmNumbers).not.toContain(62);
+    const puellaeSaltanti = ordo.parts.some(
+      (p) => p.kind === 'antiphon' && p.text.text.la?.includes('Puéllæ saltánti'),
+    );
+    expect(puellaeSaltanti).toBe(false);
+
+    const laudate = ordo.parts.find((p) => p.kind === 'psalm' && p.psalmNumber === 148);
+    expect(laudate?.kind === 'psalm' ? laudate.antiphon?.text.la : undefined).toBe(
+      'Ant. Da mihi in disco * caput Joánnis Baptístæ. Et contristátus est rex propter jusjurándum.',
+    );
+  });
 });
 
 describe('resolveOrdo("lauds", ...) responsory Gloria omission', () => {

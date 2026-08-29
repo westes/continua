@@ -487,6 +487,32 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(psalms.some((p) => p.antiphon?.text.la?.includes('Cóllocet eum'))).toBe(false);
   });
 
+  it("keeps Friday's ferial psalm numbers for the Beheading of St. John the Baptist's First Vespers (Duplex, below duplex-majus), while still using his own proper antiphons", () => {
+    // Regression test, mirrors the equivalent Lauds test: decollation-of-
+    // st-john-baptist.yml's own psalm numbers (109/111/112/115) must stay
+    // gated at duplex-majus+ and fall back to the ferial cycle for the
+    // evening's own weekday (2026-08-28 is a Friday) instead, with the
+    // proper's antiphons layered on top by group index. His 4th group
+    // ("Arguébat", keyed to Ps 115) has no matching slot in Friday's own
+    // 3-group ferial default and is simply unused.
+    const ordo = resolveOrdo('vespers', '2026-08-28');
+    const psalmNumbers = ordo.parts
+      .filter((p) => p.kind === 'psalm')
+      .map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(psalmNumbers).not.toEqual(expect.arrayContaining([109, 111, 112, 115]));
+
+    const psalms = ordo.parts.filter((p) => p.kind === 'psalm') as {
+      psalmNumber: number;
+      antiphon?: { text: Record<string, string> };
+    }[];
+    expect(psalms[0]?.antiphon?.text.la).toBe(
+      'Ant. Heródes enim ténuit * et ligávit Joánnem et pósuit in cárcerem propter Herodíadem.',
+    );
+
+    const arguebat = ordo.parts.some((p) => p.kind === 'antiphon' && p.text.text.la?.includes('Arguébat'));
+    expect(arguebat).toBe(false);
+  });
+
   it("no longer gives St. Margaret of Scotland First Vespers now that Corpus Christi's own octave is modeled", () => {
     // St. Margaret of Scotland (Jun 10, Semiduplex, common-of-a-widow --
     // content itself live-verified 2026-08-26 to be real, identical to
