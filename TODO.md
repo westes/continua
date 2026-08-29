@@ -48,14 +48,21 @@ across every hour and content type in this app.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
-   - Lauds/Vespers duplex-majus+ Common-category psalmody: 8 of 24 `SaintRecord.common`
-     categories authored (covering 16 ids via aliases) for both hours — see "Lauds/Vespers
-     duplex-majus+ Common-category psalmody" below. Remaining: `common-of-a-dedication`,
-     `common-of-an-angel`, `common-of-an-evangelist`, `common-of-a-vigil`,
-     `common-of-several-women-martyrs` (no votive code confirmed yet for any of these), plus
-     Vespers' own per-feast **proper** tier (`data/hours/vespers-psalmody-overrides/saints/`)
-     is mechanism-only, zero saints authored — unlike Lauds, no majus+ saint currently on the
-     calendar is known to have proper Vespers psalm antiphons distinct from their Common's.
+   - Lauds/Vespers duplex-majus+ Common-category psalmody: 10 of 24 `SaintRecord.common`
+     categories authored (covering 19 ids via aliases) for Vespers, 9 of 24 (18 ids) for Lauds —
+     see "Lauds/Vespers duplex-majus+ Common-category psalmody" below and its follow-up entry.
+     Genuinely still open: `common-of-a-dedication`'s **Lauds** file specifically (Vespers is
+     done) — blocked on a real content gap, not a mechanism gap: its OT canticle ("Canticum
+     Ieremiæ") has never been transcribed anywhere in this app (the 7 existing Lauds canticles,
+     `hours/lauds-canticles.ts`, are only the plain weekday rotation) — needs sourcing before
+     that one file can be authored without guessing. `common-of-a-vigil` is not a gap at all:
+     the `vigil` `FeastClass` sits structurally below `duplex-majus` on the rank ladder (see
+     `calendar/commemorations.ts`'s `FEAST_CLASS_ORDER`), so `getOfficeOverrideId` can never
+     return a Vigil's id — this category is permanently unreachable by design, not worth
+     authoring. Vespers' own per-feast **proper** tier
+     (`data/hours/vespers-psalmody-overrides/saints/`) is mechanism-only, zero saints authored —
+     unlike Lauds, no majus+ saint currently on the calendar is known to have proper Vespers
+     psalm antiphons distinct from their Common's.
 
 3. **Known, deliberate simplifications** — intentional, not bugs, no plan to revisit unless
    priorities change:
@@ -3997,3 +4004,73 @@ Monday") had to move to a different date: that Monday turned out to be the closi
 Lawrence's own octave, which now correctly picks up Common-of-a-Martyr's psalms instead of the
 plain ferial set it was (incidentally, not intentionally) relying on before this mechanism
 existed. `npm test` (535 passed) and `npm run build` both pass.
+
+### Lauds/Vespers duplex-majus+ Common-category psalmody — remaining categories authored, one real gap surfaced (2026-08-28)
+
+Follow-up to the previous entry, closing most of the "8 of 24" gap it left open. Went
+category by category through the reference engine's votive-code space (the full `CommuneM/`
+directory listing, `C1` through `C12` and their season-variant suffixes) to identify each
+remaining `SaintRecord.common` value's real scheme, rather than assuming one exists:
+
+- **`common-of-an-evangelist` is an alias, not its own scheme.** St. Mark's and St. Luke's own
+  reference-engine rule files both say "ex C1a", and `votive=C1a` returned byte-identical
+  Lauds/Vespers psalmody to plain `votive=C1` — an Evangelist-not-Apostle genuinely reuses the
+  Apostles' own scheme in the Monastic tradition. Registered as an alias on
+  `common-of-an-apostle`'s existing category files for both hours.
+- **`common-of-several-women-martyrs` is also an alias, not its own scheme** — but only once the
+  actual Vespers/Lauds *psalmody* slots are isolated from the Magnificat/Benedictus antiphon
+  that follows them. Ss. Perpetua and Felicity's own file says "vide C7b"; `votive=C7b` returned
+  the *same* four psalm numbers and group/canticle/Laudate antiphons as plain `votive=C7`
+  (Common-of-a-Holy-Woman) for both hours — C7b's only real difference is its own proper
+  Magnificat/Benedictus antiphon, which belongs to a separate, already-existing mechanism
+  (`getMagnificatAntiphon`/`getBenedictusAntiphon`), not the psalmody-override table this pass
+  is building. First-draft category files for this id were written as full duplicates before
+  this was caught by diffing against the live output line-by-line — deleted in favor of an
+  alias on `common-of-a-holy-woman`'s existing files instead. Neither this id nor
+  `common-of-a-vigil` (see below) can currently be exercised via `resolveOrdo`/a real calendar
+  date (Perpetua and Felicity are plain Duplex, below this override's threshold, and no other
+  saint carries this Common) — verified via a direct `getLaudsCommonOverride`/
+  `getVespersCommonOverride` unit test instead of a date-based one.
+- **`common-of-an-angel` has no real numbered Common in the source at all** — confirmed via the
+  full `CommuneM/` directory listing (no angel-specific code exists) and St. Michael's own
+  SanctiM rule, which says plain "Psalmi Dominica" (Sunday's own Vespers psalm numbers, 109-112,
+  not a Common-specific set) rather than citing any `Cx` file. Live-verified that Guardian
+  Angels (Oct 2, Duplex Majus, no proper text of her own) reuses Michael's own antiphons
+  byte-for-byte at both Lauds and Vespers — i.e. Michael's own proper *is* the de facto generic
+  Angel scheme any other Angel-Common saint without their own proper falls back to. (St. Gabriel
+  and St. Raphael each have their own genuinely distinct proper antiphons, matching this file's
+  own earlier finding for the *office bundle* that Guardian Angels/Gabriel/Raphael's
+  chapter/responsory/hymn/versicle content is duplicated per-saint from St. Michael's Apparition,
+  not drawn from a shared Common — the same absence of a real Angel Common, independently
+  confirmed for a different content type.) Authored as a genuine `common-of-an-angel` category
+  (an app-side generalization the source data doesn't literally have a file for, but a real,
+  reusable scheme in practice) rather than duplicating Michael's antiphons into a
+  Guardian-Angels-specific file, so any future proper-less Angel addition benefits automatically.
+  Lauds keeps the usual fixed 92/99/62 + Canticum Trium Puerorum numbers; Vespers substitutes
+  "Psalmi Dominica" (109-112) instead of a Common-specific set.
+- **`common-of-a-dedication` is genuinely its own scheme** (`votive=C8`) for both hours — unlike
+  every other Common authored so far, Vespers' numbers (109/110/111/147) don't share a pattern
+  with any other category, and Lauds' (50/87/89 + "Canticum Ieremiæ") aren't even the usual
+  fixed 92/99/62 set. **Only the Vespers file was authored**: Lauds' own canticle text has never
+  been transcribed anywhere in this app (the 7 existing Lauds OT canticles, `hours/
+  lauds-canticles.ts`, are only the plain weekday rotation) — left open rather than guessed at,
+  see the Open-work list above.
+- **`common-of-a-vigil` is not an authorable gap at all.** The `vigil` `FeastClass` sits
+  structurally below `duplex-majus` on `calendar/commemorations.ts`'s `FEAST_CLASS_ORDER`
+  ladder, so `getOfficeOverrideId`'s `isAtLeast(winner.rank, 'duplex-majus')` test can never
+  return true for a Vigil — this category is permanently unreachable by the mechanism as gated,
+  not a missing-content gap to close later.
+
+Regression tests added to both `lauds.test.ts` and `vespers.test.ts`: a real calendar date for
+each reachable category (Guardian Angels for Angel, both hours; the Dedication's own day for
+Vespers), a real date via the alias for `common-of-an-evangelist` on Vespers (St. Mark, whose
+own per-feast Lauds override shadows the category tier for Lauds specifically, so that one used
+a direct unit test instead), and direct unit tests for the two currently-unreachable-by-date
+aliases (`common-of-several-women-martyrs` for both hours). Two more pre-existing Vespers test
+dates needed to move for the same reason as the previous entry's `2026-08-17` fix:
+`2026-09-28` (anticipates St. Michael's own First Vespers, once his Common-of-an-Angel override
+started applying) moved to `2026-10-12`; Guardian Angels' own initial test date (Oct 2, her own
+day) had to move to Oct 1 (her First Vespers) once tracing `resolveEveningDay` showed she
+doesn't keep her own Second Vespers (falls short of the `duplex-2-classis` floor) and Oct 3 (St.
+Therese, plain Duplex, below this override's own threshold) claims her evening instead. `npm
+test` (542 passed), `tsc --noEmit`, and `npm run build` all pass.
