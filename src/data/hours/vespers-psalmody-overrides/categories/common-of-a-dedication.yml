@@ -1,0 +1,30 @@
+# Generic Common-of-a-Dedication (of a Church) Vespers psalmody, live-
+# verified against Divinum Officium (Monastic Tridentinum 1617, command=
+# prayVespera, votive=C8, 2026-08-28). Genuinely its own scheme, unlike
+# every other Common authored so far: 109/110/111/147 (Ps 147, not the
+# expected next-in-sequence 112, for the 4th slot).
+#
+# NOTE: no matching Lauds category file exists yet -- Lauds' own
+# Dedication scheme (votive=C8, live-verified the same session) uses Ps
+# 50/87/89 plus a "Canticum Ieremiæ" this app has never transcribed (the
+# 7 existing Lauds OT canticles, hours/lauds-canticles.ts, are only the
+# plain weekday rotation) -- a real content gap, not an oversight, left
+# open rather than guessed at. See TODO.md.
+id: common-of-a-dedication
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Domum tuam, Dómine, * decet sanctitúdo in longitúdinem diérum."
+      en: "Holiness becometh thine house, * O Lord, for ever."
+  - psalms: [110]
+    antiphon:
+      la: "Domus mea, * domus oratiónis vocábitur."
+      en: "My house * shall be called the house of prayer."
+  - psalms: [111]
+    antiphon:
+      la: "Hæc est domus Dómini * fírmiter ædificáta, bene fundáta est supra firmam petram."
+      en: "This is the Lord's house * stoutly builded, well founded upon a sure rock."
+  - psalms: [147]
+    antiphon:
+      la: "Lápides pretiósi * omnes muri tui, et turres Ierúsalem gemmis ædificabúntur."
+      en: "All thy walls are of stones most precious, * and the towers of Jerusalem shall be built up with jewels."
