@@ -7,12 +7,19 @@
 #   - The "In manus tuas" short responsory, right after the capitulum.
 #   - The Nunc Dimittis, framed by its "Salva nos" antiphon, right after
 #     the responsory's versicle.
-#   - The fuller Tridentine Preces, in place of Monastic's own shorter form
-#     (which drops the "Benedíctus es, Dómine..." triple exchange and the
-#     "Miserére nostri, Dómine.../Fiat misericórdia..." exchange — both
+#   - The fuller Tridentine Preces (Tridentine 1906/1910 -- both share the
+#     same rubrics/calendar-era text per the reference engine's own combined
+#     "1888/1906/1910" version label), in place of Monastic's own shorter
+#     form (which drops the "Benedíctus es, Dómine..." triple exchange and
+#     the "Miserére nostri, Dómine.../Fiat misericórdia..." exchange — both
 #     marked "(sed rubrica ^Monastic omittitur)" in the source). Compline
 #     has no separate ferial/Sunday Preces text the way Prime does — one
-#     form, gated only by omitOnDouble (see calendar/isDoubleOrHigher).
+#     form, gated by omitOnDouble (see calendar/isDoubleOrHigher) -- but by
+#     deliberate choice (not drawn from either track, which both drop
+#     Compline's Preces to nothing on a Double) that gate substitutes the
+#     plain Kyrie/Pater-Noster short litany rather than omitting outright,
+#     so a short litany + Our Father is always said. See hours/compline.ts's
+#     'preces' case.
 #   - Lent's distinct hymn replacement ("Christe, qui lux es et dies") —
 #     see hours/compline.ts's 'hymn' case for a caveat on how confident to
 #     be that this actually triggers automatically in real practice.

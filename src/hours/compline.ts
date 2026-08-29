@@ -41,11 +41,18 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       return [{ kind: part.kind, text: resolveCommon(part.textRef.id) }];
     case 'responsory':
       return [{ kind: 'responsory', text: resolveResponsory(resolveCommon(part.textRef.id), day) }];
-    case 'preces':
-      if (part.omitOnDouble && isDoubleOrHigher(day.winner)) {
-        return [];
-      }
-      return [{ kind: 'preces', text: resolveCommon(part.textRef.id), label: part.label }];
+    case 'preces': {
+      // On a Double-or-higher, the full secular Preces (compline-preces —
+      // already the fuller Tridentine 1906/1910 text, see compline.yml's
+      // own header) steps aside for the plain Kyrie/Pater-Noster short
+      // litany (lauds-short-litany, already reused by Vespers' own
+      // 'vespers-preces' case the same way) rather than vanishing
+      // entirely — a deliberate choice to always keep a short litany +
+      // Our Father, even though real practice (both Monastic and
+      // secular) drops Compline's Preces to nothing on a Double.
+      const id = part.omitOnDouble && isDoubleOrHigher(day.winner) ? 'lauds-short-litany' : part.textRef.id;
+      return [{ kind: 'preces', text: resolveCommon(id), label: part.label }];
+    }
     case 'lesson':
       return [{ kind: 'lesson', text: resolveCommon(part.textRef.id), label: part.label }];
     case 'opening-versicle':

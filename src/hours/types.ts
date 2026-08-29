@@ -34,9 +34,15 @@ export type HourPart =
   // `label`, when given, is shown as a heading (e.g. "Preces", "Pretiosa") —
   // omitted for parts that are just connective tissue around a reading
   // (a blessing, a closing dialogue) that don't read as their own section.
-  // `omitOnDouble` drops the whole part on a Double-or-higher feast (real
-  // Preces are suppressed above a certain rank) — see calendar/
-  // isDoubleOrHigher for how far that's actually wired up today.
+  // `omitOnDouble` marks a part that's suppressed above a certain rank on
+  // real Double-or-higher feasts (see calendar/isDoubleOrHigher) — its own
+  // resolver decides what (if anything) replaces it. Compline's own
+  // 'preces' part is the only current user: it substitutes the short
+  // Kyrie/Pater litany (see hours/compline.ts's 'preces' case) rather than
+  // dropping to nothing, a deliberate vu-specific choice (real practice, in
+  // both Monastic and secular tracks, drops Compline's Preces to nothing
+  // on a Double, with no substitute) — the flag still means "not the full
+  // text here," just not "nothing here."
   | { kind: 'preces'; textRef: PropersRef; label?: string; omitOnDouble?: true }
   | { kind: 'psalm'; psalmNumber: number; verses?: string; antiphonRef?: PropersRef }
   | { kind: 'canticle'; canticleId: string; textRef: PropersRef; antiphonRef?: PropersRef }

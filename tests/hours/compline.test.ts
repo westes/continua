@@ -77,6 +77,23 @@ describe('resolveOrdo("compline", ...)', () => {
     expect(preces && preces.kind === 'preces' ? preces.text.text.la : undefined).toContain('Miserére nostri');
   });
 
+  it('substitutes the short Kyrie/Pater litany for the fuller Preces on a Double-or-higher, rather than omitting it entirely', () => {
+    // 2026-08-15, the Assumption (Duplex I. classis), keeps her own
+    // evening outright. Real practice (both Monastic and secular tracks)
+    // drops Compline's Preces to nothing on a Double -- vu deliberately
+    // substitutes the plain short litany instead, so a short litany +
+    // Our Father is always said. See hours/compline.ts's 'preces' case
+    // and data/hours/compline.yml's own header.
+    const ordo = resolveOrdo('compline', '2026-08-15');
+    const preces = ordo.parts.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
+    expect(preces).toBeDefined();
+    const la = preces && preces.kind === 'preces' ? preces.text.text.la : undefined;
+    expect(la).toContain('Pater noster');
+    expect(la).toContain('Dómine, exáudi oratiónem meam');
+    expect(la).not.toContain('Benedíctus es, Dómine');
+    expect(la).not.toContain('Miserére nostri');
+  });
+
   it('closes with the Salve Regina (the per-annum default Marian antiphon), labeled by name', () => {
     const ordo = resolveOrdo('compline', MONDAY);
     const last = ordo.parts[ordo.parts.length - 1];

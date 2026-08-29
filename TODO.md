@@ -4074,3 +4074,25 @@ day) had to move to Oct 1 (her First Vespers) once tracing `resolveEveningDay` s
 doesn't keep her own Second Vespers (falls short of the `duplex-2-classis` floor) and Oct 3 (St.
 Therese, plain Duplex, below this override's own threshold) claims her evening instead. `npm
 test` (542 passed), `tsc --noEmit`, and `npm run build` all pass.
+
+### Compline Preces on a Double no longer vanish entirely — done (2026-08-28)
+
+User request: incorporate the secular track's Compline Preces, but always keep a short litany +
+Our Father said, even on a Double. Checked first rather than assuming a text change was needed:
+`compline-preces.yml`'s content is already word-for-word the secular Tridentine 1906/1910 text
+(the reference engine treats "1888/1906/1910" as one combined version label, same rubrics) — it
+was already the fuller, non-Monastic form, live-verified against both tracks. The real gap was
+structural: `compline.ts`'s `'preces'` case dropped the whole part to `[]` on a Double-or-higher
+(`omitOnDouble`), matching real practice in *both* Monastic and secular tracks (Compline's
+Preces are never substituted with anything shorter in the reference engine, secular or not —
+unlike Vespers/Lauds, which do fall back to a short litany).
+
+Per the user's explicit request, this is now a deliberate vu-specific deviation from both
+tracks: `compline.ts`'s `'preces'` case substitutes `lauds-short-litany` (the same short
+Kyrie/Pater-Noster litany Vespers' own `vespers-preces` case already falls back to on Sundays/
+feasts) instead of omitting, whenever `omitOnDouble` and `isDoubleOrHigher` both hold. `types.ts`'s
+`omitOnDouble` doc comment and `compline.yml`'s own header updated to describe the substitution
+rather than a drop. Regression test added (`tests/hours/compline.test.ts`, 2026-08-15, the
+Assumption, Duplex I. classis) confirming the short-form text (Kyrie/Pater/"Dómine, exáudi") is
+present and the fuller exchanges ("Benedíctus es, Dómine.../Miserére nostri...") are absent.
+`npm test` (543 passed), `tsc --noEmit`, and `npm run build` all pass.
