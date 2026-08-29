@@ -3,7 +3,7 @@ import type { LiturgicalDay, Weekday } from '../calendar/types';
 import { resolveDay } from '../calendar';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
-import { getCanticle } from './lauds-canticles';
+import { getCanticle, type CanticleVerse } from './lauds-canticles';
 import { getLaudsSaintOverride, getLaudsCommonOverride, type LaudsPsalmodyOverride } from './lauds-psalmody-overrides';
 import { getOpeningVersicleId } from './opening-versicle';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
@@ -145,6 +145,30 @@ function psalmParts(numbers: number[], antiphon: BilingualText, opening: Resolve
 
 const STATUS_RANK = { verified: 0, draft: 1, missing: 2 } as const;
 
+/** The general rule is that a citation must match whatever verses are
+ * actually being displayed — not "the whole canticle's citation,
+ * always." A full canticle's stored `citation` already satisfies that
+ * (canticleText below only calls this helper for a `slice`), including
+ * cases a formula couldn't reconstruct — canticum-trium-puerorum's
+ * "Dan 3:57-88,56" is a non-contiguous liturgical splice, its last verse
+ * (`n: "3:56"`) coming after verse 88 in display order, not after it
+ * numerically. Only Saturday's split Deuteronomy canticle ever shows
+ * fewer than all of a canticle's verses, so it's the only case needing
+ * this: book name from the canticle's base citation (its first word),
+ * verse range from the slice's own first/last `n` values (e.g.
+ * "32:1"/"32:32" -> "Deut 32:1-32") — showing the full "1-65" range on
+ * both halves would mislabel whichever half isn't actually being said. */
+function sliceCitation(baseCitation: string, verses: CanticleVerse[]): string {
+  const book = baseCitation.split(' ')[0] ?? baseCitation;
+  const first = verses[0]?.n;
+  const last = verses[verses.length - 1]?.n;
+  if (!first || !last) {
+    return baseCitation;
+  }
+  const lastVerse = last.split(':')[1] ?? last;
+  return `${book} ${first}-${lastVerse}`;
+}
+
 /** Joins a canticle's verse array (or a `[start, end)` slice of it — see
  * Saturday's split canticle below) into one flowing text block, the same
  * shape nunc-dimittis/benedictus already use — Lauds' weekday canticles
@@ -174,7 +198,8 @@ function canticleText(canticleId: string, slice?: [number, number]): ResolvedTex
     }
     status[lang] = worst;
   }
-  return { text, status, citation: { la: canticle.citation, en: canticle.citation } };
+  const citation = slice ? sliceCitation(canticle.citation, verses) : canticle.citation;
+  return { text, status, citation: { la: citation, en: citation } };
 }
 
 /** Ps 66 through the Laudate psalms — see hours/types.ts's 'lauds-psalmody'
