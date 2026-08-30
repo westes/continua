@@ -1,0 +1,29 @@
+# Read directly from the reference engine's Sancti/12-24.txt (Latin `[Ant
+# Laudes]`, 5 antiphons) and English/Sancti/12-24.txt -- the Vigil of
+# Christmas's own proper Lauds antiphons, mapped onto this app's usual
+# 3-psalm-group + canticle + laudate override shape (same fixed 92/99/62
+# psalm set every other duplex-majus+ override here uses, e.g.
+# christmas-octave-sunday.yml/all-saints.yml).
+id: vigil-of-christmas
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Judǽa et Jerúsalem, * nolíte timére: cras egrediémini, et Dóminus erit vobíscum, allelúja."
+      en: "O Judah and Jerusalem, * fear not: tomorrow ye shall go out, and the Lord will be with you."
+  - psalms: [99]
+    antiphon:
+      la: "Hódie sciétis * quia véniet Dóminus: et mane vidébitis glóriam ejus."
+      en: "This day ye shall know * that the Lord cometh and in the morning, then ye shall see His glory."
+  - psalms: [62]
+    antiphon:
+      la: "Crástina die * delébitur iníquitas terræ: et regnábit super nos Salvátor mundi."
+      en: "On the morrow * the sins of the earth shall be washed away, and the Saviour of the world will be our King."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Dóminus véniet, * occúrrite illi, dicéntes: Magnum princípium, et regni ejus non erit finis: Deus, Fortis, Dominátor, Princeps pacis, allelúja."
+    en: "The Lord cometh! * Go ye out to meet Him, and say How great is His dominion, and of His kingdom there shall be no end! He is the Mighty God, the Ruler, the Prince of Peace, Alleluia!"
+laudate:
+  antiphon:
+    la: "Crástina erit * vobis salus, dicit Dóminus Deus exercítuum."
+    en: "On the morrow * ye shall be saved, saith the Lord God of hosts."

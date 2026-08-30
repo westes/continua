@@ -30,6 +30,7 @@
 // confirmed against that source rather than re-derived by hand.
 import { resolveSeason, sundayOnOrBefore, firstSundayStrictlyAfter, adventStart, easterOffsetOf } from './temporal';
 import { daysBetween } from './date-math';
+import { weekdayOf } from './weekday';
 
 const EASTER_OFFSET_IDS: [number, string][] = [
   [-63, 'septuagesima'],
@@ -77,6 +78,21 @@ function resolvePostPentecost23Plus(governingSunday: string, year: number, pente
 export function resolveTemporalId(isoDate: string): string {
   const season = resolveSeason(isoDate);
   const year = Number(isoDate.slice(0, 4));
+
+  // The Vigil of Christmas (Dec 24) has its own real proper content
+  // (collect, Lauds antiphons, Matins Gospel+homily nocturn) distinct from
+  // Advent 4's own — see data/propers/temporal/vigil-of-christmas-collect.yml
+  // and data/propers/nocturn-readings/vigil-of-christmas.yml, both
+  // transcribed directly from the reference engine's Sancti/12-24.txt.
+  // Scoped to non-Sunday only for now: when Dec 24 itself is Advent 4's own
+  // Sunday, the reference engine's own 12-24s.txt keeps Advent 4's psalms
+  // and most of its Matins lessons (only swapping in the Vigil's Gospel
+  // nocturn) rather than fully substituting this id — a genuine content
+  // splice this app doesn't model yet, deliberately left as `advent-4` for
+  // that one specific case pending that design decision.
+  if (isoDate.slice(5) === '12-24' && weekdayOf(isoDate) !== 'sunday') {
+    return 'vigil-of-christmas';
+  }
 
   if (season === 'advent') {
     const start = adventStart(year);

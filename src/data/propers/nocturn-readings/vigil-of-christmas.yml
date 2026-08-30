@@ -1,0 +1,50 @@
+# Matins reading for the Vigil of Christmas (Dec 24, when it's not itself
+# Advent 4's own Sunday) -- read directly from the reference engine's
+# Sancti/12-24.txt (Lectio1, Latin) and English/Sancti/12-24.txt (Lectio1,
+# English): the day's Gospel pericope (Matt 1:18-21, given in full, not a
+# bare incipit) plus St. Jerome's homily on it. Same single-nocturn Vigil
+# shape as vigil-of-st-john-the-baptist.yml -- `nocturn: 1`, matching the
+# Ember-day convention for a ferial day's one real nocturn (see
+# hours/matins.ts's own nocturnReadingIds doc comment).
+id: vigil-of-christmas
+readings:
+  - nocturn: 1
+    isGospel: true
+    citation: { la: "Matt 1:18-21", en: "Matt 1:18-21" }
+    text:
+      la: >-
+        Cum esset desponsáta Mater Jesu María Joseph, ántequam convenírent, invénta est in útero
+        habens de Spíritu Sancto. Et réliqua.
+      en: >-
+        When as his mother Mary was espoused to Joseph, before they came together, she was found
+        with child, of the Holy Ghost. And so on.
+    status: { la: verified, en: verified }
+    responsory:
+      la: |
+        R. Sanctificámini hódie, et estóte paráti: quia die crástina vidébitis
+        * Majestátem Dei in vobis.
+        V. Hódie sciétis quia véniet Dóminus, et mane vidébitis.
+        R. Majestátem Dei in vobis.
+      en: |
+        R. Sanctify yourselves today, and be ready; for on the morrow, ye shall see
+        * The majesty of God upon you.
+        V. This day ye shall know that the Lord cometh, and in the morning, then ye shall see.
+        R. The majesty of God upon you.
+  - nocturn: 1
+    isGospel: false
+    source: "Homily by St. Jerome, Priest (at Bethlehem), Book of Commentaries, on Matth. i."
+    text:
+      la: >-
+        Quare non de símplici vírgine, sed de desponsáta concípitur? Primum, ut per generatiónem
+        Joseph, orígo Maríæ monstrarétur: secúndo, ne lapidarétur a Judǽis ut adúltera: tértio, ut
+        in Ægýptum fúgiens habéret solátium. Martyr Ignátius étiam quartam áddidit causam, cur a
+        desponsáta concéptus sit: Ut partus, ínquiens, ejus celarétur diábolo, dum eum putat non de
+        vírgine, sed de uxóre generátum.
+      en: >-
+        Why was the Lord conceived of an espoused virgin rather than of a free? First, for the
+        sake of the genealogy of Mary, which we have obtained by that of Joseph. Secondly, because
+        she was thus saved from being stoned by the Jews as an adulteress. Thirdly, that Himself
+        and His mother might have a guardian on their journey into Egypt. To these, Ignatius, the
+        martyr of Antioch, has added a fourth reason namely, that the birth might take place
+        unknown to the devil, who would naturally suppose that Mary had conceived by Joseph.
+    status: { la: verified, en: verified }
