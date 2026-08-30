@@ -56,13 +56,20 @@ across every hour and content type in this app.
      proper antiphon where authored (`${propers}-antiphon.yml`), else the standard de-Communi
      `[Ant 2]`/`[Versum 2]` for that saint's own Common category (confirmed via 3 already
      live-verified commemorations — Felix/Adauctus, Clare, Sabina — that these are the real tags
-     used for a mere commemoration, not `[Ant 1]`/`[Nocturn 2 Versum]` as first guessed). 182 of
-     ~218 real saints now covered (`tests/propers/commemoration-sweep.test.ts`); every entry not
-     independently live-verified is marked `status: draft`. ~36 saints remain, skipped for lack of
-     a sourced category template: BVM feasts (13, mostly duplex-1-classis — rarely commemorated
-     in practice), angels (4: no Commune `[Ant 2]`/`[Versum 2]` found yet), Confessor-Doctor (4),
-     Confessor-Pope (2), Vigils (5, all below duplex-majus — rarely reach commemoration), plus a
-     handful of duplex-1-classis Lord/BVM-adjacent feasts.
+     used for a mere commemoration, not `[Ant 1]`/`[Nocturn 2 Versum]` as first guessed). Follow-up
+     pass same day sourced the remaining categories (BVM's own Commune `[Ant 2]`/`[Versum 2]`
+     found via C11, an "angel" versicle inferred from a saint file's own "vide C4, structural
+     category only" note, Confessor-Doctor/-Pope resolved to C4a/C5a/C4b — each inheriting its
+     base category's Ant2/Versum2 unchanged — and 3 fully-proper Lord's feasts, Finding of the
+     Holy Cross/Most Precious Blood/Transfiguration, given their own real `[Ant 2]`/`[Versum 2]`
+     straight from their Sancti files). **213 of ~218 real saints now covered**
+     (`tests/propers/commemoration-sweep.test.ts`, 213 cases); every entry not independently
+     live-verified is marked `status: draft`. Only 5 remain, genuinely open: the Vigils
+     (`common-of-a-vigil` — All Saints, Ss. Simon and Jude, St. John the Baptist, St. Lawrence,
+     the Assumption) — no dedicated "Commune Vigiliarum" antiphon set exists in the reference
+     engine at all (only `C1v`, Vigil of Apostles specifically, itself empty/inherited), and
+     `FeastClass: 'vigil'` is weak enough that these rarely reach the commemoration code path in
+     the first place — real, but low-priority.
    - Vespers Magnificat antiphon: after the 2026-08-30 sweep plus the same-day O-Antiphon
      follow-up (see "O Antiphons (Dec 17-23) added" below), only two narrow gaps remain —
      Advent 4's own Sunday landing on Dec 24 specifically (outside the O-Antiphon range), and
