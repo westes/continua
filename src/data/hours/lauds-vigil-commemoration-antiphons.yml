@@ -1,0 +1,63 @@
+# A mere commemoration of a Vigil (`common: common-of-a-vigil` — St.
+# Lawrence's, the Assumption's, All Saints', Ss. Simon and Jude's, St.
+# John the Baptist's) does NOT reuse that vigil's own antiphon (the one
+# used when it wins outright, e.g. vigil-of-st-lawrence-antiphon.yml) —
+# its own source file's [Rule] block says "Versum Feria" (borrow the
+# plain ferial day's own versicle/antiphon instead), confirmed live
+# (Monastic Tridentinum 1617): the Vigil of St. Lawrence's commemoration
+# on a real Monday (2027-08-09) and the Vigil of the Assumption's on six
+# different real weekdays (2026 Fri/2027 Sat/2028 Mon/2029 Tue/2030
+# Wed/2031 Thu) all gave the exact same result for their weekday — the
+# antiphon quotes the Benedictus canticle's own text in weekday sequence
+# (same "quote the framing canticle in order through the week" pattern
+# vespers-magnificat-antiphons.yml already uses for Vespers), same text
+# regardless of *which* vigil. Sunday has no entry: a Vigil (`FeastClass:
+# 'vigil'`, weaker than Semiduplex) never actually reaches a commemoration
+# on an ordinary Sunday in this app's own precedence rules either — it
+# transfers instead (calendar/commemorations.ts's `ordinary-sunday`
+# branch) — confirmed live too (2033-08-14, a real Sunday: the Vigil of
+# the Assumption doesn't appear at all, only the Lawrence-octave day is
+# commemorated).
+#
+# English: the reference engine's own English files have no translation
+# for this specific commemoration antiphon at all (checked across every
+# weekday) -- these are direct translations, informed by the Benedictus
+# canticle's own already-verified English (propers/common/benedictus.yml)
+# for vocabulary consistency, but not independently sourced -- `status`
+# marks them `draft` for that reason.
+
+monday:
+  antiphon:
+    la: "Benedíctus Dóminus, Deus Israël."
+    en: "Blessed be the Lord God of Israel."
+  status: { la: verified, en: draft }
+
+tuesday:
+  antiphon:
+    la: "Eréxit nobis * Dóminus cornu salútis in domo David púeri sui."
+    en: "The Lord hath raised up for us * a horn of salvation in the house of David his servant."
+  status: { la: verified, en: draft }
+
+wednesday:
+  antiphon:
+    la: "De manu ómnium qui odérunt nos, líbera nos Dómine."
+    en: "From the hand of all that hate us, deliver us, O Lord."
+  status: { la: verified, en: draft }
+
+thursday:
+  antiphon:
+    la: "In sanctitáte serviámus Dómino, et liberábit nos ab inimícis nostris."
+    en: "Let us serve the Lord in holiness, and he will deliver us from our enemies."
+  status: { la: verified, en: draft }
+
+friday:
+  antiphon:
+    la: "Per víscera misericórdiæ Dei nostri visitávit nos Óriens ex alto."
+    en: "Through the tender mercy of our God, the Dayspring from on high hath visited us."
+  status: { la: verified, en: draft }
+
+saturday:
+  antiphon:
+    la: "Illumináre, Dómine, his qui in ténebris sedent: et dírige pedes nostros in viam pacis, Deus Israël."
+    en: "Give light, O Lord, to them that sit in darkness: and direct our feet into the way of peace, O God of Israel."
+  status: { la: verified, en: draft }

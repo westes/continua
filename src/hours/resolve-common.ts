@@ -10,6 +10,7 @@ import { splitAntiphon, isDoubleOrHigher } from './antiphon';
 import { getLaudsSaintOverride } from './lauds-psalmody-overrides';
 import vespersMagnificatAntiphonsData from '../data/hours/vespers-magnificat-antiphons.yml';
 import vespersOAntiphonsData from '../data/hours/vespers-o-antiphons.yml';
+import laudsVigilCommemorationAntiphonsData from '../data/hours/lauds-vigil-commemoration-antiphons.yml';
 
 type BilingualText = Partial<Record<string, string>>;
 type TranslationStatus = 'verified' | 'draft' | 'missing';
@@ -26,6 +27,10 @@ const vespersMagnificatAntiphons = vespersMagnificatAntiphonsData as Partial<
 // these seven can't live in a per-Advent-week temporal-proper file the
 // way every other week's Magnificat antiphon does.
 const vespersOAntiphons = vespersOAntiphonsData as Partial<Record<string, MagnificatWeekdayDefault>>;
+// Monday-Saturday only — see lauds-vigil-commemoration-antiphons.yml's own
+// header for why Sunday has no entry (a Vigil never reaches a
+// commemoration on an ordinary Sunday in the first place).
+const vigilCommemorationAntiphons = laudsVigilCommemorationAntiphonsData as Partial<Record<Weekday, MagnificatWeekdayDefault>>;
 
 function toResolvedText(proper: ProperText): ResolvedText {
   return { text: proper.text, status: proper.status, citation: proper.citation };
@@ -597,6 +602,41 @@ export function getDayCollect(day: LiturgicalDay): ResolvedText {
   return { text: {}, status: { la: 'missing', en: 'missing' } };
 }
 
+/** A Vigil (`common: common-of-a-vigil`) doesn't reuse its own antiphon
+ * when merely commemorated — its own source file's `[Rule]` says "Versum
+ * Feria" (borrow the plain ferial day's own antiphon/versicle instead),
+ * confirmed live across six different real weekdays (see
+ * data/hours/lauds-vigil-commemoration-antiphons.yml's own header for the
+ * dates checked) — the antiphon quotes the Benedictus canticle in weekday
+ * sequence (same pattern vespers-magnificat-antiphons.yml already uses
+ * for the Magnificat), same text regardless of *which* vigil, and the
+ * versicle is a single fixed text (`lauds-versicle-monday.yml`'s own,
+ * confirmed identical even on a live Saturday, so genuinely constant, not
+ * itself weekday-keyed despite superficially matching most weekdays'
+ * plain ferial versicle). Sunday has no entry — a Vigil never reaches a
+ * commemoration on an ordinary Sunday in this app's own precedence rules
+ * either (calendar/commemorations.ts's `ordinary-sunday` branch
+ * transfers it instead), confirmed live too. */
+function vigilCommemorationAntiphon(weekday: Weekday): ResolvedText | undefined {
+  const entry = vigilCommemorationAntiphons[weekday];
+  return entry ? (entry.status ? { text: entry.antiphon, status: entry.status } : verifiedText(entry.antiphon)) : undefined;
+}
+
+function combineCommemorationBundle(antiphon: ResolvedText, versicle: ResolvedText, collect: ResolvedText): ResolvedText {
+  const text: Partial<Record<string, string>> = {};
+  const status: Partial<Record<string, 'verified' | 'draft' | 'missing'>> = {};
+  for (const lang of new Set([...Object.keys(antiphon.text), ...Object.keys(versicle.text), ...Object.keys(collect.text)])) {
+    const parts = [antiphon, versicle, collect].map((t) => t.text[lang]).filter((t): t is string => !!t);
+    if (parts.length === 0) continue;
+    text[lang] = `Ant. ${parts[0] ?? ''}\n${parts[1] ?? ''}\n${parts[2] ?? ''}`.trim();
+    const statuses = [antiphon.status[lang], versicle.status[lang], collect.status[lang]].filter(
+      (s): s is 'verified' | 'draft' | 'missing' => !!s,
+    );
+    status[lang] = statuses.reduce((worst, s) => (STATUS_RANK[s] > STATUS_RANK[worst] ? s : worst), 'verified' as const);
+  }
+  return { text, status };
+}
+
 /** A sanctoral commemoration's own rendering: the fuller Ant+V/R+collect
  * bundle (`${propers}-commemoration`, e.g. st-clare-commemoration.yml)
  * when authored — live-verified this is the real shape a commemoration
@@ -605,8 +645,13 @@ export function getDayCollect(day: LiturgicalDay): ResolvedText {
  * replaces) when only that's been authored, and to an honestly labeled
  * "missing" block when neither has. Always labeled ("Commemoration of St.
  * X") so an unauthored one reads as "this saint's commemoration isn't
- * written up yet," not as a mystery blank prayer. */
-function sanctoralCommemorationPart(commemoration: Extract<Commemoration, { kind: 'sanctoral' }>): ResolvedPart {
+ * written up yet," not as a mystery blank prayer. A Vigil is a special
+ * case within this same fallback chain: see vigilCommemorationAntiphon's
+ * own doc comment. */
+function sanctoralCommemorationPart(
+  commemoration: Extract<Commemoration, { kind: 'sanctoral' }>,
+  weekday: Weekday,
+): ResolvedPart {
   const label = `Commemoration of ${commemoration.name}`;
   const saint = getSaintRecord(commemoration.id);
   if (saint?.propers) {
@@ -616,6 +661,13 @@ function sanctoralCommemorationPart(commemoration: Extract<Commemoration, { kind
     }
     const properCollect = resolveCommon(`${saint.propers}-collect`);
     if (properCollect.status.la !== 'missing' || properCollect.status.en !== 'missing') {
+      if (saint.common === 'common-of-a-vigil') {
+        const antiphon = vigilCommemorationAntiphon(weekday);
+        if (antiphon) {
+          const versicle = resolveCommon('lauds-versicle-monday');
+          return { kind: 'preces', text: combineCommemorationBundle(antiphon, versicle, properCollect), label };
+        }
+      }
       return { kind: 'preces', text: properCollect, label };
     }
   }
@@ -693,7 +745,7 @@ export function getDayCollects(day: LiturgicalDay): ResolvedPart[] {
     if (commemoration.kind === 'temporal') {
       parts.push({ kind: 'prayer', text: toResolvedText(getTemporalProper(`${commemoration.id}-collect`)) });
     } else if (commemoration.kind === 'sanctoral') {
-      parts.push(sanctoralCommemorationPart(commemoration));
+      parts.push(sanctoralCommemorationPart(commemoration, day.weekday));
     } else if (commemoration.kind === 'octave' && commemoration.id !== substitutedOctaveId) {
       parts.push(octaveCommemorationPart(commemoration));
     }

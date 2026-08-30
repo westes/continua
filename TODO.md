@@ -64,12 +64,17 @@ across every hour and content type in this app.
      Holy Cross/Most Precious Blood/Transfiguration, given their own real `[Ant 2]`/`[Versum 2]`
      straight from their Sancti files). **213 of ~218 real saints now covered**
      (`tests/propers/commemoration-sweep.test.ts`, 213 cases); every entry not independently
-     live-verified is marked `status: draft`. Only 5 remain, genuinely open: the Vigils
-     (`common-of-a-vigil` — All Saints, Ss. Simon and Jude, St. John the Baptist, St. Lawrence,
-     the Assumption) — no dedicated "Commune Vigiliarum" antiphon set exists in the reference
-     engine at all (only `C1v`, Vigil of Apostles specifically, itself empty/inherited), and
-     `FeastClass: 'vigil'` is weak enough that these rarely reach the commemoration code path in
-     the first place — real, but low-priority.
+     live-verified is marked `status: draft`. **DONE, full 218/218**: the remaining 5 Vigils
+     (`common-of-a-vigil`) turned out not to need a static template at all — pushed back on the
+     earlier "no source exists" claim by live-querying real commemorated instances directly, which
+     found their own source file's `[Rule]` ("Versum Feria") is a real, sourced mechanism: the
+     antiphon quotes the Benedictus canticle in weekday sequence (confirmed against 6 real
+     weekdays, same shape `vespers-magnificat-antiphons.yml` already uses for the Magnificat), the
+     versicle is a single fixed text, and Sunday genuinely has no entry (a Vigil transfers off an
+     ordinary Sunday rather than ever reaching a commemoration there — confirmed live too).
+     Implemented as a small weekday-aware code path in `sanctoralCommemorationPart` (now takes
+     `weekday`) rather than a per-saint file — see `data/hours/lauds-vigil-commemoration-
+     antiphons.yml` and `tests/hours/vigil-commemoration.test.ts`.
    - Vespers Magnificat antiphon: after the 2026-08-30 sweep plus the same-day O-Antiphon
      follow-up (see "O Antiphons (Dec 17-23) added" below), only two narrow gaps remain —
      Advent 4's own Sunday landing on Dec 24 specifically (outside the O-Antiphon range), and
