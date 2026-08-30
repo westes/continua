@@ -1,0 +1,86 @@
+# The seven "O Antiphons" (Dec 17-23): the classic pre-Christmas Vespers
+# Magnificat antiphons, keyed by calendar date (`MM-DD`) rather than by
+# any Advent-week temporal id -- unlike every other week's proper
+# Magnificat antiphon (data/propers/temporal/advent-N-magnificat-
+# antiphon.yml, one file per Advent week), these seven don't belong to a
+# single Advent week at all, since Dec 17-23 can fall within either
+# Advent's 3rd or 4th week depending on the year (Advent's own governing
+# Sunday moves, see calendar/temporal-id.ts).
+#
+# See hours/resolve-common.ts's getMagnificatAntiphon for the date-keyed
+# lookup this feeds -- checked *unconditionally*, ahead of both the
+# per-week temporal file and a real sanctoral winner's own antiphon.
+# Direct user instruction (2026-08-30): the O Antiphon always wins this
+# one specific text slot on these seven dates, full stop, regardless of
+# who otherwise wins the day -- e.g. St. Thomas, Duplex II. classis,
+# Dec 21, still wins everything else about that day (chapter, hymn,
+# collect, Lauds' own Benedictus antiphon), just not the Magnificat
+# antiphon. This is a deliberate app-level design choice, not a
+# reconstruction of the reference engine's own behavior (its live query
+# shows Thomas's own antiphon on Dec 20/21 instead, see below) -- and it
+# means a saint's own real Magnificat antiphon, once authored, is
+# permanently unreachable at Vespers on whichever of these seven dates
+# that saint happens to occupy, under *this* calendar's own construction.
+# Kept on file anyway (worth having for a future differently-constructed,
+# e.g. user-editable, calendar) rather than treated as pointless to
+# author.
+#
+# 12-17/18/19/22/23 live-verified against Divinum Officium (Monastic
+# Tridentinum 1617), Vespers live query, 2027-12-17/18/19/22/23 --
+# genuinely clean dates in this app's own calendar (no sanctoral entry on
+# any of the five, confirmed against data/calendar/sanctoral-calendar.yml).
+#
+# 12-20 ("O Clavis David") and 12-21 ("O Oriens") could NOT be
+# live-verified the same way: every version/track on the live engine
+# routes those two dates through St. Thomas's Vigil/feast (Dec 20/21)
+# instead of the plain ferial Proper of the Time, even in the plain
+# Tridentine 1570 track -- apparently a real modeling choice of that
+# engine (a Vigil of an Apostle actually displacing the ferial Magnificat
+# antiphon there), not an app-specific quirk. This app's own
+# vigil-of-st-thomas.yml already documents a deliberate divergence from
+# that engine on this exact date (the Vigil transfers away entirely here,
+# per the ordinary privileged-feria/vigil rule, rather than claiming
+# Second Vespers the way the live engine's Mass-only-commemoration
+# modeling implies) -- so the plain "O Clavis David"/"O Oriens" text
+# below, drawn from the standard, universally-fixed wording of these two
+# antiphons (unchanged across every edition of the Roman/Monastic
+# Breviary), is marked `draft` rather than `verified`: real, correctly
+# sourced liturgical text, just not confirmed against this app's own
+# primary live reference for lack of a clean query path.
+
+"12-17":
+  antiphon:
+    la: "O Sapiéntia, * quæ ex ore Altíssimi prodiísti, attíngens a fine usque ad finem, fórtiter suavitérque dispónens ómnia: veni ad docéndum nos viam prudéntiæ."
+    en: "O Wisdom, * that comest out of the mouth of the Most High, that reachest from one end to another, and dost mightily and sweetly order all things; come, to teach us the way of prudence!"
+
+"12-18":
+  antiphon:
+    la: "O Adonái, * et Dux domus Israël, qui Móysi in igne flammæ rubi apparuísti, et ei in Sina legem dedísti: veni ad rediméndum nos in brácchio exténto."
+    en: "O Adonai, * and Ruler of the house of Israel, who didst appear unto Moses in the burning bush, and gavest him the law in Sinai; come, to redeem us with an outstretched arm!"
+
+"12-19":
+  antiphon:
+    la: "O radix Jesse * qui stas in signum populórum, super quem continébunt reges os suum, quem gentes deprecabúntur: veni ad liberándum nos, jam noli tardáre."
+    en: "O Root of Jesse, * which standest for an ensign of the people, at whom the kings shall shut their mouths, to whom the Gentiles shall seek; come to deliver us, make no tarrying!"
+
+"12-20":
+  antiphon:
+    la: "O clavis David, * et sceptrum domus Israël; qui áperis, et nemo claudit; claudis, et nemo áperit: veni, et educ vinctum de domo cárceris, sedéntem in ténebris, et umbra mortis."
+    en: "O Key of David, * and Sceptre of the house of Israel, who openest and no man shutteth, who shuttest and no man openeth; come, and bring forth the prisoner from the prison-house, and him that sitteth in darkness and the shadow of death."
+  status: { la: draft, en: draft }
+
+"12-21":
+  antiphon:
+    la: "O Oriens, * splendor lucis ætérnæ, et sol justítiæ: veni, et illúmina sedéntes in ténebris, et umbra mortis."
+    en: "O Dayspring, * Brightness of light everlasting, and Sun of righteousness; come, and enlighten them that sit in darkness and the shadow of death."
+  status: { la: draft, en: draft }
+
+"12-22":
+  antiphon:
+    la: "O Rex géntium, * et desiderátus eárum, lapísque anguláris, qui facis útraque unum: veni, et salva hóminem, quem de limo formásti."
+    en: "O King of the Gentiles, * yea, and Desire thereof, O Cornerstone that makest of twain one; come to save man, whom thou hast made of the dust of the earth!"
+
+"12-23":
+  antiphon:
+    la: "O Emmánuel, * Rex et légifer noster, exspectátio géntium, et Salvátor eárum: veni ad salvándum nos, Dómine, Deus noster."
+    en: "O Emmanuel, our King * and our Law-giver, Longing of the Gentiles, yea, and Salvation thereof; come to save us, O Lord our God!"

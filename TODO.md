@@ -48,6 +48,12 @@ across every hour and content type in this app.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
+   - Vespers Magnificat antiphon: after the 2026-08-30 sweep plus the same-day O-Antiphon
+     follow-up (see "O Antiphons (Dec 17-23) added" below), only two narrow gaps remain —
+     Advent 4's own Sunday landing on Dec 24 specifically (outside the O-Antiphon range), and
+     `marian-saturday` (moot in practice — its own Vespers is never actually reachable, a
+     following Sunday always claims First Vespers first). Neither resolves from the static
+     reference files alone; would need a live-CGI query.
    - Lauds/Vespers duplex-majus+ Common-category psalmody: 10 of 24 `SaintRecord.common`
      categories authored (covering 19 ids via aliases) for Vespers, 9 of 24 (18 ids) for Lauds —
      see "Lauds/Vespers duplex-majus+ Common-category psalmody" below and its follow-up entry.
@@ -4096,3 +4102,110 @@ rather than a drop. Regression test added (`tests/hours/compline.test.ts`, 2026-
 Assumption, Duplex I. classis) confirming the short-form text (Kyrie/Pater/"Dómine, exáudi") is
 present and the fuller exchanges ("Benedíctus es, Dómine.../Miserére nostri...") are absent.
 `npm test` (543 passed), `tsc --noEmit`, and `npm run build` all pass.
+
+### Vespers Magnificat antiphon — whole-calendar temporal-cycle gap closed, 52/54 (2026-08-30)
+
+User flagged 2026-08-29's Vespers was missing its Magnificat antiphon. Root cause turned out to
+be systematic, not date-specific: `getMagnificatAntiphon` (`hours/resolve-common.ts`) looks up
+`${winner.id}-magnificat-antiphon` for a temporal winner, but of the 57 temporal ids with an
+authored Lauds `-benedictus-antiphon.yml`, only 3 (`holy-name-of-jesus`, `immaculate-heart-of-mary`,
+`circumcision`) had a matching Vespers `-magnificat-antiphon.yml` — every ordinary Sunday/named-feast
+in the temporal cycle (all 24 `post-pentecost-NN` weeks, Advent, post-Epiphany, pre-Lent, Lent,
+Passion/Palm Sunday, the whole Easter season, Pentecost, Christmas-octave Sunday, Christ the King)
+had its Lauds antiphon but not its Vespers one, apparently missed whenever the Lauds sweep pulled
+`[Ant 2]` from the reference engine's Tempora files but never followed up with `[Ant 3]`.
+
+Sourced from the same static reference-engine files already used for the Benedictus sweep
+(`../divinum-officium-reference/web/www/horas/{Latin,English}/Tempora/*.txt`), same occasion/date
+as each id's own `-benedictus-antiphon.yml` sibling (its header comment already records the clean
+verified date) — no live CGI needed, the Magnificat antiphon is baked into each static file's own
+`[Ant 3]` block (sometimes an alias, e.g. `@:Ant 3_` or `@:Ant 1`, always resolved to its real text
+before use, and always the *default*/Tridentine variant, never a `(rubrica cisterciensis...)` one).
+`post-pentecost-01`..`23` map straight to `Tempora/PentNN-0.txt`; `post-pentecost-24` (the fixed
+last Sunday) does *not* map to `Pent24-0` — cross-checked against its own already-authored
+Benedictus antiphon and confirmed it actually reuses the leftover `post-epiphany-6` formulary
+(`Tempora/Epi6-0.txt`), the classic "Sundays remaining over are supplied by the omitted
+post-Epiphany Sundays" rubric, already implicit in this app's own resumed-Epiphany-Sunday overflow
+logic. `post-epiphany-1` doesn't map to `Epi1-0.txt` (that file is Holy Family Sunday content in
+the reference engine, a title mismatch against the already-authored Benedictus text) but to
+`Epi1-0a.txt` ("Dominica infra Octavam Epiphaniæ"). `christ-the-king` (not a Tempora entry at all,
+a 1925 addition) sourced from `Sancti/10-DU.txt` instead, matching its own Benedictus antiphon's
+already-verified occasion.
+
+**Two ids skipped, not fabricated**: `advent-4` (`Tempora/Adv4-0.txt` has no standalone `[Ant 3]`
+at all — only `[Ant Vespera 3] @:Ant Laudes`, aliasing the whole 5-antiphon Lauds set rather than
+one text, and which single entry the live engine actually picks isn't determinable from the static
+file alone) and `marian-saturday` (the votive "Sanctæ Mariæ Sabbato" office's Magnificat antiphon
+isn't in any static Tempora/Sancti/Commune file found — likely only resolvable via a live CGI
+query, same as how its own Benedictus antiphon was originally sourced).
+
+### O Antiphons (Dec 17-23) added — advent-4's own gap effectively closed (2026-08-30)
+
+Follow-up the same day, prompted by a user report that 2026-08-29's own Vespers was missing its
+Magnificat antiphon entirely for an unrelated reason (see the day-label winner-first fix earlier
+this date) that turned out to expose this whole-calendar gap. Root cause of `advent-4`'s own
+skip above, once actually investigated live (divinumofficium.com, Monastic Tridentinum 1617):
+Dec 17-23 always carries one of the seven "O Antiphons" at Vespers, keyed to the *calendar date*
+itself, not to whichever Advent week (`advent-3` or `advent-4`, depending on the year) happens to
+govern that date — a single per-week static file was structurally the wrong shape for this from
+the start, not just missing content.
+
+Added `data/hours/vespers-o-antiphons.yml` (7 entries, `MM-DD` keyed) and a new lookup tier in
+`hours/resolve-common.ts`'s `getMagnificatAntiphon`. 5 of the 7 (Dec 17/18/19/22/23)
+live-verified directly. The remaining two — "O Clavis David" (Dec 20) and "O Oriens" (Dec 21) —
+could not be: every version/track on the live engine (including plain Tridentine 1570) routes
+those two dates through St. Thomas's Vigil/feast instead of the ferial Proper of the Time,
+apparently a real modeling choice of that engine (a Vigil of an Apostle actually displacing the
+ferial Magnificat antiphon), not an app quirk — and this app's own `vigil-of-st-thomas.yml`
+already documents a deliberate divergence from exactly that engine behavior on this date (the
+Vigil transfers away entirely here, per the ordinary privileged-feria/vigil rule). Marked `draft`
+rather than `verified`: real, standard, universally-fixed O-Antiphon wording (unchanged across
+every edition of the Roman/Monastic Breviary), just not confirmed against this app's own primary
+live reference for lack of a clean query path — see the data file's own header.
+
+**Follow-up the same day, direct user instruction**: the O Antiphon lookup was originally scoped
+to only apply when the day's winner was still plain-temporal (i.e. it deferred to a real
+sanctoral winner, same as every other tier in `getMagnificatAntiphon`). The user explicitly
+wanted the O Antiphons to actually surface even against a real winning saint — St. Thomas (Dec
+21, Duplex II. classis) otherwise wins that day outright with no Magnificat antiphon of his own
+authored yet (a separate, pre-existing gap — no sanctoral saint has a
+`${propers}-magnificat-antiphon.yml` at all), so "O Oriens" was structurally unreachable on its
+own real date. Considered and rejected: lowering Thomas's rank so a ferial default would win Dec
+20/21 instead — factually wrong (he really is Duplex II Class pre-1955) and would strip him of
+his *entire* office (chapter/hymn/collect/Lauds antiphon too), not just Vespers' Magnificat.
+Instead, moved the O-Antiphon lookup to the very top of `getMagnificatAntiphon`, checked
+unconditionally before either the temporal or sanctoral branch — the O Antiphon now wins this one
+specific text slot on Dec 17-23 full stop, regardless of who otherwise wins the day; every other
+part of the office is untouched. Deliberate, explicit app-level design choice (not a
+reconstruction of the reference engine's own Dec 20/21 behavior, which shows Thomas's own
+antiphon there instead) — see the data file's own header for the reasoning, including why a
+saint's own real Magnificat antiphon is still worth authoring later even knowing it would be
+permanently unreachable at Vespers on whichever of these seven dates that saint occupies, under
+*this* calendar's own construction: the user has a future user-editable calendar in mind, where a
+differently-constructed calendar's own precedence might surface it. `tests/hours/vespers.test.ts`'s
+Thomas-precedence case now asserts the opposite of its original intent (the O Antiphon wins, his
+other office parts don't).
+
+Net effect: `advent-4`'s practical gap is closed for every date this app's calendar can actually
+reach — Dec 17-23 unconditionally now, including Dec 21 itself. One narrow residual sub-case
+remains, not touched by this fix: if Advent 4's own *Sunday* itself lands on Dec 24 (the latest
+possible date, outside the O-Antiphon range and excluded from the classic weekday-default
+fallback since Sunday has none), it still resolves to `missing` — genuinely no source for that
+one specific Sunday found yet. `marian-saturday` is unchanged by this pass (still skipped, per
+above) — and turns out to be moot for Vespers specifically anyway: its own evening is never
+actually reachable through `resolveOrdo`, since a following Sunday always claims First Vespers
+over the preceding Saturday regardless of the Sunday's own rank (`calendar/vespers.ts`'s
+`hasFirstVespers`).
+
+New tests: `tests/hours/vespers.test.ts`'s "O Antiphons (Dec 17-23)" block (the Dec 19 case
+end-to-end, plus the Thomas-precedence case); `tests/hours/resolve-common.test.ts`'s new
+`getMagnificatAntiphon — classic weekday-default fallback` block replaces the old bare-ferial
+`resolveOrdo` test with two synthetic-day unit tests instead, since no live date is left in this
+app's calendar that still reaches that fallback tier through the real pipeline at all (every
+other temporal id now has its own real content, per this whole sweep). `npm test` (556 tests)
+and `tsc --noEmit` both pass; live-verified on the dev server (2026-08-29 and 2026-12-19).
+
+52 new `src/data/propers/temporal/*-magnificat-antiphon.yml` files. `npm test` (553 passed) and
+`tsc --noEmit` both pass; spot-checked live in the dev server that 2026-08-29's Vespers now shows
+the Magnificat antiphon ("Quǽrite primum * regnum Dei et justítiam ejus...", `post-pentecost-14`'s
+own).

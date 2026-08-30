@@ -3,6 +3,7 @@ import { resolveDay } from '../../src/calendar';
 import {
   getDayCollect,
   getBenedictusAntiphon,
+  getMagnificatAntiphon,
   resolveMinorHourAntiphon,
   resolveMinorHourChapter,
   splitNamedAntiphon,
@@ -303,5 +304,44 @@ describe('Paschaltide alleluia suffix on Common-category antiphons (2026-08)', (
       'Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúja, allelúja.',
     );
     expect(benedictus.text.la?.match(/allelúja/g)?.length).toBe(2);
+  });
+});
+
+describe('getMagnificatAntiphon — classic weekday-default fallback', () => {
+  it('falls back to the classic weekday-quote antiphon for a plain temporal id with no proper Magnificat antiphon of its own', () => {
+    // Synthetic day, not a real resolveOrdo/resolveDay date: after the
+    // full temporal-cycle Magnificat-antiphon sweep (2026-08-30, see
+    // TODO.md), every real temporal id this app's calendar can actually
+    // land Vespers on has its own proper antiphon authored (or is covered
+    // date-by-date by the O Antiphons, Dec 17-23 -- see
+    // vespers-o-antiphons.yml), so there's no live date left to exercise
+    // this fallback tier through the real pipeline any more -- see
+    // tests/hours/vespers.test.ts's own note where this test used to
+    // live. Tests the mechanism directly instead, the same way this
+    // file's other synthetic-day cases do.
+    const day: LiturgicalDay = {
+      date: '2026-01-01',
+      weekday: 'tuesday',
+      season: 'trinitytide',
+      temporalCategory: 'ordinary-feria',
+      winner: { kind: 'temporal', id: 'not-a-real-temporal-id' },
+      commemorations: [],
+    };
+    const magnificat = getMagnificatAntiphon(day);
+    expect(magnificat.text.la).toContain('Exsúltet');
+    expect(magnificat.status.la).toBe('verified');
+  });
+
+  it('has no weekday default for Sunday (its own antiphon varies by Proper of the Time)', () => {
+    const day: LiturgicalDay = {
+      date: '2026-01-04',
+      weekday: 'sunday',
+      season: 'trinitytide',
+      temporalCategory: 'ordinary-sunday',
+      winner: { kind: 'temporal', id: 'not-a-real-temporal-id' },
+      commemorations: [],
+    };
+    const magnificat = getMagnificatAntiphon(day);
+    expect(magnificat.status.la).toBe('missing');
   });
 });

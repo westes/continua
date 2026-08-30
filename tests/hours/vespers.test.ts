@@ -248,20 +248,18 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(versicle).toBeDefined();
   });
 
-  it('falls back to the classic weekday-default Magnificat antiphon on a bare ferial', () => {
-    // 2033-09-06 is a Tuesday, plain ordinary trinitytide, no saint, no
-    // active octave (same date already used by calendar/vespers.test.ts's
-    // "does not anticipate between two plain ferias" -- see that test's
-    // own comment for why this moved off 2026-06-16).
-    const ordo = resolveOrdo('vespers', '2033-09-06');
-    const magnificatIndex = ordo.parts.findIndex((p) => p.kind === 'canticle' && p.canticleId === 'magnificat');
-    expect(magnificatIndex).toBeGreaterThanOrEqual(0);
-    const magnificat = ordo.parts[magnificatIndex];
-    expect(magnificat?.kind === 'canticle' ? magnificat.text.text.la : undefined).toContain('Magníficat ✠ ánima mea');
-    // The closing full-antiphon repeat is the very next part.
-    const closingAntiphon = ordo.parts[magnificatIndex + 1];
-    expect(closingAntiphon?.kind === 'antiphon' ? closingAntiphon.text.text.la : undefined).toContain('Exsúltet');
-  });
+  // The classic weekday-default Magnificat antiphon (getMagnificatAntiphon's
+  // last fallback tier, vespers-magnificat-antiphons.yml) now has no live,
+  // reachable date left in this app's own calendar to exercise it through
+  // resolveOrdo: every temporal id has its own proper antiphon authored
+  // (the 2026-08-30 full sweep) except advent-4 (now covered date-by-date
+  // by the O Antiphons for its entire practical range, see the "O
+  // Antiphons" describe block below) and marian-saturday (whose own
+  // Vespers is itself unreachable -- Sunday always claims First Vespers
+  // over the preceding Saturday evening regardless of Sunday's own rank,
+  // see calendar/vespers.ts's hasFirstVespers). See
+  // tests/hours/resolve-common.test.ts's own synthetic-day unit test for
+  // this fallback tier instead.
 
   it('folds the cross-day Vespers commemoration into day-collects (St. James keeps Vespers, St. Anne commemorated)', () => {
     // St. Christopher (same-day collision, commemorated under James
@@ -661,6 +659,43 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Ad cenam Agni próvidi');
     const versicle = ordo.parts.find((p) => p.kind === 'versicle' && p.text.text.la?.includes('Mane nobíscum'));
     expect(versicle).toBeDefined();
+  });
+});
+
+describe('resolveOrdo("vespers", ...) O Antiphons (Dec 17-23)', () => {
+  it('uses the date-keyed O Antiphon instead of the enclosing Advent week\'s own Magnificat antiphon', () => {
+    // Regression test for the 2026-08-30 Magnificat-antiphon gap: 2026-12-19
+    // (a Saturday, genuinely clean -- no saint on this date, see
+    // data/calendar/sanctoral-calendar.yml) falls within whichever Advent
+    // week governs that year (advent-3 or advent-4), but the O Antiphon
+    // "O radix Jesse" must win regardless of which week id that is --
+    // see vespers-o-antiphons.yml's own header for why these seven can't
+    // live in a per-week temporal-proper file.
+    const ordo = resolveOrdo('vespers', '2026-12-19');
+    const magnificat = ordo.parts.find((p) => p.kind === 'canticle' && p.canticleId === 'magnificat');
+    expect(magnificat?.kind === 'canticle' ? magnificat.antiphon?.text.la : undefined).toContain('radix Jesse');
+    const magnificatIndex = ordo.parts.indexOf(magnificat!);
+    const closingAntiphon = ordo.parts[magnificatIndex + 1];
+    expect(closingAntiphon?.kind === 'antiphon' ? closingAntiphon.text.text.en : undefined).toContain('Root of Jesse');
+  });
+
+  it("gives the O Antiphon absolute priority for the Magnificat slot even over a real sanctoral winner (St. Thomas, Dec 21, Duplex II. classis), while leaving the rest of his own office untouched", () => {
+    // Direct user instruction (2026-08-30): the O Antiphon always wins
+    // the Magnificat slot on Dec 17-23, full stop, regardless of who
+    // otherwise wins the day -- St. Thomas still wins everything else
+    // about Dec 21 (his own chapter/responsory/hymn/versicle, confirmed
+    // below), just not this one text. See vespers-o-antiphons.yml's own
+    // header for the reasoning (a deliberate app-level design choice, not
+    // a reconstruction of the reference engine's own Dec 21 behavior).
+    const ordo = resolveOrdo('vespers', '2026-12-21');
+    const magnificat = ordo.parts.find((p) => p.kind === 'canticle' && p.canticleId === 'magnificat');
+    expect(magnificat?.kind === 'canticle' ? magnificat.antiphon?.text.la : undefined).toContain('Oriens');
+    expect(magnificat?.kind === 'canticle' ? magnificat.antiphon?.text.en : undefined).toContain('Dayspring');
+    // The rest of his own office is untouched by this.
+    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
+    expect(chapter?.kind === 'chapter' ? chapter.text.status.la : undefined).not.toBe('missing');
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toBeTruthy();
   });
 });
 

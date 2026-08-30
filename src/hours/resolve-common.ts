@@ -9,6 +9,7 @@ import { isInTriduum } from '../calendar/temporal';
 import { splitAntiphon, isDoubleOrHigher } from './antiphon';
 import { getLaudsSaintOverride } from './lauds-psalmody-overrides';
 import vespersMagnificatAntiphonsData from '../data/hours/vespers-magnificat-antiphons.yml';
+import vespersOAntiphonsData from '../data/hours/vespers-o-antiphons.yml';
 
 type BilingualText = Partial<Record<string, string>>;
 type TranslationStatus = 'verified' | 'draft' | 'missing';
@@ -21,6 +22,10 @@ interface MagnificatWeekdayDefault {
 const vespersMagnificatAntiphons = vespersMagnificatAntiphonsData as Partial<
   Record<Weekday, MagnificatWeekdayDefault>
 >;
+// Keyed by "MM-DD" (Dec 17-23) — see the data file's own header for why
+// these seven can't live in a per-Advent-week temporal-proper file the
+// way every other week's Magnificat antiphon does.
+const vespersOAntiphons = vespersOAntiphonsData as Partial<Record<string, MagnificatWeekdayDefault>>;
 
 function toResolvedText(proper: ProperText): ResolvedText {
   return { text: proper.text, status: proper.status, citation: proper.citation };
@@ -817,15 +822,43 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
  * order exactly (temporal id, then a saint's own `${propers}-magnificat-
  * antiphon`, then their Common category's `magnificat-antiphon-${common}`
  * — none of that content authored yet, a separate future pass the same
- * shape as the Benedictus one was), but with one real difference: a bare
+ * shape as the Benedictus one was), but with two real differences: a bare
  * ferial weekday (Mon-Sat) has actual content to fall back to —
  * data/hours/vespers-magnificat-antiphons.yml's classic "quote the
  * Magnificat's own text in sequence" set — which Benedictus has no
- * equivalent of. `withPaschaltideAlleluia` applied to that fallback too,
- * by analogy with the Common-category treatment above; not independently
+ * equivalent of; and the O Antiphons below, checked before either the
+ * temporal or sanctoral branch even runs.
+ *
+ * `withPaschaltideAlleluia` applied to the weekday fallback too, by
+ * analogy with the Common-category treatment above; not independently
  * confirmed for this specific case.
+ *
+ * The O Antiphons (Dec 17-23) are checked first, unconditionally —
+ * ahead of *both* the per-week `${winner.id}-magnificat-antiphon` file
+ * and a real sanctoral winner's own antiphon, deliberately: this is the
+ * app's own design choice (2026-08-30 user instruction), not a
+ * reconstruction of any single historical rite's rubric — the reference
+ * engine itself doesn't do this uniformly (its own Dec 20/21 live query
+ * shows St. Thomas's own antiphon instead, see vespers-o-antiphons.yml's
+ * header), but this app deliberately gives the O Antiphon absolute
+ * priority for this one specific text slot on these seven dates,
+ * regardless of who otherwise wins the day. Every other part of the
+ * office (chapter/responsory/hymn/versicle/collect, Lauds' own Benedictus
+ * antiphon) is untouched by this — a saint who wins Dec 17-23 (St.
+ * Thomas, Dec 21) still gets everything else that comes with winning,
+ * just not this one slot. This also means a saint's own real Magnificat
+ * antiphon, once authored, is permanently unreachable on one of these
+ * seven dates under *this* calendar's own construction — deliberately
+ * accepted, since a saint's real antiphon is still worth having on file
+ * for a differently-constructed calendar (e.g. a future user-editable
+ * one) even where the shipped calendar's own precedence never surfaces
+ * it here.
  */
 export function getMagnificatAntiphon(day: LiturgicalDay): ResolvedText {
+  const oAntiphon = vespersOAntiphons[day.date.slice(5)];
+  if (oAntiphon) {
+    return oAntiphon.status ? { text: oAntiphon.antiphon, status: oAntiphon.status } : verifiedText(oAntiphon.antiphon);
+  }
   const winner = resolveOfficeWinner(day);
   if (winner.kind === 'temporal') {
     const named = toResolvedText(getTemporalProper(`${winner.id}-magnificat-antiphon`));
