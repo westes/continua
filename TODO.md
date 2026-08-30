@@ -75,12 +75,17 @@ across every hour and content type in this app.
      Implemented as a small weekday-aware code path in `sanctoralCommemorationPart` (now takes
      `weekday`) rather than a per-saint file — see `data/hours/lauds-vigil-commemoration-
      antiphons.yml` and `tests/hours/vigil-commemoration.test.ts`.
-   - Vespers Magnificat antiphon: after the 2026-08-30 sweep plus the same-day O-Antiphon
-     follow-up (see "O Antiphons (Dec 17-23) added" below), only two narrow gaps remain —
-     Advent 4's own Sunday landing on Dec 24 specifically (outside the O-Antiphon range), and
-     `marian-saturday` (moot in practice — its own Vespers is never actually reachable, a
-     following Sunday always claims First Vespers first). Neither resolves from the static
-     reference files alone; would need a live-CGI query.
+   - Vespers Magnificat antiphon: **DONE, not just moot** (2026-08-30) — the two remaining cases
+     (Advent 4's own Sunday landing on Dec 24; `marian-saturday`) were dropped from this list
+     entirely, not just deprioritized. Live-checked directly rather than assumed: the Vigil of
+     Christmas never has its own Vespers in the real rite at all (Dec 23 evening is plain Advent-4
+     ferial Vespers with the O-Antiphon override, not First Vespers of the Vigil; Dec 24 evening
+     is always Christmas's own First Vespers — "Vespera de sequenti; nihil de præcedenti," the
+     reference engine's own words), and `marian-saturday`'s own Commune file (`C10`) has no `[Ant
+     Vespera]` tag at all, because a Saturday's Vespers is always structurally ceded to the
+     following Sunday under the real rubrics, not just under this app's implementation of them.
+     Neither is "unauthored" — there is no historical text for either to author. Authoring
+     something anyway would mean inventing text that never existed.
    - Lauds/Vespers duplex-majus+ Common-category psalmody: 10 of 24 `SaintRecord.common`
      categories authored (covering 19 ids via aliases) for Vespers, 9 of 24 (18 ids) for Lauds —
      see "Lauds/Vespers duplex-majus+ Common-category psalmody" below and its follow-up entry.
