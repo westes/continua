@@ -561,12 +561,12 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
   // anchorDayName's own doc comment — checked before the octave case
   // below since Trinity Sunday, e.g., also happens to be day 8 of
   // Pentecost's octave, and the anchor name is what actually governs.
-  // Existing convention: a commemorated saint *leads* here, before the
-  // anchor name — not "winner first" like every branch above.
+  // Winner first, same as every other branch here — the anchor day is
+  // what's actually being celebrated even when a lesser saint rides along.
   const anchorName = anchorDayName(day);
   if (anchorName) {
     const { sanctoral } = collectCommemorations(day, { showOctaves: false });
-    return joinBi([...sanctoral, anchorName]);
+    return joinBi([anchorName, ...sanctoral]);
   }
 
   // An active octave (St. Lawrence's, ...) is this day's real primary
@@ -609,5 +609,5 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
   const label = temporalLabel(day);
   const temporal = bi(`${label.en} (${temporalRank.en})`, `${label.la} (${temporalRank.la})`);
   const { sanctoral } = collectCommemorations(day, { showOctaves: false });
-  return joinBi([...sanctoral, temporal]);
+  return joinBi([temporal, ...sanctoral]);
 }

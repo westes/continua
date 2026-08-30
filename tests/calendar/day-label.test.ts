@@ -60,9 +60,9 @@ describe('getDayLabel — ordinal temporal label', () => {
     // the November sanctoral pull, he's correctly commemorated alongside
     // Advent I rather than simply absent (confirmed against the live
     // reference engine, which shows the same pairing), so the label
-    // reflects both, feast name first, same pattern as Trinity Sunday's
-    // own St. Felix I case above.
-    expect(getDayLabel(resolveDay('2025-11-30')).en).toBe('St. Andrew, Apostle — The 1st Sunday of Advent (Semiduplex)');
+    // reflects both, winner (Advent I, so privileged nothing can displace
+    // it) first, commemorated saint after.
+    expect(getDayLabel(resolveDay('2025-11-30')).en).toBe('The 1st Sunday of Advent (Semiduplex) — St. Andrew, Apostle');
     // Advent drops the redundant leading weekday word now that the header
     // always shows the weekday on its own (see temporalLabel's
     // `dropWeekdayPrefix`).
@@ -98,10 +98,10 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // Sundays) -- see calendar/temporal-id.test.ts for the id-level
     // coverage this label check builds on. Nov 10 itself also carries a
     // Simplex commemoration (Ss. Tryphon, Respicius, and Nympha), shown
-    // appended to the Sunday's own label per this app's usual
-    // commemorated-Simplex display.
+    // trailing after the Sunday's own winning label per this app's usual
+    // winner-first display.
     expect(getDayLabel(resolveDay('2024-11-10')).en).toBe(
-      'Ss. Tryphon, Respicius, and Nympha, Martyrs — The 5th Sunday after Epiphany (Semiduplex)',
+      'The 5th Sunday after Epiphany (Semiduplex) — Ss. Tryphon, Respicius, and Nympha, Martyrs',
     );
     // 2024-11-11 is St. Martin of Tours (Duplex, pre-existing content) --
     // an ordinary (non-privileged) Monday fully yields to a real winning
@@ -368,12 +368,12 @@ describe('getDayLabel — feast name combination', () => {
     expect(getDayLabel(day).en).toBe('St. Ereden (Duplex)');
   });
 
-  it('shows both, feast first, when the feast is merely commemorated', () => {
+  it('shows both, winner first, when a feast is merely commemorated', () => {
     const day: LiturgicalDay = {
       ...base,
       commemorations: [{ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank: 'duplex-2-classis' }],
     };
-    expect(getDayLabel(day).en).toBe('St. Ereden — Monday in the 3rd week after Trinity (Feria)');
+    expect(getDayLabel(day).en).toBe('Monday in the 3rd week after Trinity (Feria) — St. Ereden');
   });
 
   it('shows just the temporal label when nothing is commemorated at all', () => {
