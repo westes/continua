@@ -109,6 +109,7 @@ export function resolveDay(isoDate: string): LiturgicalDay {
   winner = applyChristmasOctaveSunday(isoDate, weekday, winner, commemorations);
   winner = applyMovableFeasts(isoDate, winner, commemorations);
   applyEpiphany6Commemoration(isoDate, commemorations);
+  applyAdventFourVigilCommemoration(isoDate, weekday, commemorations);
 
   return { date: isoDate, weekday, season, temporalCategory, winner, commemorations };
 }
@@ -139,6 +140,32 @@ function applyEpiphany6Commemoration(isoDate: string, commemorations: Commemorat
     return;
   }
   commemorations.push({ kind: 'temporal', id: 'post-epiphany-6' });
+}
+
+/**
+ * When Advent 4's own Sunday lands on Dec 24 (its latest possible date),
+ * `resolveTemporalId` already gives that day the Vigil of Christmas's own
+ * identity (`vigil-of-christmas` — collect, Lauds antiphons, Matins Gospel
+ * nocturn), matching the reference engine's own rule that the Vigil's rank
+ * governs. Per direct instruction (2026-08), unlike the reference engine's
+ * own `no commemoratio` for this exact day, Advent 4 itself is still
+ * commemorated here — the Sundays of Advent have real standing of their
+ * own, distinct from an ordinary saint quietly ceding to a Vigil. Purely
+ * additive, same shape as applyEpiphany6Commemoration just above: no new
+ * `Commemoration` variant needed, `getDayCollects` already resolves any
+ * `{ kind: 'temporal' }` commemoration's own `${id}-collect` for free.
+ * `advent-4` is hardcoded rather than recomputed because Dec 24 always
+ * falls at or after Advent's own 4th Sunday by construction (it's the
+ * latest date Advent's 4th Sunday can ever land on).
+ */
+function applyAdventFourVigilCommemoration(
+  isoDate: string,
+  weekday: ReturnType<typeof weekdayOf>,
+  commemorations: Commemoration[],
+): void {
+  if (isoDate.slice(5) === '12-24' && weekday === 'sunday') {
+    commemorations.push({ kind: 'temporal', id: 'advent-4' });
+  }
 }
 
 /**

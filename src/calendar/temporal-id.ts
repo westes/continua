@@ -30,7 +30,6 @@
 // confirmed against that source rather than re-derived by hand.
 import { resolveSeason, sundayOnOrBefore, firstSundayStrictlyAfter, adventStart, easterOffsetOf } from './temporal';
 import { daysBetween } from './date-math';
-import { weekdayOf } from './weekday';
 
 const EASTER_OFFSET_IDS: [number, string][] = [
   [-63, 'septuagesima'],
@@ -84,13 +83,16 @@ export function resolveTemporalId(isoDate: string): string {
   // Advent 4's own — see data/propers/temporal/vigil-of-christmas-collect.yml
   // and data/propers/nocturn-readings/vigil-of-christmas.yml, both
   // transcribed directly from the reference engine's Sancti/12-24.txt.
-  // Scoped to non-Sunday only for now: when Dec 24 itself is Advent 4's own
-  // Sunday, the reference engine's own 12-24s.txt keeps Advent 4's psalms
-  // and most of its Matins lessons (only swapping in the Vigil's Gospel
-  // nocturn) rather than fully substituting this id — a genuine content
-  // splice this app doesn't model yet, deliberately left as `advent-4` for
-  // that one specific case pending that design decision.
-  if (isoDate.slice(5) === '12-24' && weekdayOf(isoDate) !== 'sunday') {
+  // Applies even when Dec 24 itself is Advent 4's own Sunday — per direct
+  // instruction (2026-08), the Vigil's own identity (rank/collect/Lauds
+  // antiphons) governs that day too, with Advent 4 folded in as a
+  // commemoration instead (calendar/index.ts's
+  // applyAdventFourVigilCommemoration) rather than the reference engine's
+  // own `no commemoratio` rule. Matins' three-nocturn Sunday psalmody is
+  // unaffected either way — it's driven by `day.weekday`, not by this id
+  // (hours/matins.ts's own `threeNocturns` check), so Advent 4's "Psalmi
+  // Dominica" standing survives this id swap for free.
+  if (isoDate.slice(5) === '12-24') {
     return 'vigil-of-christmas';
   }
 
