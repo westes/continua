@@ -500,11 +500,17 @@ const TEMPORAL_CATEGORY_RANK_LABELS: Record<TemporalCategory, Bi> = {
  * silent about *why* a given identity governs tonight (a reader has to
  * already know, e.g., that St. Zephyrinus falls on tomorrow's date to
  * realize this evening is anticipating him). Pass the result of
- * `calendar/vespers.ts`'s `resolveEveningDay`, not a plain `resolveDay` —
- * only that carries the `vespersFrom` tag this reads.
+ * `calendar/vespers.ts`'s `resolveEveningDay`, not a plain `resolveDay`,
+ * plus the originally-requested date — comparing the two directly (rather
+ * than checking `winner.vespersFrom`, which only ever gets set for a
+ * *sanctoral* tomorrow-winner, see `vespers.ts`'s `tagVespersFrom`) is
+ * what makes this correct even when tomorrow's winner is `temporal` (e.g.
+ * an ordinary Sunday winning outright over a merely-commemorated Simplex
+ * saint) — a case `winner.vespersFrom` can never detect since that field
+ * doesn't exist on the temporal variant of `DayWinner` at all.
  */
-export function getVespersStatusLabel(day: LiturgicalDay): Bi {
-  if (day.winner.kind === 'sanctoral' && day.winner.vespersFrom === 'firstVespersOfTomorrow') {
+export function getVespersStatusLabel(day: LiturgicalDay, requestedDate: string): Bi {
+  if (day.date !== requestedDate) {
     return bi('First Vespers (of tomorrow)', 'Vesperæ de sequenti');
   }
   return bi('Second Vespers (of today)', 'Vesperæ de hodierno');

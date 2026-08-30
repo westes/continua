@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { resolveDay } from '../../src/calendar';
-import { getDayLabel } from '../../src/calendar/day-label';
+import { resolveEveningDay } from '../../src/calendar/vespers';
+import { getDayLabel, getVespersStatusLabel } from '../../src/calendar/day-label';
 import type { LiturgicalDay } from '../../src/calendar/types';
 
 describe('getDayLabel — ordinal temporal label', () => {
@@ -378,5 +379,37 @@ describe('getDayLabel — feast name combination', () => {
 
   it('shows just the temporal label when nothing is commemorated at all', () => {
     expect(getDayLabel(base).en).toBe('Monday in the 3rd week after Trinity (Feria)');
+  });
+});
+
+describe('getDayLabel/getVespersStatusLabel — Vespers evening with a temporal (Sunday) winner', () => {
+  it('2026-08-29 (Decollation of St. John Baptist, plain Duplex, below keepsOwnSecondVespers threshold) anticipates the following ordinary Sunday, which wins outright over Ss. Felix and Adauctus (Simplex) -- the Sunday must lead the label, with both real commemorations (Felix/Adauctus and the displaced Decollation) trailing, and the status must read First, not Second, Vespers', () => {
+    // Regression test: getDayLabel's temporal-fallback branch used to list
+    // commemorations *before* the winner, so this read "Ss. Felix and
+    // Adauctus, Martyrs -- The Beheading of St. John the Baptist (of
+    // today) -- The 13th Sunday after Trinity (Semiduplex)", making the
+    // actual winner (the Sunday) look like an afterthought and the
+    // Sunday's own rank label ("Semiduplex") look like it belonged to
+    // Felix and Adauctus instead. And getVespersStatusLabel used to say
+    // "Second Vespers (of today)" here since its old detection
+    // (`winner.vespersFrom`) only ever fires for a *sanctoral*
+    // tomorrow-winner, never a temporal one like this Sunday.
+    const day = resolveEveningDay('2026-08-29');
+    expect(day.date).toBe('2026-08-30');
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-14' });
+    expect(getDayLabel(day).en).toBe(
+      'The 13th Sunday after Trinity (Semiduplex) — Ss. Felix and Adauctus, Martyrs — The Beheading of St. John the Baptist (of today)',
+    );
+    expect(getVespersStatusLabel(day, '2026-08-29').en).toBe('First Vespers (of tomorrow)');
+  });
+
+  it("a plain kept evening (no anticipation) still reads Second Vespers", () => {
+    // 2026-08-17, St. Lawrence's own octave closing day (Duplex), keeps
+    // its own evening outright -- sanity check that the date-comparison
+    // rewrite of getVespersStatusLabel didn't flip the non-anticipating
+    // case too.
+    const day = resolveEveningDay('2026-08-17');
+    expect(day.date).toBe('2026-08-17');
+    expect(getVespersStatusLabel(day, '2026-08-17').en).toBe('Second Vespers (of today)');
   });
 });

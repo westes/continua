@@ -23,7 +23,7 @@ export function renderDayNav(container: HTMLElement): void {
   const day = isEveningHour ? resolveEveningDay(date) : resolveDay(date);
   const dateLabel = formatDateLong(date);
   const dayLabel = getDayLabel(day);
-  const vespersStatus = selectedHour === 'vespers' ? getVespersStatusLabel(day) : undefined;
+  const vespersStatus = selectedHour === 'vespers' ? getVespersStatusLabel(day, date) : undefined;
   const prevUrl = urlFor(addDays(date, -1), selectedHour, languages);
   const nextUrl = urlFor(addDays(date, 1), selectedHour, languages);
   const todayUrl = urlFor(todayIso(), todayTargetHour(), languages);

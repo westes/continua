@@ -69,6 +69,24 @@ describe('shell', () => {
     expect(root.querySelector('.day-nav-vespers-status')?.textContent).toContain('Second Vespers');
   });
 
+  it('shows First Vespers and the Sunday leading the header when Vespers anticipates a Sunday that wins outright (temporal, not sanctoral, winner)', () => {
+    // Regression test: getVespersStatusLabel used to detect anticipation
+    // only via a tag that's only ever set for a *sanctoral* tomorrow-
+    // winner (see the equivalent calendar-level test in
+    // tests/calendar/day-label.test.ts) -- 2026-08-29 (the Decollation of
+    // St. John Baptist, Duplex) anticipates 2026-08-30's ordinary Sunday,
+    // which wins outright over Ss. Felix and Adauctus (Simplex), so
+    // tomorrow's winner is `temporal`, not `sanctoral`.
+    setDate('2026-08-29');
+    setSelectedHour('vespers');
+    window.history.replaceState(null, '', '/vu/2026-08-29/vespers');
+    const root = document.getElementById('app')!;
+    mountShell(root);
+
+    expect(root.querySelector('.day-nav-label')?.textContent).toContain('13th Sunday after Trinity');
+    expect(root.querySelector('.day-nav-vespers-status')?.textContent).toContain('First Vespers');
+  });
+
   it('switches to Matins and shows its real content, not the pending message', () => {
     const root = document.getElementById('app')!;
     mountShell(root);
