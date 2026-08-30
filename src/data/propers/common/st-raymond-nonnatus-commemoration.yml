@@ -1,0 +1,29 @@
+# Read directly from the reference engine: `[Ant 1]`/`[Nocturn 2 Versum]`
+# of Commune/C5.txt (Common of a Confessor Not a Bishop, Latin + English)
+# -- the standard "de Communi" commemoration Ant+V/R, same generic text
+# already reused elsewhere in this app for the Confessor-Not-Bishop
+# category's own suffrages (e.g. St. Joseph's) -- not unique to Raymond,
+# since he has no proper Lauds/Vespers antiphon of his own (see
+# st-raymond-nonnatus.yml's own header: "No [Ant 1] of his own"). Collect
+# is his own real proper (st-raymond-nonnatus-collect.yml), unchanged.
+id: st-raymond-nonnatus-commemoration
+text:
+  la: |
+    Ant. Similábo eum * viro sapiénti, qui ædificávit domum suam supra petram.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui in liberándis fidélibus tuis ab impiórum captivitáte beátum Raymúndum Confessórem tuum mirábilem effecísti: ejus nobis intercessióne concéde; ut, a peccatórum vínculis absolúti, quæ tibi sunt plácita, líberis méntibus exsequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Ant. I will liken him unto a wise man, * which built his house upon a rock.
+    V. The mouth of the righteous speaketh wisdom.
+    R. And his tongue talketh judgment.
+    Let us pray.
+    O God, Who didst make thy blessed Confessor Raymond to do a wonderful work in delivering thy faithful ones from bondage to the unbelievers, grant unto us at his prayers to be delivered from the chains of sin, and with all willingness of mind to do those things that are pleasing in thy sight.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified
