@@ -48,44 +48,6 @@ across every hour and content type in this app.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
-   - Sanctoral commemoration antiphon+versicle bundles: found 2026-08-30 (user-reported: St.
-     Raymond Nonnatus, the Decollation of St. John the Baptist, Ss. Felix and Adauctus all
-     rendering with no antiphon when merely commemorated) that 217 of 220 saints with an authored
-     collect had no `${propers}-commemoration.yml` bundle at all — `sanctoralCommemorationPart`
-     was silently falling back to a bare collect. Bulk-fixed same day: reused each saint's own
-     proper antiphon where authored (`${propers}-antiphon.yml`), else the standard de-Communi
-     `[Ant 2]`/`[Versum 2]` for that saint's own Common category (confirmed via 3 already
-     live-verified commemorations — Felix/Adauctus, Clare, Sabina — that these are the real tags
-     used for a mere commemoration, not `[Ant 1]`/`[Nocturn 2 Versum]` as first guessed). Follow-up
-     pass same day sourced the remaining categories (BVM's own Commune `[Ant 2]`/`[Versum 2]`
-     found via C11, an "angel" versicle inferred from a saint file's own "vide C4, structural
-     category only" note, Confessor-Doctor/-Pope resolved to C4a/C5a/C4b — each inheriting its
-     base category's Ant2/Versum2 unchanged — and 3 fully-proper Lord's feasts, Finding of the
-     Holy Cross/Most Precious Blood/Transfiguration, given their own real `[Ant 2]`/`[Versum 2]`
-     straight from their Sancti files). **213 of ~218 real saints now covered**
-     (`tests/propers/commemoration-sweep.test.ts`, 213 cases); every entry not independently
-     live-verified is marked `status: draft`. **DONE, full 218/218**: the remaining 5 Vigils
-     (`common-of-a-vigil`) turned out not to need a static template at all — pushed back on the
-     earlier "no source exists" claim by live-querying real commemorated instances directly, which
-     found their own source file's `[Rule]` ("Versum Feria") is a real, sourced mechanism: the
-     antiphon quotes the Benedictus canticle in weekday sequence (confirmed against 6 real
-     weekdays, same shape `vespers-magnificat-antiphons.yml` already uses for the Magnificat), the
-     versicle is a single fixed text, and Sunday genuinely has no entry (a Vigil transfers off an
-     ordinary Sunday rather than ever reaching a commemoration there — confirmed live too).
-     Implemented as a small weekday-aware code path in `sanctoralCommemorationPart` (now takes
-     `weekday`) rather than a per-saint file — see `data/hours/lauds-vigil-commemoration-
-     antiphons.yml` and `tests/hours/vigil-commemoration.test.ts`.
-   - Vespers Magnificat antiphon: **DONE, not just moot** (2026-08-30) — the two remaining cases
-     (Advent 4's own Sunday landing on Dec 24; `marian-saturday`) were dropped from this list
-     entirely, not just deprioritized. Live-checked directly rather than assumed: the Vigil of
-     Christmas never has its own Vespers in the real rite at all (Dec 23 evening is plain Advent-4
-     ferial Vespers with the O-Antiphon override, not First Vespers of the Vigil; Dec 24 evening
-     is always Christmas's own First Vespers — "Vespera de sequenti; nihil de præcedenti," the
-     reference engine's own words), and `marian-saturday`'s own Commune file (`C10`) has no `[Ant
-     Vespera]` tag at all, because a Saturday's Vespers is always structurally ceded to the
-     following Sunday under the real rubrics, not just under this app's implementation of them.
-     Neither is "unauthored" — there is no historical text for either to author. Authoring
-     something anyway would mean inventing text that never existed.
    - Lauds/Vespers duplex-majus+ Common-category psalmody: 10 of 24 `SaintRecord.common`
      categories authored (covering 19 ids via aliases) for Vespers, 9 of 24 (18 ids) for Lauds —
      see "Lauds/Vespers duplex-majus+ Common-category psalmody" below and its follow-up entry.
@@ -4241,3 +4203,106 @@ and `tsc --noEmit` both pass; live-verified on the dev server (2026-08-29 and 20
 `tsc --noEmit` both pass; spot-checked live in the dev server that 2026-08-29's Vespers now shows
 the Magnificat antiphon ("Quǽrite primum * regnum Dei et justítiam ejus...", `post-pentecost-14`'s
 own).
+
+### The Vigil of Christmas given its own real content (2026-08-30)
+
+User report: "let's fix the problem with advent iv and 12/24 colliding." Dec 24 previously had no
+content of its own at all — a plain (non-Sunday) Dec 24 just inherited Advent 4's ferial collect
+and antiphons, and when Advent 4's own Sunday landed on Dec 24 (its latest possible date), the app
+gave Advent 4 the day outright with zero trace of the Vigil, no commemoration, nothing.
+
+Checked the reference engine directly (`SanctiM/12-24.txt`/`12-24s.txt`) rather than guess at the
+rubric: the Vigil is Duplex I classis, never displaced even by a privileged Sunday, but keeps
+Advent 4's own psalms and first two Matins nocturns' lessons — a genuine content splice, not a
+"who wins" contest, with the source explicitly noting `no commemoratio` for the Sunday case.
+Imported real Vigil content: `vigil-of-christmas-collect.yml`, 5 Lauds antiphons
+(`lauds-psalmody-overrides/vigil-of-christmas.yml`), the Benedictus antiphon (live-verified,
+2026-12-24 — turned out to just reuse the same Matins Nocturn-2 antiphon text), and the Matins
+Gospel (Matt 1:18-21) + St. Jerome homily (`nocturn-readings/vigil-of-christmas.yml`). Wired via a
+new `vigil-of-christmas` temporal id (`calendar/temporal-id.ts`), applied to Dec 24 unconditionally
+regardless of weekday.
+
+**Departure from the reference by direct instruction**: unlike the source's own `no commemoratio`,
+Advent 4 is still commemorated here when it's the Sunday landing on Dec 24 — the Sundays of Advent
+have real standing of their own. `applyAdventFourVigilCommemoration` (`calendar/index.ts`) pushes
+`advent-4` as an explicit commemoration on that one date. Matins' three-nocturn Sunday psalmody
+needed no change — it's driven by `weekday`, not by which id wins, so Advent 4's own psalms/lessons
+pattern survives automatically.
+
+New tests: `tests/calendar/vigil-of-christmas-sunday.test.ts` (4 cases, both the winner/
+commemoration shape and Lauds/Matins content). `npm test` (560→774 across this and the following
+entries) and `tsc --noEmit` pass throughout.
+
+### Sanctoral commemoration antiphon+versicle bundles — full 218/218 (2026-08-30)
+
+User report, same day: "today's Vespers is missing the antiphon for Commemoration of St. Raymond
+Nonnatus" — then, before a fix landed, a second live report: "no antiphon for Commemoration of The
+Beheading of St. John the Baptist," and a third the day before (Ss. Felix and Adauctus, at Lauds).
+Investigating found the real scope: **217 of 220 saints with an authored collect had no
+`${propers}-commemoration.yml` bundle at all** — `sanctoralCommemorationPart`
+(`hours/resolve-common.ts`) was silently falling back to a bare collect (still `status: verified`,
+since the collect itself is fine, so nothing flagged it as broken) whenever that saint was merely
+commemorated rather than winning outright. Only Clare, Sabina, and Jane Frances de Chantal had one.
+
+Fixed the three reported saints first, live-verified. Cross-checking those three found the correct
+source tags: the real commemoration antiphon+versicle in the reference engine's Commune files is
+**`[Ant 2]` + `[Versum 2]`** — not `[Ant 1]` (the saint's own main Lauds antiphon slot, wrongly
+assumed at first for St. Raymond Nonnatus, later corrected) and not `[Nocturn 2 Versum]` (a
+different, Matins-only tag). Also found individual saints can deviate from their own nominal
+`common:` category (St. Sabina, tagged `common-of-a-martyr`, actually uses the Holy-Woman/Widow
+antiphon "Date ei de fructu") — raised as a scale-of-effort question, which the user answered
+directly: "check each saint in vu. if there's no commemoration antiphon, check the reference
+source. if there's a proper there, use it. if there's not, use the commons. it's literally that
+easy" (see memory `vu-feedback-dont-overthink-scale`).
+
+Bulk pass followed that rule exactly: reused each saint's own proper antiphon where authored
+(`${propers}-antiphon.yml`) paired with their Common category's `[Versum 2]`, else the category's
+own `[Ant 2]`+`[Versum 2]` verbatim. 100 saints with an existing antiphon done first (mechanical —
+just needed the right versicle per category), then 73 more using the category's own generic
+antiphon for saints with no proper text of their own. A same-day follow-up pass sourced the
+remaining categories: BVM (13, via Commune `C11`, reusing the already-verified BVM suffrage
+versicle), angels (4, versicle inferred from a saint file's own "vide C4, structural category
+only" note), Confessor-Doctor/-Pope (7, resolved to `C4a`/`C5a`/`C4b` — each inheriting its base
+category's Ant2/Versum2 with no override needed), several confessors + apostles-plural (2), and 5
+fully-proper Lord's/BVM feasts given their own real `[Ant 2]`/`[Versum 2]` straight from their
+Sancti files. **213 of ~218 real saints covered** at that point
+(`tests/propers/commemoration-sweep.test.ts`, 213 cases); every entry not independently
+live-verified marked `status: draft`.
+
+The last 5 (the Vigils, `common-of-a-vigil`) looked unsourceable at first — no dedicated "Commune
+Vigiliarum" antiphon set exists in the reference engine. The user pushed back explicitly ("are you
+sure -- what happens if you pull the reference engine?") rather than accept that at face value.
+Live-querying real commemorated instances (Vigil of St. Lawrence on a real Monday, Vigil of the
+Assumption across 6 different real weekdays) found the actual mechanism behind each source file's
+own `[Rule]: Versum Feria` line: a mere commemoration doesn't reuse the vigil's own antiphon at
+all — it borrows the plain ferial day's antiphon/versicle instead. The antiphon quotes the
+Benedictus canticle in weekday sequence (same shape `vespers-magnificat-antiphons.yml` already
+uses for the Magnificat), the versicle is a single fixed text
+(`lauds-versicle-monday.yml`'s own), and Sunday genuinely has no entry — a Vigil transfers off an
+ordinary Sunday rather than ever reaching a commemoration there, confirmed live and already true in
+this app's own precedence rules. Implemented as a small weekday-aware branch in
+`sanctoralCommemorationPart` (now takes `weekday`) rather than a per-saint file.
+
+**Full 218/218.** New/changed tests: `tests/propers/commemoration-sweep.test.ts` (213 static
+bundles), `tests/hours/vigil-commemoration.test.ts` (3 cases, the dynamic weekday mechanism),
+`tests/hours/lauds.test.ts`'s new Felix/Adauctus case. 176 new `*-commemoration.yml` files plus
+one data file (`lauds-vigil-commemoration-antiphons.yml`). `npm test` (774 passed) and
+`tsc --noEmit` pass.
+
+### Vespers Magnificat antiphon — the last two cases closed as not gaps (2026-08-30)
+
+Follow-up the same day: asked what the two remaining Magnificat gaps from the entry above actually
+were (Advent 4's own Sunday landing on Dec 24; `marian-saturday`), then pushed back on "there's
+nothing authored, but do you need to author content that never happens?" — a fair question the
+TODO list hadn't actually answered. Checked both directly rather than leave them as
+"unauthored, low priority": the Vigil of Christmas never has its own Vespers in the real rite at
+all (Dec 23 evening is plain Advent-4 ferial Vespers with the O-Antiphon override, not First
+Vespers of the Vigil — checked live; Dec 24 evening is always Christmas's own First Vespers —
+"Vespera de sequenti; nihil de præcedenti," the reference engine's own words), and
+`marian-saturday`'s own Commune file (`C10`) has no `[Ant Vespera]` tag at all, because a
+Saturday's Vespers is always structurally ceded to the following Sunday under the real rubrics,
+not just under this app's implementation of them.
+
+Neither is "unauthored content pending" — there is no historical text for either case to author.
+Dropped from the "Open work" list entirely rather than marked done-with-a-caveat, since authoring
+something anyway would mean inventing text that never existed.
