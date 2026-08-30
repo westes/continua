@@ -1,15 +1,19 @@
-# Read directly from the reference engine: `[Ant 1]`/`[Nocturn 2 Versum]`
-# of Commune/C5.txt (Common of a Confessor Not a Bishop, Latin + English)
-# -- the standard "de Communi" commemoration Ant+V/R, same generic text
-# already reused elsewhere in this app for the Confessor-Not-Bishop
-# category's own suffrages (e.g. St. Joseph's) -- not unique to Raymond,
-# since he has no proper Lauds/Vespers antiphon of his own (see
-# st-raymond-nonnatus.yml's own header: "No [Ant 1] of his own"). Collect
-# is his own real proper (st-raymond-nonnatus-collect.yml), unchanged.
+# Corrected (2026-08): originally used Commune/C5.txt's own `[Ant 1]`
+# ("Similábo eum"), but cross-checking two other already live-verified
+# commemorations (st-clare-commemoration.yml, ss-felix-and-adauctus-
+# commemoration.yml) shows the real commemoration antiphon is `[Ant 2]`,
+# not `[Ant 1]` -- and specifically the Monastic-rubric variant of it
+# where one exists (`horas/Latin-gabc/Commune/C5.txt`'s own "(sed rubrica
+# monastica)" block: "Serve bone et fidélis... intra in gáudium Dómini Dei
+# tui", distinct from the secular "Euge, serve bone... Dómini tui"). Not
+# independently live-verified for Raymond/this category specifically --
+# marked `draft`, not `verified`, pending that confirmation, per this
+# app's own "prefer draft over missing" convention. Collect is his own
+# real proper (st-raymond-nonnatus-collect.yml), unchanged and verified.
 id: st-raymond-nonnatus-commemoration
 text:
   la: |
-    Ant. Similábo eum * viro sapiénti, qui ædificávit domum suam supra petram.
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
     V. Os justi meditábitur sapiéntiam.
     R. Et lingua ejus loquétur judícium.
     Orémus.
@@ -17,7 +21,7 @@ text:
     Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
     R. Amen.
   en: |
-    Ant. I will liken him unto a wise man, * which built his house upon a rock.
+    Ant. Well done, thou good * and faithful servant; thou hast been faithful over a few things, I will make thee ruler over many things; enter thou into the joy of the Lord thy God.
     V. The mouth of the righteous speaketh wisdom.
     R. And his tongue talketh judgment.
     Let us pray.
@@ -25,5 +29,5 @@ text:
     Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
     R. Amen.
 status:
-  la: verified
-  en: verified
+  la: draft
+  en: draft

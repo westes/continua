@@ -1,0 +1,28 @@
+# Own proper antiphon (st-john-apostle-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-an-evangelist (Commune/
+# C1a.txt inherits its own `[Ant 2]`/`[Versum 2]` unchanged from
+# Commune/C1, Common of an Apostle -- no override of its own) -- not yet
+# independently live-verified for this specific category, so marked
+# `draft` rather than `verified`. Collect is the saint's own real proper
+# (st-john-apostle-collect.yml), unchanged.
+id: st-john-apostle-commemoration
+text:
+  la: |
+    Ant. Iste est Joánnes, * qui supra pectus Dómini in cena recúbuit: beátus Apóstolus, cui reveláta sunt secréta cæléstia.
+    V. Annuntiavérunt ópera Dei.
+    R. Et facta ejus intellexérunt.
+    Orémus.
+    Ecclésiam tuam, Dómine, benígnus illústra: ut beáti Joánnis Apóstoli tui et Evangelístæ, illumináta doctrínis, ad dona pervéniat sempitérna.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    ℟. Amen.
+  en: |
+    Ant. This is John * who leaned at supper on the bosom of the Lord. Blessed Apostle, to whom heavenly secrets were revealed.
+    V. They have declared the works of God:
+    R. And have wisely considered of his doings.
+    Let us pray.
+    Shine upon thy Church, O Lord, in thy goodness, that, enlightened by the teachings of Blessed John, thy Apostle and Evangelist, she may attain to everlasting gifts.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    ℟. Amen.
+status:
+  la: draft
+  en: draft

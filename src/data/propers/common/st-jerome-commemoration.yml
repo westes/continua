@@ -1,0 +1,28 @@
+# Own proper antiphon (st-jerome-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor-not-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-jerome-collect.yml), unchanged.
+id: st-jerome-commemoration
+text:
+  la: |
+    Ant. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui Ecclésiæ tuæ in exponéndis sacris Scriptúris beátum Hierónymum, Confessórem tuum, Doctórem máximum providére dignátus es: præsta, quǽsumus; ut, ejus suffragántibus méritis, quod ore simul et ópere dócuit, te adjuvánte, exercére valeámus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    ℟. Amen.
+  en: |
+    Ant. Well done, thou good and faithful servant; thou hast been faithful over a few things, I will make thee ruler over many things; enter thou into the joy of thy Lord.
+    V. The mouth of the righteous speaketh wisdom.
+    R. And his tongue talketh judgment.
+    Let us pray.
+    O God, Who wast pleased to give unto thy Church thy blessed Confessor Jerome to be unto her a great teacher in the way of expounding thine Holy Scriptures, be entreated, we beseech thee, for that thy servant's sake, and grant unto us the strength to put in practice what he taught both by his doctrine and by his life.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    ℟. Amen.
+status:
+  la: draft
+  en: draft

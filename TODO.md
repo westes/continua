@@ -48,6 +48,21 @@ across every hour and content type in this app.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
+   - Sanctoral commemoration antiphon+versicle bundles: found 2026-08-30 (user-reported: St.
+     Raymond Nonnatus, the Decollation of St. John the Baptist, Ss. Felix and Adauctus all
+     rendering with no antiphon when merely commemorated) that 217 of 220 saints with an authored
+     collect had no `${propers}-commemoration.yml` bundle at all — `sanctoralCommemorationPart`
+     was silently falling back to a bare collect. Bulk-fixed same day: reused each saint's own
+     proper antiphon where authored (`${propers}-antiphon.yml`), else the standard de-Communi
+     `[Ant 2]`/`[Versum 2]` for that saint's own Common category (confirmed via 3 already
+     live-verified commemorations — Felix/Adauctus, Clare, Sabina — that these are the real tags
+     used for a mere commemoration, not `[Ant 1]`/`[Nocturn 2 Versum]` as first guessed). 182 of
+     ~218 real saints now covered (`tests/propers/commemoration-sweep.test.ts`); every entry not
+     independently live-verified is marked `status: draft`. ~36 saints remain, skipped for lack of
+     a sourced category template: BVM feasts (13, mostly duplex-1-classis — rarely commemorated
+     in practice), angels (4: no Commune `[Ant 2]`/`[Versum 2]` found yet), Confessor-Doctor (4),
+     Confessor-Pope (2), Vigils (5, all below duplex-majus — rarely reach commemoration), plus a
+     handful of duplex-1-classis Lord/BVM-adjacent feasts.
    - Vespers Magnificat antiphon: after the 2026-08-30 sweep plus the same-day O-Antiphon
      follow-up (see "O Antiphons (Dec 17-23) added" below), only two narrow gaps remain —
      Advent 4's own Sunday landing on Dec 24 specifically (outside the O-Antiphon range), and
