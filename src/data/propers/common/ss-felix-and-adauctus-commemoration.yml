@@ -1,0 +1,30 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-30 (a real Sunday, the exact case where this
+# renders as a commemoration -- Ss. Felix and Adauctus, Simplex, cede to
+# the Sunday, per calendar/commemorations.ts's ordinary-sunday rule).
+# Antiphon + versicle/response + full collect, same combined-bundle shape
+# as st-clare-commemoration.yml -- see hours/resolve-common.ts's
+# sanctoralCommemorationPart for how this renders, falling back to the
+# bare collect (ss-felix-and-adauctus-collect.yml) when this file didn't
+# exist.
+id: ss-felix-and-adauctus-commemoration
+text:
+  la: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Majestátem tuam, Dómine, súpplices exorámus: ut, sicut nos júgiter Sanctórum tuórum commemoratióne lætíficas; ita semper supplicatióne deféndas.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Ant. Even the very hairs of your head * are all numbered: fear not therefore; ye are of more value than many sparrows.
+    V. The saints shall rejoice in glory:
+    R. They shall be joyful in their beds.
+    Let us pray.
+    We humbly beseech thy Majesty, O Lord, that as thou dost make us exceeding glad at the remembrance of thine holy servants, so thou wouldest ever shelter us under their prayers.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

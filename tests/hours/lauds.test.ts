@@ -599,6 +599,14 @@ describe('resolveOrdo("lauds", ...)', () => {
     );
   });
 
+  it('gives Ss. Felix and Adauctus their own commemoration antiphon+versicle on a Sunday, not just a bare collect (fixed 2026-08-30, ss-felix-and-adauctus-commemoration.yml live-verified against that date)', () => {
+    const ordo = resolveOrdo('lauds', '2026-08-30');
+    const felixCommemoration = ordo.parts.find((p) => p.kind === 'preces' && p.label?.includes('Felix'));
+    expect(felixCommemoration?.kind === 'preces' ? felixCommemoration.text.text.en : undefined).toContain(
+      'hairs of your head',
+    );
+  });
+
   it('includes all five suffrages, in order, on an ordinary ferial day -- Cross from Tridentine 1906/1910, the other four from Monastic 1617', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const labels = ordo.parts.filter((p) => p.kind === 'preces' && p.label).map((p) => (p.kind === 'preces' ? p.label : undefined));
