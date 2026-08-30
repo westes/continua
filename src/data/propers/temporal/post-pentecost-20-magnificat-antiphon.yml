@@ -1,0 +1,13 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-10-03 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+id: post-pentecost-20-magnificat-antiphon
+text:
+  la: "Cognóvit autem pater * quia illa hora erat, in qua dixit Jesus: Fílius tuus vivit; et crédidit ipse et domus ejus tota."
+  en: "So the father knew * that it was at the same hour in which Jesus said “Thy son liveth.” And he himself believed, and his whole house."
+status:
+  la: verified
+  en: verified

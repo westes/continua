@@ -1,0 +1,13 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-01-10 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+id: post-epiphany-1-magnificat-antiphon
+text:
+  la: "Fili, quid fecísti * nobis sic? Ego et pater tuus doléntes quærebámus te. Quid est quod me quærebátis? nesciebátis quia in iis, quæ Patris mei sunt, opórtet me esse?"
+  en: "Son, why hast thou thus dealt with us? Behold, thy father and I have sought thee sorrowing. How is it that ye sought me? Wist ye not that I must be about my Father's business?"
+status:
+  la: verified
+  en: verified

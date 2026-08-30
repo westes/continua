@@ -1,0 +1,13 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2025-05-25 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+id: easter-6-magnificat-antiphon
+text:
+  la: "Pétite, et accipiétis, * ut gáudium vestrum sit plenum: ipse enim Pater amat vos, quia vos me amástis, et credidístis, allelúja."
+  en: "Ask, and ye shall receive, * that your joy may be full; for the Father Himself loveth you, because ye have loved Me, and have believed in Me, alleluia."
+status:
+  la: verified
+  en: verified
