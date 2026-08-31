@@ -15,6 +15,9 @@ import sanctoralCalendarData from '../data/calendar/sanctoral-calendar.yml';
 export interface SaintRecord {
   id: string;
   name: string;
+  /** Latin form of `name`, when authored — see calendar/types.ts's
+   * `SanctoralIdentity.nameLa` doc comment for the display fallback. */
+  nameLa?: string;
   rank: FeastClass;
   common: string;
   propers: string | null;
@@ -138,6 +141,7 @@ for (const mod of Object.values(saintModules)) {
 export interface SanctoralCandidate {
   id: string;
   name: string;
+  nameLa?: string;
   rank: FeastClass;
 }
 
@@ -157,6 +161,6 @@ export function getSanctoralCandidatesFor(isoDate: string): SanctoralCandidate[]
     if (!saint) {
       throw new Error(`sanctoral-calendar.yml references unknown saint id '${id}'`);
     }
-    return { id: saint.id, name: saint.name, rank: saint.rank };
+    return { id: saint.id, name: saint.name, nameLa: saint.nameLa, rank: saint.rank };
   });
 }

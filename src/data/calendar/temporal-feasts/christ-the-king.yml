@@ -8,6 +8,11 @@
 # movable feast. See calendar/movable-feasts.ts for the occurrence rule.
 id: christ-the-king
 name: "Christ the King"
+# The feast's own traditional short Latin title (Pius XI's "Quas Primas"),
+# matching this app's nominative-noun-phrase naming convention — the
+# reference engine's own [Rank] title is genitive ("Domini Nostri Jesu
+# Christi Regis", Sancti/10-DU.txt), dependent on an implied "Festum".
+nameLa: "Christus Rex"
 rank: duplex-1-classis
 anchor:
   kind: nth-sunday-of-month

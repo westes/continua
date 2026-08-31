@@ -15,6 +15,11 @@
 # — the `ordinary-feria` category was never actually load-bearing here.
 id: ascension
 name: "The Ascension of Our Lord"
+# Nominative form of the reference engine's own title ("In Ascensione
+# Domini", Pasc5-4.txt's [Officium]/[Rank] header), matching this app's
+# own nominative-noun-phrase naming convention rather than the source's
+# prepositional-phrase style.
+nameLa: "Ascensio Domini"
 rank: duplex-1-classis
 anchor:
   kind: easter

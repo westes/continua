@@ -46,6 +46,7 @@ describe('transfer mechanism (resolveDay integration)', () => {
       kind: 'sanctoral',
       id: 'st-lawrence',
       name: 'St. Lawrence, Martyr',
+      nameLa: 'Sanctus Laurentius, Martyr',
       rank: 'duplex-2-classis',
     });
   });
@@ -74,7 +75,7 @@ describe('transfer mechanism (resolveDay integration)', () => {
     expect(saturday.winner).toEqual({ kind: 'temporal', id: 'pentecost-sunday' });
     expect(saturday.commemorations).toEqual([
       { kind: 'sanctoral', id: 'st-felix-i', name: 'St. Felix I, Pope and Martyr', rank: 'simplex' },
-      { kind: 'octave', id: 'pentecost-sunday', name: 'Pentecost' },
+      { kind: 'octave', id: 'pentecost-sunday', name: 'Pentecost', nameLa: 'Dominica Pentecostes' },
     ]);
 
     // Felix doesn't reach Trinity Sunday at all now. Trinity Sunday 2026
@@ -93,7 +94,7 @@ describe('transfer mechanism (resolveDay integration)', () => {
     });
     expect(sunday.commemorations).toEqual([
       { kind: 'temporal', id: 'post-pentecost-01' },
-      { kind: 'octave', id: 'pentecost-sunday', name: 'Pentecost' },
+      { kind: 'octave', id: 'pentecost-sunday', name: 'Pentecost', nameLa: 'Dominica Pentecostes' },
     ]);
   });
 });

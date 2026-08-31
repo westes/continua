@@ -103,6 +103,11 @@ export type TemporalCategory =
 export interface SanctoralIdentity {
   id: string;
   name: string;
+  /** Latin form of `name`, when authored (see `data/calendar/saints/*.yml`'s
+   * own `nameLa` field). Absent for the majority of saints still — display
+   * code falls back to `name` itself when this is missing, same "surface
+   * real text rather than block on missing" convention used elsewhere. */
+  nameLa?: string;
   rank: FeastClass;
 }
 
@@ -180,7 +185,7 @@ export type Commemoration =
       // carries no such qualifier.
       vespersNote?: 'today' | 'tomorrow';
     } & SanctoralIdentity)
-  | { kind: 'octave'; id: string; name: string };
+  | { kind: 'octave'; id: string; name: string; nameLa?: string };
 
 export interface LiturgicalDay {
   /** ISO date, e.g. "2026-08-09" */

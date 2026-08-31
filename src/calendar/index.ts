@@ -237,7 +237,7 @@ function applyChristmasOctaveSunday(
       if (idx !== -1) {
         commemorations.splice(idx, 1);
       }
-      return { kind: 'sanctoral', id: displaced.id, name: displaced.name, rank: displaced.rank };
+      return { kind: 'sanctoral', id: displaced.id, name: displaced.name, nameLa: displaced.nameLa, rank: displaced.rank };
     }
   }
 
@@ -290,7 +290,7 @@ function applyMarianSaturday(
   if (winner.rank !== 'simplex') {
     return winner;
   }
-  commemorations.push({ kind: 'sanctoral', id: winner.id, name: winner.name, rank: winner.rank });
+  commemorations.push({ kind: 'sanctoral', id: winner.id, name: winner.name, nameLa: winner.nameLa, rank: winner.rank });
   return MARIAN_SATURDAY;
 }
 
@@ -343,7 +343,7 @@ function applyOctaves(isoDate: string, winner: DayWinner, commemorations: Commem
     if (cmp < 0 || tiedAgainstClosingDay) {
       const isOneOfTheseOctaves = octaves.some((o) => o.id === winner.id);
       if (!isOneOfTheseOctaves) {
-        commemorations.push({ kind: 'sanctoral', id: winner.id, name: winner.name, rank: winner.rank });
+        commemorations.push({ kind: 'sanctoral', id: winner.id, name: winner.name, nameLa: winner.nameLa, rank: winner.rank });
         resolvedWinner = { kind: 'temporal', id: resolveTemporalId(isoDate) };
       }
     }
@@ -356,7 +356,7 @@ function applyOctaves(isoDate: string, winner: DayWinner, commemorations: Commem
     // again alongside itself would be redundant.
     const isOwnStartDay = octave.dayNumber === 1 && resolvedWinner.kind === 'temporal';
     if (!isSelf && !isOwnStartDay) {
-      commemorations.push({ kind: 'octave', id: octave.id, name: octave.name });
+      commemorations.push({ kind: 'octave', id: octave.id, name: octave.name, nameLa: octave.nameLa });
     }
   }
 

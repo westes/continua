@@ -34,10 +34,17 @@ across every hour and content type in this app.
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
    - Latin saint/octave/named-feast names for the bilingual date/day-label header (see
-     "Bilingual, merged date/day-label header" below) — the `{en, la}` mechanism is built and
-     every proper name falls back to English gracefully, but zero saints, octaves, or named
-     temporal feasts have an authored Latin name anywhere in `src/data/**`. Weekday names,
-     month names, rank labels, and season/ordinal phrasing already have real Latin.
+     "Bilingual, merged date/day-label header" below and the dated log's new entry at the
+     bottom of this file) — `SanctoralIdentity`/`SaintRecord`/`TemporalFeastRecord`/
+     `ActiveOctave` now carry a real optional `nameLa` field, threaded end-to-end through
+     `calendar/day-label.ts`'s `biName` helper (live-verified: winner, octave-headline, and
+     commemoration branches all render authored Latin, not the English fallback, for a proof
+     set of 12 records — all 11 named temporal feasts plus St. Lawrence). Zero saints besides
+     St. Lawrence have an authored `nameLa` yet — this is now real bulk-content work in an
+     already-proven shape, same "one saint at a time, sourced against the reference engine's
+     own `[Officium]`/`[Rank]` title, nominative-noun-phrase form" methodology used for the
+     named temporal feasts. Weekday names, month names, rank labels, and season/ordinal
+     phrasing already had real Latin before this.
    - Matins sanctoral-side readings: the per-book Matins responsory pool has only one book
      seeded (`isa`) — needs expanding. Bible-plan TSV content also isn't yet in a test table
      (see "Bible-plan TSV — bulk conversion done" below).
@@ -4383,3 +4390,42 @@ not just under this app's implementation of them.
 Neither is "unauthored content pending" — there is no historical text for either case to author.
 Dropped from the "Open work" list entirely rather than marked done-with-a-caveat, since authoring
 something anyway would mean inventing text that never existed.
+
+### Bilingual header `nameLa` mechanism (2026-08-31)
+
+Picked up the standing "Latin saint/octave/named-feast names" backlog item. The `Bi`
+(`{en, la}`) *display* wrapper already existed in `calendar/day-label.ts`, but the underlying
+*data* had no bilingual name field at all — `SaintRecord.name`, `TemporalFeastRecord.name`, and
+the derived `SanctoralIdentity`/`ActiveOctave`/`Commemoration` types were plain English strings,
+so every proper name necessarily fell back through `biFallback`.
+
+Added an optional `nameLa?: string` alongside `name` on `SanctoralIdentity` (`calendar/types.ts`),
+`SaintRecord`/`SanctoralCandidate` (`calendar/feasts.ts`), `TemporalFeastRecord`
+(`calendar/temporal-feasts.ts`), and `ActiveOctave` (`calendar/octaves.ts`), then threaded it
+through every construction site that had been spreading `id`/`name`/`rank` (`collision.ts`,
+`commemorations.ts`, `movable-feasts.ts`, `index.ts` x3, `vespers.ts` x2,
+`octaves.ts`'s `considerCandidate`). `day-label.ts`'s old `biFallback(name)` calls became
+`biName(name, nameLa)`, which still falls back to the English string when `nameLa` is absent —
+the "surface real text, don't block on missing" convention preserved exactly, just now backed by
+a real field instead of no field at all.
+
+Authored `nameLa` for all 11 named temporal feasts as the proof set (each sourced from the
+reference engine's own `[Officium]`/`[Rank]` title, adapted from the source's genitive/ablative
+liturgical-title style to this app's nominative-noun-phrase naming convention — e.g. "In
+Ascensione Domini" → `Ascensio Domini`, "Sacratissimi Cordis Domini Nostri Jesu Christi" →
+`Sacratissimum Cor Domini Nostri Jesu Christi`) plus St. Lawrence as the one saint, chosen
+specifically to exercise the octave-headline (`octaveCoreName`) and octave-commemoration code
+paths, not just the plain-winner path the temporal feasts alone would have covered. Live-verified
+end-to-end via a throwaway scratch test (removed after confirming) that Pentecost's/the
+Ascension's/the Immaculate Heart's own winner label, St. Lawrence's mid-octave and closing-day
+octave label, and his octave *commemoration* line (Aug 12) all render the authored Latin, not the
+English fallback. Six pre-existing `toEqual` test fixtures across `august-sanctoral.test.ts`,
+`octaves.test.ts`, `transfer.test.ts`, and `december-sanctoral.test.ts` needed their expected
+objects updated to include the new `nameLa` key (Christmas's own octave-commemoration entries too,
+since `christmas-day.yml` picked up a name in this same pass). `npm test` (807 passed) and
+`tsc --noEmit` pass.
+
+**Not started**: `nameLa` for the other ~220 saints — the mechanism is now proven in all three
+code paths (plain winner, octave headline, sanctoral commemoration); what's left is the same
+per-saint sourcing pass the sanctoral-content sweep itself used, just for a name instead of a
+collect.

@@ -84,7 +84,7 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
     // dedicated stacking test below for the full week's build-up.
     expect(stephen.commemorations).toEqual([
       { kind: 'temporal', id: expect.any(String) },
-      { kind: 'octave', id: 'christmas-day', name: 'Christmas' },
+      { kind: 'octave', id: 'christmas-day', name: 'Christmas', nameLa: 'Nativitas Domini' },
     ]);
   });
 
@@ -101,7 +101,7 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
     // all stacked up and commemorate alongside him.
     expect(day.commemorations).toEqual([
       { kind: 'temporal', id: expect.any(String) },
-      { kind: 'octave', id: 'christmas-day', name: 'Christmas' },
+      { kind: 'octave', id: 'christmas-day', name: 'Christmas', nameLa: 'Nativitas Domini' },
       { kind: 'octave', id: 'st-stephen-protomartyr', name: 'St. Stephen, Protomartyr' },
       { kind: 'octave', id: 'st-john-apostle', name: 'St. John, Apostle and Evangelist' },
       { kind: 'octave', id: 'holy-innocents', name: 'The Holy Innocents, Martyrs' },
@@ -155,7 +155,7 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
     const dec30 = resolveDay('2033-12-30'); // no saint of its own -- a plain Octave-of-the-Nativity day
     expect(dec30.winner.kind).toBe('temporal');
     expect(dec30.commemorations).toEqual([
-      { kind: 'octave', id: 'christmas-day', name: 'Christmas' },
+      { kind: 'octave', id: 'christmas-day', name: 'Christmas', nameLa: 'Nativitas Domini' },
       { kind: 'octave', id: 'st-stephen-protomartyr', name: 'St. Stephen, Protomartyr' },
       { kind: 'octave', id: 'st-john-apostle', name: 'St. John, Apostle and Evangelist' },
       { kind: 'octave', id: 'holy-innocents', name: 'The Holy Innocents, Martyrs' },

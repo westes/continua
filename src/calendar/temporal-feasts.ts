@@ -30,6 +30,9 @@ export type MovableAnchor =
 export interface TemporalFeastRecord {
   id: string;
   name: string;
+  /** Latin form of `name`, when authored — see calendar/types.ts's
+   * `SanctoralIdentity.nameLa` doc comment for the display fallback. */
+  nameLa?: string;
   octave?: OctaveConfig;
   rank?: FeastClass;
   anchor?: MovableAnchor;

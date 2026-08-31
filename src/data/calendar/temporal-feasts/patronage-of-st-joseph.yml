@@ -21,6 +21,11 @@
 # (PascN-D = Easter + 7N + D, e.g. Ascension = Pasc5-4 = Easter+39).
 id: patronage-of-st-joseph
 name: "The Patronage of St. Joseph"
+# Nominative form of the reference engine's own title ("In Octava
+# Patrocinii S. Joseph", Tempora/Pasc3-3.txt's [Officium], octave-day
+# form of the feast's own genitive "Patrocinii S. Joseph"), matching this
+# app's own nominative-noun-phrase naming convention.
+nameLa: "Patrocinium Sancti Joseph"
 rank: duplex-1-classis
 anchor:
   kind: easter

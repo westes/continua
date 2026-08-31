@@ -14,6 +14,11 @@
 # day's real winner.
 id: corpus-christi
 name: "The Most Holy Body of Christ"
+# Common short Latin title, well attested in the reference engine's own
+# text ("Festum Sanctissimi Corporis Christi", Tempora/Pent01-4.txt's
+# [Officium]) — already a nominative noun phrase on its own, no
+# adaptation needed.
+nameLa: "Corpus Christi"
 rank: duplex-1-classis
 anchor:
   kind: easter

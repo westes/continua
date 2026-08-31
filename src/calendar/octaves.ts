@@ -17,6 +17,9 @@ import { compareFeastClass, minimumOutrightWinningRank } from './commemorations'
 export interface ActiveOctave {
   id: string;
   name: string;
+  /** Latin form of `name`, when authored — see calendar/types.ts's
+   * `SanctoralIdentity.nameLa` doc comment for the display fallback. */
+  nameLa?: string;
   /** This octave's own effective rank *today* — the ordinary `wins`
    * threshold on every day except its own closing day, where it's
    * `closingDayRank` instead (see calendar/types.ts's OctaveConfig).
@@ -49,6 +52,7 @@ function considerCandidate(
   startDate: string,
   id: string,
   name: string,
+  nameLa: string | undefined,
   octave: OctaveConfig | undefined,
 ): void {
   if (!octave?.enabled || seen.has(id)) {
@@ -63,7 +67,7 @@ function considerCandidate(
   const dayNumber = offset + 1;
   const isClosingDay = dayNumber === days;
   const wins = isClosingDay ? (octave.closingDayRank ?? DEFAULT_CLOSING_DAY_RANK) : (octave.wins ?? DEFAULT_WINS);
-  active.push({ id, name, wins, dayNumber, isClosingDay });
+  active.push({ id, name, nameLa, wins, dayNumber, isClosingDay });
 }
 
 /** Every octave (sanctoral or temporal) whose window covers `isoDate`,
@@ -80,14 +84,14 @@ export function activeOctavesFor(isoDate: string): ActiveOctave[] {
     for (const candidate of getSanctoralCandidatesFor(candidateDate)) {
       const record = getSaintRecord(candidate.id);
       if (record) {
-        considerCandidate(active, seen, isoDate, candidateDate, record.id, record.name, record.octave);
+        considerCandidate(active, seen, isoDate, candidateDate, record.id, record.name, record.nameLa, record.octave);
       }
     }
 
     for (const feastId of temporalFeastIdsStartingOn(candidateDate)) {
       const record = getTemporalFeastRecord(feastId);
       if (record) {
-        considerCandidate(active, seen, isoDate, candidateDate, record.id, record.name, record.octave);
+        considerCandidate(active, seen, isoDate, candidateDate, record.id, record.name, record.nameLa, record.octave);
       }
     }
   }

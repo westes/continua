@@ -83,11 +83,11 @@ export interface OccurrenceResult {
 }
 
 function sanctoralCommemoration(candidate: SanctoralIdentity): Commemoration {
-  return { kind: 'sanctoral', id: candidate.id, name: candidate.name, rank: candidate.rank };
+  return { kind: 'sanctoral', id: candidate.id, name: candidate.name, nameLa: candidate.nameLa, rank: candidate.rank };
 }
 
 function sanctoralWinner(candidate: SanctoralIdentity): DayWinner {
-  return { kind: 'sanctoral', id: candidate.id, name: candidate.name, rank: candidate.rank };
+  return { kind: 'sanctoral', id: candidate.id, name: candidate.name, nameLa: candidate.nameLa, rank: candidate.rank };
 }
 
 /**

@@ -83,7 +83,7 @@ export function applyMovableFeasts(isoDate: string, winner: DayWinner, commemora
       if (resolvedWinner.kind === 'temporal') {
         commemorations.push({ kind: 'temporal', id: resolvedWinner.id });
       } else {
-        commemorations.push({ kind: 'sanctoral', id: resolvedWinner.id, name: resolvedWinner.name, rank: resolvedWinner.rank });
+        commemorations.push({ kind: 'sanctoral', id: resolvedWinner.id, name: resolvedWinner.name, nameLa: resolvedWinner.nameLa, rank: resolvedWinner.rank });
       }
       resolvedWinner = FEAST_WINNER;
       continue;
@@ -95,7 +95,7 @@ export function applyMovableFeasts(isoDate: string, winner: DayWinner, commemora
     } else if (compareFeastClass(resolvedWinner.rank, rank) >= 0) {
       commemorations.push({ kind: 'temporal', id: feast.id });
     } else {
-      commemorations.push({ kind: 'sanctoral', id: resolvedWinner.id, name: resolvedWinner.name, rank: resolvedWinner.rank });
+      commemorations.push({ kind: 'sanctoral', id: resolvedWinner.id, name: resolvedWinner.name, nameLa: resolvedWinner.nameLa, rank: resolvedWinner.rank });
       resolvedWinner = FEAST_WINNER;
     }
   }

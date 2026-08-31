@@ -85,7 +85,7 @@ function commemorationOfDisplacedPredecessor(loser: DayWinner): Commemoration | 
   if (loser.kind !== 'sanctoral' || loser.rank === 'simplex') {
     return undefined;
   }
-  return { kind: 'sanctoral', id: loser.id, name: loser.name, rank: loser.rank, vespersNote: 'today' };
+  return { kind: 'sanctoral', id: loser.id, name: loser.name, nameLa: loser.nameLa, rank: loser.rank, vespersNote: 'today' };
 }
 
 /**
@@ -120,7 +120,7 @@ function commemorationOfDisplacedSuccessor(winner: DayWinner, loser: DayWinner):
   if (forbids) {
     return undefined;
   }
-  return { kind: 'sanctoral', id: loser.id, name: loser.name, rank: loser.rank, vespersNote: 'tomorrow' };
+  return { kind: 'sanctoral', id: loser.id, name: loser.name, nameLa: loser.nameLa, rank: loser.rank, vespersNote: 'tomorrow' };
 }
 
 function tagVespersFrom(tomorrow: LiturgicalDay): LiturgicalDay {

@@ -12,6 +12,10 @@
 # specifically.
 id: christmas-day
 name: "Christmas"
+# Nominative form of the reference engine's own title ("In Nativitate
+# Domini", Sancti/12-25.txt's [Rank]), matching this app's own
+# nominative-noun-phrase naming convention.
+nameLa: "Nativitas Domini"
 rank: duplex-1-classis
 octave:
   enabled: true

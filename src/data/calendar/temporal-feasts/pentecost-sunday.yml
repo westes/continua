@@ -10,6 +10,9 @@
 # before it gets the chance.
 id: pentecost-sunday
 name: "Pentecost"
+# Reference engine's own [Officium] title, Tempora/Pent00-0.txt — already
+# a nominative noun phrase, no adaptation needed.
+nameLa: "Dominica Pentecostes"
 rank: duplex-1-classis
 octave:
   enabled: true

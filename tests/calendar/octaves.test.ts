@@ -10,7 +10,14 @@ describe('activeOctavesFor', () => {
   it("finds a saint's own octave on its own day (day 1) and through day 8, not on day 9", () => {
     const day1 = activeOctavesFor('2026-08-10'); // St. Lawrence's own day
     expect(day1).toEqual([
-      { id: 'st-lawrence', name: 'St. Lawrence, Martyr', wins: 'semiduplex', dayNumber: 1, isClosingDay: false },
+      {
+        id: 'st-lawrence',
+        name: 'St. Lawrence, Martyr',
+        nameLa: 'Sanctus Laurentius, Martyr',
+        wins: 'semiduplex',
+        dayNumber: 1,
+        isClosingDay: false,
+      },
     ]);
 
     // Aug 17 is also day 3 of the Assumption's own octave (started Aug 15) --
@@ -19,7 +26,14 @@ describe('activeOctavesFor', () => {
     // pattern, not a per-saint quirk (see calendar/types.ts's OctaveConfig).
     const day8 = activeOctavesFor('2026-08-17');
     expect(day8).toEqual([
-      { id: 'st-lawrence', name: 'St. Lawrence, Martyr', wins: 'duplex', dayNumber: 8, isClosingDay: true },
+      {
+        id: 'st-lawrence',
+        name: 'St. Lawrence, Martyr',
+        nameLa: 'Sanctus Laurentius, Martyr',
+        wins: 'duplex',
+        dayNumber: 8,
+        isClosingDay: true,
+      },
       {
         id: 'assumption',
         name: 'The Assumption of the Blessed Virgin Mary',
@@ -37,7 +51,14 @@ describe('activeOctavesFor', () => {
   it("Pentecost's octave uses its own configured threshold (duplex), not the default (semiduplex)", () => {
     const octaves = activeOctavesFor('2026-05-29'); // within Pentecost's octave, 2026
     expect(octaves).toEqual([
-      { id: 'pentecost-sunday', name: 'Pentecost', wins: 'duplex', dayNumber: 6, isClosingDay: false },
+      {
+        id: 'pentecost-sunday',
+        name: 'Pentecost',
+        nameLa: 'Dominica Pentecostes',
+        wins: 'duplex',
+        dayNumber: 6,
+        isClosingDay: false,
+      },
     ]);
     expect(strictestThreshold(octaves)).toBe('duplex');
   });

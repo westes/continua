@@ -6,6 +6,10 @@
 # antiphon.
 id: st-lawrence
 name: "St. Lawrence, Martyr"
+# Standard Latin form, matching this app's own "St. X, Rank" naming
+# convention (the source's own martyrology/kalendar entries for him use
+# the genitive "S. Laurentii Martyris", dependent on an implied "Festum").
+nameLa: "Sanctus Laurentius, Martyr"
 rank: duplex-2-classis
 common: common-of-a-martyr
 propers: "st-lawrence"

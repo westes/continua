@@ -20,6 +20,10 @@
 # not winner resolution at all.
 id: circumcision
 name: "The Circumcision of Our Lord"
+# Nominative form of the reference engine's own title ("In Circumcisione
+# Domini", Sancti/01-01.txt's [Rank]), matching this app's own
+# nominative-noun-phrase naming convention.
+nameLa: "Circumcisio Domini"
 rank: duplex-2-classis
 anchor:
   kind: fixed-date

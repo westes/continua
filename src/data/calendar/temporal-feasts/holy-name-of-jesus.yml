@@ -16,6 +16,10 @@
 # the day.
 id: holy-name-of-jesus
 name: "The Most Holy Name of Jesus"
+# Nominative form of the reference engine's own title ("Sanctissimi
+# Nominis Jesu", Sancti/01-00.txt's [Rank]), matching this app's own
+# nominative-noun-phrase naming convention.
+nameLa: "Sanctissimum Nomen Jesu"
 rank: duplex-2-classis
 anchor:
   kind: fixed-date

@@ -71,6 +71,7 @@ describe('August sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-lawrence',
       name: 'St. Lawrence, Martyr',
+      nameLa: 'Sanctus Laurentius, Martyr',
       rank: 'duplex-2-classis',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
@@ -86,7 +87,7 @@ describe('August sanctoral pull (first pass)', () => {
     expect(clareDay.winner.kind).toBe('temporal');
     expect(clareDay.commemorations).toEqual([
       { kind: 'sanctoral', id: 'st-clare', name: 'St. Clare, Virgin', rank: 'simplex' },
-      { kind: 'octave', id: 'st-lawrence', name: 'St. Lawrence, Martyr' },
+      { kind: 'octave', id: 'st-lawrence', name: 'St. Lawrence, Martyr', nameLa: 'Sanctus Laurentius, Martyr' },
     ]);
     // Aug 22 is the Assumption's own octave day (In Octava Assumptionis),
     // Duplex, blocking Ss. Timothy/Hippolytus/Symphorian the same way --

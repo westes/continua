@@ -12,12 +12,14 @@
 //
 // Bilingual: every label is built as a `Bi` (`{en, la}`) pair throughout.
 // Proper names (a saint's name, an octave's name, a named temporal feast's
-// name) have no authored Latin form anywhere in `data/` today — those use
-// the English string as their own `la` value too (same "surface real text
-// rather than block on missing" convention used elsewhere in this app),
-// rather than leaving Latin mode showing blanks. Only the closed,
+// name) carry an optional `nameLa` field alongside the required English
+// `name` — see calendar/types.ts's `SanctoralIdentity.nameLa` doc comment.
+// Most saints still have no authored Latin name; `biName` falls back to
+// the English string as the `la` value in that case (same "surface real
+// text rather than block on missing" convention used elsewhere in this
+// app), rather than leaving Latin mode showing blanks. The closed,
 // mechanism-level vocabulary here (weekdays, ranks, season/ordinal
-// phrasing) has real Latin authored.
+// phrasing) has always had real Latin authored, independent of this.
 import type { FeastClass, LiturgicalDay, TemporalCategory, Weekday } from './types';
 import { easterSunday } from './easter';
 import { adventStart, firstSundayStrictlyAfter, sundayOnOrBefore } from './temporal';
@@ -36,10 +38,11 @@ function bi(en: string, la: string): Bi {
   return { en, la };
 }
 
-/** A proper name with no authored Latin form yet — the English string
- * stands in for `la` too. See file-header note. */
-function biFallback(name: string): Bi {
-  return { en: name, la: name };
+/** A proper name (saint, octave, named temporal feast) with an optional
+ * authored Latin form — falls back to the English string when `nameLa`
+ * hasn't been authored yet, same convention as `biFallback` above. */
+function biName(name: string, nameLa: string | undefined): Bi {
+  return { en: name, la: nameLa ?? name };
 }
 
 function joinBi(items: Bi[], sep = ' — '): Bi {
@@ -348,13 +351,13 @@ function temporalLabel(day: LiturgicalDay): Bi {
  * own winner is the feast itself, handled above before this is ever
  * called) — kept simple rather than special-cased for that rare edge case
  * (see applyOctaves's own `isOwnStartDay` comment in calendar/index.ts for
- * when it can happen). The octave's own `name` has no authored Latin form
- * (see file header), so both languages currently show the same name text
- * — only the surrounding phrasing differs. */
+ * when it can happen). Falls back to the English name for `la` too when
+ * the octave's own record has no authored `nameLa` yet (see file header). */
 function octaveCoreName(octave: ActiveOctave): Bi {
+  const name = biName(octave.name, octave.nameLa);
   return octave.isClosingDay
-    ? bi(`Octave of ${octave.name}`, `In Octava ${octave.name}`)
-    : bi(`${ordinal(octave.dayNumber)} Day within the Octave of ${octave.name}`, `${ordinalLa(octave.dayNumber)} die infra Octavam ${octave.name}`);
+    ? bi(`Octave of ${name.en}`, `In Octava ${name.la}`)
+    : bi(`${ordinal(octave.dayNumber)} Day within the Octave of ${name.en}`, `${ordinalLa(octave.dayNumber)} die infra Octavam ${name.la}`);
 }
 
 function octaveLabel(octave: ActiveOctave): Bi {
@@ -405,8 +408,8 @@ const CROSS_DAY_VESPERS_LABELS: Record<'today' | 'tomorrow', Bi> = {
  * - `sanctoral`: every commemorated saint, plain name, no rank (multiple
  *   real ones can coexist — e.g. two colliding saints on the same date —
  *   this app's own "generous commemorations" design keeps every one of
- *   them, not just the first). No authored Latin saint names exist yet
- *   (see file header), so `la` falls back to the same English name.
+ *   them, not just the first). `la` uses the saint's own `nameLa` when
+ *   authored, else falls back to the same English name (see file header).
  * - `temporal`: the day's own real Sunday/feria identity, if
  *   `decideOccurrence` demoted it to a commemoration (`ordinary-sunday`/
  *   `privileged-feria`/`privileged-feria-minor`) — matched by id against
@@ -438,7 +441,7 @@ function collectCommemorations(
   const octaves: Bi[] = [];
   for (const c of day.commemorations) {
     if (c.kind === 'sanctoral') {
-      const name = biFallback(c.name);
+      const name = biName(c.name, c.nameLa);
       sanctoral.push(
         c.vespersNote
           ? bi(`${name.en} (${CROSS_DAY_VESPERS_LABELS[c.vespersNote].en})`, `${name.la} (${CROSS_DAY_VESPERS_LABELS[c.vespersNote].la})`)
@@ -450,7 +453,7 @@ function collectCommemorations(
       }
     } else if (opts.showOctaves && c.id !== opts.excludeOctaveId) {
       const octave = activeOctaves.find((a) => a.id === c.id);
-      octaves.push(octave ? octaveCommemorationLabel(octave) : biFallback(c.name));
+      octaves.push(octave ? octaveCommemorationLabel(octave) : biName(c.name, c.nameLa));
     }
   }
   return { sanctoral, temporal, octaves };
@@ -542,7 +545,7 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
       showOctaves: day.temporalCategory === 'ordinary-feria',
     });
     const rank = formatRank(day.winner.rank);
-    const winnerName = biFallback(day.winner.name);
+    const winnerName = biName(day.winner.name, day.winner.nameLa);
     const winner = bi(`${winnerName.en} (${rank.en})`, `${winnerName.la} (${rank.la})`);
     return joinBi([winner, ...temporal, ...sanctoral, ...octaves]);
   }
@@ -554,7 +557,7 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
   // temporal-feasts.ts) and fall through further down.
   const namedFeast = getTemporalFeastRecord(day.winner.id);
   if (namedFeast) {
-    const name = biFallback(namedFeast.name);
+    const name = biName(namedFeast.name, namedFeast.nameLa);
     const primary = namedFeast.rank
       ? bi(`${name.en} (${formatRank(namedFeast.rank).en})`, `${name.la} (${formatRank(namedFeast.rank).la})`)
       : name;

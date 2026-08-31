@@ -19,11 +19,11 @@ export interface CollisionResult {
 }
 
 function asWinner(candidate: SanctoralIdentity): DayWinner {
-  return { kind: 'sanctoral', id: candidate.id, name: candidate.name, rank: candidate.rank };
+  return { kind: 'sanctoral', id: candidate.id, name: candidate.name, nameLa: candidate.nameLa, rank: candidate.rank };
 }
 
 function asCommemoration(candidate: SanctoralIdentity): Commemoration {
-  return { kind: 'sanctoral', id: candidate.id, name: candidate.name, rank: candidate.rank };
+  return { kind: 'sanctoral', id: candidate.id, name: candidate.name, nameLa: candidate.nameLa, rank: candidate.rank };
 }
 
 /**
