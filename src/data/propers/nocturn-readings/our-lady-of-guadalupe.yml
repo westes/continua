@@ -1,0 +1,53 @@
+# Matins Nocturn 2 reading for Our Lady of Guadalupe, Dec 12. Sourced
+# from web/www/horas/Latin/Sancti/12-12n.txt's single Lectio94 (the
+# apparition narrative, one continuous piece before &teDeum) and its
+# English counterpart. No Nocturn 3 in the source at all (unlike Our
+# Lady of Lourdes' 12-10bmv cross-reference) -- defers to the Common of
+# the BVM's own Nocturn 3, not transcribed here, same pattern as
+# st-hyacinth.yml's "No Lectio7-9" note.
+id: our-lady-of-guadalupe
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Méxici, in colle Tepeiacénsi, anno millésimo quingentésimo trigésimo primo Deípara
+        Virgo María Joánni Dídaco neóphyto, uti pie tráditur, sese vidéndam prǽbuit, eíque
+        ad antístitem Joánnem de Zumárraga mandátum dedit, quod et instánter iterávit, de
+        æde síbimet ínibi construénda. Epíscopus vero signum expétiit. Mox neóphytum
+        pátruo moritúro sacraménta longínquius ab apparitiónis loco quæréntem, tértio visu
+        dignátur alma Mater, de pátrui sanitáte serénat, rosásque extra tempus obórtas, in
+        ejus pállio compósitas, ad epíscopum deférri jubet. Cujus in conspéctu rosis
+        effúsis, Maríæ imágo, ipsi pállio impréssa, uti tráditur, mirum in modum
+        præséntibus appáruit. Quæ in sacéllo episcopáli primum asserváta, dein ad
+        exstrúctam ædem in colle Tepeiacénsi transláta, dénique in magnífico templo
+        excépta est, quo turmátim plebes Mexicánæ magis magísque conveníre cœpérunt,
+        veneratiónis grátia et frequéntiæ miraculórum. Ideóque tamquam præsentíssimum
+        præsídium Mexicáni antístites, univérso pópulo plaudénte, beatam Vírginem Maríam
+        de Guadalúpe in primáriam Patrónam gentis Mexicánæ elegérunt, quod Benedíctus
+        décimus quartus apostólica auctoritáte rite confirmávit. Leo tértius décimus
+        sacram effígiem áurea coróna, Colúmbi recurrénte die, anno millésimo octingentésimo
+        nonagésimo quinto per Mexicánum archiepíscopum decorávit. Sanctus vero Pius
+        décimus beátam Vírginem Guadalupénsem univérsæ Américæ Latínæ Patrónam declarávit.
+      en: >-
+        In Mexico, on the hill of Tepeyac, in the year 1531, the God-bearing Virgin Mary,
+        as is piously handed down, appeared to the neophyte Juan Diego, and gave him a
+        command for Bishop Juan de Zumarraga, which she urgently repeated, that a church
+        was to be constructed in her name at that location. The bishop, however, requested
+        a sign. Then, while he was seeking the sacraments for his dying uncle far from the
+        place of the apparition, his loving Mother favored the neophyte with a third
+        vision, assured him of his uncle's health, and after he had gathered roses into his
+        cloak that had blossomed out of season, she ordered him to take them to the bishop.
+        The roses having spilled out in the sight of the bishop, an image of Mary,
+        impressed upon the cloak itself, according to the tradition, appeared to those
+        present in a wondrous manner. At first kept in the bishop's chapel, then
+        transferred to a shrine constructed on the hill of Tepeyac, it was finally moved to
+        a magnificent temple, to which Mexicans increasingly began to gather in droves, for
+        reasons of veneration and frequency of miracles. And therefore as an ever-present
+        defense, the Mexican bishops, to the applause of the whole people, chose the
+        Blessed Virgin Mary of Guadalupe as the first Patroness of the Mexican people,
+        which was duly confirmed by the apostolic authority of Benedict XIV. Leo XIII
+        adorned the sacred image with a golden crown on Columbus Day, 1895, by the agency
+        of the archbishop of Mexico. And St. Pius X declared the blessed Guadalupan Virgin
+        as the Patroness of all Latin America.
+    status: { la: verified, en: verified }
