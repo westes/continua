@@ -1,0 +1,164 @@
+# Nocturn 2-3, Passion Sunday (temporalId passion-sunday). Sourced from
+# Tempora/Quad5-0.txt (Latin) / English/Tempora/Quad5-0.txt. See
+# advent-1.yml/lent-1.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Leo the Great's
+# 9th Sermon for Lent. Responsory: Lectio4's own (Responsory4, "Deus meus
+# es tu, ne discédas a me").
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (John 8:46-59, "Et réliqua") - Pope St. Gregory the
+# Great's Homily 18 on the Gospels begins within Lectio7 itself, same
+# pattern used throughout this sweep. Combined Lectio7's homily portion
+# (incipit dropped) with Lectio8-9, using Responsory7 ("Tota die
+# contristátus ingrediébar, Dómine") - the first responsory of the group
+# the combined reading spans.
+id: passion-sunday
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Leo the Great, Sermon 9 for Lent"
+    text:
+      la: >-
+        In ómnibus, dilectíssimi, solemnitátibus christiánis non ignorámus paschále sacraméntum esse
+        præcípuum: cui condígne et cóngrue suscipiéndo, totíus quidem nos témporis institúta refórmant:
+        sed devotiónem nostram præséntes vel máxime dies éxigunt, quos illi sublimíssimo divínæ
+        misericórdiæ sacraménto scimus esse contíguos. In quibus mérito a sanctis Apóstolis per doctrínam
+        Spíritus Sancti majóra sunt ordináta jejúnia: ut per commúne consórtium crucis Christi, étiam nos
+        áliquid in eo quod propter nos gessit, agerémus, sicut Apóstolus ait: Si compátimur, et
+        conglorificábimur. Certa atque secúra est exspectátio promíssæ beatitúdinis, ubi est participátio
+        Domínicæ passiónis.
+
+
+        Nemo est, dilectíssimi, cui per conditiónem témporis socíetas hujus glóriæ denegétur, tamquam
+        tranquíllitas pacis vácua sit occasióne virtútis. Apóstolus enim prǽdicat, dicens: Omnes qui pie
+        volunt vívere in Christo, persecutiónem patiéntur: et ídeo numquam deest tribulátio
+        persecutiónis, si numquam desit observántia pietátis. Dóminus enim in exhortatiónibus suis dicit:
+        Qui non áccipit crucem suam, et séquitur me, non est me dignus. Nec dubitáre debémus, hanc vocem
+        non solum ad discípulos Christi, sed ad cunctos fidéles, totámque Ecclésiam pertinére, quæ
+        salutáre suum in his qui áderant, universáliter audiébat.
+
+
+        Sicut ergo totíus est córporis pie vívere, ita totíus est témporis crucem ferre: quæ mérito ferri
+        unicuíque suadétur, quia própriis modis atque mensúris ab unoquóque tolerátur. Unum nomen est
+        persecutiónis, sed non una est causa certáminis: et plus plerúmque perículi est in insidiatóre
+        occúlto, quam in hoste manifésto. Beátus Job alternántibus bonis ac malis mundi hujus erudítus,
+        pie veracitérque dicébat: Nonne tentátio est vita hóminis super terram? Quóniam non solis
+        dolóribus córporis atque supplíciis ánima fidélis impétitur, verum étiam, salva incolumitáte
+        membrórum, gravi morbo urgétur, si carnis voluptáte mollítur. Sed cum caro concupíscit advérsus
+        spíritum, spíritus autem advérsus carnem; præsídio crucis Christi mens rationális instrúitur, nec
+        cupiditátibus nóxiis illécta conséntit, quóniam continéntiæ clavis et Dei timóre transfígitur.
+      en: >-
+        Dearly beloved brethren, we know that of all the solemn Feasts which are kept by Christians the
+        Passover is the chief. The ordinances of the whole rest of the year are ordered to the end of
+        preparing us to come to this one in worthy and meet manner. But these days, which now are, are
+        they which ought most especially to stir up a godly mind in us, seeing that they are they which
+        are nearest to that most glorious mystery of God's mercy. In these days the holy Apostles, taught
+        by the Holy Ghost, ordered the chiefest store of Fasting, that we, sharing His Cross with Christ,
+        might, albeit we are what we are, in Him, do some of the same things which He did for our sakes,
+        and so realise the saying of the Apostle: "If we suffer with Him, we shall be also glorified
+        together." He that is partaker of the sufferings of the Lord hath a sure and certain hope of that
+        blessedness which He hath promised unto us.
+
+
+        Dearly beloved brethren, there is no man to whom the state of the age in which he liveth denieth
+        a share in this glory of partaking, first the sufferings, and then the triumph and joy, of
+        Christ. It is not as though this time of peace were barren in occasions of valour. The Apostle
+        giveth us this warning: All that will live godly in Christ Jesus shall suffer persecution. And
+        therefore, as long as godliness is watchful, persecution will never be asleep. The Lord Himself
+        saith in one of His own exhortations: He that taketh not his cross, and followeth after Me, is
+        not worthy of Me. And we must not doubt that these words of Christ apply not only to His
+        immediate disciples, to whom He spoke them, but belong to all the faithful and to the whole
+        Church, who, whosoever be the believers of whom she is for the time composed on earth, heareth in
+        these words the way to be saved which her Lord hath appointed for them.
+
+
+        As then, it is the duty of the whole body of the Church to live godly, so is it her right at all
+        times to be a-bearing of her Master's Cross, and that not only in her general body, but
+        individually in the person of each one of her members, who differ every one from another in the
+        way in which they have to carry it, and the shape in which it is laid upon them. The one common
+        name for all their carrying of the Cross is persecution, but the manner of his wrestling is
+        special to each; and there is often more danger in the ambush than in the pitched field of
+        battle. Blessed Job, who had tried both the goods and the ills of this world, said: Is not the
+        life of man upon earth a warfare? The attack upon the faithful soul arrayeth itself not alone in
+        bodily torture and punishment; yea, when the limbs are sound enough, fearful is the ravage that
+        threateneth us when the lusts of the flesh unman us. But when the flesh lusteth against the
+        spirit, and the spirit against the flesh, the reasonable mind findeth her reinforcement in the
+        helpful Cross of Christ, and though she be lured by foul cravings, yet refuseth to give her
+        consent, for God maketh her pure thoughts to tremble for fear of Him.
+    responsory:
+      la: "R. Deus meus es tu, ne discédas a me: * Quóniam tribulátio próxima est, et non est qui ádjuvet.\nV. Tu autem, Dómine, ne elongáveris auxílium tuum a me: ad defensiónem meam áspice.\nR. Quóniam tribulátio próxima est, et non est qui ádjuvet."
+      en: "R. Thou art my God; be not far from me, for trouble is near; * For there is none to help.\nV. But be not thy strength far from me; O Lord, haste thee to help me.\nR. For trouble is near; for there is none to help."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "Pope St. Gregory the Great, Homily 18 on the Gospels"
+    text:
+      la: >-
+        Pensáte, fratres caríssimi, mansuetúdinem Dei. Relaxáre peccáta vénerat, et dicébat: Quis ex
+        vobis árguet me de peccáto? Non dedignátur ex ratióne osténdere se peccatórem non esse, qui ex
+        virtúte divinitátis póterat peccatóres justificáre. Sed terríbile est valde, quod súbditur: Qui ex
+        Deo est, verba Dei audit: proptérea vos non audítis, quia ex Deo non estis. Si enim ipse verba
+        Dei audit qui ex Deo est, et audíre verba ejus non potest quisquis ex illo non est: intérroget se
+        unusquísque, si verba Dei in aure cordis pércipit; et intélleget unde sit. Cæléstem pátriam
+        desideráre Véritas jubet, carnis desidéria cónteri, mundi glóriam declináre, aliéna non appétere,
+        própria largíri.
+
+
+        Penset ergo apud se unusquísque vestrum, si hæc vox Dei in cordis ejus aure conváluit, et quia jam
+        ex Deo sit, agnóscit. Nam sunt nonnúlli, qui præcépta Dei nec aure córporis percípere dignántur.
+        Et sunt nonnúlli, qui hæc quidem córporis aure percípiunt, sed nullo ea mentis desidério
+        complectúntur. Et sunt nonnúlli, qui libénter verba Dei suscípiunt, ita ut étiam in flétibus
+        compungántur, sed post lacrimárum tempus ad iniquitátem rédeunt. Hi profécto verba Dei non
+        áudiunt, qui hæc exercére in ópere contémnunt. Vitam ergo vestram, fratres caríssimi, ante mentis
+        óculos revocáte, et alta consideratióne pertiméscite hoc quod ex ore Veritátis sonat: Proptérea
+        vos non audítis, quia ex Deo non estis.
+
+
+        Sed hoc quod de réprobis Véritas lóquitur, ipsi hoc de semetípsis réprobi iníquis suis opéribus
+        osténdunt: nam séquitur: Respondérunt ígitur Judǽi et dixérunt ei: Nonne bene dícimus nos, quia
+        Samaritánus es tu, et dæmónium habes? Accépta autem tanta contumélia, quid Dóminus respóndeat,
+        audiámus: Ego dæmónium non hábeo, sed honorífico Patrem meum, et vos inhonorástis me. Quia enim
+        Samaritánus interpretátur custos: et ipse veráciter custos est, de quo Psalmísta ait: Nisi Dóminus
+        custodíerit civitátem, in vanum vígilant qui custódiunt eam: et cui per Isaíam dícitur: Custos
+        quid de nocte? custos quid de nocte? respondére nóluit Dóminus, Samaritánus non sum; sed, Ego
+        dæmónium non hábeo. Duo quippe ei illáta fuérunt: unum negávit, áliud tacéndo consénsit.
+      en: >-
+        Dearly beloved brethren, consider the gentleness of God. He came to take away sins, and He
+        saith: Which of you convinceth Me of sin? He Who, through the might of His Godhead, was able to
+        justify sinners, was contented to show by argument that He was not Himself a sinner. But
+        exceeding dread is that which followeth: He that is of God heareth God's words; ye, therefore,
+        hear them not, because ye are not of God. If, then, whosoever is of God heareth God's words, and
+        whosoever is not of Him cannot hear His words, let each one ask himself if he, in the ear of his
+        heart, heareth God's words, and understandeth Whose words they are? The Truth commandeth us to
+        long for a Fatherland in heaven, to bridle the lusts of the flesh, to turn away from the glory of
+        the world, to seek no man's goods, and to give away our own.
+
+
+        Let each of you, therefore, think within himself if this voice of God is heard in the ear of his
+        heart, and if he knoweth already if he is of God. For some there be, whom it pleaseth not to
+        hear the commandments of God even with their bodily ears. And some there be, who receive the
+        same with their bodily ears, but whose heart is far from them. And some also there be, who hear
+        the words of God with joy, so that they are moved thereby even to tears; but when their fit of
+        weeping is past they turn again to iniquity. They hear not the words of God, who despise to do
+        them. Therefore, dearly beloved brethren, call up your own life before your mind's eye, and then
+        ponder with trembling those awful words which the mouth of the Truth spoke: Ye therefore hear
+        them not, because ye are not of God.
+
+
+        But the Truth speaketh these words concerning the reprobate; but the reprobate make manifest the
+        same thing concerning themselves, by their evil works. Thus immediately followeth: Then answered
+        the Jews, and said unto Him: Say we not well that Thou art a Samaritan, and hast a devil? But let
+        us hear what the Lord said to this insult: I have not a devil, but I honour My Father, and ye do
+        dishonour Me. The Lord said: I have not a devil, but He did not say: I am not a Samaritan, for in
+        a sense a Samaritan He was indeed, since the word Samaritan, in the Hebrew tongue, signifieth,
+        being interpreted, a Watcher, and the Lord is that Watcher, of Whom the Psalmist saith that
+        unless He keep the city, other watchman waketh but in vain. He also is that Watchman unto Whom
+        crieth Isaiah: Watchman, what of the night? Watchman, what of the night? Therefore the Lord said:
+        I have not a devil, but not: I am not a Samaritan. Of the two things brought against Him He
+        denied one; but by His silence, admitted the other.
+    responsory:
+      la: "R. Tota die contristátus ingrediébar, Dómine: quóniam ánima mea compléta est illusiónibus: * Et vim faciébant, qui quærébant ánimam meam.\nV. Amíci mei et próximi mei advérsum me appropinquavérunt et stetérunt: et qui juxta me erant, de longe stetérunt.\nR. Et vim faciébant, qui quærébant ánimam meam."
+      en: "R. O Lord, I go mourning all the day long, for my soul is filled with a loathsome disease: * They also that sought after my life have used violence against me.\nV. My friends and my neighbours draw near, and stand over against me; and they that are nearest to me stand afar off.\nR. They also that sought after my life have used violence against me."
+    status: { la: verified, en: verified }

@@ -1,0 +1,134 @@
+# Nocturn 2-3, Third Sunday of Advent (temporalId advent-3). Sourced from
+# Tempora/Adv3-0.txt (Latin) / English/Tempora/Adv3-0.txt. See
+# advent-1.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Leo the Great's
+# 2nd Sermon on the December Fast and Almsgiving. Responsory: Lectio4's
+# own (Responsory4, "Ægypte, noli flere").
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (John 1:19-28, "Et réliqua") - Pope St. Gregory the
+# Great's Homily 7 on the Gospels begins within Lectio7 itself, same
+# pattern as advent-1/-2. Combined Lectio7's homily portion (incipit
+# dropped) with Lectio8-9, using Responsory7 ("Veni, Dómine, et noli
+# tardáre").
+id: advent-3
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Leo the Great, Sermon 2 on the December Fast and Almsgiving"
+    text:
+      la: >-
+        Quod témporis rátio, et devotiónis nostræ ádmonet consuetúdo, pastoráli vobis, dilectíssimi,
+        sollicitúdine prædicámus, décimi mensis celebrándum esse jejúnium, quo pro consummáta perceptióne
+        ómnium frúctuum, digníssime largitóri eórum Deo continéntiæ libámen offértur. Quid enim potest
+        efficácius esse jejúnio? cujus observántia appropinquámus Deo, et resisténtes diábolo, vítia
+        blanda superámus.
+
+
+        Semper enim virtúti cibus jejúnium fuit. De abstinéntia dénique pródeunt castæ cogitatiónes,
+        rationábiles voluntátes, salubrióra consília: et per voluntárias afflictiónes caro concupiscéntiis
+        móritur, virtútibus spíritus innovátur. Sed quia non solo jejúnio animárum nostrárum salus
+        acquíritur, jejúnium nostrum misericórdiis páuperum suppleámus. Impendámus virtúti, quod
+        subtráhimus voluptáti. Fiat reféctio páuperis abstinéntia jejunántis.
+
+
+        Studeámus viduárum defensióni, pupillórum utilitáti, lugéntium consolatióni, dissidéntium paci.
+        Suscipiátur peregrínus, adjuvétur oppréssus, vestiátur nudus, foveátur ægrótus: ut quicúmque
+        nostrum de justis labóribus auctóri bonórum ómnium Deo sacrifícium hujus pietátis obtúlerit, ab
+        eodem regni cæléstis prǽmium percípere mereátur. Quarta ígitur et sexta Feria jejunémus; Sábbato
+        autem apud beátum Petrum Apóstolum páriter vigilémus: cujus suffragántibus méritis, quæ póscimus,
+        impetráre possímus per Dóminum nostrum Jesum Christum, qui cum Patre et Sancto Spíritu vivit et
+        regnat in sǽcula sæculórum. Amen.
+      en: >-
+        Dearly beloved brethren, with the care which becometh us as the shepherd of your souls, we urge
+        upon you the rigid observance of this December Fast. The month of December hath come round
+        again, and with it this devout custom of the Church. The fruits of the year, which is drawing
+        to a close, are now all gathered in, and we most meetly offer our abstinence to God as a
+        sacrifice of thanksgiving. And what can be more useful than fasting, that exercise by which we
+        draw nigh to God, make a stand against the devil, and overcome the softer enticements of sin?
+
+
+        Fasting hath ever been the bread of strength. From abstinence proceed pure thoughts, reasonable
+        desires, and healthy counsels. By voluntary mortifications the flesh dieth to lust, and the soul
+        is renewed in might. But since fasting is not the only mean whereby we get health for our souls,
+        let us add to our fasting works of mercy. Let us spend in good deeds what we take from
+        indulgence. Let our fast become the banquet of the poor.
+
+
+        Let us defend the widow and serve the orphan; let us comfort the afflicted and reconcile the
+        estranged; let us take in the wanderer and succour the oppressed; let us clothe the naked and
+        cherish the sick. And may every one of us that shall offer to the God of all goodness this Advent
+        sacrifice of fasting and alms be by Him fitted to receive an eternal reward in His heavenly
+        kingdom! We fast on Wednesday and Friday; and there is likewise a Vigil on Saturday at the Church
+        of St. Peter, that by his good prayers we may the more effectually obtain what we ask for,
+        through our Lord Jesus Christ, Who with the Father and the Holy Ghost, liveth and reigneth, God,
+        world without end. Amen.
+    responsory:
+      la: "R. Ægýpte, noli flere, quia Dominátor tuus véniet tibi, ante cujus conspéctum movebúntur abýssi, * Liberáre pópulum suum de manu poténtiæ.\nV. Ecce véniet Dóminus exercítuum, Deus tuus cum potestáte magna.\nR. Liberáre pópulum suum de manu poténtiæ."
+      en: "R. Weep not, O Egypt, for the Ruler cometh unto thee, and the depths shall be moved at His presence. * To deliver His people out of the hand of the mighty.\nV. Behold, the Lord of hosts, thy God, cometh with great power.\nR. To deliver His people out of the hand of the mighty."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "Pope St. Gregory the Great, Homily 7 on the Gospels"
+    text:
+      la: >-
+        Ex hujus nobis lectiónis verbis, fratres caríssimi, Joánnis humílitas commendátur: qui cum tantæ
+        virtútis esset, ut Christus credi potuísset, elégit sólide subsístere in se, ne humána opinióne
+        raperétur inániter super se. Nam conféssus est, et non negávit: et conféssus est, Quia non sum
+        ego Christus. Sed qui dixit, Non sum; negávit plane quod non erat, sed non negávit quod erat: ut
+        veritátem loquens, ejus membrum fíeret, cujus sibi nomen falláciter non usurpáret. Cum ergo non
+        vult appétere nomen Christi, factus est membrum Christi: quia dum infirmitátem suam stúduit
+        humíliter agnóscere, illíus celsitúdinem méruit veráciter obtinére.
+
+
+        Sed cum ex lectióne alia, Redemptóris nostri senténtia ad mentem redúcitur, ex hujus lectiónis
+        verbis nobis quǽstio valde impléxa generátur. Alio quippe in loco inquisítus a discípulis
+        Dóminus de Elíæ advéntu, respóndit: Elías jam venit, et non cognovérunt eum, sed fecérunt in eum
+        quæcúmque voluérunt: et, si vultis scire, Joánnes ipse est Elías. Requisítus autem Joánnes dicit:
+        Non sum Elías. Quid est hoc, fratres caríssimi, quia quod Véritas affírmat, hoc prophéta
+        Veritátis negat? Valde namque inter se divérsa sunt: Ipse est: et, Non sum. Quómodo ergo prophéta
+        veritátis est, si ejusdem Veritátis sermónibus concors non est?
+
+
+        Sed si subtíliter véritas ipsa requirátur, hoc quod inter se contrárium sonat, quómodo contrárium
+        non sit, invenítur. Ad Zacharíam namque de Joánne Angelus dicit: Ipse præcédet ante illum in
+        spíritu et virtúte Elíæ. Qui idcírco ventúrus in spíritu et virtúte Elíæ dícitur, quia sicut
+        Elías secúndum Dómini advéntum prævéniet, ita Joánnes prævénit primum. Sicut ille præcúrsor
+        ventúrus est Júdicis, ita iste præcúrsor est factus Redemptóris. Joánnes ígitur in spíritu Elías
+        erat, in persóna Elías non erat. Quod ergo Dóminus fatétur de spíritu, hoc Joánnes dénegat de
+        persóna.
+      en: >-
+        Dearly beloved brethren, the first thing which striketh us in today's Gospel is the
+        lowly-mindedness of John. He was so great that it was thought he might be the Christ; yet he
+        soberly chose rather to seem only what he really was, than to let the belief of men invest him
+        with a dignity which did not belong to him; for he confessed, and denied not, but confessed, I am
+        not the Christ, at the same time he would not deny what he was in reality; and thus his very
+        truth-speaking made him a member of Him Whose title he would not by falsehood take. In that he
+        arrogated not to himself the name of Christ, he became a member of Christ. While he humbly strove
+        to confess his own weakness, he earned by his simplicity a part in the grandeur of his Master.
+
+
+        In considering this subject we find an apparent contradiction between one of John's statements,
+        and the saying of our Redeemer recorded in another part of the Gospel. When His disciples asked
+        our Lord regarding the coming of Elias, He answered: Elias is come already, and they knew him
+        not, but have done unto him whatsoever they listed. And if ye will receive it, this (that is,
+        John) is Elias. But when John was asked if he was Elias, he answered: I am not. How comes it
+        then, dearly beloved brethren, that we find the Truth Itself asserting what the prophet of the
+        Truth denied? It must evidently be that our Lord meant one thing and John another, when the Lord
+        said, This is, and John, I am not. For how can he be the prophet of truth, if he speak not
+        according to the word of Him Who is the Eternal Truth?
+
+
+        Let us then more minutely examine these words, and we shall find that there is no real
+        contradiction. When the Angel announced to Zacharias the coming birth of John he said: He shall
+        go before Him in the spirit and power of Elias. As the old Elias will come again before the
+        Second Advent of the Lord, so did John, as the new Elias, go before the First Advent, in the
+        spirit and power of Elias. As the old Elias will be the Fore-runner of the Judge, so the new
+        Elias was the Forerunner of the Saviour. John then was Elias in spirit, but not in person; and
+        our Lord asserteth of the spirit what John denieth of the person.
+    responsory:
+      la: "R. Veni, Dómine, et noli tardáre: reláxa facínora plebi tuæ, * Et révoca dispérsos in terram suam.\nV. Excita, Dómine, poténtiam tuam, et veni, ut salvos fácias nos.\nR. Et révoca dispérsos in terram suam."
+      en: "R. O Lord, come and make no tarrying; loosen the bonds of thy people. * And gather again into their own land them that are scattered abroad.\nV. O Lord, stir up thy strength, and come and save us.\nR. And gather again into their own land them that are scattered abroad."
+    status: { la: verified, en: verified }

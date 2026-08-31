@@ -1,0 +1,156 @@
+# Nocturn 2-3, Palm Sunday (temporalId palm-sunday). Sourced from
+# Tempora/Quad6-0.txt (Latin) / English/Tempora/Quad6-0.txt. See
+# advent-1.yml/lent-1.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Leo the Great's
+# Sermon on the Passion of the Lord. Responsory: Lectio4's own
+# (Responsory4, "Conclúsit vias meas inimícus").
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (Matt 21:1-9, the entry into Jerusalem, "Et réliqua") -
+# St. Ambrose's Commentary on Luke, Book 9, begins within Lectio7 itself,
+# same pattern used throughout this sweep. Combined Lectio7's homily
+# portion (incipit dropped) with Lectio8-9, using Responsory7 ("Dóminus
+# mecum est tamquam bellátor fortis") - the first responsory of the group
+# the combined reading spans.
+id: palm-sunday
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Leo the Great, Sermon on the Passion of the Lord"
+    text:
+      la: >-
+        Desideráta nobis, dilectíssimi, et univérso optábilis mundo adest festívitas Domínicæ passiónis,
+        quæ nos inter exsultatiónes spirituálium gaudiórum silére non pátitur. Quia etsi diffícile est, de
+        eádem solemnitáte sǽpius digne aptéque dissérere: non est tamen líberum sacerdóti in tanto
+        divínæ misericórdiæ sacraménto fidélibus pópulis subtráhere sermónis offícium: cum ipsa matéria
+        ex eo quod est ineffábilis, fandi tríbuat facultátem: nec possit defícere quod dicátur, dum
+        numquam potest satis esse quod dícitur. Succúmbat ergo humána infírmitas glóriæ Dei, et in
+        explicándis opéribus misericórdiæ ejus, ímparem se semper invéniat. Laborémus sensu, hæreámus
+        ingénio, deficiámus elóquio: bonum est ut nobis parum sit, quod étiam recte de Dómini majestáte
+        sentímus.
+
+
+        Dicénte enim prophéta: Quǽrite Dóminum, et confirmámini, quǽrite fáciem ejus semper: némini
+        præsuméndum est, quod totum quod quærit, invénerit, ne désinat propinquáre, qui cessárit accédere.
+        Quid autem inter ómnia ópera Dei, in quibus humánæ admiratiónis fatigátur inténtio, ita
+        contemplatiónem mentis nostræ et obléctat et súperat, sicut pássio Salvatóris? Qui ut humánum
+        genus vínculis mortíferæ prævaricatiónis absólveret, et sæviénti diábolo poténtiam suæ majestátis
+        occúluit, et infirmitátem nostræ humilitátis objécit. Si enim crudélis et supérbus inimícus
+        consílium misericórdiæ Dei nosse potuísset, Judæórum ánimos mansuetúdine pótius temperáre, quam
+        injústis ódiis studuísset accéndere: ne ómnium captivórum amítteret servitútem, dum nihil sibi
+        debéntis perséquitur libertátem.
+
+
+        Feféllit ergo illum malígnitas sua, íntulit supplícium Fílio Dei, quod cunctis fíliis hóminum in
+        remédium verterétur. Fudit sánguinem justum, qui reconciliándo mundo et prétium esset, et póculum.
+        Suscépit Dóminus, quod secúndum propósitum suæ voluntátis elégit. Admísit in se ímpias manus
+        furéntium: quæ dum próprio incúmbunt scéleri, famulátæ sunt Redemptóri. Cujus étiam circa
+        interfectóres suos tanta erat pietátis afféctio, ut de cruce súpplicans Patri, non se vindicári,
+        sed illis postuláret ignósci.
+      en: >-
+        Dearly beloved brethren, the jubilant and triumphal day which ushereth in the commemoration of
+        the Lord's Passion is come; even that day for which we have longed so much, and for whose yearly
+        coming the whole world may well look. Shouts of spiritual exultation are ringing, and suffer not
+        that we should be silent. It is indeed hard to preach often on the same Festival, and that always
+        meetly and rightly, but a Priest is not free, when we celebrate so great and mysterious an
+        out-pouring of God's mercy, to leave his faithful people without the service of a discourse. Nay,
+        that his subject-matter is unspeakable should in itself make him eloquent, since where enough can
+        never be said, there must needs ever be somewhat to say. Let man's weakness, then, fall down
+        before the glory of God, and acknowledge herself ever too feeble to unfold all the works of His
+        mercy. We may jade our emotions, break down in our understanding, and fail in our speech: it is
+        good for us, that even what we truly feel in presence of the Divine Majesty is but little,
+        compared to the vastness of the subject.
+
+
+        For when the Prophet saith: Seek the Lord and be strong; seek His face evermore, let no man
+        thence conclude that he will ever have found all that he seeketh, lest he which hath ceased to
+        come near should cease to be near. But among all the works of God which foil and weary the
+        steadfast gaze of man's wonder, what is there that doth at once so ravish and so exceed the power
+        of our mind's eye as do the sufferings of the Saviour? He it was Who, to loose man from the bands
+        wherewith he had bound himself by the first death-dealing transgression, spared to bring against
+        the rage of the devil the power of the Divine Majesty, and met him with the weakness of our
+        lowly nature. For if our proud and cruel enemy had been able to know the counsel of God's mercy,
+        it had been his task rather to have softened the minds of the Jews into gentleness, than to have
+        inflamed them with unrighteous hatred; and so lost the service of all his slaves, by pursuing for
+        his Debtor One That owed him nothing.
+
+
+        But his own hate dug a pit-fall for him: he brought upon the Son of God that death which is
+        become life to all the sons of men. He shed that innocent Blood, Which hath reconciled the world
+        unto God, and become at once the price of our redemption and the cup of our salvation. The Lord
+        hath received that which according to the purpose of His Own good pleasure He hath chosen. He
+        hath let fall on Him the hands of bloody men, but while they were bent only on their own sin,
+        they were servants ministering to the Redeemer's work. And such was His tenderness even for His
+        murderers that His prayer to His Father from the Cross, as touching them, was, not that He might
+        be avenged upon them, but that they might be forgiven.
+    responsory:
+      la: "R. Conclúsit vias meas inimícus, insidiátor factus est mihi sicut leo in abscóndito, replévit et inebriávit me amaritúdine: deduxérunt in lacum mortis vitam meam, et posuérunt lápidem contra me. * Vide, Dómine, iniquitátes illórum: et júdica causam ánimæ meæ, defénsor vitæ meæ.\nV. Factus sum in derísum omni pópulo meo, cánticum eórum tota die.\nR. Vide, Dómine, iniquitátes illórum: et júdica causam ánimæ meæ, defénsor vitæ meæ."
+      en: "R. The enemy hath enclosed my ways; he lay in wait for me as a lion; in secret places he hath filled me, and made me drunken with bitterness; they have cut off my life in the dungeon, and cast a stone upon me. * O Lord, behold all their iniquity, and plead the cause of my soul, Thou That art the Redeemer of my life!\nV. I was a derision to all my people, and their song all the day.\nR. O Lord, behold all their iniquity, and plead the cause of my soul, Thou That art the Redeemer of my life!"
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Ambrose, Bishop of Milan, Commentary on Luke, Book 9"
+    text:
+      la: >-
+        Pulchre relíctis Judǽis, habitatúrus in afféctibus géntium, templum Dóminus ascéndit. Hoc enim
+        templum est verum, in quo non in líttera, sed in spíritu Dóminus adorátur. Hoc Dei templum est,
+        quod fídei séries, non lápidum structúra fundávit. Deserúntur ergo qui óderant: eligúntur qui
+        amatúri erant. Et ídeo ad montem venit Olivéti, ut novéllas óleas in sublími virtúte plantáret,
+        quarum mater est illa, quæ sursum est, Jerúsalem. In hoc monte est ille cæléstis agrícola: ut
+        plantáti omnes in domo Dei, possint virítim dícere: Ego autem sicut olíva fructífera in domo
+        Dómini.
+
+
+        Et fortásse ipse mons Christus est. Quis enim álius tales fructus ferret oleárum, non curvescéntium
+        ubertáte baccárum, sed spíritus plenitúdine géntium fœcundárum? Ipse est per quem ascéndimus, et
+        ad quem ascéndimus. Ipse est jánua, ipse est via, qui aperítur, et qui áperit: qui pulsátur ab
+        ingrediéntibus, et ab eméritis adorátur. Ergo in castéllo erat, et ligátus erat pullus cum ásina:
+        non póterat solvi nisi jussu Dómini. Solvit eum manus apostólica. Talis actus, talis vita, talis
+        grátia. Esto talis et tu, ut possis ligátos sólvere.
+
+
+        Nunc considerémus qui fúerint illi, qui erróre detécto, de paradíso ejécti, in castéllum sint
+        relegáti. Et vides, quemádmodum quos mors expúlerat, vita revocáverit. Et ídeo secúndum
+        Matthǽum, et ásinam et pullum légimus: ut quia in duóbus homínibus utérque fúerat sexus expúlsus,
+        in duóbus animálibus sexus utérque revocétur. Ergo illic in ásina matre quasi Hevam figurávit
+        erróris: hic autem in pullo generalitátem pópuli Gentílis expréssit: et ídeo pullo sedétur ásinæ.
+        Et bene, in quo nemo sedit: quia nullus, ántequam Christus, natiónum pópulos vocávit ad Ecclésiam.
+        Dénique secúndum Marcum sic habes: Quem nemo adhuc sedit hóminum.
+      en: >-
+        Beautiful is the type, when the Lord, about to leave the Jews, and to take up His abode in the
+        hearts of the Gentiles, goeth up into the Temple; a figure of His going to the true Temple
+        wherein He is worshipped, not in the deadness of the letter, but in spirit and in truth, even
+        that Temple of God whereof the foundations are laid, not in buildings of stone, but in faith. He
+        leaveth behind Him such as hate Him, and getteth Him to such as will love Him. And therefore
+        cometh He unto the Mount of Olives that He may plant upon the heights of grace those young
+        olive-branches, whose Mother is the Jerusalem which is above. Upon this mountain standeth He, the
+        Heavenly Husbandman, that all they which be planted in the House of the Lord may be able each one
+        to say: "But I am like a fruitful olive-tree in the House of God."
+
+
+        And perchance that mountain doth signify Christ Himself. For what other is there that beareth
+        such fruit of olives as He doth, not rich with store of loaded branches, but spiritually fruitful
+        with the fulness of the Gentiles? He also it is on Whom we go up, and unto Whom we go up; He is
+        the Door; He is the Way; He is He Which is opened and Which openeth; He is He upon Whom knocketh
+        whosoever entereth in, and to Whom they that have entered in, do worship. A figure also was it
+        that the disciples went into a village, and that there they found an ass tied and a colt with
+        her: neither could they be loosed, save at the command of the Lord. It was the hand of His
+        Apostles which loosed them. He whose work and life are like theirs will have such grace as was
+        theirs. Be thou also such as they, if thou wouldest loose them that are bound.
+
+
+        Now, let us consider who they were, who, being convicted of transgression, were banished from
+        their home in the Garden of Eden into a village, and in this thou wilt see how Life called back
+        again them whom death had cast out. For this reason, we read in Matthew that there were tied
+        both an ass and her colt; thus, as man was banished from Eden in a member of either sex, so is it
+        in animals of both sexes that his re-call is figured. The she-ass is a type of our sinful Mother
+        Eve, and the colt of the multitude of the Gentiles; and it was upon the colt that Christ took His
+        seat. And thus it is well written of the colt, that thereon never yet had man sat, for no man
+        before Christ ever called the Gentiles into the Church: which statement thou hast in Mark also:
+        Whereon never man sat.
+    responsory:
+      la: "R. Dóminus mecum est tamquam bellátor fortis: proptérea persecúti sunt me, et intellégere non potuérunt: Dómine, probas renes et corda: * Tibi revelávi causam meam.\nV. Vidísti, Dómine, iniquitátes eórum advérsum me: júdica judícium meum.\nR. Tibi revelávi causam meam."
+      en: "R. The Lord is with me as a Mighty Terrible One; therefore have they persecuted me, and have not been able to understand. O Lord, Thou triest the reins and the heart: * Unto thee have I opened my cause.\nV. O Lord, Thou hast seen my wrong that they do me; judge Thou my cause.\nR. Unto thee have I opened my cause."
+    status: { la: verified, en: verified }

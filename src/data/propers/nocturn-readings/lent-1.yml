@@ -1,0 +1,151 @@
+# Nocturn 2-3, First Sunday of Lent (temporalId lent-1). Sourced from
+# Tempora/Quad1-0.txt (Latin) / English/Tempora/Quad1-0.txt. See
+# advent-1.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Leo the Great's
+# 4th Sermon on Lent. Responsory: Lectio4's own (Responsory4, "Emendémus
+# in mélius").
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (Matt 4:1-11, the temptation in the desert, "Et
+# réliqua") - Pope St. Gregory the Great's Homily 16 on the Gospels begins
+# within Lectio7 itself, same pattern used throughout this sweep. Combined
+# Lectio7's homily portion (incipit dropped) with Lectio8-9, using
+# Responsory7 ("Scíndite corda vestra") - the first responsory of the
+# group the combined reading spans.
+id: lent-1
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Leo the Great, Sermon 4 on Lent"
+    text:
+      la: >-
+        Prædicatúrus vobis, dilectíssimi, sacratíssimum maximúmque jejúnium, quo áptius utar exórdio,
+        quam ut verbis Apóstoli, in quo Christus loquebátur, incípiam, dicámque quod lectum est: Ecce
+        nunc tempus acceptábile: ecce nunc dies salútis? Quamvis enim nulla sint témpora, quæ divínis
+        non sint plena munéribus, et semper nobis ad misericórdiam Dei per ipsíus grátiam præstétur
+        accéssus: nunc tamen ómnium mentes majóri stúdio ad spiritáles proféctus movéri, et amplióri
+        fidúcia opórtet animári, quando ad univérsa pietátis offícia, illíus nos diéi, in quo redémpti
+        sumus, recúrsus invítat: ut excéllens super ómnia passiónis Domínicæ sacraméntum, purificátis et
+        corpóribus et ánimis celebrémus.
+
+
+        Debebátur quidem tantis mystériis ita incessábilis devótio, et continuáta reveréntia, ut tales
+        permanerémus in conspéctu Dei, quales nos in ipso Pascháli festo dignum est inveníri. Sed quia
+        hæc fortitúdo paucórum est: et dum carnis fragilitáte austérior observántia relaxátur, dumque per
+        várias actiónes vitæ hujus sollicitúdo disténditur, necésse est de mundáno púlvere étiam
+        religiósa corda sordéscere: magna divínæ institutiónis salubritáte provísum est, ut ad reparándam
+        méntium puritátem quadragínta nobis diérum exercitátio mederétur, in quibus aliórum témporum
+        culpas, et pia ópera redímerent, et jejúnia casta decóquerent.
+
+
+        Ingressúri ígitur, dilectíssimi, dies mýsticos, et purificándis ánimis atque corpóribus sacrátius
+        institútos, præcéptis apostólicis obedíre curémus, emundántes nos ab omni inquinaménto carnis ac
+        spíritus: ut castigátis colluctatiónibus, quæ sunt inter utrámque substántiam, ánimus, quem sub
+        Dei gubernáculis constitútum, córporis sui decet esse rectórem, dominatiónis suæ obtíneat
+        dignitátem: ut némini dantes ullam offensiónem, vituperatiónibus obloquéntium non simus obnóxii.
+        Digna enim ab infidélibus reprehensióne carpémur, et nostro vítio linguæ ímpiæ in injúriam se
+        religiónis armábunt, si jejunántium mores a puritáte perféctæ continéntiæ discrepárint. Non enim
+        in sola abstinéntia cibi stat nostri summa jejúnii: aut fructuóse córpori esca subtráhitur, nisi
+        mens ab iniquitáte revocétur.
+      en: >-
+        Dearly beloved brethren, I am to preach to you the holiest and the greatest of Fasts; and with
+        what words can I more fitly begin than with those words of the Apostle, in whom Christ spake,
+        which have just been read? Behold, now is the acceptable time! Behold, now is the day of
+        salvation! It is true that there are no times which are not rich with God's gifts; His grace doth
+        ever give us an entry unto His mercy; nevertheless, more especially at this time doth it behove
+        that the minds of all men be earnestly stirred up to make progress in things spiritual, and to be
+        nerved by a trust in God stronger than ever; for now the anniversary of that day on which we were
+        redeemed is drawing near, and thereby moving us to work all godliness, to the end that we may be
+        able to celebrate, with clean minds and bodies, that mystery which exceedeth all others, the
+        mystery of the Lord's sufferings.
+
+
+        Mysteries so great demand sustained earnestness, and continuous worship, if we would ever abide
+        in the sight of God, such as it is meet that He should find us on the Feast of the Passover. But
+        since few have the strength to do thus, and the frailty of the body rebelleth against such
+        hardness, while the diverse actions of this life distract us with their cares, it necessarily
+        befalleth that the dust of earth befouleth the hearts even of the godly. To meet this befoulment
+        therefore, and to restore the cleanness of our souls, it is provided by the healthful institution
+        of God, that we should be purged by an exercise of forty days, wherein godly works may redeem the
+        mis-spending of our other time, and purifying fasts rid us of the same.
+
+
+        Therefore, dearly beloved brethren, as we are now about to enter upon these mystic days, the end
+        of whose most holy ordinance is the cleansing both of our souls and bodies, let us take heed that
+        we be obedient unto the command of the Apostle, putting far away from us every defilement of
+        flesh and spirit, ordering the strife which there is between the two substances whereof we are
+        compounded; that the soul, which is ordained under the rule of God, and which it beseemeth under
+        His rule to rule the body, may enjoy the fulness of her lordship; giving no offence to any so
+        that we may give no cause to such as revile us. For if our ways during the Fast agree not with
+        the purity of perfect temperance, the reproaches of the unbelievers will be just, and our sins
+        will arm the tongues of the ungodly to the harming of our religion. The sum of our Fast standeth
+        not only in abstaining from meats; neither is it profitable to deny food to the body, if the mind
+        be not bridled from iniquity.
+    responsory:
+      la: "R. Emendémus in mélius, quæ ignoránter peccávimus: ne súbito præoccupáti die mortis, quærámus spátium pœniténtiæ, et inveníre non possímus: * Atténde, Dómine, et miserére, quia peccávimus tibi.\nV. Adjuva nos, Deus salutáris noster, et propter honórem nóminis tui, Dómine, líbera nos.\nR. Atténde, Dómine, et miserére, quia peccávimus tibi."
+      en: "R. Let us amend for the better in that wherein we have sinned unknowingly, or ever the day of death suddenly prevent us, and we seek a place of repentance, and find none. * Give heed, O Lord, and have mercy upon us, for we have sinned against thee.\nV. Help us, O God of our salvation, and for the glory of thy Name deliver us, O Lord.\nR. Give heed, O Lord, and have mercy upon us, for we have sinned against thee."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "Pope St. Gregory the Great, Homily 16 on the Gospels"
+    text:
+      la: >-
+        Dubitári a quibúsdam solet, a quo spíritu sit Jesus ductus in desértum, propter hoc quod
+        súbditur: Assúmpsit eum diábolus in sanctam civitátem: et rursum: Assúmpsit eum in montem
+        excélsum valde. Sed vere et absque ulla quæstióne conveniénter accípitur, ut a Sancto Spíritu in
+        desértum ductus credátur: ut illuc eum suus Spíritus dúceret, ubi hunc ad tentándum malígnus
+        spíritus inveníret. Sed ecce cum dícitur Deus homo vel in excélsum montem, vel in sanctam
+        civitátem a diábolo assúmptus, mens réfugit crédere, humánæ hoc audíre aures expavéscunt. Qui
+        tamen non esse incredibília ista cognóscimus, si in illo et ália facta pensámus.
+
+
+        Certe iniquórum ómnium caput diábolus est: et hujus cápitis membra sunt omnes iníqui. An non
+        diáboli membrum fuit Pilátus? an non diáboli membra Judǽi persequéntes, et mílites crucifigéntes
+        Christum fuérunt? Quid ergo mirum, si se ab illo permísit in montem duci, qui se pértulit étiam a
+        membris illíus crucifígi? Non est ergo indígnum Redemptóri nostro quod tentári vóluit, qui
+        vénerat occídi. Justum quippe erat, ut sic tentatiónes nostras suis tentatiónibus vínceret, sicut
+        mortem nostram vénerat sua morte superáre.
+
+
+        Sed sciéndum nobis est, quia tribus modis tentátio ágitur: suggestióne, delectatióne et
+        consénsu. Et nos cum tentámur, plerúmque in delectatiónem, aut étiam in consénsum lábimur: quia
+        de carnis peccáto propagáti, in nobis ipsis étiam gérimus, unde certámina tolerámus. Deus vero,
+        qui in útero Vírginis incarnátus, in mundum sine peccáto vénerat, nihil contradictiónis in
+        semetípso tolerábat. Tentári ergo per suggestiónem pótuit: sed ejus mentem peccáti delectátio non
+        momórdit. Atque ídeo omnis diabólica illa tentátio foris, non intus fuit.
+      en: >-
+        Some persons are accustomed to question what Spirit it was of which Jesus was led up into the
+        wilderness, on account of the words a little farther on: Then the devil taketh Him up into the
+        holy city: and again: The devil taketh Him up into an exceeding high mountain. But in truth, and
+        without any searching, we may very fitly take it that we are to believe it was the Holy Ghost Who
+        led Him up into the wilderness; His own Spirit led Him where the evil spirit found Him to tempt
+        Him. When however it is said that He, God and man, was taken up by the devil either into an
+        exceeding high mountain or into the holy city, the mind shrinketh from believing, and the ears of
+        man tingle to hear it. Yet these things we know not to be incredible, when we consider certain
+        other things concerning Him.
+
+
+        In truth, the devil is the head of all the wicked, and every wicked man is a member of this body,
+        of which the devil is the head. Was not Pilate a limb of Satan? Were not the Jews that
+        persecuted, and the soldiers that crucified Christ, likewise limbs of Satan? Is it then strange
+        that He should allow Himself to be led up into a mountain by the head, Who allowed Himself to be
+        crucified by the members? Therefore it is not unworthy of our Redeemer, Who came to be slain,
+        that He was willing to be tempted. It was meet that He should thus overcome our temptations by
+        His own, even as He came to conquer our death by His own.
+
+
+        We ought to know that temptation worketh through three forms. There is, first, the suggestion;
+        then the delectation; lastly, the consent. When we are tempted, it often happeneth that we fall
+        into delectation, and even into consent, because in the sinful flesh of which we are begotten, we
+        carry in ourselves matter to favor the attack. But God, when He took Flesh in the womb of the
+        Virgin, and came into the world without sin, did so without having in Himself anything of this
+        lusting of the flesh against the spirit. It was possible therefore for Him to be tempted in the
+        first stage, namely suggestion; but there was nothing in His Mind in which delectation could fix
+        its teeth. And thus all the temptation which He endured from the devil was without, and none
+        within Him.
+    responsory:
+      la: "R. Scíndite corda vestra, et non vestiménta vestra: et convertímini ad Dóminum Deum vestrum: * Quia benígnus et miséricors est.\nV. Derelínquat ímpius viam suam, et vir iníquus cogitatiónes suas, et revertátur ad Dóminum, et miserébitur ejus.\nR. Quia benígnus et miséricors est."
+      en: "R. Rend your hearts and not your garments, and turn unto the Lord your God; * For He is gracious and merciful.\nV. Let the wicked forsake his way, and the unrighteous man his thoughts, and let him return unto the Lord, and He will have mercy upon him.\nR. For He is gracious and merciful."
+    status: { la: verified, en: verified }

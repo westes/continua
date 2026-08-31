@@ -1,0 +1,153 @@
+# Nocturn 2-3, Second Sunday of Lent (temporalId lent-2). Sourced from
+# Tempora/Quad2-0.txt (Latin) / English/Tempora/Quad2-0.txt. See
+# advent-1.yml/lent-1.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Augustine's book
+# Against Lying, chapter 9-10 (on Jacob's deception of Isaac). Responsory:
+# Lectio4's own (Responsory4, "Dum exíret Jacob de terra sua").
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (Matt 17:1-9, the Transfiguration, "Et réliqua") - St.
+# Leo the Great's own Homily on the Transfiguration of the Lord begins
+# within Lectio7 itself, same pattern used throughout this sweep. Combined
+# Lectio7's homily portion (incipit dropped) with Lectio8-9, using
+# Responsory7 ("Dixit Angelus ad Jacob") - the first responsory of the
+# group the combined reading spans.
+id: lent-2
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Augustine, Bishop of Hippo, Against Lying"
+    text:
+      la: >-
+        Jacob quod matre fecit auctóre, ut patrem fállere viderétur, si diligénter et fidéliter
+        attendátur, non est mendácium, sed mystérium. Quæ si mendácia dixérimus, omnes étiam parábolæ ac
+        figúræ significandárum quarumcúmque rerum, quæ non ad proprietátem accipiéndæ sunt, sed in eis
+        áliud ex álio est intelligéndum, dicéntur esse mendácia: quod absit omníno. Nam qui hoc putat,
+        trópicis étiam tam multis locutiónibus ómnibus potest hanc importáre calúmniam; ita ut et hæc
+        ipsa, quæ appellátur metáphora, hoc est, de re própria ad rem non própriam verbi alicújus
+        usurpáta translátio, possit ista ratióne mendácium nuncupári.
+
+
+        Quæ significántur enim, útique ipsa dicúntur: putántur autem mendácia, quóniam non ea quæ vere
+        significántur, dicta intelligúntur; sed ea, quæ falsa sunt, dicta esse credúntur. Hoc ut exémplis
+        fiat plánius, idípsum quod Jacob fecit, atténde. Hædínis certe péllibus membra contéxit. Si causam
+        próximam requirámus, mentítum putábimus: hoc enim fecit, ut putarétur esse qui non erat. Si autem
+        hoc factum ad illud, propter quod significándum revéra factum est, referátur: per hædínas pelles,
+        peccáta; per eum vero, qui eis se opéruit, ille significátus est, qui non sua, sed aliéna peccáta
+        portávit.
+
+
+        Verax ergo significátio nullo modo mendácium recte dici potest: ut autem in facto, ita et in
+        verbo. Nam cum ei pater dixísset: Quis es tu, fili? ille respóndit: Ego sum Esau primogénitus
+        tuus. Hoc si referátur ad duos illos géminos, mendácium vidébitur: si autem ad illud, propter quod
+        significándum ista gesta dictáque conscrípta sunt; ille est hic intelligéndus in córpore suo,
+        quod est ejus Ecclésia, qui de hac re loquens, ait: Cum vidéritis Abraham, et Isaac et Jacob et
+        omnes Prophétas in regno Dei, vos autem expélli foras. Et, Vénient ab Oriénte et Occidénte, et
+        Aquilóne et Austro, et accúmbent in regno Dei. Et, Ecce sunt novíssimi qui erant primi: et sunt
+        primi, qui erant novíssimi. Sic enim quodámmodo minor majóris primátum frater ábstulit, atque in
+        se tránstulit fratris.
+      en: >-
+        If we consider faithfully and carefully what it was that Jacob did by the advice of his mother,
+        and wherein he seemeth to have deceived his father, it will appear that it is not a lie, but an
+        allegory. If we denounce this, its mystic sense, as a lie, then must we also give the name of
+        lies to even all parable, and to every figure devised to set forth the nature of anything, which
+        is not to be taken in its literal sense, but in which one thing is to be understood under the
+        name of another. And this be far from us. Whoso should do this, would bring the charge of
+        falsehood against very many figures of speech, including that one called metaphor, in which a
+        word is transferred from that meaning which belongeth to it, to some other, to which would, by
+        such reasoning, be given the name of a lie.
+
+
+        The deep meaning is given; but what is considered is the lie, because men do not understand the
+        way in which that signification, which is a truth, is set forth: but the falsehood is plainly
+        expressed, and believed. That we may understand this more plainly by taking some points in
+        illustration, consider with me what Jacob did. It is certain that he covered his limbs with the
+        skins of goats. If we consider his object in point of fact, we shall find that it was to lie,
+        because he did this that he might be thought to be he who he was not. But if we consider this his
+        deed in that deep typical sense which it undoubtedly possesseth, we find that by the goat-skins
+        are represented sins, and by him who covered himself therewith Him Who bore not His own sins, but
+        the sins of others.
+
+
+        Verax ergo significátio nullo modo mendácium recte dici potest: as it was in the deed, so also
+        was it in the word. For when his father said to Jacob, Who art thou, my son? he answered, I am
+        Esau, thy first-born. If we take this in its sense relative to the two brothers, it will be
+        apparent that it was a lie. If, however, we look at it relatively to that for the sake of which
+        these words and deeds were written down, we shall see that Christ is here signified in His
+        mystic body, the Church. Concerning her, He saith: Ye shall see Abraham, and Isaac, and Jacob,
+        and all the Prophets in the kingdom of God, and you yourselves thrust out. And they shall come
+        from the east, and from the west, and from the north, and from the south, and shall sit down in
+        the kingdom of God. And, behold, there are last which shall be first, and there are first which
+        shall be last. Thus did the younger take away the title and inheritance from the elder, and
+        acquire it to himself.
+    responsory:
+      la: "R. Dum exíret Jacob de terra sua, vidit glóriam Dei, et ait: Quam terríbilis est locus iste! * Non est hic áliud, nisi domus Dei, et porta cæli.\nV. Vere Deus est in loco isto, et ego nesciébam.\nR. Non est hic áliud, nisi domus Dei, et porta cæli."
+      en: "R. As Jacob went out from his own land, he saw the glory of God, and said: How dreadful is this place. * This is none other but the house of God and this is the gate of heaven.\nV. Surely God is in this place, and I knew it not.\nR. This is none other but the house of God and this is the gate of heaven."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Leo the Great, Homily on the Transfiguration of the Lord"
+    text:
+      la: >-
+        Assúmpsit Jesus Petrum, et Jacóbum, et fratrem ejus Joánnem, et conscénso cum eis seórsum monte
+        præcélso, claritátem suæ glóriæ demonstrávit: quia licet intellexíssent in eo majestátem Dei,
+        ipsíus tamen córporis, quo divínitas tegebátur, poténtiam nesciébant. Et ídeo próprie signantérque
+        promíserat, quosdam de astántibus discípulis non prius gustáre mortem, quam vidérent Fílium
+        hóminis veniéntem in regno suo, id est, in régia claritáte, quam spiritáliter ad natúram suscépti
+        hóminis pertinéntem, his tribus viris vóluit esse conspícuam. Nam illam ipsíus Deitátis
+        ineffábilem et inaccessíbilem visiónem, quæ in ætérnam vitam mundis corde servátur, nullo modo
+        mortáli adhuc carne circúmdati intuéri póterant et vidére.
+
+
+        Dicénte Patre: Hic est Fílius meus diléctus, in quo mihi bene complácui, ipsum audíte: nonne
+        evidénter audítum est: Hic est Fílius meus, cui ex me et mecum esse sine témpore est? quia nec
+        génitor génito prior, nec génitus est genitóre postérior. Hic est Fílius meus, quem a me non
+        séparat Déitas, non dívidit potéstas, non discérnit ætérnitas. Hic est Fílius meus, non adoptívus,
+        sed próprius: non aliúnde creátus, sed ex me génitus: nec de ália natúra mihi factus comparábilis,
+        sed de mea esséntia mihi natus æquális.
+
+
+        Hic est Fílius meus, per quem ómnia facta sunt, et sine quo factum est nihil: qui ómnia quæ
+        fácio, simíliter facit; et quidquid óperor, inseparabíliter mecum atque indifferénter operátur.
+        Hic est Fílius meus, qui eam, quam mecum habet æqualitátem, non rapína appétiit, nec usurpatióne
+        præsúmpsit: sed manens in forma glóriæ meæ, ut ad reparándum genus humánum exsequerétur commúne
+        consílium, usque ad formam servílem inclinávit incommutábilem Deitátem. Hunc ergo, in quo mihi
+        per ómnia bene compláceo, et cujus prædicatióne maniféstor, cujus humilitáte claríficor,
+        incunctánter audíte: quia ipse est véritas et vita, ipse virtus mea atque sapiéntia.
+      en: >-
+        Jesus took Peter, and James, and John his brother, and brought them up into an exceeding high
+        mountain apart, and manifested forth the brightness of His glory. Hitherto, though they
+        understood that there was in Him the Majesty of God, they knew not the power of that Body which
+        veiled the Godhead. And therefore He had individually and markedly promised to some of the
+        disciples that had stood by Him that they should "not taste of death till they had seen the Son
+        of Man coming in His kingdom", that is, in the kingly splendour, which is the right of the
+        Manhood taken into God, and which He willed to make visible to those three men. This it was that
+        they saw, for the unspeakable and unapproachable vision of the Godhead Himself, which will be the
+        everlasting life of the pure in heart, can no man, who is still burdened with a dying body, see
+        and live.
+
+
+        When the Father saith: "This is My beloved Son, in Whom I am well pleased; hear ye Him", did
+        they not plainly hear Him say: "This is My Son, Whose it is to be of Me and with Me without all
+        time. For neither is He That begetteth, before Him That is begotten, neither He That is
+        begotten, after Him That begetteth Him." This is My Son, between Whom and Me, to be God is not a
+        point of difference; to be Almighty, a point of separation; nor to be Eternal, a point of
+        distinction. "This is My Son, not by adoption, but My very Own; not created from, or of another
+        substance, or out of nothing, but begotten of Me: not of another nature, and made like unto Me,
+        but of Mine own Being, born of Me, equal unto Me."
+
+
+        "This is My Son by Whom all things were made, and without Whom was not anything made that was
+        made, Who maketh likewise all things whatsoever I make, and what things soever I do He doeth
+        likewise, inseparably and indifferently." This is My Son Who thought it not robbery, nor hath
+        taken it by violence, to be equal with Me, but, abiding still in the form of My glory, that He
+        may fulfill Our common decree for the restoration of mankind, hath bowed the unchangeable
+        Godhead even to the form of a servant. Him therefore in Whom I am in all things well pleased, by
+        Whose preaching I am manifested, and by Whose lowliness I am glorified, Him instantly hear ye.
+        For He is the Truth and the Life, My Power, and My Wisdom.
+    responsory:
+      la: "R. Dixit Angelus ad Jacob: * Dimítte me, auróra est. Respóndit ei: Non dimíttam te, nisi benedíxeris mihi. Et benedíxit ei in eódem loco.\nV. Cumque surrexísset Jacob, ecce vir luctabátur cum eo usque mane: et cum vidéret quod eum superáre non posset, dixit ad eum.\nR. Dimítte me, auróra est. Respóndit ei: Non dimíttam te, nisi benedíxeris mihi. Et benedíxit ei in eódem loco."
+      en: "R. The Angel said unto Jacob: * Let me go, for the day breaketh. And he said: I will not let thee go, except thou bless me. And he blessed him there.\nV. And when Jacob arose, behold there wrestled a man with him, until the breaking of the day; and, when he saw that he prevailed not, he said unto him:\nR. Let me go, for the day breaketh. And he said: I will not let thee go, except thou bless me. And he blessed him there."
+    status: { la: verified, en: verified }

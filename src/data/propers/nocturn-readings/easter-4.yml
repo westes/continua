@@ -1,0 +1,143 @@
+# Nocturn 2-3, Fourth Sunday after Easter (temporalId easter-4). Sourced
+# from Tempora/Pasc3-0.txt (Latin) / English/Tempora/Pasc3-0.txt. See
+# advent-1.yml/easter-octave.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Augustine's
+# Sermon 147, de Tempore, on the resurrection of the body. Responsory:
+# Lectio4's own (Responsory4, "Locútus est ad me unus ex septem Angelis").
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (John 16:16-22, "Et réliqua") - St. Augustine's Tractate
+# 101 on John begins within Lectio7 itself, same pattern used throughout
+# this sweep. Combined Lectio7's homily portion (incipit dropped) with
+# Lectio8-9, using Responsory7 ("Decantábat pópulus Israël") - the first
+# responsory of the group the combined reading spans.
+id: easter-4
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Augustine, Bishop of Hippo, Sermon 147, de Tempore"
+    text:
+      la: >-
+        Diébus his sanctis resurrectióni Dómini dedicátis, quantum donánte ipso póssumus, de carnis
+        resurrectióne tractémus. Hæc enim est fides nostra: hoc donum in Dómini nostri Jesu Christi
+        nobis carne promíssum est, et in ipso præcéssit exémplum. Vóluit enim nobis, quod promísit in
+        fine, non solum prænuntiáre, sed étiam demonstráre. Illi quidem qui tunc fuérunt, cum illum
+        vidérent, et cum expavéscerent, et spíritum se vidére créderent, soliditátem córporis tenuérunt.
+        Locútus est enim non solum verbis ad aures eórum, sed étiam spécie ad óculos eórum: parúmque erat
+        se præbére cernéndum, nisi étiam offérret pertractándum atque palpándum.
+
+
+        Ait enim: Quid turbáti estis, et cogitatiónes ascéndunt in cor vestrum? Putavérunt enim se
+        spíritum vidére. Quid turbáti estis, inquit, et cogitatiónes ascéndunt in cor vestrum? Vidéte
+        manus meas, et pedes meos: palpáte, et vidéte: quia spíritus ossa et carnem non habet, sicut me
+        vidétis habére. Contra istam evidéntiam disputábant hómines. Quid enim áliud fácerent hómines,
+        qui ea, quæ sunt hóminum, sápiunt, quam sic disputáre de Deo contra Deum? Ille enim Deus est,
+        isti hómines sunt. Sed Deus novit cogitatiónes hóminum, quóniam vanæ sunt.
+
+
+        In hómine carnáli tota régula intelligéndi est consuetúdo cernéndi. Quod solent vidére, credunt:
+        quod non solent, non credunt. Præter consuetúdinem facit Deus mirácula, quia Deus est. Majóra
+        quidem mirácula sunt, tot quotídie hómines nasci, qui non erant, quam paucos resurrexísse, qui
+        erant: et tamen ista mirácula non consideratióne comprehénsa sunt, sed assiduitáte viluérunt.
+        Resurréxit Christus: absolúta est res. Corpus erat, caro erat: pepéndit in cruce, emísit ánimam,
+        pósita est caro in sepúlcro. Exhíbuit illam vivam, qui vivébat in illa. Quare mirámur? quare non
+        crédimus? Deus est, qui fecit.
+      en: >-
+        During these Holy Days in commemoration of the Lord's resurrection, we purpose to preach, so far
+        as he will empower us, the doctrine of the resurrection of the body. For this is the Faith, to
+        wit: the gift of resurrection, which was bestowed upon the flesh of our Lord Jesus Christ, is
+        what is promised to us, for it was first made manifest in him that we might know what to hope for
+        ourselves. What he hath thus promised would come to us at the last, he willed not only to
+        foretell but to demonstrate. Those who were present at that time (even though they were terrified
+        and affrighted, and supposed they had seen a spirit), handled him, and saw that a spirit would
+        not have flesh and bones, such as they saw him to have. Thus he spake to them, not only in words
+        which they could hear, but in a body which they could see; as if it had not been enough to shew
+        himself to their sight, but must needs even offer himself to be touched and handled.
+
+
+        For he said: Why are ye troubled? and why do thoughts arise in your hearts? For they supposed
+        that they had seen a spirit. Therefore he added: Behold my hands and my feet, that it is I
+        myself; handle me and see; for a spirit hath not flesh and bones, as ye see me have. Of course,
+        men have disputed this evidence; for what else could men do, seeing that they are wise only
+        according to man's wisdom, which thus permitteth them to dispute concerning God in spite of what
+        God hath shewn them of himself? He is God, they are men. But God knoweth the thoughts of man,
+        that they are but vain.
+
+
+        To carnal men, the one rule of understanding is his ordinary experience; seeing is believing.
+        What men are accustomed to see, that they credit; what they are not accustomed to see, that they
+        deem incredible. But God often worketh wonders (that is, things contrary to what we are
+        accustomed), because he is God. Every day many men are born that previously had no existence at
+        all; and this is a greater miracle than that a few, who did exist, have been raised from the
+        dead. Yet this wonder is not recognized as such; on the contrary, it is disregarded because man
+        is accustomed to it. Christ rose again from the dead; that is a fact. He had a body: he took
+        flesh, he hung upon the cross, he gave up the ghost; his flesh was laid in the tomb. After that,
+        he shewed his flesh as alive again, he lived again in the flesh. Why wonder, why deny it? God
+        wrought this.
+    responsory:
+      la: "R. Locútus est ad me unus ex septem Angelis, dicens: Veni, osténdam tibi novam nuptam, sponsam Agni: * Et vidi Jerúsalem descendéntem de cælo, ornátam monílibus suis, allelúja, allelúja, allelúja.\nV. Et sústulit me in spíritu in montem magnum et altum.\nR. Et vidi Jerúsalem descendéntem de cælo, ornátam monílibus suis, allelúja, allelúja, allelúja."
+      en: "R. One of the seven Angels talked with me, saying: Come hither, I will show thee the bride, the Lamb's wife. * And I saw Jerusalem descending out of heaven, adorned with her jewels. Alleluia, Alleluia, Alleluia.\nV. And he carried me away in the Spirit to a great and high mountain.\nR. And I saw Jerusalem descending out of heaven, adorned with her jewels. Alleluia, Alleluia, Alleluia."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Augustine, Bishop of Hippo, Tractate 101 on the Gospel of John"
+    text:
+      la: >-
+        Módicum est hoc totum spátium, quo præsens pérvolat sǽculum. Unde dicit idem ipse Evangelísta in
+        Epístola sua: Novíssima hora est. Ideo namque áddidit: Quia vado ad Patrem: quod ad priórem
+        senténtiam referéndum est, ubi ait: Módicum et jam non vidébitis me: non ad posteriórem, ubi ait:
+        Et íterum módicum, et vidébitis me. Eúndo quippe ad Patrem, factúrus erat ut eum non vidérent.
+        Ac per hoc non ídeo dictum est, quia fúerat moritúrus, et donec resúrgeret, ab eórum aspéctibus
+        recessúrus: sed quod esset itúrus ad Patrem, quod fecit posteáquam resurréxit, et cum eis per
+        quadragínta dies conversátus, ascéndit in cælum.
+
+
+        Illis ergo ait: Módicum, et jam non vidébitis me; qui eum corporáliter tunc vidébant: quia itúrus
+        erat ad Patrem, et eum deínceps mortálem visúri non erant, qualem, cum ista loquerétur, vidébant.
+        Quod vero áddidit: Et íterum módicum, et vidébitis me: univérsæ promísit Ecclésiæ, sicut
+        univérsæ promísit: Ecce ego vobíscum sum usque ad consummatiónem sǽculi. Non tardat Dóminus
+        promíssum. Módicum et vidébimus eum: ubi jam nihil rogémus, nihil interrogémus, quia nihil
+        desiderándum remanébit, nihil quæréndum latébit.
+
+
+        Hoc módicum longum nobis vidétur, quóniam adhuc ágitur; cum finítum fúerit, tunc sentiémus quam
+        módicum fúerit. Non ergo sit gáudium nostrum quale habet mundus, de quo dictum est: Mundus autem
+        gaudébit. Nec tamen in hujus desidérii parturitióne sine gáudio tristes simus: sed, sicut ait
+        Apóstolus: Spe gaudéntes: In tribulatióne patiéntes: quia et ipsa partúriens, cui comparáti sumus,
+        plus gaudet de mox futúra prole, quam tristis est de præsénti dolóre. Sed hujus sermónis iste sit
+        finis: habent enim quæstiónem molestíssimam, quæ sequúntur: nec brevitáte coarctánda sunt, ut
+        possint commódius, si Dóminus volúerit, explicári.
+      en: >-
+        This little while is the whole duration of this present world. In the same sense this same
+        Evangelist saith in his Epistle: It is the last time. The words, because I go to the Father,
+        refer to the first clause of the text, namely, A little while and ye shall not see Me, and not to
+        the latter clause, that is, and again a little while, and ye shall see Me. By His going to the
+        Father He was about to bring it to pass that they should see Him no more. And thus it was that He
+        said, not that He was about to die, and that after His death they should not see Him until He
+        rose again, but that He was going to the Father, which He did when, after that He was risen
+        again and had manifested Himself to them for forty days, He ascended up into heaven.
+
+
+        Illis ergo ait: to them which were looking on Him in the Body, He saith: A little while, and ye
+        shall not see Me, a little while, and they who now saw Him clad in a dying nature, should see Him
+        so no more, because He was about to go to the Father. But He saith: And again a little while, and
+        ye shall see Me, and these words are a promise to the Universal Church, just as are those others:
+        Lo, I am with you alway, even unto the end of the world. Our Lord delayeth not His promised
+        coming. Again a little while, and we shall see Him. And, O, when we shall see Him, then we shall
+        beg, we shall ask no more; for no desire will be unsatisfied, and no riddle unsolved.
+
+
+        This little while seemeth a very long while to us now, while as it is still going on, but when it
+        is over we shall feel indeed how truly it is but a little while. Therefore, may our rejoicing
+        never be like the rejoicing of that world whereof it is said: The world shall rejoice. A woman
+        when she is in travail hath sorrow, and yet, while hitherto our gladness is still coming to the
+        birth through throes of sorrow, let us not be altogether sorrowful, but, as the Apostle hath it:
+        Rejoicing in hope: patient in tribulation. A woman, when she is in travail hath sorrow, because
+        her hour is come: but as soon as she is delivered of the child, she remembereth no more the
+        anguish, for joy that a man is born into the world. And so will it be with us.
+    responsory:
+      la: "R. Decantábat pópulus Israël, allelúja: et univérsa multitúdo Jacob canébat legítime: * Et David cum cantóribus cítharam percutiébat in domo Dómini, et laudes Deo canébat, allelúja, allelúja.\nV. Sanctificáti sunt ergo sacerdótes et levítæ: et univérsus Israël deducébat arcam fœ́deris Dómini in júbilo.\nR. Et David cum cantóribus cítharam percutiébat in domo Dómini, et laudes Deo canébat, allelúja, allelúja."
+      en: "R. The people of Israel sung: Alleluia, and all the multitude of Jacob sung in measure. * And David was with the singers, and played upon an harp in the house of the Lord, and sung praises unto God. Alleluia, Alleluia.\nV. So the Priests and the Levites were sanctified, and all Israel brought up the ark of the covenant of the Lord with shouting.\nR. And David was with the singers, and played upon an harp in the house of the Lord, and sung praises unto God. Alleluia, Alleluia."
+    status: { la: verified, en: verified }

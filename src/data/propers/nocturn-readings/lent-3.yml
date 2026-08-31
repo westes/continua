@@ -1,0 +1,156 @@
+# Nocturn 2-3, Third Sunday of Lent (temporalId lent-3). Sourced from
+# Tempora/Quad3-0.txt (Latin) / English/Tempora/Quad3-0.txt. See
+# advent-1.yml/lent-1.yml for the general sweep method.
+#
+# Nocturn 2 (Lectio4-6): one continuous excerpt from St. Ambrose's book On
+# Holy Joseph, chapter 1. Responsory: Lectio4's own (Responsory4, "Videns
+# Jacob vestiménta Joseph").
+#
+# Nocturn 3 (Lectio7-9): Lectio7 carries real homily prose after its bare
+# Gospel incipit (Luke 11:14-28, the healing of the mute demoniac, "Et
+# réliqua") - the Venerable Bede's Commentary on Luke, Book 4, begins
+# within Lectio7 itself, same pattern used throughout this sweep. Combined
+# Lectio7's homily portion (incipit dropped) with Lectio8-9, using
+# Responsory7 ("Mérito hæc pátimur") - the first responsory of the group
+# the combined reading spans.
+id: lent-3
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Ambrose, Bishop of Milan, On Holy Joseph"
+    text:
+      la: >-
+        Sanctórum vita céteris norma vivéndi est. Ideóque digéstam plénius accépimus sériem
+        Scripturárum; ut dum Abraham, Isaac, et Jacob, ceterósque justos legéndo cognóscimus, velut
+        quemdam nobis innocéntiæ trámitem, virtúte eórum reserátum imitántibus vestígiis persequámur. De
+        quibus mihi cum frequens tractátus fúerit, hódie sancti Joseph história occúrrit: in quo cum
+        plúrima fúerint génera virtútum, præcípue tamen insígne effúlsit castimóniæ. Justum est ígitur,
+        ut cum in Abraham didicéritis ímpigram fídei devotiónem, in Isaac sincéræ mentis puritátem, in
+        Jacob singulárem ánimi laborúmque patiéntiam: ex illa generalitáte virtútum in ipsas spécies
+        disciplinárum intendátis ánimum.
+
+
+        Sit ígitur nobis propósitus sanctus Joseph tamquam spéculum castitátis. In ejus enim móribus, in
+        ejus áctibus lucet pudicítia, et quidam splendet castimóniæ comes, nitor grátiæ. Unde étiam a
+        paréntibus plus quam céteri fílii diligebátur. Sed ea res invídiæ fuit: quod siléntio
+        prætereúndum non fuit: hinc enim arguméntum totíus históriæ procéssit: simul ut cognoscámus,
+        perféctum virum non movéri ulciscéndi dolóris invídia, nec malórum repéndere vicem. Unde et David
+        ait: Si réddidi retribuéntibus mihi mala.
+
+
+        Quid autem esset, quod præférri Joseph mererétur céteris, si aut lædéntes læsísset, aut diligéntes
+        dilexísset? Hoc enim pleríque fáciunt. Sed illud mirábile, si díligas inimícum tuum: quod
+        Salvátor docet. Jure ergo mirándus, qui hoc fecit ante Evangélium, ut læsus párceret, appetítus
+        ignósceret, vénditus non reférret injúriam, sed grátiam pro contumélia sólveret: quod post
+        Evangélium omnes didícimus, et serváre non póssumus. Discámus ergo et Sanctórum invídiam, ut
+        imitémur patiéntiam: et cognoscámus, illos non natúræ præstantióris fuísse, sed observantióris:
+        nec vítia nescísse, sed emendásse. Quod si invídia étiam Sanctos adússit, quanto magis cavéndum
+        est, ne inflámmet peccatóres?
+      en: >-
+        The lives of the saints are the models for the lives of others. This is one of the reasons why
+        we have been given the wise tale of the Scriptures, that while, by reading therein, we come to
+        know Abraham, and Isaac, and Jacob, and others of the righteous, we may follow them in that path
+        of innocency which is opened to us for our imitation by the record of their godly conversation.
+        Of them I have often treated, and today the story of the holy Joseph cometh before me. In that
+        story there are patterns of many virtues, but chiefly is he glorious on account of his clean
+        living. Right is it then that ye who have learnt in Abraham the devotedness of a faith that
+        nothing could daunt, in Isaac the transparency of an upright soul, in Jacob a wonderful patience
+        of spirit in great travails, should now turn from their worthy deeds, to see the bright example
+        of Joseph's self-control.
+
+
+        The holy Joseph is put before us as a pattern of chastity. Modesty shineth in his manners and in
+        his deeds, and a certain loveliness, which is found with chastity, shineth there also. Hence his
+        parents loved him more than their other children. But this love caused him to be the object of
+        an envy, which we must needs not pass by, and upon this the whole story turneth. Yet, at the same
+        time, we learn how that just man was not swayed by any desire to avenge his own sufferings,
+        neither repaid evil for evil. Whence also David saith: If I have rewarded evil.
+
+
+        In what would Joseph have been worthy to be chosen before others, if he had harmed them which
+        harmed him, and loved them which loved him? For this do many do. But it is a wonder if one do
+        that which the Saviour teacheth, and love his enemy. Well, then, may we wonder at him who did
+        this before the Gospel came; who, being injured, spared; being assailed, forgave; being sold,
+        returned no evil; but repaid insult with favour. We, from the Gospel, have been taught to do all
+        this, and we cannot. Let us also, then, learn how that there was envy even among some of the holy
+        Patriarchs, that we may follow the example of the patience wherewith others of them bore it; and
+        let us feel that they were not men of another and higher nature than ours, but only more
+        heedful; that they were not sinless, but that they repented. But if the passion of envy scorched
+        even some of the holy race, how much more need is there for the sinful to take heed lest it set
+        fire to them?
+    responsory:
+      la: "R. Videns Jacob vestiménta Joseph, scidit vestiménta sua cum fletu, et dixit: * Fera péssima devorávit fílium meum Joseph.\nV. Tulérunt autem fratres ejus túnicam illíus, mitténtes ad patrem: quam cum cognovísset pater, ait.\nR. Fera péssima devorávit fílium meum Joseph."
+      en: "R. When Jacob saw Joseph's coat he rent his clothes, and mourned; and he said: * An evil beast hath devoured my son Joseph.\nV. And his brethren took his coat, and sent it to his father: and he knew it, and said:\nR. An evil beast hath devoured my son Joseph."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "The Venerable Bede, Priest of Jarrow, Commentary on Luke, Book 4"
+    text:
+      la: >-
+        Dæmoníacus iste apud Matthǽum non solum mutus, sed et cæcus fuísse narrátur: curatúsque dícitur a
+        Dómino, ita ut loquerétur, et vidéret. Tria ergo signa simul in uno hómine perpetráta sunt: cæcus
+        videt, mutus lóquitur, posséssus a dǽmone liberátur. Quod et tunc quidem carnáliter factum est,
+        sed et cotídie complétur in conversióne credéntium: ut, expúlso primum dǽmone, fídei lumen
+        aspíciant; deínde ad laudes Dei tacéntia prius ora laxéntur. Quidam autem ex eis dixérunt: in
+        Beélzebub príncipe dæmoniórum éicit dæmónia. Non hæc áliqui de turba, sed pharisǽi
+        calumniabántur, et scribæ, sicut álii Evangelístæ testántur.
+
+
+        Turbis quippe, quæ minus erudítæ videbántur, Dómini semper facta mirántibus; illi contra, vel
+        negáre hæc, vel quæ negáre nequíverant, sinístra interpretatióne pervértere laborábant: quasi non
+        hæc divinitátis, sed immúndi spíritus ópera fuíssent. Et álii tentántes, signum de cælo quærébant
+        ab eo. Vel in morem Elíæ ignem de sublími veníre cupiébant; vel in similitúdinem Samuélis témpore
+        æstívo mugíre tonítrua, coruscáre fúlgura, imbres rúere: quasi non possent et illa calumniári, et
+        dícere, ex occúltis et váriis aëris passiónibus accidísse. At tu, qui calumniáris ea, quæ óculis
+        vides, manu tenes, utilitáte sentis; quid féceris de iis, quæ de cælo vénerint? Utique
+        respondébis, et magos in Ægýpto multa signa fecísse de cælo.
+
+
+        Ipse autem ut vidit cogitatiónes eórum, dixit eis: Omne regnum in seípsum divísum desolábitur, et
+        domus supra domum cadet. Non ad dicta, sed ad cogitáta respóndit: ut vel sic compelleréntur
+        crédere poténtiæ ejus, qui cordis vidébat occúlta. Si autem omne regnum in seípsum divísum
+        desolátur; ergo Patris et Fílii et Spíritus Sancti regnum non est divísum; quod sine ulla
+        contradictióne, non áliquo impúlsu desolándum, sed ætérna est stabilitáte mansúrum. Si autem
+        sátanas in seípsum divísus est: quómodo stabit regnum ipsíus, quia dícitis, in Beélzebub ejícere
+        me dæmónia? Hoc dicens, ex ipsórum confessióne volébat intélligi, quod in eum non credéndo, in
+        regno diáboli esse elegíssent, quod útique advérsum se divísum stare non posset.
+      en: >-
+        We read in Matthew that the devil, by which this poor creature was possessed, was not only
+        dumb, but also blind; and that, when he was healed by the Lord, he saw as well as spake. Three
+        miracles, therefore, were performed on this one man; the blind saw, the dumb spake, and the
+        possessed was delivered. This mighty work was then indeed wrought carnally, but it is still
+        wrought spiritually in the conversion of believers, when the devil is cast out of them, so that
+        their eyes see the light of faith, and the lips, that before were dumb, are opened that their
+        mouth may show forth the praise of God. But some of them said: He casteth out devils through
+        Beelzebub, the chief of the devils. These some were not of the multitude, but liars among the
+        Pharisees and Scribes, as we are told by the other Evangelist.
+
+
+        While the multitude, who were less instructed, wondered ever at the works of the Lord, the
+        Pharisees and Scribes, on the other hand, denied the facts when they could, and when they were
+        not able, twisted them by an evil interpretation, and asserted that the works of God were the
+        works of an unclean spirit. And others, tempting Him, sought of Him a sign from heaven. They
+        would have had Christ either to call down fire from heaven like Elias, or, like Samuel, to have
+        made thunder roll, and lightning flash, and rain fall at midsummer. And yet, if he had so done,
+        they had been still able to explain away these signs also, as being the natural result of some
+        unusual, though, till that moment, unremarked state of the atmosphere. O thou, who stubbornly
+        deniest that which thine eye seeth, thine hand holdeth, and thy sense perceiveth, what wilt thou
+        say to a sign from heaven? In good sooth, thou wilt say that the magicians in Egypt also wrought
+        diverse signs from heaven.
+
+
+        But He, knowing their thoughts, said unto them: Every kingdom divided against itself is brought
+        to desolation, and an house divided against an house falleth. He answered not their words, but
+        their thoughts; as though He would compel them to believe in the power of Him Who seeth the
+        secrets of the heart. But if every kingdom divided against itself is brought to desolation, then
+        have not the Father, the Son, and the Holy Ghost a divided kingdom, since His is a kingdom that,
+        without all contradiction, shall never be brought to desolation by any shock, but abideth
+        unchanged and unchangeable for ever. If Satan also be divided against himself, how shall his
+        kingdom stand? Because ye say that I cast out devils by Beelzebub. In saying this, He sought to
+        draw from their own mouth a confession that they had chosen for themselves to be part of that
+        devil's kingdom, which, if it be divided against itself, cannot stand.
+    responsory:
+      la: "R. Mérito hæc pátimur, quia peccávimus in fratrem nostrum, vidéntes angústias ánimæ ejus, dum deprecarétur nos, et non audívimus: * Idcírco venit super nos tribulátio.\nV. Dixit Ruben frátribus suis: Numquid non dixi vobis, Nolíte peccáre in púerum; et non audístis me?\nR. Idcírco venit super nos tribulatio."
+      en: "R. We are verily guilty concerning our brother, in that we saw the anguish of his soul, when he besought us, and we would not hear. * Therefore is this distress come upon us.\nV. And Reuben answered his brethren, saying: Spake I not unto you, saying: Do not sin against the child; and ye would not hear?\nR. Therefore is this distress come upon us."
+    status: { la: verified, en: verified }
