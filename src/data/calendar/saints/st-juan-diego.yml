@@ -1,0 +1,29 @@
+# Read directly from the reference engine: Sancti/12-09n.txt --
+# "S. Juan Diego;;Duplex optional;;2.5;;vide C5" (Common of a Confessor
+# Not a Bishop) -- an `n` (national-calendar) file, not part of either
+# Tridentine 1906 or Divino Afflatu 1954 (canonized 2002, added to the
+# Mexican/US calendars afterward). "Duplex optional" isn't a real
+# historical rank at all (a post-Vatican-II ranking concept vu's
+# FeastClass scale has no slot for) -- mapped here to an ordinary Duplex
+# first, then deflated one tier to Semiduplex per the standing
+# late-canonization rule (St. Rose of Lima precedent, CLAUDE.md). Live
+# resolveDay check (2026-12-09): Semiduplex alone would clear
+# privileged-feria-minor's own threshold, but Dec 9 falls within the
+# Immaculate Conception's octave, whose elevated `wins: duplex`
+# threshold (calendar/octaves.ts) outranks a plain Semiduplex -- so he's
+# demoted to a commemoration and the Advent feria keeps the day, same
+# actual behavior as St. Damasus at Dec 11 (that file's own header
+# comment predates the octave-wins-class rework and is stale on this
+# point). No unique collect/antiphon in the source -- Common of a
+# Confessor Not a Bishop only, same profile as st-hyacinth.yml.
+id: st-juan-diego
+name: "St. Juan Diego, Confessor"
+rank: semiduplex
+common: common-of-a-confessor
+propers: null
+collectCommon: collect-c5
+collectName:
+  la: ["Joánnis Dídaci"]
+  en: ["Juan Diego"]
+benedictusCommon: common-of-a-confessor
+minorHoursCommon: common-of-a-confessor
