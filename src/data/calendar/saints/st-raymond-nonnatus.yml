@@ -5,10 +5,19 @@
 # to the plain Common of a Confessor. No Lectio7-9 in his own file
 # (only an `[Evangelium]` cross-reference to `@Commune/C5`) -- defers
 # to the Common's own Nocturn 3, not transcribed here.
+#
+# Rank deliberately deflated one tier from the source (Duplex ->
+# semiduplex): canonized 1657 (Alexander VII), so per project policy a
+# saint whose own canonization postdates ~1600 gets one tier off the
+# nominal source rank, since "new canonization -> automatic Duplex"
+# was the papacy's default practice by then and the raw grade no
+# longer tracks real devotional weight the way it does for older
+# saints (see vu/CLAUDE.md's "Not a reconstruction" section; same
+# treatment already applied to St. Rose of Lima, Aug 30).
 id: st-raymond-nonnatus
 name: "St. Raymond Nonnatus, Confessor"
 nameLa: "Sanctus Raymundus Nonnatus, Confessor"
-rank: duplex
+rank: semiduplex
 common: common-of-a-confessor
 propers: "st-raymond-nonnatus"
 benedictusCommon: common-of-a-confessor
