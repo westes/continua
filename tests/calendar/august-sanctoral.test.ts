@@ -120,4 +120,22 @@ describe('August sanctoral pull (first pass)', () => {
     ]);
     expect(getDayCollect(day).status.en).toBe('verified');
   });
+
+  it('St. Rose of Lima (rank deliberately deflated to semiduplex, see CLAUDE.md) wins outright over the ancient Ss. Felix and Adauctus, who keep their own commemoration rather than being suppressed', () => {
+    // On a Saturday this date is instead outranked by the generic
+    // "Sanctae Mariae Sabbato" votive (see ss-felix-and-adauctus.yml) and
+    // a Sunday produces a temporal winner instead -- 2027-08-30, a Monday,
+    // is a clean year for this collision.
+    const day = resolveDay('2027-08-30');
+    expect(day.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-rose-of-lima',
+      name: 'St. Rose of Lima, Virgin',
+      rank: 'semiduplex',
+    });
+    expect(day.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'ss-felix-and-adauctus', name: 'Ss. Felix and Adauctus, Martyrs', rank: 'simplex' },
+    ]);
+    expect(getDayCollect(day).status.en).toBe('verified');
+  });
 });

@@ -1,14 +1,19 @@
 # Verified against Divinum Officium (Monastic Tridentinum 1617), live
 # kalendar check on a clean weekday (2027-08-30, a Monday) -- wins outright
-# at Simplex. On a Saturday this date is instead outranked by the generic
-# "Sanctae Mariae Sabbato" votive (confirmed re-checking 2025-08-30, a
-# Saturday, where the votive won instead) -- an artifact of the tested
-# weekday, same pattern as St. Stephen I (Aug 2) this month and Ss.
-# Marcellinus/Peter/Erasmus in June. No unique collect: the raw file at
-# this MM-DD slot (Sancti/08-30.txt) is actually St. Rose of Lima's (a
-# much later, 17th-century addition to this filename slot) -- a live
-# prayTertia query for the Monastic 1617 track returns no Oratio at all,
-# confirming propers: null is correct.
+# at Simplex against a bare weekday. On a Saturday this date is instead
+# outranked by the generic "Sanctae Mariae Sabbato" votive (confirmed
+# re-checking 2025-08-30, a Saturday, where the votive won instead) -- an
+# artifact of the tested weekday, same pattern as St. Stephen I (Aug 2)
+# this month and Ss. Marcellinus/Peter/Erasmus in June. No unique collect
+# of its own here on the Monastic 1617 track (a live prayTertia query for
+# that track returns no Oratio at all): the raw file at this MM-DD slot
+# (Sancti/08-30.txt) actually belongs to St. Rose of Lima, a much later
+# (17th-century) addition to this filename slot on the general
+# Tridentine/Divino Afflatu calendar -- see st-rose-of-lima.yml, now
+# authored and the day's outright winner (semiduplex > simplex) per
+# sanctoral-calendar.yml. Felix and Adauctus's own real content survives
+# at the suffixed sibling file (Sancti/08-30o.txt) and is kept here as a
+# full commemoration, not suppressed, per collision.ts.
 id: ss-felix-and-adauctus
 name: "Ss. Felix and Adauctus, Martyrs"
 rank: simplex
