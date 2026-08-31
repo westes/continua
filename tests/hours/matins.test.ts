@@ -71,7 +71,14 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
   });
 
   it("resolves the user's own bible-plan readings for the day, not the historical lectionary", () => {
-    const lessons = ordo.parts.filter((p) => p.kind === 'lesson');
+    // Filtered to unlabeled lessons only: since the temporal-cycle
+    // nocturn-readings sweep authored advent-1.yml (2026-08), this same
+    // date's Nocturn 2/3 pool also gains two labeled (patristic) lesson
+    // entries alongside the user's own bible-plan readings — a real,
+    // separate content source this test isn't about (see
+    // hours/matins.ts's own nocturnReadingPart, which is the only lesson
+    // constructor that sets `label`).
+    const lessons = ordo.parts.filter((p) => p.kind === 'lesson' && !p.label);
     // Plain 2 bible-plan readings on this particular clean ferial (no
     // commemorated saint here) — see the next test for the 3-reading case.
     expect(lessons).toHaveLength(2);
@@ -91,7 +98,9 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
     // Semiduplex threshold). 2025-12-02, a Tuesday, keeps the same 9-psalm
     // ferial shape as the other tests in this block.
     const commemoratedOrdo = resolveOrdo('matins', '2025-12-02');
-    const lessons = commemoratedOrdo.parts.filter((p) => p.kind === 'lesson');
+    // Same unlabeled-lesson filter as the test above — advent-1.yml's
+    // patristic content also pools into this date.
+    const lessons = commemoratedOrdo.parts.filter((p) => p.kind === 'lesson' && !p.label);
     expect(lessons).toHaveLength(3);
     const citations = lessons.map((l) => (l as { text: { citation?: { en?: string } } }).text.citation?.en);
     expect(citations).toEqual(['Isa 6; Isa 7', 'Sap 2', undefined]);
@@ -490,6 +499,75 @@ describe('resolveOrdo("matins", ...) post-Pentecost season nocturn-readings swee
     const { getNocturnReadings } = await import('../../src/propers/nocturn-readings');
     for (let n = 1; n <= 24; n += 1) {
       const id = `post-pentecost-${String(n).padStart(2, '0')}`;
+      expect(getNocturnReadings(id).length, id).toBeGreaterThan(0);
+    }
+  });
+});
+
+// Temporal-cycle nocturn-readings sweep, rest of the year (2026-08): the
+// same sweep extended past the post-Pentecost season to the other 26
+// temporal ids (Advent through Eastertide), sourced from the reference
+// engine's own Tempora/<season><N>-0.txt files (Adv1-0, Nat1-0, Epi1-0a -
+// post-epiphany-1's actual source, since Epi1-0.txt itself is the later
+// Holy Family override, not this Sunday - Quadp1-3-0, Quad1-6-0, Pasc0-7-0).
+// Two ids are deliberate, source-confirmed gaps, not oversights:
+// easter-sunday and pentecost-sunday both keep the ancient single-nocturn,
+// three-lesson form in the source (no Lectio4-9 at all), so neither has a
+// nocturn-readings file. See TODO.md and memory
+// vu-temporal-nocturn-sweep-progress for the full sweep record.
+describe('resolveOrdo("matins", ...) rest-of-year temporal nocturn-readings sweep (2026-08)', () => {
+  function lessonStatuses(date: string) {
+    const ordo = resolveOrdo('matins', date);
+    return ordo.parts
+      .filter((p) => p.kind === 'lesson')
+      .map((p) => (p as { text: { status: Record<string, string> } }).text.status);
+  }
+
+  it.each([
+    ['2028-12-04', 'advent-1'],
+    ['2026-12-07', 'advent-2'],
+    ['2026-12-14', 'advent-3'],
+    ['2026-12-21', 'advent-4'],
+    ['2026-01-05', 'christmas-octave-sunday'],
+    ['2026-01-12', 'post-epiphany-1'],
+    ['2026-01-19', 'post-epiphany-2'],
+    ['2026-01-26', 'post-epiphany-3'],
+    ['2027-11-01', 'post-epiphany-4 (a resumed post-Pentecost-overflow Sunday, not a January date)'],
+    ['2026-11-09', 'post-epiphany-5 (resumed)'],
+    ['2026-11-16', 'post-epiphany-6 (resumed)'],
+    ['2026-02-02', 'septuagesima'],
+    ['2026-02-09', 'sexagesima'],
+    ['2026-02-16', 'quinquagesima'],
+    ['2031-03-03', 'lent-1 (not 2026-02-23: that date is really the Vigil of St. Matthias, transferred onto the Sunday and winning outright)'],
+    ['2026-03-02', 'lent-2'],
+    ['2026-03-09', 'lent-3'],
+    ['2026-03-16', 'lent-4'],
+    ['2026-03-23', 'passion-sunday'],
+    ['2027-03-22', 'palm-sunday'],
+    ['2026-04-13', 'easter-octave'],
+    ['2026-04-20', 'easter-3'],
+    ['2026-04-27', 'easter-4'],
+    ['2026-05-04', 'easter-5'],
+    ['2026-05-11', 'easter-6'],
+    ['2026-05-18', 'sunday-after-ascension'],
+    ['2026-04-05', 'easter-sunday'],
+    ['2026-05-24', 'pentecost-sunday'],
+  ])('%s (%s) resolves at least one non-missing lesson', (date) => {
+    const statuses = lessonStatuses(date);
+    expect(statuses.length).toBeGreaterThan(0);
+    expect(statuses.some((s) => s.la !== 'missing' && s.en !== 'missing')).toBe(true);
+  });
+
+  it('every rest-of-year temporal id has an authored nocturn-readings file', async () => {
+    const { getNocturnReadings } = await import('../../src/propers/nocturn-readings');
+    const ids = [
+      'advent-1', 'advent-2', 'advent-3', 'advent-4', 'christmas-octave-sunday',
+      'post-epiphany-1', 'post-epiphany-2', 'post-epiphany-3', 'post-epiphany-4', 'post-epiphany-5', 'post-epiphany-6',
+      'septuagesima', 'sexagesima', 'quinquagesima', 'lent-1', 'lent-2', 'lent-3', 'lent-4',
+      'passion-sunday', 'palm-sunday', 'easter-octave', 'easter-3', 'easter-4', 'easter-5', 'easter-6',
+      'sunday-after-ascension', 'easter-sunday', 'pentecost-sunday',
+    ];
+    for (const id of ids) {
       expect(getNocturnReadings(id).length, id).toBeGreaterThan(0);
     }
   });

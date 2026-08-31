@@ -41,10 +41,11 @@ across every hour and content type in this app.
    - Matins sanctoral-side readings: the per-book Matins responsory pool has only one book
      seeded (`isa`) — needs expanding. Bible-plan TSV content also isn't yet in a test table
      (see "Bible-plan TSV — bulk conversion done" below).
-   - Matins temporal-cycle readings: only the post-Pentecost season (`post-pentecost-01`
-     through `-24`) is authored (see "Temporal-cycle nocturn-readings sweep" below) — the rest
-     of the year (Advent, Christmastide, post-Epiphany, Septuagesima through Lent/Passiontide,
-     Eastertide) has no Nocturn 2/3 content yet.
+   - ~~Matins temporal-cycle readings~~ — DONE (2026-08): all 52 temporal ids across the whole
+     year now have authored Nocturn 2/3 content, no remaining gaps (see "Temporal-cycle
+     nocturn-readings sweep" below, including the easter-sunday/pentecost-sunday correction).
+     Moved out of this "bulk content pending" section since there's no more bulk content left to
+     author here.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -1529,6 +1530,82 @@ changes).
   since the whole week already shares one temporal id/file by design (see above); flagged only
   so a future reader doesn't go looking for `post-pentecost-13-tuesday.yml`-style files that
   were never meant to exist.
+
+### Temporal-cycle nocturn-readings sweep — rest of the year done (2026-08)
+
+Extended the post-Pentecost sweep above to the other 26 temporal ids — Advent (`advent-1..4`),
+`christmas-octave-sunday`, post-Epiphany (`post-epiphany-1..6`), Septuagesima through Lent
+(`septuagesima`, `sexagesima`, `quinquagesima`, `lent-1..4`), Passiontide/Holy Week
+(`passion-sunday`, `palm-sunday`), and Eastertide (`easter-octave`, `easter-3..6`,
+`sunday-after-ascension`) — using the reference engine's own per-season Tempora files
+(`Adv1-0.txt`..`Adv4-0.txt`, `Nat1-0.txt`, `Epi1-0a.txt`/`Epi2-0.txt`..`Epi6-0.txt`,
+`Quadp1-0.txt`..`Quadp3-0.txt`, `Quad1-0.txt`..`Quad6-0.txt`, `Pasc0-0.txt`..`Pasc7-0.txt`).
+24 of 26 ids got real, sourced Nocturn 2/3 content on the first pass; the remaining 2 temporal
+ids in this season range (`easter-sunday`, `pentecost-sunday`) were initially misdiagnosed as
+genuine source gaps (see below) — corrected the same day, both now authored too.
+
+- **`post-epiphany-1`'s real source is `Epi1-0a.txt`, not `Epi1-0.txt`**: the reference
+  engine reassigns `Epi1-0.txt` to the later (1893/1921) feast of the Holy Family, which this
+  project doesn't model (see the temporal-cycle survey note on Holy Family as a still-open
+  pre-1955 gap, elsewhere in this file). `Epi1-0b.txt` (a thin `Dominica I post Epiphaniam`
+  wrapper cross-referencing `Epi1-0a` for its own Nocturn 1) confirmed `Epi1-0a.txt` carries the
+  real older "Dominica infra Octavam Epiphaniæ" office underneath. That file also has a real
+  structural gap of its own: its `[Rule]` reads "Initia cum responsory" and it carries no
+  `[Responsory4]`-`[Responsory9]` tags at all — its Nocturn 2/3 responsories come from a
+  continuous weekly "Historia" cycle not transcribed per-Sunday in the static files (same class
+  of gap as the post-Pentecost season's un-sourced Nocturn 2 weeks). `post-epiphany-1.yml`'s
+  two readings are authored without a `responsory` field for this reason, not with an invented
+  one.
+- **`sunday-after-ascension`'s source file (`Pasc6-0.txt`) has no responsories of its own
+  either** (only `[Responsory8]`, proper to a single lesson) — its own `[Rank]`/`[Rule]` say
+  "ex Tempora/Pasc5-4" (Ascension Thursday itself), meaning the whole office, responsories
+  included, is inherited from that day. Resolved by pulling the representative responsories
+  directly from `Pasc5-4.txt` rather than leaving them unauthored.
+- **`easter-sunday` (`Pasc0-0.txt`) and `pentecost-sunday` (`Pasc7-0.txt`) were initially
+  (wrongly) called source-level gaps, then corrected same day.** Both files' own `[Rule]` really
+  does read "1 nocturn" (their whole night office collapses to 3 lessons, straight to Te Deum) —
+  true, and unlike every other Sunday in this sweep. But "1 nocturn instead of 3" is not the same
+  claim as "no Nocturn 2/3 content exists": `Lectio1` in both files opens with a bare Gospel
+  incipit ("Et réliqua") immediately followed by a full patristic homily (Easter: Pope St.
+  Gregory the Great, Homily 21 on the Gospels, on Mark 16:1-7; Pentecost: the same, Homily 30, on
+  John 14:23-31) continuing through Lectio2-3 — real, substantial, translatable content, just
+  compressed into one nocturn rather than split across three the way an ordinary Sunday's 9
+  lessons are. `hours/matins.ts` already supports single-nocturn source content tagged
+  `nocturn: 1` (the Ember days' own nocturn-readings files do exactly this), and this app's own
+  `threeNocturns` rule (every Sunday renders 3 nocturns regardless of the historical rubric for
+  this particular feast) reslots the pool across 3 rendered nocturns anyway — the `nocturn: 1`
+  tag only affects pool-ordering relative to other same-day contributors, not final placement.
+  Authored `easter-sunday.yml`/`pentecost-sunday.yml` the same way as every other Nocturn-3-style
+  entry in this sweep: incipit dropped, Lectio1's homily portion combined with Lectio2-3 into one
+  reading, Responsory1 (the only nocturn-proper responsory transcribed in either source —
+  Responsory3 doesn't exist, the office runs straight to the Te Deum after Responsory2's Gloria
+  repeat).
+- **Cross-reference reuse continues the post-Pentecost pattern**: several Sundays'
+  `[Responsory4]`/`[Responsory7]` tags are themselves cross-references to a different file
+  (e.g. `post-epiphany-3` through `-6` all point back to `post-epiphany-2`'s own Responsory4/7;
+  `easter-6` points back to `easter-5`'s Pasc4-0 responsories) rather than fresh text — resolved
+  and transcribed directly, same as before, not left as unresolved pointers.
+- **The "homily begins inside Lectio7 itself" pattern, not just at Lectio8, held for nearly
+  every Sunday in this pass** (not only the few post-Pentecost weeks that showed it) — every
+  file's Nocturn 3 combines Lectio7's homily portion (dropping only the bare Gospel incipit)
+  with Lectio8-9, using Lectio7's own responsory to represent the combined reading.
+
+Live-verified via `npx tsc --noEmit`, `npm run build`, and `npm test` (806 tests, up from 777 —
+a "rest-of-year temporal nocturn-readings sweep" describe block in `tests/hours/matins.test.ts`
+covering all 28 ids end-to-end, `easter-sunday`/`pentecost-sunday` included; two pre-existing
+tests in the ferial-branch describe block also needed a small filter update, since Advent I's
+own ferial dates now legitimately pool in `advent-1.yml`'s patristic content alongside the
+user's bible-plan readings). No fixture collisions (pure content addition under already-existing
+ids, no calendar changes) except one real interaction the new content surfaced: `2026-02-23`,
+initially picked as a `lent-1` proof date, turned out to actually be the Vigil of St. Matthias
+transferred onto that Sunday and winning outright — swapped for `2031-03-03`, a clean `lent-1`
+date.
+
+**Temporal-cycle nocturn-readings sweep, all 52 ids, is now fully complete — no remaining gaps.**
+The lesson from the easter-sunday/pentecost-sunday misdiagnosis: "the source's own `[Rule]` says
+1 nocturn" is a claim about nocturn *count*, not about whether content exists — always check
+whether `[Lectio1]`-`[Lectio3]` (or whichever lessons exist) carry real prose before calling a
+short nocturn structure a content gap.
 
 ### Calendar-month/week nocturn-readings import — done (2026-08)
 
