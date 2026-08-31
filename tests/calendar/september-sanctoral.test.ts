@@ -3,13 +3,35 @@ import { resolveDay } from '../../src/calendar';
 import { getDayCollect } from '../../src/hours/resolve-common';
 
 // Clean per-annum years for these dates (no Sunday collision) — see
-// data/calendar/saints/*.yml for per-saint source detail.
+// data/calendar/saints/*.yml for per-saint source detail. Exception:
+// the Sept 1 collision test deliberately uses 2025 *because* Aug 31
+// falls on Sunday that year — see its own comment.
 describe('September sanctoral pull (first pass)', () => {
   it('St. Giles wins outright at Simplex over a genuinely unwinnable stub', () => {
-    const day = resolveDay('2025-09-01');
+    // 2025-09-01 no longer qualifies as a clean year for this: Aug 31,
+    // 2025 is a Sunday, and St. Raymond Nonnatus (semiduplex as of the
+    // rank-deflation fix) loses outright to an ordinary Sunday and
+    // transfers forward onto Sept 1, winning there instead of Giles
+    // (semiduplex > simplex) -- see the collision test below.
+    const day = resolveDay('2026-09-01');
     expect(day.winner).toEqual({ kind: 'sanctoral', id: 'st-giles', name: 'St. Giles, Abbot', nameLa: 'Sanctus Ægidius, Abbas', rank: 'simplex' });
     expect(day.commemorations).toEqual([
       { kind: 'sanctoral', id: 'ss-twelve-brothers', name: 'Ss. Twelve Brothers, Martyrs', nameLa: 'Duodecim Fratres, Martyres', rank: 'simplex' },
+    ]);
+  });
+
+  it('in a year where Aug 31 falls on Sunday, St. Raymond Nonnatus (semiduplex) loses outright to the Sunday, transfers forward onto Sept 1, and wins the collision there over both native Simplex candidates', () => {
+    const day = resolveDay('2025-09-01');
+    expect(day.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-raymond-nonnatus',
+      name: 'St. Raymond Nonnatus, Confessor',
+      nameLa: 'Sanctus Raymundus Nonnatus, Confessor',
+      rank: 'semiduplex',
+    });
+    expect(day.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'ss-twelve-brothers', name: 'Ss. Twelve Brothers, Martyrs', nameLa: 'Duodecim Fratres, Martyres', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-giles', name: 'St. Giles, Abbot', nameLa: 'Sanctus Ægidius, Abbas', rank: 'simplex' },
     ]);
   });
 
