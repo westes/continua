@@ -443,11 +443,18 @@ function collectCommemorations(
   for (const c of day.commemorations) {
     if (c.kind === 'sanctoral') {
       const name = biName(c.name, c.nameLa);
-      sanctoral.push(
-        c.vespersNote
-          ? bi(`${name.en} (${CROSS_DAY_VESPERS_LABELS[c.vespersNote].en})`, `${name.la} (${CROSS_DAY_VESPERS_LABELS[c.vespersNote].la})`)
-          : name,
-      );
+      if (c.vespersNote) {
+        sanctoral.push(bi(`${name.en} (${CROSS_DAY_VESPERS_LABELS[c.vespersNote].en})`, `${name.la} (${CROSS_DAY_VESPERS_LABELS[c.vespersNote].la})`));
+      } else if (c.transferredFrom) {
+        // Same "arrived via transfer, not natively due here" signal as a
+        // transferred-in *winner* gets — a reader shouldn't need to already
+        // know this saint's real date to realize a mere commemoration here
+        // is standing in for a transfer, not this date's own natural
+        // sanctoral standing.
+        sanctoral.push(bi(`${name.en} (${TRANSFERRED_LABEL.en})`, `${name.la} (${TRANSFERRED_LABEL.la})`));
+      } else {
+        sanctoral.push(name);
+      }
     } else if (c.kind === 'temporal') {
       if (c.id === temporalId) {
         temporal.push(anchorDayName(day, false) ?? temporalLabel(day));
@@ -520,6 +527,44 @@ export function getVespersStatusLabel(day: LiturgicalDay, requestedDate: string)
   return bi('Second Vespers (of today)', 'Vesperæ de hodierno');
 }
 
+/** Appended after a transferred-in winner's name/rank, before any
+ * commemorations — same shape as a rank parenthetical. Distinct wording
+ * from `TRANSFERRED_AWAY_LABEL` below on purpose: this winner's own rank
+ * parenthetical sits right next to it ("St. X (Duplex, transferred)"), so
+ * plain "transferred" already reads as "arrived via transfer" in context —
+ * but on the origin date there's no rank alongside it to anchor that
+ * reading, so the away-note spells out the direction explicitly instead of
+ * relying on that same subtlety a first-time reader wouldn't have. */
+const TRANSFERRED_LABEL = bi('transferred', 'translata');
+
+/** See `TRANSFERRED_LABEL`'s doc comment for why this is worded differently. */
+const TRANSFERRED_AWAY_LABEL = bi('transferred away', 'translata alio');
+
+/** "St. X (transferred away)" note for a date whose own native sanctoral
+ * candidate (`day.transferredAway`) couldn't be kept here — appended after
+ * everything else `getDayLabel` already found for this date's real
+ * winner/commemorations, since the departure is a footnote about a
+ * *different* saint, not part of this date's own identity. Deliberately
+ * names no landing date (see `transferredAway`'s own doc comment) — the
+ * point is just to tell a reader "not an omission, this office moved
+ * elsewhere," not to claim a specific destination that a later, unmodeled
+ * transfer chain could make wrong. */
+function transferredAwayNote(day: LiturgicalDay): Bi | undefined {
+  if (!day.transferredAway) {
+    return undefined;
+  }
+  const name = biName(day.transferredAway.candidate.name, day.transferredAway.candidate.nameLa);
+  return bi(`${name.en} (${TRANSFERRED_AWAY_LABEL.en})`, `${name.la} (${TRANSFERRED_AWAY_LABEL.la})`);
+}
+
+function withTransferNote(day: LiturgicalDay, label: Partial<Record<string, string>>): Partial<Record<string, string>> {
+  const note = transferredAwayNote(day);
+  if (!note) {
+    return label;
+  }
+  return { en: `${label.en} — ${note.en}`, la: `${label.la} — ${note.la}` };
+}
+
 /**
  * The full "day being celebrated" label: the day's own primary identity
  * (a sanctoral winner, a named temporal feast, a season's own anchor day,
@@ -547,8 +592,10 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
     });
     const rank = formatRank(day.winner.rank);
     const winnerName = biName(day.winner.name, day.winner.nameLa);
-    const winner = bi(`${winnerName.en} (${rank.en})`, `${winnerName.la} (${rank.la})`);
-    return joinBi([winner, ...temporal, ...sanctoral, ...octaves]);
+    const winner = day.winner.transferredFrom
+      ? bi(`${winnerName.en} (${rank.en}, ${TRANSFERRED_LABEL.en})`, `${winnerName.la} (${rank.la}, ${TRANSFERRED_LABEL.la})`)
+      : bi(`${winnerName.en} (${rank.en})`, `${winnerName.la} (${rank.la})`);
+    return withTransferNote(day, joinBi([winner, ...temporal, ...sanctoral, ...octaves]));
   }
 
   // A named temporal feast (Christmas, Pentecost, Marian Saturday, ...)
@@ -563,7 +610,7 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
       ? bi(`${name.en} (${formatRank(namedFeast.rank).en})`, `${name.la} (${formatRank(namedFeast.rank).la})`)
       : name;
     const { sanctoral } = collectCommemorations(day, { showOctaves: false });
-    return joinBi([primary, ...sanctoral]);
+    return withTransferNote(day, joinBi([primary, ...sanctoral]));
   }
 
   // A season's own named anchor day (Trinity Sunday, Easter, Ash
@@ -576,7 +623,7 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
   const anchorName = anchorDayName(day);
   if (anchorName) {
     const { sanctoral } = collectCommemorations(day, { showOctaves: false });
-    return joinBi([anchorName, ...sanctoral]);
+    return withTransferNote(day, joinBi([anchorName, ...sanctoral]));
   }
 
   // An active octave (St. Lawrence's, ...) is this day's real primary
@@ -612,12 +659,12 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
   if (activeOctave) {
     const { sanctoral, octaves } = collectCommemorations(day, { showOctaves: true, excludeOctaveId: activeOctave.id });
     const primary = octaveLabel(activeOctave);
-    return joinBi([primary, ...octaves, ...sanctoral]);
+    return withTransferNote(day, joinBi([primary, ...octaves, ...sanctoral]));
   }
 
   const temporalRank = TEMPORAL_CATEGORY_RANK_LABELS[day.temporalCategory];
   const label = temporalLabel(day);
   const temporal = bi(`${label.en} (${temporalRank.en})`, `${label.la} (${temporalRank.la})`);
   const { sanctoral } = collectCommemorations(day, { showOctaves: false });
-  return joinBi([temporal, ...sanctoral]);
+  return withTransferNote(day, joinBi([temporal, ...sanctoral]));
 }
