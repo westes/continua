@@ -1,0 +1,106 @@
+# Matins nocturn content for Easter Sunday itself (temporalId
+# easter-sunday). Sourced from Tempora/Pasc0-0.txt (Latin) /
+# English/Tempora/Pasc0-0.txt.
+#
+# Real structural note: unlike every other Sunday in this sweep, Easter's
+# own [Rule] reads "1 nocturn" (Duplex I classis cum Octava Privilegiata I
+# — the whole night office collapses to a single nocturn of 3 lessons,
+# straight to Te Deum after Lectio3). This is NOT the same as "no Nocturn
+# 2/3 content exists" — Lectio1-3 themselves carry real, genuine content
+# (a Gospel incipit followed by a full patristic homily), just compressed
+# into one nocturn instead of the usual three. hours/matins.ts already
+# supports single-nocturn source content tagged `nocturn: 1` (see the
+# Ember days' own nocturn-readings files) — this app's own `threeNocturns`
+# rule (Sunday always gets 3 nocturns rendered, regardless of the
+# historical single-nocturn rubric for this particular feast) reslots this
+# pool across 3 rendered nocturns anyway; the `nocturn: 1` tag here only
+# affects pool ordering relative to any other id contributing that day, not
+# final placement.
+#
+# Lectio1 carries real homily prose after its bare Gospel incipit (Mark
+# 16:1-7, "Et réliqua") — St. Gregory the Great's own homily (21st on the
+# Gospels) begins within Lectio1 itself, same pattern used throughout this
+# sweep. Combined Lectio1's homily portion (incipit dropped) with
+# Lectio2-3 into one reading. Responsory: Lectio1's own (Responsory1,
+# "Angelus Dómini descéndit de cælo") — the only nocturn-proper responsory
+# transcribed in the source (Responsory2 exists but Responsory3 does not;
+# the office runs straight to the Te Deum).
+id: easter-sunday
+readings:
+  - nocturn: 1
+    isGospel: false
+    source: "Pope St. Gregory the Great, Homily 21 on the Gospels"
+    text:
+      la: >-
+        Audístis, fratres caríssimi, quod sanctæ mulíeres, quæ Dóminum fúerant secútæ, cum aromátibus
+        ad monuméntum venérunt, et ei, quem vivéntem diléxerant, étiam mórtuo, stúdio humanitátis
+        obsequúntur. Sed res gesta áliquid in sancta Ecclésia signat geréndum. Sic quippe necésse est
+        ut audiámus quæ facta sunt, quátenus cogitémus étiam quæ nobis sint ex eórum imitatióne
+        faciénda. Et nos ergo in eum, qui est mórtuus, credéntes, si odóre virtútum reférti, cum
+        opinióne bonórum óperum Dóminum quǽrimus, ad monuméntum profécto illíus cum aromátibus
+        venímus. Illæ autem mulíeres Angelos vident, quæ cum aromátibus venérunt: quia vidélicet illæ
+        mentes supérnos cives aspíciunt, quæ cum virtútum odóribus ad Dóminum per sancta desidéria
+        proficiscúntur.
+
+
+        Notándum vero nobis est, quidnam sit, quod in dextris sedére Angelus cérnitur. Quid namque per
+        sinístram, nisi vita præsens: quid vero per déxteram, nisi perpétua vita designátur? Unde in
+        Cánticis canticórum scriptum est: Læva ejus sub cápite meo, et déxtera illíus amplexábitur me.
+        Quia ergo Redémptor noster jam præséntis vitæ corruptiónem transíerat, recte Angelus qui
+        nuntiáre perénnem ejus vitam vénerat, in déxtera sedébat. Qui stola cándida coopértus appáruit:
+        quia festivitátis nostræ gáudia nuntiávit. Candor étenim vestis, splendórem nostræ denúntiat
+        solemnitátis. Nostræ dicámus, an suæ? Sed ut fateámur vérius, et suæ dicámus, et nostræ. Illa
+        quippe Redemptóris nostri resurréctio et nostra festívitas fuit, quia nos ad immortalitátem
+        redúxit: et Angelórum festívitas éxstitit, quia nos revocándo ad cæléstia, eórum númerum
+        implévit.
+
+
+        In sua ergo ac nostra festivitáte Angelus in albis véstibus appáruit: quia dum nos per
+        resurrectiónem Domínicam ad supérna redúcimur, cæléstis pátriæ damna reparántur. Sed quid
+        adveniéntes féminas affátur, audiámus: Nolíte expavéscere. Ac si apérte dicat, Páveant illi,
+        qui non amant advéntum supernórum cívium: pertiméscant, qui carnálibus desidériis pressi, ad
+        eórum se societátem pertíngere posse despérant. Vos autem, cur pertiméscitis, quæ vestros
+        concíves vidétis? Unde et Matthǽus Angelum apparuísse descríbens, ait: Erat aspéctus ejus
+        sicut fulgur, et vestiménta ejus sicut nix. In fúlgure étenim terror timóris est, in nive autem
+        blandiméntum candóris.
+      en: >-
+        Dearly beloved brethren, ye have heard the deed of the holy women which had followed the Lord;
+        how that they brought sweet spices to His sepulchre, and, now that He was dead, having loved
+        Him while He was yet alive, they followed Him with careful tenderness still. But the deed of
+        these holy women doth point to somewhat which must needs be done in the holy Church. And it
+        behoveth us well to give ear to what they did, that we may afterward consider with ourselves
+        what we must do likewise after their example. We also, who believe in Him That was dead, do
+        come to His sepulchre bearing sweet spices, when we seek the Lord with the savour of good
+        living, and the fragrant report of good works. Those women, when they brought their spices,
+        saw a vision of Angels, and, in sooth, those souls whose godly desires do move them to seek the
+        Lord with the savour of good lives, do see the countrymen of our Fatherland which is above.
+
+
+        It behoveth us to mark what this meaneth, that they saw the Angel sitting on the right side.
+        For what signifieth the left, but this life which now is? or the right, but life
+        everlasting? Whence also it is written in the Song of Songs: His left hand is under my head,
+        and His right hand doth embrace me. Since, therefore, our Redeemer had passed from the
+        corruption of this life which now is, the Angel which told that His undying life was come, sat,
+        as became him, on the right side. They saw him clothed in a white garment, for he was herald of
+        the joy of this our great solemnity, and the glistering whiteness of his raiment told of the
+        brightness of this holy Festival of ours. Of ours, said I? or of his? But if we will speak the
+        truth, we must acknowledge that it is both his and ours. The Again-rising of our Redeemer is a
+        Festival of gladness for us, for us it biddeth know that we shall not die for ever; and for
+        Angels also it is a festival of gladness, for it biddeth them know that we are called to
+        fulfill their number in heaven.
+
+
+        See this glad Festival then, which is both his and ours, the Angel appeared in white raiment.
+        For as the Lord, rising again from the dead, leadeth us unto the mansions above, He repaireth
+        the breaches of the heavenly Fatherland. But what meaneth this, that the Angel said unto the
+        women which came to the sepulchre: Fear not? Is it not as though he had said openly: Let them
+        fear which love not the coming of the heavenly countrymen; let them be afraid who are so laden
+        by fleshly lusts, that they have lost all hope ever to be joined to their company. But as for
+        you, why fear ye, who, when ye see us, see but your fellow countrymen? Hence also Matthew,
+        writing of the guise of the Angel, saith: His countenance was like lightning, and His raiment
+        white as snow. The lightning speaketh of fear and great dread, the snow of the soft brilliancy
+        of rejoicing.
+    responsory:
+      la: "R. Angelus Dómini descéndit de cælo, et accédens revólvit lápidem, et super eum sedit, et dixit muliéribus: * Nolíte timére: scio enim quia crucifíxum quǽritis: jam surréxit: veníte, et vidéte locum, ubi pósitus erat Dóminus, allelúja.\nV. Et introëúntes in monuméntum, vidérunt júvenem sedéntem in dextris, coopértum stola cándida, et obstupuérunt: qui dixit illis.\nR. Nolíte timére: scio enim quia crucifíxum quǽritis: jam surréxit: veníte, et vidéte locum, ubi pósitus erat Dóminus, allelúja."
+      en: "R. The Angel of the Lord descended from heaven, and came and rolled back the stone, and sat upon it, and said unto the women: * Fear not ye; for I know that ye seek Him That was crucified: He is risen already. Come, see the place where the Lord was laid, alleluia.\nV. And entering into the sepulchre, they saw a young man sitting on the right side, clothed in a long white garment, and they were affrighted; and he saith unto them.\nR. Fear not ye; for I know that ye seek Him That was crucified: He is risen already. Come, see the place where the Lord was laid, alleluia."
+    status: { la: verified, en: verified }
