@@ -1,7 +1,12 @@
 # Verified against Divinum Officium (Monastic Tridentinum 1617), live
 # kalendar check (2025-12-11) -- an ordinary Advent feria
-# (privileged-feria-minor), Semiduplex wins outright, feria commemorated
-# in return. Own proper collect (Latin only -- see
+# (privileged-feria-minor), where a plain Semiduplex would normally win
+# outright. Superseded by the later octave-wins-class rework (see
+# st-juan-diego.yml, 2026-08): Dec 11 falls within the Immaculate
+# Conception's octave, whose elevated `wins: duplex` threshold now
+# outranks this Semiduplex, so he's actually demoted to a commemoration
+# and the Advent feria keeps the day (live-reconfirmed 2026-12-11 via
+# resolveDay). Own proper collect (Latin only -- see
 # propers/common/st-damasus-collect.yml for the missing-English note), no
 # unique antiphon of his own.
 id: st-damasus
