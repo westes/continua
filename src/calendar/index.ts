@@ -56,6 +56,7 @@ function applyIncomingTransfer(
   temporalCategory: TemporalCategory,
   winner: DayWinner,
   commemorations: Commemoration[],
+  fromDate: string,
 ): DayWinner {
   if (temporalCategory === 'privileged-feria-major') {
     // Deferred: a transfer landing on one of these (the concrete case is
@@ -67,6 +68,18 @@ function applyIncomingTransfer(
     // ordinary-sunday landing.
     return winner;
   }
+  // Tags the returned winner with where it transferred from, but only when
+  // the candidate actually ended up winning here — a collision loss (the
+  // candidate merely commemorated, incumbent keeps the day) isn't a landing.
+  const tagIfLanded = (result: DayWinner): DayWinner =>
+    result.kind === 'sanctoral' && result.id === candidate.id ? { ...result, transferredFrom: fromDate } : result;
+  // Same tagging, but for the candidate's own *commemoration* — it still
+  // needs marking as arrived-via-transfer even when it lost the landing
+  // day outright (a collision loss, or falling below the landing day's own
+  // threshold in decideOccurrence) rather than merely being naturally due
+  // for commemoration here.
+  const tagCommemorations = (result: Commemoration[]): Commemoration[] =>
+    result.map((c) => (c.kind === 'sanctoral' && c.id === candidate.id ? { ...c, transferredFrom: fromDate } : c));
   if (winner.kind === 'temporal') {
     // Found via real data: a transferred-in Simplex saint was blindly
     // winning outright even when it landed on a privileged Sunday (Trinity
@@ -74,15 +87,15 @@ function applyIncomingTransfer(
     // the *same* precedence rules a native occurrence would have used,
     // not just take over because nothing else was assigned here.
     const decided = decideOccurrence(temporalCategory, winner.id, candidate);
-    commemorations.push(...decided.commemorations);
+    commemorations.push(...tagCommemorations(decided.commemorations));
     // If the candidate fails here too (decided.transfer set), that's a
     // transfer chain — not modeled, same "not delivered rather than
     // guessed at" stance as the privileged-feria-major case above.
-    return decided.winner;
+    return tagIfLanded(decided.winner);
   }
   const collision = resolveCollision(candidate, winner);
-  commemorations.push(...collision.commemorations);
-  return collision.winner;
+  commemorations.push(...tagCommemorations(collision.commemorations));
+  return tagIfLanded(collision.winner);
 }
 
 /**
@@ -99,13 +112,15 @@ export function resolveDay(isoDate: string): LiturgicalDay {
   let winner = result.winner;
   const commemorations = [...result.commemorations];
 
-  const yesterday = resolveNativeOccurrence(addDays(isoDate, -1));
+  const yesterdayIso = addDays(isoDate, -1);
+  const yesterday = resolveNativeOccurrence(yesterdayIso);
   if (yesterday.result.transfer?.direction === 'forward') {
-    winner = applyIncomingTransfer(yesterday.result.transfer.candidate, temporalCategory, winner, commemorations);
+    winner = applyIncomingTransfer(yesterday.result.transfer.candidate, temporalCategory, winner, commemorations, yesterdayIso);
   }
-  const tomorrow = resolveNativeOccurrence(addDays(isoDate, 1));
+  const tomorrowIso = addDays(isoDate, 1);
+  const tomorrow = resolveNativeOccurrence(tomorrowIso);
   if (tomorrow.result.transfer?.direction === 'backward') {
-    winner = applyIncomingTransfer(tomorrow.result.transfer.candidate, temporalCategory, winner, commemorations);
+    winner = applyIncomingTransfer(tomorrow.result.transfer.candidate, temporalCategory, winner, commemorations, tomorrowIso);
   }
 
   winner = applyOctaves(isoDate, winner, commemorations);
@@ -116,7 +131,13 @@ export function resolveDay(isoDate: string): LiturgicalDay {
   applyEpiphany6Commemoration(isoDate, commemorations);
   applyAdventFourVigilCommemoration(isoDate, weekday, commemorations);
 
-  return { date: isoDate, weekday, season, temporalCategory, winner, commemorations };
+  // This date's own native candidate (if any) couldn't be kept here and
+  // moved on instead — see calendar/types.ts's `transferredAway` doc
+  // comment for why this is tracked separately from `Commemoration`, and
+  // why no landing date is recorded.
+  const transferredAway = result.transfer ? { candidate: result.transfer.candidate } : undefined;
+
+  return { date: isoDate, weekday, season, temporalCategory, winner, commemorations, transferredAway };
 }
 
 /**

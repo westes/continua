@@ -45,7 +45,14 @@ describe('April sanctoral pull (first pass)', () => {
     ]);
 
     const monday = resolveDay('2029-04-30');
-    expect(monday.winner).toEqual({ kind: 'sanctoral', id: 'st-robert', name: 'St. Robert, Abbot', nameLa: 'Sanctus Robertus, Abbas', rank: 'duplex' });
+    expect(monday.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-robert',
+      name: 'St. Robert, Abbot',
+      nameLa: 'Sanctus Robertus, Abbas',
+      rank: 'duplex',
+      transferredFrom: '2029-04-29',
+    });
     expect(monday.commemorations).toEqual([
       { kind: 'sanctoral', id: 'st-peter-martyr', name: 'St. Peter Martyr, Martyr', nameLa: 'Sanctus Petrus Martyr, Martyr', rank: 'semiduplex' },
     ]);

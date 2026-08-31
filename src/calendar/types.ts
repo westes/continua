@@ -161,6 +161,12 @@ export type DayWinner =
       // First Vespers is being anticipated this evening (i.e. this feast
       // belongs to *tomorrow*, but is winning tonight's Vespers/Compline).
       vespersFrom?: 'firstVespersOfTomorrow';
+      // Set by calendar/index.ts's resolveDay/applyIncomingTransfer when
+      // this winner is only here because its own native date (an adjacent
+      // ISO date) couldn't hold it (calendar/commemorations.ts's
+      // `decideOccurrence` `transfer` signal) — the ISO date it transferred
+      // *from*. Absent for a feast winning on its own native date.
+      transferredFrom?: string;
     } & SanctoralIdentity);
 
 /**
@@ -184,6 +190,14 @@ export type Commemoration =
       // commemoration (a real collision, an octave day, etc.), which
       // carries no such qualifier.
       vespersNote?: 'today' | 'tomorrow';
+      // Set by calendar/index.ts's applyIncomingTransfer, same meaning as
+      // `DayWinner`'s own `transferredFrom` — this saint is only
+      // commemorated here (rather than absent) because a transfer landed
+      // on this date and lost a collision, or fell below the landing
+      // day's own outright-winning threshold, not because it's natively
+      // due for commemoration here. Absent for an ordinary same-day
+      // commemoration.
+      transferredFrom?: string;
     } & SanctoralIdentity)
   | { kind: 'octave'; id: string; name: string; nameLa?: string };
 
@@ -199,4 +213,16 @@ export interface LiturgicalDay {
   winner: DayWinner;
   /** Everything else commemorated alongside the winner — see the doc comment on Commemoration. */
   commemorations: Commemoration[];
+  /** Set when this date's own native sanctoral candidate couldn't be kept
+   * here at all (calendar/commemorations.ts's `decideOccurrence` `transfer`
+   * signal) and moved to a later/earlier date instead. No landing date is
+   * recorded here — `resolveDay` only ever checks the immediate adjacent
+   * date, but a real landing can chain further than that (an unmodeled
+   * case noted in `applyIncomingTransfer`, e.g. a transfer running into
+   * Holy Week), so naming a specific "to" date risked asserting a wrong
+   * one; this exists purely so the display can say "not an omission, this
+   * office moved elsewhere" without claiming to know where. Distinct from
+   * — and not implied by — `Commemoration`, since a transferred-away
+   * candidate gets no commemoration on its own native date at all. */
+  transferredAway?: { candidate: SanctoralIdentity };
 }

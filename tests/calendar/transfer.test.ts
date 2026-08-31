@@ -28,7 +28,14 @@ describe('transfer mechanism (resolveDay integration)', () => {
       rank: 'semiduplex',
     });
     expect(saturday.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'vigil-of-st-lawrence', name: 'Vigil of St. Lawrence', nameLa: 'Vigilia Sancti Laurentii', rank: 'vigil' },
+      {
+        kind: 'sanctoral',
+        id: 'vigil-of-st-lawrence',
+        name: 'Vigil of St. Lawrence',
+        nameLa: 'Vigilia Sancti Laurentii',
+        rank: 'vigil',
+        transferredFrom: '2026-08-09',
+      },
     ]);
 
     // The Sunday's own winner is unaffected by the vigil, but St. Romanus

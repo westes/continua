@@ -28,6 +28,7 @@ describe('September sanctoral pull (first pass)', () => {
       name: 'St. Raymond Nonnatus, Confessor',
       nameLa: 'Sanctus Raymundus Nonnatus, Confessor',
       rank: 'semiduplex',
+      transferredFrom: '2025-08-31',
     });
     expect(day.commemorations).toEqual([
       { kind: 'sanctoral', id: 'ss-twelve-brothers', name: 'Ss. Twelve Brothers, Martyrs', nameLa: 'Duodecim Fratres, Martyres', rank: 'simplex' },

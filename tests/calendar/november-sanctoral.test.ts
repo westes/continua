@@ -85,6 +85,7 @@ describe('November sanctoral pull (first pass)', () => {
       name: 'St. Clement I, Pope and Martyr',
       nameLa: 'Sanctus Clemens I, Papa et Martyr',
       rank: 'semiduplex',
+      transferredFrom: '2025-11-23',
     });
     expect(followingDay.commemorations).toEqual([
       { kind: 'sanctoral', id: 'st-chrysogonus', name: 'St. Chrysogonus, Martyr', nameLa: 'Sanctus Chrysogonus, Martyr', rank: 'simplex' },
