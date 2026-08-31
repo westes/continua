@@ -23,6 +23,7 @@ describe('applyChristmasOctaveSunday', () => {
       kind: 'sanctoral',
       id: 'st-stephen-protomartyr',
       name: 'St. Stephen, Protomartyr',
+      nameLa: 'Sanctus Stephanus, Protomartyr',
       rank: 'duplex-2-classis',
     });
     // The now-redundant "Octave of St. Stephen" commemoration (which
@@ -47,6 +48,7 @@ describe('applyChristmasOctaveSunday', () => {
       kind: 'sanctoral',
       id: 'st-john-apostle',
       name: 'St. John, Apostle and Evangelist',
+      nameLa: 'Sanctus Joannes, Apostolus et Evangelista',
       rank: 'duplex-2-classis',
     });
     expect(dec30.commemorations.some((c) => c.kind === 'octave' && c.id === 'st-john-apostle')).toBe(false);
@@ -61,6 +63,7 @@ describe('applyChristmasOctaveSunday', () => {
       kind: 'sanctoral',
       id: 'holy-innocents',
       name: 'The Holy Innocents, Martyrs',
+      nameLa: 'Sancti Innocentes, Martyres',
       rank: 'duplex-2-classis',
     });
     expect(dec30.commemorations.some((c) => c.kind === 'octave' && c.id === 'holy-innocents')).toBe(false);
@@ -75,6 +78,7 @@ describe('applyChristmasOctaveSunday', () => {
       kind: 'sanctoral',
       id: 'st-thomas-becket',
       name: 'St. Thomas of Canterbury, Bishop and Martyr',
+      nameLa: 'Sanctus Thomas Cantuariensis, Episcopus et Martyr',
       rank: 'duplex',
     });
   });
@@ -99,12 +103,14 @@ describe('applyChristmasOctaveSunday', () => {
       kind: 'sanctoral',
       id: 'st-stephen-protomartyr',
       name: 'St. Stephen, Protomartyr',
+      nameLa: 'Sanctus Stephanus, Protomartyr',
       rank: 'duplex-2-classis',
     });
     expect(resolveDay('2029-12-29').winner).toEqual({
       kind: 'sanctoral',
       id: 'st-thomas-becket',
       name: 'St. Thomas of Canterbury, Bishop and Martyr',
+      nameLa: 'Sanctus Thomas Cantuariensis, Episcopus et Martyr',
       rank: 'duplex',
     });
   });

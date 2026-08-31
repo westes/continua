@@ -13,6 +13,7 @@ describe('January sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-marcellus-i',
       name: 'St. Marcellus I, Pope and Martyr',
+      nameLa: 'Sanctus Marcellus I, Papa et Martyr',
       rank: 'semiduplex',
     });
     const collect = getDayCollect(day);
@@ -26,6 +27,7 @@ describe('January sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-anthony-abbot',
       name: 'St. Anthony, Abbot',
+      nameLa: 'Sanctus Antonius, Abbas',
       rank: 'duplex',
     });
     const collect = getDayCollect(day);
@@ -38,10 +40,11 @@ describe('January sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'chair-of-st-peter-at-rome',
       name: 'The Chair of St. Peter at Rome',
+      nameLa: 'Cathedra Sancti Petri Romæ',
       rank: 'duplex-majus',
     });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-prisca', name: 'St. Prisca, Virgin and Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-prisca', name: 'St. Prisca, Virgin and Martyr', nameLa: 'Sancta Prisca, Virgo et Martyr', rank: 'simplex' },
     ]);
   });
 
@@ -54,7 +57,7 @@ describe('January sanctoral pull (first pass)', () => {
     const day = resolveDay('2029-01-14');
     expect(day.winner).toEqual({ kind: 'temporal', id: 'post-epiphany-2' });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-felix-presbyter', name: 'St. Felix, Priest and Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-felix-presbyter', name: 'St. Felix, Priest and Martyr', nameLa: 'Sanctus Felix, Presbyter et Martyr', rank: 'simplex' },
     ]);
   });
 });

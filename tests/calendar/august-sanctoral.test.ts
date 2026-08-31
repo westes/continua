@@ -11,10 +11,11 @@ describe('August sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-peter-ad-vincula',
       name: "St. Peter's Chains",
+      nameLa: 'Vincula Sancti Petri',
       rank: 'duplex-majus',
     });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'ss-machabees', name: 'Ss. Machabees, Martyrs', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'ss-machabees', name: 'Ss. Machabees, Martyrs', nameLa: 'Sancti Machabæi, Martyres', rank: 'simplex' },
     ]);
     expect(getDayCollect(day).status.en).toBe('verified');
   });
@@ -25,6 +26,7 @@ describe('August sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-stephen-i',
       name: 'St. Stephen I, Pope and Martyr',
+      nameLa: 'Sanctus Stephanus I, Papa et Martyr',
       rank: 'simplex',
     });
     expect(day.commemorations).toEqual([]);
@@ -47,6 +49,7 @@ describe('August sanctoral pull (first pass)', () => {
         kind: 'sanctoral',
         id: 'st-donatus',
         name: 'St. Donatus, Bishop and Martyr',
+        nameLa: 'Sanctus Donatus, Episcopus et Martyr',
         rank: 'simplex',
       });
     }
@@ -58,10 +61,11 @@ describe('August sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'vigil-of-st-lawrence',
       name: 'Vigil of St. Lawrence',
+      nameLa: 'Vigilia Sancti Laurentii',
       rank: 'vigil',
     });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-romanus', name: 'St. Romanus, Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-romanus', name: 'St. Romanus, Martyr', nameLa: 'Sanctus Romanus, Martyr', rank: 'simplex' },
     ]);
   });
 
@@ -86,7 +90,7 @@ describe('August sanctoral pull (first pass)', () => {
     const clareDay = resolveDay('2025-08-12');
     expect(clareDay.winner.kind).toBe('temporal');
     expect(clareDay.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-clare', name: 'St. Clare, Virgin', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-clare', name: 'St. Clare, Virgin', nameLa: 'Sancta Clara, Virgo', rank: 'simplex' },
       { kind: 'octave', id: 'st-lawrence', name: 'St. Lawrence, Martyr', nameLa: 'Sanctus Laurentius, Martyr' },
     ]);
     // Aug 22 is the Assumption's own octave day (In Octava Assumptionis),
@@ -104,7 +108,7 @@ describe('August sanctoral pull (first pass)', () => {
     const assumptionOctaveDay = resolveDay('2025-08-22');
     expect(assumptionOctaveDay.winner.kind).toBe('temporal');
     expect(assumptionOctaveDay.commemorations).toEqual([
-      { kind: 'octave', id: 'assumption', name: 'The Assumption of the Blessed Virgin Mary' },
+      { kind: 'octave', id: 'assumption', name: 'The Assumption of the Blessed Virgin Mary', nameLa: 'Assumptio Beatæ Mariæ Virginis' },
     ]);
   });
 
@@ -114,10 +118,11 @@ describe('August sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'decollation-of-st-john-baptist',
       name: 'The Beheading of St. John the Baptist',
+      nameLa: 'Decollatio Sancti Joannis Baptistæ',
       rank: 'duplex',
     });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-sabina', name: 'St. Sabina, Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-sabina', name: 'St. Sabina, Martyr', nameLa: 'Sancta Sabina, Martyr', rank: 'simplex' },
     ]);
     expect(getDayCollect(day).status.en).toBe('verified');
   });
@@ -132,10 +137,11 @@ describe('August sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-rose-of-lima',
       name: 'St. Rose of Lima, Virgin',
+      nameLa: 'Sancta Rosa Limana, Virgo',
       rank: 'semiduplex',
     });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'ss-felix-and-adauctus', name: 'Ss. Felix and Adauctus, Martyrs', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'ss-felix-and-adauctus', name: 'Ss. Felix and Adauctus, Martyrs', nameLa: 'Sancti Felix et Adauctus, Martyres', rank: 'simplex' },
     ]);
     expect(getDayCollect(day).status.en).toBe('verified');
   });

@@ -20,6 +20,7 @@ describe('Ember days', () => {
       kind: 'sanctoral',
       id: 'ss-cornelius-and-cyprian',
       name: 'Ss. Cornelius, Pope, and Cyprian, Bishop, Martyrs',
+      nameLa: 'Sanctus Cornelius, Papa, et Sanctus Cyprianus, Episcopus, Martyres',
       rank: 'semiduplex',
     });
     expect(day.commemorations).toContainEqual({ kind: 'temporal', id: 'ember-september-wednesday' });

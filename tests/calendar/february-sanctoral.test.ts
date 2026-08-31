@@ -12,6 +12,7 @@ describe('February sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-dorothea',
       name: 'St. Dorothea, Virgin and Martyr',
+      nameLa: 'Sancta Dorothea, Virgo et Martyr',
       rank: 'simplex',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
@@ -32,6 +33,7 @@ describe('February sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-agatha',
       name: 'St. Agatha, Virgin and Martyr',
+      nameLa: 'Sancta Agatha, Virgo et Martyr',
       rank: 'semiduplex',
     });
     const collect = getDayCollect(day);

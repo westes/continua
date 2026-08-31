@@ -24,10 +24,11 @@ describe('transfer mechanism (resolveDay integration)', () => {
       kind: 'sanctoral',
       id: 'ss-cyriacus-largus-and-smaragdus',
       name: 'Ss. Cyriacus, Largus, and Smaragdus, Martyrs',
+      nameLa: 'Sancti Cyriacus, Largus et Smaragdus, Martyres',
       rank: 'semiduplex',
     });
     expect(saturday.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'vigil-of-st-lawrence', name: 'Vigil of St. Lawrence', rank: 'vigil' },
+      { kind: 'sanctoral', id: 'vigil-of-st-lawrence', name: 'Vigil of St. Lawrence', nameLa: 'Vigilia Sancti Laurentii', rank: 'vigil' },
     ]);
 
     // The Sunday's own winner is unaffected by the vigil, but St. Romanus
@@ -38,7 +39,7 @@ describe('transfer mechanism (resolveDay integration)', () => {
     // reference engine, which shows the same commemoration on this date.
     expect(sunday.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-11' });
     expect(sunday.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-romanus', name: 'St. Romanus, Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-romanus', name: 'St. Romanus, Martyr', nameLa: 'Sanctus Romanus, Martyr', rank: 'simplex' },
     ]);
 
     // St. Lawrence's own day (Monday) is unaffected by the backward transfer.
@@ -74,7 +75,7 @@ describe('transfer mechanism (resolveDay integration)', () => {
 
     expect(saturday.winner).toEqual({ kind: 'temporal', id: 'pentecost-sunday' });
     expect(saturday.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-felix-i', name: 'St. Felix I, Pope and Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-felix-i', name: 'St. Felix I, Pope and Martyr', nameLa: 'Sanctus Felix I, Papa et Martyr', rank: 'simplex' },
       { kind: 'octave', id: 'pentecost-sunday', name: 'Pentecost', nameLa: 'Dominica Pentecostes' },
     ]);
 
@@ -90,6 +91,7 @@ describe('transfer mechanism (resolveDay integration)', () => {
       kind: 'sanctoral',
       id: 'queenship-of-the-bvm',
       name: 'The Queenship of the Blessed Virgin Mary',
+      nameLa: 'Beata Maria Virgo Regina',
       rank: 'duplex-2-classis',
     });
     expect(sunday.commemorations).toEqual([

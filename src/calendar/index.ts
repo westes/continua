@@ -37,7 +37,12 @@ function resolveNativeOccurrence(isoDate: string): { temporalCategory: TemporalC
     const collision = resolveCollision(candidate, topCandidate);
     clashCommemorations.push(...collision.commemorations);
     if (collision.winner.kind === 'sanctoral') {
-      topCandidate = { id: collision.winner.id, name: collision.winner.name, rank: collision.winner.rank };
+      topCandidate = {
+        id: collision.winner.id,
+        name: collision.winner.name,
+        nameLa: collision.winner.nameLa,
+        rank: collision.winner.rank,
+      };
     }
   }
 

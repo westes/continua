@@ -11,6 +11,7 @@ describe('October sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'ss-placid-and-companions',
       name: 'Ss. Placid and Companions, Martyrs',
+      nameLa: 'Sanctus Placidus et Socii, Martyres',
       rank: 'duplex-2-classis',
     });
     expect(day.commemorations).toEqual([]);
@@ -22,10 +23,11 @@ describe('October sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-justina',
       name: 'St. Justina, Virgin and Martyr',
+      nameLa: 'Sancta Justina, Virgo et Martyr',
       rank: 'duplex',
     });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-marcus', name: 'St. Marcus, Pope and Confessor', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-marcus', name: 'St. Marcus, Pope and Confessor', nameLa: 'Sanctus Marcus, Papa et Confessor', rank: 'simplex' },
     ]);
   });
 
@@ -35,6 +37,7 @@ describe('October sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-gall',
       name: 'St. Gall, Abbot',
+      nameLa: 'Sanctus Gallus, Abbas',
       rank: 'duplex',
     });
     expect(day.commemorations).toEqual([]);
@@ -46,6 +49,7 @@ describe('October sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-luke',
       name: 'St. Luke, Evangelist',
+      nameLa: 'Sanctus Lucas, Evangelista',
       rank: 'duplex-2-classis',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
@@ -58,12 +62,14 @@ describe('October sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'vigil-of-ss-simon-and-jude',
       name: 'Vigil of Ss. Simon and Jude',
+      nameLa: 'Vigilia Sanctorum Simonis et Judæ',
       rank: 'vigil',
     });
     expect(day.winner).toEqual({
       kind: 'sanctoral',
       id: 'ss-simon-and-jude',
       name: 'Ss. Simon and Jude, Apostles',
+      nameLa: 'Sancti Simon et Judas, Apostoli',
       rank: 'duplex-2-classis',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
@@ -76,6 +82,7 @@ describe('October sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'vigil-of-all-saints',
       name: 'Vigil of All Saints',
+      nameLa: 'Vigilia Omnium Sanctorum',
       rank: 'vigil',
     });
     expect(getDayCollect(vigil).status.en).toBe('verified');
@@ -83,6 +90,7 @@ describe('October sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'all-saints',
       name: 'All Saints',
+      nameLa: 'Omnes Sancti',
       rank: 'duplex-1-classis',
     });
   });

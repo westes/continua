@@ -12,6 +12,7 @@ describe('April sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-mark',
       name: 'St. Mark, Evangelist',
+      nameLa: 'Sanctus Marcus, Evangelista',
       rank: 'duplex-2-classis',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
@@ -21,15 +22,15 @@ describe('April sanctoral pull (first pass)', () => {
     const day = resolveDay('2030-04-25');
     expect(day.winner.kind).toBe('temporal');
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-mark', name: 'St. Mark, Evangelist', rank: 'duplex-2-classis' },
+      { kind: 'sanctoral', id: 'st-mark', name: 'St. Mark, Evangelist', nameLa: 'Sanctus Marcus, Evangelista', rank: 'duplex-2-classis' },
     ]);
   });
 
   it('St. Robert beats St. Catherine of Siena on their shared monastic-calendar date', () => {
     const day = resolveDay('2043-04-29');
-    expect(day.winner).toEqual({ kind: 'sanctoral', id: 'st-robert', name: 'St. Robert, Abbot', rank: 'duplex' });
+    expect(day.winner).toEqual({ kind: 'sanctoral', id: 'st-robert', name: 'St. Robert, Abbot', nameLa: 'Sanctus Robertus, Abbas', rank: 'duplex' });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-catherine-of-siena', name: 'St. Catherine of Siena, Virgin', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-catherine-of-siena', name: 'St. Catherine of Siena, Virgin', nameLa: 'Sancta Catharina Senensis, Virgo', rank: 'simplex' },
     ]);
   });
 
@@ -40,13 +41,13 @@ describe('April sanctoral pull (first pass)', () => {
     const sunday = resolveDay('2029-04-29');
     expect(sunday.winner).toEqual({ kind: 'temporal', id: 'easter-5' });
     expect(sunday.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-catherine-of-siena', name: 'St. Catherine of Siena, Virgin', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-catherine-of-siena', name: 'St. Catherine of Siena, Virgin', nameLa: 'Sancta Catharina Senensis, Virgo', rank: 'simplex' },
     ]);
 
     const monday = resolveDay('2029-04-30');
-    expect(monday.winner).toEqual({ kind: 'sanctoral', id: 'st-robert', name: 'St. Robert, Abbot', rank: 'duplex' });
+    expect(monday.winner).toEqual({ kind: 'sanctoral', id: 'st-robert', name: 'St. Robert, Abbot', nameLa: 'Sanctus Robertus, Abbas', rank: 'duplex' });
     expect(monday.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-peter-martyr', name: 'St. Peter Martyr, Martyr', rank: 'semiduplex' },
+      { kind: 'sanctoral', id: 'st-peter-martyr', name: 'St. Peter Martyr, Martyr', nameLa: 'Sanctus Petrus Martyr, Martyr', rank: 'semiduplex' },
     ]);
   });
 });

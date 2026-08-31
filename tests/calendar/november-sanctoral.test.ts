@@ -7,7 +7,7 @@ import { getDayCollect } from '../../src/hours/resolve-common';
 describe('November sanctoral pull (first pass)', () => {
   it('All Saints wins outright with a real proper collect, backfilled this month', () => {
     const day = resolveDay('2025-11-01');
-    expect(day.winner).toEqual({ kind: 'sanctoral', id: 'all-saints', name: 'All Saints', rank: 'duplex-1-classis' });
+    expect(day.winner).toEqual({ kind: 'sanctoral', id: 'all-saints', name: 'All Saints', nameLa: 'Omnes Sancti', rank: 'duplex-1-classis' });
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
@@ -17,10 +17,11 @@ describe('November sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-martin-of-tours',
       name: 'St. Martin of Tours, Bishop and Confessor',
+      nameLa: 'Sanctus Martinus Turonensis, Episcopus et Confessor',
       rank: 'duplex-majus',
     });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-menna', name: 'St. Menna, Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-menna', name: 'St. Menna, Martyr', nameLa: 'Sanctus Menna, Martyr', rank: 'simplex' },
     ]);
     expect(getDayCollect(day).status.en).toBe('verified');
   });
@@ -31,6 +32,7 @@ describe('November sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-emilian',
       name: 'St. Emilian, Abbot',
+      nameLa: 'Sanctus Æmilianus, Abbas',
       rank: 'duplex',
     });
     const martinIDay = resolveDay('2025-11-14');
@@ -38,6 +40,7 @@ describe('November sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-martin-i',
       name: 'St. Martin I, Pope and Martyr',
+      nameLa: 'Sanctus Martinus I, Papa et Martyr',
       rank: 'semiduplex',
     });
   });
@@ -48,6 +51,7 @@ describe('November sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'all-saints-of-the-benedictine-order',
       name: 'All Saints of the Order of St. Benedict',
+      nameLa: 'Omnes Sancti Ordinis Sancti Benedicti',
       rank: 'duplex-2-classis',
     });
     expect(day.commemorations).toEqual([]);
@@ -64,12 +68,13 @@ describe('November sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-chrysogonus',
       name: 'St. Chrysogonus, Martyr',
+      nameLa: 'Sanctus Chrysogonus, Martyr',
       rank: 'simplex',
     });
     const onceASunday = resolveDay('2025-11-23'); // a Sunday
     expect(onceASunday.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-24' });
     expect(onceASunday.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-felicitas', name: 'St. Felicitas, Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-felicitas', name: 'St. Felicitas, Martyr', nameLa: 'Sancta Felicitas, Martyr', rank: 'simplex' },
     ]);
     // St. Clement transfers into Nov 24 and wins the collision against
     // St. Chrysogonus (native there, Simplex).
@@ -78,10 +83,11 @@ describe('November sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-clement',
       name: 'St. Clement I, Pope and Martyr',
+      nameLa: 'Sanctus Clemens I, Papa et Martyr',
       rank: 'semiduplex',
     });
     expect(followingDay.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-chrysogonus', name: 'St. Chrysogonus, Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-chrysogonus', name: 'St. Chrysogonus, Martyr', nameLa: 'Sanctus Chrysogonus, Martyr', rank: 'simplex' },
     ]);
   });
 
@@ -94,6 +100,7 @@ describe('November sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-andrew',
       name: 'St. Andrew, Apostle',
+      nameLa: 'Sanctus Andreas, Apostolus',
       rank: 'duplex-2-classis',
     });
     expect(day.commemorations).toEqual([{ kind: 'temporal', id: 'advent-1' }]);

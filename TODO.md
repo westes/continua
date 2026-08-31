@@ -33,18 +33,12 @@ across every hour and content type in this app.
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
-   - Latin saint/octave/named-feast names for the bilingual date/day-label header (see
-     "Bilingual, merged date/day-label header" below and the dated log's new entry at the
-     bottom of this file) — `SanctoralIdentity`/`SaintRecord`/`TemporalFeastRecord`/
-     `ActiveOctave` now carry a real optional `nameLa` field, threaded end-to-end through
-     `calendar/day-label.ts`'s `biName` helper (live-verified: winner, octave-headline, and
-     commemoration branches all render authored Latin, not the English fallback, for a proof
-     set of 12 records — all 11 named temporal feasts plus St. Lawrence). Zero saints besides
-     St. Lawrence have an authored `nameLa` yet — this is now real bulk-content work in an
-     already-proven shape, same "one saint at a time, sourced against the reference engine's
-     own `[Officium]`/`[Rank]` title, nominative-noun-phrase form" methodology used for the
-     named temporal feasts. Weekday names, month names, rank labels, and season/ordinal
-     phrasing already had real Latin before this.
+   - ~~Latin saint/octave/named-feast names for the bilingual date/day-label header~~ — DONE
+     (2026-08-31): all 11 named temporal feasts and 300 of 301 saints (every real one; the one
+     exception is a deliberate non-real placeholder) now have an authored `nameLa`. See the
+     dated log's "Bilingual header `nameLa` mechanism" entry below for the full mechanism/
+     sourcing detail. Moved out of this "bulk content pending" section since there's no more
+     bulk content left to author here.
    - Matins sanctoral-side readings: the per-book Matins responsory pool has only one book
      seeded (`isa`) — needs expanding. Bible-plan TSV content also isn't yet in a test table
      (see "Bible-plan TSV — bulk conversion done" below).
@@ -4425,7 +4419,30 @@ objects updated to include the new `nameLa` key (Christmas's own octave-commemor
 since `christmas-day.yml` picked up a name in this same pass). `npm test` (807 passed) and
 `tsc --noEmit` pass.
 
-**Not started**: `nameLa` for the other ~220 saints — the mechanism is now proven in all three
-code paths (plain winner, octave headline, sanctoral commemoration); what's left is the same
-per-saint sourcing pass the sanctoral-content sweep itself used, just for a name instead of a
-collect.
+**Bulk pass, same day**: authored `nameLa` for the remaining 299 real saints (every
+`src/data/calendar/saints/*.yml` except `example-confessor`, a deliberate non-real placeholder
+never wired into `sanctoral-calendar.yml`). Sourcing standard for this bulk pass was lighter than
+per-saint reference-engine verification (infeasible at this volume in one sitting): standard,
+well-attested ecclesiastical Latin forms — the saint's own canonical Latin name plus a Latin
+rendering of their English descriptor (`Bishop` → `Episcopus`, `Martyr` → `Martyr`, `Virgin` →
+`Virgo`, `Confessor and Doctor of the Church` → `Confessor et Ecclesiæ Doctor`, etc.), nominative
+noun phrase throughout, matching the temporal-feast proof set's own convention. Multi-saint feast
+names (e.g. `ss-perpetua-and-felicity`) got the equivalent Latin plural construction
+(`Sanctæ ... Martyres`). This is a different, lower sourcing bar than the rest of this app's
+content (which is reference-engine-verified line by line) — flagged here explicitly since a
+future pass may want to spot-check or upgrade individual entries against the reference engine's
+own titles, the way the 11 temporal feasts and St. Lawrence were.
+
+Applied via a scratch Python script (`nameLa` inserted right after each `name:` line) plus two
+follow-up passes fixing ~180 pre-existing test fixtures across 18-20 test files that asserted
+exact `toEqual` objects on `day.winner`/`day.commemorations` (now carrying the new `nameLa` key).
+One real mechanism bug surfaced and fixed by this: `calendar/index.ts`'s sanctoral-vs-sanctoral
+collision-resolution branch (`resolveDay`'s per-day candidate loop, ~line 40) was rebuilding the
+winning candidate as `{ id, name, rank }` without `nameLa`, silently dropping it for any saint
+that had *beaten another candidate on the same date* even when winning outright — caught by
+`st-giles`, `st-justina`, `nativity-bvm`, and `vigil-of-st-lawrence` all resolving `nameLa:
+undefined` despite having real authored data. Also found and fixed one stale test expectation
+(`day-label.test.ts`'s Trinity Sunday/Queenship-of-the-BVM case) that had hardcoded "no Latin
+name yet" as the expected behavior — now asserts the real Latin. `npm test` (807 passed) and
+`tsc --noEmit` pass throughout. **Closes this backlog item** — moved out of the "Open work"
+priority list.

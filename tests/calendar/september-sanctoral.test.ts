@@ -7,9 +7,9 @@ import { getDayCollect } from '../../src/hours/resolve-common';
 describe('September sanctoral pull (first pass)', () => {
   it('St. Giles wins outright at Simplex over a genuinely unwinnable stub', () => {
     const day = resolveDay('2025-09-01');
-    expect(day.winner).toEqual({ kind: 'sanctoral', id: 'st-giles', name: 'St. Giles, Abbot', rank: 'simplex' });
+    expect(day.winner).toEqual({ kind: 'sanctoral', id: 'st-giles', name: 'St. Giles, Abbot', nameLa: 'Sanctus Ægidius, Abbas', rank: 'simplex' });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'ss-twelve-brothers', name: 'Ss. Twelve Brothers, Martyrs', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'ss-twelve-brothers', name: 'Ss. Twelve Brothers, Martyrs', nameLa: 'Duodecim Fratres, Martyres', rank: 'simplex' },
     ]);
   });
 
@@ -19,10 +19,11 @@ describe('September sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'nativity-bvm',
       name: 'The Nativity of the Blessed Virgin Mary',
+      nameLa: 'Nativitas Beatæ Mariæ Virginis',
       rank: 'duplex-2-classis',
     });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-hadrian', name: 'St. Hadrian, Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-hadrian', name: 'St. Hadrian, Martyr', nameLa: 'Sanctus Hadrianus, Martyr', rank: 'simplex' },
     ]);
     expect(getDayCollect(day).status.en).toBe('verified');
   });
@@ -31,7 +32,7 @@ describe('September sanctoral pull (first pass)', () => {
     const gorgoniusDay = resolveDay('2025-09-09');
     expect(gorgoniusDay.winner.kind).toBe('temporal');
     expect(gorgoniusDay.commemorations).toEqual([
-      { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary' },
+      { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary', nameLa: 'Nativitas Beatæ Mariæ Virginis' },
     ]);
   });
 
@@ -41,10 +42,11 @@ describe('September sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'seven-sorrows-of-the-bvm',
       name: 'The Seven Sorrows of the Blessed Virgin Mary',
+      nameLa: 'Septem Dolores Beatæ Mariæ Virginis',
       rank: 'duplex-2-classis',
     });
     expect(nicomedesDay.commemorations).toEqual([
-      { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary' },
+      { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary', nameLa: 'Nativitas Beatæ Mariæ Virginis' },
     ]);
   });
 
@@ -52,8 +54,8 @@ describe('September sanctoral pull (first pass)', () => {
     const day = resolveDay('2025-09-10');
     expect(day.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-13' });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-nicholas-of-tolentino', name: 'St. Nicholas of Tolentino, Confessor', rank: 'semiduplex' },
-      { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary' },
+      { kind: 'sanctoral', id: 'st-nicholas-of-tolentino', name: 'St. Nicholas of Tolentino, Confessor', nameLa: 'Sanctus Nicolaus Tolentinas, Confessor', rank: 'semiduplex' },
+      { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary', nameLa: 'Nativitas Beatæ Mariæ Virginis' },
     ]);
   });
 
@@ -64,12 +66,14 @@ describe('September sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'vigil-of-st-matthew',
       name: 'Vigil of St. Matthew',
+      nameLa: 'Vigilia Sancti Matthæi',
       rank: 'vigil',
     });
     expect(day.winner).toEqual({
       kind: 'sanctoral',
       id: 'st-matthew',
       name: 'St. Matthew, Apostle and Evangelist',
+      nameLa: 'Sanctus Matthæus, Apostolus et Evangelista',
       rank: 'duplex-2-classis',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
@@ -81,6 +85,7 @@ describe('September sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-jerome',
       name: 'St. Jerome, Priest, Confessor and Doctor of the Church',
+      nameLa: 'Sanctus Hieronymus, Presbyter, Confessor et Ecclesiæ Doctor',
       rank: 'duplex',
     });
     expect(day.commemorations).toEqual([]);

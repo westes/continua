@@ -28,6 +28,7 @@ describe('Christ the King (applyChristTheKing)', () => {
       kind: 'sanctoral',
       id: 'ss-chrysanthus-and-daria',
       name: 'Ss. Chrysanthus and Daria, Martyrs',
+      nameLa: 'Sancti Chrysanthus et Daria, Martyres',
       rank: 'simplex',
     });
   });

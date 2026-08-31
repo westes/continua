@@ -37,6 +37,7 @@ describe('activeOctavesFor', () => {
       {
         id: 'assumption',
         name: 'The Assumption of the Blessed Virgin Mary',
+        nameLa: 'Assumptio Beatæ Mariæ Virginis',
         wins: 'duplex',
         dayNumber: 3,
         isClosingDay: false,

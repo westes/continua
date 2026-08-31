@@ -11,10 +11,11 @@ describe('July sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-james-the-greater',
       name: 'St. James the Greater, Apostle',
+      nameLa: 'Sanctus Jacobus Major, Apostolus',
       rank: 'duplex-2-classis',
     });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-christopher', name: 'St. Christopher, Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-christopher', name: 'St. Christopher, Martyr', nameLa: 'Sanctus Christophorus, Martyr', rank: 'simplex' },
     ]);
     expect(getDayCollect(day).status.en).toBe('verified');
   });
@@ -25,10 +26,11 @@ describe('July sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-apollinaris',
       name: 'St. Apollinaris, Bishop and Martyr',
+      nameLa: 'Sanctus Apollinaris, Episcopus et Martyr',
       rank: 'semiduplex',
     });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-liborius', name: 'St. Liborius, Bishop and Confessor', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-liborius', name: 'St. Liborius, Bishop and Confessor', nameLa: 'Sanctus Liborius, Episcopus et Confessor', rank: 'simplex' },
     ]);
   });
 

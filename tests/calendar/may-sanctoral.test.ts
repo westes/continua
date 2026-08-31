@@ -13,6 +13,7 @@ describe('May sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'ss-philip-and-james',
       name: 'Ss. Philip and James, Apostles',
+      nameLa: 'Sancti Philippus et Jacobus, Apostoli',
       rank: 'duplex-2-classis',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
@@ -29,6 +30,7 @@ describe('May sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'finding-of-the-holy-cross',
       name: 'The Finding of the Holy Cross',
+      nameLa: 'Inventio Sanctæ Crucis',
       rank: 'duplex-2-classis',
     });
     expect(may3.commemorations).toEqual([
@@ -36,6 +38,7 @@ describe('May sanctoral pull (first pass)', () => {
         kind: 'sanctoral',
         id: 'ss-alexander-eventius-theodulus-and-juvenal',
         name: 'Ss. Alexander I, Eventius, and Theodulus, Martyrs, and Juvenal, Bishop and Confessor',
+        nameLa: 'Sancti Alexander, Eventius et Theodulus, Martyres, et Sanctus Juvenalis, Episcopus et Confessor',
         rank: 'simplex',
       },
     ]);
@@ -55,16 +58,17 @@ describe('May sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-peter-celestine',
       name: 'St. Peter Celestine, Pope and Confessor',
+      nameLa: 'Sanctus Petrus Cœlestinus, Papa et Confessor',
       rank: 'duplex',
     });
     expect(may19.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-pudentiana', name: 'St. Pudentiana, Virgin', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-pudentiana', name: 'St. Pudentiana, Virgin', nameLa: 'Sancta Pudentiana, Virgo', rank: 'simplex' },
     ]);
   });
 
   it('a saint with no proper collect of his own resolves via the Common of an Abbot instead', () => {
     const day = resolveDay('2038-05-22'); // St. Romanus, Abbot
-    expect(day.winner).toEqual({ kind: 'sanctoral', id: 'st-romanus-abbot', name: 'St. Romanus, Abbot', rank: 'duplex' });
+    expect(day.winner).toEqual({ kind: 'sanctoral', id: 'st-romanus-abbot', name: 'St. Romanus, Abbot', nameLa: 'Sanctus Romanus, Abbas', rank: 'duplex' });
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 });

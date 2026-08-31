@@ -24,7 +24,7 @@ describe('Marian Saturday (applyMarianSaturday)', () => {
     const day = resolveDay('2026-06-20'); // St. Silverius, Pope and Martyr, Simplex
     expect(day.winner).toEqual({ kind: 'temporal', id: 'marian-saturday' });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-silverius', name: 'St. Silverius, Pope and Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-silverius', name: 'St. Silverius, Pope and Martyr', nameLa: 'Sanctus Silverius, Papa et Martyr', rank: 'simplex' },
     ]);
   });
 
@@ -39,10 +39,11 @@ describe('Marian Saturday (applyMarianSaturday)', () => {
       kind: 'sanctoral',
       id: 'vigil-of-st-andrew',
       name: 'Vigil of St. Andrew',
+      nameLa: 'Vigilia Sancti Andreæ',
       rank: 'vigil',
     });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-saturninus', name: 'St. Saturninus, Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-saturninus', name: 'St. Saturninus, Martyr', nameLa: 'Sanctus Saturninus, Martyr', rank: 'simplex' },
     ]);
   });
 
@@ -52,6 +53,7 @@ describe('Marian Saturday (applyMarianSaturday)', () => {
       kind: 'sanctoral',
       id: 'st-januarius',
       name: 'St. Januarius, Bishop, and Companions, Martyrs',
+      nameLa: 'Sanctus Januarius, Episcopus, et Socii, Martyres',
       rank: 'semiduplex',
     });
   });

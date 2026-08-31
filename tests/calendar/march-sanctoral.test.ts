@@ -12,6 +12,7 @@ describe('March sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-joseph',
       name: 'St. Joseph, Spouse of the Blessed Virgin Mary, Confessor',
+      nameLa: 'Sanctus Josephus, Sponsus Beatæ Mariæ Virginis, Confessor',
       rank: 'duplex',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
@@ -23,6 +24,7 @@ describe('March sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'forty-holy-martyrs',
       name: 'The Forty Holy Martyrs',
+      nameLa: 'Quadraginta Sancti Martyres',
       rank: 'semiduplex',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
@@ -34,6 +36,7 @@ describe('March sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'st-benedict',
       name: 'St. Benedict, Abbot (Transitus)',
+      nameLa: 'Sanctus Benedictus, Abbas (Transitus)',
       rank: 'duplex-1-classis',
     });
     expect(getDayCollect(day).status.la).toBe('verified');

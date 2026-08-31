@@ -36,12 +36,13 @@ describe('getDayLabel — ordinal temporal label', () => {
     );
     expect(getDayLabel(resolveDay('2026-04-05')).en).toBe('Easter (Duplex I Class)');
     expect(getDayLabel(resolveDay('2026-02-18')).en).toBe('Ash Wednesday');
-    // Latin: no authored Latin saint name exists yet, so the winner's name
-    // falls back to the same English string (see file header) — only the
-    // rank label ("Duplex II. Classis") and the commemorated Sunday's own
-    // name ("Dominica Sanctissimae Trinitatis") are real Latin.
+    // Latin: the winner now has a real authored nameLa (see
+    // calendar/data/calendar/saints/queenship-of-the-bvm.yml), so this is
+    // real Latin throughout — the rank label ("Duplex II. Classis") and
+    // the commemorated Sunday's own name ("Dominica Sanctissimae
+    // Trinitatis") were already real Latin before this.
     expect(getDayLabel(resolveDay('2026-05-31')).la).toBe(
-      'The Queenship of the Blessed Virgin Mary (Duplex II. Classis) — Dominica Sanctissimae Trinitatis',
+      'Beata Maria Virgo Regina (Duplex II. Classis) — Dominica Sanctissimae Trinitatis',
     );
     expect(getDayLabel(resolveDay('2026-04-05')).la).toBe('Pascha (Duplex I. Classis)');
     expect(getDayLabel(resolveDay('2026-02-18')).la).toBe('Feria Quarta Cinerum');

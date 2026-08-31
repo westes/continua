@@ -13,6 +13,7 @@ describe('June sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'ss-peter-and-paul',
       name: 'Ss. Peter and Paul, Apostles',
+      nameLa: 'Sancti Petrus et Paulus, Apostoli',
       rank: 'duplex-1-classis',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
@@ -24,6 +25,7 @@ describe('June sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'ss-marcellinus-peter-and-erasmus',
       name: 'Ss. Marcellinus, Peter, and Erasmus, Bishop, Martyrs',
+      nameLa: 'Sancti Marcellinus et Petrus, et Sanctus Erasmus, Episcopus, Martyres',
       rank: 'simplex',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
@@ -46,12 +48,14 @@ describe('June sanctoral pull (first pass)', () => {
       kind: 'sanctoral',
       id: 'vigil-of-st-john-the-baptist',
       name: 'Vigil of St. John the Baptist',
+      nameLa: 'Vigilia Sancti Joannis Baptistæ',
       rank: 'vigil',
     });
     expect(nativity.winner).toEqual({
       kind: 'sanctoral',
       id: 'nativity-of-st-john-the-baptist',
       name: 'The Nativity of St. John the Baptist',
+      nameLa: 'Nativitas Sancti Joannis Baptistæ',
       rank: 'duplex-1-classis',
     });
   });

@@ -9,7 +9,7 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
     const day = resolveDay('2025-12-02');
     expect(day.winner.kind).toBe('temporal');
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-bibiana', name: 'St. Bibiana, Virgin and Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-bibiana', name: 'St. Bibiana, Virgin and Martyr', nameLa: 'Sancta Bibiana, Virgo et Martyr', rank: 'simplex' },
     ]);
     // The feria wins, so the day's collect is the governing Sunday's own
     // (already authored), not St. Bibiana's (which has none) -- the
@@ -23,6 +23,7 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
       kind: 'sanctoral',
       id: 'st-nicholas',
       name: 'St. Nicholas, Bishop and Confessor',
+      nameLa: 'Sanctus Nicolaus, Episcopus et Confessor',
       rank: 'semiduplex',
     });
     expect(day.commemorations.length).toBe(1);
@@ -36,6 +37,7 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
       kind: 'sanctoral',
       id: 'immaculate-conception',
       name: 'The Immaculate Conception of the Blessed Virgin Mary',
+      nameLa: 'Immaculata Conceptio Beatæ Mariæ Virginis',
       rank: 'duplex-1-classis',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
@@ -47,6 +49,7 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
       kind: 'sanctoral',
       id: 'st-thomas-apostle',
       name: 'St. Thomas, Apostle',
+      nameLa: 'Sanctus Thomas, Apostolus',
       rank: 'duplex-2-classis',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
@@ -62,18 +65,21 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
       kind: 'sanctoral',
       id: 'st-stephen-protomartyr',
       name: 'St. Stephen, Protomartyr',
+      nameLa: 'Sanctus Stephanus, Protomartyr',
       rank: 'duplex-2-classis',
     });
     expect(john.winner).toEqual({
       kind: 'sanctoral',
       id: 'st-john-apostle',
       name: 'St. John, Apostle and Evangelist',
+      nameLa: 'Sanctus Joannes, Apostolus et Evangelista',
       rank: 'duplex-2-classis',
     });
     expect(innocents.winner).toEqual({
       kind: 'sanctoral',
       id: 'holy-innocents',
       name: 'The Holy Innocents, Martyrs',
+      nameLa: 'Sancti Innocentes, Martyres',
       rank: 'duplex-2-classis',
     });
     for (const day of [stephen, john, innocents]) {
@@ -94,6 +100,7 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
       kind: 'sanctoral',
       id: 'st-thomas-becket',
       name: 'St. Thomas of Canterbury, Bishop and Martyr',
+      nameLa: 'Sanctus Thomas Cantuariensis, Episcopus et Martyr',
       rank: 'duplex',
     });
     // Thomas himself has no octave (user-confirmed, 2026-08), but by his
@@ -102,9 +109,9 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
     expect(day.commemorations).toEqual([
       { kind: 'temporal', id: expect.any(String) },
       { kind: 'octave', id: 'christmas-day', name: 'Christmas', nameLa: 'Nativitas Domini' },
-      { kind: 'octave', id: 'st-stephen-protomartyr', name: 'St. Stephen, Protomartyr' },
-      { kind: 'octave', id: 'st-john-apostle', name: 'St. John, Apostle and Evangelist' },
-      { kind: 'octave', id: 'holy-innocents', name: 'The Holy Innocents, Martyrs' },
+      { kind: 'octave', id: 'st-stephen-protomartyr', name: 'St. Stephen, Protomartyr', nameLa: 'Sanctus Stephanus, Protomartyr' },
+      { kind: 'octave', id: 'st-john-apostle', name: 'St. John, Apostle and Evangelist', nameLa: 'Sanctus Joannes, Apostolus et Evangelista' },
+      { kind: 'octave', id: 'holy-innocents', name: 'The Holy Innocents, Martyrs', nameLa: 'Sancti Innocentes, Martyres' },
     ]);
   });
 
@@ -122,6 +129,7 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
       kind: 'sanctoral',
       id: 'st-silvester-i',
       name: 'St. Silvester I, Pope and Confessor',
+      nameLa: 'Sanctus Silvester I, Papa et Confessor',
       rank: 'duplex',
     });
     expect(silvesterSunday.commemorations).toContainEqual({ kind: 'temporal', id: 'christmas-octave-sunday' });
@@ -144,6 +152,7 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
       kind: 'sanctoral',
       id: 'st-thomas-becket',
       name: 'St. Thomas of Canterbury, Bishop and Martyr',
+      nameLa: 'Sanctus Thomas Cantuariensis, Episcopus et Martyr',
       rank: 'duplex',
     });
   });
@@ -156,9 +165,9 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
     expect(dec30.winner.kind).toBe('temporal');
     expect(dec30.commemorations).toEqual([
       { kind: 'octave', id: 'christmas-day', name: 'Christmas', nameLa: 'Nativitas Domini' },
-      { kind: 'octave', id: 'st-stephen-protomartyr', name: 'St. Stephen, Protomartyr' },
-      { kind: 'octave', id: 'st-john-apostle', name: 'St. John, Apostle and Evangelist' },
-      { kind: 'octave', id: 'holy-innocents', name: 'The Holy Innocents, Martyrs' },
+      { kind: 'octave', id: 'st-stephen-protomartyr', name: 'St. Stephen, Protomartyr', nameLa: 'Sanctus Stephanus, Protomartyr' },
+      { kind: 'octave', id: 'st-john-apostle', name: 'St. John, Apostle and Evangelist', nameLa: 'Sanctus Joannes, Apostolus et Evangelista' },
+      { kind: 'octave', id: 'holy-innocents', name: 'The Holy Innocents, Martyrs', nameLa: 'Sancti Innocentes, Martyres' },
     ]);
   });
 });

@@ -14,12 +14,13 @@
 // Proper names (a saint's name, an octave's name, a named temporal feast's
 // name) carry an optional `nameLa` field alongside the required English
 // `name` — see calendar/types.ts's `SanctoralIdentity.nameLa` doc comment.
-// Most saints still have no authored Latin name; `biName` falls back to
-// the English string as the `la` value in that case (same "surface real
-// text rather than block on missing" convention used elsewhere in this
-// app), rather than leaving Latin mode showing blanks. The closed,
-// mechanism-level vocabulary here (weekdays, ranks, season/ordinal
-// phrasing) has always had real Latin authored, independent of this.
+// Authored for essentially every saint/octave/named-feast as of 2026-08-31
+// (see TODO.md); `biName` still falls back to the English string as the
+// `la` value for the rare unauthored case (same "surface real text rather
+// than block on missing" convention used elsewhere in this app), rather
+// than leaving Latin mode showing blanks. The closed, mechanism-level
+// vocabulary here (weekdays, ranks, season/ordinal phrasing) has always
+// had real Latin authored, independent of this.
 import type { FeastClass, LiturgicalDay, TemporalCategory, Weekday } from './types';
 import { easterSunday } from './easter';
 import { adventStart, firstSundayStrictlyAfter, sundayOnOrBefore } from './temporal';
