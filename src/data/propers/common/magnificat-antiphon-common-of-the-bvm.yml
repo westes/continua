@@ -1,0 +1,16 @@
+# Second Vespers Magnificat antiphon for `common-of-the-bvm` (In Festis
+# Beatae Mariae Virginis, Latin/Commune/C11.txt's own [Ant 3]) --
+# fittingly the Magnificat's own opening line ("Beatam me dicent omnes
+# generationes"). Discovered while sourcing this file that
+# benedictus-antiphon-common-of-the-bvm.yml had been reading the wrong
+# tag ([Ant 1], this Common's First Vespers antiphon, "Sancta Maria
+# succurre miseris") instead of [Ant 2] (the real Lauds Benedictus
+# antiphon, "Beata es Maria quae credidisti") -- corrected there in the
+# same pass; see this file's own header note.
+id: magnificat-antiphon-common-of-the-bvm
+text:
+  la: "Beátam me dicent * omnes generatiónes, quia ancíllam húmilem respéxit Deus."
+  en: "All generations shall call me blessed, * for God hath regarded the lowliness of His hand-maiden."
+status:
+  la: verified
+  en: verified

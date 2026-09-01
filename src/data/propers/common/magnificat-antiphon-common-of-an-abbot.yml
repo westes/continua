@@ -1,0 +1,13 @@
+# Second Vespers Magnificat antiphon for `common-of-an-abbot` -- same
+# underlying Commune file as `common-of-a-confessor` (Latin/Commune/C5.txt,
+# via the C5-1/C5b sub-variants which don't override the Ant tags -- see
+# benedictus-antiphon-common-of-an-abbot.yml's own header). Its own
+# [Ant 3], live-verified directly against St. John Gualbert's real Second
+# Vespers (07-12-2026, no "Vespera de sequenti").
+id: magnificat-antiphon-common-of-an-abbot
+text:
+  la: "Hic vir despíciens mundum * et terréna, triúmphans, divítias cælo cóndidit ore, manu."
+  en: "Lo, a servant of God * who esteemed but little things earthly. And by word and work laid him up treasure in heaven."
+status:
+  la: verified
+  en: verified
