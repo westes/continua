@@ -934,6 +934,24 @@ export function getMagnificatAntiphon(day: LiturgicalDay): ResolvedText {
       return proper;
     }
   }
+  // A Vigil has no proper Magnificat antiphon of its own in the real rubric
+  // -- its `[Rule]` block ("ex C1v; ... Laudes 2") always borrows whatever
+  // the current ferial weekday's own antiphon is, live-verified across 4
+  // different years (2025-2028) at the Vigil of St. Andrew's own First
+  // Vespers: every one rendered "{Antiphona ex Proprio de Tempore}", never
+  // a fixed Common text. So a Vigil takes the same weekday-default fallback
+  // the plain temporal branch above uses, rather than falling through to
+  // `magnificat-antiphon-common-of-a-vigil` (deliberately never authored --
+  // there's no single fixed text to put there).
+  if (saint?.rank === 'vigil') {
+    const weekdayDefault = vespersMagnificatAntiphons[day.weekday];
+    if (weekdayDefault) {
+      const resolved = weekdayDefault.status
+        ? { text: weekdayDefault.antiphon, status: weekdayDefault.status }
+        : verifiedText(weekdayDefault.antiphon);
+      return withPaschaltideAlleluia(resolved, day);
+    }
+  }
   if (saint?.benedictusCommon) {
     return withPaschaltideAlleluia(resolveCommon(`magnificat-antiphon-${saint.benedictusCommon}`), day);
   }

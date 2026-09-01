@@ -4446,3 +4446,41 @@ undefined` despite having real authored data. Also found and fixed one stale tes
 name yet" as the expected behavior — now asserts the real Latin. `npm test` (807 passed) and
 `tsc --noEmit` pass throughout. **Closes this backlog item** — moved out of the "Open work"
 priority list.
+
+### Vespers Magnificat antiphon — sanctoral Common-category fallback, 11/11 (2026-08-31)
+
+User flagged today's (Aug 31, St. Raymond Nonnatus) Vespers was missing its Magnificat antiphon.
+Root cause was systemic, not date-specific — the earlier 2026-08-30 pass (see above) had closed
+the *temporal*-cycle gap in `getMagnificatAntiphon`, but the *sanctoral* Common-category
+fallback (`magnificat-antiphon-${saint.benedictusCommon}`) had never been authored at all: only
+11 saints ever need it (the ones with `propers: null` or no own antiphon, falling back to
+`benedictusCommon`'s 11 distinct category values), and every single one was `missing`.
+
+Sourcing method: each Commune source file (`Latin/Commune/C*.txt`) lays out
+Vespers1(`[Ant 1]`) -> Matins -> Lauds(`[Ant 2]`) -> minor hours -> Vespers2(`[Ant 3]`), confirmed
+directly by live query (Ss. Placid and Companions, 10-05-2026: the evening before renders
+`[Ant 1]` under "Vespera de sequenti", the feast's own evening renders `[Ant 3]`) and
+cross-checked against 3 more saints (St. Blaise, St. John Gualbert). Authored 10 of 11 categories'
+`magnificat-antiphon-common-of-*.yml` from each Common's own `[Ant 3]`
+(`common-of-a-confessor`/`common-of-an-abbot` share one file, C5, so their Magnificat text is
+identical by design, same as their existing Benedictus text).
+
+Found and fixed two pre-existing bugs in sibling `benedictus-antiphon-common-of-*.yml` files
+while cross-checking `[Ant 2]` against them: `common-of-a-confessor` and `common-of-the-bvm` had
+both been sourced from `[Ant 1]` (First Vespers) instead of `[Ant 2]` (Lauds) — live-verified
+wrong via St. Alexius's real Lauds query (07-17-2026, renders "Euge, serve bone", not the
+file's old "Similabo eum"). Corrected both.
+
+**The 11th category, `common-of-a-vigil`, needed a code fix instead of a content file.**
+Initially assumed unreachable (a Vigil's own *Second* Vespers always loses to the following
+feast's First Vespers — true, and confirmed via `compareFeastClass('vigil', ...)` always losing
+in `resolveEveningDay`). But a Vigil's own *First* Vespers (anticipated the evening before, since
+`hasFirstVespers` has no rank floor) absolutely does reach this code path — caught by re-checking
+after the user asked "what about 11 of 11?". Live-verified across 4 different years
+(2025-2028) that the real office never gives a Vigil a fixed proper Magnificat text at all — its
+`[Rule]` block ("ex C1v; ... Laudes 2") always borrows whatever the current ferial weekday's own
+antiphon is (`{Antiphona ex Proprio de Tempore}` every single year tried). So `common-of-a-vigil`
+correctly has no content file; instead `getMagnificatAntiphon` (`hours/resolve-common.ts`) now
+special-cases `saint.rank === 'vigil'` to fall through to the same `vespersMagnificatAntiphons`
+weekday-default table the plain temporal branch already used, before ever trying a Common
+lookup. `npm test` (810 passed) and `tsc --noEmit` pass.
