@@ -524,12 +524,12 @@ describe('resolveOrdo("matins", ...) rest-of-year temporal nocturn-readings swee
   }
 
   it.each([
-    ['2028-12-04', 'advent-1'],
+    ['2028-12-03', 'advent-1'],
     ['2026-12-07', 'advent-2'],
     ['2026-12-14', 'advent-3'],
     ['2026-12-21', 'advent-4'],
     ['2026-01-05', 'christmas-octave-sunday'],
-    ['2026-01-12', 'post-epiphany-1'],
+    ['2026-01-11', 'post-epiphany-1'],
     ['2026-01-19', 'post-epiphany-2'],
     ['2026-01-26', 'post-epiphany-3'],
     ['2027-11-01', 'post-epiphany-4 (a resumed post-Pentecost-overflow Sunday, not a January date)'],
@@ -538,14 +538,14 @@ describe('resolveOrdo("matins", ...) rest-of-year temporal nocturn-readings swee
     ['2026-02-02', 'septuagesima'],
     ['2026-02-09', 'sexagesima'],
     ['2026-02-16', 'quinquagesima'],
-    ['2031-03-03', 'lent-1 (not 2026-02-23: that date is really the Vigil of St. Matthias, transferred onto the Sunday and winning outright)'],
-    ['2026-03-02', 'lent-2'],
+    ['2031-03-02', 'lent-1 (not 2026-02-22: that Sunday is really the Vigil of St. Matthias, transferred onto the Sunday and winning outright)'],
+    ['2026-03-01', 'lent-2'],
     ['2026-03-09', 'lent-3'],
-    ['2026-03-16', 'lent-4'],
-    ['2026-03-23', 'passion-sunday'],
-    ['2027-03-22', 'palm-sunday'],
+    ['2026-03-15', 'lent-4'],
+    ['2026-03-22', 'passion-sunday'],
+    ['2027-03-21', 'palm-sunday'],
     ['2026-04-13', 'easter-octave'],
-    ['2026-04-20', 'easter-3'],
+    ['2026-04-19', 'easter-3'],
     ['2026-04-27', 'easter-4'],
     ['2026-05-04', 'easter-5'],
     ['2026-05-11', 'easter-6'],
@@ -641,11 +641,42 @@ describe('resolveOrdo("matins", ...) nocturn-reading temporal/month-week suppres
     expect(lessons.some((l) => l.text.text.la?.includes('Bartholomǽus Apóstolus'))).toBe(true);
   });
 
-  it('a plain ferial weekday with no sanctoral winner (2026-09-04, a gap day in sanctoral-calendar.yml) still pools the plain temporal/month-week readings, unaffected by the gate', () => {
-    const ordo = resolveOrdo('matins', '2026-09-04');
-    const lessons = ordo.parts.filter((p) => p.kind === 'lesson') as { text: { status: Record<string, string> } }[];
-    expect(lessons.length).toBeGreaterThan(0);
-    expect(lessons.some((l) => l.text.status.la !== 'missing' && l.text.status.en !== 'missing')).toBe(true);
+  // Superseded by the 2026-09-01 fix below: a plain ferial weekday no
+  // longer pools the plain temporal/month-week readings at all (that
+  // content is the *governing Sunday's own* Nocturn 2/3 material, reserved
+  // for the Sunday itself), so this gap day's lessons come only from its
+  // own day's sources -- none authored yet, hence still missing. That's a
+  // real content gap (tracked in TODO.md), not a mechanism bug.
+  it('a plain ferial weekday with no sanctoral winner (2026-09-04, a gap day in sanctoral-calendar.yml, within the 14th-Sunday-after-Pentecost/month-week-091 week) does not pool the plain temporal/month-week readings', () => {
+    const labels = lessonLabels('2026-09-04');
+    expect(labels).not.toContain("St. Augustine, Bishop of Hippo, Book 2 on the Lord's Sermon on the Mount, ch. 14");
+    expect(labels).not.toContain('St. Gregory the Great, Moralia in Job, Book 2, ch. 1');
+  });
+});
+
+// Real bug (2026-09-01 fix): unlike the 2026-08-24 fix above (which only
+// suppressed the temporal/month-week pool when a real feast won outright),
+// nocturnReadingIds still pooled that content on a plain 1-nocturn feria
+// within an ordinary week, because on such a day day.winner.id (added
+// unconditionally) already *is* the governing Sunday's own temporalId. A
+// Tuesday's Matins (2026-09-01, within the 14th-Sunday-after-Pentecost
+// week) wrongly showed that Sunday's own patristic homily and, worse, its
+// Nocturn 3 responsory verbatim — content that Sunday had already read
+// three days earlier. Fixed by gating both the plain temporalId/month-week
+// pool *and* the day.winner.id/commemoration shortcut that duplicated it
+// on threeNocturns, so a 1-nocturn feria only ever draws on its own day's
+// content.
+describe('resolveOrdo("matins", ...) ferial temporal-pool suppression (2026-09-01 fix)', () => {
+  it("a plain Tuesday feria (2026-09-01, within the 14th-Sunday-after-Pentecost week) does not reuse that Sunday's own Nocturn 3 homily or responsory", () => {
+    const ordo = resolveOrdo('matins', '2026-09-01');
+    const lessons = ordo.parts.filter((p) => p.kind === 'lesson') as {
+      label?: string;
+      responsory?: { text: { la: string } };
+    }[];
+    expect(lessons.map((l) => l.label)).not.toContain(
+      "St. Augustine, Bishop of Hippo, Book 2 on the Lord's Sermon on the Mount, ch. 14",
+    );
+    expect(lessons.some((l) => l.responsory?.text.la.includes('Duo Séraphim'))).toBe(false);
   });
 });
 
