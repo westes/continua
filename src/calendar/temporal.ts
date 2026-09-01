@@ -202,12 +202,23 @@ export function adventEmberDayOffset(isoDate: string): number | undefined {
  * the Christmas vigil (Dec 24 can land on a Sunday) — and a Sunday's own
  * privileged/ordinary status should win in that case regardless, so
  * Sundays are resolved straight from `bySeason` without consulting the
- * overrides at all.
+ * overrides at all. The one deliberate exception is Easter Sunday itself
+ * (offset 0): `eastertide`'s own `bySeason` default is `ordinary-sunday`
+ * (live-verified for the *ordinary* Sundays that follow it — see that
+ * entry's own comment), but Easter Day needs the stronger
+ * `privileged-sunday` tier instead (live-verified 2026-09-01: the
+ * Annunciation, Duplex I. classis, transfers off Easter Day itself in
+ * years they coincide, the same "transfers, no exception" behavior as
+ * every other privileged-sunday case) — checked directly here rather
+ * than via `offsets`, since offsets are never consulted for a Sunday.
  */
 export function resolveTemporalCategory(isoDate: string, season: Season, weekday: Weekday): TemporalCategory {
   const bySeasonEntry = temporalCategories.bySeason[season];
   const base = bySeasonEntry ? (weekday === 'sunday' ? bySeasonEntry.sunday : bySeasonEntry.feria) : 'ordinary-feria';
   if (weekday === 'sunday') {
+    if (season === 'eastertide' && easterOffsetOf(isoDate) === 0) {
+      return 'privileged-sunday';
+    }
     return base;
   }
 

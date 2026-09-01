@@ -565,18 +565,20 @@ describe('resolveOrdo("lauds", ...)', () => {
   });
 
   it('resolves both the winners collect and a commemorated saints collect on a day with a real commemoration', () => {
-    // 2025-11-30: Advent I (the winner) with St. Andrew, Duplex II. classis,
-    // commemorated alongside it (see tests/calendar/day-label.test.ts) --
-    // he has only a bare collect authored (no st-andrew-commemoration.yml
-    // Ant+V/R bundle yet), so this renders as a labeled 'preces' block
-    // (see resolve-common.ts's sanctoralCommemorationPart), not a second
-    // unlabeled 'prayer' the way it used to.
-    const ordo = resolveOrdo('lauds', '2025-11-30');
+    // 2029-01-14: post-Epiphany II (the winner, `ordinary-sunday`) with
+    // St. Felix Presbyter, Simplex, commemorated alongside it — live-
+    // verified 2026-09-01. (Not 2025-11-30/St. Andrew as this test used
+    // to: a privileged Sunday transfers *everything*, no rank exception
+    // — Andrew doesn't get a bare commemoration there at all, see
+    // tests/calendar/day-label.test.ts. `ordinary-sunday`'s own Simplex
+    // branch is the real case that still commemorates a saint in place.)
+    const ordo = resolveOrdo('lauds', '2029-01-14');
     const collects = ordo.parts.filter((p) => p.kind === 'prayer');
     expect(collects.length).toBe(1);
-    const andrewCommemoration = ordo.parts.find((p) => p.kind === 'preces' && p.label?.includes('Andrew'));
-    expect(andrewCommemoration?.kind === 'preces' ? andrewCommemoration.text.text.en : undefined).toContain(
-      'Andrew',
+    const felixCommemoration = ordo.parts.find((p) => p.kind === 'preces' && p.label?.includes('Felix'));
+    expect(felixCommemoration).toBeDefined();
+    expect(felixCommemoration?.kind === 'preces' ? felixCommemoration.text.text.en : undefined).toContain(
+      'palm tree',
     );
   });
 

@@ -104,17 +104,21 @@ describe('resolveOrdo("compline", ...)', () => {
 
   it('anticipates Advent I: the Saturday evening before switches to the Alma Redemptoris Mater and shows the anticipated day label', () => {
     // Nov 30, 2025 is Advent I Sunday -- also St. Andrew's own day
-    // (Duplex II. classis), correctly commemorated alongside it since the
-    // November sanctoral pull (see tests/calendar/day-label.test.ts). This
-    // evening also anticipates Advent I from Nov 29, itself the Vigil of
-    // St. Andrew -- but the Vigil isn't also shown alongside his own
-    // feast (calendar/vespers.ts's own isVigilOfTomorrow check, keyed off
-    // each Vigil's explicit `vigilOf` field): showing both would just be
-    // redundant, the same feast named twice.
+    // (Duplex II. classis), but a privileged Sunday transfers him
+    // entirely rather than commemorating him in place (live-verified
+    // 2026-09-01, see tests/calendar/day-label.test.ts). This evening
+    // also anticipates Advent I from Nov 29, itself the Vigil of St.
+    // Andrew -- calendar/vespers.ts's own isVigilOfTomorrow check only
+    // suppresses the Vigil's own commemoration when tomorrow's page
+    // *also* shows St. Andrew (which would be redundant); since he no
+    // longer does (he's transferred away, not commemorated), both pieces
+    // of information are genuinely distinct and both show.
     const eve = resolveOrdo('compline', '2025-11-29');
     const last = eve.parts[eve.parts.length - 1];
     expect(last?.kind === 'preces' ? last.label : undefined).toBe('Alma Redemptoris Mater');
-    expect(eve.dayLabel?.en).toBe('The 1st Sunday of Advent (Semiduplex) — St. Andrew, Apostle');
+    expect(eve.dayLabel?.en).toBe(
+      'The 1st Sunday of Advent (Semiduplex) — Vigil of St. Andrew (of today) — St. Andrew, Apostle (transferred away)',
+    );
 
     const dayBefore = resolveOrdo('compline', '2025-11-28');
     const lastBefore = dayBefore.parts[dayBefore.parts.length - 1];

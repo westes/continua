@@ -48,6 +48,19 @@
 # fixability but currently fall to the plain `ordinary-feria` default
 # instead (see the offsetRanges comment below) — unverified, a real gap,
 # not a guess dressed up as one.
+#
+# 2026-09-01 full sweep: every `bySeason` entry now live-verified or
+# explicitly noted as not (see each entry's own comment below) — found
+# and fixed two real bugs in the process (`eastertide`'s and
+# `ascensiontide`'s own `sunday` tiers were each backwards), and a third,
+# deeper one in `commemorations.ts` itself (`privileged-sunday`'s
+# duplex-majus+ candidates were wrongly given a bare commemoration
+# instead of transferring like every other rank there). Every `feria`
+# entry in `bySeason` besides the ones with their own verification
+# comment is the trivial `ordinary-feria` default (no rank threshold at
+# all — any real content wins outright) — not worth a dedicated live
+# collision test on top of the hundreds of ordinary weekdays already
+# exercising it correctly across this app's whole test suite.
 bySeason:
   # Advent's ordinary ferias verified `privileged-feria-minor` during the
   # December sanctoral pull (see calendar/types.ts's TemporalCategory doc
@@ -81,7 +94,20 @@ bySeason:
   septuagesima: { sunday: privileged-sunday, feria: ordinary-feria }
   lent: { sunday: privileged-sunday, feria: ordinary-feria }
   passiontide: { sunday: privileged-sunday, feria: ordinary-feria }
-  eastertide: { sunday: privileged-sunday, feria: ordinary-feria }
+  # The ordinary Sundays after Easter (i.e. not Easter Day itself, not
+  # within its Octave — both handled elsewhere) are `ordinary-sunday`,
+  # NOT `privileged-sunday` — originally miscoded, live-verified
+  # 2026-09-01, two independent Duplex-II-classis collisions on "Dominica
+  # IV Post Pascha" (the Finding of the Holy Cross, 2026-05-03; St. Mark,
+  # 2027-04-25): both win outright, with the Sunday itself only noted as
+  # a `Tempora` commemoration underneath — exactly `ordinary-sunday`'s
+  # Duplex+ rule, the reverse of `privileged-sunday`'s (which would keep
+  # the Sunday primary and transfer the feast entirely, per the
+  # Ascensiontide/Advent/Palm-Sunday/Easter-Day evidence above and
+  # below). Easter Day itself (offset 0) and its Octave (offsets 1-6,
+  # `privileged-feria-major` via offsetRanges below) are unaffected by
+  # this — only the ordinary Sundays past the Octave use this default.
+  eastertide: { sunday: ordinary-sunday, feria: ordinary-feria }
   # The Sunday within the Octave of Ascension is `privileged-sunday`, not
   # `ordinary-sunday` — live-verified 2026-09-01: the reference engine
   # titles it "Dominica infra Octavam Ascensionis ~ Semiduplex Dominica
@@ -92,6 +118,11 @@ bySeason:
   # Matches the same "great octave" pattern as eastertide/pentecost above,
   # both already `privileged-sunday`.
   ascensiontide: { sunday: privileged-sunday, feria: ordinary-feria }
+  # Pentecost Sunday itself — no fixed-date saint collision found/
+  # attempted to independently verify this specific entry, but consistent
+  # with the confirmed "great octave Sundays are privileged-sunday"
+  # pattern (Easter Day, Ascension's own octave Sunday) — Pentecost
+  # outranks both.
   pentecost: { sunday: privileged-sunday, feria: ordinary-feria }
   trinitytide: { sunday: ordinary-sunday, feria: ordinary-feria }
   # Corpus Christi/Sacred Heart are themselves "feasts of the Lord" that
@@ -99,7 +130,14 @@ bySeason:
   # privileged-feria-major (rather than injecting a separate synthetic
   # FeastClass) since with the small sanctoral calendar this app has, a
   # real clash is unlikely and the practical effect (temporal wins) is the
-  # same either way.
+  # same either way. Not independently live-verified (no fixed-date saint
+  # collision found/attempted), but same "feast of the Lord" reasoning
+  # already confirmed for Ash Wednesday/Holy Week/the Easter Octave.
+  # `sunday` is checked here for shape-consistency with every other
+  # season entry, but genuinely unreachable in practice — per
+  # data/calendar/easter-offsets.yml's `days:` table, both are single
+  # fixed weekdays (Corpus Christi always a Thursday, Sacred Heart always
+  # the following Friday), never a Sunday.
   corpus-christi: { sunday: ordinary-sunday, feria: privileged-feria-major }
   sacred-heart: { sunday: ordinary-sunday, feria: privileged-feria-major }
 
@@ -108,7 +146,7 @@ offsets:
   -39: privileged-feria # Lent Ember Wednesday (Wed after 1st Sunday of Lent) — verified: Duplex wins outright here
   -37: privileged-feria # Lent Ember Friday
   -36: privileged-feria # Lent Ember Saturday — verified: Duplex wins outright here (St. Gregory the Great)
-  48: privileged-feria-major # Vigil of Pentecost — unverified, defaulted to the stricter tier
+  48: privileged-feria-major # Vigil of Pentecost — no live saint-collision test found/attempted (rare by construction), but corroborated 2026-09-01 by its own formal rank in the reference source (Sancti/Pentecost Vigil file's own [Rank]: "Semiduplex I classis" — a genuinely first-class day, consistent with the stricter tier)
 
 offsetRanges:
   - { fromOffset: -6, toOffset: -1, category: privileged-feria-major } # ferias of Holy Week
@@ -129,4 +167,4 @@ offsetRanges:
   # existing one, not introduced by this change.
 
 fixedDates:
-  "12-24": privileged-feria-major # Vigil of Christmas — unverified, defaulted to the stricter tier
+  "12-24": privileged-feria-major # Vigil of Christmas — no live saint-collision test found/attempted, but corroborated 2026-09-01 by its own formal rank in the reference source (Sancti/12-24.txt's own [Rank]: "Duplex I classis", consistent with the stricter tier)

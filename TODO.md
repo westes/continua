@@ -4653,3 +4653,55 @@ season-wide overrides, ahead of the plain default.
 New regression tests in `tests/hours/matins.test.ts` (`Sunday within the Octave of Ascension`)
 assert both the calendar winner (Sunday over the saint) and the full Matins content. `npm test`
 (821 passed), `tsc --noEmit`, and `npm run build` all pass.
+
+### Full sweep of `temporal-categories.yml` — two more real bugs found and fixed (2026-09-01)
+
+Follow-up, same day: user pushed back hard on the "not a bug" framing above ("the immaculate
+conception transfer is correct... annuncition should transfer") and asked to sweep every
+remaining unverified entry in `data/calendar/temporal-categories.yml`, not just the one already
+fixed. Found two more real, calendar-wide bugs:
+
+1. **`commemorations.ts`'s `privileged-sunday` case itself was wrong**, not just one season's
+   tag. It gave any duplex-majus+ candidate a bare commemoration instead of transferring —
+   never actually verified against a primary source. Live-checked 3 independent cases: the
+   Immaculate Conception (Duplex I. classis) transfers off Advent II with **no** commemoration
+   (2024/2030/2041); the Annunciation (also Duplex I. classis) transfers off both Palm Sunday
+   and Easter Sunday itself the same way (2029/2035/2040/2046). Confirmed by direct instruction
+   as correct (with a known follow-on: the Annunciation's *real* rule jumps it past the whole
+   Easter Octave rather than the next open day, which lands inside it — blocked on the
+   not-yet-built Easter-octave mechanism, noted but not built here). Fixed: `privileged-sunday`
+   now transfers every rank unconditionally, no exception.
+
+2. **`eastertide`'s own `sunday` tier was backwards** — coded `privileged-sunday`, should be
+   `ordinary-sunday` for the *ordinary* Sundays after Easter (not Easter Day itself, not within
+   its Octave, both already separately handled). Live-verified twice: the Finding of the Holy
+   Cross (Duplex-II-classis, 2026-05-03) and St. Mark (Duplex-II-classis, 2027-04-25) both win
+   outright over "Dominica IV Post Pascha," with the Sunday merely noted as a `Tempora` line
+   underneath — exactly `ordinary-sunday`'s rule. Easter Day itself still needs the stronger
+   tier (confirmed by the Annunciation evidence above), so it's now special-cased directly in
+   `calendar/temporal.ts`'s `resolveTemporalCategory` (Sundays never consult `offsets`, so this
+   couldn't be expressed as a plain offset entry the way every other exception in that file is).
+
+**Six test failures from the `privileged-sunday` fix, all genuine fallout, not regressions** —
+each test had encoded the old, wrong "commemorated in place" behavior as its expected value:
+St. Andrew (Duplex II. classis) no longer commemorated alongside Advent I, but shown
+transferred away (landing on Dec 1, where he now wins outright — `privileged-feria-minor`'s
+Semiduplex+ threshold easily clears); St. Antoninus similarly now wins outright on his own day
+(the real Easter-6 Sunday) instead of being pushed to the next day by the old wrong rule. All
+six tests updated to real, live-verified dates/values, not just loosened to pass.
+
+**Remaining entries in the file, not independently live-collision-tested but documented as
+such** (each has its own comment now): the Vigil of Pentecost and Vigil of Christmas
+(`privileged-feria-major`) are corroborated by their own formal rank in the reference source
+("Semiduplex I classis" / "Duplex I classis" respectively) rather than a live saint collision,
+which is rare by construction; Pentecost Sunday itself (`privileged-sunday`) is consistent with
+the confirmed "great octave Sunday" pattern but has no fixed-date-saint collision to test
+against; Corpus Christi/Sacred Heart's `feria` (`privileged-feria-major`) shares the same
+"feast of the Lord" reasoning already confirmed elsewhere, and their `sunday` key is flagged as
+genuinely unreachable (both are always fixed weekdays, never a Sunday, per
+`easter-offsets.yml`'s own `days:` table). Every other `feria` entry is the trivial
+`ordinary-feria` default (no rank threshold — any real content wins), already implicitly
+exercised correctly across hundreds of ordinary weekdays in the existing test suite.
+
+`npm test` (820 passed — one net fewer than before since two tests merged into one clearer
+case), `tsc --noEmit`, and `npm run build` all pass.

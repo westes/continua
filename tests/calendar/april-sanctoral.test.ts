@@ -34,27 +34,30 @@ describe('April sanctoral pull (first pass)', () => {
     ]);
   });
 
-  it('a privileged Eastertide Sunday bumps even St. Robert (plain Duplex, not Duplex majus) to transfer forward', () => {
-    // 2029: Apr 29 is a privileged Sunday in Eastertide, so Robert can't
-    // win or be commemorated there — he transfers to Monday and wins the
-    // collision against St. Peter Martyr instead.
+  it('an ordinary Eastertide Sunday (not Easter Day, not within its Octave) still lets St. Robert (plain Duplex) win outright, same as any weekday', () => {
+    // 2029: Apr 29 is an ordinary (not privileged) Sunday in Eastertide —
+    // live-verified 2026-09-01 (`eastertide`'s own `bySeason` entry, see
+    // data/calendar/temporal-categories.yml): "S. Roberti Abbatis ~
+    // Duplex" wins outright there, same as data/calendar/temporal-
+    // categories.yml's `ordinary-sunday` rule for any other season, with
+    // the Sunday itself only noted as a `Scriptura` line, not primary.
     const sunday = resolveDay('2029-04-29');
-    expect(sunday.winner).toEqual({ kind: 'temporal', id: 'easter-5' });
+    expect(sunday.winner).toEqual({ kind: 'sanctoral', id: 'st-robert', name: 'St. Robert, Abbot', nameLa: 'Sanctus Robertus, Abbas', rank: 'duplex' });
     expect(sunday.commemorations).toEqual([
+      { kind: 'temporal', id: 'easter-5' },
       { kind: 'sanctoral', id: 'st-catherine-of-siena', name: 'St. Catherine of Siena, Virgin', nameLa: 'Sancta Catharina Senensis, Virgo', rank: 'simplex' },
     ]);
 
+    // Apr 30 resolves St. Peter Martyr cleanly on his own day — no
+    // transferred-Robert collision, since Robert already won on the 29th.
     const monday = resolveDay('2029-04-30');
     expect(monday.winner).toEqual({
       kind: 'sanctoral',
-      id: 'st-robert',
-      name: 'St. Robert, Abbot',
-      nameLa: 'Sanctus Robertus, Abbas',
-      rank: 'duplex',
-      transferredFrom: '2029-04-29',
+      id: 'st-peter-martyr',
+      name: 'St. Peter Martyr, Martyr',
+      nameLa: 'Sanctus Petrus Martyr, Martyr',
+      rank: 'semiduplex',
     });
-    expect(monday.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-peter-martyr', name: 'St. Peter Martyr, Martyr', nameLa: 'Sanctus Petrus Martyr, Martyr', rank: 'semiduplex' },
-    ]);
+    expect(monday.commemorations).toEqual([]);
   });
 });

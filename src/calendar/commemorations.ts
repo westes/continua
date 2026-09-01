@@ -188,13 +188,22 @@ export function decideOccurrence(
       };
 
     case 'privileged-sunday':
-      if (isAtLeast(sanctoral.rank, 'duplex-majus')) {
-        // Never displaced, but a sufficiently high feast still gets a nod.
-        return { winner: temporalWinner, commemorations: [sanctoralCommemoration(sanctoral)] };
-      }
-      // Below duplex-majus, a privileged Sunday wants nothing at all —
-      // not even the bare commemoration an ordinary Sunday would allow a
-      // Simplex — so everything here transfers.
+      // A privileged Sunday wants nothing at all, no matter how high the
+      // candidate ranks — not even the bare commemoration an ordinary
+      // Sunday would allow a Simplex, and no exception for duplex-majus+ —
+      // everything transfers. Live-verified 2026-09-01, three independent
+      // dates: the Immaculate Conception (Duplex I. classis) transfers off
+      // Advent II with no commemoration at all (real dates 2024/2030/2041),
+      // and the Annunciation (also Duplex I. classis) transfers off both
+      // Palm Sunday and Easter Sunday itself the same way (2029/2035/2040/
+      // 2046) — confirmed by direct instruction as the correct behavior,
+      // correcting an earlier, never-actually-verified "duplex-majus+
+      // still gets a nod" guess. (Where a transferred candidate actually
+      // lands is a separate, still-generic `transferDirectionOf`/next-
+      // open-day mechanism — the Annunciation's own real rule of jumping
+      // *past* the whole Easter Octave rather than landing inside it is a
+      // known follow-on, blocked on the not-yet-built Easter-octave
+      // mechanism; see TODO.md.)
       return {
         winner: temporalWinner,
         commemorations: [],

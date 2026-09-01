@@ -141,18 +141,16 @@ describe('decideOccurrence — ordinary-sunday', () => {
 });
 
 describe('decideOccurrence — privileged-sunday', () => {
-  it('is never displaced; duplex-majus and up are commemorated', () => {
-    for (const rank of ['duplex-majus', 'duplex-2-classis', 'duplex-1-classis'] as const) {
+  it('is never displaced, and never gives even a bare commemoration to any rank — everything transfers forward', () => {
+    // Live-verified 2026-09-01 (see data/calendar/temporal-categories.yml
+    // and commemorations.ts's own `privileged-sunday` case comment):
+    // even a Duplex I. classis feast (the Immaculate Conception on Advent
+    // II, the Annunciation on Palm/Easter Sunday) transfers with no
+    // commemoration at all — corrects an earlier, never-actually-verified
+    // "duplex-majus+ still gets a nod" guess.
+    for (const rank of ['duplex-majus', 'duplex-2-classis', 'duplex-1-classis', 'duplex', 'semiduplex', 'simplex'] as const) {
       const result = decideOccurrence('privileged-sunday', 'advent-1', saint(rank));
       expect(result.winner).toEqual({ kind: 'temporal', id: 'advent-1' });
-      expect(result.commemorations).toEqual([{ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank }]);
-      expect(result.transfer).toBeUndefined();
-    }
-  });
-
-  it('duplex, semiduplex, and simplex all transfer forward — no bare commemoration here', () => {
-    for (const rank of ['duplex', 'semiduplex', 'simplex'] as const) {
-      const result = decideOccurrence('privileged-sunday', 'advent-1', saint(rank));
       expect(result.commemorations).toEqual([]);
       expect(result.transfer).toEqual({ candidate: saint(rank), direction: 'forward' });
     }

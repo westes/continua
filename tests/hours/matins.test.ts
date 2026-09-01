@@ -718,7 +718,7 @@ describe('resolveOrdo("matins", ...) rest-of-year temporal nocturn-readings swee
     ['2026-04-19', 'easter-3'],
     ['2026-04-27', 'easter-4'],
     ['2026-05-04', 'easter-5'],
-    ['2026-05-11', 'easter-6'],
+    ['2026-05-10', 'easter-6 (the real Sunday — not 2026-05-11: since the eastertide-Sunday precedence fix (2026-09-01), St. Antoninus, Duplex, now correctly wins outright on his own day, May 10, rather than transferring onto Monday, so easter-6\'s own pooled readings show up there commemorated, not on the 11th)'],
     ['2026-05-18', 'sunday-after-ascension'],
     ['2026-04-05', 'easter-sunday'],
     ['2026-05-24', 'pentecost-sunday'],

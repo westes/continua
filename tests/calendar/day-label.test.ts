@@ -66,21 +66,31 @@ describe('getDayLabel — ordinal temporal label', () => {
   });
 
   it("Advent's own anchor Sunday is already week 1, not a separate anchor-week case", () => {
-    // 2025-11-30 is also St. Andrew's own day (Duplex II. classis) — since
-    // the November sanctoral pull, he's correctly commemorated alongside
-    // Advent I rather than simply absent (confirmed against the live
-    // reference engine, which shows the same pairing), so the label
-    // reflects both, winner (Advent I, so privileged nothing can displace
-    // it) first, commemorated saint after.
-    expect(getDayLabel(resolveDay('2025-11-30')).en).toBe('The 1st Sunday of Advent (Semiduplex) — St. Andrew, Apostle');
+    // 2025-11-30 is also St. Andrew's own day (Duplex II. classis) — a
+    // privileged Sunday transfers *everything*, no rank exception
+    // (live-verified 2026-09-01, correcting an earlier, inaccurate claim
+    // that he was commemorated in place: the real Monastic 1617 engine
+    // shows "Transfer: S. Andreæ Apostoli", not a commemoration), so the
+    // label shows him as transferred away rather than paired alongside
+    // Advent I.
+    expect(getDayLabel(resolveDay('2025-11-30')).en).toBe('The 1st Sunday of Advent (Semiduplex) — St. Andrew, Apostle (transferred away)');
+    // Dec 1 is where Andrew's own transfer actually lands (the next open
+    // day, `privileged-feria-minor`'s Semiduplex+ threshold easily clears
+    // for a Duplex II. classis) — live-verified 2026-09-01, the real
+    // Monastic 1617 engine shows "S. Andreæ Apostoli ~ Duplex II. classis"
+    // there outright, "Tempora: Feria II infra Hebdomadam I Adventus"
+    // underneath, matching this.
+    expect(getDayLabel(resolveDay('2025-12-01')).en).toBe('St. Andrew, Apostle (Duplex II Class, transferred) — In the 1st week of Advent');
+    // Dec 4 (St. Barbara, merely commemorated, not high-ranked enough to
+    // win outright) is a clean example of the season-ordinal label itself.
     // Advent drops the redundant leading weekday word now that the header
     // always shows the weekday on its own (see temporalLabel's
     // `dropWeekdayPrefix`).
-    expect(getDayLabel(resolveDay('2025-12-01')).en).toBe('In the 1st week of Advent (Feria)');
+    expect(getDayLabel(resolveDay('2025-12-04')).en).toBe('In the 1st week of Advent (Feria) — St. Barbara, Virgin and Martyr');
     // Latin: same weekday-drop, and the season-ordinal genitive
     // construction ("Hebdomada prima Adventus") needs no extra linking
     // word — 4th-declension "Adventus" has the same genitive form.
-    expect(getDayLabel(resolveDay('2025-12-01')).la).toBe('In hebdomada prima Adventus (Feria)');
+    expect(getDayLabel(resolveDay('2025-12-04')).la).toBe('In hebdomada prima Adventus (Feria) — Sancta Barbara, Virgo et Martyr');
   });
 
   it('falls back to weekday + season name for seasons with no ordinal convention modeled', () => {
