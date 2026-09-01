@@ -1,0 +1,65 @@
+# Sunday Matins Nocturns I-III, Advent override. Unlike
+# matins-sunday-nocturn3-overrides.yml (keyed per-Sunday, Septuagesima
+# through Palm Sunday, each Sunday distinct), this is a single season-wide
+# block applied uniformly to all 4 Advent Sundays — live-verified
+# identical across advent-1..4 (2026 cycle dates 11-29, 12-06, 12-13,
+# 12-20) against the local reference-engine CGI instance (`prayMatutinum`,
+# Monastic Tridentinum 1617, 2026-09-01).
+#
+# Unlike the existing Nocturn III-only override, Advent replaces the
+# antiphon *and* versicle of all three nocturns (psalm/canticle numbers
+# unchanged for Nocturns I-II, Ps 20-31; Nocturn III swaps its plain-season
+# 3-canticle set for a wholly different one, Isa 40:10-17 / 42:10-16 /
+# 49:7-13 — new scripture chapter files authored alongside this one).
+#
+# hours/matins.ts's lookup applies this whenever day.season === 'advent',
+# ahead of (and instead of, since Advent and Septuagesima-Palm never
+# overlap) the temporalId-keyed Nocturn III override.
+
+nocturn1:
+  groups:
+    - psalms: [20, 21]
+      antiphon:
+        la: "Véniet ecce rex, excélsus cum potestáte magna, ad salvándas gentes, allelúja."
+        en: "Behold, there cometh the King, the Most High, with great power, to save the nations, alleluia."
+    - psalms: [22, 23]
+      antiphon:
+        la: "Confortáte manus dissolútas: confortámini, dícite: Ecce Deus noster véniet, et salvábit nos, allelúja."
+        en: "Strengthen ye the weak hands; be strong, say: Behold, our God will come, and save us, alleluia."
+    - psalms: [24, 25]
+      antiphon:
+        la: "Gaudéte omnes et lætámini: ecce, qui véniet Dóminus ultiónis, addúcet retributiónem: ipse véniet, et salvábit nos."
+        en: "Rejoice all ye, and be glad; for behold, the Lord will come with vengeance, He will bring a recompense; He will come and save us."
+  versicle:
+    v: { la: "Ex Sion spécies decóris ejus.", en: "From Sion, from the place of his greatness." }
+    r: { la: "Deus noster maniféste véniet.", en: "Our God shall come manifestly." }
+
+nocturn2:
+  groups:
+    - psalms: [26, 27]
+      antiphon:
+        la: "Gaude et lætáre fília Jerúsalem: ecce, Rex tuus véniet tibi: Sion noli timére, qui cito véniet salus tua."
+        en: "Rejoice greatly, O daughter of Jerusalem: behold, thy King cometh into thee, O Zion; fear not, for thy salvation cometh quickly."
+    - psalms: [28, 29]
+      antiphon:
+        la: "Rex noster advéniet Christus, quem Joánnes prædicávit Agnum esse ventúrum."
+        en: "Christ our King cometh, Whom John preached, saying: Behold the Lamb That should come!"
+    - psalms: [30, 31]
+      antiphon:
+        la: "Ecce, vénio cito et merces mea mecum est, dicit Dóminus: dare unicuíque secúndum ópera sua."
+        en: "Behold, I come quickly, saith the Lord, and My reward is with Me, to give every man according as his work shall be."
+  versicle:
+    v: { la: "Emítte Agnum, Dómine, Dominatórem terræ.", en: "Send forth, O Lord, the lamb, the ruler of the earth." }
+    r: { la: "De Petra desérti ad montem fíliæ Sion.", en: "From Petra of the desert, to the mount of the daughter of Sion." }
+
+nocturn3:
+  canticles:
+    - refs: [{ book: isa, chapter: 40, verses: "10-17" }]
+    - refs: [{ book: isa, chapter: 42, verses: "10-16" }]
+    - refs: [{ book: isa, chapter: 49, verses: "7-13" }]
+  antiphon:
+    la: "Gábriel Ángelus locútus est Maríæ, dicens: Ave, grátia plena; Dóminus tecum; Benedícta tu in mulíeres."
+    en: "The Angel Gabriel spake unto Mary, saying: Hail, thou that art full of grace, the Lord is with thee: blessed art thou among women."
+  versicle:
+    v: { la: "Egrediétur Dóminus de loco sancto suo.", en: "The Lord will come out of his holy place." }
+    r: { la: "Véniet ut salvet pópulum suum.", en: "He will come to save his people." }

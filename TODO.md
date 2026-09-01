@@ -4549,3 +4549,30 @@ Re-verifying live (one `prayMatutinum` query per Sunday of the 2026 cycle, Monas
 New regression tests in `tests/hours/matins.test.ts` cover all three shapes (antiphon-only,
 antiphon+canticles+versicle, antiphon+versicle-only). `npm test` (817 passed), `tsc --noEmit`,
 and `npm run build` all pass.
+
+### Advent Sunday Matins Nocturns I-III seasonal override (2026-09-01)
+
+Follow-up, same day: the user asked whether Advent Sundays' own Nocturn III needed the same kind
+of fix. Live re-check (`prayMatutinum`, Monastic Tridentinum 1617, all 4 Advent Sundays of the
+2026 cycle) found the answer is yes, and bigger than just Nocturn III — Advent's own seasonal
+antiphons apply to **all three nocturns**, not just Nocturn III, and identically across all 4
+Sundays (no per-Sunday variation the way Septuagesima-Palm has).
+
+- **Nocturns I-II**: psalm numbers unchanged (Ps 20-31), but every one of the 6 antiphons and
+  both versicles are seasonal — none of which existed anywhere in the codebase before this fix
+  (unlike Nocturn III, Nocturns I/II had *no* override mechanism at all; `matins.ts` used the
+  plain-season `matins-sunday-antiphons.yml` base unconditionally).
+- **Nocturn III**: swaps the plain-season 3-canticle set (Isa 33:2-10/33:13-18, Sir 36:14-19) for
+  a wholly different one (Isa 40:10-17, 42:10-16, 49:7-13 — 3 new `data/scripture/isa-{40,42,49}.yml`
+  files), under its own Marian antiphon ("Gábriel Ángelus locútus est Maríæ...") and versicle.
+
+New `data/hours/matins-sunday-advent-nocturn-overrides.yml` — a single season-wide block (keyed
+by season, not per-Sunday `temporalId`, since all 4 Advent Sundays are identical) — plus
+`hours/matins.ts`'s generalized `sundayNocturnFor(nocturn, day, temporalId)`, which now checks
+Advent's season-wide override ahead of (Nocturn III only) the existing per-Sunday Septuagesima-
+Palm `sundayNocturn3For` lookup; Advent and Septuagesima-Palm never overlap so there's no
+precedence conflict between the two override tiers.
+
+New regression test in `tests/hours/matins.test.ts` (`Advent Sunday Nocturns I-III seasonal
+override`) asserts all 4 Advent Sundays render identically. `npm test` (818 passed),
+`tsc --noEmit`, and `npm run build` all pass.

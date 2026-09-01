@@ -95,6 +95,7 @@ import { getOctaveReading } from '../propers/octave-readings';
 import { getMatinsSaintOverride, getMatinsCommonOverride, type MatinsPsalmodyScheme } from './matins-psalmody-overrides';
 import matinsSundayAntiphonsData from '../data/hours/matins-sunday-antiphons.yml';
 import matinsSundayNocturn3OverridesData from '../data/hours/matins-sunday-nocturn3-overrides.yml';
+import matinsSundayAdventOverridesData from '../data/hours/matins-sunday-advent-nocturn-overrides.yml';
 import matinsFerialAntiphonsData from '../data/hours/matins-ferial-antiphons.yml';
 import type { Weekday } from '../calendar/types';
 
@@ -139,6 +140,35 @@ function sundayNocturn3For(temporalId: string | undefined): SundayNocturn {
   const override = temporalId ? sundayNocturn3Overrides[temporalId] : undefined;
   if (!override) return base;
   return {
+    canticles: override.canticles ?? base.canticles,
+    antiphon: override.antiphon ?? base.antiphon,
+    versicle: override.versicle ?? base.versicle,
+  };
+}
+
+// Advent's own Nocturns I-III override, applied uniformly across all 4
+// Advent Sundays (unlike sundayNocturn3Overrides above, which is keyed
+// per-distinct-Sunday for Septuagesima-Palm) — see
+// data/hours/matins-sunday-advent-nocturn-overrides.yml's own header.
+interface MatinsSundayAdventOverrides {
+  nocturn1: Partial<SundayNocturn>;
+  nocturn2: Partial<SundayNocturn>;
+  nocturn3: Partial<SundayNocturn>;
+}
+const sundayAdventOverrides = matinsSundayAdventOverridesData as unknown as MatinsSundayAdventOverrides;
+
+/** Sunday Nocturn I/II/III content for a given day — Advent's own
+ * season-wide override (all three nocturns) takes precedence over the
+ * plain-season default; Nocturn III additionally checks the per-Sunday
+ * Septuagesima-Palm override (`sundayNocturn3For`) when Advent doesn't
+ * apply (the two never overlap). */
+function sundayNocturnFor(nocturnKey: 'nocturn1' | 'nocturn2' | 'nocturn3', day: LiturgicalDay, temporalId: string | undefined): SundayNocturn {
+  const base = nocturnKey === 'nocturn3' ? sundayNocturn3For(temporalId) : sundayAntiphons[nocturnKey];
+  if (day.season !== 'advent') return base;
+  const override = sundayAdventOverrides[nocturnKey];
+  if (!override) return base;
+  return {
+    groups: override.groups ?? base.groups,
     canticles: override.canticles ?? base.canticles,
     antiphon: override.antiphon ?? base.antiphon,
     versicle: override.versicle ?? base.versicle,
@@ -704,13 +734,13 @@ export function resolveOrdo(date: string): ResolvedOrdo {
 
   if (threeNocturns && day.weekday === 'sunday') {
     parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
-    parts.push(...sundayPsalmNocturn(sundayAntiphons.nocturn1, day));
+    parts.push(...sundayPsalmNocturn(sundayNocturnFor('nocturn1', day, temporalId), day));
     parts.push(...(nocturn1Readings ?? []));
     parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[1]}` });
-    parts.push(...sundayPsalmNocturn(sundayAntiphons.nocturn2, day));
+    parts.push(...sundayPsalmNocturn(sundayNocturnFor('nocturn2', day, temporalId), day));
     parts.push(...(nocturn2Readings ?? []));
     parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[2]}` });
-    parts.push(...sundayCanticleNocturn(sundayNocturn3For(temporalId), day));
+    parts.push(...sundayCanticleNocturn(sundayNocturnFor('nocturn3', day, temporalId), day));
     parts.push(...(nocturn3Readings ?? []));
     parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
     parts.push({ kind: 'versicle', text: resolveCommon('te-decet-laus') });

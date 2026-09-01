@@ -1,0 +1,60 @@
+# Isaiah 40 — verses 10-17 transcribed from a live Divinum Officium query
+# (Monastic Tridentinum 1617, prayMatutinum, 2026-09-01, all 4 Advent
+# Sundays of the 2026 cycle — identical content on each) — see
+# data/hours/matins-sunday-advent-nocturn-overrides.yml. Only the verse
+# range actually used by that Nocturn III canticle is authored; the rest
+# of the chapter is unauthored (empty per src/scripture's own
+# "unauthored -> not present" convention).
+book: isa
+chapter: 40
+verses:
+  - n: 10
+    text:
+      la: "Ecce Dóminus Deus in fortitúdine véniet, * et bráchium ejus dominábitur:"
+      en: "Behold the Lord God shall come with strength, * and his arm shall rule:"
+    status: { la: verified, en: verified }
+  - n: 10
+    text:
+      la: "Ecce merces ejus cum eo, * et opus illíus coram illo."
+      en: "Behold his reward is with him * and his work is before him."
+    status: { la: verified, en: verified }
+  - n: 11
+    text:
+      la: "Sicut pastor gregem suum pascet: in bráchio suo congregábit agnos, * et in sinu suo levábit, fœtas ipse portábit."
+      en: "He shall feed his flock like a shepherd: he shall gather together the lambs with his arm, * and shall take them up in his bosom, and he himself shall carry them that are with young."
+    status: { la: verified, en: verified }
+  - n: 12
+    text:
+      la: "Quis mensus est pugíllo aquas, * et cælos palmo ponderávit?"
+      en: "Who hath measured the waters * in the hollow of his hand, and weighed the heavens with his palm?"
+    status: { la: verified, en: verified }
+  - n: 12
+    text:
+      la: "Quis appéndit tribus dígitis molem terræ, * et librávit in póndere montes, et colles in statéra?"
+      en: "Who hath poised with three fingers the bulk of the earth, * and weighed the mountains in scales, and the hills in a balance?"
+    status: { la: verified, en: verified }
+  - n: 13
+    text:
+      la: "Quis adjúvit spíritum Dómini? * aut quis consiliárius ejus fuit, et osténdit illi?"
+      en: "Who hath forwarded the spirit of the Lord? * or who hath been his counsellor, and hath taught him?"
+    status: { la: verified, en: verified }
+  - n: 14
+    text:
+      la: "Cum quo íniit consílium, et instrúxit eum, et dócuit eum sémitam justítiæ, * et erudívit eum sciéntiam, et viam prudéntiæ osténdit illi?"
+      en: "With whom hath he consulted, and who hath instructed him, and taught him the path of justice, * and taught him knowledge, and shewed him the way of understanding?"
+    status: { la: verified, en: verified }
+  - n: 15
+    text:
+      la: "Ecce gentes quasi stilla sítulæ, * et quasi moméntum statéræ reputátæ sunt:"
+      en: "Behold the Gentiles are as a drop of a bucket, * and are counted as the smallest grain of a balance."
+    status: { la: verified, en: verified }
+  - n: 16
+    text:
+      la: "Ecce ínsulæ quasi pulvis exíguus. Et Líbanus non suffíciet ad succendéndum, * et animália ejus non suffícient ad holocáustum."
+      en: "Behold the islands are as a little dust. And Libanus shall not be enough to burn, * nor the beasts thereof sufficient for a burnt offering."
+    status: { la: verified, en: verified }
+  - n: 17
+    text:
+      la: "Omnes gentes quasi non sint, sic sunt coram eo, * et quasi níhilum et ináne reputátæ sunt ei."
+      en: "All nations are before him as if they had no being at all, * and are counted to him as nothing, and vanity."
+    status: { la: verified, en: verified }

@@ -237,6 +237,42 @@ describe('resolveOrdo("matins", ...) Sunday Nocturn III seasonal override (2026-
   });
 });
 
+// Real bug (found 2026-09-01, same shape as the Nocturn III fix above, but
+// bigger: Advent Sundays' Nocturns I-II antiphons/versicles are also
+// seasonal, not just Nocturn III's antiphon+canticles+versicle — live-
+// verified against the reference engine (Monastic Tridentinum 1617),
+// identical across all 4 Advent Sundays of the 2026 cycle.
+describe('resolveOrdo("matins", ...) Advent Sunday Nocturns I-III seasonal override (2026-09-01 fix)', () => {
+  it('all 4 Advent Sundays render identical seasonal content (Nocturns I-III antiphons/versicles, Nocturn III canticles)', () => {
+    const dates = ['2026-11-29', '2026-12-06', '2026-12-13', '2026-12-20'];
+    const renders = dates.map((date) => resolveOrdo('matins', date));
+
+    for (const ordo of renders) {
+      const psalms = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
+      expect(psalms).toEqual([3, 94, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]);
+      const canticles = ordo.parts.filter((p) => p.kind === 'canticle') as { canticleId: string }[];
+      expect(canticles.map((c) => c.canticleId)).toEqual(['isa-40-10-17', 'isa-42-10-16', 'isa-49-7-13']);
+
+      const antiphons = ordo.parts.filter((p) => p.kind === 'antiphon') as { text: { text: Record<string, string> } }[];
+      expect(antiphons.at(-1)?.text.text.la).toBe(
+        'Ant. Gábriel Ángelus locútus est Maríæ, dicens: Ave, grátia plena; Dóminus tecum; Benedícta tu in mulíeres.',
+      );
+
+      const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
+      const [, nocturn1, nocturn2, nocturn3] = versicles;
+      expect(nocturn1?.text.text.la).toBe('V. Ex Sion spécies decóris ejus.\nR. Deus noster maniféste véniet.');
+      expect(nocturn2?.text.text.la).toBe('V. Emítte Agnum, Dómine, Dominatórem terræ.\nR. De Petra desérti ad montem fíliæ Sion.');
+      expect(nocturn3?.text.text.la).toBe('V. Egrediétur Dóminus de loco sancto suo.\nR. Véniet ut salvet pópulum suum.');
+    }
+
+    // Same content on every one of the 4 Sundays, not just individually correct.
+    const nocturn1Openings = renders.map(
+      (ordo) => (ordo.parts.filter((p) => p.kind === 'antiphon')[1] as { text: { text: Record<string, string> } }).text.text.la,
+    );
+    expect(new Set(nocturn1Openings).size).toBe(1);
+  });
+});
+
 describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunday) branch', () => {
   // 2026-08-17 -- St. Lawrence's own octave closing day ("In Octava S.
   // Laurentii Martyris ~ Duplex"), live-verified directly against the
