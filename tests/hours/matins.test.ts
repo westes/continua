@@ -188,6 +188,55 @@ describe('resolveOrdo("matins", ...) Sunday (3-nocturn) branch', () => {
   });
 });
 
+// Real bug (found 2026-09-01, see TODO.md/vu_ferial_matins_antiphons.md):
+// Sunday Matins Nocturn III's antiphon was hardcoded to "Allelúja, allelúja,
+// allelúja" year-round; Septuagesima through Palm Sunday inclusive each
+// have their own Gospel-tied antiphon instead, live-verified against the
+// reference engine (Monastic Tridentinum 1617, 2026 calendar) — and for
+// Lent 1-4 the canticles and versicle differ too, not just the antiphon.
+describe('resolveOrdo("matins", ...) Sunday Nocturn III seasonal override (2026-09-01 fix)', () => {
+  it('Septuagesima: proper antiphon, base canticles/versicle unchanged', () => {
+    const ordo = resolveOrdo('matins', '2026-02-01');
+    const canticles = ordo.parts.filter((p) => p.kind === 'canticle') as { canticleId: string }[];
+    expect(canticles.map((c) => c.canticleId)).toEqual(['isa-33-2-10', 'isa-33-13-18', 'sir-36-14-19']);
+    const antiphons = ordo.parts.filter((p) => p.kind === 'antiphon') as { text: { text: Record<string, string> } }[];
+    expect(antiphons.at(-1)?.text.text.la).toBe('Ant. Ite et vos in víneam meam, † et quod justum fúerit, dabo vobis.');
+    const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
+    expect(versicles.at(-2)?.text.text.la).toBe('V. Exaltáre Dómine in virtúte tua.\nR. Cantábimus et psallémus virtútes tuas.');
+  });
+
+  it('Lent 1: proper antiphon, proper canticles (Jer 14/Lam 5/Ezek 36), proper versicle', () => {
+    const ordo = resolveOrdo('matins', '2026-02-22');
+    const canticles = ordo.parts.filter((p) => p.kind === 'canticle') as { canticleId: string; text: { text: Record<string, string> } }[];
+    expect(canticles.map((c) => c.canticleId)).toEqual([
+      'jer-14-17-21',
+      'lam-5-1-7_lam-5-15-17_lam-5-19-21',
+      'ezek-36-24-28',
+    ]);
+    expect(canticles.every((c) => c.text.text.la && c.text.text.en)).toBe(true);
+    const antiphons = ordo.parts.filter((p) => p.kind === 'antiphon') as { text: { text: Record<string, string> } }[];
+    expect(antiphons.at(-1)?.text.text.la).toBe('Ant. Non in solo pane vivit homo, † sed in omni verbo quod procédit de ore Dei.');
+    const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
+    expect(versicles.at(-2)?.text.text.la).toBe('V. Scuto circúmdabit te véritas ejus.\nR. Non timébis a timóre noctúrno.');
+  });
+
+  it('Passion Sunday and Palm Sunday: base canticles, but the "Ne perdas" versicle, not the base "Exaltáre"', () => {
+    for (const date of ['2026-03-22', '2026-03-29']) {
+      const ordo = resolveOrdo('matins', date);
+      const canticles = ordo.parts.filter((p) => p.kind === 'canticle') as { canticleId: string }[];
+      expect(canticles.map((c) => c.canticleId)).toEqual(['isa-33-2-10', 'isa-33-13-18', 'sir-36-14-19']);
+      const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
+      expect(versicles.at(-2)?.text.text.la).toBe('V. Ne perdas cum ímpiis, Deus, ánimam meam.\nR. Et cum viris sánguinum vitam meam.');
+    }
+    const passionOrdo = resolveOrdo('matins', '2026-03-22');
+    const palmOrdo = resolveOrdo('matins', '2026-03-29');
+    const antiphonLa = (ordo: ReturnType<typeof resolveOrdo>) =>
+      (ordo.parts.filter((p) => p.kind === 'antiphon').at(-1) as { text: { text: Record<string, string> } }).text.text.la;
+    expect(antiphonLa(passionOrdo)).toBe('Ant. Ego glóriam meam non quæro: † est qui quærat, et júdicet.');
+    expect(antiphonLa(palmOrdo)).toBe('Ant. Hosánna fílio David: † benedíctus, qui venit in nómine Dómini, Rex Israël: † Hosánna in excélsis.');
+  });
+});
+
 describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunday) branch', () => {
   // 2026-08-17 -- St. Lawrence's own octave closing day ("In Octava S.
   // Laurentii Martyris ~ Duplex"), live-verified directly against the

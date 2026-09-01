@@ -1,0 +1,119 @@
+# Sunday Matins Nocturn III per-season override, keyed by temporalId.
+# matins-sunday-antiphons.yml's own [Daym0] antiphon ("Allelúja, allelúja,
+# allelúja") is the plain-season default; from Septuagesima through Palm
+# Sunday inclusive (9 Sundays), Monastic Tridentinum 1617 gives Nocturn
+# III its own distinct, Gospel-tied antiphon instead — live-verified
+# against the local reference-engine CGI instance (`prayMatutinum`,
+# Monastic Tridentinum 1617, 2026-09-01, one query per Sunday of 2026's
+# cycle).
+#
+# That same live check found the original TODO note incomplete: it isn't
+# only the antiphon that changes.
+#   - Septuagesima, Sexagesima, Quinquagesima keep the base canticles
+#     (Isa 33:2-10 / Isa 33:13-18 / Sir 36:14-19) and the base versicle
+#     ("Exaltáre Dómine in virtúte tua. / Cantábimus et psallémus virtútes
+#     tuas.") — only `antiphon` is listed here for these three.
+#   - Lent 1-4 substitute a wholly different set of 3 canticles (Jer
+#     14:17-21, Lam 5:1-7,15-17,19-21, Ezek 36:24-28 — new scripture
+#     chapter files authored alongside this one) and a different versicle
+#     ("Scuto circúmdabit te véritas ejus. / Non timébis a timóre
+#     noctúrno.").
+#   - Passion Sunday and Palm Sunday keep the base canticles but take the
+#     Lent versicle's own neighbor verse instead ("Ne perdas cum ímpiis,
+#     Deus, ánimam meam. / Et cum viris sánguinum vitam meam.").
+#
+# `canticles`/`versicle` are omitted where the base
+# matins-sunday-antiphons.yml value already applies; hours/matins.ts's
+# lookup falls back to the base nocturn3 group for any field not given
+# here.
+
+septuagesima:
+  antiphon:
+    la: "Ite et vos in víneam meam, † et quod justum fúerit, dabo vobis."
+    en: "Go ye also into my vineyard, and whatsoever is right, that will I give you."
+
+sexagesima:
+  antiphon:
+    la: "Semen cécidit in terram bonam, † et ortum fecit fructum céntuplum."
+    en: "Some seed fell on good ground, and gave fruit one hundred-fold."
+
+quinquagesima:
+  antiphon:
+    la: "Miserére mei, Fili David! † Quid vis ut fáciam tibi? Dómine, ut vídeam."
+    en: "Son of David, have mercy on me. What wilt thou that I do to thee? Lord, that I may see."
+
+lent-1:
+  antiphon:
+    la: "Non in solo pane vivit homo, † sed in omni verbo quod procédit de ore Dei."
+    en: "Not on bread alone doth man live, but on every word that proceedeth from the mouth of God."
+  canticles:
+    - refs: [{ book: jer, chapter: 14, verses: "17-21" }]
+    - refs:
+        - { book: lam, chapter: 5, verses: "1-7" }
+        - { book: lam, chapter: 5, verses: "15-17" }
+        - { book: lam, chapter: 5, verses: "19-21" }
+    - refs: [{ book: ezek, chapter: 36, verses: "24-28" }]
+  versicle:
+    v: { la: "Scuto circúmdabit te véritas ejus.", en: "His truth shall compass thee with a shield." }
+    r: { la: "Non timébis a timóre noctúrno.", en: "Thou shalt not be afraid of the terror of the night." }
+
+lent-2:
+  antiphon:
+    la: "Faciámus hic tria tabernácula: † tibi unum, Móysi unum, et Elíæ unum."
+    en: "Let us make here three tabernacles, one for thee, and one for Moses, and one for Elias."
+  canticles:
+    - refs: [{ book: jer, chapter: 14, verses: "17-21" }]
+    - refs:
+        - { book: lam, chapter: 5, verses: "1-7" }
+        - { book: lam, chapter: 5, verses: "15-17" }
+        - { book: lam, chapter: 5, verses: "19-21" }
+    - refs: [{ book: ezek, chapter: 36, verses: "24-28" }]
+  versicle:
+    v: { la: "Scuto circúmdabit te véritas ejus.", en: "His truth shall compass thee with a shield." }
+    r: { la: "Non timébis a timóre noctúrno.", en: "Thou shalt not be afraid of the terror of the night." }
+
+lent-3:
+  antiphon:
+    la: "Si in dígito Dei ejício dæmónia, profécto pervénit in vos regnum Dei."
+    en: "If I by the finger of God cast out devils; doubtless the kingdom of God is come upon you."
+  canticles:
+    - refs: [{ book: jer, chapter: 14, verses: "17-21" }]
+    - refs:
+        - { book: lam, chapter: 5, verses: "1-7" }
+        - { book: lam, chapter: 5, verses: "15-17" }
+        - { book: lam, chapter: 5, verses: "19-21" }
+    - refs: [{ book: ezek, chapter: 36, verses: "24-28" }]
+  versicle:
+    v: { la: "Scuto circúmdabit te véritas ejus.", en: "His truth shall compass thee with a shield." }
+    r: { la: "Non timébis a timóre noctúrno.", en: "Thou shalt not be afraid of the terror of the night." }
+
+lent-4:
+  antiphon:
+    la: "Satiávit Dóminus quinque míllia hóminum de quinque pánibus et duóbus píscibus."
+    en: "The Lord filled up five thousand men with five loaves of bread and two fish."
+  canticles:
+    - refs: [{ book: jer, chapter: 14, verses: "17-21" }]
+    - refs:
+        - { book: lam, chapter: 5, verses: "1-7" }
+        - { book: lam, chapter: 5, verses: "15-17" }
+        - { book: lam, chapter: 5, verses: "19-21" }
+    - refs: [{ book: ezek, chapter: 36, verses: "24-28" }]
+  versicle:
+    v: { la: "Scuto circúmdabit te véritas ejus.", en: "His truth shall compass thee with a shield." }
+    r: { la: "Non timébis a timóre noctúrno.", en: "Thou shalt not be afraid of the terror of the night." }
+
+passion-sunday:
+  antiphon:
+    la: "Ego glóriam meam non quæro: † est qui quærat, et júdicet."
+    en: "I seek not Mine Own glory; there is One That seeketh and judgeth."
+  versicle:
+    v: { la: "Ne perdas cum ímpiis, Deus, ánimam meam.", en: "Take not away my soul, O God, with the wicked." }
+    r: { la: "Et cum viris sánguinum vitam meam.", en: "Nor my life with bloody men." }
+
+palm-sunday:
+  antiphon:
+    la: "Hosánna fílio David: † benedíctus, qui venit in nómine Dómini, Rex Israël: † Hosánna in excélsis."
+    en: "Hosanna to the Son of David! Blessed is He that cometh in the Name of the Lord. O King of Israel: Hosanna in the highest!"
+  versicle:
+    v: { la: "Ne perdas cum ímpiis, Deus, ánimam meam.", en: "Take not away my soul, O God, with the wicked." }
+    r: { la: "Et cum viris sánguinum vitam meam.", en: "Nor my life with bloody men." }

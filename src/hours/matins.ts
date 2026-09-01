@@ -94,6 +94,7 @@ import { getNocturnReadings, type NocturnReading } from '../propers/nocturn-read
 import { getOctaveReading } from '../propers/octave-readings';
 import { getMatinsSaintOverride, getMatinsCommonOverride, type MatinsPsalmodyScheme } from './matins-psalmody-overrides';
 import matinsSundayAntiphonsData from '../data/hours/matins-sunday-antiphons.yml';
+import matinsSundayNocturn3OverridesData from '../data/hours/matins-sunday-nocturn3-overrides.yml';
 import matinsFerialAntiphonsData from '../data/hours/matins-ferial-antiphons.yml';
 import type { Weekday } from '../calendar/types';
 
@@ -125,6 +126,24 @@ interface MatinsSundayAntiphons {
   nocturn3: SundayNocturn;
 }
 const sundayAntiphons = matinsSundayAntiphonsData as unknown as MatinsSundayAntiphons;
+
+// Septuagesima through Palm Sunday inclusive: Nocturn III takes a
+// per-Sunday antiphon (and, for some of these Sundays, its own canticles/
+// versicle too) instead of the plain-season "Allelúja" default — see
+// data/hours/matins-sunday-nocturn3-overrides.yml's own header.
+type SundayNocturn3Overrides = Record<string, Partial<SundayNocturn>>;
+const sundayNocturn3Overrides = matinsSundayNocturn3OverridesData as unknown as SundayNocturn3Overrides;
+
+function sundayNocturn3For(temporalId: string | undefined): SundayNocturn {
+  const base = sundayAntiphons.nocturn3;
+  const override = temporalId ? sundayNocturn3Overrides[temporalId] : undefined;
+  if (!override) return base;
+  return {
+    canticles: override.canticles ?? base.canticles,
+    antiphon: override.antiphon ?? base.antiphon,
+    versicle: override.versicle ?? base.versicle,
+  };
+}
 
 interface FerialGroup {
   psalms: PsalmRef[];
@@ -691,7 +710,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     parts.push(...sundayPsalmNocturn(sundayAntiphons.nocturn2, day));
     parts.push(...(nocturn2Readings ?? []));
     parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[2]}` });
-    parts.push(...sundayCanticleNocturn(sundayAntiphons.nocturn3, day));
+    parts.push(...sundayCanticleNocturn(sundayNocturn3For(temporalId), day));
     parts.push(...(nocturn3Readings ?? []));
     parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
     parts.push({ kind: 'versicle', text: resolveCommon('te-decet-laus') });
