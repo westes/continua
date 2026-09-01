@@ -72,12 +72,39 @@ describe.each(LITTLE_HOURS)('resolveOrdo(%s, ...)', (hourId) => {
     expect(prayer && prayer.kind === 'prayer' ? prayer.text.text.en : undefined).toContain('Let us pray.');
   });
 
-  it('resolves a shared Preces (Kyrie/Pater Noster + short litany) after the chapter, identical across all three hours', () => {
-    const ordo = resolveOrdo(hourId, TUESDAY);
-    const preces = ordo.parts.find((p) => p.kind === 'preces' && p.label === 'Preces');
+  it('resolves the shared Kyrie/Pater Noster after the chapter on every day, identical across all three hours', () => {
+    const sunday = resolveOrdo(hourId, SUNDAY);
+    const tuesday = resolveOrdo(hourId, TUESDAY);
+    for (const ordo of [sunday, tuesday]) {
+      const kyriePater = ordo.parts.find((p) => p.kind === 'preces' && p.label === undefined);
+      expect(kyriePater && kyriePater.kind === 'preces' ? kyriePater.text.status.en : undefined).toBe('verified');
+      expect(kyriePater && kyriePater.kind === 'preces' ? kyriePater.text.text.en : undefined).toContain(
+        'Lord, have mercy.',
+      );
+      expect(kyriePater && kyriePater.kind === 'preces' ? kyriePater.text.text.en : undefined).toContain(
+        'Our Father',
+      );
+    }
+  });
+
+  it('resolves the further Preces versicles only on a bare ferial day, not on Sunday or a sanctoral winner', () => {
+    // Plain ferial (post-Pentecost 15's own week, no sanctoral winner) —
+    // see prime.test.ts's own use of this date for the same reason.
+    const feria = resolveOrdo(hourId, '2026-09-07');
+    const preces = feria.parts.find((p) => p.kind === 'preces' && p.label === 'Preces');
     expect(preces && preces.kind === 'preces' ? preces.text.status.en : undefined).toBe('verified');
-    expect(preces && preces.kind === 'preces' ? preces.text.text.en : undefined).toContain('Lord, have mercy.');
-    expect(preces && preces.kind === 'preces' ? preces.text.text.en : undefined).toContain('Our Father');
+    expect(preces && preces.kind === 'preces' ? preces.text.text.en : undefined).toContain(
+      'O Lord, God of hosts, convert us.',
+    );
+
+    const sunday = resolveOrdo(hourId, SUNDAY);
+    expect(sunday.parts.some((p) => p.kind === 'preces' && p.label === 'Preces')).toBe(false);
+
+    // TUESDAY is St. Edward the Confessor's day (semiduplex sanctoral
+    // winner) — a sanctoral winner also drops the ferial-only Preces, not
+    // just Sunday.
+    const tuesday = resolveOrdo(hourId, TUESDAY);
+    expect(tuesday.parts.some((p) => p.kind === 'preces' && p.label === 'Preces')).toBe(false);
   });
 
   it('ends with the shared Little Hour conclusion, identical across all three hours', () => {
