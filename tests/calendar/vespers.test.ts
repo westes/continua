@@ -92,16 +92,18 @@ describe('resolveEveningDay', () => {
   });
 
   it('a higher-ranked today keeps its own Second Vespers against a lower-ranked tomorrow, even below the old duplex-2-classis floor', () => {
-    // Aug 31, 2026: St. Raymond Nonnatus (Semiduplex) vs. Sep 1's St. Giles
-    // (Simplex). Raymond outranks Giles, so Raymond should keep his own
+    // Feb 5, 2026: St. Agatha (Semiduplex) vs. Feb 6's St. Dorothea
+    // (Simplex). Agatha outranks Dorothea, so Agatha should keep her own
     // evening even though Semiduplex never cleared the old fixed
     // duplex-2-classis floor -- the real "De Concurrentia Officii" rule is a
     // direct comparison against tomorrow's rank, not a fixed threshold on
-    // today alone. Reported by the user 2026-08-31.
-    const day = resolveEveningDay('2026-08-31');
-    expect(day.date).toBe('2026-08-31');
-    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-raymond-nonnatus' });
-    expect(day.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'st-giles', vespersNote: 'tomorrow' }));
+    // today alone. Originally reported by the user 2026-08-31 against Aug
+    // 31/Sep 1 (St. Raymond Nonnatus vs. St. Giles); re-pointed at this pair
+    // once St. Giles was dropped from the Sept 1 calendar (2026-09-01).
+    const day = resolveEveningDay('2026-02-05');
+    expect(day.date).toBe('2026-02-05');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-agatha' });
+    expect(day.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'st-dorothea', vespersNote: 'tomorrow' }));
   });
 
   it('an exact rank tie goes to tomorrow, per the rubric\'s tie-break', () => {

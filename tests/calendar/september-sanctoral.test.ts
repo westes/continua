@@ -7,20 +7,13 @@ import { getDayCollect } from '../../src/hours/resolve-common';
 // the Sept 1 collision test deliberately uses 2025 *because* Aug 31
 // falls on Sunday that year — see its own comment.
 describe('September sanctoral pull (first pass)', () => {
-  it('St. Giles wins outright at Simplex over a genuinely unwinnable stub', () => {
-    // 2025-09-01 no longer qualifies as a clean year for this: Aug 31,
-    // 2025 is a Sunday, and St. Raymond Nonnatus (semiduplex as of the
-    // rank-deflation fix) loses outright to an ordinary Sunday and
-    // transfers forward onto Sept 1, winning there instead of Giles
-    // (semiduplex > simplex) -- see the collision test below.
+  it('Sept 1 is a plain ferial day -- St. Giles and Ss. Twelve Brothers deliberately dropped from the calendar (user decision, 2026-09-01), files kept on disk for possible restoration', () => {
     const day = resolveDay('2026-09-01');
-    expect(day.winner).toEqual({ kind: 'sanctoral', id: 'st-giles', name: 'St. Giles, Abbot', nameLa: 'Sanctus Ægidius, Abbas', rank: 'simplex' });
-    expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'ss-twelve-brothers', name: 'Ss. Twelve Brothers, Martyrs', nameLa: 'Duodecim Fratres, Martyres', rank: 'simplex' },
-    ]);
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-14' });
+    expect(day.commemorations).toEqual([]);
   });
 
-  it('in a year where Aug 31 falls on Sunday, St. Raymond Nonnatus (semiduplex) loses outright to the Sunday, transfers forward onto Sept 1, and wins the collision there over both native Simplex candidates', () => {
+  it('in a year where Aug 31 falls on Sunday, St. Raymond Nonnatus (semiduplex) loses outright to the Sunday and transfers forward onto Sept 1, winning there uncontested now that the native Sept 1 saints are dropped from the calendar', () => {
     const day = resolveDay('2025-09-01');
     expect(day.winner).toEqual({
       kind: 'sanctoral',
@@ -30,10 +23,7 @@ describe('September sanctoral pull (first pass)', () => {
       rank: 'semiduplex',
       transferredFrom: '2025-08-31',
     });
-    expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'ss-twelve-brothers', name: 'Ss. Twelve Brothers, Martyrs', nameLa: 'Duodecim Fratres, Martyres', rank: 'simplex' },
-      { kind: 'sanctoral', id: 'st-giles', name: 'St. Giles, Abbot', nameLa: 'Sanctus Ægidius, Abbas', rank: 'simplex' },
-    ]);
+    expect(day.commemorations).toEqual([]);
   });
 
   it('the Nativity of the BVM wins outright with a real proper collect and antiphon, commemorating a real secondary saint blocked by its own day (not its octave)', () => {
