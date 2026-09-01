@@ -1,13 +1,19 @@
-# Verified against the reference engine's own source data files:
-# web/www/horas/Latin/Commune/C11.txt's own [Ant 1] ("In Festis Beatae
-# Mariae Virginis" -- Common of Feasts of the BVM) and its English
-# counterpart. Reusable by any BVM feast keyed to `common: common-of-
-# the-bvm` (SaintRecord.benedictusCommon) that has no proper Benedictus
-# antiphon of its own -- e.g. our-lady-of-the-snows.yml.
+# Corrected 2026-08-31: originally read from C11.txt's [Ant 1] ("Sancta
+# Maria succurre miseris"), but that's this Common's *First Vespers*
+# antiphon, not the Lauds Benedictus one -- discovered while sourcing
+# magnificat-antiphon-common-of-the-bvm.yml, which made clear this file's
+# layout is Vespers1(Ant1) -> Matins -> Lauds(Ant2) -> minor hours ->
+# Vespers2(Ant3), the same pattern confirmed live for several sibling
+# Commons (see e.g. magnificat-antiphon-common-of-several-martyrs.yml's
+# own header). The real Lauds text is C11's own [Ant 2]. Not
+# independently live-queried for this specific Common. Reusable by any
+# BVM feast keyed to `common: common-of-the-bvm`
+# (SaintRecord.benedictusCommon) that has no proper Benedictus antiphon
+# of its own -- e.g. our-lady-of-the-snows.yml.
 id: benedictus-antiphon-common-of-the-bvm
 text:
-  la: "Sancta María, * succúrre míseris, juva pusillánimes, réfove flébiles, ora pro pópulo, intérveni pro clero, intercéde pro devóto femíneo sexu: séntiant omnes tuum juvámen, quicúmque célebrant tuam sanctam festivitátem."
-  en: "O Holy Mary, * be thou an help to the helpless, a strength to the fearful, a comfort to the sorrowful; pray for the people, plead for the clergy, make intercession for all women vowed to God: may all that are keeping this thine holy Feast-day feel the might of thine assistance."
+  la: "Beáta es, * María, quæ credidísti: perficiéntur in te, quæ dicta sunt tibi a Dómino, allelúja."
+  en: "O Mary * blessed art thou that didst believe! for there shall be a performance of those things which were told thee from the Lord. Alleluia."
 status:
   la: verified
   en: verified

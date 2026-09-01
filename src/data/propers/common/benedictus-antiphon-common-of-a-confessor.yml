@@ -1,15 +1,18 @@
-# Read directly from the reference engine's own source data files:
-# web/www/horas/Latin/Commune/C5.txt ("Commune Confessoris non
-# pontificis") and its English counterpart — matches this project's own
-# `common-of-a-confessor` category label (see collect-c5.yml's own
-# header). First saint to need this Common's own Benedictus antiphon
-# (st-alexius.yml, the only prior `common-of-a-confessor` saint, used a
-# Cistercian-specific alternate for his minor hours instead and had no
-# Benedictus antiphon recorded at all).
+# Corrected 2026-08-31: originally read from C5.txt's [Ant 1] ("Similabo
+# eum"), but that's this Common's *First Vespers* antiphon, not the Lauds
+# Benedictus one -- discovered while sourcing
+# magnificat-antiphon-common-of-a-confessor.yml, whose own Second-Vespers
+# text made it obvious this file's C5.txt layout is Vespers1(Ant1) ->
+# Matins -> Lauds(Ant2) -> minor hours -> Vespers2(Ant3), not a flat
+# "[Ant 1] = Benedictus" read. Live-verified directly: St. Alexius's own
+# Lauds (07-17-2026) renders "Euge, serve bone" (C5's own [Ant 2]), not
+# "Similabo eum" -- matches the already-correct
+# benedictus-antiphon-common-of-an-abbot.yml exactly, which resolves to
+# this same C5 file via its own C5-1/C5b sub-variants (no Ant override).
 id: benedictus-antiphon-common-of-a-confessor
 text:
-  la: "Similábo eum * viro sapiénti, qui ædificávit domum suam supra petram."
-  en: "I will liken him unto a wise man, * which built his house upon a rock."
+  la: "Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui."
+  en: "Well done, thou good and faithful servant; * thou hast been faithful over a few things, I will make thee ruler over many things; enter thou into the joy of thy Lord."
 status:
   la: verified
   en: verified
