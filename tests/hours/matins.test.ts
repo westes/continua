@@ -53,10 +53,10 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
       antiphon?: { text: Record<string, string> };
     }[];
     expect(nocturnPsalms.map((p) => p.psalmNumber)).toEqual([43, 44, 47, 48, 49, 54, 55, 58, 59]);
-    // Groups: [43,44] [47,48] [49] [54,55] [58] [59] — antiphon only on
-    // each group's first psalm.
+    // Every psalm gets its own antiphon now (2026-09-01) — no more
+    // cross-psalm pairs sharing one antiphon under just the first psalm.
     const withAntiphon = nocturnPsalms.filter((p) => p.antiphon !== undefined).map((p) => p.psalmNumber);
-    expect(withAntiphon).toEqual([43, 47, 49, 54, 58, 59]);
+    expect(withAntiphon).toEqual([43, 44, 47, 48, 49, 54, 55, 58, 59]);
     for (const p of nocturnPsalms) {
       if (p.antiphon) {
         expect(p.antiphon.text.la).toBeTruthy();

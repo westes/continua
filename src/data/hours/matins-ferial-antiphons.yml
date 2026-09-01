@@ -11,6 +11,25 @@
 # across weekday boundaries in the process (e.g. Ps 43/44 — originally
 # Monday's own closing pair under "Eructávit" — now open Tuesday instead).
 #
+# **One antiphon per psalm (2026-09-01)**: the source's own Daym1_-Daym6_
+# tables frame several pairs of *different* psalms (not the same psalm
+# split across a chapter boundary, which stays paired) under one shared
+# antiphon — normal Monastic practice, but it read strangely once vu's own
+# reslice left some psalms paired and others solitary within the same
+# nocturn. Every one of those cross-psalm pairs is now split so each psalm
+# gets its own antiphon. Whichever psalm the shared antiphon's own words
+# actually quote (nearly always identifiable — e.g. "Rectos decet
+# collaudátio" is Ps 32's own opening, not Ps 33's) keeps that antiphon
+# unchanged; its former partner gets a new one. Per direct instruction, the
+# new antiphon is a real one borrowed from elsewhere in the reference
+# corpus when one exists for that exact psalm (the Roman secular ferial
+# Matins table also in this same file, `[Day0]`-`[Day6]`, individually
+# antiphons every psalm rather than pairing them; or a Tempora ferial
+# proper — Lenten or post-Pentecost weekday — that happens to quote the
+# psalm), and otherwise composed fresh from that psalm's own opening verse,
+# the same convention every other antiphon in this corpus already follows.
+# See each split psalm's own inline note below for exactly which.
+#
 # So this file's own groups do NOT mirror the source's per-weekday
 # grouping 1:1 — they're regrouped to fit vu's already-fixed 9-psalm list:
 # every psalm here keeps its own original antiphon text (sourced from
@@ -19,11 +38,10 @@
 # at `[Daym1]`-`[Daym6]` in the `English/` tree — the Latin file only
 # carries the full per-weekday text under the `_`-suffixed key, redirecting
 # its own unsuffixed `[Daym1]` etc. to it via `@:` references; the English
-# file has no such indirection), consecutive same-antiphon psalms are kept
-# grouped (this still happens whenever a pair survived the reslice
-# intact), and any psalm whose original partner moved to a different
-# weekday (or to a minor-hour slot, per `psalter-distribution.yml`'s own
-# "could-move" psalms) now stands alone under its own antiphon instead.
+# file has no such indirection); a same-psalm split across a chapter
+# boundary keeps its one shared antiphon (that's still one antiphon per
+# psalm, just spread over two verse ranges); any cross-psalm pair is now
+# split per the "One antiphon per psalm" note above.
 #
 # Versicle placement: each weekday draws its 9 psalms from 1-2 different
 # original source days (see each weekday's own comment below for exactly
@@ -32,7 +50,9 @@
 # weekday's psalms, placed at the same relative position it held in that
 # source day's own sequence (immediately after whichever group of this
 # weekday's psalms was originally its next-door neighbor, once the
-# psalms that moved out from between them are accounted for).
+# psalms that moved out from between them are accounted for). None of the
+# cross-psalm pairs split by the 2026-09-01 change carried a versicle of
+# their own, so no versicle needed repositioning.
 #
 # Not live-verified against a running query (Monastic ferial ordinary time
 # isn't independently re-derivable that way once psalter-distribution.yml's
@@ -45,10 +65,16 @@ monday:
   # across weekday boundaries here, so both antiphon grouping and the
   # versicle sit exactly where Daym1_ itself has them.
   groups:
-    - psalms: [{ number: 32 }, { number: 33 }]
+    - psalms: [{ number: 32 }]
       antiphon:
         la: "Rectos decet * collaudátio."
         en: "Praise is comely * for the upright."
+    - psalms: [{ number: 33 }]
+      # New (2026-09-01): no real antiphon found elsewhere in the corpus
+      # for Ps 33 alone; composed from its own opening verse (33:2).
+      antiphon:
+        la: "Benedícam Dóminum * in omni témpore."
+        en: "I will bless the Lord * at all times."
     - psalms: [{ number: 34 }]
       antiphon:
         la: "Expúgna * impugnántes me."
@@ -64,31 +90,50 @@ monday:
       antiphon:
         la: "Ne in ira tua * árguas me Dómine."
         en: "Do not chastise me * in thy wrath."
-    - psalms: [{ number: 38 }, { number: 39 }]
+    - psalms: [{ number: 38 }]
       antiphon:
         la: "Ut non delínquam * in lingua mea."
         en: "That I sin not * with my tongue."
+    - psalms: [{ number: 39 }]
+      # New (2026-09-01): real antiphon borrowed from Tempora/Quad6-5
+      # (Holy Week Wednesday ferial) — quotes Ps 39's own words (39:15).
+      antiphon:
+        la: "Confundántur * et revereántur, qui quærunt ánimam meam, ut áuferant eam."
+        en: "Let them be confounded and ashamed together, * that seek after my soul to take it away."
     - psalms: [{ number: 40 }]
       antiphon:
         la: "Sana Dómine * ánimam meam, quia peccávi tibi."
         en: "Lord, heal my soul; * for I have sinned against thee."
 
 tuesday:
-  # 43-44 are Monday's own tail (Daym1_); 47-58 are Daym2_'s own opening
-  # (6 of 9 psalms — the majority, hence Daym2_'s own versicle here); 59 is
+  # 43-44 are Monday's own tail (Daym1_); 47-58 are Daym2_'s own opening (6
+  # of 9 psalms — the majority, hence Daym2_'s own versicle here); 59 is
   # Wednesday's own opening (Daym3_). The versicle sits right after 49,
   # exactly where Daym2_ itself has it (between the "49,51" and "52,53"
   # groups — 51/52/53 all moved elsewhere in the reslice, but 49 and 54
   # remain each other's nearest neighbor once they're gone).
   groups:
-    - psalms: [{ number: 43 }, { number: 44 }]
+    - psalms: [{ number: 43 }]
+      # New (2026-09-01): the source's shared antiphon for this pair
+      # ("Eructávit") is actually Ps 44's own opening line, not Ps 43's —
+      # composed fresh from Ps 43's own opening verse (43:2) instead.
+      antiphon:
+        la: "Deus áuribus nostris * audívimus."
+        en: "We have heard, O God, * with our ears."
+    - psalms: [{ number: 44 }]
       antiphon:
         la: "Eructávit * cor meum verbum bonum."
         en: "Mine heart * is overflowing with a good matter."
-    - psalms: [{ number: 47 }, { number: 48 }]
+    - psalms: [{ number: 47 }]
       antiphon:
         la: "Magnus Dóminus * et laudábilis nimis."
         en: "Great is the Lord, * and greatly to be praised."
+    - psalms: [{ number: 48 }]
+      # New (2026-09-01): real antiphon borrowed from the Roman secular
+      # ferial Matins table (`[Day3]` below), Ps 48's own words (48:4).
+      antiphon:
+        la: "Os meum loquétur * sapiéntiam: et meditátio cordis mei prudéntiam."
+        en: "My mouth shall speak wisdom: * and the meditation of my heart understanding."
     - psalms: [{ number: 49 }]
       antiphon:
         la: "Deus deórum * Dóminus locútus est."
@@ -96,10 +141,16 @@ tuesday:
       versicle:
         v: { la: "Ímmola Deo sacrifícium laudis.", en: "Offer to God the sacrifice of praise." }
         r: { la: "Et redde Altíssimo vota tua.", en: "And pay thy vows to the most High." }
-    - psalms: [{ number: 54 }, { number: 55 }]
+    - psalms: [{ number: 54 }]
       antiphon:
         la: "Inténde in me * et exáudi me."
         en: "Be attentive to me * and hear me."
+    - psalms: [{ number: 55 }]
+      # New (2026-09-01): real antiphon borrowed from Tempora/Quad5-5
+      # (Lenten Friday ferial) — Ps 55's own words (55:9).
+      antiphon:
+        la: "Deus, vitam meam * annuntiávi tibi: posuísti lácrimas meas in conspéctu tuo."
+        en: "O God, I have declared to thee my life: * thou hast set my tears in thy sight."
     - psalms: [{ number: 58 }]
       antiphon:
         la: "Justa judicáte * fílii hóminum."
@@ -134,7 +185,15 @@ wednesday:
       antiphon:
         la: "Dómine * Deus in adjutórium meum inténde."
         en: "Make haste * O Lord God, to deliver me."
-    - psalms: [{ number: 71 }, { number: 72 }]
+    - psalms: [{ number: 71 }]
+      # New (2026-09-01): the source's shared antiphon for this pair
+      # ("Quam bonus Israël Deus") is actually Ps 72's own opening line,
+      # not Ps 71's — real antiphon borrowed instead from Tempora/Quad6-4
+      # (Holy Week Tuesday ferial), Ps 71's own words (71:12).
+      antiphon:
+        la: "Liberávit Dóminus * páuperem a poténte, et ínopem, cui non erat adjútor."
+        en: "The Lord hath delivered * the poor from the mighty, and the needy that had no helper."
+    - psalms: [{ number: 72 }]
       antiphon:
         la: "Quam bonus * Israël Deus."
         en: "How good is God * to Israel."
@@ -164,7 +223,13 @@ thursday:
       versicle:
         v: { la: "Deus, in sancto via tua.", en: "Thy way, O God, is in the holy place." }
         r: { la: "Quis Deus magnus sicut Deus noster.", en: "Who is the great God like our God?" }
-    - psalms: [{ number: 79 }, { number: 80 }]
+    - psalms: [{ number: 79 }]
+      # New (2026-09-01): no real antiphon found elsewhere in the corpus
+      # for Ps 79 alone; composed from its own opening verse (79:2).
+      antiphon:
+        la: "Qui regis Israël, inténde: * qui dedúcis velut ovem Joseph."
+        en: "Give ear, O thou that rulest Israel: * thou that leadest Joseph like a sheep."
+    - psalms: [{ number: 80 }]
       antiphon:
         la: "Exsultáte Deo * adjutóri nostro."
         en: "Sing aloud * unto God our strength."
@@ -172,7 +237,13 @@ thursday:
       antiphon:
         la: "Tu solus * altíssimus super omnem terram."
         en: "Thou alone * art the Most High over all the earth."
-    - psalms: [{ number: 83 }, { number: 84 }]
+    - psalms: [{ number: 83 }]
+      # New (2026-09-01): no real antiphon found elsewhere in the corpus
+      # for Ps 83 alone; composed from its own opening verse (83:2).
+      antiphon:
+        la: "Quam dilécta * tabernácula tua, Dómine virtútum!"
+        en: "How lovely are * thy tabernacles, O Lord of hosts!"
+    - psalms: [{ number: 84 }]
       antiphon:
         la: "Benedixísti * Dómine terram tuam."
         en: "Thou hast blessed * thy land, O Lord."
@@ -207,10 +278,16 @@ friday:
       antiphon:
         la: "Cantáte Dómino, * et benedícite nómini ejus."
         en: "Sing ye * to the Lord and bless his name."
-    - psalms: [{ number: 101 }, { number: 102 }]
+    - psalms: [{ number: 101 }]
       antiphon:
         la: "Clamor meus * ad te véniat, Deus."
         en: "O God * let my cry come unto Thee."
+    - psalms: [{ number: 102 }]
+      # New (2026-09-01): real antiphon borrowed from Tempora/Pent01-4
+      # (post-Pentecost Thursday ferial) — Ps 102's own words (102:8, 5).
+      antiphon:
+        la: "Miserátor * et miséricors Dóminus replet in bonis desidérium tuum."
+        en: "The Lord is compassionate and merciful, * who satisfieth thy desire with good things."
     - psalms: [{ number: 103, verses: "1-24" }, { number: 103, verses: "25-35" }]
       antiphon:
         la: "Bénedic, * ánima mea Dómino."
@@ -243,7 +320,16 @@ saturday:
       antiphon:
         la: "De necessitátibus meis * éripe me, Dómine."
         en: "From my necessities, deliver me, O Lord."
-    - psalms: [{ number: 107 }, { number: 108 }]
+    - psalms: [{ number: 107 }]
+      # New (2026-09-01): the source's shared antiphon for this pair
+      # ("Confitébor Dómino nimis in ore meo") is actually Ps 108's own
+      # words, not Ps 107's — real antiphon borrowed instead from
+      # Tempora/Pent02-5 (post-Pentecost Friday ferial), Ps 107's own
+      # words (107:4-5).
+      antiphon:
+        la: "Psallam tibi * in natiónibus, quia magna est super cælos misericórdia tua."
+        en: "I will sing unto thee * among the nations: for thy mercy is great above the heavens."
+    - psalms: [{ number: 108 }]
       antiphon:
         la: "Confitébor * Dómino nimis in ore meo."
         en: "I will greatly praise * the Lord with my mouth."
