@@ -18,8 +18,13 @@
 # Preces (Kyrie/Pater Noster + a short V/R litany) were added after the
 # chapter/collect, by deliberate choice, even though real Monastic
 # Terce/Sext/None has none — see minor-hour-preces-feriales.yml's header
-# for the reference-engine source and the "every day" simplification,
-# mirroring the same deviation already made for Prime.
+# for the reference-engine source, mirroring the same deviation already
+# made for Prime. Split 2026-09-01, by explicit choice: the Kyrie/Pater
+# Noster piece (minor-hour-kyrie-pater) always shows regardless of rank,
+# while the further Preces versicles proper (minor-hour-preces-feriales,
+# now trimmed to just those) are ferial-only (`ferialOnly: true`) —
+# see hours/resolve-common.ts's isFerialOrVigil, the same predicate
+# Lauds'/Vespers' own ferial Preces use.
 id: terce
 parts:
   - kind: opening-versicle
@@ -30,8 +35,11 @@ parts:
   - kind: chapter
     textRef: { source: common, id: terce-capitulum-per-annum }
   - kind: preces
+    textRef: { source: common, id: minor-hour-kyrie-pater }
+  - kind: preces
     textRef: { source: common, id: minor-hour-preces-feriales }
     label: Preces
+    ferialOnly: true
   - kind: day-collect
   - kind: preces
     textRef: { source: common, id: little-hour-conclusio }

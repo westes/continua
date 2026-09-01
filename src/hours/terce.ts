@@ -14,6 +14,7 @@ import {
   resolveMinorHourAntiphon,
   resolveMinorHourChapter,
   resolveSelfContainedHymn,
+  isFerialOrVigil,
 } from './resolve-common';
 import terceDefinitionData from '../data/hours/terce.yml';
 import antiphonsData from '../data/hours/terce-antiphons.yml';
@@ -32,6 +33,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'day-collect':
       return [{ kind: 'prayer', text: getDayCollect(day) }];
     case 'preces':
+      if (part.ferialOnly && !isFerialOrVigil(day)) return [];
       return [{ kind: 'preces', text: resolveCommon(part.textRef.id), label: part.label }];
     case 'variable': {
       // Only 'by-weekday' applies here — one antiphon framing all three

@@ -5,28 +5,24 @@
 # [Preces feriales minora]). Shared by Terce, Sext, and None — the Latin is
 # identical across all three per the reference engine.
 #
-# Deliberate deviation from real Monastic 1617 (which has no Preces at the
-# Little Hours at all) and from the reference engine's own rubric (which
-# says the Pater Noster here is "secreto," silent): by explicit choice this
-# project shows the Kyrie and Pater Noster as spoken text rather than
-# dropping them the way Prime drops its silently-said opening Pater/Ave —
-# see prime.yml's header for that contrasting precedent.
+# Trimmed 2026-09-01, by explicit choice: this file used to hold the whole
+# block (Kyrie + Pater Noster + all four V/R pairs) and was shown every
+# day. The Kyrie/Pater Noster piece was split out into its own always-
+# shown `minor-hour-kyrie-pater` part (see that file) so it keeps
+# appearing regardless of rank; what's left here — the three further V/R
+# pairs, the actual "Preces" versicles proper — is now ferial-only
+# (`ferialOnly: true` in data/hours/terce.yml etc.), matching real
+# historical practice (Preces are dropped on Sundays/feasts) more closely
+# than the old "every day" simplification did.
 #
-# Also by explicit choice, said on *every* day regardless of rank, not just
-# ferias — mirroring the same "every day" simplification already made for
-# Prime's ferial Preces (see prime-preces-feriales.yml). The reference
-# engine's Sunday/feast form for the Little Hours (Kyrie + Pater Noster +
-# a silently-said Creed, then a V/R block that's actually reused from
-# Compline's own dominical Preces) looks like a data-reuse quirk rather
-# than genuinely-authored minor-hour content, so it was deliberately not
-# imported.
+# Deliberate deviation from real Monastic 1617 (which has no Preces at the
+# Little Hours at all): by explicit choice this project still adds them on
+# ferial days, mirroring the same "every day" simplification originally
+# made for Prime's ferial Preces (see prime-preces-feriales.yml) but now
+# scoped to ferias only, per direct instruction.
 id: minor-hour-preces-feriales
 text:
   la: |
-    Kýrie, eléison. Christe, eléison. Kýrie, eléison.
-    Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum cotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris:
-    V. Et ne nos indúcas in tentatiónem:
-    R. Sed líbera nos a malo.
     V. Dómine, Deus virtútum, convérte nos.
     R. Et osténde fáciem tuam, et salvi érimus.
     V. Exsúrge, Christe, ádjuva nos.
@@ -34,10 +30,6 @@ text:
     V. Dómine, exáudi oratiónem meam.
     R. Et clamor meus ad te véniat.
   en: |
-    Lord, have mercy. Christ, have mercy. Lord, have mercy.
-    Our Father, who art in heaven, hallowed be thy name; thy kingdom come; thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us:
-    V. And lead us not into temptation:
-    R. But deliver us from evil.
     V. O Lord, God of hosts, convert us.
     R. And show us thy face, and we shall be saved.
     V. Arise, O Christ, and help us.

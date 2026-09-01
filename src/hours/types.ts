@@ -43,7 +43,14 @@ export type HourPart =
   // both Monastic and secular tracks, drops Compline's Preces to nothing
   // on a Double, with no substitute) — the flag still means "not the full
   // text here," just not "nothing here."
-  | { kind: 'preces'; textRef: PropersRef; label?: string; omitOnDouble?: true }
+  // `ferialOnly` marks a part that's dropped outright (not substituted)
+  // on a Sunday/feast day — Terce/Sext/None's own trailing Preces
+  // versicles (minor-hour-preces-feriales, trimmed 2026-09-01 to just
+  // those versicles) are the only current user: the Kyrie/Pater Noster
+  // that used to precede them in the same block was split out into its
+  // own always-shown `minor-hour-kyrie-pater` part instead of following
+  // suit, by explicit choice — see data/hours/terce.yml's header.
+  | { kind: 'preces'; textRef: PropersRef; label?: string; omitOnDouble?: true; ferialOnly?: true }
   | { kind: 'psalm'; psalmNumber: number; verses?: string; antiphonRef?: PropersRef }
   | { kind: 'canticle'; canticleId: string; textRef: PropersRef; antiphonRef?: PropersRef }
   | {

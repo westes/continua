@@ -1,0 +1,23 @@
+# Split out of minor-hour-preces-feriales.yml on 2026-09-01, by explicit
+# choice: Terce/Sext/None should always show the Kyrie and Pater Noster
+# (with its own "Et ne nos indúcas/Sed líbera nos a malo" completion),
+# even on a Sunday or feast, while the further Preces versicles that used
+# to follow in the same block (now trimmed down to just those, still under
+# minor-hour-preces-feriales's own id) become ferial-only — see that
+# file's header and data/hours/terce.yml's for the reasoning. Text
+# otherwise unchanged from what was verified there.
+id: minor-hour-kyrie-pater
+text:
+  la: |
+    Kýrie, eléison. Christe, eléison. Kýrie, eléison.
+    Pater noster, qui es in cælis, sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum cotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris:
+    V. Et ne nos indúcas in tentatiónem:
+    R. Sed líbera nos a malo.
+  en: |
+    Lord, have mercy. Christ, have mercy. Lord, have mercy.
+    Our Father, who art in heaven, hallowed be thy name; thy kingdom come; thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us:
+    V. And lead us not into temptation:
+    R. But deliver us from evil.
+status:
+  la: verified
+  en: verified
