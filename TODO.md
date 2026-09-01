@@ -29,6 +29,23 @@ across every hour and content type in this app.
      needs bilingual voice selection (La/En) worked out, and quality for Latin pronunciation
      is an open question. Open, not started — needs its own design pass before content/UI work
      begins.
+   - Sunday Matins Nocturn 3 antiphon is hardcoded to "Allelúja, allelúja, allelúja"
+     (`matins-sunday-antiphons.yml`) for every Sunday year-round — wrong for Septuagesima
+     through Passiontide. Live-verified against Monastic Tridentinum 1617 (2026-09-01): each of
+     the 9 Sundays in that stretch (Septuagesima, Sexagesima, Quinquagesima, Lent 1-4, Passion
+     Sunday, Palm Sunday) has its own distinct, Gospel-tied Nocturn 3 antiphon — same 3
+     canticles and same versicle throughout, only the antiphon text changes (confirmed
+     Nocturn 1-2 are unaffected). Needs a new per-temporal-id override on top of
+     `sundayCanticleNocturn`, plus the 9 antiphons themselves (already collected, not yet
+     authored into YAML): Septuagesima "Ite et vos in víneam meam, † et quod justum fúerit,
+     dabo vobis."; Sexagesima "Semen cécidit in terram bonam, † et ortum fecit fructum
+     céntuplum."; Quinquagesima "Miserére mei, Fili David! † Quid vis ut fáciam tibi? Dómine,
+     ut vídeam."; Lent 1 "Non in solo pane vivit homo, † sed in omni verbo quod procédit de ore
+     Dei."; Lent 2 "Faciámus hic tria tabernácula: † tibi unum, Móysi unum, et Elíæ unum."; Lent
+     3 "Si in dígito Dei..."; Lent 4 "Satiávit Dóminus quinque míllia hóminum de quinque pánibus
+     et duóbus píscibus."; Passion Sunday "Deus ádjuvat me, * et Dóminus suscéptor est ánimæ
+     meæ."; Palm Sunday "Hosánna..." (the last two need their full text, not just the
+     incipit, pulled from a live query before authoring).
 
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
@@ -4484,3 +4501,39 @@ correctly has no content file; instead `getMagnificatAntiphon` (`hours/resolve-c
 special-cases `saint.rank === 'vigil'` to fall through to the same `vespersMagnificatAntiphons`
 weekday-default table the plain temporal branch already used, before ever trying a Common
 lookup. `npm test` (810 passed) and `tsc --noEmit` pass.
+
+### Ferial Matins nocturn: one antiphon per psalm (2026-09-01)
+
+User flagged that the ferial (1-nocturn) weekday antiphons looked inconsistent — some psalms
+paired under one shared antiphon, others solitary, within the same nocturn. Root cause: the
+source's own per-weekday tables (`Daym1_`-`Daym6_`) do frame several *different-psalm* pairs
+under one shared antiphon (normal Monastic practice), and vu's `matins-ferial-antiphons.yml`
+had carried that pairing straight through — reading fine in the source's own untouched weekly
+layout, but looking arbitrary once `psalter-distribution.yml`'s reslice left some of those pairs
+intact and split others across weekday boundaries. Fixed by splitting every cross-psalm pair
+into two single-psalm groups (a same-psalm split across a chapter boundary, e.g. Ps 36:1-26/
+36:27-40, is unaffected — that's still one antiphon per psalm).
+
+For each split pair, whichever psalm the antiphon's own words actually quote (checked against
+`src/data/psalms/*.yml`, not assumed from position — several pairs listed the *second* psalm's
+own words under the first psalm's slot, e.g. Wednesday's "Quam bonus Israël Deus" pair, [71,72],
+is actually Ps 72's own opening, not 71's) keeps that antiphon; its former partner got a new
+one, per direct instruction: search the reference corpus for a real one before inventing.
+Sourcing that produced (6 of 10 real, 4 composed fresh — all directly quoting that psalm's own
+Vulgate text either way, the same convention every other antiphon in this corpus follows):
+- **Real, borrowed**: Ps 39 and 71 from `Tempora/Quad6-5` and `Tempora/Quad6-4` (Holy Week
+  ferial propers); Ps 55 from `Tempora/Quad5-5` (Lenten Friday ferial); Ps 102 from
+  `Tempora/Pent01-4`; Ps 107 from `Tempora/Pent02-5` (post-Pentecost ferial propers); Ps 48 from
+  the Roman *secular* ferial Matins table (`[Day0]`-`[Day6]`, same file as the Monastic table,
+  individually-antiphoned rather than paired — see [[vu_secular_source_ok]]).
+- **Composed fresh** (no match found anywhere in the corpus): Ps 33, 43, 79, 83 — each from its
+  own opening verse, in the same incipit style the rest of the corpus already uses.
+
+`tests/hours/matins.test.ts`'s ferial test updated (was asserting "antiphon only on each group's
+first psalm" — now every psalm in the nocturn has one). `npm test` (814 passed) and
+`tsc --noEmit` pass.
+
+**Not done in the same pass, confirmed as a separate real gap**: Sunday Matins' Nocturn 3
+"Allelúja, allelúja, allelúja" antiphon is wrong for Septuagesima-Passiontide — see this file's
+"Mechanism gaps" section above for the live-verified detail and the 9 antiphons already
+collected.
