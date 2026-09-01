@@ -1,0 +1,51 @@
+# Sunday Matins Nocturns I-III, ordinary-Paschaltide override — same shape
+# as matins-sunday-advent-nocturn-overrides.yml (a single season-wide
+# block, not per-Sunday), covering the ordinary Paschaltide Sundays: Low
+# Sunday through the Sunday before Ascension (day.season === 'eastertide'
+# in hours/matins.ts's dispatch) — live-verified identical on Low Sunday
+# and the 2nd Sunday after Easter (2026 cycle dates 04-12, 04-19) against
+# the local reference-engine CGI instance (`prayMatutinum`, Monastic
+# Tridentinum 1617, 2026-09-01). NOT applied to Easter Sunday itself
+# (which has its own wholly proper Matins, a different and much bigger
+# gap — see TODO.md's tabled "Easter's own octave" mechanism item) or to
+# `ascensiontide`, whose one Sunday (within the Octave of Ascension) has
+# its own genuinely proper content ("Eleváta est...") — a separate named-
+# Sunday-proper gap, not this seasonal-antiphon-overlay shape at all.
+#
+# Structurally different from the Advent override: Nocturns I and II here
+# each take a SINGLE antiphon covering all 6 psalms of the nocturn (not 3
+# separate antiphons, one per psalm-pair) — confirmed by the live query,
+# which showed only one antiphon before/after each whole nocturn's
+# psalmody, not one per pair. Nocturn III's antiphon is unchanged from the
+# plain-season default ("Allelúja, allelúja, allelúja" — omitted here,
+# falls through to matins-sunday-antiphons.yml's own nocturn3.antiphon);
+# only its canticles and versicle differ.
+
+nocturn1:
+  groups:
+    - psalms: [20, 21, 22, 23, 24, 25]
+      antiphon:
+        la: "Allelúja, lapis revolútus est, allelúja: ab óstio monuménti, allelúja, allelúja."
+        en: "Alleluia, the stone was rolled back, alleluia, from the door of the sepulchre, alleluia, alleluia."
+  versicle:
+    v: { la: "Surréxit Dóminus de sepúlcro, allelúja.", en: "The Lord is risen from the sepulchre, alleluia." }
+    r: { la: "Qui pro nobis pepéndit in ligno, allelúja.", en: "Who for us was hanged on the tree, alleluia." }
+
+nocturn2:
+  groups:
+    - psalms: [26, 27, 28, 29, 30, 31]
+      antiphon:
+        la: "Allelúja, quem quæris múlier? allelúja: vivéntem cum mórtuis? allelúja, allelúja."
+        en: "Alleluia, whom seek ye, woman? alleluia: the living among the dead? alleluia, alleluia."
+  versicle:
+    v: { la: "Surréxit Dóminus vere, allelúja.", en: "The Lord is risen indeed, alleluia." }
+    r: { la: "Et appáruit Simóni, allelúja.", en: "And hath appeared to Simon, alleluia." }
+
+nocturn3:
+  canticles:
+    - refs: [{ book: isa, chapter: 63, verses: "1-5" }]
+    - refs: [{ book: osee, chapter: 6, verses: "1-6" }]
+    - refs: [{ book: soph, chapter: 3, verses: "8-13" }]
+  versicle:
+    v: { la: "Gavísi sunt discípuli, allelúja.", en: "The disciples were glad, alleluia." }
+    r: { la: "Viso Dómino, allelúja.", en: "When they saw the Lord, alleluia." }

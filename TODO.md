@@ -4576,3 +4576,46 @@ precedence conflict between the two override tiers.
 New regression test in `tests/hours/matins.test.ts` (`Advent Sunday Nocturns I-III seasonal
 override`) asserts all 4 Advent Sundays render identically. `npm test` (818 passed),
 `tsc --noEmit`, and `npm run build` all pass.
+
+### Paschaltide Sunday Matins Nocturns I-III seasonal override (2026-09-01)
+
+Second follow-up, same day: does any other season need the same treatment? Live sweep of the
+reference source (`Psalterium/Psalmi/Psalmi matutinum.txt`) confirmed only 3 season-tagged
+blocks exist at all — `[Daym0]` (plain default), `[Advm0]` (Advent, done above), `[Paschm0]`
+(Paschaltide) — so Christmastide and post-Epiphany Sundays have no gap; Paschaltide does.
+
+Ordinary Paschaltide Sundays (Low Sunday through the Sunday before Ascension — `day.season ===
+'eastertide'`) get the same seasonal antiphon/versicle/canticle treatment as Advent, live-
+verified identical across 5 Sundays of the 2026 cycle (04-12 through 05-10). New Nocturn III
+canticles: Isa 63:1-5, Osee 6:1-6, Sophonias 3:8-13 (3 new scripture files — first content
+under the `osee`/`soph` book codes). Structurally different from Advent's own shape, not just
+different text: Nocturns I and II each take a **single** antiphon covering all 6 psalms of the
+nocturn, not 3 separate antiphons (one per psalm-pair) — confirmed by the live query showing
+only one antiphon before/after each whole nocturn's psalmody. Nocturn III's own antiphon is
+unchanged from the plain-season "Allelúja, allelúja, allelúja" default; only its canticles and
+versicle differ.
+
+New `data/hours/matins-sunday-paschaltide-nocturn-overrides.yml`; `hours/matins.ts`'s
+`sundayNocturnFor` generalized to a season-keyed lookup (renamed `MatinsSundayNocturnOverrides`)
+covering both Advent and Paschaltide.
+
+**Explicitly NOT covered by this fix, each its own separate thing**:
+- **Easter Sunday itself** — has a wholly proper Matins (different psalms too, not just
+  antiphons); this is the already-tabled "Easter's own octave" mechanism gap above, not folded
+  into this seasonal-overlay shape.
+- **The Sunday within the Octave of Ascension** (`ascensiontide`'s one Sunday) — live-checked
+  (2026 proof date 2026-05-17) and found to render its own genuinely proper content ("Eleváta
+  est...", Ps 8 instead of the fixed Ps 20-31 scheme) in the reference engine, because that
+  date's real office winner is a Duplex-rank saint (St. Paschal Baylon) whose own Common/proper
+  Matins wins outright. **Investigated, not a bug**: this app's Sunday psalmody is documented
+  above (Priority section, "Sunday's fixed 12-psalm/3-canticle psalmody") as deliberately fixed
+  and unconditional on every Sunday regardless of the office winner — a direct-instruction
+  non-reconstruction choice, not an oversight. The winning saint's own content still surfaces
+  generously through the separate Nocturn 2/3 *readings* pool (`buildReadingPool`, already
+  saint-aware); only the antiphon/psalm layer stays fixed. Changing the branch dispatch to let
+  a Sunday's winner override the fixed psalmody would reverse a settled design decision, not
+  close a gap — left alone.
+
+New regression test in `tests/hours/matins.test.ts` (`Paschaltide Sunday Nocturns I-III
+seasonal override`) asserts all 5 ordinary Paschaltide Sundays render identically. `npm test`
+(819 passed), `tsc --noEmit`, and `npm run build` all pass.

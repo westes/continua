@@ -1,0 +1,46 @@
+# Osee (Hosea) 6 — verses 1-6 transcribed from a live Divinum Officium
+# query (Monastic Tridentinum 1617, prayMatutinum, 2026-09-01, ordinary
+# Paschaltide Sundays — 2026 cycle) — see
+# data/hours/matins-sunday-paschaltide-nocturn-overrides.yml. Only the
+# verse range actually used by that Nocturn III canticle is authored;
+# "osee" (the Vulgate's own name for the book, matching this app's
+# Latin-abbreviation book-code convention already used for jer/lam/ezek/
+# sap/sir) is the first content under this book code.
+book: osee
+chapter: 6
+verses:
+  - n: 1
+    text:
+      la: "Veníte, et revertámur ad Dóminum, quia ipse cepit, et sanábit nos; * percútiet, et curábit nos."
+      en: "Come, and let us return to the Lord: for he hath taken us, and he will heal us: * he will strike, and he will cure us."
+    status: { la: verified, en: verified }
+  - n: 3
+    text:
+      la: "Vivificábit nos post duos dies; in die tértia suscitábit nos, * et vivémus in conspéctu ejus."
+      en: "He will revive us after two days: on the third day he will raise us up, * and we shall live in his sight."
+    status: { la: verified, en: verified }
+  - n: 3
+    text:
+      la: "Sciémus, sequemúrque, * ut cognoscámus Dóminum."
+      en: "We shall know, and we shall follow on, * that we may know the Lord."
+    status: { la: verified, en: verified }
+  - n: 3
+    text:
+      la: "Quasi dilúculum præparátus est egréssus ejus, * et véniet quasi imber nobis temporáneus et serótinus terræ."
+      en: "His going forth is prepared as the morning light, * and he will come to us as the early and the latter rain to the earth."
+    status: { la: verified, en: verified }
+  - n: 4
+    text:
+      la: "Quid fáciam tibi, Ephraim? quid fáciam tibi, Juda? misericórdia vestra quasi nubes matutína, * et quasi ros mane pertránsiens."
+      en: "What shall I do to thee, O Ephraim? what shall I do to thee, O Juda? * your mercy is as a morning cloud, and as the dew that goeth away in the morning."
+    status: { la: verified, en: verified }
+  - n: 5
+    text:
+      la: "Propter hoc dolávi in prophétis; occídi eos in verbis oris mei: * et judícia tua quasi lux egrediéntur."
+      en: "For this reason have I hewed them by the prophets, I have slain them by the words of my mouth: * and thy judgments shall go forth as the light."
+    status: { la: verified, en: verified }
+  - n: 6
+    text:
+      la: "Quia misericórdiam vólui, et non sacrifícium; * et sciéntiam Dei plus quam holocáusta."
+      en: "For I desired mercy, and not sacrifice: * and the knowledge of God more than holocausts."
+    status: { la: verified, en: verified }

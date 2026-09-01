@@ -273,6 +273,51 @@ describe('resolveOrdo("matins", ...) Advent Sunday Nocturns I-III seasonal overr
   });
 });
 
+// Follow-up, same day: the user asked whether other seasons need the same
+// treatment as Advent above. Live re-check (Monastic Tridentinum 1617)
+// found ordinary Paschaltide Sundays (Low Sunday through the Sunday
+// before Ascension) do too — same shape, but Nocturns I/II each take a
+// single antiphon covering all 6 psalms (not 3 antiphons, one per pair,
+// the way Advent/base/Advent do). Easter Sunday itself and the Sunday
+// within the Octave of Ascension are each their own separate, wholly
+// proper case — not covered by (or asserted here as) this seasonal
+// overlay.
+describe('resolveOrdo("matins", ...) Paschaltide Sunday Nocturns I-III seasonal override (2026-09-01 fix)', () => {
+  it('every ordinary Paschaltide Sunday (Low Sunday through the Sunday before Ascension) renders identical seasonal content', () => {
+    const dates = ['2026-04-12', '2026-04-19', '2026-04-26', '2026-05-03', '2026-05-10'];
+    const renders = dates.map((date) => resolveOrdo('matins', date));
+
+    for (const ordo of renders) {
+      const psalms = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
+      expect(psalms).toEqual([3, 94, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]);
+      const canticles = ordo.parts.filter((p) => p.kind === 'canticle') as { canticleId: string }[];
+      expect(canticles.map((c) => c.canticleId)).toEqual(['isa-63-1-5', 'osee-6-1-6', 'soph-3-8-13']);
+
+      const antiphons = ordo.parts.filter((p) => p.kind === 'antiphon') as { text: { text: Record<string, string> } }[];
+      // Nocturn III's antiphon is unchanged from the plain-season default.
+      expect(antiphons.at(-1)?.text.text.la).toBe('Ant. Allelúja, allelúja, allelúja.');
+      expect(antiphons.at(-2)?.text.text.la).toBe(
+        'Ant. Allelúja, quem quæris múlier? allelúja: vivéntem cum mórtuis? allelúja, allelúja.',
+      );
+      expect(antiphons.at(-3)?.text.text.la).toBe(
+        'Ant. Allelúja, lapis revolútus est, allelúja: ab óstio monuménti, allelúja, allelúja.',
+      );
+
+      const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
+      const [, nocturn1, nocturn2, nocturn3] = versicles;
+      expect(nocturn1?.text.text.la).toBe('V. Surréxit Dóminus de sepúlcro, allelúja.\nR. Qui pro nobis pepéndit in ligno, allelúja.');
+      expect(nocturn2?.text.text.la).toBe('V. Surréxit Dóminus vere, allelúja.\nR. Et appáruit Simóni, allelúja.');
+      expect(nocturn3?.text.text.la).toBe('V. Gavísi sunt discípuli, allelúja.\nR. Viso Dómino, allelúja.');
+    }
+
+    // Same content on every ordinary Paschaltide Sunday, not just individually correct.
+    const nocturn1Openings = renders.map(
+      (ordo) => (ordo.parts.filter((p) => p.kind === 'antiphon')[1] as { text: { text: Record<string, string> } }).text.text.la,
+    );
+    expect(new Set(nocturn1Openings).size).toBe(1);
+  });
+});
+
 describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunday) branch', () => {
   // 2026-08-17 -- St. Lawrence's own octave closing day ("In Octava S.
   // Laurentii Martyris ~ Duplex"), live-verified directly against the
