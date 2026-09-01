@@ -216,13 +216,15 @@ export interface LiturgicalDay {
   /** Set when this date's own native sanctoral candidate couldn't be kept
    * here at all (calendar/commemorations.ts's `decideOccurrence` `transfer`
    * signal) and moved to a later/earlier date instead. No landing date is
-   * recorded here — `resolveDay` only ever checks the immediate adjacent
-   * date, but a real landing can chain further than that (an unmodeled
-   * case noted in `applyIncomingTransfer`, e.g. a transfer running into
-   * Holy Week), so naming a specific "to" date risked asserting a wrong
-   * one; this exists purely so the display can say "not an omission, this
-   * office moved elsewhere" without claiming to know where. Distinct from
-   * — and not implied by — `Commemoration`, since a transferred-away
+   * recorded here — this exists purely so the display can say "not an
+   * omission, this office moved elsewhere" without needing the caller to
+   * separately go find where; the actual landing date is discoverable
+   * from the landing day's own winner/commemoration, tagged with
+   * `transferredFrom` (see calendar/index.ts's `resolveForwardTransferLanding`,
+   * which does chain forward through more than one impeded day when
+   * needed — e.g. anything impeded within Holy Week/the Easter Octave —
+   * up to its own `MAX_FORWARD_TRANSFER_LOOKBACK_DAYS` bound). Distinct
+   * from — and not implied by — `Commemoration`, since a transferred-away
    * candidate gets no commemoration on its own native date at all. */
   transferredAway?: { candidate: SanctoralIdentity };
 }

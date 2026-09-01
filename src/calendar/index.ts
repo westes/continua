@@ -13,10 +13,13 @@ import { applyEmberDay } from './ember-days';
 
 /**
  * A day's occurrence considered on its own — no awareness of what an
- * adjacent day might be trying to transfer in. `resolveDay` calls this for
- * the date itself *and* for yesterday/tomorrow (to check for an inbound
- * transfer) without ever recursing into their own adjacent-day checks —
- * that's what keeps this from being mutually recursive.
+ * adjacent day might be trying to transfer in. `resolveDay` calls this
+ * for the date itself, for tomorrow (a backward-direction Vigil transfer,
+ * single-hop), and — via `resolveForwardTransferLanding` — for up to
+ * `MAX_FORWARD_TRANSFER_LOOKBACK_DAYS` days *before* the date (a forward
+ * transfer can chain through more than one impeded day) — without ever
+ * recursing into any of those days' own adjacent-day checks in turn —
+ * that's what keeps this from being mutually/infinitely recursive.
  */
 function resolveNativeOccurrence(isoDate: string): { temporalCategory: TemporalCategory; result: OccurrenceResult } {
   const weekday = weekdayOf(isoDate);
@@ -59,13 +62,22 @@ function applyIncomingTransfer(
   fromDate: string,
 ): DayWinner {
   if (temporalCategory === 'privileged-feria-major') {
-    // Deferred: a transfer landing on one of these (the concrete case is
-    // Holy Week, right after Palm Sunday) needs its own Easter-date-keyed
-    // lookup table, the same way the reference engine handles it — not
-    // modeled yet. The transfer is simply not delivered here rather than
-    // guessed at. The lesser privileged-feria tier doesn't need this —
-    // ordinary collision/transfer logic is fine there, same as any
-    // ordinary-sunday landing.
+    // Never a landing spot, no matter the candidate's rank or the day's
+    // own winner — unlike every other category, a transferred-in
+    // candidate doesn't even get the bare "duplex-majus+ still gets a
+    // nod" commemoration a *native* occurrence of that rank would (live-
+    // verified 2026-09-01: the Annunciation, Duplex I. classis, passes
+    // through the entire Easter Octave with zero commemoration anywhere
+    // in it, unlike a same-ranked native occurrence there — e.g. St.
+    // Mark, Duplex II. classis, native within the Octave in some years,
+    // which *does* get commemorated). This single-hop refusal is the
+    // building block `resolveForwardTransferLanding` below chains
+    // through the whole privileged span (Holy Week + Easter Day + the
+    // Octave + Low Sunday) to find where a candidate actually lands —
+    // this function itself stays single-hop on purpose, same as the
+    // ordinary categories below. The lesser privileged-feria tier
+    // doesn't need this — ordinary collision/transfer logic is fine
+    // there, same as any ordinary-sunday landing.
     return winner;
   }
   // Tags the returned winner with where it transferred from, but only when
@@ -88,14 +100,85 @@ function applyIncomingTransfer(
     // not just take over because nothing else was assigned here.
     const decided = decideOccurrence(temporalCategory, winner.id, candidate);
     commemorations.push(...tagCommemorations(decided.commemorations));
-    // If the candidate fails here too (decided.transfer set), that's a
-    // transfer chain — not modeled, same "not delivered rather than
-    // guessed at" stance as the privileged-feria-major case above.
+    // If the candidate fails here too (decided.transfer set), the caller
+    // (resolveForwardTransferLanding, for a forward-direction candidate)
+    // keeps it queued and tries the next day — that's the real chain.
     return tagIfLanded(decided.winner);
   }
   const collision = resolveCollision(candidate, winner);
   commemorations.push(...tagCommemorations(collision.commemorations));
   return tagIfLanded(collision.winner);
+}
+
+// How far forward a still-unlanded candidate is allowed to keep looking
+// for a day — generous headroom over the worst real case found so far
+// (St. George, 2033: native Apr 23, impeded through the rest of Holy
+// Week + Easter Day + the Octave + Low Sunday, then further blocked by
+// 5 more already-occupied days in a row, landing May 4 — an 11-day
+// chain). Not expected to ever bind; exists so a pathological/malformed
+// sanctoral-calendar entry fails a candidate quietly (never lands, same
+// "not delivered rather than guessed at" stance as everywhere else in
+// this file) instead of the lookup silently walking forever.
+const MAX_FORWARD_TRANSFER_LOOKBACK_DAYS = 60;
+
+/**
+ * A forward-direction transfer (the vigil/backward case stays single-hop,
+ * see `resolveDay` below) can chain through more than one impeded day in
+ * a row — the concrete, and so far only observed, case is anything
+ * impeded within Holy Week/Easter Day/the Easter Octave/Low Sunday (all
+ * `privileged-feria-major` or `privileged-sunday`, none of which ever
+ * accept a landing, per `applyIncomingTransfer`'s own single-hop refusal
+ * above): live-verified 2033, three different candidates (St. Leo I,
+ * Ss. Soter & Caius, St. George) all transfer, skip the entire span, and
+ * queue up on the days immediately after it — in strict native-date
+ * order, each waiting for the nearest day not already claimed by a real
+ * native occurrence or an earlier-queued candidate ahead of it. That's a
+ * real FIFO queue, not just "the one most recent candidate," since
+ * multiple can be pending at once (all three above were, simultaneously,
+ * that same fortnight).
+ *
+ * Simulates that queue's state chronologically from
+ * `MAX_FORWARD_TRANSFER_LOOKBACK_DAYS` before `isoDate` up through
+ * `isoDate` itself (exclusive of any day on/after `isoDate` — those
+ * aren't resolved yet), then makes one landing attempt for `isoDate`
+ * against whichever candidate is oldest in the resulting queue, if any.
+ * Each day in the walk is judged only by its own `resolveNativeOccurrence`
+ * (never a fully-`resolveDay`-resolved day, including for the historical
+ * days being walked over) — consistent with `applyIncomingTransfer`
+ * itself, which was already only ever given a freshly native-resolved
+ * winner/commemorations, not a fully resolved one, even before this.
+ */
+function resolveForwardTransferLanding(
+  isoDate: string,
+  temporalCategory: TemporalCategory,
+  winner: DayWinner,
+  commemorations: Commemoration[],
+): DayWinner {
+  const queue: { candidate: SanctoralIdentity; fromDate: string }[] = [];
+  let cursor = addDays(isoDate, -MAX_FORWARD_TRANSFER_LOOKBACK_DAYS);
+  while (cursor < isoDate) {
+    const native = resolveNativeOccurrence(cursor);
+    const oldest = queue[0];
+    if (oldest) {
+      const scratchCommemorations: Commemoration[] = [];
+      const attempt = applyIncomingTransfer(oldest.candidate, native.temporalCategory, native.result.winner, scratchCommemorations, oldest.fromDate);
+      const landed =
+        (attempt.kind === 'sanctoral' && attempt.id === oldest.candidate.id) ||
+        scratchCommemorations.some((c) => c.kind === 'sanctoral' && c.id === oldest.candidate.id);
+      if (landed) {
+        queue.shift();
+      }
+    }
+    if (native.result.transfer?.direction === 'forward') {
+      queue.push({ candidate: native.result.transfer.candidate, fromDate: cursor });
+    }
+    cursor = addDays(cursor, 1);
+  }
+  const oldest = queue[0];
+  if (!oldest) {
+    return winner;
+  }
+  return applyIncomingTransfer(oldest.candidate, temporalCategory, winner, commemorations, oldest.fromDate);
 }
 
 /**
@@ -112,11 +195,8 @@ export function resolveDay(isoDate: string): LiturgicalDay {
   let winner = result.winner;
   const commemorations = [...result.commemorations];
 
-  const yesterdayIso = addDays(isoDate, -1);
-  const yesterday = resolveNativeOccurrence(yesterdayIso);
-  if (yesterday.result.transfer?.direction === 'forward') {
-    winner = applyIncomingTransfer(yesterday.result.transfer.candidate, temporalCategory, winner, commemorations, yesterdayIso);
-  }
+  winner = resolveForwardTransferLanding(isoDate, temporalCategory, winner, commemorations);
+
   const tomorrowIso = addDays(isoDate, 1);
   const tomorrow = resolveNativeOccurrence(tomorrowIso);
   if (tomorrow.result.transfer?.direction === 'backward') {

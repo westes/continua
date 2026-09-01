@@ -202,21 +202,31 @@ export function adventEmberDayOffset(isoDate: string): number | undefined {
  * the Christmas vigil (Dec 24 can land on a Sunday) — and a Sunday's own
  * privileged/ordinary status should win in that case regardless, so
  * Sundays are resolved straight from `bySeason` without consulting the
- * overrides at all. The one deliberate exception is Easter Sunday itself
- * (offset 0): `eastertide`'s own `bySeason` default is `ordinary-sunday`
- * (live-verified for the *ordinary* Sundays that follow it — see that
- * entry's own comment), but Easter Day needs the stronger
- * `privileged-sunday` tier instead (live-verified 2026-09-01: the
- * Annunciation, Duplex I. classis, transfers off Easter Day itself in
- * years they coincide, the same "transfers, no exception" behavior as
- * every other privileged-sunday case) — checked directly here rather
- * than via `offsets`, since offsets are never consulted for a Sunday.
+ * overrides at all. The deliberate exceptions are Easter Sunday itself
+ * (offset 0) and Low Sunday (offset 7, the Octave's own closing day):
+ * `eastertide`'s own `bySeason` default is `ordinary-sunday` (live-
+ * verified for the *ordinary* Sundays from the 2nd Sunday after Easter
+ * on — see that entry's own comment), but both bookend Sundays of the
+ * Easter Octave need the stronger `privileged-sunday` tier instead.
+ * Easter Day: live-verified 2026-09-01, the Annunciation (Duplex I.
+ * classis) transfers off it in years they coincide, the same "transfers,
+ * no exception" behavior as every other privileged-sunday case. Low
+ * Sunday: not independently collision-verified (no Monastic-track saint
+ * — `SanctiM/MM-DD.txt` — ever falls there across the real range of
+ * Easter dates, so no live test case exists), but its own formal rank in
+ * the reference source ("Dominica in Albis in Octava Paschæ ~ Duplex I.
+ * classis") matches Easter Day's own exactly, and no `Transfer:` note
+ * ever shows there even for a same-named non-Monastic-track saint
+ * (St. Isidore of Seville, 2027; St. Vincent Ferrer, 2043) that a real
+ * Monastic-track day would display — treated the same as Easter Day on
+ * that basis. Both checked directly here rather than via `offsets`,
+ * since offsets are never consulted for a Sunday.
  */
 export function resolveTemporalCategory(isoDate: string, season: Season, weekday: Weekday): TemporalCategory {
   const bySeasonEntry = temporalCategories.bySeason[season];
   const base = bySeasonEntry ? (weekday === 'sunday' ? bySeasonEntry.sunday : bySeasonEntry.feria) : 'ordinary-feria';
   if (weekday === 'sunday') {
-    if (season === 'eastertide' && easterOffsetOf(isoDate) === 0) {
+    if (season === 'eastertide' && [0, 7].includes(easterOffsetOf(isoDate))) {
       return 'privileged-sunday';
     }
     return base;

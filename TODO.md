@@ -19,7 +19,12 @@ across every hour and content type in this app.
 
 1. **Mechanism gaps** — a real design/code piece not built yet, blocking any content pass on
    it from starting:
-   - Easter's own octave — tabled, "a whole different discussion."
+   - ~~Easter's own octave~~ — DONE (2026-09-01): the transfer-cascade piece (a candidate
+     impeded within Holy Week/Easter Day/the Octave/Low Sunday now correctly skips the whole
+     span and keeps walking forward, FIFO, until it lands) is built and live-verified — see
+     the dated log's "Easter octave transfer cascade" entry. Content-wise, Easter Day/the
+     Octave's own full Matins proper (distinct psalms, not just antiphons) is still not
+     modeled — a separate, narrower remaining gap, not this one.
    - Date picker: `day-nav.ts` currently only steps a day at a time (prev/next); there's no
      way to jump to an arbitrary date without walking there one day at a time or editing the
      URL. Needs a calendar-grid picker UI — open, not started.
@@ -4705,3 +4710,60 @@ exercised correctly across hundreds of ordinary weekdays in the existing test su
 
 `npm test` (820 passed — one net fewer than before since two tests merged into one clearer
 case), `tsc --noEmit`, and `npm run build` all pass.
+
+### Easter octave transfer cascade — mechanism built (2026-09-01)
+
+Closes the "Easter's own octave" item from this file's own Priority list. User asked for it
+directly, then answered two design questions with real evidence rather than guesswork:
+"what happens to the saint's own day" and "what are the gating rules" for something impeded
+within Holy Week/the Easter Octave.
+
+**Root cause, found by reading the existing code rather than assuming**: `resolveDay` only ever
+checked yesterday/tomorrow for an inbound transfer — a single hop. There was already an honest,
+existing comment marking this exact gap (`applyIncomingTransfer`'s `privileged-feria-major`
+branch: "a transfer chain — not modeled... simply not delivered here rather than guessed at").
+Anything impeded in Holy Week just vanished rather than reappearing.
+
+**Live-verified real behavior (2033: Palm Sunday Apr 10 → Low Sunday Apr 24, five real saints
+falling inside that window) before building anything**:
+- A candidate impeded anywhere in the whole span (Holy Week, Easter Day, the Octave, Low
+  Sunday) skips the *entire* span — not just the day it was impeded on — and keeps walking
+  forward day by day past it, same as any ordinary transfer, until it finds a day that isn't
+  already spoken for by a real native occurrence or an earlier-queued candidate ahead of it in
+  line. St. Leo I (native Apr 11, Duplex) landed Apr 27; Ss. Soter & Caius (native Apr 22)
+  landed Apr 28 (right after Leo); St. George (native Apr 23) had to wait until May 4, well
+  past several already-occupied days.
+- **Multiple candidates can be pending at once** — a real FIFO queue ordered by native date,
+  not just "the one most recent candidate." All three above overlapped in their pending window.
+- **A transferred-in candidate never gets the "duplex-majus+ still gets a nod" commemoration**
+  a *native* occurrence of that rank would on one of these days — confirmed with the
+  Annunciation (Duplex I. classis, native Easter Sunday itself in 2035): zero commemoration
+  anywhere across the whole span, landing outright on Apr 4 (past Low Sunday, Apr 1 that year).
+  This is genuinely different from a native duplex-majus+ candidate (e.g. St. Mark, native
+  within some other year's Octave, which *does* get commemorated in place) — the "never
+  displaced, but gets a nod" treatment is reserved for a day's own native candidate, not
+  anything merely passing through.
+- **Low Sunday itself needed the same fix as Easter Day** — found while building this: it
+  carries the same formal "Duplex I. classis" rank as Easter Day in the source, but was
+  falling through to eastertide's plain `ordinary-sunday` default (today's earlier fix only
+  covered offset 0). Not independently collision-verified (no Monastic-track saint — a real
+  `SanctiM/MM-DD.txt` file — ever lands there across the real range of Easter dates), but
+  corroborated by its own rank label and by the complete absence of even a `Transfer:` note for
+  a same-dated non-Monastic-track saint (St. Isidore of Seville 2027, St. Vincent Ferrer 2043)
+  that a real Monastic day would show. Fixed in `calendar/temporal.ts`'s `resolveTemporalCategory`
+  alongside offset 0.
+
+**What got built**: a real `MAX_FORWARD_TRANSFER_LOOKBACK_DAYS`-bounded (60 days, generous
+headroom over the worst observed real case) queue simulation, `resolveForwardTransferLanding`
+in `calendar/index.ts` — walks chronologically from the lookback window up through the target
+date, replaying each day's own native occurrence and, if a candidate is already queued, one
+landing attempt per day (reusing `applyIncomingTransfer` completely unchanged — its existing
+`privileged-feria-major` no-op turned out to already be exactly the right single-hop refusal;
+the fix was purely wrapping it in an actual cascade instead of a dead end). Only forward-
+direction transfers chain this way; a Vigil's backward transfer stays single-hop as before —
+structurally different (displaces backward in time) and not observed to need it.
+
+New tests in `tests/calendar/transfer.test.ts` cover the full chain (Leo/Hermenegild/Tiburtius
+landing in strict native-date order past the whole 2033 span) and the Annunciation's own
+zero-commemoration case (2035). `npm test` (823 passed), `tsc --noEmit`, and `npm run build`
+all pass.
