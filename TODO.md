@@ -4767,3 +4767,32 @@ New tests in `tests/calendar/transfer.test.ts` cover the full chain (Leo/Hermene
 landing in strict native-date order past the whole 2033 span) and the Annunciation's own
 zero-commemoration case (2035). `npm test` (823 passed), `tsc --noEmit`, and `npm run build`
 all pass.
+
+### Correction, same day: `privileged-feria-major`'s own "duplex-majus+ still gets a nod" rule was wrong
+
+User pushed back immediately: "you dont commemorate -anything- from palm sunday through low
+sunday" — and was right. The cascade mechanism above was built reusing `applyIncomingTransfer`'s
+existing `privileged-feria-major` no-op unchanged, on the assumption that its sibling behavior
+in `decideOccurrence` (a *native* duplex-majus+ candidate there gets a bare commemoration, only
+below-majus ranks transfer) was itself correct — it had a citation (St. Mark, Duplex II. classis,
+"merely commemorated" within the Easter Octave). That citation turned out to be a misreading,
+not just unverified.
+
+Live-checked two more real dates before touching code: the Annunciation (Duplex I. classis, the
+highest rank that exists) transfers with **zero** commemoration on Holy Thursday itself in years
+it lands there (2027/2032/2043) — not just off a Sunday, off an ordinary Holy Week feria too.
+Then checked whether this was Holy-Week-specific or true of every `privileged-feria-major` use:
+Chair of St. Peter at Antioch (Duplex majus) transfers the same way off Ash Wednesday (2034).
+So the exception was wrong everywhere this category is used, not just the Easter span.
+
+Fixed: `commemorations.ts`'s `privileged-feria-major` case now matches `privileged-sunday`
+exactly — transfers every rank unconditionally, no commemoration ever, for anyone. Three
+existing tests had the old (wrong) assumption baked into their expected values and needed
+updating to real, live-verified outcomes, not just loosened: St. Mark (2030) now transfers
+instead of being commemorated, landing May 5 that year (vu's own dense April/May calendar
+pushes him well past his native date); the Annunciation's own 2035 landing moved from Apr 4 to
+Apr 6, since two *earlier*-native-dated candidates (St. Benedict, also Duplex I. classis, native
+Mar 21; St. Gabriel the Archangel, Duplex majus, native Mar 24) are now also correctly caught by
+the same span that year and queue ahead of her.
+
+`npm test` (822 passed), `tsc --noEmit`, and `npm run build` all pass.

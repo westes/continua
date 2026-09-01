@@ -143,11 +143,22 @@ export function decideOccurrence(
       };
 
     case 'privileged-feria-major':
-      // Ash Wednesday, Holy Week, the Easter Octave, the Vigil of
-      // Christmas — never displaced, same as privileged-sunday.
-      if (isAtLeast(sanctoral.rank, 'duplex-majus')) {
-        return { winner: temporalWinner, commemorations: [sanctoralCommemoration(sanctoral)] };
-      }
+      // Ash Wednesday, Holy Week, the Easter Octave, Low Sunday, the
+      // Vigils of Christmas/Pentecost — never displaced, and never gives
+      // even a bare commemoration to any rank, same as privileged-sunday.
+      // The "duplex-majus+ still gets a nod" branch this case used to
+      // have was wrong, not just unverified: the one case that seemed to
+      // support it (St. Mark, Duplex II. classis, "merely commemorated"
+      // within the Easter Octave) turns out to have been a misreading —
+      // live-verified 2026-09-01, direct instruction ("you dont
+      // commemorate -anything- from palm sunday through low sunday"),
+      // confirmed with two more dates on top of the Annunciation/Palm-
+      // Easter-Sunday evidence already in the privileged-sunday case
+      // below: the Annunciation (Duplex I. classis) transfers with zero
+      // commemoration on Holy Thursday itself in years it lands there
+      // (2027/2032/2043), and Chair of St. Peter at Antioch (Duplex
+      // majus) transfers off Ash Wednesday the same way (2034) — so the
+      // exception was wrong for Ash Wednesday too, not just Holy Week.
       return {
         winner: temporalWinner,
         commemorations: [],

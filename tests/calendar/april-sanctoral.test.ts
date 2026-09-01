@@ -18,12 +18,29 @@ describe('April sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it('St. Mark is only ever commemorated, never wins, within the Easter Octave', () => {
-    const day = resolveDay('2030-04-25');
-    expect(day.winner.kind).toBe('temporal');
-    expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-mark', name: 'St. Mark, Evangelist', nameLa: 'Sanctus Marcus, Evangelista', rank: 'duplex-2-classis' },
-    ]);
+  it('St. Mark gets nothing at all within the Easter Octave — not even a bare commemoration — and transfers past it instead', () => {
+    // Corrected 2026-09-01: nothing is ever commemorated anywhere from
+    // Palm Sunday through Low Sunday, no exception for any rank (direct
+    // instruction; live-verified against the Annunciation on Holy
+    // Thursday and Chair of St. Peter at Antioch on Ash Wednesday, both
+    // Duplex-majus+ and both transferring with zero commemoration). Mark
+    // (Duplex II. classis) transfers off Apr 25, 2030 the same way; vu's
+    // own dense calendar that week pushes his actual landing all the way
+    // to May 5 (every day in between already spoken for).
+    const native = resolveDay('2030-04-25');
+    expect(native.winner).toEqual({ kind: 'temporal', id: 'easter-sunday' });
+    expect(native.commemorations).toEqual([]);
+    expect(native.transferredAway?.candidate.id).toBe('st-mark');
+
+    const landing = resolveDay('2030-05-05');
+    expect(landing.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-mark',
+      name: 'St. Mark, Evangelist',
+      nameLa: 'Sanctus Marcus, Evangelista',
+      rank: 'duplex-2-classis',
+      transferredFrom: '2030-04-25',
+    });
   });
 
   it('St. Robert beats St. Catherine of Siena on their shared monastic-calendar date', () => {

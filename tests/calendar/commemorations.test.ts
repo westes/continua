@@ -89,21 +89,22 @@ describe('decideOccurrence — privileged-feria', () => {
 });
 
 describe('decideOccurrence — privileged-feria-major', () => {
-  it('is never displaced, same as privileged-sunday — duplex-majus and up are commemorated', () => {
-    // Verified: St. Mark, Duplex II. classis, only ever commemorated —
-    // never wins outright — within the Easter Octave.
-    for (const rank of ['duplex-majus', 'duplex-2-classis', 'duplex-1-classis'] as const) {
+  it('is never displaced, and never gives even a bare commemoration to any rank — everything transfers forward', () => {
+    // Corrected 2026-09-01, direct instruction: nothing is ever
+    // commemorated anywhere from Palm Sunday through Low Sunday — the
+    // earlier "duplex-majus+ still gets a nod" claim (citing St. Mark,
+    // Duplex II. classis, within the Easter Octave) was a misreading.
+    // Live-checked two more dates: the Annunciation (Duplex I. classis)
+    // transfers with zero commemoration on Holy Thursday itself in years
+    // it lands there, and Chair of St. Peter at Antioch (Duplex majus)
+    // does the same on Ash Wednesday — so the fix applies to every use
+    // of this category, not just Holy Week.
+    for (const rank of ['duplex-majus', 'duplex-2-classis', 'duplex-1-classis', 'duplex', 'semiduplex', 'simplex'] as const) {
       const result = decideOccurrence('privileged-feria-major', 'id', saint(rank));
       expect(result.winner).toEqual({ kind: 'temporal', id: 'id' });
-      expect(result.commemorations).toEqual([{ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank }]);
+      expect(result.commemorations).toEqual([]);
+      expect(result.transfer).toEqual({ candidate: saint(rank), direction: 'forward' });
     }
-  });
-
-  it('yields nothing short of duplex-majus — transfers instead', () => {
-    const result = decideOccurrence('privileged-feria-major', 'id', saint('duplex'));
-    expect(result.winner).toEqual({ kind: 'temporal', id: 'id' });
-    expect(result.commemorations).toEqual([]);
-    expect(result.transfer).toEqual({ candidate: saint('duplex'), direction: 'forward' });
   });
 });
 

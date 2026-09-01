@@ -76,12 +76,16 @@ export type FeastClass =
 // 1617 engine, which the original single-tier model wrongly forbade) —
 // see calendar/commemorations.ts's rules for `privileged-feria` (behaves
 // like `ordinary-sunday`: Duplex+ wins outright) vs `privileged-feria-major`
-// (behaves like `privileged-sunday`: never displaced at all, confirmed by
-// checking St. Mark, Duplex II. classis, merely commemorated rather than
-// winning within the Easter Octave). See data/calendar/temporal-
-// categories.yml for exactly which days fall in which tier — some of that
-// split (e.g. whether Pentecost's own Ember days share Lent's lesser tier
-// or Easter's major one) is still a reconstructed guess, not verified.
+// (behaves like `privileged-sunday`: never displaced, and — corrected
+// 2026-09-01 — never gets even a bare commemoration at any rank either;
+// an earlier claim that a duplex-majus+ candidate is "merely commemorated"
+// there, citing St. Mark within the Easter Octave, turned out to be a
+// misreading — direct instruction confirmed nothing is ever commemorated
+// anywhere from Palm Sunday through Low Sunday, and live-checking Ash
+// Wednesday found the same). See data/calendar/temporal-categories.yml
+// for exactly which days fall in which tier — some of that split (e.g.
+// whether Pentecost's own Ember days share Lent's lesser tier or
+// Easter's major one) is still a reconstructed guess, not verified.
 // `privileged-feria-minor` is a third, weaker tier, added during the
 // December sanctoral pull after finding Advent's own ordinary (non-Ember)
 // ferias have real standing of their own in the live engine — a Simplex
