@@ -29,23 +29,6 @@ across every hour and content type in this app.
      needs bilingual voice selection (La/En) worked out, and quality for Latin pronunciation
      is an open question. Open, not started — needs its own design pass before content/UI work
      begins.
-   - Sunday Matins Nocturn 3 antiphon is hardcoded to "Allelúja, allelúja, allelúja"
-     (`matins-sunday-antiphons.yml`) for every Sunday year-round — wrong for Septuagesima
-     through Passiontide. Live-verified against Monastic Tridentinum 1617 (2026-09-01): each of
-     the 9 Sundays in that stretch (Septuagesima, Sexagesima, Quinquagesima, Lent 1-4, Passion
-     Sunday, Palm Sunday) has its own distinct, Gospel-tied Nocturn 3 antiphon — same 3
-     canticles and same versicle throughout, only the antiphon text changes (confirmed
-     Nocturn 1-2 are unaffected). Needs a new per-temporal-id override on top of
-     `sundayCanticleNocturn`, plus the 9 antiphons themselves (already collected, not yet
-     authored into YAML): Septuagesima "Ite et vos in víneam meam, † et quod justum fúerit,
-     dabo vobis."; Sexagesima "Semen cécidit in terram bonam, † et ortum fecit fructum
-     céntuplum."; Quinquagesima "Miserére mei, Fili David! † Quid vis ut fáciam tibi? Dómine,
-     ut vídeam."; Lent 1 "Non in solo pane vivit homo, † sed in omni verbo quod procédit de ore
-     Dei."; Lent 2 "Faciámus hic tria tabernácula: † tibi unum, Móysi unum, et Elíæ unum."; Lent
-     3 "Si in dígito Dei..."; Lent 4 "Satiávit Dóminus quinque míllia hóminum de quinque pánibus
-     et duóbus píscibus."; Passion Sunday "Deus ádjuvat me, * et Dóminus suscéptor est ánimæ
-     meæ."; Palm Sunday "Hosánna..." (the last two need their full text, not just the
-     incipit, pulled from a live query before authoring).
 
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
@@ -4537,3 +4520,32 @@ first psalm" — now every psalm in the nocturn has one). `npm test` (814 passed
 "Allelúja, allelúja, allelúja" antiphon is wrong for Septuagesima-Passiontide — see this file's
 "Mechanism gaps" section above for the live-verified detail and the 9 antiphons already
 collected.
+
+### Sunday Matins Nocturn III seasonal override, Septuagesima-Palm Sunday (2026-09-01)
+
+Fixed the gap flagged above. New `data/hours/matins-sunday-nocturn3-overrides.yml`, keyed by
+`temporalId`, plus `hours/matins.ts`'s `sundayNocturn3For` (looked up with the `temporalId`
+`resolveOrdo` already computes, merged field-by-field over `matins-sunday-antiphons.yml`'s base
+`nocturn3` group — only the real Sunday branch uses it, not the Duplex+-weekday-feast branches,
+which stay saint/Common-specific as before).
+
+Re-verifying live (one `prayMatutinum` query per Sunday of the 2026 cycle, Monastic Tridentinum
+1617) turned up more than the antiphon-only change the earlier note assumed:
+- **Septuagesima, Sexagesima, Quinquagesima**: antiphon only — canticles (Isa 33:2-10/33:13-18,
+  Sir 36:14-19) and versicle ("Exaltáre Dómine in virtúte tua. / Cantábimus et psallémus
+  virtútes tuas.") are the same as the plain-season default.
+- **Lent 1-4**: a genuinely different set of 3 canticles (Jer 14:17-21, Lam 5:1-7,15-17,19-21,
+  Ezek 36:24-28 — new `data/scripture/jer-14.yml`, `lam-5.yml`, `ezek-36.yml`, the first content
+  under the `lam` book code) *and* a different versicle ("Scuto circúmdabit te véritas ejus. /
+  Non timébis a timóre noctúrno."), on top of the antiphon.
+- **Passion Sunday, Palm Sunday**: base canticles, but the versicle is "Ne perdas cum ímpiis,
+  Deus, ánimam meam. / Et cum viris sánguinum vitam meam." — not "Exaltáre Dómine." The earlier
+  note's placeholder Passion Sunday antiphon text ("Deus ádjuvat me...") was actually this
+  versicle, not the antiphon; the real antiphon is "Ego glóriam meam non quæro: † est qui
+  quærat, et júdicet." (John 8:50, that Sunday's own Gospel). Palm Sunday's full antiphon:
+  "Hosánna fílio David: † benedíctus, qui venit in nómine Dómini, Rex Israël: † Hosánna in
+  excélsis."
+
+New regression tests in `tests/hours/matins.test.ts` cover all three shapes (antiphon-only,
+antiphon+canticles+versicle, antiphon+versicle-only). `npm test` (817 passed), `tsc --noEmit`,
+and `npm run build` all pass.
