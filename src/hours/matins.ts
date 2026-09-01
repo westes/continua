@@ -18,16 +18,23 @@
 //     a *variable* number of readings, not the historical fixed 3 or the
 //     Rule's own "summer" contraction, deliberately not reproduced —
 //     this app reads in full year-round), the office winner's and every
-//     commemorated saint's own patristic/hagiographic/Gospel content, the
-//     plain temporal day's own content, and every active octave's own
-//     reading — is gathered into one ordered pool (`buildReadingPool`),
-//     then slotted across however many nocturns the day's psalmody has
-//     (`distributeIntoNocturns`), with no reading kind pinned to a
-//     particular nocturn number. On a 3-nocturn day the slotting is
-//     front-light: Nocturn 1 gets one reading, Nocturn 2 gets one, and
-//     Nocturn 3 absorbs the rest of the pool, however large (user, 2026-08)
-//     — not an even chunking of the pool. A pool of only one reading total
-//     goes in Nocturn 3, not Nocturn 1.
+//     commemorated saint's own patristic/hagiographic/Gospel content, and
+//     every active octave's own reading — is gathered into one ordered
+//     pool (`buildReadingPool`), then slotted across however many
+//     nocturns the day's psalmody has (`distributeIntoNocturns`), with no
+//     reading kind pinned to a particular nocturn number. On a 3-nocturn
+//     day the slotting is front-light: Nocturn 1 gets one reading,
+//     Nocturn 2 gets one, and Nocturn 3 absorbs the rest of the pool,
+//     however large (user, 2026-08) — not an even chunking of the pool. A
+//     pool of only one reading total goes in Nocturn 3, not Nocturn 1.
+//     The plain temporal day's own content (a governing Sunday's Moralia-
+//     in-Job-style patristic homily and its responsory) is pooled only on
+//     a real 3-nocturn day, not reused verbatim on the week's ferias
+//     (user, 2026-09-01: a plain feria showing that Sunday's own
+//     already-read homily and responsory read as a mechanism bug, not a
+//     deliberate rereading) — a 1-nocturn feria draws only on its own
+//     day's content (the reading plan, any saint/octave content specific
+//     to that date).
 //   - Where the historical office splits one continuous source across
 //     several numbered lessons, this app recombines them into one reading
 //     (see src/propers/octave-readings.ts's resolvePassages / src/propers/
@@ -462,38 +469,44 @@ function withSingleAntiphon(refs: PsalmRef[], antiphonText: ResolvedText, winner
  * gathered for `day` — the office winner (if sanctoral), every
  * commemorated saint (a transferred-in feast already appears as `day.winner`
  * once `resolveDay` has applied the transfer, so it needs no separate
- * lookup here), the plain temporal id itself (for an ordinary day's own
- * patristic content, e.g. a plain Sunday's Moralia-in-Job-style
- * commentary), and — for dates from the 1st Sunday of August through the
- * eve of Advent — the calendar-month/week id (`month-week-<id>`,
+ * lookup here), and — only on a real 3-nocturn day (Sunday, or a Duplex+
+ * feast) — the plain temporal id itself (that Sunday's own Moralia-in-
+ * Job-style commentary) plus, for dates from the 1st Sunday of August
+ * through the eve of Advent, the calendar-month/week id (`month-week-<id>`,
  * calendar/month-week-id.ts's monthWeekId): the real historical Nocturn 2
  * for the later post-Pentecost Sundays is keyed by civil calendar month,
  * not Easter offset (see that function's own header for why), so it's
- * pooled here as a second, independent source alongside `temporalId`,
- * same dual-key precedent as propers/bible-plan.ts's Dec25-Jan13 stretch —
- * deliberately inclusive, not just the winner, per the user's own "be
- * generous, not winner-takes-all" instruction (2026-08). */
-function nocturnReadingIds(day: LiturgicalDay, temporalId: string, date: string): string[] {
+ * pooled here as a second, independent source alongside `temporalId`.
+ * Restricting both to `threeNocturns` (user, 2026-09-01 bug report: a
+ * plain Tuesday's Matins was reusing the governing Sunday's own Nocturn 3
+ * homily *and* its responsory verbatim) — a ferial 1-nocturn day now only
+ * draws on its own day's content (the user's scripture-plan reading, any
+ * saint/octave content specific to that date), not the Sunday's own
+ * already-read homiletic material. */
+function nocturnReadingIds(day: LiturgicalDay, temporalId: string, date: string, threeNocturns: boolean): string[] {
   const ids = new Set<string>();
   // Not gated to `kind === 'sanctoral'` -- a named temporal override (e.g.
   // Immaculate Heart of Mary, calendar/movable-feasts.ts's applyMovableFeasts)
   // has its own authored nocturn-readings file keyed by its own id too,
-  // distinct from the plain governing-Sunday `temporalId` added below.
-  // Harmless to include unconditionally: on an ordinary day `day.winner.id`
-  // already equals `temporalId`, so the Set just dedupes.
-  ids.add(day.winner.id);
-  for (const c of day.commemorations) {
-    // Same reasoning as day.winner.id just above: a commemorated *temporal*
-    // identity (an Ember day merely commemorated under a stronger-ranked
-    // saint, e.g. calendar/ember-days.ts's applyEmberDay) has its own real
-    // nocturn-readings content too, not just a commemorated sanctoral one.
-    if (c.kind === 'sanctoral' || c.kind === 'temporal') ids.add(c.id);
+  // distinct from the plain governing-Sunday `temporalId` gated below. But
+  // on a plain ordinary feria `day.winner.id` *is* that same governing-
+  // Sunday `temporalId` (the temporal cycle IS the winner), so it must go
+  // through the same `threeNocturns` gate rather than being added
+  // unconditionally.
+  if (day.winner.kind === 'sanctoral' || day.winner.id !== temporalId || threeNocturns) {
+    ids.add(day.winner.id);
   }
-  // The plain temporalId/month-week content is only pooled when the day's
-  // own occurrence decision (calendar/commemorations.ts's decideOccurrence)
-  // actually retained the temporal identity in some form: the temporal
-  // cycle won outright (day.winner.kind === 'temporal' -- a plain ferial/
-  // Sunday, or a named temporal override like Christ the King), or it
+  for (const c of day.commemorations) {
+    // Same reasoning as day.winner.id just above.
+    if (c.kind === 'sanctoral' || (c.kind === 'temporal' && (c.id !== temporalId || threeNocturns))) ids.add(c.id);
+  }
+  // The plain temporalId/month-week content is the *governing Sunday's own*
+  // Nocturn 2/3 patristic material, real content for that Sunday itself —
+  // only pooled on a real 3-nocturn day, and (as before) only when the
+  // day's own occurrence decision (calendar/commemorations.ts's
+  // decideOccurrence) actually retained the temporal identity in some form:
+  // the temporal cycle won outright (day.winner.kind === 'temporal' -- a
+  // plain Sunday, or a named temporal override like Christ the King), or it
   // survives as a commemoration alongside a sanctoral winner. Excluded:
   // decideOccurrence's `ordinary-feria` branch, where a real feast --
   // however low-ranked -- wins with zero commemorations, correctly
@@ -501,7 +514,8 @@ function nocturnReadingIds(day: LiturgicalDay, temporalId: string, date: string)
   // duplex-2-classis, 2026-08-24 -- his own proper reading has no Nocturn
   // 3 content, and without this gate the leftover 13th-Sunday-after-
   // Pentecost/month-week content wrongly filled Nocturn 3 instead).
-  const temporalKept = day.winner.kind === 'temporal' || day.commemorations.some((c) => c.kind === 'temporal');
+  const temporalKept =
+    threeNocturns && (day.winner.kind === 'temporal' || day.commemorations.some((c) => c.kind === 'temporal'));
   if (temporalKept) {
     ids.add(temporalId);
     const monthWeek = monthWeekId(date);
@@ -554,7 +568,7 @@ function gospelReadingPart(r: NocturnReading, homily: NocturnReading | undefined
  * own scripture reading first, then each id's authored content in its own
  * file order (patristic commentary typically precedes a Gospel+homily —
  * see data/propers/nocturn-readings/*.yml), then active octaves. */
-function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string): ResolvedPart[] {
+function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, threeNocturns: boolean): ResolvedPart[] {
   const parts: ResolvedPart[] = [];
   for (const r of getBiblePlanReadings(temporalId, day.weekday, date)) {
     const responsory = r.responsory ? { text: r.responsory, status: { la: 'verified' as const, en: 'verified' as const } } : undefined;
@@ -578,7 +592,7 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string):
   // Not hardcoded to [2, 3]: Ember days' own nocturn-readings files use
   // `nocturn: 1` (their single-nocturn structure), so every tag present
   // must be handled, not just the usual Sunday/feast pair.
-  const ids = nocturnReadingIds(day, temporalId, date);
+  const ids = nocturnReadingIds(day, temporalId, date, threeNocturns);
   const byNocturn = new Map<number, ResolvedPart[]>();
   for (const id of ids) {
     const readings = getNocturnReadings(id);
@@ -648,7 +662,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // convention every other per-feast override in this app already uses
   // (see hours/resolve-common.ts's getOfficeOverrideId).
   const threeNocturns = day.weekday === 'sunday' || isDoubleOrHigher(winner);
-  const pool = buildReadingPool(day, temporalId, date);
+  const pool = buildReadingPool(day, temporalId, date, threeNocturns);
   const [nocturn1Readings, nocturn2Readings, nocturn3Readings] = distributeIntoNocturns(pool, threeNocturns ? 3 : 1);
 
   // Tenebrae's real rubric: during the Sacred Triduum the whole opening
