@@ -90,4 +90,29 @@ describe('resolveEveningDay', () => {
     expect(day.date).toBe('2026-08-24');
     expect(day.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'st-louis' }));
   });
+
+  it('a higher-ranked today keeps its own Second Vespers against a lower-ranked tomorrow, even below the old duplex-2-classis floor', () => {
+    // Aug 31, 2026: St. Raymond Nonnatus (Semiduplex) vs. Sep 1's St. Giles
+    // (Simplex). Raymond outranks Giles, so Raymond should keep his own
+    // evening even though Semiduplex never cleared the old fixed
+    // duplex-2-classis floor -- the real "De Concurrentia Officii" rule is a
+    // direct comparison against tomorrow's rank, not a fixed threshold on
+    // today alone. Reported by the user 2026-08-31.
+    const day = resolveEveningDay('2026-08-31');
+    expect(day.date).toBe('2026-08-31');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-raymond-nonnatus' });
+    expect(day.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'st-giles', vespersNote: 'tomorrow' }));
+  });
+
+  it('an exact rank tie goes to tomorrow, per the rubric\'s tie-break', () => {
+    // Aug 25, 2026: St. Louis (Simplex) vs. Aug 26's St. Zephyrinus (also
+    // Simplex) -- live-verified (see hasFirstVespers's own doc comment):
+    // "Vespera de sequenti; nihil de præcedenti." Tomorrow wins on the tie,
+    // and Louis (Simplex) is excluded from commemoration, same as any other
+    // Simplex predecessor.
+    const day = resolveEveningDay('2026-08-25');
+    expect(day.date).toBe('2026-08-26');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-zephyrinus' });
+    expect(day.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-louis')).toBe(false);
+  });
 });

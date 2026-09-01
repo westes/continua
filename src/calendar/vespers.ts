@@ -12,7 +12,7 @@ import type { Commemoration, DayWinner, LiturgicalDay } from './types';
 import { resolveDay } from './index';
 import { addDays } from './date-math';
 import { easterOffsetOf } from './temporal';
-import { isAtLeast } from './commemorations';
+import { compareFeastClass, isAtLeast } from './commemorations';
 import { getSaintRecord } from './feasts';
 import { getTemporalFeastRecord } from './temporal-feasts';
 
@@ -53,18 +53,27 @@ function hasFirstVespers(day: LiturgicalDay): boolean {
   return day.winner.kind === 'sanctoral';
 }
 
-/** Does this day keep its own Second Vespers regardless of what tomorrow is? */
+/** Does this day keep its own Second Vespers regardless of what tomorrow is,
+ * independent of any comparison against tomorrow's rank? Covers only the
+ * *absolute* cases — Sunday, a privileged feria, or a major fixed feast of
+ * the Lord. The ordinary sanctoral-vs-sanctoral case is decided separately,
+ * by direct rank comparison (see `resolveEveningDay`) rather than a fixed
+ * floor here: this function used to also require the winner be at least
+ * `duplex-2-classis`, but that's the wrong rule — the real "De Concurrentia
+ * Officii" rubric (divinum-officium-reference's rubrics.txt, Titulus XI)
+ * compares today's rank against tomorrow's directly, with ties going to
+ * tomorrow, not a fixed threshold on today alone. That floor produced a
+ * wrong result for 2026-08-31 -> 09-01: St. Raymond Nonnatus (Semiduplex,
+ * below the floor) lost his own Second Vespers to St. Giles (Simplex) even
+ * though Raymond outranks Giles. */
 function keepsOwnSecondVespers(day: LiturgicalDay): boolean {
-  if (
+  return (
     day.weekday === 'sunday' ||
     day.temporalCategory === 'privileged-feria-minor' ||
     day.temporalCategory === 'privileged-feria' ||
     day.temporalCategory === 'privileged-feria-major' ||
     isMajorFixedFeastOfTheLord(day.date)
-  ) {
-    return true;
-  }
-  return day.winner.kind === 'sanctoral' && isAtLeast(day.winner.rank, 'duplex-2-classis');
+  );
 }
 
 /**
@@ -200,6 +209,23 @@ function anticipated(today: LiturgicalDay, tomorrow: LiturgicalDay): LiturgicalD
  * would likewise displace an actual Sunday if one ever landed on Dec 24 or
  * an Ember Saturday. This is why it's a short, explicit list rather than a
  * threshold: these particular days are understood to be *absolute*.
+ *
+ * When neither side is covered by an absolute case and both today and
+ * tomorrow have a real sanctoral winner, the rubric's actual rule applies:
+ * direct rank comparison, with today keeping its own Second Vespers only if
+ * it *strictly* outranks tomorrow — an exact tie goes to tomorrow ("a
+ * Capitulo fit de sequenti cum commemoratione praecedentis"). Note this
+ * checks tomorrow's actual *winner*, not merely whether tomorrow's calendar
+ * weekday is Sunday — a plain Duplex can itself outright win an ordinary
+ * Sunday's daytime office (see commemorations.ts's header comment, e.g. St.
+ * Anne beating an ordinary Sunday on 2026-07-26), in which case it's that
+ * Duplex's own rank being compared, not some notion of "Sunday's rank".
+ * When tomorrow's winner is genuinely the Sunday itself (`kind !==
+ * 'sanctoral'`), today's sufficiently high sanctoral rank
+ * (`duplex-2-classis`+) still claims the evening outright per the rubric's
+ * "Duplex always keeps both Vespers" rule — handled by the
+ * `isAtLeast`-style fallback below, same floor as before, just no longer
+ * applied when tomorrow also has a real (comparable) sanctoral winner.
  */
 export function resolveEveningDay(isoDate: string): LiturgicalDay {
   const today = resolveDay(isoDate);
@@ -208,16 +234,25 @@ export function resolveEveningDay(isoDate: string): LiturgicalDay {
   if (isMajorFixedFeastOfTheLord(tomorrow.date)) {
     return tagVespersFrom(tomorrow);
   }
+
+  let todayWins: boolean;
   if (keepsOwnSecondVespers(today)) {
+    todayWins = true;
+  } else if (today.winner.kind === 'sanctoral' && tomorrow.winner.kind === 'sanctoral') {
+    todayWins = compareFeastClass(today.winner.rank, tomorrow.winner.rank) > 0;
+  } else if (today.winner.kind === 'sanctoral' && isAtLeast(today.winner.rank, 'duplex-2-classis')) {
+    todayWins = true;
+  } else {
+    todayWins = !hasFirstVespers(tomorrow);
+  }
+
+  if (todayWins) {
     // Today wins outright, but tomorrow is still commemorated here as
     // long as it's a real sanctoral winner — see
     // commemorationOfDisplacedSuccessor's own doc comment for why this
     // direction doesn't exclude Simplex the way the reverse one does.
     const commemoration = commemorationOfDisplacedSuccessor(today.winner, tomorrow.winner);
     return commemoration ? { ...today, commemorations: [...today.commemorations, commemoration] } : today;
-  }
-  if (!hasFirstVespers(tomorrow)) {
-    return today;
   }
   return anticipated(today, tomorrow);
 }
