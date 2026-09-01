@@ -18,21 +18,27 @@ describe('April sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it('St. Mark gets nothing at all within the Easter Octave — not even a bare commemoration — and transfers past it instead', () => {
+  it('St. Mark gets nothing at all within the Easter Octave — not even a bare commemoration — and surfaces on the 1st day of the Easter-octave backlog instead', () => {
     // Corrected 2026-09-01: nothing is ever commemorated anywhere from
     // Palm Sunday through Low Sunday, no exception for any rank (direct
     // instruction; live-verified against the Annunciation on Holy
     // Thursday and Chair of St. Peter at Antioch on Ash Wednesday, both
-    // Duplex-majus+ and both transferring with zero commemoration). Mark
-    // (Duplex II. classis) transfers off Apr 25, 2030 the same way; vu's
-    // own dense calendar that week pushes his actual landing all the way
-    // to May 5 (every day in between already spoken for).
+    // Duplex-majus+ and both transferring with zero commemoration). Per
+    // further direct instruction the same day, this doesn't cascade
+    // day-by-day looking for a free day: the Nth day after Low Sunday
+    // celebrates the Nth candidate that cleared the backlog's own
+    // duplex-majus+ floor that year (native-date order), winning
+    // outright and demoting whatever would have natively been there to
+    // a commemoration — see calendar/index.ts's `applyEasterOctaveBacklog`.
+    // Mark (Duplex II. classis, well above the floor) is the only
+    // candidate in 2030's own backlog, so he lands the 1st day after Low
+    // Sunday (Apr 28 that year) outright.
     const native = resolveDay('2030-04-25');
     expect(native.winner).toEqual({ kind: 'temporal', id: 'easter-sunday' });
     expect(native.commemorations).toEqual([]);
     expect(native.transferredAway?.candidate.id).toBe('st-mark');
 
-    const landing = resolveDay('2030-05-05');
+    const landing = resolveDay('2030-04-29');
     expect(landing.winner).toEqual({
       kind: 'sanctoral',
       id: 'st-mark',
@@ -41,6 +47,9 @@ describe('April sanctoral pull (first pass)', () => {
       rank: 'duplex-2-classis',
       transferredFrom: '2030-04-25',
     });
+    // St. Robert, native to this day, is demoted to a commemoration
+    // rather than winning or being skipped past.
+    expect(landing.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-robert')).toBe(true);
   });
 
   it('St. Robert beats St. Catherine of Siena on their shared monastic-calendar date', () => {

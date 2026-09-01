@@ -4796,3 +4796,45 @@ Mar 21; St. Gabriel the Archangel, Duplex majus, native Mar 24) are now also cor
 the same span that year and queue ahead of her.
 
 `npm test` (822 passed), `tsc --noEmit`, and `npm run build` all pass.
+
+### Easter-octave backlog redesigned — one-per-day, floor-gated, no rank fight (2026-09-01)
+
+Same day, a real design conversation rather than another live-verification pass: user rejected
+the multi-day cascading queue built above ("that's not a plan... we cant do a batch
+commemorations. we can do one a day."). New shape, per direct instruction:
+
+- **Gate**: only candidates at or above `duplex-majus` are worth carrying out of the span at
+  all — below that, a candidate simply lapses for the year, no trace, same as it already gets
+  none *within* the span itself. (Confirmed as the right floor by inventorying every fixed-date
+  saint that could ever fall in the whole reachable window, March 15 - May 2: only 5 ever clear
+  it — St. Benedict, St. Gabriel the Archangel, the Annunciation, St. Mark, Ss. Philip & James
+  — everything else in that range is plain Duplex or below.)
+- **Landing**: the Nth day after Low Sunday celebrates the Nth candidate that cleared the floor
+  that year, in native-date order — winning outright, no rank comparison against whatever would
+  natively be there, which is simply demoted to a commemoration. One candidate per day,
+  positional, not a search for the next free day.
+
+Replaced `resolveForwardTransferLanding`'s generic multi-day queue with two pieces:
+`easterOctaveBacklogFor(year)` (computes that year's whole backlog once, filtered to the floor)
+and `applyEasterOctaveBacklog` (the Nth-day lookup), both in `calendar/index.ts`. The ordinary
+single-hop yesterday/tomorrow transfer check (used everywhere else) is back to its original
+form — the whole redesign is now a dedicated, narrowly-scoped mechanism (same architectural
+pattern as `applyMarianSaturday`/`applyAdventFourVigilCommemoration`), not a generalized queue.
+
+**Real bug caught while re-verifying**: the ordinary single-hop check was independently picking
+up Low Sunday's own transfer signal and landing/commemorating a below-floor candidate (St.
+Fidelis, plain Duplex) the very next day — bypassing the new floor entirely. Fixed by excluding
+the whole Palm-Sunday-through-Low-Sunday span from that ordinary path (scoped by `easterOffsetOf`,
+not by category, so it doesn't also swallow an unrelated privileged Sunday elsewhere in the year
+like Advent II).
+
+Rewrote the tests this broke to real, live-verified outcomes for the new shape (2033: nothing
+that year clears the floor, so the whole backlog is empty and every impeded candidate lapses;
+2035: three candidates clear it and land the 1st/2nd/3rd day after Low Sunday in order). Then,
+having inventoried the 5 always-reachable duplex-majus+ candidates together, one more direct
+instruction: St. Patrick's own rank is bumped from the source's plain Duplex to duplex-majus
+(`data/calendar/saints/st-patrick.yml`) — a deliberate departure, not a transcription, same
+category of move as this app's existing late-canonization rank-deflation convention, just in
+the other direction — bringing his own count to 6.
+
+`npm test` (821 passed), `tsc --noEmit`, and `npm run build` all pass.

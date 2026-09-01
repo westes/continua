@@ -108,96 +108,78 @@ describe('transfer mechanism (resolveDay integration)', () => {
   });
 });
 
-// A forward transfer can chain through more than one impeded day in a
-// row — the whole Holy Week/Easter Day/Easter Octave/Low Sunday span
+// Anything impeded anywhere from Palm Sunday through Low Sunday
 // (2026-09-01: found real, live-verified precedence bugs in exactly this
-// area, then built the actual multi-hop mechanism per direct
-// instruction). `resolveForwardTransferLanding` in calendar/index.ts
-// walks up to `MAX_FORWARD_TRANSFER_LOOKBACK_DAYS` days back to find
-// where a still-unlanded candidate actually lands, in strict native-date
-// (FIFO) order against every other pending candidate.
-describe('multi-hop forward transfer through Holy Week/the Easter Octave', () => {
-  it('2033: St. Leo I (native Easter Monday, Duplex) chains all the way past the whole privileged span to land on Easter+8 — verified against the real reference engine', () => {
-    // Easter 2033 is Apr 17. Live-verified against the reference engine
-    // (Monastic Tridentinum 1617, 2026-09-01): Leo transfers off Apr 11
-    // (Monday of Holy Week) with no commemoration anywhere in Holy Week,
-    // Easter Day, the Octave, or Low Sunday (Apr 24), landing outright on
-    // Apr 27 there (Apr 25/26 already spoken for by St. Mark and Ss.
-    // Cletus & Marcellinus in the reference's own calendar). vu's own
-    // calendar differs on Apr 25-27 (different saints assigned), so this
-    // asserts the *mechanism* — Leo reaching a day past the whole span in
-    // the right relative order — not the exact reference-engine landing
-    // day, which depends on which calendar is in play.
+// area) doesn't cascade day-by-day looking for the next free day — per
+// direct instruction, that's not this app's mechanism (it already has
+// real precedent for stacking commemorations, and rejected both a
+// same-day batch and an open-ended search). Instead: only candidates at
+// or above `EASTER_OCTAVE_BACKLOG_FLOOR` (duplex-majus) are worth
+// carrying forward at all — anything weaker simply lapses for the year,
+// no trace, same as it already gets none within the span itself. Of
+// those that clear the floor, the Nth day after Low Sunday celebrates
+// the Nth one (native-date order), winning outright — no rank fight —
+// and demoting whatever would have natively been there to a
+// commemoration. See calendar/index.ts's `applyEasterOctaveBacklog`.
+describe('the Easter-octave backlog (Palm Sunday through Low Sunday)', () => {
+  it('2033: nothing impeded that year clears the duplex-majus floor, so the backlog is empty and every impeded candidate simply lapses', () => {
+    // Easter 2033 is Apr 17, Low Sunday Apr 24. Every candidate vu's own
+    // calendar puts inside that span this year (St. Leo I, Duplex;
+    // St. Hermenegild, Semiduplex; Ss. Tiburtius/Valerian/Maximus,
+    // Simplex; St. Anselm, Duplex; Ss. Soter & Caius, Semiduplex;
+    // St. George, Semiduplex; St. Fidelis of Sigmaringen, Duplex) is
+    // below duplex-majus.
     const holyMonday = resolveDay('2033-04-11');
     expect(holyMonday.winner).toEqual({ kind: 'temporal', id: 'palm-sunday' });
     expect(holyMonday.commemorations).toEqual([]);
     expect(holyMonday.transferredAway?.candidate.id).toBe('st-leo-i');
 
-    for (const impededDate of ['2033-04-13', '2033-04-17', '2033-04-21', '2033-04-24']) {
-      const day = resolveDay(impededDate);
-      expect(day.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-leo-i')).toBe(false);
+    for (const afterLowSunday of ['2033-04-25', '2033-04-26', '2033-04-27', '2033-04-28', '2033-04-29']) {
+      const day = resolveDay(afterLowSunday);
+      const ids = ['st-leo-i', 'st-hermenegild', 'ss-tiburtius-valerian-and-maximus', 'st-anselm', 'ss-soter-and-caius', 'st-george', 'st-fidelis-of-sigmaringen'];
+      expect(day.commemorations.some((c) => c.kind === 'sanctoral' && ids.includes(c.id))).toBe(false);
+      expect(day.winner.kind === 'sanctoral' ? ids.includes(day.winner.id) : false).toBe(false);
     }
-
-    // Lands the first day past the whole span not already spoken for by
-    // vu's own calendar (Apr 25 = St. Mark, native and unaffected).
-    const landing = resolveDay('2033-04-25');
-    expect(landing.winner).toEqual({
-      kind: 'sanctoral',
-      id: 'st-mark',
-      name: 'St. Mark, Evangelist',
-      nameLa: 'Sanctus Marcus, Evangelista',
-      rank: 'duplex-2-classis',
-    });
-    expect(landing.commemorations).toEqual([
-      {
-        kind: 'sanctoral',
-        id: 'st-leo-i',
-        name: 'St. Leo I, Pope, Confessor and Doctor of the Church',
-        nameLa: 'Sanctus Leo I, Papa, Confessor et Ecclesiæ Doctor',
-        rank: 'duplex',
-        transferredFrom: '2033-04-11',
-      },
-    ]);
   });
 
-  it('2033: three simultaneously-pending candidates (Leo, Hermenegild, Ss. Tiburtius/Valerian/Maximus) land in strict native-date order, none skipping ahead', () => {
-    const leo = resolveDay('2033-04-25').commemorations.find((c) => c.kind === 'sanctoral' && c.id === 'st-leo-i');
-    const hermenegild = resolveDay('2033-04-26').commemorations.find((c) => c.kind === 'sanctoral' && c.id === 'st-hermenegild');
-    const tiburtius = resolveDay('2033-04-27').commemorations.find(
-      (c) => c.kind === 'sanctoral' && c.id === 'ss-tiburtius-valerian-and-maximus',
-    );
-    expect(leo?.kind === 'sanctoral' ? leo.transferredFrom : undefined).toBe('2033-04-11');
-    expect(hermenegild?.kind === 'sanctoral' ? hermenegild.transferredFrom : undefined).toBe('2033-04-13');
-    expect(tiburtius?.kind === 'sanctoral' ? tiburtius.transferredFrom : undefined).toBe('2033-04-14');
-  });
-
-  it("2035: the Annunciation (native Easter Sunday itself, Duplex I. classis) transfers past the whole span with zero commemoration anywhere in it, queued behind two earlier-native-dated candidates also caught by the same span", () => {
-    // Easter 2035 is Mar 25 -- the Annunciation's own fixed date. Live-
-    // verified 2026-09-01: the real Monastic 1617 engine shows her
-    // transferring off Easter Day with no commemoration anywhere in Holy
-    // Week/the Octave/Low Sunday (Apr 1 that year) -- corrected the same
-    // day, direct instruction: nothing is ever commemorated anywhere in
-    // this span, at any rank, not even duplex-majus+ -- so a *native*
-    // occurrence there (e.g. St. Mark within some other year's Octave)
-    // gets exactly the same "transfers, no exception" treatment as a
-    // transferred-in candidate passing through, not the "still gets a
-    // nod" treatment this test used to assert existed.
+  it('2035: three candidates clear the floor (St. Benedict, St. Gabriel the Archangel, the Annunciation) and land on the 1st/2nd/3rd day after Low Sunday, in native-date order, each demoting that day\'s own native winner to a commemoration', () => {
+    // Easter 2035 is Mar 25 (the Annunciation's own fixed date), Low
+    // Sunday Apr 1. St. Benedict (native Mar 21, Duplex I. classis),
+    // St. Gabriel the Archangel (native Mar 24, Duplex majus), and the
+    // Annunciation (native Mar 25, Duplex I. classis) are all impeded
+    // and all clear the floor — live-verified 2026-09-01 that the
+    // Annunciation herself gets zero commemoration anywhere in the span.
     const easterSunday = resolveDay('2035-03-25');
     expect(easterSunday.winner).toEqual({ kind: 'temporal', id: 'easter-sunday' });
     expect(easterSunday.transferredAway?.candidate.id).toBe('annunciation');
-
-    for (const impededDate of ['2035-03-26', '2035-03-29', '2035-04-01']) {
+    for (const impededDate of ['2035-03-21', '2035-03-24', '2035-03-26', '2035-03-29', '2035-04-01']) {
       const day = resolveDay(impededDate);
       expect(day.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'annunciation')).toBe(false);
     }
 
-    // vu's own calendar also has St. Benedict (native Mar 21, also
-    // Duplex I. classis, also impeded that year) and St. Gabriel the
-    // Archangel (native Mar 24, Duplex majus) queued *ahead* of the
-    // Annunciation by native date -- they land Apr 4 and Apr 5
-    // respectively, pushing her actual landing to Apr 6.
-    const landing = resolveDay('2035-04-06');
-    expect(landing.winner).toEqual({
+    const day1 = resolveDay('2035-04-02');
+    expect(day1.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-benedict',
+      name: 'St. Benedict, Abbot (Transitus)',
+      nameLa: 'Sanctus Benedictus, Abbas (Transitus)',
+      rank: 'duplex-1-classis',
+      transferredFrom: '2035-03-21',
+    });
+    expect(day1.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-francis-of-paola')).toBe(true);
+
+    const day2 = resolveDay('2035-04-03');
+    expect(day2.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-gabriel-archangel',
+      name: 'St. Gabriel the Archangel',
+      nameLa: 'Sanctus Gabriel Archangelus',
+      rank: 'duplex-majus',
+      transferredFrom: '2035-03-24',
+    });
+
+    const day3 = resolveDay('2035-04-04');
+    expect(day3.winner).toEqual({
       kind: 'sanctoral',
       id: 'annunciation',
       name: 'The Annunciation of the Blessed Virgin Mary',
@@ -205,5 +187,11 @@ describe('multi-hop forward transfer through Holy Week/the Easter Octave', () =>
       rank: 'duplex-1-classis',
       transferredFrom: '2035-03-25',
     });
+    expect(day3.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-isidore-of-seville')).toBe(true);
+
+    // The backlog is exhausted after 3 days -- the 4th day after Low
+    // Sunday resolves with no override at all.
+    const day4 = resolveDay('2035-04-05');
+    expect(day4.winner.kind === 'sanctoral' ? day4.winner.transferredFrom : undefined).toBeUndefined();
   });
 });

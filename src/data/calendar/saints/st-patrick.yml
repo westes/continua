@@ -1,12 +1,18 @@
-# Read directly from the reference engine: untagged/default [Rank]
-# block of `web/www/horas/Latin/Sancti/03-17.txt` -- "vide C4;;Duplex;;3;;".
+# Reference source: untagged/default [Rank] block of
+# `web/www/horas/Latin/Sancti/03-17.txt` -- "vide C4;;Duplex;;3;;" (plain
+# Duplex). Rank bumped to duplex-majus here by direct instruction
+# (2026-09-01) -- a deliberate departure from the source, not a
+# transcription of it (see CLAUDE.md's "Not a reconstruction" -- this app
+# doesn't take the reference's own rank at face value everywhere, e.g.
+# the existing late-canonization deflation convention; this is the same
+# kind of deliberate move in the other direction).
 # Own proper [Oratio]; no [Ant 1] of its own, so the Benedictus antiphon
 # falls back to Common of a Confessor Bishop (C4), matching
 # st-andrew-corsini.yml. No Lectio7-9 in the source (6-lesson office).
 id: st-patrick
 name: "St. Patrick, Bishop and Confessor"
 nameLa: "Sanctus Patricius, Episcopus et Confessor"
-rank: duplex
+rank: duplex-majus
 common: common-of-a-confessor-bishop
 propers: "st-patrick"
 minorHoursCommon: common-of-a-confessor-bishop

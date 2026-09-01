@@ -1,9 +1,9 @@
-import type { Commemoration, DayWinner, LiturgicalDay, SanctoralIdentity, TemporalCategory } from './types';
+import type { Commemoration, DayWinner, FeastClass, LiturgicalDay, SanctoralIdentity, TemporalCategory } from './types';
 import { weekdayOf } from './weekday';
-import { resolveSeason, resolveTemporalCategory } from './temporal';
+import { resolveSeason, resolveTemporalCategory, easterOffsetOf } from './temporal';
 import { resolveTemporalId } from './temporal-id';
 import { getSanctoralCandidatesFor } from './feasts';
-import { decideOccurrence, compareFeastClass, type OccurrenceResult } from './commemorations';
+import { decideOccurrence, compareFeastClass, isAtLeast, type OccurrenceResult } from './commemorations';
 import { resolveCollision } from './collision';
 import { addDays, toIsoDate } from './date-math';
 import { easterSunday } from './easter';
@@ -14,12 +14,12 @@ import { applyEmberDay } from './ember-days';
 /**
  * A day's occurrence considered on its own — no awareness of what an
  * adjacent day might be trying to transfer in. `resolveDay` calls this
- * for the date itself, for tomorrow (a backward-direction Vigil transfer,
- * single-hop), and — via `resolveForwardTransferLanding` — for up to
- * `MAX_FORWARD_TRANSFER_LOOKBACK_DAYS` days *before* the date (a forward
- * transfer can chain through more than one impeded day) — without ever
- * recursing into any of those days' own adjacent-day checks in turn —
- * that's what keeps this from being mutually/infinitely recursive.
+ * for the date itself and for yesterday/tomorrow (to check for an
+ * inbound transfer) without ever recursing into their own adjacent-day
+ * checks — that's what keeps this from being mutually recursive. The one
+ * exception, `easterOctaveBacklogFor`, deliberately calls this for up to
+ * 15 fixed days (Palm Sunday through Low Sunday) regardless of `isoDate`
+ * — see its own doc comment.
  */
 function resolveNativeOccurrence(isoDate: string): { temporalCategory: TemporalCategory; result: OccurrenceResult } {
   const weekday = weekdayOf(isoDate);
@@ -62,22 +62,17 @@ function applyIncomingTransfer(
   fromDate: string,
 ): DayWinner {
   if (temporalCategory === 'privileged-feria-major') {
-    // Never a landing spot, no matter the candidate's rank or the day's
-    // own winner — unlike every other category, a transferred-in
-    // candidate doesn't even get the bare "duplex-majus+ still gets a
-    // nod" commemoration a *native* occurrence of that rank would (live-
-    // verified 2026-09-01: the Annunciation, Duplex I. classis, passes
-    // through the entire Easter Octave with zero commemoration anywhere
-    // in it, unlike a same-ranked native occurrence there — e.g. St.
-    // Mark, Duplex II. classis, native within the Octave in some years,
-    // which *does* get commemorated). This single-hop refusal is the
-    // building block `resolveForwardTransferLanding` below chains
-    // through the whole privileged span (Holy Week + Easter Day + the
-    // Octave + Low Sunday) to find where a candidate actually lands —
-    // this function itself stays single-hop on purpose, same as the
-    // ordinary categories below. The lesser privileged-feria tier
-    // doesn't need this — ordinary collision/transfer logic is fine
-    // there, same as any ordinary-sunday landing.
+    // Never a landing spot for any rank, and never even a bare
+    // commemoration (commemorations.ts's own case already guarantees
+    // this — a `winner.kind === 'sanctoral'` day never actually happens
+    // in this category, so `decideOccurrence` alone would already
+    // produce this same no-op; kept explicit as a documented short-
+    // circuit). A candidate impeded here — Holy Week, the Easter Octave,
+    // Low Sunday — doesn't chain forward day-by-day the way an ordinary
+    // transfer does; see `applyEasterOctaveBacklog` in `resolveDay` for
+    // its own dedicated mechanism instead. The lesser privileged-feria
+    // tier doesn't need any of this — ordinary collision/transfer logic
+    // is fine there, same as any ordinary-sunday landing.
     return winner;
   }
   // Tags the returned winner with where it transferred from, but only when
@@ -100,9 +95,10 @@ function applyIncomingTransfer(
     // not just take over because nothing else was assigned here.
     const decided = decideOccurrence(temporalCategory, winner.id, candidate);
     commemorations.push(...tagCommemorations(decided.commemorations));
-    // If the candidate fails here too (decided.transfer set), the caller
-    // (resolveForwardTransferLanding, for a forward-direction candidate)
-    // keeps it queued and tries the next day — that's the real chain.
+    // If the candidate fails here too (decided.transfer set), it's simply
+    // not delivered — every category reaching this branch only ever
+    // needs a single hop (see `applyEasterOctaveBacklog` for the one
+    // multi-day case, handled separately, not through here).
     return tagIfLanded(decided.winner);
   }
   const collision = resolveCollision(candidate, winner);
@@ -110,75 +106,72 @@ function applyIncomingTransfer(
   return tagIfLanded(collision.winner);
 }
 
-// How far forward a still-unlanded candidate is allowed to keep looking
-// for a day — generous headroom over the worst real case found so far
-// (St. George, 2033: native Apr 23, impeded through the rest of Holy
-// Week + Easter Day + the Octave + Low Sunday, then further blocked by
-// 5 more already-occupied days in a row, landing May 4 — an 11-day
-// chain). Not expected to ever bind; exists so a pathological/malformed
-// sanctoral-calendar entry fails a candidate quietly (never lands, same
-// "not delivered rather than guessed at" stance as everywhere else in
-// this file) instead of the lookup silently walking forever.
-const MAX_FORWARD_TRANSFER_LOOKBACK_DAYS = 60;
+// The minimum rank worth carrying out of the Palm-Sunday-through-Low-
+// Sunday span at all (see `applyEasterOctaveBacklog` below) — anything
+// weaker than this just lapses for the year, same as it already gets no
+// trace *within* the span itself (commemorations.ts's `privileged-feria-
+// major`/`privileged-sunday` cases). Per direct instruction (2026-09-01):
+// this is the same threshold the sibling in-place-commemoration rule
+// used before it was found wrong — that number wasn't the mistake, only
+// which question it was answering.
+const EASTER_OCTAVE_BACKLOG_FLOOR: FeastClass = 'duplex-majus';
 
 /**
- * A forward-direction transfer (the vigil/backward case stays single-hop,
- * see `resolveDay` below) can chain through more than one impeded day in
- * a row — the concrete, and so far only observed, case is anything
- * impeded within Holy Week/Easter Day/the Easter Octave/Low Sunday (all
- * `privileged-feria-major` or `privileged-sunday`, none of which ever
- * accept a landing, per `applyIncomingTransfer`'s own single-hop refusal
- * above): live-verified 2033, three different candidates (St. Leo I,
- * Ss. Soter & Caius, St. George) all transfer, skip the entire span, and
- * queue up on the days immediately after it — in strict native-date
- * order, each waiting for the nearest day not already claimed by a real
- * native occurrence or an earlier-queued candidate ahead of it. That's a
- * real FIFO queue, not just "the one most recent candidate," since
- * multiple can be pending at once (all three above were, simultaneously,
- * that same fortnight).
- *
- * Simulates that queue's state chronologically from
- * `MAX_FORWARD_TRANSFER_LOOKBACK_DAYS` before `isoDate` up through
- * `isoDate` itself (exclusive of any day on/after `isoDate` — those
- * aren't resolved yet), then makes one landing attempt for `isoDate`
- * against whichever candidate is oldest in the resulting queue, if any.
- * Each day in the walk is judged only by its own `resolveNativeOccurrence`
- * (never a fully-`resolveDay`-resolved day, including for the historical
- * days being walked over) — consistent with `applyIncomingTransfer`
- * itself, which was already only ever given a freshly native-resolved
- * winner/commemorations, not a fully resolved one, even before this.
+ * Every candidate impeded anywhere from Palm Sunday through Low Sunday
+ * inclusive (`easterOffsetOf` -7 through +7) that clears
+ * `EASTER_OCTAVE_BACKLOG_FLOOR`, in native-date order — the backlog
+ * `applyEasterOctaveBacklog` draws from. Judged only by each day's own
+ * `resolveNativeOccurrence`, never a fully `resolveDay`-resolved one
+ * (same convention `applyIncomingTransfer` already uses).
  */
-function resolveForwardTransferLanding(
-  isoDate: string,
-  temporalCategory: TemporalCategory,
-  winner: DayWinner,
-  commemorations: Commemoration[],
-): DayWinner {
-  const queue: { candidate: SanctoralIdentity; fromDate: string }[] = [];
-  let cursor = addDays(isoDate, -MAX_FORWARD_TRANSFER_LOOKBACK_DAYS);
-  while (cursor < isoDate) {
-    const native = resolveNativeOccurrence(cursor);
-    const oldest = queue[0];
-    if (oldest) {
-      const scratchCommemorations: Commemoration[] = [];
-      const attempt = applyIncomingTransfer(oldest.candidate, native.temporalCategory, native.result.winner, scratchCommemorations, oldest.fromDate);
-      const landed =
-        (attempt.kind === 'sanctoral' && attempt.id === oldest.candidate.id) ||
-        scratchCommemorations.some((c) => c.kind === 'sanctoral' && c.id === oldest.candidate.id);
-      if (landed) {
-        queue.shift();
-      }
+function easterOctaveBacklogFor(year: number): { candidate: SanctoralIdentity; fromDate: string }[] {
+  const easterIso = toIsoDate(easterSunday(year));
+  const backlog: { candidate: SanctoralIdentity; fromDate: string }[] = [];
+  for (let offset = -7; offset <= 7; offset++) {
+    const date = addDays(easterIso, offset);
+    const candidate = resolveNativeOccurrence(date).result.transfer?.candidate;
+    if (candidate && isAtLeast(candidate.rank, EASTER_OCTAVE_BACKLOG_FLOOR)) {
+      backlog.push({ candidate, fromDate: date });
     }
-    if (native.result.transfer?.direction === 'forward') {
-      queue.push({ candidate: native.result.transfer.candidate, fromDate: cursor });
-    }
-    cursor = addDays(cursor, 1);
   }
-  const oldest = queue[0];
-  if (!oldest) {
+  return backlog;
+}
+
+// Generous headroom over any realistic backlog length (the whole span is
+// 15 days; vu's own calendar has never produced more than a handful of
+// duplex-majus+ candidates in it) — exists purely so a date far removed
+// from any Easter doesn't pay for an `easterOctaveBacklogFor` computation
+// it could never need.
+const MAX_EASTER_OCTAVE_BACKLOG_DAYS = 60;
+
+/**
+ * The Nth day after Low Sunday celebrates the Nth candidate in that
+ * year's backlog (native-date order) — winning outright, no rank fight
+ * against whatever would have natively been there, which is demoted to a
+ * commemoration instead — one candidate per day until the backlog is
+ * exhausted. Per direct instruction (2026-09-01): not a generic multi-day
+ * cascade/queue (this app already has real precedent for stacking
+ * commemorations, so a spread-out cascade wasn't the right shape), and
+ * not a same-day batch either (only one candidate surfaces per day, same
+ * as any other transfer landing in this app) — a fixed, deterministic
+ * position for each backlog candidate rather than a "first day not
+ * already spoken for" search.
+ */
+function applyEasterOctaveBacklog(isoDate: string, winner: DayWinner, commemorations: Commemoration[]): DayWinner {
+  const offset = easterOffsetOf(isoDate);
+  if (offset <= 7 || offset > 7 + MAX_EASTER_OCTAVE_BACKLOG_DAYS) {
     return winner;
   }
-  return applyIncomingTransfer(oldest.candidate, temporalCategory, winner, commemorations, oldest.fromDate);
+  const n = offset - 7;
+  const backlog = easterOctaveBacklogFor(Number(isoDate.slice(0, 4)));
+  const entry = backlog[n - 1];
+  if (!entry) {
+    return winner;
+  }
+  if (winner.kind === 'sanctoral') {
+    commemorations.push({ kind: 'sanctoral', id: winner.id, name: winner.name, nameLa: winner.nameLa, rank: winner.rank });
+  }
+  return { kind: 'sanctoral', ...entry.candidate, transferredFrom: entry.fromDate };
 }
 
 /**
@@ -195,13 +188,34 @@ export function resolveDay(isoDate: string): LiturgicalDay {
   let winner = result.winner;
   const commemorations = [...result.commemorations];
 
-  winner = resolveForwardTransferLanding(isoDate, temporalCategory, winner, commemorations);
-
+  const yesterdayIso = addDays(isoDate, -1);
+  const yesterday = resolveNativeOccurrence(yesterdayIso);
+  // A candidate impeded anywhere from Palm Sunday through Low Sunday
+  // (`easterOffsetOf` -7 through +7) is exclusively
+  // `applyEasterOctaveBacklog`'s to place — skipped here so it isn't
+  // *also* picked up by this ordinary single-hop check (real bug found
+  // 2026-09-01: Low Sunday's own transfer was leaking into the very next
+  // day's ordinary yesterday-check, landing/commemorating a candidate
+  // below the backlog's own rank floor). Scoped to that specific span,
+  // not `privileged-sunday` generally — an ordinary privileged Sunday
+  // elsewhere (Advent, Septuagesima–Passiontide) still uses this normal
+  // single-hop path same as before.
+  const yesterdayOffset = easterOffsetOf(yesterdayIso);
+  const yesterdayInEasterSpan = yesterdayOffset >= -7 && yesterdayOffset <= 7;
+  if (yesterday.result.transfer?.direction === 'forward' && !yesterdayInEasterSpan) {
+    winner = applyIncomingTransfer(yesterday.result.transfer.candidate, temporalCategory, winner, commemorations, yesterdayIso);
+  }
   const tomorrowIso = addDays(isoDate, 1);
   const tomorrow = resolveNativeOccurrence(tomorrowIso);
   if (tomorrow.result.transfer?.direction === 'backward') {
     winner = applyIncomingTransfer(tomorrow.result.transfer.candidate, temporalCategory, winner, commemorations, tomorrowIso);
   }
+  // The one case that single yesterday-check can't reach: anything
+  // impeded within Holy Week/Easter Day/the Octave/Low Sunday itself
+  // (all `privileged-feria-major`/`privileged-sunday`, which never
+  // accept a landing at all) needs its own dedicated mechanism — see
+  // `applyEasterOctaveBacklog`'s own doc comment.
+  winner = applyEasterOctaveBacklog(isoDate, winner, commemorations);
 
   winner = applyOctaves(isoDate, winner, commemorations);
   winner = applyEmberDay(isoDate, winner, commemorations);
