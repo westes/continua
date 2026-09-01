@@ -97,6 +97,7 @@ import matinsSundayAntiphonsData from '../data/hours/matins-sunday-antiphons.yml
 import matinsSundayNocturn3OverridesData from '../data/hours/matins-sunday-nocturn3-overrides.yml';
 import matinsSundayAdventOverridesData from '../data/hours/matins-sunday-advent-nocturn-overrides.yml';
 import matinsSundayPaschaltideOverridesData from '../data/hours/matins-sunday-paschaltide-nocturn-overrides.yml';
+import matinsSundayNamedOverridesData from '../data/hours/matins-sunday-named-nocturn-overrides.yml';
 import matinsFerialAntiphonsData from '../data/hours/matins-ferial-antiphons.yml';
 import type { Weekday } from '../calendar/types';
 
@@ -154,9 +155,11 @@ function sundayNocturn3For(temporalId: string | undefined): SundayNocturn {
 // and matins-sunday-paschaltide-nocturn-overrides.yml's own headers.
 // Paschaltide here means only `eastertide` (Low Sunday through the Sunday
 // before Ascension) — Easter Sunday itself has its own wholly proper
-// Matins (a separate, tabled gap; see TODO.md's "Easter's own octave"),
-// and `ascensiontide`'s one Sunday (within the Octave of Ascension) has
-// its own genuinely proper content, not this seasonal-overlay shape.
+// Matins (a separate, tabled gap; see TODO.md's "Easter's own octave").
+// `ascensiontide`'s one Sunday (within the Octave of Ascension) has its
+// own genuinely proper content too, but a *different* psalm scheme
+// entirely (not a seasonal overlay on the fixed 12-psalm base) — handled
+// by the per-temporalId `sundayNamedOverrides` below instead.
 interface MatinsSundayNocturnOverrides {
   nocturn1: Partial<SundayNocturn>;
   nocturn2: Partial<SundayNocturn>;
@@ -165,14 +168,32 @@ interface MatinsSundayNocturnOverrides {
 const sundayAdventOverrides = matinsSundayAdventOverridesData as unknown as MatinsSundayNocturnOverrides;
 const sundayPaschaltideOverrides = matinsSundayPaschaltideOverridesData as unknown as MatinsSundayNocturnOverrides;
 
-/** Sunday Nocturn I/II/III content for a given day — a season-wide
- * override (Advent or ordinary Paschaltide, all three nocturns) takes
- * precedence over the plain-season default; Nocturn III additionally
- * checks the per-Sunday Septuagesima-Palm override (`sundayNocturn3For`)
- * when neither season-wide override applies (none of the three ever
- * overlap). */
+// A specific privileged Sunday whose own proper is wholesale different
+// from the fixed 12-psalm/3-canticle scheme, keyed by `temporalId` — see
+// matins-sunday-named-nocturn-overrides.yml's own header (currently just
+// `sunday-after-ascension`). Checked ahead of the season-wide overrides
+// above, though in practice they never collide (no season-wide override
+// exists for `ascensiontide`).
+const sundayNamedOverrides = matinsSundayNamedOverridesData as unknown as Record<string, Partial<MatinsSundayNocturnOverrides>>;
+
+/** Sunday Nocturn I/II/III content for a given day — a per-temporalId
+ * named override (a specific privileged Sunday's own wholesale-different
+ * proper) takes precedence over a season-wide override (Advent or
+ * ordinary Paschaltide, all three nocturns), which takes precedence over
+ * the plain-season default; Nocturn III additionally checks the
+ * per-Sunday Septuagesima-Palm override (`sundayNocturn3For`) when none
+ * of the above apply (none of the four ever overlap). */
 function sundayNocturnFor(nocturnKey: 'nocturn1' | 'nocturn2' | 'nocturn3', day: LiturgicalDay, temporalId: string | undefined): SundayNocturn {
   const base = nocturnKey === 'nocturn3' ? sundayNocturn3For(temporalId) : sundayAntiphons[nocturnKey];
+  const namedOverride = temporalId ? sundayNamedOverrides[temporalId]?.[nocturnKey] : undefined;
+  if (namedOverride) {
+    return {
+      groups: namedOverride.groups ?? base.groups,
+      canticles: namedOverride.canticles ?? base.canticles,
+      antiphon: namedOverride.antiphon ?? base.antiphon,
+      versicle: namedOverride.versicle ?? base.versicle,
+    };
+  }
   const seasonOverrides = day.season === 'advent' ? sundayAdventOverrides : day.season === 'eastertide' ? sundayPaschaltideOverrides : undefined;
   const override = seasonOverrides?.[nocturnKey];
   if (!override) return base;

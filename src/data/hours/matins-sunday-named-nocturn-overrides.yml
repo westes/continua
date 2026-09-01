@@ -1,0 +1,104 @@
+# Sunday Matins Nocturns I-III, per-named-Sunday override — keyed by
+# `temporalId`, for a specific privileged Sunday whose own proper is
+# wholesale different from the fixed 12-psalm/3-canticle scheme (not just
+# a seasonal antiphon overlay on the same psalms, the way
+# matins-sunday-advent-nocturn-overrides.yml / matins-sunday-paschaltide-
+# nocturn-overrides.yml are) — different psalm numbers entirely.
+#
+# hours/matins.ts's lookup checks this map first (most specific), ahead of
+# the season-wide overrides, when `temporalId` matches a key here.
+
+# Sunday within the Octave of Ascension (`sunday-after-ascension`) —
+# live-verified against the local reference-engine CGI instance
+# (`prayMatutinum`, Monastic Tridentinum 1617, 2026-09-01, proof date
+# 2026-05-17), titled there "Dominica infra Octavam Ascensionis ~
+# Semiduplex Dominica minor". Added alongside a calendar precedence fix
+# (data/calendar/temporal-categories.yml: ascensiontide's Sunday is
+# `privileged-sunday`, not `ordinary-sunday`) — this Sunday genuinely
+# outranks even a Duplex sanctoral candidate (e.g. St. Paschal Baylon,
+# real May 17), which transfers rather than winning or being commemorated.
+#
+# Each nocturn here uses 6 individually-antiphoned psalms (one antiphon
+# per single psalm, not one per pair the way the base/Advent scheme
+# groups them) — confirmed by the live query, which showed a separate
+# "Ant." before and after every single psalm. Nocturn III reuses the same
+# 3 canticles as the ordinary-Paschaltide override (Isa 63:1-5, Osee
+# 6:1-6, Sophonias 3:8-13 — already authored, no new scripture files
+# needed here) under its own different antiphon/versicle.
+#
+# Nocturn III's antiphon has no English translation in the reference
+# engine's own English tree (confirmed: the paragraph is genuinely empty
+# there, not a fetch/parsing gap) — `en` here is this app's own
+# translation of the underlying Mark 16:20 text (a well-known, unambiguous
+# formula, not a guess), consistent with how every other antiphon in this
+# file is sourced.
+sunday-after-ascension:
+  nocturn1:
+    groups:
+      - psalms: [8]
+        antiphon:
+          la: "Eleváta est magnificéntia tua super cælos, Deus, allelúja."
+          en: "Thy magnificence is elevated above the heavens, O God, alleluia."
+      - psalms: [10]
+        antiphon:
+          la: "Dóminus in templo sancto suo, Dóminus in cælo, allelúja."
+          en: "The Lord is in His holy Temple, the Lord's throne is in heaven, alleluia."
+      - psalms: [18]
+        antiphon:
+          la: "A summo cælo egréssio ejus, et occúrsus ejus usque ad summum ejus, allelúja."
+          en: "His going out is from the end of heaven, and his circuit even to the end thereof, alleluia."
+      - psalms: [20]
+        antiphon:
+          la: "Exaltáre, Dómine, in virtúte tua: cantábimus et psallémus, allelúja."
+          en: "Be thou exalted, O Lord, in thy own strength: we will sing and praise, alleluia."
+      - psalms: [23]
+        antiphon:
+          la: "Elevámini, elevámini, portæ æternáles: † et introíbit rex glóriæ, allelúja."
+          en: "Be lifted up, O eternal gates: and the King of Glory shall enter in, alleluia."
+      - psalms: [29]
+        antiphon:
+          la: "Exaltábo te, Dómine, quóniam suscepísti me, allelúja."
+          en: "I will extol thee, O Lord, for thou hast upheld me, alleluia."
+    versicle:
+      v: { la: "Ascéndit Deus in jubilatióne, allelúja.", en: "God is ascended with jubilee, alleluia." }
+      r: { la: "Et Dóminus in voce tubæ, allelúja.", en: "And the Lord with the sound of trumpet, alleluia." }
+  nocturn2:
+    groups:
+      - psalms: [45]
+        antiphon:
+          la: "Exaltábor in géntibus, et exaltábor in terra, allelúja."
+          en: "I will be exalted among the nations, and I will be exalted in the earth, alleluia."
+      - psalms: [46]
+        antiphon:
+          la: "Ascéndit Deus in jubilatióne, et Dóminus in voce tubæ, allelúja."
+          en: "God is ascended with jubilee, and the Lord with the sound of trumpet, alleluia."
+      - psalms: [95]
+        antiphon:
+          la: "Læténtur cæli, et exsúltet terra, † quia venit Dóminus, allelúja."
+          en: "Let the heavens rejoice, and let the earth be glad, for the Lord is coming, alleluia."
+      - psalms: [96]
+        antiphon:
+          la: "Nimis exaltátus est, allelúja: super omnes deos, allelúja."
+          en: "He is exalted exceedingly, alleluia: above all gods, alleluia."
+      - psalms: [98]
+        antiphon:
+          la: "Dóminus in Sion, allelúja: magnus et excélsus, allelúja."
+          en: "The Lord in Sion, alleluia: is great and high, alleluia."
+      - psalms: [102]
+        antiphon:
+          la: "Dóminus in cælo, allelúja: parávit sedem suam, allelúja."
+          en: "The Lord in heaven, alleluia: hath prepared his throne, alleluia."
+    versicle:
+      v: { la: "Ascéndens Christus in altum, allelúja.", en: "When Christ ascended up on high, alleluia." }
+      r: { la: "Captívam duxit captivitátem, allelúja.", en: "He led captivity captive, alleluia." }
+  nocturn3:
+    canticles:
+      - refs: [{ book: isa, chapter: 63, verses: "1-5" }]
+      - refs: [{ book: osee, chapter: 6, verses: "1-6" }]
+      - refs: [{ book: soph, chapter: 3, verses: "8-13" }]
+    antiphon:
+      la: "Illi autem profécti prædicavérunt ubíque, Dómino cooperánte, et sermónem confirmánte sequéntibus signis, † allelúja, allelúja."
+      en: "But they, going forth, preached everywhere: the Lord working with them, and confirming the word with signs that followed, alleluia, alleluia."
+    versicle:
+      v: { la: "Ascéndo ad Patrem meum, et Patrem vestrum, allelúja.", en: "I ascend to my Father and to your Father, alleluia." }
+      r: { la: "Deum meum, et Deum vestrum, allelúja.", en: "To my God and your God, alleluia." }

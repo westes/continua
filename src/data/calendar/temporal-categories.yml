@@ -82,7 +82,16 @@ bySeason:
   lent: { sunday: privileged-sunday, feria: ordinary-feria }
   passiontide: { sunday: privileged-sunday, feria: ordinary-feria }
   eastertide: { sunday: privileged-sunday, feria: ordinary-feria }
-  ascensiontide: { sunday: ordinary-sunday, feria: ordinary-feria }
+  # The Sunday within the Octave of Ascension is `privileged-sunday`, not
+  # `ordinary-sunday` — live-verified 2026-09-01: the reference engine
+  # titles it "Dominica infra Octavam Ascensionis ~ Semiduplex Dominica
+  # minor" and gives it its own proper Matins content (own antiphons, Ps 8
+  # opening Nocturn I — not the generic fixed Sunday scheme), with St.
+  # Paschal Baylon (Duplex, real May 17) nowhere in it; `ordinary-sunday`'s
+  # Duplex+ threshold would wrongly let that saint win outright instead.
+  # Matches the same "great octave" pattern as eastertide/pentecost above,
+  # both already `privileged-sunday`.
+  ascensiontide: { sunday: privileged-sunday, feria: ordinary-feria }
   pentecost: { sunday: privileged-sunday, feria: ordinary-feria }
   trinitytide: { sunday: ordinary-sunday, feria: ordinary-feria }
   # Corpus Christi/Sacred Heart are themselves "feasts of the Lord" that

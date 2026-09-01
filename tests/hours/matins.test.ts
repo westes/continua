@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { resolveOrdo } from '../../src/hours';
 import { getPsalmsFor } from '../../src/psalter/distribution';
+import { resolveDay } from '../../src/calendar';
 
 // Two clean proof dates, one per branch — see hours/matins.ts's own header
 // and TODO.md for why this is a mechanism build with a small content slice,
@@ -315,6 +316,45 @@ describe('resolveOrdo("matins", ...) Paschaltide Sunday Nocturns I-III seasonal 
       (ordo) => (ordo.parts.filter((p) => p.kind === 'antiphon')[1] as { text: { text: Record<string, string> } }).text.text.la,
     );
     expect(new Set(nocturn1Openings).size).toBe(1);
+  });
+});
+
+// Real bug (found 2026-09-01, same day the user flagged it): the Sunday
+// within the Octave of Ascension was letting a Duplex sanctoral candidate
+// (St. Paschal Baylon, real May 17) win outright, because
+// data/calendar/temporal-categories.yml had ascensiontide's Sunday coded
+// `ordinary-sunday` (Duplex+ wins outright) instead of `privileged-sunday`
+// (nothing wins outright). Live-verified (2026-05-17): the reference
+// engine titles this day "Dominica infra Octavam Ascensionis ~ Semiduplex
+// Dominica minor" and gives it its own wholly proper Matins (own psalms —
+// Ps 8/10/18/20/23/29 for Nocturn I, not the fixed 20-25 — own antiphons,
+// same 3 canticles as the ordinary-Paschaltide override) with no trace of
+// the saint, who transfers instead.
+describe('resolveOrdo("matins", ...) Sunday within the Octave of Ascension (2026-09-01 fix)', () => {
+  it("the Sunday wins outright over St. Paschal Baylon (Duplex), who transfers", () => {
+    const day = resolveDay('2026-05-17');
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'sunday-after-ascension' });
+  });
+
+  it('renders its own genuinely proper Matins, not the fixed 12-psalm scheme', () => {
+    const ordo = resolveOrdo('matins', '2026-05-17');
+    const psalms = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
+    expect(psalms).toEqual([3, 94, 8, 10, 18, 20, 23, 29, 45, 46, 95, 96, 98, 102]);
+
+    const canticles = ordo.parts.filter((p) => p.kind === 'canticle') as { canticleId: string }[];
+    expect(canticles.map((c) => c.canticleId)).toEqual(['isa-63-1-5', 'osee-6-1-6', 'soph-3-8-13']);
+
+    const antiphons = ordo.parts.filter((p) => p.kind === 'antiphon') as { text: { text: Record<string, string> } }[];
+    expect(antiphons[1]?.text.text.la).toBe('Ant. Eleváta est magnificéntia tua super cælos, Deus, allelúja.');
+    expect(antiphons.at(-1)?.text.text.la).toBe(
+      'Ant. Illi autem profécti prædicavérunt ubíque, Dómino cooperánte, et sermónem confirmánte sequéntibus signis, † allelúja, allelúja.',
+    );
+
+    const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
+    const [, nocturn1, nocturn2, nocturn3] = versicles;
+    expect(nocturn1?.text.text.la).toBe('V. Ascéndit Deus in jubilatióne, allelúja.\nR. Et Dóminus in voce tubæ, allelúja.');
+    expect(nocturn2?.text.text.la).toBe('V. Ascéndens Christus in altum, allelúja.\nR. Captívam duxit captivitátem, allelúja.');
+    expect(nocturn3?.text.text.la).toBe('V. Ascéndo ad Patrem meum, et Patrem vestrum, allelúja.\nR. Deum meum, et Deum vestrum, allelúja.');
   });
 });
 

@@ -4619,3 +4619,37 @@ covering both Advent and Paschaltide.
 New regression test in `tests/hours/matins.test.ts` (`Paschaltide Sunday Nocturns I-III
 seasonal override`) asserts all 5 ordinary Paschaltide Sundays render identically. `npm test`
 (819 passed), `tsc --noEmit`, and `npm run build` all pass.
+
+### Sunday within the Octave of Ascension: real precedence bug, fixed (2026-09-01)
+
+User pushed back on the "not a bug" conclusion above: correctly — the "Duplex+ saint wins
+outright over an Ascensiontide Sunday" case was a real precedence bug, not settled design.
+`data/calendar/temporal-categories.yml` had `ascensiontide`'s Sunday coded `ordinary-sunday`
+(Duplex+ wins outright), the only "great octave" season not already `privileged-sunday`
+(eastertide/pentecost both already were) — no verification comment on that line, unlike every
+other entry in the file. Live-verified (proof date 2026-05-17, St. Paschal Baylon, real Duplex):
+the reference engine titles the day "Dominica infra Octavam Ascensionis ~ Semiduplex Dominica
+minor" and gives it its own wholly proper Matins, no trace of the saint. Fixed: `ascensiontide`
+is now `privileged-sunday`, matching eastertide/pentecost — St. Paschal Baylon now transfers
+(`decideOccurrence`'s existing generic privileged-sunday branch handled this correctly with no
+new code, just the corrected category).
+
+With the calendar now resolving the *right* winner (the Sunday itself, `sunday-after-ascension`),
+Matins still needed real content: this Sunday's own proper is a wholly different psalm scheme
+from the fixed 12-psalm base — Ps 8/10/18/20/23/29 for Nocturn I, Ps 45/46/95/96/98/102 for
+Nocturn II, each of the 12 psalms individually antiphoned (not paired) — plus its own versicles.
+Nocturn III reuses the same 3 canticles as the ordinary-Paschaltide override (Isa 63:1-5, Osee
+6:1-6, Sophonias 3:8-13, already authored) under its own antiphon ("Illi autem profécti
+prædicavérunt ubíque...") — English for that one antiphon is this app's own translation (the
+reference engine's own English tree is genuinely blank there, confirmed not a fetch gap), since
+it's an unambiguous, well-known formula (Mark 16:20).
+
+New `data/hours/matins-sunday-named-nocturn-overrides.yml` — a per-`temporalId` override layer
+(currently just `sunday-after-ascension`) for a specific privileged Sunday whose own proper is
+wholesale different, distinct from the season-wide Advent/Paschaltide overrides above.
+`hours/matins.ts`'s `sundayNocturnFor` now checks this map first (most specific), ahead of the
+season-wide overrides, ahead of the plain default.
+
+New regression tests in `tests/hours/matins.test.ts` (`Sunday within the Octave of Ascension`)
+assert both the calendar winner (Sunday over the saint) and the full Matins content. `npm test`
+(821 passed), `tsc --noEmit`, and `npm run build` all pass.
