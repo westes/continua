@@ -4838,3 +4838,22 @@ category of move as this app's existing late-canonization rank-deflation convent
 the other direction — bringing his own count to 6.
 
 `npm test` (821 passed), `tsc --noEmit`, and `npm run build` all pass.
+
+### Matins ferial nocturn: mid-nocturn versicle removed, a real live-verified bug (2026-09-02)
+
+User noticed the 1-nocturn ferial branch had a V./R. versicle stuck mid-list as if marking a
+nocturn boundary — structurally incoherent for a single continuous nocturn.
+
+`data/hours/matins-ferial-antiphons.yml`'s per-weekday `groups` carried a `versicle` field
+ported from a mid-list V./R. line embedded in the source `Psalmi matutinum.txt`
+(`[Daym1_]`-`[Daym6_]`), rendered partway through the single continuous 1-nocturn ferial day.
+Live-verified against the reference engine (`Pofficium.pl`, `command=prayMatutinum`,
+`version=Monastic Tridentinum 1617`) for Wednesday and Thursday: the real office runs straight
+from the last psalm to the Capitulum, no versicle anywhere in the psalmody — that source line
+is inert there, never actually emitted. Removed the field from all 6 weekdays and the
+rendering code (`ferialAntiphonedNocturn`); the earlier "versicle placement" reasoning in that
+file's header was a documented-but-unverified assumption, not real content.
+
+See memory `vu_ferial_matins_antiphons` for full detail.
+
+`npm test`, `tsc --noEmit`, and `npm run build` all pass.

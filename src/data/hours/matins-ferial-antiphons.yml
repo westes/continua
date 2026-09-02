@@ -1,7 +1,8 @@
-# Antiphons + versicles for the plain ferial weekday Matins nocturn (no
-# Sunday, no Duplex+ override) — previously rendered with bare psalms and
-# no antiphon at all (a genuine oversight, not a documented design choice
-# like `ferialPsalmodyThreeNocturns`'s antiphon-less fallback).
+# Antiphons for the plain ferial weekday Matins nocturn (below Semiduplex,
+# see hours/matins.ts's threeNocturns threshold) — previously rendered
+# with bare psalms and no antiphon at all (a genuine oversight, not a
+# documented design choice like `ferialPsalmodyThreeNocturns`'s
+# antiphon-less fallback).
 #
 # `psalter-distribution.yml`'s own `matins:` table is NOT the historical
 # per-weekday psalm set — its own header documents a deliberate "editorial
@@ -43,16 +44,17 @@
 # psalm, just spread over two verse ranges); any cross-psalm pair is now
 # split per the "One antiphon per psalm" note above.
 #
-# Versicle placement: each weekday draws its 9 psalms from 1-2 different
-# original source days (see each weekday's own comment below for exactly
-# which), but only one versicle fits per plain single-nocturn weekday —
-# taken from whichever source day contributes the majority of that
-# weekday's psalms, placed at the same relative position it held in that
-# source day's own sequence (immediately after whichever group of this
-# weekday's psalms was originally its next-door neighbor, once the
-# psalms that moved out from between them are accounted for). None of the
-# cross-psalm pairs split by the 2026-09-01 change carried a versicle of
-# their own, so no versicle needed repositioning.
+# No mid-nocturn versicle (fixed 2026-09-02): the source `Psalmi
+# matutinum.txt` files (`[Daym1_]`-`[Daym6_]`) embed a V./R. line partway
+# through each weekday's psalm list, and an earlier version of this file
+# ported it as a real `versicle` field on the group where it happened to
+# fall, rendered mid-nocturn as if marking a nocturn boundary. Live-verified
+# against the reference engine (`Pofficium.pl`, `command=prayMatutinum`,
+# `version=Monastic Tridentinum 1617`) for both Wednesday and Thursday: the
+# real single-nocturn ferial office runs straight from the last psalm to
+# the Capitulum, with no versicle anywhere in the psalmody — that embedded
+# line is inert in the source and was never actually emitted by the engine.
+# Removed; do not reintroduce it without a live query proving otherwise.
 #
 # Not live-verified against a running query (Monastic ferial ordinary time
 # isn't independently re-derivable that way once psalter-distribution.yml's
@@ -62,8 +64,8 @@
 
 monday:
   # All 9 psalms are Daym1_'s own (Monastic Matins Feria II) — no reslicing
-  # across weekday boundaries here, so both antiphon grouping and the
-  # versicle sit exactly where Daym1_ itself has them.
+  # across weekday boundaries here, so the antiphon grouping sits exactly
+  # where Daym1_ itself has it.
   groups:
     - psalms: [{ number: 32 }]
       antiphon:
@@ -83,9 +85,6 @@ monday:
       antiphon:
         la: "Revéla * Dómino viam meam."
         en: "Commit my way * to the Lord."
-      versicle:
-        v: { la: "Dómine, in cælo misericórdia tua.", en: "O Lord, thy mercy is in heaven," }
-        r: { la: "Et véritas tua usque ad nubes.", en: "And thy truth reacheth even to the clouds." }
     - psalms: [{ number: 37 }]
       antiphon:
         la: "Ne in ira tua * árguas me Dómine."
@@ -107,11 +106,7 @@ monday:
 
 tuesday:
   # 43-44 are Monday's own tail (Daym1_); 47-58 are Daym2_'s own opening (6
-  # of 9 psalms — the majority, hence Daym2_'s own versicle here); 59 is
-  # Wednesday's own opening (Daym3_). The versicle sits right after 49,
-  # exactly where Daym2_ itself has it (between the "49,51" and "52,53"
-  # groups — 51/52/53 all moved elsewhere in the reslice, but 49 and 54
-  # remain each other's nearest neighbor once they're gone).
+  # of 9 psalms — the majority); 59 is Wednesday's own opening (Daym3_).
   groups:
     - psalms: [{ number: 43 }]
       # New (2026-09-01): the source's shared antiphon for this pair
@@ -138,9 +133,6 @@ tuesday:
       antiphon:
         la: "Deus deórum * Dóminus locútus est."
         en: "The God of gods * the Lord hath spoken."
-      versicle:
-        v: { la: "Ímmola Deo sacrifícium laudis.", en: "Offer to God the sacrifice of praise." }
-        r: { la: "Et redde Altíssimo vota tua.", en: "And pay thy vows to the most High." }
     - psalms: [{ number: 54 }]
       antiphon:
         la: "Inténde in me * et exáudi me."
@@ -162,9 +154,7 @@ tuesday:
 
 wednesday:
   # 65-72 are Daym3_'s own (7 of 9 — the majority); 73 is Thursday's own
-  # opening (Daym4). The versicle sits between the "67ab" and "68ab"
-  # groups, exactly where Daym3_ itself has it — nothing moved out from
-  # between those two groups in the reslice, so the position is unchanged.
+  # opening (Daym4).
   groups:
     - psalms: [{ number: 65 }]
       antiphon:
@@ -174,9 +164,6 @@ wednesday:
       antiphon:
         la: "In ecclésiis, * benedícite Dóminum."
         en: "In the churches * bless ye the Lord."
-      versicle:
-        v: { la: "Benedícite, gentes, Deum nostrum.", en: "O bless our God, ye people." }
-        r: { la: "Et audítam fácite vocem laudis ejus.", en: "And make the voice of his praise to be heard." }
     - psalms: [{ number: 68, verses: "2-16" }, { number: 68, verses: "17-37" }]
       antiphon:
         la: "Quǽrite Dóminum * et vivet ánima vestra."
@@ -204,9 +191,7 @@ wednesday:
 
 thursday:
   # All 9 psalms are Daym4's own — no reslicing across weekday boundaries
-  # here either, so grouping and versicle position are both unchanged from
-  # the source (the versicle sits between the "78" and "79,80" groups,
-  # exactly as Daym4 itself has it).
+  # here either, so the grouping is unchanged from the source.
   groups:
     - psalms: [{ number: 76 }]
       antiphon:
@@ -220,9 +205,6 @@ thursday:
       antiphon:
         la: "Propítius esto * peccátis nostris, Dómine."
         en: "Forgive us our sins * O Lord."
-      versicle:
-        v: { la: "Deus, in sancto via tua.", en: "Thy way, O God, is in the holy place." }
-        r: { la: "Quis Deus magnus sicut Deus noster.", en: "Who is the great God like our God?" }
     - psalms: [{ number: 79 }]
       # New (2026-09-01): no real antiphon found elsewhere in the corpus
       # for Ps 79 alone; composed from its own opening verse (79:2).
@@ -254,10 +236,7 @@ friday:
   # elsewhere, so it's kept here on 93 alone; likewise 95's antiphon
   # originally also covered 96, which the redistribution's own documented
   # hand-adjustment moved to Saturday to keep both halves of Ps 103
-  # together there); 101-103 are Daym6_'s own opening (4 of 9). The
-  # versicle sits between the "93" and "95" groups, exactly where Daym5_
-  # itself has it (originally between "92/93" and "95/96" — 96 leaving for
-  # Saturday doesn't touch this boundary).
+  # together there); 101-103 are Daym6_'s own opening (4 of 9).
   groups:
     - psalms: [{ number: 85 }]
       antiphon:
@@ -271,9 +250,6 @@ friday:
       antiphon:
         la: "Exaltáre, * qui júdicas terram."
         en: "Lift up thyself, * thou that judgest the earth."
-      versicle:
-        v: { la: "Intret orátio mea in conspéctu tuo, Dómine.", en: "Let my prayer come before Thee, O Lord." }
-        r: { la: "Inclína aurem tuam ad precem meam.", en: "Incline Thine ear unto my cry." }
     - psalms: [{ number: 95 }]
       antiphon:
         la: "Cantáte Dómino, * et benedícite nómini ejus."
@@ -297,9 +273,7 @@ saturday:
   # Ps 96 is Daym5_'s own tail (moved here by the redistribution's own
   # documented hand-adjustment, swapped out of Friday to let both halves
   # of Ps 103 land there instead); 104-108 are Daym6_'s own tail (8 of 9 —
-  # the majority, hence Daym6_'s own versicle here). The versicle sits
-  # between the "104ab" and "105ab" groups, exactly where Daym6_ itself
-  # has it — nothing moved out from between those two groups.
+  # the majority).
   groups:
     - psalms: [{ number: 96 }]
       antiphon:
@@ -309,9 +283,6 @@ saturday:
       antiphon:
         la: "Lætétur cor * quæréntium Dóminum."
         en: "Let the heart of them rejoice, * that seek the Lord."
-      versicle:
-        v: { la: "Dómine, exáudi oratiónem meam.", en: "O Lord, hear my prayer." }
-        r: { la: "Et clamor meus ad te véniat.", en: "And let my cry come unto thee." }
     - psalms: [{ number: 105, verses: "1-31" }, { number: 105, verses: "32-48" }]
       antiphon:
         la: "Vísita nos, * Dómine, in salutári tuo."

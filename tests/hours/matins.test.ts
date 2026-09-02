@@ -48,7 +48,7 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
     expect(ordo.parts.some((p) => p.kind === 'versicle' && p.text.text.la?.includes('Te decet laus'))).toBe(false);
   });
 
-  it("gives every nocturn psalm its own antiphon and includes Tuesday's own versicle (data/hours/matins-ferial-antiphons.yml)", () => {
+  it('gives every nocturn psalm its own antiphon and has no mid-nocturn versicle (data/hours/matins-ferial-antiphons.yml)', () => {
     // The nocturn's own psalms start at index 5 (after the two opening versicles/Ps3/heading/Ps94).
     const nocturnPsalms = ordo.parts.slice(5).filter((p) => p.kind === 'psalm') as {
       psalmNumber: number;
@@ -65,11 +65,11 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
         expect(p.antiphon.text.en).toBeTruthy();
       }
     }
+    // No versicle anywhere in the psalmody (fixed 2026-09-02) — the
+    // source's embedded mid-list V./R. line is live-verified inert; the
+    // real single-nocturn ferial office runs straight to the Capitulum.
     const nocturnVersicles = ordo.parts.slice(5).filter((p) => p.kind === 'versicle');
-    expect(nocturnVersicles).toHaveLength(1);
-    const versicleText = (nocturnVersicles[0] as { text: { text: Record<string, string> } }).text.text;
-    expect(versicleText.la).toContain('Ímmola Deo sacrifícium laudis');
-    expect(versicleText.la).toContain('Et redde Altíssimo vota tua');
+    expect(nocturnVersicles).toHaveLength(0);
   });
 
   it("resolves the user's own bible-plan readings for the day, not the historical lectionary", () => {

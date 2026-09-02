@@ -208,7 +208,6 @@ function sundayNocturnFor(nocturnKey: 'nocturn1' | 'nocturn2' | 'nocturn3', day:
 interface FerialGroup {
   psalms: PsalmRef[];
   antiphon: BilingualText;
-  versicle?: { v: BilingualText; r: BilingualText };
 }
 interface FerialNocturn {
   groups: FerialGroup[];
@@ -434,12 +433,14 @@ function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
 
 /** The plain ferial weekday nocturn's real antiphoned psalmody (see
  * data/hours/matins-ferial-antiphons.yml's own header for how each
- * weekday's groups/versicle were reconciled against psalter-
- * distribution.yml's own "editorial redistribution" of the historical
- * per-weekday psalm set). Every psalm-group carries its own antiphon
- * (incipit-or-full opening, same rank rule as Sunday's own nocturns), and
- * exactly one group per weekday carries a versicle+responsory, rendered
- * as one combined V./R. block via `versicleText`. */
+ * weekday's groups were reconciled against psalter-distribution.yml's own
+ * "editorial redistribution" of the historical per-weekday psalm set).
+ * Every psalm-group carries its own antiphon (incipit-or-full opening,
+ * same rank rule as Sunday's own nocturns). No versicle: an earlier
+ * version of this ported a mid-list V./R. line embedded in the source
+ * `Psalmi matutinum.txt`, but that line is live-verified inert there — the
+ * real single-nocturn ferial office runs straight from the last psalm to
+ * the Capitulum (fixed 2026-09-02, see the data file's own header). */
 function ferialAntiphonedNocturn(day: LiturgicalDay): ResolvedPart[] {
   const nocturn = ferialAntiphons[day.weekday as Exclude<Weekday, 'sunday'>];
   const winner = resolveOfficeWinner(day);
@@ -459,22 +460,20 @@ function ferialAntiphonedNocturn(day: LiturgicalDay): ResolvedPart[] {
       });
     });
     parts.push({ kind: 'antiphon', text: full });
-    if (group.versicle) {
-      parts.push({ kind: 'versicle', text: versicleText(group.versicle) });
-    }
   }
   return parts;
 }
 
-/** Fallback for a Duplex+ weekday feast with no matins-psalmody-overrides
+/** Fallback for a Semiduplex+ weekday feast with no matins-psalmody-overrides
  * entry authored for its winner yet: the plain ferial weekday table,
  * chunked into 3 nocturns instead of 1. Bare (no antiphons, no canticles)
  * when `common` isn't given — genuinely nothing authored at all for this
  * winner, still used as-is for a duplex-majus+ winner with no Common
  * category either.
  *
- * When `common`/`commonId` *are* given (a duplex-rank winner whose Common
- * category exists — user, 2026-08), each nocturn borrows that category's
+ * When `common`/`commonId` *are* given (a Semiduplex- or Duplex-rank
+ * winner whose Common category exists — user, 2026-08, threshold lowered
+ * to Semiduplex 2026-09-02), each nocturn borrows that category's
  * own `nocturn{N}.versicle`: the ferial table only ever authors one
  * versicle for the whole (normally 1-nocturn) day, so a 3-nocturn split
  * leaves 2 of the 3 nocturns with none at all — Common's own 3 real
