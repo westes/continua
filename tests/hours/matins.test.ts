@@ -527,6 +527,49 @@ describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunda
   });
 });
 
+describe('resolveOrdo("matins", ...) Semiduplex weekday-feast (3-nocturn threshold lowered 2026-09-02)', () => {
+  // St. Stephen of Hungary (Semiduplex, Common of a Confessor Not a
+  // Bishop, no proper Matins antiphon of his own) -- 2026-09-02, a
+  // Wednesday. Threshold was Duplex-or-higher before this fix, so a
+  // Semiduplex winner used to fall all the way through to the plain
+  // 1-nocturn ferial branch; the user's own design intent (2026-09-02) is
+  // that Semiduplex and Duplex share the same 3-nocturn/3-psalms-each
+  // shape, distinct from the 6/6/3-plus-canticles Sunday/Duplex-majus+
+  // scheme. Reuses the same already-working ferialPsalmodyThreeNocturns
+  // branch a plain-Duplex winner gets (see the describe block above) --
+  // no new content authoring was needed for this fix.
+  const ordo = resolveOrdo('matins', '2026-09-02');
+
+  it('splits the ferial 9-psalm pool into 3 nocturns of 3 each, plus a Te Deum, not the 1-nocturn ferial branch', () => {
+    const psalms = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
+    expect(psalms).toEqual([3, 94, 65, 67, 67, 68, 68, 70, 71, 72, 73]);
+    expect(ordo.parts.some((p) => p.kind === 'te-deum')).toBe(true);
+    // No canticles -- reserved for Sunday/Duplex-majus+, not this tier.
+    expect(ordo.parts.some((p) => p.kind === 'canticle')).toBe(false);
+  });
+
+  it("uses Common-of-a-Confessor's own Terce/Sext/None antiphons and versicles, one distinct pair per nocturn", () => {
+    const psalmParts = ordo.parts.filter((p) => p.kind === 'psalm') as { psalmNumber: number; antiphon?: { text: Record<string, string>; status: Record<string, string> } }[];
+    const nocturnPsalms = psalmParts.filter((p) => ![3, 94].includes(p.psalmNumber));
+    expect(nocturnPsalms[0]?.antiphon?.text.la).toContain('Euge, serve bone');
+    expect(nocturnPsalms[3]?.antiphon?.text.la).toContain('Fidélis servus');
+    expect(nocturnPsalms[6]?.antiphon?.text.la).toContain('Serve bone');
+    for (const i of [0, 3, 6]) {
+      expect(nocturnPsalms[i]?.antiphon?.status.la).toBe('verified');
+      expect(nocturnPsalms[i]?.antiphon?.status.en).toBe('verified');
+    }
+    const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
+    // The 3 nocturn-closing versicles (excluding the opening pair and the
+    // final Te decet laus) are Common-of-a-Confessor's own, one per
+    // nocturn -- not a stray mid-psalmody line.
+    const nocturnVersicles = versicles.slice(2, 5);
+    expect(nocturnVersicles).toHaveLength(3);
+    expect(nocturnVersicles[0]?.text.text.la).toContain('Amávit eum Dóminus');
+    expect(nocturnVersicles[1]?.text.text.la).toContain('Os justi meditábitur');
+    expect(nocturnVersicles[2]?.text.text.la).toContain('Lex Dei ejus in corde ipsíus');
+  });
+});
+
 describe('resolveOrdo("matins", ...) second Duplex+ weekday-feast proof — St. Andrew, Common of an Apostle', () => {
   // 2026-11-30 -- St. Andrew's own day outright ("S. Andreæ Apostoli",
   // not transferred that year: Nov 30 falls on a Monday, not a Sunday),

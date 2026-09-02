@@ -3,8 +3,8 @@
 // Builds its ordo programmatically per day rather than resolving a static
 // `data/hours/matins.yml` parts list the way every other hour does, because
 // the real shape (1 nocturn on a plain ferial day vs. 3 on a Sunday or a
-// Duplex+ feast, with a *variable* number of readings) doesn't fit that
-// pattern.
+// Semiduplex+ feast, with a *variable* number of readings) doesn't fit
+// that pattern.
 //
 // Critical framing (see memory `vu-not-a-reconstruction` / `vu-matins-
 // design`, and TODO.md's own Matins section): this is NOT a historical
@@ -76,7 +76,7 @@ import { getPsalmVerses } from '../psalter';
 import { getPsalmsFor, type PsalmRef } from '../psalter/distribution';
 import { getScriptureVerses } from '../scripture';
 import { getOpeningVersicleId } from './opening-versicle';
-import { isDoubleOrHigher, applyFlexaMark } from './antiphon';
+import { applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
   getDayCollect,
@@ -547,8 +547,8 @@ function withSingleAntiphon(refs: PsalmRef[], antiphonText: ResolvedText, winner
  * gathered for `day` — the office winner (if sanctoral), every
  * commemorated saint (a transferred-in feast already appears as `day.winner`
  * once `resolveDay` has applied the transfer, so it needs no separate
- * lookup here), and — only on a real 3-nocturn day (Sunday, or a Duplex+
- * feast) — the plain temporal id itself (that Sunday's own Moralia-in-
+ * lookup here), and — only on a real 3-nocturn day (Sunday, or a
+ * Semiduplex+ feast) — the plain temporal id itself (that Sunday's own Moralia-in-
  * Job-style commentary) plus, for dates from the 1st Sunday of August
  * through the eve of Advent, the calendar-month/week id (`month-week-<id>`,
  * calendar/month-week-id.ts's monthWeekId): the real historical Nocturn 2
@@ -734,12 +734,17 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   const day = resolveDay(date);
   const winner = resolveOfficeWinner(day);
   const temporalId = resolveTemporalId(date);
-  // Every Sunday, unconditionally, or a Duplex+ sanctoral winner — the
-  // user's own chosen threshold (2026-08), not gated on whether any
-  // content is actually authored yet, same "eligible, not content-gated"
-  // convention every other per-feast override in this app already uses
-  // (see hours/resolve-common.ts's getOfficeOverrideId).
-  const threeNocturns = day.weekday === 'sunday' || isDoubleOrHigher(winner);
+  // Every Sunday, unconditionally, or a Semiduplex+ sanctoral winner — the
+  // user's own chosen threshold (2026-08, lowered from Duplex to
+  // Semiduplex 2026-09-02), not gated on whether any content is actually
+  // authored yet, same "eligible, not content-gated" convention every
+  // other per-feast override in this app already uses (see
+  // hours/resolve-common.ts's getOfficeOverrideId). Deliberately a
+  // separate check from `isDoubleOrHigher` (antiphon.ts) — that function
+  // drives the unrelated antiphon-doubling rule (full vs. incipit antiphon
+  // before the psalms) and stays floored at Duplex; the two thresholds
+  // only coincided before this change by accident, not by shared meaning.
+  const threeNocturns = day.weekday === 'sunday' || (winner.kind === 'sanctoral' && isAtLeast(winner.rank, 'semiduplex'));
   const pool = buildReadingPool(day, temporalId, date, threeNocturns);
   const [nocturn1Readings, nocturn2Readings, nocturn3Readings] = distributeIntoNocturns(pool, threeNocturns ? 3 : 1);
 
@@ -775,19 +780,21 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
     parts.push({ kind: 'versicle', text: resolveCommon('te-decet-laus') });
   } else if (threeNocturns) {
-    // A Duplex+ weekday feast — genuinely different psalmody from a real
-    // Sunday's, not the same content reused.
+    // A Semiduplex+ weekday feast — genuinely different psalmody from a
+    // real Sunday's, not the same content reused.
     //   - Saint-specific proper: use its own full scheme, any rank.
     //   - No proper, rank duplex-majus+: Common's own full scheme (own
     //     psalm numbers, canticles) if authored; else the fully bare
     //     ferialPsalmodyThreeNocturns stand-in. Unaffected by the
-    //     duplex-and-below carve-out below (user, 2026-08).
-    //   - No proper, rank exactly duplex (the floor of 3-nocturn
-    //     eligibility): ferial psalm numbers, not Common's own — but
-    //     Common's per-nocturn versicle, and each nocturn's own Terce/
-    //     Sext/None antiphon for that category, if authored (see
-    //     ferialPsalmodyThreeNocturns's own doc comment for why those
-    //     three, not Common's own Matins Nocturn antiphons).
+    //     below-duplex-majus carve-out below (user, 2026-08).
+    //   - No proper, rank Semiduplex or Duplex (below the floor of the
+    //     duplex-majus+ tier, but at or above the floor of 3-nocturn
+    //     eligibility itself, lowered to Semiduplex 2026-09-02): ferial
+    //     psalm numbers, not Common's own — but Common's per-nocturn
+    //     versicle, and each nocturn's own Terce/Sext/None antiphon for
+    //     that category, if authored (see ferialPsalmodyThreeNocturns's
+    //     own doc comment for why those three, not Common's own Matins
+    //     Nocturn antiphons).
     const properOverride = winner.kind === 'sanctoral' ? getMatinsSaintOverride(winner.id) : undefined;
     const isAboveDuplex = winner.kind === 'sanctoral' && isAtLeast(winner.rank, 'duplex-majus');
     const commonOverride = winner.kind === 'sanctoral' && !properOverride ? getMatinsCommonOverride(winner.id) : undefined;

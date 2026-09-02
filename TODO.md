@@ -4857,3 +4857,22 @@ file's header was a documented-but-unverified assumption, not real content.
 See memory `vu_ferial_matins_antiphons` for full detail.
 
 `npm test`, `tsc --noEmit`, and `npm run build` all pass.
+
+### Matins: 3-nocturn threshold lowered from Duplex to Semiduplex (2026-09-02)
+
+Same session, a separate fix: the 3-nocturn gate (`hours/matins.ts`'s `threeNocturns`) was
+floored at Duplex (`isDoubleOrHigher`). User's own design call, prompted by noticing today's
+Matins (St. Stephen of Hungary, Semiduplex) wrongly rendering as 1-nocturn: Semiduplex and
+Duplex should share the same 3-nocturn/3-psalms-each shape (distinct from Sunday/Duplex-majus
++'s 6/6/3-plus-canticles scheme). Lowered the floor with a new, separate check
+(`isAtLeast(winner.rank, 'semiduplex')`) rather than touching `isDoubleOrHigher` itself, which
+drives an unrelated antiphon-doubling rule elsewhere and must stay floored at Duplex. No new
+content authoring was needed — `ferialPsalmodyThreeNocturns` already existed and already
+chunks the ferial 9-psalm pool into 3/3/3 as the fallback for a plain-Duplex winner with no
+override authored; Semiduplex winners now fall into that same already-working branch. Proved
+via St. Stephen of Hungary (2026-09-02, Common of a Confessor): 3 real nocturns, Common's own
+Terce/Sext/None antiphons+versicles, Te Deum present.
+
+See memory `vu_matins_semiduplex_threshold` for full detail.
+
+`npm test` (823 passed), `tsc --noEmit`, and `npm run build` all pass.
