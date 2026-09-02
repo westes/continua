@@ -170,11 +170,23 @@ const sundayPaschaltideOverrides = matinsSundayPaschaltideOverridesData as unkno
 
 // A specific privileged Sunday whose own proper is wholesale different
 // from the fixed 12-psalm/3-canticle scheme, keyed by `temporalId` — see
-// matins-sunday-named-nocturn-overrides.yml's own header (currently just
-// `sunday-after-ascension`). Checked ahead of the season-wide overrides
-// above, though in practice they never collide (no season-wide override
-// exists for `ascensiontide`).
-const sundayNamedOverrides = matinsSundayNamedOverridesData as unknown as Record<string, Partial<MatinsSundayNocturnOverrides>>;
+// matins-sunday-named-nocturn-overrides.yml's own header (currently
+// `sunday-after-ascension` and `easter-sunday`). Checked ahead of the
+// season-wide overrides above, though in practice they never collide (no
+// season-wide override exists for `ascensiontide`).
+//
+// `weekdays` (2026-09-02): optional, for a `temporalId` that spans more
+// calendar days than actually share this content — e.g. `easter-sunday`
+// is the winner id for the *whole* Easter Octave (all 6 weekdays), but
+// only Sunday/Monday/Tuesday of it are live-verified to share this exact
+// proper; Wednesday-Saturday have their own different (not yet authored)
+// antiphons. Omitted entirely (as `sunday-after-ascension` does) means
+// "every day carrying this temporalId" — the common case for a temporal
+// override whose id already maps to exactly one calendar day.
+interface MatinsSundayNamedOverride extends Partial<MatinsSundayNocturnOverrides> {
+  weekdays?: Weekday[];
+}
+const sundayNamedOverrides = matinsSundayNamedOverridesData as unknown as Record<string, MatinsSundayNamedOverride>;
 
 /** Sunday Nocturn I/II/III content for a given day — a per-temporalId
  * named override (a specific privileged Sunday's own wholesale-different
@@ -734,17 +746,28 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   const day = resolveDay(date);
   const winner = resolveOfficeWinner(day);
   const temporalId = resolveTemporalId(date);
-  // Every Sunday, unconditionally, or a Semiduplex+ sanctoral winner — the
+  // Every Sunday, unconditionally, a Semiduplex+ sanctoral winner — the
   // user's own chosen threshold (2026-08, lowered from Duplex to
   // Semiduplex 2026-09-02), not gated on whether any content is actually
   // authored yet, same "eligible, not content-gated" convention every
   // other per-feast override in this app already uses (see
-  // hours/resolve-common.ts's getOfficeOverrideId). Deliberately a
-  // separate check from `isDoubleOrHigher` (antiphon.ts) — that function
-  // drives the unrelated antiphon-doubling rule (full vs. incipit antiphon
-  // before the psalms) and stays floored at Duplex; the two thresholds
-  // only coincided before this change by accident, not by shared meaning.
-  const threeNocturns = day.weekday === 'sunday' || (winner.kind === 'sanctoral' && isAtLeast(winner.rank, 'semiduplex'));
+  // hours/resolve-common.ts's getOfficeOverrideId) — or a temporal winner
+  // with its own named override (2026-09-02, e.g. Easter Monday/Tuesday
+  // reusing Easter Sunday's own entry; see `hasTemporalNamedOverride`
+  // below). Unlike the sanctoral case, a plain temporal id is NOT
+  // eligible just by existing — only one with an authored entry in
+  // `sundayNamedOverrides` is, since ordinary temporal ferias/Sundays
+  // already have their own correct path and shouldn't suddenly gain 3
+  // nocturns. Deliberately a separate check from `isDoubleOrHigher`
+  // (antiphon.ts) — that function drives the unrelated antiphon-doubling
+  // rule (full vs. incipit antiphon before the psalms) and stays floored
+  // at Duplex; the two thresholds only coincided before this change by
+  // accident, not by shared meaning.
+  const temporalNamedOverride = winner.kind === 'temporal' ? sundayNamedOverrides[winner.id] : undefined;
+  const hasTemporalNamedOverride =
+    temporalNamedOverride !== undefined && (temporalNamedOverride.weekdays === undefined || temporalNamedOverride.weekdays.includes(day.weekday));
+  const threeNocturns =
+    day.weekday === 'sunday' || (winner.kind === 'sanctoral' && isAtLeast(winner.rank, 'semiduplex')) || hasTemporalNamedOverride;
   const pool = buildReadingPool(day, temporalId, date, threeNocturns);
   const [nocturn1Readings, nocturn2Readings, nocturn3Readings] = distributeIntoNocturns(pool, threeNocturns ? 3 : 1);
 
@@ -767,7 +790,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
         { kind: 'hymn', text: resolveMatinsHymn(day) },
       ];
 
-  if (threeNocturns && day.weekday === 'sunday') {
+  if (threeNocturns && (day.weekday === 'sunday' || hasTemporalNamedOverride)) {
     parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
     parts.push(...sundayPsalmNocturn(sundayNocturnFor('nocturn1', day, temporalId), day));
     parts.push(...(nocturn1Readings ?? []));
