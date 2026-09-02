@@ -149,6 +149,22 @@ offsets:
   48: privileged-feria-major # Vigil of Pentecost — no live saint-collision test found/attempted (rare by construction), but corroborated 2026-09-01 by its own formal rank in the reference source (Sancti/Pentecost Vigil file's own [Rank]: "Semiduplex I classis" — a genuinely first-class day, consistent with the stricter tier)
 
 offsetRanges:
+  # Ferias of Passion week (Monday-Saturday before Palm Sunday) -- was
+  # falling through to passiontide's own `ordinary-feria` season default
+  # (no rank threshold at all), which let any real feast, however
+  # low-ranked, win outright. Live-verified 2026-09-02 against the
+  # reference engine (Monastic Tridentinum 1617): swept every calendar
+  # date that can ever land in this window across 2020-2119 (the full
+  # range Easter's date can produce) and found zero sub-Duplex winners --
+  # every real winner is Duplex or higher (St. Joseph, St. Leo I, St.
+  # Francis of Paola, the Transitus of St. Benedict, the Annunciation, St.
+  # Gregory the Great) -- while an ordinary Lent feria outside this window
+  # (Ss. Quadraginta Martyrum, Semiduplex, March 10) does win outright,
+  # confirming Semiduplex+ is a real threshold for Lent generally but not
+  # for Passion week specifically. `privileged-feria` (Duplex+ wins
+  # outright, matching Lent's Ember days above) is the right tier, not
+  # `ordinary-feria`.
+  - { fromOffset: -13, toOffset: -8, category: privileged-feria } # ferias of Passion week
   - { fromOffset: -6, toOffset: -1, category: privileged-feria-major } # ferias of Holy Week
   - { fromOffset: 1, toOffset: 6, category: privileged-feria-major } # Easter octave — verified: even Duplex II. classis (St. Mark) only gets commemorated, never wins
   # Pentecost's own Octave (offsets 50-55) is deliberately absent from
