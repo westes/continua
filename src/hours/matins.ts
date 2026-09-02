@@ -756,6 +756,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     ? []
     : [
         { kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) },
+        { kind: 'versicle', text: resolveCommon('opening-domine-labia') },
         plainPsalm(3),
         { kind: 'section-heading', label: 'Invitatory' },
         ...invitatoryParts(day),
