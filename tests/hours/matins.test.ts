@@ -360,6 +360,54 @@ describe('resolveOrdo("matins", ...) Sunday within the Octave of Ascension (2026
   });
 });
 
+describe('resolveOrdo("matins", ...) Easter Sunday/Monday/Tuesday shared proper Matins (2026-09-02 fix)', () => {
+  // All 6 weekdays of the Easter Octave share winner {kind: 'temporal', id:
+  // 'easter-sunday'} -- only Sunday/Monday/Tuesday are live-verified to
+  // share this exact proper content, restricted via the override's own
+  // `weekdays` field (see matins-sunday-named-nocturn-overrides.yml).
+  const EASTER_WEEK_2026 = ['2026-04-05', '2026-04-06', '2026-04-07'] as const;
+
+  it.each(EASTER_WEEK_2026)('%s shares the identical 13-psalm proper scheme, 3 nocturns, Te Deum', (date) => {
+    const day = resolveDay(date);
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'easter-sunday' });
+    const ordo = resolveOrdo('matins', date);
+    const psalms = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
+    expect(psalms).toEqual([3, 94, 1, 2, 8, 15, 23, 27, 29, 63, 65, 75, 87, 107]);
+    expect(ordo.parts.some((p) => p.kind === 'te-deum')).toBe(true);
+
+    const canticles = ordo.parts.filter((p) => p.kind === 'canticle') as { canticleId: string }[];
+    expect(canticles.map((c) => c.canticleId)).toEqual(['isa-63-1-5', 'osee-6-1-6', 'soph-3-8-13']);
+
+    const antiphons = ordo.parts.filter((p) => p.kind === 'antiphon') as { text: { text: Record<string, string> } }[];
+    expect(antiphons[1]?.text.text.la).toBe('Ant. Ego sum qui sum, * et consílium meum non est cum ímpiis, sed in lege Dómini volúntas mea est, allelúja.');
+    expect(antiphons.at(-1)?.text.text.la).toBe(
+      'Ant. Nolíte expavéscere: * Jesum quǽritis Nazarénum, crucifíxum: surréxit, non est hic, allelúja.',
+    );
+
+    const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
+    const [, , nocturn1, nocturn2, nocturn3] = versicles;
+    expect(nocturn1?.text.text.la).toBe('V. Surréxit Dóminus de sepúlcro, allelúja.\nR. Qui pro nobis pepéndit in ligno, allelúja.');
+    expect(nocturn2?.text.text.la).toBe('V. Surréxit Dóminus vere, allelúja.\nR. Et appáruit Simóni, allelúja.');
+    expect(nocturn3?.text.text.la).toBe('V. Gavísi sunt discípuli, allelúja.\nR. Viso Dómino, allelúja.');
+  });
+
+  it('Wednesday-Saturday of the Octave (same winner.id, excluded by `weekdays`) keep the plain 1-nocturn ferial branch unchanged', () => {
+    const ordo = resolveOrdo('matins', '2026-04-08'); // Wednesday of Easter week
+    const day = resolveDay('2026-04-08');
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'easter-sunday' });
+    const psalms = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
+    // Plain ferial Wednesday table, same as any other Wednesday.
+    expect(psalms.slice(2)).toEqual(getPsalmsFor('matins', 'wednesday').map((r) => r.number));
+    expect(ordo.parts.some((p) => p.kind === 'te-deum')).toBe(false);
+  });
+
+  it('Low Sunday (a different temporalId) is unaffected, still the plain fixed Sunday scheme', () => {
+    const ordo = resolveOrdo('matins', '2026-04-12');
+    const psalms = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
+    expect(psalms).toEqual([3, 94, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]);
+  });
+});
+
 describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunday) branch', () => {
   // 2026-08-17 -- St. Lawrence's own octave closing day ("In Octava S.
   // Laurentii Martyris ~ Duplex"), live-verified directly against the

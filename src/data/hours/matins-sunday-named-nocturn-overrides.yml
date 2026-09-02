@@ -7,6 +7,14 @@
 #
 # hours/matins.ts's lookup checks this map first (most specific), ahead of
 # the season-wide overrides, when `temporalId` matches a key here.
+#
+# `easter-sunday` (below) is also reused for Easter Monday and Tuesday
+# (`hours/matins.ts`'s threeNocturns/Sunday-branch dispatch route any
+# temporal winner with a matching entry here through the same rendering as
+# a real Sunday, not just `day.weekday === 'sunday'` literally) — the
+# reference engine's own content is byte-identical across all three days
+# (live-verified 2026-09-02, 2026-04-05/06/07), so one entry covers all
+# three rather than three separate near-duplicate ones.
 
 # Sunday within the Octave of Ascension (`sunday-after-ascension`) —
 # live-verified against the local reference-engine CGI instance
@@ -32,6 +40,71 @@
 # translation of the underlying Mark 16:20 text (a well-known, unambiguous
 # formula, not a guess), consistent with how every other antiphon in this
 # file is sourced.
+# Easter Sunday itself (and Monday/Tuesday of the Octave, which share this
+# entry — see the file header above). Live-verified against the local
+# reference-engine CGI instance (`prayMatutinum`, Monastic Tridentinum
+# 1617, 2026-09-02, proof dates 2026-04-05/06/07). Unlike every other
+# Sunday scheme in this file, each nocturn here uses ONE shared antiphon
+# over ALL 6 of its psalms (not one antiphon per psalm, nor per pair) —
+# confirmed by the live query: a single "Ant." before the first psalm and
+# the same antiphon repeated in full after the last, nothing in between.
+# Nocturn III reuses the same 3 canticles as the ordinary-Paschaltide
+# override (Isa 63:1-5, Osee 6:1-6, Sophonias 3:8-13 — already authored,
+# no new scripture files needed) under its own different antiphon; all 3
+# nocturn-closing versicles are also byte-identical to the ones already
+# authored in matins-sunday-paschaltide-nocturn-overrides.yml, confirming
+# those are shared season-wide, not coincidentally reused.
+#
+# The reference engine's own [Rule] for this day actually reads "1
+# nocturn" (the whole night office collapses to a single nocturn of 3
+# lessons on this most privileged of feasts) — not modeled that way here;
+# this app's own threeNocturns rule renders every Sunday with 3 nocturns
+# unconditionally regardless of the historical single-nocturn rubric for
+# this particular feast (same convention already noted in
+# nocturn-readings/easter-sunday.yml's own header for the reading side).
+#
+# Explicitly NOT covered by this entry: Wednesday-Saturday of the Octave
+# have their own real Paschal-alleluia antiphons layered over (in the
+# reference engine) a differently-sized psalm set — live-verified present
+# (2026-04-08, Wednesday) but not authored here. A separate, smaller gap
+# (4 more days of antiphon-only content, analogous to the existing Advent/
+# Paschaltide seasonal-overlay shape) — see TODO.md.
+easter-sunday:
+  # winner.id 'easter-sunday' spans the whole Octave (all 6 weekdays), but
+  # only these 3 calendar days are live-verified to share this content —
+  # restricting the entry so Wednesday-Saturday keep falling through to
+  # their own (not yet authored) path instead of wrongly reusing this one.
+  weekdays: [sunday, monday, tuesday]
+  nocturn1:
+    groups:
+      - psalms: [1, 2, 8, 15, 23, 27]
+        antiphon:
+          la: "Ego sum qui sum, * et consílium meum non est cum ímpiis, sed in lege Dómini volúntas mea est, allelúja."
+          en: "I am who I am, * and my counsel is not with the ungodly, my will is in the law of God, alleluia."
+    versicle:
+      v: { la: "Surréxit Dóminus de sepúlcro, allelúja.", en: "The Lord is risen from the sepulchre, alleluia." }
+      r: { la: "Qui pro nobis pepéndit in ligno, allelúja.", en: "Who for us was hanged on the tree, alleluia." }
+  nocturn2:
+    groups:
+      - psalms: [29, 63, 65, 75, 87, 107]
+        antiphon:
+          la: "Terra * trémuit et quiévit, † dum exsúrgeret in judício Deus, allelúja."
+          en: "The earth * trembled and was still, when God arose to judgment, alleluia."
+    versicle:
+      v: { la: "Surréxit Dóminus vere, allelúja.", en: "The Lord is risen indeed, alleluia." }
+      r: { la: "Et appáruit Simóni, allelúja.", en: "And hath appeared to Simon, alleluia." }
+  nocturn3:
+    canticles:
+      - refs: [{ book: isa, chapter: 63, verses: "1-5" }]
+      - refs: [{ book: osee, chapter: 6, verses: "1-6" }]
+      - refs: [{ book: soph, chapter: 3, verses: "8-13" }]
+    antiphon:
+      la: "Nolíte expavéscere: * Jesum quǽritis Nazarénum, crucifíxum: surréxit, non est hic, allelúja."
+      en: "Be not affrighted; * you seek Jesus of Nazareth, who was crucified: he is risen, he is not here, alleluia."
+    versicle:
+      v: { la: "Gavísi sunt discípuli, allelúja.", en: "The disciples were glad, alleluia." }
+      r: { la: "Viso Dómino, allelúja.", en: "When they saw the Lord, alleluia." }
+
 sunday-after-ascension:
   nocturn1:
     groups:
