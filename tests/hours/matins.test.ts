@@ -22,12 +22,13 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
     expect(ordo.notImplemented).toBeUndefined();
   });
 
-  it('opens with the Deus in adjutorium versicle, then Psalm 3, then the Invitatory (Psalm 94)', () => {
+  it('opens with the Deus in adjutorium versicle, then Domine labia (x3), then Psalm 3, then the Invitatory (Psalm 94)', () => {
     expect(ordo.parts[0]?.kind).toBe('versicle');
-    expect(ordo.parts[1]).toMatchObject({ kind: 'psalm', psalmNumber: 3 });
-    expect(ordo.parts[2]).toMatchObject({ kind: 'section-heading', label: 'Invitatory' });
-    expect(ordo.parts[3]).toMatchObject({ kind: 'psalm', psalmNumber: 94 });
-    const invitatoryAntiphon = (ordo.parts[3] as { antiphon?: { text: Record<string, string> } }).antiphon;
+    expect(ordo.parts[1]?.kind).toBe('versicle');
+    expect(ordo.parts[2]).toMatchObject({ kind: 'psalm', psalmNumber: 3 });
+    expect(ordo.parts[3]).toMatchObject({ kind: 'section-heading', label: 'Invitatory' });
+    expect(ordo.parts[4]).toMatchObject({ kind: 'psalm', psalmNumber: 94 });
+    const invitatoryAntiphon = (ordo.parts[4] as { antiphon?: { text: Record<string, string> } }).antiphon;
     expect(invitatoryAntiphon?.text.la).toContain('Veníte');
     // Real practice repeats the invitatory antiphon between verse groups —
     // deliberately not modeled that way here (see hours/matins.ts's own
@@ -48,8 +49,8 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
   });
 
   it("gives every nocturn psalm its own antiphon and includes Tuesday's own versicle (data/hours/matins-ferial-antiphons.yml)", () => {
-    // The nocturn's own psalms start at index 4 (after versicle/Ps3/heading/Ps94).
-    const nocturnPsalms = ordo.parts.slice(4).filter((p) => p.kind === 'psalm') as {
+    // The nocturn's own psalms start at index 5 (after the two opening versicles/Ps3/heading/Ps94).
+    const nocturnPsalms = ordo.parts.slice(5).filter((p) => p.kind === 'psalm') as {
       psalmNumber: number;
       antiphon?: { text: Record<string, string> };
     }[];
@@ -64,7 +65,7 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
         expect(p.antiphon.text.en).toBeTruthy();
       }
     }
-    const nocturnVersicles = ordo.parts.slice(4).filter((p) => p.kind === 'versicle');
+    const nocturnVersicles = ordo.parts.slice(5).filter((p) => p.kind === 'versicle');
     expect(nocturnVersicles).toHaveLength(1);
     const versicleText = (nocturnVersicles[0] as { text: { text: Record<string, string> } }).text.text;
     expect(versicleText.la).toContain('Ímmola Deo sacrifícium laudis');
@@ -138,15 +139,16 @@ describe('resolveOrdo("matins", ...) Sunday (3-nocturn) branch', () => {
 
   it('renders each nocturn versicle with both its V. and R. lines (real bug: sundayPsalmNocturn/sundayCanticleNocturn used to drop the R. line entirely)', () => {
     const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
-    // Opening Deus-in-adjutorium versicle + one per nocturn (1, 2, 3) +
-    // the closing "Te decet laus" versicle after the Te Deum (2026-08).
-    expect(versicles).toHaveLength(5);
-    const [, nocturn1, nocturn2, nocturn3] = versicles;
+    // Opening Deus-in-adjutorium versicle + opening Domine-labia versicle +
+    // one per nocturn (1, 2, 3) + the closing "Te decet laus" versicle
+    // after the Te Deum (2026-08).
+    expect(versicles).toHaveLength(6);
+    const [, , nocturn1, nocturn2, nocturn3] = versicles;
     expect(nocturn1?.text.text.la).toBe('V. Memor fui nocte nóminis tui Dómine.\nR. Et custodívi legem tuam.');
     expect(nocturn2?.text.text.la).toBe('V. Média nocte surgébam ad confiténdum tibi.\nR. Super justítia justificatiónis tuæ.');
     expect(nocturn3?.text.text.la).toBe('V. Exaltáre Dómine in virtúte tua.\nR. Cantábimus et psallémus virtútes tuas.');
-    // The 5th versicle is "Te decet laus", right after the Te Deum (2026-08).
-    expect(versicles[4]?.text.text.la).toContain('Te decet laus');
+    // The 6th versicle is "Te decet laus", right after the Te Deum (2026-08).
+    expect(versicles[5]?.text.text.la).toContain('Te decet laus');
   });
 
   it("resolves the user's own bible-plan reading (Tobit/Sirach) for Nocturn 1", () => {
@@ -260,7 +262,7 @@ describe('resolveOrdo("matins", ...) Advent Sunday Nocturns I-III seasonal overr
       );
 
       const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
-      const [, nocturn1, nocturn2, nocturn3] = versicles;
+      const [, , nocturn1, nocturn2, nocturn3] = versicles;
       expect(nocturn1?.text.text.la).toBe('V. Ex Sion spécies decóris ejus.\nR. Deus noster maniféste véniet.');
       expect(nocturn2?.text.text.la).toBe('V. Emítte Agnum, Dómine, Dominatórem terræ.\nR. De Petra desérti ad montem fíliæ Sion.');
       expect(nocturn3?.text.text.la).toBe('V. Egrediétur Dóminus de loco sancto suo.\nR. Véniet ut salvet pópulum suum.');
@@ -305,7 +307,7 @@ describe('resolveOrdo("matins", ...) Paschaltide Sunday Nocturns I-III seasonal 
       );
 
       const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
-      const [, nocturn1, nocturn2, nocturn3] = versicles;
+      const [, , nocturn1, nocturn2, nocturn3] = versicles;
       expect(nocturn1?.text.text.la).toBe('V. Surréxit Dóminus de sepúlcro, allelúja.\nR. Qui pro nobis pepéndit in ligno, allelúja.');
       expect(nocturn2?.text.text.la).toBe('V. Surréxit Dóminus vere, allelúja.\nR. Et appáruit Simóni, allelúja.');
       expect(nocturn3?.text.text.la).toBe('V. Gavísi sunt discípuli, allelúja.\nR. Viso Dómino, allelúja.');
@@ -351,7 +353,7 @@ describe('resolveOrdo("matins", ...) Sunday within the Octave of Ascension (2026
     );
 
     const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
-    const [, nocturn1, nocturn2, nocturn3] = versicles;
+    const [, , nocturn1, nocturn2, nocturn3] = versicles;
     expect(nocturn1?.text.text.la).toBe('V. Ascéndit Deus in jubilatióne, allelúja.\nR. Et Dóminus in voce tubæ, allelúja.');
     expect(nocturn2?.text.text.la).toBe('V. Ascéndens Christus in altum, allelúja.\nR. Captívam duxit captivitátem, allelúja.');
     expect(nocturn3?.text.text.la).toBe('V. Ascéndo ad Patrem meum, et Patrem vestrum, allelúja.\nR. Deum meum, et Deum vestrum, allelúja.');
@@ -596,7 +598,8 @@ describe('resolveOrdo("matins", ...) Sacred Triduum', () => {
   it("leaves an ordinary day's opening block untouched", () => {
     const ordo = resolveOrdo('matins', '2026-08-20');
     expect(ordo.parts[0]?.kind).toBe('versicle');
-    expect(ordo.parts[1]).toMatchObject({ kind: 'psalm', psalmNumber: 3 });
+    expect(ordo.parts[1]?.kind).toBe('versicle');
+    expect(ordo.parts[2]).toMatchObject({ kind: 'psalm', psalmNumber: 3 });
   });
 });
 
