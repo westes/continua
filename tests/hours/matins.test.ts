@@ -391,12 +391,14 @@ describe('resolveOrdo("matins", ...) Easter Sunday/Monday/Tuesday shared proper 
     expect(nocturn3?.text.text.la).toBe('V. Gavísi sunt discípuli, allelúja.\nR. Viso Dómino, allelúja.');
   });
 
-  it('Wednesday-Saturday of the Octave (same winner.id, excluded by `weekdays`) keep the plain 1-nocturn ferial branch unchanged', () => {
+  it('Wednesday-Saturday of the Octave (same winner.id, excluded by the Sunday-side `weekdays`) stay in the plain 1-nocturn ferial branch, same psalm numbers, no Te Deum', () => {
     const ordo = resolveOrdo('matins', '2026-04-08'); // Wednesday of Easter week
     const day = resolveDay('2026-04-08');
     expect(day.winner).toEqual({ kind: 'temporal', id: 'easter-sunday' });
     const psalms = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
-    // Plain ferial Wednesday table, same as any other Wednesday.
+    // Plain ferial Wednesday psalm numbers, same as any other Wednesday --
+    // only the antiphon layer differs (see the ferial-named-override
+    // describe block below), not the psalmody itself.
     expect(psalms.slice(2)).toEqual(getPsalmsFor('matins', 'wednesday').map((r) => r.number));
     expect(ordo.parts.some((p) => p.kind === 'te-deum')).toBe(false);
   });
@@ -405,6 +407,37 @@ describe('resolveOrdo("matins", ...) Easter Sunday/Monday/Tuesday shared proper 
     const ordo = resolveOrdo('matins', '2026-04-12');
     const psalms = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
     expect(psalms).toEqual([3, 94, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]);
+  });
+});
+
+describe('resolveOrdo("matins", ...) Easter Octave Wednesday-Saturday ferial named antiphon override (2026-09-02 fix)', () => {
+  // All 4 weekdays share the exact same 2 antiphons verbatim (live-
+  // verified 2026-04-08/09/10/11) -- own psalm numbers per weekday
+  // unchanged, split evenly across the weekday's own psalm-group count.
+  const EASTER_OCTAVE_WEEKDAYS = ['2026-04-08', '2026-04-09', '2026-04-10', '2026-04-11'] as const;
+
+  it.each(EASTER_OCTAVE_WEEKDAYS)('%s gets the same 2 real antiphons, own weekday psalm numbers unchanged', (date) => {
+    const day = resolveDay(date);
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'easter-sunday' });
+    const ordo = resolveOrdo('matins', date);
+    // Ps 3 + 94 (opening/invitatory) plus this weekday's own real ferial table.
+    const psalms = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
+    expect(psalms.slice(2)).toEqual(getPsalmsFor('matins', day.weekday as Exclude<typeof day.weekday, 'sunday'>).map((r) => r.number));
+
+    // Only the 2 named-override antiphons appear in the nocturn (skip the
+    // Invitatory's own antiphon, index 0).
+    const antiphons = ordo.parts.filter((p) => p.kind === 'antiphon') as { text: { text: Record<string, string> } }[];
+    const [, first, second] = antiphons;
+    expect(first?.text.text.la).toBe(
+      'Ant. Jesum qui crucifíxus est quǽritis, allelúja; non est hic: surréxit enim, sicut dixit vobis, allelúja.',
+    );
+    expect(second?.text.text.la).toBe('Ant. Veníte et vidéte locum ubi pósitus erat Dóminus, allelúja, allelúja.');
+    expect(antiphons).toHaveLength(3);
+
+    // No Te Deum -- still the 1-nocturn ferial branch, not promoted to 3.
+    expect(ordo.parts.some((p) => p.kind === 'te-deum')).toBe(false);
+    // No stray versicle in the psalmody (same fix as the plain ferial branch).
+    expect(ordo.parts.slice(5).some((p) => p.kind === 'versicle')).toBe(false);
   });
 });
 

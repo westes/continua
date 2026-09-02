@@ -1,0 +1,37 @@
+# Ferial (1-nocturn) Matins antiphon override for a specific temporal id
+# whose plain per-weekday antiphons (matins-ferial-antiphons.yml) don't
+# apply — the ferial-side counterpart to matins-sunday-named-nocturn-
+# overrides.yml's `weekdays` field/general mechanism, added for the same
+# reason: some temporal feasts have their own real antiphon content that
+# should override the plain weekday default without a new part kind or
+# psalm-set change.
+#
+# `antiphons` is an ordered list, distributed as evenly as possible across
+# the target weekday's own already-fixed psalm-group count (from
+# matins-ferial-antiphons.yml) — NOT tied to specific psalm numbers, since
+# one entry here is meant to be reused across several different weekdays
+# (each with its own different psalm set) rather than authored per-day.
+# `hours/matins.ts`'s `ferialNamedAntiphonedNocturn` does the splitting.
+#
+# Easter Octave, Wednesday-Saturday (`easter-sunday`, restricted via
+# `weekdays` the same way the Sunday-side override restricts itself to
+# just Sunday/Monday/Tuesday of the same span): live-verified (Pofficium.pl,
+# prayMatutinum, Monastic Tridentinum 1617, 2026-04-08/09/10/11) that all 4
+# weekdays share the exact same 2 antiphons verbatim — not per-day content,
+# despite each having a different Gospel reading in the nocturn-readings
+# pool. The reference engine itself renders these 2 antiphons over its own
+# 2-nocturn, differently-sized psalm set (the historical Rule-of-Benedict
+# Paschaltide contraction) — not reproduced here, since this app already
+# deliberately rejects that contraction (see CLAUDE.md's "No RB summer
+# contraction"). Instead, layered onto vu's own already-fixed per-weekday
+# 9-psalm ferial pool, split into 2 roughly-even halves by psalm-group
+# count (a design choice, not a transcription — the reference's own
+# antiphon/psalm-group boundary doesn't map onto vu's differently-sized
+# pool at all).
+easter-sunday:
+  weekdays: [wednesday, thursday, friday, saturday]
+  antiphons:
+    - la: "Jesum qui crucifíxus est quǽritis, allelúja; non est hic: surréxit enim, sicut dixit vobis, allelúja."
+      en: "You seek Jesus who was crucified, alleluia; he is not here, for he is risen, as he said, alleluia."
+    - la: "Veníte et vidéte locum ubi pósitus erat Dóminus, allelúja, allelúja."
+      en: "Come, see the place where the Lord was laid, alleluia, alleluia."

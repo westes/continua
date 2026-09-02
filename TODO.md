@@ -19,13 +19,13 @@ across every hour and content type in this app.
 
 1. **Mechanism gaps** — a real design/code piece not built yet, blocking any content pass on
    it from starting:
-   - ~~Easter's own octave~~ — DONE (2026-09-01/02): the transfer-cascade piece (calendar
-     precedence within Holy Week/Easter Day/the Octave/Low Sunday) and Easter Sunday/Monday/
-     Tuesday's own proper Matins (psalms/antiphons/versicles/canticles, sharing one authored
-     entry via a new general-purpose temporal-override mechanism) are both built and
+   - ~~Easter's own octave~~ — DONE (2026-09-01/02): calendar precedence (the transfer-cascade
+     piece within Holy Week/Easter Day/the Octave/Low Sunday), Easter Sunday/Monday/Tuesday's
+     own proper Matins, and Wednesday-Saturday's own antiphons are all built, authored, and
      live-verified — see the dated log's "Easter octave transfer cascade" and "Easter's own
-     octave" entries. What's left is narrower, moved to the bulk-content section below:
-     Wednesday-Saturday of the Octave's own (different, not yet authored) antiphons.
+     octave" entries (two general-purpose mechanisms came out of this: a Sunday-branch and a
+     ferial-branch temporal-named-override, both reusable by any future temporal feast wanting
+     its own proper psalms/lessons, not scoped to Easter specifically).
    - Date picker: `day-nav.ts` currently only steps a day at a time (prev/next); there's no
      way to jump to an arbitrary date without walking there one day at a time or editing the
      URL. Needs a calendar-grid picker UI — open, not started.
@@ -53,11 +53,6 @@ across every hour and content type in this app.
      nocturn-readings sweep" below, including the easter-sunday/pentecost-sunday correction).
      Moved out of this "bulk content pending" section since there's no more bulk content left to
      author here.
-   - Wednesday-Saturday of the Easter Octave: real Paschal-alleluia antiphons exist in the
-     reference engine (live-verified 2026-04-08) over a differently-sized psalm set than vu's
-     own fixed ferial table — 4 days of antiphon-only content, same shape as the existing
-     Advent/Paschaltide seasonal-overlay pattern, layered onto vu's own psalm numbers rather
-     than the reference engine's. See the dated log's "Easter's own octave" entry.
    - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
      `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
      citations resolve to `missing` text until it lands.
@@ -4934,3 +4929,28 @@ seasonal-overlay pattern, layered onto vu's own ferial psalm numbers rather than
 reproduce the reference engine's differently-sized set — not started.
 
 `npm test` (828 passed), `tsc --noEmit`, and `npm run build` all pass.
+
+### Easter's own octave — Wednesday-Saturday's antiphons done too, fully closing the item (2026-09-02, same day)
+
+Closes the remaining open piece from the entry above. Live-verified: all 4 weekdays
+(Wednesday-Saturday) share the exact same 2 antiphons verbatim — not per-day content, despite
+each drawing on a different Gospel reading in the nocturn-readings pool ("Jesum qui crucifíxus
+est quǽritis, allelúja..." / "Veníte et vidéte locum ubi pósitus erat Dóminus, allelúja,
+allelúja.", Pofficium.pl, prayMatutinum, Monastic Tridentinum 1617, 2026-04-08/09/10/11).
+
+New general-purpose mechanism, the ferial-side counterpart to the Sunday-named-override built
+earlier the same day: `data/hours/matins-ferial-named-antiphon-overrides.yml` (a temporal id's
+own antiphon list, optionally restricted to specific weekdays — same `weekdays` idiom as the
+Sunday-side override) + `hours/matins.ts`'s `ferialNamedAntiphonedNocturn`, checked first in
+`ferialAntiphonedNocturn` ahead of the plain per-weekday default. The antiphon list is
+distributed evenly across the weekday's own already-fixed psalm-group count (not tied to
+specific psalm numbers), since one entry is meant to be reused across several different
+weekdays rather than authored per-day — psalm numbers themselves are unchanged from the plain
+ferial default (vu's own fixed table, not the reference engine's differently-sized Paschaltide-
+contracted one).
+
+With this, "Easter's own octave" is fully closed: calendar precedence (2026-09-01), Sunday/
+Monday/Tuesday's shared proper psalmody (2026-09-02), and now Wednesday-Saturday's antiphons
+(2026-09-02, same day). See memory `vu_easter_octave_proper_matins` for the full writeup.
+
+`npm test` (832 passed), `tsc --noEmit`, and `npm run build` all pass.
