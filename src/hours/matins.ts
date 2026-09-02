@@ -99,6 +99,7 @@ import matinsSundayAdventOverridesData from '../data/hours/matins-sunday-advent-
 import matinsSundayPaschaltideOverridesData from '../data/hours/matins-sunday-paschaltide-nocturn-overrides.yml';
 import matinsSundayNamedOverridesData from '../data/hours/matins-sunday-named-nocturn-overrides.yml';
 import matinsFerialAntiphonsData from '../data/hours/matins-ferial-antiphons.yml';
+import matinsFerialNamedOverridesData from '../data/hours/matins-ferial-named-antiphon-overrides.yml';
 import type { Weekday } from '../calendar/types';
 
 type BilingualText = Partial<Record<string, string>>;
@@ -226,6 +227,18 @@ interface FerialNocturn {
 }
 type MatinsFerialAntiphons = Record<Exclude<Weekday, 'sunday'>, FerialNocturn>;
 const ferialAntiphons = matinsFerialAntiphonsData as unknown as MatinsFerialAntiphons;
+
+// Ferial-side counterpart to `MatinsSundayNamedOverride` — a temporal id
+// whose own real antiphons should replace the plain per-weekday default
+// in the 1-nocturn branch, reused as-is across however many weekdays
+// `weekdays` names (own psalm numbers per weekday unchanged, only the
+// antiphon layer swaps) rather than authored per-weekday — see
+// matins-ferial-named-antiphon-overrides.yml's own header.
+interface FerialNamedOverride {
+  weekdays: Weekday[];
+  antiphons: BilingualText[];
+}
+const ferialNamedOverrides = matinsFerialNamedOverridesData as unknown as Record<string, FerialNamedOverride>;
 
 const NOCTURN_NUMERAL = ['I', 'II', 'III'] as const;
 
@@ -443,7 +456,12 @@ function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
   return resolveCommon('matins-hymn-ferial');
 }
 
-/** The plain ferial weekday nocturn's real antiphoned psalmody (see
+/** The plain ferial weekday nocturn's real antiphoned psalmody — a
+ * temporal winner with a matching `ferialNamedOverrides` entry (2026-09-02,
+ * e.g. the Easter Octave's Wed-Sat) takes precedence and swaps in that
+ * override's own antiphons via `ferialNamedAntiphonedNocturn` instead (see
+ * data/hours/matins-ferial-named-antiphon-overrides.yml's own header);
+ * otherwise the plain per-weekday default (see
  * data/hours/matins-ferial-antiphons.yml's own header for how each
  * weekday's groups were reconciled against psalter-distribution.yml's own
  * "editorial redistribution" of the historical per-weekday psalm set).
@@ -454,8 +472,12 @@ function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
  * real single-nocturn ferial office runs straight from the last psalm to
  * the Capitulum (fixed 2026-09-02, see the data file's own header). */
 function ferialAntiphonedNocturn(day: LiturgicalDay): ResolvedPart[] {
-  const nocturn = ferialAntiphons[day.weekday as Exclude<Weekday, 'sunday'>];
   const winner = resolveOfficeWinner(day);
+  const namedOverride = winner.kind === 'temporal' ? ferialNamedOverrides[winner.id] : undefined;
+  if (namedOverride && namedOverride.weekdays.includes(day.weekday)) {
+    return ferialNamedAntiphonedNocturn(day, namedOverride, winner);
+  }
+  const nocturn = ferialAntiphons[day.weekday as Exclude<Weekday, 'sunday'>];
   const parts: ResolvedPart[] = [];
   for (const group of nocturn.groups) {
     const antiphonText = verifiedText(group.antiphon);
@@ -473,6 +495,35 @@ function ferialAntiphonedNocturn(day: LiturgicalDay): ResolvedPart[] {
     });
     parts.push({ kind: 'antiphon', text: full });
   }
+  return parts;
+}
+
+/** A ferial named override's antiphons, distributed as evenly as possible
+ * across the weekday's own already-fixed psalm-group count (see
+ * matins-ferial-named-antiphon-overrides.yml's own header) — the psalm
+ * numbers themselves are unchanged from the plain per-weekday default,
+ * only the antiphon layer swaps. */
+function ferialNamedAntiphonedNocturn(day: LiturgicalDay, override: FerialNamedOverride, winner: DayWinner): ResolvedPart[] {
+  const nocturn = ferialAntiphons[day.weekday as Exclude<Weekday, 'sunday'>];
+  const chunkSize = Math.ceil(nocturn.groups.length / override.antiphons.length);
+  const parts: ResolvedPart[] = [];
+  override.antiphons.forEach((antiphon, i) => {
+    const chunk = nocturn.groups.slice(i * chunkSize, (i + 1) * chunkSize);
+    if (chunk.length === 0) return;
+    const antiphonText = verifiedText(antiphon);
+    const opening = openingAntiphon(antiphonText, winner);
+    const { full } = splitNamedAntiphon(antiphonText);
+    let isFirst = true;
+    for (const group of chunk) {
+      for (const ref of group.psalms) {
+        const rawVerses = getPsalmVerses(ref.number, ref.verses).map((v): ResolvedVerse => ({ n: v.n, text: v.text, status: v.status }));
+        const { verses, antiphon: partAntiphon } = applyFlexaMark(rawVerses, isFirst ? opening : undefined);
+        isFirst = false;
+        parts.push({ kind: 'psalm', psalmNumber: ref.number, verses, antiphon: partAntiphon });
+      }
+    }
+    parts.push({ kind: 'antiphon', text: full });
+  });
   return parts;
 }
 
