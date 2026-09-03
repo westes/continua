@@ -92,6 +92,7 @@ import { getSaintRecord } from '../calendar/feasts';
 import { getBiblePlanReadings } from '../propers/bible-plan';
 import { getNocturnReadings, type NocturnReading } from '../propers/nocturn-readings';
 import { getOctaveReading } from '../propers/octave-readings';
+import { getGospelIncipitFromCitation } from '../propers/bible-book-incipits';
 import { getMatinsSaintOverride, getMatinsCommonOverride, type MatinsPsalmodyScheme } from './matins-psalmody-overrides';
 import matinsSundayAntiphonsData from '../data/hours/matins-sunday-antiphons.yml';
 import matinsSundayNocturn3OverridesData from '../data/hours/matins-sunday-nocturn3-overrides.yml';
@@ -683,10 +684,12 @@ function nocturnReadingPart(r: NocturnReading): ResolvedPart {
  * whereas two adjacent pool entries could be (and, before this, sometimes
  * were). */
 function gospelReadingPart(r: NocturnReading, homily: NocturnReading | undefined): ResolvedPart {
+  const incipit = getGospelIncipitFromCitation(r.citation);
   return {
     kind: 'gospel',
     text: { text: r.text, status: r.status, citation: r.citation },
     source: r.source,
+    label: incipit ? { la: incipit.la, en: incipit.en } : undefined,
     responsory: r.responsory ? { text: r.responsory, status: { la: 'verified', en: 'verified' } } : undefined,
     homily: homily
       ? { source: homily.source, text: { text: homily.text, status: homily.status, citation: homily.citation } }
@@ -717,10 +720,11 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
     // this file's own header) — a bare pericope, still its own 'gospel'
     // kind so it gets the same distinguishing UI treatment as a proper
     // Gospel+homily.
+    const label = r.label ? { la: r.label.la ?? '', en: r.label.en ?? '' } : undefined;
     parts.push(
       r.isGospel
-        ? { kind: 'gospel', text: { text: r.text, status: r.status, citation: r.citation }, responsory }
-        : { kind: 'lesson', text: { text: r.text, status: r.status, citation: r.citation }, responsory },
+        ? { kind: 'gospel', text: { text: r.text, status: r.status, citation: r.citation }, responsory, label }
+        : { kind: 'lesson', text: { text: r.text, status: r.status, citation: r.citation }, responsory, label },
     );
   }
   // Grouped by the reading's own `nocturn` tag (ascending), not by which id

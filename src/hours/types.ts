@@ -297,6 +297,12 @@ export type ResolvedPart =
       text: ResolvedText;
       nocturn?: number;
       source?: string;
+      /** The traditional "Léctio sancti Evangélii secúndum..."/"A reading
+       * from the Holy Gospel according to..." incipit, shown in place of the
+       * generic "Gospel" heading — see hour-view.ts's renderLessonLabel and
+       * bible-book-incipits.ts. Absent only when the pericope's own book
+       * couldn't be identified. */
+      label?: string | Partial<Record<string, string>>;
       responsory?: ResolvedText;
       homily?: { source?: string; text: ResolvedText };
     };

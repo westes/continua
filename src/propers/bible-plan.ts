@@ -20,6 +20,7 @@
 import type { LanguageCode, TranslationStatus } from '../psalter/types';
 import { resolvePassages, type ScriptureCitation } from './octave-readings';
 import { getResponsoryForBook } from './matins-responsories';
+import { getBookIncipit } from './bible-book-incipits';
 
 const GOSPEL_BOOKS = new Set(['matt', 'mark', 'luke', 'john']);
 
@@ -37,6 +38,11 @@ export interface BiblePlanReading {
    * data/hours/matins-responsories-by-book.yml — undefined when nothing's
    * seeded for that book yet, an honest absence, not a placeholder. */
   responsory?: Partial<Record<LanguageCode, string>>;
+  /** The traditional "Léctio libri..."/"A reading from..." incipit for the
+   * reading's own (first) book — see bible-book-incipits.ts. Undefined only
+   * for an abbreviation that map doesn't recognize, which shouldn't happen
+   * for anything actually under src/data/scripture. */
+  label?: Partial<Record<LanguageCode, string>>;
 }
 
 interface BiblePlanReadingRecord {
@@ -107,15 +113,17 @@ function resolveReading(record: BiblePlanReadingRecord, bookIndex: number): Bibl
     la: text.la ? 'verified' : 'missing',
     en: text.en ? 'verified' : 'missing',
   };
-  const label = formatCitationLabel(record.passages);
+  const citationLabelText = formatCitationLabel(record.passages);
   const firstBook = record.passages[0]?.book;
   const responsory = firstBook ? getResponsoryForBook(firstBook, bookIndex)?.text : undefined;
+  const incipit = firstBook ? getBookIncipit(firstBook) : undefined;
   return {
     text,
     status,
-    citation: { la: label, en: label },
+    citation: { la: citationLabelText, en: citationLabelText },
     isGospel: isGospelReading(record.passages),
     responsory,
+    label: incipit ? { la: incipit.la, en: incipit.en } : undefined,
   };
 }
 

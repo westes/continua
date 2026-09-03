@@ -49,9 +49,10 @@ function renderCitation(text: ResolvedText, languages: readonly string[]): strin
 function renderLessonLabel(
   label: string | Partial<Record<string, string>> | undefined,
   languages: readonly string[],
+  fallback = 'Reading',
 ): string {
   if (!label) {
-    return '<h3 class="ordo-part-label">Reading</h3>';
+    return `<h3 class="ordo-part-label">${escapeHtml(fallback)}</h3>`;
   }
   if (typeof label === 'string') {
     return `<h3 class="ordo-part-label">${escapeHtml(label)}</h3>`;
@@ -115,7 +116,7 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
     case 'gospel':
       return `
         <section class="ordo-part ordo-part-lesson ordo-part-gospel">
-          <h3 class="ordo-part-label">Gospel</h3>
+          ${renderLessonLabel(part.label, languages, 'Gospel')}
           ${renderCitation(part.text, languages)}
           ${renderColumns(part.text, languages)}
           ${part.source ? `<p class="ordo-part-citation">${escapeHtml(part.source)}</p>` : ''}

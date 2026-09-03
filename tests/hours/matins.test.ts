@@ -73,14 +73,17 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
   });
 
   it("resolves the user's own bible-plan readings for the day, not the historical lectionary", () => {
-    // Filtered to unlabeled lessons only: since the temporal-cycle
-    // nocturn-readings sweep authored advent-1.yml (2026-08), this same
-    // date's Nocturn 2/3 pool also gains two labeled (patristic) lesson
-    // entries alongside the user's own bible-plan readings — a real,
-    // separate content source this test isn't about (see
-    // hours/matins.ts's own nocturnReadingPart, which is the only lesson
-    // constructor that sets `label`).
-    const lessons = ordo.parts.filter((p) => p.kind === 'lesson' && !p.label);
+    // Filtered to the user's own bible-plan lessons only: since the
+    // temporal-cycle nocturn-readings sweep authored advent-1.yml
+    // (2026-08), this same date's Nocturn 2/3 pool also gains two labeled
+    // (patristic) lesson entries alongside the user's own bible-plan
+    // readings — a real, separate content source this test isn't about.
+    // Bible-plan lessons carry a generated bilingual incipit `label`
+    // object (bible-book-incipits.ts); patristic ones carry a plain-string
+    // `label` (nocturnReadingPart's own `r.source` attribution) — that
+    // shape difference, not label presence/absence, is what distinguishes
+    // them since 2026-09-03.
+    const lessons = ordo.parts.filter((p) => p.kind === 'lesson' && typeof p.label !== 'string');
     // Plain 2 bible-plan readings on this particular clean ferial (no
     // commemorated saint here) — see the next test for the 3-reading case.
     expect(lessons).toHaveLength(2);
@@ -100,9 +103,9 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
     // Semiduplex threshold). 2025-12-02, a Tuesday, keeps the same 9-psalm
     // ferial shape as the other tests in this block.
     const commemoratedOrdo = resolveOrdo('matins', '2025-12-02');
-    // Same unlabeled-lesson filter as the test above — advent-1.yml's
+    // Same bible-plan-lesson filter as the test above — advent-1.yml's
     // patristic content also pools into this date.
-    const lessons = commemoratedOrdo.parts.filter((p) => p.kind === 'lesson' && !p.label);
+    const lessons = commemoratedOrdo.parts.filter((p) => p.kind === 'lesson' && typeof p.label !== 'string');
     expect(lessons).toHaveLength(3);
     const citations = lessons.map((l) => (l as { text: { citation?: { en?: string } } }).text.citation?.en);
     expect(citations).toEqual(['Isa 6-7', 'Sap 2', undefined]);
@@ -159,8 +162,8 @@ describe('resolveOrdo("matins", ...) Sunday (3-nocturn) branch', () => {
   });
 
   it('includes the real Nocturn 2 patristic reading (Gregory on Job) and Nocturn 3 Gospel + homily as one atomic gospel part', () => {
-    const lessons = ordo.parts.filter((p) => p.kind === 'lesson') as { label?: string }[];
-    const gregory = lessons.find((l) => l.label?.includes('Gregory'));
+    const lessons = ordo.parts.filter((p) => p.kind === 'lesson') as { label?: string | Record<string, string> }[];
+    const gregory = lessons.find((l) => typeof l.label === 'string' && l.label.includes('Gregory'));
     expect(gregory).toBeDefined();
 
     const gospels = ordo.parts.filter((p) => p.kind === 'gospel') as {
