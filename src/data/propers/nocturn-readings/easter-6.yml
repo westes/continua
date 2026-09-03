@@ -15,6 +15,14 @@
 # Lectio8-9, using the source's own [Responsory7] - again a
 # cross-reference, to Pasc4-0:Responsory7 ("Deus, cánticum novum cantábo
 # tibi" - already transcribed in easter-5.yml).
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: easter-6
 readings:
   - nocturn: 2
@@ -87,6 +95,16 @@ readings:
     responsory:
       la: "R. Locútus est ad me unus ex septem Angelis, dicens: Veni, osténdam tibi novam nuptam, sponsam Agni: * Et vidi Jerúsalem descendéntem de cælo, ornátam monílibus suis, allelúja, allelúja, allelúja.\nV. Et sústulit me in spíritu in montem magnum et altum.\nR. Et vidi Jerúsalem descendéntem de cælo, ornátam monílibus suis, allelúja, allelúja, allelúja."
       en: "R. One of the seven Angels talked with me, saying: Come hither, I will show thee the bride, the Lamb's wife. * And I saw Jerusalem descending out of heaven, adorned with her jewels. Alleluia, Alleluia, Alleluia.\nV. And he carried me away in the Spirit to a great and high mountain.\nR. And I saw Jerusalem descending out of heaven, adorned with her jewels. Alleluia, Alleluia, Alleluia."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joann 16:23-30", en: "John 16:23-30" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Amen, amen, dico vobis: si quid petiéritis Patrem in nómine meo, dabit vobis. Usque modo non petístis quidquam in nómine meo: Pétite, et accipiétis, ut gáudium vestrum sit plenum. Hæc in provérbiis locútus sum vobis. Venit hora, cum jam non in provérbiis loquar vobis, sed palam de Patre annuntiábo vobis. In illo die in nómine meo petétis: et non dico vobis, quia ego rogábo Patrem de vobis: ipse enim Pater amat vos, quia vos me amástis, et credidístis quia ego a Deo exívi. Exívi a Patre et veni in mundum: íterum relínquo mundum et vado ad Patrem. Dicunt ei discípuli ejus: Ecce, nunc palam loquéris et provérbium nullum dicis. Nunc scimus, quia scis ómnia et non opus est tibi, ut quis te intérroget: in hoc crédimus, quia a Deo exísti.
+      en: >-
+        At that time, Jesus said to His disciples: Amen, amen I say to you: if you ask the Father any thing in my name, he will give it you. Hitherto you have not asked any thing in my name. Ask, and you shall receive; that your joy may be full. These things I have spoken to you in proverbs. The hour cometh, when I will no more speak to you in proverbs, but will shew you plainly of the Father. In that day you shall ask in my name; and I say not to you, that I will ask the Father for you: For the Father himself loveth you, because you have loved me, and have believed that I came out from God. I came forth from the Father, and am come into the world: again I leave the world, and I go to the Father. His disciples say to him: Behold, now thou speakest plainly, and speakest no proverb. Now we know that thou knowest all things, and thou needest not that any man should ask thee. By this we believe that thou camest forth from God.
     status: { la: verified, en: verified }
 
   - nocturn: 3

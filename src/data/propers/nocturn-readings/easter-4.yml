@@ -12,6 +12,14 @@
 # this sweep. Combined Lectio7's homily portion (incipit dropped) with
 # Lectio8-9, using Responsory7 ("Decantábat pópulus Israël") - the first
 # responsory of the group the combined reading spans.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: easter-4
 readings:
   - nocturn: 2
@@ -78,6 +86,16 @@ readings:
     responsory:
       la: "R. Locútus est ad me unus ex septem Angelis, dicens: Veni, osténdam tibi novam nuptam, sponsam Agni: * Et vidi Jerúsalem descendéntem de cælo, ornátam monílibus suis, allelúja, allelúja, allelúja.\nV. Et sústulit me in spíritu in montem magnum et altum.\nR. Et vidi Jerúsalem descendéntem de cælo, ornátam monílibus suis, allelúja, allelúja, allelúja."
       en: "R. One of the seven Angels talked with me, saying: Come hither, I will show thee the bride, the Lamb's wife. * And I saw Jerusalem descending out of heaven, adorned with her jewels. Alleluia, Alleluia, Alleluia.\nV. And he carried me away in the Spirit to a great and high mountain.\nR. And I saw Jerusalem descending out of heaven, adorned with her jewels. Alleluia, Alleluia, Alleluia."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joannes 16:16-22", en: "John 16:16-22" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Módicum, et jam non vidébitis me: et íterum módicum, et vidébitis me: quia vado ad Patrem. Dixérunt ergo ex discípulis ejus ad ínvicem: Quid est hoc, quod dicit nobis: Módicum, et non vidébitis me: et íterum módicum, et vidébitis me, et quia vado ad Patrem? Dicébant ergo: Quid est hoc, quod dicit: Módicum? nescímus, quid lóquitur. Cognóvit autem Jesus, quia volébant eum interrogáre, et dixit eis: De hoc quǽritis inter vos, quia dixi: Módicum, et non vidébitis me: et íterum módicum, et vidébitis me. Amen, amen, dico vobis: quia plorábitis et flébitis vos, mundus autem gaudébit: vos autem contristabímini, sed tristítia vestra vertétur in gáudium. Múlier cum parit, tristítiam habet, quia venit hora ejus: cum autem pepérerit púerum, jam non méminit pressúræ propter gáudium, quia natus est homo in mundum. Et vos ígitur nunc quidem tristítiam habétis, íterum autem vidébo vos, et gaudébit cor vestrum: et gáudium vestrum nemo tollet a vobis.
+      en: >-
+        At that time, Jesus said to His disciples: A little while, and now you shall not see me; and again a little while, and you shall see me: because I go to the Father. Then some of the disciples said one to another: What is this that he saith to us: A little while, and you shall not see me; and again a little while, and you shall see me, and, because I go to the Father? They said therefore: What is this that he saith, A little while? we know not what he speaketh. And Jesus knew that they had a mind to ask him; and he said to them: Of this do you inquire among yourselves, because I said: A little while, and you shall not see me; and again a little while, and you shall see me? Amen, amen I say to you, that you shall lament and weep, but the world shall rejoice; and you shall be made sorrowful, but your sorrow shall be turned into joy. A woman, when she is in labour, hath sorrow, because her hour is come; but when she hath brought forth the child, she remembereth no more the anguish, for joy that a man is born into the world. So also you now indeed have sorrow; but I will see you again, and your heart shall rejoice; and your joy no man shall take from you.
     status: { la: verified, en: verified }
 
   - nocturn: 3
