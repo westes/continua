@@ -1,8 +1,7 @@
-# Douay-Rheims + Latin Vulgate, authored by hand (Clementine Vulgate /
-# Douay-Rheims 1899 American Edition) to fill a gap the bulk "Unbound
-# Bible" import left — Obadiah/Abdias, a single short chapter, was
-# missing from that source entirely (see TODO.md's bulk scripture
-# import entry).
+# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
+# "Unbound Bible" tab-format source (both texts, verse-count and
+# verse-numbering cross-checked to agree before import; see
+# TODO.md's bulk scripture import entry).
 book: abd
 chapter: 1
 verses:
@@ -13,13 +12,13 @@ verses:
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "ecce parvulum dedi te in gentibus contemptibilis tu es valde"
+      la: "ecce parvulum te dedi in gentibus contemptibilis tu es valde"
       en: "Behold I have made thee small among the nations: thou art exceeding contemptible."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "superbia cordis tui extulit te habitantem in scissuris petrarum exaltantem solium suum qui dicit in corde suo quis detrahet me in terram"
-      en: "The pride of thy heart hath lifted thee up, who dwellest in the clefts of the rocks, and settest up thy throne on high: who sayest in thy heart: Who shall bring me down to the ground?"
+      la: "superbia cordis tui extulit te habitantem in scissuris petrae exaltantem solium suum qui dicit in corde suo quis detrahet me in terram"
+      en: "The pride of thy heart hath lifted thee up, who dwellest in the clefts of the rocks, and settest up thy throne on high: who sayest in thy heart: Who shall bring me down to the ground ?"
     status: { la: verified, en: verified }
   - n: 4
     text:
@@ -28,8 +27,8 @@ verses:
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "si fures introissent ad te si latrones per noctem quomodo conticuisses nonne furati essent sufficientia sibi si vindemiatores introissent ad te numquid saltem racemos reliquissent tibi"
-      en: "If thieves had gone in to thee, if robbers by night, how wouldst thou have held thy peace? would they not have stolen till they had enough? if the grapegatherers had come in to thee, would they not have left thee at the least a bunch of grapes?"
+      la: "si fures introissent ad te si latrones per noctem quomodo conticuisses nonne furati essent sufficientia sibi si vindemiatores introissent ad te numquid saltim racemos reliquissent tibi"
+      en: "If thieves had gone in to thee, if robbers by night, how wouldst thou have held thy peace? would they not have stolen till they had enough ? if the grapegatherers had come in to thee, would they not have left thee at the least a cluster?"
     status: { la: verified, en: verified }
   - n: 6
     text:
@@ -44,7 +43,7 @@ verses:
   - n: 8
     text:
       la: "numquid non in die illa dicit Dominus perdam sapientes de Idumea et prudentiam de monte Esau"
-      en: "Shall not I in that day, saith the Lord, destroy the wise out of Edom, and understanding from the mount of Esau?"
+      en: "Shall not I in that day, saith the Lord, destroy the wise out of Edom, and understanding out of the mount of Esau ?"
     status: { la: verified, en: verified }
   - n: 9
     text:
@@ -58,8 +57,8 @@ verses:
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "in die cum stares adversus eum quando capiebant alieni exercitum eius et extranei ingrediebantur portas eius et super Hierusalem mittebant sortem tu quoque eras quasi unus ex eis"
-      en: "In the day when thou stoodest against him, when strangers carried away captive his army, and foreigners entered into his gates, and cast lots upon Jerusalem: thou also wast as one of them."
+      la: "in die cum stares adversus quando capiebant alieni exercitum eius et extranei ingrediebantur portas eius et super Hierusalem mittebant sortem tu quoque eras quasi unus ex eis"
+      en: "In the day when thou stoodest against him, when strangers carried away his army captive, and foreigners entered into his gates, and cast lots upon Jerusalem: thou also wast as one of them."
     status: { la: verified, en: verified }
   - n: 12
     text:
@@ -68,7 +67,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "neque ingredieris portam populi mei in die ruinae eorum neque despicies et tu in malis eius in die vastitatis illius et non emitteris adversus exercitum eius in die vastitatis illius"
+      la: "neque ingredieris portam populi mei in die ruinae eorum neque despicies et tu in malis eius in die vastitatis illius et non emitteris adversum exercitum eius in die vastitatis illius"
       en: "Neither shalt thou enter into the gate of my people in the day of their ruin: neither shalt thou also look on in his evils in the day of his calamity: and thou shalt not be sent out against his army in the day of his desolation."
     status: { la: verified, en: verified }
   - n: 14
@@ -79,11 +78,11 @@ verses:
   - n: 15
     text:
       la: "quoniam iuxta est dies Domini super omnes gentes sicut fecisti fiet tibi retributionem tuam convertet in caput tuum"
-      en: "For the day of the Lord is near upon all nations: as thou hast done, so shall it be done to thee: he will turn thy reward upon thy own head."
+      en: "For the day of the Lord is at hand upon all nations: as thou hast done, so shall it be done to thee: he will turn thy reward upon thy own head."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "quomodo enim bibistis super montem sanctum meum bibent omnes gentes iugiter et bibent et absorbebunt et erunt quasi non sint"
+      la: "quomodo enim bibisti super montem sanctum meum bibent omnes gentes iugiter et bibent et absorbent et erunt quasi non sint"
       en: "For as you have drunk upon my holy mountain, so all nations shall drink continually: and they shall drink, and sup up, and they shall be as though they were not."
     status: { la: verified, en: verified }
   - n: 17
@@ -103,11 +102,6 @@ verses:
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "et transmigratio exercitus huius filiorum Israhel omnia loca Chananeorum usque ad Saraptam et transmigratio Hierusalem quae in Bosforo est possidebit civitates austri"
-      en: "And the captivity of this host of the children of Israel, all the places of the Chanaanites even to Sarepta: and the captivity of Jerusalem that is in Bosphorus, shall possess the cities of the south."
-    status: { la: verified, en: verified }
-  - n: 21
-    text:
-      la: "et ascendent salvatores in montem Sion iudicare montem Esau et erit Domino regnum"
-      en: "And saviours shall come up into mount Sion to judge the mount of Esau: and the kingdom shall be the Lord's."
+      la: "et transmigratio exercitus huius filiorum Israhel omnia Chananeorum usque ad Saraptham et transmigratio Hierusalem quae in Bosforo est possidebit civitates austri"
+      en: "And the captivity of this host of the children of Israel, all the places of the Chanaanites even to Sarepta: and the captivity of Jerusalem that is in Bospho- rus, shall possess the cities of the south."
     status: { la: verified, en: verified }

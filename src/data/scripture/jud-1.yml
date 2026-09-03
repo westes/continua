@@ -1,16 +1,14 @@
-# Douay-Rheims + Latin Vulgate, authored by hand (Clementine Vulgate /
-# Douay-Rheims 1899 American Edition) to fill a gap the bulk "Unbound
-# Bible" import left — the Epistle of Jude, a single short chapter, was
-# missing from that source entirely (see TODO.md's bulk scripture
-# import entry). Book id "jud" — distinct from "jdc" (Judges) and
-# "jdt"/"jdth" (Judith) already in this store.
+# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
+# "Unbound Bible" tab-format source (both texts, verse-count and
+# verse-numbering cross-checked to agree before import; see
+# TODO.md's bulk scripture import entry).
 book: jud
 chapter: 1
 verses:
   - n: 1
     text:
-      la: "Iudas Iesu Christi servus frater autem Iacobi his qui sunt in Deo Patre dilectis et Christo Iesu conservatis et vocatis"
-      en: "Jude the servant of Jesus Christ, and brother of James, to them that are beloved in God the Father, and preserved in Jesus Christ, and called."
+      la: "Iudas Iesu Christi servus frater autem Iacobi his qui in Deo Patre dilectis et Iesu Christo conservatis vocatis"
+      en: "Jude, the servant of Jesus Christ, and brother of James: to them that are beloved in God the Father, and preserved in Jesus Christ, and called."
     status: { la: verified, en: verified }
   - n: 2
     text:
@@ -44,7 +42,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "similiter et hii carnem quidem maculant dominationem autem spernunt maiestatem autem blasphemant"
+      la: "similiter et hii carnem quidem maculant dominationem autem spernunt maiestates autem blasphemant"
       en: "In like manner these men also defile the flesh, and despise dominion, and blaspheme majesty."
     status: { la: verified, en: verified }
   - n: 9
@@ -74,18 +72,18 @@ verses:
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "prophetavit autem et his septimus ab Adam Enoch dicens ecce venit Dominus in sanctis milibus suis"
+      la: "prophetavit autem et his septimus ab Adam Enoc dicens ecce venit Dominus in sanctis milibus suis"
       en: "Now of these Enoch also, the seventh from Adam, prophesied, saying: Behold, the Lord cometh with thousands of his saints,"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "facere iudicium contra omnes et arguere omnes impios de omnibus operibus impietatis eorum quibus impie egerunt et de omnibus duris quae locuti sunt contra Deum peccatores impii"
-      en: "To execute judgment upon all, and to reprove all the ungodly for all the works of their ungodliness, whereby they have done ungodly, and for all the hard things which ungodly sinners have spoken against God."
+      la: "facere iudicium contra omnes et arguere omnes impios de omnibus operibus impietatis eorum quibus impie egerunt et de omnibus duris quae locuti sunt contra eum peccatores impii"
+      en: "To execute judgment upon all, and to reprove all the ungodly for all the works of their ungodliness, whereby they have done ungodly, and of all the hard things which ungodly sinners have spoken against God."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "hii sunt murmuratores querellosi secundum desideria sua ambulantes et os eorum loquitur superba mirantes personas quaestus causa"
-      en: "These are murmurers full of complaints, walking according to their own desires, and their mouth speaketh proud things, admiring persons for gain's sake."
+      la: "hii sunt murmuratores querellosi secundum desideria sua ambulantes et os illorum loquitur superba mirantes personas quaestus causa"
+      en: "These are murmurers, full of complaints, walking according to their own desires, and their mouth speaketh proud things, admiring persons for gain's sake."
     status: { la: verified, en: verified }
   - n: 17
     text:
@@ -94,22 +92,22 @@ verses:
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "qui dicebant vobis quoniam in novissimo tempore venient inlusores secundum sua desideria ambulantes impietatum"
-      en: "Who told you that in the last time there should come mockers, walking according to their own desires in ungodlinesses."
+      la: "quia dicebant vobis quoniam in novissimo tempore venient inlusores secundum sua desideria ambulantes impietatum"
+      en: "Who told you, that in the last time there should come mockers, walking according to their own desires in ungodlinesses."
     status: { la: verified, en: verified }
   - n: 19
     text:
       la: "hii sunt qui segregant animales Spiritum non habentes"
-      en: "These are they who separate themselves, sensual men, having not the Spirit."
+      en: "These are they, who separate themselves, sensual men, having not the Spirit."
     status: { la: verified, en: verified }
   - n: 20
     text:
       la: "vos autem carissimi superaedificantes vosmet ipsos sanctissimae vestrae fidei in Spiritu Sancto orantes"
-      en: "But you, my beloved, building yourselves upon your most holy faith, praying in the Holy Ghost,"
+      en: "But you, my beloved, building yourselves upon you most holy faith, praying in the Holy Ghost,"
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "vosmet ipsos in dilectione Dei servate expectantes misericordiam Domini nostri Iesu Christi in vitam aeternam"
+      la: "ipsos vos in dilectione Dei servate"
       en: "Keep yourselves in the love of God, waiting for the mercy of our Lord Jesus Christ, unto life everlasting."
     status: { la: verified, en: verified }
   - n: 22
@@ -124,11 +122,6 @@ verses:
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "ei autem qui potest conservare vos sine peccato et constituere ante conspectum gloriae suae inmaculatos in exultatione"
+      la: "ei autem qui potest vos conservare sine peccato et constituere ante conspectum gloriae suae inmaculatos in exultatione"
       en: "Now to him who is able to preserve you without sin, and to present you spotless before the presence of his glory with exceeding joy, in the coming of our Lord Jesus Christ,"
-    status: { la: verified, en: verified }
-  - n: 25
-    text:
-      la: "soli Deo salvatori nostro per Iesum Christum Dominum nostrum gloria et magnificentia imperium et potestas ante omne saeculum et nunc et in omnia saecula amen"
-      en: "To the only God our Saviour, through Jesus Christ our Lord, be glory and magnificence, dominion and power, before all ages, and now, and for all ages of ages. Amen."
     status: { la: verified, en: verified }

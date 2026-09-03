@@ -1,0 +1,17 @@
+# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
+# "Unbound Bible" tab-format source (both texts, verse-count and
+# verse-numbering cross-checked to agree before import; see
+# TODO.md's bulk scripture import entry).
+book: esth
+chapter: 10
+verses:
+  - n: 1
+    text:
+      la: "rex vero Asuerus omnem terram et cunctas maris insulas fecit tributarias"
+      en: "And king Assuerus made all the land, and all the islands of the sea tributary."
+    status: { la: verified, en: verified }
+  - n: 2
+    text:
+      la: "cuius fortitudo et imperium et dignitas atque sublimitas qua exaltavit Mardocheum scripta sunt in libris Medorum atque Persarum"
+      en: "And his strength and his empire, and the dignity and greatness wherewith he exalted Mardochai, are written in the books of the Medes, and of the Persians:"
+    status: { la: verified, en: verified }

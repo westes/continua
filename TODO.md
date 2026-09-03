@@ -53,9 +53,19 @@ across every hour and content type in this app.
      nocturn-readings sweep" below, including the easter-sunday/pentecost-sunday correction).
      Moved out of this "bulk content pending" section since there's no more bulk content left to
      author here.
-   - The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import into
-     `src/data/scripture/` — long-term project, explicitly deferred; Matins scripture
-     citations resolve to `missing` text until it lands.
+   - ~~The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import~~ — DONE (2026-09-03):
+     1157 chapters authored into `src/data/scripture/` from the "Unbound Bible" tab-format
+     source. Genuinely unrecoverable from this source, left `missing`: Daniel 4-14 and Esther
+     11-16 (the Vulgate side of this particular digitization only carries Daniel 1-3 and Esther
+     1-10 — the deuterocanonical continuations aren't in it at all); and 12 chapters
+     (`bar-2`, `isa-5`, `isa-25`, `joan-15`, `rom-9`, `rom-11`, `sir-10/19/23/41/51/52`) where the
+     Douay-Rheims side has a corrupted, misnumbered block (verse "N" carrying verse "N+9"'s text,
+     or similar) rather than simply absent content — importing those under the source's own
+     verse numbers would silently attach wrong text to a citation, worse than `missing`. A
+     handful of other chapters have one or two genuinely isolated missing English verses (e.g.
+     an in-file "Transfer interrupted!" download-corruption artifact at `matt-12:43`) — those
+     imported fine, with just that verse honestly `missing`, same convention as the pre-existing
+     `isa-33`/`sir-36` pointing-split half-verses.
    - Lauds/Vespers duplex-majus+ Common-category psalmody: 10 of 24 `SaintRecord.common`
      categories authored (covering 19 ids via aliases) for Vespers, 9 of 24 (18 ids) for Lauds —
      see "Lauds/Vespers duplex-majus+ Common-category psalmody" below and its follow-up entry.
@@ -4954,3 +4964,59 @@ Monday/Tuesday's shared proper psalmody (2026-09-02), and now Wednesday-Saturday
 (2026-09-02, same day). See memory `vu_easter_octave_proper_matins` for the full writeup.
 
 `npm test` (832 passed), `tsc --noEmit`, and `npm run build` all pass.
+
+### Bulk Vulgate/Douay-Rheims scripture import — completed from the real source, plus fixes upstream of it (2026-09-03)
+
+Closes the long-deferred "bulk Vulgate + Douay-Rheims scripture import" item. What actually
+happened, in order:
+
+1. **Stale-status bug**: `src/propers/bible-plan.ts`'s `resolveReading` preferred each
+   bible-plan YAML row's own hardcoded `status: { la: missing, en: missing }` field over
+   computing status from the actually-resolved scripture text. That field was accurate before
+   a same-day bulk import landed real text into `src/data/scripture/`, but was never cleared —
+   so every Matins bible-plan reading still showed "translation pending" regardless. Fixed by
+   stripping the stale field from all 368 `data/hours/bible-plan/*.yml` files.
+2. **Book-abbreviation mismatch**: the bulk-imported store keys books by Vulgate-numbering
+   abbreviation (`sap`, `jac`, `joan`, `1reg`..`4reg`, `1par`/`2par`, `1esdr`/`2esdr`, ...),
+   matching `octave-readings.ts`'s pre-existing convention, while `bible-plan.ts`'s own TSV
+   import used common English abbreviations (`kgs`, `sam`, `chr`, `john`, `jas`, `luke`,
+   `mark`, ...) for the ~30 books where the two conventions diverge. Fixed with a
+   `BOOK_ALIASES` map in `src/scripture/index.ts`, at the lookup layer, so bible-plan's
+   citations keep their familiar English display form.
+3. **Verse-number prefixes**: `resolvePassages` (shared by octave-readings/bible-plan/nocturn-
+   readings) was prepending each verse's number to the joined reading text ("1 Et factum
+   est..."), visible in rendered readings. Dropped — join verse text alone.
+4. **3 books the bulk import missed entirely**: Jude, Obadiah, and Philemon (each a single
+   short chapter) had no file at all in `src/data/scripture/`, unlike everything else the bulk
+   import covered — hand-authored first, then replaced with source-derived text once the real
+   source turned up (see next point) — small inaccuracies in the hand-typed version confirmed
+   the value of going back to source.
+5. **The rest of the gap, and the real source**: comparing every book/chapter citation used
+   anywhere in the app against the store turned up 137 missing chapters, scattered oddly across
+   ~30 otherwise-covered books (10 of Genesis's 50 chapters, 9 of Daniel's 14, etc.) — too much
+   to hand-author reliably. The user located the original "Unbound Bible" source archives
+   (`~/opt/inactive/bible/versions/douay_rheims.zip` + `latinv.zip`, tab-format:
+   `<book-code>\t<chapter>\t<verse>\t<text>`), which the original (already-committed) bulk
+   import must have used but which weren't preserved anywhere in-repo. Re-parsed directly from
+   these archives (book-code map: `01O`-`39O` = Genesis..Malachi, `40N`-`66N` = Matthew..
+   Apocalypse, `67A`/`68A`/`71A`/`73A`/`74A`/`79A`/`80A` = Baruch/Sirach/Judith/1-2
+   Maccabees/Tobit/Wisdom), filling every gap the store didn't already have. 121 new chapters
+   authored (118 new + the 3 hand-authored ones replaced), bringing the store to 1157 files.
+   **Deliberately still left unauthored** (do not attempt to fill from this source without a
+   second, independent source to cross-check against):
+   - Daniel 4-14 and Esther 11-16 — this particular Vulgate digitization only has Daniel 1-3
+     and Esther 1-10; the deuterocanonical continuations simply aren't in the Latin file at all
+     (English/Douay-Rheims does have them).
+   - 12 chapters (`bar-2`, `isa-5`, `isa-25`, `joan-15`, `rom-9`, `rom-11`,
+     `sir-10`/`19`/`23`/`41`/`51`/`52`) where the Douay-Rheims side has a corrupted, misnumbered
+     block — e.g. `isa-25`'s own line tagged verse 1 actually carries verse 11's text — rather
+     than simply missing content. Confirmed by checking real verse content against what the
+     tag claims; importing under the source's own (wrong) verse numbers would have silently
+     attached mismatched text to real citations, which is worse than leaving them `missing`.
+   `tests/scripture/bulk-import.test.ts`'s invariant was widened to tolerate up to 2 genuinely
+   isolated missing-English verses per chapter (an existing pattern for `isa-33`/`sir-36`'s
+   pointing-split half-verses, now also covering true source gaps like an in-file "Transfer
+   interrupted!" download-corruption artifact found at `matt-12:43`) while still failing loudly
+   on anything resembling the corrupted-block pattern above.
+
+`npm test` (1990 passed), `tsc --noEmit`, and `npm run build` all pass.
