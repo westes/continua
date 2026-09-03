@@ -6,6 +6,11 @@
 # here rather than left as a diff — not live-query-verified (see TODO.md).
 # English has no separate Monastic variant in the source (the wording
 # differences don't affect translation), so it's the same text either way.
+# The closing doxology stanza is split out into
+# vespers-hymn-sunday-doxology-per-annum.yml (see hours/vespers.ts) — the source
+# carries a real "*" seasonal-substitution marker there (live-checked
+# 2026-09-03, Psalterium/Special/Major Special.txt), unlike every other
+# Lauds/Vespers weekday hymn's fixed ending.
 id: vespers-hymn-sunday
 text:
   la: |
@@ -28,12 +33,6 @@ text:
     Vitále tollat prǽmium:
     Vitémus omne nóxium:
     Purgémus omne péssimum.
-
-    Præsta, Pater piíssime,
-    Patríque compar Únice,
-    Cum Spíritu Paráclito
-    Regnans per omne sǽculum.
-    Amen.
   en: |
     O blest Creator of the light,
     Who mak'st the day with radiance bright,
@@ -54,12 +53,6 @@ text:
     The heavenly gate and prize to gain:
     Each harmful lure aside to cast,
     And purge away each error past.
-
-    O Father, that we ask be done,
-    Through Jesus Christ, thine only Son;
-    Who, with the Holy Ghost and thee,
-    Doth live and reign eternally.
-    Amen.
 status:
   la: draft
   en: draft

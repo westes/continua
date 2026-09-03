@@ -5,10 +5,12 @@ import { weekdayOf } from '../calendar/weekday';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
+import { getHymnDoxologyId } from './hymn-doxology';
 import { getVespersSaintOverride, getVespersCommonOverride } from './vespers-psalmody-overrides';
 import { applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
+  appendDoxology,
   getDayCollects,
   getMagnificatAntiphon,
   splitNamedAntiphon,
@@ -170,6 +172,29 @@ function vespersCapitulumForOverride(id: string): ResolvedText {
   return resolveCommon(`lauds-capitulum-${id}`);
 }
 
+/**
+ * Every plain-default Vespers hymn's own closing doxology stanza (split
+ * out into `vespers-hymn-${key}-doxology-per-annum.yml`) is re-attached
+ * here through the seasonal mechanism (hours/hymn-doxology.ts) — Sunday's
+ * hymn ("Lucis Creator") is the one case in Lauds/Vespers/Matins' whole
+ * weekday-default set whose Monastic source text carries a real "*"
+ * seasonal-substitution marker (live-checked 2026-09-03), but every other
+ * key is wired the same way anyway as a deliberate broadening beyond the
+ * source: this project isn't a reconstruction (see the repo's CLAUDE.md),
+ * and the doxology is a natural, low-cost way to keep every hour visibly
+ * in step with the season — e.g. the plain weekday hymns used all through
+ * Christmastide/Epiphanytide/Corpus Christi/Sacred Heart (no
+ * `seasonalOfficeSuffix` covers those) previously stayed on their generic
+ * per-annum ending throughout. Each key's own natural ending is preserved
+ * as its per-annum default, so a season/feast with no override (e.g.
+ * Advent, Lent — the source itself never swaps those) reproduces the
+ * exact original text. See lauds.ts's identical resolveLaudsHymn. */
+function resolveVespersHymn(day: LiturgicalDay, key: string): ResolvedText {
+  const body = resolveCommon(`vespers-hymn-${key}`);
+  const doxology = resolveCommon(getHymnDoxologyId(day, `vespers-hymn-${key}-doxology-per-annum`));
+  return appendDoxology(body, doxology);
+}
+
 /** The chapter/responsory/hymn/versicle bundle following the psalmody —
  * see hours/types.ts's 'vespers-office' doc comment. Any sanctoral
  * winner's (or named-temporal feast's) own proper bundle (chapter via
@@ -207,7 +232,7 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
       kind: 'responsory',
       text: resolveResponsory(resolveCommon(seasonSuffix ? `vespers-responsory-${key}` : vespersResponsoryId(day.weekday)), day),
     },
-    { kind: 'hymn', text: resolveCommon(`vespers-hymn-${key}`) },
+    { kind: 'hymn', text: resolveVespersHymn(day, key) },
     {
       kind: 'versicle',
       text: resolveCommon(seasonSuffix ? `vespers-versicle-${key}` : vespersVersicleId(day.weekday)),
