@@ -86,9 +86,9 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
     expect(lessons).toHaveLength(2);
     const citations = lessons.map((l) => (l as { text: { citation?: { en?: string } } }).text.citation?.en);
     expect(citations).toEqual(['Isa 6; Isa 7', 'Sap 2']);
-    // Real content isn't imported yet (Vulgate/Douay-Rheims bulk import is
-    // a deferred follow-on) — honest `missing`, not fabricated text.
-    expect((lessons[0] as { text: { status: { en?: string } } }).text.status.en).toBe('missing');
+    // The Vulgate/Douay-Rheims bulk import (2026-09-03) landed the real
+    // text for these passages.
+    expect((lessons[0] as { text: { status: { en?: string } } }).text.status.en).toBe('verified');
   });
 
   it("adds a 3rd reading for a commemorated saint, generously surfaced per the 'commemorations get their own reading' design (see hours/matins.ts's own header)", () => {
@@ -106,7 +106,7 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
     expect(lessons).toHaveLength(3);
     const citations = lessons.map((l) => (l as { text: { citation?: { en?: string } } }).text.citation?.en);
     expect(citations).toEqual(['Isa 6; Isa 7', 'Sap 2', undefined]);
-    expect((lessons[0] as { text: { status: { en?: string } } }).text.status.en).toBe('missing');
+    expect((lessons[0] as { text: { status: { en?: string } } }).text.status.en).toBe('verified');
   });
 
   it("matches the first reading (Isaiah) against the seeded per-book responsory pool", () => {

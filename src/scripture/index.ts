@@ -12,8 +12,47 @@ for (const mod of Object.values(modules)) {
   chapters.set(`${mod.default.book}-${mod.default.chapter}`, mod.default);
 }
 
+/** The bulk-imported store (src/data/scripture/**) keys books by their
+ * Vulgate-numbering abbreviation (matching the convention octave-readings.ts
+ * content already used, e.g. "sap", "ezek", "jac"), but bible-plan.ts's
+ * ~390-row TSV import used common English abbreviations for the books where
+ * the two conventions diverge (Samuel/Kings/Chronicles/Esdras numbering,
+ * John/Luke/Mark/Judges/Jonah/Joshua names). Aliased here, at the lookup
+ * layer, rather than rewriting every bible-plan YAML row, so citations
+ * (bible-plan.ts's citationLabel) keep displaying the familiar English form
+ * while the store lookup still finds the real chapter. */
+const BOOK_ALIASES: Record<string, string> = {
+  '1sam': '1reg',
+  '2sam': '2reg',
+  '1kgs': '3reg',
+  '2kgs': '4reg',
+  '1chr': '1par',
+  '2chr': '2par',
+  ezra: '1esdr',
+  neh: '2esdr',
+  '1macc': '1mach',
+  '2macc': '2mach',
+  hag: 'agg',
+  hos: 'osee',
+  zech: 'zach',
+  zeph: 'soph',
+  titus: 'tit',
+  jas: 'jac',
+  jdt: 'jdth',
+  josh: 'jos',
+  judg: 'jdc',
+  jonah: 'jon',
+  john: 'joan',
+  '1john': '1joan',
+  '2john': '2joan',
+  '3john': '3joan',
+  luke: 'luc',
+  mark: 'marc',
+  mic: 'mich',
+};
+
 export function getScriptureChapter(book: string, chapter: number): ScriptureChapter | undefined {
-  return chapters.get(`${book}-${chapter}`);
+  return chapters.get(`${BOOK_ALIASES[book] ?? book}-${chapter}`);
 }
 
 /**
