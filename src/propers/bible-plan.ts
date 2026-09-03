@@ -66,6 +66,37 @@ function citationLabel(citation: ScriptureCitation): string {
   return citation.verses ? `${book} ${citation.chapter}:${citation.verses}` : `${book} ${citation.chapter}`;
 }
 
+/** Collapses consecutive same-book, whole-chapter passages (e.g. Job 34, 35,
+ * 36, 37 — the source data authors one entry per chapter) into a compact
+ * "Book start-end" range, since `citationLabel` alone would otherwise
+ * produce a separate "Book N" for each chapter. Verse-qualified citations
+ * never merge into a range. */
+function formatCitationLabel(passages: ScriptureCitation[]): string {
+  const segments: string[] = [];
+  let i = 0;
+  while (i < passages.length) {
+    const start = passages[i]!;
+    if (start.verses) {
+      segments.push(citationLabel(start));
+      i++;
+      continue;
+    }
+    let j = i;
+    while (
+      j + 1 < passages.length &&
+      passages[j + 1]!.book === start.book &&
+      !passages[j + 1]!.verses &&
+      passages[j + 1]!.chapter === passages[j]!.chapter + 1
+    ) {
+      j++;
+    }
+    const book = start.book.charAt(0).toUpperCase() + start.book.slice(1);
+    segments.push(j > i ? `${book} ${start.chapter}-${passages[j]!.chapter}` : `${book} ${start.chapter}`);
+    i = j + 1;
+  }
+  return segments.join('; ');
+}
+
 function isGospelReading(passages: ScriptureCitation[]): boolean {
   return passages.every((p) => GOSPEL_BOOKS.has(p.book));
 }
@@ -76,7 +107,7 @@ function resolveReading(record: BiblePlanReadingRecord, bookIndex: number): Bibl
     la: text.la ? 'verified' : 'missing',
     en: text.en ? 'verified' : 'missing',
   };
-  const label = record.passages.map(citationLabel).join('; ');
+  const label = formatCitationLabel(record.passages);
   const firstBook = record.passages[0]?.book;
   const responsory = firstBook ? getResponsoryForBook(firstBook, bookIndex)?.text : undefined;
   return {

@@ -85,7 +85,7 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
     // commemorated saint here) — see the next test for the 3-reading case.
     expect(lessons).toHaveLength(2);
     const citations = lessons.map((l) => (l as { text: { citation?: { en?: string } } }).text.citation?.en);
-    expect(citations).toEqual(['Isa 6; Isa 7', 'Sap 2']);
+    expect(citations).toEqual(['Isa 6-7', 'Sap 2']);
     // The Vulgate/Douay-Rheims bulk import (2026-09-03) landed the real
     // text for these passages.
     expect((lessons[0] as { text: { status: { en?: string } } }).text.status.en).toBe('verified');
@@ -105,7 +105,7 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
     const lessons = commemoratedOrdo.parts.filter((p) => p.kind === 'lesson' && !p.label);
     expect(lessons).toHaveLength(3);
     const citations = lessons.map((l) => (l as { text: { citation?: { en?: string } } }).text.citation?.en);
-    expect(citations).toEqual(['Isa 6; Isa 7', 'Sap 2', undefined]);
+    expect(citations).toEqual(['Isa 6-7', 'Sap 2', undefined]);
     expect((lessons[0] as { text: { status: { en?: string } } }).text.status.en).toBe('verified');
   });
 
@@ -154,7 +154,7 @@ describe('resolveOrdo("matins", ...) Sunday (3-nocturn) branch', () => {
   it("resolves the user's own bible-plan reading (Tobit/Sirach) for Nocturn 1", () => {
     const lessons = ordo.parts.filter((p) => p.kind === 'lesson');
     const citations = lessons.map((l) => (l as { text: { citation?: { en?: string } } }).text.citation?.en);
-    expect(citations).toContain('Tob 1; Tob 2');
+    expect(citations).toContain('Tob 1-2');
     expect(citations).toContain('Sir 45');
   });
 
