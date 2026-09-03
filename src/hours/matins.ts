@@ -91,6 +91,7 @@ import {
   substituteName,
 } from './resolve-common';
 import { getSaintRecord } from '../calendar/feasts';
+import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { getBiblePlanReadings } from '../propers/bible-plan';
 import { getNocturnReadings, type NocturnReading } from '../propers/nocturn-readings';
 import { getOctaveReading } from '../propers/octave-readings';
@@ -675,11 +676,27 @@ function nocturnReadingIds(day: LiturgicalDay, temporalId: string, date: string,
   return [...ids];
 }
 
-function nocturnReadingPart(r: NocturnReading): ResolvedPart {
+/** Fallback label for a hagiographic/vita reading that carries no authored
+ * `source` attribution (unlike a patristic homily, a saint's vita rarely
+ * has one in the reference engine) — "On St. Pius X, Pope and Confessor",
+ * from the same saint/temporal-feast record that supplies the day's own
+ * display name. Same plain-string, non-bilingual convention as an authored
+ * `source` (see NocturnReading.source's own doc comment): displayed as-is
+ * in both language columns rather than split into {la, en}, since neither
+ * the record's `name` nor `nameLa` reliably declines into the "on ___"
+ * phrasing this needs. Undefined when `id` matches neither record (e.g. a
+ * plain temporal id with no TemporalFeastRecord of its own). */
+function fallbackHagiographicLabel(id: string): string | undefined {
+  const name = getSaintRecord(id)?.name ?? getTemporalFeastRecord(id)?.name;
+  if (!name) return undefined;
+  return name.startsWith('The ') ? `On the ${name.slice(4)}` : `On ${name}`;
+}
+
+function nocturnReadingPart(r: NocturnReading, id: string): ResolvedPart {
   return {
     kind: 'lesson',
     text: { text: r.text, status: r.status, citation: r.citation },
-    label: r.source,
+    label: r.source ?? fallbackHagiographicLabel(id),
     responsory: r.responsory ? { text: r.responsory, status: { la: 'verified', en: 'verified' } } : undefined,
   };
 }
@@ -771,7 +788,7 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
         bucket.push(gospelReadingPart(reading, homily));
         if (homily) i++;
       } else {
-        bucket.push(nocturnReadingPart(reading));
+        bucket.push(nocturnReadingPart(reading, id));
       }
       byNocturn.set(reading.nocturn, bucket);
     }

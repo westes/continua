@@ -73,25 +73,27 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
   });
 
   it("resolves the user's own bible-plan readings for the day, not the historical lectionary", () => {
-    // Filtered to the user's own bible-plan lessons only: since the
-    // temporal-cycle nocturn-readings sweep authored advent-1.yml
-    // (2026-08), this same date's Nocturn 2/3 pool also gains two labeled
-    // (patristic) lesson entries alongside the user's own bible-plan
-    // readings — a real, separate content source this test isn't about.
-    // Bible-plan lessons carry a generated bilingual incipit `label`
-    // object (bible-book-incipits.ts); patristic ones carry a plain-string
-    // `label` (nocturnReadingPart's own `r.source` attribution) — that
-    // shape difference, not label presence/absence, is what distinguishes
-    // them since 2026-09-03.
-    const lessons = ordo.parts.filter((p) => p.kind === 'lesson' && typeof p.label !== 'string');
+    // Filtered to the user's own bible-plan lessons only, by the one thing
+    // that's unique to them: a real citation. Since the temporal-cycle
+    // nocturn-readings sweep authored advent-1.yml (2026-08), this same
+    // date's Nocturn 2/3 pool also gains two labeled (patristic) lesson
+    // entries alongside the user's own bible-plan readings — a real,
+    // separate content source this test isn't about. (A label-shape filter
+    // no longer distinguishes them: since 2026-09-03 an uncited
+    // hagiographic/vita reading also gets a plain-string fallback label —
+    // see matins.ts's fallbackHagiographicLabel — same shape as a
+    // patristic reading's own `source` attribution.)
+    const lessons = ordo.parts.filter(
+      (p) => p.kind === 'lesson' && (p as { text: { citation?: { en?: string } } }).text.citation?.en !== undefined,
+    ) as { text: { citation?: { en?: string }; status: { en?: string } } }[];
     // Plain 2 bible-plan readings on this particular clean ferial (no
     // commemorated saint here) — see the next test for the 3-reading case.
     expect(lessons).toHaveLength(2);
-    const citations = lessons.map((l) => (l as { text: { citation?: { en?: string } } }).text.citation?.en);
+    const citations = lessons.map((l) => l.text.citation?.en);
     expect(citations).toEqual(['Isa 6-7', 'Sap 2']);
     // The Vulgate/Douay-Rheims bulk import (2026-09-03) landed the real
     // text for these passages.
-    expect((lessons[0] as { text: { status: { en?: string } } }).text.status.en).toBe('verified');
+    expect(lessons[0]?.text.status.en).toBe('verified');
   });
 
   it("adds a 3rd reading for a commemorated saint, generously surfaced per the 'commemorations get their own reading' design (see hours/matins.ts's own header)", () => {
@@ -103,13 +105,23 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
     // Semiduplex threshold). 2025-12-02, a Tuesday, keeps the same 9-psalm
     // ferial shape as the other tests in this block.
     const commemoratedOrdo = resolveOrdo('matins', '2025-12-02');
-    // Same bible-plan-lesson filter as the test above — advent-1.yml's
-    // patristic content also pools into this date.
-    const lessons = commemoratedOrdo.parts.filter((p) => p.kind === 'lesson' && typeof p.label !== 'string');
-    expect(lessons).toHaveLength(3);
-    const citations = lessons.map((l) => (l as { text: { citation?: { en?: string } } }).text.citation?.en);
-    expect(citations).toEqual(['Isa 6-7', 'Sap 2', undefined]);
-    expect((lessons[0] as { text: { status: { en?: string } } }).text.status.en).toBe('verified');
+    const lessons = commemoratedOrdo.parts.filter((p) => p.kind === 'lesson') as {
+      text: { citation?: { en?: string }; status: { en?: string } };
+      label?: string | Record<string, string>;
+    }[];
+    // Same citation-based bible-plan filter as the test above —
+    // advent-1.yml's patristic content also pools into this date.
+    const bookLessons = lessons.filter((l) => l.text.citation?.en !== undefined);
+    expect(bookLessons).toHaveLength(2);
+    expect(bookLessons.map((l) => l.text.citation?.en)).toEqual(['Isa 6-7', 'Sap 2']);
+    expect(bookLessons[0]?.text.status.en).toBe('verified');
+    // St. Bibiana's own proper reading (no citation of her own — it's a
+    // continuous vita, not a scripture pericope) — the actual 3rd reading
+    // this test is about. She carries no authored `source` either, so she
+    // gets the "On St. Bibiana..." fallback label.
+    const bibiana = lessons.find((l) => typeof l.label === 'string' && l.label.includes('Bibiana'));
+    expect(bibiana).toBeDefined();
+    expect(bibiana?.text.citation).toBeUndefined();
   });
 
   it("matches the first reading (Isaiah) against the seeded per-book responsory pool", () => {
