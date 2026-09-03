@@ -3,8 +3,26 @@
 # proper Nocturn 2 in the source). Lectio7 bare incipit (Matt 9:18-26, the
 # ruler's daughter and the woman with an issue of blood) skipped;
 # Lectio7-9's homily by St. Jerome is one continuous work, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-pentecost-23
 readings:
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 9:18-26", en: "Matt 9:18-26" }
+    text:
+      la: >-
+        In illo témpore: Loquénte Jesu ad turbas, ecce, princeps unus accéssit et adorábat eum, dicens: Dómine, fília mea modo defúncta est: sed veni, impóne manum tuam super eam, et vivet. Et surgens Jesus sequebátur eum et discípuli ejus. Et ecce múlier, quæ sánguinis fluxum patiebátur duódecim annis, accéssit retro et tétigit fímbriam vestiménti ejus. Dicébat enim intra se: Si tetígero tantum vestiméntum ejus, salva ero. At Jesus convérsus et videns eam, dixit: Confíde, fília, fides tua te salvam fecit. Et salva facta est múlier ex illa hora. Et cum venísset Jesus in domum príncipis, et vidísset tibícines et turbam tumultuántem, dicebat: Recédite: non est enim mórtua puélla, sed dormit. Et deridébant eum. Et cum ejécta esset turba, intrávit et ténuit manum ejus. Et surréxit puélla. Et éxiit fama hæc in univérsam terram illam.
+      en: >-
+        At that time, as Jesus was speaking to the crowds, behold, a ruler came up and worshipped Him, saying, “Lord, my daughter has just now died; but come and lay Your hand upon her, and she will return to life.” And Jesus arose and followed him, and so did His disciples. Now a woman who for twelve years had been suffering from hemorrhage, came up behind him and touched the tassel of His cloak saying to herself, “If I touch but His cloak I shall be saved.” But Jesus, turning and seeing her, said, “Take courage, daughter; your faith has saved you.” And the woman was restored to health from that moment. And when Jesus came to the ruler's house, and saw the flute players and the crowd making a din, He said, “Begone, the girl is asleep, not dead.” And they laughed Him to scorn. But when the crowd had been put out, He went in and took her by the hand; and the girl arose. And the report of this spread throughout all that district.
+    status: { la: verified, en: verified }
+
   - nocturn: 3
     isGospel: false
     source: "St. Jerome, Priest, Book 1, Commentary on Matthew 9"

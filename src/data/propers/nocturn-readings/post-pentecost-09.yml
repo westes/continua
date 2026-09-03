@@ -4,6 +4,14 @@
 # continuous excerpt (Lectio4-6). Nocturn 3: Lectio7 bare incipit (Luke
 # 19:41-47, Jesus weeps over Jerusalem) skipped; Lectio8-9 one continuous
 # homily by Pope St. Gregory the Great, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-pentecost-09
 readings:
   - nocturn: 2
@@ -56,6 +64,16 @@ readings:
     responsory:
       la: "R. Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.\nV. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?\nR. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël."
       en: "R. Saul hath slain his thousands, and David his ten thousands. * Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel.\nV. Is not this David? Did they not sing one to another of him in dances, saying: Saul hath slain his thousands, and David his ten thousands?\nR. Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 19:41-47", en: "Luke 19:41-47" }
+    text:
+      la: >-
+        In illo témpore: Cum appropinquáret Jesus Jerúsalem, videns civitátem, flevit super illam, dicens: Quia si cognovísses et tu, et quidem in hac die tua, quæ ad pacem tibi, nunc autem abscóndita sunt ab óculis tuis. Quia vénient dies in te: et circúmdabunt te inimíci tui vallo, et circúmdabunt te: et coangustábunt te úndique: et ad terram prostérnent te, et fílios tuos, qui in te sunt, et non relínquent in te lápidem super lápidem: eo quod non cognóveris tempus visitatiónis tuæ. Et ingréssus in templum, cœpit ejícere vendéntes in illo et eméntes, dicens illis: Scriptum est: Quia domus mea domus oratiónis est. Vos autem fecístis illam speluncam latrónum. Et erat docens cotídie in templo.
+      en: >-
+        At that time, when Jesus drew near to Jerusalem and saw the city, He wept over it, saying, If you had known, in this your day, even you, the things that are for your peace! But now they are hidden from your eyes. For days will come upon you when your enemies will throw up a rampart about you, and surround you and shut you in on every side, and will dash you to the ground and your children within you, and will not leave in you one stone upon another, because you have not known the time of your visitation. And He entered the temple, and began to cast out those who were selling and buying in it, saying to them, It is written, ‘My house is a house of prayer,’ but you have made it a den of thieves. And He was teaching daily in the temple.
     status: { la: verified, en: verified }
 
   - nocturn: 3

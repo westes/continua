@@ -6,6 +6,14 @@
 # reparation to the Sacred Heart. Nocturn 3: Lectio7 bare incipit (Luke
 # 15:1-10, lost sheep/lost coin) skipped; Lectio8-9 one continuous homily by
 # Pope St. Gregory the Great, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-pentecost-03
 readings:
   - nocturn: 2
@@ -70,6 +78,16 @@ readings:
     responsory:
       la: "R. Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.\nV. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?\nR. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël."
       en: "R. Saul hath slain his thousands, and David his ten thousands. * Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel.\nV. Is not this David? Did they not sing one to another of him in dances, saying: Saul hath slain his thousands, and David his ten thousands?\nR. Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 15:1-10", en: "Luke 15:1-10" }
+    text:
+      la: >-
+        In illo témpore: Erant appropinquántes ad Jesum publicáni et peccatóres, ut audírent illum. Et murmurábant pharisǽi et scribæ, dicéntes: Quia hic peccatóres recipit et mandúcat cum illis. Et ait ad illos parábolam istam, dicens: Quis ex vobis homo, qui habet centum oves: et si perdíderit unam ex illis, nonne dimíttit nonagínta novem in desérto, et vadit ad illam, quæ períerat, donec invéniat eam? Et cum invénerit eam, impónit in húmeros suos gaudens: et véniens domum, cónvocat amícos et vicínos, dicens illis: Congratulámini mihi, quia invéni ovem meam, quæ períerat? Dico vobis, quod ita gáudium erit in cœlo super uno peccatóre pœniténtiam agénte, quam super nonagínta novem justis, qui non índigent pœniténtia. Aut quæ múlier habens drachmas decem, si perdíderit drachmam unam, nonne accéndit lucérnam, et evérrit domum, et quærit diligénter, donec invéniat? Et cum invénerit, cónvocat amícas et vicínas, dicens: Congratulámini mihi, quia invéni drachmam, quam perdíderam? Ita dico vobis: gáudium erit coram Angelis Dei super uno peccatóre pœniténtiam agénte.
+      en: >-
+        At that time, the publicans and sinners were drawing near to Him to listen to Him. And the Pharisees and the Scribes murmured, saying, This man welcomes sinners and eats with them. But He spoke to them this parable, saying, What man of you having a hundred sheep, and losing one of them, does not leave the ninety-nine in the desert, and go after that which is lost, until he finds it? And when he has found it, he lays it upon his shoulders rejoicing. And on coming home he calls together his friends and neighbors, saying to them, 'Rejoice with me, because I have found my sheep that was lost.' I say to you that, even so, there will be joy in heaven over one sinner who repents, more then over ninety-nine just who have no need of repentance. Or what woman, having ten drachmas, if she loses one drachma, does not light a lamp and sweep the house and search carefully until she finds it? And when she has found it, she calls together her friends and neighbors, saying, 'Rejoice with me, for I have found the drachma that I had lost.' Even so, I say to you, there will be joy among the angels of God over one sinner who repents.
     status: { la: verified, en: verified }
 
   - nocturn: 3

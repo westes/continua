@@ -4,6 +4,14 @@
 # and the devil, one continuous work (Lectio4-6). Nocturn 3: Lectio7 bare
 # incipit (Luke 5:1-11, the miraculous catch) skipped; Lectio8-9 one
 # continuous homily by St. Ambrose, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-pentecost-04
 readings:
   - nocturn: 2
@@ -71,6 +79,16 @@ readings:
     responsory:
       la: "R. Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.\nV. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?\nR. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël."
       en: "R. Saul hath slain his thousands, and David his ten thousands. * Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel.\nV. Is not this David? Did they not sing one to another of him in dances, saying: Saul hath slain his thousands, and David his ten thousands?\nR. Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 5:1-11", en: "Luke 5:1-11" }
+    text:
+      la: >-
+        In illo témpore: Cum turbæ irrúerent in Jesum, ut audírent verbum Dei, et ipse stabat secus stagnum Genésareth. Et vidit duas naves stantes secus stagnum: piscatóres autem descénderant et lavábant rétia. Ascéndens autem in unam navim, quæ erat Simónis, rogávit eum a terra redúcere pusíllum. Et sedens docébat de navícula turbas. Ut cessávit autem loqui, dixit ad Simónem: Duc in altum, et laxáte rétia vestra in captúram. Et respóndens Simon, dixit illi: Præcéptor, per totam noctem laborántes, nihil cépimus: in verbo autem tuo laxábo rete. Et cum hoc fecíssent, conclusérunt píscium multitúdinem copiósam: rumpebátur autem rete eórum. Et annuérunt sóciis, qui erant in ália navi, ut venírent et adjuvárent eos. Et venérunt, et implevérunt ambas navículas, ita ut pæne mergeréntur. Quod cum vidéret Simon Petrus, prócidit ad génua Jesu, dicens: Exi a me, quia homo peccátor sum, Dómine. Stupor enim circumdéderat eum et omnes, qui cum illo erant, in captúra píscium, quam céperant: simíliter autem Jacóbum et Joánnem, fílios Zebedǽi, qui erant sócii Simónis. Et ait ad Simónem Jesus: Noli timére: ex hoc jam hómines eris cápiens. Et subdúctis ad terram návibus, relictis ómnibus, secuti sunt eum.
+      en: >-
+        At that time, while the crowds were pressing upon Jesus to hear the word of God, He was standing by Lake Genesareth. And He saw two boats moored by the lake, but the fishermen had left them and were washing their nets. And getting into one of the boats, the one that was Simon’s, He asked him to put out a little from the land. And sitting down, He began to teach the crowds from the boat. But when He had ceased speaking, He said to Simon, Put out into the deep, and lower your nets for a catch. And Simon answered and said to Him, Master, the whole night through we have toiled and have taken nothing; but at Your word I will lower the net. And when they had done so, they enclosed a great number of fishes, but their net was breaking. And they beckoned to their comrades in the other boat to come and help them. And they came and filled both the boats, so that they began to sink. But when Simon Peter saw this, he fell down at Jesus’ knees, saying, Depart from me, for I am a sinful man, O Lord. For he and all who were with him were amazed at the catch of fish they had made; and so were also James and John, the sons of Zebedee, who were partners with Simon. And Jesus said to Simon, Do not be afraid; henceforth you shall catch men. And when they had brought their boats to land, they left all and followed Him.
     status: { la: verified, en: verified }
 
   - nocturn: 3

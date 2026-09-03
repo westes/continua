@@ -4,6 +4,14 @@
 # of leading others into sin - one continuous excerpt (Lectio4-6). Nocturn
 # 3: Lectio7 bare incipit (Luke 18:9-14, the Pharisee and the publican)
 # skipped; Lectio8-9 one continuous homily by St. Augustine, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-pentecost-10
 readings:
   - nocturn: 2
@@ -63,6 +71,16 @@ readings:
     responsory:
       la: "R. Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.\nV. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?\nR. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël."
       en: "R. Saul hath slain his thousands, and David his ten thousands. * Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel.\nV. Is not this David? Did they not sing one to another of him in dances, saying: Saul hath slain his thousands, and David his ten thousands?\nR. Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 18:9-14", en: "Luke 18:9-14" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus ad quosdam, qui in se confidébant tamquam justi et aspernabántur céteros, parábolam istam: Duo hómines ascendérunt in templum, ut orárent: unus pharisǽus, et alter publicánus. Pharisǽus stans, hæc apud se orábat: Deus, grátias ago tibi, quia non sum sicut céteri hóminum: raptóres, injústi, adúlteri: velut étiam hic publicánus. Jejúno bis in sábbato: décimas do ómnium, quæ possídeo. Et publicánus a longe stans nolébat nec óculos ad cœlum leváre: sed percutiébat pectus suum, dicens: Deus, propítius esto mihi peccatóri. Dico vobis: descéndit hic justificátus in domum suam ab illo: quia omnis qui se exáltat, humiliábitur: et qui se humíliat, exaltábitur.
+      en: >-
+        At that time, Jesus spoke this parable to some who trusted in themselves as being just and despised others. Two men went up to the temple to pray, the one a Pharisee and the other a publican. The Pharisee stood and began to pray thus within himself: ‘O God, I thank You that I am not like the rest of men, robbers, dishonest, adulterers, or even like this publican. I fast twice a week; I pay tithes of all that I possess.’ But the publican, standing afar off, would not so much as lift up his eyes to heaven, but kept striking his breast, saying, ‘O God, be merciful to me the sinner!’ I tell you, this man went back to his home justified rather than the other; for everyone who exalts himself shall be humbled, and he who humbles himself shall be exalted.
     status: { la: verified, en: verified }
 
   - nocturn: 3

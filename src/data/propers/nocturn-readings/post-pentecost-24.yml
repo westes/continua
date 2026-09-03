@@ -7,8 +7,26 @@
 # literal 24th week (when the season runs that long) and as the fixed final
 # Sunday-of-the-year formulary in overflow years - either way, this is the
 # content that slot resolves to.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-pentecost-24
 readings:
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 24:15-35", en: "Matt 24:15-35" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Cum vidéritis abominatiónem desolatiónis, quæ dicta est a Daniéle Prophéta, stantem in loco sancto: qui legit, intélligat: tunc qui in Judǽa sunt, fúgiant ad montes: et qui in tecto, non descéndat tóllere áliquid de domo sua: et qui in agro, non revertátur tóllere túnicam suam. Væ autem prægnántibus et nutriéntibus in illis diébus. Oráte autem, ut non fiat fuga vestra in híeme vel sábbato. Erit enim tunc tribulátio magna, qualis non fuit ab inítio mundi usque modo, neque fiet. Et nisi breviáti fuíssent dies illi, non fíeret salva omnis caro: sed propter eléctos breviabúntur dies illi. Tunc si quis vobis díxerit: Ecce, hic est Christus, aut illic: nolíte crédere. Surgent enim pseudochrísti et pseudoprophétæ, et dabunt signa magna et prodígia, ita ut in errórem inducántur - si fíeri potest - étiam elécti. Ecce, prædíxi vobis. Si ergo díxerint vobis: Ecce, in desérto est, nolíte exíre: ecce, in penetrálibus, nolíte crédere. Sicut enim fulgur exit ab Oriénte et paret usque in Occidéntem: ita erit et advéntus Fílii hóminis. Ubicúmque fúerit corpus, illic congregabúntur et áquilæ. Statim autem post tribulatiónem diérum illórum sol obscurábitur, et luna non dabit lumen suum, et stellæ cadent de cælo, et virtútes cœlórum commovebúntur: et tunc parébit signum Fílii hóminis in cœlo: et tunc plangent omnes tribus terræ: et vidébunt Fílium hóminis veniéntem in núbibus cæli cum virtúte multa et majestáte. Et mittet Angelos suos cum tuba et voce magna: et congregábunt eléctos ejus a quátuor ventis, a summis cœlórum usque ad términos eórum. Ab árbore autem fici díscite parábolam: Cum jam ramus ejus tener fúerit et fólia nata, scitis, quia prope est æstas: ita et vos cum vidéritis hæc ómnia, scitóte, quia prope est in jánuis. Amen, dico vobis, quia non præteríbit generátio hæc, donec ómnia hæc fiant. Cœlum et terra transíbunt, verba autem mea non præteríbunt.
+      en: >-
+        At that time, Jesus said to His disciples: When you see the abomination of desolation, which was spoken of by Daniel the prophet, standing in the holy place - let him who reads understand - then let those who are in Judea flee to the mountains; and let him who is on the housetop not go down to take anything from his house; and let him who is in the field not turn back to take his cloak. But woe to those who are with child, or have infants at the breast in those days! But pray that your flight may not be in the winter, or on the Sabbath. For then there will be great tribulation, such as has not been from the beginning of the world until now, nor will be. And unless those days had been shortened, no living creature would be saved. But for the sake of the elect those days will be shortened. Then if anyone say to you, ‘Behold, here is the Christ,’ or ‘There He is,’ do not believe it. For false christs and false prophets will arise, and will show great signs and wonders, so as to lead astray, if possible, even the elect. Behold, I have told it to you beforehand. If therefore they say to you, ‘Behold, He is in the desert,’ do not go forth; ‘Behold, He is in the inner chambers,’ do not believe it. For as the lightning comes forth from the east and shines even to the west, so also will the coming of the Son of Man be. Wherever the body is, there will the eagles be gathered together. But immediately after the tribulation of those days, the sun will be darkened, and the moon will not give her light, and the stars will fall from heaven, and the powers of heaven will be shaken. And then will appear the sign of the Son of Man in heaven; and then will all tribes of the earth mourn, and they will see the Son of Man coming upon the clouds of heaven with great power and majesty. And He will send forth His angels with a trumpet and a great sound, and they will gather His elect from the four winds, from one end of the heavens to the other. Now from the fig tree learn this parable. When its branch is now tender, and the leaves break forth, you know that summer is near. Even so, when you see all these things, know that it is near, even at the door. Amen I say to you, this generation will not pass away till all these things have been accomplished. Heaven and earth will pass away, but my words will not pass away.
+    status: { la: verified, en: verified }
+
   - nocturn: 3
     isGospel: false
     source: "St. Jerome, Priest, Book 4, Commentary on Matthew 24"

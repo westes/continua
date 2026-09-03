@@ -10,18 +10,20 @@
 # cross-reference - Pent01 is itself the source the other weeks point back
 # to via @Tempora/Pent01-2:ResponsoryN).
 #
-# Nocturn 3 has two distinct readings, since this is a major feast with its
-# own extra "Commemoratio Dominicae" for the First Sunday after Pentecost it
-# displaces: (a) Lectio7 bare incipit (Matt 28:18-20) skipped; Lectio7-8a is
-# one continuous homily by St. Gregory Nazianzen, on the Trinity, combined,
-# using the "Duo Séraphim" responsory (Responsory8), reused every week; (b)
-# Lectio9 is a wholly separate single-lesson reading, explicitly marked in
-# the source as "Commemoratio Dominicae" - St. Augustine's homily on the
-# displaced First Sunday after Pentecost's own Gospel (Luke 6:36-42). Its
-# Gospel incipit is likewise bare and skipped, leaving the homily alone. No
-# responsory is proper to this final lesson in the source (it runs straight
-# to the Te Deum after Responsory8's Gloria repeat), so none is authored
-# here.
+# Nocturn 3 has two distinct Gospel+homily pairs, since this is a major
+# feast with its own extra "Commemoratio Dominicae" for the First Sunday
+# after Pentecost it displaces: (a) Trinity's own Gospel (Matt 28:18-20, the
+# Great Commission - Missale Tempora/Pent01-0.txt's own [Evangelium], not
+# just the bare "Et réliqua" incipit the Matins source gives at Lectio7) plus
+# St. Gregory Nazianzen's homily on it (Lectio7-8a, combined), using the
+# "Duo Séraphim" responsory (Responsory8), reused every week; (b) the
+# displaced First Sunday after Pentecost's own proper Gospel (Luke 6:36-42,
+# "Estote misericordes" - sourced from Missale Tempora/Pent01-0a.txt, the
+# older pre-Trinity-displacement Mass propers for this same Sunday) plus St.
+# Augustine's homily on it, explicitly marked in the source as "Commemoratio
+# Dominicae" (Lectio9). No responsory is proper to this final lesson in the
+# source (it runs straight to the Te Deum after Responsory8's Gloria
+# repeat), so none is authored here.
 id: post-pentecost-01
 readings:
   - nocturn: 2
@@ -85,6 +87,21 @@ readings:
     status: { la: verified, en: verified }
 
   - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 28:18-20", en: "Matt 28:18-20" }
+    text:
+      la: >-
+        Data est mihi omnis potéstas in cœlo et in terra. Eúntes ergo docéte omnes gentes, baptizántes eos
+        in nómine Patris, et Fílii, et Spíritus Sancti: docéntes eos serváre ómnia, quæcúmque mandávi
+        vobis. Et ecce, ego vobíscum sum ómnibus diébus usque ad consummatiónem sǽculi.
+      en: >-
+        All power in heaven and on earth has been given to Me. Go, therefore, and make disciples of all
+        nations, baptizing them in the Name of the Father, and of the Son, and of the Holy Spirit,
+        teaching them to observe all that I have commanded you; and behold, I am with you all days, even
+        unto the consummation of the world.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
     isGospel: false
     source: "St. Gregory Nazianzen, Patriarch of Constantinople, Treatise on the Faith"
     text:
@@ -130,6 +147,33 @@ readings:
     responsory:
       la: "R. Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.\nV. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.\nR. Plena est omnis terra glória ejus."
       en: "R. One Seraph cried unto another: * Holy, Holy, Holy is the Lord God of hosts; * The whole earth is full of His glory.\nV. There are Three That bear record in heaven: the Father, the Word, and the Holy Ghost, and these Three are One.\nR. The whole earth is full of His glory."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 6:36-42", en: "Luke 6:36-42" }
+    text:
+      la: >-
+        Estóte misericórdes, sicut et Pater vester miséricors est. Nolíte judicáre, et non judicabímini:
+        nolíte condemnáre, et non condemnabímini. Dimíttite, et dimittémini. Date, et dábitur vobis:
+        mensúram bonam et confértam et coagitátam et supereffluéntem dabunt in sinum vestrum. Eadem quippe
+        mensúra, qua mensi fuéritis, remetiétur vobis. Dicébat autem illis et similitúdinem: Numquid potest
+        cæcus cæcum dúcere? nonne ambo in fóveam cadunt? Non est discípulus super magistrum: perféctus
+        autem omnis erit, si sit sicut magister ejus. Quid autem vides festúcam in óculo fratris tui,
+        trabem autem, quæ in óculo tuo est, non consíderas? Aut quómodo potes dícere fratri tuo: Frater,
+        sine, ejíciam festúcam de óculo tuo: ipse in oculo tuo trabem non videns? Hypócrita, ejice primum
+        trabem de oculo tuo: et tunc perspícies, ut edúcas festúcam de óculo fratris tui.
+      en: >-
+        Be merciful, as your Father also is merciful. Judge not, and you shall not be judged; condemn not,
+        and you shall not be condemned. Forgive, and you shall be forgiven. Give, and it shall be given to
+        you: good measure, pressed down, shaken together, and running over, shall they give into your
+        bosom. For with the same measure that you shall mete withal, it shall be measured to you again.
+        And He spoke also to them a parable: Can the blind lead the blind? Do they not both fall into the
+        ditch? The disciple is not above his master, but everyone shall be perfect, if he be as his
+        master. And why do you see the speck in your brother's eye, but do not consider the beam that is
+        in your own eye? Or how can you say to your brother, Brother, let me pull the speck out of your
+        eye, when you yourself do not see the beam in your own eye? Hypocrite, cast out first the beam out
+        of your own eye, and then you shall see clearly to take out the speck from your brother's eye.
     status: { la: verified, en: verified }
 
   - nocturn: 3

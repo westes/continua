@@ -5,8 +5,26 @@
 # Gospel+homily slot. Lectio7 is a bare "Et réliqua" incipit (Luke 10:23-37,
 # the Good Samaritan) and is not authored per this project's convention;
 # Lectio8-9 is one continuous homily by the Venerable Bede, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-pentecost-12
 readings:
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 10:23-37", en: "Luke 10:23-37" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Beáti óculi, qui vident quæ vos videtis. Dico enim vobis, quod multi prophétæ et reges voluérunt vidére quæ vos videtis, et non vidérunt: et audire quæ audítis, et non audiérunt. Et ecce, quidam legisperítus surréxit, tentans illum, et dicens: Magister, quid faciéndo vitam ætérnam possidébo? At ille dixit ad eum: In lege quid scriptum est? quómodo legis? Ille respóndens, dixit: Díliges Dóminum, Deum tuum, ex toto corde tuo, et ex tota ánima tua, et ex ómnibus víribus tuis; et ex omni mente tua: et próximum tuum sicut teípsum. Dixítque illi: Recte respondísti: hoc fac, et vives. Ille autem volens justificáre seípsum, dixit ad Jesum: Et quis est meus próximus? Suscípiens autem Jesus, dixit: Homo quidam descendébat ab Jerúsalem in Jéricho, et íncidit in latrónes, qui étiam despoliavérunt eum: et plagis impósitis abiérunt, semivívo relícto. Accidit autem, ut sacerdos quidam descénderet eádem via: et viso illo præterívit. Simíliter et levíta, cum esset secus locum et vidéret eum, pertránsiit. Samaritánus autem quidam iter fáciens, venit secus eum: et videns eum, misericórdia motus est. Et apprópians, alligávit vulnera ejus, infúndens óleum et vinum: et impónens illum in juméntum suum, duxit in stábulum, et curam ejus egit. Et áltera die prótulit duos denários et dedit stabulário, et ait: Curam illíus habe: et quodcúmque supererogáveris, ego cum redíero, reddam tibi. Quis horum trium vidétur tibi próximus fuísse illi, qui íncidit in latrónes? At ille dixit: Qui fecit misericórdiam in illum. Et ait illi Jesus: Vade, et tu fac simíliter.
+      en: >-
+        At that time, Jesus said to His disciples: Blessed are the eyes that see what you see! For I say to you, many prophets and kings have desired to see what you see, and they have not seen it; and to hear what you hear, and they have not heard it. And behold, a certain lawyer got up to test Him, saying, Master, what must I do to gain eternal life? But He said to him, What is written in the Law? How do you read? He answered and said, You shall love the Lord your God with your whole heart, and with your whole soul, and with your whole strength, and with your whole mind; and your neighbor as yourself. And He said to him, You have answered rightly; do this and you shall live. But he, wishing to justify himself, said to Jesus, And who is my neighbor? Jesus answered and said, A certain man was going down from Jerusalem to Jericho, and he fell in with robbers, who after both stripping him and beating him went their way, leaving him half-dead. But, as it happened, a certain priest was going down the same way; and when he saw him, he passed by. And likewise a Levite also, when he was near the place and saw him, passed by. But a certain Samaritan as he journeyed came upon him, and seeing him, was moved with compassion. And he went up to him and bound up his wounds, pouring on oil and wine. And setting him on his own beast, he brought him to an inn and took care of him. And the next day he took out two denarii and gave them to the innkeeper and said, ‘Take care of him; and whatever more you spend, I, on my way back, will repay you.’ Which of these three, in your opinion, proved himself neighbor to him who fell among the robbers? And he said, He who took pity on him. And Jesus said to him, Go and do also in like manner.
+    status: { la: verified, en: verified }
+
   - nocturn: 3
     isGospel: false
     source: "The Venerable Bede, Priest, Book 3, ch. 43 on Luke 10"

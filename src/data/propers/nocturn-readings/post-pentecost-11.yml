@@ -6,6 +6,14 @@
 # type - one continuous excerpt (Lectio4-6). Nocturn 3: Lectio7 bare incipit
 # (Mark 7:31-37, the healing of the deaf-mute, "Ephphetha") skipped;
 # Lectio8-9 one continuous homily by Pope St. Gregory the Great, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-pentecost-11
 readings:
   - nocturn: 2
@@ -58,6 +66,16 @@ readings:
     responsory:
       la: "R. Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.\nV. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?\nR. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël."
       en: "R. Saul hath slain his thousands, and David his ten thousands. * Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel.\nV. Is not this David? Did they not sing one to another of him in dances, saying: Saul hath slain his thousands, and David his ten thousands?\nR. Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Marc 7:31-37", en: "Mark 7:31-37" }
+    text:
+      la: >-
+        In illo témpore: Exiens Jesus de fínibus Tyri, venit per Sidónem ad mare Galilǽæ, inter médios fines Decapóleos. Et addúcunt ei surdum et mutum, et deprecabántur eum, ut impónat illi manum. Et apprehéndens eum de turba seórsum, misit dígitos suos in aurículas ejus: et éxspuens, tétigit linguam ejus: et suspíciens in cœlum, ingémuit, et ait illi: Ephphetha, quod est adaperíre. Et statim apértæ sunt aures ejus, et solútum est vínculum linguæ ejus, et loquebátur recte. Et præcépit illis, ne cui dícerent. Quanto autem eis præcipiébat, tanto magis plus prædicábant: et eo ámplius admirabántur, dicéntes: Bene ómnia fecit: et surdos fecit audíre et mutos loqui.
+      en: >-
+        At that time, Jesus departing from the district of Tyre came by way of Sidon to the sea of Galilee, through the midst of the district of Decapolis. And they brought to Him one deaf and dumb, and entreated Him to lay His hand upon him. And taking him aside from the crowd, He put His fingers into the man’s ears, and spitting, He touched his tongue. And looking up to heaven, He sighed, and said to him, Ephpheta, that is, Be opened. And his ears were at once opened, and the bond of his tongue was loosed, and he began to speak correctly. And He charged them to tell no one. But the more He charged them, so much the more did they continue to publish it. And so much the more did they wonder, saying, He has done all things well. He has made both the deaf to hear and the dumb to speak.
     status: { la: verified, en: verified }
 
   - nocturn: 3

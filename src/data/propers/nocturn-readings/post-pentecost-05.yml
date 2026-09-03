@@ -5,6 +5,14 @@
 # continuous excerpt (Lectio4-6). Nocturn 3: Lectio7 bare incipit (Matt
 # 5:20-24, on anger) skipped; Lectio8-9 one continuous excerpt from St.
 # Augustine's Sermon on the Mount commentary, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-pentecost-05
 readings:
   - nocturn: 2
@@ -61,6 +69,16 @@ readings:
     responsory:
       la: "R. Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.\nV. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?\nR. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël."
       en: "R. Saul hath slain his thousands, and David his ten thousands. * Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel.\nV. Is not this David? Did they not sing one to another of him in dances, saying: Saul hath slain his thousands, and David his ten thousands?\nR. Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 5:20-24", en: "Matt 5:20-24" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Nisi abundáverit justítia vestra plus quam scribárum et pharisæórum, non intrábitis in regnum cœlórum. Audístis, quia dictum est antíquis: Non occídes: qui autem occíderit, reus erit judício. Ego autem dico vobis: quia omnis, qui iráscitur fratri suo, reus erit judício. Qui autem díxerit fratri suo, raca: reus erit concílio. Qui autem díxerit, fátue: reus erit gehénnæ ignis. Si ergo offers munus tuum ad altáre, et ibi recordátus fúeris, quia frater tuus habet áliquid advérsum te: relínque ibi munus tuum ante altáre et vade prius reconciliári fratri tuo: et tunc véniens ófferes munus tuum.
+      en: >-
+        At that time, Jesus said to His disciples: Unless your justice exceeds that of the Scribes and Pharisees, you shall not enter the kingdom of heaven. You have heard that it was said to the ancients, ‘You shall not kill’; and that whoever shall kill shall be liable to judgment. But I say to you that everyone who is angry with his brother shall be liable to judgment; and whoever says to his brother, ‘Raca,’ shall be liable to the Sanhedrin; and whoever says, ‘You fool!’, shall be liable to the fire of Gehenna. Therefore, if you are offering your gift at the altar, and there remember that your brother has anything against you, leave your gift before the altar and go first to be reconciled to your brother; and then come and offer your gift.
     status: { la: verified, en: verified }
 
   - nocturn: 3

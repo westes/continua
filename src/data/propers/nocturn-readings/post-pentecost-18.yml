@@ -3,8 +3,26 @@
 # proper Nocturn 2 in the source). Lectio7 bare incipit (Matt 9:1-8, the
 # healing of the paralytic) skipped; Lectio7-9's homily by St. Peter
 # Chrysologus is one continuous work, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-pentecost-18
 readings:
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 9:1-8", en: "Matt 9:1-8" }
+    text:
+      la: >-
+        In illo témpore: Ascéndens Jesus in navículam, transfretávit et venit in civitátem suam. Et ecce, offerébant ei paralýticum jacéntem in lecto. Et videns Jesus fidem illórum, dixit paralýtico: Confíde, fili, remittúntur tibi peccáta tua. Et ecce, quidam de scribis dixérunt intra se: Hic blasphémat. Et cum vidísset Jesus cogitatiónes eórum, dixit: Ut quid cogitátis mala in córdibus vestris? Quid est facílius dícere: Dimittúntur tibi peccáta tua; an dícere: Surge et ámbula? Ut autem sciátis, quia Fílius hóminis habet potestátem in terra dimitténdi peccáta, tunc ait paralýtico: Surge, tolle lectum tuum, et vade in domum tuam. Et surréxit et ábiit in domum suam. Vidéntes autem turbæ timuérunt, et glorificavérunt Deum, qui dedit potestátem talem homínibus.
+      en: >-
+        At that time, Jesus, getting into a boat, crossed over and came to his own town. And behold, they brought to Him a paralytic lying on a pallet. And Jesus, seeing their faith, said to the paralytic, Take courage, son; your sins are forgiven you. And behold, some of the scribes said within themselves, This man blasphemes. And Jesus, knowing their thoughts, said, Why do you harbor evil thoughts in your hearts? For which is easier, to say, ‘Your sins are forgiven you,’ or to say, ‘Arise, and walk’? But that you may know that the Son of Man has power on earth to forgive sins, - then He said to the paralytic - Arise, take up your pallet and go to your house. And he arose, and went away to his house. But when the crowds saw it, they were struck with fear, and glorified God Who had given such power to men.
+    status: { la: verified, en: verified }
+
   - nocturn: 3
     isGospel: false
     source: "St. Peter Chrysologus, Archbishop of Ravenna, Sermon 50"

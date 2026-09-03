@@ -4,6 +4,14 @@
 # continuous excerpt (Lectio4-6). Nocturn 3: Lectio7 bare incipit (Mark
 # 8:1-9, feeding of the four thousand) skipped; Lectio8-9 one continuous
 # homily by St. Ambrose on Luke, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-pentecost-06
 readings:
   - nocturn: 2
@@ -72,6 +80,16 @@ readings:
     responsory:
       la: "R. Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.\nV. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?\nR. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël."
       en: "R. Saul hath slain his thousands, and David his ten thousands. * Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel.\nV. Is not this David? Did they not sing one to another of him in dances, saying: Saul hath slain his thousands, and David his ten thousands?\nR. Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Marc 8:1-9", en: "Mark 8:1-9" }
+    text:
+      la: >-
+        In illo témpore: Cum turba multa esset cum Jesu, nec habérent, quod manducárent, convocátis discípulis, ait illis: Miséreor super turbam: quia ecce jam tríduo sústinent me, nec habent quod mandúcent: et si dimísero eos jejúnos in domum suam, defícient in via: quidam enim ex eis de longe venérunt. Et respondérunt ei discípuli sui: Unde illos quis póterit hic saturáre pánibus in solitúdine? Et interrogávit eos: Quot panes habétis? Qui dixérunt: Septem. Et præcépit turbæ discúmbere super terram. Et accípiens septem panes, grátias agens fregit, et dabat discípulis suis, ut appónerent, et apposuérunt turbæ. Et habébant piscículos paucos: et ipsos benedíxit, et jussit appóni. Et manducavérunt, et saturáti sunt, et sustulérunt quod superáverat de fragméntis, septem sportas. Erant autem qui manducáverant, quasi quátuor mília: et dimísit eos.
+      en: >-
+        At that time, when there was a great crowd with Jesus, and they had nothing to eat, He called His disciples together and said to them, I have compassion on the crowd, for behold, they have now been with Me three days, and have nothing to eat; and if I send them away to their homes fasting, they will faint on the way, for some of them have come from a distance. And His disciples answered Him, How will anyone be able to satisfy these with bread, here in a desert? And He asked them, How many loaves have you? And they said, Seven. And He bade the crowd recline on the ground. Then taking the seven loaves, He gave thanks, broke them and gave them to His disciples to distribute; and they set them before the crowd. And they had a few little fishes; and He blessed them, and ordered them to be distributed. And they ate and were satisfied; and they took up what was left of the fragments, seven baskets. Now those who had eaten were about four thousand. And He dismissed them.
     status: { la: verified, en: verified }
 
   - nocturn: 3

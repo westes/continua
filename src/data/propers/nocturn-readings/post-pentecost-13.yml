@@ -5,8 +5,26 @@
 # post-pentecost-12 onward). Lectio7 is a bare "Et réliqua" incipit (Luke
 # 17:11-19, the ten lepers) and is not authored per this project's
 # convention; Lectio8-9 is one continuous homily by St. Augustine, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-pentecost-13
 readings:
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 17:11-19", en: "Luke 17:11-19" }
+    text:
+      la: >-
+        In illo témpore: Dum iret Jesus in Jerúsalem, transíbat per médiam Samaríam et Galilǽam. Et cum ingrederétur quoddam castéllum, occurrérunt ei decem viri leprósi, qui stetérunt a longe; et levavérunt vocem dicéntes: Jesu præcéptor, miserére nostri. Quos ut vidit, dixit: Ite, osténdite vos sacerdótibus. Et factum est, dum irent, mundáti sunt. Unus autem ex illis, ut vidit quia mundátus est, regréssus est, cum magna voce magníficans Deum, et cecidit in fáciem ante pedes ejus, grátias agens: et hic erat Samaritánus. Respóndens autem Jesus, dixit: Nonne decem mundáti sunt? et novem ubi sunt? Non est invéntus, qui redíret et daret glóriam Deo, nisi hic alienígena. Et ait illi: Surge, vade; quia fides tua te salvum fecit.
+      en: >-
+        At that time, Jesus was going to Jerusalem, He was passing between Samaria and Galilee. And as He was entering a certain village, there He met ten lepers, who stood afar off and lifted up their voice, crying, Jesus, Master, have pity on us. And when He saw them He said, Go, show yourselves to the priests. And it came to pass as they were on their way, that they were made clean. But one of them, seeing that he was made clean, returned, with a loud voice glorifying God, and he fell on his face at His feet, giving thanks; and he was a Samaritan. But Jesus answered and said, Were not the ten made clean? But where are the nine? Has no one been found to return and give glory to God, except this foreigner? And He said to him, Arise, go your way, for your faith has saved you.
+    status: { la: verified, en: verified }
+
   - nocturn: 3
     isGospel: false
     source: "St. Augustine, Bishop of Hippo, Book 2, Questions on the Gospels, ch. 40"

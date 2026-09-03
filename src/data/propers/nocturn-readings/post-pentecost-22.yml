@@ -3,8 +3,26 @@
 # proper Nocturn 2 in the source). Lectio7 bare incipit (Matt 22:15-21,
 # "Render unto Caesar") skipped; Lectio7-9's homily by St. Hilary of
 # Poitiers is one continuous work, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-pentecost-22
 readings:
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 22:15-21", en: "Matt 22:15-21" }
+    text:
+      la: >-
+        In illo témpore: Abeúntes pharisǽi consílium iniérunt, ut cáperent Jesum in sermóne. Et mittunt ei discípulos suos cum Herodiánis, dicéntes: Magíster, scimus, quia verax es et viam Dei in veritáte doces, et non est tibi cura de áliquo: non enim réspicis persónam hóminum: dic ergo nobis, quid tibi vidétur, licet censum dare Cǽsari, an non? Cógnita autem Jesus nequítia eórum, ait: Quid me tentátis, hypócritæ? Osténdite mihi numísma census. At illi obtulérunt ei denárium. Et ait illis Jesus: Cujus est imágo hæc et superscríptio? Dicunt ei: Cǽsaris. Tunc ait illis: Réddite ergo, quæ sunt Cǽsaris, Cǽsari; et, quæ sunt Dei, Deo.
+      en: >-
+        At that time, the Pharisees went and took counsel how they might trap Jesus in His talk. And they sent to Him their disciples with the Herodians, saying, Master, we know that You are truthful, and that You teach the way of God in truth, and that You care naught for any man; for You do not regard the person of men. Tell us, therefore, what do You think: Is it lawful to give tribute to Caesar, or not? But Jesus, knowing their wickedness, said, Why do you test Me, you hypocrites? Show Me the coin of the tribute. So they offered Him a denarius. Then Jesus said to them, Whose are this image and the inscription? They said to Him, Caesar’s. Then He said to them, Render, therefore, to Caesar the things that are Caesar’s, and to God the things that are God’s.
+    status: { la: verified, en: verified }
+
   - nocturn: 3
     isGospel: false
     source: "St. Hilary, Bishop of Poitiers, Commentary on Matthew, Canon 23"

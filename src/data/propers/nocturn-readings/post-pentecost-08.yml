@@ -4,6 +4,14 @@
 # Christ - one continuous excerpt (Lectio4-6). Nocturn 3: Lectio7 bare
 # incipit (Luke 16:1-9, the unjust steward) skipped; Lectio8-9 one
 # continuous excerpt from St. Jerome's letter to Algasia, combined.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-pentecost-08
 readings:
   - nocturn: 2
@@ -55,6 +63,16 @@ readings:
     responsory:
       la: "R. Percússit Saul mille, et David decem míllia: * Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël.\nV. Nonne iste est David, de quo canébant in choro, dicéntes: Saul percússit mille, et David decem míllia?\nR. Quia manus Dómini erat cum illo: percússit Philisthǽum, et ábstulit oppróbrium ex Israël."
       en: "R. Saul hath slain his thousands, and David his ten thousands. * Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel.\nV. Is not this David? Did they not sing one to another of him in dances, saying: Saul hath slain his thousands, and David his ten thousands?\nR. Because the hand of the Lord was with him, he smote the Philistine, and took away the reproach from Israel."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 16:1-9", en: "Luke 16:1-9" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis parábolam hanc: Homo quidam erat dives, qui habébat víllicum: et hic diffamátus est apud illum, quasi dissipásset bona ipsíus. Et vocávit illum et ait illi: Quid hoc audio de te? redde ratiónem villicatiónis tuæ: jam enim non póteris villicáre. Ait autem víllicus intra se: Quid fáciam, quia dóminus meus aufert a me villicatiónem? fódere non váleo, mendicáre erubésco. Scio, quid fáciam, ut, cum amótus fúero a villicatióne, recípiant me in domos suas. Convocátis itaque síngulis debitóribus dómini sui, dicébat primo: Quantum debes dómino meo? At ille dixit: Centum cados ólei. Dixítque illi: Accipe cautiónem tuam: et sede cito, scribe quinquagínta. Deínde álii dixit: Tu vero quantum debes? Qui ait: Centum coros trítici. Ait illi: Accipe lítteras tuas, et scribe octogínta. Et laudávit dóminus víllicum iniquitátis, quia prudénter fecísset: quia fílii hujus sǽculi prudentióres fíliis lucis in generatióne sua sunt. Et ego vobis dico: fácite vobis amicos de mammóna iniquitátis: ut, cum defecéritis, recípiant vos in ætérna tabernácula.
+      en: >-
+        At that time, Jesus spoke to His disciples this parable: There was a certain rich man who had a steward, who was reported to him as squandering his possessions. And he called him and said to him, ‘What is this that I hear of you? Make an accounting of your stewardship, for you can be steward no longer.’ And the steward said within himself, ‘What shall I do, seeing that my master is taking away the stewardship from me? To dig I am not able; to beg I am ashamed. I know what I shall do, that when I am removed from my stewardship they may receive me into their houses.’ And he summoned each of his master’s debtors and said to the first, ‘How much do you owe my master?’ And he said, ‘A hundred jars of oil.’ He said to him, ‘Take your bond and sit down at once and write fifty.’ Then he said to another, ‘How much do you owe?’ He said, ‘A hundred kors of wheat.’ He said to him, ‘Take your bond and write eighty.’ And the master commended the unjust steward, in that he had acted prudently; for the children of this world, in relation to their own generation, are more prudent than the children of the light. And I say to you, make friends for yourselves with the mammon of wickedness, so that when you fail they may receive you into the everlasting dwellings.
     status: { la: verified, en: verified }
 
   - nocturn: 3
