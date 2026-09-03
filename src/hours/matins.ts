@@ -732,7 +732,12 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
     const label = r.label ? { la: r.label.la ?? '', en: r.label.en ?? '' } : undefined;
     parts.push(
       r.isGospel
-        ? { kind: 'gospel', text: { text: r.text, status: r.status, citation: r.citation }, responsory, label }
+        ? {
+            kind: 'gospel',
+            text: { text: r.text, status: r.status, citation: r.citation },
+            responsory,
+            label: label ?? getGospelIncipitFromCitation(r.citation),
+          }
         : { kind: 'lesson', text: { text: r.text, status: r.status, citation: r.citation }, responsory, label },
     );
   }
