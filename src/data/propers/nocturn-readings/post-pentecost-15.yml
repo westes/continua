@@ -32,13 +32,11 @@
 # here per resulting reading: Nocturn 2's reading uses Lectio 5's
 # responsory; the Gospel reading uses Lectio 9's (the only one that's
 # genuinely its own, since Lectio 9 itself split across both new
-# readings); the homily reading uses Lectio 10's (the first responsory
-# that's unambiguously the homily's own). Known simplification, flagged
-# not fixed: Lectio 12's own closing "Duo Seraphim" responsory (with its
-# own Gloria Patri, sung specially before the Te Deum) isn't represented
-# here at all — this schema only carries one responsory per reading, and
-# that grand closing responsory doesn't belong to any single one of these
-# readings the way the others do.
+# readings). The last reading (the homily, recombined from Lectio 10-12)
+# uses Lectio 12's own closing "Duo Séraphim" instead of Lectio 10's —
+# same convention every other post-Pentecost week's own file already
+# uses (see e.g. post-pentecost-01.yml): Duo Séraphim always belongs to
+# the hour's *last* reading, not "the first one, when several collapse."
 id: post-pentecost-15
 readings:
   - nocturn: 2
@@ -197,6 +195,6 @@ readings:
         marvelled at the deeds, and grasped what they meant. Such ought we to be in the school of
         Christ.
     responsory:
-      la: "R. Numquid supplántat judícium? aut Omnípotens subvértit quod iustum est? † Líbera me, Dómine, et pone me juxta te: * Et cujúsvis manus pugnet contra me.\nV. Apprehénde arma et scutum, et exsúrge in adjutórium mihi.\nR. Et cujúsvis manus pugnet contra me."
-      en: "R. Does God pervert judgment, or does the Almighty overthrow that which is just? Deliver me, O Lord, and set me beside you, * And let any man's hand fight against me.\nV. Take hold of arms and shield: and rise up to help me.\nR. And let any man's hand fight against me."
+      la: "R. Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.\nV. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.\nR. Plena est omnis terra glória ejus."
+      en: "R. One Seraph cried unto another: * Holy, Holy, Holy is the Lord God of hosts; * The whole earth is full of His glory.\nV. There are Three That bear record in heaven: the Father, the Word, and the Holy Ghost, and these Three are One.\nR. The whole earth is full of His glory."
     status: { la: verified, en: verified }

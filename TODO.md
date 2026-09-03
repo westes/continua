@@ -28,14 +28,6 @@ across every hour and content type in this app.
      needs bilingual voice selection (La/En) worked out, and quality for Latin pronunciation
      is an open question. Open, not started — needs its own design pass before content/UI work
      begins.
-   - The Matins schema carries at most one responsory per reading, which can't represent a
-     responsory belonging to the *hour* rather than any single reading — concretely, the
-     closing "Duo Séraphim" (sung after the last lesson, before Te Deum) is already authored
-     as a regular reading's own responsory in 23 of 24 post-Pentecost weeks (see
-     `data/propers/nocturn-readings/post-pentecost-*.yml`), but `post-pentecost-15` alone can't
-     attach it anywhere: none of that week's 3 readings is the one it historically closes.
-     Needs a real "hour-level closing responsory" slot, not just one more reading-shaped
-     workaround.
    - Paschaltide should substitute the ordinary suffrages/ferial-Preces set with a single
      alleluia-form "Suffragium Paschale" — not modeled; the ordinary set is shown unchanged
      throughout Paschaltide instead.
