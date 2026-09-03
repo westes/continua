@@ -1,0 +1,38 @@
+# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
+# Online) -- the "DR + LV" combined page keeps every verse's Latin
+# and English paired in the same block, avoiding the verse-
+# misalignment this project's first-pass "Unbound Bible" source had
+# for esth 12 specifically; see TODO.md's bulk scripture import entry.
+book: esth
+chapter: 12
+verses:
+  - n: 1
+    text:
+      la: "Morabatur autem eo tempore in aula regis cum Bagatha et Thara eunuchis regis, qui janitores erant palatii."
+      en: "And he abode at that time in the king's court with Bagatha and Thara the king's eunuchs, who were porters of the palace."
+    status: { la: verified, en: verified }
+  - n: 2
+    text:
+      la: "Cumque intellexisset cogitationes eorum, et curas diligentius pervidisset, didicit quod conarentur in regem Artaxerxem manus mittere, et nuntiavit super eo regi."
+      en: "And when he understood their designs, and had diligently searched into their projects, he learned that they went about to lay violent hands on king Artaxerxes, and he told the king thereof."
+    status: { la: verified, en: verified }
+  - n: 3
+    text:
+      la: "Qui de utroque, habita quaestione, confessos jussit duci ad mortem."
+      en: "Then the king had them both examined, and after they had confessed, commanded them to be put to death."
+    status: { la: verified, en: verified }
+  - n: 4
+    text:
+      la: "Rex autem quod gestum erat, scripsit in commentariis : sed et Mardochaeus rei memoriam litteris tradidit."
+      en: "But the king made a record of what was done: and Mardochai also committed the memory of the thing to writing."
+    status: { la: verified, en: verified }
+  - n: 5
+    text:
+      la: "Praecepitque ei rex, ut in aula palatii moraretur, datis ei pro delatione muneribus."
+      en: "And the king commanded him, to abide in the court of the palace, and gave him presents for the information."
+    status: { la: verified, en: verified }
+  - n: 6
+    text:
+      la: "Aman vero filius Amadathi Bugaeus erat gloriosissimus coram rege, et voluit nocere Mardochaeo, et populo ejus pro duobus eunuchis regis, qui fuerant interfecti. Et diripuerunt bona, vel substantias eorum. Epistolae autem hoc exemplar fuit."
+      en: "But Aman the son of Amadathi the Bugite was in great honour with the king, and sought to hurt Mardochai and his people, because of the two eunuchs of the king who were put to death."
+    status: { la: verified, en: verified }

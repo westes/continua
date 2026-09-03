@@ -18,10 +18,10 @@ describe('getScriptureVerses', () => {
   });
 
   it('is empty, not throwing, for an unauthored book/chapter', () => {
-    // Daniel 14 has no counterpart in the bulk-imported Latin source (it
-    // stops at 3:22, missing the deuterocanonical Greek additions) -- see
-    // TODO.md's bulk scripture import entry.
-    expect(getScriptureVerses('dan', 14)).toEqual([]);
-    expect(getScriptureChapter('dan', 14)).toBeUndefined();
+    // Genesis only has 50 chapters -- a chapter number past a book's own
+    // end is a real "doesn't exist" case, same code path as a genuinely
+    // unauthored one.
+    expect(getScriptureVerses('gen', 51)).toEqual([]);
+    expect(getScriptureChapter('gen', 51)).toBeUndefined();
   });
 });

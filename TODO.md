@@ -53,19 +53,21 @@ across every hour and content type in this app.
      nocturn-readings sweep" below, including the easter-sunday/pentecost-sunday correction).
      Moved out of this "bulk content pending" section since there's no more bulk content left to
      author here.
-   - ~~The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import~~ — DONE (2026-09-03):
-     1157 chapters authored into `src/data/scripture/` from the "Unbound Bible" tab-format
-     source. Genuinely unrecoverable from this source, left `missing`: Daniel 4-14 and Esther
-     11-16 (the Vulgate side of this particular digitization only carries Daniel 1-3 and Esther
-     1-10 — the deuterocanonical continuations aren't in it at all); and 12 chapters
-     (`bar-2`, `isa-5`, `isa-25`, `joan-15`, `rom-9`, `rom-11`, `sir-10/19/23/41/51/52`) where the
-     Douay-Rheims side has a corrupted, misnumbered block (verse "N" carrying verse "N+9"'s text,
-     or similar) rather than simply absent content — importing those under the source's own
-     verse numbers would silently attach wrong text to a citation, worse than `missing`. A
-     handful of other chapters have one or two genuinely isolated missing English verses (e.g.
-     an in-file "Transfer interrupted!" download-corruption artifact at `matt-12:43`) — those
-     imported fine, with just that verse honestly `missing`, same convention as the pre-existing
-     `isa-33`/`sir-36` pointing-split half-verses.
+   - ~~The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import~~ — DONE (2026-09-03),
+     fully closed. First pass: 1157 chapters authored into `src/data/scripture/` from the
+     "Unbound Bible" tab-format source, but that source turned out to be missing Daniel 4-14
+     and Esther 11-16 outright (its Latin side only carries Daniel 1-3 and Esther 1-10 at all)
+     and to have 12 chapters (`bar-2`, `isa-5`, `isa-25`, `joan-15`, `rom-9`, `rom-11`,
+     `sir-10/19/23/41/51`, plus a bogus `sir-52` that isn't a real chapter — Sirach only has 51)
+     with a corrupted, misnumbered Douay-Rheims block (verse "N" carrying verse "N+9"'s text, or
+     similar) rather than simply absent content. Second pass, same day: re-sourced all 28 real
+     chapters from drbo.org's "DR + LV" combined pages (Latin and English kept paired in the
+     same per-verse HTML block, so no repeat of the misalignment risk) — every book/chapter
+     citation used anywhere in the app now resolves to real, verified text; zero gaps left
+     against actual usage. A handful of chapters still carry one or two genuinely isolated
+     missing English verses (e.g. an in-file "Transfer interrupted!" download-corruption
+     artifact at `matt-12:43`, from the first-pass source) — those stayed as-is, same
+     honest-missing convention as the pre-existing `isa-33`/`sir-36` pointing-split half-verses.
    - Lauds/Vespers duplex-majus+ Common-category psalmody: 10 of 24 `SaintRecord.common`
      categories authored (covering 19 ids via aliases) for Vespers, 9 of 24 (18 ids) for Lauds —
      see "Lauds/Vespers duplex-majus+ Common-category psalmody" below and its follow-up entry.
@@ -5020,3 +5022,28 @@ happened, in order:
    on anything resembling the corrupted-block pattern above.
 
 `npm test` (1990 passed), `tsc --noEmit`, and `npm run build` all pass.
+
+### Bulk scripture import, take two — re-sourced the corrupted/missing chapters from drbo.org (2026-09-03, same day)
+
+Closes the two gaps the previous entry left open. The "Unbound Bible" source used for the
+first pass turned out to have real defects, not just gaps: 12 chapters where the Douay-Rheims
+side had verses shifted/merged under the wrong number (confirmed by content, e.g. the line
+tagged "Isaias 25:1" actually held 25:11's text), and Daniel 4-14/Esther 11-16 simply weren't
+in its Latin file at all.
+
+Found a better source: drbo.org (Douay-Rheims Bible Online) publishes a combined "DR + LV"
+page per chapter (`/drl/chapter/<book><chapter>.htm`) with each verse's Latin and English kept
+in the same HTML block — structurally impossible for the two languages to drift out of
+alignment the way the tab-separated source could. Fetched all 28 real chapters this way
+(`bar-2`; `isa-5`, `isa-25`; `joan-15`; `rom-9`, `rom-11`; `sir-10/19/23/41/51`; `dan-4`
+through `dan-14`; `esth-11` through `esth-16`) via a small regex parser against the raw HTML
+(`<p><a class=vn>N</a>ENGLISH<br><font class="latin">LATIN</font></p>`), spot-checked several
+against the known-correct text, and confirmed `sir-52` isn't a real chapter at all (Sirach
+only has 51 on drbo.org — the old source's "52" was itself bogus, dropped rather than
+authored). Store now at 1185 chapter files; every book/chapter citation used anywhere in the
+app resolves to real text with no remaining gaps.
+
+`tests/scripture/scripture.test.ts`'s "unauthored chapter" case repointed from `dan-14` (now
+authored) to `gen-51` (Genesis only has 50 chapters — a real "doesn't exist," same code path).
+
+`npm test` (2018 passed), `tsc --noEmit`, and `npm run build` all pass.
