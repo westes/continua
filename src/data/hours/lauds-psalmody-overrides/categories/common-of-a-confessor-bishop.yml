@@ -5,12 +5,16 @@
 # hours/lauds-psalmody-overrides.ts's own doc comment) -- only these
 # antiphons are specific to this Common.
 #
-# `aliases` registers `common-of-a-confessor-doctor` under this same
-# scheme -- votive=C4a at Lauds is byte-identical to C4 for these same
-# slots (the only difference between C4 and C4a shows up in the
-# Magnificat antiphon, handled separately, not this psalmody table).
+# `aliases` registers `common-of-a-confessor-doctor` and
+# `common-of-a-confessor-pope` under this same scheme -- votive=C4a/C4b
+# at Lauds are both byte-identical to C4 for these same slots (the only
+# difference shows up in the Magnificat antiphon and collect, handled
+# separately, not this psalmody table; confirmed for C4b 2026-09-03,
+# live query against the reference engine, closing a real gap -- St.
+# Pius X/St. Leo II/St. Pius V were falling through to the plain
+# ferial default).
 id: common-of-a-confessor-bishop
-aliases: [common-of-a-confessor-doctor]
+aliases: [common-of-a-confessor-doctor, common-of-a-confessor-pope]
 groups:
   - psalms: [92]
     antiphon:

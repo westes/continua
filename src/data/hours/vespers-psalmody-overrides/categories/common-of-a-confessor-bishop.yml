@@ -2,13 +2,16 @@
 # against Divinum Officium (Monastic Tridentinum 1617, command=
 # prayVespera, votive=C4, 2026-08-28).
 #
-# `aliases` registers `common-of-a-confessor-doctor` under this same
-# scheme -- `votive=C4a` at Vespers returned byte-identical psalms/
-# antiphons to `votive=C4` for these same four slots (only the
-# Magnificat antiphon differs, handled separately, not this psalmody
-# table).
+# `aliases` registers `common-of-a-confessor-doctor` and
+# `common-of-a-confessor-pope` under this same scheme -- `votive=C4a`/
+# `C4b` at Vespers both returned byte-identical psalms/antiphons to
+# `votive=C4` for these same four slots (only the Magnificat antiphon
+# and collect differ, handled separately, not this psalmody table;
+# confirmed for C4b 2026-09-03, live query against the reference
+# engine, closing a real gap -- St. Pius X/St. Leo II/St. Pius V were
+# falling through to the plain ferial default).
 id: common-of-a-confessor-bishop
-aliases: [common-of-a-confessor-doctor]
+aliases: [common-of-a-confessor-doctor, common-of-a-confessor-pope]
 groups:
   - psalms: [109]
     antiphon:
