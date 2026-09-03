@@ -38,10 +38,12 @@ export default defineConfig({
         // offline use) pushes the main chunk past it -- raised again
         // (2026-08-28, was 6 MiB) once the movable-octave content (Ascension/
         // Corpus Christi/Sacred Heart/Patronage of St. Joseph) pushed the
-        // bundle past the previous cap. Bump this again, with headroom, if
-        // a future content pull hits it -- this is deliberate bundling, not
-        // bloat to trim (see CLAUDE.md).
-        maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
+        // bundle past the previous cap, then again (2026-09-02, was 8 MiB)
+        // once the bulk Vulgate/Douay-Rheims scripture import (~1000 new
+        // chapters under src/data/scripture/) pushed it past 16 MiB. Bump
+        // this again, with headroom, if a future content pull hits it --
+        // this is deliberate bundling, not bloat to trim (see CLAUDE.md).
+        maximumFileSizeToCacheInBytes: 24 * 1024 * 1024,
       },
     }),
   ],

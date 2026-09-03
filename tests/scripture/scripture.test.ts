@@ -18,7 +18,10 @@ describe('getScriptureVerses', () => {
   });
 
   it('is empty, not throwing, for an unauthored book/chapter', () => {
-    expect(getScriptureVerses('gen', 1)).toEqual([]);
-    expect(getScriptureChapter('gen', 1)).toBeUndefined();
+    // Daniel 14 has no counterpart in the bulk-imported Latin source (it
+    // stops at 3:22, missing the deuterocanonical Greek additions) -- see
+    // TODO.md's bulk scripture import entry.
+    expect(getScriptureVerses('dan', 14)).toEqual([]);
+    expect(getScriptureChapter('dan', 14)).toBeUndefined();
   });
 });
