@@ -70,11 +70,11 @@ export function resolvePassages(passages: ScriptureCitation[]): Partial<Record<L
   for (const citation of passages) {
     const verses = getScriptureVerses(citation.book, citation.chapter, citation.verses);
     const la = verses
-      .map((v) => (v.text.la ? `${v.n} ${v.text.la}` : undefined))
+      .map((v) => v.text.la)
       .filter((s): s is string => !!s)
       .join(' ');
     const en = verses
-      .map((v) => (v.text.en ? `${v.n} ${v.text.en}` : undefined))
+      .map((v) => v.text.en)
       .filter((s): s is string => !!s)
       .join(' ');
     if (la) laParagraphs.push(la);

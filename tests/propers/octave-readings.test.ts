@@ -34,8 +34,8 @@ describe('getOctaveReading', () => {
     const reading = getOctaveReading('all-saints', 2);
     const paragraphs = reading?.text.la?.split('\n\n') ?? [];
     expect(paragraphs.length).toBe(3);
-    expect(paragraphs[0]).toContain('1 Et factum est');
-    expect(reading?.text.en).toContain('1 Now it came to pass');
+    expect(paragraphs[0]).toContain('Et factum est');
+    expect(reading?.text.en).toContain('Now it came to pass');
   });
 
   it('resolves a scripture passage reading that spans two chapters', () => {
