@@ -28,6 +28,14 @@ across every hour and content type in this app.
      needs bilingual voice selection (La/En) worked out, and quality for Latin pronunciation
      is an open question. Open, not started — needs its own design pass before content/UI work
      begins.
+   - The Matins schema carries at most one responsory per reading, which can't represent a
+     responsory belonging to the *hour* rather than any single reading — concretely, the
+     closing "Duo Séraphim" (sung after the last lesson, before Te Deum) is already authored
+     as a regular reading's own responsory in 23 of 24 post-Pentecost weeks (see
+     `data/propers/nocturn-readings/post-pentecost-*.yml`), but `post-pentecost-15` alone can't
+     attach it anywhere: none of that week's 3 readings is the one it historically closes.
+     Needs a real "hour-level closing responsory" slot, not just one more reading-shaped
+     workaround.
    - Paschaltide should substitute the ordinary suffrages/ferial-Preces set with a single
      alleluia-form "Suffragium Paschale" — not modeled; the ordinary set is shown unchanged
      throughout Paschaltide instead.
@@ -60,10 +68,13 @@ across every hour and content type in this app.
 
 3. **Known, deliberate simplifications** — intentional, not bugs, no plan to revisit unless
    priorities change:
-   - The Matins "Duo Seraphim" responsory (sung after the final lesson, before Te Deum) isn't
-     modeled — the schema carries one responsory per reading, and this one belongs to none.
-   - `temporal-categories.yml`'s season→category mapping is from general pre-1955 knowledge,
-     not source-verified entry by entry.
+   - `temporal-categories.yml`'s `bySeason` mapping is fully live-verified (2026-09-01 sweep);
+     what's still not independently re-verified is the *privileged-period tier* classification
+     for a handful of specific stretches: Ash Wednesday and Holy Week are `privileged-feria-
+     major` on strong prior knowledge, not directly re-checked; the Vigil of Christmas and
+     Pentecost's own Ember days default to that same major tier as a guess pending
+     verification; Pentecost's Ember days' actual precedence is flagged in-file as a genuinely
+     unverified gap, not a guess dressed up as one (Lent's own Ember days *are* verified).
 
 Everything from here down is the dated build log this priority list is drawn from — kept for
 the sourcing/verification detail behind each decision, not itself in priority order.
