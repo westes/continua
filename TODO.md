@@ -28,6 +28,17 @@ across every hour and content type in this app.
      needs bilingual voice selection (La/En) worked out, and quality for Latin pronunciation
      is an open question. Open, not started — needs its own design pass before content/UI work
      begins.
+   - Seasonal hymn-doxology swap (`hours/hymn-doxology.ts`'s `getHymnDoxologyId`/
+     `appendDoxology`) is only wired into **Prime and Compline** (checked 2026-09-03:
+     `grep -c getHymnDoxologyId` is 0 for `lauds.ts`/`vespers.ts`/`matins.ts`). Terce/Sext/None
+     are confirmed fine as-is — their hymn is genuinely self-contained with no seasonal swap in
+     the source (see `terce.yml`'s own header). Lauds, Vespers, and Matins are the real,
+     unexamined gap: every hymn there is stored as one fixed text captured on its proof date,
+     with no check yet done on whether the source actually varies its closing doxology by
+     season the way Prime/Compline's does — this was previously logged as a narrow "5 of 30
+     Vespers hymns" simplification, but that undersold it; nothing rules out Lauds/Matins
+     having the same issue. Needs a per-hour audit against the reference engine before either
+     wiring in the existing mechanism or confirming (like Terce) that no swap is needed.
 
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
@@ -35,21 +46,14 @@ across every hour and content type in this app.
    - Matins sanctoral-side readings: the per-book Matins responsory pool has only one book
      seeded (`isa`) — needs expanding. Bible-plan TSV content also isn't yet in a test table
      (see "Bible-plan TSV — bulk conversion done" below).
-   - Lauds/Vespers duplex-majus+ Common-category psalmody: 10 of 24 `SaintRecord.common`
-     categories authored (covering 19 ids via aliases) for Vespers, 9 of 24 (18 ids) for Lauds —
-     see "Lauds/Vespers duplex-majus+ Common-category psalmody" below and its follow-up entry.
-     Genuinely still open: `common-of-a-dedication`'s **Lauds** file specifically (Vespers is
-     done) — blocked on a real content gap, not a mechanism gap: its OT canticle ("Canticum
+   - Lauds/Vespers duplex-majus+ Common-category psalmody: all 24 `SaintRecord.common`
+     categories are resolved (Vespers 10/10 real category files, Lauds 9/10 — see
+     "Lauds/Vespers duplex-majus+ Common-category psalmody" below and its follow-up entry) with
+     one genuine gap left: `common-of-a-dedication`'s **Lauds** file specifically (Vespers'
+     is done) — blocked on a real content gap, not a mechanism gap: its OT canticle ("Canticum
      Ieremiæ") has never been transcribed anywhere in this app (the 7 existing Lauds canticles,
      `hours/lauds-canticles.ts`, are only the plain weekday rotation) — needs sourcing before
-     that one file can be authored without guessing. `common-of-a-vigil` is not a gap at all:
-     the `vigil` `FeastClass` sits structurally below `duplex-majus` on the rank ladder (see
-     `calendar/commemorations.ts`'s `FEAST_CLASS_ORDER`), so `getOfficeOverrideId` can never
-     return a Vigil's id — this category is permanently unreachable by design, not worth
-     authoring. Vespers' own per-feast **proper** tier
-     (`data/hours/vespers-psalmody-overrides/saints/`) is mechanism-only, zero saints authored —
-     unlike Lauds, no majus+ saint currently on the calendar is known to have proper Vespers
-     psalm antiphons distinct from their Common's.
+     that one file can be authored without guessing.
 
 3. **Known, deliberate simplifications** — intentional, not bugs, no plan to revisit unless
    priorities change:
@@ -59,17 +63,10 @@ across every hour and content type in this app.
    - Suffrage omission is live-verified against Monastic Tridentinum 1617 for every case except
      Paschaltide, which should substitute the whole set with a single alleluia-form "Suffragium
      Paschale" rather than showing the ordinary set — not modeled.
-   - Ferial Preces (Lauds, Vespers, Prime) run every ferial-or-vigil day, wider than history's
-     Advent/Lent/Ember/Vigil-only gating, by explicit choice. Same unmodeled Paschaltide
-     substitution as the suffrages.
-   - 5 of 30 Vespers hymns have a seasonally-variable closing doxology in the source; only
-     the form captured on each hymn's chosen proof date is stored, not a season-aware swap.
    - The Matins "Duo Seraphim" responsory (sung after the final lesson, before Te Deum) isn't
      modeled — the schema carries one responsory per reading, and this one belongs to none.
    - `temporal-categories.yml`'s season→category mapping is from general pre-1955 knowledge,
      not source-verified entry by entry.
-   - St. Michael's Sep 29 date is kept despite the live reference engine showing nothing there
-     across 6 tested years.
 
 Everything from here down is the dated build log this priority list is drawn from — kept for
 the sourcing/verification detail behind each decision, not itself in priority order.
