@@ -19,13 +19,6 @@ across every hour and content type in this app.
 
 1. **Mechanism gaps** — a real design/code piece not built yet, blocking any content pass on
    it from starting:
-   - ~~Easter's own octave~~ — DONE (2026-09-01/02): calendar precedence (the transfer-cascade
-     piece within Holy Week/Easter Day/the Octave/Low Sunday), Easter Sunday/Monday/Tuesday's
-     own proper Matins, and Wednesday-Saturday's own antiphons are all built, authored, and
-     live-verified — see the dated log's "Easter octave transfer cascade" and "Easter's own
-     octave" entries (two general-purpose mechanisms came out of this: a Sunday-branch and a
-     ferial-branch temporal-named-override, both reusable by any future temporal feast wanting
-     its own proper psalms/lessons, not scoped to Easter specifically).
    - Date picker: `day-nav.ts` currently only steps a day at a time (prev/next); there's no
      way to jump to an arbitrary date without walking there one day at a time or editing the
      URL. Needs a calendar-grid picker UI — open, not started.
@@ -39,35 +32,9 @@ across every hour and content type in this app.
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
-   - ~~Latin saint/octave/named-feast names for the bilingual date/day-label header~~ — DONE
-     (2026-08-31): all 11 named temporal feasts and 300 of 301 saints (every real one; the one
-     exception is a deliberate non-real placeholder) now have an authored `nameLa`. See the
-     dated log's "Bilingual header `nameLa` mechanism" entry below for the full mechanism/
-     sourcing detail. Moved out of this "bulk content pending" section since there's no more
-     bulk content left to author here.
    - Matins sanctoral-side readings: the per-book Matins responsory pool has only one book
      seeded (`isa`) — needs expanding. Bible-plan TSV content also isn't yet in a test table
      (see "Bible-plan TSV — bulk conversion done" below).
-   - ~~Matins temporal-cycle readings~~ — DONE (2026-08): all 52 temporal ids across the whole
-     year now have authored Nocturn 2/3 content, no remaining gaps (see "Temporal-cycle
-     nocturn-readings sweep" below, including the easter-sunday/pentecost-sunday correction).
-     Moved out of this "bulk content pending" section since there's no more bulk content left to
-     author here.
-   - ~~The bulk Vulgate (Latin) + Douay-Rheims (English) scripture import~~ — DONE (2026-09-03),
-     fully closed. First pass: 1157 chapters authored into `src/data/scripture/` from the
-     "Unbound Bible" tab-format source, but that source turned out to be missing Daniel 4-14
-     and Esther 11-16 outright (its Latin side only carries Daniel 1-3 and Esther 1-10 at all)
-     and to have 12 chapters (`bar-2`, `isa-5`, `isa-25`, `joan-15`, `rom-9`, `rom-11`,
-     `sir-10/19/23/41/51`, plus a bogus `sir-52` that isn't a real chapter — Sirach only has 51)
-     with a corrupted, misnumbered Douay-Rheims block (verse "N" carrying verse "N+9"'s text, or
-     similar) rather than simply absent content. Second pass, same day: re-sourced all 28 real
-     chapters from drbo.org's "DR + LV" combined pages (Latin and English kept paired in the
-     same per-verse HTML block, so no repeat of the misalignment risk) — every book/chapter
-     citation used anywhere in the app now resolves to real, verified text; zero gaps left
-     against actual usage. A handful of chapters still carry one or two genuinely isolated
-     missing English verses (e.g. an in-file "Transfer interrupted!" download-corruption
-     artifact at `matt-12:43`, from the first-pass source) — those stayed as-is, same
-     honest-missing convention as the pre-existing `isa-33`/`sir-36` pointing-split half-verses.
    - Lauds/Vespers duplex-majus+ Common-category psalmody: 10 of 24 `SaintRecord.common`
      categories authored (covering 19 ids via aliases) for Vespers, 9 of 24 (18 ids) for Lauds —
      see "Lauds/Vespers duplex-majus+ Common-category psalmody" below and its follow-up entry.
