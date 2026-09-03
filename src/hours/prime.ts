@@ -30,7 +30,7 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
   switch (part.kind) {
     case 'hymn': {
       const body = resolveCommon(part.textRef.id);
-      const doxology = resolveCommon(getHymnDoxologyId(day.season, day.winner, 'hymn-doxology-per-annum'));
+      const doxology = resolveCommon(getHymnDoxologyId(day, 'hymn-doxology-per-annum'));
       return [{ kind: 'hymn', text: appendDoxology(body, doxology) }];
     }
     case 'chapter':

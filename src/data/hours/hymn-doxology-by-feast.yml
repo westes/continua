@@ -1,5 +1,11 @@
 # Per-feast override of the hymn's doxology stanza — real Divinum Officium
-# has a `winner{Doxology}` mechanism for this (some feasts specify their own).
-# Empty until milestone 4's sanctoral propers store exists, same as
-# prime-chapter-responsory-by-feast.yml.
-byFeastId: {}
+# has a `winner{Doxology}` mechanism for this (some feasts specify their own),
+# plus a `Rule Doxology=` mechanism a whole Common can set (e.g. the Common
+# of the BVM's own `Doxology=Nat` — Commune/C10-C12Q.txt, live-checked
+# 2026-09-03), which is why marian-saturday is keyed here by its temporal id
+# even though it's not a "feast" in the sanctoral-propers-store sense; see
+# hours/hymn-doxology.ts's getHymnDoxologyId for the kind-agnostic lookup.
+# Otherwise empty until milestone 4's sanctoral propers store exists, same
+# as prime-chapter-responsory-by-feast.yml.
+byFeastId:
+  marian-saturday: hymn-doxology-nat

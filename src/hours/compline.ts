@@ -30,9 +30,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
         return [{ kind: 'hymn', text: resolveCommon('compline-hymn-lenten') }];
       }
       const body = resolveCommon(part.textRef.id);
-      const doxology = resolveCommon(
-        getHymnDoxologyId(day.season, day.winner, 'compline-hymn-doxology-per-annum'),
-      );
+      const doxology = resolveCommon(getHymnDoxologyId(day, 'compline-hymn-doxology-per-annum'));
       return [{ kind: 'hymn', text: appendDoxology(body, doxology) }];
     }
     case 'chapter':
