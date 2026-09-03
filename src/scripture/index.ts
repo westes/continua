@@ -49,6 +49,9 @@ const BOOK_ALIASES: Record<string, string> = {
   luke: 'luc',
   mark: 'marc',
   mic: 'mich',
+  jude: 'jud',
+  obad: 'abd',
+  philem: 'phlm',
 };
 
 export function getScriptureChapter(book: string, chapter: number): ScriptureChapter | undefined {

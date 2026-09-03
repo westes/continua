@@ -1,0 +1,134 @@
+# Douay-Rheims + Latin Vulgate, authored by hand (Clementine Vulgate /
+# Douay-Rheims 1899 American Edition) to fill a gap the bulk "Unbound
+# Bible" import left — the Epistle of Jude, a single short chapter, was
+# missing from that source entirely (see TODO.md's bulk scripture
+# import entry). Book id "jud" — distinct from "jdc" (Judges) and
+# "jdt"/"jdth" (Judith) already in this store.
+book: jud
+chapter: 1
+verses:
+  - n: 1
+    text:
+      la: "Iudas Iesu Christi servus frater autem Iacobi his qui sunt in Deo Patre dilectis et Christo Iesu conservatis et vocatis"
+      en: "Jude the servant of Jesus Christ, and brother of James, to them that are beloved in God the Father, and preserved in Jesus Christ, and called."
+    status: { la: verified, en: verified }
+  - n: 2
+    text:
+      la: "misericordia vobis et pax et caritas adimpleatur"
+      en: "Mercy unto you, and peace, and charity be fulfilled."
+    status: { la: verified, en: verified }
+  - n: 3
+    text:
+      la: "carissimi omnem sollicitudinem faciens scribendi vobis de communi vestra salute necesse habui scribere vobis deprecans supercertari semel traditae sanctis fidei"
+      en: "Dearly beloved, taking all care to write unto you concerning your common salvation, I was under a necessity to write unto you: to beseech you to contend earnestly for the faith once delivered to the saints."
+    status: { la: verified, en: verified }
+  - n: 4
+    text:
+      la: "subintroierunt enim quidam homines qui olim praescripti sunt in hoc iudicium impii Dei nostri gratiam transferentes in luxuriam et solum Dominatorem et Dominum nostrum Iesum Christum negantes"
+      en: "For certain men are secretly entered in, (who were written of long ago unto this judgment,) ungodly men, turning the grace of our Lord God into riotousness, and denying the only sovereign Ruler, and our Lord Jesus Christ."
+    status: { la: verified, en: verified }
+  - n: 5
+    text:
+      la: "commonere autem vos volo scientes semel omnia quoniam Iesus populum de terra Aegypti salvans secundo eos qui non crediderunt perdidit"
+      en: "I will therefore admonish you, though ye once knew all things, that Jesus, having saved the people out of the land of Egypt, did afterwards destroy them that believed not:"
+    status: { la: verified, en: verified }
+  - n: 6
+    text:
+      la: "angelos vero qui non servaverunt suum principatum sed dereliquerunt suum domicilium in iudicium magni diei vinculis aeternis sub caligine reservavit"
+      en: "And the angels who kept not their principality, but forsook their own habitation, he hath reserved under darkness in everlasting chains, unto the judgment of the great day."
+    status: { la: verified, en: verified }
+  - n: 7
+    text:
+      la: "sicut Sodoma et Gomorra et finitimae civitates simili modo exfornicatae et abeuntes post carnem alteram factae sunt exemplum ignis aeterni poenam sustinentes"
+      en: "As Sodom and Gomorrha, and the neighbouring cities, in like manner, having given themselves to fornication, and going after other flesh, were made an example, suffering the punishment of eternal fire."
+    status: { la: verified, en: verified }
+  - n: 8
+    text:
+      la: "similiter et hii carnem quidem maculant dominationem autem spernunt maiestatem autem blasphemant"
+      en: "In like manner these men also defile the flesh, and despise dominion, and blaspheme majesty."
+    status: { la: verified, en: verified }
+  - n: 9
+    text:
+      la: "cum Michahel archangelus cum diabolo disputans altercaretur de Mosi corpore non est ausus iudicium inferre blasphemiae sed dixit imperet tibi Dominus"
+      en: "When Michael the archangel, disputing with the devil, contended about the body of Moses, he durst not bring against him the judgment of railing speech, but said: The Lord command thee."
+    status: { la: verified, en: verified }
+  - n: 10
+    text:
+      la: "hii autem quaecumque quidem ignorant blasphemant quaecumque autem naturaliter tamquam muta animalia norunt in his corrumpuntur"
+      en: "But these men blaspheme whatever things they know not: and what things soever they naturally know, like dumb beasts, in these they are corrupted."
+    status: { la: verified, en: verified }
+  - n: 11
+    text:
+      la: "vae illis quia via Cain abierunt et errore Balaam mercede effusi sunt et contradictione Core perierunt"
+      en: "Woe unto them, for they have gone in the way of Cain: and after the error of Balaam they have for reward poured out themselves, and have perished in the contradiction of Core."
+    status: { la: verified, en: verified }
+  - n: 12
+    text:
+      la: "hii sunt in epulis suis maculae convivantes sine timore semet ipsos pascentes nubes sine aqua quae a ventis circumferuntur arbores autumnales infructuosae bis mortuae eradicatae"
+      en: "These are spots in their banquets, feasting together without fear, feeding themselves, clouds without water, which are carried about by winds, trees of the autumn, unfruitful, twice dead, plucked up by the roots,"
+    status: { la: verified, en: verified }
+  - n: 13
+    text:
+      la: "fluctus feri maris despumantes suas confusiones sidera errantia quibus procella tenebrarum in aeternum servata est"
+      en: "Raging waves of the sea, foaming out their own confusion; wandering stars, to whom the storm of darkness is reserved for ever."
+    status: { la: verified, en: verified }
+  - n: 14
+    text:
+      la: "prophetavit autem et his septimus ab Adam Enoch dicens ecce venit Dominus in sanctis milibus suis"
+      en: "Now of these Enoch also, the seventh from Adam, prophesied, saying: Behold, the Lord cometh with thousands of his saints,"
+    status: { la: verified, en: verified }
+  - n: 15
+    text:
+      la: "facere iudicium contra omnes et arguere omnes impios de omnibus operibus impietatis eorum quibus impie egerunt et de omnibus duris quae locuti sunt contra Deum peccatores impii"
+      en: "To execute judgment upon all, and to reprove all the ungodly for all the works of their ungodliness, whereby they have done ungodly, and for all the hard things which ungodly sinners have spoken against God."
+    status: { la: verified, en: verified }
+  - n: 16
+    text:
+      la: "hii sunt murmuratores querellosi secundum desideria sua ambulantes et os eorum loquitur superba mirantes personas quaestus causa"
+      en: "These are murmurers full of complaints, walking according to their own desires, and their mouth speaketh proud things, admiring persons for gain's sake."
+    status: { la: verified, en: verified }
+  - n: 17
+    text:
+      la: "vos autem carissimi memores estote verborum quae praedicta sunt ab apostolis Domini nostri Iesu Christi"
+      en: "But you, my dearly beloved, be mindful of the words which have been spoken before by the apostles of our Lord Jesus Christ,"
+    status: { la: verified, en: verified }
+  - n: 18
+    text:
+      la: "qui dicebant vobis quoniam in novissimo tempore venient inlusores secundum sua desideria ambulantes impietatum"
+      en: "Who told you that in the last time there should come mockers, walking according to their own desires in ungodlinesses."
+    status: { la: verified, en: verified }
+  - n: 19
+    text:
+      la: "hii sunt qui segregant animales Spiritum non habentes"
+      en: "These are they who separate themselves, sensual men, having not the Spirit."
+    status: { la: verified, en: verified }
+  - n: 20
+    text:
+      la: "vos autem carissimi superaedificantes vosmet ipsos sanctissimae vestrae fidei in Spiritu Sancto orantes"
+      en: "But you, my beloved, building yourselves upon your most holy faith, praying in the Holy Ghost,"
+    status: { la: verified, en: verified }
+  - n: 21
+    text:
+      la: "vosmet ipsos in dilectione Dei servate expectantes misericordiam Domini nostri Iesu Christi in vitam aeternam"
+      en: "Keep yourselves in the love of God, waiting for the mercy of our Lord Jesus Christ, unto life everlasting."
+    status: { la: verified, en: verified }
+  - n: 22
+    text:
+      la: "et hos quidem arguite iudicatos"
+      en: "And some indeed reprove, being judged:"
+    status: { la: verified, en: verified }
+  - n: 23
+    text:
+      la: "illos vero salvate de igne rapientes aliis autem miseremini in timore odientes et eam quae carnalis est maculatam tunicam"
+      en: "But others save, pulling them out of the fire. And on others have mercy, in fear, hating also the spotted garment which is carnal."
+    status: { la: verified, en: verified }
+  - n: 24
+    text:
+      la: "ei autem qui potest conservare vos sine peccato et constituere ante conspectum gloriae suae inmaculatos in exultatione"
+      en: "Now to him who is able to preserve you without sin, and to present you spotless before the presence of his glory with exceeding joy, in the coming of our Lord Jesus Christ,"
+    status: { la: verified, en: verified }
+  - n: 25
+    text:
+      la: "soli Deo salvatori nostro per Iesum Christum Dominum nostrum gloria et magnificentia imperium et potestas ante omne saeculum et nunc et in omnia saecula amen"
+      en: "To the only God our Saviour, through Jesus Christ our Lord, be glory and magnificence, dominion and power, before all ages, and now, and for all ages of ages. Amen."
+    status: { la: verified, en: verified }
