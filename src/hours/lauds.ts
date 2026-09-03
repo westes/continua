@@ -6,10 +6,12 @@ import { getPsalmVerses } from '../psalter';
 import { getCanticle, type CanticleVerse } from './lauds-canticles';
 import { getLaudsSaintOverride, getLaudsCommonOverride, type LaudsPsalmodyOverride } from './lauds-psalmody-overrides';
 import { getOpeningVersicleId } from './opening-versicle';
+import { getHymnDoxologyId } from './hymn-doxology';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
+  appendDoxology,
   getDayCollects,
   getBenedictusAntiphon,
   splitNamedAntiphon,
@@ -261,6 +263,30 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
   return parts;
 }
 
+/**
+ * Every plain-default Lauds hymn's own closing doxology stanza (split out
+ * into `lauds-hymn-${key}-doxology-per-annum.yml`) is re-attached here
+ * through the seasonal mechanism (hours/hymn-doxology.ts) rather than kept
+ * as fixed text — a deliberate broadening beyond the reference source
+ * (whose Monastic weekday/seasonal Lauds hymns mostly don't vary their own
+ * doxology by season at all, live-checked 2026-09-03): this project isn't
+ * a reconstruction (see the repo's CLAUDE.md), and a hymn's closing
+ * doxology is a natural, low-cost way to keep every hour visibly in step
+ * with the season — e.g. the plain weekday hymns used all through
+ * Christmastide/Epiphanytide/Corpus Christi/Sacred Heart (no
+ * `seasonalOfficeSuffix` covers those) previously stayed on their generic
+ * per-annum ending throughout; now they pick up Nat/Epi/Corp/Heart like
+ * Prime/Compline already did. Each `key`'s own natural ending is preserved
+ * as that key's per-annum default, so a season/feast with no override
+ * (e.g. Advent, Lent — the source itself never swaps those) reproduces the
+ * exact original text.
+ */
+function resolveLaudsHymn(day: LiturgicalDay, key: string): ResolvedText {
+  const body = resolveCommon(`lauds-hymn-${key}`);
+  const doxology = resolveCommon(getHymnDoxologyId(day, `lauds-hymn-${key}-doxology-per-annum`));
+  return appendDoxology(body, doxology);
+}
+
 /** Any sanctoral winner's (or named-temporal feast's) own capitulum/
  * responsory/hymn/versicle (data/propers/common/lauds-{part}-${id}.yml),
  * else their Common's (`${part}-${common}`), when authored — see
@@ -287,7 +313,7 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
   return [
     { kind: 'chapter', text: resolveCommon(seasonSuffix ? `lauds-capitulum-${key}` : capitulumId(day.weekday)) },
     { kind: 'responsory', text: resolveResponsory(resolveCommon(`lauds-responsory-${key}`), day) },
-    { kind: 'hymn', text: resolveCommon(`lauds-hymn-${key}`) },
+    { kind: 'hymn', text: resolveLaudsHymn(day, key) },
     { kind: 'versicle', text: resolveCommon(`lauds-versicle-${key}`) },
   ];
 }
