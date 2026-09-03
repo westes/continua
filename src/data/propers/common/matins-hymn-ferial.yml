@@ -4,6 +4,11 @@
 # year-round text; only this one (evidently the ordinary-time/per-annum
 # form) is authored so far. Seasonal variants deferred (see TODO.md),
 # same incremental-content pattern as everywhere else in this project.
+#
+# The closing doxology stanza is split out into
+# matins-hymn-doxology-per-annum.yml (see hours/matins.ts) — the source
+# carries a real "*" seasonal-substitution marker there (live-checked
+# 2026-09-03, Psalterium/Special/Matutinum Special.txt).
 id: matins-hymn-ferial
 text:
   la: >-
@@ -41,15 +46,6 @@ text:
     Et ore te canéntium
 
     Laudéris in perpétuum.
-
-
-    Præsta, Pater piíssime,
-
-    Patríque compar Únice,
-
-    Cum Spíritu Paráclito
-
-    Regnans per omne sǽculum. Amen.
   en: >-
     Our limbs refreshed with slumber now,
 
@@ -85,15 +81,6 @@ text:
     That by their lips who thee adore
 
     Thou mayst be praised forevermore.
-
-
-    Grant this, O Father ever One
-
-    With Christ, thy sole-begotten Son,
-
-    And Holy Ghost, whom all adore,
-
-    Reigning and blest forevermore. Amen.
 status:
   la: verified
   en: verified
