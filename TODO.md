@@ -5047,3 +5047,22 @@ app resolves to real text with no remaining gaps.
 authored) to `gen-51` (Genesis only has 50 chapters — a real "doesn't exist," same code path).
 
 `npm test` (2018 passed), `tsc --noEmit`, and `npm run build` all pass.
+
+### Bulk scripture import, take three — recovered the "Transfer interrupted!"-style isolated gaps too (2026-09-03, same day)
+
+One more pass over the first-pass ("Unbound Bible" source) chapters that still had a lone
+isolated missing English verse (33 chapters, 34 verses total, `matt-12:43`'s in-file "Transfer
+interrupted!" artifact among them) — re-checked every one against drbo.org's per-verse text
+rather than assuming they were unrecoverable. 33 of 34 turned out to be real, present verses
+that the old scrape had simply dropped (a transient download/parse defect, not a source gap)
+and are now filled in with verified text.
+
+The other 10 (`2cor-1:24`, `2reg-13:39`, `2thess-2:17`, `1thess-4:18`, `gen-5:32`, `isa-46:13`,
+`jdth-4:17`, `joan-11:57`, `jos-10:44`, `sir-29:35`) are confirmed genuine: drbo.org's own
+Douay-Rheims numbering for these chapters stops one verse short of the Vulgate's own count too
+(checked each chapter's own max verse number on drbo.org) — a real Vulgate/Douay-Rheims
+versification difference, not a scrape artifact, so these stay honestly `missing`, alongside
+the pre-existing `isa-33`/`sir-36` pointing-split half-verses (same convention, different
+cause).
+
+`npm test` (2018 passed), `tsc --noEmit`, and `npm run build` all pass.
