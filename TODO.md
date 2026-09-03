@@ -22,17 +22,6 @@ across every hour and content type in this app.
    - Paschaltide should substitute the ordinary suffrages/ferial-Preces set with a single
      alleluia-form "Suffragium Paschale" — not modeled; the ordinary set is shown unchanged
      throughout Paschaltide instead.
-   - Seasonal hymn-doxology swap (`hours/hymn-doxology.ts`'s `getHymnDoxologyId`/
-     `appendDoxology`) is only wired into **Prime and Compline** (checked 2026-09-03:
-     `grep -c getHymnDoxologyId` is 0 for `lauds.ts`/`vespers.ts`/`matins.ts`). Terce/Sext/None
-     are confirmed fine as-is — their hymn is genuinely self-contained with no seasonal swap in
-     the source (see `terce.yml`'s own header). Lauds, Vespers, and Matins are the real,
-     unexamined gap: every hymn there is stored as one fixed text captured on its proof date,
-     with no check yet done on whether the source actually varies its closing doxology by
-     season the way Prime/Compline's does — this was previously logged as a narrow "5 of 30
-     Vespers hymns" simplification, but that undersold it; nothing rules out Lauds/Matins
-     having the same issue. Needs a per-hour audit against the reference engine before either
-     wiring in the existing mechanism or confirming (like Terce) that no swap is needed.
 
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
@@ -5033,3 +5022,89 @@ the pre-existing `isa-33`/`sir-36` pointing-split half-verses (same convention, 
 cause).
 
 `npm test` (2018 passed), `tsc --noEmit`, and `npm run build` all pass.
+
+### Seasonal hymn-doxology swap — audited Lauds/Vespers/Matins, wired the two real gaps (2026-09-03, same day)
+
+Closes the "unexamined gap" logged for Lauds/Vespers/Matins: the mechanism
+(`hours/hymn-doxology.ts`) was previously wired only into Prime and Compline, with every
+Lauds/Vespers/Matins hymn stored as one fixed text and no check done on whether the source
+actually varies its closing doxology by season there.
+
+Audited by exhaustively grepping every `[Hymnus ...]`/`[HymnusM ...]` section in Divinum
+Officium's own `Psalterium/Special/{Major,Matutinum} Special.txt` for a real "*"
+substitution marker (distinct from the unrelated antiphon-incipit "*" convention used
+throughout responsory/antiphon text). The Monastic 1617 track (vu's own structural source)
+turned out to carry the marker in exactly two places: Sunday's plain-default Vespers hymn
+("Lucis Creator", inherited unchanged from the base secular text via a `@:`-reference with
+unrelated wording substitutions) and the plain ferial Matins hymn (Day1-6, all six weekday
+forms share it). Every other hymn checked — Sunday Lauds, the Mon-Sat Lauds/Vespers weekday
+defaults, the Advent Lauds/Vespers/Matins hymns, and (initially assumed to need this) the
+Monastic Paschaltide Lauds/Vespers/Matins hymns specifically — has its own fixed,
+non-swapping doxology already baked into the text in the source itself. This generalizes
+Terce/Sext/None's already-confirmed "self-contained, no swap" finding without making it
+universal — Lauds needed no wiring at all as a result.
+
+Wired the two real cases via `getHymnDoxologyId(day, perAnnumId)` (signature changed from
+`(season, winner, perAnnumId)` to take the whole `LiturgicalDay`, needed for the date-window
+check below) into `vespers.ts`'s new `resolveVespersHymn` helper and `matins.ts`'s
+`resolveMatinsHymn` fallback tier. New `vespers-hymn-doxology-per-annum.yml`/
+`matins-hymn-doxology-per-annum.yml` hold each hymn's own natural per-annum ending, split out
+of `vespers-hymn-sunday.yml`/`matins-hymn-ferial.yml`.
+
+Also closed two related real gaps found during the same source audit, both live-checked
+against `hymni.pl`'s `doxology()` sub (the mechanism this project's own hymn-doxology.ts is
+modeled on):
+
+- The Common of the BVM's own `Doxology=Nat` rule (`Commune/C10.txt` through `C12Q.txt`) means
+  Marian Saturdays get the Nativity doxology regardless of season, not just during
+  Christmastide/Epiphanytide — `hymn-doxology-by-feast.yml`'s `byFeastId` now has a
+  `marian-saturday` entry, and `resolveOfficeWinner`'s feast-override check in
+  `getHymnDoxologyId` now looks up a `kind: 'temporal'` winner's id too, not just
+  `'sanctoral'` (a temporal id and a sanctoral id never collide, so this is safe to check
+  unconditionally).
+- The Assumption's octave (Aug 16-22) is hardcoded in the source to the Nativity doxology
+  regardless of season or the day's own winner — confirmed *not* excluded for the 1570/1617
+  track (unlike its Dec 9-15 companion rule for the Immaculate Conception's run-up, which the
+  source explicitly excludes 1617 from, so that one was deliberately left unported). Checked
+  directly by date (`isAssumptionOctaveWindow`), same pattern as `marian-antiphon.ts`'s
+  `isCandlemasToHolyWednesday` — this window doesn't line up with any `Season` value.
+
+`npm test` (2021 passed) and `tsc --noEmit` both pass.
+
+### Seasonal hymn-doxology swap, take two — broadened beyond the source's own marker (2026-09-03, same day)
+
+Follow-up to the entry above, at the user's explicit direction: "the doxology is a neat way to
+stay tuned in to the season... we're doing a remix, not a copy." The first pass wired the
+mechanism only where the Monastic source itself carries a real "*" substitution marker (two
+spots total). This pass wires it into *every* plain-default Lauds/Vespers hymn (Sunday,
+Mon-Sat, Advent, Lent, Passiontide, Paschaltide — 21 files total, all but the two already done)
+regardless of whether the source swaps that specific hymn, matching this project's own
+"Not a reconstruction" stance (repo `CLAUDE.md`) rather than the reference engine's literal
+behavior.
+
+Each hymn file's own natural per-annum ending was split out into a matching
+`{hour}-hymn-{key}-doxology-per-annum.yml` (same convention as the first pass), so a
+season/feast with no override (Advent, Lent — the source never swaps those, and nothing here
+changes that) reproduces the exact original text; `lauds.ts`'s new `resolveLaudsHymn` and
+`vespers.ts`'s widened `resolveVespersHymn` route every plain-default hymn through
+`appendDoxology`/`getHymnDoxologyId` uniformly. The real, visible effect: hymns shown during
+Christmastide/Epiphanytide/Corpus Christi/Sacred Heart (none of which `seasonalOfficeSuffix`
+covers, so these were always the plain weekday-default hymns) now pick up the Nat/Epi/Corp/Heart
+doxology instead of staying on their generic ending; Ascensiontide and the Pentecost octave now
+correctly diverge from the rest of Paschaltide's "Pasch" doxology to their own "Asc"/"Pent" one
+mid-season. Matins was left as before (only the ferial fallback wired, from the first pass) —
+it has no per-weekday or per-season hymn files to broaden into; every other season there still
+falls through to that same one ferial hymn already.
+
+A first automated extraction pass had a real bug (a body/stanza-boundary parser that failed to
+stop at `status:` when a hymn's English translation had one fewer stanza than its Latin — no
+English doxology stanza was ever transcribed for several weekday hymns — silently swallowing
+the YAML `status:` block into the hymn text) and was caught before being trusted: none of its
+output was committed, all 20 affected originals were reverted via `git checkout` back to this
+same day's untouched-by-that-bug state, and redone with a corrected parser plus manual
+spot-checks of the regenerated files.
+
+`npm test` (2021 passed) and `tsc --noEmit` both pass. Live-checked via a scratch test (not
+committed) confirming Epiphanytide/Eastertide/Ascensiontide/Pentecost/Sacred-Heart plain days
+now show the right doxology and Advent/Lent plain days are byte-identical to their pre-change
+text.
