@@ -19,15 +19,6 @@ across every hour and content type in this app.
 
 1. **Mechanism gaps** — a real design/code piece not built yet, blocking any content pass on
    it from starting:
-   - Date picker: `day-nav.ts` currently only steps a day at a time (prev/next); there's no
-     way to jump to an arbitrary date without walking there one day at a time or editing the
-     URL. Needs a calendar-grid picker UI — open, not started.
-   - Audio ("read it to me") interface: a button per hour/text that plays the office aloud
-     instead of requiring reading — e.g. via the Web Speech API (`SpeechSynthesis`), which
-     would keep this offline-first (no server-side TTS call, no added deploy dependency) but
-     needs bilingual voice selection (La/En) worked out, and quality for Latin pronunciation
-     is an open question. Open, not started — needs its own design pass before content/UI work
-     begins.
    - Paschaltide should substitute the ordinary suffrages/ferial-Preces set with a single
      alleluia-form "Suffragium Paschale" — not modeled; the ordinary set is shown unchanged
      throughout Paschaltide instead.
@@ -58,7 +49,19 @@ across every hour and content type in this app.
      `hours/lauds-canticles.ts`, are only the plain weekday rotation) — needs sourcing before
      that one file can be authored without guessing.
 
-3. **Known, deliberate simplifications** — intentional, not bugs, no plan to revisit unless
+3. **New features (not content mechanism)** — genuinely new product surface, not something a
+   content pass is blocked on; each needs its own design pass, not just implementation:
+   - Date picker: `day-nav.ts` currently only steps a day at a time (prev/next); there's no
+     way to jump to an arbitrary date without walking there one day at a time or editing the
+     URL. Needs a calendar-grid picker UI — open, not started.
+   - Audio ("read it to me") interface: a button per hour/text that plays the office aloud
+     instead of requiring reading — e.g. via the Web Speech API (`SpeechSynthesis`), which
+     would keep this offline-first (no server-side TTS call, no added deploy dependency) but
+     needs bilingual voice selection (La/En) worked out, and quality for Latin pronunciation
+     is an open question. Open, not started — needs its own design pass before content/UI work
+     begins.
+
+4. **Known, deliberate simplifications** — intentional, not bugs, no plan to revisit unless
    priorities change:
    - `temporal-categories.yml`'s `bySeason` mapping is fully live-verified (2026-09-01 sweep);
      what's still not independently re-verified is the *privileged-period tier* classification
