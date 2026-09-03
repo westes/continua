@@ -5108,3 +5108,87 @@ spot-checks of the regenerated files.
 committed) confirming Epiphanytide/Eastertide/Ascensiontide/Pentecost/Sacred-Heart plain days
 now show the right doxology and Advent/Lent plain days are byte-identical to their pre-change
 text.
+
+### Sunday Matins Nocturn 3: bare Gospel incipits authored in full, all 48 remaining Sundays (2026-09-03)
+
+User noticed a real gap while praying Matins on a Sunday: Nocturn 3 showed St. Augustine's
+homily with no Gospel citation or text above it, just the patristic commentary starting cold.
+Root cause was this project's own standing convention (see the temporal-nocturn-sweep entries
+above): every Sunday's Matins source gives Nocturn 3's Gospel pericope as a bare "Et réliqua"
+incipit (e.g. "Homo quidam fecit cœnam magnam... Et réliqua"), and this project's authoring
+passes deliberately skipped transcribing it, keeping only the homily as an `isGospel: false`
+lesson — noted at the time as "sourcing that properly would need live-CGI queries per date, out
+of scope for this pass." The mechanism to *render* a paired Gospel+homily as one atomic part
+already existed and worked correctly (`buildReadingPool` in `hours/matins.ts`, done 2026-08-28)
+— post-pentecost-15.yml was the one file that already had a full Gospel, which is what made the
+asymmetry visible as a real content gap rather than a missing feature.
+
+Closed for all 41 remaining Sunday `nocturn-readings` files that had exactly one homily-only
+Nocturn 3 entry: `post-pentecost-{02..14,16..24}` (22), `post-epiphany-{1..6}` (6),
+`septuagesima`/`sexagesima`/`quinquagesima` (3), `lent-{1..4}` (4),
+`easter-octave`/`easter-{3..6}` (5), `sunday-after-ascension` (1), plus Trinity Sunday
+(`post-pentecost-01.yml`, which has *two* Nocturn 3 Gospel+homily pairs — its own, and the
+displaced First Sunday after Pentecost's commemoration).
+
+**Sourcing method, better than the live-CGI-per-date approach originally assumed necessary**:
+the reference engine's Missale (`web/www/missa/Latin|English/Tempora/<id>.txt`) files carry the
+same Sunday's full `[Evangelium]` — the Mass Gospel and the Matins Nocturn 3 Gospel are the same
+pericope — keyed by the identical `<Season><N>-0` id already recorded in each `nocturn-readings`
+file's own header comment (e.g. `post-pentecost-14` → `Pent14-0`). Reading that file directly is
+both more reliable and far faster than per-date live-CGI queries, which turned out to be a
+dead end here anyway: a live query landed on whatever Sunday the *live engine's own* calendar
+assigns to that specific date, which doesn't always match vu's blended calendar's numbering for
+the same nominal week (confirmed by one query returning the wrong pericope, Luke 14:26-35
+instead of the expected Luke 14:16-24, for a date with a commemorated saint). One exception:
+Trinity Sunday's second reading (the displaced First Sunday after Pentecost's own Gospel, Luke
+6:36-42) has no live date to query at all, since Trinity permanently occupies that slot every
+year — found instead in `missa/Latin/Tempora/Pent01-0a.txt`, the reference engine's own
+preserved pre-Trinity-displacement Mass propers for that Sunday.
+
+Each new entry is `isGospel: true`, inserted immediately before the existing homily entry in
+the same Nocturn 3 group (satisfying `buildReadingPool`'s adjacency-pairing check with no
+mechanism changes needed), citation/text sourced verbatim from the Missale bilingual pair, no
+`responsory` of its own — the existing single responsory stays attributed to the homily/final
+reading, unchanged, per each file's own already-documented provenance. Fixed two English-text
+artifacts found while transcribing (a stray leading "v." verse-marker on three Eastertide
+Gospels' English text, `easter-{4,5,6}.yml`; one line with a stray extra leading space,
+`post-pentecost-19.yml`) rather than reproducing them. Every touched file's header comment got a
+short "Update (2026-09)" note explaining the new sourcing, without rewriting the original
+sweep-method prose.
+
+`npm test` (2021 passed, all 47 files) and `tsc --noEmit`/`vite build` both pass. Spot-verified
+via a scratch test (not committed) against `resolveOrdo('matins', ...)` on each id's real Sunday
+date, confirming a single `kind: 'gospel'` part with a nested `homily` field appears (not two
+split lessons) for post-pentecost-14 (the date that surfaced the bug), post-pentecost-02,
+Trinity Sunday (both pairs), post-epiphany-1, septuagesima, easter-octave, and
+sunday-after-ascension.
+
+**Follow-up, same day**: a second pass over the same file shape (`nocturn: 3` / `isGospel:
+false` with no paired Gospel) turned up 7 more Sundays this first pass missed —
+`advent-{1..4}`, `christmas-octave-sunday`, `passion-sunday`, `palm-sunday` — bringing the
+total to 48. Same method (Missale `[Evangelium]`, keyed by each file's own header-documented
+id: `Adv1-0`…`Adv4-0`, `Nat1-0`, `Quad5-0`, `Quad6-0`), with one real wrinkle: **Palm Sunday's
+Missale `[Evangelium]` tag is the Passion narrative** (Matt 26-27, read at Mass itself), not
+the Matt 21:1-9 entry-into-Jerusalem pericope this Nocturn 3's homily (St. Ambrose on Luke,
+Bk. 9) is actually about — that shorter Gospel is proclaimed earlier, at the Blessing of Palms,
+embedded in `Quad6-0.txt`'s own `Benedictio Palmorum` section rather than under its
+`[Evangelium]` tag. Sourced from there instead, confirmed by cross-checking the citation against
+the file's own existing header comment, which already named Matt 21:1-9 as the homily's true
+subject. `advent-4`'s Missale Latin text is itself a cross-reference
+(`@Tempora/Adv3-6`) rather than inline — resolved by reading `Adv3-6.txt` directly, same
+transparent-reference-following already used elsewhere in this project's sourcing.
+
+Discovered one real, useful regression while verifying: `tests/calendar/
+vigil-of-christmas-sunday.test.ts` asserted exactly one Matins Gospel on the rare Sundays where
+Advent 4 lands on Dec 24 and the Vigil of Christmas wins outright with Advent 4 commemorated
+(2023-12-24, 2028-12-24) — true only because Advent 4 previously had no Gospel content to
+contribute. With Advent 4's own Gospel now authored, `buildReadingPool`'s existing (unchanged)
+commemoration-pooling logic correctly surfaces *both* Gospels — Vigil's own (Matt 1:18-21, St.
+Jerome) and Advent 4's own commemorated one (Luke 3:1-6, Pope St. Gregory the Great) — matching
+the same generous-commemorations behavior the test already expected of Lauds's two collects on
+that same date, just above it in the same file. Updated the test's assertion and its own
+explanatory comment to expect and name both, rather than narrowing the new content back to fit
+the old, incomplete assertion.
+
+Full suite re-run after this follow-up: `npm test` (2021 passed, 47 files) and `npm run build`
+(`tsc --noEmit` + `vite build`) both pass.
