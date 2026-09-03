@@ -15,6 +15,14 @@
 # Lectio7's homily portion (incipit dropped) with Lectio8-9, using the
 # source's own [Responsory7] - again a cross-reference, to Epi2-0's
 # Responsory7 ("Ad te, Dómine, levávi ánimam meam").
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-epiphany-6
 readings:
   - nocturn: 2
@@ -79,6 +87,16 @@ readings:
     responsory:
       la: "R. Notas mihi fecísti, Dómine, vias vitæ: * Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem.\nV. Tu es qui restítues hereditátem meam mihi.\nR. Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem."
       en: "R. O Lord, Thou hast shown me the path of life. * Thou shalt fill me with joy in thy presence, at thy right hand there are pleasures for evermore.\nV. Thou art He That shalt restore mine inheritance unto me.\nR. Thou shalt fill me with joy in thy presence, at thy right hand there are pleasures for evermore."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 13:31-35", en: "Matt 13:31-35" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus turbis parábolam hanc: Símile est regnum cœlórum grano sinápis, quod accípiens homo seminávit in agro suo: quod mínimum quidem est ómnibus semínibus: cum autem créverit, majus est ómnibus oléribus, ¶ et fit arbor, ita ut vólucres cœli véniant et hábitent in ramis ejus. Aliam parábolam locútus est eis: Símile est regnum cœlórum ferménto, quod accéptum múlier abscóndit in farínæ satis tribus, donec fermentátum est totum. Hæc ómnia locútus est Jesus in parábolis ad turbas: et sine parábolis non loquebátur eis: ut implerétur quod dictum erat per Prophétam dicéntem: Apériam in parábolis os meum, eructábo abscóndita a constitutióne mundi.
+      en: >-
+        At that time, Jesus spoke this parable to the crowds: The kingdom of heaven is like a grain of mustard seed, which a man took and sowed in his field. This indeed is the smallest of all the seeds; but when it grows up it is larger than any herb and becomes a tree, so that the birds of the air come and dwell in its branches. He told them another parable: The kingdom of heaven is like leaven, which a woman took and buried in three measures of flour, until all of it was leavened. All these things Jesus spoke to the crowds in parables, and without parables he did not speak to them; that what was spoken by the prophet might be fulfilled, I will open My mouth in parables, I will utter things hidden since the foundation of the world.
     status: { la: verified, en: verified }
 
   - nocturn: 3

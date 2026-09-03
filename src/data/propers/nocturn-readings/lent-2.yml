@@ -13,6 +13,14 @@
 # Lectio7's homily portion (incipit dropped) with Lectio8-9, using
 # Responsory7 ("Dixit Angelus ad Jacob") - the first responsory of the
 # group the combined reading spans.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: lent-2
 readings:
   - nocturn: 2
@@ -84,6 +92,16 @@ readings:
     responsory:
       la: "R. Dum exíret Jacob de terra sua, vidit glóriam Dei, et ait: Quam terríbilis est locus iste! * Non est hic áliud, nisi domus Dei, et porta cæli.\nV. Vere Deus est in loco isto, et ego nesciébam.\nR. Non est hic áliud, nisi domus Dei, et porta cæli."
       en: "R. As Jacob went out from his own land, he saw the glory of God, and said: How dreadful is this place. * This is none other but the house of God and this is the gate of heaven.\nV. Surely God is in this place, and I knew it not.\nR. This is none other but the house of God and this is the gate of heaven."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 17:1-9", en: "Matt 17:1-9" }
+    text:
+      la: >-
+        In illo témpore: Assúmpsit Jesus Petrum, et Jacóbum, et Joánnem fratrem eius, et duxit illos in montem excélsum seórsum: et transfigurátus est ante eos. Et resplénduit fácies ejus sicut sol: vestiménta autem ejus facta sunt alba sicut nix. Et ecce, apparuérunt illis Móyses et Elías cum eo loquéntes. Respóndens autem Petrus, dixit ad Jesum: Dómine, bonum est nos hic esse: si vis, faciámus hic tria tabernácula, tibi unum, Móysi unum et Elíæ unum. Adhuc eo loquénte, ecce, nubes lúcida obumbrávit eos. Et ecce vox de nube, dicens: Hic est Fílius meus diléctus, in quo mihi bene complácui: ipsum audíte. Et audiéntes discípuli, cecidérunt in fáciem suam, et timuérunt valde. Et accéssit Jesus, et tétigit eos, dixítque eis: Súrgite, et nolíte timére. Levántes autem óculos suos, néminem vidérunt nisi solum Jesum. Et descendéntibus illis de monte, præcépit eis Jesus, dicens: Némini dixéritis visiónem, donec Fílius hóminis a mórtuis resúrgat.
+      en: >-
+        At that time, Jesus took Peter, James and his brother John, and led them up a high mountain by themselves, and was transfigured before them. And His face shone as the sun, and His garments became white as snow. And behold, there appeared to them Moses and Elias talking together with Him. Then Peter addressed Jesus, saying, Lord, it is good for us to be here. If You will, let us set up three tents here, one for You, one for Moses, and one for Elias. As he was still speaking, behold, a bright cloud overshadowed them, and behold, a voice out of the cloud said, This is My beloved Son, in Whom I am well pleased; hear Him. And on hearing it the disciples fell on their faces and were exceedingly afraid. And Jesus came near and touched them, and said to them, Arise, and do not be afraid. But lifting up their eyes, they saw no one but Jesus only. And as they were coming down from the mountain, Jesus cautioned them, saying, Tell the vision to no one, till the Son of Man has risen from the dead.
     status: { la: verified, en: verified }
 
   - nocturn: 3

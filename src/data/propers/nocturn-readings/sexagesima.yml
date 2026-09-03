@@ -14,6 +14,14 @@
 # Lectio7's homily portion (incipit dropped) with Lectio8-9, using
 # Responsory7 ("Benedíxit Deus Noë, et fíliis ejus") - the first
 # responsory of the group the combined reading spans.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: sexagesima
 readings:
   - nocturn: 2
@@ -77,6 +85,16 @@ readings:
     responsory:
       la: "R. Ædificávit Noë altáre Dómino, ófferens super illud holocáustum: odoratúsque est Dóminus odórem suavitátis, et benedíxit ei, dicens: * Créscite, et multiplicámini, et repléte terram.\nV. Ecce ego státuam pactum meum vobíscum, et cum sémine vestro post vos.\nR. Créscite, et multiplicámini, et repléte terram."
       en: "R. Noah builded an Altar unto the Lord, and offered burnt offerings on the Altar; and the Lord smelled a sweet savour, and blessed Noah, and said: * Be fruitful, and multiply, and replenish the earth.\nV. Behold, I establish My covenant with you, and with your seed after you.\nR. Be fruitful, and multiply, and replenish the earth."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 8:4-15", en: "Luke 8:4-15" }
+    text:
+      la: >-
+        In illo témpore: Cum turba plúrima convenírent, et de civitátibus properárent ad Jesum, dixit per similitúdinem: Exiit, qui séminat, semináre semen suum: et dum séminat, áliud cécidit secus viam, et conculcátum est, et vólucres cæli comedérunt illud. Et áliud cécidit supra petram: et natum áruit, quia non habébat humórem. Et áliud cécidit inter spinas, et simul exórtæ spinæ suffocavérunt illud. Et áliud cécidit in terram bonam: et ortum fecit fructum céntuplum. Hæc dicens, clamábat: Qui habet aures audiéndi, áudiat. Interrogábant autem eum discípuli ejus, quæ esset hæc parábola. Quibus ipse dixit: Vobis datum est nosse mystérium regni Dei, céteris autem in parábolis: ut vidéntes non vídeant, et audiéntes non intéllegant. Est autem hæc parábola: Semen est verbum Dei. Qui autem secus viam, hi sunt qui áudiunt: déinde venit diábolus, et tollit verbum de corde eórum, ne credéntes salvi fiant. Nam qui supra petram: qui cum audíerint, cum gáudio suscípiunt verbum: et hi radíces non habent: qui ad tempus credunt, et in témpore tentatiónis recédunt. Quod autem in spinas cécidit: hi sunt, qui audiérunt, et a sollicitudínibus et divítiis et voluptátibus vitæ eúntes, suffocántur, et non réferunt fructum. Quod autem in bonam terram: hi sunt, qui in corde bono et óptimo audiéntes verbum rétinent, et fructum áfferunt in patiéntia.
+      en: >-
+        At that time, when a very great crowd was gathering together and men from every town were resorting to Jesus. He said in a parable: The sower went out to sow his seed. And as he sowed, some seed fell by the wayside and was trodden under foot, and the birds of the air ate it up. And other seed fell upon the rock, and as soon as it had sprung up it withered away, because it had no moisture. And other seed fell among thorns, and the thorns sprang up with it and choked it. And other seed fell upon good ground, and sprang up and yielded fruit a hundredfold. As He said these things He cried out, He who has ears to hear, let him hear! But His disciples then began to ask Him what this parable meant, He said to them, To you it is given to know the mystery of the kingdom of God, but to the rest in parables, that ‘Seeing they may not see, and hearing they may not understand.’ Now the parable is this: the seed is the word of God. And those by the wayside are they who have heard; then the devil comes and takes away the word from their heart, that they may not believe and be saved. Now those upon the rock are they who, when they have heard, receive the word with joy; and these have no root, but believe for a while, and in time of temptation fall away. And that which fell among the thorns, these are they who have heard, and as they go their way are choked by the cares and riches and pleasures of life, and their fruit does not ripen. But that upon good ground, these are they who, with a right and good heart, having heard the word, hold it fast, and bear fruit in patience.
     status: { la: verified, en: verified }
 
   - nocturn: 3

@@ -13,6 +13,14 @@
 # Lectio7's homily portion (incipit dropped) with Lectio8-9, using
 # Responsory7 ("Mérito hæc pátimur") - the first responsory of the group
 # the combined reading spans.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: lent-3
 readings:
   - nocturn: 2
@@ -81,6 +89,16 @@ readings:
     responsory:
       la: "R. Videns Jacob vestiménta Joseph, scidit vestiménta sua cum fletu, et dixit: * Fera péssima devorávit fílium meum Joseph.\nV. Tulérunt autem fratres ejus túnicam illíus, mitténtes ad patrem: quam cum cognovísset pater, ait.\nR. Fera péssima devorávit fílium meum Joseph."
       en: "R. When Jacob saw Joseph's coat he rent his clothes, and mourned; and he said: * An evil beast hath devoured my son Joseph.\nV. And his brethren took his coat, and sent it to his father: and he knew it, and said:\nR. An evil beast hath devoured my son Joseph."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 11:14-28", en: "Luke 11:14-28" }
+    text:
+      la: >-
+        In illo témpore: Erat Jesus ejíciens dæmónium, et illud erat mutum. Et cum ejecísset dæmónium, locútus est mutus, et admirátæ sunt turbæ. Quidam autem ex eis dixérunt: In Beélzebub, príncipe dæmoniórum, éjicit dæmónia. Et álii tentántes, signum de cœlo quærébant ab eo. Ipse autem ut vidit cogitatiónes eórum, dixit eis: Omne regnum in seípsum divísum desolábitur, et domus supra domum cadet. Si autem et sátanas in seípsum divísus est, quómodo stabit regnum ejus? quia dícitis, in Beélzebub me ejícere dæmónia. Si autem ego in Beélzebub ejício dæmónia: fílii vestri in quo ejíciunt? Ideo ipsi júdices vestri erunt. Porro si in dígito Dei ejício dæmónia: profécto pervénit in vos regnum Dei. Cum fortis armátus custódit átrium suum, in pace sunt ea, quæ póssidet. Si autem fórtior eo supervéniens vícerit eum, univérsa arma ejus áuferet, in quibus confidébat, et spólia ejus distríbuet. Qui non est mecum, contra me est: et qui non cólligit mecum, dispérgit. Cum immúndus spíritus exíerit de hómine, ámbulat per loca inaquósa, quærens réquiem: et non invéniens, dicit: Revértar in domum meam, unde exívi. Et cum vénerit, invénit eam scopis mundátam, et ornátam. Tunc vadit, et assúmit septem álios spíritus secum nequióres se, et ingréssi hábitant ibi. Et fiunt novíssima hóminis illíus pejóra prióribus. Factum est autem, cum hæc díceret: extóllens vocem quædam múlier de turba, dixit illi: Beátus venter, qui te portávit, et úbera, quæ suxísti. At ille dixit: Quinímmo beáti, qui áudiunt verbum Dei, et custódiunt illud.
+      en: >-
+        At that time, Jesus was casting out a devil, and the same was dumb; and when He had cast out the devil, the dumb man spoke. And the crowds marveled. But some of them said, By Beelzebub, the prince of devils, He casts out devils. And others, to test Him, demanded from Him a sign from heaven. But He, seeing their thoughts, said to them: Every kingdom divided against itself is brought to desolation, and house will fall upon house. If, then, Satan also is divided against himself, how shall his kingdom stand? because you say that I cast out devils by Beelzebub. Now, if I cast out devils by Beelzebub, by whom do your children cast them out? Therefore they shall be your judges. But if I cast out devils by the finger of God, then the kingdom of God has come upon you. When the strong man, fully armed, guards his courtyard, his property is undisturbed. But if a stronger than he attacks and overcomes him, he will take away all his weapons that he relied upon, and will divide his spoils. He who is not with Me is against Me; and he who does not gather with Me scatters. When the unclean spirit has gone out of a man, he roams through waterless places in search of rest; and finding none, he says, ‘I will return to my house which I left.’ And when he has come to it, he finds the place swept. Then he goes and takes seven other spirits more evil than himself, and they enter in and dwell there; and the last state of that man becomes worse that the first. Now it came to pass as He was saying these things, that a certain woman from the crowd lifted up her voice and said to Him, Blessed is the womb that bore You, and the breasts that nursed You. But He said, Rather, blessed are they who hear the word of God and keep it.
     status: { la: verified, en: verified }
 
   - nocturn: 3

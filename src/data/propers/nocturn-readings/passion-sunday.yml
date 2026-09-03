@@ -13,6 +13,14 @@
 # (incipit dropped) with Lectio8-9, using Responsory7 ("Tota die
 # contristátus ingrediébar, Dómine") - the first responsory of the group
 # the combined reading spans.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: passion-sunday
 readings:
   - nocturn: 2
@@ -89,6 +97,16 @@ readings:
     responsory:
       la: "R. Deus meus es tu, ne discédas a me: * Quóniam tribulátio próxima est, et non est qui ádjuvet.\nV. Tu autem, Dómine, ne elongáveris auxílium tuum a me: ad defensiónem meam áspice.\nR. Quóniam tribulátio próxima est, et non est qui ádjuvet."
       en: "R. Thou art my God; be not far from me, for trouble is near; * For there is none to help.\nV. But be not thy strength far from me; O Lord, haste thee to help me.\nR. For trouble is near; for there is none to help."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joann 8:46-59", en: "John 8:46-59" }
+    text:
+      la: >-
+        In illo témpore: Dicébat Jesus turbis Judæórum: Quis ex vobis árguet me de peccáto? Si veritátem dico vobis, quare non créditis mihi? Qui ex Deo est, verba Dei audit. Proptérea vos non audítis, quia ex Deo non estis. Respondérunt ergo Judǽi et dixérunt ei: Nonne bene dícimus nos, quia Samaritánus es tu, et dæmónium habes? Respóndit Jesus: Ego dæmónium non hábeo, sed honorífico Patrem meum, et vos inhonorástis me. Ego autem non quæro glóriam meam: est, qui quærat et júdicet. Amen, amen, dico vobis: si quis sermónem meum serváverit, mortem non vidébit in ætérnum. Dixérunt ergo Judǽi: Nunc cognóvimus, quia dæmónium habes. Abraham mórtuus est et Prophétæ; et tu dicis: Si quis sermónem meum serváverit, non gustábit mortem in ætérnum. Numquid tu major es patre nostro Abraham, qui mórtuus est? et Prophétæ mórtui sunt. Quem teípsum facis? Respóndit Jesus: Si ego glorífico meípsum, glória mea nihil est: est Pater meus, qui gloríficat me, quem vos dícitis, quia Deus vester est, et non cognovístis eum: ego autem novi eum: et si díxero, quia non scio eum, ero símilis vobis, mendax. Sed scio eum et sermónem ejus servo. Abraham pater vester exsultávit, ut vidéret diem meum: vidit, et gavísus est. Dixérunt ergo Judǽi ad eum: Quinquagínta annos nondum habes, et Abraham vidísti? Dixit eis Jesus: Amen, amen, dico vobis, ántequam Abraham fíeret, ego sum. Tulérunt ergo lápides, ut jácerent in eum: Jesus autem abscóndit se, et exívit de templo.
+      en: >-
+        At that time, Jesus said to the crowds of the Jews: Which of you can convict Me of sin? If I speak the truth, why do you not believe Me? He who is of God hears the words of God. The reason why you do not hear is that you are not of God. The Jews therefore in answer said to Him, Are we not right in saying that You are a Samaritan, and have a devil? Jesus answered, I have not a devil, but I honor My Father, and you dishonor Me. Yet, I do not seek My own glory; there is One Who seeks and Who judges. Amen, amen, I say to you, if anyone keep My word, he will never see death. The Jews therefore said, Now we know that You have a devil. Abraham is dead, and the prophets, and You say, 'If anyone keep My word he will never taste death.' Are You greater than our father Abraham, who is dead? And the prophets are dead. Whom do You make Yourself? Jesus answered, If I glorify Myself, My glory is nothing. It is My Father Who glorifies Me, of Whom you say that He is your God. And you do not know Him, but I know Him. And if I say that I do not know Him, I shall be like you, a liar. But I know Him, and I keep His word. Abraham your father rejoiced that he was to see My day. He saw it and was glad. The Jews therefore said to Him, You are not yet fifty years old, and have You seen Abraham? Jesus said to them, Amen, amen, I say to you, before Abraham came to be, I am. They therefore took up stones to cast at Him; but Jesus hid Himself, and went out from the temple.
     status: { la: verified, en: verified }
 
   - nocturn: 3

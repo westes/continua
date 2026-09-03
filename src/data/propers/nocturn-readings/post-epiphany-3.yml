@@ -16,6 +16,14 @@
 # [Responsory7] - again a cross-reference, to Epi2-0's Responsory7 ("Ad te,
 # Dómine, levávi ánimam meam" - already transcribed in
 # post-epiphany-2.yml).
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-epiphany-3
 readings:
   - nocturn: 2
@@ -77,6 +85,16 @@ readings:
     responsory:
       la: "R. Notas mihi fecísti, Dómine, vias vitæ: * Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem.\nV. Tu es qui restítues hereditátem meam mihi.\nR. Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem."
       en: "R. O Lord, Thou hast shown me the path of life. * Thou shalt fill me with joy in thy presence, at thy right hand there are pleasures for evermore.\nV. Thou art He That shalt restore mine inheritance unto me.\nR. Thou shalt fill me with joy in thy presence, at thy right hand there are pleasures for evermore."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 8:1-13", en: "Matt 8:1-13" }
+    text:
+      la: >-
+        In illo témpore: Cum descendísset Jesus de monte, secútæ sunt eum turbæ multæ: et ecce, leprósus véniens adorábat eum, dicens: Dómine, si vis, potes me mundáre. Et exténdens Jesus manum, tétigit eum, dicens: Volo. Mundáre. Et conféstim mundáta est lepra ejus. Et ait illi Jesus: Vide, némini díxeris: sed vade, osténde te sacerdóti, et offer munus, quod præcépit Móyses, in testimónium illis. Cum autem introísset Caphárnaum, accéssit ad eum centúrio, rogans eum et dicens: Dómine, puer meus jacet in domo paralýticus, et male torquetur. Et ait illi Jesus: Ego véniam, et curábo eum. Et respóndens centúrio, ait: Dómine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanábitur puer meus. Nam et ego homo sum sub potestáte constitútus, habens sub me mílites, et dico huic: Vade, et vadit; et alii: Veni, et venit; et servo meo: Fac hoc, et facit. Audiens autem Jesus, mirátus est, et sequéntibus se dixit: Amen, dico vobis, non inveni tantam fidem in Israël. Dico autem vobis, quod multi ab Oriénte et Occidénte vénient, et recúmbent cum Abraham et Isaac et Jacob in regno cœlórum: fílii autem regni ejiciéntur in ténebras exterióres: ibi erit fletus et stridor déntium. Et dixit Jesus centurióni: Vade et, sicut credidísti, fiat tibi. Et sanátus est puer in illa hora.
+      en: >-
+        At that time, when Jesus had come down from the mountain, great crowds followed Him. And behold, a leper came up and worshipped Him, saying, Lord, if You will, You can make me clean. And stretching forth His hand Jesus touched him, saying, I will; be made clean. And immediately his leprosy was cleansed. And Jesus said to him, See that you tell no one; but go, show yourself to the priest, and offer the gift that Moses commanded, for a witness to them. Now when He had entered Capharnaum, there came to Him a centurion who entreated Him, saying, Lord, my servant is lying sick in the house, paralyzed, and is grievously afflicted. Jesus said to him, I will come and cure him. But in answer the centurion said, Lord, I am not worthy that You should come under my roof; but only say the word, and my servant will be healed. For I too am a man subject to authority, and have soldiers subject to me; and I say to one, ‘Go,’ and he goes; and to another, ‘Come,’ and he comes; and to my servant, ‘Do this,’ and he does it. And when Jesus heard this, He marveled, and said to those who were following Him, Amen I say to you, I have not found such great faith in Israel. And I tell you that many will come from the east and from the west and will feast with Abraham and Isaac and Jacob in the kingdom of heaven, but the children of the kingdom will be put forth into the darkness outside; there will be the weeping, and the gnashing of teeth. Then Jesus said to the centurion, Go your way; as you have believed, so be it done to you. And the servant was healed in that hour.
     status: { la: verified, en: verified }
 
   - nocturn: 3

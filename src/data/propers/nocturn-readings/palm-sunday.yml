@@ -13,6 +13,18 @@
 # portion (incipit dropped) with Lectio8-9, using Responsory7 ("Dóminus
 # mecum est tamquam bellátor fortis") - the first responsory of the group
 # the combined reading spans.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily). Unlike
+# every other Sunday in this sweep, Palm Sunday's Missale [Evangelium] tag
+# is the Passion narrative (Matt 26-27), read at Mass itself - Matt 21:1-9,
+# the entry into Jerusalem this Nocturn 3 homily is actually about, is a
+# second, separate Gospel proclaimed earlier at the Blessing of Palms
+# (Tempora/Quad6-0.txt's own Benedictio Palmorum section, not its
+# [Evangelium] tag) - sourced from there instead. Matins now shows the
+# full Gospel, then the homily on it, matching post-pentecost-15's
+# original pattern - see TODO.md's dated entry.
 id: palm-sunday
 readings:
   - nocturn: 2
@@ -87,6 +99,16 @@ readings:
     responsory:
       la: "R. Conclúsit vias meas inimícus, insidiátor factus est mihi sicut leo in abscóndito, replévit et inebriávit me amaritúdine: deduxérunt in lacum mortis vitam meam, et posuérunt lápidem contra me. * Vide, Dómine, iniquitátes illórum: et júdica causam ánimæ meæ, defénsor vitæ meæ.\nV. Factus sum in derísum omni pópulo meo, cánticum eórum tota die.\nR. Vide, Dómine, iniquitátes illórum: et júdica causam ánimæ meæ, defénsor vitæ meæ."
       en: "R. The enemy hath enclosed my ways; he lay in wait for me as a lion; in secret places he hath filled me, and made me drunken with bitterness; they have cut off my life in the dungeon, and cast a stone upon me. * O Lord, behold all their iniquity, and plead the cause of my soul, Thou That art the Redeemer of my life!\nV. I was a derision to all my people, and their song all the day.\nR. O Lord, behold all their iniquity, and plead the cause of my soul, Thou That art the Redeemer of my life!"
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 21:1-9", en: "Matt 21:1-9" }
+    text:
+      la: >-
+        In illo témpore: Cum appropinquásset Jesus Jerosólymis, et venísset Béthphage ad montem Olivéti: tunc misit duos discípulos suos, dicens eis: Ite in castéllum, quod contra vos est, et statim inveniétis ásinam alligátam et pullum cum ea: sólvite et addúcite mihi: et si quis vobis áliquid díxerit, dícite, quia Dóminus his opus habet, et conféstim dimíttet eos. Hoc autem totum factum est, ut adimplerétur, quod dictum est per Prophétam, dicéntem: Dícite fíliæ Sion: Ecce, Rex tuus venit tibi mansuétus, sedens super ásinam et pullum, fílium subjugális. Eúntes autem discípuli, fecérunt, sicut præcépit illis Jesus. Et adduxérunt ásinam et pullum: et imposuérunt super eos vestiménta sua, et eum désuper sedére fecérunt. Plúrima autem turba stravérunt vestiménta sua in via: álii autem cædébant ramos de arbóribus, et sternébant in via: turbæ autem, quæ præcedébant et quæ sequebántur, clamábant, dicéntes: Hosánna fílio David: benedíctus, qui venit in nómine Dómini.
+      en: >-
+        At that time, when Jesus drew nigh to Jerusalem, and was come to Bethphage, unto Mount Olivet, then He sent two disciples, saying to them: Go into the village that is over against you, and immediately you shall find an ass tied, and a colt with her; loose them and bring them to Me; and if any man shall say anything to you, say that the Lord has need of them, and forthwith he will let them go. Now all this was done that it might be fulfilled which was spoken by the prophet, saying: Tell the daughter of Sion: Behold your King comes to you meek, and sitting upon an ass, and a colt the foal of her that is used to the yoke. And the disciples going did as Jesus commanded them. And they brought the ass and the colt, and laid their garments upon them, and made Him sit thereon. And a very great multitude spread their garments in the way, and others cut boughs from the trees, and strewed them in the way, and the multitudes that went before and that followed cried, saying: Hosanna to the Son of David; blessed is He that comes in the Name of the Lord.
     status: { la: verified, en: verified }
 
   - nocturn: 3

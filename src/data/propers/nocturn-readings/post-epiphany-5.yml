@@ -16,6 +16,14 @@
 # Lectio8-9, using the source's own [Responsory7] - again a
 # cross-reference, to Epi2-0's Responsory7 ("Ad te, Dómine, levávi ánimam
 # meam").
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-epiphany-5
 readings:
   - nocturn: 2
@@ -70,6 +78,16 @@ readings:
     responsory:
       la: "R. Notas mihi fecísti, Dómine, vias vitæ: * Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem.\nV. Tu es qui restítues hereditátem meam mihi.\nR. Adimplébis me lætítia cum vultu tuo: delectatiónes in déxtera tua usque in finem."
       en: "R. O Lord, Thou hast shown me the path of life. * Thou shalt fill me with joy in thy presence, at thy right hand there are pleasures for evermore.\nV. Thou art He That shalt restore mine inheritance unto me.\nR. Thou shalt fill me with joy in thy presence, at thy right hand there are pleasures for evermore."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 13:24-30", en: "Matt 13:24-30" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus turbis parábolam hanc: Símile factum est regnum cœlórum hómini, qui seminávit bonum semen in agro suo. Cum autem dormírent hómines, venit inimícus ejus, et superseminávit zizánia in médio trítici, et ábiit. Cum autem crevísset herba et fructum fecísset, tunc apparuérunt et zizánia. Accedéntes autem servi patrisfamílias, dixérunt ei: Dómine, nonne bonum semen seminásti in agro tuo? Unde ergo habet zizánia? Et ait illis: Inimícus homo hoc fecit. Servi autem dixérunt ei: Vis, imus, et collígimus ea? Et ait: Non: ne forte colligéntes zizánia eradicétis simul cum eis et tríticum. Sínite utráque créscere usque ad messem, et in témpore messis dicam messóribus: Collígite primum zizánia, et alligáte ea in fascículos ad comburéndum, tríticum autem congregáte in hórreum meum.
+      en: >-
+        At that time, Jesus spoke this parable to the crowds: The kingdom of heaven is like a man who sowed good seed in his field; but while men were asleep, his enemy came and sowed weeds among the wheat, and went away. And when the blade sprang up and brought forth fruit, then the weeds appeared as well. And the servants of the householder came and said to him, ‘Sir, did you not sow good seed in your field? How then does it have weeds?’ He said to them, ‘An enemy has done this.’ And the servants said to him, ‘Will you have us go and gather them up?’ ‘No,’ he said, ‘lest in gathering the weeds you root up the wheat along with them. Let both grow together until the harvest; and at harvest time I will say to the reapers: Gather up the weeds first, and bind them in bundles to burn; but gather the wheat into my barns.’
     status: { la: verified, en: verified }
 
   - nocturn: 3

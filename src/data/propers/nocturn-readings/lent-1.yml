@@ -13,6 +13,14 @@
 # Lectio7's homily portion (incipit dropped) with Lectio8-9, using
 # Responsory7 ("Scíndite corda vestra") - the first responsory of the
 # group the combined reading spans.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: lent-1
 readings:
   - nocturn: 2
@@ -85,6 +93,16 @@ readings:
     responsory:
       la: "R. Emendémus in mélius, quæ ignoránter peccávimus: ne súbito præoccupáti die mortis, quærámus spátium pœniténtiæ, et inveníre non possímus: * Atténde, Dómine, et miserére, quia peccávimus tibi.\nV. Adjuva nos, Deus salutáris noster, et propter honórem nóminis tui, Dómine, líbera nos.\nR. Atténde, Dómine, et miserére, quia peccávimus tibi."
       en: "R. Let us amend for the better in that wherein we have sinned unknowingly, or ever the day of death suddenly prevent us, and we seek a place of repentance, and find none. * Give heed, O Lord, and have mercy upon us, for we have sinned against thee.\nV. Help us, O God of our salvation, and for the glory of thy Name deliver us, O Lord.\nR. Give heed, O Lord, and have mercy upon us, for we have sinned against thee."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 4:1-11", en: "Matt 4:1-11" }
+    text:
+      la: >-
+        In illo témpore: Ductus est Jesus in desértum a Spíritu, ut tentarétur a diábolo. Et cum jejunásset quadragínta diébus et quadragínta nóctibus, postea esúriit. Et accédens tentátor, dixit ei: Si Fílius Dei es, dic, ut lápides isti panes fiant. Qui respóndens, dixit: Scriptum est: Non in solo pane vivit homo, sed in omni verbo, quod procédit de ore Dei. Tunc assúmpsit eum diábolus in sanctam civitátem, et státuit eum super pinnáculum templi, et dixit ei: Si Fílius Dei es, mitte te deórsum. Scriptum est enim: Quia Angelis suis mandávit de te, et in mánibus tollent te, ne forte offéndas ad lápidem pedem tuum. Ait illi Jesus: Rursum scriptum est: Non tentábis Dóminum, Deum tuum. Iterum assúmpsit eum diábolus in montem excélsum valde: et ostendit ei ómnia regna mundi et glóriam eórum, et dixit ei: Hæc ómnia tibi dabo, si cadens adoráveris me. Tunc dicit ei Jesus: Vade, Sátana; scriptum est enim: Dóminum, Deum tuum, adorábis, et illi soli sérvies. Tunc relíquit eum diábolus: et ecce, Angeli accessérunt et ministrábant ei.
+      en: >-
+        At that time, Jesus was led into the desert by the Spirit, to be tempted by the devil. And after fasting forty days and forty nights, He was hungry. And the tempter came and said to Him, If You are the Son of God, command that these stones become loaves of bread. But He answered and said, It is written, ‘Not by bread alone does man live, but by every word that comes forth from the mouth of God.’ Then the devil took Him into the holy city and set Him on the pinnacle of the temple, and said to Him, If You are the Son of God, throw Yourself down; for it is written, ‘He has given His angels charge concerning You; and upon their hands they shall bear You up, lest You dash Your foot against a stone.’ Jesus said to him, It is written further, ‘You shall not tempt the Lord your God.’ Again, the devil took Him to a very high mountain, and showed Him all the kingdoms of the world and the glory of them. And he said to Him, All these things will I give You, if You will fall down and worship me. Then Jesus said to him, Begone, Satan, for it is written, ‘The Lord your God shall you worship and Him only shall you serve.’ Then the devil left Him; and behold, angels came and ministered to Him.
     status: { la: verified, en: verified }
 
   - nocturn: 3

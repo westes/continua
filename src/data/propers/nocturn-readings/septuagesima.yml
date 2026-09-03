@@ -14,6 +14,14 @@
 # Lectio7's homily portion (incipit dropped) with Lectio8-9, using
 # Responsory7 ("Plantáverat autem Dóminus Deus paradísum voluptátis") -
 # the first responsory of the group the combined reading spans.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: septuagesima
 readings:
   - nocturn: 2
@@ -76,6 +84,16 @@ readings:
     responsory:
       la: "R. Tulit Dóminus hóminem, et pósuit eum in paradíso voluptátis: * Ut operarétur et custodíret illum.\nV. Plantáverat autem Dóminus Deus paradísum voluptátis a princípio, in quo pósuit hóminem quem formáverat.\nR. Ut operarétur et custodíret illum."
       en: "R. God took the man and put him into the garden of Eden * To dress it and to keep it.\nV. And the Lord God had planted a garden aforetime in Eden, and there He put the man whom He had formed.\nR. To dress it and to keep it."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 20:1-16", en: "Matt 20:1-16" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis parábolam hanc: Simile est regnum coelórum hómini patrifamílias, qui éxiit primo mane condúcere operários in víneam suam. Conventióne autem facta cum operáriis ex denário diúrno, misit eos in víneam suam. Et egréssus circa horam tértiam, vidit álios stantes in foro otiósos, et dixit illis: Ite et vos in víneam meam, et quod justum fúerit, dabo vobis. Illi autem abiérunt. Iterum autem éxiit circa sextam et nonam horam: et fecit simíliter. Circa undécimam vero éxiit, et invénit álios stantes, et dicit illis: Quid hic statis tota die otiósi? Dicunt ei: Quia nemo nos condúxit. Dicit illis: Ite et vos in víneam meam. Cum sero autem factum esset, dicit dóminus víneæ procuratóri suo: Voca operários, et redde illis mercédem, incípiens a novíssimis usque ad primos. Cum veníssent ergo qui circa undécimam horam vénerant, accepérunt síngulos denários. Veniéntes autem et primi, arbitráti sunt, quod plus essent acceptúri: accepérunt autem et ipsi síngulos denários. Et accipiéntes murmurábant advérsus patremfamílias, dicéntes: Hi novíssimi una hora fecérunt et pares illos nobis fecísti, qui portávimus pondus diéi et æstus. At ille respóndens uni eórum, dixit: Amíce, non facio tibi injúriam: nonne ex denário convenísti mecum? Tolle quod tuum est, et vade: volo autem et huic novíssimo dare sicut et tibi. Aut non licet mihi, quod volo, fácere? an óculus tuus nequam est, quia ego bonus sum? Sic erunt novíssimi primi, et primi novíssimi. Multi enim sunt vocáti, pauci vero elécti.
+      en: >-
+        At that time, Jesus spoke to His disciples this parable: The kingdom of heaven is like a householder who went out early in the morning to hire laborers for his vineyard. And having agreed with the laborers for a denarius a day, he sent them into his vineyard. And about the third hour, he went out and saw others standing in the market place idle; and he said to them, ‘Go you also into the vineyard, and I will give you whatever is just.’ So they went. And again he went out about the sixth, and about the ninth hour, and did as before. But about the eleventh hour he went out and found others standing about and he said to them, ‘Why do you stand here all day idle?’ They said to him, ‘Because no man has hired us.’ He said to them, ‘Go you also into the vineyard.’ But when evening had come, the owner of the vineyard said to his steward, ‘Call the laborers, and pay them their wages, beginning from the last even to the first.’ Now when they of the eleventh hour came, they received each a denarius. And when the first in their term came, they thought that they would receive more; but they also received each his denarius. And on receiving it, they began to murmur against the householder, saying, ‘These last have worked a single hour, and you have put them on a level with us, who have borne the burden of the day’s heat.’ But answering one of them, he said, ‘Friend, I do you no injustice; did you not agree with me for a denarius? Take what is yours and go; I choose to give to this last even as to you. Have I not a right to do what I choose? Or are you envious because I am generous?’ Even so the last shall be first, and the first last; for many are called, but few are chosen.
     status: { la: verified, en: verified }
 
   - nocturn: 3

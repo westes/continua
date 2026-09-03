@@ -14,6 +14,14 @@
 # sweep. Combined Lectio7's homily portion (incipit dropped) with
 # Lectio8-9, using Responsory7 ("Veni hódie ad fontem aquæ") - the first
 # responsory of the group the combined reading spans.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: quinquagesima
 readings:
   - nocturn: 2
@@ -71,6 +79,16 @@ readings:
     responsory:
       la: "R. Angelus Dómini vocávit Abraham, dicens: * Ne exténdas manum tuam super púerum, eo quod tímeas Dóminum.\nV. Cumque extendísset manum ut immoláret fílium, ecce Angelus Dómini de cælo clamávit, dicens.\nR. Ne exténdas manum tuam super púerum, eo quod tímeas Dóminum."
       en: "R. The Angel of the Lord called unto Abraham and said: * Lay not thine hand upon the lad; for now I know that thou fearest God.\nV. And Abraham stretched forth his hand to slay his son; and, behold, the Angel of the Lord called unto him out of heaven, and said:\nR. Lay not thy hand upon the lad; for now I know that thou fearest God."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 18:31-43", en: "Luke 18:31-43" }
+    text:
+      la: >-
+        In illo témpore: Assúmpsit Jesus duódecim, et ait illis: Ecce, ascéndimus Jerosólymam, et consummabúntur ómnia, quæ scripta sunt per Prophétas de Fílio hominis. Tradétur enim Géntibus, et illudétur, et flagellábitur, et conspuétur: et postquam flagelláverint, occídent eum, et tértia die resúrget. Et ipsi nihil horum intellexérunt, et erat verbum istud abscónditum ab eis, et non intellegébant quæ dicebántur. Factum est autem, cum appropinquáret Jéricho, cæcus quidam sedébat secus viam, mendícans. Et cum audíret turbam prætereúntem, interrogábat, quid hoc esset. Dixérunt autem ei, quod Jesus Nazarénus transíret. Et clamávit, dicens: Jesu, fili David, miserére mei. Et qui præíbant, increpábant eum, ut tacéret. Ipse vero multo magis clamábat: Fili David, miserére mei. Stans autem Jesus, jussit illum addúci ad se. Et cum appropinquásset, interrogávit illum, dicens: Quid tibi vis fáciam? At ille dixit: Dómine, ut vídeam. Et Jesus dixit illi: Réspice, fides tua te salvum fecit. Et conféstim vidit, et sequebátur illum, magníficans Deum. Et omnis plebs ut vidit, dedit laudem Deo.
+      en: >-
+        At that time, Jesus taking to Himself the Twelve said to them, Behold, we are going up to Jerusalem, and all things that have been written by the prophets concerning the Son of Man will be accomplished. For He will be delivered to the Gentiles, and will be mocked and scourged and spit upon; and after they have scourged Him, they will put Him to death; and on the third day He will rise again. And they understood none of these things and this saying was hidden from them, neither did they get to know the things that were being said. Now it came to pass as He drew near to Jericho, that a certain blind man was sitting by the wayside, begging; but hearing a crowd passing by, he inquired what this might be. And they told him that Jesus of Nazareth was passing by. And he cried out, saying, Jesus, Son of David, have mercy on me! And they who went in front angrily tried to silence him. But he cried out all the louder, Son of David, have mercy on me! Then Jesus stopped and commanded that he should be brought to Him. And when he drew near, He asked him, saying, What would you have Me do for you? And he said, Lord, that I may see. And Jesus said to him, Receive your sight, your faith has saved you. And at once he received his sight, and followed Him, glorifying God. And all the people upon seeing it gave praise to God.
     status: { la: verified, en: verified }
 
   - nocturn: 3

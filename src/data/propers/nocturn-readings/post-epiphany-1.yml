@@ -28,6 +28,14 @@
 # réliqua") - St. Ambrose's own homily (Bk. 2 on Luke ii) begins within
 # Lectio7 itself, same pattern used throughout this sweep. Combined
 # Lectio7's homily portion (incipit dropped) with Lectio8-9.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: post-epiphany-1
 readings:
   - nocturn: 2
@@ -82,6 +90,16 @@ readings:
         the birth of that Child Who was to reign over all Israel. There appeared to the eyes of wise men
         a new star of such passing beauty, as wrought in the minds of all that saw it the persuasion that
         the event, which is announced, was of an importance not to be neglected.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 2:42-52", en: "Luke 2:42-52" }
+    text:
+      la: >-
+        Cum factus esset Jesus annórum duódecim, ascendéntibus illis Jerosólymam secúndum consuetúdinem diéi festi, consummatísque diébus, cum redírent, remánsit puer Jesus in Jerúsalem, et non cognovérunt paréntes ejus. Existimántes autem illum esse in comitátu, venérunt iter diéi, et requirébant eum inter cognátos et notos. Et non inveniéntes, regréssi sunt in Jerúsalem, requiréntes eum. Et factum est, post tríduum invenérunt illum in templo sedéntem in médio doctórum, audiéntem illos et interrogántem eos. Stupébant autem omnes, qui eum audiébant, super prudéntia et respónsis ejus. Et vidéntes admiráti sunt. Et dixit Mater ejus ad illum: Fili, quid fecísti nobis sic? Ecce, pater tuus et ego doléntes quærebámus te. Et ait ad illos: Quid est, quod me quærebátis? Nesciebátis, quia in his, quæ Patris mei sunt, opórtet me esse? Et ipsi non intellexérunt verbum, quod locútus est ad eos. Et descéndit cum eis, et venit Názareth: et erat súbditus illis. Et Mater ejus conservábat ómnia verba hæc in corde suo. Et Jesus proficiébat sapiéntia et ætáte et grátia apud Deum et hómines.
+      en: >-
+        When Jesus was twelve years old, they went up to Jerusalem according to the custom of the feast. And after they had fulfilled the days, when there were returning, the Boy Jesus remained in Jerusalem, and His parents did not know it. But thinking that He was in the caravan, they had come a day’s journey before it occurred to them to look for Him among their relatives and acquaintances. And not finding Him, they returned to Jerusalem in search of Him. And it came to pass after three days, that they found Him in the temple, sitting in the midst of the teachers, listening to them and asking them questions. And all who were listening to Him were amazed at His understanding and His answers. And when they saw Him, they were astonished. And His Mother said to Him, Son, why have You done so to us? Behold, in sorrow Your father and I have been seeking You. And He said to them, How is it that you sought Me? Did you not know that I must be about My Father’s business? And they did not understand the word that He spoke to them. And He went down with them and came to Nazareth, and was subject to them; and His Mother kept all these things carefully in her heart. And Jesus advanced in wisdom and age and grace before God and men.
     status: { la: verified, en: verified }
 
   - nocturn: 3
