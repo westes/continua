@@ -51,17 +51,23 @@ describe('Advent 4 Sunday landing on Dec 24 (the Vigil of Christmas)', () => {
     }
   });
 
-  it("Matins Nocturn 3 carries the Vigil's own Gospel (Matt 1:18-21) with St. Jerome's homily, still using the Sunday's fixed psalm table throughout", () => {
+  it("Matins Nocturn 3 carries the Vigil's own Gospel (Matt 1:18-21, St. Jerome's homily) and, per this project's generous-commemorations design (the same reason Lauds above shows both collects), Advent 4's own commemorated Gospel (Luke 3:1-6, Pope St. Gregory the Great's homily) too -- still using the Sunday's fixed psalm table throughout", () => {
     const matins = resolveOrdo('matins', '2023-12-24');
     const gospels = matins.parts.filter((p) => p.kind === 'gospel');
-    expect(gospels).toHaveLength(1);
-    const gospel = gospels[0]!;
-    expect(gospel.kind).toBe('gospel');
-    if (gospel.kind === 'gospel') {
-      expect(gospel.text.citation?.la).toBe('Matt 1:18-21');
-      expect(gospel.text.status.la).toBe('verified');
-      expect(gospel.homily?.source).toContain('Jerome');
-      expect(gospel.homily?.text.status.la).toBe('verified');
+    expect(gospels).toHaveLength(2);
+    const vigilGospel = gospels.find((g) => g.kind === 'gospel' && g.text.citation?.la === 'Matt 1:18-21');
+    expect(vigilGospel?.kind).toBe('gospel');
+    if (vigilGospel?.kind === 'gospel') {
+      expect(vigilGospel.text.status.la).toBe('verified');
+      expect(vigilGospel.homily?.source).toContain('Jerome');
+      expect(vigilGospel.homily?.text.status.la).toBe('verified');
+    }
+    const advent4Gospel = gospels.find((g) => g.kind === 'gospel' && g.text.citation?.la === 'Luc 3:1-6');
+    expect(advent4Gospel?.kind).toBe('gospel');
+    if (advent4Gospel?.kind === 'gospel') {
+      expect(advent4Gospel.text.status.la).toBe('verified');
+      expect(advent4Gospel.homily?.source).toContain('Gregory');
+      expect(advent4Gospel.homily?.text.status.la).toBe('verified');
     }
     // Nocturns 1-2 keep the ordinary Sunday psalm table (Ps 20-31),
     // unaffected by which id won -- hours/matins.ts's threeNocturns/

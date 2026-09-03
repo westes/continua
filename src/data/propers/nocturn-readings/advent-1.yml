@@ -18,6 +18,14 @@
 # Combined Lectio7's homily portion (incipit dropped) with Lectio8-9 into
 # one continuous reading, using Responsory7 ("Ecce virgo concipiet") - the
 # first responsory of the group the combined reading actually spans.
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: advent-1
 readings:
   - nocturn: 2
@@ -71,6 +79,16 @@ readings:
     responsory:
       la: "R. Ave, María, grátia plena, Dóminus tecum: * Spíritus Sanctus supervéniet in te, et virtus Altíssimi obumbrábit tibi: quod enim ex te nascétur Sanctum, vocábitur Fílius Dei.\nV. Quómodo fiet istud, quóniam virum non cognósco? Et respóndens Angelus, dixit ei.\nR. Spíritus Sanctus supervéniet in te, et virtus Altíssimi obumbrábit tibi: quod enim ex te nascétur Sanctum, vocábitur Fílius Dei."
       en: "R. Hail, Mary, full of grace; the Lord is with thee; * The Holy Ghost shall come upon thee, and the power of the Highest shall overshadow thee; therefore, also that Holy Thing Which shall be born of thee shall be called the Son of God.\nV. How shall this be, seeing I know not a man? And the Angel answered and said unto her,\nR. The Holy Ghost shall come upon thee, and the power of the Highest shall overshadow thee; therefore, also that Holy Thing Which shall be born of thee shall be called the Son of God."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 21:25-33", en: "Luke 21:25-33" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Erunt signa in sole et luna et stellis, et in terris pressúra géntium præ confusióne sónitus maris et flúctuum: arescéntibus homínibus præ timóre et exspectatióne, quæ supervénient univérso orbi: nam virtútes cœlórum movebúntur. Et tunc vidébunt Fílium hóminis veniéntem in nube cum potestáte magna et majestáte. His autem fíeri incipiéntibus, respícite et leváte cápita vestra: quóniam appropínquat redémptio vestra. Et dixit illis similitúdinem: Vidéte ficúlneam et omnes árbores: cum prodúcunt jam ex se fructum, scitis, quóniam prope est æstas. Ita et vos, cum vidéritis hæc fíeri, scitóte, quóniam prope est regnum Dei. Amen, dico vobis, quia non præteríbit generátio hæc, donec ómnia fiant. Cœlum et terra transíbunt: verba autem mea non transíbunt.
+      en: >-
+        At that time, Jesus said to His disciples: There will be signs in the sun and moon and stars, and upon the earth distress of nations bewildered by the roaring of sea and waves; men fainting for fear and for expectation of the things that are coming on the world; for the powers of heaven will be shaken. And then they will see the Son of Man coming upon a cloud with great power and majesty. But when these things begin to come to pass, look up, and lift up your heads, because your redemption is at hand. And He spoke to them a parable. Behold the fig tree, and all the trees. When they now put forth their buds, you know that summer is near. Even so, when you see these things coming to pass, know that the kingdom of God is near. Amen I say to you, this generation will not pass away till all things have been accomplished. Heaven and earth will pass away, but My words will not pass away.
     status: { la: verified, en: verified }
 
   - nocturn: 3

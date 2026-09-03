@@ -11,6 +11,14 @@
 # Great's Homily 6 on the Gospels begins within Lectio7 itself, same
 # pattern as advent-1. Combined Lectio7's homily portion (incipit dropped)
 # with Lectio8-9, using Responsory7 ("Egrediétur Dóminus de Samaría").
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: advent-2
 readings:
   - nocturn: 2
@@ -62,6 +70,16 @@ readings:
     responsory:
       la: "R. Ecce véniet Dóminus, protéctor noster, Sanctus Israël, * Corónam regni habens in cápite suo.\nV. Et dominábitur a mari usque ad mare, et a flúmine usque ad términos orbis terrárum.\nR. Corónam regni habens in cápite suo."
       en: "R. Behold, there cometh the Lord, our defender, the Holy One of Israel, * Wearing a royal crown upon His head.\nV. And His dominion shall be from sea even to sea, and from the river even to the ends of the earth.\nR. Wearing a royal crown upon His head."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 11:2-10", en: "Matt 11:2-10" }
+    text:
+      la: >-
+        In illo témpore: Cum audísset Joánnes in vínculis ópera Christi, mittens duos de discípulis suis, ait illi: Tu es, qui ventúrus es, an alium exspectámus? Et respóndens Jesus, ait illis: Eúntes renuntiáte Joánni, quæ audístis et vidístis. Cæci vident, claudi ámbulant, leprósi mundántur, surdi áudiunt, mórtui resúrgunt, páuperes evangelizántur: et beátus est, qui non fúerit scandalizátus in me. Illis autem abeúntibus, cœpit Jesus dícere ad turbas de Joánne: Quid exístis in desértum vidére? arúndinem vento agitátam? Sed quid exístis vidére? hóminem móllibus vestitum? Ecce, qui móllibus vestiúntur, in dómibus regum sunt. Sed quid exístis vidére? Prophétam? Etiam dico vobis, et plus quam Prophétam. Hic est enim, de quo scriptum est: Ecce, ego mitto Angelum meum ante fáciem tuam, qui præparábit viam tuam ante te.
+      en: >-
+        At that time, when John had heard in prison of the works of Christ, he sent two of his disciples to say to Him, Are You He Who is to come, or shall we look for another? And Jesus answering said to them, Go and report to John what you have heard and seen: the blind see, the lame walk, the lepers are cleansed, the deaf hear, the dead rise, the poor have the gospel preached to them. And blessed is he who is not scandalized in Me. Then, as they went away, Jesus began to say to the crowds concerning John, What did you go out to the desert to see? A reed shaken by the wind? But what did you go out to see? A man clothed in soft garments? Behold, those who wear soft garments are in the houses of kings. But what did you go out to see? A prophet? Yes, I tell you, and more than a prophet. This is he of whom it is written, 'Behold, I send my messenger before Your face, who shall make ready Your way before You.'
     status: { la: verified, en: verified }
 
   - nocturn: 3

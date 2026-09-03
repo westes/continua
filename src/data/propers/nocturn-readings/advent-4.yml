@@ -14,6 +14,14 @@
 # Homily 20 on the Gospels begins within Lectio7 itself, same pattern as
 # advent-1/-2/-3. Combined Lectio7's homily portion (incipit dropped) with
 # Lectio8-9, using Responsory7 ("Jurávi, dicit Dóminus").
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: advent-4
 readings:
   - nocturn: 2
@@ -71,6 +79,16 @@ readings:
     responsory:
       la: "R. Nascétur nobis párvulus, et vocábitur Deus, Fortis: * Ipse sedébit super thronum David patris sui, et imperábit: cujus potéstas super húmerum ejus.\nV. In ipso benedicéntur omnes tribus terræ, omnes gentes sérvient ei.\nR. Ipse sedébit super thronum David patris sui, et imperábit: cujus potéstas super húmerum ejus."
       en: "R. Unto us shall a Child be born, and His name shall be called the Mighty God. * He shall sit upon the throne of His father David, and shall reign, and the government shall be upon His shoulder.\nV. In Him shall all the kindreds of the earth be blessed; all nations shall serve Him.\nR. He shall sit upon the throne of His father David, and shall reign, and the government shall be upon His shoulder."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 3:1-6", en: "Luke 3:1-6" }
+    text:
+      la: >-
+        Anno quintodécimo impérii Tibérii Cǽsaris, procuránte Póntio Piláto Judǽam, tetrárcha autem Galilǽæ Heróde, Philíppo autem fratre ejus tetrárcha Iturǽæ et Trachonítidis regiónis, et Lysánia Abilínæ tetrárcha, sub princípibus sacerdótum Anna et Cáipha: factum est verbum Dómini super Joánnem, Zacharíæ fílium, in desérto. Et venit in omnem regiónem Jordánis, prǽdicans baptísmum pæniténtiæ in remissiónem peccatórum, sicut scriptum est in libro sermónum Isaíæ Prophétæ: Vox clamántis in desérto: Paráte viam Dómini: rectas fácite sémitas ejus: omnis vallis implébitur: et omnis mons et collis humiliábitur: et erunt prava in dirécta, et áspera in vias planas: et vidébit omnis caro salutáre Dei.
+      en: >-
+        Now in the fifteenth year of the reign of Tiberius Caesar, when Pontius Pilate was procurator of Judea, and Herod tetrarch of Galilee, and Philip his brother tetrarch of the district of Iturea and Trachonitis, and Lysanias tetrarch of Abilene, during the high priesthood of Annas and Caiphas, the word of God came to John, the son of Zachary, in the desert. And he went into all the region about the Jordan, preaching a baptism of repentance for the forgiveness of sins, as it is written in the book of the words of Isaiah the prophet, The voice of one crying in the desert, 'Make ready the way of the Lord, make straight His paths. Every valley shall be filled, and every mountain and hill shall be brought low, and the crooked ways shall be made straight, and the rough ways smooth; and all mankind shall see the salvation of God.'
     status: { la: verified, en: verified }
 
   - nocturn: 3

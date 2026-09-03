@@ -24,6 +24,14 @@
 # (that inline text belongs to the *next* Sunday's now-renumbered
 # sequence after Lectio1 was swapped for "OctNat" per this file's own
 # [Rule], not to the Lectio7-9 unit authored here).
+#
+# Update (2026-09): the Gospel pericope itself, previously left unauthored
+# per the "bare incipit, skip it" convention described above, is now
+# authored too (isGospel: true, immediately before the homily) - sourced
+# from the Missale's own [Evangelium] for the same Sunday (the Mass Gospel
+# and the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
+# Matins now shows the full Gospel, then the homily on it, matching
+# post-pentecost-15's original pattern - see TODO.md's dated entry.
 id: christmas-octave-sunday
 readings:
   - nocturn: 2
@@ -82,6 +90,16 @@ readings:
     responsory:
       la: "R. Beáta Dei Génetrix María, cujus víscera intácta pérmanent: * Hódie génuit Salvatórem sǽculi.\nV. Beáta, quæ crédidit: quóniam perfécta sunt ómnia, quæ dicta sunt ei a Dómino.\nR. Hódie génuit Salvatórem sǽculi."
       en: "R. Blessed is God's holy Mother, Mary, maiden undefiled. * This day hath she brought forth the Saviour of the world.\nV. Blessed is she that believed; for there is a performance of all those things which were told her from the Lord.\nR. This day hath she brought forth the Saviour of the world."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 2:33-40", en: "Luke 2:33-40" }
+    text:
+      la: >-
+        In illo témpore: Erat Joseph et María Mater Jesu, mirántes super his quæ dicebántur de illo. Et benedíxit illis Símeon, et dixit ad Maríam Matrem ejus: Ecce, pósitus est hic in ruínam et in resurrectiónem multórum in Israël: et in signum, cui contradicétur: et tuam ipsíus ánimam pertransíbit gládius, ut reveléntur ex multis córdibus cogitatiónes. Et erat Anna prophetíssa, fília Phánuel, de tribu Aser: hæc procésserat in diébus multis, et víxerat cum viro suo annis septem a virginitáte sua. Et hæc vídua usque ad annos octogínta quátuor: quæ non discedébat de templo, jejúniis et obsecratiónibus sérviens nocte ac die. Et hæc, ipsa hora supervéniens, confitebátur Dómino, et loquebátur de illo ómnibus, qui exspectábant redemptiónem Israël. Et ut perfecérunt ómnia secúndum legem Dómini, revérsi sunt in Galilǽam in civitátem suam Názareth. Puer autem crescébat, et confortabátur, plenus sapiéntia: et grátia Dei erat in illo.
+      en: >-
+        At that time, Joseph and Mary, the mother of Jesus were marvelling at the things spoken concerning Him. And Simeon blessed them, and said to Mary His mother, Behold, this Child is destined for the fall and for the rise of many in Israel, and for a sign that shall be contradicted. And your own soul a sword shall pierce, that the thoughts of many hearts may be revealed. There was also Anna, a prophetess, daughter of Phanuel, of the tribe of Aser. She was of a great age, having lived with her husband seven years from her maidenhood, and by herself as a widow to eighty-four years. She never left the temple, with fastings and prayers worshipping night and day. And coming up at that very hour, she began to give praise to the Lord, and spoke of Him to all who were awaiting the redemption of Israel. And when they had fulfilled all things as prescribed in the Law of the Lord, they returned to Galilee, into their own town of Nazareth. And the Child grew and became strong. He was full of wisdom, and the grace of God was upon Him.
     status: { la: verified, en: verified }
 
   - nocturn: 3
