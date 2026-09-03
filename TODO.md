@@ -28,6 +28,9 @@ across every hour and content type in this app.
      needs bilingual voice selection (La/En) worked out, and quality for Latin pronunciation
      is an open question. Open, not started — needs its own design pass before content/UI work
      begins.
+   - Paschaltide should substitute the ordinary suffrages/ferial-Preces set with a single
+     alleluia-form "Suffragium Paschale" — not modeled; the ordinary set is shown unchanged
+     throughout Paschaltide instead.
    - Seasonal hymn-doxology swap (`hours/hymn-doxology.ts`'s `getHymnDoxologyId`/
      `appendDoxology`) is only wired into **Prime and Compline** (checked 2026-09-03:
      `grep -c getHymnDoxologyId` is 0 for `lauds.ts`/`vespers.ts`/`matins.ts`). Terce/Sext/None
@@ -57,12 +60,6 @@ across every hour and content type in this app.
 
 3. **Known, deliberate simplifications** — intentional, not bugs, no plan to revisit unless
    priorities change:
-   - `getDayCollects` renders each collect on a multi-collect day as its own full "Let us
-     pray ... Amen," not the historically compressed form (one "Let us pray," only the last
-     doxology).
-   - Suffrage omission is live-verified against Monastic Tridentinum 1617 for every case except
-     Paschaltide, which should substitute the whole set with a single alleluia-form "Suffragium
-     Paschale" rather than showing the ordinary set — not modeled.
    - The Matins "Duo Seraphim" responsory (sung after the final lesson, before Te Deum) isn't
      modeled — the schema carries one responsory per reading, and this one belongs to none.
    - `temporal-categories.yml`'s season→category mapping is from general pre-1955 knowledge,
