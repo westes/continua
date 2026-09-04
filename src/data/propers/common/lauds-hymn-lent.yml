@@ -1,8 +1,10 @@
 # Sourced from Divinum Officium's Monastic block ("[HymnusM Quad
 # Laudes]", Psalterium/Special/Major Special.txt) — full separate
 # Monastic text ("Jam Christe sol justítiæ"), not a substitution against
-# the Roman "O sol salútis, íntimis". Not live-query-verified (see
-# TODO.md).
+# the Roman "O sol salútis, íntimis". Live-verified 2026-09-04 (already
+# seen live against a Lenten Ember Saturday, 2026-02-28, while checking
+# lauds-hymn-saturday.yml's own real content earlier the same session —
+# byte-identical).
 id: lauds-hymn-lent
 text:
   la: |
@@ -46,5 +48,5 @@ text:
     May we of their indulgence share,
     And bless the God that grants our prayer.
 status:
-  la: draft
-  en: draft
+  la: verified
+  en: verified

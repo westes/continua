@@ -2,8 +2,8 @@
 # Officium's Monastic block ("[Quad Versum 3]", Psalterium/Special/Major
 # Special.txt) — "[Quad Versum 2]" (Lauds' own) is a bare alias to this
 # same text, so Lauds and Vespers share it here too (see
-# lauds-versicle-lent.yml). Not live-query-verified (see TODO.md) — read
-# directly from source.
+# lauds-versicle-lent.yml). Live-verified 2026-09-04 against a plain
+# Lenten Wednesday (2026-03-04).
 id: vespers-versicle-lent
 text:
   la: |
@@ -13,5 +13,5 @@ text:
     V. God hath given His Angels charge over thee.
     R. To keep thee in all thy ways.
 status:
-  la: draft
-  en: draft
+  la: verified
+  en: verified
