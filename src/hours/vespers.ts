@@ -26,6 +26,7 @@ import {
   resolveResponsory,
   resolveOfficeBundle,
   resolveSuffrages,
+  isPaschaltide,
 } from './resolve-common';
 import vespersDefinitionData from '../data/hours/vespers.yml';
 import vespersAntiphonsData from '../data/hours/vespers-antiphons.yml';
@@ -275,13 +276,19 @@ function resolvePart(part: HourPart, day: LiturgicalDay, weekday: Weekday): Reso
       ];
     }
     case 'vespers-preces': {
+      // Throughout Paschaltide, the whole ferial-Preces litany drops
+      // entirely rather than being replaced by anything — see lauds.ts's
+      // identical 'lauds-preces' case for the live-verification detail.
+      if (isFerialOrVigil(day) && isPaschaltide(day.season)) {
+        return [];
+      }
       const id = isFerialOrVigil(day) ? 'vespers-preces-feriales' : 'lauds-short-litany';
       return [{ kind: 'preces', text: resolveCommon(id) }];
     }
     case 'day-collects':
       return getDayCollects(day);
     case 'suffrages':
-      return resolveSuffrages(day, part.omitOnDouble);
+      return resolveSuffrages(day, part.omitOnDouble, 'vespers');
     case 'preces':
       return [{ kind: 'preces', text: resolveCommon(part.textRef.id), label: part.label }];
     case 'versicle':

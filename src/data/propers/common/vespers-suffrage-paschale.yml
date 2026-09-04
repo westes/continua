@@ -1,0 +1,30 @@
+# Vespers' own antiphon for the same "Suffragium Paschale" substitution
+# described in lauds-suffrage-paschale.yml's own header — shares that
+# file's versicle/response and collect, but its own distinct antiphon
+# ("Crucem sanctam súbiit..."), live-verified against Divinum Officium
+# (Monastic Tridentinum 1617), Vespers live query, 2026-04-20 (a plain
+# Eastertide feria). English antiphon translation is this project's own
+# (the reference engine's own English-language render leaves this
+# particular antiphon untranslated, Latin-only) — status left `draft`
+# for the English text specifically pending a better-sourced translation.
+id: vespers-suffrage-paschale
+text:
+  la: |
+    Ant. Crucem sanctam súbiit, qui inférnum confrégit; accínctus est poténtia, surréxit die tértia, allelúja.
+    V. Dícite in natiónibus, allelúja.
+    R. Quia Dóminus regnávit a ligno, allelúja.
+    Orémus.
+    Deus qui pro nobis Fílium tuum Crucis patíbulum subíre voluísti, ut inimíci a nobis expélleres potestátem: concéde nobis fámulis tuis; ut resurrectiónis grátiam consequámur.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Ant. He bore the holy Cross, who broke the gates of hell; he was girded with power, and rose again on the third day, alleluia.
+    V. Say among the heathen, alleluia.
+    R. That the Lord reigneth from the tree, alleluia.
+    Let us pray.
+    O God, who didst send thy Son to suffer death for us upon the Cross, that thou mightest deliver us from the power of the enemy: grant unto us thy servants to be made partakers of his Resurrection.
+    Through the same Jesus Christ, thy Son, Our Lord, Who liveth and reigneth with thee in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: draft

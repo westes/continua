@@ -26,6 +26,7 @@ import {
   resolveResponsory,
   resolveOfficeBundle,
   resolveSuffrages,
+  isPaschaltide,
 } from './resolve-common';
 import laudsDefinitionData from '../data/hours/lauds.yml';
 import laudsAntiphonsData from '../data/hours/lauds-antiphons.yml';
@@ -366,7 +367,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'day-collects':
       return getDayCollects(day);
     case 'suffrages':
-      return resolveSuffrages(day, part.omitOnDouble);
+      return resolveSuffrages(day, part.omitOnDouble, 'lauds');
     case 'versicle':
     case 'chapter':
     case 'responsory':
@@ -377,6 +378,15 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       return [{ kind: 'preces', text: resolveCommon(id), label: getMarianAntiphonLabel(id) }];
     }
     case 'lauds-preces': {
+      // Throughout Paschaltide, the whole ferial-Preces litany drops
+      // entirely rather than being replaced by anything — live-verified
+      // ("Preces Feriales{omittitur}" against both Monastic Tridentinum
+      // 1617 and Tridentine 1906, a plain Eastertide feria, 2026-04-20).
+      // Sunday/feast's own short litany is untouched — that's a separate,
+      // universal collect-opening dialogue, not this ferial-specific one.
+      if (isFerialOrVigil(day) && isPaschaltide(day.season)) {
+        return [];
+      }
       const id = isFerialOrVigil(day) ? 'lauds-preces-feriales' : 'lauds-short-litany';
       return [{ kind: 'preces', text: resolveCommon(id) }];
     }

@@ -306,6 +306,15 @@ export function getMinorHourOverrideId(day: LiturgicalDay): string | undefined {
  */
 const PASCHALTIDE_SEASONS = new Set(['eastertide', 'ascensiontide', 'pentecost']);
 
+/** Whether `season` falls within the same broad Paschaltide window
+ * `PASCHALTIDE_SEASONS` already governs elsewhere in this file (Marian
+ * antiphon, Common-category text, hymn doxology) — exported so
+ * hours/lauds.ts's and hours/vespers.ts's own ferial-Preces omission can
+ * share the identical boundary rather than redeclaring it. */
+export function isPaschaltide(season: string): boolean {
+  return PASCHALTIDE_SEASONS.has(season);
+}
+
 /**
  * Which seasonal office-content suffix (if any) a day's season maps to —
  * shared by Lauds' and Vespers' own resolveOffice, both of which fall
@@ -789,7 +798,11 @@ const SUFFRAGE_LABELS: Record<string, string> = {
  * the caveat on what real practice also suppresses them for that isn't
  * modeled.
  */
-export function resolveSuffrages(day: LiturgicalDay, omitOnDouble: boolean | undefined): ResolvedPart[] {
+export function resolveSuffrages(
+  day: LiturgicalDay,
+  omitOnDouble: boolean | undefined,
+  hourId: 'lauds' | 'vespers' = 'lauds',
+): ResolvedPart[] {
   // isDoubleOrHigher only ever looks at a sanctoral rank — Christ the
   // King is modeled as a named temporal winner (see
   // ALWAYS_OVERRIDE_TEMPORAL_IDS above) with no FeastClass to check at
@@ -811,6 +824,18 @@ export function resolveSuffrages(day: LiturgicalDay, omitOnDouble: boolean | und
   const isWithinAnOctave = activeOctavesFor(day.date).length > 0;
   if (omitOnDouble && (isDoubleOrHigher(day.winner) || isChristTheKing || isSeasonallyExcluded || isWithinAnOctave)) {
     return [];
+  }
+  // Throughout the rest of Paschaltide, the whole ordinary 5-suffrage set
+  // below collapses into a single alleluia-form "Suffragium Paschale" —
+  // live-verified against both Monastic Tridentinum 1617 and Tridentine
+  // 1906 directly (a plain Eastertide feria, 2026-04-20), byte-identical
+  // between the two tracks. Checked after the omit-entirely gate above
+  // (an active octave/Double+/Advent-Christmastide-Passiontide already
+  // drops suffrages regardless of season, unaffected by this) but before
+  // the ordinary per-suffrage filtering below, since this replaces that
+  // filtering outright rather than adjusting it.
+  if (isPaschaltide(day.season)) {
+    return [{ kind: 'preces', text: resolveCommon(`${hourId}-suffrage-paschale`) }];
   }
   // "Of the Holy Cross" is the real *ferial*-office suffrage, sourced
   // from Tridentine 1906/1910 (a different track than the other four,
