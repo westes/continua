@@ -54,10 +54,15 @@ describe('Lauds psalmody override (duplex-majus+ sanctoral, and Marian Saturday)
     const psalmNumbers = ordo.parts
       .filter((p) => p.kind === 'psalm')
       .map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
-    expect(psalmNumbers).toEqual([66, 92, 99, 62, 148, 149, 150]);
+    // Ferial Saturday's own psalm numbers (50, 142), not the Common-of-
+    // BVM's proper set (92, 99, 62) -- corrected 2026-09-04, per direct
+    // instruction to keep the plain ferial psalmody and only swap the
+    // antiphons (see lauds-psalmody-overrides/marian-saturday.yml's own
+    // header).
+    expect(psalmNumbers).toEqual([66, 50, 142, 148, 149, 150]);
 
-    const ps92 = ordo.parts.find((p) => p.kind === 'psalm' && p.psalmNumber === 92);
-    expect(ps92?.kind === 'psalm' ? ps92.antiphon?.text.la : undefined).toContain('Dum esset Rex');
+    const ps50 = ordo.parts.find((p) => p.kind === 'psalm' && p.psalmNumber === 50);
+    expect(ps50?.kind === 'psalm' ? ps50.antiphon?.text.la : undefined).toContain('Dum esset Rex');
 
     const benedictus = ordo.parts.find((p) => p.kind === 'canticle' && p.canticleId === 'benedictus');
     expect(benedictus?.kind === 'canticle' ? benedictus.antiphon?.text.la : undefined).toContain('Beáta Dei Génitrix');

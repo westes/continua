@@ -1,25 +1,38 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
-# live query, Sanctæ Mariæ Sabbato (2026-09-05). Applies unconditionally
+# Corrected 2026-09-04, per direct instruction: this override previously
+# swapped in the real historical proper psalms (92, 99, 62 — the Common-
+# of-the-BVM's own Lauds psalm set, same numbers used by any duplex-majus+
+# feast's own psalmody override elsewhere in this store), not just the
+# antiphons. Per the user's own explicit design for Marian Saturday
+# ("keep the ferial psalmody but use marian antiphons... we don't want to
+# go little-office"), this now instead keeps plain ferial Saturday's own
+# psalm groups/canticle unchanged (see data/hours/lauds-antiphons.yml's
+# `saturday:` entry — Ps 50, Ps 142, the Canticle of Moses/Deuteronomy
+# split in two, then the Laudate psalms) and only swaps the antiphon text
+# atop them.
+#
+# Ferial Saturday has only 2 psalm-group antiphon slots (plus canticle,
+# plus laudate = 4 total), one fewer than the 3-psalm-group Common-of-BVM
+# pattern this override used to carry — so only the first 2 of the 3
+# already-authored proper antiphons ("Dum esset Rex", "Læva ejus") have a
+# slot to attach to here; the third ("Nigra sum, sed formósa...", live-
+# verified same session) is currently unused. Applies unconditionally
 # whenever Marian Saturday wins the day (see calendar/index.ts's
-# applyMarianSaturday) -- not gated by the duplex-majus+ rank threshold
-# the sanctoral overrides use, since Marian Saturday isn't itself ranked
-# in competition with the weekday default the way a saint is.
+# applyMarianSaturday) — not gated by the duplex-majus+ rank threshold the
+# sanctoral overrides use, since Marian Saturday isn't itself ranked in
+# competition with the weekday default the way a saint is.
 id: marian-saturday
 groups:
-  - psalms: [92]
+  - psalms: [50]
     antiphon:
       la: "Dum esset Rex * in accúbitu suo, nardus mea dedit odórem suavitátis."
       en: "While the King was at his repose, * my spikenard sent forth the odour thereof."
-  - psalms: [99]
+  - psalms: [142]
     antiphon:
       la: "Læva ejus * sub cápite meo, et déxtera illíus amplexábitur me."
       en: "His left hand is under my head, * and his right hand shall embrace me."
-  - psalms: [62]
-    antiphon:
-      la: "Nigra sum, * sed formósa, fíliæ Jerúsalem; ídeo diléxit me Rex, et introdúxit me in cubículum suum."
-      en: "I am black, * but beautiful, O ye daughters of Jerusalem; therefore hath the King loved me, and brought me into his chamber."
 canticle:
-  id: canticum-trium-puerorum
+  id: canticum-moysis-deuteronomii
+  split: 32
   antiphon:
     la: "Jam hiems tránsiit, * imber ábiit et recéssit: surge, amíca mea, et veni."
     en: "For winter is now past, * the rain is over and gone: arise, my love, and come."

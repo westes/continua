@@ -1,18 +1,24 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live
-# query -- sourced from a Lenten Ember Saturday (2026-02-28), since every
-# ordinary-time Saturday is Marian-Sabbato-overridden (see
-# lauds-hymn-saturday.yml's longer note). Believed genuine per-annum
-# content, not a Lenten swap: the page's own "{ex Psalterio secundum diem}"
-# label matches the ferial default exactly, and every other Lauds this
-# project has built only swaps the *hymn* for a privileged season, never
-# the capitulum/responsory/versicle.
+# Plain ferial Saturday's own Lauds capitulum — live-verified against
+# Divinum Officium (Monastic Tridentinum 1617), Lauds live query,
+# 2025-09-20 (a September Ember Saturday winning outright with nothing
+# else in play, `{ex Psalterio secundum diem}` in the source).
+#
+# Corrected 2026-09-04: this id previously held Isa 58:1 ("Clama, ne
+# cesses..."), sourced from a *Lenten* Ember Saturday (2026-02-28) on the
+# assumption it was shared, genuine per-annum content — wrong, live-
+# checked against this clean ordinary-time date instead: the real
+# per-annum text is Rom 13:12-13, not Isa 58:1. Isa 58:1 is now homeless
+# (not currently reused anywhere in this store) — likely a real, distinct
+# Lenten-ferial-capitulum text this project doesn't yet model separately
+# from the plain weekday default; flagged in TODO.md rather than built
+# out here.
 id: lauds-capitulum-saturday
 text:
-  la: "Clama, ne cesses, quasi tuba exálta vocem tuam, et annúntia pópulo meo scélera eórum, et dómui Jacob peccáta eórum."
-  en: "Cry, cease not, lift up thy voice like a trumpet, and show my people their wicked doings, and the house of Jacob their sins."
+  la: "Nox præcéssit, dies autem appropinquávit. Abiciámus ergo ópera tenebrárum, et induámur arma lucis. Sicut in die honéste ambulémus."
+  en: "The night is passed, and the day is at hand. Let us therefore cast off the works of darkness, and put on the armour of light. Let us walk honestly, as in the day."
 citation:
-  la: "Isa 58:1"
-  en: "Isa 58:1"
+  la: "Rom 13:12-13"
+  en: "Rom 13:12-13"
 status:
   la: verified
   en: verified

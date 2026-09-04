@@ -1,40 +1,55 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live
-# query, Sanctæ Mariæ Sabbato (2026-09-05). By explicit choice, this --
-# not a genuinely per-annum unprivileged Saturday, which isn't achievable
-# (see hours/types.ts's 'lauds-psalmody' doc comment on the Marian
-# Saturday) -- is Saturday's own default hymn.
+# Plain ferial Saturday's own Lauds hymn ("Auróra jam spargit polum" /
+# "The dawn is sprinkling in the east") — live-verified against Divinum
+# Officium (Monastic Tridentinum 1617), Lauds live query, 2025-09-20 (a
+# September Ember Saturday winning outright with nothing else in play,
+# `{ex Psalterio secundum diem}` in the source, i.e. genuinely the plain
+# per-weekday text, not privileged/seasonal).
+#
+# Corrected 2026-09-04: this id previously held "O gloriósa Dómina", the
+# real Marian-Saturday hymn, moved out to its own `lauds-hymn-marian-
+# saturday.yml` — see that file's own header for why. This id is now only
+# reached on a Saturday that's neither Marian (an active octave, or a
+# season with its own seasonSuffix hymn) nor genuinely privileged with a
+# season-specific hymn of its own (Lent's `lauds-hymn-lent.yml`/Advent's
+# own equivalent both win first via `seasonalOfficeSuffix`) — chiefly
+# September/Pentecost's own Ember Saturday, whose season carries no
+# seasonSuffix hymn override. This file's own sibling capitulum/
+# responsory/versicle-saturday.yml files were already independently
+# correct for this same real occasion (verified from a different,
+# privileged-Lent date whose capitulum/responsory/versicle turn out
+# identical to this one's — only the hymn itself is season-variable).
 id: lauds-hymn-saturday
 text:
   la: |
-    O gloriósa Dómina,
-    Excélsa super sídera:
-    Qui te creávit, próvide
-    Lactásti sacro úbere.
+    Auróra jam spargit polum:
+    Terris dies illábitur:
+    Lucis resúltat spículum:
+    Discédat omne lúbricum.
 
-    Quod Heva tristis ábstulit,
-    Tu reddis almo gérmine:
-    Intrent ut astra flébiles,
-    Cæli fenéstra facta es.
+    Phantásma noctis décidat:
+    Mentis reátus súbruat:
+    Quidquid ténebris hórridum
+    Nox áttulit culpæ, cadat.
 
-    Tu Regis alti jánua,
-    Et porta lucis fúlgida:
-    Vitam datam per Vírginem,
-    Gentes redémptæ, pláudite.
+    Et mane illud últimum,
+    Quod præstolámur cérnui,
+    In lucem nobis éffluat,
+    Dum hoc canóre cóncrepat.
   en: |
-    O glorious lady! throned on high
-    Above the star-illumined sky;
-    Thereto ordained, thy bosom lent
-    To thy Creator nourishment.
+    The dawn is sprinkling in the east
+    Its golden shower, as day flows in;
+    Fast mount the pointed shafts of light:
+    Farewell to darkness and to sin!
 
-    Through thy sweet offspring we receive
-    The bliss once lost through hapless Eve;
-    And heaven to mortals open lies
-    Now thou art portal of the skies.
+    Away, ye midnight phantoms all!
+    Away, despondence and despair!
+    Whatever guilt the night has brought,
+    Now let it vanish into air.
 
-    Thou art the door of heaven's high King,
-    Light's gateway fair and glistering;
-    Life through a Virgin is restored;
-    Ye ransomed nations, praise the Lord!
+    So, Lord, when that last morning breaks,
+    Looking to which we sigh and pray,
+    O may it to thy minstrels prove
+    The dawning of a better day.
 status:
   la: verified
   en: verified
