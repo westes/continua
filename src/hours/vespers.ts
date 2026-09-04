@@ -229,12 +229,14 @@ function resolveVespersHymn(day: LiturgicalDay, key: string): ResolvedText {
 function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
   const bundle = resolveOfficeBundle('vespers', day, vespersCapitulumForOverride);
   if (bundle) {
-    return [
-      { kind: 'chapter', text: bundle.chapter },
-      { kind: 'responsory', text: bundle.responsory },
-      { kind: 'hymn', text: bundle.hymn },
-      { kind: 'versicle', text: bundle.versicle },
-    ];
+    const parts: ResolvedPart[] = [{ kind: 'chapter', text: bundle.chapter }];
+    // The Sacred Heart's own Vespers genuinely has no responsory at all in
+    // the source, same as its own Lauds — see lauds.ts's identical check.
+    if (bundle.responsory.status.la !== 'missing' || bundle.responsory.status.en !== 'missing') {
+      parts.push({ kind: 'responsory', text: bundle.responsory });
+    }
+    parts.push({ kind: 'hymn', text: bundle.hymn }, { kind: 'versicle', text: bundle.versicle });
+    return parts;
   }
   const seasonSuffix = seasonalOfficeSuffix(day.season);
   const key = seasonSuffix ?? day.weekday;

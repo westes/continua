@@ -524,15 +524,23 @@ describe('resolveOrdo("vespers", ...)', () => {
     // to the octave -- and Jun 9 itself is *also* inside the same
     // octave, already having lost its own Simplex saint (Ss. Primus and
     // Felicianus) to it, so neither day has any sanctoral winner left to
-    // anticipate. Jun 9's evening falls all the way through to the plain
-    // ferial Vespers default (Trinity week's own governing chapter/hymn),
-    // with both Primus & Felicianus and Corpus Christi's octave merely
-    // commemorated, not any widow-specific content at all.
+    // anticipate.
+    //
+    // Corrected 2026-09-04: Jun 9's evening does NOT fall through to the
+    // plain ferial Vespers default -- that was this test's own original,
+    // never-actually-verified guess, documenting the same real
+    // resolveOfficeWinner gap already fixed for Ascension/Pentecost (see
+    // TODO.md): a temporal-feast octave (Corpus Christi, no saint
+    // record) wasn't being recognized on ordinary-feria days within it.
+    // Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+    // 2026-06-09, "Feria Tertia infra Octavam Corporis Christi"): the
+    // real content is Corpus Christi's own chapter/hymn ("ex Commune aut
+    // Festo" in the source), not Trinity week's own governing default.
     const ordo = resolveOrdo('vespers', '2026-06-09');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
-    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('2 Cor 1:3-4');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('1 Cor 11:23-24');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
-    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Tellúris ingens Cónditor');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Pange, lingua, gloriósi');
   });
 
   it("uses common-of-the-bvm's real office bundle for Our Lady of Mount Carmel's First Vespers", () => {

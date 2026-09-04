@@ -1,0 +1,183 @@
+# Corpus Christi's own Matins hymn ("Sacris solémniis"), St. Thomas
+# Aquinas's own composition for this feast. Live-verified against
+# Divinum Officium (Monastic Tridentinum 1617), Matins live query,
+# 2026-06-04 (Corpus Christi itself). Self-contained — its own final
+# stanza ("Te, trina Déitas...") is the hymn's natural theological
+# close, not a separate swappable doxology.
+#
+# Closes the same real mechanism gap already fixed for Ascension/
+# Pentecost (`corpus-christi` is a temporal-feast id, not a saint
+# record, so `resolveOfficeWinner`'s octave-synthesis needed the same
+# fix already in place — see hours/resolve-common.ts's
+# `ALWAYS_OVERRIDE_TEMPORAL_IDS`).
+id: matins-hymn-corpus-christi
+text:
+  la: >-
+    Sacris solémniis juncta sint gáudia,
+
+    Et ex præcórdiis sonent præcónia;
+
+    Recédant vétera, nova sint ómnia,
+
+    Corda, voces, et ópera.
+
+
+    Noctis recólitur cœna novíssima,
+
+    Qua Christus créditur agnum et ázyma
+
+    Dedísse frátribus, juxta legítima
+
+    Priscis indúlta pátribus.
+
+
+    Post agnum týpicum, explétis épulis,
+
+    Corpus Domínicum datum discípulis,
+
+    Sic totum ómnibus, quod totum síngulis,
+
+    Ejus fatémur mánibus.
+
+
+    Dedit fragílibus córporis férculum,
+
+    Dedit et trístibus sánguinis póculum,
+
+    Dicens: Accípite quod trado vásculum;
+
+    Omnes ex eo bíbite.
+
+
+    Sic sacrifícium istud instítuit,
+
+    Cujus offícium commítti vóluit
+
+    Solis presbýteris, quibus sic cóngruit,
+
+    Ut sumant, et dent céteris.
+
+
+    Panis angélicus fit panis hóminum;
+
+    Dat panis cǽlicus figúris términum;
+
+    O res mirábilis: mandúcat Dóminum
+
+    Pauper, servus et húmilis.
+
+
+    Te, trina Déitas únaque, póscimus;
+
+    Sic nos tu vísita, sicut te cólimus:
+
+    Per tuas sémitas duc nos quo téndimus,
+
+    Ad lucem quam inhábitas. Amen.
+  en: >-
+    At this our solemn feast,
+
+    Let holy joys abound,
+
+    And from the inmost breast
+
+    Let songs of praise resound;
+
+    Let ancient rites depart,
+
+    And all be new around,
+
+    In ev'ry act and voice and heart.
+
+
+    Remember we that eve,
+
+    When, the last supper spread,
+
+    Christ, as we all believe,
+
+    The lamb, with leavenless bread,
+
+    Among his brethren shared,
+
+    And thus the law obeyed,
+
+    Of old unto their sires declared.
+
+
+    The typic lamb consumed,
+
+    The legal feast complete,
+
+    The Lord unto the twelve
+
+    His body gave to eat;
+
+    The whole to all, no less
+
+    The whole to each, did mete
+
+    With his own hands, as we confess.
+
+
+    He gave them, weak and frail,
+
+    His flesh, their food to be;
+
+    On them, downcast and sad,
+
+    His blood bestowèd he:
+
+    And thus to them he spake,
+
+    "Receive this cup from me,
+
+    And all of you of this partake."
+
+
+    So he this sacrifice
+
+    To institute did will,
+
+    And charged his priests alone
+
+    That office to fulfil:
+
+    In them he did confide:
+
+    To whom pertaineth still
+
+    To take, and to the rest divide.
+
+
+    Thus angels' bread is made
+
+    The bread of man today:
+
+    The living bread from heaven
+
+    With figures doth away:
+
+    O wondrous gift indeed!
+
+    The poor and lowly may
+
+    Upon their Lord and Master feed.
+
+
+    O Triune Deity,
+
+    To thee we meekly pray,
+
+    So mayst thou visit us,
+
+    As we our homage pay;
+
+    And in thy footsteps bright
+
+    Conduct us on our way
+
+    To where thou dwell'st in cloudless light. Amen.
+status:
+  la: verified
+  en: verified

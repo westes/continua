@@ -1,0 +1,123 @@
+# The Sacred Heart's own Lauds hymn ("Cor, arca legem cóntinens") —
+# distinct from Matins' own ("Auctor beáte sǽculi") and Vespers' own
+# ("En, ut supérba críminum"). Live-verified against Divinum Officium
+# (Divino Afflatu - 1954), Lauds live query, 2026-06-12 (the Sacred
+# Heart itself) — see matins-hymn-sacred-heart.yml's own header on why
+# this track. Self-contained — its own final stanza is the hymn's
+# natural theological close, not a separate swappable doxology.
+#
+# This day's own Lauds genuinely has no responsory in the source at all
+# (straight from chapter to hymn) — see lauds-capitulum-sacred-heart.yml
+# and hours/lauds.ts's own resolveOffice, which omits the responsory
+# part entirely rather than rendering an empty one.
+id: lauds-hymn-sacred-heart
+text:
+  la: >-
+    Cor, arca legem cóntinens
+
+    Non servitútis véteris,
+
+    Sed grátiæ, sed véniæ,
+
+    Sed et misericórdiæ.
+
+
+    Cor, sanctuárium novi
+
+    Intemerátum fœ́deris,
+
+    Templum vetústo sánctius,
+
+    Velúmque scisso utílius.
+
+
+    Te vulnerátum cáritas
+
+    Ictu paténti vóluit,
+
+    Amóris invisíbilis
+
+    Ut venerémur vúlnera.
+
+
+    Hoc sub amóris sýmbolo
+
+    Passus cruénta et mýstica,
+
+    Utrúmque sacrifícium
+
+    Christus sacérdos óbtulit.
+
+
+    Quis non amántem rédamet?
+
+    Quis non redémptus díligat,
+
+    Et Corde in isto séligat
+
+    Ætérna tabernácula?
+
+
+    Jesu, tibi sit glória,
+
+    Qui Corde fundis grátiam,
+
+    Cum Patre, et almo Spíritu,
+
+    In sempitérna sǽcula. Amen.
+  en: >-
+    Jesus, behind thy temple's veil,
+
+    Hid in an ark of gold,
+
+    On stones engraven, lay the law
+
+    thy finger wrote of old.
+
+
+    But in thy body's temple new,
+
+    thy life-blood's throbbing shrine,
+
+    Held, upon fleshly tables graved,
+
+    The law of love divine.
+
+
+    And when that heart in death was stilled,
+
+    Each temple's veil was riven:
+
+    And lo, within thy love's red shrine,
+
+    To us to look was given.
+
+
+    There make us gaze and see the love
+
+    Which drew thee, for our sake,
+
+    O great high-priest, thyself to God
+
+    A sacrifice to make.
+
+
+    Thou, Saviour, cause that every soul
+
+    Which thou hast loved so well,
+
+    May will within thine open heart
+
+    In life and death to dwell.
+
+
+    Grant it, O Father, only Son,
+
+    And Spirit, God of grace,
+
+    To whom all worship shall be done,
+
+    In every time and place. Amen.
+status:
+  la: verified
+  en: verified

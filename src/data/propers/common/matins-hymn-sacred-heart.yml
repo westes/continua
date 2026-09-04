@@ -1,0 +1,125 @@
+# The Sacred Heart's own Matins hymn ("Auctor beáte sǽculi"). Live-
+# verified against Divinum Officium (Divino Afflatu - 1954, 2026-06-12,
+# the Sacred Heart itself) — not the Monastic Tridentinum 1617 track,
+# which doesn't observe this feast on the same date at all (live-
+# checked: shows St. Barnabas instead, unaffected). This project's own
+# rubric/precedence track is Divino Afflatu anyway (see the repo's
+# CLAUDE.md), so this is a real, consistent source choice, not a
+# deviation. Self-contained — its own final stanza is the hymn's natural
+# theological close, not a separate swappable doxology.
+#
+# Closes the same real mechanism gap already fixed for Ascension/
+# Pentecost/Corpus Christi (`sacred-heart` is a temporal-feast id, not a
+# saint record — see hours/resolve-common.ts's
+# `ALWAYS_OVERRIDE_TEMPORAL_IDS`).
+id: matins-hymn-sacred-heart
+text:
+  la: >-
+    Auctor beáte sǽculi,
+
+    Christe, Redémptor ómnium,
+
+    Lumen Patris de lúmine,
+
+    Deúsque verus de Deo.
+
+
+    Amor coégit te tuus
+
+    Mortále corpus súmere,
+
+    Ut novus Adam rédderes,
+
+    Quod vetus ille abstúlerat.
+
+
+    Ille amor, almus ártifex
+
+    Terræ marísque, et síderum,
+
+    Erráta patrum míserans,
+
+    Et nostra rumpens víncula.
+
+
+    Non Corde discédat tuo
+
+    Vis illa amóris íncliti:
+
+    Hoc fonte gentes háuriant
+
+    Remissiónis grátiam.
+
+
+    Percússum ad hoc est láncea,
+
+    Passúmque ad hoc est vúlnera:
+
+    Ut nos laváret sórdibus,
+
+    Unda fluénte, et sánguine.
+
+
+    Jesu, tibi sit glória,
+
+    Qui Corde fundis grátiam,
+
+    Cum Patre, et almo Spíritu,
+
+    In sempitérna sǽcula. Amen.
+  en: >-
+    O Christ, the world's Creator bright,
+
+    Who didst mankind from sin redeem,
+
+    Light from the Father's glorious light,
+
+    True God of God, in bliss supreme.
+
+
+    Thy love compelled thee to assume
+
+    A mortal body, man to save;
+
+    Reversing the old Adam's doom;
+
+    Our ransom the new Adam gave.
+
+
+    That love which gloriously framed all
+
+    The earth, the stars, and wondrous sea
+
+    Took pity on our parents' fall,
+
+    Broke all our bonds and set us free.
+
+
+    O Saviour, let thy potent love
+
+    Flow ever from thy bounteous heart;
+
+    To nations that pure fount above
+
+    The grace of pardon will impart.
+
+
+    His heart for this was opened wide,
+
+    And wounded by the soldier's spear,
+
+    That freely from his sacred side
+
+    Might flow the streams our souls to clear.
+
+
+    Glory to Father and to Son,
+
+    And to the Holy Ghost the same,
+
+    To whom all power, when time is done,
+
+    And endless rule, in endless fame. Amen.
+status:
+  la: verified
+  en: verified

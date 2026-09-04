@@ -321,12 +321,18 @@ function resolveLaudsHymn(day: LiturgicalDay, key: string): ResolvedText {
 function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
   const bundle = resolveOfficeBundle('lauds', day);
   if (bundle) {
-    return [
-      { kind: 'chapter', text: bundle.chapter },
-      { kind: 'responsory', text: bundle.responsory },
-      { kind: 'hymn', text: bundle.hymn },
-      { kind: 'versicle', text: bundle.versicle },
-    ];
+    const parts: ResolvedPart[] = [{ kind: 'chapter', text: bundle.chapter }];
+    // The Sacred Heart's own Lauds genuinely has no responsory at all in
+    // the source (live-verified, Divino Afflatu 1954, 2026-06-12: straight
+    // from chapter to hymn, "Capitulum Hymnus Versus" with no
+    // "Responsorium" in between) — an intentionally missing part, not an
+    // unauthored one, so omitted from the page entirely rather than
+    // rendering an empty section.
+    if (bundle.responsory.status.la !== 'missing' || bundle.responsory.status.en !== 'missing') {
+      parts.push({ kind: 'responsory', text: bundle.responsory });
+    }
+    parts.push({ kind: 'hymn', text: bundle.hymn }, { kind: 'versicle', text: bundle.versicle });
+    return parts;
   }
   const seasonSuffix = seasonalOfficeSuffix(day.season);
   const key = seasonSuffix ?? day.weekday;
