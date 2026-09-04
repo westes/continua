@@ -5566,3 +5566,67 @@ to 2026-09-07) and `tests/hours/vespers.test.ts`'s own St. Margaret of Scotland 
 also inside Corpus Christi's octave — its own title already anticipated this exact fix; updated its
 assertions from the old "falls through to the plain ferial default" guess to the real, live-verified
 Corpus Christi content). `npm test` (2025 passed) and `tsc --noEmit` both pass.
+
+### Recombined the 5 remaining Ember-day nocturn-readings files (2026-09-04)
+
+User asked "why only Wed/Sat in September?" after the earlier Ember-Friday recombine, then asked
+for all the remaining smaller gaps to be closed. Checked the reference source directly for each of
+`ember-september-wednesday`/`ember-september-saturday`/`ember-advent-wednesday`/`ember-advent-
+friday`/`ember-advent-saturday` (all 5 still carried the original "genuinely distinct proper
+responsory" split rationale) and confirmed all 5 are the same shape already fixed for Ember Friday:
+one continuous, unbroken homily (Bede, Gregory, or — for the two Advent Wednesday/Friday cases —
+Ambrose's Commentary on Luke, cross-referenced from the Annunciation's own Common,
+`@Sancti/03-25:Lectio7/8/9`, confirmed contiguous by reading the source file directly), split only
+to fill the fixed 3-lesson slot count. Recombined all 5 into single readings, same convention as
+before (keep the first lesson's own responsory, drop the rest). Updated
+`tests/calendar/ember-days.test.ts`'s lesson-count table (now 1 for all 6 Ember days, was a mix).
+`npm test` (2025 passed) and `tsc --noEmit` both pass.
+
+### Lent's own Lauds capitulum/responsory/versicle: not homeless after all (2026-09-04)
+
+The "homeless Isa 58:1 / Ipse liberávit me / Ángelis suis" content flagged in an earlier entry
+(believed to have no home after the Marian-Saturday/plain-ferial-Saturday content correction) turned
+out to already have a real home: `lauds-capitulum-lent.yml`/`lauds-responsory-lent.yml`/
+`lauds-versicle-lent.yml` already existed with this exact content, just marked `draft` (never
+live-verified) rather than genuinely missing. Live-verified against both a Lenten Ember Saturday
+(2026-02-28) and a plain Lenten Wednesday (2026-03-04) — identical, confirming this is genuinely
+season-wide content (not weekday-varying) and correcting an earlier session's wrong "homeless" claim.
+Marked all 3 files `verified`. (Vespers' own Lenten capitulum/responsory/versicle/hymn and both
+hours' Lenten hymn-doxology-per-annum files are still `draft` — a separate, broader Lent-content
+verification backlog noticed in passing, not fixed here, out of scope of what was specifically
+flagged.)
+
+### Trinity Sunday: a real feast, not modeled at all (2026-09-04)
+
+A third "smaller gap" turned out much bigger on inspection: what had been described as a "Trinity
+Sunday display gap" was actually a missing calendar mechanism. `getDayLabel` already had a purely
+cosmetic "Trinity Sunday" label overlay for the Sunday after Pentecost, but nothing made that Sunday
+actually *be* Trinity Sunday — `resolveTemporalId` just fell back to `post-pentecost-01`, an
+`ordinary-sunday` category, so any Duplex+ saint assigned that date (e.g. the Queenship of the BVM,
+1954, fixed May 31) won outright per the normal rule, with Trinity Sunday itself never appearing as
+more than a commemoration or a cosmetic label. Live-verified against Divinum Officium (Monastic
+Tridentinum 1617, 2026-05-31): the real occupant is "Festum Sanctissimæ Trinitatis, Duplex II.
+classis" — one of the year's principal Sundays.
+
+Added a real `data/calendar/temporal-feasts/trinity-sunday.yml` record (Easter+56, Duplex II.
+classis). Per direct instruction, `unconditional: true` (same shape as `christ-the-king.yml`) —
+Trinity Sunday always wins, since the one real collision case (the Queenship of the BVM, also Duplex
+II classis, fixed May 31) isn't independently live-verifiable against the Monastic 1617 track at all
+(that calendar doesn't carry the Queenship feast — May 31 there is St. Petronilla instead, confirmed
+live), and a principal Sunday shouldn't lose a same-rank fixed-date collision by coincidence.
+
+Authored the full office: `trinity-sunday-collect.yml`, `trinity-sunday-{benedictus,magnificat}-
+antiphon.yml`, `matins-hymn-trinity-sunday.yml` ("Summæ Deus cleméntiæ" — shares its opening stanza
+with the plain ferial Saturday hymn but diverges completely after that, a genuinely different hymn),
+`lauds-{capitulum,responsory,hymn,versicle}-trinity-sunday.yml`, and `vespers-{responsory,hymn,
+versicle}-trinity-sunday.yml` (Lauds/Vespers share both their chapter, via the existing cross-hour
+fallback, and their hymn, "O lux beáta Trínitas" — already the pre-Urban VIII text) — all live-
+verified 2026-05-31. Added `trinity-sunday` to `ALWAYS_OVERRIDE_TEMPORAL_IDS`.
+
+Found and fixed 3 pre-existing tests written around the old cosmetic-label behavior, two of which
+had never-verified guesses baked in as if correct: `tests/calendar/day-label.test.ts`'s "names the
+anchor day itself" test (now Trinity Sunday wins outright over the Queenship, not the reverse) and
+its own "outranks an active octave" test (previously asserted "Duplex I Class", a guess — the real,
+now live-verified rank is Duplex II Class); `tests/calendar/transfer.test.ts`'s St. Felix I test
+(Trinity Sunday now the real winner on 2026-05-31, Queenship/post-pentecost-01/Pentecost's octave
+all commemorated in return). `npm test` (2025 passed) and `tsc --noEmit` both pass.
