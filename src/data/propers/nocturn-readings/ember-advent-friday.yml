@@ -6,9 +6,16 @@
 #
 # Lectio1's Gospel citation (Luke 1:39-47, the Visitation) is a bare
 # incipit with no full pericope text given, so only the homily portion is
-# authored, same convention as the September Ember days. Kept as 3
-# separate readings, each with its own genuinely distinct proper
-# responsory.
+# authored, same convention as the September Ember days.
+#
+# Recombined into one reading 2026-09-04 (previously kept as 3 separate
+# readings): Lectio1-3 are one continuous, unbroken Ambrose excerpt,
+# split only to fill the fixed 3-lesson Nocturn slot count — same fix
+# already applied to the other 4 Ember day nocturn-readings files the
+# same day, see ember-september-friday.yml's own header for the fuller
+# rationale. Responsory is Lectio1's own; Lectio2/3's own distinct
+# responsories are dropped, same as every other collapsed-reading case
+# in this store.
 id: ember-advent-friday
 readings:
   - nocturn: 1
@@ -22,6 +29,21 @@ readings:
         incérta de núntio, nec quasi dúbitans de exémplo, sed quasi læta pro voto, religiósa pro offício, festína
         pro gáudio, in montána perréxit. Quo enim jam Deo plena, nisi ad superióra cum festinatióne conténderet?
         Nescit tarda molímina Sancti Spíritus grátia.
+
+
+        Díscite et vos, sanctæ mulíeres, sedulitátem, quam prægnántibus debeátis exhibére cognátis. Maríam, quæ
+        ante sola in íntimis penetrálibus versabátur, non a público virginitátis pudor, non ab stúdio aspéritas
+        móntium, non ab offício prolíxitas itíneris retardávit. In montána Virgo cum festinatióne, Virgo offícii
+        memor, injúriæ ímmemor, afféctu urgénte non sexu, relícta perréxit domo. Díscite, vírgines, non circumcursáre
+        per aliénas ædes, non demorári in platéis, non áliquos in público miscére sermónes. María in domo sera,
+        festína in público, mansit apud cognátam suam tribus ménsibus.
+
+
+        Didicístis, vírgines, pudórem Maríæ: díscite humilitátem. Venit propínqua ad próximam, júnior ad seniórem:
+        nec solum venit, sed étiam prior salutávit. Decet enim, ut quanto cástior virgo, tanto humílior sit.
+        Nóverit deférre senióribus. Sit magístra humilitátis, in qua est proféssio castitátis. Est et causa
+        pietátis, est étiam norma doctrínæ. Contuéndum est enim, quia supérior venit ad inferiórem, ut inférior
+        adjuvétur: María ad Elísabeth, Christus ad Joánnem.
       en: >-
         When any one asketh another for credence, he is bound to give some reasonable ground. And so the Angel,
         when he announced to Mary the counsel of God, gave, as a proof, the conception of Elizabeth, then aged and
@@ -33,23 +55,8 @@ readings:
         religious duty. She went into the hill country in joyful haste. And is it not something that she went up
         into the hills? God was already in her womb, and her feeling bore her continually upward. The grace of the
         Holy Spirit knoweth no slow working.
-    responsory:
-      la: "R. Emítte Agnum, Dómine, Dominatórem terræ, * De Petra desérti ad montem fíliæ Sion.\nV. Osténde nobis, Dómine, misericórdiam tuam, et salutáre tuum da nobis.\nR. De Petra desérti ad montem fíliæ Sion."
-      en: "R. Send forth the Lamb, O Lord, the Ruler of the land; * From the rock in the wilderness unto the mount of the daughter of Zion.\nV. Show us thy mercy, O Lord, and grant us thy salvation.\nR. From the rock in the wilderness unto the mount of the daughter of Zion."
-    status: { la: verified, en: verified }
 
-  - nocturn: 2
-    isGospel: false
-    source: "St. Ambrose, Bishop of Milan, Commentary on Luke, Book 2, on Luke 1:39-47"
-    text:
-      la: >-
-        Díscite et vos, sanctæ mulíeres, sedulitátem, quam prægnántibus debeátis exhibére cognátis. Maríam, quæ
-        ante sola in íntimis penetrálibus versabátur, non a público virginitátis pudor, non ab stúdio aspéritas
-        móntium, non ab offício prolíxitas itíneris retardávit. In montána Virgo cum festinatióne, Virgo offícii
-        memor, injúriæ ímmemor, afféctu urgénte non sexu, relícta perréxit domo. Díscite, vírgines, non circumcursáre
-        per aliénas ædes, non demorári in platéis, non áliquos in público miscére sermónes. María in domo sera,
-        festína in público, mansit apud cognátam suam tribus ménsibus.
-      en: >-
+
         Godly women will learn from the example of the Mother of God to take a tender care of their kinswomen who
         are with child. In pursuance of this charity, Mary, who had hitherto remained alone at home, was not
         deterred by her maidenly shyness from entering on a public journey; she faced for this end the hardships
@@ -59,22 +66,8 @@ readings:
         from her not to idle about from house to house, to loiter in the streets, nor to take part in
         conversations in public. Mary, as she was hasteful to pass through the public roads, so was she slow again
         to enter on them she abode with her cousin about three months.
-    responsory:
-      la: "R. Roráte, cæli, désuper, et nubes pluant justum: * Aperiátur terra, et gérminet Salvatórem.\nV. Emítte Agnum, Dómine, Dominatórem terræ, de Petra desérti ad montem fíliæ Sion.\nR. Aperiátur terra, et gérminet Salvatórem."
-      en: "R. Drop down, ye heavens, from above, and let the skies pour down the Righteous One. * Let the earth open, and let her bring forth the Saviour.\nV. Send forth the Lamb, O Lord, the Ruler of the land, from the rock in the wilderness unto the mount of the daughter of Zion.\nR. Let the earth open, and let her bring forth the Saviour."
-    status: { la: verified, en: verified }
 
-  - nocturn: 3
-    isGospel: false
-    source: "St. Ambrose, Bishop of Milan, Commentary on Luke, Book 2, on Luke 1:39-47"
-    text:
-      la: >-
-        Didicístis, vírgines, pudórem Maríæ: díscite humilitátem. Venit propínqua ad próximam, júnior ad seniórem:
-        nec solum venit, sed étiam prior salutávit. Decet enim, ut quanto cástior virgo, tanto humílior sit.
-        Nóverit deférre senióribus. Sit magístra humilitátis, in qua est proféssio castitátis. Est et causa
-        pietátis, est étiam norma doctrínæ. Contuéndum est enim, quia supérior venit ad inferiórem, ut inférior
-        adjuvétur: María ad Elísabeth, Christus ad Joánnem.
-      en: >-
+
         As the modesty of Mary is a pattern for the imitation of all maidens, so also is her humility. She went to
         see Elizabeth, like one cousin going to visit another, and as the younger to the elder. Not only did she
         first go, but she first saluted Elizabeth. Now, the purer a virgin is, the humbler ought she to be. She
@@ -83,6 +76,6 @@ readings:
         principal rule of its teaching. In this act of the Virgin then we see the greater going to visit and to
         succour the lesser: Mary to Elizabeth, Christ to John.
     responsory:
-      la: "R. Germinavérunt campi erémi germen odóris Israël: quia ecce Deus noster cum virtúte véniet, * Et splendor ejus cum eo.\nV. Ex Sion spécies decóris ejus: Deus noster maniféste véniet.\nR. Et splendor ejus cum eo."
-      en: "R. The waste places have brought forth sweet-smelling buds for Israel; for, behold, our God will come with power. * And His brightness is with Him.\nV. Out of Zion the perfection of beauty, our God shall come manifestly.\nR. And His brightness is with Him."
+      la: "R. Emítte Agnum, Dómine, Dominatórem terræ, * De Petra desérti ad montem fíliæ Sion.\nV. Osténde nobis, Dómine, misericórdiam tuam, et salutáre tuum da nobis.\nR. De Petra desérti ad montem fíliæ Sion."
+      en: "R. Send forth the Lamb, O Lord, the Ruler of the land; * From the rock in the wilderness unto the mount of the daughter of Zion.\nV. Show us thy mercy, O Lord, and grant us thy salvation.\nR. From the rock in the wilderness unto the mount of the daughter of Zion."
     status: { la: verified, en: verified }

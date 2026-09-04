@@ -10,8 +10,16 @@
 #
 # Lectio1's Gospel citation (Luke 13:6-17) is a bare incipit with no full
 # pericope text given, so only the homily portion is authored, same
-# convention as the other two September Ember days. Kept as 3 separate
-# readings, each with its own genuinely distinct proper responsory.
+# convention as the other two September Ember days.
+#
+# Recombined into one reading 2026-09-04 (previously kept as 3 separate
+# readings): Lectio1-3 are one continuous, unbroken Gregory homily, split
+# only to fill the fixed 3-lesson Nocturn slot count — same fix already
+# applied to ember-september-friday.yml/ember-september-wednesday.yml the
+# same day, see either file's own header for the fuller rationale.
+# Responsory is Lectio1's own; Lectio2/3's own distinct responsories
+# (drawn from TemporaM/093-0's own Tobias-sermon texts) are dropped, same
+# as every other collapsed-reading case in this store.
 id: ember-september-saturday
 readings:
   - nocturn: 1
@@ -24,6 +32,23 @@ readings:
         audístis: ficúlneam infructuósam, et mulíerem curvam; et utríque rei est píetas impénsa. Illud autem dixit
         per similitúdinem: istud egit per exhibitiónem. Sed hoc signíficat ficúlnea infructuósa, quod múlier
         inclináta; et hoc ficúlnea reserváta, quod múlier erécta.
+
+
+        Quid arbor fici, nisi humánam natúram desígnat? Quid múlier inclináta, nisi eámdem natúram significándo
+        denúntiat? Quæ et bene plantáta est sicut ficus, et bene creáta sicut múlier; sed in culpam própria sponte
+        lapsa, neque fructum servat operatiónis, neque statum rectitúdinis. Ad peccátum quippe ex voluntáte
+        córruens, quia fructum obediéntiæ ferre nóluit, statum rectitúdinis amísit. Quæ ad Dei similitúdinem
+        cóndita, dum in sua dignitáte non pérstitit, quod plantáta vel creáta fúerat, serváre contémpsit. Tértio
+        dóminus víneæ ad ficúlneam venit, quia natúram géneris humáni ante legem, sub lege, sub grátia, exspéctando,
+        admonéndo, visitándo requisívit.
+
+
+        Venit ante legem, quia per naturálem intelléctum quid unusquísque exémplo sui, quáliter erga próximum ágere
+        debuísset, innótuit. Venit in lege, quia præcipiéndo dócuit. Venit post legem per grátiam, quia pietátis
+        suæ præséntiam exhibéndo monstrávit. Sed tamen in tribus annis fructum se non invenísse conquéritur: quia
+        quorúmdam pravórum mentes nec inspiráta lex naturális córrigit, nec præcépta erúdiunt, nec incarnatiónis
+        ejus mirácula convértunt. Quid vero per cultórem víneæ, nisi præpositórum ordo exprímitur? Qui dum præsunt
+        Ecclésiæ, nimírum Domínicæ víneæ curam gerunt.
       en: >-
         Our Lord and Redeemer speaketh unto us sometimes by words, and sometimes by deeds, sometimes one thing by
         words, and another by deeds, and sometimes the same thing both by word and deed. In the portion of the
@@ -32,24 +57,8 @@ readings:
         in the one by a parable, in the other by an example. But the barren fig-tree signifieth the same thing as
         doth the woman bowed together, and the patience shown to the fig-tree the same thing as doth the healing
         of the woman bowed together.
-    responsory:
-      la: "R. Tribulatiónes civitátum audívimus, quas passæ sunt, et defécimus: timor et hebetúdo mentis cécidit super nos et super líberos nostros: ipsi montes nolunt recípere fugam nostram: * Dómine, miserére.\nV. Peccávimus cum pátribus nostris, injúste égimus, iniquitátem fécimus.\nR. Dómine, miserére."
-      en: "R. We have heard of the tribulation of those cities, which they have suffered, and we have fainted. Fear and confusion of mind are fallen upon us. Even the mountains will not give us a refuge. * Lord, have mercy.\nV. We have sinned like our forefathers, we have done unjustly, and wrought iniquity.\nR. Lord, have mercy."
-    status: { la: verified, en: verified }
 
-  - nocturn: 2
-    isGospel: false
-    source: "Pope St. Gregory the Great, Homily 31 on the Gospels, on Luke 13:6-17"
-    text:
-      la: >-
-        Quid arbor fici, nisi humánam natúram desígnat? Quid múlier inclináta, nisi eámdem natúram significándo
-        denúntiat? Quæ et bene plantáta est sicut ficus, et bene creáta sicut múlier; sed in culpam própria sponte
-        lapsa, neque fructum servat operatiónis, neque statum rectitúdinis. Ad peccátum quippe ex voluntáte
-        córruens, quia fructum obediéntiæ ferre nóluit, statum rectitúdinis amísit. Quæ ad Dei similitúdinem
-        cóndita, dum in sua dignitáte non pérstitit, quod plantáta vel creáta fúerat, serváre contémpsit. Tértio
-        dóminus víneæ ad ficúlneam venit, quia natúram géneris humáni ante legem, sub lege, sub grátia, exspéctando,
-        admonéndo, visitándo requisívit.
-      en: >-
+
         What is the fig-tree a type, but of mankind? Of what is the woman bowed together by a spirit of infirmity a
         type, but of the same mankind? Man was originally placed in a garden like the fig-tree, and created upright
         like the woman, but man fell away by his own willful fault like the fig-tree he brought forth no fruit like
@@ -58,23 +67,8 @@ readings:
         continued not in honour, but cast aside the state wherein it had been placed and made. The lord of the
         vineyard came thrice to the fig-tree, for God hath come in hope, and in warning, seeking fruit from mankind
         under three successive dispensations, that is to say, before the law, under the law, and under grace.
-    responsory:
-      la: "R. Audíte, fílii mei, patrem vestrum: † servíte Dómino in veritáte, et inquírite ut faciátis quæ plácita sunt illi: et fíliis vestris mandáte * Ut fáciant justítias et eleemósynas.\nV. Ut sint mémores Dei, et benedícant eum in omni témpore † in veritáte, et in tota virtúte sua.\nR. Ut fáciant justítias et eleemósynas."
-      en: "R. Hearken my children, to your father: serve the Lord in truth, and seek to do the things that please him: and command your children: * That they do justice and almsdeeds.\nV. That they be mindful of God, and bless him at all times in truth, and with all their power.\nR. That they do justice and almsdeeds."
-    status: { la: verified, en: verified }
 
-  - nocturn: 3
-    isGospel: false
-    source: "Pope St. Gregory the Great, Homily 31 on the Gospels, on Luke 13:6-17"
-    text:
-      la: >-
-        Venit ante legem, quia per naturálem intelléctum quid unusquísque exémplo sui, quáliter erga próximum ágere
-        debuísset, innótuit. Venit in lege, quia præcipiéndo dócuit. Venit post legem per grátiam, quia pietátis
-        suæ præséntiam exhibéndo monstrávit. Sed tamen in tribus annis fructum se non invenísse conquéritur: quia
-        quorúmdam pravórum mentes nec inspiráta lex naturális córrigit, nec præcépta erúdiunt, nec incarnatiónis
-        ejus mirácula convértunt. Quid vero per cultórem víneæ, nisi præpositórum ordo exprímitur? Qui dum præsunt
-        Ecclésiæ, nimírum Domínicæ víneæ curam gerunt.
-      en: >-
+
         It came before the law, in that by natural understanding, He let all know by example of Himself, what and
         how they should do toward their neighbor. In the law He came teaching. After the law He came by grace,
         opening, manifesting His merciful Presence. But after all these three years He yet hath to complain that He
@@ -84,6 +78,6 @@ readings:
         For these are they who have the government in the Church, and are therefore truly called the dressers of
         the Lord's vineyard.
     responsory:
-      la: "R. Benedícat te Dóminus in virtúte sua, † qui per te ad níhilum redégit inimícos nostros: * Ut non defíciat laus tua de ore hóminum.\nV. Benedíctus Dóminus qui creávit cælum et terram: † quia hódie nomen tuum ita magnificávit.\nR. Ut non defíciat laus tua de ore hóminum."
-      en: "R. The Lord bless you by His power, Who hath brought our enemies to nought through you. * And may the praise of you never fail from the mouth of men.\nV. Blessed be the Lord, Who hath created the heaven and the earth, because that He hath so glorified your name this day.\nR. And may the praise of you never fail from the mouth of men."
+      la: "R. Tribulatiónes civitátum audívimus, quas passæ sunt, et defécimus: timor et hebetúdo mentis cécidit super nos et super líberos nostros: ipsi montes nolunt recípere fugam nostram: * Dómine, miserére.\nV. Peccávimus cum pátribus nostris, injúste égimus, iniquitátem fécimus.\nR. Dómine, miserére."
+      en: "R. We have heard of the tribulation of those cities, which they have suffered, and we have fainted. Fear and confusion of mind are fallen upon us. Even the mountains will not give us a refuge. * Lord, have mercy.\nV. We have sinned like our forefathers, we have done unjustly, and wrought iniquity.\nR. Lord, have mercy."
     status: { la: verified, en: verified }
