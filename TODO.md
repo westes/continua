@@ -37,12 +37,6 @@ across every hour and content type in this app.
      Ieremiæ") has never been transcribed anywhere in this app (the 7 existing Lauds canticles,
      `hours/lauds-canticles.ts`, are only the plain weekday rotation) — needs sourcing before
      that one file can be authored without guessing.
-   - Lent's own seasonal office bundle: Lauds' capitulum/responsory/versicle are now verified
-     (2026-09-04), but its own hymn (`lauds-hymn-lent.yml`) and Vespers' whole bundle
-     (`vespers-capitulum-lent.yml`/`vespers-responsory-lent.yml`/`vespers-hymn-lent.yml`/
-     `vespers-versicle-lent.yml`) plus both hours' `-doxology-per-annum` files are all still
-     `draft` — real content already present, just never live-query-verified. Noticed in passing
-     while fixing the Lauds side; not fixed itself.
 
 3. **New features (not content mechanism)** — genuinely new product surface, not something a
    content pass is blocked on; each needs its own design pass, not just implementation:
@@ -5636,3 +5630,16 @@ its own "outranks an active octave" test (previously asserted "Duplex I Class", 
 now live-verified rank is Duplex II Class); `tests/calendar/transfer.test.ts`'s St. Felix I test
 (Trinity Sunday now the real winner on 2026-05-31, Queenship/post-pentecost-01/Pentecost's octave
 all commemorated in return). `npm test` (2025 passed) and `tsc --noEmit` both pass.
+
+### Lent's remaining Vespers/Lauds draft content, verified (2026-09-04)
+
+Closed the rest of the "Lent's own seasonal office bundle" gap flagged in the entry above the same
+day: `vespers-{capitulum,responsory,hymn,versicle}-lent.yml` and both hours' own
+`-doxology-per-annum` files were all real content, just never marked verified. Live-verified
+Vespers' own bundle against a plain Lenten Wednesday (2026-03-04) — Joel 2:17 chapter, "Scápulis
+suis obumbrábit tibi" responsory, "Audi, benígne Cónditor" hymn (including its own claimed Monastic
+word-swap, confirmed live), shared "Ángelis suis" versicle. `lauds-hymn-lent.yml`'s own content
+("Jam Christe sol justítiæ") and its doxology were already seen live earlier the same session (while
+checking `lauds-hymn-saturday.yml`'s real content against the same 2026-02-28 Lenten Ember Saturday
+date) — byte-identical, just needed the status flipped. All 8 files now `verified`; no more draft
+Lent content anywhere in this app. `npm test` (2025 passed) and `tsc --noEmit` both pass.
