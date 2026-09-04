@@ -462,7 +462,24 @@ function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
   // substitution marker (live-checked 2026-09-03) — unlike the Advent/
   // Paschaltide seasonal hymns above, whose Monastic forms are each fixed,
   // non-swapping text, so only this final fallback needs the swap.
-  const body = resolveCommon('matins-hymn-ferial');
+  //
+  // Weekday-specific (2026-09-04): the source's plain Matins hymn genuinely
+  // varies Monday-Saturday (the classic "week of hymns" — Somno reféctis
+  // ártubus, Consors patérni lúminis, Rerum Creátor óptime, Nox atra rerum,
+  // Tu Trinitátis Únitas, Summæ Deus cleméntiæ), not one fixed year-round
+  // text — a real gap uncovered when the user noticed Friday showing
+  // Monday's own hymn, and Saturday's own gap found the same day by
+  // asking what actually renders on a real Ember Saturday (see
+  // matins-hymn-ferial.yml's header for why Sunday alone still falls to
+  // the plain `matins-hymn-ferial` id as a documented placeholder).
+  const weekdayFerialHymnIds: Partial<Record<Weekday, string>> = {
+    tuesday: 'matins-hymn-ferial-tuesday',
+    wednesday: 'matins-hymn-ferial-wednesday',
+    thursday: 'matins-hymn-ferial-thursday',
+    friday: 'matins-hymn-ferial-friday',
+    saturday: 'matins-hymn-ferial-saturday',
+  };
+  const body = resolveCommon(weekdayFerialHymnIds[day.weekday] ?? 'matins-hymn-ferial');
   const doxology = resolveCommon(getHymnDoxologyId(day, 'matins-hymn-doxology-per-annum'));
   return appendDoxology(body, doxology);
 }

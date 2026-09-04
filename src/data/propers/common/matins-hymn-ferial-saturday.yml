@@ -1,0 +1,101 @@
+# Saturday's own plain ferial Matins hymn ("Summæ Deus cleméntiæ" —
+# Monastic 1617's own "Day6 HymnusM", genuinely distinct text from the
+# secular "Day6 Hymnus"/"Summæ Parens cleméntiæ", not just a word-swap —
+# Psalterium/Special/Matutinum Special.txt, Day0=Sunday..Day6=Saturday).
+# Live-verified 2025-09-20 (a September Ember Saturday winning outright
+# with nothing else in play, `{ex Psalterio secundum tempora}` in the
+# source, i.e. genuinely the plain per-weekday text).
+#
+# Reached whenever a Saturday is neither Marian (see calendar/index.ts's
+# applyMarianSaturday — an active octave, a real winning saint, or any
+# other non-`ordinary-feria` category all suppress it) nor covered by a
+# season's own seasonSuffix hymn (Lent/Advent/Paschaltide's own Saturday
+# already use their season's hymn first) — chiefly September/Pentecost's
+# own Ember Saturday when nothing else wins, same real gap already fixed
+# for Tuesday-Friday (see matins-hymn-ferial.yml's own header) but missed
+# for Saturday at the time: reported by the user 2026-09-04 by asking
+# what actually renders on Ember Saturday and a Saturday where a real
+# saint outranks a merely-commemorated Vigil (Aug 8 2026) -- the second
+# case turned out fine (the winning saint's own Common hymn already
+# applies correctly), but this one was still silently falling to Monday's
+# text via the `matins-hymn-ferial` placeholder.
+#
+# Closing doxology stanza intentionally omitted — shared across every
+# weekday via matins-hymn-doxology-per-annum.yml (see hours/matins.ts),
+# same convention as the Tuesday-Friday siblings; the live source's own
+# closing stanza here is byte-identical to that shared text anyway.
+id: matins-hymn-ferial-saturday
+text:
+  la: >-
+    Summæ Deus cleméntiæ,
+
+    Mundíque Factor máchinæ,
+
+    Unus potentiáliter,
+
+    Trinúsque personáliter:
+
+
+    Nostros pius cum cánticis
+
+    Fletus benígne súscipe:
+
+    Quo corde puro sórdibus
+
+    Te perfruámur lárgius.
+
+
+    Lumbos, jecúrque mórbidum
+
+    Adúre igni cóngruo,
+
+    Accíncti ut sint pérpetim,
+
+    Luxu remóto péssimo.
+
+
+    Ut quique horas nóctium
+
+    Nunc concinéndo rúmpimus,
+
+    Donis beátæ pátriæ
+
+    Ditémur omnes áffatim.
+  en: >-
+    Great God of boundless mercy hear;
+
+    Thou Ruler of this earthly sphere;
+
+    In substance one, in persons three,
+
+    Dread Trinity in Unity!
+
+
+    Do thou in love accept our lays
+
+    Of mingled penitence and praise;
+
+    And set our hearts from error free,
+
+    More fully to rejoice in thee.
+
+
+    Our reins and hearts in pity heal,
+
+    And with thy chastening fires anneal;
+
+    Gird Thou our loins, each passion quell,
+
+    And every harmful lust expel.
+
+
+    Now as our anthems, upward borne,
+
+    Awake the silence of the morn,
+
+    Enrich us with thy gifts of grace,
+
+    From heaven, thy blissful dwelling-place!
+status:
+  la: verified
+  en: verified

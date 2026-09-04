@@ -774,7 +774,9 @@ describe('resolveOrdo("matins", ...) Assumption-octave hymn fallback (2026-08-22
   });
 
   it("a plain ferial day outside the octave still gets the plain ferial hymn, unaffected", () => {
-    expect(hymnLatin(FERIAL_DATE)).toContain('Somno');
+    // FERIAL_DATE (2026-12-01) is a Tuesday -- see the identical note on
+    // the other FERIAL_DATE hymn assertion below.
+    expect(hymnLatin(FERIAL_DATE)).toContain('Consors patérni lúminis');
   });
 });
 
@@ -1072,7 +1074,11 @@ describe('resolveOrdo("matins", ...) Common-of-an-Apostle hymn + invitatory (202
   });
 
   it('a plain ferial day is unaffected -- still falls through to the plain ferial hymn and invitatory antiphon', () => {
-    expect(hymnLatin(FERIAL_DATE)).toContain('Somno');
+    // FERIAL_DATE (2026-12-01) is a Tuesday, so this is Tuesday's own
+    // ferial hymn ("Consors patérni lúminis") since 2026-09-04's weekday-
+    // specific hymn fix -- previously every weekday fell through to the
+    // same (mislabeled) Monday text ("Somno reféctis ártubus").
+    expect(hymnLatin(FERIAL_DATE)).toContain('Consors patérni lúminis');
     expect(invitatoryFullLatin(FERIAL_DATE)).toContain('Veníte');
     expect(invitatoryFullLatin(FERIAL_DATE)).not.toContain('Regem Apostolórum');
   });

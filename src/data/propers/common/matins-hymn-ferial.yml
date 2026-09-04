@@ -1,9 +1,24 @@
-# Live-verified (Monastic Tridentinum 1617, 2026-12-15, a plain ferial
-# Tuesday) — "{ex Psalterio secundum tempora}" in the source, meaning this
-# is itself one of several season-variable hymns rather than a true fixed
-# year-round text; only this one (evidently the ordinary-time/per-annum
-# form) is authored so far. Seasonal variants deferred (see TODO.md),
-# same incremental-content pattern as everywhere else in this project.
+# This is Monday's own plain ferial Matins hymn (Psalterium/Special/
+# Matutinum Special.txt's "Day1 Hymnus" — Day0=Sunday .. Day6=Saturday).
+# The file's original comment mislabeled it as a single fixed
+# "ferial" text and misattributed its live-verification date (2026-12-15)
+# to "a plain ferial Tuesday" — that date is in fact a Tuesday, but the
+# text itself is Monday's (Monastic 1617's own "Day1 HymnusM" swaps
+# "omni témpore" -> "in perpetuum" in the closing line, matching what's
+# below). Fixed 2026-09-04 after the user reported Friday showing this
+# same text instead of Friday's own hymn: `hours/matins.ts`'s
+# `resolveMatinsHymn` now looks up a weekday-specific id
+# (`matins-hymn-ferial-tuesday`/`-wednesday`/`-thursday`/`-friday`/
+# `-saturday`) for those five days; this file (`matins-hymn-ferial`, no
+# day suffix) is still used directly for Monday, and — as a deliberate,
+# documented placeholder, not yet its own real content — for Sunday too:
+# Sunday's own real Matins hymn selection is a genuinely more complex,
+# not-yet-modeled two-hymn mechanism (Day0 Hymnus vs Hymnus1, live source
+# tags H-MatDom1/H-MatDom4, purpose unconfirmed). Saturday's own gap
+# (superseded on nearly every ordinary Saturday by Marian Saturday, not a
+# full Little Office — see matins-hymn-ferial-saturday.yml and
+# calendar/index.ts's applyMarianSaturday) was closed the same day. See
+# TODO.md's 2026-09-04 entries.
 #
 # The closing doxology stanza is split out into
 # matins-hymn-doxology-per-annum.yml (see hours/matins.ts) — the source
