@@ -5304,3 +5304,13 @@ still surfaces as all 3 of its lessons even when merely commemorated, where the 
 a commemorated feria at exactly one lesson (its own Lectio 1 only) — same shape of fix as this
 one, not yet done.
 
+### Ezekiel spelling fix in the book-incipit heading (2026-09-04)
+
+User caught `bible-book-incipits.ts`'s `ezek` entry reading "A reading from the Prophecy of
+**Ezechiel**" — the Vulgate/Douay-Rheims spelling, inconsistent with this app's own generated
+heading text (which otherwise uses modern English book names, see that file's own header note on
+"Saint Paul" vs "blessed Paul"). Changed to "Ezekiel". Left every other in-corpus "Ezechiel"
+alone (scripture verse text, martyrology narrative, homily quotes under `src/data/scripture/`,
+`src/data/martyrology/`, `src/data/propers/`) — those are quoted Douay-Rheims translation prose,
+where the traditional spelling is correct as part of the source text, not this app's own
+generated label.

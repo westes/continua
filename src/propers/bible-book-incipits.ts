@@ -58,7 +58,7 @@ export const BOOK_INCIPITS: Record<string, { la: string; en: string }> = {
   jer: { la: 'Léctio Jeremíæ Prophétæ', en: 'A reading from the Prophecy of Jeremias' },
   lam: { la: 'Léctio Threnórum Jeremíæ Prophétæ', en: 'A reading from the Lamentations of Jeremias the Prophet' },
   bar: { la: 'Léctio Baruch Prophétæ', en: 'A reading from the Prophecy of Baruch' },
-  ezek: { la: 'Léctio Ezechiélis Prophétæ', en: 'A reading from the Prophecy of Ezechiel' },
+  ezek: { la: 'Léctio Ezechiélis Prophétæ', en: 'A reading from the Prophecy of Ezekiel' },
   dan: { la: 'Léctio Daniélis Prophétæ', en: 'A reading from the Prophecy of Daniel' },
   // Minor prophets
   osee: { la: 'Léctio Osee Prophétæ', en: 'A reading from the Prophecy of Osee' },
