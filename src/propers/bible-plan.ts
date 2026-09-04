@@ -22,6 +22,9 @@ import { resolvePassages, type ScriptureCitation } from './octave-readings';
 import { getResponsoryForBook } from './matins-responsories';
 import { getBookIncipit } from './bible-book-incipits';
 import { canonicalBook } from '../scripture';
+import { adventStart } from '../calendar/temporal';
+import { addDays, daysBetween } from '../calendar/date-math';
+import type { Weekday } from '../calendar/types';
 
 const GOSPEL_BOOKS = new Set(['matt', 'mark', 'luke', 'john']);
 
@@ -154,10 +157,54 @@ for (const mod of Object.values(modules)) {
   }
 }
 
+const WEEKDAYS: Weekday[] = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+
+/** Advent's own reading plan (`advent-1-sunday` through `advent-4-saturday`,
+ * 28 rows, one per day of a full 4-week Advent) is longer than Advent
+ * itself ever actually runs: Advent's last real day is Dec 23 (Dec 24 is
+ * the Vigil of Christmas's own temporal id, calendar/temporal-id.ts) but
+ * Advent 1 Sunday falls anywhere from Nov 27 to Dec 3 (the Sunday nearest
+ * Nov 30) — even in the longest possible Advent (Advent 1 Sunday = Nov 27,
+ * 27 real days before Dec 24) the 28th planned reading never lands on its
+ * own natural date, and in the shortest (Advent 1 Sunday = Dec 3, 21 real
+ * days) the entire last week's worth (7 readings) never does. Rather than
+ * silently drop that content, whatever didn't land on its own natural date
+ * carries forward one reading per day starting Christmas Day itself,
+ * pooled alongside whatever Christmastide's own calendar-dated rows
+ * already have for that day (never replacing them) — same "every
+ * contributing source pools, none override" design as everywhere else in
+ * this file and in hours/matins.ts's own reading-pool assembly. User
+ * direction, 2026-09-05: "for advent only, we need to show all of those
+ * chapters," accepting the spillover into Christmastide as the trade-off.
+ *
+ * Real day-by-day for `date`'s own year: the pool has no calendar-year
+ * awareness anywhere else (temporal ids are already year-independent), so
+ * this is the one place in this file that computes real dates. */
+function adventCarryoverReadings(date: string): BiblePlanReading[] {
+  const year = Number(date.slice(0, 4));
+  const christmasDay = `${year}-12-25`;
+  const daysAfterChristmas = daysBetween(christmasDay, date);
+  if (daysAfterChristmas < 0) return [];
+
+  const vigilOfChristmas = `${year}-12-24`;
+  const start = adventStart(year);
+  const skippedKeys: string[] = [];
+  for (let i = 0; i < 28; i++) {
+    if (addDays(start, i) >= vigilOfChristmas) {
+      const week = Math.floor(i / 7) + 1;
+      skippedKeys.push(`advent-${week}-${WEEKDAYS[i % 7]}`);
+    }
+  }
+  const key = skippedKeys[daysAfterChristmas];
+  return key ? (readingsByTemporalKey.get(key) ?? []) : [];
+}
+
 /** Every reading this plan contributes to Matins' pooled reading list for
- * `date` — both the (temporalId, weekday) row and the fixed-calendar-date
- * row (if any), pooled together rather than one overriding the other, since
- * both can genuinely apply to the same date (see this file's header).
+ * `date` — the (temporalId, weekday) row, the fixed-calendar-date row (if
+ * any), and (Christmas Day onward) any Advent reading bumped past its own
+ * natural date by a short Advent that year (see `adventCarryoverReadings`)
+ * — all pooled together rather than one overriding another, since more
+ * than one can genuinely apply to the same date (see this file's header).
  * Empty array, not undefined, when nothing's authored for this day yet —
  * every caller already treats "no readings" as a valid, renderable state
  * (see hours/matins.ts), so there's no separate "missing entirely" signal
@@ -165,5 +212,6 @@ for (const mod of Object.values(modules)) {
 export function getBiblePlanReadings(temporalId: string, weekday: string, date: string): BiblePlanReading[] {
   const byTemporal = readingsByTemporalKey.get(`${temporalId}-${weekday}`) ?? [];
   const byCalendarDate = readingsByCalendarDate.get(date.slice(5)) ?? [];
-  return [...byTemporal, ...byCalendarDate];
+  const carryover = adventCarryoverReadings(date);
+  return [...byTemporal, ...byCalendarDate, ...carryover];
 }

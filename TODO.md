@@ -6022,3 +6022,36 @@ real `Lev 1` responsory text, `palm-sunday`/Sunday resolves real `Num 25-27` tex
 audit re-run, clean. Remaining 10, the true final gap: `rom` plus 9 books with no citation
 anywhere in Tempora or Sancti (`bar`, Josue, Judices, Ruth, 1-2 Chronicles, Ezra, Nehemiah,
 Deuteronomy).
+
+### Advent reading-plan carryover into Christmastide (2026-09-05)
+
+User-flagged wrinkle in `data/hours/bible-plan/*.yml`'s own Isaiah plan: it's authored as a full
+4-week Advent (`advent-1-sunday` through `advent-4-saturday`, 28 rows), but real Advent is never
+that long. Advent's last real day is always Dec 23 (Dec 24 is the Vigil of Christmas's own
+temporal id, `calendar/temporal-id.ts`), while Advent 1 Sunday itself — the Sunday nearest Nov 30
+— falls anywhere from Nov 27 to Dec 3. Even the *longest* possible Advent (Nov 27, 27 real days)
+is one short of the full 28-row plan; the *shortest* (Dec 3, 21 real days) is a whole week short.
+Every single year, at least the plan's last row never lands on its own natural date — not just
+"most years," as the request first put it.
+
+Fixed in `propers/bible-plan.ts`'s new `adventCarryoverReadings`: whatever doesn't land on its own
+natural date now carries forward one reading per day starting Christmas Day itself, pooled
+alongside whatever Christmastide's own calendar-dated rows already have for that day (never
+replacing them) — same "every contributing source pools, none override" design already used
+throughout this file and `hours/matins.ts`'s own reading-pool assembly. Computed live from
+`calendar/temporal.ts`'s `adventStart(year)` for each date's own year (the one place in this file
+that needs real calendar-year awareness, since every other lookup here is year-independent); no
+new content authoring needed, since the Isaiah rows were already there, just never reachable on
+their own natural date in a short year.
+
+User's own framing accepted as the trade-off: "for advent only, we need to show all of those
+chapters" — i.e. every planned reading should surface somewhere, even if that means spilling into
+Christmastide, rather than silently dropping the tail end of a short year's Advent plan.
+
+Live-verified across the full spread of possible Advent-1-Sunday dates (`adventStart` for
+2020-2035 spans exactly the Nov 27 - Dec 3 range): 2028 (Advent 1 Sunday = Dec 3, the latest/
+shortest case) carries all 7 of week 4's Isaiah readings forward across Dec 25-31 in order; 2027/
+2032 (Advent 1 Sunday = Nov 28, near-earliest/longest) carry only the last 2. Added 4 permanent
+tests to `tests/propers/bible-plan.test.ts` covering both extremes, the pooling-not-replacing
+behavior, and that nothing carries over before Christmas Day itself. `npm test` (2029 passed,
++4 new) and `tsc --noEmit` both pass.

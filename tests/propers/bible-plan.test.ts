@@ -38,3 +38,40 @@ describe('getBiblePlanReadings label uses the same book-alias normalization as v
     expect(readings[0]?.label?.la).toBe('Léctio libri Judith');
   });
 });
+
+// The Advent reading plan has 28 rows (advent-1-sunday through
+// advent-4-saturday, a full 4-week Advent), but real Advent is never that
+// long -- its last real day is always Dec 23 (Dec 24 is the Vigil of
+// Christmas's own temporal id), while Advent 1 Sunday itself lands anywhere
+// from Nov 27 to Dec 3. Even the longest possible Advent (Nov 27) is 27
+// real days, one short of the full plan; the shortest (Dec 3) is 21, a
+// whole week short. Whatever doesn't land on its own natural date carries
+// forward one reading per day starting Christmas Day, pooled alongside
+// whatever Christmastide's own calendar-dated rows already have. User
+// direction, 2026-09-05: "for advent only, we need to show all of those
+// chapters," accepting the spillover into Christmastide as the trade-off.
+describe('Advent reading-plan carryover into Christmastide', () => {
+  it('a short Advent (2028: Advent 1 Sunday = Dec 3, latest possible) carries all 7 of week 4\'s readings forward, one per day', () => {
+    const isaiahCitations = [25, 26, 27, 28, 29, 30, 31].map(
+      (day) => getBiblePlanReadings('christmas-octave-sunday', 'monday', `2028-12-${day}`).find((r) => r.citation.la?.startsWith('Isa'))?.citation.la,
+    );
+    expect(isaiahCitations).toEqual(['Isa 46-48', 'Isa 49-51', 'Isa 52-54', 'Isa 55-57', 'Isa 58-60', 'Isa 61-63', 'Isa 64-66']);
+  });
+
+  it('a long Advent (2027: Advent 1 Sunday = Nov 28, near-earliest) carries only the last 2 readings forward', () => {
+    const isaiahCitations = [25, 26, 27, 28].map(
+      (day) => getBiblePlanReadings('christmas-octave-sunday', 'monday', `2027-12-${day}`).find((r) => r.citation.la?.startsWith('Isa'))?.citation.la,
+    );
+    expect(isaiahCitations).toEqual(['Isa 61-63', 'Isa 64-66', undefined, undefined]);
+  });
+
+  it('carried-over readings pool alongside Christmastide\'s own calendar-dated rows, never replacing them', () => {
+    const readings = getBiblePlanReadings('christmas-octave-sunday', 'friday', '2028-12-25');
+    expect(readings.map((r) => r.citation.la)).toEqual(['Cant 1', 'Isa 46-48']);
+  });
+
+  it('does not carry anything over before Christmas Day', () => {
+    const readings = getBiblePlanReadings('vigil-of-christmas', 'thursday', '2028-12-24');
+    expect(readings.find((r) => r.citation.la?.startsWith('Isa'))).toBeUndefined();
+  });
+});
