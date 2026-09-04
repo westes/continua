@@ -25,9 +25,13 @@ across every hour and content type in this app.
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
-   - Matins sanctoral-side readings: the per-book Matins responsory pool has only one book
-     seeded (`isa`) — needs expanding. Bible-plan TSV content also isn't yet in a test table
-     (see "Bible-plan TSV — bulk conversion done" below).
+   - Matins Nocturn 2/3 responsory pools (both new, 2026-09-04 — see "Matins responsory pools:
+     per-book expansion + new per-Common-category pool" below): the per-book pool now covers 3
+     of ~66 books (`isa`, `gen`, `jer`); the new per-Common-category pool covers 19/19 real
+     Commune categories (every category actually used by a saint except angel/evangelist/vigil,
+     which have no Commune responsory file to source from) — this is the one that closes most
+     of the 272-of-355 nocturn-readings files that had no `responsory` at all. Bible-plan TSV
+     content also isn't yet in a test table (see "Bible-plan TSV — bulk conversion done" below).
    - Lauds/Vespers duplex-majus+ Common-category psalmody: all 24 `SaintRecord.common`
      categories are resolved (Vespers 10/10 real category files, Lauds 9/10 — see
      "Lauds/Vespers duplex-majus+ Common-category psalmody" below and its follow-up entry) with
@@ -5683,3 +5687,52 @@ and octaves — Easter's own, the Patronage of St. Joseph's, Ascension's, Pentec
 correctly suppress suffrages for other, pre-existing reasons and would have made a false negative
 look like a false positive). `npm test` (2025 passed, no pre-existing tests exercised this path at
 all) and `tsc --noEmit` both pass.
+
+### Matins responsory pools: per-book expansion + new per-Common-category pool (2026-09-04)
+
+User request: real Matins responsories for each Bible book (sourced from the reference engine),
+and for the patristic (Nocturn 2/3 homiletic) readings too. Investigation found the patristic side
+was a much bigger, previously-untracked gap than the per-book pool's own "expand beyond `isa`" item
+already on this list: 272 of 355 `data/propers/nocturn-readings/*.yml` files have no `responsory`
+field at all — most of the calendar, not a handful of stragglers.
+
+**Per-book pool** (`data/hours/matins-responsories-by-book.yml`): added `gen` (2 entries, Latin/
+Tempora/Quadp1-1.txt — Monday of Septuagesima week, the historical start of the Genesis "Historia"
+cycle, a plain ferial with no overriding feast; only 2 entries because the source's own English
+translation is missing a 3rd) and `jer` (3 entries, Latin/Tempora/Quad6-2.txt — Tuesday of Holy
+Week, "Feria privilegiata," genuine ferial Jeremiah/Lamentations content). Deliberately did *not*
+seed `jer` from Pent02-5.txt despite it citing Jeremiah too — that day's Rank is Sacred Heart
+(Duplex I classis), so its Responsory1-3 are the feast's own proper text, not genuine ferial-book
+content, even though its Lectio verses are borrowed from Jeremiah. Still only 3 of ~66 books used
+in the user's own bible-plan seeded (`isa`, `gen`, `jer`) — the rest is deferred bulk content, one
+real live-sourced query per book, same pattern.
+
+**New per-Common-category pool** (`data/hours/matins-responsories-by-common.yml` +
+`getResponsoryForCommon` in `src/propers/matins-responsories.ts`, sibling to the existing
+`getResponsoryForBook`): keyed by `SaintRecord.common` instead of a scripture book, same "loose
+match, cycle by index" design. Unlike the per-book pool (scattered one query per book, across the
+whole liturgical year), a Commune category's responsories live in one static file each
+(`divinum-officium-reference`'s `web/www/horas/{Latin,English}/Commune/CN.txt`) — 9 files
+(`C1`-`C8`, `C11`) transcribed directly, cover all 19 of vu's real `common:` category ids (several
+are genuine aliases, confirmed by reading each candidate file's own `@Commune/CX` inheritance line
+rather than guessed — e.g. `common-of-a-confessor-doctor`/`-pope` inherit C4 unchanged, same pool
+as `common-of-a-confessor-bishop`; `common-of-an-abbot`/`-not-bishop`/`several-confessors` inherit
+C5 unchanged; `common-of-a-martyr` inherits C2 unchanged; `common-of-a-virgin` inherits C6
+unchanged; `common-of-a-widow`/`several-women-martyrs` inherit C7 unchanged — see the data file's
+own header for the full mapping). Not seeded: `common-of-an-angel`/`-an-evangelist`/`-a-vigil` and
+the `proper-to-*` ids — none of these are real Commune categories with a responsory file to source
+from (angels/evangelists have their own proper content instead).
+
+Wired into `hours/matins.ts`'s `nocturnReadingPart`/`gospelReadingPart`: when a reading's own
+`responsory` field is absent, falls back to `getResponsoryForCommon(getSaintRecord(id)?.common,
+index)` — `index` is the reading's position within that same id's own file (a new `commonPoolIndex`
+counter in `buildReadingPool`'s assembly loop), so a saint with several undated readings still gets
+distinct responsories across them rather than the pool's first entry repeated. A temporal/octave id
+(no `common` category) still correctly gets `undefined` — an honest absence, not a wrong guess.
+
+Live-verified end-to-end via `resolveOrdo`: St. Francis de Sales (2026-01-29, `common-of-a-
+confessor-bishop`, previously responsory-less) now resolves a real Nocturn 3 responsory; Ss.
+Cornelius and Cyprian plus Ss. Euphemia, Lucy, and Geminianus (both on 2026-09-16, both `common-
+of-several-martyrs`) each resolve their own responsory from the same pool, confirming the
+per-saint-file cycling index doesn't leak across different saints sharing a day. `npm test` (2025
+passed) and `tsc --noEmit` both pass.

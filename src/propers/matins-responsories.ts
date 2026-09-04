@@ -2,6 +2,11 @@
 // data/hours/matins-responsories-by-book.yml's own header for why matching
 // is book-level, not citation-level, and why this is a seeded subset, not
 // a full pool.
+//
+// This file also holds the sibling per-Common-category pool (see
+// data/hours/matins-responsories-by-common.yml's own header) — used to
+// fill in a real responsory for a saint's own Nocturn 2/3 patristic
+// reading when that reading has no proper `responsory` of its own.
 import type { LanguageCode, TranslationStatus } from '../psalter/types';
 
 interface BilingualText {
@@ -55,4 +60,39 @@ export function getResponsoryForBook(book: string, index: number): MatinsRespons
   const pool = poolByBook.get(book);
   if (!pool || pool.length === 0) return undefined;
   return joinResponsory(pool[index % pool.length]!);
+}
+
+interface FullTextResponsory {
+  la: string;
+  en: string;
+}
+
+const commonModules = import.meta.glob<{ default: Record<string, FullTextResponsory[]> }>(
+  '../data/hours/matins-responsories-by-common.yml',
+  { eager: true },
+);
+
+const poolByCommon = new Map<string, FullTextResponsory[]>();
+for (const mod of Object.values(commonModules)) {
+  for (const [commonId, entries] of Object.entries(mod.default)) {
+    poolByCommon.set(commonId, entries);
+  }
+}
+
+/** Same cycling convention as getResponsoryForBook, but the pooled text is
+ * already the full "R. ...\n* ...\nV. ...\nR. ..." block (matching the
+ * inline `responsory` convention every nocturn-readings/*.yml file uses),
+ * ready to drop straight into a reading's `responsory` field — not the
+ * split {r, v} shape the book pool uses. Undefined when the saint has no
+ * `common` category, or that category isn't seeded (e.g. angel/evangelist/
+ * vigil — see the data file's own header for why those are out of scope). */
+export function getResponsoryForCommon(
+  commonId: string | undefined,
+  index: number,
+): Partial<Record<LanguageCode, string>> | undefined {
+  if (!commonId) return undefined;
+  const pool = poolByCommon.get(commonId);
+  if (!pool || pool.length === 0) return undefined;
+  const entry = pool[index % pool.length]!;
+  return { la: entry.la, en: entry.en };
 }

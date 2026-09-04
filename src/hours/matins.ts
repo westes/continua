@@ -95,6 +95,7 @@ import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { getBiblePlanReadings } from '../propers/bible-plan';
 import { getNocturnReadings, type NocturnReading } from '../propers/nocturn-readings';
 import { getOctaveReading } from '../propers/octave-readings';
+import { getResponsoryForCommon } from '../propers/matins-responsories';
 import { getGospelIncipitFromCitation } from '../propers/bible-book-incipits';
 import { getMatinsSaintOverride, getMatinsCommonOverride, type MatinsPsalmodyScheme } from './matins-psalmody-overrides';
 import matinsSundayAntiphonsData from '../data/hours/matins-sunday-antiphons.yml';
@@ -752,12 +753,19 @@ function fallbackHagiographicLabel(id: string): string | undefined {
   return name.startsWith('The ') ? `On the ${name.slice(4)}` : `On ${name}`;
 }
 
-function nocturnReadingPart(r: NocturnReading, id: string): ResolvedPart {
+/** `index` is this reading's position among this same id's own
+ * nocturn-readings (not the whole day's pool) — the cycling key for
+ * `getResponsoryForCommon` when `r` has no proper `responsory` of its own,
+ * same convention as the per-book pool. Common-category fallback only
+ * applies to a real saint id (`getSaintRecord(id)?.common`) — a temporal or
+ * octave id has no Commune category to fall back to. */
+function nocturnReadingPart(r: NocturnReading, id: string, index: number): ResolvedPart {
+  const responsoryText = r.responsory ?? getResponsoryForCommon(getSaintRecord(id)?.common, index);
   return {
     kind: 'lesson',
     text: { text: r.text, status: r.status, citation: r.citation },
     label: r.source ?? fallbackHagiographicLabel(id),
-    responsory: r.responsory ? { text: r.responsory, status: { la: 'verified', en: 'verified' } } : undefined,
+    responsory: responsoryText ? { text: responsoryText, status: { la: 'verified', en: 'verified' } } : undefined,
   };
 }
 
@@ -769,14 +777,15 @@ function nocturnReadingPart(r: NocturnReading, id: string): ResolvedPart {
  * ResolvedPart can't be split across two nocturns by `distributeIntoNocturns`,
  * whereas two adjacent pool entries could be (and, before this, sometimes
  * were). */
-function gospelReadingPart(r: NocturnReading, homily: NocturnReading | undefined): ResolvedPart {
+function gospelReadingPart(r: NocturnReading, homily: NocturnReading | undefined, id: string, index: number): ResolvedPart {
   const incipit = getGospelIncipitFromCitation(r.citation);
+  const responsoryText = r.responsory ?? getResponsoryForCommon(getSaintRecord(id)?.common, index);
   return {
     kind: 'gospel',
     text: { text: r.text, status: r.status, citation: r.citation },
     source: r.source,
     label: incipit ? { la: incipit.la, en: incipit.en } : undefined,
-    responsory: r.responsory ? { text: r.responsory, status: { la: 'verified', en: 'verified' } } : undefined,
+    responsory: responsoryText ? { text: responsoryText, status: { la: 'verified', en: 'verified' } } : undefined,
     homily: homily
       ? { source: homily.source, text: { text: homily.text, status: homily.status, citation: homily.citation } }
       : undefined,
@@ -832,6 +841,7 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
   const byNocturn = new Map<number, ResolvedPart[]>();
   for (const id of ids) {
     const readings = getNocturnReadings(id);
+    let commonPoolIndex = 0;
     for (let i = 0; i < readings.length; i++) {
       const reading = readings[i]!;
       const bucket = byNocturn.get(reading.nocturn) ?? [];
@@ -845,10 +855,10 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
         // apart by distributeIntoNocturns.
         const next = readings[i + 1];
         const homily = next && !next.isGospel && next.nocturn === reading.nocturn ? next : undefined;
-        bucket.push(gospelReadingPart(reading, homily));
+        bucket.push(gospelReadingPart(reading, homily, id, commonPoolIndex++));
         if (homily) i++;
       } else {
-        bucket.push(nocturnReadingPart(reading, id));
+        bucket.push(nocturnReadingPart(reading, id, commonPoolIndex++));
       }
       byNocturn.set(reading.nocturn, bucket);
     }

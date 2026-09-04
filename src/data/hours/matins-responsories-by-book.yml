@@ -4,8 +4,9 @@
 # chapter/verse historically, so a book-level match is the right
 # granularity, not a gap to fill in later with exact citations.
 #
-# Seeded, not a full pool — only the books needed for this build's proof
-# content are here (see TODO.md for what's deferred). Cycled in order
+# Seeded, not a full pool — 3 of the ~66 books actually used in the user's
+# own bible-plan (data/hours/bible-plan/*.yml), the rest deferred bulk
+# content (see TODO.md). Cycled in order
 # per-day when a Nocturn-1 reading's book has more than one candidate
 # responsory available; the day's own responsory count doesn't have to
 # match the pool's size.
@@ -36,3 +37,50 @@ isa:
     v:
       la: "Et adorábunt eum omnes reges, omnes gentes sérvient ei."
       en: "All the kings of the earth shall fall down before Him, all nations shall serve Him."
+
+# `gen` sourced from Latin/Tempora/Quadp1-1.txt, English/Tempora/Quadp1-1.txt
+# (Monday of the week of Septuagesima — the historical start of the
+# Genesis "Historia" reading cycle, a plain ferial with no overriding
+# feast). Only 2 entries: the source's own English translation has no
+# Responsory3 for this day (a real gap in the reference engine itself, not
+# a transcription omission here).
+gen:
+  - r:
+      la: "Dum deambuláret Dóminus in paradíso ad auram post merídiem, clamávit, et dixit: Adam, ubi es? Audívi, Dómine, vocem tuam, * Et abscóndi me."
+      en: "When the Lord walked in the garden in the cool of the day, He called, and said Adam, where art thou? Lord, I heard thy voice. * And I hid myself."
+    v:
+      la: "Vocem tuam audívi in paradiso, et tímui, eo quod nudus essem."
+      en: "I heard thy voice in the garden, and I was afraid, because I was naked."
+  - r:
+      la: "In sudóre vultus tui vescéris pane tuo, dixit Dóminus ad Adam: cum operátus fúeris terram, non dabit fructus suos: * Sed spinas et tríbulos germinábit tibi."
+      en: "The Lord said unto Adam: In the sweat of thy face shalt thou eat bread; when thou tillest the ground, it shall not henceforth yield unto thee her fruits. * Thorns also and thistles shall it bring forth to thee."
+    v:
+      la: "Quia audísti vocem uxóris tuæ, et comedísti de ligno, ex quo præcéperam tibi ne coméderes, maledícta terra in opere tuo."
+      en: "Because thou hast hearkened unto the voice of thy wife, and hast eaten of the tree which I commanded thee, saying: Thou shalt not eat of it, cursed is the ground whereon thou shalt labour."
+
+# `jer` sourced from Latin/Tempora/Quad6-2.txt, English/Tempora/Quad6-2.txt
+# (Tuesday of Holy Week, "Feria privilegiata" — no overriding feast; the
+# Passiontide ferias' own Matins readings continue the Jeremiah/
+# Lamentations cycle). Avoided Pent02-5.txt's own Jer-cited Lectio1-3 —
+# that day's Rank is Sacred Heart (Duplex I classis), so its Responsory1-3
+# are the feast's own proper text, not genuine ferial-Jeremiah content,
+# despite borrowing Jeremiah's Lectio verses.
+jer:
+  - r:
+      la: "Contumélias et terróres passus sum ab eis, qui erant pacífici mei, et custodiéntes latus meum, dicéntes: Decipiámus eum, et prævaleámus illi: sed tu, Dómine, mecum es tamquam bellátor fortis. * Cadant in oppróbrium sempitérnum, ut vídeam vindíctam in eis, quia tibi revelávi causam meam."
+      en: "I have suffered defaming and fear from them that were my familiars they watched for my halting, saying Let us entice him, and prevail against him. But Thou, O Lord, art with me, as a Mighty Terrible One. * Let them stumble into everlasting confusion, that I may see thy vengeance upon them, for unto thee have I opened my cause."
+    v:
+      la: "Júdica, Dómine, causam ánimæ meæ, defénsor vitæ meæ."
+      en: "O Lord, plead Thou the cause of my soul, Thou That art the Redeemer of my life."
+  - r:
+      la: "Deus Israël, propter te sustínui impropérium, opéruit reveréntia fáciem meam, extráneus factus sum frátribus meis, et hospes fíliis matris meæ: * Quóniam zelus domus tuæ comédit me."
+      en: "For thy sake, O God of Israel, I have borne reproach; shame hath covered my face; I am become a stranger unto my brethren, and an alien unto my mother's children. * For the zeal of thine house hath eaten me up."
+    v:
+      la: "Inténde ánimæ meæ, et líbera eam, propter inimícos meos éripe me."
+      en: "Draw nigh unto my soul, and redeem it; deliver me, because of mine enemies."
+  - r:
+      la: "Synagóga populórum circumdedérunt me: et non réddidi retribuéntibus mihi mala. * Consumétur, Dómine, nequítia peccatórum, et díriges justum."
+      en: "The congregation of the people hath compassed me about, but I rewarded no evil unto him that rewarded evil unto me. * O Lord, let the wickedness of the wicked come to an end, but establish the just."
+    v:
+      la: "Júdica me, Dómine, secúndum justítiam meam, et secúndum innocéntiam meam super me."
+      en: "Judge me, O Lord, according to my righteousness, and according to mine integrity that is in me."
