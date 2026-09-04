@@ -4,7 +4,7 @@
 # chapter/verse historically, so a book-level match is the right
 # granularity, not a gap to fill in later with exact citations.
 #
-# Seeded, not a full pool — 33 of the 72 books actually used in the user's
+# Seeded, not a full pool — 41 of the 72 books actually used in the user's
 # own bible-plan (data/hours/bible-plan/*.yml), the rest deferred bulk
 # content (see TODO.md). Cycled in order
 # per-day when a Nocturn-1 reading's book has more than one candidate
@@ -634,3 +634,152 @@ nah:
     v:
       la: "Erítque ánima eórum quasi hortus irríguus."
       en: "And their soul shall be as a watered garden."
+
+# `act` sourced from Latin/Tempora/Pasc5-4.txt, English/Tempora/Pasc5-4.txt
+# (Ascension Day's own Matins) — the reading (Acts 1, the Ascension
+# narrative) and its responsories are the feast's own genuinely proper
+# content, not an unrelated override (unlike the Sacred Heart/Jeremiah
+# case elsewhere in this file) — Ascension Day's Nocturn 1 IS Acts 1.
+act:
+  - r:
+      la: "Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúja: * Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja."
+      en: "Being seen of them forty days after that He had suffered, and speaking of the kingdom of God. Alleluia. * And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia."
+    v:
+      la: "Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris."
+      en: "And, eating together with them, He commanded them that they should not depart from Jerusalem, but wait for the Promise of the Father."
+  - r:
+      la: "Omnis pulchritúdo Dómini exaltáta est super sídera: * Spécies ejus in núbibus cæli, et nomen ejus in ætérnum pérmanet, allelúja."
+      en: "The Lord hath set His beauty above the stars; * His loveliness is in the clouds of heaven, and His Name endureth for ever. Alleluia."
+    v:
+      la: "A summo cælo egréssio ejus, et occúrsus ejus usque ad summum ejus."
+      en: "His going forth is from the end of the heaven, and His circuit unto the ends of it."
+  - r:
+      la: "Exaltáre, Dómine, allelúja, * In virtúte tua, allelúja."
+      en: "Be Thou exalted, O Lord. Alleluia. * In thine Own strength. Alleluia."
+    v:
+      la: "Eleváta est, magnificéntia tua super cælos, Deus."
+      en: "O God, Thou hast set thy glory above the heavens."
+
+# `apoc` sourced from Latin/Tempora/Pasc3-0.txt, English/Tempora/Pasc3-0.txt
+# (Easter III Sunday — its own ordinary Paschaltide-Sunday rank, the
+# week Apocalypse's own reading begins).
+apoc:
+  - r:
+      la: "Dignus es, Dómine, accípere librum, et aperíre signácula ejus, allelúja: quóniam occísus es, et redemísti nos Deo * In sánguine tuo, allelúja."
+      en: "Thou art worthy, O Lord, to take the book, and to open the seals thereof; alleluia: because thou wast slain, and hast redeemed us to God, * In thy blood, alleluia."
+    v:
+      la: "Fecísti enim nos Deo nostro regnum et sacerdótium."
+      en: "And hast made us to our God a kingdom and priests."
+  - r:
+      la: "Ego sicut vitis fructificávi suavitátem odóris, allelúja: * Transíte ad me, omnes qui concupíscitis me, et a generatiónibus meis adimplémini, allelúja, allelúja."
+      en: "As the vine I have brought forth a pleasant odour, alleluia. * Come over to me, all ye that desire me, and be filled with my fruits, alleluia, alleluia."
+    v:
+      la: "In me omnis grátia viæ et veritátis: in me omnes spes vitæ et virtútis."
+      en: "in me is all hope of life and of virtue."
+  - r:
+      la: "Audívi vocem de cælo, tamquam vocem tonítrui magni, allelúja: Regnábit Deus noster in ætérnum, allelúja: * Quia facta est salus, et virtus, et potéstas Christi ejus, allelúja, allelúja."
+      en: "And I heard a voice from heaven, the voice of great thunder, alleluia: the Lord our God shall reign for ever, alleluia: * Now is come salvation, and strength, and the power of his Christ, alleluia, alleluia."
+    v:
+      la: "Et vox de throno exívit, dicens: Laudem dícite Deo nostro, omnes Sancti ejus, et qui timétis Deum, pusílli et magni."
+      en: "And a voice came out from the throne, saying: Give praise to our God, all saints of Him that fear him, little and great."
+
+# `jas` sourced from Latin/Tempora/Pasc4-0.txt, English/Tempora/Pasc4-0.txt
+# (Easter IV Sunday, James' own reading week) — the ordinary Paschaltide
+# Sunday psalm-based responsory set (Ps 136/76/21), not James-specific
+# thematically, same "loose match" convention used throughout this file.
+jas:
+  - r:
+      la: "Si oblítus fúero tui, allelúja, obliviscátur mei déxtera mea: * Adhǽreat lingua mea fáucibus meis, si non memínero tui, allelúja, allelúja."
+      en: "If I forget thee, Alleluia, let my right hand forget me. * If I do not remember thee, let my tongue cleave to the roof of my mouth, alleluia, alleluia."
+    v:
+      la: "Super flúmina Babylónis illic sédimus et flévimus, dum recordarémur tui, Sion."
+      en: "By the rivers of Babylon there we sat down and wept, when we remembered thee, O Zion."
+  - r:
+      la: "Vidérunt te aquæ, Deus, vidérunt te aquæ, et timuérunt: * Multitúdo sónitus aquárum vocem dedérunt nubes, allelúja, allelúja, allelúja."
+      en: "The waters saw thee, O God, the waters saw thee and they were afraid. * There was a noise as of many waters the clouds sent out a sound, alleluia, alleluia, alleluia."
+    v:
+      la: "Illuxérunt coruscatiónes tuæ orbi terræ: vidit et commóta est terra."
+      en: "thy lightnings lightened the world the earth saw it and shook."
+  - r:
+      la: "Narrábo nomen tuum frátribus meis, allelúja: * In médio Ecclésiæ laudábo te, allelúja, allelúja."
+      en: "I will declare thy Name unto my brethren, alleluia. * In the midst of the congregation will I praise thee, alleluia, alleluia."
+    v:
+      la: "Confitébor tibi in pópulis, Dómine, et psalmum dicam tibi in géntibus."
+      en: "I will praise thee, O Lord, among the people, and sing unto thee among the nations."
+
+# `heb` sourced from Latin/Tempora/Quad6-5.txt, English/Tempora/Quad6-5.txt
+# (Good Friday's own Tenebrae Matins) — same reasoning as `lam`'s own
+# header: Good Friday's high rank is intrinsically Holy Week's own, not
+# an unrelated override. Passion-narrative responsories ("Omnes amici
+# mei," "Velum templi scissum est," "Vinea mea electa").
+heb:
+  - r:
+      la: "Omnes amíci mei dereliquérunt me, et prævaluérunt insidiántes mihi: trádidit me quem diligébam: * Et terribílibus óculis plaga crudéli percutiéntes, acéto potábant me."
+      en: "All my friends have forsaken me, and mine enemies have prevailed against me; he whom I loved hath betrayed me. * Mine enemy sharpeneth his eyes upon me; he breaketh me with breach upon breach: and in my thirst they gave me vinegar to drink."
+    v:
+      la: "Inter iníquos projecérunt me, et non pepercérunt ánimæ meæ."
+      en: "I am numbered with the transgressors; and my life is not spared."
+  - r:
+      la: "Velum templi scissum est, * Et omnis terra trémuit: latro de cruce clamábat, dicens: Meménto mei, Dómine, dum véneris in regnum tuum."
+      en: "The veil of the Temple was rent in twain, from the top to the bottom, * And all the earth did quake: the thief on the cross cried, saying: Lord, remember me when Thou comest into thy kingdom!"
+    v:
+      la: "Petræ scissæ sunt, et monuménta apérta sunt, et multa córpora sanctórum, qui dormíerant, surrexérunt."
+      en: "The rocks rent, and the graves were opened, and many bodies of the saints, which slept, arose."
+  - r:
+      la: "Vínea mea elécta, ego te plantávi: * Quómodo convérsa es in amaritúdinem, ut me crucifígeres et Barábbam dimítteres?"
+      en: "I had planted thee a noble vineyard; * How then art thou turned into a degenerate plant, which willest that Barabbas should be released unto thee, and that I should be crucified."
+    v:
+      la: "Sepívi te, et lápides elégi ex te, et ædificávi turrim."
+      en: "I fenced thee, and gathered out the stones from thee, and built a tower in the midst of the land."
+
+# `luc` sourced from Latin/Tempora/Adv1-0.txt, English/Tempora/Adv1-0.txt
+# (Advent I Sunday, Luke's own reading week) — a generic Advent-themed
+# responsory ("Ecce virgo concipiet"), not Luke-21-specific, same loose
+# match already used for the other Gospels below. Only 1 entry.
+luc:
+  - r:
+      la: "Ecce virgo concípiet, et páriet fílium, dicit Dóminus: * Et vocábitur nomen ejus Admirábilis, Deus, Fortis."
+      en: "Behold, the Virgin shall conceive, and bear a son, saith the Lord; * And His name shall be called Wonderful, the Mighty God."
+    v:
+      la: "Super sólium David, et super regnum ejus sedébit in ætérnum."
+      en: "He shall sit upon the throne of David, and upon his kingdom for ever."
+
+# `matt` sourced from Latin/Tempora/Adv2-0.txt, English/Tempora/Adv2-0.txt
+# (Advent II Sunday, Matthew's own reading week). Only 1 entry.
+matt:
+  - r:
+      la: "Egrediétur Dóminus de Samaría ad portam, quæ réspicit ad Oriéntem: et véniet in Béthlehem ámbulans super aquas redemptiónis Judæ: * Tunc salvus erit omnis homo: quia ecce véniet."
+      en: "The Lord shall go forth out of Samaria unto the gate that looketh toward the East; and He shall come into Bethlehem, walking upon the waters of the redemption of Judah. * Then shall every one be saved for, behold, He cometh."
+    v:
+      la: "Et præparábitur in misericórdia sólium ejus, et sedébit super illud in veritáte."
+      en: "And in mercy shall His throne be established, and He shall sit upon it in truth."
+
+# `joan` (John's Gospel) sourced from Latin/Tempora/Adv3-0.txt,
+# English/Tempora/Adv3-0.txt (Advent III Sunday, John's own reading
+# week). Only 1 entry.
+joan:
+  - r:
+      la: "Veni, Dómine, et noli tardáre: reláxa facínora plebi tuæ, * Et révoca dispérsos in terram suam."
+      en: "O Lord, come and make no tarrying; loosen the bonds of thy people. * And gather again into their own land them that are scattered abroad."
+    v:
+      la: "Excita, Dómine, poténtiam tuam, et veni, ut salvos fácias nos."
+      en: "O Lord, stir up thy strength, and come and save us."
+
+# `marc` sourced from Latin/Tempora/Pasc0-0.txt, English/Tempora/Pasc0-0.txt
+# (Easter Sunday's own Matins) — Mark 16's own Resurrection narrative and
+# its genuinely proper responsories ("Angelus Domini descendit,"
+# "Cum transisset sabbatum"), same reasoning as `act`/`heb` above:
+# Easter's high rank isn't an unrelated override here.
+marc:
+  - r:
+      la: "Angelus Dómini descéndit de cælo, et accédens revólvit lápidem, et super eum sedit, et dixit muliéribus: * Nolíte timére: scio enim quia crucifíxum quǽritis: jam surréxit: veníte, et vidéte locum, ubi pósitus erat Dóminus, allelúja."
+      en: "The Angel of the Lord descended from heaven, and came and rolled back the stone, and sat upon it, and said unto the women: * Fear not ye; for I know that ye seek Him That was crucified: He is risen already. Come, see the place where the Lord was laid, alleluia."
+    v:
+      la: "Et intrántes in monuméntum vidérunt júvenem sedéntem in dextris, coopértum stola cándida, et obstupuérunt: qui dicit illis."
+      en: "And entering into the sepulchre, they saw a young man sitting on the right side, clothed in a long white garment, and they were affrighted; and he saith unto them:"
+  - r:
+      la: "Cum transísset sábbatum, María Magdaléne, et María Jacóbi, et Salóme emérunt arómata, * Ut veniéntes úngerent Jesum, allelúja, allelúja."
+      en: "When the Sabbath was passed, Mary Magdalene, and Mary the mother of James, and Salome, had bought sweet spices, * That they might come and anoint Jesus, alleluia, alleluia."
+    v:
+      la: "Et valde mane una sabbatórum, véniunt ad monuméntum, orto jam sole."
+      en: "And very early in the morning, the first day of the week, they came unto the sepulchre, at the rising of the sun."

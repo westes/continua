@@ -26,15 +26,17 @@ across every hour and content type in this app.
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
    - Matins Nocturn 2/3 responsory pools (both new, 2026-09-04 — see "Matins responsory pools:
-     per-book expansion + new per-Common-category pool" below, and its three follow-up entries):
-     the per-book pool now covers 33 of 72 books (`isa`, `gen`, `jer`, `exod`, `prov`, `sir`,
-     `sap`, `tob`, `ezek`, `dan`, `1macc`, `2macc`, `1sam`, `2sam`, `1kgs`, `2kgs`, `zach`, `amos`,
-     `agg`, `jdt`, `esth`, `job`, `eccl`, `hab`, `joel`, `zeph`, `obad`, `jonah`, `mal`, `hos`,
-     `mic`, `nah`, `lam` — 39 books remaining, all New Testament plus Leviticus/Numbers/
-     Deuteronomy); the new per-Common-category pool covers 19/19 real Commune categories (every
-     category actually used by a saint except angel/evangelist/vigil, which have no Commune
-     responsory file to source from) — this is the one that closes most of the 272-of-355
-     nocturn-readings files that had no `responsory` at all. Bible-plan TSV content also isn't yet
+     per-book expansion + new per-Common-category pool" below, and its four follow-up entries):
+     the per-book pool now covers 41 of 72 books, keyed by canonical form where it differs from
+     the bible-plan YAML's own book code (`isa`, `gen`, `jer`, `exod`, `prov`, `sir`, `sap`, `tob`,
+     `ezek`, `dan`, `1mach`, `2mach`, `1reg`, `2reg`, `3reg`, `4reg`, `zach`, `amos`, `agg`, `jdth`,
+     `esth`, `job`, `eccl`, `hab`, `joel`, `soph`, `abd`, `jon`, `mal`, `osee`, `mich`, `nah`,
+     `lam`, `act`, `apoc`, `jas`, `heb`, `luc`, `matt`, `joan`, `marc` — 32 books remaining, 9 of
+     them already confirmed genuinely absent from the reference source); the new per-Common-
+     category pool covers 19/19 real Commune categories (every category actually used by a saint
+     except angel/evangelist/vigil, which have no Commune responsory file to source from) — this
+     is the one that closes most of the 272-of-355 nocturn-readings files that had no `responsory`
+     at all. Bible-plan TSV content also isn't yet
      in a test table (see "Bible-plan TSV — bulk conversion done" below).
    - Lauds/Vespers duplex-majus+ Common-category psalmody: all 24 `SaintRecord.common`
      categories are resolved (Vespers 10/10 real category files, Lauds 9/10 — see
@@ -5872,3 +5874,42 @@ test` (2025 passed) and `tsc --noEmit` both pass.
 *alias target*, not the bible-plan YAML's own book code — check `scripture/index.ts`'s
 `BOOK_ALIASES` map before choosing a key, and verify through `getBiblePlanReadings`/`resolveOrdo`
 (the real call chain), not a direct, unnormalized call to `getResponsoryForBook`.
+
+### Matins responsory pools: NT books (Acts, Apocalypse, James, Hebrews, the 4 Gospels) (2026-09-04)
+
+Continuing the same bulk-sourcing pass, applying the previous entry's own lesson from the start
+this time (canonical keys, pipeline-verified). Surveyed the whole reference engine's own citation
+set precisely (an `awk` one-liner reading the line *after* every `[LectioN]` tag, following two
+lines deep for Gospel entries whose citation sits below a "Léctio sancti Evangélii secúndum..."
+line) rather than grepping loosely for a book prefix — the loose approach had already produced one
+false positive this session (`Rom` matching a Lauds Capitulum, not a real Matins Lectio).
+
+Added, all bilingual, all real Nocturn responsories:
+- `act` (Ascension Day's own Matins, Latin/Tempora/Pasc5-4.txt) and `marc` (Easter Sunday's own
+  Matins, Pasc0-0.txt) — both high-ranked feast days, but genuinely proper content (Ascension's
+  own Nocturn 1 *is* Acts 1; Easter's *is* Mark 16), not an unrelated override like the Sacred
+  Heart/Jeremiah case — same reasoning already used for `lam`.
+- `heb` (Good Friday's own Tenebrae Matins, Quad6-5.txt) — same reasoning again, Passion-narrative
+  responsories ("Omnes amici mei," "Velum templi scissum est").
+- `apoc` (Easter III Sunday, its own ordinary rank, Pasc3-0.txt) and `jas` (Easter IV Sunday,
+  Pasc4-0.txt) — genuine Paschaltide Sunday responsory sets, not thematically tied to Apocalypse/
+  James specifically (a generic Alleluia-form psalm-based set), same "loose match" convention as
+  everywhere else in this pool.
+- `luc`/`matt`/`joan` (Advent I/II/III Sundays, Adv1-0/Adv2-0/Adv3-0.txt) — each Gospel's own
+  reading week, generic Advent-themed responsories, only 1 entry each (a second Sunday's own set
+  wasn't chased down this pass).
+
+41 of 72 bible-plan books now seeded. `npm test` (2025 passed) and `tsc --noEmit` both pass;
+live-verified through the real `getBiblePlanReadings` call chain this time (not a direct
+`getResponsoryForBook` call) — `easter-3`/Monday (`act`, `joan` via the `john`→`joan` alias),
+`post-pentecost-01`/Saturday (`1sam` via alias, `prov`, `matt`), and a calendar-dated Jan 10 row
+(`heb`) all resolve real responsory text; `Deut` correctly still resolves `undefined` (genuinely
+unseeded, confirmed absent from Tempora entirely).
+
+Confirmed no English exists anywhere in the reference engine for Galatians/Ephesians/Philippians/
+Colossians/Titus/Philemon (the whole post-Epiphany reading season) or Romans (the Christmas-Octave
+season) — real Latin text exists for all of these, just no bilingual source; left unseeded rather
+than own-translating six-plus books in one pass. 32 books remain (9 of them the already-confirmed-
+genuinely-absent `bar`/Josue/Judices/Ruth/Chronicles/Esdras-Nehemias/Canticles): Leviticus/
+Numbers/Deuteronomy, Romans, 1-2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1-2
+Thessalonians, 1-2 Timothy, Titus, Philemon, 1-2 Peter, 1-3 John, Jude not yet attempted.
