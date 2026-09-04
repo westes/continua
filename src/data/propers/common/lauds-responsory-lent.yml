@@ -1,6 +1,6 @@
 # Sourced from Divinum Officium's Monastic block ("[Responsory Quad
-# Laudes]", Psalterium/Special/Major Special.txt). Not live-query-verified
-# (see TODO.md) — read directly from source.
+# Laudes]", Psalterium/Special/Major Special.txt). Live-verified
+# 2026-09-04 — see lauds-capitulum-lent.yml's own header.
 id: lauds-responsory-lent
 text:
   la: |
@@ -18,5 +18,5 @@ text:
     V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
     R. For he hath delivered me * from the snare of the hunters.
 status:
-  la: draft
-  en: draft
+  la: verified
+  en: verified

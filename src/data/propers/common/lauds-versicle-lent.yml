@@ -1,7 +1,7 @@
 # The versicle right before the Benedictus, in Lent. Sourced from Divinum
 # Officium's Monastic block: "[Quad Versum 2] = @:Quad Versum 3" — a bare
 # alias to the same text used at Vespers (see vespers-versicle-lent.yml).
-# Not live-query-verified (see TODO.md) — read directly from source.
+# Live-verified 2026-09-04 — see lauds-capitulum-lent.yml's own header.
 id: lauds-versicle-lent
 text:
   la: |
@@ -11,5 +11,5 @@ text:
     V. God hath given His Angels charge over thee.
     R. To keep thee in all thy ways.
 status:
-  la: draft
-  en: draft
+  la: verified
+  en: verified
