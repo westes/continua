@@ -1,0 +1,65 @@
+# Trinity Sunday's own Lauds hymn ("O lux beáta Trínitas") — identical
+# text to Vespers' own (vespers-hymn-trinity-sunday.yml). Already the
+# pre-Urban VIII text (this project's own standing preference — see
+# CLAUDE.md) as the reference source's own default, not a separate
+# choice made here. Live-verified against Divinum Officium (Monastic
+# Tridentinum 1617), Lauds live query, 2026-05-31 (Trinity Sunday
+# itself). Self-contained — its own final stanza is a fixed, unique
+# doxology, not the shared weekday one.
+id: lauds-hymn-trinity-sunday
+text:
+  la: >-
+    O lux beáta Trínitas,
+
+    Et principális Únitas,
+
+    Jam sol recédit ígneus,
+
+    Infúnde lumen córdibus.
+
+
+    Te mane laudum cármine,
+
+    Te deprecémur véspere:
+
+    Te nostra supplex glória
+
+    Per cuncta laudet sǽcula.
+
+
+    Deo Patri sit glória,
+
+    Ejúsque soli Fílio,
+
+    Cum Spíritu Paráclito,
+
+    Et nunc, et in perpétuum. Amen.
+  en: >-
+    O Trinity of blessed Light,
+
+    O Unity of sovereign might,
+
+    as now the fiery sun departs,
+
+    shed Thou Thy beams within our hearts.
+
+
+    To Thee our morning song of praise,
+
+    to Thee our evening prayer we raise;
+
+    Thee may our glory evermore
+
+    in lowly reverence adore.
+
+
+    All laud to God the Father be;
+
+    all praise, Eternal Son, to Thee;
+
+    all glory, as is ever meet,
+
+    to God the Holy Paraclete. Amen.
+status:
+  la: verified
+  en: verified

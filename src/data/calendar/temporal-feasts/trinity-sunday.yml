@@ -1,0 +1,31 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Pent01-0.txt
+# ("In Festo Sanctissimæ Trinitatis"), Duplex II. classis — live-verified
+# 2026-05-31 (Trinity Sunday itself that year). Previously not modeled as
+# its own record at all: `resolveTemporalId` just fell back to
+# `post-pentecost-01`, so this Sunday — one of the principal Sundays of
+# the whole year — displayed as a generic ordinary post-Pentecost Sunday,
+# with whatever saint happened to be assigned that date (if any) winning
+# outright per the plain `ordinary-sunday` rule. Found and fixed 2026-09-04
+# after the user asked about a display-only-looking gap that turned out to
+# be this much bigger mechanism gap.
+id: trinity-sunday
+name: "The Most Holy Trinity"
+# Reference engine's own [Officium] title is a prepositional phrase ("In
+# Festo Sanctissimæ Trinitatis"); adapted to this app's nominative-noun-
+# phrase convention.
+nameLa: "Sanctissima Trinitas"
+rank: duplex-2-classis
+anchor:
+  kind: easter
+  offset: 56
+# Per direct instruction (2026-09-04): always wins, same as christ-the-
+# king.yml's own `unconditional: true` — one of the year's principal
+# Sundays shouldn't lose to a same-rank fixed-date collision. The one
+# real case this matters for: the Queenship of the BVM (1954 addition,
+# fixed May 31, also Duplex II. classis) lands on the same date as
+# Trinity Sunday in rare years (e.g. 2026) — not verifiable against the
+# Monastic Tridentinum 1617 track directly, since that calendar doesn't
+# carry the Queenship feast at all (confirmed live: May 31 1617-track
+# shows St. Petronilla instead, this app's own blended-calendar-only
+# collision).
+unconditional: true

@@ -21,18 +21,19 @@ describe('getDayLabel — ordinal temporal label', () => {
   it('names the anchor day itself, not "day after itself"', () => {
     // Trinity Sunday 2026 (May 31) is now also the Queenship of the
     // Blessed Virgin Mary's own fixed day (Duplex II Classis, added per
-    // the full-year sanctoral import) — since this app models Trinitytide
-    // Sundays as plain `ordinary-sunday` with no special first-class
-    // standing of their own, the Duplex+ sanctoral feast wins outright
-    // here per the normal ordinary-Sunday rule (see
-    // tests/calendar/transfer.test.ts's own May 31 case for the full
-    // winner/commemorations breakdown), so the label now reflects her,
-    // not Trinity Sunday itself — but Trinity Sunday is still
-    // commemorated in return (`decideOccurrence`'s own `ordinary-sunday`
-    // branch), by bare name only — a commemoration never carries a rank
-    // parenthetical, only the day's own winner does.
+    // the full-year sanctoral import). Trinity Sunday itself used to be
+    // modeled as plain `ordinary-sunday` with no special first-class
+    // standing of its own, purely a cosmetic label overlay -- fixed
+    // 2026-09-04 with a real `trinity-sunday` temporal-feast record
+    // (calendar/data/calendar/temporal-feasts/trinity-sunday.yml),
+    // `unconditional: true` per direct instruction (a principal Sunday
+    // shouldn't lose to a same-rank fixed-date collision, same shape as
+    // christ-the-king.yml). Trinity Sunday now wins outright and the
+    // Queenship is commemorated instead, by bare name only — a
+    // commemoration never carries a rank parenthetical, only the day's
+    // own winner does.
     expect(getDayLabel(resolveDay('2026-05-31')).en).toBe(
-      'The Queenship of the Blessed Virgin Mary (Duplex II Class) — Trinity Sunday',
+      'The Most Holy Trinity (Duplex II Class) — The Queenship of the Blessed Virgin Mary',
     );
     expect(getDayLabel(resolveDay('2026-04-05')).en).toBe(
       "Easter (Duplex I Class) — St. Vincent Ferrer, Confessor (transferred away)",
@@ -41,12 +42,12 @@ describe('getDayLabel — ordinal temporal label', () => {
       "Ash Wednesday — St. Simeon, Bishop and Martyr (transferred away)",
     );
     // Latin: the winner now has a real authored nameLa (see
-    // calendar/data/calendar/saints/queenship-of-the-bvm.yml), so this is
-    // real Latin throughout — the rank label ("Duplex II. Classis") and
-    // the commemorated Sunday's own name ("Dominica Sanctissimae
-    // Trinitatis") were already real Latin before this.
+    // calendar/data/calendar/saints/queenship-of-the-bvm.yml and
+    // temporal-feasts/trinity-sunday.yml's own "Sanctissima Trinitas"),
+    // so this is real Latin throughout — the rank label ("Duplex II.
+    // Classis") was already real Latin before this.
     expect(getDayLabel(resolveDay('2026-05-31')).la).toBe(
-      'Beata Maria Virgo Regina (Duplex II. Classis) — Dominica Sanctissimae Trinitatis',
+      'Sanctissima Trinitas (Duplex II. Classis) — Beata Maria Virgo Regina',
     );
     expect(getDayLabel(resolveDay('2026-04-05')).la).toBe(
       'Pascha (Duplex I. Classis) — Sanctus Vincentius Ferrerius, Confessor (translata alio)',
@@ -233,14 +234,20 @@ describe('getDayLabel — active octave', () => {
     expect(getDayLabel(resolveDay('2028-11-03')).en).toBe('3rd Day within the Octave of All Saints (Semiduplex)');
   });
 
-  it("a season's own named anchor day outranks an active octave, even though Trinity Sunday is technically also day 8 of Pentecost's own octave", () => {
+  it("Trinity Sunday itself outranks Pentecost's own octave, which is technically still active on the same day (day 8)", () => {
     // Not 2026 (May 31, the Queenship of the Blessed Virgin Mary's own
     // fixed day, see tests/calendar/transfer.test.ts) and not 2023
     // (June 4, now St. Francis Caracciolo's own fixed day) -- both would
     // muddy this specifically octave-vs-anchor-day check with a sanctoral
     // winner. 2030's Trinity Sunday (June 16) has no sanctoral entry at
-    // all, isolating the octave interaction cleanly.
-    expect(getDayLabel(resolveDay('2030-06-16')).en).toBe('Trinity Sunday (Duplex I Class)');
+    // all, isolating the octave interaction cleanly. Since 2026-09-04,
+    // Trinity Sunday is a real, unconditional-winning temporal-feast
+    // (see the test above) rather than a purely cosmetic label overlay,
+    // so this is now a real occurrence result, not just a label choice --
+    // Duplex II Class, its own live-verified rank, not the earlier
+    // (never-verified) "Duplex I Class" placeholder this test used to
+    // assert.
+    expect(getDayLabel(resolveDay('2030-06-16')).en).toBe('The Most Holy Trinity (Duplex II Class)');
   });
 
   it("a temporal day with real standing of its own (not ordinary-feria) never shows an octave name at all, even with one active -- live-verified counterexample: the Christmas Octave's own stack (Dec 30) titles itself off the Sunday, never any of the four octaves layered on top of it", () => {

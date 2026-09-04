@@ -1,0 +1,67 @@
+# Trinity Sunday's own Matins hymn ("Summæ Deus cleméntiæ") — shares its
+# opening stanza with the plain ferial Saturday hymn
+# (matins-hymn-ferial-saturday.yml's "Summæ Deus cleméntiæ, Mundíque
+# Factor máchinæ..."), but diverges completely from its second stanza
+# onward and is shorter overall (2 body stanzas + its own doxology,
+# not 4 + the shared weekday doxology) — a genuinely different hymn, not
+# a mislabeled duplicate. Live-verified against Divinum Officium
+# (Monastic Tridentinum 1617), Matins live query, 2026-05-31 (Trinity
+# Sunday itself). Self-contained — its own final stanza is a fixed,
+# unique doxology, not the shared weekday one.
+id: matins-hymn-trinity-sunday
+text:
+  la: >-
+    Summæ Deus cleméntiæ,
+
+    Mundíque Factor máchinæ,
+
+    Unus potentiáliter,
+
+    Trinúsque personáliter.
+
+
+    Da déxteram surgéntibus,
+
+    Exsúrgat ut mens sóbria,
+
+    Flagrans et in laudem Dei,
+
+    Grates repéndet débitas.
+
+
+    Glória Patri Dómino,
+
+    Glória Unigénito,
+
+    Una cum Sancto Spíritu,
+
+    In sempitérna sǽcula. Amen.
+  en: >-
+    O God, by whose command is swayed
+
+    This ordered world which thou hast made;
+
+    Parent of heavenly clemency,
+
+    In nature One, in persons Three;
+
+
+    Assist us while our minds we raise,
+
+    Inflamed with thy immortal praise;
+
+    That with our sober thoughts, we may
+
+    Forever our thanksgiving pay.
+
+
+    May age by age thy wonders tell,
+
+    Eternal praise thy works reveal,
+
+    And sing with the celestial host
+
+    The Father, Son, and Holy Ghost. Amen.
+status:
+  la: verified
+  en: verified

@@ -64,6 +64,7 @@ export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set([
   'pentecost-sunday',
   'corpus-christi',
   'sacred-heart',
+  'trinity-sunday',
   'circumcision',
   'holy-name-of-jesus',
   'vigil-of-christmas',

@@ -88,22 +88,20 @@ describe('transfer mechanism (resolveDay integration)', () => {
 
     // Felix doesn't reach Trinity Sunday at all now. Trinity Sunday 2026
     // (May 31) is also the Queenship of the Blessed Virgin Mary's own
-    // fixed day (Duplex II Classis) -- since this app models Trinitytide
-    // Sundays as plain `ordinary-sunday` (no special first-class standing
-    // of their own, see temporal-categories.yml), a Duplex+ sanctoral
-    // feast wins outright here per the normal ordinary-Sunday rule, with
-    // both the day's own temporal id and Pentecost's octave commemorated
-    // in return.
-    expect(sunday.winner).toEqual({
-      kind: 'sanctoral',
-      id: 'queenship-of-the-bvm',
-      name: 'The Queenship of the Blessed Virgin Mary',
-      nameLa: 'Beata Maria Virgo Regina',
-      rank: 'duplex-2-classis',
-    });
+    // fixed day (Duplex II Classis). Trinity Sunday used to be modeled as
+    // plain `ordinary-sunday` (no special first-class standing of its
+    // own), so the Duplex+ Queenship won outright there -- fixed
+    // 2026-09-04 with a real `trinity-sunday` temporal-feast record,
+    // `unconditional: true` (a principal Sunday shouldn't lose to a
+    // same-rank fixed-date collision, same shape as christ-the-king.yml).
+    // Trinity Sunday now wins outright; the Queenship, the day's own
+    // plain temporal id, and Pentecost's octave are all commemorated in
+    // return.
+    expect(sunday.winner).toEqual({ kind: 'temporal', id: 'trinity-sunday' });
     expect(sunday.commemorations).toEqual([
       { kind: 'temporal', id: 'post-pentecost-01' },
       { kind: 'octave', id: 'pentecost-sunday', name: 'Pentecost', nameLa: 'Dominica Pentecostes' },
+      { kind: 'sanctoral', id: 'queenship-of-the-bvm', name: 'The Queenship of the Blessed Virgin Mary', nameLa: 'Beata Maria Virgo Regina', rank: 'duplex-2-classis' },
     ]);
   });
 });
