@@ -27,7 +27,7 @@ across every hour and content type in this app.
    content in that same shape across the rest of the calendar:
    - Matins Nocturn 2/3 responsory pools (both new, 2026-09-04 — see "Matins responsory pools:
      per-book expansion + new per-Common-category pool" below, and its two follow-up entries):
-     the per-book pool now covers 19 of ~66 books (`isa`, `gen`, `jer`, `exod`, `prov`, `sir`,
+     the per-book pool now covers 19 of 72 books (`isa`, `gen`, `jer`, `exod`, `prov`, `sir`,
      `sap`, `tob`, `ezek`, `dan`, `1macc`, `2macc`, `1sam`, `2sam`, `1kgs`, `2kgs`, `zach`, `amos`,
      `agg`); the new per-Common-category pool covers 19/19 real Commune categories (every category
      actually used by a saint except angel/evangelist/vigil, which have no Commune responsory
@@ -5705,7 +5705,7 @@ translation is missing a 3rd) and `jer` (3 entries, Latin/Tempora/Quad6-2.txt �
 Week, "Feria privilegiata," genuine ferial Jeremiah/Lamentations content). Deliberately did *not*
 seed `jer` from Pent02-5.txt despite it citing Jeremiah too — that day's Rank is Sacred Heart
 (Duplex I classis), so its Responsory1-3 are the feast's own proper text, not genuine ferial-book
-content, even though its Lectio verses are borrowed from Jeremiah. Still only 3 of ~66 books used
+content, even though its Lectio verses are borrowed from Jeremiah. Still only 3 of 72 books used
 in the user's own bible-plan seeded (`isa`, `gen`, `jer`) — the rest is deferred bulk content, one
 real live-sourced query per book, same pattern.
 
@@ -5769,7 +5769,7 @@ gap, but Latin is real and available (Latin/Tempora/114-4.txt, 115-4.txt, 115-5.
 pass wants to add an own-translation draft English side (see `vu-prefer-text-over-missing` memory
 for the precedent).
 
-Now 11 of ~66 bible-plan books seeded: `isa`, `gen`, `jer`, `exod`, `prov`, `sir`, `sap`, `tob`,
+Now 11 of 72 bible-plan books seeded: `isa`, `gen`, `jer`, `exod`, `prov`, `sir`, `sap`, `tob`,
 `ezek`, `dan`, `1macc`. `npm test` (2025 passed) and `tsc --noEmit` both pass; live-verified via
 `getResponsoryForBook` resolving real text for every new key.
 
@@ -5800,7 +5800,7 @@ resolved by the extraction script, hand-followed instead) also unblocked:
   of their *own* week files in isolation, but false once their `@`-references were actually
   followed.
 
-19 of ~66 bible-plan books now seeded (added this pass: `1sam`, `2sam`, `1kgs`, `2kgs`, `2macc`,
+19 of 72 bible-plan books now seeded (added this pass: `1sam`, `2sam`, `1kgs`, `2kgs`, `2macc`,
 `zach`, `amos`, `agg`). `npm test` (2025 passed) and `tsc --noEmit` both pass; live-verified via
 `getResponsoryForBook` resolving real text for every new key, at every pool index (not just index
 0) for the 3-entry sets.
