@@ -5461,3 +5461,48 @@ Updated 2 `FERIAL_DATE` (2026-12-01, a Tuesday *in Advent*) hymn assertions in
 `tests/hours/matins.test.ts` that had been asserting Tuesday's own ferial text — Advent's own
 seasonal hymn correctly outranks the weekday cycle now. `npm test` (2025 passed) and `tsc --noEmit`
 both pass.
+
+### Ascension's own hymnody at Matins/Lauds/Vespers, plus the octave mechanism gap it exposed (2026-09-04)
+
+User asked to actually close the Ascension-octave gap flagged in the entry just above. Turned out
+to be a genuine mechanism gap, not just missing content: `ascension` is a *temporal*-feast id
+(`data/calendar/temporal-feasts/ascension.yml`), not a saint record, so
+`hours/resolve-common.ts`'s `resolveOfficeWinner` — which already synthesizes a sanctoral-shaped
+winner from an active octave's own saint record (how Assumption's/St. Lawrence's octave already
+gives every hour real content on interior days) — never recognized it at all. Ascension Day itself
+and its whole octave were silently rendering the generic Paschaltide hymn at every hour, live-
+verified against Divinum Officium (Monastic Tridentinum 1617, 2026-05-14, Ascension Day itself):
+real content is "Jesu nostra redémptio" (identical at Matins/Lauds/Vespers), Act 1:1-2 (Lauds/
+Vespers' shared chapter), and two genuinely distinct Lauds/Vespers responsories ("Ascéndit Deus in
+jubilatióne" / "Ascéndens Christus in altum").
+
+Fixed the mechanism two ways: (1) added `ascension` to `ALWAYS_OVERRIDE_TEMPORAL_IDS` (covers
+Ascension Day itself, the same way `christ-the-king`/`circumcision`/etc. already do); (2) taught
+`resolveOfficeWinner` to also synthesize a `{kind: 'temporal'}` winner from an active octave with no
+saint record but a real temporal-feast record — covers ordinary-feria octave days (a real saint
+still correctly keeps priority when one wins, e.g. St. Venantius/St. Peter Celestine within the
+octave, live-verified unaffected). A third gap surfaced testing this: `octaveGoverningPrivilegedDay`
+(the *Sunday*-side half of that same synthesis) has its own, separate, correct-by-design rule that a
+privileged Sunday never accepts even an octave override — but live-verified wrong specifically for
+"Dominica infra Octavam Ascensionis," which really does keep the octave's own hymn/responsory (just
+with its own distinct proper chapter, not touched here). Rather than loosen that shared gate (real
+risk of wrongly re-admitting some other octave's override on some other privileged Sunday, unverified
+case by case), gave Lauds' and Vespers' own hymn-resolution functions (`resolveLaudsHymn`/
+`resolveVespersHymn`) a narrow, hymn-only intercept: check `resolveActiveOctave` directly (no
+privileged-Sunday gate) but only for a saint-less octave, before falling to the season/weekday
+default — leaves every saint-based octave's existing behavior (and every other hour/part) completely
+untouched.
+
+Authored `matins-hymn-ascension.yml`, `lauds-{capitulum,responsory,hymn,versicle}-ascension.yml`,
+and `vespers-{responsory,hymn,versicle}-ascension.yml` (Vespers' own chapter already falls back to
+Lauds' via `vespersCapitulumForOverride`'s existing cross-hour fallback, so no separate file needed)
+— all live-verified. Confirmed the whole octave end-to-end via `resolveOrdo` directly (Ascension Day,
+two plain ordinary-feria octave days, the Sunday within the octave, and 3 real winning saints within
+the window, all correct) rather than just the reference engine. `npm test` (2025 passed, no test
+changes needed) and `tsc --noEmit` both pass.
+
+Flagged, not fixed: Ascension's own collect is still missing (`getTemporalProper('ascension-collect')`
+— a pre-existing gap, unrelated to and unaffected by this fix, not scoped to "hymnody"). Also flagged:
+Pentecost/Corpus Christi/Sacred Heart are the same shape (temporal-feast octaves with no saint
+record) and likely have the same latent hymn gap this fix closed for Ascension specifically — not
+checked or fixed here.
