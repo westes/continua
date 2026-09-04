@@ -26,12 +26,13 @@ across every hour and content type in this app.
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
    - Matins Nocturn 2/3 responsory pools (both new, 2026-09-04 — see "Matins responsory pools:
-     per-book expansion + new per-Common-category pool" below): the per-book pool now covers 3
-     of ~66 books (`isa`, `gen`, `jer`); the new per-Common-category pool covers 19/19 real
-     Commune categories (every category actually used by a saint except angel/evangelist/vigil,
-     which have no Commune responsory file to source from) — this is the one that closes most
-     of the 272-of-355 nocturn-readings files that had no `responsory` at all. Bible-plan TSV
-     content also isn't yet in a test table (see "Bible-plan TSV — bulk conversion done" below).
+     per-book expansion + new per-Common-category pool" below, and its own follow-up entry): the
+     per-book pool now covers 11 of ~66 books (`isa`, `gen`, `jer`, `exod`, `prov`, `sir`, `sap`,
+     `tob`, `ezek`, `dan`, `1macc`); the new per-Common-category pool covers 19/19 real Commune
+     categories (every category actually used by a saint except angel/evangelist/vigil, which
+     have no Commune responsory file to source from) — this is the one that closes most of the
+     272-of-355 nocturn-readings files that had no `responsory` at all. Bible-plan TSV content
+     also isn't yet in a test table (see "Bible-plan TSV — bulk conversion done" below).
    - Lauds/Vespers duplex-majus+ Common-category psalmody: all 24 `SaintRecord.common`
      categories are resolved (Vespers 10/10 real category files, Lauds 9/10 — see
      "Lauds/Vespers duplex-majus+ Common-category psalmody" below and its follow-up entry) with
@@ -5736,3 +5737,37 @@ Cornelius and Cyprian plus Ss. Euphemia, Lucy, and Geminianus (both on 2026-09-1
 of-several-martyrs`) each resolve their own responsory from the same pool, confirming the
 per-saint-file cycling index doesn't leak across different saints sharing a day. `npm test` (2025
 passed) and `tsc --noEmit` both pass.
+
+### Matins responsory pools: 8 more books seeded (2026-09-04)
+
+Follow-up to the same-day entry above, continuing the per-book pool's bulk-content pass — same
+"one real source per book" method, no mechanism changes. Added `exod` (Latin/Tempora/Quad4-0.txt,
+Sunday IV in Lent, its own ordinary rank — the burning bush through the Song of the Sea), `prov`
+(081-1.txt, August week 1's own ferial), `tob` (093-0.txt, September week 3's own Sunday), `ezek`
+(111-1.txt, November week 1's own ferial), and `1macc` (101-1.txt, October week 1's own ferial) —
+all bilingual, all genuinely their own book's content, no overriding rank.
+
+Also added `sir` and `sap` (identical to `prov`'s own entries) and `dan` (identical to `ezek`'s) —
+not guessed reuse, confirmed by reading each week's own reference-engine file: the August "Wisdom
+literature" weeks (081 Prov, 083 Sap, 084-085 Sir) and the November "prophetic" weeks (111 Ezek,
+113 Dan) `@`-reference *the same* underlying responsory set regardless of which specific book that
+week's Lectio actually reads that day — a real confirmation, from the reference engine's own data,
+that this app's "loose, book-level match, not exact-citation" responsory design (see the pool's own
+header, and the 2026-08 user direction it's sourced from) matches how these responsories genuinely
+worked historically, not an invention to paper over a smaller pool.
+
+Skipped, deliberately: `1sam` (1 Reg) — every Pent01 week file's responsories are macro references
+(`@:Responsory1_ (sed rubrica cisterciensis) ...`, `[Rule] Initia cum responsory`) rather than
+literal text, needing the base macro template resolved with per-file substitutions to get real
+text; not worth the complexity for one book this pass. `2sam`/`1kgs`/`2kgs`/`2macc` (2/3/4 Reg, 2
+Mac) — real Latin responsories exist in every week's own file, but the reference engine's own
+English translation is entirely absent for all of them (checked every Post-Pentecost week each book
+appears in); left unseeded rather than guessing a translation, consistent with only seeding books
+that have real bilingual source text. `zach`/`amos`/`agg` (minor prophets) — same English-translation
+gap, but Latin is real and available (Latin/Tempora/114-4.txt, 115-4.txt, 115-5.txt) if a future
+pass wants to add an own-translation draft English side (see `vu-prefer-text-over-missing` memory
+for the precedent).
+
+Now 11 of ~66 bible-plan books seeded: `isa`, `gen`, `jer`, `exod`, `prov`, `sir`, `sap`, `tob`,
+`ezek`, `dan`, `1macc`. `npm test` (2025 passed) and `tsc --noEmit` both pass; live-verified via
+`getResponsoryForBook` resolving real text for every new key.
