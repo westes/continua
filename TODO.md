@@ -37,6 +37,12 @@ across every hour and content type in this app.
      Ieremiæ") has never been transcribed anywhere in this app (the 7 existing Lauds canticles,
      `hours/lauds-canticles.ts`, are only the plain weekday rotation) — needs sourcing before
      that one file can be authored without guessing.
+   - Lent's own seasonal office bundle: Lauds' capitulum/responsory/versicle are now verified
+     (2026-09-04), but its own hymn (`lauds-hymn-lent.yml`) and Vespers' whole bundle
+     (`vespers-capitulum-lent.yml`/`vespers-responsory-lent.yml`/`vespers-hymn-lent.yml`/
+     `vespers-versicle-lent.yml`) plus both hours' `-doxology-per-annum` files are all still
+     `draft` — real content already present, just never live-query-verified. Noticed in passing
+     while fixing the Lauds side; not fixed itself.
 
 3. **New features (not content mechanism)** — genuinely new product surface, not something a
    content pass is blocked on; each needs its own design pass, not just implementation:
