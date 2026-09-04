@@ -4,7 +4,7 @@
 # chapter/verse historically, so a book-level match is the right
 # granularity, not a gap to fill in later with exact citations.
 #
-# Seeded, not a full pool — 19 of the 72 books actually used in the user's
+# Seeded, not a full pool — 33 of the 72 books actually used in the user's
 # own bible-plan (data/hours/bible-plan/*.yml), the rest deferred bulk
 # content (see TODO.md). Cycled in order
 # per-day when a Nocturn-1 reading's book has more than one candidate
@@ -428,3 +428,209 @@ agg:
     v:
       la: "Plorans plorávit in nocte, et lácrimæ ejus in maxíllis ejus."
       en: "She weepeth sore in the night, and her tears are on her cheeks."
+
+# `jdt` sourced from Latin/Tempora/094-0.txt, English/Tempora/094-0.txt
+# (September week 4's own Sunday — Responsory1/4/7, the pattern every
+# feria that week's own file `@`-references in rotation, confirmed by
+# reading each). User-caught gap (2026-09-04): flagged as unseeded in an
+# earlier pass without actually checking — real, clean, bilingual content
+# was sitting right there.
+jdt:
+  - r:
+      la: "Adonái, Dómine, Deus magne et mirábilis, qui dedísti salútem in manu féminæ, * Exáudi preces servórum tuórum."
+      en: "O Adonai, O Lord God, Thou art great and glorious. Who hast given salvation into the hand of a woman: * Graciously hear the prayers of thy servants."
+    v:
+      la: "Benedíctus es, Dómine, qui non derelínquis præsuméntes de te, et de sua virtúte gloriántes humílias."
+      en: "Blessed art Thou, O Lord, Who failest none that put their trust in thee, and humblest such as boast themselves in their own strength."
+  - r:
+      la: "Nos álium Deum nescímus præter Dóminum, in quo sperámus: * Qui non déspicit nos, nec ámovet salútem suam a génere nostro."
+      en: "We know no strange God before the Lord. In Him we trust. * He despiseth us not, neither putteth He away His salvation from our nation."
+    v:
+      la: "Indulgéntiam ipsíus fusis lácrimis postulémus, et humiliémus illi ánimas nostras."
+      en: "His mercy let us seek with tears, and humble our souls before Him."
+  - r:
+      la: "Confórta me, Rex, Sanctórum principátum tenens: * Et da sermónem rectum et bene sonántem in os meum."
+      en: "Strengthen me, O King, Who reignest over the holy ones. * Put Thou in my mouth clear and well-sounding words."
+    v:
+      la: "Dómine, Rex univérsæ potestátis, convérte consílium eórum super eos."
+      en: "O Lord, King of all forces, turn back their device upon themselves."
+
+# `esth` sourced from Latin/Tempora/095-0.txt, English/Tempora/095-0.txt
+# (September week 5's own Sunday — Responsory1/3/4, same rotation
+# pattern as `jdt` above). Responsory4's own text ("Meménto mei, Dómine
+# Deus, in bonum") reads like Nehemiah's own prayer-style rather than
+# Esther's, but it's the reference engine's own genuine text for this
+# week regardless — consistent with "loose match," not a mis-citation.
+esth:
+  - r:
+      la: "Dómine, mi Rex omnípotens, in dicióne tua cuncta sunt pósita, et non est qui possit resístere voluntáti tuæ: * Líbera nos propter nomen tuum."
+      en: "O my Lord, the King Almighty All things are in thy power, and there is no man that can gainsay thy will; * Deliver us for thy Name's sake."
+    v:
+      la: "Exáudi oratiónem nostram, et convérte luctum nostrum in gáudium."
+      en: "Hear our prayer, and turn our sorrow into joy."
+  - r:
+      la: "Spem in álium nunquam hábui, prætérquam in te, Deus Israël: * Qui irásceris, et propítius eris, et ómnia peccáta hóminum in tribulatióne dimíttis."
+      en: "I have had no hope in any other but in thee, O God of Israel, Who art angry, and wilt again show mercy, * Thou that forgivest all the sins of men when they are in affliction."
+    v:
+      la: "Dómine Deus, Creátor cæli et terræ, réspice ad humilitátem nostram."
+      en: "O Lord God, Maker of heaven and earth, look upon our low estate;"
+  - r:
+      la: "Meménto mei, Dómine Deus, in bonum: * Et ne déleas miseratiónes meas, quas feci in domo Dei mei et in cæremóniis ejus."
+      en: "Remember me for good, O Lord God, * And put not away my works of mercy, which I have wrought in the house of my God, and in the times of His solemn rites."
+    v:
+      la: "Recordáre mei, Dómine, Deus meus."
+      en: "Remember me, O Lord my God"
+
+# `job` sourced from Latin/Tempora/091-1.txt, English/Tempora/091-1.txt
+# (September week 1's own Monday, plain ferial). The classic "Job
+# Responsories" (also used in the Requiem). Only 2 entries: that week's
+# own English translation has no Responsory3. Extracted early in the
+# 2026-09-04 sourcing pass but not actually committed to this file until
+# a later re-check caught the omission (see memory
+# vu-feedback-verify-extraction-gaps) — a real miss, not a source gap.
+job:
+  - r:
+      la: "Versa est in luctum cíthara mea, et órganum meum in vocem fléntium: * Parce mihi, Dómine, nihil enim sunt dies mei."
+      en: "My harp is turned to mourning, and my organ into the voice of them that weep. * Let me alone, O Lord, for my days are vanity."
+    v:
+      la: "Cutis mea denigráta est super me, et ossa mea aruérunt."
+      en: "My skin is black upon me, and my bones are burned with heat."
+  - r:
+      la: "Utinam appenderéntur peccáta mea, quibus iram mérui, * Et calámitas, quam pátior, in statéra."
+      en: "O that my sins, whereby I have deserved wrath; * And the calamity whereunder I suffer, were laid in the balances together."
+    v:
+      la: "Quasi aréna maris hæc grávior apparéret, unde et verba mea dolóre sunt plena."
+      en: "For now it would appear heavier than the sand of the sea, therefore also my words are full of sorrow."
+
+# `eccl` sourced from Latin/Tempora/081-2.txt, English/Tempora/081-2.txt
+# (August week 1's own Tuesday, `@`-referencing Tempora/081-2:Responsory1
+# — a different entry than `prov`'s own 081-1, but the same August
+# "Wisdom literature" week cluster). Only 1 entry: that file's own English
+# has no Responsory2/3.
+eccl:
+  - r:
+      la: "Præbe, fili, cor mihi, et óculi tui vias meas custódiant: * Ut addátur grátia cápiti tuo."
+      en: "My son, give me thine heart, and let thine eyes observe my ways. * For they shall be an ornament of grace unto thine head."
+    v:
+      la: "Atténde, fili mi, sapiéntiam meam et ad elóquium meum inclína aurem tuam."
+      en: "My son, attend unto my wisdom, and incline thine ear unto my sayings."
+
+# `hab`/`joel` both share the same single entry, Latin/Tempora/111-2.txt,
+# English/Tempora/111-2.txt:Responsory1 (November week 1's own Wednesday
+# — both books' own week files, 115-2 Habacuc and 114-2 Joel,
+# `@`-reference this exact tag, confirmed by reading each directly).
+hab:
+  - r:
+      la: "A fácie furóris tui, Deus, conturbáta est omnis terra: * Sed miserére, Dómine, et ne fácias consummatiónem."
+      en: "Before the face of thine anger, O God, the whole earth is troubled; * But Thou, O Lord, have mercy, and make not an end utterly."
+    v:
+      la: "Dómine, Dóminus noster, quam admirábile est nomen tuum!"
+      en: "Lord our Ruler, how excellent is thy Name in all the earth!"
+joel:
+  - r:
+      la: "A fácie furóris tui, Deus, conturbáta est omnis terra: * Sed miserére, Dómine, et ne fácias consummatiónem."
+      en: "Before the face of thine anger, O God, the whole earth is troubled; * But Thou, O Lord, have mercy, and make not an end utterly."
+    v:
+      la: "Dómine, Dóminus noster, quam admirábile est nomen tuum!"
+      en: "Lord our Ruler, how excellent is thy Name in all the earth!"
+
+# `zeph` sourced from Latin/Tempora/111-3.txt, English/Tempora/111-3.txt
+# (November week 1's own Thursday — 115-3.txt, Sophonias/Zephaniah's own
+# week file, `@`-references this exact tag). Only 1 entry: that file's own
+# English has no Responsory2/3.
+zeph:
+  - r:
+      la: "Indicábo tibi, homo, quid sit bonum aut quid Dóminus requírat a te: * Fácere judícium et justítiam et sollícitum ambuláre cum Deo tuo."
+      en: "I will show thee, O man, what is good, and what doth the Lord require of thee, but to * Do justice and judgment, and to walk humbly with thy God."
+    v:
+      la: "Spera in Dómino, et fac bonitátem, et inhábita terram."
+      en: "Trust in the Lord, and do good, and dwell in the land."
+
+# `obad` reuses `zach`'s own first entry (both `@`-reference
+# Tempora/111-0:Responsory4 — Abdias' own week file is 114-5.txt).
+obad:
+  - r:
+      la: "Super muros tuos, Jerúsalem, constítui custódes; * Tota die et nocte non tacébunt laudáre nomen Dómini."
+      en: "I have set watchmen upon thy walls, O Jerusalem; * Which shall never hold their peace day nor night, to praise the name of the Lord."
+    v:
+      la: "Prædicábunt pópulis fortitúdinem meam, et annuntiábunt géntibus glóriam meam."
+      en: "They shall proclaim My might unto the nations, and declare My glory unto the Gentiles."
+
+# `jonah`/`mal` both share the same single entry, Tempora/111-0:Responsory7
+# (Jonas' own week file 114-6.txt and Malachias' own 115-6.txt both
+# `@`-reference this exact tag — a different entry than `zach`'s own
+# R4-6 from this same source Sunday).
+jonah:
+  - r:
+      la: "Laudábilis pópulus, * Quem Dóminus exercítuum benedíxit dicens: Opus mánuum meárum tu es, heréditas mea Israël."
+      en: "Blessed is the people * Whom the Lord of hosts hath blessed, saying O Israel thou art the work of Mine own hands, thou art Mine own inheritance."
+    v:
+      la: "Beáta gens, cujus est Dóminus Deus, pópulus eléctus in hereditátem."
+      en: "Blessed is the nation whose God is the Lord, and the people whom He hath chosen for His own inheritance."
+mal:
+  - r:
+      la: "Laudábilis pópulus, * Quem Dóminus exercítuum benedíxit dicens: Opus mánuum meárum tu es, heréditas mea Israël."
+      en: "Blessed is the people * Whom the Lord of hosts hath blessed, saying O Israel thou art the work of Mine own hands, thou art Mine own inheritance."
+    v:
+      la: "Beáta gens, cujus est Dóminus Deus, pópulus eléctus in hereditátem."
+      en: "Blessed is the nation whose God is the Lord, and the people whom He hath chosen for His own inheritance."
+
+# `hos` reuses `ezek`/`dan`'s own first entry (Osee's own week file
+# 114-1.txt `@`-references Tempora/111-1:Responsory1, the same Ezekiel
+# week already sourced above).
+hos:
+  - r:
+      la: "Redémit pópulum suum et liberávit eum, et vénient et exsultábunt in monte Sion et gaudébunt de bonis Dómini super fruménto, vino et óleo, * Et ultra non esúrient."
+      en: "He hath redeemed His people, and ransomed them therefore they shall come and sing in the height of Zion, and shall rejoice in the goodness of the Lord, for wheat, and for wine, and for oil * And they shall hunger no more."
+    v:
+      la: "Erítque ánima eórum quasi hortus irríguus."
+      en: "And their soul shall be as a watered garden."
+
+# `mic` reuses `amos`/`agg`'s own first entry (Micheas' own week file
+# 115-0.txt `@`-references Tempora/Pent01-0:Responsory1, Isaiah's
+# throne-vision, already sourced above).
+mic:
+  - r:
+      la: "Vidi Dóminum sedéntem super sólium excélsum et elevátum, et plena erat omnis terra majestáte ejus: * Et ea, quæ sub ipso erant, replébant templum."
+      en: "I saw the Lord sitting upon a throne, high and lifted up, and the whole earth was full of His glory; * And His train filled the temple."
+    v:
+      la: "Séraphim stabant super illud: sex alæ uni, et sex alæ álteri."
+      en: "Above it stood the Seraphim each one had six wings."
+
+# `lam` sourced from Latin/Tempora/Quad6-4.txt, English/Tempora/Quad6-4.txt
+# (Maundy Thursday's own Tenebrae Matins) — the classic Holy Week
+# responsories ("In monte Oliveti," "Tristis est anima mea," "Ecce
+# vidimus eum"). Unlike the Sacred Heart/Jeremiah case elsewhere in this
+# file, Maundy Thursday's high rank isn't an unrelated feast displacing
+# ordinary content — Tenebrae's Lamentations reading is intrinsically
+# Holy Week's own, so no override caution applies here.
+lam:
+  - r:
+      la: "In monte Olivéti orávit ad Patrem: Pater, si fíeri potest, tránseat a me calix iste: * Spíritus quidem promptus est, caro autem infírma."
+      en: "At the Mount of Olives He prayed unto the Father: O My Father, if it be possible, let this cup pass from Me! * The spirit indeed is willing, but the flesh is weak."
+    v:
+      la: "Vigiláte, et oráte, ut non intrétis in tentatiónem."
+      en: "Watch and pray, that ye enter not into temptation."
+  - r:
+      la: "Tristis est ánima mea usque ad mortem: sustinéte hic, et vigiláte mecum: nunc vidébitis turbam, quæ circúmdabit me: * Vos fugam capiétis, et ego vadam immolári pro vobis."
+      en: "My Soul is exceeding sorrowful, even unto death: tarry ye here and watch with Me * Yet a little while, and ye shall see the multitude close Me in. Ye shall flee; and I will go to be offered a sacrifice for you."
+    v:
+      la: "Ecce appropínquat hora, et Fílius hóminis tradétur in manus peccatórum."
+      en: "Behold, the hour is at hand, and the Son of man is betrayed into the hands of sinners."
+  - r:
+      la: "Ecce vídimus eum non habéntem spéciem, neque decórem: aspéctus ejus in eo non est: hic peccáta nostra portávit, et pro nobis dolet: ipse autem vulnerátus est propter iniquitátes nostras: * Cujus livóre sanáti sumus."
+      en: "Behold, when we shall see Him, He hath no form nor comeliness: there is no beauty in Him: this is He Which hath borne our griefs and carried our sorrows; but He was wounded for our transgressions * And with His stripes we are healed."
+    v:
+      la: "Vere languóres nostros ipse tulit, et dolóres nostros ipse portávit."
+      en: "Surely He hath borne our griefs and carried our sorrows."
+
+# `nah` reuses `ezek`/`dan`/`hos`'s own first entry (Nahum's own week file
+# 115-1.txt `@`-references Tempora/111-1:Responsory1, the same Ezekiel
+# week already sourced above).
+nah:
+  - r:
+      la: "Redémit pópulum suum et liberávit eum, et vénient et exsultábunt in monte Sion et gaudébunt de bonis Dómini super fruménto, vino et óleo, * Et ultra non esúrient."
+      en: "He hath redeemed His people, and ransomed them therefore they shall come and sing in the height of Zion, and shall rejoice in the goodness of the Lord, for wheat, and for wine, and for oil * And they shall hunger no more."
+    v:
+      la: "Erítque ánima eórum quasi hortus irríguus."
+      en: "And their soul shall be as a watered garden."

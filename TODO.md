@@ -26,14 +26,16 @@ across every hour and content type in this app.
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
    - Matins Nocturn 2/3 responsory pools (both new, 2026-09-04 — see "Matins responsory pools:
-     per-book expansion + new per-Common-category pool" below, and its two follow-up entries):
-     the per-book pool now covers 19 of 72 books (`isa`, `gen`, `jer`, `exod`, `prov`, `sir`,
+     per-book expansion + new per-Common-category pool" below, and its three follow-up entries):
+     the per-book pool now covers 33 of 72 books (`isa`, `gen`, `jer`, `exod`, `prov`, `sir`,
      `sap`, `tob`, `ezek`, `dan`, `1macc`, `2macc`, `1sam`, `2sam`, `1kgs`, `2kgs`, `zach`, `amos`,
-     `agg`); the new per-Common-category pool covers 19/19 real Commune categories (every category
-     actually used by a saint except angel/evangelist/vigil, which have no Commune responsory
-     file to source from) — this is the one that closes most of the 272-of-355 nocturn-readings
-     files that had no `responsory` at all. Bible-plan TSV content also isn't yet in a test table
-     (see "Bible-plan TSV — bulk conversion done" below).
+     `agg`, `jdt`, `esth`, `job`, `eccl`, `hab`, `joel`, `zeph`, `obad`, `jonah`, `mal`, `hos`,
+     `mic`, `nah`, `lam` — 39 books remaining, all New Testament plus Leviticus/Numbers/
+     Deuteronomy); the new per-Common-category pool covers 19/19 real Commune categories (every
+     category actually used by a saint except angel/evangelist/vigil, which have no Commune
+     responsory file to source from) — this is the one that closes most of the 272-of-355
+     nocturn-readings files that had no `responsory` at all. Bible-plan TSV content also isn't yet
+     in a test table (see "Bible-plan TSV — bulk conversion done" below).
    - Lauds/Vespers duplex-majus+ Common-category psalmody: all 24 `SaintRecord.common`
      categories are resolved (Vespers 10/10 real category files, Lauds 9/10 — see
      "Lauds/Vespers duplex-majus+ Common-category psalmody" below and its follow-up entry) with
@@ -5810,3 +5812,40 @@ citation anywhere in Tempora at all (Josue, Judices, Ruth, Paralipomenon/Chronic
 Nehemias, Canticles — the historic secular/monastic Historia cycle apparently never assigns these
 their own continuous reading), and the remaining ~45 New Testament epistle/Acts/Apocalypse books
 plus minor books not yet attempted.
+
+### Matins responsory pools: 12 more OT books, and 2 real process misses caught (2026-09-04)
+
+User caught two things this pass, neither of them a source gap:
+
+1. Directly pointed at `web/www/horas/English/Tempora/094-3.txt` and asked why Judith ("jdt") was
+   listed as unseeded when it plainly has real responsory content. Checking confirmed it — worse,
+   `jdt` and `esth` (Esther) had *both* already surfaced in this same day's own full-citation dump
+   of Tempora (`!Jdt`, `!Esth` were right there in the list) and were simply never followed up on.
+   Not a search-methodology gap this time, an attention gap: the data was already in hand.
+2. Self-audit prompted by that catch found a second, independent miss: `job` — one of the
+   heaviest-used books in the bible-plan (42 rows) — had been extracted early in this same day's
+   session (Latin/Tempora/091-1.txt, the classic "Job Responsories," also used in the Requiem) but
+   never actually committed to the pool file at all. Sourced, verified, then silently dropped.
+
+Fixed both, then used the same "reused across a whole prophetic-literature week" pattern already
+established for `ezek`/`dan`/`zach` to sweep the rest of November's minor prophets efficiently by
+following each book's own `@Tempora/X:ResponsoryN` reference rather than re-querying from scratch:
+`obad` (reuses `zach`'s own R1), `jonah`/`mal` (share one entry, Tempora/111-0:R7), `hos`/`nah`
+(reuse `ezek`/`dan`'s own R1), `mic` (reuses `amos`/`agg`'s own R1), `hab`/`joel` (share one entry,
+Tempora/111-2:R1), `zeph` (Tempora/111-3:R1, its own). Also added `eccl` (Tempora/081-2:R1, the
+same August "Wisdom literature" week cluster as `prov`/`sir`/`sap`, a different entry than
+`prov`'s own) and `lam` (Latin/Tempora/Quad6-4.txt — Maundy Thursday's own Tenebrae Matins, the
+classic "In monte Oliveti"/"Tristis est anima mea"/"Ecce vidimus eum" responsories; unlike the
+Sacred Heart/Jeremiah override case above, Holy Week's own high rank isn't an unrelated feast
+displacing ordinary content here — Tenebrae's Lamentations reading is intrinsically Holy Week's
+own, so no override caution applied).
+
+33 of 72 bible-plan books now seeded (added this pass: `jdt`, `esth`, `job`, `eccl`, `hab`, `joel`,
+`zeph`, `obad`, `jonah`, `mal`, `hos`, `mic`, `nah`, `lam` — 14 new). `npm test` (2025 passed) and
+`tsc --noEmit` both pass; live-verified via `getResponsoryForBook` resolving real text for every
+new key.
+
+Confirmed still genuinely absent (re-checked directly, not just re-asserted): `bar` (Baruch),
+Josue, Judices, Ruth, Paralipomenon/Chronicles, Esdras/Nehemias, Canticles — no citation anywhere
+in Tempora. 39 remaining books not yet attempted: Leviticus/Numbers/Deuteronomy, the four Gospels,
+Acts, Apocalypse, and the NT epistles.
