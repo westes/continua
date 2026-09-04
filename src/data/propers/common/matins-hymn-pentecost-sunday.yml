@@ -1,0 +1,182 @@
+# Pentecost's own Matins hymn ("Jam Christus astra ascénderat"). Live-
+# verified against Divinum Officium (Monastic Tridentinum 1617), Matins
+# live query, 2026-05-24 (Pentecost Sunday itself). Self-contained with
+# its own closing doxology baked in ("Glória Patri Dómino, Natóque, qui a
+# mórtuis Surréxit, ac Paráclito..." — the source tags this "Doxology:
+# PentT", byte-identical to the already-existing `hymn-doxology-pent.yml`
+# used elsewhere, but baked directly into the body here since this hour's
+# per-feast/octave hymn tiers never run the doxology-split/append
+# mechanism — see matins-hymn-ascension.yml's own header for the
+# identical reasoning).
+#
+# Closes the same real mechanism gap already fixed for Ascension
+# (`pentecost-sunday` is a temporal-feast id, not a saint record, so
+# `resolveOfficeWinner`'s octave-synthesis needed the same fix — see
+# hours/resolve-common.ts's `ALWAYS_OVERRIDE_TEMPORAL_IDS`). Per direct
+# instruction (2026-09-04): Ascension and Pentecost are core content, not
+# to be left half-fixed.
+id: matins-hymn-pentecost-sunday
+text:
+  la: >-
+    Jam Christus astra ascénderat,
+
+    Revérsus unde vénerat,
+
+    Promíssum Patris múnere,
+
+    Sanctum datúrus Spíritum.
+
+
+    Solémnis urgébat dies,
+
+    Quo mýstico septémplici
+
+    Orbis volútus sépties,
+
+    Signat beáta témpora.
+
+
+    Cum lucis hora tértia
+
+    Repénte mundus íntonat,
+
+    Orántibus Apóstolis
+
+    Deum venísse núntiat.
+
+
+    De Patris ergo lúmine
+
+    Decórus ignis almus est,
+
+    Qui fida Christi péctora
+
+    Calóre Verbi cómpleat.
+
+
+    Impléta gaudent víscera,
+
+    Affláta Sancto Spíritu,
+
+    Voces divérsas íntonant,
+
+    Fantur Dei magnália.
+
+
+    Ex omni gente cógniti,
+
+    Græcis, Latínis, Bárbaris,
+
+    Cunctísque admirántibus,
+
+    Linguis loquúntur ómnium.
+
+
+    Judǽa tunc incrédula,
+
+    Vesána torvo spíritu,
+
+    Ructáre musti crápulam,
+
+    Alúmnos Christi cóncrepat.
+
+
+    Sed signis et virtútibus
+
+    Occúrrit, et docet Petrus,
+
+    Falsa profári pérfidos,
+
+    Joéle teste cómprobans.
+
+
+    Glória Patri Dómino,
+
+    Natóque, qui a mórtuis
+
+    Surréxit, ac Paráclito,
+
+    In sæculórum sǽcula. Amen.
+  en: >-
+    Now Christ, ascending whence he came,
+
+    Had mounted o'er the starry frame,
+
+    The Holy Ghost on man below,
+
+    The Father's promise, to bestow.
+
+
+    The solemn time was drawing nigh,
+
+    Replete with heav'nly mystery,
+
+    On seven days' sevenfold circles borne,
+
+    That first and blessèd Whitsun-morn.
+
+
+    When the third hour shone all around,
+
+    There came a rushing mighty sound,
+
+    And told the Apostles, while in prayer,
+
+    That, as was promised, God was there.
+
+
+    Forth from the Father's light it came,
+
+    That beautiful and kindly flame:
+
+    To fill with fervour of his word
+
+    The spirits faithful to their Lord.
+
+
+    With joy the Apostles' breasts are fired,
+
+    By God the Holy Ghost inspired:
+
+    And straight, in diverse kinds of speech,
+
+    The wondrous works of God they preach.
+
+
+    To men of every race they speak,
+
+    Alike barbarian, Roman, Greek:
+
+    From the same lips, with awe and fear,
+
+    All men their native accents hear.
+
+
+    But Juda's sons, e'en faithless yet,
+
+    With mad infuriate rage beset,
+
+    To mock Christ's followers combine,
+
+    As drunken all with new-made wine.
+
+
+    When lo! with signs and mighty deeds,
+
+    Stands Peter in the midst, and pleads;
+
+    Confounding their malignant lie
+
+    By Joel's ancient prophecy.
+
+
+    To God the Father let us sing,
+
+    To God the Son, our risen King,
+
+    And equally let us adore
+
+    The Spirit, God forevermore. Amen.
+status:
+  la: verified
+  en: verified

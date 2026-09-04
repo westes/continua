@@ -1,0 +1,147 @@
+# Pentecost's own Lauds hymn ("Beáta nobis gáudia") — distinct from
+# Matins' own ("Jam Christus astra ascénderat") and Vespers' own ("Veni
+# Creátor Spíritus"), unlike Ascension where all 3 hours share one text.
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617),
+# Lauds live query, 2026-05-24 (Pentecost Sunday itself). Self-contained
+# — this hour's own resolveOfficeBundle doesn't run a hymn through the
+# doxology-split/append mechanism at all; the closing doxology here is
+# the same shared Pentecost-track text as Matins' own (see
+# matins-hymn-pentecost-sunday.yml's own header on "Doxology: PentT"),
+# baked in directly, but its own distinct English rendering ("To God the
+# Father, laud and praise...") is kept rather than reused from the
+# generic `hymn-doxology-pent.yml` translation, same as everywhere else
+# in this store that keeps each hymn's own historic translator's ending.
+id: lauds-hymn-pentecost-sunday
+text:
+  la: >-
+    Beáta nobis gáudia
+
+    Anni redúxit órbita,
+
+    Cum Spíritus Paráclitus
+
+    Effúlsit in discípulos.
+
+
+    Ignis vibránte lúmine
+
+    Linguæ figúram détulit,
+
+    Verbis ut essent próflui,
+
+    Et caritáte férvidi.
+
+
+    Linguis loquúntur ómnium;
+
+    Turbæ pavent Gentílium,
+
+    Musto madére députant
+
+    Quos Spíritus repléverat.
+
+
+    Patráta sunt hæc mýstice,
+
+    Paschæ perácto témpore,
+
+    Sacro diérum número,
+
+    Quo lege fit remíssio.
+
+
+    Te nunc, Deus piíssime,
+
+    Vultu precámur cérnuo:
+
+    Illápsa nobis cǽlitus
+
+    Largíre dona Spíritus.
+
+
+    Dudum sacráta péctora
+
+    Tua replésti grátia:
+
+    Dimítte nostra crímina,
+
+    Et da quiéta témpora.
+
+
+    Glória Patri Dómino,
+
+    Natóque, qui a mórtuis
+
+    Surréxit, ac Paráclito,
+
+    In sæculórum sǽcula. Amen.
+  en: >-
+    Round roll the weeks our hearts to greet,
+
+    With blissful joy returning;
+
+    For lo! the Holy Paraclete
+
+    On twelve bright brows sits burning:
+
+    With quivering flame he lights on each,
+
+    In fashion like a tongue, to teach
+
+    That eloquent they are of speech,
+
+    Their hearts with true love yearning.
+
+
+    While with all tongues they speak to all,
+
+    The nations deem them maddened,
+
+    And drunk with wine the prophets call,
+
+    Whom God's good Spirit gladdened;
+
+    A marvel this—in mystery done—
+
+    The holy paschaltide outrun,
+
+    By numbers told, whose reckoning won
+
+    Remission for the saddened.
+
+
+    O God most Holy, thee we pray,
+
+    With reverent brow low bending,
+
+    Grant us the Spirit's gifts today
+
+    The gifts from heaven descending;
+
+    And, since, thy grace hath deigned to bide
+
+    Within our breasts once sanctified,
+
+    Deign, Lord, to cast our sins aside,
+
+    Henceforth calm seasons sending.
+
+
+    To God the Father, laud and praise,
+
+    Praise to the Son be given;
+
+    Praise to the Spirit of all grace,
+
+    The fount of graces seven —
+
+    As was of old, all worlds before,
+
+    Is now and shall be evermore,
+
+    When time and change are spent and o'er
+
+    All praise in earth and heaven. Amen.
+status:
+  la: verified
+  en: verified
