@@ -26,13 +26,14 @@ across every hour and content type in this app.
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
    - Matins Nocturn 2/3 responsory pools (both new, 2026-09-04 — see "Matins responsory pools:
-     per-book expansion + new per-Common-category pool" below, and its own follow-up entry): the
-     per-book pool now covers 11 of ~66 books (`isa`, `gen`, `jer`, `exod`, `prov`, `sir`, `sap`,
-     `tob`, `ezek`, `dan`, `1macc`); the new per-Common-category pool covers 19/19 real Commune
-     categories (every category actually used by a saint except angel/evangelist/vigil, which
-     have no Commune responsory file to source from) — this is the one that closes most of the
-     272-of-355 nocturn-readings files that had no `responsory` at all. Bible-plan TSV content
-     also isn't yet in a test table (see "Bible-plan TSV — bulk conversion done" below).
+     per-book expansion + new per-Common-category pool" below, and its two follow-up entries):
+     the per-book pool now covers 19 of ~66 books (`isa`, `gen`, `jer`, `exod`, `prov`, `sir`,
+     `sap`, `tob`, `ezek`, `dan`, `1macc`, `2macc`, `1sam`, `2sam`, `1kgs`, `2kgs`, `zach`, `amos`,
+     `agg`); the new per-Common-category pool covers 19/19 real Commune categories (every category
+     actually used by a saint except angel/evangelist/vigil, which have no Commune responsory
+     file to source from) — this is the one that closes most of the 272-of-355 nocturn-readings
+     files that had no `responsory` at all. Bible-plan TSV content also isn't yet in a test table
+     (see "Bible-plan TSV — bulk conversion done" below).
    - Lauds/Vespers duplex-majus+ Common-category psalmody: all 24 `SaintRecord.common`
      categories are resolved (Vespers 10/10 real category files, Lauds 9/10 — see
      "Lauds/Vespers duplex-majus+ Common-category psalmody" below and its follow-up entry) with
@@ -5771,3 +5772,41 @@ for the precedent).
 Now 11 of ~66 bible-plan books seeded: `isa`, `gen`, `jer`, `exod`, `prov`, `sir`, `sap`, `tob`,
 `ezek`, `dan`, `1macc`. `npm test` (2025 passed) and `tsc --noEmit` both pass; live-verified via
 `getResponsoryForBook` resolving real text for every new key.
+
+### Matins responsory pools: a real extraction bug found, 8 more books unblocked (2026-09-04)
+
+User pushback on the previous entry's "5 books skipped, no English available" claim ("look at the
+secular office for most of the books") — right call: re-checking found a genuine bug, not a real
+source gap. The extraction script's Responsory-block regex only matched a bare `[ResponsoryN]` tag;
+it missed the reference engine's own `[ResponsoryN_]` convention (an underscore-suffixed literal
+template tag holding the real text, which a plain `[ResponsoryN]` often just `@:`-references
+alongside a Cistercian-rubric variant) — so every file using that convention looked like it had no
+English translation when the real text was sitting right there under a different tag name. Fixed
+the script to prefer the `_`-suffixed tag's literal body over a bare `@:`-reference.
+
+This unblocked `1sam` (Latin/Tempora/Pent01-1.txt, its own genuine 3-entry set — the young Samuel's
+call and consecration) outright. Chasing the `@Tempora/X:ResponsoryN` cross-file references (not
+resolved by the extraction script, hand-followed instead) also unblocked:
+- `2sam`/`1kgs`/`2kgs` (2/3/4 Reg) — all three books' own week files `@`-reference the *same*
+  single entry, Tempora/Pent03-1Feria's Responsory1 (2 Samuel 24's census/plague narrative,
+  "Recordáre, Dómine, testaménti tui") — read directly, not guessed, same "loose match" reuse
+  pattern already established for the Wisdom-literature and Ezekiel/Daniel weeks. One entry only;
+  Responsory2/3 chain further references not followed this pass.
+- `2macc` — reuses `1macc`'s own 3-entry set outright (Tempora/104-1 `@`-references Tempora/101-1).
+- `zach` (Tempora/115-5, itself referencing 111-0's Responsory4-6 — Ezekiel's own Sunday, distinct
+  from `ezek`/`dan`'s own Monday-sourced entries) and `amos`/`agg` (both referencing Tempora/
+  Pent01-0's Responsory1 — Isaiah's throne-vision — plus 111-0's Responsory2-3) — all three
+  minor-prophet books previously assumed to have no reference-engine English at all; that was true
+  of their *own* week files in isolation, but false once their `@`-references were actually
+  followed.
+
+19 of ~66 bible-plan books now seeded (added this pass: `1sam`, `2sam`, `1kgs`, `2kgs`, `2macc`,
+`zach`, `amos`, `agg`). `npm test` (2025 passed) and `tsc --noEmit` both pass; live-verified via
+`getResponsoryForBook` resolving real text for every new key, at every pool index (not just index
+0) for the 3-entry sets.
+
+Still genuinely unseeded after this pass — real gaps, re-confirmed: books with no reference-engine
+citation anywhere in Tempora at all (Josue, Judices, Ruth, Paralipomenon/Chronicles, Esdras/
+Nehemias, Canticles — the historic secular/monastic Historia cycle apparently never assigns these
+their own continuous reading), and the remaining ~45 New Testament epistle/Acts/Apocalypse books
+plus minor books not yet attempted.

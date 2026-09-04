@@ -4,7 +4,7 @@
 # chapter/verse historically, so a book-level match is the right
 # granularity, not a gap to fill in later with exact citations.
 #
-# Seeded, not a full pool — 11 of the ~66 books actually used in the user's
+# Seeded, not a full pool — 19 of the ~66 books actually used in the user's
 # own bible-plan (data/hours/bible-plan/*.yml), the rest deferred bulk
 # content (see TODO.md). Cycled in order
 # per-day when a Nocturn-1 reading's book has more than one candidate
@@ -274,3 +274,157 @@ dan:
     v:
       la: "Ornavérunt fáciem templi corónis áureis, et dedicavérunt altáre Dómino."
       en: "They decked the fore-front of the Temple with crowns of gold, and dedicated the Altar unto the Lord."
+
+# `2macc` — same source pool as `1macc` (see that entry's own header): the
+# reference engine's own 104 (2 Mac) week file `@`-references 101-1 (1
+# Maccabees' own week) for its responsories, both Latin and English.
+2macc:
+  - r:
+      la: "Dixit Judas Simóni fratri suo: Elige tibi viros et vade, líbera fratres tuos in Galilǽam; ego autem et Jónathas frater tuus íbimus in Galaadítim: * Sicut fúerit volúntas in cælo, sic fiat."
+      en: "Judas said unto Simon his brother: Choose thee out men, and go, and deliver thy brethren that are in Galilee and I, and Jonathan thy brother, will go into the country of Galaad. * As the Will is in heaven, so let it be."
+    v:
+      la: "Accingímini, fílii poténtes, et estóte paráti: quóniam mélius est nobis, mori in bello, quam vidére mala gentis nostræ et sanctórum."
+      en: "Arm yourselves, ye valiant men, and be in readiness for it is better for us to die in battle, than to behold the calamities of our people, and our sanctuary."
+  - r:
+      la: "Ornavérunt fáciem templi corónis áureis, et dedicavérunt altáre Dómino: * Et facta est lætítia magna in pópulo."
+      en: "They decked the fore-front of the Temple with crowns of gold, and dedicated the Altar unto the Lord. * And there was very great gladness among the people."
+    v:
+      la: "In hymnis et confessiónibus benedicébant Dóminum."
+      en: "They praised the Lord with Psalms and thanksgiving."
+  - r:
+      la: "In hymnis et confessiónibus benedicébant Dóminum, * Qui magna fecit in Israël, et victóriam dedit illis Dóminus omnípotens."
+      en: "They praised the Lord with psalms and thanksgiving * Who had done so great things in Israel, and given them the victory the Lord Almighty."
+    v:
+      la: "Ornavérunt fáciem templi corónis áureis, et dedicavérunt altáre Dómino."
+      en: "They decked the fore-front of the Temple with crowns of gold, and dedicated the Altar unto the Lord."
+
+# `1sam` sourced from Latin/Tempora/Pent01-1.txt, English/Tempora/Pent01-1.txt
+# (Monday of the week after the Octave of Pentecost — its own plain rank).
+# The bare `[ResponsoryN]` tags in this file are themselves just
+# `@:ResponsoryN_`-references to a literal `[ResponsoryN_]` template
+# tag (a Cistercian-rubric variant sits alongside it) — this project's
+# earlier extraction pass initially missed this underscore-suffixed
+# convention entirely and wrongly concluded no English existed for
+# several Kings/Samuel weeks; corrected 2026-09-04 (user: "look at the
+# secular office" prompted re-checking rather than accepting the gap).
+1sam:
+  - r:
+      la: "Præparáte corda vestra Dómino, et servíte illi soli: * Et liberábit vos de mánibus inimicórum vestrórum."
+      en: "Prepare your hearts unto the Lord, and serve Him Only * And He will deliver you out of the hand of your enemies."
+    v:
+      la: "Convertímini ad eum in toto corde vestro, et auférte deos aliénos de médio vestri."
+      en: "Return unto Him with all your hearts, and put away the strange gods from among you."
+  - r:
+      la: "Deus ómnium exaudítor est: ipse misit Angelum suum, et tulit me de óvibus patris mei: * Et unxit me unctióne misericórdiæ suæ."
+      en: "God, Which heareth all, even He sent His Angel, and took me from keeping my father's sheep, and * Anointed me with the oil of His mercy."
+    v:
+      la: "Dóminus, qui erípuit me de ore leónis, et de manu béstiæ liberávit me."
+      en: "The Lord That delivered me out of the mouth of the lion, and out of the paw of the bear"
+  - r:
+      la: "Dóminus, qui erípuit me de ore leónis, et de manu béstiæ liberávit me, * Ipse me erípiet de mánibus inimicórum meórum."
+      en: "The Lord That delivered me out of the mouth of the lion, and out of the paw of the bear * He will deliver me out of the hand of mine enemies."
+    v:
+      la: "Misit Deus misericórdiam suam et veritátem suam: ánimam meam erípuit de médio catulórum leónum."
+      en: "God hath sent forth His mercy and His truth, and delivered my soul from among the lion's whelps."
+
+# `2sam`/`1kgs`/`2kgs` all sourced from the same single entry, Latin/Tempora/
+# Pent03-1Feria.txt, English/Tempora/Pent03-1Feria.txt (Monday of week 3
+# post-Pentecost-Octave) — each book's own week file (Pent05-1/Pent07-1/
+# Pent09-1) `@`-references this exact file/tag for Responsory1, confirmed
+# by reading each one directly, not guessed. Genuine 2 Samuel content (the
+# census/plague of 2 Sam 24) reused loosely across the whole "Regum"
+# reading season, same convention as the Wisdom-literature and
+# Ezekiel/Daniel weeks above. Only 1 entry — the books' own week files
+# chain further `@`-references (Pent01-3, etc.) for Responsory2/3 that
+# weren't followed this pass.
+2sam:
+  - r:
+      la: "Recordáre, Dómine, testaménti tui, et dic Angelo percutiénti: Cesset jam manus tua, * Ut non desolétur terra, et ne perdas omnem ánimam vivam."
+      en: "Remember, O Lord, thy covenant, and say unto the destroying Angel: Stay now thine hand; * That the land be not utterly laid waste, and that thou destroy not every living soul."
+    v:
+      la: "Ego sum qui peccávi, ego qui iníque egi: isti qui oves sunt, quid fecérunt? Avertátur, óbsecro, furor tuus, Dómine, a pópulo tuo."
+      en: "Even I it is that have sinned, and done evil indeed; but these sheep, what have they done? Let thine anger, I pray thee, O Lord, be turned away from thy people."
+1kgs:
+  - r:
+      la: "Recordáre, Dómine, testaménti tui, et dic Angelo percutiénti: Cesset jam manus tua, * Ut non desolétur terra, et ne perdas omnem ánimam vivam."
+      en: "Remember, O Lord, thy covenant, and say unto the destroying Angel: Stay now thine hand; * That the land be not utterly laid waste, and that thou destroy not every living soul."
+    v:
+      la: "Ego sum qui peccávi, ego qui iníque egi: isti qui oves sunt, quid fecérunt? Avertátur, óbsecro, furor tuus, Dómine, a pópulo tuo."
+      en: "Even I it is that have sinned, and done evil indeed; but these sheep, what have they done? Let thine anger, I pray thee, O Lord, be turned away from thy people."
+2kgs:
+  - r:
+      la: "Recordáre, Dómine, testaménti tui, et dic Angelo percutiénti: Cesset jam manus tua, * Ut non desolétur terra, et ne perdas omnem ánimam vivam."
+      en: "Remember, O Lord, thy covenant, and say unto the destroying Angel: Stay now thine hand; * That the land be not utterly laid waste, and that thou destroy not every living soul."
+    v:
+      la: "Ego sum qui peccávi, ego qui iníque egi: isti qui oves sunt, quid fecérunt? Avertátur, óbsecro, furor tuus, Dómine, a pópulo tuo."
+      en: "Even I it is that have sinned, and done evil indeed; but these sheep, what have they done? Let thine anger, I pray thee, O Lord, be turned away from thy people."
+
+# `zach` sourced from Latin/Tempora/115-5.txt (Nov week 5's own Friday
+# ferial) whose own Responsory1-3 are themselves `@`-references to
+# Tempora/111-0:Responsory4-6 (Ezekiel's own week's Sunday, R4-6 — distinct
+# from `ezek`/`dan`'s own R1-3 above from that same week's Monday) —
+# followed and confirmed both languages present, not guessed.
+zach:
+  - r:
+      la: "Super muros tuos, Jerúsalem, constítui custódes; * Tota die et nocte non tacébunt laudáre nomen Dómini."
+      en: "I have set watchmen upon thy walls, O Jerusalem; * Which shall never hold their peace day nor night, to praise the name of the Lord."
+    v:
+      la: "Prædicábunt pópulis fortitúdinem meam, et annuntiábunt géntibus glóriam meam."
+      en: "They shall proclaim My might unto the nations, and declare My glory unto the Gentiles."
+  - r:
+      la: "Muro tuo inexpugnábili circumcínge nos, Dómine, et armis tuæ poténtiæ prótege nos semper: * Líbera, Dómine, Deus Israël, clamántes ad te."
+      en: "Hedge us about with thy wall that cannot be broken down, O Lord, and shield us continually with the arms of thy might. * O Lord God of Israel, deliver them that cry unto thee."
+    v:
+      la: "Erue nos in mirabílibus tuis, et da glóriam nómini tuo."
+      en: "Deliver us also according to thy marvellous works, and give glory to thy Name."
+  - r:
+      la: "Sustinúimus pacem, et non venit: quæsívimus bona, et ecce turbátio: cognóvimus, Dómine, peccáta nostra; * Non in perpétuum obliviscáris nos."
+      en: "We looked for peace, and it came not we asked for good, and behold trouble. We acknowledge, O Lord, our wickedness. * Forget us not for ever."
+    v:
+      la: "Peccávimus, ímpie géssimus, iniquitátem fécimus, Dómine, in omnem justítiam tuam."
+      en: "O Lord (our God) we have sinned, we have done ungodly, we have dealt unrighteously in all thine ordinances."
+
+# `amos`/`agg` — both share the same 3-entry set, followed through two
+# further `@`-reference hops from their own week files (114-4 Amos,
+# 115-4 Aggeus): R1 from Tempora/Pent01-0 (the Sunday after the Octave of
+# Pentecost, Isaiah's throne-vision), R2-3 from Tempora/111-0 (Ezekiel's
+# own Sunday) — same "loose, prophetic-literature-wide" reuse already seen
+# for `ezek`/`dan`/`zach` above.
+amos:
+  - r:
+      la: "Vidi Dóminum sedéntem super sólium excélsum et elevátum, et plena erat omnis terra majestáte ejus: * Et ea, quæ sub ipso erant, replébant templum."
+      en: "I saw the Lord sitting upon a throne, high and lifted up, and the whole earth was full of His glory; * And His train filled the temple."
+    v:
+      la: "Séraphim stabant super illud: sex alæ uni, et sex alæ álteri."
+      en: "Above it stood the Seraphim each one had six wings."
+  - r:
+      la: "Aspice, Dómine, de sede sancta tua, et cógita de nobis: inclína, Deus meus, aurem tuam et audi: * Aperi óculos tuos et vide tribulatiónem nostram."
+      en: "Look down, O Lord, from the dwelling-place of thine holiness, and take thought for us. O my God, incline thine ear, and hear. * Open thine eyes, and behold our desolation."
+    v:
+      la: "Qui regis Israël, inténde, qui dedúcis velut ovem Joseph."
+      en: "Give ear, O Shepherd of Israel, Thou That leadest Joseph like a flock."
+  - r:
+      la: "Aspice, Dómine, quia facta est desoláta cívitas plena divítiis, sedet in tristítia dómina géntium: * Non est qui consolétur eam, nisi tu, Deus noster."
+      en: "Consider, O Lord, how that the city sitteth solitary that was full of riches; how is she become as a widow, she that was great among the nations; * She hath none to comfort her, save thee, O our God."
+    v:
+      la: "Plorans plorávit in nocte, et lácrimæ ejus in maxíllis ejus."
+      en: "She weepeth sore in the night, and her tears are on her cheeks."
+agg:
+  - r:
+      la: "Vidi Dóminum sedéntem super sólium excélsum et elevátum, et plena erat omnis terra majestáte ejus: * Et ea, quæ sub ipso erant, replébant templum."
+      en: "I saw the Lord sitting upon a throne, high and lifted up, and the whole earth was full of His glory; * And His train filled the temple."
+    v:
+      la: "Séraphim stabant super illud: sex alæ uni, et sex alæ álteri."
+      en: "Above it stood the Seraphim each one had six wings."
+  - r:
+      la: "Aspice, Dómine, de sede sancta tua, et cógita de nobis: inclína, Deus meus, aurem tuam et audi: * Aperi óculos tuos et vide tribulatiónem nostram."
+      en: "Look down, O Lord, from the dwelling-place of thine holiness, and take thought for us. O my God, incline thine ear, and hear. * Open thine eyes, and behold our desolation."
+    v:
+      la: "Qui regis Israël, inténde, qui dedúcis velut ovem Joseph."
+      en: "Give ear, O Shepherd of Israel, Thou That leadest Joseph like a flock."
+  - r:
+      la: "Aspice, Dómine, quia facta est desoláta cívitas plena divítiis, sedet in tristítia dómina géntium: * Non est qui consolétur eam, nisi tu, Deus noster."
+      en: "Consider, O Lord, how that the city sitteth solitary that was full of riches; how is she become as a widow, she that was great among the nations; * She hath none to comfort her, save thee, O our God."
+    v:
+      la: "Plorans plorávit in nocte, et lácrimæ ejus in maxíllis ejus."
+      en: "She weepeth sore in the night, and her tears are on her cheeks."
