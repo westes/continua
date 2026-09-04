@@ -19,9 +19,8 @@ across every hour and content type in this app.
 
 1. **Mechanism gaps** — a real design/code piece not built yet, blocking any content pass on
    it from starting:
-   - Paschaltide should substitute the ordinary suffrages/ferial-Preces set with a single
-     alleluia-form "Suffragium Paschale" — not modeled; the ordinary set is shown unchanged
-     throughout Paschaltide instead.
+   - (none currently open — the last one, Paschaltide's "Suffragium Paschale" substitution,
+     was closed 2026-09-04, see the dated log below)
 
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
@@ -5643,3 +5642,44 @@ word-swap, confirmed live), shared "Ángelis suis" versicle. `lauds-hymn-lent.ym
 checking `lauds-hymn-saturday.yml`'s real content against the same 2026-02-28 Lenten Ember Saturday
 date) — byte-identical, just needed the status flipped. All 8 files now `verified`; no more draft
 Lent content anywhere in this app. `npm test` (2025 passed) and `tsc --noEmit` both pass.
+
+### Paschaltide's "Suffragium Paschale" mechanism (2026-09-04)
+
+Closed the highest-priority remaining mechanism gap. Live-verified against Divinum Officium (both
+Monastic Tridentinum 1617 and Tridentine 1906, byte-identical between the two tracks — the source's
+own `[Suffragium]` macro literally has a `(sed tempore paschali) @:Suffragium Paschale` override,
+2026-04-20, a plain Eastertide feria): throughout the whole Paschaltide window (`eastertide`/
+`ascensiontide`/`pentecost` — the same boundary `PASCHALTIDE_SEASONS` already governs elsewhere in
+this store), two things happen whenever they'd otherwise show at all:
+
+1. The ordinary 5-suffrage set (Cross/BVM/Joseph/Apostles/Peace) collapses into one single
+   alleluia-form "Suffragium Paschale" block — one antiphon (different at Lauds, "Crucifíxus
+   surréxit a mórtuis...", vs. Vespers, "Crucem sanctam súbiit...", unlike the ordinary 4/5
+   suffrages, which share identical text at both hours), one shared versicle, one shared collect.
+2. The ferial-Preces litany (`lauds-preces-feriales`/`vespers-preces-feriales`, sourced from
+   Tridentine 1906/1910 since Monastic 1617 has none at all — see that file's own header) drops
+   entirely rather than being replaced by anything ("Preces Feriales{omittitur}" live) — a
+   Sunday/feast's own short litany (`lauds-short-litany`) is untouched, a separate, universal
+   collect-opening dialogue unrelated to this ferial-specific one.
+
+Exported a new `isPaschaltide(season)` helper from `hours/resolve-common.ts` (wraps the existing
+`PASCHALTIDE_SEASONS` set, previously private to that file) and used it in both
+`resolveSuffrages` (gated after the pre-existing "omit suffrages entirely" checks — Double+/active
+octave/Advent-Christmastide-Passiontide already drop suffrages regardless of season, unaffected)
+and a new check in `hours/lauds.ts`'s/`hours/vespers.ts`'s own `'lauds-preces'`/`'vespers-preces'`
+cases (gated on `isFerialOrVigil(day)`, matching the existing predicate that already selects the
+ferial litany in the first place). `resolveSuffrages` gained a third `hourId: 'lauds' | 'vespers'`
+parameter (both call sites updated) to pick the right antiphon.
+
+Authored `lauds-suffrage-paschale.yml` and `vespers-suffrage-paschale.yml` — English on the Vespers
+antiphon is this project's own translation and left `draft` (the reference engine's own English
+render leaves that one antiphon untranslated, Latin-only); everything else `verified`.
+
+Verified end-to-end via `resolveOrdo` on real dates for Lauds (both the suffrage collapse and the
+Preces omission fire together correctly on a clean Eastertide feria, 2026-04-20) and via a direct
+`resolveSuffrages` unit call plus a separately-found clean Vespers evening (2026-04-15, since this
+particular stretch of Eastertide 2026 is otherwise densely packed with First-Vespers anticipations
+and octaves — Easter's own, the Patronage of St. Joseph's, Ascension's, Pentecost's — that already
+correctly suppress suffrages for other, pre-existing reasons and would have made a false negative
+look like a false positive). `npm test` (2025 passed, no pre-existing tests exercised this path at
+all) and `tsc --noEmit` both pass.
