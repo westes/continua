@@ -5525,3 +5525,44 @@ Ascension). `npm test` (2025 passed, no test changes needed) and `tsc --noEmit` 
 
 Corpus Christi and Sacred Heart remain the one still-open piece of this same-shape gap — not fixed
 this session, lower priority than Ascension/Pentecost per direct instruction.
+
+**Follow-on, same day**: per direct instruction ("ascension's collect and the two octaves"), closed
+all 3 remaining pieces immediately.
+
+Authored `ascension-collect.yml` (live-verified 2026-05-14) — a separate, pre-existing gap
+(`getDayCollect` already looked up `ascension-collect` via the same `resolveOfficeWinner` this
+session's mechanism fix already covers; the collect file itself just never existed).
+
+Closed Corpus Christi's and Sacred Heart's own hymnody gaps the same way as Ascension/Pentecost:
+added `corpus-christi` and `sacred-heart` to `ALWAYS_OVERRIDE_TEMPORAL_IDS` (no further code change
+needed — the mechanism is generic) and authored `matins-hymn-{corpus-christi,sacred-heart}.yml`,
+`lauds-{capitulum,responsory,hymn,versicle}-corpus-christi.yml`,
+`vespers-{responsory,hymn,versicle}-corpus-christi.yml`, `lauds-{capitulum,hymn,versicle}-sacred-
+heart.yml`, and `vespers-{hymn,versicle}-sacred-heart.yml` — all live-verified against Divinum
+Officium, 2026-06-04 (Corpus Christi) and 2026-06-12 (Sacred Heart). Corpus Christi's own hymns are
+widely known outside this context too: Matins' own "Sacris solémniis", Lauds' own "Verbum supérnum
+pródiens" (whose final 2 stanzas are the separately-famous "O Salutaris Hostia"), and Vespers' own
+"Pange, lingua, gloriósi Córporis mystérium" (whose final 2 stanzas are the separately-famous
+"Tantum Ergo").
+
+Sacred Heart needed one real source-track correction: the Monastic Tridentinum 1617 track doesn't
+observe this feast on this date at all (live-checked: shows St. Barnabas instead, a real 1617-era
+calendar gap, not a vu bug) — used Divino Afflatu 1954 instead, consistent with this project's own
+stated rubric/precedence track (see CLAUDE.md). Also live-verified a genuine, deliberate structural
+difference: Sacred Heart's own Lauds and Vespers have **no responsory at all** in the source
+(straight from chapter to hymn, "Capitulum Hymnus Versus" with no "Responsorium" between) — not an
+authoring gap, so no `lauds-responsory-sacred-heart.yml`/`vespers-responsory-sacred-heart.yml` were
+created. This exposed a real small UI gap: `hours/lauds.ts`'s and `hours/vespers.ts`'s own
+`resolveOffice` always pushed a `{kind:'responsory'}` part even when its own resolved text carried
+`status: missing` in both languages, rendering an empty section. Fixed both to omit the responsory
+part entirely when both languages are genuinely missing, rather than an empty box.
+
+Confirmed both octaves end-to-end via `resolveOrdo` (feast days, plain octave days, and real winning
+saints within each window — St. Boniface/St. Barnabas within Corpus Christi's, unaffected). Found
+and fixed 2 pre-existing tests whose own dates now land inside these newly-modeled octaves and were
+asserting the old (buggy) fall-through behavior as if correct:
+`tests/hours/lauds.test.ts`'s `FERIAL_MONDAY` (was 2026-06-08, inside Corpus Christi's octave — moved
+to 2026-09-07) and `tests/hours/vespers.test.ts`'s own St. Margaret of Scotland test (2026-06-09,
+also inside Corpus Christi's octave — its own title already anticipated this exact fix; updated its
+assertions from the old "falls through to the plain ferial default" guess to the real, live-verified
+Corpus Christi content). `npm test` (2025 passed) and `tsc --noEmit` both pass.
