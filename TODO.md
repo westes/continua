@@ -5314,3 +5314,111 @@ alone (scripture verse text, martyrology narrative, homily quotes under `src/dat
 `src/data/martyrology/`, `src/data/propers/`) — those are quoted Douay-Rheims translation prose,
 where the traditional spelling is correct as part of the source text, not this app's own
 generated label.
+
+### Ember September Friday's homily recombined into one reading; the Matins ferial hymn now varies by weekday (2026-09-04)
+
+Two fixes from one report. The user looked at `093-5.txt` (Ember Friday's own source file) and
+confirmed what the 2026-09-03 "second follow-on" entry above had only flagged: Gregory's Homily 33
+(Lectio1-3) is one continuous, unbroken text on the same pericope (Luke 7:36-50), split only to
+fill the fixed 3-lesson Nocturn slot count — exactly the "source doesn't genuinely split" case
+`post-pentecost-15.yml`'s own doc comment already establishes as this store's default. Recombined
+`ember-september-friday.yml`'s 3 readings into 1, keeping Lectio1's own responsory (the "first one,
+when several collapse" convention) and dropping Lectio2/3's own distinct responsories, same as
+every other collapsed-reading case in this store. The same "genuinely distinct proper responsory"
+rationale for staying split also appears, unfixed, in `ember-september-wednesday.yml`,
+`ember-september-saturday.yml`, `ember-advent-wednesday.yml`, `ember-advent-friday.yml`, and
+`ember-advent-saturday.yml` — out of scope here (the user's report was specifically about
+September Friday), flagged for a possible later consistency pass. Live-verified on
+`/2026-09-18/matins` (Ember Friday commemorated under St. Joseph of Cupertino): one
+"POPE ST. GREGORY..." heading, one flowing text, one responsory, no more triple-repeat. Updated
+`tests/calendar/ember-days.test.ts`'s lesson-count assertion (now per-date, 1 for Sept 18, 3 for
+the other 5 still-split Ember days).
+
+Separately, the user reported that today's (2026-09-04, a Friday) Matins hymn started "O Three in
+One, and One in Three" in the live Monastic 1617 office, not the hymn vu was showing. Investigated
+and found a real, broader mechanism gap: `hours/matins.ts`'s `resolveMatinsHymn` fell through to a
+single `matins-hymn-ferial` id for *every* weekday, but the source (Psalterium/Special/Matutinum
+Special.txt's "Day0 Hymnus" through "Day6 Hymnus", Day0=Sunday..Day6=Saturday) genuinely varies the
+plain ferial Matins hymn by weekday — the classic "week of hymns" (Somno reféctis ártubus /
+Consors patérni lúminis / Rerum Creátor óptime / Nox atra rerum / Tu Trinitátis Únitas for
+Mon-Fri). `matins-hymn-ferial.yml`'s own text turned out to already be Monday's hymn, mislabeled
+in its header comment as a generic fixed "ferial" text and misattributed to "a plain ferial
+Tuesday" (the live-verification date given, 2026-12-15, is a Tuesday, but the text itself is
+Monday's — Monastic 1617's own `Day1 HymnusM` swap, "omni témpore" -> "in perpetuum", is present in
+the file). Authored `matins-hymn-ferial-tuesday/-wednesday/-thursday/-friday.yml` (Monastic 1617
+text, live-verified against the CGI instance directly for Friday, including its own real M-track
+word-swaps: `flagitémus ómnium/vúlnerum` order and `astet`->`adsit`) and wired
+`resolveMatinsHymn`'s final fallback to pick by `day.weekday`. Sunday and Saturday deliberately
+left on the existing `matins-hymn-ferial` (Monday's text) as a documented placeholder, not fixed
+here: Sunday's own real hymn selection is a genuinely more complex, not-yet-understood two-hymn
+mechanism in the source (`Day0 Hymnus` vs `Day0 Hymnus1`, tags `H-MatDom1`/`H-MatDom4`, purpose
+unconfirmed), and Saturday's own plain `Day6 Hymnus` is live-verified to be superseded on nearly
+every ordinary Saturday by the Officium Sabbatorum B.M.V.'s own proper hymn ("Quem terra, pontus,
+æthera") — a whole separate Saturday-votive-Office mechanism this app doesn't model at all yet.
+Both are real, open gaps, not silently resolved. Updated 2 pre-existing `FERIAL_DATE` (2026-12-01,
+a Tuesday) hymn assertions in `tests/hours/matins.test.ts` that had been asserting the old,
+wrong-for-Tuesday "Somno" text. Live-verified `/2026-09-04/matins` in the browser. `npm test`
+(2025 passed) and `tsc --noEmit` both pass.
+
+### Matins/Lauds hymns completed for Marian Saturday; corrected 3 pre-existing content bugs found in the process (2026-09-04)
+
+Following straight on from the "Saturday's own Officium Sabbatorum" gap flagged just above: asked
+the user what the plain *secular* Tridentine 1570 track (fewer saints, easier to isolate a clean
+date) does on an ordinary Saturday, expecting a straightforward answer. Found instead that a
+**full precedence mechanism for this already existed**, committed well before this session
+(`calendar/index.ts`'s `applyMarianSaturday`, gated on `weekday === 'saturday'`,
+`temporalCategory === 'ordinary-feria'`, and no active octave; a `marian-saturday` collect and
+Benedictus antiphon; a Lauds psalmody override) — a real gap in my own earlier claim to the user
+that "vu doesn't model this at all," found by not having grepped the codebase before saying so.
+
+Per direct instruction, the actual design (a real, closed decision, not left open): Marian
+Saturday is rank **Simplex**, but its own separate tier — beats a plain Simplex saint (who is then
+commemorated), loses cleanly (zero commemoration, matching live behavior confirmed against 3 real
+dates: St. Blaise/Simplex commemorated 2024-02-03, St. Athanasius/Duplex and Ss. Cyriacus &
+Co./Semiduplex both winning with *zero* trace of Marian Saturday 2026-05-02/2026-08-08) to
+anything Vigil-or-higher — i.e. sits between `simplex` and `vigil` in vu's own `FeastClass` scale,
+which `applyMarianSaturday`'s `winner.rank !== 'simplex'` gate already implements correctly without
+needing a new `FeastClass` value at all (Vigil already ranks above Simplex there). Matins/Lauds get
+proper hymns; ferial psalmody is kept everywhere (not the real historical proper-psalm set) with
+only the antiphons swapped to Marian text; the Marian collect applies whenever the day wins. No
+"little office" — deliberately narrower than the actual historical Officium Sabbatorum.
+
+Authored `matins-hymn-marian-saturday.yml` ("Quem terra, pontus, ǽthera") — the one piece Matins
+had nothing for at all, closing the original gap this whole investigation started from. For Lauds,
+found the *hymn* ("O gloriósa Dómina") was already authored, but filed under the plain ferial
+`lauds-hymn-saturday` id instead of its own `marian-saturday` id, and its capitulum/responsory/
+versicle siblings were live-verified from a *different*, privileged (Lenten Ember) Saturday, not
+this one — three real bugs from an earlier pass's own "believed genuine per-annum content, not
+verified" comment. Fixed all three: moved the hymn to `lauds-hymn-marian-saturday.yml`, authored
+real `lauds-{capitulum,responsory,versicle}-marian-saturday.yml` (live-verified 2026-10-03), and
+corrected `lauds-hymn-saturday.yml`/its doxology/its capitulum/responsory/versicle siblings to the
+real plain-ferial-Saturday content (live-verified 2025-09-20, a September Ember Saturday winning
+outright with nothing else in play) — "Auróra jam spargit polum" hymn, Rom 13:12-13 capitulum,
+"Sana ánimam meam" responsory, "Repléti sumus mane misericórdia tua" versicle; the old Isa 58:1 /
+"Ipse liberávit me" / "Ángelis suis" content is now homeless, likely genuine Lenten-specific ferial
+capitula this store doesn't yet model separately — not rebuilt, flagged here instead.
+
+Per direct instruction, rolled back the pre-existing Lauds psalmody override
+(`lauds-psalmody-overrides/marian-saturday.yml`) from the real historical proper psalm set (92, 99,
+62 — the same numbers any duplex-majus+ feast's own Lauds override uses) to plain ferial Saturday's
+own psalm groups (50, 142, the split Canticle of Moses/Deuteronomy), keeping only the antiphon
+swap — matches "keep the ferial psalmody but use marian antiphons... we don't want to go
+little-office" exactly. Ferial Saturday has one fewer psalm-group slot than the Common-of-BVM
+pattern, so the third already-authored proper antiphon ("Nigra sum, sed formósa...") currently has
+nowhere to attach and sits unused, noted in the file's own header.
+
+Live-verified `/2026-07-04/matins` and `/2026-07-04/lauds` in the browser end to end. `npm test`
+(2025 passed, one pre-existing psalm-number assertion in `tests/hours/lauds-psalmody-overrides.test.ts`
+updated for the psalmody rollback) and `tsc --noEmit` both pass.
+
+**Follow-on, same day**: user asked what actually renders on a real September Ember Saturday and on
+a Saturday where a real saint outranks a merely-commemorated transferred Vigil (Aug 8 2026, Vigil
+of St. Lawrence displaced by Ss. Cyriacus, Largus & Smaragdus). The second case was already correct
+(the winning saint's own Common-of-Martyrs hymn applies via the pre-existing tier, unaffected by the
+commemorated Vigil). The first case exposed a real gap in the weekday-hymn-cycle fix above: Saturday
+was deliberately left on the `matins-hymn-ferial` (Monday's text) placeholder on the assumption it
+was "almost always Marian Saturday" — true for most Saturdays, but not for a genuinely privileged
+one (Ember/Advent/Lent) where nothing wins outright and Marian Saturday's own `ordinary-feria` gate
+doesn't apply. Authored `matins-hymn-ferial-saturday.yml` ("Summæ Deus cleméntiæ", live-verified
+against a clean September Ember Saturday, 2025-09-20) and added it to `resolveMatinsHymn`'s weekday
+lookup. `npm test` (2025 passed, no test changes needed) and `tsc --noEmit` both pass.
