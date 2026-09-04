@@ -2,6 +2,8 @@ import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart, ResolvedText
 import type { LiturgicalDay, Weekday } from '../calendar/types';
 import { resolveEveningDay } from '../calendar/vespers';
 import { weekdayOf } from '../calendar/weekday';
+import { resolveActiveOctave } from '../calendar';
+import { getSaintRecord } from '../calendar/feasts';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
@@ -190,6 +192,19 @@ function vespersCapitulumForOverride(id: string): ResolvedText {
  * Advent, Lent — the source itself never swaps those) reproduces the
  * exact original text. See lauds.ts's identical resolveLaudsHymn. */
 function resolveVespersHymn(day: LiturgicalDay, key: string): ResolvedText {
+  // A temporal-feast-only octave (Ascension's own) still needs its own
+  // hymn recognized directly here, bypassing octaveGoverningPrivilegedDay's
+  // privileged-Sunday gate — see lauds.ts's identical resolveLaudsHymn for
+  // the full story. Guarded to saint-less octaves only: a saint-based
+  // octave (Assumption's, St. Lawrence's) already reaches its own content
+  // through resolveOfficeWinner's existing synthesis without this.
+  const octave = resolveActiveOctave(day.date);
+  if (octave && !getSaintRecord(octave.id)) {
+    const octaveHymn = resolveCommon(`vespers-hymn-${octave.id}`);
+    if (octaveHymn.status.la !== 'missing' || octaveHymn.status.en !== 'missing') {
+      return octaveHymn;
+    }
+  }
   const body = resolveCommon(`vespers-hymn-${key}`);
   const doxology = resolveCommon(getHymnDoxologyId(day, `vespers-hymn-${key}-doxology-per-annum`));
   return appendDoxology(body, doxology);

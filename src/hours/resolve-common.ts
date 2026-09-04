@@ -60,6 +60,7 @@ export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set([
   'christ-the-king',
   'christmas-octave-sunday',
   'immaculate-heart-of-mary',
+  'ascension',
   'circumcision',
   'holy-name-of-jesus',
   'vigil-of-christmas',
@@ -123,6 +124,16 @@ export function resolveOfficeWinner(day: LiturgicalDay): DayWinner {
     const saint = getSaintRecord(activeOctave.id);
     if (saint) {
       return { kind: 'sanctoral', id: saint.id, name: saint.name, rank: saint.rank };
+    }
+    // A temporal-feast-only octave (Ascension's own — no saint record to
+    // synthesize from, unlike Assumption's/St. Lawrence's) still needs its
+    // own content recognized on interior octave days, the same way its own
+    // feast day already is via the `ALWAYS_OVERRIDE_TEMPORAL_IDS` check
+    // above — found 2026-09-04 via the Matins seasonal-hymn fallback
+    // silently rendering the generic Paschaltide text throughout the whole
+    // Ascension octave, not just a missing-content gap on the day itself.
+    if (ALWAYS_OVERRIDE_TEMPORAL_IDS.has(activeOctave.id) && getTemporalFeastRecord(activeOctave.id)) {
+      return { kind: 'temporal', id: activeOctave.id };
     }
   }
   return day.winner;
