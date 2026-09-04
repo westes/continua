@@ -42,9 +42,28 @@ for (const mod of Object.values(modules)) {
   }
 }
 
+/** Builds the full "R. ...\n* ...\nV. ...\nR. ..." block — same R./V./repeat
+ * convention as octave-readings.ts's own `responsory` field and every
+ * nocturn-readings/*.yml file's inline `responsory` — from the pool's
+ * plain `{r, v}` text (no "R."/"V." labels, `r` already carries a `*`
+ * marking where the repeat begins, per the extraction convention
+ * documented in the data file's own header). Previously joined these with
+ * a bare newline and no R./V. labels at all — a real, visible
+ * inconsistency (caught 2026-09-04): every other responsory source in
+ * this app labels its lines. */
+function joinOne(r: string | undefined, v: string | undefined): string | undefined {
+  if (!r) return undefined;
+  const starIndex = r.indexOf('*');
+  const repeat = starIndex >= 0 ? r.slice(starIndex + 1).trim() : r;
+  const lines = [`R. ${r}`];
+  if (v) lines.push(`V. ${v}`);
+  lines.push(`R. ${repeat}`);
+  return lines.join('\n');
+}
+
 function joinResponsory(record: ResponsoryRecord): MatinsResponsory {
-  const la = record.r.la && record.v.la ? `${record.r.la}\n${record.v.la}` : record.r.la;
-  const en = record.r.en && record.v.en ? `${record.r.en}\n${record.v.en}` : record.r.en;
+  const la = joinOne(record.r.la, record.v.la);
+  const en = joinOne(record.r.en, record.v.en);
   return {
     text: { la, en },
     status: { la: la ? 'verified' : 'missing', en: en ? 'verified' : 'missing' },
