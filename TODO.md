@@ -5232,3 +5232,23 @@ all 6 winning-outright dates; Magnificat status on Advent Ember Wednesday, the o
 overriding mechanism to complicate the assertion). `npm test` (2023 passed, 47 files) and
 `tsc --noEmit` both pass.
 
+**Follow-on, same day**: user asked why the Ember days didn't actually show anywhere in the app
+on 2026-09-16/18/19 despite the above. Real bug, found by resolving `getDayLabel` directly for
+those dates: `calendar/day-label.ts`'s `collectCommemorations` only ever matched a `temporal`-kind
+commemoration against `resolveTemporalId(day.date)` (the plain, un-relabeled id for that date) —
+never against an Ember-relabeled id, so `applyEmberDay`'s own commemoration was silently dropped
+from the label every time. Worse, even the *winning-outright* case had no name: the final
+fallback branch calls the generic `temporalLabel(day)` (pure season/weekday arithmetic, no id
+awareness at all), so an Ember day that won outright rendered as bare "Wednesday in the Nth week
+after Trinity (Feria)" with zero mention of Ember anywhere.
+
+Fixed with a small standalone `EMBER_DAY_NAMES`/`emberDayLabel` lookup in `day-label.ts` itself
+(6 entries, Latin names read straight from each day's own `[Officium]` header) — deliberately
+*not* added to `temporal-feasts.ts`'s named-feast table, since that table doubles as `resolve-
+common.ts`'s `isFerialOrVigil` bareness check (`isBareFeria = ... && !getTemporalFeastRecord(...)`)
+and adding Ember ids there would have silently turned off their own ferial Preces (their `[Rule]`
+is literally "Preces Feriales"). Wired into both places: `collectCommemorations`'s temporal
+branch (demoted case) and `getDayLabel`'s final fallback (winning-outright case). New assertions
+in `tests/calendar/ember-days.test.ts` cover both. `npm test` (2024 passed) and `tsc --noEmit`
+both pass.
+

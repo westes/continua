@@ -50,6 +50,38 @@ function joinBi(items: Bi[], sep = ' — '): Bi {
   return { en: items.map((i) => i.en).join(sep), la: items.map((i) => i.la).join(sep) };
 }
 
+/**
+ * The 6 Ember-day ids (calendar/ember-days.ts) are deliberately *not* in
+ * temporal-feasts.ts's named-feast table — they're privileged ferias, not
+ * rank-contesting movable feasts (see that file's own doc comment), and
+ * that table's `getTemporalFeastRecord` also doubles as resolve-
+ * common.ts's `isFerialOrVigil` bareness check, so adding them there
+ * would silently turn off their own ferial Preces (their `[Rule]` block
+ * is literally "Preces Feriales"). A small standalone lookup here instead
+ * — Latin names read straight from each day's own `[Officium]` header
+ * (Tempora/093-{3,5,6}.txt, Tempora/Adv3-{3,5,6}.txt).
+ *
+ * Without this, an Ember day never named itself anywhere in the UI: not
+ * as the primary label when it wins outright (fell through to the plain
+ * "Wednesday in the Nth week after Trinity"/"In the Nth week of Advent"
+ * wording with no Ember mention at all), and not as a commemoration when
+ * demoted (collectCommemorations's temporal branch only ever matched
+ * `resolveTemporalId(day.date)`, never an Ember-relabeled id) — live-
+ * verified as a real, user-visible gap, 2026-09-03.
+ */
+const EMBER_DAY_NAMES: Record<string, Bi> = {
+  'ember-september-wednesday': bi('Ember Wednesday in September', 'Feria Quarta Quattuor Temporum Septembris'),
+  'ember-september-friday': bi('Ember Friday in September', 'Feria Sexta Quattuor Temporum Septembris'),
+  'ember-september-saturday': bi('Ember Saturday in September', 'Sabbato Quattuor Temporum Septembris'),
+  'ember-advent-wednesday': bi('Ember Wednesday in Advent', 'Feria IV Quattuor Temporum in Adventu'),
+  'ember-advent-friday': bi('Ember Friday in Advent', 'Feria VI Quattuor Temporum in Adventu'),
+  'ember-advent-saturday': bi('Ember Saturday in Advent', 'Sabbato Quattuor Temporum in Adventu'),
+};
+
+function emberDayLabel(id: string): Bi | undefined {
+  return EMBER_DAY_NAMES[id];
+}
+
 function capitalize(text: string): string {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
@@ -458,6 +490,11 @@ function collectCommemorations(
     } else if (c.kind === 'temporal') {
       if (c.id === temporalId) {
         temporal.push(anchorDayName(day, false) ?? temporalLabel(day));
+      } else {
+        const emberName = emberDayLabel(c.id);
+        if (emberName) {
+          temporal.push(emberName);
+        }
       }
     } else if (opts.showOctaves && c.id !== opts.excludeOctaveId) {
       const octave = activeOctaves.find((a) => a.id === c.id);
@@ -663,7 +700,7 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
   }
 
   const temporalRank = TEMPORAL_CATEGORY_RANK_LABELS[day.temporalCategory];
-  const label = temporalLabel(day);
+  const label = (day.winner.kind === 'temporal' ? emberDayLabel(day.winner.id) : undefined) ?? temporalLabel(day);
   const temporal = bi(`${label.en} (${temporalRank.en})`, `${label.la} (${temporalRank.la})`);
   const { sanctoral } = collectCommemorations(day, { showOctaves: false });
   return withTransferNote(day, joinBi([temporal, ...sanctoral]));

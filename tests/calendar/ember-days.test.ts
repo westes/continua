@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { resolveDay } from '../../src/calendar';
+import { getDayLabel } from '../../src/calendar/day-label';
 import { resolveOrdo } from '../../src/hours';
 import { getDayCollect } from '../../src/hours/resolve-common';
 
@@ -87,6 +88,21 @@ describe('Ember days', () => {
     const antiphon = ordo.parts[idx + 1] as { text: { status: { la?: string; en?: string } } };
     expect(antiphon.text.status.la).toBe('verified');
     expect(antiphon.text.status.en).toBe('verified');
+  });
+
+  it("the day label names the Ember day itself, both when it's demoted to a commemoration and when it wins outright -- previously never shown anywhere in the UI (2026-09-03 fix)", () => {
+    // Demoted cases (2026): a saint wins outright, Ember rides along as a
+    // commemoration -- collectCommemorations' temporal branch previously
+    // only matched resolveTemporalId(day.date), never an Ember-relabeled id.
+    expect(getDayLabel(resolveDay('2026-09-16')).en).toContain('Ember Wednesday in September');
+    expect(getDayLabel(resolveDay('2026-09-18')).en).toContain('Ember Friday in September');
+    expect(getDayLabel(resolveDay('2026-09-19')).en).toContain('Ember Saturday in September');
+    // Winning-outright cases: previously fell through to the plain
+    // ordinal weekday label with no Ember mention at all.
+    expect(getDayLabel(resolveDay('2023-09-20')).en).toBe('Ember Wednesday in September (Feria) — Vigil of St. Matthew');
+    expect(getDayLabel(resolveDay('2026-12-16')).en).toBe('Ember Wednesday in Advent (Feria)');
+    expect(getDayLabel(resolveDay('2026-12-18')).en).toBe('Ember Friday in Advent (Feria)');
+    expect(getDayLabel(resolveDay('2026-12-19')).en).toContain('Ember Saturday in Advent (Feria)');
   });
 
   it('Matins renders 3 real, distinct, verified lessons+responsories for each of the 6 Ember days', () => {
