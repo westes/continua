@@ -26,16 +26,14 @@ across every hour and content type in this app.
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
    - Matins Nocturn 2/3 responsory pools (both new, 2026-09-04 — see "Matins responsory pools:
-     per-book expansion + new per-Common-category pool" below, and its five follow-up entries):
-     the per-book pool now covers 45 of 72 books, keyed by canonical form where it differs from
-     the bible-plan YAML's own book code (`isa`, `gen`, `jer`, `exod`, `prov`, `sir`, `sap`, `tob`,
-     `ezek`, `dan`, `1mach`, `2mach`, `1reg`, `2reg`, `3reg`, `4reg`, `zach`, `amos`, `agg`, `jdth`,
-     `esth`, `job`, `eccl`, `hab`, `joel`, `soph`, `abd`, `jon`, `mal`, `osee`, `mich`, `nah`,
-     `lam`, `act`, `apoc`, `jac`, `heb`, `luc`, `matt`, `joan`, `marc`, `1cor`, `2cor`, `1pet`,
-     `1joan` — 27 books remaining, 12 of them already confirmed genuinely absent from the
-     reference source); the new per-Common-category pool covers 19/19 real Commune categories
-     (every category actually used by a saint except angel/evangelist/vigil, which have no
-     Commune responsory file to source from) — this
+     per-book expansion + new per-Common-category pool" below, and its six follow-up entries):
+     the per-book pool now covers 59 of 72 books — every book with any genuinely usable Latin
+     content at all (`rom`/Romans is the one exception: every citing file borrows an unrelated
+     feast's own responsory, no book-specific content anywhere to source, translate, or reuse).
+     The remaining 13 are `rom` plus 12 already-confirmed-genuinely-absent books (no citation
+     anywhere in the reference source at all); the new per-Common-category pool covers 19/19 real
+     Commune categories (every category actually used by a saint except angel/evangelist/vigil,
+     which have no Commune responsory file to source from) — this
      is the one that closes most of the 272-of-355 nocturn-readings files that had no `responsory`
      at all. Bible-plan TSV content also isn't yet
      in a test table (see "Bible-plan TSV — bulk conversion done" below).
@@ -5942,3 +5940,44 @@ Deuteronomy); 15 with real Latin but no reference-engine English anywhere (Roman
 Ephesians, Philippians, Colossians, Titus, Philemon, 2 Thessalonians, 2 Timothy, 2 Peter, 2-3 John,
 Jude). Own-translating any of these would be the next step, if wanted — not attempted here per the
 established "only seed real bilingual source" pattern.
+
+### Matins responsory pools: the "untranslated 15" turned out mostly already bilingual (2026-09-04)
+
+Asked to translate the 15 "real Latin, no English" books. Before translating anything, re-checked
+each one's own `@Tempora/X:ResponsoryN` reference chain (the same technique that unblocked 8 books
+earlier the same day) — and found the whole post-Epiphany "ordinary time" reading season (weeks
+3-5, covering Galatians/Ephesians/Philippians/Colossians/1-2 Timothy/Titus/Philemon/2
+Thessalonians) doesn't have its own distinct responsory content at all: every one of its 21 feria
+files `@`-references 2 Corinthians' own week (Epi2-0 through Epi2-6, already fully bilingual from
+earlier this same day) by weekday position. Confirmed by reading every week-3/4/5 feria file's own
+`@`-line directly, not guessed. Same story for 2 Peter, 2-3 John, and Jude — all four `@`-reference
+Ascension Day's own responsories (already seeded as `act`). **None of these 12 books needed any
+translation at all** — added `gal`/`phil`/`1tim` (share Epi2-1), `col`/`2tim` (share Epi2-2),
+`eph` (Epi2-3), `1thess`/`tit` (share Epi2-4), `2thess`/`phlm` (share Epi2-6), `2pet`/`2joan`/
+`3joan` (share `act`'s R1), `jud` (`act`'s R7) — all real, already-transcribed bilingual text.
+
+Also fixed a real, separate bug the user caught by eye in the rendered app: `getResponsoryForBook`'s
+`joinResponsory` concatenated the pool's `r`/`v` text with a bare newline and no "R."/"V." labels
+at all — every other responsory source in the app (`octave-readings.ts`'s own `responsory` field,
+every `nocturn-readings/*.yml`'s inline `responsory`, and the new per-Common-category pool) uses
+the full "R. ...\n* ...\nV. ...\nR. ..." convention. Fixed by computing the repeat line from the
+`*` marker already present in the pool's own `r` text (a separate commit, `1867f73`, before this
+content pass).
+
+**Only `rom` (Romans) turned out to have no content to translate at all**, on inspection — re-
+checked every one of its 15 citing files (all in the Christmas-Octave `Nat0X` range): every single
+one `@`-references an unrelated feast's own proper responsory (Circumcision, Christmas Day, or a
+January 7 saint), never anything Romans-specific, standalone or borrowed. There's no genuine
+"Romans content" anywhere in this reference source to translate, sourced or original — using one of
+these borrowed responsories would repeat the Sacred Heart/Jeremiah mismatch this file already
+avoids elsewhere. Left `rom` unseeded; it would need an entirely original composition, not a
+translation, if ever wanted.
+
+59 of 72 bible-plan books now seeded — every book with any genuinely usable Latin at all. The
+remaining 13 (`rom` plus the 12 already-confirmed-absent books) are the real, final gap: `rom` has
+no book-specific content anywhere in this source; the other 12 have no citation anywhere at all.
+Ran the full canonical-key audit again (programmatic check against `BOOK_ALIASES`, per the
+established lesson) — confirmed clean. `npm test` (2025 passed) and `tsc --noEmit` both pass;
+live-verified through `getBiblePlanReadings` (`post-epiphany-3`/Wednesday `Gal`, `post-epiphany-5`/
+Monday `1tim`, `sunday-after-ascension`/Saturday `Jude` all resolve real responsory text; `Ruth`
+correctly still resolves `undefined`).

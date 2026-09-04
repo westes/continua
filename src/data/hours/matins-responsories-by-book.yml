@@ -4,7 +4,7 @@
 # chapter/verse historically, so a book-level match is the right
 # granularity, not a gap to fill in later with exact citations.
 #
-# Seeded, not a full pool — 45 of the 72 books actually used in the user's
+# Seeded, not a full pool — 59 of the 72 books actually used in the user's
 # own bible-plan (data/hours/bible-plan/*.yml), the rest deferred bulk
 # content (see TODO.md). Cycled in order
 # per-day when a Nocturn-1 reading's book has more than one candidate
@@ -867,3 +867,256 @@ marc:
     v:
       la: "Non enim loquétur a semetípso: sed quæcúmque áudiet, loquétur: et quæ ventúra sunt, annuntiábit vobis."
       en: "For He shall not speak of Himself; but whatsoever He shall hear, that shall He speak and He will show you things to come."
+
+# `2pet`/`2joan`/`3joan` all reuse `act`'s own first entry (2 Peter's own
+# reading week Pasc5-5.txt, 2 John's own Pasc6-3.txt, and 3 John's own
+# Pasc6-4r.txt all `@`-reference Tempora/Pasc5-4:Responsory1, Ascension
+# Day's own — confirmed by reading each file directly, not guessed).
+2pet:
+  - r:
+      la: "Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúja: * Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja."
+      en: "Being seen of them forty days after that He had suffered, and speaking of the kingdom of God. Alleluia. * And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia."
+    v:
+      la: "Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris."
+      en: "And, eating together with them, He commanded them that they should not depart from Jerusalem, but wait for the Promise of the Father."
+2joan:
+  - r:
+      la: "Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúja: * Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja."
+      en: "Being seen of them forty days after that He had suffered, and speaking of the kingdom of God. Alleluia. * And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia."
+    v:
+      la: "Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris."
+      en: "And, eating together with them, He commanded them that they should not depart from Jerusalem, but wait for the Promise of the Father."
+3joan:
+  - r:
+      la: "Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúja: * Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja."
+      en: "Being seen of them forty days after that He had suffered, and speaking of the kingdom of God. Alleluia. * And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia."
+    v:
+      la: "Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris."
+      en: "And, eating together with them, He commanded them that they should not depart from Jerusalem, but wait for the Promise of the Father."
+
+# `jud` (Jude) reuses `act`'s own Responsory7, Latin/Tempora/Pasc5-4.txt
+# (Jude's own reading week, Pasc6-6.txt, `@`-references
+# Tempora/Pasc5-4:Responsory7 — a different entry than the R1 the other
+# three books above reuse).
+jud:
+  - r:
+      la: "Ego rogábo Patrem, et álium Paráclitum dabit vobis, * Ut máneat vobíscum in ætérnum, Spíritum veritátis, allelúja."
+      en: "I will pray the Father, and He shall give you another Comforter, * That He may abide with you for ever, even the Spirit of truth. Alleluia."
+    v:
+      la: "Si enim non abíero, Paráclitus non véniet ad vos: si autem abíero, mittam eum ad vos."
+      en: "For if I go not away, the Comforter will not come unto you; but if I depart, I will send Him unto you."
+
+# `gal`/`phil`/`1tim` all reuse the same pool, Latin/Tempora/Epi2-1.txt,
+# English/Tempora/Epi2-1.txt (2 Corinthians' own week, Monday) — Galatians'
+# own week file (Epi3-1.txt), Philippians' (Epi4-1.txt), and 1 Timothy's
+# (Epi5-1.txt) all `@`-reference this exact tag. This whole post-Epiphany
+# reading season (weeks 3-5) turns out to cycle through week 2's
+# (2 Corinthians') own weekday responsories rather than having distinct
+# content of its own — confirmed by reading every week-3/4/5 feria file's
+# own `@`-line, not guessed; closes what looked like a real "no English"
+# gap without any translation needed.
+gal:
+  - r:
+      la: "Quam magna multitúdo dulcédinis tuæ, Dómine, * Quam abscondísti timéntibus te!"
+      en: "O how great is thy goodness, O Lord * Which Thou hast laid up for them that fear thee!"
+    v:
+      la: "Et perfecísti eis qui sperant in te, Dómine, in conspéctu filiórum hóminum."
+      en: "Which Thou, O Lord, hast wrought for them that trust in thee before the sons of men!"
+  - r:
+      la: "Adjútor meus esto, Deus: * Ne derelínquas me."
+      en: "O God, be Thou my helper. * Neither leave me."
+    v:
+      la: "Neque despícias me, Deus, salutáris meus."
+      en: "Nor forsake me O God of my salvation."
+  - r:
+      la: "Benedícam Dóminum in omni témpore: * Semper laus ejus in ore meo."
+      en: "I will bless the Lord at all times. * His praise shall continually be in my mouth."
+    v:
+      la: "In Dómino laudábitur ánima mea, áudiant mansuéti, et læténtur."
+      en: "My soul shall make her boast in the Lord; the humble shall hear thereof and be glad."
+phil:
+  - r:
+      la: "Quam magna multitúdo dulcédinis tuæ, Dómine, * Quam abscondísti timéntibus te!"
+      en: "O how great is thy goodness, O Lord * Which Thou hast laid up for them that fear thee!"
+    v:
+      la: "Et perfecísti eis qui sperant in te, Dómine, in conspéctu filiórum hóminum."
+      en: "Which Thou, O Lord, hast wrought for them that trust in thee before the sons of men!"
+  - r:
+      la: "Adjútor meus esto, Deus: * Ne derelínquas me."
+      en: "O God, be Thou my helper. * Neither leave me."
+    v:
+      la: "Neque despícias me, Deus, salutáris meus."
+      en: "Nor forsake me O God of my salvation."
+  - r:
+      la: "Benedícam Dóminum in omni témpore: * Semper laus ejus in ore meo."
+      en: "I will bless the Lord at all times. * His praise shall continually be in my mouth."
+    v:
+      la: "In Dómino laudábitur ánima mea, áudiant mansuéti, et læténtur."
+      en: "My soul shall make her boast in the Lord; the humble shall hear thereof and be glad."
+1tim:
+  - r:
+      la: "Quam magna multitúdo dulcédinis tuæ, Dómine, * Quam abscondísti timéntibus te!"
+      en: "O how great is thy goodness, O Lord * Which Thou hast laid up for them that fear thee!"
+    v:
+      la: "Et perfecísti eis qui sperant in te, Dómine, in conspéctu filiórum hóminum."
+      en: "Which Thou, O Lord, hast wrought for them that trust in thee before the sons of men!"
+  - r:
+      la: "Adjútor meus esto, Deus: * Ne derelínquas me."
+      en: "O God, be Thou my helper. * Neither leave me."
+    v:
+      la: "Neque despícias me, Deus, salutáris meus."
+      en: "Nor forsake me O God of my salvation."
+  - r:
+      la: "Benedícam Dóminum in omni témpore: * Semper laus ejus in ore meo."
+      en: "I will bless the Lord at all times. * His praise shall continually be in my mouth."
+    v:
+      la: "In Dómino laudábitur ánima mea, áudiant mansuéti, et læténtur."
+      en: "My soul shall make her boast in the Lord; the humble shall hear thereof and be glad."
+
+# `col`/`2tim` reuse Latin/Tempora/Epi2-2.txt, English/Tempora/Epi2-2.txt
+# (Colossians' own Epi4-2.txt and 2 Timothy's own Epi5-2.txt both
+# `@`-reference this tag).
+col:
+  - r:
+      la: "Auribus pércipe, Deus, lácrimas meas: ne síleas a me, remítte mihi: * Quóniam íncola ego sum apud te, et peregrínus."
+      en: "O God, give ear unto my tears; hold not thy peace, but, O, spare me! * For I am a stranger with thee, and a sojourner."
+    v:
+      la: "Compláceat tibi, ut erípias me: Dómine, ad adjuvándum me festína."
+      en: "Be pleased, O Lord, to deliver me; O Lord, look upon me to help me."
+  - r:
+      la: "Státuit Dóminus supra petram pedes meos, et diréxit gressus meos Deus: * Et misit in os meum cánticum novum."
+      en: "The Lord hath set my feet upon a rock, and ordered my goings. * And He hath put a new song in my mouth."
+    v:
+      la: "Exaudívit preces meas: et edúxit me de lacu misériæ."
+      en: "He heard my cry He brought me up also out of an horrible pit."
+  - r:
+      la: "Ego dixi, Dómine, miserére mei: * Sana ánimam meam, quia peccávi tibi."
+      en: "I said: Lord, be merciful unto me. * Heal my soul, for I have sinned against thee."
+    v:
+      la: "Ab ómnibus iniquitátibus meis éripe me, Dómine."
+      en: "Deliver me from all mine iniquities, O Lord."
+2tim:
+  - r:
+      la: "Auribus pércipe, Deus, lácrimas meas: ne síleas a me, remítte mihi: * Quóniam íncola ego sum apud te, et peregrínus."
+      en: "O God, give ear unto my tears; hold not thy peace, but, O, spare me! * For I am a stranger with thee, and a sojourner."
+    v:
+      la: "Compláceat tibi, ut erípias me: Dómine, ad adjuvándum me festína."
+      en: "Be pleased, O Lord, to deliver me; O Lord, look upon me to help me."
+  - r:
+      la: "Státuit Dóminus supra petram pedes meos, et diréxit gressus meos Deus: * Et misit in os meum cánticum novum."
+      en: "The Lord hath set my feet upon a rock, and ordered my goings. * And He hath put a new song in my mouth."
+    v:
+      la: "Exaudívit preces meas: et edúxit me de lacu misériæ."
+      en: "He heard my cry He brought me up also out of an horrible pit."
+  - r:
+      la: "Ego dixi, Dómine, miserére mei: * Sana ánimam meam, quia peccávi tibi."
+      en: "I said: Lord, be merciful unto me. * Heal my soul, for I have sinned against thee."
+    v:
+      la: "Ab ómnibus iniquitátibus meis éripe me, Dómine."
+      en: "Deliver me from all mine iniquities, O Lord."
+
+# `eph` reuses Latin/Tempora/Epi2-3.txt, English/Tempora/Epi2-3.txt
+# (Ephesians' own Epi3-3.txt `@`-references this tag).
+eph:
+  - r:
+      la: "Ne perdíderis me cum iniquitátibus meis: * Neque in finem irátus resérves mala mea."
+      en: "Cut me not off in the midst of my sins. * Nor keep thy wrath against me for my latter end."
+    v:
+      la: "Non intres in judícium cum servo tuo, Dómine."
+      en: "Enter not into judgment with thy servant, O Lord."
+  - r:
+      la: "Parátum cor meum, Deus, parátum cor meum: * Cantábo et psalmum dicam Dómino."
+      en: "My heart is ready, O God, my heart is ready. * I will sing and give praise to the Lord."
+    v:
+      la: "Exsúrge, glória mea, exsúrge, psaltérium et cíthara, exsúrgam dilúculo."
+      en: "Awake up, my glory, awake, psaltery and harp! I will awake early."
+  - r:
+      la: "Adjútor meus, tibi psallam, quia, Deus, suscéptor meus es: * Deus meus, misericórdia mea."
+      en: "Unto thee, O my Strength, will I sing, for God is my defence, * The God of my mercy."
+    v:
+      la: "Lætábor, et exsultábo in te, psallam nómini tuo, Altíssime."
+      en: "I will be glad and rejoice in thee, I will sing praise to thy Name, O Thou Most High."
+
+# `1thess`/`tit` reuse Latin/Tempora/Epi2-4.txt, English/Tempora/Epi2-4.txt
+# (1 Thessalonians' own Epi4-4.txt and Titus' own Epi5-4.txt both
+# `@`-reference this tag).
+1thess:
+  - r:
+      la: "Deus, in te sperávi, Dómine, non confúndar in ætérnum: in justítia tua líbera me, * Et éripe me."
+      en: "In thee, O God, do I put my trust; let me never be put to confusion, O Lord deliver me in thy righteousness, * And cause me to escape."
+    v:
+      la: "Inclína ad me aurem tuam, et salva me."
+      en: "Incline thine ear unto me, deliver me speedily."
+  - r:
+      la: "Repleátur os meum laude tua, ut hymnum dicam glóriæ tuæ, tota die magnitúdinem tuam: noli me proícere in témpore senectútis: * Dum defécerit in me virtus mea, ne derelínquas me."
+      en: "Let my mouth be filled with thy praise, that I may sing of thy glory, all the day long of thy greatness. Cast me not off in the time of old age; * Forsake me not when my strength faileth."
+    v:
+      la: "Gaudébunt lábia mea cum cantávero tibi."
+      en: "My lips shall be fain when I sing unto thee."
+  - r:
+      la: "Gaudébunt lábia mea cum cantávero tibi: * Et ánima mea, quam redemísti, Dómine."
+      en: "My lips shall be fain when I sing unto thee; * And my soul, which Thou, O Lord, hast redeemed."
+    v:
+      la: "Sed et lingua mea meditábitur justítiam tuam, tota die laudem tuam."
+      en: "My tongue shall also talk of thy righteousness, all the day long of thy praise."
+tit:
+  - r:
+      la: "Deus, in te sperávi, Dómine, non confúndar in ætérnum: in justítia tua líbera me, * Et éripe me."
+      en: "In thee, O God, do I put my trust; let me never be put to confusion, O Lord deliver me in thy righteousness, * And cause me to escape."
+    v:
+      la: "Inclína ad me aurem tuam, et salva me."
+      en: "Incline thine ear unto me, deliver me speedily."
+  - r:
+      la: "Repleátur os meum laude tua, ut hymnum dicam glóriæ tuæ, tota die magnitúdinem tuam: noli me proícere in témpore senectútis: * Dum defécerit in me virtus mea, ne derelínquas me."
+      en: "Let my mouth be filled with thy praise, that I may sing of thy glory, all the day long of thy greatness. Cast me not off in the time of old age; * Forsake me not when my strength faileth."
+    v:
+      la: "Gaudébunt lábia mea cum cantávero tibi."
+      en: "My lips shall be fain when I sing unto thee."
+  - r:
+      la: "Gaudébunt lábia mea cum cantávero tibi: * Et ánima mea, quam redemísti, Dómine."
+      en: "My lips shall be fain when I sing unto thee; * And my soul, which Thou, O Lord, hast redeemed."
+    v:
+      la: "Sed et lingua mea meditábitur justítiam tuam, tota die laudem tuam."
+      en: "My tongue shall also talk of thy righteousness, all the day long of thy praise."
+
+# `2thess`/`phlm` reuse Latin/Tempora/Epi2-6.txt, English/Tempora/Epi2-6.txt
+# (2 Thessalonians' own Epi4-6.txt and Philemon's own Epi5-6.txt both
+# `@`-reference this tag).
+2thess:
+  - r:
+      la: "Misericórdiam et judícium cantábo tibi, Dómine: * Psallam et intéllegam in via immaculáta, quando vénies ad me."
+      en: "Mercy and judgment I will sing to thee, O Lord: * I will sing, and I will understand in the unspotted way, when thou shalt come to me."
+    v:
+      la: "Perambulábam in innocéntia cordis mei, in médio domus meæ."
+      en: "I walked in the innocence of my heart, in the midst of my house."
+  - r:
+      la: "Dómine, exáudi oratiónem meam, et clamor meus ad te pervéniat: * Quia non spernis, Deus, preces páuperum."
+      en: "Hear my prayer, O Lord, and let my crying come unto thee. * For thou wilt not despise, O God, the prayer of the destitute"
+    v:
+      la: "Fiant aures tuæ intendéntes in oratiónem servi tui."
+      en: "O let thine ears consider well the voice of my complaint"
+  - r:
+      la: "Velóciter exáudi me, Deus, * Quia defecérunt sicut fumus dies mei:"
+      en: "Haste thee to hear me, O Lord. * For my days are consumed away like smoke:"
+    v:
+      la: "Dies mei sicut umbra declinavérunt, et ego sicut fœnum árui."
+      en: "My days have declined like a shadow, and I am withered like grass."
+phlm:
+  - r:
+      la: "Misericórdiam et judícium cantábo tibi, Dómine: * Psallam et intéllegam in via immaculáta, quando vénies ad me."
+      en: "Mercy and judgment I will sing to thee, O Lord: * I will sing, and I will understand in the unspotted way, when thou shalt come to me."
+    v:
+      la: "Perambulábam in innocéntia cordis mei, in médio domus meæ."
+      en: "I walked in the innocence of my heart, in the midst of my house."
+  - r:
+      la: "Dómine, exáudi oratiónem meam, et clamor meus ad te pervéniat: * Quia non spernis, Deus, preces páuperum."
+      en: "Hear my prayer, O Lord, and let my crying come unto thee. * For thou wilt not despise, O God, the prayer of the destitute"
+    v:
+      la: "Fiant aures tuæ intendéntes in oratiónem servi tui."
+      en: "O let thine ears consider well the voice of my complaint"
+  - r:
+      la: "Velóciter exáudi me, Deus, * Quia defecérunt sicut fumus dies mei:"
+      en: "Haste thee to hear me, O Lord. * For my days are consumed away like smoke:"
+    v:
+      la: "Dies mei sicut umbra declinavérunt, et ego sicut fœnum árui."
+      en: "My days have declined like a shadow, and I am withered like grass."
