@@ -5506,3 +5506,22 @@ Flagged, not fixed: Ascension's own collect is still missing (`getTemporalProper
 Pentecost/Corpus Christi/Sacred Heart are the same shape (temporal-feast octaves with no saint
 record) and likely have the same latent hymn gap this fix closed for Ascension specifically — not
 checked or fixed here.
+
+**Follow-on, same day**: per direct instruction ("Ascension and Pentecost are some of the most
+important material in the entire app — fix it"), closed Pentecost's own copy of the same gap
+immediately, rather than leaving it flagged. Live-verified against Divinum Officium (Monastic
+Tridentinum 1617), 2026-05-24 (Pentecost Sunday itself): unlike Ascension, Pentecost has 3 genuinely
+different hymns, one per hour ("Jam Christus astra ascénderat" at Matins, "Beáta nobis gáudia" at
+Lauds, "Veni Creátor Spíritus" — yes, that one — at Vespers), each with its own real, distinct
+chapter/responsory/versicle at Lauds vs. Vespers. Added `pentecost-sunday` to
+`ALWAYS_OVERRIDE_TEMPORAL_IDS` (the mechanism fix from the Ascension entry above is generic — no
+code change needed beyond that one line) and authored `matins-hymn-pentecost-sunday.yml`,
+`lauds-{capitulum,responsory,hymn,versicle}-pentecost-sunday.yml`, and
+`vespers-{responsory,hymn,versicle}-pentecost-sunday.yml`. Confirmed the whole octave end-to-end via
+`resolveOrdo` (feast day, plain octave days, and a real winning saint within the window — St.
+Augustine of Canterbury, live-verified unaffected, keeps his own hymn at Lauds/Vespers while Matins
+keeps Pentecost's own per the same established generous-octave design already used for Assumption/
+Ascension). `npm test` (2025 passed, no test changes needed) and `tsc --noEmit` both pass.
+
+Corpus Christi and Sacred Heart remain the one still-open piece of this same-shape gap — not fixed
+this session, lower priority than Ascension/Pentecost per direct instruction.
