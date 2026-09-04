@@ -26,13 +26,15 @@ across every hour and content type in this app.
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
    - Matins Nocturn 2/3 responsory pools (both new, 2026-09-04 — see "Matins responsory pools:
-     per-book expansion + new per-Common-category pool" below, and its six follow-up entries):
-     the per-book pool now covers 59 of 72 books — every book with any genuinely usable Latin
-     content at all (`rom`/Romans is the one exception: every citing file borrows an unrelated
-     feast's own responsory, no book-specific content anywhere to source, translate, or reuse).
-     The remaining 13 are `rom` plus 12 already-confirmed-genuinely-absent books (no citation
-     anywhere in the reference source at all); the new per-Common-category pool covers 19/19 real
-     Commune categories (every category actually used by a saint except angel/evangelist/vigil,
+     per-book expansion + new per-Common-category pool" below, and its eight follow-up entries):
+     the per-book pool now covers 62 of 72 books — every book with any genuinely usable Latin
+     content anywhere in the reference source (Tempora *or* Sancti — `cant`/Canticles, `lev`, and
+     `num` all turned up only in individual saints' own Sancti files, not Tempora's continuous
+     reading cycle). `rom`/Romans is the one real exception: every citing file borrows an unrelated
+     feast's own responsory, no book-specific content anywhere to source, translate, or reuse. The
+     remaining 10 are `rom` plus 9 already-confirmed-genuinely-absent books (no citation anywhere
+     at all, in Tempora or Sancti); the new per-Common-category pool covers 19/19 real Commune
+     categories (every category actually used by a saint except angel/evangelist/vigil,
      which have no Commune responsory file to source from) — this
      is the one that closes most of the 272-of-355 nocturn-readings files that had no `responsory`
      at all. Bible-plan TSV content also isn't yet
@@ -5981,3 +5983,42 @@ established lesson) — confirmed clean. `npm test` (2025 passed) and `tsc --noE
 live-verified through `getBiblePlanReadings` (`post-epiphany-3`/Wednesday `Gal`, `post-epiphany-5`/
 Monday `1tim`, `sunday-after-ascension`/Saturday `Jude` all resolve real responsory text; `Ruth`
 correctly still resolves `undefined`).
+
+### Matins responsory pools: `cant` (Canticles) found in the Sancti files, not Tempora (2026-09-05)
+
+User pushback on `cant` being listed "confirmed genuinely absent": right instinct to check the
+Commune files specifically — Canticles/Song of Songs imagery is heavily used in Marian propers.
+Checked `Latin/Commune/C12.txt` (the Little Office of the BVM) directly: it does cite `!Cant 6:8`,
+but only as a Lauds Capitulum, not a Matins Nocturn lesson — Capitula don't carry their own
+9-Responsory structure, and C12's actual Lectio1-3 are Sirach 24, not Canticles (matching this
+pool's existing `common-of-the-bvm` sourcing). So the Commune search itself came up empty for a
+genuine Matins responsory — but it redirected the search productively: checked `Sancti/` (individual
+saint/feast files) with the same `awk` Lectio-citation survey used for Tempora, and found real
+`!Cant` Nocturn lessons on the Visitation (July 2) and throughout the Assumption Octave
+(Sancti/08-15t through 08-22t) — the historic BVM feasts that read straight through the Song of
+Songs. Only the Visitation's own file (`07-02.txt`) has both languages; the Assumption Octave days
+have real Latin but no English anywhere.
+
+Added `cant`, sourced from `Sancti/07-02.txt` — genuinely Canticles-sourced responsories that
+directly blend Song of Songs verses with the Visitation narrative itself ("Surge, própera, amíca
+mea... Intrávit María in domum Zacharíæ"), not a borrowed-unrelated-feast mismatch.
+
+60 of 72 bible-plan books now seeded. `npm test` (2025 passed) and `tsc --noEmit` both pass;
+live-verified through `getBiblePlanReadings` (a Dec 27 calendar-dated row resolves real `Cant 3`
+responsory text). Canonical-key audit re-run, clean (`cant` has no `BOOK_ALIASES` entry).
+
+Prompted by finding `cant` in Sancti, re-checked the other 11 already-confirmed-absent books
+against Sancti too (not just Tempora) — found 2 more: `lev` (Leviticus, `Sancti/02-02.txt`, the
+Purification of the BVM — its own Leviticus purification-law reading is the feast's actual reason
+for being) and `num` (Numbers, `Sancti/09-14.txt`, the Exaltation of the Holy Cross — the
+bronze-serpent/Cross typology, Num 21:6-9, only 1 entry). Both genuine thematic matches, not
+borrowed-unrelated content. The other 9 (`bar`, Josue, Judices, Ruth, 1-2 Chronicles, Ezra,
+Nehemiah, Deuteronomy) checked against the reference engine's own full Sancti citation list —
+confirmed still absent, no alternate abbreviation missed.
+
+62 of 72 bible-plan books now seeded — the real final count. `npm test` (2025 passed) and
+`tsc --noEmit` both pass; live-verified through `getBiblePlanReadings` (`lent-3`/Sunday resolves
+real `Lev 1` responsory text, `palm-sunday`/Sunday resolves real `Num 25-27` text). Canonical-key
+audit re-run, clean. Remaining 10, the true final gap: `rom` plus 9 books with no citation
+anywhere in Tempora or Sancti (`bar`, Josue, Judices, Ruth, 1-2 Chronicles, Ezra, Nehemiah,
+Deuteronomy).

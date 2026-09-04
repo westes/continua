@@ -4,7 +4,7 @@
 # chapter/verse historically, so a book-level match is the right
 # granularity, not a gap to fill in later with exact citations.
 #
-# Seeded, not a full pool — 59 of the 72 books actually used in the user's
+# Seeded, not a full pool — 62 of the 72 books actually used in the user's
 # own bible-plan (data/hours/bible-plan/*.yml), the rest deferred bulk
 # content (see TODO.md). Cycled in order
 # per-day when a Nocturn-1 reading's book has more than one candidate
@@ -1120,3 +1120,74 @@ phlm:
     v:
       la: "Dies mei sicut umbra declinavérunt, et ego sicut fœnum árui."
       en: "My days have declined like a shadow, and I am withered like grass."
+
+# `cant` (Canticles/Song of Songs) sourced from Latin/Sancti/07-02.txt,
+# English/Sancti/07-02.txt (the Visitation of the BVM, July 2 — genuinely
+# Canticles-sourced Lectio1-3, "De Cánticis canticórum") — user-prompted
+# re-check (2026-09-05: "check the commons for passages from Canticles")
+# found this after the Commune files themselves turned out to have no
+# genuine Nocturn-lesson Canticles content (the Little Office of the BVM,
+# C12, cites Cant 6:8 only as a Lauds Capitulum, not a Matins lesson with
+# its own responsory — and its actual Lectio1-3 are Sirach 24, not
+# Canticles). The Assumption Octave (Sancti/08-15t through 08-22t) also
+# has real Canticles Lectio content but no English translation anywhere;
+# the Visitation's own file is the one exception with both languages.
+# Genuine match, not a borrowed-unrelated-feast mismatch: the Visitation's
+# own responsories directly blend Canticles verses with the Visitation
+# narrative itself ("Surge, própera, amíca mea... Intrávit María in domum
+# Zacharíæ").
+cant:
+  - r:
+      la: "Surge, própera, amíca mea, formósa mea, et veni: jam enim hiems tránsiit, imber ábiit et recéssit: * Vox túrturis audíta est in terra nostra."
+      en: "Rise up, make haste, my love my fair one and come away; For, lo, the winter is past, the rain is over and gone. * The voice of the turtle-dove is heard in our land."
+    v:
+      la: "Intrávit María in domum Zacharíæ et salutávit Elísabeth."
+      en: "Mary entered into the house of Zacharias and saluted Elizabeth."
+  - r:
+      la: "Repléta est Spíritu Sancto Elísabeth et exclamávit: Benedícta tu inter mulíeres, et benedíctus fructus ventris tui: * Et unde hoc mihi, ut véniat mater Dómini mei ad me?"
+      en: "Elizabeth was filled with the Holy Ghost and she spake out with a loud voice, and said: Blessed art thou among women, and blessed is the Fruit of thy womb; * And whence is this to me, that the mother of my Lord should come to me?"
+    v:
+      la: "Ecce enim, ut facta est vox salutatiónis tuæ in áuribus meis, exsultávit in gáudio infans in útero meo."
+      en: "For, lo, as soon as the voice of thy salutation sounded in mine ears, the babe leaped in my womb for joy."
+  - r:
+      la: "Ecce iste venit sáliens in móntibus, transíliens colles: * Símilis est diléctus meus cápreæ hinnulóque cervórum."
+      en: "Behold, he cometh leaping upon the mountains, skipping upon the hills; * My beloved is like a gazelle or a young roe-buck!"
+    v:
+      la: "Exsultávit ut gigas ad curréndam viam, a summo cælo egréssio ejus."
+      en: "He rejoiceth as a giant to run his course, his going-forth is from the end of the heavens."
+
+# `lev` (Leviticus) sourced from Latin/Sancti/02-02.txt, English/Sancti/
+# 02-02.txt (the Purification of the BVM, Feb 2 — genuinely Leviticus-
+# sourced, the purification law that is the feast's own reason for being).
+# Same user-prompted "check Sancti too" pattern that found `cant`.
+lev:
+  - r:
+      la: "Adórna thálamum tuum, Sion, et súscipe Regem Christum: * Quem virgo concépit, virgo péperit, virgo post partum, quem génuit, adorávit."
+      en: "Make ready thy chamber, O Zion, to receive Christ thy King * Even that Child Whom a Virgin bore, and remained a Virgin as before the fruit of her womb and the God of her soul."
+    v:
+      la: "Accípiens Símeon púerum in mánibus, grátias agens benedíxit Dóminum."
+      en: "Simeon took the Child up in his arms, and blessed God."
+  - r:
+      la: "Postquam impléti sunt dies purgatiónis Maríæ secúndum legem Móysi, tulérunt Jesum in Jerúsalem, ut sísterent eum Dómino, * Sicut scriptum est in lege Dómini: Quia omne masculínum adapériens vulvam, sanctum Dómino vocábitur."
+      en: "When the days of Mary's purification according to the law of Moses were accomplished, they brought Jesus to Jerusalem to present Him to the Lord; * As it is written in the law of the Lord: Every male that openeth the womb shall be called holy unto the Lord."
+    v:
+      la: "Obtulérunt pro eo Dómino par túrturum aut duos pullos columbárum."
+      en: "They offered for Him unto the Lord a pair of turtle-doves or two young pigeons."
+  - r:
+      la: "Obtulérunt pro eo Dómino par túrturum aut duos pullos columbárum. * Sicut scriptum est in lege Dómini."
+      en: "They offered for Him unto the Lord a pair of turtle-doves, or two young pigeons * As it is written in the law of the Lord."
+    v:
+      la: "Postquam autem impléti sunt dies purgatiónis Maríæ secúndum legem Móysi, tulérunt illum in Jerúsalem, ut sísterent eum Dómino."
+      en: "And when the days of Mary's purification according to the law of Moses were accomplished, they brought Him to Jerusalem, to present Him to the Lord."
+
+# `num` (Numbers) sourced from Latin/Sancti/09-14.txt, English/Sancti/
+# 09-14.txt (the Exaltation of the Holy Cross, Sep 14) — the traditional
+# bronze-serpent/Cross typology (Num 21:6-9), only 1 entry (the only
+# Responsory this file has in both languages).
+num:
+  - r:
+      la: "Hæc est arbor digníssima, in paradísi médio situáta, * In qua salútis auctor própria morte mortem ómnium superávit."
+      en: "This is that noble tree, planted in the midst of the garden * Whereon the Author of our salvation did by His Own death openly triumph over the death of all men."
+    v:
+      la: "Crux præcellénti decóre fúlgida, quam Heraclíus imperátor concupiscénti ánimo recuperávit."
+      en: "Even the Cross, whereof the glory is so excellent, and which the Emperor Heraclius did so eagerly rescue."
