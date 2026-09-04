@@ -58,6 +58,19 @@ export function getScriptureChapter(book: string, chapter: number): ScriptureCha
   return chapters.get(`${BOOK_ALIASES[book] ?? book}-${chapter}`);
 }
 
+/** `book` normalized to this store's own canonical abbreviation — the
+ * same substitution `getScriptureChapter` applies internally, exposed for
+ * callers (bible-plan.ts's incipit/responsory lookups) that key off a
+ * *different* store keyed by the canonical form only (bible-book-
+ * incipits.ts, matins-responsories.ts) and would otherwise silently miss
+ * on any of `BOOK_ALIASES`' ~30 entries — live case: "jdt" (Judith)
+ * resolves its verse text fine but fell through bible-book-incipits.ts's
+ * `jdth`-keyed lookup, rendering as a bare "Reading" heading instead of
+ * "A reading from the book of Judith" (2026-09-03). */
+export function canonicalBook(book: string): string {
+  return BOOK_ALIASES[book] ?? book;
+}
+
 /**
  * @param verseRange e.g. "2-19" — inclusive. Whole (authored) chapter when
  * omitted. Unauthored book/chapter combinations resolve to an empty array

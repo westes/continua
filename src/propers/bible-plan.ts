@@ -21,6 +21,7 @@ import type { LanguageCode, TranslationStatus } from '../psalter/types';
 import { resolvePassages, type ScriptureCitation } from './octave-readings';
 import { getResponsoryForBook } from './matins-responsories';
 import { getBookIncipit } from './bible-book-incipits';
+import { canonicalBook } from '../scripture';
 
 const GOSPEL_BOOKS = new Set(['matt', 'mark', 'luke', 'john']);
 
@@ -115,8 +116,9 @@ function resolveReading(record: BiblePlanReadingRecord, bookIndex: number): Bibl
   };
   const citationLabelText = formatCitationLabel(record.passages);
   const firstBook = record.passages[0]?.book;
-  const responsory = firstBook ? getResponsoryForBook(firstBook, bookIndex)?.text : undefined;
-  const incipit = firstBook ? getBookIncipit(firstBook) : undefined;
+  const canonicalFirstBook = firstBook ? canonicalBook(firstBook) : undefined;
+  const responsory = canonicalFirstBook ? getResponsoryForBook(canonicalFirstBook, bookIndex)?.text : undefined;
+  const incipit = canonicalFirstBook ? getBookIncipit(canonicalFirstBook) : undefined;
   return {
     text,
     status,

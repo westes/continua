@@ -5252,3 +5252,33 @@ branch (demoted case) and `getDayLabel`'s final fallback (winning-outright case)
 in `tests/calendar/ember-days.test.ts` cover both. `npm test` (2024 passed) and `tsc --noEmit`
 both pass.
 
+**Second follow-on, same session**: user then flagged `/vu/2026-09-18/matins` (Ember Friday,
+commemorated) showing the Judith reading under a bare "Reading" heading. Real root cause, and a
+much broader bug than just Judith: `data/hours/bible-plan/*.yml`'s ~390-row TSV import uses
+English-style book abbreviations (`jdt`, `1kgs`, `luke`, ...) for the ~30 books where that
+diverges from this store's canonical Vulgate-numbering form (`jdth`, `3reg`, `luc`, ...) —
+`scripture/index.ts`'s own `BOOK_ALIASES` already normalizes this for verse-*text* lookup, but
+`bible-plan.ts`'s incipit (`bible-book-incipits.ts`) and responsory (`matins-responsories.ts`)
+lookups both used the raw, unaliased abbreviation, silently missing on any canonically-keyed
+book and falling back to the generic "Reading" heading. The 3 Gospel aliases (`luke`/`mark`/
+`john`) happened to self-heal through a second, independent citation-regex fallback that only
+exists for Gospels (`matins.ts`'s `getGospelIncipitFromCitation`) — every other aliased book
+(Judith, both Kings pairs, both Samuel books, Esdras, Osee, Jonas, Josue, Micheas, Abdias,
+Judges, the 3 Johannine epistles, James, Jude, Philemon, Titus, Zacharias, Sophonias) had no such
+fallback and was silently broken wherever it happened to be the first book of a reading. Fixed by
+exporting `canonicalBook` from `scripture/index.ts` (the same substitution `getScriptureChapter`
+already applies internally) and routing both `bible-plan.ts` lookups through it — one shared
+normalization, not two independently-aliased lookups that can drift again. New test in
+`tests/propers/bible-plan.test.ts`. `npm test` (2025 passed) and `tsc --noEmit` both pass.
+
+Separately, the user also asked about seeing 3 lessons in a row all headed "Pope St. Gregory the
+Great, Homily 33 on the Gospels, on Luke 7:36-50" (Ember Friday's own 3-lesson split of one
+homily, each with its own distinct text/responsory — see the 2026-08-22 Ember-day entry above).
+Confirmed this is correct content, not a duplication bug, but also confirmed it's *not* actually
+how the reference source itself labels it: `Tempora/093-5.txt` only carries the attribution once,
+on `[Lectio1]` — `[Lectio2]`/`[Lectio3]` have no repeated header at all, continuing silently under
+the same nocturn. This app's own authoring convention repeats the full `source` string identically
+on every split lesson, and does so consistently across the *entire* nocturn-readings corpus, not
+just Ember days — flagged for the user as a real presentational rough edge, not fixed yet pending
+their call on scope (a corpus-wide UI/authoring change, not a narrow one-file fix).
+
