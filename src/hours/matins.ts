@@ -450,11 +450,36 @@ function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
       return commonHymn;
     }
   }
+  // Septuagesima-tide checked directly by `day.season`, not folded into
+  // `seasonalOfficeSuffix` — that function is shared with Lauds/Vespers,
+  // which have no matching Septuagesima content authored yet; adding it
+  // there would silently blank their own chapter/hymn (resolveOfficeBundle
+  // requires all-or-nothing) instead of falling through to their current
+  // weekday default. Scoped to Matins alone until Lauds/Vespers' own
+  // Septuagesima content exists too (see TODO.md). Its own hymn ("Primo
+  // diérum ómnium") is a genuinely separate seasonal text from the plain
+  // Sunday/ferial one below, live-verified 2026-02-01.
+  if (day.season === 'septuagesima') {
+    const septuagesima = resolveCommon('matins-hymn-septuagesima');
+    if (septuagesima.status.la !== 'missing' || septuagesima.status.en !== 'missing') {
+      return septuagesima;
+    }
+  }
   const seasonSuffix = seasonalOfficeSuffix(day.season);
   if (seasonSuffix) {
     const seasonal = resolveCommon(`matins-hymn-${seasonSuffix}`);
     if (seasonal.status.la !== 'missing' || seasonal.status.en !== 'missing') {
       return seasonal;
+    }
+  }
+  // Sunday's own plain hymn ("Nocte surgéntes"), self-contained (own
+  // doxology baked in, unlike the shared weekday one below) — checked
+  // here, after every season/octave/Common tier above but before the
+  // Monday-Saturday ferial cycle, live-verified 2026-09-04.
+  if (day.weekday === 'sunday') {
+    const sunday = resolveCommon('matins-hymn-sunday');
+    if (sunday.status.la !== 'missing' || sunday.status.en !== 'missing') {
+      return sunday;
     }
   }
   // The plain ferial hymn's own Monastic source (Day1-6 Hymnus, Psalterium/
@@ -470,8 +495,9 @@ function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
   // text — a real gap uncovered when the user noticed Friday showing
   // Monday's own hymn, and Saturday's own gap found the same day by
   // asking what actually renders on a real Ember Saturday (see
-  // matins-hymn-ferial.yml's header for why Sunday alone still falls to
-  // the plain `matins-hymn-ferial` id as a documented placeholder).
+  // matins-hymn-ferial.yml's header for why Monday alone still falls to
+  // the plain `matins-hymn-ferial` id, since Monday's own text simply
+  // lives there unsuffixed).
   const weekdayFerialHymnIds: Partial<Record<Weekday, string>> = {
     tuesday: 'matins-hymn-ferial-tuesday',
     wednesday: 'matins-hymn-ferial-wednesday',

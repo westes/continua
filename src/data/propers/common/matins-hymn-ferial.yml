@@ -10,15 +10,13 @@
 # `resolveMatinsHymn` now looks up a weekday-specific id
 # (`matins-hymn-ferial-tuesday`/`-wednesday`/`-thursday`/`-friday`/
 # `-saturday`) for those five days; this file (`matins-hymn-ferial`, no
-# day suffix) is still used directly for Monday, and — as a deliberate,
-# documented placeholder, not yet its own real content — for Sunday too:
-# Sunday's own real Matins hymn selection is a genuinely more complex,
-# not-yet-modeled two-hymn mechanism (Day0 Hymnus vs Hymnus1, live source
-# tags H-MatDom1/H-MatDom4, purpose unconfirmed). Saturday's own gap
-# (superseded on nearly every ordinary Saturday by Marian Saturday, not a
-# full Little Office — see matins-hymn-ferial-saturday.yml and
-# calendar/index.ts's applyMarianSaturday) was closed the same day. See
-# TODO.md's 2026-09-04 entries.
+# day suffix) is still used directly for Monday. Sunday's own gap (turned
+# out simple, not the "genuinely more complex two-hymn mechanism" first
+# suspected — see matins-hymn-sunday.yml's own header) and Saturday's own
+# gap (superseded on nearly every ordinary Saturday by Marian Saturday,
+# not a full Little Office — see matins-hymn-ferial-saturday.yml and
+# calendar/index.ts's applyMarianSaturday) were both closed the same
+# session. See TODO.md's 2026-09-04 entries.
 #
 # The closing doxology stanza is split out into
 # matins-hymn-doxology-per-annum.yml (see hours/matins.ts) — the source

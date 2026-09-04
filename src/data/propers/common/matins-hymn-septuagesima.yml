@@ -1,0 +1,174 @@
+# Septuagesima-tide's own Matins hymn ("Primo diérum ómnium" —
+# Psalterium/Special/Matutinum Special.txt's "Day0 Hymnus1M", a genuinely
+# separate full text from the secular "Day0 Hymnus1", not a word-swap).
+# Live-verified 2026-02-01 (Septuagesima Sunday itself). Checked before
+# `matins-hymn-sunday.yml` in `resolveMatinsHymn` — this only ever
+# applies during Septuagesima/Sexagesima/Quinquagesima, a real, narrow
+# season vu's calendar already tracks (`day.season === 'septuagesima'`)
+# but that the shared `seasonalOfficeSuffix` (Lauds/Vespers' own) doesn't
+# cover — checked directly here rather than added there, since Lauds/
+# Vespers have no matching Septuagesima content authored yet and adding
+# it to that shared function would silently blank their own chapter/
+# hymn instead of falling through to their current (imperfect but real)
+# weekday default. See TODO.md.
+#
+# Self-contained, own closing doxology baked in — happens to be
+# byte-identical to the shared "Praesta, Pater piíssime..." weekday
+# doxology, but this hour doesn't use the split/append mechanism at all
+# for this seasonal tier (see matins-hymn-sunday.yml's own header).
+id: matins-hymn-septuagesima
+text:
+  la: >-
+    Primo diérum ómnium,
+
+    Quo mundus extat cónditus,
+
+    Vel quo resúrgens Cónditor
+
+    Nos morte victa líberat.
+
+
+    Pulsis procul torpóribus
+
+    Surgámus omnes ócius,
+
+    Et nocte quærámus pium
+
+    Sicut prophétam nóvimus.
+
+
+    Nostras preces ut áudiat,
+
+    Suámque dextram pórrigat:
+
+    Et expiátos sórdibus
+
+    Reddat polórum sédibus.
+
+
+    Ut quique sacratíssimo
+
+    Hujus diéi témpore
+
+    Horis quiétis psállimus,
+
+    Donis beátis múneret.
+
+
+    Jam nunc patérna cláritas
+
+    Te postulámus áffatim:
+
+    Absit libído sórdidans
+
+    Et omnis actus nóxius.
+
+
+    Ne fœda sit, vel lúbrica
+
+    Compágo nostri córporis,
+
+    Per quem Avérni ígnibus
+
+    Ipsi cremémur ácrius.
+
+
+    Ob hoc Redémptor, quǽsumus,
+
+    Ut probra nostra díluas,
+
+    Vitæ perénnis cómmoda
+
+    Nobis benígne cónferas.
+
+
+    Quo carnis actu éxsules
+
+    Effécti ipsi cælibes,
+
+    Ut præstolámur cérnui,
+
+    Melos canámus glóriæ.
+
+
+    Præsta, Pater piíssime,
+
+    Patríque compar Únice,
+
+    Cum Spíritu Paráclito
+
+    Regnans per omne sǽculum. Amen.
+  en: >-
+    Hail day! whereon the One in Three
+
+    First formed the earth by sure decree,
+
+    The day its Maker rose again,
+
+    And vanquished death, and burst our chain.
+
+
+    Away with sleep and slothful ease
+
+    We raise our hearts and bend our knees,
+
+    And early seek the Lord of all,
+
+    Obedient to the Prophet's call.
+
+
+    That He may hearken to our prayer,
+
+    Stretch forth His strong right arm to spare,
+
+    And ev'ry past offense forgiven,
+
+    Restore us to our home in heaven.
+
+
+    Assembled here this holy day,
+
+    This holiest hour we raise the lay,
+
+    And O that He to whom we sing,
+
+    May now reward our offering!
+
+
+    O Father of unclouded light!
+
+    Keep us this day as in thy sight,
+
+    In word and deed that we may be
+
+    From ev'ry touch of evil free.
+
+
+    That this our body's mortal frame
+
+    May know no sin, and fear no shame,
+
+    Nor fire hereafter be the end
+
+    Of passions which our bosom rend.
+
+
+    Redeemer of the world, we pray
+
+    That thou wouldst wash our sins away,
+
+    And give us, of Thy boundless grace,
+
+    The blessings of the heavenly place.
+
+
+    Most Holy Father, hear our cry,
+
+    Through Jesus Christ our Lord most High
+
+    Who, with the Holy Ghost and thee
+
+    Shall live and reign eternally. Amen.
+status:
+  la: verified
+  en: verified

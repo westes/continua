@@ -1,0 +1,173 @@
+# Lent's own Matins hymn ("Ex more docti mýstico"), used throughout Lent
+# up to (not including) Passiontide, which has its own separate hymn
+# (`matins-hymn-passiontide.yml`). Live-verified against both a plain
+# Lenten Sunday (2026-03-01) and a plain Lenten feria (2026-03-03, a
+# Tuesday) — byte-identical, so this season doesn't vary its Matins hymn
+# by weekday. Self-contained with its own closing doxology stanza baked
+# in (a fixed, unique ending, "Præsta, beáta Trínitas..." — not the
+# shared weekday doxology).
+id: matins-hymn-lent
+text:
+  la: >-
+    Ex more docti mýstico
+
+    Servémus hoc jejúnium,
+
+    Deno diérum círculo
+
+    Ducto quater notíssimo.
+
+
+    Lex et prophétæ prímitus
+
+    Hoc prætulérunt, póstmodum
+
+    Christus sacrávit, ómnium
+
+    Rex atque factor témporum.
+
+
+    Utámur ergo párcius
+
+    Verbis, cibis et pótibus,
+
+    Somno, jocis, et árctius
+
+    Perstémus in custódia.
+
+
+    Vitémus autem péssima,
+
+    Quæ súbruunt mentes vagas:
+
+    Nullúmque demus cállidi
+
+    Hostis locum tyránnidi.
+
+
+    Dicámus omnes cérnui:
+
+    Clamémus atque sínguli,
+
+    Plorémus ante Júdicem,
+
+    Flectámus iram víndicem,
+
+
+    Nostris malis offéndimus
+
+    Tuam, Deus, cleméntiam:
+
+    Effúnde nobis désuper,
+
+    Remíssor, indulgéntiam.
+
+
+    Meménto quod sumus tui,
+
+    Licet cadúci, plásmatis:
+
+    Ne des honórem nóminis
+
+    Tui, precámur, álteri.
+
+
+    Laxa malum, quod fécimus,
+
+    Auge bonum, quod póscimus:
+
+    Placére quo tandem tibi
+
+    Possímus hic, et pérpetim.
+
+
+    Præsta, beáta Trínitas,
+
+    Concéde, simplex Únitas,
+
+    Ut fructuósa sint tuis
+
+    Jejuniórum múnera. Amen.
+  en: >-
+    The fast, as taught by holy lore,
+
+    We keep in solemn course once more:
+
+    The fast to all men known, and bound
+
+    In forty days of yearly round.
+
+
+    The law and seers that were of old
+
+    In diverse ways this Lent foretold,
+
+    Which Christ, all seasons' King and Guide,
+
+    In after ages sanctified.
+
+
+    More sparing therefore let us make
+
+    The words we speak, the food we take,
+
+    Our sleep and mirth, and closer barred
+
+    Be every sense in holy guard.
+
+
+    Avoid the evil thoughts that roll
+
+    Like waters o'er the heedless soul;
+
+    Nor let the foe occasion find
+
+    Our souls in slavery to bind.
+
+
+    In prayer together let us fall,
+
+    And cry for mercy, one and all,
+
+    And weep before the Judge's feet,
+
+    And his avenging wrath entreat.
+
+
+    Thy grace have we offended sore,
+
+    By sins, O God, which we deplore;
+
+    But pour upon us from on high,
+
+    O pardoning One, thy clemency.
+
+
+    Remember thou, though frail we be,
+
+    That yet thine handiwork are we;
+
+    Nor let the honour of thy name
+
+    Be by another put to shame.
+
+
+    Forgive the sin that we have wrought;
+
+    Increase the good that we have sought:
+
+    That we at length, our wanderings o'er,
+
+    May please thee here and evermore.
+
+
+    Grant O thou Blessed Trinity,
+
+    Grant, O Essential Unity,
+
+    That this our fast of forty days
+
+    May work our profit and thy praise. Amen.
+status:
+  la: verified
+  en: verified

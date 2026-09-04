@@ -1,0 +1,100 @@
+# Advent's own Matins hymn ("Verbum supérnum, pródiens"). Live-verified
+# against both a plain Advent Sunday and a plain Advent feria
+# (2026-12-10, a Thursday with no saint of its own) — byte-identical, so
+# this season doesn't vary its Matins hymn by weekday the way the plain
+# per-annum ferial cycle does. Self-contained with its own closing
+# doxology stanza baked in (a fixed, unique ending, "Laus, honor, virtus,
+# glória... In sæculórum sǽcula" — not the shared weekday doxology).
+id: matins-hymn-advent
+text:
+  la: >-
+    Verbum supérnum, pródiens
+
+    A Patre olim éxiens,
+
+    Qui natus orbi súbvenis,
+
+    Cursu declívi témporis.
+
+
+    Illúmina nunc péctora,
+
+    Tuóque amóre cóncrema;
+
+    Audíto ut præcónio
+
+    Sint pulsa tandem lúbrica.
+
+
+    Judéxque cum post áderis
+
+    Rimári facta péctoris,
+
+    Reddens vicem pro ábditis,
+
+    Justísque regnum pro bonis.
+
+
+    Non demum arctémur malis
+
+    Pro qualitáte críminis;
+
+    Sed cum beátis cómpotes
+
+    Simus perénnes cælibes.
+
+
+    Laus, honor, virtus, glória,
+
+    Deo Patri, et Fílio,
+
+    Sancto simul Paráclito,
+
+    In sæculórum sǽcula. Amen.
+  en: >-
+    Celestial Word, to this our earth
+
+    Sent down from God's eternal clime,
+
+    To save mankind by mortal birth
+
+    Into a world of change and time;
+
+
+    Enlighten our hearts; vain hopes destroy;
+
+    And in thy love's consuming fire
+
+    Fill all the soul with heavenly joy,
+
+    And melt the dross of low desire.
+
+
+    So when the Judge of quick and dead
+
+    Shall bid his awful summons come,
+
+    To whelm the guilty soul with dread,
+
+    And call the blessed to their home.
+
+
+    Saved from the whirling, black abyss,
+
+    Forevermore to us be given
+
+    To share the feast of saintly bliss,
+
+    And see the face of God in heaven.
+
+
+    To God the Father and the Son
+
+    Our songs with one accord we raise;
+
+    And to the Holy Spirit, One
+
+    With them, be ever equal praise. Amen.
+status:
+  la: verified
+  en: verified
