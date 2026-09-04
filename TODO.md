@@ -5422,3 +5422,42 @@ one (Ember/Advent/Lent) where nothing wins outright and Marian Saturday's own `o
 doesn't apply. Authored `matins-hymn-ferial-saturday.yml` ("Summæ Deus cleméntiæ", live-verified
 against a clean September Ember Saturday, 2025-09-20) and added it to `resolveMatinsHymn`'s weekday
 lookup. `npm test` (2025 passed, no test changes needed) and `tsc --noEmit` both pass.
+
+### Sunday's own Matins hymn, plus every season's (Advent/Septuagesima/Lent/Passiontide/Paschaltide) (2026-09-04)
+
+User asked for the actual detail behind the "genuinely more complex, not-yet-understood two-hymn
+mechanism" flagged in the entry above (`Day0 Hymnus` vs `Day0 Hymnus1`). Turned out not to be a
+mystery: live-checking several clean dates showed `Day0 Hymnus` ("Nocte surgéntes vigilémus omnes")
+is simply Sunday's own plain per-annum hymn, and `Day0 Hymnus1` ("Primo diérum ómnium") is
+Septuagesima-tide's own separate seasonal hymn — the exact same shape as Advent/Lent/Passiontide/
+Paschaltide each having their own (live-verified: a Lenten Sunday and a Lenten feria both render
+"Ex more docti mýstico" identically, so these seasonal hymns don't vary by weekday the way the
+plain per-annum cycle does). None of the 5 seasonal Matins hymns, nor Sunday's own plain one, were
+authored at all before this — every Sunday and every Advent/Lent/Passiontide/Paschaltide/
+Septuagesima day (Sundays and ferias alike) that wasn't otherwise overridden by a winning saint/
+octave was silently falling through to Monday's own ferial placeholder text.
+
+Authored `matins-hymn-sunday.yml` ("Nocte surgéntes"), `matins-hymn-advent.yml` ("Verbum supérnum,
+pródiens"), `matins-hymn-lent.yml` ("Ex more docti mýstico"), `matins-hymn-passiontide.yml` ("Pange,
+lingua, gloriósi prœlium certáminis" — this breviary's own 5-stanza recension, not the longer
+"Lustra sex..." continuation some other uses of the hymn carry), `matins-hymn-paschaltide.yml`
+("Rex sempitérne Dómine"), and `matins-hymn-septuagesima.yml` ("Primo diérum ómnium") — all
+live-verified, all self-contained with their own real closing doxology baked in (each one fixed and
+distinct, not the shared weekday "Praesta, Pater piíssime..." ending).
+
+Septuagesima is checked directly by `day.season === 'septuagesima'` in `resolveMatinsHymn` itself,
+deliberately *not* folded into the shared `seasonalOfficeSuffix` (Lauds/Vespers' own) — that
+function has no matching Septuagesima content authored for those hours yet, and `resolveOfficeBundle`
+there is all-or-nothing per feast, so adding it would silently blank their chapter/hymn instead of
+falling through to their current (imperfect but real) weekday default. Scoped to Matins alone; Lauds/
+Vespers' own Septuagesima gap is real and separately flagged here, not fixed.
+
+Also flagged, not fixed: the generic `matins-hymn-paschaltide.yml` will incorrectly render during
+the Ascension octave specifically, which is live-verified to have its own genuinely different proper
+hymn ("...Qui scandis super sídera") not yet authored anywhere — same-shape gap already existing in
+Lauds' own `lauds-hymn-paschaltide.yml`, not a new regression introduced here.
+
+Updated 2 `FERIAL_DATE` (2026-12-01, a Tuesday *in Advent*) hymn assertions in
+`tests/hours/matins.test.ts` that had been asserting Tuesday's own ferial text — Advent's own
+seasonal hymn correctly outranks the weekday cycle now. `npm test` (2025 passed) and `tsc --noEmit`
+both pass.
