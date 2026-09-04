@@ -5282,3 +5282,25 @@ on every split lesson, and does so consistently across the *entire* nocturn-read
 just Ember days — flagged for the user as a real presentational rough edge, not fixed yet pending
 their call on scope (a corpus-wide UI/authoring change, not a narrow one-file fix).
 
+**Third follow-on, same session**: user then asked why a Sunday's own patristic homily was
+showing up on a Friday at all. Pulled the live reference engine's own Matins page for St. Joseph
+of Cupertino's day (Tridentine 1906) to check, rather than reasoning from vu's data alone: real
+Nocturn III there is exactly 3 lessons — 2 from the winning Duplex saint's own Common homily, plus
+a single "**Commemoratio Feriæ**" lesson for the displaced Ember day. No Sunday content
+whatsoever. `hours/matins.ts`'s `nocturnReadingIds` had a `temporalKept` block that pooled the
+governing Sunday's own id (`temporalId`) *and* its `month-week-N` sibling whenever any temporal
+commemoration survived on a 3-nocturn day, with no weekday check at all — so a Duplex+ saint
+winning outright on a plain weekday (not a Sunday) that also happened to carry a temporal
+commemoration pulled in a whole second homily's worth of unrelated content (here: St. Ambrose's
+homily + its own Gospel from `post-pentecost-16`, and St. Leo's September-fast sermon from
+`month-week-093` — two different reference-engine representations of the *same* underlying
+Sunday, both wrongly pooled at once). Fixed by gating `temporalKept` to `day.weekday === 'sunday'`
+— the governing Sunday's own content only belongs in the pool when that Sunday is the day actually
+being celebrated. Live-verified by reloading `/vu/2026-09-18/matins`: both spurious readings are
+gone. `npm test` (2025 passed) and `tsc --noEmit` both pass.
+
+Still open, by the user's own explicit request to land this first: Ember Friday's own homily
+still surfaces as all 3 of its lessons even when merely commemorated, where the live engine caps
+a commemorated feria at exactly one lesson (its own Lectio 1 only) — same shape of fix as this
+one, not yet done.
+

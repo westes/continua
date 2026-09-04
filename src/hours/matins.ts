@@ -654,20 +654,37 @@ function nocturnReadingIds(day: LiturgicalDay, temporalId: string, date: string,
   }
   // The plain temporalId/month-week content is the *governing Sunday's own*
   // Nocturn 2/3 patristic material, real content for that Sunday itself —
-  // only pooled on a real 3-nocturn day, and (as before) only when the
-  // day's own occurrence decision (calendar/commemorations.ts's
-  // decideOccurrence) actually retained the temporal identity in some form:
-  // the temporal cycle won outright (day.winner.kind === 'temporal' -- a
-  // plain Sunday, or a named temporal override like Christ the King), or it
-  // survives as a commemoration alongside a sanctoral winner. Excluded:
-  // decideOccurrence's `ordinary-feria` branch, where a real feast --
-  // however low-ranked -- wins with zero commemorations, correctly
-  // suppressing the temporal identity entirely (e.g. St. Bartholomew,
-  // duplex-2-classis, 2026-08-24 -- his own proper reading has no Nocturn
-  // 3 content, and without this gate the leftover 13th-Sunday-after-
-  // Pentecost/month-week content wrongly filled Nocturn 3 instead).
+  // only pooled on a real 3-nocturn day, only on the Sunday itself (see
+  // below), and (as before) only when the day's own occurrence decision
+  // (calendar/commemorations.ts's decideOccurrence) actually retained the
+  // temporal identity in some form: the temporal cycle won outright
+  // (day.winner.kind === 'temporal' -- a plain Sunday, or a named temporal
+  // override like Christ the King), or it survives as a commemoration
+  // alongside a sanctoral winner. Excluded: decideOccurrence's
+  // `ordinary-feria` branch, where a real feast -- however low-ranked --
+  // wins with zero commemorations, correctly suppressing the temporal
+  // identity entirely (e.g. St. Bartholomew, duplex-2-classis, 2026-08-24
+  // -- his own proper reading has no Nocturn 3 content, and without this
+  // gate the leftover 13th-Sunday-after-Pentecost/month-week content
+  // wrongly filled Nocturn 3 instead).
+  //
+  // `day.weekday === 'sunday'` gate added 2026-09-03: live-verified
+  // (Tridentine 1906) that a Duplex+ saint winning outright on a *weekday*
+  // that also happens to carry a temporal commemoration (e.g. St. Joseph
+  // of Cupertino, Duplex, Friday Sept 18) gets no Sunday content at all --
+  // the reference engine's own Nocturn III there is just the saint's own
+  // Common homily (2 lessons) plus a single "Commemoratio Feriæ" lesson
+  // for the displaced feria, never the week's separate governing-Sunday
+  // homily (Ambrose's/Leo's, in that live case). This mechanism previously
+  // fired on *any* 3-nocturn day with a surviving temporal commemoration,
+  // regardless of weekday, wrongly pooling in a whole extra Sunday's worth
+  // of unrelated patristic content on top of the day's own two real
+  // sources. The governing Sunday's own content only belongs in the pool
+  // when that Sunday *is* the day being celebrated.
   const temporalKept =
-    threeNocturns && (day.winner.kind === 'temporal' || day.commemorations.some((c) => c.kind === 'temporal'));
+    threeNocturns &&
+    day.weekday === 'sunday' &&
+    (day.winner.kind === 'temporal' || day.commemorations.some((c) => c.kind === 'temporal'));
   if (temporalKept) {
     ids.add(temporalId);
     const monthWeek = monthWeekId(date);
