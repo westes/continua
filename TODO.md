@@ -5192,3 +5192,43 @@ the old, incomplete assertion.
 
 Full suite re-run after this follow-up: `npm test` (2021 passed, 47 files) and `npm run build`
 (`tsc --noEmit` + `vite build`) both pass.
+
+### Ember days' own Benedictus/Magnificat antiphons authored (2026-09-03)
+
+Follow-on from the 2026-08-22 Ember-day mechanism entry, whose "not authored, logged instead"
+note called the gap "the Ember-day-specific `[Ant 2]`/`[Ant 3]` Lauds antiphons" — imprecise, and
+worth correcting here. Live-verified (Monastic Tridentinum 1617) against a clean year for each
+Ember weekday (Wed 2023-09-20, Fri 2024-09-20, Sat 2025-09-20 for September; Dec 16/18/19 2026
+for Advent, all winning outright): the day's own Lauds *psalmody* (Ps 50/63/64 + canticle +
+Laudate, all 5 antiphon slots) stays entirely on the plain ferial weekday default, unchanged —
+only the **Benedictus antiphon** (and, Wed/Fri only, the **Magnificat antiphon**) is genuinely
+proper to the Ember day, each labeled "Antiphona ex Proprio de Tempore" live. `hours/resolve-
+common.ts`'s `getBenedictusAntiphon`/`getMagnificatAntiphon` already look up `${winner.id}-
+benedictus-antiphon`/`-magnificat-antiphon` unconditionally for any temporal winner (rank-
+agnostic by design, same as the chapter/hymn bundle) — so this needed no mechanism change at
+all, just the missing content files, which is why it silently rendered blank rather than
+tripping any test.
+
+**Authored**: 6 Benedictus antiphon files (one per Ember weekday × quarter) and 4 Magnificat
+antiphon files (Wed + Fri only, both quarters). September Wednesday/Friday reuse the identical
+text for both (`[Ant 3]` is a bare `@:Ant 2` cross-reference in the source, not independently
+authored — a real fact about the source, not a shortcut taken here); Advent Wednesday's two
+differ (`Missus est Gábriel` / `Ecce ancílla Dómini`); September Saturday uses the Monastic
+track's own `TemporaM/093-6.txt` override (`Illumináre... Deus Israël`) per this project's
+Monastic-1617-first preference, matching the choice already made for this day's Matins
+responsories.
+
+**Not authored, correctly**: Magnificat antiphons for either quarter's Ember Saturday — Second
+Vespers on both is always ceded outright to the following Sunday ("Vespera de sequenti; nihil de
+præcedenti," live-verified), and the source file itself has no `[Ant 3]` for either Saturday,
+confirming the omission is real, not a gap. Advent Ember Friday's own Magnificat antiphon *was*
+still authored despite being currently unreachable — Dec 18 always falls inside the O Antiphons'
+own unconditional Dec 17-23 window, which wins the Vespers Magnificat outright — per this
+project's standing "import available real content even if it may not survive the current
+calendar" default.
+
+New assertions added to `tests/calendar/ember-days.test.ts` (Benedictus antiphon text/status on
+all 6 winning-outright dates; Magnificat status on Advent Ember Wednesday, the one case with no
+overriding mechanism to complicate the assertion). `npm test` (2023 passed, 47 files) and
+`tsc --noEmit` both pass.
+

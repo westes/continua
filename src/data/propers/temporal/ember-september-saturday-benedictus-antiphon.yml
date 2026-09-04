@@ -1,0 +1,24 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2025-09-20 -- the clean year in range where September Ember
+# Saturday itself wins outright, labeled "Antiphona ex Proprio de
+# Tempore". Uses the Monastic track's own override text
+# (Latin/TemporaM/093-6.txt's [Ant 2], "Illumináre... Deus Israël") in
+# place of the secular Tempora/093-6.txt's plain "Illúmina... in viam
+# pacis" (no "Deus Israël"), per this project's Monastic-1617-first
+# structure preference -- same choice already made for this day's Matins
+# responsories. The English/Tempora/093-6.txt translation already carries
+# "O Thou the God of Israel," confirming it was translated from the
+# Monastic Latin, not the secular.
+#
+# No Magnificat antiphon file for this id: Ember Saturday's own Second
+# Vespers is always ceded outright to the following Sunday ("Vespera de
+# sequenti; nihil de præcedenti," live-verified 2025-09-20) -- the source
+# file itself has no [Ant 3] for this day, correctly reflecting that the
+# text would never be said.
+id: ember-september-saturday-benedictus-antiphon
+text:
+  la: "Illumináre, Dómine, * his, qui in ténebris sedent: et dírige pedes nostros in viam pacis, Deus Israël."
+  en: "Give light, O Lord, * to them that sit in darkness, and guide our feet into the way of peace, O Thou the God of Israel."
+status:
+  la: verified
+  en: verified

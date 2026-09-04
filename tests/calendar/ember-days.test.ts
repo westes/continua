@@ -53,6 +53,42 @@ describe('Ember days', () => {
     }
   });
 
+  it("Lauds' Benedictus antiphon is the Ember day's own proper text on all 6 winning-outright days (2026-08-22 added the mechanism/collect/Matins, but not this -- fixed here)", () => {
+    // Wed/Fri/Sat winning outright for the September quarter, one per
+    // weekday (2026's own dates are all saint-outranked, see above) --
+    // found by scanning forward from 2023, all live-verified against the
+    // reference engine.
+    const cases: [string, string][] = [
+      ['2023-09-20', 'Hoc genus'],
+      ['2024-09-20', 'Múlier'],
+      ['2025-09-20', 'Illumináre, Dómine'],
+      ['2026-12-16', 'Missus est Gábriel'],
+      ['2026-12-18', 'Ex quo facta est'],
+      ['2026-12-19', 'Quómodo fiet istud'],
+    ];
+    for (const [date, expectedStart] of cases) {
+      const ordo = resolveOrdo('lauds', date);
+      const idx = ordo.parts.findIndex((p) => p.kind === 'canticle' && p.canticleId === 'benedictus');
+      const antiphon = ordo.parts[idx + 1] as { text: { text: { la?: string }; status: { la?: string; en?: string } } };
+      expect(antiphon.text.status.la).toBe('verified');
+      expect(antiphon.text.status.en).toBe('verified');
+      expect(antiphon.text.text.la).toContain(expectedStart);
+    }
+  });
+
+  it("Vespers' Magnificat antiphon is proper on Ember Wednesday (Sept and Advent) where the reference engine actually renders it, not overridden by a Sunday/O-Antiphon", () => {
+    // September Ember Friday/Saturday and Advent Ember Friday/Saturday
+    // are excluded here: Saturday's Second Vespers is always ceded to the
+    // following Sunday (live-verified), and Advent Ember Friday/Saturday
+    // (always Dec 18/19) are always inside the O Antiphons' own
+    // unconditional Dec 17-23 window -- both real, not gaps.
+    const ordo = resolveOrdo('vespers', '2026-12-16');
+    const idx = ordo.parts.findIndex((p) => p.kind === 'canticle' && p.canticleId === 'magnificat');
+    const antiphon = ordo.parts[idx + 1] as { text: { status: { la?: string; en?: string } } };
+    expect(antiphon.text.status.la).toBe('verified');
+    expect(antiphon.text.status.en).toBe('verified');
+  });
+
   it('Matins renders 3 real, distinct, verified lessons+responsories for each of the 6 Ember days', () => {
     const dates = ['2026-09-16', '2026-09-18', '2026-09-19', '2026-12-16', '2026-12-18', '2026-12-19'];
     for (const date of dates) {
