@@ -5849,3 +5849,26 @@ Confirmed still genuinely absent (re-checked directly, not just re-asserted): `b
 Josue, Judices, Ruth, Paralipomenon/Chronicles, Esdras/Nehemias, Canticles — no citation anywhere
 in Tempora. 39 remaining books not yet attempted: Leviticus/Numbers/Deuteronomy, the four Gospels,
 Acts, Apocalypse, and the NT epistles.
+
+### Matins responsory pools: real key-alias bug found and fixed (2026-09-04)
+
+A serious correctness bug, found by re-verifying through the *real* pipeline rather than trusting
+the earlier direct-function-call "live verification": `bible-plan.ts` normalizes a reading's book
+through `canonicalBook()` (`scripture/index.ts`'s `BOOK_ALIASES` map) *before* calling
+`getResponsoryForBook` — so the pool must be keyed by the canonical form, not the bible-plan TSV's
+own raw book code, whenever the two differ. 12 of this same day's 33 seeded keys used the raw form
+instead: `1macc`/`2macc` (canonical `1mach`/`2mach`), `1sam`/`2sam`/`1kgs`/`2kgs` (`1reg`/`2reg`/
+`3reg`/`4reg`), `jdt` (`jdth`), `zeph` (`soph`), `obad` (`abd`), `jonah` (`jon`), `hos` (`osee`),
+`mic` (`mich`) — every one of these would have silently resolved to `undefined` in the real app
+despite passing this same day's own "live-verified" test, because that test called
+`getResponsoryForBook` directly with the raw code, bypassing the normalization the real call site
+always applies. Renamed all 12 keys (and their own header comments) to the canonical form.
+Re-verified this time through the actual `getBiblePlanReadings` call site (not a direct
+`getResponsoryForBook` call) on a real date (2026-06-04, `post-pentecost-01`/Thursday, `1sam 9-10`)
+— confirms a real responsory now resolves where it silently wouldn't have before this fix. `npm
+test` (2025 passed) and `tsc --noEmit` both pass.
+
+**Lesson for future sourcing passes**: when a book has a `BOOK_ALIASES` entry, the pool key is the
+*alias target*, not the bible-plan YAML's own book code — check `scripture/index.ts`'s
+`BOOK_ALIASES` map before choosing a key, and verify through `getBiblePlanReadings`/`resolveOrdo`
+(the real call chain), not a direct, unnormalized call to `getResponsoryForBook`.

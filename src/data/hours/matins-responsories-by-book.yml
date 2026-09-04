@@ -253,9 +253,9 @@ dan:
       la: "Misit Deus misericórdiam suam et veritátem suam: ánimam meam erípuit de médio catulórum leónum."
       en: "God hath sent forth His mercy and His truth, (and delivered) my soul from among the lions' whelps."
 
-# `1macc` sourced from Latin/Tempora/101-1.txt, English/Tempora/101-1.txt
+# `1mach` sourced from Latin/Tempora/101-1.txt, English/Tempora/101-1.txt
 # (October week 1's own ferial, no overriding rank).
-1macc:
+1mach:
   - r:
       la: "Dixit Judas Simóni fratri suo: Elige tibi viros et vade, líbera fratres tuos in Galilǽam; ego autem et Jónathas frater tuus íbimus in Galaadítim: * Sicut fúerit volúntas in cælo, sic fiat."
       en: "Judas said unto Simon his brother: Choose thee out men, and go, and deliver thy brethren that are in Galilee and I, and Jonathan thy brother, will go into the country of Galaad. * As the Will is in heaven, so let it be."
@@ -275,10 +275,10 @@ dan:
       la: "Ornavérunt fáciem templi corónis áureis, et dedicavérunt altáre Dómino."
       en: "They decked the fore-front of the Temple with crowns of gold, and dedicated the Altar unto the Lord."
 
-# `2macc` — same source pool as `1macc` (see that entry's own header): the
+# `2mach` — same source pool as `1mach` (see that entry's own header): the
 # reference engine's own 104 (2 Mac) week file `@`-references 101-1 (1
 # Maccabees' own week) for its responsories, both Latin and English.
-2macc:
+2mach:
   - r:
       la: "Dixit Judas Simóni fratri suo: Elige tibi viros et vade, líbera fratres tuos in Galilǽam; ego autem et Jónathas frater tuus íbimus in Galaadítim: * Sicut fúerit volúntas in cælo, sic fiat."
       en: "Judas said unto Simon his brother: Choose thee out men, and go, and deliver thy brethren that are in Galilee and I, and Jonathan thy brother, will go into the country of Galaad. * As the Will is in heaven, so let it be."
@@ -298,7 +298,7 @@ dan:
       la: "Ornavérunt fáciem templi corónis áureis, et dedicavérunt altáre Dómino."
       en: "They decked the fore-front of the Temple with crowns of gold, and dedicated the Altar unto the Lord."
 
-# `1sam` sourced from Latin/Tempora/Pent01-1.txt, English/Tempora/Pent01-1.txt
+# `1reg` sourced from Latin/Tempora/Pent01-1.txt, English/Tempora/Pent01-1.txt
 # (Monday of the week after the Octave of Pentecost — its own plain rank).
 # The bare `[ResponsoryN]` tags in this file are themselves just
 # `@:ResponsoryN_`-references to a literal `[ResponsoryN_]` template
@@ -307,7 +307,7 @@ dan:
 # convention entirely and wrongly concluded no English existed for
 # several Kings/Samuel weeks; corrected 2026-09-04 (user: "look at the
 # secular office" prompted re-checking rather than accepting the gap).
-1sam:
+1reg:
   - r:
       la: "Præparáte corda vestra Dómino, et servíte illi soli: * Et liberábit vos de mánibus inimicórum vestrórum."
       en: "Prepare your hearts unto the Lord, and serve Him Only * And He will deliver you out of the hand of your enemies."
@@ -327,7 +327,7 @@ dan:
       la: "Misit Deus misericórdiam suam et veritátem suam: ánimam meam erípuit de médio catulórum leónum."
       en: "God hath sent forth His mercy and His truth, and delivered my soul from among the lion's whelps."
 
-# `2sam`/`1kgs`/`2kgs` all sourced from the same single entry, Latin/Tempora/
+# `2reg`/`3reg`/`4reg` all sourced from the same single entry, Latin/Tempora/
 # Pent03-1Feria.txt, English/Tempora/Pent03-1Feria.txt (Monday of week 3
 # post-Pentecost-Octave) — each book's own week file (Pent05-1/Pent07-1/
 # Pent09-1) `@`-references this exact file/tag for Responsory1, confirmed
@@ -337,21 +337,21 @@ dan:
 # Ezekiel/Daniel weeks above. Only 1 entry — the books' own week files
 # chain further `@`-references (Pent01-3, etc.) for Responsory2/3 that
 # weren't followed this pass.
-2sam:
+2reg:
   - r:
       la: "Recordáre, Dómine, testaménti tui, et dic Angelo percutiénti: Cesset jam manus tua, * Ut non desolétur terra, et ne perdas omnem ánimam vivam."
       en: "Remember, O Lord, thy covenant, and say unto the destroying Angel: Stay now thine hand; * That the land be not utterly laid waste, and that thou destroy not every living soul."
     v:
       la: "Ego sum qui peccávi, ego qui iníque egi: isti qui oves sunt, quid fecérunt? Avertátur, óbsecro, furor tuus, Dómine, a pópulo tuo."
       en: "Even I it is that have sinned, and done evil indeed; but these sheep, what have they done? Let thine anger, I pray thee, O Lord, be turned away from thy people."
-1kgs:
+3reg:
   - r:
       la: "Recordáre, Dómine, testaménti tui, et dic Angelo percutiénti: Cesset jam manus tua, * Ut non desolétur terra, et ne perdas omnem ánimam vivam."
       en: "Remember, O Lord, thy covenant, and say unto the destroying Angel: Stay now thine hand; * That the land be not utterly laid waste, and that thou destroy not every living soul."
     v:
       la: "Ego sum qui peccávi, ego qui iníque egi: isti qui oves sunt, quid fecérunt? Avertátur, óbsecro, furor tuus, Dómine, a pópulo tuo."
       en: "Even I it is that have sinned, and done evil indeed; but these sheep, what have they done? Let thine anger, I pray thee, O Lord, be turned away from thy people."
-2kgs:
+4reg:
   - r:
       la: "Recordáre, Dómine, testaménti tui, et dic Angelo percutiénti: Cesset jam manus tua, * Ut non desolétur terra, et ne perdas omnem ánimam vivam."
       en: "Remember, O Lord, thy covenant, and say unto the destroying Angel: Stay now thine hand; * That the land be not utterly laid waste, and that thou destroy not every living soul."
@@ -429,13 +429,13 @@ agg:
       la: "Plorans plorávit in nocte, et lácrimæ ejus in maxíllis ejus."
       en: "She weepeth sore in the night, and her tears are on her cheeks."
 
-# `jdt` sourced from Latin/Tempora/094-0.txt, English/Tempora/094-0.txt
+# `jdth` sourced from Latin/Tempora/094-0.txt, English/Tempora/094-0.txt
 # (September week 4's own Sunday — Responsory1/4/7, the pattern every
 # feria that week's own file `@`-references in rotation, confirmed by
 # reading each). User-caught gap (2026-09-04): flagged as unseeded in an
 # earlier pass without actually checking — real, clean, bilingual content
 # was sitting right there.
-jdt:
+jdth:
   - r:
       la: "Adonái, Dómine, Deus magne et mirábilis, qui dedísti salútem in manu féminæ, * Exáudi preces servórum tuórum."
       en: "O Adonai, O Lord God, Thou art great and glorious. Who hast given salvation into the hand of a woman: * Graciously hear the prayers of thy servants."
@@ -457,7 +457,7 @@ jdt:
 
 # `esth` sourced from Latin/Tempora/095-0.txt, English/Tempora/095-0.txt
 # (September week 5's own Sunday — Responsory1/3/4, same rotation
-# pattern as `jdt` above). Responsory4's own text ("Meménto mei, Dómine
+# pattern as `jdth` above). Responsory4's own text ("Meménto mei, Dómine
 # Deus, in bonum") reads like Nehemiah's own prayer-style rather than
 # Esther's, but it's the reference engine's own genuine text for this
 # week regardless — consistent with "loose match," not a mis-citation.
@@ -534,11 +534,11 @@ joel:
       la: "Dómine, Dóminus noster, quam admirábile est nomen tuum!"
       en: "Lord our Ruler, how excellent is thy Name in all the earth!"
 
-# `zeph` sourced from Latin/Tempora/111-3.txt, English/Tempora/111-3.txt
+# `soph` sourced from Latin/Tempora/111-3.txt, English/Tempora/111-3.txt
 # (November week 1's own Thursday — 115-3.txt, Sophonias/Zephaniah's own
 # week file, `@`-references this exact tag). Only 1 entry: that file's own
 # English has no Responsory2/3.
-zeph:
+soph:
   - r:
       la: "Indicábo tibi, homo, quid sit bonum aut quid Dóminus requírat a te: * Fácere judícium et justítiam et sollícitum ambuláre cum Deo tuo."
       en: "I will show thee, O man, what is good, and what doth the Lord require of thee, but to * Do justice and judgment, and to walk humbly with thy God."
@@ -546,9 +546,9 @@ zeph:
       la: "Spera in Dómino, et fac bonitátem, et inhábita terram."
       en: "Trust in the Lord, and do good, and dwell in the land."
 
-# `obad` reuses `zach`'s own first entry (both `@`-reference
+# `abd` reuses `zach`'s own first entry (both `@`-reference
 # Tempora/111-0:Responsory4 — Abdias' own week file is 114-5.txt).
-obad:
+abd:
   - r:
       la: "Super muros tuos, Jerúsalem, constítui custódes; * Tota die et nocte non tacébunt laudáre nomen Dómini."
       en: "I have set watchmen upon thy walls, O Jerusalem; * Which shall never hold their peace day nor night, to praise the name of the Lord."
@@ -556,11 +556,11 @@ obad:
       la: "Prædicábunt pópulis fortitúdinem meam, et annuntiábunt géntibus glóriam meam."
       en: "They shall proclaim My might unto the nations, and declare My glory unto the Gentiles."
 
-# `jonah`/`mal` both share the same single entry, Tempora/111-0:Responsory7
+# `jon`/`mal` both share the same single entry, Tempora/111-0:Responsory7
 # (Jonas' own week file 114-6.txt and Malachias' own 115-6.txt both
 # `@`-reference this exact tag — a different entry than `zach`'s own
 # R4-6 from this same source Sunday).
-jonah:
+jon:
   - r:
       la: "Laudábilis pópulus, * Quem Dóminus exercítuum benedíxit dicens: Opus mánuum meárum tu es, heréditas mea Israël."
       en: "Blessed is the people * Whom the Lord of hosts hath blessed, saying O Israel thou art the work of Mine own hands, thou art Mine own inheritance."
@@ -575,10 +575,10 @@ mal:
       la: "Beáta gens, cujus est Dóminus Deus, pópulus eléctus in hereditátem."
       en: "Blessed is the nation whose God is the Lord, and the people whom He hath chosen for His own inheritance."
 
-# `hos` reuses `ezek`/`dan`'s own first entry (Osee's own week file
+# `osee` reuses `ezek`/`dan`'s own first entry (Osee's own week file
 # 114-1.txt `@`-references Tempora/111-1:Responsory1, the same Ezekiel
 # week already sourced above).
-hos:
+osee:
   - r:
       la: "Redémit pópulum suum et liberávit eum, et vénient et exsultábunt in monte Sion et gaudébunt de bonis Dómini super fruménto, vino et óleo, * Et ultra non esúrient."
       en: "He hath redeemed His people, and ransomed them therefore they shall come and sing in the height of Zion, and shall rejoice in the goodness of the Lord, for wheat, and for wine, and for oil * And they shall hunger no more."
@@ -586,10 +586,10 @@ hos:
       la: "Erítque ánima eórum quasi hortus irríguus."
       en: "And their soul shall be as a watered garden."
 
-# `mic` reuses `amos`/`agg`'s own first entry (Micheas' own week file
+# `mich` reuses `amos`/`agg`'s own first entry (Micheas' own week file
 # 115-0.txt `@`-references Tempora/Pent01-0:Responsory1, Isaiah's
 # throne-vision, already sourced above).
-mic:
+mich:
   - r:
       la: "Vidi Dóminum sedéntem super sólium excélsum et elevátum, et plena erat omnis terra majestáte ejus: * Et ea, quæ sub ipso erant, replébant templum."
       en: "I saw the Lord sitting upon a throne, high and lifted up, and the whole earth was full of His glory; * And His train filled the temple."
@@ -624,7 +624,7 @@ lam:
       la: "Vere languóres nostros ipse tulit, et dolóres nostros ipse portávit."
       en: "Surely He hath borne our griefs and carried our sorrows."
 
-# `nah` reuses `ezek`/`dan`/`hos`'s own first entry (Nahum's own week file
+# `nah` reuses `ezek`/`dan`/`osee`'s own first entry (Nahum's own week file
 # 115-1.txt `@`-references Tempora/111-1:Responsory1, the same Ezekiel
 # week already sourced above).
 nah:
