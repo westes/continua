@@ -4,7 +4,7 @@
 # chapter/verse historically, so a book-level match is the right
 # granularity, not a gap to fill in later with exact citations.
 #
-# Seeded, not a full pool — 41 of the 72 books actually used in the user's
+# Seeded, not a full pool — 45 of the 72 books actually used in the user's
 # own bible-plan (data/hours/bible-plan/*.yml), the rest deferred bulk
 # content (see TODO.md). Cycled in order
 # per-day when a Nocturn-1 reading's book has more than one candidate
@@ -683,11 +683,11 @@ apoc:
       la: "Et vox de throno exívit, dicens: Laudem dícite Deo nostro, omnes Sancti ejus, et qui timétis Deum, pusílli et magni."
       en: "And a voice came out from the throne, saying: Give praise to our God, all saints of Him that fear him, little and great."
 
-# `jas` sourced from Latin/Tempora/Pasc4-0.txt, English/Tempora/Pasc4-0.txt
+# `jac` sourced from Latin/Tempora/Pasc4-0.txt, English/Tempora/Pasc4-0.txt
 # (Easter IV Sunday, James' own reading week) — the ordinary Paschaltide
 # Sunday psalm-based responsory set (Ps 136/76/21), not James-specific
 # thematically, same "loose match" convention used throughout this file.
-jas:
+jac:
   - r:
       la: "Si oblítus fúero tui, allelúja, obliviscátur mei déxtera mea: * Adhǽreat lingua mea fáucibus meis, si non memínero tui, allelúja, allelúja."
       en: "If I forget thee, Alleluia, let my right hand forget me. * If I do not remember thee, let my tongue cleave to the roof of my mouth, alleluia, alleluia."
@@ -783,3 +783,87 @@ marc:
     v:
       la: "Et valde mane una sabbatórum, véniunt ad monuméntum, orto jam sole."
       en: "And very early in the morning, the first day of the week, they came unto the sepulchre, at the rising of the sun."
+
+# `1cor` sourced from Latin/Tempora/Quad6-4.txt, English/Tempora/Quad6-4.txt,
+# Responsory7-9 (Maundy Thursday's own Nocturn 3 — 1 Cor 11's Institution
+# narrative, distinct from that same file's Responsory1-3 already used
+# for `lam` above, its own Nocturn 1 Lamentations content). Genuinely
+# proper content for the feast, not an override.
+1cor:
+  - r:
+      la: "Eram quasi agnus ínnocens: ductus sum ad immolándum, et nesciébam: consílium fecérunt inimíci mei advérsum me, dicéntes: * Veníte, mittámus lignum in panem ejus, et eradámus eum de terra vivéntium."
+      en: "I was like a gentle lamb that is brought to the slaughter, and I knew not that mine enemies had devised devices against me, saying: * Come, let us put (poison of a deadly) tree into his bread, and let us cut him off from the land of the living."
+    v:
+      la: "Omnes inimíci mei advérsum me cogitábant mala mihi: verbum iníquum mandavérunt advérsum me, dicéntes."
+      en: "All they that hate me devised my hurt against me: they plotted together to do me evil, saying:"
+  - r:
+      la: "Una hora non potuístis vigiláre mecum, qui exhortabámini mori pro me? * Vel Judam non vidétis, quómodo non dormit, sed festínat trádere me Judǽis."
+      en: "Could ye not watch with Me one hour, ye that called one on the other to die for Me? * Or see ye not Judas, how that he sleepeth not, but maketh haste to betray Me to the Jews?"
+    v:
+      la: "Quid dormítis? súrgite, et oráte, ne intrétis in tentatiónem."
+      en: "Why sleep ye? Rise, and pray, lest ye enter into temptation."
+  - r:
+      la: "Senióres pópuli consílium fecérunt, * Ut Jesum dolo tenérent, et occíderent: cum gládiis et fústibus exiérunt tamquam ad latrónem."
+      en: "The elders of the people consulted * That they might take Jesus by subtilty, and kill Him they came out, as against a thief, with swords and staves."
+    v:
+      la: "Collegérunt pontífices et pharisǽi concílium."
+      en: "The chief Priests and the Pharisees gathered a council."
+
+# `2cor` sourced from Latin/Tempora/Epi2-0.txt, English/Tempora/Epi2-0.txt
+# (Epiphany II Sunday, its own ordinary rank, 2 Corinthians' own reading
+# week).
+2cor:
+  - r:
+      la: "Dómine, ne in ira tua árguas me, neque in furóre tuo corrípias me: * Miserére mei, Dómine, quóniam infírmus sum."
+      en: "O Lord, rebuke me not in thine anger, neither chasten me in thine hot displeasure. * Have mercy upon me, O Lord, for I am weak."
+    v:
+      la: "Timor et tremor venérunt super me, et contexérunt me ténebræ."
+      en: "Fearfulness and trembling are come upon me, and darkness hath overwhelmed me."
+  - r:
+      la: "Deus, qui sedes super thronum, et júdicas æquitátem, esto refúgium páuperum in tribulatióne: * Quia tu solus labórem et dolórem consíderas."
+      en: "O God, Which satest in the throne judging right, be Thou a refuge for the poor, a refuge in times of trouble. * For Thou alone beholdest mischief and spite."
+    v:
+      la: "Tibi enim derelíctus est pauper, pupíllo tu eris adjútor."
+      en: "The poor leaveth himself unto thee; Thou wilt be the helper of the fatherless."
+  - r:
+      la: "A dextris est mihi Dóminus, ne commóvear: * Propter hoc dilatátum est cor meum, et exsultávit lingua mea."
+      en: "The Lord is at my right hand, I shall never be moved. * Therefore my heart is glad, and my tongue rejoiceth."
+    v:
+      la: "Dóminus pars hereditátis meæ, et cálicis mei."
+      en: "The Lord is the portion of mine inheritance, and of my cup."
+
+# `1pet` sourced from Latin/Tempora/Pasc4-0.txt, English/Tempora/Pasc4-0.txt,
+# Responsory4-6 (1 Peter's own reading week, Pasc5-2.txt, `@`-references
+# these three — the same ordinary Paschaltide Sunday psalm-set already
+# used for `jas` above, R1-3 there, R4-6 here).
+1pet:
+  - r:
+      la: "In ecclésiis benedícite Deo, allelúja: * Dómino de fóntibus Israël, allelúja, allelúja."
+      en: "Bless ye God in the congregations, alleluia. * Even the Lord, ye that are of the fountains of Israel, alleluia, alleluia."
+    v:
+      la: "Psalmum dícite nómini ejus, date glóriam laudi ejus."
+      en: "Sing forth the honour of His Name, make His praise glorious."
+  - r:
+      la: "In toto corde meo, allelúja, exquisívi te, allelúja: * Ne repéllas me a mandátis tuis, allelúja, allelúja."
+      en: "With my whole heart, alleluia, have I sought thee, alleluia. * O let me not wander from thy commandments, alleluia, alleluia."
+    v:
+      la: "Benedíctus es tu, Dómine, doce me justificatiónes tuas."
+      en: "Blessed art Thou, O Lord; teach me thy statutes."
+  - r:
+      la: "Hymnum cantáte nobis, allelúja: * Quómodo cantábimus cánticum Dómini in terra aliéna? allelúja, allelúja."
+      en: "Sing us a song, alleluia. * How shall we sing the Lord's song in a strange land, alleluia, alleluia."
+    v:
+      la: "Illic interrogavérunt nos, qui captívos duxérunt nos, verba cantiónum."
+      en: "There they that carried us away captive required of us a song."
+
+# `1joan` sourced from Latin/Tempora/Pasc6-0.txt, English/Tempora/Pasc6-0.txt,
+# Responsory8 (Sunday within the Octave of the Ascension, 1 John's own
+# reading week — Paraclete/Holy Spirit theme, fitting for the approach to
+# Pentecost). Only 1 entry.
+1joan:
+  - r:
+      la: "Si enim non abíero, Paráclitus non véniet ad vos: si autem abíero, mittam eum ad vos. * Cum autem vénerit ille, docébit vos omnem veritátem, allelúja."
+      en: "For if I go not away, the Comforter will not come unto you; but if I depart, I will send Him unto you; * And when He is come, He will guide you into all truth. Alleluia."
+    v:
+      la: "Non enim loquétur a semetípso: sed quæcúmque áudiet, loquétur: et quæ ventúra sunt, annuntiábit vobis."
+      en: "For He shall not speak of Himself; but whatsoever He shall hear, that shall He speak and He will show you things to come."

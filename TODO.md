@@ -26,15 +26,16 @@ across every hour and content type in this app.
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
    - Matins Nocturn 2/3 responsory pools (both new, 2026-09-04 — see "Matins responsory pools:
-     per-book expansion + new per-Common-category pool" below, and its four follow-up entries):
-     the per-book pool now covers 41 of 72 books, keyed by canonical form where it differs from
+     per-book expansion + new per-Common-category pool" below, and its five follow-up entries):
+     the per-book pool now covers 45 of 72 books, keyed by canonical form where it differs from
      the bible-plan YAML's own book code (`isa`, `gen`, `jer`, `exod`, `prov`, `sir`, `sap`, `tob`,
      `ezek`, `dan`, `1mach`, `2mach`, `1reg`, `2reg`, `3reg`, `4reg`, `zach`, `amos`, `agg`, `jdth`,
      `esth`, `job`, `eccl`, `hab`, `joel`, `soph`, `abd`, `jon`, `mal`, `osee`, `mich`, `nah`,
-     `lam`, `act`, `apoc`, `jas`, `heb`, `luc`, `matt`, `joan`, `marc` — 32 books remaining, 9 of
-     them already confirmed genuinely absent from the reference source); the new per-Common-
-     category pool covers 19/19 real Commune categories (every category actually used by a saint
-     except angel/evangelist/vigil, which have no Commune responsory file to source from) — this
+     `lam`, `act`, `apoc`, `jac`, `heb`, `luc`, `matt`, `joan`, `marc`, `1cor`, `2cor`, `1pet`,
+     `1joan` — 27 books remaining, 12 of them already confirmed genuinely absent from the
+     reference source); the new per-Common-category pool covers 19/19 real Commune categories
+     (every category actually used by a saint except angel/evangelist/vigil, which have no
+     Commune responsory file to source from) — this
      is the one that closes most of the 272-of-355 nocturn-readings files that had no `responsory`
      at all. Bible-plan TSV content also isn't yet
      in a test table (see "Bible-plan TSV — bulk conversion done" below).
@@ -5913,3 +5914,31 @@ than own-translating six-plus books in one pass. 32 books remain (9 of them the 
 genuinely-absent `bar`/Josue/Judices/Ruth/Chronicles/Esdras-Nehemias/Canticles): Leviticus/
 Numbers/Deuteronomy, Romans, 1-2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1-2
 Thessalonians, 1-2 Timothy, Titus, Philemon, 1-2 Peter, 1-3 John, Jude not yet attempted.
+
+### Matins responsory pools: last real batch (1 Cor, 2 Cor, 1 Peter, 1 John), a repeated key bug (2026-09-04)
+
+Confirmed Leviticus/Numbers/Deuteronomy genuinely absent from Tempora (re-checked precisely with
+the `awk`-based Lectio-citation survey, not a loose grep — no hit under any Latin form of the
+book's name). Added `1cor` (Maundy Thursday's own Nocturn 3, Latin/Tempora/Quad6-4.txt
+Responsory7-9 — the Institution narrative, distinct from that same file's Responsory1-3 already
+used for `lam`), `2cor` (Epiphany II Sunday, its own ordinary rank, Epi2-0.txt), `1pet` (1 Peter's
+own reading week `@`-references the ordinary Paschaltide Sunday psalm-set already used for `jac`
+below — R4-6 of that same Pasc4-0.txt), and `1joan` (Sunday within the Ascension Octave, Pasc6-0.txt,
+the Paraclete responsory, only 1 entry).
+
+**A repeated mistake, caught by self-audit this time**: the previous entry's `jas` key was wrong —
+same bug as the 12-key fix two entries up. `BOOK_ALIASES` maps bible-plan's `jas` to canonical
+`jac`; the pool needed `jac:`, not `jas:`. Fixed, and re-verified through `getBiblePlanReadings`
+(not a direct call) on `easter-6`/Monday, 2026-05-11 (`Jas 2` now resolves a real responsory).
+**Ran a full audit this time**: checked every single current pool key against `BOOK_ALIASES`
+programmatically (not just the ones touched this pass) — confirmed clean, zero raw-alias-source
+keys remain anywhere in the file.
+
+45 of 72 bible-plan books now seeded. `npm test` (2025 passed) and `tsc --noEmit` both pass.
+
+Remaining 27, none easily gettable this pass: 12 confirmed genuinely absent from the reference
+source (`bar`, Canticles, Joshua, Judges, Ruth, 1-2 Chronicles, Ezra, Nehemiah, Leviticus, Numbers,
+Deuteronomy); 15 with real Latin but no reference-engine English anywhere (Romans, Galatians,
+Ephesians, Philippians, Colossians, Titus, Philemon, 2 Thessalonians, 2 Timothy, 2 Peter, 2-3 John,
+Jude). Own-translating any of these would be the next step, if wanted — not attempted here per the
+established "only seed real bilingual source" pattern.
