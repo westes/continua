@@ -6,10 +6,27 @@
 #
 # Lectio1's Gospel citation (Luke 7:36-50) is a bare incipit with no full
 # pericope text given, so only the homily portion is authored, same
-# convention as ember-september-wednesday.yml. Kept as 3 separate
-# readings, each with its own genuinely distinct proper responsory — see
-# that file's own doc comment for why this departs from the usual
-# combine-into-one default.
+# convention as ember-september-wednesday.yml.
+#
+# Recombined into one reading 2026-09-04 (previously kept as 3 separate
+# readings): the user flagged this on the live app (`/2026-09-18/matins`,
+# Ember Friday as a commemoration) as reading oddly — Gregory's Homily 33
+# split into 3 slots. Lectio1-3 are one continuous, unbroken homily on the
+# same pericope, split only to fill the fixed 3-lesson Nocturn slot count
+# — exactly the "source doesn't genuinely split" case this store's own
+# established default (see post-pentecost-15.yml's own doc comment)
+# recombines. The original per-lesson "genuinely distinct proper
+# responsory" rationale for keeping this split (also present, unfixed so
+# far, in ember-september-wednesday.yml/ember-september-saturday.yml/
+# ember-advent-saturday.yml/ember-advent-wednesday.yml/
+# ember-advent-friday.yml) doesn't hold up against that established
+# default: post-pentecost-15.yml's own Nocturn 2 already collapses 4
+# lessons with their own distinct responsories into one reading, keeping
+# only the first's. Responsory here is Lectio1's own (Responsory1 =
+# @Tempora/093-0:Responsory4) per that same "the first one, when several
+# collapse" convention; Lectio2/3's own distinct responsories (Responsory2
+# = @Tempora/093-0:Responsory5, Responsory3 = @Tempora/093-0:Responsory6)
+# are dropped, same as every other collapsed-reading case in this store.
 id: ember-september-friday
 readings:
   - nocturn: 1
@@ -23,49 +40,16 @@ readings:
         pedes osculári non désiit. Nos ergo, nos illa múlier expréssit, si toto corde ad Dóminum post peccáta
         redeámus, si ejus pœniténtiæ luctus imitémur. Quid namque unguénto, nisi bonæ odor opiniónis exprímitur?
         Unde et Paulus dicit: Christi bonus odor sumus Deo in omni loco.
-      en: >-
-        Of what is the Pharisee that was exalted by self-righteousness a type, but of the Jewish people? And of
-        what the woman which was a sinner and came and wept at the Lord's feet, but of the conversion of the
-        Gentiles? She brought an alabaster box of ointment, and stood at His feet behind Him weeping, and began to
-        wash His Feet with tears, and did wipe them with the hairs of her head, and kissed His Feet, and anointed
-        them with the ointment. Of us, therefore, even of us, was that woman a type, if after our sins we turn unto
-        the Lord with all our heart, and imitate the example of her repentant grief. And of what is the ointment a
-        type, but of the sweet savour of a good reputation? Whence also Paul saith: In every place we are unto God
-        a sweet savour of Christ.
-    responsory:
-      la: "R. Sufficiébat nobis paupértas nostra, ut divítiæ computaréntur: numquam fuísset pecúnia ipsa, pro qua misísti fílium nostrum, * Báculum senectútis nostræ!\nV. Heu me, fili mi, ut quid te mísimus peregrinári, lumen oculórum nostrórum?\nR. Báculum senectútis nostræ!"
-      en: "R. Our poverty was enough for us, that it might have been accounted riches. O that the money had never been, for which thou hast sent away our son, * The staff of our old age.\nV. Alas, my son, wherefore have we sent thee wandering, even thee, the light of our eyes?\nR. The staff of our old age."
-    status: { la: verified, en: verified }
 
-  - nocturn: 2
-    isGospel: false
-    source: "Pope St. Gregory the Great, Homily 33 on the Gospels, on Luke 7:36-50"
-    text:
-      la: >-
+
         Si ergo recta ópera ágimus, quibus opiniónis bonæ odóre Ecclésiam respergámus, quid in Dómini córpore, nisi
         unguéntum fúndimus? Sed secus pedes Jesu múlier stetit: contra pedes enim dómini stétimus, cum in peccátis
         pósiti ejus itinéribus renitebámur. Sed si ad veram pœniténtiam post peccáta convértimur, jam retro secus
         pedes stamus; quia ejus vestígia séquimur, quem impugnabámus. Lácrimis múlier pedes ejus rigat: quod nos
         quoque veráciter ágimus, si quibúslibet últimis membris Dómini per compassiónis afféctum inclinámur, si
         sanctis ejus in tribulatióne compátimur, si eórum tristítiam, nostram putámus.
-      en: >-
-        If therefore we do good works, whereby we gain for the Church the savour of good reputation, what do we
-        but pour ointment upon the body of the Lord? But the woman stood at the Feet of Jesus, behind Him we stood
-        opposite to the Feet of the Lord, what time we were in sin, and went contrary unto His ways. But when we
-        turn again, and truly repent us of our sins, we stand behind His Feet, for we follow His footsteps against
-        Whom we once contended. The woman washed His Feet with her tears and we do in very deed the same when we
-        show the tenderness of sympathy to any of His humbler members, when we feel with His Saints in their
-        tribulations, when we make their woes our own.
-    responsory:
-      la: "R. Benedícite Deum cæli et coram ómnibus vivéntibus confitémini ei, * Quia fecit vobíscum misericórdiam suam.\nV. Ipsum benedícite et cantáte illi: et enarráte ómnia mirabília ejus.\nR. Quia fecit vobíscum misericórdiam suam."
-      en: "R. Bless the God of heaven, and confess Him before all living: * For He hath had mercy upon you.\nV. Bless Him, and sing praises unto Him, and tell of all His marvelous works.\nR. For He hath had mercy upon you."
-    status: { la: verified, en: verified }
 
-  - nocturn: 3
-    isGospel: false
-    source: "Pope St. Gregory the Great, Homily 33 on the Gospels, on Luke 7:36-50"
-    text:
-      la: >-
+
         Capíllis ergo pedes Dómini térgimus, quando sanctis ejus, quibus ex caritáte compátimur, étiam ex his quæ
         nobis supérfluunt, miserémur: quátenus sic mens per compassiónem dóleat, ut étiam larga manus afféctum
         dolóris osténdat. Rigat namque lácrimis Redemptóris pedes, sed capíllis suis non tergit, qui utcúmque
@@ -75,6 +59,25 @@ readings:
         largitáte continémus: ne gravis nobis sit necéssitas próximi; ne ipsa nobis ejus indigéntia, quæ
         sustentátur, fiat onerósa: et cum manus necessária tríbuit, ánimus a dilectióne torpéscat.
       en: >-
+        Of what is the Pharisee that was exalted by self-righteousness a type, but of the Jewish people? And of
+        what the woman which was a sinner and came and wept at the Lord's feet, but of the conversion of the
+        Gentiles? She brought an alabaster box of ointment, and stood at His feet behind Him weeping, and began to
+        wash His Feet with tears, and did wipe them with the hairs of her head, and kissed His Feet, and anointed
+        them with the ointment. Of us, therefore, even of us, was that woman a type, if after our sins we turn unto
+        the Lord with all our heart, and imitate the example of her repentant grief. And of what is the ointment a
+        type, but of the sweet savour of a good reputation? Whence also Paul saith: In every place we are unto God
+        a sweet savour of Christ.
+
+
+        If therefore we do good works, whereby we gain for the Church the savour of good reputation, what do we
+        but pour ointment upon the body of the Lord? But the woman stood at the Feet of Jesus, behind Him we stood
+        opposite to the Feet of the Lord, what time we were in sin, and went contrary unto His ways. But when we
+        turn again, and truly repent us of our sins, we stand behind His Feet, for we follow His footsteps against
+        Whom we once contended. The woman washed His Feet with her tears and we do in very deed the same when we
+        show the tenderness of sympathy to any of His humbler members, when we feel with His Saints in their
+        tribulations, when we make their woes our own.
+
+
         She wipes the Lord's Feet with our hair when we give charity, even out of such things as we have ourselves
         no need of, to His holy ones, with whom we feel in their trials, in as far as our heart so sympathizeth,
         that the bounty of our hand showeth the truth of our compassion. He washeth the Feet of the Redeemer, but
@@ -85,6 +88,6 @@ readings:
         the neediness of our neighbour is not grievous unto us, nor the penury which we relieve a weariness to us,
         nor, when the hand is giving what is needful, the heart is untouched by compassion.
     responsory:
-      la: "R. Tempus est ut revértar ad eum qui misit me; * Vos autem benedícite Deum, et enarráte ómnia mirabília ejus.\nV. Confitémini ei coram ómnibus vivéntibus, quia fecit vobíscum misericórdiam suam.\nR. Vos autem benedícite Deum, et enarráte ómnia mirabília ejus."
-      en: "R. It is time for me to return unto Him That sent me; * But bless ye God, and tell of all His marvelous works.\nV. Confess Him before all living, for He hath had mercy upon you.\nR. But bless ye God, and tell of all His marvelous works."
+      la: "R. Sufficiébat nobis paupértas nostra, ut divítiæ computaréntur: numquam fuísset pecúnia ipsa, pro qua misísti fílium nostrum, * Báculum senectútis nostræ!\nV. Heu me, fili mi, ut quid te mísimus peregrinári, lumen oculórum nostrórum?\nR. Báculum senectútis nostræ!"
+      en: "R. Our poverty was enough for us, that it might have been accounted riches. O that the money had never been, for which thou hast sent away our son, * The staff of our old age.\nV. Alas, my son, wherefore have we sent thee wandering, even thee, the light of our eyes?\nR. The staff of our old age."
     status: { la: verified, en: verified }

@@ -105,16 +105,32 @@ describe('Ember days', () => {
     expect(getDayLabel(resolveDay('2026-12-19')).en).toContain('Ember Saturday in Advent (Feria)');
   });
 
-  it('Matins renders 3 real, distinct, verified lessons+responsories for each of the 6 Ember days', () => {
-    const dates = ['2026-09-16', '2026-09-18', '2026-09-19', '2026-12-16', '2026-12-18', '2026-12-19'];
-    for (const date of dates) {
+  it('Matins renders real, distinct, verified lessons+responsories for each of the 6 Ember days', () => {
+    // September Ember Friday (2026-09-18) is 1, not >=3, since 2026-09-04:
+    // ember-september-friday.yml's own Gregory homily (Lectio1-3) was
+    // recombined into a single reading -- it's one continuous, unbroken
+    // homily on the same pericope, split only to fill the fixed 3-lesson
+    // slot count, the same "source doesn't genuinely split" default
+    // post-pentecost-15.yml's own doc comment already establishes. The
+    // other 5 Ember days' own nocturn-readings files still keep their
+    // historical 3-way split (each with its own genuinely distinct
+    // responsory) -- not revisited here, out of scope for this fix.
+    const dates: [string, number][] = [
+      ['2026-09-16', 3],
+      ['2026-09-18', 1],
+      ['2026-09-19', 3],
+      ['2026-12-16', 3],
+      ['2026-12-18', 3],
+      ['2026-12-19', 3],
+    ];
+    for (const [date, minLessons] of dates) {
       const ordo = resolveOrdo('matins', date);
       const lessons = ordo.parts.filter((p) => p.kind === 'lesson') as {
         text: { status: { en?: string } };
         responsory?: { text: { status: { en?: string } } };
       }[];
       const emberLessons = lessons.filter((l) => l.text.status.en === 'verified' && l.responsory !== undefined);
-      expect(emberLessons.length).toBeGreaterThanOrEqual(3);
+      expect(emberLessons.length).toBeGreaterThanOrEqual(minLessons);
     }
   });
 });
