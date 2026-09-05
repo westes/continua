@@ -782,24 +782,35 @@ function fallbackHagiographicLabel(id: string): string | undefined {
 }
 
 /** The human-readable occasion a `nocturn-readings` id stands for — a
- * saint's or named temporal feast's own display name, or an Ember day's
- * (which has no `TemporalFeastRecord` of its own, see `emberDayLabel`'s own
- * doc comment). Used to annotate an authored patristic `source` with *why*
- * it's here, since a single day can pool several ids' worth of readings
- * (e.g. a commemorated Ember day's own Gospel homily alongside the winning
- * saint's own) and a bare "Pope St. Gregory the Great, Homily 33" doesn't
- * tell a reader which occasion that homily belongs to. */
-function occasionName(id: string): string | undefined {
-  return getSaintRecord(id)?.name ?? getTemporalFeastRecord(id)?.name ?? emberDayLabel(id)?.en;
+ * saint's or named temporal feast's own display name, an Ember day's (which
+ * has no `TemporalFeastRecord` of its own, see `emberDayLabel`'s own doc
+ * comment), or — the most common case in the whole pool — a plain governing
+ * Sunday's own temporal-cycle id (`post-pentecost-15`) or its
+ * `month-week-<NNN>` half (see `nocturnReadingIds`'s `temporalKept` block),
+ * which falls back to the same `getDayLabel` the day's own heading uses
+ * (e.g. "The 14th Sunday after Trinity"). Used to annotate an authored
+ * patristic `source` with *why* it's here, since a single day can pool
+ * several ids' worth of readings (e.g. a commemorated Ember day's own
+ * Gospel homily alongside the winning saint's own) and a bare "Pope St.
+ * Gregory the Great, Homily 33" doesn't tell a reader which occasion that
+ * homily belongs to. */
+function occasionName(id: string, day: LiturgicalDay): string | undefined {
+  const named = getSaintRecord(id)?.name ?? getTemporalFeastRecord(id)?.name ?? emberDayLabel(id)?.en;
+  if (named) return named;
+  const monthWeek = monthWeekId(day.date);
+  if (id === resolveTemporalId(day.date) || (monthWeek && id === `month-week-${monthWeek}`)) {
+    return getDayLabel(day).en;
+  }
+  return undefined;
 }
 
 /** Appends `(for <occasion>)` to an authored patristic `source` string,
  * when the contributing id resolves to a human-readable occasion name —
  * see `occasionName`. A no-op when `source` is undefined (the hagiographic
  * fallback case, which already names its own saint). */
-function withOccasion(source: string | undefined, id: string): string | undefined {
+function withOccasion(source: string | undefined, id: string, day: LiturgicalDay): string | undefined {
   if (!source) return source;
-  const occasion = occasionName(id);
+  const occasion = occasionName(id, day);
   return occasion ? `${source} (for ${occasion})` : source;
 }
 
@@ -809,12 +820,12 @@ function withOccasion(source: string | undefined, id: string): string | undefine
  * same convention as the per-book pool. Common-category fallback only
  * applies to a real saint id (`getSaintRecord(id)?.common`) — a temporal or
  * octave id has no Commune category to fall back to. */
-function nocturnReadingPart(r: NocturnReading, id: string, index: number): ResolvedPart {
+function nocturnReadingPart(r: NocturnReading, id: string, index: number, day: LiturgicalDay): ResolvedPart {
   const responsoryText = r.responsory ?? getResponsoryForCommon(getSaintRecord(id)?.common, index);
   return {
     kind: 'lesson',
     text: { text: r.text, status: r.status, citation: r.citation },
-    label: withOccasion(r.source, id) ?? fallbackHagiographicLabel(id),
+    label: withOccasion(r.source, id, day) ?? fallbackHagiographicLabel(id),
     responsory: responsoryText ? { text: responsoryText, status: { la: 'verified', en: 'verified' } } : undefined,
   };
 }
@@ -827,7 +838,13 @@ function nocturnReadingPart(r: NocturnReading, id: string, index: number): Resol
  * ResolvedPart can't be split across two nocturns by `distributeIntoNocturns`,
  * whereas two adjacent pool entries could be (and, before this, sometimes
  * were). */
-function gospelReadingPart(r: NocturnReading, homily: NocturnReading | undefined, id: string, index: number): ResolvedPart {
+function gospelReadingPart(
+  r: NocturnReading,
+  homily: NocturnReading | undefined,
+  id: string,
+  index: number,
+  day: LiturgicalDay,
+): ResolvedPart {
   const incipit = getGospelIncipitFromCitation(r.citation);
   // A responsory authored on the *homily* (the reference engine's own
   // convention — e.g. post-pentecost-16.yml's Ambrose homily, or a saint's
@@ -841,11 +858,11 @@ function gospelReadingPart(r: NocturnReading, homily: NocturnReading | undefined
   return {
     kind: 'gospel',
     text: { text: r.text, status: r.status, citation: r.citation },
-    source: withOccasion(r.source, id),
+    source: withOccasion(r.source, id, day),
     label: incipit ? { la: incipit.la, en: incipit.en } : undefined,
     responsory: responsoryText ? { text: responsoryText, status: { la: 'verified', en: 'verified' } } : undefined,
     homily: homily
-      ? { source: withOccasion(homily.source, id), text: { text: homily.text, status: homily.status, citation: homily.citation } }
+      ? { source: withOccasion(homily.source, id, day), text: { text: homily.text, status: homily.status, citation: homily.citation } }
       : undefined,
   };
 }
@@ -948,10 +965,10 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
         // apart by distributeIntoNocturns.
         const next = readings[i + 1];
         const homily = next && !next.isGospel && next.nocturn === reading.nocturn ? next : undefined;
-        bucket.push(gospelReadingPart(reading, homily, id, commonPoolIndex++));
+        bucket.push(gospelReadingPart(reading, homily, id, commonPoolIndex++, day));
         if (homily) i++;
       } else {
-        bucket.push(nocturnReadingPart(reading, id, commonPoolIndex++));
+        bucket.push(nocturnReadingPart(reading, id, commonPoolIndex++, day));
       }
       byGroup.set(groupKey, bucket);
     }
