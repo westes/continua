@@ -33,6 +33,16 @@ across every hour and content type in this app.
      Ieremiæ") has never been transcribed anywhere in this app (the 7 existing Lauds canticles,
      `hours/lauds-canticles.ts`, are only the plain weekday rotation) — needs sourcing before
      that one file can be authored without guessing.
+   - Matins Nocturn 3 entirely unauthored (not just an unpaired Gospel) on a handful of
+     `nocturn-readings/*.yml` files, found 2026-09-05 while closing the Gospel-pericope gap
+     below: `nativity-bvm.yml`, `ss-cletus-and-marcellinus.yml`/`ss-soter-and-caius.yml`
+     (Common-of-Popes Nocturn 3, Matt 16:13-19), `ss-cornelius-and-cyprian.yml`
+     (Common-of-Martyrs Nocturn 3, Luke 21:9-19), `ss-seven-brothers-rufina-and-secunda.yml`
+     (Matt 12:46-50 + Gregory Hom. 3), and `st-anacletus.yml` (an alternate 1570/1617-rubric
+     variant of `Sancti/07-13.txt` carries a real Nocturn 3, Luke 14:26-33 + Gregory Hom. 37 —
+     worth a look given this project's own Monastic 1617 structural default). Each of these
+     currently has only Nocturn 2 content; the mechanism is already proven (this is the same
+     shape as every other authored file in the store), just unauthored for these few ids.
 
 3. **New features (not content mechanism)** — genuinely new product surface, not something a
    content pass is blocked on; each needs its own design pass, not just implementation:
@@ -6261,3 +6271,51 @@ resolves real, correctly R./V.-formatted text in both languages for `Judg 7`).
 
 70 of 72 seeded. Remaining 2 (1-2 Paralipomenon/Chronicles) have no citation anywhere, Horas or
 Missa, and no scripture text of their own has been composed on its own merit yet.
+
+### Matins Nocturn 3 Gospel pericope — closed (2026-09-05)
+
+Systemic gap found while reviewing the Ember-Friday/9-18 fix: a huge number of `nocturn-readings/
+*.yml` files had an authored patristic homily (`isGospel: false`, a `source` field naming the
+author/work) with no paired `isGospel: true` Gospel pericope — the homily discussing a Gospel text
+that was never itself transcribed into the file. Nocturn 3 in this office is always a homily on
+that day's own Mass Gospel; leaving the pericope unauthored meant the homily read with no context
+for what it was actually commenting on.
+
+Closed in two waves, since the first pass's detection method was itself too narrow (a regex over
+the `source` field looking for an explicit citation) and missed real cases — either because the
+citation was only in the file's header comment, phrased in a way the regex didn't match (a Latin
+abbreviation, a parenthetical, a bare "Commentary on Luke" with no verse number), or not named
+anywhere in the file at all:
+
+- **Wave 1** (regex-detected, 64 files): every file where `source` itself named a Gospel
+  book+chapter.
+- **Wave 2** (structural re-scan — any `isGospel: false` + `source` entry in a file with zero
+  `isGospel: true` entries, no regex): found 75 more candidates. Required real per-file
+  verification against `../divinum-officium-reference` (checking the actual Lectio7-9/
+  `[Evangelium]` structure), since several turned out to be Nocturn 2 content or Common-of-saints
+  cross-references with no proper Gospel of the saint's own — ~46 authored, ~29 correctly left
+  alone. A handful more (`st-aloysius-gonzaga.yml`, `st-francis-xavier.yml`,
+  `st-john-baptist-de-la-salle.yml`, `st-joseph-calasanctius.yml`) were dropped from the wave-2
+  task list by mistake and fixed directly during final verification.
+
+Along the way, two more real bugs surfaced and were fixed in `src/hours/matins.ts`/
+`src/calendar/day-label.ts`:
+- A demoted temporal commemoration (e.g. a "Commemoratio Feriæ") was leaking a governing Sunday's
+  own homily into an unrelated weekday's reading pool through a separate code path than the one a
+  2026-09-03 fix had gated — affected 18 days/year.
+- Reading pool order didn't match the day label's own commemoration order (temporal-then-
+  sanctoral) — fixed to follow the same convention.
+- A plain generic temporal commemoration (e.g. "Saturday in the 15th week after Trinity") was
+  shown in the day label even when something else was already being celebrated, redundant with
+  either an Ember day's own name or simply unnecessary noise alongside any winner — dropped
+  unconditionally, not just for Ember days.
+- A homily's own authored responsory (when distinct from its paired Gospel's) was never actually
+  read by `gospelReadingPart` — silently dropped for every Gospel+homily pair with a responsory on
+  the homily specifically (e.g. `post-pentecost-16.yml`'s Ambrose homily).
+
+A handful of files were found to have **no Nocturn 3 content authored at all** (not just an
+unpaired Gospel) — logged separately above under "Minimal-proof-done, bulk content pending", not
+part of this closed item.
+
+`npm test` (2029 passed) and `tsc --noEmit` both pass; live-verified on 2026-09-16/18/19 (the
+Ember-September-into-saint cluster that originally surfaced this).

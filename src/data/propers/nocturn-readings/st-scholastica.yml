@@ -7,6 +7,15 @@
 # Lectio4-6 (St. Gregory the Great's account, from the Dialogues, of
 # her final visit with St. Benedict) combined into one reading, one
 # continuous excerpt. No responsory given in the source.
+#
+# Checked 2026-09-05 for a missing Gospel pairing: the plain Tridentine
+# Sancti/02-10.txt has no Lectio7-9 at all (only Lectio4-6) -- Nocturn
+# 3 isn't proper to this day and falls through to the Common of
+# Virgins (C6a) undifferentiated, same as the day's own [Evangelium]
+# tag (`@Commune/C6`) confirms. This reading is Nocturn 2 (the
+# biographical excerpt from Gregory's Dialogues), which was never
+# Gospel-paired in the first place -- that's Nocturn 3's role. No
+# Gospel entry is added; there is no saint-specific one to pair.
 id: st-scholastica
 readings:
   - nocturn: 2

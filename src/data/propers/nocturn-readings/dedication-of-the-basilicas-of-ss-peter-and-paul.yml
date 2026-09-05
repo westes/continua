@@ -16,11 +16,17 @@
 # translation, marked `draft`; the rest is the source's own
 # translation, `verified`.
 # Nocturn 3: Lectio7's Gospel citation (Luke 19:1-10) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so — per
-# the pre-1955 pass's convention of not transcribing bare incipits —
-# only the homily portion is authored (not marked isGospel), combined
+# incipit ("Et réliqua") with no full pericope text given, so only the
+# homily portion was originally authored (not marked isGospel), combined
 # with Lectio8-9 as one continuous excerpt of Pope St. Gregory the
 # Great's Moralia.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — same underlying
+# Common of a Dedication Gospel as
+# dedication-of-the-basilica-of-the-most-holy-savior.yml's own Nocturn 3
+# (this feast's own `ex C8` Rule), sourced from horas/Latin/Commune/
+# C8.txt's own [Evangelium], English/Commune/C8.txt, not guessed at.
 id: dedication-of-the-basilicas-of-ss-peter-and-paul
 readings:
   - nocturn: 2
@@ -85,6 +91,37 @@ readings:
         walls in the Verano field, that of Ss. Peter and Marcellinus on the Lavican Way, and
         very many others.
     status: { la: verified, en: draft }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 19:1-10", en: "Luke 19:1-10" }
+    text:
+      la: >-
+        In illo témpore: Ingréssus Jesus perambulábat Jéricho. Et ecce, vir nómine Zachǽus: et
+        hic princeps erat publicanórum, et ipse dives: et quærébat vidére Jesum, quis esset: et
+        non póterat præ turba, quia statúra pusíllus erat. Et præcúrrens ascéndit in árborem
+        sycómorum, ut vidéret eum; quia inde erat transitúrus. Et cum venísset ad locum,
+        suspíciens Jesus vidit illum, et dixit ad eum: Zachǽe, festínans descénde; quia hódie in
+        domo tua opórtet me manére. Et festínans descéndit, et excépit illum gaudens. Et cum
+        vidérent omnes, murmurábant, dicéntes, quod ad hóminem peccatórem divertísset. Stans
+        autem Zachǽus, dixit ad Dóminum: Ecce, dimídium bonórum meórum, Dómine, do paupéribus:
+        et si quid áliquem defraudávi, reddo quádruplum. Ait Jesus ad eum: Quia hódie salus
+        dómui huic facta est: eo quod et ipse fílius sit Abrahæ. Venit enim Fílius hóminis
+        quǽrere et salvum fácere, quod períerat.
+      en: >-
+        At that time, Jesus entered and was passing through Jericho. And behold there was a man
+        named Zacchaeus; and he was a leading publican, and he was rich. And he was trying to
+        see Jesus, Who He was, but could not, on account of the crowd, because he was small of
+        stature. So he ran on ahead and climbed up into a sycamore tree to see Him, for He was
+        going to pass that way. And when Jesus came to the place, He looked up and saw him, and
+        said to him, "Zacchaeus, make haste and come down; for I must stay in your house today."
+        And he made haste and came down, and welcomed Him joyfully. And upon seeing it all began
+        to murmur, saying, "He has gone to be the guest of a man who is a sinner." But Zacchaeus
+        stood and said to the Lord, "Behold, Lord, I give one-half of my possessions to the
+        poor, and if I have defrauded anyone of anything, I restore it fourfold." Jesus said to
+        him, "Today salvation has come to this house, since he, too, is a son of Abraham. For
+        the Son of Man came to seek and to save what was lost."
+    status: { la: verified, en: verified }
 
   - nocturn: 3
     isGospel: false

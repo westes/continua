@@ -4,10 +4,18 @@
 # Nocturn 2: Lectio4-6, a three-part anthology (St. Peter Canisius on
 # Mary as Queen; a continuation quoting St. Athanasius; an excerpt from
 # Pius XII's own encyclical "Ad cæli Reginam," 1954, which instituted
-# this feast) -- combined into one reading. Nocturn 3: her own Gospel
-# citation ends "Et réliqua"/"And so on" with no full pericope given --
-# per the bare-incipit convention, only the homily (Lectio7-9, St.
-# Bonaventure) is authored, isGospel: false, no citation field.
+# this feast) -- combined into one reading. This is an anthology of
+# magisterial/patristic testimonia on Mary's queenship generally, not
+# tied to a Gospel pericope, so it stays isGospel: false with no
+# pairing. Nocturn 3: the Gospel pericope (Luke 1:26-33, the
+# Annunciation -- confirmed by St. Bonaventure's own homily text, which
+# opens by quoting this exact passage, "Ecce concípies et páries
+# fílium... regnábit in domo Jacob in ætérnum, et regni ejus non erit
+# finis") is now authored too (isGospel: true, immediately before St.
+# Bonaventure's homily, Lectio7-9) -- sourced from
+# missa/Latin/Sancti/05-31.txt's own [Evangelium] and
+# missa/English/Sancti/05-31.txt, matching the convention set by
+# post-pentecost-16.yml (2026-09-05).
 id: queenship-of-the-bvm
 readings:
   - nocturn: 2
@@ -98,6 +106,36 @@ readings:
         more clearly to all, and so, by Our Apostolic Authority, we decree and
         institute the feast of Mary, Queen, which is to be celebrated every year on the
         thirty-first day of May throughout the world.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 1:26-33", en: "Luke 1:26-33" }
+    text:
+      la: >-
+        In illo témpore: Missus est Angelus Gábriel a Deo in civitátem Galilǽæ, cui
+        nomen Názareth, ad Vírginem desponsátam viro, cui nomen erat Ioseph, de domo
+        David, et nomen Vírginis María. Et ingréssus Angelus ad eam, dixit: Ave,
+        grátia plena: Dóminus tecum: benedícta tu in muliéribus. Quæ cum audísset,
+        turbáta est in sermóne eius: et cogitábat, qualis esset ista salutátio. Et
+        ait Angelus ei: Ne tímeas, María, invenísti enim grátiam apud Deum: ecce
+        concípies in útero, et páries fílium, et vocábis nomen eius Iesum. Hic erit
+        magnus, et Fílius Altíssimi vocábitur, et dabit illi Dóminus Deus sedem
+        David patris eius: et regnábit in domo Iacob in ætérnum, et regni eius non
+        erit finis.
+      en: >-
+        At that time, the angel Gabriel was sent from God to a town of Galilee
+        called Nazareth, to a virgin betrothed to a man named Joseph, of the house
+        of David, and the virgin's name was Mary. And when the angel had come to
+        her, he said, Hail, full of grace, the Lord is with you. Blessed are you
+        among women. When she had heard him she was troubled at his word, and kept
+        pondering what manner of greeting this might be. And the angel said to her,
+        Do not be afraid, Mary, for you have found grace with God. Behold, you shall
+        conceive in your womb and shall bring forth a Son; and you shall call His
+        name Jesus. He shall be great, and shall be called the Son of the Most High;
+        and the Lord God will give Him the throne of David His father, and He shall
+        be king over the house of Jacob forever; and of His kingdom there shall be
+        no end.
     status: { la: verified, en: verified }
 
   - nocturn: 3

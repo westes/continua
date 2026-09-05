@@ -3,12 +3,18 @@
 # English/Sancti/01-31.txt.
 #
 # Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
-# Nocturn 3: Lectio7's Gospel citation (Matt 18:1-5) is a bare incipit
+# Nocturn 3: Lectio7's Gospel citation (Matt 18:1-5) was a bare incipit
 # ("Et réliqua") with no full pericope text given, so — per the
 # established convention of not transcribing bare incipits — only the
-# homily portion is authored (not marked isGospel), St. John
+# homily portion was authored (not marked isGospel), St. John
 # Chrysostom's homily (Lectio7's homily + Lectio8-9 combined, one
 # continuous piece).
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily), matching the newer
+# convention set by ember-september-friday.yml/post-pentecost-16.yml —
+# sourced from missa/Latin/Sancti/01-31.txt and missa/English/Sancti/
+# 01-31.txt's own [Evangelium] (given directly, no redirect).
 id: st-john-bosco
 readings:
   - nocturn: 2
@@ -117,6 +123,25 @@ readings:
         Pontiff, Pius XI, beatified him in 1929. Five years later, in the nineteenth
         centenary of the anniversary of our redemption, he was canonized among a vast
         gathering come to the Eternal City from every part of the world.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 18:1-5", en: "Matt 18:1-5" }
+    text:
+      la: >-
+        In illo témpore: Accessérunt discípuli ad Jesum dicéntes: Quis, putas, major est in
+        regno cælórum? Et ádvocans Jesus párvulum, státuit eum in médio eórum, et dixit: Amen
+        dico vobis, nisi convérsi fueritis, et efficiámini sicut párvuli, non intrábitis in
+        regnum cœlórum. Quicúmque ergo humiliáverit se sicut párvulus iste, hic est major in
+        regno cœlórum. Et qui suscéperit unum párvulum talem in nómine meo, me súscipit.
+      en: >-
+        At that time, the disciples came to Jesus, saying, Who then is greatest in the
+        kingdom of heaven? And Jesus called a little child to Him, set him in their midst,
+        and said, Amen I say to you, unless you turn and become like little children, you
+        will not enter into the kingdom of heaven. Whoever, therefore, humbles himself as
+        this little child, he is the greatest in the kingdom of heaven. And whoever receives
+        one such little child for My sake, receives Me.
     status: { la: verified, en: verified }
 
   - nocturn: 3

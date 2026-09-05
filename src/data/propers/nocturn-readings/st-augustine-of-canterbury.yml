@@ -2,10 +2,16 @@
 # and Confessor (May 28). Sourced directly from
 # web/www/horas/Latin/Sancti/05-28.txt, English/Sancti/05-28.txt.
 # Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
-# Nocturn 3: his own Gospel citation ends "Et réliqua"/"And so on" with
-# no full pericope given -- per the bare-incipit convention, only the
-# homily (Lectio7-9, Pope St. Gregory the Great) is authored, isGospel:
-# false, no citation field.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope, previously left
+# unauthored because horas/Latin/Sancti/05-28.txt's own Lectio7 gives
+# only the incipit ("Et réliqua"), is now authored too (isGospel: true,
+# immediately before the homily) -- the citation (Luke 10:1-9) comes
+# from that same Lectio7 line; the full text isn't repeated in this
+# saint's own Missale file (its [Evangelium] redirects to `@Sancti/
+# 02-06`), so it's sourced from that redirect target,
+# missa/Latin/Sancti/02-06.txt's own [Evangelium] (the same Common of a
+# Confessor Bishop pericope, not guessed at).
 id: st-augustine-of-canterbury
 readings:
   - nocturn: 2
@@ -88,6 +94,36 @@ readings:
         burying-place of the bishops of Canterbury and of some kings. The English
         people honoured his memory with fervent zeal; and the Supreme Pontiff Leo XIII
         extended his Office and Mass to the universal Church.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 10:1-9", en: "Luke 10:1-9" }
+    text:
+      la: >-
+        In illo témpore: Designávit Dóminus et álios septuagínta duos: et misit illos binos ante
+        fáciem suam in omnem civitátem et locum, quo erat ipse ventúrus. Et dicebat illis: Messis
+        quidem multa, operárii autem pauci. Rogáte ergo Dóminum messis, ut mittat operários in
+        messem suam. Ite: ecce, ego mitto vos sicut agnos inter lupos. Nolíte portáre sácculum
+        neque peram neque calceaménta; et néminem per viam salutavéritis. In quamcúmque domum
+        intravéritis, primum dícite: Pax huic dómui: et si ibi fúerit fílius pacis, requiéscet
+        super illum pax vestra: sin autem, ad vos revertétur. In eádem autem domo manéte, edéntes
+        et bibéntes quæ apud illos sunt: dignus est enim operárius mercéde sua. Nolíte transíre de
+        domo in domum. Et in quamcúmque civitátem intravéritis, et suscéperint vos, manducáte quæ
+        apponúntur vobis: et curáte infírmos, qui in illa sunt, et dícite illis: Appropinquávit in
+        vos regnum Dei.
+      en: >-
+        At that time, the Lord appointed seventy-two others, and sent them forth two by two before
+        Him into every town and place where He Himself was about to come. And He said to them, The
+        harvest indeed is great, but the laborers are few. Pray therefore the Lord of the harvest
+        to send forth laborers into His harvest. Go. Behold, I send you forth as lambs in the midst
+        of wolves. Carry neither purse, nor wallet, nor sandals, and greet no one on the way.
+        Whatever house you enter, first say, "Peace to this house!" And if a son of peace be
+        there, your peace will rest upon him; but if not, it will return to you. And remain in the
+        same house, eating and drinking what they have; for the laborer deserves his wages. Do not
+        go from house to house. And whatever town you enter, and they receive you, eat what is set
+        before you, and cure the sick who are there, and say to them, "The kingdom of God is at
+        hand for you."
     status: { la: verified, en: verified }
 
   - nocturn: 3

@@ -5,8 +5,16 @@
 # Monastic 1617 track uses this same text.
 #
 # Lectio1's Gospel citation (Luke 1:39-47, the Visitation) is a bare
-# incipit with no full pericope text given, so only the homily portion is
-# authored, same convention as the September Ember days.
+# incipit with no full pericope text given in this day's own file, so
+# only the homily portion was originally authored, same convention as
+# the September Ember days.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily), matching the
+# convention set by ember-september-friday.yml — this day's own
+# [Evangelium] carries the full pericope directly (not a redirect),
+# sourced from missa/Latin/Tempora/Adv3-5.txt, English/Tempora/
+# Adv3-5.txt, not guessed at.
 #
 # Recombined into one reading 2026-09-04 (previously kept as 3 separate
 # readings): Lectio1-3 are one continuous, unbroken Ambrose excerpt,
@@ -18,6 +26,32 @@
 # in this store.
 id: ember-advent-friday
 readings:
+  - nocturn: 1
+    isGospel: true
+    citation: { la: "Luc 1:39-47", en: "Luke 1:39-47" }
+    text:
+      la: >-
+        In illo témpore: Exsúrgens María ábiit in montána cum festinatióne in civitátem Juda: et
+        intrávit in domum Zacharíæ et salutávit Elísabeth. Et factum est, ut audivit
+        salutatiónem Maríæ Elísabeth, exsultávit infans in útero ejus: et repléta est Spíritu
+        Sancto Elísabeth, et exclamávit voce magna et dixit: Benedícta tu inter mulíeres, et
+        benedíctus fructus ventris tui. Et unde hoc mihi, ut véniat Mater Dómini mei ad me? Ecce
+        enim, ut facta est vox salutatiónis tuæ in áuribus meis, exsultávit in gáudio infans in
+        útero meo. Et beáta, quæ credidísti, quóniam perficiéntur ea, quæ dicta sunt tibi a
+        Dómino. Et ait María: Magníficat ánima mea Dóminum: et exsultávit spíritus meus in Deo,
+        salutári meo.
+      en: >-
+        At that time, Mary arose and went with haste into the hill country, to a town of Juda.
+        And she entered the house of Zachary and saluted Elizabeth. And it came to pass, when
+        Elizabeth heard the greeting of Mary, that the babe in her womb leapt. And Elizabeth was
+        filled with the Holy Spirit, and cried out with a loud voice, saying, "Blessed are you
+        among women and blessed is the fruit of your womb! And how have I deserved that the
+        Mother of my Lord should come to me? For behold, the moment that the sound of your
+        greeting came to my ears, the babe in my womb leapt for joy. And blessed is she who has
+        believed, because the things promised her by the Lord shall be accomplished." And Mary
+        said, "My soul magnifies the Lord, and my spirit rejoices in God my Saviour."
+    status: { la: verified, en: verified }
+
   - nocturn: 1
     isGospel: false
     source: "St. Ambrose, Bishop of Milan, Commentary on Luke, Book 2, on Luke 1:39-47"

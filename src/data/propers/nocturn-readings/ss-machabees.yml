@@ -8,6 +8,14 @@
 # web/www/horas/Latin/Sancti/08-01r.txt, English/Sancti/08-01r.txt.
 # Single lesson (Lectio93), one continuous excerpt of St. Gregory
 # Nazianzen's sermon, no responsory given in the source.
+#
+# Checked 2026-09-05 for a Gospel pairing: skipped, verified via
+# 08-01r.txt itself. This is a Simplex-rank commemoration whose entire
+# night office is a single combined lesson (`[Lectio93]`) running
+# straight to the Te Deum -- there is no Nocturn 1/2/3 structure at all
+# for this day, and therefore no separate Gospel pericope to pair with
+# Gregory Nazianzen's homily on the (Old Testament, pre-Christian)
+# Machabees.
 id: ss-machabees
 readings:
   - nocturn: 2

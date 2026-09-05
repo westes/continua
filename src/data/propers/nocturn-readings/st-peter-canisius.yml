@@ -3,10 +3,22 @@
 # web/www/horas/Latin/Sancti/04-27.txt, English/Sancti/04-27.txt.
 #
 # Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
-# Nocturn 3: Lectio7's Gospel citation (Matt 5:13-19) is a bare incipit
-# ("Et réliqua"), so only the homily is authored (not marked isGospel),
-# St. Peter Canisius's own homily (Lectio7's homily + Lectio8-9
-# combined).
+# Nocturn 3: Lectio7's Gospel citation (Matt 5:13-19) was a bare
+# incipit ("Et réliqua"); the full pericope is now authored too
+# (isGospel: true, immediately before the homily). Note on the source's
+# own "on the feast of St. Martin" phrase in Lectio7's homily
+# attribution: this is not a borrowed Gospel from St. Martin of Tours's
+# own feast — St. Peter Canisius's Rank/Rule (`Sancti/04-27.txt`) reads
+# `vide C5a` (Common of a Confessor not a Bishop), whose own
+# [Evangelium] in turn reads `@Commune/C4a` (Common of a
+# Confessor-Bishop/Doctor) — genuinely his own Common Gospel as a
+# Doctor of the Church, not a cross-feast borrowing; "on the feast of
+# St. Martin" evidently refers to the historical occasion on which St.
+# Peter Canisius's own homily excerpt was originally preached, not to
+# whose Mass Gospel this is. Sourced from
+# `web/www/missa/Latin/Commune/C4a.txt`, English/Commune/C4a.txt
+# (2026-09-05 update). The homily portion remains St. Peter Canisius's
+# own homily (Lectio7's homily + Lectio8-9 combined).
 id: st-peter-canisius
 readings:
   - nocturn: 2
@@ -124,6 +136,37 @@ readings:
         by Pope Pius IX; and, as fresh miracles added to his renown, the Supreme
         Pontiff Pius XI, in the year of the Jubilee, included him among the Saints, and
         at the same time declared him a Doctor of the Universal Church.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 5:13-19", en: "Matt 5:13-19" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Vos estis sal terræ. Quod si sal
+        evanúerit, in quo saliétur? Ad níhilum valet ultra, nisi ut mittátur foras, et
+        conculcétur ab homínibus. Vos estis lux mundi. Non potest cívitas abscóndi supra montem
+        pósita. Neque accéndunt lucérnam, et ponunt eam sub módio, sed super candelábrum, ut
+        lúceat ómnibus, qui in domo sunt. Sic luceat lux vestra coram homínibus, ut vídeant
+        ópera vestra bona, et gloríficent Patrem vestrum, qui in cœlis est. Nolíte putáre,
+        quóniam veni sólvere legem aut prophétas: non veni sólvere, sed adimplére. Amen, quippe
+        dico vobis, donec tránseat cœlum et terra, jota unum aut unus apex non præteríbit a
+        lege, donec ómnia fiant. Qui ergo sólverit unum de mandátis istis mínimis, et docúerit
+        sic hómines, mínimus vocábitur in regno cœlórum: qui autem fécerit et docúerit, hic
+        magnus vocábitur in regno cœlórum.
+      en: >-
+        At that time, Jesus said to His disciples, "You are the salt of the earth. But if the
+        salt lose its savour, wherewith shall it be salted? It is good for nothing any more but
+        to be cast out, and to be trodden on by men. You are the light of the world. A city
+        seated on a mountain cannot be hid. Neither do men light a candle and put it under a
+        bushel, but upon a candlestick, that it may shine to all that are in the house. So let
+        your light shine before men, that they may see your good works, and glorify your Father
+        Who is in heaven. Do not think that I am come to destroy the law, or the prophets. I am
+        not come to destroy, but to fulfill. For amen I say unto you, till heaven and earth
+        pass, one jot, or one tittle shall not pass of the law, till all be fulfilled. He
+        therefore that shall break one of these least commandments, and shall so teach men,
+        shall be called the least in the kingdom of heaven. But he that shall do and teach, he
+        shall be called great in the kingdom of heaven."
     status: { la: verified, en: verified }
 
   - nocturn: 3

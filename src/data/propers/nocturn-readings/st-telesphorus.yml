@@ -13,12 +13,16 @@
 #
 # Nocturn 2: Lectio4-6, St. Augustine's Christmas sermon (not proper to
 # Telesphorus — the day's own octave homily) — one continuous piece.
-# Nocturn 3: Lectio7's Gospel citation (Matt 2:19-23) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so — per
-# the established convention of not transcribing bare incipits — only
-# the homily portion is authored (not marked isGospel), St. Jerome's
-# commentary (Lectio7's homily + Lectio8-9 combined, one continuous
-# piece).
+# Nocturn 3: Lectio7's Gospel citation (Matt 2:19-23) was a bare
+# incipit ("Et réliqua") with no full pericope text given; the full
+# pericope is now authored too (isGospel: true, immediately before the
+# homily) — this day's own Missale [Evangelium]
+# (`web/www/missa/Latin/Sancti/01-05.txt`, English/Sancti/01-05.txt)
+# genuinely does carry the full Holy Family/Flight-into-Egypt pericope
+# in full (not a bare incipit there), same as the octave homily itself
+# is not proper to St. Telesphorus (2026-09-05 update). The homily
+# portion remains St. Jerome's commentary (Lectio7's homily + Lectio8-9
+# combined, one continuous piece).
 id: st-telesphorus
 readings:
   - nocturn: 2
@@ -69,6 +73,29 @@ readings:
         inviolate: a Virgin having a Son; knowing no man, ever sealed, yet not unfruitful. For
         he alone was born without sin. He alone was born without human embrace, begotten not
         of the will of the flesh, but of the obedience of the mind.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 2:19-23", en: "Matt 2:19-23" }
+    text:
+      la: >-
+        In illo témpore: Defúncto Heróde, ecce, Angelus Dómini appáruit in somnis Joseph in
+        Ægýpto, dicens: Surge, et áccipe Púerum et Matrem ejus, et vade in terram Israël:
+        defúncti sunt enim, qui quærébant ánimam Pueri. Qui consúrgens, accépit Púerum et Matrem
+        ejus, et venit in terram Israël. Audiens autem, quod Archeláus regnáret in Judæa pro
+        Heróde patre suo, tímuit illo ire: et, admonítus in somnis, secéssit in partes Galilææ.
+        Et véniens habitávit in civitáte, quæ vocátur Názareth: ut adimplerétur quod dictum est
+        per Prophétas: Quóniam Nazaræus vocábitur.
+      en: >-
+        At that time, Herod being dead, behold an Angel of the Lord appeared in sleep to Joseph
+        in Egypt, saying, "Arise, and take the Child and His Mother, and go into the land of
+        Israel, for they are dead that sought the life of the Child." Who arose, and took the
+        Child and His Mother, and came into the land of Israel. But hearing that Archelaus
+        reigned in Judea in the room of Herod his father, he was afraid to go thither, and being
+        warned in sleep, retired into the quarters of Galilee. And coming he dwelt in a city
+        called Nazareth, that it might be fulfilled which was said by the Prophets, "That He
+        shall be called a Nazarene."
     status: { la: verified, en: verified }
 
   - nocturn: 3

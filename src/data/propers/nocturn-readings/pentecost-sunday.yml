@@ -18,8 +18,50 @@
 # compleréntur dies Pentecóstes") — the only nocturn-proper responsory
 # transcribed in the source (Responsory2 exists but Responsory3 does not;
 # the office runs straight to the Te Deum).
+#
+# Update (2026-09-05): the Gospel pericope itself (John 14:23-31, full
+# text) is now authored too (isGospel: true, immediately before the
+# homily), matching the newer convention set by post-pentecost-16.yml —
+# sourced from missa/Latin/Tempora/Pasc7-0.txt's own [Evangelium] and
+# missa/English/Tempora/Pasc7-0.txt, not left as a bare incipit.
 id: pentecost-sunday
 readings:
+  - nocturn: 1
+    isGospel: true
+    citation: { la: "Joann 14:23-31", en: "John 14:23-31" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Si quis díligit me, sermónem meum
+        servábit, et Pater meus díliget eum, et ad eum veniémus et mansiónem apud eum
+        faciémus: qui non díligit me, sermónes meos non servat. Et sermónem quem
+        audístis, non est meus: sed ejus, qui misit me, Patris. Hæc locútus sum vobis,
+        apud vos manens. Paráclitus autem Spíritus Sanctus, quem mittet Pater in nómine
+        meo, ille vos docébit ómnia et súggeret vobis ómnia, quæcúmque díxero vobis.
+        Pacem relínquo vobis, pacem meam do vobis: non quómodo mundus dat, ego do
+        vobis. Non turbétur cor vestrum neque formídet. Audístis, quia ego dixi vobis:
+        Vado et vénio ad vos. Si diligerétis me, gauderétis útique, quia vado ad
+        Patrem: quia Pater major me est. Et nunc dixi vobis, priúsquam fiat: ut, cum
+        factum fúerit, credátis. Jam non multa loquar vobíscum. Venit enim princeps
+        mundi hujus, et in me non habet quidquam. Sed ut cognóscat mundus, quia díligo
+        Patrem, et sicut mandátum dedit mihi Pater, sic fácio.
+      en: >-
+        At that time, Jesus said to His disciples: If anyone love Me, he will keep My
+        word, and My Father will love him, and We will come to him and make Our abode
+        with him. He who does not love Me, does not keep My words. And the word that
+        you have heard is not Mine, but the Father's Who sent Me. These things I have
+        spoken to you while yet dwelling with you. But the Advocate, the Holy Spirit,
+        Whom the Father will send in My Name, He will teach you all things, and bring
+        to your mind whatever I have said to you. Peace I leave with you, My peace I
+        give to you; not as the world gives do I give to you. Do not let your heart be
+        troubled, or be afraid. You have heard Me say to you, "I go away and I am
+        coming to you." If you loved Me, you would indeed rejoice that I am going to
+        the Father, for the Father is greater than I. And now I have told you before it
+        comes to pass, that when it has come to pass you may believe. I will no longer
+        speak much with you, for the prince of the world is coming and in Me he has
+        nothing. But he comes that the world may know that I love the Father, and that
+        I do as the Father has commanded Me.
+    status: { la: verified, en: verified }
+
   - nocturn: 1
     isGospel: false
     source: "Pope St. Gregory the Great, Homily 30 on the Gospels"

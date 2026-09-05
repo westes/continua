@@ -9,8 +9,16 @@
 # ember-september-wednesday.yml's Responsory1).
 #
 # Lectio1's Gospel citation (Luke 13:6-17) is a bare incipit with no full
-# pericope text given, so only the homily portion is authored, same
-# convention as the other two September Ember days.
+# pericope text given in this day's own file, so only the homily portion
+# was originally authored, same convention as the other two September
+# Ember days.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily), matching the
+# convention set by ember-september-friday.yml — this day's own
+# [Evangelium] carries the full pericope directly (not a redirect),
+# sourced from missa/Latin/Tempora/093-6.txt, English/Tempora/093-6.txt,
+# not guessed at.
 #
 # Recombined into one reading 2026-09-04 (previously kept as 3 separate
 # readings): Lectio1-3 are one continuous, unbroken Gregory homily, split
@@ -22,6 +30,50 @@
 # as every other collapsed-reading case in this store.
 id: ember-september-saturday
 readings:
+  - nocturn: 1
+    isGospel: true
+    citation: { la: "Luc 13:6-17", en: "Luke 13:6-17" }
+    text:
+      la: >-
+        In illo témpore: Dicébat Jesus turbis hanc similitúdinem: Arbórem fici habébat quidam
+        plantátam in vínea sua, et venit quærens fructum in illa, et non invénit. Dixit autem ad
+        cultórem víneæ: Ecce, anni tres sunt, ex quo vénio quærens fructum in ficúlnea hac, et
+        non invénio: succíde ergo illam: ut quid étiam terram óccupat? At ille respóndens, dicit
+        illi: Dómine, dimítte illam et hoc anno, usque dum fódiam circa illam et mittam
+        stércora: et si quidem fécerit fructum: sin autem, in futúrum succídes eam. Erat autem
+        docens in synagóga eórum sábbatis. Et ecce múlier, quæ habébat spíritum infirmitátis
+        annis decem et octo: et erat inclináta, nec omníno póterat sursum respícere. Quam cum
+        vidéret Jesus, vocávit eam ad se, et ait illi: Múlier, dimíssa es ab infirmitáte tua. Et
+        impósuit illi manus, et conféstim erécta est, et glorificábat Deum. Respóndens autem
+        archisynagógus, indígnans quia sábbato curásset Jesus, dicébat turbæ: Sex dies sunt, in
+        quibus opórtet operári: in his ergo veníte, et curámini, et non in die sábbati.
+        Respóndens autem ad illum Dóminus, dixit: Hypócritæ, unusquísque vestrum sábbato non
+        solvit bovem suum aut ásinum a præsépio, et ducit adaquáre? Hanc autem fíliam Abrahæ,
+        quam alligávit sátanas, ecce decem et octo annis, non opórtuit solvi a vínculo isto die
+        sábbati? Et cum hæc díceret, erubescébant omnes adversárii ejus: et omnis pópulus
+        gaudébat in univérsis, quæ glorióse fiébant ab eo.
+      en: >-
+        At that time, Jesus spoke to the multitudes this parable: "A certain man had a fig tree
+        planted in his vineyard; and he came seeking fruit thereon, and found none. And he said
+        to the vine-dresser, 'Behold, for three years now I have come seeking fruit on this fig
+        tree, and I find none. Cut it down, therefore; why does it still encumber the ground?'
+        But he answered him and said, 'Sir, let it alone this year too, till I dig around it and
+        manure it. Perhaps it may bear fruit; but if not, then afterwards you shall cut it
+        down.'" Now He was teaching in one of their synagogues on the Sabbath. And behold, there
+        was a woman who for eighteen years had had a sickness caused by a spirit; and she was
+        bent over and utterly unable to look upwards. When Jesus saw her, He called her to Him
+        and said to her, "Woman, you are delivered from your infirmity." And He laid His hands
+        upon her, and instantly she was made straight, and glorified God. But the ruler of the
+        synagogue, indignant that Jesus had cured on the Sabbath, addressed the crowd, saying,
+        "There are six days in which one ought to work; on these therefore come and be cured,
+        and not on the Sabbath." But the Lord answered him and said, "Hypocrites! does not each
+        one of you on the Sabbath loose his ox or ass from the manger, and lead it forth to
+        water? And this woman, daughter of Abraham as she is, whom Satan has bound, lo, for
+        eighteen years, ought not she to be loosed from this bond on the Sabbath?" And as He
+        said these things, all His adversaries were put to shame; and the entire crowd rejoiced
+        at all the glorious things that were done by Him.
+    status: { la: verified, en: verified }
+
   - nocturn: 1
     isGospel: false
     source: "Pope St. Gregory the Great, Homily 31 on the Gospels, on Luke 13:6-17"

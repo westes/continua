@@ -1,11 +1,18 @@
 # Matins Nocturn 2-3 readings for the Octave Day of All Saints (Nov
 # 8). Sourced directly from web/www/horas/Latin/Sancti/11-08.txt,
 # English/Sancti/11-08.txt. Nocturn 2: Lectio4-6, St. Cyprian's "De
-# mortalitate" (in fine), combined into one reading. Nocturn 3: the
-# Gospel citation (Matt 5:1-12) ends "Et réliqua"/"And so on" with no
-# full pericope given -- per the bare-incipit convention, only the
-# homily (Lectio7-8, St. Augustine) is authored, isGospel: false, no
-# citation field.
+# mortalitate" (in fine), combined into one reading -- a general
+# meditation on death and the communion of saints, not an exegesis of
+# any Gospel pericope, so it stays isGospel: false with no pairing.
+# Nocturn 3: the Gospel pericope (Matt 5:1-12, the Beatitudes, full
+# text) is now authored too (isGospel: true, immediately before St.
+# Augustine's homily, Lectio7-8) -- sourced from All Saints' own Mass
+# Gospel (missa/Latin/Sancti/06-05.txt's own [Evangelium], reached via
+# missa/Latin/Sancti/11-08.txt -> vide Sancti/11-01 -> @Sancti/06-05)
+# and missa/English/Sancti/06-05.txt, matching the convention set by
+# post-pentecost-16.yml (2026-09-05). all-saints.yml itself does not
+# yet carry this pairing either, so it is authored fresh here rather
+# than reused.
 id: octave-of-all-saints
 readings:
   - nocturn: 2
@@ -83,6 +90,36 @@ readings:
         heritages upon earth for treasures in heaven. Thitherward,
         dearly beloved brethren, let us eagerly run, with such as
         these soon to be, unto Christ soon to come, let us be fain.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 5:1-12", en: "Matt 5:1-12" }
+    text:
+      la: >-
+        In illo témpore: Videns Jesus turbas, ascéndit in montem, et cum sedísset,
+        accessérunt ad eum discípuli ejus, et apériens os suum, docébat eos, dicens:
+        Beáti páuperes spíritu: quóniam ipsórum est regnum cœlórum. Beáti mites:
+        quóniam ipsi possidébunt terram. Beáti, qui lugent: quóniam ipsi
+        consolabúntur. Beáti, qui esúriunt et sítiunt justítiam: quóniam ipsi
+        saturabúntur. Beáti misericórdes: quóniam ipsi misericórdiam consequántur.
+        Beáti mundo corde: quóniam ipsi Deum vidébunt. Beáti pacífici: quóniam fílii
+        Dei vocabúntur. Beáti, qui persecutiónem patiúntur propter justítiam: quóniam
+        ipsórum est regnum cœlórum. Beáti estis, cum maledíxerint vobis et persecúti
+        vos fúerint, et díxerint omne malum advérsum vos, mentiéntes, propter me:
+        gaudete et exsultáte, quóniam merces vestra copiósa est in cœlis.
+      en: >-
+        At that time, Jesus seeing the crowds, went up the mountain. And when He was
+        seated, His disciples came to Him. And opening His mouth He taught them,
+        saying, Blessed are the poor in spirit, for theirs is the kingdom of heaven.
+        Blessed are the meek, for they shall possess the earth. Blessed are they who
+        mourn, for they shall be comforted. Blessed are they who hunger and thirst
+        for justice, for they shall be satisfied. Blessed are the merciful, for they
+        shall obtain mercy. Blessed are the clean of heart, for they shall see God.
+        Blessed are the peacemakers, for they shall be called the children of God.
+        Blessed are you when men reproach you, and persecute you, and, speaking
+        falsely, say all manner of evil against you, for My sake. Rejoice and exult,
+        because your reward is great in heaven.
     status: { la: verified, en: verified }
 
   - nocturn: 3

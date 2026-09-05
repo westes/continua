@@ -1,10 +1,15 @@
 # Matins Nocturn 2-3 readings for St. Anthony Mary Zaccaria, Confessor
 # (July 5). Sourced directly from web/www/horas/Latin/Sancti/07-05.txt,
 # English/Sancti/07-05.txt. Nocturn 2: Lectio4-6 combined into one
-# reading, one continuous vita. Nocturn 3: his own Gospel citation ends
-# "Et réliqua"/"And so on" with no full pericope given -- per the
-# bare-incipit convention, only the homily (Lectio7-9, St. Augustine of
-# Hippo) is authored, isGospel: false, no citation field.
+# reading, one continuous vita.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope, previously left
+# unauthored because horas/Latin/Sancti/07-05.txt's own Lectio7 gives
+# only the incipit ("Et réliqua"), is now authored too (isGospel: true,
+# immediately before the homily) -- the citation (Mark 10:15-21) and full
+# text are sourced from missa/Latin/Sancti/07-05.txt's own [Evangelium]
+# (the Mass Gospel and the Matins Nocturn 3 Gospel are the same
+# pericope), not guessed at.
 id: st-anthony-mary-zaccaria
 readings:
   - nocturn: 2
@@ -129,6 +134,34 @@ readings:
         comforted by a vision of the Apostles above, and predicted the increase of
         his Brotherhood. In the year 1539, he died a holy death at the age of
         thirty-six.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Marc 10:15-21", en: "Mark 10:15-21" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Quisquis non recéperit regnum Dei velut
+        párvulus, non intrábit in illud. Et compléxans párvulos et impónens manus super illos,
+        benedicébat eos. Et cum egréssus esset in viam, procúrrens quidam, genu flexo ante eum,
+        rogábat eum: Magíster bone, quid fáciam, ut vitam ætérnam percípiam? Jesus autem dixit ei:
+        Quid me dicis bonum? Nemo bonus, nisi unus Deus. Præcépta nosti: Ne adúlteres, ne occídas,
+        ne furéris, ne falsum testimónium díxeris, ne fraudem féceris, honora patrem tuum et
+        matrem. At ille respóndens, ait illi: Magíster, hæc ómnia observávi a juventúte mea. Jesus
+        autem intúitus eum, diléxit eum et dixit ei: Unum tibi deest: vade, quæcúmque habes, vende
+        et da paupéribus, et habébis thesáurum in cælo: et veni, séquere me.
+      en: >-
+        At that time, Jesus said to His disciples, Whoever does not accept the kingdom of God as
+        a little child will not enter into it. And He put His arms about the children, and laying
+        His hands upon them, He began to bless them. And as He was going forth on His journey, a
+        certain man running up fell upon his knees before Him, and asked Him, Good Master, what
+        shall I do to gain eternal life? But Jesus said to him, Why do you call Me good? No one is
+        good but only God. You know the commandments: You shall not commit adultery. You shall not
+        kill. You shall not steal. You shall not bear false witness. You shall not defraud. Honor
+        your father and mother. And he answered and said, Master, all these I have kept ever since
+        I was a child. And Jesus, looking upon him, loved him, and said to him, One thing is
+        lacking to you; go, sell whatever you have, and give to the poor, and you shall have
+        treasure in heaven; and come, follow Me.
     status: { la: verified, en: verified }
 
   - nocturn: 3

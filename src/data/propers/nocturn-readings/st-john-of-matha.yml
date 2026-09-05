@@ -10,6 +10,12 @@
 # Gospel citation is a bare incipit ("Et réliqua"), so only the homily
 # is authored (not marked isGospel), Lectio7's homily + Lectio8-9
 # combined.
+#
+# Update (2026-09-05): the Gospel pericope itself (Luke 12:35-40) is
+# now authored too (isGospel: true, immediately before the homily) —
+# sourced from Commune/C5.txt's own [Evangelium] section (Latin) and
+# English/Commune/C5.txt's own [Evangelium] (English), the same Common
+# file this feast's Nocturn 3 already draws its homily from.
 id: st-john-of-matha
 readings:
   - nocturn: 2
@@ -120,6 +126,29 @@ readings:
         earnestly exhorted them to go on with that work of ransom which had been pointed out
         to them from heaven, and then fell asleep in the Lord, on the 21st day of December,
         1213. His body was buried with due honour in the Church of St. Thomas de Formis.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 12:35-40", en: "Luke 12:35-40" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Sint lumbi vestri præcíncti, et lucérnæ ardéntes in mánibus
+        vestris, et vos símiles homínibus exspectántibus dóminum suum, quando revertátur a núptiis: ut, cum vénerit
+        et pulsáverit, conféstim apériant ei. Beáti servi illi, quos, cum vénerit dóminus, invénerit vigilántes:
+        amen, dico vobis, quod præcínget se, et fáciet illos discúmbere, et tránsiens ministrábit illis. Et si
+        vénerit in secúnda vigília, et si in tértia vigília vénerit, et ita invénerit, beáti sunt servi illi. Hoc
+        autem scitóte, quóniam, si sciret paterfamílias, qua hora fur veníret, vigiláret útique, et non síneret
+        pérfodi domum suam. Et vos estóte paráti, quia, qua hora non putátis, Fílius hóminis véniet.
+      en: >-
+        At that time, Jesus said to His disciples, Let your loins be girt about and your lamps burning, and you
+        yourselves like men waiting for their master's return from the wedding; so that when he comes and knocks,
+        they may straight-way open to him. Blessed are those servants whom the master, on his return, shall find
+        watching. Amen I say to you, he will gird himself, and will make them recline at table, and will come and
+        serve them. And if he comes in the second watch, and if in the third, and finds them so, blessed are those
+        servants! But of this be assured, that if the householder had known at what hour the thief was coming, he
+        would certainly have watched, and not have let his house be broken into. You also must be ready, because at
+        an hour that you do not expect, the Son of Man is coming.
     status: { la: verified, en: verified }
 
   - nocturn: 3

@@ -11,9 +11,17 @@
 # Nocturn 3: Lectio7's Gospel citation (Matt 10:23-28) is a bare
 # incipit ("Et réliqua") with no full pericope text given, so — per the
 # pre-1955 pass's convention of not transcribing bare incipits — only
-# the homily portion is authored (not marked isGospel), combined with
-# Lectio8-9 as one continuous excerpt of St. Athanasius's own Defence
-# of his own flight. No responsory given for either reading.
+# the homily portion was originally authored (not marked isGospel),
+# combined with Lectio8-9 as one continuous excerpt of St. Athanasius's
+# own Defence of his own flight. No responsory given for either
+# reading.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Athanasius's own homily) —
+# sourced from the day's own Missale [Evangelium] in
+# web/www/missa/Latin/Sancti/05-02.txt (full text given there, not a
+# redirect). Same citation and text also needed by
+# st-cyril-of-jerusalem.yml, authored independently there.
 id: st-athanasius
 readings:
   - nocturn: 2
@@ -113,6 +121,33 @@ readings:
         He wrote much that is both godly and luminous in explaining the Catholic Faith, and
         governed the Church of Alexandria in great holiness, amid all changes of weather, for six
         and forty years.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 10:23-28", en: "Matt 10:23-28" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Cum persequéntur vos in civitáte ista,
+        fúgite in áliam. Amen dico vobis, non consummábitis civitátes Israël, donec véniat
+        Fílius hóminis. Non est discípulus super magístrum, nec servus super dóminum suum.
+        Súfficit discípulo, ut sit sicut magíster ejus: et servo, sicut dóminus ejus. Si
+        patremfamílias Beélzebub vocavérunt: quanto magis domésticos ejus? Ne ergo timuéritis
+        eos. Nihil enim est opértum, quod non revelábitur: et occúltum, quod non sciétur. Quod
+        dico vobis in ténebris, dícite in lúmine: et, quod in aure audítis, prædicáte super
+        tecta. Et nolíte timére eos, qui occídunt corpus, ánimam autem non possunt occídere: sed
+        pótius timéte eum, qui potest et ánimam et corpus pérdere in gehénnam.
+      en: >-
+        At that time, Jesus said to His disciples, "When they persecute you in one town, flee to
+        another. Amen I say to you, you will not have gone through the towns of Israel before
+        the Son of Man comes. No disciple is above his teacher, nor is the servant above his
+        master. It is enough for the disciple to be like his teacher, and for the servant to be
+        like his master. If they have called the master of the house Beelzebub, how much more
+        those of his household! Therefore do not be afraid of them. For there is nothing
+        concealed that will not be disclosed, and nothing hidden that will not be made known.
+        What I tell you in darkness, speak it in the light; and what you hear whispered, preach
+        it on the housetops. And do not be afraid of those who kill the body but cannot kill the
+        soul. But rather be afraid of Him, Who is able to destroy both soul and body in hell."
     status: { la: verified, en: verified }
 
   - nocturn: 3

@@ -8,12 +8,16 @@
 #
 # Nocturn 2: Lectio4-6 (Pope St. Gregory the Great's homily) combined
 # into one reading, one continuous excerpt.
-# Nocturn 3: Lectio7's Gospel citation (Luke 7:36-50) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so — per
-# the pre-1955 pass's convention of not transcribing bare incipits —
-# only the homily portion is authored (not marked isGospel), a single
-# excerpt of St. Augustine's homily. No responsory given for either
-# reading.
+# Nocturn 3: Lectio7's Gospel citation (Luke 7:36-50) was a bare
+# incipit ("Et réliqua") with no full pericope text given; the full
+# pericope is now authored too (isGospel: true, immediately before the
+# homily) — this is this same day's own proper Missale [Evangelium]
+# (`web/www/missa/Latin/Sancti/07-22.txt`, English/Sancti/07-22.txt),
+# and is the very text `ember-september-friday.yml` reused verbatim
+# from this file (its own header cites `@Sancti/07-22`) — reused here
+# in turn for consistency (2026-09-05 update). The homily portion
+# remains a single excerpt of St. Augustine's homily. No responsory
+# given for either reading.
 id: st-mary-magdalene
 readings:
   - nocturn: 2
@@ -83,6 +87,54 @@ readings:
         words or by their writings. And it needeth but a little to pass from them, but we find Him
         Whom our soul loveth, for albeit our Redeemer in lowliness became a man among men, yet by
         right of His Divine Nature He is still above men.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 7:36-50", en: "Luke 7:36-50" }
+    text:
+      la: >-
+        In illo témpore: Rogábat Jesum quidam de pharisǽis, ut manducáret cum illo. Et ingréssus
+        domum pharisǽi, discúbuit. Et ecce múlier, quæ erat in civitáte peccátrix, ut cognóvit,
+        quod accubuísset in domo pharisǽi, áttulit alabástrum unguénti: et stans retro secus pedes
+        ejus, lácrimis cœpit rigáre pedes ejus, et capíllis cápitis sui tergébat, et osculabátur
+        pedes ejus, et unguénto ungébat. Videns autem pharisǽus, qui vocáverat eum, ait intra se,
+        dicens: Hic si esset Prophéta, sciret útique, quæ et qualis est múlier, quæ tangit eum:
+        quia peccátrix est. Et respóndens Jesus, dixit ad illum: Simon, hábeo tibi áliquid dícere.
+        At ille ait: Magíster, dic. Duo debitóres erant cuidam fœneratóri: unus debébat denários
+        quingéntos, et álius quinquagínta. Non habéntibus illis, unde rédderent, donávit
+        utrísque. Quis ergo eum plus díligit? Respóndens Simon, dixit: Æstimo, quia is, cui plus
+        donávit. At ille dixit ei: Recte judicásti. Et convérsus ad mulíerem, dixit Simóni: Vides
+        hanc mulíerem? Intrávi in domum tuam, aquam pédibus meis non dedísti: hæc autem lácrimis
+        rigávit pedes meos et capíllis suis tersit. Osculum mihi non dedísti: hæc autem, ex quo
+        intrávit, non cessávit osculári pedes meos. Oleo caput meum non unxísti: hæc autem
+        unguénto unxit pedes meos. Propter quod dico tibi: Remittúntur ei peccáta multa, quóniam
+        diléxit multum. Cui autem minus dimíttitur, minus díligit. Dixit autem ad illam:
+        Remittúntur tibi peccáta. Et cœpérunt, qui simul accumbébant, dícere intra se: Quis est
+        hic, qui étiam peccáta dimíttit? Dixit autem ad mulíerem: Fides tua te salvam fecit: vade
+        in pace.
+      en: >-
+        At that time, one of the Pharisees asked Jesus to dine with him; so He went into the
+        house of the Pharisee and reclined at table. And behold, a woman in the town who was a
+        sinner, upon learning that He was at table in the Pharisee's house, brought an alabaster
+        jar of ointment; and standing behind Him at His feet, she began to bathe His feet with her
+        tears, and wiped them with the hair of her head, and kissed His feet, and anointed them
+        with ointment. Now when the Pharisee, who had invited Him, saw it, he said to himself,
+        "This man, were He a prophet, would surely know who and what manner of woman this is who
+        is touching Him, for she is a sinner." And Jesus answered and said to him, "Simon, I have
+        something to say to you." And he said, "Master, speak." "A certain money-lender had two
+        debtors; the one owed five hundred denarii, the other fifty. As they had no means of
+        paying, he forgave them both. Which of them, therefore, will love him more?" Simon
+        answered and said, "He, I suppose, to whom he forgave more." And He said to him, "You have
+        judged rightly." And turning to the woman, He said to Simon, "Do you see this woman? I
+        came into your house; you gave Me no water for My feet; but she has bathed My feet with
+        her tears, and has wiped them with her hair. You gave Me no kiss; but she, from the moment
+        she entered, has not ceased to kiss My feet. You did not anoint My head with oil; but she
+        has anointed My feet with ointment. Wherefore I say to you, her sins, many as they are,
+        shall be forgiven her, because she has loved much. But he to whom little is forgiven,
+        loves little." And He said to her, "Your sins are forgiven." And they who were at table
+        with Him began to say within themselves, "Who is this man, who even forgives sins?" But He
+        said to the woman, "Your faith has saved you; go in peace."
     status: { la: verified, en: verified }
 
   - nocturn: 3

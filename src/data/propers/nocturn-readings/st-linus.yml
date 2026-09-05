@@ -10,6 +10,12 @@
 # sermon number, for `st-anacletus.yml`'s own Nocturn 2 in July; the
 # reference engine reuses this exposition across several pope-martyr
 # feasts) kept split. No responsory given in the source.
+#
+# Verified 2026-09-05 (Gospel-pairing sweep): horas/Latin/Sancti/09-23.txt
+# has no Lectio7-9 at all -- only Lectio4-6/94 -- so Nocturn 3 falls
+# through entirely to Common (of a Pope-Martyr) content, already handled
+# by this store's per-Common-category pool. No proper Gospel of Linus's
+# own to pair here.
 id: st-linus
 readings:
   - nocturn: 2

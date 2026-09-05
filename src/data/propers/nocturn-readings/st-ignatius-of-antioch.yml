@@ -8,12 +8,17 @@
 # Nocturn 2: Lectio4-6 (St. Jerome's account of Ignatius's life and
 # epistles) combined into one reading, one continuous excerpt.
 # Nocturn 3: Lectio7's Gospel citation (John 12:24-26) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so — per the
-# pre-1955 pass's convention of not transcribing bare incipits —
-# only the homily portion is authored (not marked isGospel, since the
-# Gospel text itself isn't included), combined with Lectio8-9 as one
-# continuous excerpt of St. Augustine's tract. No responsory given for
-# either.
+# incipit ("Et réliqua") in the horas file, but this same feast's own
+# Missale Evangelium (web/www/missa/Latin+English/Sancti/02-01.txt)
+# carries the full pericope verbatim, so it is authored in full below
+# (isGospel: true, immediately before the homily), combined with
+# Lectio8-9 as one continuous excerpt of St. Augustine's tract. No
+# responsory given for either.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored
+# (previously left unauthored per the "bare incipit, skip it"
+# convention) — sourced from the day's own Missale Gospel above, not
+# guessed at.
 id: st-ignatius-of-antioch
 readings:
   - nocturn: 2
@@ -81,6 +86,26 @@ readings:
         Christ's wheat, and so let the beasts' teeth be my mill, that I may be ground, and be found
         to make good bread. He suffered in the eleventh year of Trajan. What was left of his body
         lieth at Antioch, in the graveyard outside the gate which leadeth toward Daphne.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joann 12:24-26", en: "John 12:24-26" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Amen, amen, dico vobis, nisi granum
+        fruménti cadens in terram, mórtuum fúerit, ipsum solum manet: si autem mórtuum
+        fúerit, multum fructum affert. Qui amat ánimam suam, perdet eam: et qui odit ánimam
+        suam in hoc mundo, in vitam ætérnam custódit eam. Si quis mihi mínistrat, me
+        sequátur: et ubi sum ego, illic et miníster meus erit. Si quis mihi ministráverit,
+        honorificábit eum Pater meus.
+      en: >-
+        At that time, Jesus said to His Disciples, "Amen, amen, I say to you, unless the
+        grain of wheat falls into the ground and dies, it remains alone. But if it dies, it
+        brings forth much fruit. He who loves his life, loses it; and he who hates his life
+        in this world, keeps it unto life everlasting. If anyone serves Me, let him follow
+        Me; and where I am there also shall My servant be. If anyone serves Me, My Father
+        will honor him."
     status: { la: verified, en: verified }
 
   - nocturn: 3

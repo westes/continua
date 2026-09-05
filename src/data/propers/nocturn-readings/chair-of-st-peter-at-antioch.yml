@@ -11,11 +11,15 @@
 # Nocturn 2: Lectio4-6 (St. Augustine's sermon on the feast) combined
 # into one reading, one continuous excerpt.
 # Nocturn 3: Lectio7's Gospel citation (Matt 16:13-19) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so — per the
-# pre-1955 pass's convention of not transcribing bare incipits — only
-# the homily portion is authored (not marked isGospel), combined with
-# Lectio8-9 as one continuous excerpt of Pope St. Leo's sermon. No
-# responsory given for either.
+# incipit ("Et réliqua") with no full pericope text given, so only the
+# homily portion was originally authored (not marked isGospel), combined
+# with Lectio8-9 as one continuous excerpt of Pope St. Leo's sermon.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — this feast's own
+# [Evangelium] redirects `@Commune/Coronatio`, sourced from
+# missa/Latin/Commune/Coronatio.txt, English/Commune/Coronatio.txt, not
+# guessed at.
 id: chair-of-st-peter-at-antioch
 readings:
   - nocturn: 2
@@ -67,6 +71,35 @@ readings:
         more do I wonder at the growth of that unhealthy error which at this day causeth some
         unbelievers to lay food and wine upon the graves of the dead, as if souls once rid of the
         body had any longer any need of bodily refreshment.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 16:13-19", en: "Matt 16:13-19" }
+    text:
+      la: >-
+        In illo témpore: Venit Jesus in partes Cæsaréæ Philíppi, et interrogábat discípulos suos,
+        dicens: Quem dicunt hómines esse Fílium hóminis? At illi dixérunt: Alii Joánnem
+        Baptístam, alii autem Elíam, álii vero Jeremíam, aut unum ex prophétis. Dicit illis
+        Jesus: Vos autem quem me esse dícitis? Respóndens Simon Petrus, dixit: Tu es Christus,
+        Fílius Dei vivi. Respóndens autem Jesus, dixit ei: Beátus es, Simon Bar Jona: quia caro
+        et sanguis non revelávit tibi, sed Pater meus, qui in cœlis est. Et ego dico tibi, quia
+        tu es Petrus, et super hanc petram ædificábo Ecclésiam meam, et portæ ínferi non
+        prævalébunt advérsus eam. Et tibi dabo claves regni cœlórum. Et quodcúmque ligáveris
+        super terram, erit ligátum et in cœlis: et quodcúmque sólveris super terram, erit
+        solútum et in cœlis.
+      en: >-
+        At that time, Jesus came into the quarters of Caesarea Philippi: and he asked his
+        disciples, saying, "Whom do men say that the Son of man is?" But they said, "Some John
+        the Baptist, and other some Elias, and others Jeremias, or one of the prophets." Jesus
+        saith to them, "But whom do you say that I am?" Simon Peter answered and said, "Thou art
+        Christ, the Son of the living God." And Jesus answering, said to him, "Blessed art thou,
+        Simon Bar-Jona: because flesh and blood hath not revealed it to thee, but my Father who
+        is in heaven. And I say to thee, that thou art Peter; and upon this rock I will build My
+        Church, and the gates of hell shall not prevail against it. And I will give to thee the
+        keys of the kingdom of heaven. And whatsoever thou shalt bind upon earth, it shall be
+        bound also in heaven: and whatsoever thou shalt loose upon earth, it shall be loosed also
+        in heaven."
     status: { la: verified, en: verified }
 
   - nocturn: 3

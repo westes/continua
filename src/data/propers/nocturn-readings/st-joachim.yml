@@ -2,11 +2,17 @@
 # the Blessed Virgin Mary (Aug 16). Sourced directly from
 # web/www/horas/Latin/Sancti/08-16.txt, English/Sancti/08-16.txt.
 # Nocturn 2: Lectio4-6, sermons by St. Epiphanius and St. John of
-# Damascus on Ss. Joachim and Anne, combined into one reading. Nocturn
-# 3: the Gospel citation ends "Et réliqua"/"And so on" with no full
-# pericope given -- per the bare-incipit convention, only the homily
-# (Lectio7-9, St. John of Damascus on the genealogy of Christ) is
-# authored, isGospel: false, no citation field.
+# Damascus on Ss. Joachim and Anne, combined into one reading.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope, previously left
+# unauthored because Lectio7 gives only the incipit ("Et réliqua"), is
+# now authored too (isGospel: true, immediately before the homily) --
+# fittingly, since this Nocturn's own homily (St. John of Damascus, on
+# the Lord's genealogy) is a commentary specifically on this pericope,
+# the citation is Matt 1:1-16 (Christ's genealogy per Matthew, not Luke
+# 3's) per that same Lectio7 line; the full text is sourced from
+# missa/Latin/Sancti/08-16.txt's own [Evangelium] (the Mass Gospel and
+# the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
 id: st-joachim
 readings:
   - nocturn: 2
@@ -89,6 +95,44 @@ readings:
         well-pleasing in the sight of God, ye ordered your own lives by rule.
         In the chaste and holy exercise of your natural gift, ye produced the
         treasure of virginity.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 1:1-16", en: "Matthew 1:1-16" }
+    text:
+      la: >-
+        Liber generatiónis Jesu Christi, fílii David, fílii Abraham. Abraham génuit Isaac. Isaac
+        autem génuit Jacob. Jacob autem génuit Judam et fratres ejus. Judas autem génuit Phares et
+        Zaram de Thamar. Phares autem génuit Esron. Esron autem génuit Aram. Aram autem génuit
+        Amínadab. Amínadab autem génuit Naásson. Naásson autem génuit Salmon. Salmon autem génuit
+        Booz de Rahab. Booz autem génuit Obed ex Ruth. Obed autem génuit Jesse. Jesse autem génuit
+        David regem. David autem rex génuit Salomónem ex ea, quæ fuit Uriæ. Sálomon autem génuit
+        Róboam. Róboam autem génuit Abíam. Abías autem génuit Asa. Asa autem génuit Jósaphat.
+        Jósaphat autem génuit Joram. Joram autem génuit Ozíam. Ozías autem génuit Jóatham. Jóatham
+        autem génuit Achaz. Achaz autem génuit Ezechíam. Ezechías autem génuit Manássen. Manásses
+        autem génuit Amon. Amon autem génuit Josíam. Josías autem génuit Jechoníam et fratres ejus
+        in transmigratióne Babylónis. Et post transmigratiónem Babylónis: Jechonías génuit
+        Saláthiel. Saláthiel autem génuit Zoróbabel. Zoróbabel autem génuit Abiud. Abiud autem
+        génuit Elíacim. Elíacim autem génuit Azor. Azor autem génuit Sadoc. Sadoc autem génuit
+        Achim. Achim autem génuit Eliud. Eliud autem génuit Eleázar. Eleázar autem génuit Mathan.
+        Mathan autem génuit Jacob. Jacob autem génuit Joseph, virum Maríæ, de qua natus est Jesus,
+        qui vocátur Christus.
+      en: >-
+        The book of the origin of Jesus Christ, the Son of David, the son of Abraham. Abraham
+        begot Isaac, Isaac begot Jacob, Jacob begot Judas and his brethren. Judas begot Phares and
+        Zara of Thamar, Phares begot Esron, Esron begot Aram. And Aram begot Aminadab, Aminadab
+        begot Naasson, Naasson begot Salmon. Salmon begot Booz of Rahab. Booz begot Obed of Ruth,
+        Obed begot Jesse, Jesse begot David the King. And David the king begot Solomon of the
+        former wife of Urias. Solomon begot Roboam, Roboam begot Abia, Abia begot Asa. And Asa
+        begot Josaphat, Josaphat begot Joram, Joram begot Ozias. And Ozias begot Joatham, Joatham
+        begot Achaz, Achaz begot Ezechias. And Ezechias begot Manasses, Manasses begot Amon, Amon
+        begot Josias. And Josias begot Jechonias and his brethren at the time of the carrying away
+        to Babylon. And after the carrying away to Babylon, Jechonias begot Salathiel, Salathiel
+        begot Zorobabel. And Zorobabel begot Abiud, Abiud begot Eliachim, Eliachim begot Azor. And
+        Azor begot Sadoc, Sadoc begot Achim, Achim begot Eliud. And Eliud begot Eleazar, Eleazar
+        begot Matthan, Matthan begot Jacob. And Jacob begot Joseph, the husband of Mary, and of her
+        was born Jesus Who is called Christ.
     status: { la: verified, en: verified }
 
   - nocturn: 3

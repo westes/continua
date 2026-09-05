@@ -17,6 +17,12 @@
 # our-lady-of-the-snows.yml's own Nocturn 3, duplicated rather than
 # cross-referenced (the Matins mechanism has no cross-id lookup for
 # nocturn-readings the way collect/antiphon do via `propers`).
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Bede's homily), same text and
+# same sourcing note as our-lady-of-the-snows.yml's own fix — Commune/
+# C11.txt's own Missa [Evangelium] gives the full two-verse pericope,
+# where its Nocturn 3 Lectio7 cuts off at "Et réliqua".
 id: presentation-of-the-bvm
 readings:
   - nocturn: 2
@@ -89,6 +95,21 @@ readings:
         she often talked in her sleep, either repeating things that she had read, or going on
         with what she was doing before sleep interrupted her, or rehearsing things executed,
         or talking of things projected.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 11:27-28", en: "Luke 11:27-28" }
+    text:
+      la: >-
+        In illo témpore: Loquénte Jesu ad turbas, extóllens vocem quædam múlier de turba, dixit
+        illi: Beátus venter, qui te portávit, et úbera, quæ suxísti. At ille dixit: Quinímmo
+        beáti, qui áudiunt verbum Dei, et custódiunt illud.
+      en: >-
+        At that time, as Jesus was speaking to the multitudes, a certain woman from the crowd
+        lifted up her voice and said to Him, "Blessed is the womb that bore You, and the breasts
+        that nursed You." But He said, "Rather, blessed are they who hear the word of God and
+        keep it."
     status: { la: verified, en: verified }
 
   - nocturn: 3

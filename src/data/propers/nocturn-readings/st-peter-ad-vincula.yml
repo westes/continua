@@ -7,14 +7,16 @@
 #
 # Nocturn 2: Lectio4-6 (the legend of the two chains) combined into
 # one reading, one continuous account.
-# Nocturn 3: Lectio7's Gospel citation (Matt 16:13-19) is a bare
-# incipit ("Et réliqua") with no full pericope text given (this day's
-# own version of the same pericope already given in full for
-# `chair-of-st-peter-at-rome.yml`) — per the pre-1955 pass's
-# convention of not transcribing bare incipits, only the homily
-# portion is authored (not marked isGospel), combined with Lectio8 as
-# one continuous excerpt of St. Augustine's sermon. No responsory
-# given for either reading.
+# Nocturn 3: Lectio7's Gospel citation (Matt 16:13-19) was a bare
+# incipit ("Et réliqua") with no full pericope text given; the full
+# pericope is now authored too (isGospel: true, immediately before the
+# homily) — sourced from the Missale's own Common of a Pope/Martyr
+# Gospel (`web/www/missa/Latin/Commune/Coronatio.txt`'s `[Evangelium]`,
+# English/Commune/Coronatio.txt), the same text used for this same
+# pericope in `chair-of-st-peter-at-rome.yml` and `st-martin-i.yml`
+# (2026-09-05 update). The homily portion remains St. Augustine's
+# sermon, combined with Lectio8 as one continuous excerpt. No
+# responsory given for either reading.
 id: st-peter-ad-vincula
 readings:
   - nocturn: 2
@@ -70,6 +72,34 @@ readings:
         ordered to be taken to Pope John, and as soon as he had touched the Count's neck with the
         hallowed chains, the foul spirit came out of him, and left him free. And thenceforward the
         reverence for these holy chains greatly increased in the City.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 16:13-19", en: "Matt 16:13-19" }
+    text:
+      la: >-
+        In illo témpore: Venit Jesus in partes Cæsaréæ Philíppi, et interrogábat discípulos suos,
+        dicens: Quem dicunt hómines esse Fílium hóminis? At illi dixérunt: Alii Joánnem Baptístam,
+        alii autem Elíam, álii vero Jeremíam, aut unum ex prophétis. Dicit illis Jesus: Vos autem
+        quem me esse dícitis? Respóndens Simon Petrus, dixit: Tu es Christus, Fílius Dei vivi.
+        Respóndens autem Jesus, dixit ei: Beátus es, Simon Bar Jona: quia caro et sanguis non
+        revelávit tibi, sed Pater meus, qui in cœlis est. Et ego dico tibi, quia tu es Petrus, et
+        super hanc petram ædificábo Ecclésiam meam, et portæ ínferi non prævalébunt advérsus eam.
+        Et tibi dabo claves regni cœlórum. Et quodcúmque ligáveris super terram, erit ligátum et
+        in cœlis: et quodcúmque sólveris super terram, erit solútum et in cœlis.
+      en: >-
+        At that time, Jesus came into the quarters of Cæsarea Philippi, and He asked His
+        disciples, saying, "Whom do men say that the Son of Man is?" But they said, "Some John
+        the Baptist, and other some Elias, and others Jeremias, or one of the prophets." Jesus
+        saith to them, "But whom do you say that I am?" Simon Peter answered and said, "Thou art
+        Christ, the Son of the living God." And Jesus answering, said to him, "Blessed art thou,
+        Simon Bar-Jona, because flesh and blood hath not revealed it to thee, but My Father Who
+        is in heaven. And I say to thee, that thou art Peter, and upon this rock I will build My
+        Church, and the gates of hell shall not prevail against it. And I will give to thee the
+        keys of the kingdom of heaven; and whatsoever thou shalt bind upon earth, it shall be
+        bound also in heaven, and whatsoever thou shalt loose upon earth, it shall be loosed also
+        in heaven."
     status: { la: verified, en: verified }
 
   - nocturn: 3

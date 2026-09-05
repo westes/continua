@@ -4,10 +4,13 @@
 # Nocturn 2: Lectio4-6, St. John Chrysostom's homily on the Blood of
 # Christ (including the note on Pius XI's 1933 elevation of this feast
 # to Duplex I Classis for the Jubilee of the Redemption), combined into
-# one reading. Nocturn 3: the Gospel citation ends "Et réliqua"/"And so
-# on" with no full pericope given -- per the bare-incipit convention,
-# only the homily (Lectio7-9, St. Augustine of Hippo) is authored,
-# isGospel: false, no citation field.
+# one reading. Nocturn 3: the Gospel pericope (John 19:30-35, full text)
+# is now authored too (isGospel: true, immediately before St. Augustine
+# of Hippo's homily, Lectio7-9) -- sourced from
+# missa/Latin/Sancti/07-01.txt's own [Evangelium] and
+# missa/English/Sancti/07-01.txt, matching the convention set by
+# post-pentecost-16.yml (2026-09-05). Nocturn 2's own homily (St. John
+# Chrysostom) is not Gospel-paired -- it stays as-is.
 id: most-precious-blood
 readings:
   - nocturn: 2
@@ -124,6 +127,33 @@ readings:
         the price of their redemption, elevated the Feast of the Most Precious Blood
         of our Lord Jesus Christ to the rank of a double of the first class, to be
         celebrated as such every year by the universal Church.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joann 19:30-35", en: "John 19:30-35" }
+    text:
+      la: >-
+        In illo témpore: Cum accepísset Jesus acétum, dixit: Consummátum est. Et
+        inclináto cápite trádidit spíritum. Judæi ergo -- quóniam Parascéve erat --,
+        ut non remanérent in cruce córpora sábbato -- erat enim magnus dies ille
+        sábbati --, rogavérunt Pilátum, ut frangeréntur eórum crura et tolleréntur.
+        Venérunt ergo mílites: et primi quidem fregérunt crura et altérius, qui
+        crucifíxus est cum eo. Ad Jesum autem cum venissent, ut vidérunt eum jam
+        mórtuum, non fregérunt ejus crura, sed unus mílitum láncea latus ejus apéruit,
+        et contínuo exívit sanguis et aqua. Et qui vidit, testimónium perhíbuit; et
+        verum est testimónium ejus.
+      en: >-
+        At that time, when Jesus had taken the wine, He said, It is consummated! And
+        bowing His head, He gave up His spirit. The Jews therefore, since it was the
+        Preparation Day, in order that the bodies might not remain upon the cross on
+        the Sabbath, for that Sabbath was a solemn day, besought Pilate that their
+        legs might be broken, and that they might be taken away. The soldiers
+        therefore came and broke the legs of the first, and of the other, who had
+        been crucified with Him. But when they came to Jesus, and saw that He was
+        already dead, they did not break His legs; but one of the soldiers opened His
+        side with a lance, and immediately there came out Blood and water. And he who
+        saw it has borne witness, and his witness is true.
     status: { la: verified, en: verified }
 
   - nocturn: 3

@@ -6,6 +6,15 @@
 # web/www/horas/Latin/Sancti/10-18.txt, English/Sancti/10-18.txt.
 # Lectio4-6 combined into one reading, one continuous excerpt of St.
 # Jerome. No responsory given in the source.
+#
+# Verified 2026-09-05 (Gospel-pairing sweep): horas/Latin/Sancti/10-18.txt
+# ends at Lectio6 (Jerome's biographical/literary catalogue entry on
+# Luke as Gospel-author) -- there is no proper Lectio7-9 at all, so
+# Nocturn 3 falls through entirely to Common of an Evangelist (C1a)'s
+# own generic content, already handled by this store's
+# per-Common-category pool. No proper Gospel of Luke's own to pair here
+# (this file's own content IS the Nocturn 3-adjacent biographical
+# reading with nothing to pair it to).
 id: st-luke
 readings:
   - nocturn: 2

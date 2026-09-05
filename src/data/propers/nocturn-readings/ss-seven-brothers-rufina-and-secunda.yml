@@ -9,6 +9,17 @@
 # genuinely distinct pair of martyrs), and Lectio6 (St. Augustine's
 # sermon on their mother, St. Felicity) kept split. No responsory
 # given in the source.
+#
+# Checked 2026-09-05 for a Gospel pairing: all three readings here are
+# Nocturn 2 (Lectio4-6). St. Augustine's Sermon 110 is a eulogy of St.
+# Felicity as a martyr-mother, not tied to any Gospel pericope -- no
+# isGospel pairing applies. Note for a future pass: 07-10.txt's own
+# [Rule] ("vide C3") carries its own genuine Nocturn 3 (Lectio7-9:
+# Gospel Matt 12:46-50, "Who is my mother?", with Pope St. Gregory's
+# Homily 3 on the Gospels) that is not authored anywhere in this store
+# at all -- a real content gap, but a new reading pair rather than a
+# missing Gospel citation on an existing homily, so out of scope for
+# this pass.
 id: ss-seven-brothers-rufina-and-secunda
 readings:
   - nocturn: 2

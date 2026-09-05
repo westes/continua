@@ -5,9 +5,16 @@
 # Monastic 1617 track uses this same text.
 #
 # Lectio1's Gospel citation (Luke 3:1-6, the preaching of St. John the
-# Baptist) is a bare incipit with no full pericope text given, so only
-# the homily portion is authored, same convention as the other Ember
-# days.
+# Baptist) is a bare incipit with no full pericope text given in this
+# day's own file, so only the homily portion was originally authored,
+# same convention as the other Ember days.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily), matching the
+# convention set by ember-september-friday.yml — this day's own
+# [Evangelium] carries the full pericope directly (not a redirect),
+# sourced from missa/Latin/Tempora/Adv3-6.txt, English/Tempora/
+# Adv3-6.txt, not guessed at.
 #
 # Recombined into one reading 2026-09-04 (previously kept as 3 separate
 # readings): Lectio1-3 are one continuous, unbroken Gregory homily, split
@@ -18,6 +25,33 @@
 # dropped, same as every other collapsed-reading case in this store.
 id: ember-advent-saturday
 readings:
+  - nocturn: 1
+    isGospel: true
+    citation: { la: "Luc 3:1-6", en: "Luke 3:1-6" }
+    text:
+      la: >-
+        Anno quintodécimo impérii Tibérii Cæsaris, procuránte Póntio Piláto Judǽam, tetrárcha
+        autem Galilǽæ Heróde, Philíppo autem fratre ejus tetrárcha Iturǽæ et Trachonítidis
+        regiónis, et Lysánia Abilínæ tetrárcha, sub princípibus sacerdótum Anna et Cáipha:
+        factum est verbum Dómini super Joánnem, Zacharíæ fílium, in desérto. Et venit in omnem
+        regiónem Jordánis, prǽdicans baptísmum pæniténtiæ in remissiónem peccatórum, sicut
+        scriptum est in libro sermónum Isaíæ Prophétæ: Vox clamántis in desérto: Paráte viam
+        Dómini: rectas fácite sémitas ejus: omnis vallis implébitur: et omnis mons et collis
+        humiliábitur: et erunt prava in dirécta, et áspera in vias planas: et vidébit omnis caro
+        salutáre Dei.
+      en: >-
+        Now in the fifteenth year of the reign of Tiberius Caesar, when Pontius Pilate was
+        procurator of Judea, and Herod tetrarch of Galilee, and Philip his brother tetrarch of
+        the district of Abilene, during the high priesthood of Annas and Caiphas, the word of
+        God came to John, the son of Zachary, in the desert. And he went into all the region
+        about the Jordan, preaching a baptism of repentance for the forgiveness of sins, as it
+        is written in the book of the words of Isaias the prophet, "The voice of one crying in
+        the desert, 'Make ready the way of the Lord, make straight His paths. Every valley shall
+        be filled, and every mountain and hill shall be brought low, and the crooked ways shall
+        be made straight, and the rough ways smooth; and all mankind shall see the salvation of
+        God.'"
+    status: { la: verified, en: verified }
+
   - nocturn: 1
     isGospel: false
     source: "Pope St. Gregory the Great, Homily 20 on the Gospels, on Luke 3:1-6"

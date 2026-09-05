@@ -3,9 +3,17 @@
 # English/Sancti/03-28.txt.
 #
 # Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
-# Nocturn 3: Lectio7's Gospel citation (Luke 9:1-6) is a bare incipit
-# ("Et réliqua"), so only the homily is authored (not marked isGospel),
+# Nocturn 3: Lectio7's Gospel citation (Luke 9:1-6) was a bare incipit
+# ("Et réliqua"), so only the homily was authored (not marked isGospel),
 # St. Bonaventure's homily (Lectio7's homily + Lectio8-9 combined).
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily), matching the newer
+# convention set by ember-september-friday.yml/post-pentecost-16.yml.
+# missa/Latin/Sancti/03-28.txt's own [Evangelium] is `@Tempora/Pasc7-4`
+# (7th Sunday after Easter) — Latin sourced from that file; English
+# sourced directly from missa/English/Sancti/03-28.txt (given in full
+# there, no redirect).
 id: st-john-capistrano
 readings:
   - nocturn: 2
@@ -99,6 +107,30 @@ readings:
         and when these had been duly proved Alexander VIII. enrolled his name with those
         of the saints in the year 1690, and two hundred years after his canonization Leo
         XIII. extended his Office and Mass to the whole Church.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 9:1-6", en: "Luke 9:1-6" }
+    text:
+      la: >-
+        In illo témpore: Convocátis Jesus duódecim Apóstolis, dedit illis virtútem et
+        potestátem super ómnia dæmónia, et ut languóres curárent. Et misit illos prædicáre
+        regnum Dei et sanáre infírmos. Et ait ad illos: Nihil tuléritis in via, neque
+        virgam, neque peram, neque panem, neque pecúniam, neque duas túnicas habeátis. Et in
+        quamcúmque domum intravéritis, ibi manéte et inde ne exeátis. Et quicúmque non
+        recéperint vos: exeúntes de civitáte illa, étiam púlverem pedum vestrórum excútite
+        in testimónium supra illos. Egréssi autem circuíbant per castélla, evangelizántes et
+        curántes ubíque.
+      en: >-
+        At that time, Jesus having summoned the twelve apostles, gave them power and
+        authority over all the devils, and to cure diseases. And He sent them forth to
+        preach the kingdom of God, and to heal the sick. And He said to them, Take nothing
+        for your journey, neither staff, nor wallet, nor bread, nor money; neither have two
+        tunics. And whatever house you enter, stay there, and do not leave the place. And
+        whoever does not receive you - go forth from that town, and shake off even the dust
+        from your feet for a witness against them. And going forth, they went about from
+        village to village, preaching the gospel and working cures everywhere.
     status: { la: verified, en: verified }
 
   - nocturn: 3

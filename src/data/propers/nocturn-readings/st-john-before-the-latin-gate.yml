@@ -8,12 +8,18 @@
 #
 # Nocturn 2: Lectio4-6 combined into one reading, one continuous
 # excerpt from St. Jerome.
-# Nocturn 3: Lectio7's Gospel citation (Matt 20:20-23) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so — per the
-# pre-1955 pass's convention of not transcribing bare incipits — only
-# the homily portion is authored (not marked isGospel), a single
+# Nocturn 3: Lectio7's Gospel citation (Matt 20:20-23) was previously a
+# bare incipit ("Et réliqua") with only the homily authored, a single
 # excerpt of St. Jerome's own commentary. No responsory given for
 # either reading.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — sourced from this
+# feast's own Missale Evangelium, given in full (missa/Latin+English/
+# Sancti/05-06.txt), not guessed at. (St. James the Greater's own
+# Missale Gospel — a separate feast, Jul 25 — is this same pericope
+# reused verbatim via its own `@Sancti/05-06` redirect; authored there
+# independently, not copy-pasted from this file.)
 id: st-john-before-the-latin-gate
 readings:
   - nocturn: 2
@@ -80,6 +86,27 @@ readings:
         I write is like a flying eagle, whose kingly flight beareth him up above earth-gathered
         clouds, an eagle that wingeth his way toward the Father Himself, and which crieth: In the
         beginning was the Word, and the Word was with God, and the Word was God.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 20:20-23", en: "Matt 20:20-23" }
+    text:
+      la: >-
+        In illo témpore: Accéssit ad Jesum mater filiórum Zebedǽi cum fíliis suis, adórans et petens
+        áliquid ab eo. Qui dixit ei: Quid vis? Ait illi: Dic, ut sédeant hi duo fílii mei, unus ad
+        déxteram tuam, et unus ad sinístram in regno tuo. Respóndens autem Jesus, dixit: Néscitis,
+        quid petátis. Potéstis bíbere cálicem, quem ego bibitúrus sum? Dicunt ei: Póssumus. Ait
+        illis: Cálicem quidem meum bibétis: sedére autem ad déxteram meam vel sinístram, non est
+        meum dare vobis, sed quibus parátum est a Patre meo.
+      en: >-
+        At that time, the mother of the sons of Zebedee came to Jesus with her sons, adoring and
+        asking something of Him. And He said to her: What wilt thou? She saith to Him: Say that
+        these my two sons may sit, the one on Thy right hand and the other on Thy left, in Thy
+        kingdom. And Jesus answering, said: You know not what you ask. Can you drink the chalice
+        that I shall drink? They say to Him: We can. He saith to them: My chalice indeed you shall
+        drink; but to sit on My right hand or left is not Mine to give to you, but to them for whom
+        it is prepared by My Father.
     status: { la: verified, en: verified }
 
   - nocturn: 3

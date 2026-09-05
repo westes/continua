@@ -10,9 +10,15 @@
 # Nocturn 3: Lectio7's Gospel citation (Matt 4:18-22) is a bare
 # incipit ("Et réliqua") with no full pericope text given, so — per
 # the pre-1955 pass's convention of not transcribing bare incipits —
-# only the homily portion is authored (not marked isGospel), a single
-# excerpt of Pope St. Gregory the Great's homily. No responsory given
-# for either reading.
+# only the homily portion was originally authored (not marked
+# isGospel), a single excerpt of Pope St. Gregory the Great's homily.
+# No responsory given for either reading.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Gregory's homily) — sourced from
+# the day's own Missale [Evangelium] in
+# web/www/missa/Latin/Sancti/11-30.txt (full text given there, not a
+# redirect).
 id: st-andrew
 readings:
   - nocturn: 2
@@ -104,6 +110,27 @@ readings:
         the bones of the Apostle were first taken to Constantinople, whence they were
         afterwards brought to Amalfi. In the Pontificate of Pope Pius II his head was carried
         to Rome, where it is kept in the Basilica of St. Peter.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 4:18-22", en: "Matt 4:18-22" }
+    text:
+      la: >-
+        In illo témpore: Ambulans Jesus juxta mare Galilǽæ, vidit duos fratres, Simónem, qui
+        vocátur Petrus, et Andréam fratrem ejus, mitténtes rete in mare — erant enim piscatóres
+        — et ait illis: Veníte post me, et fáciam vos fíeri piscatóres hóminum. At illi contínuo,
+        relíctis rétibus, secúti sunt eum. Et procédens inde, vidit álios duos fratres, Jacóbum
+        Zebedǽi et Joánnem, fratrem ejus, in navi cum Zebedǽo patre eórum reficiéntes rétia sua:
+        et vocávit eos. Illi autem statim, relíctis rétibus et patre, secúti sunt eum.
+      en: >-
+        At that time, as Jesus was walking by the sea of Galilee, He saw two brothers, Simon,
+        who is called Peter, and his brother Andrew, casting a net into the sea — for they were
+        fishermen. And He said to them, "Come, follow Me, and I will make you fishers of men."
+        And at once they left the nets, and followed Him. And going farther on, He saw two other
+        brothers, James the son of Zebedee, and his brother John, in a boat with Zebedee their
+        father, mending their nets; and He called them. And immediately they left their nets and
+        their father, and followed Him.
     status: { la: verified, en: verified }
 
   - nocturn: 3

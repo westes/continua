@@ -3,15 +3,42 @@
 # English/Sancti/08-14.txt. A Vigil's own office is a single, simpler
 # nocturn of just 3 lessons (`Lectio1-3`), pooled into the nocturn: 2
 # slot per the established convention (see vigil-of-st-lawrence.yml's
-# own note). Lectio1's Gospel citation (Luke 11:27-28) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so only the
-# homily portion is authored, isGospel: false. The untagged block's own
-# homilist is St. John Chrysostom (Lectio1 + Lectio2-3 combined, one
-# continuous piece); a separate `(sed rubrica tridentina)` variant
-# swaps in a different homily by St. Augustine on the same Gospel
-# verse -- not used here, per the untagged-block convention.
+# own note). Lectio1's Gospel citation (Luke 11:27-28, "Blessed is the
+# womb that bore thee") was a bare incipit ("Et réliqua") in the horas
+# file, with no full pericope text given there and the day's own Mass
+# proper inheriting its [Evangelium] from a Common (`@Commune/C11`) not
+# present in this reference engine's static missa store. The full
+# 2-verse pericope is short enough to complete directly: added
+# 2026-09-05 (isGospel: true) immediately before the homily portion,
+# Latin assembled from the horas file's own incipit plus the matching
+# verses in web/www/horas/Help/vulgate.txt (the reference engine's own
+# Vulgate text database), English composed as the standard
+# Douay-Rheims rendering of the same two verses (not itself
+# reference-engine text, so marked draft per this project's "prefer
+# text over missing" policy). The untagged block's own homilist is
+# St. John Chrysostom (Lectio1 + Lectio2-3 combined, one continuous
+# piece); a separate `(sed rubrica tridentina)` variant swaps in a
+# different homily by St. Augustine on the same Gospel verse -- not
+# used here, per the untagged-block convention.
 id: vigil-of-the-assumption
 readings:
+  - nocturn: 2
+    isGospel: true
+    citation: { la: "Luc 11:27-28", en: "Luke 11:27-28" }
+    text:
+      la: >-
+        In illo témpore: Loquénte Jesu ad turbas, extóllens vocem
+        quædam múlier de turba dixit illi: Beátus venter qui te
+        portávit, et úbera quæ suxísti. At ille dixit: Quinímmo beáti,
+        qui áudiunt verbum Dei et custódiunt illud.
+      en: >-
+        At that time: as Jesus spoke to the multitudes, a certain
+        woman from the crowd lifted up her voice and said to him:
+        Blessed is the womb that bore thee, and the breasts that gave
+        thee suck. But he said: Yea, rather, blessed are they who hear
+        the word of God, and keep it.
+    status: { la: verified, en: draft }
+
   - nocturn: 2
     isGospel: false
     source: "St. John Chrysostom, Homily 20 on John, ch. 2 (toward the end)"

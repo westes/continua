@@ -8,6 +8,15 @@
 # kept as two separate readings. Lectio5-6 combined into one (continuous,
 # no internal break). Lectio7-9 are Common-of-a-Martyr (skipped, not
 # proper). No responsory given in either source file.
+#
+# Verified 2026-09-05 (Gospel-pairing sweep): confirmed via
+# horas/Latin/Sancti/01-26.txt -- Lectio7-9 there are literally
+# `@Commune/C2:Lectio7/8/9 in 4 loco` (both Nocturn 2 readings here,
+# Jerome's biographical note and Ambrose's Psalm commentary, are proper
+# to Polycarp; Nocturn 3 has no proper homily of his own at all). Common
+# of a Martyr's own Nocturn 3 content is generic, already handled by
+# this store's per-Common-category pool -- no saint-specific Gospel to
+# pair here.
 id: st-polycarp
 readings:
   - nocturn: 2

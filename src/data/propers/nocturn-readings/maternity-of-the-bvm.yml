@@ -4,10 +4,21 @@
 # Nocturn 2: Lectio4-5 (two excerpts from Pope St. Leo the Great's own
 # Nativity sermons) plus Lectio6 (Pius XI's own history of this feast's
 # institution, 1931, for the 1500th anniversary of the Council of
-# Ephesus), combined into one reading. Nocturn 3: the Gospel citation
-# ends "Et réliqua"/"And so on" with no full pericope given -- per the
-# bare-incipit convention, only the homily (Lectio7-9, St. Bernard of
-# Clairvaux) is authored, isGospel: false, no citation field.
+# Ephesus), combined into one reading, not Gospel-tied. Nocturn 3:
+# Lectio7-9, St. Bernard of Clairvaux's Homily 1 in Praise of the
+# Virgin Mother (on Luke 2:43-51, the Finding in the Temple -- "Fili,
+# quid fecísti nobis sic?" is this homily's own opening line, quoting
+# that pericope directly, not the "Missus est"/Annunciation Bernard
+# series reused elsewhere in this store).
+#
+# Update (2026-09-05): the Gospel pericope itself (Luke 2:43-51) is now
+# authored too (isGospel: true, immediately before the homily) --
+# sourced from missa/Latin/Sancti/10-11.txt's own [Evangelium] (this
+# same feast's own Mass Gospel) and its English parallel, not guessed
+# at, and not the Annunciation pericope (Luke 1:26-38) initially
+# suspected -- this feast's own Nocturn 3 Gospel is genuinely the
+# Finding in the Temple, confirmed via horas/Latin/Sancti/10-11.txt's
+# own Lectio7.
 id: maternity-of-the-bvm
 readings:
   - nocturn: 2
@@ -131,6 +142,36 @@ readings:
         be celebrated annually on the 11th day of October by the
         universal Church with a proper Mass and Office under the rite
         of a double of the second class.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 2:43-51", en: "Luke 2:43-51" }
+    text:
+      la: >-
+        In illo témpore: Cum redírent, remánsit puer Jesus in Jerúsalem, et non cognovérunt
+        paréntes ejus. Existimántes autem illum esse in comitátu, venérunt iter diei, et
+        requirébant eum inter cognátos, et notos. Et non inveniéntes, regréssi sunt in Jerúsalem,
+        requiréntes eum. Et factum est, post tríduum invenérunt illum in templo sedéntem in médio
+        doctórum, audiéntem illos, et interrogántem eos. Stupébant autem omnes, qui eum
+        audiébant, super prudéntia et respónsis ejus. Et vidéntes admiráti sunt. Et dixit mater
+        ejus ad illum: Fili, quid fecísti nobis sic? ecce pater tuus, et ego doléntes
+        quærebámus te. Et ait ad illos: Quid est quod me quærebátis? nesciebátis quia in his,
+        quæ Patris mei sunt, opórtet me esse? Et ipsi non intellexérunt verbum, quod locútus est
+        ad eos. Et descéndit cum eis, et venit Názareth: et erat súbditus illis.
+      en: >-
+        At that time, when they were returning, the Boy Jesus remained in Jerusalem, and His
+        parents did not know it. But thinking that He was in the caravan, they had come a day's
+        journey before it occurred to them to look for Him among their relatives and
+        acquaintances. And not finding Him, they returned to Jerusalem in search of Him. And it
+        came to pass after three days, that they found Him in the temple, sitting in the midst of
+        the teachers, listening to them and asking them questions. And all who were listening to
+        Him were amazed at His understanding and His answers. And when they saw Him, they were
+        astonished. And His Mother said to Him, Son, why have You done so to us? Behold, in
+        sorrow Your father and I have been seeking You. And He said to them, How is it that you
+        sought Me? Did you not know that I must be about My Father's business? And they did not
+        understand the word that He spoke to them. And He went down with them and came to
+        Nazareth, and was subject to them.
     status: { la: verified, en: verified }
 
   - nocturn: 3

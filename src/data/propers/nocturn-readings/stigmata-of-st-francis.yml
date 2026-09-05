@@ -5,6 +5,15 @@
 # combined into one reading. No Lectio7-9 own content (a direct
 # `@Commune/C2:LectioN in 2 loco` cross-reference) -- not transcribed,
 # per the bare-cross-reference convention.
+#
+# Checked 2026-09-05 for a missing Gospel pairing: unlike the other
+# files revisited in this pass, this day genuinely has no saint-proper
+# Nocturn 3 Gospel+homily at all -- Lectio7-9 is a bare cross-reference
+# to the whole Common of a Confessor Bishop "in 2 loco" (its second
+# occurrence within that Common), not a citation tied to this feast.
+# There's nothing saint-specific to pair a Gospel with here; the
+# Common's own generic Gospel is a separate, shared text out of scope
+# for this per-saint store. No Gospel entry added.
 id: stigmata-of-st-francis
 readings:
   - nocturn: 2

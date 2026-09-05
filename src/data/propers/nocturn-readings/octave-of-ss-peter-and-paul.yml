@@ -1,11 +1,16 @@
 # Matins Nocturn 2-3 readings for the Octave Day of Ss. Peter and Paul
 # (July 6). Sourced directly from web/www/horas/Latin/Sancti/07-06.txt,
 # English/Sancti/07-06.txt. Nocturn 2: Lectio4-6, St. John Chrysostom's
-# sermon on both Apostles, combined into one reading. Nocturn 3: the
-# Gospel citation ends "Et réliqua"/"And so on" with no full pericope
-# given -- per the bare-incipit convention, only the homily (Lectio7-9,
-# St. Jerome on Christ walking on the water) is authored, isGospel:
-# false, no citation field.
+# sermon on both Apostles, combined into one reading -- a general
+# panegyric, not tied to a Gospel pericope, so it stays isGospel: false
+# with no pairing. Nocturn 3: the Gospel pericope (Matt 14:22-33, Christ
+# walking on the water -- confirmed by St. Jerome's homily text itself,
+# which directly comments on this passage, not Matt 16:13-19/Tu es
+# Petrus as might be guessed from the Common of Popes) is now authored
+# too (isGospel: true, immediately before St. Jerome's homily,
+# Lectio7-9) -- sourced from missa/Latin/Sancti/07-06.txt's own
+# [Evangelium] and missa/English/Sancti/07-06.txt, matching the
+# convention set by post-pentecost-16.yml (2026-09-05).
 id: octave-of-ss-peter-and-paul
 readings:
   - nocturn: 2
@@ -72,6 +77,45 @@ readings:
         who smote thee, and made the savage and his comrades to become strangely
         gentle and faithful? Would that I could have that sword for a crown, and the
         nails of Peter set therein as the jewels of the diadem.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 14:22-33", en: "Matt 14:22-33" }
+    text:
+      la: >-
+        In illo témpore: Cómpulit Jesus discípulos ascéndere in navículam, et
+        præcédere eum trans fretum, donec dimítteret turbas. Et dimíssa turba,
+        ascéndit in montem solus oráre. Véspere autem facto, solus erat ibi.
+        Navícula autem in médio mari jactabátur flúctibus: erat enim contrárius
+        ventus. Quarta autem vigília noctis venit ad eos ámbulans super mare. Et
+        vidéntes eum super mare ambulántem, turbáti sunt, dicéntes: Quia phantásma
+        est. Et præ timóre clamavérunt. Statímque Jesus locútus est eis, dicens:
+        Habete fidúciam: ego sum, nolíte timére. Respóndens autem Petrus, dixit:
+        Dómine, si tu es, jube me ad te veníre super aquas. At ipse ait: Veni. Et
+        descéndens Petrus de navícula, ambulábat super aquam, ut veníret ad Jesum.
+        Videns vero ventum válidum, tímuit: et cum cœpísset mergi, clamávit dicens:
+        Dómine, salvum me fac. Et contínuo Jesus exténdens manum, apprehéndit eum, et
+        ait illi: Módicæ fídei, quare dubitásti? Et cum ascendísset in navículam,
+        cessávit ventus. Qui autem in navícula erant, venérunt et adoravérunt eum,
+        dicéntes: Vere Fílius Dei es.
+      en: >-
+        And forthwith Jesus obliged his disciples to go up into the boat, and to go
+        before him over the water, till he dismissed the people. And having
+        dismissed the multitude, he went into a mountain alone to pray. And when it
+        was evening, he was there alone. But the boat in the midst of the sea was
+        tossed with the waves: for the wind was contrary. And in the fourth watch of
+        the night, he came to them walking upon the sea. And they seeing him walk
+        upon the sea, were troubled, saying: It is an apparition. And they cried out
+        for fear. And immediately Jesus spoke to them, saying: Be of good heart: it
+        is I, fear ye not. And Peter making answer, said: Lord, if it be thou, bid me
+        come to thee upon the waters. And he said: Come. And Peter going down out of
+        the boat, walked upon the water to come to Jesus. But seeing the wind
+        strong, he was afraid: and when he began to sink, he cried out, saying:
+        Lord, save me. And immediately Jesus stretching forth his hand took hold of
+        him, and said to him: O thou of little faith, why didst thou doubt? And when
+        they were come up into the boat, the wind ceased. And they that were in the
+        boat came and adored him, saying: Indeed thou art the Son of God.
     status: { la: verified, en: verified }
 
   - nocturn: 3

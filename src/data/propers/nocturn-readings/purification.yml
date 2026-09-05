@@ -6,8 +6,15 @@
 # Nocturn 2: Lectio4-6 combined into one reading, St. Augustine's sermon
 # on Simeon — one continuous piece.
 # Nocturn 3: Lectio7's Gospel citation (Luke 2:22-32) is a bare incipit
-# ("Et réliqua"), so only the homily is authored (not marked isGospel),
-# St. Ambrose's commentary (Lectio7's homily + Lectio8-9 combined).
+# ("Et réliqua"), so only the homily was originally authored (not marked
+# isGospel), St. Ambrose's commentary (Lectio7's homily + Lectio8-9
+# combined).
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Ambrose's homily) — sourced from
+# the day's own Missale [Evangelium] in
+# web/www/missa/Latin/Sancti/02-02.txt (full text given there, not a
+# redirect).
 id: purification
 readings:
   - nocturn: 2
@@ -67,6 +74,40 @@ readings:
         flesh and spirit would come in the flesh, the unborn John, yet in the womb, hath
         saluted the unborn Saviour yet in the womb. The old man Simeon hath seen God, a
         little Child.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 2:22-32", en: "Luke 2:22-32" }
+    text:
+      la: >-
+        In illo témpore: Postquam impléti sunt dies purgatiónis Maríæ, secúndum legem Móysi,
+        tulérunt Jesum in Jerúsalem, ut sísterent eum Dómino, sicut scriptum est in lege Dómini:
+        Quia omne masculínum adapériens vulvam sanctum Dómino vocábitur. Et ut darent hóstiam,
+        secúndum quod dictum est in lege Dómini, par túrturum aut duos pullos columbárum. Et
+        ecce, homo erat in Jerúsalem, cui nomen Símeon, et homo iste justus et timorátus,
+        exspéctans consolatiónem Israël, et Spíritus Sanctus erat in eo. Et respónsum accéperat a
+        Spíritu Sancto, non visúrum se mortem, nisi prius vidéret Christum Dómini. Et venit in
+        spíritu in templum. Et cum indúcerent púerum Jesum paréntes ejus, ut fácerent secúndum
+        consuetúdinem legis pro eo: et ipse accépit eum in ulnas suas, et benedíxit Deum, et
+        dixit: Nunc dimíttis servum tuum, Dómine, secúndum verbum tuum in pace: Quia vidérunt
+        óculi mei salutáre tuum: Quod parásti ante fáciem ómnium populórum: Lumen ad
+        revelatiónem géntium et glóriam plebis tuæ Israël.
+      en: >-
+        At that time, when the days of Mary's purification were fulfilled according to the Law
+        of Moses, they took Jesus up to Jerusalem to present Him to the Lord — as it is written
+        in the Law of the Lord, "Every male that opens the womb shall be called holy to the
+        Lord" — and to offer a sacrifice according to what is said in the Law of the Lord, "a
+        pair of turtle doves or two young pigeons." And behold, there was in Jerusalem a man
+        named Simeon, and this man was just and devout, looking for the consolation of Israel,
+        and the Holy Spirit was upon him. And it had been revealed to him by the Holy Spirit
+        that he should not see death before he had seen the Christ of the Lord. And he came by
+        inspiration of the Spirit into the temple. And when His parents brought in the Child
+        Jesus, to do for Him according to the custom of the Law, he also received Him into his
+        arms and blessed God, saying, "Now You dismiss Your servant, O Lord, according to Your
+        word, in peace; because my eyes have seen Your salvation, which You have prepared before
+        the face of all peoples: a light of revelation to the Gentiles, and a glory for Your
+        people Israel."
     status: { la: verified, en: verified }
 
   - nocturn: 3

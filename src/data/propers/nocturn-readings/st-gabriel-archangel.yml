@@ -5,12 +5,65 @@
 #
 # Nocturn 2: Lectio4-6 combined into one reading, the Venerable Bede's
 # exposition on Gabriel's appearance to Zachary (Luke 1:11-20).
-# Nocturn 3: Lectio7's Gospel citation (Luke 1:26-38) is a bare incipit
-# ("Et réliqua"), so only the homily is authored (not marked isGospel),
-# St. Bernard of Clairvaux's homily (Lectio7's homily + Lectio8-9
-# combined).
+# Nocturn 3: Lectio7's Gospel citation (Luke 1:26-38, "Et réliqua" in the
+# horas file) is authored in full from web/www/missa/Latin+English/
+# Sancti/03-24.txt's own [Evangelium] (the Annunciation Gospel, reused
+# verbatim for this feast); St. Bernard of Clairvaux's homily (Lectio7's
+# homily + Lectio8-9 combined).
+#
+# Update (2026-09-05): both Gospel pericopes now authored in full
+# (isGospel: true, immediately before each homily) — these are two
+# distinct, adjacent pericopes within the same Zachary/Annunciation
+# narrative, not a single bare incipit to skip. Luke 1:26-38 (nocturn 3)
+# comes straight from that Missale Evangelium above. Luke 1:11-20
+# (nocturn 2, Zachary's vision) has no continuous Missale/horas
+# transcription anywhere in the reference engine; its text is assembled
+# from genuine reference-engine fragments that are themselves verbatim
+# Vulgate/Douay-Rheims-register wording: vv. 11-17 from
+# missa/Latin+English/Sancti/06-23.txt's own Vigil-of-St.-John-Baptist
+# Evangelium (Luke 1:5-17, trimmed to its 11-17 tail), and vv. 18-20 from
+# this same file's own Ant Matutinum + Responsory5/Responsory6 (Latin
+# and English), which quote those verses directly.
 id: st-gabriel-archangel
 readings:
+  - nocturn: 2
+    isGospel: true
+    citation: { la: "Luc 1:11-20", en: "Luke 1:11-20" }
+    text:
+      la: >-
+        In illo témpore: Appáruit autem illi Angelus Dómini, stans a dextris altáris incénsi.
+        Et Zacharías turbátus est, videns, et timor írruit super eum. Ait autem ad illum
+        Angelus: Ne tímeas, Zacharía, quóniam exaudíta est deprecátio tua: et uxor tua
+        Elísabeth páriet tibi fílium, et vocábis nomen ejus Joánnem: et erit gáudium tibi et
+        exsultátio, et multi in nativitáte ejus gaudébunt: erit enim magnus coram Dómino: et
+        vinum, et síceram non bibet, et Spíritu Sancto replébitur adhuc ex útero matris suæ:
+        et multos filiórum Israël convértet ad Dóminum, Deum ipsórum: et ipse præcédet ante
+        illum in spíritu et virtúte Elíæ: ut convértat corda patrum in fílios, et incrédulos
+        ad prudéntiam justórum, paráre Dómino plebem perféctam. Et dixit Zacharías ad
+        Angelum: Unde hoc sciam? ego enim sum senex, et uxor mea procéssit in diébus suis. Et
+        respóndens Angelus, dixit ei: Ego sum Gábriel, qui asto ante Deum: et missus sum
+        loqui ad te, et hæc tibi evangelizáre. Et ecce eris tacens, et non póteris loqui usque
+        in diem quo hæc fiant, pro eo quod non credidísti verbis meis, quæ implebúntur in
+        témpore suo.
+      en: >-
+        At that time, there appeared to him an angel of the Lord, standing at the right of
+        the altar of incense. And Zachary, seeing him, was troubled, and fear fell upon him.
+        But the angel said to him, Do not be afraid, Zachary, for your petition has been
+        heard, and your wife Elizabeth shall bear you a son and you shall call his name John.
+        And you shall have joy and gladness, and many will rejoice at his birth. For he shall
+        be great before the Lord; he shall drink no wine or strong drink, and shall be filled
+        with the Holy Spirit even from his mother's womb. And he shall bring back to the Lord
+        their God many of the children of Israel, and he shall himself go before Him in the
+        spirit and power of Elias, to turn the hearts of fathers to their children and the
+        incredulous to the wisdom of the just; to prepare for the Lord a perfect people. And
+        Zachary said to the angel, How shall I know this? For I am an old man, and my wife is
+        advanced in years. And the angel answered and said to him, I am Gabriel, who stand
+        before God, and have been sent to speak to you, and to bring you this good news. And
+        behold, you shall be silent and unable to speak until the day when these things come
+        to pass, because you have not believed my words, which shall be fulfilled in their
+        proper time.
+    status: { la: verified, en: verified }
+
   - nocturn: 2
     isGospel: false
     source: "The Venerable Bede, Exposition on Luke 1:11-20"
@@ -108,6 +161,46 @@ readings:
         therefore hath many limitations. But God hath no limitations, and is everywhere.
         Thus when he sendeth his Angels from his presence, they yet do stand therein,
         for whithersoever they go on a mission, they go in him.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 1:26-38", en: "Luke 1:26-38" }
+    text:
+      la: >-
+        In illo témpore: Missus est Angelus Gábriel a Deo in civitátem Galilææ, cui nomen
+        Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, de domo David, et
+        nomen Vírginis María. Et ingréssus Angelus ad eam, dixit: Ave, grátia plena; Dóminus
+        tecum: benedícta tu in muliéribus. Quæ cum audísset, turbáta est in sermóne ejus: et
+        cogitábat, qualis esset ista salutátio. Et ait Angelus ei: Ne tímeas, María, invenísti
+        enim grátiam apud Deum: ecce, concípies in útero et páries fílium, et vocábis nomen
+        ejus Jesum. Hic erit magnus, et Fílius Altíssimi vocábitur, et dabit illi Dóminus Deus
+        sedem David, patris ejus: et regnábit in domo Jacob in ætérnum, et regni ejus non
+        erit finis. Dixit autem María ad Angelum: Quómodo fiet istud, quóniam virum non
+        cognósco? Et respóndens Angelus, dixit ei: Spíritus Sanctus supervéniet in te, et
+        virtus Altíssimi obumbrábit tibi. Ideóque et quod nascétur ex te Sanctum, vocábitur
+        Fílius Dei. Et ecce, Elísabeth, cognáta tua, et ipsa concépit fílium in senectúte sua:
+        et hic mensis sextus est illi, quæ vocátur stérilis: quia non erit impossíbile apud
+        Deum omne verbum. Dixit autem María: Ecce ancílla Dómini, fiat mihi secúndum verbum
+        tuum.
+      en: >-
+        At that time, the angel Gabriel was sent from God to a town of Galilee called
+        Nazareth, to a virgin betrothed to a man named Joseph, of the house of David, and the
+        virgin's name was Mary. And when the angel had come to her, he said, Hail, full of
+        grace, the Lord is with you. Blessed are you among women. When she had heard him she
+        was troubled at his word, and kept pondering what manner of greeting this might be.
+        And the angel said to her, Do not be afraid, Mary, for you have found grace with God.
+        Behold, you shall conceive in your womb and shall bring forth a Son; and you shall
+        call His name Jesus. He shall be great, and shall be called the Son of the Most High;
+        and the Lord God will give Him the throne of David His father, and He shall be king
+        over the house of Jacob forever; and of His kingdom there shall be no end. But Mary
+        said to the angel, How shall this happen, since I do not know man? And the angel
+        answered and said to her, The Holy Spirit shall come upon you, and the power of the
+        Most High shall overshadow you; and therefore the Holy One to be born shall be called
+        the Son of God. And behold, Elizabeth your kinswoman also has conceived a son in her
+        old age, and she who was called barren is now in her sixth month; for nothing shall
+        be impossible with God. But Mary said, Behold the handmaid of the Lord; be it done to
+        me according to your word.
     status: { la: verified, en: verified }
 
   - nocturn: 3

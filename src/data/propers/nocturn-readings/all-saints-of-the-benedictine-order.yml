@@ -14,11 +14,15 @@
 # Latin source ("exsultࢱtio") silently corrected to "exsultátio" in
 # transcription.
 # Nocturn 3: Lectio9's Gospel citation (Matt 19:27-29) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so — per
-# the pre-1955 pass's convention of not transcribing bare incipits —
-# only the homily portion is authored (not marked isGospel), combined
-# with Lectio10-12 as one continuous excerpt of St. Bernard's own
-# sermon on St. Benedict. No responsory given for either reading.
+# incipit ("Et réliqua") in this saint's own file, so the homily
+# portion (combined with Lectio10-12 as one continuous excerpt of St.
+# Bernard's own sermon on St. Benedict) was originally authored alone.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — the citation
+# resolves (via the Rule's Common of Several Confessors, `@Commune/
+# C5b`, the same Common this feast's own Nocturn 1 falls back to) to
+# horas/Latin/Commune/C5b.txt's own [Evangelium], not guessed at.
 id: all-saints-of-the-benedictine-order
 readings:
   - nocturn: 2
@@ -87,6 +91,26 @@ readings:
         citizens. Nevertheless, so far as is possible for our weakness and feeble power, we
         take this assurance, that this holy profession is a means to perfection and an aid to
         the incorruption given us by holy baptism.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 19:27-29", en: "Matt 19:27-29" }
+    text:
+      la: >-
+        In illo témpore: Dixit Petrus ad Jesum: Ecce, nos relíquimus ómnia, et secúti sumus te:
+        quid ergo erit nobis? Jesus autem dixit illis: Amen, dico vobis, quod vos, qui secúti
+        estis me, in regeneratióne, cum séderit Fílius hóminis in sede majestátis suæ, sedébitis
+        et vos super sedes duódecim, judicántes duódecim tribus Israël. Et omnis, qui relíquerit
+        domum, vel fratres, aut soróres, aut patrem, aut matrem, aut uxórem, aut fílios, aut
+        agros, propter nomen meum, céntuplum accípiet, et vitam ætérnam possidébit.
+      en: >-
+        At that time, Peter said to Jesus, "Behold, we have left all and followed You; what then
+        shall we have?" And Jesus said to them, "Amen I say to you that you who have followed Me,
+        in the regeneration when the Son of Man shall sit on the throne of His glory, shall also
+        sit on twelve thrones, judging the twelve tribes of Israel. And everyone who has left
+        house, or brothers, or sisters, or father, or mother, or wife, or children, or lands, for
+        My name's sake, shall receive a hundredfold, and shall possess life everlasting."
     status: { la: verified, en: verified }
 
   - nocturn: 3

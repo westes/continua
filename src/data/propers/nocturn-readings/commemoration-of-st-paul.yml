@@ -9,11 +9,16 @@
 # Nocturn 2: Lectio4-6 (St. Augustine's treatise On Grace and Free
 # Will) combined into one reading, one continuous excerpt.
 # Nocturn 3: Lectio7's Gospel citation (Matt 10:16-22) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so — per
-# the pre-1955 pass's convention of not transcribing bare incipits —
-# only the homily portion is authored (not marked isGospel), combined
+# incipit ("Et réliqua") with no full pericope text given, so only the
+# homily portion was originally authored (not marked isGospel), combined
 # with Lectio8-9 as one continuous excerpt of St. John Chrysostom's
-# homily. No responsory given for either reading.
+# homily.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — this feast's own
+# [Evangelium] redirects `@Sancti/06-11:Evangelium` (St. Barnabas's own
+# Mass Gospel), sourced from missa/Latin/Sancti/06-11.txt,
+# English/Sancti/06-11.txt, not guessed at.
 id: commemoration-of-st-paul
 readings:
   - nocturn: 2
@@ -82,6 +87,33 @@ readings:
         to get wealth. And, again, what is the good of a fight except it end in victory? And who
         is he that giveth victory save He of Whom this very same Paul saith: Thanks be to God,
         Which giveth us the victory, through our Lord Jesus Christ!
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 10:16-22", en: "Matt 10:16-22" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Ecce, ego mitto vos sicut oves in médio
+        lupórum. Estóte ergo prudéntes sicut serpéntes, et símplices sicut colúmbæ. Cavéte autem
+        ab homínibus. Tradent enim vos in concíliis, et in synagógis suis flagellábunt vos: et
+        ad præsides et ad reges ducémini propter me in testimónium illis et géntibus. Cum autem
+        tradent vos, nolíte cogitáre, quómodo aut quid loquámini: dábitur enim vobis in illa hora,
+        quid loquámini. Non enim vos estis, qui loquímini, sed Spíritus Patris vestri, qui
+        lóquitur in vobis. Tradet autem frater fratrem in mortem, et pater fílium: et insúrgent
+        fílii in paréntes, et morte eos affícient: et éritis ódio ómnibus propter nomen meum: qui
+        autem perseveráverit usque in finem, hic salvus erit.
+      en: >-
+        At that time, Jesus said to His disciples, "Behold, I am sending you forth like sheep in
+        the midst of wolves. Be therefore wise as serpents, and guileless as doves. But beware of
+        men; for they will deliver you up to councils, and scourge you in their synagogues, and
+        you will be brought before governors and kings for My sake, for a witness to them and to
+        the Gentiles. But when they deliver you up, do not be anxious how or what you are to
+        speak; for what you are to speak will be given you in that hour. For it is not you who
+        are speaking, but the Spirit of your Father Who speaks through you. And brother will hand
+        over brother to death, and the father his child; children will rise up against parents
+        and put them to death. And you will be hated by all for My name's sake; but he who has
+        persevered to the end will be saved."
     status: { la: verified, en: verified }
 
   - nocturn: 3

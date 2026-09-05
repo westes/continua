@@ -8,6 +8,16 @@
 # Lectio4-6 (St. Ambrose's sermon on virgins, discussing Agnes) combined
 # into one reading, one continuous excerpt. No responsory given in the
 # source for these lessons.
+#
+# Checked 2026-09-05 for a Gospel pairing: this reading (Ambrose's On
+# Virgins Bk. 1, Lectio4-6) is Nocturn 2 -- a panegyric on Agnes's
+# virginity and martyrdom generally, not an exegesis of any Gospel
+# pericope, so no isGospel pairing applies. 01-21.txt's own [Rule]
+# ("vide C6-1") has no Lectio7-9 of its own at all (Nocturn 3 inherited
+# wholesale, bare, from the Common of Virgins), the same
+# already-accepted "bare cross-reference, not transcribed" convention
+# used elsewhere in this store (e.g. ss-cyril-and-methodius.yml) -- not
+# a new finding.
 id: st-agnes
 readings:
   - nocturn: 2

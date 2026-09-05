@@ -5,10 +5,18 @@
 # (this feast's own [Rule] reuses Christmas's own backbone, "ex
 # Sancti/12-25" — this is that same sermon), combined into one reading
 # per this project's own condensed-Matins convention (see nearby
-# immaculate-heart-of-mary.yml). Nocturn 3: the Gospel citation ends
-# "Et réliqua"/"And so on" with no full pericope given — per the
-# bare-incipit convention, only the homily (Lectio7-9, St. Ambrose) is
-# authored, isGospel: false, no citation field.
+# immaculate-heart-of-mary.yml). Nocturn 3: Lectio7-9, St. Ambrose's
+# homily on the Circumcision itself.
+#
+# Update (2026-09-05): the Gospel pericope itself (Luke 2:21, this
+# feast's own Gospel — the whole verse; the reference's own "Et réliqua"
+# bare incipit is not a truncation here, the Missale's own full
+# [Evangelium] text for this same pericope is exactly this one sentence)
+# is now authored too (isGospel: true, immediately before the homily) —
+# sourced from missa/Latin/Tempora/Nat2-0.txt (the Circumcision Mass's
+# own [Evangelium] redirects here) and its English parallel, not guessed
+# at. The same text is reused verbatim by holy-name-of-jesus.yml (Jan
+# 2), whose own Nocturn 3 Gospel is this identical pericope.
 id: circumcision
 readings:
   - nocturn: 2
@@ -89,6 +97,18 @@ readings:
         for he is inferior to the Father as touching his Manhood, and yet
         equal to the Father as touching his Godhead, and yet, though he be
         God and Man, he is not two, but One Christ.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 2:21", en: "Luke 2:21" }
+    text:
+      la: >-
+        In illo témpore: Postquam consummáti sunt dies octo, ut circumciderétur Puer: vocátum est
+        nomen ejus Jesus, quod vocátum est ab Angelo, priúsquam in útero conciperétur.
+      en: >-
+        At that time, when eight days were fulfilled for the circumcision of the Child, His name
+        was called Jesus, the name given Him by the angel before He was conceived in the womb.
     status: { la: verified, en: verified }
 
   - nocturn: 3

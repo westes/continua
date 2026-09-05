@@ -6,9 +6,11 @@
 # left to the bible-plan store, same convention as every other nocturn-
 # readings file. Nocturn 2 (Lectio4-6): one continuous sermon of
 # St. Bernardine of Siena on St. Joseph. Nocturn 3 (Lectio7-9): Lectio7's
-# own Gospel pericope (Luke 3:21-23) is a bare "Et réliqua" incipit,
-# dropped per the usual rule; St. Augustine's homily on the two
-# genealogies (Matthew's and Luke's) follows, isGospel: false.
+# own Gospel pericope (Luke 3:21-23) was a bare "Et réliqua" incipit in
+# the horas file; the full pericope is this day's own Mass Gospel,
+# sourced directly from web/www/missa/Latin+English/Tempora/Pasc2-3.txt's
+# [Evangelium] and added 2026-09-05 (isGospel: true) immediately before
+# St. Augustine's homily on the two genealogies (Matthew's and Luke's).
 id: patronage-of-st-joseph
 readings:
   - nocturn: 2
@@ -83,6 +85,27 @@ readings:
         Virgin, thy spouse, who is the Mother of Him Who liveth and reigneth with the Father and
         the Holy Ghost, world without end. Amen.
     status: { la: verified, en: verified }
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 3:21-23", en: "Luke 3:21-23" }
+    text:
+      la: >-
+        In illo témpore: Factum est autem, cum baptizarétur omnis
+        pópulus, et Jesu baptizáto et oránte, apértum est cœlum: et
+        descéndit Spíritus Sanctus corporáli spécie sicut colúmba in
+        ipsum: et vox de cœlo facta est: Tu es Fílius meus diléctus, in
+        te complácui mihi. Et ipse Jesus erat incípiens quasi annórum
+        trigínta, ut putabátur, fílius Joseph.
+      en: >-
+        At that time: it came to pass, when all the people were
+        baptized, that Jesus also being baptized and praying, heaven
+        was opened; and the Holy Ghost descended in a bodily shape, as
+        a dove, upon him; and a voice came from heaven: Thou art my
+        beloved Son; in thee I am well pleased. And Jesus himself was
+        beginning about the age of thirty years, being -- as it was
+        supposed -- the son of Joseph.
+    status: { la: verified, en: verified }
+
   - nocturn: 3
     isGospel: false
     text:

@@ -6,12 +6,17 @@
 # Lectio4-6 is this saint's own proper vita, one continuous account, no
 # internal break, combined into a single reading.
 #
-# Nocturn 3's Lectio7 gives only the Gospel incipit ("Et réliqua", Matt
-# 24:3-13) with no full pericope text, so the bare Gospel reading isn't
-# authored here (deferred, pending the bulk Vulgate/Douay-Rheims
-# import). Lectio7's own homily portion + Lectio8-9 is one continuous
-# excerpt from St. Hilary's commentary, combined into a single reading.
-# No responsory given for either reading in the source.
+# Lectio7's own homily portion + Lectio8-9 is one continuous excerpt
+# from St. Hilary's commentary, combined into a single reading. No
+# responsory given for either reading in the source.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope, previously left
+# unauthored because Lectio7 gives only the incipit ("Et réliqua"), is
+# now authored too (isGospel: true, immediately before the homily) --
+# the citation (Matt 24:3-13) comes from that same Lectio7 line, and the
+# full text is sourced from missa/Latin/Sancti/01-19.txt's own
+# [Evangelium] (the same pericope, reused there for St. Canute), not
+# guessed at.
 id: st-januarius
 readings:
   - nocturn: 2
@@ -81,6 +86,38 @@ readings:
         known, and is the plain fact, seen even unto this day, that when the blood of Januarius, kept
         dried up in a small glass phial, is put in sight of the head of the same martyr, it is used
         to melt and bubble in a very strange way, as though it had but freshly been shed.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 24:3-13", en: "Matthew 24:3-13" }
+    text:
+      la: >-
+        In illo témpore: Sedénte Jesu super montem Olivéti, accessérunt ad eum discípuli secréto,
+        dicéntes: Dic nobis, quando hæc erunt? et quod signum advéntus tui et consummatiónis
+        sǽculi? Et respóndens Jesus, dixit eis: Vidéte, ne quis vos sedúcat. Multi enim vénient in
+        nómine meo, dicéntes: Ego sum Christus: et multos sedúcent. Auditúri enim estis prælia et
+        opiniónes prœliórum. Vidéte, ne turbémini. Opórtet enim hæc fíeri, sed nondum est finis.
+        Consúrget enim gens in gentem, et regnum in regnum, et erunt pestiléntiæ et fames et
+        terræmótus per loca. Hæc autem ómnia inítia sunt dolórum. Tunc tradent vos in
+        tribulatiónem et occídent vos: et éritis odio ómnibus géntibus propter nomen meum. Et tunc
+        scandalizabúntur multi, et ínvicem tradent, et odio habébunt ínvicem. Et multi
+        pseudoprophétæ surgent, et sedúcent multos. Et quóniam abundávit iníquitas, refrigéscet
+        cáritas multórum. Qui autem perseveráverit usque in finem, hic salvus erit.
+      en: >-
+        At that time, as Jesus was sitting on the Mount of Olives, the disciples came to Him
+        privately, saying, Tell us, when are these things to happen, and what will be the sign of
+        Your coming and of the end of the world? And in answer Jesus said to them, Take care that
+        no one leads you astray. For many will come in My name, saying, "I am the Christ," and
+        they will lead many astray. For you shall hear of wars and rumors of wars. Take care that
+        you do not be alarmed, for these things must come to pass, but the end is not yet. For
+        nation will rise against nation, and kingdom against kingdom; and there will be
+        pestilences and famines and earthquakes in various places. But all these things are the
+        beginnings of sorrows. Then they will deliver you up to tribulation, and will put you to
+        death; and you will be hated by all nations for My name's sake. And then many will fall
+        away, and will betray one another, and will hate one another. And many false prophets will
+        arise, and will lead many astray. And because iniquity will abound, the charity of the
+        many will grow cold. But whoever perseveres to the end, he shall be saved.
     status: { la: verified, en: verified }
 
   - nocturn: 3

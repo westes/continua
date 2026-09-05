@@ -2,11 +2,13 @@
 # (Oct 17). Sourced directly from
 # web/www/horas/Latin/Sancti/10-17.txt, English/Sancti/10-17.txt.
 # Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
-# Nocturn 3: her own Gospel citation ends "Et réliqua"/"And so on, and
-# that which followeth" with no full pericope given -- per the
-# bare-incipit convention, only the homily (Lectio7-9, three short
-# excerpts from sermons of St. Francis de Sales) is authored, isGospel:
-# false, no citation field.
+# Nocturn 3: Lectio7's Gospel citation (Matt 11:25-30) is a bare
+# "Et réliqua" incipit in the horas file, but the full pericope is
+# this same day's own Mass Gospel -- sourced directly from
+# web/www/missa/Latin+English/Sancti/10-17.txt's [Evangelium] and
+# added 2026-09-05 (isGospel: true) immediately before the homily
+# (Lectio7-9, three short excerpts from sermons of St. Francis de
+# Sales).
 id: st-margaret-mary-alacoque
 readings:
   - nocturn: 2
@@ -102,6 +104,35 @@ readings:
         year of restored salvation 1690. She became famous for
         miracles. Benedict XV added her to the list of the saints;
         Pius XI extended her office to the universal Church.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 11:25-30", en: "Matt 11:25-30" }
+    text:
+      la: >-
+        In illo témpore: Respóndens Jesus, dixit: Confíteor tibi, Pater,
+        Dómine cæli et terræ, quia abscondísti hæc a sapiéntibus et
+        prudéntibus, et revelásti ea párvulis. Ita, Pater: quóniam sic
+        fuit plácitum ante te. Omnia mihi trádita sunt a Patre meo. Et
+        nemo novit Fílium nisi Pater: neque Patrem quis novit nisi
+        Fílius, et cui volúerit Fílius reveláre. Veníte ad me, omnes,
+        qui laborátis et oneráti estis, et ego refíciam vos. Tóllite
+        jugum meum super vos, et discite a me, quia mitis sum et
+        húmilis corde: et inveniétis réquiem animábus vestris. Jugum
+        enim meum suave est et onus meum leve.
+      en: >-
+        At that time, Jesus spoke and said, I praise You, Father, Lord
+        of heaven and earth, that You hid these things from the wise
+        and prudent, and revealed them to little ones. Yes, Father, for
+        such was Your good pleasure. All things have been delivered to
+        Me by My Father; and no one knows the Son except the Father;
+        nor does anyone know the Father except the Son, and him to whom
+        the Son chooses to reveal Him. Come to Me, all you who labor
+        and are burdened, and I will give you rest. Take My yoke upon
+        you, and learn from Me, for I am meek and humble of heart; and
+        you will find rest for your souls. For My yoke is easy, and My
+        burden light.
     status: { la: verified, en: verified }
 
   - nocturn: 3

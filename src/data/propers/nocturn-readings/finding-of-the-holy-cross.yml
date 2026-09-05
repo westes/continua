@@ -7,13 +7,20 @@
 # Helena's finding of the True Cross, one continuous narrative, no
 # genuine source break.
 # Nocturn 3: Lectio7's Gospel citation (John 3:1-15) is a bare incipit
-# ("Et réliqua") with no full pericope text given, so — per the
-# established convention of not transcribing bare incipits — only the
-# homily portion is authored (not marked isGospel), St. Augustine's
+# ("Et réliqua") with no full pericope text given, so only the homily
+# portion was originally authored (not marked isGospel), St. Augustine's
 # homily on Nicodemus (Lectio7's homily + Lectio8 combined). The source
 # has no Lectio9 at all for this feast (only 8 lessons total, an
 # unusual but genuine structural feature of this particular office, not
 # an omission here).
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — sourced from
+# missa/Latin/Sancti/05-03.txt's own [Evangelium], English/Sancti/
+# 05-03.txt, not guessed at. Identical to exaltation-of-the-holy-cross.yml's
+# own Nocturn 3 Gospel (that feast's `ex Sancti/05-03` Rule reuses this
+# feast's content wholesale) — the same pericope text is duplicated in
+# both files, per this store's established pattern for that pairing.
 id: finding-of-the-holy-cross
 readings:
   - nocturn: 2
@@ -73,6 +80,51 @@ readings:
         Body of Jesus Christ had been pierced. Constantine established a law abolishing the
         punishment of crucifixion for all time coming and thenceforth what had hitherto been
         a hissing and a curse among men, began to be esteemed worshipful and glorious.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joannes 3:1-15", en: "John 3:1-15" }
+    text:
+      la: >-
+        In illo témpore: Erat homo ex pharisǽis, Nicodémus nómine, princeps Judæórum. Hic venit
+        ad Jesum nocte et dixit ei: Rabbi, scimus, quia a Deo venísti magíster; nemo enim potest
+        hæc signa fácere, quæ tu facis, nisi fúerit Deus cum eo. Respóndit Jesus et dixit ei:
+        Amen, amen, dico tibi, nisi quis renátus fúerit dénuo, non potest vidére regnum Dei.
+        Dicit ad eum Nicodémus: Quómodo potest homo nasci, cum sit senex? Numquid potest in
+        ventrem matris suæ iteráto introíre et renásci? Respóndit Jesus: Amen, amen, dico tibi,
+        nisi quis renátus fúerit ex aqua et Spíritu Sancto, non potest introíre in regnum Dei.
+        Quod natum est ex carne, caro est: et quod natum est ex spíritu, spíritus est. Non
+        míreris, quia dixi tibi: opórtet vos nasci dénuo. Spíritus, ubi vult, spirat, et vocem
+        ejus audis, sed nescis, unde véniat aut quo vadat: sic est omnis, qui natus est ex
+        spíritu. Respóndit Nicodémus et dixit ei: Quómodo possunt hæc fíeri? Respóndit Jesus et
+        dixit ei: Tu es magíster in Israël, et hæc ignóras? Amen, amen, dico tibi, quia, quod
+        scimus, lóquimur, et quod vídimus, testámur, et testimónium nostrum non accípitis. Si
+        terréna dixi vobis et non créditis: quómodo, si díxero vobis cœléstia, credétis? Et nemo
+        ascéndit in cœlum, nisi qui descéndit de cœlo, Fílius hóminis, qui est in cœlo. Et sicut
+        Móyses exaltávit serpéntem in desérto: ita exaltári opórtet Fílium hóminis, ut omnis,
+        qui credit in ipsum, non péreat, sed hábeat vitam ætérnam.
+      en: >-
+        At that time, there was a man of the Pharisees, named Nicodemus, a ruler of the Jews.
+        This man came to Jesus by night, and said to him, "Rabbi, we know that thou art come a
+        teacher from God; for no man can do these signs which thou dost, unless God be with
+        him." Jesus answered, and said to him, "Amen, amen I say to thee, unless a man be born
+        again, he cannot see the kingdom of God." Nicodemus saith to him, "How can a man be born
+        when he is old? can he enter a second time into his mother's womb, and be born again?"
+        Jesus answered, "Amen, amen I say to thee, unless a man be born again of water and the
+        Holy Ghost, he cannot enter into the kingdom of God. That which is born of the flesh, is
+        flesh; and that which is born of the Spirit, is spirit. Wonder not, that I said to thee,
+        you must be born again. The Spirit breatheth where he will; and thou hearest his voice,
+        but thou knowest not whence he cometh, and whither he goeth: so is every one that is
+        born of the Spirit." Nicodemus answered, and said to him, "How can these things be
+        done?" Jesus answered, and said to him, "Art thou a master in Israel, and knowest not
+        these things? Amen, amen, I say to thee, that we speak what we know, and we testify
+        what we have seen, and you receive not our testimony. If I have spoken to you earthly
+        things, and you believe not; how will you believe, if I shall speak to you heavenly
+        things? And no man hath ascended into heaven, but he that descended from heaven, the
+        Son of man who is in heaven. And as Moses lifted up the serpent in the desert, so must
+        the Son of man be lifted up: that whosoever believeth in him, may not perish, but may
+        have life everlasting."
     status: { la: verified, en: verified }
 
   - nocturn: 3

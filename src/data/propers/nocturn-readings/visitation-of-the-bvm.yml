@@ -3,10 +3,16 @@
 # web/www/horas/Latin/Sancti/07-02.txt, English/Sancti/07-02.txt.
 # Nocturn 2: Lectio4-6, St. John Chrysostom's homily on St. John the
 # Baptist leaping in Elizabeth's womb, combined into one reading.
-# Nocturn 3: the Gospel citation ends "Et réliqua"/"And so on" with no
-# full pericope given -- per the bare-incipit convention, only the
-# homily (Lectio7-9, St. Ambrose) is authored, isGospel: false, no
-# citation field.
+# Nocturn 3: the Gospel citation ended "Et réliqua"/"And so on" with no
+# full pericope given; the full pericope is now authored too (isGospel:
+# true, immediately before the homily). The source's own "on Luke 1"
+# note undersold the range: this day's own Missale [Evangelium]
+# redirect (`@Tempora/Adv3-5`) resolves to the specific pericope Luke
+# 1:39-47 (Mary's visit to Elizabeth, through the start of the
+# Magnificat), not the whole of Luke 1 — sourced from
+# `web/www/missa/Latin/Tempora/Adv3-5.txt`,
+# English/Tempora/Adv3-5.txt (2026-09-05 update). The homily (Lectio7-9,
+# St. Ambrose) remains isGospel: false.
 id: visitation-of-the-bvm
 readings:
   - nocturn: 2
@@ -93,8 +99,34 @@ readings:
     status: { la: verified, en: verified }
 
   - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 1:39-47", en: "Luke 1:39-47" }
+    text:
+      la: >-
+        In illo témpore: Exsúrgens María ábiit in montána cum festinatióne in civitátem Juda: et
+        intrávit in domum Zacharíæ et salutávit Elísabeth. Et factum est, ut audívit
+        salutatiónem Maríæ Elísabeth, exsultávit infans in útero ejus: et repléta est Spíritu
+        Sancto Elísabeth, et exclamávit voce magna et dixit: Benedícta tu inter mulíeres, et
+        benedíctus fructus ventris tui. Et unde hoc mihi, ut véniat Mater Dómini mei ad me? Ecce
+        enim, ut facta est vox salutatiónis tuæ in áuribus meis, exsultávit in gáudio infans in
+        útero meo. Et beáta, quæ credidísti, quóniam perficiéntur ea, quæ dicta sunt tibi a
+        Dómino. Et ait María: Magníficat ánima mea Dóminum: et exsultávit spíritus meus in Deo,
+        salutári meo.
+      en: >-
+        At that time, Mary arose and went with haste into the hill country, to a town of Juda.
+        And she entered the house of Zachary and saluted Elizabeth. And it came to pass, when
+        Elizabeth heard the greeting of Mary, that the babe in her womb leapt. And Elizabeth was
+        filled with the Holy Spirit, and cried out with a loud voice, saying, "Blessed are you
+        among women, and blessed is the fruit of your womb! And how have I deserved that the
+        Mother of my Lord should come to me? For behold, the moment that the sound of your
+        greeting came to my ears, the babe in my womb leapt for joy. And blessed is she who has
+        believed, because the things promised her by the Lord shall be accomplished." And Mary
+        said, "My soul magnifies the Lord, and my spirit rejoices in God my Saviour."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
     isGospel: false
-    source: "St. Ambrose, Commentary on Luke, Bk. II (on Luke 1)"
+    source: "St. Ambrose, Commentary on Luke, Bk. II (on Luke 1:39-47)"
     text:
       la: >-
         Contuéndum est, quia supérior venit ad inferiórem, ut inférior adjuvétur:

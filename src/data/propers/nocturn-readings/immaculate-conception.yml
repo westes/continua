@@ -10,12 +10,17 @@
 # here to the Conception, one continuous piece) and Lectio6 (the Acts
 # of Pope Pius IX defining the dogma in 1854) — a real source and
 # topic change, not a split-for-length case.
-# Nocturn 3: Lectio7's Gospel citation (Luke 1:26-28) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so — per
-# the established convention of not transcribing bare incipits — only
-# the homily portion is authored (not marked isGospel), St. Germain of
-# Constantinople's homily on the Presentation (Lectio7's homily +
-# Lectio8-9 combined, one continuous piece).
+# Nocturn 3: Lectio7's Gospel citation is Luke 1:26-28 (the
+# Annunciation's opening verses); St. Germain of Constantinople's
+# homily on the Presentation (Lectio7's homily + Lectio8-9 combined,
+# one continuous piece) follows it.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — this exact text
+# (Luke 1:26-28) is already authored verbatim in
+# apparition-of-the-immaculate-bvm.yml (that Octave day's own Nocturn 2
+# Gospel, wholesale-inherited from this same Dec 8 feast per its own
+# header), so reused from there rather than re-derived.
 id: immaculate-conception
 readings:
   - nocturn: 2
@@ -127,6 +132,22 @@ readings:
         first instant of her Conception preserved, by a special privilege granted unto her by
         God, from any stain of original sin, is a doctrine taught and revealed by God, and
         therefore is to be held by all faithful Christians firmly and constantly.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 1:26-28", en: "Luke 1:26-28" }
+    text:
+      la: >-
+        In illo témpore: Missus est Angelus Gábriël a Deo in civitátem Galilææ, cui nomen
+        Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, de domo David, et nomen
+        Vírginis María. Et ingréssus Angelus ad eam, dixit: Ave, grátia plena; Dóminus tecum:
+        benedícta tu in muliéribus.
+      en: >-
+        At that time, the angel Gabriel was sent from God to a town of Galilee called Nazareth,
+        to a virgin betrothed to a man named Joseph, of the house of David, and the virgin's name
+        was Mary. And when the angel came to her, he said, "Hail, full of grace, the Lord is with
+        you. Blessed are you among women."
     status: { la: verified, en: verified }
 
   - nocturn: 3

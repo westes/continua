@@ -9,12 +9,14 @@
 #
 # Nocturn 2: Lectio4-6 combined into one reading, one continuous vita
 # (the famous cloak-sharing and death narratives).
-# Nocturn 3: Lectio7's Gospel citation (Luke 11:33-36) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so — per
-# the pre-1955 pass's convention of not transcribing bare incipits —
-# only the homily portion is authored (not marked isGospel), a single
-# excerpt of St. Ambrose's commentary. No responsory given for either
-# reading.
+# Nocturn 3: Lectio7's Gospel citation (Luke 11:33-36) was a bare
+# incipit ("Et réliqua") with no full pericope text given; the full
+# pericope is now authored too (isGospel: true, immediately before the
+# homily) — sourced from this same day's own Missale [Evangelium]
+# (`web/www/missa/Latin/Sancti/11-11.txt`, English/Sancti/11-11.txt),
+# not guessed at (2026-09-05 update). The homily portion remains a
+# single excerpt of St. Ambrose's commentary. No responsory given for
+# either reading.
 id: st-martin-of-tours
 readings:
   - nocturn: 2
@@ -80,6 +82,27 @@ readings:
         me. With these words on his lips, he gave up his soul to God, being aged eighty years.
         He was received by a company of Angels, who were heard praising God by many persons,
         especially by holy Severinus, Bishop of Cologne.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 11:33-36", en: "Luke 11:33-36" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Nemo lucérnam accéndit, et in abscóndito
+        ponit, neque sub módio: sed supra candelábrum, ut, qui ingrediúntur, lumen vídeant. Lucérna
+        córporis tui est óculus tuus. Si óculus tuus fúerit simplex, totum corpus tuum lúcidum
+        erit: si autem nequam fúerit, étiam corpus tuum tenebrósum erit. Vide ergo, ne lumen, quod
+        in te est, ténebræ sint. Si ergo corpus tuum totum lúcidum fúerit, non habens áliquam
+        partem tenebrárum, erit lúcidum totum, et sicut lucérna fulgóris illuminábit te.
+      en: >-
+        At that time, Jesus said to His disciples, "No one lights a lamp and puts it in a cellar
+        or even under the measure, but upon the lamp-stand, that they who enter in may see the
+        light. The lamp of your body is your eye. If your eye be sound, your whole body will be
+        full of light. But if it be evil, your body also will be full of darkness. Take care,
+        therefore, that the light that is in you is not darkness. If, then, your whole body is
+        full of light, having no part in darkness, it will all be illumined, as when a bright
+        lamp illumines you."
     status: { la: verified, en: verified }
 
   - nocturn: 3

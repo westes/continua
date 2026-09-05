@@ -1,10 +1,16 @@
 # Matins Nocturn 2-3 readings for St. Pius X, Pope and Confessor
 # (Sep 3). Sourced directly from web/www/horas/Latin/Sancti/09-03.txt,
 # English/Sancti/09-03.txt. Nocturn 2: Lectio4-6 combined into one
-# reading, one continuous vita. Nocturn 3: the Gospel citation ends
-# "Et réliqua"/"And so on" with no full pericope given -- per the
-# bare-incipit convention, only the homily (Lectio7-9, St. Augustine of
-# Hippo) is authored, isGospel: false, no citation field.
+# reading, one continuous vita.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope, previously left
+# unauthored because Lectio7 gives only the incipit ("Et réliqua"), is
+# now authored too (isGospel: true, immediately before the homily) --
+# fittingly, since St. Augustine's homily (Tractatus 123 on John, "in
+# medio") is itself a commentary on Christ's threefold charge to Peter
+# to feed His sheep, the citation is John 21:15-17, sourced from
+# missa/Latin/Sancti/09-03.txt's own [Evangelium] (the Mass Gospel and
+# the Matins Nocturn 3 Gospel are the same pericope), not guessed at.
 id: st-pius-x
 readings:
   - nocturn: 2
@@ -131,6 +137,27 @@ readings:
         throughout all the world for the fame of his holiness and miracles,
         Pope Pius XII, with the approbation of the whole world, numbered
         him among the Saints.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joannes 21:15-17", en: "John 21:15-17" }
+    text:
+      la: >-
+        In illo témpore, dicit Jesus Simóni Petro: Simon Joánnis, díligis me plus his? Dicit ei:
+        Etiam Dómine, tu scis quia amo te. Dicit ei: Pasce agnos meos. Dicit ei íterum: Simon
+        Joánnis, díligis me? Ait illi: Etiam Dómine, tu scis quia amo te. Dicit ei: Pasce agnos
+        meos. Dicit ei tértio: Simon Joánnis, amas me? Contristátus est Petrus, quia dixit ei
+        tértio: Amas me? et dixit ei: Dómine, tu ómnia nosti, tu scis quia amo te. Dixit ei: Pasce
+        oves meas.
+      en: >-
+        At that time, Jesus said to Simon Peter, Simon, son of John, do you love Me more than
+        these do? He said to Him, Yes, Lord, You know that I love You. He said to him, Feed My
+        lambs. He said to him a second time, Simon, son of John, do you love Me? He said to Him,
+        Yes, Lord, You know that I love You. He said to him, Feed My lambs. And a third time He
+        said to him, Simon, son of John, do you love Me? Peter was grieved because He said to him
+        for the third time, Do you love Me? And he said to Him, Lord, You know all things, You
+        know that I love You. He said to him, Feed My sheep.
     status: { la: verified, en: verified }
 
   - nocturn: 3

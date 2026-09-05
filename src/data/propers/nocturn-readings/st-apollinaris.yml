@@ -10,9 +10,15 @@
 # Nocturn 3: Lectio7's Gospel citation (Luke 22:24-30) is a bare
 # incipit ("Et réliqua") with no full pericope text given, so — per
 # the pre-1955 pass's convention of not transcribing bare incipits —
-# only the homily portion is authored (not marked isGospel), combined
-# with Lectio8-9 as one continuous excerpt of St. Ambrose's commentary.
-# No responsory given for either reading.
+# only the homily portion was originally authored (not marked
+# isGospel), combined with Lectio8-9 as one continuous excerpt of St.
+# Ambrose's commentary. No responsory given for either reading.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Ambrose's homily) — sourced from
+# the day's own Missale [Evangelium] in
+# web/www/missa/Latin/Sancti/07-23.txt (full text given there, not a
+# redirect).
 id: st-apollinaris
 readings:
   - nocturn: 2
@@ -78,6 +84,31 @@ readings:
         left him. Some Christians took him up, but on the seventh day, still exhorting them to
         stand firm in the Faith, he departed this life with the glorious splendour of martyrdom.
         His body was buried hard by the wall of the city.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 22:24-30", en: "Luke 22:24-30" }
+    text:
+      la: >-
+        In illo témpore: Facta est conténtio inter discípulos, quis eórum viderétur esse major.
+        Dixit autem eis Jesus: Reges géntium dominántur eórum; et qui potestátem habent super
+        eos, benéfici vocántur. Vos autem non sic: sed qui major est in vobis, fiat sicut minor:
+        et qui præcéssor est, sicut ministrátor. Nam quis major est, qui recúmbit, an qui
+        mínistrat? nonne qui recúmbit? Ego autem in médio vestrum sum, sicut qui mínistrat. Vos
+        autem estis, qui permansístis mecum in tentatiónibus meis: et ego dispóno vobis, sicut
+        dispósuit mihi Pater meus regnum, ut edátis et bibátis super mensam meam in regno meo: et
+        sedeátis super thronos, judicántes duódecim tribus Israël.
+      en: >-
+        At that time, there arose a dispute among the disciples, which of them was reputed to be
+        the greatest. But Jesus said to them, "The kings of the Gentiles lord it over them, and
+        they who exercise authority over them are called Benefactors. But not so with you. On
+        the contrary, let him who is greatest among you become as the youngest, and him who is
+        the chief as the servant. For which is the greater, he who reclines at table, or he who
+        serves? Is it not he who reclines? But I am in your midst as he who serves. But you are
+        they who have continued with Me in My trials. And I appoint to you a kingdom, even as My
+        Father has appointed to Me, that you may eat and drink at My table in My kingdom; and you
+        shall sit upon thrones, judging the twelve tribes of Israel."
     status: { la: verified, en: verified }
 
   - nocturn: 3

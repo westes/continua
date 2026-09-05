@@ -4,11 +4,19 @@
 #
 # Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
 # Nocturn 3: Lectio7's Gospel citation (Matt 10:23-28) is a bare
-# incipit ("Et réliqua"), so only the homily is authored (not marked
-# isGospel) — just Lectio7's own homily portion (a complete, continuous
-# excerpt from St. Athanasius). The source's own Lectio8-9 continue via
-# a cross-reference to St. Athanasius's own feast (`@Sancti/05-02`),
-# not transcribed here — see this file's own calendar-record comment.
+# incipit ("Et réliqua"), so only the homily was originally authored
+# (not marked isGospel) — just Lectio7's own homily portion (a
+# complete, continuous excerpt from St. Athanasius). The source's own
+# Lectio8-9 continue via a cross-reference to St. Athanasius's own feast
+# (`@Sancti/05-02`), not transcribed here — see this file's own
+# calendar-record comment.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Athanasius's homily) — sourced
+# from this day's own Missale [Evangelium] in
+# web/www/missa/Latin/Sancti/03-18.txt (full text given there, not a
+# redirect; same citation and text as st-athanasius.yml's own Gospel,
+# authored independently here).
 id: st-cyril-of-jerusalem
 readings:
   - nocturn: 2
@@ -109,6 +117,33 @@ readings:
         Arian heresy. After his return to Jerusalem he died a holy death in the 69th year
         of his age and the 35th of his episcopate. The Supreme Pontiff Leo XIII. commanded
         that his office and Mass should be celebrated throughout the universal Church.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 10:23-28", en: "Matt 10:23-28" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Cum persequéntur vos in civitáte ista,
+        fúgite in áliam. Amen, dico vobis, non consummábitis civitátes Israël, donec véniat
+        Fílius hóminis. Non est discípulus super magístrum nec servus super Dominum suum.
+        Súfficit discípulo, ut sit sicut magíster ejus: et servo, sicut dóminus ejus. Si
+        patremfamílias Beélzebub vocavérunt; quanto magis domésticos ejus? Ne ergo timuéritis
+        eos. Nihil enim est opértum, quod non revelábitur: et occúltum, quod non sciétur. Quod
+        dico vobis in ténebris, dícite in lúmine: et quod in aure audítis, prædicáte super
+        tecta. Et nolíte timére eos, qui occídunt corpus, ánimam autem non possunt occídere: sed
+        pótius timéte eum, qui potest et ánimam et corpus pérdere in gehénnam.
+      en: >-
+        At that time, Jesus said to His disciples, "When they persecute you in one town, flee to
+        another. Amen I say to you, you will not have gone through the towns of Israel before
+        the Son of Man comes. No disciple is above his teacher, nor is the servant above his
+        master. It is enough for the disciple to be like his teacher, and for the servant to be
+        like his master. If they have called the master of the house Beelzebub, how much more
+        those of his household! Therefore do not be afraid of them. For there is nothing
+        concealed that will not be disclosed, and nothing hidden that will not be made known.
+        What I tell you in darkness, speak it in the light; and what you hear whispered, preach
+        it on the housetops. And do not be afraid of those who kill the body but cannot kill the
+        soul. But rather be afraid of Him Who is able to destroy both soul and body in hell."
     status: { la: verified, en: verified }
 
   - nocturn: 3

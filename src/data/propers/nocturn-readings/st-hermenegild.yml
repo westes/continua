@@ -4,6 +4,14 @@
 # III, ch. 31). Lectio4-6 combined into one reading, one continuous
 # account. Nocturn 3 (Lectio7-9) is a direct `@Commune/C2:LectioN`
 # cross-reference to the Common of a Martyr, not transcribed here.
+#
+# Verified 2026-09-05 (Gospel-pairing sweep): confirmed via
+# horas/Latin/Sancti/04-13.txt -- Lectio7-9 there are literally
+# `@Commune/C2:Lectio7/8/9` (Gregory's Dialogues excerpt is Nocturn 2
+# only, no proper Nocturn 3 homily of Hermenegild's own). Common of a
+# Martyr's own Nocturn 3 content is generic, already handled by this
+# store's per-Common-category pool -- no saint-specific Gospel to pair
+# here.
 id: st-hermenegild
 readings:
   - nocturn: 2

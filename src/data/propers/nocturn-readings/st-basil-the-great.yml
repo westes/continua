@@ -11,9 +11,15 @@
 # Nocturn 3: Lectio7's Gospel citation (Luke 14:26-35) quotes only the
 # opening sentence before "Et réliqua", not the full pericope, so —
 # per the pre-1955 pass's convention of not transcribing bare incipits
-# — only the homily portion is authored (not marked isGospel),
-# combined with Lectio8-9 as one continuous excerpt of St. Basil's own
-# Rule. No responsory given for either reading.
+# — only the homily portion was originally authored (not marked
+# isGospel), combined with Lectio8-9 as one continuous excerpt of St.
+# Basil's own Rule. No responsory given for either reading.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Basil's own homily) — sourced
+# from the day's own Missale [Evangelium] in
+# web/www/missa/Latin/Sancti/06-14.txt (full text given there, not a
+# redirect).
 id: st-basil-the-great
 readings:
   - nocturn: 2
@@ -85,6 +91,41 @@ readings:
         and edifying explanations of the books of the Holy Scripture. He died upon the 1st day of
         January, at which time so essentially spiritual was his life, that his body showed
         nothing but skin and bones.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 14:26-35", en: "Luke 14:26-35" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus turbis: Si quis venit ad me, et non odit patrem suum, et
+        matrem, et uxórem, et fílios, et fratres, et soróres, adhuc autem et ánimam suam, non
+        potest meus esse discípulus. Et qui non bájulat crucem suam, et venit post me, non
+        potest meus esse discípulus. Quis enim ex vobis volens turrim ædificáre, non prius
+        sedens cómputat sumptus, qui necessárii sunt, si hábeat ad perficiéndum; ne, posteáquam
+        posúerit fundaméntum, et non potúerit perfícere, omnes, qui vident, incípiant illúdere
+        ei, dicéntes: Quia hic homo cœpit ædificáre, et non pótuit consummáre? Aut quis rex
+        itúrus commíttere bellum advérsus álium regem, non sedens prius cógitat, si possit cum
+        decem mílibus occúrrere ei, qui cum vigínti mílibus venit ad se? Alióquin, adhuc illo
+        longe agénte, legatiónem mittens, rogat ea, quæ pacis sunt. Sic ergo omnis ex vobis, qui
+        non renúntiat ómnibus, quæ póssidet, non potest meus esse discípulus. Bonum est sal. Si
+        autem sal evanúerit, in quo condiétur? Neque in terram neque in sterquilínium útile est,
+        sed foras mittétur. Qui habet aures audiéndi, áudiat.
+      en: >-
+        At that time Jesus said to the multitudes, "If anyone comes to Me and does not hate his
+        father and mother, and wife and children, and brothers and sisters, yes, and even his own
+        life, he cannot be My disciple. And he who does not carry his cross and follow Me,
+        cannot be My disciple. For which of you, wishing to build a tower, does not sit down
+        first and calculate the outlays that are necessary, whether he has the means to complete
+        it? Lest, after he has laid the foundation and is not able to finish, all who behold
+        begin to mock him, saying, 'This man began to build and was not able to finish!' Or what
+        king setting out to engage in battle with another king, does not sit down first and
+        consider whether he is able with ten thousand men to meet him who with twenty thousand is
+        coming against him? Or else, while the other is yet at a distance, he sends a delegation
+        and asks the terms of peace. So, therefore, every one of you who does not renounce all
+        that he possesses, cannot be My disciple. Salt is good; but if even the salt loses its
+        strength, what shall it be seasoned with? It is fit neither for the land nor for the
+        manure heap, but must be thrown out. He who has ears to hear, let him hear."
     status: { la: verified, en: verified }
 
   - nocturn: 3

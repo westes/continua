@@ -10,12 +10,15 @@
 # Commentary on Galatians anecdote of "Little children, love one
 # another" (Lectio6) — genuinely continuous biographical material, no
 # source break worth preserving as a split.
-# Nocturn 3: Lectio7's Gospel citation (John 21:19-24) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so — per
-# the established convention of not transcribing bare incipits — only
-# the homily portion is authored (not marked isGospel), St. Augustine's
-# homily on the two lives (Lectio7's homily + Lectio8-9 combined, one
-# continuous piece).
+# Nocturn 3: Lectio7's Gospel citation (John 21:19-24) was previously a
+# bare incipit ("Et réliqua") with only the homily authored, St.
+# Augustine's homily on the two lives (Lectio7's homily + Lectio8-9
+# combined, one continuous piece).
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — sourced from this
+# feast's own Missale Evangelium, given in full (missa/Latin+English/
+# Sancti/12-27.txt), not guessed at.
 id: st-john-apostle
 readings:
   - nocturn: 2
@@ -70,6 +73,30 @@ readings:
         these words continually, and asked him, Master, wherefore ever sayest thou this only?
         Whereto he replied to them, (worthy of John,) It is the commandment of the Lord, and
         if this only be done, it is enough.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joann 21:19-24", en: "John 21:19-24" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus Petro: Séquere me. Convérsus Petrus vidit illum discípulum,
+        quem diligébat Jesus, sequéntem, qui et recúbuit in cena super pectus ejus, et dixit:
+        Dómine, quis est qui tradet te? Hunc ergo cum vidísset Petrus, dixit Jesu: Dómine, hic autem
+        quid? Dicit ei Jesus: Sic eum volo manére, donec véniam, quid ad te? tu me séquere. Exiit
+        ergo sermo iste inter fratres, quia discípulus ille non móritur. Et non dixit ei Jesus: Non
+        móritur; sed: Sic eum volo manére, donec véniam: quid ad te? Hic est discípulus ille, qui
+        testimónium pérhibet de his, et scripsit hæc: et scimus, quia verum est testimónium ejus.
+      en: >-
+        At that time, Jesus said to Peter: Follow Me. Peter, turning about, saw the disciple whom
+        Jesus loved following, who also had leaned on His breast at supper, and said: Lord, who is
+        he that shall betray Thee? Him therefore when Peter had seen, he saith to Jesus: Lord, and
+        what shall this man do? Jesus saith to him: So I will have him to remain till I come, what
+        is it to thee? Follow thou Me. This saying therefore went abroad among the brethren, that
+        that disciple should not die. And Jesus did not say to him: He should not die; but, So I
+        will have him to remain till I come, what is it to thee? This is that disciple who giveth
+        testimony of these things, and hath written these things; and we know that his testimony is
+        true.
     status: { la: verified, en: verified }
 
   - nocturn: 3

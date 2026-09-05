@@ -6,13 +6,39 @@
 # web/www/horas/Latin/Sancti/02-24.txt, English/Sancti/02-24.txt.
 # Lectio4-6 fall back to Common of an Apostle (`Commune/C1`), not
 # proper text, so not authored here. Lectio7's Gospel citation
-# (Matt 11:25-30) is a bare incipit ("Et réliqua") with no full
-# pericope text given, so — per the pre-1955 pass's convention of not
-# transcribing bare incipits — only the homily portion is authored
-# (not marked isGospel), combined with Lectio8-9 as one continuous
-# excerpt of St. Augustine's sermon. No responsory given.
+# (Matt 11:25-30) was a bare incipit ("Et réliqua") with no full
+# pericope text given; the full pericope is now authored too
+# (isGospel: true, immediately before the homily) — sourced from
+# `web/www/missa/Latin/Sancti/01-15.txt` (Feb 24's own Missale
+# [Evangelium] is `@Sancti/01-15`), English/Sancti/01-15.txt
+# (2026-09-05 update). The homily portion remains combined with
+# Lectio8-9 as one continuous excerpt of St. Augustine's sermon. No
+# responsory given.
 id: st-matthias
 readings:
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 11:25-30", en: "Matt 11:25-30" }
+    text:
+      la: >-
+        In illo témpore: Respóndens Jesus, dixit: Confíteor tibi, Pater, Dómine cœli et terræ,
+        quia abscondísti hæc a sapiéntibus et prudéntibus, et revelásti ea párvulis. Ita, Pater:
+        quóniam sic fuit plácitum ante te. Ómnia mihi trádita sunt a Patre meo. Et nemo novit
+        Fílium nisi Pater: neque Patrem quis novit nisi Fílius, et cui volúerit Fílius reveláre.
+        Veníte ad me, omnes, qui laborátis et oneráti estis, et ego refíciam vos. Tóllite jugum
+        meum super vos, et díscite a me, quia mitis sum et húmilis corde: et inveniétis réquiem
+        animábus vestris. Jugum enim meum suáve est et onus meum leve.
+      en: >-
+        At that time, Jesus answered and said, "I praise Thee, Father, Lord of heaven and earth,
+        that Thou hast hid these things from the wise and prudent, and hast revealed them to
+        little ones. Yes, Father, for so it hath seemed good in Thy sight. All things are
+        delivered to Me by My Father. And no one knoweth the Son but the Father; neither doth
+        anyone know the Father but the Son, and he to whom it shall please the Son to reveal
+        Him. Come to Me, all you that labour and are burdened, and I will refresh you. Take up
+        My yoke upon you, and learn of Me, because I am meek and humble of heart, and you shall
+        find rest to your souls. For My yoke is sweet, and My burden light."
+    status: { la: verified, en: verified }
+
   - nocturn: 3
     isGospel: false
     source: "St. Augustine, Bishop of Hippo, Sermon 10 on the Words of the Lord (on Matt 11:25-30)"

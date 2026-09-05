@@ -3,10 +3,18 @@
 # English/Sancti/03-08.txt.
 #
 # Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
-# Nocturn 3: Lectio7's Gospel citation (Matt 22:34-46) is a bare
-# incipit ("Et réliqua"), so only the homily is authored (not marked
+# Nocturn 3: Lectio7's Gospel citation (Matt 22:34-46) was a bare
+# incipit ("Et réliqua"), so only the homily was authored (not marked
 # isGospel), St. John Chrysostom's homily (Lectio7's homily + Lectio8-9
 # combined).
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily), matching the newer
+# convention set by ember-september-friday.yml/post-pentecost-16.yml.
+# missa/Latin/Sancti/03-08.txt's own [Evangelium] is `@Tempora/Pent17-0`
+# (17th Sunday after Pentecost) — Latin sourced from that file; English
+# sourced directly from missa/English/Sancti/03-08.txt (given in full
+# there, no redirect).
 id: st-john-of-god
 readings:
   - nocturn: 2
@@ -108,6 +116,37 @@ readings:
         Rites, declared him the patron in heaven of all the sick and those who nurse them,
         wheresoever dwelling, and ordered that his name should be called upon in the Litany
         for the dying.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 22:34-46", en: "Matt 22:34-46" }
+    text:
+      la: >-
+        In illo témpore: Accessérunt ad Jesum pharisǽi: et interrogávit eum unus ex eis
+        legis doctor, tentans eum: Magíster, quod est mandátum magnum in lege? Ait illi
+        Jesus: Díliges Dóminum, Deum tuum, ex toto corde tuo et in tota ánima tua et in tota
+        mente tua. Hoc est máximum et primum mandátum. Secúndum autem símile est huic:
+        Díliges próximum tuum sicut teípsum. In his duóbus mandátis univérsa lex pendet et
+        prophétæ. Congregátis autem pharisǽis, interrogávit eos Jesus, dicens: Quid vobis
+        vidétur de Christo? cujus fílius est? Dicunt ei: David. Ait illis: Quómodo ergo
+        David in spíritu vocat eum Dóminum, dicens: Dixit Dóminus Dómino meo, sede a dextris
+        meis, donec ponam inimícos tuos scabéllum pedum tuórum? Si ergo David vocat eum
+        Dóminum, quómodo fílius ejus est? Et nemo poterat ei respóndere verbum: neque ausus
+        fuit quisquam ex illa die eum ámplius interrogáre.
+      en: >-
+        At that time, the Pharisees came to Jesus and one of them, a doctor of the Law,
+        putting Him to the test, asked Him, Master, which is the greatest commandment in the
+        Law? Jesus said to him, "You shall love the Lord your God with your whole heart and
+        with your whole soul, and your whole mind." This is the greatest and first
+        commandment. And the second is like it, "You shall love your neighbor as yourself."
+        On these two commandments depend the whole Law and the Prophets. Now while the
+        Pharisees were gathered together, Jesus questioned them, saying, What do you think
+        of the Christ? Whose son is He? They said to Him, David's. He said to them, How then
+        does David in the Spirit call Him Lord, saying, "The Lord said to my Lord: Sit at My
+        right hand, till I make Your enemies Your footstool"? If David, therefore, calls Him
+        "Lord," how is He his son? And no one could answer Him a word; neither did anyone
+        dare from that day forth to ask Him any more questions.
     status: { la: verified, en: verified }
 
   - nocturn: 3

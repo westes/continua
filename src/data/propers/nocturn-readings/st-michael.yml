@@ -10,12 +10,15 @@
 # Nocturn 2: Lectio4-6 (Pope St. Gregory the Great's homily on the
 # nine choirs of Angels) combined into one reading, one continuous
 # excerpt.
-# Nocturn 3: Lectio7's Gospel citation (Matt 18:1-10) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so — per
-# the pre-1955 pass's convention of not transcribing bare incipits —
-# only the homily portion is authored (not marked isGospel), combined
-# with Lectio8-9 as one continuous excerpt of St. Jerome's commentary.
-# No responsory given for either reading.
+# Nocturn 3: Lectio7's Gospel citation (Matt 18:1-10) was a bare
+# incipit ("Et réliqua") with no full pericope text given; the full
+# pericope is now authored too (isGospel: true, immediately before the
+# homily) — sourced from `web/www/missa/Latin/Sancti/05-08.txt` (Sep
+# 29's own Missale [Evangelium] is `@Sancti/05-08`, St. Michael's own
+# May Apparition Gospel reused), English/Sancti/05-08.txt (2026-09-05
+# update). The homily portion remains combined with Lectio8-9 as one
+# continuous excerpt of St. Jerome's commentary. No responsory given
+# for either reading.
 id: st-michael
 readings:
   - nocturn: 2
@@ -103,6 +106,44 @@ readings:
         the air. Raphael, also, as we have said, signifieth the Medicine-of-God, and it is the
         name of him who touched as a physician the eyes of Tobias, and cleared away his
         blindness.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 18:1-10", en: "Matt 18:1-10" }
+    text:
+      la: >-
+        In illo témpore: Accessérunt discípuli ad Jesum, dicéntes: Quis, putas, major est in
+        regno cœlórum? Et ádvocans Jesus párvulum, státuit eum in médio eórum et dixit: Amen,
+        dico vobis, nisi convérsi fuéritis et efficiámini sicut párvuli, non intrábitis in regnum
+        cœlórum. Quicúmque ergo humiliáverit se sicut párvulus iste, hic est major in regno
+        cœlórum. Et qui suscéperit unum párvulum talem in nómine meo, me súscipit. Qui autem
+        scandalizáverit unum de pusíllis istis, qui in me credunt, expédit ei, ut suspendátur
+        mola asinária in collo ejus, et demergátur in profúndum maris. Væ mundo a scándalis!
+        Necésse est enim, ut véniant scándala: verúmtamen væ hómini illi, per quem scándalum
+        venit! Si autem manus tua vel pes tuus scandalízat te, abscíde eum et projíce abs te:
+        bonum tibi est ad vitam ingrédi débilem vel claudum, quam duas manus vel duos pedes
+        habéntem mitti in ignem ætérnum. Et si óculus tuus scandalízat te, érue eum et projice
+        abs te: bonum tibi est cum uno óculo in vitam intráre, quam duos óculos habéntem mitti in
+        gehénnam ignis. Vidéte, ne contemnátis unum ex his pusíllis: dico enim vobis, quia Angeli
+        eórum in cœlis semper vident fáciem Patris mei, qui in cœlis est.
+      en: >-
+        At that time, the disciples came to Jesus, saying, "Who, thinkest thou, is the greater
+        in the kingdom of heaven?" And Jesus, calling unto Him a little child, set him in the
+        midst of them, and said, "Amen I say to you, unless you be converted, and become as
+        little children, you shall not enter into the kingdom of heaven. Whosoever therefore
+        shall humble himself as this little child, he is the greater in the kingdom of heaven.
+        And he that shall receive one such little child in My name, receiveth Me. But he that
+        shall scandalize one of these little ones that believe in Me, it were better for him
+        that a millstone should be hanged about his neck, and that he should be drowned in the
+        depth of the sea. Woe to the world because of scandals! For it must needs be that
+        scandals come, but nevertheless woe to that man by whom the scandal cometh! And if thy
+        hand, or thy foot scandalize thee, cut it off, and cast it from thee. It is better for
+        thee to go into life maimed or lame, than having two hands or two feet, to be cast into
+        everlasting fire. And if thy eye scandalize thee, pluck it out, and cast it from thee.
+        It is better for thee having one eye to enter into life, than having two eyes to be cast
+        into hell fire. See that you despise not one of these little ones, for I say to you,
+        that their Angels in heaven always see the face of My Father Who is in heaven."
     status: { la: verified, en: verified }
 
   - nocturn: 3

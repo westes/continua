@@ -13,14 +13,39 @@
 # vigil-of-st-john-the-baptist.yml.
 # web/www/horas/Latin/Sancti/08-09t.txt, English/Sancti/08-09t.txt.
 #
-# Lectio1's Gospel citation (Matt 16:24-27) is a bare incipit ("Et
-# réliqua") with no full pericope text given, so — per the established
-# convention of not transcribing bare incipits — only the homily
-# portion is authored (not marked isGospel), Pope St. Gregory the
-# Great's homily on self-denial (Lectio1's homily + Lectio2-3 combined,
-# one continuous piece).
+# Lectio1's Gospel citation (Matt 16:24-27) was a bare incipit ("Et
+# réliqua") with no full pericope text given; the full pericope is now
+# authored too (isGospel: true, immediately before the homily) — this
+# Vigil's own Missale [Evangelium] redirect (`@Commune/C2-1`, a
+# breviary-Common-style index that doesn't resolve to a live Missa
+# Commune file in this reference copy) was resolved by matching the
+# citation directly: `obsolete/missa/Latin/Commune/C2b.txt`'s own
+# [Evangelium] is this same Matt 16:24-27 pericope — sourced from
+# there, English/Commune/C2b.txt (2026-09-05 update). The homily
+# portion remains Pope St. Gregory the Great's homily on self-denial
+# (Lectio1's homily + Lectio2-3 combined, one continuous piece).
 id: vigil-of-st-lawrence
 readings:
+  - nocturn: 2
+    isGospel: true
+    citation: { la: "Matt 16:24-27", en: "Matt 16:24-27" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Si quis vult post me veníre, ábneget
+        semetípsum, et tollat crucem suam, et sequátur me. Qui enim volúerit ánimam suam salvam
+        fácere, perdet eam: qui autem perdíderit ánimam suam propter me, invéniet eam. Quid enim
+        prodest hómini, si mundum univérsum lucrétur, ánimæ vero suæ detriméntum patiátur? Aut
+        quam dabit homo commutatiónem pro ánima sua? Fílius enim hóminis ventúrus est in glória
+        Patris sui cum Angelis suis: et tunc reddet unicuíque secúndum ópera ejus.
+      en: >-
+        At that time, Jesus said to His disciples, "If any one wishes to come after Me, let him
+        deny himself, and take up his cross, and follow Me. For he who would save his life will
+        lose it; but he who loses his life for My sake will find it. For what does it profit a
+        man, if he gain the whole world, but suffer the loss of his own soul? Or what will a man
+        give in exchange for his soul? For the Son of Man is to come with His Angels in the
+        glory of His Father, and then He will render to everyone according to his conduct."
+    status: { la: verified, en: verified }
+
   - nocturn: 2
     isGospel: false
     source: "Pope St. Gregory the Great, Homily 32 on the Gospels (on Matt 16:24-27)"

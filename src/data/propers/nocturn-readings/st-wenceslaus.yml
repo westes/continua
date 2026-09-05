@@ -1,11 +1,19 @@
 # Matins Nocturn 2-3 readings for St. Wenceslaus, Duke and Martyr
 # (Sep 28). Sourced directly from web/www/horas/Latin/Sancti/09-28.txt,
 # English/Sancti/09-28.txt. Nocturn 2: Lectio4-6 combined into one
-# reading, one continuous vita. Nocturn 3: the Gospel citation ends
-# "Et réliqua"/"And so on, and that which followeth" with no full
-# pericope given -- per the bare-incipit convention, only the homily
-# (Lectio7-9, St. Hilary of Poitiers) is authored, isGospel: false, no
-# citation field.
+# reading, one continuous vita. Nocturn 3: Lectio7's Gospel citation
+# (Matt 10:34-42) is a bare "Et réliqua" incipit, and this day's own
+# Mass proper (missa/Latin/Sancti/09-28.txt) has no [Evangelium] of its
+# own either -- inherited from the Common of one Martyr (C2a), not
+# present in this reference engine's static missa/Commune store. Note
+# this is a *different* citation from Matt 10:23-28 (st-athanasius.yml,
+# st-cyril-of-jerusalem.yml's own shared Gospel) -- not to be confused.
+# Added 2026-09-05 (isGospel: true) immediately before the homily
+# (Lectio7-9, St. Hilary of Poitiers), Latin taken verbatim from
+# web/www/horas/Help/vulgate.txt (the reference engine's own Vulgate
+# text database), English composed as the standard Douay-Rheims
+# rendering of the same verses (not itself reference-engine text, so
+# marked draft per this project's "prefer text over missing" policy).
 id: st-wenceslaus
 readings:
   - nocturn: 2
@@ -99,6 +107,47 @@ readings:
         swallowed up by the earth, and his murderers, in diverse ways,
         perished miserably.
     status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 10:34-42", en: "Matt 10:34-42" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Nolíte arbitrári
+        quia pacem vénerim míttere in terram: non veni pacem míttere,
+        sed gládium: veni enim separáre hóminem advérsus patrem suum,
+        et fíliam advérsus matrem suam, et nurum advérsus socrum suam:
+        et inimíci hóminis, doméstici ejus. Qui amat patrem aut matrem
+        plus quam me, non est me dignus: et qui amat fílium aut fíliam
+        super me, non est me dignus. Et qui non áccipit crucem suam, et
+        séquitur me, non est me dignus. Qui invénit ánimam suam, perdet
+        illam: et qui perdíderit ánimam suam propter me, invéniet eam.
+        Qui récipit vos, me récipit: et qui me récipit, récipit eum qui
+        me misit. Qui récipit prophétam in nómine prophétæ, mercédem
+        prophétæ accípiet: et qui récipit justum in nómine justi,
+        mercédem justi accípiet. Et quicúmque potum déderit uni ex
+        mínimis istis cálicem aquæ frígidæ tantum in nómine discípuli:
+        amen dico vobis, non perdet mercédem suam.
+      en: >-
+        At that time, Jesus said to his disciples: Do not think that I
+        have come to send peace upon earth; I have not come to send
+        peace, but the sword. For I have come to set a man at variance
+        against his father, and the daughter against her mother, and
+        the daughter-in-law against her mother-in-law: and a man's
+        enemies shall be they of his own household. He that loves
+        father or mother more than Me, is not worthy of Me; and he that
+        loves son or daughter more than Me, is not worthy of Me. And he
+        that does not take up his cross, and follows Me, is not worthy
+        of Me. He that finds his life, shall lose it; and he that shall
+        lose his life for Me, shall find it. He that receives you,
+        receives Me; and he that receives Me, receives Him that sent
+        Me. He that receives a prophet in the name of a prophet, shall
+        receive the reward of a prophet; and he that receives a just
+        man in the name of a just man, shall receive the reward of a
+        just man. And whosoever shall give a cup of cold water to
+        drink to one of these little ones, only in the name of a
+        disciple, amen I say to you, he shall not lose his reward.
+    status: { la: verified, en: draft }
 
   - nocturn: 3
     isGospel: false

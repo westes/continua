@@ -11,10 +11,16 @@
 # ([Responsory6], marked &Gloria) is genuine proper text, not a
 # Commune reference, so it's authored below.
 # Nocturn 3: Lectio7's Gospel citation (Mark 6:17-29) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so — per
-# the pre-1955 pass's convention of not transcribing bare incipits —
-# only the homily portion is authored (not marked isGospel), combined
-# with Lectio8 as one continuous excerpt of St. Augustine's sermon.
+# incipit ("Et réliqua") with no full pericope text given in this
+# saint's own file, so only the homily portion was originally authored
+# (not marked isGospel), combined with Lectio8 as one continuous
+# excerpt of St. Augustine's sermon.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — this feast's own
+# [Evangelium] carries the full pericope directly (not a redirect),
+# sourced from missa/Latin/Sancti/08-29.txt, English/Sancti/08-29.txt,
+# not guessed at.
 # [Responsory4], [Responsory7], [Responsory8] are all genuine Commune
 # references (@Commune/C2a:Responsory2/5/6 -- Common of a Martyr, per
 # decollation-of-st-john-baptist.yml's own `common` field), so Nocturn
@@ -90,6 +96,48 @@ readings:
     responsory:
       la: "R. Honéstum fecit illum Dóminus, et custodívit eum ab inimícis, et a seductóribus tutávit illum: * Et dedit illi claritátem ætérnam.\nV. Descendítque cum illo in fóveam, et in vínculis non derelíquit eum.\nR. Et dedit illi claritátem ætérnam."
       en: "R. The Lord made him honourable, and kept him from his enemies, and defended him from seducers: * and gave him everlasting glory.\nV. He went down with him into the pit, and left him not in bonds.\nR. And gave him everlasting glory."
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Marc 6:17-29", en: "Mark 6:17-29" }
+    text:
+      la: >-
+        In illo témpore: Misit Heródes, ac ténuit Joánnem, et vinxit eum in cárcere propter
+        Herodíadem, uxórem Philíppi fratris sui, quia dúxerat eam. Dicébat enim Joánnes Heródi:
+        Non licet tibi habére uxórem fratris tui. Heródias autem insidiabátur illi, et volébat
+        occídere eum, nec póterat. Heródes enim metuébat Joánnem, sciens eum virum justum et
+        sanctum: et custodiébat eum, et audíto eo multa faciébat, et libénter eum audiébat. Et
+        cum dies opportúnus accidísset, Heródes natális sui cœnam fecit princípibus et tribúnis
+        et primis Galilææ. Cumque introísset fília ipsíus Herodíadis, et saltásset, et
+        placuísset Heródi simúlque recumbéntibus; rex ait puéllæ: Pete a me, quod vis, et dabo
+        tibi. Et jurávit illi: Quia quidquid petiéris dabo tibi, licet dimídium regni mei. Quæ
+        cum exiísset, dixit matri suæ: Quid petam? At illa dixit: Caput Joánnis Baptístæ.
+        Cumque introísset statim cum festinatióne ad regem, petívit dicens: Volo, ut protínus
+        des mihi in disco caput Joánnis Baptístæ. Et contristátus est rex: propter jusjurándum
+        et propter simul discumbéntes nóluit eam contristáre: sed misso spiculatóre, præcépit
+        afférri caput ejus in disco. Et decollávit eum in cárcere. Et áttulit caput ejus in
+        disco: et dedit illud puéllæ, et puella dedit matri suæ. Quo audíto, discípuli ejus
+        venérunt et tulérunt corpus ejus: et posuérunt illud in monuménto.
+      en: >-
+        At that time, Herod had sent and taken John, and bound him in prison, because of
+        Herodias, his brother Philip's wife, whom he had married. For John had said to Herod,
+        "It is not lawful for you to have your brother's wife." But Herodias laid snares for
+        him, and would have liked to put him to death, but she could not. For Herod feared
+        John, knowing that he was a just and holy man, and protected him; and when he heard him
+        talk, he did many things, and he liked to hear him. And a favorable day came when Herod
+        on his birthday gave a banquet to the officials, tribunes and chief men of Galilee. And
+        Herodias' own daughter having come in and danced, she pleased Herod and his guests. And
+        the king said to the girl, "Ask of me what you will, and I will give it to you." And he
+        swore to her, "Whatever you ask, I will give you, even though it be the half of my
+        kingdom." Then she went out and said to her mother, "What am I to ask for?" And she
+        said, "The head of John the Baptist." And she came in at once with haste to the king,
+        and asked, saying, "I want you right away to give me on a dish the head of John the
+        Baptist." And grieved as he was, the king because of his oath and his guests, was
+        unwilling to displease her. But sending an executioner, he commanded that his head be
+        brought on a dish. Then he beheaded him in the prison, and brought his head on a dish,
+        and gave it to the girl, and the girl gave it to her mother. His disciples, hearing of
+        it, came and took away his body, and laid it in a tomb.
+    status: { la: verified, en: verified }
 
   - nocturn: 3
     isGospel: false

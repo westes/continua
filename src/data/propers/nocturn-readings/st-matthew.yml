@@ -8,12 +8,14 @@
 # Nocturn 2: Lectio4-5 combined into one reading, one continuous vita
 # — Lectio6 falls back to Common of an Evangelist, not proper text, so
 # not authored here.
-# Nocturn 3: Lectio7's Gospel citation (Matt 9:9-13) is a bare incipit
-# ("Et réliqua") with no full pericope text given, so — per the
-# pre-1955 pass's convention of not transcribing bare incipits — only
-# the homily portion is authored (not marked isGospel), a single
-# excerpt of St. Jerome's commentary. No responsory given for either
-# reading.
+# Nocturn 3: Lectio7's Gospel citation (Matt 9:9-13) was a bare incipit
+# ("Et réliqua") with no full pericope text given; the full pericope
+# is now authored too (isGospel: true, immediately before the homily)
+# — sourced from this same day's own Missale [Evangelium]
+# (`web/www/missa/Latin/Sancti/09-21.txt`, English/Sancti/09-21.txt),
+# not guessed at (2026-09-05 update). The homily portion remains a
+# single excerpt of St. Jerome's commentary. No responsory given for
+# either reading.
 id: st-matthew
 readings:
   - nocturn: 2
@@ -58,6 +60,28 @@ readings:
         September. His body had been brought to Salerno, where it was afterwards buried in a
         Church dedicated in his name during the papacy of Gregory VII, and there it is held in
         great worship and sought to by great gatherings of people.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 9:9-13", en: "Matt 9:9-13" }
+    text:
+      la: >-
+        In illo témpore: Vidit Jesus hóminem sedéntem in telónio, Matthǽum nómine. Et ait illi:
+        Séquere me. Et surgens, secútus est eum. Et factum est, discumbénte eo in domo, ecce,
+        multi publicáni et peccatóres veniéntes, discumbébant cum Jesu, et discípulis ejus. Et
+        vidéntes pharisǽi, dicébant discípulis ejus: Quare cum publicánis et peccatóribus
+        mandúcat Magíster vester? At Jesus áudiens, ait: Non est opus valéntibus médicus, sed
+        male habéntibus. Eúntes autem díscite quid est: Misericórdiam volo, et non sacrifícium.
+        Non enim veni vocáre justos, sed peccatóres.
+      en: >-
+        At that time, Jesus saw a man named Matthew sitting in the tax-collector's place, and
+        said to him, "Follow Me." And he arose and followed Him. And it came to pass as He was
+        at table in the house, that, behold, many publicans and sinners came to the table with
+        Jesus and His disciples. And the Pharisees seeing it, said to His disciples, "Why does
+        your Master eat with publicans and sinners?" But Jesus heard it, and said, "It is not the
+        healthy who need a physician, but they who are sick. But go, and learn what this means:
+        'I desire mercy, and not sacrifice.' For I have come to call sinners, not the just."
     status: { la: verified, en: verified }
 
   - nocturn: 3

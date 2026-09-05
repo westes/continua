@@ -4,11 +4,15 @@
 # Nocturn 2: Lectio4-6, a sermon of St. Bernard of Clairvaux on the
 # Song of Songs, combined into one reading per this project's own
 # condensed-Matins convention (see nearby circumcision.yml/
-# immaculate-heart-of-mary.yml). Nocturn 3: the Gospel citation ends
-# "Et réliqua"/"And so on" with no full pericope given -- per the
-# bare-incipit convention, only the homily (Lectio7-9, also St.
-# Bernard, on the Circumcision) is authored, isGospel: false, no
-# citation field.
+# immaculate-heart-of-mary.yml). Nocturn 3: Lectio7-9, also St.
+# Bernard, on the Circumcision.
+#
+# Update (2026-09-05): the Gospel pericope itself (Luke 2:21) is now
+# authored too (isGospel: true, immediately before the homily) --
+# web/www/horas/Latin/Tempora/Nat2-0.txt's own Lectio7 carries the
+# identical citation and incipit as circumcision.yml's own Nocturn 3
+# Gospel (Jan 1's Missale Gospel, per that file's own header) -- same
+# pericope, reused verbatim from there rather than re-derived.
 id: holy-name-of-jesus
 readings:
   - nocturn: 2
@@ -102,6 +106,18 @@ readings:
         Doth any fall into sin? Doth any draw nigh to a hopeless death?
         And if he but call on the life-giving Name of Jesus, will he not
         draw the breath of a new life again?
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 2:21", en: "Luke 2:21" }
+    text:
+      la: >-
+        In illo témpore: Postquam consummáti sunt dies octo, ut circumciderétur Puer: vocátum est
+        nomen ejus Jesus, quod vocátum est ab Angelo, priúsquam in útero conciperétur.
+      en: >-
+        At that time, when eight days were fulfilled for the circumcision of the Child, His name
+        was called Jesus, the name given Him by the angel before He was conceived in the womb.
     status: { la: verified, en: verified }
 
   - nocturn: 3

@@ -12,14 +12,57 @@
 # out later, not a reason to withhold real sourceable text.
 # web/www/horas/Latin/Sancti/06-23.txt, English/Sancti/06-23.txt.
 #
-# Lectio1's Gospel citation (Luke 1:5-17) is a bare incipit ("Et
-# réliqua") with no full pericope text given, so — per the established
-# convention of not transcribing bare incipits — only the homily
-# portion is authored (not marked isGospel), St. Ambrose's commentary
-# on Zachary and Elisabeth (Lectio1's homily + Lectio2-3 combined, one
-# continuous piece).
+# Lectio1's Gospel citation (Luke 1:5-17) was a bare incipit ("Et
+# réliqua") with no full pericope text given; the full pericope is now
+# authored too (isGospel: true, immediately before the homily) —
+# sourced from this same day's own Missale [Evangelium]
+# (`web/www/missa/Latin/Sancti/06-23.txt`, English/Sancti/06-23.txt),
+# not guessed at (2026-09-05 update). The homily portion remains St.
+# Ambrose's commentary on Zachary and Elisabeth (Lectio1's homily +
+# Lectio2-3 combined, one continuous piece).
 id: vigil-of-st-john-the-baptist
 readings:
+  - nocturn: 2
+    isGospel: true
+    citation: { la: "Luc 1:5-17", en: "Luke 1:5-17" }
+    text:
+      la: >-
+        Fuit in diébus Heródis, regis Judǽæ, sacérdos quidam nómine Zacharías, de vice Abía, et
+        uxor illíus de filiábus Aaron, et nomen ejus Elísabeth. Erant autem justi ambo ante Deum,
+        incedéntes in ómnibus mandátis et justificatiónibus Dómini sine queréla, et non erat
+        illis fílius, eo quod esset Elísabeth stérilis, et ambo processíssent in diébus suis.
+        Factum est autem, cum sacerdótio fungerétur in órdine vicis suæ ante Deum, secúndum
+        consuetúdinem sacerdótii, sorte éxiit, ut incénsum póneret, ingréssus in templum Dómini:
+        et omnis multitúdo pópuli erat orans foris hora incénsi. Appáruit autem illi Angelus
+        Dómini, stans a dextris altáris incénsi. Et Zacharías turbátus est, videns, et timor
+        írruit super eum. Ait autem ad illum Angelus: Ne tímeas, Zacharía, quóniam exaudíta est
+        deprecátio tua: et uxor tua Elísabeth páriet tibi fílium, et vocábis nomen ejus Joánnem:
+        et erit gáudium tibi et exsultátio, et multi in nativitáte ejus gaudébunt: erit enim
+        magnus coram Dómino: et vinum, et síceram non bibet, et Spíritu Sancto replébitur adhuc
+        ex útero matris suæ: et multos filiórum Israël convértet ad Dóminum, Deum ipsórum: et
+        ipse præcédet ante illum in spíritu et virtúte Elíæ: ut convértat corda patrum in fílios,
+        et incrédulos ad prudéntiam justórum, paráre Dómino plebem perféctam.
+      en: >-
+        In the days of Herod, king of Judea, there was a certain priest named Zachary, of the
+        course of Abia; and his wife was of the daughters of Aaron, and her name was Elizabeth.
+        Both were just before God, walking blamelessly in all the commandments and ordinances of
+        the Lord. But they had no son, for Elizabeth was barren, and they were both advanced in
+        years. Now it came to pass, while he was officiating in the order of his course as
+        priest before God, according to the custom of the priest's office, that he was chosen by
+        lot to enter the temple of the Lord to burn incense. And the whole multitude of the
+        people were praying outside at the hour of incense. And there appeared to him an angel
+        of the Lord, standing at the right of the altar of incense. And Zachary, seeing him, was
+        troubled, and fear fell upon him. But the angel said to him, "Do not be afraid, Zachary,
+        for your petition has been heard, and your wife Elizabeth shall bear you a son, and you
+        shall call his name John. And you shall have joy and gladness, and many will rejoice at
+        his birth. For he shall be great before the Lord; he shall drink no wine or strong
+        drink, and shall be filled with the Holy Spirit even from his mother's womb. And he
+        shall bring back to the Lord their God many of the children of Israel, and he shall
+        himself go before Him in the spirit and power of Elias, to turn the hearts of fathers to
+        their children and the incredulous to the wisdom of the just, to prepare for the Lord a
+        perfect people."
+    status: { la: verified, en: verified }
+
   - nocturn: 2
     isGospel: false
     source: "St. Ambrose, Commentary on Luke, Book I (on Luke 1:5-17)"

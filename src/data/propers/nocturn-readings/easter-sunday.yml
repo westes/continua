@@ -25,8 +25,39 @@
 # "Angelus Dómini descéndit de cælo") — the only nocturn-proper responsory
 # transcribed in the source (Responsory2 exists but Responsory3 does not;
 # the office runs straight to the Te Deum).
+#
+# Update (2026-09-05): the Gospel pericope itself (Mark 16:1-7) is now
+# authored too (isGospel: true, immediately before the homily) — sourced
+# from missa/Latin/Tempora/Pasc0-0.txt's own [Evangelium] (Easter
+# Sunday's own Mass Gospel, the same pericope Lectio1's incipit points
+# to) and its English parallel, not guessed at.
 id: easter-sunday
 readings:
+  - nocturn: 1
+    isGospel: true
+    citation: { la: "Marc 16:1-7", en: "Mark 16:1-7" }
+    text:
+      la: >-
+        In illo témpore: María Magdaléne et María Jacóbi et Salóme emérunt arómata, ut veniéntes
+        úngerent Jesum. Et valde mane una sabbatórum, véniunt ad monuméntum, orto jam sole. Et
+        dicébant ad ínvicem: Quis revólvet nobis lápidem ab óstio monuménti? Et respiciéntes
+        vidérunt revolútum lápidem. Erat quippe magnus valde. Et introëúntes in monuméntum vidérunt
+        júvenem sedéntem in dextris, coopértum stola cándida, et obstupuérunt. Qui dicit illis:
+        Nolíte expavéscere: Jesum quǽritis Nazarénum, crucifíxum: surréxit, non est hic, ecce locus,
+        ubi posuérunt eum. Sed ite, dícite discípulis ejus et Petro, quia præcédit vos in Galilǽam:
+        ibi eum vidébitis, sicut dixit vobis.
+      en: >-
+        At that time, Mary Magdalen, and Mary the mother of James, and Salome bought sweet spices,
+        that coming they might anoint Jesus. And very early in the morning, the first day of the
+        week, they came to the sepulchre, the sun being now risen. And they said one to another:
+        Who shall roll us back the stone from the door of the sepulchre? And looking, they saw the
+        stone rolled back. For it was very great. And entering into the sepulchre, they saw a young
+        man sitting on the right side, clothed with a white robe, and they were astonished. Who
+        saith to them, Be not affrighted; ye seek Jesus of Nazareth, who was crucified: He is risen,
+        He is not here; behold the place where they laid Him. But go, tell His disciples, and Peter,
+        that He goeth before you into Galilee; there you shall see Him, as He told you.
+    status: { la: verified, en: verified }
+
   - nocturn: 1
     isGospel: false
     source: "Pope St. Gregory the Great, Homily 21 on the Gospels"

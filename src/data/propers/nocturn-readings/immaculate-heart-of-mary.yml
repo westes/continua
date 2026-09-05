@@ -4,10 +4,15 @@
 # Nocturn 2: Lectio4-6, a sermon of St. Bernardine of Siena on the
 # Visitation and an excerpt from ecclesiastical documents on the
 # feast's own institution history (Pius VII, 1801; Pius IX; Pius XII,
-# 1942), combined into one reading. Nocturn 3: the Gospel citation ends
-# "Et réliqua"/"And so on" with no full pericope given -- per the
-# bare-incipit convention, only the homily (Lectio7-9, St. Robert
-# Bellarmine) is authored, isGospel: false, no citation field.
+# 1942), combined into one reading, not Gospel-tied. Nocturn 3:
+# Lectio7-9, St. Robert Bellarmine's homily on the Seven Words of
+# Christ on the Cross.
+#
+# Update (2026-09-05): the Gospel pericope itself (John 19:25-27, Our
+# Lord entrusting Mary to St. John from the Cross) is now authored too
+# (isGospel: true, immediately before the Bellarmine homily) -- sourced
+# from missa/Latin/Sancti/08-22.txt's own [Evangelium] (this same
+# feast's own Mass Gospel) and its English parallel, not guessed at.
 id: immaculate-heart-of-mary
 readings:
   - nocturn: 2
@@ -121,6 +126,23 @@ readings:
         her most generous Heart, and in honor of the same Immaculate Heart
         he ordered a Feast to be kept forever with its proper Office and
         Mass.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joann 19:25-27", en: "John 19:25-27" }
+    text:
+      la: >-
+        In illo témpore: Stabant juxta crucem Jesu mater ejus, et soror matris ejus María
+        Cléophæ, et María Magdaléne. Cum vidísset ergo Jesus matrem, et discípulum stantem, quem
+        diligébat, dicit matri suæ: Múlier, ecce fílius tuus. Deinde dicit discípulo: Ecce mater
+        tua. Et ex illa hora accépit eam discípulus in sua.
+      en: >-
+        At that time, there were standing by the Cross of Jesus, His Mother, and His Mother's
+        sister, Mary of Cleophas, and Mary Magdalen. When Jesus, therefore, saw His Mother and the
+        disciple standing by, whom He loved, He said to His Mother, Woman, behold your son. Then He
+        said to the disciple, Behold, your mother. And from that hour the disciple took her into
+        his home.
     status: { la: verified, en: verified }
 
   - nocturn: 3

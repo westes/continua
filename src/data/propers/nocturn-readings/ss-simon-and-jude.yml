@@ -11,9 +11,15 @@
 # Nocturn 3: Lectio7's Gospel citation (John 15:17-25) is a bare
 # incipit ("Et réliqua") with no full pericope text given, so — per
 # the pre-1955 pass's convention of not transcribing bare incipits —
-# only the homily portion is authored (not marked isGospel), a single
-# excerpt of St. Augustine's Tract 87 on John. No responsory given for
-# either reading.
+# only the homily portion was originally authored (not marked
+# isGospel), a single excerpt of St. Augustine's Tract 87 on John. No
+# responsory given for either reading.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Augustine's homily) — sourced
+# from the day's own Missale [Evangelium] in
+# web/www/missa/Latin/Sancti/10-28.txt (full text given there, not a
+# redirect).
 id: ss-simon-and-jude
 readings:
   - nocturn: 2
@@ -34,6 +40,37 @@ readings:
         faith far and wide in those lands, amid raging heathens, and glorified together by
         their teaching and miracles, and, in the end, by a glorious martyrdom, the most holy
         name of Jesus Christ.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joann 15:17-25", en: "John 15:17-25" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Hæc mando vobis, ut diligátis ínvicem. Si
+        mundus vos odit: scitóte, quia me priórem vobis odio hábuit. Si de mundo fuissétis, mundus
+        quod suum erat dilígeret; quia vero de mundo non estis, sed ego elégi vos de mundo,
+        proptérea odit vos mundus. Mementóte sermónis mei, quem ego dixi vobis: Non est servus
+        major dómino suo. Si me persecúti sunt, et vos persequántur: si sermónem meum
+        servavérunt, et vestrum servábunt. Sed hæc ómnia fácient vobis propter nomen meum: quia
+        nésciunt eum, qui misit me. Si non veníssem et locútus fuíssem eis, peccátum non
+        háberent: nunc autem excusatiónem non habent de peccáto suo. Qui me odit: et Patrem meum
+        odit. Si ópera non fecíssem in eis, quæ nemo álius fecit, peccátum non háberent: nunc
+        autem et vidérunt et odérunt et me et Patrem meum. Sed ut adimpleátur sermo, qui in lege
+        eórum scriptus est: Quia ódio habuérunt me gratis.
+      en: >-
+        At that time, Jesus said to His disciples, "These things I command you, that you may
+        love one another. If the world hates you, know that it has hated Me before you. If you
+        were of the world, the world would love what is its own. But because you are not of the
+        world, but I have chosen you out of the world, therefore the world hates you. Remember
+        the word that I have spoken to you: No servant is greater than his master. If they
+        persecuted Me, they will persecute you also; if they have kept My word, they will keep
+        yours also. But all these things they will do to you for My name's sake, because they do
+        not know Him Who sent Me. If I had not come and spoken to them, they would have no sin.
+        But now they have no excuse for their sin. He who hates Me hates My Father also. If I had
+        not done among them works such as no one else has done, they would have no sin. But now
+        they have seen, and have hated both Me and My Father; but that the word written in their
+        Law may be fulfilled, 'They have hated Me without cause.'"
     status: { la: verified, en: verified }
 
   - nocturn: 3

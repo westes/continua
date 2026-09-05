@@ -1,10 +1,16 @@
 # Matins Nocturn 2-3 readings for St. Joseph Calasanctius, Confessor
 # (Aug 27). Sourced directly from web/www/horas/Latin/Sancti/08-27.txt,
 # English/Sancti/08-27.txt. Nocturn 2: Lectio4-6 combined into one
-# reading, one continuous vita. Nocturn 3: his own Gospel citation ends
-# "Et réliqua"/"And so on" with no full pericope given -- per the
-# bare-incipit convention, only the homily (Lectio7-9, St. John
-# Chrysostom) is authored, isGospel: false, no citation field.
+# reading, one continuous vita.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope is now authored too
+# (isGospel: true, immediately before Chrysostom's homily). The homily
+# itself directly quotes Matt 18:10 ("Vidéte, ne contemnátis unum ex his
+# pusíllis... Angeli eórum in cœlis semper vident fáciem Patris mei"),
+# placing it within the same Matt 18:1-10 pericope already authored for
+# `st-michael.yml` (via that feast's own `@Sancti/05-08` Missale
+# redirect) — reused verbatim rather than re-deriving, since Chrysostom's
+# Homily 60 on Matthew covers this same passage.
 id: st-joseph-calasanctius
 readings:
   - nocturn: 2
@@ -121,6 +127,44 @@ readings:
         death, and he was first crowned by Benedict XIV. with the honours
         paid to the Blessed, and then solemnly enrolled by Clement XIII.
         among the Saints.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 18:1-10", en: "Matt 18:1-10" }
+    text:
+      la: >-
+        In illo témpore: Accessérunt discípuli ad Jesum, dicéntes: Quis, putas, major est in
+        regno cœlórum? Et ádvocans Jesus párvulum, státuit eum in médio eórum et dixit: Amen,
+        dico vobis, nisi convérsi fuéritis et efficiámini sicut párvuli, non intrábitis in regnum
+        cœlórum. Quicúmque ergo humiliáverit se sicut párvulus iste, hic est major in regno
+        cœlórum. Et qui suscéperit unum párvulum talem in nómine meo, me súscipit. Qui autem
+        scandalizáverit unum de pusíllis istis, qui in me credunt, expédit ei, ut suspendátur
+        mola asinária in collo ejus, et demergátur in profúndum maris. Væ mundo a scándalis!
+        Necésse est enim, ut véniant scándala: verúmtamen væ hómini illi, per quem scándalum
+        venit! Si autem manus tua vel pes tuus scandalízat te, abscíde eum et projíce abs te:
+        bonum tibi est ad vitam ingrédi débilem vel claudum, quam duas manus vel duos pedes
+        habéntem mitti in ignem ætérnum. Et si óculus tuus scandalízat te, érue eum et projice
+        abs te: bonum tibi est cum uno óculo in vitam intráre, quam duos óculos habéntem mitti in
+        gehénnam ignis. Vidéte, ne contemnátis unum ex his pusíllis: dico enim vobis, quia Angeli
+        eórum in cœlis semper vident fáciem Patris mei, qui in cœlis est.
+      en: >-
+        At that time, the disciples came to Jesus, saying, "Who, thinkest thou, is the greater
+        in the kingdom of heaven?" And Jesus, calling unto Him a little child, set him in the
+        midst of them, and said, "Amen I say to you, unless you be converted, and become as
+        little children, you shall not enter into the kingdom of heaven. Whosoever therefore
+        shall humble himself as this little child, he is the greater in the kingdom of heaven.
+        And he that shall receive one such little child in My name, receiveth Me. But he that
+        shall scandalize one of these little ones that believe in Me, it were better for him
+        that a millstone should be hanged about his neck, and that he should be drowned in the
+        depth of the sea. Woe to the world because of scandals! For it must needs be that
+        scandals come, but nevertheless woe to that man by whom the scandal cometh! And if thy
+        hand, or thy foot scandalize thee, cut it off, and cast it from thee. It is better for
+        thee to go into life maimed or lame, than having two hands or two feet, to be cast into
+        everlasting fire. And if thy eye scandalize thee, pluck it out, and cast it from thee.
+        It is better for thee having one eye to enter into life, than having two eyes to be cast
+        into hell fire. See that you despise not one of these little ones, for I say to you,
+        that their Angels in heaven always see the face of My Father Who is in heaven."
     status: { la: verified, en: verified }
 
   - nocturn: 3

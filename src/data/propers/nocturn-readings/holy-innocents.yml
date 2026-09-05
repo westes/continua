@@ -8,11 +8,16 @@
 # Nocturn 2: Lectio4-6 combined into one reading, St. Augustine's
 # sermon — one continuous piece, no genuine source break.
 # Nocturn 3: Lectio7's Gospel citation (Matt 2:13-18) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so — per
-# the established convention of not transcribing bare incipits — only
-# the homily portion is authored (not marked isGospel), St. Jerome's
-# commentary (Lectio7's homily + Lectio8-9 combined, one continuous
-# piece).
+# incipit ("Et réliqua") with no full pericope text given, so only the
+# homily portion was originally authored (not marked isGospel), St.
+# Jerome's commentary (Lectio7's homily + Lectio8-9 combined, one
+# continuous piece).
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — this feast's own
+# [Evangelium] carries the full pericope directly (not a redirect),
+# sourced from missa/Latin/Sancti/12-28.txt, English/Sancti/12-28.txt,
+# not guessed at.
 id: holy-innocents
 readings:
   - nocturn: 2
@@ -67,6 +72,35 @@ readings:
         breasts are rightfully called the flowers of martyrdom; hardly had these buds of the
         Church shown their heads above the soil, in the winter of unbelief, when the frost of
         persecution nipped them.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 2:13-18", en: "Matt 2:13-18" }
+    text:
+      la: >-
+        In illo témpore: Angelus Dómini appáruit in somnis Joseph, dicens: Surge, et áccipe
+        Púerum et Matrem ejus, et fuge in Ægýptum, et esto ibi, usque dum dicam tibi. Futúrum
+        est enim, ut Heródes quærat Púerum ad perdéndum eum. Qui consúrgens accépit Púerum et
+        Matrem ejus nocte, et secéssit in Ægýptum: et erat ibi usque ad óbitum Heródis: ut
+        adimplerétur quod dictum est a Dómino per Prophétam dicéntem: Ex Ægýpto vocávi Fílium
+        meum. Tunc Heródes videns, quóniam illúsus esset a Magis, irátus est valde, et mittens
+        occídit omnes púeros, qui erant in Béthlehem et in ómnibus fínibus ejus, a bimátu et
+        infra, secúndum tempus, quod exquisíerat a Magis. Tunc adimplétum est, quod dictum est
+        per Jeremíam Prophétam dicéntem: Vox in Rama audíta est, plorátus et ululátus multus:
+        Rachel plorans fílios suos, et nóluit consolári, quia non sunt.
+      en: >-
+        At that time, an angel of the Lord appeared in a dream to Joseph, saying, "Arise, and
+        take the Child and His mother, and flee into Egypt, and remain there until I tell you.
+        For Herod will seek the Child to destroy Him." So he arose, and took the Child and His
+        mother by night, and withdrew into Egypt, and remained there until the death of Herod;
+        that what was spoken by the Lord through the prophet might be fulfilled, "Out of Egypt
+        I called My Son." Then Herod, seeing that he had been tricked by the Magi, was
+        exceedingly angry; and he sent and slew all the boys in Bethlehem and all its
+        neighborhood who were two years old or under, according to the time that he had
+        carefully ascertained from the Magi. Then was fulfilled what was spoken through
+        Jeremias the prophet: "A voice was heard in Rama, weeping and loud lamentation; Rachel
+        weeping for her children, and she would not be comforted, because they are no more."
     status: { la: verified, en: verified }
 
   - nocturn: 3

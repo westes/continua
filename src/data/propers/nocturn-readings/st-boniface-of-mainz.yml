@@ -1,10 +1,16 @@
 # Matins Nocturn 2-3 readings for St. Boniface, Bishop and Martyr
 # (June 5). Sourced directly from web/www/horas/Latin/Sancti/06-05.txt,
 # English/Sancti/06-05.txt. Nocturn 2: Lectio4-6 combined into one
-# reading, one continuous vita. Nocturn 3: his own Gospel citation ends
-# "Et réliqua"/"And so on" with no full pericope given -- per the
-# bare-incipit convention, only the homily (Lectio7-9, St. Augustine of
-# Hippo) is authored, isGospel: false, no citation field.
+# reading, one continuous vita.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope, previously left
+# unauthored because horas/Latin/Sancti/06-05.txt's own Lectio7 gives
+# only the incipit ("Et réliqua"), is now authored too (isGospel: true,
+# immediately before the homily) -- the citation (Matt 5:1-12, the
+# Beatitudes) comes from that same Lectio7 line, and the full text is
+# sourced from missa/Latin/Sancti/06-05.txt's own [Evangelium] (the Mass
+# Gospel and the Matins Nocturn 3 Gospel are the same pericope), not
+# guessed at.
 id: st-boniface-of-mainz
 readings:
   - nocturn: 2
@@ -118,6 +124,33 @@ readings:
         the body of St. Boniface was carried to Maintz, and buried in the monastery of
         Fulda, of which he had been the founder, and where God has gloriously honoured
         it by the working of many signs and wonders.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 5:1-12", en: "Matthew 5:1-12" }
+    text:
+      la: >-
+        In illo témpore: Videns Jesus turbas, ascéndit in montem, et cum sedísset, accessérunt ad
+        eum discípuli ejus, et apériens os suum, docébat eos, dicens: Beáti páuperes spíritu:
+        quóniam ipsórum est regnum cœlórum. Beáti mites: quóniam ipsi possidébunt terram. Beáti,
+        qui lugent: quóniam ipsi consolabúntur. Beáti, qui esúriunt et sítiunt justítiam: quóniam
+        ipsi saturabúntur. Beáti misericórdes: quóniam ipsi misericórdiam consequántur. Beáti
+        mundo corde: quóniam ipsi Deum vidébunt. Beáti pacífici: quóniam fílii Dei vocabúntur.
+        Beáti, qui persecutiónem patiúntur propter justítiam: quóniam ipsórum est regnum cœlórum.
+        Beáti estis, cum maledíxerint vobis et persecúti vos fúerint, et díxerint omne malum
+        advérsum vos, mentiéntes, propter me: gaudete et exsultáte, quóniam merces vestra copiósa
+        est in cœlis.
+      en: >-
+        At that time, Jesus seeing the crowds, went up the mountain. And when He was seated, His
+        disciples came to Him. And opening His mouth He taught them, saying, Blessed are the poor
+        in spirit, for theirs is the kingdom of heaven. Blessed are the meek, for they shall
+        possess the earth. Blessed are they who mourn, for they shall be comforted. Blessed are
+        they who hunger and thirst for justice, for they shall be satisfied. Blessed are the
+        merciful, for they shall obtain mercy. Blessed are the clean of heart, for they shall see
+        God. Blessed are the peacemakers, for they shall be called the children of God. Blessed
+        are you when men reproach you, and persecute you, and, speaking falsely, say all manner of
+        evil against you, for My sake. Rejoice and exult, because your reward is great in heaven.
     status: { la: verified, en: verified }
 
   - nocturn: 3

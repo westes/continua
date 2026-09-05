@@ -7,14 +7,20 @@
 # Lectio4-6 is this saint's own proper vita, one continuous account, no
 # internal break, combined into a single reading.
 #
-# Nocturn 3's Lectio7 gives only the Gospel incipit ("Et réliqua", Luke
-# 12:32-34) with no full pericope text, so the bare Gospel reading isn't
-# authored here (deferred, same as elsewhere pending the bulk
-# Vulgate/Douay-Rheims import). Lectio7's own homily portion + Lectio8-9
-# is one continuous excerpt from St. Paulinus's own sermon (fittingly,
-# on almsgiving to the poor — his own day, his own words), combined into
-# a single reading. No responsory given for either reading in the
-# source.
+# Lectio7's own homily portion + Lectio8-9 is one continuous excerpt
+# from St. Paulinus's own sermon (fittingly, on almsgiving to the poor —
+# his own day, his own words), combined into a single reading. No
+# responsory given for either reading in the source.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope, previously left
+# unauthored because Lectio7 gives only the incipit ("Et réliqua"), is
+# now authored too (isGospel: true, immediately before the homily) --
+# the citation (Luke 12:32-34) comes from that same Lectio7 line; the
+# full text isn't repeated in this saint's own Missale file (no proper
+# [Evangelium] there), so it's sourced from
+# horas/Latin/Commune/C5-1.txt's own [Evangelium] (Common of a Confessor
+# Not a Bishop's own reuse of this same pericope, verbatim), not guessed
+# at.
 id: st-paulinus-of-nola
 readings:
   - nocturn: 2
@@ -112,6 +118,24 @@ readings:
         laid in the basilica of St. Bartholomew on an island in the Tiber. But Pope Pius X ordered
         the sacred relics of Paulinus to be restored to Nola, and he raised his feast to the rite of
         a double for the universal Church.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 12:32-34", en: "Luke 12:32-34" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Nolíte timére, pusíllus grex, quia
+        complácuit Patri vestro dare vobis regnum. Véndite quæ possidétis, et date eleemósynam.
+        Fácite vobis sácculos, qui non veteráscunt, thesáurum non deficiéntem in cœlis: quo fur
+        non apprópiat, neque tínea corrúmpit. Ubi enim thesáurus vester est, ibi et cor vestrum
+        erit.
+      en: >-
+        At that time, Jesus said to His disciples, Do not be afraid, little flock, for it has
+        pleased your Father to give you the kingdom. Sell what you have and give alms. Make for
+        yourselves purses that do not grow old, a treasure unfailing in heaven, where neither
+        thief draws near nor moth destroys. For where your treasure is, there also will your heart
+        be.
     status: { la: verified, en: verified }
 
   - nocturn: 3

@@ -1,10 +1,13 @@
 # Matins Nocturn 2-3 readings for St. Francis Xavier (Dec 3). Sourced
 # directly from web/www/horas/Latin/Sancti/12-03.txt,
 # English/Sancti/12-03.txt. Nocturn 2: Lectio4-6 combined into one
-# reading. Nocturn 3: the Gospel citation (Mark 16:15-18) ends "Et
-# réliqua"/"And so on" with no full pericope given -- per the
-# bare-incipit convention, only the homily (Lectio7-9, St. Gregory
-# the Great) is authored, isGospel: false, no citation field.
+# reading.
+#
+# Update (2026-09-05): Nocturn 3's Gospel pericope (Mark 16:15-18,
+# already known from this file's own header) is now authored too
+# (isGospel: true, immediately before Gregory's homily) — reused
+# verbatim from `ss-cyriacus-largus-and-smaragdus.yml`, already authored
+# this session with the identical citation.
 id: st-francis-xavier
 readings:
   - nocturn: 2
@@ -125,6 +128,25 @@ readings:
         had become famous throughout the whole world for new and
         wonderful miracles, Gregory XV added his name to the list of
         the Saints.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Marc 16:15-18", en: "Mark 16:15-18" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Eúntes in mundum univérsum, prædicáte
+        Evangélium omni creatúræ. Qui credíderit, et baptizátus fúerit, salvus erit: qui vero
+        non credíderit, condemnábitur. Signa autem eos, qui credíderint, hæc sequéntur: In
+        nómine meo dæmónia ejícient: linguis loquéntur novis: serpéntes tollent: et si
+        mortíferum quid bíberint, non eis nocébit: super ægros manus impónent, et bene habébunt.
+      en: >-
+        At that time, Jesus said to His disciples, "Go into the whole world and preach the
+        gospel to every creature. He who believes and is baptized shall be saved, but he who
+        does not believe shall be condemned. And these signs shall attend those who believe: in
+        My name they shall cast out devils; they shall speak in new tongues; they shall take up
+        serpents; and if they drink any deadly thing, it shall not hurt them; they shall lay
+        hands upon the sick and they shall get well."
     status: { la: verified, en: verified }
 
   - nocturn: 3

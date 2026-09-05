@@ -16,12 +16,20 @@
 # Nocturn 3: `SanctiM/03-21.txt` Lectio9's Gospel citation (Matt
 # 19:27-29) is a bare incipit ("Et réliqua") with no full pericope text
 # given, so — per the pre-1955 pass's convention of not transcribing
-# bare incipits — only the homily portion is authored (not marked
-# isGospel), combined with Lectio10-12 as one continuous excerpt of St.
-# Peter Damian's sermon. No English/SanctiM translation exists for
-# this file in the reference engine, so `en` for the Nocturn 3 reading
-# is this project's own translation, marked `draft` per
+# bare incipits — only the homily portion was originally authored (not
+# marked isGospel), combined with Lectio10-12 as one continuous excerpt
+# of St. Peter Damian's sermon. No English/SanctiM translation exists
+# for this file in the reference engine, so `en` for the Nocturn 3
+# reading is this project's own translation, marked `draft` per
 # vu-prefer-text-over-missing. No responsory given for either reading.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Peter Damian's homily) — the day's
+# Missale (`Sancti/03-21.txt`, `[Rule] vide C5b`) redirects to the
+# Common of a Confessor Not a Bishop, whose own [Evangelium] gives the
+# full Matt 19:27-29 pericope, sourced from
+# web/www/horas/Latin/Commune/C5b.txt (same text also authored
+# independently for ss-seven-founders-of-the-servite-order.yml).
 id: st-benedict
 readings:
   - nocturn: 2
@@ -96,6 +104,27 @@ readings:
         heaven, clothed in a most precious garment, and surrounded with lights, and One of a most
         glorious and awful aspect standing above, Whom they heard saying: This is the way whereby
         Benedict, the beloved of the Lord, goeth up to heaven.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 19:27-29", en: "Matt 19:27-29" }
+    text:
+      la: >-
+        In illo témpore: Dixit Petrus ad Jesum: Ecce, nos relíquimus ómnia, et secúti sumus te:
+        quid ergo erit nobis? Jesus autem dixit illis: Amen, dico vobis, quod vos, qui secúti
+        estis me, in regeneratióne, cum séderit Fílius hóminis in sede majestátis suæ, sedébitis
+        et vos super sedes duódecim, judicántes duódecim tribus Israël. Et omnis, qui relíquerit
+        domum, vel fratres, aut soróres, aut patrem, aut matrem, aut uxórem, aut fílios, aut
+        agros, propter nomen meum, céntuplum accípiet, et vitam ætérnam possidébit.
+      en: >-
+        At that time, Peter said to Jesus, "Behold, we have left all and followed You; what then
+        shall we have?" And Jesus said to them, "Amen I say to you that you who have followed
+        Me, in the regeneration when the Son of Man shall sit on the throne of His glory, shall
+        also sit on twelve thrones, judging the twelve tribes of Israel. And everyone who has
+        left house, or brothers, or sisters, or father, or mother, or wife, or children, or
+        lands, for My name's sake, shall receive a hundredfold, and shall possess life
+        everlasting."
     status: { la: verified, en: verified }
 
   - nocturn: 3

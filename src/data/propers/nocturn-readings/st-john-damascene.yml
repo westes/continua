@@ -3,10 +3,16 @@
 # web/www/horas/Latin/Sancti/03-27.txt, English/Sancti/03-27.txt.
 #
 # Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
-# Nocturn 3: Lectio7's Gospel citation (Luke 6:6-11) is a bare incipit
-# ("Et réliqua"), so only the homily is authored (not marked isGospel),
+# Nocturn 3: Lectio7's Gospel citation (Luke 6:6-11) was a bare incipit
+# ("Et réliqua"), so only the homily was authored (not marked isGospel),
 # St. Peter Chrysologus's homily (Lectio7's homily + Lectio8-9
 # combined).
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily), matching the newer
+# convention set by ember-september-friday.yml/post-pentecost-16.yml —
+# sourced from missa/Latin/Sancti/03-27.txt and missa/English/Sancti/
+# 03-27.txt's own [Evangelium] (given directly, no redirect).
 id: st-john-damascene
 readings:
   - nocturn: 2
@@ -118,6 +124,33 @@ readings:
         and good works, fell asleep in the peace of Christ about the year of salvation
         754. The supreme Pontiff, Leo XIII., established his office and Mass throughout
         the universal church, whereof he also gave him the title of doctor.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 6:6-11", en: "Luke 6:6-11" }
+    text:
+      la: >-
+        In illo témpore: Factum est et in álio sábbato, ut intráret Jesus in synagógam et
+        docéret. Et erat ibi homo, et manus ejus déxtera erat árida. Observábant autem
+        scribæ et pharisæi, si in sábbato curáret: ut invenírent, unde accusárent eum. Ipse
+        vero sciébat cogitatiónes eórum. Et ait hómini, qui habébat manum áridam: Surge et
+        sta in médium. Et surgens stetit. Ait autem ad illos Jesus: Intérrogo vos, si licet
+        sábbatis benefácere, an male: ánimam salvam fácere, an pérdere? Et circumspéctis
+        ómnibus dixit hómini: Exténde manum tuam. Et exténdit: et restitúta est manus ejus.
+        Ipsi autem repléti sunt insipiéntia, et colloquebántur ad ínvicem, quidnam fácerent
+        Jesu.
+      en: >-
+        At that time, it came to pass on another Sabbath, that Jesus entered the synagogue
+        and taught. And a man was there and his right hand was withered. And the Scribes and
+        the Pharisees were watching whether He cured on the Sabbath, that they might find
+        how to accuse Him. But He knew their thoughts, and He said to the man with the
+        withered hand, Arise and stand forth in the midst. And he arose and stood forth. But
+        Jesus said to them, I ask you, is it lawful on the Sabbath to do good, or to do evil;
+        to save a life, or to destroy it? And having looked around upon them all, He said to
+        the man, Stretch forth your hand. And he stretched it forth, and his hand was
+        restored. But they were filled with fury, and began to discuss among themselves what
+        they should do to Jesus.
     status: { la: verified, en: verified }
 
   - nocturn: 3

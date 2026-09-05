@@ -8,12 +8,14 @@
 # Nocturn 2: Lectio4-6 combined into one reading, St. Fulgentius's
 # sermon contrasting yesterday's Nativity with today's martyrdom — one
 # continuous piece, no genuine source break.
-# Nocturn 3: Lectio7's Gospel citation (Matt 23:34-39) is a bare
-# incipit ("Et réliqua") with no full pericope text given, so — per
-# the established convention of not transcribing bare incipits — only
-# the homily portion is authored (not marked isGospel), St. Jerome's
-# commentary (Lectio7's homily + Lectio8-9 combined, one continuous
-# piece on "Zacharias son of Barachias").
+# Nocturn 3: Lectio7's Gospel citation (Matt 23:34-39) was a bare
+# incipit ("Et réliqua") with no full pericope text given; the full
+# pericope is now authored too (isGospel: true, immediately before the
+# homily) — sourced from `web/www/missa/Latin/Sancti/08-03.txt` (Dec
+# 26's own Missale [Evangelium] is `@Sancti/08-03`),
+# English/Sancti/08-03.txt (2026-09-05 update). The homily portion
+# remains St. Jerome's commentary (Lectio7's homily + Lectio8-9
+# combined, one continuous piece on "Zacharias son of Barachias").
 id: st-stephen-protomartyr
 readings:
   - nocturn: 2
@@ -83,6 +85,35 @@ readings:
         them that stoned him, that they might not be punished. By the might of his love he
         overcame Saul his cruel persecutor; and earned for a comrade in heaven, the very man
         who had done him to death upon earth.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 23:34-39", en: "Matt 23:34-39" }
+    text:
+      la: >-
+        In illo témpore: Dicébat Jesus scribis et pharisǽis: Ecce, ego mitto ad vos prophétas,
+        et sapiéntes, et scribas, et ex illis occidétis et crucifigétis, et ex eis flagellábitis
+        in synagógis vestris, et persequémini de civitáte in civitátem: ut véniat super vos
+        omnis sanguis justus, qui effúsus est super terram, a sánguine Abel justi usque ad
+        sánguinem Zacharíæ, fílii Barachíæ, quem occidístis inter templum et altáre. Amen, dico
+        vobis, vénient hæc ómnia super generatiónem istam. Jerúsalem, Jerúsalem, quæ occídis
+        prophétas, et lápidas eos, qui ad te missi sunt, quóties vólui congregáre fílios tuos,
+        quemádmodum gallína cóngregat pullos suos sub alas, et noluísti? Ecce, relinquétur vobis
+        domus vestra desérta. Dico enim vobis, non me vidébitis ámodo, donec dicátis:
+        Benedíctus, qui venit in nómine Dómini.
+      en: >-
+        At that time, Jesus said to the scribes and Pharisees, "Behold, I send to you prophets,
+        and wise men, and scribes: and some of them you will put to death and crucify, and some
+        you will scourge in your synagogues, and persecute from city to city, that upon you may
+        come all the just blood that hath been shed upon the earth, from the blood of Abel the
+        just, even unto the blood of Zacharias the son of Barachias, whom you killed between the
+        temple and the altar. Amen I say to you, all these things shall come upon this
+        generation. Jerusalem, Jerusalem, thou that killest the prophets, and stonest them that
+        are sent unto thee, how often would I have gathered together thy children, as the hen
+        doth gather her chickens under her wings, and thou wouldest not? Behold, your house
+        shall be left to you, desolate. For I say to you, you shall not see Me henceforth till
+        you say, 'Blessed is He that cometh in the name of the Lord.'"
     status: { la: verified, en: verified }
 
   - nocturn: 3

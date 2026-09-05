@@ -15,11 +15,18 @@
 # Martha-and-Mary pericope as `st-martha.yml`'s own Nocturn 3, read
 # here for its traditional allegorical link to Mary's "better part")
 # is a bare incipit ("Et réliqua") with no full pericope text given,
-# so — per the pre-1955 pass's convention of not transcribing bare
-# incipits — only the homily portion is authored (not marked
+# so only the homily portion was originally authored (not marked
 # isGospel), combined with Lectio8-9 as one continuous excerpt of St.
 # Augustine's own (different) sermon on the same passage. No
 # responsory given for either reading.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before the homily) — sourced from
+# Sancti/07-29.txt's own [Evangelium] (St. Martha's own Mass Gospel,
+# this feast's own `@Sancti/08-15t` -> `@SanctiM/08-15t` chain resolving
+# back to `@Sancti/08-15t`, which itself in turn shares this same
+# Nocturn 3 Gospel — cross-checked against `st-martha.yml`'s own
+# citation), not guessed at.
 id: assumption
 readings:
   - nocturn: 2
@@ -85,6 +92,28 @@ readings:
         smooth, and easy way to heaven. For if Christ, Who is the Life and the Truth, hath said
         Where I am, there shall also My servant be, how much more shall not rather His mother be
         with Him?
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 10:38-42", en: "Luke 10:38-42" }
+    text:
+      la: >-
+        In illo témpore: Intrávit Jesus in quoddam castéllum: et múlier quædam, Martha nómine,
+        excépit illum in domum suam et huic erat soror nómine María quæ étiam sedens secus pedes
+        Dómini audiébat verbum illíus. Martha autem satagébat circa frequens ministérium quæ
+        stetit, et ait: Dómine non est tibi curæ quod soror mea relíquit me solam ministráre dic
+        ergo illi ut me adjúvet et respóndens dixit illi Dóminus: Martha, Martha, sollícita es, et
+        turbáris erga plúrima: porro unum est necessárium. María óptimam partem elégit, quæ non
+        auferétur ab ea.
+      en: >-
+        At that time, Jesus entered a certain village; and a woman named Martha welcomed Him to
+        her house. And she had a sister called Mary, who also seated herself at the Lord's feet,
+        and listened to His word. But Martha was busy about much serving. And she came up and
+        said, "Lord, is it not concern of Yours that my sister has left me to serve alone? Tell
+        her therefore to help me." But the Lord answered and said to her, "Martha, Martha, you
+        are anxious and troubled about many things; and yet only one thing is needful. Mary has
+        chosen the best part, and it will not be taken away from her."
     status: { la: verified, en: verified }
 
   - nocturn: 3

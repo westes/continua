@@ -12,9 +12,15 @@
 # Nocturn 3: Lectio7's Gospel citation (John 4:46-53) is a bare incipit
 # ("Et réliqua") with no full pericope text given, so — per the
 # pre-1955 pass's convention of not transcribing bare incipits — only
-# the homily portion is authored (not marked isGospel), combined with
-# Lectio8-9 as one continuous excerpt of Pope St. Gregory the Great's
-# sermon. No responsory given for either.
+# the homily portion was originally authored (not marked isGospel),
+# combined with Lectio8-9 as one continuous excerpt of Pope St.
+# Gregory the Great's sermon. No responsory given for either.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Gregory's homily) — the day's own
+# Missale [Evangelium] in web/www/missa/Latin/Sancti/05-12.txt is a
+# redirect (`@Tempora/Pent20-0`) to the 20th Sunday after Pentecost's
+# own Gospel, sourced from there.
 id: ss-nereus-achilleus-domitilla-and-pancras
 readings:
   - nocturn: 2
@@ -84,6 +90,35 @@ readings:
         his neck to the executioner with manly courage, and won a glorious crown of martyrdom.
         The Lady Octavilla took his body by night, embalmed it with precious ointments, and
         buried it on the Aurelian Way.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joannes 4:46-53", en: "John 4:46-53" }
+    text:
+      la: >-
+        In illo témpore: Erat quidam régulus, cujus fílius infirmabátur Caphárnaum. Hic cum
+        audísset, quia Jesus adveníret a Judǽa in Galilǽam, ábiit ad eum, et rogábat eum, ut
+        descénderet et sanáret fílium ejus: incipiébat enim mori. Dixit ergo Jesus ad eum: Nisi
+        signa et prodígia vidéritis, non créditis. Dicit ad eum régulus: Dómine, descénde,
+        priúsquam moriátur fílius meus. Dicit ei Jesus: Vade, fílius tuus vivit. Crédidit homo
+        sermóni, quem dixit ei Jesus, et ibat. Jam autem eo descendénte, servi occurrérunt ei et
+        nuntiavérunt, dicéntes, quia fílius ejus víveret. Interrogábat ergo horam ab eis, in qua
+        mélius habúerit. Et dixérunt ei: Quia heri hora séptima relíquit eum febris. Cognóvit
+        ergo pater, quia illa hora erat, in qua dixit ei Jesus: Fílius tuus vivit: et crédidit
+        ipse et domus ejus tota.
+      en: >-
+        At that time, there was a certain royal official whose son was lying sick at
+        Capharnaum. When he heard that Jesus had come from Judea into Galilee, he went to him
+        and besought Him to come down and heal his son, for he was at the point of death. Jesus
+        therefore said to him, "Unless you see signs and wonders, you do not believe." The royal
+        official said to Him, "Sir, come down before my child dies." Jesus said to him, "Go your
+        way, your son lives." The man believed the word that Jesus spoke to him, and departed.
+        But even as he was now going down, his servants met him and brought word saying that his
+        son lived. He asked of them therefore the hour in which he had got better. And they told
+        him, "Yesterday, at the seventh hour, the fever left him." The father knew then that it
+        was at that very hour in which Jesus had said to him, "Your son lives." And he himself
+        believed, and his whole household.
     status: { la: verified, en: verified }
 
   - nocturn: 3

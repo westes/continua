@@ -16,11 +16,20 @@
 # Common of Feasts of the BVM's own Nocturn 3 (Commune/C11.txt): a bare
 # Gospel incipit (Luke 11:27-28, "Et réliqua") followed by the Venerable
 # Bede's homily. Per the established convention of not transcribing
-# bare incipits, only the homily is authored here (not marked isGospel).
+# bare incipits, only the homily was originally authored here (not
+# marked isGospel).
 # Same shared C11 content also used by
 # presentation-of-the-bvm.yml's own Nocturn 3 — the Matins mechanism has
 # no cross-id lookup for nocturn-readings the way collect/antiphon do
 # via `propers`, so it's duplicated rather than referenced.
+#
+# Update (2026-09-05): the Gospel pericope itself is now authored too
+# (isGospel: true, immediately before Bede's homily). Though Commune/
+# C11.txt's own Nocturn 3 Lectio7 cuts it off at "Et réliqua", the full
+# two-verse pericope (Luke 11:27-28) is short enough that C11.txt's own
+# Missa [Evangelium] (same file) gives it complete — sourced from there,
+# not guessed at or reconstructed from the homily's mid-paragraph
+# quotations alone.
 id: our-lady-of-the-snows
 readings:
   - nocturn: 2
@@ -80,6 +89,21 @@ readings:
         St. Mary, the Greater. The memory of the dedication thereof is kept every year by a
         Feast-day that taketh name from the wonderful fall of snow which on this day took
         place.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Luc 11:27-28", en: "Luke 11:27-28" }
+    text:
+      la: >-
+        In illo témpore: Loquénte Jesu ad turbas, extóllens vocem quædam múlier de turba, dixit
+        illi: Beátus venter, qui te portávit, et úbera, quæ suxísti. At ille dixit: Quinímmo
+        beáti, qui áudiunt verbum Dei, et custódiunt illud.
+      en: >-
+        At that time, as Jesus was speaking to the multitudes, a certain woman from the crowd
+        lifted up her voice and said to Him, "Blessed is the womb that bore You, and the breasts
+        that nursed You." But He said, "Rather, blessed are they who hear the word of God and
+        keep it."
     status: { la: verified, en: verified }
 
   - nocturn: 3

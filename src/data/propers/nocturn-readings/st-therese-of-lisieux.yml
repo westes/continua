@@ -2,10 +2,14 @@
 # Virgin (Oct 3). Sourced directly from
 # web/www/horas/Latin/Sancti/10-03.txt, English/Sancti/10-03.txt.
 # Nocturn 2: Lectio4-6 combined into one reading, one continuous vita.
-# Nocturn 3: her own Gospel citation ends "Et réliqua"/"And so on" with
-# no full pericope given -- per the bare-incipit convention, only the
-# homily (Lectio7-9, Pope St. Leo the Great) is authored, isGospel:
-# false, no citation field.
+# Nocturn 3: Lectio7's Gospel citation (Matt 18:1-4, the little child
+# set in the disciples' midst) is a bare "Et réliqua" incipit in the
+# horas file -- the same pericope this day's own Mass proper carries in
+# full (missa/Latin+English/Sancti/10-03.txt's [Evangelium]), sourced
+# from there and added 2026-09-05 (isGospel: true) immediately before
+# the homily (Lectio7-9, Pope St. Leo the Great -- itself an unusual
+# reuse of a Sermon originally preached for Epiphany, but on this same
+# Matt 18:1-4 text, so it pairs correctly here).
 id: st-therese-of-lisieux
 readings:
   - nocturn: 2
@@ -146,6 +150,27 @@ readings:
         Blessed and two years later, at the time of the great Jubilee,
         listed her among the Saints. He also appointed and declared her
         Patroness of all the missions.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 18:1-4", en: "Matt 18:1-4" }
+    text:
+      la: >-
+        In illo témpore accessérunt discípuli ad Jesum, dicéntes: Quis,
+        putas, major est in regno cælórum? Et advocans Jesus párvulum,
+        státuit eum in médio eórum, et dixit: Amen, dico vobis, nisi
+        convérsi fuéritis, et efficiámini sicut párvuli, non intrábitis
+        in regnum cœlorum. Quicúmque ergo humiliáverit se sicut
+        párvulus iste, hic est major in regno cœlórum.
+      en: >-
+        At that time, the disciples came to Jesus, saying, Who then is
+        greater in the kingdom of heaven? And Jesus called a little
+        child to Him, set him in their midst, and said, Amen I say to
+        you, unless you turn and become like little children, you will
+        not enter into the kingdom of heaven. Whoever, therefore,
+        humbles himself as this little child, he is the greatest in
+        the kingdom of heaven.
     status: { la: verified, en: verified }
 
   - nocturn: 3

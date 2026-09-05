@@ -17,6 +17,16 @@
 # (a different day citing the same pericope; the reference engine
 # reuses this homily across multiple feasts near this text). No
 # responsory given for either reading.
+#
+# Update (2026-09-05): the Gospel pericope itself (John 12:24-26) is
+# now authored too (isGospel: true, immediately before the homily) —
+# St. Lawrence's own Missale [Evangelium] redirects to `@Sancti/02-01`
+# (St. Ignatius of Antioch's Mass Gospel), so the full text is sourced
+# from missa/Latin/Sancti/02-01.txt and missa/English/Sancti/08-10.txt
+# (St. Lawrence's own English Missale, which inlines the text directly
+# rather than redirecting). st-ignatius-of-antioch.yml's own Nocturn 3
+# Gospel (authored independently, in parallel) draws on the same
+# underlying pericope, as expected for a shared Missale redirect.
 id: st-lawrence
 readings:
   - nocturn: 2
@@ -102,6 +112,24 @@ readings:
         world, that from the rising of the sun unto the going down thereof, wheresoever the
         constellation of the Levitical lights shineth, even as Jerusalem is made glorious by
         Stephen, so Rome is made famous by Lawrence.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joann 12:24-26", en: "John 12:24-26" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Amen, amen, dico vobis, nisi granum fruménti cadens in
+        terram, mórtuum fúerit, ipsum solum manet: si autem mórtuum fúerit, multum fructum affert. Qui amat ánimam
+        suam, perdet eam: et qui odit ánimam suam in hoc mundo, in vitam ætérnam custódit eam. Si quis mihi
+        mínistrat, me sequátur: et ubi sum ego, illic et miníster meus erit. Si quis mihi ministráverit,
+        honorificábit eum Pater meus.
+      en: >-
+        At that time, Jesus said to His disciples, Amen, amen, I say to you, unless the grain of wheat falls into
+        the ground and dies, it remains alone. But if it dies, it brings forth much fruit. He who loves his life,
+        loses it; and he who hates his life in this world, keeps it unto life everlasting. If anyone serves Me, let
+        him follow Me; and where I am there also shall My servant be. If anyone serves me, My Father will honor
+        him.
     status: { la: verified, en: verified }
 
   - nocturn: 3
