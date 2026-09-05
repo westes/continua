@@ -4,7 +4,7 @@
 # chapter/verse historically, so a book-level match is the right
 # granularity, not a gap to fill in later with exact citations.
 #
-# Seeded, not a full pool — 63 of the 72 books actually used in the user's
+# Seeded, not a full pool — 64 of the 72 books actually used in the user's
 # own bible-plan (data/hours/bible-plan/*.yml), the rest deferred bulk
 # content (see TODO.md). Cycled in order
 # per-day when a Nocturn-1 reading's book has more than one candidate
@@ -1216,3 +1216,23 @@ deut:
     v:
       la: "Invénit eum in terra desérta, in loco horróris et vastæ solitúdinis: et custodívit eum quasi pupíllam óculi sui."
       en: "He found him in a desert land, in a place of horror, and of vast wilderness: and he kept him as the apple of his eye."
+
+# `rom` (Romans) — like `deut` above, vu's own original composition, not a
+# transcribed historical Matins responsory: every genuine Romans citation
+# in the reference source (the whole Christmas-Octave `Nat0X` reading
+# week) borrows an unrelated feast's own proper responsory (see TODO.md's
+# 2026-09-04 entry), so there's no historical Matins responsory for this
+# book to transcribe. Built instead from Rom 13:11-12 — "the night is
+# past, the day is at hand" — real, already-liturgical Douay-Rheims/
+# Vulgate text used year-round as the standing ferial Lauds Capitulum
+# (Latin/Psalterium/Special/Major Special.txt's own "Feria Laudes") and
+# again at Advent I's own Capitulum (Tempora/Adv1-0.txt) — genuine
+# accented liturgical Latin, just never combined into its own Matins
+# responsory historically. User-confirmed 2026-09-05.
+rom:
+  - r:
+      la: "Nox præcéssit, dies autem appropinquávit: * Abjiciámus ergo ópera tenebrárum, et induámur arma lucis."
+      en: "The night is past, and the day is at hand: * Let us therefore cast off the works of darkness, and put on the armour of light."
+    v:
+      la: "Hora est jam nos de somno súrgere: nunc enim própior est nostra salus, quam cum credídimus."
+      en: "It is now the hour for us to rise from sleep, for now our salvation is nearer than when we believed."

@@ -25,23 +25,6 @@ across every hour and content type in this app.
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
-   - Matins Nocturn 2/3 responsory pools (both new, 2026-09-04 — see "Matins responsory pools:
-     per-book expansion + new per-Common-category pool" below, and its nine follow-up entries):
-     the per-book pool now covers 63 of 72 books — every book with any genuinely usable Latin
-     content anywhere in the reference source (Tempora *or* Sancti — `cant`/Canticles, `lev`, and
-     `num` all turned up only in individual saints' own Sancti files, not Tempora's continuous
-     reading cycle), plus `deut`/Deuteronomy, this pool's first genuine original composition (a
-     real R./V. pairing built from the Canticle of Moses' own genuine verses, since Deuteronomy has
-     no historical Matins responsory anywhere in the source at all). `rom`/Romans is the one
-     remaining real exception with citations but no usable content: every citing file borrows an
-     unrelated feast's own responsory. The remaining 9 are `rom` plus 8 already-confirmed-
-     genuinely-absent books (no citation anywhere at all, in Tempora or Sancti); the new
-     per-Common-category pool covers 19/19 real Commune
-     categories (every category actually used by a saint except angel/evangelist/vigil,
-     which have no Commune responsory file to source from) — this
-     is the one that closes most of the 272-of-355 nocturn-readings files that had no `responsory`
-     at all. Bible-plan TSV content also isn't yet
-     in a test table (see "Bible-plan TSV — bulk conversion done" below).
    - Lauds/Vespers duplex-majus+ Common-category psalmody: all 24 `SaintRecord.common`
      categories are resolved (Vespers 10/10 real category files, Lauds 9/10 — see
      "Lauds/Vespers duplex-majus+ Common-category psalmody" below and its follow-up entry) with
@@ -6081,5 +6064,34 @@ historically-attested responsory, matching this project's "not a reconstruction"
 63 of 72 bible-plan books now seeded (`deut` added). `npm test` (2029 passed) and `tsc --noEmit`
 both pass; live-verified through `getBiblePlanReadings` (`easter-3`/Saturday resolves the real,
 properly R./V.-formatted text for `Deut 33-34`). Canonical-key audit re-run, clean (`deut` has no
-`BOOK_ALIASES` entry). Remaining 9, all confirmed genuinely absent from both Tempora and Sancti:
-`rom` plus `bar`, Josue, Judices, Ruth, 1-2 Chronicles, Ezra, Nehemiah.
+`BOOK_ALIASES` entry).
+
+### Matins responsory pools: `rom` — the second (and last) original composition (2026-09-05)
+
+Asked directly for thoughts on Romans, the one book with real citations but no usable Matins
+content anywhere (every citing file borrows an unrelated feast's own proper responsory — Christmas
+Day, Circumcision, or a January 7 saint). Same approach as `deut`: composed rather than
+transcribed, but built from real, already-liturgical text rather than invented — Rom 13:11-12
+("the night is past, the day is at hand... let us cast off the works of darkness, and put on the
+armour of light") is the standing year-round ferial Lauds Capitulum
+(`Latin/Psalterium/Special/Major Special.txt`'s own "Feria Laudes") and is used again at Advent
+I's own Capitulum (`Tempora/Adv1-0.txt`) — genuine accented Vulgate/Douay-Rheims text, just never
+combined into its own 9-lesson Matins responsory set the way every other book in this pool was.
+User-confirmed before adding.
+
+**64 of 72 bible-plan books now seeded — every book actually used in the user's own bible-plan has
+a real responsory, whether transcribed (62) or composed from genuine liturgical text (`deut`,
+`rom`).** The remaining 8 are the true, final, unclosable gap: books with no citation anywhere in
+Tempora or Sancti at all (`bar`, Josue, Judices, Ruth, 1-2 Chronicles, Ezra, Nehemiah) — there's no
+comparable "already-liturgical, just never assembled into a responsory" text to build from for any
+of these, since they're never quoted or read in the Office at all, historically. `npm test` (2029
+passed) and `tsc --noEmit` both pass; live-verified through `getBiblePlanReadings` (a Jan 1
+calendar-dated row resolves real, correctly R./V.-formatted text for `Rom 7-8`). Canonical-key
+audit re-run, clean.
+
+**This closes the per-book responsory pool as a project** (see "Matins responsory pools" and its
+ten follow-up entries, 2026-09-04/05) — the per-Common-category pool (19/19 real categories) is
+also done; see that same first entry. One small, unrelated loose end noted along the way and not
+addressed here: the bible-plan TSV's own content still isn't covered by a table-driven test the
+way other bulk-imported content stores are (see "Bible-plan TSV — bulk conversion done" below) —
+`tests/propers/bible-plan.test.ts` tests specific real dates ad hoc, not the full imported set.
