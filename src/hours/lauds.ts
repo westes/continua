@@ -216,7 +216,15 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
   const ferial = laudsAntiphons[day.weekday];
   let wd: PsalmodyBlock;
   if (getOfficeOverrideId(day)) {
-    wd = getPsalmodyOverrideFor(day) ?? ferial;
+    const override = getPsalmodyOverrideFor(day);
+    wd = override
+      ? {
+          ...override,
+          canticle: override.canticle.id
+            ? { id: override.canticle.id, antiphon: override.canticle.antiphon, split: override.canticle.split }
+            : { ...ferial.canticle, antiphon: override.canticle.antiphon },
+        }
+      : ferial;
   } else {
     const properId = getPsalmodyProperOverrideId(day);
     const proper = properId ? getLaudsSaintOverride(properId) : undefined;

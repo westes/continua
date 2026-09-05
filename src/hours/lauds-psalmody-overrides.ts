@@ -33,7 +33,15 @@ export interface LaudsPsalmodyOverride {
   groups: { psalms: number[]; antiphon: Partial<Record<string, string>> }[];
   // `split`: see hours/lauds.ts's PsalmodyBlock — no current override
   // needs it, but the shape stays aligned with the plain weekday default.
-  canticle: { id: string; antiphon: Partial<Record<string, string>>; split?: number };
+  //
+  // `id` is optional: every category so far uses the same canticle
+  // regardless of weekday (so authors it directly), but Common-of-a-
+  // Dedication's own canticle *antiphon* is fixed while the underlying
+  // canticle text rotates through the plain weekday cycle exactly like
+  // ferial Lauds (live-verified against votive=C8 across all 7 weekdays,
+  // 2026-09-05) — omitting `id` here signals hours/lauds.ts's
+  // resolvePsalmody to splice in that day's own ferial canticle id/split.
+  canticle: { id?: string; antiphon: Partial<Record<string, string>>; split?: number };
   laudate: { antiphon: Partial<Record<string, string>> };
 }
 export interface LaudsPsalmodyCategory extends LaudsPsalmodyOverride {

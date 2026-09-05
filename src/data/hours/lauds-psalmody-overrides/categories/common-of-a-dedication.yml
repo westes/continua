@@ -1,0 +1,44 @@
+# Generic Common-of-a-Dedication (of a Church) Lauds psalmody, live-
+# verified against Divinum Officium (Monastic Tridentinum 1617, command=
+# prayLaudes, votive=C8, 2026-09-05 — all 7 weekdays checked, 11-09 through
+# 11-15-2026). Genuinely its own scheme, unlike most Commons: proper psalms
+# 50/5/35 (not the usual 92/99/62), same "own numbers, not the standard
+# duplex-majus set" pattern already noted in this Common's own Vespers file
+# (109/110/111/147).
+#
+# The canticle slot is unusual again, in a different way: its *antiphon* is
+# this Common's own fixed text ("Bene fundáta est...", confirmed identical
+# on every weekday tested), but the underlying canticle *text* is not
+# proper to Dedication at all -- it's simply whichever plain ferial
+# weekday canticle the day already uses (Isaiah Mon, Ezechias Tue, Anna
+# Wed, Moses/Exodus Thu, Habacuc Fri, Moses/Deuteronomy split Sat, Three
+# Young Men Sun) -- all 7 already authored, hours/lauds-canticles.ts. This
+# supersedes the earlier (2026-08-28) note on this file's Vespers sibling
+# claiming a "Canticum Ieremiæ" was needed and never transcribed -- that
+# was a live-verify session that captured a plain ferial Thursday's output
+# instead of actually passing votive=C8; no such canticle appears anywhere
+# in the real Dedication scheme on any weekday. `canticle.id` is
+# intentionally omitted here -- see hours/lauds.ts's resolvePsalmody and
+# hours/lauds-psalmody-overrides.ts's own doc comment for the fallback.
+id: common-of-a-dedication
+groups:
+  - psalms: [50]
+    antiphon:
+      la: "Domum tuam, Dómine, * decet sanctitúdo in longitúdinem diérum."
+      en: "Holiness becometh thine house, * O Lord, for ever."
+  - psalms: [5]
+    antiphon:
+      la: "Domus mea, * domus oratiónis vocábitur."
+      en: "My house * shall be called the house of prayer."
+  - psalms: [35]
+    antiphon:
+      la: "Hæc est domus Dómini * fírmiter ædificáta, bene fundáta est supra firmam petram."
+      en: "This is the Lord's house * stoutly builded, well founded upon a sure rock."
+canticle:
+  antiphon:
+    la: "Bene fundáta est * domus Dómini supra firmam petram."
+    en: "The Lord's house is well founded * upon a sure rock."
+laudate:
+  antiphon:
+    la: "Lápides pretiósi * omnes muri tui, et turres Ierúsalem gemmis ædificabúntur."
+    en: "All thy walls are of stones most precious, * and the towers of Jerusalem shall be built up with jewels."
