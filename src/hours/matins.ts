@@ -839,11 +839,23 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
   // must be handled, not just the usual Sunday/feast pair.
   const ids = nocturnReadingIds(day, temporalId, date, threeNocturns);
   const byNocturn = new Map<number, ResolvedPart[]>();
+  // The reference engine's own Tempora files sometimes independently reuse
+  // the exact same excerpt across two different Sunday-numbering schemes
+  // (e.g. a Pentecost-numbered Sunday and a calendar-month Sunday landing on
+  // the same date — see month-week-092.yml's own header) — only one of
+  // those numbering schemes is ever in force on a given real calendar, but
+  // `nocturnReadingIds` can legitimately pool both ids for the *same* day
+  // here, which would otherwise surface the identical reading twice in one
+  // hour. Dedupe by Latin text, keeping the first (earliest-id) occurrence.
+  const seenReadingText = new Set<string>();
   for (const id of ids) {
     const readings = getNocturnReadings(id);
     let commonPoolIndex = 0;
     for (let i = 0; i < readings.length; i++) {
       const reading = readings[i]!;
+      const textKey = reading.text.la ?? reading.text.en ?? '';
+      if (textKey && seenReadingText.has(textKey)) continue;
+      if (textKey) seenReadingText.add(textKey);
       const bucket = byNocturn.get(reading.nocturn) ?? [];
       if (reading.isGospel) {
         // A genuine separate homily on this pericope is the very next
