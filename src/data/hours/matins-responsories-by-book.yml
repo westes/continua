@@ -4,7 +4,7 @@
 # chapter/verse historically, so a book-level match is the right
 # granularity, not a gap to fill in later with exact citations.
 #
-# Seeded, not a full pool — 64 of the 72 books actually used in the user's
+# Seeded, not a full pool — 65 of the 72 books actually used in the user's
 # own bible-plan (data/hours/bible-plan/*.yml), the rest deferred bulk
 # content (see TODO.md). Cycled in order
 # per-day when a Nocturn-1 reading's book has more than one candidate
@@ -1236,3 +1236,22 @@ rom:
     v:
       la: "Hora est jam nos de somno súrgere: nunc enim própior est nostra salus, quam cum credídimus."
       en: "It is now the hour for us to rise from sleep, for now our salvation is nearer than when we believed."
+
+# `bar` (Baruch) — composed, not transcribed, same approach as `deut`/`rom`
+# above: Baruch has no Matins responsory anywhere in the Office (Tempora
+# or Sancti), but genuine liturgical Latin exists in a different part of
+# the Office altogether — the Easter Vigil *Mass*'s own fourth prophecy
+# (missa/Latin/Tempora/Quad6-6.txt's `[Proph_Baruch3]`, Bar 3:9-38, "Audi,
+# Israël, mandáta vitæ") — user-found (2026-09-05: "it's in the misa
+# section, not the horas section"). Built from that prophecy's own
+# climactic close ("Hic est Deus noster... Post hæc in terris visus est,
+# et cum homínibus conversátus est" — read at the Vigil precisely because
+# early exegetes saw "seen upon earth, and conversed with men" as a
+# prophecy of the Incarnation), genuine accented text, not invented.
+bar:
+  - r:
+      la: "Hic est Deus noster: * Et non æstimábitur álius advérsus eum."
+      en: "This is our God: * And there shall no other be accounted of in comparison of him."
+    v:
+      la: "Post hæc in terris visus est, et cum homínibus conversátus est."
+      en: "Afterwards he was seen upon earth, and conversed with men."

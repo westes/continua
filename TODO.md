@@ -6089,9 +6089,35 @@ passed) and `tsc --noEmit` both pass; live-verified through `getBiblePlanReading
 calendar-dated row resolves real, correctly R./V.-formatted text for `Rom 7-8`). Canonical-key
 audit re-run, clean.
 
+### Matins responsory pools: `bar` found in the Missa, not the Horas (2026-09-05)
+
+The "closes the pool" claim above turned out premature by one book. User pointed to
+`missa/Latin/Tempora/Quad6-6.txt` — the *Mass* propers, a directory tree this whole responsory
+search had never once checked (everything so far searched `horas/`, the Divine Office proper).
+The Easter Vigil Mass's own fourth prophecy (`[Proph_Baruch3]`, Bar 3:9-38, "Audi, Israël, mandáta
+vitæ") is genuine, real, accented liturgical Latin — just never part of the Office's own Matins at
+all, in either directory tree. Composed `bar` the same way as `deut`/`rom`: built from that
+prophecy's own climactic close ("Hic est Deus noster... Post hæc in terris visus est, et cum
+homínibus conversátus est" — read at the Vigil because early exegetes saw "seen upon earth, and
+conversed with men" as a prophecy of the Incarnation), genuine text, not invented.
+
+**65 of 72 bible-plan books now seeded.** `npm test` (2029 passed) and `tsc --noEmit` both pass;
+live-verified through `getBiblePlanReadings` (`palm-sunday`/Thursday resolves real, correctly
+R./V.-formatted text for `Bar 1-2`). Canonical-key audit re-run, clean (`bar` has no `BOOK_ALIASES`
+entry).
+
 **This closes the per-book responsory pool as a project** (see "Matins responsory pools" and its
-ten follow-up entries, 2026-09-04/05) — the per-Common-category pool (19/19 real categories) is
-also done; see that same first entry. One small, unrelated loose end noted along the way and not
-addressed here: the bible-plan TSV's own content still isn't covered by a table-driven test the
-way other bulk-imported content stores are (see "Bible-plan TSV — bulk conversion done" below) —
-`tests/propers/bible-plan.test.ts` tests specific real dates ad hoc, not the full imported set.
+eleven follow-up entries, 2026-09-04/05) — the per-Common-category pool (19/19 real categories) is
+also done; see that same first entry. Extended the Missa check to the other 6 already-absent books
+too (Josue, Judices, Ruth, 1-2 Chronicles) — genuinely zero citations anywhere, Horas or Missa.
+Ezra came up with one thin, ambiguous lead not acted on: `missa/Latin/Tempora/Pasc7-2.txt`'s
+Introit cites `!Esdr 2:36 2:37`, but the actual Vulgate text there (checked against
+`data/scripture/1esdr-2.yml`) is a plain census list that doesn't match the Introit's own text at
+all ("Accípite jucunditátem glóriæ vestræ... qui vos ad cœléstia regna vocávit") — that phrasing
+loosely echoes Nehemiah 8:10 instead, but isn't a verbatim match either, and it's only two lines to
+begin with, nowhere near as solid as Baruch's own full Vigil prophecy. Left both `ezra` and `neh`
+unseeded rather than force an uncertain match. One small, unrelated loose end noted along the way
+and not addressed here: the bible-plan TSV's own content still isn't covered by a table-driven
+test the way other bulk-imported content stores are (see "Bible-plan TSV — bulk conversion done"
+below) — `tests/propers/bible-plan.test.ts` tests specific real dates ad hoc, not the full imported
+set.
