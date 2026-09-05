@@ -1320,3 +1320,31 @@ ruth:
     v:
       la: "Jejunávimus autem, et rogávimus Deum nostrum pro hoc: et evénit nobis próspere."
       en: "And we fasted, and besought our God for this: and it fell out prosperously unto us."
+
+# `jos` (Josue/Joshua; `BOOK_ALIASES` maps `josh` to this canonical id) —
+# composed, not transcribed, like `ruth`/`1esdr` above: Josue 24:15-16 has
+# no liturgical precedent anywhere in the reference source
+# at all (confirmed 2026-09-05 — every "Josue" hit in the corpus is an
+# incidental mention of the person inside unrelated books' readings, not
+# the Book of Josue's own text). Fresh selection on the verse's own
+# merit: Joshua's challenge and the people's reply are already a
+# two-voice exchange, mapping directly onto R./V. form. User-directed
+# 2026-09-05, confirmed the asterisk placement (before "Ego autem",
+# keeping the full choice-clause as R. and the famous declaration as the
+# repeated close) and V. wording (kept whole, including "Respondítque
+# pópulus, et ait"). Source has no accents (like `ruth-1.yml`/`1esdr`);
+# Latin hand-accented, cross-checked word-by-word against already-accented
+# occurrences elsewhere in the corpus (vidétur, Dómino, óptio [unaccented:
+# 2 syllables], elígite, hódie, potíssimum, servíre, debeátis, serviérunt,
+# Mesopotámia, habitátis, serviémus, Respondítque, pópulus, relinquámus,
+# serviámus, aliénis). `Amorreorum` kept in the spelling this book's own
+# bulk-imported src/data/scripture/jos-24.yml uses (no `h`, single `r`),
+# not the Clementine `Amorrhæórum` spelling found elsewhere in the corpus
+# (e.g. Ps 134/135), since that's this book's own source-text tradition.
+jos:
+  - r:
+      la: "Sin autem malum vobis vidétur ut Dómino serviátis, óptio vobis datur: elígite hódie quod placet, cui potíssimum servíre debeátis, utrum diis quibus serviérunt patres vestri in Mesopotámia, an diis Amorreórum, in quorum terra habitátis: * Ego autem et domus mea serviémus Dómino."
+      en: "But if it seem evil to you to serve the Lord, you have your choice: choose this day that which pleaseth you, whom you would rather serve, whether the gods which your fathers served in Mesopotamia, or the gods of the Amorrhites, in whose land you dwell: * But as for me and my house, we will serve the Lord."
+    v:
+      la: "Respondítque pópulus, et ait: Absit a nobis ut relinquámus Dóminum, et serviámus diis aliénis."
+      en: "And the people answered, and said: God forbid we should leave the Lord, and serve strange gods."

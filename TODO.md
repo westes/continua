@@ -6190,7 +6190,41 @@ it). `npm test` (2029 passed) and `tsc --noEmit` both pass; live-verified throug
 `getBiblePlanReadings` (`easter-sunday`/Monday resolves real, correctly R./V.-formatted text in both
 languages for `Ezra 3-4`).
 
-68 of 72 seeded. This closes every book with any real sourceable material — the remaining 4 (Josue,
+68 of 72 seeded. This closes every book with any real sourceable material — the remaining 3 (Josue,
 Judices, 1-2 Chronicles) have no citation anywhere, Horas or Missa, and no scripture text of their
 own has been composed from on its own merit the way `ruth`/`ezra` were, since that hasn't been
-directed for them.
+directed for them yet (Josue itself got exactly this treatment shortly after — see the dated entry
+below).
+
+### Matins responsory pools: `jos` (Josue) — composed, no liturgical precedent (2026-09-05)
+
+User-directed: compose Josue's own responsory from Josue 24:15-16, on the verse's own merit — like
+`ruth`/`1esdr`, since Josue has no citation anywhere in the reference source at all, Horas or Missa
+(re-confirmed live: every "Josue" hit in the corpus is an incidental mention of the person inside
+unrelated books' readings — Ambrose's *De Officiis* homily, 1-2 Kings — never the Book of Josue's
+own text).
+
+The verse pair is already a two-voice exchange — Joshua's challenge to Israel ("choose you this day
+... but as for me and my house, we will serve the Lord") and the people's reply — mapping directly
+onto R./V. form with no invented content, just split at the natural seam. Asterisk placed before
+"Ego autem", so the full choice-clause is R. and the famous declaration is the repeated close; V. is
+v.16 kept whole, including "Respondítque pópulus, et ait" (not trimmed for the change of speaker,
+since R./V. form doesn't make that redundant here — the narrative frame still matters).
+
+Source (`jos-24.yml`) has no accents, like `ruth-1.yml`/`1esdr-8.yml`; Latin hand-accented,
+cross-checked word-by-word against already-accented occurrences elsewhere in the corpus (`vidétur`,
+`Dómino`, `elígite`, `hódie`, `potíssimum`, `servíre`, `debeátis`, `serviérunt`, `Mesopotámia`,
+`habitátis`, `serviémus`, `Respondítque`, `pópulus`, `relinquámus`, `serviámus`, `aliénis`); `óptio`
+left unaccented (2 syllables, no precedent either way, but this project's own accenting convention
+never marks a 2-syllable word). `Amorreorum` kept in the spelling `jos-24.yml`'s own bulk import
+uses (no `h`, single `r`) rather than the Clementine `Amorrhæórum` spelling found elsewhere in the
+corpus (Ps 134/135), since that's this book's own source-text tradition, not a typo to "fix" toward
+the more familiar spelling.
+
+Keyed `jos:` (`BOOK_ALIASES` maps `josh` to this canonical id) — not `josue`, which would silently
+miss every lookup. `npm test` (2029 passed) and `tsc --noEmit` both pass; live-verified through
+`getBiblePlanReadings` (`easter-4`/Sunday resolves real, correctly R./V.-formatted text in both
+languages for `Josh 1`).
+
+69 of 72 seeded. Remaining 3 (Judices, 1-2 Chronicles) have no citation anywhere, Horas or Missa,
+and no scripture text of their own has been composed on its own merit yet.
