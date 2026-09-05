@@ -6228,3 +6228,36 @@ languages for `Josh 1`).
 
 69 of 72 seeded. Remaining 3 (Judices, 1-2 Chronicles) have no citation anywhere, Horas or Missa,
 and no scripture text of their own has been composed on its own merit yet.
+
+### Matins responsory pools: `jdc` (Judges) — composed, no liturgical precedent (2026-09-05)
+
+User-directed: compose Judges' own responsory from Gideon's trumpet-and-pitchers stratagem at the
+camp of Madian (Jdc 7:17-20), on the verse's own merit — like `jos`, since Judges has no citation
+anywhere in the reference source at all, Horas or Missa.
+
+Considered and set aside: the Song of Deborah's closing benediction (Jdc 5:31) has no natural second
+verse to pair with it without inventing one; Samson's dying prayer (Jdc 16:28-30) was set aside as an
+uncomfortable emphasis for a Matins responsory (a prayer for strength to kill himself with his
+enemies). Gideon's cry won out as the single most recognizable line in the book, and — like
+`ruth`/`jos` before it — the passage is already a command/fulfillment structure that maps directly
+onto R./V. form: R. is v.17-18 (Gideon's command to the three hundred men); V. is v.19-20's
+fulfillment, trimmed to its own core clause (dropped v.20's "in tribus locis... hydrias
+confregissent" middle as restating what "conplodere lagoenas" already said), landing the versicle
+directly on the iconic cry itself: "Gladius Domini, et Gedeonis."
+
+Source (`jdc-7.yml`) has no accents, like `jos-24.yml`; Latin hand-accented, cross-checked
+word-by-word against already-accented occurrences elsewhere in the corpus (`vidéritis`, `fácite`
+— matching the "Hoc fácite" idiom's own established accenting — `ingrédiar`, `sectámini`,
+`personáverit`, `castrórum`, `circúitum`, `clángite`, `conclamáte`, `tenuérunt`, `mánibus`,
+`sonántes`, `clamaverúntque`, `Gládius`, `Gedeónis`, `Gedeóni`); `sinistris`/`dextris` left
+unaccented, matching this corpus's own consistent practice for those two specific words even where
+the general accenting rule would suggest otherwise. Also caught: the source's own English for v.18
+is incomplete (drops "et conclamate, Domino et Gedeoni" entirely, ending mid-sentence) — supplied
+the missing clause from the standard Douay-Rheims wording rather than reproducing that gap.
+
+Keyed `jdc:` (`BOOK_ALIASES` maps `judg` to this canonical id). `npm test` (2029 passed) and
+`tsc --noEmit` both pass; live-verified through `getBiblePlanReadings` (`easter-6`/Wednesday
+resolves real, correctly R./V.-formatted text in both languages for `Judg 7`).
+
+70 of 72 seeded. Remaining 2 (1-2 Paralipomenon/Chronicles) have no citation anywhere, Horas or
+Missa, and no scripture text of their own has been composed on its own merit yet.

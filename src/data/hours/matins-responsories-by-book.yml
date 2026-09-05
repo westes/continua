@@ -1348,3 +1348,36 @@ jos:
     v:
       la: "Respondítque pópulus, et ait: Absit a nobis ut relinquámus Dóminum, et serviámus diis aliénis."
       en: "And the people answered, and said: God forbid we should leave the Lord, and serve strange gods."
+
+# `jdc` (Judices/Judges; `BOOK_ALIASES` maps `judg` to this canonical id)
+# — composed, not transcribed, like `jos` above: Judges has no liturgical
+# precedent anywhere in the reference source at all, Horas or Missa.
+# Fresh selection on the verse's own merit: Gideon's trumpet-and-pitchers
+# stratagem at the camp of Madian (Jdc 7:17-20) — his command to the three
+# hundred men, and the fulfillment ending in the iconic battle-cry "The
+# sword of the Lord and of Gedeon." User-directed 2026-09-05, choosing
+# this over the Song of Deborah (Jdc 5:31, no natural second verse for a
+# clean V. without inventing one) and Samson's dying prayer (Jdc 16:28-30,
+# set aside as an uncomfortable emphasis for a Matins responsory). R. is
+# v.17-18 (the command); V. is v.19-20's fulfillment, trimmed to its own
+# core clause (dropped the "in tribus locis... hydrias confregissent"
+# middle of v.20 as restating what "conplodere lagoenas" already said) so
+# the versicle lands directly on the cry itself. Source (`jdc-7.yml`) has
+# no accents, like `jos-24.yml`; Latin hand-accented, cross-checked
+# word-by-word against already-accented occurrences elsewhere in the
+# corpus (vidéritis, fácite [matching the "Hoc fácite" idiom's own
+# established accenting], ingrédiar, sectámini, personáverit, castrórum,
+# circúitum, clángite, conclamáte, tenuérunt, mánibus, sonántes,
+# clamaverúntque, Gládius, Gedeónis, Gedeóni); `sinistris`/`dextris` left
+# unaccented, matching this corpus's own consistent (if not fully
+# rule-derived) practice for those two specific words. Source's own
+# English for v.18 is incomplete (drops "et conclamate, Domino et
+# Gedeoni" entirely) — supplied the missing clause from the standard
+# Douay-Rheims wording rather than reproducing that gap.
+jdc:
+  - r:
+      la: "Quod me fácere vidéritis, hoc fácite: ingrédiar partem castrórum, et quod fécero sectámini. Quando personáverit tuba in manu mea, vos quoque per castrórum circúitum clángite: * et conclamáte, Dómino et Gedeóni."
+      en: "As you shall see me do, so do you also: I will go into one part of the camp, and do you as I shall do. When the trumpet shall sound in my hand, blow ye also your trumpets round about the camp: * and shout ye together, to the Lord and to Gedeon."
+    v:
+      la: "Tenuérunt in sinístris mánibus lámpadas, et in déxtris sonántes tubas, clamaverúntque: Gládius Dómini, et Gedeónis."
+      en: "They held the lamps in their left hands, and the trumpets in their right hands, which they sounded, and they cried out: The sword of the Lord and of Gedeon."
