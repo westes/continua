@@ -6113,10 +6113,16 @@ too (Josue, Judices, Ruth, 1-2 Chronicles) — genuinely zero citations anywhere
 Ezra came up with one thin, ambiguous lead not acted on: `missa/Latin/Tempora/Pasc7-2.txt`'s
 Introit cites `!Esdr 2:36 2:37`, but the actual Vulgate text there (checked against
 `data/scripture/1esdr-2.yml`) is a plain census list that doesn't match the Introit's own text at
-all ("Accípite jucunditátem glóriæ vestræ... qui vos ad cœléstia regna vocávit") — that phrasing
-loosely echoes Nehemiah 8:10 instead, but isn't a verbatim match either, and it's only two lines to
-begin with, nowhere near as solid as Baruch's own full Vigil prophecy. Left both `ezra` and `neh`
-unseeded rather than force an uncertain match. One small, unrelated loose end noted along the way
+all ("Accípite jucunditátem glóriæ vestræ... qui vos ad cœléstia regna vocávit"). User's own
+explanation (2026-09-05), plausible and probably right, though unprovable without a text we don't
+have: Vulgate numbering is genuinely ambiguous here — "1/2 Esdras" is canonical Ezra/Nehemiah, but
+there's also a separate, non-canonical Greek "Esdras A" (the Vulgate appendix's own "3 Esdras,"
+sometimes itself called "1 Esdras" in Septuagint/Orthodox numbering) — a different text entirely
+that this project has never digitized. The reference engine's own citation never disambiguates
+("Esdr" bare, no "3" anywhere else in the source to compare against), so this can't be confirmed
+outright, but it cleanly explains why the citation doesn't match our canonical Ezra text. Left
+both `ezra` and `neh` unseeded rather than force an uncertain match. One small, unrelated loose end
+noted along the way
 and not addressed here: the bible-plan TSV's own content still isn't covered by a table-driven
 test the way other bulk-imported content stores are (see "Bible-plan TSV — bulk conversion done"
 below) — `tests/propers/bible-plan.test.ts` tests specific real dates ad hoc, not the full imported
