@@ -80,8 +80,12 @@ describe('getDayLabel — ordinal temporal label', () => {
     // for a Duplex II. classis) — live-verified 2026-09-01, the real
     // Monastic 1617 engine shows "S. Andreæ Apostoli ~ Duplex II. classis"
     // there outright, "Tempora: Feria II infra Hebdomadam I Adventus"
-    // underneath, matching this.
-    expect(getDayLabel(resolveDay('2025-12-01')).en).toBe('St. Andrew, Apostle (Duplex II Class, transferred) — In the 1st week of Advent');
+    // underneath, matching this. The plain "In the 1st week of Advent"
+    // feria commemoration this day also carries internally (day.commemorations
+    // still has it) is no longer shown in the label (2026-09-05: a plain
+    // temporal commemoration is dropped from the label whenever anything
+    // else is already being celebrated — general, not Ember-specific).
+    expect(getDayLabel(resolveDay('2025-12-01')).en).toBe('St. Andrew, Apostle (Duplex II Class, transferred)');
     // Dec 4 (St. Barbara, merely commemorated, not high-ranked enough to
     // win outright) is a clean example of the season-ordinal label itself.
     // Advent drops the redundant leading weekday word now that the header
@@ -180,29 +184,29 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // one, carry no special first-class standing of their own), so
     // commemorations.ts's `ordinary-sunday` case's plain Duplex+ threshold
     // is what lets her win outright rather than being commemorated — a
-    // pre-existing rule, not new behavior from adding her. This case
-    // additionally confirms the displaced Sunday is still commemorated in
-    // return, using the same fixed 23rd-after-Trinity ordinal, not a raw
-    // elapsed-week count recomputed for 1943.
-    expect(getDayLabel(resolveDay('1943-11-21')).en).toBe(
-      'The Presentation of the Blessed Virgin Mary (Duplex Majus) — The 23rd Sunday after Trinity',
-    );
+    // pre-existing rule, not new behavior from adding her. The displaced
+    // Sunday is still commemorated internally (day.commemorations), using
+    // the same fixed 23rd-after-Trinity ordinal, not a raw elapsed-week
+    // count recomputed for 1943 — but per the 2026-09-05 label rule, a
+    // plain temporal commemoration like this one is no longer shown in the
+    // label once something else already has the primary slot.
+    expect(getDayLabel(resolveDay('1943-11-21')).en).toBe('The Presentation of the Blessed Virgin Mary (Duplex Majus)');
   });
 });
 
 describe('getDayLabel — commemorated Sunday/feria under a sanctoral winner', () => {
-  it('a saint winning outright on a privileged-feria-minor day still leaves that feria commemorated', () => {
+  it('a saint winning outright on a privileged-feria-minor day still leaves that feria commemorated internally, but the label no longer restates it', () => {
     // 2027-12-07, a Tuesday of Advent: St. Ambrose (Duplex) clears
     // privileged-feria-minor's own Semiduplex+ threshold and wins
-    // outright, but Advent's own feria is still commemorated in return
-    // (`decideOccurrence`'s `privileged-feria-minor` branch) -- live-
-    // verified shape, same mechanism as the ordinary-Sunday case above,
-    // for the feria-tier branch instead.
-    // Advent drops the redundant leading weekday word (see the Dec 1 case
-    // above).
-    expect(getDayLabel(resolveDay('2027-12-07')).en).toBe(
-      'St. Ambrose, Bishop, Confessor and Doctor of the Church (Duplex) — In the 2nd week of Advent',
-    );
+    // outright, and Advent's own feria is still commemorated in return
+    // internally (`decideOccurrence`'s `privileged-feria-minor` branch) --
+    // live-verified shape, same mechanism as the ordinary-Sunday case
+    // above, for the feria-tier branch instead. But per the 2026-09-05
+    // label rule, a plain temporal commemoration (a bare "In the Nth week
+    // of Advent") is dropped from the label once something else already
+    // has the primary slot -- it isn't Ember-specific, and it applies here
+    // too even though this is a feria, not an Ember day.
+    expect(getDayLabel(resolveDay('2027-12-07')).en).toBe('St. Ambrose, Bishop, Confessor and Doctor of the Church (Duplex)');
   });
 });
 
@@ -289,7 +293,7 @@ describe('getDayLabel — active octave', () => {
     );
   });
 
-  it('a sanctoral winner on a Sunday still leaves the Sunday commemorated, but neither octave it also happens to overlap -- not an octave name at all', () => {
+  it('a sanctoral winner on a Sunday still leaves the Sunday commemorated internally, but neither octave it also happens to overlap -- not an octave name at all, nor the plain Sunday ordinal any more', () => {
     // 2026-08-16 is a Sunday genuinely within both St. Lawrence's and the
     // Assumption's overlapping octave windows -- St. Joachim (Duplex II
     // Class) wins outright per the ordinary-Sunday Duplex+ threshold, not
@@ -297,14 +301,17 @@ describe('getDayLabel — active octave', () => {
     // this case existed). Live-verified against Divino Afflatu 1954: the
     // commemoration line reads only "Dominica XII Post Pentecosten" (this
     // app's own Trinity-counted display is one week off from that
-    // Pentecost-counted number, so "11th ... after Trinity" here) -- no
-    // octave named at all, even though both are technically active, same
-    // as this app's own established `ordinary-feria`-only gate for
-    // octave mentions alongside a sanctoral winner.
+    // Pentecost-counted number, so "11th ... after Trinity" internally) --
+    // no octave named at all, even though both are technically active,
+    // same as this app's own established `ordinary-feria`-only gate for
+    // octave mentions alongside a sanctoral winner. Per the 2026-09-05
+    // label rule, the plain Sunday commemoration itself is now also
+    // dropped from the label (still present in day.commemorations) once
+    // a sanctoral winner already has the primary slot.
     const day = resolveDay('2026-08-16');
     expect(day.weekday).toBe('sunday');
     expect(getDayLabel(day).en).toBe(
-      'St. Joachim, Confessor, Father of the Blessed Virgin Mary (Duplex II Class) — The 11th Sunday after Trinity',
+      'St. Joachim, Confessor, Father of the Blessed Virgin Mary (Duplex II Class)',
     );
     expect(getDayLabel(day).en).not.toContain('Octave');
   });

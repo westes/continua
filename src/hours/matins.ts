@@ -71,7 +71,7 @@ import type { ResolvedOrdo, ResolvedPart, ResolvedText, ResolvedVerse } from './
 import type { LiturgicalDay, DayWinner } from '../calendar/types';
 import { resolveDay, resolveTemporalId, monthWeekId, activeOctavesFor, resolveActiveOctave, isAtLeast } from '../calendar';
 import { isInTriduum } from '../calendar/temporal';
-import { getDayLabel } from '../calendar/day-label';
+import { getDayLabel, emberDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getPsalmsFor, type PsalmRef } from '../psalter/distribution';
 import { getScriptureVerses } from '../scripture';
@@ -692,9 +692,37 @@ function nocturnReadingIds(day: LiturgicalDay, temporalId: string, date: string,
   if (day.winner.kind === 'sanctoral' || day.winner.id !== temporalId || threeNocturns) {
     ids.add(day.winner.id);
   }
+  // Two passes, not one: every *temporal* commemoration's id is added
+  // before any *sanctoral* commemoration's, matching `day-label.ts`'s own
+  // `collectCommemorations` convention (`[...temporal, ...sanctoral]`) —
+  // so a reading's pool position agrees with where its own occasion is
+  // named in the day's displayed label. `day.commemorations`' own array
+  // order doesn't already reflect this grouping (live-verified as a real
+  // bug, 2026-09-19: St. Januarius's readings listed the Vigil of St.
+  // Matthew's homily before Ember Saturday's, backwards from the label's
+  // own "... — Ember Saturday in September — Vigil of St. Matthew
+  // (transferred)"), so it must be imposed here rather than assumed.
   for (const c of day.commemorations) {
-    // Same reasoning as day.winner.id just above.
-    if (c.kind === 'sanctoral' || (c.kind === 'temporal' && (c.id !== temporalId || threeNocturns))) ids.add(c.id);
+    // Same reasoning as day.winner.id just above, but a *commemorated*
+    // (not winning) temporal identity that equals the plain governing-
+    // Sunday `temporalId` is exactly the "Commemoratio Feriæ" case the
+    // `day.weekday === 'sunday'` gate below exists to guard (see that
+    // gate's own long comment) — a Duplex+ saint winning outright on a
+    // *weekday* (e.g. St. Joseph of Cupertino, Friday Sept 18) still has
+    // `threeNocturns` true, so `c.id !== temporalId || threeNocturns`
+    // alone let the week's separate governing-Sunday homily (Ambrose's,
+    // live-verified 2026-09-05) sneak back into a weekday's pool through
+    // this loop even though the gate below correctly kept it out of the
+    // `temporalKept` block. `c.id !== temporalId` must hold on its own
+    // unless today genuinely *is* that Sunday.
+    if (c.kind === 'temporal' && (c.id !== temporalId || (threeNocturns && day.weekday === 'sunday'))) {
+      ids.add(c.id);
+    }
+  }
+  for (const c of day.commemorations) {
+    if (c.kind === 'sanctoral') {
+      ids.add(c.id);
+    }
   }
   // The plain temporalId/month-week content is the *governing Sunday's own*
   // Nocturn 2/3 patristic material, real content for that Sunday itself —
@@ -753,6 +781,28 @@ function fallbackHagiographicLabel(id: string): string | undefined {
   return name.startsWith('The ') ? `On the ${name.slice(4)}` : `On ${name}`;
 }
 
+/** The human-readable occasion a `nocturn-readings` id stands for — a
+ * saint's or named temporal feast's own display name, or an Ember day's
+ * (which has no `TemporalFeastRecord` of its own, see `emberDayLabel`'s own
+ * doc comment). Used to annotate an authored patristic `source` with *why*
+ * it's here, since a single day can pool several ids' worth of readings
+ * (e.g. a commemorated Ember day's own Gospel homily alongside the winning
+ * saint's own) and a bare "Pope St. Gregory the Great, Homily 33" doesn't
+ * tell a reader which occasion that homily belongs to. */
+function occasionName(id: string): string | undefined {
+  return getSaintRecord(id)?.name ?? getTemporalFeastRecord(id)?.name ?? emberDayLabel(id)?.en;
+}
+
+/** Appends `(for <occasion>)` to an authored patristic `source` string,
+ * when the contributing id resolves to a human-readable occasion name —
+ * see `occasionName`. A no-op when `source` is undefined (the hagiographic
+ * fallback case, which already names its own saint). */
+function withOccasion(source: string | undefined, id: string): string | undefined {
+  if (!source) return source;
+  const occasion = occasionName(id);
+  return occasion ? `${source} (for ${occasion})` : source;
+}
+
 /** `index` is this reading's position among this same id's own
  * nocturn-readings (not the whole day's pool) — the cycling key for
  * `getResponsoryForCommon` when `r` has no proper `responsory` of its own,
@@ -764,7 +814,7 @@ function nocturnReadingPart(r: NocturnReading, id: string, index: number): Resol
   return {
     kind: 'lesson',
     text: { text: r.text, status: r.status, citation: r.citation },
-    label: r.source ?? fallbackHagiographicLabel(id),
+    label: withOccasion(r.source, id) ?? fallbackHagiographicLabel(id),
     responsory: responsoryText ? { text: responsoryText, status: { la: 'verified', en: 'verified' } } : undefined,
   };
 }
@@ -779,15 +829,23 @@ function nocturnReadingPart(r: NocturnReading, id: string, index: number): Resol
  * were). */
 function gospelReadingPart(r: NocturnReading, homily: NocturnReading | undefined, id: string, index: number): ResolvedPart {
   const incipit = getGospelIncipitFromCitation(r.citation);
-  const responsoryText = r.responsory ?? getResponsoryForCommon(getSaintRecord(id)?.common, index);
+  // A responsory authored on the *homily* (the reference engine's own
+  // convention — e.g. post-pentecost-16.yml's Ambrose homily, or a saint's
+  // own Gospel-homily pair) belongs to the pericope+homily as a whole, not
+  // just the bare Gospel text, and must fall back here before the generic
+  // Common-category pool — this file's own header says a governing
+  // Sunday's homily "and its responsory" are pooled together; only `r`'s
+  // own field was ever checked, silently dropping every authored homily
+  // responsory (found 2026-09-05 while live-verifying an unrelated report).
+  const responsoryText = r.responsory ?? homily?.responsory ?? getResponsoryForCommon(getSaintRecord(id)?.common, index);
   return {
     kind: 'gospel',
     text: { text: r.text, status: r.status, citation: r.citation },
-    source: r.source,
+    source: withOccasion(r.source, id),
     label: incipit ? { la: incipit.la, en: incipit.en } : undefined,
     responsory: responsoryText ? { text: responsoryText, status: { la: 'verified', en: 'verified' } } : undefined,
     homily: homily
-      ? { source: homily.source, text: { text: homily.text, status: homily.status, citation: homily.citation } }
+      ? { source: withOccasion(homily.source, id), text: { text: homily.text, status: homily.status, citation: homily.citation } }
       : undefined,
   };
 }
@@ -827,18 +885,40 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
         : { kind: 'lesson', text: { text: r.text, status: r.status, citation: r.citation }, responsory, label },
     );
   }
-  // Grouped by the reading's own `nocturn` tag (ascending), not by which id
-  // contributed it — a later post-Pentecost Sunday's Nocturn 2 now comes
-  // from a different source (the month-week id) than its Nocturn 3 (its own
-  // temporalId file), and pooling in plain id order would put that Nocturn
-  // 3 content ahead of the Nocturn 2 content supplied by a later-processed
-  // id. Within each nocturn-number group, id order (and each file's own
-  // reading order) is preserved, matching this pool's usual priority rule.
-  // Not hardcoded to [2, 3]: Ember days' own nocturn-readings files use
-  // `nocturn: 1` (their single-nocturn structure), so every tag present
-  // must be handled, not just the usual Sunday/feast pair.
   const ids = nocturnReadingIds(day, temporalId, date, threeNocturns);
-  const byNocturn = new Map<number, ResolvedPart[]>();
+  // Ordering is by *id priority* (winner first, then commemorations in
+  // `day.commemorations` order — a winning saint's own content always
+  // precedes a demoted commemoration's, matching the day-label convention
+  // of listing the winner first), with one deliberate exception: the
+  // temporalId itself and `month-week-${monthWeek}` are split halves of
+  // ONE governing Sunday's own Nocturn 2/3 content (see
+  // `nocturnReadingIds`'s `temporalKept` block) — pooling those two in
+  // plain id-priority order would put the temporalId file's own Nocturn 3
+  // content ahead of month-week's Nocturn 2 content, so this pair alone is
+  // grouped by raw `nocturn` tag (ascending) instead. Every other id is its
+  // own atomic block: previously *every* id was grouped globally by raw
+  // `nocturn` tag, which wrongly sorted a winning saint's own content after
+  // a demoted commemoration's whenever the commemoration's file happened to
+  // use a lower tag — e.g. an Ember day's single-nocturn file always tags
+  // `nocturn: 1`, sorting it ahead of a winning Duplex+ saint's own
+  // nocturn:2/3 content even though the saint, not the Ember day, is what's
+  // actually being celebrated (user, 2026-09-05, re: St. Joseph of
+  // Cupertino/Ember Friday, Sept 18). Within a single id's own block,
+  // `nocturn` tag order (== that file's own reading order) is still used to
+  // order its own multiple readings relative to each other.
+  const monthWeek = monthWeekId(date);
+  const splitIds = new Set(threeNocturns && day.weekday === 'sunday' && monthWeek ? [temporalId, `month-week-${monthWeek}`] : []);
+  let splitPriority = -1;
+  const priorityOf = new Map<string, number>();
+  ids.forEach((id, i) => {
+    if (splitIds.has(id)) {
+      if (splitPriority === -1) splitPriority = i;
+      priorityOf.set(id, splitPriority);
+    } else {
+      priorityOf.set(id, i);
+    }
+  });
+  const byGroup = new Map<string, ResolvedPart[]>();
   // The reference engine's own Tempora files sometimes independently reuse
   // the exact same excerpt across two different Sunday-numbering schemes
   // (e.g. a Pentecost-numbered Sunday and a calendar-month Sunday landing on
@@ -856,7 +936,8 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
       const textKey = reading.text.la ?? reading.text.en ?? '';
       if (textKey && seenReadingText.has(textKey)) continue;
       if (textKey) seenReadingText.add(textKey);
-      const bucket = byNocturn.get(reading.nocturn) ?? [];
+      const groupKey = `${priorityOf.get(id)}:${reading.nocturn}`;
+      const bucket = byGroup.get(groupKey) ?? [];
       if (reading.isGospel) {
         // A genuine separate homily on this pericope is the very next
         // reading in the same file, in the same nocturn, not itself flagged
@@ -872,11 +953,16 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
       } else {
         bucket.push(nocturnReadingPart(reading, id, commonPoolIndex++));
       }
-      byNocturn.set(reading.nocturn, bucket);
+      byGroup.set(groupKey, bucket);
     }
   }
-  for (const nocturnNumber of [...byNocturn.keys()].sort((a, b) => a - b)) {
-    parts.push(...byNocturn.get(nocturnNumber)!);
+  const sortedGroupKeys = [...byGroup.keys()].sort((a, b) => {
+    const [aPriority, aNocturn] = a.split(':').map(Number);
+    const [bPriority, bNocturn] = b.split(':').map(Number);
+    return aPriority! - bPriority! || aNocturn! - bNocturn!;
+  });
+  for (const key of sortedGroupKeys) {
+    parts.push(...byGroup.get(key)!);
   }
   for (const octave of activeOctavesFor(date)) {
     const reading = getOctaveReading(octave.id, octave.dayNumber);

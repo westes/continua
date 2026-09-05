@@ -78,7 +78,7 @@ const EMBER_DAY_NAMES: Record<string, Bi> = {
   'ember-advent-saturday': bi('Ember Saturday in Advent', 'Sabbato Quattuor Temporum in Adventu'),
 };
 
-function emberDayLabel(id: string): Bi | undefined {
+export function emberDayLabel(id: string): Bi | undefined {
   return EMBER_DAY_NAMES[id];
 }
 
@@ -488,9 +488,22 @@ function collectCommemorations(
         sanctoral.push(name);
       }
     } else if (c.kind === 'temporal') {
-      if (c.id === temporalId) {
-        temporal.push(anchorDayName(day, false) ?? temporalLabel(day));
-      } else {
+      // `c.id === temporalId` (the plain governing weekday, e.g. "Saturday
+      // in the 15th week after Trinity") is deliberately never shown here:
+      // this function only ever runs to list *secondary* identities
+      // alongside an already-displayed primary winner (a plain temporal
+      // day that wins outright never reaches `day.commemorations` at all —
+      // its own name is the header itself, via a different branch of
+      // `getDayLabel`). Once something else is already being celebrated,
+      // restating "this is also just the Nth ordinary weekday" tells the
+      // reader nothing they don't already know from the winner+rank shown
+      // — unlike a *named* temporal identity (an Ember day, a vigil), which
+      // genuinely adds information. Not Ember-specific (a 2026-09-05 first
+      // pass wrongly scoped this to "only when an Ember commemoration is
+      // also present" — user, 2026-09-05: "it has nothing to do with
+      // ember-ness"); this plain generic label is dropped unconditionally
+      // whenever it shows up as a mere commemoration, Ember day or not.
+      if (c.id !== temporalId) {
         const emberName = emberDayLabel(c.id);
         if (emberName) {
           temporal.push(emberName);
