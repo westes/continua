@@ -26,14 +26,17 @@ across every hour and content type in this app.
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
    - Matins Nocturn 2/3 responsory pools (both new, 2026-09-04 — see "Matins responsory pools:
-     per-book expansion + new per-Common-category pool" below, and its eight follow-up entries):
-     the per-book pool now covers 62 of 72 books — every book with any genuinely usable Latin
+     per-book expansion + new per-Common-category pool" below, and its nine follow-up entries):
+     the per-book pool now covers 63 of 72 books — every book with any genuinely usable Latin
      content anywhere in the reference source (Tempora *or* Sancti — `cant`/Canticles, `lev`, and
      `num` all turned up only in individual saints' own Sancti files, not Tempora's continuous
-     reading cycle). `rom`/Romans is the one real exception: every citing file borrows an unrelated
-     feast's own responsory, no book-specific content anywhere to source, translate, or reuse. The
-     remaining 10 are `rom` plus 9 already-confirmed-genuinely-absent books (no citation anywhere
-     at all, in Tempora or Sancti); the new per-Common-category pool covers 19/19 real Commune
+     reading cycle), plus `deut`/Deuteronomy, this pool's first genuine original composition (a
+     real R./V. pairing built from the Canticle of Moses' own genuine verses, since Deuteronomy has
+     no historical Matins responsory anywhere in the source at all). `rom`/Romans is the one
+     remaining real exception with citations but no usable content: every citing file borrows an
+     unrelated feast's own responsory. The remaining 9 are `rom` plus 8 already-confirmed-
+     genuinely-absent books (no citation anywhere at all, in Tempora or Sancti); the new
+     per-Common-category pool covers 19/19 real Commune
      categories (every category actually used by a saint except angel/evangelist/vigil,
      which have no Commune responsory file to source from) — this
      is the one that closes most of the 272-of-355 nocturn-readings files that had no `responsory`
@@ -6055,3 +6058,28 @@ shortest case) carries all 7 of week 4's Isaiah readings forward across Dec 25-3
 tests to `tests/propers/bible-plan.test.ts` covering both extremes, the pooling-not-replacing
 behavior, and that nothing carries over before Christmas Day itself. `npm test` (2029 passed,
 +4 new) and `tsc --noEmit` both pass.
+
+### Matins responsory pools: `deut` — the first genuine original composition, not a transcription (2026-09-05)
+
+User found a real lead while reading a patristic homily (`English/Sancti/01-02.txt`, on Matt
+23:37 "O Jerusalem, Jerusalem"): it quotes Deut 32:11's eagle image in passing ("as also it is
+written... an eagle stirreth up her nest... spreadeth abroad her wings"). Confirmed the verse
+number against `data/scripture/deut-32.yml`'s own `n: 11` — genuinely Deut 32:11 in standard
+citation, not the breviary's own internal chant-verse-numbering for the same text (which splits
+it as 32:15-16 in `Latin/Psalterium/Psalmorum/Psalm226.txt`, the real Canticle of Moses sung at
+Lauds — that file supplied real, properly accented liturgical Latin and its English counterpart
+gave the matching translation, so no accentuation had to be guessed).
+
+Unlike every other entry in this pool, Deuteronomy genuinely has no historical Matins responsory
+anywhere in the reference source (confirmed absent from both Tempora and Sancti in the two prior
+entries) — so this one is composed, not transcribed: a real R./V. pairing built entirely from
+that same canticle's own genuine verses (32:15's eagle image as the R., 32:13-14's "apple of his
+eye" as the V.), verbatim text, not paraphrased or invented, just newly paired. Documented plainly
+in the data file's own header comment as vu's own composition rather than presented as a
+historically-attested responsory, matching this project's "not a reconstruction" ethos.
+
+63 of 72 bible-plan books now seeded (`deut` added). `npm test` (2029 passed) and `tsc --noEmit`
+both pass; live-verified through `getBiblePlanReadings` (`easter-3`/Saturday resolves the real,
+properly R./V.-formatted text for `Deut 33-34`). Canonical-key audit re-run, clean (`deut` has no
+`BOOK_ALIASES` entry). Remaining 9, all confirmed genuinely absent from both Tempora and Sancti:
+`rom` plus `bar`, Josue, Judices, Ruth, 1-2 Chronicles, Ezra, Nehemiah.

@@ -4,7 +4,7 @@
 # chapter/verse historically, so a book-level match is the right
 # granularity, not a gap to fill in later with exact citations.
 #
-# Seeded, not a full pool — 62 of the 72 books actually used in the user's
+# Seeded, not a full pool — 63 of the 72 books actually used in the user's
 # own bible-plan (data/hours/bible-plan/*.yml), the rest deferred bulk
 # content (see TODO.md). Cycled in order
 # per-day when a Nocturn-1 reading's book has more than one candidate
@@ -1191,3 +1191,28 @@ num:
     v:
       la: "Crux præcellénti decóre fúlgida, quam Heraclíus imperátor concupiscénti ánimo recuperávit."
       en: "Even the Cross, whereof the glory is so excellent, and which the Emperor Heraclius did so eagerly rescue."
+
+# `deut` (Deuteronomy) — unlike every other entry in this file, this is
+# vu's own original composition, not a transcribed historical Matins
+# responsory: Deuteronomy genuinely has no Matins responsory anywhere in
+# the reference source (confirmed absent from both Tempora and Sancti,
+# see TODO.md's 2026-09-04/05 entries). User-prompted (2026-09-05): a
+# patristic homily (English/Sancti/01-02.txt, on Matt 23:37 "O Jerusalem,
+# Jerusalem") quotes the eagle image of Deut 32:11 in passing ("as also
+# it is written... an eagle stirreth up her nest... spreadeth abroad her
+# wings"), and its own citation number, verified against
+# data/scripture/deut-32.yml's real n:11, is genuinely Deut 32:11 (not
+# the breviary's own internal chant-verse-numbering for the same text,
+# which splits it as 32:15-16 in Latin/Psalterium/Psalmorum/Psalm226.txt,
+# the Canticle of Moses sung at Lauds). Both R./V. lines are built from
+# that real liturgical text verbatim (Psalm226.txt's own accented Latin,
+# its English counterpart's own translation) — genuine source text, real
+# accentuation, not invented — but the responsory *pairing* itself is
+# original, so marked `draft` rather than `verified` on that basis alone.
+deut:
+  - r:
+      la: "Sicut áquila próvocans ad volándum pullos suos, et super eos vólitans, expándit alas suas: * Et assúmpsit eum, atque portávit in húmeris suis."
+      en: "As the eagle enticing her young to fly, and hovering over them, he spread his wings: * And hath taken him, and carried him on his shoulders."
+    v:
+      la: "Invénit eum in terra desérta, in loco horróris et vastæ solitúdinis: et custodívit eum quasi pupíllam óculi sui."
+      en: "He found him in a desert land, in a place of horror, and of vast wilderness: and he kept him as the apple of his eye."
