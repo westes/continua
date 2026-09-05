@@ -1,58 +1,27 @@
 # Open work
 
-A real backlog, not scattered code comments. Update this file when something
-here gets done, and add to it when new gaps turn up — don't let it drift back
-into "only findable by reading commit messages."
+Backlog for this repo. Update when something here gets done; add when a new gap turns up.
 
 ## Priority
 
-Work in this file follows one methodology, repeated every time a new hour or content type
-gets built: **mechanism first, then a minimal live-verified proof (1-2 clean dates/entries
-authored fully, end-to-end) to confirm the mechanism is right, then bulk content
-authoring/import against the whole calendar once it's trusted.** A section marked "mechanism
-built" but not yet "full sweep" or "all N done" is mid-pipeline, not stalled — its next work
-is more content in the same already-proven shape, not a design change. This file's dated
-build log (below "Open work, in priority order") is the record of that pipeline running
-across every hour and content type in this app.
+Mechanism first, then a minimal live-verified proof, then bulk content. A section marked
+"mechanism built" but not "full sweep"/"all N done" is mid-pipeline: its next work is more
+content in the same shape, not a design change. The dated log below is that pipeline's record.
 
 ## Open work, in priority order
 
-1. **Mechanism gaps** — a real design/code piece not built yet, blocking any content pass on
-   it from starting:
-   - (none currently open — the last one, Paschaltide's "Suffragium Paschale" substitution,
-     was closed 2026-09-04, see the dated log below)
+1. **Mechanism gaps** — none currently open.
 
-2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
-   date/entry already resolves correctly end-to-end); what's left is authoring/importing more
-   content in that same shape across the rest of the calendar:
-   - (none currently open — Lauds/Vespers duplex-majus+ Common-category psalmody reached full
-     10/10 both hours with `common-of-a-dedication`'s Lauds file, closed 2026-09-05; Matins
-     Nocturn 3's last 6 unauthored files closed the same day — see the dated log below)
+2. **Minimal-proof-done, bulk content pending** — none currently open.
 
-3. **New features (not content mechanism)** — genuinely new product surface, not something a
-   content pass is blocked on; each needs its own design pass, not just implementation:
-   - Date picker: `day-nav.ts` currently only steps a day at a time (prev/next); there's no
-     way to jump to an arbitrary date without walking there one day at a time or editing the
-     URL. Needs a calendar-grid picker UI — open, not started.
-   - Audio ("read it to me") interface: a button per hour/text that plays the office aloud
-     instead of requiring reading — e.g. via the Web Speech API (`SpeechSynthesis`), which
-     would keep this offline-first (no server-side TTS call, no added deploy dependency) but
-     needs bilingual voice selection (La/En) worked out, and quality for Latin pronunciation
-     is an open question. Open, not started — needs its own design pass before content/UI work
-     begins.
+3. **New features**
+   - Date picker: `day-nav.ts` only steps a day at a time; no way to jump to an arbitrary
+     date without walking there or editing the URL. Needs a calendar-grid picker UI.
+   - Audio ("read it to me"): a button per hour/text that plays the office aloud, e.g. via
+     the Web Speech API (stays offline-first). Open questions: bilingual (La/En) voice
+     selection, Latin pronunciation quality. Needs its own design pass first.
 
-4. **Known, deliberate simplifications** — intentional, not bugs, no plan to revisit unless
-   priorities change:
-   - `temporal-categories.yml`'s `bySeason` mapping is fully live-verified (2026-09-01 sweep);
-     what's still not independently re-verified is the *privileged-period tier* classification
-     for a handful of specific stretches: Ash Wednesday and Holy Week are `privileged-feria-
-     major` on strong prior knowledge, not directly re-checked; the Vigil of Christmas and
-     Pentecost's own Ember days default to that same major tier as a guess pending
-     verification; Pentecost's Ember days' actual precedence is flagged in-file as a genuinely
-     unverified gap, not a guess dressed up as one (Lent's own Ember days *are* verified).
-
-Everything from here down is the dated build log this priority list is drawn from — kept for
-the sourcing/verification detail behind each decision, not itself in priority order.
+Everything below is the dated build log this priority list is drawn from.
 
 ## Content gaps — mechanism built, data incomplete
 
