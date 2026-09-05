@@ -1276,3 +1276,22 @@ ruth:
     v:
       la: "Quæ te moriéntem terra suscéperit, in ea móriar: ibíque locum accípiam sepultúræ."
       en: "The land that shall receive thee dying, in the same will I die: and there will I be buried."
+
+# `2esdr` (Nehemiah) — composed like `bar`, not invented like `ruth`: a
+# prior pass wrongly bundled this book in with `ezra`'s "one thin,
+# ambiguous near-miss" and left it unseeded without actually re-checking
+# it. There IS a real, unambiguous citation, again in the Missa rather
+# than the Horas — Ember Wednesday of September's own Lectio and
+# Communio both quote Neh 8 (missa/Latin/Tempora/093-3.txt, `!Neh
+# 8:1-10` / `!Neh 8:10`), with genuine accented Latin. R. is v.3 (Esdras
+# reading the law plainly, all ears attentive to the book);
+# user-selected V. is v.9 (the turn to a proclaimed holy day of no
+# mourning), both taken verbatim from that same accented Lectio.
+# User-directed 2026-09-05.
+2esdr:
+  - r:
+      la: "Et legit in eo apérte in platéa, quæ erat ante portam aquárum, de mane usque ad médiam diem, in conspéctu virórum et mulíerum et sapiéntium: * Et aures omnis pópuli erant eréctæ ad librum."
+      en: "And he read it plainly in the street that was before the water gate, from the morning until midday, before the men, and the women, and all those that could understand: * And the ears of all the people were attentive to the book."
+    v:
+      la: "Dixit autem Nehemías, et Esdras sacérdos et scriba, et levítæ interpretántes univérso pópulo: Dies sanctificátus est Dómino, Deo nostro, nolíte lugére et nolíte flere."
+      en: "And Nehemias (he is Athersatha), and Esdras the priest and scribe, and the Levites who interpreted to all the people, said: This is a holy day to the Lord our God: do not mourn, nor weep."

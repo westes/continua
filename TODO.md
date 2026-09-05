@@ -6149,3 +6149,23 @@ correctly R./V.-formatted text in both languages for `Ruth 3-4`). Canonical-key 
 (`ruth` has no `BOOK_ALIASES` entry). Remaining 6: Josue, Judices, 1-2 Chronicles, Nehemiah (no
 citation anywhere at all) plus `ezra` (one thin, ambiguous near-miss, deliberately left unseeded —
 see the entry above).
+
+### Matins responsory pools: `2esdr` (Nehemiah) — correcting a mis-diagnosis (2026-09-05)
+
+The entry above's "Nehemiah: no citation anywhere at all" was wrong — Nehemiah had been bundled in
+with `ezra`'s "one thin, ambiguous near-miss" reasoning without ever getting its own Missa check, the
+same check that had already found and closed `bar` a few entries earlier. It has a real, unambiguous
+citation: Ember Wednesday of September's own Lectio and Communio both quote Neh 8
+(`missa/Latin/Tempora/093-3.txt`, `!Neh 8:1-10` / `!Neh 8:10`), genuine accented Latin, matching
+English in the sibling `English/Tempora/093-3.txt`.
+
+User-directed: R. from v.3 ("Et legit in eo apérte in platéa... et aures omnis pópuli erant eréctæ
+ad librum" — Esdras reading the law plainly, all ears attentive), V. from v.9 ("Dies sanctificátus
+est Dómino, Deo nostro: nolíte lugére et nolíte flere" — user's pick, offered against v.6's "Amen,
+Amen" and v.10's "Ite, comédite pínguia," for the contrast between the plain reading and the
+proclaimed holy day of no mourning). Both Latin lines taken verbatim from the same accented Missa
+Lectio; English from the project's own verified `src/data/scripture/2esdr-8.yml`, not retranslated.
+Keyed `2esdr:` in the pool (not `neh:`) since that's what `BOOK_ALIASES` maps `neh` to.
+
+67 of 72 seeded. Remaining 5: Josue, Judices, 1-2 Chronicles (no citation anywhere at all) plus
+`ezra` (one thin, ambiguous near-miss, deliberately left unseeded — see the entry above).
