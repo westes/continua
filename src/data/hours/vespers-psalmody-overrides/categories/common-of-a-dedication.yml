@@ -4,12 +4,13 @@
 # every other Common authored so far: 109/110/111/147 (Ps 147, not the
 # expected next-in-sequence 112, for the 4th slot).
 #
-# NOTE: no matching Lauds category file exists yet -- Lauds' own
-# Dedication scheme (votive=C8, live-verified the same session) uses Ps
-# 50/87/89 plus a "Canticum Ieremiæ" this app has never transcribed (the
-# 7 existing Lauds OT canticles, hours/lauds-canticles.ts, are only the
-# plain weekday rotation) -- a real content gap, not an oversight, left
-# open rather than guessed at. See TODO.md.
+# Lauds' own category file (lauds-psalmody-overrides/categories/common-of-
+# a-dedication.yml) is now authored too. An earlier note here claimed
+# Lauds needed an untranscribed "Canticum Ieremiæ" and was left open --
+# that was based on a mis-targeted live query (a plain ferial Thursday's
+# output, not actually votive=C8); a fresh 7-weekday live-verify
+# (2026-09-05) found no such canticle anywhere in the real scheme, see
+# that file's own header comment for the corrected detail.
 id: common-of-a-dedication
 groups:
   - psalms: [109]

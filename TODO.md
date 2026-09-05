@@ -25,17 +25,9 @@ across every hour and content type in this app.
 2. **Minimal-proof-done, bulk content pending** — mechanism is built and trusted (a proof
    date/entry already resolves correctly end-to-end); what's left is authoring/importing more
    content in that same shape across the rest of the calendar:
-   - Lauds/Vespers duplex-majus+ Common-category psalmody: all 24 `SaintRecord.common`
-     categories are resolved (Vespers 10/10 real category files, Lauds 9/10 — see
-     "Lauds/Vespers duplex-majus+ Common-category psalmody" below and its follow-up entry) with
-     one genuine gap left: `common-of-a-dedication`'s **Lauds** file specifically (Vespers'
-     is done) — blocked on a real content gap, not a mechanism gap: its OT canticle ("Canticum
-     Ieremiæ") has never been transcribed anywhere in this app (the 7 existing Lauds canticles,
-     `hours/lauds-canticles.ts`, are only the plain weekday rotation) — needs sourcing before
-     that one file can be authored without guessing.
-   - (none currently open in this sub-item — the last one, Matins Nocturn 3 entirely
-     unauthored on 6 `nocturn-readings/*.yml` files, was closed 2026-09-05, see the dated log
-     below)
+   - (none currently open — Lauds/Vespers duplex-majus+ Common-category psalmody reached full
+     10/10 both hours with `common-of-a-dedication`'s Lauds file, closed 2026-09-05; Matins
+     Nocturn 3's last 6 unauthored files closed the same day — see the dated log below)
 
 3. **New features (not content mechanism)** — genuinely new product surface, not something a
    content pass is blocked on; each needs its own design pass, not just implementation:
@@ -6334,3 +6326,26 @@ marked draft.
 
 `npm test` (2029 passed) and `tsc --noEmit` both pass; live-verified via `resolveOrdo` on all 6
 saints' real dates.
+
+### Common-of-a-Dedication Lauds — closed (2026-09-05)
+
+The last open Lauds Common-category gap (9/10 -> 10/10). A 2026-08-28 note on this Common's
+Vespers file claimed Lauds needed an OT canticle ("Canticum Ieremiæ") never transcribed anywhere
+in this app — re-verified fresh against the live engine (Monastic Tridentinum 1617,
+`command=prayLaudes`, `votive=C8`) across all 7 weekdays (11-09 through 11-15-2026) and found that
+premise was wrong: no such canticle appears anywhere in the real scheme on any weekday. The
+original note's numbers ("Ps 50/87/89 + Exodus canticle") match plain ferial Thursday's own Lauds
+exactly (`Psalmi major.txt`'s `[Monastic Laudes] (feria 5)`) — the 2026-08-28 session evidently
+captured that instead of actually passing `votive=C8`.
+
+The real scheme: 3 proper-antiphon groups (Ps 50/5/35, this Common's own text) plus a canticle
+slot whose *antiphon* is fixed to this Common ("Bene fundáta est...") but whose underlying
+canticle *text* simply follows the plain ferial weekday rotation — Isaiah/Ezechias/Anna/
+Moses-Exodus/Habacuc/Moses-Deuteronomy-split/Three-Young-Men — all 7 already authored
+(`hours/lauds-canticles.ts`). Required a small mechanism change since this is the first Common
+whose canticle id isn't fixed: `LaudsPsalmodyOverride.canticle.id` (`hours/lauds-psalmody-
+overrides.ts`) is now optional, and `hours/lauds.ts`'s `resolvePsalmody` splices in the day's own
+ferial canticle id/split when an override omits it, keeping the override's own antiphon. No other
+category is affected (all author a fixed id already).
+
+`npm test` and `tsc --noEmit` both pass.
