@@ -1295,3 +1295,28 @@ ruth:
     v:
       la: "Dixit autem Nehemías, et Esdras sacérdos et scriba, et levítæ interpretántes univérso pópulo: Dies sanctificátus est Dómino, Deo nostro, nolíte lugére et nolíte flere."
       en: "And Nehemias, and Esdras the priest and scribe, and the Levites who interpreted to all the people, said: This is a holy day to the Lord our God: do not mourn, nor weep."
+
+# `1esdr` (Ezra) — composed like `ruth`, not transcribed: 1 Esdras 8:21-23
+# has no liturgical precedent anywhere in the reference source (the one
+# candidate lead, `Pasc7-2.txt`'s Introit citing "Esdr 2:36-37", turned
+# out to be a text mismatch, likely a different, non-canonical "Esdras"
+# altogether — see the entry above; left unrelated to this one). User
+# picked v.22's antithesis ("the hand of our God is upon all them that
+# seek him in goodness: and his power and strength, and wrath upon all
+# them that forsake him") as the strongest content, but the Vulgate's
+# own clause order puts the wrath half last — a sour note to end the
+# repeated (`*`) clause on, especially right after v.23's "it fell out
+# prosperously." Edited: the two halves of v.22 are swapped so the
+# hopeful clause is the one repeated, same words, no invention. V. is
+# v.23 unaltered. Source has no accents (like `ruth-1.yml`); Latin
+# hand-accented, cross-checked word-by-word against already-accented
+# occurrences elsewhere in the corpus (impérium, fortitúdo, derelínquunt,
+# bonitáte, jejunávimus, próspere) rather than guessed freehand.
+# User-directed 2026-09-05.
+1esdr:
+  - r:
+      la: "Impérium ejus, et fortitúdo ejus, et furor ejus, super omnes qui derelínquunt eum: * Manus autem Dei nostri est super omnes qui quærunt eum in bonitáte."
+      en: "His power, and his strength, and his wrath, is upon all them that forsake him: * But the hand of our God is upon all them that seek him in goodness."
+    v:
+      la: "Jejunávimus autem, et rogávimus Deum nostrum pro hoc: et evénit nobis próspere."
+      en: "And we fasted, and besought our God for this: and it fell out prosperously unto us."

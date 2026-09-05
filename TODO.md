@@ -6169,3 +6169,28 @@ Keyed `2esdr:` in the pool (not `neh:`) since that's what `BOOK_ALIASES` maps `n
 
 67 of 72 seeded. Remaining 5: Josue, Judices, 1-2 Chronicles (no citation anywhere at all) plus
 `ezra` (one thin, ambiguous near-miss, deliberately left unseeded — see the entry above).
+
+### Matins responsory pools: `1esdr` (Ezra) — composed, no liturgical precedent (2026-09-05)
+
+User-directed: compose Ezra's own responsory from 1 Esdras 8:21-23, on the verse's own merit — like
+`ruth`, not like `bar`/`2esdr`, since the one candidate lead for this book (`Pasc7-2.txt`'s Introit,
+see the earlier `ezra`/`neh` entry) turned out to be a text mismatch, not a real match to build from.
+
+v.22's antithesis ("the hand of our God is upon all them that seek him in goodness: and his power and
+strength, and wrath upon all them that forsake him") is the strongest material, but the Vulgate's own
+clause order puts the wrath half last — a sour note to end the repeated (`*`) clause on, especially
+right before v.23's "it fell out prosperously." Edited: swapped the two halves of v.22 so the hopeful
+clause is the one repeated after V. — same words, no invention, just reordered for the R./V./R. shape.
+V. is v.23 unaltered.
+
+Source (`1esdr-8.yml`) has no accents, like `ruth-1.yml`; Latin hand-accented, cross-checked
+word-by-word against already-accented occurrences elsewhere in the corpus (`impérium`, `fortitúdo`,
+`derelínquunt`, `bonitáte`, `jejunávimus`, `próspere`). Keyed `1esdr:` (`BOOK_ALIASES` maps `ezra` to
+it). `npm test` (2029 passed) and `tsc --noEmit` both pass; live-verified through
+`getBiblePlanReadings` (`easter-sunday`/Monday resolves real, correctly R./V.-formatted text in both
+languages for `Ezra 3-4`).
+
+68 of 72 seeded. This closes every book with any real sourceable material — the remaining 4 (Josue,
+Judices, 1-2 Chronicles) have no citation anywhere, Horas or Missa, and no scripture text of their
+own has been composed from on its own merit the way `ruth`/`ezra` were, since that hasn't been
+directed for them.
