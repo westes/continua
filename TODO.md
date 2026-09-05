@@ -33,16 +33,9 @@ across every hour and content type in this app.
      Ieremiæ") has never been transcribed anywhere in this app (the 7 existing Lauds canticles,
      `hours/lauds-canticles.ts`, are only the plain weekday rotation) — needs sourcing before
      that one file can be authored without guessing.
-   - Matins Nocturn 3 entirely unauthored (not just an unpaired Gospel) on a handful of
-     `nocturn-readings/*.yml` files, found 2026-09-05 while closing the Gospel-pericope gap
-     below: `nativity-bvm.yml`, `ss-cletus-and-marcellinus.yml`/`ss-soter-and-caius.yml`
-     (Common-of-Popes Nocturn 3, Matt 16:13-19), `ss-cornelius-and-cyprian.yml`
-     (Common-of-Martyrs Nocturn 3, Luke 21:9-19), `ss-seven-brothers-rufina-and-secunda.yml`
-     (Matt 12:46-50 + Gregory Hom. 3), and `st-anacletus.yml` (an alternate 1570/1617-rubric
-     variant of `Sancti/07-13.txt` carries a real Nocturn 3, Luke 14:26-33 + Gregory Hom. 37 —
-     worth a look given this project's own Monastic 1617 structural default). Each of these
-     currently has only Nocturn 2 content; the mechanism is already proven (this is the same
-     shape as every other authored file in the store), just unauthored for these few ids.
+   - (none currently open in this sub-item — the last one, Matins Nocturn 3 entirely
+     unauthored on 6 `nocturn-readings/*.yml` files, was closed 2026-09-05, see the dated log
+     below)
 
 3. **New features (not content mechanism)** — genuinely new product surface, not something a
    content pass is blocked on; each needs its own design pass, not just implementation:
@@ -6319,3 +6312,25 @@ part of this closed item.
 
 `npm test` (2029 passed) and `tsc --noEmit` both pass; live-verified on 2026-09-16/18/19 (the
 Ember-September-into-saint cluster that originally surfaced this).
+
+### Matins Nocturn 3 entirely unauthored — closed (2026-09-05)
+
+6 files were missing Nocturn 3 entirely (not just an unpaired Gospel on an existing homily),
+found while closing the Gospel-pericope gap above: `nativity-bvm.yml` (Matt 1:1-16 + St. Jerome,
+Commentary on Matthew Bk. 1), `ss-cletus-and-marcellinus.yml`/`ss-soter-and-caius.yml`
+(Common-of-Popes Nocturn 3, Matt 16:13-19 + Pope St. Leo the Great's Sermon 2 on the Anniversary
+of his Election — reused verbatim from `st-martin-i.yml`, already authored this session with the
+identical Common-of-Popes text), `ss-cornelius-and-cyprian.yml` (Common-of-Martyrs Nocturn 3,
+Luke 21:9-19 + Pope St. Gregory's Homily 35), `ss-seven-brothers-rufina-and-secunda.yml` (a
+proper override on top of its own Common, Matt 12:46-50 + Gregory's Homily 3, "Who is my
+mother?"), and `st-anacletus.yml` (an alternate "rubrica 1570 aut rubrica 1617" variant of
+`Sancti/07-13.txt`, carrying a real Nocturn 3 — Luke 14:26-33 + Gregory's Homily 37 — distinct
+from the file's own modern-rubric default, which has none at all; of particular interest given
+this app's own Monastic 1617 structural default). All sourced from `../divinum-officium-reference`
+(the Common-of-Popes Gospel pericope again only found under `obsolete/missa/`, same pattern
+as `st-isidore-of-seville.yml` above); `st-anacletus.yml`'s homily English has no reference-engine
+translation for this specific Lectio7-9 split, so it was composed directly from the Latin and
+marked draft.
+
+`npm test` (2029 passed) and `tsc --noEmit` both pass; live-verified via `resolveOrdo` on all 6
+saints' real dates.

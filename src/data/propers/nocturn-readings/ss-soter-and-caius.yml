@@ -11,11 +11,13 @@
 # Nocturn 2. St. Ambrose's Sermon 22 is the same generic
 # post-Paschaltide "rejoice with the Martyrs" homily reused verbatim
 # for other martyr-Popes (see ss-cletus-and-marcellinus.yml), not tied
-# to any Gospel pericope -- no isGospel pairing applies. The implicitly
-# Common Lectio7-9 (Common of Popes -> Matt 16:13-19, "Tu es Petrus")
-# noted in this file's own header is the same pre-existing,
-# already-documented gap as ss-cletus-and-marcellinus.yml's, not
-# authored here either -- out of scope for this pass.
+# to any Gospel pericope -- no isGospel pairing applies.
+#
+# Update (2026-09-05, second pass): Nocturn 3 (Common of Popes -> Matt
+# 16:13-19, "Tu es Petrus", Pope St. Leo the Great's own Sermon 2 on
+# the Anniversary of his Election) now authored -- reused verbatim from
+# `st-martin-i.yml`/`ss-cletus-and-marcellinus.yml`, already authored
+# this session with the identical Common-of-Popes text.
 id: ss-soter-and-caius
 readings:
   - nocturn: 2
@@ -88,4 +90,113 @@ readings:
         Apostle: "As ye are partakers of the sufferings, so shall ye be also of the consolation."
         (2 Cor. i. 7.) And again: "If we suffer, we shall also reign with Him." (2 Tim. ii. 12.) He,
         therefore, that endureth sorrow for Christ, must needs also have glory with Christ.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 16:13-19", en: "Matt 16:13-19" }
+    text:
+      la: >-
+        In illo témpore: Venit Jesus in partes Cæsaréæ Philíppi, et interrogábat discípulos suos,
+        dicens: Quem dicunt hómines esse Fílium hóminis? At illi dixérunt: Alii Joánnem Baptístam,
+        alii autem Elíam, álii vero Jeremíam, aut unum ex prophétis. Dicit illis Jesus: Vos autem
+        quem me esse dícitis? Respóndens Simon Petrus, dixit: Tu es Christus, Fílius Dei vivi.
+        Respóndens autem Jesus, dixit ei: Beátus es, Simon Bar Jona: quia caro et sanguis non
+        revelávit tibi, sed Pater meus, qui in cœlis est. Et ego dico tibi, quia tu es Petrus, et
+        super hanc petram ædificábo Ecclésiam meam, et portæ ínferi non prævalébunt advérsus eam.
+        Et tibi dabo claves regni cœlórum. Et quodcúmque ligáveris super terram, erit ligátum et
+        in cœlis: et quodcúmque sólveris super terram, erit solútum et in cœlis.
+      en: >-
+        At that time, Jesus came into the quarters of Cæsarea Philippi, and He asked His
+        disciples, saying, "Whom do men say that the Son of Man is?" But they said, "Some John
+        the Baptist, and other some Elias, and others Jeremias, or one of the prophets." Jesus
+        saith to them, "But whom do you say that I am?" Simon Peter answered and said, "Thou art
+        Christ, the Son of the living God." And Jesus answering, said to him, "Blessed art thou,
+        Simon Bar-Jona, because flesh and blood hath not revealed it to thee, but My Father Who
+        is in heaven. And I say to thee, that thou art Peter, and upon this rock I will build My
+        Church, and the gates of hell shall not prevail against it. And I will give to thee the
+        keys of the kingdom of heaven; and whatsoever thou shalt bind upon earth, it shall be
+        bound also in heaven, and whatsoever thou shalt loose upon earth, it shall be loosed also
+        in heaven."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "Pope St. Leo the Great, Sermon 2 on the Anniversary of his own Election (on Matt 16:13-19)"
+    text:
+      la: >-
+        Cum, sicut evangelica lectióne reserátum est, interrogasset Dóminus discipulos, quem
+        ipsum (multis diversa opinántibus) crederent; respondissétque beátus Petrus, dicens:
+        Tu es Christus Fílius Dei vivi; Dóminus ait: Beátus es, Simon Bar-Jona, quia caro et
+        sanguis non revelávit tibi, sed Pater meus, qui in cælis est: et ego dico tibi, quia
+        tu es Petrus, et super hanc petram ædificábo Ecclésiam meam, et portæ ínferi non
+        prævalébunt advérsus eam. Et tibi dabo claves regni cælórum: et quodcúmque ligáveris
+        super terram, erit ligátum et in cælis: et quodcúmque solveris super terram, erit
+        solutum et in cælis. Manet ergo disposítio veritátis, et beátus Petrus, in accepta
+        fortitúdine petræ persevérans, suscepta Ecclésiæ gubernácula non relíquit.
+
+
+        In univérsa namque Ecclésia, Tu es Christus Fílius Dei vivi, quotídie Petrus dicit;
+        et omnis lingua, quæ confitétur Dóminum, magisterio hujus vocis imbuitur. Hæc fides
+        diabolum vincit et captivórum ejus víncula dissolvit. Hæc érutos mundo, ínserit
+        cælo, et portæ ínferi advérsus eam prævalere non possunt. Tanta enim divinitus
+        soliditate muníta est, ut eam neque hæretica umquam corrumpere pravitas, nec pagána
+        potúerit superare perfidia. His ítaque modis, dilectíssimi, rationábile obsequio
+        celebrétur hodiérna festívitas: ut in persona humilitátis meæ ille intelligátur, ille
+        honorétur, in quo et ómnium pastórum sollicitudo, cum commendatárum sibi óvium
+        custódia persevérat, et cujus étiam dignitas in indigno heréde non déficit.
+
+
+        Cum ergo cohortatiónes nostras áuribus vestræ sanctitátis adhibemus, ipsum vobis,
+        cujus vice fungimur, loqui crédite: quia et illíus vos afféctu monémus, et non aliud
+        vobis, quam quod docuit, prædicámus; obsecrántes, ut succincti lumbos mentis vestræ,
+        castam et sobriam vitam in Dei timóre ducatis. Corona mea, sicut Apóstolus ait, et
+        gáudium vos estis, si fides vestra, quæ ab inítio Evangélii in universo mundo
+        prædicáta est, in dilectióne et sanctitáte permanserit. Nam licet omnem Ecclésiam,
+        quæ in toto est orbe terrárum, cunctis oporteat florere virtútibus; vos tamen
+        præcipue inter ceteros pópulos decet meritis pietátis excellere, quos in ipsa
+        apostolicæ petræ arce fundatos, et Dóminus noster Jesus Christus cum ómnibus redémit,
+        et beátus Apóstolus Petrus præ ómnibus erudívit.
+      en: >-
+        When the Lord, as we read in the Evangelist, asked His disciples: Who did men, amid
+        their diverse speculations, believe that He, the Son of Man, was; blessed Peter
+        answered and said: Thou art the Christ, the Son of the living God. And Jesus answered
+        and said unto him: Blessed art thou, Simon Barjona: for flesh and blood hath not
+        revealed it unto thee, but My Father, Which is in heaven: and I say also unto thee,
+        that thou art Peter, and upon this rock I will build My Church, and the gates of hell
+        shall not prevail against it; and I will give unto thee the keys of the kingdom of
+        heaven; and whatsoever thou shalt bind on earth shall be bound in heaven; and
+        whatsoever thou shalt loose on earth shall be loosed in heaven. Thus therefore
+        standeth the ordinance of the Truth, and blessed Peter, abiding still that firm rock
+        which God hath made him, hath never lost that right to rule in the Church which God
+        hath given unto him.
+
+
+        In the universal Church it is Peter that doth still say every day, Thou art the
+        Christ, the Son of the living God, and every tongue which confesseth that Jesus is
+        Lord is taught that confession by the teaching of Peter. This is the faith that
+        overcometh the devil and looseth the bands of his prisoners. This is the faith which
+        maketh men free of the world and bringeth them to heaven, and the gates of hell are
+        impotent to prevail against it. With such ramparts of salvation hath God fortified
+        this rock, that the contagion of heresy will never be able to infect it, nor idolatry
+        and unbelief to overcome it. This teaching it is, my dearly beloved brethren, which
+        maketh the keeping of this Feast to-day to be our reasonable service, even the
+        teaching which maketh you to know and honour in myself, lowly though I be, that Peter
+        who is still entrusted with the care of all other shepherds and of all the flocks to
+        them committed, and whose authority I have, albeit unworthy to be his heir.
+
+
+        When therefore, we address our exhortations to your godly ears, believe ye that ye are
+        hearing him speak whose office we are discharging. Yea, it is with his love for you
+        that we warn you, and we preach unto you no other thing than that which he taught,
+        entreating you that ye would gird up the loins of your mind and lead pure and sober
+        lives in the fear of God. My disciples dearly beloved, ye are to me, as the disciples
+        of the Apostle Paul were to him, a crown and a joy, if your faith, which, in the first
+        times of the Gospel, was spoken of throughout the whole world, abide still lovely and
+        holy. For, albeit it behoveth the whole Church which is spread throughout all the
+        world, to be strong in righteousness, you it chiefly becometh above all other peoples
+        to excel in worth and godliness, whose house is built upon the very crown of the Rock
+        of the Apostle, and whom not only hath our Lord Jesus Christ, as He hath redeemed all
+        men, but whom also His blessed Apostle Peter hath made the foremost object of his
+        teaching.
     status: { la: verified, en: verified }

@@ -13,13 +13,15 @@
 # Checked 2026-09-05 for a Gospel pairing: all three readings here are
 # Nocturn 2 (Lectio4-6). St. Augustine's Sermon 110 is a eulogy of St.
 # Felicity as a martyr-mother, not tied to any Gospel pericope -- no
-# isGospel pairing applies. Note for a future pass: 07-10.txt's own
-# [Rule] ("vide C3") carries its own genuine Nocturn 3 (Lectio7-9:
-# Gospel Matt 12:46-50, "Who is my mother?", with Pope St. Gregory's
-# Homily 3 on the Gospels) that is not authored anywhere in this store
-# at all -- a real content gap, but a new reading pair rather than a
-# missing Gospel citation on an existing homily, so out of scope for
-# this pass.
+# isGospel pairing applies.
+#
+# Update (2026-09-05, second pass): Nocturn 3 now authored too. Despite
+# this saint's `common: common-of-several-martyrs`, `07-10.txt` carries
+# its own proper Nocturn 3 overriding the generic "vide C3" default
+# (Lectio7-9: Gospel Matt 12:46-50, "Who is my mother?", bare incipit;
+# Pope St. Gregory's Homily 3 on the Gospels, Lectio7's own portion +
+# Lectio8-9 combined). Gospel full text from the Missale's own
+# [Evangelium], missa/Latin+English/Sancti/07-10.txt.
 id: ss-seven-brothers-rufina-and-secunda
 readings:
   - nocturn: 2
@@ -104,4 +106,83 @@ readings:
         amazing is it, when we remember that she was their exhortress. Her courage was more
         fruitful than her womb, and when she saw them contending and conquering, her heart
         contended and conquered in each.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 12:46-50", en: "Matt 12:46-50" }
+    text:
+      la: >-
+        In illo témpore: Loquénte Jesu ad turbas, ecce, Mater ejus et fratres stabant foris,
+        quæréntes loqui ei. Dixit autem ei quidam: Ecce, mater tua et fratres tui foris stant,
+        quæréntes te. At ipse respóndens dicénti sibi, ait: Quæ est mater mea et qui sunt
+        fratres mei? Et exténdens manum in discípulos suos, dixit: Ecce mater mea et fratres
+        mei. Quicúmque enim fécerit voluntátem Patris mei, qui in cœlis est: ipse meus frater
+        et soror et mater est.
+      en: >-
+        At that time, as Jesus was still speaking to the crowds, His mother and His brethren
+        were standing outside, seeking to speak to Him. And someone said to Him, Behold, Your
+        mother and your brethren are standing outside, seeking You. But He answered and said to
+        him who told Him, Who is My mother and who are My brethren? And stretching forth His
+        hand toward His disciples, He said, Behold My mother and My brethren! For whoever does
+        the will of My Father in heaven, he is My brother and sister and mother.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "Pope St. Gregory the Great, Homily 3 on the Gospels"
+    text:
+      la: >-
+        Sancti Evangélii, fratres caríssimi, brevis est léctio recitáta, sed magnis mysteriórum
+        pondéribus grávida. Jesus étenim, cónditor et redémptor noster, Matrem se nosse
+        dissímulat, et quæ ei mater sit et qui propínqui, non per cognatiónem carnis, sed per
+        conjunctiónem spíritus designat, dicens: Quæ est mater mea, et qui sunt fratres mei?
+        Quicúmque enim fécerit voluntátem Patris mei, qui in cælis est, ipse meus frater, et
+        soror, et mater est. Quibus nobis verbis quid áliud innuit, nisi quod obsequéntes
+        jussiónibus suis multos ex Gentilitáte cólligit; et Judǽam, ex cujus carne est génitus,
+        non agnóscit?
+
+
+        Sed cum is, qui voluntátem Patris fécerit, soror et frater Dómini dícitur, propter
+        utrúmque sexum qui ad fidem collígitur, mirum non est; mirándum vero valde est, quómodo
+        étiam mater dicátur. Fidéles enim discípulos fratres vocáre dignátus est, dicens: Ite,
+        nuntiáte frátribus meis. Qui ergo frater Dómini fíeri ad fidem veniéndo pótuerit,
+        quæréndum est quómodo étiam et mater esse possit.
+
+
+        Sed sciéndum nobis est, quia qui Christi soror et frater est credéndo, mater effícitur
+        prædicándo. Quasi enim parit Dóminum, quem cordi audiéntis infúderit; et mater ejus
+        prædicándo effícitur, si per ejus vocem amor Dómini in próximi mente generátur. Ad quam
+        rem nobis idónee confirmándam adest beáta Felícitas, cujus hódie natalícia celebrámus,
+        quæ credéndo exstitit ancílla Christi, et prædicándo facta est mater Christi. Septem
+        quippe fílios, sicut in gestis ejus emendatióribus légitur, sic post se tímuit vivos in
+        carne relínquere, sicut carnáles paréntes solent metúere ne mórtuos præmíttant.
+      en: >-
+        Dearly beloved brethren, the gospel which is read this day is but very short, but it is
+        heavy with great mysteries. Here Jesus, our Maker and Redeemer, feigneth Himself as
+        though He knew not His own Mother, and telleth who they be who are His mother and
+        brethren, not by fleshly kinship, but by kinship of mind, saying: Who is My mother, and
+        who are My brethren? Whosoever shall do the will of My Father, Which is in heaven, the
+        same is My brother, and sister, and mother. By the which words, what are we to
+        understand, save that He gathereth together from out of heathendom many that are
+        willing to obey His commandments, and that He knoweth not Jewry, whereof, according to
+        the flesh, He is a son?
+
+
+        Seeing that both men and women are called to the faith, we marvel not that He saith
+        that whosoever shall do the will of His Father, the same is His brother and sister. But
+        it is startling to hear that the same is also His mother. His faithful disciples He is
+        pleased to call His brethren, where He saith, Go, tell My brethren. If then it is by
+        joining His religion that one can become the brother of the Lord, let us see how one can
+        become His mother.
+
+
+        But we must know that even as one becometh His brother or His sister by believing in
+        Him, so one becometh His mother by preaching Him. Such an one, as it were, giveth birth
+        to the Lord by causing Him to be in the hearer's heart, and by words giving His love
+        existence in their neighbour's mind. For an example in point, behold blessed Felicity,
+        whose Birth-day we keep today. She was one whose faith made her Christ's hand-maiden,
+        and whose preaching made her Christ's mother. We read in the corrected edition of her
+        Acts that she dreaded as much to leave her seven sons behind her alive in the flesh, as
+        do worldly mothers to send theirs dead before them.
     status: { la: verified, en: verified }
