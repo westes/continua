@@ -966,7 +966,11 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
         const next = readings[i + 1];
         const homily = next && !next.isGospel && next.nocturn === reading.nocturn ? next : undefined;
         bucket.push(gospelReadingPart(reading, homily, id, commonPoolIndex++, day));
-        if (homily) i++;
+        if (homily) {
+          i++;
+          const homilyKey = homily.text.la ?? homily.text.en ?? '';
+          if (homilyKey) seenReadingText.add(homilyKey);
+        }
       } else {
         bucket.push(nocturnReadingPart(reading, id, commonPoolIndex++, day));
       }
