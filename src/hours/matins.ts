@@ -984,10 +984,22 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
   for (const octave of activeOctavesFor(date)) {
     const reading = getOctaveReading(octave.id, octave.dayNumber);
     if (reading) {
+      // Unlike nocturn-readings' `source` (a plain, non-bilingual string —
+      // see `withOccasion`'s own doc comment), an octave reading's `source`
+      // is itself `{la, en}` (2026-08 fix). The occasion name is still a
+      // single plain string either way, so it's appended to both language
+      // slots rather than routed through `withOccasion`.
+      const occasion = occasionName(octave.id, day);
+      const label = occasion
+        ? {
+            la: reading.source.la ? `${reading.source.la} (for ${occasion})` : reading.source.la,
+            en: reading.source.en ? `${reading.source.en} (for ${occasion})` : reading.source.en,
+          }
+        : reading.source;
       parts.push({
         kind: 'lesson',
         text: { text: reading.text, status: reading.status },
-        label: reading.source,
+        label,
         responsory: reading.responsory
           ? { text: reading.responsory, status: { la: 'verified', en: 'verified' } }
           : undefined,
