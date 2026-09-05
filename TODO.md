@@ -6127,3 +6127,25 @@ and not addressed here: the bible-plan TSV's own content still isn't covered by 
 test the way other bulk-imported content stores are (see "Bible-plan TSV — bulk conversion done"
 below) — `tests/propers/bible-plan.test.ts` tests specific real dates ad hoc, not the full imported
 set.
+
+### Matins responsory pools: `ruth` — the first composition with no liturgical precedent at all (2026-09-05)
+
+User-directed: compose Ruth's own responsory from Ruth 1:16-17 ("thy people shall be my people,
+and thy God my God") on the verse's own merit, even though — unlike `deut`/`rom`/`bar` — this text
+has *no* liturgical precedent anywhere in the reference source at all (no Nuptial Mass file even
+exists there to check against). Flagged that distinction directly before proceeding; user confirmed
+it explicitly, aware of the difference from the three prior compositions (all of which recombined
+text already used liturgically elsewhere, just never in Matins).
+
+Since the project's usual bulk-imported `data/scripture/ruth-1.yml` carries no accents, the Latin
+was hand-accented rather than transcribed — but cross-checked word-by-word against already-accented
+occurrences of the same words elsewhere in the reference corpus (`quocúmque`, `pópulus tuus`,
+`páriter`, `ábeam`, `relínquam`, `moráta`, `morábor`, `móriar`, `moriéntem`, `suscéperit`,
+`sepultúræ`) rather than guessed freehand from scratch.
+
+66 of 72 bible-plan books now seeded. `npm test` (2029 passed) and `tsc --noEmit` both pass;
+live-verified through `getBiblePlanReadings` (`sunday-after-ascension`/Saturday resolves real,
+correctly R./V.-formatted text in both languages for `Ruth 3-4`). Canonical-key audit re-run, clean
+(`ruth` has no `BOOK_ALIASES` entry). Remaining 6: Josue, Judices, 1-2 Chronicles, Nehemiah (no
+citation anywhere at all) plus `ezra` (one thin, ambiguous near-miss, deliberately left unseeded —
+see the entry above).

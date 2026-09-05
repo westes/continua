@@ -4,7 +4,7 @@
 # chapter/verse historically, so a book-level match is the right
 # granularity, not a gap to fill in later with exact citations.
 #
-# Seeded, not a full pool — 65 of the 72 books actually used in the user's
+# Seeded, not a full pool — 66 of the 72 books actually used in the user's
 # own bible-plan (data/hours/bible-plan/*.yml), the rest deferred bulk
 # content (see TODO.md). Cycled in order
 # per-day when a Nocturn-1 reading's book has more than one candidate
@@ -1255,3 +1255,24 @@ bar:
     v:
       la: "Post hæc in terris visus est, et cum homínibus conversátus est."
       en: "Afterwards he was seen upon earth, and conversed with men."
+
+# `ruth` — composed, not transcribed, like `deut`/`rom`/`bar` above, but a
+# step further: unlike those three, Ruth 1:16-17 has no liturgical
+# precedent anywhere in the reference source at all (no Nuptial Mass file
+# even exists there to check) — this is a fresh selection on the verse's
+# own merit (Ruth's declaration of loyalty to Naomi, "thy people shall be
+# my people, and thy God my God"), not a recombination of text already
+# used liturgically elsewhere. User-directed 2026-09-05, aware of and
+# accepting that distinction. Accented Latin built by hand (this project's
+# usual bulk-imported src/data/scripture/ruth-1.yml has no accents),
+# cross-checked word-by-word against already-accented occurrences of the
+# same words elsewhere in the reference corpus (quocúmque, pópulus tuus,
+# páriter, ábeam, relínquam, moráta, morábor, móriar, moriéntem,
+# suscéperit, sepultúræ) rather than guessed freehand.
+ruth:
+  - r:
+      la: "Ne advérseris mihi, ut relínquam te et ábeam: quocúmque enim perréxeris, pergam: et ubi moráta fúeris, et ego páriter morábor: * Pópulus tuus, pópulus meus: et Deus tuus, Deus meus."
+      en: "Be not against me, to desire that I should leave thee and depart: for whithersoever thou shalt go, I will go: and where thou shalt dwell, I also will dwell: * Thy people shall be my people, and thy God my God."
+    v:
+      la: "Quæ te moriéntem terra suscéperit, in ea móriar: ibíque locum accípiam sepultúræ."
+      en: "The land that shall receive thee dying, in the same will I die: and there will I be buried."
