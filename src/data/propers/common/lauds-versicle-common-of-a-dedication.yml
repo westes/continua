@@ -1,0 +1,16 @@
+# Read directly from the reference engine (Latin/Commune/C8.txt,
+# English/Commune/C8.txt): Commune Dedicationis Ecclesiae's Versum 2
+# aliases its own Versum 1 (no distinct text). No lauds-versicle file
+# existed for this Common before -- needed now for
+# common-of-a-dedication-commemoration-antiphon.yml's Ant 2 pairing.
+id: lauds-versicle-common-of-a-dedication
+text:
+  la: |
+    V. Hæc est domus Dómini fírmiter ædificáta.
+    R. Bene fundáta est supra firmam petram.
+  en: |
+    V. This is the house of God, stoutly builded.
+    R. Well founded upon a sure rock.
+status:
+  la: verified
+  en: verified

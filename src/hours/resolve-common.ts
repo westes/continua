@@ -699,7 +699,13 @@ function sanctoralCommemorationPart(
   if (saint?.collectCommon && saint.collectName) {
     const template = resolveCommon(saint.collectCommon);
     if (template.status.la !== 'missing' || template.status.en !== 'missing') {
-      return { kind: 'preces', text: substituteName(template, saint.collectName), label };
+      const collect = substituteName(template, saint.collectName);
+      const antiphon = resolveCommon(`${saint.common}-commemoration-antiphon`);
+      const versicle = resolveCommon(`lauds-versicle-${saint.common}`);
+      if (antiphon.status.la !== 'missing' || antiphon.status.en !== 'missing') {
+        return { kind: 'preces', text: combineCommemorationBundle(antiphon, versicle, collect), label };
+      }
+      return { kind: 'preces', text: collect, label };
     }
   }
   return { kind: 'preces', text: { text: {}, status: { la: 'missing', en: 'missing' } }, label };
