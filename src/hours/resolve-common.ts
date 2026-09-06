@@ -113,6 +113,21 @@ export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set([
   'maundy-thursday',
   'good-friday',
   'holy-saturday',
+  // Easter's own octave: Monday-Saturday of Easter week each have their
+  // own real identity now (see calendar/movable-feasts.ts's anchor-based
+  // override, offsets 1-6) — same "does this id carry its own real
+  // office" reasoning as the Passiontide batch above. `easter-sunday`
+  // itself needs no entry here (it's not one of these movable-feast
+  // records; `resolveOfficeWinner` only ever sees it as a plain
+  // `resolveTemporalId` fallback target, which every one of these six
+  // falls back to via `getTemporalProperWithFallback` whenever a given
+  // kind isn't authored for the specific weekday).
+  'easter-monday',
+  'easter-tuesday',
+  'easter-wednesday',
+  'easter-thursday',
+  'easter-friday',
+  'easter-saturday',
 ]);
 
 /**

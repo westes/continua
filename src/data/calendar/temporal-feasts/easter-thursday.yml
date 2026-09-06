@@ -1,0 +1,9 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Pasc0-4.txt
+# ([Officium] "Die V infra octavam Paschæ", [Rank] "Semiduplex I
+# classis"). See easter-monday.yml's own header for the fuller reasoning.
+id: easter-thursday
+name: "Fifth Day within the Octave of Easter"
+nameLa: "Die V infra Octavam Paschæ"
+anchor:
+  kind: easter
+  offset: 4

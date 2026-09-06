@@ -1,0 +1,13 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Pasc0-3.txt
+# ([Officium] "Die IV infra octavam Paschæ", [Rank] "Semiduplex I
+# classis" -- one tier below Monday/Tuesday's Duplex I classis, and
+# without their own [Rule]'s explicit "no commemoratio" line, but still
+# inside the same privileged-feria-major span (offsets 1-6) that already
+# gives every day of Easter week zero commemorations regardless. See
+# easter-monday.yml's own header for the fuller reasoning.
+id: easter-wednesday
+name: "Fourth Day within the Octave of Easter"
+nameLa: "Die IV infra Octavam Paschæ"
+anchor:
+  kind: easter
+  offset: 3

@@ -1,0 +1,36 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Pasc0-1.txt
+# ([Officium] "Die II infra octavam Paschæ", [Rank] "Duplex I classis",
+# [Rule] "Omit Hymnus Preces Suffragium Commemoratio" -- an explicit,
+# literal "no commemoration" for this day, not just this app's own
+# already-settled privileged-feria-major blanket rule).
+#
+# Previously not modeled as its own record: `resolveTemporalId` folds
+# every feria of Easter week onto the governing Sunday's own id
+# (`easter-sunday`), so Monday-Saturday all reused Easter Sunday's single
+# collect and single-nocturn Matins content wholesale, even though the
+# reference engine gives each of these six days (Pasc0-1 through Pasc0-6)
+# its own real proper: own title, own collect, own Gospel+homily. Same
+# gap/fix shape as Passiontide's own six days (see monday-passion-week.yml
+# and siblings) -- this file (and its five siblings) gives Easter Monday a
+# real identity of its own instead.
+#
+# `rank` omitted on purpose, same reasoning as the Passiontide batch:
+# `calendar/movable-feasts.ts`'s `applyMovableFeasts` never actually
+# consults it here -- `data/calendar/temporal-categories.yml`'s
+# `privileged-feria-major` classification (already covering Easter-octave
+# offsets 1-6) guarantees `resolvedWinner.kind === 'temporal'` reaches
+# `applyMovableFeasts` unconditionally, so this record always takes over
+# regardless of what `rank` would say. That same privileged-feria-major
+# categorization is also why this file doesn't need to encode "no
+# commemoration" itself: `decideOccurrence`'s own privileged-feria-major
+# branch already gives zero commemorations to any candidate, any rank
+# (direct instruction, 2026-09-01: "you dont commemorate -anything- from
+# palm sunday through low sunday") -- this record only needed to give the
+# day its own name/collect/reading identity, not re-litigate that already-
+# settled precedence question.
+id: easter-monday
+name: "Second Day within the Octave of Easter"
+nameLa: "Die II infra Octavam Paschæ"
+anchor:
+  kind: easter
+  offset: 1

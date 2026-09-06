@@ -34,8 +34,19 @@ describe('April sanctoral pull (first pass)', () => {
     // candidate in 2030's own backlog, so he lands the 1st day after Low
     // Sunday (Apr 28 that year) outright.
     const native = resolveDay('2030-04-25');
-    expect(native.winner).toEqual({ kind: 'temporal', id: 'easter-sunday' });
-    expect(native.commemorations).toEqual([]);
+    // 2030-04-25 is Easter+4 (Thursday of Easter week); `winner.id` is
+    // this weekday's own real temporal-feasts id since 2026-09-06 (see
+    // calendar/temporal-feasts/easter-thursday.yml), not the shared
+    // `easter-sunday` governing-week id. The override mechanism pushes a
+    // `{kind:'temporal', id:'easter-sunday'}` commemoration for the coarse
+    // id it replaces, same shape every other movable feast (Ascension,
+    // Corpus Christi, the Passiontide days) already does; harmless, since
+    // day-label.ts's collectCommemorations deliberately drops any
+    // commemoration whose id equals the plain governing weekday (see
+    // tests/calendar/transfer.test.ts's own Holy Monday case for the same
+    // shape).
+    expect(native.winner).toEqual({ kind: 'temporal', id: 'easter-thursday' });
+    expect(native.commemorations).toEqual([{ kind: 'temporal', id: 'easter-sunday' }]);
     expect(native.transferredAway?.candidate.id).toBe('st-mark');
 
     const landing = resolveDay('2030-04-29');

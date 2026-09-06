@@ -1,0 +1,19 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Pasc0-6.txt
+# ([Officium] "Sabbato in Albis", [Rank] "Semiduplex I classis"). Unlike
+# its five siblings (Monday-Friday, all titled "Die N infra octavam
+# Paschæ" in the source), this day alone carries its own real historical
+# name -- "Saturday in [garments of] White" -- the day the newly-baptized
+# would finally have set aside the white baptismal robes they'd worn all
+# week, one day ahead of the following Sunday's parallel name ("Dominica
+# in Albis", i.e. Low Sunday, not yet modeled with its own name -- see
+# `easter-octave` in nocturn-readings/propers, currently unnamed beyond
+# the generic ordinal "First Sunday after Easter"). Kept as its own named
+# exception here rather than folded into the generic "Nth Day within the
+# Octave" phrasing its siblings use -- see easter-monday.yml's own header
+# for the shared reasoning behind the record itself.
+id: easter-saturday
+name: "Saturday in Albis"
+nameLa: "Sabbato in Albis"
+anchor:
+  kind: easter
+  offset: 6

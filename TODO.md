@@ -2518,8 +2518,6 @@ seasonally variable — what's stored is whichever form rendered live on
 each one's already-chosen clean query date, not a season-aware
 substitution. Same class of gap as the Paschaltide alleluia suffix
 elsewhere in this file, flagged not fixed.
-- **Easter's own octave** — explicitly tabled ("easter needs a whole
-  different discussion").
 
 ### The "which Sunday governs this date" temporal-id algorithm — done (2026-08)
 
@@ -6393,3 +6391,57 @@ usable for a future funeral/anniversary occasion) and a thinned `hours/all-souls
 Prime/Compline's own day-specific collects). No new calendar trigger added — still only Nov 2
 exercises this. All 8 hour files' wiring unchanged; full suite (2051 passed) and `tsc --noEmit`
 both still pass with no behavior change.
+
+### Easter's own octave — done (2026-09-06)
+
+Previously tabled ("easter needs a whole different discussion") because Easter Monday-Saturday
+all folded onto the governing Sunday's own `easter-sunday` temporal id (`calendar/temporal-id.ts`'s
+`sundayOnOrBefore` fold), reusing Easter Sunday's single collect and single-nocturn Matins content
+wholesale for the entire week — even though the reference engine (`web/www/horas/Latin/Tempora/
+Pasc0-1.txt` through `Pasc0-6.txt`) gives each of the six days its own real proper: own title ("Die
+II/III/IV/V/VI infra octavam Paschæ", Saturday "Sabbato in Albis"), own rank, own collect, own
+Gospel+homily. User, 2026-09-06: "it's an octave and you should have sourced the octave readings."
+
+Fixed via the same generic mechanism the Passiontide batch already established (six new
+`data/calendar/temporal-feasts/easter-{monday..saturday}.yml` records, anchored `{kind: easter,
+offset: 1..6}`, `rank` omitted since `data/calendar/temporal-categories.yml`'s pre-existing
+`privileged-feria-major` classification for offsets 1-6 already guarantees these records take over
+unconditionally) — no new mechanism, just six new anchor records plugging into
+`calendar/movable-feasts.ts`. Six new collects (`data/propers/temporal/easter-{monday..saturday}-
+collect.yml`, transcribed from each day's own Office `[Oratio]`, `$Per Dominum`/`$Per eumdem`
+macros expanded) and six new nocturn-readings files (`data/propers/nocturn-readings/easter-
+{monday..saturday}.yml`, each day's own Gospel pericope from the Missal `[Evangelium]` + patristic
+homily, same "full pericope from the Mass propers, not the bare Office incipit" convention as
+`easter-sunday.yml`). All six ids added to `resolve-common.ts`'s `ALWAYS_OVERRIDE_TEMPORAL_IDS`.
+
+Two mechanism fixes needed along the way, both found via a live end-to-end smoke test before
+trusting the content:
+- `hours/matins.ts`'s `resolveOrdo` gated the "does this day get the Sunday-style 3-nocturn/13-psalm
+  treatment" check (`hasTemporalNamedOverride`) on `winner.id` — correct back when Monday/Tuesday's
+  own `winner.id` still equaled the shared `easter-sunday` id, but wrong now that they have their
+  own real `winner.id`. Repointed to `temporalId` (`resolveTemporalId`, still `easter-sunday` for
+  the whole octave), matching what `sundayNocturnFor`'s own content-fetch lookup already keyed by a
+  few lines up — the two lookups now agree, as they always should have.
+- `data/hours/matins-ferial-named-antiphon-overrides.yml`'s Wednesday-Saturday antiphon override was
+  keyed by the old shared `easter-sunday` id (that lookup, unlike the one above, is genuinely by
+  `winner.id`, not `temporalId`) — split into four entries, one per day's own new id, same shared
+  antiphon content via a YAML anchor.
+
+Verified `day.commemorations` still comes out `[]`-equivalent for every one of the six days (the
+one entry present is the same harmless self-referential `{kind:'temporal', id:'easter-sunday'}`
+placeholder every other movable-feast override already produces and `day-label.ts`'s
+`collectCommemorations` already drops for display — confirmed this is deliberate, not a bug, via
+`tests/calendar/transfer.test.ts`'s pre-existing Holy Monday case, after almost "fixing" it away).
+Two pre-existing tests updated for the new `winner.id` values (`tests/hours/matins.test.ts`,
+`tests/calendar/april-sanctoral.test.ts`) — no behavior they were actually testing changed.
+
+Also fact-checked and corrected two adjacent user assumptions along the way: commemorations are
+*not* newly allowed Monday-Saturday of Easter week (the user's own 2026-09-01 "no commemoration
+anything from Palm Sunday through Low Sunday" instruction already covers this span and stays
+unchanged); and the per-day names are "Die N infra Octavam Paschæ" (Monday-Friday) / "Sabbato in
+Albis" (Saturday) — "Hebdomada in Albis" is a real but looser term for the whole week as a unit,
+not each weekday's own rubrical title, and only Saturday (paired with the following "Dominica in
+Albis", i.e. Low Sunday, not yet itself named beyond a generic ordinal — a separate, smaller,
+still-open gap) carries a name distinct from the plain "Die N" pattern.
+
+`npm test` (2066 passed) and `tsc --noEmit` both pass.

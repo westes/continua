@@ -1,0 +1,104 @@
+# Matins content for Easter Thursday (temporalId easter-thursday,
+# Pasc0-4 -- "Die V infra octavam Paschæ"). Sourced from web/www/horas/
+# Latin/Tempora/Pasc0-4.txt (Latin homily) / English/Tempora/Pasc0-4.txt
+# (English homily); Gospel pericope from the Missal's own [Evangelium]
+# (missa/Latin+English/Tempora/Pasc0-4.txt), same convention as
+# easter-monday.yml.
+#
+# Single-nocturn source form, same structural note as easter-monday.yml.
+# Lectio1's homily portion (incipit dropped) combined with Lectio2-3 into
+# one continuous reading. Responsory: the source's own [Responsory1]
+# ("Tulérunt Dóminum meum").
+id: easter-thursday
+readings:
+  - nocturn: 1
+    isGospel: true
+    citation: { la: "Joannes 20:11-18", en: "John 20:11-18" }
+    text:
+      la: >-
+        In illo témpore: María stabat ad monuméntum foris, plorans. Dum ergo fleret, inclinávit se et
+        prospéxit in monuméntum: et vidit duos Angelos in albis, sedéntes, unum ad caput et unum ad
+        pedes, ubi pósitum fúerat corpus Jesu. Dicunt ei illi: Múlier, quid ploras? Dicit eis: Quia
+        tulérunt Dóminum meum: et néscio, ubi posuérunt eum. Hæc cum dixísset, convérsa est retrórsum,
+        et vidit Jesum stantem: et non sciébat, quia Jesus est. Dicit ei Jesus: Múlier, quid ploras?
+        quem quæris? Illa exístimans, quia hortulánus esset, dicit ei: Dómine, si tu sustulísti eum,
+        dícito mihi, ubi posuísti eum: et ego eum tollam. Dicit ei Jesus: María. Convérsa illa, dicit
+        ei: Rabbóni - quod dícitur Magíster. - Dicit ei Jesus: Noli me tángere, nondum enim ascéndi ad
+        Patrem meum: vade autem ad fratres meos et dic eis: Ascéndo ad Patrem meum et Patrem vestrum,
+        Deum meum et Deum vestrum. Venit María Magdaléne annúntians discípulis: Quia vidi Dóminum, et
+        hæc dixit mihi.
+      en: >-
+        At that time, Mary stood at the sepulchre without, weeping. Now as she was weeping, she
+        stooped down, and looked into the sepulchre, And she saw two angels in white, sitting, one at
+        the head, and one at the feet, where the body of Jesus had been laid. They say to her: Woman,
+        why weepest thou? She saith to them: Because they have taken away my Lord; and I know not
+        where they have laid Him. When she had thus said, she turned herself back, and saw Jesus
+        standing; and she knew not that it was Jesus. Jesus saith to her: Woman, why weepest thou?
+        whom seekest thou? She, thinking it was the gardener, saith to Him: Sir, if thou hast taken
+        Him hence, tell me where thou hast laid Him, and I will take Him away. Jesus saith to her:
+        Mary. She turning, saith to Him: Rabboni — which is to say, Master. Jesus saith to her: Do
+        not touch Me, for I am not yet ascended to My Father. But go to My brethren, and say to them:
+        I ascend to My Father and to your Father, to My God and your God. Mary Magdalen cometh, and
+        telleth the disciples: I have seen the Lord, and these things He said to me.
+    status: { la: verified, en: verified }
+
+  - nocturn: 1
+    isGospel: false
+    source: "Pope St. Gregory the Great, Homily 25 on the Gospels"
+    text:
+      la: >-
+        María Magdaléne, quæ fúerat in civitáte peccátrix, amándo veritátem, lavit lácrimis máculas
+        críminis: et vox Veritátis implétur, qua dícitur: Dimíssa sunt ei peccáta multa, quia diléxit
+        multum. Quæ enim prius frígida peccándo remánserat, póstmodum amándo fórtiter ardébat. Nam
+        postquam venit ad monuméntum, ibíque corpus Domínicum non invénit, sublátum crédidit, atque
+        discípulis nuntiávit: qui veniéntes vidérunt, atque ita esse, ut múlier díxerat, credidérunt.
+        Et de eis prótinus scriptum est: Abiérunt ergo discípuli ad semetípsos: ac deínde subjúngitur:
+        María autem stabat ad monuméntum foris, plorans.
+
+
+        Qua in re pensándum est, hujus mulíeris mentem quanta vis amóris accénderat, quæ a monuménto
+        Dómini, étiam discípulis recedéntibus, non recedébat. Exquirébat quem non invénerat: flebat
+        inquírendo, et amóris sui igne succénsa, ejus, quem ablátum crédidit, ardébat desidério. Unde
+        cóntigit, ut eum sola tunc vidéret, quæ remánserat ut quǽreret: quia nimírum virtus boni
+        óperis, perseverántia est: et voce Veritátis dícitur: Qui autem perseveráverit usque in finem,
+        hic salvus erit.
+
+
+        María ergo cum fleret, inclinávit se, et prospéxit in monuméntum. Certe jam monuméntum
+        vácuum víderat, jam sublátum Dóminum nuntiáverat: quid est, quod se íterum inclínat, íterum
+        vidére desíderat? Sed amánti semel aspexísse non súfficit: quia vis amóris intentiónem
+        multíplicat inquisitiónis. Quæsívit ergo prius, et mínime invénit: perseverávit ut quǽreret,
+        unde et cóntigit, ut inveníret: actúmque est, ut desidéria diláta créscerent, et crescéntia
+        cáperent quod inveníssent.
+      en: >-
+        Mary Magdalene, a woman in the city, who was a sinner, through love of the truth washed away
+        by her tears the befoulment of her sin, and the word of the Truth was fulfilled which He
+        spake: Her sins, which are many, are forgiven: for she loved much. She that had remained cold
+        while she sinned, became burning when she loved. For after that she had been to the
+        Sepulchre, and had not found there the Body of the Lord, and had believed that it had been
+        taken away, and had told His disciples, they came and saw, and thought it was even as the
+        woman had said, and it is written: Then the disciples went away again unto their own home,
+        but Mary stood without at the sepulchre, weeping.
+
+
+        In connection with this matter, we ought to ponder what great store of love there was in
+        that woman's heart, who, when even His disciples were gone away, could not tear herself from
+        the grave of the Lord. She sought Him Whom she had not found there, and as she sought, she
+        wept, and the fire of love in her heart yearned after Him, Who she believed had been taken
+        away. And so it came to pass that she, who had lingered to seek Him, was the only one who
+        then saw Him, since the back-bone of a good work is endurance, and the voice of the Truth
+        Himself hath said: He that endureth to the end shall be saved.
+
+
+        As Mary wept there, she stooped down and looked into the Sepulchre. It was but a little
+        while and she had seen how the Sepulchre was empty, and had told that the Lord was taken
+        away. Why then should she stoop down and look in again? But she loved Him so well, that one
+        look was not enough; the energy of her affection constrained her to search again and again.
+        She began by searching and not finding; but she endured in her search, and, behold, it came
+        to pass that she found. And this was done that our own longings for Christ's presence might
+        be taught to expand, and know that as they expand they will meet with Him to Whom they
+        aspire.
+    responsory:
+      la: "R. Tulérunt Dóminum meum, et néscio ubi posuérunt eum. Dicunt ei Angeli: Múlier, quid ploras? surréxit sicut dixit: * Præcédet vos in Galilǽam: ibi eum vidébitis, allelúja, allelúja.\nV. Cum ergo fleret, inclinávit se, et prospéxit in monuméntum: et vidit duos Angelos in albis, sedéntes, qui dicunt ei.\nR. Præcédet vos in Galilǽam: ibi eum vidébitis, allelúja, allelúja."
+      en: "R. They have taken away my Lord, and I know not where they have laid Him. The Angels say unto her: Woman, why weepest thou? He is risen, as He said. * He goeth before you into Galilee; there shall ye see Him, alleluia, alleluia.\nV. And as she wept, she stooped down and looked into the Sepulchre, and saw two Angels in white, sitting; and they say unto her:\nR. He goeth before you into Galilee; there shall ye see Him, alleluia, alleluia."
+    status: { la: verified, en: verified }

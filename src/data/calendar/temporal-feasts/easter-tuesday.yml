@@ -1,0 +1,11 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Pasc0-2.txt
+# ([Officium] "Die III infra octavam Paschæ", [Rank] "Duplex I classis",
+# [Rule] "no commemoratio", explicit and literal). See easter-monday.yml's
+# own header for the full reasoning (gap, fix shape, why `rank` is
+# omitted, why "no commemoration" needs no separate encoding here).
+id: easter-tuesday
+name: "Third Day within the Octave of Easter"
+nameLa: "Die III infra Octavam Paschæ"
+anchor:
+  kind: easter
+  offset: 2

@@ -1092,18 +1092,24 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // authored yet, same "eligible, not content-gated" convention every
   // other per-feast override in this app already uses (see
   // hours/resolve-common.ts's getOfficeOverrideId) — or a temporal winner
-  // with its own named override (2026-09-02, e.g. Easter Monday/Tuesday
-  // reusing Easter Sunday's own entry; see `hasTemporalNamedOverride`
-  // below). Unlike the sanctoral case, a plain temporal id is NOT
-  // eligible just by existing — only one with an authored entry in
-  // `sundayNamedOverrides` is, since ordinary temporal ferias/Sundays
-  // already have their own correct path and shouldn't suddenly gain 3
-  // nocturns. Deliberately a separate check from `isDoubleOrHigher`
-  // (antiphon.ts) — that function drives the unrelated antiphon-doubling
-  // rule (full vs. incipit antiphon before the psalms) and stays floored
-  // at Duplex; the two thresholds only coincided before this change by
-  // accident, not by shared meaning.
-  const temporalNamedOverride = winner.kind === 'temporal' ? sundayNamedOverrides[winner.id] : undefined;
+  // whose *governing week* (`temporalId`, not `winner.id`) has its own
+  // named override (2026-09-02, e.g. Easter Monday/Tuesday reusing Easter
+  // Sunday's own entry; see `hasTemporalNamedOverride` below). Keyed by
+  // `temporalId` rather than `winner.id` since 2026-09-06: Easter week's
+  // 6 weekdays each got their own real `temporal-feasts` record (`winner.id`
+  // is now `easter-monday`/`easter-tuesday`/...), but they still all share
+  // one governing-week content pool (`temporalId`, always `easter-sunday`
+  // for the whole octave) — matching `sundayNocturnFor`'s own lookup a few
+  // lines up, which already keyed by `temporalId` for exactly this reason.
+  // Unlike the sanctoral case, a plain temporal id is NOT eligible just by
+  // existing — only one with an authored entry in `sundayNamedOverrides`
+  // is, since ordinary temporal ferias/Sundays already have their own
+  // correct path and shouldn't suddenly gain 3 nocturns. Deliberately a
+  // separate check from `isDoubleOrHigher` (antiphon.ts) — that function
+  // drives the unrelated antiphon-doubling rule (full vs. incipit antiphon
+  // before the psalms) and stays floored at Duplex; the two thresholds
+  // only coincided before this change by accident, not by shared meaning.
+  const temporalNamedOverride = winner.kind === 'temporal' ? sundayNamedOverrides[temporalId] : undefined;
   const hasTemporalNamedOverride =
     temporalNamedOverride !== undefined && (temporalNamedOverride.weekdays === undefined || temporalNamedOverride.weekdays.includes(day.weekday));
   const threeNocturns =

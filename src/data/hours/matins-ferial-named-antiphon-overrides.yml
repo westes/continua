@@ -13,9 +13,7 @@
 # (each with its own different psalm set) rather than authored per-day.
 # `hours/matins.ts`'s `ferialNamedAntiphonedNocturn` does the splitting.
 #
-# Easter Octave, Wednesday-Saturday (`easter-sunday`, restricted via
-# `weekdays` the same way the Sunday-side override restricts itself to
-# just Sunday/Monday/Tuesday of the same span): live-verified (Pofficium.pl,
+# Easter Octave, Wednesday-Saturday: live-verified (Pofficium.pl,
 # prayMatutinum, Monastic Tridentinum 1617, 2026-04-08/09/10/11) that all 4
 # weekdays share the exact same 2 antiphons verbatim — not per-day content,
 # despite each having a different Gospel reading in the nocturn-readings
@@ -28,10 +26,28 @@
 # count (a design choice, not a transcription — the reference's own
 # antiphon/psalm-group boundary doesn't map onto vu's differently-sized
 # pool at all).
-easter-sunday:
-  weekdays: [wednesday, thursday, friday, saturday]
-  antiphons:
+#
+# Keyed by each weekday's own real `day.winner.id` (2026-09-06: Easter
+# week Monday-Saturday each got a real `temporal-feasts` record of their
+# own — see calendar/temporal-feasts/easter-wednesday.yml and siblings —
+# so the single shared `easter-sunday` key this override used before no
+# longer matches `winner.id` for these four days). `weekdays` is left as a
+# single-entry array per record now that each key already names exactly
+# one weekday — a leftover shape from when one shared key covered all
+# four, kept only because `FerialNamedOverride.weekdays` is not optional.
+easter-wednesday:
+  weekdays: [wednesday]
+  antiphons: &easter-octave-ferial-antiphons
     - la: "Jesum qui crucifíxus est quǽritis, allelúja; non est hic: surréxit enim, sicut dixit vobis, allelúja."
       en: "You seek Jesus who was crucified, alleluia; he is not here, for he is risen, as he said, alleluia."
     - la: "Veníte et vidéte locum ubi pósitus erat Dóminus, allelúja, allelúja."
       en: "Come, see the place where the Lord was laid, alleluia, alleluia."
+easter-thursday:
+  weekdays: [thursday]
+  antiphons: *easter-octave-ferial-antiphons
+easter-friday:
+  weekdays: [friday]
+  antiphons: *easter-octave-ferial-antiphons
+easter-saturday:
+  weekdays: [saturday]
+  antiphons: *easter-octave-ferial-antiphons

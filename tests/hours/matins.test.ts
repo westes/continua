@@ -376,15 +376,20 @@ describe('resolveOrdo("matins", ...) Sunday within the Octave of Ascension (2026
 });
 
 describe('resolveOrdo("matins", ...) Easter Sunday/Monday/Tuesday shared proper Matins (2026-09-02 fix)', () => {
-  // All 6 weekdays of the Easter Octave share winner {kind: 'temporal', id:
-  // 'easter-sunday'} -- only Sunday/Monday/Tuesday are live-verified to
-  // share this exact proper content, restricted via the override's own
-  // `weekdays` field (see matins-sunday-named-nocturn-overrides.yml).
+  // Live-verified to share this exact proper content: Sunday/Monday/
+  // Tuesday, restricted via the override's own `weekdays` field (see
+  // matins-sunday-named-nocturn-overrides.yml), keyed by `temporalId`
+  // (`resolveTemporalId`, always 'easter-sunday' across the whole
+  // octave) -- independent of `day.winner`, which since 2026-09-06 is
+  // each weekday's own real temporal-feasts record (`easter-monday`,
+  // `easter-tuesday`, ...), not the shared governing-Sunday id (see
+  // calendar/temporal-feasts/easter-monday.yml and siblings).
   const EASTER_WEEK_2026 = ['2026-04-05', '2026-04-06', '2026-04-07'] as const;
+  const EASTER_WEEK_2026_WINNER_IDS = ['easter-sunday', 'easter-monday', 'easter-tuesday'] as const;
 
   it.each(EASTER_WEEK_2026)('%s shares the identical 13-psalm proper scheme, 3 nocturns, Te Deum', (date) => {
     const day = resolveDay(date);
-    expect(day.winner).toEqual({ kind: 'temporal', id: 'easter-sunday' });
+    expect(day.winner).toEqual({ kind: 'temporal', id: EASTER_WEEK_2026_WINNER_IDS[EASTER_WEEK_2026.indexOf(date)] });
     const ordo = resolveOrdo('matins', date);
     const psalms = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
     expect(psalms).toEqual([3, 94, 1, 2, 8, 15, 23, 27, 29, 63, 65, 75, 87, 107]);
@@ -406,10 +411,10 @@ describe('resolveOrdo("matins", ...) Easter Sunday/Monday/Tuesday shared proper 
     expect(nocturn3?.text.text.la).toBe('V. Gavísi sunt discípuli, allelúja.\nR. Viso Dómino, allelúja.');
   });
 
-  it('Wednesday-Saturday of the Octave (same winner.id, excluded by the Sunday-side `weekdays`) stay in the plain 1-nocturn ferial branch, same psalm numbers, no Te Deum', () => {
+  it('Wednesday-Saturday of the Octave (own weekday winner.id, excluded by the Sunday-side `weekdays`) stay in the plain 1-nocturn ferial branch, same psalm numbers, no Te Deum', () => {
     const ordo = resolveOrdo('matins', '2026-04-08'); // Wednesday of Easter week
     const day = resolveDay('2026-04-08');
-    expect(day.winner).toEqual({ kind: 'temporal', id: 'easter-sunday' });
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'easter-wednesday' });
     const psalms = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
     // Plain ferial Wednesday psalm numbers, same as any other Wednesday --
     // only the antiphon layer differs (see the ferial-named-override
@@ -429,11 +434,16 @@ describe('resolveOrdo("matins", ...) Easter Octave Wednesday-Saturday ferial nam
   // All 4 weekdays share the exact same 2 antiphons verbatim (live-
   // verified 2026-04-08/09/10/11) -- own psalm numbers per weekday
   // unchanged, split evenly across the weekday's own psalm-group count.
+  // `day.winner` is each weekday's own real temporal-feasts id since
+  // 2026-09-06 (see the describe block above) -- the antiphon override
+  // itself is unaffected, keyed by `temporalId` (`resolveTemporalId`,
+  // still 'easter-sunday' for the whole octave), not by `day.winner`.
   const EASTER_OCTAVE_WEEKDAYS = ['2026-04-08', '2026-04-09', '2026-04-10', '2026-04-11'] as const;
+  const EASTER_OCTAVE_WEEKDAY_WINNER_IDS = ['easter-wednesday', 'easter-thursday', 'easter-friday', 'easter-saturday'] as const;
 
   it.each(EASTER_OCTAVE_WEEKDAYS)('%s gets the same 2 real antiphons, own weekday psalm numbers unchanged', (date) => {
     const day = resolveDay(date);
-    expect(day.winner).toEqual({ kind: 'temporal', id: 'easter-sunday' });
+    expect(day.winner).toEqual({ kind: 'temporal', id: EASTER_OCTAVE_WEEKDAY_WINNER_IDS[EASTER_OCTAVE_WEEKDAYS.indexOf(date)] });
     const ordo = resolveOrdo('matins', date);
     // Ps 3 + 94 (opening/invitatory) plus this weekday's own real ferial table.
     const psalms = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
