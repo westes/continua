@@ -1,13 +1,25 @@
-# Live-verified (Monastic Tridentinum 1617, 2026-09-06 and 2026-12-15).
+# This is Monday's own plain ferial Matins invitatory antiphon
+# (Psalterium/Special/Matutinum Special.txt's "Invit Trid_" block, `Feria
+# II=`). Its original comment claimed this text was "live-verified...
+# 2026-09-06" as the year-round default — wrong: that date query actually
+# returns Sunday's own distinct text ("Adorémus Dóminum, * Qui fecit
+# nos.", matins-invitatory-antiphon-sunday.yml), not this one. The real
+# `{Antiphona ex Psalterio secundum tempora}` cycle genuinely varies
+# Sunday-Saturday, same shape as the Matins hymn's own weekday cycle (see
+# matins-hymn-ferial.yml's own header) — user flagged today's rendering
+# as suspect 2026-09-06, traced to this file standing in for every
+# weekday including Sunday. `hours/matins.ts`'s
+# `resolveMatinsInvitatoryText` now looks up a weekday-specific id
+# (matins-invitatory-antiphon-sunday/-tuesday/-wednesday/-thursday/
+# -friday/-saturday) for those six days; this file (no day suffix) is
+# still used directly for Monday, same convention as matins-hymn-ferial.
+#
 # Real practice repeats this antiphon as an interspersed refrain between
 # verse groups of Psalm 94 (the historical "Venite" invitatory shape) —
 # deliberately not modeled that way here, per direct instruction: this app
 # frames it like any other psalm antiphon instead, one opening
 # (incipit-or-full, same rank rule as everywhere else) and one full
 # repeat after, via hours/matins.ts's plain 'psalm' + 'antiphon' parts.
-# Fixed year-round for now — real practice does vary this by season/feast
-# (`{Antiphona ex Psalterio secundum tempora}` in the source); not yet
-# modeled, a deferred follow-on (see TODO.md).
 id: matins-invitatory-antiphon
 text:
   la: "Veníte, * Exsultémus Dómino."

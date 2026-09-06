@@ -1,0 +1,16 @@
+# Friday's own plain ferial Matins invitatory antiphon (Psalterium/
+# Special/Matutinum Special.txt's "Invit Trid_" block, `Feria VI=`). Its
+# English happens to be byte-identical to Sunday's own
+# (matins-invitatory-antiphon-sunday.yml) — confirmed in the source, not
+# a copy-paste slip: both weekdays' Latin renders as "Let us worship the
+# Lord, for He is our Maker" in the reference engine's own translation
+# despite slightly different Latin wording. See matins-invitatory-
+# antiphon-sunday.yml's header for the weekday-cycle mechanism this
+# belongs to; live-verified 2026-09-06.
+id: matins-invitatory-antiphon-friday
+text:
+  la: "Adorémus Dóminum, * Quóniam ipse fecit nos."
+  en: "Let us worship the Lord, for * He is our Maker."
+status:
+  la: verified
+  en: verified

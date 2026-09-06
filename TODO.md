@@ -11,10 +11,6 @@ content in the same shape, not a design change. The dated log below is that pipe
 ## Open work, in priority order
 
 1. **Mechanism gaps**
-   - **2026-09-06 invitatory antiphon questioned** — user flagged today's (2026-09-06)
-     invitatory antiphon as suspect; needs tracing back to its source (override > octave >
-     Common > season > ferial chain in `hours/matins.ts`'s invitatory resolution) to find
-     and fix whatever underlying bug or content problem produced it. Not yet investigated.
    - **Gospel+homily pairing shouldn't carry a responsory** — user, 2026-09-06: when a Matins
      Gospel pericope is immediately followed by its own patristic homily (the paired
      `gospel`/homily rendering — see `hours/matins.ts`'s Gospel+homily-fold-in convention),
@@ -6443,5 +6439,30 @@ Albis" (Saturday) — "Hebdomada in Albis" is a real but looser term for the who
 not each weekday's own rubrical title, and only Saturday (paired with the following "Dominica in
 Albis", i.e. Low Sunday, not yet itself named beyond a generic ordinal — a separate, smaller,
 still-open gap) carries a name distinct from the plain "Die N" pattern.
+
+`npm test` (2066 passed) and `tsc --noEmit` both pass.
+
+### Matins invitatory antiphon weekday cycle — closed (2026-09-06)
+
+User flagged 2026-09-06's (a plain Sunday, `post-pentecost-15`) invitatory antiphon as suspect.
+Traced it to a real content bug, not a resolution-order bug: `matins-invitatory-antiphon.yml` (the
+final ferial fallback in `resolveMatinsInvitatoryText`) held a single fixed year-round text
+("Veníte, * Exsultémus Dómino") that its own header claimed was "live-verified... 2026-09-06" —
+that was wrong. Querying the live reference engine for that exact date returns a different text
+("Adorémus Dóminum, * Qui fecit nos"), and querying a full week showed the real source
+(`Psalterium/Special/Matutinum Special.txt`'s `[Invit Trid_]` block) genuinely varies the plain
+`{Antiphona ex Psalterio secundum tempora}` invitatory antiphon Sunday-Saturday — same shape as the
+Matins hymn's own weekday cycle (`matins-hymn-ferial-tuesday.yml` etc., closed 2026-09-04). The
+fixed text turned out to be Monday's own real antiphon, silently standing in for every other
+weekday including Sunday.
+
+Fixed the same way as the hymn cycle: six new weekday-specific files
+(`matins-invitatory-antiphon-{sunday,tuesday,wednesday,thursday,friday,saturday}.yml`, full
+Latin+English pulled from the reference engine's own `Invit Trid_`/`Invit Trid` blocks, Latin and
+English respectively), `matins-invitatory-antiphon.yml` (no day suffix) still used for Monday.
+`hours/matins.ts`'s `resolveMatinsInvitatoryText` now dispatches on `day.weekday` for its final
+fallback tier, same pattern as `resolveMatinsHymn`'s `weekdayFerialHymnIds`. Two pre-existing tests
+in `tests/hours/matins.test.ts` hardcoded "Veníte" as the generic ferial default — both dates are
+actually Tuesdays, updated to expect Tuesday's own real text ("Jubilémus Deo").
 
 `npm test` (2066 passed) and `tsc --noEmit` both pass.

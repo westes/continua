@@ -345,7 +345,21 @@ function resolveMatinsInvitatoryText(day: LiturgicalDay): ResolvedText {
       return seasonal;
     }
   }
-  return resolveCommon('matins-invitatory-antiphon');
+  // The plain `{Antiphona ex Psalterio secundum tempora}` weekday cycle
+  // (Psalterium/Special/Matutinum Special.txt's "Invit Trid_" block) —
+  // same weekday-varying shape as `resolveMatinsHymn`'s own cycle, found
+  // missing the same way (user flagged 2026-09-06's Sunday rendering as
+  // suspect; it was silently reusing Monday's own text). Monday's text
+  // still lives at the unsuffixed `matins-invitatory-antiphon` id.
+  const weekdayInvitatoryIds: Partial<Record<Weekday, string>> = {
+    sunday: 'matins-invitatory-antiphon-sunday',
+    tuesday: 'matins-invitatory-antiphon-tuesday',
+    wednesday: 'matins-invitatory-antiphon-wednesday',
+    thursday: 'matins-invitatory-antiphon-thursday',
+    friday: 'matins-invitatory-antiphon-friday',
+    saturday: 'matins-invitatory-antiphon-saturday',
+  };
+  return resolveCommon(weekdayInvitatoryIds[day.weekday] ?? 'matins-invitatory-antiphon');
 }
 
 /** The Invitatory (Ps 94) — real practice interleaves its antiphon as a

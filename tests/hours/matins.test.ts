@@ -29,7 +29,11 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
     expect(ordo.parts[3]).toMatchObject({ kind: 'section-heading', label: 'Invitatory' });
     expect(ordo.parts[4]).toMatchObject({ kind: 'psalm', psalmNumber: 94 });
     const invitatoryAntiphon = (ordo.parts[4] as { antiphon?: { text: Record<string, string> } }).antiphon;
-    expect(invitatoryAntiphon?.text.la).toContain('Veníte');
+    // FERIAL_DATE is a Tuesday — its own weekday-specific invitatory
+    // antiphon (see hours/matins.ts's resolveMatinsInvitatoryText), not
+    // Monday's "Veníte" text every weekday used to share before the
+    // weekday cycle was built (2026-09-06).
+    expect(invitatoryAntiphon?.text.la).toContain('Jubilémus Deo');
     // Real practice repeats the invitatory antiphon between verse groups —
     // deliberately not modeled that way here (see hours/matins.ts's own
     // header): confirm there's exactly one standalone repeat, not several.
@@ -1090,7 +1094,10 @@ describe('resolveOrdo("matins", ...) Common-of-an-Apostle hymn + invitatory (202
     // ferial one -- season outranks weekday in resolveMatinsHymn's own
     // precedence, same as everywhere else.
     expect(hymnLatin(FERIAL_DATE)).toContain('Verbum supérnum, pródiens');
-    expect(invitatoryFullLatin(FERIAL_DATE)).toContain('Veníte');
+    // Advent has no seasonal invitatory antiphon authored, so this falls
+    // through to Tuesday's own weekday text (see hours/matins.ts's
+    // resolveMatinsInvitatoryText and its 2026-09-06 weekday-cycle fix).
+    expect(invitatoryFullLatin(FERIAL_DATE)).toContain('Jubilémus Deo');
     expect(invitatoryFullLatin(FERIAL_DATE)).not.toContain('Regem Apostolórum');
   });
 });
