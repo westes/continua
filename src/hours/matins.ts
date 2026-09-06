@@ -815,8 +815,9 @@ function fallbackHagiographicLabel(id: string): string | undefined {
  * comment), or — the most common case in the whole pool — a plain governing
  * Sunday's own temporal-cycle id (`post-pentecost-15`) or its
  * `month-week-<NNN>` half (see `nocturnReadingIds`'s `temporalKept` block),
- * which falls back to the same `getDayLabel` the day's own heading uses
- * (e.g. "The 14th Sunday after Trinity"). Used to annotate an authored
+ * which falls back to `temporalLabel`'s bare ordinal name (e.g. "The 14th
+ * Sunday after Trinity" — no rank, no commemorations; that's the day
+ * heading's job, not this annotation's). Used to annotate an authored
  * patristic `source` with *why* it's here, since a single day can pool
  * several ids' worth of readings (e.g. a commemorated Ember day's own
  * Gospel homily alongside the winning saint's own) and a bare "Pope St.
@@ -827,12 +828,11 @@ function occasionName(id: string, day: LiturgicalDay): string | undefined {
   if (named) return named;
   const monthWeek = monthWeekId(day.date);
   if (id === resolveTemporalId(day.date) || (monthWeek && id === `month-week-${monthWeek}`)) {
-    // When a saint (not the temporal day itself) won the day, name the
-    // plain Sunday/feria only — `getDayLabel`'s own text is winner-centric
-    // (the winning saint's full name + rank), which would otherwise get
-    // pointlessly repeated back into its own "(for ...)" annotation, since
-    // the winner's name is already shown elsewhere as the day's heading.
-    return day.winner.kind === 'sanctoral' ? temporalLabel(day).en : getDayLabel(day).en;
+    // Always the bare Sunday/feria name — never `getDayLabel`, which bakes
+    // in the day's rank and every commemoration/transfer note. This
+    // annotation names the single occasion that pooled this one reading,
+    // not the whole day's heading.
+    return temporalLabel(day).en;
   }
   return undefined;
 }
