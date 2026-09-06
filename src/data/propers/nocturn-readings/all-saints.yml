@@ -8,11 +8,25 @@
 # Venerable Bede's sermon. No responsory given in the source for these
 # lessons.
 #
-# Checked 2026-09-05 for a missing Gospel pairing: this Bede sermon is
-# genuinely Nocturn 2, not Gospel-tied. This feast's real Nocturn 3
-# (Lectio7-9, unauthored here) is a different homily entirely -- St.
-# Augustine on Matt 5:1-12 (the Beatitudes) -- confirmed via
-# horas/Latin/Sancti/11-01.txt directly. No pairing added.
+# Update (2026-09-05, corrected): the 2026-09-05 note above was itself
+# the gap -- Nocturn 3's own Gospel (Matt 5:1-12, the Beatitudes) and
+# St. Augustine's homily on it (Lib. 1 De Sermone Domini in Monte,
+# Lectio7-9 combined into one continuous excerpt, same "combine the
+# split lessons" treatment Lectio4-6/Nocturn 2 already got above) were
+# left unauthored on the mistaken assumption that a duplex-1-classis
+# feast like this one shouldn't carry its own Gospel/homily pairing.
+# Per direct instruction (user, 2026-09-05): a duplex-majus+ feast's
+# own real scripture reading -- which may well be a Gospel -- is fine
+# to include, so it's added here now. Homily sourced directly from
+# horas/Latin/Sancti/11-01.txt:212-230, English/Sancti/11-01.txt:120-132.
+# The Gospel pericope itself is Matins' own Lectio7 gives only the bare
+# incipit ("Et réliqua") -- same pattern as annunciation.yml's own
+# 2026-09-05 update -- so the full Matt 5:1-12 text is instead pulled
+# from the Mass propers, which give it in full: Latin from
+# missa/Latin/Sancti/06-05.txt:42 (All Saints' own
+# missa/Latin/Sancti/11-01.txt's [Evangelium] redirects there,
+# `@Sancti/06-05`), English from missa/English/Sancti/11-01.txt:27-30
+# (given directly, not by redirect).
 id: all-saints
 readings:
   - nocturn: 2
@@ -82,4 +96,112 @@ readings:
         receive a blessedness outweighing the pangs of any torment, as testifieth the Apostle
         Paul, where he saith: The sufferings of this present time are not worthy to be compared
         with the glory which shall be revealed in us.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 5:1-12", en: "Matt 5:1-12" }
+    text:
+      la: >-
+        In illo témpore: Videns Jesus turbas, ascéndit in montem, et cum sedísset,
+        accessérunt ad eum discípuli ejus, et apériens os suum, docébat eos, dicens:
+        Beáti páuperes spíritu: quóniam ipsórum est regnum cœlórum. Beáti mites:
+        quóniam ipsi possidébunt terram. Beáti, qui lugent: quóniam ipsi
+        consolabúntur. Beáti, qui esúriunt et sítiunt justítiam: quóniam ipsi
+        saturabúntur. Beáti misericórdes: quóniam ipsi misericórdiam consequántur.
+        Beáti mundo corde: quóniam ipsi Deum vidébunt. Beáti pacífici: quóniam fílii
+        Dei vocabúntur. Beáti, qui persecutiónem patiúntur propter justítiam: quóniam
+        ipsórum est regnum cœlórum. Beáti estis, cum maledíxerint vobis et persecúti
+        vos fúerint, et díxerint omne malum advérsum vos, mentiéntes, propter me:
+        gaudete et exsultáte, quóniam merces vestra copiósa est in cœlis.
+      en: >-
+        At that time, Jesus seeing the crowds, went up the mountain. And when He was
+        seated, His disciples came to Him. And opening His mouth He taught them,
+        saying, Blessed are the poor in spirit, for theirs is the kingdom of heaven.
+        Blessed are the meek, for they shall possess the earth. Blessed are they who
+        mourn, for they shall be comforted. Blessed are they who hunger and thirst for
+        justice, for they shall be satisfied. Blessed are the merciful, for they shall
+        obtain mercy. Blessed are the clean of heart, for they shall see God. Blessed
+        are the peacemakers, for they shall be called children of God. Blessed are
+        they who suffer persecution for justice' sake, for theirs is the kingdom of
+        heaven. Blessed are you when men reproach you, and persecute you, and,
+        speaking falsely, say all manner of evil against you, for My sake. Rejoice
+        and exult, because your reward is great in heaven.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Augustine, Bishop, Book 1 on the Lord's Sermon on the Mount"
+    text:
+      la: >-
+        Si quǽritur quid signíficet mons, bene intellégitur significáre majóra præcépta
+        justítiæ, quia minóra erant quæ Judǽis data sunt. Unus tamen Deus per sanctos
+        prophétas et fámulos suos, secúndum ordinatíssimam distributiónem témporum,
+        dedit minóra præcépta pópulo, quem adhuc timóre alligári oportébat: et per
+        Fílium suum majóra pópulo, quem caritáte jam liberári convénerat. Cum autem
+        minóra minóribus, majóra majóribus dantur, ab eo dantur, qui solus novit
+        congruéntem suis tempóribus géneri humáno exhibére medicínam.
+
+
+        Nec mirum est, quod dantur præcépta majóra propter regnum cælórum, et minóra
+        data sunt propter regnum terrénum, ab eódem uno Deo, qui fecit cælum et terram.
+        De hac ergo justítia, quæ major est, per prophétam dícitur: Justítia tua sicut
+        montes Dei: et hoc bene signíficat, quod ab uno magístro, solo docéndis tantis
+        rebus idóneo, docétur in monte. Sedens autem docet, quod pértinet ad dignitátem
+        magistérii. Et accédunt ad eum discípuli ejus, ut audiéndis illíus verbis hi
+        essent étiam córpore vicinióres, qui præcéptis adimpléndis étiam ánimo
+        propinquábant. Et apériens os suum docébat eos, dicens. Ista circumlocútio, qua
+        scríbitur, Et apériens os suum, fortássis ipsa mora comméndat aliquánto
+        longiórem futúrum esse sermónem. Nisi forte non vacet, quod nunc eum dictum est
+        aperuísse os suum, quod ipse in lege véteri aperíre soléret ora prophetárum.
+
+
+        Quid ergo dicit? Beáti páuperes spíritu: quóniam ipsórum est regnum cælórum.
+        Légimus scriptum de appetitióne rerum temporálium: Omnia vánitas, et præsúmptio
+        spíritus. Præsúmptio autem spíritus, audáciam et supérbiam signíficat. Vulgo
+        étiam magnos spíritus supérbi habére dicúntur: et recte, quandóquidem spíritus
+        étiam ventus vocátur. Unde scriptum est: Ignis, grando, nix, glácies, spíritus
+        procellárum. Quis vero nésciat supérbos inflátos dici, tamquam vento disténtos?
+        Unde est étiam illud Apóstoli: Sciéntia inflat, cáritas vero ædíficat.
+        Quaprópter recte hic intellegúntur páuperes spíritu, húmiles et timéntes Deum,
+        id est, non habéntes inflántem spíritum.
+      en: >-
+        If it be asked what is signified by the mountain, the said mountain may well
+        be understood to figure the higher and greater commandments of righteousness,
+        since those that have been given to the Jews are the lesser. The one God, in
+        an excellent order of times, gave, by His holy Prophets and servants, His
+        lesser commandments unto the people whom it still behoved to be bound by fear,
+        but by His Son He gave the greater unto the people whom it now beseemed to set
+        free by love. But whether it be the lesser to the lesser, or the greater to
+        the greater, all are alike the gift of Him Who alone knoweth what is in each
+        epoch the seasonable medicine of mankind.
+
+
+        Neither is it marvel that the greater commandments be given touching the
+        kingdom of heaven, and the lesser touching a commonwealth upon earth, since
+        both are alike the gifts of that one God Who is the Maker alike of heaven and
+        of earth. The higher and greater righteousness, then, is that whereof the
+        Prophet saith: Thy righteousness is like the mountains of God. Thus is that
+        Teacher, Who alone can give such teaching, mystically represented as teaching
+        upon a mountain. And when He was set. The attitude of sitting while teaching
+        appertaineth to the majesty of His instruction. His disciples came unto Him
+        nearer in the body, to hear those precepts, by the fulfillment of which they
+        should be nearer in spirit. And He opened His Mouth, and taught them, saying
+        these words appear redundant to the sense. It may possibly be that this more
+        pompous introduction is adopted on account of the exceptional length of the
+        discourse to follow. But it may also be that these words are not really
+        redundant, but the pointed declaration that He now opened His Own Mouth, Who,
+        under the Old Law, had been used to open the mouths of the Prophets.
+
+
+        And now, what saith He? Blessed are the poor in spirit, for theirs is the
+        kingdom of heaven. We have read where it is written concerning the lusting
+        after temporal things: The wandering of the desire is vanity and presumption
+        of spirit. Presumption of spirit signifieth rashness and pride. We are used to
+        say of proud people that they are men of high spirit, and we say well, since
+        spirit is only one of the Latin names for wind. Who hath not heard the proud
+        spoken of as puffed up, as if they were blown out with wind? Hence, alas, the
+        Apostle saith: Knowledge puffeth up, but charity edifieth. By the poor in
+        spirit, who are here called blessed, are rightly to be understood such as are
+        lowly and fear God, that is, have not got minds puffed up with windy vanity.
     status: { la: verified, en: verified }

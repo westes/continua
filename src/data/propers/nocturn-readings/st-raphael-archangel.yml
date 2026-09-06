@@ -2,10 +2,14 @@
 # Sourced directly from web/www/horas/Latin/Sancti/10-24.txt,
 # English/Sancti/10-24.txt. Nocturn 2: Lectio4-6, St. Bonaventure's own
 # sermon on the Holy Angels (no. 5, on St. Raphael), combined into one
-# reading. Nocturn 3: the Gospel citation ends "Et réliqua"/"And so on"
-# with no full pericope given -- per the bare-incipit convention, only
-# the homily (Lectio7-9, St. John Chrysostom) is authored, isGospel:
-# false, no citation field.
+# reading. Nocturn 3: the Matins lesson's own Gospel citation ends "Et
+# réliqua"/"And so on" with no full pericope given there -- but same
+# "chase it down via the Mass propers" pattern as all-saints.yml's own
+# 2026-09-05 update: the full John 5:1-4 text is given in full at
+# missa/Latin/Sancti/10-24.txt:51-54, missa/English/Sancti/10-24.txt:
+# 42-45 (the Bethesda pool healing), so authored here as a real
+# isGospel: true entry rather than skipped, followed by the homily
+# (Lectio7-9, St. John Chrysostom).
 id: st-raphael-archangel
 readings:
   - nocturn: 2
@@ -134,6 +138,29 @@ readings:
         was to show that the Angels willingly assist those who pray
         devoutly, and help and strengthen them, and bring their
         prayers before God.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joann 5:1-4", en: "John 5:1-4" }
+    text:
+      la: >-
+        In illo témpore: Erat dies festus Judæórum, et ascéndit Jesus Jerosólymam.
+        Est autem Jerosólymis Probática piscína, quæ cognominátur hebráice
+        Bethsaida, quinque pórticus habens. In his jacébat multitúdo magna
+        languéntium, cæcórum, claudórum, aridórum exspectántium aquæ motum.
+        Angelus autem Dómini descendébat secúndum tempus in piscínam, et movebátur
+        aqua. Et, qui prior descendísset in piscínam post motiónem aquæ, sanus
+        fiebat, a quacúmque detinebátur infirmitáte.
+      en: >-
+        At that time, there was a feast of the Jews, and Jesus went up to
+        Jerusalem. Now there is at Jerusalem, by the Sheepgate, a pool called in
+        Hebrew Bethsaida, having five porticoes. In these were lying a great
+        multitude of the sick, blind, lame, and those with shriveled limbs,
+        waiting for the moving of the water. For an Angel of the Lord used to
+        come down at certain times into the pool, and the water was troubled.
+        And the first to go down into the pool after the troubling of the water
+        was cured of whatever infirmity he had.
     status: { la: verified, en: verified }
 
   - nocturn: 3

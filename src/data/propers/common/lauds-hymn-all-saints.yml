@@ -1,19 +1,49 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
-# live query, 2026-11-01, clean year.
+# Re-verified against Divinum Officium (Monastic Tridentinum 1617),
+# Lauds live query, 2026-11-01, clean year -- correcting a real
+# transcription bug found 2026-09-05: this file's own English text was
+# already correct (matches the live render stanza-for-stanza), but the
+# Latin paired with it was the wrong recension entirely -- "Jesu Salvátor
+# sǽculi" is the 1631 Urban VIII revision, while the live Monastic engine
+# actually renders the older pre-Urban VIII text, "Salútis ætérnæ dator"
+# (see CLAUDE.md's own standing preference for that older recension —
+# a happy coincidence here, not the reason for the fix: the live engine
+# itself settles it). Distinct from Vespers/Matins' own hymn (also
+# corrected the same day, "Placáre, Christe, sérvulis") -- Lauds
+# genuinely has its own separate hymn text, not a shared one, confirmed
+# by the source's own distinct [Hymnus Laudes] vs. [Hymnus Vespera] tags.
 id: lauds-hymn-all-saints
 text:
   la: |
-    Jesu Salvátor sǽculi, Redémptis ope súbveni: Et pia Dei Génitrix, Salútem posce míseris.
+    Salútis ætérnæ dator,
+    Jesu, redémptis súbveni:
+    Virgo, Parens cleméntiæ
+    Dona salútem sérvulis.
 
-    Cœtus omnes angélici, Patriarchárum cúnei, Et Prophetárum mérita Nobis precéntur véniam.
+    Vos, Angelórum míllia,
+    Patrúmque cœtus, ágmina
+    Canóra Vatum; vos, reis
+    Precámini indulgéntiam.
 
-    Baptísta Christi prǽvius, Et Cláviger æthéreus, Cum céteris Apóstolis, Nos solvant nexu críminis.
+    Baptísta Christi prǽvius,
+    Summíque cæli Cláviger,
+    Cum céteris Apóstolis
+    Nexus resólvant críminum.
 
-    Chorus sacrátus Mártyrum, Conféssio Sacerdótum, Et virginális cástitas Nos a peccátis ábluant.
+    Cohors triúmphans Mártyrum,
+    Almus Sacerdótum chorus,
+    Et virginális cástitas
+    Nostros reátus ábluant.
 
-    Monachórum suffrágia, Omnésque cives cǽlici Annuant votis súpplicum, Et vitæ poscant prǽmium.
+    Quicúmque in alta síderum
+    Regnátis aula príncipes,
+    Favéte votis súpplicum,
+    Qui dona cæli flágitant.
 
-    Laus, honor, virtus, glória Deo Patri, et Fílio, Sancto simul Paráclito, In sæculórum sǽcula. Amen.
+    Virtus, honor, laus, glória
+    Deo Patri cum Fílio,
+    Sancto simul Paráclito,
+    In sæculórum sǽcula.
+    Amen.
   en: |
     Giver of life, eternal Lord! thy own redeemed defend; Mother of grace! thy children save, And help them to the end.
 

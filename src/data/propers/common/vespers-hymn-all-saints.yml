@@ -1,41 +1,53 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
-# live query, 2026-11-01, the same clean date already used for lauds-capitulum-all-saints.yml.
+# Re-verified against Divinum Officium (Monastic Tridentinum 1617),
+# Vespers live query, 2026-11-01, clean year -- correcting a real
+# transcription bug found 2026-09-05: the Latin text here was the 1631
+# Urban VIII revision ("Christe Redémptor ómnium, Consérva tuos
+# fámulos"), but the live Monastic engine actually renders the older
+# pre-Urban VIII text, "Placáre, Christe, sérvulis" (see CLAUDE.md's own
+# standing preference for that older recension -- a happy coincidence
+# here, not the reason for the fix: the live engine itself settles it).
+# Same hymn, word-for-word, as Matins' own (matins-hymn-all-saints.yml,
+# corrected the same day) -- confirmed by both live renders. The English
+# translation already on file is the same classic "O Christ, thy guilty
+# people spare" rendering D.O. reuses across both Latin recensions of
+# this hymn family; kept as-is, checked against this text's own imagery
+# and it holds up.
 id: vespers-hymn-all-saints
 text:
   la: |
-    Christe Redémptor ómnium,
-    Consérva tuos fámulos,
-    Beátæ semper Vírginis
-    Placátus sanctis précibus.
+    Placáre, Christe, sérvulis,
+    Quibus Patris cleméntiam
+    Tuæ ad tribúnal grátiæ
+    Patróna Virgo póstulat.
 
-    Beáta quoque ágmina
-    Cæléstium Spirítuum,
-    Prætérita, præséntia,
-    Futúra mala péllite.
+    Et vos beáta, per novem
+    Distíncta gyros ágmina,
+    Antíqua cum præséntibus,
+    Futúra damna péllite.
 
-    Vates ætérni Júdicis,
-    Apostolíque Dómini,
-    Supplíciter expóscimus
-    Salvári vestris précibus.
+    Apóstoli cum Vátibus,
+    Apud sevérum Júdicem,
+    Veris reórum flétibus
+    Expóscite indulgéntiam.
 
-    Mártyres Dei ínclyti,
-    Confessorésque lúcidi,
-    Vestris oratiónibus
-    Nos ferte in cæléstibus.
+    Vos, purpuráti mártyres,
+    Vos candidáti prǽmio
+    Confessiónis, éxsules
+    Vocáte nos in pátriam.
 
-    Chorus sanctárum Vírginum,
-    Monachorúmque ómnium,
-    Simul cum Sanctis ómnibus,
-    Consórtes Christi fácite.
+    Choréa casta vírginum,
+    Et quos erémus íncolas
+    Transmísit astris, cǽlitum
+    Locáte nos in sédibus.
 
-    Gentem auférte pérfidam
+    Auférte gentem pérfidam
     Credéntium de fínibus,
-    Ut Christo laudes débitas
-    Persolvámus alácriter.
+    Ut unus omnes únicum
+    Ovíle nos Pastor regat.
 
-    Glória Patri ingénito,
-    Ejúsque Unigénito,
-    Una cum Sancto Spíritu,
+    Deo Patri sit glória,
+    Natóque Patris único,
+    Sancto simul Paráclito,
     In sempitérna sǽcula.
     Amen.
   en: |
