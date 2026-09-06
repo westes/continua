@@ -185,12 +185,12 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // commemorations.ts's `ordinary-sunday` case's plain Duplex+ threshold
     // is what lets her win outright rather than being commemorated — a
     // pre-existing rule, not new behavior from adding her. The displaced
-    // Sunday is still commemorated internally (day.commemorations), using
-    // the same fixed 23rd-after-Trinity ordinal, not a raw elapsed-week
-    // count recomputed for 1943 — but per the 2026-09-05 label rule, a
-    // plain temporal commemoration like this one is no longer shown in the
-    // label once something else already has the primary slot.
-    expect(getDayLabel(resolveDay('1943-11-21')).en).toBe('The Presentation of the Blessed Virgin Mary (Duplex Majus)');
+    // Sunday is commemorated both internally (day.commemorations) and in
+    // the label itself, using the same fixed 23rd-after-Trinity ordinal,
+    // not a raw elapsed-week count recomputed for 1943.
+    expect(getDayLabel(resolveDay('1943-11-21')).en).toBe(
+      'The Presentation of the Blessed Virgin Mary (Duplex Majus) — The 23rd Sunday after Trinity',
+    );
   });
 });
 
@@ -293,7 +293,7 @@ describe('getDayLabel — active octave', () => {
     );
   });
 
-  it('a sanctoral winner on a Sunday still leaves the Sunday commemorated internally, but neither octave it also happens to overlap -- not an octave name at all, nor the plain Sunday ordinal any more', () => {
+  it('a sanctoral winner on a Sunday still shows the Sunday commemorated, but neither octave it also happens to overlap', () => {
     // 2026-08-16 is a Sunday genuinely within both St. Lawrence's and the
     // Assumption's overlapping octave windows -- St. Joachim (Duplex II
     // Class) wins outright per the ordinary-Sunday Duplex+ threshold, not
@@ -304,14 +304,16 @@ describe('getDayLabel — active octave', () => {
     // Pentecost-counted number, so "11th ... after Trinity" internally) --
     // no octave named at all, even though both are technically active,
     // same as this app's own established `ordinary-feria`-only gate for
-    // octave mentions alongside a sanctoral winner. Per the 2026-09-05
-    // label rule, the plain Sunday commemoration itself is now also
-    // dropped from the label (still present in day.commemorations) once
-    // a sanctoral winner already has the primary slot.
+    // octave mentions alongside a sanctoral winner. A 2026-09-05 change
+    // had wrongly dropped the Sunday name from the label too (not just
+    // the octave) -- corrected 2026-09-05 (user: "the label for the day
+    // doesn't mention the sunday being commemorated"), restoring exactly
+    // what the reference's own commemoration line shows: the Sunday
+    // named, no octave.
     const day = resolveDay('2026-08-16');
     expect(day.weekday).toBe('sunday');
     expect(getDayLabel(day).en).toBe(
-      'St. Joachim, Confessor, Father of the Blessed Virgin Mary (Duplex II Class)',
+      'St. Joachim, Confessor, Father of the Blessed Virgin Mary (Duplex II Class) — The 11th Sunday after Trinity',
     );
     expect(getDayLabel(day).en).not.toContain('Octave');
   });

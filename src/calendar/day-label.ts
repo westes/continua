@@ -509,12 +509,23 @@ function collectCommemorations(
       // pass wrongly scoped this to "only when an Ember commemoration is
       // also present" — user, 2026-09-05: "it has nothing to do with
       // ember-ness"); this plain generic label is dropped unconditionally
-      // whenever it shows up as a mere commemoration, Ember day or not.
+      // whenever it shows up as a mere commemoration on an ordinary
+      // ferial weekday, Ember day or not.
+      //
+      // A commemorated *Sunday* is the one exception (user, 2026-09-05):
+      // unlike a plain ferial Tuesday, "this is also a Sunday" is real
+      // information a reader can't infer from the winner+rank alone — it's
+      // why the Sunday's own collect is being said at all (getDayCollects'
+      // temporalCommemorationPart), and nothing else in the header hints
+      // at it. Shown via the same plain, rank-free `temporalLabel` a
+      // winning Sunday would use for itself.
       if (c.id !== temporalId) {
         const emberName = emberDayLabel(c.id);
         if (emberName) {
           temporal.push(emberName);
         }
+      } else if (day.weekday === 'sunday') {
+        temporal.push(temporalLabel(day));
       }
     } else if (opts.showOctaves && c.id !== opts.excludeOctaveId) {
       const octave = activeOctaves.find((a) => a.id === c.id);
