@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { getCommonProper } from '../../src/propers';
+import { resolveOrdo } from '../../src/hours';
 
 // Sweep of the 2026-08 bulk-authoring pass: sanctoralCommemorationPart
 // (hours/resolve-common.ts) was silently falling back to a bare collect
@@ -84,5 +85,41 @@ describe('sanctoral commemoration bundles (bulk 2026-08 sweep)', () => {
     expect(proper.text.la).toContain('Ant.');
     expect(proper.text.la).toMatch(/V\.|℣\./);
     expect(proper.text.la).toContain('Orémus');
+  });
+});
+
+// The bulk 2026-08 sweep above only covered saints with their own
+// `propers` file. It missed the other structural half: saints with
+// `propers: null` who render their collect via `collectCommon` +
+// `collectName` substitution instead (e.g. St. Lawrence Justinian,
+// common-of-a-confessor-bishop) -- for those, sanctoralCommemorationPart
+// had no branch attaching an antiphon/versicle at all, so their
+// commemoration silently rendered as a bare collect (live-reported by
+// the user for St. Lawrence Justinian, 2026-09-05). Fixed by adding one
+// `${common}-commemoration-antiphon.yml` file per Common category (14 of
+// them) and having sanctoralCommemorationPart's collectCommon branch
+// combine it unconditionally with that Common's `lauds-versicle-` file
+// and the substituted collect -- "own proper if it exists, else the
+// Common's text," no separate missing-status fallback. One representative
+// `propers: null` saint per category, end to end through resolveOrdo.
+describe('Common-category commemoration antiphon fallback (propers: null saints, 2026-09 fix)', () => {
+  const cases: Array<[string, string, string]> = [
+    ['2026-09-05', 'Lawrence Justinian', 'common-of-a-confessor-bishop'], // the reported bug
+    ['2026-03-06', 'Perpetua', 'common-of-several-women-martyrs'],
+    ['2026-08-05', 'Our Lady of the Snows', 'common-of-the-bvm'],
+    ['2026-11-08', 'Lateran', 'common-of-a-dedication'],
+    ['2026-11-18', 'Ss. Peter and Paul', 'common-of-an-apostle'],
+  ];
+
+  it.each(cases)('Vespers on %s (%s, %s) commemorates with a real antiphon, not a bare collect', (date, nameFragment) => {
+    const ordo = resolveOrdo('vespers', date);
+    const part = ordo.parts.find(
+      (p): p is Extract<typeof p, { kind: 'preces' }> => p.kind === 'preces' && (p.label?.includes(nameFragment) ?? false),
+    );
+    expect(part).toBeDefined();
+    expect(part!.text.status.la).not.toBe('missing');
+    expect(part!.text.status.en).not.toBe('missing');
+    expect(part!.text.text.la).toContain('Ant.');
+    expect(part!.text.text.la).toMatch(/V\.|℣\./);
   });
 });
