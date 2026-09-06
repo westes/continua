@@ -389,6 +389,18 @@ function sundayCanticleNocturn(group: SundayNocturn, day: LiturgicalDay): Resolv
   return parts;
 }
 
+/** A per-feast/per-Common Nocturn 3 override is normally the 3-OT-
+ * canticle shape (`sundayCanticleNocturn`) every existing saint/category
+ * file uses — but a real exception exists (All Saints, live-verified
+ * 2026-09-05: Ps 33/60/96, each its own antiphon, not canticles at all).
+ * Dispatches on which field the override actually populated rather than
+ * assuming canticles unconditionally, so a `groups`-shaped Nocturn 3
+ * renders as real psalms via `sundayPsalmNocturn` instead of silently
+ * producing an empty antiphon and no content. */
+function renderOverrideNocturn3(group: SundayNocturn, day: LiturgicalDay): ResolvedPart[] {
+  return group.groups ? sundayPsalmNocturn(group, day) : sundayCanticleNocturn(group, day);
+}
+
 /** The Matins hymn — a duplex-majus+ saint's or eligible named temporal
  * feast's own proper hymn (`matins-hymn-${overrideId}`, via the same
  * getOfficeOverrideId eligibility Lauds/Vespers' own resolveOffice uses),
@@ -1082,7 +1094,33 @@ export function resolveOrdo(date: string): ResolvedOrdo {
         { kind: 'hymn', text: resolveMatinsHymn(day) },
       ];
 
-  if (threeNocturns && (day.weekday === 'sunday' || hasTemporalNamedOverride)) {
+  // A sanctoral winner's own proper Matins psalmody takes precedence even
+  // on a Sunday — live-verified 2026-09-05 (All Saints, Nov 1, a Sunday
+  // that year): the source's own "Psalmi Dominica" rubric line reads as
+  // if the plain Sunday psalm cursus always applies whenever a Duplex+
+  // feast wins over a Sunday, but that's misleading — the live render
+  // shows All Saints' own distinct proper psalms (Ps 1/4/8, 14/23/31,
+  // 33/60/96), not the plain Sunday Nocturn psalms. Checked ahead of the
+  // `day.weekday === 'sunday'` branch below, which otherwise unconditionally
+  // wins regardless of who the day's winner is — silently making any
+  // saint's own proper Matins psalmody unreachable on a Sunday. Proper
+  // only (not Common-category) for now: no live-verified case yet
+  // confirms a Common's own Matins psalmody should win over a Sunday's,
+  // unlike a saint's own genuinely proper content.
+  const sundaySanctoralProperOverride = day.weekday === 'sunday' && winner.kind === 'sanctoral' ? getMatinsSaintOverride(winner.id) : undefined;
+  if (sundaySanctoralProperOverride) {
+    parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
+    parts.push(...sundayPsalmNocturn(sundaySanctoralProperOverride.nocturn1, day));
+    parts.push(...(nocturn1Readings ?? []));
+    parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[1]}` });
+    parts.push(...sundayPsalmNocturn(sundaySanctoralProperOverride.nocturn2, day));
+    parts.push(...(nocturn2Readings ?? []));
+    parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[2]}` });
+    parts.push(...renderOverrideNocturn3(sundaySanctoralProperOverride.nocturn3, day));
+    parts.push(...(nocturn3Readings ?? []));
+    parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
+    parts.push({ kind: 'versicle', text: resolveCommon('te-decet-laus') });
+  } else if (threeNocturns && (day.weekday === 'sunday' || hasTemporalNamedOverride)) {
     parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
     parts.push(...sundayPsalmNocturn(sundayNocturnFor('nocturn1', day, temporalId), day));
     parts.push(...(nocturn1Readings ?? []));
@@ -1121,7 +1159,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
       parts.push(...sundayPsalmNocturn(properOverride.nocturn2, day));
       parts.push(...(nocturn2Readings ?? []));
       parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[2]}` });
-      parts.push(...sundayCanticleNocturn(properOverride.nocturn3, day));
+      parts.push(...renderOverrideNocturn3(properOverride.nocturn3, day));
       parts.push(...(nocturn3Readings ?? []));
     } else if (isAboveDuplex && commonOverride) {
       parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
@@ -1131,7 +1169,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
       parts.push(...sundayPsalmNocturn(commonOverride.nocturn2, day));
       parts.push(...(nocturn2Readings ?? []));
       parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[2]}` });
-      parts.push(...sundayCanticleNocturn(commonOverride.nocturn3, day));
+      parts.push(...renderOverrideNocturn3(commonOverride.nocturn3, day));
       parts.push(...(nocturn3Readings ?? []));
     } else {
       const commonId = !isAboveDuplex && winner.kind === 'sanctoral' ? getSaintRecord(winner.id)?.minorHoursCommon : undefined;

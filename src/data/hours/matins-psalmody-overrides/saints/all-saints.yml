@@ -1,0 +1,73 @@
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayMatutinum, 2026-11-01, clean year). The source file's own
+# [Rule] line ("Psalmi Dominica") reads as if the plain Sunday psalm
+# cursus applies, but that's misleading -- the live render shows a real,
+# distinct proper set (Ps 1/4/8, 14/23/31, 33/60/96, each psalm its own
+# All-Saints-themed antiphon, not one antiphon shared per nocturn), not
+# the plain Sunday Nocturn psalms this app was falling back to before
+# this file existed. Versicles read directly from the live render,
+# immediately before each Nocturn's own Pater Noster.
+id: all-saints
+nocturn1:
+  groups:
+    - psalms: [1]
+      antiphon:
+        la: "Novit Dóminus * viam iustórum, qui in lege ejus meditántur die ac nocte."
+        en: "The Lord knoweth the way of the righteous, * who in His Law do meditate day and night."
+    - psalms: [4]
+      antiphon:
+        la: "Mirificávit * Dóminus Sanctos suos, et exaudívit eos clamántes ad se."
+        en: "The Lord hath set apart for Himself them that are holy, * and when they called, He hath heard them."
+    - psalms: [8]
+      antiphon:
+        la: "Admirábile est * nomen tuum, Dómine: quia glória et honóre coronásti Sanctos tuos, et constituísti eos super ópera mánuum tuárum."
+        en: "How excellent is thy Name, O Lord, Who hast crowned thy Saints with glory and honour, * and madest them to have dominion over the works of thy hands."
+  versicle:
+    v:
+      la: "Lætámini in Dómino, et exsultáte justi."
+      en: "Be glad in the Lord, and rejoice, ye righteous."
+    r:
+      la: "Et gloriámini omnes recti corde."
+      en: "And glory, all ye that are upright in heart."
+nocturn2:
+  groups:
+    - psalms: [14]
+      antiphon:
+        la: "Dómine, * qui operáti sunt justítiam, habitábunt in tabernáculo tuo, et requiéscent in monte sancto tuo."
+        en: "They that work righteousness, * O Lord, even they, shall abide in thy tabernacle, and dwell in thy holy Hill."
+    - psalms: [23]
+      antiphon:
+        la: "Hæc est generátio * quæréntium Dóminum, quæréntium fáciem Dei Iacob."
+        en: "This is the generation of them that seek the Lord, * that seek the face of the God of Jacob."
+    - psalms: [31]
+      antiphon:
+        la: "Lætámini in Dómino, * et exsultáte justi, et gloriámini omnes recti corde."
+        en: "Be glad in the Lord, and rejoice, ye righteous, * and shout for joy, all ye that are upright in heart."
+  versicle:
+    v:
+      la: "Exsúltent justi in conspéctu Dei."
+      en: "Let the righteous rejoice before God."
+    r:
+      la: "Et delecténtur in lætítia."
+      en: "Yea, let them exceedingly rejoice."
+nocturn3:
+  groups:
+    - psalms: [33]
+      antiphon:
+        la: "Timéte Dóminum * omnes Sancti ejus, quóniam nihil deest timéntibus eum: ecce óculi Dómini super justos, et aures ejus ad preces eórum."
+        en: "O fear the Lord, all ye His Saints, * for there is no want to them that fear Him. Behold, the eyes of the Lord are upon the righteous, and His ears are open unto their cry."
+    - psalms: [60]
+      antiphon:
+        la: "Dómine, spes Sanctórum * et turris fortitúdinis eórum, dedísti hereditátem timéntibus nomen tuum, et habitábunt in tabernáculo tuo in sǽcula."
+        en: "O Lord, Thou hast been a shelter for thy Saints, * a strong tower from the enemy. Thou hast given the heritage to those that fear thy Name, and they shall abide in thy tabernacle for ever."
+    - psalms: [96]
+      antiphon:
+        la: "Qui dilígitis Dóminum, * lætámini in Dómino, et confitémini memóriæ sanctitátis ejus."
+        en: "Ye that love the Lord, rejoice in the Lord, * and give thanks at the remembrance of His holiness."
+  versicle:
+    v:
+      la: "Justi autem in perpétuum vivent."
+      en: "The righteous live for evermore."
+    r:
+      la: "Et apud Dóminum est merces eórum."
+      en: "Their reward also is with the Lord."
