@@ -27,21 +27,24 @@ describe('Advent 4 Sunday landing on Dec 24 (the Vigil of Christmas)', () => {
     expect(day.commemorations).toEqual([{ kind: 'temporal', id: 'advent-4' }]);
   });
 
-  it("Lauds carries both collects (Vigil's own, then Advent 4's commemorated) and the Vigil's own proper antiphons/Benedictus antiphon", () => {
+  it("Lauds carries the Vigil's own collect plus Advent 4's commemorated Ant+V/R+collect bundle, and the Vigil's own proper antiphons/Benedictus antiphon", () => {
     const lauds = resolveOrdo('lauds', '2023-12-24');
-    const collects = lauds.parts.filter((p) => p.kind === 'prayer');
-    expect(collects).toHaveLength(2);
-    for (const c of collects) {
-      if (c.kind !== 'prayer') continue;
-      expect(c.text.status.la).toBe('verified');
-      expect(c.text.status.en).toBe('verified');
+    const ownCollect = lauds.parts.find((p) => p.kind === 'prayer');
+    expect(ownCollect?.kind).toBe('prayer');
+    if (ownCollect?.kind === 'prayer') {
+      expect(ownCollect.text.status.la).toBe('verified');
+      expect(ownCollect.text.status.en).toBe('verified');
+      expect(ownCollect.text.text.la).toContain('Deus, qui nos redemptiónis nostræ');
     }
-    expect(collects[0]!.kind === 'prayer' ? collects[0]!.text.text.la : undefined).toContain(
-      'Deus, qui nos redemptiónis nostræ',
-    );
-    expect(collects[1]!.kind === 'prayer' ? collects[1]!.text.text.la : undefined).toContain(
-      'Excita, quǽsumus, Dómine',
-    );
+
+    // Advent 4's own real standing gets the fuller Ant+V/R+collect
+    // commemoration bundle (see resolve-common.ts's temporalCommemorationPart),
+    // not a bare collect -- same treatment a sanctoral commemoration gets.
+    const commemoration = lauds.parts.find((p) => p.kind === 'preces' && p.label?.startsWith('Commemoration of'));
+    expect(commemoration?.kind).toBe('preces');
+    if (commemoration?.kind === 'preces') {
+      expect(commemoration.text.text.la).toContain('Excita, quǽsumus, Dómine');
+    }
 
     const benedictus = lauds.parts.find((p) => p.kind === 'canticle' && p.canticleId === 'benedictus');
     expect(benedictus?.kind).toBe('canticle');

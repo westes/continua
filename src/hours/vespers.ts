@@ -286,7 +286,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay, weekday: Weekday): Reso
       return [{ kind: 'preces', text: resolveCommon(id) }];
     }
     case 'day-collects':
-      return getDayCollects(day);
+      return getDayCollects(day, 'vespers');
     case 'suffrages':
       return resolveSuffrages(day, part.omitOnDouble, 'vespers');
     case 'preces':

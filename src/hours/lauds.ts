@@ -373,7 +373,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'preces':
       return [{ kind: 'preces', text: resolveCommon(part.textRef.id), label: part.label }];
     case 'day-collects':
-      return getDayCollects(day);
+      return getDayCollects(day, 'lauds');
     case 'suffrages':
       return resolveSuffrages(day, part.omitOnDouble, 'lauds');
     case 'versicle':

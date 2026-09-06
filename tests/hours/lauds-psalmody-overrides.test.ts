@@ -98,18 +98,19 @@ describe('Lauds psalmody override (duplex-majus+ sanctoral, and Marian Saturday)
       'He hath made us',
     );
 
-    // One extra collect (the commemorated Sunday's own, still an
-    // unlabeled 'prayer' -- a temporal commemoration, not a sanctoral
-    // one) plus the Simplex saint already commemorated under that Sunday
-    // before Christ the King displaced it too, now a labeled 'preces'
-    // block rather than a third bare 'prayer' -- see
-    // tests/calendar/christ-the-king.test.ts.
+    // The day's own single collect (Christ the King's) plus two labeled
+    // 'preces' commemoration bundles: the commemorated Sunday's own (a
+    // temporal commemoration, now the fuller Ant+V/R+collect bundle since
+    // post-pentecost-22 has a real Benedictus antiphon authored -- see
+    // resolve-common.ts's temporalCommemorationPart) and the Simplex saint
+    // already commemorated under that Sunday before Christ the King
+    // displaced it too -- see tests/calendar/christ-the-king.test.ts.
     const collects = ordo.parts.filter((p) => p.kind === 'prayer');
-    expect(collects.length).toBe(2);
-    const sanctoralCommemoration = ordo.parts.find(
+    expect(collects.length).toBe(1);
+    const commemorations = ordo.parts.filter(
       (p) => p.kind === 'preces' && p.label?.startsWith('Commemoration of'),
     );
-    expect(sanctoralCommemoration).toBeDefined();
+    expect(commemorations.length).toBe(2);
 
     const SUFFRAGE_LABELS = new Set([
       'Of the Holy Cross',

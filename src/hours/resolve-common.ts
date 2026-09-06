@@ -6,6 +6,7 @@ import { getSaintRecord } from '../calendar/feasts';
 import { resolveActiveOctave, activeOctavesFor, octaveGoverningPrivilegedDay, isAtLeast, isSundayOrFeast } from '../calendar';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { isInTriduum } from '../calendar/temporal';
+import { temporalLabel } from '../calendar/day-label';
 import { splitAntiphon, isDoubleOrHigher } from './antiphon';
 import { getLaudsSaintOverride } from './lauds-psalmody-overrides';
 import vespersMagnificatAntiphonsData from '../data/hours/vespers-magnificat-antiphons.yml';
@@ -720,6 +721,44 @@ function octaveCommemorationPart(commemoration: Extract<Commemoration, { kind: '
   return { kind: 'preces', text: { text: {}, status: { la: 'missing', en: 'missing' } }, label };
 }
 
+/** A temporal commemoration's own rendering — same fuller Ant+V/R+collect
+ * shape as sanctoralCommemorationPart, for when a Sunday or privileged
+ * feria with real standing of its own is commemorated in return after
+ * losing outright to a Duplex+ sanctoral winner (calendar/commemorations.ts's
+ * `ordinary-sunday`/`privileged-sunday`/`privileged-feria-minor` branches).
+ * There's no separate `${id}-commemoration` proper-file convention for
+ * temporal ids the way there is for saints, so this reuses the exact
+ * antiphon/versicle the temporal day would have used had it won outright:
+ * `${id}-benedictus-antiphon`/`${id}-magnificat-antiphon` (the same lookup
+ * getBenedictusAntiphon/getMagnificatAntiphon use for a real temporal
+ * winner) plus the plain weekday-keyed versicle every ferial/Sunday day
+ * already falls back to when no override bundle applies. */
+function temporalCommemorationPart(
+  commemoration: Extract<Commemoration, { kind: 'temporal' }>,
+  day: LiturgicalDay,
+  hour: 'lauds' | 'vespers',
+): ResolvedPart {
+  const label = `Commemoration of ${temporalLabel(day).en}`;
+  const collect = toResolvedText(getTemporalProper(`${commemoration.id}-collect`));
+  const antiphon = toResolvedText(
+    getTemporalProper(`${commemoration.id}-${hour === 'lauds' ? 'benedictus' : 'magnificat'}-antiphon`),
+  );
+  if (antiphon.status.la !== 'missing' || antiphon.status.en !== 'missing') {
+    const versicleId =
+      hour === 'lauds'
+        ? `lauds-versicle-${day.weekday}`
+        : day.weekday === 'saturday'
+          ? 'vespers-versicle-saturday'
+          : 'vespers-versicle-sunday-ferial';
+    const versicle = resolveCommon(versicleId);
+    return { kind: 'preces', text: combineCommemorationBundle(antiphon, versicle, collect), label };
+  }
+  if (collect.status.la !== 'missing' || collect.status.en !== 'missing') {
+    return { kind: 'preces', text: collect, label };
+  }
+  return { kind: 'preces', text: { text: {}, status: { la: 'missing', en: 'missing' } }, label };
+}
+
 /**
  * The day's own collect, plus one more per commemoration (calendar/
  * types.ts's LiturgicalDay.commemorations) — Lauds/Vespers say all of
@@ -753,7 +792,7 @@ function octaveCommemorationPart(commemoration: Extract<Commemoration, { kind: '
  * octave is skipped and every active one renders here — the only place
  * those four octaves' real "Commemoratio Octavæ ..." content surfaces.
  */
-export function getDayCollects(day: LiturgicalDay): ResolvedPart[] {
+export function getDayCollects(day: LiturgicalDay, hour: 'lauds' | 'vespers'): ResolvedPart[] {
   const parts: ResolvedPart[] = [{ kind: 'prayer', text: getDayCollect(day) }];
   // Mirrors resolveOfficeWinner's own gate: an octave only actually
   // supplied the primary collect when the day's winner itself wasn't a
@@ -767,7 +806,7 @@ export function getDayCollects(day: LiturgicalDay): ResolvedPart[] {
       : undefined;
   for (const commemoration of day.commemorations) {
     if (commemoration.kind === 'temporal') {
-      parts.push({ kind: 'prayer', text: toResolvedText(getTemporalProper(`${commemoration.id}-collect`)) });
+      parts.push(temporalCommemorationPart(commemoration, day, hour));
     } else if (commemoration.kind === 'sanctoral') {
       parts.push(sanctoralCommemorationPart(commemoration, day.weekday));
     } else if (commemoration.kind === 'octave' && commemoration.id !== substitutedOctaveId) {
