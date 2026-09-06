@@ -5,6 +5,7 @@ import { getCommonProper, getTemporalProper } from '../propers';
 import { getSaintRecord } from '../calendar/feasts';
 import { resolveActiveOctave, activeOctavesFor, octaveGoverningPrivilegedDay, isAtLeast, isSundayOrFeast } from '../calendar';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
+import { resolveTemporalId } from '../calendar/temporal-id';
 import { isInTriduum } from '../calendar/temporal';
 import { isAllSouls, REQUIEM_GLORIA_PATRI } from './all-souls';
 import { temporalLabel } from '../calendar/day-label';
@@ -44,6 +45,29 @@ export function resolveCommon(id: string): ResolvedText {
   return toResolvedText(getCommonProper(id));
 }
 
+/**
+ * A named temporal winner's own `${winner.id}-<kind>` proper, falling back
+ * to the coarse governing-Sunday/weekday id (`resolveTemporalId(day.date)`
+ * — what the id would have been without any override) when the winner's
+ * own file hasn't been authored yet. Exists because a movable/override
+ * temporal id (Corpus Christi, Maundy Thursday, ...) getting its own real
+ * winner identity via `resolveOfficeWinner` doesn't guarantee every one of
+ * its proper texts has actually been authored — without this, an
+ * unauthored kind renders as bare `missing` instead of degrading to
+ * whatever content the day would otherwise have shown (e.g. Corpus
+ * Christi's own missing collect falling back to `post-pentecost-01`'s,
+ * Maundy Thursday's falling back to `palm-sunday`'s). Only used for
+ * `winner.kind === 'temporal'` lookups — a sanctoral winner's own
+ * Common-category fallback chain is unrelated and untouched.
+ */
+function getTemporalProperWithFallback(winnerId: string, kind: string, day: LiturgicalDay): ProperText {
+  const named = getTemporalProper(`${winnerId}-${kind}`);
+  if (named.status.la !== 'missing' || named.status.en !== 'missing') {
+    return named;
+  }
+  return getTemporalProper(`${resolveTemporalId(day.date)}-${kind}`);
+}
+
 /** Terce/Sext/None's own Matins-less hymn 'hymn' case — a plain, fixed,
  * self-contained text with no doxology mechanism at all (the closing
  * doxology is baked directly into each hour's own hymn text file; see
@@ -70,6 +94,25 @@ export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set([
   'circumcision',
   'holy-name-of-jesus',
   'vigil-of-christmas',
+  // Passiontide: every one of the 14 days from Passion Sunday through Holy
+  // Saturday has its own real identity now (see
+  // calendar/movable-feasts.ts's anchor-based override for the 12 days in
+  // between the two Sundays) — same "does this id carry its own real
+  // office" reasoning as every other entry above.
+  'passion-sunday',
+  'monday-passion-week',
+  'tuesday-passion-week',
+  'wednesday-passion-week',
+  'thursday-passion-week',
+  'friday-passion-week',
+  'saturday-passion-week',
+  'palm-sunday',
+  'monday-holy-week',
+  'tuesday-holy-week',
+  'spy-wednesday',
+  'maundy-thursday',
+  'good-friday',
+  'holy-saturday',
 ]);
 
 /**
@@ -610,7 +653,7 @@ export function substituteName(text: ResolvedText, name: { la: string[]; en: str
 export function getDayCollect(day: LiturgicalDay): ResolvedText {
   const winner = resolveOfficeWinner(day);
   if (winner.kind === 'temporal') {
-    return toResolvedText(getTemporalProper(`${winner.id}-collect`));
+    return toResolvedText(getTemporalProperWithFallback(winner.id, 'collect', day));
   }
   const saint = getSaintRecord(winner.id);
   if (saint?.propers) {
@@ -941,7 +984,7 @@ export function resolveSuffrages(
 export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
   const winner = resolveOfficeWinner(day);
   if (winner.kind === 'temporal') {
-    return toResolvedText(getTemporalProper(`${winner.id}-benedictus-antiphon`));
+    return toResolvedText(getTemporalProperWithFallback(winner.id, 'benedictus-antiphon', day));
   }
   const saint = getSaintRecord(winner.id);
   if (saint?.propers) {
@@ -1000,7 +1043,7 @@ export function getMagnificatAntiphon(day: LiturgicalDay): ResolvedText {
   }
   const winner = resolveOfficeWinner(day);
   if (winner.kind === 'temporal') {
-    const named = toResolvedText(getTemporalProper(`${winner.id}-magnificat-antiphon`));
+    const named = toResolvedText(getTemporalProperWithFallback(winner.id, 'magnificat-antiphon', day));
     if (named.status.la !== 'missing' || named.status.en !== 'missing') {
       return named;
     }

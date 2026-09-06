@@ -319,8 +319,20 @@ describe('getMagnificatAntiphon — classic weekday-default fallback', () => {
     // tests/hours/vespers.test.ts's own note where this test used to
     // live. Tests the mechanism directly instead, the same way this
     // file's other synthetic-day cases do.
+    //
+    // `date` deliberately isn't Jan 1 any more (2026-09-06): getMagnificatAntiphon
+    // now also falls back to `resolveTemporalId(day.date)`'s own antiphon
+    // (see resolve-common.ts's getTemporalProperWithFallback, added for
+    // the Passiontide/movable-feast content-completeness pass) before the
+    // classic weekday default -- Jan 1 resolves to `christmas-octave-
+    // sunday`, which now has real content, so that fallback tier fired
+    // first and hid the one this test means to exercise. `vigil-of-
+    // christmas` (Dec 24) is one of the few remaining coarse ids with no
+    // magnificat-antiphon file of its own (see saturday-passion-week.yml/
+    // holy-saturday.yml for why: an anticipated First Vespers, not an
+    // oversight), so it still reaches the true weekday-default tier.
     const day: LiturgicalDay = {
-      date: '2026-01-01',
+      date: '2026-12-24',
       weekday: 'tuesday',
       season: 'trinitytide',
       temporalCategory: 'ordinary-feria',

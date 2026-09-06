@@ -1,0 +1,12 @@
+# Read directly from the reference engine's own static file:
+# web/www/horas/Latin/Tempora/Pent01-4.txt's [Ant 2] (the Lauds/Benedictus
+# antiphon, per this project's Ant1=Vespers1/Ant2=Lauds/Ant3=Vespers2
+# convention -- see vu-magnificat-common-category-fallback memory) /
+# English/Tempora/Pent01-4.txt's own [Ant 2].
+id: corpus-christi-benedictus-antiphon
+text:
+  la: "Ego sum * panis vivus, qui de cælo descéndi: si quis manducáverit ex hoc pane, vivet in ætérnum, allelúja."
+  en: "I am the living Bread * which came down from heaven; if any man eat of this Bread, he shall live for ever, alleluia."
+status:
+  la: verified
+  en: verified

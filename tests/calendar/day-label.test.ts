@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { resolveDay } from '../../src/calendar';
 import { resolveEveningDay } from '../../src/calendar/vespers';
-import { getDayLabel, getVespersStatusLabel } from '../../src/calendar/day-label';
+import { getDayLabel, getVespersStatusLabel, temporalLabel } from '../../src/calendar/day-label';
 import type { LiturgicalDay } from '../../src/calendar/types';
 
 describe('getDayLabel — ordinal temporal label', () => {
@@ -450,5 +450,56 @@ describe('getDayLabel/getVespersStatusLabel — Vespers evening with a temporal 
     const day = resolveEveningDay('2026-08-17');
     expect(day.date).toBe('2026-08-17');
     expect(getVespersStatusLabel(day, '2026-08-17').en).toBe('Second Vespers (of today)');
+  });
+});
+
+// Every day from Passion Sunday through Holy Saturday used to render the
+// same generic "Weekday in Passiontide" label (no `passiontide` entry in
+// ORDINAL_SEASONS) -- fixed 2026-09-06 by giving each of the 14 days its
+// own real winner id (calendar/movable-feasts.ts's anchor-based override,
+// same mechanism Corpus Christi/Ascension already use) plus a
+// temporal-feasts display record. Checked via `getDayLabel` (the actual
+// on-screen header), not `temporalLabel` (which recomputes the plain
+// temporal identity straight from `resolveTemporalId`, ignoring any
+// winner-id override, so it still shows the old generic phrase here on
+// purpose -- a different, narrower function, not itself part of this
+// fix). A `startsWith` check (not exact equality) tolerates a real
+// same-day sanctoral winner/commemoration riding along -- some of these
+// 2026 dates are won outright by a real Duplex+ saint (St. Gabriel the
+// Archangel, the Annunciation) or carry a transferred-away saint, which
+// is expected/correct (see calendar/movable-feasts.ts's Passiontide
+// override doc comment), not a bug in this labeling fix.
+describe('getDayLabel — Passiontide (Passion Sunday through Holy Saturday)', () => {
+  it.each([
+    ['2026-03-22', 'Passion Sunday'],
+    ['2026-03-23', 'Monday of Passion Week'],
+    ['2026-03-24', 'Tuesday of Passion Week'],
+    ['2026-03-25', 'Wednesday of Passion Week'],
+    ['2026-03-26', 'Thursday of Passion Week'],
+    ['2026-03-27', 'Friday of Passion Week'],
+    ['2026-03-28', 'Saturday of Passion Week'],
+    ['2026-03-29', 'Palm Sunday'],
+    ['2026-03-30', 'Monday of Holy Week'],
+    ['2026-03-31', 'Tuesday of Holy Week'],
+    ['2026-04-01', 'Spy Wednesday'],
+    ['2026-04-02', 'Maundy Thursday'],
+    ['2026-04-03', 'Good Friday'],
+    ['2026-04-04', 'Holy Saturday'],
+  ])('%s has its own distinct name starting with "%s", not a generic weekday-in-Passiontide phrase', (date, expectedName) => {
+    const day = resolveDay(date);
+    const label = getDayLabel(day);
+    if (day.winner.kind === 'temporal') {
+      expect(label.en?.startsWith(expectedName)).toBe(true);
+    }
+    expect(label.en).not.toMatch(/in Passiontide/);
+    expect(label.la?.length).toBeGreaterThan(0);
+    // The plain temporal identity (independent of who wins) is also
+    // always this day's own real name now, via `temporalLabel` directly.
+    expect(temporalLabel(day).en).toBe(expectedName);
+  });
+
+  it('Passion Sunday and Palm Sunday show their real name via getDayLabel on a real date', () => {
+    expect(getDayLabel(resolveDay('2026-03-22')).en).toBe('Passion Sunday (Semiduplex)');
+    expect(getDayLabel(resolveDay('2026-03-29')).en).toBe('Palm Sunday (Semiduplex)');
   });
 });

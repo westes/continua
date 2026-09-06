@@ -1,0 +1,29 @@
+# See monday-passion-week.yml for the full rationale (same batch of six
+# files closing the same gap: every feria of Passion week previously fell
+# back wholesale to `passion-sunday`'s own collect/antiphons). Read from
+# web/www/horas/Latin/Tempora/Quad5-5.txt's [Officium]/[Rank] header --
+# `rank` omitted for the same reason as its siblings.
+#
+# NOTE on a name collision in the *reference engine's own raw file*, not
+# in this app: Quad5-5.txt's own [Officium]/[Rank]/[Oratio] there are
+# actually "Septem Dolorum Beatæ Mariæ Virginis" (Duplex majus) -- the
+# Seven Sorrows devotion historically sits on this exact date in several
+# post-1913 calendars. But live-querying this app's own structural source,
+# Monastic Tridentinum 1617 (see CLAUDE.md's "Not a reconstruction"
+# section), for a real Friday-of-Passion-week date shows a plain
+# unadorned "Feria Sexta infra Hebdomadam Passionis ~ Feria major" with no
+# Seven Sorrows commemoration at all -- Monastic 1617 predates that
+# addition. This app also has no Seven Sorrows content authored anywhere
+# else yet (`src/data/calendar/temporal-feasts/`,
+# `src/data/propers/temporal/` -- checked, and TODO.md has no note of it),
+# so there is no live collision to resolve right now, only a
+# reference-file-level naming coincidence worth flagging for whoever
+# eventually authors that devotion: it would need its own occurrence rule
+# (an alternate track's Duplex-majus override on this same date) layered
+# on top of, not merged into, this plain ferial identity.
+id: friday-passion-week
+name: "Friday of Passion Week"
+nameLa: "Feria Sexta infra Hebdomadam Passionis"
+anchor:
+  kind: easter
+  offset: -9

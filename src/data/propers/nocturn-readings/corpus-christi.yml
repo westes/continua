@@ -1,0 +1,208 @@
+# Matins nocturn content for Corpus Christi (temporalId corpus-christi,
+# Duplex I classis cum Octava). Sourced from Tempora/Pent01-4.txt (Latin)
+# / English/Tempora/Pent01-4.txt, and the Gospel pericope's full text from
+# missa/Latin/Tempora/Pent01-4.txt's own [Evangelium] / missa/English's
+# same (the Matins file itself only gives the incipit + "Et réliqua" for
+# Lectio7, per this project's Gospel/homily-split convention of sourcing
+# the full pericope from the Mass propers rather than leaving it bare).
+#
+# The audit found this id registered in ALWAYS_OVERRIDE_TEMPORAL_IDS but
+# never authored at all -- Corpus Christi is a real 9-lesson, 3-nocturn
+# day in the source (not one of the "1 nocturn" compressed solemnities
+# like Easter/Pentecost), so all three nocturns carry real, distinct
+# content there; Nocturn 1 (Lectio1-3, 1 Cor 11:20-32) is left
+# unauthored here per this project's convention of leaving Nocturn 1
+# scripture to the bible-plan store rather than this file.
+#
+# Nocturn 2: Lectio4-6 (St. Thomas Aquinas's own sermon for this feast,
+# Opusculum 57) combined into one continuous excerpt.
+# Nocturn 3: the Gospel pericope (John 6:56-59) authored in full
+# (isGospel: true), followed by Lectio7's homily portion (incipit
+# dropped) combined with Lectio8-9 as one continuous excerpt of St.
+# Augustine's Tractate 26 on John.
+id: corpus-christi
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Thomas Aquinas, Sermon for Corpus Christi (Opusculum 57)"
+    text:
+      la: >-
+        Imménsa divínæ largitátis benefícia, exhíbita pópulo christiáno, inæstimábilem ei
+        cónferunt dignitátem. Neque enim est, aut fuit aliquándo tam grandis nátio, quæ
+        hábeat deos appropinquántes sibi, sicut adest nobis Deus noster. Unigénitus
+        síquidem Dei Fílius, suæ divinitátis volens nos esse partícipes, natúram nostram
+        assúmpsit, ut hómines deos fáceret factus homo. Et hoc ínsuper, quod de nostro
+        assúmpsit, totum nobis cóntulit ad salútem. Corpus namque suum pro nostra
+        reconcilatióne in ara crucis hóstiam óbtulit Deo Patri, sánguinem suum fudit in
+        prétium simul et lavácrum; ut redémpti a miserábili servitúte, a peccátis ómnibus
+        mundarémur. Ut autem tanti benefícii jugis in nobis manéret memória, corpus suum
+        in cibum, et sánguinem suum in potum, sub spécie panis et vini suméndum
+        fidélibus derelíquit.
+
+
+        O pretiósum et admirándum convívium, salutíferum et omni suavitáte replétum!
+        Quid enim hoc convívio pretiósius esse potest? in quo non carnes vitulórum et
+        hircórum, ut olim in lege, sed nobis Christus suméndus propónitur verus Deus.
+        Quid hoc Sacraménto mirabílius? In ipso namque panis et vinum in Christi corpus
+        et sánguinem substantiáliter convertúntur; ideóque Christus, Deus et homo
+        perféctus, sub módici panis et vini spécie continétur. Manducátur ítaque a
+        fidélibus, sed mínime lacerátur; quinímmo, divíso Sacraménto, sub quálibet
+        divisiónis partícula ínteger persevérat. Accidéntia autem sine subjécto in eódem
+        subsístunt, ut fides locum hábeat, dum visíbile invisibíliter súmitur aliéna spécie
+        occultátum; et sensus a deceptióne reddántur immúnes, qui de accidéntibus
+        júdicant sibi notis.
+
+
+        Nullum étiam sacraméntum est isto salúbrius, quo purgántur peccáta, virtútes
+        augéntur, et mens ómnium spirituálium charísmatum abundántia impinguátur.
+        Offértur in Ecclésia pro vivis et mórtuis, ut ómnibus prosit, quod est pro salúte
+        ómnium institútum. Suavitátem dénique hujus Sacraménti nullus exprímere súfficit,
+        per quod spirituális dulcédo in suo fonte gustátur; et recólitur memória illíus,
+        quam in sua passióne Christus monstrávit, excellentíssimæ caritátis. Unde, ut
+        árctius hujus caritátis imménsitas fidélium córdibus infigerétur, in última cena,
+        quando Pascha cum discípulis celebráto, transitúrus erat de hoc mundo ad Patrem,
+        hoc Sacraméntum instítuit, tamquam passiónis suæ memoriále perénne, figurárum
+        véterum impletívum, miraculórum ab ipso factórum máximum; et de sua contristátis
+        abséntia solátium singuláre relíquit.
+      en: >-
+        The immeasurable benefits, which the goodness of God hath bestowed on Christian
+        people, have conferred on them also a dignity beyond all price. For what nation
+        is there so great, who hath gods so nigh unto them, as the Lord, our God, is unto
+        us? The Only-begotten Son of God, being pleased to make us partakers of the
+        Divine nature, took our nature upon Him, being Himself made Man that He might
+        make men gods. And all, as much of ours as He took, He applied to our salvation.
+        On the Altar of the Cross He offered up His Body to God the Father as a sacrifice
+        for our reconciliation; He shed His Blood as the price whereby He redeemeth us
+        from wretchedness and bondage, and the washing whereby He cleanseth us from all
+        sin. And for a noble and abiding memorial of that so great work of His goodness,
+        He hath left unto His faithful ones the Same His very Body for Meat, and the Same
+        His very Blood for Drink, to be fed upon under the appearance of bread and wine.
+
+
+        How precious a thing then, how marvelous, how health-giving, how furnished with
+        all dainties, is the Supper of the Lord! Than His Supper can anything be more
+        precious? Therein there is put before us for meat, not, as of old time, the flesh
+        of bulls and of goats, but Christ Himself, our very God. Than this Sacrament can
+        anything be more marvelous? Therein it cometh to pass that bread and wine are
+        bread and wine no more, but in the stead thereof there is the Body and there is
+        the Blood of Christ; that is to say, Christ Himself, Perfect God and Perfect Man,
+        is there, under the appearance of a little bread and wine. His faithful ones eat
+        Him, but He is not mangled; nay, when this Sacrament is broken, in each broken
+        piece thereof remaineth whole Christ Himself, Perfect God and Perfect Man. All
+        that the senses can reach in this Sacrament abide of bread and wine, but the
+        Thing is not bread and wine. And thus room is left for faith; Christ is here
+        taken and received not only unseen, but seeming to be bread and wine, and the
+        senses, which judge by the wonted look, are warranted against error.
+
+
+        Than this Sacrament can anything be more health-giving? Thereby are sins purged
+        away, strength renewed, and the soul fed upon the fatness of spiritual gifts.
+        This Supper is offered up in the Church both for the quick and the dead; it was
+        ordained to the health of all, and all get the good of it. Than this Sacrament
+        can anything be more furnished with dainties? The glorious sweetness thereof is
+        of a truth such that no man can fully tell it. Therein ghostly comfort is sucked
+        from its very well-head. Therein a memorial is made of that exceeding great love
+        which Christ showed in the time of His sufferings. It was in order that the
+        boundless goodness of that His great love might be driven home into the hearts of
+        His faithful ones, that when He had celebrated the Passover with His disciples,
+        and was about to pass out of this world to the Father, He instituted this
+        Sacrament, this everlasting memorial of His Passion, the fulfilment of all the
+        ancient figures, and the greatest of the miracles He ever wrought; and to them
+        that were sorrowful at His going He left it as a singular comfort at His absence.
+    responsory:
+      la: "R. Cenántibus illis, accépit Jesus panem, et benedíxit, ac fregit, dedítque discípulis suis, et ait: * Accípite et comédite: hoc est corpus meum.\nV. Dixérunt viri tabernáculi mei: Quis det de cárnibus ejus, ut saturémur?\nR. Accípite et comédite: hoc est corpus meum."
+      en: "R. As they were eating, Jesus took bread, and blest it, and brake it, and gave it to the disciples, and said: * Take, eat; this is My Body.\nV. The men of my tabernacle said: O that we had of his flesh, we cannot be satisfied.\nR. Take, eat; this is My Body."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joann 6:56-59", en: "John 6:56-59" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus turbis Judæórum: Caro mea vere est cibus, et sanguis
+        meus vere est potus. Qui mandúcat meam carnem et bibit meum sánguinem, in me
+        manet, et ego in illo. Sicut misit me vivens Pater, et ego vivo propter Patrem: et
+        qui mandúcat me, et ipse vivet propter me. Hic est panis, qui de cœlo descéndit.
+        Non sicut manducavérunt patres vestri manna, et mórtui sunt. Qui mandúcat hunc
+        panem, vivet in ætérnum.
+      en: >-
+        At that time, Jesus said to the crowds of the Jews: My Flesh is food indeed, and
+        My Blood is drink indeed. He who eats My Flesh, and drinks My Blood, abides in Me
+        and I in him. As the living Father has sent Me, and as I live because of the
+        Father, so he who eats Me, he also shall live because of Me. This is the Bread
+        that has come down from heaven; not as your fathers ate the manna, and died. He
+        who eats this Bread shall live forever.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Augustine, Bishop of Hippo, Tractate 26 on John"
+    text:
+      la: >-
+        Cum cibo et potu id áppetant hómines, ut neque esúriant, neque sítiant: hoc
+        veráciter non præstat, nisi iste cibus et potus, qui eos, a quibus súmitur,
+        immortáles et incorruptíbiles facit; id est, socíetas ipsa Sanctórum, ubi pax erit
+        et únitas plena atque perfécta. Proptérea quippe, sicut étiam ante nos hoc
+        intellexérunt hómines Dei, Dóminus noster Jesus Christus corpus et sánguinem suum
+        in eis rebus commendávit, quæ ad unum áliquid redigúntur ex multis. Namque áliud
+        in unum ex multis granis confícitur: áliud in unum ex multis ácinis cónfluit.
+        Dénique jam expónit, quómodo id fiat, quod lóquitur; et quid sit manducáre corpus
+        ejus, et sánguinem bíbere. Qui mandúcat carnem meam et bibit meum sánguinem, in
+        me manet, et ego in illo. Hoc est ergo manducáre illam escam, et illum bíbere
+        potum, in Christo manére, et illum manéntem in se habére. Ac per hoc, qui non
+        manet in Christo, et in quo non manet Christus, proculdúbio nec mandúcat
+        spiritáliter carnem ejus, nec bibit ejus sánguinem, licet carnáliter et
+        visibíliter premat déntibus Sacraméntum córporis et sánguinis Christi: sed magis
+        tantæ rei sacraméntum ad judícium sibi mandúcat et bibit, quia immúndus
+        præsúmpsit ad Christi accédere Sacraménta, quæ áliquis non digne sumit, nisi qui
+        mundus est; de quibus dícitur: Beáti mundo corde, quóniam ipsi Deum vidébunt.
+
+
+        Sicut, inquit, misit me vivens Pater, et ego vivo propter Patrem: et qui mandúcat
+        me, et ipse vivet propter me. Ac si díceret: Ut ego vivam propter Patrem, id est,
+        ad illum tamquam ad majórem réferam vitam meam, exinanítio mea fecit, in qua me
+        misit: ut autem quisquam vivat propter me, participátio facit, qua mandúcat me.
+        Ego ítaque humiliátus vivo propter Patrem: ille eréctus vivit propter me. Si autem
+        ita dictus est, Vivo propter Patrem, quia ipse de illo, non ille de ipso est; sine
+        detriménto æqualitátis dictum est. Nec tamen dicéndo, Et qui mandúcat me, et ipse
+        vivet propter me; eándem suam et nostram æqualitátem significávit, sed grátiam
+        mediatóris osténdit.
+      en: >-
+        By use of meat and drink men would fain that they shall hunger no more, neither
+        thirst any more, and yet there is but one Meat and one Drink, Which doth work in
+        them that feed thereon that this corruptible must put on incorruption, and this
+        mortal put on immortality, namely communion with that general assembly and
+        Church of God's holy children, who are kept in perfect peace, and are all one,
+        fully and utterly. And therefore it is, as men of God before our time have taken
+        it, that our Lord Jesus Christ hath set before us His Body and His Blood in the
+        likeness of things which, from being many, are reduced into one. In one loaf are
+        many grains of corn, and in one cup of wine the juice of many grapes. And now He
+        giveth us to know how that which He spake cometh to pass, and how indeed this Man
+        can give us His Flesh to eat, and His Blood to drink. He that eateth My Flesh, and
+        drinketh My Blood, dwelleth in Me, and I in him. To dwell in Christ, therefore,
+        and to have Him dwelling in us, is to eat of that Bread and drink of that Cup, and
+        he which dwelleth not in Christ, and in whom Christ dwelleth not, without all
+        doubt doth not spiritually eat His Flesh nor drink His Blood, although he do
+        carnally and visibly press the Sacrament with his teeth; but, contrariwise, he
+        eateth and drinketh damnation to himself, because he dareth to draw nigh filthy
+        to that secret and holy thing of Christ, whereunto none draweth nigh worthily,
+        save he which is pure, even he which is of them concerning whom it is said:
+        Blessed are the pure in heart, for they shall see God.
+
+
+        As the living Father hath sent Me, and I live by the Father, so he that eateth
+        Me, even he shall live by Me. This is as though He said: The Father hath sent Me
+        into the world, and I have emptied Myself and taken upon Me the form of a
+        servant. I have My life from the Father, as One That is greater than I. He that
+        eateth Me, even he, by thereby taking part in Me, shall live by Me. It is as
+        having humbled Myself that I live by the Father, but he that eateth Me, him will
+        I raise up, and so he shall live by Me. It is said "I live by the Father," that is
+        to say, He is of the Father, not the Father of Him, and yet not so, but that the
+        Father and the Son are co-equal together. Also it is said "So he that eateth Me,
+        even he shall live by Me," whereby He showeth the gracious work towards His
+        people of Him Who is the one Mediator between God and man, and not that He Which
+        is eaten and he which eateth Him are co-equal together.
+    responsory:
+      la: "R. Qui mandúcat meam carnem et bibit meum sánguinem, * In me manet, et ego in eo.\nV. Non est ália nátio tam grandis, quæ hábeat deos appropinquántes sibi, sicut Deus noster adest nobis.\nR. In me manet, et ego in eo."
+      en: "R. He that eateth My Flesh and drinketh My Blood, * dwelleth in Me, and I in him.\nV. What nation is there so great, who hath gods so nigh unto them, as the Lord our God is to us?\nR. Dwelleth in Me, and I in him."
+    status: { la: verified, en: verified }

@@ -1,0 +1,24 @@
+# See monday-passion-week.yml for the full rationale (same batch of six
+# files closing the same gap: every feria of Passion week previously fell
+# back wholesale to `passion-sunday`'s own collect/antiphons). Read from
+# web/www/horas/Latin/Tempora/Quad5-6.txt's [Officium]/[Rank] header
+# ("Sabbato infra Hebdomadam Passionis" / "Feria major" -- `rank` omitted
+# for the same reason as its siblings).
+#
+# NOTE: this record still gives the day its own Lauds identity (collect,
+# Benedictus antiphon), but deliberately has no
+# `saturday-passion-week-magnificat-antiphon.yml` sibling -- live-querying
+# Vespers on a real Saturday-of-Passion-week date (Monastic Tridentinum
+# 1617) shows "Vespera de sequenti" with no commemoration of the feria at
+# all: Palm Sunday (Semiduplex I classis) always outranks this plain feria
+# and anticipates Second Vespers outright, exactly like every other
+# Saturday-into-Sunday transition. There is no historically real, separate
+# "Second Vespers of this Saturday" text to author -- the existing
+# `palm-sunday-magnificat-antiphon.yml` is already the correct, and only,
+# answer for this evening.
+id: saturday-passion-week
+name: "Saturday of Passion Week"
+nameLa: "Sabbato infra Hebdomadam Passionis"
+anchor:
+  kind: easter
+  offset: -8

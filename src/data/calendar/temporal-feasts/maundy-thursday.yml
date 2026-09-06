@@ -1,0 +1,19 @@
+# See monday-holy-week.yml for the full rationale (same batch of six
+# files closing the same "Holy Week ferias fall back to Palm Sunday's
+# collect" gap). Read from web/www/horas/Latin/Tempora/Quad6-4.txt's
+# [Officium]/[Rank] header -- "Feria Quinta in Cena Domini" / "Feria
+# privilegiata Duplex I classis;;7" -- an explicit, real FeastClass-shaped
+# rank unlike Monday/Tuesday/Wednesday's plain "Feria privilegiata;;6.9",
+# so `rank: duplex-1-classis` is set here (matching ascension.yml's own
+# Duplex I classis precedent), even though `privileged-feria-major`
+# already makes this day unlosable regardless. English name "Maundy
+# Thursday" is the standard traditional English title (from "mandatum",
+# the day's own Gospel/Mandatum ceremony, John 13:34) rather than a
+# literal translation of the Latin.
+id: maundy-thursday
+name: "Maundy Thursday"
+nameLa: "Feria Quinta in Cena Domini"
+rank: duplex-1-classis
+anchor:
+  kind: easter
+  offset: -3

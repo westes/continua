@@ -1,0 +1,37 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Quad6-4.txt.
+# This day's Office has no ordinary "Oremus...Per Dominum" collect at all
+# -- its [Rule] explicitly omits the usual "Oratio" conclusion formula
+# ("Omit ... Conclusion ..."), and its real [Oratio] section is instead
+# the distinctive Holy Week Tenebrae form: the versicle "Christus factus
+# est pro nobis obédiens usque ad mortem" (Phil 2:8), said aloud, followed
+# by the Pater Noster recited silently, Psalm 50, and then this same
+# day's own "Oratio Matutinum" prayer -- concluded "sub silentio" (in
+# silence), not with the ordinary spoken "Amen." This whole sequence is
+# reused verbatim (via the file's own `@:Oratio Matutinum` reference) at
+# both Vespers and Matins for this one day, so it stands as the day's
+# single real collect here. The closing prayer itself
+# ("Réspice, quǽsumus...") is the same text Spy Wednesday's own Vespers
+# uses (see spy-wednesday-collect.yml's note) -- not independently
+# authored for Thursday, but genuinely this day's own text per the source.
+# Not live-cross-checked (the live engine's HTML doesn't surface this
+# unusual silent-conclusion form cleanly for a scripted query) --
+# transcribed directly from the raw file instead, hence `draft`.
+id: maundy-thursday-collect
+text:
+  la: |
+    V. Christus factus est pro nobis obédiens usque ad mortem.
+    Pater noster (secreto).
+    Psalmus 50 (Miserere).
+    Réspice, quǽsumus, Dómine, super hanc famíliam tuam, pro qua Dóminus noster Jesus Christus non dubitávit mánibus tradi nocéntium, et crucis subíre torméntum:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    (Et sub silentio concluditur.)
+  en: |
+    V. Christ became obedient for us unto death.
+    Our Father (said silently).
+    Psalm 50 (Have mercy on me, O God).
+    Look down, we beseech Thee, O Lord, upon this Thy family, for which our Lord Jesus Christ did not hesitate to be delivered into the hands of wicked men, and to undergo the torment of the Cross:
+    Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end.
+    (And it is concluded in silence.)
+status:
+  la: draft
+  en: draft

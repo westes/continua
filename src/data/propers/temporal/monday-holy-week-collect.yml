@@ -1,0 +1,27 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Quad6-1.txt,
+# [Oratio 2] (its [Rule]'s "Antiphonas horas"/Feria pattern gives each hour
+# its own antiphon but this app only models one collect per day via
+# getDayCollect -- see resolve-common.ts's own doc comment). Cross-checked
+# live against Divinum Officium (Monastic Tridentinum 1617), Lauds, real
+# date 2026-03-30 (Monday of Holy Week that year) -- confirmed this is the
+# actual Lauds/ordinary-hours collect text and wording. Note: this day's
+# real Vespers uses a *different* forward-looking collect of its own
+# ([Oratio 3] in the source, "Adjuva nos, Deus, salutáris noster...",
+# live-confirmed too) -- not modeled separately here since this app has no
+# per-hour collect variation; the Lauds/ordinary-hours text was chosen as
+# the day's single representative collect.
+id: monday-holy-week-collect
+text:
+  la: |
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut, qui in tot advérsis ex nostra infirmitáte defícimus; intercedénte unigéniti Fílii tui passióne respirémus:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Let us pray.
+    Grant, we beseech Thee, almighty God, that we, who through our own weakness are overcome by so many adversities, may find relief through the intercession of the Passion of Thine Only-begotten Son:
+    Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

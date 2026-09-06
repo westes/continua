@@ -128,8 +128,16 @@ describe('the Easter-octave backlog (Palm Sunday through Low Sunday)', () => {
     // St. George, Semiduplex; St. Fidelis of Sigmaringen, Duplex) is
     // below duplex-majus.
     const holyMonday = resolveDay('2033-04-11');
-    expect(holyMonday.winner).toEqual({ kind: 'temporal', id: 'palm-sunday' });
-    expect(holyMonday.commemorations).toEqual([]);
+    // Monday of Holy Week now has its own real winner id (see
+    // calendar/movable-feasts.ts's Passiontide-day override, 2026-09-06)
+    // rather than inheriting Palm Sunday's own coarse id — the override
+    // mechanism pushes a `{kind:'temporal', id:'palm-sunday'}`
+    // commemoration for the coarse id it replaces, same shape every other
+    // movable feast (Ascension, Corpus Christi) already does; harmless,
+    // since day-label.ts's collectCommemorations deliberately drops any
+    // commemoration whose id equals the plain governing weekday.
+    expect(holyMonday.winner).toEqual({ kind: 'temporal', id: 'monday-holy-week' });
+    expect(holyMonday.commemorations).toEqual([{ kind: 'temporal', id: 'palm-sunday' }]);
     expect(holyMonday.transferredAway?.candidate.id).toBe('st-leo-i');
 
     for (const afterLowSunday of ['2033-04-25', '2033-04-26', '2033-04-27', '2033-04-28', '2033-04-29']) {

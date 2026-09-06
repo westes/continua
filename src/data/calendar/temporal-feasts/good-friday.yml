@@ -1,0 +1,18 @@
+# See monday-holy-week.yml / maundy-thursday.yml for the full rationale.
+# Read from web/www/horas/Latin/Tempora/Quad6-5.txt's untagged/default
+# [Officium]/[Rank] blocks -- "Feria Sexta in Parasceve" / "Feria
+# privilegiata Duplex I classis;;7" (the "(rubrica 1955 aut rubrica 196)"
+# variant renames it "Feria Sexta in Passione et Morte Domini" --
+# 1955/1960-reform text this project deliberately doesn't follow, see
+# CLAUDE.md's pre-1955 calendar/rubrics note). "Parasceve" (Greek for
+# "preparation [day]") is the source's own pre-1955 title; "Good Friday"
+# is the standard traditional English name, not a literal translation of
+# it. `rank: duplex-1-classis` per the same real FeastClass-shaped source
+# tag as Maundy Thursday.
+id: good-friday
+name: "Good Friday"
+nameLa: "Feria Sexta in Parasceve"
+rank: duplex-1-classis
+anchor:
+  kind: easter
+  offset: -2

@@ -1,0 +1,13 @@
+# See monday-holy-week.yml for the full rationale (same batch of six
+# files closing the same "Holy Week ferias fall back to Palm Sunday's
+# collect" gap Passion week's own six records already closed for the week
+# before). Read from web/www/horas/Latin/Tempora/Quad6-2.txt's
+# [Officium]/[Rank] header ("Feria Tertia Majoris Hebdomadæ" / "Feria
+# privilegiata;;6.9" -- `rank` omitted for the same reason as its
+# sibling).
+id: tuesday-holy-week
+name: "Tuesday of Holy Week"
+nameLa: "Feria Tertia Majoris Hebdomadæ"
+anchor:
+  kind: easter
+  offset: -5

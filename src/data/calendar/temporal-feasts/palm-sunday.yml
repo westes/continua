@@ -1,0 +1,16 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Quad6-0.txt,
+# untagged/default [Officium]/[Rank] blocks -- "Dominica in Palmis" /
+# "I classis Semiduplex". `resolveTemporalId` (temporal-id.ts) already
+# produces this exact id for this Sunday on its own -- `anchor` here
+# changes nothing `applyMovableFeasts` does (the id it'd assign is already
+# this same string), but lets `calendar/day-label.ts`'s
+# `easterAnchoredFeastFor` find this record too, the same plain-temporal-
+# identity lookup used for the other 13 Passiontide days (independent of
+# `day.winner`) — added 2026-09-06.
+id: palm-sunday
+name: "Palm Sunday"
+nameLa: "Dominica in Palmis"
+rank: semiduplex
+anchor:
+  kind: easter
+  offset: -7

@@ -1,0 +1,129 @@
+# Matins nocturn content for Christ the King (temporalId christ-the-king,
+# Duplex I classis, a 1925 addition -- Pius XI's "Quas Primas"). Sourced
+# from Sancti/10-DU.txt (Latin) / English/Sancti/10-DU.txt (this feast's
+# own real, dedicated reference-engine file, found and confirmed present
+# despite being a later addition), and the Gospel pericope's full text
+# from missa/Latin+English/Sancti/10-DU.txt's own [Evangelium] (the
+# Matins file itself only gives the incipit + "Et réliqua" for Lectio7,
+# per this project's Gospel/homily-split convention).
+#
+# The audit found this id registered in ALWAYS_OVERRIDE_TEMPORAL_IDS,
+# with a real collect/antiphons already authored, but no Matins reading.
+# Real source content for this feast's Matins was in fact found in the
+# reference tree (contrary to the audit's own expectation that it might
+# not exist in a pre-1955-focused reference tree) -- no draft/invented
+# content was needed. Nocturn 1-2 (Lectio1-6: Col 1:3-23, then Pius XI's
+# encyclical "Quas Primas" itself) left unauthored here per this
+# project's convention of leaving Nocturn 1 scripture to the bible-plan
+# store; Nocturn 2's own content (the encyclical excerpt) is left for a
+# later pass rather than folded in here, to keep this file's Gospel+
+# homily structure consistent with the other temporal solemnities closed
+# in this same sweep.
+#
+# Nocturn 3: the Gospel pericope (John 18:33-37) authored in full
+# (isGospel: true), followed by Lectio7's homily portion (incipit
+# dropped) combined with Lectio8 as one continuous excerpt of St.
+# Augustine's own Tractates 51 and 115 on John.
+id: christ-the-king
+readings:
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joann 18:33-37", en: "John 18:33-37" }
+    text:
+      la: >-
+        In illo témpore: Dixit Pilátus ad Jesum: Tu es Rex Judæórum? Respóndit Jesus: A
+        temetípso hoc dicis, an álii dixérunt tibi de me? Respóndit Pilátus: Numquid ego
+        Judǽus sum? Gens tua et pontífices tradidérunt te mihi: quid fecísti? Respóndit
+        Jesus: Regnum meum non est de hoc mundo. Si ex hoc mundo esset regnum meum,
+        minístri mei útique decertárent, ut non tráderer Judǽis: nunc autem regnum meum
+        non est hinc. Dixit ítaque ei Pilátus: Ergo Rex es tu? Respóndit Jesus: Tu dicis,
+        quia Rex sum ego. Ego in hoc natus sum et ad hoc veni in mundum, ut testimónium
+        perhíbeam veritáti: omnis, qui est ex veritáte, audit vocem meam.
+      en: >-
+        At that time, Pilate said to Jesus: Art thou the King of the Jews? Jesus
+        answered: Sayest thou this thing of thyself, or have others told it thee of me?
+        Pilate answered: Am I a Jew? Thine own nation and the chief priests have
+        delivered thee to me: what hast thou done? Jesus answered: My kingdom is not of
+        this world. If my kingdom were of this world, my servants would certainly fight,
+        that I should not be delivered to the Jews: but now my kingdom is not from
+        hence. Pilate therefore said to him: Art thou a king, then? Jesus answered: Thou
+        sayest that I am a king. For this was I born, and for this came I into the
+        world, that I should give testimony to the truth. Every one that is of the
+        truth heareth my voice.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Augustine, Bishop of Hippo, Tractates 51 and 115 on John"
+    text:
+      la: >-
+        Quid magnum fuit Regi sæculórum Regem fíeri hóminum? Non enim Rex Israël
+        Christus ad exigéndum tribútum vel exércitum ferro armándum hostésque
+        visibíliter debellándos; sed Rex Israël, quod mentes regat, quod in ætérnum
+        cónsulat, quod in regnum cælórum credéntes, sperántes amantésque perdúcat. Dei
+        ergo Fílius æquális Patri, Verbum per quod facta sunt ómnia, quod Rex esse
+        vóluit Israël, dignátio est, non promótio; miseratiónis indícium est, non
+        potestátis augméntum. Qui enim appellátus est in terra Rex Judæórum, in cælis
+        est Dóminus Angelórum. Sed Judæórum tantum Rex est Christus, an et géntium?
+        Immo et géntium. Cum enim dixísset in prophetía: Ego autem sum constitútus Rex
+        ab eo super Sion montem sanctum ejus, prǽdicans præcéptum Dómini: ne propter
+        montem Sion solis Judǽis eum regem quisquam díceret constitútum, contínuo
+        subjécit: Dóminus dixit ad me: Fílius meus es tu, ego hódie génui te; póstula a
+        me et dabo tibi gentes hereditátem tuam et possessiónem tuam términos terræ.
+
+
+        Respóndit Jesus: Regnum meum non est de hoc mundo. Si ex hoc mundo esset regnum
+        meum, minístri mei útique decertárent, ut non tráderer Judǽis; nunc autem
+        regnum meum non est hinc. Hoc est quod bonus Magíster scire nos vóluit; sed
+        prius nobis demonstránda fúerat vana hóminum de regno ejus opínio, sive géntium,
+        sive Judæórum a quibus id Pilátus audíerat: quasi proptérea morte fuísset
+        plecténdus, quod illícitum affectáverit regnum, vel quóniam solent regnatúris
+        invidére regnántes, et vidélicet cavéndum erat ne ejus regnum sive Románis, sive
+        Judǽis esset advérsum. Póterat autem Dóminus quod ait, Regnum meum non est de
+        hoc mundo, ad primam interrogatiónem prǽsidis respondére, ubi ei dixit, Tu es
+        rex Judæórum? sed eum vicíssim intérrogans, utrum hoc a semetípso díceret, an
+        audísset ab áliis, illo respondénte osténdere vóluit hoc sibi apud illum fuísse
+        a Judǽis velut crimen objéctum: patefáciens nobis cogitatiónes hóminum, quas
+        ipse nóverat, quóniam vanæ sunt; eísque post responsiónem Piláti, jam Judǽis et
+        géntibus opportúnius aptiúsque respóndens, Regnum meum non est de hoc mundo.
+      en: >-
+        What great matter was it for the King of all worlds to become King of men? For
+        Christ was not King of Israel for exacting of tribute, or arming a host with the
+        sword, and visibly subduing enemies: but King of Israel that he should rule
+        minds, that he should counsel for eternity, that he should bring unto the
+        kingdom of heaven them that believe, hope, and love. Being then, Son of God, the
+        Word by whom all things were made, that it should be his will to be King of
+        Israel is condescension, not preferment, a betokening of mercy, not an
+        increasing of power. For he who was called on earth King of the Jews is in
+        heaven Lord of the Angels. But is Christ King of the Jews only, or also King of
+        the Gentiles? Yea, of the Gentiles also. For when he said in the prophecy: But I
+        am set by him as King upon Sion his holy mountain, preaching the precepts of the
+        Lord, lest on account of the Mount Sion, any should say that he was set as King
+        only of the Jews, he hath straightway subjoined: The Lord hath said unto me,
+        Thou art my Son: this day I have begotten thee. Ask of me, and I shall give thee
+        the heathen for thy inheritance, and the uttermost parts of the earth for thy
+        possession.
+
+
+        Jesus answered: My kingdom is not of this world: if my kingdom were of this
+        world, then would my servants fight, that I should not be delivered to the
+        Jews; but now is my kingdom not from hence. This it is which was the will of our
+        Good Master that we should know: but first we were to be shown the vanity of
+        the opinion concerning his kingdom, entertained by men, whether Gentiles or
+        Jews, from whom Pilate had heard that: as if the reason why he must be punished
+        by death, were that he had affected a kingdom to which he had no right; or
+        because the reigning are wont to look with an evil eye upon those destined to
+        reign; and there were indeed need to beware lest his kingdom should be adverse
+        either to the Romans or the Jews. Now the Lord might have answered at once, My
+        kingdom is not from hence, to the first question put by the Governor, Art thou
+        the King of the Jews? But in putting a question in return, namely, whether he
+        spake this of himself, or had been told it by others, it was his will to show by
+        Pilate's reply that this had been laid up to him as a crime by the Jews in their
+        conference with the Governor: thus laying open to us the thoughts of men, which
+        he knew, that they are vain; and to them, after Pilate's answer, making a reply
+        which was more reasonable and suitable both to Jews and to Gentiles: My kingdom
+        is not of this world.
+    responsory:
+      la: "R. Factum est regnum hujus mundi Dómini nostri et Christi ejus: * Et regnábit in sǽcula sæculórum.\nV. Adorábunt in conspéctu ejus univérsæ famíliæ géntium; quóniam Dómini est regnum.\nR. Et regnábit in sǽcula sæculórum."
+      en: "R. The kingdom of this world has become the kingdom of our Lord, and of his Christ: * and he shall reign for ever and ever.\nV. All the families of the nations shall bow down before him; for dominion is the Lord's.\nR. And he shall reign for ever and ever."
+    status: { la: verified, en: verified }

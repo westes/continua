@@ -1,0 +1,45 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Quad6-6.txt.
+# Matins' own [Oratio Matutinum] on this day is again just
+# `@Tempora/Quad6-4` (the plain Thursday form), but Lauds' own [Oratio 2]
+# --confirmed by cross-referencing the file's structure against Monday/
+# Tuesday/Wednesday's own live-verified pattern, where [Oratio 2] is
+# always the Lauds-and-ordinary-hours collect (see e.g.
+# monday-holy-week-collect.yml's note) -- lengthens the "Christus factus
+# est" versicle to its fullest and final form for the Triduum:
+# `@Tempora/Quad6-4:Oratio:s/usque ad mortem/usque ad mortem, mortem
+# autem crucis: propter quod et Deus exaltávit illum, et dedit illi nomen
+# quod est super omne nomen/`, completing Phil 2:8-9 in full ("...even
+# the death of the Cross: for which cause God also hath exalted Him, and
+# given Him a Name which is above every name"). This is the last and
+# longest stage of the gradual that grew one clause per day through the
+# Triduum (see maundy-thursday-collect.yml / good-friday-collect.yml).
+# Holy Saturday's Office otherwise has no ordinary Vespers of its own at
+# all -- confirmed live (Monastic Tridentinum 1617, 2026-04-04): the
+# engine reports "Vespera de sequenti" (Vespers of the following day),
+# i.e. this evening's Vespers belongs entirely to Easter Sunday's own
+# First Vespers, already modeled at easter-sunday-magnificat-antiphon.yml
+# and reachable via calendar/vespers.ts's own evening-governance
+# mechanism (Easter's Duplex I classis outranks Holy Saturday outright) --
+# so no separate holy-saturday-magnificat-antiphon.yml was authored; that
+# would misrepresent a real historical absence as ordinary content. Not
+# live-cross-checked for this exact silent-conclusion wording (same
+# reason as Thursday/Friday) -- transcribed directly from the raw file.
+id: holy-saturday-collect
+text:
+  la: |
+    V. Christus factus est pro nobis obédiens usque ad mortem, mortem autem crucis: propter quod et Deus exaltávit illum, et dedit illi nomen quod est super omne nomen.
+    Pater noster (secreto).
+    Psalmus 50 (Miserere).
+    Réspice, quǽsumus, Dómine, super hanc famíliam tuam, pro qua Dóminus noster Jesus Christus non dubitávit mánibus tradi nocéntium, et crucis subíre torméntum:
+    Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    (Et sub silentio concluditur.)
+  en: |
+    V. Christ became obedient for us unto death, even the death of the Cross: for which cause God also hath exalted Him, and given Him a Name which is above every name.
+    Our Father (said silently).
+    Psalm 50 (Have mercy on me, O God).
+    Look down, we beseech Thee, O Lord, upon this Thy family, for which our Lord Jesus Christ did not hesitate to be delivered into the hands of wicked men, and to undergo the torment of the Cross:
+    Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end.
+    (And it is concluded in silence.)
+status:
+  la: draft
+  en: draft

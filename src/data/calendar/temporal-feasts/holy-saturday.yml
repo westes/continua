@@ -1,0 +1,21 @@
+# See monday-holy-week.yml / maundy-thursday.yml for the full rationale.
+# Read from web/www/horas/Latin/Tempora/Quad6-6.txt's [Officium]/[Rank] --
+# "Sabbato Sancto" / "Feria privilegiata Duplex I classis;;7". "Sabbato
+# Sancto" (ablative, "on Holy Saturday") is the source's own title;
+# `nameLa` here is given as the nominative noun phrase "Sabbatum Sanctum"
+# per this project's own naming convention (see ascension.yml's note on
+# preferring nominative over the source's prepositional/case-inflected
+# style). `rank: duplex-1-classis` per the same real FeastClass-shaped
+# source tag as Maundy Thursday/Good Friday. Unlike its five siblings
+# here, this record's own evening has no ordinary Vespers of its own at
+# all to worry about overriding -- see holy-saturday-collect.yml's note
+# (live-confirmed "Vespera de sequenti": Easter Sunday's own First
+# Vespers governs this evening outright, same shape as
+# saturday-passion-week.yml's own precedent one week earlier).
+id: holy-saturday
+name: "Holy Saturday"
+nameLa: "Sabbatum Sanctum"
+rank: duplex-1-classis
+anchor:
+  kind: easter
+  offset: -1

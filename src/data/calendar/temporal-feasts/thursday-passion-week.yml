@@ -1,0 +1,12 @@
+# See monday-passion-week.yml for the full rationale (same batch of six
+# files closing the same gap: every feria of Passion week previously fell
+# back wholesale to `passion-sunday`'s own collect/antiphons). Read from
+# web/www/horas/Latin/Tempora/Quad5-4.txt's [Officium]/[Rank] header
+# ("Feria Quinta infra Hebdomadam Passionis" / "Feria major" -- `rank`
+# omitted for the same reason as its sibling).
+id: thursday-passion-week
+name: "Thursday of Passion Week"
+nameLa: "Feria Quinta infra Hebdomadam Passionis"
+anchor:
+  kind: easter
+  offset: -10

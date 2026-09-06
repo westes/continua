@@ -1,0 +1,13 @@
+# Read from the reference engine: Sancti/12-24.txt's own [Officium]/[Rank]
+# -- "In Vigilia Nativitatis Domini" / "Duplex I classis". This id already
+# wins Dec 24 unconditionally (calendar/temporal-id.ts's own fixed-date
+# carve-out, see that file's header), so this record isn't what makes it
+# win -- found missing during a broader audit of every
+# ALWAYS_OVERRIDE_TEMPORAL_IDS entry's display coverage: without it,
+# calendar/day-label.ts's `namedFeast` branch has nothing to look up and
+# Dec 24 falls through to the same generic "Weekday in Christmastide/
+# Advent" phrasing Passiontide's own days did before this pass.
+id: vigil-of-christmas
+name: "Vigil of Christmas"
+nameLa: "Vigilia Nativitatis Domini"
+rank: duplex-1-classis

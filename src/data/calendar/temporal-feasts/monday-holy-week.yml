@@ -1,0 +1,37 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Quad6-1.txt,
+# untagged/default [Officium]/[Rank] blocks -- "Feria Secunda Majoris
+# Hebdomadæ" / "Feria privilegiata;;6.9" (the "(rubrica 1955 aut rubrica
+# 196)" variant renames it "Feria Secunda Hebdomadæ Sanctæ" and reranks it
+# ";;7" -- 1955/1960-reform text this project deliberately doesn't follow,
+# see CLAUDE.md's pre-1955 calendar/rubrics note). Previously not modeled
+# as its own record: `resolveTemporalId` (temporal-id.ts) has no explicit
+# entry for any offset between Palm Sunday (-7) and Easter (0), so every
+# feria of Holy Week fell back wholesale to Palm Sunday's own
+# collect/antiphons -- exactly the same gap the existing
+# monday-passion-week.yml (and its 5 siblings) already closed for Passion
+# week, one week earlier; this file (and its 5 siblings here) closes the
+# same gap for Holy Week, via the same mechanism
+# (`calendar/movable-feasts.ts`'s anchor-based override,
+# `resolve-common.ts`'s `ALWAYS_OVERRIDE_TEMPORAL_IDS`/
+# `getTemporalProperWithFallback`). Live-verified (`resolveDay`,
+# 2026-03-23, the Passion-week analogue) that this pattern correctly
+# produces a `winner.id` of this file's own id plus one `commemorations`
+# entry for the day it displaces (Palm Sunday here, Passion Sunday there)
+# -- not a bug, the same accepted shape Passion week's own six records
+# already ship.
+#
+# `rank` omitted on purpose, same reasoning as monday-passion-week.yml's
+# own "Feria major": this source's own "Feria privilegiata" tag isn't a
+# FeastClass-shaped rank either, so `calendar/movable-feasts.ts`'s
+# `applyMovableFeasts` defaults it to `simplex` for the rank-contest
+# branch (a real Duplex+ saint would still be structurally *possible* to
+# win here on that default) -- but `calendar/types.ts`'s own
+# `privileged-feria-major` category (already covering Palm Sunday through
+# Low Sunday, confirmed 2026-09-01) makes that contest moot in practice:
+# nothing is ever commemorated against Holy Week regardless.
+id: monday-holy-week
+name: "Monday of Holy Week"
+nameLa: "Feria Secunda Majoris Hebdomadæ"
+anchor:
+  kind: easter
+  offset: -6

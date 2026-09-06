@@ -25,7 +25,7 @@ import type { FeastClass, LiturgicalDay, TemporalCategory, Weekday } from './typ
 import { easterSunday } from './easter';
 import { adventStart, firstSundayStrictlyAfter, sundayOnOrBefore } from './temporal';
 import { addDays, daysBetween, toIsoDate } from './date-math';
-import { getTemporalFeastRecord } from './temporal-feasts';
+import { getTemporalFeastRecord, movableTemporalFeasts } from './temporal-feasts';
 import { activeOctavesFor, octaveGoverningPrivilegedDay, resolveActiveOctave, type ActiveOctave } from './octaves';
 import { resolveTemporalId } from './temporal-id';
 
@@ -334,6 +334,29 @@ function trinitytideOverrideLabel(day: LiturgicalDay): Bi | undefined {
   return undefined;
 }
 
+/**
+ * Which Easter-anchored movable-feast record's own `anchor` date exactly
+ * matches `isoDate`, independent of who actually won that day —
+ * `calendar/movable-feasts.ts`'s `applyMovableFeasts` runs this same
+ * match to decide `day.winner`, but `temporalLabel` deliberately doesn't
+ * consult `day.winner` at all (see its own doc comment), so a caller that
+ * only has a plain temporal identity in mind (a saint's own commemoration
+ * line naming what they displaced, `hours/matins.ts`'s `occasionName`)
+ * needs this same lookup done independently. Scoped to `{kind: 'easter'}`
+ * anchors only — the other anchor kinds (`nth-sunday-of-month`, etc.)
+ * have no caller here yet; extend if one needs it.
+ */
+function easterAnchoredFeastFor(isoDate: string): ReturnType<typeof getTemporalFeastRecord> {
+  const year = Number(isoDate.slice(0, 4));
+  const easter = toIsoDate(easterSunday(year));
+  for (const feast of movableTemporalFeasts()) {
+    if (feast.anchor?.kind === 'easter' && addDays(easter, feast.anchor.offset) === isoDate) {
+      return feast;
+    }
+  }
+  return undefined;
+}
+
 /** The plain temporal/Sunday-or-feria name only (ordinal week/season
  * phrasing, e.g. "The Twenty-fourth Sunday after Pentecost"), independent of
  * who actually won the day — i.e. what the day would be called if the
@@ -367,12 +390,27 @@ export function temporalLabel(day: LiturgicalDay): Bi {
           : bi(`${weekdayName.en} in ${name.en} week`, `${weekdayName.la} in ${name.la}`);
       }
     }
-    // No ordinal convention modeled for this season (Passiontide,
-    // Ascensiontide, Pentecost, Christmastide, the Corpus-Christi/Sacred-
-    // Heart single-day seasons) — their few days mostly have their own
-    // proper names rather than ordinal counting, so this fallback is
-    // expected to be seen, not a gap to fill later. No authored Latin
-    // season name exists for these yet, so `la` falls back to the same
+    // Passiontide: every one of the 14 days from Passion Sunday through
+    // Holy Saturday now has its own real temporal-feasts record (fixed
+    // 2026-09-06 — see calendar/movable-feasts.ts's Passiontide override
+    // doc comment), found here independent of `day.winner` via
+    // `easterAnchoredFeastFor`, the same way `resolveTemporalId` above is
+    // used independent of the winner for Septuagesima-tide. This must run
+    // before the generic seasonName fallback below, which is what used to
+    // render every single one of these 14 days as an undifferentiated
+    // "Weekday in Passiontide".
+    if (day.season === 'passiontide') {
+      const feast = easterAnchoredFeastFor(day.date);
+      if (feast) {
+        return biName(feast.name, feast.nameLa);
+      }
+    }
+    // No ordinal convention modeled for this season (Ascensiontide,
+    // Pentecost, Christmastide, the Corpus-Christi/Sacred-Heart single-day
+    // seasons) — their few days mostly have their own proper names rather
+    // than ordinal counting, so this fallback is expected to be seen, not
+    // a gap to fill later. No authored Latin season name exists for these
+    // yet, so `la` falls back to the same
     // English season word.
     const seasonName = capitalize(day.season.replace(/-/g, ' '));
     return bi(`${weekdayName.en} in ${seasonName}`, `${weekdayName.la} in ${seasonName}`);
@@ -551,9 +589,21 @@ function collectCommemorations(
       // at it. Shown via the same plain, rank-free `temporalLabel` a
       // winning Sunday would use for itself.
       if (c.id !== temporalId) {
+        // Ember days first (their own separate small lookup, pre-dating
+        // this one), then any other named temporal identity with a real
+        // `temporal-feasts` record (a Passiontide day, a Vigil, ...) —
+        // added 2026-09-06: found via live-checking St. Gabriel/the
+        // Annunciation winning outright on a Passiontide feria that a
+        // commemoration should still surface a real name for the
+        // commemorated feria couldn't correctly appear at all (this
+        // branch previously only recognized Ember days, silently
+        // dropping every other named temporal commemoration).
         const emberName = emberDayLabel(c.id);
+        const feast = emberName ? undefined : getTemporalFeastRecord(c.id);
         if (emberName) {
           temporal.push(emberName);
+        } else if (feast) {
+          temporal.push(biName(feast.name, feast.nameLa));
         }
       } else if (day.weekday === 'sunday') {
         temporal.push(temporalLabel(day));

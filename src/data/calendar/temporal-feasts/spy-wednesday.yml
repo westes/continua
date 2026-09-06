@@ -1,0 +1,18 @@
+# See monday-holy-week.yml for the full rationale (same batch of six
+# files closing the same "Holy Week ferias fall back to Palm Sunday's
+# collect" gap). Read from
+# web/www/horas/Latin/Tempora/Quad6-3.txt's [Officium]/[Rank] header
+# ("Feria Quarta Majoris Hebdomadæ" / "Feria privilegiata;;6.9" -- `rank`
+# omitted for the same reason as its siblings). English name "Spy
+# Wednesday" is the traditional English title for this day (commemorating
+# Judas's bargain to betray Christ, Matt 26:14-16, read as this day's own
+# Gospel) rather than a literal translation of the Latin -- kept per
+# direct instruction over a plain "Wednesday of Holy Week" for its
+# historical resonance; `nameLa` keeps the source's own literal Latin
+# title.
+id: spy-wednesday
+name: "Spy Wednesday"
+nameLa: "Feria Quarta Majoris Hebdomadæ"
+anchor:
+  kind: easter
+  offset: -4

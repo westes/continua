@@ -1,0 +1,22 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Quad5-0.txt,
+# untagged/default [Officium]/[Rank] blocks -- "Dominica de Passione" /
+# "I classis Semiduplex" (the "(rubrica 1955 aut rubrica 1960)" variant
+# renames it "Dominica I Passionis" -- 1955/1960-reform text this project
+# deliberately doesn't follow, see CLAUDE.md's pre-1955 calendar/rubrics
+# note). `resolveTemporalId` (temporal-id.ts) already produces this exact
+# id for this Sunday on its own -- `anchor` here changes nothing
+# `applyMovableFeasts` does (the id it'd assign is already this same
+# string), but lets `calendar/day-label.ts`'s `easterAnchoredFeastFor`
+# find this record too, the same plain-temporal-identity lookup used for
+# the other 13 Passiontide days (independent of `day.winner`) — added
+# 2026-09-06.
+id: passion-sunday
+name: "Passion Sunday"
+# Ablative-of-respect construction, "the Sunday of/about the Passion" --
+# the reference engine's own nominative title, already a complete noun
+# phrase.
+nameLa: "Dominica de Passione"
+rank: semiduplex
+anchor:
+  kind: easter
+  offset: -14

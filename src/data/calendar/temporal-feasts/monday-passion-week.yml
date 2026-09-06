@@ -1,0 +1,32 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Quad5-1.txt
+# ([Officium]/[Rank] header: "Feria Secunda infra Hebdomadam Passionis" /
+# "Feria major" -- not a FeastClass-shaped rank at all, just a plain
+# privileged feria, so `rank` is deliberately omitted below, same
+# reasoning as every other day in this six-file batch). Previously not
+# modeled as its own record: `resolveTemporalId` already carves out
+# Passiontide as its own season, but every feria from Monday through
+# Saturday of Passion week fell back to reusing `passion-sunday`'s own
+# collect/antiphons wholesale (see `resolve-common.ts`'s
+# `ALWAYS_OVERRIDE_TEMPORAL_IDS` and ``getTemporalProperWithFallback`` for
+# the mechanism this record now plugs into) -- this file (and its five
+# siblings) gives the day a real identity of its own instead.
+#
+# `rank` omitted on purpose (see calendar/types.ts's `FeastClass` --
+# "Feria major" has no equivalent tier): `calendar/movable-feasts.ts`'s
+# `applyMovableFeasts` defaults an anchor record with no `rank` to
+# `simplex`, which is exactly the right behavior here -- on the ordinary
+# case (no real sanctoral winner yet, i.e. `resolvedWinner.kind ===
+# 'temporal'`), this record unconditionally takes over as the day's
+# identity; on the rare case a real Duplex+ saint already outranks a
+# privileged Lenten feria (the separate, pre-existing threshold in
+# `calendar/commemorations.ts`), that saint still wins the rank contest
+# here too and this record is demoted to a mere commemoration, leaving
+# existing precedence behavior for Passion week completely unchanged.
+id: monday-passion-week
+name: "Monday of Passion Week"
+# Nominative form of the reference engine's own title, matching this
+# app's naming convention (see ascension.yml's own note on this).
+nameLa: "Feria Secunda infra Hebdomadam Passionis"
+anchor:
+  kind: easter
+  offset: -13
