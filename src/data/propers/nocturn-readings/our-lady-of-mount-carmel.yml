@@ -4,6 +4,17 @@
 # Lectio7-9 in her own file (only a `Responsory7` cross-reference to
 # `Commune/C11`) -- defers to the Common of the BVM's own Nocturn 3,
 # not transcribed here, same as our-lady-of-the-snows.yml's own note.
+#
+# Checked 2026-09-05 for a missing Gospel pairing: confirmed via
+# horas/Latin/Sancti/07-16.txt directly — the secular file's Rule
+# ("ex C11") gives only Lectio4-6 (this file's Nocturn 2) as proper
+# text, Lectio7-9 aren't present at all, falling wholesale to
+# Commune/C11's own Nocturn 3. horas/Latin/SanctiM/07-16.txt (Monastic
+# track) does carry its own Lectio9 Gospel (Luke 11:27-28) + St.
+# Bernard homily on it, but that whole Lectio9-12 block is tagged
+# "(rubrica cisterciensis)" — a Cistercian-only variant (unsurprising,
+# given St. Bernard), not part of the plain Monastic 1617 track vu
+# otherwise follows — so it's out of scope here. No pairing added.
 id: our-lady-of-mount-carmel
 readings:
   - nocturn: 2

@@ -7,6 +7,14 @@
 # source; per this project's established "first one, when several
 # collapse" convention (see octave-readings.ts), only Responsory4 is
 # kept.
+#
+# Update (2026-09-05): this 9-lesson duplex-majus feast also has its
+# own Nocturn 3 Gospel + homily, added below — Lectio7 (Matt 18:1-10,
+# on becoming as little children) with St. Hilary of Poitiers'
+# homily on it, and Lectio8-9 continuing that same homily (combined
+# into one reading, same "recombine split lessons" convention as
+# elsewhere). Source: web/www/horas/Latin/Sancti/05-08.txt Lectio7-9,
+# English/Sancti/05-08.txt Lectio7-9.
 id: apparition-of-st-michael
 readings:
   - nocturn: 2
@@ -69,4 +77,76 @@ readings:
     responsory:
       la: "R. Hic est Míchaël Archángelus, princeps milítiæ Angelórum, * Cujus honor præstat benefícia populórum, et orátio perdúcit ad regna cælórum.\nV. Archángelus Míchaël præpósitus paradísi, quem honoríficant Angelórum cives.\nR. Cujus honor præstat benefícia populórum, et orátio perdúcit ad regna cælórum."
       en: "R. This is Michael, who to battle leads the armies of the skies; * Whosoever on him calleth blessed within his wardship lies, his a prayer whose voice availing aids from earth toward heaven to rise.\nV. The Archangel Michael is the Vice-Roy of Paradise, and the Angels that are the dwellers therein, do hold him in worship.\nR. Whosoever on him calleth blessed within his wardship lies, his a prayer whose voice availing aids from earth toward heaven to rise."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 18:1-10", en: "Matthew 18:1-10" }
+    text:
+      la: >-
+        In illo témpore: Accessérunt discípuli ad Jesum, dicéntes: Quis, putas, major est in regno
+        cælórum? Et réliqua.
+      en: >-
+        At that time came the disciples unto Jesus, saying: Who is the greatest in the kingdom of
+        heaven? And so on.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Hilary, Bishop of Poitiers, Commentary on Matthew, ch. 18"
+    text:
+      la: >-
+        Nónnisi revérsos in natúram puerórum introíre regnum cælórum Dóminus docet: id est, per
+        simplicitátem puerílem vítia córporum nostrórum animǽque revocánda. Púeros autem,
+        credéntes omnes per audiéntiæ fidem nuncupávit. Hi enim patrem sequúntur, matrem amant,
+        próximo velle malum nésciunt, curam opum négligunt; non insoléscunt, non odérunt, non
+        mentiúntur, dictis credunt, et quod áudiunt, verum habent. Reverténdum ígitur est ad
+        simplicitátem infántium; quia, in ea collocáti, spéciem humilitátis Domínicæ circumferémus.
+
+
+        Væ huic mundo ab scándalis. Humílitas passiónis scándalum mundo est. In hoc enim máxime
+        ignorántia detinétur humána, quod sub deformitáte crucis, ætérnæ glóriæ Dóminum nóluit
+        accípere. Et quid mundo tam periculósum, quam non recepísse Christum? Ideo vero necésse
+        esse ait veníre scándala; quia, ad sacraméntum reddéndæ nobis æternitátis, omnis in eo
+        passiónis humílitas esset explénda.
+
+
+        Vidéte ne contemnátis unum de pusíllis istis, qui credunt in me. Aptíssimum vínculum mútui
+        amóris impósuit, ad eos præcípue qui vere in Dómino credidíssent. Pusillórum enim Angeli
+        quotídie Deum vident: quia Fílius hóminis venit salváre quæ pérdita sunt. Ergo et Fílius
+        hóminis salvat, et Deum Angeli vident, et Angeli pusillórum præsunt fidélium oratiónibus.
+        Præésse Angelos absolúta auctóritas est. Salvatórum ígitur per Christum oratiónes Angeli
+        quotídie Deo ófferunt. Ergo periculóse ille contémnitur, cujus desidéria ac postulatiónes
+        ad ætérnum et invisíbilem Deum, ambitióso Angelórum famulátu ac ministério, pervehúntur.
+      en: >-
+        Unless ye become as little children,” saith the Lord, “ye shall not enter into the kingdom
+        of heaven,” that is, unless by the uprooting of bodily and mental depravity, we bring our
+        souls to the innocency of childhood. But He giveth the name of children to all such as
+        believe by the hearing of faith. Children follow their father, love their mother, know not
+        how to wish evil to their neighbours, are not careful for earthly riches they insult not,
+        they hate not, they lie not, they believe what they are told, and take for truth what they
+        hear. Us then it behoveth to return to the simpleness of little children, for when we are
+        well rooted therein, we shall so far bear about in ourselves an image of the sublime
+        simpleness of the Lord Jesus.
+
+
+        Woe unto the world because of offences. The lowliness of the Passion is an offence unto the
+        world. Such is the state of stupidity to which man's ignorance hath reduced itself, that it
+        turneth away from the Lord of Eternal Glory, because of the unsightliness of the Cross. And
+        what is so certain to bring woe unto the world as to turn away from Christ. And therefore He
+        saith: "It must needs be that offences come," because His fulfilling the lowliness of the
+        Passion was the predestined mean whereby He was to give us eternal life.
+
+
+        Make heed that ye despise not one of these little ones that believe in Me. He hath laid on
+        us a most meet tie to constrain us to love one another, especially such as indeed believe in
+        the Lord. For I say unto you that in heaven their Angels do always behold the face of My
+        Father Which is in heaven. For the Son of Man is come to save that which was lost. From
+        these words we see, first, that the Son of Man saveth secondly, that the Angels do see God
+        and thirdly, that the Angels of these little ones have the wardship over the prayers of the
+        faithful. That the Angels have this wardship is taught us absolutely. The Angels therefore
+        do every day offer to God the prayers which they which are saved do make to Him in the Name
+        of Christ. Therefore it is dangerous for a man to despise them, seeing that these are they by
+        whose watchful service and ministry, his wishes and requests are presented before the throne
+        of the eternal and unseen God.
     status: { la: verified, en: verified }

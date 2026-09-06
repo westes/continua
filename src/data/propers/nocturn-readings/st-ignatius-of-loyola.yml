@@ -4,6 +4,14 @@
 # continuous vita. No Lectio7-9 in his own file (a direct
 # `@Commune/C1a:LectioN` cross-reference) -- not transcribed, per the
 # bare-cross-reference convention.
+#
+# Verified 2026-09-05 (Gospel-pairing sweep): confirmed genuinely absent.
+# Sancti/07-31.txt's own Lectio7-9 are a bare `@Commune/C1a:Lectio7-9`
+# redirection (Common of a Confessor Not a Bishop) with no saint-specific
+# citation or homily text of their own in this file -- there is no proper
+# Gospel+homily for St. Ignatius to author here; Nocturn 3 correctly falls
+# through to the Common of a Confessor's own generic content, already
+# handled by this store's per-Common-category pool.
 id: st-ignatius-of-loyola
 readings:
   - nocturn: 2
