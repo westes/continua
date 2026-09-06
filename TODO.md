@@ -10,7 +10,21 @@ content in the same shape, not a design change. The dated log below is that pipe
 
 ## Open work, in priority order
 
-1. **Mechanism gaps** — none currently open.
+1. **Mechanism gaps**
+   - **2026-09-06 invitatory antiphon questioned** — user flagged today's (2026-09-06)
+     invitatory antiphon as suspect; needs tracing back to its source (override > octave >
+     Common > season > ferial chain in `hours/matins.ts`'s invitatory resolution) to find
+     and fix whatever underlying bug or content problem produced it. Not yet investigated.
+   - **Gospel+homily pairing shouldn't carry a responsory** — user, 2026-09-06: when a Matins
+     Gospel pericope is immediately followed by its own patristic homily (the paired
+     `gospel`/homily rendering — see `hours/matins.ts`'s Gospel+homily-fold-in convention),
+     a responsory is currently still showing, which the user says shouldn't be there in that
+     context. Needs checking which nocturn-readings entries this affects and why the
+     responsory isn't being suppressed for the paired case. Not yet investigated.
+   - **Responsories need a heading label** — user, 2026-09-06: a Matins responsory currently
+     renders with no heading identifying it as such, unlike most other rendered parts (which
+     do have a labeled heading) — confusing for a reader. Needs a UI label (`ui/hour-view.ts`)
+     added for the responsory kind. Not yet investigated.
 
 2. **Minimal-proof-done, bulk content pending** — none currently open.
 
