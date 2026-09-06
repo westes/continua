@@ -28,6 +28,7 @@ import {
   resolveSuffrages,
   isPaschaltide,
 } from './resolve-common';
+import { isAllSouls, buildVespersParts, DAY_LABEL } from './all-souls';
 import vespersDefinitionData from '../data/hours/vespers.yml';
 import vespersAntiphonsData from '../data/hours/vespers-antiphons.yml';
 
@@ -319,6 +320,14 @@ function resolvePart(part: HourPart, day: LiturgicalDay, weekday: Weekday): Reso
 }
 
 export function resolveOrdo(date: string): ResolvedOrdo {
+  // Only Nov 2's own (Second) Vespers is the Office of the Dead — Nov 1
+  // evening stays First Vespers of All Saints unaffected (per user
+  // instruction: All Souls' Day has no First Vespers of its own; keyed on
+  // `date` itself, not resolveEveningDay's possibly-anticipated identity,
+  // since there's no "tomorrow anticipates All Souls" case to handle).
+  if (isAllSouls(date)) {
+    return { hourId: 'vespers', date, parts: buildVespersParts(), dayLabel: DAY_LABEL };
+  }
   // Every part below is an evening-hour concern, same reasoning as
   // Compline — resolves off whichever day's identity actually governs
   // tonight, including the cross-day commemoration folded into

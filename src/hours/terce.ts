@@ -16,6 +16,7 @@ import {
   resolveSelfContainedHymn,
   isFerialOrVigil,
 } from './resolve-common';
+import { isAllSouls, buildTerceParts, DAY_LABEL } from './all-souls';
 import terceDefinitionData from '../data/hours/terce.yml';
 import antiphonsData from '../data/hours/terce-antiphons.yml';
 
@@ -81,6 +82,9 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
 }
 
 export function resolveOrdo(date: string): ResolvedOrdo {
+  if (isAllSouls(date)) {
+    return { hourId: 'terce', date, parts: buildTerceParts(), dayLabel: DAY_LABEL };
+  }
   const day = resolveDay(date);
   const parts = terceDefinition.parts.flatMap((part) => resolvePart(part, day));
   return { hourId: 'terce', date, parts, dayLabel: getDayLabel(day) };

@@ -16,6 +16,7 @@ import {
   resolveSelfContainedHymn,
   isFerialOrVigil,
 } from './resolve-common';
+import { isAllSouls, buildSextParts, DAY_LABEL } from './all-souls';
 import sextDefinitionData from '../data/hours/sext.yml';
 import antiphonsData from '../data/hours/sext-antiphons.yml';
 
@@ -81,6 +82,9 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
 }
 
 export function resolveOrdo(date: string): ResolvedOrdo {
+  if (isAllSouls(date)) {
+    return { hourId: 'sext', date, parts: buildSextParts(), dayLabel: DAY_LABEL };
+  }
   const day = resolveDay(date);
   const parts = sextDefinition.parts.flatMap((part) => resolvePart(part, day));
   return { hourId: 'sext', date, parts, dayLabel: getDayLabel(day) };

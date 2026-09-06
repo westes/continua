@@ -8,6 +8,7 @@ import { getOpeningVersicleId } from './opening-versicle';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { isDoubleOrHigher } from './antiphon';
 import { resolveCommon, appendDoxology, splitNamedAntiphon, openingAntiphon, resolveResponsory } from './resolve-common';
+import { isAllSouls, buildComplineParts, DAY_LABEL } from './all-souls';
 import complineDefinitionData from '../data/hours/compline.yml';
 
 const complineDefinition = complineDefinitionData as HourDefinition;
@@ -113,6 +114,13 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // identity actually governs tonight — see calendar/vespers.ts. Nothing
   // here is date-literal the way Prime's Martyrology is, so there's no
   // need to keep a separate "real" day around.
+  if (isAllSouls(date)) {
+    // Confiteor/Misereatur/Indulgentiam is unaffected by All Souls' Day —
+    // reused directly (same text every day) rather than duplicated in
+    // hours/all-souls.ts; everything after it (psalms onward) is special.
+    const parts: ResolvedPart[] = [{ kind: 'preces', text: resolveCommon('compline-confiteor') }, ...buildComplineParts()];
+    return { hourId: 'compline', date, parts, dayLabel: DAY_LABEL };
+  }
   const day = resolveEveningDay(date);
   const parts = complineDefinition.parts.flatMap((part) => resolvePart(part, day));
   return { hourId: 'compline', date, parts, dayLabel: getDayLabel(day) };

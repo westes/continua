@@ -6,6 +6,7 @@ import { getSaintRecord } from '../calendar/feasts';
 import { resolveActiveOctave, activeOctavesFor, octaveGoverningPrivilegedDay, isAtLeast, isSundayOrFeast } from '../calendar';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { isInTriduum } from '../calendar/temporal';
+import { isAllSouls, REQUIEM_GLORIA_PATRI } from './all-souls';
 import { temporalLabel } from '../calendar/day-label';
 import { splitAntiphon, isDoubleOrHigher } from './antiphon';
 import { getLaudsSaintOverride } from './lauds-psalmody-overrides';
@@ -1133,6 +1134,12 @@ const GLORIA_PATRI: BilingualText = {
 export function resolveGloriaPatri(day: LiturgicalDay): ResolvedText | undefined {
   if (isInTriduum(day.date)) {
     return undefined;
+  }
+  // The Office of the Dead's "Requiem gloria" rubric — All Souls' Day
+  // substitutes "Réquiem ætérnam/Et lux perpétua" for the ordinary Gloria
+  // Patri after every psalm and canticle, all day — see hours/all-souls.ts.
+  if (isAllSouls(day.date)) {
+    return REQUIEM_GLORIA_PATRI;
   }
   return verifiedText(GLORIA_PATRI);
 }
