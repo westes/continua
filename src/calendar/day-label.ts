@@ -320,7 +320,14 @@ function trinitytideOverrideLabel(day: LiturgicalDay): Bi | undefined {
   return undefined;
 }
 
-function temporalLabel(day: LiturgicalDay): Bi {
+/** The plain temporal/Sunday-or-feria name only (ordinal week/season
+ * phrasing, e.g. "The Twenty-fourth Sunday after Pentecost"), independent of
+ * who actually won the day — i.e. what the day would be called if the
+ * temporal cycle were the winner. Exported for callers (e.g.
+ * `hours/matins.ts`'s `occasionName`) that want to name the governing
+ * Sunday/feria without repeating a sanctoral winner's own rank-qualified
+ * label from `getDayLabel`. */
+export function temporalLabel(day: LiturgicalDay): Bi {
   const trinitytideOverride = trinitytideOverrideLabel(day);
   if (trinitytideOverride) {
     return trinitytideOverride;

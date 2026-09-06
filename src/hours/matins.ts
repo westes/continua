@@ -71,7 +71,7 @@ import type { ResolvedOrdo, ResolvedPart, ResolvedText, ResolvedVerse } from './
 import type { LiturgicalDay, DayWinner } from '../calendar/types';
 import { resolveDay, resolveTemporalId, monthWeekId, activeOctavesFor, resolveActiveOctave, isAtLeast } from '../calendar';
 import { isInTriduum } from '../calendar/temporal';
-import { getDayLabel, emberDayLabel } from '../calendar/day-label';
+import { getDayLabel, emberDayLabel, temporalLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getPsalmsFor, type PsalmRef } from '../psalter/distribution';
 import { getScriptureVerses } from '../scripture';
@@ -799,7 +799,12 @@ function occasionName(id: string, day: LiturgicalDay): string | undefined {
   if (named) return named;
   const monthWeek = monthWeekId(day.date);
   if (id === resolveTemporalId(day.date) || (monthWeek && id === `month-week-${monthWeek}`)) {
-    return getDayLabel(day).en;
+    // When a saint (not the temporal day itself) won the day, name the
+    // plain Sunday/feria only — `getDayLabel`'s own text is winner-centric
+    // (the winning saint's full name + rank), which would otherwise get
+    // pointlessly repeated back into its own "(for ...)" annotation, since
+    // the winner's name is already shown elsewhere as the day's heading.
+    return day.winner.kind === 'sanctoral' ? temporalLabel(day).en : getDayLabel(day).en;
   }
   return undefined;
 }
