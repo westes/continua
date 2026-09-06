@@ -271,6 +271,15 @@ function anchorDayName(day: LiturgicalDay, withRank = true): Bi | undefined {
  * Trinity" calculation would produce. */
 const FIXED_LAST_SUNDAY_ORDINAL = 23;
 
+/** The three named Sundays/weeks of Septuagesima-tide, keyed by
+ * `resolveTemporalId`'s own governing-Sunday id — see `temporalLabel`'s
+ * `!config` fallback for why this is needed at all. */
+const SEPTUAGESIMATIDE_NAMES: Record<string, Bi> = {
+  septuagesima: bi('Septuagesima', 'Septuagesima'),
+  sexagesima: bi('Sexagesima', 'Sexagesima'),
+  quinquagesima: bi('Quinquagesima', 'Quinquagesima'),
+};
+
 /**
  * Trinitytide's ordinal display can't be pure "weeks since Trinity's own
  * first Sunday" arithmetic once the season gets late enough — see
@@ -341,13 +350,30 @@ export function temporalLabel(day: LiturgicalDay): Bi {
   const weekdayName = weekdayLabel(day);
   const config = ORDINAL_SEASONS[day.season];
   if (!config) {
-    // No ordinal convention modeled for this season (Septuagesima-tide,
-    // Passiontide, Ascensiontide, Pentecost, Christmastide, the
-    // Corpus-Christi/Sacred-Heart single-day seasons) — their few days
-    // mostly have their own proper names rather than ordinal counting, so
-    // this fallback is expected to be seen, not a gap to fill later. No
-    // authored Latin season name exists for these yet, so `la` falls back
-    // to the same English season word.
+    // Septuagesima-tide's own three named Sundays/weeks (Septuagesima,
+    // Sexagesima, Quinquagesima) all share the single coarse `septuagesima`
+    // `Season` bucket (easter-offsets.yml's ranges only change at Lent), so
+    // `day.season` alone can't tell them apart — falling through to the
+    // generic seasonName branch below named every one of them
+    // "Septuagesima" regardless of which week it actually was. Distinguish
+    // them via `resolveTemporalId`, the same governing-Sunday-offset id the
+    // content layer already keys off, so this can never disagree with what
+    // collect/propers are actually in effect that week.
+    if (day.season === 'septuagesima') {
+      const name = SEPTUAGESIMATIDE_NAMES[resolveTemporalId(day.date)];
+      if (name) {
+        return day.weekday === 'sunday'
+          ? bi(`${name.en} Sunday`, `Dominica in ${name.la}`)
+          : bi(`${weekdayName.en} in ${name.en} week`, `${weekdayName.la} in ${name.la}`);
+      }
+    }
+    // No ordinal convention modeled for this season (Passiontide,
+    // Ascensiontide, Pentecost, Christmastide, the Corpus-Christi/Sacred-
+    // Heart single-day seasons) — their few days mostly have their own
+    // proper names rather than ordinal counting, so this fallback is
+    // expected to be seen, not a gap to fill later. No authored Latin
+    // season name exists for these yet, so `la` falls back to the same
+    // English season word.
     const seasonName = capitalize(day.season.replace(/-/g, ' '));
     return bi(`${weekdayName.en} in ${seasonName}`, `${weekdayName.la} in ${seasonName}`);
   }
