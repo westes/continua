@@ -1,0 +1,101 @@
+# Same source text as matins-hymn-common-of-an-apostle.yml (Commune/
+# C1.txt's own [Hymnus Matutinum] is identical whether one or several
+# apostles are being commemorated) -- duplicated under the plural id
+# because `common: common-of-apostles` (distinct from `common-of-an-
+# apostle`, see calendar/feasts.ts's SaintRecord.common) is what
+# octave-of-ss-peter-and-paul.yml actually carries, mirroring the
+# existing lauds-hymn/capitulum/responsory/versicle-common-of-apostles
+# duplicate-under-plural-id convention.
+id: matins-hymn-common-of-apostles
+text:
+  la: >-
+    Ætérna Christi múnera,
+
+    Apostolórum glóriam,
+
+    Palmas et hymnos débitos
+
+    Lætis canámus méntibus.
+
+
+    Ecclesiárum Príncipes,
+
+    Belli triumpháles duces,
+
+    Cæléstis aulæ mílites,
+
+    Et vera mundi lúmina.
+
+
+    Devóta Sanctórum fides,
+
+    Invícta spes credéntium,
+
+    Perfécta Christi cáritas
+
+    Mundi tyránnum cónterit.
+
+
+    In his Patérna glória,
+
+    In his triúmphat Fílius,
+
+    In his volúntas Spíritus,
+
+    Cælum replétur gáudio.
+
+
+    Patri, simúlque Fílio,
+
+    Tibíque Sancte Spíritus,
+
+    Sicut fuit, sit júgiter
+
+    Sæclum per omne glória. Amen.
+  en: >-
+    Th' eternal gifts of Christ the King,
+
+    The Apostles' glory, let us sing;
+
+    And all with hearts of gladness raise
+
+    Due hymns of thankful love and praise.
+
+
+    For they the Church's princes are,
+
+    Triumphant leaders in the war,
+
+    The heavenly King's own warrior band,
+
+    True lights to lighten every land.
+
+
+    Theirs was the steadfast faith of saints,
+
+    The hope that never yields nor faints,
+
+    The love of Christ in perfect glow,
+
+    That lay the prince of this world low.
+
+
+    In them the Father's glory shone,
+
+    In them the Spirit's will was done,
+
+    The Son himself exults in them;
+
+    Joy fills the new Jerusalem.
+
+
+    Praise to the Father, with the Son,
+
+    And Holy Spirit, Three in One;
+
+    As ever was in ages past,
+
+    And so shall be while ages last. Amen.
+status:
+  la: verified
+  en: verified
