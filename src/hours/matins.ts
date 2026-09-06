@@ -285,17 +285,25 @@ function psalmRefParts(refs: PsalmRef[]): ResolvedPart[] {
   }));
 }
 
-/** The invitatory antiphon's own text — same override > Common-category >
- * seasonal > ferial precedence as `resolveMatinsHymn`, minus the octave
- * tier: no per-octave invitatory-antiphon override exists anywhere in the
- * reference source (unlike the hymn, which genuinely persists all week on
- * some octaves) — an octave day already falls through correctly to its
- * governing saint's own Common/season tier here, so adding an octave tier
- * would have nothing to fire on. Keeps the existing ferial fallback id
- * (`matins-invitatory-antiphon`) as-is rather than renaming it to match
- * the hymn's `-ferial` convention — it's already `verified` and its own
- * header already documents itself as the fallback-of-record; renaming
- * would be pure churn.
+/** The invitatory antiphon's own text — same override > octave > Common-
+ * category > seasonal > ferial precedence as `resolveMatinsHymn`. The
+ * octave tier was originally omitted here on the reasoning that no
+ * per-octave invitatory-antiphon override exists anywhere in the
+ * reference source and an octave day already falls through correctly to
+ * its governing saint's own Common/season tier — true for an *ordinary*
+ * within-octave day, which reuses the original feast's own record as its
+ * winner. It's false for an octave's own literal *closing* day, which is
+ * a wholly separate sanctoral record with its own id (e.g. `all-saints`'s
+ * `octave-of-all-saints`, Nov 8) and a fake `proper-to-*` `common` — that
+ * record's own override lookup misses, there's no real Common to fall
+ * back to, and it used to land on the plain ferial default instead of the
+ * original feast's genuine proper invitatory (live-verified live-CGI
+ * mismatch, 2026-09-06). Restored to match `resolveMatinsHymn`'s tier
+ * exactly, since the underlying gap was the same shape.
+ * Keeps the existing ferial fallback id (`matins-invitatory-antiphon`) as-
+ * is rather than renaming it to match the hymn's `-ferial` convention —
+ * it's already `verified` and its own header already documents itself as
+ * the fallback-of-record; renaming would be pure churn.
  *
  * Doubling (`isDoubleOrHigher`, via `openingAntiphon`) is a separate, final
  * step applied to whichever tier's text wins here — never part of content
@@ -306,6 +314,13 @@ function resolveMatinsInvitatoryText(day: LiturgicalDay): ResolvedText {
     const proper = resolveCommon(`matins-invitatory-${overrideId}`);
     if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
       return proper;
+    }
+  }
+  const octave = resolveActiveOctave(day.date);
+  if (octave) {
+    const octaveInvitatory = resolveCommon(`matins-invitatory-${octave.id}`);
+    if (octaveInvitatory.status.la !== 'missing' || octaveInvitatory.status.en !== 'missing') {
+      return octaveInvitatory;
     }
   }
   const winner = resolveOfficeWinner(day);
