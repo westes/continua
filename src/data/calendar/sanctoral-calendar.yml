@@ -372,12 +372,19 @@ days:
   "10-28": [ss-simon-and-jude]
   "10-31": [vigil-of-all-saints]
   # November — 11/12 of the pre-1955 pull. All Saints' own propers were
-  # backfilled this month (see all-saints-collect.yml). New exclusion
-  # categories this month: All Souls' Day (Nov 2) is a fundamentally
-  # different liturgical genre -- the Office of the Dead, not a saint's
-  # feast at all, no Common-of-Saints structure to fall back on -- out of
-  # scope the same way this app doesn't model the Requiem/funeral rite
-  # anywhere else. Nov 3-7 are pure All-Saints-octave continuations (no
+  # backfilled this month (see all-saints-collect.yml). All Souls' Day
+  # (Nov 2) — a fundamentally different liturgical genre, the Office of
+  # the Dead, not a saint's feast at all — is not modeled through this
+  # sanctoral-calendar/Common-of-Saints table, but is built as a one-off,
+  # hardcoded day: see hours/all-souls.ts, wired into every one of the 8
+  # hours directly (bypassing this file and the whole calendar/
+  # resolve-common machinery for that one date). This is NOT a statement
+  # that the app avoids the Office of the Dead as a genre generally — a
+  # reusable Office-for-the-Dead mechanism (for funerals/anniversaries
+  # beyond just Nov 2) is real wanted future scope, corrected 2026-09-05
+  # after an earlier, wrong assumption to the contrary; see TODO.md and
+  # the vu_office_of_the_dead_scope memory. Nov 3-7 are pure
+  # All-Saints-octave continuations (no
   # named saint). Ss. Four Crowned Martyrs (Nov 8, the octave's own final
   # day) hit the same unmodeled-octave gap as several saints in August/
   # September. The Dedication of the Basilica of the Most Holy Savior

@@ -6318,3 +6318,64 @@ ferial canticle id/split when an override omits it, keeping the override's own a
 category is affected (all author a fixed id already).
 
 `npm test` and `tsc --noEmit` both pass.
+
+### All Souls' Day (Nov 2) — Office of the Dead built (2026-09-05)
+
+Closed the long-standing exclusion noted in `sanctoral-calendar.yml`'s November header ("a
+fundamentally different liturgical genre... not a saint's feast at all"). This first pass is a
+one-off hardcoded day, not a reusable mechanism — **correction, 2026-09-05**: an earlier version
+of this entry and of that YAML comment both claimed the app deliberately avoids modeling the
+Requiem/funeral rite as a genre at all; the user explicitly corrected this after reading the
+initial report — a real, reusable Office-for-the-Dead mechanism (funerals, anniversaries, not
+just Nov 2) is wanted future scope, not out of bounds. Today's `hours/all-souls.ts`
+exports `isAllSouls(date)` (true only for `MM-DD === '11-02'`, every year, never impeded) plus a
+`build{Matins,Lauds,Vespers,Prime,Terce,Sext,None,Compline}Parts()` per hour, and each of the 8
+hour files' own `resolveOrdo` branches to it before any of the normal season/winner/psalmody
+machinery runs. `resolveGloriaPatri` (`hours/resolve-common.ts`) now also special-cases
+`isAllSouls` the same way it already special-cases the Triduum, substituting "Réquiem
+ætérnam/Et lux perpétua" for the ordinary Gloria Patri after every psalm/canticle all day (the
+"Requiem gloria" rubric) — centralized there rather than per-part.
+
+Content sourced from the reference engine's `Commune/C9.txt` ("Officium Defunctorum" — the
+Vespers/Matins/Lauds skeleton: 9 Job/Augustine/1-Corinthians lessons and their own 9
+responsories, the 5 Vespers psalms, Lauds' 5 psalms including the Canticle of Ezechias in place
+of a numbered psalm) plus `Sancti/11-02.txt`'s own specifics (the day's two extra
+Prime/Compline collects, the special Martyrology introduction, the special reduced form of the
+minor hours). Live-verified hour-by-hour against the reference engine's own rendering
+(`command=pray{Hora}`, `version=Rubrics 1960 - 1960`, 2026-11-02) rather than trusting the raw
+per-rubric-conditional source text blind — this caught two things the static files alone would
+have gotten wrong: (1) Lauds' "Ps 222" tag isn't a psalm at all but the reference engine's own
+internal id for the Canticle of Ezechias (Isa 38:10-24, confirmed by live-rendering its actual
+text); (2) Compline's raw `&psalm(233)` 4th special psalm never actually renders under any
+selectable version of the engine (every version either keeps Compline's ordinary Nunc Dimittis
+outright, per genuine Divino Afflatu/Tridentine-1906 rubric, or — under the one version that does
+apply the special reduced Compline — substitutes Nunc Dimittis for that 4th psalm instead) —
+dropped from this app's own content as apparently-dead/unreachable in the source itself, rather
+than invented. (An unrelated false alarm along the way: querying `date=11-2` under the
+"Tridentine 1910"/"Monastic Tridentinum 1617"/"Divino Afflatu - 1954" version strings resolved to
+day 2/3 of the All Saints octave instead of All Souls' Day at all — a reference-engine
+calendar-computation quirk for those specific tracks, not a real liturgical fact; the correctly-
+resolving "Rubrics 1960" render was used as the source of truth for content instead, since the
+actual antiphon/psalm/lesson texts are rubric-track-independent.)
+
+Per user's explicit 2026-09-05 scope decision: all 8 hours get genuinely special content
+(Prime/Terce/Sext/None/Compline included, not just Vespers/Matins/Lauds — confirmed for real via
+the live-verification above, not just assumed), and only Nov 2's own Second Vespers is the
+Office of the Dead (Nov 1 evening stays First Vespers of All Saints, untouched — All Souls' Day
+has no First Vespers of its own). Vespers' Magnificat antiphon reuse of Lauds' own Benedictus
+antiphon ("Ego sum resurrectio et vita") is the one text not independently live-re-verified —
+it's the well-known standard convention for this office's Second Vespers, and the source only
+defines this text once, but flagged here as an inference rather than a direct citation.
+
+New test file `tests/hours/all-souls.test.ts` (all 8 hours, two different years, plus confirming
+Nov 1 First Vespers is unaffected). `npm test` (2046 passed) and `tsc --noEmit` both pass.
+
+**Generalized same day**, per direct user instruction: split into `hours/office-of-the-dead.ts`
+(the reusable engine — Commune C9's own generic content: Vespers/Matins/Lauds psalmody, Nocturn
+1's fixed Job lessons + all 9 responsories, Terce/Sext/None/Compline's bare psalms, the two
+generic collects, `REQUIEM_GLORIA_PATRI`/`CONCLUSIO`; nothing here references a date, so it's
+usable for a future funeral/anniversary occasion) and a thinned `hours/all-souls.ts` (only Nov
+2's own specifics: Matins' Augustine/1-Cor Lessons 4-9 override, the Martyrology introduction,
+Prime/Compline's own day-specific collects). No new calendar trigger added — still only Nov 2
+exercises this. All 8 hour files' wiring unchanged; full suite (2051 passed) and `tsc --noEmit`
+both still pass with no behavior change.
