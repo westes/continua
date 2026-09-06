@@ -919,6 +919,48 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
         : { kind: 'lesson', text: { text: r.text, status: r.status, citation: r.citation }, responsory, label },
     );
   }
+  // An active octave's own Matins reading (`data/propers/octave-
+  // readings/*.yml`) is a direct Scripture excerpt, not patristic homily
+  // commentary — the same kind of content as the bible-plan readings
+  // just pushed above, not the winner's/commemorations' own homiletic
+  // pool below. Placed here, right after the bible-plan block and ahead
+  // of everything else, rather than appended at the very end (where it
+  // sat before 2026-09-05) — user, 2026-09-05, re: Nov 8 2026 (All
+  // Saints' octave closing day): the Ezekiel reading there read as
+  // misplaced trailing after the day's other homilies. Previously it was
+  // also the *last* thing sorted (matching the day-label's own
+  // winner/temporal/sanctoral/octave ordering), but that convention is
+  // for commemoration *priority*, not for what kind of reading this is —
+  // Scripture stays grouped with Scripture. Note this shifts the pool's
+  // own position-0/1/2+ split (see distributeIntoNocturns): an octave
+  // reading now competes for the Nocturn 1/2 "exactly one reading" slots
+  // the same as anything else at this position, potentially displacing
+  // what would otherwise have landed there.
+  for (const octave of activeOctavesFor(date)) {
+    const reading = getOctaveReading(octave.id, octave.dayNumber);
+    if (reading) {
+      // Unlike nocturn-readings' `source` (a plain, non-bilingual string —
+      // see `withOccasion`'s own doc comment), an octave reading's `source`
+      // is itself `{la, en}` (2026-08 fix). The occasion name is still a
+      // single plain string either way, so it's appended to both language
+      // slots rather than routed through `withOccasion`.
+      const occasion = occasionName(octave.id, day);
+      const label = occasion
+        ? {
+            la: reading.source.la ? `${reading.source.la} (for ${occasion})` : reading.source.la,
+            en: reading.source.en ? `${reading.source.en} (for ${occasion})` : reading.source.en,
+          }
+        : reading.source;
+      parts.push({
+        kind: 'lesson',
+        text: { text: reading.text, status: reading.status },
+        label,
+        responsory: reading.responsory
+          ? { text: reading.responsory, status: { la: 'verified', en: 'verified' } }
+          : undefined,
+      });
+    }
+  }
   const ids = nocturnReadingIds(day, temporalId, date, threeNocturns);
   // Ordering is by *id priority* (winner first, then commemorations in
   // `day.commemorations` order — a winning saint's own content always
@@ -1001,31 +1043,6 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
   });
   for (const key of sortedGroupKeys) {
     parts.push(...byGroup.get(key)!);
-  }
-  for (const octave of activeOctavesFor(date)) {
-    const reading = getOctaveReading(octave.id, octave.dayNumber);
-    if (reading) {
-      // Unlike nocturn-readings' `source` (a plain, non-bilingual string —
-      // see `withOccasion`'s own doc comment), an octave reading's `source`
-      // is itself `{la, en}` (2026-08 fix). The occasion name is still a
-      // single plain string either way, so it's appended to both language
-      // slots rather than routed through `withOccasion`.
-      const occasion = occasionName(octave.id, day);
-      const label = occasion
-        ? {
-            la: reading.source.la ? `${reading.source.la} (for ${occasion})` : reading.source.la,
-            en: reading.source.en ? `${reading.source.en} (for ${occasion})` : reading.source.en,
-          }
-        : reading.source;
-      parts.push({
-        kind: 'lesson',
-        text: { text: reading.text, status: reading.status },
-        label,
-        responsory: reading.responsory
-          ? { text: reading.responsory, status: { la: 'verified', en: 'verified' } }
-          : undefined,
-      });
-    }
   }
   return parts;
 }
