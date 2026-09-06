@@ -280,8 +280,10 @@ const FIXED_LAST_SUNDAY_ORDINAL = 23;
  * a second time, so the label can never disagree with what's actually
  * rendered underneath):
  *   - A resumed post-Epiphany Sunday/week (an overflow year's skipped
- *     Epiphany Sundays, reappearing here) — reads "after Epiphany", not
- *     the next Trinity-counted number in line.
+ *     Epiphany Sundays, reappearing here) — reads "after Epiphany,
+ *     resumed", not the next Trinity-counted number in line and not a
+ *     bare "after Epiphany" (which would look identical to an ordinary,
+ *     in-season post-Epiphany Sunday).
  *   - The fixed final Sunday/week of the year itself — always the fixed
  *     23rd-after-Trinity ordinal (see FIXED_LAST_SUNDAY_ORDINAL above),
  *     every year, not just overflow ones.
@@ -301,8 +303,11 @@ function trinitytideOverrideLabel(day: LiturgicalDay): Bi | undefined {
   if (epiphanyMatch) {
     const n = Number(epiphanyMatch[1]);
     return day.weekday === 'sunday'
-      ? bi(`The ${ordinal(n)} Sunday after Epiphany`, `Dominica ${ordinalLa(n)} post Epiphaniam`)
-      : bi(`${weekdayName.en} in the ${ordinal(n)} week after Epiphany`, `${weekdayName.la} in hebdomada ${ordinalLa(n)} post Epiphaniam`);
+      ? bi(`The ${ordinal(n)} Sunday after Epiphany, resumed`, `Dominica ${ordinalLa(n)} post Epiphaniam, resumpta`)
+      : bi(
+          `${weekdayName.en} in the ${ordinal(n)} week after Epiphany, resumed`,
+          `${weekdayName.la} in hebdomada ${ordinalLa(n)} post Epiphaniam, resumpta`,
+        );
   }
 
   if (id === 'post-pentecost-24') {

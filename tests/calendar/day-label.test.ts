@@ -112,7 +112,7 @@ describe('getDayLabel — ordinal temporal label', () => {
 });
 
 describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => {
-  it('labels a resumed Sunday/weekday as "after Epiphany", not the next Trinity-counted number', () => {
+  it('labels a resumed Sunday/weekday as "after Epiphany, resumed", not the next Trinity-counted number', () => {
     // Not 2026 any more: the November sanctoral pull gave fixed real
     // content to Nov 8 (Octave Day of All Saints, Duplex majus) and Nov
     // 15 (St. Albert the Great, Duplex) -- both now permanently win
@@ -126,7 +126,7 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // trailing after the Sunday's own winning label per this app's usual
     // winner-first display.
     expect(getDayLabel(resolveDay('2024-11-10')).en).toBe(
-      'The 5th Sunday after Epiphany (Semiduplex) — Ss. Tryphon, Respicius, and Nympha, Martyrs',
+      'The 5th Sunday after Epiphany, resumed (Semiduplex) — Ss. Tryphon, Respicius, and Nympha, Martyrs',
     );
     // 2024-11-11 is St. Martin of Tours (Duplex, pre-existing content) --
     // an ordinary (non-privileged) Monday fully yields to a real winning
@@ -141,7 +141,7 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
       'St. Martin of Tours, Bishop and Confessor (Duplex Majus) — St. Menna, Martyr',
     );
     expect(getDayLabel(resolveDay('2024-11-17')).en).toBe(
-      "The 6th Sunday after Epiphany (Semiduplex) — St. Gregory Thaumaturgus, Bishop and Confessor (transferred away)",
+      "The 6th Sunday after Epiphany, resumed (Semiduplex) — St. Gregory Thaumaturgus, Bishop and Confessor (transferred away)",
     );
     // 2024-11-18 is the Dedication of the Basilicas of Ss. Peter and Paul
     // (pre-existing fixed content) -- again a real winning saint, not the
@@ -157,7 +157,7 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // stretch, is genuinely clean (no sanctoral entry, no commemoration)
     // -- covers the ferial "Monday in the Nth week after Epiphany" format
     // itself, independent of the specific 5th/6th Sunday pair above.
-    expect(getDayLabel(resolveDay('2035-10-29')).en).toBe('Monday in the 3rd week after Epiphany (Feria)');
+    expect(getDayLabel(resolveDay('2035-10-29')).en).toBe('Monday in the 3rd week after Epiphany, resumed (Feria)');
   });
 
   it('the fixed final Sunday of the year always shows the fixed 23rd-after-Trinity ordinal, not a raw elapsed-week count', () => {
