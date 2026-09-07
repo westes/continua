@@ -120,7 +120,6 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
           ${renderCitation(part.text, languages)}
           ${renderColumns(part.text, languages)}
           ${part.source ? `<p class="ordo-part-citation">${escapeHtml(part.source)}</p>` : ''}
-          ${part.responsory ? `<div class="ordo-part-responsory">${renderColumns(part.responsory, languages)}</div>` : ''}
           ${
             part.homily
               ? `
@@ -131,6 +130,7 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
           `
               : ''
           }
+          ${part.responsory ? `<div class="ordo-part-responsory">${renderColumns(part.responsory, languages)}</div>` : ''}
         </section>
       `;
     case 'psalm': {
