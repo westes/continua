@@ -74,7 +74,7 @@ describe('Lauds psalmody override (duplex-majus+ sanctoral, and Marian Saturday)
   it("drops the Holy Cross and Blessed Virgin Mary suffrages on Our Lady's Saturday (the latter redundant with the day's already-Marian office; the former because Marian Saturday isn't a bare ferial office either), keeping Joseph, Apostles, and Peace", () => {
     const ordo = resolveOrdo('lauds', '2026-07-04');
     const labels = ordo.parts.filter((p) => p.kind === 'preces' && p.label).map((p) => (p.kind === 'preces' ? p.label : undefined));
-    expect(labels).toEqual(['Of St. Joseph', 'Of the Holy Apostles Peter and Paul', 'For Peace', 'Salve Regina']);
+    expect(labels).toEqual(['Commemoration of St. Joseph', 'Commemoration of the Holy Apostles Peter and Paul', 'For Peace', 'Salve Regina']);
   });
 
   it("substitutes Christ the King's own proper psalmody and office bundle, and omits the suffrages entirely (Duplex I. classis)", () => {
@@ -113,10 +113,10 @@ describe('Lauds psalmody override (duplex-majus+ sanctoral, and Marian Saturday)
     expect(commemorations.length).toBe(2);
 
     const SUFFRAGE_LABELS = new Set([
-      'Of the Holy Cross',
-      'Of the Blessed Virgin Mary',
-      'Of St. Joseph',
-      'Of the Holy Apostles Peter and Paul',
+      'Commemoration of the Holy Cross',
+      'Commemoration of the Blessed Virgin Mary',
+      'Commemoration of St. Joseph',
+      'Commemoration of the Holy Apostles Peter and Paul',
       'For Peace',
     ]);
     const suffrages = ordo.parts.filter((p) => p.kind === 'preces' && p.label && SUFFRAGE_LABELS.has(p.label));

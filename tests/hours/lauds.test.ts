@@ -613,16 +613,16 @@ describe('resolveOrdo("lauds", ...)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const labels = ordo.parts.filter((p) => p.kind === 'preces' && p.label).map((p) => (p.kind === 'preces' ? p.label : undefined));
     expect(labels).toEqual([
-      'Of the Holy Cross',
-      'Of the Blessed Virgin Mary',
-      'Of St. Joseph',
-      'Of the Holy Apostles Peter and Paul',
+      'Commemoration of the Holy Cross',
+      'Commemoration of the Blessed Virgin Mary',
+      'Commemoration of St. Joseph',
+      'Commemoration of the Holy Apostles Peter and Paul',
       'For Peace',
       'Salve Regina',
     ]);
   });
 
-  it('drops "Of the Holy Cross" -- not a bare ferial office -- on a plain Sunday and on a low-rank saint\'s own winning day, unlike an ordinary feria', () => {
+  it('drops "Commemoration of the Holy Cross" -- not a bare ferial office -- on a plain Sunday and on a low-rank saint\'s own winning day, unlike an ordinary feria', () => {
     // St. Clare (Simplex) doesn't win outright (Lawrence's octave keeps
     // her to a commemoration -- see calendar/index.ts's applyOctaves), so
     // use St. Lawrence's own vigil day instead, or just check a Sunday.
@@ -630,14 +630,14 @@ describe('resolveOrdo("lauds", ...)', () => {
     const sundayLabels = sunday.parts
       .filter((p) => p.kind === 'preces' && p.label)
       .map((p) => (p.kind === 'preces' ? p.label : undefined));
-    expect(sundayLabels).not.toContain('Of the Holy Cross');
-    expect(sundayLabels).toContain('Of the Blessed Virgin Mary');
-    expect(sundayLabels).toContain('Of St. Joseph');
+    expect(sundayLabels).not.toContain('Commemoration of the Holy Cross');
+    expect(sundayLabels).toContain('Commemoration of the Blessed Virgin Mary');
+    expect(sundayLabels).toContain('Commemoration of St. Joseph');
   });
 
   it('omits the suffrages on a Double-or-higher feast', () => {
     const ordo = resolveOrdo('lauds', '2026-08-10'); // St. Lawrence, Duplex II. classis
-    const crossSuffrage = ordo.parts.find((p) => p.kind === 'preces' && p.label === 'Of the Holy Cross');
+    const crossSuffrage = ordo.parts.find((p) => p.kind === 'preces' && p.label === 'Commemoration of the Holy Cross');
     expect(crossSuffrage).toBeUndefined();
   });
 
@@ -646,7 +646,7 @@ describe('resolveOrdo("lauds", ...)', () => {
     const christmastide = resolveOrdo('lauds', '2026-12-30'); // plain day within the Christmas Octave
     const passiontide = resolveOrdo('lauds', '2026-03-23'); // Monday of Passion Week
     for (const ordo of [advent, christmastide, passiontide]) {
-      expect(ordo.parts.some((p) => p.kind === 'preces' && p.label === 'Of the Holy Cross')).toBe(false);
+      expect(ordo.parts.some((p) => p.kind === 'preces' && p.label === 'Commemoration of the Holy Cross')).toBe(false);
       expect(ordo.parts.some((p) => p.kind === 'preces' && p.label === 'For Peace')).toBe(false);
     }
   });

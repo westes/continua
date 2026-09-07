@@ -883,10 +883,10 @@ export function getDayCollects(day: LiturgicalDay, hour: 'lauds' | 'vespers'): R
 
 const SUFFRAGE_IDS = ['lauds-suffrage-cross', 'lauds-suffrage-bvm', 'lauds-suffrage-joseph', 'lauds-suffrage-apostles', 'lauds-suffrage-peace'];
 const SUFFRAGE_LABELS: Record<string, string> = {
-  'lauds-suffrage-cross': 'Of the Holy Cross',
-  'lauds-suffrage-bvm': 'Of the Blessed Virgin Mary',
-  'lauds-suffrage-joseph': 'Of St. Joseph',
-  'lauds-suffrage-apostles': 'Of the Holy Apostles Peter and Paul',
+  'lauds-suffrage-cross': 'Commemoration of the Holy Cross',
+  'lauds-suffrage-bvm': 'Commemoration of the Blessed Virgin Mary',
+  'lauds-suffrage-joseph': 'Commemoration of St. Joseph',
+  'lauds-suffrage-apostles': 'Commemoration of the Holy Apostles Peter and Paul',
   'lauds-suffrage-peace': 'For Peace',
 };
 
