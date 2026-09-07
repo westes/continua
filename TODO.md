@@ -20,6 +20,14 @@ content in the same shape, not a design change. The dated log below is that pipe
    - Audio ("read it to me"): a button per hour/text that plays the office aloud, e.g. via
      the Web Speech API (stays offline-first). Open questions: bilingual (La/En) voice
      selection, Latin pronunciation quality. Needs its own design pass first.
+   - User-editable calendar: let a user pick/override which saints actually contest a
+     given date, rather than only vu's own shipped `sanctoral-calendar.yml`. Motivating
+     case (2026-09): `ss-eustace-and-companions.yml` is fully authored but deliberately
+     left out of the calendar because his Duplex would permanently outrank the Vigil of
+     St. Matthew (`vigil-of-st-matthew.yml`, rank `vigil`) on Sep 20 — exactly the kind of
+     judgment call a user might want to make differently for their own calendar instead of
+     vu holding one fixed answer. See `vu_future_user_editable_calendar` memory for other
+     content already authored ahead of this feature existing.
 
 Everything below is the dated build log this priority list is drawn from.
 

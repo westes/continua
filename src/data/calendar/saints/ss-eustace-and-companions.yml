@@ -1,0 +1,33 @@
+# Found during the whole-year audit (2026-09) for saints hiding behind a
+# suffixed-filename Monastic winner: the base 1570 Kalendarium points
+# Sep 20's real Monastic 1617 winner at the Vigil of St. Matthew
+# (`vigil-of-st-matthew.yml`), but the plain `Sancti/09-20.txt` file
+# independently belongs to Ss. Eustace and Companions, Duplex under the
+# Divino Afflatu 1954 track -- genuinely his real historical date (not a
+# mislabeled-file case the way St. Alphonsus/St. Ephraim were).
+#
+# DELIBERATELY NOT WIRED INTO sanctoral-calendar.yml. Duplex unconditionally
+# outranks a plain Vigil (rank `vigil`) under this app's own FeastClass
+# scale in every temporal category Sep 20 can fall in (ordinary Sunday,
+# the movable September Ember Saturday, or a plain feria -- all clear a
+# Duplex threshold), so adding him here would make the Vigil of St.
+# Matthew lose outright and become a bare commemoration every single
+# year, not just occasionally. Content authored and ready (own real
+# Lectio4-6 vita in the source; no proper [Oratio] of his own, so
+# collectCommon/collectName point at the Common of Several Martyrs
+# template, same construction as ss-placid-and-companions.yml) in case a
+# future decision (e.g. a user-editable calendar, or accepting the
+# vigil's demotion after all) wants to add "09-20": [vigil-of-st-matthew,
+# ss-eustace-and-companions] later.
+id: ss-eustace-and-companions
+name: "Ss. Eustace and Companions, Martyrs"
+nameLa: "Sancti Eustachius et Socii, Martyres"
+rank: duplex
+common: common-of-several-martyrs
+propers: null
+collectCommon: collect-c3a
+collectName:
+  la: ["Eustáchii", "Sociórum ejus"]
+  en: ["Eustace", "his companions"]
+minorHoursCommon: common-of-several-martyrs
+benedictusCommon: common-of-several-martyrs

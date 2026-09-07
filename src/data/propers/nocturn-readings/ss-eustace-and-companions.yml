@@ -1,0 +1,78 @@
+# Matins Nocturn 2 reading for Ss. Eustace and Companions, Martyrs
+# (Sep 20). Sourced from web/www/horas/Latin/Sancti/09-20.txt,
+# English/Sancti/09-20.txt. Lectio4-6 combined into one reading, one
+# continuous vita, no genuine source break. Nocturn 3 (Lectio7-8) is a
+# direct `@Commune/C3:LectioN in 2 loco` cross-reference, not this
+# saint's own content -- not transcribed, per the bare-cross-reference
+# convention (see e.g. st-peter-of-alcantara.yml).
+#
+# NOT currently reachable in the app -- ss-eustace-and-companions.yml is
+# deliberately not wired into sanctoral-calendar.yml (see that file's own
+# header for why). Authored anyway per this app's "import available
+# content even if it may not survive the final calendar" convention.
+id: ss-eustace-and-companions
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Eustáchius, qui et Plácidus, génere, opibus et militári glória inter Romános
+        insígnis, sub Trajáno imperatóre magístri mílitum títulum méruit. Cum vero sese
+        aliquándo in venatióne exercéret ac fugiéntem miræ magnitúdinis cervum insequerétur,
+        vidit repénte inter consisténtis feræ córnua excélsam atque fulgéntem Christi Dómini
+        e cruce pendéntis imáginem. Cujus voce ad immortális vitæ prǽdam invitátus, una cum
+        uxóre Theopista ac duóbus párvulis fíliis Agapíto et Theopísto, christiánæ milítiæ
+        nomen dedit.
+
+
+        Mox ad visiónis prístinæ locum, sicut ei Dóminus præcéperat, regréssus, illum
+        prænuntiántem audívit quanta sibi deínceps, pro ejus glória, perferénda essent.
+        Quocírca incredíbiles calamitátes mira patiéntia perpéssus, brevi in summam
+        egestátem redáctus est. Cumque clam se subdúcere cogerétur, in itínere cónjugem
+        primum, deínde étiam líberos sibi miserabíliter ereptos ingémuit. Tantis obvolútus
+        ærúmnis, in regióne longínqua villícum agens longo témpore delítuit, donec, cæléstis
+        voce recreátus ac nova occasióne a Trajáno conquisítus, íterum bello præfícitur.
+
+
+        Illa in expeditióne, líberis simul cum uxóre insperáto recéptis, victor Urbem
+        ingénti ómnium gratulatióne ingréditur. Sed paulo post inánibus diis pro parta
+        victória sacrificáre jussus, constantíssime rénuit. Cumque váriisártibus ad Christi
+        fidem ejuráre frustra tentarétur, una cum uxóre et líberis, leónibus objícitur.
+        Horum mansuetúdine concitátus imperátor, ǽneum in taurum subjéctis flammis candéntem
+        eos immítti jubet, ubi divínis in láudibus consummáto martýrio, duodécimo Kaléndas
+        Octóbris ad sempitérnam felicitátem convolárunt. Quorum illǽsa córpora, religióse a
+        fidélibus sepúlta, póstmodum ad ecclésiam eórum nómine eréctam honorífice translata
+        sunt.
+      en: >-
+        Eustace, who was also called Placidus, was distinguished among the Romans by birth,
+        wealth, and military glory, and under the Emperor Trajan earned the title of Master
+        of the Soldiers. One day, while he was engaged in hunting and pursuing a stag of
+        wondrous size as it fled, he suddenly saw, standing between the beast's antlers, a
+        lofty and shining image of Christ the Lord hanging upon the cross. Called by its
+        voice to the pursuit of everlasting life, he enrolled himself in the Christian army,
+        together with his wife Theopista and his two young sons, Agapitus and Theopistus.
+
+
+        Soon after, returning to the place of his first vision, as the Lord had commanded
+        him, he heard Him foretell how much he would afterward have to endure for His glory.
+        And so, enduring incredible calamities with wondrous patience, he was in a short time
+        reduced to the depths of poverty. Being forced to withdraw secretly, he mourned along
+        the way first the loss of his wife, and then, most pitifully, of his children as
+        well, torn from him. Wrapped in such great afflictions, he lived hidden for a long
+        time in a distant region, working as a farm steward, until, comforted by a voice from
+        heaven and sought out again by Trajan on a new occasion, he was once more placed in
+        command of an army.
+
+
+        On that campaign, having unexpectedly recovered his wife and children together, he
+        returned victorious to the City amid the great rejoicing of all. But shortly
+        afterward, when he was ordered to sacrifice to false gods for the victory he had won,
+        he most steadfastly refused. And when he was tried in vain by various devices to make
+        him renounce the faith of Christ, he was thrown to the lions together with his wife
+        and children. The emperor, provoked by the lions' gentleness toward them, ordered
+        them to be shut up in a bronze bull heated red-hot by fire placed beneath it, where,
+        their martyrdom completed amid divine praises, they flew away to everlasting
+        happiness on the twelfth day before the Kalends of October. Their bodies, found
+        unharmed, were reverently buried by the faithful, and afterward honorably translated
+        to a church built in their name.
+    status: { la: verified, en: verified }

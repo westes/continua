@@ -8,8 +8,21 @@
 # Office-vs-Mass distinction anywhere, so here it simply transfers per the
 # ordinary privileged-feria/vigil rule instead, a known, already-accepted
 # simplification (not specific to this saint) rather than a guess. No
-# unique collect: the raw file at this MM-DD slot (Sancti/09-20.txt) is
-# empty.
+# unique collect of its own here.
+#
+# Correction (2026-09): the raw file at this MM-DD slot
+# (Sancti/09-20.txt) is NOT empty as previously claimed here -- it's Ss.
+# Eustace and Companions' own real content (Duplex, genuine Lectio4-6
+# vita), his actual historical date in both the Tridentine and Divino
+# Afflatu calendars, not a mislabeled file. Authored as
+# ss-eustace-and-companions.yml but deliberately left out of
+# sanctoral-calendar.yml: his Duplex unconditionally outranks this
+# Vigil's own bare `vigil` rank in every temporal category Sep 20 can
+# fall in, so adding him would make this vigil lose outright and become a
+# bare commemoration every year, not occasionally -- judged too large a
+# demotion for a vigil specifically (2026-09 user decision) even though
+# it's the historically accurate outcome. See ss-eustace-and-companions.yml's
+# own header for the full reasoning.
 id: vigil-of-st-matthew
 name: "Vigil of St. Matthew"
 nameLa: "Vigilia Sancti Matthæi"
