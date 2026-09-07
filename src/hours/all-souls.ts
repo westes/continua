@@ -2,6 +2,7 @@ import type { ResolvedPart, ResolvedText } from './types';
 import { getMartyrologyEntryFor } from '../martyrology';
 import * as office from './office-of-the-dead';
 import { v, versicle, type Bilingual, type LessonText } from './office-of-the-dead';
+import { isAllSouls } from '../calendar/day-label';
 
 /**
  * All Souls' Day (Nov 2) — the Office of the Dead, layered on top of the
@@ -30,16 +31,9 @@ import { v, versicle, type Bilingual, type LessonText } from './office-of-the-de
  * that verification caught (Lauds' "Ps 222" tag, Compline's dropped 4th
  * special psalm).
  */
-export function isAllSouls(date: string): boolean {
-  return date.slice(5) === '11-02';
-}
+export { isAllSouls };
 
 export const REQUIEM_GLORIA_PATRI = office.REQUIEM_GLORIA_PATRI;
-
-export const DAY_LABEL: Bilingual = {
-  la: 'In Commemoratióne Ómnium Fidélium Defunctórum',
-  en: "The Commemoration of All Souls' Day",
-};
 
 // ---------------------------------------------------------------------
 // Matins — Lessons 4-9 are All Souls' Day's own substitution for the

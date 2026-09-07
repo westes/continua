@@ -153,6 +153,16 @@ function weekdayLabel(day: LiturgicalDay): Bi {
   return WEEKDAY_LABELS[day.weekday];
 }
 
+/** All Souls' Day (Nov 2) — the Office of the Dead. This is a pure
+ * hour-level override (see hours/all-souls.ts), with no calendar-level
+ * winner/octave of its own, so without the `getDayLabel` check that uses
+ * this, Nov 2 falls through to the calendar's real answer — "Second day
+ * within the Octave of All Saints" — which is calendar-accurate but not
+ * what's actually being prayed that day. */
+export function isAllSouls(date: string): boolean {
+  return date.slice(5) === '11-02';
+}
+
 interface OrdinalSeason {
   /** ISO date of the season's own anchor day, for a given calendar year. */
   anchorDate(year: number): string;
@@ -728,6 +738,20 @@ function withTransferNote(day: LiturgicalDay, label: Partial<Record<string, stri
  * already use.
  */
 export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>> {
+  if (isAllSouls(day.date)) {
+    // Rank: the reference engine's Sancti/11-02.txt carries two [Rank]
+    // entries — plain "Duplex" and, gated behind `rubrica 196` (the 1960
+    // rubrics reform), "I. classis". vu's rubric baseline is Divino
+    // Afflatu 1954, predating that reform, so plain "Duplex" applies.
+    // No octave: the same source file lists "Commemoratio" among what's
+    // omitted this day (`Omit Incipit Hymnus Capitulum Lectio Preces
+    // Commemoratio Suffragium`) — every commemoration is suppressed
+    // outright, including All Saints' still-active octave — so, unlike
+    // the namedFeast branch below, there's no `collectCommemorations`
+    // call here at all.
+    const rank = formatRank('duplex');
+    return bi(`All Souls' Day (${rank.en})`, `In Commemoratióne Ómnium Fidélium Defunctórum (${rank.la})`);
+  }
   if (day.winner.kind === 'sanctoral') {
     // Octaves only ride along here on `ordinary-feria` — a day with real
     // standing of its own (a Sunday, a privileged feria) doesn't mention

@@ -28,7 +28,7 @@ import {
   resolveSuffrages,
   isPaschaltide,
 } from './resolve-common';
-import { isAllSouls, buildLaudsParts, DAY_LABEL } from './all-souls';
+import { isAllSouls, buildLaudsParts } from './all-souls';
 import laudsDefinitionData from '../data/hours/lauds.yml';
 import laudsAntiphonsData from '../data/hours/lauds-antiphons.yml';
 
@@ -422,7 +422,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
 
 export function resolveOrdo(date: string): ResolvedOrdo {
   if (isAllSouls(date)) {
-    return { hourId: 'lauds', date, parts: buildLaudsParts(), dayLabel: DAY_LABEL };
+    return { hourId: 'lauds', date, parts: buildLaudsParts(), dayLabel: getDayLabel(resolveDay(date)) };
   }
   const day = resolveDay(date);
   const parts = laudsDefinition.parts.flatMap((part) => resolvePart(part, day));

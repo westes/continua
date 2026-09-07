@@ -106,7 +106,7 @@ import matinsSundayNamedOverridesData from '../data/hours/matins-sunday-named-no
 import matinsFerialAntiphonsData from '../data/hours/matins-ferial-antiphons.yml';
 import matinsFerialNamedOverridesData from '../data/hours/matins-ferial-named-antiphon-overrides.yml';
 import type { Weekday } from '../calendar/types';
-import { isAllSouls, buildMatinsParts, DAY_LABEL } from './all-souls';
+import { isAllSouls, buildMatinsParts } from './all-souls';
 
 type BilingualText = Partial<Record<string, string>>;
 interface SundayGroup {
@@ -1097,7 +1097,7 @@ function distributeIntoNocturns(pool: ResolvedPart[], nocturnCount: number): Res
 
 export function resolveOrdo(date: string): ResolvedOrdo {
   if (isAllSouls(date)) {
-    return { hourId: 'matins', date, parts: buildMatinsParts(), dayLabel: DAY_LABEL };
+    return { hourId: 'matins', date, parts: buildMatinsParts(), dayLabel: getDayLabel(resolveDay(date)) };
   }
   const day = resolveDay(date);
   const winner = resolveOfficeWinner(day);

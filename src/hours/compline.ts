@@ -8,7 +8,7 @@ import { getOpeningVersicleId } from './opening-versicle';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { isDoubleOrHigher } from './antiphon';
 import { resolveCommon, appendDoxology, splitNamedAntiphon, openingAntiphon, resolveResponsory } from './resolve-common';
-import { isAllSouls, buildComplineParts, DAY_LABEL } from './all-souls';
+import { isAllSouls, buildComplineParts } from './all-souls';
 import complineDefinitionData from '../data/hours/compline.yml';
 
 const complineDefinition = complineDefinitionData as HourDefinition;
@@ -120,7 +120,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     // reused directly (same text every day) rather than duplicated in
     // hours/all-souls.ts; everything after it (psalms onward) is special.
     const parts: ResolvedPart[] = [{ kind: 'preces', text: resolveCommon('compline-confiteor') }, ...buildComplineParts()];
-    return { hourId: 'compline', date, parts, dayLabel: DAY_LABEL };
+    return { hourId: 'compline', date, parts, dayLabel: getDayLabel(resolveEveningDay(date)) };
   }
   const day = resolveEveningDay(date);
   const parts = complineDefinition.parts.flatMap((part) => resolvePart(part, day));

@@ -2,7 +2,7 @@ import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart, ResolvedText
 import type { LiturgicalDay, Weekday } from '../calendar/types';
 import { resolveEveningDay } from '../calendar/vespers';
 import { weekdayOf } from '../calendar/weekday';
-import { resolveActiveOctave } from '../calendar';
+import { resolveActiveOctave, resolveDay } from '../calendar';
 import { getSaintRecord } from '../calendar/feasts';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
@@ -28,7 +28,7 @@ import {
   resolveSuffrages,
   isPaschaltide,
 } from './resolve-common';
-import { isAllSouls, buildVespersParts, DAY_LABEL } from './all-souls';
+import { isAllSouls, buildVespersParts } from './all-souls';
 import vespersDefinitionData from '../data/hours/vespers.yml';
 import vespersAntiphonsData from '../data/hours/vespers-antiphons.yml';
 
@@ -327,7 +327,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // `date` itself, not resolveEveningDay's possibly-anticipated identity,
   // since there's no "tomorrow anticipates All Souls" case to handle).
   if (isAllSouls(date)) {
-    return { hourId: 'vespers', date, parts: buildVespersParts(), dayLabel: DAY_LABEL };
+    return { hourId: 'vespers', date, parts: buildVespersParts(), dayLabel: getDayLabel(resolveDay(date)) };
   }
   // Every part below is an evening-hour concern, same reasoning as
   // Compline — resolves off whichever day's identity actually governs

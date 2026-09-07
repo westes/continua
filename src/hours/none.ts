@@ -16,7 +16,7 @@ import {
   resolveSelfContainedHymn,
   isFerialOrVigil,
 } from './resolve-common';
-import { isAllSouls, buildNoneParts, DAY_LABEL } from './all-souls';
+import { isAllSouls, buildNoneParts } from './all-souls';
 import noneDefinitionData from '../data/hours/none.yml';
 import antiphonsData from '../data/hours/none-antiphons.yml';
 
@@ -84,7 +84,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
 
 export function resolveOrdo(date: string): ResolvedOrdo {
   if (isAllSouls(date)) {
-    return { hourId: 'none', date, parts: buildNoneParts(), dayLabel: DAY_LABEL };
+    return { hourId: 'none', date, parts: buildNoneParts(), dayLabel: getDayLabel(resolveDay(date)) };
   }
   const day = resolveDay(date);
   const parts = noneDefinition.parts.flatMap((part) => resolvePart(part, day));

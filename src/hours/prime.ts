@@ -20,7 +20,7 @@ import {
   isSundayOrFeastOffice,
   resolveResponsory,
 } from './resolve-common';
-import { isAllSouls, buildPrimeParts, DAY_LABEL } from './all-souls';
+import { isAllSouls, buildPrimeParts } from './all-souls';
 import primeDefinitionData from '../data/hours/prime.yml';
 import antiphonsData from '../data/hours/prime-antiphons.yml';
 
@@ -145,7 +145,7 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
 
 export function resolveOrdo(date: string): ResolvedOrdo {
   if (isAllSouls(date)) {
-    return { hourId: 'prime', date, parts: buildPrimeParts(date), dayLabel: DAY_LABEL };
+    return { hourId: 'prime', date, parts: buildPrimeParts(date), dayLabel: getDayLabel(resolveDay(date)) };
   }
   const day = resolveDay(date);
   const parts = primeDefinition.parts.flatMap((part) => resolvePart(part, date, day));
