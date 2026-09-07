@@ -1,0 +1,31 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/02-06.txt` --
+# ";;Duplex;;3;;vide C4". Same MM-DD slot St. Dorothea's own file already
+# occupies (Monastic 1617 track, Simplex) -- both are kept here, generous-
+# commemoration style, with Titus's own higher Duplex rank winning
+# outright and Dorothea riding along as a commemoration (reusing her
+# existing st-dorothea-commemoration.yml, which was already authored and
+# already in the commemoration-sweep test list before this addition).
+#
+# Titus is a Scriptural/apostolic-age figure -- a companion and delegate
+# of St. Paul (2 Cor 2:12-13, 7:5-7; Titus 1:4-5), first bishop of Crete
+# by the Apostle's own appointment (Lectio4-6). His cultus is ancient (the
+# source's own Lectio6 notes his name is entered in the Roman Martyrology
+# on Jan 4, its own historical feast day, with Pius IX only later
+# extending the feast to the universal Church) -- so CLAUDE.md's late-
+# canonization rank-deflation rule does not apply here; his source rank
+# (Duplex) is used as given.
+#
+# Own proper [Oratio]; no [Ant 1] of its own in the source (a plain "vide
+# C4" cross-reference), so the Benedictus antiphon falls back to Common of
+# a Confessor Bishop (C4), same family as st-ephraim-of-syria.yml's
+# fallback target.
+id: st-titus
+name: "St. Titus, Bishop and Confessor"
+nameLa: "Sanctus Titus, Episcopus et Confessor"
+rank: duplex
+common: common-of-a-confessor-bishop
+propers: "st-titus"
+minorHoursCommon: common-of-a-confessor-bishop
+benedictusCommon: common-of-a-confessor-bishop

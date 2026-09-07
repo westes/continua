@@ -41,6 +41,21 @@ describe('June sanctoral pull (first pass)', () => {
     expect(ids).toEqual(['conversion-of-st-paul', 'ss-peter-and-paul', 'commemoration-of-st-paul']);
   });
 
+  it("St. Juliana Falconieri (Divino Afflatu's own occupant of this MM-DD slot, added alongside Ss. Gervase and Protase; her canonization postdates ~1600 so her source Duplex rank is deflated one tier to semiduplex per CLAUDE.md) still wins outright over their Simplex, commemorating them instead", () => {
+    const day = resolveDay('2035-06-19');
+    expect(day.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-juliana-falconieri',
+      name: 'St. Juliana Falconieri, Virgin',
+      nameLa: 'Sancta Juliana de Falconeriis, Virgo',
+      rank: 'semiduplex',
+    });
+    expect(getDayCollect(day).status.en).toBe('verified');
+    expect(day.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'ss-gervase-and-protase', name: 'Ss. Gervase and Protase, Martyrs', nameLa: 'Sancti Gervasius et Protasius, Martyres', rank: 'simplex' },
+    ]);
+  });
+
   it('the Nativity of St. John the Baptist wins outright at Duplex I. classis, distinct from his Vigil the day before', () => {
     const vigil = resolveDay('2035-06-23');
     const nativity = resolveDay('2035-06-24');

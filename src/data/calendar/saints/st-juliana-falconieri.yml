@@ -1,0 +1,36 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/06-19.txt` --
+# ";;Duplex;;3;;vide C6a" (Common of Virgins only -- not a martyr). Same
+# MM-DD slot Ss. Gervase and Protase's own file already occupies
+# (Monastic 1617 track, Simplex) -- both are kept here, generous-
+# commemoration style, with Juliana's own higher rank winning outright
+# and Gervase/Protase riding along as a commemoration (reusing their
+# existing ss-gervase-and-protase-commemoration.yml, which was already
+# authored and already in the commemoration-sweep test list before this
+# addition).
+#
+# Foundress of the Servite Third Order (the "Mantellate"), canonized 1737
+# by Clement XII (source's own Lectio6: "Clemens vero duodecimus ...
+# sanctárum Vírginum catálogo adscripsit"). Her canonization postdates
+# ~1600, so per CLAUDE.md's "Not a reconstruction" rank-deflation rule,
+# her nominal source rank (Duplex) is deflated one FeastClass tier down
+# to semiduplex -- same treatment as st-rose-of-lima.yml (canonized
+# 1671). semiduplex still outranks Gervase and Protase's Simplex, so she
+# still wins the day outright even after deflation.
+#
+# Own proper [Oratio] and a proper Hymnus Vespera/Matutinum (Cæléstis
+# Agni núptias) shared between Vespers and Matins -- not modeled here
+# (vu's hour builders don't yet have a mechanism for a saint's own proper
+# hymn text distinct from the Common's, tracked generally in TODO.md, not
+# specific to this saint). No [Ant 1] of its own in the source, so
+# Benedictus/minor hours fall back to the plain Common of a Virgin (C6a),
+# same as st-rose-of-lima.yml.
+id: st-juliana-falconieri
+name: "St. Juliana Falconieri, Virgin"
+nameLa: "Sancta Juliana de Falconeriis, Virgo"
+rank: semiduplex
+common: common-of-a-virgin
+propers: "st-juliana-falconieri"
+minorHoursCommon: common-of-a-virgin
+benedictusCommon: common-of-a-virgin

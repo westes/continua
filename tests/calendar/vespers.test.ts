@@ -92,18 +92,22 @@ describe('resolveEveningDay', () => {
   });
 
   it('a higher-ranked today keeps its own Second Vespers against a lower-ranked tomorrow, even below the old duplex-2-classis floor', () => {
-    // Feb 5, 2026: St. Agatha (Semiduplex) vs. Feb 6's St. Dorothea
-    // (Simplex). Agatha outranks Dorothea, so Agatha should keep her own
-    // evening even though Semiduplex never cleared the old fixed
-    // duplex-2-classis floor -- the real "De Concurrentia Officii" rule is a
-    // direct comparison against tomorrow's rank, not a fixed threshold on
-    // today alone. Originally reported by the user 2026-08-31 against Aug
-    // 31/Sep 1 (St. Raymond Nonnatus vs. St. Giles); re-pointed at this pair
-    // once St. Giles was dropped from the Sept 1 calendar (2026-09-01).
-    const day = resolveEveningDay('2026-02-05');
-    expect(day.date).toBe('2026-02-05');
-    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-agatha' });
-    expect(day.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'st-dorothea', vespersNote: 'tomorrow' }));
+    // Jan 22, 2026: Ss. Vincent and Anastasius (Semiduplex) vs. Jan 23's
+    // St. Emerentiana (Simplex). Vincent and Anastasius outrank
+    // Emerentiana, so they should keep their own evening even though
+    // Semiduplex never cleared the old fixed duplex-2-classis floor -- the
+    // real "De Concurrentia Officii" rule is a direct comparison against
+    // tomorrow's rank, not a fixed threshold on today alone. Originally
+    // reported by the user 2026-08-31 against Aug 31/Sep 1 (St. Raymond
+    // Nonnatus vs. St. Giles); re-pointed at Feb 5/Feb 6 (St. Agatha vs.
+    // St. Dorothea) once St. Giles was dropped from the Sept 1 calendar
+    // (2026-09-01), then re-pointed again here once St. Titus was added
+    // alongside St. Dorothea on Feb 6, outranking Agatha outright
+    // (2026-09-07).
+    const day = resolveEveningDay('2026-01-22');
+    expect(day.date).toBe('2026-01-22');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'ss-vincent-and-anastasius' });
+    expect(day.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'st-emerentiana', vespersNote: 'tomorrow' }));
   });
 
   it('an exact rank tie goes to tomorrow, per the rubric\'s tie-break', () => {

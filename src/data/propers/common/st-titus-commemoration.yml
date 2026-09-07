@@ -1,0 +1,36 @@
+# Standard de-Communi commemoration for common-of-a-confessor-bishop
+# (`[Ant 2]`+`[Versum 2]` from the reference engine's Commune files, same
+# pattern st-alphonsus-liguori-commemoration.yml/st-francis-de-sales-
+# commemoration.yml use). St. Titus has no proper antiphon of his own in
+# the source (a plain "vide C4" reference), so this reuses the Common's
+# own text, marked `draft` per this app's "prefer draft over missing"
+# convention. Collect is his own real proper (st-titus-collect.yml),
+# unchanged. Needed for the rare case Feb 6 falls on a day that outranks
+# him (e.g. a Sunday), demoting him to a commemoration alongside Dorothea.
+id: st-titus-commemoration
+text:
+  la: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Deus, qui beátum Titum Confessórem tuum atque Pontíficem apostólicis virtútibus
+    decorásti: ejus méritis et intercessióne concéde; ut juste et pie vivéntes in hoc
+    sǽculo, ad cæléstem pátriam perveníre mereámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Ant. Well done, thou good and faithful servant * thou hast been faithful over a few things, I will make thee ruler over many things, saith the Lord.
+    V. The Lord led the just through the right ways:
+    R. And showed him the kingdom of God.
+    Let us pray.
+    O God, Who didst adorn thy blessed Confessor and Bishop Titus with apostolic virtues:
+    grant, by his merits and intercession, that living justly and devoutly in this world,
+    we may be found worthy to come to our heavenly Fatherland.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity
+    of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: draft
+  en: draft

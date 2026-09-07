@@ -6,16 +6,19 @@ import { getDayCollect } from '../../src/hours/resolve-common';
 // Feb 14/Feb 15 specifically, clear of the movable Ash-Wednesday-adjacent
 // ferias too) — see data/calendar/saints/*.yml for per-saint source detail.
 describe('February sanctoral pull (first pass)', () => {
-  it('a saint with a proper collect but no proper antiphon wins outright, antiphon missing', () => {
-    const day = resolveDay('2029-02-06'); // St. Dorothea
+  it("St. Titus (Divino Afflatu's own occupant of this MM-DD slot, added alongside St. Dorothea) wins outright at Duplex over Dorothea's Simplex, commemorating her instead", () => {
+    const day = resolveDay('2029-02-06');
     expect(day.winner).toEqual({
       kind: 'sanctoral',
-      id: 'st-dorothea',
-      name: 'St. Dorothea, Virgin and Martyr',
-      nameLa: 'Sancta Dorothea, Virgo et Martyr',
-      rank: 'simplex',
+      id: 'st-titus',
+      name: 'St. Titus, Bishop and Confessor',
+      nameLa: 'Sanctus Titus, Episcopus et Confessor',
+      rank: 'duplex',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
+    expect(day.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'st-dorothea', name: 'St. Dorothea, Virgin and Martyr', nameLa: 'Sancta Dorothea, Virgo et Martyr', rank: 'simplex' },
+    ]);
   });
 
   it('a saint with a proper antiphon but no proper collect resolves the collect via its Common category (collectCommon), not missing', () => {
