@@ -7,6 +7,7 @@ import { isAllSouls } from '../calendar/day-label';
 import { resolveDay, resolveActiveOctave } from '../calendar';
 import { getSaintRecord } from '../calendar/feasts';
 import { getOctaveReading } from '../propers/octave-readings';
+import { getBookIncipit } from '../propers/bible-book-incipits';
 
 /**
  * All Souls' Day (Nov 2) — the Office of the Dead, layered on top of the
@@ -66,6 +67,11 @@ const AUGUSTINE_LESSONS: LessonText[] = [
 const CORINTHIANS_LESSONS: LessonText[] = [
   {
     citation: { la: '1 Cor 15:12-22', en: '1 Cor 15:12-22' },
+    // Only this first of the three lessons gets the incipit — matching
+    // Sancti/11-02.txt's own convention (its Lectio7 carries "De Epístola
+    // prima beáti Pauli Apóstoli ad Corínthios" before the citation;
+    // Lectio8/9, continuing the same epistle, don't repeat it).
+    label: getBookIncipit('1cor'),
     la: 'Si Christus prædicátur quod resurréxit a mórtuis, quómodo quidam dicunt in vobis, quóniam resurréctio mortuórum non est? Si autem resurréctio mortuórum non est: neque Christus resurréxit. Si autem Christus non resurréxit, inánis est ergo prædicátio nostra, inánis est et fides vestra: invenímur autem et falsi testes Dei: quóniam testimónium díximus advérsus Deum quod suscitáverit Christum, quem non suscitávit, si mórtui non resúrgunt. Nam si mórtui non resúrgunt, neque Christus resurréxit. Quod si Christus non resurréxit, vana est fides vestra: adhuc enim estis in peccátis vestris. Ergo et qui dormiérunt in Christo, periérunt. Si in hac vita tantum in Christo sperántes sumus, miserabilióres sumus ómnibus homínibus. Nunc autem Christus resurréxit a mórtuis primítiæ dormiéntium, quóniam quidem per hóminem mors, et per hóminem resurréctio mortuórum. Et sicut in Adam omnes moriúntur, ita et in Christo omnes vivificabúntur.',
     en: 'Now if Christ be preached, that he arose again from the dead, how do some among you say, that there is no resurrection of the dead? But if there be no resurrection of the dead, then Christ is not risen again. And if Christ be not risen again, then is our preaching vain, and your faith is also vain. Yea, and we are found false witnesses of God: because we have given testimony against God, that he hath raised up Christ; whom he hath not raised up, if the dead rise not again. For if the dead rise not again, neither is Christ risen again. And if Christ be not risen again, your faith is vain, for you are yet in your sins. Then they also that are fallen asleep in Christ, are perished. If in this life only we have hope in Christ, we are of all men most miserable. But now Christ is risen from the dead, the firstfruits of them that sleep: For by a man came death, and by a man the resurrection of the dead. And as in Adam all die, so also in Christ all shall be made alive.',
   },

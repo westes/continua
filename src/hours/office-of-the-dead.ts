@@ -2,6 +2,7 @@ import type { ResolvedPart, ResolvedText, ResolvedVerse } from './types';
 import { getPsalmVerses } from '../psalter';
 import { applyFlexaMark } from './antiphon';
 import { resolveCommon } from './resolve-common';
+import { getBookIncipit } from '../propers/bible-book-incipits';
 
 /**
  * The Office of the Dead ("Officium Defunctorum") — the reusable engine
@@ -69,6 +70,16 @@ export interface LessonText {
   citation: Bilingual;
   la: string;
   en: string;
+  /** The traditional "Léctio libri..."/"A reading from..." incipit — only
+   * on the first of several consecutive lessons drawn from the same
+   * source (matching the reference engine's own convention: Sancti/
+   * 11-02.txt's own Lectio7 carries this line before its citation, while
+   * Lectio8/9, continuing the same epistle, don't repeat it). Omitted
+   * (rather than defaulted from `citation`) for lessons whose source
+   * isn't a plain scripture book, e.g. a patristic homily's own
+   * author+work citation already reads fine under the generic "Reading"
+   * heading. */
+  label?: Bilingual;
 }
 
 interface ResponsorySpec {
@@ -99,6 +110,7 @@ function lessonPart(nocturn: number, lesson: LessonText, responsory: ResponsoryS
     kind: 'lesson',
     text: v(lesson.la, lesson.en, lesson.citation),
     nocturn,
+    label: lesson.label,
     source: lesson.citation.en,
     responsory: responsoryText(responsory),
   };
@@ -161,6 +173,7 @@ const NOCTURN3_VERSICLE = versicle(
 const NOCTURN1_LESSONS: [LessonText, ResponsorySpec][] = [
   [
     { citation: { la: 'Job 7:16-21', en: 'Job 7:16-21' },
+      label: getBookIncipit('job'),
       la: 'Parce mihi, Dómine; nihil enim sunt dies mei. Quid est homo, quia magníficas eum? aut quid appónis erga eum cor tuum? Vísitas eum dilúculo, et súbito probas illum. Usquequo non parcis mihi, nec dimíttis me, ut glútiam salívam meam? Peccávi, quid fáciam tibi, o custos hóminum? quare posuísti me contrárium tibi, et factus sum mihimetípsi gravis? Cur non tollis peccátum meum, et quare non aufers iniquitátem meam? Ecce nunc in púlvere dórmiam: et, si mane me quæsíeris, non subsístam.',
       en: "Spare me, for my days are nothing. What is a man that thou shouldst magnify him? or why dost thou set thy heart upon him? Thou visitest him early in the morning, and thou provest him suddenly. How long wilt thou not spare me, nor suffer me to swallow down my spittle? I have sinned: what shall I do to thee, O keeper of men? why hast thou set me opposite to thee, and I am become burdensome to myself? Why dost thou not remove my sin, and why dost thou not take away my iniquity? Behold now I shall sleep in the dust: and if thou seek me in the morning, I shall not be." },
     { r: 'Credo quod Redémptor meus vivit, et in novíssimo die de terra surrectúrus sum,',
