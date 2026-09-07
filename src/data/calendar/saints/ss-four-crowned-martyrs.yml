@@ -1,0 +1,30 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query):
+# `web/www/horas/Latin/Sancti/11-08r.txt`. Suffixed filename, found via the
+# 2026-09 "sweep every suffixed MM-DDx.txt file for a hidden saint" pass
+# (memory vu-suffixed-file-sweep). A real kalendarium entry, not a bare
+# alternate: `Tabulae/Kalendaria/1570.txt` lists "11-08=11-08~11-08r=In
+# Octava Omnium Sanctorum=3=Ss. Quatuor Coronatorum Martyrum=1=" -- they
+# are the day's secondary commemoration under the Octave of All Saints'
+# own primary occupant on the Tridentine track. No `SanctiM/11-08*` file
+# exists at all -- they never had a place in the Monastic 1617 calendar.
+#
+# [Rank] gives "Simplex;;vide C3" (default) / "Commemoratio;;vide C3"
+# (Cistercian rubric variant, an even lower tier) -- Simplex used here,
+# their real historical rank, ancient Roman martyrs, no deflation cause.
+#
+# [Rule]'s own literal "vide C3" points at the Martyr-*Pontiff* common,
+# which doesn't fit these five laymen (soldiers and sculptors) -- but
+# `Latin/Commune/C3a.txt` is itself a bare `@Commune/C3` alias (same text
+# either way, same class of naming quirk already flagged in
+# st-canute.yml's header for C2/C2a) -- mapped to vu's existing
+# `common-of-several-martyrs`, same id already used for ss-marius-martha-
+# audifax-and-abachum.yml.
+id: ss-four-crowned-martyrs
+name: "Ss. Four Crowned Martyrs"
+nameLa: "Sancti Quatuor Coronáti Mártyres"
+rank: simplex
+common: common-of-several-martyrs
+propers: "ss-four-crowned-martyrs"
+minorHoursCommon: common-of-several-martyrs
+benedictusCommon: common-of-several-martyrs

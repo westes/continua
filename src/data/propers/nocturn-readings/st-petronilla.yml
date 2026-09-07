@@ -1,0 +1,55 @@
+# Matins Nocturn 2 reading for St. Petronilla, Virgin (May 31). Sourced
+# from web/www/horas/Latin/Sancti/05-31o.txt (Lectio2-3, its only two
+# lessons -- "1 et 2 lectiones", no Lectio1 of her own), combined into one
+# continuous vita. Latin lightly normalized from the source's own OCR
+# typos/orthographic slips (e.g. "furgere"->"súrgere", "conuiuis"->
+# "convíviis", "recides"->"récidit", "adamauit"->"adamávit",
+# "subuenic"->"subvénit") but otherwise the source's own text, so kept
+# `verified`. English/Sancti/05-31o.txt carries only the bare [Officium]
+# name -- no vita translation at all -- so the English below is this
+# project's own translation of the Latin, marked `draft` accordingly, same
+# convention as st-canute.yml's nocturn reading.
+id: st-petronilla
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Petronílla, sancti Petri fília, virgo forma córporis exímia, sed ánimi pulchritúdine
+        multo præstántior fuit: quæ ægróta cum esset, a beáto Petro quæsítum est, cur, qui
+        aliénos sanáret, fíliæ suæ sanitátem non restitúeret? Respóndit: quia sic éxpedit
+        ei. Verúmtamen, ut némini de sua potestáte dubitándi locum relínqueret, eam súrgere
+        jussit e lecto, et convíviis ministráre. Quæ paulo post in eúndem morbum récidit; ex
+        eo cum áliquando conváluisset, ejus fama commótus, ne visam quidem, Fláccus Comes
+        adamávit, eníxeque conténdit, ut sibi darétur in matrimónium.
+
+
+        Petronílla autem intéllegens virginitáti suæ, quam Jesu Christo dicáverat, ab
+        acérrimo humáni géneris hoste parári insídias; sumpto sibi tridui spátio ad
+        deliberándum, totum illud tempus in jejúniis et oratióne consúmpsit, allídue petens
+        a cælésti sponso, ne sancto propósito suo vim afférri paterétur: itaque subvénit die
+        tértio vírgini Deus: nam eam divíni sponsi amóre flagrántem, ubi Eucharístiam
+        sumpsísset, ad cæléstes núptias evocávit. Cujus corpus in via Ardeatína sepúltum,
+        póstea a Paulo primo pontífice in basílicam Príncipis Apostolórum translátum est.
+      en: >-
+        Petronilla, daughter of St. Peter, was a virgin of exceptional bodily beauty, but
+        far more excellent in the beauty of her soul. When she was ill, it was asked of
+        blessed Peter why he, who healed others, did not restore health to his own
+        daughter. He answered: because it is expedient for her thus. Nevertheless, so that
+        none might have occasion to doubt his power, he bade her rise from her bed and wait
+        upon the guests at table. Not long after she fell back into the same sickness; and
+        when she had at length recovered from it, Count Flaccus, stirred by the fame of her
+        beauty though he had not even seen her, fell in love with her, and earnestly strove
+        that she might be given him in marriage.
+
+
+        But Petronilla, understanding that snares were being laid by the bitterest enemy of
+        mankind against the virginity which she had dedicated to Jesus Christ, took for
+        herself a space of three days for deliberation, and spent that whole time in
+        fasting and prayer, constantly beseeching her heavenly Bridegroom not to allow
+        violence to be done to her holy resolve. And so on the third day God came to the
+        virgin's aid: for, burning with love of her divine Spouse, as soon as she had
+        received the Eucharist, he called her to the heavenly nuptials. Her body was buried
+        on the Ardeatine Way, and afterward was translated by Pope Paul I into the basilica
+        of the Prince of the Apostles.
+    status: { la: verified, en: draft }

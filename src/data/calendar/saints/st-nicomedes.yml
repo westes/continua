@@ -1,0 +1,27 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query):
+# `web/www/horas/Latin/Sancti/09-15cc.txt`. Suffixed filename, found via the
+# 2026-09 "sweep every suffixed MM-DDx.txt file for a hidden saint" pass
+# (memory vu-suffixed-file-sweep). A real kalendarium entry, not a bare
+# alternate: `Tabulae/Kalendaria/1570.txt` lists "09-15=09-15t~09-15cc=In
+# Octava Nativitatis Beatae Mariae Virginis=3=S. Nicomedis=1=" -- Nicomedes
+# is the day's secondary commemoration under the Nativity-of-the-BVM
+# octave's own primary occupant on the Tridentine track. No `SanctiM/
+# 09-15cc.txt` exists (only `09-15`/`09-15t`/`09-15b`, all unrelated to
+# Nicomedes) -- he never had a place in the Monastic 1617 calendar.
+#
+# [Rank] gives "Simplex;;vide C2a" (default) / "Commemoratio;;vide C2a"
+# (Cistercian rubric variant, an even lower tier) -- Simplex used here, his
+# real historical rank, no deflation cause (an ancient Roman martyr, feast
+# already ancient by the time of the Tridentine reform).
+#
+# C2a = Common of a Martyr not a Pontiff -- vu's `common-of-a-martyr`, same
+# mapping already established for st-gorgonius.yml/st-canute.yml.
+id: st-nicomedes
+name: "St. Nicomedes, Martyr"
+nameLa: "Sanctus Nicomedes, Martyr"
+rank: simplex
+common: common-of-a-martyr
+propers: "st-nicomedes"
+minorHoursCommon: common-of-a-martyr
+benedictusCommon: common-of-a-martyr

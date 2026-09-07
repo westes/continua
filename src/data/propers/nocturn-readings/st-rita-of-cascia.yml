@@ -1,0 +1,66 @@
+# Matins Nocturn 2 reading for St. Rita of Cascia, Widow (May 22).
+# UNUSUAL CASE: `web/www/horas/Latin/Sancti/05-22n.txt` carries no [Lectio]
+# content at all -- only [Rank]/[Rule]/[Oratio]/[Name], no vita of any
+# kind, Latin or English (matches its Duplex-optional/vide-Common status;
+# the source apparently expected this feast to lean entirely on the Common
+# of a Holy Woman's own Matins). Rather than leave this as a bare "missing"
+# placeholder (this project's "prefer real text over missing" convention),
+# a concise vita is authored below from well-attested biographical fact
+# (her marriage and long-suffering widowhood, entry into the Augustinian
+# convent at Cascia, the wound believed to be from Christ's crown of
+# thorns, and her 1900 canonization). English was drafted first, then the
+# Latin below translated from it in the corpus's own liturgical register
+# (cf. st-canute.yml/st-gorgonius.yml's Lectio style) -- neither text is
+# from a real historical liturgical source, so both are marked `draft`,
+# not `verified`.
+id: st-rita-of-cascia
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Rita, Roccaporénæ prope Cásiam in Umbria orta anno millésimo trecentésimo octogésimo primo,
+        paréntibus jam ætáte provéctis nata est. A pueritia se totam Deo tradere cupiébat; sed
+        paréntum obsequens voluntáti, viro violénto et rixóso ánimo in matrimónium data est. Per
+        octodécim annos ejus durítiam et infidelitátes patiénter tulit, eúmque tandem, ántequam ab
+        inimícis quos síbi fécerat occíderetur, ad pæniténtiam addúxit. Fílii ejus duo, paterna cæde
+        ad ultiónem incitáti, patris necem ulcísci statuérunt; Rita vero, ne fílii se ultiónis reátu
+        pollúerent, Deum orávit ut eos pótius ad se assúmeret quam in mortálem culpam prolábi síneret;
+        et ambo mox morbo corrépti, Deo reconciliáti, obiérunt.
+
+
+        Vídua sine libéris relícta, Rita in monastérium Augustiniánum Cásiæ ingredi cupívit; sed
+        primum repúlsa est, quóniam ejus régula solas vírgines aut víduas quarum viri in pace
+        obíerant recipiébat. In oratióne perseverávit; et tráditio fert eam, trium suórum patrónorum
+        Augustíni, Nicolái Tolentináti, et Joánnis Baptístæ intercessióne, intra claustri sepes esse
+        indúctam. Intra claustrum austeritáti sese dedit, et assíduæ in Domínicæ Passiónis
+        meditatióni. Cum ante crucifíxum quondam oráret, in fronte plagam quasi ex spina corónæ ejus
+        accépit, quæ numquam sanáta est, quamque, sæpe cum gravi dolóre et áliis offensióni, per
+        última quíndecim vitæ suæ annos gessit. Obiit Cásiæ anno millésimo quadringentésimo
+        quinquagésimo séptimo, et a Leóne Papa Décimo Tértio anno millésimo nongentésimo canonizáta
+        est. Invocátur præcípue ab iis qui in matrimónio, viduitáte, ac ærúmnis graves sarcínas
+        ferunt, tamquam desperatárum et pæne impossibílium causárum patróna.
+      en: >-
+        Rita was born at Roccaporena, near Cascia in Umbria, in the year 1381, to parents already
+        advanced in age. From childhood she desired to give herself wholly to God, but in obedience
+        to her parents' wishes she was given in marriage to a man of violent and quarrelsome temper.
+        For eighteen years she bore his harshness and infidelities with patience, at length winning
+        him to repentance before his death, which came at the hands of enemies he had made. Her two
+        sons, moved by filial anger, resolved to avenge their father's murder; Rita, fearing they
+        would stain their souls with the guilt of vengeance, prayed rather that God would take them
+        to himself than let them fall into mortal sin, and both died of illness soon after, reconciled
+        to God.
+
+
+        Left a widow without heirs, Rita sought to enter the Augustinian convent of Cascia, but was
+        at first refused, since its rule admitted only virgins or the widows of men who had themselves
+        died in peace. She persevered in prayer, and tradition holds that she was brought within the
+        convent walls by the intervention of her three patrons, Augustine, Nicholas of Tolentino, and
+        John the Baptist. Within the cloister she gave herself to austerity and to constant meditation
+        on the Passion of Christ. Praying once before a crucifix, she received upon her forehead a
+        wound as if from a thorn of his crown, which never healed and which she bore, often in great
+        suffering and offensive to those near her, for the last fifteen years of her life. She died at
+        Cascia in the year 1457, and was canonized by Pope Leo the Thirteenth in the year 1900. She is
+        invoked above all by those bearing heavy burdens in marriage, widowhood, and hardship, as a
+        patroness of desperate and seemingly impossible causes.
+    status: { la: draft, en: draft }

@@ -1,0 +1,45 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query):
+# `web/www/horas/Latin/SanctiM/09-17M.txt`. Suffixed Monastic-track file,
+# found via the 2026-09 suffixed-file sweep (memory vu-suffixed-file-sweep).
+# Not a real M1617 kalendarium winner: `Tabulae/Kalendaria/M1617.txt` has no
+# entry at all for Sep 17 (the date is unclaimed in the original 1617
+# Monastic table); Hildegard only enters the Monastic line later, in
+# `Tabulae/Kalendaria/M1930.txt` ("09-17=09-17M=St. Hildegard=1="), a later
+# Monastic-Divino-1930-track addition, not part of the 1617 table itself.
+# `1570.txt` (Tridentine) has no Sep 17 entry either. The plain (unsuffixed)
+# `Sancti/09-17.txt` is unrelated -- Impression of the Stigmata of St.
+# Francis, vu's existing occupant of this date (stigmata-of-st-francis.yml).
+#
+# On CLAUDE.md's late-canonization rank-deflation rule: does NOT apply here.
+# That rule targets saints whose *cultus itself* began after ~1600, where a
+# routine Baroque-era canonization became a near-automatic Duplex grant.
+# Hildegard's actual cultus is medieval (d. 1179, venerated locally within
+# her own lifetime and long after); her 2012 "equipollent canonization" by
+# Benedict XVI was a modern administrative confirmation of an
+# already-centuries-old cultus, not a new canonization event of the kind
+# the rule is about. Her source rank is taken at face value, same treatment
+# as any other genuinely ancient/medieval saint.
+#
+# [Rank]'s default (non-Cistercian-rubric) line gives "Simplex;;1.1;;vide
+# C6a" -- used here. C6a (`Commune/C6a.txt`) is a bare alias of C6 ("Commune
+# Unius Virginis et Martyris"), but Hildegard was not a martyr; mapped to
+# vu's own `common-of-a-virgin` (not the `-martyr` variant) as the
+# semantically correct category -- same shared-office-text situation as
+# C2/C2a for a non-Pontiff Martyr (st-canute.yml's own header). Own proper
+# `[Oratio]` and `[Ant 2]` (marked "nisi rubrica cisterciensis" -- the
+# default/non-Cistercian rubric, consistent with vu's usual "use the
+# untagged/default variant" practice) exist in the source; no `[Versum]`.
+# No `[Lectio]` blocks of any kind in the source -- not even a single short
+# one -- so no Matins Nocturn 2 reading is authored here at all (unlike
+# St. Gorgonius/St. Canute, who each had at least a short proper lesson);
+# Matins would fall entirely to the Common of a Virgin if this date ever
+# needed to render it.
+id: st-hildegard
+name: "St. Hildegard, Virgin"
+nameLa: "Sancta Hildegardis, Virgo"
+rank: simplex
+common: common-of-a-virgin
+propers: "st-hildegard"
+minorHoursCommon: common-of-a-virgin
+benedictusCommon: common-of-a-virgin

@@ -1,0 +1,40 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query):
+# `web/www/horas/Latin/Sancti/05-22n.txt`. Suffixed filename, found via the
+# 2026-09 "sweep every suffixed MM-DDx.txt file for a hidden saint" pass
+# (memory vu-suffixed-file-sweep). Not a kalendarium-designated winner of
+# May 22 in either source track -- `Tabulae/Kalendaria/1570.txt` has no
+# entry for 05-22 at all, and `M1617.txt` points 05-22 at an unrelated
+# saint (`05-22M` = St. Romanus, Abbot, already modeled elsewhere as
+# st-romanus-abbot). No `SanctiM/05-22n*` file exists for Rita specifically
+# -- she never had a place in the Monastic 1617 calendar.
+#
+# [Rank] gives "Duplex optional;;vide C7a" -- Rita was canonized 1900 (Pope
+# Leo XIII), so CLAUDE.md's late-canonization rank-deflation rule would
+# normally apply here (deflated one FeastClass tier, Duplex -> semiduplex,
+# same treatment as St. Rose of Lima -- memory
+# vu-rank-deflation-late-canonizations). 2026-09: **explicit user
+# override** -- the user asked for her to win May 22 outright rather than
+# lose it to St. Romanus Abbot (Duplex, already native to this date), so
+# `rank` here is her real source rank (Duplex), not the deflated tier. This
+# is a personal-devotion exception for this one saint, not a
+# reconsideration of the general deflation rule -- Rose of Lima and any
+# future late-canonization saint still get deflated by default. Listed
+# first in sanctoral-calendar.yml's "05-22" entry (native, not incoming) so
+# the Duplex-vs-Duplex tie in calendar/collision.ts favors her.
+#
+# C7a = "Commune non Virginum non Martyrum" (Common of a Holy Woman,
+# neither Virgin nor Martyr) -- vu's `common-of-a-holy-woman`, matching her
+# real state of life (a married widow, not a virgin, not martyred).
+#
+# No [Lectio] content of any kind in the source -- only [Rank]/[Rule]/
+# [Oratio]/[Name], no vita at all. See propers/nocturn-readings/
+# st-rita-of-cascia.yml's own header for how that gap is handled.
+id: st-rita-of-cascia
+name: "St. Rita of Cascia, Widow"
+nameLa: "Sancta Rita de Cascia, Vidua"
+rank: duplex
+common: common-of-a-holy-woman
+propers: "st-rita-of-cascia"
+minorHoursCommon: common-of-a-holy-woman
+benedictusCommon: common-of-a-holy-woman

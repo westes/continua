@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { resolveDay } from '../../src/calendar';
-import { getDayCollect } from '../../src/hours/resolve-common';
+import { getDayCollect, getDayCollects } from '../../src/hours/resolve-common';
 
 // Clean per-annum years for these dates (no Sunday collision, and clear of
 // the movable Ascension/Pentecost/Trinity-adjacent observances that usually
@@ -66,9 +66,30 @@ describe('May sanctoral pull (first pass)', () => {
     ]);
   });
 
-  it('a saint with no proper collect of his own resolves via the Common of an Abbot instead', () => {
-    const day = resolveDay('2038-05-22'); // St. Romanus, Abbot
-    expect(day.winner).toEqual({ kind: 'sanctoral', id: 'st-romanus-abbot', name: 'St. Romanus, Abbot', nameLa: 'Sanctus Romanus, Abbas', rank: 'duplex' });
-    expect(getDayCollect(day).status.en).toBe('verified');
+  it('St. Rita of Cascia wins May 22 outright (a 2026-09 explicit user override of the late-canonization deflation rule), demoting St. Romanus, whose commemoration still resolves via the Common of an Abbot fallback', () => {
+    // St. Romanus used to win this date outright and demonstrate the
+    // collectCommon/Common-of-an-Abbot fallback mechanism as the day's own
+    // winner. St. Rita of Cascia (found via the suffixed-file sweep,
+    // memory vu-suffixed-file-sweep) was deliberately given Romanus's real
+    // Duplex rank instead of CLAUDE.md's normal late-canonization
+    // deflation (see saints/st-rita-of-cascia.yml's own header) so she'd
+    // win the day per the user's explicit instruction -- Romanus is now a
+    // commemoration instead, but still resolves his own collect the same
+    // way (no proper collect of his own, Common of an Abbot substitution).
+    const day = resolveDay('2038-05-22');
+    expect(day.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-rita-of-cascia',
+      name: 'St. Rita of Cascia, Widow',
+      nameLa: 'Sancta Rita de Cascia, Vidua',
+      rank: 'duplex',
+    });
+    expect(getDayCollect(day).status.en).toBe('draft');
+
+    const romanus = day.commemorations.find((c) => c.kind === 'sanctoral' && c.id === 'st-romanus-abbot');
+    expect(romanus).toBeDefined();
+    const romanusPart = getDayCollects(day, 'lauds').find((p) => p.kind === 'preces' && p.label === 'Commemoration of St. Romanus, Abbot');
+    expect(romanusPart).toBeDefined();
+    expect(romanusPart!.kind === 'preces' && romanusPart.text.status.en).toBe('verified');
   });
 });

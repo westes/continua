@@ -1,0 +1,30 @@
+# Ant+V/R+collect commemoration bundle, same combined-bundle shape as
+# st-gorgonius-commemoration.yml/st-canute-commemoration.yml -- see
+# hours/resolve-common.ts's sanctoralCommemorationPart, falling back to
+# the bare collect (ss-gordian-and-epimachus-collect.yml) when this file
+# didn't exist. Ant 2/Versum 2 are the standard de-Communi pairing for the
+# Common of Several Martyrs (C3a, their own real common per [Rank]/[Rule])
+# -- common-of-several-martyrs-commemoration-antiphon.yml/lauds-versicle-
+# common-of-several-martyrs.yml, both already verified elsewhere (shared
+# Common text, not proper to these saints).
+id: ss-gordian-and-epimachus-commemoration
+text:
+  la: |
+    Ant. Vestri capílli cápitis * omnes numeráti sunt: nolíte timére: multis passéribus melióres estis vos.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Da, quǽsumus, omnípotens Deus: ut, qui beatórum Mártyrum tuórum Gordiáni et Epímachi solémnia cólimus, eórum apud te intercessiónibus adjuvémur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Ant. Even the very hairs of your head are all numbered: * fear not therefore; ye are of more value than many sparrows.
+    V. The saints shall rejoice in glory:
+    R. They shall be joyful in their beds.
+    Let us pray.
+    Grant, we beseech thee, almighty God, that we, who celebrate the solemn feast of thy holy Martyrs Gordian and Epimachus, may be helped by their intercession with thee.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

@@ -1,0 +1,32 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout): `web/www/horas/Latin/
+# SanctiM/05-14M.txt`. Found via the 2026-09 suffixed-file sweep (memory
+# vu-suffixed-file-sweep). **Not a kalendarium-designated winner in either
+# track**: `M1617.txt` has no May 14 entry at all, and `1570.txt`'s own
+# May 14 is a different saint entirely ("S. Bonifacii Martyri", already
+# modeled as st-boniface.yml) -- an unreferenced alternate, same case as
+# st-canute.yml/ss-odo-maiolus-odilo-and-hugh-of-cluny.yml.
+#
+# The source file itself carries no unique content whatsoever -- no
+# [Oratio], no [Lectio], nothing but `[Rank];;Simplex;;1.1;;vide C5b` and
+# `[Name] Pachómii`. This is genuinely all there is (confirmed: no
+# `Sancti/05-14.txt` sibling naming him either, and no English file exists
+# for this id at all) -- same bare "name substituted into the Common of an
+# Abbot's own generic collect" shape the original st-maurus-abbot.yml used
+# before this session's live-verified-text upgrade (see
+# vu-suffixed-file-sweep memory), reused here via collectCommon/
+# collectName rather than inventing a false vita. No dedicated
+# nocturn-readings/commemoration file -- there is no proper text to
+# transcribe.
+id: st-pachomius
+name: "St. Pachomius, Abbot"
+nameLa: "Sanctus Pachomius, Abbas"
+rank: simplex
+common: common-of-an-abbot
+propers: null
+collectCommon: collect-c5b
+collectName:
+  la: ["Pachómii"]
+  en: ["Pachomius"]
+minorHoursCommon: common-of-an-abbot
+benedictusCommon: common-of-an-abbot

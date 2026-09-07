@@ -1,0 +1,32 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query):
+# `web/www/horas/Latin/Sancti/08-18r.txt`. Suffixed filename, found via the
+# 2026-09 "sweep every suffixed MM-DDx.txt file for a hidden saint" pass
+# (memory vu-suffixed-file-sweep). Genuinely a secondary/commemoration-tier
+# entry in the real Tridentine kalendarium, not a hidden primary winner --
+# `Tabulae/Kalendaria/1570.txt`: "08-18=08-18bmv~08-18r=Quarta die infra
+# Octavam S. Assumptionis=2=S. Agapiti Martyris=1=" (the primary occupant,
+# rank code 2, is the Fourth Day within the Octave of the Assumption --
+# temporal, not sanctoral, not modeled by a saints/*.yml record). vu
+# currently has nothing wired to Aug 18 at all.
+#
+# No `SanctiM/08-18*` file for Agapitus (only `08-18bmv.txt`, the Assumption
+# octave day) -- never in the Monastic 1617 calendar. [Rank]'s default
+# (non-Cistercian) rubric gives just "Commemoratio" -- an even lower tier
+# than Simplex, with no equivalent slot in vu's FeastClass scale
+# (`simplex < vigil < semiduplex < ...`) -- Simplex used here as the
+# lowest available tier, same convention as other bare-commemoration-only
+# entries (e.g. ss-marius-martha-audifax-and-abachum.yml). Ancient Roman
+# martyr (a youth of Palestrina, executed under Aurelian); CLAUDE.md's
+# late-canonization rank-deflation rule doesn't apply.
+#
+# [Rank]/[Rule] say "vide C2a-1" (Common of a Martyr, not a Pontiff) -- own
+# real proper [Oratio], no [Ant 1] of his own.
+id: st-agapitus
+name: "St. Agapitus, Martyr"
+nameLa: "Sanctus Agapitus, Martyr"
+rank: simplex
+common: common-of-a-martyr
+propers: "st-agapitus"
+minorHoursCommon: common-of-a-martyr
+benedictusCommon: common-of-a-martyr

@@ -1,0 +1,34 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query):
+# `web/www/horas/Latin/Sancti/05-10o.txt`. Suffixed filename, found via the
+# 2026-09 "sweep every suffixed MM-DDx.txt file for a hidden saint" pass
+# (memory vu-suffixed-file-sweep). Unlike most sweep finds, this one IS the
+# real Tridentine kalendarium's own designated file for the date --
+# `Tabulae/Kalendaria/1570.txt`: "05-10=05-10o=Ss. Gordiani et Epimachi
+# Martyri=1=" -- the suffix is just this saint's actual filename, not an
+# alternate. vu's calendar currently has St. Antoninus (Duplex) on May 10
+# instead (`st-antoninus.yml`, sourced from the plain `05-10.txt`), but
+# Antoninus (a 15th-c. Florentine archbishop, d. 1459, canonized 1523) is
+# NOT referenced by 1570.txt at all for this date -- he must be a later
+# Tridentine-revision addition (1888/1906) displacing Ss. Gordian and
+# Epimachus's older, ancient-martyr entry. Left for a later pass to
+# reconcile which one actually wins May 10 in vu's calendar (not touched
+# here, per this session's scope -- see calendar/sanctoral-calendar.yml).
+#
+# No `SanctiM/05-10*` file exists -- never in the Monastic 1617 calendar.
+# Ancient Roman martyrs (Diocletian-era judge-convert Gordian, and
+# Epimachus of Alexandria); CLAUDE.md's late-canonization rank-deflation
+# rule doesn't apply, Simplex is their genuine historical rank.
+#
+# [Rank]/[Rule] both say "vide C3a" (Common of Several Martyrs, not
+# Pontiffs) -- own real proper [Oratio], no [Ant 1] of its own, so
+# Benedictus/minor-hours fall to that Common, same family as
+# ss-marius-martha-audifax-and-abachum.yml.
+id: ss-gordian-and-epimachus
+name: "Ss. Gordian and Epimachus, Martyrs"
+nameLa: "Sancti Gordianus et Epimachus, Martyres"
+rank: simplex
+common: common-of-several-martyrs
+propers: "ss-gordian-and-epimachus"
+minorHoursCommon: common-of-several-martyrs
+benedictusCommon: common-of-several-martyrs

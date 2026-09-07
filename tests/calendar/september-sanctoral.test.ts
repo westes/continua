@@ -50,7 +50,7 @@ describe('September sanctoral pull (first pass)', () => {
     ]);
   });
 
-  it('Sep 15 (day 8 of the Nativity octave) is now the Seven Sorrows of the BVM\'s own fixed day (Duplex II Classis, added per the full-year sanctoral import), which wins outright, with the Nativity octave still commemorated alongside her -- St. Nicomedes, the source\'s other named secondary for this date, still is not modeled', () => {
+  it('Sep 15 (day 8 of the Nativity octave) is now the Seven Sorrows of the BVM\'s own fixed day (Duplex II Classis, added per the full-year sanctoral import), which wins outright, with the Nativity octave and St. Nicomedes (Simplex, authored via the suffixed-file sweep) both commemorated alongside her', () => {
     const nicomedesDay = resolveDay('2025-09-15');
     expect(nicomedesDay.winner).toEqual({
       kind: 'sanctoral',
@@ -60,6 +60,7 @@ describe('September sanctoral pull (first pass)', () => {
       rank: 'duplex-2-classis',
     });
     expect(nicomedesDay.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'st-nicomedes', name: 'St. Nicomedes, Martyr', nameLa: 'Sanctus Nicomedes, Martyr', rank: 'simplex' },
       { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary', nameLa: 'Nativitas Beatæ Mariæ Virginis' },
     ]);
   });

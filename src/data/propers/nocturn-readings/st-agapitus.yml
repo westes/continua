@@ -1,0 +1,37 @@
+# Matins Nocturn 2 reading for St. Agapitus, Martyr (Aug 18). Sourced
+# from web/www/horas/Latin/Sancti/08-18r.txt, English/Sancti/08-18r.txt.
+# The source carries only a single short lesson (Lectio93, headed
+# "Commemoration of S. Agapitus, Martyr" in the English -- he never had a
+# full proper 9-lesson Matins even historically), transcribed whole as one
+# Nocturn 2 reading, same "short/single source lesson" handling as
+# st-gorgonius.yml/ss-gordian-and-epimachus.yml. No Nocturn 3 of his own --
+# defers to the Common of a Martyr's own, not transcribed here.
+id: st-agapitus
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Agapítus Prænestínus, quíndecim annos natus, Aureliáno imperatóre, martýrii
+        cupidíssimus, cum propter constántiam religiónis, imperatóris jussu, primum nervis
+        diutíssime cæsus, deínde in tetrum cárcerem conjéctus esset, ut nihil omníno per
+        quátuor dies gustáret, e custódia est edúctus. Et, ardéntibus carbónibus cápiti ejus
+        impósitis, Deo agens grátias, íterum afféctus verbéribus, nudus ita pédibus
+        suspénsus est, ut ingens fumus e subjécto igne os ejus obrúeret. Tum férvens aqua in
+        ejus ventrem effúsa est, maxillǽque confráctæ. Quo témpore judex, e tribunáli
+        lapsus, paulo post mórtuus est. Ea re incénso imperatóre, sanctum júvenem jubénte
+        féris objíci, cum illæ non audérent attíngere, Prænéste gládio percússus est.
+      en: >-
+        Agapitus was a young man of Palestrina, who eagerly accepted martyrdom at the age
+        of fifteen years, under the Emperor Aurelian. On account of his firmness in his
+        religion, the Emperor ordered him first to receive an exceedingly long scourging
+        with cat-gut, and then to be thrown into a foul dungeon, where he remained for four
+        days without food. Being brought out of prison, live embers were put upon his head,
+        but, whereas he still gave God thanks, he was whipped again, and hung up naked by
+        the feet, in such wise that a thick smoke from a fire kindled beneath might pour
+        into his mouth. Afterward, boiling water was poured upon his belly, and his jaws
+        were broken. Then presently the judge fell from his judgment seat, and shortly
+        after died. Whereupon the Emperor was enraged, and commanded the holy youth to be
+        thrown to wild beasts, but these dared not to touch him, and he was struck by the
+        sword at Palestrina.
+    status: { la: verified, en: verified }

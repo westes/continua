@@ -33,7 +33,7 @@ describe('getDayLabel — ordinal temporal label', () => {
     // commemoration never carries a rank parenthetical, only the day's
     // own winner does.
     expect(getDayLabel(resolveDay('2026-05-31')).en).toBe(
-      'The Most Holy Trinity (Duplex II Class) — The Queenship of the Blessed Virgin Mary',
+      'The Most Holy Trinity (Duplex II Class) — St. Petronilla, Virgin — The Queenship of the Blessed Virgin Mary',
     );
     // St. Vincent Ferrer is only Duplex, below the Easter-octave backlog's
     // duplex-majus floor (calendar/index.ts's `EASTER_OCTAVE_BACKLOG_FLOOR`)
@@ -52,7 +52,7 @@ describe('getDayLabel — ordinal temporal label', () => {
     // so this is real Latin throughout — the rank label ("Duplex II.
     // Classis") was already real Latin before this.
     expect(getDayLabel(resolveDay('2026-05-31')).la).toBe(
-      'Sanctissima Trinitas (Duplex II. Classis) — Beata Maria Virgo Regina',
+      'Sanctissima Trinitas (Duplex II. Classis) — Sancta Petronilla, Virgo — Beata Maria Virgo Regina',
     );
     expect(getDayLabel(resolveDay('2026-04-05')).la).toBe(
       'Pascha (Duplex I. Classis) — Sanctus Vincentius Ferrerius, Presbyter (omissa hoc anno)',
@@ -198,7 +198,7 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // the label itself, using the same fixed 23rd-after-Trinity ordinal,
     // not a raw elapsed-week count recomputed for 1943.
     expect(getDayLabel(resolveDay('1943-11-21')).en).toBe(
-      'The Presentation of the Blessed Virgin Mary (Duplex Majus) — The 23rd Sunday after Trinity',
+      'The Presentation of the Blessed Virgin Mary (Duplex Majus) — The 23rd Sunday after Trinity — St. Columban, Abbot',
     );
   });
 });
@@ -298,7 +298,7 @@ describe('getDayLabel — active octave', () => {
       'Octave of St. Lawrence, Deacon and Martyr (Duplex) — 3rd Day within the Octave of The Assumption of the Blessed Virgin Mary — St. Hyacinth, Confessor',
     );
     expect(getDayLabel(resolveDay('2026-08-18')).en).toBe(
-      '4th Day within the Octave of The Assumption of the Blessed Virgin Mary (Duplex)',
+      '4th Day within the Octave of The Assumption of the Blessed Virgin Mary (Duplex) — St. Agapitus, Martyr',
     );
   });
 

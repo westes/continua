@@ -1,0 +1,37 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout): `web/www/horas/Latin/
+# SanctiM/04-29M.txt` (Monastic track only -- no `Sancti/04-29*.txt` sibling
+# at all, so this feast never existed outside Monastic use). Found via the
+# 2026-09 suffixed-file sweep (memory vu-suffixed-file-sweep). **Not a
+# kalendarium-designated winner**: `Tabulae/Kalendaria/M1617.txt`'s own
+# Apr 29 entry names a different file entirely ("04-29=04-29oM~04-30=S.
+# Roberti Abbatis=3=S. Catharinae Senensis Virginis=1="), and `1570.txt`
+# doesn't mention Apr 29 sanctoral content at all -- same "unreferenced
+# alternate" case as st-canute.yml, not a real source-kalendarium gap.
+#
+# The four are the great abbots of Cluny (10th-11th c.): Odo (r. 927-942),
+# Maiolus/Mayeul (r. 954-994), Odilo (r. 994-1049), Hugh (r. 1049-1109).
+# All medieval cultus -- CLAUDE.md's late-canonization rank-deflation rule
+# does not apply. [Rank] gives ";;Duplex;;3;;vide C1" -- C1 is literally
+# "Commune Apostolorum" in this source's own numbering (confirmed via
+# Commune/C1.txt's own [Officium]), an unusual choice for abbots, but the
+# file's own antiphons lean into an "apostles of the monastic order"
+# typology (e.g. "montástici Ordínis decus per orbem renovátum est" /
+# Lectio4's Cluny-as-Josue's-army imagery) -- not treated as a typo. For
+# vu's simpler `common:` categorization this is still filed under Common of
+# an Abbot (same practical family st-maurus-abbot.yml/st-pachomius.yml
+# use), since that's what they actually were, not literal apostles; the
+# source's own C1 tag is documented here rather than silently followed,
+# same class of judgment call as st-canute.yml's C2-1/C2a-1 note.
+#
+# No English counterpart exists anywhere under English/SanctiM/ or
+# English/Sancti/ for 04-29M -- collect and Lectio4 translations below are
+# this project's own, marked draft.
+id: ss-odo-maiolus-odilo-and-hugh-of-cluny
+name: "Ss. Odo, Maiolus, Odilo, and Hugh, Abbots"
+nameLa: "Sancti Odo, Maiolus, Odilo et Hugo, Abbates"
+rank: duplex
+common: common-of-an-abbot
+propers: "ss-odo-maiolus-odilo-and-hugh-of-cluny"
+minorHoursCommon: common-of-an-abbot
+benedictusCommon: common-of-an-abbot

@@ -1,0 +1,39 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query):
+# `web/www/horas/Latin/SanctiM/11-21M.txt`. Suffixed Monastic-track file,
+# found via the 2026-09 suffixed-file sweep (memory vu-suffixed-file-sweep).
+# Not a real M1617 kalendarium winner: `Tabulae/Kalendaria/M1617.txt`'s own
+# Nov 21 entry is "In Presentatione of Beatae Mariae Virginis" (Duplex
+# majus), already modeled by vu as presentation-of-the-bvm.yml -- the plain
+# `SanctiM/11-21.txt` (no letter suffix) is that Presentation office's own
+# Monastic content (`@Sancti/11-21`), unrelated to Columban. `1570.txt` has
+# no Nov 21 entry at all. No cultus-date deflation concern -- ancient
+# founder-abbot (d. 615), ancient cultus.
+#
+# The source file is a bare rank stub: only `[Officium]`/`[Rank]`/`[Name]`
+# ("vide C5b" -- Common of an Abbot, same family as st-maurus-abbot.yml),
+# no `[Oratio]` of his own at all -- so, same convention as
+# st-maurus-abbot.yml, this uses the Common-of-an-Abbot collect template
+# (`collectCommon`/`collectName` below) rather than a fabricated proper
+# collect file; no dedicated st-columban-collect.yml or
+# st-columban-commemoration.yml exists, since hours/resolve-common.ts's
+# sanctoralCommemorationPart/getDayCollect already handle this fallback
+# generically via the existing common-of-an-abbot-commemoration-
+# antiphon.yml/lauds-versicle-common-of-an-abbot.yml files. No `[Lectio]`
+# content anywhere for him either -- the only prose about him in the whole
+# reference engine is a one-line Martyrology notice
+# (`Latin/Martyrologium/11-21.txt`), not Matins-lesson material -- so no
+# Nocturn 2 reading is authored here; Matins would fall entirely to the
+# Common of an Abbot.
+id: st-columban
+name: "St. Columban, Abbot"
+nameLa: "Sanctus Columbánus, Abbas"
+rank: simplex
+common: common-of-an-abbot
+propers: null
+collectCommon: collect-c5b
+collectName:
+  la: ["Columbáni"]
+  en: ["Columban"]
+minorHoursCommon: common-of-an-abbot
+benedictusCommon: common-of-an-abbot

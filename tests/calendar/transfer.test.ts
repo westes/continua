@@ -100,6 +100,7 @@ describe('transfer mechanism (resolveDay integration)', () => {
     expect(sunday.winner).toEqual({ kind: 'temporal', id: 'trinity-sunday' });
     expect(sunday.commemorations).toEqual([
       { kind: 'temporal', id: 'post-pentecost-01' },
+      { kind: 'sanctoral', id: 'st-petronilla', name: 'St. Petronilla, Virgin', nameLa: 'Sancta Petronilla, Virgo', rank: 'simplex' },
       { kind: 'octave', id: 'pentecost-sunday', name: 'Pentecost', nameLa: 'Dominica Pentecostes' },
       { kind: 'sanctoral', id: 'queenship-of-the-bvm', name: 'The Queenship of the Blessed Virgin Mary', nameLa: 'Beata Maria Virgo Regina', rank: 'duplex-2-classis' },
     ]);

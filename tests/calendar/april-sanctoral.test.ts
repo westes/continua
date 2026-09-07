@@ -68,6 +68,7 @@ describe('April sanctoral pull (first pass)', () => {
     expect(day.winner).toEqual({ kind: 'sanctoral', id: 'st-robert', name: 'St. Robert, Abbot', nameLa: 'Sanctus Robertus, Abbas', rank: 'duplex' });
     expect(day.commemorations).toEqual([
       { kind: 'sanctoral', id: 'st-catherine-of-siena', name: 'St. Catherine of Siena, Virgin', nameLa: 'Sancta Catharina Senensis, Virgo', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'ss-odo-maiolus-odilo-and-hugh-of-cluny', name: 'Ss. Odo, Maiolus, Odilo, and Hugh, Abbots', nameLa: 'Sancti Odo, Maiolus, Odilo et Hugo, Abbates', rank: 'duplex' },
     ]);
   });
 
@@ -83,6 +84,7 @@ describe('April sanctoral pull (first pass)', () => {
     expect(sunday.commemorations).toEqual([
       { kind: 'temporal', id: 'easter-5' },
       { kind: 'sanctoral', id: 'st-catherine-of-siena', name: 'St. Catherine of Siena, Virgin', nameLa: 'Sancta Catharina Senensis, Virgo', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'ss-odo-maiolus-odilo-and-hugh-of-cluny', name: 'Ss. Odo, Maiolus, Odilo, and Hugh, Abbots', nameLa: 'Sancti Odo, Maiolus, Odilo et Hugo, Abbates', rank: 'duplex' },
     ]);
 
     // Apr 30 resolves St. Peter Martyr cleanly on his own day — no

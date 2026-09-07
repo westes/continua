@@ -1,0 +1,37 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query):
+# `web/www/horas/Latin/Sancti/05-31o.txt`. Suffixed filename, found via the
+# 2026-09 "sweep every suffixed MM-DDx.txt file for a hidden saint" pass
+# (memory vu-suffixed-file-sweep). Like Ss. Gordian and Epimachus (May 10),
+# this IS the real Tridentine kalendarium's own designated file for the
+# date -- `Tabulae/Kalendaria/1570.txt`: "05-31=05-31o=S. Petronillae
+# Virginis=1=" -- not an alternate. vu's calendar currently has "Queenship
+# of the BVM" on May 31 instead (a later, 20th-c. feast, unrelated to the
+# Tridentine kalendarium's own occupant). Left for a later pass to
+# reconcile (not touched here, per this session's scope -- see
+# calendar/sanctoral-calendar.yml).
+#
+# No `SanctiM/05-31*` file exists -- never in the Monastic 1617 calendar.
+# Petronilla is traditionally venerated as a spiritual (not necessarily
+# biological) daughter of St. Peter, an ancient Roman virgin; CLAUDE.md's
+# late-canonization rank-deflation rule doesn't apply, Simplex is her
+# genuine historical rank.
+#
+# [Rank]/[Rule] say "vide C6a-1" (Common of a Virgin, not a Martyr -- she
+# died in peace, per the source's own Lectio3, not by execution). No
+# [Oratio] of her own in the source at all -- falls entirely to the Common
+# via collectCommon/collectName substitution, same pattern as
+# st-praxedes.yml (same C6a-1 Common family). Only two short lessons in the
+# source ("1 et 2 lectiones" -- Lectio2/Lectio3, no Lectio1 of her own).
+id: st-petronilla
+name: "St. Petronilla, Virgin"
+nameLa: "Sancta Petronilla, Virgo"
+rank: simplex
+common: common-of-a-virgin
+propers: null
+collectCommon: collect-c6a
+collectName:
+  la: ["Petronillæ"]
+  en: ["Petronilla"]
+minorHoursCommon: common-of-a-virgin
+benedictusCommon: common-of-a-virgin
