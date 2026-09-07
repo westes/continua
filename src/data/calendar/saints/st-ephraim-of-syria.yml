@@ -1,0 +1,27 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/06-18.txt` --
+# "vide C5a;;Duplex;;3;;". Same MM-DD slot Ss. Mark and Marcellian's own
+# file already occupies (Monastic 1617 track, Simplex) -- both are kept
+# here, generous-commemoration style, with Ephraim's own much higher
+# Duplex rank (his Divino Afflatu 1954 rank) winning outright and Mark and
+# Marcellian riding along as a commemoration, same pattern as
+# st-alphonsus-liguori.yml/st-stephen-i.yml.
+#
+# The source's own Monastic-track title is explicit: "S. Ephræm Syri
+# Diáconi, Confessóris et Ecclésiæ Doctóris" -- he was ordained deacon at
+# Edessa and refused the priesthood out of humility (Lectio4's own "ob
+# humilitatem sacerdotium recusans"), so "Deacon" here is the source's own
+# word, not an inference.
+#
+# Own proper [Oratio]; no [Ant 1] of its own, so the Benedictus antiphon
+# falls back to Common of a Confessor Bishop (C4a) via C5a's own
+# cross-reference, same reasoning as st-john-damascene.yml/
+# st-peter-canisius.yml (both also non-bishop Doctors).
+id: st-ephraim-of-syria
+name: "St. Ephraim of Syria, Deacon and Doctor of the Church"
+nameLa: "Sanctus Ephræm Syrus, Diaconus et Ecclesiæ Doctor"
+rank: duplex
+common: common-of-a-confessor-doctor
+propers: "st-ephraim-of-syria"
+benedictusCommon: common-of-a-confessor-bishop

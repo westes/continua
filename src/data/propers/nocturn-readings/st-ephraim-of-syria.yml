@@ -1,0 +1,165 @@
+# Matins Nocturn 2-3 readings for St. Ephraim of Syria, Deacon, Confessor,
+# Doctor of the Church (June 18). Sourced from
+# web/www/horas/Latin/Sancti/06-18.txt, English/Sancti/06-18.txt.
+#
+# Nocturn 2 (Lectio4-6): one continuous vita, no genuine source break --
+# same combining convention st-francis-de-sales.yml/st-alphonsus-liguori.yml use.
+#
+# Nocturn 3: the source's own Gospel is Matt 5:13-19 ("Vos estis sal
+# terræ"), the same Common-of-a-Confessor-Doctor pericope already
+# transcribed for st-peter-canisius.yml/st-isidore-of-seville.yml --
+# reused verbatim rather than re-translated. The homily, though, is
+# genuinely Ephraim's own (Lectio7-8, "Sermo de vita et exercitatione
+# monastica" -- not a cross-reference to another saint's Common the way
+# most non-bishop confessors' Nocturn 3 is), so it's transcribed here
+# rather than left to the generic Common pool.
+id: st-ephraim-of-syria
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Ephræm génere Syrus, Nisibéno patre natus est. Adhuc júvenis ad sanctum Jacóbum
+        epíscopum se cóntulit, a quo baptizátus, brevi ita sanctitáte et doctrína profécit, ut
+        in schola Nísibi, Mesopotámiæ urbe, florénte magíster fúerit constitútus. Post Jacóbi
+        epíscopi mortem, Nísibi a Persis capta, Edéssam proféctus est; ubi primum in monte
+        inter mónachos consédit, deínde, ut plúrimos ad se confluéntes hómines vitáret, vitam
+        duxit eremíticam. Edesséne ecclésiæ diáconus ordinátus, et ob humilitátem sacerdótium
+        recúsans, ómnium virtútum splendóre enítuit, et pietátem et religiónem vera sapiéntiæ
+        professióne sibi comparáre satégit. Spem omnem in solo Deo defíxam habens, quǽvis
+        humána ac transitória contémnens, divína ac sempitérna assídue concupiscébat.
+
+
+        Cæsaréam Cappadóciæ, divíno ductus Spíritu, cum petísset, ipsum ibi os Ecclésiæ
+        Basílium vidit, et úterque mútua consuetúdine opportúnum in modum usus est. Ad
+        innúmeros errores refelléndos, qui, tunc témporis grassántes, Ecclésiam Dei
+        divexábant, atque ad mystéria Dómini nostri Jesu Christi sédulo illustránda, plúrimas
+        édidit lucubratiónes, Syro sermóne compósitas, et fere omnes in linguam Græcam versas;
+        atque, teste sancto Hierónymo, ipse ad tantum venit claritúdinem, ut, post lectiónem
+        Scripturárum, publíce in quibúsdam ecclésiis ejus scripta recitaréntur.
+
+
+        Univérsa illíus ópera, tam spléndido doctrínæ lúmine reférta effecérunt, ut idem
+        Sanctus, adhuc vivens, tamquam Ecclésiæ Doctor, magno honóre hábitus fúerit. Métrica
+        quoque cántica composuit in laudem beatíssimæ Vírginis Maríæ ac Sanctórum: quam ob
+        causam a Syris Spíritus Sancti cíthara mérito fuit appellátus. In mirífica ac pia
+        devotióne erga eándem Vírginem immaculátam primum excélluit. Méritis plenus, Edéssæ,
+        in Mesopotámia, décimo quarto Kaléndas Júlii, decéssit sub Valénte príncipe: eúmque,
+        instántibus plúribus Sanctæ Románæ Ecclésiæ Cardinálibus, Patriárchis, Archiepíscopis,
+        Epíscopis, Abbátibus, et religiósis famíliis, Benedíctus Papa décimus quintus, ex
+        Sacrórum Rítuum Congregatiónis consúlto, universális Ecclésiæ Doctórem declarávit.
+      en: >-
+        Ephraim was a Syrian by birth, the son of a father from Nisibis. While still a young
+        man he attached himself to the holy bishop James, by whom he was baptized, and in a
+        short time made such progress in holiness and learning that he was made master of the
+        flourishing school at Nisibis, a city of Mesopotamia. After the death of Bishop James,
+        when Nisibis was taken by the Persians, he went to Edessa, where he first dwelt on a
+        mountain among monks, and afterward, to avoid the great numbers of people who flocked
+        to him, took up the life of a hermit. Ordained deacon of the church of Edessa, and
+        refusing the priesthood out of humility, he shone with the splendor of every virtue,
+        and strove to join true wisdom to piety and religion. Fixing all his hope in God
+        alone, and despising all things human and transitory, he continually longed for the
+        things that are divine and everlasting.
+
+
+        Led by the divine Spirit, he went to Caesarea in Cappadocia, where he saw Basil, that
+        very mouthpiece of the Church, and each made profitable use of the other's company.
+        To refute the countless errors that were then rife and vexing the Church of God, and
+        to set forth diligently the mysteries of our Lord Jesus Christ, he published many
+        works, composed in the Syriac tongue, nearly all of which were translated into Greek;
+        and, as St. Jerome bears witness, he attained to such renown that, after the reading
+        of the Scriptures, his writings were publicly read aloud in certain churches.
+
+
+        All his works were so filled with the splendid light of learning that this same
+        Saint, even while still living, was held in great honor as a Doctor of the Church. He
+        also composed metrical hymns in praise of the most blessed Virgin Mary and of the
+        Saints, for which reason he was rightly called by the Syrians the Harp of the Holy
+        Spirit. He excelled above all in a wonderful and devout love for that same Immaculate
+        Virgin. Full of merits, he died at Edessa in Mesopotamia, on the fourteenth day before
+        the Kalends of July, under the emperor Valens; and, at the urgent petition of many
+        Cardinals, Patriarchs, Archbishops, Bishops, Abbots, and religious communities of the
+        Holy Roman Church, Pope Benedict XV, on the advice of the Congregation of Sacred
+        Rites, declared him a Doctor of the Universal Church.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 5:13-19", en: "Matt 5:13-19" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Vos estis sal terræ. Quod si sal
+        evanúerit, in quo saliétur? Ad níhilum valet ultra, nisi ut mittátur foras, et
+        conculcétur ab homínibus. Vos estis lux mundi. Non potest cívitas abscóndi supra montem
+        pósita. Neque accéndunt lucérnam, et ponunt eam sub módio, sed super candelábrum, ut
+        lúceat ómnibus, qui in domo sunt. Sic luceat lux vestra coram homínibus, ut vídeant
+        ópera vestra bona, et gloríficent Patrem vestrum, qui in cœlis est. Nolíte putáre,
+        quóniam veni sólvere legem aut prophétas: non veni sólvere, sed adimplére. Amen, quippe
+        dico vobis, donec tránseat cœlum et terra, jota unum aut unus apex non præteríbit a
+        lege, donec ómnia fiant. Qui ergo sólverit unum de mandátis istis mínimis, et docúerit
+        sic hómines, mínimus vocábitur in regno cœlórum: qui autem fécerit et docúerit, hic
+        magnus vocábitur in regno cœlórum.
+      en: >-
+        At that time, Jesus said to His disciples, "You are the salt of the earth. But if the
+        salt lose its savour, wherewith shall it be salted? It is good for nothing any more but
+        to be cast out, and to be trodden on by men. You are the light of the world. A city
+        seated on a mountain cannot be hid. Neither do men light a candle and put it under a
+        bushel, but upon a candlestick, that it may shine to all that are in the house. So let
+        your light shine before men, that they may see your good works, and glorify your Father
+        Who is in heaven. Do not think that I am come to destroy the law, or the prophets. I am
+        not come to destroy, but to fulfill. For amen I say unto you, till heaven and earth
+        pass, one jot or one tittle shall not pass of the law, till all be fulfilled. He
+        therefore that shall break one of these least commandments, and shall so teach men,
+        shall be called the least in the kingdom of heaven; but he that shall do and teach, he
+        shall be called great in the kingdom of heaven."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Ephraim the Syrian, Sermon on the Monastic Life and its Practice"
+    text:
+      la: >-
+        Præclárum est bonum inchoáre atque perfícere, et gratum Deo esse et útile próximo,
+        ipsíque summo ac dulcíssimo rectóri nostro Christo Jesu placére, qui ait: Vos estis sal
+        terræ, et colúmna cælórum. Labor afflictiónis tuæ, dilectíssime, tamquam somnus est;
+        porro labóris quies inenarrábilis atque inæstimábilis. Atténde ergo tibi ipsi
+        sollícite, ne utrúmque páriter amíttas, dum néutrum plene persequáris, præséntem
+        scílicet sempiternámque lætítiam. Stude pótius perféctam virtútem cónsequi, ornátam
+        atque insignítam ómnibus quæ díligit Deus. Hanc si assequáris, numquam irritábis Deum,
+        neque próximum tuum violábis.
+
+
+        Porro virtus ista, única uníus speciéi dícitur, variárum virtútum in se ipsa habens
+        pulchritúdinem. Diadéma régium absque pretiósis lapídibus candentibúsque margarítis
+        connécti texíque non potest; ita et hæc única virtus sine variárum fulgóre virtútum
+        constáre néquit. Est enim proféctu simíllima diadémati régio. Nam, ut illi, si lapis
+        unus aut margaríta defúerit, in régio cápite lucére plénius néquit; ita et hæc única
+        virtus, nisi virtútum cetérarum honóre conséritur, perfécta virtus non appellátur.
+        Símilis item est pretiosíssimis épulis, exquisitíssimis condiméntis præparátis, sed
+        sale caréntibus. Sicut enim pretiósi illi cibi sine sale comédi néqueunt; ita et ista
+        virtus unifórmis, si variárum virtútum glória et honóre decorétur, absit autem Dei
+        próximique diléctio, vilis prorsus atque contemptíbilis est.
+      en: >-
+        It is a noble thing to begin a good work and to bring it to completion, to be
+        pleasing to God and useful to one's neighbor, and to please Christ Jesus himself, our
+        highest and sweetest Ruler, who says: You are the salt of the earth, and the pillar of
+        the heavens. The labor of your affliction, most beloved, is like a sleep; but the rest
+        that follows labor is beyond telling and beyond price. Watch over yourself carefully,
+        then, lest you lose both alike, by pursuing neither fully — namely, present joy and
+        everlasting joy together. Strive rather to attain perfect virtue, adorned and marked
+        with all that God loves. If you attain this, you will never provoke God, nor wrong
+        your neighbor.
+
+
+        Now this virtue is called one, of a single kind, yet it holds within itself the
+        beauty of all the various virtues. A royal crown cannot be fashioned and woven
+        together without precious stones and shining pearls; so too this one virtue cannot
+        stand firm without the brightness of the other virtues. For indeed it is very like a
+        royal crown. For just as, if one stone or pearl is missing, a crown cannot shine in
+        its fullness upon a royal head, so too this one virtue, unless it is bound together
+        with the honor of the other virtues, cannot be called perfect virtue. It is likewise
+        like the most costly banquet, prepared with the choicest seasonings, but lacking
+        salt. For just as those costly dishes cannot be eaten without salt, so too this
+        uniform virtue — unless it is adorned with the glory and honor of the other virtues,
+        that is, love of God and of neighbor — is altogether worthless and contemptible.
+    status: { la: verified, en: verified }

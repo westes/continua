@@ -20,16 +20,18 @@ describe('August sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it('a saint normally blocked by the generic Saturday-of-Mary votive wins independently once the date falls on another weekday', () => {
+  it('St. Alphonsus Liguori (Divino Afflatu\'s own occupant of this MM-DD slot, added alongside St. Stephen I) wins outright at Duplex over Stephen\'s Simplex, commemorating him instead', () => {
     const day = resolveDay('2027-08-02'); // a Monday
     expect(day.winner).toEqual({
       kind: 'sanctoral',
-      id: 'st-stephen-i',
-      name: 'St. Stephen I, Pope and Martyr',
-      nameLa: 'Sanctus Stephanus I, Papa et Martyr',
-      rank: 'simplex',
+      id: 'st-alphonsus-liguori',
+      name: 'St. Alphonsus Liguori, Bishop, Confessor and Doctor of the Church',
+      nameLa: 'Sanctus Alfonsus Maria de Ligorio, Episcopus, Confessor et Ecclesiæ Doctor',
+      rank: 'duplex',
     });
-    expect(day.commemorations).toEqual([]);
+    expect(day.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'st-stephen-i', name: 'St. Stephen I, Pope and Martyr', nameLa: 'Sanctus Stephanus I, Papa et Martyr', rank: 'simplex' },
+    ]);
   });
 
   it('St. Donatus wins outright every year in this app, unlike the real reference engine where he is occasionally displaced by a multi-day forward transfer this app does not model', () => {

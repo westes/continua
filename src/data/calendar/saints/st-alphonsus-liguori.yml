@@ -1,0 +1,20 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/08-02.txt` --
+# "vide C4a;;Duplex;;3;;". Same MM-DD slot St. Stephen I's own file
+# already documents as really being Alphonsus's (a later, post-1617
+# addition displacing the older Simplex saint on this date in the
+# Monastic-track filename) -- both are kept here, generous-commemoration
+# style, with Alphonsus's own much higher Duplex rank winning outright and
+# Stephen I riding along as a commemoration (see
+# calendar/collision.ts's rank-based resolution). Own proper [Oratio]; no
+# [Ant 1] of its own, so the Benedictus antiphon falls back to Common of a
+# Confessor Bishop (C4a), same family as st-francis-de-sales.yml.
+id: st-alphonsus-liguori
+name: "St. Alphonsus Liguori, Bishop, Confessor and Doctor of the Church"
+nameLa: "Sanctus Alfonsus Maria de Ligorio, Episcopus, Confessor et Ecclesiæ Doctor"
+rank: duplex
+common: common-of-a-confessor-bishop
+propers: "st-alphonsus-liguori"
+minorHoursCommon: common-of-a-confessor-bishop
+benedictusCommon: common-of-a-confessor-bishop
