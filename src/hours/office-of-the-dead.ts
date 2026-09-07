@@ -70,15 +70,17 @@ export interface LessonText {
   citation: Bilingual;
   la: string;
   en: string;
-  /** The traditional "Léctio libri..."/"A reading from..." incipit — only
-   * on the first of several consecutive lessons drawn from the same
-   * source (matching the reference engine's own convention: Sancti/
-   * 11-02.txt's own Lectio7 carries this line before its citation, while
-   * Lectio8/9, continuing the same epistle, don't repeat it). Omitted
-   * (rather than defaulted from `citation`) for lessons whose source
-   * isn't a plain scripture book, e.g. a patristic homily's own
-   * author+work citation already reads fine under the generic "Reading"
-   * heading. */
+  /** The traditional "Léctio libri..."/"A reading from..." incipit. The
+   * reference engine only ever prints this once per book, on the first of
+   * several consecutive lessons drawn from the same source (e.g. Sancti/
+   * 11-02.txt's own Lectio7 carries it before its citation, while
+   * Lectio8/9, continuing the same epistle, don't repeat it) — a print
+   * convention that reads fine as continuous prose, but leaves this
+   * app's later lessons looking unlabeled since each one renders as its
+   * own visually separate section, with a responsory in between (user,
+   * 2026-11: "you missed 2 and 3 for job and 2 and 3 for the 1 cor").
+   * vu deliberately repeats this label on every lesson from the same
+   * source instead. */
   label?: Bilingual;
 }
 
@@ -185,6 +187,7 @@ const NOCTURN1_LESSONS: [LessonText, ResponsorySpec][] = [
   ],
   [
     { citation: { la: 'Job 10:1-7', en: 'Job 10:1-7' },
+      label: getBookIncipit('job'),
       la: 'Tædet ánimam meam vitæ meæ; dimíttam advérsum me elóquium meum: loquar in amaritúdine ánimæ meæ. Dicam Deo: Noli me condemnáre; índica mihi cur me ita júdices. Numquid bonum tibi vidétur, si calumniéris me, et ópprimas me opus mánuum tuárum, et consílium impiórum ádjuves? Numquid óculi cárnei tibi sunt? aut sicut videt homo, et tu vidébis? Numquid sicut dies hóminis dies tui, et anni tui sicut humána sunt témpora, ut quæras iniquitátem meam, et peccátum meum scrutéris, et scias quia nihil ímpium fécerim, cum sit nemo qui de manu tua possit erúere?',
       en: 'My soul is weary of my life, I will let go my speech against myself, I will speak in the bitterness of my soul. I will say to God: Do not condemn me: tell me why thou judgest me so. Doth it seem good to thee that thou shouldst calumniate me, and oppress me, the work of thy own hands, and help the counsel of the wicked? Hast thou eyes of flesh: or, shalt thou see as man seeth? Are thy days as the days of man, and are thy years as the times of men: That thou shouldst inquire after my iniquity, and search after my sin? And shouldst know that I have done no wicked thing, whereas there is no man that can deliver out of thy hand.' },
     { r: 'Qui Lázarum resuscitásti a monuménto fœ́tidum,',
@@ -196,6 +199,7 @@ const NOCTURN1_LESSONS: [LessonText, ResponsorySpec][] = [
   ],
   [
     { citation: { la: 'Job 10:8-12', en: 'Job 10:8-12' },
+      label: getBookIncipit('job'),
       la: 'Manus tuæ fecérunt me, et plasmavérunt me totum in circúitu: et sic repénte præcípitas me? Meménto, quæso, quod sicut lutum féceris me, et in púlverem redúces me. Nonne sicut lac mulsísti me, et sicut cáseum me coagulásti? Pelle et cárnibus vestísti me; óssibus et nervis compegísti me. Vitam et misericórdiam tribuísti mihi, et visitátio tua custodívit spíritum meum.',
       en: 'Thy hands have made me, and fashioned me wholly round about, and dost thou thus cast me down headlong on a sudden? Remember, I beseech thee, that thou hast made me as the clay, and thou wilt bring me into dust again. Hast thou not milked me as milk, and curdled me like cheese? Thou hast clothed me with skin and flesh: thou hast put me together with bones and sinews: Thou hast granted me life and mercy, and thy visitation hath preserved my spirit.' },
     { r: 'Dómine, quando véneris judicáre terram, ubi me abscóndam a vultu iræ tuæ?',
