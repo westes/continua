@@ -11,12 +11,6 @@ content in the same shape, not a design change. The dated log below is that pipe
 ## Open work, in priority order
 
 1. **Mechanism gaps**
-   - **Gospel+homily pairing shouldn't carry a responsory** — user, 2026-09-06: when a Matins
-     Gospel pericope is immediately followed by its own patristic homily (the paired
-     `gospel`/homily rendering — see `hours/matins.ts`'s Gospel+homily-fold-in convention),
-     a responsory is currently still showing, which the user says shouldn't be there in that
-     context. Needs checking which nocturn-readings entries this affects and why the
-     responsory isn't being suppressed for the paired case. Not yet investigated.
    - **Responsories need a heading label** — user, 2026-09-06: a Matins responsory currently
      renders with no heading identifying it as such, unlike most other rendered parts (which
      do have a labeled heading) — confusing for a reader. Needs a UI label (`ui/hour-view.ts`)
@@ -6441,6 +6435,24 @@ Albis", i.e. Low Sunday, not yet itself named beyond a generic ordinal — a sep
 still-open gap) carries a name distinct from the plain "Die N" pattern.
 
 `npm test` (2066 passed) and `tsc --noEmit` both pass.
+
+### Matins Gospel+homily responsory render order — closed (2026-09-06)
+
+User flagged this initially as "Gospel+homily pairing shouldn't carry a responsory at all," but the
+actual bug turned out narrower: `hours/matins.ts`'s `gospelReadingPart()` already resolves
+`part.responsory` correctly (from `homily?.responsory`, per the convention that a responsory
+belongs to the pericope+homily unit as a whole), and correctly nests `part.homily` alongside it on
+one atomic `gospel` ResolvedPart. The bug was purely in `ui/hour-view.ts`'s `case 'gospel':`
+render branch, which emitted the `part.responsory` block *before* `part.homily` instead of after
+it — producing Gospel → Responsory → Homily instead of Gospel → Homily → Responsory. Reproducible
+on any 16th Sunday after Pentecost (Nocturn 3: Luke 14:1-11 followed by St. Ambrose's homily, which
+carries the "Duo Séraphim clamábant" responsory).
+
+Fixed by swapping the two template-literal blocks in that one `case` branch; no changes needed in
+`matins.ts`. The sibling item, giving Matins responsories their own heading label, is still open
+(see Open Work above).
+
+`npm test` (2066 passed) and `npm run build` (`tsc --noEmit` + vite build) both pass.
 
 ### Matins invitatory antiphon weekday cycle — closed (2026-09-06)
 
