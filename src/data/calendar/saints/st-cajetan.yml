@@ -1,0 +1,31 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/08-07.txt` --
+# "vide C5;;Duplex;;3;;" (the "sed rubrica cisterciensis" variant,
+# Simplex, is not the default Monastic-track rank used here). Same MM-DD
+# slot St. Donatus's own file (08-07o.txt) occupies -- st-donatus.yml's
+# own comment already flags this. Both kept here, generous-commemoration
+# style: Cajetan's own much higher rank (after deflation, see below)
+# wins outright and Donatus rides along as a commemoration.
+#
+# Cajetan was canonized in 1671 by Clement X (his own Lectio6's "Clemens
+# décimus, Pontifex maximus... Sanctorum número adscripsit"), well after
+# the ~1600 cutoff in CLAUDE.md's rank-deflation rule for late
+# canonizations -- his source Duplex is deflated one FeastClass tier to
+# Semiduplex here. That still outranks Donatus's ancient Simplex.
+#
+# Own proper [Oratio]. The source does carry an [Ant 1] tag, but it's a
+# cross-reference to a seasonal/temporal antiphon
+# (@Tempora/Pent14-0:Ant 3), not a genuine proper antiphon of Cajetan's
+# own -- not modeled here (this app doesn't carry the temporal Sunday
+# antiphon cycle that reference would resolve against), so the Benedictus
+# antiphon falls back to Common of a Confessor (C5, not-a-bishop) instead,
+# same pattern as st-john-of-god.yml/st-camillus-de-lellis.yml.
+id: st-cajetan
+name: "St. Cajetan, Confessor"
+nameLa: "Sanctus Cajetanus, Confessor"
+rank: semiduplex
+common: common-of-a-confessor
+propers: "st-cajetan"
+minorHoursCommon: common-of-a-confessor
+benedictusCommon: common-of-a-confessor

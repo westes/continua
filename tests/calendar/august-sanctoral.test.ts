@@ -34,26 +34,27 @@ describe('August sanctoral pull (first pass)', () => {
     ]);
   });
 
-  it('St. Donatus wins outright every year in this app, unlike the real reference engine where he is occasionally displaced by a multi-day forward transfer this app does not model', () => {
-    // In the real Monastic 1617 engine, when Aug 3 (the Finding of St.
-    // Stephen) falls on a Sunday, it transfers forward past several
-    // higher-rank fixed feasts (Dominic, Our Lady of the Snows, the
-    // Transfiguration) and lands on Aug 7, displacing Donatus for that
-    // year (confirmed live for 2025 and 2031, both Aug-3-Sunday years).
-    // This app's transfer machinery doesn't chase a multi-day skip search
-    // like that -- see st-donatus.yml -- so Donatus wins here in every
-    // year, including ones where the real engine would displace him; a
-    // known, documented simplification rather than a guess.
+  it('St. Cajetan (found hiding behind the same MM-DD slot as St. Donatus\'s own suffixed Monastic winner file) wins outright at Semiduplex over Donatus\'s Simplex, commemorating him instead', () => {
+    // St. Donatus previously won this slot outright every year in this
+    // app -- see the app-simplification note still on st-donatus.yml
+    // about the real reference engine's occasional Aug-3-Sunday transfer
+    // this app doesn't model. Cajetan's own rank (Duplex in the source,
+    // deflated one tier to Semiduplex per CLAUDE.md's late-canonization
+    // rule -- canonized 1671) still outranks Donatus's ancient Simplex in
+    // every year, so Cajetan wins here now instead.
     const ordinary = resolveDay('2026-08-07');
     const wouldHaveTransferredInReality = resolveDay('2031-08-07');
     for (const day of [ordinary, wouldHaveTransferredInReality]) {
       expect(day.winner).toEqual({
         kind: 'sanctoral',
-        id: 'st-donatus',
-        name: 'St. Donatus, Bishop and Martyr',
-        nameLa: 'Sanctus Donatus, Episcopus et Martyr',
-        rank: 'simplex',
+        id: 'st-cajetan',
+        name: 'St. Cajetan, Confessor',
+        nameLa: 'Sanctus Cajetanus, Confessor',
+        rank: 'semiduplex',
       });
+      expect(day.commemorations).toEqual([
+        { kind: 'sanctoral', id: 'st-donatus', name: 'St. Donatus, Bishop and Martyr', nameLa: 'Sanctus Donatus, Episcopus et Martyr', rank: 'simplex' },
+      ]);
     }
   });
 

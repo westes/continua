@@ -1,0 +1,51 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/09-09.txt` --
+# "vide C2a-1;;Simplex;;1.1;;". Ancient Roman martyr (Diocletian
+# persecution, d. c. 304), so the CLAUDE.md rank-deflation rule (late
+# canonizations only) doesn't apply -- his real historical rank, Simplex,
+# is genuinely this low; it's not a stand-in for something richer. The
+# source's own Cistercian-rubric variant demotes him to a bare
+# Commemoratio outright, which is telling: even historically he's a very
+# minor observance riding on top of the Nativity of the BVM's octave
+# (Sep 8-15), not a competitor to it.
+#
+# This is a genuinely open gap in vu's calendar -- nothing currently
+# wins Sep 9. The three other suffixed 09-09*.txt files at this slot are
+# unrelated: 09-09bmv.txt is the 2nd day within the Nativity's own
+# octave (ex Sancti/09-08, Augustine's sermon), 09-09dom-oct.txt is the
+# Sunday-within-octave variant of the same, and 09-09n.txt is St. Peter
+# Claver (a later, separate calendar addition, "Duplex optional",
+# unrelated to this date's own Sancti content). Only the plain
+# (unsuffixed) 09-09.txt is Gorgonius's.
+#
+# Own proper [Oratio]; no [Ant 1]/full 9-lesson Matins of his own (source
+# carries only a single short Lectio93 "Commemoratio" reading) -- common
+# and Benedictus/minor-hours antiphons fall to the plain Common of a
+# Martyr (C2a-1 in the source's own tagging), not the Martyr-Bishop
+# common (he was a layman, Diocletian's chamberlain, not a bishop).
+#
+# NOTE (see also propers/nocturn-readings/st-gorgonius.yml and the
+# session's own final report): Sep 9 falls inside the Nativity of the
+# BVM's octave, whose `wins: duplex` threshold (nativity-bvm.yml) is
+# well above Gorgonius's real Simplex rank. Under calendar/index.ts's
+# applyOctaves, a sanctoral winner below that threshold is automatically
+# demoted to a mere commemoration and the day reverts to the octave's
+# own temporal identity -- so despite being this file's sole calendar
+# entry for Sep 9, Gorgonius does NOT actually win the day outright
+# under the app's real mechanism; he surfaces as a commemoration
+# alongside "Second Day within the Octave of the Nativity of the BVM",
+# the same fate St. Nicholas of Tolentino's own Sep 10 entry suffered
+# once that octave was strengthened. This mirrors the source's own
+# Cistercian-rubric demotion above, so it's arguably the historically
+# correct outcome, not a bug -- flagged here rather than silently
+# forcing an unearned rank bump against both the source and CLAUDE.md's
+# no-deflation-without-cause rule.
+id: st-gorgonius
+name: "St. Gorgonius, Martyr"
+nameLa: "Sanctus Gorgonius, Martyr"
+rank: simplex
+common: common-of-a-martyr
+propers: "st-gorgonius"
+minorHoursCommon: common-of-a-martyr
+benedictusCommon: common-of-a-martyr

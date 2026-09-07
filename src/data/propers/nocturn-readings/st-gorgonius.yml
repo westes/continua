@@ -1,0 +1,41 @@
+# Matins Nocturn 2 reading for St. Gorgonius, Martyr (Sep 9). Sourced
+# from web/www/horas/Latin/Sancti/09-09.txt, English/Sancti/09-09.txt.
+# The source carries only a single short lesson (Lectio93, itself headed
+# "Commemoratio S. Gorgonii Martyris" -- he never had a full proper
+# 9-lesson Matins of his own even historically), transcribed whole as
+# one Nocturn 2 reading, same "short/single source lesson" handling as
+# other minor-rank saints. No Nocturn 3 of his own -- defers to the
+# Common of a Martyr's own, not transcribed here, same convention as
+# st-rose-of-lima.yml/st-hadrian.yml.
+id: st-gorgonius
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Gorgónius, Nicomedíæ natus, Diocletiáni imperatóris cubiculárius, Dorothéo collega suo
+        adjutóre, réliquos omnes cubículi minístros ad Christi fidem perdúxit. Uterque autem,
+        cum vidísset quodam die Mártyrem coram Diocletiáno acerbíssime cruciári, ejus exémplo
+        martýrii amóre incénsus est. Itaque ambórum hæc vox erúpit: Quid est, imperátor, quod
+        hujus condemnáta senténtia, quæ nobis cum eo commúnis est, unum illum punis? istíus
+        nostra étiam est fides, idem propósitum. Eos ígitur vinctos imperátor flagéllis cóncidi
+        jubet, ita ut toto córpore cutis dirumperétur, et in plagas acétum infúndi sale
+        permíxtum; mox revínctis in cratícula subjíci ímperat vim candéntium carbónum. Deníque,
+        varie torti, suspéndio necáti sunt. Ac sancti Gorgónii corpus aliquándo Romam portátum,
+        inter duas Lauros via Latína sepúltum, póstea a Gregório quarto summo Póntifice in
+        basílicam Príncipis Apostolórum translátum est.
+      en: >-
+        Gorgonius was a native of Nicomedia, and one of the chamberlains of the Emperor
+        Diocletian. He, with the help of a fellow-chamberlain named Dorotheus, brought all the
+        other chamber-servants to believe in Christ. Both of them one day saw a martyr
+        hideously tortured in the presence of Diocletian, and the example of his testimony
+        roused them both to desire the same, and they both said: "Why, O Emperor, dost thou
+        punish this man only, by condemning an opinion which we share with him? His belief is
+        our belief. Our will is the same." The Emperor thereupon ordered them to be bound and
+        scourged till their bodies were wholly flayed, and a mixture of vinegar and salt poured
+        into the wounds. Soon after he commanded them to be bound again and grilled on bars
+        over hot coals. Finally, after a variety of tortures, they were hanged. The body of the
+        holy Gorgonius was some time afterward brought to Rome, and buried between the two
+        laurel trees upon the Latin Way, but later, during the Pontificate of Gregory IV, it
+        was translated into the Church of the Prince of the Apostles.
+    status: { la: verified, en: verified }

@@ -41,10 +41,11 @@ describe('September sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it("a date within the Nativity's own octave still excludes the real secondary saint the source names (Ss. Gorgonius) -- not modeled yet -- but the octave itself (now modeled, see calendar/octaves.ts) correctly commemorates through it", () => {
+  it("St. Gorgonius (real Simplex source rank, an ancient martyr so no rank deflation applies) is now a real sanctoral entry on Sept 9, but the Nativity octave's own `wins: duplex` threshold (well above his Simplex) still outranks him outright -- demoted to a commemoration alongside the octave itself, day reverting to its own temporal identity, same fate as St. Nicholas of Tolentino's own Sept 10 entry below", () => {
     const gorgoniusDay = resolveDay('2025-09-09');
     expect(gorgoniusDay.winner.kind).toBe('temporal');
     expect(gorgoniusDay.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'st-gorgonius', name: 'St. Gorgonius, Martyr', nameLa: 'Sanctus Gorgonius, Martyr', rank: 'simplex' },
       { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary', nameLa: 'Nativitas Beatæ Mariæ Virginis' },
     ]);
   });
