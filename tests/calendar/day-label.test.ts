@@ -35,8 +35,13 @@ describe('getDayLabel — ordinal temporal label', () => {
     expect(getDayLabel(resolveDay('2026-05-31')).en).toBe(
       'The Most Holy Trinity (Duplex II Class) — The Queenship of the Blessed Virgin Mary',
     );
+    // St. Vincent Ferrer is only Duplex, below the Easter-octave backlog's
+    // duplex-majus floor (calendar/index.ts's `EASTER_OCTAVE_BACKLOG_FLOOR`)
+    // -- he never actually lands anywhere and simply lapses for the year,
+    // so the label says so plainly instead of claiming an "elsewhere" that
+    // doesn't exist.
     expect(getDayLabel(resolveDay('2026-04-05')).en).toBe(
-      "Easter (Duplex I Class) — St. Vincent Ferrer, Confessor (transferred away)",
+      "Easter (Duplex I Class) — St. Vincent Ferrer, Confessor (omitted this year)",
     );
     expect(getDayLabel(resolveDay('2026-02-18')).en).toBe(
       "Ash Wednesday — St. Simeon, Bishop and Martyr (transferred away)",
@@ -50,7 +55,7 @@ describe('getDayLabel — ordinal temporal label', () => {
       'Sanctissima Trinitas (Duplex II. Classis) — Beata Maria Virgo Regina',
     );
     expect(getDayLabel(resolveDay('2026-04-05')).la).toBe(
-      'Pascha (Duplex I. Classis) — Sanctus Vincentius Ferrerius, Confessor (translata alio)',
+      'Pascha (Duplex I. Classis) — Sanctus Vincentius Ferrerius, Confessor (omissa hoc anno)',
     );
     expect(getDayLabel(resolveDay('2026-02-18')).la).toBe(
       'Feria Quarta Cinerum — Sanctus Simeon, Episcopus et Martyr (translata alio)',

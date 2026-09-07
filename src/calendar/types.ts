@@ -231,6 +231,11 @@ export interface LiturgicalDay {
    * `applyEasterOctaveBacklog` mechanism instead, which can place a
    * candidate many days later. Distinct from — and not implied by —
    * `Commemoration`, since a transferred-away
-   * candidate gets no commemoration on its own native date at all. */
-  transferredAway?: { candidate: SanctoralIdentity };
+   * candidate gets no commemoration on its own native date at all.
+   * `landed` is false for the one case where the signal doesn't actually
+   * lead anywhere: a candidate impeded within the Easter span (Palm
+   * Sunday-Low Sunday) too weak for `EASTER_OCTAVE_BACKLOG_FLOOR` simply
+   * lapses for the year rather than moving to a later date — see
+   * calendar/index.ts's `resolveDay` for where this is decided. */
+  transferredAway?: { candidate: SanctoralIdentity; landed: boolean };
 }

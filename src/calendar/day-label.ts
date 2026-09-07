@@ -699,21 +699,32 @@ const TRANSFERRED_LABEL = bi('transferred', 'translata');
 /** See `TRANSFERRED_LABEL`'s doc comment for why this is worded differently. */
 const TRANSFERRED_AWAY_LABEL = bi('transferred away', 'translata alio');
 
-/** "St. X (transferred away)" note for a date whose own native sanctoral
- * candidate (`day.transferredAway`) couldn't be kept here — appended after
- * everything else `getDayLabel` already found for this date's real
- * winner/commemorations, since the departure is a footnote about a
- * *different* saint, not part of this date's own identity. Deliberately
- * names no landing date (see `transferredAway`'s own doc comment) — the
- * point is just to tell a reader "not an omission, this office moved
- * elsewhere," not to claim a specific destination that a later, unmodeled
- * transfer chain could make wrong. */
+/** For `day.transferredAway.landed === false` — a candidate impeded within
+ * the Easter span too weak for the backlog floor, which never actually
+ * lands anywhere (see `transferredAway`'s own doc comment). Distinct
+ * wording from `TRANSFERRED_AWAY_LABEL`: that one promises the office
+ * moved elsewhere; this one is honest that it simply didn't happen this
+ * year. */
+const OMITTED_LABEL = bi('omitted this year', 'omissa hoc anno');
+
+/** "St. X (transferred away)" / "St. X (omitted this year)" note for a
+ * date whose own native sanctoral candidate (`day.transferredAway`)
+ * couldn't be kept here — appended after everything else `getDayLabel`
+ * already found for this date's real winner/commemorations, since the
+ * departure is a footnote about a *different* saint, not part of this
+ * date's own identity. When `landed` is true, deliberately names no
+ * landing date (see `transferredAway`'s own doc comment) — the point is
+ * just to tell a reader "not an omission, this office moved elsewhere,"
+ * not to claim a specific destination that a later, unmodeled transfer
+ * chain could make wrong. When `landed` is false, there is no elsewhere
+ * to be vague about, so the note says so plainly instead. */
 function transferredAwayNote(day: LiturgicalDay): Bi | undefined {
   if (!day.transferredAway) {
     return undefined;
   }
   const name = biName(day.transferredAway.candidate.name, day.transferredAway.candidate.nameLa);
-  return bi(`${name.en} (${TRANSFERRED_AWAY_LABEL.en})`, `${name.la} (${TRANSFERRED_AWAY_LABEL.la})`);
+  const label = day.transferredAway.landed ? TRANSFERRED_AWAY_LABEL : OMITTED_LABEL;
+  return bi(`${name.en} (${label.en})`, `${name.la} (${label.la})`);
 }
 
 function withTransferNote(day: LiturgicalDay, label: Partial<Record<string, string>>): Partial<Record<string, string>> {

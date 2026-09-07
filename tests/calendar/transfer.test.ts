@@ -139,6 +139,9 @@ describe('the Easter-octave backlog (Palm Sunday through Low Sunday)', () => {
     expect(holyMonday.winner).toEqual({ kind: 'temporal', id: 'monday-holy-week' });
     expect(holyMonday.commemorations).toEqual([{ kind: 'temporal', id: 'palm-sunday' }]);
     expect(holyMonday.transferredAway?.candidate.id).toBe('st-leo-i');
+    // Below the backlog floor, so he never actually lands anywhere --
+    // `landed` should say so rather than implying an unnamed elsewhere.
+    expect(holyMonday.transferredAway?.landed).toBe(false);
 
     for (const afterLowSunday of ['2033-04-25', '2033-04-26', '2033-04-27', '2033-04-28', '2033-04-29']) {
       const day = resolveDay(afterLowSunday);
@@ -158,6 +161,9 @@ describe('the Easter-octave backlog (Palm Sunday through Low Sunday)', () => {
     const easterSunday = resolveDay('2035-03-25');
     expect(easterSunday.winner).toEqual({ kind: 'temporal', id: 'easter-sunday' });
     expect(easterSunday.transferredAway?.candidate.id).toBe('annunciation');
+    // Duplex I. classis clears the backlog floor and really does land
+    // three days after Low Sunday (asserted below), so `landed` is true.
+    expect(easterSunday.transferredAway?.landed).toBe(true);
     for (const impededDate of ['2035-03-21', '2035-03-24', '2035-03-26', '2035-03-29', '2035-04-01']) {
       const day = resolveDay(impededDate);
       expect(day.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'annunciation')).toBe(false);

@@ -228,8 +228,17 @@ export function resolveDay(isoDate: string): LiturgicalDay {
   // This date's own native candidate (if any) couldn't be kept here and
   // moved on instead — see calendar/types.ts's `transferredAway` doc
   // comment for why this is tracked separately from `Commemoration`, and
-  // why no landing date is recorded.
-  const transferredAway = result.transfer ? { candidate: result.transfer.candidate } : undefined;
+  // why no landing date is recorded. Not every `transfer` signal actually
+  // finds a landing, though: a candidate impeded within the Easter span
+  // (Palm Sunday-Low Sunday) that doesn't clear `EASTER_OCTAVE_BACKLOG_FLOOR`
+  // is never placed by `applyEasterOctaveBacklog` — it simply lapses for
+  // the year (real case: St. Leo I, duplex, impeded by Easter Saturday
+  // 2026-04-11). Calling that "transferred away" would overclaim a
+  // destination that doesn't exist, so `landed: false` marks it for
+  // `day-label.ts` to word differently.
+  const isoOffset = easterOffsetOf(isoDate);
+  const landsSomewhere = !(isoOffset >= -7 && isoOffset <= 7 && result.transfer && !isAtLeast(result.transfer.candidate.rank, EASTER_OCTAVE_BACKLOG_FLOOR));
+  const transferredAway = result.transfer ? { candidate: result.transfer.candidate, landed: landsSomewhere } : undefined;
 
   return { date: isoDate, weekday, season, temporalCategory, winner, commemorations, transferredAway };
 }
