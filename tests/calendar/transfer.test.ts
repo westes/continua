@@ -53,8 +53,8 @@ describe('transfer mechanism (resolveDay integration)', () => {
     expect(monday.winner).toEqual({
       kind: 'sanctoral',
       id: 'st-lawrence',
-      name: 'St. Lawrence, Martyr',
-      nameLa: 'Sanctus Laurentius, Martyr',
+      name: 'St. Lawrence, Deacon and Martyr',
+      nameLa: 'Sanctus Laurentius, Diaconus et Martyr',
       rank: 'duplex-2-classis',
     });
   });

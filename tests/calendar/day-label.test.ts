@@ -41,7 +41,7 @@ describe('getDayLabel — ordinal temporal label', () => {
     // so the label says so plainly instead of claiming an "elsewhere" that
     // doesn't exist.
     expect(getDayLabel(resolveDay('2026-04-05')).en).toBe(
-      "Easter (Duplex I Class) — St. Vincent Ferrer, Confessor (omitted this year)",
+      "Easter (Duplex I Class) — St. Vincent Ferrer, Priest (omitted this year)",
     );
     expect(getDayLabel(resolveDay('2026-02-18')).en).toBe(
       "Ash Wednesday — St. Simeon, Bishop and Martyr (transferred away)",
@@ -55,7 +55,7 @@ describe('getDayLabel — ordinal temporal label', () => {
       'Sanctissima Trinitas (Duplex II. Classis) — Beata Maria Virgo Regina',
     );
     expect(getDayLabel(resolveDay('2026-04-05')).la).toBe(
-      'Pascha (Duplex I. Classis) — Sanctus Vincentius Ferrerius, Confessor (omissa hoc anno)',
+      'Pascha (Duplex I. Classis) — Sanctus Vincentius Ferrerius, Presbyter (omissa hoc anno)',
     );
     expect(getDayLabel(resolveDay('2026-02-18')).la).toBe(
       'Feria Quarta Cinerum — Sanctus Simeon, Episcopus et Martyr (translata alio)',
@@ -222,7 +222,7 @@ describe('getDayLabel — active octave', () => {
     // so she's commemorated rather than winning. Matches the live engine's
     // own title for this date directly (see saints/st-clare.yml).
     expect(getDayLabel(resolveDay('2026-08-12')).en).toBe(
-      '3rd Day within the Octave of St. Lawrence, Martyr (Semiduplex) — St. Clare, Virgin',
+      '3rd Day within the Octave of St. Lawrence, Deacon and Martyr (Semiduplex) — St. Clare, Virgin',
     );
   });
 
@@ -291,7 +291,7 @@ describe('getDayLabel — active octave', () => {
     // Beatæ Mariæ Virginis", not a bare "The Assumption of the Blessed
     // Virgin Mary".
     expect(getDayLabel(resolveDay('2026-08-17')).en).toBe(
-      'Octave of St. Lawrence, Martyr (Duplex) — 3rd Day within the Octave of The Assumption of the Blessed Virgin Mary — St. Hyacinth, Confessor',
+      'Octave of St. Lawrence, Deacon and Martyr (Duplex) — 3rd Day within the Octave of The Assumption of the Blessed Virgin Mary — St. Hyacinth, Confessor',
     );
     expect(getDayLabel(resolveDay('2026-08-18')).en).toBe(
       '4th Day within the Octave of The Assumption of the Blessed Virgin Mary (Duplex)',

@@ -67,7 +67,7 @@ describe('September sanctoral pull (first pass)', () => {
     const day = resolveDay('2025-09-10');
     expect(day.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-13' });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-nicholas-of-tolentino', name: 'St. Nicholas of Tolentino, Confessor', nameLa: 'Sanctus Nicolaus Tolentinas, Confessor', rank: 'semiduplex' },
+      { kind: 'sanctoral', id: 'st-nicholas-of-tolentino', name: 'St. Nicholas of Tolentino, Priest', nameLa: 'Sanctus Nicolaus Tolentinas, Presbyter', rank: 'semiduplex' },
       { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary', nameLa: 'Nativitas Beatæ Mariæ Virginis' },
     ]);
   });
@@ -97,8 +97,8 @@ describe('September sanctoral pull (first pass)', () => {
     expect(day.winner).toEqual({
       kind: 'sanctoral',
       id: 'st-jerome',
-      name: 'St. Jerome, Priest, Confessor and Doctor of the Church',
-      nameLa: 'Sanctus Hieronymus, Presbyter, Confessor et Ecclesiæ Doctor',
+      name: 'St. Jerome, Priest and Doctor of the Church',
+      nameLa: 'Sanctus Hieronymus, Presbyter et Ecclesiæ Doctor',
       rank: 'duplex',
     });
     expect(day.commemorations).toEqual([]);

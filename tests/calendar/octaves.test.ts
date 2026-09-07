@@ -12,8 +12,8 @@ describe('activeOctavesFor', () => {
     expect(day1).toEqual([
       {
         id: 'st-lawrence',
-        name: 'St. Lawrence, Martyr',
-        nameLa: 'Sanctus Laurentius, Martyr',
+        name: 'St. Lawrence, Deacon and Martyr',
+        nameLa: 'Sanctus Laurentius, Diaconus et Martyr',
         wins: 'semiduplex',
         dayNumber: 1,
         isClosingDay: false,
@@ -28,8 +28,8 @@ describe('activeOctavesFor', () => {
     expect(day8).toEqual([
       {
         id: 'st-lawrence',
-        name: 'St. Lawrence, Martyr',
-        nameLa: 'Sanctus Laurentius, Martyr',
+        name: 'St. Lawrence, Deacon and Martyr',
+        nameLa: 'Sanctus Laurentius, Diaconus et Martyr',
         wins: 'duplex',
         dayNumber: 8,
         isClosingDay: true,

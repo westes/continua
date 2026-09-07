@@ -5,11 +5,16 @@
 # that the collect-pulling methodology exists -- own proper collect and
 # antiphon.
 id: st-lawrence
-name: "St. Lawrence, Martyr"
+name: "St. Lawrence, Deacon and Martyr"
 # Standard Latin form, matching this app's own "St. X, Rank" naming
 # convention (the source's own martyrology/kalendar entries for him use
 # the genitive "S. Laurentii Martyris", dependent on an implied "Festum").
-nameLa: "Sanctus Laurentius, Martyr"
+# "Deacon" isn't in that source title either, but he's one of the best-
+# documented deacons of the early Roman church (one of Pope Sixtus II's
+# seven deacons, famous for it in his own martyrdom account) -- noted per
+# this app's own convention of naming a known office even when the source
+# title doesn't bother to.
+nameLa: "Sanctus Laurentius, Diaconus et Martyr"
 rank: duplex-2-classis
 common: common-of-a-martyr
 propers: "st-lawrence"
