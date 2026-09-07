@@ -1,0 +1,32 @@
+# Real, dedicated commemoration bundle for St. Maurus on Jan 15 -- live-
+# verified against the local CGI reference engine (`../divinum-officium-
+# reference`'s companion instance), Laudes, version=Tridentine - 1906,
+# date=01-15-2029, votive=Hodie: the Tridentine track's own genuine proper
+# "Commemoratio S. Mauri Abbatis" bundle, not a generic Common-of-an-Abbot
+# substitution. This is Maurus's real historically-attested commemoration
+# text under the track vu now follows for calendar/saints dating -- see
+# calendar/saints/st-maurus-abbot.yml's own header for why he's a
+# commemoration here rather than the day's winner. Ant/V/R differ from the
+# generic common-of-an-abbot-commemoration-antiphon.yml text; both real,
+# just this saint's own proper occasion instead of the shared Common.
+id: st-maurus-abbot-commemoration
+text:
+  la: |
+    Ant. Similábo eum viro sapiénti, qui ædificávit domum suam supra petram.
+    V. Amávit eum Dóminus, et ornávit eum.
+    R. Stolam glóriæ índuit eum.
+    Orémus.
+    Intercéssio nos, quǽsumus, Dómine, beáti Mauri Abbátis comméndet: ut, quod nostris méritis non valémus, ejus patrocínio assequámur.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Ant. I will liken him unto a wise man, which built his house upon a rock.
+    V. The Lord loved him and beautified him.
+    R. He clothed him with a robe of glory.
+    Let us pray.
+    May the pleading of blessed Maur, the Abbot, make us acceptable unto thee, O Lord, we pray; that what we may not have through any merits of ours, we may gain by means of his patronage.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

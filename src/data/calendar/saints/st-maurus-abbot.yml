@@ -1,15 +1,33 @@
 # Verified against Divinum Officium (Monastic Tridentinum 1617), live kalendar
-# check (2029-01-15, no Sunday collision) -- winner outright, Duplex II. classis,
-# a monastic-calendar-specific elevation (the base 1570 Tridentine calendar has
-# him as a lesser commemoration on this date instead -- see M1617.txt's delta).
-# No unique Oratio/Antiphon in the source (web/www/horas/Latin/Sancti/01-15.txt
-# has only Lectio blocks) -- he uses the Common of an Abbot for everything.
+# check (2029-01-15, no Sunday collision) -- Duplex II. classis is the
+# Monastic kalendarium's own rank for this feast, where it elevates him to
+# the day's winner (M1617.txt: "01-15=01-15t=S. Mauri Abbatis"). The base
+# 1570 Tridentine calendar instead carries him only as a plain commemoration
+# (rank code "1", the same tier as other bare-commemoration entries like
+# ss-marius-martha-audifax-and-abachum.yml/st-felix-presbyter.yml) alongside
+# St. Paul the Hermit's own outright win (1570.txt: "01-15=...=S. Pauli
+# primi Eremitae et Confessoris=3=S. Mauri Abbatis=1="). 2026-09: vu now
+# follows the Tridentine placement for calendar/saints dating (see
+# st-paul-the-hermit.yml's own header on why) -- `rank` below is set to that
+# Tridentine-track commemoration tier (simplex), not the Monastic winner
+# tier, since `rank` is what calendar/collision.ts actually compares to
+# decide who wins a shared date; the Monastic Duplex II. classis rank is a
+# real fact about him, just not the one vu encodes here anymore. Live-
+# verified real "Commemoratio S. Mauri Abbatis" text (Tridentine - 1906,
+# Laudes) is authored in propers/common/st-maurus-abbot-commemoration.yml --
+# `propers` points there instead of relying on the generic collectCommon/
+# Common-of-an-Abbot substitution fallback (still kept below as a safety
+# net for `getDayCollect`, unreachable in practice since Maurus never wins
+# outright under this dating). No unique Oratio/Antiphon for a hypothetical
+# outright-winner rendering in the source itself (web/www/horas/Latin/
+# Sancti/01-15.txt has only Lectio blocks) -- would fall to the Common of an
+# Abbot for everything if that ever mattered.
 id: st-maurus-abbot
 name: "St. Maurus, Abbot"
 nameLa: "Sanctus Maurus, Abbas"
-rank: duplex-2-classis
+rank: simplex
 common: common-of-an-abbot
-propers: null
+propers: "st-maurus-abbot"
 collectCommon: collect-c5b
 collectName:
   la: ["Mauri"]

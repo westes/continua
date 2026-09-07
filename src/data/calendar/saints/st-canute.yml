@@ -1,0 +1,40 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query):
+# `web/www/horas/Latin/Sancti/01-19o.txt`. Suffixed filename, found via the
+# 2026-09 "sweep every suffixed MM-DDx.txt file for a hidden saint" pass
+# (memory vu-hidden-saint-audit's "Extending the audit" follow-up) -- not a
+# kalendarium-designated winner of Jan 19 in either source track (neither
+# `Tabulae/Kalendaria/1570.txt` nor `M1617.txt` points to `01-19o` -- both
+# name only Paul the Hermit + Ss. Marius/Martha/Audifax/Abachum, already
+# modeled as st-paul-the-hermit.yml/ss-marius-martha-audifax-and-
+# abachum.yml). No `SanctiM/01-19*` file exists at all, so Canute never had
+# a place in the Monastic 1617 calendar specifically -- this is a Tridentine-
+# track-only, regional (Danish) addition, closer in kind to vu's own
+# generous-commemoration/future-user-editable-calendar spirit than to a
+# genuine source-kalendarium gap.
+#
+# [Rank] gives "vide C2a-1;;Simplex" (old rubric) / "Semiduplex" (newer
+# rubric) -- Semiduplex used here. [Lectio7-9]'s own literal cross-reference
+# says "@Commune/C2-1" (the Martyr-*Pontiff* common), which conflicts with
+# [Rank]/[Rule]'s own "vide C2a-1" (Martyr-not-Pontiff) -- Canute, a king and
+# not a bishop, clearly belongs under the non-Pontiff common, so the
+# [Rank]/[Rule] directive is followed and the Lectio7-9 literal reference is
+# treated as a source inconsistency, same class of thing flagged in memory
+# vu-assumption-collect-do-inconsistency.
+#
+# 2026-09: St. Paul the Hermit moved off Jan 19 back to Jan 15 (see
+# st-paul-the-hermit.yml's own header), so Jan 19 is now just Canute and
+# the Marius group. Canute's Semiduplex outranks their Simplex outright, so
+# he wins the day here, demoting them to a commemoration (reusing their
+# existing ss-marius-martha-audifax-and-abachum.yml, which already had no
+# text of its own -- a placeholder-rank first-pass entry, per its own
+# header). st-canute-commemoration.yml is now only reachable in the rarer
+# case Jan 19 itself is outranked (e.g. a Sunday).
+id: st-canute
+name: "St. Canute, King and Martyr"
+nameLa: "Sanctus Canutus, Rex et Martyr"
+rank: semiduplex
+common: common-of-a-martyr
+propers: "st-canute"
+minorHoursCommon: common-of-a-martyr
+benedictusCommon: common-of-a-martyr

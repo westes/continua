@@ -1,0 +1,33 @@
+# Ant+V/R+collect commemoration bundle, same combined-bundle shape as
+# st-gorgonius-commemoration.yml -- see hours/resolve-common.ts's
+# sanctoralCommemorationPart for how this renders, falling back to the
+# bare collect (st-canute-collect.yml) when this file didn't exist.
+# Only reachable in the rarer case Jan 19 itself is outranked (Canute wins
+# the day outright against the Marius group in the ordinary case -- see
+# calendar/saints/st-canute.yml's own header). Ant 2/Versum 2 are the
+# standard de-Communi pairing for the Common of a Martyr not a Pontiff
+# (C2a-1, his own real common per [Rank]/[Rule]) -- common-of-a-martyr-
+# commemoration-antiphon.yml / lauds-versicle-common-of-a-martyr.yml, both
+# already verified elsewhere (same text st-gorgonius-commemoration.yml
+# uses, since it's Common text, not proper to either saint).
+id: st-canute-commemoration
+text:
+  la: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Deus, qui ad illustrándam Ecclésiam tuam beátum Canútum regem martýrii palma et gloriósis miráculis decoráre dignátus es: concéde propítius; ut, sicut ipse Domínicæ passiónis imitátor fuit, ita nos, per ejus vestígia gradiéntes, ad gáudia sempitérna perveníre mereámur.
+    Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Ant. He that hateth his life * in this world, shall keep it unto life eternal.
+    V. The righteous shall flourish like the palm-tree.
+    R. He shall grow like a cedar in Lebanon.
+    Let us pray.
+    O God, who, for the greater glory of Thy Church, wast pleased to adorn blessed Canute the king with the palm of martyrdom and with glorious miracles: mercifully grant that, as he was himself an imitator of our Lord's Passion, so we, walking in his footsteps, may deserve to attain to everlasting joys.
+    Through the same Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified
