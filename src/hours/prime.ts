@@ -80,6 +80,7 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
             psalmNumber: ref.number,
             antiphon,
             verses,
+            verseRange: ref.verses,
           };
         });
       }
@@ -93,6 +94,7 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
             text: v.text,
             status: v.status,
           })),
+          verseRange: part.verses,
         },
       ];
     case 'canticle':

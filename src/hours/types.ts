@@ -225,7 +225,12 @@ export type ResolvedPart =
   // builder returns) rather than per-hour, so it's absent only during the
   // Sacred Triduum (calendar/temporal.ts's isInTriduum) — never omit it
   // when building a psalm part yourself.
-  | { kind: 'psalm'; psalmNumber: number; antiphon?: ResolvedText; verses: ResolvedVerse[]; gloriaPatri?: ResolvedText }
+  // `verseRange` is the explicit sub-portion spec (e.g. "1-10" for one
+  // stanza of Psalm 118/138/143/144) carried through only when the
+  // template actually named one — absent whenever `verses` is the
+  // psalm's whole chantable text, so the UI can cite "Psalm 50" rather
+  // than a numeric range for an undivided psalm.
+  | { kind: 'psalm'; psalmNumber: number; antiphon?: ResolvedText; verses: ResolvedVerse[]; verseRange?: string; gloriaPatri?: ResolvedText }
   // `gloriaPatri` filled in centrally, same as the 'psalm' kind above —
   // see that field's doc comment.
   | { kind: 'canticle'; canticleId: string; text: ResolvedText; antiphon?: ResolvedText; gloriaPatri?: ResolvedText }

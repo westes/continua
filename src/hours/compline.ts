@@ -66,6 +66,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
             text: v.text,
             status: v.status,
           })),
+          verseRange: part.verses,
         },
       ];
     case 'nunc-dimittis': {

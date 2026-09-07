@@ -71,6 +71,7 @@ function psalmParts(group: VespersGroup, day: LiturgicalDay): ResolvedPart[] {
       psalmNumber: ref.number,
       antiphon,
       verses,
+      verseRange: ref.verses,
     };
   });
   parts.push({ kind: 'antiphon', text: full });

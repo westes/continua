@@ -58,7 +58,7 @@ export function psalmWithAntiphon(number: number, verses: string | undefined, an
     status: verseEntry.status,
   }));
   const { verses: marked, antiphon: opening } = applyFlexaMark(raw, antiphon);
-  return { kind: 'psalm', psalmNumber: number, antiphon: opening, verses: marked };
+  return { kind: 'psalm', psalmNumber: number, antiphon: opening, verses: marked, verseRange: verses };
 }
 
 export function barePsalm(number: number, verses?: string): ResolvedPart {

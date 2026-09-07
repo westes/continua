@@ -283,6 +283,7 @@ function psalmRefParts(refs: PsalmRef[]): ResolvedPart[] {
     kind: 'psalm' as const,
     psalmNumber: ref.number,
     verses: getPsalmVerses(ref.number, ref.verses).map((v): ResolvedVerse => ({ n: v.n, text: v.text, status: v.status })),
+    verseRange: ref.verses,
   }));
 }
 
@@ -588,6 +589,7 @@ function ferialAntiphonedNocturn(day: LiturgicalDay): ResolvedPart[] {
         psalmNumber: ref.number,
         verses,
         antiphon,
+        verseRange: ref.verses,
       });
     });
     parts.push({ kind: 'antiphon', text: full });
@@ -616,7 +618,7 @@ function ferialNamedAntiphonedNocturn(day: LiturgicalDay, override: FerialNamedO
         const rawVerses = getPsalmVerses(ref.number, ref.verses).map((v): ResolvedVerse => ({ n: v.n, text: v.text, status: v.status }));
         const { verses, antiphon: partAntiphon } = applyFlexaMark(rawVerses, isFirst ? opening : undefined);
         isFirst = false;
-        parts.push({ kind: 'psalm', psalmNumber: ref.number, verses, antiphon: partAntiphon });
+        parts.push({ kind: 'psalm', psalmNumber: ref.number, verses, antiphon: partAntiphon, verseRange: ref.verses });
       }
     }
     parts.push({ kind: 'antiphon', text: full });
@@ -697,7 +699,7 @@ function withSingleAntiphon(refs: PsalmRef[], antiphonText: ResolvedText, winner
   refs.forEach((ref, i) => {
     const rawVerses = getPsalmVerses(ref.number, ref.verses).map((v): ResolvedVerse => ({ n: v.n, text: v.text, status: v.status }));
     const { verses, antiphon: partAntiphon } = applyFlexaMark(rawVerses, i === 0 ? opening : undefined);
-    parts.push({ kind: 'psalm', psalmNumber: ref.number, verses, antiphon: partAntiphon });
+    parts.push({ kind: 'psalm', psalmNumber: ref.number, verses, antiphon: partAntiphon, verseRange: ref.verses });
   });
   parts.push({ kind: 'antiphon', text: full });
   return parts;

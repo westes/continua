@@ -50,6 +50,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
           psalmNumber: ref.number,
           antiphon,
           verses,
+          verseRange: ref.verses,
         };
       });
     }

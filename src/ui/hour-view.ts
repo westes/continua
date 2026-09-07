@@ -134,16 +134,11 @@ function renderPart(part: ResolvedPart, languages: readonly string[]): string {
         </section>
       `;
     case 'psalm': {
-      // Always cite the full range, not just the psalm number — a 4-verse
-      // slice of Psalm 118 is a different citation from the whole psalm.
-      const first = part.verses[0]?.n;
-      const last = part.verses[part.verses.length - 1]?.n;
-      const citation =
-        first === undefined
-          ? `Psalm ${part.psalmNumber}`
-          : first === last
-            ? `Psalm ${part.psalmNumber}:${first}`
-            : `Psalm ${part.psalmNumber}:${first}-${last}`;
+      // Cite a bare "Psalm 50" when the whole chantable psalm is being
+      // said; only an explicit sub-portion (a stanza of Psalm 118/138/
+      // 143/144, e.g. "Psalm 118:1-10") gets verse numbers, since that's
+      // a genuinely different citation from the whole psalm.
+      const citation = part.verseRange ? `Psalm ${part.psalmNumber}:${part.verseRange}` : `Psalm ${part.psalmNumber}`;
       return `
         <section class="ordo-part ordo-part-psalm">
           ${part.antiphon ? renderColumns(part.antiphon, languages) : ''}
