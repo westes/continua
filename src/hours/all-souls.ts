@@ -5,6 +5,8 @@ import { v, versicle, type Bilingual, type LessonText } from './office-of-the-de
 import { octaveCommemorationPart } from './resolve-common';
 import { isAllSouls } from '../calendar/day-label';
 import { resolveDay, resolveActiveOctave } from '../calendar';
+import { getSaintRecord } from '../calendar/feasts';
+import { getOctaveReading } from '../propers/octave-readings';
 
 /**
  * All Souls' Day (Nov 2) — the Office of the Dead, layered on top of the
@@ -79,8 +81,45 @@ const CORINTHIANS_LESSONS: LessonText[] = [
   },
 ];
 
-export function buildMatinsParts(): ResolvedPart[] {
-  return office.buildMatinsParts({ nocturn2Lessons: AUGUSTINE_LESSONS, nocturn3Lessons: CORINTHIANS_LESSONS });
+/** An active octave's own Matins reading (`data/propers/octave-readings/
+ * *.yml`) — same `activeOctavesFor`/`getOctaveReading` pool contribution
+ * every ordinary day's Matins reading pool already gives an active
+ * octave (see this file's Lauds/Vespers header and matins.ts's own
+ * `buildReadingPool`), generously kept here too despite the historical
+ * rubric's blanket "Omit ... Commemoratio" for All Souls' Day. Slotted in
+ * as its own labeled reading after the fixed 9-lesson Requiem structure
+ * (Job/Augustine/1 Corinthians) and before the closing collect —
+ * All Souls' own Matins isn't built through `buildReadingPool`'s
+ * pool-then-distribute machinery at all (it's the Office of the Dead's
+ * fixed 3-nocturn shape instead), so there's no natural nocturn slot to
+ * drop this into the way an ordinary day's pool would. */
+function octaveReading(date: string): ResolvedPart[] {
+  const day = resolveDay(date);
+  const octave = resolveActiveOctave(day.date);
+  if (!octave) {
+    return [];
+  }
+  const reading = getOctaveReading(octave.id, octave.dayNumber);
+  if (!reading) {
+    return [];
+  }
+  const occasion = getSaintRecord(octave.id)?.name;
+  const label = occasion
+    ? { la: reading.source.la ? `${reading.source.la} (for ${occasion})` : reading.source.la, en: reading.source.en ? `${reading.source.en} (for ${occasion})` : reading.source.en }
+    : reading.source;
+  return [
+    {
+      kind: 'lesson',
+      text: { text: reading.text, status: reading.status },
+      label,
+      responsory: reading.responsory ? { text: reading.responsory, status: { la: 'verified', en: 'verified' } } : undefined,
+    },
+  ];
+}
+
+export function buildMatinsParts(date: string): ResolvedPart[] {
+  const parts = office.buildMatinsParts({ nocturn2Lessons: AUGUSTINE_LESSONS, nocturn3Lessons: CORINTHIANS_LESSONS });
+  return [...parts.slice(0, -2), ...octaveReading(date), ...parts.slice(-2)];
 }
 
 // ---------------------------------------------------------------------

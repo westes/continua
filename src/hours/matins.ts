@@ -1097,7 +1097,7 @@ function distributeIntoNocturns(pool: ResolvedPart[], nocturnCount: number): Res
 
 export function resolveOrdo(date: string): ResolvedOrdo {
   if (isAllSouls(date)) {
-    return { hourId: 'matins', date, parts: buildMatinsParts(), dayLabel: getDayLabel(resolveDay(date)) };
+    return { hourId: 'matins', date, parts: buildMatinsParts(date), dayLabel: getDayLabel(resolveDay(date)) };
   }
   const day = resolveDay(date);
   const winner = resolveOfficeWinner(day);
