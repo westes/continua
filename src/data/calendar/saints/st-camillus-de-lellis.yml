@@ -1,0 +1,32 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/07-18.txt` --
+# "vide C5;;Duplex;;3;;" (the "rubrica innovata"/"rubrica cisterciensis"
+# blocks below it are, respectively, the 1960 reform's own downgrade and
+# the Monastic-specific override -- neither is the Divino Afflatu default
+# this app follows). Found while auditing the Monastic 1617 kalendar's
+# own suffixed-filename occupant of this date (07-18o.txt, an unrelated
+# other saint): this plain MM-DD.txt independently holds Camillus's real
+# Divino Afflatu content, invisible to prior sweeps that only opened the
+# Monastic winner's own file (Ss. Symphorosa and Her Seven Sons,
+# ss-symphorosa-and-seven-sons.yml, Simplex).
+#
+# Camillus was canonized in 1746 -- per CLAUDE.md's "rank deflation for
+# late canonizations" rule, his source Duplex is deflated one FeastClass
+# tier to Semiduplex here (a routine 18th-century canonization isn't a
+# meaningful match for the historical Duplex tier). Even deflated,
+# Semiduplex still outranks Symphorosa's Simplex, so Camillus wins
+# outright and Symphorosa is commemorated in return (an existing,
+# already-verified commemoration bundle,
+# propers/common/ss-symphorosa-and-seven-sons-commemoration.yml, covers
+# her side of that automatically). Own proper [Oratio]; no [Ant 1] of its
+# own, so the Benedictus antiphon falls back to Common of a Confessor Not
+# Bishop (C5).
+id: st-camillus-de-lellis
+name: "St. Camillus de Lellis, Confessor"
+nameLa: "Sanctus Camillus de Lellis, Confessor"
+rank: semiduplex
+common: common-of-a-confessor-not-bishop
+propers: "st-camillus-de-lellis"
+minorHoursCommon: common-of-a-confessor-not-bishop
+benedictusCommon: common-of-a-confessor-not-bishop

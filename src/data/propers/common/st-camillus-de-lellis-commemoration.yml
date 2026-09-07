@@ -1,0 +1,38 @@
+# Standard de-Communi commemoration for common-of-a-confessor-not-bishop
+# (`[Ant 2]`+`[Versum 2]` from the reference engine's Commune files, same
+# pattern st-dominic-commemoration.yml/st-ephraim-of-syria-commemoration.yml
+# use). St. Camillus has no proper antiphon of his own in the source, so
+# this reuses the Common's own text, marked `draft` per this app's
+# "prefer draft over missing" convention. Collect is his own real proper
+# (st-camillus-de-lellis-collect.yml), unchanged. Needed for the rare
+# case Jul 18 falls on a day that outranks him (e.g. a Sunday), demoting
+# him to a commemoration alongside Ss. Symphorosa and her Seven Sons.
+id: st-camillus-de-lellis-commemoration
+text:
+  la: |
+    Ant. Euge, serve bone et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, intra in gáudium Dómini tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui sanctum Camíllum, ad animárum in extrémo agóne luctántium subsídium,
+    singulári caritátis prærogatíva decorásti: ejus, quǽsumus, méritis, spíritum nobis tuæ
+    dilectiónis infúnde; ut in hora éxitus nostri hostem víncere, et ad cæléstem mereámur
+    corónam perveníre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Ant. Well done, thou good and faithful servant; thou hast been faithful over a few things, I will make thee ruler over many things; enter thou into the joy of thy Lord.
+    V. The mouth of the righteous speaketh wisdom.
+    R. And his tongue talketh judgment.
+    Let us pray.
+    O God, Who didst adorn thy holy servant Camillus with a rare grace of charity, to
+    comfort souls wrestling in their final agony: pour into us, we beseech thee, through his
+    merits, the spirit of thy love; that in the hour of our own departure we may have
+    strength to overcome the enemy, and may be found worthy to come to the crown of heaven.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity
+    of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: draft
+  en: draft

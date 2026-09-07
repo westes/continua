@@ -47,6 +47,21 @@ describe('July sanctoral pull (first pass)', () => {
     ]);
   });
 
+  it("St. Camillus de Lellis (Divino Afflatu's own occupant of this MM-DD slot, added alongside Ss. Symphorosa and Her Seven Sons; his canonization postdates ~1600 so his source Duplex rank is deflated one tier to semiduplex per CLAUDE.md) still wins outright over their Simplex, commemorating them instead", () => {
+    const day = resolveDay('2028-07-18'); // a Tuesday, no Sunday collision
+    expect(day.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-camillus-de-lellis',
+      name: 'St. Camillus de Lellis, Confessor',
+      nameLa: 'Sanctus Camillus de Lellis, Confessor',
+      rank: 'semiduplex',
+    });
+    expect(day.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'ss-symphorosa-and-seven-sons', name: 'Ss. Symphorosa and Her Seven Sons, Martyrs', nameLa: 'Sancta Symphorosa et Septem Filii Ejus, Martyres', rank: 'simplex' },
+    ]);
+    expect(getDayCollect(day).status.en).toBe('verified');
+  });
+
   it('pure octave-continuation days with no named saint at all are excluded entirely', () => {
     // 07-01 through 07-08 mostly turned out to have real independent
     // content after all (see vu-sanctoral-sweep-progress memory) --

@@ -1,0 +1,25 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query): untagged/
+# default [Rank] block of `web/www/horas/Latin/Sancti/06-28.txt` --
+# "vide C2;;Duplex;;3;;" (the cisterciensis-tagged block below it,
+# "Commemoratio et M.", is the monastic-specific override, not the
+# Divino Afflatu default this app follows -- see resolve-common.ts's
+# precedence doc comment). Found while auditing the Monastic 1617
+# kalendar's own suffixed-filename occupants of this date (06-28oct.txt,
+# 06-28r.txt, 06-28t.txt -- all unrelated other saints/octave days): this
+# plain MM-DD.txt independently holds Irenaeus's real Divino Afflatu
+# content, with nothing currently winning June 28 in this app at all, so
+# he's added as the outright winner, no reconciliation needed. An ancient
+# 2nd-century Church Father and martyr -- no rank deflation applies (see
+# CLAUDE.md's "late canonizations" rule, which is specific to saints
+# whose own cultus postdates ~1600). Own proper [Oratio]; [Ant 1] is a
+# cisterciensis-only cross-reference to Commune/C4a, not the Divino
+# Afflatu default, so left unmodeled per this app's own precedence.
+id: st-irenaeus
+name: "St. Irenaeus, Bishop and Martyr"
+nameLa: "Sanctus Irenæus, Episcopus et Martyr"
+rank: duplex
+common: common-of-a-martyr-bishop
+propers: "st-irenaeus"
+minorHoursCommon: common-of-a-martyr
+benedictusCommon: common-of-a-martyr

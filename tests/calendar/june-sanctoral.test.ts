@@ -41,6 +41,19 @@ describe('June sanctoral pull (first pass)', () => {
     expect(ids).toEqual(['conversion-of-st-paul', 'ss-peter-and-paul', 'commemoration-of-st-paul']);
   });
 
+  it('St. Irenaeus (a genuinely open calendar gap -- nothing previously won June 28) wins outright at Duplex with a real proper collect, no active octave nearby to contest him', () => {
+    const day = resolveDay('2035-06-28');
+    expect(day.winner).toEqual({
+      kind: 'sanctoral',
+      id: 'st-irenaeus',
+      name: 'St. Irenaeus, Bishop and Martyr',
+      nameLa: 'Sanctus Irenæus, Episcopus et Martyr',
+      rank: 'duplex',
+    });
+    expect(day.commemorations).toEqual([]);
+    expect(getDayCollect(day).status.en).toBe('verified');
+  });
+
   it("St. Juliana Falconieri (Divino Afflatu's own occupant of this MM-DD slot, added alongside Ss. Gervase and Protase; her canonization postdates ~1600 so her source Duplex rank is deflated one tier to semiduplex per CLAUDE.md) still wins outright over their Simplex, commemorating them instead", () => {
     const day = resolveDay('2035-06-19');
     expect(day.winner).toEqual({

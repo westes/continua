@@ -626,7 +626,12 @@ describe('resolveOrdo("lauds", ...)', () => {
     // St. Clare (Simplex) doesn't win outright (Lawrence's octave keeps
     // her to a commemoration -- see calendar/index.ts's applyOctaves), so
     // use St. Lawrence's own vigil day instead, or just check a Sunday.
-    const sunday = resolveOrdo('lauds', '2026-06-28'); // a plain temporal Sunday, nothing else contesting
+    // Not 2026-06-28 any more: that's now St. Irenaeus's own real
+    // winning day (added 2026-09), so use another plain ordinary-time
+    // Sunday instead -- 2027-06-13 (post-pentecost-04), free of any
+    // sanctoral entry or active octave (2026-06-07, tried first, turned
+    // out to still be within the Corpus Christi octave).
+    const sunday = resolveOrdo('lauds', '2027-06-13'); // a plain temporal Sunday, nothing else contesting
     const sundayLabels = sunday.parts
       .filter((p) => p.kind === 'preces' && p.label)
       .map((p) => (p.kind === 'preces' ? p.label : undefined));

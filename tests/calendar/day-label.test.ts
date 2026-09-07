@@ -63,12 +63,16 @@ describe('getDayLabel — ordinal temporal label', () => {
   });
 
   it('gives the correct week-after-Trinity ordinal', () => {
-    // Not 2026 (Jul 6): that date is now the Octave Day of Ss. Peter and
-    // Paul's own fixed day (Duplex majus, added per the full-year
-    // sanctoral import), which wins outright. 2027's Trinity Sunday is
-    // May 23, so 5 full weeks after the first Sunday-after-Trinity
-    // (May 30) is Jun 28 -- free of any sanctoral entry.
-    expect(getDayLabel(resolveDay('2027-06-28')).en).toBe('Monday in the 5th week after Trinity (Feria)');
+    // July itself is no longer a safe month for this case: between the
+    // full-year sanctoral import and the two "hidden saint" finds landed
+    // here in the same 2026-09 session (St. Irenaeus at Jun 28, St.
+    // Camillus de Lellis at Jul 18), every week-N Monday after Trinity
+    // that could fall in July now collides with a real saint in at least
+    // one nearby year -- confirmed by scanning 2024-2060 directly rather
+    // than guessing. 2028's Trinity Sunday is June 4, so the Monday of
+    // the 12th week after Trinity (Sep 4) lands safely in September,
+    // clear of any sanctoral entry.
+    expect(getDayLabel(resolveDay('2028-09-04')).en).toBe('Monday in the 12th week after Trinity (Feria)');
   });
 
   it("Advent's own anchor Sunday is already week 1, not a separate anchor-week case", () => {
