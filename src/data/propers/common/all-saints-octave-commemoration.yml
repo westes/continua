@@ -1,0 +1,42 @@
+# Commemoratio Octavæ Omnium Sanctorum -- said at Lauds/Vespers on a day
+# within All Saints' octave (Nov 1-8) where All Saints itself doesn't win
+# the day outright. Live-verified directly against the reference engine
+# (local officium.pl, Divino Afflatu - 1954, prayLaudes/prayVesperae,
+# Nov 4/5 2026 -- St. Charles Borromeo/Sts. Vitalis and Agricola, both
+# Duplex, beat the octave's own Semiduplex threshold that week): the real
+# commemoration genuinely differs by hour -- Lauds uses the "Te gloriósus
+# Apostolórum chorus..." antiphon (same text as all-saints-antiphon.yml)
+# with V/R "Exsultábunt Sancti in glória. / Lætabúntur in cubílibus
+# suis.", while Vespers uses the distinct "Ángeli, Archángeli..." antiphon
+# (All Saints' own First Vespers antiphon) with V/R "Lætámini in Dómino,
+# et exsultáte justi. / Et gloriámini omnes recti corde." -- notably
+# *neither* is the "Oráte pro nobis, omnes Sancti Dei" versicle
+# all-saints-commemoration.yml uses (that one belongs to All Saints' own
+# primary office when it wins outright, not to this commemoration). Both
+# hours share the same collect. Per the already-flagged simplification
+# noted on hours/resolve-common.ts's getDayCollects and matching
+# christmas-day-octave-commemoration.yml's own precedent (that one picked
+# its Second Vespers text as the single canonical version for both hours;
+# assumption-octave-commemoration.yml picked its Lauds text) -- this file
+# picks the Lauds version as the single canonical block.
+id: all-saints-octave-commemoration
+text:
+  la: |
+    Ant. Te gloriósus Apostolórum chorus, te Prophetárum laudábilis númerus, te Mártyrum candidátus laudat exércitus, te omnes Sancti et elécti voce confiténtur unánimes, beáta Trínitas, unus Deus.
+    V. Exsultábunt Sancti in glória.
+    R. Lætabúntur in cubílibus suis.
+    Orémus.
+    Omnípotens sempitérne Deus, qui nos ómnium Sanctórum tuórum mérita sub una tribuísti celebritáte venerári: quǽsumus; ut desiderátam nobis tuæ propitiatiónis abundántiam, multiplicátis intercessóribus, largiáris.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Ant. The glorious company of the Apostles praise thee. The goodly fellowship of the Prophets praise thee. The white-robed army of Martyrs praise thee. All thy Saints and Elect with one voice do acknowledge thee, O Blessed Trinity, One God!
+    V. The saints shall rejoice in glory.
+    R. They shall be joyful in their beds.
+    Let us pray.
+    Almighty, eternal God, Who granted us to honor the merits of all Thy Saints in a single solemn festival, bestow on us, we beseech Thee, through their manifold intercession, that abundance of Thy mercy for which we yearn.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

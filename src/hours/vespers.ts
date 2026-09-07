@@ -327,7 +327,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // `date` itself, not resolveEveningDay's possibly-anticipated identity,
   // since there's no "tomorrow anticipates All Souls" case to handle).
   if (isAllSouls(date)) {
-    return { hourId: 'vespers', date, parts: buildVespersParts(), dayLabel: getDayLabel(resolveDay(date)) };
+    return { hourId: 'vespers', date, parts: buildVespersParts(date), dayLabel: getDayLabel(resolveDay(date)) };
   }
   // Every part below is an evening-hour concern, same reasoning as
   // Compline — resolves off whichever day's identity actually governs

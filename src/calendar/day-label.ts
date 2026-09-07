@@ -743,14 +743,18 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
     // entries — plain "Duplex" and, gated behind `rubrica 196` (the 1960
     // rubrics reform), "I. classis". vu's rubric baseline is Divino
     // Afflatu 1954, predating that reform, so plain "Duplex" applies.
-    // No octave: the same source file lists "Commemoratio" among what's
-    // omitted this day (`Omit Incipit Hymnus Capitulum Lectio Preces
-    // Commemoratio Suffragium`) — every commemoration is suppressed
-    // outright, including All Saints' still-active octave — so, unlike
-    // the namedFeast branch below, there's no `collectCommemorations`
-    // call here at all.
+    // The same source file lists "Commemoratio" among what's omitted this
+    // day (`Omit Incipit Hymnus Capitulum Lectio Preces Commemoratio
+    // Suffragium`) — the historical office drops All Saints' still-active
+    // octave outright — but vu's generous-commemorations design (see
+    // CLAUDE.md's "Not a reconstruction" note) deliberately keeps it
+    // anyway, same `collectCommemorations` machinery every other headline
+    // branch here uses, same octave-headline ordering (primary, then
+    // octaves, then any other commemoration).
     const rank = formatRank('duplex');
-    return bi(`All Souls' Day (${rank.en})`, `In Commemoratióne Ómnium Fidélium Defunctórum (${rank.la})`);
+    const primary = bi(`All Souls' Day (${rank.en})`, `In Commemoratióne Ómnium Fidélium Defunctórum (${rank.la})`);
+    const { sanctoral, octaves } = collectCommemorations(day, { showOctaves: true });
+    return withTransferNote(day, joinBi([primary, ...octaves, ...sanctoral]));
   }
   if (day.winner.kind === 'sanctoral') {
     // Octaves only ride along here on `ordinary-feria` — a day with real

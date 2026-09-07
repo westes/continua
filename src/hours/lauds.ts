@@ -422,7 +422,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
 
 export function resolveOrdo(date: string): ResolvedOrdo {
   if (isAllSouls(date)) {
-    return { hourId: 'lauds', date, parts: buildLaudsParts(), dayLabel: getDayLabel(resolveDay(date)) };
+    return { hourId: 'lauds', date, parts: buildLaudsParts(date), dayLabel: getDayLabel(resolveDay(date)) };
   }
   const day = resolveDay(date);
   const parts = laudsDefinition.parts.flatMap((part) => resolvePart(part, day));

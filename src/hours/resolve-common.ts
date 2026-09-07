@@ -777,7 +777,7 @@ function sanctoralCommemorationPart(
  * indirection needed: an octave commemoration's id already is the base
  * feast/saint id (`christmas-day`, `st-stephen-protomartyr`, ...),
  * matching the proper file's own id 1:1. */
-function octaveCommemorationPart(commemoration: Extract<Commemoration, { kind: 'octave' }>): ResolvedPart {
+export function octaveCommemorationPart(commemoration: Extract<Commemoration, { kind: 'octave' }>): ResolvedPart {
   const label = `Commemoration of the Octave of ${commemoration.name}`;
   const combined = resolveCommon(`${commemoration.id}-octave-commemoration`);
   if (combined.status.la !== 'missing' || combined.status.en !== 'missing') {
