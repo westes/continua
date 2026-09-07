@@ -1,8 +1,12 @@
-import { subscribe } from '../app-state';
+import { getState, subscribe } from '../app-state';
+import { resolveDay } from '../calendar';
+import { resolveEveningDay } from '../calendar/vespers';
+import { getDayLabel } from '../calendar/day-label';
 import { renderDayNav } from './day-nav';
 import { renderHourList } from './hour-list';
 import { renderHourView } from './hour-view';
 import { renderLanguageToggle } from './bilingual-toggle';
+import { documentTitle } from './format';
 
 export function mountShell(root: HTMLElement): void {
   root.innerHTML = `
@@ -30,6 +34,11 @@ export function mountShell(root: HTMLElement): void {
     renderHourList(hourListEl!);
     renderHourView(hourViewEl!);
     renderLanguageToggle(languageToggleEl!);
+
+    const { date, selectedHour, languages } = getState();
+    const isEveningHour = selectedHour === 'vespers' || selectedHour === 'compline';
+    const day = isEveningHour ? resolveEveningDay(date) : resolveDay(date);
+    document.title = documentTitle(selectedHour, getDayLabel(day), languages);
   }
 
   render();
