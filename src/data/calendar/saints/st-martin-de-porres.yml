@@ -1,0 +1,34 @@
+# Read directly from the reference engine: `Sancti/11-03n.txt` --
+# "S. Martin de Porres, religious;;Duplex optional;;2;;vide C5" -- an `n`
+# (modern-optional) file, found via the 2026-09 sweep of all `??-??n.txt`
+# files (memory vu-suffixed-file-sweep). Canonized 1962 (Pope John XXIII),
+# well outside vu's own Tridentine 1906/Divino Afflatu 1954 calendar
+# design -- kept per the user's explicit "do them all, pull whatever
+# content exists, let them fall wherever on the calendar" instruction
+# (2026-09), not a reconsideration of that design boundary.
+#
+# "Duplex optional" deflated one tier to Semiduplex per the standing
+# late-canonization rule (CLAUDE.md, St. Rose of Lima precedent). A lay
+# Dominican brother (never ordained), but the source's own [Rule] still
+# points at C5 (Common of a Confessor Not a Pontiff, the generic
+# "Confessor" common already used for other non-bishop saints regardless
+# of clerical state), so vu follows suit rather than inventing a
+# lay-religious-specific common that doesn't exist in the source.
+#
+# Source file is a bare stub -- [Officium]/[Rank]/[Rule] only, no
+# [Oratio] or [Lectio] of any kind in either language -- so no proper
+# collect/commemoration/nocturn-reading files were authored; resolves
+# entirely via the Common of a Confessor Not a Pontiff (C5) fallback,
+# same shape as st-juan-diego.yml/st-pio-of-pietrelcina.yml.
+id: st-martin-de-porres
+name: "St. Martin de Porres, Confessor"
+nameLa: "Sanctus Martinus de Porres, Confessor"
+rank: semiduplex
+common: common-of-a-confessor
+propers: null
+collectCommon: collect-c5
+collectName:
+  la: ["Martíni de Porres"]
+  en: ["Martin de Porres"]
+minorHoursCommon: common-of-a-confessor
+benedictusCommon: common-of-a-confessor

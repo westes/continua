@@ -1,0 +1,40 @@
+# Read directly from the reference engine: `Sancti/11-13n.txt` --
+# "S. Franciscæ Xaveriæ Cabrini Virginis;;Semiduplex;;2.2;;vide C6a" -- an
+# `n` (modern-optional) file, found via the 2026-09 sweep of all
+# `??-??n.txt` files (memory vu-suffixed-file-sweep). Canonized 1946
+# (Pope Pius XII), outside vu's own Tridentine 1906/Divino Afflatu 1954
+# design window (1954 is the later of the two tracks, and her
+# canonization predates it by 8 years, but the `n`/optional filing itself
+# reflects her being a later addition to the *general* calendar, not an
+# ancient saint) -- kept per the user's explicit "do them all, pull
+# whatever content exists, let them fall wherever on the calendar"
+# instruction (2026-09), not a reconsideration of that design boundary.
+#
+# **No deflation applied**, unlike most other saints in this `n`-file
+# batch: CLAUDE.md's late-canonization rule exists specifically to
+# counter "new saint -> automatic Duplex" rank inflation from the
+# Baroque era onward -- the source here already gives Semiduplex, not the
+# inflated Duplex default the rule targets, so deflating further (to
+# Vigil, per vu's FeastClass ordering) would just be arbitrary, not a
+# correction of anything.
+#
+# Common of a Virgin (C6a -> "Commune Unius Virginis", not the Virgin-
+# Martyr variant C6, since she wasn't martyred) -- same mapping as
+# st-rose-of-lima.yml (also sourced from a `vide C6a` tag). Vu already
+# has an Italian-immigrant-focused St. Frances Xavier Cabrini here
+# specifically because Nov 13 was otherwise occupied by All Saints of the
+# Benedictine Order -- both now coexist per vu's generous-commemoration
+# design.
+#
+# Own real proper collect and Lectio94 vita in the source, plus a full
+# set of three proper hymns (Vespers/Matins/Lauds) -- not transcribed
+# here (vu's hymn-authoring pass is separate content work), only the
+# collect and Nocturn 2 reading.
+id: st-frances-xavier-cabrini
+name: "St. Frances Xavier Cabrini, Virgin"
+nameLa: "Sancta Francisca Xaveria Cabrini, Virgo"
+rank: semiduplex
+common: common-of-a-virgin
+propers: "st-frances-xavier-cabrini"
+minorHoursCommon: common-of-a-virgin
+benedictusCommon: common-of-a-virgin

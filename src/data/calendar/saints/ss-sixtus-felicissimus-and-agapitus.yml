@@ -1,0 +1,28 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query):
+# `web/www/horas/Latin/Sancti/08-06cc.txt`. Found via the "cc"-suffix class
+# of the suffixed-file sweep (memory vu-suffixed-file-sweep) -- a genuine
+# miss from that sweep's first pass, surfaced only after the user asked
+# whether the `n`-suffixed files had actually been checked too. This is the
+# REAL Tridentine commemoration for Aug 6, confirmed via
+# `Tabulae/Kalendaria/1570.txt`: "08-06=08-06~08-06cc=Transfiguratio Domini
+# Nostri Jesu Christi=4=Ss. Xysti Felicissimi et Agapiti Martyrum=1=" -- the
+# Transfiguration (already modeled as `transfiguration.yml`) is the day's
+# real winner, with these three ancient martyrs riding along as its
+# commemoration, rank code "1" (bare-commemoration tier, same convention as
+# ss-marius-martha-audifax-and-abachum.yml, st-felix-presbyter.yml).
+#
+# Ancient Roman martyrs (d. 258, Valerian persecution) -- no late-
+# canonization deflation applies. [Rank] gives "Simplex;;vide C3a" --
+# Common of Several Martyrs. No [Oratio] of his own in the source (a plain
+# "@Commune/C3a:Oratio" cross-reference) -- see
+# ss-sixtus-felicissimus-and-agapitus-collect.yml's own header for how the
+# 3-name gap in vu's existing 2-name C3a templates was handled.
+id: ss-sixtus-felicissimus-and-agapitus
+name: "Ss. Sixtus II, Felicissimus, and Agapitus, Martyrs"
+nameLa: "Sancti Xystus II, Felicissimus et Agapitus, Martyres"
+rank: simplex
+common: common-of-several-martyrs
+propers: "ss-sixtus-felicissimus-and-agapitus"
+minorHoursCommon: common-of-several-martyrs
+benedictusCommon: common-of-several-martyrs

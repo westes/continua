@@ -1,0 +1,29 @@
+# The source (`web/www/horas/Latin/Sancti/08-06cc.txt`) has no proper
+# [Oratio] of its own -- a plain "@Commune/C3a:Oratio" cross-reference.
+# vu's own `collect-c3a.yml`/`collect-c3a-1.yml` templates only support
+# TWO substituted names (`{N}` twice), but this group has three (Xystus,
+# Felicissimus, Agapitus), so rather than force a mismatched substitution,
+# this is a dedicated collect: `collect-c3a.yml`'s own real Latin/English
+# text, adapted with all three names written in directly instead of the
+# `{N}` placeholder mechanism -- same "dedicated collect for a plural
+# saint-group with no proper text of its own" pattern
+# ss-marius-martha-audifax-and-abachum-collect.yml uses.
+id: ss-sixtus-felicissimus-and-agapitus-collect
+text:
+  la: |
+    Orémus.
+    Deus, qui nos concédis sanctórum Mártyrum tuórum Xysti, Felicíssimi et Agapíti natalítia
+    cólere: da nobis in ætérna beatitúdine de eórum societáte gaudére.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Let us pray.
+    O God, who dost permit us to keep the birthday of thy holy Martyrs Xystus, Felicissimus, and
+    Agapitus, grant that we may enjoy their fellowship in everlasting happiness.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of
+    the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

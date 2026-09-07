@@ -1,0 +1,42 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout):
+# `web/www/horas/Latin/Sancti/07-09n.txt`. One of ~30 modern `n`-suffixed
+# files the reference engine layers onto the old rubric system as "Duplex
+# optional" additions -- a distinct, later category from the historical
+# suffix files (o/cc/r/t/M) the main suffixed-file sweep targeted (memory
+# vu-suffixed-file-sweep). Not a kalendarium-designated winner in either
+# 1570.txt or M1617.txt -- both silent on Jul 9's own sanctoral slot for
+# this group; a purely modern optional addition, not a historical-track
+# gap. User's direction 2026-09: author fully from whatever source content
+# exists, place on the calendar date the source gives, leave calendar
+# precedence/scope questions for later.
+#
+# Canonized 2000 (Pope John Paul II) -- well after CLAUDE.md's ~1600
+# late-canonization threshold, so the rank-deflation rule applies: source
+# gives "Duplex optional" (treated as baseline Duplex), deflated one
+# FeastClass tier to semiduplex.
+#
+# NOTE: even the reference engine's own "Latin" file carries no real Latin
+# at all for this entry -- [Officium] is the bare English name, and there
+# is no [Oratio]/[Lectio] of any kind, just a "vide C3" cross-reference.
+# [Rank]/[Rule] say "vide C3" (Common of Several Martyr-Pontiffs), but this
+# is a mixed group of priests, religious, and lay catechists/martyrs, not
+# bishops -- treated as a source inconsistency (same class as st-canute.yml
+# C2/C2a) and mapped to vu's `common-of-several-martyrs` (C3a, the
+# non-Pontiff variant), matching ss-placid-and-companions.yml's own
+# treatment of the same C3/C3a ambiguity. No proper text exists anywhere to
+# transcribe, so this uses the collectCommon/collectName substitution
+# pattern (propers: null) rather than a dedicated collect/commemoration/
+# nocturn-reading file -- same shape as st-columban.yml/st-pachomius.yml.
+id: ss-augustine-zhao-rong-and-companions
+name: "Ss. Augustine Zhao Rong, Priest, and Companions, Martyrs"
+nameLa: "Sancti Augustinus Zhao Rong, Presbyter, et Socii, Martyres"
+rank: semiduplex
+common: common-of-several-martyrs
+propers: null
+collectCommon: collect-c3a
+collectName:
+  la: ["Augustíni Zhao Rong", "Sociórum ejus"]
+  en: ["Augustine Zhao Rong", "his companions"]
+minorHoursCommon: common-of-several-martyrs
+benedictusCommon: common-of-several-martyrs

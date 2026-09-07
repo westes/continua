@@ -1,0 +1,27 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout): `web/www/horas/Latin/Sancti/
+# 03-23n.txt`. One of the modern "n"-suffixed optional additions (found via
+# memory vu-suffixed-file-sweep's follow-up check of that whole class,
+# after the earlier historical-suffix sweep's first pass missed it
+# entirely). Canonized 1726 (Pope Benedict XIII), so CLAUDE.md's late-
+# canonization rank-deflation rule applies: source gives "Duplex optional"
+# -- deflated one FeastClass tier to semiduplex, same treatment as St. Rose
+# of Lima. [Rule] points to "vide C4" (Common of a Confessor Bishop, real
+# historical office: Archbishop of Lima, Peru). Source file is a bare stub
+# -- [Officium]/[Rank]/[Rule] only, no [Oratio]/[Lectio] of any kind in
+# either Latin or English -- so this uses the generic collectCommon/
+# collectName substitution mechanism, no dedicated collect/commemoration/
+# nocturn-reading files (nothing to transcribe), same as st-liborius.yml/
+# st-columban.yml.
+id: st-turibius-of-mogrovejo
+name: "St. Turibius of Mogrovejo, Bishop and Confessor"
+nameLa: "Sanctus Turibius de Mogrovejo, Episcopus et Confessor"
+rank: semiduplex
+common: common-of-a-confessor-bishop
+propers: null
+collectCommon: collect-c4
+collectName:
+  la: ["Turíbii"]
+  en: ["Turibius"]
+minorHoursCommon: common-of-a-confessor-bishop
+benedictusCommon: common-of-a-confessor-bishop

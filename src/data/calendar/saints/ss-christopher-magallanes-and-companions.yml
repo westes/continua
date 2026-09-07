@@ -1,0 +1,40 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query):
+# `web/www/horas/Latin/Sancti/05-21n.txt` + English counterpart. `n`-
+# suffixed filename -- found via the 2026-09 follow-up pass over the whole
+# `??-??n.txt` class (memory vu-suffixed-file-sweep), a distinct, later
+# category from the `o`/`cc`/`r`/`t`/`M` historical-rubric suffixes: modern
+# "Duplex optional" saints layered onto the reference engine's older rubric
+# system, not tied to either `1570.txt` or `M1617.txt` at all.
+#
+# St. Christopher Magallanes (a priest) and his 24 companions were martyred
+# during the Mexican Cristero War (1915-1937) and canonized by Pope John
+# Paul II in 2000 -- well past CLAUDE.md's ~1600 late-canonization
+# threshold, so the rank-deflation rule applies: source's "Duplex optional"
+# (treated as plain Duplex, vu doesn't model an "optional" sub-tier)
+# deflated one FeastClass tier to semiduplex.
+#
+# [Rank]/[Rule] both say "vide C3" (Commune Plurimorum Martyrum
+# Pontificum -- the Bishop-Martyrs common), but none of this group were
+# bishops (a parish priest and lay Catholics) -- treated as the non-Pontiff
+# default instead, C3a, vu's `common-of-several-martyrs`, matching the
+# convention already used for ss-eustace-and-companions.yml (an "and
+# Companions" group with no clean per-member name list).
+#
+# No [Oratio]/[Lectio] content of any kind in the source (Latin or
+# English) -- only [Officium]/[Rank]. Falls to the collectCommon/
+# collectName substitution below; no dedicated collect/commemoration/
+# nocturn-reading file, same "genuinely bare source" handling as
+# st-pachomius.yml/st-columban.yml.
+id: ss-christopher-magallanes-and-companions
+name: "Ss. Christopher Magallanes, Priest, and Companions, Martyrs"
+nameLa: "Sanctus Christophorus Magallanes, Presbyter, et Socii, Martyres"
+rank: semiduplex
+common: common-of-several-martyrs
+propers: null
+collectCommon: collect-c3a
+collectName:
+  la: ["Christóphori Magallanes", "Sociórum ejus"]
+  en: ["Christopher Magallanes", "his companions"]
+minorHoursCommon: common-of-several-martyrs
+benedictusCommon: common-of-several-martyrs

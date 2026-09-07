@@ -1,0 +1,31 @@
+# Read directly from the reference engine: `Sancti/10-25n.txt` --
+# "S. Isidori Agricolæ Confessoris;;Duplex;;2;;vide C5" -- an `n` (modern-
+# optional) file, found via the 2026-09 sweep of all `??-??n.txt` files
+# (memory vu-suffixed-file-sweep). Canonized 1622 (Pope Gregory XV, one
+# of the "four saints of 1622" alongside Ignatius Loyola/Francis
+# Xavier/Philip Neri) -- old enough that CLAUDE.md's late-canonization
+# deflation rule still applies (postdates ~1600), but not a modern
+# 20th-century figure; the feast's US-patronal declaration (Pope Pius
+# XII, mid-20th c., per the source's own Lectio94) is what put him in the
+# `n`/optional file at all, not a late cultus.
+#
+# **Distinct from St. Isidore of Seville** (`st-isidore-of-seville.yml`,
+# the Bishop-Doctor, already modeled) -- this is Isidore the ploughman of
+# Madrid, patron of farmers. Name/id deliberately disambiguated.
+#
+# "Duplex" deflated one tier to Semiduplex per the standing late-
+# canonization rule (CLAUDE.md, St. Rose of Lima precedent). Common of a
+# Confessor Not a Pontiff (C5), per [Rule].
+#
+# Own real proper collect, Lectio94 vita, and Lauds/Terce/Sext propers all
+# present in the source, both languages -- see propers/common/
+# st-isidore-the-farmer-collect.yml and propers/nocturn-readings/
+# st-isidore-the-farmer.yml.
+id: st-isidore-the-farmer
+name: "St. Isidore the Farmer, Confessor"
+nameLa: "Sanctus Isidorus Agricola, Confessor"
+rank: semiduplex
+common: common-of-a-confessor
+propers: "st-isidore-the-farmer"
+minorHoursCommon: common-of-a-confessor
+benedictusCommon: common-of-a-confessor

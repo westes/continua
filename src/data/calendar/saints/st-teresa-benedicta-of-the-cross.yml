@@ -1,0 +1,35 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout):
+# `web/www/horas/Latin/Sancti/08-09n.txt`. One of ~30 modern `n`-suffixed
+# files (memory vu-suffixed-file-sweep) -- a later, distinct category from
+# the historical suffix files (o/cc/r/t/M) the main sweep targeted. Not a
+# kalendarium-designated winner in either 1570.txt or M1617.txt -- a purely
+# modern optional addition. User's direction 2026-09: author fully from
+# whatever source content exists, place on the calendar date the source
+# gives, leave calendar precedence/scope questions for later.
+#
+# Canonized 1998 (Pope John Paul II) -- past CLAUDE.md's ~1600 late-
+# canonization threshold, so the rank-deflation rule applies: source gives
+# "Duplex optional" (treated as baseline Duplex), deflated one FeastClass
+# tier to semiduplex.
+#
+# [Name] gives a real declined Latin form, "Terésiæ" -- her religious name
+# in religion (Edith Stein, her birth name, is carried as a parenthetical
+# in [Officium] both here and in English). [Rank]/[Rule] say "vide C6"
+# (Commune Unius Virginis et Martyris) -- maps cleanly to vu's
+# `common-of-a-virgin-martyr`. [Lectio93] is a bare `@Commune/C6:Lectio4
+# in 2 loco` cross-reference, not proper text -- no vita to transcribe, so
+# this uses the collectCommon/collectName substitution pattern
+# (propers: null), same shape as st-columban.yml/st-pachomius.yml.
+id: st-teresa-benedicta-of-the-cross
+name: "St. Teresa Benedicta of the Cross (Edith Stein), Virgin and Martyr"
+nameLa: "Sancta Terésia Benedícta a Cruce (Edith Stein), Virgo et Martyr"
+rank: semiduplex
+common: common-of-a-virgin-martyr
+propers: null
+collectCommon: collect-c6
+collectName:
+  la: ["Terésiæ"]
+  en: ["Teresa"]
+minorHoursCommon: common-of-a-virgin-martyr
+benedictusCommon: common-of-a-virgin-martyr

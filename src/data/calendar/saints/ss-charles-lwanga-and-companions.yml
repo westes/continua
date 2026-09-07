@@ -1,0 +1,32 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query):
+# `web/www/horas/Latin/Sancti/06-03n.txt` + English counterpart. `n`-
+# suffixed filename -- found via the 2026-09 follow-up pass over the whole
+# `??-??n.txt` class (memory vu-suffixed-file-sweep).
+#
+# The Martyrs of Uganda (22 Catholic laymen and catechists, chief among
+# them Charles Lwanga and Matthias Murumba/Kalemba, executed 1885-1887 by
+# order of Kabaka Mwanga II) were canonized by Pope Paul VI in 1964 --
+# past CLAUDE.md's ~1600 late-canonization threshold, so the rank-
+# deflation rule applies: source's Duplex deflated one FeastClass tier to
+# semiduplex.
+#
+# [Rank]/[Rule] say "vide C3" (Commune Plurimorum Martyrum Pontificum) --
+# none of this group were bishops; treated as the non-Pontiff default
+# (C3a, vu's `common-of-several-martyrs`) for consistency with the other
+# groups added in this same pass.
+#
+# Unlike ss-christopher-magallanes-and-companions.yml/first-martyrs-of-
+# the-church-of-rome.yml, this one HAS a real proper [Oratio] in the
+# source (Latin only -- English/Sancti/06-03n.txt's own [Oratio] is a bare
+# "@Commune/C3" cross-reference, not an actual translation) -- own dedicated
+# collect/commemoration files authored instead of the generic collectCommon
+# substitution. No [Lectio] content at all, so no nocturn-reading file.
+id: ss-charles-lwanga-and-companions
+name: "Ss. Charles Lwanga, Matthias Murumba, and Companions, Martyrs"
+nameLa: "Sancti Carolus Lwanga, Matthias Murumba et Socii, Martyres"
+rank: semiduplex
+common: common-of-several-martyrs
+propers: "ss-charles-lwanga-and-companions"
+minorHoursCommon: common-of-several-martyrs
+benedictusCommon: common-of-several-martyrs

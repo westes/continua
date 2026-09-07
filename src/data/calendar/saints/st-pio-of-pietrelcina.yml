@@ -1,0 +1,34 @@
+# Read directly from the reference engine: `Sancti/09-23n.txt` --
+# "S. Pio of Pietrelcina (Padre Pio), priest;;Duplex memorial;;3;;vide C5"
+# -- an `n` (modern-optional) file, found via the 2026-09 sweep of all
+# `??-??n.txt` files (memory vu-suffixed-file-sweep) after the user
+# flagged that this whole class of file had been missed by the original
+# suffixed-file audit. Canonized 2002 (Pope John Paul II), well outside
+# vu's own Tridentine 1906/Divino Afflatu 1954 calendar design -- kept
+# per the user's explicit "do them all, pull whatever content exists,
+# let them fall wherever on the calendar" instruction (2026-09), not a
+# reconsideration of that design boundary.
+#
+# "Duplex memorial" isn't a real historical FeastClass tier (a modern,
+# post-Vatican-II ranking concept) -- mapped to plain Duplex first, then
+# deflated one tier to Semiduplex per the standing late-canonization rule
+# (CLAUDE.md, St. Rose of Lima precedent), same treatment as St. Juan
+# Diego (also an `n` file, canonized 2002 as well).
+#
+# Source file is a bare stub -- [Officium]/[Rank]/[Rule] only, no
+# [Oratio] or [Lectio] of any kind in either language -- so no proper
+# collect/commemoration/nocturn-reading files were authored; resolves
+# entirely via the Common of a Confessor Not a Pontiff (C5) fallback,
+# same shape as st-juan-diego.yml/st-columban.yml.
+id: st-pio-of-pietrelcina
+name: "St. Pio of Pietrelcina, Confessor"
+nameLa: "Sanctus Pius de Pietrelcina, Confessor"
+rank: semiduplex
+common: common-of-a-confessor
+propers: null
+collectCommon: collect-c5
+collectName:
+  la: ["Pii de Pietrelcina"]
+  en: ["Pio of Pietrelcina"]
+minorHoursCommon: common-of-a-confessor
+benedictusCommon: common-of-a-confessor

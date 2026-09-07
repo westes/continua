@@ -1,0 +1,33 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query):
+# `web/www/horas/Latin/Sancti/07-06n.txt` + English counterpart. `n`-
+# suffixed filename -- found via the 2026-09 follow-up pass over the whole
+# `??-??n.txt` class (memory vu-suffixed-file-sweep).
+#
+# St. Maria Goretti (d. 1902, murdered at age 11 resisting an attempted
+# rape, having forgiven her killer before death) was canonized by Pope
+# Pius XII in 1950 -- past CLAUDE.md's ~1600 late-canonization threshold,
+# so the rank-deflation rule applies: source's "Duplex optional" (treated
+# as plain Duplex) deflated one FeastClass tier to semiduplex.
+#
+# [Rank]/[Rule] say "vide C6" (Commune Unius Virginis et Martyris) --
+# vu's `common-of-a-virgin-martyr`/`collect-c6`, a clean single-name
+# substitution template (matches her own [Name] block's "Maríæ" /
+# Postcommunio "María").
+#
+# No [Oratio]/[Lectio] content of any kind in the source. Falls to the
+# collectCommon/collectName substitution below; no dedicated collect/
+# commemoration/nocturn-reading file, same bare-source handling as
+# st-pachomius.yml/st-columban.yml.
+id: st-maria-goretti
+name: "St. Maria Goretti, Virgin and Martyr"
+nameLa: "Sancta Maria Goretti, Virgo et Martyr"
+rank: semiduplex
+common: common-of-a-virgin-martyr
+propers: null
+collectCommon: collect-c6
+collectName:
+  la: ["Maríæ"]
+  en: ["Maria"]
+minorHoursCommon: common-of-a-virgin-martyr
+benedictusCommon: common-of-a-virgin-martyr

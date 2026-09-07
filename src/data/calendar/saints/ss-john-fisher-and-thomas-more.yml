@@ -1,0 +1,40 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query):
+# `web/www/horas/Latin/Sancti/06-22n.txt` + English counterpart. `n`-
+# suffixed filename -- found via the 2026-09 follow-up pass over the whole
+# `??-??n.txt` class (memory vu-suffixed-file-sweep), the modern "Duplex
+# optional" layer distinct from the historical `o`/`cc`/`r`/`t`/`M`
+# suffixes.
+#
+# St. John Fisher, Bishop of Rochester, and St. Thomas More, Lord
+# Chancellor of England, both executed 1535 under Henry VIII for refusing
+# the Oath of Supremacy, were canonized together by Pope Pius XI in
+# 1935 -- past CLAUDE.md's ~1600 late-canonization threshold, so the rank-
+# deflation rule applies: source's Duplex deflated one FeastClass tier to
+# semiduplex.
+#
+# [Rank]/[Rule] say "vide C3" (Commune Plurimorum Martyrum Pontificum, the
+# Bishop-Martyrs common) -- arguably apt since Fisher was a bishop, though
+# More was a layman; treated as the plain non-Pontiff default anyway
+# (C3a, vu's `common-of-several-martyrs`) for consistency with every other
+# multi-martyr group in this catalog, same call made for ss-christopher-
+# magallanes-and-companions.yml.
+#
+# No [Oratio]/[Lectio] content of any kind in the source. This is the
+# clean case for the two-name `collect-c3a` template (`{N} et {N}`,
+# see collect-c3a.yml's own header) -- Fisher and More are individually
+# named, unlike an open "and Companions" group. No dedicated collect/
+# commemoration/nocturn-reading file, same bare-source handling as
+# st-pachomius.yml/st-columban.yml.
+id: ss-john-fisher-and-thomas-more
+name: "Ss. John Fisher, Bishop, and Thomas More, Martyrs"
+nameLa: "Sancti Joannes Fisher, Episcopus, et Thomas More, Martyres"
+rank: semiduplex
+common: common-of-several-martyrs
+propers: null
+collectCommon: collect-c3a
+collectName:
+  la: ["Joánnis Fisher", "Thomæ More"]
+  en: ["John Fisher", "Thomas More"]
+minorHoursCommon: common-of-several-martyrs
+benedictusCommon: common-of-several-martyrs

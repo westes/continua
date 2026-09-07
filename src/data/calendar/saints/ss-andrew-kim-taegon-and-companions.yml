@@ -1,0 +1,41 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout):
+# `web/www/horas/Latin/Sancti/09-20n.txt`. One of ~30 modern `n`-suffixed
+# files (memory vu-suffixed-file-sweep) -- a later, distinct category from
+# the historical suffix files (o/cc/r/t/M) the main sweep targeted. Not a
+# kalendarium-designated winner in either 1570.txt or M1617.txt -- a
+# purely modern optional addition. User's direction 2026-09: author fully
+# from whatever source content exists, place on the calendar date the
+# source gives, leave calendar precedence/scope questions for later.
+#
+# Canonized 1984 (Pope John Paul II) -- past CLAUDE.md's ~1600 late-
+# canonization threshold, so the rank-deflation rule applies: source gives
+# "Duplex memorial" (a modern-calendar tier with no exact old-rubric
+# equivalent; treated as baseline Duplex, same as every other `n` file's
+# "Duplex optional"), deflated one FeastClass tier to semiduplex.
+#
+# NOTE: even the reference engine's own "Latin" file carries no real Latin
+# at all for this entry -- [Officium] is the bare English name, and there
+# is no [Oratio]/[Lectio] of any kind, just a "vide C3" cross-reference.
+# Group includes a priest (Andrew Kim Taegon), a lay catechist (Paul Chong
+# Hasang), and further companions -- [Rank]/[Rule]'s "vide C3" (Common of
+# Several Martyr-Pontiffs) doesn't fit a mixed lay/clerical group, same
+# source inconsistency already flagged for ss-augustine-zhao-rong-and-
+# companions.yml -- mapped instead to vu's `common-of-several-martyrs`
+# (C3a). No proper text exists anywhere to transcribe, so this uses the
+# collectCommon/collectName substitution pattern (propers: null); C3a's
+# two-name collect template is used with the second slot bundling Paul
+# Chong Hasang and the rest of the group together, same convention
+# ss-placid-and-companions.yml uses for a "and companions" second slot.
+id: ss-andrew-kim-taegon-and-companions
+name: "Ss. Andrew Kim Taegon, Priest, and Paul Chong Hasang, and Companions, Martyrs"
+nameLa: "Sancti Andréas Kim Tægon, Presbyter, et Paulus Chong Hasang, et Socii, Martyres"
+rank: semiduplex
+common: common-of-several-martyrs
+propers: null
+collectCommon: collect-c3a
+collectName:
+  la: ["Andréæ Kim Tægon", "Pauli Chong Hasang, ac Sociórum eórum"]
+  en: ["Andrew Kim Taegon", "Paul Chong Hasang and their companions"]
+minorHoursCommon: common-of-several-martyrs
+benedictusCommon: common-of-several-martyrs

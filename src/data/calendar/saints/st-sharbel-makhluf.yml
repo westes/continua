@@ -1,0 +1,35 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout):
+# `web/www/horas/Latin/Sancti/07-24n.txt`. One of ~30 modern `n`-suffixed
+# files (memory vu-suffixed-file-sweep) -- a later, distinct category from
+# the historical suffix files (o/cc/r/t/M) the main sweep targeted. Not a
+# kalendarium-designated winner in either 1570.txt or M1617.txt -- a purely
+# modern optional addition. User's direction 2026-09: author fully from
+# whatever source content exists, place on the calendar date the source
+# gives, leave calendar precedence/scope questions for later.
+#
+# Canonized 1977 (Pope Paul VI) -- past CLAUDE.md's ~1600 late-
+# canonization threshold, so the rank-deflation rule applies: source gives
+# "Duplex optional" (treated as baseline Duplex), deflated one FeastClass
+# tier to semiduplex.
+#
+# NOTE: the "Latin" file carries no real Latin at all -- [Officium] is the
+# bare English name, no [Oratio]/[Lectio] of any kind, just a "vide C5"
+# cross-reference (Common of a Confessor Not a Pontiff -- Sharbel was a
+# Maronite hermit-monk, not a bishop, so this maps cleanly to vu's
+# `common-of-a-confessor`, same family as st-hyacinth.yml/collect-c5). No
+# proper text exists anywhere to transcribe, so this uses the
+# collectCommon/collectName substitution pattern (propers: null), same
+# shape as st-columban.yml/st-pachomius.yml.
+id: st-sharbel-makhluf
+name: "St. Sharbel Makhluf, Hermit"
+nameLa: "Sanctus Sharbel Makhluf, Eremita"
+rank: semiduplex
+common: common-of-a-confessor
+propers: null
+collectCommon: collect-c5
+collectName:
+  la: ["Sharbel Makhluf"]
+  en: ["Sharbel Makhluf"]
+minorHoursCommon: common-of-a-confessor
+benedictusCommon: common-of-a-confessor

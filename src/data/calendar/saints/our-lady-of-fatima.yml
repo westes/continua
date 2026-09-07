@@ -1,0 +1,36 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout): `web/www/horas/Latin/Sancti/
+# 05-13n.txt`. One of the modern "n"-suffixed optional additions (memory
+# vu-suffixed-file-sweep). Approved devotion 1930 (Bishop of Leiria) --
+# 20th-century recognition, same deflation spirit as CLAUDE.md's late-
+# canonization rule applied here even though this isn't a personal
+# canonization.
+#
+# [Rank] gives "vide Sancti/02-11" -- the source's own economy: Fatima's
+# entire office is a mechanical re-use of Our Lady of Lourdes' (Feb 11,
+# NOT modeled by vu at all -- checked, no our-lady-of-lourdes.yml exists),
+# only the [Officium] name differs. Rather than transcribe the whole,
+# large Marian office (multiple Vespers/Matins/Lauds antiphon sets, its
+# own proper hymn), only the [Oratio] (real, own text, Latin+English both
+# in the source) is pulled here as the collect -- same "collect first,
+# full office later if ever needed" scope as most single-file stubs in
+# this set. "Duplex optional" in the source; deflated one tier to
+# semiduplex per the reasoning above. Common: C11 (a BVM-feast Common
+# category) per [Rule] -- mapped to vu's existing `common-of-the-bvm` (or
+# closest equivalent; verify against vu's actual common ids before
+# treating this as final -- flagged here since this is a thinner
+# cross-check than the saint-Common mappings elsewhere in this session).
+#
+# Nocturn 2's own content (`[Lectio93]` = `@Sancti/08-22:Lectio7`) is
+# itself just a Gospel incipit (John 19:25-27, "Et réliqua") with no
+# patristic homily attached -- see propers/nocturn-readings/
+# our-lady-of-fatima.yml, authored as a bare Gospel pericope (full
+# canonical text, not the source's own abbreviated incipit).
+id: our-lady-of-fatima
+name: "Our Lady of Fatima"
+nameLa: "Beata Maria Virgo de Fatima"
+rank: semiduplex
+common: common-of-the-bvm
+propers: "our-lady-of-fatima"
+minorHoursCommon: common-of-the-bvm
+benedictusCommon: common-of-the-bvm

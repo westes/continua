@@ -1,0 +1,33 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout):
+# `web/www/horas/Latin/Sancti/09-09n.txt`. One of ~30 modern `n`-suffixed
+# files (memory vu-suffixed-file-sweep) -- a later, distinct category from
+# the historical suffix files (o/cc/r/t/M) the main sweep targeted. Not a
+# kalendarium-designated winner in either 1570.txt or M1617.txt -- a
+# purely modern optional addition, unrelated to St. Gorgonius's own real
+# Sep 9 slot (st-gorgonius.yml, already flagged this file as "unrelated"
+# when it was first noticed in an earlier session). User's direction
+# 2026-09: author fully from whatever source content exists, place on the
+# calendar date the source gives, leave calendar precedence/scope
+# questions for later.
+#
+# Canonized 1888 (Pope Leo XIII) -- past CLAUDE.md's ~1600 late-
+# canonization threshold, so the rank-deflation rule applies: source gives
+# "Duplex optional" (treated as baseline Duplex), deflated one FeastClass
+# tier to semiduplex.
+#
+# Unlike most `n` files, this one carries real proper content: a full
+# [Oratio] and a substantial [Lectio94] vita, both with genuine English
+# translations in the source (not just the bare name). [Rank]/[Rule] say
+# "vide C5" (Commune Confessoris non Pontificis) -- Peter Claver was a
+# Jesuit priest, not a bishop, so this maps cleanly to vu's
+# `common-of-a-confessor` (collect-c5 family, same as st-hyacinth.yml),
+# though he has his own real collect here so collectCommon is unused.
+id: st-peter-claver
+name: "St. Peter Claver, Confessor"
+nameLa: "Sanctus Petrus Claver, Confessor"
+rank: semiduplex
+common: common-of-a-confessor
+propers: "st-peter-claver"
+minorHoursCommon: common-of-a-confessor
+benedictusCommon: common-of-a-confessor

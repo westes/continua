@@ -1,0 +1,24 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout): `web/www/horas/Latin/Sancti/
+# 05-16n.txt`. One of the modern "n"-suffixed optional additions (memory
+# vu-suffixed-file-sweep). Canonized 1729 (Pope Benedict XIII) --
+# CLAUDE.md's late-canonization rank-deflation rule applies: source gives
+# "Duplex" -- deflated one FeastClass tier to semiduplex. [Rule] points to
+# "vide C2a" (Common of a Martyr not a Pontiff -- a priest and canon, not a
+# bishop, martyred for refusing to violate the seal of confession).
+#
+# Unlike the other stubs authored alongside this one, this source file DOES
+# carry a full, real [Oratio] and a full [Lectio93] vita -- both verified
+# Latin, but the reference engine's own English/Sancti/05-16n.txt is
+# entirely empty (no translation at all, of the collect or the vita) -- see
+# st-john-nepomucene-collect.yml/propers/nocturn-readings/
+# st-john-nepomucene.yml for how both English halves are this project's
+# own translation, marked draft.
+id: st-john-nepomucene
+name: "St. John Nepomucene, Martyr"
+nameLa: "Sanctus Joannes Nepomucénus, Martyr"
+rank: semiduplex
+common: common-of-a-martyr
+propers: "st-john-nepomucene"
+minorHoursCommon: common-of-a-martyr
+benedictusCommon: common-of-a-martyr

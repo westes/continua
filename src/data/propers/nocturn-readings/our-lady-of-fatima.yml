@@ -1,0 +1,30 @@
+# Matins Nocturn 3 Gospel for Our Lady of Fatima (May 13). Source
+# `[Lectio93]` is `@Sancti/08-22:Lectio7` (Immaculate Heart of Mary), which
+# is itself just the incipit "In illo témpore: Stabant juxta crucem Jesu
+# Mater ejus... Et réliqua" (John 19:25-27) with no homily attached and no
+# full pericope text given in the source file itself -- same
+# incipit-only convention flagged in memory vu-matins-gospel-pericope-gap.
+# Rather than transcribe the bare incipit, the full canonical Gospel text
+# (Vulgate/Douay-Rheims, matching this corpus's usual register for
+# scripture citations) is given below -- this is Scripture, not composed
+# hagiography, so quoting it directly is not the same class of gap-filling
+# as St. Rita's invented vita. No patristic homily is attached (the source
+# gives none for this reused Lectio); isGospel: true, no nested homily.
+id: our-lady-of-fatima
+readings:
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Joann 19:25-27", en: "John 19:25-27" }
+    text:
+      la: >-
+        In illo témpore: Stabant juxta crucem Jesu mater ejus, et soror matris ejus María
+        Cléophæ, et María Magdaléne. Cum vidísset ergo Jesus matrem, et discípulum stantem,
+        quem diligébat, dicit matri suæ: Múlier, ecce fílius tuus. Deinde dicit discípulo:
+        Ecce mater tua. Et ex illa hora accépit eam discípulus in sua.
+      en: >-
+        At that time: There stood by the cross of Jesus, his mother, and his mother's
+        sister, Mary of Cleophas, and Mary Magdalen. When Jesus therefore had seen his
+        mother and the disciple standing whom he loved, he saith to his mother: Woman,
+        behold thy son. After that, he saith to the disciple: Behold thy mother. And from
+        that hour, the disciple took her to his own.
+    status: { la: verified, en: verified }

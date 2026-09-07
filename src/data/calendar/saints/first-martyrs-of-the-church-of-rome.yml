@@ -1,0 +1,33 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout, not a live query):
+# `web/www/horas/Latin/Sancti/06-30n.txt` + English counterpart. `n`-
+# suffixed filename -- found via the 2026-09 follow-up pass over the whole
+# `??-??n.txt` class (memory vu-suffixed-file-sweep).
+#
+# An ancient collective observance (the Roman Christians martyred under
+# Nero after the Great Fire of Rome, AD 64, per Tacitus's own account) --
+# no personal canonization to apply CLAUDE.md's late-canonization
+# deflation rule to (the martyrs themselves are 1st-century; only the
+# fixed feast day itself is a later addition to the calendar). Source
+# rank taken as given: "Duplex optional" (treated as plain Duplex, vu
+# doesn't model an "optional" sub-tier).
+#
+# [Rank]/[Rule] say "vide C3" (Commune Plurimorum Martyrum, several
+# martyrs) -- matches vu's `common-of-several-martyrs`.
+#
+# No [Oratio]/[Lectio] content of any kind in the source, and unlike
+# ss-christopher-magallanes-and-companions.yml/ss-john-fisher-and-thomas-
+# more.yml there's no clean `collectCommon` substitution to fall back on
+# either -- this is a nameless collective (no individual "N. et N." to
+# fill the Common's own two-name template with), not an "and Companions"
+# group with a lead name. Left without `collectCommon`; `getDayCollect`
+# honestly returns `missing` until real proper or Common text can be
+# authored for a genuinely nameless collective feast.
+id: first-martyrs-of-the-church-of-rome
+name: "First Martyrs of the Church of Rome"
+nameLa: "Primi Sanctæ Romanæ Ecclesiæ Martyres"
+rank: duplex
+common: common-of-several-martyrs
+propers: null
+minorHoursCommon: common-of-several-martyrs
+benedictusCommon: common-of-several-martyrs

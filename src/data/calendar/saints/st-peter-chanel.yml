@@ -1,0 +1,24 @@
+# Read directly from the reference engine (`../divinum-officium-reference`,
+# per memory vu-reference-engine-file-layout): `web/www/horas/Latin/Sancti/
+# 04-28n.txt`. One of the modern "n"-suffixed optional additions (memory
+# vu-suffixed-file-sweep). Canonized 1954 -- CLAUDE.md's late-canonization
+# rank-deflation rule applies: source gives "Duplex optional" -- deflated
+# one FeastClass tier to semiduplex. [Rule] points to "vide C2a" (Common of
+# a Martyr not a Pontiff -- a missionary priest martyred in Oceania, not a
+# bishop). Source file is a bare stub -- [Officium]/[Rank]/[Rule]/[Name]
+# only, no [Oratio]/[Lectio] of any kind -- so this uses the generic
+# collectCommon/collectName substitution mechanism, no dedicated collect/
+# commemoration/nocturn-reading files, same as st-turibius-of-
+# mogrovejo.yml.
+id: st-peter-chanel
+name: "St. Peter Chanel, Priest and Martyr"
+nameLa: "Sanctus Petrus Chanel, Presbyter et Martyr"
+rank: semiduplex
+common: common-of-a-martyr
+propers: null
+collectCommon: collect-c2a
+collectName:
+  la: ["Petri"]
+  en: ["Peter"]
+minorHoursCommon: common-of-a-martyr
+benedictusCommon: common-of-a-martyr
