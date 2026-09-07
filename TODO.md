@@ -10,11 +10,7 @@ content in the same shape, not a design change. The dated log below is that pipe
 
 ## Open work, in priority order
 
-1. **Mechanism gaps**
-   - **Responsories need a heading label** — user, 2026-09-06: a Matins responsory currently
-     renders with no heading identifying it as such, unlike most other rendered parts (which
-     do have a labeled heading) — confusing for a reader. Needs a UI label (`ui/hour-view.ts`)
-     added for the responsory kind. Not yet investigated.
+1. **Mechanism gaps** — none currently open.
 
 2. **Minimal-proof-done, bulk content pending** — none currently open.
 
@@ -6478,3 +6474,15 @@ in `tests/hours/matins.test.ts` hardcoded "Veníte" as the generic ferial defaul
 actually Tuesdays, updated to expect Tuesday's own real text ("Jubilémus Deo").
 
 `npm test` (2066 passed) and `tsc --noEmit` both pass.
+
+### Responsory visual separation — closed (2026-09-06)
+
+Logged as "responsories need a heading label," but the real gap was broader: `.ordo-part-homily`
+already had an explicit `margin-top`/`padding-top`/`border-top` separator in `styles.css`, while
+`.ordo-part-responsory` had no CSS rule at all — it just stacked directly under the preceding
+`lang-columns` text with zero visual break, in either the plain-lesson or the Gospel+homily case
+(`ui/hour-view.ts`'s `case 'lesson':` and `case 'gospel':`). A text heading would have papered over
+that; the actual fix was giving `.ordo-part-responsory` the same border-top separator the homily
+already gets.
+
+`npm test` (2066 passed) and `npm run build` (`tsc --noEmit` + vite build) both pass.
