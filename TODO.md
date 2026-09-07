@@ -2425,13 +2425,13 @@ not a verification gap to close later.
   antiphon and Sunday psalmody genuinely do vary by season (e.g. `[Advm0]`
   right after `[Daym0]` in the source).
 - Whether any real supported year reaches a 6th Sunday of Epiphany
-  (`post-epiphany-6`) — the user's own plan has no row for it by design;
-  confirmed real (some years have it, some don't) but not yet checked
-  against which years this app actually needs to support. Resolved
-  separately: on such a date, the bible-plan loader returns honestly
-  `missing` rather than reusing the 5th week's rows — a deliberate,
-  direct-instruction exception to this project's usual "prefer real text
-  over missing" stance.
+  (`post-epiphany-6`) — confirmed real (some years have it, some don't) but
+  not yet checked against which years this app actually needs to support.
+  (Correction, 2026-09-07: `post-epiphany-6` *does* now have its own
+  bible-plan row — Hebrews, moved there from a fixed Jan 7-13 stretch. See
+  the dated log entry below; this bullet's old "no row for it by design"
+  claim was based on a misunderstanding of how Epiphanytide works, not a
+  deliberate choice.)
 - The grand closing "Duo Seraphim" responsory before Te Deum (sung after
   the very last lesson, distinct from that lesson's own responsory) isn't
   modeled — the schema only carries one responsory per reading, and that
@@ -6498,3 +6498,21 @@ that; the actual fix was giving `.ordo-part-responsory` the same border-top sepa
 already gets.
 
 `npm test` (2066 passed) and `npm run build` (`tsc --noEmit` + vite build) both pass.
+
+### Hebrews moved from a fixed Jan 7-13 stretch to post-epiphany-6 (2026-09-07)
+
+User correction: the bible-plan's Hebrews reading (13 chapters, 2/day) had been bulk-imported onto
+a fixed `calendarDate` stretch (`christmas-01-07` through `christmas-01-13`, i.e. Jan 7-13),
+alongside the rest of the Christmastide/pre-Epiphany-Sunday fixed-date run. That placement was a
+misunderstanding of how Epiphanytide actually works — Hebrews belongs to the post-Epiphany reading
+season proper (temporal-keyed, following whichever Sunday the calendar actually reaches that year),
+not to a fixed civil-calendar date. Deleted the 7 `christmas-01-0[7-9]`/`01-1[0-3].yml` files and
+replaced them with `post-epiphany-6-{sunday..saturday}.yml` (same content, same 2-chapters/day split,
+now `temporalId: post-epiphany-6` keyed instead of `calendarDate`). This also retires the earlier
+"post-epiphany-6 has no row by design" note above — that was itself downstream of the same
+misunderstanding, not a considered decision.
+
+Live-verified via `getBiblePlanReadings`/`resolveOrdo('matins', ...)`: 2026-11-16 (a real
+resumed-post-Epiphany-6 Monday, per `tests/hours/matins.test.ts`'s own proof date) now resolves
+"Heb 3-4" with real bilingual text, matching the new Monday row. `npm test` (2077 passed) and
+`tsc --noEmit` both pass.

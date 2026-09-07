@@ -1,0 +1,10 @@
+# Moved from a fixed Jan 7-13 calendar-date stretch to the 6th week after
+# Epiphany (temporalId), correcting a misreading of how Epiphanytide works:
+# Hebrews belongs to the post-Epiphany reading season proper, not to a
+# fixed-date run through the Christmas-octave/pre-Epiphany-Sunday stretch.
+temporalId: post-epiphany-6
+weekday: sunday
+readings:
+  - passages:
+      - { book: heb, chapter: 1 }
+      - { book: heb, chapter: 2 }
