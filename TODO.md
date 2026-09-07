@@ -20,6 +20,10 @@ content in the same shape, not a design change. The dated log below is that pipe
    - Audio ("read it to me"): a button per hour/text that plays the office aloud, e.g. via
      the Web Speech API (stays offline-first). Open questions: bilingual (La/En) voice
      selection, Latin pronunciation quality. Needs its own design pass first.
+   - Name the app: "vu" is a working title only (from a screen-reader navigation trick —
+     see `vu_app_naming` memory for the story and the user's naming direction: simple,
+     conveys "divine office app," and framed as "based on tradition" like a made-for-TV
+     movie disclaimer). Decision deliberately deferred to a future session, not forgotten.
    - User-editable calendar: let a user pick/override which saints actually contest a
      given date, rather than only vu's own shipped `sanctoral-calendar.yml`. Motivating
      case (2026-09): `ss-eustace-and-companions.yml` is fully authored but deliberately
