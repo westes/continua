@@ -1,0 +1,26 @@
+# Sourced from web/www/horas/Latin/Sancti/11-23.txt's own [Ant Vespera]
+# (lauds-psalmody-overrides/st-clement.yml's own Lauds antiphons are
+# themselves just this same Vespers set, per the source's own "@:Ant
+# Vespera" reference the other direction). Antiphons 1-3 and 5 here reuse
+# that file's already-translated English (dropping antiphon 4, the
+# canticle-only one, same convention as elsewhere). Below duplex-majus,
+# so hours/vespers.ts's mergeFerialNumbersWithProperAntiphons only takes
+# this file's antiphon text, not its psalm numbers.
+id: st-clement
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Oránte * sancto Cleménte, appáruit ei Agnus Dei."
+      en: "While St. Clement prayed, * there appeared unto him the Lamb of God."
+  - psalms: [110]
+    antiphon:
+      la: "Non meis méritis * ad vos me misit Dóminus, vestris corónis partícipem fíeri."
+      en: "Not for my own merits * hath the Lord sent me unto you, that I may share your crowns."
+  - psalms: [111]
+    antiphon:
+      la: "Vidi supra montem * Agnum stantem, de sub cujus pede fons vivus emánat."
+      en: "I saw on the mountain * the Lamb standing, from beneath whose foot flowed a fountain of living waters."
+  - psalms: [116]
+    antiphon:
+      la: "Omnes gentes * per gyrum credidérunt Christo Dómino."
+      en: "All the nations * round about believed in Christ the Lord."

@@ -1,0 +1,24 @@
+# Sourced from web/www/horas/Latin/Sancti/12-13.txt's own [Ant Vespera]
+# and English/Sancti/12-13.txt's own translation -- same text as lauds-
+# psalmody-overrides/st-lucy.yml (her Lauds is just this Vespers set
+# reused, per the source's own reference). Below duplex-majus, so hours/
+# vespers.ts's mergeFerialNumbersWithProperAntiphons only takes this
+# file's antiphon text, not its psalm numbers.
+id: st-lucy
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Oránte sancta Lúcia, * appáruit ei beáta Agatha, et consolabátur ancíllam Christi."
+      en: "While St. Lucy was praying, * the blessed Agatha appeared unto her, and consoled the handmaiden of Christ."
+  - psalms: [112]
+    antiphon:
+      la: "Lúcia virgo, * quid a me petis quod ipsa póteris præstáre contínuo matri tuæ?"
+      en: "O virgin Lucy, * wherefore askest thou of me what thou canst thyself forthwith obtain for thy mother?"
+  - psalms: [121]
+    antiphon:
+      la: "Per te, Lúcia virgo, * cívitas Syracusána decorábitur a Dómino Jesu Christo."
+      en: "Through thee, O virgin Lucy, * the city of Syracuse shall be made glorious by the Lord Jesus Christ."
+  - psalms: [126]
+    antiphon:
+      la: "Benedíco te, * Pater Dómini mei Jesu Christi, quia per Fílium tuum ignis exstínctus est a látere meo."
+      en: "I bless thee, * O Father of my Lord Jesus Christ, for through thy Son the fire was extinguished round about me."

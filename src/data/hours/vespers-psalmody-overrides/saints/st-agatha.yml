@@ -1,0 +1,24 @@
+# Sourced from web/www/horas/Latin/Sancti/02-05.txt's own [Ant Vespera]
+# and English/Sancti/02-05.txt's own translation -- same text as lauds-
+# psalmody-overrides/st-agatha.yml (her Lauds is just this Vespers set
+# reused, per the source's own reference). Below duplex-majus, so hours/
+# vespers.ts's mergeFerialNumbersWithProperAntiphons only takes this
+# file's antiphon text, not its psalm numbers.
+id: st-agatha
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Quis es tu, * qui venísti ad me curáre vúlnera mea? Ego sum Apóstolus Christi: nihil in me dúbites, fília."
+      en: "Who art thou * who comest to heal my wounds? I am an Apostle of Christ, have no fear of me, my daughter."
+  - psalms: [110]
+    antiphon:
+      la: "Medicínam carnálem * córpori meo nunquam exhíbui, sed hábeo Dóminum Jesum Christum, qui solo sermóne restáurat univérsa."
+      en: "I have used no earthly medicine * for my body, but I have for a Master Christ Jesus, by Whose Word alone all things were made."
+  - psalms: [111]
+    antiphon:
+      la: "Grátias tibi ago, * Dómine Jesu Christe, quia memor es mei, et misísti ad me Apóstolum tuum curáre vúlnera mea."
+      en: "O my Lord Jesus Christ, I thank thee, * because Thou hast been mindful of me, and hast sent unto me thine Apostle, to heal my wounds."
+  - psalms: [112]
+    antiphon:
+      la: "Benedíco te, * Pater Dómini mei Jesu Christi, quia per Apóstolum tuum mamíllam meam meo péctori restituísti."
+      en: "I bless thee, O Father of my Lord Jesus Christ, * because by thine Apostle Thou hast put new paps on my breasts."

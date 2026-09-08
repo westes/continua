@@ -1,0 +1,23 @@
+# Sourced from web/www/horas/Latin/Sancti/01-21.txt's own [Ant Vespera]
+# ("@:Ant Laudes" -- Vespers reuses the Lauds antiphons verbatim), same
+# text and English as lauds-psalmody-overrides/st-agnes.yml. Below
+# duplex-majus, so hours/vespers.ts's mergeFerialNumbersWithProperAntiphons
+# only takes this file's antiphon text, not its psalm numbers.
+id: st-agnes
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Ingréssa Agnes * turpitúdinis locum, Angelum Dómini præparátum invénit."
+      en: "Agnes entered * the place of shame, and found the Angel of the Lord ready."
+  - psalms: [110]
+    antiphon:
+      la: "Mecum enim hábeo * custódem córporis mei, Angelum Dómini."
+      en: "For I have with me * an Angel of the Lord to keep my body."
+  - psalms: [111]
+    antiphon:
+      la: "Anulo suo * subarrhávit me Dóminus meus Jesus Christus, et tamquam sponsam decorávit me coróna."
+      en: "My Lord Jesus Christ hath espoused me with His ring, * and hath set on my head a crown as the crown of a bride."
+  - psalms: [112]
+    antiphon:
+      la: "Benedíco te, * Pater Dómini mei Jesu Christi, quia per Fílium tuum ignis exstínctus est a látere meo."
+      en: "I bless thee, O Father of my Lord Jesus Christ, * because through thy Son the fire is quenched around me."

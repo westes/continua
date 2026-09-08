@@ -1,0 +1,25 @@
+# Sourced from web/www/horas/Latin/Sancti/03-12.txt's own [Ant Vespera]
+# ("@:Ant Laudes" -- Vespers reuses the Lauds antiphons verbatim), same
+# text as lauds-psalmody-overrides/st-gregory-the-great.yml, whose
+# already-translated English (no source English exists for either) is
+# reused directly. Below duplex-majus, so hours/vespers.ts's
+# mergeFerialNumbersWithProperAntiphons only takes this file's antiphon
+# text, not its psalm numbers.
+id: st-gregory-the-great
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Beátus Gregórius * in cáthedra Petri sublimátus, Vigilántis nomen factis implévit."
+      en: "Blessed Gregory, * exalted to the Chair of Peter, fulfilled in his deeds the name of the Watchman."
+  - psalms: [110]
+    antiphon:
+      la: "Pastor exímius * pastorális vitæ spécimen trádidit et régulam."
+      en: "An excellent shepherd, * he handed down a pattern and a rule of pastoral life."
+  - psalms: [111]
+    antiphon:
+      la: "Dum páginæ sacræ * mystéria pánderet, colúmba nive candídior appáruit."
+      en: "While he was expounding * the mysteries of the sacred page, a dove whiter than snow appeared to him."
+  - psalms: [112]
+    antiphon:
+      la: "Gregórius, * monachórum spéculum, pater Urbis, orbis delíciæ."
+      en: "Gregory, * the mirror of monks, father of the City, the delight of the world."

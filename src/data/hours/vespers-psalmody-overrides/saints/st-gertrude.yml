@@ -1,0 +1,25 @@
+# Sourced from web/www/horas/Latin/SanctiM/11-16.txt's own [Ant Vespera]
+# block (the first/default one -- a second, rubric-conditional block
+# follows it in the source, not used here). No English rendering exists
+# in the reference engine's data at all; translated here directly.
+# Distinct from her own Lauds antiphons. Below duplex-majus, so hours/
+# vespers.ts's mergeFerialNumbersWithProperAntiphons only takes this
+# file's antiphon text, not its psalm numbers.
+id: st-gertrude
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Casta colúmba * nidíficans in cavérna macériæ sacri láteris Jesu Christi, mel suavíssimum de petra sugébat."
+      en: "The chaste dove, * nesting in the cleft of the wall of the sacred side of Jesus Christ, sucked the sweetest honey from the rock."
+  - psalms: [112]
+    antiphon:
+      la: "Loquebátur Christus * ad diléctam Gertrúdem fácie ad fáciem, sicut solet loqui homo ad amícum suum."
+      en: "Christ spoke * to His beloved Gertrude face to face, as a man is wont to speak to his friend."
+  - psalms: [121]
+    antiphon:
+      la: "Beátæ Gertrúdis verba * divíni erant amóris jácula: lámpades ejus, lámpades ignis atque flammárum."
+      en: "The words of blessed Gertrude * were darts of divine love: her lamps were lamps of fire and flame."
+  - psalms: [126]
+    antiphon:
+      la: "Diléctæ ánimam * e cárcere córporis exeúntem accépit Christus in ulnas suas, et cor suum illi amánter apéruit."
+      en: "Christ received into His arms * the soul of His beloved, as it went forth from the prison of the body, and lovingly opened His Heart to her."

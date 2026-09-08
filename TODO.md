@@ -6813,3 +6813,29 @@ source; translated directly (`status.en` can't carry `draft` at this schema, per
 own note).
 
 `npm test` (2077 passed) and `npm run build` both pass.
+
+### Vespers antiphons: below-duplex-majus first pass (2026-09-08)
+
+Same 194-saint set, checked against `[Ant Vespera]` presence. Same false-positive causes ruled out
+again (`ss-machabees`, `st-marcus`, `st-nicomedes`, `st-felicitas`, `st-sabina`, `ss-alexander-
+eventius-theodulus-and-juvenal` — all genuinely have no proper content, per the Lauds pass above);
+`ss-john-and-paul` was a new false-positive shape — the source only has a single `[Ant Vespera 3]`
+*slot* reference for them, not a full 4-antiphon override, which a loose regex matched as if it
+were the real tag.
+
+Authored 10 real gaps: `st-joseph`, `st-gregory-the-great`, `st-gertrude`, `st-agnes`,
+`st-clement`, `st-cecilia`, `st-lucy`, `st-agatha`, `commemoration-of-st-paul` (several reusing
+the identical text/English already established for their own Lauds override, per the source's own
+`@:Ant Laudes`/`@:Ant Vespera` cross-references), and `finding-of-st-stephen` (reuses St. Stephen
+Protomartyr's own Dec 26 Lauds antiphons wholesale — a fitting thematic reuse for the finding of
+his relics). St. Gertrude had no English in the source at all; translated directly.
+
+**Left open, not modeled:** `st-thomas-becket`'s own `[Ant Vespera]` is `@Sancti/12-25:Ant Vespera 3`
+— a single-*slot* substitution (only the 3rd of 4 antiphons is proper; the rest stay ferial), which
+`mergeFerialNumbersWithProperAntiphons`'s data shape (a plain sequential `groups` array) has no
+clean way to express as a sparse/partial override. A real, narrow mechanism gap, not a same-day
+content fix — noted here rather than forced through with an approximation.
+
+`npm test` (2077 passed) and `npm run build` both pass. This first pass covered only the 194
+saints with a non-null `propers` field; the 89 `propers: null` saints, and hymns/PTSN/collects
+below duplex-majus, are still unaudited.

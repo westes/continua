@@ -1,0 +1,24 @@
+# Sourced from web/www/horas/Latin/Sancti/03-19.txt's own [Ant Vespera]
+# and English/Sancti/03-19.txt's own translation -- the Betrothal/
+# Annunciation-to-Joseph narrative (Matt 1), genuinely distinct from his
+# own Lauds antiphons (the Finding in the Temple, Luke 2). Below
+# duplex-majus, so hours/vespers.ts's mergeFerialNumbersWithProperAntiphons
+# only takes this file's antiphon text, not its psalm numbers.
+id: st-joseph
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Jacob autem * génuit Joseph, virum Maríæ, de qua natus est Jesus, qui vocátur Christus."
+      en: "And Jacob begat Joseph * the husband of Mary, of whom was born Jesus, Who is called Christ."
+  - psalms: [110]
+    antiphon:
+      la: "Missus est * Angelus Gábriel a Deo ad Vírginem desponsátam viro, cui nomen erat Joseph, de domo David, et nomen Vírginis María."
+      en: "The Angel Gabriel * was sent from God, unto a city of Galilee, named Nazareth, to a virgin espoused to a man whose name was Joseph, of the house of David, and the virgin's name was Mary."
+  - psalms: [111]
+    antiphon:
+      la: "Cum esset desponsáta * Mater Jesu María Joseph, ántequam convenírent, invénta est in útero habens de Spíritu Sancto."
+      en: "When as Mary * the mother of Jesus, was espoused to Joseph, before they came together, she was found with child, of the Holy Ghost."
+  - psalms: [112]
+    antiphon:
+      la: "Joseph vir ejus, * cum esset justus, et nollet eam tradúcere, vóluit occúlte dimíttere eam."
+      en: "Then Joseph her husband * being a just man, and not willing to make her a public example, was minded to put her away privily."
