@@ -10,17 +10,42 @@ content in the same shape, not a design change. The dated log below is that pipe
 
 ## Open work, in priority order
 
-1. **Mechanism gaps** — none currently open.
+1. **Mechanism gaps**
+   - Paschaltide antiphon substitution for a saint's own proper Vespers antiphons: no
+     mechanism exists to swap in the reference engine's seasonal Alleluia-laden antiphon
+     set for a fixed-date feast that falls inside Paschaltide (most years, for `st-mark`,
+     `ss-philip-and-james`, `st-john-before-the-latin-gate`). Blocks authoring their Vespers
+     antiphon overrides — currently left unauthored rather than guessed at (2026-09-08).
+   - Sparse/partial per-slot override for minor-hour psalmody: `mergeFerialNumbersWithProperAntiphons`'s
+     `groups` array has no way to express "only antiphon slot 3 is proper, the rest stay
+     ferial." Blocks authoring `st-thomas-becket`'s own Vespers antiphon (his own source is
+     `@Sancti/12-25:Ant Vespera 3`, a single-slot substitution) (2026-09-08).
 
 2. **Minimal-proof-done, bulk content pending**
-   - Reference-source-backed content sweep, beyond Matins invitatory (2026-09-08): the
-     duplex-majus+ Matins-invitatory tier is now fully audited and closed (see dated log
-     below), but the same audit method — does `../divinum-officium-reference` actually
-     carry a proper text at this slot, not "is this saint's rank above some vu-internal
-     threshold" — hasn't yet been run against the other override kinds (Lauds antiphons,
-     Prime/Terce/Sext/None, Vespers, hymns, collects) or against saints below duplex-majus.
-     See `vu_source_all_available_proper_content` memory for the corrected design
-     principle driving this.
+   - Reference-source-backed content sweep (2026-09-08): **done** for both the duplex-majus+
+     tier (59 saints) and the below-duplex-majus tier (194 saints with a non-null `propers`
+     field) across every hour-part — Matins invitatory, Lauds/Vespers antiphons, Lauds/Vespers
+     hymn+chapter+responsory+versicle bundles, Prime/Terce/Sext/None antiphons+chapters,
+     collects, Matins readings/responsories. Two whole-tier consolidated sweeps (see dated
+     log) confirm zero silently-missing parts remain in either tier. See
+     `vu_source_all_available_proper_content` memory for the corrected design principle that
+     drove this (gate by reference-source availability, not vu's own rank threshold).
+   - Still open within that same campaign:
+     - The 89 `propers: null` saints were spot-checked (all still accurate) but not
+       exhaustively re-verified the way the 194-saint set was.
+     - PTSN Terce chapters: assumed "always plain ferial at this rank" from the *absence*
+       of a `[Capitulum Tertia]` source tag across several saints, never independently
+       confirmed via live query against what the engine actually renders.
+     - `octave-of-all-saints`'s Vespers psalm-slot count (4 vs. the 5 All Saints' own day
+       uses) is unresolved — its own date can't be live-verified directly (resolves to a
+       different feast under "today's winner" queries), so it needs some other verification
+       path before authoring.
+   - Accuracy audit of already-authored content (2026-09-08, not started): everything above
+     only checked "does the reference source have a tag vu is missing" — it never re-checked
+     content already marked `verified` against the source for transcription errors, wrong
+     psalm-number attributions, or stale translations, the way the Guardian Angels antiphon
+     mix-up and the Archangel psalm-number bugs were caught this session (by accident, not by
+     a systematic pass). Unscoped — no estimate yet of how large this would be.
 
 3. **New features**
    - Date picker: `day-nav.ts` only steps a day at a time; no way to jump to an arbitrary
