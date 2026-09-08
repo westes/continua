@@ -26,10 +26,6 @@ content in the same shape, not a design change. The dated log below is that pipe
    - Still open within that same campaign:
      - The 89 `propers: null` saints were spot-checked (all still accurate) but not
        exhaustively re-verified the way the 194-saint set was.
-     - `octave-of-all-saints`'s Vespers psalm-slot count (4 vs. the 5 All Saints' own day
-       uses) is unresolved — its own date can't be live-verified directly (resolves to a
-       different feast under "today's winner" queries), so it needs some other verification
-       path before authoring.
    - Accuracy audit of already-authored content (2026-09-08, not started): everything above
      only checked "does the reference source have a tag vu is missing" — it never re-checked
      content already marked `verified` against the source for transcription errors, wrong
@@ -7122,3 +7118,31 @@ invéntus est sine mácula" chapter instead of the ferial default; St. Justina
 (`common-of-a-virgin-martyr`, Oct 7) now correctly resolves "Fratres: Qui gloriátur" instead of
 falling through. `npm test` (2077 passed) and `npm run build` (`tsc --noEmit` + `vite build`) both
 pass, no id collisions.
+
+### All Saints' own Vespers psalmody bug found + `octave-of-all-saints` gap closed (2026-09-08)
+
+Re-checking the `octave-of-all-saints` Vespers psalm-slot open item (user pushback: "monastic
+vespers does 4 psalms typically," against this app's own `all-saints.yml` file claiming 5) surfaced
+a real bug in All Saints' own day, not just the Octave's gap. Live-verified against the local
+Divinum Officium CGI instance (`command=prayVespera`, `version=Monastic`, 11-01-2026): the actual
+render is exactly 4 psalms — 109, 111, 112, 115 (110 genuinely skipped, not shifted) — the ordinary
+Monastic 4-psalm Vespers scheme, not an exception. The existing `vespers-psalmody-overrides/saints/
+all-saints.yml` (authored 2026-08) had 5 groups: psalm numbers 110/111 mislabeled where they should
+have been 111/112, plus a spurious 5th antiphon ("Benedícite Dóminum omnes elécti ejus") that turned
+out to be Lauds' own antiphon for this feast, apparently copy-pasted in by mistake. Corrected that
+file to the live-verified 4-slot scheme.
+
+With the real scheme confirmed, wired `octave-of-all-saints` to reuse it (new `vespers-psalmody-
+overrides/saints/octave-of-all-saints.yml`, duplicated per this codebase's standing convention) —
+same cross-id reuse pattern already used for this feast's collect. Its own date (Nov 8) still isn't
+independently live-queryable (contested with `ss-four-crowned-martyrs`, whose simplex rank the
+Octave's duplex-majus outranks per the kalendarium's own primary/secondary listing, so a plain query
+there doesn't surface a separate answer to check against) — reasoned from the collect's own
+established precedent instead, then confirmed via `resolveOrdo` that both First Vespers (Nov 7
+evening, governed by the Octave) and Second Vespers (Nov 8) now render 109/111/112/115. `npm test`
+(2077 passed) and `npm run build` both pass.
+
+**Lesson**: a file's own header comment claiming "live-verified" isn't self-certifying — this one
+had been carried forward and cited as settled fact (including by this session, initially) without
+anyone re-checking the actual live render against the claim. Worth keeping in mind for the still-
+open accuracy-audit item below.
