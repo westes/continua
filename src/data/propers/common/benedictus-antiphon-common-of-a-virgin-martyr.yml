@@ -1,0 +1,28 @@
+# Duplicated from benedictus-antiphon-common-of-a-virgin.yml — that file's own header
+# comment documents this Common category as live-verified identical
+# for this hour-part; registered under its own id (rather than
+# aliased) matching this codebase's standing convention for shared
+# Common content (e.g. prime-antiphon-common-of-a-confessor.yml vs.
+# prime-antiphon-common-of-an-abbot.yml).
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Justina, 10-07-2025) -- common-of-a-virgin.
+# Covers `common-of-a-virgin-martyr`, `common-of-a-virgin`, and
+# `common-of-a-holy-woman` saints (SaintRecord.common) -- live-
+# verified identical P/T/S/N across all three (the Martyr/non-Martyr
+# distinction only affects the collect's own wording), cross-checked
+# against St. Emerentiana, St. Praxedes, and St. Martha (the sole
+# `common-of-a-holy-woman` saint -- her own collect uses the Virgin
+# template `collect-c6a` too, same finding).
+# Text taken from St. Emerentiana's own rendering, not St. Justina's:
+# Justina is Duplex (double-or-higher), so her own query shows this
+# antiphon in full at both open and close with no separate incipit
+# marker -- Emerentiana (Simplex) renders the same underlying text with
+# the incipit/full split visible, which is what splitAntiphon
+# (hours/antiphon.ts) needs to find via the embedded "*".
+id: benedictus-antiphon-common-of-a-virgin-martyr
+text:
+  la: "Símile est regnum cælórum * hómini negotiatóri quærénti bonas margarítas: invénta una pretiósa, dedit ómnia sua, et comparávit eam."
+  en: "The kingdom of heaven is like unto a merchantman * seeking goodly pearls, who, when he had found one pearl of great price, went and sold all that he had, and bought it."
+status:
+  la: verified
+  en: verified

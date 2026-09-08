@@ -1,0 +1,33 @@
+# Duplicated from terce-capitulum-common-of-a-virgin.yml — that file's own header
+# comment documents this Common category as live-verified identical
+# for this hour-part; registered under its own id (rather than
+# aliased) matching this codebase's standing convention for shared
+# Common content (e.g. prime-antiphon-common-of-a-confessor.yml vs.
+# prime-antiphon-common-of-an-abbot.yml).
+# Verified against Divinum Officium (Monastic Tridentinum 1617),
+# live query (St. Justina, 10-07-2025) -- common-of-a-virgin.
+# Covers `common-of-a-virgin-martyr`, `common-of-a-virgin`, and
+# `common-of-a-holy-woman` saints (SaintRecord.common) -- live-
+# verified identical P/T/S/N across all three (the Martyr/non-Martyr
+# distinction only affects the collect's own wording), cross-checked
+# against St. Emerentiana, St. Praxedes, and St. Martha (the sole
+# `common-of-a-holy-woman` saint -- her own collect uses the Virgin
+# template `collect-c6a` too, same finding).
+id: terce-capitulum-common-of-a-virgin-martyr
+text:
+  la: |
+    Fratres: Qui gloriátur, in Dómino gloriétur. Non enim qui seípsum comméndat, ille probátus est; sed quem Deus comméndat.
+    R. Deo grátias.
+    V. Spécie tua et pulchritúdine tua.
+    R. Inténde, próspere procéde, et regna.
+  en: |
+    Brothers: But he that glorieth, let him glory in the Lord. For not he who commendeth himself, is approved, but he, whom God commendeth.
+    R. Thanks be to God.
+    V. In thy comeliness and thy beauty.
+    R. Go forward, fare prosperously, and reign.
+citation:
+  la: "2 Cor 10:17-18"
+  en: "2 Cor 10:17-18"
+status:
+  la: verified
+  en: verified

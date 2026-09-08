@@ -26,9 +26,6 @@ content in the same shape, not a design change. The dated log below is that pipe
    - Still open within that same campaign:
      - The 89 `propers: null` saints were spot-checked (all still accurate) but not
        exhaustively re-verified the way the 194-saint set was.
-     - PTSN Terce chapters: assumed "always plain ferial at this rank" from the *absence*
-       of a `[Capitulum Tertia]` source tag across several saints, never independently
-       confirmed via live query against what the engine actually renders.
      - `octave-of-all-saints`'s Vespers psalm-slot count (4 vs. the 5 All Saints' own day
        uses) is unresolved — its own date can't be live-verified directly (resolves to a
        different feast under "today's winner" queries), so it needs some other verification
@@ -7090,3 +7087,38 @@ All 258 hymn files re-parsed cleanly (0 YAML errors); re-ran the length check po
 except St. Gertrude's remaining prose-sentence half-lines (107-132 chars, an accepted, deliberate
 exception per above, not a miss). `npm test` (2077 passed) and `npx tsc --noEmit` both pass, no
 content/translation changes, formatting only.
+
+### Un-aliased shared-Common P/T/S/N + Benedictus/Magnificat files closed (2026-09-08)
+
+Started as the "PTSN Terce chapters" open item (assumed-ferial, never live-verified). The real bug
+turned out not to be a missing live-verification but a missing *registration*: several
+`resolve-common.ts` lookups (`resolveMinorHourAntiphon`/`resolveMinorHourChapter` via
+`SaintRecord.minorHoursCommon`, `getBenedictusAntiphon`/`getMagnificatAntiphon` via
+`benedictusCommon`) key straight off the literal Common-category id string, one file per id — no
+aliasing. Several past sessions had already *live-verified* that some Common categories share
+identical Prime/Terce/Sext/None + Benedictus/Magnificat content across multiple ids (their own file
+headers say so explicitly — e.g. `terce-capitulum-common-of-an-abbot.yml`: "Covers `common-of-an-
+abbot`, `common-of-a-confessor-not-bishop`, and `common-of-a-confessor` ... live-verified identical
+... across all three") but had only ever authored the file under *one* of those ids, per this
+codebase's own standing convention of duplicating rather than aliasing shared content (already
+followed correctly for e.g. `prime-antiphon-common-of-a-confessor{,-bishop,-not-bishop}.yml`). Every
+other id in each "Covers" list was silently falling through the chain to the plain ferial default
+instead — the exact "should be using the Commons" mechanism gap this entry started from, just not
+where originally suspected.
+
+Audited every `data/propers/common/*.yml` file with a "Covers `...`" header line (18 found) against
+the ids the Common-category fields (`minorHoursCommon`, `benedictusCommon`) actually use across all
+saints, and found 25 missing sibling files: the **abbot family** (`common-of-an-abbot` →
+`common-of-a-confessor`, `common-of-a-confessor-not-bishop`) was missing its Terce/Sext/None
+*capitulum* files (6) and one `benedictus-antiphon` file (1); the **virgin family**
+(`common-of-a-virgin` → `common-of-a-virgin-martyr`, `common-of-a-holy-woman`) was missing
+*every* Prime/Terce/Sext/None antiphon+capitulum, Benedictus, and Magnificat file (18) — the
+`common-of-a-virgin-martyr`/`common-of-a-holy-woman` ids (3 affected saints) had *no* shared-Common
+minor-hour or Benedictus/Magnificat content wired at all before this. All 25 written as duplicates
+(not aliases, matching convention) of their already-live-verified source file, same text/citation/
+status, with a header note pointing back to the source. Spot-verified live via `resolveOrdo`: St.
+Peter of Alcantara (`common-of-a-confessor`, Oct 19) now correctly resolves Terce's "Beátus vir, qui
+invéntus est sine mácula" chapter instead of the ferial default; St. Justina
+(`common-of-a-virgin-martyr`, Oct 7) now correctly resolves "Fratres: Qui gloriátur" instead of
+falling through. `npm test` (2077 passed) and `npm run build` (`tsc --noEmit` + `vite build`) both
+pass, no id collisions.
