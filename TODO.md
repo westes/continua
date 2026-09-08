@@ -7218,3 +7218,37 @@ internally consistent:
 
 `npm test` (2077 passed) and `npm run build` both pass. This is a first pass, not exhaustive — see
 the "Accuracy audit" open-work item for what's still uncovered by this approach.
+
+### Accuracy audit: stratified live/source sample, second pass (2026-09-08)
+
+Complementary to the structural pass above — a stratified random sample (18 files across 9
+categories: common antiphons, capitula, collects, hymns, responsories, saint-specific collects,
+nocturn readings, Lauds/Vespers psalmody overrides) re-checked against either a live query or the
+raw reference source directly, not just structural shape. 17/18 confirmed byte-for-byte accurate;
+the 18th (`visitation-of-the-bvm.yml`'s first Vespers antiphon) has a minor English wording
+difference from the live render, but vu's version is the *more correct* reading of the identical
+Latin (the live engine's own English there is mildly garbled: "This day was visitation the glorious
+Virgin Mary" vs. vu's grammatical "This day was the visitation of the glorious Virgin Mary") — not a
+bug, a prior session's deliberate smoothing.
+
+**Real methodological finding, not a content bug**: re-confirmed the version-string footgun already
+noted in `vu_reference_engine_file_layout` memory — using the bare `version=Monastic` query param
+(rather than the full `Monastic%20Tridentinum%201617`) silently resolves to **Monastic - 1963**, a
+later revision. Concretely hit while picking a live-query date for `common-of-a-confessor`: St.
+Peter of Alcantara (canonized 1669) genuinely is **not** on the true Monastic 1617 calendar at all
+(confirmed directly against `Tabulae/Kalendaria/M1617.txt` and its `1570.txt` base — no entry for
+Oct 19 in either) — querying his date under the correct full 1617 version string correctly returns
+nothing but the plain ferial default, while the bare `Monastic` shorthand (landing on 1963, which
+does include him) returns real content that happens to be byte-identical anyway, because Common
+*template* text itself doesn't vary between Monastic revisions (only the calendar/rubrics do) —
+re-confirmed by cross-checking the same antiphon against St. Romuald (Feb 7, genuinely present in
+`M1617.txt`) under the correct full version string. So the specific risk is calendar-membership
+confusion (silently landing on the wrong saint/day, or a false "not on this calendar" negative), not
+corrupted Common content — but it's a trap worth remembering for future live-query sourcing:
+**always pick a representative saint confirmed present in `M1617.txt`/`1570.txt` for the date being
+queried**, don't assume any `propers: null`/Common-fallback saint is safe just because they're on
+vu's own calendar (vu's calendar deliberately includes later-canonized saints beyond 1617's own,
+per the "Not a reconstruction" design).
+
+`npm test` (2077 passed) and `npm run build` both pass. No content changes this pass — everything
+sampled checked out.
