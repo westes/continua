@@ -7057,3 +7057,36 @@ left as its existing whole-bundle-or-nothing shape, not converted to independent
 whether a partial proper bundle should ever mix with a Common's remaining parts is a real liturgical
 judgment call, not a mechanical extraction, and wasn't decided this pass. `npm test` (2077 passed)
 and `npx tsc --noEmit` both pass, no behavior change beyond the new Becket content.
+
+### Hymn run-on-stanza formatting sweep (2026-09-08)
+
+User flagged today's Lauds hymn (`lauds-hymn-nativity-bvm`, "O gloriósa Dómina") as visibly
+misformatted — each 4-line stanza had been authored as one long run-on line instead of one verse
+per line, so it rendered as a wrapped paragraph rather than proper hymn-verse breaks (`white-space:
+pre-line` in `styles.css` only respects real `\n`s). Fixed that file, then found the same exact text
+duplicated (and identically broken) in `lauds-hymn-assumption`/`lauds-hymn-immaculate-conception`.
+
+A full sweep of all 258 `*hymn*.yml` files under `data/propers/common/` (parsed via js-yaml, flagging
+any resolved line over 95 chars — well below normal per-verse length for these meters) found 30 more
+pre-existing files with the identical bug, none from today's work: `all-saints`, `apparition-of-st-
+michael`, `chair-of-st-peter-at-{antioch,rome}`, `conversion-of-st-paul`, `guardian-angels`, `holy-
+innocents`, `nativity-of-st-john-the-baptist`, `ss-peter-and-paul`, `ss-philip-and-james`, `ss-simon-
+and-jude`, `st-{andrew,barnabas,bartholomew,gabriel-archangel,gertrude,james-the-greater,john-
+apostle,john-before-the-latin-gate,luke,mark,martin-of-tours,matthew,matthias,peter-ad-vincula,
+raphael-archangel,scholastica,stephen-protomartyr,thomas-apostle}`, plus `vespers-hymn-st-gertrude`.
+Many share identical text across saints (Common-of-Apostles' "Exsúltet cælum láudibus" alone covers
+10 files) — deduped by content hash first, fixed one representative per group, then propagated
+byte-for-byte to its duplicates via script rather than 30 manual edits.
+
+St. Gertrude's two files (Lauds/Vespers) were a different, genuine special case, not the same bug:
+authored as a deliberate free-prose translation (with an embedded "*" incipit-style break, per each
+file's own "translated here directly" note) rather than a metrical verse-for-verse one — forcing a
+fake 4-line split per stanza would have meant guessing false precision the source translation never
+had. Left those as prose, just split once at the existing "*" mark and fixed an unrelated encoding
+artifact (the Latin used `>-` folded style with a blank line after *every* verse, not just between
+stanzas, which read the wrong way visually).
+
+All 258 hymn files re-parsed cleanly (0 YAML errors); re-ran the length check post-fix — clean
+except St. Gertrude's remaining prose-sentence half-lines (107-132 chars, an accepted, deliberate
+exception per above, not a miss). `npm test` (2077 passed) and `npx tsc --noEmit` both pass, no
+content/translation changes, formatting only.
