@@ -23,12 +23,16 @@ content in the same shape, not a design change. The dated log below is that pipe
      log) confirm zero silently-missing parts remain in either tier. See
      `vu_source_all_available_proper_content` memory for the corrected design principle that
      drove this (gate by reference-source availability, not vu's own rank threshold).
-   - Accuracy audit of already-authored content (2026-09-08, not started): everything above
-     only checked "does the reference source have a tag vu is missing" — it never re-checked
-     content already marked `verified` against the source for transcription errors, wrong
-     psalm-number attributions, or stale translations, the way the Guardian Angels antiphon
-     mix-up and the Archangel psalm-number bugs were caught this session (by accident, not by
-     a systematic pass). Unscoped — no estimate yet of how large this would be.
+   - Accuracy audit of already-authored content (2026-09-08, first structural pass done): see
+     dated log, "Accuracy audit: structural checks, first pass" — a handful of cheap,
+     mechanical whole-corpus checks (~2460 files) rather than a live re-verification of every
+     `verified` claim, which isn't feasible in one sitting. Found and fixed one real bug (a
+     citation typo); several other check categories came back clean. **Not exhaustive** —
+     genuine transcription/attribution errors that don't produce a detectable structural
+     anomaly (wrong psalm *text* under a plausible-looking number, a mistranslation that reads
+     fine on its own) need the slower live-requery-every-file approach this pass deliberately
+     avoided. Next increment: pick a new structural check category, or start spot-live-
+     verifying a sampled subset.
 
 3. **New features**
    - Date picker: `day-nav.ts` only steps a day at a time; no way to jump to an arbitrary
@@ -7186,3 +7190,31 @@ content to Becket's own file (both point at the same source block; both `rank: d
 Becket's.
 
 `npm test` (2077 passed) and `npm run build` both pass.
+
+### Accuracy audit: structural checks, first pass (2026-09-08)
+
+Live-requerying every `verified` claim across ~2460 content files isn't feasible in one sitting, so
+started with cheap, whole-corpus **structural** checks instead — patterns that would have caught the
+two real bugs found earlier this session (the All Saints 5-vs-4 psalm miscount, the Common-family
+un-aliased-file gaps) if run proactively, rather than live-requerying content that already looks
+internally consistent:
+
+- **Vespers psalm-group count outliers** (>4 groups, the exact shape of the All Saints bug) — clean;
+  the only two 5-group files (`st-thomas-becket`, `st-silvester-i`) are both documented, deliberate
+  exceptions (below duplex-majus, extra group intentionally unused).
+- **Duplicate psalm numbers within one psalmody-override file** — clean, none found.
+- **Lauds/Vespers antiphon-text overlap for the same saint** — 23 saints share antiphon text between
+  their Lauds and Vespers override files; all 23 are a clean **wholesale 4-of-5 subset** (Vespers'
+  full set plus one extra Lauds-only antiphon) — the legitimate "Lauds reuses Vespers' antiphons
+  verbatim" source pattern already documented, not the All Saints bug's shape (one stray antiphon
+  amid otherwise-distinct sets). No partial-overlap anomalies found.
+- **Citation `la`/`en` verse-number mismatches** (384 citations checked, inline and block YAML
+  styles both) — found and fixed one real bug: `none-capitulum-common-of-a-dedication.yml` had
+  `citation.en: "Rev 21:4-4"` against `citation.la: "Apo 21:4-5"` — a transcription typo (4-4 should
+  be 4-5).
+- **Hymn line-length regression** (re-running the same check from the earlier formatting sweep) —
+  clean, no new long-line files beyond St. Gertrude's already-documented deliberate prose exception.
+- **Psalm numbers outside 1-150** — clean.
+
+`npm test` (2077 passed) and `npm run build` both pass. This is a first pass, not exhaustive — see
+the "Accuracy audit" open-work item for what's still uncovered by this approach.
