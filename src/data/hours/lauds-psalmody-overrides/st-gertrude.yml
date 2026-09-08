@@ -1,0 +1,33 @@
+# Sourced from web/www/horas/Latin/SanctiM/11-16.txt's own [Ant Laudes]
+# block (5 antiphons run together, one per line, older un-numbered format
+# -- same as st-benedict.yml's own file). No English rendering exists in
+# the reference engine's data for these at all; translated here directly.
+# Below duplex-majus (semiduplex), so hours/lauds.ts's
+# mergeFerialNumbersWithProperAntiphons only takes this file's antiphon
+# text, not its psalm numbers -- the numbers below are placeholders
+# (the standard 92/99/62 scheme most Virgin-shaped feasts use), not
+# independently confirmed for this feast, since they have no functional
+# effect at this rank.
+id: st-gertrude
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Lauda * et lætáre, fília Sion, quia ecce ego vénio, et habitábo in médio tui, dicit Dóminus."
+      en: "Rejoice * and be glad, O daughter of Sion: for, lo, I come, and I will dwell in the midst of thee, saith the Lord."
+  - psalms: [99]
+    antiphon:
+      la: "O beáta ánima, * quæ méruit esse sedes sapiéntiæ, cujus delíciæ sunt esse cum fíliis hóminum!"
+      en: "O blessed soul, * who didst merit to be the seat of Wisdom, whose delight it is to be with the sons of men!"
+  - psalms: [62]
+    antiphon:
+      la: "Ánnulis septem subarrhávit me * Dóminus meus Jesus Christus, et tamquam sponsam decorávit me coróna."
+      en: "My Lord Jesus Christ hath betrothed me * with seven rings, and adorned me with a crown as His bride."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Hábuit Gertrúdis * potestátem cláudere cælum núbibus, et aperíre portas ejus: quia lingua ejus clavis cæli facta est."
+    en: "Gertrude had * the power to shut heaven with clouds, and to open its gates: for her tongue became the key of heaven."
+laudate:
+  antiphon:
+    la: "Ancílla fidélis * et sponsa elécta intrávit in cor et gáudium Dómini sui, cujus amóre languébat."
+    en: "The faithful handmaid * and chosen bride entered into the heart and joy of her Lord, for whose love she languished."

@@ -6786,3 +6786,30 @@ Authored the remaining 7 real gaps: `st-joseph`, `st-mary-magdalene`, `st-margar
 only, for the 194 saints with a non-null `propers` field — the 89 `propers: null` saints and every
 other hour-part (Lauds/Vespers antiphons, hymns, PTSN, collects) are still unaudited below
 duplex-majus.
+
+### Lauds antiphons: below-duplex-majus first pass (2026-09-08)
+
+Same 194-saint set, checked against `[Ant Laudes`/`[Ant Vespera]` (below duplex-majus, Lauds
+often just reuses Vespers' own antiphons verbatim per the source's own `@:Ant Vespera` reference)
+presence. Below duplex-majus, `hours/lauds.ts`'s `mergeFerialNumbersWithProperAntiphons` takes only
+a `lauds-psalmody-overrides/saints/<id>.yml` file's antiphon *text*, never its psalm numbers (the
+day's real ferial numbers always win at this rank) — live-verified across all 12 authored below,
+each correctly merging onto that weekday's real ferial psalm numbers.
+
+Found 17 candidates; 6 were false positives from the same same-date-file-collision cause as the
+Matins invitatory pass above (`st-marcus`/`st-nicomedes`/`ss-machabees` share their date with a
+much higher-ranking winner and have no content of their own — `vide C3`, Common of Several Martyrs,
+confirmed via their own file's `[Rank]`; `st-sabina` likewise has no file of her own at all,
+correctly using her Common per the existing `st-sabina.yml` commemoration-antiphon note). Also
+reverted a mistake from the earlier Matins-invitatory pass: `ss-alexander-eventius-theodulus-and-
+juvenal`'s `[Invit]` "match" was actually Finding of the Holy Cross's own text bleeding through
+from the shared May 3 file — their real file (`Sancti/05-03r.txt`) has no invitatory of its own at
+all (`vide C3`), so `matins-invitatory-ss-alexander-eventius-theodulus-and-juvenal.yml` was deleted.
+
+Authored the remaining 10 real gaps: `st-joseph`, `st-clement`, `st-gregory-the-great`,
+`st-gertrude`, `st-cecilia`, `st-lucy`, `st-agnes`, `st-agatha`, `ss-john-and-paul`,
+`commemoration-of-st-paul`. St. Gregory the Great and St. Gertrude had no English at all in the
+source; translated directly (`status.en` can't carry `draft` at this schema, per st-scholastica.yml's
+own note).
+
+`npm test` (2077 passed) and `npm run build` both pass.

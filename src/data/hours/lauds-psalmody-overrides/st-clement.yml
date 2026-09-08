@@ -1,0 +1,31 @@
+# Sourced from web/www/horas/Latin/Sancti/11-23.txt's own [Ant Laudes]
+# block, which is itself just "@:Ant Vespera:s/;;.*//g" -- Lauds reuses
+# the Vespers antiphons verbatim, numbering stripped. Below duplex-majus
+# (semiduplex), so hours/lauds.ts's mergeFerialNumbersWithProperAntiphons
+# only takes this file's antiphon text, not its psalm numbers (those stay
+# the plain ferial weekday's) -- psalm numbers below are still the
+# source's own real ones (109/110/111/112/116), kept for documentation
+# accuracy even though unused at this rank.
+id: st-clement
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Oránte * sancto Cleménte, appáruit ei Agnus Dei."
+      en: "While St. Clement prayed, * there appeared unto him the Lamb of God."
+  - psalms: [110]
+    antiphon:
+      la: "Non meis méritis * ad vos me misit Dóminus, vestris corónis partícipem fíeri."
+      en: "Not for my own merits * hath the Lord sent me unto you, that I may share your crowns."
+  - psalms: [111]
+    antiphon:
+      la: "Vidi supra montem * Agnum stantem, de sub cujus pede fons vivus emánat."
+      en: "I saw on the mountain * the Lamb standing, from beneath whose foot flowed a fountain of living waters."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "De sub cujus pede * fons vivus emánat: flúminis ímpetus lætíficat civitátem Dei."
+    en: "From beneath whose foot * a fountain of living waters flowed forth: the stream of the river that maketh glad the city of God."
+laudate:
+  antiphon:
+    la: "Omnes gentes * per gyrum credidérunt Christo Dómino."
+    en: "All the nations * round about believed in Christ the Lord."

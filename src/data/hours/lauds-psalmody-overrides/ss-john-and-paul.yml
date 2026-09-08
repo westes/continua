@@ -1,0 +1,30 @@
+# Sourced from web/www/horas/Latin/Sancti/06-26.txt's own [Ant Laudes]
+# and English/Sancti/06-26.txt's own translation. Below duplex-majus, so
+# hours/lauds.ts's mergeFerialNumbersWithProperAntiphons only takes this
+# file's antiphon text, not its psalm numbers -- the numbers below are
+# placeholders (the standard 92/99/62 scheme most Martyr-shaped feasts
+# use), not independently confirmed for this feast, since they have no
+# functional effect at this rank.
+id: ss-john-and-paul
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Paulus et Joánnes * dixérunt Juliáno: Nos unum Deum cólimus, qui fecit cælum et terram."
+      en: "Paul and John * said unto Julian: We worship One God, Who hath made heaven and earth."
+  - psalms: [99]
+    antiphon:
+      la: "Paulus et Joánnes * dixérunt Terentiáno: Si tuus dóminus est Juliánus, habéto pacem cum illo: nobis álius non est, nisi Dóminus Jesus Christus."
+      en: "Paul and John * said unto Terentian: If thy Lord be Julian, keep thou at peace with him, but as for us, we have no other Lord but the Lord Jesus Christ."
+  - psalms: [62]
+    antiphon:
+      la: "Joánnes et Paulus, * agnoscéntes tyránnidem Juliáni, facultátes suas paupéribus erogáre cœpérunt."
+      en: "John and Paul, * when they had heard the tyrannous command of Julian, began to disperse abroad their goods among the poor."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Sancti spíritus * et ánimæ justórum, hymnum dícite Deo, allelúja."
+    en: "O ye holy Spirits and Souls of the righteous, * bless ye the Lord. Alleluia."
+laudate:
+  antiphon:
+    la: "Joánnes et Paulus * dixérunt ad Gallicánum: Fac votum Deo cæli, et eris victor mélius quam fuísti."
+    en: "John and Paul * said unto Gallican: Make thy vow unto the God of heaven, and thou shalt be yet a greater conqueror than ever thou hast been heretofore."

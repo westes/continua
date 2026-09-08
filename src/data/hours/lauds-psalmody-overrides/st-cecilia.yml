@@ -1,0 +1,30 @@
+# Sourced from web/www/horas/Latin/Sancti/11-22.txt's own [Ant Laudes]
+# ("@:Ant Vespera:s/;;.*//g" -- Lauds reuses the Vespers antiphons
+# verbatim) and English/Sancti/11-22.txt's own translation. Below
+# duplex-majus, so hours/lauds.ts's mergeFerialNumbersWithProperAntiphons
+# only takes this file's antiphon text, not its psalm numbers -- kept the
+# source's own real numbers (109/112/121/126/147) anyway for
+# documentation accuracy, though unused at this rank.
+id: st-cecilia
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Cantántibus órganis, * Cæcília Dómino decantábat, dicens: Fiat cor meum immaculátum, ut non confúndar."
+      en: "The musicians played, and Cecilia sang unto the Lord, * saying: Let my heart be undefiled, that I be not ashamed."
+  - psalms: [112]
+    antiphon:
+      la: "Valeriánus * in cubículo Cæcíliam cum Angelo orántem invénit."
+      en: "Valerian found Cecilia praying in her chamber, * and with her the Angel."
+  - psalms: [121]
+    antiphon:
+      la: "Cæcília * fámula tua, Dómine, quasi apis tibi argumentósa desérvit."
+      en: "Busy like a bee, * O Lord, did thine handmaiden Cecilia serve thee."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Benedíco te, * Pater Dómini mei Jesu Christi, quia per Fílium tuum ignis exstínctus est a látere meo."
+    en: "I bless thee, O Father of my Lord Jesus Christ, * that through thy Son the fire is gone out round about me."
+laudate:
+  antiphon:
+    la: "Triduánas * a Dómino popósci indúcias, ut domum meam ecclésiam consecrárem."
+    en: "I have asked the Lord for three days, * that I may consecrate my house as a Church."

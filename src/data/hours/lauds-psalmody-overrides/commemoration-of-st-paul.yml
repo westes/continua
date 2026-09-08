@@ -1,0 +1,32 @@
+# Sourced from web/www/horas/Latin/Sancti/06-30.txt's own [Ant Laudes]
+# ("@:Ant Vespera" -- Lauds reuses the Vespers antiphons verbatim) and
+# English/Sancti/06-30.txt's own translation. Antiphons 1-3 are shared
+# with conversion-of-st-paul.yml's own Vespers antiphons; 4 and 5 are
+# distinct to this commemoration. Below duplex-majus, so hours/lauds.ts's
+# mergeFerialNumbersWithProperAntiphons only takes this file's antiphon
+# text, not its psalm numbers -- the numbers below are placeholders (the
+# standard 92/99/62 scheme), not independently confirmed for this feast,
+# since they have no functional effect at this rank.
+id: commemoration-of-st-paul
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Ego plantávi, * Apóllo rigávit, Deus autem increméntum dedit, allelúja."
+      en: "I have planted, * Apollos watered, but God gave the increase, alleluia."
+  - psalms: [99]
+    antiphon:
+      la: "Libénter gloriábor * in infirmitátibus meis, ut inhábitet in me virtus Christi."
+      en: "Most gladly therefore will I rather glory * in my infirmities, that the power of Christ may rest upon me."
+  - psalms: [62]
+    antiphon:
+      la: "Grátia Dei * in me vácua non fuit, sed grátia ejus semper in me manet."
+      en: "The grace of God which was bestowed upon me was not in vain, * but His grace abideth ever in me."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Damásci, præpósitus * gentis Arétæ regis vóluit me comprehéndere: a frátribus per murum demíssus sum in sporta, et sic evási manus ejus in nómine Dómini."
+    en: "In Damascus the governor * under Aretas the king was desirous to apprehend me; by the brethren in a basket was I let down by the wall, and so escaped I his hands, in the name of the Lord."
+laudate:
+  antiphon:
+    la: "Ter virgis cæsus sum, * semel lapidátus sum, ter naufrágium pértuli pro Christi nómine."
+    en: "Thrice was I beaten with rods, * once was I stoned, thrice I suffered shipwreck, for Christ's name's sake."
