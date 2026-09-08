@@ -6896,14 +6896,20 @@ really St. Gregory VII's) — all confirmed via the same title-mismatch method a
 `st-mary-magdalene`, `ss-cyril-and-methodius`, `st-elizabeth-of-portugal`, `st-cajetan`,
 `st-irenaeus`, `st-joseph-of-cupertino`, `st-pius-v`, `st-peter-celestine`,
 `ss-seven-founders-of-the-servite-order`) have a real `[Ant 1]`/`[Ant 2]`/`[Ant 3]` tag in their own
-Sancti file, but **no `[Ant Laudes]` block at all** — meaning `[Ant 1]`/`[Ant 2]`/`[Ant 3]` are not
-simply "the Lauds antiphons under another name" the way they are for the saints authored above
-(where a genuine `[Ant Laudes]` block existed to reuse). What these three tags actually represent
-for a saint with no Lauds block of their own is unconfirmed — guessing wrong here risks the same
-kind of misattribution the Cross/Rosary/Seven-Sorrows collisions caused earlier in this sweep, so
-these were deliberately left unauthored rather than assumed. Needs a live-query check (`command=
-prayTertia`/`praySextam`/`prayNonam`) against one or two of these specific saints before extending
-the reuse pattern to them.
+Sancti file, but **no `[Ant Laudes]` block at all**. **Resolved same-day** by live-querying
+`prayTertia` for all 10: confirmed `[Ant 1]`/`[Ant 2]`/`[Ant 3]` **do not map to Terce/Sext/None** —
+they represent something else in the source's own structure (unidentified). St. Mary Magdalene's
+`[Ant 1]` has real proper text ("Múlier quæ erat in civitáte peccátrix...") that doesn't match her
+actual live-rendered Terce antiphon ("In odórem unguentórum tuórum...") at all. Authored real
+proper Terce antiphons for the two that turned out to genuinely have one (live-verified, source-
+file-tag-independent): `st-mary-magdalene`, `st-elizabeth-of-portugal`. The other 8 (`st-basil-the-
+great`, `ss-cyril-and-methodius`, `st-cajetan`, `st-irenaeus`, `st-joseph-of-cupertino`, `st-pius-v`,
+`st-peter-celestine`, `ss-seven-founders-of-the-servite-order`) live-render generic Common/ferial
+text at Terce (and Sext/None render empty) — confirmed genuinely no gap. Do not reuse the `[Ant 1]`/
+`[Ant 2]`/`[Ant 3]` tag for PTSN content under any *other* saint without first live-querying that
+saint's actual `prayTertia`/`praySextam`/`prayNonam` render and confirming the match — the naive
+"same source file, plausible-looking tag" assumption that worked for `[Ant Laudes]` does not hold
+here.
 
 `npm test` (2077 passed) and `npm run build` both pass. PTSN chapters (as opposed to antiphons)
 below duplex-majus are still fully unaudited, as is everything for the 89 `propers: null` saints.
