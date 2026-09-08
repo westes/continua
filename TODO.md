@@ -12,7 +12,15 @@ content in the same shape, not a design change. The dated log below is that pipe
 
 1. **Mechanism gaps** — none currently open.
 
-2. **Minimal-proof-done, bulk content pending** — none currently open.
+2. **Minimal-proof-done, bulk content pending**
+   - Reference-source-backed content sweep, beyond Matins invitatory (2026-09-08): the
+     duplex-majus+ Matins-invitatory tier is now fully audited and closed (see dated log
+     below), but the same audit method — does `../divinum-officium-reference` actually
+     carry a proper text at this slot, not "is this saint's rank above some vu-internal
+     threshold" — hasn't yet been run against the other override kinds (Lauds antiphons,
+     Prime/Terce/Sext/None, Vespers, hymns, collects) or against saints below duplex-majus.
+     See `vu_source_all_available_proper_content` memory for the corrected design
+     principle driving this.
 
 3. **New features**
    - Date picker: `day-nav.ts` only steps a day at a time; no way to jump to an arbitrary
@@ -6516,3 +6524,41 @@ Live-verified via `getBiblePlanReadings`/`resolveOrdo('matins', ...)`: 2026-11-1
 resumed-post-Epiphany-6 Monday, per `tests/hours/matins.test.ts`'s own proof date) now resolves
 "Heb 3-4" with real bilingual text, matching the new Monday row. `npm test` (2077 passed) and
 `tsc --noEmit` both pass.
+
+### Matins invitatory: Common-of-the-BVM + 17-saint duplex-majus+ gap sweep — closed (2026-09-08)
+
+User flagged 2026-09-08 (Nativity of the BVM, `duplex-2-classis`) opening with the plain ferial
+Tuesday invitatory antiphon instead of a proper one. Root cause: `resolveMatinsInvitatoryText`
+(`hours/matins.ts`) correctly walks proper → octave → Common-of-the-BVM → seasonal → ferial, but
+every real tier was unauthored for this feast — no `matins-invitatory-nativity-bvm.yml`, and no
+`matins-invitatory-common-of-the-bvm.yml` at all (every other Common category already had one).
+Content gap, not a logic bug.
+
+This surfaced a broader, wrongly-scoped assumption: prior override sweeps (Lauds psalmody, P-T-S-N,
+Matins invitatory) gated authoring on vu's own duplex-majus+ rank threshold, treating anything below
+that as correctly falling back to Common. User corrected this (2026-09-08): the real gate should be
+whether `../divinum-officium-reference` actually has proper content, not vu's rank tier — see
+`vu_source_all_available_proper_content` memory. Applying that to just the Matins-invitatory slot,
+audited all 59 duplex-majus+ saints against `Latin/{Sancti,SanctiM}/<date>.txt`'s own `[Invit]`
+presence: found 17 with real proper text in the reference source but no vu file (all fell through to
+Common or, for several major BVM feasts — Assumption, Purification, Annunciation, Immaculate
+Conception, Seven Sorrows, Maternity, Queenship, Apparition of the Immaculate BVM — to the *also*-
+missing Common-of-the-BVM fallback, i.e. ferial). Authored all 17
+(`matins-invitatory-{nativity-bvm,st-martin-of-tours,st-gabriel-archangel,apparition-of-the-immaculate-bvm,
+chair-of-st-peter-at-{antioch,rome},assumption,queenship-of-the-bvm,conversion-of-st-paul,
+st-stephen-protomartyr,annunciation,purification,seven-sorrows-of-the-bvm,st-lawrence,
+guardian-angels,maternity-of-the-bvm,immaculate-conception,apparition-of-st-michael}.yml`) plus
+`matins-invitatory-common-of-the-bvm.yml`, all bilingual/verified, pulled directly from each date's
+own `[Invit]` block (chasing `@Sancti/<date>` references where the file itself points elsewhere,
+e.g. Chair of St. Peter at Rome → Antioch's text, Apparition of the Immaculate BVM → the Immaculate
+Conception's text). The remaining 33 duplex-majus+ saints checked have no `[Invit]` block anywhere in
+the reference source at all (e.g. Ss. Peter and Paul, St. Andrew, Holy Innocents) — their Common
+fallback is genuinely correct, not a gap, and is not re-flagged.
+
+One test updated: `tests/hours/matins.test.ts`'s doubling-by-rank test had hardcoded St. Lawrence
+falling to `common-of-a-martyr` text as "no proper of his own" — now that he has one
+(`matins-invitatory-st-lawrence.yml`), updated to expect his own proper text instead.
+
+`npm test` (2077 passed) and `npm run build` (`tsc --noEmit` + vite build) both pass. Broader sweep
+(other hour kinds, saints below duplex-majus) tracked as ongoing Open Work above — this closes only
+the Matins-invitatory slot for the duplex-majus+ tier.
