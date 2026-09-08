@@ -7,9 +7,9 @@
 # 12-25.txt's own [Ant Vespera 3]. Below duplex-majus (rank: duplex, not
 # duplex-majus), so hours/vespers.ts's mergeFerialNumbersWithProperAntiphons
 # only takes this file's antiphon text, not its psalm numbers -- ferial
-# Vespers only ever has 4 groups, so the 5th (Ps 131) antiphon here goes
-# unused, same "extra proper groups beyond ferial's count are simply
-# unused" convention as elsewhere (confirmed with the user 2026-08-29).
+# Vespers only ever has 4 groups. The source's own 5th (Ps 131) antiphon
+# is dropped here rather than carried along unused (2026-09-08 simplification,
+# confirmed with the user) -- it never rendered anyway.
 id: st-thomas-becket
 groups:
   - psalms: [109]
@@ -28,7 +28,3 @@ groups:
     antiphon:
       la: "Apud Dóminum * misericórdia, et copiósa apud eum redémptio."
       en: "With the Lord * there is mercy, and with Him is plenteous redemption."
-  - psalms: [131]
-    antiphon:
-      la: "De fructu * ventris tui ponam super sedem tuam."
-      en: "Of the fruit * of thy body will I set upon thy throne."
