@@ -1,0 +1,13 @@
+# Reuses St. Stephen Protomartyr's own Dec 26 Lauds antiphon 3
+# (lauds-psalmody-overrides/st-stephen-protomartyr.yml) -- her Vespers
+# already reuses his content wholesale (see vespers-psalmody-overrides/
+# saints/finding-of-st-stephen.yml), per the source's own
+# "@Sancti/12-26:Ant Laudes" reference; Sext=Lauds-Ant3 per the
+# established minor-hours-borrow-from-Lauds convention.
+id: sext-antiphon-finding-of-st-stephen
+text:
+  la: "Adhǽsit ánima mea * post te, quia caro mea lapidáta est pro te, Deus meus."
+  en: "O my God, my soul followeth hard after thee, * for my flesh hath been stoned for thy sake."
+status:
+  la: verified
+  en: verified

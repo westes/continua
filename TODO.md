@@ -6873,3 +6873,37 @@ content wins instead — same "prior test encoded the old-but-now-superseded sta
 St. Lawrence's invitatory correction earlier in this sweep.
 
 `npm test` (2077 passed) and `npm run build` both pass.
+
+### PTSN antiphons: below-duplex-majus first pass, partial (2026-09-08)
+
+Same 194-saint set, checked Terce's own `[Ant 1]`-presence proxy (imperfectly, see below). Below-
+duplex-majus, `hours/resolve-common.ts`'s `resolveMinorHourAntiphon`/`resolveMinorHourChapter` fall
+back **per-part independently** to `minorHoursCommon` (unlike Lauds/Vespers' bundled `resolveOfficeBundle`)
+— no "all-or-nothing" risk here, so a plain per-saint antiphon file is safe to add on its own.
+
+Authored Prime/Terce/Sext/None antiphons for 8 saints by reusing their own already-authored Lauds
+antiphons 1/2/3/5 (`st-cecilia`, `st-lucy`, `st-agnes`, `st-agatha`, `st-clement`,
+`commemoration-of-st-paul`, `st-joseph`, `decollation-of-st-john-baptist` — the last already had a
+Lauds override from an earlier session) and `finding-of-st-stephen` (reusing St. Stephen
+Protomartyr's own Dec 26 antiphons, same as its Vespers). Same false-positive causes ruled out
+again (`st-marcus`, `st-nicomedes`, `st-prisca`, `ss-machabees`, `st-felicitas`, `st-sabina`,
+`ss-alexander-eventius-theodulus-and-juvenal`), plus 3 new ones this pass:
+`ss-basilides-cyrinus-nabor-and-nazarius` (June 12 is really St. John of St. Facundus's day),
+`ss-maurice-and-companions` (Sept 22 is really St. Thomas of Villanova's), `st-urban-i` (May 25 is
+really St. Gregory VII's) — all confirmed via the same title-mismatch method as the other passes.
+
+**Left open, deliberately not guessed at:** 10 more candidates (`st-basil-the-great`,
+`st-mary-magdalene`, `ss-cyril-and-methodius`, `st-elizabeth-of-portugal`, `st-cajetan`,
+`st-irenaeus`, `st-joseph-of-cupertino`, `st-pius-v`, `st-peter-celestine`,
+`ss-seven-founders-of-the-servite-order`) have a real `[Ant 1]`/`[Ant 2]`/`[Ant 3]` tag in their own
+Sancti file, but **no `[Ant Laudes]` block at all** — meaning `[Ant 1]`/`[Ant 2]`/`[Ant 3]` are not
+simply "the Lauds antiphons under another name" the way they are for the saints authored above
+(where a genuine `[Ant Laudes]` block existed to reuse). What these three tags actually represent
+for a saint with no Lauds block of their own is unconfirmed — guessing wrong here risks the same
+kind of misattribution the Cross/Rosary/Seven-Sorrows collisions caused earlier in this sweep, so
+these were deliberately left unauthored rather than assumed. Needs a live-query check (`command=
+prayTertia`/`praySextam`/`prayNonam`) against one or two of these specific saints before extending
+the reuse pattern to them.
+
+`npm test` (2077 passed) and `npm run build` both pass. PTSN chapters (as opposed to antiphons)
+below duplex-majus are still fully unaudited, as is everything for the 89 `propers: null` saints.
