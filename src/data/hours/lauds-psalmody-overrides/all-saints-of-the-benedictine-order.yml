@@ -1,0 +1,36 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Latin/
+# SanctiM/11-13M.txt's own [Ant Laudes] block (5 antiphons run together
+# one per line, same older un-numbered format as st-benedict.yml's own
+# file). No English rendering exists in the reference engine's data for
+# these at all (English/SanctiM/11-13M.txt has no [Ant Laudes] block
+# either) -- these are standard, widely-attested traditional-Breviary
+# texts (Fulgébunt justi = Matt 13:43; Beáti éritis = Luke 6:22-23; O quam
+# gloriósum est regnum is the well-known Common-of-Several-Confessors
+# Magnificat antiphon), translated here directly rather than left missing,
+# per the same "surface real source text" convention used everywhere
+# else. Per st-scholastica.yml's own note: this schema (hours/lauds.ts's
+# BilingualText) has no per-language status field, so this self-translated
+# English can't carry an explicit `draft` marker.
+id: all-saints-of-the-benedictine-order
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Fulgébunt justi * sicut sol in regno Patris eórum, dicit Dóminus."
+      en: "The just shall shine as the sun, * in the kingdom of their Father, saith the Lord."
+  - psalms: [99]
+    antiphon:
+      la: "Beáti éritis, * cum vos óderint hómines, et cum separáverint vos, et exprobráverint, et ejécerint nomen vestrum tamquam malum propter Fílium hóminis: gaudéte et exsultáte; ecce enim merces vestra multa est in cælis."
+      en: "Blessed shall ye be * when men shall hate you, and when they shall separate you from their company, and shall reproach you, and cast out your name as evil, for the Son of man's sake: rejoice ye and be exceeding glad, for behold, your reward is great in heaven."
+  - psalms: [62]
+    antiphon:
+      la: "Gaudent in cælis * ánimæ Sanctórum, qui Christi vestígia sunt secúti: et quia pro ejus amóre sánguinem suum fudérunt, ídeo cum Christo exsúltant sine fine."
+      en: "The souls of the Saints rejoice in heaven, * who have followed the footsteps of Christ; and because for love of Him they shed their blood, therefore they exult with Christ without end."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Sancti Dómini * Dóminum benedícite in ætérnum."
+    en: "Ye Saints of the Lord, * bless ye the Lord for ever."
+laudate:
+  antiphon:
+    la: "O quam gloriósum est regnum * in quo cum Christo gaudent omnes Sancti, amícti stolis albis sequúntur Agnum quocúmque íerit!"
+    en: "O how glorious is the kingdom * in which all the Saints rejoice with Christ; clothed in white robes, they follow the Lamb whithersoever He goeth!"

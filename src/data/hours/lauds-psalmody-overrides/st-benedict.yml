@@ -1,0 +1,39 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Latin/
+# SanctiM/03-21.txt's own [Ant Laudes] block (5 antiphons run together,
+# one per line, not individually numbered/tagged the way most other
+# Sancti/SanctiM files are -- St. Benedict's own file uses this older
+# format). No English rendering exists in the reference engine's data for
+# these at all (English/SanctiM/03-21.txt has no [Ant Laudes] block
+# either), same gap already found and worked around for his Prime/Terce/
+# Sext/None content (see prime-antiphon-st-benedict.yml etc.) and for St.
+# Scholastica's own Lauds override. Antiphons 1/2/3/5 are byte-identical
+# to his already-authored Prime/Terce/Sext/None antiphons (Prime reuses
+# Lauds Ant 1, Terce Ant 2, Sext Ant 3, None Ant 5 -- the historical
+# minor-hours-borrow-from-Lauds convention), so their already-translated
+# English is reused directly; antiphon 4 (the canticle's own) is new,
+# translated here. Per st-scholastica.yml's own note: this schema
+# (hours/lauds.ts's BilingualText) has no per-language status field, so
+# this self-translated English can't carry an explicit `draft` marker.
+id: st-benedict
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Fuit vir * vitæ venerábilis, grátia Benedíctus et nómine, qui ab ipso puerítiæ suæ témpore cor gerens seníle, ætátem móribus tránsiens, nulli ánimum voluptáti dedit."
+      en: "There was a man * of venerable life, Benedict by grace and by name, who from the time of his boyhood carried the heart of an old man, and surpassing his age by the gravity of his character, gave his soul to no pleasure."
+  - psalms: [99]
+    antiphon:
+      la: "Beátus vir Benedíctus * plus appétiit mala mundi pérpeti, quam laudes; pro Deo labóribus fatigári, quam vitæ hujus favóribus extólli."
+      en: "Blessed Benedict * desired rather to endure the evils of the world than its praises; to be wearied with labors for God rather than to be exalted by the favors of this life."
+  - psalms: [62]
+    antiphon:
+      la: "Gloriósus * Confessor Dómini Benedíctus vitam angélicam gerens in terris, spéculum bonórum óperum factus est mundo: et ídeo cum Christo jam sine fine gaudet in cælis."
+      en: "The glorious * Confessor of the Lord, Benedict, leading an angelic life on earth, became a mirror of good works to the world: and therefore now rejoices with Christ without end in heaven."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Erat * vir Dómini Benedíctus vultu plácido, móribus decorátus angélicis, tantáque circa eum cláritas excréverat, ut in terris pósitus in cæléstibus habitáret."
+    en: "The man of God, Benedict, * was of a peaceful countenance, adorned with angelic manners; and such brightness had grown up about him, that though placed on earth, he dwelt among heavenly things."
+laudate:
+  antiphon:
+    la: "Vir Dómini Benedíctus * ómnium justórum spíritu plenus fuit: ipse intercédat pro cunctis monásticæ professiónis."
+    en: "The man of God, Benedict, * was full of the spirit of all the just: may he intercede for all who are of the monastic profession."

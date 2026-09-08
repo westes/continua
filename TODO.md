@@ -6562,3 +6562,30 @@ falling to `common-of-a-martyr` text as "no proper of his own" — now that he h
 `npm test` (2077 passed) and `npm run build` (`tsc --noEmit` + vite build) both pass. Broader sweep
 (other hour kinds, saints below duplex-majus) tracked as ongoing Open Work above — this closes only
 the Matins-invitatory slot for the duplex-majus+ tier.
+
+### Lauds psalmody: 3 previously-blocked saints unblocked (2026-09-08)
+
+The original Lauds sweep (see "Lauds psalmody overrides" above) audited clean against the
+reference source's own `[Ant Laudes 1]`/`[Ant Laudes 2]`/`[Ant Laudes 3]` tags — but St. Benedict,
+St. Michael, and All Saints of the Benedictine Order use an older, un-numbered `[Ant Laudes]` block
+(5 antiphons run together, one per line) that the numbered-tag check missed entirely, a false
+negative rather than a real absence. All three now have real proper text in the reference source
+and (per the "Prime/Terce/Sext/None minor-hour overrides" entry above) already had their blocking
+collects authored since that entry was written, so they're no longer blocked.
+
+Authored `lauds-psalmody-overrides/{st-benedict,st-michael,all-saints-of-the-benedictine-order}.yml`.
+St. Benedict's antiphons 1/2/3/5 reuse his already-translated Prime/Terce/Sext/None English (the
+historical minor-hours-borrow-from-Lauds convention: Prime = Lauds Ant 1, Terce = Ant 2, Sext =
+Ant 3, None = Ant 5); antiphon 4 (canticle) is new. St. Michael's Sept 29 office is literally `ex
+Sancti/05-08` in the source (reuses Apparition of St. Michael's own content) — but the *rendered*
+text differs from the already-authored `apparition-of-st-michael.yml`, because that file was
+authored on a date that fell inside Paschaltide: live-queried 2026-09-29 (outside Paschaltide) to
+get the antiphons without the Paschaltide-only "allelúja" that isn't part of their fixed text
+(antiphons 2 and 5 keep "allelúja" unconditionally either way — baked into their own proper text,
+confirmed on both dates). All Saints of the Benedictine Order's 5 antiphons are standard,
+widely-attested traditional-Breviary texts (Fulgébunt justi = Matt 13:43, O quam gloriósum est
+regnum = the well-known Common-of-Several-Confessors Magnificat antiphon) with no English in the
+reference source at all — translated directly.
+
+Live-verified via `resolveOrdo('lauds', ...)` for 2026-03-21, 2026-09-29, 2026-11-13. `npm test`
+(2077 passed) and `npm run build` both pass.
