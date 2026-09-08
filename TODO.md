@@ -6761,3 +6761,28 @@ claim (an artifact of the earlier `categories/common-of-an-angel.yml` mistake, a
 that Guardian Angels' antiphons are St. Michael's own.
 
 `npm test` (2077 passed) and `npm run build` both pass.
+
+### Matins invitatory: below-duplex-majus first pass (2026-09-08)
+
+Extended the same reference-source-availability audit (not vu's own rank threshold, per
+`vu_source_all_available_proper_content` memory) below duplex-majus for the first time: 194
+saints with a non-null `propers` field, checked against `[Invit]` presence in the reference
+source. Found 13 candidates; 3 were false positives from a naive script matching the *first*
+`[Invit]` tag in a shared date file rather than the specific saint's own content — `st-marcus`
+(Oct 7) and `st-nicomedes` (Sept 15) share their date with a much higher-ranking winner (Our
+Lady of the Rosary, Seven Sorrows) and have no invitatory of their own at all (confirmed via
+their own `SanctiM/*b.txt` commemoration files, which just reference the main office wholesale);
+`st-prisca` (Jan 18) likewise has none of her own (`vide C6-1`, correctly Common-of-a-Virgin-
+Martyr already). 3 more (`st-anne`, `st-bridget-of-sweden`, `finding-of-st-stephen`) turned out to
+use the source's own Common-template-with-name-substitution mechanism (`@Commune/C7::s/N./Anne/`
+etc.), not distinct proper text — already correctly equivalent to vu's existing Common fallback
+tier (which has no name-substitution for invitatory either), not a gap.
+
+Authored the remaining 7 real gaps: `st-joseph`, `st-mary-magdalene`, `st-margaret-of-scotland`,
+`st-monica`, `st-elizabeth-of-portugal`, `st-frances-of-rome`,
+`ss-alexander-eventius-theodulus-and-juvenal`.
+
+`npm test` (2077 passed) and `npm run build` both pass. This is a first pass at Matins invitatory
+only, for the 194 saints with a non-null `propers` field — the 89 `propers: null` saints and every
+other hour-part (Lauds/Vespers antiphons, hymns, PTSN, collects) are still unaudited below
+duplex-majus.
