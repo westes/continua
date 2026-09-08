@@ -27,6 +27,7 @@ import {
   resolveOfficeBundle,
   resolveSuffrages,
   isPaschaltide,
+  overlayProperAntiphons,
 } from './resolve-common';
 import { isAllSouls, buildVespersParts } from './all-souls';
 import vespersDefinitionData from '../data/hours/vespers.yml';
@@ -115,9 +116,7 @@ function getPsalmodyOverrideFor(day: LiturgicalDay): VespersDay | undefined {
  * against `ferial`'s own groups (extra `proper` groups beyond `ferial`'s
  * count go unused — same confirmed convention as Lauds). */
 function mergeFerialNumbersWithProperAntiphons(ferial: VespersDay, proper: VespersDay): VespersDay {
-  return {
-    groups: ferial.groups.map((g, i) => ({ psalms: g.psalms, antiphon: proper.groups[i]?.antiphon ?? g.antiphon })),
-  };
+  return { groups: overlayProperAntiphons(ferial.groups, proper.groups) };
 }
 
 /** The 4 weekday-variable psalm groups — no fixed leading/trailing psalm

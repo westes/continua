@@ -27,6 +27,7 @@ import {
   resolveOfficeBundle,
   resolveSuffrages,
   isPaschaltide,
+  overlayProperAntiphons,
 } from './resolve-common';
 import { isAllSouls, buildLaudsParts } from './all-souls';
 import laudsDefinitionData from '../data/hours/lauds.yml';
@@ -114,7 +115,7 @@ function getPsalmodyOverrideFor(day: LiturgicalDay): LaudsPsalmodyOverride | und
  */
 function mergeFerialNumbersWithProperAntiphons(ferial: PsalmodyBlock, proper: LaudsPsalmodyOverride): PsalmodyBlock {
   return {
-    groups: ferial.groups.map((g, i) => ({ psalms: g.psalms, antiphon: proper.groups[i]?.antiphon ?? g.antiphon })),
+    groups: overlayProperAntiphons(ferial.groups, proper.groups),
     canticle: { ...ferial.canticle, antiphon: proper.canticle?.antiphon ?? ferial.canticle.antiphon },
     laudate: { antiphon: proper.laudate?.antiphon ?? ferial.laudate.antiphon },
   };

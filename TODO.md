@@ -11,10 +11,8 @@ content in the same shape, not a design change. The dated log below is that pipe
 ## Open work, in priority order
 
 1. **Mechanism gaps**
-   - Sparse/partial per-slot override for minor-hour psalmody: `mergeFerialNumbersWithProperAntiphons`'s
-     `groups` array has no way to express "only antiphon slot 3 is proper, the rest stay
-     ferial." Blocks authoring `st-thomas-becket`'s own Vespers antiphon (his own source is
-     `@Sancti/12-25:Ant Vespera 3`, a single-slot substitution) (2026-09-08).
+   - None open (2026-09-08). See dated log: "Shared resolution chain, `st-thomas-becket`'s
+     Vespers antiphon closed."
 
 2. **Minimal-proof-done, bulk content pending**
    - Reference-source-backed content sweep (2026-09-08): **done** for both the duplex-majus+
@@ -6856,6 +6854,14 @@ his relics). St. Gertrude had no English in the source at all; translated direct
 clean way to express as a sparse/partial override. A real, narrow mechanism gap, not a same-day
 content fix — noted here rather than forced through with an approximation.
 
+**Correction (2026-09-08):** this reading was wrong. `@Sancti/12-25:Ant Vespera 3` is a pointer to a
+complete, independently-named alternate 5-antiphon block in Christmas's own source file (its own
+`[Ant Vespera 3]` header, distinct text from that file's plain `[Ant Vespera]`), not "slot 3 of
+Becket's own list." Becket's whole Vespers antiphon set is just that block, wholesale — a normal
+full `groups` array, no sparse override needed. See the later dated entry, "Shared resolution chain,
+`st-thomas-becket`'s Vespers antiphon closed," for the real fix (authored directly) and the actual
+mechanism gap this investigation did surface.
+
 `npm test` (2077 passed) and `npm run build` both pass. This first pass covered only the 194
 saints with a non-null `propers` field; the 89 `propers: null` saints, and hymns/PTSN/collects
 below duplex-majus, are still unaudited.
@@ -6981,7 +6987,9 @@ resolve-and-check-status method as the duplex-majus+ closing sweep earlier in th
 This closes out the below-duplex-majus first pass. Remaining known open items, all deliberately
 left rather than guessed at: `st-mark`/`ss-philip-and-james`/`st-john-before-the-latin-gate`
 (Paschaltide antiphon substitution, no mechanism), `octave-of-all-saints` (4-vs-5-psalm-slot
-ambiguity), `st-thomas-becket` (single-antiphon-slot substitution, no data-shape support). Genuinely
+ambiguity). `st-thomas-becket` closed 2026-09-08 — see the later dated entry, "Shared resolution
+chain, `st-thomas-becket`'s Vespers antiphon closed": the "single-antiphon-slot" premise here was
+a misreading of the source, not a real data-shape gap. Genuinely
 open scope beyond this sweep's method: PTSN chapters' `[Capitulum Tertia]` absence pattern isn't
 independently verified (assumed to mean "always ferial" from consistency across candidates, not
 proven per-saint); and this whole campaign has so far only checked "is there a `[tag]` in the
@@ -7013,3 +7021,39 @@ situation already documented for `common-of-pope-martyrs`.
 Live-verified the non-Paschaltide fallback still works correctly (St. Luke, Oct 18, same Common
 category, plain non-Alleluia text renders as before). `npm test` (2077 passed) and `npm run build`
 both pass.
+
+### Shared resolution chain, `st-thomas-becket`'s Vespers antiphon closed (2026-09-08)
+
+Re-examined the "single-antiphon-slot" gap flagged for `st-thomas-becket` above. Wrong premise:
+`@Sancti/12-25:Ant Vespera 3` is a pointer to a complete, independently-named alternate 5-antiphon
+block in Christmas's own source file (its own `[Ant Vespera 3]` header — 5 groups, Ps
+109/110/111/129/131, distinct text from that file's plain `[Ant Vespera]`), not "slot 3 of Becket's
+own list." Authored `vespers-psalmody-overrides/saints/st-thomas-becket.yml` directly, a normal full
+`groups` array — no sparse/partial-override mechanism was ever needed.
+
+That investigation did surface a real, broader mechanism gap: `resolve-common.ts` had accumulated
+half a dozen near-duplicate hand-rolled "try proper, then Common, then ferial" chains
+(`resolveMinorHourAntiphon`, `resolveMinorHourChapter`, `getDayCollect`, `getBenedictusAntiphon`,
+`getMagnificatAntiphon`, plus `lauds.ts`'s and `vespers.ts`'s own byte-identical
+`mergeFerialNumbersWithProperAntiphons`) instead of one shared mechanism — exactly the class of bug
+this app keeps hitting (content silently missing because some bespoke function didn't check a tier
+the general pattern says it should).
+
+Consolidated into one shared mechanism in `resolve-common.ts`:
+
+- `firstAvailable`/`resolveByChain` — the general "try these candidates in order, first non-missing
+  wins, else the ferial default" chain, now used by all five text-lookup functions above. The real
+  precedence is 3 tiers, not the naive "propers, octave, commons, seasonal, ferial" 5-tier framing
+  first proposed: **octave is not its own tier** — `resolveOfficeWinner` already substitutes an
+  active octave's saint for `day.winner` upstream of every call site, so "propers" always already
+  means "whoever's actually being prayed today," octave included. **Seasonal isn't a standalone
+  tier either** — it's nested inside both Commons (try `${commonId}-paschaltide` before plain) and
+  Ferial (try the season's own id before the plain weekday one), not a separate slot between them.
+- `overlayProperAntiphons` — the per-slot (antiphon-text-only, below-duplex-majus) case of the same
+  chain, replacing both hour files' identical copies.
+
+All six call sites converted; `resolveOfficeBundle` (chapter/responsory/hymn/versicle) deliberately
+left as its existing whole-bundle-or-nothing shape, not converted to independent per-part chaining —
+whether a partial proper bundle should ever mix with a Common's remaining parts is a real liturgical
+judgment call, not a mechanical extraction, and wasn't decided this pass. `npm test` (2077 passed)
+and `npx tsc --noEmit` both pass, no behavior change beyond the new Becket content.

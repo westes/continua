@@ -45,6 +45,93 @@ export function resolveCommon(id: string): ResolvedText {
   return toResolvedText(getCommonProper(id));
 }
 
+function isMissing(t: ResolvedText): boolean {
+  return t.status.la === 'missing' && t.status.en === 'missing';
+}
+
+/**
+ * The one shared resolution mechanism behind every piece of content this
+ * app renders — an antiphon, a chapter, a responsory, a hymn, a versicle,
+ * a collect, a psalm-group's antiphon slot, all reduce to the same shape:
+ * an ordered list of candidates from most to least specific, the first
+ * one that isn't wholly missing wins, and there's always a real
+ * `fallback` (the plain ferial/weekday default) at the bottom so the
+ * chain never actually returns "missing" for content the ferial office
+ * always has. Concretely that order is:
+ *
+ * 1. **Propers** — today's office winner's own text. An active octave is
+ *    already folded in here, not a separate tier: `resolveOfficeWinner`
+ *    substitutes the octave's own saint for `day.winner` upstream of
+ *    every call site below, so "propers" always means "whoever is
+ *    actually being prayed today," octave included.
+ * 2. **Commons** — that winner's Common-category text, its own seasonal
+ *    variant (e.g. `-paschaltide`) tried before the plain form.
+ * 3. **Ferial** (the `fallback` argument) — today's plain weekday
+ *    default, itself seasonally varied first when the season has its own
+ *    text (Advent/Lent/Passiontide/Paschaltide chapters etc.) before
+ *    falling to the weekday's own.
+ *
+ * Callers assemble the ordered candidate list themselves (which ids are
+ * even eligible depends on rank/season — that eligibility logic stays at
+ * each call site), then hand it to this one function instead of hand-
+ * rolling their own "try this, then this" chain. Every part-type is
+ * eligible for every tier by default; a tier simply resolves "missing"
+ * and falls through when nothing's authored there yet or the tier
+ * structurally doesn't apply (e.g. a minor hour's psalm numbers never
+ * vary by Common or season) — same honest incremental-content
+ * convention as everywhere else, not a reason to special-case the part.
+ */
+function firstAvailable(candidates: (ResolvedText | undefined)[], fallback: ResolvedText): ResolvedText {
+  for (const candidate of candidates) {
+    if (candidate && !isMissing(candidate)) {
+      return candidate;
+    }
+  }
+  return fallback;
+}
+
+/** `firstAvailable`, for the common case where every candidate is a plain
+ * `resolveCommon(id)` lookup — pass `undefined` for any tier that isn't
+ * eligible today (e.g. no common id, or the season has no variant). */
+export function resolveByChain(ids: (string | undefined)[], fallback: ResolvedText): ResolvedText {
+  return firstAvailable(
+    ids.map((id) => (id ? resolveCommon(id) : undefined)),
+    fallback,
+  );
+}
+
+/**
+ * Below duplex-majus, a feast's own proper psalm *numbers* never
+ * substitute for the ferial cycle — only a strong-enough feast gets
+ * those (each hour's own getPsalmodyOverrideFor/getOfficeOverrideId gate
+ * covers that separately, and deliberately does NOT extend the Common-
+ * category tier down to this rank — see its own doc comment). But a
+ * saint's own authored antiphon *text* for these same psalm slots is
+ * real content at *any* rank (getPsalmodyProperOverrideId's "any rank"
+ * eligibility), so it's layered onto the ferial numbers here — the
+ * two-tier (proper, ferial) case of the same `firstAvailable` chain
+ * every other part uses, just run once per psalm-group slot instead of
+ * once for the whole part. Shared by hours/lauds.ts and hours/vespers.ts,
+ * which previously each kept a byte-identical copy of this as their own
+ * `mergeFerialNumbersWithProperAntiphons`.
+ *
+ * Pairing is by index against `ferialGroups`: ferial's numbers always
+ * win; each slot's antiphon comes from `properGroups`'s same-index entry
+ * when authored, else stays ferial's own. Any extra `properGroups`
+ * entries beyond `ferialGroups`'s count are simply unused — confirmed
+ * with the user 2026-08-29 rather than assumed, since there's no rubric
+ * covering this specific mismatch.
+ */
+export function overlayProperAntiphons<T extends { antiphon: Partial<Record<string, string>> }>(
+  ferialGroups: T[],
+  properGroups: { antiphon: Partial<Record<string, string>> }[] | undefined,
+): T[] {
+  return ferialGroups.map((g, i) => {
+    const proper = properGroups?.[i]?.antiphon ? verifiedText(properGroups[i]!.antiphon) : undefined;
+    return { ...g, antiphon: firstAvailable([proper], verifiedText(g.antiphon)).text };
+  });
+}
+
 /**
  * A named temporal winner's own `${winner.id}-<kind>` proper, falling back
  * to the coarse governing-Sunday/weekday id (`resolveTemporalId(day.date)`
@@ -505,33 +592,16 @@ export function resolveMinorHourAntiphon(
   weekdayDefault: Partial<Record<string, string>>,
 ): ResolvedText {
   const overrideId = getMinorHourOverrideId(day);
-  if (overrideId) {
-    const proper = resolveCommon(`${hourId}-antiphon-${overrideId}`);
-    if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
-      return proper;
-    }
-    const derived = deriveMinorHourAntiphonFromLauds(hourId, overrideId);
-    if (derived) {
-      return derived;
-    }
-    const commonId = getSaintRecord(overrideId)?.minorHoursCommon;
-    if (commonId) {
-      if (PASCHALTIDE_SEASONS.has(day.season)) {
-        const paschal = resolveCommon(`${hourId}-antiphon-${commonId}-paschaltide`);
-        if (paschal.status.la !== 'missing' || paschal.status.en !== 'missing') {
-          return paschal;
-        }
-      }
-      const common = resolveCommon(`${hourId}-antiphon-${commonId}`);
-      if (common.status.la !== 'missing' || common.status.en !== 'missing') {
-        return withPaschaltideAlleluia(common, day);
-      }
-    }
-  }
+  const proper = overrideId ? resolveCommon(`${hourId}-antiphon-${overrideId}`) : undefined;
+  const derived = overrideId ? deriveMinorHourAntiphonFromLauds(hourId, overrideId) : undefined;
+  const commonId = overrideId ? getSaintRecord(overrideId)?.minorHoursCommon : undefined;
+  const paschal =
+    commonId && PASCHALTIDE_SEASONS.has(day.season) ? resolveCommon(`${hourId}-antiphon-${commonId}-paschaltide`) : undefined;
+  const common = commonId ? withPaschaltideAlleluia(resolveCommon(`${hourId}-antiphon-${commonId}`), day) : undefined;
   // The plain weekday default (data/hours/{hour}-antiphons.yml) never
   // carries its own status field at all — always implicitly verified by
   // the file's own live-checked convention, not a guess.
-  return verifiedText(weekdayDefault);
+  return firstAvailable([proper, derived, paschal, common], verifiedText(weekdayDefault));
 }
 
 /** Same idea as resolveMinorHourAntiphon, for the chapter
@@ -542,26 +612,12 @@ export function resolveMinorHourAntiphon(
  * proper or shared-Common. */
 export function resolveMinorHourChapter(hourId: string, day: LiturgicalDay, fallbackId: string): ResolvedText {
   const overrideId = getMinorHourOverrideId(day);
-  if (overrideId) {
-    const proper = resolveCommon(`${hourId}-capitulum-${overrideId}`);
-    if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
-      return proper;
-    }
-    const commonId = getSaintRecord(overrideId)?.minorHoursCommon;
-    if (commonId) {
-      if (PASCHALTIDE_SEASONS.has(day.season)) {
-        const paschal = resolveCommon(`${hourId}-capitulum-${commonId}-paschaltide`);
-        if (paschal.status.la !== 'missing' || paschal.status.en !== 'missing') {
-          return paschal;
-        }
-      }
-      const common = resolveCommon(`${hourId}-capitulum-${commonId}`);
-      if (common.status.la !== 'missing' || common.status.en !== 'missing') {
-        return common;
-      }
-    }
-  }
-  return resolveCommon(fallbackId);
+  const proper = overrideId ? resolveCommon(`${hourId}-capitulum-${overrideId}`) : undefined;
+  const commonId = overrideId ? getSaintRecord(overrideId)?.minorHoursCommon : undefined;
+  const paschal =
+    commonId && PASCHALTIDE_SEASONS.has(day.season) ? resolveCommon(`${hourId}-capitulum-${commonId}-paschaltide`) : undefined;
+  const common = commonId ? resolveCommon(`${hourId}-capitulum-${commonId}`) : undefined;
+  return firstAvailable([proper, paschal, common], resolveCommon(fallbackId));
 }
 
 export interface OfficeBundle {
@@ -671,19 +727,10 @@ export function getDayCollect(day: LiturgicalDay): ResolvedText {
     return toResolvedText(getTemporalProperWithFallback(winner.id, 'collect', day));
   }
   const saint = getSaintRecord(winner.id);
-  if (saint?.propers) {
-    const proper = resolveCommon(`${saint.propers}-collect`);
-    if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
-      return proper;
-    }
-  }
-  if (saint?.collectCommon && saint.collectName) {
-    const template = resolveCommon(saint.collectCommon);
-    if (template.status.la !== 'missing' || template.status.en !== 'missing') {
-      return substituteName(template, saint.collectName);
-    }
-  }
-  return { text: {}, status: { la: 'missing', en: 'missing' } };
+  const proper = saint?.propers ? resolveCommon(`${saint.propers}-collect`) : undefined;
+  const common =
+    saint?.collectCommon && saint.collectName ? substituteName(resolveCommon(saint.collectCommon), saint.collectName) : undefined;
+  return firstAvailable([proper, common], { text: {}, status: { la: 'missing', en: 'missing' } });
 }
 
 /** A Vigil (`common: common-of-a-vigil`) doesn't reuse its own antiphon
@@ -1002,16 +1049,11 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
     return toResolvedText(getTemporalProperWithFallback(winner.id, 'benedictus-antiphon', day));
   }
   const saint = getSaintRecord(winner.id);
-  if (saint?.propers) {
-    const proper = resolveCommon(`${saint.propers}-antiphon`);
-    if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
-      return proper;
-    }
-  }
-  if (saint?.benedictusCommon) {
-    return withPaschaltideAlleluia(resolveCommon(`benedictus-antiphon-${saint.benedictusCommon}`), day);
-  }
-  return { text: {}, status: { la: 'missing', en: 'missing' } };
+  const proper = saint?.propers ? resolveCommon(`${saint.propers}-antiphon`) : undefined;
+  const common = saint?.benedictusCommon
+    ? withPaschaltideAlleluia(resolveCommon(`benedictus-antiphon-${saint.benedictusCommon}`), day)
+    : undefined;
+  return firstAvailable([proper, common], { text: {}, status: { la: 'missing', en: 'missing' } });
 }
 
 /**
@@ -1051,6 +1093,17 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
  * one) even where the shipped calendar's own precedence never surfaces
  * it here.
  */
+function magnificatWeekdayDefault(day: LiturgicalDay): ResolvedText | undefined {
+  const weekdayDefault = vespersMagnificatAntiphons[day.weekday];
+  if (!weekdayDefault) {
+    return undefined;
+  }
+  const resolved = weekdayDefault.status
+    ? { text: weekdayDefault.antiphon, status: weekdayDefault.status }
+    : verifiedText(weekdayDefault.antiphon);
+  return withPaschaltideAlleluia(resolved, day);
+}
+
 export function getMagnificatAntiphon(day: LiturgicalDay): ResolvedText {
   const oAntiphon = vespersOAntiphons[day.date.slice(5)];
   if (oAntiphon) {
@@ -1059,25 +1112,10 @@ export function getMagnificatAntiphon(day: LiturgicalDay): ResolvedText {
   const winner = resolveOfficeWinner(day);
   if (winner.kind === 'temporal') {
     const named = toResolvedText(getTemporalProperWithFallback(winner.id, 'magnificat-antiphon', day));
-    if (named.status.la !== 'missing' || named.status.en !== 'missing') {
-      return named;
-    }
-    const weekdayDefault = vespersMagnificatAntiphons[day.weekday];
-    if (weekdayDefault) {
-      const resolved = weekdayDefault.status
-        ? { text: weekdayDefault.antiphon, status: weekdayDefault.status }
-        : verifiedText(weekdayDefault.antiphon);
-      return withPaschaltideAlleluia(resolved, day);
-    }
-    return named;
+    return firstAvailable([named, magnificatWeekdayDefault(day)], named);
   }
   const saint = getSaintRecord(winner.id);
-  if (saint?.propers) {
-    const proper = resolveCommon(`${saint.propers}-magnificat-antiphon`);
-    if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
-      return proper;
-    }
-  }
+  const proper = saint?.propers ? resolveCommon(`${saint.propers}-magnificat-antiphon`) : undefined;
   // A Vigil has no proper Magnificat antiphon of its own in the real rubric
   // -- its `[Rule]` block ("ex C1v; ... Laudes 2") always borrows whatever
   // the current ferial weekday's own antiphon is, live-verified across 4
@@ -1087,19 +1125,11 @@ export function getMagnificatAntiphon(day: LiturgicalDay): ResolvedText {
   // the plain temporal branch above uses, rather than falling through to
   // `magnificat-antiphon-common-of-a-vigil` (deliberately never authored --
   // there's no single fixed text to put there).
-  if (saint?.rank === 'vigil') {
-    const weekdayDefault = vespersMagnificatAntiphons[day.weekday];
-    if (weekdayDefault) {
-      const resolved = weekdayDefault.status
-        ? { text: weekdayDefault.antiphon, status: weekdayDefault.status }
-        : verifiedText(weekdayDefault.antiphon);
-      return withPaschaltideAlleluia(resolved, day);
-    }
-  }
-  if (saint?.benedictusCommon) {
-    return withPaschaltideAlleluia(resolveCommon(`magnificat-antiphon-${saint.benedictusCommon}`), day);
-  }
-  return { text: {}, status: { la: 'missing', en: 'missing' } };
+  const vigil = saint?.rank === 'vigil' ? magnificatWeekdayDefault(day) : undefined;
+  const common = saint?.benedictusCommon
+    ? withPaschaltideAlleluia(resolveCommon(`magnificat-antiphon-${saint.benedictusCommon}`), day)
+    : undefined;
+  return firstAvailable([proper, vigil, common], { text: {}, status: { la: 'missing', en: 'missing' } });
 }
 
 export function verifiedText(text: Partial<Record<string, string>>): ResolvedText {
