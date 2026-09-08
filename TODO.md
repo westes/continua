@@ -23,9 +23,6 @@ content in the same shape, not a design change. The dated log below is that pipe
      log) confirm zero silently-missing parts remain in either tier. See
      `vu_source_all_available_proper_content` memory for the corrected design principle that
      drove this (gate by reference-source availability, not vu's own rank threshold).
-   - Still open within that same campaign:
-     - The 89 `propers: null` saints were spot-checked (all still accurate) but not
-       exhaustively re-verified the way the 194-saint set was.
    - Accuracy audit of already-authored content (2026-09-08, not started): everything above
      only checked "does the reference source have a tag vu is missing" — it never re-checked
      content already marked `verified` against the source for transcription errors, wrong
@@ -7146,3 +7143,46 @@ evening, governed by the Octave) and Second Vespers (Nov 8) now render 109/111/1
 had been carried forward and cited as settled fact (including by this session, initially) without
 anyone re-checking the actual live render against the claim. Worth keeping in mind for the still-
 open accuracy-audit item below.
+
+### 89 `propers: null` saints: reference-source-availability sweep, exhaustive (2026-09-08)
+
+Extended the same audit the 194-saint (non-null `propers`) tier already got — Matins invitatory,
+Lauds antiphons, Vespers antiphons, Lauds/Vespers hymn+chapter bundles, and Prime/Terce/Sext/None
+antiphons+chapters — to the 89 `propers: null` saints, closing the item this campaign had
+deliberately left open. Resolved each saint's real reference file(s) two ways (its own vu file's
+header citation, and independently via its `sanctoral-calendar.yml` date against `Sancti`/`SanctiM`
+on disk) to cross-check rather than trust one path; 3 ids (`example-confessor`, `st-turibius-of-
+mogrovejo`, `st-peter-chanel`) have no resolvable file at all (the first deliberately fictional, the
+other two off-calendar modern additions with no date mapping — out of scope here, matching
+[[vu-future-user-editable-calendar]]).
+
+Ran a tag-presence scan per part-type across all 89, then hand-verified every candidate against its
+file's own `[Officium]` header before trusting it — the exact same-date-collision trap the original
+August pass and the 194-saint sweep both already documented recurred constantly here too: `st-gall`'s
+`[Invit]` hit was St. Hedwig's (Oct 16 dominated by a later-era occupant), `st-menna`'s was St.
+Martin of Tours's (Nov 11), `st-justina`'s was Rosary Sunday's (Oct 7, recurred across 4 separate
+part-type checks on the same file), `st-pius-i`'s and `st-odo`'s/`st-pontian`'s were St. Benedict's
+Translation's and St. Elizabeth of Hungary's respectively (both dates hold a Monastic-specific
+higher-precedence occupant in a differently-suffixed file), `st-telesphorus`'s was a bare
+`@Sancti/12-25` Christmastide cross-reference, `ss-placid-and-companions`'s was a wrong, similarly-
+named but distinct feast (`SanctiM/10-05r.txt`, "Ss. Mauri et Placidi... Confessores" — a different
+pair of saints on a different track, not "Ss. Placid and Companions, Martyrs"), `st-felix-i`'s
+`05-30b.txt` hit was an unrelated feast's content ("Beátæ Joánnæ") bleeding in from a differently-
+suffixed file even though his own real file (`05-30.txt`) exists and correctly has none of these
+tags, `st-hyginus`'s and `st-pudentiana`'s were both wrong-file hits (a cross-date reference and a
+different pope's file respectively) while their own correctly-titled files had nothing, and
+`st-alexius`'s only hit was gated behind `(rubrica 1951)`, inapplicable to this app's Monastic 1617
+target. Every single candidate across all part-types resolved to one of these already-known false-
+positive shapes — real confirmation the original August pass was thorough, not an assumption.
+
+**One genuine, previously-missed gap found**: `st-silvester-i` (Dec 31, within Christmas's Octave)
+has the exact same `@Sancti/12-25:Ant Vespera 3` cross-reference shape as `st-thomas-becket`'s own
+Vespers antiphon (see "Shared resolution chain, `st-thomas-becket`'s Vespers antiphon closed"
+above) — a complete, independently-named alternate 5-antiphon block in Christmas's own source file,
+not a slot reference. Authored `vespers-psalmody-overrides/saints/st-silvester-i.yml`, byte-identical
+content to Becket's own file (both point at the same source block; both `rank: duplex`, so the same
+"5th group goes unused below duplex-majus" convention applies). Live-verified via `resolveOrdo`
+(2025-12-31): now renders the real antiphons over the day's own ferial psalm numbers, same shape as
+Becket's.
+
+`npm test` (2077 passed) and `npm run build` both pass.

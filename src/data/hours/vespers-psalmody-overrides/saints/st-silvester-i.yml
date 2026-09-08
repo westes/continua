@@ -1,0 +1,34 @@
+# Sourced from web/www/horas/Latin/Sancti/12-31.txt's own [Ant Vespera],
+# which points wholesale to the same named block as st-thomas-becket.yml
+# (same mechanism, see that file's own header): `@Sancti/12-25:Ant
+# Vespera 3` -- a complete, independently-named alternate 5-antiphon
+# Vespers set on 12-25.txt itself (its own [Ant Vespera 3] header,
+# distinct text from that file's plain [Ant Vespera]). English from
+# horas/English/Sancti/12-25.txt's own [Ant Vespera 3]. Below duplex-
+# majus (rank: duplex, not duplex-majus, same as Becket), so hours/
+# vespers.ts's mergeFerialNumbersWithProperAntiphons only takes this
+# file's antiphon text, not its psalm numbers -- ferial Vespers only ever
+# has 4 groups, so the 5th (Ps 131) antiphon here goes unused, same
+# convention as Becket's own file.
+id: st-silvester-i
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Tecum princípium * in die virtútis tuæ, in splendóribus sanctórum, ex útero ante lucíferum génui te."
+      en: "Thine shall be the dominion * in the day of thy power, amid the brightness of the saints, from the womb, before the day-star, have I begotten thee."
+  - psalms: [110]
+    antiphon:
+      la: "Redemptiónem * misit Dóminus pópulo suo: mandávit in ætérnum testaméntum suum."
+      en: "The Lord sent redemption * unto His people, He hath commanded His covenant for ever."
+  - psalms: [111]
+    antiphon:
+      la: "Exórtum est * in ténebris lumen rectis corde: miséricors, et miserátor, et justus Dóminus."
+      en: "Unto the upright there ariseth * light in the darkness; the Lord is gracious, and full of compassion, and righteous."
+  - psalms: [129]
+    antiphon:
+      la: "Apud Dóminum * misericórdia, et copiósa apud eum redémptio."
+      en: "With the Lord * there is mercy, and with Him is plenteous redemption."
+  - psalms: [131]
+    antiphon:
+      la: "De fructu * ventris tui ponam super sedem tuam."
+      en: "Of the fruit * of thy body will I set upon thy throne."
