@@ -1,0 +1,22 @@
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-01-25, own day -- outside Paschaltide, no
+# seasonal-alleluia contamination risk). His own proper antiphons, not
+# `common-of-an-apostle`'s generic ones; psalms 109/112/115/138.
+id: conversion-of-st-paul
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Ego plantávi, * Apóllo rigávit, Deus autem increméntum dedit. Allelúja."
+      en: "I have planted, * Apollos watered, but God gave the increase. Alleluia."
+  - psalms: [112]
+    antiphon:
+      la: "Libénter gloriábor * in infirmitátibus meis, ut inhábitet in me virtus Christi."
+      en: "Most gladly therefore will I rather glory * in my infirmities, that the power of Christ may rest upon me."
+  - psalms: [115]
+    antiphon:
+      la: "Grátia Dei * in me vácua non fuit, sed grátia ejus semper in me manet."
+      en: "The grace of God which was bestowed upon me was not in vain, * but His grace abideth ever in me."
+  - psalms: [138]
+    antiphon:
+      la: "Ter virgis cæsus sum, * semel lapidátus sum, ter naufrágium pértuli pro Christi nómine."
+      en: "Thrice was I beaten with rods, * once was I stoned, thrice I suffered shipwreck, for Christ's name's sake."

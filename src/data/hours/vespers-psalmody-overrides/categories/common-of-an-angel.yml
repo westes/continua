@@ -3,15 +3,19 @@
 # Monastic reference engine (checked the full CommuneM directory listing)
 # -- St. Michael's own SanctiM rule instead says plain "Psalmi Dominica",
 # i.e. Sunday's own Vespers psalm numbers (109-112, not a Common-specific
-# set), carrying his own proper antiphons directly. Live-verified
-# (2026-08-28) that Guardian Angels (Oct 2, no proper text of her own)
-# reuses Michael's own antiphons byte-for-byte -- i.e. Michael's proper
-# *is* the de facto generic Angel scheme any other Angel-Common saint
-# without proper text of their own falls back to. St. Gabriel and St.
-# Raphael each have their own genuinely distinct proper antiphons (not
-# this generic scheme, and not each other's) -- not modeled here since a
-# per-feast Vespers override would be the correct home for those, not
-# this category.
+# set), carrying his own proper antiphons directly.
+#
+# Correction (2026-09-08): an earlier note here claimed Guardian Angels
+# "reuses Michael's own antiphons byte-for-byte" -- checking the raw
+# source file directly (Sancti/10-02.txt's own [Ant Vespera]) showed that
+# was wrong; she has her own genuinely distinct proper antiphons, same as
+# St. Gabriel and St. Raphael, all three now modeled as their own
+# `saints/*.yml` overrides rather than falling back to this category at
+# all. This Michael-sourced scheme remains the actual fallback for any
+# *other* Angel-Common saint without proper text of their own, but that
+# set is now empirically unverified beyond Michael himself -- treat the
+# "de facto generic Angel scheme" framing as a hypothesis, not a
+# confirmed fact, until another such saint is actually checked.
 id: common-of-an-angel
 groups:
   - psalms: [109]

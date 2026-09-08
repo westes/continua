@@ -6673,3 +6673,48 @@ antiphons) is unaffected; only the header's explanation of the prior state was w
 
 `npm test` (2077 passed) and `npm run build` both pass. The 24 duplex-majus saints haven't been
 checked yet — tracked as ongoing Open Work above, same method.
+
+### Vespers proper antiphons: duplex-majus pass (2026-09-08)
+
+Checked all 24 duplex-majus saints, title-verifying every live query against the expected saint.
+Authored 13: `chair-of-st-peter-at-rome`, `chair-of-st-peter-at-antioch` (both share `common-of-a-
+confessor-bishop`'s Vespers scheme, same real finding as their existing Prime/Terce/Sext/None
+content — considered *as bishop* of that see even though their own `common:` field says apostle),
+`conversion-of-st-paul`, `st-scholastica` (no English in the source; reused her own already-
+translated Lauds/Prime antiphon English directly, same shared-antiphon-pool pattern), `st-peter-ad-
+vincula`, `exaltation-of-the-holy-cross`, `st-martin-of-tours`, `apparition-of-the-immaculate-bvm`,
+`st-gabriel-archangel`, `guardian-angels`, `st-raphael-archangel` — the last four all sourced from
+the static secular file directly, since none of them exist in the Monastic 1617 calendar at all
+(each a 19th/20th-century feast; live "Hodie" queries for their dates render whatever the reference
+engine's own stock calendar actually has there instead — Annunciation Vigil, Marian Saturday, a
+plain Sunday).
+
+Corrected `finding-of-the-holy-cross.yml` (from the duplex-2-classis pass above): cross-checking
+against `exaltation-of-the-holy-cross` (same Cross antiphons, but Sept 14 — never in Paschaltide,
+unlike May 3) showed 3 of its 4 antiphons had picked up a seasonal Paschaltide-only "allelúja" that
+isn't part of their fixed text. Also corrected `categories/common-of-an-angel.yml`'s own header,
+which claimed Guardian Angels "reuses Michael's own antiphons byte-for-byte" — the raw source file
+shows she has her own genuinely distinct proper antiphons; that claim was simply wrong, not a
+modeling choice, now fixed alongside authoring her own file.
+
+Confirmed **not** gaps: `octave-of-ss-peter-and-paul`, `presentation-of-the-bvm` (both already
+byte-identical to their Common), `st-patrick`, `st-barnabas`, `our-lady-of-mount-carmel`,
+`st-ignatius-of-loyola`, `our-lady-of-the-snows`, `holy-name-of-mary`, `our-lady-of-ransom`,
+`st-francis-xavier` (each confirmed via the static file's own `[Rank]`/`[Rule]` `ex/vide Cxx`
+reference — no proper antiphon exists for any of them in the source at all).
+
+**Left open, needs its own follow-up:**
+- `st-john-before-the-latin-gate` (May 6): same Paschaltide-contamination issue as `st-mark`/
+  `ss-philip-and-james` above — not authored yet.
+- `octave-of-all-saints` (Nov 8): source says `vide Sancti/11-01` (reuse All Saints' own content
+  wholesale), but the already-authored `all-saints.yml` uses a live-verified 5-psalm scheme specific
+  to All Saints' own duplex-1-classis rank, while the octave day is only duplex-majus — unclear
+  whether the octave gets the same 5 slots or the usual 4, and Nov 8 can't be live-verified directly
+  (its own `Hodie` query renders the Dedication of the Basilica of the Most Holy Saviour instead).
+  Left unauthored rather than guessing.
+
+`npm test` (2077 passed) and `npm run build` both pass. **All 59 duplex-majus+ saints are now
+checked for Vespers proper antiphons** (Matins invitatory and Lauds were already fully closed
+earlier in this sweep) — the two Paschaltide cases and the octave-of-all-saints slot-count question
+are the only three remaining open items at this tier. Below-duplex-majus and the other hour kinds
+(hymns, collects, chapter/responsory bodies) are still fully unaudited by this method.

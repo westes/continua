@@ -1,0 +1,26 @@
+# Sourced from web/www/horas/Latin/Sancti/03-24.txt's own [Ant Vespera]
+# block ("ex Sancti/05-08", "Psalmi Dominica" -- Sunday psalm numbers,
+# same shape as st-michael.yml's own Sept 29 finding). This 1921 feast
+# doesn't exist in the Monastic 1617 calendar at all (a live "Hodie"
+# query for 2026-03-24 renders the Annunciation Vigil instead). The raw
+# file's own "(Allelúja.)" on every antiphon is parenthetical/seasonal,
+# not fixed text -- dropped here for the plain non-Paschaltide baseline,
+# same convention already applied to finding-of-the-holy-cross.yml.
+id: st-gabriel-archangel
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Ingrésso Zacharía * templum Dómini, appáruit ei Gábriel Angelus, stans a dextris altáris incénsi."
+      en: "When Zacharias went into the temple of the Lord, * there appeared unto him the Angel Gabriel, standing on the right side of the Altar of incense."
+  - psalms: [112]
+    antiphon:
+      la: "Ait autem Angelus: * Ne tímeas, Zacharía, quóniam exaudíta est deprecátio tua."
+      en: "But the Angel said unto him: Fear not, * Zacharias: for thy prayer is heard."
+  - psalms: [121]
+    antiphon:
+      la: "Ego sum Gábriel * Angelus, qui asto ante Deum, et missus sum loqui ad te."
+      en: "I am the Angel Gabriel, * that stand in the presence of God, and am sent to speak unto thee."
+  - psalms: [126]
+    antiphon:
+      la: "Gábriel Angelus * locútus est Maríæ, dicens: Ecce concípies in útero, et páries fílium, et vocábis nomen ejus Jesum."
+      en: "The Angel Gabriel spake unto Mary * and said: Behold, thou shalt conceive in thy womb, and bring forth a Son, and shalt call His Name Jesus."
