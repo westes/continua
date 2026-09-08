@@ -88,7 +88,7 @@ function getPsalmodyOverrideFor(day: LiturgicalDay): LaudsPsalmodyOverride | und
     return proper;
   }
   const categoryId = getOfficeOverrideId(day);
-  return categoryId ? getLaudsCommonOverride(categoryId) : undefined;
+  return categoryId ? getLaudsCommonOverride(categoryId, isPaschaltide(day.season)) : undefined;
 }
 
 /**

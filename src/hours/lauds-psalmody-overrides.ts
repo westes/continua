@@ -81,8 +81,20 @@ export function getLaudsSaintOverride(id: string | undefined): LaudsPsalmodyOver
   return overrides.get(id);
 }
 
-/** Common-category lookup only, joining via `SaintRecord.common`. */
-export function getLaudsCommonOverride(id: string | undefined): LaudsPsalmodyOverride | undefined {
+/** Common-category lookup only, joining via `SaintRecord.common`. When
+ * `paschaltide` is true, tries `${common}-paschaltide` first — same
+ * "dedicated wholesale-different Paschaltide text" tier already used for
+ * the minor hours' own Common antiphons (see resolve-common.ts's
+ * PASCHALTIDE_SEASONS doc comment) — falling back to the plain category
+ * when no such variant has been authored, same honest incremental
+ * pattern as everywhere else. */
+export function getLaudsCommonOverride(id: string | undefined, paschaltide = false): LaudsPsalmodyOverride | undefined {
   if (!id) return undefined;
-  return categories.get(getSaintRecord(id)?.common ?? '');
+  const common = getSaintRecord(id)?.common;
+  if (!common) return undefined;
+  if (paschaltide) {
+    const variant = categories.get(`${common}-paschaltide`);
+    if (variant) return variant;
+  }
+  return categories.get(common);
 }

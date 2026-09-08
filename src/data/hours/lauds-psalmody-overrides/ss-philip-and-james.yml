@@ -1,5 +1,10 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
-# live query, 2026-05-01, clean year.
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayLaudes), 2026-05-01, own day. Their fixed date falls inside
+# Paschaltide in most years (Easter's range is Mar 22-Apr 25, so May 1 is
+# essentially always within it) -- this rendered text already carries the
+# season's own Alleluia throughout, same "permanently Paschaltide, no
+# real non-Paschaltide baseline exists to render instead" situation as
+# common-of-pope-martyrs.yml's own documented case.
 id: ss-philip-and-james
 groups:
   - psalms: [92]
@@ -13,7 +18,7 @@ groups:
   - psalms: [62]
     antiphon:
       la: "Tanto témpore * vobíscum sum, et non cognovístis me? Philíppe, qui videt me, videt et Patrem meum, allelúja."
-      en: "Have I been so long time with you, and yet hast thou not known Me * Philip, he that hath seen Me hath seen the Father. Alleluia."
+      en: "Have I been so long time with you, and yet hast thou not known Me? * Philip, he that hath seen Me hath seen the Father. Alleluia."
 canticle:
   id: canticum-trium-puerorum
   antiphon:

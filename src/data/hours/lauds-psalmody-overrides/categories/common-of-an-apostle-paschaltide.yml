@@ -1,0 +1,33 @@
+# Common-of-an-Apostle(s)'s own Paschaltide-variant Lauds psalmody --
+# wholesale different text (doubled/tripled allelúja, not just a single
+# mechanical suffix), live-verified against Divinum Officium (Monastic
+# Tridentinum 1617, command=prayLaudes) via St. Mark's own day
+# (2026-04-25, which falls inside Paschaltide), since he has no proper
+# Lauds antiphons of his own and so renders this Common's text directly.
+# Registers the same aliases as common-of-an-apostle.yml itself
+# (common-of-apostles, common-of-an-evangelist) -- one scheme, not three.
+# Same psalm numbers as the non-Paschaltide default (92/99/62, Canticum
+# Trium Puerorum).
+id: common-of-an-apostle-paschaltide
+aliases: [common-of-apostles-paschaltide, common-of-an-evangelist-paschaltide]
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Sancti tui, * Dómine, florébunt sicut lílium, allelúja: et sicut odor bálsami erunt ante te, allelúja."
+      en: "Your saints, O Lord, * flourish like lilies, alleluia: and like the smell of balsam are before you, alleluia."
+  - psalms: [99]
+    antiphon:
+      la: "In cæléstibus regnis * Sanctórum habitátio est, allelúja: et in ætérnum réquies eórum, allelúja."
+      en: "In the heavenly kingdom is the habitation of the saints, * alleluia: and they rest in eternity, alleluia."
+  - psalms: [62]
+    antiphon:
+      la: "In velaménto * clamábant Sancti tui, Dómine, allelúja, allelúja, allelúja."
+      en: "Protected by a veil * your saints cried unto thee, O Lord, alleluia, alleluia, alleluia."
+canticle:
+  antiphon:
+    la: "Spíritus et ánimæ * justórum hymnum dícite Deo nostro, allelúja, allelúja."
+    en: "Spirits and souls * of the just, sing a hymn to our God, alleluia, alleluia."
+laudate:
+  antiphon:
+    la: "Fulgébunt justi * sicut sol in conspéctu Dei, allelúja."
+    en: "The just shall shine * like the sun in the sight of God, alleluia."

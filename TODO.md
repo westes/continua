@@ -11,11 +11,6 @@ content in the same shape, not a design change. The dated log below is that pipe
 ## Open work, in priority order
 
 1. **Mechanism gaps**
-   - Paschaltide antiphon substitution for a saint's own proper Vespers antiphons: no
-     mechanism exists to swap in the reference engine's seasonal Alleluia-laden antiphon
-     set for a fixed-date feast that falls inside Paschaltide (most years, for `st-mark`,
-     `ss-philip-and-james`, `st-john-before-the-latin-gate`). Blocks authoring their Vespers
-     antiphon overrides — currently left unauthored rather than guessed at (2026-09-08).
    - Sparse/partial per-slot override for minor-hour psalmody: `mergeFerialNumbersWithProperAntiphons`'s
      `groups` array has no way to express "only antiphon slot 3 is proper, the rest stay
      ferial." Blocks authoring `st-thomas-becket`'s own Vespers antiphon (his own source is
@@ -6992,3 +6987,29 @@ independently verified (assumed to mean "always ferial" from consistency across 
 proven per-saint); and this whole campaign has so far only checked "is there a `[tag]` in the
 source that vu is missing" — it hasn't verified that already-authored content is *itself* accurate
 (a different, much larger kind of audit).
+
+### Paschaltide antiphon substitution mechanism, closed (2026-09-08)
+
+Built the mechanism flagged as an open gap above: `hours/{lauds,vespers}-psalmody-overrides.ts`'s
+`getLaudsCommonOverride`/`getVespersCommonOverride` now take an optional `paschaltide` flag and try
+`${common}-paschaltide` before the plain category — same "dedicated wholesale-different Paschaltide
+text" tier already established for the minor hours' own Common antiphons (`resolve-common.ts`'s
+`PASCHALTIDE_SEASONS` doc comment), just extended to the Lauds/Vespers *proper-psalmody* Common
+category, which had no such tier at all before. `hours/{lauds,vespers}.ts`'s own
+`getPsalmodyOverrideFor` now passes `isPaschaltide(day.season)` through.
+
+Authored `common-of-an-apostle-paschaltide.yml` for both Lauds and Vespers categories (aliased the
+same way as the plain category: `common-of-apostles`, `common-of-an-evangelist`), live-verified
+against St. Mark's own day (Apr 25, always inside Paschaltide) since he has no proper antiphons of
+his own and renders this Common text directly. This closed 2 of the 3 flagged saints without any
+per-saint file at all: `st-mark` and `st-john-before-the-latin-gate` both turned out to have no
+proper Vespers antiphons of their own (live-verified) — their gap was purely the missing category
+variant. The third, `ss-philip-and-james`, does have genuine proper Lauds/Vespers antiphons of
+their own (naming Philip directly) — authored those as ordinary per-saint overrides, unrelated to
+the season mechanism; their fixed date (May 1) falls inside Paschaltide essentially every year, so
+the stored text is permanently Alleluia-laden, same "no real non-Paschaltide baseline exists"
+situation already documented for `common-of-pope-martyrs`.
+
+Live-verified the non-Paschaltide fallback still works correctly (St. Luke, Oct 18, same Common
+category, plain non-Alleluia text renders as before). `npm test` (2077 passed) and `npm run build`
+both pass.

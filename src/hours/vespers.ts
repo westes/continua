@@ -105,7 +105,7 @@ function getPsalmodyOverrideFor(day: LiturgicalDay): VespersDay | undefined {
     return proper;
   }
   const categoryId = getOfficeOverrideId(day);
-  return categoryId ? getVespersCommonOverride(categoryId) : undefined;
+  return categoryId ? getVespersCommonOverride(categoryId, isPaschaltide(day.season)) : undefined;
 }
 
 /** Below duplex-majus, mirrors hours/lauds.ts's identical
