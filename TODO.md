@@ -6913,3 +6913,32 @@ here.
 
 `npm test` (2077 passed) and `npm run build` both pass. PTSN chapters (as opposed to antiphons)
 below duplex-majus are still fully unaudited, as is everything for the 89 `propers: null` saints.
+
+### 89 `propers: null` saints: spot-checked, still accurate (2026-09-08)
+
+Checked all 89 against `[Invit]`/`[Ant Laudes` presence at their own date. 9 looked suspicious;
+8 were the same same-date-collision false-positive pattern as everywhere else in this sweep
+(`st-hadrian`/`st-menna`/`st-justina`/`st-petronilla`/`st-telesphorus` share their date with a
+much higher-ranking winner; `st-odo` and `st-pontian` both collide with St. Elizabeth of Hungary on
+Nov 19). The one real hit, `ss-perpetua-and-felicity`, turned out to be the Common-template-with-
+name-substitution case (`@Commune/C7b::s/N. et N./Perpétuæ et Felicitátis/`) already established
+as correctly-not-a-gap earlier in this sweep. **All 89 `propers: null` markings confirmed still
+accurate** — no corrections needed.
+
+### PTSN chapters: below-duplex-majus first pass (2026-09-08)
+
+Same 194-saint set, checked `[Capitulum Sexta]`/`[Capitulum Nona]` presence (no `[Capitulum
+Tertia]` tag exists anywhere in the source for any of these saints — Terce's own chapter appears
+to always stay the plain ferial/Common default at this rank, mirroring Prime's own established
+"stays fixed" behavior; not independently verified per-saint, but consistent across all candidates
+checked). Ruled out the same 4 false positives as the antiphon pass (`ss-alexander-eventius-
+theodulus-and-juvenal`, `st-nicomedes`, `st-marcus`, `ss-machabees`). `st-agatha`'s Sexta/Nona
+chapters are `@Commune/C7`/self-referencing that Common — genuinely no gap, correctly falls to
+Common already.
+
+Authored Sext/None chapters for the remaining 4: `st-joseph`, `st-agnes`, `commemoration-of-st-
+paul` (all real, distinct proper readings), and `finding-of-st-stephen` (reuses St. Stephen
+Protomartyr's own Dec 26 chapter/lesson wholesale, same as its other hours).
+
+`npm test` (2077 passed) and `npm run build` both pass. Matins readings/responsories below
+duplex-majus are the one major hour-part category left completely unaudited by this method.
