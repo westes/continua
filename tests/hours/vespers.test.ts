@@ -426,17 +426,17 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Iste Conféssor Dómini sacrátus');
   });
 
-  it("uses common-of-a-confessor's real office bundle for St. Joseph's First Vespers, not the ferial default", () => {
-    // St. Joseph (Mar 19, Duplex, `common: common-of-a-confessor` --
-    // vu's own data label for what's really the Common-of-a-Confessor-
-    // Not-Bishop category, confirmed live 2026-08-26) claims First
-    // Vespers over Mar 18's own evening. See lauds-capitulum-common-of-
-    // a-confessor.yml's header for the fuller finding.
+  it("uses St. Joseph's own real proper office bundle on his First Vespers, not common-of-a-confessor's generic one", () => {
+    // St. Joseph (Mar 19, Duplex) claims First Vespers over Mar 18's own
+    // evening. He now has his own real chapter/hymn (authored 2026-09-08,
+    // sourced from Sancti/03-19.txt directly, Vespers falling back to the
+    // same Lauds capitulum via vespersCapitulumForOverride) -- his own
+    // proper content wins over common-of-a-confessor's generic bundle.
     const ordo = resolveOrdo('vespers', '2026-03-18');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
-    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 31:8-9');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Prov 28:20; 27:18');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
-    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Iste Conféssor Dómini sacrátus');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Te, Joseph, célebrent ágmina cǽlitum');
   });
 
   it("uses common-of-an-abbot's real office bundle for St. Maurus's First Vespers, not the ferial default", () => {

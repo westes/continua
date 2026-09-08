@@ -6839,3 +6839,37 @@ content fix — noted here rather than forced through with an approximation.
 `npm test` (2077 passed) and `npm run build` both pass. This first pass covered only the 194
 saints with a non-null `propers` field; the 89 `propers: null` saints, and hymns/PTSN/collects
 below duplex-majus, are still unaudited.
+
+### Lauds/Vespers hymns: below-duplex-majus first pass (2026-09-08)
+
+Same 194-saint set, checked against `[Hymnus Laudes]`/`[Hymnus Vespera]` presence. This tier
+surfaced a much cheaper way to rule out false positives than the duplex-majus+ sweep needed: since
+`resolveOfficeBundle` is gated on the *chapter*, and most below-duplex-majus saints have no
+`[Capitulum Laudes]` of their own at all (correctly falling to their Common's full bundle already,
+same behavior as e.g. `exaltation-of-the-holy-cross` from the duplex-majus+ pass), checking for a
+real `[Capitulum Laudes]` first before doing any translation work ruled out most of the 18
+candidates immediately as **not gaps**: `st-mary-magdalene`, `ss-cyril-and-methodius`,
+`st-venantius`, `st-elizabeth-of-portugal`, `st-bernard`, `st-hermenegild`, `st-john-cantius`,
+`stigmata-of-st-francis`, `st-juliana-falconieri` all have no chapter in the source and correctly
+render their Common's hymn already. `st-hildegard`/`ss-gervase-and-protase` were same-date-
+collision false positives (Stigmata of St. Francis and St. Juliana Falconieri's own content
+respectively bleeding through), same cause as the earlier passes.
+
+Only 4 saints had a real chapter of their own and were worth the full-bundle treatment:
+`st-joseph`, `ss-seven-founders-of-the-servite-order`, `st-gertrude`, `st-teresa-of-avila`.
+Authored complete chapter/hymn/responsory(where real)/versicle bundles for both Lauds and Vespers
+for all four — this is the same "all-or-nothing bundle" trap as the duplex-majus+ Vespers-hymn
+pass: giving a saint their own chapter makes their *whole* bundle switch from the Common's to their
+own id, so hymn/versicle (and responsory, where real) all needed covering too, not just the hymn
+that prompted the check. Where the source itself had no versicle/hymn of its own for a given hour,
+copied the Common's own text explicitly (documented per-file) rather than leave an unconditionally-
+rendered empty part. St. Gertrude and Ss. Seven Founders had no English at all for their hymns;
+translated directly.
+
+This forced 3 pre-existing test corrections (`tests/hours/lauds.test.ts` ×2, `tests/hours/
+vespers.test.ts` ×1): tests asserting St. Joseph's and Ss. Seven Founders' office bundle fell back
+to their Common (true before this session) now correctly assert their own newly-authored proper
+content wins instead — same "prior test encoded the old-but-now-superseded state" pattern as
+St. Lawrence's invitatory correction earlier in this sweep.
+
+`npm test` (2077 passed) and `npm run build` both pass.

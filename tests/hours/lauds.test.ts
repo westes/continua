@@ -196,16 +196,16 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu Redémptor ómnium');
   });
 
-  it("uses common-of-a-confessor's real office bundle on St. Joseph's own day, not the ferial default", () => {
-    // St. Joseph (Mar 19, `common: common-of-a-confessor`) -- see
-    // lauds-capitulum-common-of-a-confessor.yml's header for the finding
-    // that this plain id is really Common-of-a-Confessor-Not-Bishop
-    // under a different label in this app's own data.
+  it("uses St. Joseph's own real proper office bundle on his own day, not common-of-a-confessor's generic one", () => {
+    // St. Joseph (Mar 19) now has his own real chapter/hymn (authored
+    // 2026-09-08, sourced from Sancti/03-19.txt directly) -- his own
+    // proper content wins over common-of-a-confessor's generic bundle,
+    // same as the mechanism's documented own-id-first precedence.
     const ordo = resolveOrdo('lauds', '2026-03-19');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
-    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 31:8-9');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Prov 28:20; 27:18');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
-    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu coróna célsior');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Iste, quem læti cólimus, fidéles');
   });
 
   it("uses common-of-an-abbot's real office bundle on St. Maurus's own day, not the ferial default", () => {
@@ -301,15 +301,17 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Christe sanctórum decus Angelórum');
   });
 
-  it("uses common-of-several-confessors's real office bundle (= Confessor-Not-Bishop content) on Ss. Seven Founders' own day", () => {
-    // Read directly from the source (Sancti/02-12.txt): its own [Rule]
-    // says plain "vide C5" -- see lauds-capitulum-common-of-several-
-    // confessors.yml's header.
+  it("uses Ss. Seven Founders' own real proper office bundle on their own day, not common-of-several-confessors's generic one", () => {
+    // Ss. Seven Founders (Feb 12) now have their own real chapter/hymn
+    // (authored 2026-09-08, sourced from Sancti/02-12.txt's own
+    // [Capitulum Laudes]/[Hymnus Laudes] directly, despite their [Rule]
+    // saying "vide C5" for the rest of the office) -- their own proper
+    // content wins over common-of-several-confessors's generic bundle.
     const ordo = resolveOrdo('lauds', '2026-02-12');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
-    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 31:8-9');
+    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('1 Pet 4:13');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
-    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu coróna célsior');
+    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Sic patres vitam péragunt in umbra');
   });
 
   it("uses common-of-the-bvm's real office bundle on Our Lady of Mount Carmel's own day", () => {
