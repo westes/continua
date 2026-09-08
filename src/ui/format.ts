@@ -97,7 +97,7 @@ function stripRoleDescriptor(name: string): string {
   }
 }
 
-/** Browser tab title: "vu · Hour · Celebration" — enough to tell tabs
+/** Browser tab title: "Continua · Hour · Celebration" — enough to tell tabs
  * apart when several hours/days are open at once, without the full
  * commemoration list `getDayLabel` appends (that's for the page header,
  * not for scanning tabs by "which one am I looking for"). `dayLabel` is
@@ -116,7 +116,7 @@ export function documentTitle(hourId: string, dayLabel: Partial<Record<string, s
   if (celebration.length > TITLE_CELEBRATION_MAX_LENGTH) {
     celebration = `${celebration.slice(0, TITLE_CELEBRATION_MAX_LENGTH - 1)}…`;
   }
-  const parts = ['vu', hourLabel(hourId), celebration].filter(Boolean);
+  const parts = ['Continua', hourLabel(hourId), celebration].filter(Boolean);
   return parts.join(' · ');
 }
 

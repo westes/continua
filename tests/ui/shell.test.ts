@@ -11,7 +11,7 @@ describe('shell', () => {
     setDate('2026-08-09');
     setSelectedHour('prime');
     setLanguages(['en']);
-    window.history.replaceState(null, '', '/vu/2026-08-09/prime');
+    window.history.replaceState(null, '', '/continua/2026-08-09/prime');
   });
 
   it('renders the day nav, all 8 hours, and Prime content by default', () => {
@@ -50,7 +50,7 @@ describe('shell', () => {
     // the hour content itself had already switched to St. Zephyrinus.
     setDate('2026-08-25');
     setSelectedHour('vespers');
-    window.history.replaceState(null, '', '/vu/2026-08-25/vespers');
+    window.history.replaceState(null, '', '/continua/2026-08-25/vespers');
     const root = document.getElementById('app')!;
     mountShell(root);
 
@@ -62,7 +62,7 @@ describe('shell', () => {
   it('shows a plain Second Vespers status when Vespers is not anticipating tomorrow', () => {
     setDate('2026-08-09');
     setSelectedHour('vespers');
-    window.history.replaceState(null, '', '/vu/2026-08-09/vespers');
+    window.history.replaceState(null, '', '/continua/2026-08-09/vespers');
     const root = document.getElementById('app')!;
     mountShell(root);
 
@@ -79,7 +79,7 @@ describe('shell', () => {
     // tomorrow's winner is `temporal`, not `sanctoral`.
     setDate('2026-08-29');
     setSelectedHour('vespers');
-    window.history.replaceState(null, '', '/vu/2026-08-29/vespers');
+    window.history.replaceState(null, '', '/continua/2026-08-29/vespers');
     const root = document.getElementById('app')!;
     mountShell(root);
 

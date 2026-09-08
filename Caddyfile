@@ -3,7 +3,7 @@
 	file_server
 	# SPA fallback: real paths like /2026-08-09/prime aren't real files, so
 	# fall back to index.html and let src/router.ts read the URL client-side.
-	# The hub's outer Caddy strips the /vu prefix (path_mount + strip_prefix)
+	# The hub's outer Caddy strips the /continua prefix (path_mount + strip_prefix)
 	# before proxying here, so paths inside the container never have it.
 	try_files {path} /index.html
 }

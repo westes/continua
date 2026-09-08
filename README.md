@@ -1,4 +1,4 @@
-# vu
+# Continua
 
 A static, offline-first PWA for praying the Divine Office — Matins, Lauds, Prime, Terce, Sext,
 None, Vespers, and Compline — in bilingual Latin/English, for any given date.
@@ -44,8 +44,8 @@ own client-side routing for URLs like `/2026-08-09/prime`).
 A `Dockerfile` builds the static bundle with Node and serves it with Caddy:
 
 ```sh
-docker build -t vu .
-docker run -p 8080:80 vu
+docker build -t continua .
+docker run -p 8080:80 continua
 ```
 
 Or with Docker Compose (`docker-compose.yml` is included):

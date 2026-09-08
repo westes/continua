@@ -11,7 +11,7 @@ import { documentTitle } from './format';
 export function mountShell(root: HTMLElement): void {
   root.innerHTML = `
     <header class="site-header">
-      <span class="site-title">vu</span>
+      <span class="site-title">Continua</span>
       <div data-slot="language-toggle"></div>
     </header>
     <div data-slot="day-nav"></div>

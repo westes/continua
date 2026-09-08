@@ -58,7 +58,7 @@ export function setDate(date: string): void {
 
 /**
  * Which hour the "Today" link should point to: if we're already viewing
- * today, the current time-of-day default (as if freshly visiting `/vu`
+ * today, the current time-of-day default (as if freshly visiting `/continua`
  * right now); otherwise the hour currently selected, unchanged. Shared by
  * `goToToday()` and the link's `href` (`day-nav.ts`) so a plain click and
  * a right-click-open-in-new-tab land on the same target.

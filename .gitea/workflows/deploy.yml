@@ -23,39 +23,41 @@ jobs:
         run: npm test
 
       - name: Build and smoke-test the container
-        # vu has no server-side logic, so there's nothing an integration
+        # Continua has no server-side logic, so there's nothing an integration
         # test would exercise beyond "does the built bundle actually get
-        # served correctly under the /vu/ base path" — this is that check,
-        # run against the exact image that ships.
+        # served correctly under the /continua/ base path" — this is that
+        # check, run against the exact image that ships.
         #
         # The runner shares the host's Docker daemon, so a hardcoded host
         # port (this used to be -p 8080:80) is contended across every repo's
         # CI on the same host, not scoped to this job — hence the earlier
         # "port already allocated" failures even after cleaning up any
-        # leftover vu-smoke container. Curl the container's own IP instead,
-        # so no host port is published at all — but this job's own sandbox
-        # container lives on the "reground" network, not the default bridge,
-        # so vu-smoke has to join that same network or the two can't reach
-        # each other at all (that's why the first attempt at this just hung
-        # for 2 minutes before timing out, rather than failing fast).
+        # leftover continua-smoke container. Curl the container's own IP
+        # instead, so no host port is published at all — but this job's own
+        # sandbox container lives on the "reground" network, not the default
+        # bridge, so continua-smoke has to join that same network or the two
+        # can't reach each other at all (that's why the first attempt at this
+        # just hung for 2 minutes before timing out, rather than failing
+        # fast).
         run: |
-          docker rm -f vu-smoke 2>/dev/null || true
-          docker build -t vu:ci .
-          docker run -d --name vu-smoke --network reground vu:ci
+          docker rm -f continua-smoke 2>/dev/null || true
+          docker build -t continua:ci .
+          docker run -d --name continua-smoke --network reground continua:ci
           sleep 1
-          container_ip=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' vu-smoke)
-          curl -sf "http://${container_ip}/" | grep -q 'vu — Divine Office'
-          docker stop vu-smoke
-          docker rm vu-smoke
+          container_ip=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' continua-smoke)
+          curl -sf "http://${container_ip}/" | grep -q 'Continua — Divine Office'
+          docker stop continua-smoke
+          docker rm continua-smoke
 
       - name: Trigger redeploy via SSH
         run: |
           mkdir -p ~/.ssh
-          printf '%s\n' "$VU_DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          printf '%s\n' "$CONTINUA_DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
           # Forced-command key, same pattern as eec/bookshop/drip: the
-          # server-side sudoers grant runs the vu redeploy script regardless
-          # of what's requested here — see the vu Ansible role.
-          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new vu-deploy@reground.org true
+          # server-side sudoers grant runs the continua redeploy script
+          # regardless of what's requested here — see the continua Ansible
+          # role.
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new continua-deploy@reground.org true
         env:
-          VU_DEPLOY_SSH_KEY: ${{ secrets.VU_DEPLOY_SSH_KEY }}
+          CONTINUA_DEPLOY_SSH_KEY: ${{ secrets.CONTINUA_DEPLOY_SSH_KEY }}

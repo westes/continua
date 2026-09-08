@@ -3,10 +3,11 @@ import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import yaml from '@rollup/plugin-yaml';
 
-// Served under reground.org/vu (Caddy path_mount to the vu container) — every
-// asset URL and the service worker's registration scope must be scoped to
-// this path, or they'll resolve against the domain root instead.
-const base = '/vu/';
+// Served under reground.org/continua (Caddy path_mount to the continua
+// container) — every asset URL and the service worker's registration scope
+// must be scoped to this path, or they'll resolve against the domain root
+// instead.
+const base = '/continua/';
 
 export default defineConfig({
   base,
@@ -17,8 +18,8 @@ export default defineConfig({
       scope: base,
       base,
       manifest: {
-        name: 'vu',
-        short_name: 'vu',
+        name: 'Continua',
+        short_name: 'Continua',
         start_url: base,
         scope: base,
         display: 'standalone',
