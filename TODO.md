@@ -23,16 +23,15 @@ content in the same shape, not a design change. The dated log below is that pipe
      log) confirm zero silently-missing parts remain in either tier. See
      `vu_source_all_available_proper_content` memory for the corrected design principle that
      drove this (gate by reference-source availability, not vu's own rank threshold).
-   - Accuracy audit of already-authored content (2026-09-08, first structural pass done): see
-     dated log, "Accuracy audit: structural checks, first pass" — a handful of cheap,
-     mechanical whole-corpus checks (~2460 files) rather than a live re-verification of every
-     `verified` claim, which isn't feasible in one sitting. Found and fixed one real bug (a
-     citation typo); several other check categories came back clean. **Not exhaustive** —
-     genuine transcription/attribution errors that don't produce a detectable structural
-     anomaly (wrong psalm *text* under a plausible-looking number, a mistranslation that reads
-     fine on its own) need the slower live-requery-every-file approach this pass deliberately
-     avoided. Next increment: pick a new structural check category, or start spot-live-
-     verifying a sampled subset.
+   - Accuracy audit of already-authored content — **paused for now (2026-09-08), not exhaustive.**
+     Two passes done (see dated log: "Accuracy audit: structural checks, first pass" and
+     "...stratified live/source sample, second pass") — whole-corpus structural checks
+     (~2460 files) plus an 18-file stratified live/source-verified sample. Found and fixed two
+     real bugs total (a citation typo, plus the All Saints Vespers psalm-count bug found earlier
+     the same session); everything else checked out clean. Genuinely open-ended — a full
+     live-requery of every `verified` claim was never attempted and isn't planned as one
+     continuous task; resume with a fresh structural-check category or another stratified sample
+     if/when picked back up.
 
 3. **New features**
    - Date picker: `day-nav.ts` only steps a day at a time; no way to jump to an arbitrary
