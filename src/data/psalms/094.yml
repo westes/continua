@@ -8,75 +8,74 @@
 # (jumps 5 -> 7), not an artifact of dropping the markers — transcribed
 # that way on purpose, not an omission.
 #
-# The English is the traditional Coverdale/BCP "Venite" translation, not
-# Douay-Rheims like every other psalm in this store (colon-pointed, not
-# asterisk-pointed; noticeably different register — "O come, let us sing"
-# vs. the rest of the store's "Come let us praise the Lord with joy").
-# Marked `draft` rather than reworded to match, pending a deliberate
-# register pass later (same treatment as Matthias/Barnabas/etc.'s reworded
-# antiphons — see TODO.md).
+# The English was originally the traditional Coverdale/BCP "Venite"
+# translation (colon-pointed, not asterisk-pointed) — the reference
+# engine's own English Psalmorum track for this psalm uses that same
+# Coverdale text, not Douay-Rheims. Replaced here with the standard
+# public-domain Douay-Rheims translation, asterisk-pointed by hand against
+# the Latin, to match this store's usual register/pointing convention.
 number: 94
 verses:
   - n: 1
     text:
       la: "Veníte, exsultémus Dómino: * jubilémus Deo salutári nostro:"
-      en: "O come, let us sing unto the Lord: let us make a joyful noise to the God of our salvation."
+      en: "Come let us praise the Lord with joy: * let us joyfully sing to God our saviour."
     status:
       la: verified
-      en: draft
+      en: verified
   - n: 2
     text:
       la: "Præoccupémus fáciem ejus in confessióne: * et in psalmis jubilémus ei."
-      en: "Let us come before His presence with thanksgiving, and make a joyful noise unto Him with psalms."
+      en: "Let us come before his presence with thanksgiving; * and make a joyful noise to him with psalms."
     status:
       la: verified
-      en: draft
+      en: verified
   - n: 3
     text:
       la: "Quóniam Deus magnus Dóminus: * et Rex magnus super omnes deos."
-      en: "For the Lord is a great God, and a great King above all gods."
+      en: "For the Lord is a great God: * and a great King above all gods."
     status:
       la: verified
-      en: draft
+      en: verified
   - n: 4
     text:
       la: "Quia in manu ejus sunt omnes fines terræ: * et altitúdines móntium ipsíus sunt."
-      en: "In His hand are the inmost depths of the earth: and the heights of the hills are His also."
+      en: "For in his hand are all the ends of the earth: * and the heights of the mountains are his."
     status:
       la: verified
-      en: draft
+      en: verified
   - n: 5
     text:
       la: "Quóniam ipsíus est mare, et ipse fecit illud: * et siccam manus ejus formavérunt."
-      en: "For the sea is His, and He made it, and His hands formed the dry land."
+      en: "For the sea is his, and he made it: * and his hands formed the dry land."
     status:
       la: verified
-      en: draft
+      en: verified
   - n: 7
     text:
       la: "Et nos pópulus páscuæ ejus, et oves manus ejus. * Hódie si vocem ejus audiéritis, nolíte obduráre corda vestra:"
-      en: "And we are the people of His pasture, and the sheep of His hand. Today if ye will hear His voice, harden not your heart."
+      en: "And we are the people of his pasture and the sheep of his hand. * To day if you will hear his voice, harden not your hearts:"
     status:
       la: verified
-      en: draft
+      en: verified
   - n: 8
     text:
       la: "Sicut in irritatióne secúndum diem tentatiónis in desérto: * ubi tentavérunt me patres vestri, probavérunt me, et vidérunt ópera mea."
-      en: "As in the Provocation, and as in the day of Temptation in the wilderness, when your fathers tempted Me, and proved Me, and saw My works."
+      en: "As in the provocation, according to the day of temptation in the wilderness: * where your fathers tempted me, they proved me, and saw my works."
     status:
       la: verified
-      en: draft
+      en: verified
   - n: 9
     text:
       la: "Quadragínta annis offénsus fui generatióni illi, * et dixi: Semper hi errant corde."
-      en: "Forty years long was I grieved with that generation, and said: It is a people that do alway err in their heart."
+      en: "Forty years long was I offended with that generation, * and I said: These always err in heart."
     status:
       la: verified
-      en: draft
+      en: verified
   - n: 10
     text:
       la: "Et isti non cognovérunt vias meas, ut jurávi in ira mea: * Si introíbunt in réquiem meam."
-      en: "And they have not known My ways; unto whom I sware in My wrath that they should not enter into My rest."
+      en: "And these men have not known my ways: * so I swore in my wrath that they should not enter into my rest."
     status:
       la: verified
-      en: draft
+      en: verified

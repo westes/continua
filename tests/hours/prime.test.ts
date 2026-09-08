@@ -34,19 +34,19 @@ describe('resolveOrdo("prime", ...)', () => {
     }
   });
 
-  it('surfaces verified/draft status per language, per verse — via the psalm store directly', () => {
+  it('surfaces verified status in both languages for the Invitatory psalm', () => {
     // Monday's Prime psalms (1, 2, 6) are all fully verified now (the
     // whole Psalter got bulk-pulled from Divinum Officium's own Psalmorum
     // text, 2026-08), so there's no draft/missing content left in this
     // ordo to exercise the fallback against — test the store directly
-    // instead. Ps 94 (the Invitatory, used only at Matins) is the one
-    // psalm with a real per-language split: its Latin is verified but its
-    // English is the traditional Coverdale/BCP "Venite" translation
-    // rather than this store's usual Douay-Rheims register, so it's
-    // marked `draft` pending a deliberate reword (see 094.yml, TODO.md).
+    // instead. Ps 94 (the Invitatory, used only at Matins) used to carry
+    // a per-language split (Coverdale/BCP English, colon-pointed rather
+    // than asterisk-pointed) but was reworded to the standard
+    // Douay-Rheims translation, asterisk-pointed like every other psalm
+    // (see 094.yml), so it's fully verified now too.
     const psalm = getPsalm(94);
     expect(psalm.verses[0]?.status.la).toBe('verified');
-    expect(psalm.verses[0]?.status.en).toBe('draft');
+    expect(psalm.verses[0]?.status.en).toBe('verified');
   });
 
   it('surfaces missing status for a genuinely unauthored psalm number', () => {
