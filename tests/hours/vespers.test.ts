@@ -36,10 +36,24 @@ const VESPERS_OFFICE_OVERRIDE_DATES: Record<string, string> = {
   'st-matthew': '2026-09-21',
   'st-matthias': '2029-02-24',
   'st-peter-ad-vincula': '2026-08-01',
-  'st-scholastica': '2026-02-10',
   'st-stephen-protomartyr': '2029-12-26',
   'st-thomas-apostle': '2026-12-21',
+  // Not 'st-scholastica' (Feb 10): her own Second Vespers can never
+  // actually render on the calendar. Feb 11's Apparition of the
+  // Immaculate BVM ties her own duplex-majus rank, and vu's concurrentia
+  // tie-break gives the evening to tomorrow's First Vespers every single
+  // year (both are fixed dates) — confirmed 2026-09-08 while authoring
+  // apparition-of-the-immaculate-bvm's own bundle content, which is what
+  // this date actually now exercises instead.
+  'apparition-of-the-immaculate-bvm': '2026-02-10',
 };
+
+// Ids with a real, source-confirmed absence of any Vespers responsory at
+// all (not an authoring gap) — same "genuinely missing, not unauthored"
+// pattern as the Sacred Heart's own Lauds/Vespers, which resolveOffice
+// deliberately omits the responsory part for rather than rendering an
+// empty one.
+const NO_VESPERS_RESPONSORY = new Set(['apparition-of-the-immaculate-bvm']);
 
 describe('resolveOrdo("vespers", ...) office-override sweep', () => {
   it.each(Object.entries(VESPERS_OFFICE_OVERRIDE_DATES))(
@@ -50,7 +64,11 @@ describe('resolveOrdo("vespers", ...) office-override sweep', () => {
       const responsory = ordo.parts.find((p) => p.kind === 'responsory');
       const hymn = ordo.parts.find((p) => p.kind === 'hymn');
       const versicle = ordo.parts.find((p) => p.kind === 'versicle');
-      for (const part of [chapter, responsory, hymn, versicle]) {
+      const parts = NO_VESPERS_RESPONSORY.has(id) ? [chapter, hymn, versicle] : [chapter, responsory, hymn, versicle];
+      if (NO_VESPERS_RESPONSORY.has(id)) {
+        expect(responsory, `${id}: expected no responsory part at all`).toBeUndefined();
+      }
+      for (const part of parts) {
         expect(part, `${id}: part missing from resolved ordo`).toBeDefined();
         const status = part && 'text' in part ? part.text.status : undefined;
         expect(status?.la, `${id}: Latin unexpectedly missing`).not.toBe('missing');
@@ -157,7 +175,7 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(numbers).toEqual([109, 111, 112, 131]);
   });
 
-  it("uses Common-of-an-Angel's own psalmody (reusing St. Michael's own proper text) on Guardian Angels' First Vespers", () => {
+  it("uses Guardian Angels' own proper psalmody on her First Vespers, same psalm numbers as Common-of-an-Angel", () => {
     // Not Guardian Angels' own day itself (Oct 2, Duplex Majus): she
     // falls short of keepsOwnSecondVespers's duplex-2-classis+ floor, and
     // Oct 3 (St. Therese of Lisieux, plain Duplex, below this override's
@@ -165,17 +183,20 @@ describe('resolveOrdo("vespers", ...)', () => {
     // itself resolves to the plain ferial Friday default instead. Oct 1
     // (St. Remigius, Simplex, doesn't keep his own evening either)
     // anticipates Guardian Angels' own First Vespers instead, which does
-    // carry the override. Live-verified (2026-08-28) that her real
-    // Vespers antiphons are St. Michael's own, byte-for-byte, which is
-    // exactly what this category's content is (see data/hours/
-    // vespers-psalmody-overrides/categories/common-of-an-angel.yml's own
-    // header). Psalm numbers here are "Psalmi Dominica" (109-112), not a
-    // Common-specific set.
+    // carry the override.
+    //
+    // Correction (2026-09-08): an earlier note here claimed her real
+    // Vespers antiphons were St. Michael's own, byte-for-byte -- checking
+    // the raw source file directly (Sancti/10-02.txt's own [Ant Vespera])
+    // showed that was wrong; she has her own genuinely distinct proper
+    // antiphons (see guardian-angels.yml). Psalm numbers happen to be the
+    // same as Common-of-an-Angel's own ("Psalmi Dominica", 109-112) —
+    // same feast, own text, borrowed numbers pattern seen elsewhere.
     const ordo = resolveOrdo('vespers', '2026-10-01');
     const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
     expect(numbers).toEqual([109, 110, 111, 112]);
     const firstPsalm = ordo.parts.find((p) => p.kind === 'psalm');
-    expect(firstPsalm?.kind === 'psalm' ? firstPsalm.antiphon?.text.la : undefined).toContain('Stetit Angelus');
+    expect(firstPsalm?.kind === 'psalm' ? firstPsalm.antiphon?.text.la : undefined).toContain('Angelis suis');
   });
 
   it("uses Common-of-a-Dedication's own psalmody on the Dedication of the Basilica of the Most Holy Saviour's own day", () => {

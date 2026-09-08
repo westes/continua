@@ -6718,3 +6718,46 @@ checked for Vespers proper antiphons** (Matins invitatory and Lauds were already
 earlier in this sweep) — the two Paschaltide cases and the octave-of-all-saints slot-count question
 are the only three remaining open items at this tier. Below-duplex-majus and the other hour kinds
 (hymns, collects, chapter/responsory bodies) are still fully unaudited by this method.
+
+### Lauds/Vespers hymns: duplex-majus+ gap sweep (2026-09-08)
+
+Audited all 59 duplex-majus+ saints' Lauds/Vespers hymns against the reference source's own
+`[Hymnus Laudes]`/`[Hymnus Vespera]` presence. Found and authored real gaps for 5 saints:
+`most-precious-blood` (both hymns, long 9-stanza texts, English already in the source),
+`seven-sorrows-of-the-bvm` (both, translated directly — no English in the source),
+`apparition-of-the-immaculate-bvm` and `maternity-of-the-bvm` (Lauds only — neither has a distinct
+Vespers hymn in the source at all, correctly falling to `common-of-the-bvm`'s). One flagged false
+positive: `exaltation-of-the-holy-cross`'s Lauds hymn already correctly resolves (its own chapter is
+unauthored, so `resolveOfficeBundle` falls through its *whole* bundle to `proper-to-the-finding-of-
+the-holy-cross`'s, hymn included) — the naive per-id-filename check that flagged it as a gap didn't
+account for that bundle-level fallback.
+
+**Real structural finding, not just a content gap:** `resolveOfficeBundle` (hours/resolve-common.ts)
+is all-or-nothing per id — an id with no chapter of its own falls through its *whole* bundle
+(chapter/responsory/hymn/versicle together) to its Common's, so a proper hymn authored with no
+matching proper chapter is silently unreachable dead content. Discovered this by live-testing after
+authoring the 4 hymns above: none of them rendered at all until a matching `lauds-capitulum-<id>`
+was also authored for each (sourced from the reference engine alongside the hymn), which then
+exposed that the bundle's `responsory`/`versicle` slots are looked up under the *same* newly-
+reachable per-feast id too — with no fallback to the Common for just those slots — so authoring a
+chapter+hymn without also covering responsory/versicle turns those into silently-empty parts.
+Authored real content for all of it: `most-precious-blood` and `seven-sorrows-of-the-bvm` got their
+own genuine source-sourced versicles (and Vespers hymn/responsory where real); `apparition-of-the-
+immaculate-bvm` and `maternity-of-the-bvm` (both `common-of-the-bvm`, no distinct proper found for
+these slots) got explicit copies of the Common's own versicle/Vespers-hymn text, since the bundle
+mechanism no longer falls through to it implicitly once their own chapter exists.
+
+This forced two test corrections: `tests/hours/vespers.test.ts`'s office-override sweep had
+`st-scholastica` dated 2026-02-10, which — now that `apparition-of-the-immaculate-bvm` (Feb 11,
+tied duplex-majus rank) has a real chapter — actually exercises *her* First Vespers via concurrentia
+(tie goes to tomorrow, every year, permanently, since both are fixed dates); swapped the table entry
+and added a small `NO_VESPERS_RESPONSORY` exception (she genuinely has none in the source, same
+"real absence, not a gap" pattern as the Sacred Heart). Also caught while fixing a related bug: my
+first pass gave `st-gabriel-archangel`/`guardian-angels`/`st-raphael-archangel` the wrong "Psalmi
+Dominica" psalm numbers (guessed 109/112/121/126 from the BVM Common by analogy instead of the true
+Sunday set, 109-112 — caught by an existing test expecting Guardian Angels' psalm numbers to match
+St. Michael's); fixed all three, and while there, corrected that same existing test's own stale
+claim (an artifact of the earlier `categories/common-of-an-angel.yml` mistake, already fixed above)
+that Guardian Angels' antiphons are St. Michael's own.
+
+`npm test` (2077 passed) and `npm run build` both pass.
