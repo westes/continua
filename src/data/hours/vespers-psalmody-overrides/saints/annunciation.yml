@@ -1,0 +1,24 @@
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-03-25, own day). Same four psalm numbers as
+# her Common (common-of-the-bvm.yml: 109/112/121/126), but her own
+# proper antiphons throughout, not the Common's generic ones -- same
+# "proper antiphons, borrowed psalm numbers" pattern as most feasts with
+# a distinct proper here.
+id: annunciation
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Missus est * Gábriel Angelus ad Maríam Vírginem desponsátam Joseph."
+      en: "The Angel Gabriel was sent * to a virgin espoused to a man whose name was Joseph; and the virgin's name was Mary."
+  - psalms: [112]
+    antiphon:
+      la: "Ave, María, * grátia plena; Dóminus tecum: benedícta tu in muliéribus."
+      en: "Hail, Mary, * full of grace, the Lord is with thee; blessed art thou among women."
+  - psalms: [121]
+    antiphon:
+      la: "Ne tímeas, María, * invenísti grátiam apud Dóminum: ecce concípies et páries fílium."
+      en: "Fear not, Mary, * thou hast found grace with the Lord; behold, thou shalt conceive, and bring forth a Son."
+  - psalms: [126]
+    antiphon:
+      la: "Ecce ancílla Dómini: * fiat mihi secúndum verbum tuum."
+      en: "Behold the handmaid of the Lord, * be it unto me according to thy word."

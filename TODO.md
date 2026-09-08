@@ -6589,3 +6589,33 @@ reference source at all — translated directly.
 
 Live-verified via `resolveOrdo('lauds', ...)` for 2026-03-21, 2026-09-29, 2026-11-13. `npm test`
 (2077 passed) and `npm run build` both pass.
+
+### Vespers proper antiphons: duplex-1-classis first pass (2026-09-08)
+
+`vespers-psalmody-overrides/saints/` had only 3 files (all-saints, decollation-of-st-john-baptist,
+nativity-of-st-john-the-baptist) against 59 duplex-majus+ saints — its own doc comment even claimed
+"no duplex-majus+ saint in this app currently has proper Vespers psalm antiphons distinct from
+their Common's," which those 3 files already contradicted. Checked all 7 duplex-1-classis saints
+(the highest tier) via the live reference engine (`command=prayVespera`; **static-file reading is
+unreliable here**, confirmed by `nativity-of-st-john-the-baptist.yml`'s own header — the raw file's
+naive antiphon list doesn't match what the engine actually renders):
+
+- **St. Benedict**: no Common-of-an-Abbot Vespers category exists at all in this app, so he was
+  falling all the way to the plain ferial weekday default — a bigger gap than most. Authored
+  `st-benedict.yml`, psalms 109-112, antiphons reusing his own already-translated Prime/Terce/
+  Sext/None English (Lauds Ant 1/2/3/5, same borrow-from-Lauds pattern).
+- **Annunciation, Assumption, Immaculate Conception**: each has genuine proper antiphons distinct
+  from `common-of-the-bvm`'s generic ones, at the same psalm numbers (109/112/121/126) the Common
+  uses. Authored all three; Immaculate Conception's live-rendered Latin drops diacritics the same
+  way her already-authored Prime/Terce/Sext/None antiphons' did — reused that already-restored
+  accentuation directly rather than re-deriving it.
+- **Ss. Peter and Paul, St. Michael, Most Precious Blood**: live-verified as **not** gaps. Ss. Peter
+  and Paul's Vespers antiphons are byte-identical to `common-of-an-apostle`'s; St. Michael's to
+  `common-of-an-angel`'s (Sept 29's own `[Rule]` is literally `ex Sancti/05-08` in the source,
+  confirming the "Michael's proper *is* the generic Angel scheme" note already in that category
+  file). Most Precious Blood's Monastic-track rule is `Psalmi Dominica` — plain Sunday psalm
+  antiphons, no proper antiphon set exists for it at all; correctly falls to the ferial/Sunday
+  default already.
+
+`npm test` (2077 passed) and `npm run build` both pass. The remaining 26 duplex-2-classis and 24
+duplex-majus saints haven't been checked yet — tracked as ongoing Open Work above, same method.
