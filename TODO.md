@@ -6942,3 +6942,28 @@ Protomartyr's own Dec 26 chapter/lesson wholesale, same as its other hours).
 
 `npm test` (2077 passed) and `npm run build` both pass. Matins readings/responsories below
 duplex-majus are the one major hour-part category left completely unaudited by this method.
+
+### Final consolidated sweep, below-duplex-majus tier (2026-09-08) — clean
+
+Two whole-tier sweeps across all 194 `propers`-set below-duplex-majus saints, using the same
+resolve-and-check-status method as the duplex-majus+ closing sweep earlier in this session:
+
+- **Matins**: `resolveOrdo('matins', ...)` for all 184 saints with a mapped date — zero parts with
+  both `status.la` and `status.en` `'missing'`. Matins readings/responsories for this tier are
+  already fully covered by the existing generous-commemoration/nocturn-reading-pool mechanism
+  (per the pre-1955/SanctiM sweeps done in earlier sessions) — this item is now closed, not just
+  deferred.
+- **Lauds/Vespers/Prime/Terce/Sext/None chapter+hymn+versicle**: 1104 hour-renders checked across
+  all 194 saints — zero silently-missing parts. Confirms the "all-or-nothing bundle" class of bug
+  found and fixed repeatedly earlier in this session (authoring a chapter without its hymn/
+  versicle/responsory) has no remaining instances anywhere in this tier.
+
+This closes out the below-duplex-majus first pass. Remaining known open items, all deliberately
+left rather than guessed at: `st-mark`/`ss-philip-and-james`/`st-john-before-the-latin-gate`
+(Paschaltide antiphon substitution, no mechanism), `octave-of-all-saints` (4-vs-5-psalm-slot
+ambiguity), `st-thomas-becket` (single-antiphon-slot substitution, no data-shape support). Genuinely
+open scope beyond this sweep's method: PTSN chapters' `[Capitulum Tertia]` absence pattern isn't
+independently verified (assumed to mean "always ferial" from consistency across candidates, not
+proven per-saint); and this whole campaign has so far only checked "is there a `[tag]` in the
+source that vu is missing" — it hasn't verified that already-authored content is *itself* accurate
+(a different, much larger kind of audit).
