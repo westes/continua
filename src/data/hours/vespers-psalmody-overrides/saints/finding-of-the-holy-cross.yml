@@ -1,0 +1,23 @@
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-05-03, own day). `common: proper-to-the-
+# finding-of-the-holy-cross` has no Vespers Common category (it's fully
+# proper), so without this file the feast fell to the plain ferial
+# default. Psalms 109/110/111/112.
+id: finding-of-the-holy-cross
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "O magnum pietátis opus: * mors mórtua tunc est, in ligno quando mórtua Vita fuit, allelúja."
+      en: "O what a work of love was that * when Life and death died together upon the Tree. Alleluia."
+  - psalms: [110]
+    antiphon:
+      la: "Salva nos, * Christe Salvátor, per virtútem Crucis: qui salvásti Petrum in mari, miserére nobis, allelúja."
+      en: "Save us, * O Christ the Saviour, save us through the might of thy Cross; Thou Who didst save Peter when he was ready to sink in the sea, have mercy upon us. Alleluia."
+  - psalms: [111]
+    antiphon:
+      la: "Ecce Crucem Dómini, * fúgite, partes advérsæ, vicit leo de tribu Juda, radix David, allelúja."
+      en: "Behold, the Cross of the Lord! * Fly, ye ranks of the adversary! The Lion of the tribe of Judah, the Root of David, hath prevailed. Alleluia."
+  - psalms: [112]
+    antiphon:
+      la: "Per signum Crucis * de inimícis nostris líbera nos, Deus noster, allelúja."
+      en: "By the sign of the Cross * deliver us from our enemies, O our God. Alleluia."

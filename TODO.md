@@ -6600,10 +6600,12 @@ their Common's," which those 3 files already contradicted. Checked all 7 duplex-
 unreliable here**, confirmed by `nativity-of-st-john-the-baptist.yml`'s own header — the raw file's
 naive antiphon list doesn't match what the engine actually renders):
 
-- **St. Benedict**: no Common-of-an-Abbot Vespers category exists at all in this app, so he was
-  falling all the way to the plain ferial weekday default — a bigger gap than most. Authored
-  `st-benedict.yml`, psalms 109-112, antiphons reusing his own already-translated Prime/Terce/
-  Sext/None English (Lauds Ant 1/2/3/5, same borrow-from-Lauds pattern).
+- **St. Benedict**: was falling back to `common-of-a-confessor-not-bishop`'s generic Vespers text
+  (its own `aliases` list registers `common-of-an-abbot` under that scheme — a real Common
+  fallback, not the plain ferial default, correcting an initial misreading). Authored
+  `st-benedict.yml` to replace it with his own proper antiphons at the same psalm numbers
+  (109-112), reusing his already-translated Prime/Terce/Sext/None English (Lauds Ant 1/2/3/5,
+  same borrow-from-Lauds pattern).
 - **Annunciation, Assumption, Immaculate Conception**: each has genuine proper antiphons distinct
   from `common-of-the-bvm`'s generic ones, at the same psalm numbers (109/112/121/126) the Common
   uses. Authored all three; Immaculate Conception's live-rendered Latin drops diacritics the same
@@ -6619,3 +6621,55 @@ naive antiphon list doesn't match what the engine actually renders):
 
 `npm test` (2077 passed) and `npm run build` both pass. The remaining 26 duplex-2-classis and 24
 duplex-majus saints haven't been checked yet — tracked as ongoing Open Work above, same method.
+
+### Vespers proper antiphons: duplex-2-classis pass (2026-09-08)
+
+Checked all 26 duplex-2-classis saints against the live reference engine (title of the rendered
+office checked against the expected saint every time, after `seven-sorrows-of-the-bvm` below
+exposed a real misattribution risk). Authored 12: `purification`, `finding-of-the-holy-cross`,
+`transfiguration`, `visitation-of-the-bvm`, `nativity-bvm`, `st-lawrence`, `st-andrew`,
+`all-saints-of-the-benedictine-order`, `maternity-of-the-bvm`, `st-stephen-protomartyr`,
+`st-john-apostle`, `holy-innocents`.
+
+Two real pitfalls found along the way, both worth remembering for the rest of this sweep:
+
+- **`votive=Hodie` can silently pick the wrong office.** `seven-sorrows-of-the-bvm` (Sept 15, inside
+  Nativity BVM's own octave) live-queried back as "In Octavam Nativitátis Beatæ Mariæ Virginis" —
+  the reference engine's own stock Monastic calendar resolves that date differently than vu's
+  blended one. Caught only by checking the rendered office title against the expected saint every
+  time (now the standing method, not optional). Fixed by reading `Sancti/09-15.txt`'s own static
+  `[Ant Vespera]` block directly instead (first 4 of its 5 listed antiphons — same "Monastic uses
+  only 4 slots" convention as `nativity-of-st-john-the-baptist.yml`).
+- **Several later feasts don't exist in the Monastic 1617 calendar at all.** `st-joachim` (Aug 16),
+  `queenship-of-the-bvm` (May 31) live-queried back as St. Lawrence's Octave and Trinity Sunday
+  respectively — genuinely no Monastic office for either date; both confirmed via the static
+  file's own `[Rank]`/`[Rule]` (`ex C5`, `ex C11`) as correctly falling to their plain Common, not
+  a gap. `maternity-of-the-bvm` (Oct 11, instituted 1931) live-queried back as a plain 20th Sunday
+  after Pentecost — same non-existence in 1617, but *does* have real static proper content in the
+  secular `Sancti/10-11.txt` file, authored from that directly (no live render to verify against).
+
+Confirmed **not** gaps (byte-identical to their Common already): `st-matthias`, `st-james-the-
+greater`, `st-bartholomew`, `st-matthew`, `st-luke`, `ss-simon-and-jude`, `st-thomas-apostle`
+(all `common-of-an-apostle`/`common-of-an-evangelist`), `ss-placid-and-companions`
+(`common-of-several-martyrs`), `dedication-of-the-basilica-of-the-most-holy-savior`
+(`common-of-a-dedication`).
+
+**Deliberately not authored yet — flagged as a real, structurally different gap:** `st-mark`
+(Apr 25) and `ss-philip-and-james` (May 1) both live-queried inside Paschaltide (their fixed dates
+fall within Paschaltide in most years, since Easter's range is Mar 22–Apr 25) and rendered a
+generic-looking "Sancti tui Dómine florébunt..." Alleluia-laden set that doesn't read as personal
+to either saint — likely a *seasonal* Paschaltide antiphon substitution the engine applies broadly
+during Paschaltide, not either saint's own year-round proper text, and `hours/vespers.ts`'s
+psalmody-override path has no Paschaltide-antiphon-substitution mechanism at all to model it
+correctly either way. Needs its own investigation (a non-Paschaltide-year comparison, or tracing
+the actual rubric) before authoring, not a same-day fix — could turn out to affect other
+Paschaltide-season saints beyond just these two.
+
+Also corrected `st-benedict.yml`'s own header comment (previous entry above): he was never falling
+to the plain ferial default, contrary to what that entry first said — `common-of-a-confessor-not-
+bishop`'s Vespers category already lists `common-of-an-abbot` as an alias, so he was already
+falling to that Common's generic text, not the ferial default. The file itself (his own proper
+antiphons) is unaffected; only the header's explanation of the prior state was wrong.
+
+`npm test` (2077 passed) and `npm run build` both pass. The 24 duplex-majus saints haven't been
+checked yet — tracked as ongoing Open Work above, same method.

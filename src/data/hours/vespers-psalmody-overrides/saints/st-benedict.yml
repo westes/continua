@@ -1,15 +1,15 @@
 # Live-verified against Divinum Officium (Monastic Tridentinum 1617,
-# command=prayVespera, 2026-03-21, St. Benedict's own day). No Common-of-
-# an-Abbot Vespers category exists in this app (see vespers-psalmody-
-# overrides/categories/common-of-an-angel.yml's own header for the
-# analogous Common-less case) -- without this file, St. Benedict fell all
-# the way through to the plain ferial weekday default, a bigger gap than
-# most duplex-majus+ saints have. Psalms 109/110/111/112 ("Psalmi &
-# antiphonæ ex Proprio Sanctorum", confirmed live), antiphons 1/2/3/4 here
-# reuse his own Lauds antiphons 1/2/3/5 verbatim (Lauds antiphon 4, the
-# canticle-only one, has no Vespers slot) -- same historical minor-hours-
-# borrow-from-Lauds pattern already used for his Prime/Terce/Sext/None
-# antiphons, whose already-translated English is reused directly here too.
+# command=prayVespera, 2026-03-21, St. Benedict's own day). Without this
+# file he fell back to categories/common-of-a-confessor-not-bishop.yml
+# (its own `aliases` list registers `common-of-an-abbot` under that same
+# scheme) -- a real Common fallback, not the plain ferial default. This
+# file replaces that generic text with his own proper antiphons, at the
+# same psalm numbers ("Psalmi & antiphonæ ex Proprio Sanctorum", confirmed
+# live). Antiphons 1/2/3/4 here reuse his own Lauds antiphons 1/2/3/5
+# verbatim (Lauds antiphon 4, the canticle-only one, has no Vespers slot)
+# -- same historical minor-hours-borrow-from-Lauds pattern already used
+# for his Prime/Terce/Sext/None antiphons, whose already-translated
+# English is reused directly here too.
 id: st-benedict
 groups:
   - psalms: [109]

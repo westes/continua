@@ -1,0 +1,24 @@
+# Live-verified against Divinum Officium (Monastic Tridentinum 1617,
+# command=prayVespera, 2026-12-27, own day). Antiphons 1-3 (Ps 109/110/111)
+# are the shared Christmas-Octave scheme (byte-identical across St.
+# Stephen/St. John/Holy Innocents, all within the Octave); only antiphon 4
+# (Ps 129) is specific to St. John, not `common-of-an-evangelist`'s
+# generic text.
+id: st-john-apostle
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Tecum princípium * in die virtútis tuæ, in splendóribus sanctórum, ex útero ante lucíferum génui te."
+      en: "Thine shall be the dominion * in the day of thy power, amid the brightness of the saints, from the womb, before the day-star, have I begotten thee."
+  - psalms: [110]
+    antiphon:
+      la: "Redemptiónem * misit Dóminus pópulo suo: mandávit in ætérnum testaméntum suum."
+      en: "The Lord sent redemption * unto His people, He hath commanded His covenant for ever."
+  - psalms: [111]
+    antiphon:
+      la: "Exórtum est * in ténebris lumen rectis corde: miséricors, et miserátor, et justus Dóminus."
+      en: "Unto the upright there ariseth * light in the darkness; the Lord is gracious, and full of compassion, and righteous."
+  - psalms: [129]
+    antiphon:
+      la: "Apud Dóminum * misericórdia, et copiósa apud eum redémptio."
+      en: "With the Lord * there is mercy, and with Him is plenteous redemption."
