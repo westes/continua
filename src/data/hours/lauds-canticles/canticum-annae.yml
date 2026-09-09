@@ -5,9 +5,14 @@
 # corrected here rather than propagated, since it's a plain book-number slip
 # rather than a liturgical numbering convention (unlike Dan 3's own citation
 # style, which genuinely doesn't match ordinary chapter/verse numbering).
+# English citation uses the modern name "1 Sam" (1 Samuel), not Douay's
+# Vulgate-based "1 Kings" -- matching bible-plan.ts's own established
+# convention of the familiar modern book name over the Douay one, since
+# "1 Kings" reads to a modern English reader as Solomon's succession
+# narrative, not Hannah's Canticle (see scripture/index.ts's BOOK_ALIASES).
 id: canticum-annae
 name: Canticle of Anna
-citation: { la: "1 Reg 2:1-16", en: "1 Kings 2:1-16" }
+citation: { la: "1 Reg 2:1-16", en: "1 Sam 2:1-16" }
 verses:
   - n: "2:1"
     text:
