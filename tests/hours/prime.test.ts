@@ -152,7 +152,7 @@ describe('resolveOrdo("prime", ...)', () => {
   it('gives the capitulum its scripture citation', () => {
     const ordo = resolveOrdo('prime', MONDAY);
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
-    expect(chapter && chapter.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Zach. 8:19');
+    expect(chapter && chapter.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Zech. 8:19');
   });
 
   it('includes the Athanasian Creed on a Sunday but not a ferial day, and closes with the antiphon after it', () => {
