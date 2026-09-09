@@ -156,15 +156,19 @@ const STATUS_RANK = { verified: 0, draft: 1, missing: 2 } as const;
  * verse range from the slice's own first/last `n` values (e.g.
  * "32:1"/"32:32" -> "Deut 32:1-32") — showing the full "1-65" range on
  * both halves would mislabel whichever half isn't actually being said. */
-function sliceCitation(baseCitation: string, verses: CanticleVerse[]): string {
-  const book = baseCitation.split(' ')[0] ?? baseCitation;
+function sliceCitation(baseCitation: { la: string; en: string }, verses: CanticleVerse[]): { la: string; en: string } {
   const first = verses[0]?.n;
   const last = verses[verses.length - 1]?.n;
   if (!first || !last) {
     return baseCitation;
   }
   const lastVerse = last.split(':')[1] ?? last;
-  return `${book} ${first}-${lastVerse}`;
+  const result: { la: string; en: string } = { la: baseCitation.la, en: baseCitation.en };
+  for (const lang of ['la', 'en'] as const) {
+    const book = baseCitation[lang].split(' ').slice(0, -1).join(' ') || baseCitation[lang].split(' ')[0]!;
+    result[lang] = `${book} ${first}-${lastVerse}`;
+  }
+  return result;
 }
 
 /** Joins a canticle's verse array (or a `[start, end)` slice of it — see
@@ -197,7 +201,7 @@ function canticleText(canticleId: string, slice?: [number, number]): ResolvedTex
     status[lang] = worst;
   }
   const citation = slice ? sliceCitation(canticle.citation, verses) : canticle.citation;
-  return { text, status, citation: { la: citation, en: citation } };
+  return { text, status, citation };
 }
 
 /** Ps 66 through the Laudate psalms — see hours/types.ts's 'lauds-psalmody'

@@ -9,7 +9,11 @@ export interface CanticleVerse {
 export interface Canticle {
   id: string;
   name: string;
-  citation: string;
+  /** Per-language, matching the convention every other citation-bearing
+   * store in the project uses (e.g. nocturn-readings' "Joann"/"John") —
+   * a book name is not always the same abbreviation in both languages
+   * (canticum-annae's Vulgate "Reg" vs. Douay-Rheims English "Kings"). */
+  citation: { la: string; en: string };
   verses: CanticleVerse[];
 }
 
