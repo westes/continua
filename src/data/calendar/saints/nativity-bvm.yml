@@ -6,6 +6,12 @@
 id: nativity-bvm
 name: "The Nativity of the Blessed Virgin Mary"
 nameLa: "Nativitas Beatæ Mariæ Virginis"
+# Browser-tab title only (see calendar/feasts.ts's SaintRecord.titleName
+# doc comment) -- "Nativity" alone is ambiguous with Christ's own Nativity
+# (Christmas) and St. John the Baptist's, unlike Assumption/Immaculate
+# Conception/Sacred Heart below, so this keeps the "of the BVM" clause
+# rather than dropping it outright (2026-09-09 user decision/wording).
+titleName: "Nativity of the BVM"
 rank: duplex-2-classis
 common: common-of-the-bvm
 propers: "nativity-bvm"

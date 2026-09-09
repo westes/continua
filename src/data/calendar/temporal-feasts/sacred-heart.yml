@@ -14,6 +14,10 @@ name: "The Most Sacred Heart of Our Lord Jesus Christ"
 # Cordis Domini Nostri Jesu Christi", Tempora/Pent02-5.txt's [Officium]),
 # matching this app's own nominative-noun-phrase naming convention.
 nameLa: "Sacratissimum Cor Domini Nostri Jesu Christi"
+# Browser-tab title only (see calendar/feasts.ts's SaintRecord.titleName
+# doc comment) -- "Sacred Heart" alone is unambiguous, so this drops the
+# "of Our Lord Jesus Christ" clause entirely rather than abbreviating it.
+titleName: "Sacred Heart"
 rank: duplex-1-classis
 anchor:
   kind: easter

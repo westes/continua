@@ -5,6 +5,11 @@
 id: immaculate-conception
 name: "The Immaculate Conception of the Blessed Virgin Mary"
 nameLa: "Immaculata Conceptio Beatæ Mariæ Virginis"
+# Browser-tab title only (see calendar/feasts.ts's SaintRecord.titleName
+# doc comment) -- "Immaculate Conception" alone is unambiguous, unlike
+# nativity-bvm.yml's own "Nativity" case, so this drops the "of the BVM"
+# clause entirely rather than abbreviating it.
+titleName: "Immaculate Conception"
 rank: duplex-1-classis
 common: common-of-the-bvm
 propers: "immaculate-conception"

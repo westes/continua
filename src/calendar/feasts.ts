@@ -18,6 +18,23 @@ export interface SaintRecord {
   /** Latin form of `name`, when authored — see calendar/types.ts's
    * `SanctoralIdentity.nameLa` doc comment for the display fallback. */
   nameLa?: string;
+  /** Short form of `name` for the browser tab title only (see
+   * `ui/format.ts`'s `documentTitle`/`calendar/day-label.ts`'s
+   * `getDayTitleName`) — optional, authored only for the handful of names
+   * that overflow the title's length cap even after the generic role-
+   * clause stripping (e.g. `nativity-bvm.yml`'s "The Nativity of the
+   * Blessed Virgin Mary" → "Nativity of the BVM"). 2026-09-09 user
+   * decision: an explicit, curated override beats a generic truncation/
+   * suffix-stripping heuristic, which risks silently dropping
+   * disambiguating text (e.g. which BVM feast) rather than shortening it
+   * on purpose. Absent for the vast majority of saints, who don't need
+   * one — the tab title falls back to `name` (still role-clause-stripped
+   * and, failing that, word-boundary-truncated) when this is missing. */
+  titleName?: string;
+  /** Latin form of `titleName`, when authored. Rarely needed — the tab
+   * title falls back to `nameLa`/`name` for Latin when absent, same
+   * fallback chain `nameLa` itself uses. */
+  titleNameLa?: string;
   rank: FeastClass;
   common: string;
   propers: string | null;

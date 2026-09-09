@@ -33,6 +33,14 @@ export interface TemporalFeastRecord {
   /** Latin form of `name`, when authored — see calendar/types.ts's
    * `SanctoralIdentity.nameLa` doc comment for the display fallback. */
   nameLa?: string;
+  /** Short form of `name` for the browser tab title only — see
+   * `calendar/feasts.ts`'s `SaintRecord.titleName` doc comment for the
+   * full rationale (same field, same fallback chain, just the temporal-
+   * feast side — e.g. `sacred-heart.yml`'s "The Most Sacred Heart of Our
+   * Lord Jesus Christ" → "Sacred Heart"). */
+  titleName?: string;
+  /** Latin form of `titleName`, when authored. */
+  titleNameLa?: string;
   octave?: OctaveConfig;
   rank?: FeastClass;
   anchor?: MovableAnchor;

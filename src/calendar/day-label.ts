@@ -28,6 +28,7 @@ import { addDays, daysBetween, toIsoDate } from './date-math';
 import { getTemporalFeastRecord, movableTemporalFeasts } from './temporal-feasts';
 import { activeOctavesFor, octaveGoverningPrivilegedDay, resolveActiveOctave, type ActiveOctave } from './octaves';
 import { resolveTemporalId } from './temporal-id';
+import { getSaintRecord } from './feasts';
 
 interface Bi {
   en: string;
@@ -44,6 +45,17 @@ function bi(en: string, la: string): Bi {
  * hasn't been authored yet, same convention as `biFallback` above. */
 function biName(name: string, nameLa: string | undefined): Bi {
   return { en: name, la: nameLa ?? name };
+}
+
+/** Like `biName`, but prefers an explicit, curated short form (`titleName`/
+ * `titleNameLa` — see `calendar/feasts.ts`'s `SaintRecord.titleName` doc
+ * comment) when one has been authored, for browser-tab-title use only
+ * (`getDayTitleName`). `titleNameLa` is its own opt-in, independent of
+ * whether `titleName` is set — a short English form doesn't imply a short
+ * Latin one is wanted or even sensible, so the Latin side just falls back
+ * to the ordinary `nameLa`/`name` chain when it's absent. */
+function biTitleName(name: string, nameLa: string | undefined, titleName: string | undefined, titleNameLa: string | undefined): Bi {
+  return { en: titleName ?? name, la: titleNameLa ?? nameLa ?? name };
 }
 
 function joinBi(items: Bi[], sep = ' — '): Bi {
@@ -156,9 +168,9 @@ function weekdayLabel(day: LiturgicalDay): Bi {
 /** All Souls' Day (Nov 2) — the Office of the Dead. This is a pure
  * hour-level override (see hours/all-souls.ts), with no calendar-level
  * winner/octave of its own, so without the `getDayLabel` check that uses
- * this, Nov 2 falls through to the calendar's real answer — "Second day
- * within the Octave of All Saints" — which is calendar-accurate but not
- * what's actually being prayed that day. */
+ * this, Nov 2 falls through to the calendar's real answer — "Octave of
+ * All Saints — 2nd Day" — which is calendar-accurate but not what's
+ * actually being prayed that day. */
 export function isAllSouls(date: string): boolean {
   return date.slice(5) === '11-02';
 }
@@ -459,24 +471,46 @@ export function temporalLabel(day: LiturgicalDay): Bi {
     : bi(`${weekdayName.en} in the ${ordinalStr} week ${config.preposition} ${config.ordinalName.en}`, `${weekdayName.la} in ${weekPhraseLa}`);
 }
 
-/** "Third Day within the Octave of St. Lawrence" for an ordinary mid-octave
- * day ("Tertia die infra Octavam S. Laurentii Martyris"), or plain "Octave
- * of St. Lawrence" for the octave's own closing day ("In Octava S.
- * Laurentii Martyris") — real DO Latin distinguishes "infra octavam"
- * (within the octave, days 2-7) from "in octava" (on the octave day
- * itself, day 8), live-verified: Aug 17 (St. Lawrence's closing day)
- * titles itself "In Octava S. Laurentii Martyris", not "Octava die infra
- * Octavam...". Day 1 shouldn't normally reach either branch (that day's
- * own winner is the feast itself, handled above before this is ever
- * called) — kept simple rather than special-cased for that rare edge case
- * (see applyOctaves's own `isOwnStartDay` comment in calendar/index.ts for
- * when it can happen). Falls back to the English name for `la` too when
- * the octave's own record has no authored `nameLa` yet (see file header). */
+// Lowercases a feast's own leading "The" article when it's embedded
+// mid-phrase after "Octave of" — the raw `name` field ("The Nativity of
+// the Blessed Virgin Mary") is written to stand alone as a feast title
+// (capital "The"), so composing it in place produces a stray,
+// ungrammatical mid-sentence capital ("...Octave of The Nativity...").
+// The article itself is still grammatically required ("Octave of the
+// Nativity", not "Octave of Nativity"), just not capitalized there. Latin
+// has no articles, so this only ever needs to run on the English side.
+function lowercaseLeadingArticle(name: string): string {
+  return name.replace(/^The\b/, 'the');
+}
+
+/** "Octave of St. Lawrence — 3rd Day" for an ordinary mid-octave day
+ * ("Octava S. Laurentii Martyris — Dies Tertia"), or plain "Octave of St.
+ * Lawrence" for the octave's own closing day ("In Octava S. Laurentii
+ * Martyris") — real DO Latin distinguishes "infra octavam" (within the
+ * octave, days 2-7) from "in octava" (on the octave day itself, day 8),
+ * live-verified: Aug 17 (St. Lawrence's closing day) titles itself "In
+ * Octava S. Laurentii Martyris", not "Octava die infra Octavam...".
+ * Day 1 shouldn't normally reach either branch (that day's own winner is
+ * the feast itself, handled above before this is ever called) — kept
+ * simple rather than special-cased for that rare edge case (see
+ * applyOctaves's own `isOwnStartDay` comment in calendar/index.ts for when
+ * it can happen). Falls back to the English name for `la` too when the
+ * octave's own record has no authored `nameLa` yet (see file header).
+ *
+ * Name-first, day-count-last (2026-09-09 user decision): a long feast name
+ * (the Nativity/Immaculate Conception/Sacred Heart octaves all run past the
+ * browser-tab title's length cap — see `ui/format.ts`'s `documentTitle`)
+ * puts the identifying part first and the least essential part (which day
+ * of the octave this is) last, using this app's usual `" — "` joiner
+ * (`joinBi`) so a title that must truncate drops the day-count suffix
+ * rather than chopping into the name itself. The old ordinal-first English
+ * phrasing ("3rd Day within the Octave of X") is retired in favor of this
+ * everywhere, not just for long names, so every octave day reads the same
+ * shape. */
 function octaveCoreName(octave: ActiveOctave): Bi {
   const name = biName(octave.name, octave.nameLa);
-  return octave.isClosingDay
-    ? bi(`Octave of ${name.en}`, `In Octava ${name.la}`)
-    : bi(`${ordinal(octave.dayNumber)} Day within the Octave of ${name.en}`, `${ordinalLa(octave.dayNumber)} die infra Octavam ${name.la}`);
+  const octaveOf = bi(`Octave of ${lowercaseLeadingArticle(name.en)}`, `Octava ${name.la}`);
+  return octave.isClosingDay ? bi(octaveOf.en, `In ${octaveOf.la}`) : joinBi([octaveOf, bi(`${ordinal(octave.dayNumber)} Day`, `Dies ${ordinalLa(octave.dayNumber)}`)]);
 }
 
 function octaveLabel(octave: ActiveOctave): Bi {
@@ -496,6 +530,18 @@ function octaveLabel(octave: ActiveOctave): Bi {
  * instead). */
 function octaveCommemorationLabel(octave: ActiveOctave): Bi {
   return octaveCoreName(octave);
+}
+
+/** `getDayTitleName`'s own octave form — "Octave of {short name}", no day
+ * count and no rank (the day count in particular is what `octaveCoreName`
+ * puts *last* specifically so a still-too-long title can drop it via
+ * truncation; here there's no need to lean on truncation for that at all,
+ * since the title never wanted the day count in the first place). Prefers
+ * `titleName` when the octave's own source record authored one (see
+ * `calendar/feasts.ts`'s `SaintRecord.titleName` doc comment). */
+function octaveTitleName(octave: ActiveOctave): Bi {
+  const name = biTitleName(octave.name, octave.nameLa, octave.titleName, octave.titleNameLa);
+  return bi(`Octave of ${octave.titleName ? name.en : lowercaseLeadingArticle(name.en)}`, `Octava ${name.la}`);
 }
 
 /** Real Divino Afflatu phrasing for a commemoration that only exists
@@ -546,8 +592,8 @@ const CROSS_DAY_VESPERS_LABELS: Record<'today' | 'tomorrow', Bi> = {
  *   Assumption's octaves, even though both are technically active) —
  *   octaves are only shown on `ordinary-feria` (no real standing of its
  *   own to prefer instead) or when the octave itself is governing the
- *   headline. Rendered via `octaveCommemorationLabel` — the "Nth Day
- *   within the Octave of X" phrasing, no rank.
+ *   headline. Rendered via `octaveCommemorationLabel` — the "Octave of X
+ *   — Nth Day" phrasing, no rank.
  */
 function collectCommemorations(
   day: LiturgicalDay,
@@ -855,4 +901,45 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
   const temporal = bi(`${label.en} (${temporalRank.en})`, `${label.la} (${temporalRank.la})`);
   const { sanctoral } = collectCommemorations(day, { showOctaves: false });
   return withTransferNote(day, joinBi([temporal, ...sanctoral]));
+}
+
+/**
+ * The day's own primary identity, alone — no rank, no commemorations, no
+ * transfer note — for the browser tab title (`ui/format.ts`'s
+ * `documentTitle`) specifically. Mirrors `getDayLabel`'s own primary-
+ * selection precedence (All Souls > sanctoral winner > named temporal
+ * feast > season anchor day > governing octave > plain ordinal label) so
+ * the title always names whatever the header's own headline names, just
+ * without the trailing detail — but unlike `getDayLabel`, prefers each
+ * record's authored `titleName`/`titleNameLa` (see `calendar/feasts.ts`'s
+ * `SaintRecord.titleName` doc comment) over the full name wherever one
+ * exists, since a curated short form is exactly what a tab title wants
+ * and the header text doesn't. Returns `undefined` for the plain-ordinal
+ * fallback branch (e.g. "Wednesday in the 11th week after Trinity") —
+ * that branch has no named record to shorten and is already short enough
+ * in practice, so `documentTitle` falls back to its own generic role-
+ * clause-stripping/truncation of `getDayLabel`'s output for it instead of
+ * duplicating that logic here too. */
+export function getDayTitleName(day: LiturgicalDay): Bi | undefined {
+  if (isAllSouls(day.date)) {
+    return bi("All Souls' Day", 'In Commemoratióne Ómnium Fidélium Defunctórum');
+  }
+  if (day.winner.kind === 'sanctoral') {
+    const record = getSaintRecord(day.winner.id);
+    return biTitleName(day.winner.name, day.winner.nameLa, record?.titleName, record?.titleNameLa);
+  }
+  const namedFeast = getTemporalFeastRecord(day.winner.id);
+  if (namedFeast) {
+    return biTitleName(namedFeast.name, namedFeast.nameLa, namedFeast.titleName, namedFeast.titleNameLa);
+  }
+  const anchorName = anchorDayName(day);
+  if (anchorName) {
+    return anchorName;
+  }
+  const activeOctave =
+    day.temporalCategory === 'ordinary-feria' ? resolveActiveOctave(day.date) : octaveGoverningPrivilegedDay(day);
+  if (activeOctave) {
+    return octaveTitleName(activeOctave);
+  }
+  return undefined;
 }

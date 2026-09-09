@@ -1,7 +1,7 @@
 import { getState, subscribe } from '../app-state';
 import { resolveDay } from '../calendar';
 import { resolveEveningDay } from '../calendar/vespers';
-import { getDayLabel } from '../calendar/day-label';
+import { getDayLabel, getDayTitleName } from '../calendar/day-label';
 import { renderDayNav } from './day-nav';
 import { renderHourList } from './hour-list';
 import { renderHourView } from './hour-view';
@@ -38,7 +38,7 @@ export function mountShell(root: HTMLElement): void {
     const { date, selectedHour, languages } = getState();
     const isEveningHour = selectedHour === 'vespers' || selectedHour === 'compline';
     const day = isEveningHour ? resolveEveningDay(date) : resolveDay(date);
-    document.title = documentTitle(selectedHour, getDayLabel(day), languages);
+    document.title = documentTitle(selectedHour, getDayLabel(day), languages, getDayTitleName(day));
   }
 
   render();

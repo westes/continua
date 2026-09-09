@@ -226,7 +226,7 @@ describe('getDayLabel — active octave', () => {
     // so she's commemorated rather than winning. Matches the live engine's
     // own title for this date directly (see saints/st-clare.yml).
     expect(getDayLabel(resolveDay('2026-08-12')).en).toBe(
-      '3rd Day within the Octave of St. Lawrence, Deacon and Martyr (Semiduplex) — St. Clare, Virgin',
+      'Octave of St. Lawrence, Deacon and Martyr — 3rd Day (Semiduplex) — St. Clare, Virgin',
     );
   });
 
@@ -244,7 +244,7 @@ describe('getDayLabel — active octave', () => {
     // "real content closed the gap" shape as August's Lawrence/Assumption
     // overlap. Day 3 of the same octave (2028-11-03, a Friday) is still
     // genuinely open -- no sanctoral entry, no separate commemoration.
-    expect(getDayLabel(resolveDay('2028-11-03')).en).toBe('3rd Day within the Octave of All Saints (Semiduplex)');
+    expect(getDayLabel(resolveDay('2028-11-03')).en).toBe('Octave of All Saints — 3rd Day (Semiduplex)');
   });
 
   it("Trinity Sunday itself outranks Pentecost's own octave, which is technically still active on the same day (day 8)", () => {
@@ -287,18 +287,18 @@ describe('getDayLabel — active octave', () => {
     // Lawrence's elevated closing day in rank, and the closing day wins
     // that tie regardless of which octave started more recently. The
     // Assumption's own day 3 still gets named, not dropped, alongside
-    // it -- with its own full "Nth Day within the Octave of X" phrasing,
-    // not a bare name: live-verified directly (Divino Afflatu 1954, where
+    // it -- with its own full "Octave of X -- Nth Day" phrasing, not a
+    // bare name: live-verified directly (Divino Afflatu 1954, where
     // Aug 17's real winner is Hyacinth himself, not Lawrence's octave -- a
     // different rubric-track outcome, but the same commemoration phrasing
     // question): "Commemoratio: Tertia die infra Octavam S. Assumptionis
     // Beatæ Mariæ Virginis", not a bare "The Assumption of the Blessed
     // Virgin Mary".
     expect(getDayLabel(resolveDay('2026-08-17')).en).toBe(
-      'Octave of St. Lawrence, Deacon and Martyr (Duplex) — 3rd Day within the Octave of The Assumption of the Blessed Virgin Mary — St. Hyacinth, Confessor',
+      'Octave of St. Lawrence, Deacon and Martyr (Duplex) — Octave of the Assumption of the Blessed Virgin Mary — 3rd Day — St. Hyacinth, Confessor',
     );
     expect(getDayLabel(resolveDay('2026-08-18')).en).toBe(
-      '4th Day within the Octave of The Assumption of the Blessed Virgin Mary (Duplex) — St. Agapitus, Martyr',
+      'Octave of the Assumption of the Blessed Virgin Mary — 4th Day (Duplex) — St. Agapitus, Martyr',
     );
   });
 
@@ -345,7 +345,7 @@ describe('getDayLabel — active octave', () => {
     // resolveOfficeWinner for the actual office content, not just this
     // label).
     expect(getDayLabel(resolveDay('2026-12-15')).en).toBe(
-      'Octave of The Immaculate Conception of the Blessed Virgin Mary (Duplex) — St. Eusebius of Vercelli, Bishop and Martyr',
+      'Octave of the Immaculate Conception of the Blessed Virgin Mary (Duplex) — St. Eusebius of Vercelli, Bishop and Martyr',
     );
   });
 
@@ -373,7 +373,7 @@ describe('getDayLabel — active octave', () => {
     // reference engine's own live behavior (which has Eudes winning
     // outright as Duplex) -- see CLAUDE.md's "not a reconstruction" note.
     expect(getDayLabel(resolveDay('2026-08-19')).en).toBe(
-      '5th Day within the Octave of The Assumption of the Blessed Virgin Mary (Duplex) — St. John Eudes, Confessor',
+      'Octave of the Assumption of the Blessed Virgin Mary — 5th Day (Duplex) — St. John Eudes, Confessor',
     );
   });
 });

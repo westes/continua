@@ -20,6 +20,13 @@ export interface ActiveOctave {
   /** Latin form of `name`, when authored — see calendar/types.ts's
    * `SanctoralIdentity.nameLa` doc comment for the display fallback. */
   nameLa?: string;
+  /** Short form of `name` for the browser tab title only — see
+   * `calendar/feasts.ts`'s `SaintRecord.titleName` doc comment. Sourced
+   * from whichever underlying record (saint or temporal feast) declared
+   * this octave. */
+  titleName?: string;
+  /** Latin form of `titleName`, when authored. */
+  titleNameLa?: string;
   /** This octave's own effective rank *today* — the ordinary `wins`
    * threshold on every day except its own closing day, where it's
    * `closingDayRank` instead (see calendar/types.ts's OctaveConfig).
@@ -53,6 +60,8 @@ function considerCandidate(
   id: string,
   name: string,
   nameLa: string | undefined,
+  titleName: string | undefined,
+  titleNameLa: string | undefined,
   octave: OctaveConfig | undefined,
 ): void {
   if (!octave?.enabled || seen.has(id)) {
@@ -67,7 +76,7 @@ function considerCandidate(
   const dayNumber = offset + 1;
   const isClosingDay = dayNumber === days;
   const wins = isClosingDay ? (octave.closingDayRank ?? DEFAULT_CLOSING_DAY_RANK) : (octave.wins ?? DEFAULT_WINS);
-  active.push({ id, name, nameLa, wins, dayNumber, isClosingDay });
+  active.push({ id, name, nameLa, titleName, titleNameLa, wins, dayNumber, isClosingDay });
 }
 
 /** Every octave (sanctoral or temporal) whose window covers `isoDate`,
@@ -84,14 +93,14 @@ export function activeOctavesFor(isoDate: string): ActiveOctave[] {
     for (const candidate of getSanctoralCandidatesFor(candidateDate)) {
       const record = getSaintRecord(candidate.id);
       if (record) {
-        considerCandidate(active, seen, isoDate, candidateDate, record.id, record.name, record.nameLa, record.octave);
+        considerCandidate(active, seen, isoDate, candidateDate, record.id, record.name, record.nameLa, record.titleName, record.titleNameLa, record.octave);
       }
     }
 
     for (const feastId of temporalFeastIdsStartingOn(candidateDate)) {
       const record = getTemporalFeastRecord(feastId);
       if (record) {
-        considerCandidate(active, seen, isoDate, candidateDate, record.id, record.name, record.nameLa, record.octave);
+        considerCandidate(active, seen, isoDate, candidateDate, record.id, record.name, record.nameLa, record.titleName, record.titleNameLa, record.octave);
       }
     }
   }

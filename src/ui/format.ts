@@ -100,21 +100,47 @@ function stripRoleDescriptor(name: string): string {
 /** Browser tab title: "Continua · Hour · Celebration" — enough to tell tabs
  * apart when several hours/days are open at once, without the full
  * commemoration list `getDayLabel` appends (that's for the page header,
- * not for scanning tabs by "which one am I looking for"). `dayLabel` is
- * `getDayLabel`'s output; every one of its branches joins the primary
- * name and any trailing commemorations/transfer notes with the same
- * ` — ` separator, so splitting on it and taking the first piece reliably
- * recovers just the primary celebration, truncated if it's still long. The
- * rank parenthetical every branch appends to that primary name (e.g. "St.
- * Jerome (Duplex)") and any trailing "what sort of saint" clause (e.g.
- * "St. Lawrence Justinian, Bishop and Confessor") are stripped too —
- * neither is what you're scanning tabs for, just the name. */
-export function documentTitle(hourId: string, dayLabel: Partial<Record<string, string>>, languages: readonly string[]): string {
+ * not for scanning tabs by "which one am I looking for"). `titleName` is
+ * `calendar/day-label.ts`'s `getDayTitleName(day)` — the day's own primary
+ * identity alone, preferring each record's authored `titleName`/
+ * `titleNameLa` over its full name wherever the app has one (2026-09-09
+ * user decision: an explicit, curated short form beats a generic
+ * truncation/suffix-stripping heuristic, which risks silently dropping
+ * disambiguating text rather than shortening it on purpose — an earlier
+ * version of this function tried exactly that heuristic and still left
+ * "Nativity of the Blessed…" on the Nativity BVM's own octave title).
+ * `getDayTitleName` returns `undefined` for the one branch with no named
+ * record to shorten (the plain ordinal label, e.g. "Wednesday in the 11th
+ * week after Trinity") — `dayLabel` (`getDayLabel`'s own output) is the
+ * fallback for that case: every branch there joins the primary name and
+ * any trailing commemorations/transfer notes with the same ` — `
+ * separator, so splitting on it and taking the first piece reliably
+ * recovers just the primary celebration. Either way, the rank
+ * parenthetical every `getDayLabel` branch appends to its primary name
+ * (e.g. "St. Jerome (Duplex)") and any trailing "what sort of saint"
+ * clause (e.g. "St. Lawrence Justinian, Bishop and Confessor") are
+ * stripped, and the result is truncated if it's still long — none of that
+ * is what you're scanning tabs for, just the name. */
+export function documentTitle(
+  hourId: string,
+  dayLabel: Partial<Record<string, string>>,
+  languages: readonly string[],
+  titleName?: Partial<Record<string, string>>,
+): string {
   const primaryLanguage = languages[0] ?? 'en';
   const fullLabel = dayLabel[primaryLanguage] ?? dayLabel.en ?? dayLabel.la ?? '';
-  let celebration = stripRoleDescriptor((fullLabel.split(' — ')[0] ?? '').replace(/ \([^()]*\)$/, ''));
+  const titlePrimary = titleName?.[primaryLanguage] ?? titleName?.en ?? titleName?.la;
+  const primary = titlePrimary ?? (fullLabel.split(' — ')[0] ?? '').replace(/ \([^()]*\)$/, '');
+  let celebration = stripRoleDescriptor(primary);
   if (celebration.length > TITLE_CELEBRATION_MAX_LENGTH) {
-    celebration = `${celebration.slice(0, TITLE_CELEBRATION_MAX_LENGTH - 1)}…`;
+    // Trim back to the last whole word before the cap, so a long name
+    // (e.g. an octave of the Nativity/Immaculate Conception/Sacred Heart)
+    // ends in "…" after a real word rather than a chopped-off fragment
+    // mid-word. Falls back to the hard slice only for the pathological
+    // case of a single word longer than the whole cap.
+    const truncated = celebration.slice(0, TITLE_CELEBRATION_MAX_LENGTH - 1);
+    const lastSpace = truncated.lastIndexOf(' ');
+    celebration = `${lastSpace > 0 ? truncated.slice(0, lastSpace) : truncated}…`;
   }
   const parts = ['Continua', hourLabel(hourId), celebration].filter(Boolean);
   return parts.join(' · ');

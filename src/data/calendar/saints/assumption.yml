@@ -7,6 +7,11 @@
 id: assumption
 name: "The Assumption of the Blessed Virgin Mary"
 nameLa: "Assumptio Beatæ Mariæ Virginis"
+# Browser-tab title only (see calendar/feasts.ts's SaintRecord.titleName
+# doc comment) -- "Assumption" alone is unambiguous, so this drops the
+# "of the BVM" clause entirely rather than abbreviating it (same reasoning
+# as immaculate-conception.yml's own titleName).
+titleName: "Assumption"
 rank: duplex-1-classis
 common: common-of-the-bvm
 propers: "assumption"
