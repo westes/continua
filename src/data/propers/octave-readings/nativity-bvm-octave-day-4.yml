@@ -6,23 +6,31 @@
 # drop question marks entirely in places) -- not corrected here, since
 # guessing where they belong isn't the same class of fix as an isolated
 # single-character typo.
+#
+# 2026-09-09: same shape as nativity-bvm-octave-day-2.yml's own fix --
+# both `text.la` and `text.en` had the source citation baked into their
+# opening words (redundant with the `source` field above), and the
+# source's own commemoration of Ss. Protus and Hyacinth (also Sep 11) was
+# appended as a third paragraph under Bernard's own attribution, mixing
+# an unrelated source into one attributed reading and duplicating the
+# ordinary per-saint pooling mechanism's own independent pull of
+# nocturn-readings/ss-protus-and-hyacinth.yml for the same saints (in
+# this case a near-verbatim duplicate, not even differently worded).
+# Both stripped; Protus and Hyacinth's own commemoration reading is
+# sourced from that file alone now.
 id: nativity-bvm-octave-day-4
 source:
   la: "Sermo sancti Bernardi Abbatis."
   en: "Sermon of St. Bernard, Abbot"
 text:
   la: |
-    Sermo sancti Bernardi Abbatis. Sermo in cap. 12. Apocalypsis, ante medium. Novum fecit Dominus super terram, ut mulier circumdaret virum, nec alium quam Christum, de quo dicitur: Ecce vir, Oriens nomen ejus. Novum quoque fecit in cælo, ut mulier sole appareret amicta. Denique et coronavit eum, et vicissim ab eo meruit coronari. Egredimini filiæ Sion, et videte regem Salomonem in diademate, quo coronavit eum mater sua. Verum hoc alias. Interim sane ingredimini magis, et videte Reginam in diademate, quo coronavit eam filius suus. In capite, inquit, ejus corona stellarum duodecim.
+    Novum fecit Dominus super terram, ut mulier circumdaret virum, nec alium quam Christum, de quo dicitur: Ecce vir, Oriens nomen ejus. Novum quoque fecit in cælo, ut mulier sole appareret amicta. Denique et coronavit eum, et vicissim ab eo meruit coronari. Egredimini filiæ Sion, et videte regem Salomonem in diademate, quo coronavit eum mater sua. Verum hoc alias. Interim sane ingredimini magis, et videte Reginam in diademate, quo coronavit eam filius suus. In capite, inquit, ejus corona stellarum duodecim.
 
     Dignum plane stellis coronari caput, quod et ipsis longe clarius micans, ornet eas potius quam ornetur ab eis. Quidni coronent sidera, quam sol vestit? Sicut dies verni, ait, circumdabant eam flores rosarum et lilia convallium. Nimirum læva sponsi sub capite ejus, et jam dextera illius amplexatur eam. Quis illas æstimet gemmas? Quis stellas nominet, quibus Mariæ regium diadema compactum est?
-
-    Commemoratio pro Ss. Mart. Proto et Hyacintho. Protus et Hyacinthus fratres, beátæ Eugeniæ Vírginis eunuchi, una cum illa ab Héleno episcopo baptizati, ac stúdiis déditi divinárum litterárum, aliquámdiu in Ægypto inter ascetas mira humilitate et vitæ sanctitáte vixérunt. Sed póstea, sanctam Vírginem Eugeniam Romam prosecuti, Gallieno imperatóre, in Urbe propter christianæ fidei professiónem comprehénsi sunt. Aquibus cum nullo modo impetrari posset ut, christianam religiónem deseréntes, deos cólerent, acerbis verbéribus cæsi, secúri feriúntur tertio Idus Septembris.
   en: |
-    From the Sermons of St. Bernard, Abbot (of Clairvaux) on Apoc. xii, I The Lord hath created a new thing in the earth, a woman shall compass a man. ~Jer. xxxi. 22. And this man is no other than Christ, of Whom it is said Behold the Man Whose name is The Dayspring Zech. vi. 12.  In heaven also hath the Lord created a new thing, a woman clothed with the sun. She also hath crowned Him and hath earned from Him a crown in return. Go forth, O ye daughters of Zion, and behold King Solomon with the crown wherewith his mother crowned him. Cant. iii. ii. And again go forth now, and behold the Queen with the crown wherewith her Son crowned her. And upon her head, saith St. John, a crown of twelve stars.
+    The Lord hath created a new thing in the earth, a woman shall compass a man. ~Jer. xxxi. 22. And this man is no other than Christ, of Whom it is said Behold the Man Whose name is The Dayspring Zech. vi. 12.  In heaven also hath the Lord created a new thing, a woman clothed with the sun. She also hath crowned Him and hath earned from Him a crown in return. Go forth, O ye daughters of Zion, and behold King Solomon with the crown wherewith his mother crowned him. Cant. iii. ii. And again go forth now, and behold the Queen with the crown wherewith her Son crowned her. And upon her head, saith St. John, a crown of twelve stars.
 
     What is an head worthy to be crowned with stars whose own glory is greater than theirs, and rather giveth than receiveth lustre from them. Why should not she have stars for her crown, who hath the sun for her clothing? And about her it was as the flower of roses in the spring of the year, and lilies of the valleys. Ecclus. 1, 8. The left hand of her Bridegroom is under her head, and his right hand doth embrace her. Cant. ii, 6 Who shall appraise these starry jewels whereof is made the Queenly crown of Mary?
-
-    Commemoration for the holy Martyrs Protus and Hyacinth Protus and Hyacinth were brethren, eunuchs of the blessed Virgin Eugenia, and were baptized along with her by Bishop Helenus. They gave themselves to the study of God's Word, and dwelt for a while in wonderful lowliness and holiness of life in a monastery in Egypt. However, they afterwards followed the holy Virgin Eugenia to Rome, in the reign of the Emperor Gallienus, and were arrested in that city for professing the Christian faith. By no means could they be brought to leave the Christian religion and to worship the gods, and they were therefore severely scourged and beheaded, upon the 11th day of September.
 responsory:
   la: |
     R. Hódie nata est beáta Virgo María ex progénie David; * Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo. V. Nativitátem beátæ Maríæ Vírginis cum gáudio celebrémus. R. Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo.

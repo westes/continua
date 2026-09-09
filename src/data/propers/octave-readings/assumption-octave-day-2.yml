@@ -11,13 +11,20 @@
 # variant files drop question marks entirely in places) -- not corrected here,
 # since guessing where they belong isn't the same class of fix as an isolated
 # single-character typo.
+#
+# 2026-09-09: `text.la` had the source citation ("Sermo sancti Joannis
+# Damasceni Orat. 2 de Dorm. Deiparæ") baked into its opening words, run
+# on directly into the sermon's own text with no separating punctuation --
+# redundant with the `source` field above, which already renders as this
+# reading's label. Stripped (part of a repo-wide sweep of octave-readings
+# files with the same pattern).
 id: assumption-octave-day-2
 source:
   la: "Sermo sancti Joannis Damasceni"
   en: "Sermon of St. John Damascene"
 text:
   la: |
-    Sermo sancti Joannis Damasceni Orat. 2 de Dorm. Deiparæ Jubilemus in arca Domini Dei toto animo, et muri cadent Hiericontini, contrariarum, inquam potestatum infestæ munitiones. Cum David exsultemus spiritu. Arca enim Domini hodie requievit. Clamemus cum Gabriele, qui primum locum obtinet inter angelos: Ave gratia plena: dominus tecum. Ave gaudii pelagus inexhaustum. Ave unicum molestiarum levamen. Aue omnium cordis dolorum medicamentum. Ave sancta virgo per quam mors quidem fuit expulsa, vita autem introducta.
+    Jubilemus in arca Domini Dei toto animo, et muri cadent Hiericontini, contrariarum, inquam potestatum infestæ munitiones. Cum David exsultemus spiritu. Arca enim Domini hodie requievit. Clamemus cum Gabriele, qui primum locum obtinet inter angelos: Ave gratia plena: dominus tecum. Ave gaudii pelagus inexhaustum. Ave unicum molestiarum levamen. Aue omnium cordis dolorum medicamentum. Ave sancta virgo per quam mors quidem fuit expulsa, vita autem introducta.
 
     Tu vero o sacrorum sepulcrorum sacratissimum, post domini quidem sepulcrum, quod uitæ dedit principium, quod fuit fons resurrectionis, (tecum enim loquar tamquam cum animato) ubinam est aurum illud purum, quod manus apostolorum in te condiderunt! Ubi divitiæ, quæ consumi nequeunt! Ubi novum uolumen, in quo ineffabiliter deus uerbum sine manu inscriptum fuit! Ubi abyssus gratiæ? Ubi pelagus curationum? Ubi est desiderabile illud deiparæ uirginis corpus?
 

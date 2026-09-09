@@ -12,13 +12,18 @@
 # than duplicated or translated here, same as day 2. Responsory is the
 # same recurring "Vidi speciosam" already used on days 2, 4, and 5 --
 # a standing octave-wide responsory, not day-specific.
+#
+# 2026-09-09: `text.la` had the source citation baked into its opening
+# words, run on directly into the sermon's own text with no separating
+# punctuation -- redundant with the `source` field above. Stripped (part
+# of a repo-wide sweep of octave-readings files with the same pattern).
 id: assumption-octave-day-3
 source:
   la: "Sermo sancti Joannis Damasceni"
   en: "Sermon of St. John Damascene"
 text:
   la: |
-    Sermo sancti Joánnis Damascéni Orat. 2 de Dormit. Deíparæ Jubilémus in arca Dómini Dei toto ánimo, et muri cadent Jerichuntíni, contrariárum, inquam, potestátum inféstæ munitiónes. Cum David exsultémus spíritu: Arca enim Dómini hódie requiévit. Clamémus cum Gabriéle, qui primum locum óbtinet inter Angelos: Ave, grátia plena; Dóminus tecum. Ave, gáudii pélagus inexháustum: ave, únicum molestiárum levámen: ave, ómnium cordis dolórum medicaméntum. Ave, sancta Virgo, per quam mors quidem fuit expúlsa, vita autem introdúcta.
+    Jubilémus in arca Dómini Dei toto ánimo, et muri cadent Jerichuntíni, contrariárum, inquam, potestátum inféstæ munitiónes. Cum David exsultémus spíritu: Arca enim Dómini hódie requiévit. Clamémus cum Gabriéle, qui primum locum óbtinet inter Angelos: Ave, grátia plena; Dóminus tecum. Ave, gáudii pélagus inexháustum: ave, únicum molestiárum levámen: ave, ómnium cordis dolórum medicaméntum. Ave, sancta Virgo, per quam mors quidem fuit expúlsa, vita autem introdúcta.
 
     Tu vero, o sacrórum sepulcrórum sacratíssimum post Dómini quidem sepúlcrum, quod vitæ dedit princípium, quod fuit fons resurrectiónis (tecum enim loquar, tamquam cum animáto): úbinam est aurum illud purum, quod manus Apostolórum in te condidérunt? Ubi divítiæ, quæ consúmi néqueunt? Ubi pretiósus ille thesáurus, qui vitam suscépit? Ubi novum volúmen, in quo ineffabíliter Dei Verbum sine manu inscríptum fuit? Ubi abýssus grátiæ, ubi pélagus curatiónum? Ubi est desiderábile illud Deíparæ Vírginis corpus?
 

@@ -1008,6 +1008,48 @@ describe('resolveOrdo("matins", ...) ferial temporal-pool suppression (2026-09-0
   });
 });
 
+describe('resolveOrdo("matins", ...) octave-day-with-demoted-saint reading pool (2026-09-09 fix)', () => {
+  // 2026-09-09: 2nd day within the Nativity of the BVM's octave, St.
+  // Gorgonius (Simplex) demoted to a commemoration. `resolveOfficeWinner`
+  // synthesizes a sanctoral (Nativity-of-BVM) office winner for psalmody
+  // purposes, which pushes Matins into 3-nocturn mode even though the real
+  // calendar `day.winner` stays `{kind: 'temporal', id: 'post-pentecost-15'}`
+  // -- previously that combination wrongly pooled the plain governing
+  // week's own ferial content (Gregory's Moralia in Job homily, labeled
+  // "for Wednesday in the 14th week after Trinity") into an octave day
+  // that is not a bare ferial day at all. Also live-verified the same day:
+  // St. Gorgonius's own commemoration text was duplicated (once from the
+  // octave's own Matins reading file, which had it manually appended
+  // under Augustine's attribution; once from his own nocturn-readings
+  // file), and the octave reading's mixed attribution rendered garbled.
+  it('does not pool the plain governing week\'s own ferial content on an octave day', () => {
+    const ordo = resolveOrdo('matins', '2026-09-09');
+    const readingLabels = ordo.parts
+      .filter((p) => p.kind === 'lesson' || p.kind === 'gospel')
+      .map((p) => JSON.stringify((p as { label?: unknown }).label ?? (p as { source?: unknown }).source ?? ''));
+    expect(readingLabels.some((l) => l.includes('14th week after Trinity'))).toBe(false);
+    expect(readingLabels.some((l) => l.includes('Moralia in Job'))).toBe(false);
+  });
+
+  it('never pools the same reading text twice across sources', () => {
+    const ordo = resolveOrdo('matins', '2026-09-09');
+    const texts = ordo.parts
+      .filter((p) => p.kind === 'lesson' || p.kind === 'gospel')
+      .map((p) => (p as { text: { text: { la?: string; en?: string } } }).text.text.la ?? '')
+      .filter(Boolean);
+    expect(new Set(texts).size).toBe(texts.length);
+  });
+
+  it("the octave's own Matins reading cites only its own source, not an unrelated commemorated saint", () => {
+    const ordo = resolveOrdo('matins', '2026-09-09');
+    const augustineReading = ordo.parts.find(
+      (p) => p.kind === 'lesson' && JSON.stringify((p as { label?: unknown }).label).includes('Augustine'),
+    ) as { text: { text: { la?: string } } } | undefined;
+    expect(augustineReading).toBeDefined();
+    expect(augustineReading?.text.text.la).not.toContain('Gorgónius');
+  });
+});
+
 // Coverage gap fix (no bug found): the pre-existing ferial-branch test
 // above only asserted the opening invitatory antiphon *contains* "Veníte,"
 // true for both the incipit ("Ant. Veníte.") and full ("Ant. Veníte, *

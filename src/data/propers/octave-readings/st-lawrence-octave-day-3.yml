@@ -10,13 +10,17 @@
 # question marks entirely in places) -- not corrected here, since guessing
 # where they belong isn't the same class of fix as an isolated single-
 # character typo.
+#
+# 2026-09-09: `text.la` had the source citation baked into its opening
+# words, redundant with the `source` field above. Stripped (part of a
+# repo-wide sweep of octave-readings files with the same pattern).
 id: st-lawrence-octave-day-3
 source:
   la: "De Sermone S. Augustini Episcopi"
   en: "From a Sermon of St. Augustine, Bishop"
 text:
   la: |
-    De Sermone S. Augustini Episcopi Ex Sermo 30, de Sanctis Legimus Ananiam, Azariam et Misaelem beatissimos pueros a rege in camino ignis inclusos in poenarum suarum deambulasse flammis, et igneos globos pedibus conculcasse. Unde et beatus Laurentius non minori gloria est praeferendus; siquidem illi in poenarum suarum flammis ambulant, hic et in ipso supplicii sui igne discumbit; illi vestigiis pedum conculcaverunt incendia, iste laterum suorum diffusione extinxit.
+    Legimus Ananiam, Azariam et Misaelem beatissimos pueros a rege in camino ignis inclusos in poenarum suarum deambulasse flammis, et igneos globos pedibus conculcasse. Unde et beatus Laurentius non minori gloria est praeferendus; siquidem illi in poenarum suarum flammis ambulant, hic et in ipso supplicii sui igne discumbit; illi vestigiis pedum conculcaverunt incendia, iste laterum suorum diffusione extinxit.
 
     Iterum beatus Laurentius in dorsum supinus vertitur, et renes ejus ignibus exuruntur; ut impleretur psalmi prophetia quae dicit ex persona Laurentii: Proba me, Domine, et tenta me; ure renes meos, et cor meum. Duplici se utique postulat igne comburi. Nam si de uno et solo mundi igne loqueretur, sufficeret renes tantum exurendos incendiis obtulisse. Cor autem nisi Christi flamma non urit.
 

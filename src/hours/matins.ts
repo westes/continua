@@ -723,7 +723,13 @@ function withSingleAntiphon(refs: PsalmRef[], antiphonText: ResolvedText, winner
  * draws on its own day's content (the user's scripture-plan reading, any
  * saint/octave content specific to that date), not the Sunday's own
  * already-read homiletic material. */
-function nocturnReadingIds(day: LiturgicalDay, temporalId: string, date: string, threeNocturns: boolean): string[] {
+function nocturnReadingIds(
+  day: LiturgicalDay,
+  temporalId: string,
+  date: string,
+  threeNocturns: boolean,
+  hasTemporalNamedOverride: boolean,
+): string[] {
   const ids = new Set<string>();
   // Not gated to `kind === 'sanctoral'` -- a named temporal override (e.g.
   // Immaculate Heart of Mary, calendar/movable-feasts.ts's applyMovableFeasts)
@@ -731,9 +737,28 @@ function nocturnReadingIds(day: LiturgicalDay, temporalId: string, date: string,
   // distinct from the plain governing-Sunday `temporalId` gated below. But
   // on a plain ordinary feria `day.winner.id` *is* that same governing-
   // Sunday `temporalId` (the temporal cycle IS the winner), so it must go
-  // through the same `threeNocturns` gate rather than being added
+  // through the same `hasTemporalNamedOverride` gate rather than being added
   // unconditionally.
-  if (day.winner.kind === 'sanctoral' || day.winner.id !== temporalId || threeNocturns) {
+  //
+  // Deliberately `hasTemporalNamedOverride`, not the broader `threeNocturns`
+  // (2026-09-09 fix): `threeNocturns` can also become true because
+  // `resolveOfficeWinner` (hours/resolve-common.ts) synthesizes a sanctoral
+  // winner from an active-but-too-weak-to-outright-win octave, while
+  // `day.winner` itself (the real calendar winner passed in here) stays
+  // `{kind: 'temporal', id: temporalId}` -- e.g. 2026-09-09, 2nd day within
+  // the Nativity of the BVM's octave, St. Gorgonius (Simplex) demoted to a
+  // commemoration. Using bare `threeNocturns` here wrongly read that
+  // office-winner synthesis as license to pool the *plain governing week's*
+  // own ferial content (post-pentecost-15's own Gregory homily, labeled
+  // "for Wednesday in the 14th week after Trinity") into an octave day's
+  // Matins -- a day that is by definition not a bare ferial day at all
+  // (live-verified user report: "ferial and not-ferial are logically
+  // separate sets"). `hasTemporalNamedOverride` only fires for a real
+  // authored `sundayNamedOverrides` entry (e.g. Easter Monday/Tuesday
+  // sharing Easter Sunday's own content pool under `temporalId`), the one
+  // legitimate reason a `winner.kind === 'temporal'` day with
+  // `id === temporalId` should still pull that id's own content.
+  if (day.winner.kind === 'sanctoral' || day.winner.id !== temporalId || hasTemporalNamedOverride) {
     ids.add(day.winner.id);
   }
   // Two passes, not one: every *temporal* commemoration's id is added
@@ -863,6 +888,34 @@ function withOccasion(source: string | undefined, id: string, day: LiturgicalDay
   return occasion ? `${source} (for ${occasion})` : source;
 }
 
+/** Normalizes reading text to one consistent paragraph-break convention
+ * (a blank line, i.e. `\n\n`) regardless of which YAML block-scalar
+ * style produced the raw string this pool entry came from. This app's
+ * `data/propers/**` reading files use at least two different conventions
+ * for the same intent (a folded `>-` scalar with a real blank line between
+ * paragraphs, which YAML already folds to `\n\n`; and a literal `|` scalar
+ * with one whole paragraph per physical line, which YAML preserves as a
+ * single `\n` between them) — and the render path (`ui/hour-view.ts`'s
+ * `white-space: pre-line`) trusts whatever newlines are already in the
+ * string, so the second convention rendered with no visible paragraph gap
+ * at all (live-verified 2026-09-09, part of that day's "garbled reading"
+ * report). Liturgical prose in this store is never hard-wrapped
+ * mid-sentence, so any bare single `\n` here is always a paragraph break,
+ * never a line-wrap to preserve — safe to promote every lone `\n` to
+ * `\n\n` uniformly, at the one point text enters the pool, rather than
+ * requiring every future data file to match one exact YAML block style. */
+function normalizeParagraphs<T extends Partial<Record<string, string>>>(text: T): T {
+  const normalized: Record<string, string> = {};
+  let changed = false;
+  for (const [lang, value] of Object.entries(text)) {
+    if (value === undefined) continue;
+    const fixed = value.replace(/([^\n])\n(?!\n)/g, '$1\n\n');
+    normalized[lang] = fixed;
+    if (fixed !== value) changed = true;
+  }
+  return changed ? ({ ...text, ...normalized } as T) : text;
+}
+
 /** `index` is this reading's position among this same id's own
  * nocturn-readings (not the whole day's pool) — the cycling key for
  * `getResponsoryForCommon` when `r` has no proper `responsory` of its own,
@@ -873,7 +926,7 @@ function nocturnReadingPart(r: NocturnReading, id: string, index: number, day: L
   const responsoryText = r.responsory ?? getResponsoryForCommon(getSaintRecord(id)?.common, index);
   return {
     kind: 'lesson',
-    text: { text: r.text, status: r.status, citation: r.citation },
+    text: { text: normalizeParagraphs(r.text), status: r.status, citation: r.citation },
     label: withOccasion(r.source, id, day) ?? fallbackHagiographicLabel(id),
     responsory: responsoryText ? { text: responsoryText, status: { la: 'verified', en: 'verified' } } : undefined,
   };
@@ -906,12 +959,15 @@ function gospelReadingPart(
   const responsoryText = r.responsory ?? homily?.responsory ?? getResponsoryForCommon(getSaintRecord(id)?.common, index);
   return {
     kind: 'gospel',
-    text: { text: r.text, status: r.status, citation: r.citation },
+    text: { text: normalizeParagraphs(r.text), status: r.status, citation: r.citation },
     source: withOccasion(r.source, id, day),
     label: incipit ? { la: incipit.la, en: incipit.en } : undefined,
     responsory: responsoryText ? { text: responsoryText, status: { la: 'verified', en: 'verified' } } : undefined,
     homily: homily
-      ? { source: withOccasion(homily.source, id, day), text: { text: homily.text, status: homily.status, citation: homily.citation } }
+      ? {
+          source: withOccasion(homily.source, id, day),
+          text: { text: normalizeParagraphs(homily.text), status: homily.status, citation: homily.citation },
+        }
       : undefined,
   };
 }
@@ -931,8 +987,32 @@ function gospelReadingPart(
  * own scripture reading first, then each id's authored content in its own
  * file order (patristic commentary typically precedes a Gospel+homily —
  * see data/propers/nocturn-readings/*.yml), then active octaves. */
-function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, threeNocturns: boolean): ResolvedPart[] {
+function buildReadingPool(
+  day: LiturgicalDay,
+  temporalId: string,
+  date: string,
+  threeNocturns: boolean,
+  hasTemporalNamedOverride: boolean,
+): ResolvedPart[] {
   const parts: ResolvedPart[] = [];
+  // One shared dedup set across *every* source pushed into the pool below
+  // (bible-plan, octave-readings, nocturn-readings) -- previously this Set
+  // only existed local to the nocturn-readings loop, so an octave reading
+  // that happened to restate the same content as a separately-pooled
+  // nocturn-reading (e.g. a saint's own commemoration folded into an
+  // octave's Matins excerpt, live-verified 2026-09-09: St. Gorgonius'
+  // biography duplicated between nativity-bvm-octave-day-2.yml and
+  // nocturn-readings/st-gorgonius.yml) could never be caught. Keyed the
+  // same way as before: by Latin text (falling back to English), first
+  // occurrence wins.
+  const seenReadingText = new Set<string>();
+  const isDuplicate = (text: { la?: string; en?: string }): boolean => {
+    const key = text.la ?? text.en ?? '';
+    if (!key) return false;
+    if (seenReadingText.has(key)) return true;
+    seenReadingText.add(key);
+    return false;
+  };
   for (const r of getBiblePlanReadings(temporalId, day.weekday, date)) {
     const responsory = r.responsory ? { text: r.responsory, status: { la: 'verified' as const, en: 'verified' as const } } : undefined;
     // The user's own reading plan never pairs a Gospel with a homily (see
@@ -944,11 +1024,11 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
       r.isGospel
         ? {
             kind: 'gospel',
-            text: { text: r.text, status: r.status, citation: r.citation },
+            text: { text: normalizeParagraphs(r.text), status: r.status, citation: r.citation },
             responsory,
             label: label ?? getGospelIncipitFromCitation(r.citation),
           }
-        : { kind: 'lesson', text: { text: r.text, status: r.status, citation: r.citation }, responsory, label },
+        : { kind: 'lesson', text: { text: normalizeParagraphs(r.text), status: r.status, citation: r.citation }, responsory, label },
     );
   }
   // An active octave's own Matins reading (`data/propers/octave-
@@ -970,7 +1050,7 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
   // what would otherwise have landed there.
   for (const octave of activeOctavesFor(date)) {
     const reading = getOctaveReading(octave.id, octave.dayNumber);
-    if (reading) {
+    if (reading && !isDuplicate(reading.text)) {
       // Unlike nocturn-readings' `source` (a plain, non-bilingual string —
       // see `withOccasion`'s own doc comment), an octave reading's `source`
       // is itself `{la, en}` (2026-08 fix). The occasion name is still a
@@ -985,7 +1065,7 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
         : reading.source;
       parts.push({
         kind: 'lesson',
-        text: { text: reading.text, status: reading.status },
+        text: { text: normalizeParagraphs(reading.text), status: reading.status },
         label,
         responsory: reading.responsory
           ? { text: reading.responsory, status: { la: 'verified', en: 'verified' } }
@@ -993,7 +1073,7 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
       });
     }
   }
-  const ids = nocturnReadingIds(day, temporalId, date, threeNocturns);
+  const ids = nocturnReadingIds(day, temporalId, date, threeNocturns, hasTemporalNamedOverride);
   // Ordering is by *id priority* (winner first, then commemorations in
   // `day.commemorations` order — a winning saint's own content always
   // precedes a demoted commemoration's, matching the day-label convention
@@ -1034,16 +1114,16 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
   // those numbering schemes is ever in force on a given real calendar, but
   // `nocturnReadingIds` can legitimately pool both ids for the *same* day
   // here, which would otherwise surface the identical reading twice in one
-  // hour. Dedupe by Latin text, keeping the first (earliest-id) occurrence.
-  const seenReadingText = new Set<string>();
+  // hour. Dedupe by Latin text, keeping the first (earliest-source)
+  // occurrence — via the same shared `isDuplicate`/`seenReadingText` every
+  // other source in this pool checks against (see this function's own
+  // header), not a Set local to this loop alone.
   for (const id of ids) {
     const readings = getNocturnReadings(id);
     let commonPoolIndex = 0;
     for (let i = 0; i < readings.length; i++) {
       const reading = readings[i]!;
-      const textKey = reading.text.la ?? reading.text.en ?? '';
-      if (textKey && seenReadingText.has(textKey)) continue;
-      if (textKey) seenReadingText.add(textKey);
+      if (isDuplicate(reading.text)) continue;
       const groupKey = `${priorityOf.get(id)}:${reading.nocturn}`;
       const bucket = byGroup.get(groupKey) ?? [];
       if (reading.isGospel) {
@@ -1059,8 +1139,7 @@ function buildReadingPool(day: LiturgicalDay, temporalId: string, date: string, 
         bucket.push(gospelReadingPart(reading, homily, id, commonPoolIndex++, day));
         if (homily) {
           i++;
-          const homilyKey = homily.text.la ?? homily.text.en ?? '';
-          if (homilyKey) seenReadingText.add(homilyKey);
+          isDuplicate(homily.text);
         }
       } else {
         bucket.push(nocturnReadingPart(reading, id, commonPoolIndex++, day));
@@ -1130,7 +1209,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     temporalNamedOverride !== undefined && (temporalNamedOverride.weekdays === undefined || temporalNamedOverride.weekdays.includes(day.weekday));
   const threeNocturns =
     day.weekday === 'sunday' || (winner.kind === 'sanctoral' && isAtLeast(winner.rank, 'semiduplex')) || hasTemporalNamedOverride;
-  const pool = buildReadingPool(day, temporalId, date, threeNocturns);
+  const pool = buildReadingPool(day, temporalId, date, threeNocturns, hasTemporalNamedOverride);
   const [nocturn1Readings, nocturn2Readings, nocturn3Readings] = distributeIntoNocturns(pool, threeNocturns ? 3 : 1);
 
   // Tenebrae's real rubric: during the Sacred Triduum the whole opening

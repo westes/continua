@@ -21,7 +21,14 @@ describe('getOctaveReading', () => {
 
   it('resolves the fuller reading for the octave\'s own concluding day distinctly from ordinary days', () => {
     const reading = getOctaveReading('st-lawrence', 8);
-    expect(reading?.text.la).toContain('Ecclesiástici');
+    // Day 8's fuller (12-lesson) reading spans multiple sources collapsed
+    // into one text -- confirmed by checking for content from both the
+    // opening Ecclesiasticus passage and the closing Chrysostom homily,
+    // not by the word "Ecclesiástici" itself (that was the source
+    // citation baked into the text's opening words, redundant with the
+    // `source` field and stripped as part of the 2026-09-09 fix).
+    expect(reading?.text.la).toContain('Confitébor tibi, Dómine, Rex');
+    expect(reading?.text.la).toContain('Joánnis Chrysóstomi');
   });
 
   it('marks a reading with no sourced English translation as honestly missing, not duplicating the Latin', () => {

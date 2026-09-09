@@ -6,13 +6,21 @@
 # punctuation (some older "oct"/"bmv"-suffixed variant files drop question
 # marks entirely in places) -- not corrected here, since guessing where they
 # belong isn't the same class of fix as an isolated single-character typo.
+#
+# 2026-09-09: `text.la`'s 1st paragraph had the source citation baked into
+# its opening words, redundant with the `source` field above (`en` was
+# already clean here). Stripped -- kept the "Lib. 2., cap. 28., post
+# medium." sub-citation at the 2nd paragraph's start in both languages,
+# since it names a different chapter of the same work and isn't
+# redundant with anything (part of a repo-wide sweep of octave-readings
+# files with the same pattern).
 id: st-lawrence-octave-day-4
 source:
   la: "Ex libro Officiorum S. Ambrósii Epíscopi."
   en: "From the book On the Duties of the Clergy of St. Ambrose, Bishop"
 text:
   la: |
-    Ex libro Officiorum S. Ambrósii Epíscopi. Lib. 1., cap. 41., in medio. Non prætereamus sanctum Laurentium, qui cum videret episcopum suum ad martyrium duci, flere cœpit non passionem illius, sed suam remansionem. Itaque his verbis appellare cœpit: Quo progrederis sine filio pater? quo sacerdos sancte sine diacono properas? Numquam sacrificium sine ministro offerre consueveras. Quid in me ergo displicuit pater? Num degenerem me probasti? Experire certe utrum idoneum ministrum elegeris. Cui commisisti Dominici sanguinis dispensationem, cui consumandorum consortium sacramentorum huic consortium tui sanguinis negas?
+    Lib. 1., cap. 41., in medio. Non prætereamus sanctum Laurentium, qui cum videret episcopum suum ad martyrium duci, flere cœpit non passionem illius, sed suam remansionem. Itaque his verbis appellare cœpit: Quo progrederis sine filio pater? quo sacerdos sancte sine diacono properas? Numquam sacrificium sine ministro offerre consueveras. Quid in me ergo displicuit pater? Num degenerem me probasti? Experire certe utrum idoneum ministrum elegeris. Cui commisisti Dominici sanguinis dispensationem, cui consumandorum consortium sacramentorum huic consortium tui sanguinis negas?
 
     Lib. 2., cap. 28., post medium. Aquo cum quærerantur thesauri Ecclesiæ, promisit se demonstraturum. Sequenti die pauperes duxit. Interrogatus ubi essent thesauri quos promiserat, ostendit pauperes, dicens: Hi sunt thesauri Ecclesiæ. Et vere thesauri, in quibus Christus est, in quibus Christi fides est. Denique Apostolus ait: Habemus thesaurum in vasis fictilibus. Quos meliores thesauros habet Christus, quam eos in quibus se esse dixit? Sic enim scriptum est: Esurivi, et dedistis mihi manducare: sitivi, et dedistis mihi bibere: hospes eram, et collegistis me. Et infra: Quod enim uni horum fecistis, mihi fecistis. Hos thesauros demonstravit Laurentius, et vicit, quod eos nec persecutor potuit auferre.
 
