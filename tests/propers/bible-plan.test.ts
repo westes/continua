@@ -14,7 +14,10 @@ describe('getBiblePlanReadings citation labels', () => {
   });
 
   it('leaves a verse-qualified citation unchanged, never merged into a range', () => {
-    expect(readings[2]?.citation.la).toBe('Luke 18:1-23');
+    expect(readings[2]?.citation.en).toBe('Luke 18:1-23');
+    // Latin column uses the Vulgate-canonical book abbreviation, not the
+    // English-preferred one the store's own book key is authored with.
+    expect(readings[2]?.citation.la).toBe('Luc 18:1-23');
   });
 });
 
@@ -33,7 +36,9 @@ describe('getBiblePlanReadings citation labels', () => {
 describe('getBiblePlanReadings label uses the same book-alias normalization as verse-text lookup', () => {
   it('an aliased book ("jdt" for Judith) still gets its real incipit label, not the generic fallback', () => {
     const readings = getBiblePlanReadings('post-pentecost-16', 'friday', '2026-09-18');
-    expect(readings[0]?.citation.la).toBe('Jdt 11-13');
+    expect(readings[0]?.citation.en).toBe('Jdt 11-13');
+    // Latin column: canonicalBook('jdt') -> 'jdth', the Vulgate-canonical form.
+    expect(readings[0]?.citation.la).toBe('Jdth 11-13');
     expect(readings[0]?.label?.en).toBe('A reading from the book of Judith');
     expect(readings[0]?.label?.la).toBe('Léctio libri Judith');
   });

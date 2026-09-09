@@ -71,8 +71,28 @@ interface BiblePlanDayRecord {
   readings: BiblePlanReadingRecord[];
 }
 
-function citationLabel(citation: ScriptureCitation): string {
-  const book = citation.book.charAt(0).toUpperCase() + citation.book.slice(1);
+/** Capitalizes a book abbreviation for display, correctly handling a
+ * leading ordinal digit (bible-plan.ts's book keys, both the raw English-
+ * style ones authored in the TSV and canonicalBook's Vulgate-style ones,
+ * both put the digit directly against the letters — "1sam", "1reg" — with
+ * no space to capitalize past) by inserting the space and capitalizing
+ * the letters that follow it instead of the digit itself. */
+function formatBookAbbrev(book: string): string {
+  const ordinal = book.match(/^(\d+)(.+)$/);
+  if (ordinal) {
+    const [, num, rest] = ordinal;
+    return `${num} ${rest!.charAt(0).toUpperCase()}${rest!.slice(1)}`;
+  }
+  return book.charAt(0).toUpperCase() + book.slice(1);
+}
+
+/** `lang: 'en'` displays the book as authored (bible-plan.ts's own TSV
+ * import already prefers the familiar English abbreviation where it
+ * diverges from the Vulgate one — see scripture/index.ts's BOOK_ALIASES
+ * comment); `lang: 'la'` runs it through `canonicalBook` first so the
+ * Latin column gets the real Vulgate form instead ("1 Reg" not "1 Sam"). */
+function citationLabel(citation: ScriptureCitation, lang: 'la' | 'en'): string {
+  const book = formatBookAbbrev(lang === 'la' ? canonicalBook(citation.book) : citation.book);
   return citation.verses ? `${book} ${citation.chapter}:${citation.verses}` : `${book} ${citation.chapter}`;
 }
 
@@ -80,14 +100,16 @@ function citationLabel(citation: ScriptureCitation): string {
  * 36, 37 — the source data authors one entry per chapter) into a compact
  * "Book start-end" range, since `citationLabel` alone would otherwise
  * produce a separate "Book N" for each chapter. Verse-qualified citations
- * never merge into a range. */
-function formatCitationLabel(passages: ScriptureCitation[]): string {
+ * never merge into a range. Grouping compares passages' raw (English-side)
+ * `book` key regardless of `lang` — the same passages merge the same way
+ * in both languages, only the displayed book name differs. */
+function formatCitationLabel(passages: ScriptureCitation[], lang: 'la' | 'en'): string {
   const segments: string[] = [];
   let i = 0;
   while (i < passages.length) {
     const start = passages[i]!;
     if (start.verses) {
-      segments.push(citationLabel(start));
+      segments.push(citationLabel(start, lang));
       i++;
       continue;
     }
@@ -100,7 +122,7 @@ function formatCitationLabel(passages: ScriptureCitation[]): string {
     ) {
       j++;
     }
-    const book = start.book.charAt(0).toUpperCase() + start.book.slice(1);
+    const book = formatBookAbbrev(lang === 'la' ? canonicalBook(start.book) : start.book);
     segments.push(j > i ? `${book} ${start.chapter}-${passages[j]!.chapter}` : `${book} ${start.chapter}`);
     i = j + 1;
   }
@@ -117,7 +139,6 @@ function resolveReading(record: BiblePlanReadingRecord, bookIndex: number): Bibl
     la: text.la ? 'verified' : 'missing',
     en: text.en ? 'verified' : 'missing',
   };
-  const citationLabelText = formatCitationLabel(record.passages);
   const firstBook = record.passages[0]?.book;
   const canonicalFirstBook = firstBook ? canonicalBook(firstBook) : undefined;
   const responsory = canonicalFirstBook ? getResponsoryForBook(canonicalFirstBook, bookIndex)?.text : undefined;
@@ -125,7 +146,7 @@ function resolveReading(record: BiblePlanReadingRecord, bookIndex: number): Bibl
   return {
     text,
     status,
-    citation: { la: citationLabelText, en: citationLabelText },
+    citation: { la: formatCitationLabel(record.passages, 'la'), en: formatCitationLabel(record.passages, 'en') },
     isGospel: isGospelReading(record.passages),
     responsory,
     label: incipit ? { la: incipit.la, en: incipit.en } : undefined,
