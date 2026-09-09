@@ -144,17 +144,37 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(numbers).toEqual([109, 112, 115, 138]);
   });
 
-  it("uses Common-of-a-Martyr's own psalmody on St. Lawrence's octave closing day, not the plain ferial Monday default", () => {
+  it('falls back to plain ferial Monday psalms on St. Lawrence\'s octave closing day (no explicit closingDayRank)', () => {
     // 2026-08-17 is the closing day of St. Lawrence's own octave (Aug
-    // 10-17, Duplex II. classis) -- resolveOfficeWinner substitutes his
-    // own identity there, so the new duplex-majus+ psalmody override
-    // (getOfficeOverrideId) picks up his Common (common-of-a-martyr) even
-    // though no per-feast Vespers override exists for him. See the
-    // "joins Ps 115 and 116" test above for why this date was moved off
-    // the plain-ferial-Monday proof.
+    // 10-17, Duplex II. classis) -- but his own octave config never sets
+    // closingDayRank, so calendar/octaves.ts's DEFAULT_CLOSING_DAY_RANK
+    // ('duplex') is the octave's own effective rank that day, not his
+    // real duplex-2-classis rank. getPsalmodyNumbersOverrideId gates on
+    // that octave-day rank (2026-09-09 fix, confirmed with the user), and
+    // 'duplex' is below the duplex-majus cut -- so the Common-of-a-Martyr
+    // psalmody tier doesn't apply here. No octave in this app's own
+    // calendar currently sets closingDayRank/wins to duplex-majus+, so
+    // every octave day (other than the origin feast's own actual day)
+    // falls back to the plain ferial scheme the same way.
     const ordo = resolveOrdo('vespers', '2026-08-17');
     const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
-    expect(numbers).toEqual([109, 111, 112, 115]);
+    expect(numbers).toEqual([113, 114, 115, 116, 128]);
+  });
+
+  it('falls back to plain ferial Wednesday psalms on day 2 of the Nativity of the BVM\'s octave (2026-09-09), not the Nativity\'s own proper psalms', () => {
+    // St. Gorgonius (simplex) is the only real sanctoral candidate on
+    // Sept 9, but he loses the day to the Nativity's own octave (Sept
+    // 8-15). Before the 2026-09-09 fix, resolveOfficeWinner synthesized
+    // the Nativity's own full rank (duplex-2-classis) for every day of
+    // its octave, so this day wrongly read as duplex-majus+ eligible and
+    // pulled the Nativity's own proper psalms ([92, 99, 62], see
+    // data/hours/vespers-psalmody-overrides/saints/nativity-bvm.yml).
+    // getPsalmodyNumbersOverrideId now uses the octave's own per-day
+    // rank (wins: duplex here, below duplex-majus) instead, so this
+    // falls back to the plain ferial Wednesday scheme.
+    const ordo = resolveOrdo('vespers', '2026-09-09');
+    const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(numbers).toEqual([134, 135, 136, 137]);
   });
 
   it("uses Common-of-a-Confessor-Bishop's own psalmody for St. Martin of Tours's First Vespers", () => {

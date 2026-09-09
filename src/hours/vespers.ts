@@ -21,8 +21,8 @@ import {
   verifiedText,
   seasonalOfficeSuffix,
   isFerialOrVigil,
-  getOfficeOverrideId,
   getPsalmodyProperOverrideId,
+  getPsalmodyNumbersOverrideId,
   resolveResponsory,
   resolveOfficeBundle,
   resolveSuffrages,
@@ -81,32 +81,30 @@ function psalmParts(group: VespersGroup, day: LiturgicalDay): ResolvedPart[] {
 
 /** Two independent tiers, tried in order — same split as hours/lauds.ts's
  * own getPsalmodyOverrideFor, see its doc comment for the full rationale.
- * Substitutes psalm *numbers*, not just antiphons, so only applies for a
- * duplex-majus+ (or named-temporal) feast — see resolvePsalmody below for
- * the sub-duplex-majus case, which merges tier 1's antiphons onto the
- * ferial numbers instead of calling this at all:
+ * Substitutes psalm *numbers*, not just antiphons, so only applies when
+ * resolve-common.ts's getPsalmodyNumbersOverrideId says the day is
+ * eligible (duplex-majus+, octave-aware) — see resolvePsalmody below for
+ * the sub-threshold case, which merges tier 1's antiphons onto the ferial
+ * numbers instead of calling this at all:
  *
- * 1. **Proper** — this feast's own authored psalmody, via resolve-
- *    common.ts's getPsalmodyProperOverrideId.
+ * 1. **Proper** — this feast's (or, on an octave day, that octave's own
+ *    governing saint's) authored psalmody, via getVespersSaintOverride.
  * 2. **Common category** — per hours/vespers-psalmody-overrides.ts's own
  *    doc comment, genuinely per-Common here (the psalm *numbers*
  *    themselves differ by Common, not just the antiphons, unlike Lauds)
- *    — gated at duplex-majus+ via getOfficeOverrideId.
+ *    — via getVespersCommonOverride.
  *
- * Eligibility follows the evening's governing `day` (same
- * resolveOfficeWinner-based test as the chapter/responsory/hymn/versicle
- * bundle below) — a First Vespers of a feast should get that feast's own
- * psalms, same as it gets that feast's own office. Falls back to
- * `undefined` for an eligible feast with no override authored in either
- * tier, same honest incremental-content convention as everywhere else. */
+ * Eligibility follows the evening's governing `day` — a First Vespers of a
+ * feast should get that feast's own psalms, same as it gets that feast's
+ * own office. Falls back to `undefined` for an eligible feast with no
+ * override authored in either tier, same honest incremental-content
+ * convention as everywhere else. */
 function getPsalmodyOverrideFor(day: LiturgicalDay): VespersDay | undefined {
-  const properId = getPsalmodyProperOverrideId(day);
-  const proper = properId ? getVespersSaintOverride(properId) : undefined;
-  if (proper) {
-    return proper;
+  const id = getPsalmodyNumbersOverrideId(day);
+  if (!id) {
+    return undefined;
   }
-  const categoryId = getOfficeOverrideId(day);
-  return categoryId ? getVespersCommonOverride(categoryId, isPaschaltide(day.season)) : undefined;
+  return getVespersSaintOverride(id) ?? getVespersCommonOverride(id, isPaschaltide(day.season));
 }
 
 /** Below duplex-majus, mirrors hours/lauds.ts's identical
@@ -133,7 +131,7 @@ function mergeFerialNumbersWithProperAntiphons(ferial: VespersDay, proper: Vespe
 function resolvePsalmody(day: LiturgicalDay, weekday: Weekday): ResolvedPart[] {
   const ferial = vespersAntiphons[weekday];
   let wd: VespersDay;
-  if (getOfficeOverrideId(day)) {
+  if (getPsalmodyNumbersOverrideId(day)) {
     wd = getPsalmodyOverrideFor(day) ?? ferial;
   } else {
     const properId = getPsalmodyProperOverrideId(day);

@@ -383,6 +383,48 @@ export function getPsalmodyProperOverrideId(day: LiturgicalDay): string | undefi
 }
 
 /**
+ * The id to look up for today's *real psalm numbers* at Lauds/Vespers —
+ * unlike `getPsalmodyProperOverrideId` above, this one is rank-gated, and
+ * unlike `getOfficeOverrideId`, the rank it gates on is octave-aware: an
+ * octave day borrowing its content from `resolveOfficeWinner` (rather than
+ * being a real outright `day.winner` itself) is judged against that
+ * octave's own per-day effective rank (`ActiveOctave.wins`, already
+ * closing-day-elevated by calendar/octaves.ts), not the origin feast's own
+ * full rank. Without this distinction every day of a strong feast's octave
+ * (e.g. the Nativity of the BVM, `duplex-2-classis`) would read as
+ * duplex-majus-eligible even on an ordinary octave day whose own claim is
+ * only `duplex` (2026-09-09, live-verified: Gorgonius loses the day to the
+ * octave, but the octave itself is only `wins: duplex` that day, below the
+ * duplex-majus cut this function enforces) — confirmed with the user
+ * 2026-09-09 that octave days should be judged on the octave's own rank,
+ * not the feast's.
+ *
+ * Deliberately separate from `getOfficeOverrideId`, which stays on the
+ * origin feast's real rank for its own, unrelated consumers (Vespers'
+ * non-psalmody chapter/responsory/hymn/versicle bundle, the minor-hour
+ * overrides) — this function only governs which psalm *numbers* tier
+ * (proper, including an octave's own governing saint, then Common
+ * category) applies; the separate ungated antiphon-overlay onto ferial
+ * numbers (`getPsalmodyProperOverrideId`, `mergeFerialNumbersWithProperAntiphons`)
+ * is untouched by this threshold.
+ */
+export function getPsalmodyNumbersOverrideId(day: LiturgicalDay): string | undefined {
+  const winner = resolveOfficeWinner(day);
+  if (winner.kind === 'temporal' && ALWAYS_OVERRIDE_TEMPORAL_IDS.has(winner.id)) {
+    return winner.id;
+  }
+  if (winner.kind !== 'sanctoral') {
+    return undefined;
+  }
+  const activeOctave =
+    day.winner.kind === 'sanctoral'
+      ? undefined
+      : (day.temporalCategory === 'ordinary-feria' ? resolveActiveOctave(day.date) : octaveGoverningPrivilegedDay(day));
+  const effectiveRank = activeOctave?.wins ?? winner.rank;
+  return isAtLeast(effectiveRank, 'duplex-majus') ? winner.id : undefined;
+}
+
+/**
  * The id to look up for today's office winner's (resolveOfficeWinner)
  * minor-hour content (antiphon + chapter) — `${hourId}-antiphon-${id}`/
  * `${hourId}-capitulum-${id}` first (a per-saint proper file, only ever

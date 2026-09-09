@@ -7251,3 +7251,32 @@ per the "Not a reconstruction" design).
 
 `npm test` (2077 passed) and `npm run build` both pass. No content changes this pass — everything
 sampled checked out.
+
+### Lauds/Vespers psalm-number selection tightened: octave days use the octave's own rank (2026-09-09)
+
+Bug: 2026-09-09 (day 2 of the Nativity of the BVM's octave, St. Gorgonius's `simplex` losing the
+day) was showing the Nativity's own proper psalm numbers instead of plain ferial Wednesday psalms.
+Root cause: `resolve-common.ts`'s `getOfficeOverrideId` (the duplex-majus+ gate for proper/Common
+psalm-number substitution) compared against the *origin feast's own full rank*
+(`resolveOfficeWinner`'s synthesized `saint.rank` — `duplex-2-classis` for the Nativity) on every
+day of its octave, not the octave's own per-day effective rank (`ActiveOctave.wins`, already
+closing-day-aware). Every day of a strong feast's octave therefore always read as duplex-majus+
+eligible regardless of the octave's actual (often lower) claim that day.
+
+Fixed with a new, psalmody-specific `getPsalmodyNumbersOverrideId` (deliberately not a change to
+`getOfficeOverrideId` itself, which stays on the origin feast's real rank for its own unrelated
+consumers — Vespers' chapter/responsory/hymn/versicle bundle, the minor-hour overrides): on a day
+whose content is borrowed from an active octave (not the feast's own actual day), it gates on that
+octave's own `wins` for the day instead of the origin feast's rank. Confirmed with the user: rule is
+now literally "winner rank `duplex` or lower -> plain ferial psalms; `duplex-majus`+ -> proper (incl.
+an octave's own governing saint), then Common category, first one found." The separate, deliberately
+rank-ungated antiphon-overlay mechanism (`mergeFerialNumbersWithProperAntiphons` — a saint's own
+antiphon text layered onto ferial numbers below the threshold) is untouched.
+
+Knock-on finding, confirmed with the user: no octave in the current calendar data sets an explicit
+`closingDayRank`/`wins` at duplex-majus+ (`calendar/octaves.ts`'s `DEFAULT_CLOSING_DAY_RANK` is only
+`duplex`), so an existing test asserting St. Lawrence's own octave closing day (Aug 17) kept his
+Common-of-a-Martyr psalms was itself an instance of the same bug — updated to expect plain ferial
+Monday psalms instead, per the same corrected rule.
+
+`npm test` (2082 passed) and `npm run build` both pass.

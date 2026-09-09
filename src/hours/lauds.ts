@@ -21,8 +21,8 @@ import {
   verifiedText,
   seasonalOfficeSuffix,
   isFerialOrVigil,
-  getOfficeOverrideId,
   getPsalmodyProperOverrideId,
+  getPsalmodyNumbersOverrideId,
   resolveResponsory,
   resolveOfficeBundle,
   resolveSuffrages,
@@ -56,40 +56,32 @@ interface PsalmodyBlock {
 const laudsAntiphons = laudsAntiphonsData as Record<Weekday, PsalmodyBlock>;
 
 /**
- * Two independent tiers, tried in order, for a duplex-majus+ (or named-
- * temporal) feast eligible to substitute its own psalm *numbers*, not
- * just its antiphons — see resolvePsalmody below for the sub-duplex-majus
- * case, which merges tier 1's antiphon text onto the ferial numbers
- * instead of calling this at all:
+ * Two independent tiers, tried in order, for a day eligible (per
+ * resolve-common.ts's getPsalmodyNumbersOverrideId — duplex-majus+,
+ * octave-aware) to substitute its own psalm *numbers*, not just its
+ * antiphons — see resolvePsalmody below for the sub-threshold case, which
+ * merges tier 1's antiphon text onto the ferial numbers instead of
+ * calling this at all:
  *
- * 1. **Proper** — this feast's own authored antiphons+numbers (per-feast,
- *    not per-Common — explicit choice), via resolve-common.ts's
- *    getPsalmodyProperOverrideId.
- * 2. **Common category** — a generic-by-category substitute, gated at
- *    duplex-majus+ via getOfficeOverrideId (a real, distinct, weaker
- *    tier: same conventional psalm numbers, not this feast's own text).
+ * 1. **Proper** — this feast's (or, on an octave day, that octave's own
+ *    governing saint's) authored antiphons+numbers (per-feast, not
+ *    per-Common — explicit choice), via getLaudsSaintOverride.
+ * 2. **Common category** — a generic-by-category substitute (a real,
+ *    distinct, weaker tier: same conventional psalm numbers, not this
+ *    feast's own text), via getLaudsCommonOverride.
  *
  * Falls back to `undefined` — the plain weekday default — for an eligible
- * feast with no override authored yet in either tier, same honest
+ * day with no override authored yet in either tier, same honest
  * incremental-content convention as everywhere else in this codebase;
  * it's not gated behind whether content exists, just behind whether it's
  * *eligible* to override at all.
- *
- * Both id-eligibility functions check resolveOfficeWinner(day), not the
- * raw `day.winner` — on an octave day this is the octave's own feast
- * (e.g. St. Lawrence, days 2-8 of his own octave), which is exactly what
- * should supply the psalmody override there too, live-verified alongside
- * the collect/Benedictus-antiphon fix (see resolve-common.ts's
- * resolveOfficeWinner doc comment).
  */
 function getPsalmodyOverrideFor(day: LiturgicalDay): LaudsPsalmodyOverride | undefined {
-  const properId = getPsalmodyProperOverrideId(day);
-  const proper = properId ? getLaudsSaintOverride(properId) : undefined;
-  if (proper) {
-    return proper;
+  const id = getPsalmodyNumbersOverrideId(day);
+  if (!id) {
+    return undefined;
   }
-  const categoryId = getOfficeOverrideId(day);
-  return categoryId ? getLaudsCommonOverride(categoryId, isPaschaltide(day.season)) : undefined;
+  return getLaudsSaintOverride(id) ?? getLaudsCommonOverride(id, isPaschaltide(day.season));
 }
 
 /**
@@ -217,7 +209,7 @@ function canticleText(canticleId: string, slice?: [number, number]): ResolvedTex
 function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
   const ferial = laudsAntiphons[day.weekday];
   let wd: PsalmodyBlock;
-  if (getOfficeOverrideId(day)) {
+  if (getPsalmodyNumbersOverrideId(day)) {
     const override = getPsalmodyOverrideFor(day);
     wd = override
       ? {

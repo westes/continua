@@ -743,6 +743,22 @@ describe('resolveOrdo("lauds", ...)', () => {
       'Ant. Da mihi in disco * caput Joánnis Baptístæ. Et contristátus est rex propter jusjurándum.',
     );
   });
+
+  it('falls back to plain ferial Wednesday psalms on day 2 of the Nativity of the BVM\'s octave (2026-09-09), not the Nativity\'s own proper psalms', () => {
+    // St. Gorgonius (simplex) is the only real sanctoral candidate on
+    // Sept 9, but he loses the day to the Nativity's own octave (Sept
+    // 8-15). Before the 2026-09-09 fix, resolveOfficeWinner synthesized
+    // the Nativity's own full rank (duplex-2-classis) for every day of
+    // its octave, so this day wrongly read as duplex-majus+ eligible and
+    // pulled the Nativity's own proper psalms (see
+    // data/hours/lauds-psalmody-overrides/nativity-bvm.yml, [92, 99, 62]).
+    // getPsalmodyNumbersOverrideId now uses the octave's own per-day
+    // rank (wins: duplex here, below duplex-majus) instead, so this
+    // falls back to the plain ferial Wednesday scheme.
+    const ordo = resolveOrdo('lauds', '2026-09-09');
+    const psalmNumbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
+    expect(psalmNumbers).toEqual([66, 50, 63, 64, 148, 149, 150]);
+  });
 });
 
 describe('resolveOrdo("lauds", ...) responsory Gloria omission', () => {
