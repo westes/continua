@@ -653,11 +653,13 @@ function deriveMinorHourAntiphonFromLauds(hourId: string, overrideId: string): R
  * seasonal change in Paschaltide — see `withPaschaltideAlleluia`. (The
  * derived-from-Lauds tier does not get that treatment — see TODO.md.)
  */
-export function resolveMinorHourAntiphon(
-  hourId: string,
-  day: LiturgicalDay,
-  weekdayDefault: Partial<Record<string, string>>,
-): ResolvedText {
+/** The proper -> derived -> paschal -> common candidate list itself, split
+ * out from `resolveMinorHourAntiphon` so other callers needing this exact
+ * chain (e.g. Matins' `ferialPsalmodyThreeNocturns`, which has its own
+ * distinct "nothing authored" fallback instead of a weekday default) can
+ * reuse it via `firstAvailable` rather than re-deriving proper/common ids
+ * by hand. */
+export function resolveMinorHourAntiphonCandidates(hourId: string, day: LiturgicalDay): (ResolvedText | undefined)[] {
   const overrideId = getMinorHourOverrideId(day);
   const proper = overrideId ? resolveCommon(`${hourId}-antiphon-${overrideId}`) : undefined;
   const derived = overrideId ? deriveMinorHourAntiphonFromLauds(hourId, overrideId) : undefined;
@@ -665,10 +667,18 @@ export function resolveMinorHourAntiphon(
   const paschal =
     commonId && PASCHALTIDE_SEASONS.has(day.season) ? resolveCommon(`${hourId}-antiphon-${commonId}-paschaltide`) : undefined;
   const common = commonId ? withPaschaltideAlleluia(resolveCommon(`${hourId}-antiphon-${commonId}`), day) : undefined;
+  return [proper, derived, paschal, common];
+}
+
+export function resolveMinorHourAntiphon(
+  hourId: string,
+  day: LiturgicalDay,
+  weekdayDefault: Partial<Record<string, string>>,
+): ResolvedText {
   // The plain weekday default (data/hours/{hour}-antiphons.yml) never
   // carries its own status field at all — always implicitly verified by
   // the file's own live-checked convention, not a guess.
-  return firstAvailable([proper, derived, paschal, common], verifiedText(weekdayDefault));
+  return firstAvailable(resolveMinorHourAntiphonCandidates(hourId, day), verifiedText(weekdayDefault));
 }
 
 /** Same idea as resolveMinorHourAntiphon, for the chapter
