@@ -7280,3 +7280,24 @@ Common-of-a-Martyr psalms was itself an instance of the same bug — updated to 
 Monday psalms instead, per the same corrected rule.
 
 `npm test` (2082 passed) and `npm run build` both pass.
+
+### Matins never got the octave-rank-awareness fix above — same bug, different hour (2026-09-10)
+
+Bug: 2026-09-09's fix above was scoped to Lauds/Vespers only (`getPsalmodyNumbersOverrideId`, added
+to `resolve-common.ts`). `hours/matins.ts` has its own, separate, older rank-gating logic for
+psalm-number selection (`threeNocturns`, `isAboveDuplex`) and was never given the equivalent
+treatment. Caught live: 2026-09-10 (day 3 of the Nativity of the BVM's octave, `wins: duplex`) was
+rendering the full Common-of-the-BVM 3-nocturn psalm scheme (Ps 8/18/23/44/45/47) at Matins instead
+of falling back to plain ferial Thursday psalms, because `isAboveDuplex` was computed straight from
+`resolveOfficeWinner(day).rank` (the Nativity's un-weakened `duplex-2-classis`) rather than the
+octave's own day-specific rank.
+
+Fixed by factoring the octave-aware effective-rank computation out of `getPsalmodyNumbersOverrideId`
+into a new shared `officeWinnerEffectiveRank(day, winner)` (`resolve-common.ts`), and pointing both
+of `matins.ts`'s rank checks (`threeNocturns`'s semiduplex floor, `isAboveDuplex`'s duplex-majus
+gate) at it instead of `winner.rank` directly. `getPsalmodyNumbersOverrideId` itself now just calls
+the shared helper — no behavior change there. Live-verified: 2026-09-10 Matins now resolves to
+ferial Thursday psalms (76, 77 split, 78, 79, 80, 82, 83, 84); 2026-09-08 (the feast's own actual
+day, not octave-borrowed) is unaffected and still shows its own proper psalms.
+
+`npm test` (2082 passed) and `npm run build` both pass.
