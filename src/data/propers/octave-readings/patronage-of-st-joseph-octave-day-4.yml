@@ -6,8 +6,10 @@
 # words to Joseph in Matt 1:20-21) with St. Ambrose's own commentary on
 # Luke (Lectio7-9, same Gospel pericope as the feast day; bare incipit
 # dropped). A couple of stray OCR spelling artifacts in the source's own
-# English corrected as clear transcription typos. Responsory not sourced,
-# same convention as the other movable octaves in this project.
+# English corrected as clear transcription typos. Responsory now sourced --
+# same resolution as day 2: reuse the feast's own well-known Responsory1
+# (Tempora/Pasc2-3.txt, the feast day itself) across every combined-lesson
+# octave day.
 id: patronage-of-st-joseph-octave-day-4
 source:
   la: "Sermo sancti Joánnis Chrysóstomi; Homilía sancti Ambrósii Epíscopi"
@@ -37,6 +39,11 @@ text:
     We might wonder why the genealogy of Joseph, rather than of Mary, is given — since Mary conceived Christ by the Holy Ghost, and Joseph had no part in the Lord's conception — were it not that Holy Scripture teacheth us how it was the custom to trace descent on the male side. For in this fashion the person of the man is set forth as pre-eminent, and his dignity maintained, even as it is wont to be done in the Senate and the other high places of the commonwealth. And how unseemly it would have been to have passed over the lineage of the father, and to have given that of the mother, since the doing so would have appeared to proclaim to all the peoples of the world that Christ had no father! It is a world-wide custom to trace the genealogy of a family in the male line. Therefore be not perplexed that the lineage of Joseph is given: forasmuch as Christ was born in the flesh, He was bound to follow this custom of the flesh, and He Who came into the world had to be enrolled for taxing in the worldly manner — the more so that Joseph's descent was the same as Mary's.
 
     But some explanation is required as to why Saint Matthew reckoneth Christ's descent from Abraham forward, whilst Saint Luke traceth the same from Christ backward to the creation of Adam by God. By this Luke would have us understand that Christ's lineage should be traced to God, because God was Christ's true Progenitor — both as His Father, of Whom He was begotten, and as the Author, in the laver of baptism, of the mystical gift of the Spirit. Wherefore Luke doth not begin his Gospel with the reckoning of Christ's lineage, but recordeth it after the account of the Baptism, thereby shewing forth in baptism the working of God, the Author of all things. Thus also Luke asserteth that Christ came forth from God according to a certain rule of orderliness, for he weaveth all things together to prove that Christ is, by nature, by grace, and in the flesh, the Son of God. But what more evident proof of Christ's divine descent could we have than what Luke giveth? For before the Evangelist reckoneth the genealogy of Christ, he giveth the words of the Father Himself: "This is My beloved Son, in Whom I am well pleased."
+responsory:
+  la: |
+    R. Clamávit pópulus ad regem, aliménta petens: * Quibus ille respóndit: Ite ad Joseph, allelúja. V. Salus nostra in manu tua est: réspice nos tantum, et læti serviémus regi. R. Quibus ille respóndit: Ite ad Joseph, allelúja.
+  en: |
+    R. The people cried to Pharaoh for bread * And he answered them Go unto Joseph. Alleluia. V. The saving of our lives is in thy hand; only let us find grace in thy sight, and we will gladly be Pharaoh's servants. R. And he answered them Go unto Joseph. Alleluia.
 status:
   la: verified
   en: verified

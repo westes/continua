@@ -40,6 +40,18 @@ text:
     "Behold, your house is left unto you desolate." God had already spoken these things once before, by the mouth of Jeremiah, where He saith: "I have forsaken Mine house, I have left Mine heritage; Mine inheritance is become unto Me like an hyaena's den." The house of the Jews, which was to be left unto them desolate — that is, that Temple, whose splendour they loved only too well — they lost when they slew the Owner of it for the sake of it, saying of Christ: "This is the heir; come, let us kill Him, and the inheritance shall be ours."
 
     "I say unto you, Ye shall not see Me henceforth, till ye shall say: Blessed is He that cometh in the name of the Lord." Here He speaketh to Jerusalem and to the Jewish people. The words, "Blessed is He That cometh in the name of the Lord," were indeed spoken by babes and sucklings when the Saviour entered Jerusalem in triumph, and they that went before and they that followed cried, saying, "Blessed is He That cometh in the name of the Lord; Hosanna in the highest" — but they are originally taken from Psalm 117, which is all evidently written in honour of the coming of our Lord.
+# Responsory missing from this file -- authoring gap, not a design choice
+# (same class as nativity-bvm-octave-day-3.yml's own fix). Reuses St.
+# Stephen's own Responsory1 (Sancti/12-26.txt), the octave's one well-known
+# opening responsory, matching the convention already established for the
+# Nativity-BVM octave (every combined-lesson octave-day file there reuses
+# that feast's own Responsory1 regardless of which specific historical
+# Lectio number the combined text corresponds to).
+responsory:
+  la: |
+    R. Stéphanus autem plenus grátia et fortitúdine, * Faciébat prodígia et signa magna in pópulo. V. Surrexérunt quidam de synagóga disputántes cum Stéphano: et non póterant resístere sapiéntiæ, et Spirítui qui loquebátur. R. Faciébat prodígia et signa magna in pópulo.
+  en: |
+    R. And Stephen, full of grace and power * Did great wonders and miracles among the people. V. There arose certain of the synagogue, disputing with Stephen; and they were not able to resist the wisdom, and the Spirit which spoke. R. Did great wonders and miracles among the people.
 status:
   la: verified
   en: verified

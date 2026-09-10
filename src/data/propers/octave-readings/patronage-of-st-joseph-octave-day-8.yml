@@ -5,8 +5,9 @@
 # (Lectio4-6, Joseph and Mary's true marriage) with another sermon of
 # St. Augustine on Christ's baptism as a "second birthday" (Lectio7-9,
 # same Gospel pericope as the feast day; bare incipit dropped).
-# Responsory not sourced, same convention as the other movable octaves in
-# this project.
+# Responsory now sourced -- same resolution as day 2: reuse the feast's
+# own well-known Responsory1 (Tempora/Pasc2-3.txt, the feast day itself)
+# across every combined-lesson octave day.
 id: patronage-of-st-joseph-octave-day-8
 source:
   la: "Sermo sancti Augustíni Epíscopi; Homilía sancti Augustíni Epíscopi"
@@ -36,6 +37,11 @@ text:
     More honoured, I say, is the second birth than the first. For here the Father is inscribed as the God of majesty; there Joseph was reckoned a craftsman. And although in both the Lord was born and baptized through the Holy Ghost, yet He That crieth out from heaven is more honoured than he that laboureth on earth. Joseph, then, a workman on earth, was supposed to be the father of the Lord and Saviour; nor is God, Who is truly the Father of our Lord Jesus Christ, excluded from this same work, for He too is a craftsman.
 
     For He is the Artificer Who hath wrought the fabric of this world with power not only wondrous but ineffable — like a wise architect He hath hung the heavens on high, founded the earth in its mass, and bound the seas within their bounds. He is the Artificer Who, by a certain measure, bringeth low the heights of pride and exalteth the depths of humility. He is the Artificer Who, in our own conduct, cutteth away what is superfluous and preserveth what is useful. He is the Artificer whose axe, as John the Baptist warneth us, is laid to the root of our tree: that every tree which exceedeth the rule of just discernment be cut down at the root and given to the fire, but that which hath the measure of truth be counted worthy of His heavenly building.
+responsory:
+  la: |
+    R. Clamávit pópulus ad regem, aliménta petens: * Quibus ille respóndit: Ite ad Joseph, allelúja. V. Salus nostra in manu tua est: réspice nos tantum, et læti serviémus regi. R. Quibus ille respóndit: Ite ad Joseph, allelúja.
+  en: |
+    R. The people cried to Pharaoh for bread * And he answered them Go unto Joseph. Alleluia. V. The saving of our lives is in thy hand; only let us find grace in thy sight, and we will gladly be Pharaoh's servants. R. And he answered them Go unto Joseph. Alleluia.
 status:
   la: verified
   en: verified

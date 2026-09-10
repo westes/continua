@@ -4,7 +4,9 @@
 # of St. John Chrysostom on the Eucharist (Lectio4-6) with the continuation
 # of St. Augustine's own Tract 27 on John (Lectio7-9, same Gospel pericope
 # as day 2, a different passage on the Church as Christ's Body; bare
-# incipit dropped). Responsory not sourced, same reason as day 2.
+# incipit dropped). Responsory now sourced -- day 2's own resolution
+# applies here too: reuse corpus-christi.yml's own Nocturn 2 responsory,
+# "Cenántibus illis," across every combined-lesson octave day.
 id: corpus-christi-octave-day-3
 source:
   la: "Sermo sancti Joánnis Chrysóstomi; Homilía sancti Augustíni Epíscopi"
@@ -34,6 +36,11 @@ text:
     So it is the spirit that quickeneth. It is the spirit that maketh lively the limbs, nor is the quickening power of the spirit shed through any limbs but such as remain in union with the body whose the spirit is. The spirit that thou hast in thee, O man, and whereby thou art a man — doth that spirit shed life through any limb cut off from thy flesh? By "spirit," I mean thy soul. The soul quickeneth no limb but such as remain attached to the body. Cut one off, and the soul quickeneth it no more, for it is separate from the oneness of thy body.
 
     These things I say, that we may love oneness and dread division. In sooth, there is nothing which a Christian ought so much to dread, as to be cut off from the Body of Christ. If he be cut off from the Body of Christ, he is no longer a member of Christ, and the Spirit of Christ no longer quickeneth him. "Now, if any man," saith the Apostle, "have not the Spirit of Christ, he is none of His." It is the Spirit that quickeneth, the flesh profiteth nothing: "the words that I speak unto you, they are spirit and they are life." What meaneth this, "spirit and life"? It is to be taken spiritually. Hast thou taken it spiritually? Then the words the Lord spake, unto thee they are spirit and life. Hast thou taken it carnally? Then the words of the Lord are still indeed spirit and life — but not for thee.
+responsory:
+  la: |
+    R. Cenántibus illis, accépit Jesus panem, et benedíxit, ac fregit, dedítque discípulis suis, et ait: * Accípite et comédite: hoc est corpus meum. V. Dixérunt viri tabernáculi mei: Quis det de cárnibus ejus, ut saturémur? R. Accípite et comédite: hoc est corpus meum.
+  en: |
+    R. As they were eating, Jesus took bread, and blest it, and brake it, and gave it to the disciples, and said: * Take, eat; this is My Body. V. The men of my tabernacle said: O that we had of his flesh, we cannot be satisfied. R. Take, eat; this is My Body.
 status:
   la: verified
   en: draft

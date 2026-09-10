@@ -11,11 +11,15 @@
 # passage of Augustine's Tract 27 on John -- reconstructed here to match
 # the Latin and standard renderings of this text rather than transcribed
 # as-is; `en` marked `draft` accordingly (a larger repair than the usual
-# isolated-typo fix, see memory vu-prefer-text-over-missing). Responsory
-# not sourced -- unlike Ascension's octave, this day's own responsories
-# (Responsory4-8) are scattered between lessons rather than following them
-# as one closing responsory, and don't map cleanly onto this project's
-# usual single-responsory convention.
+# isolated-typo fix, see memory vu-prefer-text-over-missing). This day's
+# own responsories (Responsory4-8) are scattered between lessons rather
+# than following them as one closing responsory, so no specific one maps
+# cleanly here -- resolved the same way Ascension's/Sacred Heart's octaves
+# resolve the identical situation: reuse the feast's own well-known
+# responsory (here, corpus-christi.yml's own Nocturn 2 responsory,
+# "Cenántibus illis," already authored/verified for the feast day itself)
+# across every combined-lesson octave day, rather than picking one of the
+# day's own non-mapping candidates.
 id: corpus-christi-octave-day-2
 source:
   la: "Sermo sancti Thomæ Aquinátis; Homilía sancti Augustíni Epíscopi"
@@ -45,6 +49,11 @@ text:
     This hath He taught, and warned us, by words of deep meaning, that we should be in His Body, under Himself as Head, among His members, eating His Flesh, not forsaking His unity. But many who were there, not understanding, were offended: for, hearing this, they thought of nothing but flesh, such as they themselves were made of. But the Apostle saith, and saith truly: "To be carnally minded is death." The Lord giveth us His Flesh to eat; and to be carnally minded is death. Yet He saith of His own Flesh that there is life eternal in it; therefore we ought not to understand the flesh carnally. Hearing these words, many, therefore — not of His enemies, but of His disciples — said: "This is a hard saying; who can hear it?"
 
     If His disciples found this saying hard, what would His enemies find it? And yet it was fitting that it should be so said, that it might not be understood by all. A secret of God ought to make us attentive, not averse; but these soon fell away, when the Lord Jesus Christ spoke such things. They did not believe that He was saying something great, and covering it with some grace of words; but, as they wished, so they understood, and after the manner of men — namely, that Jesus was able, or that Jesus intended, to distribute, as it were cut in pieces, the Flesh in which the Word was clothed, to them that believe in Him. "This is a hard saying," they say: "who can hear it?"
+responsory:
+  la: |
+    R. Cenántibus illis, accépit Jesus panem, et benedíxit, ac fregit, dedítque discípulis suis, et ait: * Accípite et comédite: hoc est corpus meum. V. Dixérunt viri tabernáculi mei: Quis det de cárnibus ejus, ut saturémur? R. Accípite et comédite: hoc est corpus meum.
+  en: |
+    R. As they were eating, Jesus took bread, and blest it, and brake it, and gave it to the disciples, and said: * Take, eat; this is My Body. V. The men of my tabernacle said: O that we had of his flesh, we cannot be satisfied. R. Take, eat; this is My Body.
 status:
   la: verified
   en: draft

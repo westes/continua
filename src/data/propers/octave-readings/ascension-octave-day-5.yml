@@ -4,8 +4,10 @@
 # Chrysostom on the Ascension (Lectio4-6) with the continuation of Pope St.
 # Gregory's homily on Mark 16:14-20 (Lectio7-9, same Gospel pericope as
 # days 2-3/5, a different homily passage on Elijah/Enoch as types of the
-# Ascension; bare incipit dropped). Responsory not sourced, same reason as
-# day 2.
+# Ascension; bare incipit dropped). Responsory: reuses the Ascension's own well-known opening
+# Matins responsory (Tempora/Pasc5-4.txt's own Responsory1, "Post
+# passiónem suam...") across every combined-lesson octave day -- same
+# resolution as ascension-octave-day-2.yml.
 id: ascension-octave-day-5
 source:
   la: "Sermo sancti Joánnis Chrysóstomi; Homilía sancti Gregórii Papæ"
@@ -35,6 +37,11 @@ text:
     We must mark also, how that Elijah was taken up in a chariot, as though to show plainly that for a mere man some outward help was needful. This help was given to him by Angels, as plainly appeareth, since it was impossible for one whom a weak nature yet weighed down earthward, to fly up even into the atmosphere. But of our Redeemer we read not that He was borne up in a chariot, or by Angels, since He by Whom all things were made clearly rose above all things by His Own Power. He returned unto Him with Whom He was, and whither He returned, there He abode, for albeit as touching His Manhood He ascended up into heaven, yet, as touching His Godhead, He still comprehended both heaven and earth.
 
     But as the sale of Joseph by his brethren was a type of the sale of Christ, so were the translations of Enoch and Elijah types of His Ascension. The Lord therefore had had forerunners and witnesses of His Ascension, the one before the Law, the other under the Law, that Himself might one day come, Who was able indeed to pass into the heavens. Hence also there is some difference to be observed in the manner wherein each was translated. Enoch was seen no more, for God took him; Elijah was carried up by a whirlwind into heaven; He That came after them was not taken up, nor carried up, but went up through space by His Own Power.
+responsory:
+  la: |
+    R. Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúja: * Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja. V. Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris. R. Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja.
+  en: |
+    R. Being seen of them forty days after that He had suffered, and speaking of the kingdom of God. Alleluia. * And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia. V. And, eating together with them, He commanded them that they should not depart from Jerusalem, but wait for the Promise of the Father. R. And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia.
 status:
   la: verified
   en: verified

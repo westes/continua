@@ -9,8 +9,10 @@
 # "How many receive from the altar, and die..." -- has no English at all);
 # supplied here rather than left dropped, so `en` is marked `draft` for
 # this file (a missing clause, the same class of repair as
-# ascension-octave-day-8.yml, not just an isolated typo). Responsory not
-# sourced, same reason as day 2.
+# ascension-octave-day-8.yml, not just an isolated typo). Responsory now
+# sourced -- day 2's own resolution applies here too: reuse
+# corpus-christi.yml's own Nocturn 2 responsory, "Cenántibus illis,"
+# across every combined-lesson octave day.
 id: corpus-christi-octave-day-6
 source:
   la: "Epístola sancti Cypriáni Epíscopi et Mártyris; Homilía sancti Augustíni Epíscopi"
@@ -40,6 +42,11 @@ text:
     But the death whereof the Lord doth sound the alarm, the death that their fathers died, is another death than that which is outward and bodily. Moses ate manna, Aaron ate manna, Phinehas ate manna, many ate manna in whom the Lord was well pleased, and these are not dead. Wherefore? Because they understood spiritually that outward bread, spiritually hungered thereafter, spiritually tasted thereof, and spiritually were satisfied therewith. So also do we this day feed on a visible food, but the Sacrament is one thing, and the grace of the Sacrament is another.
 
     How many receive from the Altar, and die, and die by the very receiving! Whence the Apostle saith: "He that eateth and drinketh unworthily eateth and drinketh damnation to himself." Was not the Lord's morsel poison unto Judas? And yet he took it. And when he had eaten it, the enemy entered in and possessed him — not because what he ate was evil, but because he, being evil, dared to eat that which was good. Look to it well, then, brethren: take spiritually the Bread Which cometh down from heaven. Bring innocency with you to the Altar. Though your sins be daily, let them not be deadly. Before ye draw near to the Altar, think well what it is that ye say: "Forgive us our trespasses, as we forgive them that trespass against us." If thou forgivest, it shall be forgiven thee: draw near boldly, for unto thee It is Bread, and not poison.
+responsory:
+  la: |
+    R. Cenántibus illis, accépit Jesus panem, et benedíxit, ac fregit, dedítque discípulis suis, et ait: * Accípite et comédite: hoc est corpus meum. V. Dixérunt viri tabernáculi mei: Quis det de cárnibus ejus, ut saturémur? R. Accípite et comédite: hoc est corpus meum.
+  en: |
+    R. As they were eating, Jesus took bread, and blest it, and brake it, and gave it to the disciples, and said: * Take, eat; this is My Body. V. The men of my tabernacle said: O that we had of his flesh, we cannot be satisfied. R. Take, eat; this is My Body.
 status:
   la: verified
   en: draft

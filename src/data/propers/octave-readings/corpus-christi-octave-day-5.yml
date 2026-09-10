@@ -9,7 +9,9 @@
 # spacing artifacts in the source's own English corrected as clear
 # transcription typos (e.g. "Wither" -> "Whither"), same judgment call as
 # other files in this project -- not marked `draft` for this alone.
-# Responsory not sourced, same reason as day 2.
+# Responsory now sourced -- day 2's own resolution applies here too:
+# reuse corpus-christi.yml's own Nocturn 2 responsory, "Cenántibus illis,"
+# across every combined-lesson octave day.
 id: corpus-christi-octave-day-5
 source:
   la: "Sermo sancti Joánnis Chrysóstomi; Homilía sancti Augustíni Epíscopi"
@@ -39,6 +41,11 @@ text:
     Christ's faithful ones discern the Lord's Body while they remain watchful members of His Body. They remain members of His Body as long as they will to live according to His Spirit. The Spirit of Christ giveth life to nothing but the body of Christ. Now, my brethren, understand what I am going to say. Thou art a man, and hast a body and a spirit. By spirit I mean the soul, which causeth thee to be a man at all — thou art a man, made up of soul and body. Thy spirit is unseen, thy body seen. Tell me, which of them is it which giveth animation to the other? Doth thy spirit derive animation from thy body, or thy body from thy spirit? Every one who liveth will answer — for if any one cannot answer this, I know not if he be alive. What will whosoever hath life answer? "Verily, it is my spirit which doth animate my body." Wilt thou then live by the Spirit of Christ? Be of the Body of Christ.
 
     Is it not my spirit which doth animate my body? My spirit doth animate my body, and thy spirit doth animate thy body. The Body of Christ liveth not save by the Spirit of Christ. Hence it is that the Apostle Paul saith, touching this Bread: "We, being many, are one bread, and one body, for we are all partakers of that one Bread." O what a Sacrament of love! O what a seal of union! O what a bond of charity! He that willeth to live hath here where to live, and whence to live. Let him come near, let him believe, let him enter into that Body, that he may be quickened. Let him not sever himself from the fit joining-together of all the members; let him not be as a mortifying limb, that must needs be cut off, nor a mis-shapen limb, a cause to blush. Let him be goodly, and useful, and healthy: let him cleave unto the body, let him live by God to God; let him labour now on earth, that he may reign hereafter in heaven.
+responsory:
+  la: |
+    R. Cenántibus illis, accépit Jesus panem, et benedíxit, ac fregit, dedítque discípulis suis, et ait: * Accípite et comédite: hoc est corpus meum. V. Dixérunt viri tabernáculi mei: Quis det de cárnibus ejus, ut saturémur? R. Accípite et comédite: hoc est corpus meum.
+  en: |
+    R. As they were eating, Jesus took bread, and blest it, and brake it, and gave it to the disciples, and said: * Take, eat; this is My Body. V. The men of my tabernacle said: O that we had of his flesh, we cannot be satisfied. R. Take, eat; this is My Body.
 status:
   la: verified
   en: verified

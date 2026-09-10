@@ -11,8 +11,10 @@
 # all -- and another sentence is transposed) -- reconstructed here following
 # the Latin closely rather than transcribed as-is; `en` marked `draft`
 # accordingly (a larger repair than the usual isolated-typo fix, see
-# memory vu-prefer-text-over-missing). Responsory not sourced, same reason
-# as day 2.
+# memory vu-prefer-text-over-missing). Responsory: reuses the Ascension's
+# own well-known opening Matins responsory (Tempora/Pasc5-4.txt's own
+# Responsory1, "Post passiónem suam...") across every combined-lesson
+# octave day -- same resolution as ascension-octave-day-2.yml.
 id: ascension-octave-day-8
 source:
   la: "Sermo sancti Augustíni Epíscopi; Homilía sancti Gregórii Papæ"
@@ -42,6 +44,11 @@ text:
     Hence it is that Solomon hath put into the mouth of that same Church the words: "Behold, He cometh leaping upon the mountains, skipping upon the hills." For she considered the heights of such great works, and said: "Behold, He cometh leaping upon the mountains." When He came to redeem us, He came, if I may so say, in leaps. My dearly beloved brethren, would you know what His leaps were? From heaven He leapt into the womb, from the womb into the manger, from the manger on to the Cross, from the Cross into the grave, and from the grave He returned into heaven. Lo, that He might make us run after Him, Truth made manifest in the Flesh gave, for our sakes, certain leaps: for He rejoiced as a strong man to run his course, that we might say to Him from our heart: "Draw us: we will run after thee, to the savour of thy good ointments."
 
     Wherefore, dearly beloved brethren, it behoveth us to follow thither in heart, where we believe Him to have ascended in body. Let us flee earthly desires; let nothing here below delight us any more, we who have a Father in heaven. And this we must weigh most earnestly: that He Who ascended in gentleness will return in terror, and whatsoever He hath commanded us with meekness, that will He require of us with strict account. Let no man, therefore, think lightly of this season of granted repentance; let no man neglect to care for his own soul while he is able: for our Redeemer will come the more strict to judgment, the more patience He hath shown us before that judgment.
+responsory:
+  la: |
+    R. Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúja: * Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja. V. Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris. R. Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja.
+  en: |
+    R. Being seen of them forty days after that He had suffered, and speaking of the kingdom of God. Alleluia. * And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia. V. And, eating together with them, He commanded them that they should not depart from Jerusalem, but wait for the Promise of the Father. R. And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia.
 status:
   la: verified
   en: draft

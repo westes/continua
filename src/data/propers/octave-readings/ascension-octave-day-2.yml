@@ -5,10 +5,13 @@
 # date -- no representative year needs picking). Joins St. Leo the Great's
 # sermon on the Ascension (Lectio4-6, Nocturn 2) with Pope St. Gregory the
 # Great's homily on Mark 16:14-20 (Lectio7-9, Nocturn 3, the bare Gospel
-# incipit dropped per the usual rule). Responsory not sourced -- the
-# source's own three responsories for this day don't map cleanly onto a
-# single "first responsory following the lessons" the way a Common-of-
-# saint file usually does; left out rather than guessed.
+# incipit dropped per the usual rule). Responsory: reuses the Ascension's
+# own well-known opening Matins responsory (Tempora/Pasc5-4.txt's own
+# Responsory1, "Post passiónem suam...") across every combined-lesson
+# octave day, rather than picking one of this day's several per-lesson
+# responsories (none of which map cleanly onto a single recombined
+# reading) -- the same resolution already used for nativity-bvm's own
+# octave (see nativity-bvm-octave-day-3.yml's own header).
 id: ascension-octave-day-2
 source:
   la: "Sermo sancti Leónis Papæ; Homilía sancti Gregórii Papæ"
@@ -38,6 +41,11 @@ text:
     Once, then, it so standeth, it is to our lives we must look for proof of the reality of our faith. Then only are we truly Christ's faithful people when our works are the fulfilment of our profession. The day whereon we were baptized we bound ourselves to renounce all the works of the old enemy, and all his pomps. Therefore let every one of you now turn his inward eye upon his own behaviour, and if, since his baptism, he hath kept that promise which he made before it, let him know that he is in very truth one of Christ's faithful ones, and let him rejoice.
 
     But if he hath utterly broken his promise, if he hath fallen away to work iniquity, and to lust after the pomps of the world, let us see if he now knoweth how to weep over his backsliding. By the merciful Judge that man is not punished as a perjurer who in the end telleth the truth, even though he hath first lied. Because Almighty God doth, in His tender kindness, so receive our contrition, that, in His judgment, He declareth us not guilty of that which we have done amiss.
+responsory:
+  la: |
+    R. Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúja: * Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja. V. Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris. R. Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja.
+  en: |
+    R. Being seen of them forty days after that He had suffered, and speaking of the kingdom of God. Alleluia. * And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia. V. And, eating together with them, He commanded them that they should not depart from Jerusalem, but wait for the Promise of the Father. R. And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia.
 status:
   la: verified
   en: verified

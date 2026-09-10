@@ -35,6 +35,18 @@ text:
     Peter asked because of his great love for John, hoping not to be parted from him, and Christ answered him, that with whatever affection he loved him, he could not love him as He loved him. "If I will that he tarry till I come, what is that to thee?" Let us learn from these words, by the teaching of Christ, neither to chafe, nor to enquire too curiously, where the will of God is concerned. For when Peter would be still asking, the Lord at length checked him in these words for his continued curiosity.
 
     Then went this saying abroad among the brethren, that that disciple should not die; yet Jesus said not unto him, "He shall not die"; but, "If I will that he tarry till I come, what is that to thee?" That is, He would not have it thought that He had disposed of them both in the same way. He spoke thus that He might check the untimely motion of affection, and the desire to continue the old companionship. The Apostles were about to take in charge the whole earth, and it behoved them no more to continue together, lest the world should suffer thereby. Therefore the Lord saith to Peter: "Thou hast received thy task; bend thyself to it, and do it; work and fight. What is it to thee if I will that he tarry here? Turn thou to thine own appointed labour, and finish it."
+# Responsory missing from this file -- authoring gap, not a design choice
+# (same class as nativity-bvm-octave-day-3.yml's own fix). Reuses St. John
+# the Apostle's own Responsory1 (Sancti/12-27.txt), the octave's one well-
+# known opening responsory, matching the convention already established for
+# the Nativity-BVM octave (every combined-lesson octave-day file there
+# reuses that feast's own Responsory1 regardless of which specific
+# historical Lectio number the combined text corresponds to).
+responsory:
+  la: |
+    R. Valde honorándus est beátus Joánnes, qui supra pectus Dómini in cena recúbuit: * Cui Christus in cruce Matrem vírginem vírgini commendávit. V. Virgo est eléctus a Dómino, atque inter céteros magis diléctus. R. Cui Christus in cruce Matrem vírginem vírgini commendávit.
+  en: |
+    R. Right worthy of honour is the blessed Apostle John, who leaned on the Lord's bosom at the Last Supper. * To Him did Christ upon the Cross commit His mother, virgin to virgin. V. The Lord chose him for his clean maidenhood, and loved him more than all the rest. R. To him did Christ upon the Cross commit His mother, virgin to virgin.
 status:
   la: verified
   en: verified

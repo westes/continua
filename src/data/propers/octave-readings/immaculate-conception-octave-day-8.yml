@@ -39,6 +39,16 @@ text:
     The Virgin is that stainless lily whence hath sprung the Rose that fadeth not, even Christ. O Holy Mother of God! Ewe without spot, that hast borne the Lamb That took flesh of thee, even Christ! O Maiden whose holiness hath dazzled the heavenly armies! There hath appeared a great sign in heaven, a woman clothed with the sun, and with the Light in her arms; a great sign in heaven, the Virgin's womb the chamber of the Son of God; a great sign in heaven, the Lord of angels made the Virgin's child. The angels accused Eve, but now they praise Mary, who hath raised Eve fallen, and restored to heaven Adam banished from Paradise. For Mary is the bridge between heaven and earth, the ambassadress who hath reconciled them in her womb.
 
     We cannot measure the grace bestowed upon this holy Virgin. Hence the salutation addressed to her by Gabriel, Hail, thou glorious heaven, full of grace. Hail, Virgin adorned with many graces, yea, full of grace. Hail, thou vessel of gold that holdest the manna that came down from heaven, full of grace. Hail, thou unfailing fountain, that satisfiest the thirsty soul with sweet waters, full of grace. Hail, holy, sinless Mother of Him That was before thee, even Christ. Hail, thou Queenly purple, mantle of the King of heaven and earth. Hail, thou Book that no man can understand, and yet which the Eternal Word, the Son of the Father, hath opened for earth to read.
+# Responsory missing from this and this octave's other day-2/3/5/7 files --
+# the feast's own Responsory1 (Sancti/12-08.txt), reused across the
+# octave's combined-lesson readings the same way nativity-bvm's octave
+# does; 12-09bmv.txt's own "vide Sancti/12-08" rule confirms it has no
+# responsory of its own and inherits this one.
+responsory:
+  la: |
+    R. Per unum hóminem peccátum in hunc mundum intrávit, in quo omnes peccavérunt. * Ne tímeas, María, invenísti grátiam apud Deum. V. Erípuit Dóminus ánimam tuam de morte, et contra inimícum factus est protéctor tuus. R. Ne tímeas, María, invenísti grátiam apud Deum.
+  en: |
+    R. By one man sin entered into the world, in whom all have sinned. * Fear not, Mary, for thou hast found grace with God. V. The Lord hath delivered thy soul from death, yea, the Lord was thy stay. R. Fear not, Mary, for thou hast found grace with God.
 status:
   la: verified
   en: verified

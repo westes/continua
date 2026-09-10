@@ -4,8 +4,10 @@
 # "Super Missus Est" homily (Lectio4-6, Joseph's own reasoning for
 # wishing to put Mary away privily) with St. John Damascene's homily on
 # the two genealogies (Lectio7-9, same Gospel pericope as the feast day;
-# bare incipit dropped). Responsory not sourced, same convention as the
-# other movable octaves in this project.
+# bare incipit dropped). Responsory now sourced -- same resolution as
+# day 2: reuse the feast's own well-known Responsory1 (Tempora/
+# Pasc2-3.txt, the feast day itself) across every combined-lesson octave
+# day.
 id: patronage-of-st-joseph-octave-day-7
 source:
   la: "Sermo sancti Bernárdi Abbátis; Homilía sancti Joánnis Damascéni"
@@ -35,6 +37,11 @@ text:
     Not without reason was the birth of Christ by the Holy Ghost kept from common knowledge, and Joseph taken in the place of a father, and thence, as was indeed fitting, reckoned as the Child's father. For had this not been so, the Child would have been thought fatherless, since His lineage would not have been reckoned from the father's side at all. Wherefore it was of necessity that the excellent Evangelists should reckon Joseph's lineage. For had they, passing this over, woven the line of His descent from the mother's side, that would have been unseemly, besides being contrary to the custom of the divine Scriptures. Fittingly, then, tracing Joseph's lineage from David for the reason we have given, they at the same time confirm that the Virgin Mary too sprang from David, inferring the wife's lineage together through the husband.
 
     That Joseph was endowed with righteousness, and led a life conformable to the Law, is plain to all. Living, moreover, by the precept of the Law, he assuredly betrothed a wife sprung from no other than his own tribe. Wherefore, if Joseph was of the tribe of Judah and of the lot and family of David, is it not fitting that Mary too should proceed from the same? Whence it came about that the Spouse's lineage was recorded. For, since by the Apostle's own word the head of the woman is the man, what can be said against this: that when the lineage of the head is recorded, the body too is recorded together with the head? I judge, then, that it hath been plainly shown that the Evangelists did not record Joseph's lineage in vain, from which it is necessarily understood that the Virgin too descended from David by consequence, and that Christ, Who was born of her by a surpassing miracle, was, before all ages, the Son of God.
+responsory:
+  la: |
+    R. Clamávit pópulus ad regem, aliménta petens: * Quibus ille respóndit: Ite ad Joseph, allelúja. V. Salus nostra in manu tua est: réspice nos tantum, et læti serviémus regi. R. Quibus ille respóndit: Ite ad Joseph, allelúja.
+  en: |
+    R. The people cried to Pharaoh for bread * And he answered them Go unto Joseph. Alleluia. V. The saving of our lives is in thy hand; only let us find grace in thy sight, and we will gladly be Pharaoh's servants. R. And he answered them Go unto Joseph. Alleluia.
 status:
   la: verified
   en: verified

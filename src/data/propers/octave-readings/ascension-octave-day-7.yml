@@ -6,7 +6,10 @@
 # angels) with the continuation of Pope St. Gregory the Great's homily on
 # Mark 16:14-20 (Lectio7-9, same Gospel pericope as every other day, a
 # different homily passage on the white-robed angels of Acts 1:9-10; bare
-# incipit dropped). Responsory not sourced, same reason as day 2.
+# incipit dropped). Responsory: reuses the Ascension's own well-known
+# opening Matins responsory (Tempora/Pasc5-4.txt's own Responsory1, "Post
+# passiónem suam...") across every combined-lesson octave day -- same
+# resolution as ascension-octave-day-2.yml.
 id: ascension-octave-day-7
 source:
   la: "Sermo sancti Gregórii Nysséni; Homilía sancti Gregórii Papæ"
@@ -36,6 +39,11 @@ text:
     Therefore were the angels bound to appear in white apparel at the Ascension: at His Birth He Who thought it not robbery to be equal with God was seen in the form in which He had humbled Himself; at His Ascension the Manhood Which He had taken into God was seen glorified. Again, dearly beloved brethren, we must remember today, how that Christ hath "blotted out the hand-writing that was against us," and reversed the sentence which doomed us to corruption. That same nature to which it was said, "Dust thou art, and unto dust shalt thou return," that same nature is His Who hath this day ascended up into heaven. It is because of this up-lifting of our flesh that blessed Job, by a figure, calleth the Lord a bird. The Jews could not understand the Mystery of the Ascension, and in view of this their unbelief, blessed Job said mystically: "He knew not the path of the bird."
 
     The name of a bird is well given to the Lord, Who bodily soared up into heaven. And the path of that Bird knoweth no man, who believeth not in the Ascension into heaven. It is of this glorious occasion that the Psalmist saith: "Who hast set thy glory above the heavens," and again "God is gone up with a shout, and the Lord with the sound of a trumpet." And yet again he saith: "Thou hast ascended on high, Thou hast led captivity captive." "When Christ ascended up on high, He led captivity captive," because by His Own incorruptibility He swallowed up our corruptibility. "He gave gifts unto men," because by sending the Spirit from above, He gave "to one, the word of wisdom; to another, the word of knowledge; to another, the working of miracles; to another, the gifts of healing; to another, diverse kinds of tongues; to another, the interpretation of tongues."
+responsory:
+  la: |
+    R. Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúja: * Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja. V. Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris. R. Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja.
+  en: |
+    R. Being seen of them forty days after that He had suffered, and speaking of the kingdom of God. Alleluia. * And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia. V. And, eating together with them, He commanded them that they should not depart from Jerusalem, but wait for the Promise of the Father. R. And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia.
 status:
   la: verified
   en: verified

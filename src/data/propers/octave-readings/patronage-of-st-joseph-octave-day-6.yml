@@ -7,8 +7,9 @@
 # Matthew's through Solomon (Lectio7-9, same Gospel pericope as the feast
 # day; bare incipit dropped). A couple of stray OCR spelling artifacts in
 # the source's own English corrected as clear transcription typos.
-# Responsory not sourced, same convention as the other movable octaves in
-# this project.
+# Responsory now sourced -- same resolution as day 2: reuse the feast's
+# own well-known Responsory1 (Tempora/Pasc2-3.txt, the feast day itself)
+# across every combined-lesson octave day.
 id: patronage-of-st-joseph-octave-day-6
 source:
   la: "Sermo sancti Bernárdi Abbátis; Homilía sancti Ambrósii Epíscopi"
@@ -38,6 +39,11 @@ text:
     Therefore both Evangelists keep well within the truth: for Matthew doth establish descent through the kings, whereas Luke, by tracing through the priests the lineage transmitted to Christ from God, manifesteth his more sacred origin. In this too is signified the figure of the calf, for everywhere he bringeth forward the mystery of the sacrificial priesthood. Nor need it surprise us that Luke giveth many more generations from Abraham to Christ than doth Matthew, since we can recognize that the line of descent is traced through different persons: it may be that some lived long lives, while men of the other line died at an immature age; for we see many old men living with their grandchildren, and others dying as soon as their children are born.
 
     We notice also this: that Saint Matthew recordeth Jacob, who was the father of Joseph, as the son of Matthan; whereas Luke recordeth that Joseph, to whom Mary was espoused, was the son of Heli, and that Heli was the son of Melchi. How then could one man have two fathers, namely Heli and Jacob? He is called the son of two, because he was made the son of the one according to nature, and of the other according to the Law. In this provision of the Law — regarding the raising up of seed to a brother who had died — the Jewish people did not understand that a future perpetuity of the seed of the dead was promised to us; but, taking it according to the letter, they corrupted the grace of the oracle. For that other was called brother who raised up the seed of the dead, not a brother according to the kinship of the flesh, but according to the purity of grace. And therefore, perchance, it was not the brother who redeemed, but the Man who redeemed — for it was not that own brother, but the Mediator between God and men, the Man Christ Jesus, Who spread abroad the grace of the resurrection.
+responsory:
+  la: |
+    R. Clamávit pópulus ad regem, aliménta petens: * Quibus ille respóndit: Ite ad Joseph, allelúja. V. Salus nostra in manu tua est: réspice nos tantum, et læti serviémus regi. R. Quibus ille respóndit: Ite ad Joseph, allelúja.
+  en: |
+    R. The people cried to Pharaoh for bread * And he answered them Go unto Joseph. Alleluia. V. The saving of our lives is in thy hand; only let us find grace in thy sight, and we will gladly be Pharaoh's servants. R. And he answered them Go unto Joseph. Alleluia.
 status:
   la: verified
   en: verified

@@ -41,6 +41,18 @@ text:
     He was not slothful, but obeyed cheerfully, and by faith bore all tribulations with joy. God in His mercy mingled some joy with his sorrow, as He doth in all the saints, whom He will have to abide continually neither in sorrow, nor in joy, but weaveth their life ever with a strange diversity. And let us consider how He did it here.
 
     When St. Joseph knew that the Virgin was with child, he was greatly troubled; but forthwith an Angel came to take away his fears. The Lord was born, and he rejoiced with exceeding joy; but straightway came the great danger, when all Jerusalem was troubled, the king in great wrath, and murderers seeking the young Child's life. The star shone over Bethlehem, and the wise men came to worship; but Herod sought to slay the Saviour, and they arose and fled into a far country.
+# Responsory missing from this file -- authoring gap, not a design choice
+# (same class as nativity-bvm-octave-day-3.yml's own fix). Reuses the Holy
+# Innocents' own Responsory1 (Sancti/12-28.txt), the octave's one well-known
+# opening responsory, matching the convention already established for the
+# Nativity-BVM octave (every combined-lesson octave-day file there reuses
+# that feast's own Responsory1 regardless of which specific historical
+# Lectio number the combined text corresponds to).
+responsory:
+  la: |
+    R. Centum quadragínta quátuor míllia, qui empti sunt de terra, hi sunt qui cum muliéribus non sunt coinquináti: * Vírgines enim permansérunt, ídeo regnant cum Deo, et Agnus Dei cum illis. V. Isti sunt qui venérunt ex magna tribulatióne, et lavérunt stolas suas in sánguine Agni. R. Vírgines enim permansérunt, ídeo regnant cum Deo, et Agnus Dei cum illis.
+  en: |
+    R. A hundred forty four thousand, which were redeemed from the earth; these are they which were not defiled with women. * For they remained virgins; therefore are they kings before God, and the Lamb of God is with them. V. These are they which came out of great tribulation, and have washed their robes in the Blood of the Lamb. R. For they remained virgins; therefore are they kings before God, and the Lamb of God is with them.
 status:
   la: verified
   en: draft

@@ -8,7 +8,10 @@
 # split (a Tridentine-vs-1570-rubric alternative reading) uses only the
 # default `Lectio6_` branch here -- the `Lectio6_2` alternate has no
 # matching English translation in the source and is only used under the
-# other rubric anyway. Responsory not sourced, same reason as day 2.
+# other rubric anyway. Responsory: reuses the Ascension's own well-known
+# opening Matins responsory (Tempora/Pasc5-4.txt's own Responsory1, "Post
+# passiónem suam...") across every combined-lesson octave day -- same
+# resolution as ascension-octave-day-2.yml.
 id: ascension-octave-day-4
 source:
   la: "Sermo sancti Augustíni Epíscopi; Tractátus sancti Augustíni in Joánnem"
@@ -38,6 +41,11 @@ text:
     "If they have persecuted Me, they will also persecute you." Here He clearly pointeth to the Jews, the persecutors both of Himself and of His disciples, so that we see that they which persecute His holy ones are as much citizens of the world of damnation as they which persecuted Himself. He saith: "They know not Him That sent Me," and yet again, "They have hated both Me and My Father," that is to say, both the Sender and the Sent — the meaning of which words we have already treated in other discourses — and with that He cometh to the words: "That the word might be fulfilled that is written in their law: They hated Me without a cause."
 
     Then saith the Lord, as though in continuation: "But when the Comforter is come, Whom I will send unto you from the Father, even the Spirit of truth, Which proceedeth from the Father, He shall testify of Me. And ye also shall bear witness, because ye have been with Me from the beginning." What connection hath this with the words: "Now have they both seen and hated both Me and My Father" — but that the word might be fulfilled that is written in their law: "They hated Me without a cause"? Is it that when the Comforter is come, even the Spirit of truth, He will confound by irrefragable testimony them who have both seen and hated both God the Son and God the Father? Yea, indeed, some there were who had seen and still hated, whom the testimony of the Comforter converted to the faith which worketh by love.
+responsory:
+  la: |
+    R. Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúja: * Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja. V. Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris. R. Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja.
+  en: |
+    R. Being seen of them forty days after that He had suffered, and speaking of the kingdom of God. Alleluia. * And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia. V. And, eating together with them, He commanded them that they should not depart from Jerusalem, but wait for the Promise of the Father. R. And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia.
 status:
   la: verified
   en: verified

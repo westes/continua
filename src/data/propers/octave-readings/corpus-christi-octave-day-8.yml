@@ -4,7 +4,9 @@
 # Joins St. Cyril of Jerusalem's mystagogical catechesis on the institution
 # narrative (Lectio4-6) with St. Cyril of Alexandria's commentary on John 6
 # (Lectio7-9, same Gospel pericope as every other day in this octave; bare
-# incipit dropped). Responsory not sourced, same reason as day 2.
+# incipit dropped). Responsory now sourced -- day 2's own resolution
+# applies here too: reuse corpus-christi.yml's own Nocturn 2 responsory,
+# "Cenántibus illis," across every combined-lesson octave day.
 id: corpus-christi-octave-day-8
 source:
   la: "Sermo sancti Cyrílli Epíscopi Jerosolymitáni; Homilía sancti Cyrílli Epíscopi Alexandríni"
@@ -34,6 +36,11 @@ text:
     As for ourselves, if we would win life everlasting; if we would that the Giver of immortality should dwell in us, let us run freely to receive this Blessing, and let us beware that the devil succeed not in laying a stumbling-block in our way, in the shape of a mistaken reverence. Thou rightly sayest, and we know well, how that it is written: "Whosoever shall eat this Bread and drink this Cup of the Lord unworthily eateth and drinketh damnation to himself." I therefore examine myself and find myself unworthy. And I ask thee, who citest these words to me, who shall ever be found worthy? When wilt thou be such an one as may be worthy to be offered to Christ? If by sin thou art unworthy, and thou ceasest not to sin, thou shalt for ever lack this means of life and sanctification.
 
     Therefore, I counsel thee to betake thee to godly thoughts, and to live carefully and holily, and so to receive that Blessing — a Blessing which, believe me, doth banish, not death only, but all diseases likewise. For when Christ dwelleth in us, He stilleth the law of death in our members, which warreth against the law of our mind; He giveth strength to godliness, He turneth to calm the turbulent surging of our mind, He cureth them which are sick, He raiseth up them which are fallen, and, like the Good Shepherd, Which giveth His life for the sheep, He prevaileth that the sheep perish not.
+responsory:
+  la: |
+    R. Cenántibus illis, accépit Jesus panem, et benedíxit, ac fregit, dedítque discípulis suis, et ait: * Accípite et comédite: hoc est corpus meum. V. Dixérunt viri tabernáculi mei: Quis det de cárnibus ejus, ut saturémur? R. Accípite et comédite: hoc est corpus meum.
+  en: |
+    R. As they were eating, Jesus took bread, and blest it, and brake it, and gave it to the disciples, and said: * Take, eat; this is My Body. V. The men of my tabernacle said: O that we had of his flesh, we cannot be satisfied. R. Take, eat; this is My Body.
 status:
   la: verified
   en: verified

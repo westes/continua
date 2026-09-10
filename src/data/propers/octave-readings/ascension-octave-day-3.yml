@@ -4,7 +4,10 @@
 # St. Leo's own Ascension sermon (Lectio4-6, a different passage than day 2)
 # with the continuation of Pope St. Gregory's homily on Mark 16:14-20
 # (Lectio7-9, same Gospel pericope as day 2, different homily passage; bare
-# incipit dropped). Responsory not sourced, same reason as day 2.
+# incipit dropped). Responsory: reuses the Ascension's own well-known
+# opening Matins responsory (Tempora/Pasc5-4.txt's own Responsory1, "Post
+# passiónem suam...") across every combined-lesson octave day -- same
+# resolution as ascension-octave-day-2.yml.
 id: ascension-octave-day-3
 source:
   la: "Sermo sancti Leónis Papæ; Homilía sancti Gregórii Papæ"
@@ -34,6 +37,11 @@ text:
     We have a deeper matter of thought touching these signs and mighty works. It is the work of the holy Church to do every day spiritually that which the Apostles then did carnally. When her Priests, armed with the power of exorcism, lay their hands upon believers, and command evil spirits to dwell no longer in their souls, what is it they do but cast out devils? When Christ's faithful people themselves give up the language of their old life, and speak the wonderful works of God, the glory and power of their Maker, telling of them with all their strength, what is it they do then but speak with new tongues? When either the one or the other doth by his exhortation charm the wickedness out of his neighbour's heart, what is it he doth but take up serpents?
 
     When they hear the voice of temptation inviting to deadly sin, but are not drawn thereby to work iniquity, do they not then drink a deadly thing, and it doth not hurt them? As often as they see their neighbour fainting in well-doing, and run to help him with all their might, so that their example braceth the feeble life of the waverer, what do they but lay hands on the sick, and they recover? And indeed, such miracles as these are the greatest miracles, which are spiritual — the greatest, for they bring health, not to the dying body, but to the immortal soul.
+responsory:
+  la: |
+    R. Post passiónem suam per dies quadragínta appárens eis, et loquens de regno Dei, allelúja: * Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja. V. Et convéscens, præcépit eis, ab Jerosólymis ne discéderent, sed exspectárent promissiónem Patris. R. Et, vidéntibus illis, elevátus est, allelúja: et nubes suscépit eum ab óculis eórum, allelúja.
+  en: |
+    R. Being seen of them forty days after that He had suffered, and speaking of the kingdom of God. Alleluia. * And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia. V. And, eating together with them, He commanded them that they should not depart from Jerusalem, but wait for the Promise of the Father. R. And while they beheld, He was taken up, and a cloud received Him out of their sight. Alleluia.
 status:
   la: verified
   en: verified
