@@ -1,5 +1,5 @@
 import type { PropersRef, ResolvedPart, ResolvedText } from './types';
-import type { Commemoration, DayWinner, LiturgicalDay, Weekday } from '../calendar/types';
+import type { Commemoration, DayWinner, FeastClass, LiturgicalDay, Weekday } from '../calendar/types';
 import type { ProperText } from '../propers';
 import { getCommonProper, getTemporalProper } from '../propers';
 import { getSaintRecord } from '../calendar/feasts';
@@ -383,6 +383,35 @@ export function getPsalmodyProperOverrideId(day: LiturgicalDay): string | undefi
 }
 
 /**
+ * A sanctoral office winner's octave-aware effective rank: an octave day
+ * borrowing its content from `resolveOfficeWinner` (rather than being a real
+ * outright `day.winner` itself) should be judged against that octave's own
+ * per-day rank (`ActiveOctave.wins`, already closing-day-elevated by
+ * calendar/octaves.ts), not the origin feast's own full rank — otherwise
+ * every day of a strong feast's octave (e.g. the Nativity of the BVM,
+ * `duplex-2-classis`) would read as duplex-majus-eligible even on an
+ * ordinary octave day whose own claim is only `duplex` (2026-09-09,
+ * live-verified: Gorgonius loses the day to the octave, but the octave
+ * itself is only `wins: duplex` that day). Returns `undefined` for a
+ * non-sanctoral winner (temporal ids never carry this ambiguity). Shared by
+ * `getPsalmodyNumbersOverrideId` below (Lauds/Vespers) and
+ * `hours/matins.ts`'s own psalm-number rank gates — factored out
+ * 2026-09-10 after Matins was found still using the un-weakened
+ * `winner.rank` directly, the same bug this file's own fix (2026-09-09)
+ * had already corrected for Lauds/Vespers.
+ */
+export function officeWinnerEffectiveRank(day: LiturgicalDay, winner: DayWinner): FeastClass | undefined {
+  if (winner.kind !== 'sanctoral') {
+    return undefined;
+  }
+  const activeOctave =
+    day.winner.kind === 'sanctoral'
+      ? undefined
+      : (day.temporalCategory === 'ordinary-feria' ? resolveActiveOctave(day.date) : octaveGoverningPrivilegedDay(day));
+  return activeOctave?.wins ?? winner.rank;
+}
+
+/**
  * The id to look up for today's *real psalm numbers* at Lauds/Vespers —
  * unlike `getPsalmodyProperOverrideId` above, this one is rank-gated, and
  * unlike `getOfficeOverrideId`, the rank it gates on is octave-aware: an
@@ -416,11 +445,7 @@ export function getPsalmodyNumbersOverrideId(day: LiturgicalDay): string | undef
   if (winner.kind !== 'sanctoral') {
     return undefined;
   }
-  const activeOctave =
-    day.winner.kind === 'sanctoral'
-      ? undefined
-      : (day.temporalCategory === 'ordinary-feria' ? resolveActiveOctave(day.date) : octaveGoverningPrivilegedDay(day));
-  const effectiveRank = activeOctave?.wins ?? winner.rank;
+  const effectiveRank = officeWinnerEffectiveRank(day, winner)!;
   return isAtLeast(effectiveRank, 'duplex-majus') ? winner.id : undefined;
 }
 

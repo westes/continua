@@ -89,6 +89,7 @@ import {
   splitNamedAntiphon,
   openingAntiphon,
   substituteName,
+  officeWinnerEffectiveRank,
 } from './resolve-common';
 import { getSaintRecord } from '../calendar/feasts';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
@@ -1180,6 +1181,12 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   }
   const day = resolveDay(date);
   const winner = resolveOfficeWinner(day);
+  // Octave-aware: an interior octave day is judged on the octave's own
+  // per-day rank, not the origin feast's full rank — see
+  // resolve-common.ts's officeWinnerEffectiveRank doc comment. Fixes the
+  // same class of bug 2026-09-09's Lauds/Vespers fix addressed
+  // (getPsalmodyNumbersOverrideId), left un-patched here until 2026-09-10.
+  const effectiveRank = officeWinnerEffectiveRank(day, winner);
   const temporalId = resolveTemporalId(date);
   // Every Sunday, unconditionally, a Semiduplex+ sanctoral winner — the
   // user's own chosen threshold (2026-08, lowered from Duplex to
@@ -1208,7 +1215,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   const hasTemporalNamedOverride =
     temporalNamedOverride !== undefined && (temporalNamedOverride.weekdays === undefined || temporalNamedOverride.weekdays.includes(day.weekday));
   const threeNocturns =
-    day.weekday === 'sunday' || (winner.kind === 'sanctoral' && isAtLeast(winner.rank, 'semiduplex')) || hasTemporalNamedOverride;
+    day.weekday === 'sunday' || (effectiveRank !== undefined && isAtLeast(effectiveRank, 'semiduplex')) || hasTemporalNamedOverride;
   const pool = buildReadingPool(day, temporalId, date, threeNocturns, hasTemporalNamedOverride);
   const [nocturn1Readings, nocturn2Readings, nocturn3Readings] = distributeIntoNocturns(pool, threeNocturns ? 3 : 1);
 
@@ -1286,7 +1293,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     //     own doc comment for why those three, not Common's own Matins
     //     Nocturn antiphons).
     const properOverride = winner.kind === 'sanctoral' ? getMatinsSaintOverride(winner.id) : undefined;
-    const isAboveDuplex = winner.kind === 'sanctoral' && isAtLeast(winner.rank, 'duplex-majus');
+    const isAboveDuplex = effectiveRank !== undefined && isAtLeast(effectiveRank, 'duplex-majus');
     const commonOverride = winner.kind === 'sanctoral' && !properOverride ? getMatinsCommonOverride(winner.id) : undefined;
     if (properOverride) {
       parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
