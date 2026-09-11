@@ -2,9 +2,9 @@
 # with Caddy on port 8080. Not tied to any particular host's network/proxy
 # setup; put a reverse proxy or TLS terminator in front of it as needed.
 services:
-  vu:
+  continua:
     build: .
-    container_name: vu
+    container_name: continua
     restart: unless-stopped
     ports:
       - "8080:80"

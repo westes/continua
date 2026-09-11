@@ -1,0 +1,15 @@
+# Dev compose file — runs the Vite dev server in a container with the repo
+# bind-mounted, so edits on disk hot-reload live. Not used in production;
+# see docker-compose.yml for the real build/deploy path.
+services:
+  continua-dev:
+    image: node:26-alpine
+    container_name: continua-dev
+    working_dir: /app
+    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0"
+    ports:
+      - "5174:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    restart: unless-stopped
