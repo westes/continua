@@ -371,7 +371,7 @@ describe('getDayLabel — active octave', () => {
     // Semiduplex now loses outright to the octave's Duplex threshold,
     // rather than tying and winning. This deliberately diverges from the
     // reference engine's own live behavior (which has Eudes winning
-    // outright as Duplex) -- see CLAUDE.md's "not a reconstruction" note.
+    // outright as Duplex) -- see this project's "not a reconstruction" note.
     expect(getDayLabel(resolveDay('2026-08-19')).en).toBe(
       'Octave of the Assumption of the Blessed Virgin Mary (5th Day, Duplex) — St. John Eudes, Confessor',
     );

@@ -820,7 +820,7 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
     // day (`Omit Incipit Hymnus Capitulum Lectio Preces Commemoratio
     // Suffragium`) — the historical office drops All Saints' still-active
     // octave outright — but vu's generous-commemorations design (see
-    // CLAUDE.md's "Not a reconstruction" note) deliberately keeps it
+    // this project's "Not a reconstruction" note) deliberately keeps it
     // anyway, same `collectCommemorations` machinery every other headline
     // branch here uses, same octave-headline ordering (primary, then
     // octaves, then any other commemoration).

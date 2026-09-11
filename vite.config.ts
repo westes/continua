@@ -43,7 +43,7 @@ export default defineConfig({
         // once the bulk Vulgate/Douay-Rheims scripture import (~1000 new
         // chapters under src/data/scripture/) pushed it past 16 MiB. Bump
         // this again, with headroom, if a future content pull hits it --
-        // this is deliberate bundling, not bloat to trim (see CLAUDE.md).
+        // this is deliberate bundling, not bloat to trim (see this project's design notes).
         maximumFileSizeToCacheInBytes: 24 * 1024 * 1024,
       },
     }),

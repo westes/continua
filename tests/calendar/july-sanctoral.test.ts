@@ -47,7 +47,7 @@ describe('July sanctoral pull (first pass)', () => {
     ]);
   });
 
-  it("St. Camillus de Lellis (Divino Afflatu's own occupant of this MM-DD slot, added alongside Ss. Symphorosa and Her Seven Sons; his canonization postdates ~1600 so his source Duplex rank is deflated one tier to semiduplex per CLAUDE.md) still wins outright over their Simplex, commemorating them instead", () => {
+  it("St. Camillus de Lellis (Divino Afflatu's own occupant of this MM-DD slot, added alongside Ss. Symphorosa and Her Seven Sons; his canonization postdates ~1600 so his source Duplex rank is deflated one tier to semiduplex per this project's design notes) still wins outright over their Simplex, commemorating them instead", () => {
     const day = resolveDay('2028-07-18'); // a Tuesday, no Sunday collision
     expect(day.winner).toEqual({
       kind: 'sanctoral',

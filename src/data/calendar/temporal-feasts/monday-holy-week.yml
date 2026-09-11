@@ -3,7 +3,7 @@
 # Hebdomadæ" / "Feria privilegiata;;6.9" (the "(rubrica 1955 aut rubrica
 # 196)" variant renames it "Feria Secunda Hebdomadæ Sanctæ" and reranks it
 # ";;7" -- 1955/1960-reform text this project deliberately doesn't follow,
-# see CLAUDE.md's pre-1955 calendar/rubrics note). Previously not modeled
+# see this project's pre-1955 calendar/rubrics note). Previously not modeled
 # as its own record: `resolveTemporalId` (temporal-id.ts) has no explicit
 # entry for any offset between Palm Sunday (-7) and Easter (0), so every
 # feria of Holy Week fell back wholesale to Palm Sunday's own

@@ -54,7 +54,7 @@ describe('June sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it("St. Juliana Falconieri (Divino Afflatu's own occupant of this MM-DD slot, added alongside Ss. Gervase and Protase; her canonization postdates ~1600 so her source Duplex rank is deflated one tier to semiduplex per CLAUDE.md) still wins outright over their Simplex, commemorating them instead", () => {
+  it("St. Juliana Falconieri (Divino Afflatu's own occupant of this MM-DD slot, added alongside Ss. Gervase and Protase; her canonization postdates ~1600 so her source Duplex rank is deflated one tier to semiduplex per this project's design notes) still wins outright over their Simplex, commemorating them instead", () => {
     const day = resolveDay('2035-06-19');
     expect(day.winner).toEqual({
       kind: 'sanctoral',

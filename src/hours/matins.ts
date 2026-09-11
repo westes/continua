@@ -462,7 +462,7 @@ function renderOverrideNocturn3(group: SundayNocturn, day: LiturgicalDay): Resol
  * (Monastic 1617's own octave days have no `[Hymnus Matutinum]` override
  * at all, live-checked 2026-08-22) — not a restoration of source
  * behavior, just this project's own generous octave design (see
- * "Not a reconstruction" in the repo's CLAUDE.md) applied to the hymn the
+ * "Not a reconstruction" in the repo's design notes) applied to the hymn the
  * same way it's already applied to readings/commemorations elsewhere. */
 function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
   const overrideId = getOfficeOverrideId(day);

@@ -8,8 +8,7 @@ draws on several historical sources without reproducing any one of them exactly:
 structure chiefly from the Monastic Tridentinum (1617), precedence/rubrics from Divino
 Afflatu, and a calendar merged from both the Tridentine 1906 and Divino Afflatu calendars,
 with more generous handling of commemorations and octaves than any one historical rite used.
-See `CLAUDE.md` (gitignored, not shipped in this repo) or the project's own notes for the full
-rationale if you're extending it.
+See the project's own design notes for the full rationale if you're extending it.
 
 There's no backend and no database — everything is a pre-built static bundle, and the app is
 designed to keep working fully offline once it's been loaded once.
