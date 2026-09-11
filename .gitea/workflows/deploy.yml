@@ -10,8 +10,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           # Full history + tags: release-tag.mjs needs every commit since
-          # the last tag to compute the next bump, and the build itself
-          # reads the resulting tag via `git describe` (vite.config.ts).
+          # the last tag to compute the next bump.
           fetch-depth: 0
 
       - uses: actions/setup-node@v4
@@ -22,11 +21,14 @@ jobs:
         run: npm ci
 
       - name: Tag release
-        # Runs before the build so vite.config.ts's `git describe` picks up
-        # whatever tag this step just created. See scripts/release-tag.mjs
-        # for the commit-type -> bump mapping; a no-op when nothing since
-        # the last tag warrants a bump. Pushes over SSH using a dedicated
-        # write-access deploy key (CONTINUA_RELEASE_SSH_KEY), separate from
+        # Runs before the build so a real bump's package.json commit
+        # (source of truth the app reads, see src/version.ts) is on disk
+        # before `npm run build`. See scripts/release-tag.mjs for the
+        # commit-type -> bump mapping; a no-op when nothing since the last
+        # tag warrants a bump. The commit it pushes carries [skip ci], so
+        # that push doesn't trigger a second, redundant deploy run of this
+        # same workflow. Pushes over SSH using a dedicated write-access
+        # deploy key (CONTINUA_RELEASE_SSH_KEY), separate from
         # CONTINUA_DEPLOY_SSH_KEY below (that one only triggers a redeploy
         # over a forced-command SSH connection to the hub, not git push).
         run: |

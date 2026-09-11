@@ -1,10 +1,19 @@
-// Prod shows the bare tag (`v1.0.3`) -- a user has no reason to see how
-// many untagged commits sit on top of the last real version bump. Dev shows
-// the full `git describe` (e.g. `v1.0.3-2-gabc1234`), since knowing exactly
-// which commit is running is the point while iterating locally.
-export const APP_VERSION = import.meta.env.DEV ? __APP_VERSION_FULL__ : __APP_VERSION__;
+// Named imports (not `import pkg from '../package.json'`) so the bundler
+// tree-shakes out everything else in the file (scripts, dependencies, ...)
+// -- only these two fields need to reach client JS.
+import { version as pkgVersion, releaseDate } from '../package.json';
 
-// ISO commit date of the tag `APP_VERSION` (prod) / the tag underlying
-// `APP_VERSION_FULL` (dev) resolves to -- i.e. when the version last
-// actually changed, not when this particular commit was made.
-export const APP_VERSION_DATE = __APP_VERSION_DATE__;
+// pkgVersion/releaseDate are plain committed data -- written once, in a CI
+// release commit, by scripts/release-tag.mjs (see CLAUDE.md's "Versioning"
+// section). Reading them is a normal JSON import: nothing here ever runs
+// `git` at build or serve time, in any environment.
+const version = `v${pkgVersion}`;
+
+// Vite's own VITE_-prefixed env var convention (see package.json's `dev`
+// script), not a custom `define` -- this is a dev-only nicety (which exact
+// commit is running locally), best-effort: empty if git isn't available
+// wherever `npm run dev` runs, never something the app depends on.
+const commitSha = import.meta.env.VITE_COMMIT_SHA;
+
+export const APP_VERSION = import.meta.env.DEV && commitSha ? `${version}+${commitSha}` : version;
+export const APP_VERSION_DATE = releaseDate;

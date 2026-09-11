@@ -1,10 +1,11 @@
 {
   "name": "continua",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.2",
+  "releaseDate": "2026-09-11T15:33:00Z",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "VITE_COMMIT_SHA=$(git rev-parse --short HEAD 2>/dev/null) vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "vitest run"
@@ -16,7 +17,6 @@
   },
   "devDependencies": {
     "@rollup/plugin-yaml": "^5.0.0",
-    "@types/node": "^22.20.2",
     "jsdom": "^30.0.0",
     "typescript": "^5.9.0",
     "vite": "^8.0.0",

@@ -1,5 +1,4 @@
 /// <reference types="vitest/config" />
-import { execSync } from 'node:child_process';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import yaml from '@rollup/plugin-yaml';
@@ -10,34 +9,8 @@ import yaml from '@rollup/plugin-yaml';
 // instead.
 const base = '/continua/';
 
-// App version, read from git tags rather than package.json's version field
-// -- the CI release step (.gitea/workflows/deploy.yml) tags releases
-// directly from conventional-commit history and never touches
-// package.json, so a tag is the actual source of truth. Two forms are
-// exposed: the bare nearest tag (what prod shows -- no "how many commits
-// since the last real version bump" noise a user has no reason to care
-// about) and the full `git describe` (what dev shows, since knowing exactly
-// which commit is running is the whole point there). Wrapped in try/catch
-// so a shallow/tagless checkout (a fresh clone, or CI before the very first
-// `v1.0.0` tag exists) still builds instead of failing outright.
-function gitCommand(command: string, fallback: string): string {
-  try {
-    return execSync(command, { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim() || fallback;
-  } catch {
-    return fallback;
-  }
-}
-const appVersion = gitCommand('git describe --tags --abbrev=0', 'v0.0.0-dev');
-const appVersionFull = gitCommand('git describe --tags --always --dirty', 'v0.0.0-dev');
-const appVersionDate = gitCommand(`git log -1 --format=%cI ${appVersion}`, new Date().toISOString());
-
 export default defineConfig({
   base,
-  define: {
-    __APP_VERSION__: JSON.stringify(appVersion),
-    __APP_VERSION_FULL__: JSON.stringify(appVersionFull),
-    __APP_VERSION_DATE__: JSON.stringify(appVersionDate),
-  },
   plugins: [
     yaml(),
     VitePWA({

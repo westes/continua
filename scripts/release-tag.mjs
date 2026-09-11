@@ -1,11 +1,13 @@
 #!/usr/bin/env node
-// Auto-tags a new vX.Y.Z release from Conventional Commits history, run as
-// a CI step in .gitea/workflows/deploy.yml on every push to master (see
+// Bumps the app's version from Conventional Commits history, run as a CI
+// step in .gitea/workflows/deploy.yml on every push to master (see
 // CLAUDE.md's "Versioning" section for the commit-type -> bump mapping).
-// `vite.config.ts` reads the resulting tag at build time -- this script is
-// the only thing that ever creates a version tag; nothing else in this repo
-// touches package.json's version field, which is left at "1.0.0" and not
-// meant to be read.
+//
+// package.json's `version`/`releaseDate` fields are the real source of
+// truth the app reads (src/version.ts, a plain JSON import) -- not
+// anything derived from git at build/serve time. A git tag is still
+// pushed alongside, but only as a decorative bookmark for `git checkout
+// v1.2.3`; nothing reads it back.
 //
 // Bump rule, highest wins across all commits since the last tag:
 //   - breaking (`!` after type/scope, or a `BREAKING CHANGE:` footer) -> major
@@ -13,15 +15,18 @@
 //   - `fix`                                                           -> patch
 //   - anything else (docs, chore, refactor, test, style, ci, build...) -> no bump
 //
-// Safe to run with nothing to do: exits 0 and creates no tag. Pushes over
-// SSH (git@<host>:<owner>/<repo>.git, derived from origin's HTTPS URL) using
-// whatever key `GIT_SSH_COMMAND` points at -- the CI step sets that up from
-// the CONTINUA_RELEASE_SSH_KEY repo secret (a write-access Gitea deploy key,
-// see CLAUDE.md's "Versioning" section) before invoking this script.
-// Without an SSH key configured, creates the tag locally and prints what
-// would have been pushed, so this is harmless to run by hand for a dry run.
+// Safe to run with nothing to do: exits 0, changes nothing. On a real bump,
+// commits package.json (message carries `[skip ci]` so the push this
+// script itself makes doesn't trigger another full deploy run) and tags
+// that commit, pushing both over SSH using whatever key `GIT_SSH_COMMAND`
+// points at -- the CI step sets that up from the CONTINUA_RELEASE_SSH_KEY
+// repo secret before invoking this script. Without an SSH key configured,
+// commits/tags locally but doesn't push, so this is harmless to run by
+// hand for a dry run.
 
 import { execFileSync } from 'node:child_process';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 
 function git(args) {
   return execFileSync('git', args, { encoding: 'utf8' }).trim();
@@ -80,7 +85,7 @@ function nextVersion(tag, bump) {
 
 const tag = latestTag();
 if (!tag) {
-  console.log('No existing vX.Y.Z tag found -- baseline tag is created manually, not by this script. Skipping.');
+  console.log('No existing vX.Y.Z tag found -- baseline version is set manually, not by this script. Skipping.');
   process.exit(0);
 }
 
@@ -92,8 +97,20 @@ if (bump === 'none') {
 }
 
 const newTag = nextVersion(tag, bump);
+const newVersion = newTag.slice(1);
 console.log(`${bump} bump: ${tag} -> ${newTag}`);
 
+const pkgPath = fileURLToPath(new URL('../package.json', import.meta.url));
+const pkg = JSON.parse(readFileSync(pkgPath, 'utf8'));
+pkg.version = newVersion;
+pkg.releaseDate = new Date().toISOString();
+writeFileSync(pkgPath, `${JSON.stringify(pkg, null, 2)}\n`);
+
+git([
+  '-c', 'user.name=Continua Release Bot',
+  '-c', 'user.email=ci@reground.org',
+  'commit', '-m', `chore(release): ${newTag} [skip ci]`, '--', 'package.json',
+]);
 git([
   '-c', 'user.name=Continua Release Bot',
   '-c', 'user.email=ci@reground.org',
@@ -101,7 +118,7 @@ git([
 ]);
 
 if (!process.env.GIT_SSH_COMMAND) {
-  console.log(`GIT_SSH_COMMAND not set (no release SSH key configured) -- tag ${newTag} created locally but not pushed.`);
+  console.log(`GIT_SSH_COMMAND not set (no release SSH key configured) -- ${newTag} committed/tagged locally but not pushed.`);
   process.exit(0);
 }
 
@@ -109,5 +126,7 @@ if (!process.env.GIT_SSH_COMMAND) {
 // deploy key only grants SSH access, so push against the SSH form instead.
 const httpsUrl = git(['remote', 'get-url', 'origin']);
 const sshUrl = httpsUrl.replace(/^https:\/\/([^/]+)\/(.+)$/, 'git@$1:$2');
+const branch = git(['rev-parse', '--abbrev-ref', 'HEAD']);
+git(['push', sshUrl, `HEAD:${branch}`]);
 git(['push', sshUrl, newTag]);
-console.log(`Pushed ${newTag}.`);
+console.log(`Pushed ${branch} and ${newTag}.`);
