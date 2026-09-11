@@ -5,7 +5,7 @@
   "releaseDate": "2026-09-11T18:58:46.347Z",
   "type": "module",
   "scripts": {
-    "dev": "VITE_COMMIT_SHA=$(git rev-parse --short HEAD 2>/dev/null)$([ -z \"$(git status --porcelain 2>/dev/null)\" ] || echo -dirty) vite",
+    "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "vitest run"
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-yaml": "^5.0.0",
+    "@types/node": "^26.5.1",
     "jsdom": "^30.0.0",
     "typescript": "^5.9.0",
     "vite": "^8.0.0",

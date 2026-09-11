@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import yaml from '@rollup/plugin-yaml';
+import { devGitInfoPlugin } from './vite-plugins/dev-git-info.ts';
 
 // Served under reground.org/continua (Caddy path_mount to the continua
 // container) — every asset URL and the service worker's registration scope
@@ -45,6 +46,7 @@ export default defineConfig({
   },
   plugins: [
     yaml(),
+    devGitInfoPlugin(),
     VitePWA({
       registerType: 'autoUpdate',
       scope: base,
