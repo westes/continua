@@ -38,8 +38,8 @@ export function versicle(vLa: string, vEn: string, rLa: string, rEn: string): Re
  * Patri — wired in centrally via resolve-common.ts's resolveGloriaPatri
  * (mirroring the Triduum's own omission there), not per-part here. */
 export const REQUIEM_GLORIA_PATRI: ResolvedText = v(
-  'V. Réquiem ætérnam * dona eis, Dómine.\nR. Et lux perpétua * lúceat eis.',
-  'V. Eternal rest * grant unto them, O Lord.\nR. And let perpetual light * shine upon them.',
+  'Réquiem ætérnam * dona eis, Dómine.\nEt lux perpétua * lúceat eis.',
+  'Eternal rest * grant unto them, O Lord.\nAnd let perpetual light * shine upon them.',
 );
 
 /** The special "Conclusio specialis" ending every hour of this office (in

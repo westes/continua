@@ -1314,8 +1314,8 @@ export function openingAntiphon(antiphon: ResolvedText, winner: DayWinner): Reso
  * Triduum. Not "verified" via verifiedText() because it's boilerplate
  * used everywhere, not a sourced proper text. */
 const GLORIA_PATRI: BilingualText = {
-  la: 'V. Glória Patri, et Fílio, * et Spirítui Sancto.\nR. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen.',
-  en: 'V. Glory be to the Father, and to the Son, * and to the Holy Ghost.\nR. As it was in the beginning, is now, * and ever shall be, world without end. Amen.',
+  la: 'Glória Patri, et Fílio, * et Spirítui Sancto.\nSicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen.',
+  en: 'Glory be to the Father, and to the Son, * and to the Holy Ghost.\nAs it was in the beginning, is now, * and ever shall be, world without end. Amen.',
 };
 
 /** The closing Gloria Patri for a psalm, or `undefined` during the Sacred
