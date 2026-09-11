@@ -156,6 +156,60 @@ button:focus-visible {
   border-color: var(--color-accent);
 }
 
+.about-trigger {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: var(--color-pending);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem 0.3rem;
+}
+.about-trigger:hover {
+  color: var(--color-ink);
+}
+
+.about-dialog {
+  max-width: 28rem;
+  width: calc(100% - 2 * var(--space-2));
+  color: var(--color-ink);
+  background: var(--color-bg-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  font-family: var(--font-ui);
+}
+.about-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+.about-dialog h2 {
+  margin: 0 0 var(--space-1);
+  font-size: 1.2rem;
+}
+.about-version {
+  color: var(--color-pending);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+.about-updated {
+  margin: 0 0 var(--space-2);
+  font-size: 0.85rem;
+  color: var(--color-pending);
+}
+.about-blurb {
+  font-family: var(--font-body);
+  line-height: var(--line-height-base);
+  margin: 0 0 var(--space-3);
+}
+.about-close {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+
 /* --------------------------------------------------------------------------
    Day nav
    -------------------------------------------------------------------------- */

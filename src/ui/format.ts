@@ -42,6 +42,27 @@ export function formatDateLong(isoDate: string): Partial<Record<string, string>>
   return { en, la };
 }
 
+const RELATIVE_TIME_UNITS: { unit: Intl.RelativeTimeFormatUnit; ms: number }[] = [
+  { unit: 'year', ms: 1000 * 60 * 60 * 24 * 365 },
+  { unit: 'month', ms: 1000 * 60 * 60 * 24 * 30 },
+  { unit: 'week', ms: 1000 * 60 * 60 * 24 * 7 },
+  { unit: 'day', ms: 1000 * 60 * 60 * 24 },
+  { unit: 'hour', ms: 1000 * 60 * 60 },
+  { unit: 'minute', ms: 1000 * 60 },
+];
+
+/** "3 days ago" / "just now" from an ISO timestamp -- used for the About
+ * panel's "last updated" line (`version.ts`'s `APP_VERSION_DATE`). */
+export function formatRelativeTime(isoTimestamp: string, now: Date = new Date()): string {
+  const diffMs = now.getTime() - new Date(isoTimestamp).getTime();
+  const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+  for (const { unit, ms } of RELATIVE_TIME_UNITS) {
+    const value = Math.floor(diffMs / ms);
+    if (value >= 1) return rtf.format(-value, unit);
+  }
+  return rtf.format(0, 'minute');
+}
+
 export function hourLabel(hourId: string): string {
   return hourId.charAt(0).toUpperCase() + hourId.slice(1);
 }

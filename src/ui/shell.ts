@@ -6,6 +6,7 @@ import { renderDayNav } from './day-nav';
 import { renderHourList } from './hour-list';
 import { renderHourView } from './hour-view';
 import { renderLanguageToggle } from './bilingual-toggle';
+import { mountAboutPanel } from './about-panel';
 import { documentTitle } from './format';
 
 // The "C" glyph from EB Garamond 700 (the same font/weight as .site-title),
@@ -21,6 +22,7 @@ export function mountShell(root: HTMLElement): void {
         <span class="site-title">Continua</span>
       </div>
       <div data-slot="language-toggle"></div>
+      <div data-slot="about-panel"></div>
     </header>
     <div data-slot="day-nav"></div>
     <main id="main" class="app-main">
@@ -33,9 +35,11 @@ export function mountShell(root: HTMLElement): void {
   const hourListEl = root.querySelector<HTMLElement>('[data-slot="hour-list"]');
   const hourViewEl = root.querySelector<HTMLElement>('[data-slot="hour-view"]');
   const languageToggleEl = root.querySelector<HTMLElement>('[data-slot="language-toggle"]');
-  if (!dayNavEl || !hourListEl || !hourViewEl || !languageToggleEl) {
+  const aboutPanelEl = root.querySelector<HTMLElement>('[data-slot="about-panel"]');
+  if (!dayNavEl || !hourListEl || !hourViewEl || !languageToggleEl || !aboutPanelEl) {
     throw new Error('shell markup is missing an expected slot');
   }
+  mountAboutPanel(aboutPanelEl);
 
   function render(): void {
     renderDayNav(dayNavEl!);
