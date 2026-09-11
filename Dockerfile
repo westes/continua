@@ -3,6 +3,10 @@
 # consistency with the rest of the hub (docker-compose + Ansible role +
 # systemd, same as eec/drip/bookshop), not because a live process is needed.
 FROM node:26-alpine AS build
+# git is needed at build time only, not to run the app -- vite.config.ts
+# reads the app's version from a git tag via `git describe` (see
+# CLAUDE.md's "Versioning" section), which node:26-alpine doesn't ship.
+RUN apk add --no-cache git
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
