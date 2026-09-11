@@ -22,7 +22,7 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(psalms[0]?.kind === 'psalm' ? psalms[0].antiphon : 'should be undefined').toBeUndefined();
   });
 
-  it("resolves Tuesday's weekday psalmody: Ps 50, 42, 56, the Canticle of Ezechias, then 148-150", () => {
+  it("resolves Tuesday's weekday psalmody: Ps 50, 42, 56, the Canticle of Hezekiah, then 148-150", () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const psalmNumbers = ordo.parts
       .filter((p) => p.kind === 'psalm')
