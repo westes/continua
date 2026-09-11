@@ -1,5 +1,18 @@
 :80 {
 	root * /srv
+
+	# Without explicit headers here, the browser's default HTTP heuristic
+	# caching can treat sw.js/index.html as fresh for hours and skip the
+	# network entirely on the app's update() checks (src/main.ts) -- so the
+	# PWA silently stops self-updating, the opposite of this app's whole
+	# offline-first-but-auto-updating point. Hashed /assets/* chunks get a
+	# new filename on any content change, so those are safe to cache forever;
+	# everything else must always be revalidated.
+	@immutable path /assets/*
+	header @immutable Cache-Control "public, max-age=31536000, immutable"
+	@mutable not path /assets/*
+	header @mutable Cache-Control "no-cache"
+
 	file_server
 	# SPA fallback: real paths like /2026-08-09/prime aren't real files, so
 	# fall back to index.html and let src/router.ts read the URL client-side.
