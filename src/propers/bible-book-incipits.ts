@@ -22,6 +22,17 @@
 // the ordinary modern English way to name an apostle, even though the
 // Latin `beáti` this pairs with is left as-is (that's correct Latin usage,
 // not the thing being fixed).
+//
+// Book names: the English column uses the modern common-English book name
+// (Joshua, Tobit, Isaiah, 1-2 Samuel/1-2 Kings, Ezra/Nehemiah, Maccabees,
+// Sirach, Song of Songs, Revelation, etc.) even where that means a
+// different name or split than the Vulgate original — an English reader
+// should recognize the book being named. This is deliberately independent
+// of the Latin column, which keeps the Vulgate/Douay-Rheims Latinate forms
+// (Josue, Tobíæ, Isaíæ, Regum, Machabæórum, Ecclesiástici, Apocalýpsis,
+// etc.) as its own correct, separate style (2026-09-11, user: "all those
+// english names sound better and will make more sense to english
+// readers... it's fine for the latin since that's the latin style name").
 export const BOOK_INCIPITS: Record<string, { la: string; en: string }> = {
   // Pentateuch
   gen: { la: 'Léctio libri Génesis', en: 'A reading from the book of Genesis' },
@@ -30,49 +41,49 @@ export const BOOK_INCIPITS: Record<string, { la: string; en: string }> = {
   num: { la: 'Léctio libri Numeri', en: 'A reading from the book of Numbers' },
   deut: { la: 'Léctio libri Deuteronómii', en: 'A reading from the book of Deuteronomy' },
   // Historical books
-  jos: { la: 'Léctio libri Josue', en: 'A reading from the book of Josue' },
+  jos: { la: 'Léctio libri Josue', en: 'A reading from the book of Joshua' },
   jdc: { la: 'Léctio libri Judicum', en: 'A reading from the book of Judges' },
   ruth: { la: 'Léctio libri Ruth', en: 'A reading from the book of Ruth' },
-  '1reg': { la: 'Léctio libri primi Regum', en: 'A reading from the first book of Kings' },
-  '2reg': { la: 'Léctio libri secúndi Regum', en: 'A reading from the second book of Kings' },
-  '3reg': { la: 'Léctio libri tértii Regum', en: 'A reading from the third book of Kings' },
-  '4reg': { la: 'Léctio libri quárti Regum', en: 'A reading from the fourth book of Kings' },
-  '1par': { la: 'Léctio libri primi Paralipómenon', en: 'A reading from the first book of Paralipomenon' },
-  '2par': { la: 'Léctio libri secúndi Paralipómenon', en: 'A reading from the second book of Paralipomenon' },
-  '1esdr': { la: 'Léctio libri primi Esdræ', en: 'A reading from the first book of Esdras' },
-  '2esdr': { la: 'Léctio libri secúndi Esdræ', en: 'A reading from the second book of Esdras' },
-  tob: { la: 'Léctio libri Tobíæ', en: 'A reading from the book of Tobias' },
+  '1reg': { la: 'Léctio libri primi Regum', en: 'A reading from the first book of Samuel' },
+  '2reg': { la: 'Léctio libri secúndi Regum', en: 'A reading from the second book of Samuel' },
+  '3reg': { la: 'Léctio libri tértii Regum', en: 'A reading from the first book of Kings' },
+  '4reg': { la: 'Léctio libri quárti Regum', en: 'A reading from the second book of Kings' },
+  '1par': { la: 'Léctio libri primi Paralipómenon', en: 'A reading from the first book of Chronicles' },
+  '2par': { la: 'Léctio libri secúndi Paralipómenon', en: 'A reading from the second book of Chronicles' },
+  '1esdr': { la: 'Léctio libri primi Esdræ', en: 'A reading from the book of Ezra' },
+  '2esdr': { la: 'Léctio libri secúndi Esdræ', en: 'A reading from the book of Nehemiah' },
+  tob: { la: 'Léctio libri Tobíæ', en: 'A reading from the book of Tobit' },
   jdth: { la: 'Léctio libri Judith', en: 'A reading from the book of Judith' },
   esth: { la: 'Léctio libri Esther', en: 'A reading from the book of Esther' },
   job: { la: 'Léctio libri Job', en: 'A reading from the book of Job' },
-  '1mach': { la: 'Léctio libri primi Machabæórum', en: 'A reading from the first book of Machabees' },
-  '2mach': { la: 'Léctio libri secúndi Machabæórum', en: 'A reading from the second book of Machabees' },
+  '1mach': { la: 'Léctio libri primi Machabæórum', en: 'A reading from the first book of Maccabees' },
+  '2mach': { la: 'Léctio libri secúndi Machabæórum', en: 'A reading from the second book of Maccabees' },
   // Wisdom books
   prov: { la: 'Léctio libri Próverbiórum', en: 'A reading from the book of Proverbs' },
   eccl: { la: 'Léctio libri Ecclesiástæ', en: 'A reading from the book of Ecclesiastes' },
-  cant: { la: 'Léctio libri Cánticorum Canticórum', en: 'A reading from the Canticle of Canticles' },
+  cant: { la: 'Léctio libri Cánticorum Canticórum', en: 'A reading from the Song of Songs' },
   sap: { la: 'Léctio libri Sapiéntiæ', en: 'A reading from the book of Wisdom' },
-  sir: { la: 'Léctio libri Ecclesiástici', en: 'A reading from the book of Ecclesiasticus' },
+  sir: { la: 'Léctio libri Ecclesiástici', en: 'A reading from the book of Sirach' },
   // Major prophets
-  isa: { la: 'Léctio Isaíæ Prophétæ', en: 'A reading from the Prophecy of Isaias' },
-  jer: { la: 'Léctio Jeremíæ Prophétæ', en: 'A reading from the Prophecy of Jeremias' },
-  lam: { la: 'Léctio Threnórum Jeremíæ Prophétæ', en: 'A reading from the Lamentations of Jeremias the Prophet' },
+  isa: { la: 'Léctio Isaíæ Prophétæ', en: 'A reading from the Prophecy of Isaiah' },
+  jer: { la: 'Léctio Jeremíæ Prophétæ', en: 'A reading from the Prophecy of Jeremiah' },
+  lam: { la: 'Léctio Threnórum Jeremíæ Prophétæ', en: 'A reading from the Lamentations of Jeremiah the Prophet' },
   bar: { la: 'Léctio Baruch Prophétæ', en: 'A reading from the Prophecy of Baruch' },
   ezek: { la: 'Léctio Ezechiélis Prophétæ', en: 'A reading from the Prophecy of Ezekiel' },
   dan: { la: 'Léctio Daniélis Prophétæ', en: 'A reading from the Prophecy of Daniel' },
   // Minor prophets
-  osee: { la: 'Léctio Osee Prophétæ', en: 'A reading from the Prophecy of Osee' },
+  osee: { la: 'Léctio Osee Prophétæ', en: 'A reading from the Prophecy of Hosea' },
   joel: { la: 'Léctio Joélis Prophétæ', en: 'A reading from the Prophecy of Joel' },
   amos: { la: 'Léctio Amos Prophétæ', en: 'A reading from the Prophecy of Amos' },
-  abd: { la: 'Léctio Abdíæ Prophétæ', en: 'A reading from the Prophecy of Abdias' },
-  jon: { la: 'Léctio Jonæ Prophétæ', en: 'A reading from the Prophecy of Jonas' },
-  mich: { la: 'Léctio Michǽæ Prophétæ', en: 'A reading from the Prophecy of Micheas' },
+  abd: { la: 'Léctio Abdíæ Prophétæ', en: 'A reading from the Prophecy of Obadiah' },
+  jon: { la: 'Léctio Jonæ Prophétæ', en: 'A reading from the Prophecy of Jonah' },
+  mich: { la: 'Léctio Michǽæ Prophétæ', en: 'A reading from the Prophecy of Micah' },
   nah: { la: 'Léctio Nahum Prophétæ', en: 'A reading from the Prophecy of Nahum' },
-  hab: { la: 'Léctio Habacuc Prophétæ', en: 'A reading from the Prophecy of Habacuc' },
-  soph: { la: 'Léctio Sophoníæ Prophétæ', en: 'A reading from the Prophecy of Sophonias' },
-  agg: { la: 'Léctio Aggǽi Prophétæ', en: 'A reading from the Prophecy of Aggeus' },
-  zach: { la: 'Léctio Zacharíæ Prophétæ', en: 'A reading from the Prophecy of Zacharias' },
-  mal: { la: 'Léctio Malachíæ Prophétæ', en: 'A reading from the Prophecy of Malachias' },
+  hab: { la: 'Léctio Habacuc Prophétæ', en: 'A reading from the Prophecy of Habakkuk' },
+  soph: { la: 'Léctio Sophoníæ Prophétæ', en: 'A reading from the Prophecy of Zephaniah' },
+  agg: { la: 'Léctio Aggǽi Prophétæ', en: 'A reading from the Prophecy of Haggai' },
+  zach: { la: 'Léctio Zacharíæ Prophétæ', en: 'A reading from the Prophecy of Zechariah' },
+  mal: { la: 'Léctio Malachíæ Prophétæ', en: 'A reading from the Prophecy of Malachi' },
   // Gospels
   matt: { la: 'Léctio sancti Evangélii secúndum Matthǽum', en: 'A reading from the Holy Gospel according to Matthew' },
   marc: { la: 'Léctio sancti Evangélii secúndum Marcum', en: 'A reading from the Holy Gospel according to Mark' },
@@ -104,7 +115,7 @@ export const BOOK_INCIPITS: Record<string, { la: string; en: string }> = {
   '3joan': { la: 'Léctio Epístolæ tértiæ beáti Joánnis Apóstoli', en: 'A reading from the third Epistle of Saint John the Apostle' },
   jud: { la: 'Léctio Epístolæ beáti Judæ Apóstoli', en: 'A reading from the Epistle of Saint Jude the Apostle' },
   // Apocalypse
-  apoc: { la: 'Léctio libri Apocalýpsis beáti Joánnis Apóstoli', en: 'A reading from the book of the Apocalypse of Saint John the Apostle' },
+  apoc: { la: 'Léctio libri Apocalýpsis beáti Joánnis Apóstoli', en: 'A reading from the book of the Revelation of Saint John the Apostle' },
 };
 
 /** Book abbreviation -> {la, en} incipit, or undefined for an unrecognized

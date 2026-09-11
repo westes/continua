@@ -7640,3 +7640,30 @@ self-translated antiphon English can't carry the "draft" marker
 here, not fixed — would need `BilingualText` (or the override schema
 generally) to carry a status field through to `psalmParts`/`resolvePsalmody`.
 
+
+### Bible-book-incipits.ts: English column modernized to common English book names (2026-09-11)
+
+User caught `tob`'s English incipit reading "Tobias" and asked how many other books had the "same
+greek/latinate mistake" — investigation showed it wasn't a mistake at all: `tob`'s "Tobias" matched
+the Douay-Rheims/Vulgate-Latinate spelling used almost everywhere else in the English column
+(Josue, Isaias, Jeremias, Osee, Abdias, Jonas, Micheas, Habacuc, Sophonias, Aggeus, Zacharias,
+Malachias, Machabees, Paralipomenon, Esdras) — `ezek`'s "Ezekiel" (a deliberate 2026-09-04 fix,
+see above) was actually the outlier breaking that pattern, not Tobias.
+
+User's actual preference, once this was surfaced: the English column should use the name an
+English reader recognizes, full stop — "all those english names sound better and will make more
+sense to english readers... it's fine for the latin since that's the latin style name." Reworked
+every English entry in `BOOK_INCIPITS` to the modern common-English book name, independent of the
+Latin column (which keeps its Vulgate/Douay-Rheims forms unchanged): Josue->Joshua, Tobias->Tobit,
+Isaias->Isaiah, Jeremias->Jeremiah (+ the Lamentations heading), Osee->Hosea, Abdias->Obadiah,
+Jonas->Jonah, Micheas->Micah, Habacuc->Habakkuk, Sophonias->Zephaniah, Aggeus->Haggai,
+Zacharias->Zechariah, Malachias->Malachi, Machabees->Maccabees, Paralipomenon->Chronicles,
+Ecclesiasticus->Sirach, Canticle of Canticles->Song of Songs, Apocalypse->Revelation. The 1-4 Kings
+group also got split to match modern numbering, not just re-spelled: 1-2 Kings (Vulgate)->1-2
+Samuel, 3-4 Kings (Vulgate)->1-2 Kings; 1-2 Esdras (Vulgate)->Ezra/Nehemiah (no longer numbered,
+since modern English doesn't treat them as a numbered pair). `ezek`'s prior "Ezekiel" fix now
+matches the rest of the column instead of being an isolated exception. Left every quoted
+Douay-Rheims scripture/martyrology/homily prose text under `src/data/scripture/`,
+`src/data/martyrology/`, `src/data/propers/` alone — those are source-text quotations, not this
+app's own generated incipit labels (same boundary as the 2026-09-04 Ezekiel fix). `npm test`
+(2088 passed) and `tsc --noEmit` both pass.
