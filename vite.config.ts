@@ -11,6 +11,38 @@ const base = '/continua/';
 
 export default defineConfig({
   base,
+  build: {
+    rollupOptions: {
+      output: {
+        // Split src/data/** into one chunk per top-level content
+        // subdirectory (and one further level down for the largest,
+        // propers/ and calendar/), separate from app code. Without this,
+        // every data file lands in one ~18MB chunk keyed by a single
+        // content hash, so editing one saint -- or even just bumping the
+        // version string -- invalidates the whole thing and forces every
+        // returning visitor's service worker to re-download the entire
+        // bundle. Splitting by directory means a change only invalidates
+        // the chunk(s) it actually touched; e.g. the ~13MB scripture
+        // import stays cached across ordinary saint/proper edits.
+        manualChunks(id) {
+          const marker = '/src/data/';
+          const idx = id.indexOf(marker);
+          if (idx === -1) return undefined;
+          const rel = id.slice(idx + marker.length);
+          const [top, sub] = rel.split('/');
+          if (!top) return undefined;
+          if (top === 'propers' && sub) return `data-propers-${sub}`;
+          if (top === 'calendar' && (sub === 'saints' || sub === 'temporal-feasts')) {
+            return `data-calendar-${sub}`;
+          }
+          if (top === 'calendar') return 'data-calendar';
+          if (top === 'hours') return 'data-hours';
+          const [name] = top.split('.');
+          return `data-${name}`;
+        },
+      },
+    },
+  },
   plugins: [
     yaml(),
     VitePWA({
@@ -34,17 +66,13 @@ export default defineConfig({
         // Precache everything the shell needs so a day's office renders
         // fully offline once visited once.
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
-        // Default cap (2 MiB) is too small once the sanctoral pull's real
-        // propers/octave-reading text (all eagerly bundled, by design, for
-        // offline use) pushes the main chunk past it -- raised again
-        // (2026-08-28, was 6 MiB) once the movable-octave content (Ascension/
-        // Corpus Christi/Sacred Heart/Patronage of St. Joseph) pushed the
-        // bundle past the previous cap, then again (2026-09-02, was 8 MiB)
-        // once the bulk Vulgate/Douay-Rheims scripture import (~1000 new
-        // chapters under src/data/scripture/) pushed it past 16 MiB. Bump
-        // this again, with headroom, if a future content pull hits it --
-        // this is deliberate bundling, not bloat to trim (see this project's design notes).
-        maximumFileSizeToCacheInBytes: 24 * 1024 * 1024,
+        // Default cap (2 MiB) is too small for this project's eagerly
+        // bundled offline content even after the manualChunks split above;
+        // the largest single chunk (data-scripture) alone is ~10 MiB
+        // (2026-09-11). Bump this, with headroom, if a future content pull
+        // pushes any one chunk past it -- this is deliberate bundling, not
+        // bloat to trim (see this project's design notes).
+        maximumFileSizeToCacheInBytes: 16 * 1024 * 1024,
       },
     }),
   ],
