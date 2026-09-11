@@ -33,6 +33,201 @@ content in the same shape, not a design change. The dated log below is that pipe
 
 # Work Log
 
+### Two of the four hymn/doxology-sweep flags closed: Pentecost-week Terce hymn, Seven Sorrows Vespers English (2026-09-11)
+
+Follow-up to the two items flagged-not-fixed in the 2026-09-10 sweeps below.
+
+**Pentecost-week Terce hymn swap, now authored and wired**: confirmed against the static source
+(`Psalterium/Special/Minor Special.txt`'s own `[Hymnus Pasc7 Tertia]`/`[HymnusM Pasc7 Tertia]`)
+that this is a real whole-hymn swap to "Veni Creátor Spíritus", Terce-only (no `Pasc7 Sexta`/`Pasc7
+Nona` block exists) — `Tempora/Pasc7-0.txt` (Pentecost Sunday) redirects Vespers to the same hymn
+(already authored, Monastic variant), and `Pasc7-1.txt` through `Pasc7-6.txt` (the octave weekdays)
+all inherit from `Pasc7-0` via their own `ex Pasc7-0` rule, so the swap covers all 7 days of the
+octave, Sunday included. Added `terce-hymn-pentecost-week.yml` (body copied verbatim from
+`vespers-hymn-pentecost-sunday.yml`'s already-verified Monastic text, `*`-marked doxology stanza so
+it plugs into the existing `substituteDoxology`/`hymn-doxology-pent.yml` mechanism rather than
+baking a fixed doxology in; English is the reference engine's own translation, not a new one).
+Wired into `hours/terce.ts`'s `hymn` case via `resolveOfficeWinner(day).id === 'pentecost-sunday'`
+(already in `ALWAYS_OVERRIDE_TEMPORAL_IDS`, so this covers both Pentecost Sunday itself and every
+interior octave day for free — no new date math). New coverage in `tests/hours/little-hours.test.ts`
+confirms the swap on Pentecost Sunday and an interior octave day, that it reverts by Trinity Sunday,
+and that Sext/None are unaffected on the same dates.
+
+**`vespers-hymn-seven-sorrows-of-the-bvm.yml` English replaced**: the file's own header claimed no
+English rendering existed in the reference engine's data and supplied a self-translated draft —
+wrong, same miss as `lauds-hymn-seven-sorrows-of-the-bvm.yml`'s 2026-09-10 fix. A real, complete
+rhymed translation exists at `English/Sancti/09-15.txt`'s own `[Hymnus Vespera]`; now sourced
+directly from there, `status.en` flipped `draft` → `verified`.
+
+**`matins-hymn-all-saints.yml` resolved as a deliberate curatorial split, not a bug**: the file's
+old header claimed the Monastic engine independently renders a Matins text distinct from Vespers' —
+checking `Sancti/11-01.txt`'s tags directly, that's not true; the source collapses to just two real
+texts total across all four Matins/Vespers × secular/Monastic slots ("Placáre, Christe, sérvulis"
+secular at both hours, "Christe Redémptor ómnium" Monastic at both hours, Matins a pure redirect to
+Vespers in each track). Kept "Placáre..." at Matins anyway, on purpose — its judgment/pleading
+imagery ("apud sevérum Júdicem", "veris reórum flétibus") suits Matins' night-vigil register better
+than Vespers' warmer "make us companions of Christ" — and rewrote the header to say so plainly
+instead of claiming a literal-engine-fidelity justification that doesn't hold up.
+
+**`lauds-hymn-circumcision.yml`/`lauds-hymn-christmas-octave-sunday.yml`'s Monastic word
+substitutions reviewed line-by-line, only one adopted**: rather than a blanket find/replace,
+weighed each of the 8 substitutions against CLAUDE.md's own standing preference for whichever
+wording carries more concrete/specific imagery. Five are a wash (auctor/Auctor capitalization,
+Enítitur/Eníxa est tense, ventre Matris/matris alvo word order, Baptísta clausum/Clausus Joánnes
+title-vs-name, Et lacte módico/Parvóque lacte — all synonymous). Two actually flatten the existing
+text (Jesu tibi sit glória→Glória tibi Dómine loses the direct address to the Holy Name; almo→Sancto
+Spíritu trades a distinctive epithet for the generic word every other hymn's doxology already uses)
+— kept as-is. Only `Concépit alvo`→`Verbo concépit` adopted, in both files: a real improvement, not
+a meter tweak — ties the Incarnation to the Johannine "Verbum caro factum est" rather than a plain
+anatomical phrasing. English updated to match ("Conceived in her womb the Son" → "By the Word
+conceived the Son"). `vespers-hymn-circumcision.yml` (Matins' sibling) carries a different hymn
+entirely ("Christe Redémptor ómnium," already Monastic) and needed no change.
+
+`npx tsc --noEmit` and `npx vitest run` (2088 passed) both pass.
+
+### Hymn doxology rearchitected to a marker-based mechanism, plus a full audit of ~230 hymn files (2026-09-10)
+
+Follow-up to the same day's earlier doxology fix (below): the user pushed back on the
+body-file/doxology-file split used there ("why is a function deciding if a hymn's doxology should
+be substituted? ... pass the hymn, the doxology type, and substitute where the marker is; if no
+marker, the effect is null") — pointing out this is exactly how Divinum Officium's own `hymni.pl`
+already works (`if ($hymn =~ /\*/) { ... $hymn =~ s/\*.*/$dox/s }`), which this session's very first
+research pass had already found but hadn't carried through architecturally.
+
+Rebuilt the mechanism around that design:
+- **`substituteDoxology(hymn, override)`** (`hours/resolve-common.ts`) replaces `appendDoxology`.
+  One hymn text, with a literal `* ` marker at the start of its variable final stanza (ported
+  directly from the source's own convention). If the marker is present and an override was found,
+  splice in the override starting at the marker; otherwise leave the text as-is (marker stripped).
+  A hymn with no marker anywhere (a genuinely fixed ending, e.g. Ave Maris Stella) is untouched.
+- **`getHymnDoxologyOverrideId(day)`** (renamed from `getHymnDoxologyId`) now returns
+  `string | undefined` — no more caller-supplied `perAnnumId` fallback, since a hymn's own per-annum
+  ending is just part of its own text now, not a separate id.
+- Every hour's ferial-default hymn (Lauds/Vespers: 11 seasonal/weekday variants each; Matins: 6
+  weekday variants; Prime/Compline: 1 each; Terce/Sext/None: 1 each, undoing today's earlier split)
+  merged back into a single file with the marker embedded, verified via a script-driven merge
+  (`js-yaml` round-trip check, not hand-editing) plus a full re-run of the test suite between every
+  batch.
+- Applied the same `substituteDoxology` call at the **proper/Common/octave hymn tier** too
+  (`resolveOfficeBundle`'s `bundle.hymn` at Lauds/Vespers, `resolveMatinsHymn`'s every branch) — this
+  tier previously never varied its doxology at all regardless of season/feast, the same gap
+  Terce/Sext/None had, just for every saint/Common/octave hymn instead of 3 hours.
+
+**Full audit, ~230 proper/Common/season hymn files across Lauds/Vespers/Matins** (9 parallel
+research passes, each cross-checking continua's YAML against the actual reference-engine `.txt`
+templates, not live-CGI dates): added the `*` marker to every hymn genuinely confirmed to carry one
+in the source (Common-of-the-BVM/Apostle(s)/Martyr(s)/Confessor-Bishop/Confessor-Doctor/Virgin/
+Virgin-Martyr/Widow/Holy-Woman at Lauds/Vespers/Matins as applicable, plus ~20 individual
+saints/feasts: commemoration/conversion of St. Paul, St. Philip & James, Ss. Simon & Jude, St.
+Agatha, St. Agnes, St. Andrew, St. Barnabas, St. Bartholomew, St. James the Greater, St. John
+Apostle, St. John before the Latin Gate, St. Lawrence, St. Luke, St. Mark, St. Martin of Tours, St.
+Matthew, St. Matthias, St. Stephen Protomartyr, St. Thomas Apostle, Transfiguration) — left every
+confirmed-fixed hymn (the large majority: Ave Maris Stella, Verbum Supernum Prodiens, every
+saint's own genuinely proper hymn with no swap slot, etc.) untouched.
+
+Along the way, the audit surfaced and fixed **real content bugs unrelated to markers**, found by
+comparing continua's baked text against the static source rather than trusting an old live-query
+capture at face value:
+- **Wrong hymn entirely, whole body replaced** (copy-pasted from an unrelated feast that happened
+  to share a versicle cross-reference): `matins-hymn-ascension.yml` (had the Lauds/Vespers hymn,
+  not Matins' own "Ætérne Rex altíssime"), `{lauds,vespers,matins}-hymn-guardian-angels.yml` and
+  `matins-hymn-{st-gabriel,st-raphael}-archangel.yml` (all four had St. Michael's Apparition hymn,
+  each restored to their own feast's real text), `lauds-hymn-trinity-sunday.yml` (had the Vespers
+  hymn duplicated, restored to Trinity's own distinct "Tu, Trinitátis Únitas").
+- **Latin/English final-stanza mismatch** (one language correctly showed a doxology override, the
+  other didn't): `matins-hymn-common-of-the-bvm.yml` (Latin was baked from the wrong hour), both
+  `{lauds,vespers}-hymn-pentecost-sunday.yml` (Latin was the Matins-track `PentT` text, not
+  Lauds/Vespers' own), `lauds-hymn-st-stephen-protomartyr.yml` (English hadn't picked up the
+  Nat swap the Latin already had), `{matins,vespers}-hymn-transfiguration.yml` (English was the
+  plain `Epi` doxology's translation instead of the Monastic `EpiT` one the Latin already used).
+- **Missing content**: `lauds-hymn-seven-sorrows-of-the-bvm.yml` was missing its 4th (closing)
+  stanza entirely, and its English was a self-translated draft despite a real, complete rhymed
+  translation existing in the source all along — both fixed together.
+- **Missing files entirely**: `matins-hymn-common-of-a-martyr.yml` and its `-bishop` sibling didn't
+  exist at all (unlike the psalmody tier, which already aliases these two categories) — any winning
+  Martyr-Common saint with no proper hymn of his own was silently falling to the plain ferial Matins
+  hymn instead of his Common's real one (e.g. St. Lawrence's own Aug 17 closing-octave day). Authored
+  both from `Commune/C2.txt`'s own `[Hymnus Matutinum]` (`@:Hymnus Vespera` cross-reference).
+
+**Flagged, not fixed** (real findings, but either unverifiable without live access or a larger
+separate task):
+- `matins-hymn-all-saints.yml`: one research pass's static-file read directly contradicts this
+  file's own existing header, which cites a specific, detailed live-verification explicitly
+  anticipating and rebutting that exact static reading. Left as-is rather than pick a side without
+  the ability to re-verify live.
+- `{lauds,vespers}-hymn-circumcision.yml`/`lauds-hymn-christmas-octave-sunday.yml`: Monastic-track
+  word-substitutions against the secular final stanza not modeled (pre-existing, already
+  known/flagged issue for `circumcision`; added the same flag to `christmas-octave-sunday`, which
+  was missing it).
+- `vespers-hymn-seven-sorrows-of-the-bvm.yml`: English is a valid but different (more literal)
+  rendering than the source's own rhymed translation — not wrong, just worth knowing.
+- Pentecost-week Terce's whole-hymn swap to "Veni Creátor Spíritus" — still not authored (unchanged
+  from the earlier entry below).
+
+Test updates: two pre-existing tests asserted the old, now-corrected wrong hymn content
+(`tests/hours/lauds.test.ts`'s Guardian Angels/Archangels test, `tests/hours/matins.test.ts`'s
+matching one and its St. Lawrence Aug-17 fallback assertion) — rewritten to assert the real,
+distinct content per feast instead of a shared assumption that no longer holds.
+
+`npx tsc --noEmit` and `npx vitest run` (2084 passed) both pass; a broad smoke sweep (every hour,
+24 dates spanning the whole year) confirms no hour throws or renders an empty hymn anywhere.
+
+### Hymn doxology gaps closed, plus a `day.winner`/`resolveOfficeWinner` inconsistency (2026-09-10)
+
+Started from: today's hymns (inside the Nativity-BVM octave) weren't getting the reference
+engine's "Nat" doxology stanza. First diagnosis was wrong — proposed adding new octave-detection
+logic to `getHymnDoxologyId`, but it already calls `resolveOfficeWinner(day)`
+(`hours/hymn-doxology.ts`), which already substitutes the governing octave's saint/feast on
+interior octave days (`resolveActiveOctave` internally, `hours/resolve-common.ts`). The real bug
+was a missing data entry: `byFeastId['nativity-bvm']` didn't exist.
+
+Fixed, four parts:
+- **Doxology data gaps**: added a `byCommonId` tier to `getHymnDoxologyId` (mirrors
+  `resolveOfficeBundle`'s `getSaintRecord(id)?.common` pattern) with `common-of-the-bvm:
+  hymn-doxology-nat` — covers all 16 BVM-Common saints generically instead of listing each by id.
+  Added `corpus-christi`/`sacred-heart`/`transfiguration` to `byFeastId` (their own octaves/rule
+  need it, not just their anchor day).
+- **Terce/Sext/None wired into the doxology mechanism**: these three hours never varied their
+  doxology at all — `resolveSelfContainedHymn` returned one fixed blob per hour with the closing
+  stanza baked in. Split each `{terce,sext,none}-hymn.yml` into a body-only file plus a new
+  `{hour}-hymn-doxology-per-annum.yml`, and wired all three through the same resolve-body /
+  `getHymnDoxologyId` / `appendDoxology` pattern the other five hours already use. Removed
+  `resolveSelfContainedHymn` (no remaining callers).
+- **`day.winner` vs. `resolveOfficeWinner(day)` inconsistency**: `getOpeningVersicleId` (all 8
+  hours), `getChapterResponsoryId` (Prime), and `getMarianAntiphonId` all took the raw `day.winner`
+  instead of `resolveOfficeWinner(day)` — the one substitution rule every other content lookup in
+  this codebase follows. Changed `getOpeningVersicleId`/`getChapterResponsoryId` to take the whole
+  `day` and call `resolveOfficeWinner` internally rather than leaving it to each call site.
+  Currently a no-op for 8 of 9 call sites (their tables are empty or the content is structurally
+  season-only), but closes a real latent gap for Prime's chapter-responsory once that table gets
+  populated.
+- **Psalmody-override consolidation**: `lauds-psalmody-overrides.ts`/`vespers-psalmody-
+  overrides.ts`/`matins-psalmody-overrides.ts` each independently reimplemented the identical
+  "saint id → `SaintRecord.common`, optional `-paschaltide` variant" fallback. Extracted into a
+  shared `resolveCommonCategoryId` (`hours/psalmody-common-category.ts`); left every other
+  difference between the three modules alone (Lauds' canticle/laudate fields, Vespers' verse-range
+  psalms, Matins' 3-nocturn scheme, Matins having no Paschaltide tier at all) — those are real
+  domain differences, not duplication, and forcing them into one type would have been lossy.
+
+Live-verified across the Nativity-BVM octave, genuinely-octave-displaced Corpus Christi/Sacred
+Heart days (found via `activeOctavesFor`, not guessed date offsets), Transfiguration, Annunciation,
+Purification, the existing Assumption-window/Marian-Saturday paths (unaffected), and a plain
+per-annum ferial day (unaffected). Along the way, confirmed two adjacent things are *not* bugs:
+Vespers' Ave Maris Stella and Lauds'/Matins' proper Corpus Christi hymns ("Verbum Supernum
+Prodiens"/"Sacris Solemniis") genuinely have fixed, non-swappable endings in the source (no `*`
+marker, or the ending is the hymn's own famous close, e.g. "O Salutaris Hostia") — continua's
+existing authored text there is correct as-is.
+
+Two things flagged, not fixed here:
+- Pentecost-week Terce swaps its *whole* hymn to "Veni Creátor Spíritus" in the reference source —
+  a full hymn replacement, not a doxology-stanza swap, and continua has no such text authored yet.
+- Lauds'/Matins' proper hymn files for a Common category (e.g. `lauds-hymn-nativity-bvm.yml`) are
+  authored with their doxology already baked in from a live query on the feast's own day — correct
+  for now, but a systemic authoring risk if such a file is ever queried on a date outside its
+  doxology's active window (not verified in bulk).
+
+`npx tsc --noEmit` and `npx vitest run` (2082 passed) both pass.
+
 ### Matins never got the octave-rank-awareness fix above — same bug, different hour (2026-09-10)
 
 Bug: 2026-09-09's fix above was scoped to Lauds/Vespers only (`getPsalmodyNumbersOverrideId`, added

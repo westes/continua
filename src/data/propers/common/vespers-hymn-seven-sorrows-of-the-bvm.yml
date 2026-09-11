@@ -3,8 +3,12 @@
 # "@:HymnusM Laudes", i.e. "reuse whatever this file's own Lauds hymn
 # resolves to" -- but the raw secular file gives this Sapphic-meter text
 # as the *Vespers* hymn specifically, distinct from the Lauds hymn above).
-# No English rendering exists in the reference engine's data; translated
-# here directly.
+# Corrected 2026-09-11: an earlier version of this file claimed no English
+# rendering existed in the reference engine and supplied a self-translated
+# draft -- wrong; English/Sancti/09-15.txt's own [Hymnus Vespera] carries a
+# real, complete rhymed English translation all along (same class of miss
+# as lauds-hymn-seven-sorrows-of-the-bvm.yml's own 2026-09-10 fix). Now
+# sourced directly from there.
 id: vespers-hymn-seven-sorrows-of-the-bvm
 text:
   la: >-
@@ -61,58 +65,60 @@ text:
 
     Vires rebus in ásperis. Amen.
   en: >-
-    Now let sudden evening spread over the whole sky,
+    Now let the darkling eve mount suddenly on high,
 
-    and let the sun hasten the astonished day to its close,
+    The sun affrighted reave his splendours from the sky,
 
-    while I recall the mockery of that cruel death,
+    While I in silence grieve o'er the mocked agony
 
-    and that divine catastrophe.
-
-
-    Thou wast present, O Mother, a witness of the punishment,
-
-    bathed in woe, bearing a heart of adamant;
-
-    while thy Son, hanging on the funereal cross,
-
-    gave forth deep groans.
+    And the divine catastrophe.
 
 
-    Thy Son hanging before thine eyes, torn
+    Grief-drenched, thou dost appear with heart of adamant,
 
-    with cruel scourges, thy Son pierced
+    O Mother; and dost hear the great hierophant,
 
-    with gaping wounds — with how many piercing
+    Upon his wooden bier locked in the arms of death,
 
-    stings did he transfix thee!
-
-
-    Alas! Spittings, buffetings, scourgings, wounds,
-
-    nails, gall, aloes, sponge, spear,
-
-    thirst, thorns, blood — with how manifold
-
-    a tyranny did they press upon that loving heart!
+    Utter in groans his parting breath.
 
 
-    Meanwhile thou standest more noble than all
+    What lookest thou upon, mangled and bruised and torn?
 
-    the Martyrs, O Virgin: by a new wonder,
+    Ah, 'tis the very Son thy yearning breast hath borne!
 
-    dying amid such sufferings, thou dost not die, O Mother,
+    Surely, each breaking moan and each deep-mouthèd wound
 
-    transfixed by dire sorrows.
+    Its fellow in thy heart hath found!
 
 
-    Glory, praise, and honour be to the most high Trinity,
+    Surely, the taunts and woes, the scourge, the dripping thorn,
 
-    from whom I humbly beg, with earnest prayer,
+    The spitting and the blows, the gall, the lance, the scorn—
 
-    strength rivalling the Virgin's fortitude
+    Surely, each torment throws a poison-dart at thee,
 
-    amid life's hardships. Amen.
+    Crushed by their manifold tyranny.
+
+
+    Yet thou with patient mien beneath his cross dost stand,
+
+    Nobler in this, I ween, than all the martyr-band:
+
+    A thousand deaths, O Queen, upon thy spirit lie,
+
+    Yet thou, O marvel! dost not die.
+
+
+    O Holy Trinity, let earth and heaven raise
+
+    Their song of laud to thee the while my spirit prays:—
+
+    When evil comes to me, the strength do thou impart
+
+    That erst upheld thy Mother's heart!
+
+    Amen.
 status:
   la: verified
-  en: draft
+  en: verified

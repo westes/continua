@@ -1,18 +1,30 @@
 # All Saints' own Matins hymn was falling through all the way to the
 # plain Sunday/ferial default ("Nocte surgéntes vigilémus omnes") because
 # this file didn't exist -- a real content gap, not a design choice.
-# Live-verified against the Monastic Tridentinum 1617 engine (command=
-# prayMatutinum, 2026-11-01, clean year): "Placáre, Christe, sérvulis" --
-# the pre-Urban VIII recension of this hymn (see CLAUDE.md's own standing
-# preference for that older text), textually distinct from Vespers' own
-# "Christe Redémptor ómnium, Consérva tuos fámulos" (the 1631 Urban VIII
-# revision, already authored in vespers-hymn-all-saints.yml and confirmed
-# correct there) -- NOT a reuse of the Vespers text despite the secular
-# Sancti/11-01.txt's own [Hymnus Matutinum] tag reading as if it were
-# ("@Sancti/11-01:Hymnus Vespera"); that redirect is a secular-track-only
-# convention and doesn't hold for the Monastic engine actually running
-# here, confirmed by the live render itself. English translation as
-# given on the live page is the same classic "O Christ, thy guilty
+#
+# Corrected 2026-09-11: an earlier version of this header claimed the
+# Monastic engine independently produces "Placáre, Christe, sérvulis" here
+# as a text genuinely distinct from Vespers' own -- that doesn't hold up.
+# Sancti/11-01.txt's own tags collapse to just two real texts total across
+# all four Matins/Vespers x secular/Monastic slots: the Monastic track
+# (`[HymnusM Matutinum]`/`[HymnusM Vespera]`) uses "Christe Redémptor
+# ómnium" at *both* hours (Matins is a pure redirect to Vespers), and only
+# the secular track uses "Placáre, Christe, sérvulis" (also at both hours,
+# same redirect). So keeping "Placáre..." here is a deliberate curatorial
+# split, not a literal reproduction of what either engine track alone
+# actually renders -- same kind of on-purpose track-mixing as this
+# project's other hymn-variant choices (see CLAUDE.md).
+#
+# The split is kept because the two texts read differently and each suits
+# its hour: "Placáre..." centers on judgment and pleading -- the saints
+# addressed "apud sevérum Júdicem" (before the stern Judge), begging pardon
+# with "veris reórum flétibus" (the true tears of the guilty) -- a
+# penitential, watchful register that fits Matins' traditional
+# night-vigil character. "Christe Redémptor ómnium" (vespers-hymn-all-
+# saints.yml) has no judgment imagery at all -- each rank of saints is
+# simply invoked to "make us companions of Christ" against "past, present,
+# future evils" -- the warmer, festive close-of-day register Vespers
+# calls for. English translation is the classic "O Christ, thy guilty
 # people spare" rendering D.O. reuses across both Latin recensions of
 # this hymn family; checked stanza-by-stanza against this text's own
 # imagery (the "nine circling choirs of angels", "one shepherd, one

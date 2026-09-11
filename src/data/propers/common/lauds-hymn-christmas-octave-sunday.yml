@@ -1,7 +1,19 @@
 # Verified against Divinum Officium ("Divino Afflatu 1954"), Lauds live
 # query, 2026-12-27 -- see lauds-psalmody-overrides/christmas-octave-
 # sunday.yml's header. "A solis ortus cardine" -- self-contained,
-# including its own final doxology stanza.
+# including its own final doxology stanza (no `*` marker in the source at
+# all for this hymn, so no substitution mechanism applies here, unlike most
+# other hours' hymns).
+#
+# Reviewed 2026-09-11 against the Monastic ([HymnusM Laudes],
+# Sancti/12-25.txt) word substitutions -- same review as
+# lauds-hymn-circumcision.yml's own header (this file's text is a direct
+# copy of that one, both borrowing Christmas Day's own propers, which have
+# no authored hymn file of their own yet): most substitutions are a wash
+# and not adopted, "Jesu tibi sit glória"/"almo Spíritu" are kept as-is
+# because they're the more specific wording, and only "Concépit alvo" ->
+# "Verbo concépit" is adopted (ties the Incarnation to the Johannine
+# "Verbum caro factum est" rather than a plain anatomical phrasing).
 id: lauds-hymn-christmas-octave-sunday
 text:
   la: |
@@ -23,7 +35,7 @@ text:
     Domus pudíci péctoris
     Templum repénte fit Dei:
     Intácta nésciens virum,
-    Concépit alvo Fílium.
+    Verbo concépit Fílium.
 
     Enítitur puérpera,
     Quem Gábriel prædíxerat,
@@ -64,7 +76,7 @@ text:
     The mansion of the modest breast
     Becomes a shrine where God shall rest:
     The pure and undefilèd one
-    Conceived in her womb the Son.
+    By the Word conceived the Son.
 
     That Son, that Royal Son she bore,
     Whom Gabriel's voice had told afore;
