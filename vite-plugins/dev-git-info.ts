@@ -1,5 +1,5 @@
 import { execSync } from 'node:child_process';
-import { watch as fsWatch, type FSWatcher } from 'node:fs';
+import { watch as fsWatch, readFileSync, type FSWatcher } from 'node:fs';
 import path from 'node:path';
 import type { Plugin, ViteDevServer } from 'vite';
 
@@ -9,9 +9,21 @@ const RESOLVED_ID = '\0' + VIRTUAL_ID;
 interface GitInfo {
   commitSha: string;
   dirty: boolean;
+  version: string;
+  releaseDate: string;
+}
+
+function computePackageInfo(root: string): Pick<GitInfo, 'version' | 'releaseDate'> {
+  try {
+    const pkg = JSON.parse(readFileSync(path.join(root, 'package.json'), 'utf-8'));
+    return { version: pkg.version ?? '', releaseDate: pkg.releaseDate ?? '' };
+  } catch {
+    return { version: '', releaseDate: '' };
+  }
 }
 
 function computeGitInfo(root: string): GitInfo {
+  const { version, releaseDate } = computePackageInfo(root);
   try {
     const commitSha = execSync('git rev-parse --short HEAD', {
       cwd: root,
@@ -23,9 +35,9 @@ function computeGitInfo(root: string): GitInfo {
       cwd: root,
       stdio: ['ignore', 'pipe', 'ignore'],
     }).toString();
-    return { commitSha, dirty: status.trim().length > 0 };
+    return { commitSha, dirty: status.trim().length > 0, version, releaseDate };
   } catch {
-    return { commitSha: '', dirty: false };
+    return { commitSha: '', dirty: false, version, releaseDate };
   }
 }
 
@@ -69,7 +81,9 @@ export function devGitInfoPlugin(): Plugin {
       const info = computeGitInfo(root);
       return (
         `export const commitSha = ${JSON.stringify(info.commitSha)};\n` +
-        `export const dirty = ${JSON.stringify(info.dirty)};\n`
+        `export const dirty = ${JSON.stringify(info.dirty)};\n` +
+        `export const version = ${JSON.stringify(info.version)};\n` +
+        `export const releaseDate = ${JSON.stringify(info.releaseDate)};\n`
       );
     },
     configureServer(s) {
@@ -111,6 +125,23 @@ export function devGitInfoPlugin(): Plugin {
       s.httpServer?.once('close', () => {
         for (const w of fsWatchers) w.close();
       });
+    },
+    // `src/version.ts` still has a plain static `import ... from
+    // '../package.json'` (needed in production so Rollup can tree-shake it
+    // down to just the two fields it reads -- a dynamic import can't be
+    // shaken the same way). That static edge means Vite's own core HMR walk
+    // treats package.json as a real dependency of version.ts and, since a
+    // JSON module can't itself accept an update, escalates to a full page
+    // reload on every change -- including the `chore(release): vX.Y.Z`
+    // commit that bumps `version`/`releaseDate`, which is exactly the
+    // "version actually changed" case this plugin exists to make cheap.
+    // Returning `[]` here tells Vite's core "handled, don't also reload" for
+    // that one file; the `change` listener above (which fired regardless)
+    // already pushed the real new values through `continua:git-info`.
+    handleHotUpdate(ctx) {
+      if (ctx.file === path.join(ctx.server.config.root, 'package.json')) {
+        return [];
+      }
     },
   };
 }

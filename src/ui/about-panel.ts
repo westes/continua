@@ -23,7 +23,7 @@ export function mountAboutPanel(container: HTMLElement): void {
     <button type="button" class="about-trigger" aria-haspopup="dialog">${APP_VERSION}</button>
     <dialog class="about-dialog">
       <h2>Continua <span class="about-version">${APP_VERSION}</span></h2>
-      <p class="about-updated">Last updated ${formatRelativeTime(APP_VERSION_DATE)}</p>
+      <p class="about-updated">Last updated <span class="about-updated-text">${formatRelativeTime(APP_VERSION_DATE)}</span></p>
       <p class="about-blurb">${ABOUT_BLURB}</p>
       <button type="button" class="about-close" autofocus>Close</button>
     </dialog>
@@ -39,11 +39,14 @@ export function mountAboutPanel(container: HTMLElement): void {
     if (event.target === dialog) dialog.close();
   });
 
-  // Dev-only: patches the already-rendered version text in place when the
-  // live commit hash or dirty state changes, instead of a full page reload.
-  onVersionChange((version) => {
+  // Dev-only: patches the already-rendered version/date text in place when
+  // the live commit hash, dirty state, or package.json version changes,
+  // instead of a full page reload.
+  onVersionChange((version, versionDate) => {
     container.querySelectorAll<HTMLElement>('.about-trigger, .about-version').forEach((el) => {
       el.textContent = version;
     });
+    const updated = container.querySelector<HTMLElement>('.about-updated-text');
+    if (updated) updated.textContent = formatRelativeTime(versionDate);
   });
 }

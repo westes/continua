@@ -3,4 +3,6 @@
 declare module 'virtual:git-info' {
   export const commitSha: string;
   export const dirty: boolean;
+  export const version: string;
+  export const releaseDate: string;
 }
