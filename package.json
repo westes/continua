@@ -5,7 +5,7 @@
   "releaseDate": "2026-09-11T18:58:46.347Z",
   "type": "module",
   "scripts": {
-    "dev": "VITE_COMMIT_SHA=$(git rev-parse --short HEAD 2>/dev/null) vite",
+    "dev": "VITE_COMMIT_SHA=$(git rev-parse --short HEAD 2>/dev/null)$([ -z \"$(git status --porcelain 2>/dev/null)\" ] || echo -dirty) vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "vitest run"

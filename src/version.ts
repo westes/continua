@@ -11,8 +11,9 @@ const version = `v${pkgVersion}`;
 
 // Vite's own VITE_-prefixed env var convention (see package.json's `dev`
 // script), not a custom `define` -- this is a dev-only nicety (which exact
-// commit is running locally), best-effort: empty if git isn't available
-// wherever `npm run dev` runs, never something the app depends on.
+// commit is running locally, with a `-dirty` suffix if the working tree has
+// uncommitted changes), best-effort: empty if git isn't available wherever
+// `npm run dev` runs, never something the app depends on.
 const commitSha = import.meta.env.VITE_COMMIT_SHA;
 
 export const APP_VERSION = import.meta.env.DEV && commitSha ? `${version}+${commitSha}` : version;
