@@ -37,7 +37,9 @@ content in the same shape, not a design change. The dated log below is that pipe
      into that generic path instead of adding a third copy-pasted special case. Track as its
      own item, don't fold into user-editable calendar below — picking which saint wins a date
      and substituting a whole different office are different mechanisms even though both are
-     user-override flavored.
+     user-override flavored. Several chaplet-shaped devotions are also wanted here eventually
+     (2026-09-11, user) — detail/specific chaplets TBD, noted as a placeholder alongside the
+     votive offices this mechanism would also need to cover.
    - User-editable calendar: let a user pick/override which saints actually contest a
      given date, rather than only vu's own shipped `sanctoral-calendar.yml`. Motivating
      case (2026-09): `ss-eustace-and-companions.yml` is fully authored but deliberately
