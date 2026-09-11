@@ -4,12 +4,15 @@ import { hourLabel } from './format';
 
 const BASE = import.meta.env.BASE_URL;
 
-// Traditional grouping into rows, each starting a "hinge" hour: night
-// office, day hours, evening — rather than one flat wrapped list.
-const HOUR_ROWS: readonly HourId[][] = [
-  ['matins', 'lauds'],
-  ['prime', 'terce', 'sext', 'none'],
-  ['vespers', 'compline'],
+// Grouped by weight/character rather than a flat wrapped list: Matins
+// alone (by far the longest hour), Lauds/Prime as a middling morning pair,
+// Terce/Sext/None as the traditional "Little Hours", Vespers/Compline as
+// the evening anchor.
+const HOUR_ROWS: readonly { label: string; hours: readonly HourId[] }[] = [
+  { label: 'Night Office', hours: ['matins'] },
+  { label: 'Morning', hours: ['lauds', 'prime'] },
+  { label: 'Little Hours', hours: ['terce', 'sext', 'none'] },
+  { label: 'Evening', hours: ['vespers', 'compline'] },
 ];
 
 export function renderHourList(container: HTMLElement): void {
@@ -35,7 +38,14 @@ export function renderHourList(container: HTMLElement): void {
   };
 
   const separator = '<li class="hour-sep">&nbsp;</li>';
-  const rows = HOUR_ROWS.map((row) => `<ul class="hour-list">${row.map(renderItem).join(separator)}</ul>`).join('');
+  const rows = HOUR_ROWS.map(
+    ({ label, hours }) => `
+      <div class="hour-row">
+        <span class="hour-row-label">${label}</span>
+        <ul class="hour-list">${hours.map(renderItem).join(separator)}</ul>
+      </div>
+    `
+  ).join('');
 
   container.innerHTML = rows;
 
