@@ -71,7 +71,7 @@ describe('May sanctoral pull (first pass)', () => {
     // collectCommon/Common-of-an-Abbot fallback mechanism as the day's own
     // winner. St. Rita of Cascia (found via the suffixed-file sweep,
     // memory vu-suffixed-file-sweep) was deliberately given Romanus's real
-    // Duplex rank instead of CLAUDE.md's normal late-canonization
+    // Duplex rank instead of this project's normal late-canonization
     // deflation (see saints/st-rita-of-cascia.yml's own header) so she'd
     // win the day per the user's explicit instruction -- Romanus is now a
     // commemoration instead, but still resolves his own collect the same

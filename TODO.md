@@ -71,7 +71,7 @@ instead of claiming a literal-engine-fidelity justification that doesn't hold up
 
 **`lauds-hymn-circumcision.yml`/`lauds-hymn-christmas-octave-sunday.yml`'s Monastic word
 substitutions reviewed line-by-line, only one adopted**: rather than a blanket find/replace,
-weighed each of the 8 substitutions against CLAUDE.md's own standing preference for whichever
+weighed each of the 8 substitutions against this project's own standing preference for whichever
 wording carries more concrete/specific imagery. Five are a wash (auctor/Auctor capitalization,
 Enítitur/Eníxa est tense, ventre Matris/matris alvo word order, Baptísta clausum/Clausus Joánnes
 title-vs-name, Et lacte módico/Parvóque lacte — all synonymous). Two actually flatten the existing
@@ -2116,7 +2116,7 @@ pródiens" (whose final 2 stanzas are the separately-famous "O Salutaris Hostia"
 Sacred Heart needed one real source-track correction: the Monastic Tridentinum 1617 track doesn't
 observe this feast on this date at all (live-checked: shows St. Barnabas instead, a real 1617-era
 calendar gap, not a vu bug) — used Divino Afflatu 1954 instead, consistent with this project's own
-stated rubric/precedence track (see CLAUDE.md). Also live-verified a genuine, deliberate structural
+stated rubric/precedence track (see this project's design notes). Also live-verified a genuine, deliberate structural
 difference: Sacred Heart's own Lauds and Vespers have **no responsory at all** in the source
 (straight from chapter to hymn, "Capitulum Hymnus Versus" with no "Responsorium" between) — not an
 authoring gap, so no `lauds-responsory-sacred-heart.yml`/`vespers-responsory-sacred-heart.yml` were
@@ -2503,8 +2503,7 @@ mechanism only where the Monastic source itself carries a real "*" substitution 
 spots total). This pass wires it into *every* plain-default Lauds/Vespers hymn (Sunday,
 Mon-Sat, Advent, Lent, Passiontide, Paschaltide — 21 files total, all but the two already done)
 regardless of whether the source swaps that specific hymn, matching this project's own
-"Not a reconstruction" stance (repo `CLAUDE.md`) rather than the reference engine's literal
-behavior.
+"Not a reconstruction" stance rather than the reference engine's literal behavior.
 
 Each hymn file's own natural per-annum ending was split out into a matching
 `{hour}-hymn-{key}-doxology-per-annum.yml` (same convention as the first pass), so a
@@ -2758,7 +2757,7 @@ temporalId," the common case for a temporalId that already maps to exactly one c
 (2026-04-08) to carry real Paschal-alleluia antiphons ("Jesum qui crucifíxus est quǽritis,
 allelúja...") over a psalm set the reference engine sizes differently from vu's own
 already-fixed 9-psalm ferial table (itself deliberate — see "No RB summer contraction" in
-CLAUDE.md). 4 more days of antiphon-only content, same shape as the existing Advent/Paschaltide
+this project's design notes). 4 more days of antiphon-only content, same shape as the existing Advent/Paschaltide
 seasonal-overlay pattern, layered onto vu's own ferial psalm numbers rather than trying to
 reproduce the reference engine's differently-sized set — not started.
 
@@ -4223,7 +4222,7 @@ invokes it — no live Monastic rendering existed to check a hand-resolution aga
 **Directed explicitly, by the user**: secular-track content needs no special justification here —
 "there is nothing at all wrong with using text from secular sources," this project already blends
 Monastic 1617 structure with secular/Tridentine 1906 and Divino Afflatu content by design (see
-this file's own header/CLAUDE.md). Closed both by combining a direct source-read of the Monastic
+this file's own header and this project's design notes). Closed both by combining a direct source-read of the Monastic
 substitution rule (which one) with a live secular query (for the actual text):
 
 - `CommuneM/C7.txt`'s own `[Ant Matutinum]` directive is `@Commune/C7:: s/95/84/ s/96/86/
@@ -4298,7 +4297,7 @@ Directed explicitly: read the reference engine's own `CommuneM/*.txt` (Monastic)
 across candidate saints/years — much faster, and it also settled two open questions the second
 pass had gotten wrong by relying on live-query attempts alone. Also directed to use non-1617
 tracks where the Monastic one is silent (this project already blends tracks by design, see this
-file's own header/CLAUDE.md), and to prefer real saint-level propers over forcing a generic
+file's own header and this project's design notes), and to prefer real saint-level propers over forcing a generic
 Common read wherever a saint turns out to have proper content of her own — same principle as the
 angel-feasts pass above.
 
@@ -5239,7 +5238,7 @@ exception, not an authoring slip — keep it as authored.
 table) and `npm run build` both pass.
 
 Unlike sanctoral/temporal content elsewhere in this project, this plan is the user's own
-reading design (see "Not a reconstruction" in CLAUDE.md), not sourced from a historical
+reading design (see "Not a reconstruction" in this project's design notes), not sourced from a historical
 breviary — there is no reference engine to spot-check these rows against, by design; that's
 not a verification gap to close later.
 
@@ -5914,8 +5913,8 @@ file is a different, later saint" trap), `st-dominic`, `ss-cyriacus-largus-and-s
 `st-clare` (missed pre-1955-pool candidate), `st-lawrence` (Duplex I class), `st-bernard`,
 `st-bartholomew`, `st-augustine`, `decollation-of-st-john-baptist`, `st-sabina` (missed
 pre-1955-pool candidate), and `assumption` — the Duplex I class feast of the B.V.M. itself,
-confirming this app's calendar does map the Assumption despite the parent CLAUDE.md's older
-note that fixed BVM/Lord feasts were "not modeled by this app at all yet"; Nocturn 1's own
+confirming this app's calendar does map the Assumption despite an older design note that said
+fixed BVM/Lord feasts were "not modeled by this app at all yet"; Nocturn 1's own
 scripture (Song of Songs) left to the bible-plan store per this project's usual split, only
 Nocturn 2/3 patristic/Gospel content authored here. Left unauthored (no proper content at all
 in the source, same category as prior Common-only/Vigil exceptions): `ss-nabor-and-felix`-style
@@ -6364,7 +6363,7 @@ content, just via the new pool/distribute path) and `npm run build` both pass.
   anchor, `octave: {enabled: true, wins: duplex}`) — the pre-1955
   calendar specifically (each carries a real octave; the reference
   engine's own "(rubrica 196)"-tagged variant strips it, later-reform
-  text this project doesn't follow, per CLAUDE.md). Sacred Heart's own
+  text this project doesn't follow, per this project's design notes). Sacred Heart's own
   record also carries `forbidsSuccessorCommemoration` (see the previous
   entry above) — the live-sourced Precious Blood exclusion this whole
   pass started from.

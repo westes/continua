@@ -143,7 +143,7 @@ export function buildMatinsParts(date: string): ResolvedPart[] {
 // Lauds / Vespers — the engine's own generic collect applies unchanged.
 // All Souls' Day doesn't suppress a simultaneously-active octave the way
 // the historical rubric does (Sancti/11-02.txt's own "Omit ... Commemoratio
-// Suffragium") — vu's generous-commemorations design (see CLAUDE.md) keeps
+// Suffragium") — vu's generous-commemorations design (see this project's design notes) keeps
 // it, the same `getDayCollects`/`octaveCommemorationPart` machinery every
 // other day's Lauds/Vespers already uses for an active octave, appended
 // after the day's own Requiem content.

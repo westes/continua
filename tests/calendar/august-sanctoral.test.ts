@@ -39,7 +39,7 @@ describe('August sanctoral pull (first pass)', () => {
     // app -- see the app-simplification note still on st-donatus.yml
     // about the real reference engine's occasional Aug-3-Sunday transfer
     // this app doesn't model. Cajetan's own rank (Duplex in the source,
-    // deflated one tier to Semiduplex per CLAUDE.md's late-canonization
+    // deflated one tier to Semiduplex per this project's late-canonization
     // rule -- canonized 1671) still outranks Donatus's ancient Simplex in
     // every year, so Cajetan wins here now instead.
     const ordinary = resolveDay('2026-08-07');
@@ -130,7 +130,7 @@ describe('August sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it('St. Rose of Lima (rank deliberately deflated to semiduplex, see CLAUDE.md) wins outright over the ancient Ss. Felix and Adauctus, who keep their own commemoration rather than being suppressed', () => {
+  it("St. Rose of Lima (rank deliberately deflated to semiduplex, see this project's design notes) wins outright over the ancient Ss. Felix and Adauctus, who keep their own commemoration rather than being suppressed", () => {
     // On a Saturday this date is instead outranked by the generic
     // "Sanctae Mariae Sabbato" votive (see ss-felix-and-adauctus.yml) and
     // a Sunday produces a temporal winner instead -- 2027-08-30, a Monday,

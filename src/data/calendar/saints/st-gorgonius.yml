@@ -2,7 +2,7 @@
 # per memory vu-reference-engine-file-layout, not a live query): untagged/
 # default [Rank] block of `web/www/horas/Latin/Sancti/09-09.txt` --
 # "vide C2a-1;;Simplex;;1.1;;". Ancient Roman martyr (Diocletian
-# persecution, d. c. 304), so the CLAUDE.md rank-deflation rule (late
+# persecution, d. c. 304), so this project's rank-deflation rule (late
 # canonizations only) doesn't apply -- his real historical rank, Simplex,
 # is genuinely this low; it's not a stand-in for something richer. The
 # source's own Cistercian-rubric variant demotes him to a bare
@@ -39,7 +39,7 @@
 # once that octave was strengthened. This mirrors the source's own
 # Cistercian-rubric demotion above, so it's arguably the historically
 # correct outcome, not a bug -- flagged here rather than silently
-# forcing an unearned rank bump against both the source and CLAUDE.md's
+# forcing an unearned rank bump against both the source and this project's
 # no-deflation-without-cause rule.
 id: st-gorgonius
 name: "St. Gorgonius, Martyr"
