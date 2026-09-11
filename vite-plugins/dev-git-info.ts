@@ -32,9 +32,14 @@ function computeGitInfo(root: string): GitInfo {
 /**
  * Dev-only: exposes the live git commit hash + working-tree dirty state as
  * `virtual:git-info`, recomputed fresh on every load. Watches for commits,
- * checkouts, staging, and file edits, and triggers a full reload whenever
- * that state actually changes -- so the About panel always reflects exactly
- * what's running locally, without a manual dev-server restart.
+ * checkouts, staging, and file edits, and pushes a `continua:git-info`
+ * custom HMR event whenever that state actually changes -- so the About
+ * panel always reflects exactly what's running locally, without a manual
+ * dev-server restart. Deliberately not a full-reload: this app eagerly
+ * bundles tens of MB of offline content (see vite.config.ts's manualChunks
+ * comment), so reloading the whole page for a one-line version-string
+ * change was noticeably slow (2026-09-11 user report) -- the client side
+ * (src/version.ts) instead patches its own already-rendered text in place.
  *
  * Inactive during `vite build` (`apply: 'serve'`); production never derives
  * anything from git at build or serve time (see CLAUDE.md's "Versioning"
@@ -77,12 +82,13 @@ export function devGitInfoPlugin(): Plugin {
       let last = JSON.stringify(computeGitInfo(root));
 
       const recheck = () => {
-        const next = JSON.stringify(computeGitInfo(root));
+        const info = computeGitInfo(root);
+        const next = JSON.stringify(info);
         if (next === last) return;
         last = next;
         const mod = s.moduleGraph.getModuleById(RESOLVED_ID);
         if (mod) s.moduleGraph.invalidateModule(mod);
-        s.ws.send({ type: 'full-reload' });
+        s.ws.send({ type: 'custom', event: 'continua:git-info', data: info });
       };
       const debounced = debounce(recheck, 150);
 

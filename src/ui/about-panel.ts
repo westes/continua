@@ -1,4 +1,4 @@
-import { APP_VERSION, APP_VERSION_DATE } from '../version';
+import { APP_VERSION, APP_VERSION_DATE, onVersionChange } from '../version';
 import { formatRelativeTime } from './format';
 
 // A short, factual description of what the app is -- not marketing copy.
@@ -14,7 +14,8 @@ const ABOUT_BLURB =
 
 /** Mounted once from `shell.ts` (outside the per-navigation `render()`
  * loop) since its content — version/build metadata — never changes across
- * a session. Uses a native `<dialog>` rather than a custom modal
+ * a session in production (the dev-only `onVersionChange` patch below is
+ * the one exception). Uses a native `<dialog>` rather than a custom modal
  * implementation for free focus-trapping, ESC-to-close, and
  * backdrop-click-to-close. */
 export function mountAboutPanel(container: HTMLElement): void {
@@ -36,5 +37,13 @@ export function mountAboutPanel(container: HTMLElement): void {
   // doesn't, since that hits one of the child elements instead.
   dialog.addEventListener('click', (event) => {
     if (event.target === dialog) dialog.close();
+  });
+
+  // Dev-only: patches the already-rendered version text in place when the
+  // live commit hash or dirty state changes, instead of a full page reload.
+  onVersionChange((version) => {
+    container.querySelectorAll<HTMLElement>('.about-trigger, .about-version').forEach((el) => {
+      el.textContent = version;
+    });
   });
 }
