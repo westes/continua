@@ -3,6 +3,11 @@ import { resolveOrdo } from '../../src/hours';
 
 const MONDAY = '2026-06-15';
 const SUNDAY = '2026-06-14';
+// A plain per-annum weekday outside any season/octave/BVM-common override —
+// 2026-06-15 (MONDAY, used elsewhere in this file) sits inside the Sacred
+// Heart octave (Easter+68 through +75) and now correctly gets the Heart
+// doxology there, so the per-annum-doxology test below needs its own date.
+const PER_ANNUM_WEEKDAY = '2026-08-24';
 
 describe('resolveOrdo("compline", ...)', () => {
   it('is implemented, with fixed psalms 4, 90, 133 regardless of weekday', () => {
@@ -37,7 +42,7 @@ describe('resolveOrdo("compline", ...)', () => {
   });
 
   it("appends the hymn's own (per-annum) doxology, distinct from Prime's", () => {
-    const ordo = resolveOrdo('compline', MONDAY);
+    const ordo = resolveOrdo('compline', PER_ANNUM_WEEKDAY);
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
     expect(hymn && hymn.kind === 'hymn' ? hymn.text.text.en : undefined).toContain(
       'O Father, that we ask be done',

@@ -1,9 +1,11 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617). Fixed
-# hymn for None, invariant by season (per explicit user direction) — the
-# whole text including its own final doxology stanza is self-contained,
-# not run through hymn-doxology.ts the way Prime's/Compline's hymns are.
-# Same Latin doxology as Terce/Sext ("Praesta, Pater piissime...") but a
-# distinct English translation, matching this hymn's own different meter.
+# Verified against Divinum Officium (Monastic Tridentinum 1617). Final (3rd)
+# stanza marked with a leading "* " — Divinum Officium's own marker for a
+# hymn's variable doxology (hymni.pl's gethymn()); see
+# hours/resolve-common.ts's substituteDoxology and hours/hymn-doxology.ts.
+# Same Latin doxology as Terce/Sext but its own distinct English
+# translation, matching this hymn's own different meter. See
+# terce-hymn.yml's own note (clarified 2026-09-10) — same body-fixed/
+# doxology-variable distinction applies here.
 id: none-hymn
 text:
   la: |
@@ -17,7 +19,7 @@ text:
     Sed prǽmium mortis sacræ
     Perénnis instet glória.
 
-    Præsta, Pater piíssime,
+    * Præsta, Pater piíssime,
     Patríque compar Únice,
     Cum Spíritu Paráclito
     Regnans per omne sǽculum.
@@ -33,7 +35,7 @@ text:
     The brightness of a holy death-bed blending
     With dawning glories of th' eternal day.
 
-    Hear us, O Father, gracious and forgiving,
+    * Hear us, O Father, gracious and forgiving,
     And thou, O Christ, the co-eternal Word,
     Who, with the Holy Ghost, by all things living
     Now and to endless ages art adored.

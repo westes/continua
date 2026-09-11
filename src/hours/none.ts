@@ -5,6 +5,7 @@ import { getDayLabel } from '../calendar/day-label';
 import { getPsalmsFor } from '../psalter/distribution';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
+import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
@@ -13,7 +14,7 @@ import {
   resolveOfficeWinner,
   resolveMinorHourAntiphon,
   resolveMinorHourChapter,
-  resolveSelfContainedHymn,
+  substituteDoxology,
   isFerialOrVigil,
 } from './resolve-common';
 import { isAllSouls, buildNoneParts } from './all-souls';
@@ -26,9 +27,12 @@ const antiphons = antiphonsData as Record<Weekday, Partial<Record<string, string
 function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
   switch (part.kind) {
     case 'opening-versicle':
-      return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) }];
-    case 'hymn':
-      return resolveSelfContainedHymn(part);
+      return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) }];
+    case 'hymn': {
+      const hymn = resolveCommon(part.textRef.id);
+      const overrideId = getHymnDoxologyOverrideId(day);
+      return [{ kind: 'hymn', text: substituteDoxology(hymn, overrideId ? resolveCommon(overrideId) : undefined) }];
+    }
     case 'chapter':
       return [{ kind: 'chapter', text: resolveMinorHourChapter('none', day, part.textRef.id) }];
     case 'day-collect':

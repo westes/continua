@@ -76,11 +76,11 @@ import { getPsalmVerses } from '../psalter';
 import { getPsalmsFor, type PsalmRef } from '../psalter/distribution';
 import { getScriptureVerses } from '../scripture';
 import { getOpeningVersicleId } from './opening-versicle';
-import { getHymnDoxologyId } from './hymn-doxology';
+import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
-  appendDoxology,
+  substituteDoxology,
   getDayCollect,
   getOfficeOverrideId,
   resolveOfficeWinner,
@@ -530,9 +530,11 @@ function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
   }
   // The plain ferial hymn's own Monastic source (Day1-6 Hymnus, Psalterium/
   // Special/Matutinum Special.txt) carries a real seasonal-doxology
-  // substitution marker (live-checked 2026-09-03) — unlike the Advent/
-  // Paschaltide seasonal hymns above, whose Monastic forms are each fixed,
-  // non-swapping text, so only this final fallback needs the swap.
+  // substitution marker (live-checked 2026-09-03), ported directly into
+  // this file's own text (see matins-hymn-ferial.yml) — the caller
+  // (resolveOrdo below) runs every tier's result through substituteDoxology
+  // universally, so no explicit doxology handling is needed in this
+  // function at all.
   //
   // Weekday-specific (2026-09-04): the source's plain Matins hymn genuinely
   // varies Monday-Saturday (the classic "week of hymns" — Somno reféctis
@@ -551,9 +553,7 @@ function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
     friday: 'matins-hymn-ferial-friday',
     saturday: 'matins-hymn-ferial-saturday',
   };
-  const body = resolveCommon(weekdayFerialHymnIds[day.weekday] ?? 'matins-hymn-ferial');
-  const doxology = resolveCommon(getHymnDoxologyId(day, 'matins-hymn-doxology-per-annum'));
-  return appendDoxology(body, doxology);
+  return resolveCommon(weekdayFerialHymnIds[day.weekday] ?? 'matins-hymn-ferial');
 }
 
 /** The plain ferial weekday nocturn's real antiphoned psalmody — a
@@ -1235,15 +1235,17 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // never renders that silent Pater/Ave/Credo elsewhere (see
   // data/hours/prime.yml's own header: dropped "to keep the hour
   // shorter"), so the fix here is a pure omission, not a new part kind.
+  const hymnDoxologyOverrideId = getHymnDoxologyOverrideId(day);
+  const hymnDoxologyOverride = hymnDoxologyOverrideId ? resolveCommon(hymnDoxologyOverrideId) : undefined;
   const parts: ResolvedPart[] = isInTriduum(day.date)
     ? []
     : [
-        { kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) },
+        { kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) },
         { kind: 'versicle', text: resolveCommon('opening-domine-labia') },
         plainPsalm(3),
         { kind: 'section-heading', label: 'Invitatory' },
         ...invitatoryParts(day),
-        { kind: 'hymn', text: resolveMatinsHymn(day) },
+        { kind: 'hymn', text: substituteDoxology(resolveMatinsHymn(day), hymnDoxologyOverride) },
       ];
 
   // A sanctoral winner's own proper Matins psalmody takes precedence even

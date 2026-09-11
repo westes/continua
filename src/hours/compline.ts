@@ -3,11 +3,11 @@ import type { LiturgicalDay } from '../calendar/types';
 import { resolveEveningDay } from '../calendar/vespers';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
-import { getHymnDoxologyId } from './hymn-doxology';
+import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { getOpeningVersicleId } from './opening-versicle';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { isDoubleOrHigher } from './antiphon';
-import { resolveCommon, appendDoxology, splitNamedAntiphon, openingAntiphon, resolveResponsory } from './resolve-common';
+import { resolveCommon, substituteDoxology, splitNamedAntiphon, openingAntiphon, resolveResponsory } from './resolve-common';
 import { isAllSouls, buildComplineParts } from './all-souls';
 import complineDefinitionData from '../data/hours/compline.yml';
 
@@ -24,15 +24,15 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
   switch (part.kind) {
     case 'hymn': {
       // Lent replaces the whole hymn (not just its doxology) with "Christe,
-      // qui lux es et dies" — self-contained, so no appendDoxology here.
-      // See compline-hymn-lenten.yml for real caveats about how confident
-      // to be that this actually triggers in live practice.
+      // qui lux es et dies" — self-contained, so no doxology substitution
+      // here. See compline-hymn-lenten.yml for real caveats about how
+      // confident to be that this actually triggers in live practice.
       if (LENTEN_HYMN_SEASONS.has(day.season)) {
         return [{ kind: 'hymn', text: resolveCommon('compline-hymn-lenten') }];
       }
-      const body = resolveCommon(part.textRef.id);
-      const doxology = resolveCommon(getHymnDoxologyId(day, 'compline-hymn-doxology-per-annum'));
-      return [{ kind: 'hymn', text: appendDoxology(body, doxology) }];
+      const hymn = resolveCommon(part.textRef.id);
+      const overrideId = getHymnDoxologyOverrideId(day);
+      return [{ kind: 'hymn', text: substituteDoxology(hymn, overrideId ? resolveCommon(overrideId) : undefined) }];
     }
     case 'chapter':
     case 'versicle':
@@ -55,7 +55,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'lesson':
       return [{ kind: 'lesson', text: resolveCommon(part.textRef.id), label: part.label }];
     case 'opening-versicle':
-      return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) }];
+      return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) }];
     case 'psalm':
       return [
         {

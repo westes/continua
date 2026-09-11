@@ -1,7 +1,9 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617). Fixed
-# hymn for Sext, invariant by season (per explicit user direction) — the
-# whole text including its own final doxology stanza is self-contained,
-# not run through hymn-doxology.ts the way Prime's/Compline's hymns are.
+# Verified against Divinum Officium (Monastic Tridentinum 1617). Final (3rd)
+# stanza marked with a leading "* " — Divinum Officium's own marker for a
+# hymn's variable doxology (hymni.pl's gethymn()); see
+# hours/resolve-common.ts's substituteDoxology and hours/hymn-doxology.ts.
+# See terce-hymn.yml's own note (clarified 2026-09-10) — same body-fixed/
+# doxology-variable distinction applies here.
 id: sext-hymn
 text:
   la: |
@@ -15,7 +17,7 @@ text:
     Confer salútem córporum,
     Verámque pacem córdium.
 
-    Præsta, Pater piíssime,
+    * Præsta, Pater piíssime,
     Patríque compar Únice,
     Cum Spíritu Paráclito
     Regnans per omne sǽculum.
@@ -31,7 +33,7 @@ text:
     And while thou keep'st the body whole,
     Shed forth thy peace upon the soul.
 
-    Almighty Father, hear our cry,
+    * Almighty Father, hear our cry,
     Through Jesus Christ, our Lord most High,
     Who, with the Holy Ghost and thee,
     Doth live and reign eternally.

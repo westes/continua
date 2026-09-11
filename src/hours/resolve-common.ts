@@ -1,4 +1,4 @@
-import type { PropersRef, ResolvedPart, ResolvedText } from './types';
+import type { ResolvedPart, ResolvedText } from './types';
 import type { Commemoration, DayWinner, FeastClass, LiturgicalDay, Weekday } from '../calendar/types';
 import type { ProperText } from '../propers';
 import { getCommonProper, getTemporalProper } from '../propers';
@@ -153,15 +153,6 @@ function getTemporalProperWithFallback(winnerId: string, kind: string, day: Litu
     return named;
   }
   return getTemporalProper(`${resolveTemporalId(day.date)}-${kind}`);
-}
-
-/** Terce/Sext/None's own Matins-less hymn 'hymn' case — a plain, fixed,
- * self-contained text with no doxology mechanism at all (the closing
- * doxology is baked directly into each hour's own hymn text file; see
- * {terce,sext,none}-hymn.yml) and no override/season tiering. Byte-
- * identical across all three files before being centralized here. */
-export function resolveSelfContainedHymn(part: { textRef: PropersRef }): ResolvedPart[] {
-  return [{ kind: 'hymn', text: resolveCommon(part.textRef.id) }];
 }
 
 // Named temporal winners with real standing of their own, unconditionally
@@ -1219,19 +1210,53 @@ export function verifiedText(text: Partial<Record<string, string>>): ResolvedTex
 
 const STATUS_RANK = { verified: 0, draft: 1, missing: 2 } as const;
 
-/** Joins a hymn's body with its (seasonally-variable) final doxology
- * stanza, per language — status is the worse of the two per language. */
-export function appendDoxology(body: ResolvedText, doxology: ResolvedText): ResolvedText {
-  const text: Partial<Record<string, string>> = { ...body.text };
-  const status: Partial<Record<string, 'verified' | 'draft' | 'missing'>> = { ...body.status };
-  for (const lang of Object.keys(doxology.text)) {
-    const doxText = doxology.text[lang];
-    if (doxText) {
-      text[lang] = text[lang] ? `${text[lang]}\n\n${doxText}` : doxText;
+// The marker convention Divinum Officium's own source data uses for a
+// hymn's variable final stanza: hymni.pl's gethymn() checks whether the raw
+// hymn text contains a literal asterisk, and if a doxology name was found
+// for today, replaces everything from that asterisk onward with the
+// resolved doxology text; otherwise the original text (asterisk and all)
+// stands. Ported here as a literal "* " at the start of the stanza's own
+// first line, on a new paragraph. This replaces continua's earlier approach
+// of splitting each hymn into a separate body file plus a
+// "*-doxology-per-annum.yml" file: that pushed a per-hymn authoring
+// decision ("does this file need splitting?") onto whoever wrote each
+// proper/Common hymn, and proved to actually just get skipped in practice
+// (resolveOfficeBundle's proper/Common hymns never split their doxology at
+// all, silently baking in whatever ending happened to be correct on the one
+// date they were live-queried). One marker, one function, always called —
+// a hymn with no marker (a genuinely fixed ending, e.g. Ave Maris Stella,
+// Verbum Supernum Prodiens) just passes through unchanged, exactly like the
+// source's own conditional substitution.
+const DOXOLOGY_MARKER = '\n\n* ';
+
+/**
+ * Splices a season/feast/Common-specific doxology into a hymn's text where
+ * its own marker (`DOXOLOGY_MARKER` above) sits, or leaves the hymn
+ * completely unchanged when no marker is present (a fixed, non-swappable
+ * ending) or no override applies for today (`getHymnDoxologyOverrideId`
+ * returned `undefined` — the hymn's own marker-delimited default stands,
+ * with the marker itself stripped for display). Safe to call on every
+ * hymn — ferial, proper, Common, or octave alike — regardless of whether
+ * that particular hymn happens to carry the marker.
+ */
+export function substituteDoxology(hymn: ResolvedText, override: ResolvedText | undefined): ResolvedText {
+  const text: Partial<Record<string, string>> = {};
+  const status: Partial<Record<string, 'verified' | 'draft' | 'missing'>> = {};
+  for (const lang of Object.keys(hymn.text)) {
+    const original = hymn.text[lang];
+    const markerIndex = original?.indexOf(DOXOLOGY_MARKER) ?? -1;
+    if (!original || markerIndex === -1) {
+      text[lang] = original;
+      status[lang] = hymn.status[lang];
+      continue;
     }
-    const bodyStatus = status[lang] ?? 'missing';
-    const doxStatus = doxology.status[lang] ?? 'missing';
-    status[lang] = STATUS_RANK[doxStatus] > STATUS_RANK[bodyStatus] ? doxStatus : bodyStatus;
+    const before = original.slice(0, markerIndex);
+    const ownEnding = original.slice(markerIndex + DOXOLOGY_MARKER.length);
+    const overrideText = override?.text[lang];
+    text[lang] = `${before}\n\n${overrideText ?? ownEnding}`;
+    const hymnStatus = hymn.status[lang] ?? 'missing';
+    const overrideStatus = overrideText ? (override?.status[lang] ?? 'missing') : hymnStatus;
+    status[lang] = STATUS_RANK[overrideStatus] > STATUS_RANK[hymnStatus] ? overrideStatus : hymnStatus;
   }
   return { text, status };
 }

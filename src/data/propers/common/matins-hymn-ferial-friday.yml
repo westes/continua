@@ -10,8 +10,9 @@
 # as a generic "ferial" hymn) for every weekday, including Friday, where
 # the real Monastic 1617 source is this genuinely different hymn.
 #
-# Closing doxology stanza intentionally omitted — shared across every
-# weekday via matins-hymn-doxology-per-annum.yml (see hours/matins.ts).
+# Closing doxology stanza marked with a leading "* " (Divinum Officium's
+# own variable-doxology marker, shared across every weekday — see
+# hours/resolve-common.ts's substituteDoxology and hours/hymn-doxology.ts).
 id: matins-hymn-ferial-friday
 text:
   la: >-
@@ -58,6 +59,15 @@ text:
     Per quod diérum círculis
 
     Nullis ruámus áctibus.
+
+
+    * Præsta, Pater piíssime,
+
+    Patríque compar Únice,
+
+    Cum Spíritu Paráclito
+
+    Regnans per omne sǽculum. Amen.
   en: >-
     O Three in One, and One in Three,
 
@@ -102,6 +112,15 @@ text:
     That, in our course, from day to day,
 
     By no misdeed we fall away.
+
+
+    * Grant this, O Father ever One
+
+    With Christ, thy sole-begotten Son,
+
+    And Holy Ghost, whom all adore,
+
+    Reigning and blest forevermore. Amen.
 status:
   la: verified
   en: verified

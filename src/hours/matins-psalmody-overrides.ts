@@ -1,4 +1,4 @@
-import { getSaintRecord } from '../calendar/feasts';
+import { resolveCommonCategoryId } from './psalmody-common-category';
 
 /** Matins' own analogue of hours/lauds-psalmody-overrides.ts. Two data
  * stores, both keyed by id, consulted in a three-tier fallback by
@@ -109,8 +109,13 @@ export function getMatinsSaintOverride(id: string | undefined): MatinsPsalmodyOv
  * tier — used where the caller has already handled (or ruled out) a
  * saint-specific proper separately, e.g. matins.ts's duplex-rank fallback,
  * which only wants Common's per-nocturn versicle/Nocturn-3 antiphon, not
- * a full scheme substitution. */
+ * a full scheme substitution. No Paschaltide-variant tier exists for
+ * Matins (unlike Lauds/Vespers) — its own Paschaltide handling lives
+ * entirely in matins-sunday-paschaltide-nocturn-overrides.yml, orthogonal
+ * to this mechanism — so this always passes `paschaltide=false` to the
+ * id-derivation shared with Lauds'/Vespers' own Common-override functions
+ * (see psalmody-common-category.ts). */
 export function getMatinsCommonOverride(id: string | undefined): MatinsPsalmodyScheme | undefined {
-  if (!id) return undefined;
-  return categories.get(getSaintRecord(id)?.common ?? '');
+  const categoryId = resolveCommonCategoryId(id, false, () => false);
+  return categoryId ? categories.get(categoryId) : undefined;
 }

@@ -1,7 +1,10 @@
 # Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25
-# run. The final (5th) doxology stanza is stored separately — see
-# hymn-doxology-per-annum.yml and hours/hymn-doxology.ts — since it varies
-# by season, unlike these first four.
+# run. The final (5th) stanza is marked with a leading "* " — Divinum
+# Officium's own marker for a hymn's variable doxology (hymni.pl's
+# gethymn()), ported here directly; see hours/resolve-common.ts's
+# substituteDoxology and hours/hymn-doxology.ts. When no override applies,
+# this stanza (with the marker itself stripped) stands as Prime's own
+# per-annum default.
 id: hymn-iam-lucis-orto-sidere
 text:
   la: |
@@ -24,6 +27,11 @@ text:
     Noctémque sors redúxerit,
     Mundi per abstinéntiam
     Ipsi canámus glóriam.
+
+    * Deo Patri sit glória,
+    Ejúsque soli Fílio,
+    Cum Spíritu Paráclito,
+    Et nunc et in perpétuum. Amen.
   en: |
     Now in the sun's new dawning ray,
     Lowly of heart, our God we pray
@@ -44,6 +52,11 @@ text:
     And night in course shall follow on.
     We, free from cares the world affords,
     May chant the praise that is our Lord's.
+
+    * All laud to God the Father be,
+    All praise, Eternal Son, to thee:
+    All glory, as is ever meet,
+    To God the holy Paraclete. Amen.
 status:
   la: verified
   en: verified

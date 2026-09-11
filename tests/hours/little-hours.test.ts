@@ -156,3 +156,44 @@ describe.each(LITTLE_HOURS)('resolveOrdo(%s, ...)', (hourId) => {
     expect(antiphon?.text.la).not.toContain(LAWRENCE_ANTIPHON_INCIPIT[hourId]);
   });
 });
+
+// Pentecost's octave (2026-05-24 Sunday through 2026-05-30 Saturday) swaps
+// Terce's whole hymn to "Veni Creátor Spíritus" -- a real, source-confirmed
+// whole-hymn override (Psalterium/Special/Minor Special.txt's own
+// [Hymnus Pasc7 Tertia]), not just a doxology-stanza swap. Sext/None have
+// no such override in the source and must stay on their plain per-annum
+// hymn throughout the same week.
+describe('Pentecost-week Terce hymn swap', () => {
+  const PENTECOST_SUNDAY = '2026-05-24';
+  const OCTAVE_INTERIOR_DAY = '2026-05-27';
+  const TRINITY_SUNDAY = '2026-05-31'; // day after the octave closes
+
+  it('swaps Terce to "Veni Creátor Spíritus" on Pentecost Sunday itself', () => {
+    const ordo = resolveOrdo('terce', PENTECOST_SUNDAY);
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn && hymn.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Veni Creátor Spíritus');
+    expect(hymn && hymn.kind === 'hymn' ? hymn.text.status.en : undefined).toBe('verified');
+  });
+
+  it('keeps the same swap throughout the interior octave days, not just Pentecost Sunday', () => {
+    const ordo = resolveOrdo('terce', OCTAVE_INTERIOR_DAY);
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn && hymn.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Veni Creátor Spíritus');
+  });
+
+  it('reverts to the plain per-annum hymn once the octave closes (Trinity Sunday)', () => {
+    const ordo = resolveOrdo('terce', TRINITY_SUNDAY);
+    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+    expect(hymn && hymn.kind === 'hymn' ? hymn.text.text.la : undefined).not.toContain('Veni Creátor Spíritus');
+  });
+
+  it('leaves Sext and None on their plain per-annum hymn throughout the same days', () => {
+    for (const date of [PENTECOST_SUNDAY, OCTAVE_INTERIOR_DAY]) {
+      for (const hourId of ['sext', 'none'] as const) {
+        const ordo = resolveOrdo(hourId, date);
+        const hymn = ordo.parts.find((p) => p.kind === 'hymn');
+        expect(hymn && hymn.kind === 'hymn' ? hymn.text.text.la : undefined).not.toContain('Veni Creátor Spíritus');
+      }
+    }
+  });
+});

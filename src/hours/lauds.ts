@@ -7,12 +7,12 @@ import { getPsalmVerses } from '../psalter';
 import { getCanticle, type CanticleVerse } from './lauds-canticles';
 import { getLaudsSaintOverride, getLaudsCommonOverride, type LaudsPsalmodyOverride } from './lauds-psalmody-overrides';
 import { getOpeningVersicleId } from './opening-versicle';
-import { getHymnDoxologyId } from './hymn-doxology';
+import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
-  appendDoxology,
+  substituteDoxology,
   getDayCollects,
   getBenedictusAntiphon,
   splitNamedAntiphon,
@@ -272,22 +272,14 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
 }
 
 /**
- * Every plain-default Lauds hymn's own closing doxology stanza (split out
- * into `lauds-hymn-${key}-doxology-per-annum.yml`) is re-attached here
- * through the seasonal mechanism (hours/hymn-doxology.ts) rather than kept
- * as fixed text — a deliberate broadening beyond the reference source
- * (whose Monastic weekday/seasonal Lauds hymns mostly don't vary their own
- * doxology by season at all, live-checked 2026-09-03): this project isn't
- * a reconstruction (see the repo's CLAUDE.md), and a hymn's closing
- * doxology is a natural, low-cost way to keep every hour visibly in step
- * with the season — e.g. the plain weekday hymns used all through
- * Christmastide/Epiphanytide/Corpus Christi/Sacred Heart (no
- * `seasonalOfficeSuffix` covers those) previously stayed on their generic
- * per-annum ending throughout; now they pick up Nat/Epi/Corp/Heart like
- * Prime/Compline already did. Each `key`'s own natural ending is preserved
- * as that key's per-annum default, so a season/feast with no override
- * (e.g. Advent, Lent — the source itself never swaps those) reproduces the
- * exact original text.
+ * Every Lauds hymn (plain weekday/season default, octave, or — via
+ * `resolveOffice` below — proper/Common) is a single self-contained text
+ * whose own final stanza is marked with a leading `* ` where its doxology
+ * varies (see `lauds-hymn-${key}.yml`'s own header, and
+ * hours/resolve-common.ts's `substituteDoxology`) — `resolveOffice` runs
+ * every hymn this function or `resolveOfficeBundle` can return through
+ * that one substitution uniformly, so this function itself just resolves
+ * the right *body* text and returns it unchanged.
  */
 function resolveLaudsHymn(day: LiturgicalDay, key: string): ResolvedText {
   // A temporal-feast-only octave (Ascension's own — no saint record, so
@@ -309,9 +301,7 @@ function resolveLaudsHymn(day: LiturgicalDay, key: string): ResolvedText {
       return octaveHymn;
     }
   }
-  const body = resolveCommon(`lauds-hymn-${key}`);
-  const doxology = resolveCommon(getHymnDoxologyId(day, `lauds-hymn-${key}-doxology-per-annum`));
-  return appendDoxology(body, doxology);
+  return resolveCommon(`lauds-hymn-${key}`);
 }
 
 /** Any sanctoral winner's (or named-temporal feast's) own capitulum/
@@ -326,6 +316,8 @@ function resolveLaudsHymn(day: LiturgicalDay, key: string): ResolvedText {
  * feast's own override always wins over the season it happens to fall
  * in, same as everywhere else in this codebase. */
 function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
+  const hymnDoxologyOverrideId = getHymnDoxologyOverrideId(day);
+  const hymnDoxologyOverride = hymnDoxologyOverrideId ? resolveCommon(hymnDoxologyOverrideId) : undefined;
   const bundle = resolveOfficeBundle('lauds', day);
   if (bundle) {
     const parts: ResolvedPart[] = [{ kind: 'chapter', text: bundle.chapter }];
@@ -338,7 +330,10 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
     if (bundle.responsory.status.la !== 'missing' || bundle.responsory.status.en !== 'missing') {
       parts.push({ kind: 'responsory', text: bundle.responsory });
     }
-    parts.push({ kind: 'hymn', text: bundle.hymn }, { kind: 'versicle', text: bundle.versicle });
+    parts.push(
+      { kind: 'hymn', text: substituteDoxology(bundle.hymn, hymnDoxologyOverride) },
+      { kind: 'versicle', text: bundle.versicle },
+    );
     return parts;
   }
   const seasonSuffix = seasonalOfficeSuffix(day.season);
@@ -346,7 +341,7 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
   return [
     { kind: 'chapter', text: resolveCommon(seasonSuffix ? `lauds-capitulum-${key}` : capitulumId(day.weekday)) },
     { kind: 'responsory', text: resolveResponsory(resolveCommon(`lauds-responsory-${key}`), day) },
-    { kind: 'hymn', text: resolveLaudsHymn(day, key) },
+    { kind: 'hymn', text: substituteDoxology(resolveLaudsHymn(day, key), hymnDoxologyOverride) },
     { kind: 'versicle', text: resolveCommon(`lauds-versicle-${key}`) },
   ];
 }
@@ -354,7 +349,7 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
 function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
   switch (part.kind) {
     case 'opening-versicle':
-      return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) }];
+      return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) }];
     case 'lauds-psalmody':
       return resolvePsalmody(day);
     case 'lauds-office':

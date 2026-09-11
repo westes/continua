@@ -3,9 +3,9 @@
 # hymn-agnostic) — each hymn's own per-annum default is supplied by the
 # caller instead (see hours/hymn-doxology.ts). Advent has no special
 # doxology in the source data — it falls through to the caller's per-annum
-# default, same as any season not listed here. Same PLACEHOLDER caveat as
-# prime-chapter-responsory-by-season.yml: real season resolution doesn't
-# exist until milestone 4, so this can't be exercised by real data yet.
+# default, same as any season not listed here. This is exercised by real
+# season data (calendar/temporal.ts) today; see hymn-doxology-by-feast.yml
+# for the higher-precedence per-feast/per-Common overrides checked first.
 bySeason:
   christmastide: hymn-doxology-nat
   epiphanytide: hymn-doxology-epi

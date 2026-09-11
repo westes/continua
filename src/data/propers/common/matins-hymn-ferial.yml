@@ -18,10 +18,11 @@
 # calendar/index.ts's applyMarianSaturday) were both closed the same
 # session. See TODO.md's 2026-09-04 entries.
 #
-# The closing doxology stanza is split out into
-# matins-hymn-doxology-per-annum.yml (see hours/matins.ts) — the source
-# carries a real "*" seasonal-substitution marker there (live-checked
-# 2026-09-03, Psalterium/Special/Matutinum Special.txt).
+# The closing doxology stanza is marked with a leading "* " — Divinum
+# Officium's own marker for a hymn's variable doxology (hymni.pl's
+# gethymn(), live-checked 2026-09-03 in Psalterium/Special/Matutinum
+# Special.txt); see hours/resolve-common.ts's substituteDoxology and
+# hours/hymn-doxology.ts.
 id: matins-hymn-ferial
 text:
   la: >-
@@ -59,6 +60,15 @@ text:
     Et ore te canéntium
 
     Laudéris in perpétuum.
+
+
+    * Præsta, Pater piíssime,
+
+    Patríque compar Únice,
+
+    Cum Spíritu Paráclito
+
+    Regnans per omne sǽculum. Amen.
   en: >-
     Our limbs refreshed with slumber now,
 
@@ -94,6 +104,15 @@ text:
     That by their lips who thee adore
 
     Thou mayst be praised forevermore.
+
+
+    * Grant this, O Father ever One
+
+    With Christ, thy sole-begotten Son,
+
+    And Holy Ghost, whom all adore,
+
+    Reigning and blest forevermore. Amen.
 status:
   la: verified
   en: verified

@@ -7,12 +7,12 @@ import { getPsalmVerses } from '../psalter';
 import { getMartyrologyEntryFor } from '../martyrology';
 import { getRegulaReadingFor } from '../regula';
 import { getChapterResponsoryId } from './chapter-responsory';
-import { getHymnDoxologyId } from './hymn-doxology';
+import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { getOpeningVersicleId } from './opening-versicle';
 import { isDoubleOrHigher, applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
-  appendDoxology,
+  substituteDoxology,
   splitNamedAntiphon,
   openingAntiphon,
   resolveOfficeWinner,
@@ -30,9 +30,9 @@ const antiphons = antiphonsData as Record<Weekday, Partial<Record<string, string
 function resolvePart(part: HourPart, date: string, day: LiturgicalDay): ResolvedPart[] {
   switch (part.kind) {
     case 'hymn': {
-      const body = resolveCommon(part.textRef.id);
-      const doxology = resolveCommon(getHymnDoxologyId(day, 'hymn-doxology-per-annum'));
-      return [{ kind: 'hymn', text: appendDoxology(body, doxology) }];
+      const hymn = resolveCommon(part.textRef.id);
+      const overrideId = getHymnDoxologyOverrideId(day);
+      return [{ kind: 'hymn', text: substituteDoxology(hymn, overrideId ? resolveCommon(overrideId) : undefined) }];
     }
     case 'chapter':
     case 'responsory':
@@ -47,7 +47,7 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
     case 'lesson':
       return [{ kind: 'lesson', text: resolveCommon(part.textRef.id), label: part.label }];
     case 'opening-versicle':
-      return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) }];
+      return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) }];
     case 'creed':
       // Real Divinum Officium's actual inclusion rule tangles together
       // rank, commemorations, and version-specific rubrics in a way that
@@ -63,7 +63,7 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
       if (part.resolve === 'by-season') {
         // Currently only the chapter responsory's verse uses this — see
         // hours/chapter-responsory.ts. by-feast-rank doesn't apply to Prime.
-        return [{ kind: 'responsory', text: resolveResponsory(resolveCommon(getChapterResponsoryId(day.season, day.winner)), day) }];
+        return [{ kind: 'responsory', text: resolveResponsory(resolveCommon(getChapterResponsoryId(day)), day) }];
       }
       {
         const psalmRefs = getPsalmsFor('prime', day.weekday);

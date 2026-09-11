@@ -2,6 +2,7 @@ import type { LiturgicalDay } from '../calendar/types';
 import { easterSunday } from '../calendar/easter';
 import { addDays, toIsoDate } from '../calendar/date-math';
 import { resolveSeasonalPropersId } from './seasonal-propers';
+import { resolveOfficeWinner } from './resolve-common';
 import bySeasonData from '../data/hours/marian-antiphon-by-season.yml';
 
 const bySeason = bySeasonData as { perAnnum: string; bySeason: Record<string, string> };
@@ -29,12 +30,16 @@ function isCandlemasToHolyWednesday(isoDate: string): boolean {
   return isoDate >= candlemas && isoDate < maundyThursday;
 }
 
-/** Resolves the common-propers id for Compline's closing Marian antiphon. */
+/** Resolves the common-propers id for Compline's closing Marian antiphon.
+ * Feeds `resolveOfficeWinner(day)`, not raw `day.winner`, into the season
+ * lookup below — currently a no-op (no `byFeastId` table exists for this
+ * content, it's structurally season-only), but keeps this uniform with
+ * every other content lookup rather than a per-function exception. */
 export function getMarianAntiphonId(day: LiturgicalDay): string {
   if (isCandlemasToHolyWednesday(day.date)) {
     return AVE_REGINA_CAELORUM_ID;
   }
-  return resolveSeasonalPropersId(day.season, day.winner, bySeason);
+  return resolveSeasonalPropersId(day.season, resolveOfficeWinner(day), bySeason);
 }
 
 const LABELS: Record<string, string> = {

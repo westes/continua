@@ -1,11 +1,29 @@
 # Per-feast override of the hymn's doxology stanza — real Divinum Officium
-# has a `winner{Doxology}` mechanism for this (some feasts specify their own),
-# plus a `Rule Doxology=` mechanism a whole Common can set (e.g. the Common
-# of the BVM's own `Doxology=Nat` — Commune/C10-C12Q.txt, live-checked
-# 2026-09-03), which is why marian-saturday is keyed here by its temporal id
-# even though it's not a "feast" in the sanctoral-propers-store sense; see
-# hours/hymn-doxology.ts's getHymnDoxologyId for the kind-agnostic lookup.
-# Otherwise empty until milestone 4's sanctoral propers store exists, same
-# as prime-chapter-responsory-by-feast.yml.
+# has a `winner{Doxology}` mechanism for this (some feasts specify their own
+# rule directly, e.g. Transfiguration's own Doxology=Epi), which is why
+# marian-saturday is keyed here by its temporal id even though it's not a
+# "feast" in the sanctoral-propers-store sense (its Doxology=Nat comes from
+# the rule itself, not a Common) — see hours/hymn-doxology.ts's
+# getHymnDoxologyOverrideId for the kind-agnostic lookup. corpus-christi/
+# sacred-heart are keyed here too (rather than only via bySeason) because
+# their `Doxology=Corp`/`Doxology=Heart` rule also needs to reach every day
+# of their own 8-day octave, not just the feast's single anchor day — see
+# getHymnDoxologyOverrideId's use of resolveOfficeWinner, which already
+# substitutes the octave's governing id here on interior octave days.
+#
+# byCommonId below is the separate, more general case: a whole Common file
+# can set its own `Doxology=` rule (e.g. every Common of the BVM sets
+# `Doxology=Nat` — Commune/C10-C12Q.txt, live-checked 2026-09-03), inherited
+# by any saint using that Common regardless of the saint's own id — that's
+# why the ~16 real BVM-common saints (assumption, annunciation,
+# immaculate-conception, purification, nativity-bvm, etc. — see
+# src/data/calendar/saints/*.yml's `common: common-of-the-bvm`) don't need
+# individual byFeastId entries at all.
 byFeastId:
   marian-saturday: hymn-doxology-nat
+  transfiguration: hymn-doxology-epi
+  corpus-christi: hymn-doxology-corp
+  sacred-heart: hymn-doxology-heart
+
+byCommonId:
+  common-of-the-bvm: hymn-doxology-nat

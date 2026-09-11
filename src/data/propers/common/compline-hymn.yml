@@ -1,8 +1,8 @@
 # Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25
-# run. "Te lucis ante terminum" — only 2 body stanzas (the doxology, its 3rd
-# stanza, is stored separately since it varies by season — see
-# compline-hymn-doxology-per-annum.yml and hours/hymn-doxology.ts, same
-# mechanism as Prime's hymn).
+# run. "Te lucis ante terminum" — final (3rd) stanza marked with a leading
+# "* ", Divinum Officium's own marker for a hymn's variable doxology
+# (hymni.pl's gethymn()); see hours/resolve-common.ts's substituteDoxology
+# and hours/hymn-doxology.ts.
 #
 # Monastic wording ("sólita"/"ad custódiam") differs slightly from the
 # Roman "pro tua"/"et custódia" — this is the Monastic form.
@@ -21,6 +21,12 @@ text:
     Et nóctium phantásmata;
     Hostémque nostrum cómprime,
     Ne polluántur córpora.
+
+    * Præsta, Pater omnípotens,
+    Per Jesum Christum Dóminum,
+    Qui tecum in perpétuum
+    Regnat cum Sancto Spíritu.
+    Amen.
   en: |
     Before the ending of the day,
     Creator of the world, we pray
@@ -31,6 +37,12 @@ text:
     From nightly fears and fantasies;
     Tread under foot our ghostly foe,
     That no pollution we may know.
+
+    * O Father, that we ask be done,
+    Through Jesus Christ, thine only Son;
+    Who, with the Holy Ghost and thee,
+    Doth live and reign eternally.
+    Amen.
 status:
   la: verified
   en: verified

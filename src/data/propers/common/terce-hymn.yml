@@ -1,7 +1,11 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617). Fixed
-# hymn for Terce, invariant by season (per explicit user direction) — the
-# whole text including its own final doxology stanza is self-contained,
-# not run through hymn-doxology.ts the way Prime's/Compline's hymns are.
+# Verified against Divinum Officium (Monastic Tridentinum 1617). Final (3rd)
+# stanza marked with a leading "* " — Divinum Officium's own marker for a
+# hymn's variable doxology (hymni.pl's gethymn(), Minor Special.txt's own
+# `[Hymnus Tertia]`), ported here directly; see hours/resolve-common.ts's
+# substituteDoxology and hours/hymn-doxology.ts. Clarified 2026-09-10: an
+# earlier version of this file's comment conflated "body invariant by
+# season" (still true, per explicit user direction) with "doxology
+# invariant too" (not true — only the first 2 stanzas are fixed).
 id: terce-hymn
 text:
   la: |
@@ -15,7 +19,7 @@ text:
     Flamméscat igne cáritas,
     Accéndat ardor próximos.
 
-    Præsta, Pater piíssime,
+    * Præsta, Pater piíssime,
     Patríque compar Únice,
     Cum Spíritu Paráclito
     Regnans per omne sǽculum.
@@ -31,7 +35,7 @@ text:
     And love light up our mortal frame,
     Till others catch the living flame.
 
-    Almighty Father, hear our cry,
+    * Almighty Father, hear our cry,
     Through Jesus Christ, our Lord most High,
     Who, with the Holy Ghost and thee,
     Doth live and reign eternally.

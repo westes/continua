@@ -1,4 +1,4 @@
-import { getSaintRecord } from '../calendar/feasts';
+import { resolveCommonCategoryId } from './psalmody-common-category';
 
 /** Same shape as data/hours/lauds-antiphons.yml's per-weekday entries
  * (see hours/lauds.ts) — a whole-block substitute for the plain ferial
@@ -87,14 +87,10 @@ export function getLaudsSaintOverride(id: string | undefined): LaudsPsalmodyOver
  * the minor hours' own Common antiphons (see resolve-common.ts's
  * PASCHALTIDE_SEASONS doc comment) — falling back to the plain category
  * when no such variant has been authored, same honest incremental
- * pattern as everywhere else. */
+ * pattern as everywhere else. The id-derivation itself is shared with
+ * Vespers'/Matins' own Common-override functions — see
+ * psalmody-common-category.ts. */
 export function getLaudsCommonOverride(id: string | undefined, paschaltide = false): LaudsPsalmodyOverride | undefined {
-  if (!id) return undefined;
-  const common = getSaintRecord(id)?.common;
-  if (!common) return undefined;
-  if (paschaltide) {
-    const variant = categories.get(`${common}-paschaltide`);
-    if (variant) return variant;
-  }
-  return categories.get(common);
+  const categoryId = resolveCommonCategoryId(id, paschaltide, (candidate) => categories.has(candidate));
+  return categoryId ? categories.get(categoryId) : undefined;
 }

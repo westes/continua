@@ -7,12 +7,12 @@ import { getSaintRecord } from '../calendar/feasts';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
-import { getHymnDoxologyId } from './hymn-doxology';
+import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { getVespersSaintOverride, getVespersCommonOverride } from './vespers-psalmody-overrides';
 import { applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
-  appendDoxology,
+  substituteDoxology,
   getDayCollects,
   getMagnificatAntiphon,
   splitNamedAntiphon,
@@ -175,22 +175,15 @@ function vespersCapitulumForOverride(id: string): ResolvedText {
 }
 
 /**
- * Every plain-default Vespers hymn's own closing doxology stanza (split
- * out into `vespers-hymn-${key}-doxology-per-annum.yml`) is re-attached
- * here through the seasonal mechanism (hours/hymn-doxology.ts) — Sunday's
- * hymn ("Lucis Creator") is the one case in Lauds/Vespers/Matins' whole
- * weekday-default set whose Monastic source text carries a real "*"
- * seasonal-substitution marker (live-checked 2026-09-03), but every other
- * key is wired the same way anyway as a deliberate broadening beyond the
- * source: this project isn't a reconstruction (see the repo's CLAUDE.md),
- * and the doxology is a natural, low-cost way to keep every hour visibly
- * in step with the season — e.g. the plain weekday hymns used all through
- * Christmastide/Epiphanytide/Corpus Christi/Sacred Heart (no
- * `seasonalOfficeSuffix` covers those) previously stayed on their generic
- * per-annum ending throughout. Each key's own natural ending is preserved
- * as its per-annum default, so a season/feast with no override (e.g.
- * Advent, Lent — the source itself never swaps those) reproduces the
- * exact original text. See lauds.ts's identical resolveLaudsHymn. */
+ * Every Vespers hymn (plain weekday/season default, octave, or — via
+ * `resolveOffice` below — proper/Common) is a single self-contained text
+ * whose own final stanza is marked with a leading `* ` where its doxology
+ * varies (see `vespers-hymn-${key}.yml`'s own header, and
+ * hours/resolve-common.ts's `substituteDoxology`) — `resolveOffice` runs
+ * every hymn this function or `resolveOfficeBundle` can return through
+ * that one substitution uniformly, so this function itself just resolves
+ * the right *body* text and returns it unchanged. See lauds.ts's identical
+ * resolveLaudsHymn. */
 function resolveVespersHymn(day: LiturgicalDay, key: string): ResolvedText {
   // A temporal-feast-only octave (Ascension's own) still needs its own
   // hymn recognized directly here, bypassing octaveGoverningPrivilegedDay's
@@ -205,9 +198,7 @@ function resolveVespersHymn(day: LiturgicalDay, key: string): ResolvedText {
       return octaveHymn;
     }
   }
-  const body = resolveCommon(`vespers-hymn-${key}`);
-  const doxology = resolveCommon(getHymnDoxologyId(day, `vespers-hymn-${key}-doxology-per-annum`));
-  return appendDoxology(body, doxology);
+  return resolveCommon(`vespers-hymn-${key}`);
 }
 
 /** The chapter/responsory/hymn/versicle bundle following the psalmody —
@@ -227,6 +218,8 @@ function resolveVespersHymn(day: LiturgicalDay, key: string): ResolvedText {
  * feast's own override always wins over the season it happens to fall
  * in, same as everywhere else in this codebase. */
 function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
+  const hymnDoxologyOverrideId = getHymnDoxologyOverrideId(day);
+  const hymnDoxologyOverride = hymnDoxologyOverrideId ? resolveCommon(hymnDoxologyOverrideId) : undefined;
   const bundle = resolveOfficeBundle('vespers', day, vespersCapitulumForOverride);
   if (bundle) {
     const parts: ResolvedPart[] = [{ kind: 'chapter', text: bundle.chapter }];
@@ -235,7 +228,10 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
     if (bundle.responsory.status.la !== 'missing' || bundle.responsory.status.en !== 'missing') {
       parts.push({ kind: 'responsory', text: bundle.responsory });
     }
-    parts.push({ kind: 'hymn', text: bundle.hymn }, { kind: 'versicle', text: bundle.versicle });
+    parts.push(
+      { kind: 'hymn', text: substituteDoxology(bundle.hymn, hymnDoxologyOverride) },
+      { kind: 'versicle', text: bundle.versicle },
+    );
     return parts;
   }
   const seasonSuffix = seasonalOfficeSuffix(day.season);
@@ -249,7 +245,7 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
       kind: 'responsory',
       text: resolveResponsory(resolveCommon(seasonSuffix ? `vespers-responsory-${key}` : vespersResponsoryId(day.weekday)), day),
     },
-    { kind: 'hymn', text: resolveVespersHymn(day, key) },
+    { kind: 'hymn', text: substituteDoxology(resolveVespersHymn(day, key), hymnDoxologyOverride) },
     {
       kind: 'versicle',
       text: resolveCommon(seasonSuffix ? `vespers-versicle-${key}` : vespersVersicleId(day.weekday)),
@@ -260,7 +256,7 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
 function resolvePart(part: HourPart, day: LiturgicalDay, weekday: Weekday): ResolvedPart[] {
   switch (part.kind) {
     case 'opening-versicle':
-      return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day.season, day.winner)) }];
+      return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) }];
     case 'vespers-psalmody':
       return resolvePsalmody(day, weekday);
     case 'vespers-office':

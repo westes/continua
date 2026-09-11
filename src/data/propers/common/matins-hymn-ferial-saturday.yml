@@ -20,8 +20,9 @@
 # applies correctly), but this one was still silently falling to Monday's
 # text via the `matins-hymn-ferial` placeholder.
 #
-# Closing doxology stanza intentionally omitted — shared across every
-# weekday via matins-hymn-doxology-per-annum.yml (see hours/matins.ts),
+# Closing doxology stanza marked with a leading "* " (Divinum Officium's
+# own variable-doxology marker, shared across every weekday — see
+# hours/resolve-common.ts's substituteDoxology and hours/hymn-doxology.ts),
 # same convention as the Tuesday-Friday siblings; the live source's own
 # closing stanza here is byte-identical to that shared text anyway.
 id: matins-hymn-ferial-saturday
@@ -61,6 +62,15 @@ text:
     Donis beátæ pátriæ
 
     Ditémur omnes áffatim.
+
+
+    * Præsta, Pater piíssime,
+
+    Patríque compar Únice,
+
+    Cum Spíritu Paráclito
+
+    Regnans per omne sǽculum. Amen.
   en: >-
     Great God of boundless mercy hear;
 
@@ -96,6 +106,15 @@ text:
     Enrich us with thy gifts of grace,
 
     From heaven, thy blissful dwelling-place!
+
+
+    * Grant this, O Father ever One
+
+    With Christ, thy sole-begotten Son,
+
+    And Holy Ghost, whom all adore,
+
+    Reigning and blest forevermore. Amen.
 status:
   la: verified
   en: verified
