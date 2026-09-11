@@ -25,7 +25,12 @@ jobs:
         # (source of truth the app reads, see src/version.ts) is on disk
         # before `npm run build`. See scripts/release-tag.mjs for the
         # commit-type -> bump mapping; a no-op when nothing since the last
-        # tag warrants a bump. The commit it pushes carries [skip ci], so
+        # tag warrants a bump. The commit it pushes carries a skip-ci marker
+        # in its subject line (not spelled out here in brackets -- Gitea's
+        # skip-ci detection substring-matches the whole commit MESSAGE, not
+        # just file content, and an earlier commit here that quoted the
+        # literal marker in its own prose got itself skipped by accident),
+        # so
         # that push doesn't trigger a second, redundant deploy run of this
         # same workflow. Pushes over SSH using a dedicated write-access
         # deploy key (CONTINUA_RELEASE_SSH_KEY), separate from
