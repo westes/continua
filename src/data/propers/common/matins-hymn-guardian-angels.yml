@@ -1,71 +1,83 @@
-# Matins hymn for St. Michael's Apparition and the whole Angel family
-# (Guardian Angels, St. Michael's own Sep 29 feast, St. Gabriel, St.
-# Raphael) -- confirmed byte-identical to the Vespers hymn via
-# SanctiM/05-08.txt's own [HymnusM Matutinum] `@:HymnusM Vespera`
-# cross-reference, live-verified 2026-05-08 (Monastic Tridentinum 1617).
-# Same Guardian-Angels/Archangels proper-content-reuse finding as this
-# session's earlier Lauds/Vespers pass -- no `common-of-an-angel`
-# category exists in the source at all.
+# Corrected 2026-09-10: this file previously contained "Tibi Christe
+# splendor Patris" -- St. Michael's Apparition hymn (May 8), copy-pasted
+# from the wrong feast. Guardian Angels' Matins hymn is, per the reference
+# source (Sancti/10-02.txt), `[Hymnus Matutinum]` `@:Hymnus Vespera` -- a
+# straight cross-reference reusing the Vespers hymn verbatim ("Custódes
+# hóminum psállimus Angelos"), same text as vespers-hymn-guardian-
+# angels.yml. No separate Monastic recension exists. Final stanza is
+# fixed -- no `*` marker anywhere in the source.
 id: matins-hymn-guardian-angels
 text:
-  la: |
-    Tibi Christe splendor Patris,
-    Vita, virtus córdium,
-    In conspéctu Angelórum,
-    Votis, voce psállimus:
-    Alternántes concrepándo
-    Melos damus vócibus.
+  la: >-
+    Custódes hóminum psállimus Angelos,
 
-    Collaudámus venerántes
-    Omnes cæli mílites,
-    Sed præcípue Primátem
-    Cæléstis exércitus:
-    Michaélem in virtúte
-    Conteréntem zábulum.
+    Natúræ frágili quos Pater áddidit
 
-    Quo custóde procul pelle,
-    Rex Christe piíssime,
-    Omne nefas inimíci:
-    Mundo corde et córpore,
-    Paradíso redde tuo
-    Nos sola cleméntia.
+    Cæléstis cómites, insidiántibus
 
-    Glóriam Patri melódis
-    Personémus vócibus,
-    Glóriam Christo canámus,
-    Glóriam Paráclito,
-    Qui trinus et unus Deus
-    Exstat ante sǽcula.
-    Amen.
-  en: |
-    Thee, O Christ, the Father's splendour,
-    Life and virtue of the heart,
-    In the presence of the Angels
-    Sing we now with tuneful art,
-    Meetly in alternate chorus
-    Bearing our responsive part.
+    Ne succúmberet hóstibus.
 
-    Thus we praise with veneration
-    All the armies of the sky;
-    Chiefly him, the warrior Primate,
-    Of celestial chivalry,
-    Michael, who in princely virtue
-    Cast Abaddon from on high.
 
-    By whose watchful care repelling -
-    King of everlasting grace -
-    Every ghostly adversary,
-    All things evil, all things base,
-    Grant us of thine only goodness
-    In thy Paradise a place.
+    Nam, quod corrúerit próditor ángelus,
 
-    Laud and honour to the Father,
-    Laud and honour to the Son,
-    Laud and honour to the Spirit,
-    Ever Three, and ever One,
-    Consubstantial, co-eternal,
-    While unending ages run.
-    Amen.
+    Concéssis mérito pulsus honóribus,
+
+    Ardens invídia péllere nítitur
+
+    Quos cælo Deus ádvocat.
+
+
+    Huc, custos, ígitur pérvigil ádvola,
+
+    Avértens pátria de tibi crédita
+
+    Tam morbos ánimi quam requiéscere
+
+    Quidquid non sinit íncolas.
+
+
+    Sanctæ sit Tríadi laus pia júgiter,
+
+    Cujus perpétuo númine máchina
+
+    Triplex hæc régitur, cujus in ómnia
+
+    Regnat glória sǽcula. Amen.
+  en: >-
+    Angel-guardians of men, spirits and powers we sing,
+
+    Whom our Father hath sent, aids to our weakly frame,
+
+    Heavenly friends and guides, help from on high to bring,
+
+    Lest we fail through the foeman's wile.
+
+
+    He, the spoiler of souls, angel-traitor of old,
+
+    Cast in merited wrath out of his honoured place,
+
+    Burns with envy and hate, seeking their souls to gain
+
+    Whom God's mercy invites to heaven.
+
+
+    Therefore come to our help, watchful ward of our lives:
+
+    Turn aside from the land God to thy care confides
+
+    Sickness and woe of soul, yea, and what else of ill
+
+    Peace of heart to its folk denies.
+
+
+    Now to the Holy Three praise evermore resound:
+
+    Under whose hand divine resteth the triple world
+
+    Governed in wondrous wise: glory be theirs and might
+
+    While the ages unending run. Amen.
 status:
   la: verified
   en: verified

@@ -1,71 +1,86 @@
-# Matins hymn for St. Michael's Apparition and the whole Angel family
-# (Guardian Angels, St. Michael's own Sep 29 feast, St. Gabriel, St.
-# Raphael) -- confirmed byte-identical to the Vespers hymn via
-# SanctiM/05-08.txt's own [HymnusM Matutinum] `@:HymnusM Vespera`
-# cross-reference, live-verified 2026-05-08 (Monastic Tridentinum 1617).
-# Same Guardian-Angels/Archangels proper-content-reuse finding as this
-# session's earlier Lauds/Vespers pass -- no `common-of-an-angel`
-# category exists in the source at all.
+# Corrected 2026-09-10: this file previously contained "Tibi Christe
+# splendor Patris" -- St. Michael's own Apparition hymn (May 8), which is
+# indeed the correct source for Gabriel's Lauds/Vespers hymn (Sancti/
+# 03-24.txt has no own `[HymnusM ...]` override there, so it falls back to
+# 05-08's), BUT Gabriel's own file DOES carry its own distinct `[Hymnus
+# Matutinum]` -- `@:Hymnus Vespera`, i.e. reusing *this file's own*
+# Vespers hymn ("Christe, sanctórum decus Angelórum"), not 05-08's. That
+# hymn has a customizable middle stanza naming the specific archangel
+# ("Angelus fortis Gábriel..."), confirming it's genuinely Gabriel's own
+# text, not a shared template. No separate Monastic recension exists.
+# Final stanza is fixed -- no `*` marker anywhere in the source.
 id: matins-hymn-st-gabriel-archangel
 text:
-  la: |
-    Tibi Christe splendor Patris,
-    Vita, virtus córdium,
-    In conspéctu Angelórum,
-    Votis, voce psállimus:
-    Alternántes concrepándo
-    Melos damus vócibus.
+  la: >-
+    Christe, sanctórum decus Angelórum,
 
-    Collaudámus venerántes
-    Omnes cæli mílites,
-    Sed præcípue Primátem
-    Cæléstis exércitus:
-    Michaélem in virtúte
-    Conteréntem zábulum.
+    Gentis humánæ Sator et Redémptor,
 
-    Quo custóde procul pelle,
-    Rex Christe piíssime,
-    Omne nefas inimíci:
-    Mundo corde et córpore,
-    Paradíso redde tuo
-    Nos sola cleméntia.
+    Cǽlitum nobis tríbuas beátas
 
-    Glóriam Patri melódis
-    Personémus vócibus,
-    Glóriam Christo canámus,
-    Glóriam Paráclito,
-    Qui trinus et unus Deus
-    Exstat ante sǽcula.
-    Amen.
-  en: |
-    Thee, O Christ, the Father's splendour,
-    Life and virtue of the heart,
-    In the presence of the Angels
-    Sing we now with tuneful art,
-    Meetly in alternate chorus
-    Bearing our responsive part.
+    Scándere sedes.
 
-    Thus we praise with veneration
-    All the armies of the sky;
-    Chiefly him, the warrior Primate,
-    Of celestial chivalry,
-    Michael, who in princely virtue
-    Cast Abaddon from on high.
 
-    By whose watchful care repelling -
-    King of everlasting grace -
-    Every ghostly adversary,
-    All things evil, all things base,
-    Grant us of thine only goodness
-    In thy Paradise a place.
+    Angelus fortis Gábriel, ut hostes
 
-    Laud and honour to the Father,
-    Laud and honour to the Son,
-    Laud and honour to the Spirit,
-    Ever Three, and ever One,
-    Consubstantial, co-eternal,
-    While unending ages run.
-    Amen.
+    Pellat antíquos, et amíca cælo,
+
+    Quæ triumphátor státuit per orbem,
+
+    Templa revísat.
+
+
+    Virgo dux pacis, Genitríxque lucis,
+
+    Et sacer nobis chorus Angelórum
+
+    Semper assístat, simul et micántis
+
+    Régia cæli.
+
+
+    Præstet hoc nobis Déitas beáta
+
+    Patris, ac Nati, paritérque Sancti
+
+    Spíritus, cujus résonat per omnem
+
+    Glória mundum. Amen.
+  en: >-
+    Christ, of the angels praise and adoration,
+
+    Father and Saviour thou, of every nation,
+
+    Graciously grant us all to gain a station,
+
+    Where thou art reigning.
+
+
+    Angel of strength, who triumphed, tumults quelling,
+
+    Gabriel send us, ancient foes expelling,
+
+    Oft in these temples may he make his dwelling,
+
+    Dear unto heaven.
+
+
+    May the fair Mother of the Light be o'er us,
+
+    Virgin of peace, with all the angel chorus,
+
+    And may the heavenly army go before us,
+
+    Guiding and guarding.
+
+
+    O may the Godhead, endless bliss possessing,
+
+    Father, Son, Spirit, grant to us this blessing;
+
+    All his creation joins his praise confessing,
+
+    Now and forever. Amen.
 status:
   la: verified
   en: verified

@@ -779,8 +779,8 @@ describe('resolveOrdo("matins", ...) Assumption-octave hymn fallback (2026-08-22
     }
   });
 
-  it("Aug 17 is instead governed by St. Lawrence's own octave (its own elevated closing day, outranking the Assumption's ordinary day here) — no hymn authored for it, so it still falls to the plain ferial one, correctly", () => {
-    expect(hymnLatin('2026-08-17')).toContain('Somno');
+  it("Aug 17 is instead governed by St. Lawrence's own octave (its own elevated closing day, outranking the Assumption's ordinary day here) — resolves to the Common-of-a-Martyr Matins hymn (2026-09-10: this Common's own hymn file was authored, closing a real gap; previously fell to the plain ferial one instead)", () => {
+    expect(hymnLatin('2026-08-17')).toContain('Deus tuórum mílitum');
   });
 
   it('Aug 22, the octave-closing day (Immaculate Heart of Mary relocated away), also gets the Assumption hymn via the pre-existing sanctoral-substitution path', () => {
@@ -1169,10 +1169,25 @@ describe('resolveOrdo("matins", ...) remaining Common categories\' Matins hymns 
     expect(hymnLatin('2029-02-09')).toContain('Vírginis Proles');
   });
 
-  it('the Guardian Angels, St. Michael, St. Gabriel, and St. Raphael all resolve to "Tibi Christe splendor Patris," reused from St. Michael\'s Apparition (same real proper-content-inheritance finding as Lauds/Vespers)', () => {
-    for (const date of ['2026-10-02', '2026-09-29', '2026-03-24', '2026-10-24']) {
-      expect(hymnLatin(date)).toContain('Tibi Christe splendor Patris');
-    }
+  it('St. Michael resolves to "Tibi Christe splendor Patris," reused from his own Apparition', () => {
+    expect(hymnLatin('2026-09-29')).toContain('Tibi Christe splendor Patris');
+  });
+
+  it('the Guardian Angels, St. Gabriel, and St. Raphael each resolve to their own real Matins hymn, not a copy of St. Michael\'s Apparition', () => {
+    // Corrected 2026-09-10: all three of these previously baked in
+    // "Tibi Christe splendor Patris" (St. Michael's Apparition hymn),
+    // copy-pasted from the wrong feast. Each of their own source files
+    // (Sancti/10-02.txt, 03-24.txt, 10-24.txt) has its own real
+    // `[Hymnus Matutinum]` -- either its own proper hymn (Guardian Angels'
+    // "Custódes hóminum psállimus Angelos") or a same-file cross-reference
+    // to its own `[Hymnus Vespera]` (Gabriel's/Raphael's own "Christe,
+    // sanctórum decus Angelórum" with their own named middle stanza) --
+    // genuinely distinct from St. Michael's Apparition hymn, unlike
+    // Lauds/Vespers where these three do correctly fall back to it (no
+    // own Monastic override exists there).
+    expect(hymnLatin('2026-10-02')).toContain('Custódes hóminum psállimus Angelos');
+    expect(hymnLatin('2026-03-24')).toContain('Angelus fortis Gábriel');
+    expect(hymnLatin('2026-10-24')).toContain('Angelus nostræ médicus salútis');
   });
 
   it('St. Anne (common-of-a-holy-woman) and St. Monica (common-of-a-widow) resolve to the same shorter "Hujus obténtu, Deus alme" form (just the closing two stanzas of the Virgin hymn)', () => {

@@ -1,117 +1,167 @@
-# The Ascension's own Matins hymn ("Jesu nostra redémptio"), shared
-# identically with its own Lauds and Vespers (see lauds-hymn-ascension.yml/
-# vespers-hymn-ascension.yml). Live-verified against Divinum Officium
-# (Monastic Tridentinum 1617), Matins/Lauds/Vespers live query, 2026-05-14
-# (Ascension Day itself).
-#
-# Closes a real gap found while fixing the generic Matins seasonal-hymn
-# fallback (see matins-hymn-paschaltide.yml's own header): 'ascension' is
-# a temporal-feast id (calendar/data/calendar/temporal-feasts/
-# ascension.yml), not a saint record, so it was never picked up by
-# `resolveOfficeWinner`'s octave-synthesis (which only ever checked
-# `getSaintRecord`) — Ascension Day itself and its whole octave were both
-# silently rendering the generic Paschaltide hymn instead of their own
-# proper one, at every hour. Fixed by (1) adding `ascension` to
-# `ALWAYS_OVERRIDE_TEMPORAL_IDS` (covers Ascension Day itself) and (2)
-# teaching `resolveOfficeWinner` to also synthesize a `{kind: 'temporal'}`
-# winner from a temporal-feast-only active octave when no saint record
-# exists (covers the interior octave days, e.g. St. Ubald's or St.
-# Bernardine's own days still correctly win outright and keep their own
-# hymn — this only ever fires on a day nothing else claims).
-#
-# Self-contained — this hymn's own natural ending ("Per cuncta semper
-# sǽcula. Amen.") has no separate trailing doxology stanza at all in the
-# source, unlike most other Matins hymns in this store.
+# Corrected 2026-09-10: this file previously contained "Jesu nostra
+# redémptio" -- that IS the real Ascension hymn, but it's the Lauds/Vespers
+# one (see lauds-hymn-ascension.yml/vespers-hymn-ascension.yml), not
+# Matins' own. Matins' real hymn, direct from the reference source
+# (Tempora/Pasc5-4.txt's own `[Hymnus Matutinum]`/`[HymnusM Matutinum]`),
+# is "Ætérne Rex altíssime" -- a genuinely different text. The Monastic
+# form applies four word/line-range substitutions to the secular block
+# (computed by hand here, same convention used elsewhere in this store for
+# regex-derived Monastic text): stanzas 1-2 rewritten wholesale, "Peccat
+# caro, mundat" -> "Culpat caro, purgat" (stanza 4), "Sis ipse" -> "Tu
+# esto" and "prǽmium," -> "prǽditum:" (stanza 5). Final stanza is marked
+# with a leading "* " -- Divinum Officium's own marker for a hymn's
+# variable doxology; see hours/resolve-common.ts's substituteDoxology and
+# hours/hymn-doxology.ts. The English translation already reflects the
+# Ascension-doxology ending directly (no separate unmarked default exists
+# in the source's English) -- harmless here since Ascension Day and its
+# whole octave always resolve to the Asc doxology anyway (`ascension` is
+# in ALWAYS_OVERRIDE_TEMPORAL_IDS and `ascensiontide` maps to
+# hymn-doxology-asc), so the marker's "no override" branch never actually
+# fires for this file in practice.
 id: matins-hymn-ascension
 text:
   la: >-
-    Jesu nostra redémptio,
+    Ætérne Rex altíssime,
 
-    Amor et desidérium,
+    Redémptor et fidélium,
 
-    Deus Creátor ómnium,
+    Quo mors solúta déperit,
 
-    Homo in fine témporum:
-
-
-    Quæ te vicit cleméntia,
-
-    Ut ferres nostra crímina,
-
-    Crudélem mortem pátiens,
-
-    Ut nos a morte tólleres!
+    Datur triúmphum grátiæ.
 
 
-    Inférni claustra pénetrans,
+    Scandens tribúnal déxteræ
 
-    Tuos captívos rédimens,
+    Patris, potéstas ómnium
 
-    Victor triúmpho nóbili
+    Colláta Jesu cǽlitus,
 
-    Ad dextram Patris résidens.
+    Quæ non erat humánitus:
 
 
-    Ipsa te cogat píetas,
+    Ut trina rerum máchina,
 
-    Ut mala nostra súperes
+    Cæléstium, terréstrium,
 
-    Parcéndo, et voti cómpotes
+    Et inferórum cóndita,
 
-    Nos tuo vultu sáties.
+    Flectat genu jam súbdita.
+
+
+    Tremunt vidéntes Angeli
+
+    Versam vicem mortálium:
+
+    Culpat caro, purgat caro,
+
+    Regnat Deus Dei caro.
 
 
     Tu esto nostrum gáudium,
 
-    Qui es futúrus prǽmium,
+    Manens olýmpo prǽditum:
 
-    Sit nostra in te glória,
+    Mundi regis qui fábricam,
 
-    Per cuncta semper sǽcula. Amen.
+    Mundána vincens gáudia.
+
+
+    Hinc te precántes quǽsumus,
+
+    Ignósce culpis ómnibus,
+
+    Et corda sursum súbleva
+
+    Ad te supérna grátia.
+
+
+    Ut, cum repénte cœ́peris
+
+    Clarére nube júdicis,
+
+    Pœnas repéllas débitas,
+
+    Reddas corónas pérditas.
+
+
+    * Jesu, tibi sit glória,
+
+    Qui victor in cælum redis,
+
+    Cum Patre, et almo Spíritu,
+
+    In sempitérna sǽcula. Amen.
   en: >-
-    Hail, thou who man's Redeemer art,
+    Eternal Monarch, King most high,
 
-    Jesu, the joy of every heart;
+    Whose blood hath brought redemption nigh,
 
-    Great Maker of the world's wide frame,
+    By whom the death of death was wrought,
 
-    And purest love's delight and flame:
-
-
-    What nameless mercy thee o'ercame,
-
-    To bear our load of sin and shame?
-
-    For guiltless, thou thy life didst give,
-
-    That sinful erring man might live.
+    And conquering grace's battle fought:
 
 
-    The realms of woe are forced by thee,
+    Ascending by the starry road,
 
-    Its captives from their chains set free;
+    This day thou wentest home to God,
 
-    And thou, amid thy ransomed train,
+    By heaven to power unending called,
 
-    At God's right hand dost victor reign.
-
-
-    Let mercy sweet with thee prevail,
-
-    To cure the wounds we now bewail;
-
-    Oh, bless us with thy holy sight,
-
-    And fill us with eternal light.
+    And by no human hand installed.
 
 
-    Our guide, our way to heavenly rest,
+    That so, in nature's triple frame,
 
-    Be thou the aim of every breast;
+    Each heavenly and each earthly name,
 
-    Be thou the soother of our tears,
+    And things in hell's abyss abhorred,
 
-    Our sweet reward above the spheres. Amen.
+    May bend the knee and own him Lord.
+
+
+    Yea, angels tremble when they see
+
+    How changed is our humanity;
+
+    That flesh hath purged what flesh had stained,
+
+    And God, the flesh of God, hath reigned.
+
+
+    Be thou our joy, O mighty Lord,
+
+    As thou wilt be our great reward;
+
+    Earth's joys to thee are nothing worth,
+
+    Thou joy and crown of heaven and earth.
+
+
+    To thee we therefore humbly pray
+
+    That thou wouldst purge our sins away,
+
+    And draw our hearts by cords of grace
+
+    To thy celestial dwelling-place.
+
+
+    So when the judgement day shall come,
+
+    And all must rise to meet their doom,
+
+    Thou wilt remit the debts we owe,
+
+    And our lost crowns again bestow.
+
+
+    * All glory, Lord, to thee we pay,
+
+    Ascending o'er the stars today;
+
+    All glory, as is ever meet,
+
+    To Father and to Paraclete. Amen.
 status:
   la: verified
   en: verified

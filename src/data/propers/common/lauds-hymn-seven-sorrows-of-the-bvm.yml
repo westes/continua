@@ -1,8 +1,16 @@
-# Sourced from web/www/horas/Latin/SanctiM/09-15.txt's own Lauds hymn
-# (the first 15 lines of Sancti/09-15.txt's own [Hymnus Laudes], per its
-# own "@Sancti/09-15:Hymnus Laudes:1-15" reference; doxology per the
-# Passiontide-week-5 default). No English rendering exists in the
-# reference engine's data for this hymn; translated here directly.
+# Corrected 2026-09-10: this file was missing its 4th (closing doxology)
+# stanza entirely, and its English was a self-translated draft despite a
+# real, complete rhymed English translation existing in the reference
+# engine all along (English/Sancti/09-15.txt's own `[Hymnus Laudes]`) --
+# both found while auditing hymn-doxology markers. Body sourced from
+# `web/www/horas/Latin/SanctiM/09-15.txt`'s own Lauds hymn (the first 15
+# lines of Sancti/09-15.txt's own `[Hymnus Laudes]`, per its own
+# "@Sancti/09-15:Hymnus Laudes:1-15" reference); the 4th stanza is
+# `Tempora/Quad5-5.txt`'s own `[Doxology]` block with the Monastic
+# substitution SanctiM/09-15.txt applies to it ("Jesu, tibi sit glória"
+# -> "Glória tibi, Dómine"). No `*` marker anywhere in this doxology
+# block -- it's this feast's own fixed ending, not a seasonally-swappable
+# one.
 id: lauds-hymn-seven-sorrows-of-the-bvm
 text:
   la: >-
@@ -31,32 +39,50 @@ text:
     Sint et dolóres Vírginis
 
     Ætérna cunctis gáudia.
+
+
+    Glória tibi, Dómine,
+
+    Qui passus es pro sérvulis,
+
+    Cum Patre et almo Spíritu,
+
+    In sempitérna sǽcula. Amen.
   en: >-
-    O God of highest clemency,
+    God of mercy, let us run
 
-    grant that we may rightly ponder
+    Where yon fount of sorrows flows;
 
-    the seven sorrows of the Virgin
+    Pondering sweetly, one by one,
 
-    and the wounds of her Son Jesus.
-
-
-    May the Mother of God's many tears
-
-    bring us salvation,
-
-    tears with which thou art able to wash away
-
-    the sins of the whole world.
+    Jesu's wounds and Mary's woes.
 
 
-    Let the contemplation of the five wounds
+    Ah, those tears Our Lady shed,
 
-    of Jesus be a bitter one,
+    Enough to drown a world of sin;
 
-    and let the sorrows of the Virgin
+    Tears that Jesu's sorrows fed,
 
-    be eternal joys to all.
+    Peace and pardon well may win!
+
+
+    His five wounds, a very home,
+
+    For our prayers and praises prove;
+
+    And Our Lady's woes become
+
+    Endless joys in heaven above.
+
+
+    Jesus, who for us did die,
+
+    All on thee our love we pour;
+
+    And in the Holy Trinity
+
+    Worship thee forevermore. Amen.
 status:
   la: verified
-  en: draft
+  en: verified

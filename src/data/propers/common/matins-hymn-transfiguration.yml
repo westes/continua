@@ -1,7 +1,12 @@
 # Verified against Divinum Officium (Monastic Tridentinum 1617), Matins
 # live query, 2026-08-06 -- byte-identical to the Vespers hymn
 # ("Quicúmque Christum quǽritis"). See lauds-capitulum-
-# transfiguration.yml's header.
+# transfiguration.yml's header. English final stanza corrected 2026-09-10:
+# the live query had baked in the plain `[Epi]` doxology's English
+# ("Jesu, to thee our praise we pay..."), mismatched against the Latin,
+# which already correctly shows the Monastic `[EpiT]` text ("Glória tibi,
+# Dómine, Qui apparuísti hódie..."). Corrected to `[EpiT]`'s own English
+# (Psalterium/Doxologies.txt), matching vespers-hymn-transfiguration.yml.
 id: matins-hymn-transfiguration
 text:
   la: >-
@@ -41,7 +46,7 @@ text:
     Audíre nos et crédere.
 
 
-    Glória tibi, Dómine,
+    * Glória tibi, Dómine,
 
     Qui apparuísti hódie,
 
@@ -85,13 +90,13 @@ text:
     That we should hear with faith unfeigned.
 
 
-    Jesu, to thee our praise we pay,
+    * All glory, Lord, to Thee we pay
 
-    To little ones revealed today,
+    For Thine Epiphany today;
 
-    With Father and blest Spirit One
+    All glory, as is ever meet,
 
-    Until the ages' course is done. Amen.
+    To Father, and to Paraclete. Amen.
 status:
   la: verified
   en: verified

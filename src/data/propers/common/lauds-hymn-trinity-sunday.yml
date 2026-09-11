@@ -1,30 +1,34 @@
-# Trinity Sunday's own Lauds hymn ("O lux beáta Trínitas") — identical
-# text to Vespers' own (vespers-hymn-trinity-sunday.yml). Already the
-# pre-Urban VIII text (this project's own standing preference — see
-# CLAUDE.md) as the reference source's own default, not a separate
-# choice made here. Live-verified against Divinum Officium (Monastic
-# Tridentinum 1617), Lauds live query, 2026-05-31 (Trinity Sunday
-# itself). Self-contained — its own final stanza is a fixed, unique
-# doxology, not the shared weekday one.
+# Corrected 2026-09-10: this file previously duplicated the Vespers hymn
+# ("O lux beáta Trínitas"), based on an earlier live-query capture whose
+# premise ("Trinity Sunday's own Lauds hymn is identical to Vespers'") did
+# not hold up -- direct read of the reference source
+# (Tempora/Pent01-0.txt) shows a genuinely distinct proper Lauds hymn,
+# "Tu, Trinitátis Unitas", confirmed against both `[Hymnus Laudes]`
+# (secular) and `[HymnusM Laudes]` (Monastic, a substitution overlay on
+# the secular block -- applied by hand here, same convention used
+# elsewhere in this store for regex-derived Monastic text). No English
+# Monastic variant exists in the source; the secular English translation
+# is reused (also the existing convention elsewhere). Final stanza is
+# fixed/non-swappable -- no `*` marker anywhere in the source block.
 id: lauds-hymn-trinity-sunday
 text:
   la: >-
-    O lux beáta Trínitas,
+    Tu, Trinitátis Únitas,
 
-    Et principális Únitas,
+    Orbem poténter quæ regis,
 
-    Jam sol recédit ígneus,
+    Atténde laudum cántica,
 
-    Infúnde lumen córdibus.
+    Quæ excubántes psállimus.
 
 
-    Te mane laudum cármine,
+    Ortus refúlget Lúcifer,
 
-    Te deprecémur véspere:
+    Sparsámque lucem núntiat:
 
-    Te nostra supplex glória
+    Cadit calígo nóctium:
 
-    Per cuncta laudet sǽcula.
+    Lux sancta nos illúminet.
 
 
     Deo Patri sit glória,
@@ -33,33 +37,33 @@ text:
 
     Cum Spíritu Paráclito,
 
-    Et nunc, et in perpétuum. Amen.
+    Et nunc et in perpétuum. Amen.
   en: >-
-    O Trinity of blessed Light,
+    O thou, who dost all nature sway,
 
-    O Unity of sovereign might,
+    Dread Trinity in Unity,
 
-    as now the fiery sun departs,
+    Accept the trembling praise we pay
 
-    shed Thou Thy beams within our hearts.
-
-
-    To Thee our morning song of praise,
-
-    to Thee our evening prayer we raise;
-
-    Thee may our glory evermore
-
-    in lowly reverence adore.
+    To thy eternal majesty.
 
 
-    All laud to God the Father be;
+    The star that heralds in the dawn
 
-    all praise, Eternal Son, to Thee;
+    Is slowly fading in the skies;
 
-    all glory, as is ever meet,
+    The darkness melts; O thou true light,
 
-    to God the Holy Paraclete. Amen.
+    Upon our darkened souls arise.
+
+
+    To God the Father glory be,
+
+    And to the sole-begotten Son,
+
+    And Holy Ghost co-equally,
+
+    While everlasting ages run. Amen.
 status:
   la: verified
   en: verified

@@ -265,24 +265,37 @@ describe('resolveOrdo("lauds", ...)', () => {
     }
   });
 
-  it("resolves the Guardian Angels' and Archangels' own real chapter/hymn, reused from St. Michael's Apparition", () => {
+  it("resolves the Guardian Angels' and Archangels' own real chapter, reused from St. Michael's Apparition", () => {
     // Their own saint files' [Rank] says "vide C4," but the Monastic
     // source's own SanctiM/10-02.txt cross-references St. Michael's
     // Apparition (Sancti/05-08) directly for the chapter/responsory at
     // every hour -- real proper content, not a Common fallback. See
     // lauds-capitulum-guardian-angels.yml's header. St. Gabriel is NOT
     // part of this group (see below) -- his own chapter is genuinely
-    // proper, not shared, despite sharing the same hymn.
-    for (const [date, id] of [
-      ['2026-10-02', 'guardian-angels'],
-      ['2026-10-24', 'st-raphael-archangel'],
-    ] as const) {
+    // proper, not shared.
+    for (const date of ['2026-10-02', '2026-10-24'] as const) {
       const ordo = resolveOrdo('lauds', date);
       const chapter = ordo.parts.find((p) => p.kind === 'chapter');
       expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Rev 1:1-2');
-      const hymn = ordo.parts.find((p) => p.kind === 'hymn');
-      expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined, id).toContain('Christe sanctórum decus Angelórum');
     }
+  });
+
+  it("resolves St. Raphael's Lauds hymn shared with Gabriel/Michael's Apparition, but Guardian Angels' own distinct one", () => {
+    // Corrected 2026-09-10: Guardian Angels' own Lauds hymn ("Orbis
+    // Patrátor óptime") was previously a copy-paste of St. Michael's
+    // Apparition hymn — real, distinct proper content (Sancti/10-02.txt's
+    // own [HymnusM Laudes]), not shared with the other Archangel feasts.
+    // Raphael (like Gabriel) genuinely has no own [HymnusM Laudes]
+    // override in his own file, so he correctly falls back to 05-08's
+    // shared "Christe sanctórum decus Angelórum" (which names all three
+    // archangels across its stanzas, Gabriel's and Raphael's own included).
+    const raphael = resolveOrdo('lauds', '2026-10-24');
+    const raphaelHymn = raphael.parts.find((p) => p.kind === 'hymn');
+    expect(raphaelHymn?.kind === 'hymn' ? raphaelHymn.text.text.la : undefined).toContain('Christe sanctórum decus Angelórum');
+
+    const guardianAngels = resolveOrdo('lauds', '2026-10-02');
+    const guardianAngelsHymn = guardianAngels.parts.find((p) => p.kind === 'hymn');
+    expect(guardianAngelsHymn?.kind === 'hymn' ? guardianAngelsHymn.text.text.la : undefined).toContain('Orbis Patrátor óptime');
   });
 
   it("resolves St. Gabriel's own genuinely proper chapter (Dan 9:21-22), not Apparition's", () => {

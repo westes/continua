@@ -1,5 +1,12 @@
 # Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
-# live query, 2029-12-26, clean year.
+# live query, 2029-12-26, clean year. English final stanza corrected
+# 2026-09-10: the live query had baked in the Martyr Common's own generic
+# English ending ("All praise to God the Father be...") despite the Latin
+# already correctly showing the Nat/NatT-swapped text (St. Stephen falls
+# within Christmastide's `Doxology=Nat` window) -- a real bilingual
+# mismatch, since the Nat swap should apply to both languages. Corrected to
+# the same Nat/NatT English used by vespers-hymn-st-stephen-protomartyr.yml
+# ("All honour, praise and glory be...").
 id: lauds-hymn-st-stephen-protomartyr
 text:
   la: |
@@ -18,7 +25,7 @@ text:
     Nos solve vinclis sǽculi,
     Amóre Fílii Dei.
 
-    Glória tibi, Dómine,
+    * Glória tibi, Dómine,
     Qui natus es de Vírgine,
     Cum Patre, et Sancto Spíritu,
     In sempitérna sǽcula. Amen.
@@ -38,10 +45,10 @@ text:
     For us how many a bond remains!
     O love of God release us all.
 
-    All praise to God the Father be,
-    All praise to thee, Eternal Son;
-    All praise, O Holy Ghost, to thee,
-    While never-ending ages run. Amen.
+    * All honour, praise and glory be,
+    O Jesu, Virgin-Born, to thee;
+    All glory, as is ever meet,
+    To Father, and to Paraclete. Amen.
 status:
   la: verified
   en: verified
