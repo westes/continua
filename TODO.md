@@ -22,6 +22,22 @@ content in the same shape, not a design change. The dated log below is that pipe
    - Audio ("read it to me"): a button per hour/text that plays the office aloud, e.g. via
      the Web Speech API (stays offline-first). Open questions: bilingual (La/En) voice
      selection, Latin pronunciation quality. Needs its own design pass first.
+   - Votive offices: let a user substitute a different office (e.g. Little Office of the
+     BVM, Office of the Dead, a weekday votive like St. Joseph/Wednesday or Passion/Friday)
+     for the day's actual resolved office, on demand. Deferred deliberately (2026-09-11):
+     unlike every other "choice" in continua (bilingual toggle, the planned user-editable
+     calendar below), this isn't about correctness of *which* office today's date resolves
+     to — it's runtime substitution of a different office entirely, closer to the reference
+     engine's browsable-reference-tool use case than continua's fixed-daily-office one. Real
+     cost isn't content (most votives reuse existing Commune/C1-C12 files already sourced for
+     saints; only weekday votives like St. Joseph/Passion are new proper text) but mechanism
+     that doesn't exist yet: an office dimension orthogonal to `HourId`/date threaded through
+     `resolveOrdo`, the `/{date}/{hourId}` route, and a new UI selector — plus refolding the
+     one existing one-off precedent (`isAllSouls(date)`, hand-copied into all 8 hour files)
+     into that generic path instead of adding a third copy-pasted special case. Track as its
+     own item, don't fold into user-editable calendar below — picking which saint wins a date
+     and substituting a whole different office are different mechanisms even though both are
+     user-override flavored.
    - User-editable calendar: let a user pick/override which saints actually contest a
      given date, rather than only vu's own shipped `sanctoral-calendar.yml`. Motivating
      case (2026-09): `ss-eustace-and-companions.yml` is fully authored but deliberately
