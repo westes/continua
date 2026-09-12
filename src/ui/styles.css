@@ -202,12 +202,28 @@ button:focus-visible {
   line-height: var(--line-height-base);
   margin: 0 0 var(--space-3);
 }
+.about-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+.about-check-update,
 .about-close {
   border: 1px solid var(--color-border);
   background: var(--color-bg);
   border-radius: var(--radius);
   padding: 0.4rem 0.9rem;
   cursor: pointer;
+  font-family: var(--font-ui);
+}
+.about-check-update:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+.about-update-status {
+  margin: var(--space-2) 0 0;
+  font-size: 0.85rem;
+  color: var(--color-pending);
+  min-height: 1.1em;
 }
 
 /* --------------------------------------------------------------------------

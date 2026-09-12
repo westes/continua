@@ -1,3 +1,4 @@
+import { checkForUpdateManually } from '../sw-update';
 import { APP_VERSION, APP_VERSION_DATE, onVersionChange } from '../version';
 import { formatRelativeTime } from './format';
 
@@ -25,13 +26,38 @@ export function mountAboutPanel(container: HTMLElement): void {
       <h2>Continua <span class="about-version">${APP_VERSION}</span></h2>
       <p class="about-updated">Last updated <span class="about-updated-text">${formatRelativeTime(APP_VERSION_DATE)}</span></p>
       <p class="about-blurb">${ABOUT_BLURB}</p>
-      <button type="button" class="about-close" autofocus>Close</button>
+      <div class="about-actions">
+        <button type="button" class="about-check-update">Check for Updates</button>
+        <button type="button" class="about-close" autofocus>Close</button>
+      </div>
+      <p class="about-update-status" aria-live="polite"></p>
     </dialog>
   `;
 
   const dialog = container.querySelector<HTMLDialogElement>('.about-dialog')!;
-  container.querySelector('.about-trigger')!.addEventListener('click', () => dialog.showModal());
+  const statusEl = container.querySelector<HTMLElement>('.about-update-status')!;
+  container.querySelector('.about-trigger')!.addEventListener('click', () => {
+    statusEl.textContent = '';
+    dialog.showModal();
+  });
   container.querySelector('.about-close')!.addEventListener('click', () => dialog.close());
+
+  // Deliberately on-demand only, not a periodic timer (see sw-update.ts's
+  // own header) -- lets someone who's been reading one hour for a while
+  // and wonders if there's a newer version just ask, without the app
+  // guessing at a polling interval. An actual update reloads the page on
+  // its own (registerType: 'autoUpdate') before this ever gets to report
+  // back, so the only outcomes worth showing here are "nothing new" and
+  // "can't check" (unsupported browser / registration not ready yet).
+  const checkButton = container.querySelector<HTMLButtonElement>('.about-check-update')!;
+  checkButton.addEventListener('click', async () => {
+    checkButton.disabled = true;
+    statusEl.textContent = 'Checking for updates…';
+    const result = await checkForUpdateManually();
+    checkButton.disabled = false;
+    statusEl.textContent =
+      result === 'unsupported' ? "Can't check for updates on this browser." : "You're up to date.";
+  });
   // Clicking the backdrop lands on the <dialog> element itself (its
   // children fill the content box); clicking inside the panel content
   // doesn't, since that hits one of the child elements instead.
