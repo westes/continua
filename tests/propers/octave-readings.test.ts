@@ -31,10 +31,10 @@ describe('getOctaveReading', () => {
     expect(reading?.text.la).toContain('Joánnis Chrysóstomi');
   });
 
-  it('marks a reading with no sourced English translation as honestly missing, not duplicating the Latin', () => {
+  it('carries a project-authored draft translation for a reading with no sourced English', () => {
     const reading = getOctaveReading('st-lawrence', 3);
-    expect(reading?.status.en).toBe('missing');
-    expect(reading?.text.en).toBeUndefined();
+    expect(reading?.status.en).toBe('draft');
+    expect(reading?.text.en).toContain('Ananias, Azarias, and Misael');
   });
 
   it('resolves a reading declared as scripture passages into continuous text, one paragraph per passage', () => {
