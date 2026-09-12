@@ -58,9 +58,11 @@ export function mountAboutPanel(container: HTMLElement): void {
     statusEl.textContent =
       result === 'dev'
         ? "Update checks aren't available in the dev environment."
-        : result === 'unsupported'
-          ? "Can't check for updates on this browser."
-          : "You're up to date.";
+        : result === 'error'
+          ? 'Update check failed — try again in a moment.'
+          : result === 'unsupported'
+            ? "Can't check for updates on this browser."
+            : "You're up to date.";
   });
   // Clicking the backdrop lands on the <dialog> element itself (its
   // children fill the content box); clicking inside the panel content

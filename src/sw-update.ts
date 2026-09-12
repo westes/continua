@@ -23,10 +23,27 @@ import { subscribe } from './app-state';
 // button (`checkForUpdateManually` below) gives the user an on-demand way
 // to ask, rather than the app guessing at an interval.
 let swRegistration: ServiceWorkerRegistration | undefined;
+let registrationError: unknown;
+let resolveRegistrationSettled: () => void;
+// Resolves once the initial registerSW() call has either succeeded or
+// failed — not on a timer, but on whichever of the two callbacks below
+// actually fires. Awaited by checkForUpdateManually so an early click (the
+// About panel opened and clicked within the first moment of a page load,
+// before registration has had a chance to complete) waits for the real
+// outcome instead of reporting "unsupported" for something that's actually
+// still in flight.
+const registrationSettled = new Promise<void>((resolve) => {
+  resolveRegistrationSettled = resolve;
+});
 registerSW({
   immediate: true,
   onRegisteredSW(_swUrl, registration) {
     swRegistration = registration;
+    resolveRegistrationSettled();
+  },
+  onRegisterError(error) {
+    registrationError = error;
+    resolveRegistrationSettled();
   },
 });
 
@@ -47,24 +64,59 @@ subscribe(checkForUpdate);
  * nothing new was found. */
 const MANUAL_CHECK_GRACE_MS = 1500;
 
+/** How long to wait for the initial registration to settle before giving
+ * up on it — generous, since a slow network fetching sw.js is exactly the
+ * kind of case worth waiting out rather than misreporting. If registration
+ * is ever actually broken (not just slow), this is how long a click on the
+ * button takes to say so, not how long the app is unusable for — the
+ * initial `registerSW()` call above keeps trying independently of this. */
+const REGISTRATION_WAIT_TIMEOUT_MS = 5000;
+
+async function waitForRegistration(): Promise<'settled' | 'timed-out'> {
+  return Promise.race([
+    registrationSettled.then((): 'settled' => 'settled'),
+    new Promise<'timed-out'>((resolve) => setTimeout(() => resolve('timed-out'), REGISTRATION_WAIT_TIMEOUT_MS)),
+  ]);
+}
+
 /**
  * Called from the About panel's "Check for Updates" button. Only ever
- * returns 'up-to-date', 'dev', or 'unsupported' — an actual update reloads
- * the page automatically before this promise would resolve, so there's no
- * 'updated' case to report back.
+ * returns 'up-to-date', 'dev', 'unsupported', or 'error' — an actual
+ * update reloads the page automatically before this promise would resolve,
+ * so there's no 'updated' case to report back.
  *
- * 'dev' vs. 'unsupported' is worth distinguishing in the UI: `swRegistration`
- * is `undefined` in both cases, but for two very different reasons.
- * vite-plugin-pwa doesn't register a real service worker in dev mode at all
- * (no `devOptions.enabled` here — see vite.config.ts), so `swRegistration`
- * staying unset there says nothing about the *browser's* capability, unlike
- * a genuine lack of `serviceWorker` support in production. Live-verified
- * 2026-09-12: the button correctly reported "can't check" while looking at
- * the dev server, but with the wrong reason attached — worth telling the
- * user it's the environment, not their browser.
+ * 'dev' vs. 'unsupported' vs. 'error' matters in the UI: `swRegistration`
+ * can stay unset for three unrelated reasons, and lumping them together
+ * (as an earlier version of this function did) produces a misleading
+ * message for two of the three. In order:
+ * - 'dev': vite-plugin-pwa doesn't register a real service worker in dev
+ *   mode at all (no `devOptions.enabled` — see vite.config.ts), regardless
+ *   of what the browser supports. Checked first, before waiting on
+ *   anything, since dev mode's `registerSW()` is a total no-op stub that
+ *   never calls either callback below — `registrationSettled` would hang
+ *   forever if we waited on it here.
+ * - 'unsupported': this browser has no `serviceWorker` API at all (very
+ *   old browsers, a non-HTTPS context, certain locked-down iframes/private
+ *   modes) — checked directly rather than inferred, since `register()`
+ *   (vite-plugin-pwa's build/register.ts) also never calls either callback
+ *   in this case, for the same reason as 'dev' above.
+ * - 'error': registration was attempted and failed (`onRegisterError`) —
+ *   a real problem worth its own message, not indistinguishable from the
+ *   browser simply not supporting service workers.
+ *
+ * Otherwise, waits (up to `REGISTRATION_WAIT_TIMEOUT_MS`) for the initial
+ * registration to actually finish before concluding anything — live-
+ * verified gap, 2026-09-12: clicking the button in the first moment after
+ * a page load, before registration had completed, reported "unsupported"
+ * for something that was in fact about to succeed.
  */
-export async function checkForUpdateManually(): Promise<'up-to-date' | 'dev' | 'unsupported'> {
-  if (!swRegistration) return import.meta.env.DEV ? 'dev' : 'unsupported';
+export async function checkForUpdateManually(): Promise<'up-to-date' | 'dev' | 'unsupported' | 'error'> {
+  if (import.meta.env.DEV) return 'dev';
+  if (!('serviceWorker' in navigator)) return 'unsupported';
+  const outcome = await waitForRegistration();
+  if (outcome === 'timed-out') return 'unsupported';
+  if (registrationError) return 'error';
+  if (!swRegistration) return 'unsupported';
   await swRegistration.update();
   await new Promise((resolve) => setTimeout(resolve, MANUAL_CHECK_GRACE_MS));
   return 'up-to-date';
