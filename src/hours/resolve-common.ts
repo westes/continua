@@ -891,12 +891,31 @@ function sanctoralCommemorationPart(
  * pattern as sanctoralCommemorationPart. No per-saint `propers`
  * indirection needed: an octave commemoration's id already is the base
  * feast/saint id (`christmas-day`, `st-stephen-protomartyr`, ...),
- * matching the proper file's own id 1:1. */
+ * matching the proper file's own id 1:1.
+ *
+ * Not every octave's source carries a distinct Ant+V/R+collect bundle —
+ * live-checked against the reference engine: St. Lawrence, Immaculate
+ * Conception, Corpus Christi, Pentecost, and the Patronage of St. Joseph
+ * have no `[Octava]` section anywhere in their own octave window, unlike
+ * Christmas/Nativity-BVM/Sacred-Heart/Ascension which do. For those,
+ * fall back to the feast's own plain collect alone (checking both the
+ * common and temporal proper stores, since a movable feast's collect
+ * lives in the latter) — same "collect alone, still labeled" fallback
+ * `sanctoralCommemorationPart` already uses — rather than rendering a
+ * fully empty commemoration when a real collect exists to show. */
 export function octaveCommemorationPart(commemoration: Extract<Commemoration, { kind: 'octave' }>): ResolvedPart {
   const label = `Commemoration of the Octave of ${commemoration.name}`;
   const combined = resolveCommon(`${commemoration.id}-octave-commemoration`);
   if (combined.status.la !== 'missing' || combined.status.en !== 'missing') {
     return { kind: 'preces', text: combined, label };
+  }
+  const commonCollect = resolveCommon(`${commemoration.id}-collect`);
+  if (commonCollect.status.la !== 'missing' || commonCollect.status.en !== 'missing') {
+    return { kind: 'preces', text: commonCollect, label };
+  }
+  const temporalCollect = toResolvedText(getTemporalProper(`${commemoration.id}-collect`));
+  if (temporalCollect.status.la !== 'missing' || temporalCollect.status.en !== 'missing') {
+    return { kind: 'preces', text: temporalCollect, label };
   }
   return { kind: 'preces', text: { text: {}, status: { la: 'missing', en: 'missing' } }, label };
 }
