@@ -49,12 +49,22 @@ const MANUAL_CHECK_GRACE_MS = 1500;
 
 /**
  * Called from the About panel's "Check for Updates" button. Only ever
- * returns 'up-to-date' or 'unsupported' — an actual update reloads the
- * page automatically before this promise would resolve, so there's no
+ * returns 'up-to-date', 'dev', or 'unsupported' — an actual update reloads
+ * the page automatically before this promise would resolve, so there's no
  * 'updated' case to report back.
+ *
+ * 'dev' vs. 'unsupported' is worth distinguishing in the UI: `swRegistration`
+ * is `undefined` in both cases, but for two very different reasons.
+ * vite-plugin-pwa doesn't register a real service worker in dev mode at all
+ * (no `devOptions.enabled` here — see vite.config.ts), so `swRegistration`
+ * staying unset there says nothing about the *browser's* capability, unlike
+ * a genuine lack of `serviceWorker` support in production. Live-verified
+ * 2026-09-12: the button correctly reported "can't check" while looking at
+ * the dev server, but with the wrong reason attached — worth telling the
+ * user it's the environment, not their browser.
  */
-export async function checkForUpdateManually(): Promise<'up-to-date' | 'unsupported'> {
-  if (!swRegistration) return 'unsupported';
+export async function checkForUpdateManually(): Promise<'up-to-date' | 'dev' | 'unsupported'> {
+  if (!swRegistration) return import.meta.env.DEV ? 'dev' : 'unsupported';
   await swRegistration.update();
   await new Promise((resolve) => setTimeout(resolve, MANUAL_CHECK_GRACE_MS));
   return 'up-to-date';
