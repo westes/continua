@@ -112,14 +112,31 @@ export function devGitInfoPlugin(): Plugin {
       s.watcher.on('add', debounced);
       s.watcher.on('unlink', debounced);
 
-      // .git/HEAD (commits, checkouts) and .git/index (staging) sit outside
-      // Vite's watched globs (ignored by default), so they need their own
-      // watch to catch a commit that doesn't otherwise touch a source file.
-      for (const f of ['HEAD', 'index']) {
+      // .git/HEAD (checkouts), .git/index (staging), and .git/refs/heads/*
+      // (an ordinary commit on an existing branch -- HEAD is just a
+      // symbolic ref to refs/heads/<branch> and its *content* never changes
+      // for a plain `git commit`; only the branch ref file does) all sit
+      // outside Vite's watched globs (ignored by default), so they need
+      // their own watch to catch a commit that doesn't otherwise touch a
+      // source file. Watching the *file* path directly (as this used to)
+      // is broken by design here: git updates both `index` and a branch
+      // ref via a lockfile-then-atomic-rename (`index.lock` -> `index`,
+      // same for refs), which replaces the underlying inode at that path.
+      // Node's fs.watch(filePath) watches by inode, so the very first such
+      // replace during this dev server's lifetime silently kills the
+      // watch, and every commit after that goes unnoticed -- live-verified
+      // 2026-09-12: the About panel stayed stuck on a commit from the
+      // *previous* day's server startup, `dirty: true`, straight through
+      // two intervening real commits. Watching the parent *directory*
+      // instead survives the rename (the directory entry is what changes,
+      // not the directory's own inode), so it's used for both `.git`
+      // itself (HEAD, index) and `.git/refs/heads` (branch ref updates).
+      for (const dir of [path.join(root, '.git'), path.join(root, '.git', 'refs', 'heads')]) {
         try {
-          fsWatchers.push(fsWatch(path.join(root, '.git', f), debounced));
+          fsWatchers.push(fsWatch(dir, debounced));
         } catch {
-          // No .git present (e.g. a tarball checkout) -- info just stays empty.
+          // No .git present (e.g. a tarball checkout), or no refs/heads yet
+          // (a brand-new repo with no commits) -- info just stays empty.
         }
       }
       s.httpServer?.once('close', () => {
