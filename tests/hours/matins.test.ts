@@ -1242,3 +1242,38 @@ describe('resolveOrdo("matins", ...) Nativity of St. John the Baptist (2026-06-2
     expect(psalm63?.antiphon?.text.la).toContain('Nazarǽus');
   });
 });
+
+describe('resolveOrdo("matins", ...) octave reading vs. winner/commemoration priority (2026-09-12 fix)', () => {
+  // Regression test: buildReadingPool used to hoist *every* active
+  // octave's reading ahead of the ids loop unconditionally, regardless of
+  // content type. On 2026-09-12, Holy Name of Mary (duplex majus) wins the
+  // day over the Nativity-of-BVM octave (day 5, a mere commemoration), but
+  // the octave's Chrysostom sermon was sorting ahead of Holy Name's own
+  // Bernard/Peter Chrysologus readings — backwards from the header's
+  // winner-first priority. Fixed by only hoisting an octave reading ahead
+  // of everything when it's a plain Scripture excerpt (`isScripture`,
+  // octave-readings.ts); a homily/sermon octave reading now sorts with the
+  // winner/commemorations' own homiletic content instead.
+  const lessonSources = (ordo: ReturnType<typeof resolveOrdo>) =>
+    ordo.parts
+      .filter((p): p is Extract<typeof p, { kind: 'lesson' }> => p.kind === 'lesson')
+      .map((p) => (typeof p.label === 'string' ? p.label : p.label?.en ?? ''));
+
+  it('sorts Holy Name of Mary\'s own homily before the Nativity-of-BVM octave\'s Chrysostom sermon', () => {
+    const sources = lessonSources(resolveOrdo('matins', '2026-09-12'));
+    const winnerIndex = sources.findIndex((s) => s.includes('Peter Chrysologus'));
+    const octaveIndex = sources.findIndex((s) => s.includes('John Chrysostom'));
+    expect(winnerIndex).toBeGreaterThanOrEqual(0);
+    expect(octaveIndex).toBeGreaterThanOrEqual(0);
+    expect(winnerIndex).toBeLessThan(octaveIndex);
+  });
+
+  it('still sorts the All Saints octave\'s pure-Scripture Ezekiel reading ahead of the winner\'s own homilies (2026-11-08)', () => {
+    const sources = lessonSources(resolveOrdo('matins', '2026-11-08'));
+    const ezekielIndex = sources.findIndex((s) => s.includes('Prophet Ezekiel'));
+    const cyprianIndex = sources.findIndex((s) => s.includes('Cyprian'));
+    expect(ezekielIndex).toBeGreaterThanOrEqual(0);
+    expect(cyprianIndex).toBeGreaterThanOrEqual(0);
+    expect(ezekielIndex).toBeLessThan(cyprianIndex);
+  });
+});
