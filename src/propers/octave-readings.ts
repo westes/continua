@@ -35,6 +35,13 @@ export interface OctaveReadingText {
    * rendering concern, not captured here. */
   responsory?: Partial<Record<LanguageCode, string>>;
   status: Partial<Record<LanguageCode, TranslationStatus>>;
+  /** True when this reading is a direct Scripture passage (authored via
+   * `passages:`), false when it's a homily/sermon authored directly as
+   * `text:` — see OctaveReadingRecord's own doc comment below. Read by
+   * matins.ts's buildReadingPool to decide whether the reading groups with
+   * plain Scripture (ahead of homiletic content) or with the day's
+   * homiletic content (in winner/commemoration priority order). */
+  isScripture: boolean;
 }
 
 /**
@@ -88,7 +95,7 @@ export function resolvePassages(passages: ScriptureCitation[]): Partial<Record<L
 
 function resolveReading(record: OctaveReadingRecord): OctaveReadingText {
   const { passages, text, ...rest } = record;
-  return { ...rest, text: text ?? (passages ? resolvePassages(passages) : {}) };
+  return { ...rest, text: text ?? (passages ? resolvePassages(passages) : {}), isScripture: !!passages };
 }
 
 const octaveReadingModules = import.meta.glob<{ default: OctaveReadingRecord }>(
