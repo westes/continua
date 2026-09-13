@@ -915,8 +915,15 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
   const temporalRank = TEMPORAL_CATEGORY_RANK_LABELS[day.temporalCategory];
   const label = (day.winner.kind === 'temporal' ? emberDayLabel(day.winner.id) : undefined) ?? temporalLabel(day);
   const temporal = bi(`${label.en} (${temporalRank.en})`, `${label.la} (${temporalRank.la})`);
-  const { sanctoral } = collectCommemorations(day, { showOctaves: false });
-  return withTransferNote(day, joinBi([temporal, ...sanctoral]));
+  // An active-but-not-governing octave (a mere mid-octave day within an
+  // otherwise ordinary Sunday, e.g. — see octaveGoverningPrivilegedDay's
+  // 2026-09-13 carve-out) still rides along as a commemoration here, same
+  // as every other headline branch above — except during christmastide,
+  // where the Christmas Octave's own stacked octaves are deliberately
+  // never named at all, even as a commemoration (see the governing-octave
+  // branch's own doc comment for why).
+  const { sanctoral, octaves } = collectCommemorations(day, { showOctaves: day.season !== 'christmastide' });
+  return withTransferNote(day, joinBi([temporal, ...octaves, ...sanctoral]));
 }
 
 /**

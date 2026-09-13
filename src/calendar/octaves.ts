@@ -176,7 +176,20 @@ export function resolveActiveOctave(isoDate: string): ActiveOctave | undefined {
  * actual weekday or which of the four octaves is active, never an octave
  * name — see calendar/day-label.ts's and hours/resolve-common.ts's own
  * Dec-30 doc comments for the fuller reasoning already established
- * there). */
+ * there).
+ *
+ * `ordinary-sunday` gets a further carve-out on top of the plain
+ * rank-threshold comparison: an ordinary Sunday's own real standing is
+ * never conceded to a mere *mid*-octave day, only to that octave's own
+ * *closing* day (a real, elevated feast day in its own right, same as a
+ * genuinely occurring saint would need to be) — direct instruction,
+ * 2026-09-13, concrete case: the Nativity of the BVM's octave (Sept
+ * 8-15, `wins: duplex`) has no sanctoral entry at all on Sept 13 (day 6
+ * of 8), yet used to still take over the Sunday's own office/label
+ * entirely, with no trace of the Sunday anywhere — the same threshold
+ * comparison this function already ran for a real occurring saint there
+ * (`decideOccurrence`'s `ordinary-sunday` branch), but with no
+ * Sunday-preserving carve-out the way that branch gets. */
 export function octaveGoverningPrivilegedDay(day: LiturgicalDay): ActiveOctave | undefined {
   if (day.temporalCategory === 'ordinary-feria' || day.season === 'christmastide') {
     return undefined;
@@ -186,7 +199,13 @@ export function octaveGoverningPrivilegedDay(day: LiturgicalDay): ActiveOctave |
     return undefined;
   }
   const octave = resolveActiveOctave(day.date);
-  if (octave && compareFeastClass(octave.wins, minRank) >= 0) {
+  if (!octave) {
+    return undefined;
+  }
+  if (day.temporalCategory === 'ordinary-sunday' && !octave.isClosingDay) {
+    return undefined;
+  }
+  if (compareFeastClass(octave.wins, minRank) >= 0) {
     return octave;
   }
   return undefined;

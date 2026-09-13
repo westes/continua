@@ -69,7 +69,15 @@
 // full-calendar content pass. See TODO.md for what's deferred.
 import type { ResolvedOrdo, ResolvedPart, ResolvedText, ResolvedVerse } from './types';
 import type { LiturgicalDay, DayWinner } from '../calendar/types';
-import { resolveDay, resolveTemporalId, monthWeekId, activeOctavesFor, resolveActiveOctave, isAtLeast } from '../calendar';
+import {
+  resolveDay,
+  resolveTemporalId,
+  monthWeekId,
+  activeOctavesFor,
+  resolveActiveOctave,
+  octaveGoverningPrivilegedDay,
+  isAtLeast,
+} from '../calendar';
 import { isInTriduum } from '../calendar/temporal';
 import { getDayLabel, emberDayLabel, temporalLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
@@ -309,6 +317,23 @@ function psalmRefParts(refs: PsalmRef[]): ResolvedPart[] {
  * it's already `verified` and its own header already documents itself as
  * the fallback-of-record; renaming would be pure churn.
  *
+ * The octave tier itself has two different jobs depending on who already
+ * won the day, and is gated accordingly (2026-09-13 fix): when a real
+ * saint already won outright (`day.winner.kind === 'sanctoral'` — e.g.
+ * St. Joachim, Aug 16, within both St. Lawrence's and the Assumption's
+ * octaves), the octave's own invitatory is a pure bonus fallback for a
+ * winner with no invitatory of his own, same as always, via a raw
+ * `resolveActiveOctave` — the Sunday already lost this day at the
+ * sanctoral-vs-Sunday layer, long before any octave question, so there's
+ * nothing left to protect. But when nothing else contends
+ * (`day.winner.kind === 'temporal'`), the octave tier is instead deciding
+ * whether to synthesize a fake winner *from* the octave in the first
+ * place — that's `octaveGoverningPrivilegedDay`'s own question, with its
+ * own Sunday/mid-octave carve-out, not an unconditional `resolveActiveOctave`
+ * (found wrong 2026-09-13: a genuine mid-octave day with no other
+ * contender used to grab the octave's own invitatory regardless, even on
+ * an ordinary Sunday the octave never actually won).
+ *
  * Doubling (`isDoubleOrHigher`, via `openingAntiphon`) is a separate, final
  * step applied to whichever tier's text wins here — never part of content
  * selection itself. */
@@ -320,7 +345,10 @@ function resolveMatinsInvitatoryText(day: LiturgicalDay): ResolvedText {
       return proper;
     }
   }
-  const octave = resolveActiveOctave(day.date);
+  const octave =
+    day.winner.kind === 'sanctoral' || day.temporalCategory === 'ordinary-feria'
+      ? resolveActiveOctave(day.date)
+      : octaveGoverningPrivilegedDay(day);
   if (octave) {
     const octaveInvitatory = resolveCommon(`matins-invitatory-${octave.id}`);
     if (octaveInvitatory.status.la !== 'missing' || octaveInvitatory.status.en !== 'missing') {
@@ -463,7 +491,15 @@ function renderOverrideNocturn3(group: SundayNocturn, day: LiturgicalDay): Resol
  * at all, live-checked 2026-08-22) — not a restoration of source
  * behavior, just this project's own generous octave design (see
  * "Not a reconstruction" in the repo's design notes) applied to the hymn the
- * same way it's already applied to readings/commemorations elsewhere. */
+ * same way it's already applied to readings/commemorations elsewhere.
+ *
+ * Same two-job governing-octave gate as `resolveMatinsInvitatoryText`
+ * (see its own doc comment for the full reasoning, 2026-09-13 fix): a raw
+ * `resolveActiveOctave` bonus fallback when a real saint already won
+ * outright (e.g. the Assumption-octave case this comment's own history
+ * above is about), `octaveGoverningPrivilegedDay`'s own Sunday-aware gate
+ * when nothing else contends and the octave tier would otherwise be
+ * synthesizing the day's whole winner from scratch. */
 function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
   const overrideId = getOfficeOverrideId(day);
   if (overrideId) {
@@ -472,7 +508,10 @@ function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
       return proper;
     }
   }
-  const octave = resolveActiveOctave(day.date);
+  const octave =
+    day.winner.kind === 'sanctoral' || day.temporalCategory === 'ordinary-feria'
+      ? resolveActiveOctave(day.date)
+      : octaveGoverningPrivilegedDay(day);
   if (octave) {
     const octaveHymn = resolveCommon(`matins-hymn-${octave.id}`);
     if (octaveHymn.status.la !== 'missing' || octaveHymn.status.en !== 'missing') {
