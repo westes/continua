@@ -79,7 +79,19 @@ export default defineConfig({
     }),
   ],
   test: {
-    environment: 'jsdom',
+    // Only tests/ui exercises the DOM (opts into jsdom itself via a
+    // `// @vitest-environment jsdom` docblock); jsdom setup is real
+    // overhead so the other 48 files stay on the plain node environment.
+    environment: 'node',
     globals: false,
+    // Every test file re-imports the same large src/data/** YAML modules
+    // (scripture/martyrology/propers alone are tens of MB); with isolate
+    // left at its default, each of the 49 test files gets its own fresh
+    // module registry and re-parses/re-transforms all of it from scratch.
+    // Sharing the registry across files in a worker cuts that duplicated
+    // work — safe here because these tests are pure functional resolution
+    // over static data, not mutation of shared state (the one exception,
+    // tests/ui/shell.test.ts, already resets app-state in beforeEach).
+    isolate: false,
   },
 });

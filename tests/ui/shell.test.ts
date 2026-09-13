@@ -1,3 +1,4 @@
+// @vitest-environment jsdom
 import { beforeEach, describe, expect, it } from 'vitest';
 import { mountShell } from '../../src/ui/shell';
 import { setDate, setSelectedHour, setLanguages } from '../../src/app-state';
