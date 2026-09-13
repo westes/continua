@@ -10,6 +10,7 @@ import { getChapterResponsoryId } from './chapter-responsory';
 import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { getOpeningVersicleId } from './opening-versicle';
 import { isDoubleOrHigher, applyFlexaMark } from './antiphon';
+import { activeOctavesFor } from '../calendar/octaves';
 import {
   resolveCommon,
   substituteDoxology,
@@ -52,8 +53,15 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
       // Real Divinum Officium's actual inclusion rule tangles together
       // rank, commemorations, and version-specific rubrics in a way that
       // isn't worth replicating exactly — this is the honest simplification:
-      // Sunday and not a Double-or-higher feast.
-      if (day.weekday !== 'sunday' || isDoubleOrHigher(resolveOfficeWinner(day))) {
+      // Sunday, not a Double-or-higher feast, and not inside any active
+      // octave (checked directly — an octave's own effective rank doesn't
+      // reliably surface through resolveOfficeWinner, e.g. an ordinary
+      // Sunday keeps its own temporal office on a mid-octave day).
+      if (
+        day.weekday !== 'sunday' ||
+        isDoubleOrHigher(resolveOfficeWinner(day)) ||
+        activeOctavesFor(day.date).length > 0
+      ) {
         return [];
       }
       return [{ kind: 'lesson', text: resolveCommon('athanasian-creed'), label: 'Athanasian Creed' }];

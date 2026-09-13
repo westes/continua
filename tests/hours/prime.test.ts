@@ -13,6 +13,13 @@ import { getPsalm } from '../../src/psalter';
 // to move again.
 const MONDAY = '2026-09-07';
 const SUNDAY = '2026-08-09';
+// A Sunday inside the Nativity of the BVM's octave (Sept 8-15, `wins:
+// duplex`, this is day 6 of 8 — not the closing day). An ordinary Sunday
+// keeps its own temporal office on a mid-octave day (see
+// calendar/octaves.ts's octaveGoverningPrivilegedDay), so the office
+// winner here isn't itself Double-or-higher — the Creed must still be
+// suppressed by checking for the active octave directly.
+const SUNDAY_IN_OCTAVE = '2026-09-13';
 
 describe('resolveOrdo("prime", ...)', () => {
   it('is implemented and resolves psalms from the weekday-variable slot', () => {
@@ -164,6 +171,11 @@ describe('resolveOrdo("prime", ...)', () => {
 
     const monday = resolveOrdo('prime', MONDAY);
     expect(monday.parts.some((p) => p.kind === 'lesson' && p.label === 'Athanasian Creed')).toBe(false);
+  });
+
+  it('omits the Athanasian Creed on a Sunday inside an active octave', () => {
+    const ordo = resolveOrdo('prime', SUNDAY_IN_OCTAVE);
+    expect(ordo.parts.some((p) => p.kind === 'lesson' && p.label === 'Athanasian Creed')).toBe(false);
   });
 
   it('leaves most Preces/connective parts unlabeled, but names Conclusion and the dead commemoration', () => {

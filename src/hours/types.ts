@@ -84,7 +84,8 @@ export type HourPart =
       ferialRef: PropersRef;
     }
   // The Athanasian Creed — included on Sundays that aren't a Double-or-higher
-  // feast (see calendar/isDoubleOrHigher and hours/prime.ts's 'creed' case
+  // feast and aren't inside any active octave (see calendar/isDoubleOrHigher,
+  // calendar/octaves' activeOctavesFor, and hours/prime.ts's 'creed' case
   // for how far that's actually implemented today).
   | { kind: 'creed' }
   // Resolved by season — Allelúja normally, Laus tibi Septuagesima through
