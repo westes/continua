@@ -37,6 +37,10 @@
 # capitulum doesn't set this flag, so a Vigil still gets the Sunday/feast
 # capitulum, same as before.
 #
+# Preces also set `omitOnDouble: true` — dropped on a real Double-or-higher
+# feast, and (same fix as the Creed above) inside any active octave too,
+# checked directly rather than through resolveOfficeWinner alone.
+#
 # Preces deliberately use the *secular* Tridentine form
 # (propers/common/prime-preces-dominicales.yml), not Monastic Prime's own
 # shorter Dominicales form — chosen because the secular form keeps content

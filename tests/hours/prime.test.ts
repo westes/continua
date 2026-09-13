@@ -178,6 +178,14 @@ describe('resolveOrdo("prime", ...)', () => {
     expect(ordo.parts.some((p) => p.kind === 'lesson' && p.label === 'Athanasian Creed')).toBe(false);
   });
 
+  it('omits the ferial/Sunday Preces on a Sunday inside an active octave', () => {
+    // Same underlying bug as the Creed above: omitOnDouble only checked
+    // resolveOfficeWinner's rank, which stays temporal (not Double-or-
+    // higher) for an ordinary Sunday on a mid-octave day.
+    const ordo = resolveOrdo('prime', SUNDAY_IN_OCTAVE);
+    expect(ordo.parts.some((p) => p.kind === 'preces' && p.text.text.la?.includes('Credo in Deum'))).toBe(false);
+  });
+
   it('leaves most Preces/connective parts unlabeled, but names Conclusion and the dead commemoration', () => {
     const ordo = resolveOrdo('prime', MONDAY);
     const actualPreces = ordo.parts.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));

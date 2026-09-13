@@ -73,6 +73,12 @@ export type HourPart =
       kind: 'by-day-kind';
       resolvedKind: 'chapter' | 'preces';
       label?: string;
+      // Suppressed on a Double-or-higher feast, or inside any active
+      // octave — checked directly in hours/prime.ts's 'by-day-kind' case,
+      // since an octave's own effective rank doesn't reliably surface
+      // through resolveOfficeWinner (e.g. an ordinary Sunday keeps its own
+      // temporal office on a mid-octave day; same gap the Creed's
+      // 'creed' case above had to fix separately).
       omitOnDouble?: true;
       // When true, a Vigil-ranked sanctoral winner takes the ferialRef
       // instead of the sundayOrFeastRef isSundayOrFeastOffice would

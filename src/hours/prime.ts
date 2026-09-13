@@ -41,7 +41,10 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
     case 'prayer':
       return [{ kind: part.kind, text: resolveCommon(part.textRef.id) }];
     case 'preces':
-      if (part.omitOnDouble && isDoubleOrHigher(resolveOfficeWinner(day))) {
+      if (
+        part.omitOnDouble &&
+        (isDoubleOrHigher(resolveOfficeWinner(day)) || activeOctavesFor(day.date).length > 0)
+      ) {
         return [];
       }
       return [{ kind: 'preces', text: resolveCommon(part.textRef.id), label: part.label }];
@@ -109,7 +112,10 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
       return [{ kind: 'canticle', canticleId: part.canticleId, text: resolveCommon(part.textRef.id) }];
     case 'by-day-kind': {
       const winner = resolveOfficeWinner(day);
-      if (part.omitOnDouble && isDoubleOrHigher(winner)) {
+      if (
+        part.omitOnDouble &&
+        (isDoubleOrHigher(winner) || activeOctavesFor(day.date).length > 0)
+      ) {
         return [];
       }
       const isVigil = winner.kind === 'sanctoral' && winner.rank === 'vigil';
