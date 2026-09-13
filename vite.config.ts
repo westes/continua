@@ -93,5 +93,9 @@ export default defineConfig({
     // over static data, not mutation of shared state (the one exception,
     // tests/ui/shell.test.ts, already resets app-state in beforeEach).
     isolate: false,
+    // Worker threads share memory instead of forking a process per worker
+    // (lower spawn/IPC overhead than the default 'forks' pool); safe given
+    // isolate: false already accepts shared module state across files.
+    pool: 'threads',
   },
 });

@@ -46,8 +46,12 @@ jobs:
         env:
           CONTINUA_RELEASE_SSH_KEY: ${{ secrets.CONTINUA_RELEASE_SSH_KEY }}
 
-      - name: Build
-        run: npm run build
+      - name: Type check
+        # Just the tsc gate here, not the full `npm run build` — the actual
+        # bundle this ships is built fresh inside the Docker stage below
+        # (COPY . . + npm run build), so building it here too only to throw
+        # the output away was pure duplicated work.
+        run: npx tsc --noEmit
 
       - name: Test
         run: npm test
