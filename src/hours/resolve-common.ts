@@ -937,7 +937,10 @@ function temporalCommemorationPart(
   day: LiturgicalDay,
   hour: 'lauds' | 'vespers',
 ): ResolvedPart {
-  const label = `Commemoration of ${temporalLabel(day).en}`;
+  // `commemoration.name` (set by calendar/vespers.ts) means this
+  // commemoration's own date differs from `day`'s — `temporalLabel(day)`
+  // would label the wrong day (see Commemoration's own doc comment).
+  const label = `Commemoration of ${commemoration.name ?? temporalLabel(day).en}`;
   const collect = toResolvedText(getTemporalProper(`${commemoration.id}-collect`));
   const antiphon = toResolvedText(
     getTemporalProper(`${commemoration.id}-${hour === 'lauds' ? 'benedictus' : 'magnificat'}-antiphon`),

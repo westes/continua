@@ -182,7 +182,20 @@ export type DayWinner =
  * within the Christmas Octave) — hence a list, not a single flag.
  */
 export type Commemoration =
-  | { kind: 'temporal'; id: string }
+  | {
+      kind: 'temporal';
+      id: string;
+      // Set only by calendar/vespers.ts's commemorationOfDisplacedPredecessor,
+      // for the one case where this commemoration's own date differs from
+      // the `LiturgicalDay` it's attached to (First Vespers anticipation
+      // crossed a day boundary) — `temporalCommemorationPart`
+      // (hours/resolve-common.ts) can't derive a label from `day` itself
+      // there the way it safely can for every same-day daytime
+      // commemoration this type already covered. Absent in that ordinary
+      // same-day case, where `temporalLabel(day)` remains correct.
+      name?: string;
+      nameLa?: string;
+    }
   | ({
       kind: 'sanctoral';
       // Set by calendar/vespers.ts's resolveEveningDay when this

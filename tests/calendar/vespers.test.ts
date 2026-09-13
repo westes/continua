@@ -25,11 +25,28 @@ describe('resolveEveningDay', () => {
     expect(day.season).toBe('eastertide');
   });
 
-  it("a Sunday always keeps its own Second Vespers, even before a higher-ranked weekday feast", () => {
+  it('an ordinary Sunday cedes Second Vespers to a following Duplex+ feast, same threshold as its own daytime office', () => {
     // Aug 10, 2026 (Monday) is St. Lawrence, Duplex II classis — well above
-    // the "has First Vespers" threshold — but Sunday never cedes.
+    // minimumOutrightWinningRank('ordinary-sunday') (`duplex`), the same
+    // threshold that already lets a plain Duplex win an ordinary Sunday's
+    // daytime office outright (see commemorations.ts). An ordinary Sunday
+    // isn't a rank-independent absolute for Vespers either.
     const day = resolveEveningDay('2026-08-09');
-    expect(day.date).toBe('2026-08-09');
+    expect(day.date).toBe('2026-08-10');
+    expect(day.winner.kind).toBe('sanctoral');
+    if (day.winner.kind === 'sanctoral') {
+      expect(day.winner.id).toBe('st-lawrence');
+      expect(day.winner.vespersFrom).toBe('firstVespersOfTomorrow');
+    }
+  });
+
+  it('an ordinary Sunday keeps its own Second Vespers before a lower-ranked weekday feast', () => {
+    // Sep 28, 2026 (Monday) is St. Wenceslaus, Semiduplex — below
+    // minimumOutrightWinningRank('ordinary-sunday') (`duplex`), so the
+    // Sunday keeps its own evening.
+    const day = resolveEveningDay('2026-09-27');
+    expect(day.date).toBe('2026-09-27');
+    expect(day.winner.kind).not.toBe('sanctoral');
   });
 
   it('an ordinary feria before a real high-ranked feast anticipates it', () => {

@@ -61,9 +61,11 @@ describe('shell', () => {
   });
 
   it('shows a plain Second Vespers status when Vespers is not anticipating tomorrow', () => {
-    setDate('2026-08-09');
+    // Sep 6, 2026 is an ordinary Sunday with no saint the next day either,
+    // so nothing anticipates it.
+    setDate('2026-09-06');
     setSelectedHour('vespers');
-    window.history.replaceState(null, '', '/continua/2026-08-09/vespers');
+    window.history.replaceState(null, '', '/continua/2026-09-06/vespers');
     const root = document.getElementById('app')!;
     mountShell(root);
 

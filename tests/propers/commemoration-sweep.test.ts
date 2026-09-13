@@ -108,7 +108,15 @@ describe('Common-category commemoration antiphon fallback (propers: null saints,
     ['2026-09-05', 'Lawrence Justinian', 'common-of-a-confessor-bishop'], // the reported bug
     ['2026-03-06', 'Perpetua', 'common-of-several-women-martyrs'],
     ['2026-08-05', 'Our Lady of the Snows', 'common-of-the-bvm'],
-    ['2026-11-08', 'Lateran', 'common-of-a-dedication'],
+    // No `common-of-a-dedication` case: the Lateran Dedication (Nov 9,
+    // Duplex II. classis) is the only saint whose main `common` is
+    // `common-of-a-dedication`, and it now always wins its own evening
+    // outright against its one neighbor, the Octave of All Saints (Duplex
+    // majus) -- previously it lost specifically because of the ordinary-
+    // Sunday-is-absolute Vespers bug fixed 2026-09-13 (see
+    // calendar/vespers.ts's keepsOwnSecondVespers), so this Common's
+    // commemoration-antiphon fallback has no real calendar date to exercise
+    // it through resolveOrdo any more.
     ['2026-11-18', 'Ss. Peter and Paul', 'common-of-an-apostle'],
   ];
 
