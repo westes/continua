@@ -318,3 +318,26 @@ common-of-the-bvm:
     en: "R. O Holy Virgin Mary, happy indeed art thou, and right worthy of all praise\n* For out of thee rose the Sun of righteousness, even Christ our God.\nV. Pray for the people, plead for the clergy, make intercession for all women vowed to God. May all that are keeping this thine holy Feast day feel the might of thine assistance.\nR. For out of thee rose the Sun of righteousness, even Christ our God."
   - la: "R. Beátam me dicent omnes generatiónes,\n* Quia fecit mihi Dóminus magna qui potens est, et sanctum nomen ejus.\nV. Et misericórdia ejus a progénie in progénies timéntibus eum.\nR. Quia fecit mihi Dóminus magna qui potens est, et sanctum nomen ejus."
     en: "R. All generations shall call me blessed.\n* For He that is mighty, even the Lord, hath done to me great things; and Holy is His Name.\nV. And his mercy is on them that fear Him, from generation to generation.\nR. He that is mighty, even the Lord, hath done to me great things; and Holy is His Name."
+
+# `proper-to-the-finding-of-the-holy-cross`: Exaltation of the Holy Cross
+# (Sept 14) and Finding of the Holy Cross (May 3) each pool their own
+# Nocturn 2 (Helena legend, one combined reading) and Nocturn 3
+# (Gospel+homily on Nicodemus, John 3) readings via this shared `common`
+# id -- previously had no seeded entry at all, so Nocturn 2/3 rendered with
+# no responsory (found 2026-09-13). Sourced from the reference engine's own
+# Monastic Sept 14 file (Latin/SanctiM/09-14.txt), which carries Sept
+# 14-specific responsories not reused from May 3 -- both entries here are
+# genuinely season-neutral in the source (no Alleluia in either), so no
+# Paschaltide-variant treatment is needed for either feast:
+#   - entry 0 (Nocturn 2, Helena legend): SanctiM/09-14's own [Responsory4],
+#     the feast's proper "O crux benedícta" acclamation.
+#   - entry 1 (Nocturn 3, Gospel+homily): SanctiM/09-14's own [Responsory8],
+#     "Per signum Crucis" -- the same acclamation already used verbatim as
+#     this feast's own Lauds/Vespers antiphon (finding-of-the-holy-cross
+#     Common's `[Ant Vespera]` "Per signum Crucis * de inimícis nostris
+#     líbera nos, Deus noster"), confirming its season-neutral standing.
+proper-to-the-finding-of-the-holy-cross:
+  - la: "R. O crux benedícta,\n* Quæ sola fuísti digna portáre Regem cælórum et Dóminum!\nV. O crux gloriósa et admirábilis, o crux veneránda!\nR. Quæ sola fuísti digna portáre Regem cælórum et Dóminum!"
+    en: "R. O blessed Cross,\n* Who alone wast worthy to bear the King of heaven and Lord!\nV. O glorious and wondrous Cross, O venerable Cross!\nR. Who alone wast worthy to bear the King of heaven and Lord!"
+  - la: "R. Per signum Crucis de inimícis nostris\n* Líbera nos, Deus noster.\nV. Salva nos, Christe Salvátor, per virtútem Crucis.\nR. Líbera nos, Deus noster."
+    en: "R. By the sign of the Cross, from our enemies\n* Deliver us, O our God.\nV. Save us, Christ our Savior, by the power of the Cross.\nR. Deliver us, O our God."

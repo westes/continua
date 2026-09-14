@@ -1,22 +1,32 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
-# live query, 2026-05-03 -- own proper responsory. See lauds-capitulum-
-# proper-to-the-finding-of-the-holy-cross.yml's header.
+# Season-neutral base text (outside Paschaltide) -- see the -paschaltide
+# sibling file for the Alleluia-bearing form actually used when this
+# Common's feast falls within Paschaltide (Finding of the Holy Cross, May
+# 3). The refrain here, "Miserére nostri, qui passus es pro nobis", is
+# sourced from the exact parallel non-Paschaltide use of this same
+# "Adorámus te, Christe, et benedícimus tibi" acclamation in the reference
+# engine's own Monastic Matins Responsory 11 for Sept 14 (SanctiM/09-14.txt:
+# "R. Tuam Crucem adorámus Dómine ... * Miserére nostri, qui passus es pro
+# nobis. V. Adorámus te, Christe, et benedícimus tibi ... R. Miserére
+# nostri, qui passus es pro nobis.") -- confirming this is the real
+# historical non-Paschaltide refrain for this formula, not an invented
+# substitute. Used for Exaltation of the Holy Cross (Sept 14), which
+# reuses this Common outside Paschaltide.
 id: vespers-responsory-proper-to-the-finding-of-the-holy-cross
 text:
   la: |
-    R.br. Adorámus te, Christe, et benedícimus tibi: * Allelúja, allelúja.
-    R. Adorámus te, Christe, et benedícimus tibi: * Allelúja, allelúja.
+    R.br. Adorámus te, Christe, et benedícimus tibi: * Miserére nostri, qui passus es pro nobis.
+    R. Adorámus te, Christe, et benedícimus tibi: * Miserére nostri, qui passus es pro nobis.
     V. Quia per Crucem tuam redemísti mundum.
-    R. Allelúja, allelúja.
+    R. Miserére nostri, qui passus es pro nobis.
     V. Glória Patri, et Fílio, * et Spirítui Sancto.
-    R. Adorámus te, Christe, et benedícimus tibi: * Allelúja, allelúja.
+    R. Adorámus te, Christe, et benedícimus tibi: * Miserére nostri, qui passus es pro nobis.
   en: |
-    R.br. We adore thee, O Christ, and we bless thee. * Alleluia, alleluia.
-    R. We adore thee, O Christ, and we bless thee. * Alleluia, alleluia.
+    R.br. We adore thee, O Christ, and we bless thee. * Have mercy on us, who didst suffer for us.
+    R. We adore thee, O Christ, and we bless thee. * Have mercy on us, who didst suffer for us.
     V. Because that through thy cross thou hast redeemed the world.
-    R. Alleluia, alleluia.
+    R. Have mercy on us, who didst suffer for us.
     V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
-    R. We adore thee, O Christ, and we bless thee. * Alleluia, alleluia.
+    R. We adore thee, O Christ, and we bless thee. * Have mercy on us, who didst suffer for us.
 status:
   la: verified
   en: verified

@@ -6,6 +6,7 @@ import { getSaintRecord } from '../calendar/feasts';
 import { resolveActiveOctave, activeOctavesFor, octaveGoverningPrivilegedDay, isAtLeast, isSundayOrFeast } from '../calendar';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { resolveTemporalId } from '../calendar/temporal-id';
+import { sortCommemorations } from '../calendar/commemoration-order';
 import { isInTriduum } from '../calendar/temporal';
 import { isAllSouls, REQUIEM_GLORIA_PATRI } from './all-souls';
 import { temporalLabel } from '../calendar/day-label';
@@ -733,11 +734,23 @@ export function resolveOfficeBundle(
     if (chapter.status.la === 'missing' && chapter.status.en === 'missing') {
       return undefined;
     }
+    // The bundle's own responsory/versicle base text is season-neutral;
+    // a `-paschaltide` variant file (same convention as
+    // resolveMinorHourChapter's Common tier) carries the Alleluia-bearing
+    // form for feasts whose Common is genuinely tied to Paschaltide but
+    // gets reused outside it (e.g. Exaltation of the Holy Cross borrowing
+    // Finding of the Holy Cross's Common) — tried first, never assumed.
+    const paschalResponsory = PASCHALTIDE_SEASONS.has(day.season)
+      ? resolveCommon(`${hourId}-responsory-${id}-paschaltide`)
+      : undefined;
+    const paschalVersicle = PASCHALTIDE_SEASONS.has(day.season)
+      ? resolveCommon(`${hourId}-versicle-${id}-paschaltide`)
+      : undefined;
     return {
       chapter,
-      responsory: resolveResponsory(resolveCommon(`${hourId}-responsory-${id}`), day),
+      responsory: resolveResponsory(firstAvailable([paschalResponsory], resolveCommon(`${hourId}-responsory-${id}`)), day),
       hymn: resolveCommon(`${hourId}-hymn-${id}`),
-      versicle: resolveCommon(`${hourId}-versicle-${id}`),
+      versicle: firstAvailable([paschalVersicle], resolveCommon(`${hourId}-versicle-${id}`)),
     };
   };
   const proper = tryId(overrideId);
@@ -1006,7 +1019,7 @@ export function getDayCollects(day: LiturgicalDay, hour: 'lauds' | 'vespers'): R
     day.winner.kind !== 'sanctoral' && !ALWAYS_OVERRIDE_TEMPORAL_IDS.has(day.winner.id) && day.temporalCategory === 'ordinary-feria'
       ? resolveActiveOctave(day.date)?.id
       : undefined;
-  for (const commemoration of day.commemorations) {
+  for (const commemoration of sortCommemorations(day, day.commemorations)) {
     if (commemoration.kind === 'temporal') {
       parts.push(temporalCommemorationPart(commemoration, day, hour));
     } else if (commemoration.kind === 'sanctoral') {
@@ -1121,12 +1134,15 @@ export function resolveSuffrages(
  * same pending convention as everywhere else) for a temporal one, then
  * `saint.benedictusCommon` (`benedictus-antiphon-${benedictusCommon}.yml`,
  * see SaintRecord's own doc comment) when neither exists — run through
- * `withPaschaltideAlleluia` on the way out, so a Common-category
- * Benedictus antiphon picks up the same seasonal suffix its Prime/Terce/
- * Sext/None counterparts do (see PASCHALTIDE_SEASONS's own doc comment);
- * a saint's own unique `${propers}-antiphon` deliberately isn't — that
- * would need its own live-requery to confirm one way or the other, not
- * assumed from the Common-category finding. Uses resolveOfficeWinner, not
+ * `withPaschaltideAlleluia` on the way out, so both a Common-category
+ * Benedictus antiphon and a saint's own unique `${propers}-antiphon` pick
+ * up the same seasonal suffix its Prime/Terce/Sext/None counterparts do
+ * (see PASCHALTIDE_SEASONS's own doc comment) — confirmed necessary, not
+ * just symmetrical, by Exaltation of the Holy Cross (Sept 14) reusing
+ * Finding of the Holy Cross's (May 3) proper antiphon file wholesale: that
+ * file's own base text is season-neutral precisely so this suffix can be
+ * added back only when the reused date is actually in Paschaltide
+ * (2026-09-13). Uses resolveOfficeWinner, not
  * the raw `day.winner` — on an octave day this is the octave's own
  * feast's antiphon (live-verified: St. Lawrence's "In cratícula", not the
  * commemorated St. Clare's, and not the plain temporal day's), not a
@@ -1139,7 +1155,7 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
     return toResolvedText(getTemporalProperWithFallback(winner.id, 'benedictus-antiphon', day));
   }
   const saint = getSaintRecord(winner.id);
-  const proper = saint?.propers ? resolveCommon(`${saint.propers}-antiphon`) : undefined;
+  const proper = saint?.propers ? withPaschaltideAlleluia(resolveCommon(`${saint.propers}-antiphon`), day) : undefined;
   const common = saint?.benedictusCommon
     ? withPaschaltideAlleluia(resolveCommon(`benedictus-antiphon-${saint.benedictusCommon}`), day)
     : undefined;
@@ -1149,10 +1165,10 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
 /**
  * Vespers' Magnificat antiphon — mirrors getBenedictusAntiphon's lookup
  * order exactly (temporal id, then a saint's own `${propers}-magnificat-
- * antiphon`, then their Common category's `magnificat-antiphon-${common}`
- * — none of that content authored yet, a separate future pass the same
- * shape as the Benedictus one was), but with two real differences: a bare
- * ferial weekday (Mon-Sat) has actual content to fall back to —
+ * antiphon`, then their Common category's `magnificat-antiphon-${common}`,
+ * both run through `withPaschaltideAlleluia` the same way), but with two
+ * real differences: a bare ferial weekday (Mon-Sat) has actual content to
+ * fall back to —
  * data/hours/vespers-magnificat-antiphons.yml's classic "quote the
  * Magnificat's own text in sequence" set — which Benedictus has no
  * equivalent of; and the O Antiphons below, checked before either the
@@ -1205,7 +1221,7 @@ export function getMagnificatAntiphon(day: LiturgicalDay): ResolvedText {
     return firstAvailable([named, magnificatWeekdayDefault(day)], named);
   }
   const saint = getSaintRecord(winner.id);
-  const proper = saint?.propers ? resolveCommon(`${saint.propers}-magnificat-antiphon`) : undefined;
+  const proper = saint?.propers ? withPaschaltideAlleluia(resolveCommon(`${saint.propers}-magnificat-antiphon`), day) : undefined;
   // A Vigil has no proper Magnificat antiphon of its own in the real rubric
   // -- its `[Rule]` block ("ex C1v; ... Laudes 2") always borrows whatever
   // the current ferial weekday's own antiphon is, live-verified across 4

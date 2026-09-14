@@ -1,12 +1,27 @@
-# Read directly from web/www/horas/Latin/Sancti/05-03.txt's own [Ant 1]
-# and its English counterpart -- fully proper text, not a Common
-# template. Also used by exaltation-of-the-holy-cross.yml, which points
-# its own `propers` here directly rather than duplicating this file
-# (her `ex Sancti/05-03` Rule reuses this content wholesale).
+# Lauds' Benedictus antiphon for Finding of the Holy Cross (May 3) /
+# Exaltation of the Holy Cross (Sept 14) -- read directly from
+# web/www/horas/Latin/Sancti/05-03.txt's own [Ant 2] and its English
+# counterpart. Also used by exaltation-of-the-holy-cross.yml, which points
+# its own `propers` here directly rather than duplicating this file (her
+# `ex Sancti/05-03` Rule reuses this content wholesale).
+#
+# Corrected 2026-09-13: this file previously held "O Crux, splendidior..."
+# ([Ant 1]), which the reference engine's own antiphon-selection rule
+# (horas.pl's canticum(), `$key = $num == 3 ? $vespera : $num`) actually
+# assigns to First Vespers' Magnificat, not Lauds' Benedictus -- moved to
+# finding-of-the-holy-cross-magnificat-antiphon.yml. `[Ant 2]` is what
+# Lauds (and Second Vespers, sharing the same tag) actually use.
+#
+# The source's own trailing "(Allelúja.)" is stripped here: it's only
+# correct when this feast's own date is in Paschaltide (Finding of the Holy
+# Cross, May 3) but this same file is also reused verbatim by Exaltation of
+# the Holy Cross (Sept 14, not Paschaltide). Base text here is
+# season-neutral; `getBenedictusAntiphon` re-adds a Paschaltide-only
+# ", allelúja" suffix via `withPaschaltideAlleluia`.
 id: finding-of-the-holy-cross-antiphon
 text:
-  la: "O Crux, * splendídior cunctis astris, mundo célebris, homínibus multum amábilis, sánctior univérsis: quæ sola fuísti digna portáre taléntum mundi, dulce lignum, dulces clavos, dúlcia ferens póndera; salva præséntem catérvam in tuis hódie láudibus congregátam. (Allelúja, allelúja.)"
-  en: "O Cross, * surpassing all the stars in splendour, exceeding dear to all Christian people and world-renowned, holiest of earth's treasures: which only wast counted worthy to hold aloft the Price of our Redemption: sweet is thy wood and sweet thine iron, but sweetest of all the Burden that hung on thee! O that all who come this day to celebrate thy praises may find in thee salvation. (Alleluia, Alleluia.)"
+  la: "Super ómnia * ligna cedrórum tu sola excélsior, in qua Vita mundi pepéndit, in qua Christus triumphávit, et mors mortem superávit in ætérnum."
+  en: "Thou art higher * than all cedars, whereon the Life of the world hung, whereon Christ openly triumphed, and His death trampled down death for ever."
 status:
   la: verified
   en: verified

@@ -21,13 +21,14 @@
 // than leaving Latin mode showing blanks. The closed, mechanism-level
 // vocabulary here (weekdays, ranks, season/ordinal phrasing) has always
 // had real Latin authored, independent of this.
-import type { FeastClass, LiturgicalDay, TemporalCategory, Weekday } from './types';
+import type { Commemoration, FeastClass, LiturgicalDay, TemporalCategory, Weekday } from './types';
 import { easterSunday } from './easter';
 import { adventStart, firstSundayStrictlyAfter, sundayOnOrBefore } from './temporal';
 import { addDays, daysBetween, toIsoDate } from './date-math';
 import { getTemporalFeastRecord, movableTemporalFeasts } from './temporal-feasts';
 import { activeOctavesFor, octaveGoverningPrivilegedDay, resolveActiveOctave, type ActiveOctave } from './octaves';
 import { resolveTemporalId } from './temporal-id';
+import { compareCommemorations } from './commemoration-order';
 import { getSaintRecord } from './feasts';
 
 interface Bi {
@@ -611,31 +612,42 @@ const CROSS_DAY_VESPERS_LABELS: Record<'today' | 'tomorrow', Bi> = {
  *   headline. Rendered via `octaveCommemorationLabel` — the "Octave of X
  *   (Nth Day)" phrasing, no rank.
  */
+/** Sort key alongside each rendered `Bi`, so the merged list below can be
+ * ordered "most recent date first" (see commemoration-order.ts) across
+ * every kind at once — a plain kind-grouped concatenation (the previous
+ * design) can't interleave e.g. a temporal and an octave commemoration by
+ * real date, only by which bucket they landed in. */
+interface CommemorationItem {
+  c: Commemoration;
+  bi: Bi;
+}
+
 function collectCommemorations(
   day: LiturgicalDay,
-  opts: { showOctaves: boolean; excludeOctaveId?: string },
-): { sanctoral: Bi[]; temporal: Bi[]; octaves: Bi[] } {
+  opts: { showOctaves: boolean; excludeOctaveId?: string; includeTemporal?: boolean },
+): Bi[] {
   const temporalId = resolveTemporalId(day.date);
   const activeOctaves = opts.showOctaves ? activeOctavesFor(day.date) : [];
-  const sanctoral: Bi[] = [];
-  const temporal: Bi[] = [];
-  const octaves: Bi[] = [];
+  const items: CommemorationItem[] = [];
   for (const c of day.commemorations) {
     if (c.kind === 'sanctoral') {
       const name = biName(c.name, c.nameLa);
       if (c.vespersNote) {
-        sanctoral.push(bi(`${name.en} (${CROSS_DAY_VESPERS_LABELS[c.vespersNote].en})`, `${name.la} (${CROSS_DAY_VESPERS_LABELS[c.vespersNote].la})`));
+        items.push({
+          c,
+          bi: bi(`${name.en} (${CROSS_DAY_VESPERS_LABELS[c.vespersNote].en})`, `${name.la} (${CROSS_DAY_VESPERS_LABELS[c.vespersNote].la})`),
+        });
       } else if (c.transferredFrom) {
         // Same "arrived via transfer, not natively due here" signal as a
         // transferred-in *winner* gets — a reader shouldn't need to already
         // know this saint's real date to realize a mere commemoration here
         // is standing in for a transfer, not this date's own natural
         // sanctoral standing.
-        sanctoral.push(bi(`${name.en} (${TRANSFERRED_LABEL.en})`, `${name.la} (${TRANSFERRED_LABEL.la})`));
+        items.push({ c, bi: bi(`${name.en} (${TRANSFERRED_LABEL.en})`, `${name.la} (${TRANSFERRED_LABEL.la})`) });
       } else {
-        sanctoral.push(name);
+        items.push({ c, bi: name });
       }
-    } else if (c.kind === 'temporal') {
+    } else if (c.kind === 'temporal' && opts.includeTemporal) {
       // `c.id === temporalId` (the plain governing weekday, e.g. "Saturday
       // in the 15th week after Trinity") is deliberately never shown here:
       // this function only ever runs to list *secondary* identities
@@ -673,19 +685,26 @@ function collectCommemorations(
         const emberName = emberDayLabel(c.id);
         const feast = emberName ? undefined : getTemporalFeastRecord(c.id);
         if (emberName) {
-          temporal.push(emberName);
+          items.push({ c, bi: emberName });
         } else if (feast) {
-          temporal.push(biName(feast.name, feast.nameLa));
+          items.push({ c, bi: biName(feast.name, feast.nameLa) });
         }
       } else if (day.weekday === 'sunday') {
-        temporal.push(temporalLabel(day));
+        items.push({ c, bi: temporalLabel(day) });
+      } else if (c.name) {
+        // Cross-day Vespers/Compline case (commemorationOfDisplacedPredecessor):
+        // `day` here is tomorrow, not the actual displaced Sunday, so
+        // `day.weekday === 'sunday'` above can't fire even though this
+        // commemoration genuinely is of a Sunday — the commemoration already
+        // carries its own real bilingual label for exactly this reason.
+        items.push({ c, bi: biName(c.name, c.nameLa) });
       }
-    } else if (opts.showOctaves && c.id !== opts.excludeOctaveId) {
+    } else if (c.kind === 'octave' && opts.showOctaves && c.id !== opts.excludeOctaveId) {
       const octave = activeOctaves.find((a) => a.id === c.id);
-      octaves.push(octave ? octaveCommemorationLabel(octave) : biName(c.name, c.nameLa));
+      items.push({ c, bi: octave ? octaveCommemorationLabel(octave) : biName(c.name, c.nameLa) });
     }
   }
-  return { sanctoral, temporal, octaves };
+  return [...items].sort((a, b) => compareCommemorations(day, a.c, b.c)).map((i) => i.bi);
 }
 
 const RANK_LABELS: Record<FeastClass, Bi> = {
@@ -826,8 +845,8 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
     // octaves, then any other commemoration).
     const rank = formatRank('duplex');
     const primary = bi(`All Souls' Day (${rank.en})`, `In Commemoratióne Ómnium Fidélium Defunctórum (${rank.la})`);
-    const { sanctoral, octaves } = collectCommemorations(day, { showOctaves: true });
-    return withTransferNote(day, joinBi([primary, ...octaves, ...sanctoral]));
+    const commemorations = collectCommemorations(day, { showOctaves: true });
+    return withTransferNote(day, joinBi([primary, ...commemorations]));
   }
   if (day.winner.kind === 'sanctoral') {
     // Octaves only ride along here on `ordinary-feria` — a day with real
@@ -837,15 +856,16 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
     // that's also within both St. Lawrence's and the Assumption's octave
     // windows, and Divino Afflatu 1954's own commemoration line names
     // only the Sunday, no octave).
-    const { sanctoral, temporal, octaves } = collectCommemorations(day, {
+    const commemorations = collectCommemorations(day, {
       showOctaves: day.temporalCategory === 'ordinary-feria',
+      includeTemporal: true,
     });
     const rank = formatRank(day.winner.rank);
     const winnerName = biName(day.winner.name, day.winner.nameLa);
     const winner = day.winner.transferredFrom
       ? bi(`${winnerName.en} (${rank.en}, ${TRANSFERRED_LABEL.en})`, `${winnerName.la} (${rank.la}, ${TRANSFERRED_LABEL.la})`)
       : bi(`${winnerName.en} (${rank.en})`, `${winnerName.la} (${rank.la})`);
-    return withTransferNote(day, joinBi([winner, ...temporal, ...sanctoral, ...octaves]));
+    return withTransferNote(day, joinBi([winner, ...commemorations]));
   }
 
   // A named temporal feast (Christmas, Pentecost, Marian Saturday, ...)
@@ -859,8 +879,8 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
     const primary = namedFeast.rank
       ? bi(`${name.en} (${formatRank(namedFeast.rank).en})`, `${name.la} (${formatRank(namedFeast.rank).la})`)
       : name;
-    const { sanctoral } = collectCommemorations(day, { showOctaves: false });
-    return withTransferNote(day, joinBi([primary, ...sanctoral]));
+    const commemorations = collectCommemorations(day, { showOctaves: false });
+    return withTransferNote(day, joinBi([primary, ...commemorations]));
   }
 
   // A season's own named anchor day (Trinity Sunday, Easter, Ash
@@ -872,8 +892,8 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
   // what's actually being celebrated even when a lesser saint rides along.
   const anchorName = anchorDayName(day);
   if (anchorName) {
-    const { sanctoral } = collectCommemorations(day, { showOctaves: false });
-    return withTransferNote(day, joinBi([anchorName, ...sanctoral]));
+    const commemorations = collectCommemorations(day, { showOctaves: false });
+    return withTransferNote(day, joinBi([anchorName, ...commemorations]));
   }
 
   // An active octave (St. Lawrence's, ...) is this day's real primary
@@ -907,9 +927,9 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
   const activeOctave =
     day.temporalCategory === 'ordinary-feria' ? resolveActiveOctave(day.date) : octaveGoverningPrivilegedDay(day);
   if (activeOctave) {
-    const { sanctoral, octaves } = collectCommemorations(day, { showOctaves: true, excludeOctaveId: activeOctave.id });
+    const commemorations = collectCommemorations(day, { showOctaves: true, excludeOctaveId: activeOctave.id });
     const primary = octaveLabel(activeOctave);
-    return withTransferNote(day, joinBi([primary, ...octaves, ...sanctoral]));
+    return withTransferNote(day, joinBi([primary, ...commemorations]));
   }
 
   const temporalRank = TEMPORAL_CATEGORY_RANK_LABELS[day.temporalCategory];
@@ -922,8 +942,8 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
   // where the Christmas Octave's own stacked octaves are deliberately
   // never named at all, even as a commemoration (see the governing-octave
   // branch's own doc comment for why).
-  const { sanctoral, octaves } = collectCommemorations(day, { showOctaves: day.season !== 'christmastide' });
-  return withTransferNote(day, joinBi([temporal, ...octaves, ...sanctoral]));
+  const commemorations = collectCommemorations(day, { showOctaves: day.season !== 'christmastide' });
+  return withTransferNote(day, joinBi([temporal, ...commemorations]));
 }
 
 /**

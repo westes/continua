@@ -294,8 +294,12 @@ describe('getDayLabel — active octave', () => {
     // question): "Commemoratio: Tertia die infra Octavam S. Assumptionis
     // Beatæ Mariæ Virginis", not a bare "The Assumption of the Blessed
     // Virgin Mary".
+    // Commemoration order is most-recent-date-first (2026-09-13 user
+    // decision, calendar/commemoration-order.ts): St. Hyacinth's own day
+    // is Aug 17 itself, more recent than the Assumption octave's Day 3
+    // (whose governing start date is Aug 15), so he now sorts ahead of it.
     expect(getDayLabel(resolveDay('2026-08-17')).en).toBe(
-      'Octave of St. Lawrence, Deacon and Martyr (Duplex) — Octave of the Assumption of the Blessed Virgin Mary (3rd Day) — St. Hyacinth, Confessor',
+      'Octave of St. Lawrence, Deacon and Martyr (Duplex) — St. Hyacinth, Confessor — Octave of the Assumption of the Blessed Virgin Mary (3rd Day)',
     );
     expect(getDayLabel(resolveDay('2026-08-18')).en).toBe(
       'Octave of the Assumption of the Blessed Virgin Mary (4th Day, Duplex) — St. Agapitus, Martyr',

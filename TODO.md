@@ -7684,3 +7684,51 @@ Douay-Rheims scripture/martyrology/homily prose text under `src/data/scripture/`
 `src/data/martyrology/`, `src/data/propers/` alone — those are source-text quotations, not this
 app's own generated incipit labels (same boundary as the 2026-09-04 Ezekiel fix). `npm test`
 (2088 passed) and `tsc --noEmit` both pass.
+
+
+### Vespers/Lauds/Matins bug sweep + commemoration reordering, prompted by 2026-09-13's own Vespers (2026-09-13)
+
+User's own question about that evening's Vespers ("the responsory has alleluias in it... like it's
+a Paschaltide responsory") surfaced a real, year-round-recurring bug family, plus a design change:
+
+- **Alleluia leak**: 2026-09-13's Vespers is genuinely First Vespers of the Exaltation of the Holy
+  Cross (Sept 14), correctly anticipated per existing `calendar/vespers.ts` logic. Exaltation
+  reuses Finding of the Holy Cross's (May 3, genuinely Paschaltide) Common bundle wholesale, and
+  that Common's Vespers responsory/versicle and Lauds/Benedictus antiphon files hardcoded Alleluia
+  unconditionally — correct for May 3, wrong reused outside Paschaltide. Fixed via the existing
+  `-paschaltide` variant-file convention (Vespers responsory/versicle) and `withPaschaltideAlleluia`
+  (Benedictus/Magnificat antiphons, previously deliberately un-gated for a saint's own proper
+  antiphon — that restriction lifted). The non-Paschaltide Vespers responsory's refrain
+  ("Miserére nostri, qui passus es pro nobis") is sourced from the reference engine's own parallel
+  Matins Responsory 11 for Sept 14, not invented.
+- **Missing Magnificat antiphon + a real mislabeling found while sourcing it**: neither feast had a
+  Magnificat antiphon authored at all. Sourcing it from the reference engine's own antiphon-
+  selection rule (`horas.pl`'s `canticum()`) showed the *existing* "Benedictus antiphon" file was
+  actually miswired — it held `[Ant 1]` ("O Crux, splendídior..."), which the engine's own logic
+  assigns to First Vespers' Magnificat specifically, not Lauds; Lauds (and Second Vespers) actually
+  share the higher-numbered `[Ant 2]` ("Super ómnia ligna cedrórum...", never authored before). Both
+  now correctly split across `finding-of-the-holy-cross-antiphon.yml` (Benedictus) and the new
+  `finding-of-the-holy-cross-magnificat-antiphon.yml`.
+- **Matins Nocturn 2/3 responsory gap**: `proper-to-the-finding-of-the-holy-cross` had no entry in
+  `matins-responsories-by-common.yml` at all, so both feasts' Nocturn 2/3 readings rendered with no
+  responsory. Seeded from the reference engine's own Sept-14-specific (not May-3-reused) Monastic
+  responsories, both already season-neutral in the source.
+- **Day header dropping "Sunday"**: a follow-up question about the same evening's header
+  surfaced that `day-label.ts`'s `collectCommemorations` derived a commemorated Sunday's name from
+  `day.weekday`, which is wrong specifically for this cross-day Vespers/Compline case (`day` is
+  *tomorrow*) — the commemoration already carried its own correct bilingual label
+  (`commemorationOfDisplacedPredecessor`) for exactly this reason, just never consulted. Fixed to
+  fall back to that carried label; brought to parity with `hours/resolve-common.ts`'s
+  `temporalCommemorationPart`, which already did this correctly.
+- **Commemoration ordering redesigned**: previously a fixed kind-based grouping (temporal-then-
+  sanctoral-then-octave, `TODO.md`'s 2026-09-05 note above says this was "the day label's own
+  convention," not a liturgical rule) — replaced, per direct user instruction, with "most recent
+  date first": each commemoration's own real governing date (a Sunday's own date; a cross-day
+  sanctoral commemoration's date shifted ±1 day via its `vespersNote`; an octave's own start date
+  via `activeOctavesFor`'s `dayNumber`), sorted descending, ties falling back to the old kind order.
+  New shared `calendar/commemoration-order.ts` (kept separate from `commemorations.ts` to avoid an
+  import cycle with `octaves.ts`) is now used by *both* `day-label.ts` (header) and
+  `hours/resolve-common.ts`'s `getDayCollects` (reading/collect list), so the two stay in sync by
+  construction. One existing test (Aug 17's St. Lawrence/Assumption-octave/St. Hyacinth label)
+  updated to the new correct order. `npm test` (2096 passed), `tsc --noEmit`, and `vite build` all
+  pass.
