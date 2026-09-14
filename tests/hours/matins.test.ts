@@ -306,7 +306,16 @@ describe('resolveOrdo("matins", ...) Advent Sunday Nocturns I-III seasonal overr
 // overlay.
 describe('resolveOrdo("matins", ...) Paschaltide Sunday Nocturns I-III seasonal override (2026-09-01 fix)', () => {
   it('every ordinary Paschaltide Sunday (Low Sunday through the Sunday before Ascension) renders identical seasonal content', () => {
-    const dates = ['2026-04-12', '2026-04-19', '2026-04-26', '2026-05-03', '2026-05-10'];
+    // 2028, not 2026: 2026-05-03 is this same Sunday slot in a year where it
+    // collides with the Finding of the Holy Cross (Duplex II. classis, which
+    // outranks an ordinary Paschaltide Sunday and wins outright — see
+    // data/hours/matins-psalmody-overrides/saints/finding-of-the-holy-
+    // cross.yml, added 2026-09-14 after this exact date's own proper
+    // psalmody was found silently falling back to this generic seasonal
+    // content instead of winning). 2028 has no such collision on any of the
+    // 5 Sundays, so it isolates the seasonal-override behavior this test
+    // actually means to check.
+    const dates = ['2028-04-23', '2028-04-30', '2028-05-07', '2028-05-14', '2028-05-21'];
     const renders = dates.map((date) => resolveOrdo('matins', date));
 
     for (const ordo of renders) {
