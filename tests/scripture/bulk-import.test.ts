@@ -36,7 +36,11 @@ describe('src/data/scripture bulk import', () => {
         // verses mislabeled/merged), which the bulk-import script refuses
         // to author from at all rather than risk silently misnumbered text.
         if (!seenNumbers.has(verse.n)) {
-          if (verse.status.en === 'verified') {
+          if (verse.status.en === 'verified' || verse.status.en === 'draft') {
+            // 'draft' covers a handful of verses the source's own English
+            // file left untranslated (2026-09-14 sweep) -- real text
+            // supplied by hand rather than sourced from Divinum Officium,
+            // so marked draft, not verified, but never blank.
             expect(verse.text.en?.length).toBeGreaterThan(0);
           } else {
             expect(verse.status.en).toBe('missing');

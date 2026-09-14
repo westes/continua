@@ -1,0 +1,67 @@
+# Verified against Divinum Officium ("Divino Afflatu 1954") -- read
+# directly from the reference engine's own real-date output
+# (web/www/horas/Latin/Tempora/Nat2-0.txt's own [Hymnus Vespera] and its
+# English counterpart), same source file as lauds-hymn-christmas-octave-
+# sunday.yml (a genuinely different hymn -- "Jesu, dulcis memoria", not
+# Lauds' "A solis ortus cardine"; Vespers does have its own hymn here,
+# unlike this id's chapter, which is byte-identical between the two
+# hours -- see vespersCapitulumForOverride's own doc comment). No `*`
+# doxology marker in the source -- a fixed, non-swappable ending, same
+# as the Lauds hymn.
+id: vespers-hymn-christmas-octave-sunday
+text:
+  la: |-
+    Jesu, dulcis memória,
+    Dans vera cordis gáudia:
+    Sed super mel, et ómnia,
+    Ejus dulcis præséntia.
+
+    Nil cánitur suávius,
+    Nil audítur jucúndius,
+    Nil cogitátur dúlcius,
+    Quam Jesus Dei Fílius.
+
+    Jesu, spes pœniténtibus,
+    Quam pius es peténtibus!
+    Quam bonus te quæréntibus!
+    Sed quid inveniéntibus?
+
+    Nec lingua valet dícere,
+    Nec líttera exprímere:
+    Expértus potest crédere,
+    Quid sit Jesum dilígere.
+
+    Sis, Jesu, nostrum gáudium,
+    Qui es futúrus prǽmium:
+    Sit nostra in te glória,
+    Per cuncta semper sǽcula.
+    Amen.
+  en: |-
+    Jesu, the very thought of thee
+    With sweetness fills my breast;
+    But sweeter far thy face to see,
+    And in thy presence rest.
+
+    Nor voice can sing, nor heart can frame,
+    Nor can the memory find,
+    A sweeter sound than thy blest Name,
+    O Saviour of mankind!
+
+    O Hope of every contrite heart,
+    O Joy of all the meek,
+    To those who fall, how kind Thou art!
+    How good to those who seek!
+
+    But what to those who find? Ah! this
+    Nor tongue nor pen can show:
+    The love of Jesus, what it is
+    None but his loved ones know.
+
+    Jesu, our only joy be Thou,
+    As Thou our prize wilt be;
+    Jesu, be Thou our glory now,
+    And through eternity.
+    Amen.
+status:
+  la: verified
+  en: verified

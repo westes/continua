@@ -7763,3 +7763,80 @@ a Paschaltide responsory") surfaced a real, year-round-recurring bug family, plu
   construction. One existing test (Aug 17's St. Lawrence/Assumption-octave/St. Hyacinth label)
   updated to the new correct order. `npm test` (2096 passed), `tsc --noEmit`, and `vite build` all
   pass.
+
+### Every `status: 'missing'` occurrence eliminated app-wide (2026-09-14)
+
+Prompted by that evening's own blank Magnificat antiphon (First Vespers of the Seven Sorrows of
+the BVM, Sept 15, governing 2026-09-14's evening — no `seven-sorrows-of-the-bvm-magnificat-
+antiphon.yml`, and `benedictusCommon` unset so the Common-category fallback never fired either) and
+a direct instruction that no `status: 'missing'` text may remain anywhere in the app, full stop.
+
+A plain YAML grep for `status: ... missing` only ever catches a *flagged* gap — the Magnificat case
+above is a *structural* one, invisible that way (nothing in any YAML says "missing"; the runtime
+fallback chain in `getMagnificatAntiphon` just silently produces an empty `ResolvedText`). Found
+every real instance instead by resolving all 8 hours for every sanctoral day and two full temporal
+years (2026-2027) and inspecting the actual rendered output — a throwaway audit script, not kept —
+for any `{text, status}`-shaped node with empty `text` regardless of what `status` said (a second,
+independent bug in `splitNamedAntiphon` was silently dropping `status` to `{}` on empty input,
+which is why the naive `status.en === 'missing'` check alone wasn't enough).
+
+Fixed, by category:
+- **137 saints** had no reachable Magnificat antiphon (own `${propers}-magnificat-antiphon` file,
+  or `benedictusCommon`-keyed Common file) at all. Root-caused: 96 just needed `benedictusCommon`
+  set to their own already-correct `common` field value (reusing already-authored Common-category
+  files — Several Martyrs, BVM, Confessor Bishop, Martyr, Virgin Martyr, Confessor, Abbot, Virgin,
+  Holy Woman), with `common-of-a-martyr-bishop`→`common-of-a-martyr` and `common-of-a-widow`→
+  `common-of-a-virgin` collapsed per the already-established convention (confirmed by
+  `magnificat-antiphon-common-of-a-martyr.yml`'s own header, which already documented covering
+  `-bishop` too). New Common-category files authored from the reference engine's own `[Ant 3]`
+  (Second Vespers convention, matching every existing Common magnificat file): `common-of-an-
+  apostle` (17 saints), `common-of-an-evangelist` (3 — genuinely identical text, `C1a.txt` is bare
+  `@Commune/C1` for every antiphon section), `common-of-apostles` (plural-day variant, 1),
+  `common-of-a-confessor-not-bishop` (5, incl. St. Camillus de Lellis whose own `benedictusCommon`
+  was already set to this category but the file didn't exist). New own-proper files sourced
+  directly from each feast's own `[Ant 3]` (or a duplicated `[Ant 1]`, same convention as
+  `exaltation-of-the-holy-cross-magnificat-antiphon.yml`, when no separate Second Vespers text
+  exists in the source): the 4 Archangel/Guardian-Angels feasts, St. Peter's Seven Founders of the
+  Servite Order, All Saints of the Benedictine Order (`SanctiM/11-13M.txt` — English supplied by
+  hand, `draft`, since the reference engine's own English file has no rendering of this antiphon at
+  all), Most Precious Blood, the Transfiguration, and the Visitation of the BVM. `ss-ursula-and-
+  companions` deliberately left unset (her own file already documents she can never actually be the
+  day's winner) and the 3 pre-major-feast Vigils deliberately untouched (`getMagnificatAntiphon`'s
+  own `rank === 'vigil'` branch already provides real content via the classic weekday-default table
+  before ever reaching `benedictusCommon`, confirmed live).
+- **`christmas-octave-sunday`'s own Vespers hymn/versicle**: had a real chapter (borrowed from
+  Lauds, correctly) but no `vespers-hymn-`/`vespers-versicle-` file of its own, so both rendered
+  empty — unlike the chapter, Vespers genuinely has its own distinct hymn here (`[Hymnus Vespera]`,
+  "Jesu, dulcis memória", not Lauds' "A solis ortus cardine"). Sourced from `Tempora/Nat2-0.txt`.
+- **The 4 Archangel/Guardian-Angels feasts' Matins Nocturn 3**: rendered an empty antiphon part
+  before the Gospel. Live-verified genuinely no-antiphon-in-source, not an authoring gap (each
+  feast's own 9 `[Ant Matutinum]` antiphons are fully consumed across Nocturn 1 (6) + Nocturn 2 (3),
+  none left for Nocturn 3) — `sundayCanticleNocturn` (`hours/matins.ts`) now omits the closing
+  `antiphon` part entirely when `group.antiphon` is genuinely absent, same "omit rather than render
+  empty" convention as Vespers' own `NO_VESPERS_RESPONSORY`.
+- **12 scripture verses** (`1thess-4`, `2thess-2`, `2reg-13`, `gen-5`, `isa-33` ×2, `isa-46`,
+  `jdth-4`, `2cor-1`, `joan-11`, `jos-10`, `sir-29`, `sir-36`) had a literal `en: missing` marker —
+  the bulk-imported "Unbound Bible" Douay-Rheims source itself has no English for these particular
+  verses. First pass translated these by hand from the Vulgate and marked `draft`; corrected same-day
+  after a direct question ("why not pull this from the scripture store" / "why translate it
+  yourself") — cross-checked each against drbo.org's own Douay-Rheims + Latin-Vulgate parallel pages
+  instead of freehanding a translation, now `verified`. All 12 turned out close to the hand
+  translation (same well-known Challoner-register wording), with the exact published phrasing
+  substituted in a few (e.g. "the upbraiding of houseroom, and the reproaching of the lender" for
+  Sir 29:34, not "household"/"usurer"). Same pass also caught the new
+  `all-saints-of-the-benedictine-order-magnificat-antiphon.yml` mismarked `draft` when its English
+  is a verbatim, already-`verified` quote from this app's own
+  `nocturn-readings/ss-seven-founders-of-the-servite-order.yml` — corrected to `verified`.
+
+**Explicitly out of scope for this pass** (per direct instruction — draft content is acceptable,
+only literal `missing` is not): the ~324 pre-existing `status: 'draft'` files found during the same
+sweep (277 `propers/common`, 17 `nocturn-readings`, 15 `temporal`, 12 `octave-readings`, plus
+`vespers-magnificat-antiphons.yml`'s Thursday/Friday) — real text already on file, just not yet
+independently re-verified against the reference engine. A future pass.
+
+`npm test` (2096 passed), `tsc --noEmit`, and `vite build` all pass. Two pre-existing tests updated
+to match: `resolve-common.test.ts`'s Sunday-weekday-default case (used to rely on 2026-01-04 hitting
+the *then*-still-unauthored Holy Innocents octave to observe `'missing'` — that octave now resolves
+to real content too, so the invariant is asserted directly against `vespers-magnificat-
+antiphons.yml`'s own data instead); `bulk-import.test.ts` now accepts `draft` (with real text) as
+well as `verified` for a scripture verse's English status.

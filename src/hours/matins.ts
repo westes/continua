@@ -427,11 +427,19 @@ function sundayPsalmNocturn(group: SundayNocturn, day: LiturgicalDay): ResolvedP
 }
 
 /** Nocturn 3's 3 fixed OT canticles under one shared antiphon — see
- * data/hours/matins-sunday-antiphons.yml's own header. */
+ * data/hours/matins-sunday-antiphons.yml's own header.
+ *
+ * `group.antiphon` is genuinely absent (not an authoring gap) for the
+ * Archangel/Guardian Angels feasts: their own source files (e.g.
+ * web/www/horas/Latin/Sancti/03-24.txt for St. Gabriel) give exactly 9
+ * proper [Ant Matutinum] antiphons, all consumed across Nocturn 1 (6) and
+ * Nocturn 2 (3) — live-verified none is left over for Nocturn 3, which
+ * runs straight from its last reading's responsory to the Gospel with no
+ * antiphon at all. Closing `antiphon` part only pushed when real text
+ * exists, same "omit rather than render empty" convention as Vespers'
+ * NO_VESPERS_RESPONSORY (see tests/hours/vespers.test.ts). */
 function sundayCanticleNocturn(group: SundayNocturn, day: LiturgicalDay): ResolvedPart[] {
-  const antiphonText = verifiedText(group.antiphon ?? {});
-  const opening = openingAntiphon(antiphonText, resolveOfficeWinner(day));
-  const { full } = splitNamedAntiphon(antiphonText);
+  const opening = group.antiphon ? openingAntiphon(verifiedText(group.antiphon), resolveOfficeWinner(day)) : undefined;
   const parts: ResolvedPart[] = (group.canticles ?? []).map((c, i) => {
     const verses = c.refs.flatMap((ref) => getScriptureVerses(ref.book, ref.chapter, ref.verses));
     const text: BilingualText = {
@@ -445,7 +453,10 @@ function sundayCanticleNocturn(group: SundayNocturn, day: LiturgicalDay): Resolv
       antiphon: i === 0 ? opening : undefined,
     };
   });
-  parts.push({ kind: 'antiphon', text: full });
+  if (group.antiphon) {
+    const { full } = splitNamedAntiphon(verifiedText(group.antiphon));
+    parts.push({ kind: 'antiphon', text: full });
+  }
   parts.push({ kind: 'versicle', text: versicleText(group.versicle) });
   return parts;
 }

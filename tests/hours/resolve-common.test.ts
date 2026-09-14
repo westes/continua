@@ -9,6 +9,7 @@ import {
   splitNamedAntiphon,
 } from '../../src/hours/resolve-common';
 import type { LiturgicalDay, Season } from '../../src/calendar/types';
+import vespersMagnificatAntiphonsData from '../../src/data/hours/vespers-magnificat-antiphons.yml';
 
 function syntheticSanctoralDay(id: string, season: Season = 'trinitytide'): LiturgicalDay {
   return {
@@ -345,15 +346,21 @@ describe('getMagnificatAntiphon — classic weekday-default fallback', () => {
   });
 
   it('has no weekday default for Sunday (its own antiphon varies by Proper of the Time)', () => {
-    const day: LiturgicalDay = {
-      date: '2026-01-04',
-      weekday: 'sunday',
-      season: 'trinitytide',
-      temporalCategory: 'ordinary-sunday',
-      winner: { kind: 'temporal', id: 'not-a-real-temporal-id' },
-      commemorations: [],
-    };
-    const magnificat = getMagnificatAntiphon(day);
-    expect(magnificat.status.la).toBe('missing');
+    // Can no longer be exercised end-to-end through getMagnificatAntiphon
+    // with any real date at all, even a synthetic-winner one: after the
+    // full-sweep pass that closed every remaining Magnificat-antiphon gap
+    // (2026-09-14, see TODO.md) every real date's own resolveTemporalId
+    // fallback *and* every reachable active-octave saint now has real
+    // content of their own, so tier 2 (or the octave-driven sanctoral
+    // branch) always wins before this tier is ever reached for a real
+    // date -- a previous version of this test relied on 2026-01-04
+    // landing inside the (at the time still-unauthored) Holy Innocents
+    // octave to observe 'missing' here; that octave now resolves to real
+    // content too, so the same date no longer demonstrates this. Assert
+    // the underlying invariant directly instead: vespers-magnificat-
+    // antiphons.yml's own header documents Sunday's entry as deliberately
+    // absent (its antiphon varies by that Sunday's own Proper of the
+    // Time, not a fixed weekly default).
+    expect(vespersMagnificatAntiphonsData).not.toHaveProperty('sunday');
   });
 });
