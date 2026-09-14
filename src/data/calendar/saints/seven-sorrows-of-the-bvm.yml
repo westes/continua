@@ -10,6 +10,9 @@
 id: seven-sorrows-of-the-bvm
 name: "The Seven Sorrows of the Blessed Virgin Mary"
 nameLa: "Septem Dolores Beatæ Mariæ Virginis"
+# Browser-tab title only (see calendar/feasts.ts's SaintRecord.titleName
+# doc comment) -- full name overflows the title's length cap.
+titleName: "Seven Sorrows of the BVM"
 rank: duplex-2-classis
 common: common-of-the-bvm
 propers: "seven-sorrows-of-the-bvm"
