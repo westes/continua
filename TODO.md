@@ -7686,6 +7686,37 @@ app's own generated incipit labels (same boundary as the 2026-09-04 Ezekiel fix)
 (2088 passed) and `tsc --noEmit` both pass.
 
 
+### Exaltation of the Holy Cross wrongly reused Finding's Matins content — real distinct sourcing restored (2026-09-14)
+
+User, on the feast day itself: "exaltation is not the same feast as finding" — flagging that
+2026-09-14's Matins antiphons looked wrong. Confirmed as a real sourcing bug, not just a judgment
+call: `exaltation-of-the-holy-cross.yml`'s own `[Rule]` (`ex Sancti/05-03`) only governs the
+untagged/default parts of the *secular* office — versicles, `Ant 1`, `Ant Vespera`, Lauds
+capitulum genuinely are shared with Finding of the Holy Cross (May 3), and stay that way. But
+the reference engine's own **Monastic-specific file for this feast**,
+`../divinum-officium-reference/web/www/horas/Latin/SanctiM/09-14.txt`, was never consulted when
+this feast's Matins psalmody/nocturn-readings were authored earlier today (commit `7757ade`) —
+it's not a passthrough, and carries real, distinct content: three proper Matins antiphons
+(`AntMatutinumM`, one explicitly tagged `Ant Matutinum 3N` — the source itself marks it as the
+Nocturn 3 antiphon), its own Nocturn 2 legend (the Emperor Heraclius recovering the Cross from
+Chosroes, King of Persia, 614-629 AD — a different historical event from Finding's 4th-century
+St. Helena narrative, which had been duplicated in wholesale by mistake), a distinct Responsory4
+("O crux benedícta..."), and the secular file's own `[Oratio]` is textually distinct from
+Finding's collect too.
+
+Fixed: new Matins Nocturn 1/2/3 antiphons + Nocturn 2 responsory sourced from `SanctiM/09-14.txt`/
+`Sancti/09-14.txt` (`matins-psalmody-overrides/saints/exaltation-of-the-holy-cross.yml`,
+`propers/nocturn-readings/exaltation-of-the-holy-cross.yml`); `propers` split off its own id
+(`exaltation-of-the-holy-cross`, was pointed straight at `finding-of-the-holy-cross`) so the
+collect could diverge — new `exaltation-of-the-holy-cross-collect.yml` with the real distinct
+Oratio, plus duplicated (genuinely shared, not a bug) `-antiphon`/`-magnificat-antiphon`/
+`-commemoration` files under the new id, since that lookup mechanism has no cross-id fallback
+(same constraint as the Matins files). Nocturn 3 (Gospel + Augustine homily) and `common` (Lauds/
+Vespers antiphons, hymns, capitulum, versicles) are untouched — confirmed genuinely shared by the
+Monastic file's own directives, not conflation. `npm test` (2096 passed) and `npm run build` both
+pass.
+
+
 ### Vespers/Lauds/Matins bug sweep + commemoration reordering, prompted by 2026-09-13's own Vespers (2026-09-13)
 
 User's own question about that evening's Vespers ("the responsory has alleluias in it... like it's

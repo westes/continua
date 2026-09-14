@@ -5,17 +5,34 @@
 # excluded entirely under a stale "fixed feast of the Lord, same
 # convention as the Finding of the Holy Cross" note in
 # sanctoral-calendar.yml's own September comment -- wrong, same class of
-# error, now fixed alongside it (see finding-of-the-holy-cross.yml). Her
-# own [Rule] is `ex Sancti/05-03` -- she reuses the Finding of the Holy
-# Cross's content wholesale, so `propers` points at that saint's own
-# collect/antiphon files directly rather than duplicating them (same
-# cross-id-reuse pattern as st-michael.yml's `apparition-of-st-michael`).
-# The Matins nocturn-readings mechanism has no equivalent cross-id
-# lookup, so exaltation-of-the-holy-cross.yml duplicates
-# finding-of-the-holy-cross.yml's own reading content instead.
+# error, now fixed alongside it (see finding-of-the-holy-cross.yml).
+#
+# CORRECTED 2026-09-14 (user: "exaltation is not the same feast as
+# finding"): the `ex Sancti/05-03` [Rule] line only governs the untagged/
+# default parts of the *secular* office (versicles, Ant 1, Ant Vespera,
+# Lauds capitulum -- these genuinely are shared, `common` below stays
+# pointed at Finding's Common category for them). But the reference
+# engine's own Monastic-specific file for this feast,
+# `web/www/horas/Latin/SanctiM/09-14.txt`, is *not* a passthrough -- it
+# carries its own real, distinct Matins antiphons (AntMatutinumM, one
+# explicitly tagged `Ant Matutinum 3N`), its own Nocturn 2 legend
+# (Heraclius recovering the Cross from the Persians -- see
+# nocturn-readings/exaltation-of-the-holy-cross.yml), and the secular
+# file's own [Oratio] (collect) is textually distinct from Finding's too.
+# A previous pass (commit 7757ade) missed SanctiM/09-14.txt entirely and
+# authored this feast's Matins psalmody/readings as byte-for-byte
+# duplicates of Finding's own May 3 content -- fixed alongside this.
+#
+# `propers` now points at this feast's own id (was `finding-of-the-holy-
+# cross`) so her genuinely distinct collect can be authored separately
+# (exaltation-of-the-holy-cross-collect.yml) -- the antiphon/magnificat-
+# antiphon/commemoration files under this id are still genuinely-shared
+# text, duplicated rather than cross-referenced for the same reason the
+# Matins nocturn-readings mechanism already duplicates (no cross-id
+# lookup for these per-saint categories).
 id: exaltation-of-the-holy-cross
 name: "The Exaltation of the Holy Cross"
 nameLa: "Exaltatio Sanctæ Crucis"
 rank: duplex-majus
 common: proper-to-the-finding-of-the-holy-cross
-propers: "finding-of-the-holy-cross"
+propers: "exaltation-of-the-holy-cross"

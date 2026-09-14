@@ -1,0 +1,20 @@
+# Lauds' Benedictus antiphon for the Exaltation of the Holy Cross (Sept
+# 14) -- genuinely identical to finding-of-the-holy-cross-antiphon.yml
+# (May 3): the Monastic reference file's own [Ant Laudes]/[Ant 2]
+# directive for Sept 14 is `@Sancti/05-03:Ant Vespera`/`@:Ant Laudes`,
+# a real shared-text rule (unlike the collect, which genuinely differs --
+# see exaltation-of-the-holy-cross-collect.yml). Duplicated verbatim
+# rather than cross-referenced because `propers` now points at this
+# feast's own id (`exaltation-of-the-holy-cross`, split off 2026-09-14 so
+# the collect could diverge), and the antiphon/magnificat-antiphon/
+# commemoration lookup mechanism has no cross-id fallback (same
+# constraint already documented on the Matins psalmody/nocturn-readings
+# files). Text sourced from web/www/horas/Latin/Sancti/05-03.txt's own
+# [Ant 2] and its English counterpart.
+id: exaltation-of-the-holy-cross-antiphon
+text:
+  la: "Super ómnia * ligna cedrórum tu sola excélsior, in qua Vita mundi pepéndit, in qua Christus triumphávit, et mors mortem superávit in ætérnum."
+  en: "Thou art higher * than all cedars, whereon the Life of the world hung, whereon Christ openly triumphed, and His death trampled down death for ever."
+status:
+  la: verified
+  en: verified
