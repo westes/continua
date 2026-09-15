@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "audit:sources": "node scripts/audit-source-fidelity.mjs"
   },
   "dependencies": {
     "@fontsource/eb-garamond": "^5.3.0",
@@ -18,6 +19,7 @@
   "devDependencies": {
     "@rollup/plugin-yaml": "^5.0.0",
     "@types/node": "^26.5.1",
+    "js-yaml": "^4.3.2",
     "jsdom": "^30.0.0",
     "typescript": "^5.9.0",
     "vite": "^8.0.0",
