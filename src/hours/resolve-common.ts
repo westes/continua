@@ -1171,10 +1171,13 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
  * reading. Three tiers, precedence matching getBenedictusAntiphon's own
  * proper-then-common shape, with a season tier added beneath it:
  *
- * 1. A saint's own proper `${propers}-lectio-prima` (the reference
- *    engine's `[Lectio Prima]` tag, present for 36 saints in `Sancti/
- *    *.txt`, confirmed 2026-09-15) — comparatively rare, not every
- *    Duplex+ feast has one.
+ * 1. A saint's own proper `${propers}-lectio-prima`, or (for the one
+ *    temporal id that has one, Christ the King — `10-DU.txt`'s own
+ *    `[Lectio Prima]`, Col 1:19-20) `${winnerId}-lectio-prima` via
+ *    `getTemporalProperWithFallback`, same lookup every other temporal
+ *    proper already uses. The reference engine's `[Lectio Prima]` tag is
+ *    present for ~36 saints/feasts total across `Sancti/*.txt` (confirmed
+ *    2026-09-15) — comparatively rare, not every Duplex+ feast has one.
  * 2. Her Common category's own `prime-lectio-prima-common-of-${common}`
  *    (13 of the ~14 numbered Commune files carry their own `[Lectio
  *    Prima]` too — confirmed 2026-09-15 while chasing why the old
@@ -1213,7 +1216,11 @@ export function getPrimeLectioBrevis(day: LiturgicalDay): ResolvedText {
 
   const winner = resolveOfficeWinner(day);
   if (winner.kind === 'temporal') {
-    return firstAvailable([seasonal], perAnnum);
+    // Christ the King (10-DU.txt) is the one temporal id with a real own
+    // [Lectio Prima] -- found in the same sweep, reached the same way as
+    // her other propers (getTemporalProperWithFallback).
+    const temporalProper = toResolvedText(getTemporalProperWithFallback(winner.id, 'lectio-prima', day));
+    return firstAvailable([temporalProper, seasonal], perAnnum);
   }
   const saint = getSaintRecord(winner.id);
   const proper = saint?.propers ? resolveCommon(`${saint.propers}-lectio-prima`) : undefined;

@@ -16,14 +16,16 @@ content in the same shape, not a design change. The dated log below is that pipe
 2. **Minimal-proof-done, bulk content pending**
    - Prime's per-feast Lectio Brevis override (`getPrimeLectioBrevis`, `${propers}-lectio-prima`):
      full 4-tier mechanism built (proper/Common/season/per-annum, all four proven live, 2026-09-15,
-     see Work Log). The reference engine's own `[Lectio Prima]` tag exists for 36 saints total in
-     `Sancti/*.txt` -- only Seven Sorrows authored so far; the other 35 fall through to their
-     Common category or season, not wrong, just not yet as specific as they could be. Same "sweep
-     the rest" shape as every other per-saint proper text family in this project.
+     see Work Log). The reference engine's own `[Lectio Prima]` tag exists for ~36 saints/feasts
+     total in `Sancti/*.txt` -- Seven Sorrows, Most Precious Blood, and Christ the King authored
+     so far; the other ~33 fall through to their Common category or season, not wrong, just not
+     yet as specific as they could be. Same "sweep the rest" shape as every other per-saint proper
+     text family in this project.
    - Prime's per-feast responsory override (`prime-chapter-responsory-by-feast.yml`'s `byFeastId`):
-     genuinely empty, not stale documentation (see Work Log, 2026-09-15) -- needs a per-saint check
-     of each `[Versum Prima]` tag (some are real distinct text, some are bare `@Tempora/...`
-     redirects to the season's own content and need no entry at all) before bulk-authoring.
+     **done**, not pending -- checked all 36 `[Lectio Prima]`-bearing files for a paired
+     `[Versum Prima]`; only Most Precious Blood and Christ the King actually have one of their own
+     (everyone else redirects to the season or has no override at all). Both authored (see Work
+     Log, 2026-09-15).
 
 3. **New features**
    - Date picker: `day-nav.ts` only steps a day at a time; no way to jump to an arbitrary
@@ -59,6 +61,32 @@ content in the same shape, not a design change. The dated log below is that pipe
      content already authored ahead of this feature existing.
 
 # Work Log
+
+### Prime chapter-responsory by-feast table: verified, not bulk-content -- only 2 of 36 needed it (2026-09-15)
+
+Follow-up to the Lectio Brevis entry below, same session. User pushed back on leaving
+`prime-chapter-responsory-by-feast.yml` as an assumed-large open item: "dont we need those prime
+responsories verified? they're more like doxologies than the short reading" -- right call. Checked
+all 36 `Sancti/*.txt` files carrying a `[Lectio Prima]` tag for a paired `[Versum Prima]`: only 2
+actually have one of their own (Most Precious Blood, `07-01.txt`, "Qui tuo nos sanguine
+redemisti"; Christ the King, `10-DU.txt`, "Qui primatum in omnibus tenes") -- every other one
+either has no `[Versum Prima]` at all (season/per-annum already the right answer) or, like Seven
+Sorrows, a bare `@Tempora/...` redirect to the season's own verse. Not a 36-saint sweep like
+Lectio Brevis turned out to be -- genuinely done, both entries authored
+(`prime-chapter-responsory-most-precious-blood.yml`/`-christ-the-king.yml`,
+`byFeastId` populated).
+
+Real bug found and fixed along the way: Christ the King is a *temporal* id, and
+`resolveSeasonalPropersId` (`hours/seasonal-propers.ts`, shared by the chapter responsory, the
+opening-versicle Alleluia/Laus-tibi switch, and the seasonal Marian antiphon) only ever checked
+`byFeastId` for `winner.kind === 'sanctoral'` -- her entry would have been silently unreachable.
+Fixed to check `winner.id` regardless of kind (both `DayWinner` variants carry one). Also extended
+`getPrimeLectioBrevis` itself with a temporal-proper tier (`getTemporalProperWithFallback`, same
+lookup every other temporal proper already uses) so Christ the King's own `[Lectio Prima]`
+(Col 1:19-20) is reachable too -- the mechanism below only had sanctoral proper/Common tiers
+before this.
+
+`npm test` (2096 tests), `npx tsc --noEmit`, and `npm run build` all pass.
 
 ### Prime Lectio Brevis: wrong-source bug fixed, full 4-tier override mechanism built, stale "milestone 4" comments corrected app-wide (2026-09-15)
 

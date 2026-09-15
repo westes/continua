@@ -1,8 +1,13 @@
 # Per-feast override of the chapter responsory's verse — some sanctoral
 # feasts replace the seasonal verse with their own (real Divinum Officium's
-# `winner{'Versum Prima'}` mechanism). Empty until milestone 4's sanctoral
-# propers store exists (LiturgicalDay.occurring is always [] until then, so
-# this table has nothing to key against yet) — see
-# src/hours/chapter-responsory.ts for how a lookup miss falls back to the
-# season table above.
-byFeastId: {}
+# `[Versum Prima]` tag). Populated 2026-09-15, following the same sweep
+# that built getPrimeLectioBrevis (see TODO.md's dated Work Log entry) --
+# checked all 36 Sancti/*.txt files with a [Lectio Prima] tag for a paired
+# [Versum Prima]: only these two actually have one of their own (Seven
+# Sorrows' own, for comparison, is a bare `@Tempora/Quad5-5` redirect to
+# the season's own verse, needing no entry here at all -- most of the 36
+# are the same). See src/hours/chapter-responsory.ts for how a lookup miss
+# falls back to the season table above.
+byFeastId:
+  most-precious-blood: prime-chapter-responsory-most-precious-blood
+  christ-the-king: prime-chapter-responsory-christ-the-king

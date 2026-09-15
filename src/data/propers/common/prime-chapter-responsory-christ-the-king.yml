@@ -1,0 +1,27 @@
+# New file, 2026-09-15: per-feast variant of prime-chapter-responsory-
+# per-annum.yml -- same fixed responsory, with just the "V." verse line
+# swapped for the feast's own [Versum Prima] (web/www/horas/Latin/Sancti/
+# 10-DU.txt), found while checking whether the by-feast responsory table
+# (prime-chapter-responsory-by-feast.yml) needed real content -- see
+# prime-chapter-responsory-most-precious-blood.yml's own header for the
+# fuller context (only 2 of 36 Lectio-Prima-bearing saints/feasts turned
+# out to have a real [Versum Prima] of their own).
+id: prime-chapter-responsory-christ-the-king
+text:
+  la: |
+    R.br. Christe, Fili Dei vivi, * Miserére nobis.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+    V. Qui primátum in ómnibus tenes.
+    R. Miserére nobis.
+    V. Glória Patri, et Fílio, * et Spirítui Sancto.
+    R. Christe, Fili Dei vivi, * Miserére nobis.
+  en: |
+    R.br. Christ, Son of the living God, * have mercy on us.
+    R. Christ, Son of the living God, * have mercy on us.
+    V. Who holds the primacy in all things.
+    R. Have mercy on us.
+    V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+    R. Christ, Son of the living God, * have mercy on us.
+status:
+  la: verified
+  en: verified
