@@ -1,16 +1,37 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), live
-# prayMatutinum query (2025-09-15). Matins reading for day 8, the Nativity's
-# own octave-concluding day (In Octavam Nativitatis B.M.V.) -- a direct
-# Scripture reading (Canticles 1:1-10), resolved from
-# data/scripture/cant-1.yml (2026-08 decision).
+# Replaced 2026-09-15 (user request): the previous Canticles 1:1-10
+# Scripture excerpt (a Monastic Tridentinum 1617 live prayMatutinum query,
+# 2025-09-15) came from that track's own 3-lesson ferial Historia scheme,
+# not this octave-closing day's real proper content. The secular/Tridentine
+# 1906 track has its own dedicated file for this exact day --
+# web/www/horas/Latin/Sancti/09-15t.txt, "In Octavam Nativitatis Beatæ
+# Mariæ Virginis" (a distinct file from 09-15.txt, which is Seven Sorrows,
+# Divino Afflatu's own fixed date for this day) -- whose Lectio4-6 is a
+# genuine homily, not Scripture: St. Cyril of Alexandria's "Homilia contra
+# Nestorium," his celebrated defense of the title Theotokos preached at the
+# Council of Ephesus (431), collapsed into one continuous reading per this
+# directory's usual convention. English from the parallel
+# English/Sancti/09-15t.txt (already a complete, non-draft translation).
+# Lectio4's own `@:Lectio4o` redirect carries a set of 1888/1906-rubric
+# textual substitutions on top of the plain Lectio4o text below -- not
+# applied here, same "don't resolve every conditional variant" stance as
+# elsewhere in this project; the unmodified base text is used.
 id: nativity-bvm-octave-day-8
 source:
-  la: "Incípiunt Cántica canticórum"
-  en: "Here begins the Song of Songs"
-passages:
-  - { book: cant, chapter: 1, verses: "1-3" }
-  - { book: cant, chapter: 1, verses: "4-6" }
-  - { book: cant, chapter: 1, verses: "7-10" }
+  la: "Sermo sancti Cyrílli Epíscopi Alexandríni. Homilía contra Nestórium."
+  en: "From the Sermons of St. Cyril, Bishop of Alexandria. Against Nestorius."
+text:
+  la: |
+    Hílarem vídeo hódie cœtum fidélium ómnium, qui convenérunt promptis ánimis, a sancta et Dei Matre María semper Vírgine convocáti. Laus et glória sit tibi sancta Trínitas, quod omnes nos ad hanc celebritátem convocáris. Sit étiam tibi sancta Dei Mater laus. Tu enim es pretiósa margaríta orbis terrárum: tu lucérna inextíncti lúminis, coróna virginitátis, sceptrum orthodóxæ fídei, templum indissolúbile cóntinens eum qui núsquam continéri potest, Mater et Virgo: tu benedícta inter mulíeres, ejus párens qui benedíctus venit in nómine Dómini.
+
+    Per te Trínitas sanctificátur: per te crux pretiósa dícitur, et adorátur in toto orbe terrárum. Per te exsúltat cælum, lætántur Angeli et Archángeli, fugántur dæmónes, et homo ipse ad cælum revocátur. Omnis creatúra idolórum erróre deténta, convérsa est ad notítiam veritátis, et fidéles hómines ad sanctum baptísma pervenérunt, atque in toto orbe terrárum constrúctæ sunt ecclésiæ.
+
+    Te adjutríce gentes véniunt ad pœniténtiam. Quid plura? Per te unigénitus Dei Fílius vera illa lux effúlsit sedéntibus in ténebris et umbra mortis. Te Prophétæ prænuntiavérunt, te apóstoli summis láudibus celebravérunt. Quisnam póterit tuárum láudum præcónia explicáre, María Mater et Virgo? Hanc, fratres dilectíssimi, celebrémus, ejus Fílium Ecclésiæ sponsum immaculátum adorántes: cui honor et glória in sǽcula sæculórum. Amen.
+  en: |
+    Behold a joyful congregation of all the Saints, who have come together with glad hearts at the bidding of Holy Mary, Mother of God, and always a Virgin. Praise and glory be unto thee, O Holy Trinity! Who hast called us unto this Feast! Praise be to thee also, Holy Mother of God! Thou art the priceless Pearl of earth, thou art the undying lamp, thou art the crown of virginity, thou art the staff of the orthodox faith, thou art the everlasting temple, thou art the limits of the Illimitable, thou art Mother and Maiden, wherethrough cometh He of whom the Gospels tell, that Blessed One Who cometh in the Name of the Lord!
+
+    Through thee is the name of the Trinity hallowed, through thee is the precious Cross preached and worshipped throughout all the world. Through thee there is joy in heaven, through thee Angels and Archangels shout aloud, through thee the devils are put to flight, and man is recalled to Paradise. Through thee every creature once in bondage to idols turneth to the knowledge of the truth, through thee believers come to holy Baptism, through thee Churches are built in all the earth.
+
+    By thy help, the heathen turn to repentance. What more? Through thee the Only-begotten Son of God, He in Whom is Life, and the Life is the Light of men, hath shined upon them that sat in darkness and in the shadow of death. Through thee the Prophets have prophesied, through thee the Apostles have preached salvation unto the Gentiles. Who can set forth all thy praise, O Mary, Mother and Maiden? Dearly beloved brethren, let us glorify her, while we worship her Son, the Sinless Bridegroom of the Church, unto Whom be honour and glory for ever and ever. Amen.
 responsory:
   la: |
     R. Hódie nata est beáta Virgo María ex progénie David; * Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo. V. Nativitátem beátæ Maríæ Vírginis cum gáudio celebrémus. R. Per quam salus mundi credéntibus appáruit, cujus vita gloriósa lucem dedit sǽculo.
