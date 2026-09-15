@@ -7840,3 +7840,55 @@ the *then*-still-unauthored Holy Innocents octave to observe `'missing'` — tha
 to real content too, so the invariant is asserted directly against `vespers-magnificat-
 antiphons.yml`'s own data instead); `bulk-import.test.ts` now accepts `draft` (with real text) as
 well as `verified` for a scripture verse's English status.
+
+### Follow-up same day: 23 of the above 96 batch-wired saints had real proper content, not Common (2026-09-14)
+
+User reported the evening's Magnificat antiphon "reads like the ferial antiphon" — it wasn't
+literally ferial, but it was the generic `magnificat-antiphon-common-of-the-bvm.yml` fallback for
+the Seven Sorrows of the BVM, whose own source file (`Sancti/09-15.txt`) turns out to have real
+`[Ant 2]`/`[Ant 3]` text that the same-day batch fix never checked for — it only verified "does a
+Common file exist for this saint's `common` field," not "does this saint have her own better text
+first." Worse: `seven-sorrows-of-the-bvm-antiphon.yml` (Benedictus) was *already* wrong before this
+session too, reading `[Ant 1]` (this feast's own First Vespers Magnificat text) instead of `[Ant 2]`
+— the same mis-tagging bug already fixed once for the Exaltation of the Holy Cross (TODO.md,
+2026-09-13). Both corrected.
+
+Auditing all 96 batch-wired saints the same way (comparing each against their own `Sancti`/`SanctiM`
+source file rather than trusting "a Common file exists") found **23 total** with real own `[Ant 2]`/
+`[Ant 3]` content that the batch fix bypassed in favor of a generic Common substitution:
+Annunciation, Apparition of the Immaculate BVM, Holy Innocents, Immaculate Conception, Maternity of
+the BVM, Nativity of the BVM, Our Lady of Mount Carmel, Purification, Queenship of the BVM, the
+Seven Sorrows, Ss. John and Paul, St. Agatha, St. Agnes, St. Cecilia, St. Clement, St. Joseph,
+St. Lawrence, St. Lucy, St. Margaret of Antioch, St. Martin of Tours, St. Mary Magdalene,
+St. Paulinus of Nola, St. Robert. Of these:
+
+- **19 fixed outright**: own proper Magnificat antiphon authored from `[Ant 3]` (or a duplicated
+  `[Ant 1]`/self-referencing `[Ant 2]`, same "one text for both Vespers" convention as
+  `exaltation-of-the-holy-cross-magnificat-antiphon.yml`), and — for the 6 where the existing
+  Benedictus file also had the Ant1-for-Benedictus mis-tagging bug (Annunciation, Apparition of the
+  Immaculate BVM, Maternity of the BVM, Our Lady of Mount Carmel, Purification, Queenship of the
+  BVM, plus the Seven Sorrows itself) — corrected to `[Ant 2]` too.
+- **Immaculate Conception**: Magnificat antiphon added from `[Ant 3]` (a previously entirely
+  unauthored slot, no conflict), but her *Benedictus* antiphon deliberately left untouched — its own
+  file header claims an earlier live Divinum Officium query showed different text
+  ("Conceptiónem hodiérnam...") than the static source's own `[Ant 2]` ("Ait Dóminus Deus ad
+  serpéntem..."), and this session has no live-query access to adjudicate which is actually right.
+- **St. Joseph, St. Robert, St. Margaret of Antioch, St. Paulinus of Nola**: left entirely
+  untouched. Each has an existing Benedictus-antiphon file whose own header claims a live-query
+  verification result that *disagrees* with this static source reading (St. Joseph's and
+  St. Robert's headers explicitly say the Monastic rite's real Lauds output differs from the
+  secular `Sancti` file's own `[Ant 2]`/`[Ant 3]` — plausible, since Monastic and secular
+  genuinely do diverge in places, per this app's own target-rite design). Guessing between two
+  unverifiable claims risked making things worse, not better, so these are flagged here instead:
+  **re-verify against a live Divinum Officium query before touching**, not against this static
+  source alone. St. Paulinus of Nola's own source has no `[Ant 3]` at all (confirmed genuinely
+  absent, not a further gap) so his Common-fallback Magnificat already stands correctly regardless.
+
+Re-ran the full runtime audit from the entry above afterward: still zero `missing`/empty
+occurrences. `npm test` (2096 passed), `tsc --noEmit`, and `vite build` all pass.
+
+**Open follow-up, not done in this pass**: the other ~73 of the 96 batch-wired saints were *not*
+individually re-checked against their own source files this same way (only the ~23 the systematic
+Ant2/Ant3-presence scan flagged) — the scan should be reliable (it greps each saint's real
+`Sancti`/`SanctiM` file directly), but hasn't been independently spot-checked the way this entry's
+own findings were. Worth a second look if another "this looks generic" report comes in.

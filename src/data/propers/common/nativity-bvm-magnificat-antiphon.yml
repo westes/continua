@@ -1,0 +1,14 @@
+# Second Vespers Magnificat antiphon, read directly from
+# web/www/horas/Latin/Sancti/09-08.txt's own [Ant 3] and its English
+# counterpart -- a real, proper antiphon of this feast, not a Common
+# substitution. (This feast's own Benedictus antiphon,
+# nativity-bvm-antiphon.yml, already correctly sourced [Ant 2] --
+# unlike several sibling BVM feasts found mis-tagged to [Ant 1] the
+# same day, TODO.md.)
+id: nativity-bvm-magnificat-antiphon
+text:
+  la: "Natívitas tua, * Dei Génetrix Virgo, gáudium annuntiávit univérso mundo: ex te enim ortus est sol justítiæ, Christus Deus noster: qui solvens maledictiónem, dedit benedictiónem; et confúndens mortem, donávit nobis vitam sempitérnam."
+  en: "Thy Birth, * O Virgin Mother of God, was a message of joy to the whole world, for out of thee rose the Sun of righteousness, even Christ our God. Who hath taken away the curse and brought a blessing, confounded death, and given unto us everlasting life."
+status:
+  la: verified
+  en: verified
