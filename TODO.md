@@ -2213,7 +2213,7 @@ pródiens" (whose final 2 stanzas are the separately-famous "O Salutaris Hostia"
 Sacred Heart needed one real source-track correction: the Monastic Tridentinum 1617 track doesn't
 observe this feast on this date at all (live-checked: shows St. Barnabas instead, a real 1617-era
 calendar gap, not a vu bug) — used Divino Afflatu 1954 instead, consistent with this project's own
-stated rubric/precedence track (see this project's design notes). Also live-verified a genuine, deliberate structural
+stated rubric/precedence track (see DESIGN.md). Also live-verified a genuine, deliberate structural
 difference: Sacred Heart's own Lauds and Vespers have **no responsory at all** in the source
 (straight from chapter to hymn, "Capitulum Hymnus Versus" with no "Responsorium" between) — not an
 authoring gap, so no `lauds-responsory-sacred-heart.yml`/`vespers-responsory-sacred-heart.yml` were
@@ -2854,7 +2854,7 @@ temporalId," the common case for a temporalId that already maps to exactly one c
 (2026-04-08) to carry real Paschal-alleluia antiphons ("Jesum qui crucifíxus est quǽritis,
 allelúja...") over a psalm set the reference engine sizes differently from vu's own
 already-fixed 9-psalm ferial table (itself deliberate — see "No RB summer contraction" in
-this project's design notes). 4 more days of antiphon-only content, same shape as the existing Advent/Paschaltide
+DESIGN.md). 4 more days of antiphon-only content, same shape as the existing Advent/Paschaltide
 seasonal-overlay pattern, layered onto vu's own ferial psalm numbers rather than trying to
 reproduce the reference engine's differently-sized set — not started.
 
@@ -4319,7 +4319,7 @@ invokes it — no live Monastic rendering existed to check a hand-resolution aga
 **Directed explicitly, by the user**: secular-track content needs no special justification here —
 "there is nothing at all wrong with using text from secular sources," this project already blends
 Monastic 1617 structure with secular/Tridentine 1906 and Divino Afflatu content by design (see
-this file's own header and this project's design notes). Closed both by combining a direct source-read of the Monastic
+this file's own header and DESIGN.md). Closed both by combining a direct source-read of the Monastic
 substitution rule (which one) with a live secular query (for the actual text):
 
 - `CommuneM/C7.txt`'s own `[Ant Matutinum]` directive is `@Commune/C7:: s/95/84/ s/96/86/
@@ -4394,7 +4394,7 @@ Directed explicitly: read the reference engine's own `CommuneM/*.txt` (Monastic)
 across candidate saints/years — much faster, and it also settled two open questions the second
 pass had gotten wrong by relying on live-query attempts alone. Also directed to use non-1617
 tracks where the Monastic one is silent (this project already blends tracks by design, see this
-file's own header and this project's design notes), and to prefer real saint-level propers over forcing a generic
+file's own header and DESIGN.md), and to prefer real saint-level propers over forcing a generic
 Common read wherever a saint turns out to have proper content of her own — same principle as the
 angel-feasts pass above.
 
@@ -5335,7 +5335,7 @@ exception, not an authoring slip — keep it as authored.
 table) and `npm run build` both pass.
 
 Unlike sanctoral/temporal content elsewhere in this project, this plan is the user's own
-reading design (see "Not a reconstruction" in this project's design notes), not sourced from a historical
+reading design (see "Not a reconstruction" in DESIGN.md), not sourced from a historical
 breviary — there is no reference engine to spot-check these rows against, by design; that's
 not a verification gap to close later.
 
@@ -6460,7 +6460,7 @@ content, just via the new pool/distribute path) and `npm run build` both pass.
   anchor, `octave: {enabled: true, wins: duplex}`) — the pre-1955
   calendar specifically (each carries a real octave; the reference
   engine's own "(rubrica 196)"-tagged variant strips it, later-reform
-  text this project doesn't follow, per this project's design notes). Sacred Heart's own
+  text this project doesn't follow, per DESIGN.md). Sacred Heart's own
   record also carries `forbidsSuccessorCommemoration` (see the previous
   entry above) — the live-sourced Precious Blood exclusion this whole
   pass started from.

@@ -9,9 +9,8 @@ import { formatRelativeTime } from './format';
 // stranger (see CLAUDE.md's "not a reconstruction" section for the full
 // methodology this is summarizing).
 const ABOUT_BLURB =
-  'A bilingual Latin/English Divine Office — Matins through Compline — for any date, ' +
-  'blending Monastic structure, Divino Afflatu rubrics, and a merged Tridentine/Divino ' +
-  'Afflatu calendar into its own office design. Works fully offline once visited.';
+  'An opinionated Divine Office app for praying the psalms and scripture with the ' +
+  'tradition of the Church.';
 
 /** Mounted once from `shell.ts` (outside the per-navigation `render()`
  * loop) since its content — version/build metadata — never changes across

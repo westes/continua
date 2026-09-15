@@ -8,7 +8,7 @@ draws on several historical sources without reproducing any one of them exactly:
 structure chiefly from the Monastic Tridentinum (1617), precedence/rubrics from Divino
 Afflatu, and a calendar merged from both the Tridentine 1906 and Divino Afflatu calendars,
 with more generous handling of commemorations and octaves than any one historical rite used.
-See the project's own design notes for the full rationale if you're extending it.
+See [`DESIGN.md`](DESIGN.md) for the full rationale if you're extending it.
 
 There's no backend and no database. Everything is a pre-built static bundle, and the app is
 designed to keep working fully offline once it's been loaded once.
