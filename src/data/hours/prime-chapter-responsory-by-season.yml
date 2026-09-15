@@ -1,13 +1,15 @@
 # Which common proper (see data/propers/common/prime-chapter-responsory-*)
 # supplies the short responsory's variable verse, by season.
 #
-# PLACEHOLDER keys: calendar/index.ts's season resolution is a hardcoded
-# stub until milestone 4 (see calendar/types.ts's Season comment), so this
-# table can't actually be exercised by real season data yet — it always
-# falls through to "per-annum" (see src/hours/chapter-responsory.ts). The
-# season *names* here are provisional guesses at what milestone 4's
-# temporal-cycle ids will actually be called; expect to revisit the keys
-# once that's real, not just fill in more of them.
+# Live and firing (confirmed 2026-09-15 -- an earlier "milestone 4 hasn't
+# landed, this table is a placeholder" comment here was stale:
+# calendar/temporal.ts's resolveSeason is a complete, real, data-driven
+# implementation, not a stub, and has been for a while). Septuagesima/
+# Lent/Passiontide/Trinitytide have no entries here on purpose, not
+# because they're unbuilt -- the reference source
+# (Psalterium/Special/Prima Special.txt) has no `[Responsory Quad]`/
+# `[Responsory Trin]`-style tag at all, only the 8 seasons listed below;
+# "per-annum" genuinely is those seasons' own real answer.
 perAnnum: prime-chapter-responsory-per-annum
 bySeason:
   advent: prime-chapter-responsory-adv

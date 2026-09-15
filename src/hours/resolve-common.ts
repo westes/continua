@@ -1163,6 +1163,66 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
 }
 
 /**
+ * Prime's Lectio Brevis (the short reading after the Rule of St. Benedict
+ * reading, `data/hours/prime.yml`'s own `prime-lectio-brevis-per-annum`
+ * slot) — a real gap found live (2026-09-15, Seven Sorrows of the BVM):
+ * this slot had no per-feast override at all, always showing the generic
+ * ordinary-time default even on a real Duplex+ feast with its own proper
+ * reading. Three tiers, precedence matching getBenedictusAntiphon's own
+ * proper-then-common shape, with a season tier added beneath it:
+ *
+ * 1. A saint's own proper `${propers}-lectio-prima` (the reference
+ *    engine's `[Lectio Prima]` tag, present for 36 saints in `Sancti/
+ *    *.txt`, confirmed 2026-09-15) — comparatively rare, not every
+ *    Duplex+ feast has one.
+ * 2. Her Common category's own `prime-lectio-prima-common-of-${common}`
+ *    (13 of the ~14 numbered Commune files carry their own `[Lectio
+ *    Prima]` too — confirmed 2026-09-15 while chasing why the old
+ *    per-annum default text turned out to actually be Common-of-a-
+ *    Confessor content that had been hardcoded as the universal default
+ *    instead of properly scoped here). Tries `minorHoursCommon` then
+ *    plain `common`, same field-priority as the capitulum/hymn Common
+ *    fallback elsewhere in this file.
+ * 3. The day's own season (`prime-lectio-brevis-${adv,nat,epi,quad,
+ *    quad5,pasch,asc,pent}`) — real, live season data
+ *    (`calendar/temporal.ts`'s `resolveSeason`), NOT gated on any
+ *    "milestone 4" (a stale claim corrected 2026-09-15 across every file
+ *    that had it — see the dated TODO.md entry). Septuagesima/
+ *    Trinitytide/Corpus-Christi/Sacred-Heart have no entry here on
+ *    purpose: `Psalterium/Special/Prima Special.txt` genuinely has no
+ *    Lectio-Brevis tag for those seasons, same "absence is the real
+ *    answer" pattern as `prime-chapter-responsory-by-season.yml`.
+ * 4. `prime-lectio-brevis-per-annum` (2 Thess 3:5, the source's own real
+ *    `[Per Annum]` tag) as the final default.
+ */
+const PRIME_LECTIO_BREVIS_SEASON: Partial<Record<string, string>> = {
+  advent: 'adv',
+  christmastide: 'nat',
+  epiphanytide: 'epi',
+  lent: 'quad',
+  passiontide: 'quad5',
+  eastertide: 'pasch',
+  ascensiontide: 'asc',
+  pentecost: 'pent',
+};
+
+export function getPrimeLectioBrevis(day: LiturgicalDay): ResolvedText {
+  const seasonSuffix = PRIME_LECTIO_BREVIS_SEASON[day.season];
+  const seasonal = seasonSuffix ? resolveCommon(`prime-lectio-brevis-${seasonSuffix}`) : undefined;
+  const perAnnum = resolveCommon('prime-lectio-brevis-per-annum');
+
+  const winner = resolveOfficeWinner(day);
+  if (winner.kind === 'temporal') {
+    return firstAvailable([seasonal], perAnnum);
+  }
+  const saint = getSaintRecord(winner.id);
+  const proper = saint?.propers ? resolveCommon(`${saint.propers}-lectio-prima`) : undefined;
+  const commonId = saint?.minorHoursCommon ?? saint?.common;
+  const common = commonId ? resolveCommon(`prime-lectio-prima-${commonId}`) : undefined;
+  return firstAvailable([proper, common, seasonal], perAnnum);
+}
+
+/**
  * Vespers' Magnificat antiphon — mirrors getBenedictusAntiphon's lookup
  * order exactly (temporal id, then a saint's own `${propers}-magnificat-
  * antiphon`, then their Common category's `magnificat-antiphon-${common}`,

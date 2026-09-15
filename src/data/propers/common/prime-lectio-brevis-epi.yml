@@ -1,0 +1,17 @@
+# New file, 2026-09-15: closes the seasonal-variant gap
+# `prime-lectio-brevis-per-annum.yml`'s own header already flagged, wrongly
+# attributed to "milestone 4" (that blocker was stale -- see the dated
+# TODO.md entry this sweep came out of; calendar/temporal.ts's resolveSeason
+# has been a complete, real implementation for a while). Sourced directly
+# from web/www/horas/Latin/Psalterium/Special/Prima Special.txt's own [Epi]
+# tag and its English counterpart.
+id: prime-lectio-brevis-epi
+text:
+  la: "Omnes de Saba vénient, aurum et thus deferéntes, et laudem Dómino annuntiántes."
+  en: "All they from Saba shall come, bringing gold and frankincense: and shewing forth praise to the Lord."
+citation:
+  la: "Isa 60:6"
+  en: "Isa 60:6"
+status:
+  la: verified
+  en: verified

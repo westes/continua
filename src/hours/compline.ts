@@ -84,9 +84,9 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     }
     case 'canticle':
       return [{ kind: 'canticle', canticleId: part.canticleId, text: resolveCommon(part.textRef.id) }];
-    // Not used by Compline — Prime-only, or milestone-4-only. Throwing
-    // rather than silently dropping: if one of these ever shows up in
-    // compline.yml, that's a mistake worth surfacing loudly, not hiding.
+    // Not used by Compline — Prime-only. Throwing rather than silently
+    // dropping: if one of these ever shows up in compline.yml, that's a
+    // mistake worth surfacing loudly, not hiding.
     case 'martyrology':
     case 'rule-reading':
     case 'creed':

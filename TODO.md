@@ -14,7 +14,16 @@ content in the same shape, not a design change. The dated log below is that pipe
    - None open.
 
 2. **Minimal-proof-done, bulk content pending**
-   - None open.
+   - Prime's per-feast Lectio Brevis override (`getPrimeLectioBrevis`, `${propers}-lectio-prima`):
+     full 4-tier mechanism built (proper/Common/season/per-annum, all four proven live, 2026-09-15,
+     see Work Log). The reference engine's own `[Lectio Prima]` tag exists for 36 saints total in
+     `Sancti/*.txt` -- only Seven Sorrows authored so far; the other 35 fall through to their
+     Common category or season, not wrong, just not yet as specific as they could be. Same "sweep
+     the rest" shape as every other per-saint proper text family in this project.
+   - Prime's per-feast responsory override (`prime-chapter-responsory-by-feast.yml`'s `byFeastId`):
+     genuinely empty, not stale documentation (see Work Log, 2026-09-15) -- needs a per-saint check
+     of each `[Versum Prima]` tag (some are real distinct text, some are bare `@Tempora/...`
+     redirects to the season's own content and need no entry at all) before bulk-authoring.
 
 3. **New features**
    - Date picker: `day-nav.ts` only steps a day at a time; no way to jump to an arbitrary
@@ -50,6 +59,48 @@ content in the same shape, not a design change. The dated log below is that pipe
      content already authored ahead of this feature existing.
 
 # Work Log
+
+### Prime Lectio Brevis: wrong-source bug fixed, full 4-tier override mechanism built, stale "milestone 4" comments corrected app-wide (2026-09-15)
+
+User flagged "today's Prime short reading feels wrong" (Seven Sorrows of the BVM). Turned into
+three real findings and a documentation-accuracy sweep, each checked against the reference engine
+directly rather than assumed:
+
+1. **Wrong-source bug**: `prime-lectio-brevis-per-annum.yml`'s text ("Justum deduxit Dominus...",
+   Wis. 10:10) was never Prime's own ordinary-time reading at all -- it's Common-of-a-Confessor
+   content (`Commune/C5.txt`'s own `[Lectio Prima]`). The real Monastic Prime "Per Annum" short
+   reading is `Psalterium/Special/Prima Special.txt`'s own `[Per Annum]` tag -- 2 Thess 3:5.
+   Corrected, both languages, citation updated.
+
+2. **Missing per-feast/per-Common mechanism**: no override existed for this slot at all. Built
+   `getPrimeLectioBrevis` (`hours/resolve-common.ts`), four tiers in precedence order: a saint's
+   own proper `${propers}-lectio-prima` (confirmed present for 36 saints in `Sancti/*.txt`) ->
+   her Common category's `prime-lectio-prima-common-of-${common}` (confirmed present in 13 of the
+   ~14 numbered Commune files -- this is where the wrongly-universal Wis. 10:10 text properly
+   lives now, correctly scoped to Common-of-a-Confessor only) -> the day's own season -> the
+   per-annum default. Wired into `hours/prime.ts`'s `lesson` case. Authored: Seven Sorrows'
+   own proper reading, all 13-category Common tier (14 files, C1 serves two categories), all
+   8 season variants (`Psalterium/Special/Prima Special.txt`'s `[Adv]`/`[Nat]`/`[Epi]`/`[Quad]`/
+   `[Quad5]`/`[Pasch]`/`[Asc]`/`[Pent]`). The other 35 saints' own proper readings are open
+   bulk-content work (Open Work, item 2).
+
+3. **The "milestone 4" comments blocking the season tier were stale, not real** -- user's own
+   instruction: stop deferring to a milestone that's long since past. Checked directly:
+   `calendar/temporal.ts`'s `resolveSeason` is a complete, real, data-driven implementation, not a
+   stub -- confirmed live-firing today across `prime-chapter-responsory-by-season.yml` (Advent
+   through Pentecost all correctly resolve their own season id) and `opening-by-season.yml`
+   (Septuagesima/Lent/Passiontide correctly drop the Alleluia). Corrected the stale claim in both
+   files plus `hours/seasonal-propers.ts`, `hours/types.ts`, `hours/compline.ts`, and
+   `hours/resolve-common.ts` -- none of these were actually blocked on anything.
+
+Still genuinely open, not stale: `prime-chapter-responsory-by-feast.yml`'s `byFeastId` table is
+still empty -- real per-feast Prime-responsory content, not a documentation error. Spot-checked
+Seven Sorrows' own `[Versum Prima]`: it's a bare `@Tempora/Quad5-5` cross-file redirect to the
+season's own content, not unique text of her own -- meaning at least some (maybe most) of the 36
+`[Lectio Prima]`-bearing saints may not need a real by-feast responsory entry at all, since the
+season tier already covers them. Needs a per-saint check before bulk-authoring, not assumed.
+
+`npm test` (2096 tests), `npx tsc --noEmit`, and `npm run build` all pass.
 
 ### Two of the four hymn/doxology-sweep flags closed: Pentecost-week Terce hymn, Seven Sorrows Vespers English (2026-09-11)
 

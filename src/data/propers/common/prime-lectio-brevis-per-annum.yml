@@ -1,14 +1,27 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25 run.
-# The real office picks this reading by season (Advent/Lent/Eastertide all
-# have their own) — that's milestone-4 work (see calendar season resolution).
+# Corrected 2026-09-15 (user flagged "feels wrong", checked against source):
+# the previous text ("Justum deduxit Dominus...", Wis. 10:10) was never
+# Prime's own ordinary-time lectio brevis at all -- it's Common-of-a-
+# Confessor content (appears as a responsory/reading in Commune/C2.txt,
+# C4.txt, C5.txt, tied to the "just man" theme for confessor saints), not
+# anything Prime-specific. The real Monastic Prime "Per Annum" short
+# reading is web/www/horas/Latin/Psalterium/Special/Prima Special.txt's
+# own `[Per Annum]` tag (2 Thess 3:5) -- confirmed directly, both
+# languages, against that file and its English counterpart. `[Dominica]`
+# in the same file (1 Tim 1:17, "Regi saeculorum...") is the OTHER Prime
+# capitulum, `prime-capitulum-dominica.yml`, already correctly sourced --
+# not to be confused with this one.
+#
+# The real office still picks this reading by season (Advent/Lent/
+# Eastertide all have their own `[Adv]`/`[Quad]`/`[Pasch]` tags in the same
+# file) -- that's still milestone-4 work (see calendar season resolution).
 # This "per annum" (ordinary-time) text is used unconditionally until then.
 id: prime-lectio-brevis-per-annum
 text:
-  la: "Justum dedúxit Dóminus per vias rectas, et osténdit illi regnum Dei, et dedit illi sciéntiam sanctórum: honestávit illum in labóribus, et complévit labóres illíus."
-  en: "She conducted the just, when he fled from his brother's wrath, through the right ways, and showed him the kingdom of God, and gave him the knowledge of the holy things, made him honourable in his labours, and accomplished his labours."
+  la: "Dóminus autem dírigat corda et córpora nostra in caritáte Dei et patiéntia Christi."
+  en: "And the Lord direct your hearts, in the charity of God, and the patience of Christ."
 citation:
-  la: "Sap. 10:10"
-  en: "Wis. 10:10"
+  la: "2 Thess. 3:5"
+  en: "2 Thess. 3:5"
 status:
   la: verified
   en: verified

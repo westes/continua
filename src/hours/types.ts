@@ -210,7 +210,9 @@ export type HourPart =
   // baked into the same text block) — resolved by season, defaulting to
   // Salve Regina. See hours/marian-antiphon.ts.
   | { kind: 'marian-antiphon' }
-  // Unused by Prime/Compline/the little hours — exercised starting milestone 4.
+  // `by-weekday`/`by-season` are live (Prime uses both -- see
+  // hours/prime.ts's 'variable' case). `by-feast-rank` isn't used by
+  // anything yet -- a real, still-open gap, not blocked on anything.
   | { kind: 'variable'; resolve: 'by-weekday' | 'by-season' | 'by-feast-rank' }
   // The day's own Proper-of-season/Proper-of-saints collect — resolved by
   // day, not by textRef. First used by the Little Hours' "Oratio {ex

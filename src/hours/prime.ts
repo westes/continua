@@ -20,6 +20,7 @@ import {
   resolveMinorHourAntiphon,
   isSundayOrFeastOffice,
   resolveResponsory,
+  getPrimeLectioBrevis,
 } from './resolve-common';
 import { isAllSouls, buildPrimeParts } from './all-souls';
 import primeDefinitionData from '../data/hours/prime.yml';
@@ -49,7 +50,13 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
       }
       return [{ kind: 'preces', text: resolveCommon(part.textRef.id), label: part.label }];
     case 'lesson':
-      return [{ kind: 'lesson', text: resolveCommon(part.textRef.id), label: part.label }];
+      return [
+        {
+          kind: 'lesson',
+          text: part.textRef.id === 'prime-lectio-brevis-per-annum' ? getPrimeLectioBrevis(day) : resolveCommon(part.textRef.id),
+          label: part.label,
+        },
+      ];
     case 'opening-versicle':
       return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) }];
     case 'creed':

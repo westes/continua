@@ -1,0 +1,19 @@
+# New file, 2026-09-15: closes a real gap found live -- Prime's Lectio
+# Brevis had no per-feast override mechanism at all until today (see
+# hours/resolve-common.ts's getPrimeLectioBrevis), always showing the
+# generic ordinary-time default even on a real Duplex+ feast with her own
+# proper reading. Sourced directly from web/www/horas/Latin/Sancti/09-15.txt
+# / English/Sancti/09-15.txt's own [Lectio Prima] (Lam 2:18) -- the
+# Seven Sorrows' proper Prime short reading, positioned between the
+# [Ant 2]/[Lectio Prima] block and [Capitulum Sexta] in the source, i.e.
+# genuinely a Prime-specific proper text, not reused from elsewhere.
+id: seven-sorrows-of-the-bvm-lectio-prima
+text:
+  la: "Deduc quasi torréntem lácrimas per diem et noctem; non des réquiem tibi, neque táceat pupílla óculi tui."
+  en: "The tears run down like a river day and night. Give thyself no rest, neither let the apple of thine eye cease."
+citation:
+  la: "Lam. 2:18"
+  en: "Lam. 2:18"
+status:
+  la: verified
+  en: verified
