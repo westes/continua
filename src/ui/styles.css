@@ -106,6 +106,15 @@ button:focus-visible {
    Header + language toggle
    -------------------------------------------------------------------------- */
 
+.app-fixed-top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-bg);
+  padding-top: env(safe-area-inset-top);
+  border-bottom: 1px solid var(--color-border);
+}
+
 .site-header {
   display: flex;
   align-items: center;
@@ -296,13 +305,21 @@ button:focus-visible {
 .hour-list-nav {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-1);
+  padding: 0 var(--space-2);
+}
+
+.hour-title {
+  margin: 0;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.25rem var(--space-2) var(--space-1);
 }
 
 .hour-row {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: 0.25rem;
 }
 
 .hour-row-label {
@@ -327,14 +344,17 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 0.6rem 0.75rem;
+  min-height: 2.25rem;
+  padding: 0.35rem 0.6rem;
   border: none;
   background: none;
   border-radius: var(--radius);
   cursor: pointer;
   color: var(--color-ink);
   text-decoration: none;
+  font-size: 0.85rem;
 }
 
 .hour-item:hover {
@@ -483,6 +503,11 @@ button:focus-visible {
   body {
     background: #fff;
     color: #000;
+  }
+  .app-fixed-top {
+    position: static;
+    background: none;
+    border-bottom: none;
   }
   .site-header,
   .day-nav,

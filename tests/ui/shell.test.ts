@@ -38,7 +38,7 @@ describe('shell', () => {
     ]);
 
     expect(root.querySelector('.hour-item.is-selected .hour-name')?.textContent).toBe('Prime');
-    expect(root.querySelector('.hour-view h2')?.textContent).toBe('Prime');
+    expect(root.querySelector('.hour-title')?.textContent).toBe('Prime');
     expect(root.querySelectorAll('.ordo-part-psalm').length).toBeGreaterThan(0);
   });
 
@@ -99,7 +99,7 @@ describe('shell', () => {
     );
     matinsBtn?.click();
 
-    expect(root.querySelector('.hour-view h2')?.textContent).toBe('Matins');
+    expect(root.querySelector('.hour-title')?.textContent).toBe('Matins');
     expect(root.querySelector('.hour-view-pending')).toBeNull();
     // Ferial psalmody always resolves regardless of date (unauthored
     // reading content is the only genuinely date-gated part) — see
@@ -116,7 +116,7 @@ describe('shell', () => {
     );
     complineBtn?.click();
 
-    expect(root.querySelector('.hour-view h2')?.textContent).toBe('Compline');
+    expect(root.querySelector('.hour-title')?.textContent).toBe('Compline');
     expect(root.querySelector('.hour-view-pending')).toBeNull();
     expect(root.querySelectorAll('.ordo-part-psalm').length).toBe(3);
   });

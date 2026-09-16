@@ -208,7 +208,6 @@ export function renderHourView(container: HTMLElement): void {
   if (ordo.notImplemented) {
     container.innerHTML = `
       <div class="hour-view hour-view-pending">
-        <h2>${hourLabel(selectedHour)}</h2>
         <p>This hour hasn't been built yet.</p>
       </div>
     `;
@@ -217,7 +216,6 @@ export function renderHourView(container: HTMLElement): void {
 
   container.innerHTML = `
     <div class="hour-view">
-      <h2>${hourLabel(selectedHour)}</h2>
       ${ordo.parts.map((part) => renderPart(part, languages)).join('')}
     </div>
   `;

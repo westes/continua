@@ -7,7 +7,7 @@ import { renderHourList } from './hour-list';
 import { renderHourView } from './hour-view';
 import { renderLanguageToggle } from './bilingual-toggle';
 import { mountAboutPanel } from './about-panel';
-import { documentTitle } from './format';
+import { documentTitle, hourLabel } from './format';
 
 // The "C" glyph from EB Garamond 700 (the same font/weight as .site-title),
 // extracted as a path so the header mark matches the wordmark's letterforms
@@ -16,33 +16,38 @@ const LOGO_MARK_SVG = `<svg class="site-logo" viewBox="29 -664 629 678" fill="cu
 
 export function mountShell(root: HTMLElement): void {
   root.innerHTML = `
-    <header class="site-header">
-      <div class="site-brand">
-        ${LOGO_MARK_SVG}
-        <span class="site-title">Continua</span>
-      </div>
-      <div data-slot="language-toggle"></div>
-      <div data-slot="about-panel"></div>
-    </header>
-    <div data-slot="day-nav"></div>
-    <main id="main" class="app-main">
+    <div class="app-fixed-top">
+      <header class="site-header">
+        <div class="site-brand">
+          ${LOGO_MARK_SVG}
+          <span class="site-title">Continua</span>
+        </div>
+        <div data-slot="language-toggle"></div>
+        <div data-slot="about-panel"></div>
+      </header>
+      <div data-slot="day-nav"></div>
       <nav data-slot="hour-list" class="hour-list-nav" aria-label="Hours"></nav>
+      <h2 data-slot="hour-title" class="hour-title"></h2>
+    </div>
+    <main id="main" class="app-main">
       <div data-slot="hour-view" class="hour-view-region"></div>
     </main>
   `;
 
   const dayNavEl = root.querySelector<HTMLElement>('[data-slot="day-nav"]');
+  const hourTitleEl = root.querySelector<HTMLElement>('[data-slot="hour-title"]');
   const hourListEl = root.querySelector<HTMLElement>('[data-slot="hour-list"]');
   const hourViewEl = root.querySelector<HTMLElement>('[data-slot="hour-view"]');
   const languageToggleEl = root.querySelector<HTMLElement>('[data-slot="language-toggle"]');
   const aboutPanelEl = root.querySelector<HTMLElement>('[data-slot="about-panel"]');
-  if (!dayNavEl || !hourListEl || !hourViewEl || !languageToggleEl || !aboutPanelEl) {
+  if (!dayNavEl || !hourTitleEl || !hourListEl || !hourViewEl || !languageToggleEl || !aboutPanelEl) {
     throw new Error('shell markup is missing an expected slot');
   }
   mountAboutPanel(aboutPanelEl);
 
   function render(): void {
     renderDayNav(dayNavEl!);
+    hourTitleEl!.textContent = hourLabel(getState().selectedHour);
     renderHourList(hourListEl!);
     renderHourView(hourViewEl!);
     renderLanguageToggle(languageToggleEl!);
