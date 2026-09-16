@@ -31,12 +31,12 @@ export function renderDayNav(container: HTMLElement): void {
     <nav class="day-nav" aria-label="Day navigation">
       <a href="${prevUrl}" class="day-nav-btn" data-action="prev" aria-label="Previous day">&larr;</a>
       <a href="${todayUrl}" class="day-nav-btn day-nav-today" data-action="today">Today</a>
+      <a href="${nextUrl}" class="day-nav-btn" data-action="next" aria-label="Next day">&rarr;</a>
       <div class="day-nav-header">
         ${renderBilingual(dateLabel, languages, 'day-nav-date')}
         ${renderBilingualList(dayLabelItems, languages, 'day-nav-label')}
         ${vespersStatus ? renderBilingual(vespersStatus, languages, 'day-nav-vespers-status') : ''}
       </div>
-      <a href="${nextUrl}" class="day-nav-btn" data-action="next" aria-label="Next day">&rarr;</a>
     </nav>
   `;
 
