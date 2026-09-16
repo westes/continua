@@ -1,5 +1,11 @@
+// @vitest-environment jsdom
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { defaultHourForTime, goToToday, getState, setDate, setSelectedHour, todayTargetHour } from '../src/app-state';
+
+function setVisible(visible: boolean): void {
+  Object.defineProperty(document, 'visibilityState', { value: visible ? 'visible' : 'hidden', configurable: true });
+  document.dispatchEvent(new Event('visibilitychange'));
+}
 
 function at(hour: number, minute = 0): Date {
   const d = new Date();
@@ -74,6 +80,47 @@ describe('goToToday', () => {
 
     goToToday(); // -> today, hour still 'vespers'
     goToToday(); // -> already today, snaps hour to time-of-day default
+
+    expect(getState().date).toBe('2026-08-28');
+    expect(getState().selectedHour).toBe('terce');
+  });
+});
+
+describe('resume-refresh on visibilitychange', () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date(2026, 7, 28, 10, 0, 0)); // 2026-08-28 10:00 local -> terce
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it('snaps a following-today date/hour forward when the tab resumes after midnight', () => {
+    goToToday(); // pins followingToday, lands on 2026-08-28 terce
+
+    vi.setSystemTime(new Date(2026, 7, 29, 7, 0, 0)); // next day, 07:00 -> lauds
+    setVisible(true);
+
+    expect(getState().date).toBe('2026-08-29');
+    expect(getState().selectedHour).toBe('lauds');
+  });
+
+  it('leaves a deliberately-navigated date alone on resume', () => {
+    setDate('2026-08-01'); // explicit navigation unpins followingToday
+    setSelectedHour('vespers');
+
+    vi.setSystemTime(new Date(2026, 7, 29, 7, 0, 0));
+    setVisible(true);
+
+    expect(getState().date).toBe('2026-08-01');
+    expect(getState().selectedHour).toBe('vespers');
+  });
+
+  it('does nothing when the date is already current', () => {
+    goToToday(); // may preserve a leftover hour from a prior date
+    goToToday(); // already on today: snaps hour to the time-of-day default
+    setVisible(true);
 
     expect(getState().date).toBe('2026-08-28');
     expect(getState().selectedHour).toBe('terce');

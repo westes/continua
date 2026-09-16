@@ -35,6 +35,13 @@ const state: AppState = {
   languages: ['en'],
 };
 
+// Whether `state.date` is auto-following "today" (the default/root-URL
+// case, or after explicitly clicking "Today") vs. pinned to a date the user
+// deliberately navigated to. `setDate()` always unpins; `goToToday()` always
+// re-pins. Used below to refresh a stale date on tab resume without
+// clobbering a deliberately-chosen past/future date.
+let followingToday = true;
+
 type Listener = (state: Readonly<AppState>) => void;
 const listeners = new Set<Listener>();
 
@@ -52,6 +59,7 @@ function notify(): void {
 }
 
 export function setDate(date: string): void {
+  followingToday = false;
   state.date = date;
   notify();
 }
@@ -75,6 +83,7 @@ export function goToToday(): void {
   } else {
     setDate(today);
   }
+  followingToday = true;
 }
 
 export function addDays(date: string, days: number): string {
@@ -96,3 +105,21 @@ export function setLanguages(languages: AppState['languages']): void {
   state.languages = languages;
   notify();
 }
+
+// A tab/dev-server session can outlive a sleep/wake that crosses midnight
+// while never navigating (no URL date segment, no Prev/Next/Today click) --
+// `state.date` above is only ever seeded once, at module load, so without
+// this it stays frozen on the old day indefinitely. Mirrors the
+// `visibilitychange` pattern in `sw-update.ts`: no periodic timer, just a
+// check on actual foreground-resume. Mutates `state` directly (not via
+// `setDate`/`setSelectedHour`) so this refresh doesn't itself unpin
+// `followingToday`.
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState !== 'visible') return;
+  if (!followingToday) return;
+  const today = todayIso();
+  if (state.date === today) return;
+  state.date = today;
+  state.selectedHour = defaultHourForTime(new Date());
+  notify();
+});
