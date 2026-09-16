@@ -1,9 +1,9 @@
 import { getState, shiftDate, goToToday, addDays, todayIso, todayTargetHour } from '../app-state';
 import { resolveDay } from '../calendar';
 import { resolveEveningDay } from '../calendar/vespers';
-import { getDayLabel, getVespersStatusLabel } from '../calendar/day-label';
+import { getDayLabelItems, getVespersStatusLabel } from '../calendar/day-label';
 import { urlFor } from '../router';
-import { formatDateLong, renderBilingual } from './format';
+import { formatDateLong, renderBilingual, renderBilingualList } from './format';
 
 /** Renders navigation plus the merged "when" header: the civil date/
  * weekday and the liturgical day-being-celebrated, together in one place
@@ -22,7 +22,7 @@ export function renderDayNav(container: HTMLElement): void {
   const isEveningHour = selectedHour === 'vespers' || selectedHour === 'compline';
   const day = isEveningHour ? resolveEveningDay(date) : resolveDay(date);
   const dateLabel = formatDateLong(date);
-  const dayLabel = getDayLabel(day);
+  const dayLabelItems = getDayLabelItems(day);
   const vespersStatus = selectedHour === 'vespers' ? getVespersStatusLabel(day, date) : undefined;
   const prevUrl = urlFor(addDays(date, -1), selectedHour, languages);
   const nextUrl = urlFor(addDays(date, 1), selectedHour, languages);
@@ -33,7 +33,7 @@ export function renderDayNav(container: HTMLElement): void {
       <a href="${todayUrl}" class="day-nav-btn day-nav-today" data-action="today">Today</a>
       <div class="day-nav-header">
         ${renderBilingual(dateLabel, languages, 'day-nav-date')}
-        ${renderBilingual(dayLabel, languages, 'day-nav-label')}
+        ${renderBilingualList(dayLabelItems, languages, 'day-nav-label')}
         ${vespersStatus ? renderBilingual(vespersStatus, languages, 'day-nav-vespers-status') : ''}
       </div>
       <a href="${nextUrl}" class="day-nav-btn" data-action="next" aria-label="Next day">&rarr;</a>

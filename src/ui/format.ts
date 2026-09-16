@@ -181,3 +181,19 @@ export function renderBilingual(text: Partial<Record<string, string>>, languages
     .join('');
   return `<div class="${className} lang-columns lang-columns-${languages.length}">${cols}</div>`;
 }
+
+/** Same per-language column layout as `renderBilingual`, but for a list of
+ * bilingual entries (`calendar/day-label.ts`'s `getDayLabelItems` — the
+ * day's primary celebration plus any commemorations/transfer note) shown
+ * one per line rather than run together on one line separated by an em
+ * dash (2026-09-16 user feedback: the em-dash-joined single line was hard
+ * to scan; a vertical list reads as the separate entries they are). */
+export function renderBilingualList(items: readonly Partial<Record<string, string>>[], languages: readonly string[], className: string): string {
+  const cols = languages
+    .map((lang) => {
+      const lines = items.map((item) => `<div class="day-nav-label-entry">${escapeHtml(item[lang] ?? '')}</div>`).join('');
+      return `<div class="lang-column" lang="${lang}">${lines}</div>`;
+    })
+    .join('');
+  return `<div class="${className} lang-columns lang-columns-${languages.length}">${cols}</div>`;
+}

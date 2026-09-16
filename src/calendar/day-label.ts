@@ -31,7 +31,7 @@ import { resolveTemporalId } from './temporal-id';
 import { compareCommemorations } from './commemoration-order';
 import { getSaintRecord } from './feasts';
 
-interface Bi {
+export interface Bi {
   en: string;
   la: string;
   [lang: string]: string;
@@ -808,28 +808,35 @@ function transferredAwayNote(day: LiturgicalDay): Bi | undefined {
   return bi(`${name.en} (${label.en})`, `${name.la} (${label.la})`);
 }
 
-function withTransferNote(day: LiturgicalDay, label: Partial<Record<string, string>>): Partial<Record<string, string>> {
+function withTransferNote(day: LiturgicalDay, items: Bi[]): Bi[] {
   const note = transferredAwayNote(day);
-  if (!note) {
-    return label;
-  }
-  return { en: `${label.en} — ${note.en}`, la: `${label.la} — ${note.la}` };
+  return note ? [...items, note] : items;
 }
 
 /**
- * The full "day being celebrated" label: the day's own primary identity
- * (a sanctoral winner, a named temporal feast, a season's own anchor day,
- * an octave governing the day, or the plain ordinal temporal label — in
- * that precedence order) plus whatever `collectCommemorations` finds
- * eligible to ride along with it. Each branch below only decides two
- * things: what the primary label is, and what commemoration *groups* are
- * eligible here and in what order — the actual filtering/formatting work
- * is `collectCommemorations`'s alone, shared by every branch. Returns a
- * `Partial<Record<string, string>>` keyed by language code (`en`/`la`),
- * the same convention `hours/types.ts`'s `ResolvedText`/`ResolvedVerse`
- * already use.
+ * The full "day being celebrated" label, as its individual entries: the
+ * day's own primary identity (a sanctoral winner, a named temporal feast,
+ * a season's own anchor day, an octave governing the day, or the plain
+ * ordinal temporal label — in that precedence order) first, followed by
+ * whatever `collectCommemorations` finds eligible to ride along with it,
+ * and finally a transfer-away note if one applies. Each branch below only
+ * decides two things: what the primary label is, and what commemoration
+ * *groups* are eligible here and in what order — the actual
+ * filtering/formatting work is `collectCommemorations`'s alone, shared by
+ * every branch.
+ *
+ * Exported (2026-09-16, replacing an earlier design that only ever
+ * returned these already flattened into one ` — `-joined string) so a
+ * caller that wants to show each entry as its own line — `ui/day-nav.ts`'s
+ * header, per user feedback that the em-dash-joined run-on line was hard
+ * to scan — can render the list directly instead of re-splitting
+ * `getDayLabel`'s joined string back apart. `getDayLabel` itself is kept,
+ * unchanged in behavior, as a thin `joinBi` wrapper around this — every
+ * existing consumer that wants the single joined string (the browser tab
+ * title's own `' — '`-split fallback, tests asserting on joined text)
+ * still gets exactly the same value as before.
  */
-export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>> {
+export function getDayLabelItems(day: LiturgicalDay): Bi[] {
   if (isAllSouls(day.date)) {
     // Rank: the reference engine's Sancti/11-02.txt carries two [Rank]
     // entries — plain "Duplex" and, gated behind `rubrica 196` (the 1960
@@ -846,7 +853,7 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
     const rank = formatRank('duplex');
     const primary = bi(`All Souls' Day (${rank.en})`, `In Commemoratióne Ómnium Fidélium Defunctórum (${rank.la})`);
     const commemorations = collectCommemorations(day, { showOctaves: true });
-    return withTransferNote(day, joinBi([primary, ...commemorations]));
+    return withTransferNote(day, [primary, ...commemorations]);
   }
   if (day.winner.kind === 'sanctoral') {
     // Octaves only ride along here on `ordinary-feria` — a day with real
@@ -865,7 +872,7 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
     const winner = day.winner.transferredFrom
       ? bi(`${winnerName.en} (${rank.en}, ${TRANSFERRED_LABEL.en})`, `${winnerName.la} (${rank.la}, ${TRANSFERRED_LABEL.la})`)
       : bi(`${winnerName.en} (${rank.en})`, `${winnerName.la} (${rank.la})`);
-    return withTransferNote(day, joinBi([winner, ...commemorations]));
+    return withTransferNote(day, [winner, ...commemorations]);
   }
 
   // A named temporal feast (Christmas, Pentecost, Marian Saturday, ...)
@@ -880,7 +887,7 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
       ? bi(`${name.en} (${formatRank(namedFeast.rank).en})`, `${name.la} (${formatRank(namedFeast.rank).la})`)
       : name;
     const commemorations = collectCommemorations(day, { showOctaves: false });
-    return withTransferNote(day, joinBi([primary, ...commemorations]));
+    return withTransferNote(day, [primary, ...commemorations]);
   }
 
   // A season's own named anchor day (Trinity Sunday, Easter, Ash
@@ -893,7 +900,7 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
   const anchorName = anchorDayName(day);
   if (anchorName) {
     const commemorations = collectCommemorations(day, { showOctaves: false });
-    return withTransferNote(day, joinBi([anchorName, ...commemorations]));
+    return withTransferNote(day, [anchorName, ...commemorations]);
   }
 
   // An active octave (St. Lawrence's, ...) is this day's real primary
@@ -929,7 +936,7 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
   if (activeOctave) {
     const commemorations = collectCommemorations(day, { showOctaves: true, excludeOctaveId: activeOctave.id });
     const primary = octaveLabel(activeOctave);
-    return withTransferNote(day, joinBi([primary, ...commemorations]));
+    return withTransferNote(day, [primary, ...commemorations]);
   }
 
   const temporalRank = TEMPORAL_CATEGORY_RANK_LABELS[day.temporalCategory];
@@ -943,7 +950,19 @@ export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>>
   // never named at all, even as a commemoration (see the governing-octave
   // branch's own doc comment for why).
   const commemorations = collectCommemorations(day, { showOctaves: day.season !== 'christmastide' });
-  return withTransferNote(day, joinBi([temporal, ...commemorations]));
+  return withTransferNote(day, [temporal, ...commemorations]);
+}
+
+/**
+ * The full "day being celebrated" label as a single ` — `-joined bilingual
+ * string — kept for existing consumers that want one flat string
+ * (`ui/format.ts`'s `documentTitle`, which splits it back on `' — '` to
+ * recover just the primary celebration; tests asserting on joined text).
+ * New display code that wants to show each entry on its own line should
+ * use `getDayLabelItems` instead — see its own doc comment for why.
+ */
+export function getDayLabel(day: LiturgicalDay): Partial<Record<string, string>> {
+  return joinBi(getDayLabelItems(day));
 }
 
 /**

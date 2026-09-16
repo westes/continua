@@ -268,6 +268,12 @@ button:focus-visible {
   color: var(--color-brass);
 }
 
+.day-nav-label .lang-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
 .day-nav-vespers-status {
   font-family: var(--font-ui);
   font-size: 0.75rem;
