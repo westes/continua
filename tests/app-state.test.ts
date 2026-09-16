@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { defaultHourForTime, goToToday, getState, setDate, setSelectedHour, todayTargetHour } from '../src/app-state';
+import { defaultHourForTime, goToToday, goToNow, getState, setDate, setSelectedHour } from '../src/app-state';
 
 function setVisible(visible: boolean): void {
   Object.defineProperty(document, 'visibilityState', { value: visible ? 'visible' : 'hidden', configurable: true });
@@ -64,22 +64,53 @@ describe('goToToday', () => {
     expect(getState().selectedHour).toBe('vespers');
   });
 
-  it('snaps the hour to the current time-of-day default when already on today', () => {
+  it('leaves the hour untouched when already on today', () => {
     setDate('2026-08-28');
     setSelectedHour('vespers');
 
     goToToday();
 
     expect(getState().date).toBe('2026-08-28');
-    expect(getState().selectedHour).toBe('terce');
+    expect(getState().selectedHour).toBe('vespers');
   });
 
-  it('is idempotent-safe: a second click after jumping to today snaps the hour', () => {
+  it('is idempotent: clicking twice has the same effect as clicking once', () => {
     setDate('2026-08-01');
     setSelectedHour('vespers');
 
-    goToToday(); // -> today, hour still 'vespers'
-    goToToday(); // -> already today, snaps hour to time-of-day default
+    goToToday();
+    goToToday();
+
+    expect(getState().date).toBe('2026-08-28');
+    expect(getState().selectedHour).toBe('vespers');
+  });
+});
+
+describe('goToNow', () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date(2026, 7, 28, 10, 0, 0)); // 2026-08-28 10:00 local -> terce
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it('jumps to today and snaps the hour to the current time-of-day default', () => {
+    setDate('2026-08-01');
+    setSelectedHour('vespers');
+
+    goToNow();
+
+    expect(getState().date).toBe('2026-08-28');
+    expect(getState().selectedHour).toBe('terce');
+  });
+
+  it('snaps the hour even when already on today', () => {
+    setDate('2026-08-28');
+    setSelectedHour('vespers');
+
+    goToNow();
 
     expect(getState().date).toBe('2026-08-28');
     expect(getState().selectedHour).toBe('terce');
@@ -97,7 +128,7 @@ describe('resume-refresh on visibilitychange', () => {
   });
 
   it('snaps a following-today date/hour forward when the tab resumes after midnight', () => {
-    goToToday(); // pins followingToday, lands on 2026-08-28 terce
+    goToNow(); // pins followingToday, lands on 2026-08-28 terce
 
     vi.setSystemTime(new Date(2026, 7, 29, 7, 0, 0)); // next day, 07:00 -> lauds
     setVisible(true);
@@ -118,35 +149,11 @@ describe('resume-refresh on visibilitychange', () => {
   });
 
   it('does nothing when the date is already current', () => {
-    goToToday(); // may preserve a leftover hour from a prior date
-    goToToday(); // already on today: snaps hour to the time-of-day default
+    goToNow();
+    goToNow();
     setVisible(true);
 
     expect(getState().date).toBe('2026-08-28');
     expect(getState().selectedHour).toBe('terce');
-  });
-});
-
-describe('todayTargetHour', () => {
-  beforeEach(() => {
-    vi.useFakeTimers();
-    vi.setSystemTime(new Date(2026, 7, 28, 10, 0, 0)); // 2026-08-28 10:00 local -> terce
-  });
-
-  afterEach(() => {
-    vi.useRealTimers();
-  });
-
-  it('matches goToToday, so the Today link href agrees with its click behavior', () => {
-    // Different date: href should preserve the current hour, same as goToToday().
-    setDate('2026-08-01');
-    setSelectedHour('vespers');
-    expect(todayTargetHour()).toBe('vespers');
-
-    // Already on today: href should point at the time-of-day default,
-    // same as goToToday() — this is what a right-click "open in new tab"
-    // relies on, since it follows the href without running the click handler.
-    setDate('2026-08-28');
-    expect(todayTargetHour()).toBe('terce');
   });
 });

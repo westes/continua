@@ -36,10 +36,10 @@ const state: AppState = {
 };
 
 // Whether `state.date` is auto-following "today" (the default/root-URL
-// case, or after explicitly clicking "Today") vs. pinned to a date the user
-// deliberately navigated to. `setDate()` always unpins; `goToToday()` always
-// re-pins. Used below to refresh a stale date on tab resume without
-// clobbering a deliberately-chosen past/future date.
+// case, or after explicitly clicking "Today"/"Now") vs. pinned to a date the
+// user deliberately navigated to. `setDate()` always unpins; `goToToday()`/
+// `goToNow()` always re-pin. Used below to refresh a stale date on tab
+// resume without clobbering a deliberately-chosen past/future date.
 let followingToday = true;
 
 type Listener = (state: Readonly<AppState>) => void;
@@ -65,23 +65,29 @@ export function setDate(date: string): void {
 }
 
 /**
- * Which hour the "Today" link should point to: if we're already viewing
- * today, the current time-of-day default (as if freshly visiting `/continua`
- * right now); otherwise the hour currently selected, unchanged. Shared by
- * `goToToday()` and the link's `href` (`day-nav.ts`) so a plain click and
- * a right-click-open-in-new-tab land on the same target.
+ * "Today" jumps the date to today but leaves the selected hour alone —
+ * distinct from "Now" (below), which also snaps the hour to the current
+ * time-of-day default. Splitting these was a deliberate response to user
+ * feedback that a single "Today" link doing both (jump date, and *also*
+ * snap the hour once already on today) was confusing.
  */
-export function todayTargetHour(): HourId {
-  return state.date === todayIso() ? defaultHourForTime(new Date()) : state.selectedHour;
-}
-
 export function goToToday(): void {
   const today = todayIso();
-  const hour = todayTargetHour();
-  if (state.date === today) {
-    setSelectedHour(hour);
-  } else {
-    setDate(today);
+  if (state.date !== today) {
+    state.date = today;
+    notify();
+  }
+  followingToday = true;
+}
+
+/** "Now" jumps to today's date *and* the current time-of-day default hour, always. */
+export function goToNow(): void {
+  const today = todayIso();
+  const hour = defaultHourForTime(new Date());
+  if (state.date !== today || state.selectedHour !== hour) {
+    state.date = today;
+    state.selectedHour = hour;
+    notify();
   }
   followingToday = true;
 }
