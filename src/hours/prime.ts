@@ -9,6 +9,7 @@ import { getRegulaReadingFor } from '../regula';
 import { getChapterResponsoryId } from './chapter-responsory';
 import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { getOpeningVersicleId } from './opening-versicle';
+import { isInTriduum } from '../calendar/temporal';
 import { isDoubleOrHigher, applyFlexaMark } from './antiphon';
 import { activeOctavesFor } from '../calendar/octaves';
 import {
@@ -58,6 +59,12 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
         },
       ];
     case 'opening-versicle':
+      // Real Tenebrae/Triduum rubric: this versicle's own baked-in Gloria
+      // Patri means the whole thing is dropped, not seasonally varied —
+      // same as matins.ts's opening block and compline.ts's own versicle.
+      if (isInTriduum(day.date)) {
+        return [];
+      }
       return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) }];
     case 'creed':
       // Real Divinum Officium's actual inclusion rule tangles together

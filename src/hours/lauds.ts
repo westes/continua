@@ -7,6 +7,7 @@ import { getPsalmVerses } from '../psalter';
 import { getCanticle, type CanticleVerse } from './lauds-canticles';
 import { getLaudsSaintOverride, getLaudsCommonOverride, type LaudsPsalmodyOverride } from './lauds-psalmody-overrides';
 import { getOpeningVersicleId } from './opening-versicle';
+import { isInTriduum } from '../calendar/temporal';
 import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { applyFlexaMark } from './antiphon';
@@ -349,6 +350,12 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
 function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
   switch (part.kind) {
     case 'opening-versicle':
+      // Real Tenebrae/Triduum rubric: this versicle's own baked-in Gloria
+      // Patri means the whole thing is dropped, not seasonally varied —
+      // same as matins.ts's opening block and compline.ts's own versicle.
+      if (isInTriduum(day.date)) {
+        return [];
+      }
       return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) }];
     case 'lauds-psalmody':
       return resolvePsalmody(day);

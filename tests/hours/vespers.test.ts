@@ -776,3 +776,18 @@ describe('resolveOrdo("vespers", ...) responsory Gloria omission', () => {
     expect(ordinaryResponsory?.kind === 'responsory' ? ordinaryResponsory.text.text.la : undefined).toContain('Glória Patri');
   });
 });
+
+describe('resolveOrdo("vespers", ...) opening versicle Triduum omission', () => {
+  it('drops the opening "Deus in adiutorium" versicle on Maundy Thursday and Good Friday, but keeps it on Holy Saturday evening (already Easter\'s own First Vespers)', () => {
+    // Easter 2026 is Apr 5. Holy Saturday evening (Apr 4) already
+    // anticipates Easter — see resolveEveningDay's isMajorFixedFeastOfTheLord
+    // override, same exception as the Gloria Patri test above. Vespers
+    // also has an unrelated closing 'versicle' part (from vespers-office),
+    // so match on text, not just kind.
+    const opening = (date: string) =>
+      resolveOrdo('vespers', date).parts.find((p) => p.kind === 'versicle' && p.text.text.la?.includes('adjutórium'));
+    expect(opening('2026-04-02')).toBeUndefined();
+    expect(opening('2026-04-03')).toBeUndefined();
+    expect(opening('2026-04-04')).toBeDefined();
+  });
+});

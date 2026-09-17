@@ -5,6 +5,7 @@ import { getDayLabel } from '../calendar/day-label';
 import { getPsalmsFor } from '../psalter/distribution';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
+import { isInTriduum } from '../calendar/temporal';
 import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { applyFlexaMark } from './antiphon';
 import {
@@ -27,6 +28,12 @@ const antiphons = antiphonsData as Record<Weekday, Partial<Record<string, string
 function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
   switch (part.kind) {
     case 'opening-versicle':
+      // Real Tenebrae/Triduum rubric: this versicle's own baked-in Gloria
+      // Patri means the whole thing is dropped, not seasonally varied —
+      // same as matins.ts's opening block and compline.ts's own versicle.
+      if (isInTriduum(day.date)) {
+        return [];
+      }
       return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) }];
     case 'hymn': {
       // Pentecost's octave (Sunday through the following Saturday) swaps

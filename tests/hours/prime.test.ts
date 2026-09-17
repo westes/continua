@@ -291,3 +291,17 @@ describe('resolveOrdo("prime", ...) chapter-responsory Gloria omission', () => {
     expect(responsory?.kind === 'responsory' ? responsory.text.text.la : undefined).toContain('Glória Patri');
   });
 });
+
+describe('resolveOrdo("prime", ...) opening versicle Triduum omission', () => {
+  it('drops the opening "Deus in adiutorium" versicle (own baked-in Gloria Patri) on Maundy Thursday and Good Friday', () => {
+    // Easter 2026 is Apr 5: Maundy Thursday Apr 2, Good Friday Apr 3.
+    // Prime also has an unrelated seasonal 'versicle' part
+    // (prime-versicle), so match on text, not just kind.
+    for (const date of ['2026-04-02', '2026-04-03']) {
+      const opening = resolveOrdo('prime', date).parts.find(
+        (p) => p.kind === 'versicle' && p.text.text.la?.includes('adjutórium'),
+      );
+      expect(opening).toBeUndefined();
+    }
+  });
+});

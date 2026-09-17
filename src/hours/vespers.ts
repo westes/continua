@@ -7,6 +7,7 @@ import { getSaintRecord } from '../calendar/feasts';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
+import { isInTriduum } from '../calendar/temporal';
 import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { getVespersSaintOverride, getVespersCommonOverride } from './vespers-psalmody-overrides';
 import { applyFlexaMark } from './antiphon';
@@ -256,6 +257,15 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
 function resolvePart(part: HourPart, day: LiturgicalDay, weekday: Weekday): ResolvedPart[] {
   switch (part.kind) {
     case 'opening-versicle':
+      // Real Tenebrae/Triduum rubric: this versicle's own baked-in Gloria
+      // Patri means the whole thing is dropped, not seasonally varied —
+      // same as matins.ts's opening block and compline.ts's own versicle.
+      // `day` here is already resolveEveningDay's possibly-anticipated
+      // identity, so Holy Saturday evening (already Easter's own First
+      // Vespers) correctly keeps it rather than being wrongly suppressed.
+      if (isInTriduum(day.date)) {
+        return [];
+      }
       return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) }];
     case 'vespers-psalmody':
       return resolvePsalmody(day, weekday);

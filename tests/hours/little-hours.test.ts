@@ -155,6 +155,14 @@ describe.each(LITTLE_HOURS)('resolveOrdo(%s, ...)', (hourId) => {
     const antiphon = ordo.parts.find((p) => p.kind === 'psalm')?.antiphon;
     expect(antiphon?.text.la).not.toContain(LAWRENCE_ANTIPHON_INCIPIT[hourId]);
   });
+
+  it('drops the opening "Deus in adiutorium" versicle (own baked-in Gloria Patri) on Maundy Thursday and Good Friday', () => {
+    // Easter 2026 is Apr 5: Maundy Thursday Apr 2, Good Friday Apr 3.
+    for (const date of ['2026-04-02', '2026-04-03']) {
+      const ordo = resolveOrdo(hourId, date);
+      expect(ordo.parts.some((p) => p.kind === 'versicle')).toBe(false);
+    }
+  });
 });
 
 // Pentecost's octave (2026-05-24 Sunday through 2026-05-30 Saturday) swaps
