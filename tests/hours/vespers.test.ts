@@ -658,6 +658,22 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Vexílla Regis pródeunt');
   });
 
+  it('omits the psalm Gloria Patri on Maundy Thursday and Good Friday, but keeps it on Holy Saturday evening (already Easter\'s own First Vespers)', () => {
+    // Easter 2026 is Apr 5. Holy Saturday's evening is an absolute
+    // exception (see resolveEveningDay's isMajorFixedFeastOfTheLord
+    // override): the Vigil already belongs to Easter, not Holy Saturday,
+    // so its Gloria Patri must be resolved against that anticipated
+    // identity, not the raw calendar date.
+    const maundyThursday = resolveOrdo('vespers', '2026-04-02');
+    const goodFriday = resolveOrdo('vespers', '2026-04-03');
+    const holySaturdayEvening = resolveOrdo('vespers', '2026-04-04');
+    const gloriaOf = (ordo: typeof maundyThursday) =>
+      ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.gloriaPatri : undefined));
+    for (const g of gloriaOf(maundyThursday)) expect(g).toBeUndefined();
+    for (const g of gloriaOf(goodFriday)) expect(g).toBeUndefined();
+    for (const g of gloriaOf(holySaturdayEvening)) expect(g).toBeDefined();
+  });
+
   it('includes the Kyrie + Our Father lead-in right after the Magnificat, before the day collect (either form)', () => {
     // 2033-09-06 is a Tuesday, plain ordinary trinitytide -- same bare
     // ferial already used above for the Magnificat weekday-default test.

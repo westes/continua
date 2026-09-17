@@ -9,7 +9,17 @@ import * as lauds from './lauds';
 import * as vespers from './vespers';
 import * as matins from './matins';
 import { resolveDay } from '../calendar';
+import { resolveEveningDay } from '../calendar/vespers';
 import { resolveGloriaPatri } from './resolve-common';
+
+// Vespers and Compline resolve their *content* off resolveEveningDay's
+// possibly-anticipated identity (e.g. Holy Saturday evening is already
+// Easter's own First Vespers/Compline — see resolveEveningDay's doc
+// comment), so the Gloria Patri's Sacred Triduum omission has to be
+// checked against that same governing day, not the raw calendar date —
+// otherwise Easter's anticipated evening offices would wrongly lose their
+// Gloria Patri as if they were still Holy Saturday's.
+const EVENING_HOURS = new Set<HourId>(['vespers', 'compline']);
 
 type Resolver = (date: string) => ResolvedOrdo;
 
@@ -47,7 +57,8 @@ function withGloriaPatri(parts: ResolvedPart[], gloriaPatri: ResolvedText | unde
 
 export function resolveOrdo(hourId: HourId, date: string): ResolvedOrdo {
   const ordo = registry[hourId](date);
-  const gloriaPatri = resolveGloriaPatri(resolveDay(date));
+  const day = EVENING_HOURS.has(hourId) ? resolveEveningDay(date) : resolveDay(date);
+  const gloriaPatri = resolveGloriaPatri(day);
   return { ...ordo, parts: withGloriaPatri(ordo.parts, gloriaPatri) };
 }
 
