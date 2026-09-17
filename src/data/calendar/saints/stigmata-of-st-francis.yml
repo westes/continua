@@ -12,6 +12,9 @@
 id: stigmata-of-st-francis
 name: "The Impression of the Sacred Stigmata of St. Francis"
 nameLa: "Sacra Stigmata Sancti Francisci"
+# Browser-tab title only (see calendar/feasts.ts's SaintRecord.titleName
+# doc comment) -- shorter than the full liturgical `name` above.
+titleName: "The Stigmata of St. Francis"
 rank: duplex
 common: common-of-a-confessor
 propers: "stigmata-of-st-francis"
