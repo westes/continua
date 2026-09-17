@@ -80,3 +80,13 @@ caddy file-server --root dist --listen :8080
 
 (For a real deployment you'll want a fallback rule so unknown paths resolve to `index.html`;
 see the `Caddyfile` in this repo for the pattern.)
+
+## Contributing
+
+Issues are welcome — file them against this repo on [Gitea](https://gitea.reground.org/will/continua/issues).
+(Account registration on this instance isn't open yet; reach out if you'd like an account in the
+meantime.)
+
+If you'd like occasional notes on how this and other Reground infrastructure is run (Ansible,
+backups, that kind of thing), there's an opt-in mailing list:
+[reground.org/devops-list](https://reground.org/devops-list/).
