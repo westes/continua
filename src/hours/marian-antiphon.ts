@@ -17,11 +17,10 @@ const AVE_REGINA_CAELORUM_ID = 'marian-antiphon-ave-regina-caelorum';
  * Season doc comment for the general overlapping-windows problem this is
  * one instance of. Rather than force `season` to represent it, this checks
  * the real date directly, bypassing the by-season table for this one case.
- * The Triduum (Maundy Thursday through Holy Saturday) that follows isn't
- * specially handled — it falls through to whatever `season` resolves to
- * there (currently 'passiontide', not a key in marian-antiphon-by-season's
- * bySeason table, so it lands on the perAnnum default), which is a known,
- * separate gap, not something this fix claims to solve.
+ * The Triduum (Maundy Thursday through Holy Saturday) that follows this
+ * window is dropped entirely rather than resolved through this function —
+ * see compline.ts's own isInTriduum check, which short-circuits before ever
+ * calling getMarianAntiphonId.
  */
 function isCandlemasToHolyWednesday(isoDate: string): boolean {
   const year = Number(isoDate.slice(0, 4));

@@ -9,6 +9,7 @@ import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { isDoubleOrHigher } from './antiphon';
 import { resolveCommon, substituteDoxology, splitNamedAntiphon, openingAntiphon, resolveResponsory } from './resolve-common';
 import { isAllSouls, buildComplineParts } from './all-souls';
+import { isInTriduum } from '../calendar/temporal';
 import complineDefinitionData from '../data/hours/compline.yml';
 
 const complineDefinition = complineDefinitionData as HourDefinition;
@@ -55,6 +56,14 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'lesson':
       return [{ kind: 'lesson', text: resolveCommon(part.textRef.id), label: part.label }];
     case 'opening-versicle':
+      // "Deus in adiutorium... Glória Patri..." carries its own Gloria
+      // Patri baked into the versicle's fixed text (opening-alleluia.yml /
+      // opening-laus-tibi.yml) — dropped whole during the Sacred Triduum,
+      // same real rubric matins.ts already applies to its own opening
+      // block (Tenebrae: "Invitatorium{omittitur}", no versicle either).
+      if (isInTriduum(day.date)) {
+        return [];
+      }
       return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) }];
     case 'psalm':
       return [
@@ -79,6 +88,12 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       ];
     }
     case 'marian-antiphon': {
+      // Dropped entirely during the Sacred Triduum (Maundy Thursday through
+      // Holy Saturday) — real practice, distinct from the by-season lookup's
+      // known Triduum gap noted in marian-antiphon.ts's own doc comment.
+      if (isInTriduum(day.date)) {
+        return [];
+      }
       const id = getMarianAntiphonId(day);
       return [{ kind: 'preces', text: resolveCommon(id), label: getMarianAntiphonLabel(id) }];
     }

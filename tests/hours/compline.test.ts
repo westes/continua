@@ -148,6 +148,33 @@ describe('resolveOrdo("compline", ...)', () => {
     expect(marianLabel('2026-04-02')).not.toBe('Ave Regina Caelorum'); // Maundy Thursday itself
   });
 
+  it('drops the Marian antiphon entirely, and the Gloria Patri after psalms, on Maundy Thursday and Good Friday', () => {
+    // Easter 2026 is Apr 5: Maundy Thursday Apr 2, Good Friday Apr 3. Holy
+    // Saturday evening (Apr 4) is excluded here — it already anticipates
+    // Easter's own First Vespers/Compline (see resolveEveningDay), so its
+    // Marian antiphon (Regina Caeli) and Gloria Patri are rightly present.
+    for (const date of ['2026-04-02', '2026-04-03']) {
+      const ordo = resolveOrdo('compline', date);
+      const marianLabels = ['Salve Regina', 'Alma Redemptoris Mater', 'Ave Regina Caelorum', 'Regina Caeli', 'Marian Antiphon'];
+      const marian = ordo.parts.find((p) => p.kind === 'preces' && marianLabels.includes(p.label ?? ''));
+      expect(marian).toBeUndefined();
+      const psalms = ordo.parts.filter((p) => p.kind === 'psalm');
+      expect(psalms.length).toBeGreaterThan(0);
+      for (const psalm of psalms) {
+        expect(psalm.kind === 'psalm' ? psalm.gloriaPatri : 'should be undefined').toBeUndefined();
+      }
+      // The opening "Deus in adiutorium... Glória Patri..." versicle
+      // carries its own Gloria Patri baked into its fixed text — must be
+      // dropped whole, not just the separate psalm-closing Gloria above.
+      // (Compline has a second, unrelated 'versicle' part later — "In
+      // manus tuas" — which is unaffected and still present.)
+      const openingVersicle = ordo.parts.find(
+        (p) => p.kind === 'versicle' && p.text.text.la?.includes('Deus') && p.text.text.la?.includes('adjutórium'),
+      );
+      expect(openingVersicle).toBeUndefined();
+    }
+  });
+
   it('closes the Short Reading with "Deo gratias", via the shared lesson-close proper', () => {
     const ordo = resolveOrdo('compline', MONDAY);
     const shortReadingIndex = ordo.parts.findIndex((p) => p.kind === 'lesson' && p.label === 'Short Reading');
