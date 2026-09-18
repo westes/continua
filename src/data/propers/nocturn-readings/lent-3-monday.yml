@@ -1,0 +1,112 @@
+# Matins Nocturn content for Monday of Lent week 3 — read from
+# web/www/horas/{Latin,English}/Tempora/Quad3-1.txt. Gospel incipit only
+# in that file ("Et réliqua"); full pericope sourced from
+# web/www/missa/{Latin,English}/Tempora/Quad3-1.txt's own [Evangelium].
+# Recombined into one reading (Lectio1-3 are one continuous Ambrose
+# homily split only to fill the fixed 3-lesson slot count). Responsory
+# is Lectio1's own (given directly in this file, not a cross-reference).
+id: lent-3-monday
+readings:
+  - nocturn: 1
+    isGospel: true
+    citation: { la: "Luc 4:23-30", en: "Luke 4:23-30" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus pharisǽis: Utique dicétis mihi hanc similitúdinem: Médice, cura
+        teípsum: quanta audívimus facta in Caphárnaum, fac et hic in pátria tua. Ait autem: Amen,
+        dico vobis, quia nemo prophéta accéptus est in pátria sua. In veritáte dico vobis, multæ
+        víduæ erant in diébus Elíæ in Israël, quando clausum est cœlum annis tribus et ménsibus sex,
+        cum facta esset fames magna in omni terra: et ad nullam illárum missus est Elías, nisi in
+        Sarépta Sidóniæ ad mulíerem víduam. Et multi leprósi erant in Israël sub Eliséo Prophéta: et
+        nemo eórum mundátus est nisi Náaman Syrus. Et repléti sunt omnes in synagóga ira, hæc
+        audiéntes. Et surrexérunt, et ejecérunt illum extra civitátem: et duxérunt illum usque ad
+        supercílium montis, super quem cívitas illórum erat ædificáta, ut præcipitárent eum. Ipse
+        autem tránsiens per médium illórum, ibat.
+      en: >-
+        At that time, Jesus said to the Pharisees, "You will surely quote me this proverb,
+        'Physician, cure Yourself! Whatever things we have heard of as done in Capharnaum, do here
+        also in Your own country!'" But He said, "Amen I say to you, no prophet is acceptable in his
+        own country. In truth I say to you, there were many widows in Israel in the days of Elias,
+        when heaven was shut up for three years and six months, and a great famine came over all the
+        land; and to none of them was Elias sent, but rather to a widowed woman in Sarepta of Sidon.
+        And there were many lepers in Israel in the time of Eliseus the prophet; and not one of them
+        was cleansed, but only Naaman the Syrian." And all in the synagogue, as they heard these
+        things, were filled with wrath. And they rose up and put Him forth out of the town, and led
+        Him to the brow of the hill, on which their town was built, that they might throw Him down
+        headlong. But He, passing through their midst, went His way.
+    status: { la: verified, en: verified }
+
+  - nocturn: 1
+    isGospel: false
+    source: "St. Ambrose, Bishop of Milan, Book 4 on Luke iv"
+    text:
+      la: >-
+        Non medíocris invídia próditur, quæ cívicæ caritátis oblíta, in acérba ódia causas amóris
+        infléctit. Simul hoc exémplo páriter et oráculo declarátur, quod frustra opem misericórdiæ
+        cæléstis exspéctes, si aliénæ frúctibus virtútis invídeas. Aspernátor enim Dóminus invidórum
+        est: et ab iis qui divína benefícia in áliis persequúntur, mirácula suæ potestátis avértit.
+        Domínicæ quippe carnis actus, divinitátis exémplum est: et invisibília nobis ejus, per ea
+        quæ sunt visibília, demonstrántur.
+
+
+        Non otióse ítaque Salvátor excúsat, quod nulla in pátria sua mirácula virtútis operátus sit:
+        ne fortássis áliquis viliórem pátriæ nobis esse debére putáret afféctum. Neque enim cives
+        póterat non amáre, qui amáret omnes: sed ipsi se caritáte pátriæ, dum ínvident, abdicárunt.
+        In veritáte dico vobis: multæ víduæ fuérunt in diébus Elíæ. Non quia Elíæ dies fuérunt, sed
+        in quibus Elías operátus est: aut quia Elías dies faciébat illis, qui in ejus opéribus lucem
+        vidébant grátiæ spiritális, et convertebántur ad Dóminum. Et ídeo aperiebátur cælum vidéntibus
+        ætérna et divína mystéria: claudebátur, et fames erat, quando nulla erat cognoscéndæ
+        divinitátis ubértas. Sed de hoc plénius díximus, cum de víduis scriberémus.
+
+
+        Et multi leprósi erant in Judǽa tempóribus Eliséi prophétæ: et nemo eórum mundátus est, nisi
+        Náaman Syrus. Evidénter hic sermo nos Dómini salutáris infórmat, et ad stúdium venerándæ
+        divinitátis hortátur: quod nemo sanátus osténditur, et maculósi morbo córporis absolútus,
+        nisi qui religióso offício stúduit sanitáti. Non enim dormiéntibus divína benefícia, sed
+        observántibus deferúntur. Díximus in libro álio, in vídua illa, ad quam Elías diréctus est,
+        typum Ecclésiæ præmíssum. Pópulus Ecclésiam congregávit, ut sequátur pópulus ille ex
+        alienígenis congregátus. Pópulus ille ante leprósus, pópulus ille ante maculósus, priúsquam
+        mýstico baptizarétur in flúmine: idem post sacraménta baptísmatis máculis córporis et mentis
+        ablútus, jam non lepra, sed immaculáta virgo cœpit esse sine ruga.
+      en: >-
+        Here we have a display of a spite not very common. Their hatred of Christ, and their desire
+        to find grounds for that hatred in what in Him appealed for their love, had made them forget
+        their local friendliness to a fellow-citizen. By this example as well as by God's
+        declaration, thou mayest learn that thou wilt wait in vain to be helped of His mercy, whilst
+        thou art envious of the spiritual good of thy neighbour. Yea, the Lord turneth Him away from
+        the envious, and will not show the mighty works of His power to such as are bitter against
+        His gifts to others. The example of Himself which God hath been pleased to set before us is
+        that of His doings in the Flesh, and it is by these His doings which He suffered to be seen,
+        that we are taught touching those which are unseen.
+
+
+        The Saviour then doth not lightly excuse Himself that He had wrought none of His mighty
+        works in His own country, lest perchance any should thence learn to think lightly of our
+        duty to love our Fatherland. Neither was it possible that He Who loved all, should not love
+        His own countrymen; they it was who failed in that love because of their very envy. I tell
+        you of a truth, many widows were in Israel in the days of Elias. The days of Elias not that
+        the said days belonged to Elias, but either because those were the days when Elias lived and
+        worked; or, else, this is a mystic phrase, meaning that Elias by his works made many souls to
+        awake spiritually from the night of sin to the day of grace, and turn to the Lord. In this
+        latter sense that holy Prophet was a mean whereby heaven was opened to such as looked to the
+        eternal and mysterious things of God, and again was shut, (and there was a famine,) when
+        there were no means of knowing God through outward ordinances. This subject, however, I have
+        treated before at full length, when I was writing on the subject of widows.
+
+
+        And many lepers were in Israel in the days of Eliseus the Prophet, and none of them was
+        cleansed, saving Naaman the Syrian. By these words of the Lord our great Physician, we are
+        plainly taught and urged to put our trust in the Adorable God, since we see that none was
+        healed, or cleansed from bodily plague-spots, save him who took a religious means to regain
+        health. For the blessings of God are not given to them who close their eyes in sleep, but to
+        them that look to Him. We have remarked in our other book, (alluded to above,) that the
+        widow to whom Elias was sent was a type of the Church. And next after (the mention of the
+        type of) the Church cometh meetly the (mention of him who was a type of the Gentile) people,
+        (her converts.) Yea, the Gentiles were a people foreigners by birth, leprous, and covered
+        with plague-spots, till they were baptized in the stream of the mystic Jordan; but from the
+        sacramental waters they rise, lepers no more, but cleansed in body and soul, a glorious
+        virgin Church, not having spot, or wrinkle, or any such thing.
+    responsory:
+      la: "R. Tóllite hinc vobíscum múnera, et ite ad dóminum terræ: et cum invenéritis, adoráte eum super terram: * Deus autem meus fáciat eum vobis placábilem: et remíttat et hunc fratrem vestrum vobíscum, et eum quem tenet in vínculis.\nV. Súmite de óptimis terræ frúgibus in vasis vestris, et deférte viro múnera.\nR. Deus autem meus fáciat eum vobis placábilem: et remíttat et hunc fratrem vestrum vobíscum, et eum quem tenet in vínculis."
+      en: "R. Take hence presents with you, and go unto the lord of the land, and when ye be come into his presence, bow yourselves to him to the earth. * And my God give you mercy before the man, that he may send away again this your brother, and him which he keepeth in ward.\nV. Take of the best fruits of the land in your vessels, and carry down the man a present.\nR. And my God give you mercy before the man, that he may send away again this your brother, and him which he keepeth in ward."
+    status: { la: verified, en: verified }

@@ -1,0 +1,96 @@
+# Matins Nocturn content for Thursday of Lent week 1 — read from
+# web/www/horas/{Latin,English}/Tempora/Quad1-4.txt. Gospel incipit only
+# in that file ("Et réliqua"); full pericope sourced from
+# web/www/missa/{Latin,English}/Tempora/Quad1-4.txt's own [Evangelium].
+# Recombined into one reading (Lectio1-3 are one continuous Jerome
+# excerpt split only to fill the fixed 3-lesson slot count). Responsory1
+# is given directly in this file (not a cross-reference).
+id: lent-1-thursday
+readings:
+  - nocturn: 1
+    isGospel: true
+    citation: { la: "Matt 15:21-28", en: "Matthew 15:21-28" }
+    text:
+      la: >-
+        In illo témpore: Egréssus Jesus secéssit in partes Tyri et Sidónis. Et ecce, múlier Chananǽa
+        a fínibus illis egréssa clamávit, dicens ei: Miserére mei, Dómine, fili David: fília mea
+        male a dæmónio vexátur. Qui non respóndit ei verbum. Et accedéntes discípuli ejus rogábant
+        eum, dicéntes: Dimítte eam; quia clamat post nos. Ipse autem respóndens, ait: Non sum missus
+        nisi ad oves, quæ periérunt domus Israël. At illa venit, et adorávit eum, dicens: Dómine,
+        ádjuva me. Qui respóndens, ait: Non est bonum súmere panem filiórum, et míttere cánibus. At
+        illa dixit: Etiam, Dómine: nam et catélli edunt de micis, quæ cadunt de mensa dominórum
+        suórum. Tunc respóndens Jesus, ait illi: O múlier, magna est fides tua: fiat tibi, sicut
+        vis. Et sanáta est fília ejus ex illa hora.
+      en: >-
+        At that time, leaving there, Jesus retired to the district of Tyre and Sidon. And behold, a
+        Canaanite woman came out of that territory and cried out to Him, saying, "Have pity on me, O
+        Lord, Son of David! My daughter is sorely beset by a devil." He answered her not a word. And
+        His disciples came up and besought Him, saying, "Send her away, for she is crying after us."
+        But He answered and said, "I was not sent except to the lost sheep of the house of Israel."
+        But she came and worshipped Him, saying, "Lord, help me!" He said in answer, "It is not fair
+        to take the children's bread and to cast it to the dogs." But she said, "Yes, Lord; for even
+        the dogs eat of the crumbs that fall from their masters' table." Then Jesus answered and
+        said to her, "O woman, great is your faith! Let it be done to you as you will." And her
+        daughter was healed from that moment.
+    status: { la: verified, en: verified }
+
+  - nocturn: 1
+    isGospel: false
+    source: "St. Jerome, Priest, Book 2, Commentary on Matthew, ch. 15"
+    text:
+      la: >-
+        Scribis et pharisǽis calumniatóribus derelíctis, transgréditur in partes Tyri et Sidónis, ut
+        Týrios Sidoniósque curáret. Múlier autem Chananǽa egréditur de fínibus prístinis, ut clamans
+        fíliæ ímpetret sanitátem. Obsérva quod in quintodécimo loco fília Chananǽæ sanétur. Miserére
+        mei, Dómine, Fili David. Inde novit vocáre Fílium David, quia egréssa jam fúerat de fínibus
+        suis, et errórem Tyriórum ac Sidoniórum loci et fídei commutatióne dimíserat.
+
+
+        Fília mea male a dæmónio vexátur. Ego fíliam Chananǽæ puto ánimas esse credéntium, quæ male
+        a dæmónio vexabántur, ignorántes Creatórem, et adorántes lápidem. Qui non respóndit ei
+        verbum: non de supérbia pharisáica, nec de scribárum supercílio: sed ne ipse senténtiæ suæ
+        viderétur esse contrárius, per quam jússerat: In viam géntium ne abiéritis, et in civitátes
+        Samaritanórum ne intravéritis. Nolébat enim occasiónem calumniatóribus dare: perfectámque
+        salútem géntium passiónis et resurrectiónis témpori reservábat.
+
+
+        Et accedéntes discípuli ejus, rogábant eum, dicéntes: Dimítte eam, quia clamat post nos.
+        Discípuli illo adhuc témpore mystéria Dómini nesciéntes, vel misericórdia commóti, rogábant
+        pro Chananǽa mulíere, quam alter Evangelísta Syrophœníssam appéllat: vel importunitáte ejus
+        carére cupiéntes, quia non ut cleméntem, sed ut durum médicum crébrius inclamáret. Ipse
+        autem respóndens ait: Non sum missus, nisi ad oves quæ periérunt domus Israël. Non quo et
+        ad gentes non missus sit, sed quo primum missus sit ad Israël: ut illis non recipiéntibus
+        Evangélium, justa fíeret ad gentes transmigrátio.
+      en: >-
+        Christ leaveth the Scribes and Pharisees who had spoken falsely against Him, and goeth into
+        the coasts of Tyre and Sidon, that He may heal the Tyrians and Sidonians. But a woman of
+        Canaan cometh to Him out of the land He had left, and crieth to Him to give health to her
+        daughter. Remark that the case of the daughter of this woman of Canaan is the fifteenth case
+        of healing. "Have mercy on me, O Lord, Thou Son of David!" She knew that He was to be called
+        Son of David because she was come out of His own country, and had left the errors of the
+        Tyrians and Sidonians when she changed her home and her faith.
+
+
+        "My daughter is grievously vexed with a devil." I think that the daughter of this woman of
+        Canaan, (whom the Lord at length delivered,) was a figure of the souls of such as now
+        believe, but were once grievously vexed by the devil, knowing not Him Who made them, and
+        bowing down to stocks and stones. But He answered not a word, not because He was puffed up
+        with the pride of the Pharisees, or shared the high looks of the Scribes, but that He might
+        fulfil His own word that He had spoken, saying, "Go not into the way of the Gentiles, and
+        into any city of the Samaritans enter ye not." He would not give an occasion to such as
+        spoke falsely against Him, and He kept back perfect salvation from the Gentiles until such
+        time as He should have suffered and risen again.
+
+
+        "And His disciples came and besought Him, saying, Send her away; for she crieth after us."
+        The disciples, knowing not as yet the mysterious things of the Lord, said this, either
+        because they were moved with compassion and so interceded for this Canaanite woman, whom
+        another Evangelist calleth a Syrophoenician, or because she was crying out that the Lord was
+        an hard, instead of a merciful physician, and they desired to be rid of her clamour. "But He
+        answered and said, I am not sent but unto the lost sheep of the house of Israel," not that He
+        was not sent unto the Gentiles, but because it was to Israel in the first instance that He
+        was sent, whom refusing the Gospel, He might justly pass away from, and go to the Gentiles.
+    responsory:
+      la: "R. Tribulárer, si nescírem misericórdias tuas, Dómine; tu dixísti: Nolo mortem peccatóris, sed ut magis convertátur et vivat: * Qui Chananǽam et publicánum vocásti ad pœniténtiam.\nV. Secúndum multitúdinem dolórum meórum in corde meo, consolatiónes tuæ lætificavérunt ánimam meam.\nR. Qui Chananǽam et publicánum vocásti ad pœniténtiam."
+      en: "R. I had been troubled, but that I knew thy mercy, O Lord; Thou hast said: I have no pleasure in the death of the wicked, but that he turn from his way and live. * O Thou, Who didst call the Canaanite woman and the Publican unto repentance!\nV. In the multitude of the sorrows within my heart, thy comforts delight my soul.\nR. O Thou Who didst call the Canaanite woman and the Publican unto repentance!"
+    status: { la: verified, en: verified }

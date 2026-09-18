@@ -1,0 +1,112 @@
+# Matins Nocturn content for Tuesday of Lent week 1 — read from
+# web/www/horas/{Latin,English}/Tempora/Quad1-2.txt. Gospel incipit only
+# in that file ("Et réliqua"); full pericope sourced from
+# web/www/missa/{Latin,English}/Tempora/Quad1-2.txt's own [Evangelium].
+# Recombined into one reading (Lectio1-3 are one continuous Bede homily
+# split only to fill the fixed 3-lesson slot count). Responsory1 is a
+# cross-reference (@Tempora/Quad1-0:Responsory4).
+id: lent-1-tuesday
+readings:
+  - nocturn: 1
+    isGospel: true
+    citation: { la: "Matt 21:10-17", en: "Matthew 21:10-17" }
+    text:
+      la: >-
+        In illo témpore: Cum intrásset Jesus Jerosólymam, commóta est univérsa cívitas, dicens: Quis
+        est hic? Pópuli autem dicébant: Hic est Jesus Prophéta a Názareth Galilǽæ. Et intrávit Jesus
+        in templum Dei, et ejiciébat omnes vendéntes, et eméntes in templo; et mensas nummulariórum
+        et cáthedras vendéntium colúmbas evértit: et dicit eis: Scriptum est: Domus mea domus
+        oratiónis vocábitur: vos autem fecístis illam spelúncam latrónum. Et accessérunt ad eum cæci
+        et claudi in templo: et sanávit eos. Vidéntes autem príncipes sacerdótum et scribæ
+        mirabília, quæ fecit, et púeros clamantes in templo, et dicéntes: Hosánna fílio David:
+        indignáti sunt, et dixérunt ei: Audis, quid isti dicunt? Jesus autem dixit eis: Utique.
+        Numquam legístis: Quia ex ore infántium et lacténtium perfecísti laudem? Et relíctis illis,
+        ábiit foras extra civitátem in Bethániam: ibíque mansit.
+      en: >-
+        At that time, when Jesus entered Jerusalem, all the city was thrown into commotion, saying,
+        "Who is this?" But the crowds kept on saying, "This is Jesus the prophet from Nazareth of
+        Galilee." And Jesus entered the temple of God, and cast out all those who were selling and
+        buying in the temple, and He overturned the tables of the money-changers and the seats of
+        those who sold the doves. And He said to them, "It is written, 'My house shall be called a
+        house of prayer'; but you have made it a den of thieves." And the blind and the lame came to
+        Him in the temple, and He healed them. But the chief priests and the Scribes, seeing the
+        wonderful deeds that He did, and the children crying out in the temple, and saying, "Hosanna
+        to the Son of David," were indignant, and said to Him, "Do You hear what these are saying?"
+        And Jesus said to them, "Yes; have you never read, 'Out of the mouth of infants and
+        sucklings You have perfected praise'?" And leaving them, He went out of the city to Bethany
+        and He stayed there.
+    status: { la: verified, en: verified }
+
+  - nocturn: 1
+    isGospel: false
+    source: "The Venerable Bede, Priest, 11th Homily for Lent"
+    text:
+      la: >-
+        Quod maledicéndo ficum infructuósam per figúram fecit Dóminus, hoc idem mox apértius
+        osténdit, eiciéndo ímprobos e templo. Neque enim áliquid peccávit arbor, quod esuriénte
+        Dómino poma non hábuit, quorum necdum tempus advénerat: sed peccavére sacerdótes, qui in
+        domo Dómini negótia sæculária gerébant, et fructum pietátis, quem debúerant, quemque in eis
+        Dóminus esuriébat, ferre superséderant. Arefécit Dóminus árborem maledícto, ut hómines hæc
+        vidéntes, sive audiéntes, multo magis intellégerent sese divíno condemnándos esse judício,
+        si absque óperum fructu, de plausu tantum sibi religiósi sermónis, velut de sónitu et
+        teguménto blandiréntur viridántium foliórum.
+
+
+        Verum quia non intellexérunt, in ipsos consequénter districtiónem méritæ ultiónis exércuit:
+        et ejécit commércia rerum humanárum de domo illa, in qua divínas tantum res agi, hóstias et
+        oratiónes Dei offérri, verbum Dei legi, audíri, et decantári præcéptum erat. Et quidem
+        credéndum est, quia ea tantum vendi vel emi repérerit in templo quæ ad ministérium
+        necessária essent ejúsdem templi, juxta hoc quod álias factum légimus, cum idem templum
+        ingrédiens, invénit in eo vendéntes et eméntes oves, et boves, et colúmbas: quia nimírum hæc
+        ómnia non nisi ut offerréntur in domo Dómini, eos qui de longe vénerant, ab indígenis
+        comparáre credéndum est.
+
+
+        Si ergo Dóminus nec ea volébat venúmdari in templo, quæ in templo volébat offérri, vidélicet
+        propter stúdium avarítiæ, sive fraudis, quod próprium solet esse negotiántium fácinus: quanta
+        putas animadversióne puníret, si invenísset ibi áliquos rísui vel vanilóquio vacántes aut
+        álii cuílibet vítio mancipátos? Si enim ea quæ álibi líbere geri póterant, Dóminus in domo
+        sua temporália negótia geri non pátitur: quanto magis ea quæ nusquam fíeri licet, plus
+        cæléstis iræ meréntur, si in ǽdibus Deo sacrátis agúntur? Verum quia Spíritus Sanctus in
+        colúmba super Dóminum appáruit, recte per colúmbas Sancti Spíritus charísmata signántur. Qui
+        autem sunt in templo Dei hódie, qui colúmbas vendunt, nisi qui in Ecclésia prétium de
+        impositióne manus accípiunt, per quam vidélicet impositiónem Spíritus Sanctus cǽlitus datur?
+      en: >-
+        The same thing which the Lord showed in a figure by cursing the barren fig-tree, He
+        afterwards more plainly put before us by casting the desecrators out of the temple. The
+        tree herself had not sinned by bearing no fruit when the Lord was hungry, for the time of
+        figs was not yet come, but those Priests had sinned who were carrying on worldly business
+        in the Lord's house, and who neglected to bring forth that fruit of godliness which they
+        owed, and which the Lord was hungry to find in them. The Lord made the fig-tree to wither
+        away under His curse, that all men who saw it, and all men who hear of it, might know that
+        they will be condemned by the judgment of God, if they content themselves with the talk of
+        godliness, without the solid fruit of good works, even as that barren fig-tree was clothed
+        only with a rustling garb of green leaves.
+
+
+        But because the buyers and sellers understood not the parable of the barren fig-tree, the
+        Lord brought upon them the stroke of the punishment that they had deserved, and cast out the
+        traffickers in earthly things, from that house, wherein it had been commanded that nothing
+        should be done save the work of God, sacrifices and prayers offered up to Him, and His word
+        read, taught, and sung. And yet it may be believed that nothing was being sold or bought in
+        the temple save such things as were needful for the service thereof, as we read in another
+        place, that when Jesus went into the temple He found those that sold oxen and sheep and
+        doves, and all these things were doubtless there for no other end but to be offered to God
+        in that His holy house, and were sold by the natives to those worshippers who came from a
+        distance, to be so used.
+
+
+        If, therefore, the Lord would not have to be sold in the temple, even such things as He
+        willed should be offered therein, (On account, that is, of the greed or dishonesty which is
+        often the stain of such transactions,) with what anger, suppose ye, would He visit such as
+        He might find laughing or gossiping there, or yielding to any other sin. If the Lord suffer
+        not to be carried on in His house such worldly business as may be freely done elsewhere, how
+        much more shall such things as ought never to be done anywhere, draw down the anger of God
+        if they be done in His own holy house. Lastly the Holy Ghost came down upon the Lord in the
+        shape of a dove, and by doves therefore may be signified the gifts of that Holy Spirit.
+        They, then, to this day sell doves in the temple of God, who take money in the Church for
+        the laying on of their hands, whereby the Holy Ghost is given from heaven.
+    responsory:
+      la: "R. Emendémus in mélius, quæ ignoránter peccávimus: ne súbito præoccupáti die mortis, quærámus spátium pœniténtiæ, et inveníre non possímus: * Atténde, Dómine, et miserére, quia peccávimus tibi.\nV. Adjuva nos, Deus salutáris noster, et propter honórem nóminis tui, Dómine, líbera nos.\nR. Atténde, Dómine, et miserére, quia peccávimus tibi."
+      en: "R. Let us amend for the better in that wherein we have sinned unknowingly, or ever the day of death suddenly prevent us, and we seek a place of repentance, and find none. * Give heed, O Lord, and have mercy upon us, for we have sinned against thee.\nV. Help us, O God of our salvation, and for the glory of thy Name deliver us, O Lord.\nR. Give heed, O Lord, and have mercy upon us, for we have sinned against thee."
+    status: { la: verified, en: verified }

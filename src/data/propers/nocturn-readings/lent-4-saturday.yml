@@ -1,0 +1,108 @@
+# Matins Nocturn content for Saturday in the 4th week of Lent — read from
+# web/www/horas/{Latin,English}/Tempora/Quad4-6.txt. Gospel incipit only
+# in that file ("Et réliqua"); full pericope sourced from
+# web/www/missa/{Latin,English}/Tempora/Quad4-6.txt's own [Evangelium].
+# Recombined into one reading (Lectio1-3 are one continuous Augustine
+# homily split only to fill the fixed 3-lesson slot count). Responsory1 is
+# a cross-reference (@Tempora/Quad4-0:Responsory7 — the same text
+# lent-4-wednesday.yml's own combined reading uses, reused here per the
+# source's own cross-reference, not an error) per the "the first one, when
+# several collapse" convention.
+id: lent-4-saturday
+readings:
+  - nocturn: 1
+    isGospel: true
+    citation: { la: "Joann 8:12-20", en: "John 8:12-20" }
+    text:
+      la: >-
+        In illo témpore: Locútus est Jesus turbis Judæórum, dicens: Ego sum lux mundi: qui séquitur
+        me, non ámbulat in ténebris, sed habébit lumen vitæ. Dixérunt ergo ei pharisǽi: Tu de te
+        ipso testimónium pérhibes: testimónium tuum non est verum. Respóndit Jesus et dixit eis: Et
+        si ego testimónium perhíbeo de meípso, verum est testimónium meum: quia scio, unde veni et
+        quo vado: vos autem nescítis, unde vénio aut quo vado. Vos secúndum carnem judicátis: ego
+        non júdico quemquam: et si júdico ego, judícium meum verum est, quia solus non sum: sed ego
+        et, qui misit me, Pater. Et in lege vestra scriptum est, quia duórum hóminum testimónium
+        verum est. Ego sum, qui testimónium perhíbeo de meípso: et testimónium pérhibet de me, qui
+        misit me, Pater. Dicébant ergo ei: Ubi est Pater tuus? Respóndit Jesus: Neque me scitis
+        neque Patrem meum: si me scirétis, fórsitan et Patrem meum scirétis. Hæc verba locútus est
+        Jesus in gazophylácio, docens in templo: et nemo apprehéndit eum, quia necdum vénerat hora
+        ejus.
+      en: >-
+        At that time, Jesus spoke to the multitudes of the Jews, saying, "I am the light of the
+        world. He who follows Me does not walk in the darkness, but will have the light of life."
+        The Pharisees therefore said to Him, "You bear witness to Yourself. Your witness is not
+        true." Jesus answered and said to them, "Even if I bear witness to Myself, My witness is
+        true, because I know where I came from and where I go. But you do not know where I came
+        from or where I go. You judge according to the flesh; I judge no one. And even if I do
+        judge, My judgment is true, because I am not alone, but with Me is He Who sent Me, the
+        Father. And in your Law it is written that the witness of two persons is true. It is I Who
+        bear witness to Myself, and He Who sent Me, the Father, bears witness to Me." They therefore
+        said to Him, "Where is your Father?" Jesus answered, "You know neither Me nor My Father. If
+        you knew Me, you would then know My Father also." Jesus spoke these words in the treasury,
+        while teaching in the temple. And no one seized Him, because His hour had not yet come.
+    status: { la: verified, en: verified }
+
+  - nocturn: 1
+    isGospel: false
+    source: "St. Augustine, Bishop of Hippo, 34th Tract on John"
+    text:
+      la: >-
+        Quod ait Dóminus: Ego sum lux mundi: clarum puto esse eis, qui habent óculos, unde hujus
+        lucis partícipes fiant: qui autem non habent óculos, nisi in sola carne, mirántur quod
+        dictum est a Dómino Jesu Christo: Ego sum lux mundi. Et forte non desit qui dicat apud
+        semetípsum: Numquid forte Dóminus Christus est sol iste, qui ortu et occásu péragit diem?
+        Non enim defuérunt hærétici, qui ista sensérunt. Manichǽi solem istum óculis cárneis
+        visíbilem, expósitum et públicum non tantum homínibus, sed étiam pecóribus ad vidéndum,
+        Christum Dóminum esse putavérunt.
+
+
+        Sed cathólicæ Ecclésiæ recta fides ímprobat tale comméntum, et diabólicam doctrínam esse
+        cognóscit: nec solum agnóscit credéndo, sed in quibus potest convíncit étiam disputándo.
+        Improbémus ítaque hujúsmodi errórem, quem sancta ab inítio anathematizávit Ecclésia. Non
+        arbitrémur Dóminum Jesum Christum hunc esse solem, quem vidémus oríri ab Oriénte, occídere
+        in Occidénte: cujus cúrsui nox succédit, cujus rádii nube obumbrántur: qui certa de loco in
+        locum motióne cómmigrat. Non est hoc Dóminus Christus. Non est Dóminus Christus sol factus,
+        sed per quem sol factus est. Omnia enim per ipsum facta sunt, et sine ipso factum est nihil.
+
+
+        Est ergo lux, quæ fecit hanc lucem. Hanc amémus, hanc intellégere cupiámus, ipsam sitíamus,
+        ut ad ipsam duce ipsa aliquándo veniámus: et in illa ita vivámus, ut nunquam omníno
+        moriámur. Ista enim lux est, de qua prophetía olim præmíssa ita in Psalmo cécinit: Quóniam
+        apud te est fons vitæ, et in lúmine tuo vidébimus lumen. Advértite quid de tali luce antíquus
+        sanctórum hóminum Dei sermo præmíserit. Hómines, inquit, et juménta salvos fácies, Dómine:
+        sicut multiplicáta est misericórdia tua, Deus.
+      en: >-
+        I take it that these words of the Lord, "I am the Light of the world" are sufficiently clear
+        to all men who have eyes which see that Light. At the same time, such men as have no eyes
+        except those which are in their bodies, are surprised to find our Lord Jesus Christ saying,
+        "I am the Light of the world". And that we might not want somebody to say, "Is our Lord
+        Jesus Christ, then, the same sun that riseth and setteth every day?" There have actually
+        been heretics who did say it. The Manicheans believed that that sun which we see with our
+        bodily eyes, and to see which is plain and common to beasts as well as men, was the Lord
+        Christ.
+
+
+        But the right faith of the Catholic Church damneth such comment, and recogniseth in it a
+        doctrine of devils. And as it is her practice not only to brand errors by the difference of
+        her own Creed, but also to remove them, if possible, by dint of argument, let us take up
+        arms against this falsehood, which hath from the very beginning been the object of the curse
+        of the Holy Church. God forbid that we should believe that our Lord Jesus Christ is this sun
+        whose apparent movement is to rise every day in the East, and set every day in the West;
+        which when we see no more, night cometh over us; and whose rays are sometimes intercepted by
+        clouds and which hath some law of motion of its own whereby it describeth an orbit. The
+        planet is not the same thing as our Lord Jesus Christ. Our Lord Jesus Christ is not that
+        created sun, but He by Whom that sun was created; for all things were made by Him, and
+        without Him was not anything made that was made.
+
+
+        He is therefore the Light by Whom the material light was made. Him may we love, Him may we
+        long to know, Him may we thirst after; to Him may His own beams one day lead us, and in Him
+        may we so live that we shall never die! For He, even He, and none other, He is that Light,
+        of Whom the Prophet that was given of old time sang in the Psalms, when he said: "For with
+        thee is the fountain of life, and in thy Light shall we see light." Remember ye likewise
+        what the word of God's ancient saints saith of such Light: "O Lord, Thou preservest man and
+        beast! How excellent is thy loving-kindness, O God!"
+    responsory:
+      la: "R. Spléndida facta est fácies Móysi, dum respíceret in eum Dóminus: * Vidéntes senióres claritátem vultus ejus, admirántes timuérunt valde.\nV. Cumque descendísset de monte Sínai, portábat duas tábulas testimónii, ignórans quod cornúta esset fácies ejus ex consórtio sermónis Dei.\nR. Vidéntes senióres claritátem vultus ejus, admirántes timuérunt valde."
+      en: "R. After that the Lord had looked upon him, the face of Moses shone. * And when the elders saw that his face shone, they marvelled and were sore afraid.\nV. And when he came down from Mount Sinai with the two tables of testimony in his hand, he wist not that his face shone, because that God had spoken with him.\nR. And when the elders saw that his face shone, they marvelled and were sore afraid."
+    status: { la: verified, en: verified }

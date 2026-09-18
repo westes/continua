@@ -1,0 +1,112 @@
+# Matins Nocturn content for Tuesday of Lent week 3 — read from
+# web/www/horas/{Latin,English}/Tempora/Quad3-2.txt. Gospel incipit only
+# in that file ("Et réliqua"); full pericope sourced from
+# web/www/missa/{Latin,English}/Tempora/Quad3-2.txt's own [Evangelium].
+# Recombined into one reading (Lectio1-3 are one continuous Augustine
+# homily split only to fill the fixed 3-lesson slot count). Responsory
+# is Lectio1's own (given directly in this file, not a cross-reference);
+# Lectio2/3's own distinct responsories (cross-references to
+# Tempora/Quad3-0's Responsory5/6) are dropped, same as every other
+# collapsed-reading case.
+id: lent-3-tuesday
+readings:
+  - nocturn: 1
+    isGospel: true
+    citation: { la: "Matt 18:15-22", en: "Matthew 18:15-22" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus discípulis suis: Si peccáverit in te frater tuus, vade, et
+        córripe eum inter te et ipsum solum. Si te audíerit, lucrátus eris fratrem tuum. Si autem te
+        non audíerit, ádhibe tecum adhuc unum vel duos, ut in ore duórum vel trium téstium stet omne
+        verbum. Quod si non audíerit eos: dic ecclésiæ. Si autem ecclésiam non audíerit: sit tibi
+        sicut éthnicus et publicánus. Amen, dico vobis, quæcúmque alligavéritis super terram, erunt
+        ligáta et in cœlo: et quæcúmque solvéritis super terram, erunt solúta et in cœlo. Iterum
+        dico vobis, quia si duo ex vobis consénserint super terram, de omni re quamcúmque petíerint,
+        fiet illis a Patre meo, qui in cœlis est. Ubi enim sunt duo vel tres congregáti in nómine
+        meo, ibi sum in médio eórum. Tunc accédens Petrus ad eum, dixit: Dómine, quóties peccábit in
+        me frater meus, et dimíttam ei? usque sépties? Dicit illi Jesus: Non dico tibi usque
+        sépties, sed usque septuágies sépties.
+      en: >-
+        At that time, Jesus said to His disciples, "If your brother sin against you, go and show
+        him his fault, between you and him alone. If he listen to you, you have won your brother.
+        But if he do not listen to you, take with you one or two more so that on the word of two or
+        three witnesses every word may be confirmed. And if he refuse to hear them, appeal to the
+        Church, but if he refuse to hear even the Church, let him be to you as the heathen and the
+        publican. Amen I say to you, whatever you bind on earth shall be bound also in heaven; and
+        whatever you loose on earth shall be loosed also in heaven. I say to you further, that if
+        two of you shall agree on earth about anything at all for which they ask, it shall be done
+        for them by My Father in heaven. For where two or three are gathered together for My sake,
+        there am I in the midst of them." Then Peter came up to Him and said, "Lord, how often shall
+        my brother sin against me, and I forgive him? Up to seven times?" Jesus said to him, "I do
+        not say to you seven times, but seventy times seven."
+    status: { la: verified, en: verified }
+
+  - nocturn: 1
+    isGospel: false
+    source: "St. Augustine, Bishop of Hippo, Sermon 16 on the Words of the Lord"
+    text:
+      la: >-
+        Quare illum córripis? Quia tu doles, quod peccáverit in te? Absit. Si amóre tui id facis,
+        nihil facis: si amóre illíus facis, óptime facis. Dénique in ipsis verbis atténde, cujus
+        amóre id fácere débeas, utrum tui, an illíus. Si te audíerit, inquit, lucrátus es fratrem
+        tuum. Ergo propter illum fac, ut lucréris illum. Sic faciéndo lucráris: nisi fecísses,
+        períerat. Quid est ergo, quod pleríque hómines ista peccáta contémnunt, et dicunt: Quid
+        magnum feci? In hóminem peccávi. Noli contémnere: in hóminem peccásti.
+
+
+        Vis nosse, quia in hóminem peccándo perísti? Si te ille, in quem peccásti, corripúerit inter
+        te et ipsum solum, et audíeris illum, lucrátus est te. Quid est, Lucrátus est te; nisi quia
+        períeras, si non lucrarétur te? Nam si non períeras, quómodo te lucrátus est? Nemo ergo
+        contémnat, quando peccat in fratrem. Ait enim quodam loco Apóstolus: Sic autem peccántes in
+        fratres, et percutiéntes consciéntiam eórum infírmam, in Christum peccátis: ídeo quia membra
+        Christi omnes facti sumus. Quómodo non peccas in Christum, qui peccas in membrum Christi?
+
+
+        Nemo ergo dicat, quia non peccávi in Deum, sed peccávi in fratrem: in hóminem peccávi, leve,
+        vel nullum peccátum est. Forte inde dicis: Leve est, quia cito curátur. Peccásti in fratrem:
+        fac satis, et sanátus es. Cito fecísti mortíferam rem, sed remédium cito invenísti. Quis
+        nostrum speret regnum cælórum, fratres mei, quando dicit Evangélium: Qui díxerit fratri suo,
+        Fátue: reus erit gehénnæ ignis? Magnus terror: sed vide ibi remédium. Si obtúleris munus
+        tuum ad altáre, et ibi recordátus fúeris, quia frater tuus habet áliquid advérsum te,
+        relínque ibi munus tuum ante altáre. Non iráscitur Deus, quia differs impónere munus tuum:
+        te quærit Deus magis, quam munus tuum.
+      en: >-
+        Why tell him his fault? Because he hath made thee smart by trespassing against thee? God
+        forbid. If thou tell him his fault because thou lovest thyself, thou dost nothing. But if
+        thou tell it him because thou lovest him, then dost thou do exceeding well. Hear now, in the
+        words of the Gospel itself, for love of whom, thou oughtest to do it, of thyself, or of him.
+        The Lord saith: If he shall hear thee, thou hast gained thy brother. Therefore it behoveth
+        thee to do it for his sake, that thou mayest gain him; since, if thou so do, haply thou
+        mayest gain him; whereas, if thou do it not, he may haply perish. Why then are there so many
+        who reckon lightly of a trespass against their brother, and say I have done no great
+        offence, for I have trespassed only against my fellow man? Deem it not light; thou hast
+        trespassed, though it be against thy fellow man.
+
+
+        Wouldest thou know that thy trespass against thy brother hath destroyed thee? If he against
+        whom thou hast trespassed tell thee thy fault between himself and thee alone, and thou hear
+        him, he hath gained thee. Gained thee! And what signify those words, if it be not that thou,
+        if thou be not gained, shalt perish? For if thou shouldest not otherwise perish, in what
+        sense can he be said to gain thee? Therefore let no man deem it a light thing when he
+        trespasseth against his brother. For the Apostle Paul saith in a certain place: When ye sin
+        so against the brethren, and wound their weak conscience, ye sin against Christ. We are all
+        members of Christ. How dost thou not trespass against Christ, which trespassest against one
+        of His members?
+
+
+        Let no man therefore say I have not trespassed against God, but only against my brother;
+        that is, I have trespassed against my fellowman; and so the sin is light, if any at all. And
+        perchance thou wilt argue that it is light, because it is quickly mended; thou hast
+        trespassed against thy brother, but thou canst make satisfaction, and be right again; thou
+        hast done the deadly thing quickly, and quickly canst thou find a remedy. O my brethren,
+        which of us can hope for the kingdom of heaven, when we remember that the Gospel saith,
+        "Whosoever shall say to his brother, Thou fool, shall be in danger of hell fire"? It is a
+        thought full of dread; but, lo! the remedy: If thou bring thy gift to the altar, and there
+        rememberest that thy brother hath aught against thee, leave there thy gift before the altar,
+        and go thy way; first be reconciled to thy brother, and then come and offer thy gift. God is
+        not wroth that thou tarry or ever thou offer thy gift; for God seeketh thyself more than thy
+        gift.
+    responsory:
+      la: "R. Nuntiavérunt Jacob dicéntes: Joseph fílius tuus vivit, et ipse dominátur in tota terra Ægýpti: quo audíto revíxit spíritus ejus, et dixit: * Súfficit mihi, vadam et vidébo eum ántequam móriar.\nV. Cumque audísset Jacob quod fílius ejus víveret, quasi de gravi somno evígilans, ait.\nR. Súfficit mihi, vadam et vidébo eum ántequam móriar."
+      en: "R. They told Jacob, saying, Thy son Joseph is yet alive, and he is governor over all the land of Egypt; and, when he heard it, his spirit revived, and he said: * It is enough; I will go, and see him before I die.\nV. And when Jacob heard that his son yet lived, he was as one that awakeneth from a deep sleep, and said.\nR. It is enough; I will go, and see him before I die."
+    status: { la: verified, en: verified }
