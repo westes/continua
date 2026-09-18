@@ -1,7 +1,7 @@
 # Read directly from web/www/horas/Latin/Tempora/Quad1-5.txt's own
-# [Oratio 2] and its English counterpart -- see ember-lent-wednesday-
-# collect.yml's own comment for why [Oratio 2] (Lauds) is used and
-# [Oratio 3] (Vespers, "Exáudi nos, miséricors Deus...") isn't modeled.
+# [Oratio 2] and its English counterpart -- the Lauds/ordinary-hours
+# collect. Distinct Vespers text ([Oratio 3]) is now modeled too, see
+# ember-lent-friday-collect-vespers.yml.
 id: ember-lent-friday-collect
 text:
   la: |
