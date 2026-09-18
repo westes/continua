@@ -28,7 +28,7 @@ describe('Ember days', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it('September Ember Friday 2026 (Sept 18): St. Joseph of Cupertino (Duplex) wins outright, Ember commemorated', () => {
+  it('September Ember Friday 2026 (Sept 18): St. Joseph of Cupertino (Semiduplex) wins outright, Ember commemorated', () => {
     const day = resolveDay('2026-09-18');
     expect(day.temporalCategory).toBe('privileged-feria-minor');
     expect(day.winner.kind).toBe('sanctoral');
@@ -40,6 +40,25 @@ describe('Ember days', () => {
     expect(day.temporalCategory).toBe('privileged-feria-minor');
     expect(day.winner.kind).toBe('sanctoral');
     expect(day.commemorations).toContainEqual({ kind: 'temporal', id: 'ember-september-saturday' });
+  });
+
+  it('September Ember Friday 2023 (Sept 22): Ss. Maurice and Companions (Simplex) loses outright, Ember wins with the saint commemorated', () => {
+    // The other side of privileged-feria-minor's Semiduplex threshold
+    // (commemorations.ts's minimumOutrightWinningRank) — every other case
+    // in this file is a saint meeting or exceeding it; this is the one
+    // real below-threshold candidate found by scanning forward from 2015
+    // for a year where the Ember-Friday offset lands on Ss. Maurice and
+    // Companions' native Sept 22 date.
+    const day = resolveDay('2023-09-22');
+    expect(day.temporalCategory).toBe('privileged-feria-minor');
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'ember-september-friday' });
+    expect(day.commemorations).toContainEqual({
+      kind: 'sanctoral',
+      id: 'ss-maurice-and-companions',
+      name: 'Ss. Maurice and Companions, Martyrs',
+      nameLa: 'Sanctus Mauritius et Socii, Martyres',
+      rank: 'simplex',
+    });
   });
 
   it('Advent Ember Wednesday/Friday/Saturday 2026 (Dec 16/18/19): no competing saint, the Ember day itself wins outright with real content', () => {

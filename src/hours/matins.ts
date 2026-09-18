@@ -835,7 +835,7 @@ function nocturnReadingIds(
     // (not winning) temporal identity that equals the plain governing-
     // Sunday `temporalId` is exactly the "Commemoratio Feriæ" case the
     // `day.weekday === 'sunday'` gate below exists to guard (see that
-    // gate's own long comment) — a Duplex+ saint winning outright on a
+    // gate's own long comment) — a Semiduplex+ saint winning outright on a
     // *weekday* (e.g. St. Joseph of Cupertino, Friday Sept 18) still has
     // `threeNocturns` true, so `c.id !== temporalId || threeNocturns`
     // alone let the week's separate governing-Sunday homily (Ambrose's,
