@@ -44,7 +44,7 @@ function bi(en: string, la: string): Bi {
 /** A proper name (saint, octave, named temporal feast) with an optional
  * authored Latin form — falls back to the English string when `nameLa`
  * hasn't been authored yet, same convention as `biFallback` above. */
-function biName(name: string, nameLa: string | undefined): Bi {
+export function biName(name: string, nameLa: string | undefined): Bi {
   return { en: name, la: nameLa ?? name };
 }
 

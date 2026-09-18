@@ -9,7 +9,7 @@ import { resolveTemporalId } from '../calendar/temporal-id';
 import { sortCommemorations } from '../calendar/commemoration-order';
 import { isInTriduum } from '../calendar/temporal';
 import { isAllSouls, REQUIEM_GLORIA_PATRI } from './all-souls';
-import { temporalLabel } from '../calendar/day-label';
+import { temporalLabel, emberDayLabel, biName } from '../calendar/day-label';
 import { splitAntiphon, isDoubleOrHigher } from './antiphon';
 import { getLaudsSaintOverride } from './lauds-psalmody-overrides';
 import vespersMagnificatAntiphonsData from '../data/hours/vespers-magnificat-antiphons.yml';
@@ -953,7 +953,23 @@ function temporalCommemorationPart(
   // `commemoration.name` (set by calendar/vespers.ts) means this
   // commemoration's own date differs from `day`'s — `temporalLabel(day)`
   // would label the wrong day (see Commemoration's own doc comment).
-  const label = `Commemoration of ${commemoration.name ?? temporalLabel(day).en}`;
+  //
+  // Otherwise, `commemoration.id` isn't necessarily `day`'s own plain
+  // temporal id — e.g. an Ember day pushed alongside the day's ordinary
+  // weekday commemoration (calendar/ember-days.ts's `applyEmberDay`) is a
+  // *distinct* id from `resolveTemporalId(day.date)`, so `temporalLabel(day)`
+  // (which only ever describes `day`'s own weekday/season, blind to which
+  // id is actually being labeled) produced the same generic "Friday in the
+  // Nth week after Trinity" text for both, silently duplicating the
+  // ordinary-weekday commemoration's label onto the Ember one instead of
+  // naming it "Ember Friday in September" — same id-aware lookup
+  // day-label.ts's `collectCommemorations` already uses for the header
+  // (fixed 2026-09-18, live-reported: a Duplex+ saint winning September
+  // Ember Friday outright showed two identically-labeled commemorations).
+  const emberName = emberDayLabel(commemoration.id);
+  const namedFeast = emberName ? undefined : getTemporalFeastRecord(commemoration.id);
+  const idLabel = emberName ?? (namedFeast ? biName(namedFeast.name, namedFeast.nameLa) : undefined) ?? temporalLabel(day);
+  const label = `Commemoration of ${commemoration.name ?? idLabel.en}`;
   const collect = toResolvedText(getTemporalProper(`${commemoration.id}-collect`));
   const antiphon = toResolvedText(
     getTemporalProper(`${commemoration.id}-${hour === 'lauds' ? 'benedictus' : 'magnificat'}-antiphon`),
