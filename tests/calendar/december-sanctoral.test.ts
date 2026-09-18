@@ -17,14 +17,19 @@ describe('December sanctoral pull (first pass, 12/12)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it('a Semiduplex saint wins outright over an ordinary Advent feria, which is commemorated in return, with a real proper collect', () => {
+  it('a Duplex saint wins outright over an ordinary Advent feria, which is commemorated in return, with a real proper collect', () => {
+    // St. Nicholas is Duplex here, not his real historical Semiduplex --
+    // deliberately re-ranked 2026-09-18 when Advent's own ferias split
+    // into their own privileged-feria-advent tier and had their threshold
+    // raised to Duplex, so he'd keep winning outright rather than being
+    // demoted to a bare commemoration (see st-nicholas.yml).
     const day = resolveDay('2025-12-06');
     expect(day.winner).toEqual({
       kind: 'sanctoral',
       id: 'st-nicholas',
       name: 'St. Nicholas, Bishop and Confessor',
       nameLa: 'Sanctus Nicolaus, Episcopus et Confessor',
-      rank: 'semiduplex',
+      rank: 'duplex',
     });
     expect(day.commemorations.length).toBe(1);
     expect(day.commemorations[0]?.kind).toBe('temporal');

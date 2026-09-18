@@ -7971,3 +7971,59 @@ individually re-checked against their own source files this same way (only the ~
 Ant2/Ant3-presence scan flagged) — the scan should be reliable (it greps each saint's real
 `Sancti`/`SanctiM` file directly), but hasn't been independently spot-checked the way this entry's
 own findings were. Worth a second look if another "this looks generic" report comes in.
+
+### September/Advent Ember days' winning threshold raised Semiduplex -> Duplex, split into their own `privileged-feria-ember` tier (2026-09-18)
+
+User asked what would happen if the Ember-day winning threshold moved to Duplex. September's and
+Advent's Ember days previously shared `privileged-feria-minor` (Semiduplex threshold) with Advent's
+plain ordinary ferias — moving the shared tier's threshold would also have raised the bar for every
+plain Advent feria (St. Nicholas, Semiduplex, would stop winning outright too), which the live
+evidence behind *that* tier doesn't support. Lent's and Pentecost's own Ember days, by contrast,
+already sit at the Duplex-threshold `privileged-feria` tier. Split Ember days (both September's and
+Advent's) into a new dedicated `privileged-feria-ember` category instead: Duplex threshold like
+Lent/Pentecost's Ember days, but keeping `privileged-feria-minor`'s "nothing ever transfers, the
+loser is always commemorated" shape rather than `privileged-feria`'s transfer behavior — no live
+evidence either Ember cluster ever displaces a saint off its own date entirely.
+
+This deliberately overrides this file's own earlier live-verified evidence for the Semiduplex
+threshold (Ss. Cornelius & Cyprian winning outright on September Ember Friday, Sept 16 2026) — user
+confirmed directly, treating the older evidence as settled but no longer the desired behavior.
+Three 2026 dates flip as a direct result: September Ember Wednesday/Friday/Saturday (Ss. Cornelius &
+Cyprian, St. Joseph of Cupertino, St. Januarius — all Semiduplex) now lose outright to their
+respective Ember day instead of winning, each still commemorated. `tests/calendar/ember-days.test.ts`
+updated to match (3 cases flipped, `privileged-feria-minor` -> `privileged-feria-ember` throughout);
+`tests/calendar/marian-saturday.test.ts`'s "loses outright to a Semiduplex-or-higher saint" case
+re-pointed from 2026-09-19 (now Ember Saturday, excluded from Marian Saturday's `ordinary-feria` gate
+regardless of rank) to 2026-01-24 (St. Timothy, Semiduplex, a genuinely ordinary Saturday).
+
+`tsc --noEmit`, `npm test` (4218 passed), and `vite build` all pass.
+
+### Advent's own ordinary-feria threshold also raised Semiduplex -> Duplex, split into its own `privileged-feria-advent` tier (2026-09-18, same session)
+
+Follow-on from the Ember split above: user asked to raise Advent's own plain (non-Ember) feria
+threshold too. Same shared-tier problem as before — Advent's ordinary ferias shared
+`privileged-feria-minor` with Christmastide's, and Christmastide has its own independent live
+evidence for the Semiduplex threshold (St. Thomas of Canterbury winning outright Dec 29 within the
+Christmas Octave) that the user did not ask to touch. Split Advent's plain ferias into a new
+`privileged-feria-advent` category (Duplex threshold, same never-transfer/always-commemorate shape
+as `privileged-feria-minor`); Christmastide kept unchanged at the original tier and threshold.
+
+St. Nicholas (Dec 6, Semiduplex) was the concrete case that originally established the Semiduplex
+threshold. Rather than accept his demotion to a bare commemoration the way Ss. Cornelius & Cyprian
+were in the Ember split, user chose to re-rank him: `st-nicholas.yml`'s `rank` raised
+Semiduplex -> Duplex specifically so he keeps winning outright under the new threshold — a
+deliberate rank inflation, not a reconstruction-fidelity correction, documented in the file's own
+header.
+
+Updated: `types.ts` (new category + doc comment), `commemorations.ts` (new `decideOccurrence`
+case + `minimumOutrightWinningRank` entry), `day-label.ts` (label map entry), `vespers.ts` (added to
+the rank-independent "keeps own Second Vespers" list), `temporal-categories.yml` (`advent`'s
+`bySeason` entry + surrounding comments). Test updates: `tests/calendar/december-sanctoral.test.ts`
+(St. Nicholas case, rank now `duplex`), `tests/calendar/commemorations.test.ts` (new
+`privileged-feria-advent` describe block, old `privileged-feria-minor` block's comments
+re-attributed to Christmastide), plus stale-comment-only fixes (no behavior change) in
+`tests/calendar/day-label.test.ts`, `tests/calendar/november-sanctoral.test.ts`, and
+`tests/hours/matins.test.ts` where `privileged-feria-minor` had been mentioned for an Advent date
+that's now `privileged-feria-advent`.
+
+`tsc --noEmit`, `npm test` (4220 passed), and `vite build` all pass.

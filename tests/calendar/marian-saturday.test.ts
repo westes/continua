@@ -48,12 +48,17 @@ describe('Marian Saturday (applyMarianSaturday)', () => {
   });
 
   it('loses outright to a Semiduplex-or-higher saint -- Marian Saturday does not apply at all', () => {
-    const day = resolveDay('2026-09-19'); // St. Januarius, Semiduplex
+    // Not 2026-09-19: that's now September Ember Saturday
+    // (`privileged-feria-ember`, Duplex threshold as of 2026-09-18), so
+    // St. Januarius (Semiduplex) no longer wins outright there and Marian
+    // Saturday's own `ordinary-feria` gate would exclude it anyway.
+    // 2026-01-24 is a genuinely ordinary Saturday.
+    const day = resolveDay('2026-01-24'); // St. Timothy, Bishop and Martyr, Semiduplex
     expect(day.winner).toEqual({
       kind: 'sanctoral',
-      id: 'st-januarius',
-      name: 'St. Januarius, Bishop, and Companions, Martyrs',
-      nameLa: 'Sanctus Januarius, Episcopus, et Socii, Martyres',
+      id: 'st-timothy',
+      name: 'St. Timothy, Bishop and Martyr',
+      nameLa: 'Sanctus Timotheus, Episcopus et Martyr',
       rank: 'semiduplex',
     });
   });

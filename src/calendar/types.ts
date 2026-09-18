@@ -87,18 +87,52 @@ export type FeastClass =
 // whether Pentecost's own Ember days share Lent's lesser tier or
 // Easter's major one) is still a reconstructed guess, not verified.
 // `privileged-feria-minor` is a third, weaker tier, added during the
-// December sanctoral pull after finding Advent's own ordinary (non-Ember)
+// December sanctoral pull after finding Christmastide's own ordinary
 // ferias have real standing of their own in the live engine — a Simplex
-// saint (e.g. St. Bibiana, Dec 2) is merely commemorated there, while a
-// Semiduplex+ saint (e.g. St. Nicholas, Dec 6) wins outright with the
-// feria itself commemorated in return — neither of which the original
-// `ordinary-feria` fallback (any saint wins, nothing ever commemorated)
-// could represent. Lent's own ordinary ferias are documented as sharing
-// this same real-world property but are NOT switched to this tier yet —
-// unverified this session, left as `ordinary-feria` pending a future check.
+// saint is merely commemorated there, while a Semiduplex+ saint (e.g. St.
+// Thomas of Canterbury, Dec 29) wins outright with the feria itself
+// commemorated in return — neither of which the original `ordinary-feria`
+// fallback (any saint wins, nothing ever commemorated) could represent.
+// Originally shared with Advent's own ordinary ferias too (the same
+// Semiduplex-threshold evidence there was St. Nicholas, Dec 6), until
+// Advent split off into its own `privileged-feria-advent` tier on
+// 2026-09-18 (see that tier's own doc comment below) — Christmastide kept
+// this original tier and threshold unchanged. Lent's own ordinary ferias
+// are documented as sharing this same real-world property but are NOT
+// switched to this tier yet — unverified this session, left as
+// `ordinary-feria` pending a future check.
+// `privileged-feria-ember` is a fifth tier, split out of
+// `privileged-feria-minor` on 2026-09-18 for September's and Advent's own
+// Ember days specifically (Lent's and Pentecost's Ember days already sit
+// one tier higher, at the Duplex-threshold `privileged-feria` — see
+// data/calendar/temporal-categories.yml) — a deliberate design choice to
+// raise the September/Advent Ember bar to Duplex too, overriding the
+// Semiduplex-threshold evidence this tier was originally built on (Ss.
+// Cornelius & Cyprian, Semiduplex, winning outright on September Ember
+// Friday — see ss-cornelius-and-cyprian.yml) rather than leaving it in
+// place; that saint is expected to stop winning outright and instead be
+// merely commemorated under this new tier. Unlike `privileged-feria`,
+// nothing here ever transfers — same "always commemorate the loser"
+// behavior `privileged-feria-minor` already has, just at a higher bar —
+// since there's no live evidence either Ember cluster ever displaces a
+// saint off its own date entirely.
+// `privileged-feria-advent` is a sixth tier, split out of
+// `privileged-feria-minor` the same day for Advent's own plain (non-Ember)
+// ferias specifically — same deliberate Duplex-threshold raise and
+// evidence-override as the Ember split, just for the other half of what
+// used to be one shared tier. St. Nicholas (Dec 6), the concrete case
+// that originally established the Semiduplex threshold, no longer meets
+// this raised bar at his real historical Semiduplex rank — rather than
+// demoting him from winning outright to merely commemorated the way Ss.
+// Cornelius & Cyprian were, his own rank was deliberately inflated to
+// Duplex instead (see st-nicholas.yml), so he keeps winning outright under
+// the new threshold. Same never-transfers, always-commemorate-the-loser
+// shape as `privileged-feria-minor`/`privileged-feria-ember`.
 export type TemporalCategory =
   | 'ordinary-feria'
   | 'privileged-feria-minor'
+  | 'privileged-feria-ember'
+  | 'privileged-feria-advent'
   | 'privileged-feria'
   | 'privileged-feria-major'
   | 'ordinary-sunday'

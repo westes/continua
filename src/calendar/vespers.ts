@@ -55,8 +55,8 @@ function hasFirstVespers(day: LiturgicalDay): boolean {
 }
 
 /** Does this day keep its own Second Vespers regardless of what tomorrow is?
- * `privileged-sunday`, `privileged-feria-major`/`-minor`, `privileged-feria`,
- * and a major fixed feast of the Lord all stay genuine, rank-independent
+ * `privileged-sunday`, `privileged-feria-major`/`-minor`/`-ember`/`-advent`,
+ * `privileged-feria`, and a major fixed feast of the Lord all stay genuine, rank-independent
  * absolutes here — each already has its own live-verified Vespers behavior
  * (Advent's Dec 2 seasonal content regardless of Dec 3's rank; St. Gregory
  * the Great keeping his own Vespers into a privileged Lent Sunday, etc.)
@@ -83,6 +83,8 @@ function keepsOwnSecondVespers(today: LiturgicalDay, tomorrow: LiturgicalDay): b
     return (
       today.temporalCategory === 'privileged-sunday' ||
       today.temporalCategory === 'privileged-feria-minor' ||
+      today.temporalCategory === 'privileged-feria-ember' ||
+      today.temporalCategory === 'privileged-feria-advent' ||
       today.temporalCategory === 'privileged-feria' ||
       today.temporalCategory === 'privileged-feria-major'
     );

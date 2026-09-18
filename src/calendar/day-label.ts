@@ -741,6 +741,8 @@ const TEMPORAL_CATEGORY_RANK_LABELS: Record<TemporalCategory, Bi> = {
   'privileged-sunday': bi('Semiduplex', 'Semiduplex'),
   'ordinary-feria': bi('Feria', 'Feria'),
   'privileged-feria-minor': bi('Feria', 'Feria'),
+  'privileged-feria-ember': bi('Feria', 'Feria'),
+  'privileged-feria-advent': bi('Feria', 'Feria'),
   'privileged-feria': bi('Feria', 'Feria'),
   'privileged-feria-major': bi('Feria', 'Feria'),
 };

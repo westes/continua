@@ -4,7 +4,12 @@
 # ss-euphemia-lucia-and-geminianus.yml). In years where Sep 16 itself
 # falls on the movable September Ember Wednesday, that Ember day is
 # commemorated instead of Euphemia et al. (confirmed 2026) -- doesn't
-# change this saint's own outright win either way. No unique collect: the
+# change this saint's own outright win either way against a plain feria.
+# Against September Ember Friday specifically, this saint no longer wins
+# outright as of 2026-09-18's privileged-feria-ember split (Duplex
+# threshold, this saint is Semiduplex) -- deliberate, see
+# calendar/types.ts's TemporalCategory doc comment; the Ember day wins
+# instead with this saint merely commemorated. No unique collect: the
 # raw file at this MM-DD slot (Sancti/09-16.txt) is empty.
 id: ss-cornelius-and-cyprian
 name: "Ss. Cornelius, Pope, and Cyprian, Bishop, Martyrs"

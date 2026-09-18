@@ -85,7 +85,7 @@ describe('getDayLabel — ordinal temporal label', () => {
     // Advent I.
     expect(getDayLabel(resolveDay('2025-11-30')).en).toBe('The 1st Sunday of Advent (Semiduplex) — St. Andrew, Apostle (transferred away)');
     // Dec 1 is where Andrew's own transfer actually lands (the next open
-    // day, `privileged-feria-minor`'s Semiduplex+ threshold easily clears
+    // day, `privileged-feria-advent`'s Duplex threshold easily clears
     // for a Duplex II. classis) — live-verified 2026-09-01, the real
     // Monastic 1617 engine shows "S. Andreæ Apostoli ~ Duplex II. classis"
     // there outright, "Tempora: Feria II infra Hebdomadam I Adventus"
@@ -204,11 +204,11 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
 });
 
 describe('getDayLabel — commemorated Sunday/feria under a sanctoral winner', () => {
-  it('a saint winning outright on a privileged-feria-minor day still leaves that feria commemorated internally, but the label no longer restates it', () => {
+  it('a saint winning outright on a privileged-feria-advent day still leaves that feria commemorated internally, but the label no longer restates it', () => {
     // 2027-12-07, a Tuesday of Advent: St. Ambrose (Duplex) clears
-    // privileged-feria-minor's own Semiduplex+ threshold and wins
+    // privileged-feria-advent's own Duplex threshold and wins
     // outright, and Advent's own feria is still commemorated in return
-    // internally (`decideOccurrence`'s `privileged-feria-minor` branch) --
+    // internally (`decideOccurrence`'s `privileged-feria-advent` branch) --
     // live-verified shape, same mechanism as the ordinary-Sunday case
     // above, for the feria-tier branch instead. But per the 2026-09-05
     // label rule, a plain temporal commemoration (a bare "In the Nth week
@@ -333,7 +333,7 @@ describe('getDayLabel — active octave', () => {
 
   it("a foreign octave superimposed on a privileged season still governs the label when its own effective rank clears that season's real threshold, with the season's own losing saint commemorated alongside it", () => {
     // The Immaculate Conception's own octave (Dec 8-15) always falls
-    // inside Advent, a `privileged-feria-minor` season -- unlike every
+    // inside Advent, a `privileged-feria-advent` season -- unlike every
     // other octave here (Lawrence/Assumption/All Saints/Nativity BVM),
     // which always sit entirely within ordinary time. Live-verified
     // (Divino Afflatu 1954): Dec 15, the octave's own closing day, is

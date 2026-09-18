@@ -57,6 +57,8 @@ export function minimumOutrightWinningRank(category: TemporalCategory): FeastCla
       return 'simplex';
     case 'privileged-feria-minor':
       return 'semiduplex';
+    case 'privileged-feria-ember':
+    case 'privileged-feria-advent':
     case 'privileged-feria':
     case 'ordinary-sunday':
       return 'duplex';
@@ -120,6 +122,33 @@ export function decideOccurrence(
       // already enough here — and unlike every other feria tier, nothing
       // ever transfers: whichever side loses still gets a commemoration.
       if (isAtLeast(sanctoral.rank, 'semiduplex')) {
+        return { winner: sanctoralWinner(sanctoral), commemorations: [{ kind: 'temporal', id: temporalId }] };
+      }
+      return { winner: temporalWinner, commemorations: [sanctoralCommemoration(sanctoral)] };
+
+    case 'privileged-feria-ember':
+      // September's and Advent's own Ember days specifically (split out of
+      // `privileged-feria-minor` above on 2026-09-18) — same "nothing ever
+      // transfers, the loser is always commemorated" shape, just raised to
+      // `privileged-feria`'s Duplex threshold to match Lent's and
+      // Pentecost's Ember days. A Semiduplex candidate (e.g. Ss. Cornelius
+      // & Cyprian on September Ember Friday) no longer wins outright here —
+      // that's the deliberate point of the split, not a regression.
+      if (isAtLeast(sanctoral.rank, 'duplex')) {
+        return { winner: sanctoralWinner(sanctoral), commemorations: [{ kind: 'temporal', id: temporalId }] };
+      }
+      return { winner: temporalWinner, commemorations: [sanctoralCommemoration(sanctoral)] };
+
+    case 'privileged-feria-advent':
+      // Advent's own plain (non-Ember) ferias specifically, split out of
+      // `privileged-feria-minor` on 2026-09-18 — same shape as
+      // `privileged-feria-ember` right above (Duplex threshold, nothing
+      // ever transfers), just for the other half of what used to be one
+      // shared tier with Christmastide. St. Nicholas (Dec 6) was
+      // deliberately re-ranked to Duplex so he still wins outright here
+      // (see st-nicholas.yml); a saint left at his real historical
+      // Semiduplex rank no longer wins outright under this raised bar.
+      if (isAtLeast(sanctoral.rank, 'duplex')) {
         return { winner: sanctoralWinner(sanctoral), commemorations: [{ kind: 'temporal', id: temporalId }] };
       }
       return { winner: temporalWinner, commemorations: [sanctoralCommemoration(sanctoral)] };

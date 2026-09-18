@@ -94,7 +94,7 @@ describe('November sanctoral pull (first pass)', () => {
 
   it('St. Andrew wins outright at Duplex II. classis with a real proper collect and antiphon, commemorating the Advent feria itself in years his fixed date falls within Advent', () => {
     // 2026-11-30 is also the Monday within Advent I's own week that year
-    // (privileged-feria-minor, see calendar/types.ts) -- the Advent feria
+    // (privileged-feria-advent, see calendar/types.ts) -- the Advent feria
     // is commemorated back, confirmed against the live reference engine.
     const day = resolveDay('2026-11-30');
     expect(day.winner).toEqual({

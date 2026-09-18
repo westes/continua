@@ -30,17 +30,16 @@
 # section below and calendar/octaves.ts.
 #
 # September Ember days (Wed/Fri/Sat nearest the Exaltation of the Cross,
-# Sept 14) are now modeled too, live-verified `privileged-feria-minor` —
-# see calendar/temporal.ts's septemberEmberDayOffset, called directly from
-# resolveTemporalCategory below (can't be expressed as a plain
-# offset/fixedDate entry in this table: the anchor is "nearest Sept 14,"
-# a fixed-calendar-date rule with its own year-dependent Sunday-finding
-# math, same shape as adventStart's "nearest Nov 30"). Advent Ember days
-# don't need any entry here at all — Advent's own `privileged-feria-minor`
-# season default below already covers them, no live evidence found that
-# they need a stronger tier (see calendar/temporal.ts's
-# adventEmberDayOffset, used only for their own content id, not
-# precedence). Both get their own distinct proper content
+# Sept 14) and Advent Ember days (Wed/Fri/Sat after Advent's 3rd Sunday) both
+# resolve to `privileged-feria-ember` (Duplex threshold, raised from
+# Semiduplex 2026-09-18 — see calendar/types.ts's TemporalCategory doc
+# comment) via their own explicit checks in calendar/temporal.ts's
+# resolveTemporalCategory, called directly rather than through this table
+# (can't be expressed as a plain offset/fixedDate entry here: both anchors
+# are "nearest [date]"/"n days after [movable Sunday]" rules with their own
+# year-dependent math, same shape as adventStart's "nearest Nov 30"). See
+# calendar/temporal.ts's septemberEmberDayOffset/adventEmberDayOffset for
+# the actual logic. Both get their own distinct proper content
 # (collect/Matins readings) via calendar/ember-days.ts, separate from this
 # precedence-only table.
 # Lent's Ember days *are* modeled (clean Easter offsets, directly
@@ -62,11 +61,15 @@
 # collision test on top of the hundreds of ordinary weekdays already
 # exercising it correctly across this app's whole test suite.
 bySeason:
-  # Advent's ordinary ferias verified `privileged-feria-minor` during the
-  # December sanctoral pull (see calendar/types.ts's TemporalCategory doc
-  # comment) -- weaker than the Ember-day `privileged-feria` tier, but real
-  # standing nonetheless, unlike a plain `ordinary-feria`.
-  advent: { sunday: privileged-sunday, feria: privileged-feria-minor }
+  # Advent's ordinary ferias originally verified `privileged-feria-minor`
+  # during the December sanctoral pull (concrete case: St. Nicholas,
+  # Semiduplex, Dec 6), then split into their own dedicated
+  # `privileged-feria-advent` tier on 2026-09-18 and raised to Duplex (see
+  # calendar/types.ts's TemporalCategory doc comment) -- St. Nicholas was
+  # deliberately re-ranked to Duplex so he still wins outright under the
+  # new threshold (see st-nicholas.yml), rather than being demoted to a
+  # commemoration the way the evidence would otherwise dictate.
+  advent: { sunday: privileged-sunday, feria: privileged-feria-advent }
   # Christmastide's ferias are folded into the privileged-feria-minor
   # default for the whole season as a simplification of "the Octave of
   # Christmas (Dec 25 - Jan 1) is privileged" — slightly overbroad into Jan
@@ -74,7 +77,11 @@ bySeason:
   # stronger `privileged-feria`) during the December pull: St. Thomas of
   # Canterbury, Semiduplex, wins outright within the Octave (Dec 29) in the
   # real Monastic 1617 engine, which `privileged-feria`'s Duplex+ threshold
-  # would wrongly forbid.
+  # would wrongly forbid. Kept at this original Semiduplex threshold even
+  # after Advent split off into its own Duplex-threshold
+  # `privileged-feria-advent` tier 2026-09-18 -- St. Thomas of Canterbury's
+  # own outright win is exactly the evidence that would be lost by raising
+  # this tier too, and no request to do so has been made for Christmastide.
   #
   # The Sunday itself is `ordinary-sunday`, NOT `privileged-sunday` —
   # originally miscoded as privileged-sunday (Advent's own Sundays' tier),

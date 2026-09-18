@@ -11,7 +11,7 @@ const FERIAL_DATE = '2026-12-01'; // Tuesday of Advent I — plain ferial, no fe
 // Not Dec 15 (formerly used here): that's actually the Immaculate
 // Conception's own octave closing day (Duplex majus per Divino Afflatu
 // 1954), which now correctly wins outright over Advent's own
-// privileged-feria-minor ferias — see calendar/octaves.ts's
+// privileged-feria-advent ferias — see calendar/octaves.ts's
 // octaveGoverningPrivilegedDay — so it's no longer a clean ferial date.
 const SUNDAY_DATE = '2026-09-06'; // 14th Sunday after Trinity — plain Sunday, no feast collision.
 
@@ -105,8 +105,8 @@ describe('resolveOrdo("matins", ...) ferial (1-nocturn) branch', () => {
     // commemorated saint and no active octave. St. Bibiana (Simplex) is
     // the exact case calendar/commemorations.ts's own header cites as
     // live-verified: merely commemorated under an Advent feria, never
-    // winning outright (Simplex is below privileged-feria-minor's own
-    // Semiduplex threshold). 2025-12-02, a Tuesday, keeps the same 9-psalm
+    // winning outright (Simplex is below privileged-feria-advent's own
+    // Duplex threshold). 2025-12-02, a Tuesday, keeps the same 9-psalm
     // ferial shape as the other tests in this block.
     const commemoratedOrdo = resolveOrdo('matins', '2025-12-02');
     const lessons = commemoratedOrdo.parts.filter((p) => p.kind === 'lesson') as {

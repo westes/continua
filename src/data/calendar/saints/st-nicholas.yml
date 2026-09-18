@@ -1,14 +1,19 @@
 # Verified against Divinum Officium (Monastic Tridentinum 1617), live
-# kalendar check (2025-12-06) -- an ordinary Advent feria
-# (privileged-feria-minor); Semiduplex is enough to win outright here
-# (unlike the stricter privileged-feria/Ember tier), with the feria
-# itself commemorated in return -- the concrete case that revealed this
-# month's temporal-category fix. Own proper collect, no unique antiphon
+# kalendar check (2025-12-06) -- an ordinary Advent feria; at his real
+# historical Semiduplex rank he won outright there (the concrete case that
+# originally revealed this month's temporal-category fix, back when
+# Advent's ordinary ferias sat at the Semiduplex-threshold
+# privileged-feria-minor tier). Deliberately re-ranked Semiduplex -> Duplex
+# on 2026-09-18 when Advent's own ferias split into their own
+# privileged-feria-advent tier and had their threshold raised to Duplex --
+# not a reconstruction-fidelity rank, but a rank inflation chosen so this
+# saint keeps winning outright under the new threshold rather than being
+# demoted to a bare commemoration. Own proper collect, no unique antiphon
 # of his own.
 id: st-nicholas
 name: "St. Nicholas, Bishop and Confessor"
 nameLa: "Sanctus Nicolaus, Episcopus et Confessor"
-rank: semiduplex
+rank: duplex
 common: common-of-a-confessor-bishop
 propers: "st-nicholas"
 # P/T/S/N: no [Ant Prima]/etc of its own in the source (12-06.txt) --

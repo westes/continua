@@ -8,49 +8,51 @@ import { getDayCollect } from '../../src/hours/resolve-common';
 // (Wed/Fri/Sat after the 3rd Sunday of Advent) are privileged ferias, not
 // named feasts -- calendar/ember-days.ts relabels the day's own temporal
 // id (or adds a commemoration) so their real proper content is found,
-// while calendar/temporal.ts's septemberEmberDayOffset feeds
-// resolveTemporalCategory's privileged-feria-minor threshold for the
-// September precedence contest (Advent's already covered by its own
-// season default). All dates below verified against the live reference
-// engine (Monastic Tridentinum 1617) during authoring, 2026-08-22.
+// while calendar/temporal.ts's septemberEmberDayOffset/adventEmberDayOffset
+// feed resolveTemporalCategory's privileged-feria-ember Duplex threshold
+// for both quarters' precedence contest (raised from Semiduplex 2026-09-18,
+// deliberately overriding this file's own earlier live-verified Semiduplex
+// evidence -- see calendar/types.ts's TemporalCategory doc comment). All
+// dates below originally verified against the live reference engine
+// (Monastic Tridentinum 1617) during authoring, 2026-08-22, except where
+// noted otherwise for the 2026-09-18 threshold change.
 describe('Ember days', () => {
-  it('September Ember Wednesday 2026 (Sept 16): Ss. Cornelius & Cyprian (Semiduplex) win outright, Ember commemorated', () => {
+  it('September Ember Wednesday 2026 (Sept 16): Ember wins outright, Ss. Cornelius & Cyprian (Semiduplex, below the Duplex threshold) commemorated', () => {
     const day = resolveDay('2026-09-16');
-    expect(day.temporalCategory).toBe('privileged-feria-minor');
-    expect(day.winner).toEqual({
+    expect(day.temporalCategory).toBe('privileged-feria-ember');
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'ember-september-wednesday' });
+    expect(day.commemorations).toContainEqual({
       kind: 'sanctoral',
       id: 'ss-cornelius-and-cyprian',
       name: 'Ss. Cornelius, Pope, and Cyprian, Bishop, Martyrs',
       nameLa: 'Sanctus Cornelius, Papa, et Sanctus Cyprianus, Episcopus, Martyres',
       rank: 'semiduplex',
     });
-    expect(day.commemorations).toContainEqual({ kind: 'temporal', id: 'ember-september-wednesday' });
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it('September Ember Friday 2026 (Sept 18): St. Joseph of Cupertino (Semiduplex) wins outright, Ember commemorated', () => {
+  it('September Ember Friday 2026 (Sept 18): Ember wins outright, St. Joseph of Cupertino (Semiduplex, below the Duplex threshold) commemorated', () => {
     const day = resolveDay('2026-09-18');
-    expect(day.temporalCategory).toBe('privileged-feria-minor');
-    expect(day.winner.kind).toBe('sanctoral');
-    expect(day.commemorations).toContainEqual({ kind: 'temporal', id: 'ember-september-friday' });
+    expect(day.temporalCategory).toBe('privileged-feria-ember');
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'ember-september-friday' });
+    expect(day.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-joseph-of-cupertino')).toBe(true);
   });
 
-  it('September Ember Saturday 2026 (Sept 19): St. Januarius (Semiduplex) wins outright, Ember commemorated', () => {
+  it('September Ember Saturday 2026 (Sept 19): Ember wins outright, St. Januarius (Semiduplex, below the Duplex threshold) commemorated', () => {
     const day = resolveDay('2026-09-19');
-    expect(day.temporalCategory).toBe('privileged-feria-minor');
-    expect(day.winner.kind).toBe('sanctoral');
-    expect(day.commemorations).toContainEqual({ kind: 'temporal', id: 'ember-september-saturday' });
+    expect(day.temporalCategory).toBe('privileged-feria-ember');
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'ember-september-saturday' });
+    expect(day.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-januarius')).toBe(true);
   });
 
   it('September Ember Friday 2023 (Sept 22): Ss. Maurice and Companions (Simplex) loses outright, Ember wins with the saint commemorated', () => {
-    // The other side of privileged-feria-minor's Semiduplex threshold
-    // (commemorations.ts's minimumOutrightWinningRank) — every other case
-    // in this file is a saint meeting or exceeding it; this is the one
+    // Below privileged-feria-ember's Duplex threshold same as the three
+    // Semiduplex cases above, just at a lower rank still -- this is the one
     // real below-threshold candidate found by scanning forward from 2015
     // for a year where the Ember-Friday offset lands on Ss. Maurice and
     // Companions' native Sept 22 date.
     const day = resolveDay('2023-09-22');
-    expect(day.temporalCategory).toBe('privileged-feria-minor');
+    expect(day.temporalCategory).toBe('privileged-feria-ember');
     expect(day.winner).toEqual({ kind: 'temporal', id: 'ember-september-friday' });
     expect(day.commemorations).toContainEqual({
       kind: 'sanctoral',
@@ -110,9 +112,12 @@ describe('Ember days', () => {
   });
 
   it("the day label names the Ember day itself, both when it's demoted to a commemoration and when it wins outright -- previously never shown anywhere in the UI (2026-09-03 fix)", () => {
-    // Demoted cases (2026): a saint wins outright, Ember rides along as a
-    // commemoration -- collectCommemorations' temporal branch previously
-    // only matched resolveTemporalId(day.date), never an Ember-relabeled id.
+    // These 2026 dates now win outright themselves (privileged-feria-ember's
+    // Duplex threshold, since the 2026-09-18 split), covered by the general
+    // "wins outright" case below already -- kept here as `toContain` checks
+    // since they still exercise the label mechanism with a commemoration
+    // riding along, just with the roles reversed from when this test was
+    // first written.
     expect(getDayLabel(resolveDay('2026-09-16')).en).toContain('Ember Wednesday in September');
     expect(getDayLabel(resolveDay('2026-09-18')).en).toContain('Ember Friday in September');
     expect(getDayLabel(resolveDay('2026-09-19')).en).toContain('Ember Saturday in September');

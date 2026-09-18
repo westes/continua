@@ -43,9 +43,12 @@ describe('decideOccurrence — ordinary-feria', () => {
 
 describe('decideOccurrence — privileged-feria-minor', () => {
   it('semiduplex or higher wins outright, the feria is commemorated in return', () => {
-    // Verified: St. Nicholas, Semiduplex, outright wins against an
-    // ordinary (non-Ember) Advent Saturday in the real Monastic 1617
-    // engine, with the feria itself commemorated back.
+    // Verified: St. Thomas of Canterbury, Semiduplex, outright wins within
+    // the Christmas Octave (Dec 29) in the real Monastic 1617 engine, with
+    // the feria itself commemorated back. (Originally verified via St.
+    // Nicholas on an ordinary Advent Saturday too, before Advent split off
+    // into its own privileged-feria-advent tier 2026-09-18 -- this tier is
+    // now Christmastide-only.)
     for (const rank of ['semiduplex', 'duplex', 'duplex-1-classis'] as const) {
       const result = decideOccurrence('privileged-feria-minor', 'id', saint(rank));
       expect(result.winner).toEqual({ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank });
@@ -56,9 +59,38 @@ describe('decideOccurrence — privileged-feria-minor', () => {
 
   it('simplex or vigil stays and is commemorated, not transferred', () => {
     // Verified: St. Bibiana, Simplex, merely commemorated under an
-    // ordinary Advent feria in the real Monastic 1617 engine.
+    // ordinary Advent feria in the real Monastic 1617 engine (this
+    // specific evidence predates the 2026-09-18 Advent/Christmastide
+    // split, but the below-threshold shape is identical in both tiers).
     for (const rank of ['simplex', 'vigil'] as const) {
       const result = decideOccurrence('privileged-feria-minor', 'id', saint(rank));
+      expect(result.winner).toEqual({ kind: 'temporal', id: 'id' });
+      expect(result.commemorations).toEqual([{ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank }]);
+      expect(result.transfer).toBeUndefined();
+    }
+  });
+});
+
+describe('decideOccurrence — privileged-feria-advent', () => {
+  it('duplex or higher wins outright, the feria is commemorated in return', () => {
+    // Split out of privileged-feria-minor 2026-09-18, Duplex threshold
+    // instead of Semiduplex -- St. Ambrose (Duplex, Dec 7) is the concrete
+    // live-verified case (see tests/calendar/day-label.test.ts).
+    for (const rank of ['duplex', 'duplex-1-classis'] as const) {
+      const result = decideOccurrence('privileged-feria-advent', 'id', saint(rank));
+      expect(result.winner).toEqual({ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank });
+      expect(result.commemorations).toEqual([{ kind: 'temporal', id: 'id' }]);
+      expect(result.transfer).toBeUndefined();
+    }
+  });
+
+  it('simplex, vigil, or semiduplex stays and is commemorated, not transferred', () => {
+    // St. Nicholas (originally Semiduplex, the concrete case that
+    // established the old Semiduplex threshold) would fall here at his
+    // real historical rank -- he's deliberately re-ranked to Duplex
+    // instead (see st-nicholas.yml) so he keeps winning outright.
+    for (const rank of ['simplex', 'vigil', 'semiduplex'] as const) {
+      const result = decideOccurrence('privileged-feria-advent', 'id', saint(rank));
       expect(result.winner).toEqual({ kind: 'temporal', id: 'id' });
       expect(result.commemorations).toEqual([{ kind: 'sanctoral', id: 'x', name: 'St. Ereden', rank }]);
       expect(result.transfer).toBeUndefined();

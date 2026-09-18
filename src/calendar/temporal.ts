@@ -170,7 +170,7 @@ export function septemberEmberAnchor(year: number): string {
 
 /** Which of September's 3 Ember-day offsets (3/5/6 = Wed/Fri/Sat)
  * `isoDate` is, if any — shared by resolveTemporalCategory below (the
- * precedence side: these get `privileged-feria-minor`) and
+ * precedence side: these get `privileged-feria-ember`) and
  * calendar/ember-days.ts (the content-id side: each gets its own proper
  * collect/readings instead of inheriting the governing Sunday's). */
 export function septemberEmberDayOffset(isoDate: string): number | undefined {
@@ -179,12 +179,11 @@ export function septemberEmberDayOffset(isoDate: string): number | undefined {
   return SEPTEMBER_EMBER_OFFSETS.find((offset) => addDays(anchor, offset) === isoDate);
 }
 
-/** Which of Advent's 3 Ember-day offsets `isoDate` is, if any. Unlike
- * September's, this doesn't need its own resolveTemporalCategory entry —
- * Advent's ordinary `privileged-feria-minor` season default already
- * covers it (no live evidence found that Advent Ember days need a
- * stronger tier) — but it still needs its own content id, same as
- * September's, hence still exported for calendar/ember-days.ts. */
+/** Which of Advent's 3 Ember-day offsets `isoDate` is, if any. Used both
+ * by resolveTemporalCategory below (since 2026-09-18, its own explicit
+ * `privileged-feria-ember` check, no longer just inheriting Advent's
+ * plain-feria season default) and by calendar/ember-days.ts for its own
+ * content id, same as September's. */
 export function adventEmberDayOffset(isoDate: string): number | undefined {
   const year = Number(isoDate.slice(0, 4));
   const thirdAdventSunday = addDays(adventStart(year), 14);
@@ -237,13 +236,17 @@ export function resolveTemporalCategory(isoDate: string, season: Season, weekday
     return fixedOverride;
   }
 
-  // September Ember days: live-verified privileged-feria-minor (Ss.
-  // Cornelius & Cyprian, Semiduplex, won outright there with the feria
-  // demoted to a commemoration) — see septemberEmberDayOffset's own doc
-  // comment for why this can't be expressed as a plain Easter offset or
-  // fixed MM-DD the way every other override in this function is.
-  if (septemberEmberDayOffset(isoDate) !== undefined) {
-    return 'privileged-feria-minor';
+  // September and Advent Ember days: `privileged-feria-ember`, split out
+  // 2026-09-18 from the plain Advent-feria `privileged-feria-minor` tier
+  // and raised to Duplex, matching Lent's and Pentecost's own Ember days
+  // (see calendar/types.ts's TemporalCategory doc comment for why) — see
+  // septemberEmberDayOffset's own doc comment for why September's check
+  // can't be expressed as a plain Easter offset or fixed MM-DD the way
+  // every other override in this function is; Advent's needs its own
+  // explicit check here too now that it's no longer just Advent's plain
+  // season default.
+  if (septemberEmberDayOffset(isoDate) !== undefined || adventEmberDayOffset(isoDate) !== undefined) {
+    return 'privileged-feria-ember';
   }
 
   const offset = easterOffsetOf(isoDate);
