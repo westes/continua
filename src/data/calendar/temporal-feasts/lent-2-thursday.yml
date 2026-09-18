@@ -1,0 +1,14 @@
+# Read from the reference engine: web/www/horas/Latin/Tempora/Quad2-4.txt
+# ([Officium] header). One of a batch closing the gap where every ferial
+# day of Lent weeks 1-4 (and the days between Ash Wednesday and the 1st
+# Sunday of Lent) previously fell back wholesale to that week's own
+# Sunday collect/antiphons -- see monday-passion-week.yml for the
+# original precedent this batch follows (same movable-feasts mechanism,
+# `rank` omitted for the same reason: no FeastClass-shaped rank, a plain
+# privileged/ordinary feria).
+id: lent-2-thursday
+name: "Thursday in the 2nd week of Lent"
+nameLa: "Feria Quinta in hebdomada secunda Quadragesimae"
+anchor:
+  kind: easter
+  offset: -31
