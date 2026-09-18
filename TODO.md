@@ -8119,3 +8119,78 @@ outright over Lent Ember Friday — the Lent-side mirror of the "saint wins, Emb
 already covered for September/Advent.
 
 `tsc --noEmit`, `npm test` (4227 passed), and `vite build` all pass.
+
+### Lent's ordinary ferias given real per-day identity + genuine per-hour collects (2026-09-19)
+
+Follow-up to the Ember-day work above: grepping the reference engine for `[Oratio 2]`/`[Oratio 3]`
+showed the Lauds/Vespers collect split isn't Ember-specific — every ordinary feria of Ash
+Wednesday's own week and Lent weeks 1–4 (weeks 5–6 are Passiontide/Holy Week, already given full
+per-day identity in an earlier campaign) carries genuinely distinct Lauds and Vespers collects (and
+distinct `[Ant 2]`/`[Ant 3]`) in the source. Until now every one of these days silently inherited its
+governing Sunday's single collect/antiphons via `resolveTemporalId`'s fallback, and the app had no
+mechanism anywhere to vary a collect by hour at all.
+
+Three pieces, built and content-authored together:
+
+1. **Precedence-tier verification.** `temporal-categories.yml`'s `bySeason.lent.feria` was
+   `ordinary-feria` (no rank floor), which `calendar/types.ts` flagged as an unverified, likely-wrong
+   gap ("documented as sharing Christmastide's `privileged-feria-minor` property but not switched
+   yet"). Live-verified against the reference engine: St. Lucius I (Simplex, March 4, 2038 — a year
+   clear of both Ash Wednesday's week and Passion/Holy week) wins outright with no commemoration at
+   all, exactly `ordinary-feria`'s behavior, not `privileged-feria-minor`'s. The suspected gap turned
+   out to be correct as-is; `types.ts` and `temporal-categories.yml`'s own comments updated to record
+   the verification rather than leave it open. Independently re-confirmed live inside the app itself
+   via the new test suite below (`2027-03-04`, same saint, same real-date collision).
+
+2. **Real per-day identity via the existing movable-feasts mechanism.** No new relabeling function
+   needed — `calendar/movable-feasts.ts` + `data/calendar/temporal-feasts/*.yml` (`anchor: {kind:
+   easter, offset: N}`, `rank` omitted, defaulting `simplex`) is the same generic mechanism Passion
+   week's 12 days already used, and its own header comment explicitly anticipated exactly this next
+   use case. 25 new records added: `ash-wednesday` plus the three days after it, `lent-1-{monday,
+   tuesday,thursday}` (Wed/Fri/Sat are already the Ember days), and all six weekdays of
+   `lent-{2,3,4}`. None needed `ALWAYS_OVERRIDE_TEMPORAL_IDS` entries — that set only matters for ids
+   reachable inside an octave, and no octave's offsets ever reach this range. Day-label headlines
+   needed no changes either — `day-label.ts` already sources a movable-feast's headline from its own
+   `temporal-feasts` record generically.
+
+3. **Real per-hour (Lauds vs. Vespers) collect resolution — new mechanism, built at the user's
+   explicit choice** (offered the cheaper "keep the single Lauds-sourced collect" option used
+   everywhere else including the just-finished Ember days; the user chose to build the real
+   mechanism instead). `hours/resolve-common.ts`'s `getDayCollect` gained an optional `hour: 'lauds'
+   | 'vespers'` parameter: on the temporal-winner path, when `hour === 'vespers'`, it first tries a
+   new `-collect-vespers` proper kind (via the existing, unmodified `getTemporalProperWithFallback` —
+   `kind` was already a plain string, so this needed no new plumbing there) before falling back to
+   the base `-collect` chain if no distinct Vespers text was authored for that id. `vespers.ts` passes
+   `'vespers'`; `lauds.ts`/`terce.ts`/`sext.ts`/`none.ts` are unchanged, matching the real rubric
+   where the minor hours repeat Lauds', not Vespers', collect. `getDayCollects(day, hour)` just
+   forwards its existing `hour` param through instead of calling `getDayCollect` bare.
+
+Content authored for all 25 days: `-collect.yml` (Lauds/`[Oratio 2]`), `-collect-vespers.yml`
+(Vespers/`[Oratio 3]`, 23 of 25 — `saturday-after-ash-wednesday` and `lent-3-saturday` genuinely have
+no `[Oratio 3]`/`[Ant 3]` in the source, same "some Saturdays lack it" pattern already seen for
+Ember days), `-benedictus-antiphon.yml`, `-magnificat-antiphon.yml` (same 23 of 25), and a
+nocturn-readings file recombining each day's `[Lectio1]`–`[Lectio3]` into one reading per the
+established "source doesn't genuinely split" convention, with full Gospel pericopes pulled from the
+parallel `missa/` Mass files wherever the Office file only gave an incipit ("Et réliqua"). Also
+retrofitted the two already-known, already-documented Vespers-collect gaps this new mechanism could
+finally close: `ember-lent-{wednesday,friday}-collect-vespers.yml` (Lent Ember Saturday's source
+genuinely has no `[Oratio 3]`) and `monday-holy-week-collect-vespers.yml`.
+
+A few real judgment calls surfaced during authoring, all documented in the affected file's own
+header: `lent-3-thursday`'s own Office file cross-references an unrelated Paschaltide-week-7 file
+for its Matins lessons (Lenten Thursdays were only added to the ferial cycle later, by Pope St.
+Gregory II, reusing an existing homily) — its collects still genuinely name Ss. Cosmas and Damian,
+that day's real Roman station-church titular, not a stray cross-reference; and that same day's
+naively-cross-referenced responsory contained "Alleluia" (forbidden in Lent), so its own
+Lent-appropriate alternate responsory was substituted instead, not the literal cross-reference
+target.
+
+New test file `tests/calendar/lent-ordinary-ferias.test.ts`: a content-completeness sweep (every one
+of the 25 ids has a real, verified collect/Benedictus antiphon/nocturn-reading, and a genuinely
+distinct Vespers collect/Magnificat antiphon except the 2 days confirmed to lack them) plus a
+real-date mechanism sweep (10 dates in 2027 where the temporal identity actually wins that year —
+2027's early Easter puts a real sanctoral saint on most of the other days, since `ordinary-feria` has
+no rank floor — confirming Lauds/Vespers genuinely differ and Terce still gets the Lauds text), plus
+the direct in-app re-confirmation of the tier verification from (1).
+
+`tsc --noEmit`, `npm test` (4311 passed), and `vite build` all pass.
