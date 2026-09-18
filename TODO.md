@@ -8027,3 +8027,95 @@ re-attributed to Christmastide), plus stale-comment-only fixes (no behavior chan
 that's now `privileged-feria-advent`.
 
 `tsc --noEmit`, `npm test` (4220 passed), and `vite build` all pass.
+
+### Lent's and Pentecost's own Ember days built and imported (2026-09-19, same session)
+
+User asked whether the reference engine has proper content for *any* of the Ember days, having
+already checked September's and Advent's. Checking all four quarters directly against the reference
+engine (`Tempora/Quad1-{3,5,6}.txt` for Lent, `Tempora/Pasc7-{3,5,6}.txt` for Pentecost — the latter
+inside Pentecost's own Octave, not the week after it, which is a different set of files
+(`Pent01-*`) that turned out to belong to Corpus Christi's own week instead, a mis-identification
+corrected mid-conversation) found real, distinct proper content for both: full Gospel pericope +
+patristic homily, proper Benedictus/Magnificat antiphons (Wed/Fri only, Saturday genuinely has none
+in the source, same pattern already confirmed for September/Advent), and a proper collect — Lent's
+own uniquely split by hour (`[Oratio 2]` at Lauds, `[Oratio 3]` at Vespers, two different texts;
+this app has no per-hour collect-variation mechanism, so only the Lauds one is modeled, same
+"doesn't model hour-scoping nuance" simplification level `calendar/ember-days.ts` already documents
+elsewhere). Built out following the September/Advent mechanism and content shape exactly: new
+`lentEmberDayOffset`/`pentecostEmberDayOffset` in `calendar/temporal.ts` (direct Easter-offset
+checks, `-39`/`-37`/`-36` and `52`/`54`/`55` — simpler than September's "nearest Sunday to a fixed
+date" or Advent's "N days after a separately-computed Sunday," since these are already fixed,
+verified offsets), `LENT_EMBER_IDS`/`PENTECOST_EMBER_IDS` in `calendar/ember-days.ts`, and 6 new
+`day-label.ts` entries. Neither quarter needed a `resolveTemporalCategory` change on the precedence
+side: Lent's Ember days already sit at the Duplex threshold via `temporal-categories.yml`'s plain
+`offsets` table, and Pentecost's already get the same tier via `pentecost-sunday.yml`'s own Octave
+`wins: duplex` — both predate this work and needed no Ember-specific addition, confirmed by reading
+rather than assumed.
+
+Content authored: 6 collects, 6 Benedictus antiphons, 4 Magnificat antiphons (Wed/Fri, both
+quarters), 6 nocturn-readings files — all recombined into one reading per the established
+"source doesn't genuinely split" convention (see the September-Friday recombine entry above), full
+bilingual `text`/`status: verified` throughout, sourced directly from the Latin/English/Monastic-
+track files (Gospel pericopes pulled from `missa/` where `horas/`'s own file only gave an incipit,
+same pattern as September's 2026-09-05 pericope-authoring fix). Responsory sourcing needed real
+judgment per day rather than a single mechanical rule: Lent Ember Wednesday and Saturday each have
+one genuinely proper responsory in the source (Saturday's is an explicit source cross-reference
+*reusing* Wednesday's own), so those are used instead of the usual "first one, when several
+collapse" convention; Lent Friday and all 3 Pentecost days have no such distinguishing case, so the
+established "first one" convention applies there. Pentecost Saturday's own source genuinely has only
+2 lessons (not padded to 3) — its `[Lectio3]` is a bare cross-season pointer into an unrelated Lent
+homily, not real content of its own.
+
+Two real, deeper bugs found and fixed along the way, both specific to Pentecost's Ember days falling
+*inside* Pentecost's own Octave every year (unlike September's only occasional, genuinely-foreign
+BVM-octave overlap) — Lent's Ember days never collide with any active octave at all, so neither
+applied there:
+
+1. `calendar/ember-days.ts`'s `applyEmberDay` gate (`if (activeOctavesFor(isoDate).length > 0) return
+   winner`) unconditionally deferred to *any* active octave, including the Pentecost octave that's
+   always active on Pentecost's own Ember days — would have permanently suppressed all of Pentecost's
+   Ember content. Fixed by exempting `pentecost-sunday` specifically from that gate rather than
+   loosening it generally.
+2. Even with (1) fixed, `hours/resolve-common.ts`'s `resolveOfficeWinner` (used by `getDayCollect`,
+   `getBenedictusAntiphon`, and — via the shared `ALWAYS_OVERRIDE_TEMPORAL_IDS` set — `hours/
+   lauds.ts`'s psalmody override) still silently substituted Pentecost Sunday's own generic content
+   back in on every Ember day, since it treats *any* interior day of a Duplex+ octave with no saint
+   record as inheriting the octave's own governing feast, unconditionally. Live-caught: `2026-05-27`
+   (Ember Wednesday, itself the winner) rendered Pentecost Sunday's own Benedictus antiphon
+   ("Accípite Spíritum Sanctum") instead of the Ember day's own ("Ego sum panis vivus") — the collect
+   silently had the same bug, masked because both texts happened to resolve to `status: verified`
+   (a real lesson: checking only `.status`, not the actual text, let this one slip past an earlier,
+   too-shallow sanity check in this same session). Fixed by adding the 3 `ember-pentecost-*` ids to
+   `ALWAYS_OVERRIDE_TEMPORAL_IDS` (the existing "this id has real standing of its own" exemption set),
+   the same mechanism already used for Trinity Sunday, Corpus Christi, etc.
+
+That second fix then broke `hours/terce.ts`'s own Pentecost-week hymn swap ("Veni Creátor Spíritus"),
+which had been checking `resolveOfficeWinner(day).id === 'pentecost-sunday'` as a proxy for "is this
+day within Pentecost's Octave" — now false on the 3 Ember days specifically, since they correctly
+report their own id instead. Fixed narrowly (matching on the id prefix `ember-pentecost-` too, not
+replaced with a direct `activeOctavesFor` octave-window check) — a direct octave-window check would
+have been wrong for an unrelated reason found in the process: the Octave's own `days: 8` config
+technically still covers Trinity Sunday itself (offset 56, `dayNumber` 8), a pre-existing quirk
+this session didn't otherwise touch, previously invisible because `resolveOfficeWinner`'s own
+higher-priority `trinity-sunday` entry in the same exemption set always short-circuited before ever
+reaching the octave-substitution logic on that specific day.
+
+A third, independent copy of the same "octave governs the headline" assumption lived in
+`day-label.ts`'s `getDayLabel`/`getDayTitleName` (their own `resolveActiveOctave`/
+`octaveGoverningPrivilegedDay` gate, separate from `resolveOfficeWinner` but reasoning the same way)
+— without the matching exemption there, Pentecost's Ember days would render as the bare "Octave of
+Pentecost (Nth Day)" headline with no Ember mention at all, the Octave itself still correctly riding
+along as a commemoration underneath either way. Fixed with the same `ember-pentecost-` id-prefix
+check, in both functions.
+
+Two pre-existing tests (`marian-saturday.test.ts`, `transfer.test.ts`) had encoded the *old*,
+buggy `pentecost-sunday`-as-winner behavior on `2026-05-30` as the expected outcome — both updated
+to the new, correct `ember-pentecost-saturday` winner id; the actual behavior each test is really
+checking (Marian Saturday never applies within an active octave; St. Felix I is caught and
+commemorated in place rather than transferring) is unchanged either way. `tests/calendar/
+ember-days.test.ts` extended with the same coverage shape as the existing September/Advent cases,
+including a real 2026 case of a Duplex+ saint (St. Gabriel of Our Lady of Sorrows, Feb 27) winning
+outright over Lent Ember Friday — the Lent-side mirror of the "saint wins, Ember commemorated" case
+already covered for September/Advent.
+
+`tsc --noEmit`, `npm test` (4227 passed), and `vite build` all pass.
