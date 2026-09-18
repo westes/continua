@@ -13,6 +13,7 @@
 import type { Commemoration, DayWinner } from './types';
 import { septemberEmberDayOffset, adventEmberDayOffset } from './temporal';
 import { activeOctavesFor } from './octaves';
+import { resolveTemporalId } from './temporal-id';
 
 const SEPTEMBER_EMBER_IDS: Record<number, string> = {
   3: 'ember-september-wednesday',
@@ -55,6 +56,18 @@ function emberIdFor(isoDate: string): string | undefined {
  * alongside it, so its own collect/readings still surface (this app
  * doesn't model the "Laudes only" hour-scoping nuance — same simplification
  * level as every other commemoration here, not a new gap).
+ *
+ * That second case runs *after* `decideOccurrence` already pushed a plain
+ * `{ kind: 'temporal', id: <today's ordinary weekday id> }` commemoration
+ * of its own (the `privileged-feria-minor` branch's "the feria itself is
+ * commemorated in return" — there's only one Friday, and today it's this
+ * Ember Friday, not a separate anonymous one) — relabeling that existing
+ * entry to the Ember id, rather than pushing a second one alongside it, is
+ * what keeps the day from showing two commemorations of the same feria
+ * under two different names (fixed 2026-09-19, live-reported: a Duplex+
+ * saint winning outright on September Ember Friday showed both
+ * "Commemoration of Friday in the 15th week after Trinity" and
+ * "Commemoration of Ember Friday in September").
  */
 export function applyEmberDay(isoDate: string, winner: DayWinner, commemorations: Commemoration[]): DayWinner {
   if (activeOctavesFor(isoDate).length > 0) {
@@ -67,6 +80,12 @@ export function applyEmberDay(isoDate: string, winner: DayWinner, commemorations
   if (winner.kind === 'temporal') {
     return { kind: 'temporal', id: emberId };
   }
-  commemorations.push({ kind: 'temporal', id: emberId });
+  const plainId = resolveTemporalId(isoDate);
+  const existingIndex = commemorations.findIndex((c) => c.kind === 'temporal' && c.id === plainId);
+  if (existingIndex >= 0) {
+    commemorations[existingIndex] = { kind: 'temporal', id: emberId };
+  } else {
+    commemorations.push({ kind: 'temporal', id: emberId });
+  }
   return winner;
 }
