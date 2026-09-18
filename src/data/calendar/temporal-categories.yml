@@ -166,11 +166,13 @@ offsetRanges:
   # every real winner is Duplex or higher (St. Joseph, St. Leo I, St.
   # Francis of Paola, the Transitus of St. Benedict, the Annunciation, St.
   # Gregory the Great) -- while an ordinary Lent feria outside this window
-  # (Ss. Quadraginta Martyrum, Semiduplex, March 10) does win outright,
-  # confirming Semiduplex+ is a real threshold for Lent generally but not
-  # for Passion week specifically. `privileged-feria` (Duplex+ wins
-  # outright, matching Lent's Ember days above) is the right tier, not
-  # `ordinary-feria`.
+  # (Ss. Quadraginta Martyrum, Semiduplex, March 10) also wins outright,
+  # and even a Simplex saint does too (St. Lucius I, March 4, live-verified
+  # 2026-09-19 in a year clear of both windows) -- confirming Lent's plain
+  # ferias genuinely have no threshold at all (`ordinary-feria` is
+  # correct there, see calendar/types.ts), unlike Passion week, which does
+  # need its own stronger `privileged-feria` (Duplex+ wins outright,
+  # matching Lent's Ember days above) rather than inheriting that default.
   - { fromOffset: -13, toOffset: -8, category: privileged-feria } # ferias of Passion week
   - { fromOffset: -6, toOffset: -1, category: privileged-feria-major } # ferias of Holy Week
   - { fromOffset: 1, toOffset: 6, category: privileged-feria-major } # Easter octave — verified: even Duplex II. classis (St. Mark) only gets commemorated, never wins

@@ -98,9 +98,13 @@ export type FeastClass =
 // Advent split off into its own `privileged-feria-advent` tier on
 // 2026-09-18 (see that tier's own doc comment below) — Christmastide kept
 // this original tier and threshold unchanged. Lent's own ordinary ferias
-// are documented as sharing this same real-world property but are NOT
-// switched to this tier yet — unverified this session, left as
-// `ordinary-feria` pending a future check.
+// were suspected of sharing this same real-world property but this turned
+// out to be wrong: live-verified 2026-09-19 (St. Lucius I, Simplex, March
+// 4 — chosen for a year, 2038, where that date is neither Ash Wednesday's
+// week nor Passion/Holy week nor a Sunday) wins outright with no
+// commemoration at all, the exact behavior `ordinary-feria` (not
+// `privileged-feria-minor`) already gives. `ordinary-feria` is correct
+// for Lent's own plain ferias and was left unchanged.
 // `privileged-feria-ember` is a fifth tier, split out of
 // `privileged-feria-minor` on 2026-09-18 for September's and Advent's own
 // Ember days specifically (Lent's and Pentecost's Ember days already sit
