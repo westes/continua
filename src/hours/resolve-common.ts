@@ -208,6 +208,24 @@ export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set([
   'easter-thursday',
   'easter-friday',
   'easter-saturday',
+  // Pentecost's own 3 Ember days (calendar/ember-days.ts) fall *inside*
+  // Pentecost's own Octave every year, so without this entry
+  // resolveOfficeWinner's octave-substitution logic below would silently
+  // override them back to Pentecost Sunday's own generic content (collect,
+  // Benedictus/Magnificat antiphon, psalmody) on every lookup that goes
+  // through this function — defeating the whole point of Ember days
+  // having their own distinct proper office instead of reusing the
+  // Sunday's, which is exactly what every *other* day of the Octave
+  // legitimately does. Found live 2026-09-19: the Benedictus antiphon on
+  // `2026-05-27` (Pentecost Ember Wednesday, itself the winner) rendered
+  // Pentecost Sunday's own "Accípite Spíritum Sanctum" instead of the
+  // Ember day's own "Ego sum panis vivus". Lent's own 3 Ember days need no
+  // equivalent entry: no octave's offsets ever reach Lent's first week
+  // (`octaveGoverningPrivilegedDay`, the branch privileged-feria days like
+  // Lent's own actually go through, simply never finds one active there).
+  'ember-pentecost-wednesday',
+  'ember-pentecost-friday',
+  'ember-pentecost-saturday',
 ]);
 
 /**

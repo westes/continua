@@ -40,7 +40,25 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       // Terce's whole hymn to "Veni Creátor Spíritus" -- a real, source-
       // confirmed whole-hymn override, not just a doxology-stanza swap.
       // Sext/None have no such override in the source and are unaffected.
-      const hymnId = resolveOfficeWinner(day).id === 'pentecost-sunday' ? 'terce-hymn-pentecost-week' : part.textRef.id;
+      // Also matches Pentecost's own 3 Ember days (calendar/ember-days.ts)
+      // by id prefix, not just the bare 'pentecost-sunday' office winner:
+      // those days are still genuinely within the Octave and should keep
+      // this swap, but since 2026-09-19 (once they got real content of
+      // their own and were added to resolveOfficeWinner's own
+      // ALWAYS_OVERRIDE_TEMPORAL_IDS exemption, hours/resolve-common.ts)
+      // they no longer report 'pentecost-sunday' as their own office-
+      // content winner. Deliberately not switched to a direct
+      // activeOctavesFor(day.date) octave-window check instead: that
+      // window is a raw 8-day span which -- pre-existing, unrelated to
+      // this fix -- technically still covers Trinity Sunday itself
+      // (offset 56, the octave's own would-be "day 8"), and only
+      // resolveOfficeWinner's own higher-priority 'trinity-sunday' entry
+      // in that same exemption set keeps Trinity Sunday out of this swap;
+      // reusing that existing precedence is simpler and safer here than
+      // re-deriving "is this day really still inside the Octave" from
+      // scratch.
+      const winnerId = resolveOfficeWinner(day).id;
+      const hymnId = winnerId === 'pentecost-sunday' || winnerId.startsWith('ember-pentecost-') ? 'terce-hymn-pentecost-week' : part.textRef.id;
       const hymn = resolveCommon(hymnId);
       const overrideId = getHymnDoxologyOverrideId(day);
       return [{ kind: 'hymn', text: substituteDoxology(hymn, overrideId ? resolveCommon(overrideId) : undefined) }];
