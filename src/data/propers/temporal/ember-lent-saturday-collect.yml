@@ -1,0 +1,20 @@
+# Read directly from web/www/horas/Latin/Tempora/Quad1-6.txt's own
+# [Oratio 2] and its English counterpart. Ember Saturday in Lent gives
+# only one collect in the source (no [Oratio 3]), unlike Wednesday/
+# Friday's own two -- see ember-lent-wednesday-collect.yml's comment for
+# the general split-collect background, which doesn't apply here.
+id: ember-lent-saturday-collect
+text:
+  la: |
+    Orémus.
+    Pópulum tuum, quǽsumus, Dómine, propítius réspice: atque ab eo flagélla tuæ iracúndiæ cleménter avérte.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Let us pray.
+    Look down mercifully, O Lord, we beseech thee, upon thy people, and graciously turn away from them the scourges of thy wrath.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

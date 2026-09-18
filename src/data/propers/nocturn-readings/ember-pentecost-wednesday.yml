@@ -1,0 +1,136 @@
+# Matins Nocturn content for Pentecost Ember Wednesday (Feria Quarta
+# Quattuor Temporum Pentecostes) — Gospel pericope (John 6:44-52) sourced
+# from web/www/missa/Latin/Tempora/Pasc7-3.txt and missa/English/Tempora/
+# Pasc7-3.txt (horas/Tempora/Pasc7-3.txt only gives the incipit + "Et
+# réliqua"); homily sourced from horas/Latin/Tempora/Pasc7-3.txt and
+# horas/English/Tempora/Pasc7-3.txt. Latin/TemporaM/Pasc7-3.txt inherits
+# Lectio1-3/Responsory1-2 unchanged from the secular file and only adds
+# its own extra Responsory3 (for a 3rd Monastic lesson this app doesn't
+# model, same "1 nocturn, recombined" shape as every other Ember day) —
+# no divergence in the content actually used here.
+#
+# Recombined into one reading, same convention as September's Ember days
+# (see ember-september-friday.yml's own doc comment for the fuller
+# rationale): St. Augustine's homily is one continuous text on being
+# "drawn" to Christ, split only to fill the fixed 3-lesson slot count.
+# Responsory is Lectio1's own (Responsory1) per the "first one, when
+# several collapse" convention — genuinely proper to this day and this
+# quarter (not a generic cross-reference to the governing Sunday, unlike
+# Lent's own Ember days).
+id: ember-pentecost-wednesday
+readings:
+  - nocturn: 1
+    isGospel: true
+    citation: { la: "Joann 6:44-52", en: "John 6:44-52" }
+    text:
+      la: >-
+        In illo témpore: Dixit Jesus turbis Judæórum: Nemo potest veníre ad me, nisi Pater, qui misit me,
+        tráxerit eum: et ego resuscitábo eum in novíssimo die. Est scriptum in Prophétis: Et erunt omnes docíbiles
+        Dei. Omnis, qui audívit a Patre et dídicit, venit ad me. Non quia Patrem vidit quisquam, nisi is, qui est
+        a Deo, hic vidit Patrem. Amen, amen, dico vobis: qui credit in me, habet vitam ætérnam. Ego sum panis
+        vitæ. Patres vestri manducavérunt manna in desérto, et mórtui sunt. Hic est panis de cœlo descéndens: ut,
+        si quis ex ipso manducáverit, non moriátur. Ego sum panis vivus, qui de cœlo descéndi. Si quis
+        manducáverit ex hoc pane, vivet in ætérnum: et panis, quem ego dabo, caro mea est pro mundi vita.
+      en: >-
+        At that time, Jesus said to the Jews: No one can come to Me unless the Father Who sent Me draw him, and I
+        will raise him up on the last day. It is written in the Prophets, "And they all shall be taught of God."
+        Everyone who has listened to the Father, and has learned, comes to Me; not that anyone has seen the
+        Father except Him Who is from God, He has seen the Father. Amen, amen, I say to you, he who believes in
+        Me has life everlasting. I am the bread of life. Your fathers ate the manna in the desert, and have died.
+        This is the bread that comes down from heaven, so that if anyone eat of it he will not die. I am the
+        living bread that has come down from heaven. If anyone eat of this bread he shall live forever; and the
+        bread that I will give is My flesh for the life of the world.
+    status: { la: verified, en: verified }
+
+  - nocturn: 1
+    isGospel: false
+    source: "St. Augustine, Bishop of Hippo, Tract 26 on John (on being drawn to Christ)"
+    text:
+      la: >-
+        Noli cogitáre te invítum trahi: tráhitur ánimus et amóre. Nec timére debémus, ne ab homínibus, qui verba
+        perpéndunt, et a rebus máxime divínis intellegéndis longe remóti sunt, in hoc Scripturárum sanctárum
+        evangélico verbo fórsitan reprehendámur, et dicátur nobis: Quómodo voluntáte credo, si trahor? Ego dico:
+        Parum est voluntáte: étiam voluptáte tráheris. Quid est, trahi voluptáte? Delectáre in Dómino: et dabit
+        tibi petitiónes cordis tui. Est quædam volúptas cordis, cui panis dulcis est ille cæléstis. Porro si
+        poétæ dícere lícuit: Trahit sua quemque volúptas: non necéssitas, sed volúptas; non obligátio, sed
+        delectátio: quanto fórtius nos dícere debémus, trahi hóminem ad Christum, qui delectátur veritáte,
+        delectátur beatitúdine, delectátur justítia, delectátur sempitérna vita, quod totum Christus est? An
+        vero habent córporis sensus voluptátes suas, et ánimus deséritur a voluptátibus suis? Si ánimus non
+        habet voluptátes suas, unde dícitur: Fílii autem hóminum sub tégmine alárum tuárum sperábunt:
+        inebriabúntur ab ubertáte domus tuæ, et torrénte voluptátis tuæ potábis eos. Quóniam apud te est fons
+        vitæ: et in lúmine tuo vidébimus lumen.
+
+
+        Da amántem, et sentit quod dico: da desiderántem, da esuriéntem, da in ista solitúdine peregrinántem,
+        atque sitiéntem, et fontem ætérnæ pátriæ suspirántem: da talem, et scit quid dicam. Si autem frígido
+        loquor, nescit, quid loquor. Tales erant isti, qui ínvicem murmurábant. Pater, inquit, quem tráxerit,
+        venit ad me. Quid est autem, Pater quem tráxerit, cum ipse Christus trahat? Quare vóluit dícere, Pater
+        quem tráxerit? Si trahéndi sumus, ab illo trahámur, cui dicit quædam, quæ díligit: Post odórem
+        unguentórum tuórum currémus. Sed quid intéllegi vóluit, advertámus fratres, et, quantum póssumus,
+        capiámus. Trahit Pater ad Fílium eos, qui proptérea credunt in Fílium, quia eum cógitant Patrem habére
+        Deum. Deus enim Pater æquálem sibi génuit Fílium; et qui cógitat, atque in fide sua sentit et rúminat,
+        æquálem esse Patri eum, in quem credit, ipsum trahit Pater ad Fílium.
+
+
+        Aríus crédidit creatúram, non eum traxit Pater; quia non consíderat Patrem, qui Fílium non credit
+        æquálem. Quid dicis, o Ari? quid dicis, hærétice? quid loquéris? Quid est Christus? Non, inquit, Deus
+        verus, sed quem fecit Deus verus. Non te traxit Pater; non enim intellexísti Patrem, cujus Fílium negas.
+        Aliud cógitas, non est ipse Fílius: nec a Patre tráheris, nec ad Fílium tráheris. Aliud est enim Fílius,
+        áliud quod tu dicis. Photínus dicit: Homo solum est Christus, non est et Deus. Qui sic credit, non Pater
+        eum traxit. Quem traxit Pater? Illum qui dicit: Tu es Christus Fílius Dei vivi. Ramum víridem osténdis
+        ovi, et trahis illam. Nuces púero demonstrántur, et tráhitur: et quod currit, tráhitur, amándo tráhitur,
+        sine læsióne córporis tráhitur, cordis vínculo tráhitur. Si ergo ista, quæ inter delícias et voluptátes
+        terrénas revelántur amántibus, trahunt, quóniam verum est, Trahit sua quemque volúptas; non trahit
+        revelátus Christus a Patre? Quid enim fórtius desíderat ánima, quam veritátem?
+      en: >-
+        Think not that thou art drawn against thy will; the soul is drawn, not willingly only, but lovingly.
+        Neither must we be afraid lest men who are great weighers of words, and very far from understanding the
+        things of God, should catch us up upon this Gospel doctrine of the Holy Scriptures, and should say to us:
+        How can my faith be willing if I am drawn? I answer: Thou art not drawn as touching thy will, but by
+        pleasure. And, now, what is being drawn by pleasure? Delight thyself in the Lord, and He shall give thee
+        the desires of thine heart. There is pleasure in that heart to which the Bread That came down from
+        heaven is sweet. The poet is allowed to say — His special pleasure draweth each — but pleasure, which so
+        draweth, is not a necessity, not a bond, but a delight — how much more strongly, may we say that men are
+        drawn to Christ, who delight in truth, who delight in blessedness, who delight in righteousness, who
+        delight in life everlasting, since truth and blessedness, and righteousness and everlasting life are all
+        to be found in Christ? Or have the bodily senses pleasure, and the spiritual senses none? If the spiritual
+        sense have no pleasures, wherefore is it written: And the children of men shall put their trust under the
+        shadow of thy wings. They shall be abundantly satisfied with the fatness of thy house, and Thou shalt make
+        them drink of the river of thy pleasures. For with thee is the fountain of life, and in thy light shall
+        we see light.
+
+
+        Give me a lover, and he will catch my meaning; give me one who longs, give me an hungerer, give me a
+        wanderer in this desert, athirst and gasping for the fountains of the eternal Fatherland; give me such an
+        one, and he will catch my meaning. If I talk to some cold creature, he will not. Such cold creatures were
+        they of whom it is written: The Jews then murmured at Him because He said, I am the Bread Which came down
+        from heaven. And they said: Is not this Jesus the son of Joseph, whose father and Mother we know? How is
+        it then that He saith: I came down from heaven? Jesus therefore answered and said unto them: Murmur not
+        among yourselves. No man can come to Me, except the Father, Which hath sent Me, draw him. But wherefore
+        speaketh Christ of them whom the Father draweth, since He Himself draweth? Why was it His will to say: No
+        man can come to Me except the Father draw him? If we are to be drawn, let us be drawn by Him to Whom one
+        that loved much said: Draw me, we will run after the savour of thy good ointments. But let us consider, my
+        brethren, what He meant, and understand it as well as we can. The Father draweth to the Son them who
+        believe in the Son, because they are persuaded that He hath God to His Father. God the Father begetteth
+        to Himself a coequal Son; and whosoever is persuaded, and realiseth unto himself by faith, and thinketh,
+        that He in Whom he believeth is equal to the Father, him the Father is drawing unto the Son.
+
+
+        Arius believed that the Son was made; the Father drew him not, since he considereth not the Father, who
+        believeth not the Son to be equal. What sayest thou, O Arius? What sayest thou, O thou heretic? What is
+        thy profession? What is Christ? He is not, saith Arius, Himself Very God, but One Whom the True God made.
+        Then, O Arius, the Father hath not drawn thee; thou hast not understood His dignity as a Father, to Whom
+        thou deniest His Son. Thou dost deny the existence of the Son of God; the Father draweth thee not, and
+        thou art not drawn to the Son, since the Son of whom thou speakest is another son, existing only in thine
+        imagination, and not the really existent Son. Photinus said: Christ is a mere man, and not God at all. He
+        who uttered those words was not one of them whom the Father draweth. But whom hath the Father drawn? The
+        Father drew him who said: Thou art the Christ, the Son of the living God. Show a sheep a green bough, and
+        thou drawest him. Let a boy see some nuts, and he is drawn by them. As they run, they are drawn, drawn by
+        taste, drawn without bodily hurt, drawn by a line bound to their heart. If, then, among earthly things,
+        such as be sweet and pleasant draw such as love them, as soon as they see them, so that it is truth to
+        say, His special pleasure draweth each, doth not that Christ, Whom the Father hath revealed, draw? What
+        stronger object of love can a soul have than the Truth?
+    responsory:
+      la: "R. Disciplínam et sapiéntiam dócuit eos Dóminus, allelúja: firmávit in illis grátiam Spíritus sui, * Et intelléctu implévit corda eórum, allelúja.\nV. Repentíno namque sónitu Spíritus Sanctus super eos venit.\nR. Et intelléctu implévit corda eórum, allelúja."
+      en: "R. The Lord taught them good judgment and knowledge, Alleluia. He established in them the grace of His Spirit, * And filled their hearts with understanding. Alleluia.\nV. For with a sudden sound the Holy Ghost came upon them.\nR. And filled their hearts with understanding. Alleluia."
+    status: { la: verified, en: verified }

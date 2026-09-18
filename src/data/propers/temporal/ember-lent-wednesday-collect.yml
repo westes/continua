@@ -1,0 +1,29 @@
+# Read directly from web/www/horas/Latin/Tempora/Quad1-3.txt's own
+# [Oratio 2] and its English counterpart. Unlike September/Advent/
+# Pentecost's Ember days (one shared [Oratio] for the whole day), Lent's
+# Ember days give two genuinely different collect texts -- [Oratio 2]
+# (Lauds) and [Oratio 3] (Vespers), per orationes.pl's own hour-indexed
+# lookup ($ind = 2 at Lauds, the Vespers slot otherwise). This app has no
+# per-hour collect-variation mechanism (getDayCollect in hours/resolve-
+# common.ts is hour-agnostic, used identically at Lauds/Vespers/Terce/
+# Sext/None) and calendar/ember-days.ts's own doc comment already
+# documents the "doesn't model hour-scoping nuance" simplification level
+# this app sits at -- so [Oratio 2] (Lauds) is used here as the single
+# collect, and [Oratio 3] (Vespers, "Méntes nostras... lúmine tuæ
+# claritátis illústra") is deliberately not modeled, same simplification
+# level as elsewhere, not a gap.
+id: ember-lent-wednesday-collect
+text:
+  la: |
+    Orémus.
+    Preces nostras, quǽsumus, Dómine, cleménter exáudi: et contra cuncta nobis adversántia déxteram tuæ majestátis exténde.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Let us pray.
+    O Lord, we beseech thee mercifully to hear our prayers, and to stretch forth the right hand of thy power against all things that fight against us.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

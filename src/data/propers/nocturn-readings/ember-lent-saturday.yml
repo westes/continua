@@ -1,0 +1,128 @@
+# Matins Nocturn content for Lent Ember Saturday (Sabbato Quattuor
+# Temporum Quadragesimæ) — Gospel pericope (Matt 17:1-9, the
+# Transfiguration) sourced from web/www/missa/Latin/Tempora/Quad2-0.txt
+# (Latin/Tempora/Quad1-6.txt's own [Evangelium] is itself a bare
+# `@Tempora/Quad2-0:Evangelium` cross-reference — the 2nd Sunday of
+# Lent's own Missale Gospel, reused verbatim for this day) and
+# missa/English/Tempora/Quad1-6.txt (which gives the full pericope
+# directly, no cross-reference needed on the English side); homily
+# sourced from horas/Latin/Tempora/Quad1-6.txt and horas/English/
+# Tempora/Quad1-6.txt. No Monastic-track override exists — Latin/
+# TemporaM/Quad1-6.txt is a bare `@Tempora/Quad1-6` pass-through (plus a
+# Cistercian-only extra responsory, not used here).
+#
+# Recombined into one reading, same convention as ember-lent-wednesday.yml
+# (see ember-september-friday.yml's own doc comment for the fuller
+# rationale): Pope St. Leo's homily is one continuous text on the
+# Transfiguration, split only to fill the fixed 3-lesson slot count.
+# Responsory: Lectio1/2's own (Responsory1/2) are bare cross-references
+# to the 1st Sunday of Lent's own generic Nocturn responsories
+# (@Tempora/Quad1-0:Responsory7/8) — Lectio3's own Responsory3 is instead
+# a deliberate cross-reference to ember-lent-wednesday's own genuinely
+# proper text (@Tempora/Quad1-3:Responsory3, "Abscóndite eleemósynam..."),
+# the source's own explicit choice to reuse Wednesday's proper responsory
+# here rather than a generic Sunday one — used as-is, same text as that
+# sibling file.
+id: ember-lent-saturday
+readings:
+  - nocturn: 1
+    isGospel: true
+    citation: { la: "Matth 17:1-9", en: "Matt 17:1-9" }
+    text:
+      la: >-
+        In illo témpore: Assúmpsit Jesus Petrum, et Jacóbum, et Joánnem fratrem eius, et duxit illos in montem
+        excélsum seórsum: et transfigurátus est ante eos. Et resplénduit fácies ejus sicut sol: vestiménta autem
+        ejus facta sunt alba sicut nix. Et ecce, apparuérunt illis Móyses et Elías cum eo loquéntes. Respóndens
+        autem Petrus, dixit ad Jesum: Dómine, bonum est nos hic esse: si vis, faciámus hic tria tabernácula, tibi
+        unum, Móysi unum et Elíæ unum. Adhuc eo loquénte, ecce, nubes lúcida obumbrávit eos. Et ecce vox de nube,
+        dicens: Hic est Fílius meus diléctus, in quo mihi bene complácui: ipsum audíte. Et audiéntes discípuli,
+        cecidérunt in fáciem suam, et timuérunt valde. Et accéssit Jesus, et tétigit eos, dixítque eis: Súrgite,
+        et nolíte timére. Levántes autem óculos suos, néminem vidérunt nisi solum Jesum. Et descendéntibus illis
+        de monte, præcépit eis Jesus, dicens: Némini dixéritis visiónem, donec Fílius hóminis a mórtuis resúrgat.
+      en: >-
+        At that time, Jesus took Peter, James and his brother John, and led them up a high mountain by
+        themselves, and was transfigured before them. And His face shone as the sun, and His garments became
+        white as snow. And behold, there appeared to them Moses and Elias talking together with Him. Then Peter
+        addressed Jesus, saying, Lord, it is good for us to be here. If You will, let us set up three tents here,
+        one for You, one for Moses, and one for Elias. As he was still speaking, behold, a bright cloud
+        overshadowed them, and behold, a voice out of the cloud said, This is My beloved Son, in Whom I am well
+        pleased; hear Him. And on hearing it the disciples fell on their faces and were exceedingly afraid. And
+        Jesus came near and touched them, and said to them, Arise, and do not be afraid. But lifting up their
+        eyes, they saw no one but Jesus only. And as they were coming down from the mountain, Jesus cautioned
+        them, saying, Tell the vision to no one, till the Son of Man has risen from the dead.
+    status: { la: verified, en: verified }
+
+  - nocturn: 1
+    isGospel: false
+    source: "Pope St. Leo the Great, homily on the Transfiguration of the Lord"
+    text:
+      la: >-
+        Evangélica lectio, dilectíssimi, quæ per aures córporis interiórem méntium nostrárum pulsávit audítum, ad
+        magni sacraménti nos intellegéntiam vocat: quam, aspiránte grátia Dei, facílius assequémur, si
+        consideratiónem nostram ad ea, quæ paulo supérius sunt narráta, referámus. Salvátor enim humáni géneris
+        Jesus Christus, condens eam fidem, quæ et ímpios ad justítiam, et mórtuos révocat ad vitam, ad hoc
+        discípulos suos doctrínæ mónitis, et óperum miráculis imbuébat, ut idem Christus et Unigénitus Dei, et
+        hóminis Fílius crederétur. Nam unum horum sine áltero non próderat ad salútem: et æquális erat perículi,
+        Dóminum Jesum Christum aut Deum tantúmmodo sine hómine, aut sine Deo solum hóminem credidísse: cum
+        utrúmque esset páriter confiténdum: quia sicut Deo vera humánitas, ita hómini ínerat vera divínitas.
+
+
+        Ad confírmandam ergo hujus fídei salubérrimam cognitiónem interrogáverat discípulos suos Dóminus, inter
+        divérsas aliórum opiniónes quid ipsi de eo créderent, quidve sentírent. Ubi Petrus Apóstolus, per
+        revelatiónem summi Patris corpórea súperans, et humána transcéndens, vidit mentis óculis Fílium Dei vivi,
+        et conféssus est glóriam Deitátis; quia non ad solam respéxit substántiam carnis et sánguinis: tantúmque
+        in hac fídei sublimitáte complácuit, ut beatitúdinis felicitáte donátus, sacram inviolábilis petræ
+        accíperet firmitátem: super quam fundáta Ecclésia, portis ínferi et mortis légibus prævaléret: nec in
+        solvéndis aut ligándis quorumcúmque causis áliud ratum esset in cælis, quam quod Petri sedísset arbítrio.
+
+
+        Hæc autem, dilectíssimi, laudátæ intellegéntiæ celsitúdo instruénda erat de inferióris substántiæ
+        sacraménto: ne apostólica fides ad glóriam confiténdæ in Christo Deitátis evécta, infirmitátis nostræ
+        receptiónem indígnam impassíbili Deo atque incóngruam judicáret: et ita jam in Christo humánam créderet
+        glorificátam esse natúram, ut nec supplício posset áffici, nec morte dissólvi. Et ídeo dicénte Dómino,
+        quod oportéret eum ire Jerosólymam, et multa pati a senióribus et scribis, ac princípibus sacerdótum, et
+        occídi, et tértia die resúrgere: cum beátus Petrus, qui supérno illustrátus lúmine, de ardentíssima
+        Fílii Dei confessióne fervébat, contumélias illusiónum et crudelíssimæ mortis oppróbrium religióso, ut
+        putábat, et líbero fastídio respuísset; benígna a Jesu increpatióne corréptus, et ad cupiditátem
+        participándæ cum eo passiónis animátus est.
+      en: >-
+        Dearly beloved brethren, the Lesson from the Holy Gospel which, entering in by our bodily ears, hath
+        knocked at the door of our inner mind, calleth us to understand a great mystery. This, by the grace of
+        God, we shall the more readily do, if we return to consider what hath been told us just before. The
+        Saviour of mankind, even Jesus Christ, laying the foundations of that faith whereby the ungodly are
+        called to righteousness and the dead to life, instilled into the minds of His disciples, both by the
+        voice of His teaching and the wonder of His works, that they should believe Him, the one Christ, to be
+        both the Only-begotten Son of God and the Son of man. Had they believed Him one of these and not the
+        other, it had availed them nothing to salvation; and the danger was equally great, of holding the Lord
+        Jesus Christ to be God without the Manhood, or Man only without the Godhead, since we are constrained to
+        acknowledge that He is perfect God and perfect Man, and that as there is in the Godhead perfect Manhood,
+        so there is in the Manhood perfect Godhead.
+
+
+        To strengthen, therefore, the saving knowledge of this faith, the Lord had asked His disciples what,
+        among the differing opinions of men, it was their own belief and judgment as to Who He was. Then did the
+        Apostle Peter, by the revelation of That Father Who is above all, rising above fleshly things, yea,
+        outstripping the thoughts of men, then did he fix the eyes of his mind upon the Son of the living God,
+        and confess the glory of the Godhead, for he looked not on the substance of the flesh and blood only. And
+        in all the exaltation of this faith so well did he please God, that he was gifted with that joyous
+        blessing, the hallowed establishment of that impregnable rock, whereon the Church being founded, should
+        prevail against the gates of hell and the laws of death; neither, when anything is to be bound or
+        loosed, is any bound or loosed in heaven, otherwise than as the judgment of Peter hath bound or loosed it
+        upon earth.
+
+
+        But, dearly beloved brethren, it behoved that the height of this understanding, which the Lord praised,
+        should rest upon a foundation, and that foundation, the mystery of the lower nature, lest the faith of
+        the Apostle, carried away by the glorious acknowledgment of the Godhead in Christ, should deem it
+        unworthy and unnatural for the impassible God to take into Himself the frailty of our nature; and should
+        thus believe that in Christ the Manhood had been so glorified as to be no longer able to suffer pain, or
+        be dissolved in death. And therefore it was that, when the Lord said how that He must go up unto
+        Jerusalem, and suffer many things of the elders and chief priests, and scribes, and be killed, and rise
+        again the third day, and the blessed Peter, bright with heavenly illumination, and still glowing from the
+        passionate acknowledgment of the Divine Sonship, by a natural, and, as seemed to him, a godly shrinking,
+        could not bear the mention of mockery and insult and a cruel death, he was corrected by the merciful
+        rebuke of Jesus, and moved rather to desire to be a partaker in the sufferings of his Master.
+    responsory:
+      la: "R. Abscóndite eleemósynam in sinu páuperum, et ipsa orábit pro vobis ad Dóminum: * Quia sicut aqua extínguit ignem, ita eleemósyna extínguit peccátum.\nV. Date eleemósynam, et ecce ómnia munda sunt vobis.\nR. Quia sicut aqua extínguit ignem, ita eleemósyna extínguit peccátum."
+      en: "R. Shut up alms in the breast of the poor, and it shall plead for you with the Lord. * For, as water will quench fire, so alms maketh an atonement for sins.\nV. Give alms, and, behold, all things are clean unto you.\nR. For, as water will quench fire, so alms maketh an atonement for sins."
+    status: { la: verified, en: verified }
