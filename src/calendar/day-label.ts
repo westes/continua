@@ -72,7 +72,8 @@ function joinBi(items: Bi[], sep = ' — '): Bi {
  * would silently turn off their own ferial Preces (their `[Rule]` block
  * is literally "Preces Feriales"). A small standalone lookup here instead
  * — Latin names read straight from each day's own `[Officium]` header
- * (Tempora/093-{3,5,6}.txt, Tempora/Adv3-{3,5,6}.txt).
+ * (Tempora/093-{3,5,6}.txt, Tempora/Adv3-{3,5,6}.txt, Tempora/
+ * Quad1-{3,5,6}.txt, Tempora/Pasc7-{3,5,6}.txt).
  *
  * Without this, an Ember day never named itself anywhere in the UI: not
  * as the primary label when it wins outright (fell through to the plain
@@ -89,6 +90,12 @@ const EMBER_DAY_NAMES: Record<string, Bi> = {
   'ember-advent-wednesday': bi('Ember Wednesday in Advent', 'Feria IV Quattuor Temporum in Adventu'),
   'ember-advent-friday': bi('Ember Friday in Advent', 'Feria VI Quattuor Temporum in Adventu'),
   'ember-advent-saturday': bi('Ember Saturday in Advent', 'Sabbato Quattuor Temporum in Adventu'),
+  'ember-lent-wednesday': bi('Ember Wednesday in Lent', 'Feria Quarta Quattuor Temporum Quadragesimæ'),
+  'ember-lent-friday': bi('Ember Friday in Lent', 'Feria Sexta Quattuor Temporum Quadragesimæ'),
+  'ember-lent-saturday': bi('Ember Saturday in Lent', 'Sabbato Quattuor Temporum Quadragesimæ'),
+  'ember-pentecost-wednesday': bi('Ember Wednesday in Pentecost', 'Feria Quarta Quattuor Temporum Pentecostes'),
+  'ember-pentecost-friday': bi('Ember Friday in Pentecost', 'Feria Sexta Quattuor Temporum Pentecostes'),
+  'ember-pentecost-saturday': bi('Ember Saturday in Pentecost', 'Sabbato Quattuor Temporum Pentecostes'),
 };
 
 export function emberDayLabel(id: string): Bi | undefined {
@@ -933,8 +940,24 @@ export function getDayLabelItems(day: LiturgicalDay): Bi[] {
   // but the Assumption's own day 3 (a real, distinct, simultaneously-
   // active octave, not a duplicate of Lawrence's) still belongs in the
   // label alongside St. Hyacinth's commemoration.
-  const activeOctave =
-    day.temporalCategory === 'ordinary-feria' ? resolveActiveOctave(day.date) : octaveGoverningPrivilegedDay(day);
+  //
+  // Pentecost's own 3 Ember days (calendar/ember-days.ts) are a deliberate
+  // exception to this gate, same reasoning as hours/resolve-common.ts's
+  // own ALWAYS_OVERRIDE_TEMPORAL_IDS entry for the same 3 ids: they fall
+  // inside Pentecost's own Octave every year (`ordinary-feria` here too,
+  // same as every other day of that Octave), so without this exception
+  // this branch would always win the headline with the plain "Octave of
+  // Pentecost (Nth Day)" label, never the Ember day's own real identity
+  // -- found live 2026-09-19 alongside the office-content version of the
+  // same bug. The Octave itself still rides along as a commemoration via
+  // `showOctaves` in the fallback branch below, same as every other
+  // active-but-not-governing octave.
+  const winnerIsPentecostEmber = day.winner.kind === 'temporal' && day.winner.id.startsWith('ember-pentecost-');
+  const activeOctave = winnerIsPentecostEmber
+    ? undefined
+    : day.temporalCategory === 'ordinary-feria'
+      ? resolveActiveOctave(day.date)
+      : octaveGoverningPrivilegedDay(day);
   if (activeOctave) {
     const commemorations = collectCommemorations(day, { showOctaves: true, excludeOctaveId: activeOctave.id });
     const primary = octaveLabel(activeOctave);
@@ -1000,8 +1023,17 @@ export function getDayTitleName(day: LiturgicalDay): Bi | undefined {
   if (anchorName) {
     return anchorName;
   }
-  const activeOctave =
-    day.temporalCategory === 'ordinary-feria' ? resolveActiveOctave(day.date) : octaveGoverningPrivilegedDay(day);
+  // Same Pentecost-Ember exception as getDayLabel's own governing-octave
+  // gate above (see that one's own doc comment) -- falls through to
+  // `undefined` here (no titleName equivalent authored for Ember days),
+  // same as September/Advent's Ember days already do via
+  // `octaveGoverningPrivilegedDay`'s own real-standing check.
+  const winnerIsPentecostEmber = day.winner.kind === 'temporal' && day.winner.id.startsWith('ember-pentecost-');
+  const activeOctave = winnerIsPentecostEmber
+    ? undefined
+    : day.temporalCategory === 'ordinary-feria'
+      ? resolveActiveOctave(day.date)
+      : octaveGoverningPrivilegedDay(day);
   if (activeOctave) {
     return octaveTitleName(activeOctave);
   }

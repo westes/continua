@@ -76,11 +76,16 @@ describe('transfer mechanism (resolveDay integration)', () => {
   // (threshold: duplex), never even reaching a transfer. He simply
   // doesn't appear on Trinity Sunday at all anymore. Kept here anyway as
   // a still-useful demonstration of the octave layer's own override path.
+  // Winner id updated 2026-09-19: Pentecost's own Ember Saturday
+  // (calendar/ember-days.ts) now carries its own real content instead of
+  // inheriting the plain 'pentecost-sunday' id — the outcome (Felix
+  // caught below the octave's Duplex threshold, commemorated in place
+  // alongside the Octave itself) is unchanged, only the winning id is.
   it("St. Felix I, below Pentecost's octave threshold, is commemorated in place on his own day rather than transferring anywhere", () => {
     const saturday = resolveDay('2026-05-30');
     const sunday = resolveDay('2026-05-31');
 
-    expect(saturday.winner).toEqual({ kind: 'temporal', id: 'pentecost-sunday' });
+    expect(saturday.winner).toEqual({ kind: 'temporal', id: 'ember-pentecost-saturday' });
     expect(saturday.commemorations).toEqual([
       { kind: 'sanctoral', id: 'st-felix-i', name: 'St. Felix I, Pope and Martyr', nameLa: 'Sanctus Felix I, Papa et Martyr', rank: 'simplex' },
       { kind: 'octave', id: 'pentecost-sunday', name: 'Pentecost', nameLa: 'Dominica Pentecostes' },

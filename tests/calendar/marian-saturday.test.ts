@@ -69,9 +69,13 @@ describe('Marian Saturday (applyMarianSaturday)', () => {
     expect(day.temporalCategory).toBe('privileged-feria');
   });
 
-  it('never applies while an octave is active, even on an otherwise-eligible Saturday (Pentecost Ember Saturday stays governed by its octave)', () => {
+  it('never applies while an octave is active, even on an otherwise-eligible Saturday (Pentecost Ember Saturday keeps its own real standing, not Marian Saturday\'s)', () => {
+    // Previously resolved to the plain octave-governed 'pentecost-sunday'
+    // id before Pentecost's own 3 Ember days got real content of their
+    // own (calendar/ember-days.ts, 2026-09-19) -- still real standing of
+    // its own either way, just now its own rather than the Sunday's.
     const day = resolveDay('2026-05-30');
-    expect(day.winner).toEqual({ kind: 'temporal', id: 'pentecost-sunday' });
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'ember-pentecost-saturday' });
   });
 
   it('never applies on a weekday other than Saturday', () => {

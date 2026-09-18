@@ -190,6 +190,41 @@ export function adventEmberDayOffset(isoDate: string): number | undefined {
   return ADVENT_EMBER_OFFSETS.find((offset) => addDays(thirdAdventSunday, offset) === isoDate);
 }
 
+// Unlike September's "nearest Sunday to a fixed date" anchor and Advent's
+// "N days after a separately-computed movable Sunday," Lent's and
+// Pentecost's own Ember days are both already fixed, verified Easter
+// offsets with no extra anchor math needed -- Lent's are the same
+// `-39`/`-37`/`-36` already live in data/calendar/temporal-categories.yml's
+// own `offsets:` table (Wed/Fri/Sat of the week after the 1st Sunday of
+// Lent, offset -42), and Pentecost's are `+52`/`+54`/`+56` -3
+// (Wed/Fri/Sat of the week *starting with* Pentecost Sunday itself,
+// offset 49 -- i.e. within Pentecost's own Octave, not the week after it;
+// see calendar/ember-days.ts's own doc comment for why that distinction
+// matters for the octave-gate check there).
+const LENT_EMBER_OFFSETS = [-39, -37, -36]; // Wed, Fri, Sat after the 1st Sunday of Lent
+const PENTECOST_EMBER_OFFSETS = [52, 54, 55]; // Wed, Fri, Sat of the week starting with Pentecost Sunday (within its Octave)
+
+/** Which of Lent's 3 Ember-day offsets `isoDate` is, if any -- used by
+ * calendar/ember-days.ts for its own content id. Unlike September/Advent,
+ * no separate resolveTemporalCategory check is needed: Lent's Ember days
+ * already resolve to `privileged-feria` (Duplex threshold) via the plain
+ * `offsets` table in temporal-categories.yml (`-39`/`-37`/`-36`), so this
+ * function is content-identity-only. */
+export function lentEmberDayOffset(isoDate: string): number | undefined {
+  return LENT_EMBER_OFFSETS.find((offset) => easterOffsetOf(isoDate) === offset);
+}
+
+/** Which of Pentecost's 3 Ember-day offsets `isoDate` is, if any -- same
+ * content-identity-only role as lentEmberDayOffset above. Pentecost's
+ * Ember days already get Duplex-threshold protection too, but via a
+ * different mechanism than Lent's plain `offsets` table: they fall inside
+ * Pentecost's own Octave (data/calendar/temporal-feasts/pentecost-
+ * sunday.yml's `wins: duplex`), which calendar/octaves.ts already applies
+ * to every day of that Octave, Ember or not. */
+export function pentecostEmberDayOffset(isoDate: string): number | undefined {
+  return PENTECOST_EMBER_OFFSETS.find((offset) => easterOffsetOf(isoDate) === offset);
+}
+
 /**
  * A day's precedence category under the temporal cycle alone — see
  * calendar/types.ts's TemporalCategory doc comment and
