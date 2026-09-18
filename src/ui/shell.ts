@@ -2,7 +2,7 @@ import { getState, subscribe } from '../app-state';
 import { resolveDay } from '../calendar';
 import { resolveEveningDay } from '../calendar/vespers';
 import { getDayLabel, getDayTitleName } from '../calendar/day-label';
-import { renderDayNav } from './day-nav';
+import { renderDayNavControls, renderDayCelebration } from './day-nav';
 import { renderHourList } from './hour-list';
 import { renderHourView } from './hour-view';
 import { renderLanguageToggle } from './bilingual-toggle';
@@ -25,8 +25,9 @@ export function mountShell(root: HTMLElement): void {
         <div data-slot="language-toggle"></div>
         <div data-slot="about-panel"></div>
       </header>
-      <div data-slot="day-nav"></div>
       <nav data-slot="hour-list" class="hour-list-nav" aria-label="Hours"></nav>
+      <div data-slot="day-nav-controls"></div>
+      <div data-slot="day-celebration"></div>
       <h2 data-slot="hour-title" class="hour-title"></h2>
     </div>
     <main id="main" class="app-main">
@@ -34,21 +35,23 @@ export function mountShell(root: HTMLElement): void {
     </main>
   `;
 
-  const dayNavEl = root.querySelector<HTMLElement>('[data-slot="day-nav"]');
+  const dayNavControlsEl = root.querySelector<HTMLElement>('[data-slot="day-nav-controls"]');
+  const dayCelebrationEl = root.querySelector<HTMLElement>('[data-slot="day-celebration"]');
   const hourTitleEl = root.querySelector<HTMLElement>('[data-slot="hour-title"]');
   const hourListEl = root.querySelector<HTMLElement>('[data-slot="hour-list"]');
   const hourViewEl = root.querySelector<HTMLElement>('[data-slot="hour-view"]');
   const languageToggleEl = root.querySelector<HTMLElement>('[data-slot="language-toggle"]');
   const aboutPanelEl = root.querySelector<HTMLElement>('[data-slot="about-panel"]');
-  if (!dayNavEl || !hourTitleEl || !hourListEl || !hourViewEl || !languageToggleEl || !aboutPanelEl) {
+  if (!dayNavControlsEl || !dayCelebrationEl || !hourTitleEl || !hourListEl || !hourViewEl || !languageToggleEl || !aboutPanelEl) {
     throw new Error('shell markup is missing an expected slot');
   }
   mountAboutPanel(aboutPanelEl);
 
   function render(): void {
-    renderDayNav(dayNavEl!);
-    hourTitleEl!.textContent = hourLabel(getState().selectedHour);
     renderHourList(hourListEl!);
+    renderDayNavControls(dayNavControlsEl!);
+    renderDayCelebration(dayCelebrationEl!);
+    hourTitleEl!.textContent = hourLabel(getState().selectedHour);
     renderHourView(hourViewEl!);
     renderLanguageToggle(languageToggleEl!);
 
