@@ -91,11 +91,19 @@ function getPsalmodyOverrideFor(day: LiturgicalDay): LaudsPsalmodyOverride | und
  * a strong-enough feast gets proper psalms — a lesser one keeps the
  * ferial psalmody unchanged and gets its own proper text only at the
  * Benedictus antiphon and chapter/responsory/hymn/versicle bundle,
- * already-separate rank-agnostic mechanisms in resolve-common.ts). But a
- * saint's own authored antiphon text for these same psalm slots is still
- * real content worth showing (getPsalmodyProperOverrideId's own "any
- * rank" eligibility) — so it's layered onto the ferial numbers here
- * instead of being discarded outright.
+ * already-separate rank-agnostic mechanisms in resolve-common.ts). But
+ * real antiphon text for these same psalm slots — a saint's own proper
+ * antiphons when authored, else their Common-category ones (same two-tier
+ * order getPsalmodyOverrideFor above uses for the duplex-majus+ whole-
+ * block case) — is still real content worth showing
+ * (getPsalmodyProperOverrideId's own "any rank" eligibility), so it's
+ * layered onto the ferial numbers here instead of being discarded
+ * outright. Missing the Common-category tier here (fixed 2026-09-18,
+ * live-reported: a Semiduplex saint's Lauds antiphons stayed fully ferial
+ * even though their Common already had real, authored antiphons) meant a
+ * sub-duplex-majus saint with no *individually* authored proper — the
+ * common case, per getPsalmodyProperOverrideId's own doc comment — got no
+ * antiphon override at all, silently falling all the way to ferial.
  *
  * A proper override's own group count doesn't always match the ferial
  * weekday's (e.g. Saturday's Monastic 2-group split vs. the usual 3), so
@@ -226,7 +234,7 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
       : ferial;
   } else {
     const properId = getPsalmodyProperOverrideId(day);
-    const proper = properId ? getLaudsSaintOverride(properId) : undefined;
+    const proper = properId ? (getLaudsSaintOverride(properId) ?? getLaudsCommonOverride(properId, isPaschaltide(day.season))) : undefined;
     wd = proper ? mergeFerialNumbersWithProperAntiphons(ferial, proper) : ferial;
   }
   const winner = resolveOfficeWinner(day);

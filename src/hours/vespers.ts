@@ -110,10 +110,12 @@ function getPsalmodyOverrideFor(day: LiturgicalDay): VespersDay | undefined {
 
 /** Below duplex-majus, mirrors hours/lauds.ts's identical
  * mergeFerialNumbersWithProperAntiphons — real proper psalm numbers stay
- * gated at duplex-majus+, but a saint's own authored antiphon text is
- * still layered onto the ferial numbers when authored, paired by index
- * against `ferial`'s own groups (extra `proper` groups beyond `ferial`'s
- * count go unused — same confirmed convention as Lauds). */
+ * gated at duplex-majus+, but real antiphon text (proper when authored,
+ * else the saint's Common-category antiphons — same two tiers
+ * getPsalmodyOverrideFor uses above) is still layered onto the ferial
+ * numbers, paired by index against `ferial`'s own groups (extra `proper`
+ * groups beyond `ferial`'s count go unused — same confirmed convention as
+ * Lauds). */
 function mergeFerialNumbersWithProperAntiphons(ferial: VespersDay, proper: VespersDay): VespersDay {
   return { groups: overlayProperAntiphons(ferial.groups, proper.groups) };
 }
@@ -136,7 +138,7 @@ function resolvePsalmody(day: LiturgicalDay, weekday: Weekday): ResolvedPart[] {
     wd = getPsalmodyOverrideFor(day) ?? ferial;
   } else {
     const properId = getPsalmodyProperOverrideId(day);
-    const proper = properId ? getVespersSaintOverride(properId) : undefined;
+    const proper = properId ? (getVespersSaintOverride(properId) ?? getVespersCommonOverride(properId, isPaschaltide(day.season))) : undefined;
     wd = proper ? mergeFerialNumbersWithProperAntiphons(ferial, proper) : ferial;
   }
   return wd.groups.flatMap((group) => psalmParts(group, day));
