@@ -821,9 +821,25 @@ export function substituteName(text: ResolvedText, name: { la: string[]; en: str
  * not the raw `day.winner` — see its own doc comment for why those two
  * differ on an octave day.
  */
-export function getDayCollect(day: LiturgicalDay): ResolvedText {
+export function getDayCollect(day: LiturgicalDay, hour?: 'lauds' | 'vespers'): ResolvedText {
   const winner = resolveOfficeWinner(day);
   if (winner.kind === 'temporal') {
+    // A handful of temporal ids (Lent's own ordinary ferias, its Ember
+    // days, Ash Wednesday's week, Holy Week Monday) have a genuinely
+    // distinct Vespers collect in the source ([Oratio 3], vs. Lauds' own
+    // [Oratio 2]) — see data/propers/temporal/lent-2-monday-collect-vespers.yml
+    // for the schema. Every other hour (Lauds itself, Terce/Sext/None)
+    // keeps the base `-collect` id unchanged, matching the real rubric
+    // where the minor hours repeat Lauds', not Vespers', collect. Falls
+    // back to the base collect (which itself already falls back through
+    // getTemporalProperWithFallback) whenever no distinct Vespers text has
+    // been authored for this id.
+    if (hour === 'vespers') {
+      const vespers = getTemporalProperWithFallback(winner.id, 'collect-vespers', day);
+      if (vespers.status.la !== 'missing' || vespers.status.en !== 'missing') {
+        return toResolvedText(vespers);
+      }
+    }
     return toResolvedText(getTemporalProperWithFallback(winner.id, 'collect', day));
   }
   const saint = getSaintRecord(winner.id);
@@ -1043,7 +1059,7 @@ function temporalCommemorationPart(
  * those four octaves' real "Commemoratio Octavæ ..." content surfaces.
  */
 export function getDayCollects(day: LiturgicalDay, hour: 'lauds' | 'vespers'): ResolvedPart[] {
-  const parts: ResolvedPart[] = [{ kind: 'prayer', text: getDayCollect(day) }];
+  const parts: ResolvedPart[] = [{ kind: 'prayer', text: getDayCollect(day, hour) }];
   // Mirrors resolveOfficeWinner's own gate: an octave only actually
   // supplied the primary collect when the day's winner itself wasn't a
   // real sanctoral feast (or one of the ALWAYS_OVERRIDE_TEMPORAL_IDS) —
