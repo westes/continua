@@ -1,87 +1,87 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 2cor
 chapter: 7
 verses:
   - n: 1
     text:
-      la: "has igitur habentes promissiones carissimi mundemus nos ab omni inquinamento carnis et spiritus perficientes sanctificationem in timore Dei"
-      en: "Having therefore these promises, dearly beloved, let us cleanse ourselves from all defilement of the flesh and of the spirit, perfecting sactification in the fear of God."
+      la: "Has ergo habentes promissiones, carissimi, mundemus nos ab omni inquinamento carnis et spiritus, perficientes sanctificationem in timore Dei."
+      en: "Having therefore these promises, dearly beloved, let us cleanse ourselves from all defilement of the flesh and of the spirit, perfecting sanctification in the fear of God."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "capite nos neminem laesimus neminem corrupimus neminem circumvenimus"
+      la: "Capite nos. Neminem laesimus, neminem corrupimus, neminem circumvenimus."
       en: "Receive us. We have injured no man, we have corrupted no man, we have overreached no man."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "non ad condemnationem dico praedixi enim quod in cordibus nostris estis ad conmoriendum et ad convivendum"
+      la: "Non ad condemnationem vestram dico: praediximus enim quod in cordibus nostris estis ad commoriendum et ad convivendum."
       en: "I speak not this to your condemnation. For we have said before, that you are in our hearts, to die together, and to live together."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "multa mihi fiducia est apud vos multa mihi gloriatio pro vobis repletus sum consolatione superabundo gaudio in omni tribulatione nostra"
+      la: "Multa mihi fiducia est apud vos, multa mihi gloriatio pro vobis: repletus sum consolatione; superabundo gaudio in omni tribulatione nostra."
       en: "Great is my confidence for you, great is my glorying for you. I am filled with comfort: I exceedingly abound with joy in all our tribulation."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "nam et cum venissemus Macedoniam nullam requiem habuit caro nostra sed omnem tribulationem passi foris pugnae intus timores"
+      la: "Nam et cum venissemus in Macedoniam, nullam requiem habuit caro nostra, sed omnem tribulationem passi sumus: foris pugnae, intus timores."
       en: "For also when we were come into Macedonia, our flesh had no rest, but we suffered all tribulation; combats without, fears within."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "sed qui consolatur humiles consolatus est nos Deus in adventu Titi"
+      la: "Sed qui consolatur humiles, consolatus est nos Deus in adventu Titi."
       en: "But God, who comforteth the humble, comforted us by the coming of Titus."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "non solum autem in adventu eius sed etiam in solacio quo consolatus est in vobis referens nobis vestrum desiderium vestrum fletum vestram aemulationem pro me ita ut magis gauderem"
+      la: "Non solum autem in adventu ejus, sed etiam in consolatione, qua consolatus est in vobis, referens nobis vestrum desiderium, vestrum fletum, vestram aemulationem pro me, ita ut magis gauderem."
       en: "And not by his coming only, but also by the consolation, wherewith he was comforted in you, relating to us your desire, your mourning, your zeal for me, so that I rejoiced the more."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "quoniam et si contristavi vos in epistula non me paenitet et si paeniteret videns quod epistula illa et si ad horam vos contristavit"
+      la: "Quoniam etsi contristavi vos in epistola, non me poenitet: etsi poeniteret, videns quod epistola illa ( etsi ad horam) vos contristavit,"
       en: "For although I made you sorrowful by my epistle, I do not repent; and if I did repent, seeing that the same epistle (although but for a time) did make you sorrowful;"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "nunc gaudeo non quia contristati estis sed quia contristati estis ad paenitentiam contristati enim estis secundum Deum ut in nullo detrimentum patiamini ex nobis"
+      la: "nunc gaudeo: non quia contristati estis, sed quia contristati estis ad poenitentiam. Contristati enim estis ad Deum, ut in nullo detrimentum patiamini ex nobis."
       en: "Now I am glad: not because you were made sorrowful; but because you were made sorrowful unto penance. For you were made sorrowful according to God, that you might suffer damage by us in nothing."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "quae enim secundum Deum tristitia est paenitentiam in salutem stabilem operatur saeculi autem tristitia mortem operatur"
+      la: "Quae enim secundum Deum tristitia est, poenitentiam in salutem stabilem operatur: saeculi autem tristitia mortem operatur."
       en: "For the sorrow that is according to God worketh penance, steadfast unto salvation; but the sorrow of the world worketh death."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "ecce enim hoc ipsum secundum Deum contristari vos quantam in vobis operatur sollicitudinem sed defensionem sed indignationem sed timorem sed desiderium sed aemulationem sed vindictam in omnibus exhibuistis vos incontaminatos esse negotio"
+      la: "Ecce enim hoc ipsum, secundum Deum contristari vos, quantam in vobis operatur sollicitudinem: sed defensionem, sed indignationem, sed timorem, sed desiderium, sed aemulationem, sed vindictam: in omnibus exhibuistis vos incontaminatos esse negotio."
       en: "For behold this selfsame thing, that you were made sorrowful according to God, how great carefulness it worketh in you; yea defence, yea indignation, yea fear, yea desire, yea zeal, yea revenge: in all things you have shewed yourselves to be undefiled in the matter."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "igitur et si scripsi vobis non propter eum qui fecit iniuriam nec propter eum qui passus est sed ad manifestandam sollicitudinem nostram quam pro vobis habemus ad vos coram Deo"
-      en: "Wherefore although I wrote to you, it was not for his sake that I did the wrong, nor for him that suffered it; but to manifest our carefulness that we have for you"
+      la: "Igitur, etsi scripsi vobis, non propter eum qui fecit injuriam, nec propter eum qui passus est: sed ad manifestandam sollicitudinem nostram, quam habemus pro vobis"
+      en: "Wherefore although I wrote to you, it was not for his sake that did the wrong, nor for him that suffered it; but to manifest our carefulness that we have for you"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "ideo consolati sumus in consolatione autem nostra abundantius magis gavisi sumus super gaudium Titi quia refectus est spiritus eius ab omnibus vobis"
+      la: "coram Deo: ideo consolati sumus. In consolatione autem nostra, abundantius magis gavisi sumus super gaudio Titi, quia refectus est spiritus ejus ab omnibus vobis:"
       en: "Before God: therefore we were comforted. But in our consolation, we did the more abundantly rejoice for the joy of Titus, because his spirit was refreshed by you all."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et si quid apud illum de vobis gloriatus sum non sum confusus sed sicut omnia vobis in veritate locuti sumus ita et gloriatio nostra quae fuit ad Titum veritas facta est"
+      la: "et si quid apud illum de vobis gloriatus sum, non sum confusus: sed sicut omnia vobis in veritate locuti sumus, ita et gloriatio nostra, quae fuit ad Titum, veritas facta est,"
       en: "And if I have boasted any thing to him of you, I have not been put to shame; but as we have spoken all things to you in truth, so also our boasting that was made to Titus is found a truth."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et viscera eius abundantius in vos sunt reminiscentis omnium vestrum oboedientiam quomodo cum timore et tremore excepistis eum"
+      la: "et viscera ejus abundantius in vobis sunt, reminiscentis omnium vestrum obedientiam: quomodo cum timore et tremore excepistis illum."
       en: "And his bowels are more abundantly towards you; remembering the obedience of you all, how with fear and trembling you have received him."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "gaudeo quod in omnibus confido in vobis"
+      la: "Gaudeo quod in omnibus confido in vobis."
       en: "I rejoice that in all things I have confidence in you."
     status: { la: verified, en: verified }

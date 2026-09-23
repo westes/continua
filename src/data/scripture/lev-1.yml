@@ -1,92 +1,92 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: lev
 chapter: 1
 verses:
   - n: 1
     text:
-      la: "vocavit autem Mosen et locutus est ei Dominus de tabernaculo testimonii dicens"
+      la: "Vocavit autem Moysen, et locutus est ei Dominus de tabernaculo testimonii, dicens:"
       en: "And the Lord called Moses, and spoke to him from the tabernacle of the testimony, saying:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "loquere filiis Israhel et dices ad eos homo qui obtulerit ex vobis hostiam Domino de pecoribus id est de bubus et ovibus offerens victimas"
+      la: "Loquere filiis Israel, et dices ad eos: Homo, qui obtulerit ex vobis hostiam Domino de pecoribus, id est, de bobus et ovibus offerens victimas,"
       en: "Speak to the children of Israel, and thou shalt say to them: The man among you that shall offer to the Lord a sacrifice of the cattle, that is, offering victims of oxen and sheep,"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "si holocaustum fuerit eius oblatio ac de armento masculum inmaculatum offeret ad ostium tabernaculi testimonii ad placandum sibi Dominum"
+      la: "si holocaustum fuerit ejus oblatio, ac de armento: masculum immaculatum offeret ad ostium tabernaculi testimonii, ad placandum sibi Dominum:"
       en: "If his offering be a holocaust, and of the herd, he shall offer a male without blemish, at the door of the testimony, to make the Lord favourable to him:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "ponetque manus super caput hostiae et acceptabilis erit atque in expiationem eius proficiens"
+      la: "ponetque manum super caput hostiae, et acceptabilis erit, atque in expiationem ejus proficiens."
       en: "And he shall put his hand upon the head of the victim, and it shall be acceptable, and help to its expiation."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "immolabitque vitulum coram Domino et offerent filii Aaron sacerdotes sanguinem eius fundentes super altaris circuitum quod est ante ostium tabernaculi"
+      la: "Immolabitque vitulum coram Domino, et offerent filii Aaron sacerdotes sanguinem ejus, fundentes per altaris circuitum, quod est ante ostium tabernaculi:"
       en: "And he shall immolate the calf before the Lord, and the priests the sons of Aaron shall offer the blood thereof, pouring it round about the altar, which is before the door of the tabernacle."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "detractaque pelle hostiae artus in frusta concident"
+      la: "detractaque pelle hostiae, artus in frusta concident."
       en: "And when they have flayed the victim, they shall cut the joints into pieces,"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et subicient in altari ignem strue lignorum ante conposita"
+      la: "Et subjicient in altari ignem, strue lignorum ante composita:"
       en: "And shall put fire on the altar, having before laid in order a pile of wood:"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et membra quae caesa sunt desuper ordinantes caput videlicet et cuncta quae adherent iecori"
+      la: "et membra quae sunt caesa, desuper ordinantes, caput videlicet, et cuncta quae adhaerent jecori,"
       en: "And they shall lay the parts that are cut out in order thereupon, to wit, the head, and all things that cleave to the liver,"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "intestinis et pedibus lotis aqua adolebitque ea sacerdos super altare in holocaustum et suavem odorem Domino"
+      la: "intestinis et pedibus lotis aqua: adolebitque ea sacerdos super altare in holocaustum et suavem odorem Domino."
       en: "The entrails and feet being washed with water: and the priest shall burn them upon the altar for a holocaust, and a sweet savour to the Lord."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "quod si de pecoribus oblatio est de ovibus sive de capris holocaustum anniculum et absque macula offeret"
-      en: "And if the offering be of the hocks, a holocaust of sheep or of goats, he shall offer a male without blemish:"
+      la: "Quod si de pecoribus oblatio est, de ovibus sive de capris holocaustum, masculum absque macula offeret:"
+      en: "And if the offering be of the flocks, a holocaust of sheep or of goats, he shall offer a male without blemish:"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "immolabitque ad latus altaris quod respicit ad aquilonem coram Domino sanguinem vero illius fundent super altare filii Aaron per circuitum"
+      la: "immolabitque ad latus altaris, quod respicit ad aquilonem, coram Domino: sanguinem vero illius fundent super altare filii Aaron per circuitum:"
       en: "And he shall immolate it at the side of the altar that looketh to the north, before the Lord: but the sons of Aaron shall pour the blood thereof upon the altar round about:"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "dividentque membra caput et omnia quae adherent iecori et inponent super ligna quibus subiciendus est ignis"
+      la: "dividentque membra, caput, et omnia quae adhaerent jecori, et ponent super ligna, quibus subjiciendus est ignis:"
       en: "And they shall divide the joints, the head, and all that cleave to the liver: and shall lay them upon the wood, under which the fire is to be put:"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "intestina vero et pedes lavabunt aqua et oblata omnia adolebit sacerdos super altare in holocaustum et odorem suavissimum Domino"
+      la: "intestina vero et pedes lavabunt aqua. Et oblata omnia adolebit sacerdos super altare in holocaustum et odorem suavissimum Domino."
       en: "But the entrails and the feet they shall wash with water. And the priest shall offer it all and burn it all upon the altar for a holocaust, and most sweet savour to the Lord."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "sin autem de avibus holocausti oblatio fuerit Domino de turturibus et pullis columbae"
+      la: "Si autem de avibus, holocausti oblatio fuerit Domino, de turturibus, aut pullis columbae,"
       en: "But if the oblation of a holocaust to the Lord be of birds, of turtles, or of young pigeons,"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "offeret eam sacerdos ad altare et retorto ad collum capite ac rupto vulneris loco decurrere faciet sanguinem super crepidinem altaris"
+      la: "offeret eam sacerdos ad altare: et retorto ad collum capite, ac rupto vulneris loco, decurrere faciet sanguinem super crepidinem altaris:"
       en: "The priest shall offer it at the altar: and twisting back the neck, and breaking the place of the wound, he shall make the blood run down upon the brim of the altar."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "vesiculam vero gutturis et plumas proiciet propter altare ad orientalem plagam in loco in quo cineres effundi solent"
+      la: "vesiculam vero gutturis, et plumas projiciet prope altare ad orientalem plagam, in loco in quo cineres effundi solent,"
       en: "But the crop of the throat, and the feathers he shall cast beside the altar at the east side, in the place where the ashes are wont to be poured out,"
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "confringetque ascellas eius et non secabit nec ferro dividet eam et adolebit super altare lignis igne subposito holocaustum est et oblatio suavissimi odoris Domino"
+      la: "confringetque ascellas ejus, et non secabit, neque ferro dividet eam, et adolebit super altare, lignis igne supposito. Holocaustum est et oblatio suavissimi odoris Domino."
       en: "And he shall break the pinions thereof, and shall not cut, nor divide it with a knife, and shall burn it upon the altar, putting fire under the wood. It is a holocaust and oblation of most sweet savour to the Lord."
     status: { la: verified, en: verified }

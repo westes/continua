@@ -1,102 +1,102 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 2reg
 chapter: 10
 verses:
   - n: 1
     text:
-      la: "factum est autem post haec ut moreretur rex filiorum Ammon et regnaret Anon filius eius pro eo"
+      la: "Factum est autem post haec, ut moreretur rex filiorum Ammon, et regnavit Hanon filius ejus pro eo."
       en: "And it came to pass after this, that the king of the children of Ammon died, and Hanon his son reigned in his stead."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "dixitque David faciam misericordiam cum Anon filio Naas sicut fecit pater eius mecum misericordiam misit ergo David consolans eum per servos suos super patris interitu cum autem venissent servi David in terram filiorum Ammon"
+      la: "Dixitque David: Faciam misericordiam cum Hanon filio Naas, sicut fecit pater ejus mecum misericordiam. Misit ergo David, consolans eum per servos suos super patris interitu. Cum autem venissent servi David in terram filiorum Ammon,"
       en: "And David said: I Will shew kindness to Hanon the son of Daas, as his father shewed kindness to me. So David sent his servants to comfort him for the death of his father. But when the servants of David were come into the land of the children of Ammon,"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "dixerunt principes filiorum Ammon ad Anon dominum suum putas quod propter honorem patris tui David miserit ad te consolatores et non ideo ut investigaret et exploraret civitatem et everteret eam misit David servos suos ad te"
+      la: "dixerunt principes filiorum Ammon ad Hanon dominum suum: Putas quod propter honorem patris tui miserit David ad te consolatores, et non ideo ut investigaret, et exploraret civitatem, et everteret eam, misit David servos suos ad te?"
       en: "The princes of the children of Ammon said to Hanon their lord: Thinkest thou that for the honour of thy father, David hath sent comforters to thee, and hath not David rather sent his servants to thee to search, and spy into the city, and overthrow it?"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "tulit itaque Anon servos David rasitque dimidiam partem barbae eorum et praecidit vestes eorum medias usque ad nates et dimisit eos"
+      la: "Tulit itaque Hanon servus David, rasitque dimidiam partem barbae eorum et praescidit vestes eorum medias usque ad nates, et dimisit eos."
       en: "Wherefore Hanon took the servants of David, and shaved off the one half of their beards, and cut away half of their garments even to the buttocks, and sent them away."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "quod cum nuntiatum esset David misit in occursum eorum erant enim viri confusi turpiter valde et mandavit eis David manete Hiericho donec crescat barba vestra et tunc revertimini"
+      la: "Quod cum nuntiatum esset David, misit in occursum eorum: erant enim viri confusi turpiter valde, et mandavit eis David: Manete in Jericho, donec crescat barba vestra, et tunc revertimini."
       en: "When this was told David, he sent to meet them: for the men were sadly put to confusion, and David commanded them, saying: Stay at Jericho, till your beards be grown, and then return."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "videntes autem filii Ammon quod iniuriam fecissent David miserunt et conduxerunt mercede Syrum Roob et Syrum Soba viginti milia peditum et a rege Maacha mille viros et ab Histob duodecim milia virorum"
+      la: "Videntes autem filii Ammon quod injuriam fecissent David, miserunt, et conduxerunt mercede Syrum Rohob, et Syrum Soba, viginti millia peditum, et a rege Maacha mille viros, et ab Istob duodecim millia virorum."
       en: "And the children of Ammon seeing that they had done an injury to David, Bent and hired the Syrians of Rohob, and the Syrians of Soba, twenty thousand footmen, and of the king of Maacha a thousand men, and of Istob twelve thousand men."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "quod cum audisset David misit Ioab et omnem exercitum bellatorum"
+      la: "Quod cum audisset David, misit Joab et omnem exercitum bellatorum."
       en: "And when David heard this, he sent Joab and the whole army of warriors."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "egressi sunt ergo filii Ammon et direxerunt aciem ante ipsum introitum portae Syrus autem Soba et Roob et Histob et Maacha seorsum erant in campo"
+      la: "Egressi sunt ergo filii Ammon, et direxerunt aciem ante ipsum introitum portae: Syrus autem Soba, et Rohob, et Istob, et Maacha, seorsum erant in campo."
       en: "And the children of Ammon came out, and set their men in array at the entering in of the gate: but the Syrians of Soba, and of Rohob, and of Istob, and of Maacha were by themselves in the field."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "videns igitur Ioab quod praeparatum esset adversum se proelium et ex adverso et post tergum elegit ex omnibus electis Israhel et instruxit aciem contra Syrum"
+      la: "Videns igitur Joab quod praeparatum esset adversum se praelium, et ex adverso et post tergum, elegit ex omnibus electis Israel, et instruxit aciem contra Syrum:"
       en: "Then Joab seeing that the battle was prepared against him, both before and behind, chose of all the choice men of Israel, and put them in array against the Syrians:"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "reliquam autem partem populi tradidit Abisai fratri suo qui direxit aciem adversum filios Ammon"
+      la: "reliquam autem partem populi tradidit Abisai fratri suo, qui direxit aciem adversus filios Ammon."
       en: "And the rest of the people he delivered to Abisai his brother, who set them in array against the children of Ammon."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et ait Ioab si praevaluerint adversum me Syri eris mihi in adiutorium si autem filii Ammon praevaluerint adversum te auxiliabor tibi"
+      la: "Et ait Joab: Si praevaluerint adversum me Syri, eris mihi in adjutorium: si autem filii Ammon praevaluerint adversum te, auxiliabor te."
       en: "And Joab said: If the Syrians are too strong for me, then thou shalt help me: but if the children of Ammon are too strong for thee, then I will help thee."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "esto vir fortis et pugnemus pro populo nostro et civitate Dei nostri Dominus autem faciet quod bonum est in conspectu suo"
+      la: "Esto vir fortis, et pugnemus pro populo nostro, et civitate Dei nostri: Dominus autem faciet quod bonum est in conspectu suo."
       en: "Be of good courage, and let us fight for our people, and for the city of our God: and the Lord will do what is good in his sight."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "iniit itaque Ioab et populus qui erat cum eo certamen contra Syros qui statim fugerunt a facie eius"
+      la: "Iniit itaque Joab, et populus qui erat cum eo, certamen contra Syros: qui statim fugerunt a facie ejus."
       en: "And Joab and the people that were with him, began to fight against the Syrians: and they immediately fled before him."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "filii autem Ammon videntes quod fugissent Syri fugerunt et ipsi a facie Abisai et ingressi sunt civitatem reversusque est Ioab a filiis Ammon et venit Hierusalem"
+      la: "Filii autem Ammon videntes quia fugissent Syri, fugerunt et ipsi a facie Abisai, et ingressi sunt civitatem: reversusque est Joab a filiis Ammon, et venit Jerusalem."
       en: "And the children of Ammon seeing that the Syrians were fled, they fled also before Abisai, and entered into the city: and Joab returned from the children of Ammon, and came to Jerusalem."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "videntes igitur Syri quoniam corruissent coram Israhel congregati sunt pariter"
+      la: "Videntes igitur Syri quoniam corruissent coram Israel, congregati sunt pariter."
       en: "Then the Syrians seeing that they had fallen before Israel, gathered themselves together."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "misitque Adadezer et eduxit Syros qui erant trans Fluvium et adduxit exercitum eorum Sobach autem magister militiae Adadezer erat princeps eorum"
+      la: "Misitque Adarezer, et eduxit Syros, qui erant trans fluvium, et adduxit eorum exercitum: Sobach autem, magister militiae Adarezer, erat princeps eorum."
       en: "And Adarezer sent and fetched the Syrians, that were beyond the river, and brought over their army: and Sobach, the captain of the host of Adarezer, was their general."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "quod cum nuntiatum esset David contraxit omnem Israhelem et transivit Iordanem venitque in Helema et direxerunt aciem Syri ex adverso David et pugnaverunt contra eum"
+      la: "Quod cum nuntiatum esset David, contraxit omnem Israelem, et transivit Jordanem, venitque in Helam: et direxerunt aciem Syri ex adverso David, et pugnaverunt contra eum."
       en: "And when this was told David, he gathered all Israel together, and passed over the Jordan, and came to Helam: and the Syrians set themselves in array against David, and fought against him."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "fugeruntque Syri a facie Israhel et occidit David de Syris septingentos currus et quadraginta milia equitum et Sobach principem militiae percussit qui statim mortuus est"
+      la: "Fugeruntque Syri a facie Israel, et occidit David de Syris septingentos currus, et quadraginta millia equitum: et Sobach principem militiae percussit: qui statim mortuus est."
       en: "And the Syrians fled before Israel, and David slew of the Syrians the men of seven hundred chariots, and forty thousand horsemen: and smote Sobach the captain of the army, who presently died."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "videntes autem universi reges qui erant in praesidio Adadezer victos se ab Israhel fecerunt pacem cum Israhel et servierunt eis timueruntque Syri auxilium praebere filiis Ammon"
+      la: "Videntes autem universi reges, qui erant in praesidio Adarezer, se victos esse ab Israel, expaverunt et fugerunt quinquaginta et octo millia coram Israel. Et fecerunt pacem cum Israel: et servierunt eis, timueruntque Syri auxilium praebere ultra filiis Ammon."
       en: "And all the kings that were auxiliaries of Adarezer, seeing themselves overcome by Israel, were afraid and fled away, eight and fifty thousand men before Israel. And they made peace with Israel: and served them, and all the Syrians were afraid to help the children of Ammon any more."
     status: { la: verified, en: verified }

@@ -1,8 +1,7 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for isa 5 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: isa
 chapter: 5
 verses:
@@ -28,17 +27,17 @@ verses:
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "Et nunc ostendam vobis quid ego faciam vineae meae : auferam sepem ejus, et erit in direptionem; diruam maceriam ejus, et erit in conculcationem."
+      la: "Et nunc ostendam vobis quid ego faciam vineae meae: auferam sepem ejus, et erit in direptionem; diruam maceriam ejus, et erit in conculcationem."
       en: "And now I will shew you what I will do to my vineyard. I will take away the hedge thereof, and it shall be wasted: I will break down the wall thereof, and it shall be trodden down."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "Et ponam eam desertam; non putabitur et non fodietur : et ascendent vepres et spinae, et nubibus mandabo ne pluant super eam imbrem."
+      la: "Et ponam eam desertam; non putabitur et non fodietur: et ascendent vepres et spinae, et nubibus mandabo ne pluant super eam imbrem."
       en: "And I will make it desolate: it shall not be pruned, and it shall not be digged: but briers and thorns shall come up: and I will command the clouds to rain no rain upon it."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "Vinea enim Domini exercituum domus Israel est; et vir Juda germen ejus delectabile : et exspectavi ut faceret judicium, et ecce iniquitas; et justitiam, et ecce clamor."
+      la: "Vinea enim Domini exercituum domus Israel est; et vir Juda germen ejus delectabile: et exspectavi ut faceret judicium, et ecce iniquitas; et justitiam, et ecce clamor."
       en: "For the vineyard of the Lord of hosts is the house of Israel: and the man of Juda, his pleasant plant: and I looked that he should do judgment, and behold iniquity: and do justice, and behold a cry."
     status: { la: verified, en: verified }
   - n: 8
@@ -98,7 +97,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "qui dicitis : Festinet, et cito veniat opus ejus, ut videamus; et appropiet, et veniat consilium sancti Israel, et sciemus illud!"
+      la: "qui dicitis: Festinet, et cito veniat opus ejus, ut videamus; et appropiet, et veniat consilium sancti Israel, et sciemus illud!"
       en: "That say: Let him make haste, and let his work come quickly, that we may see it: and let the counsel of the Holy One of Israel come, that we may know it."
     status: { la: verified, en: verified }
   - n: 20
@@ -128,12 +127,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "Ideo iratus est furor Domini in populum suum, et extendit manum suam super eum, et percussit eum : et conturbati sunt montes, et facta sunt morticina eorum quasi stercus in medio platearum. In his omnibus non est adversus furor ejus, sed adhuc manus ejus extenta."
+      la: "Ideo iratus est furor Domini in populum suum, et extendit manum suam super eum, et percussit eum: et conturbati sunt montes, et facta sunt morticina eorum quasi stercus in medio platearum. In his omnibus non est adversus furor ejus, sed adhuc manus ejus extenta."
       en: "Therefore is the wrath of the Lord kindled against his people, and he hath stretched out his hand upon them, and struck them: and the mountains were troubled, and their carcasses became as dung in the midst of the streets. For all this his anger is not turned away, but his hand is stretched out still."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "Et elevabit signum in nationibus procul, et sibilabit ad eum de finibus terrae : et ecce festinus velociter veniet."
+      la: "Et elevabit signum in nationibus procul, et sibilabit ad eum de finibus terrae: et ecce festinus velociter veniet."
       en: "And he will lift up a sign to the nations afar off, and will whistle to them from the ends of the earth: and behold they shall come with speed swiftly."
     status: { la: verified, en: verified }
   - n: 27
@@ -148,11 +147,11 @@ verses:
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "Rugitus ejus ut leonis; rugiet ut catuli leonum : et frendet, et tenebit praedam, et amplexabitur, et non erit qui eruat."
+      la: "Rugitus ejus ut leonis; rugiet ut catuli leonum: et frendet, et tenebit praedam, et amplexabitur, et non erit qui eruat."
       en: "Their roaring like that of a lion, they shall roar like young lions: yea they shall roar, and take hold of the prey, and they shall keep fast hold of it, and there shall be none to deliver it."
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "Et sonabit super eum in die illa sicut sonitus maris : aspiciemus in terram, et ecce tenebrae tribulationis, et lux obtenebrata est in caligine ejus."
+      la: "Et sonabit super eum in die illa sicut sonitus maris: aspiciemus in terram, et ecce tenebrae tribulationis, et lux obtenebrata est in caligine ejus."
       en: "And they shall make a noise against them that day, like the roaring of the sea; we shall look towards the land, and behold darkness of tribulation, and the light is darkened with the mist thereof."
     status: { la: verified, en: verified }

@@ -1,172 +1,172 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: ezek
 chapter: 33
 verses:
   - n: 1
     text:
-      la: "et factum est verbum Domini ad me dicens"
+      la: "Et factum est verbum Domini ad me, dicens:"
       en: "And the word of the Lord came to me, saying:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "fili hominis loquere ad filios populi tui et dices ad eos terra cum induxero super eam gladium et tulerit populus terrae virum unum de novissimis suis et constituerit eum super se speculatorem"
+      la: "Fili hominis, loquere ad filios populi tui, et dices ad eos: Terra, cum induxero super eam gladium, et tulerit populus terrae virum unum de novissimis suis, et constituerit eum super se speculatorem:"
       en: "Son of man, speak to the children of thy people, and say to them: When I bring the sword upon a land, if the people of the land take a man, one of their meanest, and make him a watchman over them:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et ille viderit gladium venientem super terram et cecinerit bucina et adnuntiaverit populo"
+      la: "et ille viderit gladium venientem super terram, et cecinerit buccina, et annuntiaverit populo:"
       en: "And he see the sword coming upon the land, and sound the trumpet, and tell the people:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "audiens autem quisquis ille est sonum bucinae non se observaverit veneritque gladius et tulerit eum sanguis ipsius super caput eius erit"
+      la: "audiens autem, quisquis ille est, sonitum buccinae, et non se observaverit, veneritque gladius, et tulerit eum, sanguis ipsius super caput ejus erit."
       en: "Then he that heareth the sound of the trumpet, whosoever he be, and doth not look to himself, if the sword come, and cut him off: his blood shall be upon his own head."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "sonum bucinae audivit et non se observavit sanguis eius in ipso erit si autem custodierit animam suam salvavit"
+      la: "Sonum buccinae audivit, et non se observavit: sanguis ejus in ipso erit; si autem se custodierit, animam suam salvabit."
       en: "He heard the sound of the trumpet and did not look to himself, his blood shall be upon him: but if he look to himself, he shall save his life."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "quod si speculator viderit gladium venientem et non insonuerit bucina et populus non se custodierit veneritque gladius et tulerit de eis animam ille quidem in iniquitate sua captus est sanguinem autem eius de manu speculatoris requiram"
+      la: "Quod si speculator viderit gladium venientem, et non insonuerit buccina, et populus se non custodierit, veneritque gladius, et tulerit de eis animam: ille quidem in iniquitate sua captus est, sanguinem autem ejus de manu speculatoris requiram."
       en: "And if the watchman see the sword coming, and sound not the trumpet: and the people look not to themselves, and the sword come, and cut off a soul from among them: he indeed is taken away in his iniquity, but I will require his blood at the hand of the watchman."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et tu fili hominis speculatorem dedi te domui Israhel audiens ergo ex ore meo sermonem adnuntiabis eis ex me"
+      la: "Et tu, fili hominis, speculatorem dedi te domui Israel: audiens ergo ex ore meo sermonem, annuntiabis eis ex me."
       en: "So thou, O son of man, I have made thee a watchman to the house of Israel: therefore thou shalt hear the word from my mouth, and shalt tell it them from me."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "si me dicente ad impium impie morte morieris non fueris locutus ut se custodiat impius a via sua ipse impius in iniquitate sua morietur sanguinem autem eius de manu tua requiram"
+      la: "Si me dicente ad impium: Impie, morte morieris: non fueris locutus ut se custodiat impius a via sua, ipse impius in iniquitate sua morietur, sanguinem autem ejus de manu tua requiram."
       en: "When I say to the wicked: O wicked man, thou shalt surely die: if thou dost not speak to warn the wicked man from his way: that wicked man shall die in his iniquity, but I will require his blood at thy hand."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "si autem adnuntiante te ad impium ut a viis suis convertatur non fuerit conversus a via sua ipse in iniquitate sua morietur porro tu animam tuam liberasti"
+      la: "Si autem annuntiante te ad impium ut a viis suis convertatur, non fuerit conversus a via sua, ipse in iniquitate sua morietur, porro tu animam tuam liberasti."
       en: "But if thou tell the wicked man, that he may be converted from his ways, and he be not converted from his way: he shall die in his iniquity: but thou hast delivered thy soul."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "tu ergo fili hominis dic ad domum Israhel sic locuti estis dicentes iniquitates nostrae et peccata nostra super nos sunt et in ipsis nos tabescimus quomodo ergo vivere poterimus"
+      la: "Tu ergo, fili hominis, dic ad domum Israel: Sic locuti estis, dicentes: Iniquitates nostrae et peccata nostra super nos sunt, et in ipsis nos tabescimus: quomodo ergo vivere poterimus?"
       en: "Thou therefore, O son of man, say to the house of Israel: Thus you have spoken, saying: Our iniquities, and our sins are upon us, and we pine away in them: how then can we live?"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "dic ad eos vivo ego dicit Dominus Deus nolo mortem impii sed ut revertatur impius a via sua et vivat convertimini a viis vestris pessimis et quare moriemini domus Israhel"
+      la: "Dic ad eos: Vivo ego, dicit Dominus Deus, nolo mortem impii, sed ut convertatur impius a via sua, et vivat. Convertimini, convertimini a viis vestris pessimis: et quare moriemini, domus Israel?"
       en: "Say to them: As I live, saith the Lord God, I desire not the death of the wicked, but that the wicked turn from his way, and live. Turn ye, turn ye from your evil ways: and why will you die, O house of Israel?"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "tu itaque fili hominis dic ad filios populi tui iustitia iusti non liberabit eum in quacumque die peccaverit et impietas impii non nocebit ei in quacumque die conversus fuerit ab impietate sua et iustus non poterit vivere in iustitia sua in quacumque die peccaverit"
+      la: "Tu itaque, fili hominis, dic ad filios populi tui: Justitia justi non liberabit eum, in quacumque die peccaverit: et impietas impii non nocebit ei, in quacumque die conversus fuerit ab impietate sua: et justus non poterit vivere in justitia sua, in quacumque die peccaverit."
       en: "Thou therefore, O son of man, say to the children of thy people: The justice of the just shall not deliver him, in what day soever he shall sin: and the wickedness of the wicked shall not hurt him, in what day soever he shall turn from his wickedness: and the just shall not be able to live in his justice, in what day soever he shall sin."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "etiam si dixero iusto quod vita vivat et confisus in iustitia sua fecerit iniquitatem omnes iustitiae eius oblivioni tradentur et in iniquitate sua quam operatus est in ipsa morietur"
+      la: "Etiamsi dixero justo quod vita vivat, et confisus in justitia sua fecerit iniquitatem, omnes justitiae ejus oblivioni tradentur, et in iniquitate sua quam operatus est, in ipsa morietur."
       en: "Yea, if I shall say to the just that he shall surely live, and he, trusting in his justice, commit iniquity: all his justices shall be forgotten, and in his iniquity, which he hath committed, in the same shall he die."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "sin autem dixero impio morte morieris et egerit paenitentiam a peccato suo feceritque iudicium et iustitiam"
+      la: "Si autem dixero impio: Morte morieris: et egerit poenitentiam a peccato suo, feceritque judicium et justitiam,"
       en: "And if I shall say to the wicked: Thou shalt surely die: and he do penance for his sin, and do judgment and justice,"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "pignus restituerit ille impius rapinamque reddiderit in mandatis vitae ambulaverit nec fecerit quicquam iniustum vita vivet et non morietur"
+      la: "et pignus restituerit ille impius, rapinamque reddiderit, in mandatis vitae ambulaverit, nec fecerit quidquam injustum, vita vivet, et non morietur."
       en: "And if that wicked man restore the pledge, and render what he had robbed, and walk in the commandments of life, and do no unjust thing: he shall surely live, and shall not die."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "omnia peccata eius quae peccavit non inputabuntur ei iudicium et iustitiam fecit vita vivet"
+      la: "Omnia peccata ejus, quae peccavit, non imputabuntur ei: judicium et justitiam fecit: vita vivet."
       en: "None of his sins, which he hath committed, shall be imputed to him: he hath done judgment and justice, he shall surely live."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "et dixerunt filii populi tui non est aequi ponderis via Domini et ipsorum via iniusta est"
+      la: "Et dixerunt filii populi tui: Non est aequi ponderis via Domini: et ipsorum via injusta est."
       en: "And the children of thy people have said: The way of the Lord is not equitable: whereas their own way is unjust."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "cum enim recesserit iustus a iustitia sua feceritque iniquitatem morietur in eis"
+      la: "Cum enim recesserit justus a justitia sua, feceritque iniquitates, morietur in eis."
       en: "For when the just shall depart from his justice, and commit iniquities, he shall die in them."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "et cum recesserit impius ab impietate sua feceritque iudicium et iustitiam vivet in eis"
-      en: "And when the wicked shall depart from his wickedness, and shall do judgments, and justice: be shall live in them."
+      la: "Et cum recesserit impius ab impietate sua, feceritque judicium et justitiam, vivet in eis."
+      en: "And when the wicked shall depart from his wickedness, and shall do judgments, and justice: he shall live in them."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "et dicitis non est recta via Domini unumquemque iuxta vias suas iudicabo de vobis domus Israhel"
+      la: "Et dicitis: Non est recta via Domini. Unumquemque juxta vias suas judicabo de vobis, domus Israel."
       en: "And you say: The way of the Lord is not right, I will judge every one of you according to his ways, O house of Israel."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "et factum est in duodecimo anno in duodecimo mense in quinta mensis transmigrationis nostrae venit ad me qui fugerat de Hierusalem dicens vastata est civitas"
+      la: "Et factum est in duodecimo anno, in decimo mense, in quinta mensis transmigrationis nostrae, venit ad me qui fugerat de Jerusalem, dicens: Vastata est civitas."
       en: "And it came to pass in the twelfth year of our captivity, in the tenth month, in the fifth day of the month, that there came to me one that was fled from Jerusalem, saying: The city is laid waste."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "manus autem Domini facta fuerat ad me vespere antequam veniret qui fugerat aperuitque os meum donec veniret ad me mane et aperto ore meo non silui amplius"
+      la: "Manus autem Domini facta fuerat ad me vespere, antequam veniret qui fugerat: aperuitque os meum donec veniret ad me mane: et aperto ore meo, non silui amplius."
       en: "And the hand of the Lord had been upon me in the evening, before he that was fled came: and he opened my mouth till he came to me in the morning, and my mouth being opened, I was silent no more."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "et factum est verbum Domini ad me dicens"
+      la: "Et factum est verbum Domini ad me, dicens:"
       en: "And the word of the Lord came to me, saying:"
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "fili hominis qui habitant in ruinosis his super humum Israhel loquentes aiunt unus erat Abraham et hereditate possedit terram nos autem multi nobis data est terra in possessionem"
+      la: "Fili hominis, qui habitant in ruinosis his super humum Israel, loquentes aiunt: Unus erat Abraham, et haereditate possedit terram: nos autem multi sumus: nobis data est terra in possessionem."
       en: "Son of man, they that dwell in these ruinous places in the land of Israel, speak, saying: Abraham was one, and he inherited the land, but we are many, the land is given us in possession."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "idcirco dices ad eos haec dicit Dominus Deus qui in sanguine comeditis et oculos vestros levatis ad inmunditias vestras et sanguinem funditis numquid terram hereditate possidebitis"
+      la: "Idcirco dices ad eos: Haec dicit Dominus Deus: Qui in sanguine comeditis, et oculos vestros levatis ad immunditias vestras, et sanguinem funditis, numquid terram haereditate possidebitis?"
       en: "Therefore say to them: Thus saith the Lord God, You that eat with the blood and lift up your eyes to your uncleannesses, and that shed blood: shall you possess the land by inheritance?"
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "stetistis in gladiis vestris fecistis abominationes et unusquisque uxorem proximi sui polluit et terram hereditate possidebitis"
+      la: "stetistis in gladiis vestris, fecistis abominationes, et unusquisque uxorem proximi sui polluit: et terram haereditate possidebitis?"
       en: "You stood on your swords, you have committed abominations, and every one hath defiled his neighbour's wife; and shall you possess the land by inheritance?"
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "haec dices ad eos sic dicit Dominus Deus vivo ego quia qui in ruinosis habitant gladio cadent et qui in agro est bestiis tradetur ad devorandum qui autem in praesidiis et in speluncis sunt peste morientur"
+      la: "Haec dices ad eos: Sic dicit Dominus Deus: Vivo ego, quia qui in ruinosis habitant, gladio cadent: et qui in agro est, bestiis tradetur ad devorandum: qui autem in praesidiis et speluncis sunt, peste morientur."
       en: "Say thou thus to them: Thus saith the Lord God: As I live, they that dwell in the ruinous places, shall fall by the sword: and he that is in the field, shall be given to the beasts to be devoured: and they that are in holds, and caves, shall die of the pestilence."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "et dabo terram in solitudinem et desertum et deficiet superba fortitudo eius et desolabuntur montes Israhel eo quod nullus sit qui per eos transeat"
+      la: "Et dabo terram in solitudinem et in desertum, et deficiet superba fortitudo ejus: et desolabuntur montes Israel, eo quod nullus sit qui per eos transeat:"
       en: "And I will make the land a wilderness, and a desert, and the proud strength thereof shall fail, and the mountains of Israel shall be desolate, because there is none to pass by them."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "et scient quia ego Dominus cum dedero terram desolatam et desertam propter universas abominationes suas quas operati sunt"
+      la: "et scient quia ego Dominus, cum dedero terram eorum desolatam et desertam, propter universas abominationes suas, quas operati sunt."
       en: "And they shall know that I am the Lord, when I shall have made their land waste and desolate, for all their abominations which they have committed."
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "et tu fili hominis filii populi tui qui loquuntur de te iuxta muros et in ostiis domorum et dicunt unus ad alterum vir ad proximum suum loquentes venite et audiamus qui sit sermo egrediens a Domino"
-      en: "And thou son of man: the children of thy people, that talk of thee by the walls, and in the doors of the houses, and speak one to another each men to his neighbour, saying: Come, and let us hear what is the word that cometh forth from the Lord."
+      la: "Et tu, fili hominis, filii populi tui, qui loquuntur de te juxta muros et in ostiis domorum, et dicunt unus ad alterum, vir ad proximum suum, loquentes: Venite, et audiamus quis sit sermo egrediens a Domino."
+      en: "And thou son of man: the children of thy people, that talk of thee by the walls, and in the doors of the houses, and speak one to another each man to his neighbour, saying: Come, and let us hear what is the word that cometh forth from the Lord."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "et veniunt ad te quasi si ingrediatur populus et sedent coram te populus meus et audiunt sermones tuos et non faciunt eos quia in canticum oris sui vertunt illos et avaritiam suam sequitur cor eorum"
+      la: "Et veniunt ad te, quasi si ingrediatur populus, et sedent coram te populus meus: et audiunt sermones tuos, et non faciunt eos, quia in canticum oris sui vertunt illos, et avaritiam suam sequitur cor eorum."
       en: "And they come to thee, as if a people were coming in, and my people sit before thee: and hear thy words, and do them not: for they turn them into a song of their mouth, and their heart goeth after their covetousness."
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "et es eis quasi carmen musicum quod suavi dulcique sono canitur et audient verba tua et non facient ea"
+      la: "Et es eis quasi carmen musicum, quod suavi dulcique sono canitur: et audiunt verba tua, et non faciunt ea."
       en: "And thou art to them as a musical song which is sung with a sweet and agreeable voice: and they hear thy words, and do them not."
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "et cum venerit quod praedictum est ecce enim venit tunc scient quod prophetes fuerit inter eos"
-      en: "And when that which was foretold shall come to pass, (for behold it is coming,) then shall they know that a prophet bath been among them."
+      la: "Et cum venerit quod praedictum est ( ecce enim venit), tunc scient quod prophetes fuerit inter eos."
+      en: "And when that which was foretold shall come to pass, (for behold it is coming,) then shall they know that a prophet hath been among them."
     status: { la: verified, en: verified }

@@ -1,77 +1,77 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1par
 chapter: 10
 verses:
   - n: 1
     text:
-      la: "Philisthim autem pugnabant contra Israhel fugeruntque viri Israhel Palestinos et ceciderunt vulnerati in monte Gelboe"
+      la: "Philisthiim autem pugnabant contra Israel, fugeruntque viri Israel Palaesthinos, et ceciderunt vulnerati in monte Gelboe."
       en: "Now the Philistines fought against Israel, and the men of Israel fled from before the Philistines, and fell down wounded in mount Gelboe."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "cumque adpropinquassent Philisthei persequentes Saul et filios eius percusserunt Ionathan et Abinadab et Melchisuae filios Saul"
+      la: "Cumque appropinquassent Philisthaei, persequentes Saul, et filios ejus, percusserunt Jonathan, et Abinadab, et Melchisua filios Saul."
       en: "And the Philistines drew near pursuing after Saul, and his sons, and they killed Jonathan, and Abinadab, and Melchisua the sons of Saul."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et adgravatum est proelium contra Saul inveneruntque eum sagittarii et vulneraverunt iaculis"
+      la: "Et aggravatum est praelium contra Saul, inveneruntque eum sagittarii, et vulneraverunt jaculis."
       en: "And the battle grew hard against Saul, and the archers reached him, and wounded him with arrows."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et dixit Saul ad armigerum suum evagina gladium tuum et interfice me ne forte veniant incircumcisi isti et inludant mihi noluit autem armiger eius hoc facere timore perterritus arripuit igitur Saul ensem et inruit in eum"
+      la: "Et dixit Saul ad armigerum suum: Evagina gladium tuum, et interfice me, ne forte veniant incircumcisi isti, et illudant mihi. Noluit autem armiger ejus hoc facere, timore perterritus: arripuit ergo Saul ensem, et irruit in eum."
       en: "And Saul said to his armourbearer: Draw thy sword, and kill me: lest these uncircumcised come, and mock me. But his armourbearer would not, for he was struck with fear: so Saul took his sword, and fell upon it."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "quod cum vidisset armiger eius videlicet mortuum esse Saul inruit etiam ipse in gladium suum et mortuus est"
+      la: "Quod cum vidisset armiger ejus, videlicet mortuum esse Saul, irruit etiam ipse in gladium suum, et mortuus est."
       en: "And when his armourbearer saw it, to wit, that Saul was dead, he also fell upon his sword and died."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "interiit ergo Saul et tres filii eius et omnis domus illius pariter concidit"
+      la: "Interiit ergo Saul, et tres filii ejus, et omnis domus illius pariter concidit."
       en: "So Saul died, and his three sons, and all his house fell together."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "quod cum vidissent viri Israhel qui habitabant in campestribus fugerunt et Saul ac filiis eius mortuis dereliquerunt urbes suas et huc illucque dispersi sunt veneruntque Philisthim et habitaverunt in eis"
+      la: "Quod cum vidissent viri Israel, qui habitabant in campestribus, fugerunt: et Saul ac filiis ejus mortuis, dereliquerunt urbes suas, et huc illucque dispersi sunt: veneruntque Philisthiim, et habitaverunt in eis."
       en: "And when the men of Israel, that dwelt in the plains, saw this, they fled: and Saul and his sons being dead, they forsook their cities, and were scattered up and down: and the Philistines came, and dwelt in them."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "die igitur altero detrahentes Philisthim spolia caesorum invenerunt Saul et filios eius iacentes in monte Gelboe"
+      la: "Die igitur altero detrahentes Philisthiim spolia caesorum, invenerunt Saul, et filios ejus jacentes in monte Gelboe."
       en: "And the next day the Philistines taking away the spoils of them that were slain, found Saul and his sons lying on mount Gelboe."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "cumque spoliassent eum et amputassent caput armisque nudassent miserunt in terram suam ut circumferretur et ostenderetur idolorum templis et populis"
+      la: "Cumque spoliassent eum, et amputassent caput, armisque nudassent, miserunt in terram suam, ut circumferretur, et ostenderetur idolorum templis, et populis:"
       en: "And when they had stripped him, and cut off his head, and taken away his armour, they sent it into their land, to be carried about, and shewn in the temples of the idols and to the people."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "arma autem eius consecraverunt in fano dei sui et caput adfixerunt in templo Dagon"
+      la: "arma autem ejus consecraverunt in fano dei sui, et caput affixerunt in templo Dagon."
       en: "And his armour they dedicated in the temple of their god, and his head they fastened up in the temple of Dagon."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "hoc cum audissent viri Iabesgalaad omnia scilicet quae Philisthim fecerunt super Saul"
+      la: "Hoc cum audissent viri Jabes Galaad, omnia scilicet quae Philisthiim fecerant super Saul,"
       en: "And when the men of Jabes Galaad had heard this, to wit, all that the Philistines had done to Saul,"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "consurrexerunt singuli virorum fortium et tulerunt cadavera Saul et filiorum eius adtuleruntque ea in Iabes et sepelierunt ossa eorum subter quercum quae erat in Iabes et ieiunaverunt septem diebus"
+      la: "consurrexerunt singuli virorum fortium, et tulerunt cadavera Saul et filiorum ejus: attuleruntque ea in Jabes, et sepelierunt ossa eorum subter quercum, quae erat in Jabes, et jejunaverunt septem diebus."
       en: "All the valiant men of them arose, and took the bodies of Saul and of his sons, and brought them to Jabes, and buried their bones under the oak that was in Jabes, and they fasted seven days."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "mortuus est ergo Saul propter iniquitates suas eo quod praevaricatus sit mandatum Domini quod praeceperat et non custodierit illud sed insuper etiam pythonissam consuluerit"
+      la: "Mortuus est ergo Saul propter iniquitates suas, eo quod praevaricatus sit mandatum Domini quod praeceperat, et non custodierit illud: sed insuper etiam pythonissam consuluerit,"
       en: "So Saul died for his iniquities, because he transgressed the commandment of the Lord, which he had commanded, and kept it not: and moreover consulted also a witch,"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "nec speraverit in Domino propter quod et interfecit eum et transtulit regnum eius ad David filium Isai"
+      la: "nec speraverit in Domino: propter quod interfecit eum, et transtulit regnum ejus ad David filium Isai."
       en: "And trusted not is the Lord: therefore he slew him, and transferred his kingdom to David the son of Isai."
     status: { la: verified, en: verified }

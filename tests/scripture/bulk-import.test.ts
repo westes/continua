@@ -16,50 +16,32 @@ describe('src/data/scripture bulk import', () => {
   });
 
   it.each(chapters.map((c) => [`${c.book} ${c.chapter}`, c] as const))(
-    '%s has verified la/en text for every verse, in ascending order, with at most a couple of isolated en gaps',
+    '%s has verified la/en text for every verse, in ascending order',
     (_label, chapter) => {
       expect(chapter.verses.length).toBeGreaterThan(0);
       const seenNumbers = new Set<number>();
-      let distinctMissingEn = 0;
       for (const verse of chapter.verses) {
         expect(verse.status.la).toBe('verified');
         expect(verse.text.la?.length).toBeGreaterThan(0);
         // A repeated verse number is a pointing-split half-verse (see
         // isa-33.yml/sir-36.yml): the Douay-Rheims translation isn't split
         // the same way, so it's attached wholly to the first half and the
-        // second half is deliberately left without its own en text. A
-        // handful of chapters also carry a genuine, isolated single-verse
-        // gap in the "Unbound Bible" Douay-Rheims source itself (e.g. an
-        // in-file "Transfer interrupted!" corruption artifact at matt-12:43)
-        // -- tolerated the same honest-missing way, distinct from the
-        // source's occasional *block* corruption (several consecutive
-        // verses mislabeled/merged), which the bulk-import script refuses
-        // to author from at all rather than risk silently misnumbered text.
+        // second half is deliberately left without its own en text.
         if (!seenNumbers.has(verse.n)) {
-          if (verse.status.en === 'verified' || verse.status.en === 'draft') {
-            // 'draft' covers a handful of verses the source's own English
-            // file left untranslated (2026-09-14 sweep) -- real text
-            // supplied by hand rather than sourced from Divinum Officium,
-            // so marked draft, not verified, but never blank.
-            expect(verse.text.en?.length).toBeGreaterThan(0);
-          } else {
-            expect(verse.status.en).toBe('missing');
-            expect(verse.text.en ?? '').toBe('');
-            distinctMissingEn += 1;
-          }
+          expect(['verified', 'draft']).toContain(verse.status.en);
+          expect(verse.text.en?.length).toBeGreaterThan(0);
         }
         seenNumbers.add(verse.n);
       }
-      expect(distinctMissingEn).toBeLessThanOrEqual(2);
       const numbers = chapter.verses.map((v) => v.n);
       expect(numbers).toEqual([...numbers].sort((a, b) => a - b));
     },
   );
 
-  // The "Unbound Bible" source sometimes glued a verse number onto the start
-  // of the text ("21That they should…"), or put another verse's text or a
-  // truncated fragment under a verse ("1O And…", "8oor of Ornan…"). Both show
-  // up as a leading digit. No real verse text begins with one.
+  // The old "Unbound Bible" import sometimes glued a verse number onto the
+  // start of the text ("21That they should…"), or put another verse's text or
+  // a truncated fragment under a verse ("1O And…", "8oor of Ornan…"). Both
+  // showed up as a leading digit. No real verse text begins with one.
   it.each(chapters.map((c) => [`${c.book} ${c.chapter}`, c] as const))(
     '%s has no verse text starting with a stray verse number',
     (_label, chapter) => {

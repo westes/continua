@@ -1,17 +1,72 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: esth
 chapter: 10
 verses:
   - n: 1
     text:
-      la: "rex vero Asuerus omnem terram et cunctas maris insulas fecit tributarias"
+      la: "Rex vero Assuerus omnem terram, et cunctas maris insulas fecit tributarias:"
       en: "And king Assuerus made all the land, and all the islands of the sea tributary."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "cuius fortitudo et imperium et dignitas atque sublimitas qua exaltavit Mardocheum scripta sunt in libris Medorum atque Persarum"
+      la: "cujus fortitudo et imperium, et dignitas atque sublimitas, qua exaltavit Mardochaeum, scripta sunt in libris Medorum, atque Persarum:"
       en: "And his strength and his empire, and the dignity and greatness wherewith he exalted Mardochai, are written in the books of the Medes, and of the Persians:"
+    status: { la: verified, en: verified }
+  - n: 3
+    text:
+      la: "et quomodo Mardochaeus judaici generis secundus a rege Assuero fuerit: et magnus apud Judaeos, et acceptabilis plebi fratrum suorum, quaerens bona populo suo, et loquens ea, quae ad pacem seminis sui pertinerent."
+      en: "And how Mardochai of the race of the Jews, was next after king Assuerus: and great among the Jews, and acceptable to the people of his brethren, seeking the good of his people, and speaking those things which were for the welfare of his seed."
+    status: { la: verified, en: verified }
+  - n: 4
+    text:
+      la: "Dixitque Mardochaeus: A Deo facta sunt ista."
+      en: "Then Mardochai said: God hath done these things."
+    status: { la: verified, en: verified }
+  - n: 5
+    text:
+      la: "Recordatus sum somnii, quod videram, haec eadem significantis: nec eorum quidquam irritum fuit."
+      en: "I remember a dream that I saw, which signified these same things: and nothing thereof hath failed."
+    status: { la: verified, en: verified }
+  - n: 6
+    text:
+      la: "Parvus fons, qui crevit in fluvium, et in lucem, solemque conversus est, et in aquas plurimas redundavit: Esther est quam rex accepit uxorem, et voluit esse reginam."
+      en: "The little fountain which grew into a river, and was turned into a light, and into the sun, and abounded into many waters, is Esther, whom the king married, and made queen."
+    status: { la: verified, en: verified }
+  - n: 7
+    text:
+      la: "Duo autem dracones: ego sum, et Aman."
+      en: "But the two dragons are I and Aman."
+    status: { la: verified, en: verified }
+  - n: 8
+    text:
+      la: "Gentes, quae convenerant: hi sunt, qui conati sunt delere nomen Judaeorum."
+      en: "The nations that were assembled are they that endeavoured to destroy the name of the Jews."
+    status: { la: verified, en: verified }
+  - n: 9
+    text:
+      la: "Gens autem mea Israel est, quae clamavit ad Dominum, et salvum fecit Dominus populum suum: liberavitque nos ab omnibus malis, et fecit signa magna atque portenta inter gentes:"
+      en: "And my nation is Israel, who cried to the Lord, and the Lord saved his people: and he delivered us from all evils, and hath wrought great signs and wonders among the nations:"
+    status: { la: verified, en: verified }
+  - n: 10
+    text:
+      la: "et duas sortes esse praecepit, unam populi Dei, et alteram cunctarum gentium."
+      en: "And he commanded that there should be two lots, one of the people of God, and the other of all the nations."
+    status: { la: verified, en: verified }
+  - n: 11
+    text:
+      la: "Venitque utraque sors in statutum ex illo jam tempore diem coram Deo universis gentibus:"
+      en: "And both lots came to the day appointed already from that time before God to all nations:"
+    status: { la: verified, en: verified }
+  - n: 12
+    text:
+      la: "et recordatus est Dominus populi sui, ac misertus est haereditatis suae."
+      en: "And the Lord remembered his people, and had mercy on his inheritance."
+    status: { la: verified, en: verified }
+  - n: 13
+    text:
+      la: "Et observabuntur dies isti in mense Adar quartadecima, et quintadecima die ejusdem mensis, cum omni studio et gaudio in unum coetum populi congregati, in cunctas deinceps generationes populi Israel."
+      en: "And these days shall be observed in the month of Adar on the fourteenth, and fifteenth day of the same month. with all diligence, and joy of the people gathered into one assembly, throughout all the generations hereafter of the people of Israel."
     status: { la: verified, en: verified }

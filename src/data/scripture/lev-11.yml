@@ -1,242 +1,242 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: lev
 chapter: 11
 verses:
   - n: 1
     text:
-      la: "locutus est Dominus ad Mosen et Aaron dicens"
+      la: "Locutusque est Dominus ad Moysen et Aaron, dicens:"
       en: "And the Lord spoke to Moses and Aaron, saying:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "dicite filiis Israhel haec sunt animalia quae comedere debetis de cunctis animantibus terrae"
+      la: "Dicite filiis Israel: Haec sunt animalia quae comedere debetis de cunctis animantibus terrae:"
       en: "Say to the children of Israel: These are the animals which you are to eat of all the living things of the earth."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "omne quod habet divisam ungulam et ruminat in pecoribus comedetis"
+      la: "omne quod habet divisam ungulam, et ruminat in pecoribus, comedetis."
       en: "Whatsoever hath the hoof divided, and cheweth the cud among the beasts, you shall eat."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "quicquid autem ruminat quidem et habet ungulam sed non dividit eam sicut camelus et cetera non comedetis illud et inter inmunda reputabitis"
+      la: "Quidquid autem ruminat quidem, et habet ungulam, sed non dividit eam, sicut camelus et cetera, non comedetis illud, et inter immunda reputabitis."
       en: "But whatsoever cheweth indeed the cud, and hath a hoof, but divideth it not, as the camel, and others, that you shall not eat, but shall reckon it among the unclean."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "chyrogryllius qui ruminat ungulamque non dividit inmundus est"
+      la: "Choerogryllus qui ruminat, ungulamque non dividit, immundus est."
       en: "The cherogrillus which cheweth the cud, but divideth not the hoof, is unclean."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "lepus quoque nam et ipse ruminat sed ungulam non dividit"
+      la: "Lepus quoque: nam et ipse ruminat, sed ungulam non dividit."
       en: "The hare also: for that too cheweth the cud, but divideth not the hoof."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et sus qui cum ungulam dividat non ruminat"
+      la: "Et sus: qui cum ungulam dividat, non ruminat."
       en: "And the swine, which, though it divideth the hoof, cheweth not the cud."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "horum carnibus non vescemini nec cadavera contingetis quia inmunda sunt vobis"
+      la: "Horum carnibus non vescemini, nec cadavera contingetis, quia immunda sunt vobis."
       en: "The flesh of these you shall not eat, nor shall you touch their carcasses, because they are unclean to you."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "haec sunt quae gignuntur in aquis et vesci licitum est omne quod habet pinnulas et squamas tam in mari quam in fluminibus et stagnis comedetis"
+      la: "Haec sunt quae gignuntur in aquis, et vesci licitum est: omne quod habet pinnulas et squamas, tam in mari quam in fluminibus et stagnis, comedetis."
       en: "These are the things that breed in the waters, and which it is lawful to eat. All that hath fins, and scales, as well in the sea, as in the rivers, and the pools, you shall eat."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "quicquid autem pinnulas et squamas non habet eorum quae in aquis moventur et vivunt abominabile vobis"
+      la: "Quidquid autem pinnulas et squamas non habet, eorum quae in aquis moventur et vivunt, abominabile vobis,"
       en: "But whatsoever hath not fins and scales, of those things that move and live in the waters, shall be an abomination to you,"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et execrandum erit carnes eorum non comedetis et morticina vitabitis"
-      en: "And detestable : their flesh you shall not eat, and their carcasses you shall avoid."
+      la: "execrandumque erit: carnes eorum non comedetis, et morticina vitabitis."
+      en: "And detestable: their flesh you shall not eat, and their carcasses you shall avoid."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "cuncta quae non habent pinnulas et squamas in aquis polluta erunt"
+      la: "Cuncta quae non habent pinnulas et squamas in aquis, polluta erunt."
       en: "All that have not fins and scales, in the waters, shall be unclean."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "haec sunt quae de avibus comedere non debetis et vitanda sunt vobis aquilam et grypem et alietum"
+      la: "Haec sunt quae de avibus comedere non debetis, et vitanda sunt vobis: aquilam, et gryphem, et haliaeetum,"
       en: "Of birds these are they which you must not eat, and which are to be avoided by you: The eagle, and the griffon, and the osprey,"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "milvum ac vulturem iuxta genus suum"
+      la: "et milvum ac vulturem juxta genus suum,"
       en: "And the kite, and the vulture, according to their kind,"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et omne corvini generis in similitudinem suam"
+      la: "et omne corvini generis in similitudinem suam,"
       en: "And all that is of the raven kind, according to their likeness."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "strutionem et noctuam et larum et accipitrem iuxta genus suum"
+      la: "struthionem, et noctuam, et larum, et accipitrem juxta genus suum:"
       en: "The ostrich, and the owl, and the larus, and the hawk according to its kind."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "bubonem et mergulum et ibin"
+      la: "bubonem, et mergulum, et ibin,"
       en: "The screech owl, and the cormorant, and the ibis,"
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "cycnum et onocrotalum et porphirionem"
+      la: "et cygnum, et onocrotalum, et porphyrionem,"
       en: "And the swan, and the bittern, and the porphyrion,"
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "erodionem et charadrion iuxta genus suum opupam quoque et vespertilionem"
+      la: "herodionem, et charadrion juxta genus suum, upupam quoque, et vespertilionem."
       en: "The heron, and the charadrion according to its kind, the houp also, and the bat."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "omne de volucribus quod graditur super quattuor pedes abominabile erit vobis"
+      la: "Omne de volucribus quod graditur super quatuor pedes, abominabile erit vobis."
       en: "Of things that fly, whatsoever goeth upon four feet, shall be abominable to you."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "quicquid autem ambulat quidem super quattuor pedes sed habet longiora retro crura per quae salit super terram"
+      la: "Quidquid autem ambulat quidem super quatuor pedes, sed habet longiora retro crura, per quae salit super terram,"
       en: "But whatsoever walketh upon four feet, but hath the legs behind longer, wherewith it hoppeth upon the earth,"
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "comedere debetis ut est brucus in genere suo et attacus atque ophiomachus ac lucusta singula iuxta genus suum"
+      la: "comedere debetis, ut est bruchus in genere suo, et attacus atque ophiomachus, ac locusta, singula juxta genus suum."
       en: "That you shall eat, as the bruchus in its kind, the attacus, and ophiomachus, and the locust, every one according to their kind."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "quicquid autem ex volucribus quattuor tantum habet pedes execrabile erit vobis"
-      en: "But of dying things whatsoever hath four feet only, shall be an abomination to you:"
+      la: "Quidquid autem ex volucribus quatuor tantum habet pedes, execrabile erit vobis:"
+      en: "But of flying things whatsoever hath four feet only, shall be an abomination to you:"
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "et quicumque morticina eorum tetigerit polluetur et erit inmundus usque ad vesperum"
+      la: "et quicumque morticina eorum tetigerit, polluetur, et erit immundus usque ad vesperum:"
       en: "And whosoever shall touch the carcasses of them, shall be defiled, and shall be unclean until the evening:"
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "et si necesse fuerit ut portet quippiam horum mortuum lavabit vestimenta sua et inmundus erit usque ad solis occasum"
+      la: "et si necesse fuerit ut portet quippiam horum mortuum, lavabit vestimenta sua, et immundus erit usque ad occasum solis."
       en: "And if it be necessary that he carry any of these things when they are dead, he shall wash his clothes, and shall be unclean until the sun set."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "omne animal quod habet quidem ungulam sed non dividit eam nec ruminat inmundum erit et quicquid tetigerit illud contaminabitur"
+      la: "Omne animal quod habet quidem ungulam, sed non dividit eam, nec ruminat, immundum erit: et qui tetigerit illud, contaminabitur."
       en: "Every beast that hath a hoof, but divideth it not, nor cheweth the cud, shall be unclean: and he that toucheth it, shall be defiled."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "quod ambulat super manus ex cunctis animantibus quae incedunt quadrupedia inmundum erit qui tetigerit morticina eorum polluetur usque ad vesperum"
+      la: "Quod ambulat super manus ex cunctis animantibus, quae incedunt quadrupedia, immundum erit: qui tetigerit morticina eorum, polluetur usque ad vesperum."
       en: "That which walketh upon hands of all animals which go on all four, shall be unclean: he that shall touch their carcasses shall be defiled until evening."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "et qui portaverit huiuscemodi cadavera lavabit vestimenta sua et inmundus erit usque ad vesperum quia omnia haec inmunda sunt vobis"
+      la: "Et qui portaverit hujuscemodi cadavera, lavabit vestimenta sua, et immundus erit usque ad vesperum: quia omnia haec immunda sunt vobis."
       en: "And he that shall carry such carcasses, shall wash his clothes, and shall be unclean until evening: because all these things are unclean to you."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "hoc quoque inter polluta reputabitur de his quae moventur in terra mustela et mus et corcodillus singula iuxta genus suum"
+      la: "Haec quoque inter polluta reputabuntur de his quae moventur in terra, mustela et mus et crocodilus, singula juxta genus suum,"
       en: "These also shall be reckoned among unclean things, of all that move upon the earth, the weasel, and the mouse, and the crocodile, every one according to their kind:"
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "migale et cameleon et stelio ac lacerta et talpa"
+      la: "mygale, et chamaeleon, et stellio, et lacerta, et talpa."
       en: "The shrew, and the chameleon, and the stello, and the lizard, and the mole:"
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "omnia haec inmunda sunt qui tetigerit morticina eorum inmundus erit usque ad vesperum"
+      la: "Omnia haec immunda sunt. Qui tetigerit morticina eorum, immundus erit usque ad vesperum:"
       en: "All these are unclean. He that toucheth their carcasses shall be unclean until the evening."
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "et super quod ceciderit quicquam de morticinis eorum polluetur tam vas ligneum et vestimentum quam pelles et cilicia et in quocumque fit opus tinguentur aqua et polluta erunt usque ad vesperum et sic postea mundabuntur"
+      la: "et super quod ceciderit quidquam de morticinis eorum, polluetur, tam vas ligneum et vestimentum, quam pelles et cilicia: et in quocumque fit opus, tingentur aqua, et polluta erunt usque ad vesperum, et sic postea mundabuntur."
       en: "And upon what thing soever any of their carcasses shall fall, it shall be defiled, whether it be a vessel of wood, or a garment, or skins or haircloths; or any thing in which work is done, they shall be dipped in water, and shall be unclean until the evening, and so afterwards shall be clean."
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "vas autem fictile in quo horum quicquam intro ceciderit polluetur et idcirco frangendum est"
+      la: "Vas autem fictile, in quod horum quidquam intro cecidit, polluetur, et idcirco frangendum est."
       en: "But an earthen vessel, into which any of these shall fall, shall be defiled, and therefore is to be broken."
     status: { la: verified, en: verified }
   - n: 34
     text:
-      la: "omnis cibus quem comeditis si fusa fuerit super eum aqua inmundus erit et omne liquens quod bibitur de universo vase inmundum erit"
+      la: "Omnis cibus, quem comedetis, si fusa fuerit super eum aqua, immundus erit: et omne liquens quod bibitur de universo vase, immundum erit."
       en: "Any meat which you eat, if water from such a vessel be poured upon it, shall be unclean; and every liquor that is drunk out of any such vessel, shall be unclean."
     status: { la: verified, en: verified }
   - n: 35
     text:
-      la: "et quicquid de morticinis istiusmodi ceciderit super illud inmundum erit sive clibani sive cytropodes destruentur et inmundi erunt"
+      la: "Et quidquid de morticinis hujuscemodi ceciderit super illud, immundum erit: sive clibani, sive chytropodes, destruentur, et immundi erunt."
       en: "And upon whatsoever thing any of these dead beasts shall fall, it shall be unclean: whether it be oven, or pots with feet, they shall be destroyed, and shall be unclean."
     status: { la: verified, en: verified }
   - n: 36
     text:
-      la: "fontes vero et cisternae et omnis aquarum congregatio munda erit qui morticinum eorum tetigerit polluetur"
+      la: "Fontes vero et cisternae, et omnis aquarum congregatio munda erit. Qui morticinum eorum tetigerit, polluetur."
       en: "But fountains and cisterns, and all gatherings together of waters shall be clean. He that toucheth their carcasses shall be defiled."
     status: { la: verified, en: verified }
   - n: 37
     text:
-      la: "si ceciderint super sementem non polluent eam"
+      la: "Si ceciderit super sementem, non polluet eam."
       en: "If it fall upon seed corn, it shall not defile it."
     status: { la: verified, en: verified }
   - n: 38
     text:
-      la: "sin autem quispiam aqua sementem perfuderit et postea morticinis tacta fuerit ilico polluetur"
+      la: "Si autem quispiam aqua sementem perfuderit, et postea morticinis tacta fuerit, illico polluetur."
       en: "But if any man pour water upon the seed, and afterwards it be touched by the carcasses, it shall be forthwith defiled."
     status: { la: verified, en: verified }
   - n: 39
     text:
-      la: "si mortuum fuerit animal quod licet vobis comedere qui cadaver eius tetigerit inmundus erit usque ad vesperum"
+      la: "Si mortuum fuerit animal, quod licet vobis comedere, qui cadaver ejus tetigerit, immundus erit usque ad vesperum:"
       en: "If any beast die, of which it is lawful for you to eat, he that toucheth the carcass thereof, shall be unclean until the evening:"
     status: { la: verified, en: verified }
   - n: 40
     text:
-      la: "et qui comederit ex eo quippiam sive portaverit lavabit vestimenta sua et inmundus erit usque ad vesperum"
+      la: "et qui comederit ex eo quippiam, sive portaverit, lavabit vestimenta sua, et immundus erit usque ad vesperum."
       en: "And he that eateth or carrieth any thing thereof, shall wash his clothes, and shall be unclean until the evening."
     status: { la: verified, en: verified }
   - n: 41
     text:
-      la: "omne quod reptat super terram abominabile erit nec adsumetur in cibum"
+      la: "Omne quod reptat super terram, abominabile erit, nec assumetur in cibum."
       en: "All that creepeth upon the earth shall be abominable, neither shall it be taken for meat."
     status: { la: verified, en: verified }
   - n: 42
     text:
-      la: "quicquid super pectus quadrupes graditur et multos habet pedes sive per humum trahitur non comedetis quia abominabile est"
+      la: "Quidquid super pectus quadrupes graditur, et multos habet pedes, sive per humum trahitur, non comedetis, quia abominabile est."
       en: "Whatsoever goeth upon the breast on four feet, or hath many feet, or traileth on the earth, you shall not eat, because it is abominable."
     status: { la: verified, en: verified }
   - n: 43
     text:
-      la: "nolite contaminare animas vestras nec tangatis quicquam eorum ne inmundi sitis"
+      la: "Nolite contaminare animas vestras, nec tangatis quidquam eorum, ne immundi sitis."
       en: "Do not defile your souls, nor touch aught thereof, lest you be unclean,"
     status: { la: verified, en: verified }
   - n: 44
     text:
-      la: "ego enim sum Dominus Deus vester sancti estote quoniam et ego sanctus sum ne polluatis animas vestras in omni reptili quod movetur super terram"
+      la: "Ego enim sum Dominus Deus vester: sancti estote, quia ego sanctus sum. Ne polluatis animas vestras in omni reptili quod movetur super terram."
       en: "For I am the Lord your God: be holy because I am holy. Defile not your souls by any creeping thing, that moveth upon the earth."
     status: { la: verified, en: verified }
   - n: 45
     text:
-      la: "ego sum Dominus qui eduxi vos de terra Aegypti ut essem vobis in Deum sancti eritis quia et ego sanctus sum"
+      la: "Ego enim sum Dominus, qui eduxi vos de terra Aegypti, ut essem vobis in Deum. Sancti eritis, quia ego sanctus sum."
       en: "For I am the Lord, who brought you out of the land of Egypt, that I might be your God."
     status: { la: verified, en: verified }
   - n: 46
     text:
-      la: "ista est lex animantium et volucrum et omnis animae viventis quae movetur in aqua et reptat in terra"
+      la: "Ista est lex animantium ac volucrum, et omnis animae viventis, quae movetur in aqua, et reptat in terra,"
       en: "You shall be holy, because I am holy. This is the law of beasts and fowls, and of every living creature that moveth in the waters, and creepeth on the earth:"
     status: { la: verified, en: verified }
   - n: 47
     text:
-      la: "ut differentias noveritis mundi et inmundi et sciatis quid comedere et quid respuere debeatis"
+      la: "ut differentias noveritis mundi et immundi, et sciatis quid comedere et quid respuere debeatis."
       en: "That you may know the differences of the clean, and unclean, and know what you ought to eat, and what to refuse."
     status: { la: verified, en: verified }

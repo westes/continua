@@ -1,127 +1,127 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: jos
 chapter: 2
 verses:
   - n: 1
     text:
-      la: "misit ergo Iosue filius Nun de Setthim duos viros exploratores abscondito et dixit eis ite et considerate terram urbemque Hiericho qui pergentes ingressi sunt domum mulieris meretricis nomine Raab et quieverunt apud eam"
-      en: "And Josue the son of Nun sent from Setim two men, to spy secretly: and said to them: Go, and view the land and the city of Jericho. n They went and entered into the house of a woman that was a harlot named Rahab, and lodged with her."
+      la: "Misit igitur Josue filius Nun de Setim duos viros exploratores in abscondito: et dixit eis: Ite, et considerate terram, urbemque Jericho. Qui pergentes ingressi sunt domum mulieris meretricis, nomine Rahab, et quieverunt apud eam."
+      en: "And Josue the son of Nun sent from Setim two men, to spy secretly: and said to them: Go, and view the land and the city of Jericho. They went and entered into the house of a woman that was a harlot named Rahab, and lodged with her."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "nuntiatumque est regi Hiericho et dictum ecce viri ingressi sunt huc per noctem de filiis Israhel ut explorarent terram"
-      en: "And it was told the king of Jericho, and was said : Behold there are men come in hither, by night, of the children of Israel, to spy the land."
+      la: "Nuntiatumque est regi Jericho, et dictum: Ecce viri ingressi sunt huc per noctem de filiis Israel, ut explorarent terram."
+      en: "And it was told the king of Jericho, and was said: Behold there are men come in hither, by night, of the children of Israel, to spy the land."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "misitque rex Hiericho ad Raab dicens educ viros qui venerunt ad te et ingressi sunt domum tuam exploratores quippe sunt et omnem terram considerare venerunt"
+      la: "Misitque rex Jericho ad Rahab, dicens: Educ viros, qui venerunt ad te, et ingressi sunt domum tuam: exploratores quippe sunt, et omnem terram considerare venerunt."
       en: "And the king of Jericho sent to Rahab, saying: Bring forth the men that came to thee, and are entered into thy house: for they are spies, and are come to view all the land."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "tollensque mulier viros abscondit et ait fateor venerunt ad me sed nesciebam unde essent"
+      la: "Tollensque mulier viros, abscondit, et ait: Fateor, venerunt ad me, sed nesciebam unde essent:"
       en: "And the woman taking the men, hid them, and said: I confess they came to me, but I knew not whence they were:"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "cumque porta clauderetur in tenebris et illi pariter exierunt nescio quo abierunt persequimini cito et conprehendetis eos"
+      la: "cumque porta clauderetur in tenebris, et illi pariter exierunt; nescio quo abierunt: persequimini cito, et comprehendetis eos."
       en: "And at the time of shutting the gate in the dark, they also went out together. I know not whither they are gone: pursue after them quickly, and you will overtake them."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "ipsa autem fecit ascendere viros in solarium domus suae operuitque eos lini stipula quae ibi erat"
+      la: "Ipsa autem fecit ascendere viros in solarium domus suae, operuitque eos stipula lini, quae ibi erat."
       en: "But she made the men go up to the top of her house, and covered them with the stalks of flax, which was there."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "hii autem qui missi fuerant secuti sunt eos per viam quae ducit ad vadum Iordanis illisque egressis statim porta clausa est"
+      la: "Hi autem, qui missi fuerant, secuti sunt eos per viam, quae ducit ad vadum Jordanis: illisque egressis statim porta clausa est."
       en: "Now they that were sent, pursued after them, by the way that leadeth to the fords of the Jordan: and as soon as they were gone out, the gate was presently shut."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "necdum obdormierant qui latebant et ecce mulier ascendit ad eos et ait"
-      en: "the Lord dried up the water of the Red Sea at your going in, when you came out of Egypt: and what things you did to the two kings of the Amorrhites, that were beyond the Jordan: Sehon and Og whom you slew."
+      la: "Necdum obdormierant qui latebant, et ecce mulier ascendit ad eos, et ait:"
+      en: "The men that were hidden were not yet asleep, when behold the woman went up to them, and said:"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "novi quod tradiderit Dominus vobis terram etenim inruit in nos terror vester et elanguerunt omnes habitatores terrae"
+      la: "Novi quod Dominus tradiderit vobis terram: etenim irruit in nos terror vester, et elanguerunt omnes habitatores terrae."
       en: "I know that the Lord hath given this land to you: for the dread of you is fallen upon us, and all the inhabitants of the land have lost all strength."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "audivimus quod siccaverit Dominus aquas maris Rubri ad vestrum introitum quando egressi estis ex Aegypto et quae feceritis duobus Amorreorum regibus qui erant trans Iordanem Seon et Og quos interfecistis"
-      en: "We have heard that"
+      la: "Audivimus quod siccaverit Dominus aquas maris Rubri ad vestrum introitum, quando egressi estis ex Aegypto: et quae feceritis duobus Amorrhaeorum regibus, qui erant trans Jordanem, Sehon et Og, quos interfecistis."
+      en: "We have heard that the Lord dried up the water of the Red Sea at your going in, when you came out of Egypt: and what things you did to the two kings of the Amorrhites, that were beyond the Jordan: Sehon and Og whom you slew."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et haec audientes pertimuimus et elanguit cor nostrum nec remansit in nobis spiritus ad introitum vestrum Dominus enim Deus vester ipse est Deus in caelo sursum et in terra deorsum"
+      la: "Et haec audientes pertimuimus, et elanguit cor nostrum, nec remansit in nobis spiritus ad introitum vestrum: Dominus enim Deus vester ipse est Deus in caelo sursum et in terra deorsum."
       en: "And hearing these things we were affrighted, and our heart fainted away, neither did there remain any spirit in us at your coming in: for the Lord your God he is God in heaven above, and in the earth beneath."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "nunc ergo iurate mihi per Dominum ut quomodo ego feci vobiscum misericordiam ita et vos faciatis cum domo patris mei detisque mihi signum verum"
+      la: "Nunc ergo jurate mihi per Dominum, ut quomodo ego misericordiam feci vobiscum, ita et vos faciatis cum domo patris mei: detisque mihi verum signum,"
       en: "Now therefore swear ye to me by the Lord, that as I have shewn mercy to you, so you also will shew mercy to my father's house: and give me a true token,"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et salvetis patrem meum et matrem fratres ac sorores meas et omnia quae eorum sunt et eruatis animas nostras de morte"
-      en: "That you will save my father and mother, my brethren end sisters, and all things that are theirs, and deliver our souls from death."
+      la: "ut salvetis patrem meum et matrem, et fratres ac sorores meas, et omnia quae illorum sunt, et eruatis animas nostras a morte."
+      en: "That you will save my father and mother, my brethren and sisters, and all things that are theirs, and deliver our souls from death."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "qui responderunt ei anima nostra sit pro vobis in mortem si tamen non prodideris nos cumque tradiderit nobis Dominus terram faciemus in te misericordiam et veritatem"
+      la: "Qui responderunt ei: Anima nostra sit pro vobis in mortem, si tamen non prodideris nos: cumque tradiderit nobis Dominus terram, faciemus in te misericordiam et veritatem."
       en: "They answered her: Be our lives for you unto death, only if thou betray us not. And when the Lord shall have delivered us the land, we will shew thee mercy and truth."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "dimisit ergo eos per funem de fenestra domus enim eius herebat muro"
+      la: "Demisit ergo eos per funem de fenestra: domus enim ejus haerebat muro."
       en: "Then she let them down with a cord out of a window: for her house joined close to the wall."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "dixitque ad eos ad montana conscendite ne forte occurrant vobis revertentes ibique latete diebus tribus donec redeant et sic ibitis per viam vestram"
+      la: "Dixitque ad eos: Ad montana conscendite, ne forte occurrant vobis revertentes: ibique latitate tribus diebus, donec redeant, et sic ibitis per viam vestram."
       en: "And she said to them: Get ye up to the mountains, lest perhaps they meet you as they return: and there lie ye hid three days, till they come back, and so you shall go on your way."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "qui dixerunt ad eam innoxii erimus a iuramento hoc quo adiurasti nos"
+      la: "Qui dixerunt ad eam: Innoxii erimus a juramento hoc, quo adjurasti nos:"
       en: "And they said to her: We shall be blameless of this oath, which thou hast made us swear:"
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "si ingredientibus nobis terram signum fuerit funiculus iste coccineus et ligaveris eum in fenestra per quam nos dimisisti et patrem tuum ac matrem fratresque et omnem cognationem tuam congregaveris in domum tuam"
+      la: "si ingredientibus nobis terram, signum fuerit funiculus iste coccineus, et ligaveris eum in fenestra, per quam demisisti nos: et patrem tuum ac matrem, fratresque et omnem cognationem tuam congregaveris in domum tuam."
       en: "If when we come into the land, this scarlet cord be a sign, and thou tie it in the window, by which thou hast let us down: and gather together thy father and mother, and brethren and all thy kindred into thy house."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "qui ostium domus tuae egressus fuerit sanguis ipsius erit in caput eius et nos erimus alieni cunctorum autem sanguis qui tecum fuerint in domo redundabit in caput nostrum si eos aliquis tetigerit"
+      la: "Qui ostium domus tuae egressus fuerit, sanguis ipsius erit in caput ejus, et nos erimus alieni. Cunctorum autem sanguis, qui tecum in domo fuerint, redundabit in caput nostrum, si eos aliquis tetigerit."
       en: "Whosoever shall go out of the door of thy house, his blood shall be upon his own head, and we shall be quit. But the blood of all that shall be with thee in the house, shall light upon our head, if any man touch them."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "quod si nos prodere volueris et sermonem istum proferre in medium erimus mundi ab hoc iuramento quo adiurasti nos"
+      la: "Quod si nos prodere volueris, et sermonem istum proferre in medium, erimus mundi ab hoc juramento, quo adjurasti nos."
       en: "But if thou wilt betray us, and utter this word abroad, we shall be quit of this oath which thou hast made us swear."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "et illa respondit sicut locuti estis ita fiat dimittensque eos ut pergerent adpendit funiculum coccineum in fenestra"
+      la: "Et illa respondit: Sicut locuti estis, ita fiat: dimittensque eos ut pergerent, appendit funiculum coccineum in fenestra."
       en: "And she answered: As you have spoken, so be it done. And sending them on their way, she hung the scarlet cord in the window."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "illi vero ambulantes pervenerunt ad montana et manserunt ibi tres dies donec reverterentur qui fuerant persecuti quaerentes enim per omnem viam non reppererunt eos"
+      la: "Illi vero ambulantes pervenerunt ad montana, et manserunt ibi tres dies, donec reverterentur qui fuerant persecuti: quaerentes enim per omnem viam, non repererunt eos."
       en: "But they went and came to the mountains, and stayed there three days till they that pursued them were returned. For having sought them through all the way, they found them not."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "quibus urbem ingressis reversi sunt et descenderunt exploratores de monte et Iordane transmisso venerunt ad Iosue filium Nun narraveruntque ei omnia quae acciderant sibi"
+      la: "Quibus urbem ingressis, reversi sunt, et descenderunt exploratores de monte: et, transmisso Jordane, venerunt ad Josue filium Nun, narraveruntque ei omnia quae acciderant sibi,"
       en: "And when they were gone back into the city, the spies returned, and came down from the mountain: and passing over the Jordan, they came to Josue the son of Nun, and told him all that befel them."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "atque dixerunt tradidit Dominus in manus nostras omnem terram hanc et timore prostrati sunt cuncti habitatores eius"
+      la: "atque dixerunt: Tradidit Dominus omnem terram hanc in manus nostras, et timore prostrati sunt cuncti habitatores ejus."
       en: "And said: The Lord hath delivered all this land into our hands, and all the inhabitants thereof are overthrown with fear."
     status: { la: verified, en: verified }

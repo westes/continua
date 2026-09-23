@@ -1,87 +1,92 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: tob
 chapter: 14
 verses:
   - n: 1
     text:
-      la: "et consummati sunt sermones Tobi et posteaquam inluminatus est vixit annis quadraginta duobus et vidit filios nepotum suorum"
+      la: "Et consummati sunt sermones Tobiae. Et postquam illuminatus est Tobias, vixit annis quadraginta duobus, et vidit filios nepotum suorum."
       en: "And the words of Tobias were ended. And after Tobias was restored to his sight, he lived two and forty years, and saw the children of his grandchildren."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "conpletis itaque annis centum duobus sepultus est honorifice in Nineven"
+      la: "Completis itaque annis centum duobus, sepultus est honorifice in Ninive."
       en: "And after he had lived a hundred and two years, he was buried honourably in Ninive."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "quinquaginta namque et sex annorum oculorum lumen amisit sexagenarius vero recepit"
+      la: "Quinquaginta namque et sex annorum lumen oculorum amisit, sexagenarius vero recepit."
       en: "For he was six and fifty years old when he lost the sight of his eyes, and sixty when he recovered it again."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "reliquum vero vitae suae in gaudio fuit et cum bono profectu timoris Dei perrexit in pace"
+      la: "Reliquum vero vitae suae in gaudio fuit, et cum bono profectu timoris Dei perrexit in pace."
       en: "And the rest of his life was in joy, and with great increase of the fear of God he departed in peace."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "in hora autem mortis suae vocavit ad se Tobiam filium suum et septem iuvenes filios eius nepotes suos dixitque eis"
+      la: "In hora autem mortis suae vocavit ad se Tobiam filium suum, et septem juvenes filios ejus nepotes suos, dixitque eis:"
       en: "And at the hour of his death he called unto him his son Tobias and his children, seven young men, his grandsons, and said to them:"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "prope erit interitus Nineven non enim excidit verbum Dei et fratres nostri qui dispersi sunt a terra Israhel revertentur ad eam"
+      la: "Prope erit interitus Ninive: non enim excidit verbum Domini: et fratres nostri, qui dispersi sunt a terra Israel, revertentur ad eam."
       en: "The destruction of Ninive is at hand: for the word of the Lord must be fulfilled: and our brethren, that are scattered abroad from the land of Israel, shall return to it."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "omnis autem deserta terra eius replebitur et domus Dei quae in ea incensa est iterum reaedificabitur ibique revertentur omnes timentes Deum"
+      la: "Omnis autem deserta terra ejus replebitur, et domus Dei, quae in ea incensa est, iterum reaedificabitur: ibique revertentur omnes timentes Deum,"
       en: "And all the land thereof that is desert shall be filled with people, and the house of God which is burnt in it, shall again be rebuilt: and all that fear God shall return thither."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et relinquent gentes idola sua et venient in Hierusalem et inhabitabunt in ea"
+      la: "et relinquent gentes idola sua, et venient in Jerusalem, et inhabitabunt in ea,"
       en: "And the Gentiles shall leave their idols, and shall come into Jerusalem, and shall dwell in it."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "et gaudebunt in ea omnes adorantes regem Israhel"
+      la: "et gaudebunt in ea omnes reges terrae, adorantes regem Israel."
       en: "And all the kings of the earth shall rejoice in it, adoring the King of Israel."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "audite ergo filii mei patrem vestrum servite Domino in veritate et inquirite ut faciatis quae sunt placita illi"
+      la: "Audite ergo, filii mei, patrem vestrum: servite Domino in veritate, et inquirite ut faciatis quae placita sunt illi:"
       en: "Hearken therefore, my children, to your father: serve the Lord in truth, and seek to do the things that please him:"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et filiis vestris mandate ut faciant iustitias et elemosynas ut sint memores Dei et benedicant eum in omni tempore in veritate et in tota virtute sua"
+      la: "et filiis vestris mandate ut faciant justitias et eleemosynas, ut sint memores Dei, et benedicant eum in omni tempore in veritate, et in tota virtute sua."
       en: "And command your children that they do justice and almsdeeds, and that they be mindful of God, and bless him at all times in truth, and with all their power."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "nunc ergo filii audite me et nolite manere hic sed quacumque die sepelieritis matrem vestram circa me in uno sepulchro ex eo dirigite gressus vestros ut exeatis hinc"
+      la: "Nunc ergo filii, audite me, et nolite manere hic: sed quacumque die sepelieritis matrem vestram circa me in uno sepulchro, ex eo dirigite gressus vestros ut exeatis hinc:"
       en: "And now, children, hear me, and do not stay here: but as soon as you shall bury your mother by me in one sepulchre, without delay direct your steps to depart hence:"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "video enim quoniam iniquitas eius finem dabit ei"
+      la: "video enim quia iniquitas ejus finem dabit ei."
       en: "For I see that its iniquity will bring it to destruction."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "factum est autem post obitum matris suae Tobias abscessit ex Nineven cum uxore sua et filiis et reversus est ad soceros suos"
+      la: "Factum est autem post obitum matris suae, Tobias abscessit ex Ninive cum uxore sua, et filiis, et filiorum filiis, et reversus est ad soceros suos:"
       en: "And it came to pass that after the death of his mother, Tobias departed out of Ninive with his wife, and children, and children's children, and returned to his father and mother in law."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "invenitque eos incolomes in senectute bona et curam eorum gessit et ipse clausit oculos eorum et omnem hereditatem domus Raguhel ipse percepit viditque quintam generationem filios filiorum suorum"
+      la: "invenitque eos incolumes in senectute bona: et curam eorum gessit, et ipse clausit oculos eorum: et omnem haereditatem domus Raguelis ipse percepit: viditque quintam generationem, filios filiorum suorum."
       en: "And he found them in health in a good old age: and he took care of them, and he closed their eyes: and all the inheritance of Raguel's house came to him: and he saw his children's children to the fifth generation."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "et conpletis annis nonaginta et novem in timore Domini cum gaudio sepelierunt eum"
+      la: "Et completis annis nonaginta novem in timore Domini, cum gaudio sepelierunt eum."
       en: "And after he had lived ninety-nine years in the fear of the Lord, with joy they buried him."
+    status: { la: verified, en: verified }
+  - n: 17
+    text:
+      la: "Omnis autem cognatio ejus, et omnis generatio ejus in bona vita, et in sancta conversatione permansit, ita ut accepti essent tam Deo quam hominibus, et cunctis habitantibus in terra."
+      en: "And all his kindred, and all his generation continued in good life, and in holy conversation, so that they were acceptable both to God, and to men, and to all that dwelt in the land."
     status: { la: verified, en: verified }

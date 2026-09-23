@@ -1,8 +1,7 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for esth 14 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: esth
 chapter: 14
 verses:
@@ -13,12 +12,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "Cumque deposuisset vestes regias, fletibus et luctui apta indumenta suscepit, et pro unguentis variis, cinere et stercore implevit caput, et corpus suum humiliavit jejuniis : omniaque loca, in quibus antea laetari consueverat, crinium laceratione complevit."
+      la: "Cumque deposuisset vestes regias, fletibus et luctui apta indumenta suscepit, et pro unguentis variis, cinere et stercore implevit caput, et corpus suum humiliavit jejuniis: omniaque loca, in quibus antea laetari consueverat, crinium laceratione complevit."
       en: "And when she had laid away her royal apparel, she put on garments suitable for weeping and mourning: instead of divers precious ointments, she covered her head with ashes and dung, and she humbled her body with fasts: and all the places in which before she was accustomed to rejoice, she filled with her torn hair."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "Et deprecabatur Dominum Deum Israel, dicens : Domine mi, qui rex noster es solus, adjuva me solitariam, et cujus praeter te nullus est auxiliator alius."
+      la: "Et deprecabatur Dominum Deum Israel, dicens: Domine mi, qui rex noster es solus, adjuva me solitariam, et cujus praeter te nullus est auxiliator alius."
       en: "And she prayed to the Lord the God of Israel, saying: O my Lord, who alone art our king, help me a desolate woman, and who have no other helper but thee."
     status: { la: verified, en: verified }
   - n: 4
@@ -33,12 +32,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "Peccavimus in conspectu tuo, et idcirco tradidisti nos in manus inimicorum nostrorum :"
+      la: "Peccavimus in conspectu tuo, et idcirco tradidisti nos in manus inimicorum nostrorum:"
       en: "We have sinned in thy sight, and therefore thou hast delivered us into the hands of our enemies:"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "coluimus enim deos eorum. Justus es Domine :"
+      la: "coluimus enim deos eorum. Justus es Domine:"
       en: "For we have worshipped their gods. Thou art just, O Lord."
     status: { la: verified, en: verified }
   - n: 8
@@ -58,12 +57,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "Ne tradas, Domine, sceptrum tuum his, qui non sunt, ne rideant ad ruinam nostram : sed converte consilium eorum super eos, et eum, qui in nos coepit saevire, disperde."
+      la: "Ne tradas, Domine, sceptrum tuum his, qui non sunt, ne rideant ad ruinam nostram: sed converte consilium eorum super eos, et eum, qui in nos coepit saevire, disperde."
       en: "Give not, O Lord, thy sceptre to them that are not, lest they laugh at our ruin: but turn their counsel upon themselves, and destroy him that hath begun to rage against us."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "Memento Domine, et ostende te nobis in tempore tribulationis nostrae, et da mihi fiduciam, Domine rex deorum, et universae potestatis :"
+      la: "Memento Domine, et ostende te nobis in tempore tribulationis nostrae, et da mihi fiduciam, Domine rex deorum, et universae potestatis:"
       en: "Remember, O Lord, and shew thyself to us in the time of our tribulation, and give me boldness, O Lord, king of gods, and of all power:"
     status: { la: verified, en: verified }
   - n: 13
@@ -88,7 +87,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "et quod non comederim in mensa Aman, nec mihi placuerit convivium regis, et non biberim vinum libaminum :"
+      la: "et quod non comederim in mensa Aman, nec mihi placuerit convivium regis, et non biberim vinum libaminum:"
       en: "And that I have not eaten at Aman's table, nor hath the king's banquet pleased me, and that I have not drunk the wine of the drink offerings:"
     status: { la: verified, en: verified }
   - n: 18

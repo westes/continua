@@ -1,87 +1,87 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: jos
 chapter: 23
 verses:
   - n: 1
     text:
-      la: "evoluto autem multo tempore postquam pacem Dominus dederat Israheli subiectis in gyro nationibus universis et Iosue iam longevo et persenilis aetatis"
+      la: "Evoluto autem multo tempore, postquam pacem dederat Dominus Israeli, subjectis in gyro nationibus universis, et Josue jam longaevo, et persenilis aetatis,"
       en: "And when a long time was passed, after that the Lord had given peace to Israel, all the nations round about being subdued, and Josue being now old, and far advanced in years:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "vocavit Iosue omnem Israhelem maioresque natu et principes ac duces et magistros dixitque ad eos ego senui et progressioris aetatis sum"
+      la: "vocavit Josue omnem Israelem, majoresque natu, et principes ac duces, et magistros, dixitque ad eos: Ego senui, et progressioris aetatis sum:"
       en: "Josue called for all Israel, and for the elders, and for the princes, and for the judges, and for the masters, and said to them: I am old, and far advanced in years:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "vosque cernitis omnia quae fecerit Dominus Deus vester cunctis per circuitum nationibus quomodo pro vobis ipse pugnaverit"
+      la: "vosque cernitis omnia, quae fecerit Dominus Deus vester cunctis per circuitum nationibus, quomodo pro vobis ipse pugnaverit:"
       en: "And you see all that the Lord your God hath done to all the nations round about, how he himself hath fought for you:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et nunc quia vobis sorte divisit omnem terram ab orientali parte Iordanis usque ad mare Magnum multaeque adhuc supersunt nationes"
+      la: "et nunc quia vobis sorte divisit omnem terram, ab orientali parte Jordanis usque ad mare magnum, multaeque adhuc supersunt nationes:"
       en: "And now since he hath divided to you by lot all the land, from the east of the Jordan unto the great sea, and many nations yet remain:"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "Dominus Deus vester disperdet eas et auferet a facie vestra et possidebitis terram sicut vobis pollicitus est"
+      la: "Dominus Deus vester disperdet eas et auferet a facie vestra, et possidebitis terram, sicut vobis pollicitus est."
       en: "The Lord your God will destroy them, and take them away from before your face, and you shall possess the land as he hath promised you."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "tantum confortamini et estote solliciti ut custodiatis cuncta quae scripta sunt in volumine legis Mosi et non declinetis ab eis nec ad dextram nec ad sinistram"
+      la: "Tantum confortamini, et estote solliciti, ut custodiatis cuncta quae scripta sunt in volumine legis Moysi: et non declinetis ab eis neque ad dexteram neque ad sinistram:"
       en: "Only take courage, and be careful to observe all things that are written in the book of the law of Moses: and turn not aside from them neither to the right hand nor to the left:"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "ne postquam intraveritis ad gentes quae inter vos futurae sunt iuretis in nomine deorum earum et serviatis eis et adoretis illos"
+      la: "ne postquam intraveritis ad gentes quae inter vos futurae sunt, juretis in nomine deorum earum, et serviatis eis, et adoretis illos:"
       en: "Lest after that you are come in among the Gentiles, who will remain among you, you should swear by the name of their gods, and serve them, and adore them:"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "sed adhereatis Domino Deo vestro quod fecistis usque in diem hanc"
+      la: "sed adhaereatis Domino Deo vestro: quod fecistis usque in diem hanc."
       en: "But cleave ye unto the Lord your God: as you have done until this day."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "et tunc auferet Dominus in conspectu vestro gentes magnas et robustissimas et nullus vobis resistere poterit"
+      la: "Et tunc auferet Dominus Deus in conspectu vestro gentes magnas et robustissimas, et nullus vobis resistere poterit."
       en: "And then the Lord God will take away before your eyes nations that are great and very strong, and no man shall be able to resist you."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "unus e vobis persequetur hostium mille viros quia Dominus Deus vester pro vobis ipse pugnabit sicut pollicitus est"
+      la: "Unus e vobis persequetur hostium mille viros: quia Dominus Deus vester pro vobis ipse pugnabit, sicut pollicitus est."
       en: "One of you shall chase a thousand men of the enemies: because the Lord your God himself will fight for you, as he hath promised."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "hoc tantum diligentissime praecavete ut diligatis Dominum Deum vestrum"
+      la: "Hoc tantum diligentissime praecavete: ut diligatis Dominum Deum vestrum."
       en: "This only take care of with all diligence, that you love the Lord your God."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "quod si volueritis gentium harum quae inter vos habitant erroribus adherere et cum eis miscere conubia atque amicitias copulare"
+      la: "Quod si volueritis gentium harum, quae inter vos habitant, erroribus adhaerere, et cum eis miscere connubia, atque amicitias copulare:"
       en: "But if you will embrace the errors of these nations that dwell among you, and make marriages with them, and join friendships:"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "iam nunc scitote quod Dominus Deus vester non eas deleat ante faciem vestram sed sint vobis in foveam ac laqueum et offendiculum ex latere vestro et sudes in oculis vestris donec vos auferat atque disperdat de terra hac optima quam tradidit vobis"
-      en: "Know ye for a certainty that the Lord your God will not destroy them be- fore your face, but they shall be a pit and a snare in your way, and a stumblingblock at your side, and stakes in your eyes, till he take you away and destroy you from off this excellent land, which he hath given you."
+      la: "jam nunc scitote quod Dominus Deus vester non eas deleat ante faciem vestram, sed sint vobis in foveam ac laqueum, et offendiculum ex latere vestro, et sudes in oculis vestris, donec vos auferat atque disperdat de terra hac optima, quam tradidit vobis."
+      en: "Know ye for a certainty that the Lord your God will not destroy them before your face, but they shall be a pit and a snare in your way, and a stumblingblock at your side, and stakes in your eyes, till he take you away and destroy you from off this excellent land, which he hath given you."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "en ego hodie ingrediar viam universae terrae et toto animo cognoscetis quod de omnibus verbis quae se Dominus praestaturum nobis esse pollicitus est unum non praeterierit in cassum"
+      la: "En ego hodie ingredior viam universae terrae, et toto animo cognoscetis quod de omnibus verbis, quae se Dominus praestiturum vobis esse pollicitus est, unum non praeterierit incassum."
       en: "Behold this day I am going into the way of all the earth, and you shall know with all your mind that of all the words which the Lord promised to perform for you, not one hath failed."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "sicut ergo implevit opere quod promisit et prospera cuncta venerunt sic adducet super vos quicquid malorum comminatus est donec vos auferat atque disperdat de terra hac optima quam tradidit vobis"
+      la: "Sicut ergo implevit opere quod promisit, et prospera cuncta venerunt: sic adducet super vos quidquid malorum comminatus est, donec vos auferat atque disperdat de terra hac optima, quam tradidit vobis,"
       en: "Therefore as he hath fulfilled in deed, what he promised, and all things prosperous have come: so Will he bring upon you all the evils he hath threatened, till he take you away and destroy you from off this excellent land, which he hath given you,"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "eo quod praeterieritis pactum Domini Dei vestri quod pepigit vobiscum et servieritis diis alienis et adoraveritis eos cito atque velociter consurget in vos furor Domini et auferemini de terra hac optima quam tradidit vobis"
-      en: "When you shall have transgressed the covenant of the Lord your God, which he hath made with you, and shall have served strange gods, and adored them : then shall the indignation of the Lord rise up quickly and speedily against you, and you shall be taken away from this excellent land, which he hath delivered to you."
+      la: "eo quod praeterieritis pactum Domini Dei vestri, quod pepigit vobiscum, et servieritis diis alienis, ad adoraveritis eos: cito atque velociter consurget in vos furor Domini, et auferemini ab hac terra optima, quam tradidit vobis."
+      en: "When you shall have transgressed the covenant of the Lord your God, which he hath made with you, and shall have served strange gods, and adored them: then shall the indignation of the Lord rise up quickly and speedily against you, and you shall be taken away from this excellent land, which he hath delivered to you."
     status: { la: verified, en: verified }

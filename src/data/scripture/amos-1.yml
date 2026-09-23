@@ -1,82 +1,82 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: amos
 chapter: 1
 verses:
   - n: 1
     text:
-      la: "verba Amos qui fuit in pastoralibus de Thecuae quae vidit super Israhel in diebus Oziae regis Iuda et in diebus Hieroboam filii Ioas regis Israhel ante duos annos terraemotus"
+      la: "Verba Amos, qui fuit in pastoribus de Thecue, quae vidit super Israel in diebus Oziae, regis Juda, et in diebus Jeroboam, filii Joas, regis Israel, ante duos annos terraemotus."
       en: "The words of Amos, who was among herdsmen of Thecua: which he saw concerning Israel in the days of Ozias king of Juda, and in the days of Jeroboam the son of Joas king of Israel two years before the earthquake."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et dixit Dominus de Sion rugiet et de Hierusalem dabit vocem suam et luxerunt speciosa pastorum et exsiccatus est vertex Carmeli"
+      la: "Et dixit: Dominus de Sion rugiet, et de Jerusalem dabit vocem suam; et luxerunt speciosa pastorum, et exsiccatus est vertex Carmeli."
       en: "And he said: The Lord will roar from Sion, and utter his voice from Jerusalem: and the beautiful places of the shepherds have mourned, and the top of Carmel is withered."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "haec dicit Dominus super tribus sceleribus Damasci et super quattuor non convertam eum eo quod trituraverint in plaustris ferreis Galaad"
+      la: "Haec dicit Dominus: Super tribus sceleribus Damasci, et super quatuor non convertam eum, eo quod trituraverint in plaustris ferreis Galaad."
       en: "Thus saith the Lord: For three crimes of Damascus, and for four I will not convert it: because they have thrashed Galaad with iron wains."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et mittam ignem in domum Azahel et devorabit domos Benadad"
+      la: "Et mittam ignem in domum Azael, et devorabit domos Benadad."
       en: "And I will send a fire into the house of Azael, and it shall devour the houses of Benadad."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et conteram vectem Damasci et disperdam habitatorem de campo Idoli et tenentem sceptrum de domo Voluptatis et transferetur populus Syriae Cyrenen dicit Dominus"
+      la: "Et conteram vectem Damasci: et disperdam habitatorem de campo idoli, et tenentem sceptrum de domo voluptatis: et transferetur populus Syriae Cyrenen, dicit Dominus."
       en: "And I will break the bar of Damascus: and I will cut off the inhabitants from the plain of the idol, and him that holdeth the sceptre from the house of pleasure: and the people of Syria shall be carried away to Cyrene, saith the Lord."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "haec dicit Dominus super tribus sceleribus Gazae et super quattuor non convertam eum eo quod transtulerit captivitatem perfectam ut concluderet eam in Idumea"
+      la: "Haec dicit Dominus: Super tribus sceleribus Gazae, et super quatuor non convertam eum, eo quod transtulerint captivitatem perfectam, ut concluderent eam in Idumaea."
       en: "Thus saith the Lord: For three crimes of Gaza, and for four I will not convert it: because they have carried away a perfect captivity to shut them up in Edom."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et mittam ignem in murum Gazae et devorabit aedes eius"
+      la: "Et mittam ignem in murum Gazae, et devorabit aedes ejus."
       en: "And I will send a fire on the wall of Gaza, and it shall devour the houses thereof."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et disperdam habitatorem de Azoto et tenentem sceptrum de Ascalone et convertam manum meam super Accaron et peribunt reliqui Philisthinorum dicit Dominus Deus"
+      la: "Et disperdam habitatorem de Azoto, et tenentem sceptrum de Ascalone: et convertam manum meam super Accaron, et peribunt reliqui Philisthinorum, dicit Dominus Deus."
       en: "And I will cut off the inhabitant from Azotus, and him that holdeth the sceptre from Ascalon: and I will turn my hand against Accaron, and the rest of the Philistines shall perish, saith the Lord God."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "haec dicit Dominus super tribus sceleribus Tyri et super quattuor non convertam eum eo quod concluserint captivitatem perfectam in Idumea et non sint recordati foederis fratrum"
+      la: "Haec dicit Dominus: Super tribus sceleribus Tyri, et super quatuor non convertam eum, eo quod concluserint captivitatem perfectam in Idumaea, et non sint recordati foederis fratrum."
       en: "Thus saith the Lord: For three crimes of Tyre, and for four I will not convert it: because they have shut up an entire captivity in Edom, and have not remembered the covenant of brethren."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et emittam ignem in murum Tyri et devorabit aedes eius"
+      la: "Et mittam ignem in murum Tyri, et devorabit aedes ejus."
       en: "And I will send a fire upon the wall of Tyre, and it shall devour the houses thereof."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "haec dicit Dominus super tribus sceleribus Edom et super quattuor non convertam eum eo quod persecutus sit in gladio fratrem suum et violaverit misericordiam eius et tenuerit ultra furorem suum et indignationem suam servaverit usque in finem"
+      la: "Haec dicit Dominus: Super tribus sceleribus Edom, et super quatuor non convertam eum, eo quod persecutus sit in gladio fratrem suum, et violaverit misericordiam ejus, et tenuerit ultra furorem suum, et indignationem suam servaverit usque in finem."
       en: "Thus saith the Lord: For three crimes of Edom, and for four I will not convert him: because he hath pursued his brother with the sword, and hath cast off all pity, and hath carried on his fury, and hath kept his wrath to the end."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "mittam ignem in Theman et devorabit aedes Bosrae"
+      la: "Mittam ignem in Theman, et devorabit aedes Bosrae."
       en: "I will send a fire into Theman: and it shall devour the houses of Bosra."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "haec dicit Dominus super tribus sceleribus filiorum Ammon et super quattuor non convertam eum eo quod dissecuerit praegnantes Galaad ad dilatandum terminum suum"
+      la: "Haec dicit Dominus: Super tribus sceleribus filiorum Ammon, et super quatuor non convertam eum, eo quod dissecuerit praegnantes Galaad ad dilatandum terminum suum."
       en: "Thus saith the Lord: For three crimes of the children of Ammon, and for four I will not convert him: because he hath ripped up the women with child of Galaad to enlarge his border."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et succendam ignem in muro Rabbae et devorabit aedes eius in ululatu in die belli et in turbine in die commotionis"
+      la: "Et succendam ignem in muro Rabba, et devorabit aedes ejus in ululatu in die belli, et in turbine in die commotionis."
       en: "And I will kindle a fire in the wall of Rabba: and it shall devour the houses thereof with shouting in the day of battle, and with a whirlwind in the day of trouble."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et ibit Melchom in captivitatem ipse et principes eius simul dicit Dominus"
+      la: "Et ibit Melchom in captivitatem, ipse et principes ejus simul, dicit Dominus."
       en: "And Melchom shall go into captivity, both he, and his princes together, saith the Lord."
     status: { la: verified, en: verified }

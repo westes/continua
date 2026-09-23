@@ -1,127 +1,132 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: phlm
 chapter: 1
 verses:
   - n: 1
     text:
-      la: "Paulus vinctus Iesu Christi et Timotheus frater Philemoni dilecto et adiutori nostro"
+      la: "Paulus vinctus Christi Jesu, et Timotheus frater, Philemoni dilecto, et adjutori nostro,"
       en: "Paul, a prisoner of Christ Jesus, and Timothy, a brother: to Philemon, our beloved and fellow labourer;"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et Appiae sorori et Archippo commilitoni nostro et ecclesiae quae in domo tua est"
+      la: "et Appiae sorori carissimae, et Archippo commilitoni nostro, et ecclesiae, quae in domo tua est."
       en: "And to Appia, our dearest sister, and to Archippus, our fellow soldier, and to the church which is in thy house:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "gratia vobis et pax a Deo Patre nostro et Domino Iesu Christo"
+      la: "Gratia vobis, et pax a Deo Patre nostro, et Domino Jesu Christo."
       en: "Grace to you and peace from God our Father, and from the Lord Jesus Christ."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "gratias ago Deo meo semper memoriam tui faciens in orationibus meis"
+      la: "Gratias ago Deo meo, semper memoriam tui faciens in orationibus meis,"
       en: "I give thanks to my God, always making a remembrance of thee in my prayers."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "audiens caritatem tuam et fidem quam habes in Domino Iesu et in omnes sanctos"
+      la: "audiens caritatem tuam, et fidem, quam habes in Domino Jesu, et in omnes sanctos:"
       en: "Hearing of thy charity and faith, which thou hast in the Lord Jesus, and towards all the saints:"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "ut communicatio fidei tuae evidens fiat in agnitione omnis boni in nobis in Christo Iesu"
+      la: "ut communicatio fidei tuae evidens fiat in agnitione omnis operis boni, quod est in vobis in Christo Jesu."
       en: "That the communication of thy faith may be made evident in the acknowledgment of every good work, that is in you in Christ Jesus."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "gaudium enim magnum habui et consolationem in caritate tua quia viscera sanctorum requieverunt per te frater"
+      la: "Gaudium enim magnum habui, et consolationem in caritate tua: quia viscera sanctorum requieverunt per te, frater."
       en: "For I have had great joy and consolation in thy charity, because the bowels of the saints have been refreshed by thee, brother."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "propter quod multam fiduciam habentes in Christo Iesu imperandi tibi quod ad rem pertinet"
+      la: "Propter quod multam fiduciam habens in Christo Jesu imperandi tibi quod ad rem pertinet:"
       en: "Wherefore though I have much confidence in Christ Jesus, to command thee that which is to the purpose:"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "propter caritatem magis obsecro cum sis talis ut Paulus senex nunc autem et vinctus Iesu Christi"
+      la: "propter caritatem magis obsecro, cum sis talis, ut Paulus senex, nunc autem et vinctus Jesu Christi:"
       en: "For charity sake I rather beseech, whereas thou art such a one, as Paul an old man, and now a prisoner also of Jesus Christ."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "obsecro te de meo filio quem genui in vinculis Onesimo"
+      la: "obsecro te pro meo filio, quem genui in vinculis, Onesimo,"
       en: "I beseech thee for my son, whom I have begotten in my bands, Onesimus,"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "qui tibi aliquando inutilis fuit nunc autem et tibi et mihi utilis"
+      la: "qui tibi aliquando inutilis fuit, nunc autem et mihi et tibi utilis,"
       en: "Who hath been heretofore unprofitable to thee, but now is profitable both to me and thee,"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "quem remisi tu autem illum id est mea viscera suscipe"
+      la: "quem remisi tibi. Tu autem illum, ut mea viscera, suscipe:"
       en: "Whom I have sent back to thee. And do thou receive him as my own bowels."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "quem ego volueram mecum detinere ut pro te mihi ministraret in vinculis evangelii"
+      la: "quem ego volueram mecum detinere, ut pro te mihi ministraret in vinculis Evangelii:"
       en: "Whom I would have retained with me, that in thy stead he might have ministered to me in the bands of the gospel:"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "sine consilio autem tuo nihil volui facere uti ne velut ex necessitate bonum tuum esset sed voluntarium"
+      la: "sine consilio autem tuo nihil volui facere, uti ne velut ex necessitate bonum tuum esset, sed voluntarium."
       en: "But without thy counsel I would do nothing: that thy good deed might not be as it were of necessity, but voluntary."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "forsitan enim ideo discessit ad horam a te ut aeternum illum recipere"
+      la: "Forsitan enim ideo discessit ad horam a te, ut aeternum illum reciperes:"
       en: "For perhaps he therefore departed for a season from thee, that thou mightest receive him again for ever:"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "iam non ut servum sed plus servo carissimum fratrem maxime mihi quanto autem magis tibi et in carne et in Domino"
+      la: "jam non ut servum, sed pro servo carissimum fratrem, maxime mihi: quanto autem magis tibi et in carne, et in Domino?"
       en: "Not now as a servant, but instead of a servant, a most dear brother, especially to me: but how much more to thee both in the flesh and in the Lord?"
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "si ergo habes me socium suscipe illum sicut me"
+      la: "Si ergo habes me socium, suscipe illum sicut me:"
       en: "If therefore thou count me a partner, receive him as myself."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "si autem aliquid nocuit tibi aut debet hoc mihi inputa"
+      la: "si autem aliquid nocuit tibi, aut debet, hoc mihi imputa."
       en: "And if he hath wronged thee in any thing, or is in thy debt, put that to my account."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "ego Paulus scripsi mea manu ego reddam ut non dicam tibi quod et te ipsum mihi debes"
+      la: "Ego Paulus scripsi mea manu: ego reddam, ut non dicam tibi, quod et teipsum mihi debes:"
       en: "I Paul have written it with my own hand: I will repay it: not to say to thee, that thou owest me thy own self also."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "ita frater ego te fruar in Domino refice viscera mea in Domino"
+      la: "ita, frater. Ego te fruar in Domino: refice viscera mea in Domino."
       en: "Yea, brother. May I enjoy thee in the Lord. Refresh my bowels in the Lord."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "confidens oboedientia tua scripsi tibi sciens quoniam et super id quod dico facies"
+      la: "Confidens in obedientia tua scripsi tibi: sciens quoniam et super id, quod dico, facies."
       en: "Trusting in thy obedience, I have written to thee: knowing that thou wilt also do more than I say."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "simul autem et para mihi hospitium nam spero per orationes vestras donari me vobis"
+      la: "Simul autem et para mihi hospitium: nam spero per orationes vestras donari me vobis."
       en: "But withal prepare me also a lodging. For I hope that through your prayers I shall be given unto you."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "salutat te Epaphras concaptivus meus in Christo Iesu"
+      la: "Salutat te Epaphras concaptivus meus in Christo Jesu,"
       en: "There salute thee Epaphras, my fellow prisoner in Christ Jesus;"
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "Marcus Aristarchus Demas Lucas adiutores mei"
+      la: "Marcus, Aristarchus, Demas, et Lucas, adjutores mei."
       en: "Mark, Aristarchus, Demas, and Luke my fellow labourers."
+    status: { la: verified, en: verified }
+  - n: 25
+    text:
+      la: "Gratia Domini nostri Jesu Christi cum spiritu vestro. Amen."
+      en: "The grace of our Lord Jesus Christ be with your spirit. Amen."
     status: { la: verified, en: verified }

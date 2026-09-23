@@ -1,137 +1,137 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 2mach
 chapter: 13
 verses:
   - n: 1
     text:
-      la: "anno centesimo quadragesimo nono cognovit Iudas Antiochum Eupatoris venire cum multitudine adversus Iudaeam"
-      en: "In the year one hundred and forty- nine, Judas understood that Antiochus Eupator was coming with a multitude against Judea,"
+      la: "Anno centesimo quadragesimo nono, cognovit Judas Antiochum Eupatorem venire cum multitudine adversus Judaeam,"
+      en: "In the year one hundred and forty-nine, Judas understood that Antiochus Eupator was coming with a multitude against Judea,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et cum eo Lysiam procuratorem et praepositum negotiorum secum habentem peditum centum decem milia et equitum quinque milia et elefantos viginti duo currus cum falcibus trecentos"
-      en: "And with him Lysias the regent, who had charge over the affairs of the realm, having with him a hundred and ten thousand footmen, five thousand horse- men, twenty-two elephants, and three hundred chariots armed with hooks."
+      la: "et cum eo Lysiam procuratorem, et praepositum negotiorum, secum habentem peditum centum decem millia, et equitum quinque millia, et elephantos viginti duos, currus cum falcibus trecentos."
+      en: "And with him Lysias the regent, who had charge over the affairs of the realm, having with him a hundred and ten thousand footmen, five thousand horsemen, twenty-two elephants, and three hundred chariots armed with hooks."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "commiscuit autem se illis et Menelaus et cum multa fallacia deprecabatur Antiochum non pro patriae salute sed sperans se constitui in principatum"
+      la: "Commiscuit autem se illis et Menelaus: et cum multa fallacia deprecabatur Antiochum, non pro patriae salute, sed sperans se constitui in principatum."
       en: "Menelaus also joined himself with them: and with great deceitfulness besought Antiochus, not for the welfare of his country, but in hopes that he should be appointed chief ruler."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "sed Rex regum suscitavit animos Antiochi in peccatorem et suggerente Lysia hunc esse causam omnium malorum iussit ut eis est consuetudo conprehensum in eodem loco necari"
+      la: "Sed Rex regum suscitavit animos Antiochi in peccatorem: et suggerente Lysia hunc esse causam omnium malorum, jussit ( ut eis est consuetudo) apprehensum in eodem loco necari."
       en: "But the King of kings stirred up the mind of Antiochus against the sinner, and upon Lysias suggesting that he was the cause of all the evils, he commanded (as the custom is with them) that he should be apprehended and put to death in the same place."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "erat autem in eodem loco turris quinquaginta cubitorum aggestum undique habens cineris haec prospectum habebat in praeceps"
+      la: "Erat autem in eodem loco turris quinquaginta cubitorum, aggestum undique habens cineris: haec prospectum habebat in praeceps."
       en: "Now there was in that place a tower fifty cubits high, having a heap of ashes on every side: this had a prospect steep down."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "inde in cinerem deici iussit sacrilegum omnibus eum propellentibus ad interitum"
+      la: "Inde in cinerem dejici jussit sacrilegum, omnibus eum propellentibus ad interitum."
       en: "From thence he commanded the sacrilegious wretch to be thrown down into the ashes, all men thrusting him forward unto death."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et tali lege praevaricatorem legis contigit mori nec terrae dari Menelaum"
+      la: "Et tali lege praevaricatorem legis contigit mori, nec terrae dari Menelaum."
       en: "And by such a law it happened that Menelaus the transgressor of the law was put to death: not having so much as burial in the earth."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et quidem satis iuste nam quia multa erga aram Dei delicta commisit cuius ignis et cinis erat sanctus ipse in cineris morte damnatus est"
+      la: "Et quidem satis juste: nam quia multa erga aram Dei delicta commisit, cujus ignis et cinis erat sanctus: ipse in cineris morte damnatus est."
       en: "And indeed very justly, for insomuch as he had committed many sins against the altar of God, the fire and ashes of which were holy: he was condemned to die in ashes."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "sed rex mente effrenatus veniebat nequiorem se Iudaeis ostensurus"
+      la: "Sed rex mente effrenatus veniebat, nequiorem se patre suo Judaeis ostensurus."
       en: "But the king, with his mind full of rage, came on to shew himself worse to the Jews than his father was."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "quibus Iudas cognitis praecepit populo ut die ac nocte Dominum invocarent quo sicut semper et nunc adiuvaret eos"
+      la: "Quibus Judas cognitis, praecepit populo ut die ac nocte Dominum invocarent, quo, sicut semper, et nunc adjuvaret eos:"
       en: "Which, when Judas understood, he commanded the people to call upon the Lord day and night, that as he had always done, so now also he would help them:"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "quippe qui lege et patria sanctoque templo privari vererentur ac populum qui nuper paululum respirasset ne sineret blasphemis rursum nationibus subdi"
+      la: "quippe qui lege, et patria, sanctoque templo privari vererentur: ac populum, qui nuper paululum respirasset, ne sineret blasphemis rursus nationibus subdi."
       en: "Because they were afraid to be deprived of the law, and of their country, and of the holy temple: and that he would not suffer the people, that had of late taken breath for a little while, to be again in subjection to blasphemous nations."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "omnibus itaque id simul facientibus et petentibus a Domino misericordiam cum fletu et ieiuniis per triduum continuum prostratis hortatus est eos Iudas ut se praepararent"
+      la: "Omnibus itaque simul id facientibus, et petentibus a Domino misericordiam cum fletu, et jejuniis, per triduum continuum prostratis, hortatus est eos Judas ut se praepararent."
       en: "So when they had all done this together, and had craved mercy of the Lord with weeping and fasting, lying prostrate on the ground for three days continually, Judas exhorted them to make themselves ready."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "ipse vero cum senioribus cogitavit priusquam rex admoveret exercitum ad Iudaeam et obtineret civitatem exire et Domini iudicio committere exitum rei"
+      la: "Ipse vero cum senioribus cogitavit priusquam rex admoveret exercitum ad Judaeam, et obtineret civitatem, exire, et Domini judicio committere exitum rei."
       en: "But he with the ancients determined, before the king should bring his army into Judea, and make himself master of the city, to go out, and to commit the event of the thing to the judgment of the Lord."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "dans itaque potestatem omnium Deo mundi creatori et hortatus suos ut fortiter dimicarent et usque ad mortem pro legibus templo civitate patria et civibus starent circa Modin exercitum constituit"
+      la: "Dans itaque potestatem omnium Deo mundi creatori, et exhortatus suos ut fortiter dimicarent, et usque ad mortem pro legibus, templo, civitate, patria, et civibus starent, circa Modin exercitum constituit."
       en: "So committing all to God, the creator of the world, and having exhorted his people to fight manfully, and to stand up even to death for the laws, the temple, the city, their country, and citizens: he placed his army about Modin."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et dato signo suis Dei victoria iuvenibus fortissimis electis nocte adgressus aulam regiam in castris interfecit viros quattuor milia et maximum elefantorum cum his qui superpositi erant"
+      la: "Et dato signo suis Dei victoriae, juvenibus fortissimis electis, nocte aggressus aulam regiam, in castris interfecit viros quatuor millia, et maximum elephantorum cum his qui superpositi fuerant:"
       en: "And having given his company for a watchword, The victory of God, with most valiant chosen young men, he set upon the king's quarter by night, and slew four thousand men in the camp, and the greatest of the elephants, with them that had been upon him,"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "summoque metu ac perturbatione hostium replentes rebus prospere gestis abierunt"
-      en: "And having filled the camp of the enemies with exceeding greet fear and tumult, they went off with good success."
+      la: "summoque metu ac perturbatione hostium castra replentes, rebus prospere gestis, abierunt."
+      en: "And having filled the camp of the enemies with exceeding great fear and tumult, they went off with good success."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "hoc autem factum est die inlucescente adiuvante eum Domini protectione"
+      la: "Hoc autem factum est die illucescente, adjuvante eum Domini protectione."
       en: "Now this was done at the break of day, by the protection and help of the Lord."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "sed rex accepto gustu audaciae Iudaeorum arte difficultates locorum temptabat"
+      la: "Sed rex, accepto gustu audaciae Judaeorum, arte difficultatem locorum tentabat:"
       en: "But the king having taken a taste of the hardiness of the Jews, attempted to take the strong places by policy:"
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "et Bethsurae quod erat Iudaeorum praesidium munitum castra admovebat sed fugabatur inpingebat minuebatur"
-      en: "And he marched with his army to Bethsura, which was a strong hold of the Jews: but he was repulsed, he failed, he rest his men."
+      la: "et Bethsurae, quae erat Judaeorum praesidium munitum, castra admovebat: sed fugabatur, impingebat, minorabatur."
+      en: "And he marched with his army to Bethsura, which was a strong hold of the Jews: but he was repulsed, he failed, he lost his men."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "his autem qui intus erant Iudas necessaria mittebat"
+      la: "His autem, qui intus erant, Judas necessaria mittebat."
       en: "Now Judas sent necessaries to them that were within."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "enuntiavit autem mysteria hostibus Rhodocus quidam de iudaico exercitu qui requisitus conprehensus conclusus est"
+      la: "Enuntiavit autem mysteria hostibus Rhodocus quidam de judaico exercitu, qui requisitus comprehensus est, et conclusus."
       en: "But Rhodocus, one of the Jews' army, disclosed the secrets to the enemies, so he was sought out, and taken up, and put in prison."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "iterum rex sermonem habuit ad eos qui erant in Bethsuris dextram dedit accepit abiit"
+      la: "Iterum rex sermonem habuit ad eos qui erant in Bethsuris: dextram dedit, accepit, abiit:"
       en: "Again the king treated with them that were in Bethsura: gave his right hand: took theirs: and went away."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "commisit cum Iuda superatus est ut autem cognovit rebellasse Philippum Antiochiae qui relictus erat super negotia mente consternatus Iudaeos deprecans subditusque eis iurat de omnibus quibus iustum visum est et reconciliatus obtulit sacrificium honorificavit templum et munera posuit"
-      en: "He fought with Jucias: and was overcome. And when he understood that Philip, who had been left over the affairs, had rebelled at Antioch, he was in a consternation of mind, and entreating the Jews, and yielding to them, he swore to all things that seemed reasonable, and, being reconciled, offered sacrifices, honoured the temple, and left gifts."
+      la: "commisit cum Juda, superatus est. Ut autem cognovit rebellasse Philippum Antiochiae, qui relictus erat super negotia, mente consternatus, Judaeos deprecans, subditusque eis, jurat de omnibus quibus justum visum est: et reconciliatus obtulit sacrificium, honoravit templum, et munera posuit:"
+      en: "He fought with Judas: and was overcome. And when he understood that Philip, who had been left over the affairs, had rebelled at Antioch, he was in a consternation of mind, and entreating the Jews, and yielding to them, he swore to all things that seemed reasonable, and, being reconciled, offered sacrifices, honoured the temple, and left gifts."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "Macchabeum amplexus est et fecit eum ab Ptolomaide usque Gerrenos ducem et principem"
-      en: "He embraced Machabeus, and made him governor and prince from Ptolemais unto the Cerrenians."
+      la: "Machabaeum amplexatus est, et fecit eum a Ptolemaide usque ad Gerrenos ducem et principem."
+      en: "He embraced Machabeus, and made him governor and prince from Ptolemais unto the Gerrenians."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "ut autem venit Ptolomaidam graviter ferebant Ptolomenses amicitiae conventionem indignantes ne forte foedus inrumperent"
+      la: "Ut autem venit Ptolemaidam, graviter ferebant Ptolemenses amicitiae conventionem, indignantes ne forte foedus irrumperent."
       en: "But when he was come to Ptolemais, the men of that city were much displeased with the conditions of the peace, being angry for fear they should break the covenant."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "tunc ascendit Lysias tribunal et exposuit rationem et populum sedavit regressusque est Antiochiam et hoc modo regi profectio et reditus processit"
+      la: "Tunc ascendit Lysias tribunal, et exposuit rationem, et populum sedavit, regressusque est Antiochiam: et hoc modo regis profectio et reditus processit."
       en: "Then Lysias went up to the judgment seat, and set forth the reason, and appeased the people, and returned to Antioch: and thus matters went with regard to the king's coming and his return."
     status: { la: verified, en: verified }

@@ -1,172 +1,172 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 2reg
 chapter: 14
 verses:
   - n: 1
     text:
-      la: "intellegens autem Ioab filius Sarviae quod cor regis versum esset ad Absalom"
+      la: "Intelligens autem Joab filius Sarviae, quod cor regis versum esset ad Absalom,"
       en: "And Joab the son of Sarvia, understanding that the king's heart was turned to Absalom,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "misit Thecuam et tulit inde mulierem sapientem dixitque ad eam lugere te simula et induere veste lugubri et ne unguaris oleo ut sis quasi mulier plurimo iam tempore lugens mortuum"
+      la: "misit Thecuam, et tulit inde mulierem sapientem: dixitque ad eam: Lugere te simula, et induere veste lugubri, et ne ungaris oleo, ut sis quasi mulier jam plurimo tempore lugens mortuum:"
       en: "Sent to Thecua, and fetched from thence a wise woman: and said to her: Feign thyself to be a mourner, and put on mourning apparel, and be not anointed with oil, that thou mayest be as a woman that had a long time been mourning for one dead."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et ingredieris ad regem et loqueris ad eum sermones huiuscemodi posuit autem Ioab verba in ore eius"
+      la: "et ingredieris ad regem, et loqueris ad eum sermones hujuscemodi. Posuit autem Joab verba in ore ejus."
       en: "And thou shalt go in to the king, and shalt speak to him in this manner. And Joab put the words in her mouth."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "itaque cum ingressa fuisset mulier thecuites ad regem cecidit coram eo super terram et adoravit et dixit serva me rex"
+      la: "Itaque cum ingressa fuisset mulier Thecuitis ad regem, cecidit coram eo super terram, et adoravit, et dixit: Serva me rex."
       en: "And when the woman of Thecua was come in to the king, she fell before him upon the ground, and worshipped, and said: Save me, O king."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et ait ad eam rex quid causae habes quae respondit heu mulier vidua ego sum mortuus est enim vir meus"
+      la: "Et ait ad eam rex: Quid causae habes? Quae respondit: Heu, mulier vidua ego sum: mortuus est enim vir meus."
       en: "And the king said to her: What is the matter with thee? She answered: Alas, I am a widow woman: for my husband is dead."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et ancillae tuae erant duo filii qui rixati sunt adversum se in agro nullusque erat qui eos prohibere posset et percussit alter alterum et interfecit eum"
+      la: "Et ancillae tuae erant duo filii: qui rixati sunt adversum se in agro, nullusque erat qui eos prohibere posset: et percussit alter alterum, et interfecit eum."
       en: "And thy handmaid had two sons: and they quarrelled with each other in the field, and there was none to part them: and the one struck the other, and slew him."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et ecce consurgens universa cognatio adversum ancillam tuam dicit trade eum qui percussit fratrem suum ut occidamus eum pro anima fratris sui quem interfecit et deleamus heredem et quaerunt extinguere scintillam meam quae relicta est ut non supersit viro meo nomen et reliquiae super terram"
+      la: "Et ecce consurgens universa cognatio adversum ancillam tuam, dicit: Trade eum, qui percussit fratrem suum, ut occidamus eum pro anima fratris sui, quem interfecit, et deleamus haeredem: et quaerunt extinguere scintillam meam, quae relicta est, ut non supersit viro meo nomen, et reliquiae super terram."
       en: "And behold the whole kindred rising against thy handmaid, saith: Deliver him that hath slain his brother, that we may kill him for the life of his brother, whom he slew, and that we may destroy the heir: and they seek to quench my spark which is left, and will leave my husband no name, nor remainder upon the earth."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et ait rex ad mulierem vade in domum tuam et ego iubebo pro te"
+      la: "Et ait rex ad mulierem: Vade in domum tuam, et ego jubebo pro te."
       en: "And the king said to the woman: Go to thy house, and I will give charge concerning thee."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "dixitque mulier thecuites ad regem in me domine mi rex iniquitas et in domum patris mei rex autem et thronus eius sit innocens"
+      la: "Dixitque mulier Thecuitis ad regem: In me, domine mi rex, sit iniquitas, et in domum patris mei: rex autem et thronus ejus sit innocens."
       en: "And the woman of Thecua said to the king: Upon me, my lord, be the iniquity, and upon the house of my father: but may the king and his throne be guiltless."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et ait rex qui contradixerit tibi adduc eum ad me et ultra non addet ut tangat te"
-      en: "And the king said: If any one shall say ought against thee, bring him to me, and be shall not touch thee any more."
+      la: "Et ait rex: Qui contradixerit tibi, adduc eum ad me, et ultra non addet ut tangat te."
+      en: "And the king said: If any one shall say ought against thee, bring him to me, and he shall not touch thee any more."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "quae ait recordetur rex Domini Dei sui ut non multiplicentur proximi sanguinis ad ulciscendum et nequaquam interficient filium meum qui ait vivit Dominus quia non cadet de capillis filii tui super terram"
+      la: "Quae ait: Recordetur rex Domini Dei sui, ut non multiplicentur proximi sanguinis ad ulciscendum, et nequaquam interficiant filium meum. Qui ait: Vivit Dominus, quia non cadet de capillis filii tui super terram."
       en: "And she said: Let the king remember the Lord his God, that the next of kin be not multiplied to take revenge, and that they may not kill my son. And he said: As the Lord liveth, there shall not one hair of thy son fall to the earth."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "dixit ergo mulier loquatur ancilla tua ad dominum meum regem verbum et ait loquere"
+      la: "Dixit ergo mulier: Loquatur ancilla tua ad dominum meum regem verbum. Et ait: Loquere."
       en: "Then the woman said: Let thy handmaid speak one word to my lord the king. And he said: Speak."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "dixitque mulier quare cogitasti istiusmodi rem contra populum Dei et locutus est rex verbum istud ut peccet et non reducat eiectum suum"
+      la: "Dixitque mulier: Quare cogitasti hujuscemodi rem contra populum Dei, et locutus est rex verbum istud, ut peccet, et non reducat ejectum suum?"
       en: "And the woman said: Why hast thou thought such a thing against the people of God, and why hath the king spoken this word, to sin, and not bring home again his own exile?"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "omnes morimur et quasi aquae delabimur in terram quae non revertuntur nec vult perire Deus animam sed retractat cogitans ne penitus pereat qui abiectus est"
+      la: "Omnes morimur, et quasi aquae dilabimur in terram, quae non revertuntur: nec vult Deus perire animam, sed retractat cogitans ne penitus pereat qui abjectus est."
       en: "We all die, and like waters that return no more, we fall down into the earth: neither will God have a soul to perish, but recalleth, meaning that he that is cast off should not altogether perish."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "nunc igitur veni ut loquar ad regem dominum meum verbum hoc praesente populo et dixit ancilla tua loquar ad regem si quo modo faciat rex verbum ancillae suae"
+      la: "Nunc igitur veni, ut loquar ad dominum meum regem verbum hoc, praesente populo. Et dixit ancilla tua: Loquar ad regem, si quomodo faciat rex verbum ancillae suae."
       en: "Now therefore I am come, to speak this word to my lord the king before the people. And thy handmaid said: I will speak to the king, it maybe the king will perform the request of his handmaid."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "et audivit rex ut liberaret ancillam suam de manu omnium qui volebant delere me et filium meum simul de hereditate Dei"
+      la: "Et audivit rex, ut liberaret ancillam suam de manu omnium, qui volebant de haereditate Dei delere me, et filium meum simul."
       en: "And the king hath hearkened to me to deliver his handmaid out of the hand of all that would destroy me and my son together out of the inheritance of God."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "dicat ergo ancilla tua ut fiat verbum domini mei regis quasi sacrificium sicut enim angelus Dei sic est dominus meus rex ut nec benedictione nec maledictione moveatur unde et Dominus Deus tuus est tecum"
+      la: "Dicat ergo ancilla tua, ut fiat verbum domini mei regis sicut sacrificium. Sicut enim angelus Dei, sic est dominus meus rex, ut nec benedictione, nec maledictione moveatur: unde et Dominus Deus tuus est tecum."
       en: "Then let thy handmaid say, that the word of the Lord the king be made as a sacrifice. For even as an angel of God, so is my lord the king, that he is neither moved with blessing nor cursing: wherefore the Lord thy God is also with thee."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "et respondens rex dixit ad mulierem ne abscondas a me verbum quod te interrogo dixitque mulier loquere domine mi rex"
+      la: "Et respondens rex, dixit ad mulierem: Ne abscondas a me verbum, quod te interrogo. Dixitque ei mulier: Loquere domine mi rex."
       en: "And the king answering, said to the woman: Hide not from me the thing that I ask thee. And the woman said to him: Speak, my lord the king."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "et ait rex numquid manus Ioab tecum est in omnibus istis respondit mulier et ait per salutem animae tuae domine mi rex nec ad dextram nec ad sinistram est ex omnibus his quae locutus est dominus meus rex servus enim tuus Ioab ipse praecepit mihi et ipse posuit in os ancillae tuae omnia verba haec"
+      la: "Et ait rex: Numquid manus Joab tecum est in omnibus istis? Respondit mulier, et ait: Per salutem animae tuae, domine mi rex, nec ad sinistram, nec ad dexteram est ex omnibus his quae locutus est dominus meus rex: servus enim tuus Joab, ipse praecepit mihi, et ipse posuit in os ancillae tuae omnia verba haec."
       en: "And the king said: Is not the hand of Joab with thee in all this? The woman answered, and said: By the health of thy soul, my lord, O king, it is neither on the left hand, nor on the right, in all these things which my lord the king hath spoken: for thy servant Joab, he commanded me, and he put all these words into the mouth of thy handmaid."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "ut verterem figuram sermonis huius servus tuus Ioab praecepit istud tu autem domine mi sapiens es sicut habet sapientiam angelus Dei ut intellegas omnia super terram"
-      en: "That I should come about with this form of speech, thy servant Joab, commanded this: but thou, my lord, O king, art wise, according to the wisdom of ail angel of God, to understand all things upon earth."
+      la: "Ut verterem figuram sermonis hujus, servus tuus Joab praecepit istud: tu autem, domine mi rex, sapiens es, sicut habet sapientiam angelus Dei, ut intelligas omnia super terram."
+      en: "That I should come about with this form of speech, thy servant Joab, commanded this: but thou, my lord, O king, art wise, according to the wisdom of an angel of God, to understand all things upon earth."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "et ait rex ad Ioab ecce placatus feci verbum tuum vade igitur et revoca puerum Absalom"
+      la: "Et ait rex ad Joab: Ecce placatus feci verbum tuum: vade ergo, et revoca puerum Absalom."
       en: "And the king said to Joab: Behold I am appeased and have granted thy request: Go therefore and fetch back the boy Absalom."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "cadensque Ioab super faciem suam in terram adoravit et benedixit regi et dixit Ioab hodie intellexit servus tuus quia inveni gratiam in oculis tuis domine mi rex fecisti enim sermonem servi tui"
+      la: "Cadensque Joab super faciem suam in terram, adoravit, et benedixit regi: et dixit Joab: Hodie intellexit sevus tuus, quia inveni gratiam in oculis tuis, domine mi rex: fecisti enim sermonem servi tui."
       en: "And Joab falling down to the ground upon his face, adored, and blessed the king: and Joab said: This day thy servant hath understood, that I have found grace in thy sight, my lord, O king: for thou hast fulfilled the request of thy servant."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "surrexit ergo Ioab et abiit in Gessur et adduxit Absalom in Hierusalem"
+      la: "Surrexit ergo Joab et abiit in Gessur, et adduxit Absalom in Jerusalem."
       en: "Then Joab arose and went to Gessur, and brought Absalom to Jerusalem."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "dixit autem rex revertatur in domum suam et faciem meam non videat reversus est itaque Absalom in domum suam et faciem regis non vidit"
+      la: "Dixit autem rex: Revertatur in domum suam, et faciem meam non videat. Reversus est itaque Absalom in domum suam, et faciem regis non vidit."
       en: "But the king said: Let him return into his house, and let him not see my face. So Absalom returned into his house, and saw not the king's face."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "porro sicut Absalom vir non erat pulcher in omni Israhel et decorus nimis a vestigio pedis usque ad verticem non erat in eo ulla macula"
+      la: "Porro sicut Absalom, vir non erat pulcher in omni Israel, et decorus nimis: a vestigio pedis usque ad verticem non erat in eo ulla macula."
       en: "But in all Israel there was not a man so comely, and so exceedingly beautiful as Absalom: from the sole of the foot to the crown of his head there was no blemish in him."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "et quando tondebatur capillum semel autem in anno tondebatur quia gravabat eum caesaries ponderabat capillos capitis sui ducentis siclis pondere publico"
+      la: "Et quando tondebat capillum ( semel autem in anno tondebatur, quia gravabat eum caesaries) ponderabat capillos capitis sui ducentis siclis, pondere publico."
       en: "And when he polled his hair (now he was polled once a year, because his hair was burdensome to him) he weighed the hair of his head at two hundred sicles, according to the common weight."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "nati sunt autem Absalom filii tres et filia una nomine Thamar eleganti forma"
+      la: "Nati sunt autem Absalom filii tres: et filia una nomine Thamar, elegantis formae."
       en: "And there were born to Absalom three sons: and one daughter, whose, name was Thamar, and she was very beautiful."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "mansitque Absalom Hierusalem duobus annis et faciem regis non vidit"
+      la: "Mansitque Absalom in Jerusalem duobus annis, et faciem regis non vidit."
       en: "And Absalom dwelt two years in Jerusalem, and saw not the king's face."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "misit itaque ad Ioab ut mitteret eum ad regem qui noluit venire ad eum cumque secundo misisset et ille noluisset venire"
+      la: "Misit itaque ad Joab, ut mitteret eum ad regem: qui noluit venire ad eum. Cumque secundo misisset, et ille noluisset venire ad eum,"
       en: "He sent therefore to Joab, to send him to the king: but he would not come to him. And when he had sent the second time, and he would not come to him,"
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "dixit servis suis scitis agrum Ioab iuxta agrum meum habentem messem hordei ite igitur et succendite eum igni succenderunt ergo servi Absalom segetem igni"
+      la: "dixit servis suis: Scitis agrum Joab juxta agrum meum, habentem messem hordei: ite igitur, et succendite eum igni. Succenderunt ergo servi Absalom segetem igni. Et venientes servi Joab, scissis vestibus suis, dixerunt: Succenderunt servi Absalom partem agri igni."
       en: "He said to his servants: You know the field of Joab near my field, that hath a crop of barley: go now and set it on fire. So the servants of Absalom set the corn on fire. And Joab's servants coming with their garments rent, said: The servants of Absalom have set part of the field on fire."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "surrexitque Ioab et venit ad Absalom in domum eius et dixit quare succenderunt servi tui segetem meam igni"
+      la: "Surrexitque Joab, et venit ad Absalom in domum ejus, et dixit: Quare succenderunt servi tui segetem meam igni?"
       en: "Then Joab arose, and came to Absalom to his house, and said: Why have thy servants set my corn on fire?"
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "et respondit Absalom ad Ioab misi ad te obsecrans ut venires ad me et mitterem te ad regem ut diceres ei quare veni de Gessur melius mihi erat ibi esse obsecro ergo ut videam faciem regis quod si memor est iniquitatis meae interficiat me"
+      la: "Et respondit Absalom ad Joab: Misi ad te obsecrans ut venires ad me, et mitterem te ad regem, et diceres ei: Quare veni ad Gessur? melius mihi erat ibi esse: obsecro ergo ut videam faciem regis: quod si memor est iniquitatis meae, interficiat me."
       en: "And Absalom answered Joab: I sent to thee beseeching thee to come to me, that I might send thee to the king, to say to him: Wherefore am I come from Gessur? it had been better for me to be there: I beseech thee therefore that I may see the face of the king: and if he be mindful of my iniquity, let him kill me."
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "ingressus Ioab ad regem nuntiavit ei vocatusque Absalom intravit ad regem et adoravit super faciem terrae coram eo osculatusque est rex Absalom"
+      la: "Ingressus itaque Joab ad regem, nuntiavit ei omnia: vocatusque est Absalom, et intravit ad regem, et adoravit super faciem terrae coram eo: osculatusque est rex Absalom."
       en: "So Joab going in to the king, told him all: and Absalom was called for, and he went in to the king: and prostrated himself on the ground before him: and the king kissed Absalom."
     status: { la: verified, en: verified }

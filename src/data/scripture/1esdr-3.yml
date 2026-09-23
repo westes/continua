@@ -1,72 +1,72 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1esdr
 chapter: 3
 verses:
   - n: 1
     text:
-      la: "iamque venerat mensis septimus et erant filii Israhel in civitatibus suis congregatus est ergo populus quasi vir unus in Hierusalem"
+      la: "Jamque venerat mensis septimus, et erant filii Israel in civitatibus suis: congregatus est ergo populus quasi vir unus in Jerusalem."
       en: "And now the seventh month was come, and the children of Israel were in their cities: and the people gathered themselves together as one man to Jerusalem."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et surrexit Iosue filius Iosedech et fratres eius sacerdotes et Zorobabel filius Salathihel et fratres eius et aedificaverunt altare Dei Israhel ut offerrent in eo holocaustomata sicut scriptum est in lege Mosi viri Dei"
-      en: "And Josue the son of Josedec rose up, and his brethren the priests, and Zorobabel the son of Salathiel, and his brethren, and they built the altar of the God of Israel that they might offer holocausts upon it, as it is written in the law of Moses the mall of God."
+      la: "Et surrexit Josue filius Josedec, et fratres ejus sacerdotes, et Zorobabel filius Salathiel, et fratres ejus, et aedificaverunt altare Dei Israel ut offerrent in eo holocautomata, sicut scriptum est in lege Moysi viri Dei."
+      en: "And Josue the son of Josedec rose up, and his brethren the priests, and Zorobabel the son of Salathiel, and his brethren, and they built the altar of the God of Israel that they might offer holocausts upon it, as it is written in the law of Moses the man of God."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "conlocaverunt autem altare super bases suas deterrentibus eos per circuitum populis terrarum et obtulerunt super illud holocaustum Domino mane et vespere"
+      la: "Collocaverunt autem altare Dei super bases suas, deterrentibus eos per circuitum populis terrarum, et obtulerunt super illud holocaustum Domino mane et vespere."
       en: "And they set the altar of God upon its bases, while the people of the lands round about put them in fear, and they offered upon it a holocaust to the Lord morning and evening."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "feceruntque sollemnitatem tabernaculorum sicut scriptum est et holocaustum diebus singulis per ordinem secundum praeceptum opus diei in die suo"
+      la: "Feceruntque solemnitatem tabernaculorum, sicut scriptum est, et holocaustum diebus singulis per ordinem secundum praeceptum opus diei in die suo."
       en: "And they kept the feast of tabernacles, as it is written, and offered the holocaust every day orderly according to the commandment, the duty of the day in its day."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et post haec holocaustum iuge tam in kalendis quam in universis sollemnitatibus Domini quae erant consecratae et in omnibus in quibus ultro offerebatur munus Deo"
-      en: "And afterwards the continual holocaust, both on the new moons, and on all the solemnities of the Lord, that were consecrated, and on all in which a freewill offering was made to the Lord."
+      la: "Et post haec holocaustum juge, tam in calendis quam in universis solemnitatibus Domini, quae erant consecratae, et in omnibus in quibus ultro offerebatur munus Domino."
+      en: "And afterwards the continual holocaust, both on the new moons, and on all the solemnities of the Lord, that were consecrated, and on all in which a free-will offering was made to the Lord."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "a primo die mensis septimi coeperunt offerre holocaustum Domino porro templum Dei fundatum necdum erat"
-      en: "From the Brat day of the seventh month they began to offer holocausts to the Lord: but the temple of God was not yet founded."
+      la: "A primo die mensis septimi coeperunt offerre holocaustum Domino: porro templum Dei nondum fundatum erat."
+      en: "From the first day of the seventh month they began to offer holocausts to the Lord: but the temple of God was not yet founded."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "dederunt autem pecunias latomis et cementariis cibum quoque et potum et oleum Sidoniis Tyriisque ut deferrent ligna cedrina de Libano ad mare Ioppes iuxta quod praeceperat Cyrus rex Persarum eis"
+      la: "Dederunt autem pecunias latomis et caementariis: cibum quoque, et potum, et oleum Sidoniis Tyriisque, ut deferrent ligna cedrina de Libano ad mare Joppe, juxta quod praeceperat Cyrus rex Persarum eis."
       en: "And they gave money to hewers of stones and to masons: and meat and drink, and oil to the Sidonians and Tyrians, to bring cedar trees from Libanus to the sea of Joppe, according to the orders which Cyrus king of the Persians had given them."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "anno autem secundo adventus eorum ad templum Dei in Hierusalem mense secundo coeperunt Zorobabel filius Salathihel et Iosue filius Iosedech et reliqui de fratribus eorum sacerdotes et Levitae et omnes qui venerant de captivitate in Hierusalem et constituerunt Levitas a viginti annis et supra ut urguerent opus Domini"
+      la: "Anno autem secundo adventus eorum ad templum Dei in Jerusalem, mense secundo, coeperunt Zorobabel filius Salathiel, et Josue filius Josedec, et reliqui de fratribus eorum sacerdotes, et Levitae, et omnes qui venerant de captivitate in Jerusalem, et constituerunt Levitas a viginti annis et supra, ut urgerent opus Domini."
       en: "And in the second year of their coming to the temple of God in Jerusalem, the second month, Zorobabel the son of Salathiel, and Josue the son of Josedec, and the rest of their brethren the priests, and the Levites, and all that were come from the captivity to Jerusalem began, and they appointed Levites from twenty years old and upward, to hasten forward the work of the Lord."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "stetitque Iosue filii eius et fratres eius Cedmihel et filii eius et filii Iuda quasi unus ut instarent super eos qui faciebant opus in templo Dei filii Enadad filii eorum et fratres eorum Levitae"
+      la: "Stetitque Josue et filii ejus et fratres ejus, Cedmihel et filii ejus, et filii Juda, quasi vir unus, ut instarent super eos qui faciebant opus in templo Dei: filii Henadad, et filii eorum, et fratres eorum Levitae."
       en: "Then Josue and his sons and his brethren, Cedmihel, and his sons, and the children of Juda, as one man, stood to hasten them that did the work in the temple of God: the sons of Henadad, and their sons, and their brethren the Levites."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "fundato igitur a cementariis templo Domini steterunt sacerdotes in ornatu suo cum tubis et Levitae filii Asaph in cymbalis ut laudarent Deum per manus David regis Israhel"
+      la: "Fundato igitur a caementariis templo Domini, steterunt sacerdotes in ornatu suo cum tubis: et Levitae filii Asaph in cymbalis, ut laudarent Deum per manus David regis Israel."
       en: "And when the masons laid the foundations of the temple of the Lord, the priests stood in their ornaments with trumpets: and the Levites the sons of Asaph with cymbals, to praise God by the hands of David king of Israel."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et concinebant in hymnis et confessione Domino quoniam bonus quoniam in aeternum misericordia eius super Israhel omnis quoque populus vociferabatur clamore magno in laudando Dominum eo quod fundatum esset templum Domini"
+      la: "Et concinebant in hymnis, et confessione Domino: Quoniam bonus, quoniam in aeternum misericordia ejus super Israel. Omnis quoque populus vociferabatur clamore magno in laudando Dominum, eo quod fundatum esset templum Domini."
       en: "And they sung together hymns, and praise to the Lord: because he is good, for his mercy endureth for ever towards Israel. And all the people shouted with a great shout, praising the Lord, because the foundations of the temple of the Lord were laid."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "plurimi etiam de sacerdotibus et Levitis et principes patrum seniores qui viderant templum prius cum fundatum esset et hoc templum in oculis eorum flebant voce magna et multi vociferantes in laetitia elevabant vocem"
+      la: "Plurimi etiam de sacerdotibus et Levitis, et principes patrum, et seniores, qui viderant templum prius cum fundatum esset, et hoc templum in oculis eorum, flebant voce magna: et multi vociferantes in laetitia, elevabant vocem."
       en: "But many of the priests and the Levites, and the chief of the fathers and the ancients that had seen the former temple; when they had the foundation of this temple before their eyes, wept with a loud voice: and many shouting for joy, lifted up their voice."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "nec poterat quisquam agnoscere vocem clamoris laetantium et vocem fletus populi commixtim enim populus vociferabatur clamore magno et vox audiebatur procul"
+      la: "Nec poterat quisquam agnoscere vocem clamoris laetantium, et vocem fletus populi: commistim enim populus vociferabatur clamore magno, et vox audiebatur procul."
       en: "So that one could not distinguish the voice of the shout of joy, from the noise of the weeping of the people: for one with another the people shouted with a loud shout, and the voice was heard afar off."
     status: { la: verified, en: verified }

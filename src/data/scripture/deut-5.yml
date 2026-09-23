@@ -1,172 +1,172 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: deut
 chapter: 5
 verses:
   - n: 1
     text:
-      la: "vocavitque Moses omnem Israhelem et dixit ad eum audi Israhel caerimonias atque iudicia quae ego loquor in auribus vestris hodie discite ea et opere conplete"
-      en: "And Moses called all Israel, and said to them: Hear, O Israel, the ceremonies and judgments, which I speak in your ears this day: learn them, and fulfil them in work."
+      la: "Vocavitque Moyses omnem Israelem, et dixit ad eum: Audi, Israel, caeremonias atque judicia, quae ego loquor in auribus vestris hodie: discite ea, et opere complete."
+      en: "And Moses called all Israel, and said to them: Hear, O Israel, the ceremonies and judgments, which I speak in your ears this day: learn them, and fulfill them in work."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "Dominus Deus noster pepigit nobiscum foedus in Horeb"
+      la: "Dominus Deus noster pepigit nobiscum foedus in Horeb."
       en: "The Lord our God made a covenant with us in Horeb."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "non cum patribus nostris iniit pactum sed nobiscum qui inpraesentiarum sumus et vivimus"
+      la: "Non cum patribus nostris iniit pactum, sed nobiscum qui in praesentiarum sumus, et vivimus."
       en: "He made not the covenant with our fathers, but with us, who are now present and living."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "facie ad faciem locutus est nobis in monte de medio ignis"
+      la: "Facie ad faciem locutus est nobis in monte de medio ignis."
       en: "He spoke to us face to face in the mount out of the midst of fire."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "ego sequester et medius fui inter Dominum et vos in tempore illo ut adnuntiarem vobis verba eius timuistis enim ignem et non ascendistis in montem et ait"
+      la: "Ego sequester et medius fui inter Dominum et vos in tempore illo, ut annuntiarem vobis verba ejus: timuistis enim ignem, et non ascendistis in montem. Et ait:"
       en: "I was the mediator and stood between the Lord and you at that time, to shew you his words, for you feared the fire, and went not up into the mountain, and he said:"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "ego Dominus Deus tuus qui eduxi te de terra Aegypti de domo servitutis"
-      en: "I am the Lord thy God, who brought thee out of the land of Egypt, out of the house of bondage"
+      la: "Ego Dominus Deus tuus, qui eduxi te de terra Aegypti, de domo servitutis."
+      en: "I am the Lord thy God, who brought thee out of the land of Egypt, out of the house of bondage."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "non habebis deos alienos in conspectu meo"
+      la: "Non habebis deos alienos in conspectu meo."
       en: "Thou shalt not have strange gods in my sight."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "non facies tibi sculptile nec similitudinem omnium quae in caelo sunt desuper et quae in terra deorsum et quae versantur in aquis sub terra"
+      la: "Non facies tibi sculptile, nec similitudinem omnium, quae in caelo sunt desuper, et quae in terra deorsum, et quae versantur in aquis sub terra."
       en: "Thou shalt not make to thyself a graven thing, nor the likeness of any things, that are in heaven above, or that are in the earth beneath, or that abide in the waters under the earth."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "non adorabis ea et non coles ego enim sum Dominus Deus tuus Deus aemulator reddens iniquitatem patrum super filios in tertiam et quartam generationem his qui oderunt me"
+      la: "Non adorabis ea, et non coles. Ego enim sum Dominus Deus tuus: Deus aemulator, reddens iniquitatem patrum super filios in tertiam et quartam generationem his qui oderunt me:"
       en: "Thou shalt not adore them, and thou shalt not serve them. For I am the Lord thy God, a jealous God, visiting the iniquity of the fathers upon their children unto the third and fourth generation, to them that hate me,"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et faciens misericordiam in multa milia diligentibus me et custodientibus praecepta mea"
+      la: "et faciens misericordiam in multa millia diligentibus me, et custodientibus praecepta mea."
       en: "And shewing mercy unto many thousands, to them that love me, and keep my commandments."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "non usurpabis nomen Domini Dei tui frustra quia non erit inpunitus qui super re vana nomen eius adsumpserit"
+      la: "Non usurpabis nomen Domini Dei tui frustra: quia non erit impunitus qui super re vana nomen ejus assumpserit."
       en: "Thou shalt not take the name of the Lord thy God in vain: for he shall not be unpunished that taketh his name upon a vain thing."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "observa diem sabbati ut sanctifices eum sicut praecepit tibi Dominus Deus tuus"
+      la: "Observa diem sabbati, ut sanctifices eum, sicut praecepit tibi Dominus Deus tuus."
       en: "Observe the day of the sabbath, to sanctify it, as the Lord thy God hath commanded thee."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "sex diebus operaberis et facies omnia opera tua"
+      la: "Sex diebus operaberis, et facies omnia opera tua."
       en: "Six days shalt thou labour, and shalt do all thy works."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "septimus dies sabbati est id est requies Domini Dei tui non facies in eo quicquam operis tu et filius tuus et filia servus et ancilla et bos et asinus et omne iumentum tuum et peregrinus qui est intra portas tuas ut requiescat servus et ancilla tua sicut et tu"
+      la: "Septimus dies sabbati est, id est, requies Domini Dei tui. Non facies in eo quidquam operis tu, et filius tuus, et filia, servus et ancilla, et bos, et asinus, et omne jumentum tuum, et peregrinus qui est intra portas tuas: ut requiescat servus tuus, et ancilla tua, sicut et tu."
       en: "The seventh is the day of the sabbath, that is, the rest of the Lord thy God. Thou shalt not do any work therein, thou nor thy son nor thy daughter, nor thy manservant nor thy maidservant, nor thy ox, nor thy ass, nor any of thy beasts, nor the stranger that is within thy gates: that thy manservant and thy maidservant may rest, even as thyself."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "memento quod et ipse servieris in Aegypto et eduxerit te inde Dominus Deus tuus in manu forti et brachio extento idcirco praecepit tibi ut observares diem sabbati"
+      la: "Memento quod et ipse servieris in Aegypto, et eduxerit te inde Dominus Deus tuus in manu forti, et brachio extento. Idcirco praecepit tibi ut observares diem sabbati."
       en: "Remember that thou also didst serve in Egypt, and the Lord thy God brought thee out from thence with a strong hand, and a stretched out arm. Therefore hath he commanded thee that thou shouldst observe the sabbath day."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "honora patrem tuum et matrem sicut praecepit tibi Dominus Deus tuus ut longo vivas tempore et bene sit tibi in terra quam Dominus Deus tuus daturus est tibi"
+      la: "Honora patrem tuum et matrem, sicut praecepit tibi Dominus Deus tuus, ut longo vivas tempore, et bene sit tibi in terra, quam Dominus Deus tuus daturus est tibi."
       en: "Honour thy father and mother, as the Lord thy God hath commanded thee, that thou mayst live a long time, and it may be well with thee in the land, which the Lord thy God will give thee."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "non occides"
+      la: "Non occides,"
       en: "Thou shalt not kill."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "neque moechaberis"
+      la: "neque moechaberis,"
       en: "Neither shalt thou commit adultery."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "furtumque non facies"
+      la: "furtumque non facies:"
       en: "And thou shalt not steal."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "nec loqueris contra proximum tuum falsum testimonium"
+      la: "nec loqueris contra proximum tuum falsum testimonium."
       en: "Neither shalt thou bear false witness against thy neighbour."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "non concupisces uxorem proximi tui non domum non agrum non servum non ancillam non bovem non asinum et universa quae illius sunt"
+      la: "Non concupisces uxorem proximi tui: non domum, non agrum, non servum, non ancillam, non bovem, non asinum, et universa quae illius sunt."
       en: "Thou shalt not covet thy neighbour's wife: nor his house, nor his field, nor his manservant, nor his maidservant, nor his ox, nor his ass, nor any thing that is his."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "haec verba locutus est Dominus ad omnem multitudinem vestram in monte de medio ignis et nubis et caliginis voce magna nihil addens amplius et scripsit ea in duabus tabulis lapideis quas tradidit mihi"
+      la: "Haec verba locutus est Dominus ad omnem multitudinem vestram in monte de medio ignis et nubis, et caliginis, voce magna, nihil addens amplius: et scripsit ea in duabus tabulis lapideis, quas tradidit mihi."
       en: "These words the Lord spoke to all the multitude of you in the mountain, out of the midst of the fire and the cloud, and the darkness, with a loud voice, adding nothing more: and he wrote them in two tables of stone, which he delivered unto me."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "vos autem postquam audistis vocem de medio tenebrarum et montem ardere vidistis accessistis ad me omnes principes tribuum et maiores natu atque dixistis"
+      la: "Vos autem postquam audistis vocem de medio tenebrarum, et montem ardere vidistis, accessistis ad me omnes principes tribuum et majores natu, atque dixistis:"
       en: "But you, after you heard the voice out of the midst of the darkness, and saw the mountain burn, came to me, all the princes of the tribes and the elders, and you said:"
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "ecce ostendit nobis Dominus Deus noster maiestatem et magnitudinem suam vocem eius audivimus de medio ignis et probavimus hodie quod loquente Deo cum homine vixerit homo"
+      la: "Ecce ostendit nobis Dominus Deus noster majestatem et magnitudinem suam: vocem ejus audivimus de medio ignis, et probavimus hodie, quod loquente Deo cum homine, vixerit homo."
       en: "Behold the Lord our God hath shewn us his majesty and his greatness, we have heard his voice out of the midst of the fire, and have proved this day that God speaking with man, man hath lived."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "cur ergo morimur et devorabit nos ignis hic maximus si enim audierimus ultra vocem Domini Dei nostri moriemur"
-      en: "Why shall we die therefore, and why shall this exceeding great Are consume us: for if we hear the voice of the Lord our God any more, we shall die."
+      la: "Cur ergo moriemur, et devorabit nos ignis hic maximus? si enim audierimus ultra vocem Domini Dei nostri, moriemur."
+      en: "Why shall we die therefore, and why shall this exceeding great fire consume us: for if we hear the voice of the Lord our God any more, we shall die."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "quid est omnis caro ut audiat vocem Dei viventis qui de medio ignis loquitur sicut nos audivimus et possit vivere"
+      la: "Quid est omnis caro, ut audiat vocem Dei viventis, qui de medio ignis loquitur sicut nos audivimus, et possit vivere?"
       en: "What is all flesh, that it should hear the voice of the living God, who speaketh out of the midst of the fire, as we have heard, and be able to live?"
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "tu magis accede et audi cuncta quae dixerit Dominus Deus noster tibi loquerisque ad nos et nos audientes faciemus ea"
+      la: "Tu magis accede: et audi cuncta quae dixerit Dominus Deus noster tibi: loquerisque ad nos, et nos audientes faciemus ea."
       en: "Approach thou rather: and hear all things that the Lord our God shall say to thee, and thou shalt speak to us, and we will hear and will do them."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "quod cum audisset Dominus ait ad me audivi vocem verborum populi huius quae locuti sunt tibi bene omnia sunt locuti"
+      la: "Quod cum audisset Dominus, ait ad me: Audivi vocem verborum populi hujus quae locuti sunt tibi: bene omnia sunt locuti."
       en: "And when the Lord had heard this, he said to me: I have heard the voice of the words of this people, which they spoke to thee: they have spoken all things well."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "quis det talem eos habere mentem ut timeant me et custodiant universa mandata mea in omni tempore ut bene sit eis et filiis eorum in sempiternum"
+      la: "Quis det talem eos habere mentem, ut timeant me, et custodiant universa mandata mea in omni tempore, ut bene sit eis et filiis eorum in sempiternum?"
       en: "Who shall give them to have such a mind, to fear me, and to keep all my commandments at all times, that it may be well with them and with their children for ever?"
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "vade et dic eis revertimini in tentoria vestra"
+      la: "Vade et dic eis: Revertimini in tentoria vestra."
       en: "Go and say to them: Return into your tents."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "tu vero hic sta mecum et loquar tibi omnia mandata et caerimonias atque iudicia quae docebis eos ut faciant ea in terra quam dabo illis in possessionem"
+      la: "Tu vero hic sta mecum, et loquar tibi omnia mandata mea, et caeremonias atque judicia: quae docebis eos, ut faciant ea in terra, quam dabo illis in possessionem."
       en: "But stand thou here with me, and I will speak to thee all my commandments, and ceremonies and judgments: which thou shalt teach them, that they may do them in the land, which I will give them for a possession."
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "custodite igitur et facite quae praecepit Dominus Deus vobis non declinabitis neque ad dextram neque ad sinistram"
+      la: "Custodite igitur et facite quae praecepit Dominus Deus vobis: non declinabitis neque ad dexteram, neque ad sinistram:"
       en: "Keep therefore and do the things which the Lord God hath commanded you: you shall not go aside neither to the right hand, nor to the left."
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "sed per viam quam praecepit Dominus Deus vester ambulabitis ut vivatis et bene sit vobis et protelentur dies in terra possessionis vestrae"
+      la: "sed per viam, quam praecepit Dominus Deus vester, ambulabitis, ut vivatis, et bene sit vobis, et protelentur dies in terra possessionis vestrae."
       en: "But you shall walk in the way that the Lord your God hath commanded, that you may live, and it may be well with you, and your days may be long in the land of your possession."
     status: { la: verified, en: verified }

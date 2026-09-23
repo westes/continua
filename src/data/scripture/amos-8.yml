@@ -1,77 +1,77 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: amos
 chapter: 8
 verses:
   - n: 1
     text:
-      la: "haec ostendit mihi Dominus Deus et ecce uncinus pomorum"
+      la: "Haec ostendit mihi Dominus Deus: et ecce uncinus pomorum."
       en: "These things the Lord shewed to me: and behold a hook to draw down the fruit."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et dixit quid tu vides Amos et dixi uncinum pomorum et dixit Dominus ad me venit finis super populum meum Israhel non adiciam ultra ut pertranseam eum"
+      la: "Et dixit: Quid tu vides, Amos? Et dixi: Uncinum pomorum. Et dixit Dominus ad me: Venit finis super populum meum Israel; non adjiciam ultra ut pertranseam eum."
       en: "And he said: What seest thou, Amos? And I said: A hook to draw down fruit. And the Lord said to me: The end is come upon my people Israel: I will not again pass by them any more."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et stridebunt cardines templi in die illa dicit Dominus Deus multi morientur in omni loco proicietur silentium"
+      la: "Et stridebunt cardines templi in die illa, dicit Dominus Deus: multi morientur; in omni loco projicietur silentium."
       en: "And the hinges of the temple shall screak in that day, saith the Lord God: many shall die: silence shall be cast in every place."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "audite hoc qui conteritis pauperem et deficere facitis egenos terrae"
+      la: "Audite hoc, qui conteritis pauperem, et deficere facitis egenos terrae,"
       en: "Hear this, you that crush the poor, and make the needy of the land to fail,"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "dicentes quando transibit mensis et venundabimus merces et sabbatum et aperiemus frumentum ut inminuamus mensuram et augeamus siclum et subponamus stateras dolosas"
+      la: "dicentes: Quando transibit mensis, et venundabimus merces? et sabbatum, et aperiemus frumentum, ut imminuamus mensuram, et augeamus siclum, et supponamus stateras dolosas,"
       en: "Saying: When will the month be over, and we shall sell our wares: and the sabbath, and we shall open the corn: that we may lessen the measure, and increase the sicle, and may convey in deceitful balances,"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "ut possideamus in argento egenos et pauperes pro calciamentis et quisquilias frumenti vendamus"
+      la: "ut possideamus in argento egenos et pauperes pro calceamentis, et quisquilias frumenti vendamus?"
       en: "That we may possess the needy for money, and the poor for a pair of shoes, and may sell the refuse of the corn?"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "iuravit Dominus in superbia Iacob si oblitus fuero usque ad finem omnia opera eorum"
+      la: "Juravit Dominus in superbiam Jacob: Si oblitus fuero usque ad finem omnia opera eorum."
       en: "The Lord hath sworn against the pride of Jacob: surely I will never forget all their works."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "numquid super isto non commovebitur terra et lugebit omnis habitator eius et ascendet quasi fluvius universus et eicietur et defluet quasi rivus Aegypti"
+      la: "Numquid super isto non commovebitur terra, et lugebit omnis habitator ejus, et ascendet quasi fluvius universus, et ejicicetur, et defluet, quasi rivus Aegypti?"
       en: "Shall not the land tremble for this, and every one mourn that dwelleth therein: and rise up altogether as a river, and be cast out, and run down as the river of Egypt?"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "et erit in die illa dicit Dominus occidet sol meridie et tenebrescere faciam terram in die luminis"
+      la: "Et erit in die illa, dicit Dominus Deus: occidet sol in meridie, et tenebrescere faciam terram in die luminis:"
       en: "And it shall come to pass in that day, saith the Lord God, that the sun shall go down at midday, and I will make the earth dark in the day of light:"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et convertam festivitates vestras in luctum et omnia cantica vestra in planctum et inducam super omne dorsum vestrum saccum et super omne caput calvitium et ponam eam quasi luctum unigeniti et novissima eius quasi diem amarum"
+      la: "et convertam festivitates vestras in luctum, et omnia cantica vestra in planctum, et inducam super omne dorsum vestrum saccum, et super omne caput calvitium: et ponam eam quasi luctum unigeniti, et novissima ejus quasi diem amarum."
       en: "And I will turn your feasts into mourning, and all your songs into lamentation: and I will bring up sackcloth upon every back of yours, and baldness upon every head: and I will make it as the mourning of an only son, and the latter end thereof as a bitter day."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "ecce dies veniunt dicit Dominus et mittam famem in terram non famem panis neque sitim aquae sed audiendi verbum Domini"
+      la: "Ecce dies veniunt, dicet Dominus, et mittam famem in terram: non famem panis, neque sitim aquae, sed audiendi verbum Domini."
       en: "Behold the days come, saith the Lord, and I will send forth a famine into the land: not a famine of bread, nor a thirst of water, but of hearing the word of the Lord."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "et commovebuntur a mari usque ad mare et ab aquilone usque ad orientem circumibunt quaerentes verbum Domini et non invenient"
+      la: "Et commovebuntur a mari usque ad mare, et ab aquilone usque ad orientem: circuibunt quaerentes verbum Domini, et non invenient."
       en: "And they shall move from sea to sea, and from the north to the east: they shall go about seeking the word of the Lord, and shall not find it."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "in die illa deficient virgines pulchrae et adulescentes in siti"
+      la: "In die illa deficient virgines pulchrae et adolescentes in siti,"
       en: "In that day the fair virgins, and the young men shall faint for thirst."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "qui iurant in delicto Samariae et dicunt vivit deus tuus Dan et vivit via Bersabee et cadent et non resurgent ultra"
+      la: "qui jurant in delicto Samariae, et dicunt: Vivit Deus tuus, Dan, et vivit via Bersabee; et cadent, et non resurgent ultra."
       en: "They that swear by the sin of Samaria, and say: Thy God, O Dan, liveth: and the way of Bersabee liveth: and they shall fall, and shall rise no more."
     status: { la: verified, en: verified }

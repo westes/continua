@@ -1,77 +1,77 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: heb
 chapter: 1
 verses:
   - n: 1
     text:
-      la: "multifariam et multis modis olim Deus loquens patribus in prophetis"
+      la: "Multifariam, multisque modis olim Deus loquens patribus in prophetis:"
       en: "God, who, at sundry times and in divers manners, spoke in times past to the fathers by the prophets, last of all,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "novissime diebus istis locutus est nobis in Filio quem constituit heredem universorum per quem fecit et saecula"
+      la: "novissime, diebus istis locutus est nobis in Filio, quem constituit haeredem universorum, per quem fecit et saecula:"
       en: "In these days hath spoken to us by his Son, whom he hath appointed heir of all things, by whom also he made the world."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "qui cum sit splendor gloriae et figura substantiae eius portansque omnia verbo virtutis suae purgationem peccatorum faciens sedit ad dexteram Maiestatis in excelsis"
+      la: "qui cum sit splendor gloriae, et figura substantiae ejus, portansque omnia verbo virtutis suae, purgationem peccatorum faciens, sedet ad dexteram majestatis in excelsis:"
       en: "Who being the brightness of his glory, and the figure of his substance, and upholding all things by the word of his power, making purgation of sins, sitteth on the right hand of the majesty on high."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "tanto melior angelis effectus quanto differentius prae illis nomen hereditavit"
+      la: "tanto melior angelis effectus, quanto differentius prae illis nomen haereditavit."
       en: "Being made so much better than the angels, as he hath inherited a more excellent name than they."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "cui enim dixit aliquando angelorum Filius meus es tu ego hodie genui te et rursum ego ero illi in Patrem et ipse erit mihi in Filium"
-      en: "For to which of the angels hath he said at any time, Thou art my Son, to day have I begotten thee? And again, I will be to him a Father, and he shall be to me a Son?"
+      la: "Cui enim dixit aliquando angelorum: Filius meus es tu, ego hodie genui te? Et rursum: Ego ero illi in patrem, et ipse erit mihi in filium?"
+      en: "For to which of the angels hath he said at any time, Thou art my Son, today have I begotten thee? And again, I will be to him a Father, and he shall be to me a Son?"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et cum iterum introducit primogenitum in orbem terrae dicit et adorent eum omnes angeli Dei"
+      la: "Et cum iterum introducit primogenitum in orbem terrae, dicit: Et adorent eum omnes angeli Dei."
       en: "And again, when he bringeth in the first begotten into the world, he saith: And let all the angels of God adore him."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et ad angelos quidem dicit qui facit angelos suos spiritus et ministros suos flammam ignis"
+      la: "Et ad angelos quidem dicit: Qui facit angelos suos spiritus, et ministros suos flammam ignis."
       en: "And to the angels indeed he saith: He that maketh his angels spirits, and his ministers a flame of fire."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "ad Filium autem thronus tuus Deus in saeculum saeculi et virga aequitatis virga regni tui"
+      la: "Ad Filium autem: Thronus tuus Deus in saeculum saeculi: virga aequitatis, virga regni tui."
       en: "But to the Son: Thy throne, O God, is for ever and ever: a sceptre of justice is the sceptre of thy kingdom."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "dilexisti iustitiam et odisti iniquitatem propterea unxit te Deus Deus tuus oleo exultationis prae participibus tuis"
+      la: "Dilexisti justitiam, et odisti iniquitatem: propterea unxit te Deus, Deus tuus, oleo exultationis prae participibus tuis."
       en: "Thou hast loved justice, and hated iniquity: therefore God, thy God, hath anointed thee with the oil of gladness above thy fellows."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et tu in principio Domine terram fundasti et opera manuum tuarum sunt caeli"
+      la: "Et: Tu in principio Domine terram fundasti: et opera manuum tuarum sunt caeli."
       en: "And: Thou in the beginning, O Lord, didst found the earth: and the works of thy hands are the heavens."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "ipsi peribunt tu autem permanebis et omnes ut vestimentum veterescent"
+      la: "Ipsi peribunt, tu autem permanebis, et omnes ut vestimentum veterascent:"
       en: "They shall perish, but thou shalt continue: and they shall all grow old as a garment."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "et velut amictum involves eos et mutabuntur tu autem idem es et anni tui non deficient"
+      la: "et velut amictum mutabis eos, et mutabuntur: tu autem idem ipse es, et anni tui non deficient."
       en: "And as a vesture shalt thou change them, and they shall be changed: but thou art the selfsame, and thy years shall not fail."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "ad quem autem angelorum dixit aliquando sede a dextris meis quoadusque ponam inimicos tuos scabillum pedum tuorum"
+      la: "Ad quem autem angelorum dixit aliquando: Sede a dextris meis, quoadusque ponam inimicos tuos scabellum pedum tuorum?"
       en: "But to which of the angels said he at any time: Sit on my right hand, until I make thy enemies thy footstool?"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "nonne omnes sunt administratorii spiritus in ministerium missi propter eos qui hereditatem capient salutis"
+      la: "Nonne omnes sunt administratorii spiritus, in ministerium missi propter eos, qui haereditatem capient salutis?"
       en: "Are they not all ministering spirits, sent to minister for them, who shall receive the inheritance of salvation?"
     status: { la: verified, en: verified }

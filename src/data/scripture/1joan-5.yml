@@ -1,107 +1,112 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1joan
 chapter: 5
 verses:
   - n: 1
     text:
-      la: "omnis qui credit quoniam Iesus est Christus ex Deo natus est et omnis qui diligit eum qui genuit diligit eum qui natus est ex eo"
+      la: "Omnis qui credit quoniam Jesus est Christus, ex Deo natus est. Et omnis qui diligit eum qui genuit, diligit et eum qui natus est ex eo."
       en: "Whosoever believeth that Jesus is the Christ, is born of God. And every one that loveth him who begot, loveth him also who is born of him."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "in hoc cognoscimus quoniam diligimus natos Dei cum Deum diligamus et mandata eius faciamus"
+      la: "In hoc cognoscimus quoniam diligamus natos Dei, cum Deum diligamus, et mandata ejus faciamus."
       en: "In this we know that we love the children of God: when we love God, and keep his commandments."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "haec est enim caritas Dei ut mandata eius custodiamus et mandata eius gravia non sunt"
+      la: "Haec est enim caritas Dei, ut mandata ejus custodiamus: et mandata ejus gravia non sunt."
       en: "For this is the charity of God, that we keep his commandments: and his commandments are not heavy."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "quoniam omne quod natum est ex Deo vincit mundum et haec est victoria quae vincit mundum fides nostra"
+      la: "Quoniam omne quod natum est ex Deo, vincit mundum: et haec est victoria, quae vincit mundum, fides nostra."
       en: "For whatsoever is born of God, overcometh the world: and this is the victory which overcometh the world, our faith."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "quis est qui vincit mundum nisi qui credit quoniam Iesus est Filius Dei"
+      la: "Quis est, qui vincit mundum, nisi qui credit quoniam Jesus est Filius Dei?"
       en: "Who is he that overcometh the world, but he that believeth that Jesus is the Son of God?"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "hic est qui venit per aquam et sanguinem Iesus Christus non in aqua solum sed in aqua et sanguine et Spiritus est qui testificatur quoniam Christus est veritas"
+      la: "Hic est, qui venit per aquam et sanguinem, Jesus Christus: non in aqua solum, sed in aqua et sanguine. Et Spiritus est, qui testificatur quoniam Christus est veritas."
       en: "This is he that came by water and blood, Jesus Christ: not by water only, but by water and blood. And it is the Spirit which testifieth, that Christ is the truth."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "quia tres sunt qui testimonium dant"
+      la: "Quoniam tres sunt, qui testimonium dant in caelo: Pater, Verbum, et Spiritus Sanctus: et hi tres unum sunt."
       en: "And there are three who give testimony in heaven, the Father, the Word, and the Holy Ghost. And these three are one."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "Spiritus et aqua et sanguis et tres unum sunt"
+      la: "Et tres sunt, qui testimonium dant in terra: spiritus, et aqua, et sanguis: et hi tres unum sunt."
       en: "And there are three that give testimony on earth: the spirit, and the water, and the blood: and these three are one."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "si testimonium hominum accipimus testimonium Dei maius est quoniam hoc est testimonium Dei quod maius est quia testificatus est de Filio suo"
+      la: "Si testimonium hominum accipimus, testimonium Dei majus est: quoniam hoc est testimonium Dei, quod majus est, quoniam testificatus est de Filio suo."
       en: "If we receive the testimony of men, the testimony of God is greater. For this is the testimony of God, which is greater, because he hath testified of his Son."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "qui credit in Filio Dei habet testimonium Dei in se qui non credit Filio mendacem facit eum quoniam non credidit in testimonio quod testificatus est Deus de Filio suo"
+      la: "Qui credit in Filium Dei, habet testimonium Dei in se. Qui non credit Filio, mendacem facit eum: quia non credit in testimonium quod testificatus est Deus de Filio suo."
       en: "He that believeth in the Son of God, hath the testimony of God in himself. He that believeth not the Son, maketh him a liar: because he believeth not in the testimony which God hath testified of his Son."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et hoc est testimonium quoniam vitam aeternam dedit nobis Deus et haec vita in Filio eius est"
+      la: "Et hoc est testimonium, quoniam vitam aeternam dedit nobis Deus: et haec vita in Filio ejus est."
       en: "And this is the testimony, that God hath given to us eternal life. And this life is in his Son."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "qui habet Filium habet vitam qui non habet Filium Dei vitam non habet"
+      la: "Qui habet Filium, habet vitam: qui non habet Filium, vitam non habet."
       en: "He that hath the Son, hath life. He that hath not the Son, hath not life."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "haec scripsi vobis ut sciatis quoniam vitam habetis aeternam qui creditis in nomine Filii Dei"
+      la: "Haec scribo vobis ut sciatis quoniam vitam habetis aeternam, qui creditis in nomine Filii Dei."
       en: "These things I write to you, that you may know that you have eternal life, you who believe in the name of the Son of God."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et haec est fiducia quam habemus ad eum quia quodcumque petierimus secundum voluntatem eius audit nos"
+      la: "Et haec est fiducia, quam habemus ad eum: quia quodcumque petierimus, secundum voluntatem ejus, audit nos."
       en: "And this is the confidence which we have towards him: That, whatsoever we shall ask according to his will, he heareth us."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et scimus quoniam audit nos quicquid petierimus scimus quoniam habemus petitiones quas postulavimus ab eo"
+      la: "Et scimus quia audit nos quidquid petierimus: scimus quoniam habemus petitiones quas postulamus ab eo."
       en: "And we know that he heareth us whatsoever we ask: we know that we have the petitions which we request of him."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "qui scit fratrem suum peccare peccatum non ad mortem petet et dabit ei vitam peccantibus non ad mortem est peccatum ad mortem non pro illo dico ut roget"
+      la: "Qui scit fratrem suum peccare peccatum non ad mortem, petat, et dabitur ei vita peccanti non ad mortem. Est peccatum ad mortem: non pro illo dico ut roget quis."
       en: "He that knoweth his brother to sin a sin which is not to death, let him ask, and life shall be given to him, who sinneth not to death. There is a sin unto death: for that I say not that any man ask."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "omnis iniquitas peccatum est et est peccatum non ad mortem"
+      la: "Omnis iniquitas, peccatum est: et est peccatum ad mortem."
       en: "All iniquity is sin. And there is a sin unto death."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "scimus quoniam omnis qui natus est ex Deo non peccat sed generatio Dei conservat eum et malignus non tangit eum"
+      la: "Scimus quia omnis qui natus est ex Deo, non peccat: sed generatio Dei conservat eum, et malignus non tangit eum."
       en: "We know that whosoever is born of God, sinneth not: but the generation of God preserveth him, and the wicked one toucheth him not."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "scimus quoniam ex Deo sumus et mundus totus in maligno positus est"
+      la: "Scimus quoniam ex Deo sumus: et mundus totus in maligno positus est."
       en: "We know that we are of God, and the whole world is seated in wickedness."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "et scimus quoniam Filius Dei venit et dedit nobis sensum ut cognoscamus verum Deum et simus in vero Filio eius hic est verus Deus et vita aeterna"
+      la: "Et scimus quoniam Filius Dei venit, et dedit nobis sensum ut cognoscamus verum Deum, et simus in vero Filio ejus. Hic est verus Deus, et vita aeterna."
       en: "And we know that the Son of God is come: and he hath given us understanding that we may know the true God, and may be in his true Son. This is the true God and life eternal."
+    status: { la: verified, en: verified }
+  - n: 21
+    text:
+      la: "Filioli, custodite vos a simulacris. Amen."
+      en: "Little children, keep yourselves from idols. Amen."
     status: { la: verified, en: verified }

@@ -1,57 +1,57 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1thess
 chapter: 1
 verses:
   - n: 1
     text:
-      la: "Paulus et Silvanus et Timotheus ecclesiae Thessalonicensium in Deo Patre et Domino Iesu Christo gratia vobis et pax"
+      la: "Paulus, et Silvanus, et Timotheus ecclesiae Thessalonicensium in Deo Patre, et Domino Jesu Christo."
       en: "Paul and Sylvanus and Timothy: to the church of the Thessalonians, in God the Father, and in the Lord Jesus Christ."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "gratias agimus Deo semper pro omnibus vobis memoriam facientes in orationibus nostris sine intermissione"
+      la: "Gratia vobis, et pax. Gratias agimus Deo semper pro omnibus vobis, memoriam vestri facientes in orationibus nostris sine intermissione,"
       en: "Grace be to you and peace. We give thanks to God always for you all; making a remembrance of you in our prayers without ceasing,"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "memores operis fidei vestrae et laboris et caritatis et sustinentiae spei Domini nostri Iesu Christi ante Deum et Patrem nostrum"
+      la: "memores operis fidei vestrae, et laboris, et caritatis, et sustinentiae spei Domini nostri Jesu Christi, ante Deum et Patrem nostrum:"
       en: "Being mindful of the work of your faith, and labour, and charity, and of the enduring of the hope of our Lord Jesus Christ before God and our Father:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "scientes fratres dilecti a Deo electionem vestram"
+      la: "scientes, fratres dilecti a Deo, electionem vestram:"
       en: "Knowing, brethren beloved of God, your election:"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "quia evangelium nostrum non fuit ad vos in sermone tantum sed et in virtute et in Spiritu Sancto et in plenitudine multa sicut scitis quales fuerimus vobis propter vos"
+      la: "quia Evangelium nostrum non fuit ad vos in sermone tantum, sed et in virtute, et in Spiritu Sancto, et in plenitudine multa, sicut scitis quales fuerimus in vobis propter vos."
       en: "For our gospel hath not been unto you in word only, but in power also, and in the Holy Ghost, and in much fulness, as you know what manner of men we have been among you for your sakes."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et vos imitatores nostri facti estis et Domini excipientes verbum in tribulatione multa cum gaudio Spiritus Sancti"
+      la: "Et vos imitatores nostri facti estis, et Domini, excipientes verbum in tribulatione multa, cum gaudio Spiritus Sancti:"
       en: "And you became followers of us, and of the Lord; receiving the word in much tribulation, with joy of the Holy Ghost:"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "ita ut facti sitis forma omnibus credentibus in Macedonia et in Achaia"
+      la: "ita ut facti sitis forma omnibus credentibus in Macedonia, et in Achaia."
       en: "So that you were made a pattern to all that believe in Macedonia and in Achaia."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "a vobis enim diffamatus est sermo Domini non solum in Macedonia et in Achaia sed in omni loco fides vestra quae est ad Deum profecta est ita ut non sit nobis necesse quicquam loqui"
+      la: "A vobis enim diffamatus est sermo Domini, non solum in Macedonia, et in Achaia, sed et in omni loco fides vestra, quae est ad Deum, profecta est ita ut non sit nobis necesse quidquam loqui."
       en: "For from you was spread abroad the word of the Lord, not only in Macedonia, and in Achaia, but also in every place, your faith which is towards God, is gone forth, so that we need not to speak any thing."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "ipsi enim de nobis adnuntiant qualem introitum habuerimus ad vos et quomodo conversi estis ad Deum a simulacris servire Deo vivo et vero"
+      la: "Ipsi enim de nobis annuntiant qualem introitum habuerimus ad vos: et quomodo conversi estis ad Deum a simulacris, servire Deo vivo, et vero,"
       en: "For they themselves relate of us, what manner of entering in we had unto you; and how you turned to God from idols, to serve the living and true God."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et expectare Filium eius de caelis quem suscitavit ex mortuis Iesum qui eripuit nos ab ira ventura"
+      la: "et exspectare Filium ejus de caelis ( quem suscitavit a mortuis) Jesum, qui eripuit nos ab ira ventura."
       en: "And to wait for his Son from heaven (whom he raised up from the dead,) Jesus, who hath delivered us from the wrath to come."
     status: { la: verified, en: verified }

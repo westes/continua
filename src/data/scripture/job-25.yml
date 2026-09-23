@@ -1,37 +1,37 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: job
 chapter: 25
 verses:
   - n: 1
     text:
-      la: "respondens autem Baldad Suites dixit"
+      la: "Respondens autem Baldad Suhites, dixit:"
       en: "Then Baldad the Suhite answered, and I said:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "potestas et terror apud eum est qui facit concordiam in sublimibus suis"
+      la: "Potestas et terror apud eum est, qui facit concordiam in sublimibus suis."
       en: "Power and terror are with him, who maketh peace in his high places."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "numquid est numerus militum eius et super quem non surget lumen illius"
+      la: "Numquid est numerus militum ejus? et super quem non surget lumen illius?"
       en: "Is there any numbering of his soldiers? and upon whom shall not his light arise?"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "numquid iustificari potest homo conparatus Deo aut apparere mundus natus de muliere"
+      la: "Numquid justificari potest homo comparatus Deo? aut apparere mundus natus de muliere?"
       en: "Can man be justified compared with God, or he that is born of a woman appear clean?"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "ecce etiam luna non splendet et stellae non sunt mundae in conspectu eius"
+      la: "Ecce luna etiam non splendet, et stellae non sunt mundae in conspectu ejus:"
       en: "Behold even the moon doth not shine, and the stars are not pure in his sight."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "quanto magis homo putredo et filius hominis vermis"
+      la: "quanto magis homo putredo, et filius hominis vermis!"
       en: "How much less man that is rottenness and the son of man who is a worm?"
     status: { la: verified, en: verified }

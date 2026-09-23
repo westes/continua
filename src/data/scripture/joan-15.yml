@@ -1,8 +1,7 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for joan 15 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: joan
 chapter: 15
 verses:
@@ -28,7 +27,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "Ego sum vitis, vos palmites : qui manet in me, et ego in eo, hic fert fructum multum, quia sine me nihil potestis facere."
+      la: "Ego sum vitis, vos palmites: qui manet in me, et ego in eo, hic fert fructum multum, quia sine me nihil potestis facere."
       en: "I am the vine: you the branches: he that abideth in me, and I in him, the same beareth much fruit: for without me you can do nothing."
     status: { la: verified, en: verified }
   - n: 6
@@ -58,7 +57,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "Haec locutus sum vobis : ut gaudium meum in vobis sit, et gaudium vestrum impleatur."
+      la: "Haec locutus sum vobis: ut gaudium meum in vobis sit, et gaudium vestrum impleatur."
       en: "These things I have spoken to you, that my joy may be in you, and your joy may be filled."
     status: { la: verified, en: verified }
   - n: 12
@@ -78,17 +77,17 @@ verses:
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "Jam non dicam vos servos : quia servus nescit quid faciat dominus ejus. Vos autem dixi amicos : quia omnia quaecumque audivi a Patre meo, nota feci vobis."
+      la: "Jam non dicam vos servos: quia servus nescit quid faciat dominus ejus. Vos autem dixi amicos: quia omnia quaecumque audivi a Patre meo, nota feci vobis."
       en: "I will not now call you servants: for the servant knoweth not what his lord doth. But I have called you friends: because all things whatsoever I have heard of my Father, I have made known to you."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "Non vos me elegistis, sed ego elegi vos, et posui vos ut eatis, et fructum afferatis, et fructus vester maneat : ut quodcumque petieritis Patrem in nomine meo, det vobis."
+      la: "Non vos me elegistis, sed ego elegi vos, et posui vos ut eatis, et fructum afferatis, et fructus vester maneat: ut quodcumque petieritis Patrem in nomine meo, det vobis."
       en: "You have not chosen me: but I have chosen you; and have appointed you, that you should go, and should bring forth fruit; and your fruit should remain: that whatsoever you shall ask of the Father in my name, he may give it you."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "Haec mando vobis : ut diligatis invicem."
+      la: "Haec mando vobis: ut diligatis invicem."
       en: "These things I command you, that you love one another."
     status: { la: verified, en: verified }
   - n: 18
@@ -98,22 +97,22 @@ verses:
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "Si de mundo fuissetis, mundus quod suum erat diligeret : quia vero de mundo non estis, sed ego elegi vos de mundo, propterea odit vos mundus."
+      la: "Si de mundo fuissetis, mundus quod suum erat diligeret: quia vero de mundo non estis, sed ego elegi vos de mundo, propterea odit vos mundus."
       en: "If you had been of the world, the world would love its own: but because you are not of the world, but I have chosen you out of the world, therefore the world hateth you."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "Mementote sermonis mei, quem ego dixi vobis : non est servus major domino suo. Si me persecuti sunt, et vos persequentur; si sermonem meum servaverunt, et vestrum servabunt."
+      la: "Mementote sermonis mei, quem ego dixi vobis: non est servus major domino suo. Si me persecuti sunt, et vos persequentur; si sermonem meum servaverunt, et vestrum servabunt."
       en: "Remember my word that I said to you: The servant is not greater than his master. If they have persecuted me, they will also persecute you: if they have kept my word, they will keep yours also."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "Sed haec omnia facient vobis propter nomen meum : quia nesciunt eum qui misit me."
+      la: "Sed haec omnia facient vobis propter nomen meum: quia nesciunt eum qui misit me."
       en: "But all these things they will do to you for my name's sake: because they know not him who sent me."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "Si non venissem, et locutus fuissem eis, peccatum non haberent : nunc autem excusationem non habent de peccato suo."
+      la: "Si non venissem, et locutus fuissem eis, peccatum non haberent: nunc autem excusationem non habent de peccato suo."
       en: "If I had not come, and spoken to them, they would not have sin; but now they have no excuse for their sin."
     status: { la: verified, en: verified }
   - n: 23
@@ -123,12 +122,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "Si opera non fecissem in eis quae nemo alius fecit, peccatum non haberent : nunc autem et viderunt, et oderunt et me, et Patrem meum."
+      la: "Si opera non fecissem in eis quae nemo alius fecit, peccatum non haberent: nunc autem et viderunt, et oderunt et me, et Patrem meum."
       en: "If I had not done among them the works that no other man hath done, they would not have sin; but now they have both seen and hated both me and my Father."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "Sed ut adimpleatur sermo, qui in lege eorum scriptus est : Quia odio habuerunt me gratis."
+      la: "Sed ut adimpleatur sermo, qui in lege eorum scriptus est: Quia odio habuerunt me gratis."
       en: "But that the word may be fulfilled which is written in their law: They hated me without cause."
     status: { la: verified, en: verified }
   - n: 26

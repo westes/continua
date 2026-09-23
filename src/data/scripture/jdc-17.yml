@@ -1,72 +1,72 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: jdc
 chapter: 17
 verses:
   - n: 1
     text:
-      la: "fuit eo tempore vir quidam de monte Ephraim nomine Michas"
+      la: "Fuit eo tempore vir quidam de monte Ephraim nomine Michas,"
       en: "There was at that time a man of mount Ephraim whose name was Michas,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "qui dixit matri suae mille centum argenteos quos separaveras tibi et super quibus me audiente iuraveras ecce ego habeo et apud me sunt cui illa respondit benedictus filius meus Domino"
+      la: "qui dixit matri suae: Mille et centum argenteos, quos separaveras tibi, et super quibus me audiente juraveras, ecce ego habeo, et apud me sunt. Cui illa respondit: Benedictus filius meus Domino."
       en: "Who said to his mother: The eleven hundred pieces of silver, which thou hadst put aside for thyself, and concerning which thou didst swear in my hearing, behold I have, and they are with me. And she said to him: Blessed be my son by the Lord."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "reddidit ergo eos matri suae quae dixerat ei consecravi et vovi argentum hoc Domino ut de manu mea suscipiat filius meus et faciat sculptile atque conflatile et nunc trado illud tibi"
+      la: "Reddidit ergo eos matri suae, quae dixerat ei: Consecravi et vovi hoc argentum Domino, ut de manu mea suscipiat filius meus, et faciat sculptile atque conflatile: et nunc trado illud tibi."
       en: "So he restored them to his mother, who said to him: I have consecrated and vowed this silver to the Lord, that my son may receive it at my hand, and make a graven and a molten god, so now I deliver it to thee."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "reddidit igitur matri suae quae tulit ducentos argenteos et dedit eos argentario ut faceret ex eis sculptile atque conflatile quod fuit in domo Micha"
+      la: "Reddidit igitur eos matri suae: quae tulit ducentos argenteos, et dedit eos argentario, ut faceret ex eis sculptile atque conflatile, quod fuit in domo Michae."
       en: "And he restored them to his mother: and she took two hundred pieces of silver and gave them to the silversmith, to make of them a graven and a molten god, which was in the house of Michas."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "qui aediculam quoque in ea Deo separavit et fecit ephod ac therafin id est vestem sacerdotalem et idola implevitque unius filiorum suorum manum et factus est ei sacerdos"
+      la: "Qui aediculam quoque in ea deo separavit, et fecit ephod, et theraphim, id est, vestem sacerdotalem, et idola: implevitque unius filiorum suorum manum, et factus est ei sacerdos."
       en: "And he separated also therein a little temple for the god, and made an ephod, and theraphim, that is to say, a priestly garment, and idols: and he filled the hand of one of his sons, and he became his priest."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "in diebus illis non erat rex in Israhel sed unusquisque quod sibi rectum videbatur hoc faciebat"
+      la: "In diebus illis non erat rex in Israel, sed unusquisque quod sibi rectum videbatur, hoc faciebat."
       en: "In those days there was no king in Israel, but every one did that which seemed right to himself."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "fuit quoque alter adulescens de Bethleem Iuda et cognatione eius eratque ipse Levites et habitabat ibi"
+      la: "Fuit quoque alter adolescens de Bethlehem Juda, ex cognatione ejus: eratque ipse Levites, et habitabat ibi."
       en: "There was also another young man of Bethlehem Juda, of the kindred thereof: and he was a Levite, and dwelt there."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "egressusque de civitate Bethleem peregrinari voluit ubicumque sibi commodum repperisset cumque venisset in monte Ephraim iter faciens et declinasset parumper in domum Micha"
+      la: "Egressusque de civitate Bethlehem, peregrinari voluit ubicumque sibi commodum reperisset. Cumque venisset in montem Ephraim, iter faciens, et declinasset parumper in domum Michae,"
       en: "Now he went out from the city of Bethlehem, and desired to sojourn wheresoever he should find it convenient for him. And when he was come to mount Ephraim, as he was on his journey, and had turned aside a little into the house of Michas,"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "interrogatus est ab eo unde venis qui respondit Levita sum de Bethleem Iuda et vado ut habitem ubi potuero et utile mihi esse perspexero"
+      la: "interrogatus est ab eo under venisset. Qui respondit: Levita sum de Bethlehem Juda, et vado ut habitem ubi potuero, et utile mihi esse perspexero."
       en: "He was asked by him whence he came. And he answered: I am a Levite of Bethlehem Juda, and I am going to dwell where I can, and where I shall find a place to my advantage."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "mane inquit apud me et esto mihi parens ac sacerdos daboque tibi per annos singulos decem argenteos ac vestem duplicem et quae ad victum necessaria sunt"
+      la: "Dixitque Michas: Mane apud me, et esto mihi parens ac sacerdos: daboque tibi per annos singulos decem argenteos, ac vestem duplicem, et quae ad victum sunt necessaria."
       en: "And Michas said: Stay with me, and be unto me a father and a priest, and I will give thee every year ten pieces of silver, and a double suit of apparel, and thy victuals."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "adquievit et mansit apud hominem fuitque illi quasi unus de filiis"
+      la: "Acquievit, et mansit apud hominem, fuitque illi quasi unus de filiis."
       en: "He was content, and abode with the man, and was unto him as one of his sons."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "implevitque Micha manum eius et habuit apud se puerum sacerdotem"
+      la: "Implevitque Michas manum ejus, et habuit puerum sacerdotem apud se:"
       en: "And Michas filled his hand, and had the young man with him, for his priest, saying:"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "nunc scio dicens quod bene mihi faciat Deus habenti levitici generis sacerdotem"
+      la: "Nunc scio, dicens, quod benefaciet mihi Deus habenti Levitici generis sacerdotem."
       en: "Now I know God will do me good, since I have a priest of the race of the Levites."
     status: { la: verified, en: verified }

@@ -1,72 +1,72 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1cor
 chapter: 8
 verses:
   - n: 1
     text:
-      la: "de his autem quae idolis sacrificantur scimus quia omnes scientiam habemus scientia inflat caritas vero aedificat"
+      la: "De iis autem quae idolis sacrificantur, scimus quia omnes scientiam habemus. Scientia inflat, caritas vero aedificat."
       en: "Now concerning those things that are sacrificed to idols, we know that we all have knowledge. Knowledge puffeth up; but charity edifieth."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "si quis se existimat scire aliquid nondum cognovit quemadmodum oporteat eum scire"
+      la: "Si quis autem se existimat scire aliquid, nondum cognovit quemadmodum oporteat eum scire."
       en: "And if any man think that he knoweth any thing, he hath not yet known as he ought to know."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "si quis autem diligit Deum hic cognitus est ab eo"
-      en: "But if any any love God, the same is known by him."
+      la: "Si quis autem diligit Deum, hic cognitus est ab eo."
+      en: "But if any man love God, the same is known by him."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "de escis autem quae idolis immolantur scimus quia nihil est idolum in mundo et quod nullus Deus nisi unus"
+      la: "De escis autem quae idolis immolantur, scimus quia nihil est idolum in mundo, et quod nullus est Deus, nisi unus."
       en: "But as for the meats that are sacrificed to idols, we know that an idol is nothing in the world, and that there is no God but one."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "nam et si sunt qui dicantur dii sive in caelo sive in terra siquidem sunt dii multi et domini multi"
-      en: "For although there be that are called gods, either in heaven or on earth (for there be gods many, and lords many);"
+      la: "Nam etsi sunt qui dicantur dii sive in caelo, sive in terra ( siquidem sunt dii multi, et domini multi):"
+      en: "For although there be that are called gods, either in heaven or on earth (for there be gods many, and lords many)."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "nobis tamen unus Deus Pater ex quo omnia et nos in illum et unus Dominus Iesus Christus per quem omnia et nos per ipsum"
+      la: "nobis tamen unus est Deus, Pater, ex quo omnia, et nos in illum: et unus Dominus Jesus Christus, per quem omnia, et nos per ipsum."
       en: "Yet to us there is but one God, the Father, of whom are all things, and we unto him; and one Lord Jesus Christ, by whom are all things, and we by him."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "sed non in omnibus est scientia quidam autem conscientia usque nunc idoli quasi idolothytum manducant et conscientia ipsorum cum sit infirma polluitur"
+      la: "Sed non in omnibus est scientia. Quidam autem cum conscientia usque nunc idoli, quasi idolothytum manducant: et conscientia ipsorum cum sit infirma, polluitur."
       en: "But there is not knowledge in every one. For some until this present, with conscience of the idol: eat as a thing sacrificed to an idol, and their conscience, being weak, is defiled."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "esca autem nos non commendat Deo neque si non manducaverimus deficiemus neque si manducaverimus abundabimus"
+      la: "Esca autem nos non commendat Deo. Neque enim si manducaverimus, abundabimus: neque si non manducaverimus, deficiemus."
       en: "But meat doth not commend us to God. For neither, if we eat, shall we have the more; nor, if we eat not, shall we have the less."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "videte autem ne forte haec licentia vestra offendiculum fiat infirmibus"
+      la: "Videte autem ne forte haec licentia vestra offendiculum fiat infirmis."
       en: "But take heed lest perhaps this your liberty become a stumblingblock to the weak."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "si enim quis viderit eum qui habet scientiam in idolio recumbentem nonne conscientia eius cum sit infirma aedificabitur ad manducandum idolothyta"
-      en: "For if a man see him that hath knowledge sit at meat in the idol's temple, shall not his conscience, being weak, be emboldened to eat those things which are sacrificed to idols ?"
+      la: "Si enim quis viderit eum, qui habet scientiam, in idolio recumbentem: nonne conscientia ejus, cum sit infirma, aedificabitur ad manducandum idolothyta?"
+      en: "For if a man see him that hath knowledge sit at meat in the idol's temple, shall not his conscience, being weak, be emboldened to eat those things which are sacrificed to idols?"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et peribit infirmus in tua scientia frater propter quem Christus mortuus est"
-      en: "And through thy knowledge shall the weak brother perish, for whom Christ hath died ?"
+      la: "Et peribit infirmus in tua scientia, frater, propter quem Christus mortuus est?"
+      en: "And through thy knowledge shall the weak brother perish, for whom Christ hath died?"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "sic autem peccantes in fratres et percutientes conscientiam eorum infirmam in Christo peccatis"
+      la: "Sic autem peccantes in fratres, et percutientes conscientiam eorum infirmam, in Christum peccatis."
       en: "Now when you sin thus against the brethren, and wound their weak conscience, you sin against Christ."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "quapropter si esca scandalizat fratrem meum non manducabo carnem in aeternum ne fratrem meum scandalizem"
+      la: "Quapropter si esca scandalizat fratrem meum, non manducabo carnem in aeternum, ne fratrem meum scandalizem."
       en: "Wherefore, if meat scandalize my brother, I will never eat flesh, lest I should scandalize my brother."
     status: { la: verified, en: verified }

@@ -1,172 +1,172 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: prov
 chapter: 1
 verses:
   - n: 1
     text:
-      la: "parabolae Salomonis filii David regis Israhel"
+      la: "Parabolae Salomonis, filii David, regis Israel,"
       en: "The parables of Solomon, the son of David, king of Israel."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "ad sciendam sapientiam et disciplinam"
+      la: "ad sciendam sapientiam et disciplinam;"
       en: "To know wisdom, and instruction:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "ad intellegenda verba prudentiae et suscipiendam eruditionem doctrinae iustitiam et iudicium et aequitatem"
+      la: "ad intelligenda verba prudentiae, et suscipiendam erudtionem doctrinae, justitiam, et judicium, et aequitatem:"
       en: "To understand the words of prudence: and to receive the instruction of doctrine, justice, and judgment, and equity:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "ut detur parvulis astutia adulescenti scientia et intellectus"
+      la: "ut detur parvulis astutia, adolescenti scientia et intellectus."
       en: "To give subtilty to little ones, to the young man knowledge and understanding."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "audiens sapiens sapientior erit et intellegens gubernacula possidebit"
+      la: "Audiens sapiens, sapientior erit, et intelligens gubernacula possidebit."
       en: "A wise man shall hear and shall be wiser: and he that understandeth, shall possess governments."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "animadvertet parabolam et interpretationem verba sapientium et enigmata eorum"
+      la: "Animadvertet parabolam et interpretationem, verba sapientum et aenigmata eorum."
       en: "He shall understand a parable, and the interpretation, the words of the wise, and their mysterious sayings."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "timor Domini principium scientiae sapientiam atque doctrinam stulti despiciunt"
+      la: "Timor Domini principium sapientiae; sapientiam atque doctrinam stulti despiciunt."
       en: "The fear of the Lord is the beginning of wisdom. Fools despise wisdom and instruction."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "audi fili mi disciplinam patris tui et ne dimittas legem matris tuae"
-      en: "My son, hear the instruction of thy father, and forsake not the law of thy mother :"
+      la: "Audi, fili mi, disciplinam patris tui, et ne dimittas legem matris tuae:"
+      en: "My son, hear the instruction of thy father, and forsake not the law of thy mother:"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "ut addatur gratia capiti tuo et torques collo tuo"
+      la: "ut addatur gratia capiti tuo, et torques collo tuo."
       en: "That grace may be added to thy head, and a chain of gold to thy neck."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "fili mi si te lactaverint peccatores ne adquiescas"
+      la: "Fili mi, si te lactaverint peccatores, ne acquiescas eis."
       en: "My son, if sinners shall entice thee, consent not to them."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "si dixerint veni nobiscum insidiemur sanguini abscondamus tendiculas contra insontem frustra"
+      la: "Si dixerint: Veni nobiscum, insidiemur sanguini; abscondamus tendiculas contra insontem frustra;"
       en: "If they shall say: Come with us, let us lie in wait for blood, let us hide snares for the innocent without cause:"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "degluttiamus eum sicut infernus viventem et integrum quasi descendentem in lacum"
+      la: "deglutiamus eum sicut infernus viventem, et integrum quasi descendentem in lacum:"
       en: "Let us swallow him up alive like hell, and whole as one that goeth down into the pit."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "omnem pretiosam substantiam repperiemus implebimus domos nostras spoliis"
+      la: "omnem pretiosam substantiam reperiemus; implebimus domos nostras spoliis;"
       en: "We shall find all precious substance, we shall fill our houses with spoils."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "sortem mitte nobiscum marsuppium unum sit omnium nostrum"
+      la: "sortem mitte nobiscum, marsupium unum sit omnium nostrum:"
       en: "Cast in thy lot with us, let us all have one purse."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "fili mi ne ambules cum eis prohibe pedem tuum a semitis eorum"
+      la: "fili mi, ne ambules cum eis; prohibe pedem tuum a semitis eorum:"
       en: "My son, walk not thou with them, restrain thy foot from their paths."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "pedes enim illorum ad malum currunt et festinant ut effundant sanguinem"
+      la: "pedes enim illorum ad malum currunt, et festinant ut effundant sanguinem."
       en: "For their feet run to evil, and make haste to shed blood."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "frustra autem iacitur rete ante oculos pinnatorum"
+      la: "Frustra autem jacitur rete ante oculos pennatorum."
       en: "But a net is spread in vain before the eyes of them that have wings."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "ipsique contra sanguinem suum insidiantur et moliuntur fraudes contra animas suas"
+      la: "Ipsi quoque contra sanguinem suum insidiantur, et moliuntur fraudes contra animas suas."
       en: "And they themselves lie in wait for their own blood, and practise deceits against their own souls."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "sic semitae omnis avari animas possidentium rapiunt"
+      la: "Sic semitae omnis avari: animas possidentium rapiunt."
       en: "So the wage of every covetous man destroy the souls of the possessors."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "sapientia foris praedicat in plateis dat vocem suam"
+      la: "Sapientia foris praedicat; in plateis dat vocem suam:"
       en: "Wisdom preacheth abroad, she uttereth her voice in the streets:"
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "in capite turbarum clamitat in foribus portarum urbis profert verba sua dicens"
+      la: "in capite turbarum clamitat; in foribus portarum urbis profert verba sua, dicens:"
       en: "At the head of multitudes she crieth out, in the entrance of the gates of the city she uttereth her words, saying:"
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "usquequo parvuli diligitis infantiam et stulti ea quae sibi sunt noxia cupiunt et inprudentes odibunt scientiam"
+      la: "Usquequo, parvuli, diligitis infantiam, et stulti ea quae sibi sunt noxia cupient, et imprudentes odibunt scientiam?"
       en: "O children, how long will you love childishness, and fools covet those things which are hurtful to themselves, and the unwise hate knowledge?"
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "convertimini ad correptionem meam en proferam vobis spiritum meum et ostendam verba mea"
+      la: "convertimini ad correptionem meam. En proferam vobis spiritum meum, et ostendam vobis verba mea."
       en: "Turn ye at my reproof: behold I will utter my spirit to you, and will shew you my words."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "quia vocavi et rennuistis extendi manum meam et non fuit qui aspiceret"
+      la: "Quia vocavi, et renuistis; extendi manum meam, et non fuit qui aspiceret:"
       en: "Because I called, and you refused: I stretched out my hand, and there was none that regarded."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "despexistis omne consilium meum et increpationes meas neglexistis"
+      la: "despexistis omne consilium meum, et increpationes meas neglexistis."
       en: "You have despised all my counsel, and have neglected my reprehensions."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "ego quoque in interitu vestro ridebo et subsannabo cum vobis quod timebatis advenerit"
+      la: "Ego quoque in interitu vestro ridebo, et subsannabo cum vobis id quod timebatis advenerit."
       en: "I also will laugh in your destruction, and will mock when that shall come to you which you feared."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "cum inruerit repentina calamitas et interitus quasi tempestas ingruerit quando venerit super vos tribulatio et angustia"
+      la: "Cum irruerit repentina calamitas, et interitus quasi tempestas ingruerit; quando venerit super vos tribulatio et angustia;"
       en: "When sudden calamity shall fall on you, and destruction, as a tempest, shall be at hand: when tribulation and distress shall come upon you:"
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "tunc invocabunt me et non exaudiam mane consurgent et non invenient me"
+      la: "tunc invocabunt me, et non exaudiam; mane consurgent, et non invenient me:"
       en: "Then shall they call upon me, and I will not hear: they shall rise in the morning and shall not find me:"
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "eo quod exosam habuerint disciplinam et timorem Domini non susceperint"
+      la: "eo quod exosam habuerint disciplinam, et timorem Domini non susceperint,"
       en: "Because they have hated instruction and received not the fear of the Lord,"
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "nec adquieverint consilio meo et detraxerint universae correptioni meae"
+      la: "nec acquieverint consilio meo, et detraxerint universae correptioni meae."
       en: "Nor consented to my counsel, but despised all my reproof."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "comedent igitur fructus viae suae suisque consiliis saturabuntur"
+      la: "Comedent igitur fructus viae suae, suisque consiliis saturabuntur."
       en: "Therefore they shall eat the fruit of their own way, and shall be filled with their own devices."
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "aversio parvulorum interficiet eos et prosperitas stultorum perdet illos"
+      la: "Aversio parvulorum interficiet eos, et prosperitas stultorum perdet illos."
       en: "The turning away of little ones shall kill them, and the prosperity of fools shall destroy them."
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "qui autem me audierit absque terrore requiescet et abundantia perfruetur malorum timore sublato"
+      la: "Qui autem me audierit absque terrore requiescet, et abundantia perfruetur, timore malorum sublato."
       en: "But he that shall hear me, shall rest without terror, and shall enjoy abundance, without fear of evils."
     status: { la: verified, en: verified }

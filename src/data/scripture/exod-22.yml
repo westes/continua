@@ -1,162 +1,162 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: exod
 chapter: 22
 verses:
   - n: 1
     text:
-      la: "si quis furatus fuerit bovem aut ovem et occiderit vel vendiderit quinque boves pro uno bove restituet et quattuor oves pro una ove"
+      la: "Si quis furatus fuerit bovem aut ovem, et occiderit vel vendiderit: quinque boves pro uno bove restituet, et quatuor oves pro una ove."
       en: "If any man steal an ox or a sheep, and kill or sell it: he shall restore five oxen for one ox, and four sheep for one sheep."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "si effringens fur domum sive suffodiens fuerit inventus et accepto vulnere mortuus fuerit percussor non erit reus sanguinis"
+      la: "Si effringens fur domum sive suffodiens fuerit inventus, et accepto vulnere mortuus fuerit, percussor non erit reus sanguinis."
       en: "If a thief be found breaking open a house or undermining it, and be wounded so as to die: he that slew him shall not be guilty of blood."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "quod si orto sole hoc fecerit homicidium perpetravit et ipse morietur si non habuerit quod pro furto reddat venundabitur"
+      la: "Quod si orto sole hoc fecerit, homicidium perpetravit, et ipse morietur. Si non habuerit quod pro furto reddat, ipse venundabitur."
       en: "But if he did this when the sun is risen, he hath committed murder, and he shall die. If he have not wherewith to make restitution for the theft, he shall be sold."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "si inventum fuerit apud eum quod furatus est vivens sive bos sive asinus sive ovis duplum restituet"
+      la: "Si inventum fuerit apud eum quod furatus est, vivens: sive bos, sive asinus, sive ovis, duplum restituet."
       en: "If that which he stole be found with him, alive, either ox, or ass, or sheep: he shall restore double."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "si laeserit quispiam agrum vel vineam et dimiserit iumentum suum ut depascatur aliena quicquid optimum habuerit in agro suo vel in vinea pro damni aestimatione restituet"
+      la: "Si laeserit quispiam agrum vel vineam, et dimiserit jumentum suum ut depascatur aliena: quidquid optimum habuerit in agro suo, vel in vinea, pro damni aestimatione restituet."
       en: "If any man hurt a field or a vineyard, and put in his beast to feed upon that which is other men's: he shall restore the best of whatsoever he hath in his own field, or in his vineyard, according to the estimation of the damage."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "si egressus ignis invenerit spinas et conprehenderit acervos frugum sive stantes segetes in agris reddet damnum qui ignem succenderit"
+      la: "Si egressus ignis invenerit spinas, et comprehenderit acervos frugum, sive stantes segetes in agris, reddet damnum qui ignem succenderit."
       en: "If a fire breaking out light upon thorns, and catch stacks of corn, or corn standing in the fields, he that kindled the fire shall make good the loss."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "si quis commendaverit amico pecuniam aut vas in custodiam et ab eo qui susceperat furto ablata fuerint si invenitur fur duplum reddet"
+      la: "Si quis commendaverit amico pecuniam aut vas in custodiam, et ab eo, qui susceperat, furto ablata fuerint: si invenitur fur, duplum reddet:"
       en: "If a man deliver money, or any vessel unto his friend to keep, and they be stolen away from him that received them: if the thief be found he shall restore double:"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "si latet dominus domus adplicabitur ad deos et iurabit quod non extenderit manum in rem proximi sui"
+      la: "si latet fur, dominus domus applicabitur ad deos, et jurabit quod non extenderit manum in rem proximi sui,"
       en: "If the thief be not known, the master of the house shall be brought to the gods, and shall swear that he did not lay his hand upon his neighbour's goods,"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "ad perpetrandam fraudem tam in bove quam in asino et ove ac vestimento et quicquid damnum inferre potest ad deos utriusque causa perveniet et si illi iudicaverint duplum restituet proximo suo"
+      la: "ad perpetrandam fraudem, tam in bove quam in asino, et ove ac vestimento, et quidquid damnum inferre potest: ad deos utriusque causa perveniet, et si illi judicaverit, duplum restituet proximo suo."
       en: "To do any fraud, either in ox, or in ass, or sheep, or raiment, or any thing that may bring damage: the cause of both parties shall come to the gods: and if they give judgment, he shall restore double to his neighbour."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "si quis commendaverit proximo suo asinum bovem ovem et omne iumentum ad custodiam et mortuum fuerit aut debilitatum vel captum ab hostibus nullusque hoc viderit"
+      la: "Si quis commendaverit proximo suo asinum, bovem, ovem, et omne jumentum ad custodiam, et mortuum fuerit, aut debilitatum, vel captum ab hostibus, nullusque hoc viderit:"
       en: "If a man deliver ass, ox, sheep, or any beast, to his neighbour's custody, and it die, or be hurt, or be taken by enemies, and no man saw it:"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "iusiurandum erit in medio quod non extenderit manum ad rem proximi sui suscipietque dominus iuramentum et ille reddere non cogetur"
+      la: "jusjurandum erit in medio, quod non extenderit manum ad rem proximi sui: suscipietque dominus juramentum, et ille reddere non cogetur."
       en: "There shall be an oath between them, that he did not put forth his hand to his neighbour's goods: and the owner shall accept of the oath; and he shall not be compelled to make restitution."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "quod si furto ablatum fuerit restituet damnum domino"
+      la: "Quod si furto ablatum fuerit, restituet damnum domino;"
       en: "But if it were taken away by stealth, he shall make the loss good to the owner."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "si comestum a bestia deferet ad eum quod occisum est et non restituet"
+      la: "si comestum a bestia, deferat ad eum quod occisum est, et non restituet."
       en: "If it were eaten by a beast, let him bring to him that which was slain, and he shall not make restitution."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "qui a proximo suo quicquam horum mutuo postularit et debilitatum aut mortuum fuerit domino non praesente reddere conpelletur"
+      la: "Qui a proximo suo quidquam horum mutuo postulaverit, et debilitatum aut mortuum fuerit domino non praesente, reddere compelletur."
       en: "If a man borrow of his neighbour any of these things, and it be hurt or die, the owner not being present, he shall be obliged to make restitution."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "quod si inpraesentiarum fuit dominus non restituet maxime si conductum venerat pro mercede operis sui"
+      la: "Quod si impraesentiarum dominus fuerit, non restituet, maxime si conductum venerat pro mercede operis sui."
       en: "But if the owner be present, he shall not make restitution, especially if it were hired and came for the hire of his work."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "si seduxerit quis virginem necdum desponsatam et dormierit cum ea dotabit eam et habebit uxorem"
+      la: "Si seduxerit quis virginem necdum desponsatam, dormieritque cum ea: dotabit eam, et habebit eam uxorem."
       en: "If a man seduce a virgin not yet espoused, and lie with her: he shall endow her, and have her to wife."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "si pater virginis dare noluerit reddet pecuniam iuxta modum dotis quam virgines accipere consuerunt"
+      la: "Si pater virginis dare noluerit, reddet pecuniam juxta modum dotis, quam virgines accipere consueverunt."
       en: "If the maid's father will not give her to him, he shall give money according to the dowry, which virgins are wont to receive."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "maleficos non patieris vivere"
+      la: "Maleficos non patieris vivere."
       en: "Wizards thou shalt not suffer to live."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "qui coierit cum iumento morte moriatur"
+      la: "Qui coierit cum jumento, morte moriatur."
       en: "Whosoever copulateth with a beast shall be put to death."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "qui immolat diis occidetur praeter Domino soli"
+      la: "Qui immolat diis, occidetur, praeterquam Domino soli."
       en: "He that sacrificeth to gods, shall be put to death, save only to the Lord."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "advenam non contristabis neque adfliges eum advenae enim et ipsi fuistis in terra Aegypti"
+      la: "Advenam non contristabis, neque affliges eum: advenae enim et ipsi fuistis in terra Aegypti."
       en: "Thou shalt not molest a stranger, nor afflict him: for yourselves also were strangers in the land of Egypt."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "viduae et pupillo non nocebitis"
+      la: "Viduae et pupillo non nocebitis."
       en: "You shall not hurt a widow or an orphan."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "si laeseritis eos vociferabuntur ad me et ego audiam clamorem eorum"
+      la: "Si laeseritis eos, vociferabuntur ad me, et ego audiam clamorem eorum:"
       en: "If you hurt them they will cry out to me, and I will hear their cry:"
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "et indignabitur furor meus percutiamque vos gladio et erunt uxores vestrae viduae et filii vestri pupilli"
+      la: "et indignabitur furor meus, percutiamque vos gladio, et erunt uxores vestrae viduae, et filii vestri pupilli."
       en: "And my rage shall be enkindled, and I will strike you with the sword, and your wives shall be widows, and your children fatherless."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "si pecuniam mutuam dederis populo meo pauperi qui habitat tecum non urgues eum quasi exactor nec usuris opprimes"
+      la: "Si pecuniam mutuam dederis populo meo pauperi qui habitat tecum, non urgebis eum quasi exactor, nec usuris opprimes."
       en: "If thou lend money to any of my people that is poor, that dwelleth with thee, thou shalt not be hard upon them as an extortioner, nor oppress them with usuries."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "si pignus a proximo tuo acceperis vestimentum ante solis occasum redde ei"
+      la: "Si pignus a proximo tuo acceperis vestimentum, ante solis occasum reddes ei."
       en: "If thou take of thy neighbour a garment in pledge, thou shalt give it him again before sunset."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "ipsum enim est solum quo operitur indumentum carnis eius nec habet aliud in quo dormiat si clamaverit ad me exaudiam eum quia misericors sum"
+      la: "Ipsum enim est solum, quo operitur, indumentum carnis ejus, nec habet aliud in quo dormiat: si clamaverit ad me, exaudiam eum, quia misericors sum."
       en: "For that same is the only thing wherewith he is covered, the clothing of his body, neither hath he any other to sleep in: if he cry to me, I will hear him, because I am compassionate."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "diis non detrahes et principi populi tui non maledices"
+      la: "Diis non detrahes, et principi populi tui non maledices."
       en: "Thou shalt not speak ill of the gods, and the prince of thy people thou shalt not curse."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "decimas tuas et primitias non tardabis offerre primogenitum filiorum tuorum dabis mihi"
+      la: "Decimas tuas et primitias tuas non tardabis reddere: primogenitum filiorum tuorum dabis mihi."
       en: "Thou shalt not delay to pay thy tithes and thy firstfruits: thou shalt give the firstborn of thy sons to me."
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "de bubus quoque et ovibus similiter facies septem diebus sit cum matre sua die octavo reddes illum mihi"
+      la: "De bobus quoque, et ovibus similiter facies: septem diebus sit cum matre sua, die octava reddes illum mihi."
       en: "Thou shalt do the same with the firstborn of thy oxen also and sheep: seven days let it be with its dam, the eighth day thou shalt give it to me."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "viri sancti eritis mihi carnem quae a bestiis fuerit praegustata non comedetis sed proicietis canibus"
+      la: "Viri sancti eritis mihi: carnem, quae a bestiis fuerit praegustata, non comedetis, sed projicietis canibus."
       en: "You shall be holy men to me: the flesh that beasts have tasted of before, you shall not eat, but shall cast it to the dogs."
     status: { la: verified, en: verified }

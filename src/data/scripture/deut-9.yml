@@ -1,152 +1,152 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: deut
 chapter: 9
 verses:
   - n: 1
     text:
-      la: "audi Israhel tu transgredieris hodie Iordanem ut possideas nationes maximas et fortiores te civitates ingentes et ad caelum usque muratas"
+      la: "Audi, Israel: tu transgredieris hodie Jordanem, ut possideas nationes maximas et fortiores te, civitates ingentes, et ad caelum usque muratas,"
       en: "Hear, O Israel: Thou shalt go over the Jordan this day; to possess nations very great, and stronger than thyself, cities great, and walled up to the sky,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "populum magnum atque sublimem filios Enacim quos ipse vidisti et audisti quibus nullus potest ex adverso resistere"
+      la: "populum magnum atque sublimem, filios Enacim, quos ipse vidisti et audisti, quibus nullus potest ex adverso resistere."
       en: "A People great and tall, the sons of the Enacims, whom thou hast seen, and heard of, against whom no man is able to stand."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "scies ergo hodie quod Dominus Deus tuus ipse transibit ante te ignis devorans atque consumens qui conterat eos et deleat atque disperdat ante faciem tuam velociter sicut locutus est tibi"
+      la: "Scies ergo hodie quod Dominus Deus tuus ipse transibit ante te, ignis devorans atque consumens, qui conterat eos, et deleat atque disperdat ante faciem tuam velociter, sicut locutus est tibi:"
       en: "Thou shalt know therefore this day that the Lord thy God himself will pass over before thee, a devouring and consuming fire, to destroy and extirpate and bring them to nothing before thy face quickly, as he hath spoken to thee."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "ne dicas in corde tuo cum deleverit eos Dominus Deus tuus in conspectu tuo propter iustitiam meam introduxit me Dominus ut terram hanc possiderem cum propter impietates suas istae deletae sint nationes"
+      la: "ne dicas in corde tuo, cum deleverit eos Dominus Deus tuus in conspectu tuo: Propter justitiam meam introduxit me Dominus ut terram hanc possiderem, cum propter impietates suas istae deletae sint nationes."
       en: "Say not in thy heart, when the Lord thy God shall have destroyed them in thy sight: For my justice hath the Lord brought me in to possess this land, whereas these nations are destroyed for their wickedness."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "neque enim propter iustitias tuas et aequitatem cordis tui ingredieris ut possideas terras eorum sed quia illae egerunt impie te introeunte deletae sunt et ut conpleret verbum suum Dominus quod sub iuramento pollicitus est patribus tuis Abraham Isaac et Iacob"
+      la: "Neque enim propter justitias tuas, et aequitatem cordis tui ingredieris, ut possideas terras earum: sed quia illae egerunt impie, introeunte te deletae sunt: et ut compleret verbum suum Dominus, quod sub juramento pollicitus est patribus tuis, Abraham, Isaac, et Jacob."
       en: "For it is not for thy justices, and the uprightness of thy heart that thou shalt go in to possess their lands: but because they have done wickedly, they are destroyed at thy coming in: and that the Lord might accomplish his word, which he promised by oath to thy fathers Abraham, Isaac, and Jacob."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "scito igitur quod non propter iustitias tuas Dominus Deus tuus dederit tibi terram hanc optimam in possessionem cum durissimae cervicis sis populus"
+      la: "Scito ergo quod non propter justitias tuas Dominus Deus tuus dederit tibi terram hanc optimam in possessionem, cum durissimae cervicis sis populus."
       en: "Know therefore that the Lord thy God giveth thee not this excellent land in possession for thy justices, for thou art a very stiffnecked people."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "memento et ne obliviscaris quomodo ad iracundiam provocaveris Dominum Deum tuum in solitudine ex eo die quo es egressus ex Aegypto usque ad locum istum semper adversum Dominum contendisti"
-      en: "Remember, and forget not how then provokedst the Lord thy God to wrath in the wilderness. From the day that thou camest out of Egypt unto this place, thou hast always strove against the Lord."
+      la: "Memento, et ne obliviscaris, quomodo ad iracundiam provocaveris Dominum Deum tuum in solitudine. Ex eo die, quo egressus es ex Aegypto usque ad locum istum, semper adversum Dominum contendisti."
+      en: "Remember, and forget not how thou provokedst the Lord thy God to wrath in the wilderness. From the day that thou camest out of Egypt unto this place, thou hast always strove against the Lord."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "nam et in Horeb provocasti eum et iratus delere te voluit"
+      la: "Nam et in Horeb provocasti eum, et iratus delere te voluit,"
       en: "For in Horeb also thou didst provoke him, and he was angry, and would have destroyed thee,"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "quando ascendi in montem ut acciperem tabulas lapideas tabulas pacti quod pepigit vobiscum Dominus et perseveravi in monte quadraginta diebus ac noctibus panem non comedens et aquam non bibens"
+      la: "quando ascendi in montem, ut acciperem tabulas lapideas, tabulas pacti quod pepigit vobiscum Dominus: et perseveravi in monte quadraginta diebus ac noctibus, panem non comedens, et aquam non bibens."
       en: "When I went up into the mount to receive the tables of stone, the tables of the covenant which the Lord made with you: and I continued in the mount forty days and nights, neither eating bread, nor drinking water."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "deditque mihi Dominus duas tabulas lapideas scriptas digito Dei et continentes omnia verba quae vobis in monte locutus est de medio ignis quando contio populi congregata est"
-      en: "And the Lord gave me two tables of stone written with the finger of God, and containing all the words that he spoke to you in the mount from the midst of the Are, when the people were assembled together."
+      la: "Deditque mihi Dominus duas tabulas lapideas scriptas digito Dei, et continentes omnia verba quae vobis locutus est in monte de medio ignis, quando concio populi congregata est."
+      en: "And the Lord gave me two tables of stone written with the finger of God, and containing all the words that he spoke to you in the mount from the midst of the fire, when the people were assembled together."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "cumque transissent quadraginta dies et totidem noctes dedit mihi Dominus duas tabulas lapideas tabulas foederis"
+      la: "Cumque transissent quadraginta dies, et totidem noctes, dedit mihi Dominus duas tabulas lapideas, tabulas foederis,"
       en: "And when forty days were passed, and as many nights, the Lord gave me the two tables of stone, the tables of the covenant,"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "dixitque mihi surge et descende hinc cito quia populus tuus quos eduxisti de Aegypto deseruerunt velociter viam quam demonstrasti eis feceruntque sibi conflatile"
+      la: "dixitque mihi: Surge, et descende hinc cito: quia populus tuus, quem eduxisti de Aegypto, deseruerunt velociter viam, quam demonstrasti eis, feceruntque sibi conflatile."
       en: "And said to me: Arise, and go down from hence quickly: for thy people, which thou hast brought out of Egypt, have quickly forsaken the way that thou hast shewn them, and have made to themselves a molten idol."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "rursumque ait Dominus ad me cerno quod populus iste durae cervicis sit"
+      la: "Rursumque ait Dominus ad me: Cerno quod populus iste durae cervicis sit:"
       en: "And again the Lord said to me: I see that this people is stiffnecked:"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "dimitte me ut conteram eum et deleam nomen eius sub caelo et constituam te super gentem quae hac maior et fortior sit"
+      la: "dimitte me ut conteram eum, et deleam nomen ejus de sub caelo, et constituam te super gentem, quae hac major et fortior sit."
       en: "Let me alone that I may destroy them, and abolish their name from under heaven, and set thee over a nation, that is greater and stronger than this."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "cumque de monte ardente descenderem et duas tabulas foederis utraque tenerem manu"
+      la: "Cumque de monte ardente descenderem, et duas tabulas foederis utraque tenerem manu,"
       en: "And when I came down from the burning mount, and held the two tables of the covenant with both hands,"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "vidissemque vos peccasse Domino Deo vestro et fecisse vobis vitulum conflatilem ac deseruisse velociter viam eius quam vobis ostenderat"
+      la: "vidissemque vos pecasse Domino Deo vestro, et fecisse vobis vitulum conflatilem, ac deseruisse velociter viam ejus, quam vobis ostenderat:"
       en: "And saw that you had sinned against the Lord your God, and had made to yourselves a molten calf, and had quickly forsaken his way, which he had shewn you:"
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "proieci tabulas de manibus meis confregique eas in conspectu vestro"
+      la: "projeci tabulas de manibus meis, confregique eas in conspectu vestro."
       en: "I cast the tables out of my hands, and broke them in your sight."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "et procidi ante Dominum sicut prius quadraginta diebus et noctibus panem non comedens et aquam non bibens propter omnia peccata vestra quae gessistis contra Dominum et eum ad iracundiam provocastis"
-      en: "And I fell down before the Lord se before, forty days and nights neither eating bread, nor drinking water, for all your sins, which you had committed against the Lord, and had provoked him to wrath:"
+      la: "Et procidi ante Dominum sicut prius, quadraginta diebus et noctibus panem non comedens, et aquam non bibens, propter omnia peccata vestra quae gessistis contra Dominum, et eum ad iracundiam provocastis:"
+      en: "And I fell down before the Lord as before, forty days and nights neither eating bread, nor drinking water, for all your sins, which you had committed against the Lord, and had provoked him to wrath:"
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "timui enim indignationem et iram illius qua adversum vos concitatus delere vos voluit et exaudivit me Dominus etiam hac vice"
+      la: "timui enim indignationem et iram illius, qua adversum vos concitatus, delere vos voluit. Et exaudivit me Dominus etiam hac vice."
       en: "For I feared his indignation and anger, wherewith being moved against you, he would have destroyed you. And the Lord heard me this time also."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "adversum Aaron quoque vehementer iratus voluit eum conterere et pro illo similiter deprecatus sum"
+      la: "Adversum Aaron quoque vehementer iratus, voluit eum conterere, et pro illo similiter deprecatus sum."
       en: "And he was exceeding angry against Aaron also, and would have destroyed him, and I prayed in like manner for him."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "peccatum autem vestrum quod feceratis id est vitulum arripiens igne conbusi et in frusta comminuens omninoque in pulverem redigens proieci in torrentem qui de monte descendit"
+      la: "Peccatum autem vestrum quod feceratis, id est, vitulum, arripiens, igne combussi, et in frusta comminuens, omninoque in pulverem redigens, projeci in torrentem, qui de monte descendit."
       en: "And your sin that you had committed, that is, the calf, I took, and burned it with fire, and breaking it into pieces, until it was as small as dust, I threw it into the torrent, which cometh down from the mountain."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "in Incendio quoque et in Temptatione et in sepulchris Concupiscentiae provocastis Dominum"
+      la: "In incendio quoque, et in tentatione, et in Sepulchris concupiscentiae provocastis Dominum:"
       en: "At the burning also, and at the place of temptation, and at the graves of lust you provoked the Lord:"
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "et quando misit vos de Cadesbarne dicens ascendite et possidete terram quam dedi vobis et contempsistis imperium Domini Dei vestri et non credidistis ei neque vocem eius audire voluistis"
+      la: "et quando misit vos de Cadesbarne, dicens: Ascendite, et possidete terram, quam dedi vobis, et contempsistis imperium Domini Dei vestri, et non credidistis ei, neque vocem ejus audire voluistis:"
       en: "And when he sent you from Cadesbarne, saying: Go up, and possess the land that I have given you, and you slighted the commandment of the Lord your God, and did not believe him, neither would you hearken to his voice:"
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "sed semper fuistis rebelles a die qua nosse vos coepi"
+      la: "sed semper fuistis rebelles a die qua nosse vos coepi."
       en: "But were always rebellious from the day that I began to know you."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "et iacui coram Domino quadraginta diebus ac noctibus quibus eum suppliciter deprecabar ne deleret vos ut fuerat comminatus"
+      la: "Et jacui coram Domino quadraginta diebus ac noctibus, quibus eum suppliciter deprecabar, ne deleret vos ut fuerat comminatus:"
       en: "And I lay prostrate before the Lord forty days and nights, in which I humbly besought him, that he would not destroy you as he had threatened:"
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "et orans dixi Domine Deus ne disperdas populum tuum et hereditatem tuam quam redemisti in magnitudine tua quos eduxisti de Aegypto in manu forti"
-      en: "And praying, I said: 0 Lord God, destroy not thy people, and thy inheritance, which thou hast redeemed in thy greatness, whom thou hast brought out of Egypt with a strong hand."
+      la: "et orans dixi: Domine Deus, ne disperdas populum tuum, et haereditatem tuam, quam redemisti in magnitudine tua, quos eduxisti de Aegypto in manu forti."
+      en: "And praying, I said: O Lord God, destroy not thy people, and thy inheritance, which thou hast redeemed in thy greatness, whom thou hast brought out of Egypt with a strong hand."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "recordare servorum tuorum Abraham Isaac et Iacob ne aspicias duritiam populi huius et impietatem atque peccatum"
+      la: "Recordare servorum tuorum Abraham, Isaac, et Jacob: ne aspicias duritiam populi hujus, et impietatem atque peccatum:"
       en: "Remember thy servants Abraham, Isaac, and Jacob: look not on the stubbornness of this people, nor on their wickedness and sin:"
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "ne forte dicant habitatores terrae de qua eduxisti nos non poterat Dominus introducere eos in terram quam pollicitus est eis et oderat illos idcirco eduxit ut interficeret eos in solitudine"
+      la: "ne forte dicant habitatores terrae, de qua eduxisti nos: Non poterat Dominus introducere eos in terram, quam pollicitus est eis, et oderat illos: idcirco eduxit, ut interficeret eos in solitudine:"
       en: "Lest perhaps the inhabitants of the land, out of which thou hast brought us, say: The Lord could not bring them into the land that he promised them, and he hated them: therefore he brought them out, that he might kill them in the wilderness,"
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "qui sunt populus tuus et hereditas tua quos eduxisti in fortitudine tua magna et in brachio tuo extento"
+      la: "qui sunt populus tuus et haereditas tua, quos eduxisti in fortitudine tua magna, et in brachio tuo extento."
       en: "Who are thy people and thy inheritance, whom thou hast brought out by thy great strength, and in thy stretched out arm."
     status: { la: verified, en: verified }

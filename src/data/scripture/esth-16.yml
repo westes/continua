@@ -1,8 +1,7 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for esth 16 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: esth
 chapter: 16
 verses:
@@ -13,7 +12,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "Multi bonitate principum et honore, qui in eos collatus est, abusi sunt in superbiam :"
+      la: "Multi bonitate principum et honore, qui in eos collatus est, abusi sunt in superbiam:"
       en: "Many have abused unto pride the goodness of princes, and the honour that hath been bestowed upon them:"
     status: { la: verified, en: verified }
   - n: 3
@@ -53,12 +52,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "Et ut manifestius quod dicimus, intelligatis, Aman filius Amadathi, et animo et gente Macedo, alienusque a Persarum sanguine, et pietatem nostram sua crudelitate commaculans, peregrinus a nobis susceptus est :"
+      la: "Et ut manifestius quod dicimus, intelligatis, Aman filius Amadathi, et animo et gente Macedo, alienusque a Persarum sanguine, et pietatem nostram sua crudelitate commaculans, peregrinus a nobis susceptus est:"
       en: "Now that you may more plainly understand what we say, I Aman the son of Amadathi, a Macedonian both in mind and country, and having nothing of the Persian blood, but with his cruelty staining our goodness, was received being a stranger by us:"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et tantam in se expertus humanitatem, ut pater noster vocaretur, et adoraretur ab omnibus post regem secundus :"
+      la: "et tantam in se expertus humanitatem, ut pater noster vocaretur, et adoraretur ab omnibus post regem secundus:"
       en: "And found our humanity so great towards him, that he was called our father, and was worshipped by all as the next man after the king:"
     status: { la: verified, en: verified }
   - n: 12
@@ -68,7 +67,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "Nam Mardochaeum, cujus fide et beneficiis vivimus, et consortem regni nostri Esther cum omni gente sua, novis quibusdam atque inauditis machinis expetivit in mortem :"
+      la: "Nam Mardochaeum, cujus fide et beneficiis vivimus, et consortem regni nostri Esther cum omni gente sua, novis quibusdam atque inauditis machinis expetivit in mortem:"
       en: "For with certain new and unheard of devices he hath sought the destruction of Mardochai, by whose fidelity and good services our life was saved, and of Esther the partner of our kingdom, with all their nation:"
     status: { la: verified, en: verified }
   - n: 14
@@ -93,7 +92,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "Pro quo scelere ante portas hujus urbis, id est, Susan, et ipse qui machinatus est, et omnis cognatio ejus pendet in patibulis : non nobis, sed Deo reddente ei quod meruit."
+      la: "Pro quo scelere ante portas hujus urbis, id est, Susan, et ipse qui machinatus est, et omnis cognatio ejus pendet in patibulis: non nobis, sed Deo reddente ei quod meruit."
       en: "For which crime both he himself that devised it, and all his kindred hang on gibbets, before the gates of this city Susan: not we, but God repaying him as he deserved."
     status: { la: verified, en: verified }
   - n: 19

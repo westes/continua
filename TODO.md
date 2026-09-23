@@ -8221,3 +8221,44 @@ New invariant in `tests/scripture/bulk-import.test.ts`: no verse's `la`/`en` tex
 a digit.
 
 `npm test` (5496 passed) and `npm run build` both pass.
+
+### Scripture store rebuilt from drbo.org: Clementine Latin, clean English (2026-09-23, same day)
+
+Follow-up to the entry above. That fix only caught damage that started with a digit. A full
+comparison against drbo.org turned up much more, so the bulk-imported chapters were rebuilt
+from source instead of patched verse by verse.
+
+**Why:** the "Unbound Bible" archive behind the first bulk import had three real problems.
+- Its Latin was the Stuttgart critical edition (`Israhel`, `Hierusalem`, no capitals or
+  punctuation), not the Clementine Vulgate the breviary used. That was never a deliberate
+  choice. The earlier `jos-24` note keeping `Amorreorum` as "this book's own source-text
+  tradition" reflected the accident, not a design. The Latin should be Clementine.
+- Its English had scanning (OCR) errors in about 1,450 of 32,367 verses: "the Cod of Israel",
+  "Sour fathers", "his bend is stretched out", "gut put forth thy hand". Whole chapters were
+  also shifted by a verse (`bar-1` carried Baruch 2's text; `exod-9`, `exod-28`, `jos-2`,
+  `2mach-7` and others were misaligned), and some verses had two verses merged into one.
+- Verses were missing: the last verse of 66 books (1 Corinthians 16:24, Matthew 28:20,
+  Apocalypse 22:21, …), Daniel 3:23–100 (the Song of the Three Children and the rest of the
+  chapter), and Esther 10:3–13.
+
+**What changed:** every page was fetched from drbo.org's combined DR+LV chapter page
+(`/drl/chapter/<BB><CCC>.htm`, fetched politely: 10 seconds apart against their robots.txt
+Crawl-delay of 5, each page cached, one pass). Each of the 1,153 chapters from the bulk import or
+the earlier drbo re-sourcing was then rewritten wholesale from that page, Latin and English
+together, so the two can't drift out of alignment again. drbo's French-style space before `:`/`;`
+in the Latin was removed to match Divinum Officium's typography. The 31 partial chapters
+typed by hand from Divinum Officium (already Clementine, accented, with chant `*` marks) and
+`sir-0` (the Prologue, which has no drbo chapter page) were left as they were.
+
+**Verse numbering** now follows Clementine/Douay-Rheims throughout. In 10 chapters that drops a
+final verse the Stuttgart numbering split off (`1thess-4:18`, `2cor-1:24`, `2reg-13:39`,
+`2thess-2:17`, `gen-5:32`, `isa-46:13`, `jdth-4:17`, `joan-11:57`, `jos-10:44`, `sir-29:35`). Its
+text is now part of the verse before. These are the same 10 that the 2026-09-03 "take three"
+entry left `missing`. Every scripture citation in `src/data` was checked against these
+chapters: only `joan-11`'s `1-29`/`30-57` split has a verse range, and its boundary is
+unaffected. Daniel 3 (post-Pentecost 22 Monday) and Esther 10 (read together with Esther 9)
+are cited as whole chapters, so those readings are now longer.
+
+`tests/scripture/bulk-import.test.ts` no longer tolerates isolated missing English. There are no
+`missing` verses left in the store. `npm test` (5496 passed) and `npm run build` pass. Checked in
+the app: 2026-09-23 Matins (Esther 9–10) and 2026-10-26 (full Daniel 3).

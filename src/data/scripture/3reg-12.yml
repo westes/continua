@@ -1,172 +1,172 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 3reg
 chapter: 12
 verses:
   - n: 1
     text:
-      la: "venit autem Roboam in Sychem illuc enim congregatus erat omnis Israhel ad constituendum eum regem"
+      la: "Venit autem Roboam in Sichem: illuc enim congregatus erat omnis Israel ad constituendum eum regem."
       en: "And Roboam went to Sichem: for thither were all Israel come together to make him king."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "at Hieroboam filius Nabath cum adhuc esset in Aegypto profugus a facie regis Salomonis audita morte eius reversus est de Aegypto"
+      la: "At vero Jeroboam filius Nabat, cum adhuc esset in Aegypto profugus a facie regis Salomonis, audita morte ejus, reversus est de Aegypto."
       en: "But Jeroboam the son of Nabat, who was yet in Egypt, a fugitive from the face of king Solomon, hearing of his death, returned out of Egypt."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "miseruntque et vocaverunt eum venit ergo Hieroboam et omnis multitudo Israhel et locuti sunt ad Roboam dicentes"
+      la: "Miseruntque et vocaverunt eum: venit ergo Jeroboam, et omnis multitudo Israel, et locuti sunt ad Roboam, dicentes:"
       en: "And they sent and called him: and Jeroboam came, and all the multitude of Israel, and they spoke to Roboam, saying:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "pater tuus durissimum iugum inposuit nobis tu itaque nunc inminue paululum de imperio patris tui durissimo et de iugo gravissimo quod inposuit nobis et serviemus tibi"
+      la: "Pater tuus durissimum jugum imposuit nobis: tu itaque nunc imminue paululum de imperio patris tui durissimo, et de jugo gravissimo, quod imposuit nobis, et serviemus tibi."
       en: "Thy father laid a grievous yoke upon us: now therefore do thou take off a little of the grievous service of thy father, and of his most heavy yoke, which he put upon us, and we will serve thee."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "qui ait eis ite usque ad tertium diem et revertimini ad me cumque abisset populus"
+      la: "Qui ait eis: Ite usque ad tertium diem, et revertimini ad me. Cumque abiisset populus,"
       en: "And he said to them: Go till the third day, and come to me again. And when the people was gone,"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "iniit consilium rex Roboam cum senibus qui adsistebant coram Salomone patre eius dum adviveret et ait quod mihi datis consilium ut respondeam populo"
+      la: "iniit consilium rex Roboam cum senioribus, qui assistebant coram Salomone patre ejus, cum adhuc viveret, et ait: Quod datis mihi consilium, ut respondeam populo huic?"
       en: "King Roboam took counsel with the old men, that stood before Solomon his father while he yet lived, and he said: What counsel do you give me, that I may answer this people?"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "qui dixerunt ei si hodie oboedieris populo huic et servieris et petitioni eorum cesseris locutusque fueris ad eos verba lenia erunt tibi servi cunctis diebus"
-      en: "They said to him: If thou wilt yield to this people to day, and condescend to them, and grant their petition, and wilt speak gentle words to them, they will be thy servants always."
+      la: "Qui dixerunt ei: Si hodie obedieris populo huic, et servieris, et petitioni eorum cesseris, locutusque fueris ad eos verba lenia, erunt tibi servi cunctis diebus."
+      en: "They said to him: If thou wilt yield to this people today, and condescend to them, and grant their petition, and wilt speak gentle words to them, they will be thy servants always."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "qui dereliquit consilium senum quod dederant ei et adhibuit adulescentes qui nutriti fuerant cum eo et adsistebant illi"
+      la: "Qui dereliquit consilium senum, quod dederant ei, et adhibuit adolescentes, qui nutriti fuerant cum eo, et assistebant illi,"
       en: "But he left the counsel of the old men, which they had given him, and consulted with the young men, that had been brought up with him, and stood before him."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "dixitque ad eos quod mihi datis consilium ut respondeam populo huic qui dixerunt mihi levius fac iugum quod inposuit pater tuus super nos"
+      la: "dixitque ad eos: Quod mihi datis consilium, ut respondeam populo huic, qui dixerunt mihi: Levius fac jugum quod imposuit pater tuus super nos?"
       en: "And he said to them: What counsel do you give me, that I may answer this people, who have said to me: Make the yoke which thy father put upon us lighter?"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et dixerunt ei iuvenes qui nutriti fuerant cum eo sic loquere populo huic qui locuti sunt ad te dicentes pater tuus adgravavit iugum nostrum tu releva nos sic loqueris ad eos minimus digitus meus grossior est dorso patris mei"
+      la: "Et dixerunt ei juvenes qui nutriti fuerant cum eo: Sic loqueris populo huic, qui locuti sunt ad te, dicentes: Pater tuus aggravavit jugum nostrum, tu releva nos. Sic loqueris ad eos: Minimus digitus meus grossior est dorso patris mei."
       en: "And the young men that had been brought up with him, said: Thus shalt thou speak to this people, who have spoken to thee, saying: Thy father made our yoke heavy, do thou ease us. Thou shalt say to them: My little finger is thicker than the back of my father."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et nunc pater meus posuit super vos iugum grave ego autem addam super iugum vestrum pater meus cecidit vos flagellis ego autem caedam scorpionibus"
-      en: "And now my father put a, heavy yoke upon you, but I will add to your yoke: my father beat you with whips, but I will beat you with scorpions."
+      la: "Et nunc pater meus posuit super vos jugum grave, ego autem addam super jugum vestrum: pater meus cecidit vos flagellis, ego autem caedam vos scorpionibus"
+      en: "And now my father put a heavy yoke upon you, but I will add to your yoke: my father beat you with whips, but I will beat you with scorpions."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "venit ergo Hieroboam et omnis populus ad Roboam die tertia sicut locutus fuerat rex dicens revertimini ad me die tertia"
+      la: "Venit ergo Jeroboam, et omnis populus ad Roboam die tertia, sicut locutus fuerat rex, dicens: Revertimini ad me die tertia."
       en: "So Jeroboam and all the people came to Roboam the third day, as the king had appointed, saying: Come to me again the third day."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "responditque rex populo dura derelicto consilio seniorum quod ei dederant"
+      la: "Responditque rex populo dura, derelicto consilio seniorum, quod ei dederant,"
       en: "And the king answered the people roughly, leaving the counsel of the old men, which they had given him,"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et locutus est eis secundum consilium iuvenum dicens pater meus adgravavit iugum vestrum ego autem addam iugo vestro pater meus cecidit vos flagellis et ego caedam scorpionibus"
+      la: "et locutus est eis secundum consilium juvenum, dicens: Pater meus aggravavit jugum vestrum, ego autem addam jugo vestro: pater meus cecidit vos flagellis, ego autem caedam vos scorpionibus."
       en: "And he spoke to them according to the counsel of the young men, saying: My father made your yoke heavy, but I will add to your yoke: my father beat you with whips, but I will beat you with scorpions."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et non adquievit rex populo quoniam aversatus eum fuerat Dominus ut suscitaret verbum suum quod locutus fuerat in manu Ahiae Silonitae ad Hieroboam filium Nabath"
+      la: "Et non acquievit rex populo: quoniam aversatus fuerat eum Dominus, ut suscitaret verbum suum, quod locutus fuerat in manu Ahiae Silonitae, ad Jeroboam filium Nabat."
       en: "And the king condescended not to the people: for the Lord was turned away from him, to make good his word, which he had spoken in the hand of Ahias the Silonite, to Jeroboam the son of Nabat."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "videns itaque populus quod noluisset eos audire rex respondit ei dicens quae nobis pars in David vel quae hereditas in filio Isai in tabernacula tua Israhel nunc vide domum tuam David et abiit Israhel in tabernacula sua"
-      en: "Then the people seeing that the king would not hearken to them, answered him, saying : What portion have we in David? or what inheritance in the son of Isai? Go home to thy dwellings, O Israel, now David look to thy own house. So Israel departed to their dwellings."
+      la: "Videns itaque populus quod noluisset eos audire rex, respondit ei dicens: Quae nobis pars in David? vel quae haereditas in filio Isai? Vade in tabernacula tua Israel, nunc vide domum tuam David. Et abiit Israel in tabernacula sua."
+      en: "Then the people seeing that the king would not hearken to them, answered him, saying: What portion have we in David? or what inheritance in the son of Isai? Go home to thy dwellings, O Israel, now David look to thy own house. So Israel departed to their dwellings."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "super filios autem Israhel quicumque habitabant in civitatibus Iuda regnavit Roboam"
+      la: "Super filios autem Israel, quicumque habitabant in civitatibus Juda, regnavit Roboam."
       en: "But as for all the children of Israel that dwelt in the cities of Juda, Roboam reigned over them."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "misit igitur rex Roboam Aduram qui erat super tributum et lapidavit eum omnis Israhel et mortuus est porro rex Roboam festinus ascendit currum et fugit in Hierusalem"
+      la: "Misit ergo rex Roboam Aduram, qui erat super tributa: et lapidavit eum omnis Israel, et mortuus est. Porro rex Roboam festinus ascendit currum, et fugit in Jerusalem:"
       en: "Then king Roboam sent Aduram, who was over the tribute: and all Israel stoned him, and he died. Wherefore king Roboam made haste to get him up into his chariot, and he fled to Jerusalem:"
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "recessitque Israhel a domo David usque in praesentem diem"
+      la: "recessitque Israel a domo David, usque in praesentem diem."
       en: "And Israel revolted from the house of David, unto this day."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "factum est autem cum audisset omnis Israhel quod reversus esset Hieroboam miserunt et vocaverunt eum congregato coetu et constituerunt regem super omnem Israhel nec secutus est quisquam domum David praeter tribum Iuda solam"
+      la: "Factum est autem cum audisset omnis Israel, quod reversus esset Jeroboam, miserunt, et vocaverunt eum congregato coetu, et constituerunt eum regem super omnem Israel, nec secutus est quisquam domum David praeter tribum Juda solam."
       en: "And it came to pass when all Israel heard that Jeroboam was come again, that they gathered an assembly, and sent and called him, and made him king over all Israel, and there was none that followed the house of David but the tribe of Juda only."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "venit autem Roboam Hierusalem et congregavit universam domum Iuda et tribum Beniamin centum octoginta milia electorum virorum et bellatorum ut pugnaret contra domum Israhel et reduceret regnum Roboam filio Salomonis"
-      en: "And Roboam came to Jerusalem, and gathered together all the house of Juda, and the tribe of Benjamin, a hundred four- score thousand chosen men for war, to fight against the house of Israel and to bring the kingdom again under Roboam the son of Solomon."
+      la: "Venit autem Roboam Jerusalem, et congregavit universam domum Juda, et tribum Benjamin, centum octoginta millia electorum virorum bellatorum, ut pugnarent contra domum Israel, et reducerent regnum Roboam filio Salomonis."
+      en: "And Roboam came to Jerusalem, and gathered together all the house of Juda, and the tribe of Benjamin, a hundred four-score thousand chosen men for war, to fight against the house of Israel and to bring the kingdom again under Roboam the son of Solomon."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "factus est vero sermo Domini ad Semeiam virum Dei dicens"
+      la: "Factus est autem sermo Domini ad Semeiam virum Dei, dicens:"
       en: "But the word of the Lord came to Semeias the man of God, saying:"
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "loquere ad Roboam filium Salomonis regem Iuda et ad omnem domum Iuda et Beniamin et reliquos de populo dicens"
+      la: "Loquere ad Roboam filium Salomonis regem Juda, et ad omnem domum Juda, et Benjamin, et reliquos de populo, dicens:"
       en: "Speak to Roboam the son of Solomon, the king of Juda, and to all the house of Juda, and Benjamin, and the rest of the people, saying:"
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "haec dicit Dominus non ascendetis nec bellabitis contra fratres vestros filios Israhel revertatur vir in domum suam a me enim factum est verbum hoc audierunt sermonem Domini et reversi sunt de itinere sicut eis praeceperat Dominus"
+      la: "Haec dicit Dominus: Non ascendetis, neque bellabitis contra fratres vestros filios Israel: revertatur vir in domum suam, a me enim factum est verbum hoc. Audierunt sermonem Domini, et reversi sunt de itinere, sicut eis praeceperat Dominus."
       en: "Thus saith the Lord: You shall not go up nor fight against your brethren the children of Israel: let every man return to his house, for this thing is from me. They hearkened to the word of the Lord, and returned from their journey, as the Lord had commanded them."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "aedificavit autem Hieroboam Sychem in monte Ephraim et habitavit ibi et egressus inde aedificavit Phanuhel"
+      la: "Aedificavit autem Jeroboam Sichem in monte Ephraim, et habitavit ibi: et egressus inde aedificavit Phanuel."
       en: "And Jeroboam built Sichem in mount Ephraim, and dwelt there, and going out from thence he built Phanuel."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "dixitque Hieroboam in corde suo nunc revertetur regnum ad domum David"
+      la: "Dixitque Jeroboam in corde suo: Nunc revertetur regnum ad domum David,"
       en: "And Jeroboam said in his heart: Now shall the kingdom return to the house of David,"
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "si ascenderit populus iste ut faciat sacrificia in domo Domini in Hierusalem et convertetur cor populi huius ad dominum suum Roboam regem Iuda interficientque me et revertentur ad eum"
+      la: "si ascenderit populus iste ut faciat sacrificia in domo Domini in Jerusalem: et convertetur cor populi hujus ad dominum suum Roboam regem Juda, interficientque me, et revertentur ad eum."
       en: "If this people go up to offer sacrifices in the house of the Lord at Jerusalem: and the heart of this people will turn to their lord Roboam the king of Juda, and they will kill me, and return to him."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "et excogitato consilio fecit duos vitulos aureos et dixit eis nolite ultra ascendere Hierusalem ecce dii tui Israhel qui eduxerunt te de terra Aegypti"
+      la: "Et excogitato consilio fecit duos vitulos aureos, et dixit eis: Nolite ultra ascendere in Jerusalem: ecce dii tui Israel, qui te eduxerunt de terra Aegypti."
       en: "And finding out a device he made two golden calves, and said to them: Go ye up no more to Jerusalem: Behold thy gods, O Israel, who brought thee out of the land of Egypt."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "posuitque unum in Bethel et alterum in Dan"
+      la: "Posuitque unum in Bethel, et alterum in Dan:"
       en: "And he set the one in Bethel, and the other in Dan:"
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "et factum est verbum hoc in peccatum ibat enim populus ad adorandum vitulum usque in Dan"
+      la: "et factum est verbum hoc in peccatum: ibat enim populus ad adorandum vitulum usque in Dan."
       en: "And this thing became an occasion of sin: for the people went to adore the calf as far as Dan."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "et fecit fana in excelsis et sacerdotes de extremis populi qui non erant de filiis Levi"
+      la: "Et fecit fana in excelsis, et sacerdotes de extremis populi, qui non erant de filiis Levi."
       en: "And he made temples in the high places, and priests of the lowest of the people, who were not of the sons of Levi."
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "constituitque diem sollemnem in mense octavo quintadecima die mensis in similitudinem sollemnitatis quae celebratur in Iuda et ascendens altare similiter fecit in Bethel ut immolaret vitulis quos fabricatus erat constituitque in Bethel sacerdotes excelsorum quae fecerat"
-      en: "And he appointed a feast in the eighth month, on the fifteenth day of the month, after the manner of the feast that was celebrated in Juda. And going up to the altar, he did in like manner in Bethel, to sacrifice to the calves, which he had made : and he placed in Bethel priests of the high places, which he had made."
+      la: "Constituitque diem solemnem in mense octavo, quintadecima die mensis, in similitudinem solemnitatis quae celebrabatur in Juda. Et ascendens altare, similiter fecit in Bethel, ut immolaret vitulis, quos fabricatus fuerat: constituitque in Bethel sacerdotes excelsorum, quae fecerat."
+      en: "And he appointed a feast in the eighth month, on the fifteenth day of the month, after the manner of the feast that was celebrated in Juda. And going up to the altar, he did in like manner in Bethel, to sacrifice to the calves, which he had made: and he placed in Bethel priests of the high places, which he had made."
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "et ascendit super altare quod extruxerat in Bethel quintadecima die mensis octavi quem finxerat de corde suo et fecit sollemnitatem filiis Israhel et ascendit super altare ut adoleret incensum"
+      la: "Et ascendit super altare quod exstruxerat in Bethel, quintadecima die mensis octavi, quem finxerat de corde suo: et fecit solemnitatem filiis Israel, et ascendit super altare, ut adoleret incensum."
       en: "And he went up to the altar, which he had built in Bethel, on the fifteenth day of the eighth month, which he had devised of his own heart: and he ordained a feast to the children of Israel, and went upon the altar to burn incense."
     status: { la: verified, en: verified }

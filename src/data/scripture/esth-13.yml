@@ -1,8 +1,7 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for esth 13 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: esth
 chapter: 13
 verses:
@@ -33,7 +32,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "jussimus ut quoscumque Aman, qui omnibus provinciis praepositus est et secundus a rege, et quem patris loco colimus, monstraverit, cum conjugibus ac liberis deleantur ab inimicis suis, nullusque eorum misereatur, quartadecima die duodecimi mensis Adar anni praesentis :"
+      la: "jussimus ut quoscumque Aman, qui omnibus provinciis praepositus est et secundus a rege, et quem patris loco colimus, monstraverit, cum conjugibus ac liberis deleantur ab inimicis suis, nullusque eorum misereatur, quartadecima die duodecimi mensis Adar anni praesentis:"
       en: "We have commanded that all whom Aman shall mark out, who is chief over all the provinces, and second after the king, and whom we honour as a father, shall be utterly destroyed by their enemies, with their wives and children, and that none shall have pity on them. on the fourteenth day of the twelfth month Adar of this present year:"
     status: { la: verified, en: verified }
   - n: 7
@@ -48,7 +47,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "et dixit : Domine, Domine rex omnipotens, in ditione enim tua cuncta sunt posita, et non est qui possit tuae resistere voluntati, si decreveris salvare Israel."
+      la: "et dixit: Domine, Domine rex omnipotens, in ditione enim tua cuncta sunt posita, et non est qui possit tuae resistere voluntati, si decreveris salvare Israel."
       en: "And said: O Lord, Lord, almighty king, for all things are in thy power, and there is none that can resist thy will, if thou determine to save Israel."
     status: { la: verified, en: verified }
   - n: 10
@@ -88,7 +87,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "Exaudi deprecationem meam, et propitius esto sorti et funiculo tuo, et converte luctum nostrum in gaudium, ut viventes laudemus nomen tuum, Domine : et ne claudas ora te canentium."
+      la: "Exaudi deprecationem meam, et propitius esto sorti et funiculo tuo, et converte luctum nostrum in gaudium, ut viventes laudemus nomen tuum, Domine: et ne claudas ora te canentium."
       en: "Hear my supplication, and be merciful to thy lot and inheritance, and turn our mourning into joy, that we may live and praise thy name, O Lord, and shut not the mouths of them that sing to thee."
     status: { la: verified, en: verified }
   - n: 18

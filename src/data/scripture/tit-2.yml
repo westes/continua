@@ -1,82 +1,82 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: tit
 chapter: 2
 verses:
   - n: 1
     text:
-      la: "tu autem loquere quae decet sanam doctrinam"
+      la: "Tu autem loquere quae decent sanam doctrinam:"
       en: "But speak thou the things that become sound doctrine:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "senes ut sobrii sint pudici prudentes sani fide dilectione patientia"
+      la: "senes ut sobrii sint, pudici, prudentes, sani in fide, in dilectione, in patientia:"
       en: "That the aged men be sober, chaste, prudent, sound in faith, in love, in patience."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "anus similiter in habitu sancto non criminatrices non vino multo servientes bene docentes"
+      la: "anus similiter in habitu sancto, non criminatrices, non multo vino servientes, bene docentes:"
       en: "The aged women, in like manner, in holy attire, not false accusers, not given to much wine, teaching well:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "ut prudentiam doceant adulescentulas ut viros suos ament filios diligant"
+      la: "ut prudentiam doceant adolescentulas, ut viros suos ament, filios suos diligant,"
       en: "That they may teach the young women to be wise, to love their husbands, to love their children,"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "prudentes castas domus curam habentes benignas subditas suis viris ut non blasphemetur verbum Dei"
+      la: "prudentes, castas, sobrias, domus curam habentes, benignas, subditas viris suis, ut non blasphemetur verbum Dei."
       en: "To be discreet, chaste, sober, having a care of the house, gentle, obedient to their husbands, that the word of God be not blasphemed."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "iuvenes similiter hortare ut sobrii sint"
+      la: "Juvenes similiter hortare ut sobrii sint."
       en: "Young men, in like manner, exhort that they be sober."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "in omnibus te ipsum praebe exemplum bonorum operum in doctrina integritatem gravitatem"
+      la: "In omnibus teipsum praebe exemplum bonorum operum, in doctrina, in integritate, in gravitate,"
       en: "In all things shew thyself an example of good works, in doctrine, in integrity, in gravity,"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "verbum sanum inreprehensibilem ut is qui ex adverso est vereatur nihil habens malum dicere de nobis"
+      la: "verbum sanum, irreprehensibile: ut is qui ex adverso est, vereatur, nihil habens malum dicere de nobis."
       en: "The sound word that can not be blamed: that he, who is on the contrary part, may be afraid, having no evil to say of us."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "servos dominis suis subditos esse in omnibus placentes non contradicentes"
+      la: "Servos dominis suis subditos esse, in omnibus placentes, non contradicentes,"
       en: "Exhort servants to be obedient to their masters, in all things pleasing, not gainsaying:"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "non fraudantes, sed in omnibus fidem bonam ostendentes ut doctrinam salutaris nostri Dei ornent in omnibus"
-      en: "Not defrauding, but in all things shewing good fidelity, that they may adorn the doctrine of God our Savior in all things:"
+      la: "non fraudantes, sed in omnibus fidem bonam ostendentes: ut doctrinam Salvatoris nostri Dei ornent in omnibus."
+      en: "Not defrauding, but in all things shewing good fidelity, that they may adorn the doctrine of God our Saviour in all things:"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "apparuit enim gratia Dei salutaris omnibus hominibus"
-      en: "For the grace of God our Savior hath appeared to all men;"
+      la: "Apparuit enim gratia Dei Salvatoris nostri omnibus hominibus,"
+      en: "For the grace of God our Saviour hath appeared to all men;"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "erudiens nos ut abnegantes impietatem et saecularia desideria sobrie et iuste et pie vivamus in hoc saeculo"
+      la: "erudiens nos, ut abnegantes impietatem, et saecularia desideria, sobrie, et juste, et pie vivamus in hoc saeculo,"
       en: "Instructing us, that, denying ungodliness and worldly desires, we should live soberly, and justly, and godly in this world,"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "expectantes beatam spem et adventum gloriae magni Dei et salvatoris nostri Iesu Christi"
-      en: "Looking for the blessed hope and coming of the glory of the great God and our Savior Jesus Christ,"
+      la: "exspectantes beatam spem, et adventum gloriae magni Dei, et Salvatoris nostri Jesu Christi:"
+      en: "Looking for the blessed hope and coming of the glory of the great God and our Saviour Jesus Christ,"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "qui dedit semet ipsum pro nobis ut nos redimeret ab omni iniquitate et mundaret sibi populum acceptabilem sectatorem bonorum operum"
+      la: "qui dedit semetipsum pro nobis, ut nos redimeret ab omni iniquitate, et mundaret sibi populum acceptabilem, sectatorem bonorum operum."
       en: "Who gave himself for us, that he might redeem us from all iniquity, and might cleanse to himself a people acceptable, a pursuer of good works."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "haec loquere et exhortare et argue cum omni imperio nemo te contemnat"
+      la: "Haec loquere, et exhortare, et argue cum omni imperio. Nemo te contemnat."
       en: "These things speak, and exhort and rebuke with all authority. Let no man despise thee."
     status: { la: verified, en: verified }

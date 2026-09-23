@@ -1,82 +1,82 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: num
 chapter: 12
 verses:
   - n: 1
     text:
-      la: "locutaque est Maria et Aaron contra Mosen propter uxorem eius aethiopissam"
+      la: "Locutaque est Maria et Aaron contra Moysen propter uxorem ejus Aethiopissam,"
       en: "And Mary and Aaron spoke against Moses, because of his wife the Ethiopian,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et dixerunt num per solum Mosen locutus est Dominus nonne et nobis similiter est locutus quod cum audisset Dominus"
+      la: "et dixerunt: Num per solum Moysen locutus est Dominus? nonne et nobis similiter est locutus? Quod cum audisset Dominus"
       en: "And they said: Hath the Lord spoken by Moses only? hath he not also spoken to us in like manner? And when the Lord heard this,"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "erat enim Moses vir mitissimus super omnes homines qui morabantur in terra"
+      la: "( erat enim Moyses vir mitissimus super omnes homines qui morabantur in terra),"
       en: "(For Moses was a man exceeding meek above all men that dwelt upon earth)"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "statim locutus est ad eum et ad Aaron et Mariam egredimini vos tantum tres ad tabernaculum foederis cumque fuissent egressi"
+      la: "statim locutus est ad eum, et ad Aaron et Mariam: Egredimini vos tantum tres ad tabernaculum foederis. Cumque fuissent egressi,"
       en: "Immediately he spoke to him, and to Aaron and Mary: Come out you three only to the tabernacle of the covenant. And when they were come out,"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "descendit Dominus in columna nubis et stetit in introitu tabernaculi vocans Aaron et Mariam qui cum issent"
+      la: "descendit Dominus in columna nubis, et stetit in introitu tabernaculi, vocans Aaron et Mariam. Qui cum issent,"
       en: "The Lord came down in a pillar of the cloud, and stood in the entry of the tabernacle calling to Aaron and Mary. And when they were come,"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "dixit ad eos audite sermones meos si quis fuerit inter vos propheta Domini in visione apparebo ei vel per somnium loquar ad illum"
+      la: "dixit ad eos: Audite sermones meos: si quis fuerit inter vos propheta Domini, in visione apparebo ei, vel per somnium loquar ad illum."
       en: "He said to them: Hear my words: if there be among you a prophet of the Lord, I will appear to him in a vision, or I will speak to him in a dream."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "at non talis servus meus Moses qui in omni domo mea fidelissimus est"
-      en: "But it is not so with my servant Moses a who is most faithful in all my house:"
+      la: "At non talis servus meus Moyses, qui in omni domo mea fidelissimus est:"
+      en: "But it is not so with my servant Moses who is most faithful in all my house:"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "ore enim ad os loquor ei et palam non per enigmata et figuras Dominum videt quare igitur non timuistis detrahere servo meo Mosi"
+      la: "ore enim ad os loquor ei: et palam, et non per aenigmata et figuras Dominum videt. Quare ergo non timuistis detrahere servo meo Mosyi?"
       en: "For I speak to him mouth to mouth: and plainly, and not by riddles and figures doth he see the Lord. Why then were you not afraid to speak ill of my servant Moses?"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "iratusque contra eos abiit"
+      la: "Iratusque contra eos, abiit:"
       en: "And being angry with them he went away:"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "nubes quoque recessit quae erat super tabernaculum et ecce Maria apparuit candens lepra quasi nix cumque respexisset eam Aaron et vidisset perfusam lepra"
+      la: "nubes quoque recessit quae erat super tabernaculum: et ecce Maria apparuit candens lepra quasi nix. Cumque respexisset eam Aaron, et vidisset perfusam lepra,"
       en: "The cloud also that was over the tabernacle departed: and behold Mary appeared white as snow with a leprosy. And when Aaron had looked on her, and saw her all covered with leprosy,"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "ait ad Mosen obsecro domine mi ne inponas nobis hoc peccatum quod stulte commisimus"
+      la: "ait ad Moysen: Obsecro, domine mi, ne imponas nobis hoc peccatum quod stulte commisimus,"
       en: "He said to Moses: I beseech thee, my lord, lay not upon us this sin, which we have foolishly committed:"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "ne fiat haec quasi mortua et ut abortivum quod proicitur de vulva matris suae ecce iam medium carnis eius devoratum est lepra"
+      la: "ne fiat haec quasi mortua, et ut abortivum quod projicitur de vulva matris suae: ecce jam medium carnis ejus devoratum est a lepra."
       en: "Let her not be as one dead, and as an abortive that is cast forth from the mother's womb. Lo, now one half of her flesh is consumed with the leprosy."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "clamavitque Moses ad Dominum dicens Deus obsecro sana eam"
+      la: "Clamavitque Moyses ad Dominum, dicens: Deus, obsecro, sana eam."
       en: "And Moses cried to the Lord, saying: O God, I beseech thee heal her."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "cui respondit Dominus si pater eius spuisset in faciem illius nonne debuerat saltem septem dierum rubore suffundi separetur septem diebus extra castra et postea revocabitur"
+      la: "Cui respondit Dominus: Si pater ejus spuisset in faciem illius, nonne debuerat saltem septem diebus rubore suffundi? separetur septem diebus extra castra, et postea revocabitur."
       en: "And the Lord answered him: If her father had spitten upon her face, ought she not to have been ashamed for seven days at least? Let her be separated seven days without the camp, and after wards she shall be called again."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "exclusa est itaque Maria extra castra septem diebus et populus non est motus de loco illo donec revocata est Maria"
-      en: "Mary therefore was put out of the camp seven days : and the people moved not from that place until Mary was called again."
+      la: "Exclusa est itaque Maria extra castra septem diebus: et populus non est motus de loco illo, donec revocata est Maria."
+      en: "Mary therefore was put out of the camp seven days: and the people moved not from that place until Mary was called again."
     status: { la: verified, en: verified }

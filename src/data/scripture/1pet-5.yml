@@ -1,72 +1,77 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1pet
 chapter: 5
 verses:
   - n: 1
     text:
-      la: "seniores ergo qui in vobis sunt obsecro consenior et testis Christi passionum qui et eius quae in futuro revelanda est gloriae communicator"
+      la: "Seniores ergo, qui in vobis sunt, obsecro, consenior et testis Christi passionum: qui et ejus, quae in futuro revelanda est, gloriae communicator:"
       en: "The ancients therefore that are among you, I beseech, who am myself also an ancient, and a witness of the sufferings of Christ: as also a partaker of that glory which is to be revealed in time to come:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "pascite qui est in vobis gregem Dei providentes non coacto sed spontanee secundum Deum neque turpis lucri gratia sed voluntarie"
+      la: "pascite qui in vobis est gregem Dei, providentes non coacte, sed spontanee secundum Deum: neque turpis lucri gratia, sed voluntarie:"
       en: "Feed the flock of God which is among you, taking care of it, not by constraint, but willingly, according to God: not for filthy lucre's sake, but voluntarily:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "neque ut dominantes in cleris sed formae facti gregi et ex animo"
+      la: "neque ut dominantes in cleris, sed forma facti gregis ex animo."
       en: "Neither as lording it over the clergy, but being made a pattern of the flock from the heart."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et cum apparuerit princeps pastorum percipietis inmarcescibilem gloriae coronam"
+      la: "Et cum apparuerit princeps pastorum, percipietis immarcescibilem gloriae coronam."
       en: "And when the prince of pastors shall appear, you shall receive a never fading crown of glory."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "similiter adulescentes subditi estote senioribus omnes autem invicem humilitatem insinuate quia Deus superbis resistit humilibus autem dat gratiam"
+      la: "Similiter adolescentes subditi estote senioribus. Omnes autem invicem humilitatem insinuate, quia Deus superbis resistit, humilibus autem dat gratiam."
       en: "In like manner, ye young men, be subject to the ancients. And do you all insinuate humility one to another, for God resisteth the proud, but to the humble he giveth grace."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "humiliamini igitur sub potenti manu Dei ut vos exaltet in tempore visitationis"
+      la: "Humiliamini igitur sub potenti manu Dei, ut vos exaltet in tempore visitationis:"
       en: "Be you humbled therefore under the mighty hand of God, that he may exalt you in the time of visitation:"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "omnem sollicitudinem vestram proicientes in eum quoniam ipsi cura est de vobis"
+      la: "omnem sollicitudinem vestram projicientes in eum, quoniam ipsi cura est de vobis."
       en: "Casting all your care upon him, for he hath care of you."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "sobrii estote vigilate quia adversarius vester diabolus tamquam leo rugiens circuit quaerens quem devoret"
+      la: "Sobrii estote, et vigilate: quia adversarius vester diabolus tamquam leo rugiens circuit, quaerens quem devoret:"
       en: "Be sober and watch: because your adversary the devil, as a roaring lion, goeth about seeking whom he may devour."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "cui resistite fortes fide scientes eadem passionum ei quae in mundo est vestrae fraternitati fieri"
+      la: "cui resistite fortes in fide: scientes eamdem passionem ei quae in mundo est vestrae fraternitati fieri."
       en: "Whom resist ye, strong in faith: knowing that the same affliction befalls your brethren who are in the world."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "Deus autem omnis gratiae qui vocavit nos in aeternam suam gloriam in Christo Iesu modicum passos ipse perficiet confirmabit solidabit"
+      la: "Deus autem omnis gratiae, qui vocavit nos in aeternam suam gloriam in Christo Jesu, modicum passos ipse perficiet, confirmabit, solidabitque."
       en: "But the God of all grace, who hath called us into his eternal glory in Christ Jesus, after you have suffered a little, will himself perfect you, and confirm you, and establish you."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "ipsi imperium in saecula saeculorum amen"
+      la: "Ipsi gloria, et imperium in saecula saeculorum. Amen."
       en: "To him be glory and empire for ever and ever. Amen."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "per Silvanum vobis fidelem fratrem ut arbitror breviter scripsi obsecrans et contestans hanc esse veram gratiam Dei in qua state"
+      la: "Per Silvanum fidelem fratrem vobis, ut arbitror, breviter scripsi: obsecrans et contestans, hanc esse veram gratiam Dei, in qua statis."
       en: "By Sylvanus, a faithful brother unto you, as I think, I have written briefly: beseeching and testifying that this is the true grace of God, wherein you stand."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "salutat vos quae est in Babylone cumelecta et Marcus filius meus"
+      la: "Salutat vos ecclesia quae est in Babylone coelecta, et Marcus filius meus."
       en: "The church that is in Babylon, elected together with you, saluteth you: and so doth my son Mark."
+    status: { la: verified, en: verified }
+  - n: 14
+    text:
+      la: "Salutate invicem in osculo sancto. Gratia vobis omnibus qui estis in Christo Jesu. Amen."
+      en: "Salute one another with a holy kiss. Grace be to all you, who are in Christ Jesus. Amen."
     status: { la: verified, en: verified }

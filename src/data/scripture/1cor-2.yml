@@ -1,87 +1,87 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1cor
 chapter: 2
 verses:
   - n: 1
     text:
-      la: "et ego cum venissem ad vos fratres veni non per sublimitatem sermonis aut sapientiae adnuntians vobis testimonium Christi"
+      la: "Et ego, cum venissem ad vos, fratres, veni non in sublimitate sermonis, aut sapientiae, annuntians vobis testimonium Christi."
       en: "And I, brethren, when I came to you, came not in loftiness of speech or of wisdom, declaring unto you the testimony of Christ."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "non enim iudicavi scire me aliquid inter vos nisi Iesum Christum et hunc crucifixum"
+      la: "Non enim judicavi me scire aliquid inter vos, nisi Jesum Christum, et hunc crucifixum."
       en: "For I judged not myself to know anything among you, but Jesus Christ, and him crucified."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et ego in infirmitate et timore et tremore multo fui apud vos"
+      la: "Et ego in infirmitate, et timore, et tremore multo fui apud vos:"
       en: "And I was with you in weakness, and in fear, and in much trembling."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et sermo meus et praedicatio mea non in persuasibilibus sapientiae verbis sed in ostensione Spiritus et virtutis"
+      la: "et sermo meus, et praedicatio mea non in persuasibilibus humanae sapientiae verbis, sed in ostensione spiritus et virtutis:"
       en: "And my speech and my preaching was not in the persuasive words of human wisdom, but in shewing of the Spirit and power;"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "ut fides vestra non sit in sapientia hominum sed in virtute Dei"
+      la: "ut fides vestra non sit in sapientia hominum, sed in virtute Dei."
       en: "That your faith might not stand on the wisdom of men, but on the power of God."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "sapientiam autem loquimur inter perfectos sapientiam vero non huius saeculi neque principum huius saeculi qui destruuntur"
+      la: "Sapientiam autem loquimur inter perfectos: sapientiam vero non hujus saeculi, neque principum hujus saeculi, qui destruuntur:"
       en: "Howbeit we speak wisdom among the perfect: yet not the wisdom of this world, neither of the princes of this world that come to nought;"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "sed loquimur Dei sapientiam in mysterio quae abscondita est quam praedestinavit Deus ante saecula in gloriam nostram"
-      en: "But we speak the wisdom of God in a mystery, a wisdom which is hidden, which God ordained before the world, unto our glory :"
+      la: "sed loquimur Dei sapientiam in mysterio, quae abscondita est, quam praedestinavit Deus ante saecula in gloriam nostram,"
+      en: "But we speak the wisdom of God in a mystery, a wisdom which is hidden, which God ordained before the world, unto our glory:"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "quam nemo principum huius saeculi cognovit si enim cognovissent numquam Dominum gloriae crucifixissent"
+      la: "quam nemo principum hujus saeculi cognovit: si enim cognovissent, numquam Dominum gloriae crucifixissent."
       en: "Which none of the princes of this world knew; for if they had known it, they would never have crucified the Lord of glory."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "sed sicut scriptum est quod oculus non vidit nec auris audivit nec in cor hominis ascendit quae praeparavit Deus his qui diligunt illum"
+      la: "Sed sicut scriptum est: Quod oculus non vidit, nec auris audivit, nec in cor hominis ascendit, quae praeparavit Deus iis qui diligunt illum:"
       en: "But, as it is written: That eye hath not seen, nor ear heard, neither hath it entered into the heart of man, what things God hath prepared for them that love him."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "nobis autem revelavit Deus per Spiritum suum Spiritus enim omnia scrutatur etiam profunda Dei"
-      en: "But to us God hath revealed them, by this Spirit. For the Spirit searcheth all things, yea, the deep things of God."
+      la: "nobis autem revelavit Deus per Spiritum suum: Spiritus enim omnia scrutatur, etiam profunda Dei."
+      en: "But to us God hath revealed them, by his Spirit. For the Spirit searcheth all things, yea, the deep things of God."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "quis enim scit hominum quae sint hominis nisi spiritus hominis qui in ipso est ita et quae Dei sunt nemo cognovit nisi Spiritus Dei"
+      la: "Quis enim hominum scit quae sunt hominis, nisi spiritus hominis, qui in ipso est? ita et quae Dei sunt, nemo cognovit, nisi Spiritus Dei."
       en: "For what man knoweth the things of a man, but the spirit of a man that is in him? So the things also that are of God no man knoweth, but the Spirit of God."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "nos autem non spiritum mundi accepimus sed Spiritum qui ex Deo est ut sciamus quae a Deo donata sunt nobis"
+      la: "Nos autem non spiritum hujus mundi accepimus, sed Spiritum qui ex Deo est, ut sciamus quae a Deo donata sunt nobis:"
       en: "Now we have received not the spirit of this world, but the Spirit that is of God; that we may know the things that are given us from God."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "quae et loquimur non in doctis humanae sapientiae verbis sed in doctrina Spiritus spiritalibus spiritalia conparantes"
+      la: "quae et loquimur non in doctis humanae sapientiae verbis, sed in doctrina Spiritus, spiritualibus spiritualia comparantes."
       en: "Which things also we speak, not in the learned words of human wisdom; but in the doctrine of the Spirit, comparing spiritual things with spiritual."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "animalis autem homo non percipit ea quae sunt Spiritus Dei stultitia est enim illi et non potest intellegere quia spiritaliter examinatur"
+      la: "Animalis autem homo non percipit ea quae sunt Spiritus Dei: stultitia enim est illi, et non potest intelligere: quia spiritualiter examinatur."
       en: "But the sensual man perceiveth not these things that are of the Spirit of God; for it is foolishness to him, and he cannot understand, because it is spiritually examined."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "spiritalis autem iudicat omnia et ipse a nemine iudicatur"
+      la: "Spiritualis autem judicat omnia: et ipse a nemine judicatur."
       en: "But the spiritual man judgeth all things; and he himself is judged of no man."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "quis enim cognovit sensum Domini qui instruat eum nos autem sensum Christi habemus"
+      la: "Quis enim cognovit sensum Domini, qui instruat eum? nos autem sensum Christi habemus."
       en: "For who hath known the mind of the Lord, that we may instruct him? But we have the mind of Christ."
     status: { la: verified, en: verified }

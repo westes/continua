@@ -1,8 +1,7 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for sir 23 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: sir
 chapter: 23
 verses:
@@ -38,17 +37,17 @@ verses:
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "Doctrinam oris audite, filii : et qui custodierit illam non periet labiis, nec scandalizabitur in operibus nequissimis."
+      la: "Doctrinam oris audite, filii: et qui custodierit illam non periet labiis, nec scandalizabitur in operibus nequissimis."
       en: "Hear, O ye children, the discipline of the mouth: and he that will keep it shall not perish by his lips, nor be brought to fall into most wicked works."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "In vanitate sua apprehenditur peccator : et superbus et maledicus scandalizabitur in illis."
+      la: "In vanitate sua apprehenditur peccator: et superbus et maledicus scandalizabitur in illis."
       en: "A sinner is caught in his own vanity, and the proud and the evil speakers shall fall thereby."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "Jurationi non assuescat os tuum : multi enim casus in illa."
+      la: "Jurationi non assuescat os tuum: multi enim casus in illa."
       en: "Let not thy mouth be accustomed to swearing: for in it there are many falls."
     status: { la: verified, en: verified }
   - n: 10
@@ -68,17 +67,17 @@ verses:
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "Et si frustraverit, delictum illius super ipsum erit : et si dissimulaverit, delinquit dupliciter :"
+      la: "Et si frustraverit, delictum illius super ipsum erit: et si dissimulaverit, delinquit dupliciter:"
       en: "And if he make it void, his sin shall be upon him: and if he dissemble it, he offendeth double:"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et si in vacuum juraverit, non justificabitur : replebitur enim retributione domus illius."
+      la: "et si in vacuum juraverit, non justificabitur: replebitur enim retributione domus illius."
       en: "And if he swear in vain, he shall not be justified: for his house shall be filled with his punishment."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "Est et alia loquela contraria morti : non inveniatur in haereditate Jacob."
+      la: "Est et alia loquela contraria morti: non inveniatur in haereditate Jacob."
       en: "There is also another speech opposite to death, let it not be found in the inheritance of Jacob."
     status: { la: verified, en: verified }
   - n: 16
@@ -88,12 +87,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "Indisciplinatae loquelae non assuescat os tuum : est enim in illa verbum peccati."
+      la: "Indisciplinatae loquelae non assuescat os tuum: est enim in illa verbum peccati."
       en: "Let not thy mouth be accustomed to indiscreet speech: for therein is the word of sin."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "Memento patris et matris tuae : in medio enim magnatorum consistis :"
+      la: "Memento patris et matris tuae: in medio enim magnatorum consistis:"
       en: "Remember thy father and thy mother, for thou sittest in the midst of great men:"
     status: { la: verified, en: verified }
   - n: 19
@@ -113,7 +112,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "Anima calida quasi ignis ardens, non extinguetur donec aliquid glutiat :"
+      la: "Anima calida quasi ignis ardens, non extinguetur donec aliquid glutiat:"
       en: "A hot soul is a burning fire, it will never be quenched, till it devour some thing."
     status: { la: verified, en: verified }
   - n: 23
@@ -123,22 +122,22 @@ verses:
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "Homini fornicario omnis panis dulcis : non fatigabitur transgrediens usque ad finem."
+      la: "Homini fornicario omnis panis dulcis: non fatigabitur transgrediens usque ad finem."
       en: "To a man that is a fornicator all bread is sweet, he will not be weary of sinning unto the end."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "Omnis homo qui transgreditur lectum suum, contemnens in animam suam, et dicens : Quis me videt?"
+      la: "Omnis homo qui transgreditur lectum suum, contemnens in animam suam, et dicens: Quis me videt?"
       en: "Every man that passeth beyond his own bed, despising his own soul, and saying: Who seeth me?"
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "Tenebrae circumdant me, et parietes cooperiunt me, et nemo circumspicit me : quem vereor? delictorum meorum non memorabitur Altissimus."
+      la: "Tenebrae circumdant me, et parietes cooperiunt me, et nemo circumspicit me: quem vereor? delictorum meorum non memorabitur Altissimus."
       en: "Darkness compasseth me about, and the walls cover me, and no man seeth me: whom do I fear? the most High will not remember my sins."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "Et non intelligit quoniam omnia videt oculus illius, quoniam expellit a se timorem Dei hujusmodi hominis timor, et oculi hominum timentes illum :"
+      la: "Et non intelligit quoniam omnia videt oculus illius, quoniam expellit a se timorem Dei hujusmodi hominis timor, et oculi hominum timentes illum:"
       en: "And he understandeth not that his eye seeth all things, for such a man's fear driveth from him the fear of God, and the eyes of men fearing him:"
     status: { la: verified, en: verified }
   - n: 28
@@ -148,7 +147,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "Domino enim Deo antequam crearentur omnia sunt agnita : sic et post perfectum respicit omnia."
+      la: "Domino enim Deo antequam crearentur omnia sunt agnita: sic et post perfectum respicit omnia."
       en: "For all things were known to the Lord God, before they were created: so also after they were perfected he beholdeth all things."
     status: { la: verified, en: verified }
   - n: 30
@@ -163,22 +162,22 @@ verses:
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "Sic et mulier omnis relinquens virum suum, et statuens haereditatem ex alieno matrimonio :"
+      la: "Sic et mulier omnis relinquens virum suum, et statuens haereditatem ex alieno matrimonio:"
       en: "So every woman also that leaveth her husband, and bringeth in an heir by another:"
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "primo enim in lege Altissimi incredibilis fuit : secundo in virum suum deliquit : tertio in adulterio fornicata est, et ex alio viro filios statuit sibi."
+      la: "primo enim in lege Altissimi incredibilis fuit: secundo in virum suum deliquit: tertio in adulterio fornicata est, et ex alio viro filios statuit sibi."
       en: "For first she hath been unfaithful to the law of the most High: and secondly, she hath offended against her husband: thirdly, she hath fornicated in adultery, and hath gotten her children of another man."
     status: { la: verified, en: verified }
   - n: 34
     text:
-      la: "Haec in ecclesiam adducetur, et in filios ejus respicietur :"
+      la: "Haec in ecclesiam adducetur, et in filios ejus respicietur:"
       en: "This woman shall be brought into the assembly, and inquisition shall be made of her children."
     status: { la: verified, en: verified }
   - n: 35
     text:
-      la: "non tradent filii ejus radices, et rami ejus non dabunt fructum :"
+      la: "non tradent filii ejus radices, et rami ejus non dabunt fructum:"
       en: "Her children shall not take root, and her branches shall bring forth no fruit."
     status: { la: verified, en: verified }
   - n: 36
@@ -193,6 +192,6 @@ verses:
     status: { la: verified, en: verified }
   - n: 38
     text:
-      la: "Gloria magna est sequi Dominum : longitudo enim dierum assumetur ab eo."
+      la: "Gloria magna est sequi Dominum: longitudo enim dierum assumetur ab eo."
       en: "It is great glory to follow the Lord for length of days shall be received from him."
     status: { la: verified, en: verified }

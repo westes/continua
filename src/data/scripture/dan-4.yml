@@ -1,19 +1,18 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for dan 4 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: dan
 chapter: 4
 verses:
   - n: 1
     text:
-      la: "Ego Nabuchodonosor quietus eram in domo mea, et florens in palatio meo :"
+      la: "Ego Nabuchodonosor quietus eram in domo mea, et florens in palatio meo:"
       en: "I, Nabuchodonosor, was at rest in my house, and flourishing in my palace:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "somnium vidi, quod perterruit me : et cogitationes meae in strato meo, et visiones capitis mei conturbaverunt me."
+      la: "somnium vidi, quod perterruit me: et cogitationes meae in strato meo, et visiones capitis mei conturbaverunt me."
       en: "I saw a dream that affrighted me: and my thoughts in my bed, and the visions of my head troubled me."
     status: { la: verified, en: verified }
   - n: 3
@@ -23,32 +22,32 @@ verses:
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "Tunc ingrediebantur arioli, magi, Chaldaei, et aruspices, et somnium narravi in conspectu eorum : et solutionem ejus non indicaverunt mihi,"
+      la: "Tunc ingrediebantur arioli, magi, Chaldaei, et aruspices, et somnium narravi in conspectu eorum: et solutionem ejus non indicaverunt mihi,"
       en: "Then came in the diviners, the wise men, the Chaldeans, and the soothsayers, and I told the dream before them: but they did not shew me the interpretation thereof:"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "donec collega ingressus est in conspectu meo Daniel, cui nomen Baltassar secundum nomen dei mei, qui habet spiritum deorum sanctorum in semetipso : et somnium coram ipso locutus sum."
+      la: "donec collega ingressus est in conspectu meo Daniel, cui nomen Baltassar secundum nomen dei mei, qui habet spiritum deorum sanctorum in semetipso: et somnium coram ipso locutus sum."
       en: "Till their colleague Daniel came in before me, whose name is Baltassar, according to the name of my god, who hath in him the spirit of the holy gods: and I told the dream before him."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "Baltassar, princeps ariolorum, quoniam ego scio quod spiritum sanctorum deorum habeas in te, et omne sacramentum non est impossibile tibi : visiones somniorum meorum, quas vidi, et solutionem earum narra."
+      la: "Baltassar, princeps ariolorum, quoniam ego scio quod spiritum sanctorum deorum habeas in te, et omne sacramentum non est impossibile tibi: visiones somniorum meorum, quas vidi, et solutionem earum narra."
       en: "Baltassar, prince of the diviners, because I know that thou hast in thee the spirit of the holy gods, and that no secret is impossible to thee: tell me the visions of my dreams that I have seen, and the interpretation of them."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "Visio capitis mei in cubili meo : videbam, et ecce arbor in medio terrae, et altitudo ejus nimia."
+      la: "Visio capitis mei in cubili meo: videbam, et ecce arbor in medio terrae, et altitudo ejus nimia."
       en: "This was the vision of my head in my bed: I saw, and behold a tree in the midst of the earth, and the height thereof was exceeding great."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "Magna arbor, et fortis, et proceritas ejus contingens caelum : aspectus illius erat usque ad terminos universae terrae."
+      la: "Magna arbor, et fortis, et proceritas ejus contingens caelum: aspectus illius erat usque ad terminos universae terrae."
       en: "The tree was great, and strong: and the height thereof reached unto heaven: the sight thereof was even to the ends of all the earth."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "Folia ejus pulcherrima, et fructus ejus nimius : et esca universorum in ea. Subter eam habitabant animalia et bestiae, et in ramis ejus conversabantur volucres caeli : et ex ea vescebatur omnis caro."
+      la: "Folia ejus pulcherrima, et fructus ejus nimius: et esca universorum in ea. Subter eam habitabant animalia et bestiae, et in ramis ejus conversabantur volucres caeli: et ex ea vescebatur omnis caro."
       en: "Its leaves were most beautiful, and its fruit exceeding much: and in it was food for all: under it dwelt cattle, and beasts, and in the branches thereof the fowls of the air had their abode: and all flesh did eat of it."
     status: { la: verified, en: verified }
   - n: 10
@@ -58,7 +57,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "Clamavit fortiter, et sic ait : Succidite arborem, et praecidite ramos ejus : excutite folia ejus, et dispergite fructus ejus : fugiant bestiae, quae subter eam sunt, et volucres de ramis ejus."
+      la: "Clamavit fortiter, et sic ait: Succidite arborem, et praecidite ramos ejus: excutite folia ejus, et dispergite fructus ejus: fugiant bestiae, quae subter eam sunt, et volucres de ramis ejus."
       en: "He cried aloud, and said thus: Cut down the tree, and chop off the branches thereof: shake off its leaves, and scatter its fruits: let the beasts fly away that are under it, and the birds from its branches."
     status: { la: verified, en: verified }
   - n: 12
@@ -68,22 +67,22 @@ verses:
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "Cor ejus ab humano commutetur, et cor ferae detur ei : et septem tempora mutentur super eum."
+      la: "Cor ejus ab humano commutetur, et cor ferae detur ei: et septem tempora mutentur super eum."
       en: "Let his heart be changed from man's, and let a beast's heart be given him; and let seven times pass over him."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "In sententia vigilum decretum est, et sermo sanctorum, et petitio : donec cognoscant viventes quoniam dominatur Excelsus in regno hominum, et cuicumque voluerit, dabit illud, et humillimum hominem constituet super eum."
+      la: "In sententia vigilum decretum est, et sermo sanctorum, et petitio: donec cognoscant viventes quoniam dominatur Excelsus in regno hominum, et cuicumque voluerit, dabit illud, et humillimum hominem constituet super eum."
       en: "This is the decree by the sentence of the watchers, and the word and demand of the holy ones; till the living know that the most High ruleth in the kingdom of men; and he will give it to whomsoever it shall please him, and he will appoint the basest man over it."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "Hoc somnium vidi ego Nabuchodonosor rex : tu ergo Baltassar interpretationem narra festinus, quia omnes sapientes regni mei non queunt solutionem edicere mihi : tu autem potes, quia spiritus deorum sanctorum in te est."
+      la: "Hoc somnium vidi ego Nabuchodonosor rex: tu ergo Baltassar interpretationem narra festinus, quia omnes sapientes regni mei non queunt solutionem edicere mihi: tu autem potes, quia spiritus deorum sanctorum in te est."
       en: "I king Nabuchodonosor saw this dream: thou, therefore, O Baltassar, tell me quickly the interpretation: for all the wise men of my kingdom are not able to declare the meaning of it to me: but thou art able, because the spirit of the holy gods is in thee."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "Tunc Daniel, cujus nomen Baltassar, coepit intra semetipsum tacitus cogitare quasi una hora : et cogitationes ejus conturbabant eum. Respondens autem rex, ait : Baltassar, somnium et interpretatio ejus non conturbent te. Respondit Baltassar, et dixit : Domine mi, somnium his, qui te oderunt, et interpretatio ejus hostibus tuis sit."
+      la: "Tunc Daniel, cujus nomen Baltassar, coepit intra semetipsum tacitus cogitare quasi una hora: et cogitationes ejus conturbabant eum. Respondens autem rex, ait: Baltassar, somnium et interpretatio ejus non conturbent te. Respondit Baltassar, et dixit: Domine mi, somnium his, qui te oderunt, et interpretatio ejus hostibus tuis sit."
       en: "Then Daniel, whose name was Baltassar, began silently to think within himself for about one hour: and his thoughts troubled him. But the king answering, said: Baltassar, let not the dream and the interpretation thereof trouble thee. Baltassar answered, and said: My lord, the dream be to them that hate thee, and the interpretation thereof to thy enemies."
     status: { la: verified, en: verified }
   - n: 17
@@ -93,17 +92,17 @@ verses:
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "et rami ejus pulcherrimi, et fructus ejus nimius, et esca omnium in ea, subter eam habitantes bestiae agri, et in ramis ejus commorantes aves caeli :"
+      la: "et rami ejus pulcherrimi, et fructus ejus nimius, et esca omnium in ea, subter eam habitantes bestiae agri, et in ramis ejus commorantes aves caeli:"
       en: "And the branches thereof were most beautiful, and its fruit exceeding much, and in it was food for all, under which the beasts of the field dwelt, and the birds of the air had their abode in its branches."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "tu es rex, qui magnificatus es, et invaluisti : et magnitudo tua crevit, et pervenit usque ad caelum, et potestas tua in terminos universae terrae."
+      la: "tu es rex, qui magnificatus es, et invaluisti: et magnitudo tua crevit, et pervenit usque ad caelum, et potestas tua in terminos universae terrae."
       en: "It is thou, O king, who art grown great and become mighty: for thy greatness hath grown, and hath reached to heaven, and thy power unto the ends of the earth."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "Quod autem vidit rex vigilem, et sanctum descendere de caelo, et dicere : Succidite arborem, et dissipate illam, attamen germen radicum ejus in terra dimittite, et vinciatur ferro et aere in herbis foris, et rore caeli conspergatur, et cum feris sit pabulum ejus, donec septem tempora mutentur super eum :"
+      la: "Quod autem vidit rex vigilem, et sanctum descendere de caelo, et dicere: Succidite arborem, et dissipate illam, attamen germen radicum ejus in terra dimittite, et vinciatur ferro et aere in herbis foris, et rore caeli conspergatur, et cum feris sit pabulum ejus, donec septem tempora mutentur super eum:"
       en: "And whereas the king saw a watcher, and a holy one come down from heaven, and say: Cut down the tree and destroy it, but leave the stump of the roots thereof in the earth, and let it be bound with iron and brass among the grass without, and let it be sprinkled with the dew of heaven, and let his feeding be with the wild beasts, till seven times pass over him."
     status: { la: verified, en: verified }
   - n: 21
@@ -113,17 +112,17 @@ verses:
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "Ejicient te ab hominibus, et cum bestiis ferisque erit habitatio tua, et foenum ut bos comedes, et rore caeli infunderis : septem quoque tempora mutabuntur super te, donec scias quod dominetur Excelsus super regnum hominum, et cuicumque voluerit, det illud."
+      la: "Ejicient te ab hominibus, et cum bestiis ferisque erit habitatio tua, et foenum ut bos comedes, et rore caeli infunderis: septem quoque tempora mutabuntur super te, donec scias quod dominetur Excelsus super regnum hominum, et cuicumque voluerit, det illud."
       en: "They shall cast thee out from among men, and thy dwelling shall be with cattle and with wild beasts, and thou shalt eat grass as an ox, and shalt be wet with the dew of heaven: and seven times shall pass over thee, till thou know that the most High ruleth over the kingdom of men, and giveth it to whomsoever he will."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "Quod autem praecepit ut relinqueretur germen radicum ejus, id est arboris : regnum tuum tibi manebit postquam cognoveris potestatem esse caelestem."
+      la: "Quod autem praecepit ut relinqueretur germen radicum ejus, id est arboris: regnum tuum tibi manebit postquam cognoveris potestatem esse caelestem."
       en: "But whereas he commanded, that the stump of the roots thereof, that is, of the tree, should be left: thy kingdom shall remain to thee after thou shalt have known that power is from heaven."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "Quam ob rem, rex, consilium meum placeat tibi, et peccata tua eleemosynis redime, et iniquitates tuas misericordiis pauperum : forsitan ignoscet delictis tuis."
+      la: "Quam ob rem, rex, consilium meum placeat tibi, et peccata tua eleemosynis redime, et iniquitates tuas misericordiis pauperum: forsitan ignoscet delictis tuis."
       en: "Wherefore, O king, let my counsel be acceptable to thee, and redeem thou thy sins with alms, and thy iniquities with works of mercy to the poor: perhaps he will forgive thy offences."
     status: { la: verified, en: verified }
   - n: 25
@@ -138,17 +137,17 @@ verses:
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "Responditque rex, et ait : Nonne haec est Babylon magna, quam ego aedificavi in domum regni, in robore fortitudinis meae, et in gloria decoris mei?"
+      la: "Responditque rex, et ait: Nonne haec est Babylon magna, quam ego aedificavi in domum regni, in robore fortitudinis meae, et in gloria decoris mei?"
       en: "And the king answered, and said: Is not this the great Babylon, which I have built to be the seat of the kingdom, by the strength of my power, and in the glory of my excellence?"
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "Cumque sermo adhuc esset in ore regis, vox de caelo ruit : Tibi dicitur, Nabuchodonosor rex : Regnum tuum transibit a te,"
+      la: "Cumque sermo adhuc esset in ore regis, vox de caelo ruit: Tibi dicitur, Nabuchodonosor rex: Regnum tuum transibit a te,"
       en: "And while the word was yet in the king's mouth, a voice came down from heaven: To thee, O king Nabuchodonosor, it is said: Thy kingdom shall pass from thee,"
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "et ab hominibus ejicient te, et cum bestiis et feris erit habitatio tua : foenum quasi bos comedes, et septem tempora mutabuntur super te, donec scias quod dominetur Excelsus in regno hominum, et cuicumque voluerit, det illud."
+      la: "et ab hominibus ejicient te, et cum bestiis et feris erit habitatio tua: foenum quasi bos comedes, et septem tempora mutabuntur super te, donec scias quod dominetur Excelsus in regno hominum, et cuicumque voluerit, det illud."
       en: "And they shall cast thee out from among men, and thy dwelling shall be with cattle and wild beasts: thou shalt eat grass like an ox, and seven times shall pass over thee, till thou know that the most High ruleth in the kingdom of men, and giveth it to whomsoever he will."
     status: { la: verified, en: verified }
   - n: 30
@@ -158,21 +157,21 @@ verses:
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "Igitur post finem dierum, ego Nabuchodonosor oculos meos ad caelum levavi, et sensus meus redditus est mihi : et Altissimo benedixi, et viventem in sempiternum laudavi et glorificavi : quia potestas ejus potestas sempiterna, et regnum ejus in generationem et generationem."
+      la: "Igitur post finem dierum, ego Nabuchodonosor oculos meos ad caelum levavi, et sensus meus redditus est mihi: et Altissimo benedixi, et viventem in sempiternum laudavi et glorificavi: quia potestas ejus potestas sempiterna, et regnum ejus in generationem et generationem."
       en: "Now at the end of the days, I Nabuchodonosor lifted up my eyes to heaven, and my sense was restored to me: and I blessed the most High, and I praised and glorified him that liveth for ever: for his power is an everlasting power, and his kingdom is to all generations."
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "Et omnes habitatores terrae apud eum in nihilum reputati sunt : juxta voluntatem enim suam facit tam in virtutibus caeli quam in habitatoribus terrae : et non est qui resistat manui ejus, et dicat ei : Quare fecisti?"
+      la: "Et omnes habitatores terrae apud eum in nihilum reputati sunt: juxta voluntatem enim suam facit tam in virtutibus caeli quam in habitatoribus terrae: et non est qui resistat manui ejus, et dicat ei: Quare fecisti?"
       en: "And all the inhabitants of the earth are reputed as nothing before him: for he doth according to his will, as well with the powers of heaven, as among the inhabitants of the earth: and there is none that can resist his hand, and say to him: Why hast thou done it?"
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "In ipso tempore sensus meus reversus est ad me, et ad honorem regni mei, decoremque perveni : et figura mea reversa est ad me, et optimates mei et magistratus mei requisierunt me, et in regno meo restitutus sum : et magnificentia amplior addita est mihi."
+      la: "In ipso tempore sensus meus reversus est ad me, et ad honorem regni mei, decoremque perveni: et figura mea reversa est ad me, et optimates mei et magistratus mei requisierunt me, et in regno meo restitutus sum: et magnificentia amplior addita est mihi."
       en: "At the same time my sense returned to me, and I came to the honour and glory of my kingdom: and my shape returned to me: and my nobles, and my magistrates sought for me, and I was restored to my kingdom: and greater majesty was added to me."
     status: { la: verified, en: verified }
   - n: 34
     text:
-      la: "Nunc igitur, ego Nabuchodonosor laudo, et magnifico, et glorifico regem caeli : quia omnia opera ejus vera, et viae ejus judicia, et gradientes in superbia potest humiliare."
+      la: "Nunc igitur, ego Nabuchodonosor laudo, et magnifico, et glorifico regem caeli: quia omnia opera ejus vera, et viae ejus judicia, et gradientes in superbia potest humiliare."
       en: "Therefore I Nabuchodonosor do now praise, and magnify, and glorify the King of heaven: because all his works are true, and his ways judgments, and them that walk in pride he is able to abase."
     status: { la: verified, en: verified }

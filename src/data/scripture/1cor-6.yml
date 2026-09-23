@@ -1,107 +1,107 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1cor
 chapter: 6
 verses:
   - n: 1
     text:
-      la: "audet aliquis vestrum habens negotium adversus alterum iudicari apud iniquos et non apud sanctos"
-      en: "Dare any of you, having a matter against another, go to be judged before the unjust, and not before the saints ?"
+      la: "Audet aliquis vestrum habens negotium adversus alterum, judicari apud iniquos, et non apud sanctos?"
+      en: "Dare any of you, having a matter against another, go to be judged before the unjust, and not before the saints?"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "an nescitis quoniam sancti de mundo iudicabunt et si in vobis iudicabitur mundus indigni estis qui de minimis iudicetis"
-      en: "Know you not that the saints shall judge this world ? And if the world shall be judged by you, are you unworthy to judge the smallest matters ?"
+      la: "an nescitis quoniam sancti de hoc mundo judicabunt? et si in vobis judicabitur mundus, indigni estis qui de minimis judicetis?"
+      en: "Know you not that the saints shall judge this world? And if the world shall be judged by you, are you unworthy to judge the smallest matters?"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "nescitis quoniam angelos iudicabimus quanto magis saecularia"
-      en: "Know you not that we shall judge angels ? how much more things of this world ?"
+      la: "Nescitis quoniam angelos judicabimus? quanto magis saecularia?"
+      en: "Know you not that we shall judge angels? how much more things of this world?"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "saecularia igitur iudicia si habueritis contemptibiles qui sunt in ecclesia illos constituite ad iudicandum"
+      la: "Saecularia igitur judicia si habueritis: contemptibiles, qui sunt in ecclesia, illos constituite ad judicandum."
       en: "If therefore you have judgments of things pertaining to this world, set them to judge, who are the most despised in the church."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "ad verecundiam vestram dico sic non est inter vos sapiens quisquam qui possit iudicare inter fratrem suum"
-      en: "I speak to your shame. Is it so that there is not among you any one wise man, that is able to judge between his brethren ?"
+      la: "Ad verecundiam vestram dico. Sic non est inter vos sapiens quisquam, qui possit judicare inter fratrem suum?"
+      en: "I speak to your shame. Is it so that there is not among you any one wise man, that is able to judge between his brethren?"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "sed frater cum fratre iudicio contendit et hoc apud infideles"
+      la: "Sed frater cum fratre judicio contendit: et hoc apud infideles?"
       en: "But brother goeth to law with brother, and that before unbelievers."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "iam quidem omnino delictum est in vobis quod iudicia habetis inter vos quare non magis iniuriam accipitis quare non magis fraudem patimini"
+      la: "Jam quidem omnino delictum est in vobis, quod judicia habetis inter vos. Quare non magis injuriam accipitis? quare non magis fraudem patimini?"
       en: "Already indeed there is plainly a fault among you, that you have lawsuits one with another. Why do you not rather take wrong? Why do you not rather suffer yourselves to be defrauded?"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "sed vos iniuriam facitis et fraudatis et hoc fratribus"
+      la: "Sed vos injuriam facitis, et fraudatis: et hoc fratribus."
       en: "But you do wrong and defraud, and that to your brethren."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "an nescitis quia iniqui regnum Dei non possidebunt nolite errare neque fornicarii neque idolis servientes neque adulteri"
+      la: "An nescitis quia iniqui regnum Dei non possidebunt? Nolite errare: neque fornicarii, neque idolis servientes, neque adulteri,"
       en: "Know you not that the unjust shall not possess the kingdom of God? Do not err: neither fornicators, nor idolaters, nor adulterers,"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "neque molles neque masculorum concubitores neque fures neque avari neque ebriosi neque maledici neque rapaces regnum Dei possidebunt"
+      la: "neque molles, neque masculorum concubitores, neque fures, neque avari, neque ebriosi, neque maledici, neque rapaces regnum Dei possidebunt."
       en: "Nor the effeminate, nor liers with mankind, nor thieves, nor covetous, nor drunkards, nor railers, nor extortioners, shall possess the kingdom of God."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et haec quidam fuistis sed abluti estis sed sanctificati estis sed iustificati estis in nomine Domini nostri Iesu Christi et in Spiritu Dei nostri"
+      la: "Et haec quidam fuistis: sed abluti estis, sed sanctificati estis, sed justificati estis in nomine Domini nostri Jesu Christi, et in Spiritu Dei nostri."
       en: "And such some of you were; but you are washed, but you are sanctified, but you are justified in the name of our Lord Jesus Christ, and the Spirit of our God."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "omnia mihi licent sed non omnia expediunt omnia mihi licent sed ego sub nullius redigar potestate"
+      la: "Omnia mihi licent, sed non omnia expediunt: omnia mihi licent, sed ego sub nullis redigar potestate."
       en: "All things are lawful to me, but all things are not expedient. All things are lawful to me, but I will not be brought under the power of any."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "esca ventri et venter escis Deus autem et hunc et haec destruet corpus autem non fornicationi sed Domino et Dominus corpori"
+      la: "Esca ventri, et venter escis: Deus autem et hunc et has destruet: corpus autem non fornicationi, sed Domino: et Dominus corpori."
       en: "Meat for the belly, and the belly for the meats; but God shall destroy both it and them: but the body is not for fornication, but for the Lord, and the Lord for the body."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "Deus vero et Dominum suscitavit et nos suscitabit per virtutem suam"
+      la: "Deus vero et Dominum suscitavit: et nos suscitabit per virtutem suam."
       en: "Now God hath both raised up the Lord, and will raise us up also by his power."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "nescitis quoniam corpora vestra membra Christi sunt tollens ergo membra Christi faciam membra meretricis absit"
-      en: "Know you not that your bodies are the members of Christ ? Shall I then take the members of Christ, and make them the members of an harlot ? God forbid."
+      la: "Nescitis quoniam corpora vestra membra sunt Christi? Tollens ergo membra Christi, faciam membra meretricis? Absit."
+      en: "Know you not that your bodies are the members of Christ? Shall I then take the members of Christ, and make them the members of an harlot? God forbid."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "an nescitis quoniam qui adheret meretrici unum corpus efficitur erunt enim inquit duo in carne una"
-      en: "Or know you not, that he who is joined to a harlot, is made one body ? For they shall be, saith he, two in one flesh."
+      la: "An nescitis quoniam qui adhaeret meretrici, unum corpus efficitur? Erunt enim ( inquit) duo in carne una."
+      en: "Or know you not, that he who is joined to a harlot, is made one body? For they shall be, saith he, two in one flesh."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "qui autem adheret Domino unus spiritus est"
+      la: "Qui autem adhaeret Domino, unus spiritus est."
       en: "But he who is joined to the Lord, is one spirit."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "fugite fornicationem omne peccatum quodcumque fecerit homo extra corpus est qui autem fornicatur in corpus suum peccat"
+      la: "Fugite fornicationem. Omne peccatum, quodcumque fecerit homo, extra corpus est: qui autem fornicatur, in corpus suum peccat."
       en: "Fly fornication. Every sin that a man doth, is without the body; but he that committeth fornication, sinneth against his own body."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "an nescitis quoniam membra vestra templum est Spiritus Sancti qui in vobis est quem habetis a Deo et non estis vestri"
-      en: "Or know you not, that your members are the temple of the Holy Ghost, who is in you, whom you have from God; and you are not your own ?"
+      la: "An nescitis quoniam membra vestra, templum sunt Spiritus Sancti, qui in vobis est, quem habetis a Deo, et non estis vestri?"
+      en: "Or know you not, that your members are the temple of the Holy Ghost, who is in you, whom you have from God; and you are not your own?"
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "empti enim estis pretio magno glorificate et portate Deum in corpore vestro"
+      la: "Empti enim estis pretio magno. Glorificate, et portate Deum in corpore vestro."
       en: "For you are bought with a great price. Glorify and bear God in your body."
     status: { la: verified, en: verified }

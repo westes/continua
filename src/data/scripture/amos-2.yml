@@ -1,87 +1,87 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: amos
 chapter: 2
 verses:
   - n: 1
     text:
-      la: "haec dicit Dominus super tribus sceleribus Moab et super quattuor non convertam eum eo quod incenderit ossa regis Idumeae usque ad cinerem"
+      la: "Haec dicit Dominus: Super tribus sceleribus Moab, et super quatuor non convertam eum, eo quod incenderit ossa regis Idumaeae usque ad cinerem."
       en: "Thus saith the Lord: For three crimes of Moab, and for four I will not convert him: because he hath burnt the bones of the king of Edom even to ashes."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et mittam ignem in Moab et devorabit aedes Carioth et morietur in sonitu Moab in clangore tubae"
-      en: "And I will seed a fire into Moab, and it shall devour the houses of Carioth: and Moab shall die with a noise, with the sound of the trumpet:"
+      la: "Et mittam ignem in Moab, et devorabit aedes Carioth: et morietur in sonitu Moab, in clangore tubae."
+      en: "And I will send a fire into Moab, and it shall devour the houses of Carioth: and Moab shall die with a noise, with the sound of the trumpet:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et disperdam iudicem de medio eius et omnes principes eius interficiam cum eo dicit Dominus"
+      la: "Et disperdam judicem de medio ejus, et omnes principes ejus interficiam cum eo, dicit Dominus."
       en: "And I will cut off the judge from the midst thereof, and will slay all his princes with him, saith the Lord."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "haec dicit Dominus super tribus sceleribus Iuda et super quattuor non convertam eum eo quod abiecerint legem Domini et mandata eius non custodierint deceperunt enim eos idola sua post quae abierant patres eorum"
+      la: "Haec dicit Dominus: Super tribus sceleribus Juda, et super quatuor non convertam eum, eo quod abjecerit legem Domini et mandata ejus non custodierit: deceperant enim eos idola sua, post quae abierant patres eorum."
       en: "Thus saith the Lord: For three crimes of Juda, and for four I will not convert him: because he hath cast away the law of the Lord, and hath not kept his commandments: for their idols have caused them to err, after which their fathers have walked."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et mittam ignem in Iuda et devorabit aedes Hierusalem"
+      la: "Et mittam ignem in Juda, et devorabit aedes Jerusalem."
       en: "And I will send a fire into Juda, and it shall devour the houses of Jerusalem."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "haec dicit Dominus super tribus sceleribus Israhel et super quattuor non convertam eum pro eo quod vendiderit argento iustum et pauperem pro calciamentis"
+      la: "Haec dicit Dominus: Super tribus sceleribus Israel, et super quatuor non convertam eum, pro eo quod vendiderit pro argento justum, et pauperem pro calceamentis."
       en: "Thus saith the Lord: For three crimes of Israel, and for four I will not convert him: because he hath sold the just man for silver, and the poor man for a pair of shoes."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "qui conterunt super pulverem terrae capita pauperum et viam humilium declinant et filius ac pater eius ierunt ad puellam ut violarent nomen sanctum meum"
+      la: "Qui conterunt super pulverem terrae capita pauperum, et viam humilium declinant: et filius ac pater ejus ierunt ad puellam, ut violarent nomen sanctum meum."
       en: "They bruise the heads of the poor upon the dust of the earth, and turn aside the way of the humble: and the son and his father have gone to the same young woman, to profane my holy name."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et super vestimentis pigneratis accubuerunt iuxta omne altare et vinum damnatorum bibebant in domo Dei sui"
+      la: "Et super vestimentis pignoratis accubuerunt juxta omne altare, et vinum damnatorum bibebant in domo Dei sui."
       en: "And they sat down upon garments laid to pledge by every altar: and drank the wine of the condemned in the house of their God."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "ego autem exterminavi Amorreum a facie eorum cuius altitudo cedrorum altitudo eius et fortis ipse quasi quercus et contrivi fructum eius desuper et radices eius subter"
+      la: "Ego autem exterminavi Amorrhaeum a facie eorum, cujus altitudo, cedrorum altitudo ejus, et fortis ipse quasi quercus; et contrivi fructum ejus desuper, et radices ejus subter."
       en: "Yet I cast out the Amorrhite before their face: whose height was like the height of cedars, and who was strong as an oak: and I destroyed his fruit from above, and his roots beneath."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "ego sum qui ascendere vos feci de terra Aegypti et eduxi vos in deserto quadraginta annis ut possideretis terram Amorrei"
+      la: "Ego sum qui ascendere vos feci de terra Aegypti, et duxi vos in deserto quadraginta annis, ut possideretis terram Amorrhaei."
       en: "It is I that brought you up out of the land of Egypt, and I led you forty years through the wilderness, that you might possess the land of the Amorrhite."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et suscitavi de filiis vestris in prophetas et de iuvenibus vestris nazarenos numquid non ita est filii Israhel dicit Dominus"
+      la: "Et suscitavi de filiis vestris in prophetas, et de juvenibus vestris nazaraeos. Numquid non ita est, filii Israel? dicit Dominus."
       en: "And I raised up of your sons for prophets, and of your young men for Nazarites. Is it not so, O ye children of Israel, saith the Lord?"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "et propinabatis nazarenis vino et prophetis mandabatis dicentes ne prophetetis"
+      la: "Et propinabitis nazaraeis vinum, et prophetis mandabitis, dicentes: Ne prophetetis."
       en: "And you will present wine to the Nazarites: and command the prophets, saying: Prophesy not."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "ecce ego stridebo super vos sicut stridet plaustrum onustum faeno"
+      la: "Ecce ego stridebo subter vos, sicut stridet plaustrum onustum foeno."
       en: "Behold, I will screak under you as a wain screaketh that is laden with hay."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et peribit fuga a veloce et fortis non obtinebit virtutem suam et robustus non salvabit animam suam"
+      la: "Et peribit fuga a veloce, et fortis non obtinebit virtutem suam, et robustus non salvabit animam suam:"
       en: "And flight shall perish from the swift, and the valiant shall not possess his strength, neither shall the strong save his life."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et tenens arcum non stabit et velox pedibus suis non salvabitur et ascensor equi non salvabit animam suam"
+      la: "et tenens arcum non stabit, et velox pedibus suis non salvabitur, et ascensor equi non salvabit animam suam:"
       en: "And he that holdeth the bow shall not stand, and the swift of foot shall not escape, neither shall the rider of the horse save his life."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "et robustus corde inter fortes nudus fugiet in die illa dicit Dominus"
+      la: "et robustus corde inter fortes nudus fugiet in illa die, dicit Dominus."
       en: "And the stout of heart among the valiant shall flee away naked in that day, saith the Lord."
     status: { la: verified, en: verified }

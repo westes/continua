@@ -1,137 +1,142 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: rom
 chapter: 16
 verses:
   - n: 1
     text:
-      la: "commendo autem vobis Phoebem sororem nostram quae est in ministerio ecclesiae quae est Cenchris"
+      la: "Commendo autem vobis Phoeben sororem nostram, quae est in ministerio ecclesiae, quae est in Cenchris:"
       en: "And I commend to you Phebe, our sister, who is in the ministry of the church, that is in Cenchrae:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "ut eam suscipiatis in Domino digne sanctis et adsistatis ei in quocumque negotio vestri indiguerit etenim ipsa quoque adstitit multis et mihi ipsi"
+      la: "ut eam suscipiatis in Domino digne sanctis: et assistatis ei in quocumque negotio vestri indiguerit: etenim ipsa quoque astitit multis, et mihi ipsi."
       en: "That you receive her in the Lord as becometh saints; and that you assist her in whatsoever business she shall have need of you. For she also hath assisted many, and myself also."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "salutate Priscam et Aquilam adiutores meos in Christo Iesu"
+      la: "Salutate Priscam et Aquilam, adjutores meos in Christo Jesu"
       en: "Salute Prisca and Aquila, my helpers in Christ Jesus,"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "qui pro anima mea suas cervices subposuerunt quibus non solus ego gratias ago sed et cunctae ecclesiae gentium"
+      la: "( qui pro anima mea suas cervices supposuerunt: quibus non solus ego gratias ago, sed et cunctae ecclesiae gentium),"
       en: "(Who have for my life laid down their own necks: to whom not I only give thanks, but also all the churches of the Gentiles,)"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et domesticam eorum ecclesiam salutate Ephaenetum dilectum mihi qui est primitivus Asiae in Christo"
+      la: "et domesticam ecclesiam eorum. Salutate Epaenetum dilectum mihi, qui est primitivus Asiae in Christo."
       en: "And the church which is in their house. Salute Epenetus, my beloved: who is the firstfruits of Asia in Christ."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "salutate Mariam quae multum laboravit in vobis"
+      la: "Salutate Mariam, quae multum laboravit in vobis."
       en: "Salute Mary, who hath laboured much among you."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "salutate Andronicum et Iuniam cognatos et concaptivos meos qui sunt nobiles in apostolis qui et ante me fuerunt in Christo"
+      la: "Salutate Andronicum et Juniam, cognatos, et concaptivos meos: qui sunt nobiles in Apostolis, qui et ante me fuerunt in Christo."
       en: "Salute Andronicus and Junias, my kinsmen and fellow prisoners: who are of note among the apostles, who also were in Christ before me."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "salutate Ampliatum dilectissimum mihi in Domino"
+      la: "Salutate Ampliatum dilectissimum mihi in Domino."
       en: "Salute Ampliatus, most beloved to me in the Lord."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "salutate Urbanum adiutorem nostrum in Christo et Stachyn dilectum meum"
+      la: "Salutate Urbanum adjutorem nostrum in Christo Jesu, et Stachyn dilectum meum."
       en: "Salute Urbanus, our helper in Christ Jesus, and Stachys, my beloved."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "salutate Apellen probum in Christo"
+      la: "Salutate Apellen probum in Christo."
       en: "Salute Apelles, approved in Christ."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "salutate eos qui sunt ex Aristoboli salutate Herodionem cognatum meum salutate eos qui sunt ex Narcissi qui sunt in Domino"
+      la: "Salutate eos qui sunt ex Aristoboli domo. Salutate Herodionem cognatum meum. Salutate eos qui sunt ex Narcisi domo, qui sunt in Domino."
       en: "Salute them that are of Aristobulus' household. Salute Herodian, my kinsman. Salute them that are of Narcissus' household, who are in the Lord."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "salutate Tryfenam et Tryfosam quae laborant in Domino salutate Persidam carissimam quae multum laboravit in Domino"
+      la: "Salutate Tryphaenam et Tryphosam, quae laborant in Domino. Salutate Persidem carissimam, quae multum laboravit in Domino."
       en: "Salute Tryphaena and Tryphosa, who labour in the Lord. Salute Persis, the dearly beloved, who hath much laboured in the Lord."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "salutate Rufum electum in Domino et matrem eius et meam"
+      la: "Salutate Rufum electum in Domino, et matrem ejus, et meam."
       en: "Salute Rufus, elect in the Lord, and his mother and mine."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "salutate Asyncritum Flegonta Hermen Patrobam Hermam et qui cum eis sunt fratres"
+      la: "Salutate Asyncritum, Phlegontem, Hermam, Patrobam, Hermen, et qui cum eis sunt, fratres."
       en: "Salute Asyncritus, Phlegon, Hermas, Patrobas, Hermes, and the brethren that are with them."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "salutate Filologum et Iuliam Nereum et sororem eius et Olympiadem et omnes qui cum eis sunt sanctos"
+      la: "Salutate Philologum et Juliam, Nereum, et sororem ejus, et Olympiadem, et omnes qui cum eis sunt, sanctos."
       en: "Salute Philologus and Julia, Nereus and his sister, and Olympias; and all the saints that are with them."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "salutate invicem in osculo sancto salutant vos omnes ecclesiae Christi"
+      la: "Salutate invicem in osculo sancto. Salutant vos omnes ecclesiae Christi."
       en: "Salute one another with an holy kiss. All the churches of Christ salute you."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "rogo autem vos fratres ut observetis eos qui dissensiones et offendicula praeter doctrinam quam vos didicistis faciunt et declinate ab illis"
+      la: "Rogo autem vos fratres, ut observetis eos qui dissensiones et offendicula, praeter doctrinam, quam vos didicistis, faciunt, et declinate ab illis."
       en: "Now I beseech you, brethren, to mark them who make dissensions and offences contrary to the doctrine which you have learned, and avoid them."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "huiusmodi enim Christo Domino nostro non serviunt sed suo ventri et per dulces sermones et benedictiones seducunt corda innocentium"
+      la: "Hujuscemodi enim Christo Domino nostro non serviunt, sed suo ventri: et per dulces sermones et benedictiones seducunt corda innocentium."
       en: "For they that are such, serve not Christ our Lord, but their own belly; and by pleasing speeches and good words, seduce the hearts of the innocent."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "vestra enim oboedientia in omnem locum divulgata est gaudeo igitur in vobis sed volo vos sapientes esse in bono et simplices in malo"
+      la: "Vestra enim obedientia in omnem locum divulgata est. Gaudeo igitur in vobis. Sed volo vos sapientes esse in bono, et simplices in malo."
       en: "For your obedience is published in every place. I rejoice therefore in you. But I would have you to be wise in good, and simple in evil."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "Deus autem pacis conteret Satanan sub pedibus vestris velociter gratia Domini nostri Iesu Christi vobiscum"
+      la: "Deus autem pacis conterat Satanam sub pedibus vestris velociter. Gratia Domini nostri Jesu Christi vobiscum."
       en: "And the God of peace crush Satan under your feet speedily. The grace of our Lord Jesus Christ be with you."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "salutat vos Timotheus adiutor meus et Lucius et Iason et Sosipater cognati mei"
+      la: "Salutat vos Timotheus adjutor meus, et Lucius, et Jason, et Sosipater cognati mei."
       en: "Timothy, my fellow labourer, saluteth you, and Lucius, and Jason, and Sosipater, my kinsmen."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "saluto vos ego Tertius qui scripsi epistulam in Domino"
+      la: "Saluto vos ego Tertius, qui scripsi epistolam, in Domino."
       en: "I Tertius, who wrote this epistle, salute you in the Lord."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "salutat vos Gaius hospes meus et universae ecclesiae salutat vos Erastus arcarius civitatis et Quartus frater"
+      la: "Salutat vos Cajus hospes meus, et universa ecclesia. Salutat vos Erastus arcarius civitatis, et Quartus, frater."
       en: "Caius, my host, and the whole church, saluteth you. Erastus, the treasurer of the city, saluteth you, and Quartus, a brother."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "[]"
+      la: "Gratia Domini nostri Jesu Christi cum omnibus vobis. Amen."
       en: "The grace of our Lord Jesus Christ be with you all. Amen."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "ei autem qui potens est vos confirmare iuxta evangelium meum et praedicationem Iesu Christi secundum revelationem mysterii temporibus aeternis taciti"
+      la: "Ei autem, qui potens est vos confirmare juxta Evangelium meum, et praedicationem Jesu Christi, secundum revelationem mysterii temporibus aeternis taciti"
       en: "Now to him that is able to establish you, according to my gospel, and the preaching of Jesus Christ, according to the revelation of the mystery, which was kept secret from eternity,"
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "quod nunc patefactum est per scripturas prophetarum secundum praeceptum aeterni Dei ad oboeditionem fidei in cunctis gentibus cognito"
+      la: "( quod nunc patefactum est per Scripturas prophetarum secundum praeceptum aeterni Dei, ad obeditionem fidei), in cunctis gentibus cogniti,"
       en: "(Which now is made manifest by the scriptures of the prophets, according to the precept of the eternal God, for the obedience of faith,) known among all nations;"
+    status: { la: verified, en: verified }
+  - n: 27
+    text:
+      la: "soli sapienti Deo, per Jesum Christum, cui honor et gloria in saecula saeculorum. Amen."
+      en: "To God the only wise, through Jesus Christ, to whom be honour and glory for ever and ever. Amen."
     status: { la: verified, en: verified }

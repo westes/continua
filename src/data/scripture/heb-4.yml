@@ -1,87 +1,87 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: heb
 chapter: 4
 verses:
   - n: 1
     text:
-      la: "timeamus ergo ne forte relicta pollicitatione introeundi in requiem eius existimetur aliqui ex vobis deesse"
+      la: "Timeamus ergo ne forte relicta pollicitatione introeundi in requiem ejus, existimetur aliquis ex vobis deesse."
       en: "Let us fear therefore lest the promise being left of entering into his rest, any of you should be thought to be wanting."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "etenim et nobis nuntiatum est quemadmodum et illis sed non profuit illis sermo auditus non admixtis fidei ex his quae audierunt"
+      la: "Etenim et nobis nuntiatum est, quemadmodum et illis: sed non profuit illis sermo auditus, non admistus fidei ex iis quae audierunt."
       en: "For unto us also it hath been declared, in like manner as unto them. But the word of hearing did not profit them, not being mixed with faith of those things they heard."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "ingrediemur enim in requiem qui credidimus quemadmodum dixit sicut iuravi in ira mea si introibunt in requiem meam et quidem operibus ab institutione mundi factis"
+      la: "Ingrediemur enim in requiem, qui credidimus: quemadmodum dixit: Sicut juravi in ira mea: Si introibunt in requiem meam: et quidem operibus ab institutione mundi perfectis."
       en: "For we, who have believed, shall enter into rest; as he said: As I have sworn in my wrath; If they shall enter into my rest; and this indeed when the works from the foundation of the world were finished."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "dixit enim quodam loco de die septima sic et requievit Deus die septima ab omnibus operibus suis"
+      la: "Dixit enim in quodam loco de die septima sic: Et requievit Deus die septima ab omnibus operibus suis."
       en: "For in a certain place he spoke of the seventh day thus: And God rested the seventh day from all his works."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et in isto rursum si introibunt in requiem meam"
+      la: "Et in isto rursum: Si introibunt in requiem meam."
       en: "And in this place again: If they shall enter into my rest."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "quoniam ergo superest quosdam introire in illam et hii quibus prioribus adnuntiatum est non introierunt propter incredulitatem"
+      la: "Quoniam ergo superest introire quosdam in illam, et ii, quibus prioribus annuntiatum est, non introierunt propter incredulitatem:"
       en: "Seeing then it remaineth that some are to enter into it, and they, to whom it was first preached, did not enter because of unbelief:"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "iterum terminat diem quendam hodie in David dicendo post tantum temporis sicut supra dictum est hodie si vocem eius audieritis nolite obdurare corda vestra"
-      en: "Again he limiteth a certain day, saying in David, To day, after so long a time, as it is above said: To day if you shall hear his voice, harden not your hearts."
+      la: "iterum terminat diem quemdam, Hodie, in David dicendo, post tantum temporis, sicut supra dictum est: Hodie si vocem ejus audieritis, nolite obdurare corda vestra."
+      en: "Again he limiteth a certain day, saying in David, Today, after so long a time, as it is above said: Today if you shall hear his voice, harden not your hearts."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "nam si eis Iesus requiem praestitisset numquam de alio loqueretur posthac die"
+      la: "Nam si eis Jesus requiem praestitisset, numquam de alia loqueretur, posthac, die."
       en: "For if Jesus had given them rest, he would never have afterwards spoken of another day."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "itaque relinquitur sabbatismus populo Dei"
+      la: "Itaque relinquitur sabbatismus populo Dei."
       en: "There remaineth therefore a day of rest for the people of God."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "qui enim ingressus est in requiem eius etiam ipse requievit ab operibus suis sicut a suis Deus"
+      la: "Qui enim ingressus est in requiem ejus, etiam ipse requievit ab operibus suis, sicut a suis Deus."
       en: "For he that is entered into his rest, the same also hath rested from his works, as God did from his."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "festinemus ergo ingredi in illam requiem ut ne in id ipsum quis incidat incredulitatis exemplum"
+      la: "Festinemus ergo ingredi in illam requiem: ut ne in idipsum quis incidat incredulitatis exemplum."
       en: "Let us hasten therefore to enter into that rest; lest any man fall into the same example of unbelief."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "vivus est enim Dei sermo et efficax et penetrabilior omni gladio ancipiti et pertingens usque ad divisionem animae ac spiritus conpagum quoque et medullarum et discretor cogitationum et intentionum cordis"
+      la: "Vivus est enim sermo Dei, et efficax et penetrabilior omni gladio ancipiti: et pertingens usque ad divisionem animae ac spiritus: compagum quoque ac medullarum, et discretor cogitationum et intentionum cordis."
       en: "For the word of God is living and effectual, and more piercing than any two edged sword; and reaching unto the division of the soul and the spirit, of the joints also and the marrow, and is a discerner of the thoughts and intents of the heart."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et non est ulla creatura invisibilis in conspectu eius omnia autem nuda et aperta sunt oculis eius ad quem nobis sermo"
+      la: "Et non est ulla creatura invisibilis in conspectu ejus: omnia autem nuda et aperta sunt oculis ejus, ad quem nobis sermo."
       en: "Neither is there any creature invisible in his sight: but all things are naked and open to his eyes, to whom our speech is."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "habentes ergo pontificem magnum qui penetraverit caelos Iesum Filium Dei teneamus confessionem"
+      la: "Habentes ergo pontificem magnum qui penetravit caelos, Jesum Filium Dei, teneamus confessionem."
       en: "Having therefore a great high priest that hath passed into the heavens, Jesus the Son of God: let us hold fast our confession."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "non enim habemus pontificem qui non possit conpati infirmitatibus nostris temptatum autem per omnia pro similitudine absque peccato"
+      la: "Non enim habemus pontificem qui non possit compati infirmitatibus nostris: tentatum autem per omnia pro similitudine absque peccato."
       en: "For we have not a high priest, who can not have compassion on our infirmities: but one tempted in all things like as we are, without sin."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "adeamus ergo cum fiducia ad thronum gratiae ut misericordiam consequamur et gratiam inveniamus in auxilio oportuno"
+      la: "Adeamus ergo cum fiducia ad thronum gratiae: ut misericordiam consequamur, et gratiam inveniamus in auxilio opportuno."
       en: "Let us go therefore with confidence to the throne of grace: that we may obtain mercy, and find grace in seasonable aid."
     status: { la: verified, en: verified }

@@ -1,92 +1,97 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 2pet
 chapter: 3
 verses:
   - n: 1
     text:
-      la: "hanc ecce vobis carissimi secundam scribo epistulam in quibus excito vestram in commonitione sinceram mentem"
+      la: "Hanc ecce vobis, carissimi, secundam scribo epistolam, in quibus vestram excito in commonitione sinceram mentem:"
       en: "Behold this second epistle I write to you, my dearly beloved, in which I stir up by way of admonition your sincere mind:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "ut memores sitis eorum quae praedixi verborum a sanctis prophetis et apostolorum vestrorum praeceptorum Domini et salvatoris"
+      la: "ut memores sitis eorum, quae praedixi, verborum, a sanctis prophetis et apostolorum vestrorum, praeceptorum Domini et Salvatoris."
       en: "That you may be mindful of those words which I told you before from the holy prophets, and of your apostles, of the precepts of the Lord and Saviour."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "hoc primum scientes quod venient in novissimis diebus in deceptione inlusores iuxta proprias concupiscentias ambulantes"
+      la: "Hoc primum scientes, quod venient in novissimis diebus in deceptione illusores, juxta proprias concupiscentias ambulantes,"
       en: "Knowing this first, that in the last days there shall come deceitful scoffers, walking after their own lusts,"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "dicentes ubi est promissio aut adventus eius ex quo enim patres dormierunt omnia sic perseverant ab initio creaturae"
+      la: "dicentes: Ubi est promissio, aut adventus ejus? ex quo enim patres dormierunt, omnia sic perseverant ab initio creaturae."
       en: "Saying: Where is his promise or his coming? for since the time that the fathers slept, all things continue as they were from the beginning of the creation."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "latet enim eos hoc volentes quod caeli erant prius et terra de aqua et per aquam consistens Dei verbo"
+      la: "Latet enim eos hoc volentes, quod caeli erant prius, et terra de aqua, et per aquam consistens Dei verbo:"
       en: "For this they are wilfully ignorant of, that the heavens were before, and the earth out of water, and through water, consisting by the word of God."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "per quae ille tunc mundus aqua inundatus periit"
+      la: "per quae, ille tunc mundus aqua inundatus, periit."
       en: "Whereby the world that then was, being overflowed with water, perished."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "caeli autem qui nunc sunt et terra eodem verbo repositi sunt igni servati in diem iudicii et perditionis impiorum hominum"
+      la: "Caeli autem, qui nunc sunt, et terra eodem verbo repositi sunt, igni reservati in diem judicii, et perditionis impiorum hominum."
       en: "But the heavens and the earth which are now, by the same word are kept in store, reserved unto fire against the day of judgment and perdition of the ungodly men."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "unum vero hoc non lateat vos carissimi quia unus dies apud Dominum sicut mille anni et mille anni sicut dies unus"
+      la: "Unum vero hoc non lateat vos, carissimi, quia unus dies apud Dominum sicut mille anni, et mille anni sicut dies unus."
       en: "But of this one thing be not ignorant, my beloved, that one day with the Lord is as a thousand years, and a thousand years as one day."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "non tardat Dominus promissi sed patienter agit propter vos nolens aliquos perire sed omnes ad paenitentiam reverti"
+      la: "Non tardat Dominus promissionem suam, sicut quidam existimant: sed patienter agit propter vos, nolens aliquos perire, sed omnes ad poenitentiam reverti."
       en: "The Lord delayeth not his promise, as some imagine, but dealeth patiently for your sake, not willing that any should perish, but that all should return to penance."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "adveniet autem dies Domini ut fur in qua caeli magno impetu transient elementa vero calore solventur"
+      la: "Adveniet autem dies Domini ut fur: in quo caeli magno impetu transient, elementa vero calore solventur, terra autem et quae in ipsa sunt opera, exurentur."
       en: "But the day of the Lord shall come as a thief, in which the heavens shall pass away with great violence, and the elements shall be melted with heat, and the earth and the works which are in it, shall be burnt up."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "cum haec igitur omnia dissolvenda sint quales oportet esse vos in sanctis conversationibus et pietatibus"
+      la: "Cum igitur haec omnia dissolvenda sunt, quales oportet vos esse in sanctis conversationibus, et pietatibus,"
       en: "Seeing then that all these things are to be dissolved, what manner of people ought you to be in holy conversation and godliness?"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "expectantes et properantes in adventum Dei diei per quam caeli ardentes solventur et elementa ignis ardore tabescent"
+      la: "exspectantes, et properantes in adventum diei Domini, per quem caeli ardentes solventur, et elementa ignis ardore tabescent?"
       en: "Looking for and hasting unto the coming of the day of the Lord, by which the heavens being on fire shall be dissolved, and the elements shall melt with the burning heat?"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "novos vero caelos et novam terram et promissa ipsius expectamus in quibus iustitia habitat"
+      la: "Novos vero caelos, et novam terram secundum promissa ipsius exspectamus, in quibus justitia habitat."
       en: "But we look for new heavens and a new earth according to his promises, in which justice dwelleth."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "propter quod carissimi haec expectantes satis agite inmaculati et inviolati ei inveniri in pace"
+      la: "Propter quod, carissimi, haec exspectantes, satagite immaculati, et inviolati ei inveniri in pace:"
       en: "Wherefore, dearly beloved, waiting for these things, be diligent that you may be found before him unspotted and blameless in peace."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et Domini nostri longanimitatem salutem arbitramini sicut et carissimus frater noster Paulus secundum datam sibi sapientiam scripsit vobis"
+      la: "et Domini nostri longanimitatem, salutem arbitremini: sicut et carissimus frater noster Paulus secundum datam sibi sapientiam scripsit vobis,"
       en: "And account the longsuffering of our Lord, salvation; as also our most dear brother Paul, according to the wisdom given him, hath written to you:"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "sicut et in omnibus epistulis loquens in eis de his in quibus sunt quaedam difficilia intellectu quae indocti et instabiles depravant sicut et ceteras scripturas ad suam ipsorum perditionem"
+      la: "sicut et omnibus epistolis, loquens in eis de his in quibus sunt quaedam difficilia intellectu, quae indocti et instabiles depravant, sicut et ceteras Scripturas, ad suam ipsorum perditionem."
       en: "As also in all his epistles, speaking in them of these things; in which are certain things hard to be understood, which the unlearned and unstable wrest, as they do also the other scriptures, to their own destruction."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "vos igitur fratres praescientes custodite ne insipientium errore transducti excidatis a propria firmitate"
+      la: "Vos igitur fratres, praescientes custodite, ne insipientium errore traducti excidatis a propria firmitate:"
       en: "You therefore, brethren, knowing these things before, take heed, lest being led aside by the error of the unwise, you fall from your own steadfastness."
+    status: { la: verified, en: verified }
+  - n: 18
+    text:
+      la: "crescite vero in gratia, et in cognitione Domini nostri, et Salvatoris Jesu Christi. Ipsi gloria et nunc, et in diem aeternitatis. Amen."
+      en: "But grow in grace, and in the knowledge of our Lord and Saviour Jesus Christ. To him be glory both now and unto the day of eternity. Amen."
     status: { la: verified, en: verified }

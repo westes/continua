@@ -1,57 +1,57 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1joan
 chapter: 1
 verses:
   - n: 1
     text:
-      la: "quod fuit ab initio quod audivimus quod vidimus oculis nostris quod perspeximus et manus nostrae temptaverunt de verbo vitae"
+      la: "Quod fuit ab initio, quod audivimus, quod vidimus oculis nostris, quod perspeximus, et manus nostrae contrectaverunt de verbo vitae:"
       en: "That which was from the beginning, which we have heard, which we have seen with our eyes, which we have looked upon, and our hands have handled, of the word of life:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et vita manifestata est et vidimus et testamur et adnuntiamus vobis vitam aeternam quae erat apud Patrem et apparuit nobis"
+      la: "et vita manifestata est, et vidimus, et testamur, et annuntiamus vobis vitam aeternam, quae erat apud Patrem, et apparuit nobis:"
       en: "For the life was manifested; and we have seen and do bear witness, and declare unto you the life eternal, which was with the Father, and hath appeared to us:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "quod vidimus et audivimus adnuntiamus et vobis ut et vos societatem habeatis nobiscum et societas nostra sit cum Patre et cum Filio eius Iesu Christo"
+      la: "quod vidimus et audivimus, annuntiamus vobis, ut et vos societatem habeatis nobiscum, et societas nostra sit cum Patre, et cum Filio ejus Jesu Christo."
       en: "That which we have seen and have heard, we declare unto you, that you also may have fellowship with us, and our fellowship may be with the Father, and with his Son Jesus Christ."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et haec scribimus vobis ut gaudium nostrum sit plenum"
+      la: "Et haec scribimus vobis ut gaudeatis, et gaudium vestrum sit plenum."
       en: "And these things we write to you, that you may rejoice, and your joy may be full."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et haec est adnuntiatio quam audivimus ab eo et adnuntiamus vobis quoniam Deus lux est et tenebrae in eo non sunt ullae"
+      la: "Et haec est annuntiatio, quam audivimus ab eo, et annuntiamus vobis: quoniam Deus lux est, et tenebrae in eo non sunt ullae."
       en: "And this is the declaration which we have heard from him, and declare unto you: That God is light, and in him there is no darkness."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "si dixerimus quoniam societatem habemus cum eo et in tenebris ambulamus mentimur et non facimus veritatem"
+      la: "Si dixerimus quoniam societatem habemus cum eo, et in tenebris ambulamus, mentimur, et veritatem non facimus."
       en: "If we say that we have fellowship with him, and walk in darkness, we lie, and do not the truth."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "si autem in luce ambulemus sicut et ipse est in luce societatem habemus ad invicem et sanguis Iesu Filii eius mundat nos ab omni peccato"
+      la: "Si autem in luce ambulamus sicut et ipse est in luce, societatem habemus ad invicem, et sanguis Jesu Christi, Filii ejus, emundat nos ab omni peccato."
       en: "But if we walk in the light, as he also is in the light, we have fellowship one with another, and the blood of Jesus Christ his Son cleanseth us from all sin."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "si dixerimus quoniam peccatum non habemus ipsi nos seducimus et veritas in nobis non est"
+      la: "Si dixerimus quoniam peccatum non habemus, ipsi nos seducimus, et veritas in nobis non est."
       en: "If we say that we have no sin, we deceive ourselves, and the truth is not in us."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "si confiteamur peccata nostra fidelis est et iustus ut remittat nobis peccata et emundet nos ab omni iniquitate"
+      la: "Si confiteamur peccata nostra: fidelis est, et justus, ut remittat nobis peccata nostra, et emundet nos ab omni iniquitate."
       en: "If we confess our sins, he is faithful and just, to forgive us our sins, and to cleanse us from all iniquity."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "si dixerimus quoniam non peccavimus mendacem facimus eum et verbum eius non est in nobis"
+      la: "Si dixerimus quoniam non peccavimus, mendacem facimus eum, et verbum ejus non est in nobis."
       en: "If we say that we have not sinned, we make him a liar, and his word is not in us."
     status: { la: verified, en: verified }

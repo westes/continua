@@ -1,82 +1,82 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: jos
 chapter: 14
 verses:
   - n: 1
     text:
-      la: "hoc est quod possederunt filii Israhel in terra Chanaan quam dederunt eis Eleazar sacerdos et Iosue filius Nun et principes familiarum per tribus Israhel"
+      la: "Hoc est quod possederunt filii Israel in terra Chanaan, quam dederunt eis Eleazar sacerdos, et Josue filius Nun, et principes familiarum per tribus Israel:"
       en: "This is what the children of Israel possessed in the land of Chanaan, which Eleazar the priest, and Josue the son of Nun, and the princes of the families by the tribes of Israel gave to them:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "sorte omnia dividentes sicut praeceperat Dominus in manu Mosi novem tribubus et dimidiae tribui"
+      la: "sorte omnia dividentes, sicut praeceperat Dominus in manu Moysi, novem tribubus, et dimidiae tribui."
       en: "Dividing all by lot, as the Lord had commanded by the hand of Moses, to the nine tribes, and the half tribe."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "duabus enim tribubus et dimidiae dederat Moses trans Iordanem possessionem absque Levitis qui nihil terrae acceperunt inter fratres suos"
+      la: "Duabus enim tribubus, et dimidiae, dederat Moyses trans Jordanem possessionem: absque Levitis, qui nihil terrae acceperunt inter fratres suos:"
       en: "For to two tribes and a half Moses had given possession beyond the Jordan: besides the Levites, who received no land among their brethren:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "sed in eorum successerant locum filii Ioseph in duas divisi tribus Manasse et Ephraim nec acceperunt Levitae aliam in terra partem nisi urbes ad habitandum et suburbana earum ad alenda iumenta et pecora sua"
+      la: "sed in eorum successerunt locum filii Joseph in duas divisi tribus, Manasse et Ephraim: nec acceperunt Levitae aliam in terra partem, nisi urbes ad habitandum, et suburbana earum ad alenda jumenta et pecora sua."
       en: "But in their place succeeded the children of Joseph divided into two tribes, of Manasses and Ephraim: neither did the Levites receive other portion of land, but cities to dwell in, and their suburbs to feed their beasts and flocks."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "sicut praecepit Dominus Mosi ita fecerunt filii Israhel et diviserunt terram"
+      la: "Sicut praeceperat Dominus Moysi, ita fecerunt filii Israel, et diviserunt terram."
       en: "As the Lord had commanded Moses, so did the children of Israel, and they divided the land."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "accesserunt itaque filii Iuda ad Iosue in Galgala locutusque est ad eum Chaleb filius Iepphonne Cenezeus nosti quid locutus sit Dominus ad Mosen hominem Dei de me et te in Cadesbarne"
+      la: "Accesserunt itaque filii Juda ad Josue in Galgala, locutusque est ad eum Caleb filius Jephone Cenezaeus: Nosti quid locutus sit Dominus ad Moysen hominem Dei de me et te in Cadesbarne."
       en: "Then the children of Juda came to Josue in Galgal, and Caleb the son of Jephone the Cenezite spoke to him: Thou knowest what the Lord spoke to Moses the man of God concerning me and thee in Cadesbarne."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "quadraginta annorum eram quando me misit Moses famulus Domini de Cadesbarne ut considerarem terram nuntiavique ei quod mihi verum videbatur"
-      en: "I was forty Bears old when Moses the servant of the Lord sent me m from Cadesbarne, to view the land, and I brought him word again as to me seemed true."
+      la: "Quadraginta annorum eram quando misit me Moyses famulus Domini de Cadesbarne, ut considerarem terram, nuntiavique ei quod mihi verum videbatur."
+      en: "I was forty years old when Moses the servant of the Lord sent me from Cadesbarne, to view the land, and I brought him word again as to me seemed true."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "fratres autem mei qui ascenderant mecum dissolverunt cor populi et nihilominus ego secutus sum Dominum Deum meum"
+      la: "Fratres autem mei, qui ascenderant mecum, dissolverunt cor populi: et nihilominus ego secutus sum Dominum Deum meum."
       en: "But my brethren, that had gone up with me, discouraged the heart of the people: and I nevertheless followed the Lord my God."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "iuravitque Moses in die illo dicens terram quam calcavit pes tuus erit possessio tua et filiorum tuorum in aeternum quia secutus es Dominum Deum meum"
+      la: "Juravitque Moyses in die illo, dicens: Terra, quam calcavit pes tuus, erit possessio tua, et filiorum tuorum in aeternum: quia secutus es Dominum Deum meum."
       en: "And Moses swore in that day, saying: The land which thy foot hath trodden upon shall be thy possession, and thy children's for ever, because thou hast followed the Lord my God."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "concessit ergo Dominus vitam mihi sicut pollicitus est usque in praesentem diem quadraginta et quinque anni sunt ex quo locutus est Dominus verbum istud ad Mosen quando ambulabat Israhel per solitudinem hodie octoginta quinque annorum sum"
+      la: "Concessit ergo Dominus vitam mihi, sicut pollicitus est, usque in praesentem diem. Quadraginta et quinque anni sunt, ex quo locutus est Dominus verbum istud ad Moysen, quando ambulabat Israel per solitudinem: hodie octoginta quinque annorum sum,"
       en: "The Lord therefore hath granted me life, as he promised until this present day. It is forty and five years since the Lord spoke this word to Moses, when Israel journeyed through the wilderness: this day I am eighty-five years old,"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "sic valens ut eo valebam tempore quando ad explorandum missus sum illius in me temporis fortitudo usque hodie perseverat tam ad bellandum quam ad gradiendum"
-      en: "As strong as I was at that time when I was sent to view the land : the strength of that time continueth in me until this day, as well to fight as to march."
+      la: "sic valens ut eo valebam tempore quando ad explorandum missus sum: illius in me temporis fortitudo usque hodie perseverat, tam ad bellandum quam ad gradiendum."
+      en: "As strong as I was at that time when I was sent to view the land: the strength of that time continueth in me until this day, as well to fight as to march."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "da ergo mihi montem istum quem pollicitus est Dominus te quoque audiente in quo Enacim sunt et urbes magnae atque munitae si forte sit Dominus mecum et potuero delere eos sicut promisit mihi"
+      la: "Da ergo mihi montem istum, quem pollicitus est Dominus, te quoque audiente, in quo Enacim sunt, et urbes magnae atque munitae: si forte sit Dominus mecum, et potuero delere eos, sicut promisit mihi."
       en: "Give me therefore this mountain, which the Lord promised, in thy hearing also, wherein are the Enacims, and cities great and strong: if so be the Lord will be with me, and I shall be able to destroy them, as he promised me."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "benedixitque ei Iosue et tradidit Hebron in possessionem"
+      la: "Benedixitque ei Josue, et tradidit ei Hebron in possessionem:"
       en: "And Josue blessed him, and gave him Hebron in possession."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "atque ex eo fuit Hebron Chaleb filio Iepphonne Cenezeo usque in praesentem diem quia secutus est Dominum Deum Israhel"
+      la: "atque ex eo fuit Hebron Caleb filio Jephone Cenezaeo usque in praesentem diem, quia secutus est Dominum Deum Israel."
       en: "And from that time Hebron belonged to Caleb the son of Jephone the Cenezite, until this present day: because he followed the Lord the God of Israel."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "nomen Hebron antea vocabatur Cariatharbe Adam maximus ibi inter Enacim situs est et terra cessavit a proeliis"
+      la: "Nomen Hebron ante vocabatur Cariath Arbe: Adam maximus ibi inter Enacim situs est: et terra cessavit a praeliis."
       en: "The name of Hebron before was called Cariath-Arbe: Adam the greatest among the Enacims was laid there: and the land rested from wars."
     status: { la: verified, en: verified }

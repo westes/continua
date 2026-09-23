@@ -1,177 +1,177 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 3reg
 chapter: 13
 verses:
   - n: 1
     text:
-      la: "et ecce vir Dei venit de Iuda in sermone Domini in Bethel Hieroboam stante super altare et tus iaciente"
+      la: "Et ecce vir Dei venit de Juda in sermone Domini in Bethel, Jeroboam stante super altare, et thus jaciente."
       en: "And behold there came a man of God out of Juda, by the word of the Lord to Bethel, when Jeroboam was standing upon the altar, and burning incense."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et exclamavit contra altare in sermone Domini et ait altare altare haec dicit Dominus ecce filius nascetur domui David Iosias nomine et immolabit super te sacerdotes excelsorum qui nunc in te tura succendunt et ossa hominum incendet super te"
+      la: "Et exclamavit contra altare in sermone Domini, et ait: Altare, altare, haec dicit Dominus: Ecce filius nascetur domui David, Josias nomine, et immolabit super te sacerdotes excelsorum, qui nunc in te thura succendunt, et ossa hominum super te incendet."
       en: "And he cried out against the altar in the word of the Lord, and said: O altar, altar, thus saith the Lord: Behold a child shall be born to the house of David, Josias by name, and he shall immolate upon thee the priests of the high places, who now burn incense upon thee, and he shall burn men's bones upon thee."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "deditque in die illa signum dicens hoc erit signum quod locutus est Dominus ecce altare scinditur et effunditur cinis qui in eo est"
+      la: "Deditque in illa die signum, dicens: Hoc erit signum quod locutus est Dominus: ecce altare scindetur, et effundetur cinis qui in eo est."
       en: "And he gave a sign the same day, saying: This shall be the sign, that the Lord hath spoken: Behold the altar shall be rent, and the ashes that are upon it shall be poured out."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "cumque audisset rex sermonem hominis Dei quem inclamaverat contra altare in Bethel extendit manum suam de altari dicens adprehendite eum et exaruit manus eius quam extenderat contra eum nec valuit retrahere eam ad se"
+      la: "Cumque audisset rex sermonem hominis Dei, quem inclamaverat contra altare in Bethel, extendit manum suam de altari, dicens: Apprehendite eum. Et exaruit manus ejus, quam extenderat contra eum: nec valuit retrahere eam ad se."
       en: "And when the king had heard the word of the man of God, which he had cried out against the altar in Bethel, he stretched forth his hand from the altar, saying: Lay hold on him. And his hand which he stretched forth against him withered: and he was not able to draw it back again to him."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "altare quoque scissum est et effusus cinis de altari iuxta signum quod praedixerat vir Dei in sermone Domini"
+      la: "Altare quoque scissum est, et effusus est cinis de altari, juxta signum quod praedixerat vir Dei in sermone Domini."
       en: "The altar also was rent, and the ashes were poured out from the altar, according to the sign which the man of God had given before in the word of the Lord."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et ait rex ad virum Dei deprecare faciem Domini Dei tui et ora pro me ut restituatur manus mea mihi oravit vir Dei faciem Domini et reversa est manus regis ad eum et facta est sicut prius fuerat"
+      la: "Et ait rex ad virum Dei: Deprecare faciem Domini Dei tui, et ora pro me, ut restituatur manus mea mihi. Oravitque vir Dei faciem Domini, et reversa est manus regis ad eum, et facta est sicut prius fuerat."
       en: "And the king said to the man of God: Entreat the face of the Lord thy God, and pray for me, that my hand may be restored to me. And the man of God besought the face of the Lord, and the king's hand was restored to him, and it became as it was before."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "locutus est autem rex ad virum Dei veni mecum domum ut prandeas et dabo tibi munera"
+      la: "Locutus est autem rex ad virum Dei: Veni mecum domum ut prandeas, et dabo tibi munera."
       en: "And the king said to the man of God: Come home with me to dine, and I will make thee presents."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "responditque vir Dei ad regem si dederis mihi mediam partem domus tuae non veniam tecum nec comedam panem neque bibam aquam in loco isto"
+      la: "Responditque vir Dei ad regem: Si dederis mihi mediam partem domus tuae, non veniam tecum, nec comedam panem, neque bibam aquam in loco isto:"
       en: "And the man of God answered the king: If thou wouldst give me half thy house I will not go with thee, nor eat bread, nor drink water in this place:"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "sic enim mandatum est mihi in sermone Domini praecipientis non comedes panem neque bibes aquam nec reverteris per viam qua venisti"
+      la: "sic enim mandatum est mihi in sermone Domini praecipientis: Non comedes panem, neque bibes aquam, nec reverteris per viam qua venisti."
       en: "For so it was enjoined me by the word of the Lord commanding me: Thou shalt not eat bread nor drink water, nor return by the same way that thou camest."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "abiit ergo per aliam viam et non est reversus per iter quo venerat in Bethel"
+      la: "Abiit ergo per aliam viam, et non est reversus per iter quo venerat in Bethel."
       en: "So he departed by another way, and returned not by the way that he came into Bethel."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "prophetes autem quidam senex habitabat in Bethel ad quem venit filius suus et narravit ei omnia opera quae fecerat vir Dei illa die in Bethel et verba quae locutus fuerat ad regem et narraverunt patri suo"
+      la: "Prophetes autem quidam senex habitabat in Bethel, ad quem venerunt filii sui, et narraverunt ei omnia opera, quae fecerat vir Dei illa die in Bethel: et verba quae locutus fuerat ad regem, narraverunt patri suo."
       en: "Now a certain old prophet dwelt in Bethel, and his sons came to him and told him all the works that the man of God had done that day in Bethel: and they told their father the words which he had spoken to the king."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "et dixit eis pater eorum per quam viam abiit ostenderunt ei filii sui viam per quam abierat vir Dei qui venerat de Iuda"
+      la: "Et dixit eis pater eorum: Per quam viam abiit? Ostenderunt ei filii sui viam, per quam abierat vir Dei, qui venerat de Juda."
       en: "And their father said to them: What way went he? His sons shewed him the way by which the man of God went, who came out of Juda."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et ait filiis suis sternite mihi asinum qui cum stravissent ascendit"
+      la: "Et ait filiis suis: Sternite mihi asinum. Qui cum stravissent, ascendit,"
       en: "And he said to his sons: Saddle me the ass. And when they had saddled him, he got up,"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et abiit post virum Dei et invenit eum sedentem subtus terebinthum et ait illi tune es vir Dei qui venisti de Iuda respondit ille ego sum"
+      la: "et abiit post virum Dei, et invenit eum sedentem subtus terebinthum: et ait illi: Tune es vir Dei qui venisti de Juda? Respondit ille: Ego sum."
       en: "And went after the man of God, and found him sitting under a turpentine tree: and he said to him: Art thou the man of God that camest from Juda? He answered: I am."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "dixit ad eum veni mecum domum ut comedas panem"
+      la: "Dixitque ad eum: Veni mecum domum, ut comedas panem."
       en: "And he said to him: Come home with me, to eat bread."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "qui ait non possum reverti neque venire tecum nec comedam panem nec bibam aquam in loco isto"
-      en: "But he said: I must not return, nor go with thee, neither will I eat bread, nor drink water in this place :"
+      la: "Qui ait: Non possum reverti, neque venire tecum, nec comedam panem, neque bibam aquam in loco isto:"
+      en: "But he said: I must not return, nor go with thee, neither will I eat bread, nor drink water in this place:"
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "quia locutus est Dominus ad me in sermone Domini dicens non comedes panem et non bibes ibi aquam nec reverteris per viam qua ieris"
+      la: "quia locutus est Dominus ad me in sermone Domini, dicens: Non comedes panem, et non bibes aquam ibi, nec reverteris per viam qua ieris."
       en: "Because the Lord spoke to me in the word of the Lord, saying: Thou shalt not eat bread, and thou shalt not drink water there, nor return by the way thou wentest."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "qui ait illi et ego propheta sum similis tui et angelus locutus est mihi in sermone Domini dicens reduc eum tecum in domum tuam et comedat panem et bibat aquam fefellit eum"
+      la: "Qui ait illi: Et ego propheta sum similis tui: et angelus locutus est mihi in sermone Domini, dicens: Reduc eum tecum in domum tuam, ut comedat panem, et bibat aquam. Fefellit eum,"
       en: "He said to him: I also am a prophet like unto thee: and an angel spoke to me in the word of the Lord, saying: Bring him back with thee into thy house, that he may eat bread, and drink water. He deceived him,"
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "et reduxit secum comedit ergo panem in domo eius et bibit aquam"
+      la: "et reduxit secum: comedit ergo panem in domo ejus, et bibit aquam."
       en: "And brought him back with him: so he ate bread and drank water in his house."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "cumque sederent ad mensam factus est sermo Domini ad prophetam qui reduxerat eum"
+      la: "Cumque sederent ad mensam, factus est sermo Domini ad prophetam, qui reduxerat eum."
       en: "And as they sat at table, the word of the Lord came to the prophet that brought him back:"
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "et exclamavit ad virum Dei qui venerat de Iuda dicens haec dicit Dominus quia inoboediens fuisti ori Domini et non custodisti mandatum quod praecepit tibi Dominus Deus tuus"
-      en: "And he cried out to the man of God who came out of Juda, saying : Thus saith the Lord: Because thou hast not been obedient to the Lord, and hast not kept the commandment which the Lord thy God commanded thee,"
+      la: "Et exclamavit ad virum Dei, qui venerat de Juda, dicens: Haec dicit Dominus: Quia non obediens fuisti ori Domini, et non custodisti mandatum quod praecepit tibi Dominus Deus tuus,"
+      en: "And he cried out to the man of God who came out of Juda, saying: Thus saith the Lord: Because thou hast not been obedient to the Lord, and hast not kept the commandment which the Lord thy God commanded thee,"
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "et reversus es et comedisti panem et bibisti aquam in loco in quo praecepit tibi ne comederes panem neque biberes aquam non inferetur cadaver tuum in sepulchrum patrum tuorum"
+      la: "et reversus es, et comedisti panem, et bibisti aquam in loco in quo praecepit tibi ne comederes panem, neque biberes aquam, non inferetur cadaver tuum in sepulchrum patrum tuorum."
       en: "And hast returned and eaten bread, and drunk water in the place wherein he commanded thee that thou shouldst not eat bread, nor drink water, thy dead body shall not be brought into the sepulchre of thy fathers."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "cumque comedisset et bibisset stravit asinum prophetae quem reduxerat"
+      la: "Cumque comedisset et bibisset, stravit asinum suum prophetae, quem reduxerat."
       en: "And when he had eaten and drunk, he saddled his ass for the prophet, whom he had brought back."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "qui cum abisset invenit eum leo in via et occidit et erat cadaver eius proiectum in itinere asinus autem stabat iuxta illum et leo stabat iuxta cadaver"
+      la: "Qui cum abiisset, invenit eum leo in via, et occidit, et erat cadaver ejus projectum in itinere: asinus autem stabat juxta illum, et leo stabat juxta cadaver."
       en: "And when he was gone, a lion found him in the way, and killed him, and his body was cast in the way: and the ass stood by him, and the lion stood by the dead body."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "et ecce viri transeuntes viderunt cadaver proiectum in via et leonem stantem iuxta cadaver et venerunt et divulgaverunt in civitate in qua prophetes senex ille habitabat"
+      la: "Et ecce, viri transeuntes viderunt cadaver projectum in via, et leonem stantem juxta cadaver. Et venerunt et divulgaverunt in civitate, in qua prophetes ille senex habitabat."
       en: "And behold, men passing by saw the dead body cast in the way, and the lion standing by the body. And they came and told it in the city, wherein that old prophet dwelt."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "quod cum audisset propheta ille qui reduxerat eum de via ait vir Dei est qui inoboediens fuit ori Domini et tradidit eum Dominus leoni et confregit eum et occidit iuxta verbum Domini quod locutus est ei"
+      la: "Quod cum audisset propheta ille, qui reduxerat eum, ait: Vir Dei est, qui inobediens fuit ori Domini, et tradidit eum Dominus leoni, et confregit eum, et occidit juxta verbum Domini, quod locutus est ei."
       en: "And when that prophet, who had brought him back out of the way, heard of it, he said: It is the man of God, that was disobedient to the mouth of the Lord, and the Lord hath delivered him to the lion, and he hath torn him, and killed him according to the word of the Lord, which he spoke to him."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "dixitque ad filios suos sternite mihi asinum qui cum stravissent"
+      la: "Dixitque ad filios suos: Sternite mihi asinum. Qui cum stravissent,"
       en: "And he said to his sons: Saddle me an ass. And when they had saddled it,"
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "et ille abisset invenit cadaver eius proiectum in via et asinum et leonem stantes iuxta cadaver non comedit leo de cadavere nec laesit asinum"
+      la: "et ille abiisset, invenit cadaver ejus projectum in via, et asinum et leonem stantem juxta cadaver: non comedit leo de cadavere, nec laesit asinum."
       en: "And he was gone, he found the dead body cast in the way, and the ass and the lion standing by the carcass: the lion had not eaten of the dead body, nor hurt the ass."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "tulit ergo prophetes cadaver viri Dei et posuit illud super asinum et reversus intulit in civitatem prophetae senis ut plangerent eum"
+      la: "Tulit ergo prophetes cadaver viri Dei, et posuit illud super asinum, et reversus intulit in civitatem prophetae senis ut plangeret eum."
       en: "And the prophet took up the body of the man of God, and laid it upon the ass, and going back brought it into the city of the old prophet, to mourn for him."
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "et posuit cadaver eius in sepulchro suo et planxerunt eum heu frater"
-      en: "And he laid his dead body in his own sepulchre: and they mourned over him, saying: Alas! alas ! my brother."
+      la: "Et posuit cadaver ejus in sepulchro suo, et planxerunt eum: Heu, heu mi frater!"
+      en: "And he laid his dead body in his own sepulchre: and they mourned over him, saying: Alas! alas! my brother."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "cumque planxissent eum dixit ad filios suos cum mortuus fuero sepelite me in sepulchro in quo vir Dei sepultus est iuxta ossa eius ponite ossa mea"
+      la: "Cumque planxissent eum, dixit ad filios suos: Cum mortuus fuero, sepelite me in sepulchro, in quo vir Dei sepultus est: juxta ossa ejus ponite ossa mea."
       en: "And when they had mourned over him, he said to his sons: When I am dead, bury me in the sepulchre wherein the man of God is buried: lay my bones beside his bones."
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "profecto enim veniet sermo quem praedixit in sermone Domini contra altare quod est in Bethel et contra omnia fana excelsorum quae sunt in urbibus Samariae"
+      la: "Profecto enim veniet sermo, quem praedixit in sermone Domini contra altare quod est in Bethel, et contra omnia fana excelsorum, quae sunt in urbibus Samariae."
       en: "For assuredly the word shall come to pass which he hath foretold in the word of the Lord against the altar that is in Bethel: and against all the temples of the high places, that are in the cities of Samaria."
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "post verba haec non est reversus Hieroboam de via sua pessima sed e contrario fecit de novissimis populi sacerdotes excelsorum quicumque volebat implebat manum suam et fiebat sacerdos excelsorum"
+      la: "Post verba haec non est reversus Jeroboam de via sua pessima, sed e contrario fecit de novissimis populi sacerdotes excelsorum: quicumque volebat, implebat manum suam, et fiebat sacerdos excelsorum."
       en: "After these words Jeroboam came not back from his wicked way: but on the contrary he made of the meanest of the people priests of the high places: whosoever would, he filled his hand, and he was made a priest of the high places."
     status: { la: verified, en: verified }
   - n: 34
     text:
-      la: "et propter hanc causam peccavit domus Hieroboam et eversa est et deleta de superficie terrae"
+      la: "Et propter hanc causam peccavit domus Jeroboam, et eversa est, et deleta de superficie terrae."
       en: "And for this cause did the house of Jeroboam sin, and was cut off and destroyed from the face of the earth."
     status: { la: verified, en: verified }

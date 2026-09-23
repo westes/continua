@@ -1,92 +1,87 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 2thess
 chapter: 2
 verses:
   - n: 1
     text:
-      la: "rogamus autem vos fratres per adventum Domini nostri Iesu Christi et nostrae congregationis in ipsum"
+      la: "Rogamus autem vos, fratres, per adventum Domini nostri Jesu Christi, et nostrae congregationis in ipsum:"
       en: "And we beseech you, brethren, by the coming of our Lord Jesus Christ, and of our gathering together unto him:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "ut non cito moveamini a sensu neque terreamini neque per spiritum neque per sermonem neque per epistulam tamquam per nos quasi instet dies Domini"
+      la: "ut non cito moveamini a vestro sensu, neque terreamini, neque per spiritum, neque per sermonem, neque per epistolam tamquam per nos missam, quasi instet dies Domini."
       en: "That you be not easily moved from your sense, nor be terrified, neither by spirit, nor by word, nor by epistle, as sent from us, as if the day of the Lord were at hand."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "ne quis vos seducat ullo modo quoniam nisi venerit discessio primum et revelatus fuerit homo peccati filius perditionis"
+      la: "Ne quis vos seducat ullo modo: quoniam nisi venerit discessio primum, et revelatus fuerit homo peccati filius perditionis,"
       en: "Let no man deceive you by any means, for unless there come a revolt first, and the man of sin be revealed, the son of perdition,"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "qui adversatur et extollitur supra omne quod dicitur Deus aut quod colitur ita ut in templo Dei sedeat ostendens se quia sit Deus"
+      la: "qui adversatur, et extollitur supra omne, quod dicitur Deus, aut quod colitur, ita ut in templo Dei sedeat ostendens se tamquam sit Deus."
       en: "Who opposeth, and is lifted up above all that is called God, or that is worshipped, so that he sitteth in the temple of God, shewing himself as if he were God."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "non retinetis quod cum adhuc essem apud vos haec dicebam vobis"
+      la: "Non retinetis quod cum adhuc essem apud vos, haec dicebam vobis?"
       en: "Remember you not, that when I was yet with you, I told you these things?"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et nunc quid detineat scitis ut reveletur in suo tempore"
+      la: "et nunc quid detineat scitis, ut reveletur in suo tempore."
       en: "And now you know what withholdeth, that he may be revealed in his time."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "nam mysterium iam operatur iniquitatis tantum ut qui tenet nunc donec de medio fiat"
+      la: "Nam mysterium jam operatur iniquitatis: tantum ut qui tenet nunc, teneat, donec de medio fiat."
       en: "For the mystery of iniquity already worketh; only that he who now holdeth, do hold, until he be taken out of the way."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et tunc revelabitur ille iniquus quem Dominus Iesus interficiet spiritu oris sui et destruet inlustratione adventus sui"
+      la: "Et tunc revelabitur ille iniquus, quem Dominus Jesus interficiet spiritu oris sui, et destruet illustratione adventus sui eum:"
       en: "And then that wicked one shall be revealed whom the Lord Jesus shall kill with the spirit of his mouth; and shall destroy with the brightness of his coming, him,"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "eum cuius est adventus secundum operationem Satanae in omni virtute et signis et prodigiis mendacibus"
+      la: "cujus est adventus secundum operationem Satanae in omni virtute, et signis, et prodigiis mendacibus,"
       en: "Whose coming is according to the working of Satan, in all power, and signs, and lying wonders,"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et in omni seductione iniquitatis his qui pereunt eo quod caritatem veritatis non receperunt ut salvi fierent"
+      la: "et in omni seductione iniquitatis iis qui pereunt: eo quod caritatem veritatis non receperunt ut salvi fierent. Ideo mittet illis Deus operationem erroris ut credant mendacio,"
       en: "And in all seduction of iniquity to them that perish; because they receive not the love of the truth, that they might be saved. Therefore God shall send them the operation of error, to believe lying:"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "ideo mittit illis Deus operationem erroris ut credant mendacio"
+      la: "ut judicentur omnes qui non crediderunt veritati, sed consenserunt iniquitati."
       en: "That all may be judged who have not believed the truth, but have consented to iniquity."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "ut iudicentur omnes qui non crediderunt veritati sed consenserunt iniquitati"
+      la: "Nos autem debemus gratias agere Deo semper pro vobis, fratres dilecti a Deo, quod elegerit vos Deus primitias in salutem in sanctificatione spiritus, et in fide veritatis:"
       en: "But we ought to give thanks to God always for you, brethren, beloved of God, for that God hath chosen you firstfruits unto salvation, in sanctification of the spirit, and faith of the truth:"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "nos autem debemus gratias agere Deo semper pro vobis fratres dilecti a Deo quod elegerit nos Deus primitias in salutem in sanctificatione Spiritus et fide veritatis"
+      la: "in qua et vocavit vos per Evangelium nostrum in acquisitionem gloriae Domini nostri Jesu Christi."
       en: "Whereunto also he hath called you by our gospel, unto the purchasing of the glory of our Lord Jesus Christ."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "ad quod et vocavit vos per evangelium nostrum in adquisitionem gloriae Domini nostri Iesu Christi"
+      la: "Itaque fratres, state: et tenete traditiones, quas didicistis, sive per sermonem, sive per epistolam nostram."
       en: "Therefore, brethren, stand fast; and hold the traditions which you have learned, whether by word, or by our epistle."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "itaque fratres state et tenete traditiones quas didicistis sive per sermonem sive per epistulam nostram"
-      en: "Now our Lord Jesus Christ himself, and God and our Father, who hathloved us, and hath given us everlasting consolation, and good hope in grace,"
+      la: "Ipse autem Dominus noster Jesus Christus, et Deus et Pater noster, qui dilexit nos, et dedit consolationem aeternam, et spem bonam in gratia,"
+      en: "Now our Lord Jesus Christ himself, and God and our Father, who hath loved us, and hath given us everlasting consolation, and good hope in grace,"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "ipse autem Dominus noster Iesus Christus et Deus et Pater noster qui dilexit nos et dedit consolationem aeternam et spem bonam in gratia"
-      en: "Exhort your hearts, and confirm you in every good work and word."
-    status: { la: verified, en: verified }
-  - n: 17
-    text:
-      la: "exhortetur corda vestra et confirmet in omni opere et sermone bono"
+      la: "exhortetur corda vestra, et confirmet in omni opere et sermone bono."
       en: "Exhort your hearts, and confirm you in every good work and word."
     status: { la: verified, en: verified }

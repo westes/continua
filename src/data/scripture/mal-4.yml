@@ -1,32 +1,37 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: mal
 chapter: 4
 verses:
   - n: 1
     text:
-      la: "ecce enim dies veniet succensa quasi caminus et erunt omnes superbi et omnes facientes impietatem stipula et inflammabit eos dies veniens dicit Dominus exercituum quae non relinquet eis radicem et germen"
+      la: "Ecce enim dies veniet succensa quasi caminus: et erunt omnes superbi et omnes facientes impietatem stipula: et inflammabit eos dies veniens, dicit Dominus exercituum, quae non derelinquet eis radicem et germen."
       en: "For behold the day shall come kindled as a furnace: and all the proud, and all that do wickedly shall be stubble: and the day that cometh shall set them on fire, saith the Lord of hosts, it shall not leave them root, nor branch."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et orietur vobis timentibus nomen meum sol iustitiae et sanitas in pinnis eius et egrediemini et salietis sicut vituli de armento"
+      la: "Et orietur vobis timentibus nomen meum sol justitiae, et sanitas in pennis ejus: et egrediemini, et salietis sicut vituli de armento."
       en: "But unto you that fear my name, the Sun of justice shall arise, and health in his wings: and you shall go forth, and shall leap like calves of the herd."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et calcabitis impios cum fuerint cinis sub planta pedum vestrorum in die qua ego facio dicit Dominus exercituum"
+      la: "Et calcabitis impios, cum fuerint cinis sub planta pedum vestrorum, in die qua ego facio, dicit Dominus exercituum."
       en: "And you shall tread down the wicked when they shall be ashes under the sole of your feet in the day that I do this, saith the Lord of hosts."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "mementote legis Mosi servi mei quam mandavi ei in Choreb ad omnem Israhel praecepta et iudicia"
+      la: "Mementote legis Moysi servi mei, quam mandavi ei in Horeb ad omnem Israel, praecepta et judicica."
       en: "Remember the law of Moses my servant, which I commanded him in Horeb for all Israel, the precepts, and judgments."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "ecce ego mittam vobis Heliam prophetam antequam veniat dies Domini magnus et horribilis"
+      la: "Ecce ego mittam vobis Eliam prophetam, antequam veniat dies Domini magnus et horribilis."
       en: "Behold I will send you Elias the prophet, before the coming of the great and dreadful day of the Lord."
+    status: { la: verified, en: verified }
+  - n: 6
+    text:
+      la: "Et convertet cor patrum ad filios, et cor filiorum ad patres eorum: ne forte veniam, et percutiam terram anathemate."
+      en: "And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers: lest I come, and strike the earth with anathema."
     status: { la: verified, en: verified }

@@ -1,97 +1,97 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: deut
 chapter: 13
 verses:
   - n: 1
     text:
-      la: "si surrexerit in medio tui prophetes aut qui somnium vidisse se dicat et praedixerit signum atque portentum"
+      la: "Si surrexerit in medio tui prophetes, aut qui somnium vidisse se dicat, et praedixerit signum atque portentum,"
       en: "If there rise in the midst of thee a prophet or one that saith he hath dreamed a dream, and he foretell a sign and a wonder,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et evenerit quod locutus est et dixerit tibi eamus et sequamur deos alienos quos ignoras et serviamus eis"
+      la: "et evenerit quod locutus est, et dixerit tibi: Eamus, et sequamur deos alienos quos ignoras, et serviamus eis:"
       en: "And that come to pass which he spoke, and he say to thee: Let us go and follow strange gods, which thou knowest not, and let us serve them:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "non audies verba prophetae illius aut somniatoris quia temptat vos Dominus Deus vester ut palam fiat utrum diligatis eum an non in toto corde et in tota anima vestra"
+      la: "non audies verba prophetae illius aut somniatoris: quia tentat vos Dominus Deus vester, ut palam fiat utrum diligatis eum an non, in toto corde, et in tota anima vestra."
       en: "Thou shalt not hear the words of that prophet or dreamer: for the Lord your God trieth you, that it may appear whether you love him with all your heart, and with all your soul, or not."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "Dominum Deum vestrum sequimini et ipsum timete mandata illius custodite et audite vocem eius ipsi servietis et ipsi adherebitis"
+      la: "Dominum Deum vestrum sequimini, et ipsum timete, et mandata illius custodite, et audite vocem ejus: ipsi servietis, et ipsi adhaerebitis."
       en: "Follow the Lord your God, and fear him, and keep his commandments, and hear his voice: him you shall serve, and to him you shall cleave."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "propheta autem ille aut fictor somniorum interficietur quia locutus est ut vos averteret a Domino Deo vestro qui eduxit vos de terra Aegypti et redemit de domo servitutis ut errare te faceret de via quam tibi praecepit Dominus Deus tuus et auferes malum de medio tui"
+      la: "Propheta autem ille aut fictor somniorum interficietur: quia locutus est ut vos averteret a Domino Deo vestro, qui eduxit vos de terra Aegypti, et redemit vos de domo servitutis: ut errare te faceret de via, quam tibi praecepit Dominus Deus tuus: et auferes malum de medio tui."
       en: "And that prophet or forger of dreams shall be slain: because he spoke to draw you away from the Lord your God, who brought you out of the land of Egypt, and redeemed you from the house of bondage: to make thee go out of the way, which the Lord thy God commanded thee: and thou shalt take away the evil out of the midst of thee."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "si tibi voluerit persuadere frater tuus filius matris tuae aut filius tuus vel filia sive uxor quae est in sinu tuo aut amicus quem diligis ut animam tuam clam dicens eamus et serviamus diis alienis quos ignoras tu et patres tui"
+      la: "Si tibi voluerit persuadere frater tuus filius matris tuae, aut filius tuus vel filia, sive uxor quae est in sinu tuo, aut amicus, quem diligis ut animam tuam, clam dicens: Eamus, et serviamus diis alienis, quos ignoras tu, et patres tui,"
       en: "If thy brother the son of thy mother, or thy son, or daughter, or thy wife that is in thy bosom, or thy friend, whom thou lovest as thy own soul, would persuade thee secretly, saying: Let us go, and serve strange gods, which thou knowest not, nor thy fathers,"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "cunctarum in circuitu gentium quae iuxta vel procul sunt ab initio usque ad finem terrae"
+      la: "cunctarum in circuitu gentium, quae juxta vel procul sunt, ab initio usque ad finem terrae,"
       en: "Of all the nations round about, that are near or afar off, from one end of the earth to the other,"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "non adquiescas ei nec audias neque parcat ei oculus tuus ut miserearis et occultes eum"
+      la: "non acquiescas ei, nec audias, neque parcat ei oculus tuus ut miserearis et occultes eum,"
       en: "Consent not to him, hear him not, neither let thy eye spare him to pity and conceal him,"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "sed statim interficies sit primum manus tua super eum et post te omnis populus mittat manum"
+      la: "sed statim interficies: sit primum manus tua super eum, et postea omnis populus mittat manum."
       en: "But thou shalt presently put him to death. It Let thy hand be first upon him, and afterwards the hands of all the people."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "lapidibus obrutus necabitur quia voluit te abstrahere a Domino Deo tuo qui eduxit te de terra Aegypti de domo servitutis"
+      la: "Lapidibus obrutus necabitur: quia voluit te abstrahere a Domino Deo tuo, qui eduxit te de terra Aegypti, de domo servitutis:"
       en: "With stones shall he be stoned to death: because he would have withdrawn thee from the Lord thy God, who brought thee out of the land of Egypt, from the house of bondage:"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "ut omnis Israhel audiens timeat et nequaquam ultra faciat quippiam huius rei simile"
+      la: "ut omnis Israel audiens timeat, et nequaquam ultra faciat quippiam hujus rei simile."
       en: "That all Israel hearing may fear, and may do no more any thing like this."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "si audieris in una urbium tuarum quas Dominus Deus tuus dabit tibi ad habitandum dicentes aliquos"
+      la: "Si audieris in una urbium tuarum, quas Dominus Deus tuus dabit tibi ad habitandum, dicentes aliquos:"
       en: "If in one of thy cities, which the Lord thy God shall give thee to dwell in, thou hear some say:"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "egressi sunt filii Belial de medio tui et averterunt habitatores urbis tuae atque dixerunt eamus et serviamus diis alienis quos ignoratis"
+      la: "Egressi sunt filii Belial de medio tui, et averterunt habitatores urbis suae, atque dixerunt: Eamus, et serviamus diis alienis quos ignoratis:"
       en: "Children of Belial are gone out of the midst of thee, and have withdrawn the inhabitants of their city, and have said: Let us go, and serve strange gods which you know not:"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "quaere sollicite et diligenter rei veritate perspecta si inveneris certum esse quod dicitur et abominationem hanc opere perpetratam"
+      la: "quare sollicite et diligenter, rei veritate perspecta, si inveneris certum esse quod dicitur, et abominationem hanc opere perpetratam,"
       en: "Inquire carefully and diligently, the truth of the thing by looking well into it, and if thou find that which is said to be certain, and that this abomination hath been really committed,"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "statim percuties habitatores urbis illius in ore gladii et delebis eam omniaque quae in illa sunt usque ad pecora"
+      la: "statim percuties habitatores urbis illius in ore gladii, et delebis eam ac omnia quae in illa sunt, usque ad pecora."
       en: "Thou shalt forthwith kill the inhabitants of that city with the edge of the sword, and shalt destroy it and all things that are in it, even the cattle."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "quicquid etiam supellectilis fuerit congregabis in medium platearum eius et cum ipsa civitate succendes ita ut universa consumas Domino Deo tuo et sit tumulus sempiternus non aedificabitur amplius"
+      la: "Quidquid etiam supellectilis fuerit, congregabis in medio platearum ejus, et cum ipsa civitate succendes, ita ut universa consumas Domino Deo tuo, et sit tumulus sempiternus. Non aedificabitur amplius,"
       en: "And all the household goods that are there, thou shalt gather together in the midst of the streets thereof, and shalt burn them with the city itself, so as to consume all for the Lord thy God, and that it be a heap for ever: it shall be built no more."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "et non adherebit de illo anathemate quicquam in manu tua ut avertatur Dominus ab ira furoris sui et misereatur tui multiplicetque te sicut iuravit patribus tuis"
+      la: "et non adhaerebit de illo anathemate quidquam in manu tua: ut avertatur Dominus ab ira furoris sui, et misereatur tui, multiplicetque te sicut juravit patribus tuis,"
       en: "And there shall nothing of that anathema stick to thy hand: that the Lord may turn from the wrath of his fury, and may have mercy on thee, and multiply thee as he swore to thy fathers,"
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "quando audieris vocem Domini Dei tui custodiens omnia praecepta eius quae ego praecipio tibi hodie ut facias quod placitum est in conspectu Domini Dei tui"
+      la: "quando audieris vocem Domini Dei tui custodiens omnia praecepta ejus, quae ego praecipio tibi hodie, ut facias quod placitum est in conspectu Domini Dei tui."
       en: "When thou shalt hear the voice of the Lord thy God, keeping all his precepts, which I command thee this day, that thou mayst do what is pleasing in the sight of the Lord thy God."
     status: { la: verified, en: verified }

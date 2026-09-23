@@ -1,97 +1,97 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: ruth
 chapter: 3
 verses:
   - n: 1
     text:
-      la: "postquam autem reversa est ad socrum suam audivit ab ea filia mi quaeram tibi requiem et providebo ut bene sit tibi"
+      la: "Postquam autem reversa est ad socrum suam, audivit ab ea: Filia mea, quaeram tibi requiem, et providebo ut bene sit tibi."
       en: "After she was returned to her mother in law, Noemi said to her: My daughter, I will seek rest for thee, and will provide that it may be well with thee."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "Booz iste cuius puellis in agro iuncta es propinquus est noster et hac nocte aream hordei ventilat"
+      la: "Booz iste, cujus puellis in agro juncta es, propinquus noster est, et hac nocte aream hordei ventilat."
       en: "This Booz, with whose maids thou wast joined in the field, is our near kinsman, and behold this night he winnoweth barley in the threshingfloor."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "lava igitur et unguere et induere cultioribus vestimentis ac descende in aream non te videat homo donec esum potumque finierit"
+      la: "Lavare igitur, et undere, et induere cultioribus vestimentis, et descende in aream: non te videat homo, donec esum potumque finierit."
       en: "Wash thyself therefore and anoint thee, and put on thy best garments, and go down to the barnfloor: but let not the man see thee, till he shall have done eating and drinking."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "quando autem ierit ad dormiendum nota locum in quo dormiat veniesque et discoperies pallium quo operitur a parte pedum et proicies te et ibi iacebis ipse autem dicet tibi quid agere debeas"
+      la: "Quando autem ierit ad dormiendum, nota locum in quo dormiat: veniesque et discooperies pallium, quo operitur a parte pedum, et projicies te, et ibi jacebis: ipse autem dicet quid agere debeas."
       en: "And when he shall go to sleep, mark the place wherein he sleepeth: and thou shalt go in, and lift up the clothes wherewith he is covered towards his feet, and shalt lay thyself down there: and he will tell thee what thou must do."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "quae respondit quicquid praeceperis faciam"
+      la: "Quae respondit: Quidquid praeceperis, faciam."
       en: "She answered: Whatsoever thou shalt command, I will do."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "descenditque in aream et fecit omnia quae sibi imperaverat socrus"
+      la: "Descenditque in aream, et fecit omnia quae sibi imperaverat socrus."
       en: "And she went down to the barnfloor, and did all that her mother in law had bid her."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "cumque comedisset Booz et bibisset et factus esset hilarior issetque ad dormiendum iuxta acervum manipulorum venit abscondite et discoperto a pedibus eius pallio se proiecit"
+      la: "Cumque comedisset Booz, et bibisset, et factus esset hilarior, issetque ad dormiendum juxta acervum manipulorum, venit abscondite, et discooperto pallio, a pedibus ejus se projecit."
       en: "And when Booz had eaten, and drunk, and was merry, he went to sleep by the heap of sheaves, and she came softly and uncovering his feet, laid herself down."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et ecce nocte iam media expavit homo et conturbatus est viditque mulierem iacentem ad pedes suos"
+      la: "Et ecce, nocte jam media expavit homo, et conturbatus est: viditque mulierem jacentem ad pedes suos,"
       en: "And behold, when it was now midnight the man was afraid, and troubled: and he saw a woman lying at his feet,"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "et ait illi quae es illaque respondit ego sum Ruth ancilla tua expande pallium tuum super famulam tuam quia propinquus es"
+      la: "et ait illi: Quae es? Illaque respondit: Ego sum Ruth ancilla tua: expande pallium tuum super famulam tuam, quia propinquus es."
       en: "And he said to her: Who art thou? And she answered: I am Ruth thy handmaid: spread thy coverlet over thy servant, for thou art a near kinsman."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et ille benedicta inquit es Domino filia et priorem misericordiam posteriore superasti quia non es secuta iuvenes pauperes sive divites"
+      la: "Et ille: Benedicta, inquit, es a Domino filia, et priorem misericordiam posteriore superasti: quia non est secuta juvenes, pauperes sive divites."
       en: "And he said: Blessed art thou of the Lord, my daughter, and thy latter kindness has surpassed the former: because thou hast not followed young men either poor or rich."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "noli ergo metuere sed quicquid dixeris mihi faciam tibi scit enim omnis populus qui habitat intra portas urbis meae mulierem te esse virtutis"
+      la: "Noli ergo metuere, sed quidquid dixeris mihi, faciam tibi. Scit enim omnis populus, qui habitat intra portas urbis meae, mulierem te esse virtutis."
       en: "Fear not therefore, but whatsoever thou shalt say to me I will do to thee. For all the people that dwell within the gates of my city, know that thou art a virtuous woman."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "nec abnuo me propinquum sed est alius me propinquior"
+      la: "Nec abnuo me propinquum, sed est alius me propinquior."
       en: "Neither do I deny myself to be near of kin, but there is another nearer than I."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "quiesce hac nocte et facto mane si te voluerit propinquitatis iure retinere bene res acta est sin autem ille noluerit ego te absque ulla dubitatione suscipiam vivit Dominus dormi usque mane"
+      la: "Quiesce hac nocte: et facto mane, si te voluerit propinquitatis jure retinere, bene res acta est: sin autem ille noluerit, ego te absque ulla dubitatione suscipiam, vivit Dominus. Dormi usque mane."
       en: "Rest thou this night: and when morning is come, if he will take thee by the right of kindred, all is well: but if he will not, I will undoubtedly take thee, as the Lord liveth: sleep till the morning."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "dormivit itaque ad pedes eius usque ad noctis abscessum surrexitque antequam homines se cognoscerent mutuo et dixit Booz cave ne quis noverit quod huc veneris"
+      la: "Dormivit itaque ad pedes ejus, usque ad noctis abscessum. Surrexit itaque antequam homines se cognoscerent mutuo, et dixit Booz: Cave ne quis noverit quod huc veneris."
       en: "So she slept at his feet till the night was going off. And she arose before men could know one another, and Booz said: Beware lest any man know that thou camest hither."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et rursum expande inquit palliolum tuum quo operiris et tene utraque manu qua extendente et tenente mensus est sex modios hordei et posuit super eam quae portans ingressa est civitatem"
+      la: "Et rursum: Expande, inquit, pallium tuum, quo operiris, et tene utraque manu. Qua extendente, et tenente, mensus est sex modios hordei, et posuit super eam. Quae portans ingressa est civitatem,"
       en: "And again he said: Spread thy mantle, wherewith thou art covered, and hold it with both hands. And when she spread it and held it, he measured six measures of barley, and laid it upon her. And she carried it and went into the city,"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "et venit ad socrum suam quae dixit ei quid egisti filia narravitque ei omnia quae sibi fecisset homo"
+      la: "et venit ad socrum suam. Quae dixit ei: Quid egisti, filia? Narravitque ei omnia, quae sibi fecisset homo."
       en: "And came to her mother in law; who said to her: What hast thou done, daughter? And she told her all that the man had done to her."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "et ait ecce sex modios hordei dedit mihi et ait nolo vacuam te reverti ad socrum tuam"
+      la: "Et ait: Ecce sex modios hordei dedit mihi, et ait: Nolo vacuam te reverti ad socrum tuam."
       en: "And she said: Behold he hath given me six measures of barley: for he said: I will not have thee return empty to thy mother in law."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "dixitque Noemi expecta filia donec videamus quem res exitum habeat neque enim cessabit homo nisi conpleverit quod locutus est"
+      la: "Dixitque Noemi: Expecta, filia, donec videamus quem res exitum habeat: neque enim cessabit homo, nisi compleverit quod locutus est."
       en: "And Noemi said: Wait my daughter, till we see what end the thing will have. For the man will not rest until he have accomplished what he hath said."
     status: { la: verified, en: verified }

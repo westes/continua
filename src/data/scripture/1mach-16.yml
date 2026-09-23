@@ -1,122 +1,127 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1mach
 chapter: 16
 verses:
   - n: 1
     text:
-      la: "et ascendit Iohannis de Gazaris et nuntiavit Simoni patri suo quae fecit Cendebeus"
+      la: "Et ascendit Joannes de Gazaris, et nuntiavit Simoni patri suo quae fecit Cendebaeus in populo ipsorum."
       en: "Then John came up from Gazara, and told Simon his father what Cendebeus had done against their people."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et vocavit Simon duos filios suos seniores Iudam et Iohannem et ait illis ego et fratres mei expugnavimus hostes Israhel ab adulescentia usque in hunc diem et prosperatum est in manibus nostris liberare Israhel aliquotiens"
+      la: "Et vocavit Simon duos filios seniores, Judam et Joannem, et ait illis: Ego, et fratres mei, et domus patris mei expugnavimus hostes Israel ab adolescentia usque in hunc diem: et prosperatum est in manibus nostris liberare Israel aliquoties."
       en: "And Simon called his two eldest sons, Judas and John, and said to them: I and my brethren, and my father's house, have fought against the enemies of Israel from our youth even to this day: and things have prospered so well in our hands that we have delivered Israel oftentimes."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "nunc autem senui sed estote loco meo et fratris mei et egressi pugnate pro gente nostra auxilium vero de caelo vobiscum sit"
+      la: "Nunc autem senui: sed estote loco meo, et fratres mei, et egressi pugnate pro gente nostra: auxilium vero de caelo vobiscum sit."
       en: "And now I am old, but be you instead of me, and my brethren, and go out, and fight for our nation: and the help from heaven be with you."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et elegit de regione viginti milia virorum belligeratorum et equites et profecti sunt ad Cendebeum et dormierunt in Modin"
+      la: "Et elegit de regione viginti millia virorum belligeratorum, et equites: et profecti sunt ad Cendebaeum, et dormierunt in Modin."
       en: "Then he chose out of the country twenty thousand fighting men, and horsemen, and they went forth against Cendebeus: and they rested in Modin."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et surrexerunt mane et abierunt in campum et ecce exercitus copiosus in obviam illis peditum et equitum et fluvius torrens erat inter medium ipsorum"
+      la: "Et surrexerunt mane, et abierunt in campum: ecce exercitus copiosus in obviam illis peditum et equitum: et fluvius torrens erat inter medium ipsorum."
       en: "And they arose in the morning, and went into the plain: and behold a very great army of footmen and horsemen came against them, and there was a running river between them."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et admovit castra contra faciem eorum ipse et populus eius et vidit populum trepidantem ad transfretandum torrentem et transfretavit primus et viderunt eum viri et transierunt post eum"
+      la: "Et admovit castra contra faciem eorum ipse et populus ejus, et vidit populum trepidantem ad transfretandum torrentem: et transfretavit primus, et viderunt eum viri, et transierunt post eum."
       en: "And he and his people pitched their camp over against them, and he saw that the people were afraid to go over the river, so he went over first: then the men seeing him, passed over after him."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et divisit populum et equites in medio peditum erat autem equitatus adversariorum copiosus nimis"
+      la: "Et divisit populum et equites in medio peditum: erat autem equitatus adversariorum copiosus nimis."
       en: "And he divided the people, and set the horsemen in the midst of the footmen: but the horsemen of the enemies were very numerous."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et exclamaverunt sacris tubis et in fugam conversus est Cendebeus et castra eius et ceciderunt ex eis multi vulnerati residui autem fugerunt in munitionem"
+      la: "Et exclamaverunt sacris tubis, et in fugam conversus est Cendebaeus et castra ejus: et ceciderunt ex eis multi vulnerati: residui autem in munitionem fugerunt."
       en: "And they sounded the holy trumpets: and Cendebeus and his army were put to flight: and there fell many of them wounded, and the rest fled into the strong hold."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "tunc vulneratus est Iudas frater Iohannis Iohannes autem insecutus est eos donec venit Caedronam quam aedificavit"
+      la: "Tunc vulneratus est Judas frater Joannis: Joannes autem insecutus est eos, donec venit Cedronem, quam aedificavit:"
       en: "At that time Judas John's brother was wounded: but John pursued after them, till he came to Cedron, which he had built:"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et fugerunt usque ad turres quae erant in agris Azoti et succendit eas igni et ceciderunt ex illis duo milia virorum et reversus est Iudaeam in pace"
+      la: "et fugerunt usque ad turres, quae erant in agris Azoti, et succendit eas igni. Et ceciderunt ex illis duo millia virorum, et reversus est in Judaeam in pace."
       en: "And they fled even to the towers that were in the fields of Azotus, and he burnt them with fire. And there fell of them two thousand men, and he returned into Judea in peace."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et Ptolomeus filius Abobi constitutus erat dux in campo Hiericho et habebat argentum et aurum multum"
+      la: "Et Ptolemaeus filius Abobi constitutus erat dux in campo Jericho, et habebat argentum et aurum multum:"
       en: "Now Ptolemee the son of Abobus was appointed captain in the plain of Jericho, and he had abundance of silver and gold,"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "erat enim gener summi sacerdotis"
+      la: "erat enim gener summi sacerdotis."
       en: "For he was son in law of the high priest."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et exaltatum est cor eius et volebat obtinere regionem et cogitabat dolum adversus Simonem et filios eius ut tolleret eos"
+      la: "Et exaltatum est cor ejus, et volebat obtinere regionem, et cogitabat dolum adversus Simonem et filios ejus, ut tolleret eos."
       en: "And his heart was lifted up, and he designed to make himself master of the country, and he purposed treachery against Simon, and his sons, to destroy them."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "Simon autem perambulans civitates quae erant in regione et sollicitudinem gerens earum descendit Hiericho ipse et Matthathias filius eius et Iudas anno centesimo septuagesimo septimo mense undecimo hic mensis sabath"
+      la: "Simon autem, perambulans civitates quae erant in regione Judaeae, et sollicitudinem gerens earum, descendit in Jericho ipse, et Mathathias filius ejus, et Judas, anno centesimo septuagesimo septimo, mense undecimo: hic est mensis Sabath."
       en: "Now Simon, as he was going through the cities that were in the country of Judea, and taking care for the good ordering of them, went down to Jericho, he and Mathathias and Judas his sons, in the year one hundred and seventy-seven, the eleventh month: the same is the month Sabath."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et suscepit eos filius Abobi in munitiunculam quae vocatur Doch cum dolo quam aedificavit et fecit eis convivium magnum et abscondit illic viros"
+      la: "Et suscepit eos filius Abobi in munitiunculam, quae vocatur Doch, cum dolo, quam aedificavit: et fecit eis convivium magnum, et abscondit illic viros."
       en: "And the son of Abobus received them deceitfully into a little fortress, that is called Doch which he had built: and he made them a great feast, and hid men there."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "et cum inebriatus esset Simon et filii eius surrexit Ptolomeus cum suis et sumpserunt arma sua et intraverunt in convivium et occiderunt eum et duos filios eius et quosdam pueros eius"
+      la: "Et cum inebriatus esset Simon et filii ejus, surrexit Ptolemaeus cum suis, et sumpserunt arma sua, et intraverunt in convivium: et occiderunt eum, et duos filios ejus, et quosdam pueros ejus:"
       en: "And when Simon and his sons had drunk plentifully, Ptolemee and his men rose up and took their weapons, and entered into the banqueting place, and slew him, and his two sons, and some of his servants."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "et fecit deceptionem magnam in Israhel et reddidit mala pro bonis"
+      la: "et fecit deceptionem magnam in Israel, et reddidit mala pro bonis."
       en: "And he committed a great treachery in Israel, and rendered evil for good."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "et scripsit haec Ptolomeus et misit regi ut mitteret ei exercitum in auxilium et traderet regionem et civitates eorum et tributa"
+      la: "Et scripsit haec Ptolemaeus, et misit regi ut mitteret ei exercitum in auxilium, et traderet ei regionem, et civitates eorum, et tributa."
       en: "And Ptolemee wrote these things and sent to the king that he should send him an army to aid him, and he would deliver him the country, and their cities, and tributes."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "et misit alios in Gazaram tollere Iohannem et tribunis misit epistulas ut venirent ad se et daret eis argentum et aurum et dona"
+      la: "Et misit alios in Gazaram tollere Joannem: et tribunis misit epistolas, ut venirent ad se, et daret eis argentum, et aurum, et dona."
       en: "And he sent others to Gazara to kill John: and to the tribunes he sent letters to come to him, and that he would give them silver, and gold, and gifts."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "et alios misit occupare Hierusalem et montem templi"
+      la: "Et alios misit occupare Jerusalem et montem templi."
       en: "And he sent others to take Jerusalem, and the mountain of the temple."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "et praecurrens quidam nuntiavit Iohanni in Gazara quia periit pater eius et fratres eius et quia misit te quoque interfici"
+      la: "Et praecurrens quidam, nuntiavit Joanni in Gazara quia periit pater ejus et fratres ejus, et quia misit te quoque interfici."
       en: "Now one running before, told John in Gazara, that his father and his brethren were slain, and that he hath sent men to kill thee also."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "ut audivit autem vehementer expavit et conprehendit viros qui venerant perdere eum et occidit eos cognovit enim quia quaerebant eum perdere"
-      en: "But when he heard it he was exceedingly afraid: and he apprehended the men that came to kill him, and he put them to death: for he knew that they sought to make him away."
+      la: "Ut audivit autem, vehementer expavit: et comprehendit viros, qui venerant perdere eum, et occidit eos: cognovit enim quia quaerebant eum perdere."
+      en: "But when he heard it he was exceedingly afraid: and he apprehended the men that came to kill him, and he put them to death: for he knew that they sought to take him away."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "et cetera sermonum Iohannis et bellorum eius et bonarum virtutum quibus fortiter gessit et aedificii murorum quos struxit et rerum gestarum eius"
+      la: "Et cetera sermonum Joannis, et bellorum ejus, et bonarum virtutum, quibus fortiter gessit, et aedificii murorum, quos exstruxit, et rerum gestarum ejus:"
       en: "And as concerning the rest of the acts of John, and his wars, and the worthy deeds, which he bravely achieved, and the building of the walls, which he made, and the things that he did:"
+    status: { la: verified, en: verified }
+  - n: 24
+    text:
+      la: "ecce haec scripta sunt in libro dierum sacerdotii ejus, ex quo factus est princeps sacerdotum post patrem suum."
+      en: "Behold these are written in the book of the days of his priesthood, from the time he was made high priest after his father."
     status: { la: verified, en: verified }

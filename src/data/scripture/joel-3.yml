@@ -1,107 +1,112 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: joel
 chapter: 3
 verses:
   - n: 1
     text:
-      la: "quia ecce in diebus illis et in tempore illo cum convertero captivitatem Iuda et Hierusalem"
+      la: "Quia ecce in diebus illis, et in tempore illo, cum convertero captivitatem Juda et Jerusalem,"
       en: "For behold in those days, and in that time when I shall bring back the captivity of Juda and Jerusalem:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "congregabo omnes gentes et deducam eas in valle Iosaphat et disceptabo cum eis ibi super populo meo et hereditate mea Israhel quos disperserunt in nationibus et terram meam diviserunt"
+      la: "congregabo omnes gentes, et deducam eas in vallem Josaphat; et disceptabo cum eis ibi super populo meo, et haereditate mea Israel, quos disperserunt in nationibus, et terram meam diviserunt."
       en: "I will gather together all nations, and will bring them down into the valley of Josaphat: and I will plead with them there for my people, and for my inheritance Israel, whom they have scattered among the nations, and have parted my land."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et super populum meum miserunt sortem et posuerunt puerum in prostibulum et puellam vendiderunt pro vino ut biberent"
+      la: "Et super populum meum miserunt sortem; et posuerunt puerum in prostibulo, et puellam vendiderunt pro vino ut biberent."
       en: "And they have cast lots upon my people: and the boy they have put in the stews, and the girl they have sold for wine, that they might drink."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "verum quid vobis et mihi Tyrus et Sidon et omnis terminus Palestinorum numquid ultionem vos redditis mihi et si ulciscimini vos contra me cito velociter reddam vicissitudinem vobis super caput vestrum"
+      la: "Verum quid mihi et vobis, Tyrus et Sidon, et omnis terminus Palaestinorum? numquid ultionem vos reddetis mihi? et si ulciscimini vos contra me, cito velociter reddam vicissitudinem vobis super caput vestrum."
       en: "But what have you to do with me, O Tyre, and Sidon, and all the coast of the Philistines? will you revenge yourselves on me? and if you revenge yourselves on me, I will very soon return you a recompense upon your own head."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "argentum enim meum et aurum tulistis et desiderabilia mea et pulcherrima intulistis in delubra vestra"
+      la: "Argentum enim meum et aurum tulistis, et desiderabilia mea et pulcherrima intulistis in delubra vestra."
       en: "For you have taken away my silver and my gold: and my desirable and most beautiful things you have carried into your temples."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et filios Iuda et filios Hierusalem vendidistis filiis Graecorum ut longe faceretis eos de finibus suis"
+      la: "Et filios Juda et filios Jerusalem vendidistis filiis Graecorum, ut longe faceretis eos de finibus suis."
       en: "And the children of Juda, and the children of Jerusalem you have sold to the children of the Greeks, that you might remove them far off from their own country."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "ecce ego suscitabo eos de loco in quo vendidistis eos et convertam retributionem vestram in caput vestrum"
+      la: "Ecce ego suscitabo eos de loco in quo vendidistis eos, et convertam retributionem vestram in caput vestrum."
       en: "Behold, I will raise them up out of the place wherein you have sold them: and I will return your recompense upon your own heads."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et vendam filios vestros et filias vestras in manibus filiorum Iuda et venundabunt eos Sabeis genti longinquae quia Dominus locutus est"
+      la: "Et vendam filios vestros et filias vestras in manibus filiorum Juda, et venundabunt eos Sabaeis, genti longinquae, quia Dominus locutus est."
       en: "And I will sell your sons, and your daughters by the hands of the children of Juda, and they shall sell them to the Sabeans, a nation far off, for the Lord hath spoken it."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "clamate hoc in gentibus sanctificate bellum suscitate robustos accedant ascendant omnes viri bellatores"
+      la: "Clamate hoc in gentibus, sanctificate bellum, suscitate robustos: accedant, ascendant omnes viri bellatores."
       en: "Proclaim ye this among the nations: prepare war, rouse up the strong: let them come, let all the men of war come up."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "concidite aratra vestra in gladios et ligones vestros in lanceas infirmus dicat quia fortis ego sum"
+      la: "Concidite aratra vestra in gladios, et ligones vestros in lanceas. Infirmus dicat: Quia fortis ego sum."
       en: "Cut your ploughshares into swords, and your spades into spears. Let the weak say: I am strong."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "erumpite et venite omnes gentes de circuitu et congregamini ibi occumbere faciet Dominus robustos tuos"
+      la: "Erumpite, et venite, omnes gentes de circuitu, et congregamini; ibi occumbere faciet Dominus robustos tuos."
       en: "Break forth, and come, all ye nations, from round about, and gather yourselves together: there will the Lord cause all thy strong ones to fall down."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "consurgant et ascendant gentes in vallem Iosaphat quia ibi sedebo ut iudicem omnes gentes in circuitu"
+      la: "Consurgant, et ascendant gentes in vallem Josaphat, quia ibi sedebo ut judicem omnes gentes in circuitu."
       en: "Let them arise, and let the nations come up into the valley of Josaphat: for there I will sit to judge all nations round about."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "mittite falces quoniam maturavit messis venite et descendite quia plenum est torcular exuberant torcularia quia multiplicata est malitia eorum"
+      la: "Mittite falces, quoniam maturavit messis; venite, et descendite, quia plenum est torcular, exuberant torcularia: quia multiplicata est malitia eorum."
       en: "Put ye in the sickles, for the harvest is ripe: come and go down, for the press is full, the fats run over: for their wickedness is multiplied."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "populi populi in valle concisionis quia iuxta est dies Domini in valle concisionis"
+      la: "Populi, populi, in valle concisionis, quia juxta est dies Domini in valle concisionis."
       en: "Nations, nations in the valley of destruction: for the day of the Lord is near in the valley of destruction."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "sol et luna obtenebricata sunt et stellae retraxerunt splendorem suum"
+      la: "Sol et luna obtenebrati sunt, et stellae retraxerunt splendorem suum."
       en: "The sun and the moon are darkened, and the stars have withdrawn their shining."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "et Dominus de Sion rugiet et de Hierusalem dabit vocem suam et movebuntur caeli et terra et Dominus spes populi sui et fortitudo filiorum Israhel"
+      la: "Et Dominus de Sion rugiet, et de Jerusalem dabit vocem suam, et movebuntur caeli et terra; et Dominus spes populi sui, et fortitudo filiorum Israel."
       en: "And the Lord shall roar out of Sion, and utter his voice from Jerusalem: and the heavens and the earth shall be moved, and the Lord shall be the hope of his people, and the strength of the children of Israel."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "et scietis quia ego Dominus Deus vester habitans in Sion in monte sancto meo et erit Hierusalem sancta et alieni non transibunt per eam amplius"
+      la: "Et scietis quia ego Dominus Deus vester, habitans in Sion monte sancto meo; et erit Jerusalem sancta, et alieni non transibunt per eam amplius."
       en: "And you shall know that I am the Lord your God, dwelling in Sion my holy mountain: and Jerusalem shall be holy and strangers shall pass through it no more."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "et erit in die illa stillabunt montes dulcedinem et colles fluent lacte et per omnes rivos Iuda ibunt aquae et fons de domo Domini egredietur et inrigabit torrentem Spinarum"
+      la: "Et erit in die illa: stillabunt montes dulcedinem, et colles fluent lacte, et per omnes rivos Juda ibunt aquae; et fons de domo Domini egredietur, et irrigabit torrentem spinarum."
       en: "And it shall come to pass in that day, that the mountains shall drop down sweetness, and the hills shall flow with milk: and waters shall flow through all the rivers of Juda: and a fountain shall come forth of the house of the Lord, and shall water the torrent of thorns."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "Aegyptus in desolatione erit et Idumea in desertum perditionis pro eo quod inique egerint in filios Iuda et effuderint sanguinem innocentem in terra sua"
+      la: "Aegyptus in desolationem erit, et Idumaea in desertum perditionis, pro eo quod inique egerint in filios Juda, et effuderint sanguinem innocentem in terra sua."
       en: "Egypt shall be a desolation, and Edom a wilderness destroyed: because they have done unjustly against the children of Juda, and have shed innocent blood in their land."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "et Iudaea in aeternum habitabitur et Hierusalem in generatione et generationem"
+      la: "Et Judaea in aeternum habitabitur, et Jerusalem in generationem et generationem."
       en: "And Judea shall be inhabited for ever, and Jerusalem to generation and generation."
+    status: { la: verified, en: verified }
+  - n: 21
+    text:
+      la: "Et mundabo sanguinem eorum, quem non mundaveram; et Dominus commorabitur in Sion."
+      en: "And I will cleanse their blood which I had not cleansed: and the Lord will dwell in Sion."
     status: { la: verified, en: verified }

@@ -1,72 +1,72 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: num
 chapter: 17
 verses:
   - n: 1
     text:
-      la: "et locutus est Dominus ad Mosen dicens"
+      la: "Et locutus est Dominus ad Moysen, dicens:"
       en: "And the Lord spoke to Moses, saying:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "loquere ad filios Israhel et accipe ab eis virgas singulas per cognationes suas a cunctis principibus tribuum virgas duodecim et uniuscuiusque nomen superscribes virgae suae"
+      la: "Loquere ad filios Israel, et accipe ab eis virgas singulas per cognationes suas, a cunctis principibus tribuum, virgas duodecim, et uniuscujusque nomen superscribes virgae suae."
       en: "Speak to the children of Israel, and take of every one of them a rod by their kindreds, of all the princes of the tribes, twelve rods, and write the name of every man upon his rod."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "nomen autem Aaron erit in tribu Levi et una virga cunctas eorum familias continebit"
+      la: "Nomen autem Aaron erit in tribu Levi, et una virga cunctas seorsum familias continebit:"
       en: "And the name of Aaron shall be for the tribe of Levi, and one rod shall contain all their families:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "ponesque eas in tabernaculo foederis coram testimonio ubi loquar ad te"
+      la: "ponesque eas in tabernaculo foederis coram testimonio, ubi loquar ad te."
       en: "And thou shalt lay them up in the tabernacle of the covenant before the testimony, where I will speak to thee."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "quem ex his elegero germinabit virga eius et cohibebo a me querimonias filiorum Israhel quibus contra vos murmurant"
+      la: "Quem ex his elegero, germinabit virga ejus: et cohibebo a me querimonias filiorum Israel, quibus contra vos murmurant."
       en: "Whomsoever of these I shall choose, his rod shall blossom: and I will make to cease from me the murmurings of the children of Israel, wherewith they murmur against you."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "locutusque est Moses ad filios Israhel et dederunt ei omnes principes virgas per singulas tribus fueruntque virgae duodecim absque virga Aaron"
+      la: "Locutusque est Moyses ad filios Israel: et dederunt ei omnes principes virgas per singulas tribus: fueruntque virgae duodecim absque virga Aaron."
       en: "And Moses spoke to the children of Israel: and all the princes gave him rods one for every tribe: and there were twelve rods besides the rod of Aaron."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "quas cum posuisset Moses coram Domino in tabernaculo testimonii"
+      la: "Quas cum posuisset Moyses coram Domino in tabernaculo testimonii,"
       en: "And when Moses had laid them up before the Lord in the tabernacle of the testimony:"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "sequenti die regressus invenit germinasse virgam Aaron in domo Levi et turgentibus gemmis eruperant flores qui foliis dilatatis in amigdalas deformati sunt"
+      la: "sequenti die regressus invenit germinasse virgam Aaron in domo Levi: et turgentibus gemmis eruperant flores, qui, foliis dilatatis, in amygdalas deformati sunt."
       en: "He returned on the following day, and found that the rod of Aaron for the house of Levi, was budded: and that the buds swelling it had bloomed blossoms, which spreading the leaves, were formed into almonds."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "protulit ergo Moses omnes virgas de conspectu Domini ad cunctos filios Israhel videruntque et receperunt singuli virgas suas"
+      la: "Protulit ergo Moyses omnes virgas de conspectu Domini ad cunctos filios Israel: videruntque, et receperunt singuli virgas suas."
       en: "Moses therefore brought out all the rods from before the Lord to all the children of Israel: and they saw, and every one received their rods."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "dixitque Dominus ad Mosen refer virgam Aaron in tabernaculum testimonii ut servetur ibi in signum rebellium filiorum et quiescant querellae eorum a me ne moriantur"
+      la: "Dixitque Dominus ad Moysen: Refer virgam Aaron in tabernaculum testimonii, ut servetur ibi in signum rebellium filiorum Israel, et quiescant querelae eorum a me, ne moriantur."
       en: "And the Lord said to Moses: Carry back the rod of Aaron into the tabernacle of the testimony, that it may be kept there for a token of the rebellious children of Israel, and that their complaints may cease from me lest they die."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "fecitque Moses sicut praeceperat Dominus"
+      la: "Fecitque Moyses sicut praeceperat Dominus."
       en: "And Moses did as the Lord had commanded."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "dixerunt autem filii Israhel ad Mosen ecce consumpti sumus omnes perivimus"
+      la: "Dixerunt autem filii Israel ad Moysen: Ecce consumpti sumus, omnes perivimus."
       en: "And the children of Israel said to Moses: Behold we are consumed, we all perish."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "quicumque accedit ad tabernaculum Domini moritur num usque ad internicionem cuncti delendi sumus"
+      la: "Quicumque accedit ad tabernaculum Domini, moritur. Num usque ad internecionem cuncti delendi sumus?"
       en: "Whosoever approacheth to the tabernacle of the Lord, he dieth. Are we all to a man to be utterly destroyed?"
     status: { la: verified, en: verified }

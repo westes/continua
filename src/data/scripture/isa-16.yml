@@ -1,77 +1,77 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: isa
 chapter: 16
 verses:
   - n: 1
     text:
-      la: "emitte agnum dominatorem terrae de Petra deserti ad montem filiae Sion"
+      la: "Emitte agnum, Domine, dominatorem terrae, de petra deserti ad montem filiae Sion."
       en: "Send forth, O Lord, the lamb, the ruler of the earth, from Petra of the desert, to the mount of the daughter of Sion."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et erit sicut avis fugiens et pulli de nido avolantes sic erunt filiae Moab in transcensu Arnon"
+      la: "Et erit: sicut avis fugiens, et pulli de nido avolantes, sic erunt filiae Moab in transcensu Arnon."
       en: "And it shall come to pass, that as a bird fleeing away, and as young ones flying out of the nest, so shall the daughters of Moab be in the passage of Arnon."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "ini consilium coge concilium pone quasi noctem umbram tuam in meridie absconde fugientes et vagos ne prodas"
+      la: "Ini consilium, coge concilium; pone quasi noctem umbram tuam in meridie; absconde fugientes, et vagos ne prodas."
       en: "Take counsel, gather a council: make thy shadow as the night in the midday: hide them that flee, and betray not them that wander about."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "habitabunt apud te profugi mei Moab esto latibulum eorum a facie vastatoris finitus est enim pulvis consummatus est miser defecit qui conculcabat terram"
+      la: "Habitabunt apud te profugi mei; Moab, esto latibulum eorum a facie vastatoris: finitus est enim pulvis, consummatus est miser, defecit qui conculcabat terram."
       en: "My fugitives shall dwell with thee: O Moab, be thou a covert to them from the face of the destroyer: for the dust is at an end, the wretch is consumed: he hath failed, that trod the earth under foot."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et praeparabitur in misericordia solium et sedebit super eum in veritate in tabernaculo David iudicans et quaerens iudicium et velociter reddens quod iustum est"
+      la: "Et praeparabitur in misericordia solium, et sedebit super illud in veritate in tabernaculo David, judicans et quaerens judicium, et velociter reddens quod justum est."
       en: "And a throne shall be prepared in mercy, and one shall sit upon it in truth in the tabernacle of David, judging and seeking judgment and quickly rendering that which is just."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "audivimus superbiam Moab superbus est valde superbia eius et arrogantia eius et indignatio eius plus quam fortitudo eius"
+      la: "Audivimus superbiam Moab: superbus est valde; superbia ejus, et arrogantia ejus, et indignatio ejus plus quam fortitudo ejus."
       en: "We have heard of the pride of Moab, he is exceeding proud: his pride and his arrogancy, and his indignation is more than his strength."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "idcirco ululabit Moab ad Moab universus ululabit his qui laetantur super muro cocti lateris loquimini plagas suas"
+      la: "Idcirco ululabit Moab ad Moab; universus ululabit: his qui laetantur super muros cocti lateris, loquimini plagas suas."
       en: "Therefore shall Moab howl to Moab, every one shall howl: to them that rejoice upon the brick walls, tell ye their stripes."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "quoniam suburbana Esebon deserta sunt et vinea Sabama domini gentium exciderunt flagella eius usque ad Iazer pervenerunt erraverunt in deserto propagines eius relictae sunt transierunt mare"
+      la: "Quoniam suburbana Hesebon deserta sunt, et vineam Sabama domini gentium exciderunt: flagella ejus usque ad Jazer pervenerunt, erraverunt in deserto; propagines ejus relictae sunt, transierunt mare."
       en: "For the suburbs of Hesebon are desolate, and the lords of the nations have destroyed the vineyard of Sabama: the branches thereof have reached even to Jazer: they have wandered in the wilderness, the branches thereof are left, they are gone over the sea."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "super hoc plorabo in fletu Iazer vineam Sabama inebriabo te lacrima mea Esebon et Eleale quoniam super vindemiam tuam et super messem tuam vox calcantium inruit"
+      la: "Super hoc plorabo in fletu Jazer vineam Sabama; inebriabo de lacrima mea, Hesebon et Eleale, quoniam super vindemiam tuam et super messem tuam vox calcantium irruit."
       en: "Therefore I will lament with the weeping of Jazer the vineyard of Sabama: I will water thee with my tears, O Hesebon, and Eleale: for the voice of the treaders hath rushed in upon thy vintage, and upon thy harvest."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et auferetur laetitia et exultatio de Carmelo et in vineis non exultabit neque iubilabit vinum in torculari non calcabit qui calcare consueverat vocem calcantium abstuli"
+      la: "Et auferetur laetitia et exsultatio de Carmelo, et in vineis non exsultabit neque jubilabit. Vinum in torculari non calcabit qui calcare consueverat; vocem calcantium abstuli."
       en: "And gladness and joy shall be taken away from Carmel, and there shall be no rejoicing nor shouting in the vineyards. He shall not tread out wine in the press that was wont to tread it out: the voice of the treaders I have taken away."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "super hoc venter meus ad Moab quasi cithara sonabit et viscera mea ad murum cocti lateris"
+      la: "Super hoc venter meus ad Moab quasi cithara sonabit, et viscera mea ad murum cocti lateris."
       en: "Wherefore my bowels shall sound like a harp for Moab, and my inward parts for the brick wall."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "et erit cum apparuerit quod laboravit Moab super excelsis suis ingredietur ad sancta sua ut obsecret et non valebit"
+      la: "Et erit: cum apparuerit quod laboravit Moab super excelsis suis, ingredietur ad sancta sua ut obsecret, et non valebit."
       en: "And it shall come to pass, when it is seen that Moab is wearied on his high places, that he shall go in to his sanctuaries to pray, and shall not prevail."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "hoc verbum quod locutus est Dominus ad Moab ex tunc"
+      la: "Hoc verbum quod locutus est Dominus ad Moab ex tunc."
       en: "This is the word, that the Lord spoke to Moab from that time:"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et nunc locutus est Dominus dicens in tribus annis quasi anni mercennarii auferetur gloria Moab super omni populo multo et relinquetur parvus et modicus nequaquam multus"
+      la: "Et nunc locutus est Dominus, dicens: In tribus annis, quasi anni mercenarii, auferetur gloria Moab super omni populo multo, et relinquetur parvus et modicus, nequaquam multus."
       en: "And now the Lord hath spoken, saying: In three years, as the years of a hireling, the glory of Moab shall be taken away for all the multitude of the people, and it shall be left small and feeble, not many."
     status: { la: verified, en: verified }

@@ -1,117 +1,122 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 2par
 chapter: 36
 verses:
   - n: 1
     text:
-      la: "tulit ergo populus terrae Ioachaz filium Iosiae et constituit regem pro patre suo in Hierusalem"
+      la: "Tulit ergo populus terrae Joachaz filium Josiae, et constituit regem pro patre suo in Jerusalem."
       en: "Then the people of the land took Joachaz the son of Josias, and made him king instead of his father in Jerusalem."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "viginti trium annorum erat Ioachaz cum regnare coepisset et tribus mensibus regnavit in Hierusalem"
+      la: "Viginti trium annorum erat Joachaz, cum regnare coepisset, et tribus mensibus regnavit in Jerusalem."
       en: "Joachaz was three and twenty years old when he began to reign, and he reigned three months in Jerusalem."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "amovit autem eum rex Aegypti cum venisset Hierusalem et condemnavit terram centum talentis argenti et talento auri"
+      la: "Amovit autem eum rex Aegypti cum venisset in Jerusalem, et condemnavit terram centum talentis argenti, et talento auri."
       en: "And the king of Egypt came to Jerusalem, and deposed him, and condemned the land in a hundred talents of silver, and a talent of gold."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "constituitque regem pro eo Eliacim fratrem eius super Iudam et Hierusalem et vertit nomen eius Ioacim ipsum vero Ioachaz tulit secum et adduxit in Aegyptum"
+      la: "Constituitque pro eo regem Eliakim fratrem ejus, super Judam et Jerusalem, et vertit nomen ejus Joakim: ipsum vero Joachaz tulit secum, et abduxit in Aegyptum."
       en: "And he made Eliakim his brother king in his stead, over Juda and Jerusalem: and he turned his name to Joakim: but he took Joachaz with him, and carried him away into Egypt."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "viginti quinque annorum erat Ioacim cum regnare coepisset et undecim annis regnavit in Hierusalem fecitque malum coram Domino Deo suo"
+      la: "Viginti quinque annorum erat Joakim cum regnare coepisset, et undecim annis regnavit in Jerusalem: fecitque malum coram Domino Deo suo."
       en: "Joakim was five and twenty years old when he began to reign, and he reigned eleven years in Jerusalem: and he did evil before the Lord his God."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "contra hunc ascendit Nabuchodonosor rex Chaldeorum et vinctum catenis duxit in Babylonem"
+      la: "Contra hunc ascendit Nabuchodonosor rex Chaldaeorum, et vinctum catenis duxit in Babylonem."
       en: "Against him came up Nabuchodonosor king of the Chaldeans, and led him bound in chains into Babylon."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "ad quam et vasa Domini transtulit et posuit ea in templo suo"
+      la: "Ad quam et vasa Domini transtulit, et posuit ea in templo suo."
       en: "And he carried also thither the vessels of the Lord, and put them in his temple."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "reliqua autem verborum Ioacim et abominationum eius quas operatus est et quae inventa sunt in eo continentur in libro regum Israhel et Iuda regnavitque Ioachin filius eius pro eo"
+      la: "Reliqua autem verborum Joakim, et abominationum ejus, quas operatus est, et quae inventa sunt in eo, continentur in libro regum Juda et Israel. Regnavit autem Joachin filius ejus pro eo."
       en: "But the rest of the acts of Joakim, and his abominations, which he wrought, and the things that were found in him, are contained in the book of the kings of Juda and Israel. And Joachin his son reigned in his stead."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "octo annorum erat Ioachin cum regnare coepisset et tribus mensibus ac decem diebus regnavit in Hierusalem fecitque malum in conspectu Domini"
+      la: "Octo annorum erat Joachin cum regnare coepisset, et tribus mensibus ac decem diebus regnavit in Jerusalem: fecitque malum in conspectu Domini."
       en: "Joachin was eight years old when he began to reign, and he reigned three months and ten days in Jerusalem, and he did evil in the sight of the Lord."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "cumque anni circulus volveretur misit Nabuchodonosor rex qui et adduxerunt eum in Babylonem asportatis simul pretiosissimis vasis domus Domini regem vero constituit Sedeciam fratrem eius super Iudam et Hierusalem"
+      la: "Cumque anni circulus volveretur, misit Nabuchodonosor rex, qui adduxerunt eum in Babylonem, asportatis simul pretiosissimis vasis domus Domini. Regem vero constituit Sedeciam patruum ejus super Judam et Jerusalem."
       en: "And at the return of the year, king Nabuchodonosor sent, and brought him to Babylon, carrying away at the same time the most precious vessels of the house of the Lord: and he made Sedecias his uncle king over Juda and Jerusalem."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "viginti et unius anni erat Sedecias cum regnare coepisset et undecim annis regnavit in Hierusalem"
+      la: "Viginti et unius anni erat Sedecias cum regnare coepisset, et undecim annis regnavit in Jerusalem:"
       en: "Sedecias was one and twenty years old when he began to reign: and he reigned eleven years in Jerusalem."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "fecitque malum in oculis Domini Dei sui nec erubuit faciem Hieremiae prophetae loquentis ad se ex ore Domini"
+      la: "fecitque malum in oculis Domini Dei sui, nec erubuit faciem Jeremiae prophetae, loquentis ad se ex ore Domini."
       en: "And he did evil in the eyes of the Lord his God, and did not reverence the face of Jeremias the prophet speaking to him from the mouth of the Lord."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "a rege quoque Nabuchodonosor recessit qui adiuraverat eum per Deum et induravit cervicem suam et cor ut non reverteretur ad Dominum Deum Israhel"
-      en: "Re also revolted from king Nabuchodonosor, who had made him swear by God: and he hardened his neck and his heart, from returning to the Lord the God of Israel."
+      la: "A rege quoque Nabuchodonosor recessit, qui adjuraverat eum per Deum: et induravit cervicem suam et cor ut non reverteretur ad Dominum Deum Israel."
+      en: "He also revolted from king Nabuchodonosor, who had made him swear by God: and he hardened his neck and his heart, from returning to the Lord the God of Israel."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "sed et universi principes sacerdotum et populus praevaricati sunt inique iuxta universas abominationes gentium et polluerunt domum Domini quam sanctificaverat sibi in Hierusalem"
+      la: "Sed et universi principes sacerdotum, et populus, praevaricati sunt inique juxta universas abominationes gentium, et polluerunt domum Domini, quam sanctificaverat sibi in Jerusalem."
       en: "Moreover all the chief of the priests, and the people wickedly transgressed according to all the abominations of the Gentiles: and they defiled the house of the Lord, which he had sanctified to himself in Jerusalem."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "mittebat autem Dominus Deus patrum suorum ad illos per manum nuntiorum suorum de nocte consurgens et cotidie commonens eo quod parceret populo et habitaculo suo"
+      la: "Mittebat autem Dominus Deus patrum suorum ad illos per manum nuntiorum suorum de nocte consurgens, et quotidie commonens: eo quod parceret populo et habitaculo suo."
       en: "And the Lord the God of their fathers sent to them, by the hand of his messengers, rising early, and daily admonishing them: because he spared his people and his dwelling place."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "at illi subsannabant nuntios Dei et parvipendebant sermones eius inludebantque prophetis donec ascenderet furor Domini in populum eius et esset nulla curatio"
+      la: "At illi subsannabant nuntios Dei, et parvipendebant sermones ejus, illudebantque prophetis, donec ascenderet furor Domini in populum ejus, et esset nulla curatio."
       en: "But they mocked the messengers of God, and despised his words, and misused the prophets, until the wrath of the Lord arose against his people, and there was no remedy."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "adduxit enim super eos regem Chaldeorum et interfecit iuvenes eorum gladio in domo sanctuarii sui non est misertus adulescentis et virginis et senis nec decrepiti quidem sed omnes tradidit manibus eius"
+      la: "Adduxit enim super eos regem Chaldaeorum, et interfecit juvenes eorum gladio in domo sanctuarii sui, non est misertus adolescentis, et virginis, et senis, nec decrepiti quidem, sed omnes tradidit in manibus ejus."
       en: "For he brought upon them the king of the Chaldeans, and he slew their young men with the sword in the house of his sanctuary, he had no compassion on young man, or maiden, old man or even him that stooped for age, but he delivered them all into his hands."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "universaque vasa domus Domini tam maiora quam minora et thesauros templi et regis et principum transtulit in Babylonem"
+      la: "Universaque vasa domus Domini tam majora, quam minora, et thesauros templi, et regis, et principum transtulit in Babylonem."
       en: "And all the vessels of the house of the Lord, great and small, and the treasures of the temple and of the king, and of the princes he carried away to Babylon."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "incenderunt hostes domum Dei destruxerunt murum Hierusalem universas turres conbuserunt et quicquid pretiosum fuerat demoliti sunt"
+      la: "Incenderunt hostes domum Dei, destruxeruntque murum Jerusalem, universas turres combusserunt, et quidquid pretiosum fuerat, demoliti sunt."
       en: "And the enemies set fire to the house of God, and broke down the wall of Jerusalem, burnt all the towers, and whatsoever was precious they destroyed."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "si quis evaserat gladium ductus in Babylonem servivit regi et filiis eius donec imperaret rex Persarum"
+      la: "Si quis evaserat gladium, ductus in Babylonem servivit regi et filiis ejus, donec imperaret rex Persarum,"
       en: "Whosoever escaped the sword, was led into Babylon, and there served the king and his sons till the reign of the king of Persia."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "et conpleretur sermo Domini ex ore Hieremiae et celebraret terra sabbata sua cunctis enim diebus desolationis egit sabbatum usque dum conplerentur septuaginta anni"
+      la: "et compleretur sermo Domini ex ore Jeremiae, et celebraret terra sabbata sua: cunctis enim diebus desolationis egit sabbatum usque dum complerentur septuaginta anni."
       en: "That the word of the Lord by the mouth of Jeremias might be fulfilled, and the land might keep her sabbaths: for all the days of the desolation she kept a sabbath, till the seventy years were expired."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "anno autem primo Cyri regis Persarum ad explendum sermonem Domini quem locutus fuerat per os Hieremiae suscitavit Dominus spiritum Cyri regis Persarum qui iussit praedicari in universo regno suo etiam per scripturam dicens"
-      en: "But in the first year d of Cyrus king of the Persians, to fulfil the word of the Lord, which he had spoken by the mouth of Jeremias, the Lord stirred up the heart of Cyrus king of the Persians who commanded it to be proclaimed through all his kingdom, and by writing also, saying:"
+      la: "Anno autem primo, Cyri regis Persarum ad explendum sermonem Domini, quem locutus fuerat per os Jeremiae, suscitavit Dominus spiritum Cyri regis Persarum: qui jussit praedicari in universo regno suo, etiam per scripturam, dicens:"
+      en: "But in the first year of Cyrus king of the Persians, to fulfill the word of the Lord, which he had spoken by the mouth of Jeremias, the Lord stirred up the heart of Cyrus king of the Persians who commanded it to be proclaimed through all his kingdom, and by writing also, saying:"
+    status: { la: verified, en: verified }
+  - n: 23
+    text:
+      la: "Haec dicit Cyrus rex Persarum: Omnia regna terrae dedit mihi Dominus Deus caeli, et ipse praecepit mihi ut aedificarem ei domum in Jerusalem, quae est in Judaea: quis ex vobis est in omni populo ejus? sit Dominus Deis suus cum eo, et ascendat."
+      en: "Thus saith Cyrus king of the Persians: All the kingdoms of the earth hath the Lord the God of heaven given to me, and he hath charged me to build him a house in Jerusalem, which is in Judea: who is there among you of all his people? The Lord his God be with him, and let him go up."
     status: { la: verified, en: verified }

@@ -1,82 +1,82 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1reg
 chapter: 21
 verses:
   - n: 1
     text:
-      la: "venit autem David in Nobe ad Ahimelech sacerdotem et obstipuit Ahimelech eo quod venisset David et dixit ei quare tu solus et nullus est tecum"
+      la: "Venit autem David in Nobe ad Achimelech sacerdotem: et obstupuit Achimelech, eo quod venisset David. Et dixit ei: Quare tu solus, et nullus est tecum?"
       en: "And David came to Nobe to Achimelech the priest: and Achimelech was astonished at David's coming. And he said to him: Why art thou alone, and no man with thee?"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et ait David ad Ahimelech sacerdotem rex praecepit mihi sermonem et dixit nemo sciat rem propter quam a me missus es et cuiusmodi tibi praecepta dederim nam et pueris condixi in illum et illum locum"
+      la: "Et ait David ad Achimelech sacerdotem: Rex praecepit mihi sermonem, et dixit: Nemo sciat rem, propter quam missus es a me, et cujusmodi praecepta tibi dederim: nam et pueris condixi in illum et illum locum."
       en: "And David said to Achimelech the priest: The king hath commanded me a business, and said: Let no man know the thing for which thou art sent by me, and what manner of commands I have given thee: and I have appointed my servants to such and such a place."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "nunc igitur si quid habes ad manum vel quinque panes da mihi aut quicquid inveneris"
+      la: "Nunc ergo si quid habes ad manum, vel quinque panes, da mihi aut quidquid inveneris."
       en: "Now therefore if thou have any thing at hand, though it were but five loaves, give me, or whatsoever thou canst find."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et respondens sacerdos David ait ei non habeo panes laicos ad manum sed tantum panem sanctum si mundi sunt pueri maxime a mulieribus"
+      la: "Et respondens sacerdos ad David, ait illi: Non habeo laicos panes ad manum, sed tantum panem sanctum: si mundi sunt pueri, maxime a mulieribus?"
       en: "And the priest answered David, saying: I have no common bread at hand, but only holy bread, if the young men be clean, especially from women?"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et respondit David sacerdoti et dixit ei equidem si de mulieribus agitur continuimus nos ab heri et nudius tertius quando egrediebamur et fuerunt vasa puerorum sancta porro via haec polluta est sed et ipsa hodie sanctificabitur in vasis"
+      la: "Et respondit David sacerdoti, et dixit ei: Equidem, si de mulieribus agitur: continuimus nos ab heri et nudiustertius, quando egrediebamur, et fuerunt vasa puerorum sancta. Porro via haec polluta est, sed et ipsa hodie sanctificabitur in vasis."
       en: "And David answered the priest, and said to him: Truly, as to what concerneth women, we have refrained ourselves from yesterday and the day before, when we came out, and the vessels of the young men were holy. Now this way is defiled, but it shall also be sanctified this day in the vessels."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "dedit ergo ei sacerdos sanctificatum panem neque enim erat ibi panis nisi tantum panes propositionis qui sublati fuerant a facie Domini ut ponerentur panes calidi"
+      la: "Dedit ergo ei sacerdos sanctificatum panem: neque enim erat ibi panis, nisi tantum panes propositionis, qui sublati fuerant a facie Domini, ut ponerentur panes calidi."
       en: "The priest therefore gave him hallowed bread: for there was no bread there, but only the loaves of proposition, which had been taken away from before the face of the Lord, that hot loaves might be set up."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "erat autem ibi vir de servis Saul in die illa intus in tabernaculo Domini et nomen eius Doec Idumeus potentissimus pastorum Saul"
+      la: "Erat autem ibi vir quidam de servis Saul, in die illa, intus in tabernaculo Domini: et nomen ejus Doeg Idumaeus, potentissimus pastorum Saul."
       en: "Now a certain man of the servants of Saul was there that day, within the tabernacle of the Lord: and his name was Doeg, an Edomite, the chiefest of Saul's herdsmen."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "dixit autem David ad Ahimelech si habes hic ad manum hastam aut gladium quia gladium meum et arma mea non tuli mecum sermo enim regis urguebat"
+      la: "Dixit autem David ad Achimelech: Si habes hic ad manum hastam, aut gladium? quia gladium meum, et arma mea non tuli mecum: sermo enim regis urgebat."
       en: "And David said to Achimelech: Hast thou here at hand a spear, or a sword? for I brought not my own sword, nor my own weapons with me, for the king's business required haste."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "et dixit sacerdos gladius Goliath Philisthei quem percussisti in valle Terebinthi est involutus pallio post ephod si istum vis tollere tolle neque enim est alius hic absque eo et ait David non est huic alter similis da mihi eum"
+      la: "Et dixit sacerdos: Ecce hic gladius Goliath Philisthaei, quem percussisti in Valle terebinthi, est involutus pallio post ephod: si istum vis tollere, tolle: neque enim hic est alius absque eo. Et ait David: Non est huic alter similis, da mihi eum."
       en: "And the priest said: Lo, here is the sword of Goliath the Philistine whom thou slewest in the valley of Terebinth, wrapped up in a cloth behind the ephod: if thou wilt take this, take it, for here is no other but this. And David said: There is none like that, give it me."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "surrexit itaque David et fugit in die illa a facie Saul et venit ad Achis regem Geth"
+      la: "Surrexit itaque David, et fugit in die illa a facie Saul: et venit ad Achis regem Geth:"
       en: "And David arose and fled that day from the face of Saul: and came to Achis the king of Geth:"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "dixeruntque ei servi Achis numquid non iste est David rex terrae nonne huic cantabant per choros dicentes percussit Saul mille et David decem milia"
+      la: "dixeruntque servi Achis ad eum cum vidissent David: Numquid non iste est David rex terrae? nonne huic cantabant per choros, dicentes: Percussit Saul mille, et David decem millia?"
       en: "And the servants of Achis, when they saw David, said to him: Is not this David the king of the land? Did they not sing to him in their dances, saying: Saul hath slain his thousands, and David his ten thousands?"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "posuit autem David sermones istos in corde suo et extimuit valde a facie Achis regis Geth"
+      la: "Posuit autem David sermones istos in corde suo, et extimuit valde a facie Achis regis Geth."
       en: "But David laid up these words in his heart, and was exceedingly afraid at the face of Achis the king of Geth."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et inmutavit os suum coram eis et conlabebatur inter manus eorum et inpingebat in ostia portae defluebantque salivae eius in barbam"
+      la: "Et immutavit os suum coram eis, et collabebatur inter manus eorum: et impingebat in ostia portae, defluebantque salivae ejus in barbam."
       en: "And he changed his countenance before them, and slipt down between their hands: and he stumbled against the doors of the gate, and his spittle ran down upon his beard."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et ait Achis ad servos suos vidistis hominem insanum quare adduxistis eum ad me"
+      la: "Et ait Achis ad servos suos: Vidistis hominem insanum: quare adduxistis eum ad me?"
       en: "And Achis said to his servants: You saw the man was mad: why have you brought him to me?"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "an desunt nobis furiosi quod introduxistis istum ut fureret me praesente hicine ingredietur domum meam"
+      la: "An desunt nobis furiosi, quod introduxistis istum, ut fureret me praesente? hiccine ingredietur domum meam?"
       en: "Have we need of madmen, that you have brought in this fellow, to play the madman in my presence? shall this fellow come into my house?"
     status: { la: verified, en: verified }

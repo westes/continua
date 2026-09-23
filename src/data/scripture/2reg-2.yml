@@ -1,167 +1,167 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 2reg
 chapter: 2
 verses:
   - n: 1
     text:
-      la: "igitur post haec consuluit David Dominum dicens num ascendam in unam de civitatibus Iuda et ait Dominus ad eum ascende dixitque David quo ascendam et respondit ei in Hebron"
+      la: "Igitur post haec consuluit David Dominum, dicens: Num ascendam in unam de civitatibus Juda? Et ait Dominus ad eum: Ascende. Dixitque David: Quo ascendam? Et respondit ei: In Hebron."
       en: "And after these things David consulted the Lord, saying: Shall I go up into one of the cities of Juda? And the Lord said to him: Go up. And David said: Whither shall I go up? And he answered him: Into Hebron."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "ascendit ergo David et duae uxores eius Ahinoem Iezrahelites et Abigail uxor Nabal Carmeli"
+      la: "Ascendit ergo David, et duae uxores ejus, Achinoam Jezraelites, et Abigail uxor Nabal Carmeli:"
       en: "So David went up, and his two wives, Achinoam the Jezrahelitess, and Abigail the wife of Nabal of Carmel:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "sed et viros qui erant cum eo duxit David singulos cum domo sua et manserunt in oppidis Hebron"
+      la: "sed et viros, qui erant cum eo, duxit David singulos cum domo sua: et manserunt in oppidis Hebron."
       en: "And the men also that were with him, David brought up every man with his household: and they abode in the towns of Hebron."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "veneruntque viri Iuda et unxerunt ibi David ut regnaret super domum Iuda et nuntiatum est David quod viri Iabesgalaad sepelissent Saul"
+      la: "Veneruntque viri Juda, et unxerunt ibi David, ut regnaret super domum Juda. Et nuntiatum est David, quod viri Jabes Galaad sepelissent Saul."
       en: "And the men of Juda came, and anointed David there, to be king over the house of Juda. And it was told David, that the men of Jabes Galaad had buried Saul."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "misit ergo David nuntios ad viros Iabesgalaad dixitque ad eos benedicti vos Domino qui fecistis misericordiam hanc cum domino vestro Saul et sepelistis eum"
+      la: "Misit ergo David nuntios ad viros Jabes Galaad, dixitque ad eos: Benedicti vos Domino, qui fecistis misericordiam hanc cum domino vestro Saul, et sepelistis eum."
       en: "David therefore sent messengers to the men of Jabes Galaad, and said to them: Blessed be you to the Lord, who have shewn this mercy to your master Saul, and have buried him."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et nunc retribuet quidem vobis Dominus misericordiam et veritatem sed et ego reddam gratiam eo quod feceritis verbum istud"
+      la: "Et nunc retribuet vobis quidem Dominus misericordiam et veritatem: sed et ego reddam gratiam, eo quod fecistis verbum istud."
       en: "And now the Lord surely will render you mercy and truth, and I also will, requite you for this good turn, because you have done this thing."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "confortentur manus vestrae et estote filii fortitudinis licet enim mortuus sit dominus vester Saul tamen me unxit domus Iuda regem sibi"
+      la: "Confortentur manus vestrae, et estote filii fortitudinis: licet enim mortuus sit dominus vester Saul, tamen me unxit domus Juda in regem sibi."
       en: "Let your hands be strengthened, and be ye men of valour: for although your master Saul be dead, yet the house of Juda hath anointed me to be their king."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "Abner autem filius Ner princeps exercitus Saul tulit Hisboseth filium Saul et circumduxit eum per Castra"
+      la: "Abner autem filius Ner princeps exercitus Saul, tulit Isboseth filium Saul, et circumduxit eum per castra,"
       en: "But Abner the son of Ner, general of Saul's army, took Isboseth the son of Saul, and led him about through the camp?"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "regemque constituit super Galaad et super Gesuri et super Iezrahel et super Ephraim et super Beniamin et super Israhel universum"
+      la: "regemque constituit super Galaad, et super Gessuri, et super Jezrael, et super Ephraim, et super Benjamin, et super Israel universum."
       en: "And made him king over Galaad, and, over Gessuri, and over Jezrahel, and over Ephraim, and over Benjamin, and over all Israel."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "quadraginta annorum erat Hisboseth filius Saul cum regnare coepisset super Israhel et duobus annis regnavit sola autem domus Iuda sequebatur David"
+      la: "Quadraginta annorum erat Isboseth filius Saul cum regnare coepisset super Israel, et duobus annis regnavit: sola autem domus Juda sequebatur David."
       en: "Isboseth the son of Saul was forty years old when he began to reign over, Israel, and he reigned two years: and only the house of Juda followed David."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et fuit numerus dierum quos commoratus est David imperans in Hebron super domum Iuda septem annorum et sex mensuum"
+      la: "Et fuit numerus dierum, quos commoratus est David, imperans in Hebron super domum Juda, septem annorum, et sex mensium."
       en: "And the number of the days that David abode, reigning in Hebron over the house of Juda, was seven years and six months."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "egressusque Abner filius Ner et pueri Hisboseth filii Saul de Castris in Gabaon"
-      en: "And Abner the son of Ner, and the servants of Isboseth the son of Saul, went out from the camp to Gabaon"
+      la: "Egressusque est Abner filius Ner, et pueri Isboseth filii Saul, de castris in Gabaon."
+      en: "And Abner the son of Ner, and the servants of Isboseth the son of Saul, went out from the camp to Gabaon."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "porro Ioab filius Sarviae et pueri David egressi sunt et occurrerunt eis iuxta piscinam Gabaon et cum in unum convenissent e regione sederunt hii ex una parte piscinae et illi ex altera"
+      la: "Porro Joab filius Sarviae, et pueri David egressi sunt, et occurrerunt eis juxta piscinam Gabaon. Et cum in unum convenissent, e regione sederunt: hi ex una parte piscinae, et illi ex altera."
       en: "And Joab the son of Sarvia, and the servants of David went out, and met them by the pool of Gabaon. And when they were come together, they sat down over against one another: the one on the one side of the pool, and the other on the other side."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "dixitque Abner ad Ioab surgant pueri et ludant coram nobis et respondit Ioab surgant"
+      la: "Dixitque Abner ad Joab: Surgant pueri et ludant coram nobis. Et respondit Joab: Surgant."
       en: "And Abner said to Joab: Let the young men rise, and play before us. And Joab answered: Let them rise."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "surrexerunt ergo et transierunt numero duodecim de Beniamin ex parte Hisboseth filii Saul et duodecim de pueris David"
+      la: "Surrexerunt ergo, et transierunt numero duodecim de Benjamin, ex parte Isboseth filii Saul, et duodecim de pueris David."
       en: "Then there arose and went over twelve in number of Benjamin, of the part of Isboseth the son of Saul, and twelve of the servants of David."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "adprehensoque unusquisque capite conparis sui defixit gladium in latus contrarii et ceciderunt simul vocatumque est nomen loci illius ager Robustorum in Gabaon"
+      la: "Apprehensoque unusquisque capite comparis sui, defixit gladium in latus contrarii, et ceciderunt simul: vocatumque est nomen loci illius: Ager robustorum, in Gabaon."
       en: "And every one catching his fellow, by the head, thrust his sword into the side of his adversary, and they fell down together: and the name of the place was called: The field of the valiant, in Gabaon."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "et ortum est bellum durum satis in die illa fugatusque est Abner et viri Israhel a pueris David"
+      la: "Et ortum est bellum durum satis in die illa: fugatusque est Abner, et viri Israel a pueris David."
       en: "And there was a very fierce battle that day: and Abner was put to flight, with the men of Israel, by the servants of David."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "erant autem ibi tres filii Sarviae Ioab et Abisai et Asahel porro Asahel cursor velocissimus fuit quasi unus ex capreis quae morantur in silvis"
+      la: "Erant autem ibi tres filii Sarviae, Joab, et Abisai, et Asael: porro Asael cursor velocissimus fuit, quasi unus de capreis quae morantur in silvis."
       en: "And there were the three sons of Sarvia there, Joab, and Abisai, and Asael: now Asael was a most swift runner, like one of the roes that abide in the woods."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "persequebatur autem Asahel Abner et non declinavit ad dexteram sive ad sinistram omittens persequi Abner"
+      la: "Persequebatur autem Asael Abner, et non declinavit ad dextram neque ad sinistram omittens persequi Abner."
       en: "And Asael pursued after Abner, and turned not to the right hand nor to the left from following Abner."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "respexit itaque Abner post tergum suum et ait tune es Asahel qui respondit ego sum"
+      la: "Respexit itaque Abner post tergum suum, et ait: Tune es Asael? Qui respondit: Ego sum."
       en: "And Abner looked behind him, and said: Art thou Asael? And he answered: I am."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "dixitque ei Abner vade ad dextram sive ad sinistram et adprehende unum de adulescentibus et tolle tibi spolia eius noluit autem Asahel omittere quin urgueret eum"
+      la: "Dixitque ei Abner: Vade ad dexteram, sive ad sinistram et apprehende unum de adolescentibus, et tolle tibi spolia ejus. Noluit autem Asael omittere quin urgeret eum."
       en: "And Abner said to him: Go to the right hand or to the left, and lay hold on one of the young men and take thee his spoils. But Asael would not leave off following him close."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "rursumque locutus est Abner ad Asahel recede noli me sequi ne conpellar confodere te in terra et levare non potero faciem meam ad Ioab fratrem tuum"
+      la: "Rursumque locutus est Abner ad Asael: Recede, noli me sequi, ne compellar confodere te in terram, et levare non potero faciem meam ad Joab fratrem tuum."
       en: "And again Abner said to Asael: Go off, and do not follow me, lest I be obliged to stab thee to the ground, and I shall not be able to hold up my face to Joab thy brother."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "qui audire contempsit et noluit declinare percussit ergo eum Abner aversa hasta in inguine et transfodit et mortuus est in eodem loco omnesque qui transiebant per locum in quo ceciderat Asahel et mortuus erat subsistebant"
+      la: "Qui audire contempsit, et noluit declinare: percussit ergo eum Abner aversa hasta in inguine, et transfodit, et mortuus est in eodem loco: omnesque qui transibant per locum illum, in quo ceciderat Asael, et mortuus erat, subsistebant."
       en: "But he refused to hearken to him, and would not turn aside: wherefore Abner struck him with his spear with a back stroke in the groin, and thrust him through, and he died upon the spot: and all that came to the place where Asael fell down and died stood still."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "persequentibus autem Ioab et Abisai fugientem Abner sol occubuit et venerunt usque ad collem Aquaeductus qui est ex adverso vallis et itineris deserti in Gabaon"
+      la: "Persequentibus autem Joab, et Abisai fugientem Abner, sol occubuit: et venerunt usque ad collem aquaeductus, qui est ex adverso vallis itineris deserti in Gabaon."
       en: "Now while Joab and Abisai pursued after Abner, the sun went down: and they came as far as the hill of the aqueduct, that lieth over against the valley by the way of the wilderness in Gabaon."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "congregatique sunt filii Beniamin ad Abner et conglobati in unum cuneum steterunt in summitate tumuli unius"
+      la: "Congregatique sunt filii Benjamin ad Abner: et conglobati in unum cuneum, steterunt in summitate tumuli unius."
       en: "And the children of Benjamin gathered themselves together to Abner: and being joined in one body, they stood on the top of a hill."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "et exclamavit Abner ad Ioab et ait num usque ad internicionem tuus mucro desaeviet an ignoras quod periculosa sit desperatio usquequo non dicis populo ut omittat persequi fratres suos"
+      la: "Et exclamavit Abner ad Joab, et ait: Num usque ad internecionem tuus mucro desaeviet? an ignoras quod periculosa sit desperatio? Usquequo non dicis populo ut omittat persequi fratres suos?"
       en: "And Abner cried out to Joab, and said: Shall thy sword rage unto utter destruction? knowest thou not that it is dangerous to drive people to despair? how long dost thou defer to bid the people cease from pursuing after their brethren?"
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "et ait Ioab vivit Dominus si locutus fuisses mane recessisset populus persequens fratrem suum"
+      la: "Et ait Joab: Vivit Dominus, si locutus fuisses, mane recessisset populus persequens fratrem suum."
       en: "And Joab said: As the Lord liveth, if thou hadst spoke sooner, even in the morning the people should have retired from pursuing after their brethren."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "insonuit ergo Ioab bucina et stetit omnis exercitus nec persecuti sunt ultra Israhel neque iniere certamen"
+      la: "Insonuit ergo Joab buccina, et stetit omnis exercitus, nec persecuti sunt ultra Israel, neque iniere certamen."
       en: "Then Joab sounded the trumpet, and all the army stood still, and did not pursue after Israel any farther, nor fight any more."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "Abner autem et viri eius abierunt per campestria tota nocte illa et transierunt Iordanem et lustrata omni Bethoron venerunt ad Castra"
+      la: "Abner autem et viri ejus abierunt per campestria, tota nocte illa: et transierunt Jordanem, et lustrata omni Beth-horon, venerunt ad castra."
       en: "And Abner and his men walked all that night through the plains: and they passed the Jordan, and having gone through all Beth-horon, came to the camp."
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "porro Ioab reversus omisso Abner congregavit omnem populum et defuerunt de pueris David decem et novem viri excepto Asahele"
+      la: "Porro Joab reversus, omisso Abner, congregavit omnem populum: et defuerunt de pueris David decem et novem viri, excepto Asaele."
       en: "And Joab returning, after he had left Abner, assembled all the people: and there were wanting of David's servants nineteen men, beside Asael."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "servi autem David percusserunt de Beniamin et de viris qui erant cum Abner trecentos sexaginta qui et mortui sunt"
+      la: "Servi autem David percusserunt de Benjamin, et de viris qui erant cum Abner, trecentos sexaginta, qui et mortui sunt."
       en: "But the servants of David had killed of Benjamin, and of the men that were with Abner, three hundred and sixty, who all died."
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "tuleruntque Asahel et sepelierunt eum in sepulchro patris sui in Bethleem et ambulaverunt tota nocte Ioab et viri qui erant cum eo et in ipso crepusculo pervenerunt in Hebron"
+      la: "Tuleruntque Asael, et sepelierunt eum in sepulchro patris sui in Bethlehem: et ambulaverunt tota nocte Joab et viri qui erant cum eo, et in ipso crepusculo pervenerunt in Hebron."
       en: "And they took Asael, and buried him in the sepulchre of his father in Bethlehem, and Joab, and the men that were with him, marched all the night, and they came to Hebron at break of day."
     status: { la: verified, en: verified }

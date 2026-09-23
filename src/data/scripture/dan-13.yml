@@ -1,19 +1,18 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for dan 13 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: dan
 chapter: 13
 verses:
   - n: 1
     text:
-      la: "Et erat vir habitans in Babylone, et nomen ejus Joakim :"
+      la: "Et erat vir habitans in Babylone, et nomen ejus Joakim:"
       en: "Now there was a man that dwelt in Babylon, and his name was Joakim:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et accepit uxorem nomine Susannam, filiam Helciae, pulchram nimis, et timentem Deum :"
+      la: "et accepit uxorem nomine Susannam, filiam Helciae, pulchram nimis, et timentem Deum:"
       en: "And he took a wife whose name was Susanna, the daughter of Helcias, a very beautiful woman, and one that feared God."
     status: { la: verified, en: verified }
   - n: 3
@@ -23,12 +22,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "Erat autem Joakim dives valde, et erat ei pomarium vicinum domui suae : et ad ipsum confluebant Judaei, eo quod esset honorabilior omnium."
+      la: "Erat autem Joakim dives valde, et erat ei pomarium vicinum domui suae: et ad ipsum confluebant Judaei, eo quod esset honorabilior omnium."
       en: "Now Joakim was very rich, and had an orchard near his house: and the Jews resorted to him, because he was the most honourable of them all."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "Et constituti sunt de populo duo senes judices in illo anno, de quibus locutus est Dominus : Quia egressa est iniquitas de Babylone a senioribus judicibus, qui videbantur regere populum."
+      la: "Et constituti sunt de populo duo senes judices in illo anno, de quibus locutus est Dominus: Quia egressa est iniquitas de Babylone a senioribus judicibus, qui videbantur regere populum."
       en: "And there were two of the ancients of the people appointed judges that year, of whom the Lord said: Iniquity came out from Babylon from the ancient judges, that seemed to govern the people."
     status: { la: verified, en: verified }
   - n: 6
@@ -43,7 +42,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "Et videbant eam senes quotidie ingredientem et deambulantem, et exarserunt in concupiscentiam ejus :"
+      la: "Et videbant eam senes quotidie ingredientem et deambulantem, et exarserunt in concupiscentiam ejus:"
       en: "And the old men saw her going in every day, and walking: and they were inflamed with lust towards her:"
     status: { la: verified, en: verified }
   - n: 9
@@ -53,7 +52,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "Erant ergo ambo vulnerati amore ejus, nec indicaverunt sibi vicissim dolorem suum :"
+      la: "Erant ergo ambo vulnerati amore ejus, nec indicaverunt sibi vicissim dolorem suum:"
       en: "So they were both wounded with the love of her, yet they did not make known their grief one to the other:"
     status: { la: verified, en: verified }
   - n: 11
@@ -63,7 +62,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "Et observabant quotidie sollicitius videre eam. Dixitque alter ad alterum :"
+      la: "Et observabant quotidie sollicitius videre eam. Dixitque alter ad alterum:"
       en: "And they watched carefully every day to see her. And one said to the other:"
     status: { la: verified, en: verified }
   - n: 13
@@ -73,12 +72,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "Cumque revertissent, venerunt in unum : et sciscitantes ab invicem causam, confessi sunt concupiscentiam suam : et tunc in communi statuerunt tempus quando eam possent invenire solam."
+      la: "Cumque revertissent, venerunt in unum: et sciscitantes ab invicem causam, confessi sunt concupiscentiam suam: et tunc in communi statuerunt tempus quando eam possent invenire solam."
       en: "And turning back again, they came both to the same place: and asking one another the cause, they acknowledged their lust; and then they agreed upon a time, when they might find her alone."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "Factum est autem, cum observarent diem aptum, ingressa est aliquando sicut heri et nudiustertius, cum duabus solis puellis, voluitque lavari in pomario : aestus quippe erat :"
+      la: "Factum est autem, cum observarent diem aptum, ingressa est aliquando sicut heri et nudiustertius, cum duabus solis puellis, voluitque lavari in pomario: aestus quippe erat:"
       en: "And it fell out, as they watched a fit day, she went in on a time, as yesterday and the day before, with two maids only, and was desirous to wash herself in the orchard: for it was hot weather."
     status: { la: verified, en: verified }
   - n: 16
@@ -88,22 +87,22 @@ verses:
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "Dixit ergo puellis : Afferte mihi oleum, et smigmata, et ostia pomarii claudite, ut laver."
+      la: "Dixit ergo puellis: Afferte mihi oleum, et smigmata, et ostia pomarii claudite, ut laver."
       en: "So she said to the maids: Bring me oil, and washing balls, and shut the doors of the orchard, that I may wash me."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "Et fecerunt sicut praeceperat : clauseruntque ostia pomarii, et egressae sunt per posticum ut afferrent quae jusserat; nesciebantque senes intus esse absconditos."
+      la: "Et fecerunt sicut praeceperat: clauseruntque ostia pomarii, et egressae sunt per posticum ut afferrent quae jusserat; nesciebantque senes intus esse absconditos."
       en: "And they did as she bade them: and they shut the doors of the orchard, and went out by a back door to fetch what she had commanded them, and they knew not that the elders were hid within."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "Cum autem egressae essent puellae, surrexerunt duo senes, et accurrerunt ad eam, et dixerunt :"
+      la: "Cum autem egressae essent puellae, surrexerunt duo senes, et accurrerunt ad eam, et dixerunt:"
       en: "Now when the maids were gone forth, the two elders arose, and ran to her, and said:"
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "Ecce ostia pomarii clausa sunt, et nemo nos videt, et nos in concupiscentia tui sumus : quam ob rem assentire nobis, et commiscere nobiscum."
+      la: "Ecce ostia pomarii clausa sunt, et nemo nos videt, et nos in concupiscentia tui sumus: quam ob rem assentire nobis, et commiscere nobiscum."
       en: "Behold the doors of the orchard are shut, and nobody seeth us, and we are in love with thee: wherefore consent to us, and lie with us."
     status: { la: verified, en: verified }
   - n: 21
@@ -113,7 +112,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "Ingemuit Susanna, et ait : Angustiae sunt mihi undique : si enim hoc egero, mors mihi est : si autem non egero, non effugiam manus vestras."
+      la: "Ingemuit Susanna, et ait: Angustiae sunt mihi undique: si enim hoc egero, mors mihi est: si autem non egero, non effugiam manus vestras."
       en: "Susanna sighed, and said: I am straitened on every side: for if I do this thing, it is death to me: and if I do it not, I shall not escape your hands."
     status: { la: verified, en: verified }
   - n: 23
@@ -123,7 +122,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "Et exclamavit voce magna Susanna : exclamaverunt autem et senes adversus eam."
+      la: "Et exclamavit voce magna Susanna: exclamaverunt autem et senes adversus eam."
       en: "With that Susanna cried out with a loud voice: and the elders also cried out against her."
     status: { la: verified, en: verified }
   - n: 25
@@ -148,7 +147,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "Et dixerunt coram populo : Mittite ad Susannam filiam Helciae uxorem Joakim. Et statim miserunt."
+      la: "Et dixerunt coram populo: Mittite ad Susannam filiam Helciae uxorem Joakim. Et statim miserunt."
       en: "And they said before the people: Send to Susanna daughter of Helcias the wife of Joakim. And presently they sent."
     status: { la: verified, en: verified }
   - n: 30
@@ -178,12 +177,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 35
     text:
-      la: "Quae flens suspexit ad caelum : erat enim cor ejus fiduciam habens in Domino."
+      la: "Quae flens suspexit ad caelum: erat enim cor ejus fiduciam habens in Domino."
       en: "And she weeping looked up to heaven, for her heart had confidence in the Lord."
     status: { la: verified, en: verified }
   - n: 36
     text:
-      la: "Et dixerunt presbyteri : Cum deambularemus in pomario soli, ingressa est haec cum duabus puellis : et clausit ostia pomarii, et dimisit a se puellas."
+      la: "Et dixerunt presbyteri: Cum deambularemus in pomario soli, ingressa est haec cum duabus puellis: et clausit ostia pomarii, et dimisit a se puellas."
       en: "And the elders said: As we walked in the orchard alone, this woman came in with two maids, and shut the doors of the orchard, and sent away the maids from her."
     status: { la: verified, en: verified }
   - n: 37
@@ -198,12 +197,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 39
     text:
-      la: "Et illum quidem non quivimus comprehendere, quia fortior nobis erat, et apertis ostiis exilivit :"
+      la: "Et illum quidem non quivimus comprehendere, quia fortior nobis erat, et apertis ostiis exilivit:"
       en: "And him indeed we could not take, because he was stronger than us, and opening the doors he leaped out:"
     status: { la: verified, en: verified }
   - n: 40
     text:
-      la: "hanc autem cum apprehendissemus, interrogavimus, quisnam esset adolescens, et noluit indicare nobis : hujus rei testes sumus."
+      la: "hanc autem cum apprehendissemus, interrogavimus, quisnam esset adolescens, et noluit indicare nobis: hujus rei testes sumus."
       en: "But having taken this woman, we asked who the young man was, but she would not tell us: of this thing we are witnesses."
     status: { la: verified, en: verified }
   - n: 41
@@ -213,12 +212,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 42
     text:
-      la: "Exclamavit autem voce magna Susanna, et dixit : Deus aeterne, qui absconditorum es cognitor, qui nosti omnia antequam fiant,"
+      la: "Exclamavit autem voce magna Susanna, et dixit: Deus aeterne, qui absconditorum es cognitor, qui nosti omnia antequam fiant,"
       en: "Then Susanna cried out with a loud voice, and said: O eternal God, who knowest hidden things, who knowest all things before they come to pass,"
     status: { la: verified, en: verified }
   - n: 43
     text:
-      la: "tu scis quoniam falsum testimonium tulerunt contra me : et ecce morior, cum nihil horum fecerim, quae isti malitiose composuerunt adversum me."
+      la: "tu scis quoniam falsum testimonium tulerunt contra me: et ecce morior, cum nihil horum fecerim, quae isti malitiose composuerunt adversum me."
       en: "Thou knowest that they have borne false witness against me: and behold I must die, whereas I have done none of these things, which these men have maliciously forged against me."
     status: { la: verified, en: verified }
   - n: 44
@@ -228,22 +227,22 @@ verses:
     status: { la: verified, en: verified }
   - n: 45
     text:
-      la: "Cumque duceretur ad mortem, suscitavit Dominus spiritum sanctum pueri junioris, cujus nomen Daniel :"
+      la: "Cumque duceretur ad mortem, suscitavit Dominus spiritum sanctum pueri junioris, cujus nomen Daniel:"
       en: "And when she was led to be put to death, the Lord raised up the holy spirit of a young boy, whose name was Daniel."
     status: { la: verified, en: verified }
   - n: 46
     text:
-      la: "et exclamavit voce magna : Mundus ego sum a sanguine hujus."
+      la: "et exclamavit voce magna: Mundus ego sum a sanguine hujus."
       en: "And he cried out with a loud voice I am clear from the blood of this woman."
     status: { la: verified, en: verified }
   - n: 47
     text:
-      la: "Et conversus omnis populus ad eum, dixit : Quis est iste sermo, quem tu locutus es?"
+      la: "Et conversus omnis populus ad eum, dixit: Quis est iste sermo, quem tu locutus es?"
       en: "Then all the people turning themselves towards him, said: What meaneth this word that thou hast spoken?"
     status: { la: verified, en: verified }
   - n: 48
     text:
-      la: "Qui cum staret in medio eorum, ait : Sic fatui filii Israel, non judicantes, neque quod verum est cognoscentes, condemnastis filiam Israel?"
+      la: "Qui cum staret in medio eorum, ait: Sic fatui filii Israel, non judicantes, neque quod verum est cognoscentes, condemnastis filiam Israel?"
       en: "But he standing in the midst of them, said: Are ye so foolish, ye children of Israel, that without examination or knowledge of the truth, you have condemned a daughter of Israel?"
     status: { la: verified, en: verified }
   - n: 49
@@ -253,52 +252,52 @@ verses:
     status: { la: verified, en: verified }
   - n: 50
     text:
-      la: "Reversus est ergo populus cum festinatione, et dixerunt ei senes : Veni, et sede in medio nostrum, et indica nobis : quia tibi Deus dedit honorem senectutis."
+      la: "Reversus est ergo populus cum festinatione, et dixerunt ei senes: Veni, et sede in medio nostrum, et indica nobis: quia tibi Deus dedit honorem senectutis."
       en: "So all the people turned again in haste, and the old men said to him: Come, and sit thou down among us, and shew it us: seeing God hath given thee the honour of old age."
     status: { la: verified, en: verified }
   - n: 51
     text:
-      la: "Et dixit ad eos Daniel : Separate illos ab invicem procul, et dijudicabo eos."
+      la: "Et dixit ad eos Daniel: Separate illos ab invicem procul, et dijudicabo eos."
       en: "And Daniel said to the people: Separate these two far from one another, and I will examine them."
     status: { la: verified, en: verified }
   - n: 52
     text:
-      la: "Cum ergo divisi essent alter ab altero, vocavit unum de eis, et dixit ad eum : Inveterate dierum malorum, nunc venerunt peccata tua, quae operabaris prius :"
+      la: "Cum ergo divisi essent alter ab altero, vocavit unum de eis, et dixit ad eum: Inveterate dierum malorum, nunc venerunt peccata tua, quae operabaris prius:"
       en: "So when they were put asunder one from the other, he called one of them, and said to him: O thou that art grown old in evil days, now are thy sins come out, which thou hast committed before:"
     status: { la: verified, en: verified }
   - n: 53
     text:
-      la: "judicans judicia injusta, innocentes opprimens, et dimittens noxios, dicente Domino : Innocentem et justum non interficies."
+      la: "judicans judicia injusta, innocentes opprimens, et dimittens noxios, dicente Domino: Innocentem et justum non interficies."
       en: "In judging unjust judgments, oppressing the innocent, and letting the guilty to go free, whereas the Lord saith: The innocent and the just thou shalt not kill."
     status: { la: verified, en: verified }
   - n: 54
     text:
-      la: "Nunc ergo, si vidisti eam, dic sub qua arbore videris eos colloquentes sibi. Qui ait : Sub schino."
+      la: "Nunc ergo, si vidisti eam, dic sub qua arbore videris eos colloquentes sibi. Qui ait: Sub schino."
       en: "Now then, if thou sawest her, tell me under what tree thou sawest them conversing together. He said: Under a mastic tree."
     status: { la: verified, en: verified }
   - n: 55
     text:
-      la: "Dixit autem Daniel : Recte mentitus es in caput tuum : ecce enim angelus Dei, accepta sententia ab eo, scindet te medium."
+      la: "Dixit autem Daniel: Recte mentitus es in caput tuum: ecce enim angelus Dei, accepta sententia ab eo, scindet te medium."
       en: "And Daniel said: Well hast thou lied against thy own head: for behold the angel of God having received the sentence of him, shall cut thee in two."
     status: { la: verified, en: verified }
   - n: 56
     text:
-      la: "Et, amoto eo, jussit venire alium, et dixit ei : Semen Chanaan, et non Juda, species decepit te, et concupiscentia subvertit cor tuum :"
+      la: "Et, amoto eo, jussit venire alium, et dixit ei: Semen Chanaan, et non Juda, species decepit te, et concupiscentia subvertit cor tuum:"
       en: "And having put him aside, he commanded that the other should come, and he said to him: O thou seed of Chanaan, and not of Juda, beauty hath deceived thee, and lust hath perverted thy heart:"
     status: { la: verified, en: verified }
   - n: 57
     text:
-      la: "sic faciebatis filiabus Israel, et illae timentes loquebantur vobis : sed filia Juda non sustinuit iniquitatem vestram."
+      la: "sic faciebatis filiabus Israel, et illae timentes loquebantur vobis: sed filia Juda non sustinuit iniquitatem vestram."
       en: "Thus did you do to the daughters of Israel, and they for fear conversed with you: but a daughter of Juda would not abide your wickedness."
     status: { la: verified, en: verified }
   - n: 58
     text:
-      la: "Nunc ergo, dic mihi sub qua arbore comprehenderis eos loquentes sibi. Qui ait : Sub prino."
+      la: "Nunc ergo, dic mihi sub qua arbore comprehenderis eos loquentes sibi. Qui ait: Sub prino."
       en: "Now therefore tell me, under what tree didst thou take them conversing together. And he answered: Under a holm tree."
     status: { la: verified, en: verified }
   - n: 59
     text:
-      la: "Dixit autem ei Daniel : Recte mentitus es et tu in caput tuum : manet enim angelus Domini, gladium habens, ut secet te medium, et interficiat vos."
+      la: "Dixit autem ei Daniel: Recte mentitus es et tu in caput tuum: manet enim angelus Domini, gladium habens, ut secet te medium, et interficiat vos."
       en: "And Daniel said to him: Well hast thou also lied against thy own head: for the angel of the Lord waiteth with a sword to cut thee in two, and to destroy you."
     status: { la: verified, en: verified }
   - n: 60

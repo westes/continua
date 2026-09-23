@@ -1,157 +1,157 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: num
 chapter: 20
 verses:
   - n: 1
     text:
-      la: "veneruntque filii Israhel et omnis multitudo in desertum Sin mense primo et mansit populus in Cades mortuaque est ibi Maria et sepulta in eodem loco"
+      la: "Veneruntque filii Israel et omnis multitudo in desertum Sin, mense primo, et mansit populus in Cades. Mortuaque est ibi Maria, et sepulta in eodem loco."
       en: "And the children of Israel, and all the multitude came into the desert of Sin, in the first month: and the people abode in Cades. And Mary died there, and was buried in the same place."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "cumque indigeret aqua populus coierunt adversum Mosen et Aaron"
+      la: "Cumque indigeret aqua populus, convenerunt adversum Moysen et Aaron:"
       en: "And the people wanting water, came together against Moses and Aaron:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et versi in seditionem dixerunt utinam perissemus inter fratres nostros coram Domino"
+      la: "et versi in seditionem, dixerunt: Utinam periissemus inter fratres nostros coram Domino."
       en: "And making a sedition, they said: Would God we had perished among our brethren before the Lord."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "cur eduxistis ecclesiam Domini in solitudinem ut et nos et nostra iumenta moriantur"
+      la: "Cur eduxistis ecclesiam Domini in solitudinem, ut et nos et nostra jumenta moriamur?"
       en: "Why have you brought out the church of the Lord into the wilderness, that both we and our cattle should die?"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "quare nos fecistis ascendere de Aegypto et adduxistis in locum istum pessimum qui seri non potest qui nec ficum gignit nec vineas nec mala granata insuper et aquam non habet ad bibendum"
+      la: "quare nos fecistis ascendere de Aegypto, et adduxistis in locum istum pessimum, qui seri non potest, qui nec ficum gignit, nec vineas, nec malogranata, insuper et aquam non habet ad bibendum?"
       en: "Why have you made us come up out of Egypt, and have brought us into this wretched place which cannot be sowed, nor bringeth forth figs, nor vines, nor pomegranates, neither is there any water to drink?"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "ingressusque Moses et Aaron dimissa multitudine tabernaculum foederis corruerunt proni in terram et apparuit gloria Domini super eos"
+      la: "Ingressusque Moyses et Aaron, dimissa multitudine, tabernaculum foederis, corruerunt proni in terram, clamaveruntque ad Dominum, atque dixerunt: Domine Deus, audi clamorem hujus populi, et aperi eis thesaurum tuum fontem aquae vivae, ut satiati, cesset murmuratio eorum. Et apparuit gloria Domini super eos."
       en: "And Moses and Aaron leaving the multitude, went into the tabernacle of the covenant, and fell flat upon the ground, and cried to the Lord, and said: O Lord God, hear the cry of this people, and open to them thy treasure, a fountain of living water, that being satisfied, they may cease to murmur. And the glory of the Lord appeared over them."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "locutusque est Dominus ad Mosen dicens"
+      la: "Locutusque est Dominus ad Moysen, dicens:"
       en: "And the Lord spoke to Moses, saying:"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "tolle virgam et congrega populum tu et Aaron frater tuus et loquimini ad petram coram eis et illa dabit aquas cumque eduxeris aquam de petra bibet omnis multitudo et iumenta eius"
+      la: "Tolle virgam, et congrega populum, tu et Aaron frater tuus, et loquimini ad petram coram eis, et illa dabit aquas. Cumque eduxeris aquam de petra, bibet omnis multitudo et jumenta ejus."
       en: "Take the rod, and assemble the people together, thou and Aaron thy brother, and speak to the rock before them, and it shall yield waters. And when thou hast brought forth water out of the rock, all the multitude and their cattle shall drink."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "tulit igitur Moses virgam quae erat in conspectu Domini sicut praeceperat ei"
+      la: "Tulit igitur Moyses virgam, quae erat in conspectu Domini, sicut praeceperat ei,"
       en: "Moses therefore took the rod, which was before the Lord, as he had commanded him,"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "congregata multitudine ante petram dixitque eis audite rebelles et increduli num de petra hac vobis aquam poterimus eicere"
+      la: "congregata multitudine ante petram: dixitque eis: Audite, rebelles et increduli: num de petra hac vobis aquam poterimus ejicere?"
       en: "And having gathered together the multitude before the rock, he said to them: Hear, ye rebellious and incredulous: Can we bring you forth water out of this rock?"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "cumque elevasset Moses manum percutiens virga bis silicem egressae sunt aquae largissimae ita ut et populus biberet et iumenta"
-      en: "And when Moses had lifted up his hand, and struck the rook twice with the rod, there came forth water in great abundance, so that the people and their cattle drank,"
+      la: "Cumque elevasset Moyses manum, percutiens virga bis silicem, egressae sunt aquae largissimae, ita ut populus biberet et jumenta."
+      en: "And when Moses had lifted up his hand, and struck the rock twice with the rod, there came forth water in great abundance, so that the people and their cattle drank,"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "dixitque Dominus ad Mosen et Aaron quia non credidistis mihi ut sanctificaretis me coram filiis Israhel non introducetis hos populos in terram quam dabo eis"
+      la: "Dixitque Dominus ad Moysen et Aaron: Quia non credidistis mihi, ut sanctificaretis me coram filiis Israel, non introducetis hos populos in terram, quam dabo eis."
       en: "And the Lord said to Moses and Aaron: Because you have not believed me, to sanctify me before the children of Israel, you shall not bring these people into the land, which I will give them."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "haec est aqua Contradictionis ubi iurgati sunt filii Israhel contra Dominum et sanctificatus est in eis"
+      la: "Haec est aqua contradictionis, ubi jurgati sunt filii Israel contra Dominum, et sanctificatus est in eis."
       en: "This is the Water of contradiction, where the children of Israel strove with words against the Lord, and he was sanctified in them."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "misit interea nuntios Moses de Cades ad regem Edom qui dicerent haec mandat frater tuus Israhel nosti omnem laborem qui adprehendit nos"
+      la: "Misit interea nuntios Moyses de Cades ad regem Edom, qui dicerent: Haec mandat frater tuus Israel: Nosti omnem laborem qui apprehendit nos,"
       en: "In the mean time Moses sent messengers from Cades to the king of Edom, to say: Thus saith thy brother Israel: Thou knowest all the labour that hath come upon us:"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "quomodo descenderint patres nostri in Aegyptum et habitaverimus ibi multo tempore adflixerintque nos Aegyptii et patres nostros"
+      la: "quomodo descenderint patres nostri in Aegyptum, et habitaverimus ibi multo tempore, afflixerintque nos Aegyptii, et patres nostros:"
       en: "In what manner our fathers went down into Egypt, and there we dwelt a long time, and the Egyptians afflicted us and our fathers."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "et quomodo clamaverimus ad Dominum et exaudierit nos miseritque angelum qui eduxerit nos de Aegypto ecce in urbe Cades quae est in extremis finibus tuis positi"
+      la: "et quomodo clamaverimus ad Dominum, et exaudierit nos, miseritque angelum, qui eduxerit nos de Aegypto. Ecce in urbe Cades, quae est in extremis finibus tuis, positi,"
       en: "And how we cried to the Lord, and he heard us, and sent an angel, who hath brought us out of Egypt. Lo, we are now in the city of Cades, which is in the uttermost of thy borders,"
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "obsecramus ut nobis transire liceat per terram tuam non ibimus per agros nec per vineas non bibemus aquas de puteis tuis sed gradiemur via publica nec ad dextram nec ad sinistram declinantes donec transeamus terminos tuos"
+      la: "obsecramus ut nobis transire liceat per terram tuam. Non ibimus per agros, nec per vineas; non bibemus aquas de puteis tuis: sed gradiemur via publica, nec ad dexteram nec ad sinistram declinantes, donec transeamus terminos tuos."
       en: "And we beseech thee that we may have leave to pass through thy country. We will not go through the fields, nor through the vineyards, we will not drink the waters of thy wells, but we will go by the common highway, neither turning aside to the right hand, nor to the left, till we are past thy borders."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "cui respondit Edom non transibis per me alioquin armatus occurram tibi"
+      la: "Cui respondit Edom: Non transibis per me, alioquin armatus occurram tibi."
       en: "And Edom answered them: Thou shalt not pass by me: if thou dost I will come out armed against thee."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "dixeruntque filii Israhel per tritam gradiemur viam et si biberimus aquas tuas nos et pecora nostra dabimus quod iustum est nulla erit in pretio difficultas tantum velociter transeamus"
+      la: "Dixeruntque filii Israel: Per tritam gradiemur viam: et si biberimus aquas tuas, nos et pecora nostra, dabimus quod justum est: nulla erit in pretio difficultas, tantum velociter transeamus."
       en: "And the children of Israel said: We will go by the beaten way: and if we and our cattle drink of thy waters, we will give thee what is just: there shall be no difficulty in the price, only let us pass speedily."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "at ille respondit non transibis statimque egressus est obvius cum infinita multitudine et manu forti"
+      la: "At ille respondit: Non transibis. Statimque egressus est obvius, cum infinita multitudo, et manu forti,"
       en: "But he answered: Thou shalt not pass. And immediately he came forth to meet them with an infinite multitude, and a strong hand,"
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "nec voluit adquiescere deprecanti ut concederet transitum per fines suos quam ob rem devertit ab eo Israhel"
+      la: "nec voluit acquiescere deprecanti, ut concederet transitum per fines suos. Quam ob rem divertit ab eo Israel."
       en: "Neither would he condescend to their desire to grant them passage through his borders. Wherefore Israel turned another way from him."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "cumque castra movissent de Cades venerunt in montem Or qui est in finibus terrae Edom"
-      en: "And when they had removed the camp from Cades, they came to mount Her, which is in the borders of the land of Edom:"
+      la: "Cumque castra movissent de Cades, venerunt in montem Hor, qui est in finibus terrae Edom:"
+      en: "And when they had removed the camp from Cades, they came to mount Hor, which is in the borders of the land of Edom:"
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "ubi locutus est Dominus ad Mosen"
+      la: "ubi locutus est Dominus ad Moysen:"
       en: "Where the Lord spoke to Moses:"
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "pergat inquit Aaron ad populos suos non enim intrabit terram quam dedi filiis Israhel eo quod incredulus fuerit ori meo ad aquas Contradictionis"
+      la: "Pergat, inquit, Aaron ad populos suos: non enim intrabit terram, quam dedi filiis Israel, eo quod incredulus fuerit ori meo, ad aquas contradictionis."
       en: "Let Aaron, saith he, go to his people: for he shall not go into the land which I have given the children of Israel, because he was incredulous to my words, at the waters of contradiction."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "tolle Aaron et filium eius cum eo et duces eos in montem Or"
+      la: "Tolle Aaron et filium ejus cum eo, et duces eos in montem Hor."
       en: "Take Aaron and his son with him, and bring them up into mount Hor:"
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "cumque nudaveris patrem veste sua indues ea Eleazarum filium eius et Aaron colligetur et morietur ibi"
+      la: "Cumque nudaveris patrem veste sua, indues ea Eleazarum filium ejus: Aaron colligetur, et morietur ibi."
       en: "And when thou hast stripped the father of his vesture, thou shalt vest therewith Eleazar his son: Aaron shall be gathered to his people, and die there."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "fecit Moses ut praeceperat Dominus et ascenderunt in montem Or coram omni multitudine"
+      la: "Fecit Moyses ut praeceperat Dominus: et ascenderunt in montem Hor coram omni multitudine."
       en: "Moses did as the Lord had commanded: and they went up into mount Hor before all the multitude."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "cumque Aaron spoliasset vestibus suis induit eis Eleazarum filium eius"
+      la: "Cumque Aaron spoliasset vestibus suis, induit eis Eleazarum filium ejus."
       en: "And when he had stripped Aaron of his vestments, he vested Eleazar his son with them."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "illo mortuo in montis supercilio descendit cum Eleazaro"
+      la: "Illo mortuo in montis supercilio, descendit cum Eleazaro."
       en: "And Aaron being dead in the top of the mountain, he came down with Eleazar."
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "omnis autem multitudo videns occubuisse Aaron flevit super eo triginta diebus per cunctas familias suas"
+      la: "Omnis autem multitudo videns occubuisse Aaron, flevit super eo triginta diebus per cunctas familias suas."
       en: "And all the multitude seeing that Aaron was dead, mourned for him thirty days throughout all their families."
     status: { la: verified, en: verified }

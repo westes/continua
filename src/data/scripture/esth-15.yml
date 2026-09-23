@@ -1,8 +1,7 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for esth 15 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: esth
 chapter: 15
 verses:
@@ -13,7 +12,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "Memorare, inquit, dierum humilitatis tuae, quomodo nutrita sis in manu mea, quia Aman secundus a rege locutus est contra nos in mortem :"
+      la: "Memorare, inquit, dierum humilitatis tuae, quomodo nutrita sis in manu mea, quia Aman secundus a rege locutus est contra nos in mortem:"
       en: "Remember, (said he,) the days of thy low estate, how thou wast brought up by my hand, because Aman the second after the king hath spoken against us unto death."
     status: { la: verified, en: verified }
   - n: 3
@@ -33,7 +32,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et super unam quidem innitebatur, quasi prae deliciis et nimia teneritudine corpus suum ferre non sustinens :"
+      la: "et super unam quidem innitebatur, quasi prae deliciis et nimia teneritudine corpus suum ferre non sustinens:"
       en: "And upon one of them she leaned, as if for delicateness and overmuch tenderness she were not able to bear up her own body."
     status: { la: verified, en: verified }
   - n: 7
@@ -58,17 +57,17 @@ verses:
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "Convertitque Deus spiritum regis in mansuetudinem, et festinus ac metuens exilivit de solio, et sustentans eam ulnis suis, donec rediret ad se, his verbis blandiebatur :"
+      la: "Convertitque Deus spiritum regis in mansuetudinem, et festinus ac metuens exilivit de solio, et sustentans eam ulnis suis, donec rediret ad se, his verbis blandiebatur:"
       en: "And God changed the king's spirit into mildness, and all in haste and in fear he leaped from his throne, and holding her up in his arms, till she came to herself, caressed her with these words:"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "Quid habes, Esther? ego sum frater tuus : noli metuere."
+      la: "Quid habes, Esther? ego sum frater tuus: noli metuere."
       en: "What is the matter, Esther? I am thy brother, fear not."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "Non morieris : non enim pro te, sed pro omnibus haec lex constituta est."
+      la: "Non morieris: non enim pro te, sed pro omnibus haec lex constituta est."
       en: "Thou shalt not die: for this law is not made for thee, but for all others."
     status: { la: verified, en: verified }
   - n: 14
@@ -78,12 +77,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "Cumque illa reticeret, tulit auream virgam, et posuit super collum ejus, et osculatus est eam, et ait : Cur mihi non loqueris?"
+      la: "Cumque illa reticeret, tulit auream virgam, et posuit super collum ejus, et osculatus est eam, et ait: Cur mihi non loqueris?"
       en: "And as she held her peace, he took the golden sceptre, and laid it upon her neck, and kissed her, and said: Why dost thou not speak to me?"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "Quae respondit : Vidi te, domine, quasi angelum Dei, et conturbatum est cor meum prae timore gloriae tuae."
+      la: "Quae respondit: Vidi te, domine, quasi angelum Dei, et conturbatum est cor meum prae timore gloriae tuae."
       en: "She answered: I saw thee, my lord, as an angel of God, and my heart was troubled for fear of thy majesty."
     status: { la: verified, en: verified }
   - n: 17

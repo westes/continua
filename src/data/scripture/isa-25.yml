@@ -1,24 +1,23 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for isa 25 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: isa
 chapter: 25
 verses:
   - n: 1
     text:
-      la: "Domine, Deus meus es tu; exaltabo te, et confitebor nomini tuo : quoniam fecisti mirabilia, cogitationes antiquas fideles. Amen."
+      la: "Domine, Deus meus es tu; exaltabo te, et confitebor nomini tuo: quoniam fecisti mirabilia, cogitationes antiquas fideles. Amen."
       en: "O Lord, thou art my God, I will exalt thee, and give glory to thy name: for thou hast done wonderful things, thy designs of old faithful, amen."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "Quia posuisti civitatem in tumulum, urbem fortem in ruinam, domum alienorum : ut non sit civitas, et in sempiternum non aedificetur."
+      la: "Quia posuisti civitatem in tumulum, urbem fortem in ruinam, domum alienorum: ut non sit civitas, et in sempiternum non aedificetur."
       en: "For thou hast reduced the city to a heap, the strong city to ruin, the house of strangers, to be no city, and to be no more built up for ever."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "Super hoc laudabit te populus fortis; civitas gentium robustarum timebit te :"
+      la: "Super hoc laudabit te populus fortis; civitas gentium robustarum timebit te:"
       en: "Therefore shall a strong people praise thee, the city of mighty nations shall fear thee."
     status: { la: verified, en: verified }
   - n: 4
@@ -43,12 +42,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "Praecipitabit mortem in sempiternum; et auferet Dominus Deus lacrimam ab omni facie, et opprobrium populi sui auferet de universa terra : quia Dominus locutus est."
+      la: "Praecipitabit mortem in sempiternum; et auferet Dominus Deus lacrimam ab omni facie, et opprobrium populi sui auferet de universa terra: quia Dominus locutus est."
       en: "He shall cast death down headlong for ever: and the Lord God shall wipe away tears from every face, and the reproach of his people he shall take away from off the whole earth: for the Lord hath spoken it."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "Et dicet in die illa : Ecce Deus noster iste; exspectavimus eum, et salvabit nos; iste Dominus, sustinuimus eum : exsultabimus, et laetabimur in salutari ejus."
+      la: "Et dicet in die illa: Ecce Deus noster iste; exspectavimus eum, et salvabit nos; iste Dominus, sustinuimus eum: exsultabimus, et laetabimur in salutari ejus."
       en: "And they shall say in that day: Lo, this is our God, we have waited for him, and he will save us: this is the Lord, we have patiently waited for him, we shall rejoice and be joyfull in his salvation."
     status: { la: verified, en: verified }
   - n: 10

@@ -1,47 +1,47 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: apoc
 chapter: 15
 verses:
   - n: 1
     text:
-      la: "et vidi aliud signum in caelo magnum et mirabile angelos septem habentes plagas septem novissimas quoniam in illis consummata est ira Dei"
+      la: "Et vidi aliud signum in caelo magnum et mirabile, angelos septem, habentes plagas septem novissimas: quoniam in illis consummata est ira Dei."
       en: "And I saw another sign in heaven, great and wonderful: seven angels having the seven last plagues. For in them is filled up the wrath of God."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et vidi tamquam mare vitreum mixtum igne et eos qui vicerunt bestiam et imaginem illius et numerum nominis eius stantes supra mare vitreum habentes citharas Dei"
+      la: "Et vidi tamquam mare vitreum mistum igne, et eos, qui vicerunt bestiam, et imaginem ejus, et numerum nominis ejus, stantes super mare vitreum, habentes citharas Dei:"
       en: "And I saw as it were a sea of glass mingled with fire, and them that had overcome the beast, and his image, and the number of his name, standing on the sea of glass, having the harps of God:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et cantant canticum Mosi servi Dei et canticum agni dicentes magna et mirabilia opera tua Domine Deus omnipotens iustae et verae viae tuae rex saeculorum"
+      la: "et cantantes canticum Moysi servi Dei, et canticum Agni, dicentes: Magna et mirabilia sunt opera tua, Domine Deus omnipotens: justae et verae sunt viae tuae, Rex saeculorum."
       en: "And singing the canticle of Moses, the servant of God, and the canticle of the Lamb, saying: Great and wonderful are thy works, O Lord God Almighty; just and true are thy ways, O King of ages."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "quis non timebit Domine et magnificabit nomen tuum quia solus pius quoniam omnes gentes venient et adorabunt in conspectu tuo quoniam iudicia tua manifestata sunt"
+      la: "Quis non timebit te, Domine, et magnificabit nomen tuum? quia solus pius es: quoniam omnes gentes venient, et adorabunt in conspectu tuo, quoniam judicia tua manifesta sunt."
       en: "Who shall not fear thee, O Lord, and magnify thy name? For thou only art holy: for all nations shall come, and shall adore in thy sight, because thy judgments are manifest."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et post haec vidi et ecce apertum est templum tabernaculi testimonii in caelo"
+      la: "Et post haec vidi: et ecce apertum est templum tabernaculi testimonii in caelo,"
       en: "And after these things I looked; and behold, the temple of the tabernacle of the testimony in heaven was opened:"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et exierunt septem angeli habentes septem plagas de templo vestiti lapide mundo candido et praecincti circa pectora zonis aureis"
+      la: "et exierunt septem angeli habentes septem plagas de templo, vestiti lino mundo et candido, et praecincti circa pectora zonis aureis."
       en: "And the seven angels came out of the temple, having the seven plagues, clothed with clean and white linen, and girt about the breasts with golden girdles."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et unus ex quattuor animalibus dedit septem angelis septem fialas aureas plenas iracundiae Dei viventis in saecula saeculorum"
+      la: "Et unum de quatuor animalibus dedit septem angelis septem phialas aureas, plenas iracundiae Dei viventis in saecula saeculorum."
       en: "And one of the four living creatures gave to the seven angels seven golden vials, full of the wrath of God, who liveth for ever and ever."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et impletum est templum fumo a maiestate Dei et de virtute eius et nemo poterat introire in templum donec consummarentur septem plagae septem angelorum"
+      la: "Et impletum est templum fumo a majestate Dei, et de virtute ejus: et nemo poterat introire in templum, donec consummarentur septem plagae septem angelorum."
       en: "And the temple was filled with smoke from the majesty of God, and from his power; and no man was able to enter into the temple, till the seven plagues of the seven angels were fulfilled."
     status: { la: verified, en: verified }

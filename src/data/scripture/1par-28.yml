@@ -1,112 +1,112 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1par
 chapter: 28
 verses:
   - n: 1
     text:
-      la: "convocavit igitur David omnes principes Israhel duces tribuum et praepositos turmarum qui ministrabant regi tribunos quoque et centuriones et qui praeerant substantiae et possessionibus regis filiosque suos cum eunuchis et potentes et robustissimos quosque in exercitu Hierusalem"
+      la: "Convocavit igitur David omnes principes Israel, duces tribuum, et praepositos turmarum, qui ministrabant regi: tribunos quoque et centuriones, et qui praeerant substantiae et possessionibus regis, filiosque suos cum eunuchis, et potentes, et robustissimos quosque in exercitu Jerusalem."
       en: "And David assembled all the chief men of Israel, the princes of the tribes, and the captains of the companies, who waited on the king: and the captains over thousands, and over hundreds, and them who had the charge over the substance and possessions of the king, and his sons with the officers of the court, and the men of power, and all the bravest of the army at Jerusalem."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "cumque surrexisset rex et stetisset ait audite me fratres mei et populus meus cogitavi ut aedificarem domum in qua requiesceret arca foederis Domini et scabillum pedum Dei nostri et ad aedificandum omnia praeparavi"
+      la: "Cumque surrexisset rex, et stetisset, ait: Audite me, fratres mei et populus meus: cogitavi ut aedificarem domum, in qua requiesceret arca foederis Domini, et scabellum pedum Dei nostri: et ad aedificandum, omnia praeparavi."
       en: "And the king rising up, and standing said: Hear me, my brethren and my people: I had a thought to have built a house, in which the ark of the Lord, and the footstool of our God might rest: and I prepared all things for the building."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "Deus autem dixit mihi non aedificabis domum nomini meo eo quod sis vir bellator et sanguinem fuderis"
+      la: "Deus autem dixit mihi: Non aedificabis domum nomini meo, eo quod sis vir bellator, et sanguinem fuderis."
       en: "And God said to me: Thou shalt not build a house to my name: because thou art a man of war, and hast shed blood."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "sed elegit Dominus Deus Israhel me de universa domo patris mei ut essem rex super Israhel in sempiternum de Iuda enim elegit principes porro de domo Iuda domum patris mei et de filiis patris mei placuit ei ut me eligeret regem super cunctum Israhel"
+      la: "Sed elegit Dominus Deus Israel me de universa domo patris mei, ut essem rex super Israel in sempiternum: de Juda enim elegit principes: porro de domo Juda, domum patris mei, et de filiis patris mei, placuit ei ut me eligeret regem super cunctum Israel."
       en: "But the Lord God of Israel chose me of all the house of my father, to be king over Israel for ever: for of Juda he chose the princes: and of the house of Juda, my father's house: and among the sons of my father, it pleased him to choose me king over all Israel."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "sed et de filiis meis filios enim multos dedit mihi Dominus elegit Salomonem filium meum ut sederet in throno regni Domini super Israhel"
+      la: "Sed et de filiis meis ( filios enim mihi multos dedit Dominus) elegit Salomonem filium meum, ut sederet in throno regni Domini super Israel,"
       en: "And among my sons (for the Lord hath given me many sons) he hath chosen Solomon my son, to sit upon the throne of the kingdom of the Lord over Israel."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "dixitque mihi Salomon filius tuus aedificabit domum meam et atria mea ipsum enim elegi mihi in filium et ego ero ei in patrem"
+      la: "dixitque mihi: Salomon filius tuus aedificavit domum meam, et atria mea: ipsum enim elegi mihi in filium, et ego ero ei in patrem."
       en: "And he said to me: Solomon thy son shall build my house, and my courts: for I have chosen him to be my son, and I will be a father to him."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et firmabo regnum eius usque in aeternum si perseveraverit facere praecepta mea et iudicia sicut et hodie"
+      la: "Et firmabo regnum ejus usque in aeternum, si perseveraverit facere praecepta mea, et judicia, sicut et hodie."
       en: "And I will establish his kingdom for ever, if he continue to keep my commandments, and my judgments, as at this day."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "nunc igitur coram universo coetu Israhel audiente Deo nostro custodite et perquirite cuncta mandata Domini Dei nostri ut possideatis terram bonam et relinquatis eam filiis vestris post vos usque in sempiternum"
+      la: "Nunc ergo coram universo coetu Israel audiente Deo nostro, custodite, et perquirite cuncta mandata Domini Dei nostri: ut possideatis terram bonam, et relinquatis eam filiis vestris post vos usque in sempiternum."
       en: "Now then before all the assembly of Israel, in the hearing of our God, keep ye, and seek all the commandments of the Lord our God: that you may possess the good land, and may leave it to your children after you for ever."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "tu autem Salomon fili mi scito Deum patris tui et servi ei corde perfecto et animo voluntario omnia enim corda scrutatur Dominus et universas mentium cogitationes intellegit si quaesieris eum invenies si autem dereliqueris illum proiciet te in aeternum"
-      en: "And thou my son Solomon, know the God of thy father, and serve him with a perfect heart, and a willing mind: \"for the Lord searcheth all hearts, and under- standeth all the thoughts of minds. If thou seek him, thou shalt find him: but if thou forsake him, he will cast thee off for ever."
+      la: "Tu autem, Salomon fili mi, scito Deum patris tui, et servito ei corde perfecto, animo voluntario: omnia enim corda scrutatur Dominus, et universas mentium cogitationes intelligit. Si quaesieris eum, invenies: si autem dereliqueris eum, projiciet te in aeternum."
+      en: "And thou my son Solomon, know the God of thy father, and serve him with a perfect heart, and a willing mind: for the Lord searcheth all hearts, and understandeth all the thoughts of minds. If thou seek him, thou shalt find him: but if thou forsake him, he will cast thee off for ever."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "nunc ergo quia elegit te Dominus ut aedificares domum sanctuarii confortare et perfice"
+      la: "Nunc ergo quia elegit te Dominus ut aedificares domum sanctuarii, confortare, et perfice."
       en: "Now therefore seeing the Lord hath chosen thee to build the house of the sanctuary, take courage, and do it."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "dedit autem David Salomoni filio suo descriptionem porticus et templi et cellariorum et cenaculi et cubiculorum in adytis et domus propitiationis"
+      la: "Dedit autem David Salomoni filio suo descriptionem porticus, et templi, et cellariorum, et coenaculi, et cubiculorum in adytis, et domus propitiationis,"
       en: "And David gave to Solomon his son a description of the porch, and of the temple, and of the treasures, and of the upper floor, and of the inner chambers, and of the house for the mercy seat,"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "necnon et omnium quae cogitaverat atriorum et exedrarum per circuitum in thesauros domus Domini et in thesauros sanctorum"
+      la: "necnon et omnium quae cogitaverat atriorum, et exedrarum per circuitum in thesauros domus Domini, et in thesauros sanctorum,"
       en: "As also of all the courts, which he had in his thought, and of the chambers round about, for the treasures of the house of the Lord, and for the treasures of the consecrated things,"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "divisionumque sacerdotalium et leviticarum in omnia opera domus Domini et in universa vasa ministerii templi Domini"
+      la: "divisionumque sacerdotalium et Leviticarum, in omnia opera domus Domini, et in universa vasa ministerii templi Domini."
       en: "And of the divisions of the priests and of the Levites, for all the works of the house of the Lord, and for all the vessels of the service of the temple of the Lord."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "aurum in pondere per singula vasa ministerii argenti quoque pondus pro vasorum ad opera diversitate"
-      en: "Gold by weight for every vessel for the ministry. And silver by weight ac- cording to the diversity of the vessels and uses."
+      la: "Aurum in pondere per singula vasa ministerii. Argenti quoque pondus pro vasorum et operum diversitate."
+      en: "Gold by weight for every vessel for the ministry. And silver by weight according to the diversity of the vessels and uses."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "sed et ad candelabra aurea et ad lucernas eorum aurum pro mensura uniuscuiusque candelabri et lucernarum similiter et in candelabris argenteis et in lucernis eorum pro diversitate mensurae pondus argenti tradidit"
+      la: "Sed et in candelabra aurea, et ad lucernas eorum, aurum pro mensura uniuscujusque candelabri et lucernarum. Similiter et in candelabra argentea, et in lucernas eorum, pro diversitate mensurae, pondus argenti tradidit."
       en: "He gave also gold for the golden candlesticks, and their lamps, according to the dimensions of every candlestick, and the lamps thereof. In like manner also he gave silver by weight for the silver candlesticks, and for their lamps according to the diversity of the dimensions of them."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "aurum quoque dedit in mensas propositionis pro diversitate mensarum similiter et argentum in alias mensas argenteas"
+      la: "Aurum quoque dedit in mensas propositionis pro diversitate mensarum: similiter et argentum in alias mensas argenteas."
       en: "He gave also gold for the tables of proposition, according to the diversity of the tables: in like manner also silver for other tables of silver."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "ad fuscinulas quoque et fialas et turibula ex auro purissimo et leunculos aureos pro qualitate mensurae pondus distribuit in leunculum et leunculum similiter et in leones argenteos diversum argenti pondus separavit"
+      la: "Ad fuscinulas quoque, et phialas, et thuribula ex auro purissimo, et leunculos aureos pro qualitate mensurae pondus distribuit in leunculum et leunculum. Similiter et in leones argenteos diversum argenti pondus separavit."
       en: "For fleshhooks also, and bowls, and censers of fine gold, and for little lions of gold, according to the measure he gave by weight, for every lion. In like manner also for lions of silver he set aside a different weight of silver."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "altari autem in quo adoletur incensum aurum purissimum dedit ut ex ipso fieret similitudo quadrigae cherubin extendentium alas et velantium arcam foederis Domini"
+      la: "Altari autem, in quo adoletur incensum, aurum purissimum dedit: ut ex ipso fieret similitudo quadrigae cherubim extendentium alas, et velantium arcam foederis Domini."
       en: "And for the altar of incense, he gave the purest gold: and to make the likeness of the chariot of the cherubims spreading their wings, and covering the ark of the covenant of the Lord."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "omnia inquit venerunt scripta manu Domini ad me ut intellegerem universa opera exemplaris"
+      la: "Omnia, inquit, venerunt scripta manu Domini ad me, ut intelligerem universa opera exemplaris."
       en: "All these things, said he, came to me written by the hand of the Lord that I might understand all the works of the pattern."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "dixit quoque David Salomoni filio suo viriliter age et confortare et fac ne timeas et ne paveas Dominus enim Deus meus tecum erit et non dimittet te nec derelinquet donec perficias omne opus ministerii domus Domini"
+      la: "Dixit quoque David Salomoni filio suo: Viriliter age, et confortare, et fac: ne timeas, et ne paveas: Dominus enim Deus meus tecum erit, et non dimittet te, nec derelinquet donec perficias omne opus ministerii domus Domini."
       en: "And David said to Solomon his son: Act like a man, and take courage, and do: fear not, and be not dismayed: for the Lord my God will be with thee, and will not leave thee, nor forsake thee, till thou hast finished all the work for the service of the house of the Lord."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "ecce divisiones sacerdotum et Levitarum in omne ministerium domus Domini adsistunt tibi et parati sunt et noverunt tam principes quam populus facere omnia praecepta tua"
+      la: "Ecce divisiones sacerdotum et Levitarum: in omne ministerium domus Domini assistunt tibi, et parati sunt, et noverunt tam principes quam populus facere omnia praecepta tua."
       en: "Behold the courses of the priests and the Levites, for every ministry of the house of the Lord, stand by thee, and are ready, and both the princes, and the people know how to execute all thy commandments."
     status: { la: verified, en: verified }

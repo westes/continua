@@ -1,19 +1,18 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for dan 7 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: dan
 chapter: 7
 verses:
   - n: 1
     text:
-      la: "Anno primo Baltassar regis Babylonis, Daniel somnium vidit : visio autem capitis ejus in cubili suo : et somnium scribens, brevi sermone comprehendit : summatimque perstringens, ait :"
+      la: "Anno primo Baltassar regis Babylonis, Daniel somnium vidit: visio autem capitis ejus in cubili suo: et somnium scribens, brevi sermone comprehendit: summatimque perstringens, ait:"
       en: "In the first year of Baltasar king of Babylon, Daniel saw a dream: and the vision of his head was upon his bed: and writing the dream, he comprehended it in few words: and relating the sum of it in short, he said:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "Videbam in visione mea nocte : et ecce quatuor venti caeli pugnabant in mari magno."
+      la: "Videbam in visione mea nocte: et ecce quatuor venti caeli pugnabant in mari magno."
       en: "I saw in my vision by night, and behold the four winds of the heaven strove upon the great sea."
     status: { la: verified, en: verified }
   - n: 3
@@ -23,42 +22,42 @@ verses:
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "Prima quasi leaena, et alas habebat aquilae : aspiciebam donec evulsae sunt alae ejus, et sublata est de terra, et super pedes quasi homo stetit; et cor hominis datum est ei."
+      la: "Prima quasi leaena, et alas habebat aquilae: aspiciebam donec evulsae sunt alae ejus, et sublata est de terra, et super pedes quasi homo stetit; et cor hominis datum est ei."
       en: "The first was like a lioness, and had the wings of an eagle: I beheld till her wings were plucked off, and she was lifted up from the earth, and stood upon her feet as a man, and the heart of a man was given to her."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "Et ecce bestia alia similis urso in parte stetit : et tres ordines erant in ore ejus, et in dentibus ejus, et sic dicebant ei : Surge, comede carnes plurimas."
+      la: "Et ecce bestia alia similis urso in parte stetit: et tres ordines erant in ore ejus, et in dentibus ejus, et sic dicebant ei: Surge, comede carnes plurimas."
       en: "And behold another beast like a bear stood up on one side: and there were three rows in the mouth thereof, and in the teeth thereof, and thus they said to it: Arise, devour much flesh."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "Post haec aspiciebam, et ecce alia quasi pardus, et alas habebat quasi avis, quatuor super se : et quatuor capita erant in bestia, et potestas data est ei."
+      la: "Post haec aspiciebam, et ecce alia quasi pardus, et alas habebat quasi avis, quatuor super se: et quatuor capita erant in bestia, et potestas data est ei."
       en: "After this I beheld, and lo, another like a leopard, and it had upon it four wings as of a fowl, and the beast had four heads, and power was given to it."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "Post haec aspiciebam in visione noctis, et ecce bestia quarta terribilis atque mirabilis, et fortis nimis : dentes ferreos habebat magnos, comedens atque comminuens, et reliqua pedibus suis conculcans : dissimilis autem erat ceteris bestiis quas videram ante eam, et habebat cornua decem."
+      la: "Post haec aspiciebam in visione noctis, et ecce bestia quarta terribilis atque mirabilis, et fortis nimis: dentes ferreos habebat magnos, comedens atque comminuens, et reliqua pedibus suis conculcans: dissimilis autem erat ceteris bestiis quas videram ante eam, et habebat cornua decem."
       en: "After this I beheld in the vision of the night, and lo, a fourth beast, terrible and wonderful, and exceeding strong, it had great iron teeth, eating and breaking in pieces, and treading down the rest with its feet: and it was unlike to the other beasts which I had seen before it, and had ten horns."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "Considerabam cornua, et ecce cornu aliud parvulum ortum est de medio eorum : et tria de cornibus primis evulsa sunt a facie ejus : et ecce oculi, quasi oculi hominis erant in cornu isto, et os loquens ingentia."
+      la: "Considerabam cornua, et ecce cornu aliud parvulum ortum est de medio eorum: et tria de cornibus primis evulsa sunt a facie ejus: et ecce oculi, quasi oculi hominis erant in cornu isto, et os loquens ingentia."
       en: "I considered the horns, and behold another little horn sprung out of the midst of them: and three of the first horns were plucked up at the presence thereof: and behold eyes like the eyes of a man were in this horn, and a mouth speaking great things."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "Aspiciebam donec throni positi sunt, et antiquus dierum sedit. Vestimentum ejus candidum quasi nix, et capilli capitis ejus quasi lana munda : thronus ejus flammae ignis : rotae ejus ignis accensus."
+      la: "Aspiciebam donec throni positi sunt, et antiquus dierum sedit. Vestimentum ejus candidum quasi nix, et capilli capitis ejus quasi lana munda: thronus ejus flammae ignis: rotae ejus ignis accensus."
       en: "I beheld till thrones were placed, and the Ancient of days sat: his garment was white as snow, and the hair of his head like clean wool: his throne like flames of fire: the wheels of it like a burning fire."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "Fluvius igneus rapidusque egrediebatur a facie ejus. Millia millium ministrabant ei, et decies millies centena millia assistebant ei : judicium sedit, et libri aperti sunt."
+      la: "Fluvius igneus rapidusque egrediebatur a facie ejus. Millia millium ministrabant ei, et decies millies centena millia assistebant ei: judicium sedit, et libri aperti sunt."
       en: "A swift stream of fire issued forth from before him: thousands of thousands ministered to him, and ten thousand times a hundred thousand stood before him: the judgment sat, and the books were opened."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "Aspiciebam propter vocem sermonum grandium, quos cornu illud loquebatur : et vidi quoniam interfecta esset bestia, et perisset corpus ejus, et traditum esset ad comburendum igni :"
+      la: "Aspiciebam propter vocem sermonum grandium, quos cornu illud loquebatur: et vidi quoniam interfecta esset bestia, et perisset corpus ejus, et traditum esset ad comburendum igni:"
       en: "I beheld because of the voice of the great words which that horn spoke: and I saw that the beast was slain, and the body thereof was destroyed, and given to the fire to be burnt:"
     status: { la: verified, en: verified }
   - n: 12
@@ -68,22 +67,22 @@ verses:
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "Aspiciebam ergo in visione noctis, et ecce cum nubibus caeli quasi filius hominis veniebat, et usque ad antiquum dierum pervenit : et in conspectu ejus obtulerunt eum."
+      la: "Aspiciebam ergo in visione noctis, et ecce cum nubibus caeli quasi filius hominis veniebat, et usque ad antiquum dierum pervenit: et in conspectu ejus obtulerunt eum."
       en: "I beheld therefore in the vision of the night, and lo, one like the son of man came with the clouds of heaven, and he came even to the Ancient of days: and they presented him before him."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "Et dedit ei potestatem, et honorem, et regnum : et omnes populi, tribus, et linguae ipsi servient : potestas ejus, potestas aeterna, quae non auferetur : et regnum ejus, quod non corrumpetur."
+      la: "Et dedit ei potestatem, et honorem, et regnum: et omnes populi, tribus, et linguae ipsi servient: potestas ejus, potestas aeterna, quae non auferetur: et regnum ejus, quod non corrumpetur."
       en: "And he gave him power, and glory, and a kingdom: and all peoples, tribes and tongues shall serve him: his power is an everlasting power that shall not be taken away: and his kingdom that shall not be destroyed."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "Horruit spiritus meus : ego Daniel territus sum in his, et visiones capitis mei conturbaverunt me."
+      la: "Horruit spiritus meus: ego Daniel territus sum in his, et visiones capitis mei conturbaverunt me."
       en: "My spirit trembled, I Daniel was affrighted at these things, and the visions of my head troubled me."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "Accessi ad unum de assistentibus, et veritatem quaerebam ab eo de omnibus his. Qui dixit mihi interpretationem sermonum, et docuit me :"
+      la: "Accessi ad unum de assistentibus, et veritatem quaerebam ab eo de omnibus his. Qui dixit mihi interpretationem sermonum, et docuit me:"
       en: "I went near to one of them that stood by, and asked the truth of him concerning all these things, and he told me the interpretation of the words, and instructed me:"
     status: { la: verified, en: verified }
   - n: 17
@@ -98,12 +97,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "Post hoc volui diligenter discere de bestia quarta, quae erat dissimilis valde ab omnibus, et terribilis nimis : dentes et ungues ejus ferrei : comedebat, et comminuebat, et reliqua pedibus suis conculcabat :"
+      la: "Post hoc volui diligenter discere de bestia quarta, quae erat dissimilis valde ab omnibus, et terribilis nimis: dentes et ungues ejus ferrei: comedebat, et comminuebat, et reliqua pedibus suis conculcabat:"
       en: "After this I would diligently learn concerning the fourth beast, which was very different from all, and exceeding terrible: his teeth and claws were of iron: he devoured and broke in pieces, and the rest he stamped upon with his feet:"
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "et de cornibus decem, quae habebat in capite, et de alio, quod ortum fuerat, ante quod ceciderant tria cornua : et de cornu illo, quod habebat oculos, et os loquens grandia, et majus erat ceteris."
+      la: "et de cornibus decem, quae habebat in capite, et de alio, quod ortum fuerat, ante quod ceciderant tria cornua: et de cornu illo, quod habebat oculos, et os loquens grandia, et majus erat ceteris."
       en: "And concerning the ten horns that he had on his head: and concerning the other that came up, before which three horns fell: and of that horn that had eyes, and a mouth speaking great things, and was greater than the rest."
     status: { la: verified, en: verified }
   - n: 21
@@ -118,17 +117,17 @@ verses:
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "Et sic ait : Bestia quarta, regnum quartum erit in terra, quod majus erit omnibus regnis, et devorabit universam terram, et conculcabit, et comminuet eam."
+      la: "Et sic ait: Bestia quarta, regnum quartum erit in terra, quod majus erit omnibus regnis, et devorabit universam terram, et conculcabit, et comminuet eam."
       en: "And thus he said: The fourth beast shall be the fourth kingdom upon earth, which shall be greater than all the kingdoms, and shall devour the whole earth, and shall tread it down, and break it in pieces."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "Porro cornua decem ipsius regni, decem reges erunt : et alius consurget post eos, et ipse potentior erit prioribus, et tres reges humiliabit."
+      la: "Porro cornua decem ipsius regni, decem reges erunt: et alius consurget post eos, et ipse potentior erit prioribus, et tres reges humiliabit."
       en: "And the ten horns of the same kingdom, shall be ten kings: and another shall rise up after them, and he shall be mightier than the former, and he shall bring down three kings."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "Et sermones contra Excelsum loquetur, et sanctos Altissimi conteret : et putabit quod possit mutare tempora, et leges : et tradentur in manu ejus usque ad tempus, et tempora, et dimidium temporis."
+      la: "Et sermones contra Excelsum loquetur, et sanctos Altissimi conteret: et putabit quod possit mutare tempora, et leges: et tradentur in manu ejus usque ad tempus, et tempora, et dimidium temporis."
       en: "And he shall speak words against the High One, and shall crush the saints of the most High: and he shall think himself able to change times and laws, and they shall be delivered into his hand until a time, and times, and half a time."
     status: { la: verified, en: verified }
   - n: 26
@@ -138,11 +137,11 @@ verses:
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "Regnum autem, et potestas, et magnitudo regni, quae est subter omne caelum, detur populo sanctorum Altissimi : cujus regnum, regnum sempiternum est, et omnes reges servient ei, et obedient."
+      la: "Regnum autem, et potestas, et magnitudo regni, quae est subter omne caelum, detur populo sanctorum Altissimi: cujus regnum, regnum sempiternum est, et omnes reges servient ei, et obedient."
       en: "And that the kingdom, and power, and the greatness of the kingdom, under the whole heaven, may be given to the people of the saints of the most High: whose kingdom is an everlasting kingdom, and all kings shall serve him, and shall obey him."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "Hucusque finis verbi. Ego Daniel multum cogitationibus meis conturbabar, et facies mea mutata est in me : verbum autem in corde meo conservavi."
+      la: "Hucusque finis verbi. Ego Daniel multum cogitationibus meis conturbabar, et facies mea mutata est in me: verbum autem in corde meo conservavi."
       en: "Hitherto is the end of the word. I Daniel was much troubled with my thoughts, and my countenance was changed in me: but I kept the word in my heart."
     status: { la: verified, en: verified }

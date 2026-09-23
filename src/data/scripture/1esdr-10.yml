@@ -1,222 +1,227 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1esdr
 chapter: 10
 verses:
   - n: 1
     text:
-      la: "sic ergo orante Ezra et inplorante eo et flente et iacente ante templum Dei collectus est ad eum de Israhel coetus grandis nimis virorum et mulierum puerorumque et flevit populus multo fletu"
+      la: "Sic ergo orante Esdra, et implorante eo et flente, et jacente ante templum Dei, collectus est ad eum de Israel coetus grandis nimis virorum et mulierum et puerorum, et flevit populus fletu multo."
       en: "Now when Esdras was thus praying, and beseeching, and weeping, and lying before the temple of God, there was gathered to him of Israel an exceeding great assembly of men and women and children, and the people wept with much lamentation."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et respondit Sechenia filius Iehihel de filiis Helam et dixit Ezrae nos praevaricati sumus in Deum nostrum et duximus uxores alienigenas de populis terrae et nunc si est paenitentia Israhel super hoc"
+      la: "Et respondit Sechenias filius Jehiel de filiis Aelam, et dixit Esdrae: Nos praevaricati sumus in Deum nostrum, et duximus uxores alienigenas de populis terrae: et nunc, si est poenitentia in Israel super hoc,"
       en: "And Sechenias the son of Jehiel of the sons of Elam answered, and said to Esdras: We have sinned against our God, and have taken strange wives of the people of the land: and now if there be repentance in Israel concerning this,"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "percutiamus foedus cum Deo nostro ut proiciamus universas uxores et eos qui de his nati sunt iuxta voluntatem Domini et eorum qui timent praeceptum Dei nostri secundum legem fiat"
+      la: "percutiamus foedus cum Domino Deo nostro, ut projiciamus universas uxores, et eos qui de his nati sunt, juxta voluntatem Domini, et eorum qui timent praeceptum Domini Dei nostri: secundum legem fiat."
       en: "Let us make a covenant with the Lord our God, to put away all the wives, and such as are born of them, according to the will of the Lord, and of them that fear the commandment of the Lord our God: let it be done according to the law."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "surge tuum est decernere nosque erimus tecum confortare et fac"
+      la: "Surge, tuum est decernere, nosque erimus tecum: confortare, et fac."
       en: "Arise, it is thy part to give orders, and we will be with thee: take courage, and do it."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "surrexit ergo Ezras et adiuravit principes sacerdotum Levitarum et omnem Israhel ut facerent secundum verbum hoc et iuraverunt"
+      la: "Surrexit ergo Esdras, et adjuravit principes sacerdotum et Levitarum, et omnem Israel, ut facerent secundum verbum hoc: et juraverunt."
       en: "So Esdras arose, and made the chiefs of the priests and of the Levites, and all Israel, to swear that they would do according to this word, and they swore."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et surrexit Ezras ante domum Dei et abiit ad cubiculum Iohanan filii Eliasib et ingressus est illuc panem non comedit et aquam non bibit lugebat enim in transgressione eorum qui de captivitate venerant"
+      la: "Et surrexit Esdras ante domum Dei, et abiit ad cubiculum Johanan filii Eliasib, et ingressus est illuc: panem non comedit, et aquam non bibit: lugebat enim transgressionem eorum, qui venerant de captivitate."
       en: "And Esdras rose up from before the house of God, and went to the chamber of Johanan the son of Eliasib, and entered in thither: he ate no bread, and drank no water: for he mourned for the transgression of them that were come out of the captivity."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et missa est vox in Iuda et in Hierusalem omnibus filiis transmigrationis ut congregarentur in Hierusalem"
+      la: "Et missa est vos in Juda et in Jerusalem omnibus filiis transmigrationis, ut congregarentur in Jerusalem:"
       en: "And proclamation was made in Juda and Jerusalem to all the children of the captivity, that they should assemble together into Jerusalem."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et omnis qui non venerit in tribus diebus iuxta consilium principum et seniorum auferetur universa substantia eius et ipse abicietur de coetu transmigrationis"
+      la: "et omnis qui non venerit in tribus diebus juxta consilium principum et seniorum, auferetur universa substantia ejus, et ipse abjicietur de coetu transmigrationis."
       en: "And that whosoever would not come within three days, according to the counsel of the princes and the ancients, all his substance should be taken away, and he should be cast out of the company of them that were returned from captivity."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "convenerunt igitur omnes viri Iuda et Beniamin in Hierusalem tribus diebus ipse est mensis nonus vicesimo die mensis et sedit omnis populus in platea domus Dei trementes pro peccato et pluviis"
+      la: "Convenerunt igitur omnes viri Juda et Benjamin in Jerusalem tribus diebus: ipse est mensis nonus, vigesimo die mensis: et sedit omnis populus in platea domus Dei, trementes pro peccato, et pluviis."
       en: "Then all the men of Juda, and Benjamin gathered themselves together to Jerusalem within three days, in the ninth month, the twentieth day of the month: and all the people sat in the street of the house of God, trembling because of the sin, and the rain."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et surrexit Ezras sacerdos et dixit ad eos vos transgressi estis et duxistis uxores alienigenas ut adderetis super delictum Israhel"
-      en: "And Esdras the priest stood up, and said to them: You have transgressed, and taken strange wives, to add to the sine of Israel."
+      la: "Et surrexit Esdras sacerdos, et dixit ad eos: Vos transgressi estis, et duxistis uxores alienigenas, ut adderetis super delictum Israel."
+      en: "And Esdras the priest stood up, and said to them: You have transgressed, and taken strange wives, to add to the sins of Israel."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et nunc date confessionem Domino Deo patrum vestrorum et facite placitum eius et separamini a populis terrae et ab uxoribus alienigenis"
+      la: "Et nunc date confessionem Domino Deo patrum vestrorum, et facite placitum ejus, et separamini a populis terrae, et ab uxoribus alienigenis."
       en: "And now make confession to the Lord the God of your fathers, and do his pleasure, and separate yourselves from the people of the land, and from your strange wives."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "et respondit universa multitudo dixitque voce magna iuxta verbum tuum ad nos sic fiat"
+      la: "Et respondit universa multitudo, dixitque voce magna: Juxta verbum tuum ad nos, sic fiat."
       en: "And all the multitude answered and said with a loud voice: According to thy word unto us, so be it done."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "verumtamen quia populus multus est et tempus pluviae et non sustinemus stare foris et opus non est diei unius vel duorum vehementer quippe peccavimus in sermone isto"
-      en: "But as the people are many, and it is time of rain, and me are not able to stand without, and it is not a work of one day or two, (for we have exceedingly sinned in this matter,)"
+      la: "Verumtamen quia populus multus est, et tempus pluviae, et non sustinemus stare foris, et opus non est diei unius vel duorum ( vehementer quippe peccavimus in sermone isto),"
+      en: "But as the people are many, and it is time of rain, and we are not able to stand without, and it is not a work of one day or two, (for we have exceedingly sinned in this matter,)"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "constituantur principes in universa multitudine et omnes in civitatibus nostris qui duxerunt uxores alienigenas veniant in temporibus statutis et cum his seniores per civitatem et civitatem et iudices eius donec avertatur ira Dei nostri a nobis super peccato hoc"
+      la: "constituantur principes in universa multitudine: et omnes in civitatibus nostris qui duxerunt uxores alienigenas veniant in temporibus statutis, et cum his seniores per civitatem et civitatem, et judices ejus, donec avertatur ira Dei nostri a nobis super peccato hoc."
       en: "Let rulers be appointed in all the multitude: and in all our cities, let them that have taken strange wives come at the times appointed, and with them the ancients and the judges of every city, until the wrath of our God be turned away from us for this sin."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "igitur Ionathan filius Asahel et Iaazia filius Thecuae steterunt super hoc et Mesollam et Sebethai Levites adiuverunt eos"
+      la: "Igitur Jonathan filius Azahel, et Jaasia filius Thecue, steterunt super hoc, et Messollam et Sebethai Levites adjuverunt eos:"
       en: "Then Jonathan the son of Azahel, and Jaasia the son of Thecua were appointed over this, and Mesollam and Sebethai, Levites, helped them:"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "feceruntque sic filii transmigrationis et abierunt Ezras sacerdos et viri principes familiarum in domum patrum suorum et omnes per nomina sua et sederunt in die primo mensis decimi ut quaererent rem"
+      la: "feceruntque sic filii transmigrationis. Et abierunt Esdras sacerdos, et viri principes familiarum, in domos patrum suorum, et omnes per nomina sua, et sederunt in die primo mensis decimi ut quaererent rem."
       en: "And the children of the captivity did so. And Esdras the priest, and the men heads of the families in the houses of their fathers, and all by their names, went and sat down in the first day of the tenth month to examine the matter."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "et consummati sunt omnes viri qui duxerant uxores alienigenas usque ad diem primam mensis primi"
+      la: "Et consummati sunt omnes viri, qui duxerant uxores alienigenas, usque ad diem primam mensis primi."
       en: "And they made an end with all the men that had taken strange wives by the first day of the first month."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "et inventi sunt de filiis sacerdotum qui duxerant uxores alienigenas de filiis Iosue filii Iosedech et fratres eius Maasia et Eliezer et Iarib et Godolia"
+      la: "Et inventi sunt de filiis sacerdotum qui duxerant uxores alienigenas. De filiis Josue filii Josedec, et fratres ejus, Maasia, et Eliezer, et Jarib, et Godolia."
       en: "And there were found among the sons of the priests that had taken strange wives: Of the sons of Josue the son of Josedec, and his brethren, Maasia, and Eliezer, and Jarib, and Godolia."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "et dederunt manus suas ut eicerent uxores suas et pro delicto suo arietem de ovibus offerrent"
+      la: "Et dederunt manus suas ut ejicerent uxores suas, et pro delicto suo arietem de ovibus offerrent."
       en: "And they gave their hands to put away their wives, and to offer for their offence a ram of the flock."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "et de filiis Emmer Anani et Zebedia"
+      la: "Et de filiis Emmer, Hanani, et Zebedia."
       en: "And of the sons of Emmer, Hanani, and Zebedia."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "et de filiis Erim Masia et Helia et Semeia et Hiehihel et Ozias"
+      la: "Et de filiis Harim, Maasia, et Elia, et Semeia, et Jehiel, et Ozias."
       en: "And of the sons of Harim, Maasia, and Elia, and Semeia, and Jehiel, and Ozias."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "et de filiis Phessur Helioenai Maasia Ismahel Nathanahel Iozabeth et Elasa"
+      la: "Et de filiis Pheshur, Elioenai, Maasia, Ismael, Nathanael, Jozabed, et Elasa."
       en: "And of the sons of Pheshur, Elioenai, Maasia, Ismael, Nathanael, Jozabed, and Elasa."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "et de filiis Levitarum Iozabeth et Semei et Celaia ipse est Calita Phataia Iuda et Eliezer"
+      la: "Et de filiis Levitarum, Jozabed, et Semei, et Celaia, ipse est Calita, Phataia, Juda, et Eliezer."
       en: "And of the sons of the Levites, Jozabed, and Semei, and Celaia, the same is Calita, Phataia, Juda, and Eliezer."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "et de cantoribus Eliasub et de ianitoribus Sellum et Telem et Uri"
-      en: "And of the singing men, Elisiab: and of the porters, Sellum, and Telem, and"
+      la: "Et de cantoribus, Eliasib. Et de janitoribus, Sellum, et Telem, et Uri."
+      en: "And of the singing men, Elisiab: and of the porters, Sellum, and Telem, and Uri."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "et ex Israhel de filiis Pharos Remia et Ezia et Melchia et Miamin et Eliezer et Melchia et Banea"
+      la: "Et ex Israel, de filiis Pharos, Remeia, et Jesia, et Melchia, et Miamin, et Eliezer, et Melchia, et Banea."
       en: "And of Israel, of the sons of Pharos, Remeia, and Jezia, and Melchia, and Miamin, and Eliezer, and Melchia, and Banea."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "et de filiis Helam Mathania Zaccharias et Hiehil et Abdi et Irimoth et Helia"
-      en: "And of the sons of Elam, Mathania, Zacharias, annd Jehiel, and Abdi, and Jerimoth, and Elia."
+      la: "Et de filiis Aelam, Mathania, Zacharias, et Jehiel, et Abdi, et Jerimoth, et Elia."
+      en: "And of the sons of Elam, Mathania, Zacharias, and Jehiel, and Abdi, and Jerimoth, and Elia."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "et de filiis Zethua Helioenai Eliasib Mathania et Ierimuth et Zabeth et Aziza"
+      la: "Et de filiis Zethua, Elioenai, Eliasib, Mathania, et Jerimuth, et Zabad, et Aziza."
       en: "And of the sons of Zethua, Elioenai, Eliasib, Mathania, Jerimuth, and Zabad, and Aziaza."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "et de filiis Bebai Iohanan Anania Zabbai Athalai"
+      la: "Et de filiis Bebai, Johanan, Hanania, Zabbai, Athalai."
       en: "And of the sons of Babai, Johanan, Hanania, Zabbai, Athalai:"
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "et de filiis Bani Mosollam et Melluch et Adaia Iasub et Saal et Ramoth"
+      la: "Et de filiis Bani, Mosollam, et Melluch, et Adaia, Jasub, et Saal, et Ramoth."
       en: "And of the sons of Bani, Mosollam, and Melluch, and Adaia, Jasub, and Seal, and Ramoth."
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "et de filiis Phaethmoab Edna et Chalal Banaias Maasias Mathanias Beselehel et Bennui et Manasse"
+      la: "Et de filiis Phahath Moab, Edna, et Chalal, Banaias, et Maasias, Mathanias, Beseleel, Bennui, et Manasse."
       en: "And of the sons of Phahath, Moab, Edna, and Chalal, Banaias, and Maasias, Mathanias, Beseleel, Bennui, and Manasse."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "et de filiis Erem Eliezer Iesue Melchias Semeias Symeon"
+      la: "Et de filiis Herem, Eliezer, Josue, Melchias, Semeias, Simeon,"
       en: "And of the sons of Herem, Eliezer, Josue, Melchias, Semeias, Simeon,"
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "Beniamin Maloch Samarias"
+      la: "Benjamin, Maloch, Samarias."
       en: "Benjamin, Maloch, Samarias."
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "de filiis Asom Matthanai Matthetha Zabed Elipheleth Iermai Manasse Semei"
+      la: "Et de filiis Hasom, Mathanai, Mathatha, Zabad, Eliphelet, Jermai, Manasse, Semei."
       en: "And of the sons of Hasom, Mathanai, Mathatha, Zabad, Eliphelet, Jermai, Manasse, Semei."
     status: { la: verified, en: verified }
   - n: 34
     text:
-      la: "de filiis Bani Maaddi Amram et Huhel"
+      la: "De filiis Bani, Maadi, Amram, et Vel,"
       en: "Of the sons of Bani, Maaddi, Amran, and Uel,"
     status: { la: verified, en: verified }
   - n: 35
     text:
-      la: "Baneas et Badaias Cheiliau"
+      la: "Baneas, et Badaias, Cheliau,"
       en: "Baneas, and Badaias, Cheliau,"
     status: { la: verified, en: verified }
   - n: 36
     text:
-      la: "Vannia Marimuth et Eliasib"
+      la: "Vania, Marimuth, et Eliasib,"
       en: "Vania, Marimuth, and Eliasib,"
     status: { la: verified, en: verified }
   - n: 37
     text:
-      la: "Matthanias Mathanai et Iasi"
+      la: "Mathanias, Mathanai, et Jasi,"
       en: "Mathanias, Mathania, and Jasi,"
     status: { la: verified, en: verified }
   - n: 38
     text:
-      la: "et Bani et Bennui Semei"
+      la: "et Bani, et Bennui, Semei,"
       en: "And Bani, and Bennui, Semei,"
     status: { la: verified, en: verified }
   - n: 39
     text:
-      la: "et Salmias et Nathan et Adaias"
+      la: "et Salmias, et Nathan, et Adaias,"
       en: "And Salmias, and Nathan, and Adaias,"
     status: { la: verified, en: verified }
   - n: 40
     text:
-      la: "Mechnedabai Sisai Sarai"
+      la: "et Mechnedebai, Sisai, Sarai,"
       en: "And Mechnedebai, Sisai, Sarai,"
     status: { la: verified, en: verified }
   - n: 41
     text:
-      la: "Ezrel et Selemau Semeria"
+      la: "Ezrel, et Selemiau, Semeria,"
       en: "Ezrel, and Selemiau, Semeria,"
     status: { la: verified, en: verified }
   - n: 42
     text:
-      la: "Sellum Amaria Ioseph"
+      la: "Sellum, Amaria, Joseph."
       en: "Sellum, Amaria, Joseph."
     status: { la: verified, en: verified }
   - n: 43
     text:
-      la: "de filiis Nebu Iaihel Matthathias Zabed Zabina Ieddu et Iohel Banaia"
+      la: "De filiis Nebo, Jehiel, Mathathias, Zabad, Zabina, Jeddu, et Joel, et Banaia."
       en: "Of the sons of Nebo, Jehiel, Mathathias, Zabad, Zabina, Jeddu, and Joel, and Banaia."
+    status: { la: verified, en: verified }
+  - n: 44
+    text:
+      la: "Omnes hi acceperant uxores alienigenas, et fuerunt ex eis mulieres, quae pepererant filios."
+      en: "All these had taken strange wives, and there were among them women that had borne children."
     status: { la: verified, en: verified }

@@ -1,102 +1,107 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: mich
 chapter: 7
 verses:
   - n: 1
     text:
-      la: "vae mihi quia factus sum sicut qui colligit in autumno racemos vindemiae non est botrus ad comedendum praecoquas ficus desideravit anima mea"
+      la: "Vae mihi, quia factus sum sicut qui colligit in autumno racemos vindemia! non est botrus ad comedendum, praecoquas ficus desideravit anima mea."
       en: "Woe is me, for I am become as one that gleaneth in autumn the grapes of the vintage: there is no cluster to eat, my soul desired the firstripe figs."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "periit sanctus de terra et rectus in hominibus non est omnes in sanguine insidiantur vir fratrem suum venatur ad mortem"
+      la: "Periit sanctus de terra, et rectus in hominibus non est: omnes in sanguine insidiantur; vir fratrem suum ad mortem venatur."
       en: "The holy man is perished out of the earth, and there is none upright among men: they all lie in wait for blood, every one hunteth his brother to death."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "malum manuum suarum dicunt bonum princeps postulat et iudex in reddendo est et magnus locutus est desiderium animae suae et conturbaverunt eam"
+      la: "Malum manuum suarum dicunt bonum: princeps postulat, et judex in reddendo est; et magnus locutus est desiderium animae suae, et conturbaverunt eam."
       en: "The evil of their hands they call good: the prince requireth, and the judge is for giving: and the great man hath uttered the desire of his soul, and they have troubled it."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "qui optimus in eis est quasi paliurus et qui rectus quasi spina de sepe dies speculationis tuae visitatio tua venit nunc erit vastitas eorum"
+      la: "Qui optimus in eis est, quasi paliurus, et qui rectus, quasi spina de sepe. Dies speculationis tuae, visitatio tua venit: nunc erit vastitas eorum."
       en: "He that is best among them, is as a brier: and he that is righteous, as the thorn of the hedge. The day of thy inspection, thy visitation cometh: now shall be their destruction."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "nolite credere amico et nolite confidere in duce ab ea quae dormit in sinu tuo custodi claustra oris tui"
+      la: "Nolite credere amico, et nolite confidere in duce: ab ea quae dormit in sinu tuo custodi claustra oris tui."
       en: "Believe not a friend, and trust not in a prince: keep the doors of thy mouth from her that sleepeth in thy bosom."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "quia filius contumeliam facit patri filia consurgit adversus matrem suam nurus contra socrum suam inimici hominis domestici eius"
+      la: "Quia filius contumeliam facit patri, et filia consurgit adversus matrem suam: nurus adversus socrum suam, et inimici hominis domestici ejus."
       en: "For the son dishonoureth the father, and the daughter riseth up against her mother, the daughter in law against her mother in law: and a man's enemies are they of his own household."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "ego autem ad Dominum aspiciam expectabo Deum salvatorem meum audiet me Deus meus"
+      la: "Ego autem ad Dominum aspiciam; exspectabo Deum, salvatorem meum: audiet me Deus meus."
       en: "But I will look towards the Lord, I will wait for God my Saviour: my God will hear me."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "ne laeteris inimica mea super me quia cecidi consurgam cum sedero in tenebris Dominus lux mea est"
+      la: "Ne laeteris, inimica mea, super me, quia cecidi: consurgam cum sedero in tenebris: Dominus lux mea est."
       en: "Rejoice not, thou, my enemy, over me, because I am fallen: I shall arise, when I sit in darkness, the Lord is my light."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "iram Domini portabo quoniam peccavi ei donec iudicet causam meam et faciat iudicium meum educet me in lucem videbo in iustitiam eius"
+      la: "Iram Domini portabo, quoniam peccavi ei, donec causam meam judicet, et faciat judicium meum. Educet me in lucem: videbo justitiam ejus."
       en: "I will bear the wrath of the Lord, because I have sinned against him; until he judge my cause and execute judgment for me: he will bring me forth into the light, I shall behold his justice."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et aspiciet inimica mea et operietur confusione quae dicit ad me ubi est Dominus Deus tuus oculi mei videbunt in eam nunc erit in conculcationem ut lutum platearum"
+      la: "Et aspiciet inimica mea, et operietur confusione, quae dicit ad me: Ubi est Dominus Deus tuus? Oculi mei videbunt in eam: nunc erit in conculcationem ut lutum platearum."
       en: "And my enemy shall behold, and she shall be covered with shame, who saith to me: Where is the Lord thy God? My eyes shall look down upon her: now shall she be trodden under foot as the mire of the streets."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "dies ut aedificentur maceriae tuae in die illa longe fiet lex"
+      la: "Dies, ut aedificentur maceriae tuae; in die illa longe fiet lex."
       en: "The day shall come, that thy walls may be built up: in that day shall the law be far removed."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "in die illa et usque ad te veniet Assur et usque ad civitates munitas et a civitatibus munitis usque ad flumen et ad mare de mari et ad montem de monte"
+      la: "In die illa et usque ad te veniet de Assur, et usque ad civitates munitas, et a civitatibus munitis usque ad flumen, et ad mare de mari, et ad montem de monte."
       en: "In that day they shall come even from Assyria to thee, and to the fortified cities: and from the fortified cities even to the river, and from sea to sea, and from mountain to mountain."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et erit terra in desolationem propter habitatores suos et propter fructum cogitationum eorum"
+      la: "Et terra erit in desolationem propter habitatores suos, et propter fructum cogitationum eorum."
       en: "And the land shall be made desolate, because of the inhabitants thereof, and for the fruit of their devices."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "pasce populum tuum in virga tua gregem hereditatis tuae habitantes solos in saltu in medio Carmeli pascentur Basan et Galaad iuxta dies antiquos"
+      la: "Pasce populum tuum in virga tua, gregem haereditatis tuae, habitantes solos, in saltu, in medio Carmeli. Pascentur Basan et Galaad juxta dies antiquos."
       en: "Feed thy people with thy rod, the flock of thy inheritance, them that dwell alone in the forest, in the midst of Carmel: they shall feed in Basan and Galaad according to the days of old."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "secundum dies egressionis tuae de terra Aegypti ostendam ei mirabilia"
+      la: "Secundum dies egressionis tuae de terra Aegypti, ostendam ei mirabilia."
       en: "According to the days of thy coming out of the land of Egypt I will shew him wonders."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "videbunt gentes et confundentur super omni fortitudine sua ponent manus super os aures eorum surdae erunt"
+      la: "Videbunt gentes, et confundentur super omni fortitudine sua. Ponent manum super os, aures eorum surdae erunt."
       en: "The nations shall see, and shall be confounded at all their strength: they shall put the hand upon the mouth, their ears shall be deaf."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "lingent pulverem sicut serpens velut reptilia terrae proturbabuntur de aedibus suis Dominum Deum nostrum desiderabunt et timebunt te"
+      la: "Lingent pulverem sicut serpentes; velut reptilia terrae perturbabuntur in aedibus suis. Dominum Deum nostrum formidabunt, et timebunt te."
       en: "They shall lick the dust like serpents, as the creeping things of the earth, they shall be disturbed in their houses: they shall dread the Lord our God, and shall fear thee."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "quis Deus similis tui qui aufers iniquitatem et transis peccatum reliquiarum hereditatis tuae non inmittet ultra furorem suum quoniam volens misericordiam est"
+      la: "Quis, Deus, similis tui, qui aufers iniquitatem, et transis peccatum reliquiarum haereditatis tuae? Non immittet ultra furorem suum, quoniam volens misericordiam est."
       en: "Who is a God like to thee, who takest away iniquity, and passest by the sin of the remnant of thy inheritance? he will send his fury in no more, because he delighteth in mercy."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "revertetur et miserebitur nostri deponet iniquitates nostras et proiciet in profundum maris omnia peccata nostra"
+      la: "Revertetur, et miserebitur nostri; deponet iniquitates nostras, et projiciet in profundum maris omnia peccata nostra."
       en: "He will turn again, and have mercy on us: he will put away our iniquities: and he will cast all our sins into the bottom of the sea."
+    status: { la: verified, en: verified }
+  - n: 20
+    text:
+      la: "Dabis veritatem Jacob, misericordiam Abraham, quae jurasti patribus nostris a diebus antiquis."
+      en: "Thou wilt perform the truth of Jacob, the mercy to Abraham: which thou hast sworn to our fathers from the days of old."
     status: { la: verified, en: verified }

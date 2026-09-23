@@ -1,72 +1,72 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: heb
 chapter: 8
 verses:
   - n: 1
     text:
-      la: "capitulum autem super ea quae dicuntur talem habemus pontificem qui consedit in dextera sedis Magnitudinis in caelis"
+      la: "Capitulum autem super ea quae dicuntur: Talem habemus pontificem, qui consedit in dextera sedis magnitudinis in caelis,"
       en: "Now of the things which we have spoken, this is the sum: We have such an high priest, who is set on the right hand of the throne of majesty in the heavens,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "sanctorum minister et tabernaculi veri quod fixit Dominus et non homo"
+      la: "sanctorum minister, et tabernaculi veri, quod fixit Dominus, et non homo."
       en: "A minister of the holies, and of the true tabernacle, which the Lord hath pitched, and not man."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "omnis enim pontifex ad offerenda munera et hostias constituitur unde necesse est et hunc habere aliquid quod offerat"
+      la: "Omnis enim pontifex ad offerendum munera, et hostias constituitur: unde necesse est et hunc habere aliquid, quod offerat."
       en: "For every high priest is appointed to offer gifts and sacrifices: wherefore it is necessary that he also should have some thing to offer."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "si ergo esset super terram nec esset sacerdos cum essent qui offerrent secundum legem munera"
+      la: "Si ergo esset super terram, nec esset sacerdos: cum essent qui offerent secundum legem munera,"
       en: "If then he were on earth, he would not be a priest: seeing that there would be others to offer gifts according to the law,"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "qui exemplari et umbrae deserviunt caelestium sicut responsum est Mosi cum consummaret tabernaculum vide inquit omnia facito secundum exemplar quod tibi ostensum est in monte"
+      la: "qui exemplari, et umbrae deserviunt caelestium. Sicut responsum est Moysi, cum consummaret tabernaculum: Vide ( inquit) omnia facito secundum exemplar, quod tibi ostensum est in monte."
       en: "Who serve unto the example and shadow of heavenly things. As it was answered to Moses, when he was to finish the tabernacle: See (saith he) that thou make all things according to the pattern which was shewn thee on the mount."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "nunc autem melius sortitus est ministerium quanto et melioris testamenti mediator est quod in melioribus repromissionibus sanctum est"
+      la: "Nunc autem melius sortitus est ministerium, quanto et melioris testamenti mediator est, quod in melioribus repromissionibus sancitum est."
       en: "But now he hath obtained a better ministry, by how much also he is a mediator of a better testament, which is established on better promises."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "nam si illud prius culpa vacasset non utique secundi locus inquireretur"
+      la: "Nam si illud prius culpa vacasset, non utique secundi locus inquireretur."
       en: "For if that former had been faultless, there should not indeed a place have been sought for a second."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "vituperans enim eos dicit ecce dies veniunt dicit Dominus et consummabo super domum Israhel et super domum Iuda testamentum novum"
+      la: "Vituperans enim eos dicit: Ecce dies venient, dicit Dominus: et consummabo super domum Israel, et super domum Juda, testamentum novum,"
       en: "For finding fault with them, he saith: Behold, the days shall come, saith the Lord: and I will perfect unto the house of Israel, and unto the house of Juda, a new testament:"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "non secundum testamentum quod feci patribus eorum in die qua adprehendi manum illorum ut educerem illos de terra Aegypti quoniam ipsi non permanserunt in testamento meo et ego neglexi eos dicit Dominus"
+      la: "non secundum testamentum quod feci patribus eorum in die qua apprehendi manum eorum ut educerem illos de terra Aegypti: quoniam ipsi non permanserunt in testamento meo: et ego neglexi eos, dicit Dominus."
       en: "Not according to the testament which I made to their fathers, on the day when I took them by the hand to lead them out of the land of Egypt: because they continued not in my testament: and I regarded them not, saith the Lord."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "quia hoc testamentum quod disponam domui Israhel post dies illos dicit Dominus dando leges meas in mentem eorum et in corde eorum superscribam eas et ero eis in Deum et ipsi erunt mihi in populum"
+      la: "Quia hoc est testamentum quod disponam domui Israel post dies illos, dicit Dominus: dando leges meas in mentem eorum, et in corde eorum superscribam eas: et ero eis in Deum, et ipsi erunt mihi in populum:"
       en: "For this is the testament which I will make to the house of Israel after those days, saith the Lord: I will give my laws into their mind, and in their heart will I write them: and I will be their God, and they shall be my people:"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et non docebit unusquisque proximum suum et unusquisque fratrem suum dicens cognosce Dominum quoniam omnes scient me a minore usque ad maiorem eorum"
+      la: "et non docebit unusquisque proximum suum, et unusquisque fratrem suum, dicens: Cognosce Dominum: quoniam omnes scient me a minore usque ad majorem eorum:"
       en: "And they shall not teach every man his neighbour and every man his brother, saying, Know the Lord: for all shall know me from the least to the greatest of them:"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "quia propitius ero iniquitatibus eorum et peccatorum illorum iam non memorabor"
+      la: "quia propitius ero iniquitatibus eorum, et peccatorum eorum jam non memorabor."
       en: "Because I will be merciful to their iniquities, and their sins I will remember no more."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "dicendo autem novum veteravit prius quod autem antiquatur et senescit prope interitum est"
+      la: "Dicendo autem novum: veteravit prius. Quod autem antiquatur, et senescit, prope interitum est."
       en: "Now in saying a new, he hath made the former old. And that which decayeth and groweth old, is near its end."
     status: { la: verified, en: verified }

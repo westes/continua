@@ -1,167 +1,167 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: gen
 chapter: 10
 verses:
   - n: 1
     text:
-      la: "hae generationes filiorum Noe Sem Ham Iafeth natique sunt eis filii post diluvium"
+      la: "Hae sunt generationes filiorum Noe, Sem, Cham et Japheth: natique sunt eis filii post diluvium."
       en: "These are the generations of the sons of Noe: Sem, Cham, and Japheth: and unto them sons were born after the flood."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "filii Iafeth Gomer Magog et Madai Iavan et Thubal et Mosoch et Thiras"
+      la: "Filii Japheth: Gomer, et Magog, et Madai, et Javan, et Thubal, et Mosoch, et Thiras."
       en: "The sons of Japheth: Gomer, and Magog, and Madai, and Javan, and Thubal, and Mosoch, and Thiras."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "porro filii Gomer Aschenez et Rifath et Thogorma"
+      la: "Porro filii Gomer: Ascenez et Riphath et Thogorma."
       en: "And the sons of Gomer: Ascenez and Riphath and Thogorma."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "filii autem Iavan Elisa et Tharsis Cetthim et Dodanim"
-      en: "And the sons of Javan: Elisa and Tharsis, Cetthim, and Dodanim."
+      la: "Filii autem Javan: Elisa et Tharsis, Cetthim et Dodanim."
+      en: "And the sons of Javan: Elisa and Tharsis, Cetthim and Dodanim."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "ab his divisae sunt insulae gentium in regionibus suis unusquisque secundum linguam et familias in nationibus suis"
+      la: "Ab his divisae sunt insulae gentium in regionibus suis, unusquisque secundum linguam suam et familias suas in nationibus suis."
       en: "By these were divided the islands of the Gentiles in their lands, every one according to his tongue and their families in their nations."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "filii autem Ham Chus et Mesraim et Fut et Chanaan"
+      la: "Filii autem Cham: Chus, et Mesraim, et Phuth, et Chanaan."
       en: "And the sons of Cham: Chus, and Mesram, and Phuth, and Chanaan."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "filii Chus Saba et Hevila et Sabatha et Regma et Sabathaca filii Regma Saba et Dadan"
-      en: "And the sons of Chus: Saba and Hevila, and Sabatha, and Regma, and Sabatacha. The sons of Regma: Saba and Dadan."
+      la: "Filii Chus: Saba, et Hevila, et Sabatha, et Regma, et Sabatacha. Filii Regma: Saba et Dadan."
+      en: "And the sons of Chus: Saba, and Hevila, and Sabatha, and Regma, and Sabatacha. The sons of Regma: Saba and Dadan."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "porro Chus genuit Nemrod ipse coepit esse potens in terra"
-      en: "Now Chus begot Nemrod: he began to be mighty on earth."
+      la: "Porro Chus genuit Nemrod: ipse coepit esse potens in terra,"
+      en: "Now Chus begot Nemrod: he began to be mighty on the earth."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "et erat robustus venator coram Domino ab hoc exivit proverbium quasi Nemrod robustus venator coram Domino"
+      la: "et erat robustus venator coram Domino. Ob hoc exivit proverbium: Quasi Nemrod robustus venator coram Domino."
       en: "And he was a stout hunter before the Lord. Hence came a proverb: Even as Nemrod the stout hunter before the Lord."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "fuit autem principium regni eius Babylon et Arach et Archad et Chalanne in terra Sennaar"
+      la: "Fuit autem principium regni ejus Babylon, et Arach et Achad, et Chalanne, in terra Sennaar."
       en: "And the beginning of his kingdom was Babylon, and Arach, and Achad, and Chalanne in the land of Sennaar."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "de terra illa egressus est Assur et aedificavit Nineven et plateas civitatis et Chale"
+      la: "De terra illa egressus est Assur, et aedificavit Niniven, et plateas civitatis, et Chale."
       en: "Out of that land came forth Assur, and built Ninive, and the streets of the city, and Chale."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "Resen quoque inter Nineven et Chale haec est civitas magna"
+      la: "Resen quoque inter Niniven et Chale: haec est civitas magna."
       en: "Resen also between Ninive and Chale: this is the great city."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "at vero Mesraim genuit Ludim et Anamim et Laabim Nepthuim"
+      la: "At vero Mesraim genuit Ludim, et Anamim et Laabim, Nephthuim,"
       en: "And Mesraim begot Ludim, and Anamim, and Laabim, Nepthuim,"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et Phetrusim et Cesluim de quibus egressi sunt Philisthim et Capthurim"
+      la: "et Phetrusim, et Chasluim: de quibus egressi sunt Philisthiim et Caphtorim."
       en: "And Phetrusim, and Chasluim; of whom came forth the Philistines, and the Capthorim."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "Chanaan autem genuit Sidonem primogenitum suum Ettheum"
+      la: "Chanaan autem genuit Sidonem primogenitum suum, Hethaeum,"
       en: "And Chanaan begot Sidon, his firstborn, the Hethite,"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "et Iebuseum et Amorreum Gergeseum"
+      la: "et Jebusaeum, et Amorrhaeum, Gergesaeum,"
       en: "And the Jebusite, and the Amorrhite, and the Gergesite,"
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "Eveum et Araceum Sineum"
+      la: "Hevaeum, et Aracaeum: Sinaeum,"
       en: "The Hevite and the Aracite: the Sinite,"
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "et Aradium Samariten et Amatheum et post haec disseminati sunt populi Chananeorum"
+      la: "et Aradium, Samaraeum, et Amathaeum: et post haec disseminati sunt populi Chananaeorum."
       en: "And the Aradian, the Samarite, and the Hamathite: and afterwards the families of the Chanaanites were spread abroad."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "factique sunt termini Chanaan venientibus a Sidone Geraram usque Gazam donec ingrediaris Sodomam et Gomorram et Adama et Seboim usque Lesa"
+      la: "Factique sunt termini Chanaan venientibus a Sidone Geraram usque Gazam, donec ingrediaris Sodomam et Gomorrham, et Adamam, et Seboim usque Lesa."
       en: "And the limits of Chanaan were from Sidon as one comes to Gerara even to Gaza, until thou enter Sodom and Gomorrha, and Adama, and Seboim even to Lesa."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "hii filii Ham in cognationibus et linguis et generationibus terrisque et gentibus suis"
+      la: "Hi sunt filii Cham in cognationibus, et linguis, et generationibus, terrisque et gentibus suis."
       en: "These are the children of Cham in their kindreds, and tongues, and generations, and lands, and nations."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "de Sem quoque nati sunt patre omnium filiorum Eber fratre Iafeth maiore"
-      en: "Of Sem also, the father of all children of Heber, the elder brother of Japheth, sons were born."
+      la: "De Sem quoque nati sunt, patre omnium filiorum Heber, fratre Japheth majore."
+      en: "Of Sem also, the father of all the children of Heber, the elder brother of Japheth, sons were born."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "filii Sem Aelam et Assur et Arfaxad et Lud et Aram"
+      la: "Filii Sem: Aelam, et Assur, et Arphaxad, et Lud, et Aram."
       en: "The sons of Sem: Elam and Assur, and Arphaxad, and Lud, and Aram."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "filii Aram Us et Hul et Gether et Mes"
-      en: "The sons of Aram: Us and Hull, and Gether: and Mess."
+      la: "Filii Aram: Us, et Hul, et Gether, et Mes."
+      en: "The sons of Aram: Us and Hull, and Gether, and Mess."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "at vero Arfaxad genuit Sala de quo ortus est Eber"
+      la: "At vero Arphaxad genuit Sale, de quo ortus est Heber."
       en: "But Arphaxad begot Sale, of whom was born Heber."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "natique sunt Eber filii duo nomen uni Faleg eo quod in diebus eius divisa sit terra et nomen fratris eius Iectan"
+      la: "Natique sunt Heber filii duo: nomen uni Phaleg, eo quod in diebus ejus divisa sit terra: et nomen fratris ejus Jectan."
       en: "And to Heber were born two sons: the name of the one was Phaleg, because in his days the earth was divided: and his brother's name Jectan."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "qui Iectan genuit Helmodad et Saleph et Asarmoth Iare"
+      la: "Qui Jectan genuit Elmodad, et Saleph, et Asarmoth, Jare,"
       en: "Which Jectan begot Elmodad, and Saleph, and Asarmoth, Jare,"
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "et Aduram et Uzal Decla"
-      en: "And Anduram, and Uzal, and Decla,"
+      la: "et Aduram, et Uzal, et Decla,"
+      en: "And Aduram, and Uzal, and Decla,"
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "et Ebal et Abimahel Saba"
+      la: "et Ebal, et Abimael, Saba,"
       en: "And Ebal, and Abimael, Saba,"
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "et Ophir et Evila et Iobab omnes isti filii Iectan"
-      en: "And Ophir, and Hevila, and Jobab."
+      la: "et Ophir, et Hevila, et Jobab: omnes isti, filii Jectan."
+      en: "And Ophir, and Hevila, and Jobab. All these were the sons of Jectan."
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "et facta est habitatio eorum de Messa pergentibus usque Sephar montem orientalem"
+      la: "Et facta est habitatio eorum de Messa pergentibus usque Sephar montem orientalem."
       en: "And their dwelling was from Messa as we go on as far as Sephar, a mountain in the east."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "isti filii Sem secundum cognationes et linguas et regiones in gentibus suis"
+      la: "Isti filii Sem secundum cognationes, et linguas, et regiones in gentibus suis."
       en: "These are the children of Sem according to their kindreds and tongues, and countries in their nations."
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "hae familiae Noe iuxta populos et nationes suas ab his divisae sunt gentes in terra post diluvium"
+      la: "Hae familiae Noe juxta populos et nationes suas. Ab his divisae sunt gentes in terra post diluvium."
       en: "These are the families of Noe, according to their peoples and nations. By these were the nations divided on the earth after the flood."
     status: { la: verified, en: verified }

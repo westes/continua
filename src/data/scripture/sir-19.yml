@@ -1,14 +1,13 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for sir 19 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: sir
 chapter: 19
 verses:
   - n: 1
     text:
-      la: "Operarius ebriosus non locupletabitur : et qui spernit modica paulatim decidet."
+      la: "Operarius ebriosus non locupletabitur: et qui spernit modica paulatim decidet."
       en: "A workman that is a drunkard shall not be rich: and he that contemneth small things, shall fall by little and little."
     status: { la: verified, en: verified }
   - n: 2
@@ -18,22 +17,22 @@ verses:
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "Et qui se jungit fornicariis erit nequam : putredo et vermes haereditabunt illum : et extolletur in exemplum majus, et tolletur de numero anima ejus."
+      la: "Et qui se jungit fornicariis erit nequam: putredo et vermes haereditabunt illum: et extolletur in exemplum majus, et tolletur de numero anima ejus."
       en: "And he that joineth himself to harlots, will be wicked. Rottenness and worms shall inherit him, and he shall be lifted up for a greater example, and his soul shall be taken away out of the number."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "Qui credit cito levis corde est, et minorabitur : et qui delinquit in animam suam, insuper habebitur."
+      la: "Qui credit cito levis corde est, et minorabitur: et qui delinquit in animam suam, insuper habebitur."
       en: "He that is hasty to give credit, is light of heart, and shall be lessened: and he that sinneth against his own soul, shall be despised."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "Qui gaudet iniquitate, denotabitur : et qui odit correptionem, minuetur vita : et qui odit loquacitatem, extinguit malitiam."
+      la: "Qui gaudet iniquitate, denotabitur: et qui odit correptionem, minuetur vita: et qui odit loquacitatem, extinguit malitiam."
       en: "He that rejoiceth in iniquity, shall be censured, and he that hateth chastisement, shall have less life: and he that hateth babbling, extinguisheth evil."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "Qui peccat in animam suam, poenitebit : et qui jucundatur in malitia, denotabitur."
+      la: "Qui peccat in animam suam, poenitebit: et qui jucundatur in malitia, denotabitur."
       en: "He that sinneth against his own soul, shall repent: and he that is delighted with wickedness, shall be condemned."
     status: { la: verified, en: verified }
   - n: 7
@@ -43,7 +42,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "Amico et inimico noli narrare sensum tuum : et si est tibi delictum, noli denudare :"
+      la: "Amico et inimico noli narrare sensum tuum: et si est tibi delictum, noli denudare:"
       en: "Tell not thy mind to friend or foe: and if there be a sin with thee, disclose it not."
     status: { la: verified, en: verified }
   - n: 9
@@ -68,22 +67,22 @@ verses:
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "Corripe amicum, ne forte non intellexerit, et dicat : Non feci : aut, si fecerit, ne iterum addat facere."
+      la: "Corripe amicum, ne forte non intellexerit, et dicat: Non feci: aut, si fecerit, ne iterum addat facere."
       en: "Reprove a friend, lest he may not have understood, and say: I did it not: or if he did it, that he may do it no more."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "Corripe proximum, ne forte non dixerit : et si dixerit, ne forte iteret."
+      la: "Corripe proximum, ne forte non dixerit: et si dixerit, ne forte iteret."
       en: "Reprove thy neighbour, for it may be he hath not said it: and if he hath said it, that he may not say it again."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "Corripe amicum, saepe enim fit commissio :"
+      la: "Corripe amicum, saepe enim fit commissio:"
       en: "Admonish thy friend: for there is often a fault committed."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "et non omni verbo credas. Est qui labitur lingua, sed non ex animo :"
+      la: "et non omni verbo credas. Est qui labitur lingua, sed non ex animo:"
       en: "And believe not every word. There is one, that slippeth with the tongue, but not from his heart."
     status: { la: verified, en: verified }
   - n: 17
@@ -93,7 +92,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "et da locum timori Altissimi : quia omnis sapientia timor Dei, et in illa timere Deum, et in omni sapientia dispositio legis."
+      la: "et da locum timori Altissimi: quia omnis sapientia timor Dei, et in illa timere Deum, et in omni sapientia dispositio legis."
       en: "And give place to the fear of the most High: for the fear of God is all wisdom, and therein is to fear God, and the disposition of the law is in all wisdom."
     status: { la: verified, en: verified }
   - n: 19
@@ -113,17 +112,17 @@ verses:
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "Est solertia certa, et ipsa iniqua :"
+      la: "Est solertia certa, et ipsa iniqua:"
       en: "There is an exquisite subtilty, and the same is unjust."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "et est qui emittit verbum certum enarrans veritatem. Est qui nequiter humiliat se, et interiora ejus plena sunt dolo :"
+      la: "et est qui emittit verbum certum enarrans veritatem. Est qui nequiter humiliat se, et interiora ejus plena sunt dolo:"
       en: "And there is one that uttereth an exact word telling the truth. There is one that humbleth himself wickedly, and his interior is full of deceit:"
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "et est qui se nimium submittit a multa humilitate : et est qui inclinat faciem suam, et fingit se non videre quod ignoratum est :"
+      la: "et est qui se nimium submittit a multa humilitate: et est qui inclinat faciem suam, et fingit se non videre quod ignoratum est:"
       en: "And there is one that submitteth himself exceedingly with a great lowliness: and there is one that casteth down his countenance, and maketh as if he did not see that which is unknown:"
     status: { la: verified, en: verified }
   - n: 25
@@ -143,6 +142,6 @@ verses:
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "Est correptio mendax in ira contumeliosi, et est judicium quod non probatur esse bonum : et est tacens, et ipse est prudens."
+      la: "Est correptio mendax in ira contumeliosi, et est judicium quod non probatur esse bonum: et est tacens, et ipse est prudens."
       en: "There is a lying rebuke in the anger of an injurious man: and there is a judgment that is not allowed to be good: and there is one that holdeth his peace, he is wise."
     status: { la: verified, en: verified }

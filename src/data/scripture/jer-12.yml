@@ -1,92 +1,92 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: jer
 chapter: 12
 verses:
   - n: 1
     text:
-      la: "iustus quidem tu es Domine si disputem tecum verumtamen iusta loquar ad te quare via impiorum prosperatur bene est omnibus qui praevaricantur et inique agunt"
+      la: "Justus quidem tu es, Domine, si disputem tecum: verumtamen justa loquar ad te: Quare via impiorum prosperatur, bene est omnibus qui praevaricantur, et inique agunt?"
       en: "Thou indeed, O Lord, art just, if I plead with thee, but yet I will speak what is just to thee: Why doth the way of the wicked prosper: why is it well with all them that transgress, and do wickedly?"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "plantasti eos et radicem miserunt proficiunt et faciunt fructum prope es tu ori eorum et longe a renibus eorum"
+      la: "Plantasti eos, et radicem miserunt: proficiunt, et faciunt fructum: prope es tu ori eorum, et longe a renibus eorum."
       en: "Thou hast planted them, and they have taken root: they prosper and bring forth fruit: thou art near in their mouth, and far from their reins."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et tu Domine nosti me vidisti me et probasti cor meum tecum congrega eos quasi gregem ad victimam et sanctifica eos in die occisionis"
+      la: "Et tu, Domine, nosti me, vidisti me, et probasti cor meum tecum. Congrega eos quasi gregem ad victimam, et sanctifica eos in die occisionis."
       en: "And thou, O Lord, hast known me, thou hast seen me, and proved my heart with thee: gather them together as sheep for a sacrifice, and prepare them for the day of slaughter."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "usquequo lugebit terra et herba omnis regionis siccabitur propter malitiam habitantium in ea consumptum est animal et volucre quoniam dixerunt non videbit novissima nostra"
+      la: "Usquequo lugebit terra, et herba omnis regionis siccabitur, propter malitiam habitantium in ea? Consumptum est animal, et volucre, quoniam dixerunt: Non videbit novissima nostra."
       en: "How long shall the land mourn, and the herb of every field wither for the wickedness of them that dwell therein? The beasts and the birds are consumed: because they have said: He shall not see our last end."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "si cum peditibus currens laborasti quomodo contendere poteris cum equis cum autem in terra pacis secura fueris quid facies in superbia Iordanis"
+      la: "Si cum peditibus currens laborasti, quomodo contendere poteris cum equis? Cum autem in terra pacis securus fueris, quid facies in superbia Jordanis?"
       en: "If thou hast wearied with running with footmen, how canst thou contend with horses? and if thou hast been secure in a land of peace, what wilt thou do in the swelling of the Jordan?"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "nam et fratres tui et domus patris tui etiam ipsi pugnaverunt adversum te et clamaverunt post te plena voce ne credas eis cum locuti fuerint tibi bona"
+      la: "Nam et fratres tui, et domus patris tui, etiam ipsi pugnaverunt adversum te, et clamaverunt post te plena voce: ne credas eis, cum locuti fuerint tibi bona."
       en: "For even thy brethren, and the house of thy father, even they have fought against thee, and have cried after thee with full voice: believe them not when they speak good things to thee."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "reliqui domum meam dimisi hereditatem meam dedi dilectam animam meam in manu inimicorum eius"
+      la: "Reliqui domum meam, dimisi haereditatem meam: dedi dilectam animam meam in manu inimicorum ejus."
       en: "I have forsaken my house, I have left my inheritance: I have given my dear soul into the land of her enemies."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "facta est mihi hereditas mea quasi leo in silva dedit contra me vocem ideo odivi eam"
-      en: "My inheritance is become to me as a lion in the wood: is hath cried out against me, therefore have I hated it."
+      la: "Facta est mihi haereditas mea quasi leo in silva: dedit contra me vocem, ideo odivi eam."
+      en: "My inheritance is become to me as a lion in the wood: it hath cried out against me, therefore have I hated it."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "numquid avis discolor hereditas mea mihi numquid avis tincta per totum venite congregamini omnes bestiae terrae properate ad devorandum"
+      la: "Numquid avis discolor haereditas mea mihi? numquid avis tincta per totum? Venite, congregamini, omnes bestiae terrae, properate ad devorandum."
       en: "Is my inheritance to me as a speckled bird? Is it as a bird died throughout? come ye, assemble yourselves, all the beasts of the earth, make haste to devour."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "pastores multi demoliti sunt vineam meam conculcaverunt partem meam dederunt portionem meam desiderabilem in desertum solitudinis"
+      la: "Pastores multi demoliti sunt vineam meam, conculcaverunt partem meam, dederunt portionem meam desiderabilem in desertum solitudinis."
       en: "Many pastors have destroyed my vineyard, they have trodden my portion under foot: they have changed my delightful portion into a desolate wilderness."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "posuerunt eam in dissipationem luxitque super me desolatione desolata est omnis terra quia nullus est qui recogitet corde"
+      la: "Posuerunt eam in dissipationem, luxitque super me: desolatione desolata est omnis terra, quia nullus est qui recogitet corde."
       en: "They have laid it waste, and it hath mourned for me. With desolation is all the land made desolate; because there is none that considereth in the heart."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "super omnes vias deserti venerunt vastatores quia gladius Domini devoravit ab extremo terrae usque ad extremum eius non est pax universae carni"
+      la: "Super omnes vias deserti venerunt vastatores, quia gladius Domini devorabit: ab extremo terrae usque ad extremum ejus, non est pax universae carni."
       en: "The spoilers are come upon all the ways of the wilderness, for the sword of the Lord shall devour from one end of the land to the other end thereof: there is no peace for all flesh."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "seminaverunt triticum et spinas messuerunt hereditatem acceperunt et non eis proderit confundemini a fructibus vestris propter iram furoris Domini"
+      la: "Seminaverunt triticum, et spinas messuerunt: haereditatem acceperunt, et non eis proderit. Confundemini a fructibus vestris propter iram furoris Domini."
       en: "They have sown wheat, and reaped thorns: they have received an inheritance, and it shall not profit them: you shall be ashamed of your fruits, because of the fierce wrath of the Lord."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "haec dicit Dominus adversum omnes vicinos meos pessimos qui tangunt hereditatem quam distribui populo meo Israhel ecce ego evellam eos de terra eorum et domum Iuda evellam de medio eorum"
-      en: "Thus saith the Lord against all my wicked neighbors, that touch the inheritance that I have shared out to my people Israel: Behold I will pluck them out of their land, and I will pluck the house of Juda out of the midst of them."
+      la: "Haec dicit Dominus adversum omnes vicinos meos pessimos, qui tangunt haereditatem quam distribui populo meo Israel: Ecce ego evellam eos de terra sua, et domum Juda evellam de medio eorum."
+      en: "Thus saith the Lord against all my wicked neighbours, that touch the inheritance that I have shared out to my people Israel: Behold I will pluck them out of their land, and I will pluck the house of Juda out of the midst of them."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et cum evellero eos convertar et miserebor eorum et reducam eos virum ad hereditatem suam et virum in terram suam"
+      la: "Et cum evulsero eos, convertar, et miserebor eorum, et reducam eos, virum ad haereditatem suam, et virum in terram suam."
       en: "And when I shall have plucked them out, I will return, and have mercy on them: and I will bring them back, every man to his inheritance, and every man to his land."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "et erit si eruditi didicerint vias populi mei ut iurent in nomine meo vivit Dominus sicut docuerunt populum meum iurare in Baal aedificabuntur in medio populi mei"
+      la: "Et erit: si eruditi didicerint vias populi mei, ut jurent in nomine meo: Vivit Dominus! sicut docuerunt populum meum jurare in Baal, aedificabuntur in medio populi mei."
       en: "And it shall come to pass, if they will be taught, and will learn the ways of my people, to swear by my name: The Lord liveth, as they have taught my people to swear by baal: that they shall be built up in the midst of my people."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "quod si non audierint evellam gentem illam evulsione et perditione ait Dominus"
+      la: "Quod si non audierint, evellam gentem illam evulsione et perditione, ait Dominus."
       en: "But if they will not hear, I will utterly pluck out and destroy that nation, saith the Lord."
     status: { la: verified, en: verified }

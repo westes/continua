@@ -1,117 +1,507 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: dan
 chapter: 3
 verses:
   - n: 1
     text:
-      la: "Nabuchodonosor rex fecit statuam auream altitudine cubitorum sexaginta latitudine cubitorum sex et statuit eam in campo Duram provinciae Babylonis"
+      la: "Nabuchodonosor rex fecit statuam auream, altitudine cubitorum sexaginta, latitudine cubitorum sex, et statuit eam in campo Dura, provinciae Babylonis."
       en: "King Nabuchodonosor made a statue of gold, of sixty cubits high, and six cubits broad, and he set it up in the plain of Dura of the province of Babylon."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "itaque Nabuchodonosor rex misit ad congregandos satrapas magistratus et iudices duces et tyrannos et praefectos omnesque principes regionum ut convenirent ad dedicationem statuae quam erexerat Nabuchodonosor rex"
+      la: "Itaque Nabuchodonosor rex misit ad congregandos satrapas, magistratus, et judices, duces, et tyrannos, et praefectos, omnesque principes regionum, ut convenirent ad dedicationem statuae quam erexerat Nabuchodonosor rex."
       en: "Then Nabuchodonosor the king sent to call together the nobles, the magistrates, and the judges, the captains, the rulers, and governors, and all the chief men of the provinces, to come to the dedication of the statue which king Nabuchodonosor had set up."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "tunc congregati sunt satrapae magistratus et iudices duces et tyranni et optimates qui erant in potestatibus constituti et universi principes regionum ut convenirent ad dedicationem statuae quam erexerat Nabuchodonosor rex stabant autem in conspectu statuae quam posuerat Nabuchodonosor"
+      la: "Tunc congregati sunt satrapae, magistratus, et judices, duces, et tyranni, et optimates, qui erant in potestatibus constituti, et universi principes regionum, ut convenirent ad dedicationem statuae, quam erexerat Nabuchodonosor rex. Stabant autem in conspectu statuae, quam posuerat Nabuchodonosor rex:"
       en: "Then the nobles, the magistrates, and the judges, the captains, and rulers, and the great men that were placed in authority, and all the princes of the provinces, were gathered together to come to the dedication of the statue, which king Nabuchodonosor had set up. And they stood before the statue which king Nabuchodonosor had set up."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et praeco clamabat valenter vobis dicitur populis tribubus et linguis"
+      la: "et praeco clamabat valenter: Vobis dicitur populis, tribubus, et linguis:"
       en: "Then a herald cried with a strong voice: To you it is commanded, O nations, tribes, and languages:"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "in hora qua audieritis sonitum tubae et fistulae et citharae sambucae et psalterii et symphoniae et universi generis musicorum cadentes adorate statuam auream quam constituit Nabuchodonosor rex"
+      la: "in hora qua audieritis sonitum tubae, et fistulae, et citharae, sambucae, et psalterii, et symphoniae, et universi generis musicorum, cadentes adorate statuam auream, quam constituit Nabuchodonosor rex."
       en: "That in the hour that you shall hear the sound of the trumpet, and of the flute, and of the harp, of the sackbut, and of the psaltery, and of the symphony, and of all kind of music; ye fall down and adore the golden statue which king Nabuchodonosor hath set up."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "si quis autem non prostratus adoraverit eadem hora mittetur in fornacem ignis ardentis"
+      la: "Si quis autem non prostratus adoraverit, eadem hora mittetur in fornacem ignis ardentis."
       en: "But if any man shall not fall down and adore, he shall the same hour be cast into a furnace of burning fire."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "post haec igitur statim ut audierunt omnes populi sonitum tubae fistulae et citharae sambucae et psalterii et symphoniae et omnis generis musicorum cadentes omnes populi et tribus et linguae adoraverunt statuam auream quam constituerat Nabuchodonosor rex"
+      la: "Post haec igitur, statim ut audierunt omnes populi sonitum tubae, fistulae, et citharae, sambucae, et psalterii, et symphoniae, et omnis generis musicorum, cadentes omnes populi, tribus, et linguae adoraverunt statuam auream, quam constituerat Nabuchodonosor rex."
       en: "Upon this therefore, at the time when all the people heard the sound of the trumpet, the flute, and the harp, of the sackbut, and the psaltery, of the symphony, and of all kind of music: all the nations, tribes, and languages fell down and adored the golden statue which king Nabuchodonosor had set up."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "statimque et in ipso tempore accedentes viri chaldei accusaverunt Iudaeos"
+      la: "Statimque in ipso tempore accedentes viri Chaldaei accusaverunt Judaeos:"
       en: "And presently at that very time some Chaldeans came and accused the Jews,"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "dixeruntque Nabuchodonosor regi rex in aeternum vive"
+      la: "dixeruntque Nabuchodonosor regi: Rex, in aeternum vive!"
       en: "And said to king Nabuchodonosor: O king, live for ever:"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "tu rex posuisti decretum ut omnis homo qui audierit sonitum tubae fistulae et citharae sambucae et psalterii et symphoniae et universi generis musicorum prosternat se et adoret statuam auream"
-      en: "Thou, O king, hast made a decree that every man that shall bear the sound of the trumpet, the flute, and the harp, of the sackbut, and the psaltery, of the symphony, and of all kind of music, shall prostrate himself, and adore the golden statue:"
+      la: "tu, rex, posuisti decretum, ut omnis homo, qui audierit sonitum tubae, fistulae, et citharae, sambucae, et psalterii, et symphoniae, et universi generis musicorum, prosternat se, et adoret statuam auream:"
+      en: "Thou, O king, hast made a decree that every man that shall hear the sound of the trumpet, the flute, and the harp, of the sackbut, and the psaltery, of the symphony, and of all kind of music, shall prostrate himself, and adore the golden statue:"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "si quis autem non procidens adoraverit mittatur in fornacem ignis ardentem"
+      la: "si quis autem non procidens adoraverit, mittatur in fornacem ignis ardentis."
       en: "And that if any man shall not fall down and adore, he should be cast into a furnace of burning fire."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "sunt ergo viri iudaei quos constituisti super opera regionis Babyloniae Sedrac Misac et Abdenago viri isti contempserunt rex decretum tuum deos tuos non colunt et statuam auream quam erexisti non adorant"
+      la: "Sunt ergo viri Judaei, quos constituisti super opera regionis Babylonis, Sidrach, Misach, et Abdenago: viri isti contempserunt, rex, decretum tuum: deos tuos non colunt, et statuam auream, quam erexisti, non adorant."
       en: "Now there are certain Jews whom thou hast set over the works of the province of Babylon, Sidrach, Misach, and Abdenago: these men, O king, have slighted thy decree: they worship not thy gods, nor do they adore the golden statue which thou hast set up."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "tunc Nabuchodonosor in furore et in ira praecepit ut adducerentur Sedrac Misac et Abdenago qui confestim adducti sunt in conspectu regis"
+      la: "Tunc Nabuchodonosor, in furore et in ira, praecepit ut adducerentur Sidrach, Misach, et Abdenago: qui confestim adducti sunt in conspectu regis."
       en: "Then Nabuchodonosor in fury, and in wrath, commanded that Sidrach, Misach, and Abdenago should be brought: who immediately were brought before the king."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "pronuntiansque Nabuchodonosor rex ait eis verene Sedrac Misac et Abdenago deos meos non colitis et statuam auream quam constitui non adoratis"
+      la: "Pronuntiansque Nabuchodonosor rex, ait eis: Verene Sidrach, Misach, et Abdenago, deos meos non colitis, et statuam auream, quam constitui, non adoratis?"
       en: "And Nabuchodonosor the king spoke to them, and said: Is it true, O Sidrach, Misach, and Abdenago, that you do not worship my gods, nor adore the golden statue that I have set up?"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "nunc ergo si estis parati quacumque hora audieritis sonitum tubae fistulae et citharae sambucae psalterii et symphoniae omnisque generis musicorum prosternite vos et adorate statuam quam feci quod si non adoraveritis eadem hora mittemini in fornacem ignis ardentem et quis est Deus qui eripiat vos de manu mea"
+      la: "nunc ergo si estis parati, quacumque hora audieritis sonitum tubae, fistulae, citharae, sambucae, et psalterii, et symphoniae, omnisque generis musicorum, prosternite vos, et adorate statuam, quam feci: quod si non adoraveritis, eadem hora mittemini in fornacem ignis ardentis: et quis est Deus, qui eripiet vos de manu mea?"
       en: "Now therefore if you be ready at what hour soever you shall hear the sound of the trumpet, flute, harp, sackbut, and psaltery, and symphony, and of all kind of music, prostrate yourselves, and adore the statue which I have made: but if you do not adore, you shall be cast the same hour into the furnace of burning fire: and who is the God that shall deliver you out of my hand?"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "respondentes Sedrac Misac et Abdenago dixerunt regi Nabuchodonosor non oportet nos de hac re respondere tibi"
+      la: "Respondentes Sidrach, Misach, et Abdenago, dixerunt regi Nabuchodonosor: Non oportet nos de hac re respondere tibi."
       en: "Sidrach, Misach, and Abdenago answered and said to king Nabuchodonosor: We have no occasion to answer thee concerning this matter."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "ecce enim Deus noster quem colimus potest eripere nos de camino ignis ardentis et de manibus tuis rex liberare"
+      la: "Ecce enim Deus noster, quem colimus, potest eripere nos de camino ignis ardentis, et de manibus tuis, o rex, liberare."
       en: "For behold our God, whom we worship, is able to save us from the furnace of burning fire, and to deliver us out of thy hands, O king."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "quod si noluerit notum tibi sit rex quia deos tuos non colimus et statuam auream quam erexisti non adoramus"
+      la: "Quod si noluerit, notum sit tibi, rex, quia deos tuos non colimus, et statuam auream, quam erexisti, non adoramus."
       en: "But if he will not, be it known to thee, O king, that we will not worship thy gods, nor adore the golden statue which thou hast set up."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "tunc Nabuchodonosor repletus est furore et aspectus faciei illius inmutatus est super Sedrac Misac et Abdenago et praecepit ut succenderetur fornax septuplum quam succendi consuerat"
+      la: "Tunc Nabuchodonosor repletus est furore, et aspectus faciei illius immutatus est super Sidrach, Misach, et Abdenago: et praecepit ut succenderetur fornax septuplum quam succendi consueverat."
       en: "Then was Nabuchodonosor filled with fury: and the countenance of his face was changed against Sidrach, Misach, and Abdenago, and he commanded that the furnace should be heated seven times more than it had been accustomed to be heated."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "et viris fortissimis de exercitu suo iussit ut ligatis pedibus Sedrac Misac et Abdenago mitterent eos in fornacem ignis ardentem"
+      la: "Et viris fortissimis de exercitu suo jussit ut ligatis pedibus Sidrach, Misach, et Abdenago, mitterent eos in fornacem ignis ardentis."
       en: "And he commanded the strongest men that were in his army, to bind the feet of Sidrach, Misach, and Abdenago, and to cast them into the furnace of burning fire."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "et confestim viri illi vincti cum bracis suis et tiaris et calciamentis et vestibus missi sunt in medium fornacis ignis ardentis"
+      la: "Et confestim viri illi vincti, cum braccis suis, et tiaris, et calceamentis, et vestibus, missi sunt in medium fornacis ignis ardentis:"
       en: "And immediately these men were bound and were cast into the furnace of burning fire, with their coats, and their caps, and their shoes, and their garments."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "nam iussio regis urguebat fornax autem succensa erat nimis porro viros illos qui miserant Sedrac Misac et Abdenago interfecit flamma ignis"
+      la: "nam jussio regis urgebat. Fornax autem succensa erat nimis: porro viros illos, qui miserant Sidrach, Misach, et Abdenago, interfecit flamma ignis."
       en: "For the king's commandment was urgent, and the furnace was heated exceedingly. And the flame of the fire slew those men that had cast in Sidrach, Misach, and Abdenago."
+    status: { la: verified, en: verified }
+  - n: 23
+    text:
+      la: "Viri autem hi tres, id est, Sidrach, Misach, et Abdenago, ceciderunt in medio camino ignis ardentis, colligati."
+      en: "But these three men, that is, Sidrach, Misach, and Abdenago, fell down bound in the midst of the furnace of burning fire."
+    status: { la: verified, en: verified }
+  - n: 24
+    text:
+      la: "Et ambulabant in medio flammae, laudantes Deum, et benedicentes Domino."
+      en: "And they walked in the midst of the flame, praising God and blessing the Lord."
+    status: { la: verified, en: verified }
+  - n: 25
+    text:
+      la: "Stans autem Azarias oravit sic, aperiensque os suum in medio ignis, ait:"
+      en: "Then Azarias standing up prayed in this manner, and opening his mouth in the midst of the fire, he said:"
+    status: { la: verified, en: verified }
+  - n: 26
+    text:
+      la: "Benedictus es, Domine Deus patrum nostrorum, et laudabile, et gloriosum nomen tuum in saecula:"
+      en: "Blessed art thou, O Lord, the God of our fathers, and thy name is worthy of praise, and glorious for ever:"
+    status: { la: verified, en: verified }
+  - n: 27
+    text:
+      la: "quia justus es in omnibus, quae fecisti nobis, et universa opera tua vera, et viae tuae rectae, et omnia judicia tua vera."
+      en: "For thou art just in all that thou hast done to us, and all thy works are true, and thy ways right, and all thy judgments true."
+    status: { la: verified, en: verified }
+  - n: 28
+    text:
+      la: "Judicia enim vera fecisti juxta omnia, quae induxisti super nos, et super civitatem sanctam patrum nostrorum Jerusalem: quia in veritate et in judicio induxisti omnia haec propter peccata nostra."
+      en: "For thou hast executed true judgments in all the things that thou hast brought upon us, and upon Jerusalem the holy city of our fathers: for according to truth and judgment, thou hast brought all these things upon us for our sins."
+    status: { la: verified, en: verified }
+  - n: 29
+    text:
+      la: "Peccavimus enim, et inique egimus recedentes a te, et deliquimus in omnibus:"
+      en: "For we have sinned, and committed iniquity, departing from thee: and we have trespassed in all things:"
+    status: { la: verified, en: verified }
+  - n: 30
+    text:
+      la: "et praecepta tua non audivimus, nec observavimus, nec fecimus sicut praeceperas nobis ut bene nobis esset."
+      en: "And we have not hearkened to thy commandments, nor have we observed nor done as thou hadst commanded us, that it might go well with us."
+    status: { la: verified, en: verified }
+  - n: 31
+    text:
+      la: "Omnia ergo, quae induxisti super nos, et universa quae fecisti nobis, in vero judicio fecisti;"
+      en: "Wherefore all that thou hast brought upon us, and every thing that thou hast done to us, thou hast done in true judgment:"
+    status: { la: verified, en: verified }
+  - n: 32
+    text:
+      la: "et tradidisti nos in manibus inimicorum nostrorum iniquorum, et pessimorum, praevaricatorumque, et regi injusto, et pessimo ultra omnem terram."
+      en: "And thou hast delivered us into the hands of our enemies that are unjust, and most wicked, and prevaricators, and to a king unjust, and most wicked beyond all that are upon the earth."
+    status: { la: verified, en: verified }
+  - n: 33
+    text:
+      la: "Et nunc non possumus aperire os: confusio, et opprobrium facti sumus servis tuis, et his qui colunt te."
+      en: "And now we cannot open our mouths: we are become a shame and reproach to thy servants, and to them that worship thee."
+    status: { la: verified, en: verified }
+  - n: 34
+    text:
+      la: "Ne, quaesumus, tradas nos in perpetuum propter nomen tuum, et ne dissipes testamentum tuum:"
+      en: "Deliver us not up for ever, we beseech thee, for thy name's sake, and abolish not thy covenant."
+    status: { la: verified, en: verified }
+  - n: 35
+    text:
+      la: "neque auferas misericordiam tuam a nobis, propter Abraham, dilectum tuum, et Isaac, servum tuum, et Israel, sanctum tuum,"
+      en: "And take not away thy mercy from us for the sake of Abraham thy beloved, and Isaac thy servant, and Israel thy holy one:"
+    status: { la: verified, en: verified }
+  - n: 36
+    text:
+      la: "quibus locutus es pollicens quod multiplicares semen eorum sicut stellas caeli, et sicut arenam quae est in littore maris;"
+      en: "To whom thou hast spoken, promising that thou wouldst multiply their seed as the stars of heaven, and as the sand that is on the sea shore."
+    status: { la: verified, en: verified }
+  - n: 37
+    text:
+      la: "quia, Domine, imminuti sumus plus quam omnes gentes, sumusque humiles in universa terra hodie propter peccata nostra."
+      en: "For we, O Lord, are diminished more than any nation, and are brought low in all the earth this day for our sins."
+    status: { la: verified, en: verified }
+  - n: 38
+    text:
+      la: "Et non est in tempore hoc princeps, et dux, et propheta, neque holocaustum, neque sacrificium, neque oblatio, neque incensum, neque locus primitiarum coram te,"
+      en: "Neither is there at this time prince, or leader, or prophet, or holocaust, or sacrifice, or oblation, or incense, or place of firstfruits before thee,"
+    status: { la: verified, en: verified }
+  - n: 39
+    text:
+      la: "ut possimus invenire misericordiam tuam, sed in animo contrito, et spiritu humilitatis suscipiamur."
+      en: "That we may find thy mercy: nevertheless in a contrite heart and humble spirit let us be accepted."
+    status: { la: verified, en: verified }
+  - n: 40
+    text:
+      la: "Sicut in holocausto arietum, et taurorum, et sicut in millibus agnorum pinguium, sic fiat sacrificium nostrum in conspectu tuo hodie, ut placeat tibi, quoniam non est confusio confidentibus in te."
+      en: "As in holocausts of rams, and bullocks, and as in thousands of fat lambs: so let our sacrifice be made in thy sight this day, that it may please thee: for there is no confusion to them that trust in thee."
+    status: { la: verified, en: verified }
+  - n: 41
+    text:
+      la: "Et nunc sequimur te in toto corde; et timemus te, et quaerimus faciem tuam."
+      en: "And now we follow thee with all our heart, and we fear thee, and seek thy face."
+    status: { la: verified, en: verified }
+  - n: 42
+    text:
+      la: "Nec confundas nos, sed fac nobiscum juxta mansuetudinem tuam, et secundum multitudinem misericordiae tuae."
+      en: "Put us not to confusion, but deal with us according to thy meekness, and according to the multitude of thy mercies."
+    status: { la: verified, en: verified }
+  - n: 43
+    text:
+      la: "Et erue nos in mirabilibus tuis, et da gloriam nomini tuo, Domine;"
+      en: "And deliver us according to thy wonderful works, and give glory to thy name, O Lord:"
+    status: { la: verified, en: verified }
+  - n: 44
+    text:
+      la: "et confundantur omnes qui ostendunt servis tuis mala: confundantur in omni potentia tua, et robur eorum conteratur:"
+      en: "And let all them be confounded that shew evils to thy servants, let them be confounded in all thy might, and let their strength be broken."
+    status: { la: verified, en: verified }
+  - n: 45
+    text:
+      la: "et sciant quia tu es Dominus Deus solus, et gloriosus super orbem terrarum."
+      en: "And let them know that thou art the Lord, the only God, and glorious over all the world."
+    status: { la: verified, en: verified }
+  - n: 46
+    text:
+      la: "Et non cessabant qui miserant eos ministri regis succendere fornacem, naphtha, et stuppa, et pice, et malleolis,"
+      en: "Now the king's servants that had cast them in, ceased not to heat the furnace with brimstone, and tow, and pitch, and dry sticks,"
+    status: { la: verified, en: verified }
+  - n: 47
+    text:
+      la: "et effundebatur flamma super fornacem cubitis quadraginta novem:"
+      en: "And the flame mounted up above the furnace nine and forty cubits:"
+    status: { la: verified, en: verified }
+  - n: 48
+    text:
+      la: "et erupit, et incendit quos reperit juxta fornacem de Chaldaeis."
+      en: "And it broke forth, and burnt such of the Chaldeans as it found near the furnace."
+    status: { la: verified, en: verified }
+  - n: 49
+    text:
+      la: "Angelus autem Domini descendit cum Azaria, et sociis ejus in fornacem: et excussit flammam ignis de fornace,"
+      en: "But the angel of the Lord went down with Azarias and his companions into the furnace: and he drove the flame of the fire out of the furnace,"
+    status: { la: verified, en: verified }
+  - n: 50
+    text:
+      la: "et fecit medium fornacis quasi ventum roris flantem, et non tetigit eos omnino ignis, neque contristavit, nec quidquam molestiae intulit."
+      en: "And made the midst of the furnace like the blowing of a wind bringing dew, and the fire touched them not at all, nor troubled them, nor did them any harm."
+    status: { la: verified, en: verified }
+  - n: 51
+    text:
+      la: "Tunc hi tres quasi ex uno ore laudabant, et glorificabant, et benedicebant Deum in fornace, dicentes:"
+      en: "Then these three as with one mouth praised, and glorified, and blessed God in the furnace, saying:"
+    status: { la: verified, en: verified }
+  - n: 52
+    text:
+      la: "Benedictus es, Domine Deus patrum nostrorum: et laudabilis, et gloriosus, et superexaltatus in saecula. Et benedictum nomen gloriae tuae sanctum: et laudabile, et superexaltatum in omnibus saeculis."
+      en: "Blessed art thou, O Lord the God of our fathers: and worthy to be praised, and glorified, and exalted above all for ever: and blessed is the holy name of thy glory: and worthy to be praised, and exalted above all in all ages."
+    status: { la: verified, en: verified }
+  - n: 53
+    text:
+      la: "Benedictus es in templo sancto gloriae tuae: et superlaudabilis, et supergloriosus in saecula."
+      en: "Blessed art thou in the holy temple of thy glory: and exceedingly to be praised, and exceeding glorious for ever."
+    status: { la: verified, en: verified }
+  - n: 54
+    text:
+      la: "Benedictus es in throno regni tui: et superlaudabilis, et superexaltatus in saecula."
+      en: "Blessed art thou on the throne of thy kingdom, and exceedingly to be praised, and exalted above all for ever."
+    status: { la: verified, en: verified }
+  - n: 55
+    text:
+      la: "Benedictus es, qui intueris abyssos, et sedes super cherubim: et laudabilis, et superexaltatus in saecula."
+      en: "Blessed art thou, that beholdest the depths, and sittest upon the cherubims: and worthy to be praised and exalted above all for ever."
+    status: { la: verified, en: verified }
+  - n: 56
+    text:
+      la: "Benedictus es in firmamento caeli: et laudabilis et gloriosus in saecula."
+      en: "Blessed art thou in the firmament of heaven: and worthy of praise, and glorious for ever."
+    status: { la: verified, en: verified }
+  - n: 57
+    text:
+      la: "Benedicite, omnia opera Domini, Domino: laudate et superexaltate eum in saecula."
+      en: "All ye works of the Lord, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 58
+    text:
+      la: "Benedicite, angeli Domini, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye angels of the Lord, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 59
+    text:
+      la: "Benedicite, caeli, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye heavens, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 60
+    text:
+      la: "Benedicite, aquae omnes, quae super caelos sunt, Domino: laudate et superexaltate eum in saecula."
+      en: "O all ye waters that are above the heavens, bless the Lord; praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 61
+    text:
+      la: "Benedicite, omnes virtutes Domini, Domino: laudate et superexaltate eum in saecula."
+      en: "O all ye powers of the Lord, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 62
+    text:
+      la: "Benedicite, sol et luna, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye sun and moon, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 63
+    text:
+      la: "Benedicite, stellae caeli, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye stars of heaven, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 64
+    text:
+      la: "Benedicite, omnis imber et ros, Domino: laudate et superexaltate eum in saecula."
+      en: "O every shower and dew, bless ye the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 65
+    text:
+      la: "Benedicite, omnes spiritus Dei, Domino: laudate et superexaltate eum in saecula."
+      en: "O all ye spirits of God, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 66
+    text:
+      la: "Benedicite, ignis et aestus, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye fire and heat, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 67
+    text:
+      la: "Benedicite, frigus et aestus, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye cold and heat, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 68
+    text:
+      la: "Benedicite, rores et pruina, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye dews and hoar frosts, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 69
+    text:
+      la: "Benedicite, gelu et frigus, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye frost and cold, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 70
+    text:
+      la: "Benedicite, glacies et nives, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye ice and snow, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 71
+    text:
+      la: "Benedicite, noctes et dies, Domino laudate et superexaltate eum in saecula."
+      en: "O ye nights and days, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 72
+    text:
+      la: "Benedicite, lux et tenebrae, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye light and darkness, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 73
+    text:
+      la: "Benedicite, fulgura et nubes, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye lightnings and clouds, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 74
+    text:
+      la: "Benedicat terra Dominum: laudet et superexaltet eum in saecula."
+      en: "O let the earth bless the Lord: let it praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 75
+    text:
+      la: "Benedicite, montes et colles, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye mountains and hills, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 76
+    text:
+      la: "Benedicite, universa germinantia in terra, Domino: laudate et superexaltate eum in saecula."
+      en: "O all ye things that spring up in the earth, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 77
+    text:
+      la: "Benedicite, fontes, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye fountains, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 78
+    text:
+      la: "Benedicite, maria et flumina, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye seas and rivers, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 79
+    text:
+      la: "Benedicite, cete, et omnia quae moventur in aquis, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye whales, and all that move in the waters, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 80
+    text:
+      la: "Benedicite, omnes volucres caeli, Domino: laudate et superexaltate eum in saecula."
+      en: "O all ye fowls of the air, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 81
+    text:
+      la: "Benedicite, omnes bestiae et pecora, Domino: laudate et superexaltate eum in saecula."
+      en: "O all ye beasts and cattle, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 82
+    text:
+      la: "Benedicite, filii hominum, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye sons of men, bless the Lord, praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 83
+    text:
+      la: "Benedicat Israel Dominum: laudet et superexaltet eum in saecula."
+      en: "O let Israel bless the Lord: let them praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 84
+    text:
+      la: "Benedicite, sacerdotes Domini, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye priests of the Lord, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 85
+    text:
+      la: "Benedicite, servi Domini, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye servants of the Lord, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 86
+    text:
+      la: "Benedicite, spiritus et animae justorum, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye spirits and souls of the just, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 87
+    text:
+      la: "Benedicite, sancti et humiles corde, Domino: laudate et superexaltate eum in saecula."
+      en: "O ye holy and humble of heart, bless the Lord: praise and exalt him above all for ever."
+    status: { la: verified, en: verified }
+  - n: 88
+    text:
+      la: "Benedicite, Anania, Azaria, Misael, Domino: laudate et superexaltate eum in saecula: quia eruit nos de inferno, et salvos fecit de manu mortis: et liberavit nos de medio ardentis flammae, et de medio ignis eruit nos."
+      en: "O Ananias, Azarias, and Misael, bless ye the Lord: praise and exalt him above all for ever. For he hath delivered us from hell, and saved us out of the hand of death, and delivered us out of the midst of the burning flame, and saved us out of the midst of the fire."
+    status: { la: verified, en: verified }
+  - n: 89
+    text:
+      la: "Confitemini Domino, quoniam bonus: quoniam in saeculum misericordia ejus."
+      en: "O give thanks to the Lord, because he is good: because his mercy endureth for ever and ever."
+    status: { la: verified, en: verified }
+  - n: 90
+    text:
+      la: "Benedicite, omnes religiosi, Domino Deo deorum: laudate et confitemini ei, quia in omnia saecula misericordia ejus."
+      en: "O all ye religious, bless the Lord the God of gods: praise him and give him thanks, because his mercy endureth for ever and ever."
+    status: { la: verified, en: verified }
+  - n: 91
+    text:
+      la: "Tunc Nabuchodonosor rex obstupuit, et surrexit propere, et ait optimatibus suis: Nonne tres viros misimus in medium ignis compeditos? Qui respondentes regi, dixerunt: Vere, rex."
+      en: "Then Nabuchodonosor the king was astonished, and rose up in haste, and said to his nobles: Did we not cast three men bound into the midst of the fire? They answered the king, and said: True, O king."
+    status: { la: verified, en: verified }
+  - n: 92
+    text:
+      la: "Respondit, et ait: Ecce ego video quatuor viros solutos, et ambulantes in medio ignis, et nihil corruptionis in eis est, et species quarti similis filio Dei."
+      en: "He answered, and said: Behold I see four men loose, and walking in the midst of the fire, and there is no hurt in them, and the form of the fourth is like the Son of God."
+    status: { la: verified, en: verified }
+  - n: 93
+    text:
+      la: "Tunc accessit Nabuchodonosor ad ostium fornacis ignis ardentis, et ait: Sidrach, Misach, et Abdenago, servi Dei excelsi, egredimini, et venite. Statimque egressi sunt Sidrach, Misach, et Abdenago de medio ignis."
+      en: "Then Nabuchodonosor came to the door of the burning fiery furnace, and said: Sidrach, Misach, and Abdenago, ye servants of the most high God, go ye forth, and come. And immediately Sidrach, Misach, and Abdenago went out from the midst of the fire."
+    status: { la: verified, en: verified }
+  - n: 94
+    text:
+      la: "Et congregati satrapae, et magistratus, et judices, et potentes regis contemplabantur viros illos, quoniam nihil potestatis habuisset ignis in corporibus eorum, et capillus capitis eorum non esset adustus, et sarabala eorum non fuissent immutata, et odor ignis non transisset per eos."
+      en: "And the nobles, and the magistrates, and the judges, and the great men of the king being gathered together, considered these men, that the fire had no power on their bodies, and that not a hair of their head had been singed, nor their garments altered, nor the smell of the fire had passed on them."
+    status: { la: verified, en: verified }
+  - n: 95
+    text:
+      la: "Et erumpens Nabuchodonosor, ait: Benedictus Deus eorum, Sidrach videlicet, Misach, et Abdenago: qui misit angelum suum, et eruit servos suos, qui crediderunt in eum: et verbum regis immutaverunt, et tradiderunt corpora sua ne servirent, et ne adorarent omnem deum, excepto Deo suo."
+      en: "Then Nabuchodonosor breaking forth, said: Blessed be the God of them, to wit, of Sidrach, Misach, and Abdenago, who hath sent his angel, and delivered his servants that believed in him: and they changed the king's word, and delivered up their bodies that they might not serve, nor adore any god, except their own God."
+    status: { la: verified, en: verified }
+  - n: 96
+    text:
+      la: "A me ergo positum est hoc decretum: ut omnis populus, tribus, et lingua, quaecumque locuta fuerit blasphemiam contra Deum Sidrach, Misach, et Abdenago, dispereat, et domus ejus vastetur: neque enim est alius Deus, qui possit ita salvare."
+      en: "By me therefore this decree is made, that every people, tribe, and tongue, which shall speak blasphemy against the God of Sidrach, Misach, and Abdenago, shall be destroyed, and their houses laid waste: for there is no other God that can save in this manner."
+    status: { la: verified, en: verified }
+  - n: 97
+    text:
+      la: "Tunc rex promovit Sidrach, Misach, et Abdenago in provincia Babylonis."
+      en: "Then the king promoted Sidrach, Misach, and Abdenago, in the province of Babylon."
+    status: { la: verified, en: verified }
+  - n: 98
+    text:
+      la: "Nabuchodonosor rex, omnibus populis, gentibus, et linguis, qui habitant in universa terra, pax vobis multiplicetur."
+      en: "Nabuchodonosor the king, to all peoples, nations, and tongues, that dwell in all the earth, peace be multiplied unto you."
+    status: { la: verified, en: verified }
+  - n: 99
+    text:
+      la: "Signa, et mirabilia fecit apud me Deus excelsus. Placuit ergo mihi praedicare"
+      en: "The most high God hath wrought signs and wonders toward me. It hath seemed good to me therefore to publish"
+    status: { la: verified, en: verified }
+  - n: 100
+    text:
+      la: "signa ejus, quia magna sunt: et mirabilia ejus, quia fortia: et regnum ejus regnum sempiternum, et potestas ejus in generationem et generationem."
+      en: "His signs, because they are great: and his wonders, because they are mighty: and his kingdom is an everlasting kingdom, and his power to all generations."
     status: { la: verified, en: verified }

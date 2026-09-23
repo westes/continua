@@ -1,107 +1,107 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: jer
 chapter: 37
 verses:
   - n: 1
     text:
-      la: "et regnavit rex Sedecias filius Iosiae pro Iechonia filio Ioachim quem constituit regem Nabuchodonosor rex Babylonis in terra Iuda"
+      la: "Et regnavit rex Sedecias filius Josiae pro Jechonia filio Joakim, quem constituit regem Nabuchodonosor rex Babylonis in terra Juda:"
       en: "Now king Sedecias the son of Josias reigned instead of Jechonias the son of Joakim: whom Nabuchodonosor king of Babylon made king in the land of Juda."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et non oboedivit ipse et servi eius et populus terrae verbis Domini quae locutus est in manu Hieremiae prophetae"
+      la: "et non obedivit ipse, et servi ejus, et populus terrae, verbis Domini, quae locutus est in manu Jeremiae prophetae."
       en: "But neither he, nor his servants, nor the people of the land did obey the words of the Lord, that he spoke in the hand of Jeremias the prophet."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et misit rex Sedecias Iuchal filium Selemiae et Sophoniam filium Maasiae sacerdotem ad Hieremiam prophetam dicens ora pro nobis Dominum Deum nostrum"
+      la: "Et misit rex Sedecias Juchal filium Selemiae, et Sophoniam filium Maasiae, sacerdotem, ad Jeremiam prophetam, dicens: Ora pro nobis Dominum Deum nostrum."
       en: "And king Sedecias sent Juchal the son of Selemias, and Sophonias the son of Maasias the priest to Jeremias the prophet, saying: Pray to the Lord our God for us."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "Hieremias autem libere ambulabat in medio populi non enim miserant eum in custodiam carceris igitur exercitus Pharao egressus est Aegyptum et audientes Chaldei qui obsidebant Hierusalem huiuscemodi nuntium recesserunt ab Hierusalem"
-      en: "Now Jeremias walked freely in the midst of the people r for they had not as yet cast him into prison. And the army of Pharao was come out of Egypt: and the Chaldeans that besieged Jerusalem, hearing these tidings, departed from Jerusalem."
+      la: "Jeremias autem libere ambulabat in medio populi: non enim miserant eum in custodiam carceris. Igitur exercitus Pharaonis egressus est de Aegypto, et audientes Chaldaei, qui obsidebant Jerusalem, hujuscemodi nuntium, recesserunt ab Jerusalem."
+      en: "Now Jeremias walked freely in the midst of the people: for they had not as yet cast him into prison. And the army of Pharao was come out of Egypt: and the Chaldeans that besieged Jerusalem, hearing these tidings, departed from Jerusalem."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et factum est verbum Domini ad Hieremiam prophetam dicens"
+      la: "Et factum est verbum Domini ad Jeremiam prophetam, dicens:"
       en: "And the word of the Lord came to Jeremias the prophet, saying:"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "haec dicit Dominus Deus Israhel sic dicetis regi Iuda qui misit vos ad me ad interrogandum ecce exercitus Pharaonis qui egressus est vobis in auxilium revertetur in terram suam in Aegyptum"
+      la: "Haec dicit Dominus Deus Israel: Sic dicetis regi Juda, qui misit vos ad me interrogandum: Ecce exercitus Pharaonis, qui egressus est vobis in auxilium, revertetur in terram suam in Aegyptum:"
       en: "Thus saith the Lord the God of Israel: Thus shall you say to the king of Juda, who sent you to inquire of me: Behold the army of Pharao, which is come forth to help you, shall return into their own land, into Egypt."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et redient Chaldei et bellabunt contra civitatem hanc et capient eam et incendent igni"
+      la: "et redient Chaldaei, et bellabunt contra civitatem hanc, et capient eam, et succendent eam igni."
       en: "And the Chaldeans shall come again, and fight against this city, and take it, and burn it with fire."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "haec dicit Dominus nolite decipere animas vestras dicentes euntes abibunt et recedent a nobis Chaldei quia non abibunt"
+      la: "Haec dicit Dominus: Nolite decipere animas vestras, dicentes: Euntes abibunt, et recedent a nobis Chaldaei: quia non abibunt."
       en: "Thus saith the Lord: Deceive not your souls, saying: The Chaldeans shall surely depart and go away from us: for they shall not go away;"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "sed et si percusseritis omnem exercitum Chaldeorum qui proeliantur adversum vos et derelicti fuerint ex eis aliqui vulnerati singuli de tentorio suo consurgent et incendent civitatem hanc igni"
-      en: "But if you should even beat al: the army of the Chaldeans that fight against you, and there should be left of them some wounded men: they shall rise up, every man from his tent, and burn this city with Are."
+      la: "Sed, etsi percusseritis omnem exercitum Chaldaeorum qui praeliantur adversum vos, et derelicti fuerint ex eis aliqui vulnerati, singuli de tentorio suo consurgent, et incendent civitatem hanc igni."
+      en: "But if you should even beat all the army of the Chaldeans that fight against you, and there should be left of them some wounded men: they shall rise up, every man from his tent, and burn this city with fire."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "ergo cum recessisset exercitus Chaldeorum ab Hierusalem propter exercitum Pharaonis"
+      la: "Ergo cum recessisset exercitus Chaldaeorum ab Jerusalem, propter exercitum Pharaonis,"
       en: "Now when the army of the Chaldeans was gone away from Jerusalem, because of Pharao's army,"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "egressus est Hieremias de Hierusalem ut iret in terram Beniamin et divideret ibi possessionem in conspectu civium"
+      la: "egressus est Jeremias de Jerusalem ut iret in terram Benjamin, et divideret ibi possessionem in conspectu civium."
       en: "Jeremias went forth out of Jerusalem to go into the land of Benjamin: and to divide a possession there in the presence of the citizens."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "cumque pervenisset ad portam Beniamin erat ibi custos portae per vices nomine Hierias filius Selemiae filii Ananiae et adprehendit Hieremiam prophetam dicens ad Chaldeos profugis"
-      en: "And when he was come to the gate of Benjamin, the captain of the gate, who I was there in his turn, was one named Jerias, the son of Selemias, the son of Hananias: and he took hold of Jeremias the prophet, saying: Thou art fleeing to the Chaldeans."
+      la: "Cumque pervenisset ad portam Benjamin, erat ibi custos portae per vices, nomine Jerias filius Selemiae filii Hananiae, et apprehendit Jeremiam prophetam, dicens: Ad Chaldaeos profugis."
+      en: "And when he was come to the gate of Benjamin, the captain of the gate, who was there in his turn, was one named Jerias, the son of Selemias, the son of Hananias: and he took hold of Jeremias the prophet, saying: Thou art fleeing to the Chaldeans."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et respondit Hieremias falsum est non fugio ad Chaldeos et non audivit eum sed conprehendit Hierias Hieremiam et adduxit eum ad principes"
+      la: "Et respondit Jeremias: Falsum est, non fugio ad Chaldaeos. Et non audivit eum, sed comprehendit Jerias Jeremiam, et adduxit eum ad principes:"
       en: "And Jeremias answered: It is not so, I am not fleeing to the Chaldeans. But he hearkened not to him: so Jerias took Jeremias and brought him to the princes."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "quam ob rem irati principes contra Hieremiam caesum eum miserunt in carcerem qui erat in domo Ionathan scribae ipse enim praepositus erat super carcerem"
+      la: "quam ob rem irati principes contra Jeremiam, caesum eum miserunt in carcerem, qui erat in domo Jonathan scribae: ipse enim praepositus erat super carcerem."
       en: "Wherefore the princes were angry with Jeremias, and they beat him, and cast him into the prison that was in the house of Jonathan the scribe: for he was chief over the prison."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "itaque ingressus est Hieremias in domum laci et in ergastula et sedit ibi Hieremias diebus multis"
+      la: "Itaque ingressus est Jeremias in domum laci et in ergastulum: et sedit ibi Jeremias diebus multis."
       en: "So Jeremias went into the house of the prison, and into the dungeon: and Jeremias remained there many days."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "mittens autem rex Sedecias tulit eum et interrogavit in domo sua abscondite et dixit putasne est sermo a Domino et dixit Hieremias est et ait in manu regis Babylonis traderis"
+      la: "Mittens autem Sedecias rex, tulit eum: et interrogavit eum in domo sua abscondite, et dixit: Putasne est sermo a Domino? Et dixit Jeremias: Est: et ait: In manus regis Babylonis traderis."
       en: "Then Sedecias the king, sending, took him: and asked him secretly in his house, and said: Is there, thinkest thou, any word from the Lord? And Jeremias said: There is. And he said: Thou shalt be delivered into the hands of the king of Babylon."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "et dixit Hieremias ad regem Sedeciam quid peccavi tibi et servis tuis et populo tuo quia misisti me in domum carceris"
+      la: "Et dixit Jeremias ad regem Sedeciam: Quid peccavi tibi, et servis tuis, et populo tuo, quia misisti me in domum carceris?"
       en: "And Jeremias said to king Sedecias: In what have I offended against thee, or thy servants, or thy people, that thou hast cast me into prison?"
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "ubi sunt prophetae vestri qui prophetabant vobis et dicebant non veniet rex Babylonis super vos et super terram hanc"
+      la: "Ubi sunt prophetae vestri, qui prophetabant vobis, et dicebant: Non veniet rex Babylonis super vos, et super terram hanc?"
       en: "Where are your prophets that prophesied to you, and said: The king of Babylon shall not come against you, and against this land?"
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "nunc ergo audi obsecro domine mi rex valeat deprecatio mea in conspectu tuo et ne me remittas in domum Ionathan scribae ne moriar ibi"
+      la: "Nunc ergo audi, obsecro, domine mi rex: valeat deprecatio mea in conspectu tuo, et ne me remittas in domum Jonathan scribae, ne moriar ibi."
       en: "Now therefore hear, I beseech thee, my lord the king: let my petition be accepted in thy sight: and send me not back into the house of Jonathan the scribe, lest I die there."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "praecepit ergo rex Sedecias ut traderetur Hieremias in vestibulo carceris et daretur ei torta panis cotidie excepto pulmento donec consumerentur omnes panes de civitate et mansit Hieremias in vestibulo carceris"
+      la: "Praecepit ergo rex Sedecias ut traderetur Jeremias in vestibulo carceris, et daretur ei torta panis quotidie, excepto pulmento, donec consumerentur omnes panes de civitate: et mansit Jeremias in vestibulo carceris."
       en: "Then king Sedecias commanded that Jeremias should be committed into the entry of the prison: and that they should give him daily a piece of bread, beside broth, till all the bread in the city were spent: and Jeremias remained in the entry of the prison."
     status: { la: verified, en: verified }

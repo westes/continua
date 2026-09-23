@@ -1,147 +1,147 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: prov
 chapter: 17
 verses:
   - n: 1
     text:
-      la: "melior est buccella sicca cum gaudio quam domus plena victimis cum iurgio"
+      la: "Melior est buccella sicca cum gaudio, quam domus plena victimis cum jurgio."
       en: "Better is a dry morsel with joy, than a house full of victims with strife."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "servus sapiens dominabitur filiis stultis et inter fratres hereditatem dividet"
+      la: "Servus sapiens dominabitur filiis stultis, et inter fratres haereditatem dividet."
       en: "A wise servant shall rule over foolish sons, and shall divide the inheritance among the brethren."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "sicut igne probatur argentum et aurum camino ita corda probat Dominus"
+      la: "Sicut igne probatur argentum et aurum camino, ita corda probat Dominus."
       en: "As silver is tried by fire, and gold in the furnace: so the Lord trieth the hearts."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "malus oboedit linguae iniquae et fallax obtemperat labiis mendacibus"
+      la: "Malus obedit linguae iniquae, et fallax obtemperat labiis mendacibus."
       en: "The evil man obeyeth an unjust tongue: and the deceitful hearkeneth to lying lips."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "qui despicit pauperem exprobrat factori eius et qui in ruina laetatur alterius non erit inpunitus"
+      la: "Qui despicit pauperem exprobrat factori ejus, et qui ruina laetatur alterius non erit impunitus."
       en: "He that despiseth the poor, reproacheth his Maker; and he that rejoiceth at another man's ruin, shall not be unpunished."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "corona senum filii filiorum et gloria filiorum patres sui"
+      la: "Corona senum filii filiorum, et gloria filiorum patres eorum."
       en: "Children's children are the crown of old men: and the glory of children are their fathers."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "non decent stultum verba conposita nec principem labium mentiens"
+      la: "Non decent stultum verba composita, nec principem labium mentiens."
       en: "Eloquent words do not become a fool, nor lying lips a prince."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "gemma gratissima expectatio praestolantis quocumque se verterit prudenter intellegit"
+      la: "Gemma gratissima exspectatio praestolantis; quocumque se vertit, prudenter intelligit."
       en: "The expectation of him that expecteth, is a most acceptable jewel: whithersoever he turneth himself, he understandeth wisely."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "qui celat delictum quaerit amicitias qui altero sermone repetit separat foederatos"
+      la: "Qui celat delictum quaerit amicitias; qui altero sermone repetit, separat foederatos."
       en: "He that concealeth a transgression. seeketh friendships: he that repeateth it again, separateth friends."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "plus proficit correptio apud prudentem quam centum plagae apud stultum"
+      la: "Plus proficit correptio apud prudentem, quam centum plagae apud stultum."
       en: "A reproof availeth more with a wise man, than a hundred stripes with a fool."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "semper iurgia quaerit malus angelus autem crudelis mittetur contra eum"
+      la: "Semper jurgia quaerit malus; angelus autem crudelis mittetur contra eum."
       en: "An evil man always seeketh quarrels: but a cruel angel shall be sent against him."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "expedit magis ursae occurrere raptis fetibus quam fatuo confidenti sibi in stultitia sua"
+      la: "Expedit magis ursae occurrere raptis foetibus, quam fatuo confidenti in stultitia sua."
       en: "It is better to meet a bear robbed of her whelps, than a fool trusting in his own folly."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "qui reddit mala pro bonis non recedet malum de domo eius"
+      la: "Qui reddit mala pro bonis, non recedet malum de domo ejus."
       en: "He that rendereth evil for good, evil shall not depart from his house."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "qui dimittit aquam caput est iurgiorum et antequam patiatur contumeliam iudicium deserit"
+      la: "Qui dimittit aquam caput est jurgiorum, et antequam patiatur contumeliam judicium deserit."
       en: "The beginning of quarrels is as when one letteth out water: before he suffereth reproach he forsaketh judgment."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et qui iustificat impium et qui condemnat iustum abominabilis est uterque apud Dominum"
+      la: "Qui justificat impium, et qui condemnat justum, abominabilis est uterque apud Deum."
       en: "He that justifieth the wicked, and he that condemneth the just, both are abominable before God."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "quid prodest habere divitias stultum cum sapientiam emere non possit"
+      la: "Quid prodest stulto habere divitias, cum sapientiam emere non possit? Qui altum facit domum suam quaerit ruinam, et qui evitat discere incidet in mala."
       en: "What doth it avail a fool to have riches, seeing he cannot buy wisdom? He that maketh his house high, seeketh a downfall: and he that refuseth to learn, shall fall into evils."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "omni tempore diligit qui amicus est et frater in angustiis conprobatur"
+      la: "Omni tempore diligit qui amicus est, et frater in angustiis comprobatur."
       en: "He that is a friend loveth at all times: and a brother is proved in distress."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "homo stultus plaudet manibus cum spoponderit pro amico suo"
+      la: "Stultus homo plaudet manibus, cum spoponderit pro amico suo."
       en: "A foolish man will clap hands, when he is surety for his friend."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "qui meditatur discordiam diligit rixas et qui exaltat ostium quaerit ruinam"
+      la: "Qui meditatur discordias diligit rixas, et qui exaltat ostium quaerit ruinam."
       en: "He that studieth discords, loveth quarrels: and he that exalteth his door, seeketh ruin."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "qui perversi cordis est non inveniet bonum et qui vertit linguam incidet in malum"
+      la: "Qui perversi cordis est non inveniet bonum, et qui vertit linguam incidet in malum."
       en: "He that is of a perverse heart, shall not find good: and he that perverteth his tongue, shall fall into evil."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "natus est stultus in ignominiam suam sed nec pater in fatuo laetabitur"
+      la: "Natus est stultus in ignominiam suam; sed nec pater in fatuo laetabitur."
       en: "A fool is born to his own disgrace: and even his father shall not rejoice in a fool."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "animus gaudens aetatem floridam facit spiritus tristis exsiccat ossa"
+      la: "Animus gaudens aetatem floridam facit; spiritus tristis exsiccat ossa."
       en: "A joyful mind maketh age flourishing: a sorrowful spirit drieth up the bones."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "munera de sinu impius accipit ut pervertat semitas iudicii"
+      la: "Munera de sinu impius accipit, ut pervertat semitas judicii."
       en: "The wicked man taketh gifts out of the bosom, that he may pervert the paths of judgment."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "in facie prudentis lucet sapientia oculi stultorum in finibus terrae"
+      la: "In facie prudentis lucet sapientia; oculi stultorum in finibus terrae."
       en: "Wisdom shineth in the face of the wise: the eyes of fools are in the ends of the earth."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "ira patris filius stultus et dolor matris quae genuit eum"
+      la: "Ira patris filius stultus, et dolor matris quae genuit eum."
       en: "A foolish son is the anger of the father: and the sorrow of the mother that bore him."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "non est bonum damnum inferre iusto nec percutere principem qui recta iudicat"
+      la: "Non est bonum damnum inferre justo, nec percutere principem qui recta judicat."
       en: "It is no good thing to do hurt to the just: nor to strike the prince, who judgeth right."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "qui moderatur sermones suos doctus et prudens est et pretiosi spiritus vir eruditus"
-      en: "He that setteth bounds to his words. is knowing and wise: and the man of understanding is of a precious spirit."
+      la: "Qui moderatur sermones suos doctus et prudens est, et pretiosi spiritus vir eruditus."
+      en: "He that setteth bounds to his words, is knowing and wise: and the man of understanding is of a precious spirit."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "stultus quoque si tacuerit sapiens putabitur et si conpresserit labia sua intellegens"
+      la: "Stultus quoque, si tacuerit, sapiens reputabitur, et si compresserit labia sua, intelligens."
       en: "Even a fool, if he will hold his peace shall be counted wise: and if he close his lips, a man of understanding."
     status: { la: verified, en: verified }

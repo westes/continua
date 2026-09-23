@@ -1,8 +1,7 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for dan 6 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: dan
 chapter: 6
 verses:
@@ -13,7 +12,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "Et super eos principes tres, ex quibus Daniel unus erat : ut satrapae illis redderent rationem, et rex non sustineret molestiam."
+      la: "Et super eos principes tres, ex quibus Daniel unus erat: ut satrapae illis redderent rationem, et rex non sustineret molestiam."
       en: "And three princes over them, of whom Daniel was one: that the governors might give an account to them, and the king might have no trouble."
     status: { la: verified, en: verified }
   - n: 3
@@ -23,27 +22,27 @@ verses:
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "Porro rex cogitabat constituere eum super omne regnum : unde principes, et satrapae quaerebant occasionem ut invenirent Danieli ex latere regis : nullamque causam, et suspicionem reperire potuerunt, eo quod fidelis esset, et omnis culpa, et suspicio non inveniretur in eo."
+      la: "Porro rex cogitabat constituere eum super omne regnum: unde principes, et satrapae quaerebant occasionem ut invenirent Danieli ex latere regis: nullamque causam, et suspicionem reperire potuerunt, eo quod fidelis esset, et omnis culpa, et suspicio non inveniretur in eo."
       en: "And the king thought to set him over all the kingdom: whereupon the princes, and the governors sought to find occasion against Daniel with regard to the king: and they could find no cause, nor suspicion, because he was faithful, and no fault, nor suspicion was found in him."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "Dixerunt ergo viri illi : Non inveniemus Danieli huic aliquam occasionem, nisi forte in lege Dei sui."
+      la: "Dixerunt ergo viri illi: Non inveniemus Danieli huic aliquam occasionem, nisi forte in lege Dei sui."
       en: "Then these men said: We shall not find any occasion against this Daniel, unless perhaps concerning the law of his God."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "Tunc principes et satrapae surripuerunt regi, et sic locuti sunt ei : Dari rex, in aeternum vive!"
+      la: "Tunc principes et satrapae surripuerunt regi, et sic locuti sunt ei: Dari rex, in aeternum vive!"
       en: "Then the princes, and the governors craftily suggested to the king, and spoke thus unto him: King Darius, live for ever:"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "consilium inierunt omnes principes regni tui, magistratus, et satrapae, senatores, et judices, ut decretum imperatorium exeat, et edictum : ut omnis, qui petierit aliquam petitionem a quocumque deo et homine usque ad triginta dies, nisi a te, rex, mittatur in lacum leonum."
+      la: "consilium inierunt omnes principes regni tui, magistratus, et satrapae, senatores, et judices, ut decretum imperatorium exeat, et edictum: ut omnis, qui petierit aliquam petitionem a quocumque deo et homine usque ad triginta dies, nisi a te, rex, mittatur in lacum leonum."
       en: "All the princes of the kingdom, the magistrates, and governors, the senators, and judges have consulted together, that an imperial decree, and an edict be published: That whosoever shall ask any petition of any god, or man, for thirty days, but of thee, O king, shall be cast into the den of lions."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "Nunc itaque rex, confirma sententiam, et scribe decretum : ut non immutetur quod statutum est a Medis et Persis, nec praevaricari cuiquam liceat."
+      la: "Nunc itaque rex, confirma sententiam, et scribe decretum: ut non immutetur quod statutum est a Medis et Persis, nec praevaricari cuiquam liceat."
       en: "Now, therefore, O king, confirm the sentence, and sign the decree: that what is decreed by the Medes and Persians may not be altered, nor any man be allowed to transgress it."
     status: { la: verified, en: verified }
   - n: 9
@@ -53,7 +52,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "Quod cum Daniel comperisset, id est, constitutam legem, ingressus est domum suam : et fenestris apertis in coenaculo suo contra Jerusalem tribus temporibus in die flectebat genua sua, et adorabat, confitebaturque coram Deo suo sicut et ante facere consueverat."
+      la: "Quod cum Daniel comperisset, id est, constitutam legem, ingressus est domum suam: et fenestris apertis in coenaculo suo contra Jerusalem tribus temporibus in die flectebat genua sua, et adorabat, confitebaturque coram Deo suo sicut et ante facere consueverat."
       en: "Now when Daniel knew this, that is to say, that the law was made, he went into his house: and opening the windows in his upper chamber towards Jerusalem, he knelt down three times a day, and adored, and gave thanks before his God, as he had been accustomed to do before."
     status: { la: verified, en: verified }
   - n: 11
@@ -63,32 +62,32 @@ verses:
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "Et accedentes locuti sunt regi super edicto : Rex, numquid non constituisti ut omnis homo qui rogaret quemquam de diis et hominibus usque ad dies triginta, nisi te, rex, mitteretur in lacum leonum? Ad quos respondens rex, ait : Verus est sermo juxta decretum Medorum atque Persarum, quod praevaricari non licet."
+      la: "Et accedentes locuti sunt regi super edicto: Rex, numquid non constituisti ut omnis homo qui rogaret quemquam de diis et hominibus usque ad dies triginta, nisi te, rex, mitteretur in lacum leonum? Ad quos respondens rex, ait: Verus est sermo juxta decretum Medorum atque Persarum, quod praevaricari non licet."
       en: "And they came and spoke to the king concerning the edict: O king, hast thou not decreed, that every man that should make a request to any of the gods, or men, for thirty days, but to thyself, O king, should be cast into the den of the lions? And the king answered them, saying: The word is true according to the decree of the Medes and Persians, which it is not lawful to violate."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "Tunc respondentes dixerunt coram rege : Daniel de filiis captivitatis Juda, non curavit de lege tua, et de edicto quod constituisti : sed tribus temporibus per diem orat obsecratione sua."
+      la: "Tunc respondentes dixerunt coram rege: Daniel de filiis captivitatis Juda, non curavit de lege tua, et de edicto quod constituisti: sed tribus temporibus per diem orat obsecratione sua."
       en: "Then they answered, and said before the king: Daniel, who is of the children of the captivity of Juda, hath not regarded thy law, nor the decree that thou hast made: but three times a day he maketh his prayer."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "Quod verbum cum audisset rex, satis contristatus est : et pro Daniele posuit cor ut liberaret eum, et usque ad occasum solis laborabat ut erueret illum."
+      la: "Quod verbum cum audisset rex, satis contristatus est: et pro Daniele posuit cor ut liberaret eum, et usque ad occasum solis laborabat ut erueret illum."
       en: "Now when the king had heard these words, he was very much grieved, and in behalf of Daniel he set his heart to deliver him and even till sunset he laboured to save him."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "Viri autem illi, intelligentes regem, dixerunt ei : Scito, rex, quia lex Medorum atque Persarum est ut omne decretum, quod constituerit rex, non liceat immutari."
+      la: "Viri autem illi, intelligentes regem, dixerunt ei: Scito, rex, quia lex Medorum atque Persarum est ut omne decretum, quod constituerit rex, non liceat immutari."
       en: "But those men perceiving the king's design, said to him: Know thou, O king, that the law of the Medes and Persians is, that no decree which the king hath made, may be altered."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "Tunc rex praecepit, et adduxerunt Danielem, et miserunt eum in lacum leonum. Dixitque rex Danieli : Deus tuus, quem colis semper, ipse liberabit te."
+      la: "Tunc rex praecepit, et adduxerunt Danielem, et miserunt eum in lacum leonum. Dixitque rex Danieli: Deus tuus, quem colis semper, ipse liberabit te."
       en: "Then the king commanded, and they brought Daniel, and cast him into the den of the lions. And the king said to Daniel: Thy God, whom thou always servest, he will deliver thee."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "Allatusque est lapis unus, et positus est super os laci : quem obsignavit rex annulo suo, et annulo optimatum suorum, ne quid fieret contra Danielem."
+      la: "Allatusque est lapis unus, et positus est super os laci: quem obsignavit rex annulo suo, et annulo optimatum suorum, ne quid fieret contra Danielem."
       en: "And a stone was brought, and laid upon the mouth of the den: which the king sealed with his own ring, and with the ring of his nobles, that nothing should be done against Daniel."
     status: { la: verified, en: verified }
   - n: 18
@@ -98,47 +97,47 @@ verses:
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "Tunc rex primo diluculo consurgens, festinus ad lacum leonum perrexit :"
+      la: "Tunc rex primo diluculo consurgens, festinus ad lacum leonum perrexit:"
       en: "Then the king rising very early in the morning, went in haste to the lions' den:"
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "appropinquansque lacui, Danielem voce lacrimabili inclamavit, et affatus est eum : Daniel serve Dei viventis, Deus tuus, cui tu servis semper, putasne valuit te liberare a leonibus?"
+      la: "appropinquansque lacui, Danielem voce lacrimabili inclamavit, et affatus est eum: Daniel serve Dei viventis, Deus tuus, cui tu servis semper, putasne valuit te liberare a leonibus?"
       en: "And coming near to the den, cried with a lamentable voice to Daniel, and said to him: Daniel, servant of the living God, hath thy God, whom thou servest always, been able, thinkest thou, to deliver thee from the lions?"
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "Et Daniel regi respondens ait : Rex, in aeternum vive!"
+      la: "Et Daniel regi respondens ait: Rex, in aeternum vive!"
       en: "And Daniel answering the king, said: O king, live for ever:"
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "Deus meus misit angelum suum, et conclusit ora leonum, et non nocuerunt mihi : quia coram eo justitia inventa est in me : sed et coram te, rex, delictum non feci."
+      la: "Deus meus misit angelum suum, et conclusit ora leonum, et non nocuerunt mihi: quia coram eo justitia inventa est in me: sed et coram te, rex, delictum non feci."
       en: "My God hath sent his angel, and hath shut up the mouths of the lions, and they have not hurt me: forasmuch as before him justice hath been found in me: yea and before thee, O king, I have done no offence."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "Tunc vehementer rex gavisus est super eo, et Danielem praecepit educi de lacu : eductusque est Daniel de lacu, et nulla laesio inventa est in eo, quia credidit Deo suo."
+      la: "Tunc vehementer rex gavisus est super eo, et Danielem praecepit educi de lacu: eductusque est Daniel de lacu, et nulla laesio inventa est in eo, quia credidit Deo suo."
       en: "Then was the king exceeding glad for him, and he commanded that Daniel should be taken out of the den: and Daniel was taken out of the den, and no hurt was found in him, because he believed in his God."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "Jubente autem rege, adducti sunt viri illi, qui accusaverant Danielem : et in lacum leonum missi sunt, ipsi, et filii, et uxores eorum : et non pervenerunt usque ad pavimentum laci, donec arriperent eos leones, et omnia ossa eorum comminuerunt."
+      la: "Jubente autem rege, adducti sunt viri illi, qui accusaverant Danielem: et in lacum leonum missi sunt, ipsi, et filii, et uxores eorum: et non pervenerunt usque ad pavimentum laci, donec arriperent eos leones, et omnia ossa eorum comminuerunt."
       en: "And by the king's commandment, those men were brought that had accused Daniel: and they were cast into the lions' den, they and their children, and their wives: and they did not reach the bottom of the den, before the lions caught them, and broke all their bones in pieces."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "Tunc Darius rex scripsit universis populis, tribubus, et linguis habitantibus in universa terra : Pax vobis multiplicetur."
+      la: "Tunc Darius rex scripsit universis populis, tribubus, et linguis habitantibus in universa terra: Pax vobis multiplicetur."
       en: "Then king Darius wrote to all people, tribes, and languages, dwelling in the whole earth: PEACE be multiplied unto you."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "A me constitutum est decretum, ut in universo imperio et regno meo, tremiscant et paveant Deum Danielis : ipse est enim Deus vivens, et aeternus in saecula, et regnum ejus non dissipabitur, et potestas ejus usque in aeternum."
+      la: "A me constitutum est decretum, ut in universo imperio et regno meo, tremiscant et paveant Deum Danielis: ipse est enim Deus vivens, et aeternus in saecula, et regnum ejus non dissipabitur, et potestas ejus usque in aeternum."
       en: "It is decreed by me, that in all my empire and my kingdom all men dread and fear the God of Daniel. For he is the living and eternal God for ever: and his kingdom shall not be destroyed, and his power shall be for ever."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "Ipse liberator atque salvator, faciens signa et mirabilia in caelo et in terra : qui liberavit Danielem de lacu leonum."
+      la: "Ipse liberator atque salvator, faciens signa et mirabilia in caelo et in terra: qui liberavit Danielem de lacu leonum."
       en: "He is the deliverer, and saviour, doing signs and wonders in heaven, and in earth: who hath delivered Daniel out of the lions' den."
     status: { la: verified, en: verified }
   - n: 28

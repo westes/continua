@@ -1,132 +1,132 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1pet
 chapter: 1
 verses:
   - n: 1
     text:
-      la: "Petrus apostolus Iesu Christi electis advenis dispersionis Ponti Galatiae Cappadociae Asiae et Bithyniae"
+      la: "Petrus Apostolus Jesu Christi, electis advenis dispersionis Ponti, Galatiae, Cappadociae, Asiae, et Bithyniae,"
       en: "Peter, an apostle of Jesus Christ, to the strangers dispersed through Pontus, Galatia, Cappadocia, Asia, and Bithynia, elect,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "secundum praescientiam Dei Patris in sanctificatione Spiritus in oboedientiam et aspersionem sanguinis Iesu Christi gratia vobis et pax multiplicetur"
+      la: "secundum praescientiam Dei Patris, in sanctificationem Spiritus, in obedientiam, et aspersionem sanguinis Jesu Christi. Gratia vobis, et pax multiplicetur."
       en: "According to the foreknowledge of God the Father, unto the sanctification of the Spirit, unto obedience and sprinkling of the blood of Jesus Christ: Grace unto you and peace be multiplied."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "benedictus Deus et Pater Domini nostri Iesu Christi qui secundum magnam misericordiam suam regeneravit nos in spem vivam per resurrectionem Iesu Christi ex mortuis"
+      la: "Benedictus Deus et Pater Domini nostri Jesu Christi, qui secundum misericordiam suam magnam regeneravit nos in spem vivam, per resurrectionem Jesu Christi ex mortuis,"
       en: "Blessed be the God and Father of our Lord Jesus Christ, who according to his great mercy hath regenerated us unto a lively hope, by the resurrection of Jesus Christ from the dead,"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "in hereditatem incorruptibilem et incontaminatam et inmarcescibilem conservatam in caelis in vobis"
+      la: "in haereditatem incorruptibilem, et incontaminatam, et immarcescibilem, conservatam in caelis in vobis,"
       en: "Unto an inheritance incorruptible, and undefiled, and that can not fade, reserved in heaven for you,"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "qui in virtute Dei custodimini per fidem in salutem paratam revelari in tempore novissimo"
+      la: "qui in virtute Dei custodimini per fidem in salutem, paratam revelari in tempore novissimo."
       en: "Who, by the power of God, are kept by faith unto salvation, ready to be revealed in the last time."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "in quo exultatis modicum nunc si oportet contristati in variis temptationibus"
+      la: "In quo exsultabis, modicum nunc si oportet contristari in variis tentationibus:"
       en: "Wherein you shall greatly rejoice, if now you must be for a little time made sorrowful in divers temptations:"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "ut probatum vestrae fidei multo pretiosius sit auro quod perit per ignem probato inveniatur in laudem et gloriam et honorem in revelatione Iesu Christi"
+      la: "ut probatio vestrae fidei multo pretiosior auro ( quod per ignem probatur) inveniatur in laudem, et gloriam, et honorem in revelatione Jesu Christi:"
       en: "That the trial of your faith (much more precious than gold which is tried by the fire) may be found unto praise and glory and honour at the appearing of Jesus Christ:"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "quem cum non videritis diligitis in quem nunc quoque non videntes credentes autem exultatis laetitia inenarrabili et glorificata"
+      la: "quem cum non videritis, diligitis: in quem nunc quoque non videntes creditis: credentes autem exsultabitis laetitia inenarrabili, et glorificata:"
       en: "Whom having not seen, you love: in whom also now, though you see him not, you believe: and believing shall rejoice with joy unspeakable and glorified;"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "reportantes finem fidei vestrae salutem animarum"
+      la: "reportantes finem fidei vestrae, salutem animarum."
       en: "Receiving the end of your faith, even the salvation of your souls."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "de qua salute exquisierunt atque scrutati sunt prophetae qui de futura in vobis gratia prophetaverunt"
+      la: "De qua salute exquisierunt, atque scrutati sunt prophetae, qui de futura in vobis gratia prophetaverunt:"
       en: "Of which salvation the prophets have inquired and diligently searched, who prophesied of the grace to come in you."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "scrutantes in quod vel quale tempus significaret in eis Spiritus Christi praenuntians eas quae in Christo sunt passiones et posteriores glorias"
+      la: "scrutantes in quod vel quale tempus significaret in eis Spiritus Christi: praenuntians eas quae in Christo sunt passiones, et posteriores glorias:"
       en: "Searching what or what manner of time the Spirit of Christ in them did signify: when it foretold those sufferings that are in Christ, and the glories that should follow:"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "quibus revelatum est quia non sibi ipsis vobis autem ministrabant ea quae nunc nuntiata sunt vobis per eos qui evangelizaverunt vos Spiritu Sancto misso de caelo in quae desiderant angeli prospicere"
+      la: "quibus revelatum est quia non sibimetipsis, vobis autem ministrabant ea quae nunc nuntiata sunt vobis per eos qui evangelizaverunt vobis, Spiritu Sancto misso de caelo, in quem desiderant angeli prospicere."
       en: "To whom it was revealed, that not to themselves, but to you they ministered those things which are now declared to you by them that have preached the gospel to you, the Holy Ghost being sent down from heaven, on whom the angels desire to look."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "propter quod succincti lumbos mentis vestrae sobrii perfecte sperate in eam quae offertur vobis gratiam in revelatione Iesu Christi"
+      la: "Propter quod succincti lumbos mentis vestrae, sobrii, perfecte sperate in eam, quae offertur vobis, gratiam, in revelationem Jesu Christi:"
       en: "Wherefore having the loins of your mind girt up, being sober, trust perfectly in the grace which is offered you in the revelation of Jesus Christ,"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "quasi filii oboedientiae non configurati prioribus ignorantiae vestrae desideriis"
+      la: "quasi filii obedientiae, non configurati prioribus ignorantiae vestrae desideriis:"
       en: "As children of obedience, not fashioned according to the former desires of your ignorance:"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "sed secundum eum qui vocavit vos sanctum et ipsi sancti in omni conversatione sitis"
+      la: "sed secundum eum qui vocavit vos, Sanctum: et ipsi in omni conversatione sancti sitis:"
       en: "But according to him that hath called you, who is holy, be you also in all manner of conversation holy:"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "quoniam scriptum est sancti eritis quia ego sanctus sum"
+      la: "quoniam scriptum est: Sancti eritis, quoniam ego sanctus sum."
       en: "Because it is written: You shall be holy, for I am holy."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "et si Patrem invocatis eum qui sine acceptione personarum iudicat secundum uniuscuiusque opus in timore incolatus vestri tempore conversamini"
+      la: "Et si patrem invocatis eum, qui sine acceptione personarum judicat secundum uniuscujusque opus, in timore incolatus vestri tempore conversamini."
       en: "And if you invoke as Father him who, without respect of persons, judgeth according to every one's work: converse in fear during the time of your sojourning here."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "scientes quod non corruptibilibus argento vel auro redempti estis de vana vestra conversatione paternae traditionis"
+      la: "Scientes quod non corruptibilibus, auro vel argento, redempti estis de vana vestra conversatione paternae traditionis:"
       en: "Knowing that you were not redeemed with corruptible things as gold or silver, from your vain conversation of the tradition of your fathers:"
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "sed pretioso sanguine quasi agni incontaminati et inmaculati Christi"
+      la: "sed pretioso sanguine quasi agni immaculati Christi, et incontaminati:"
       en: "But with the precious blood of Christ, as of a lamb unspotted and undefiled,"
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "praecogniti quidem ante constitutionem mundi manifestati autem novissimis temporibus propter vos"
+      la: "praecogniti quidem ante mundi constitutionem, manifestati autem novissimis temporibus propter vos,"
       en: "Foreknown indeed before the foundation of the world, but manifested in the last times for you,"
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "qui per ipsum fideles estis in Deo qui suscitavit eum a mortuis et dedit ei gloriam ut fides vestra et spes esset in Deo"
+      la: "qui per ipsum fideles estis in Deo, qui suscitavit eum a mortuis, et dedit ei gloriam, ut fides vestra et spes esset in Deo:"
       en: "Who through him are faithful in God, who raised him up from the dead, and hath given him glory, that your faith and hope might be in God."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "animas vestras castificantes in oboedientia caritatis in fraternitatis amore simplici ex corde invicem diligite adtentius"
+      la: "animas vestras castificantes in obedientia caritatis, in fraternitatis amore, simplici ex corde invicem diligite attentius:"
       en: "Purifying your souls in the obedience of charity, with a brotherly love, from a sincere heart love one another earnestly:"
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "renati non ex semine corruptibili sed incorruptibili per verbum Dei vivi et permanentis"
+      la: "renati non ex semine corruptibili, sed incorruptibili per verbum Dei vivi, et permanentis in aeternum:"
       en: "Being born again not of corruptible seed, but incorruptible, by the word of God who liveth and remaineth for ever."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "quia omnis caro ut faenum et omnis gloria eius tamquam flos faeni exaruit faenum et flos decidit"
+      la: "quia omnis caro ut foenum: et omnis gloria ejus tamquam flos foeni: exaruit foenum, et flos ejus decidit."
       en: "For all flesh is as grass; and all the glory thereof as the flower of grass. The grass is withered, and the flower thereof is fallen away."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "verbum autem Domini manet in aeternum hoc est autem verbum quod evangelizatum est in vos"
+      la: "Verbum autem Domini manet in aeternum: hoc est autem verbum, quod evangelizatum est in vos."
       en: "But the word of the Lord endureth for ever. And this is the word which by the gospel hath been preached unto you."
     status: { la: verified, en: verified }

@@ -1,102 +1,107 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: jac
 chapter: 5
 verses:
   - n: 1
     text:
-      la: "age nunc divites plorate ululantes in miseriis quae advenient vobis"
+      la: "Agite nunc divites, plorate ululantes in miseriis vestris, quae advenient vobis."
       en: "Go to now, ye rich men, weep and howl in your miseries, which shall come upon you."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "divitiae vestrae putrefactae sunt et vestimenta vestra a tineis comesta sunt"
+      la: "Divitiae vestrae putrefactae sunt, et vestimenta vestra a tineis comesta sunt."
       en: "Your riches are corrupted: and your garments are motheaten."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "aurum et argentum vestrum eruginavit et erugo eorum in testimonium vobis erit et manducabit carnes vestras sicut ignis thesaurizastis in novissimis diebus"
+      la: "Aurum et argentum vestrum aeruginavit: et aerugo eorum in testimonium vobis erit, et manducabit carnes vestras sicut ignis. Thesaurizastis vobis iram in novissimis diebus."
       en: "Your gold and silver is cankered: and the rust of them shall be for a testimony against you, and shall eat your flesh like fire. You have stored up to yourselves wrath against the last days."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "ecce merces operariorum qui messuerunt regiones vestras qui fraudatus est a vobis clamat et clamor ipsorum in aures Domini Sabaoth introiit"
-      en: "Behold the hire of the labourers, who have reaped down your fields, which by fraud has been kept back by you, crieth: and the cry of them hath entered into the ears of the Lord of sabaoth."
+      la: "Ecce merces operariorum, qui messuerunt regiones vestras, quae fraudata est a vobis, clamat: et clamor eorum in aures Domini sabbaoth introivit."
+      en: "Behold the hire of the labourers, who have reaped down your fields, which by fraud has been kept back by you, crieth: and the cry of them hath entered into the ears of the Lord of Sabaoth."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "epulati estis super terram et in luxuriis enutristis corda vestra in die occisionis"
+      la: "Epulati estis super terram, et in luxuriis enutristis corda vestra in die occisionis."
       en: "You have feasted upon earth: and in riotousness you have nourished your hearts, in the day of slaughter."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "addixistis occidistis iustum non resistit vobis"
+      la: "Addixistis, et occidistis justum, et non resistit vobis."
       en: "You have condemned and put to death the Just One, and he resisted you not."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "patientes igitur estote fratres usque ad adventum Domini ecce agricola expectat pretiosum fructum terrae patienter ferens donec accipiat temporivum et serotinum"
+      la: "Patientes igitur estote, fratres, usque ad adventum Domini. Ecce agricola exspectat pretiosum fructum terrae, patienter ferens donec accipiat temporaneum et serotinum."
       en: "Be patient therefore, brethren, until the coming of the Lord. Behold, the husbandman waiteth for the precious fruit of the earth: patiently bearing till he receive the early and latter rain."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "patientes estote et vos confirmate corda vestra quoniam adventus Domini adpropinquavit"
+      la: "Patientes igitur estote et vos, et confirmate corda vestra: quoniam adventus Domini appropinquavit."
       en: "Be you therefore also patient, and strengthen your hearts: for the coming of the Lord is at hand."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "nolite ingemescere fratres in alterutrum ut non iudicemini ecce iudex ante ianuam adsistit"
+      la: "Nolite ingemiscere, fratres, in alterutrum, ut non judicemini. Ecce judex ante januam assistit."
       en: "Grudge not, brethren, one against another, that you may not be judged. Behold the judge standeth before the door."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "exemplum accipite fratres laboris et patientiae prophetas qui locuti sunt in nomine Domini"
+      la: "Exemplum accipite, fratres, exitus mali, laboris, et patientiae, prophetas qui locuti sunt in nomine Domini."
       en: "Take, my brethren, for an example of suffering evil, of labour and patience, the prophets, who spoke in the name of the Lord."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "ecce beatificamus qui sustinuerunt sufferentiam Iob audistis et finem Domini vidistis quoniam misericors est Dominus et miserator"
+      la: "Ecce beatificamus eos qui sustinuerunt. Sufferentiam Job audistis, et finem Domini vidistis, quoniam misericors Dominus est, et miserator."
       en: "Behold, we account them blessed who have endured. You have heard of the patience of Job, and you have seen the end of the Lord, that the Lord is merciful and compassionate."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "ante omnia autem fratres mei nolite iurare neque per caelum neque per terram neque aliud quodcumque iuramentum sit autem vestrum est est non non uti non sub iudicio decidatis"
+      la: "Ante omnia autem, fratres mei, nolite jurare, neque per caelum, neque per terram, neque aliud quodcumque juramentum. Sit autem sermo vester: Est, est: Non, non: ut non sub judicio decidatis."
       en: "But above all things, my brethren, swear not, neither by heaven, nor by the earth, nor by any other oath. But let your speech be, yea, yea: no, no: that you fall not under judgment."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "tristatur aliquis vestrum oret aequo animo est psallat"
+      la: "Tristatur aliquis vestrum? oret. Aequo animo est? psallat."
       en: "Is any of you sad? Let him pray. Is he cheerful in mind? Let him sing."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "infirmatur quis in vobis inducat presbyteros ecclesiae et orent super eum unguentes eum oleo in nomine Domini"
+      la: "Infirmatur quis in vobis? inducat presbyteros ecclesiae, et orent super eum, ungentes eum oleo in nomine Domini:"
       en: "Is any man sick among you? Let him bring in the priests of the church, and let them pray over him, anointing him with oil in the name of the Lord."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et oratio fidei salvabit infirmum et adlevabit eum Dominus et si in peccatis sit dimittentur ei"
+      la: "et oratio fidei salvabit infirmum, et alleviabit eum Dominus: et si in peccatis sit, remittentur ei."
       en: "And the prayer of faith shall save the sick man: and the Lord shall raise him up: and if he be in sins, they shall be forgiven him."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "confitemini ergo alterutrum peccata vestra et orate pro invicem ut salvemini multum enim valet deprecatio iusti adsidua"
+      la: "Confitemini ergo alterutrum peccata vestra, et orate pro invicem ut salvemini: multum enim valet deprecatio justi assidua."
       en: "Confess therefore your sins one to another: and pray one for another, that you may be saved. For the continual prayer of a just man availeth much."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "Helias homo erat similis nobis passibilis et oratione oravit ut non plueret super terram et non pluit annos tres et menses sex"
+      la: "Elias homo erat similis nobis passibilis: et oratione oravit ut non pluret super terram, et non pluit annos tres, et menses sex."
       en: "Elias was a man passible like unto us: and with prayer he prayed that it might not rain upon the earth, and it rained not for three years and six months."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "et rursum oravit et caelum dedit pluviam et terra dedit fructum suum"
+      la: "Et rursum oravit: et caelum dedit pluviam, et terra dedit fructum suum."
       en: "And he prayed again: and the heaven gave rain, and the earth brought forth her fruit."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "fratres mei si quis ex vobis erraverit a veritate et converterit quis eum"
+      la: "Fratres mei, si quis ex vobis erraverit a veritate, et converterit quis eum:"
       en: "My brethren, if any of you err from the truth, and one convert him:"
+    status: { la: verified, en: verified }
+  - n: 20
+    text:
+      la: "scire debet quoniam qui converti fecerit peccatorem ab errore viae suae, salvabit animam ejus a morte, et operiet multitudinem peccatorum."
+      en: "He must know that he who causeth a sinner to be converted from the error of his way, shall save his soul from death, and shall cover a multitude of sins."
     status: { la: verified, en: verified }

@@ -1,177 +1,177 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: num
 chapter: 35
 verses:
   - n: 1
     text:
-      la: "haec quoque locutus est Dominus ad Mosen in campestribus Moab super Iordanem contra Hiericho"
+      la: "Haec quoque locutus est Dominus ad Moysen in campes tribus Moab supra Jordanem, contra Jericho:"
       en: "And the Lord spoke these things also to Moses in the plains of Moab by the Jordan, over against Jericho:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "praecipe filiis Israhel ut dent Levitis de possessionibus suis"
+      la: "Praecipe filiis Israel ut dent Levitis de possessionibus suis"
       en: "Command the children of Israel that they give to the Levites out of their possessions,"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "urbes ad habitandum et suburbana earum per circuitum ut ipsi in oppidis maneant et suburbana sint pecoribus ac iumentis"
+      la: "urbes ad habitandum, et suburbana earum per circuitum: ut ipsi in oppidis maneant, et suburbana sint pecoribus ac jumentis:"
       en: "Cities to dwell in, and their suburbs round about: that they may abide in the towns, and the suburbs may be for their cattle and beasts:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "quae a muris civitatum forinsecus per circuitum mille passuum spatio tendentur"
+      la: "quae a muris civitatum forinsecus, per circuitum, mille passuum spatio tendentur."
       en: "Which suburbs shall reach from the walls of the cities outward, a thousand paces on every side:"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "contra orientem duo milia erunt cubiti et contra meridiem similiter duo milia ad mare quoque quod respicit occidentem eadem mensura erit et septentrionalis plaga aequali termino finietur eruntque urbes in medio et foris suburbana"
+      la: "Contra orientem duo millia erunt cubiti, et contra meridiem similiter erunt duo millia: ad mare quoque, quod respicit ad occidentem, eadem mensura erit, et septentrionalis plaga aequali termino finietur, eruntque urbes in medio, et foris suburbana."
       en: "Toward the east shall be two thousand cubits: and toward the south in like manner shall be two thousand cubits: toward the sea also, which looketh to the west, shall be the same extent: and the north side shall be bounded with the like limits. And the cities shall be in the midst, and the suburbs without."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "de ipsis autem oppidis quae Levitis dabitis sex erunt in fugitivorum auxilia separata ut fugiat ad ea qui fuderit sanguinem exceptis his alia quadraginta duo oppida"
+      la: "De ipsis autem oppidis, quae Levitis dabitis, sex erunt in fugitivorum auxilia separata, ut fugiat ad ea qui fuderit sanguinem: et exceptis his, alia quadraginta duo oppida,"
       en: "And among the cities, which you shall give to the Levites, six shall be separated for refuge to fugitives, that he who hath shed blood may flee to them: and besides these there shall be other forty-two cities,"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "id est simul quadraginta octo cum suburbanis suis"
+      la: "id est, simul quadraginta octo cum suburbanis suis."
       en: "That is, in all forty-eight with their suburbs."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "ipsaeque urbes quae dabuntur de possessionibus filiorum Israhel ab his qui plus habent plures auferentur et qui minus pauciores singuli iuxta mensuram hereditatis suae dabunt oppida Levitis"
+      la: "Ipsaeque urbes, quae dabuntur de possessionibus filiorum Israel, ab his qui plus habent, plures auferentur: et qui minus, pauciores: singuli juxta mensuram haereditatis suae dabunt oppida Levitis."
       en: "And of these cities which shall be given out of the possessions of the children of Israel, from them that have more, more shall be taken: and from them that have less, fewer. Each shall give towns to the Levites according to the extent of their inheritance."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "ait Dominus ad Mosen"
+      la: "Ait Dominus ad Moysen:"
       en: "The Lord said to Moses:"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "loquere filiis Israhel et dices ad eos quando transgressi fueritis Iordanem in terram Chanaan"
+      la: "Loquere filiis Israel, et dices ad eos: Quando transgressi fueritis Jordanem in terram Chanaan,"
       en: "Speak to the children of Israel, and thou shalt say to them: When you shall have passed over the Jordan into the land of Chanaan,"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "decernite quae urbes esse debeant in praesidia fugitivorum qui nolentes sanguinem fuderint"
+      la: "decernite quae urbes esse debeant in praesidia fugitivorum, qui nolentes sanguinem fuderint:"
       en: "Determine what cities shall be for the refuge of fugitives, who have shed blood against their will."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "in quibus cum fuerit profugus cognatus occisi eum non poterit occidere donec stet in conspectu multitudinis et causa illius iudicetur"
+      la: "in quibus cum fuerit profugus, cognatus occisi non poterit eum occidere, donec stet in conspectu multitudinis, et causa illius judicetur."
       en: "And when the fugitive shall be in them, the kinsman of him that is slain may not have power to kill him, until he stand before the multitude, and his cause be judged."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "de ipsis autem urbibus quae ad fugitivorum subsidia separantur"
+      la: "De ipsis autem urbibus, quae ad fugitivorum subsidia separantur,"
       en: "And of those cities, that are separated for the refuge of fugitives,"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "tres erunt trans Iordanem et tres in terra Chanaan"
+      la: "tres erunt trans Jordanem, et tres in terra Chanaan,"
       en: "Three shall be beyond the Jordan, and three in the land of Chanaan,"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "tam filiis Israhel quam advenis atque peregrinis ut confugiat ad eas qui nolens sanguinem fuderit"
+      la: "tam filiis Israel quam advenis atque peregrinis, ut confugiat ad eas qui nolens sanguinem fuderit."
       en: "As well for the children of Israel as for strangers and sojourners, that he may flee to them, who hath shed blood against his will."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "si quis ferro percusserit et mortuus fuerit qui percussus est reus erit homicidii et ipse morietur"
-      en: "If any man strike with iron, and he die that was struck : he shall be guilty of murder, and he himself shall die."
+      la: "Si quis ferro percusserit, et mortuus fuerit qui percussus est, reus erit homicidii, et ipse morietur."
+      en: "If any man strike with iron, and he die that was struck: he shall be guilty of murder, and he himself shall die."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "si lapidem iecerit et ictus occubuerit similiter punietur"
+      la: "Si lapidem jecerit, et ictus occubuerit, similiter punietur."
       en: "If he throw a stone, and he that is struck die: he shall be punished in the same manner."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "si ligno percussus interierit percussoris sanguine vindicabitur"
+      la: "Si ligno percussus interierit, percussoris sanguine vindicabitur."
       en: "If he that is struck with wood die: he shall be revenged by the blood of him that struck him."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "propinquus occisi homicidam interficiet statim ut adprehenderit eum percutiet"
+      la: "Propinquus occisi, homicidam interficiet: statim ut apprehenderit eum, interficiet."
       en: "The kinsman of him that was slain, shall kill the murderer: as soon as he apprehendeth him, he shall kill him."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "si per odium quis hominem inpulerit vel iecerit quippiam in eum per insidias"
-      en: "If through hatred any one push a man, or fling any thing- at him with ill design:"
+      la: "Si per odium quis hominem impulerit, vel jecerit quippiam in eum per insidias:"
+      en: "If through hatred any one push a man, or fling any thing at him with ill design:"
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "aut cum esset inimicus manu percusserit et ille mortuus fuerit percussor homicidii reus erit cognatus occisi statim ut invenerit eum iugulabit"
+      la: "aut cum esset inimicus, manu percusserit, et ille mortuus fuerit: percussor homicidii reus erit: cognatus occisi statim ut invenerit eum, jugulabit."
       en: "Or being his enemy, strike; him with his hand, and he die: the striker shall be guilty of murder: the kinsman of him that was slain as soon as he findeth him, shall kill him."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "quod si fortuito et absque odio"
+      la: "Quod si fortuitu, et absque odio"
       en: "But if by chance medley, and without hatred,"
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "et inimicitiis quicquam horum fecerit"
+      la: "et inimicitiis quidquam horum fecerit,"
       en: "And enmity, he do any of these things,"
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "et hoc audiente populo fuerit conprobatum atque inter percussorem et propinquum sanguinis quaestio ventilata"
+      la: "et hoc audiente populo fuerit comprobatum, atque inter percussorem et propinquum sanguinis quaestio ventilata:"
       en: "And this be proved in the hearing of the people, and the cause be debated between him that struck, and the next of kin:"
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "liberabitur innocens de ultoris manu et reducetur per sententiam in urbem ad quam confugerat manebitque ibi donec sacerdos magnus qui oleo sancto unctus est moriatur"
+      la: "liberabitur innocens de ultoris manu, et reducetur per sententiam in urbem, ad quam confugerat, manebitque ibi, donec sacerdos magnus, qui oleo sancto unctus est, moriatur."
       en: "The innocent shall be delivered from the hand of the revenger, and shall be brought back by sentence into the city, to which he had fled, and he shall abide there until the death of the high priest, that is anointed with the holy oil."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "si interfector extra fines urbium quae exulibus deputatae sunt"
+      la: "Si interfector extra fines urbium, quae exulibus deputatae sunt,"
       en: "If the murderer be found without the limits of the cities that are appointed for the banished,"
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "fuerit inventus et percussus ab eo qui ultor est sanguinis absque noxa erit qui eum occiderit"
+      la: "fuerit inventus, et percussus ab eo qui ultor est sanguinis: absque noxa erit qui eum occiderit."
       en: "And be struck by him that is the avenger of blood: he shall not be guilty that killed him."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "debuerat enim profugus usque ad mortem pontificis in urbe residere postquam autem ille obierit homicida revertetur in terram suam"
+      la: "Debuerat enim profugus usque ad mortem pontificis in urbe residere. Postquam autem ille obierit, homicida revertetur in terram suam."
       en: "For the fugitive ought to have stayed in the city until the death of the high priest: and after he is dead, then shall the manslayer return to his own country."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "haec sempiterna erunt et legitima in cunctis habitationibus vestris"
+      la: "Haec sempiterna erunt, et legitima in cunctis habitationibus vestris."
       en: "These things shall be perpetual, and for an ordinance in all your dwellings."
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "homicida sub testibus punietur ad unius testimonium nullus condemnabitur"
+      la: "Homicida sub testibus punietur: ad unius testimonium nullus condemnabitur."
       en: "The murderer shall be punished by witnesses: none shall be condemned upon the evidence of one man."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "non accipietis pretium ab eo qui reus est sanguinis statim et ipse morietur"
+      la: "Non accipietis pretium ab eo qui reus est sanguinis, statim et ipse morietur."
       en: "You shall not take money of him that is guilty of blood, but he shall die forthwith."
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "exules et profugi ante mortem pontificis nullo modo in urbes suas reverti poterunt"
+      la: "Exules et profugi ante mortem pontificis nullo modo in urbes suas reverti poterunt,"
       en: "The banished and fugitives before the death of the high priest may by no means return into their own cities."
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "ne polluatis terram habitationis vestrae quae insontium cruore maculatur nec aliter expiari potest nisi per eius sanguinem qui alterius sanguinem fuderit"
+      la: "ne polluatis terram habitationis vestrae, quae insontium cruore maculatur: nec aliter expiari potest, nisi per ejus sanguinem, qui alterius sanguinem fuderit."
       en: "Defile not the land of your habitation, which is stained with the blood of the innocent: neither can it otherwise be expiated, but by his blood that hath shed the blood of another."
     status: { la: verified, en: verified }
   - n: 34
     text:
-      la: "atque ita emundabitur vestra possessio me commorante vobiscum ego enim sum Dominus qui habito inter filios Israhel"
-      en: "And thus shall your possession he cleansed, myself abiding with you. For I am the Lord that dwell among the children of Israel."
+      la: "Atque ita emundabitur vestra possessio me commorante vobiscum. Ego enim sum Dominus qui habito inter filios Israel."
+      en: "And thus shall your possession be cleansed, myself abiding with you. For I am the Lord that dwell among the children of Israel."
     status: { la: verified, en: verified }

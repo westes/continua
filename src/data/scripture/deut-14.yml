@@ -1,152 +1,152 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: deut
 chapter: 14
 verses:
   - n: 1
     text:
-      la: "filii estote Domini Dei vestri non vos incidetis nec facietis calvitium super mortuo"
-      en: "Be ye children of the Lord your God: you shall not cut yourselves, no, make any baldness for the dead;"
+      la: "Filii estote Domini Dei vestri: non vos incidetis, nec facietis calvitium super mortuo:"
+      en: "Be ye children of the Lord your God: you shall not cut yourselves, nor make any baldness for the dead;"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "quoniam populus sanctus es Domino Deo tuo et te elegit ut sis ei in populum peculiarem de cunctis gentibus quae sunt super terram"
+      la: "quoniam populus sanctus es Domino Deo tuo, et te elegit ut sis ei in populum peculiarem de cunctis gentibus, quae sunt super terram."
       en: "Because thou art a holy people to the Lord thy God: and he chose thee to be his peculiar people of all nations that are upon the earth."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "ne comedatis quae inmunda sunt"
+      la: "Ne comedatis quae immunda sunt."
       en: "Eat not the things that are unclean."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "hoc est animal quod comedere debetis bovem et ovem et capram"
+      la: "Hoc est animal quod comedere debetis: bovem, et ovem, et capram,"
       en: "These are the beasts that you shall eat, the ox, and the sheep, and the goat,"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "cervum capream bubalum tragelaphum pygargon orygem camelopardalum"
+      la: "cervum et capream, bubalum, tragelaphum, pygargum, orygem, camelopardalum."
       en: "The hart and the roe, the buffle, the chamois, the pygarg, the wild goat, the camelopardalus."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "omne animal quod in duas partes ungulam findit et ruminat comedetis"
+      la: "Omne animal, quod in duas partes findit ungulam, et ruminat, comedetis."
       en: "Every beast that divideth the hoof in two parts, and cheweth the cud, you shall eat."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "de his autem quae ruminant et ungulam non findunt haec comedere non debetis camelum leporem choerogyllium quia ruminant et non dividunt ungulam inmunda erunt vobis"
+      la: "De his autem, quae ruminant, et ungulam non findunt, comedere non debetis, ut camelum, leporem, choerogryllum: haec, quia ruminant et non dividunt ungulam, immunda erunt vobis."
       en: "But of them that chew the cud, but divide not the hoof, you shall not eat, such as the camel, the hare, and the cherogril: because they chew the cud, but divide not the hoof, they shall be unclean to you."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "sus quoque quoniam dividit ungulam et non ruminat inmunda erit carnibus eorum non vescemini et cadavera non tangetis"
+      la: "Sus quoque, quoniam dividat ungulam et non ruminat, immunda erit. Carnibus eorum non vescemini, et cadavera non tangetis."
       en: "The swine also, because it divideth the hoof, but cheweth not the cud, shall be unclean, their flesh you shall not eat, and their carcasses you shall not touch."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "haec comedetis ex omnibus quae morantur in aquis quae habent pinnulas et squamas comedite"
+      la: "Haec comedetis ex omnibus quae morantur in aquis: quae habent pinnulas et squamas, comedite:"
       en: "These shall you eat of all that abide in the waters: All that have fins and scales, you shall eat."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "quae absque pinnulis et squamis sunt ne comedatis quia inmunda sunt"
+      la: "quae absque pinnulis et squamis sunt, ne comedatis, quia immunda sunt."
       en: "Such as are without fins and scales, you shall not eat, because they are unclean."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "omnes aves mundas comedite"
+      la: "Omnes aves mundas comedite."
       en: "All birds that are clean you shall eat."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "inmundas ne comedatis aquilam scilicet et grypem et alietum"
+      la: "Immundas ne comedatis: aquilam scilicet, et gryphem, et haliaeetum,"
       en: "The unclean eat not: to wit, the eagle, and the grype, and the osprey,"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "ixon et vulturem ac milvum iuxta genus suum"
+      la: "ixion et vulturem ac milvum juxta genus suum:"
       en: "The ringtail, and the vulture, and the kite according to their kind:"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et omne corvini generis"
+      la: "et omne corvini generis,"
       en: "And all of the raven's kind:"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "strutionem ac noctuam et larum atque accipitrem iuxta genus suum"
+      la: "et struthionem, ac noctuam, et larum, atque accipitrem juxta genus suum:"
       en: "And the ostrich, and the owl, and the larus, and the hawk according to its kind:"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "herodium et cycnum et ibin"
+      la: "herodium ac cygnum, et ibin,"
       en: "The heron, and the swan, and the stork,"
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "ac mergulum porphirionem et nycticoracem"
-      en: "And the cormorant, the porphirion, and the night crow,"
+      la: "ac mergulum, porphyrionem, et nycticoracem,"
+      en: "And the cormorant, the porphyrion, and the night crow,"
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "onocrotalum et charadrium singula in genere suo upupam quoque et vespertilionem"
+      la: "onocrotalum, et charadrium, singula in genere suo: upupam quoque et vespertilionem."
       en: "The bittern, and the charadrion, every one in their kind: the hoop also and the bat."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "et omne quod reptat et pinnulas habet inmundum erit nec comedetur"
+      la: "Et omne quod reptat et pennulas habet, immundum erit, et non comedetur."
       en: "Every thing that creepeth, and hath little wings, shall be unclean, and shall not be eaten."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "omne quod mundum est comedite"
+      la: "Omne quod mundum est, comedite."
       en: "All that is clean, you shall eat."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "quicquid morticinum est ne vescamini ex eo peregrino qui intra portas tuas est da ut comedat aut vende ei quia tu populus sanctus Domini Dei tui es non coques hedum in lacte matris suae"
+      la: "Quidquid autem morticinum est, ne vescamini ex eo. Peregrino, qui intra portas tuas est, da ut comedat, aut vende ei: quia tu populus sanctus Domini Dei tui es. Non coques haedum in lacte matris suae."
       en: "But whatsoever is dead of itself, eat not thereof. Give it to the stranger, that is within thy gates, to eat, or sell it to him: because thou art the holy people of the Lord thy God. Thou shalt not boil a kid in the milk of his dam."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "decimam partem separabis de cunctis frugibus tuis quae nascuntur in terra per annos singulos"
+      la: "Decimam partem separabis de cunctis fructibus tuis qui nascuntur in terra per annos singulos,"
       en: "Every year thou shalt set aside the tithes of all thy fruits that the earth bringeth forth,"
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "et comedes in conspectu Domini Dei tui in loco quem elegerit ut in eo nomen illius invocetur decimam frumenti tui et vini et olei et primogenita de armentis et ovibus tuis ut discas timere Dominum Deum tuum omni tempore"
+      la: "et comedes in conspectu Domini Dei tui in loco quem elegerit, ut in eo nomen illius invocetur, decimam frumenti tui, et vini, et olei, et primogenita de armentis et ovibus tuis: ut discas timere Dominum Deum tuum omni tempore."
       en: "And thou shalt eat before the Lord thy God in the place which he shall choose, that his name may be called upon therein, the tithe of thy corn, and thy wine, and thy oil, and the firstborn of thy herds and thy sheep: that thou mayst learn to fear the Lord thy God at all times."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "cum autem longior fuerit via et locus quem elegerit Dominus Deus tuus tibique benedixerit nec potueris ad eum haec cuncta portare"
+      la: "Cum autem longior fuerit via, et locus quem elegerit Dominus Deus tuus, tibique benedixerit, nec potueris ad eum haec cuncta portare,"
       en: "But when the way and the place which the Lord thy God shall choose, are far off, and he hath blessed thee, and thou canst not carry all these things thither,"
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "vendes omnia et in pretium rediges portabisque manu tua et proficisceris ad locum quem elegerit Dominus Deus tuus"
-      en: "Thou shalt sell them all, and turn them into money, and shalt carry it in thy hand, and shalt go to the place which the Lord shall choose :"
+      la: "vendes omnia, et in pretium rediges, portabisque manu tua, et proficisceris ad locum quem elegerit Dominus Deus tuus:"
+      en: "Thou shalt sell them all, and turn them into money, and shalt carry it in thy hand, and shalt go to the place which the Lord shall choose:"
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "et emes ex eadem pecunia quicquid tibi placuerit sive ex armentis sive ex ovibus vinum quoque et siceram et omne quod desiderat anima tua et comedes coram Domino Deo tuo et epulaberis tu et domus tua"
+      la: "et emes ex eadem pecunia quidquid tibi placuerit, sive ex armentis, sive ex ovibus, vinum quoque et siceram, et omne quod desiderat anima tua: et comedes coram Domino Deo tuo, et epulaberis tu et domus tua:"
       en: "And thou shalt buy with the same money whatsoever pleaseth thee, either of the herds or of sheep, wine also and strong drink, and all that thy soul desireth: and thou shalt eat before the Lord thy God, and shalt feast, thou and thy house:"
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "et Levita qui intra portas tuas est cave ne derelinquas eum quia non habet aliam partem in possessione tua"
+      la: "et Levites qui intra portas tuas est, cave ne derelinquas eum, quia non habet aliam partem in possessione tua."
       en: "And the Levite that is within thy gates, beware thou forsake him not, because he hath no other part in thy possession."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "anno tertio separabis aliam decimam ex omnibus quae nascuntur tibi eo tempore et repones intra ianuas tuas"
+      la: "Anno tertio separabis aliam decimam ex omnibus quae nascuntur tibi eo tempore, et repones intra januas tuas."
       en: "The third year thou shalt separate another tithe of all things that grow to thee at that time, and shalt lay it up within thy gates."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "venietque Levites qui aliam non habet partem nec possessionem tecum et peregrinus et pupillus ac vidua qui intra portas tuas sunt et comedent et saturabuntur ut benedicat tibi Dominus Deus tuus in cunctis operibus manuum tuarum quae feceris"
+      la: "Venietque Levites qui aliam non habet partem nec possessionem tecum, et peregrinus ac pupillus et vidua, qui intra portas tuas sunt, et comedent et saturabuntur: ut benedicat tibi Dominus Deus tuus in cunctis operibus manuum tuarum quae feceris."
       en: "And the Levite that hath no other part nor possession with thee, and the stranger and the fatherless and the widow, that are within thy gates, shall come and shall eat and be filled: that the Lord thy God may bless thee in all the works of thy hands that thou shalt do."
     status: { la: verified, en: verified }

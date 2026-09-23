@@ -1,92 +1,97 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: col
 chapter: 4
 verses:
   - n: 1
     text:
-      la: "domini quod iustum est et aequum servis praestate scientes quoniam et vos Dominum habetis in caelo"
+      la: "Domini, quod justum est et aequum, servis praestate: scientes quod et vos Dominum habetis in caelo."
       en: "Masters, do to your servants that which is just and equal: knowing that you also have a master in heaven."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "orationi instate vigilantes in ea in gratiarum actione"
+      la: "Orationi instate, vigilantes in ea in gratiarum actione:"
       en: "Be instant in prayer; watching in it with thanksgiving:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "orantes simul et pro nobis ut Deus aperiat nobis ostium sermonis ad loquendum mysterium Christi propter quod etiam vinctus sum"
+      la: "orantes simul et pro nobis, ut Deus aperiat nobis ostium sermonis ad loquendum mysterium Christi ( propter quod etiam vinctus sum),"
       en: "Praying withal for us also, that God may open unto us a door of speech to speak the mystery of Christ (for which also I am bound;)"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "ut manifestem illud ita ut oportet me loqui"
+      la: "ut manifestem illud ita ut oportet me loqui."
       en: "That I may make it manifest as I ought to speak."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "in sapientia ambulate ad eos qui foris sunt tempus redimentes"
+      la: "In sapientia ambulate ad eos, qui foris sunt: tempus redimentes."
       en: "Walk with wisdom towards them that are without, redeeming the time."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "sermo vester semper in gratia sale sit conditus ut sciatis quomodo oporteat vos unicuique respondere"
+      la: "Sermo vester semper in gratia sale sit conditus, ut sciatis quomodo oporteat vos unicuique respondere."
       en: "Let your speech be always in grace seasoned with salt: that you may know how you ought to answer every man."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "quae circa me sunt omnia vobis nota faciet Tychicus carissimus frater et fidelis minister et conservus in Domino"
+      la: "Quae circa me sunt, omnia vobis nota faciet Tychicus, carissimus frater, et fidelis minister, et conservus in Domino:"
       en: "All the things that concern me, Tychicus, our dearest brother, and faithful minister and fellow servant in the Lord, will make known to you,"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "quem misi ad vos ad hoc ipsum ut cognoscat quae circa vos sunt et consoletur corda vestra"
+      la: "quem misi ad vos ad hoc ipsum, ut cognoscat quae circa vos sunt, et consoletur corda vestra,"
       en: "Whom I have sent to you for this same purpose, that he may know the things that concern you, and comfort your hearts,"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "cum Onesimo carissimo et fideli fratre qui est ex vobis omnia quae hic aguntur nota facient vobis"
+      la: "cum Onesimo carissimo, et fideli fratre, qui ex vobis est. Omnia, quae hic aguntur, nota facient vobis."
       en: "With Onesimus, a most beloved and faithful brother, who is one of you. All things that are done here, they shall make known to you."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "salutat vos Aristarchus concaptivus meus et Marcus consobrinus Barnabae de quo accepistis mandata si venerit ad vos excipite illum"
+      la: "Salutat vos Aristarchus concaptivus meus, et Marcus consobrinus Barnabae, de quo accepistis mandata: si venerit ad vos, excipite illum:"
       en: "Aristarchus, my fellow prisoner, saluteth you, and Mark, the cousin german of Barnabus, touching whom you have received commandments; if he come unto you, receive him:"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et Iesus qui dicitur Iustus qui sunt ex circumcisione hii soli sunt adiutores in regno Dei qui mihi fuerunt solacio"
+      la: "et Jesus, qui dicitur Justus: qui sunt ex circumcisione: hi soli sunt adjutores mei in regno Dei, qui mihi fuerunt solatio."
       en: "And Jesus, that is called Justus: who are of the circumcision: these only are my helpers in the kingdom of God; who have been a comfort to me."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "salutat vos Epaphras qui ex vobis est servus Christi Iesu semper sollicitus pro vobis in orationibus ut stetis perfecti et pleni in omni voluntate Dei"
+      la: "Salutat vos Epaphras, qui ex vobis est, servus Christi Jesu, semper sollicitus pro vobis in orationibus, ut stetis perfecti, et pleni in omni voluntate Dei."
       en: "Epaphras saluteth you, who is one of you, a servant of Christ Jesus, who is always solicitous for you in prayers, that you may stand perfect, and full in all the will of God."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "testimonium enim illi perhibeo quod habet multum laborem pro vobis et pro his qui sunt Laodiciae et qui Hierapoli"
+      la: "Testimonium enim illi perhibeo quod habet multum laborem pro vobis, et pro iis qui sunt Laodiciae, et qui Hierapoli."
       en: "For I bear him testimony that he hath much labour for you, and for them that are at Laodicea, and them at Hierapolis."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "salutat vos Lucas medicus carissimus et Demas"
+      la: "Salutat vos Lucas, medicus carissimus, et Demas."
       en: "Luke, the most dear physician, saluteth you: and Demas."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "salutate fratres qui sunt Laodiciae et Nympham et quae in domo eius est ecclesiam"
+      la: "Salutate fratres, qui sunt Laodiciae, et Nympham, et quae in domo ejus est, ecclesiam."
       en: "Salute the brethren who are at Laodicea, and Nymphas, and the church that is in his house."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "et cum lecta fuerit apud vos epistula facite ut et in Laodicensium ecclesia legatur et eam quae Laodicensium est vos legatis"
+      la: "Et cum lecta fuerit apud vos epistola haec, facite ut et in Laodicensium ecclesia legatur: et eam, quae Laodicensium est, vos legatis."
       en: "And when this epistle shall have been read with you, cause that it be read also in the church of the Laodiceans: and that you read that which is of the Laodiceans."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "et dicite Archippo vide ministerium quod accepisti in Domino ut illud impleas"
-      en: "And say to Archippus: Take heed to the ministry which thou hast received in the Lord, that thou fulfil it."
+      la: "Et dicite Archippo: Vide ministerium, quod accepisti in Domino, ut illud impleas."
+      en: "And say to Archippus: Take heed to the ministry which thou hast received in the Lord, that thou fulfill it."
+    status: { la: verified, en: verified }
+  - n: 18
+    text:
+      la: "Salutatio, mea manu Pauli. Memores estote vinculorum meorum. Gratia vobiscum. Amen."
+      en: "The salutation of Paul with my own hand. Be mindful of my bands. Grace be with you. Amen."
     status: { la: verified, en: verified }

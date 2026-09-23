@@ -1,24 +1,23 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for rom 11 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: rom
 chapter: 11
 verses:
   - n: 1
     text:
-      la: "Dico ergo : Numquid Deus repulit populum suum? Absit. Nam et ego Israelita sum ex semine Abraham, de tribu Benjamin :"
+      la: "Dico ergo: Numquid Deus repulit populum suum? Absit. Nam et ego Israelita sum ex semine Abraham, de tribu Benjamin:"
       en: "I say then: Hath God cast away his people? God forbid. For I also am an Israelite of the seed of Abraham, of the tribe of Benjamin."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "non repulit Deus plebem suam, quam praescivit. An nescitis in Elia quid dicit Scriptura? quemadmodum interpellat Deum adversum Israel :"
+      la: "non repulit Deus plebem suam, quam praescivit. An nescitis in Elia quid dicit Scriptura? quemadmodum interpellat Deum adversum Israel:"
       en: "God hath not cast away his people, which he foreknew. Know you not what the scripture saith of Elias; how he calleth on God against Israel?"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "Domine, prophetas tuos occiderunt, altaria tua suffoderunt : et ego relictus sum solus, et quaerunt animam meam."
+      la: "Domine, prophetas tuos occiderunt, altaria tua suffoderunt: et ego relictus sum solus, et quaerunt animam meam."
       en: "Lord, they have slain thy prophets, they have dug down thy altars; and I am left alone, and they seek my life."
     status: { la: verified, en: verified }
   - n: 4
@@ -33,42 +32,42 @@ verses:
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "Si autem gratia, jam non ex operibus : alioquin gratia jam non est gratia."
+      la: "Si autem gratia, jam non ex operibus: alioquin gratia jam non est gratia."
       en: "And if by grace, it is not now by works: otherwise grace is no more grace."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "Quid ergo? Quod quaerebat Israel, hoc non est consecutus : electio autem consecuta est : ceteri vero excaecati sunt :"
+      la: "Quid ergo? Quod quaerebat Israel, hoc non est consecutus: electio autem consecuta est: ceteri vero excaecati sunt:"
       en: "What then? That which Israel sought, he hath not obtained: but the election hath obtained it; and the rest have been blinded."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "sicut scriptum est : Dedit illis Deus spiritum compunctionis : oculos ut non videant, et aures ut non audiant, usque in hodiernum diem."
+      la: "sicut scriptum est: Dedit illis Deus spiritum compunctionis: oculos ut non videant, et aures ut non audiant, usque in hodiernum diem."
       en: "As it is written: God hath given them the spirit of insensibility; eyes that they should not see; and ears that they should not hear, until this present day."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "Et David dicit : Fiat mensa eorum in laqueum, et in captionem, et in scandalum, et in retributionem illis."
+      la: "Et David dicit: Fiat mensa eorum in laqueum, et in captionem, et in scandalum, et in retributionem illis."
       en: "And David saith: Let their table be made a snare, and a trap, and a stumbling block, and a recompense unto them."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "Obscurentur oculi eorum ne videant : et dorsum eorum semper incurva."
+      la: "Obscurentur oculi eorum ne videant: et dorsum eorum semper incurva."
       en: "Let their eyes be darkened, that they may not see: and bow down their back always."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "Dico ergo : Numquid sic offenderunt ut caderent? Absit. Sed illorum delicto, salus est gentibus ut illos aemulentur."
+      la: "Dico ergo: Numquid sic offenderunt ut caderent? Absit. Sed illorum delicto, salus est gentibus ut illos aemulentur."
       en: "I say then, have they so stumbled, that they should fall? God forbid. But by their offence, salvation is come to the Gentiles, that they may be emulous of them."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "Quod si delictum illorum divitiae sunt mundi, et diminutio eorum divitiae gentium : quanto magis plenitudo eorum?"
+      la: "Quod si delictum illorum divitiae sunt mundi, et diminutio eorum divitiae gentium: quanto magis plenitudo eorum?"
       en: "Now if the offence of them be the riches of the world, and the diminution of them, the riches of the Gentiles; how much more the fulness of them?"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "Vobis enim dico gentibus : Quamdiu quidem ego sum gentium Apostolus, ministerium meum honorificabo,"
+      la: "Vobis enim dico gentibus: Quamdiu quidem ego sum gentium Apostolus, ministerium meum honorificabo,"
       en: "For I say to you, Gentiles: as long indeed as I am the apostle of the Gentiles, I will honour my ministry,"
     status: { la: verified, en: verified }
   - n: 14
@@ -78,12 +77,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "Si enim amissio eorum, reconciliatio est mundi : quae assumptio, nisi vita ex mortuis?"
+      la: "Si enim amissio eorum, reconciliatio est mundi: quae assumptio, nisi vita ex mortuis?"
       en: "For if the loss of them be the reconciliation of the world, what shall the receiving of them be, but life from the dead?"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "Quod si delibatio sancta est, et massa : et si radix sancta, et rami."
+      la: "Quod si delibatio sancta est, et massa: et si radix sancta, et rami."
       en: "For if the firstfruit be holy, so is the lump also: and if the root be holy, so are the branches."
     status: { la: verified, en: verified }
   - n: 17
@@ -93,37 +92,37 @@ verses:
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "noli gloriari adversus ramos. Quod si gloriaris : non tu radicem portas, sed radix te."
+      la: "noli gloriari adversus ramos. Quod si gloriaris: non tu radicem portas, sed radix te."
       en: "Boast not against the branches. But if thou boast, thou bearest not the root, but the root thee."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "Dices ergo : Fracti sunt rami ut ego inserar."
+      la: "Dices ergo: Fracti sunt rami ut ego inserar."
       en: "Thou wilt say then: The branches were broken off, that I might be grafted in."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "Bene : propter incredulitatem fracti sunt. Tu autem fide stas : noli altum sapere, sed time."
+      la: "Bene: propter incredulitatem fracti sunt. Tu autem fide stas: noli altum sapere, sed time."
       en: "Well: because of unbelief they were broken off. But thou standest by faith: be not highminded, but fear."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "Si enim Deus naturalibus ramis non pepercit : ne forte nec tibi parcat."
+      la: "Si enim Deus naturalibus ramis non pepercit: ne forte nec tibi parcat."
       en: "For if God hath not spared the natural branches, fear lest perhaps he also spare not thee."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "Vide ergo bonitatem, et severitatem Dei : in eos quidem qui ceciderunt, severitatem : in te autem bonitatem Dei, si permanseris in bonitate, alioquin et tu excideris."
+      la: "Vide ergo bonitatem, et severitatem Dei: in eos quidem qui ceciderunt, severitatem: in te autem bonitatem Dei, si permanseris in bonitate, alioquin et tu excideris."
       en: "See then the goodness and the severity of God: towards them indeed that are fallen, the severity; but towards thee, the goodness of God, if thou abide in goodness, otherwise thou also shalt be cut off."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "Sed et illi, si non permanserint in incredulitate, inserentur : potens est enim Deus iterum inserere illos."
+      la: "Sed et illi, si non permanserint in incredulitate, inserentur: potens est enim Deus iterum inserere illos."
       en: "And they also, if they abide not still in unbelief, shall be grafted in: for God is able to graft them in again."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "Nam si tu ex naturali excisus es oleastro, et contra naturam insertus es in bonam olivam : quanto magis ii qui secundum naturam inserentur suae olivae?"
+      la: "Nam si tu ex naturali excisus es oleastro, et contra naturam insertus es in bonam olivam: quanto magis ii qui secundum naturam inserentur suae olivae?"
       en: "For if thou wert cut out of the wild olive tree, which is natural to thee; and, contrary to nature, were grafted into the good olive tree; how much more shall they that are the natural branches, be grafted into their own olive tree?"
     status: { la: verified, en: verified }
   - n: 25
@@ -133,17 +132,17 @@ verses:
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "et sic omnis Israel salvus fieret, sicut scriptum est : Veniet ex Sion, qui eripiat, et avertat impietatem a Jacob."
+      la: "et sic omnis Israel salvus fieret, sicut scriptum est: Veniet ex Sion, qui eripiat, et avertat impietatem a Jacob."
       en: "And so all Israel should be saved, as it is written: There shall come out of Sion, he that shall deliver, and shall turn away ungodliness from Jacob."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "Et hoc illis a me testamentum : cum abstulero peccata eorum."
+      la: "Et hoc illis a me testamentum: cum abstulero peccata eorum."
       en: "And this is to them my covenant: when I shall take away their sins."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "Secundum Evangelium quidem, inimici propter vos : secundum electionem autem, carissimi propter patres."
+      la: "Secundum Evangelium quidem, inimici propter vos: secundum electionem autem, carissimi propter patres."
       en: "As concerning the gospel, indeed, they are enemies for your sake: but as touching the election, they are most dear for the sake of the fathers."
     status: { la: verified, en: verified }
   - n: 29
@@ -153,12 +152,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "Sicut enim aliquando et vos non credidistis Deo, nunc autem misericordiam consecuti estis propter incredulitatem illorum :"
+      la: "Sicut enim aliquando et vos non credidistis Deo, nunc autem misericordiam consecuti estis propter incredulitatem illorum:"
       en: "For as you also in times past did not believe God, but now have obtained mercy, through their unbelief;"
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "ita et isti nunc non crediderunt in vestram misericordiam : ut et ipsi misericordiam consequantur."
+      la: "ita et isti nunc non crediderunt in vestram misericordiam: ut et ipsi misericordiam consequantur."
       en: "So these also now have not believed, for your mercy, that they also may obtain mercy."
     status: { la: verified, en: verified }
   - n: 32
@@ -168,7 +167,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "O altitudo divitiarum sapientiae, et scientiae Dei : quam incomprehensibilia sunt judicia ejus, et investigabiles viae ejus!"
+      la: "O altitudo divitiarum sapientiae, et scientiae Dei: quam incomprehensibilia sunt judicia ejus, et investigabiles viae ejus!"
       en: "O the depth of the riches of the wisdom and of the knowledge of God! How incomprehensible are his judgments, and how unsearchable his ways!"
     status: { la: verified, en: verified }
   - n: 34
@@ -183,6 +182,6 @@ verses:
     status: { la: verified, en: verified }
   - n: 36
     text:
-      la: "Quoniam ex ipso, et per ipsum, et in ipso sunt omnia : ipsi gloria in saecula. Amen."
+      la: "Quoniam ex ipso, et per ipsum, et in ipso sunt omnia: ipsi gloria in saecula. Amen."
       en: "For of him, and by him, and in him, are all things: to him be glory for ever. Amen."
     status: { la: verified, en: verified }

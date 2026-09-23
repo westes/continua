@@ -1,197 +1,197 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: gen
 chapter: 42
 verses:
   - n: 1
     text:
-      la: "audiens autem Iacob quod alimenta venderentur in Aegypto dixit filiis suis quare neglegitis"
+      la: "Audiens autem Jacob quod alimenta venderentur in Aegypto, dixit filiis suis: Quare negligitis?"
       en: "And Jacob hearing that food was sold in Egypt, said to his sons: Why are ye careless?"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "audivi quod triticum venundetur in Aegypto descendite et emite nobis necessaria ut possimus vivere et non consumamur inopia"
+      la: "audivi quod triticum venundetur in Aegypto: descendite, et emite nobis necessaria, ut possimus vivere, et non consumamur inopia."
       en: "I have heard that wheat is sold in Egypt: go ye down, and buy us necessaries, that we may live, and not be consumed with want."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "descendentes igitur fratres Ioseph decem ut emerent frumenta in Aegypto"
+      la: "Descendentes igitur fratres Joseph decem, ut emerent frumenta in Aegypto,"
       en: "So the ten brethren of Joseph went down, to buy corn in Egypt:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "Beniamin domi retento ab Iacob qui dixerat fratribus eius ne forte in itinere quicquam patiatur mali"
+      la: "Benjamin domi retento a Jacob, qui dixerat fratribus ejus: Ne forte in itinere quidquam patiatur mali:"
       en: "Whilst Benjamin was kept at home by Jacob, who said to his brethren: Lest perhaps he take any harm in the journey."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "ingressi sunt terram Aegypti cum aliis qui pergebant ad emendum erat autem fames in terra Chanaan"
+      la: "ingressi sunt terram Aegypti cum aliis qui pergebant ad emendum. Erat autem fames in terra Chanaan."
       en: "And they entered into the land of Egypt with others that went to buy. For the famine was in the land of Chanaan."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et Ioseph princeps Aegypti atque ad illius nutum frumenta populis vendebantur cumque adorassent eum fratres sui"
+      la: "Et Joseph erat princeps in terra Aegypti, atque ad ejus nutum frumenta populis vendebantur. Cumque adorassent eum fratres sui,"
       en: "And Joseph was governor in the land of Egypt, and corn was sold by his direction to the people. And when his brethren had bowed down to him,"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et agnovisset eos quasi ad alienos durius loquebatur interrogans eos unde venistis qui responderunt de terra Chanaan ut emamus victui necessaria"
+      la: "et agnovisset eos, quasi ad alienos durius loquebatur, interrogans eos: Unde venistis? Qui responderunt: De terra Chanaan, ut emamus victui necessaria."
       en: "And he knew them, he spoke as it were to strangers somewhat roughly, asking them: Whence came you? They answered: From the land of Chanaan, to buy necessaries of life."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et tamen fratres ipse cognoscens non est agnitus ab eis"
+      la: "Et tamen fratres ipse cognoscens, non est cognitus ab eis."
       en: "And though he knew his brethren, he was not known by them."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "recordatusque somniorum quae aliquando viderat ait exploratores estis ut videatis infirmiora terrae venistis"
+      la: "Recordatusque somniorum, quae aliquando viderat, ait ad eos: Exploratores estis: ut videatis infirmiora terrae venistis."
       en: "And remembering the dreams, which formerly he had dreamed, he said to them: You are spies. You are come to view the weaker parts of the land."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "qui dixerunt non est ita domine sed servi tui venerunt ut emerent cibos"
+      la: "Qui dixerunt: Non est ita, domine, sed servi tui venerunt ut emerent cibos."
       en: "But they said: It is not so, my lord, but thy servants are come to buy food."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "omnes filii unius viri sumus pacifici venimus nec quicquam famuli tui machinantur mali"
+      la: "Omnes filii unius viri sumus: pacifici venimus, nec quidquam famuli tui machinantur mali."
       en: "We are all the sons of one man: we are come as peaceable men, neither do thy servants go about any evil."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "quibus ille respondit aliter est inmunita terrae huius considerare venistis"
+      la: "Quibus ille respondit: Aliter est: immunita terrae hujus considerare venistis."
       en: "And he answered them: It is otherwise: you are come to consider the unfenced parts of this land."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et illi duodecim inquiunt servi tui fratres sumus filii viri unius in terra Chanaan minimus cum patre nostro est alius non est super"
+      la: "At illi: Duodecim, inquiunt, servi tui, fratres sumus, filii viri unius in terra Chanaan: minimus cum patre nostro est, alius non est super."
       en: "But they said: We thy servants are twelve brethren, the sons of one man in the land of Chanaan: the youngest is with our father, the other is not living."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "hoc est ait quod locutus sum exploratores estis"
+      la: "Hoc est, ait, quod locutus sum: exploratores estis."
       en: "He saith: This is it that I said: You are spies."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "iam nunc experimentum vestri capiam per salutem Pharaonis non egrediemini hinc donec veniat frater vester minimus"
+      la: "Jam nunc experimentum vestri capiam: per salutem Pharaonis non egrediemini hinc, donec veniat frater vester minimus."
       en: "I shall now presently try what you are: by the health of Pharao you shall not depart hence, until your youngest brother come."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "mittite e vobis unum et adducat eum vos autem eritis in vinculis donec probentur quae dixistis utrum falsa an vera sint alioquin per salutem Pharaonis exploratores estis"
+      la: "Mittite ex vobis unum, et adducat eum: vos autem eritis in vinculis, donec probentur quae dixistis utrum vera an falsa sint: alioquin per salutem Pharaonis exploratores estis."
       en: "Send one of you to fetch him: and you shall be in prison, till what you have said be proved, whether it be true or false: or else by the health of Pharao you are spies."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "tradidit ergo eos custodiae tribus diebus"
+      la: "Tradidit ergo illos custodiae tribus diebus."
       en: "So he put them in prison three days."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "die autem tertio eductis de carcere ait facite quod dixi et vivetis Deum enim timeo"
+      la: "Die autem tertio eductis de carcere, ait: Facite quae dixi, et vivetis: Deum enim timeo."
       en: "And the third day he brought them out of prison, and said: Do as I have said, and you shall live: for I fear God."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "si pacifici estis frater vester unus ligetur in carcere vos autem abite et ferte frumenta quae emistis in domos vestras"
+      la: "Si pacifici estis, frater vester unus ligetur in carcere: vos autem abite, et ferte frumenta quae emistis, in domos vestras,"
       en: "If you be peaceable men, let one of your brethren be bound in prison: and go ye your ways and carry the corn that you have bought, unto your houses."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "et fratrem vestrum minimum ad me adducite ut possim vestros probare sermones et non moriamini fecerunt ut dixerat"
+      la: "et fratrem vestrum minimum ad me adducite, ut possim vestros probare sermones, et non moriamini. Fecerunt ut dixerat,"
       en: "And bring your youngest brother to me, that I may find your words to be true, and you may not die. They did as he had said."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "et locuti sunt invicem merito haec patimur quia peccavimus in fratrem nostrum videntes angustiam animae illius cum deprecaretur nos et non audivimus idcirco venit super nos ista tribulatio"
-      en: "And they talked one to another: We deserve to suffer these things, because we have sinned against our brother, seeing the anguished of his soul, when he besought us, and we would not hear: therefore is this affliction come upon us."
+      la: "et locuti sunt ad invicem: Merito haec patimur, quia peccavimus in fratrem nostrum, videntes angustiam animae illius, dum deprecaretur nos, et non audivimus: idcirco venit super nos ista tribulatio."
+      en: "And they talked one to another: We deserve to suffer these things, because we have sinned against our brother, seeing the anguish of his soul, when he besought us, and we would not hear: therefore is this affliction come upon us."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "e quibus unus Ruben ait numquid non dixi vobis nolite peccare in puerum et non audistis me en sanguis eius exquiritur"
+      la: "E quibus unus Ruben, ait: Numquid non dixi vobis: Nolite peccare in puerum: et non audistis me? en sanguis ejus exquiritur."
       en: "And Ruben one of them, said: Did not I say to you: Do not sin against the boy: and you would not hear me? Behold his blood is required."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "nesciebant autem quod intellegeret Ioseph eo quod per interpretem loquebatur ad eos"
+      la: "Nesciebant autem quod intelligeret Joseph, eo quod per interpretem loqueretur ad eos."
       en: "And they knew not that Joseph understood, because he spoke to them by an interpreter."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "avertitque se parumper et flevit et reversus locutus est ad eos"
+      la: "Avertitque se parumper, et flevit: et reversus locutus est ad eos."
       en: "And he turned himself away a little while, and wept: and returning he spoke to them."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "tollens Symeon et ligans illis praesentibus iussitque ministris ut implerent saccos eorum tritico et reponerent pecunias singulorum in sacculis suis datis supra cibariis in via qui fecerunt ita"
-      en: "And taking Simeon, and binking him in their presence, he commanded his servants to fill their sacks with wheat, and to put every man's money again in their sacks, and to give them besides provisions for the way: and they did so."
+      la: "Tollensque Simeon, et ligans illis praesentibus, jussit ministris ut implerent eorum saccos tritico, et reponerent pecunias singulorum in sacculis suis, datis supra cibariis in viam: qui fecerunt ita."
+      en: "And taking Simeon, and binding him in their presence, he commanded his servants to fill their sacks with wheat, and to put every man's money again in their sacks, and to give them besides provisions for the way: and they did so."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "at illi portantes frumenta in asinis profecti sunt"
+      la: "At illi portantes frumenta in asinis suis, profecti sunt."
       en: "But they having loaded their asses with the corn, went their way."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "apertoque unus sacco ut daret iumento pabulum in diversorio contemplatus pecuniam in ore sacculi"
+      la: "Apertoque unus sacco, ut daret jumento pabulum in diversorio, contemplatus pecuniam in ore sacculi,"
       en: "And one of them opening his sack, to give his beast provender in the inn, saw the money in the sack's mouth;"
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "dixit fratribus suis reddita est mihi pecunia en habetur in sacco et obstupefacti turbatique dixerunt mutuo quidnam est hoc quod fecit nobis Deus"
-      en: "And said to his brethren: My money is given me again, hehold it is in the sack. And thye were astonished, and troubled, and said to one another: What is this that God hath done unto us?"
+      la: "dixit fratribus suis: Reddita est mihi pecunia, en habetur in sacco. Et obstupefacti, turbatique, mutuo dixerunt: Quidnam est hoc quod fecit nobis Deus?"
+      en: "And said to his brethren: My money is given me again, behold it is in the sack. And they were astonished, and troubled, and said to one another: What is this that God hath done unto us?"
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "veneruntque ad Iacob patrem suum in terra Chanaan et narraverunt ei omnia quae accidissent sibi dicentes"
+      la: "Veneruntque ad Jacob patrem suum in terram Chanaan, et narraverunt ei omnia quae accidissent sibi, dicentes:"
       en: "And they came to Jacob their father in the land of Chanaan, and they told him all things that had befallen them, saying:"
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "locutus est nobis dominus terrae dure et putavit nos exploratores provinciae"
+      la: "Locutus est nobis dominus terrae dure, et putavit nos exploratores esse provinciae."
       en: "The lord of the land spoke roughly to us, and took us to be spies of the country."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "cui respondimus pacifici sumus nec ullas molimur insidias"
+      la: "Cui respondimus: Pacifici sumus, nec ullas molimur insidias."
       en: "And we answered him: We are peaceable men, and we mean no plot."
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "duodecim fratres uno patre geniti sumus unus non est super minimus cum patre versatur in terra Chanaan"
+      la: "Duodecim fratres uno patre geniti sumus: unus non est super, minimus cum patre nostro est in terra Chanaan."
       en: "We are twelve brethren born of one father: one is not living, the youngest is with our father in the land of Chanaan."
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "qui ait nobis sic probabo quod pacifici sitis fratrem vestrum unum dimittite apud me et cibaria domibus vestris necessaria sumite et abite"
+      la: "Qui ait nobis: Sic probabo quod pacifici sitis: fratrem vestrum unum dimittite apud me, et cibaria domibus vestris necessaria sumite, et abite,"
       en: "And he said to us: Hereby shall I know that you are peaceable men: Leave one of your brethren with me, and take ye necessary provision for your houses, and go your ways."
     status: { la: verified, en: verified }
   - n: 34
     text:
-      la: "fratremque vestrum minimum adducite ad me ut sciam quod non sitis exploratores et istum qui tenetur in vinculis recipere possitis ac deinceps emendi quae vultis habeatis licentiam"
+      la: "fratremque vestrum minimum adducite ad me, ut sciam quod non sitis exploratores: et istum, qui tenetur in vinculis, recipere possitis: ac deinceps quae vultis, emendi habeatis licentiam."
       en: "And bring your youngest brother to me, that I may know you are not spies: and you may receive this man again, that is kept in prison: and afterwards may have leave to buy what you will."
     status: { la: verified, en: verified }
   - n: 35
     text:
-      la: "his dictis cum frumenta effunderent singuli reppererunt in ore saccorum ligatas pecunias exterritisque simul omnibus"
+      la: "His dictis, cum frumenta effunderent, singuli repererunt in ore saccorum ligatas pecunias, exterritisque simul omnibus,"
       en: "When they had told this, they poured out their corn and every man found his money tied in the mouth of his sack: and all being astonished together,"
     status: { la: verified, en: verified }
   - n: 36
     text:
-      la: "dixit pater Iacob absque liberis me esse fecistis Ioseph non est super Symeon tenetur in vinculis Beniamin auferetis in me haec mala omnia reciderunt"
+      la: "dixit pater Jacob: Absque liberis me esse fecistis: Joseph non est super, Simeon tenetur in vinculis, et Benjamin auferetis: in me haec omnia mala reciderunt."
       en: "Their father Jacob said: You have made me to be without children: Joseph is not living, Simeon is kept in bonds, and Benjamin you will take away: all these evils are fallen upon me."
     status: { la: verified, en: verified }
   - n: 37
     text:
-      la: "cui respondit Ruben duos filios meos interfice si non reduxero illum tibi trade in manu mea et ego eum restituam"
-      en: "And Ruben answered him: Kill my two sons if I bring him not again to thee: deliver him unto my hand, and I will restore him to thee."
+      la: "Cui respondit Ruben: Duos filios meos interfice, si non reduxero illum tibi: trade illum in manu mea, et ego eum tibi restituam."
+      en: "And Ruben answered him: Kill my two sons if I bring him not again to thee: deliver him into my hand, and I will restore him to thee."
     status: { la: verified, en: verified }
   - n: 38
     text:
-      la: "at ille non descendet inquit filius meus vobiscum frater eius mortuus est ipse solus remansit si quid ei adversi acciderit in terra ad quam pergitis deducetis canos meos cum dolore ad inferos"
+      la: "At ille: Non descendet, inquit, filius meus vobiscum: frater ejus mortuus est, et ipse solus remansit: si quid ei adversi acciderit in terra ad quam pergitis, deducetis canos meos cum dolore ad inferos."
       en: "But he said: My son shall not go down with you: his brother is dead, and he is left alone: if any mischief befall him in the land to which you go, you will bring down my gray hairs with sorrow to hell."
     status: { la: verified, en: verified }

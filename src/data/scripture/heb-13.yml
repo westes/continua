@@ -1,127 +1,132 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: heb
 chapter: 13
 verses:
   - n: 1
     text:
-      la: "caritas fraternitatis maneat"
+      la: "Caritas fraternitatis maneat in vobis,"
       en: "Let the charity of the brotherhood abide in you."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "hospitalitatem nolite oblivisci per hanc enim latuerunt quidam angelis hospitio receptis"
+      la: "et hospitalitatem nolite oblivisci: per hanc enim latuerunt quidam, angelis hospitio receptis."
       en: "And hospitality do not forget; for by this some, being not aware of it, have entertained angels."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "mementote vinctorum tamquam simul vincti et laborantium tamquam et ipsi in corpore morantes"
+      la: "Mementote vinctorum, tamquam simul vincti: et laborantium, tamquam et ipsi in corpore morantes."
       en: "Remember them that are in bands, as if you were bound with them; and them that labour, as being yourselves also in the body."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "honorabile conubium in omnibus et torus inmaculatus fornicatores enim et adulteros iudicabit Deus"
+      la: "Honorabile connubium in omnibus, et thorus immaculatus. Fornicatores enim, et adulteros judicabit Deus."
       en: "Marriage honourable in all, and the bed undefiled. For fornicators and adulterers God will judge."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "sint mores sine avaritia contenti praesentibus ipse enim dixit non te deseram neque derelinquam"
+      la: "Sint mores sine avaritia, contenti praesentibus: ipse enim dixit: Non te deseram, neque derelinquam:"
       en: "Let your manners be without covetousness, contented with such things as you have; for he hath said: I will not leave thee, neither will I forsake thee."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "ita ut confidenter dicamus Dominus mihi adiutor non timebo quid faciat mihi homo"
+      la: "ita ut confidenter dicamus: Dominus mihi adjutor: non timebo quid faciat mihi homo."
       en: "So that we may confidently say: The Lord is my helper: I will not fear what man shall do to me."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "mementote praepositorum vestrorum qui vobis locuti sunt verbum Dei quorum intuentes exitum conversationis imitamini fidem"
+      la: "Mementote praepositorum vestrorum, qui vobis locuti sunt verbum Dei: quorum intuentes exitum conversationis, imitamini fidem."
       en: "Remember your prelates who have spoken the word of God to you; whose faith follow, considering the end of their conversation,"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "Iesus Christus heri et hodie ipse et in saecula"
-      en: "Jesus Christ, yesterday, and to day; and the same for ever."
+      la: "Jesus Christus heri, et hodie: ipse et in saecula."
+      en: "Jesus Christ, yesterday, and today; and the same for ever."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "doctrinis variis et peregrinis nolite abduci optimum enim est gratia stabiliri cor non escis quae non profuerunt ambulantibus in eis"
+      la: "Doctrinis variis et peregrinis nolite abduci. Optimum est enim gratia stabilire cor, non escis: quae non profuerunt ambulantibus in eis."
       en: "Be not led away with various and strange doctrines. For it is best that the heart be established with grace, not with meats; which have not profited those that walk in them."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "habemus altare de quo edere non habent potestatem qui tabernaculo deserviunt"
+      la: "Habemus altare, de quo edere non habent potestatem, qui tabernaculo deserviunt."
       en: "We have an altar, whereof they have no power to eat who serve the tabernacle."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "quorum enim animalium infertur sanguis pro peccato in sancta per pontificem horum corpora cremantur extra castra"
+      la: "Quorum enim animalium infertur sanguis pro peccato in Sancta per pontificem, horum corpora cremantur extra castra."
       en: "For the bodies of those beasts, whose blood is brought into the holies by the high priest for sin, are burned without the camp."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "propter quod et Iesus ut sanctificaret per suum sanguinem populum extra portam passus est"
+      la: "Propter quod et Jesus, ut sanctificaret per suum sanguinem populum, extra portam passus est."
       en: "Wherefore Jesus also, that he might sanctify the people by his own blood, suffered without the gate."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "exeamus igitur ad eum extra castra inproperium eius portantes"
+      la: "Exeamus igitur ad eum extra castra, improperium ejus portantes."
       en: "Let us go forth therefore to him without the camp, bearing his reproach."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "non enim habemus hic manentem civitatem sed futuram inquirimus"
+      la: "Non enim habemus hic manentem civitatem, sed futuram inquirimus."
       en: "For we have not here a lasting city, but we seek one that is to come."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "per ipsum ergo offeramus hostiam laudis semper Deo id est fructum labiorum confitentium nomini eius"
+      la: "Per ipsum ergo offeramus hostiam laudis semper Deo, id est, fructum labiorum confitentium nomini ejus."
       en: "By him therefore let us offer the sacrifice of praise always to God, that is to say, the fruit of lips confessing to his name."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "beneficientiae autem et communionis nolite oblivisci talibus enim hostiis promeretur Deus"
+      la: "Beneficentiae autem et communionis nolite oblivisci: talibus enim hostiis promeretur Deus."
       en: "And do not forget to do good, and to impart; for by such sacrifices God's favour is obtained."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "oboedite praepositis vestris et subiacete eis ipsi enim pervigilant quasi rationem pro animabus vestris reddituri ut cum gaudio hoc faciant et non gementes hoc enim non expedit vobis"
+      la: "Obedite praepositis vestris, et subjacete eis. Ipsi enim pervigilant quasi rationem pro animabus vestris reddituri, ut cum gaudio hoc faciant, et non gementes: hoc enim non expedit vobis."
       en: "Obey your prelates, and be subject to them. For they watch as being to render an account of your souls; that they may do this with joy, and not with grief. For this is not expedient for you."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "orate pro nobis confidimus enim quia bonam conscientiam habemus in omnibus bene volentes conversari"
+      la: "Orate pro nobis: confidimus enim quia bonam conscientiam habemus in omnibus bene volentes conversari."
       en: "Pray for us. For we trust we have a good conscience, being willing to behave ourselves well in all things."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "amplius autem deprecor vos hoc facere ut quo celerius restituar vobis"
+      la: "Amplius autem deprecor vos hoc facere, quo celerius restituar vobis."
       en: "And I beseech you the more to do this, that I may be restored to you the sooner."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "Deus autem pacis qui eduxit de mortuis pastorem magnum ovium in sanguine testamenti aeterni Dominum nostrum Iesum"
+      la: "Deus autem pacis, qui eduxit de mortuis pastorem magnum ovium, in sanguine testamenti aeterni, Dominum nostrum Jesum Christum,"
       en: "And may the God of peace, who brought again from the dead the great pastor of the sheep, our Lord Jesus Christ, in the blood of the everlasting testament,"
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "aptet vos in omni bono ut faciatis voluntatem eius faciens in vobis quod placeat coram se per Iesum Christum cui gloria in saecula saeculorum amen"
+      la: "aptet vos in omni bono, ut faciatis ejus voluntatem: faciens in vobis quod placeat coram se per Jesum Christum: cui est gloria in saecula saeculorum. Amen."
       en: "Fit you in all goodness, that you may do his will; doing in you that which is well pleasing in his sight, through Jesus Christ, to whom is glory for ever and ever. Amen."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "rogo autem vos fratres sufferatis verbum solacii etenim perpaucis scripsi vobis"
+      la: "Rogo autem vos fratres, ut sufferatis verbum solatii. Etenim perpaucis scripsi vobis."
       en: "And I beseech you, brethren, that you suffer this word of consolation. For I have written to you in a few words."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "cognoscite fratrem nostrum Timotheum dimissum cum quo si celerius venerit videbo vos"
+      la: "Cognoscite fratrem nostrum Timotheum dimissum: cum quo ( si celerius venerit) videbo vos."
       en: "Know ye that our brother Timothy is set at liberty: with whom (if he come shortly) I will see you."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "salutate omnes praepositos vestros et omnes sanctos salutant vos de Italia"
+      la: "Salutate omnes praepositos vestros, et omnes sanctos. Salutant vos de Italia fratres."
       en: "Salute all your prelates, and all the saints. The brethren from Italy salute you."
+    status: { la: verified, en: verified }
+  - n: 25
+    text:
+      la: "Gratia cum omnibus vobis. Amen."
+      en: "Grace be with you all. Amen."
     status: { la: verified, en: verified }

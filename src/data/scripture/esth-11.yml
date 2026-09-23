@@ -1,8 +1,7 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for esth 11 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: esth
 chapter: 11
 verses:
@@ -13,7 +12,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "Anno secundo, regnante Artaxerxe maximo, prima die mensis Nisan, vidit somnium Mardochaeus filius Jairi, filii Semei, filii Cis, de tribu Benjamin :"
+      la: "Anno secundo, regnante Artaxerxe maximo, prima die mensis Nisan, vidit somnium Mardochaeus filius Jairi, filii Semei, filii Cis, de tribu Benjamin:"
       en: "In the second year of the reign of Artaxerxes the great, in the first day of the month Nisan, Mardochai the son of Jair, the son of Semei, the son of Cis, of the tribe of Benjamin:"
     status: { la: verified, en: verified }
   - n: 3
@@ -23,12 +22,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "Erat autem de eo numero captivorum, quos transtulerat Nabuchodonosor rex Babylonis de Jerusalem cum Jechonia rege Juda :"
+      la: "Erat autem de eo numero captivorum, quos transtulerat Nabuchodonosor rex Babylonis de Jerusalem cum Jechonia rege Juda:"
       en: "Now he was of the number of the captives, whom Nabuchodonosor king of Babylon had carried away from Jerusalem with Jechonias king of Juda:"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et hoc ejus somnium fuit : apparuerunt voces, et tumultus, et tonitrua, et terraemotus, et conturbatio super terram :"
+      la: "et hoc ejus somnium fuit: apparuerunt voces, et tumultus, et tonitrua, et terraemotus, et conturbatio super terram:"
       en: "And this was his dream: Behold there were voices, and tumults, and thunders, and earthquakes, and a disturbance upon the earth."
     status: { la: verified, en: verified }
   - n: 6
@@ -53,7 +52,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "Clamaveruntque ad Deum : et illis vociferantibus, fons parvus creavit in fluvium maximum, et in aquas plurimas redundavit."
+      la: "Clamaveruntque ad Deum: et illis vociferantibus, fons parvus creavit in fluvium maximum, et in aquas plurimas redundavit."
       en: "And they cried to God: and as they were crying, a little fountain grew into a very great river, and abounded into many waters."
     status: { la: verified, en: verified }
   - n: 11
@@ -63,6 +62,6 @@ verses:
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "Quod cum vidisset Mardochaeus, et surrexisset de strato, cogitabat quid Deus facere vellet : et fixum habebat in animo scire cupiens quid significaret somnium."
+      la: "Quod cum vidisset Mardochaeus, et surrexisset de strato, cogitabat quid Deus facere vellet: et fixum habebat in animo scire cupiens quid significaret somnium."
       en: "And when Mardochai had seen this, and arose out of his bed, he was thinking what God would do: and he kept it fixed in his mind, desirous to know what the dream should signify."
     status: { la: verified, en: verified }

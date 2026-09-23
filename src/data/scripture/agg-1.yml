@@ -1,77 +1,77 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: agg
 chapter: 1
 verses:
   - n: 1
     text:
-      la: "in anno secundo Darii regis in mense sexto in die una mensis factum est verbum Domini in manu Aggei prophetae ad Zorobabel filium Salathihel ducem Iuda et ad Iesum filium Iosedech sacerdotem magnum dicens"
+      la: "In anno secundo Darii regis, in mense sexto, in die una mensis, factum est verbum Domini in manu Aggaei prophetae, ad Zorobabel, filium Salathiel, ducem Juda, et ad Jesum, filium Josedec, sacerdotem magnum, dicens:"
       en: "In the second year of Darius the king, in the sixth month, in the first day of the month, the word of the Lord came by the hand of Aggeus the prophet, to Zorobabel the son of Salathiel, governor of Juda, and to Jesus the son of Josedec the high priest, saying:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "haec ait Dominus exercituum dicens populus iste dicit nondum venit tempus domus Domini aedificandae"
+      la: "Haec ait Dominus exercituum, dicens: Populus iste dicit: Nondum venit tempus domus Domini aedificandae."
       en: "Thus saith the Lord of hosts, saying: This people saith: The time is not yet come for building the house of the Lord."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et factum est verbum Domini in manu Aggei prophetae dicens"
+      la: "Et factum est verbum Domini in manu Aggaei prophetae, dicens:"
       en: "And the word of the Lord came by the hand of Aggeus the prophet, saying:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "numquid tempus vobis est ut habitetis in domibus laqueatis et domus ista deserta"
+      la: "Numquid tempus vobis est ut habitetis in domibus laqueatis, et domus ista deserta?"
       en: "Is it time for you to dwell in ceiled houses, and this house lie desolate?"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et nunc haec dicit Dominus exercituum ponite corda vestra super vias vestras"
+      la: "Et nunc haec dicit Dominus exercituum: Ponite corda vestra super vias vestras."
       en: "And now thus saith the Lord of hosts: Set your hearts to consider your ways."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "seminastis multum et intulistis parum comedistis et non estis satiati bibistis et non estis inebriati operuistis vos et non estis calefacti et qui mercedes congregavit misit eas in sacculum pertusum"
+      la: "Seminastis multum, et intulistis parum; comedistis, et non estis satiati; bibistis, et non estis inebriati; operuistis vos, et non estis calefacti; et qui mercedes congregavit, misit eas in sacculum pertusum."
       en: "You have sowed much, and brought in little: you have eaten, but have not had enough: you have drunk, but have not been filled with drink: you have clothed yourselves, but have not been warmed: and he that hath earned wages, put them into a bag with holes."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "haec dicit Dominus exercituum ponite corda vestra super vias vestras"
+      la: "Haec dicit Dominus exercituum: Ponite corda vestra super vias vestras;"
       en: "Thus saith the Lord of hosts: Set Your hearts upon your ways:"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "ascendite in montem portate lignum et aedificate domum et acceptabilis mihi erit et glorificabor dicit Dominus"
+      la: "ascendite in montem, portate ligna, et aedificate domum: et acceptabilis mihi erit, et glorificabor, dicit Dominus."
       en: "Go up to the mountain, bring timber, and build the house: and it shall be acceptable to me, and I shall be glorified, saith the Lord."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "respexistis ad amplius et ecce factum est minus et intulistis in domum et exsuflavi illud quam ob causam dicit Dominus exercituum quia domus mea deserta est et vos festinatis unusquisque in domum suam"
+      la: "Respexistis ad amplius, et ecce factum est minus; et intulistis in domum, et exsufflavi illud: quam ob causam? dicit Dominus exercituum: quia domus mea deserta est, et vos festinatis unusquisque in domum suam."
       en: "You have looked for more, and behold it became less, and you brought it home, and I blowed it away: why, saith the Lord of hosts? because my house is desolate, and you make haste every man to his own house."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "propter hoc super vos prohibiti sunt caeli ne darent rorem et terra prohibita est ne daret germen suum"
+      la: "Propter hoc super vos prohibiti sunt caeli ne darent rorem, et terra prohibita est ne daret germen suum:"
       en: "Therefore the heavens over you were stayed from giving dew, and the earth was hindered from yielding her fruits:"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et vocavi siccitatem super terram et super montes et super triticum et super vinum et super oleum et quaecumque profert humus et super homines et super iumenta et super omnem laborem manuum"
+      la: "et vocavi siccitatem super terram, et super montes, et super triticum, et super vinum, et super oleum, et quaecumque profert humus, et super homines, et super jumenta, et super omnem laborem manuum."
       en: "And I called for a drought upon the land, and upon the mountains, and upon the corn, and upon the wine, and upon the oil, and upon all that the ground bringeth forth, and upon men, and upon beasts, and upon all the labour of the hands."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "et audivit Zorobabel filius Salathihel et Iesus filius Iosedech sacerdos magnus et omnes reliquiae populi vocem Dei sui et verba Aggei prophetae sicut misit eum Dominus Deus eorum ad ipsos et timuit populus a facie Domini"
+      la: "Et audivit Zorobabel, filius Salathiel, et Jesus, filius Josedec, sacerdos magnus, et omnes reliquiae populi, vocem Domini Dei sui, et verba Aggaei prophetae, sicut misit eum Dominus Deus eorum ad eos, et timuit populus a facie Domini."
       en: "Then Zorobabel the son of Salathiel, and Jesus the son of Josedec the high priest, and all the remnant of the people hearkened to the voice of the Lord their God, and to the words of Aggeus the prophet, as the Lord their God sent him to them: and the people feared before the Lord."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et dixit Aggeus nuntius Domini de nuntiis Domini populo dicens ego vobiscum dicit Dominus"
+      la: "Et dixit Aggaeus, nuntius Domini de nuntiis Domini, populo dicens: Ego vobiscum sum, dicit Dominus."
       en: "And Aggeus the messenger of the Lord, as one of the messengers of the Lord, spoke, saying to the people: I am with you, saith the Lord."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et suscitavit Dominus spiritum Zorobabel filii Salathihel ducis Iuda et spiritum Iesu filii Iosedech sacerdotis magni et spiritum reliquorum de omni populo et ingressi sunt et faciebant opus in domo Domini exercituum Dei sui"
+      la: "Et suscitavit Dominus spiritum Zorobabel, filii Salathiel, ducis Juda, et spiritum Jesu, filii Josedec, sacerdotis magni, et spiritum reliquorum de omni populo: et ingressi sunt, et faciebant opus in domo Domini exercituum, Dei sui."
       en: "And the Lord stirred up the spirit of Zorobabel the son of Salathiel governor of Juda, and the spirit of Jesus the son of Josedec the high priest, and the spirit of all the rest of the people: and they went in, and did the work in the house of the Lord of hosts their God."
     status: { la: verified, en: verified }

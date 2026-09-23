@@ -1,97 +1,97 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 2esdr
 chapter: 8
 verses:
   - n: 1
     text:
-      la: "et venerat mensis septimus filii autem Israhel erant in civitatibus suis congregatusque est omnis populus quasi vir unus ad plateam quae est ante portam Aquarum et dixerunt Ezrae scribae ut adferret librum legis Mosi quam praecepit Dominus Israheli"
-      en: "And the seventh month came: and the children of Israel were in their cities. And all the people were gathered together as one mall to the street which is before the water gate, and they spoke to Esdras the scribe, to bring the book of the law of Moses, which the Lord had commanded to Israel."
+      la: "Et venerat mensis septimus: filii autem Israel erant in civitatibus suis. Congregatusque est omnis populus quasi vir unus ad plateam, quae est ante portam aquarum: et dixerunt Esdrae scribae ut afferret librum legis Moysi, quam praeceperat Dominus Israeli."
+      en: "And the seventh month came: and the children of Israel were in their cities. And all the people were gathered together as one man to the street which is before the water gate, and they spoke to Esdras the scribe, to bring the book of the law of Moses, which the Lord had commanded to Israel."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "adtulit ergo Ezras sacerdos legem coram multitudine virorum et mulierum cunctisque qui poterant intellegere in die prima mensis septimi"
+      la: "Attulit ergo Esdras sacerdos legem coram multitudine virorum et mulierum, cunctisque qui poterant intelligere, in die prima mensis septimi."
       en: "Then Esdras the priest brought the law before the multitude of men and women, and all those that could understand, in the first day of the seventh month."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et legit in eo aperte in platea quae erat ante portam Aquarum de mane usque ad mediam diem in conspectu virorum et mulierum et sapientium et aures omnis populi erant erectae ad librum"
+      la: "Et legit in eo aperte in platea quae erat ante portam aquarum, de mane usque ad mediam diem, in conspectu virorum et mulierum, et sapientium: et aures omnis populi erant erectae ad librum."
       en: "And he read it plainly in the street that was before the water gate, from the morning until midday, before the men, and the women, and all those that could understand: and the ears of all the people were attentive to the book."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "stetit autem Ezras scriba super gradum ligneum quem fecerat ad loquendum et steterunt iuxta eum Matthathia et Sema et Ania et Uria et Helcia et Maasia ad dextram eius et ad sinistram Phadaia Misahel et Melchia et Asum et Asephdana Zaccharia et Mosollam"
+      la: "Stetit autem Esdras scriba super gradum ligneum, quem fecerat ad loquendum: et steterunt juxta eum Mathathias, et Semeia, et Ania, et Uria, et Helcia, et Maasia, ad dexteram ejus: et ad sinistram, Phadaia, Misael, et Melchia, et Hasum, et Hasbadana, Zacharia, et Mosollam."
       en: "And Esdras the scribe stood upon a step of wood, which he had made to speak upon, and there stood by him Mathathias, and Semeia, and Ania, and Uria, and Helcia, and Maasia, on his right hand: and on the left, Phadaia, Misael, and Melchia, and Hasum, and Hasbadana, Zacharia and Mosollam."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et aperuit Ezras librum coram omni populo super universum quippe populum eminebat et cum aperuisset eum stetit omnis populus"
+      la: "Et aperuit Esdras librum coram omni populo: super universum quippe populum eminebat: et cum aperuisset eum, stetit omnis populus."
       en: "And Esdras opened the book before all the people: for he was above all the people: and when he had opened it, all the people stood."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et benedixit Ezras Domino Deo magno et respondit omnis populus amen amen elevans manus suas et incurvati sunt et adoraverunt Deum proni in terram"
+      la: "Et benedixit Esdras Domino Deo magno: et respondit omnis populus: Amen, amen, elevans manus suas: et incurvati sunt, et adoraverunt Deum proni in terram."
       en: "And Esdras blessed the Lord the great God: and all the people answered, Amen, amen: lifting up their hands: and they bowed down, and adored God with their faces to the ground."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "porro Hiesue et Baani et Serebia Iamin Accub Septhai Odia Maasia Celita Azarias Iozabed Anam Phalaia Levitae silentium faciebant in populo ad audiendam legem populus autem stabat in gradu suo"
-      en: "Now Josue, and Bani, and Serebia, Jamin, Accub, Sephtai, Odia, Maasia, Celtia, Azarias, Jozabed, Hanan, Phalaia, the Levites, made silence among the people to hear the law: end the people stood in their place."
+      la: "Porro Josue, et Bani, et Serebia, Jamin, Accub, Septhai, Odia, Maasia, Celita, Azarias, Jozabed, Hanan, Phalaia, Levitae, silentium faciebant in populo ad audiendam legem: populus autem stabat in gradu suo."
+      en: "Now Josue, and Bani, and Serebia, Jamin, Accub, Sephtai, Odia, Maasia, Celtia, Azarias, Jozabed, Hanan, Phalaia, the Levites, made silence among the people to hear the law: and the people stood in their place."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et legerunt in libro legis Dei distincte et adposite ad intellegendum et intellexerunt cum legeretur"
+      la: "Et legerunt in libro legis Dei distincte, et aperte ad intelligendum: et intellexerunt cum legeretur."
       en: "And they read in the book of the law of God distinctly and plainly to be understood: and they understood when it was read."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "dixit autem Neemias ipse est Athersatha et Ezras sacerdos scriba et Levitae interpretantes universo populo dies sanctificatus est Domino Deo nostro nolite lugere et nolite flere flebat enim omnis populus cum audiret verba legis"
+      la: "Dixit autem Nehemias ( ipse est Athersatha) et Esdras sacerdos et scriba, et Levitae interpretantes universo populo: Dies sanctificatus est Domino Deo nostro: nolite lugere, et nolite flere. Flebat enim omnis populus cum audiret verba legis."
       en: "And Nehemias (he is Athersatha) and Esdras the priest and scribe, and the Levites who interpreted to all the people, said: This is a holy day to the Lord our God: do not mourn, nor weep: for all the people wept, when they heard the words of the law."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et dixit eis ite comedite pinguia et bibite mulsum et mittite partes ei qui non praeparavit sibi quia sanctus dies Domini est et nolite contristari gaudium enim Domini est fortitudo nostra"
+      la: "Et dixit eis: Ite, comedite pinguia, et bibite mulsum, et mittite partes his qui non praeparaverunt sibi, quia sanctus dies Domini est: et nolite contristari: gaudium etenim Domini est fortitudo nostra."
       en: "And he said to them: Go, eat fat meats, and drink sweet wine, and send portions to them that have not prepared for themselves: because it is the holy day of the Lord, and be not sad: for the joy of the Lord is our strength."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "Levitae autem silentium faciebant in omni populo dicentes tacete quia dies sanctus est et nolite dolere"
+      la: "Levitae autem silentium faciebant in omni populo, dicentes: Tacete, quia dies sanctus est, et nolite dolere."
       en: "And the Levites stilled all the people, saying: Hold your peace, for the day is holy, and be not sorrowful."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "abiit itaque omnis populus ut comederet et biberet et mitteret partes et faceret laetitiam magnam quia intellexerant verba quae docuerat eos"
+      la: "Abiit itaque omnis populus ut comederet, et biberet, et mitteret partes, et faceret laetitiam magnam: quia intellexerant verba, quae docuerat eos."
       en: "So all the people went to eat and drink, and to send portions, and to make great mirth: because they understood the words that he had taught them."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et in die secundo congregati sunt principes familiarum universi populi sacerdotes et Levitae ad Ezram scribam ut interpretaretur eis verba legis"
+      la: "Et in die secundo congregati sunt principes familiarum universi populi, sacerdotes et Levitae ad Esdram scribam, ut interpretaretur eis verba legis."
       en: "And on the second day the chiefs of the families of all the people, the priests, and the Levites were gathered together to Esdras the scribe, that he should interpret to them the words of the law."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et invenerunt scriptum in lege praecepisse Dominum in manu Mosi ut habitent filii Israhel in tabernaculis in die sollemni mense septimo"
+      la: "Et invenerunt scriptum in lege praecepisse Dominum in manu Moysi ut habitent filii Israel in tabernaculis, in die solemni, mense septimo:"
       en: "And they found written in the law, that the Lord had commanded by the hand of Moses, that the children of Israel should dwell in tabernacles, on the feast, in the seventh month:"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et ut praedicent et divulgent vocem in universis urbibus suis et in Hierusalem dicentes egredimini in montem et adferte frondes olivae et frondes ligni pulcherrimi frondes myrti et ramos palmarum et frondes ligni nemorosi ut fiant tabernacula sicut scriptum est"
+      la: "et ut praedicent, et divulgent vocem in universis urbibus suis, et in Jerusalem, dicentes: Egredimini in montem, et afferte frondes olivae, et frondes ligni pulcherrimi, frondes myrti, et ramos palmarum, et frondes ligni nemorosi, ut fiant tabernacula, sicut scriptum est."
       en: "And that they should proclaim and publish the word in all their cities, and in Jerusalem, saying: Go forth to the mount, and fetch branches of olive, and branches of beautiful wood, branches of myrtle, and branches of palm, and branches of thick trees, to make tabernacles, as it is written."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "et egressus est populus et adtulerunt feceruntque sibi tabernacula unusquisque in domate suo et in atriis suis et in atriis domus Dei et in platea portae Aquarum et in platea portae Ephraim"
+      la: "Et egressus est populus, et attulerunt. Feceruntque sibi tabernacula unusquisque in domate suo: et in atriis suis, et in atriis domus Dei, et in platea portae aquarum, et in platea portae Ephraim."
       en: "And the people went forth, and brought. And they made themselves tabernacles every man on the top of his house, and in their courts, and in the courts of the house of God, and in the street of the water gate, and in the street of the gate of Ephraim."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "fecit ergo universa ecclesia eorum qui redierant de captivitate tabernacula et habitaverunt in tabernaculis non enim fecerant a diebus Iosue filii Nun taliter filii Israhel usque ad diem illum et fuit laetitia magna nimis"
+      la: "Fecit ergo universa ecclesia eorum, qui redierant de captivitate, tabernacula, et habitaverunt in tabernaculis: non enim fecerant a diebus Josue filii Nun taliter filii Israel usque ad diem illum. Et fuit laetitia magna nimis."
       en: "And all the assembly of them that were returned from the captivity, made tabernacles, and dwelt in tabernacles: for since the days of Josue the son of Nun the children of Israel had not done so, until that day: and there was exceeding great joy."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "legit autem in libro legis Dei per dies singulos a die primo usque ad diem novissimum et fecerunt sollemnitatem septem diebus et in die octavo collectum iuxta ritum"
+      la: "Legit autem in libro legis Dei per dies singulos, a die primo usque ad diem novissimum. Et fecerunt solemnitatem septem diebus, et in die octavo collectam juxta ritum."
       en: "And he read in the book of the law of God day by day, from the first day till the last, and they kept the solemnity seven days, and in the eighth day a solemn assembly according to the manner."
     status: { la: verified, en: verified }

@@ -1,87 +1,87 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: job
 chapter: 35
 verses:
   - n: 1
     text:
-      la: "igitur Heliu haec rursum locutus est"
-      en: "Moreover Eliu spoke these words :"
+      la: "Igitur Eliu haec rursum locutus est:"
+      en: "Moreover Eliu spoke these words:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "numquid aequa tibi videtur tua cogitatio ut diceres iustior Deo sum"
-      en: "Doth thy thought seem right to thee, that thou shouldst say : I am more just than God?"
+      la: "Numquid aequa tibi videtur tua cogitatio, ut diceres: Justior sum Deo?"
+      en: "Doth thy thought seem right to thee, that thou shouldst say: I am more just than God?"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "dixisti enim non tibi placet quod rectum est vel quid tibi proderit si ego peccavero"
-      en: "For thou saidst : That which is right doth not please thee : or what will it profit thee if I sin?"
+      la: "Dixisti enim: Non tibi placet quod rectum est: vel quid tibi proderit, si ego peccavero?"
+      en: "For thou saidst: That which is right doth not please thee: or what will it profit thee if I sin?"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "itaque ego respondebo sermonibus tuis et amicis tuis tecum"
+      la: "Itaque ego respondebo sermonibus tuis, et amicis tuis tecum."
       en: "Therefore I will answer thy words, and thy friends with thee."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "suspice caelum et intuere et contemplare aethera quod altior te sit"
+      la: "Suspice caelum, et intuere: et contemplare aethera quod altior te sit."
       en: "Look up to heaven and see, and behold the sky, that it is higher than thee."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "si peccaveris quid ei nocebis et si multiplicatae fuerint iniquitates tuae quid facies contra eum"
+      la: "Si peccaveris, quid ei nocebis? et si multiplicatae fuerint iniquitates tuae, quid facies contra eum?"
       en: "If thou sin, what shalt thou hurt him? and if thy iniquities be multiplied, what shalt thou do against him?"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "porro si iuste egeris quid donabis ei aut quid de manu tua accipiet"
+      la: "Porro si juste egeris, quid donabis ei? aut quid de manu tua accipiet?"
       en: "And if thou do justly, what shalt thou give him, or what shall he receive of thy hand?"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "homini qui similis tui est nocebit impietas tua et filium hominis adiuvabit iustitia tua"
-      en: "Thy wickedness may hurt a man that is like thee : and thy justice may help the son of man."
+      la: "Homini qui similis tui est, nocebit impietas tua: et filium hominis adjuvabit justitia tua."
+      en: "Thy wickedness may hurt a man that is like thee: and thy justice may help the son of man."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "propter multitudinem calumniatorum clamabunt et heiulabunt propter vim brachii tyrannorum"
-      en: "By reason of the multitude of oppressions they shall cry out : and shall wail for the violence of the arm of tyrants."
+      la: "Propter multitudinem calumniatorum clamabunt, et ejulabunt propter vim brachii tyrannorum."
+      en: "By reason of the multitude of oppressions they shall cry out: and shall wail for the violence of the arm of tyrants."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et non dixit ubi est Deus qui fecit me qui dedit carmina in nocte"
-      en: "And he hath not said : Where is God, who made me, who hath given songs in the night?"
+      la: "Et non dixit: Ubi est Deus qui fecit me, qui dedit carmina in nocte,"
+      en: "And he hath not said: Where is God, who made me, who hath given songs in the night?"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "qui docet nos super iumenta terrae et super volucres caeli erudit nos"
+      la: "qui docet nos super jumenta terrae, et super volucres caeli erudit nos?"
       en: "Who teacheth us more than the beasts of the earth, and instructeth us more than the fowls of the air."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "ibi clamabunt et non exaudiet propter superbiam malorum"
+      la: "Ibi clamabunt, et non exaudiet propter superbiam malorum."
       en: "There shall they cry, and he will not hear, because of the pride of evil men."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "non ergo frustra audiet Deus et Omnipotens singulorum causas intuebitur"
+      la: "Non ergo frustra audiet Deus, et Omnipotens causas singulorum intuebitur."
       en: "God therefore will not hear in vain, and the Almighty will look into the causes of every one."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "etiam cum dixeris non considerat iudicare coram eo et expecta eum"
-      en: "Yea when thou shalt say : He considereth not : be judged before him, and expect him."
+      la: "Etiam cum dixeris: Non considerat: judicare coram illo, et expecta eum."
+      en: "Yea when thou shalt say: He considereth not: be judged before him, and expect him."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "nunc enim non infert furorem suum nec ulciscitur scelus valde"
+      la: "Nunc enim non infert furorem suum, nec ulciscitur scelus valde."
       en: "For he doth not now bring on his fury, neither doth he revenge wickedness exceedingly."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "ergo Iob frustra aperit os suum et absque scientia verba multiplicat"
+      la: "Ergo Job frustra aperit os suum, et absque scientia verba multiplicat."
       en: "Therefore Job openeth his mouth in vain, and multiplieth words without knowledge."
     status: { la: verified, en: verified }

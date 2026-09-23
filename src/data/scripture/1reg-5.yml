@@ -1,67 +1,67 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1reg
 chapter: 5
 verses:
   - n: 1
     text:
-      la: "Philisthim autem tulerunt arcam Dei et asportaverunt eam a lapide Adiutorii in Azotum"
+      la: "Philisthiim autem tulerunt arcam Dei, et asportaverunt eam a lapide Adjutorii in Azotum."
       en: "And the Philistines took the ark of God, and carried it from the Stone of help into Azotus."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "tulerunt Philisthim arcam Dei et intulerunt eam in templum Dagon et statuerunt eam iuxta Dagon"
+      la: "Tuleruntque Philisthiim arcam Dei, et intulerunt eam in templum Dagon, et statuerunt eam juxta Dagon."
       en: "And the Philistines took the ark of God, and brought it into the temple of Dagon, and set it by Dagon."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "cumque surrexissent diluculo Azotii altera die ecce Dagon iacebat pronus in terram ante arcam Domini et tulerunt Dagon et restituerunt eum in loco suo"
+      la: "Cumque surrexissent diluculo Azotii altera die, ecce Dagon jacebat pronus in terra ante arcam Domini: et tulerunt Dagon, et restituerunt eum in locum suum."
       en: "And when the Azotians arose early the next day, behold Dagon lay upon his face on the ground before the ark of the Lord: and they took Dagon, and set him again in his place."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "rursumque mane die alio consurgentes invenerunt Dagon iacentem super faciem suam in terram coram arca Domini caput autem Dagon et duae palmae manuum eius abscisae erant super limen"
+      la: "Rursumque mane die altera consurgentes, invenerunt Dagon jacentem super faciem suam in terra coram arca Domini: caput autem Dagon, et duae palmae manuum ejus abscissae erant super limen:"
       en: "And the next day again, when they rose in the morning, they found Dagon lying upon his face on the earth before the ark of the Lord: and the head of Dagon, and both the palms of his hands were cut off upon the threshold:"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "porro Dagon truncus solus remanserat in loco suo propter hanc causam non calcant sacerdotes Dagon et omnes qui ingrediuntur templum eius super limen Dagon in Azoto usque in hodiernum diem"
+      la: "porro Dagon solus truncus remanserat in loco suo. Propter hanc causam non calcant sacerdotes Dagon, et omnes qui ingrediuntur templum ejus, super limen Dagon in Azoto, usque in hodiernum diem."
       en: "And only the stump of Dagon remained in its place. For this cause neither the priests of Dagon, nor any that go into the temple tread on the threshold of Dagon in Azotus unto this day."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "adgravata autem est manus Domini super Azotios et demolitus est eos et percussit in secretiori parte natium Azotum et fines eius"
+      la: "Aggravata est autem manus Domini super Azotios, et demolitus est eos: et percussit in secretiori parte natium Azotum, et fines ejus. Et ebullierunt villae et agri in medio regionis illius, et nati sunt mures et facta est confusio mortis magnae in civitate."
       en: "And the hand of the Lord was heavy upon the Azotians, and he destroyed them, and afflicted Azotus and the coasts thereof with emerods. And in the villages and fields in the midst of that country, there came forth a multitude of mice, and there was the confusion of a great mortality in the city."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "videntes autem viri azotii huiuscemodi plagam dixerunt non maneat arca Dei Israhel apud nos quoniam dura est manus eius super nos et super Dagon deum nostrum"
+      la: "Videntes autem viri Azotii hujuscemodi plagam, dixerunt: Non maneat arca Dei Israel apud nos: quoniam dura est manus ejus super nos, et super Dagon deum nostrum."
       en: "And the men of Azotus seeing this kind of plague, said: The ark of the God of Israel shall not stay with us: for his hand is heavy upon us, and upon Dagon our god."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et mittentes congregaverunt omnes satrapas Philisthinorum ad se et dixerunt quid faciemus de arca Dei Israhel responderuntque Getthei circumducatur arca Dei Israhel et circumduxerunt arcam Dei Israhel"
+      la: "Et mittentes congregaverunt omnes satrapas Philisthinorum ad se, et dixerunt: Quid faciemus de arca Dei Israel? Responderuntque Gethaei: Circumducatur arca Dei Israel. Et circumduxerunt arcam Dei Israel."
       en: "And sending, they gathered together all the lords of the Philistines to them, and said: What shall we do with the ark of the God of Israel? And the Gethrites answered: Let the ark of the God of Israel be carried about. And they carried the ark of the God of Israel about."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "illis autem circumducentibus eam fiebat manus Dei per singulas civitates interfectionis magnae nimis et percutiebat viros uniuscuiusque urbis a parvo usque ad maiorem et conputrescebant prominentes extales eorum"
-      en: "And while they were carrying it about, the band of the Lord came upon every city with an exceeding great slaughter: and he smote the men of every city, both small and great, and they had emerods in their secret parts. And the Gethrites consulted together, and made themselves seats of skins."
+      la: "Illis autem circumducentibus eam, fiebat manus Domini per singulas civitates interfectionis magnae nimis: et percutiebat viros uniuscujusque urbis, a parvo usque ad majorem, et computrescebant prominentes extales eorum. Inieruntque Gethaei consilium, et fecerunt sibi sedes pelliceas."
+      en: "And while they were carrying it about, the hand of the Lord came upon every city with an exceeding great slaughter: and he smote the men of every city, both small and great, and they had emerods in their secret parts. And the Gethrites consulted together, and made themselves seats of skins."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "miserunt ergo arcam Dei in Accaron cumque venisset arca Dei in Accaron exclamaverunt Accaronitae dicentes adduxerunt ad nos arcam Dei Israhel ut interficiat nos et populum nostrum"
+      la: "Miserunt ergo arcam Dei in Accaron. Cumque venisset arca Dei in Accaron, exclamaverunt Accaronitae, dicentes: Adduxerunt ad nos arcam Dei Israel, ut interficiat nos et populum nostrum."
       en: "Therefore they sent the ark of God into Accaron. And when the ark of God was come into Accaron, the Accaronites cried out, saying: They have brought the ark of the God of Israel to us, to kill us and our people."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "miserunt itaque et congregaverunt omnes satrapas Philisthinorum qui dixerunt dimittite arcam Dei Israhel et revertatur in locum suum et non interficiat nos cum populo nostro"
+      la: "Miserunt itaque et congregaverunt omnes satrapas Philisthinorum: qui dixerunt: Dimittite arcam Dei Israel, et revertatur in locum suum, et non interficiat nos cum populo nostro."
       en: "They sent therefore and gathered together all the lords of the Philistines: and they said: Send away the ark of the God of Israel, and let it return into its own place, and not kill us and our people."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "fiebat enim pavor mortis in singulis urbibus et gravissima valde manus Dei viri quoque qui mortui non fuerant percutiebantur in secretiori parte natium et ascendebat ululatus uniuscuiusque civitatis in caelum"
+      la: "Fiebat enim pavor mortis in singulis urbibus, et gravissima valde manus Dei. Viri quoque, qui mortui non fuerant, percutiebantur in secretiori parte natium: et ascendebat ululatus uniuscujusque civitatis in caelum."
       en: "For there was the fear of death in every city, and the hand of God was exceeding heavy. The men also that did not die, were afflicted with the emerods: and the cry of every city went up to heaven."
     status: { la: verified, en: verified }

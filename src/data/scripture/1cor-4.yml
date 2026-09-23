@@ -1,112 +1,112 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1cor
 chapter: 4
 verses:
   - n: 1
     text:
-      la: "sic nos existimet homo ut ministros Christi et dispensatores mysteriorum Dei"
+      la: "Sic nos existimet homo ut ministros Christi, et dispensatores mysteriorum Dei."
       en: "Let a man so account of us as of the ministers of Christ, and the dispensers of the mysteries of God."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "hic iam quaeritur inter dispensatores ut fidelis quis inveniatur"
+      la: "Hic jam quaeritur inter dispensatores ut fidelis quis inveniatur."
       en: "Here now it is required among the dispensers, that a man be found faithful."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "mihi autem pro minimo est ut a vobis iudicer aut ab humano die sed neque me ipsum iudico"
+      la: "Mihi autem pro minimo est ut a vobis judicer, aut ab humano die: sed neque meipsum judico."
       en: "But to me it is a very small thing to be judged by you, or by man's day; but neither do I judge my own self."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "nihil enim mihi conscius sum sed non in hoc iustificatus sum qui autem iudicat me Dominus est"
+      la: "Nihil enim mihi conscius sum, sed non in hoc justificatus sum: qui autem judicat me, Dominus est."
       en: "For I am not conscious to myself of any thing, yet am I not hereby justified; but he that judgeth me, is the Lord."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "itaque nolite ante tempus iudicare quoadusque veniat Dominus qui et inluminabit abscondita tenebrarum et manifestabit consilia cordium et tunc laus erit unicuique a Deo"
+      la: "Itaque nolite ante tempus judicare, quoadusque veniat Dominus: qui et illuminabit abscondita tenebrarum, et manifestabit consilia cordium: et tunc laus erit unicuique a Deo."
       en: "Therefore judge not before the time; until the Lord come, who both will bring to light the hidden things of darkness, and will make manifest the counsels of the hearts; and then shall every man have praise from God."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "haec autem fratres transfiguravi in me et Apollo propter vos ut in nobis discatis ne supra quam scriptum est unus adversus alterum infletur pro alio"
+      la: "Haec autem, fratres, transfiguravi in me et Apollo, propter vos: ut in nobis discatis, ne supra quam scriptum est, unus adversus alterum infletur pro alio."
       en: "But these things, brethren, I have in a figure transferred to myself and to Apollo, for your sakes; that in us you may learn, that one be not puffed up against the other for another, above that which is written."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "quis enim te discernit quid autem habes quod non accepisti si autem accepisti quid gloriaris quasi non acceperis"
-      en: "For who distinguisheth thee ? Or what hast thou that thou hast not received ? And if thou hast received, why dost thou glory, as if thou hadst not received it ?"
+      la: "Quis enim te discernit? quid autem habes quod non accepisti? si autem accepisti, quid gloriaris quasi non acceperis?"
+      en: "For who distinguisheth thee? Or what hast thou that thou hast not received? And if thou hast received, why dost thou glory, as if thou hadst not received it?"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "iam saturati estis iam divites facti estis sine nobis regnastis et utinam regnaretis ut et nos vobiscum regnaremus"
+      la: "Jam saturati estis, jam divites facti estis: sine nobis regnatis: et utinam regnetis, ut et nos vobiscum regnemus."
       en: "You are now full; you are now become rich; you reign without us; and I would to God you did reign, that we also might reign with you."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "puto enim Deus nos apostolos novissimos ostendit tamquam morti destinatos quia spectaculum facti sumus mundo et angelis et hominibus"
+      la: "Puto enim quod Deus nos Apostolos novissimos ostendit, tamquam morti destinatos: quia spectaculum facti sumus mundo, et angelis, et hominibus."
       en: "For I think that God hath set forth us apostles, the last, as it were men appointed to death: we are made a spectacle to the world, and to angels, and to men."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "nos stulti propter Christum vos autem prudentes in Christo nos infirmi vos autem fortes vos nobiles nos autem ignobiles"
+      la: "Nos stulti propter Christum, vos autem prudentes in Christo: nos infirmi, vos autem fortes: vos nobiles, nos autem ignobiles."
       en: "We are fools for Christ's sake, but you are wise in Christ; we are weak, but you are strong; you are honourable, but we without honour."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "usque in hanc horam et esurimus et sitimus et nudi sumus et colaphis caedimur et instabiles sumus"
+      la: "Usque in hanc horam et esurimus, et sitimus, et nudi sumus, et colaphis caedimur, et instabiles sumus,"
       en: "Even unto this hour we both hunger and thirst, and are naked, and are buffeted, and have no fixed abode;"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "et laboramus operantes manibus nostris maledicimur et benedicimus persecutionem patimur et sustinemus"
+      la: "et laboramus operantes manibus nostris: maledicimur, et benedicimus: persecutionem patimur, et sustinemus:"
       en: "And we labour, working with our own hands: we are reviled, and we bless; we are persecuted, and we suffer it."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "blasphemamur et obsecramus tamquam purgamenta huius mundi facti sumus omnium peripsima usque adhuc"
+      la: "blasphemamur, et obsecramus: tamquam purgamenta hujus mundi facti sumus, omnium peripsema usque adhuc."
       en: "We are blasphemed, and we entreat; we are made as the refuse of this world, the offscouring of all even until now."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "non ut confundam vos haec scribo sed ut filios meos carissimos moneo"
+      la: "Non ut confundam vos, haec scribo, sed ut filios meos carissimos moneo."
       en: "I write not these things to confound you; but I admonish you as my dearest children."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "nam si decem milia pedagogorum habeatis in Christo sed non multos patres nam in Christo Iesu per evangelium ego vos genui"
+      la: "Nam si decem millia paedagogorum habeatis in Christo, sed non multos patres. Nam in Christo Jesu per Evangelium ego vos genui."
       en: "For if you have ten thousand instructors in Christ, yet not many fathers. For in Christ Jesus, by the gospel, I have begotten you."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "rogo ergo vos imitatores mei estote"
+      la: "Rogo ergo vos, imitatores mei estote, sicut et ego Christi."
       en: "Wherefore I beseech you, be ye followers of me, as I also am of Christ."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "ideo misi ad vos Timotheum qui est filius meus carissimus et fidelis in Domino qui vos commonefaciat vias meas quae sunt in Christo sicut ubique in omni ecclesia doceo"
-      en: "For this cause have I sent to you Timothy, who is my dearest son and faithful in the Lord; who will put you in mind of my ways, which are in Christ Jesus; as I teach every where in every church."
+      la: "Ideo misi ad vos Timotheum, qui est filius meus carissimus, et fidelis in Domino: qui vos commonefaciet vias meas, quae sunt in Christo Jesu, sicut ubique in omni ecclesia doceo."
+      en: "For this cause have I sent to you Timothy, who is my dearest son and faithful in the Lord; who will put you in mind of my ways, which are in Christ Jesus; as I teach everywhere in every church."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "tamquam non venturus sim ad vos sic inflati sunt quidam"
+      la: "Tamquam non venturus sim ad vos, sic inflati sunt quidam."
       en: "As if I would not come to you, so some are puffed up."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "veniam autem cito ad vos si Dominus voluerit et cognoscam non sermonem eorum qui inflati sunt sed virtutem"
+      la: "Veniam autem ad vos cito, si Dominus voluerit: et cognoscam non sermonem eorum qui inflati sunt, sed virtutem."
       en: "But I will come to you shortly, if the Lord will: and will know, not the speech of them that are puffed up, but the power."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "non enim in sermone est regnum Dei sed in virtute"
+      la: "Non enim in sermone est regnum Dei, sed in virtute."
       en: "For the kingdom of God is not in speech, but in power."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "quid vultis in virga veniam ad vos an in caritate et spiritu mansuetudinis"
-      en: "What will you ? shall I come to you with a rod; or in charity, and in the spirit of meekness ?"
+      la: "Quid vultis? in virga veniam ad vos, an in caritate, et spiritu mansuetudinis?"
+      en: "What will you? shall I come to you with a rod; or in charity, and in the spirit of meekness?"
     status: { la: verified, en: verified }

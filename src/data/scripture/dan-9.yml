@@ -1,8 +1,7 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for dan 9 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: dan
 chapter: 9
 verses:
@@ -23,12 +22,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "Et oravi Dominum Deum meum, et confessus sum, et dixi : Obsecro, Domine Deus magne et terribilis, custodiens pactum, et misericordiam diligentibus te, et custodientibus mandata tua :"
+      la: "Et oravi Dominum Deum meum, et confessus sum, et dixi: Obsecro, Domine Deus magne et terribilis, custodiens pactum, et misericordiam diligentibus te, et custodientibus mandata tua:"
       en: "And I prayed to the Lord my God, and I made my confession, and said: I beseech thee, O Lord God, great and terrible, who keepest the covenant, and mercy to them that love thee, and keep thy commandments."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "peccavimus, iniquitatem fecimus, impie egimus, et recessimus : et declinavimus a mandatis tuis ac judiciis."
+      la: "peccavimus, iniquitatem fecimus, impie egimus, et recessimus: et declinavimus a mandatis tuis ac judiciis."
       en: "We have sinned, we have committed iniquity, we have done wickedly, and have revolted: and we have gone aside from thy commandments, and thy judgments."
     status: { la: verified, en: verified }
   - n: 6
@@ -38,7 +37,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "Tibi, Domine, justitia : nobis autem confusio faciei, sicut est hodie viro Juda, et habitatoribus Jerusalem, et omni Israel, his qui prope sunt, et his qui procul in universis terris, ad quas ejecisti eos propter iniquitates eorum, in quibus peccaverunt in te."
+      la: "Tibi, Domine, justitia: nobis autem confusio faciei, sicut est hodie viro Juda, et habitatoribus Jerusalem, et omni Israel, his qui prope sunt, et his qui procul in universis terris, ad quas ejecisti eos propter iniquitates eorum, in quibus peccaverunt in te."
       en: "To thee, O Lord, justice: but to us confusion of face, as at this day to the men of Juda, and to the inhabitants of Jerusalem, and to all Israel to them that are near, and to them that are far off in all the countries whither thou hast driven them, for their iniquities by which they have sinned against thee."
     status: { la: verified, en: verified }
   - n: 8
@@ -58,7 +57,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "Et omnis Israel praevaricati sunt legem tuam, et declinaverunt ne audirent vocem tuam : et stillavit super nos maledictio et detestatio quae scripta est in libro Moysi servi Dei, quia peccavimus ei."
+      la: "Et omnis Israel praevaricati sunt legem tuam, et declinaverunt ne audirent vocem tuam: et stillavit super nos maledictio et detestatio quae scripta est in libro Moysi servi Dei, quia peccavimus ei."
       en: "And all Israel have transgressed thy law, and have turned away from hearing thy voice, and the malediction, and the curse, which is written in the book of Moses the servant of God, is fallen upon us, because we have sinned against him."
     status: { la: verified, en: verified }
   - n: 12
@@ -68,17 +67,17 @@ verses:
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "Sicut scriptum est in lege Moysi, omne malum hoc venit super nos : et non rogavimus faciem tuam, Domine Deus noster, ut reverteremur ab iniquitatibus nostris, et cogitaremus veritatem tuam."
+      la: "Sicut scriptum est in lege Moysi, omne malum hoc venit super nos: et non rogavimus faciem tuam, Domine Deus noster, ut reverteremur ab iniquitatibus nostris, et cogitaremus veritatem tuam."
       en: "As it is written in the law of Moses, all this evil is come upon us: and we entreated not thy face, O Lord our God, that we might turn from our iniquities, and think on thy truth."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "Et vigilavit Dominus super malitiam, et adduxit eam super nos. Justus Dominus Deus noster in omnibus operibus suis, quae fecit : non enim audivimus vocem ejus."
+      la: "Et vigilavit Dominus super malitiam, et adduxit eam super nos. Justus Dominus Deus noster in omnibus operibus suis, quae fecit: non enim audivimus vocem ejus."
       en: "And the Lord hath watched upon the evil, and hath brought it upon us: the Lord our God is just in all his works which he hath done: for we have not hearkened to his voice."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "Et nunc Domine Deus noster, qui eduxisti populum tuum de terra Aegypti in manu forti, et fecisti tibi nomen secundum diem hanc : peccavimus, iniquitatem fecimus."
+      la: "Et nunc Domine Deus noster, qui eduxisti populum tuum de terra Aegypti in manu forti, et fecisti tibi nomen secundum diem hanc: peccavimus, iniquitatem fecimus."
       en: "And now, O Lord our God, who hast brought forth thy people out of the land of Egypt with a strong hand, and hast made thee a name as at this day: we have sinned, we have committed iniquity,"
     status: { la: verified, en: verified }
   - n: 16
@@ -88,22 +87,22 @@ verses:
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "Nunc ergo exaudi, Deus noster, orationem servi tui, et preces ejus : et ostende faciem tuam super sanctuarium tuum, quod desertum est propter temetipsum."
+      la: "Nunc ergo exaudi, Deus noster, orationem servi tui, et preces ejus: et ostende faciem tuam super sanctuarium tuum, quod desertum est propter temetipsum."
       en: "Now therefore, O our God, hear the supplication of thy servant, and his prayers: and shew thy face upon thy sanctuary which is desolate, for thy own sake."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "Inclina, Deus meus, aurem tuam, et audi : aperi oculos tuos, et vide desolationem nostram, et civitatem super quam invocatum est nomen tuum : neque enim in justificationibus nostris prosternimus preces ante faciem tuam, sed in miserationibus tuis multis."
+      la: "Inclina, Deus meus, aurem tuam, et audi: aperi oculos tuos, et vide desolationem nostram, et civitatem super quam invocatum est nomen tuum: neque enim in justificationibus nostris prosternimus preces ante faciem tuam, sed in miserationibus tuis multis."
       en: "Incline, O my God, thy ear, and hear: open thy eyes, and see our desolation, and the city upon which thy name is called: for it is not for our justifications that we present our prayers before thy face, but for the multitude of thy tender mercies."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "Exaudi, Domine; placare Domine : attende et fac : ne moreris propter temetipsum, Deus meus, quia nomen tuum invocatum est super civitatem et super populum tuum."
+      la: "Exaudi, Domine; placare Domine: attende et fac: ne moreris propter temetipsum, Deus meus, quia nomen tuum invocatum est super civitatem et super populum tuum."
       en: "O Lord, hear: O Lord, be appeased: hearken and do: delay not for thy own sake, O my God: because thy name is invocated upon thy city, and upon thy people."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "Cumque adhuc loquerer, et orarem, et confiterer peccata mea, et peccata populi mei Israel, et prosternerem preces meas in conspectu Dei mei, pro monte sancto Dei mei :"
+      la: "Cumque adhuc loquerer, et orarem, et confiterer peccata mea, et peccata populi mei Israel, et prosternerem preces meas in conspectu Dei mei, pro monte sancto Dei mei:"
       en: "Now while I was yet speaking, and praying, and confessing my sins, and the sins of my people of Israel, and presenting my supplications in the sight of my God, for the holy mountain of my God:"
     status: { la: verified, en: verified }
   - n: 21
@@ -113,12 +112,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "Et docuit me, et locutus est mihi, dixitque : Daniel, nunc egressus sum ut docerem te, et intelligeres."
+      la: "Et docuit me, et locutus est mihi, dixitque: Daniel, nunc egressus sum ut docerem te, et intelligeres."
       en: "And he instructed me, and spoke to me, and said: O Daniel, I am now come forth to teach thee, and that thou mightest understand."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "Ab exordio precum tuarum egressus est sermo : ego autem veni ut indicarem tibi, quia vir desideriorum es : tu ergo animadverte sermonem, et intellige visionem."
+      la: "Ab exordio precum tuarum egressus est sermo: ego autem veni ut indicarem tibi, quia vir desideriorum es: tu ergo animadverte sermonem, et intellige visionem."
       en: "From the beginning of thy prayers the word came forth: and I am come to shew it to thee, because thou art a man of desires: therefore do thou mark the word, and understand the vision."
     status: { la: verified, en: verified }
   - n: 24
@@ -128,16 +127,16 @@ verses:
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "Scito ergo, et animadverte : ab exitu sermonis, ut iterum aedificetur Jerusalem, usque ad Christum ducem, hebdomades septem, et hebdomades sexaginta duae erunt : et rursum aedificabitur platea, et muri in angustia temporum."
+      la: "Scito ergo, et animadverte: ab exitu sermonis, ut iterum aedificetur Jerusalem, usque ad Christum ducem, hebdomades septem, et hebdomades sexaginta duae erunt: et rursum aedificabitur platea, et muri in angustia temporum."
       en: "Know thou therefore, and take notice: that from the going forth of the word, to build up Jerusalem again, unto Christ the prince, there shall be seven weeks, and sixty-two weeks: and the street shall be built again, and the walls in straitness of times."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "Et post hebdomades sexaginta duas occidetur Christus : et non erit ejus populus qui eum negaturus est. Et civitatem et sanctuarium dissipabit populus cum duce venturo : et finis ejus vastitas, et post finem belli statuta desolatio."
+      la: "Et post hebdomades sexaginta duas occidetur Christus: et non erit ejus populus qui eum negaturus est. Et civitatem et sanctuarium dissipabit populus cum duce venturo: et finis ejus vastitas, et post finem belli statuta desolatio."
       en: "And after sixty-two weeks Christ shall be slain: and the people that shall deny him shall not be his. And a people with their leader that shall come, shall destroy the city and the sanctuary: and the end thereof shall be waste, and after the end of the war the appointed desolation."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "Confirmabit autem pactum multis hebdomada una : et in dimidio hebdomadis deficiet hostia et sacrificium : et erit in templo abominatio desolationis : et usque ad consummationem et finem perseverabit desolatio."
+      la: "Confirmabit autem pactum multis hebdomada una: et in dimidio hebdomadis deficiet hostia et sacrificium: et erit in templo abominatio desolationis: et usque ad consummationem et finem perseverabit desolatio."
       en: "And he shall confirm the covenant with many, in one week: and in the half of the week the victim and the sacrifice shall fail: and there shall be in the temple the abomination of desolation: and the desolation shall continue even to the consummation, and to the end."
     status: { la: verified, en: verified }

@@ -1,122 +1,122 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1cor
 chapter: 3
 verses:
   - n: 1
     text:
-      la: "et ego fratres non potui vobis loqui quasi spiritalibus sed quasi carnalibus tamquam parvulis in Christo"
-      en: "And I, brethren, could not speak to you as unto spiritual, but as unto carnal. As unto little ones in Christ."
+      la: "Et ego, fratres, non potui vobis loqui quasi spiritualibus, sed quasi carnalibus. Tamquam parvulis in Christo,"
+      en: "And I, brethren, could not speak to you as unto spiritual, but as unto carnal. As unto little ones in Christ,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "lac vobis potum dedi non escam nondum enim poteratis sed ne nunc quidem potestis adhuc enim estis carnales"
+      la: "lac vobis potum dedi, non escam: nondum enim poteratis: sed nec nunc quidem potestis: adhuc enim carnales estis."
       en: "I gave you milk to drink, not meat; for you were not able as yet. But neither indeed are you now able; for you are yet carnal."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "cum enim sit inter vos zelus et contentio nonne carnales estis et secundum hominem ambulatis"
-      en: "For, whereas there is among you envying and contention, are you not carnal, and walk according to man ?"
+      la: "Cum enim sit inter vos zelus, et contentio: nonne carnales estis, et secundum hominem ambulatis?"
+      en: "For, whereas there is among you envying and contention, are you not carnal, and walk according to man?"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "cum enim quis dicit ego quidem sum Pauli alius autem ego Apollo nonne homines estis quid igitur est Apollo quid vero Paulus"
-      en: "For while one saith, I indeed am of Paul; and another, I am of Apollo; are you not men ? What then is Apollo, and what is Paul?"
+      la: "Cum enim quis dicat: Ego quidem sum Pauli; alius autem: Ego Apollo: nonne homines estis? Quid igitur est Apollo? quid vero Paulus?"
+      en: "For while one saith, I indeed am of Paul; and another, I am of Apollo; are you not men? What then is Apollo, and what is Paul?"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "ministri eius cui credidistis et unicuique sicut Dominus dedit"
+      la: "ministri ejus, cui credidistis, ut unicuique sicut Dominus dedit."
       en: "The ministers of him whom you have believed; and to every one as the Lord hath given."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "ego plantavi Apollo rigavit sed Deus incrementum dedit"
+      la: "Ego plantavi, Apollo rigavit: sed Deus incrementum dedit."
       en: "I have planted, Apollo watered, but God gave the increase."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "itaque neque qui plantat est aliquid neque qui rigat sed qui incrementum dat Deus"
+      la: "Itaque neque qui plantat est aliquid, neque qui rigat: sed qui incrementum dat, Deus."
       en: "Therefore, neither he that planteth is any thing, nor he that watereth; but God that giveth the increase."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "qui plantat autem et qui rigat unum sunt unusquisque autem propriam mercedem accipiet secundum suum laborem"
-      en: "Now he that planteth, and he that watereth, ate one. And every man shall receive his own reward, according to his own labour."
+      la: "Qui autem plantat, et qui rigat, unum sunt. Unusquisque autem propriam mercedem accipiet, secundum suum laborem."
+      en: "Now he that planteth, and he that watereth, are one. And every man shall receive his own reward, according to his own labour."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "Dei enim sumus adiutores Dei agricultura estis Dei aedificatio estis"
+      la: "Dei enim sumus adjutores: Dei agricultura estis, Dei aedificatio estis."
       en: "For we are God's coadjutors: you are God's husbandry; you are God's building."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "secundum gratiam Dei quae data est mihi ut sapiens architectus fundamentum posui alius autem superaedificat unusquisque autem videat quomodo superaedificet"
+      la: "Secundum gratiam Dei, quae data est mihi, ut sapiens architectus fundamentum posui: alius autem superaedificat. Unusquisque autem videat quomodo superaedificet."
       en: "According to the grace of God that is given to me, as a wise architect, I have laid the foundation; and another buildeth thereon. But let every man take heed how he buildeth thereupon."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "fundamentum enim aliud nemo potest ponere praeter id quod positum est qui est Christus Iesus"
+      la: "Fundamentum enim aliud nemo potest ponere praeter id quod positum est, quod est Christus Jesus."
       en: "For other foundation no man can lay, but that which is laid; which is Christ Jesus."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "si quis autem superaedificat supra fundamentum hoc aurum argentum lapides pretiosos ligna faenum stipulam"
+      la: "Si quis autem superaedificat super fundamentum hoc, aurum, argentum, lapides pretiosos, ligna, foenum, stipulam,"
       en: "Now if any man build upon this foundation, gold, silver, precious stones, wood, hay, stubble:"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "uniuscuiusque opus manifestum erit dies enim declarabit quia in igne revelabitur et uniuscuiusque opus quale sit ignis probabit"
+      la: "uniuscujusque opus manifestum erit: dies enim Domini declarabit, quia in igne revelabitur: et uniuscujusque opus quale sit, ignis probabit."
       en: "Every man's work shall be manifest; for the day of the Lord shall declare it, because it shall be revealed in fire; and the fire shall try every man's work, of what sort it is."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "si cuius opus manserit quod superaedificavit mercedem accipiet"
+      la: "Si cujus opus manserit quod superaedificavit, mercedem accipiet."
       en: "If any man's work abide, which he hath built thereupon, he shall receive a reward."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "si cuius opus arserit detrimentum patietur ipse autem salvus erit sic tamen quasi per ignem"
+      la: "Si cujus opus arserit, detrimentum patietur: ipse autem salvus erit, sic tamen quasi per ignem."
       en: "If any man's work burn, he shall suffer loss; but he himself shall be saved, yet so as by fire."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "nescitis quia templum Dei estis et Spiritus Dei habitat in vobis"
-      en: "Know you not, that you are the temple of God, and that the Spirit of God dwelleth in you ?"
+      la: "Nescitis quia templum Dei estis, et Spiritus Dei habitat in vobis?"
+      en: "Know you not, that you are the temple of God, and that the Spirit of God dwelleth in you?"
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "si quis autem templum Dei violaverit disperdet illum Deus templum enim Dei sanctum est quod estis vos"
+      la: "Si quis autem templum Dei violaverit, disperdet illum Deus. Templum enim Dei sanctum est, quod estis vos."
       en: "But if any man violate the temple of God, him shall God destroy. For the temple of God is holy, which you are."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "nemo se seducat si quis videtur inter vos sapiens esse in hoc saeculo stultus fiat ut sit sapiens"
+      la: "Nemo se seducat: si quis videtur inter vos sapiens esse in hoc saeculo, stultus fiat ut sit sapiens."
       en: "Let no man deceive himself: if any man among you seem to be wise in this world, let him become a fool, that he may be wise."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "sapientia enim huius mundi stultitia est apud Deum scriptum est enim conprehendam sapientes in astutia eorum"
+      la: "Sapientia enim hujus mundi, stultitia est apud Deum. Scriptum est enim: Comprehendam sapientes in astutia eorum."
       en: "For the wisdom of this world is foolishness with God. For it is written: I will catch the wise in their own craftiness."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "et iterum Dominus novit cogitationes sapientium quoniam vanae sunt"
+      la: "Et iterum: Dominus novit cogitationes sapientium quoniam vanae sunt."
       en: "And again: The Lord knoweth the thoughts of the wise, that they are vain."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "itaque nemo glorietur in hominibus omnia enim vestra sunt"
+      la: "Nemo itaque glorietur in hominibus."
       en: "Let no man therefore glory in men."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "sive Paulus sive Apollo sive Cephas sive mundus sive vita sive mors sive praesentia sive futura omnia enim vestra sunt"
-      en: "For all things are yours, whether it be Paul, or Apollo, or Cephas, or the world, or life, or death, or things present, or things to some; for all are yours;"
+      la: "Omnia enim vestra sunt, sive Paulus, sive Apollo, sive Cephas, sive mundus, sive vita, sive mors, sive praesentia, sive futura: omnia enim vestra sunt:"
+      en: "For all things are yours, whether it be Paul, or Apollo, or Cephas, or the world, or life, or death, or things present, or things to come; for all are yours;"
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "vos autem Christi Christus autem Dei"
+      la: "vos autem Christi: Christus autem Dei."
       en: "And you are Christ's; and Christ is God's."
     status: { la: verified, en: verified }

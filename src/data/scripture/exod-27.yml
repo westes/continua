@@ -1,112 +1,112 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: exod
 chapter: 27
 verses:
   - n: 1
     text:
-      la: "facies et altare de lignis setthim quod habebit quinque cubitos in longitudine et totidem in latitudine id est quadrum et tres cubitos in altitudine"
+      la: "Facies et altare de lignis setim, quod habebit quinque cubitus in longitudine, et totidem in latitudine, id est, quadrum, et tres cubitos in altitudine."
       en: "Thou shalt make also an altar of setim wood, which shall be five cubits long and as many broad, that is, foursquare, and three cubits high."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "cornua autem per quattuor angulos ex ipso erunt et operies illud aere"
+      la: "Cornua autem per quatuor angulos ex ipso erunt: et operies illud aere."
       en: "And there shall be horns at the four corners of the same: and thou shalt cover it with brass."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "faciesque in usus eius lebetas ad suscipiendos cineres et forcipes atque fuscinulas et ignium receptacula omnia vasa ex aere fabricabis"
+      la: "Faciesque in usus ejus lebetes ad suscipiendos cineres, et forcipes atque fuscinulas, et ignium receptacula; omnia vasa ex aere fabricabis."
       en: "And thou shalt make for the uses thereof pans to receive the ashes, and tongs and fleshhooks, and firepans: all its vessels thou shalt make of brass."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "craticulamque in modum retis aeneam per cuius quattuor angulos erunt quattuor anuli aenei"
+      la: "Craticulamque in modum retis aeneam: per cujus quatuor angulos erunt quatuor annuli aenei."
       en: "And a grate of brass in manner of a net: at the four corners of which shall be four rings of brass,"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "quos pones subter arulam altaris eritque craticula usque ad altaris medium"
+      la: "Quos pones subter arulam altaris: eritque craticula usque ad altaris medium."
       en: "Which thou shalt put under the hearth of the altar: and the grate shall be even to the midst of the altar."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "facies et vectes altaris de lignis setthim duos quos operies lamminis aeneis"
+      la: "Facies et vectes altaris de lignis setim duos, quos operies laminis aeneis:"
       en: "Thou shalt make also two bars for the altar of setim wood, which thou shalt cover with plates of brass:"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et induces per circulos eruntque ex utroque latere altaris ad portandum"
+      la: "et induces per circulos, eruntque ex utroque latere altaris ad portandum."
       en: "And thou shalt draw them through rings, and they shall be on both sides of the altar to carry it."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "non solidum sed inane et cavum intrinsecus facies illud sicut tibi in monte monstratum est"
+      la: "Non solidum, sed inane et cavum intrinsecus facies illud, sicut tibi in monte monstratum est."
       en: "Thou shalt not make it solid, but empty and hollow in the inside, as it was shewn thee in the mount."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "facies et atrium tabernaculi in cuius plaga australi contra meridiem erunt tentoria de bysso retorta centum cubitos unum latus tenebit in longitudine"
+      la: "Facies et atrium tabernaculi, in cujus australi plaga contra meridiem erunt tentoria de bysso retorta: centum cubitos unum latus tenebit in longitudine."
       en: "Thou shalt make also the court of the tabernacle, in the south side whereof southward there shall be hangings of fine twisted linen of a hundred cubits long for one side."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et columnas viginti cum basibus totidem aeneis quae capita cum celaturis suis habebunt argentea"
+      la: "Et columnas viginti cum basibus totidem aeneis, quae capita cum caelaturis suis habebunt argentea."
       en: "And twenty pillars with as many sockets of brass, the heads of which with their engraving of silver."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "similiter in latere aquilonis per longum erunt tentoria centum cubitorum columnae viginti et bases aeneae eiusdem numeri et capita earum cum celaturis suis argentea"
+      la: "Similiter et in latere aquilonis per longum erunt tentoria centum cubitorum, columnae viginti, et bases aeneae ejusdem numeri, et capita earum cum caelaturis suis argentea."
       en: "In like manner also on the north side there shall be hangings of a hundred cubits long, twenty pillars, and as many sockets of brass, and their heads with their engraving of silver."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "in latitudine vero atrii quod respicit ad occidentem erunt tentoria per quinquaginta cubitos et columnae decem basesque totidem"
+      la: "In latitudine vero atrii, quod respicit ad occidentem, erunt tentoria per quinquaginta cubitos, et columnae decem, basesque totidem."
       en: "But in the breadth of the court, that looketh to the west, there shall be hangings of fifty cubits, and ten pillars, and as many sockets."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "in ea quoque atrii latitudine quae respicit ad orientem quinquaginta cubiti erunt"
+      la: "In ea quoque atrii latitudine, quae respicit ad orientem, quinquaginta cubiti erunt."
       en: "In that breadth also of the court, which looketh to the east, there shall be fifty cubits."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "in quibus quindecim cubitorum tentoria lateri uno deputabuntur columnaeque tres et bases totidem"
+      la: "In quibus quindecim cubitorum tentoria lateri uno deputabuntur, columnaeque tres et bases totidem:"
       en: "In which there shall be for one side hangings of fifteen cubits, and three pillars and as many sockets."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et in latere altero erunt tentoria cubitos obtinentia quindecim columnas tres et bases totidem"
+      la: "et in latere altero erunt tentoria cubitos obtinentia quindecim, columnae tres, et bases totidem."
       en: "And in the other side there shall be hangings of fifteen cubits, with three pillars and as many sockets."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "in introitu vero atrii fiet tentorium cubitorum viginti ex hyacintho et purpura coccoque bis tincto et bysso retorta opere plumarii columnas habebit quattuor cum basibus totidem"
+      la: "In introitu vero atrii fiet tentorium cubitorum viginti ex hyacintho et purpura, coccoque bis tincto, et bysso retorta, opere plumarii: columnas habebit quatuor, cum basibus totidem."
       en: "And in the entrance of the court there shall be made a hanging of twenty cubits of violet and purple, and scarlet twice dyed, and fine twisted linen, with embroidered work: it shall have four pillars with as many sockets."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "omnes columnae atrii per circuitum vestitae erunt argenti lamminis capitibus argenteis et basibus aeneis"
+      la: "Omnes columnae atrii per circuitum vestitae erunt argenteis laminis, capitibus argenteis, et basibus aeneis."
       en: "All the pillars of the court round about shall be garnished with plates of silver, silver heads and sockets of brass."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "in longitudine occupabit atrium cubitos centum in latitudine quinquaginta altitudo quinque cubitorum erit fietque de bysso retorta et habebit bases aeneas"
+      la: "In longitudine occupabit atrium cubitos centum, in latitudine quinquaginta, altitudo quinque cubitorum erit: fietque de bysso retorta, et habebit bases aeneas."
       en: "In length the court shall take up a hundred cubits, in breadth fifty, the height shall be of five cubits, and it shall be made of fine twisted linen, and shall have sockets of brass."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "cuncta vasa tabernaculi in omnes usus et caerimonias tam paxillos eius quam atrii ex aere facies"
+      la: "Cuncta vasa tabernaculi in omnes usus et caeremonias, tam paxillos ejus quam atrii, ex aere facies."
       en: "All the vessels of the tabernacle for all uses and ceremonies, and the pins both of it, and of the court, thou shalt make of brass."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "praecipe filiis Israhel ut adferant tibi oleum de arboribus olivarum purissimum piloque contusum ut ardeat lucerna semper"
+      la: "Praecipe filiis Israel ut afferant tibi oleum de arboribus olivarum purissimum, piloque contusum, ut ardeat lucerna semper"
       en: "Command the children of Israel that they bring thee the purest oil of the olives, and beaten with a pestle: that a lamp may burn always,"
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "in tabernaculo testimonii extra velum quod oppansum est testimonio et conlocabunt eam Aaron et filii eius ut usque mane luceat coram Domino perpetuus erit cultus per successiones eorum a filiis Israhel"
+      la: "in tabernaculo testimonii, extra velum quod oppansum est testimonio. Et collocabunt eam Aaron et filii ejus, ut usque mane luceat coram Domino. Perpetuus erit cultus per successiones eorum a filiis Israel."
       en: "In the tabernacle of the testimony without the veil that hangs before the testimony. And Aaron and his sons shall order it, that it may give light before the Lord until the morning. It shall be a perpetual observance throughout their successions among the children of Israel."
     status: { la: verified, en: verified }

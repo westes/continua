@@ -1,132 +1,132 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: act
 chapter: 12
 verses:
   - n: 1
     text:
-      la: "eodem autem tempore misit Herodes rex manus ut adfligeret quosdam de ecclesia"
+      la: "Eodem autem tempore misit Herodes rex manus, ut affligeret quosdam de ecclesia."
       en: "And at the same time, Herod the king stretched forth his hands, to afflict some of the church."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "occidit autem Iacobum fratrem Iohannis gladio"
+      la: "Occidit autem Jacobum fratrem Joannis gladio."
       en: "And he killed James, the brother of John, with the sword."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "videns autem quia placeret Iudaeis adposuit adprehendere et Petrum erant autem dies azymorum"
+      la: "Videns autem quia placeret Judaeis, apposuit ut apprehenderet et Petrum. Erant autem dies Azymorum."
       en: "And seeing that it pleased the Jews, he proceeded to take up Peter also. Now it was in the days of the Azymes."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "quem cum adprehendisset misit in carcerem tradens quattuor quaternionibus militum custodire eum volens post pascha producere eum populo"
+      la: "Quem cum apprehendisset, misit in carcerem, tradens quatuor quaternionibus militum custodiendum, volens post Pascha producere eum populo."
       en: "And when he had apprehended him, he cast him into prison, delivering him to four files of soldiers to be kept, intending, after the pasch, to bring him forth to the people."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et Petrus quidem servabatur in carcere oratio autem fiebat sine intermissione ab ecclesia ad Deum pro eo"
+      la: "Et Petrus quidem servabatur in carcere. Oratio autem fiebant sine intermissione ab ecclesia ad Deum pro eo."
       en: "Peter therefore was kept in prison. But prayer was made without ceasing by the church unto God for him."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "cum autem producturus eum esset Herodes in ipsa nocte erat Petrus dormiens inter duos milites vinctus catenis duabus et custodes ante ostium custodiebant carcerem"
+      la: "Cum autem producturus eum esset Herodes, in ipsa nocte erat Petrus dormiens inter duos milites, vinctus catenis duabus: et custodes ante ostium custodiebant carcerem."
       en: "And when Herod would have brought him forth, the same night Peter was sleeping between two soldiers, bound with two chains: and the keepers before the door kept the prison."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et ecce angelus Domini adstitit et lumen refulsit in habitaculo percussoque latere Petri suscitavit eum dicens surge velociter et ceciderunt catenae de manibus eius"
+      la: "Et ecce angelus Domini astitit: et lumen refulsit in habitaculo: percussoque latere Petri, excitavit eum, dicens: Surge velociter. Et ceciderunt catenae de manibus ejus."
       en: "And behold an angel of the Lord stood by him: and a light shined in the room: and he striking Peter on the side, raised him up, saying: Arise quickly. And the chains fell off from his hands."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "dixit autem angelus ad eum praecingere et calcia te gallicas tuas et fecit sic et dixit illi circumda tibi vestimentum tuum et sequere me"
+      la: "Dixit autem angelus ad eum: Praecingere, et calcea te caligas tuas. Et fecit sic. Et dixit illi: Circumda tibi vestimentum tuum, et sequere me."
       en: "And the angel said to him: Gird thyself, and put on thy sandals. And he did so. And he said to him: Cast thy garment about thee, and follow me."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "et exiens sequebatur et nesciebat quia verum est quod fiebat per angelum aestimabat autem se visum videre"
+      la: "Et exiens sequebatur eum, et nesciebat quia verum est, quod fiebat per angelum: existimabat autem se visum videre."
       en: "And going out, he followed him, and he knew not that it was true which was done by the angel: but thought he saw a vision."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "transeuntes autem primam et secundam custodiam venerunt ad portam ferream quae ducit ad civitatem quae ultro aperta est eis et exeuntes processerunt vicum unum et continuo discessit angelus ab eo"
+      la: "Transeuntes autem primam et secundam custodiam, venerunt ad portam ferream, quae ducit ad civitatem: quae ultro aperta est eis. Et exeuntes processerunt vicum unum: et continuo discessit angelus ab eo."
       en: "And passing through the first and the second ward, they came to the iron gate that leadeth to the city, which of itself opened to them. And going out, they passed on through one street: and immediately the angel departed from him."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et Petrus ad se reversus dixit nunc scio vere quia misit Dominus angelum suum et eripuit me de manu Herodis et de omni expectatione plebis Iudaeorum"
+      la: "Et Petrus ad se reversus, dixit: Nunc scio vere quia misit Dominus angelum suum, et eripuit me de manu Herodis, et de omni exspectatione plebis Judaeorum."
       en: "And Peter coming to himself, said: Now I know in very deed, that the Lord hath sent his angel, and hath delivered me out of the hand of Herod, and from all the expectation of the people of the Jews."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "consideransque venit ad domum Mariae matris Iohannis qui cognominatus est Marcus ubi erant multi congregati et orantes"
+      la: "Consideransque venit ad domum Mariae matris Joannis, qui cognominatus est Marcus, ubi erant multi congregati, et orantes."
       en: "And considering, he came to the house of Mary the mother of John, who was surnamed Mark, where many were gathered together and praying."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "pulsante autem eo ostium ianuae processit puella ad audiendum nomine Rhode"
+      la: "Pulsante autem eo ostium januae, processit puella ad audiendum, nomine Rhode."
       en: "And when he knocked at the door of the gate, a damsel came to hearken, whose name was Rhode."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et ut cognovit vocem Petri prae gaudio non aperuit ianuam sed intro currens nuntiavit stare Petrum ante ianuam"
+      la: "Et ut cognovit vocem Petri, prae gaudio non aperuit januam, sed intro currens nuntiavit stare Petrum ante januam."
       en: "And as soon as she knew Peter's voice, she opened not the gate for joy, but running in she told that Peter stood before the gate."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "at illi dixerunt ad eam insanis illa autem adfirmabat sic se habere illi autem dicebant angelus eius est"
+      la: "At illi dixerunt ad eam: Insanis. Illa autem affirmabat sic se habere. Illi autem dicebant: Angelus ejus est."
       en: "But they said to her: Thou art mad. But she affirmed that it was so. Then said they: It is his angel."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "Petrus autem perseverabat pulsans cum autem aperuissent viderunt eum et obstipuerunt"
+      la: "Petrus autem perseverabat pulsans. Cum autem aperuissent, viderunt eum, et obstupuerunt."
       en: "But Peter continued knocking. And when they had opened, they saw him, and were astonished."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "annuens autem eis manu ut tacerent enarravit quomodo Dominus eduxisset eum de carcere dixitque nuntiate Iacobo et fratribus haec et egressus abiit in alium locum"
+      la: "Annuens autem eis manu ut tacerent, narravit quomodo Dominus eduxisset eum de carcere, dixitque: Nuntiate Jacobo et fratribus haec. Et egressus abiit in alium locum."
       en: "But he beckoning to them with his hand to hold their peace, told how the Lord had brought him out of prison, and he said: Tell these things to James, and to the brethren. And going out, he went into another place."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "facta autem die erat non parva turbatio inter milites quidnam de Petro factum esset"
+      la: "Facta autem die, erat non parva turbatio inter milites, quidnam factum esset de Petro."
       en: "Now when day was come, there was no small stir among the soldiers, what was become of Peter."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "Herodes autem cum requisisset eum et non invenisset inquisitione facta de custodibus iussit eos duci descendensque a Iudaea in Caesaream ibi commoratus est"
+      la: "Herodes autem cum requisisset eum, et non invenisset, inquisitione facta de custodibus, jussit eos duci: descendensque a Judaea in Caesaream, ibi commoratus est."
       en: "And when Herod had sought for him, and found him not; having examined the keepers, he commanded they should be put to death; and going down from Judea to Caesarea, he abode there."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "erat autem iratus Tyriis et Sidoniis at illi unianimes venerunt ad eum et persuaso Blasto qui erat super cubiculum regis postulabant pacem eo quod alerentur regiones eorum ab illo"
+      la: "Erat autem iratus Tyriis et Sidonis. At illi unanimes venerunt ad eum, et persuaso Blasto, qui erat super cubiculum regis, postulabant pacem, eo quod alerentur regiones eorum ab illo."
       en: "And he was angry with the Tyrians and the Sidonians. But they with one accord came to him, and having gained Blastus, who was the king's chamberlain, they desired peace, because their countries were nourished by him."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "statuto autem die Herodes vestitus veste regia sedit pro tribunali et contionabatur ad eos"
+      la: "Statuto autem die Herodes vestitus veste regia, sedit pro tribunali, et concionabatur ad eos."
       en: "And upon a day appointed, Herod being arrayed in kingly apparel, sat in the judgment seat, and made an oration to them."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "populus autem adclamabat dei voces et non hominis"
+      la: "Populus autem acclamabat: Dei voces, et non hominis."
       en: "And the people made acclamation, saying: It is the voice of a god, and not of a man."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "confestim autem percussit eum angelus Domini eo quod non dedisset honorem Deo et consumptus a vermibus exspiravit"
+      la: "Confestim autem percussit eum angelus Domini, eo quod non dedisset honorem Deo: et consumptus a vermibus, expiravit."
       en: "And forthwith an angel of the Lord struck him, because he had not given the honour to God: and being eaten up by worms, he gave up the ghost."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "verbum autem Domini crescebat et multiplicabatur"
+      la: "Verbum autem Domini crescebat, et multiplicabatur."
       en: "But the word of the Lord increased and multiplied."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "Barnabas autem et Saulus reversi sunt ab Hierosolymis expleto ministerio adsumpto Iohanne qui cognominatus est Marcus"
+      la: "Barnabas autem et Saulus reversi sunt ab Jerosolymis expleto ministerio assumpto Joanne, qui cognominatus est Marcus."
       en: "And Barnabas and Saul returned from Jerusalem, having fulfilled their ministry, taking with them John, who was surnamed Mark."
     status: { la: verified, en: verified }

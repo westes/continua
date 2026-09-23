@@ -1,127 +1,132 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: gen
 chapter: 50
 verses:
   - n: 1
     text:
-      la: "quod cernens Ioseph ruit super faciem patris flens et deosculans eum"
+      la: "Quod cernens Joseph, ruit super faciem patris, flens et deosculans eum."
       en: "And when Joseph saw this, he fell upon his father's face weeping and kissing him."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "praecepitque servis suis medicis ut aromatibus condirent patrem"
+      la: "Praecepitque servis suis medicis ut aromatibus condirent patrem."
       en: "And he commanded his servants the physicians to embalm his father."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "quibus iussa explentibus transierunt quadraginta dies iste quippe mos erat cadaverum conditorum flevitque eum Aegyptus septuaginta diebus"
-      en: "And while they were fulfilling his commands, there passed forty days: for this was the manner with bodies that were embalmed, and Egypt mounted for him seventy days."
+      la: "Quibus jussa explentibus, transierunt quadraginta dies: iste quippe mos erat cadaverum conditorum: flevitque eum Aegyptus septuaginta diebus."
+      en: "And while they were fulfilling his commands, there passed forty days: for this was the manner with bodies that were embalmed, and Egypt mourned for him seventy days."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et expleto planctus tempore locutus est Ioseph ad familiam Pharaonis si inveni gratiam in conspectu vestro loquimini in auribus Pharaonis"
+      la: "Et expleto planctus tempore, locutus est Joseph ad familiam Pharaonis: Si inveni gratiam in conspectu vestro, loquimini in auribus Pharaonis:"
       en: "And the time of the mourning being expired, Joseph spoke to the family of Pharao: If I have found favour in your sight, speak in the ears of Pharao:"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "eo quod pater meus adiuraverit me dicens en morior in sepulchro meo quod fodi mihi in terra Chanaan sepelies me ascendam igitur et sepeliam patrem meum ac revertar"
+      la: "eo quod pater meus adjuraverit me dicens: En morior: in sepulchro meo, quod fodi mihi in terra Chanaan, sepelies me. Ascendam igitur, et sepeliam patrem meum, ac revertar."
       en: "For my father made me swear to him, saying: Behold I die: thou shalt bury me in my sepulchre which I have digged for myself in the land of Chanaan. So I will go up and bury my father, and return."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "dixitque ei Pharao ascende et sepeli patrem tuum sicut adiuratus es"
+      la: "Dixitque ei Pharao: Ascende, et sepeli patrem tuum sicut adjuratus es."
       en: "And Pharao said to him: Go up and bury thy father according as he made thee swear."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "quo ascendente ierunt cum eo omnes senes domus Pharaonis cunctique maiores natu terrae Aegypti"
+      la: "Quo ascendente, ierunt cum eo omnes senes domus Pharaonis, cunctique majores natu terrae Aegypti:"
       en: "So he went up, and there went with him all the ancients of Pharao's house, and all the elders of the land of Egypt,"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "domus Ioseph cum fratribus suis absque parvulis et gregibus atque armentis quae dereliquerant in terra Gessen"
+      la: "domus Joseph cum fratribus suis, absque parvulis, et gregibus atque armentis, quae dereliquerant in terra Gessen."
       en: "And the house of Joseph with his brethren, except their children, and their flocks and herds, which they left in the land of Gessen."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "habuit quoque in comitatu currus et equites et facta est turba non modica"
-      en: "He had also in his train chariots and horsemen: and it was it great company."
+      la: "Habuit quoque in comitatu currus et equites: et facta est turba non modica."
+      en: "He had also in his train chariots and horsemen: and it was a great company."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "veneruntque ad aream Atad quae sita est trans Iordanem ubi celebrantes exequias planctu magno atque vehementi impleverunt septem dies"
+      la: "Veneruntque ad Aream Atad, quae sita est trans Jordanem: ubi celebrantes exequias planctu magno atque vehementi impleverunt septem dies."
       en: "And they came to the threshingfloor of Atad, which is situated beyond the Jordan: where celebrating the exequies with a great and vehement lamentation, they spent full seven days."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "quod cum vidissent habitatores terrae Chanaan dixerunt planctus magnus est iste Aegyptiis et idcirco appellaverunt nomen loci illius Planctus Aegypti"
-      en: "And when the inhabitants of Chanaan saw this, they said: This is a great mourning to the Egyptians. And there- fore the name of that place was called, The mourning of Egypt."
+      la: "Quod cum vidissent habitatores terrae Chanaan, dixerunt: Planctus magnus est iste Aegyptiis. Et idcirco vocatum est nomen loci illius, Planctus Aegypti."
+      en: "And when the inhabitants of Chanaan saw this, they said: This is a great mourning to the Egyptians. And therefore the name of that place was called, The mourning of Egypt."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "fecerunt ergo filii Iacob sicut praeceperat eis"
+      la: "Fecerunt ergo filii Jacob sicut praeceperat eis:"
       en: "So the sons of Jacob did as he had commanded them."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et portantes eum in terram Chanaan sepelierunt in spelunca duplici quam emerat Abraham cum agro in possessionem sepulchri ab Ephron Hettheo contra faciem Mambre"
-      en: "And carrying him into the land of Chanaan, they buried him in the double cave which Abraham had bought together with the held for a possession of a buryingplace, of Ephron the Hethite over against Mambre."
+      la: "et portantes eum in terram Chanaan, sepelierunt eum in spelunca duplici, quam emerat Abraham cum agro in possessionem sepulchri ab Ephron Hethaeo, contra faciem Mambre."
+      en: "And carrying him into the land of Chanaan, they buried him in the double cave which Abraham had bought together with the field for a possession of a buryingplace, of Ephron the Hethite over against Mambre."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "reversusque est Ioseph in Aegyptum cum fratribus suis et omni comitatu sepulto patre"
+      la: "Reversusque est Joseph in Aegyptum cum fratribus suis, et omni comitatu, sepulto patre."
       en: "And Joseph returned into Egypt with his brethren, and all that were in his company, after he had buried his father."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "quo mortuo timentes fratres eius et mutuo conloquentes ne forte memor sit iniuriae quam passus est et reddat nobis malum omne quod fecimus"
-      en: "Now he being dead, his brethren were afraid, and talked one with another : Lest perhaps he should remember the wrong he suffered, and requite us all the evil that we did to him."
+      la: "Quo mortuo, timentes fratres ejus, et mutuo colloquentes: Ne forte memor sit injuriae quam passus est, et reddat nobis omne malum quod fecimus,"
+      en: "Now he being dead, his brethren were afraid, and talked one with another: Lest perhaps he should remember the wrong he suffered, and requite us all the evil that we did to him."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "mandaverunt ei pater tuus praecepit nobis antequam moreretur"
+      la: "mandaverunt ei dicentes: Pater tuus praecepit nobis antequam moreretur,"
       en: "And they sent a message to him, saying: Thy father commanded us before he died,"
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "ut haec tibi verbis illius diceremus obsecro ut obliviscaris sceleris fratrum tuorum et peccati atque malitiae quam exercuerunt in te nos quoque oramus ut servis Dei patris tui dimittas iniquitatem hanc quibus auditis flevit Ioseph"
+      la: "ut haec tibi verbis illius diceremus: Obsecro ut obliviscaris sceleris fratrum tuorum, et peccati atque malitiae quam exercuerunt in te: nos quoque oramus ut servis Dei patris tui dimittas iniquitatem hanc. Quibus auditis flevit Joseph."
       en: "That we should say thus much to thee from him: I beseech thee to forget the wickedness of thy brethren, and the sin and malice they practiced against thee: we also pray thee, to forgive the servants of the God of thy father this wickedness. And when Joseph heard this, he wept."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "veneruntque ad eum fratres sui et proni in terram dixerunt servi tui sumus"
+      la: "Veneruntque ad eum fratres sui: et proni adorantes in terram, dixerunt: Servi tui sumus."
       en: "And his brethren came to him: and worshipping prostrate on the ground they said: We are thy servants."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "quibus ille respondit nolite timere num Dei possumus rennuere voluntatem"
+      la: "Quibus ille respondit: Nolite timere: num Dei possumus resistere voluntati?"
       en: "And he answered them: Fear not: can we resist the will of God?"
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "vos cogitastis de me malum et Deus vertit illud in bonum ut exaltaret me sicut inpraesentiarum cernitis et salvos faceret multos populos"
+      la: "Vos cogitastis de me malum: sed Deus vertit illud in bonum, ut exaltaret me, sicut in praesentiarum cernitis, et salvos faceret multos populos."
       en: "You thought evil against me: but God turned it into good, that he might exalt me, as at present you see, and might save many people."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "nolite metuere ego pascam vos et parvulos vestros consolatusque est eos et blande ac leniter est locutus"
+      la: "Nolite timere: ego pascam vos et parvulos vestros: consolatusque est eos, et blande ac leniter est locutus."
       en: "Fear not: I will feed you and your children. And he comforted them, and spoke gently and mildly."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "et habitavit in Aegypto cum omni domo patris sui vixitque centum decem annis et vidit Ephraim filios usque ad tertiam generationem filii quoque Machir filii Manasse nati sunt in genibus Ioseph"
-      en: "And he dwelt in Egypt with all his father's house: and lived a hundred and ten years. And he saw the children of Ephraim to the third generation. The children also of Machir the son of Ma-nasses were born on Joseph's knees."
+      la: "Et habitavit in Aegypto cum omni domo patris sui: vixitque centum decem annis. Et vidit Ephraim filios usque ad tertiam generationem. Filii quoque Machir filii Manasse nati sunt in genibus Joseph."
+      en: "And he dwelt in Egypt with all his father's house: and lived a hundred and ten years. And he saw the children of Ephraim to the third generation. The children also of Machir the son of Manasses were born on Joseph's knees."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "quibus transactis locutus est fratribus suis post mortem meam Deus visitabit vos et ascendere faciet de terra ista ad terram quam iuravit Abraham Isaac et Iacob"
+      la: "Quibus transactis, locutus est fratribus suis: Post mortem meam Deus visitabit vos, et ascendere vos faciet de terra ista ad terram quam juravit Abraham, Isaac et Jacob."
       en: "After which he told his brethren: God will visit you after my death, and will make you go up out of this land, to the land which he swore to Abraham, Isaac, and Jacob."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "cumque adiurasset eos atque dixisset Deus visitabit vos asportate vobiscum ossa mea de loco isto"
-      en: "And he made them swear to him, saying: God will visit you, Carry my bones with you out of this place:"
+      la: "Cumque adjurasset eos atque dixisset: Deus visitabit vos, asportate ossa mea vobiscum de loco isto:"
+      en: "And he made them swear to him, saying: God will visit you, carry my bones with you out of this place:"
+    status: { la: verified, en: verified }
+  - n: 25
+    text:
+      la: "mortuus est, expletis centum decem vitae suae annis. Et conditus aromatibus, repositus est in loculo in Aegypto."
+      en: "And he died being a hundred and ten years old. And being embalmed he was laid in a coffin in Egypt."
     status: { la: verified, en: verified }

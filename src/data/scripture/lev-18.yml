@@ -1,157 +1,157 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: lev
 chapter: 18
 verses:
   - n: 1
     text:
-      la: "locutusque est Dominus ad Mosen dicens"
+      la: "Locutus est Dominus ad Moysen, dicens:"
       en: "And the Lord spoke to Moses, saying:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "loquere filiis Israhel et dices ad eos ego Dominus Deus vester"
+      la: "Loquere filiis Israel, et dices ad eos: Ego Dominus Deus vester:"
       en: "Speak to the children of Israel, and thou shalt say to them: I am the Lord your God."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "iuxta consuetudinem terrae Aegypti in qua habitastis non facietis et iuxta morem regionis Chanaan ad quam ego introducturus sum vos non agetis nec in legitimis eorum ambulabitis"
+      la: "juxta consuetudinem terrae Aegypti, in qua habitastis, non facietis: et juxta morem regionis Chanaan, ad quam ego introducturus sum vos, non agetis, nec in legitimis eorum ambulabitis."
       en: "You shall not do according to the custom of the land of Egypt, in which you dwelt: neither shall you act according to the manner of the country of Chanaan, into which I will bring you, nor shall you walk in their ordinances."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "facietis iudicia mea et praecepta servabitis et ambulabitis in eis ego Dominus Deus vester"
+      la: "Facietis judicia mea, et praecepta mea servabitis, et ambulabitis in eis. Ego Dominus Deus vester."
       en: "You shall do my judgments, and shall observe my precepts, and shall walk in them. I am the Lord your God."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "custodite leges meas atque iudicia quae faciens homo vivet in eis ego Dominus"
+      la: "Custodite leges meas atque judicia, quae faciens homo, vivet in eis. Ego Dominus."
       en: "Keep my laws and my judgments, which if a man do, he shall live in them. I am the Lord."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "omnis homo ad proximam sanguinis sui non accedet ut revelet turpitudinem eius ego Dominus"
+      la: "Omnis homo ad proximam sanguinis sui non accedet, ut revelet turpitudinem ejus. Ego Dominus."
       en: "No man shall approach to her that is near of kin to him, to uncover her nakedness. I am the Lord."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "turpitudinem patris et turpitudinem matris tuae non discoperies mater tua est non revelabis turpitudinem eius"
+      la: "Turpitudinem patris tui, turpitudinem matris tuae non discooperies: mater tua est: non revelabis turpitudinem ejus."
       en: "Thou shalt not uncover the nakedness of thy father, or the nakedness of thy mother: she is thy mother, thou shalt not uncover her nakedness."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "turpitudinem uxoris patris tui non discoperies turpitudo enim patris tui est"
+      la: "Turpitudinem uxoris patris tui non discooperies: turpitudo enim patris tui est."
       en: "Thou shalt not uncover the nakedness of thy father's wife: for it is the nakedness of thy father."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "turpitudinem sororis tuae ex patre sive ex matre quae domi vel foris genita est non revelabis"
+      la: "Turpitudinem sororis tuae ex patre sive ex matre, quae domi vel foris genita est, non revelabis."
       en: "Thou shalt not uncover the nakedness of thy sister by father or by mother, whether born at home or abroad."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "turpitudinem filiae filii tui vel neptis ex filia non revelabis quia turpitudo tua est"
+      la: "Turpitudinem filiae filii tui vel neptis ex filia non revelabis: quia turpitudo tua est."
       en: "Thou shalt not uncover the nakedness of thy son's daughter, or thy daughter's daughter: because it is thy own nakedness."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "turpitudinem filiae uxoris patris tui quam peperit patri tuo et est soror tua non revelabis"
+      la: "Turpitudinem filiae uxoris patris tui, quam peperit patri tuo, et est soror tua, non revelabis."
       en: "Thou shalt not uncover the nakedness of thy father's wife's daughter, whom she bore to thy father, and who is thy sister."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "turpitudinem sororis patris tui non discoperies quia caro est patris tui"
+      la: "Turpitudinem sororis patris tui non discooperies: quia caro est patris tui."
       en: "Thou shalt not uncover the nakedness of thy father's sister: because she is the flesh of thy father."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "turpitudinem sororis matris tuae non revelabis eo quod caro sit matris tuae"
+      la: "Turpitudinem sororis matris tuae non revelabis, eo quod caro sit matris tuae."
       en: "Thou shalt not uncover the nakedness of thy mother's sister: because she is thy mother's flesh."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "turpitudinem patrui tui non revelabis nec accedes ad uxorem eius quae tibi adfinitate coniungitur"
+      la: "Turpitudinem patrui tui non revelabis, nec accedes ad uxorem ejus, quae tibi affinitate conjungitur."
       en: "Thou shalt not uncover the nakedness of thy father's brother: neither shalt thou approach to his wife, who is joined to thee by affinity."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "turpitudinem nurus tuae non revelabis quia uxor filii tui est nec discoperies ignominiam eius"
+      la: "Turpitudinem nurus tuae non revelabis, quia uxor filii tui est: nec discooperies ignominiam ejus."
       en: "Thou shalt not uncover the nakedness of thy daughter in law: because she is thy son's wife, neither shalt thou discover her shame."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "turpitudinem uxoris fratris tui non revelabis quia turpitudo fratris tui est"
+      la: "Turpitudinem uxoris fratris tui non revelabis: quia turpitudo fratris tui est."
       en: "Thou shalt not uncover the nakedness of thy brother's wife: because it is the nakedness of thy brother."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "turpitudinem uxoris tuae et filiae eius non revelabis filiam filii eius et filiam filiae illius non sumes ut reveles ignominiam eius quia caro illius sunt et talis coitus incestus est"
+      la: "Turpitudinem uxoris tuae et filiae ejus non revelabis. Filiam filii ejus, et filiam filiae illius non sumes, ut reveles ignominiam ejus: quia caro illius sunt, et talis coitus incestus est."
       en: "Thou shalt not uncover the nakedness of thy wife and her daughter. Thou shalt not take her son's daughter or her daughter's daughter, to discover her shame: because they are her flesh, and such copulation is incest."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "sororem uxoris tuae in pelicatum illius non accipies nec revelabis turpitudinem eius adhuc illa vivente"
+      la: "Sororem uxoris tuae in pellicatum illius non accipies, nec revelabis turpitudinem ejus adhuc illa vivente."
       en: "Thou shalt not take thy wife's sister for a harlot, to rival her, neither shalt thou discover her nakedness, while she is yet living."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "ad mulierem quae patitur menstrua non accedes nec revelabis foeditatem eius"
+      la: "Ad mulierem quae patitur menstrua non accedes, nec revelabis foeditatem ejus."
       en: "Thou shalt not approach to a woman having her flowers, neither shalt thou uncover her nakedness."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "cum uxore proximi tui non coibis nec seminis commixtione maculaberis"
+      la: "Cum uxore proximi tui non coibis, nec seminis commistione maculaberis."
       en: "Thou shalt not lie with thy neighbour's wife, nor be defiled with mingling of seed."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "de semine tuo non dabis ut consecretur idolo Moloch nec pollues nomen Dei tui ego Dominus"
-      en: "Thou shalt not give any of thy seed to be consecrated to the idol Moloch, nor defile the name of thy God : I am the Lord."
+      la: "De semine tuo non dabis ut consecretur idolo Moloch, nec pollues nomen Dei tui. Ego Dominus."
+      en: "Thou shalt not give any of thy seed to be consecrated to the idol Moloch, nor defile the name of thy God: I am the Lord."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "cum masculo non commisceberis coitu femineo quia abominatio est"
+      la: "Cum masculo non commiscearis coitu femineo, quia abominatio est."
       en: "Thou shalt not lie with mankind as with womankind, because it is an abomination."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "cum omni pecore non coibis nec maculaberis cum eo mulier non subcumbet iumento nec miscebitur ei quia scelus est"
+      la: "Cum omni pecore non coibis, nec maculaberis cum eo. Mulier non succumbet jumento, nec miscebitur ei, quia scelus est."
       en: "Thou shalt not copulate with any beast, neither shalt thou be defiled with it. A woman shall not lie down to a beast, nor copulate with it: because it is a heinous crime."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "ne polluamini in omnibus his quibus contaminatae sunt universae gentes quas ego eiciam ante conspectum vestrum"
+      la: "Nec polluamini in omnibus his quibus contaminatae sunt universae gentes, quas ego ejiciam ante conspectum vestrum,"
       en: "Defile not yourselves with any of these things with which all the nations have been defiled, which I will cast out before you,"
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "et quibus polluta est terra cuius ego scelera visitabo ut evomat habitatores suos"
+      la: "et quibus polluta est terra: cujus ego scelera visitabo, ut evomat habitatores suos."
       en: "And with which the land is defiled: the abominations of which I will visit, that it may vomit out its inhabitants."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "custodite legitima mea atque iudicia et non faciat ex omnibus abominationibus istis tam indigena quam colonus qui peregrinatur apud vos"
+      la: "Custodite legitima mea atque judicia, et non faciatis ex omnibus abominationibus istis, tam indigena quam colonus qui peregrinantur apud vos."
       en: "Keep ye my ordinances and my judgments, and do not any of these abominations: neither any of your own nation, nor any stranger that sojourneth among you."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "omnes enim execrationes istas fecerunt accolae terrae qui fuerunt ante vos et polluerunt eam"
+      la: "Omnes enim execrationes istas fecerunt accolae terrae qui fuerunt ante vos, et polluerunt eam."
       en: "For all these detestable things the inhabitants of the land have done, that; were before you, and have defiled it."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "cavete ergo ne et vos similiter evomat cum paria feceritis sicut evomuit gentem quae fuit ante vos"
+      la: "Cavete ergo ne et vos similiter evomat, cum paria feceritis, sicut evomuit gentem, quae fuit ante vos."
       en: "Beware then, lest in like manner, it vomit you also out, if you do the like things, as it vomited out the nation that was before you."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "omnis anima quae fecerit de abominationibus his quippiam peribit de medio populi sui"
+      la: "Omnis anima, quae fecerit de abominationibus his quippiam, peribit de medio populi sui."
       en: "Every soul that shall commit any of these abominations, shall perish from the midst of his people."
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "custodite mandata mea nolite facere quae fecerunt hii qui fuerunt ante vos et ne polluamini in eis ego Dominus Deus vester"
+      la: "Custodite mandata mea. Nolite facere quae fecerunt hi qui fuerunt ante vos, et ne polluamini in eis. Ego Dominus Deus vester."
       en: "Keep my commandments. Do not the things which they have done, that have been before you, and be not defiled therein. I am the Lord your God."
     status: { la: verified, en: verified }

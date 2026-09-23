@@ -1,107 +1,112 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1tim
 chapter: 6
 verses:
   - n: 1
     text:
-      la: "quicumque sunt sub iugo servi dominos suos omni honore dignos arbitrentur ne nomen Domini et doctrina blasphemetur"
+      la: "Quicumque sunt sub jugo servi, dominos suos omni honore dignos arbitrentur, ne nomen Domini et doctrina blasphemetur."
       en: "Whosoever are servants under the yoke, let them count their masters worthy of all honour; lest the name of the Lord and his doctrine be blasphemed."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "qui autem fideles habent dominos non contemnant quia fratres sunt sed magis serviant quia fideles sunt et dilecti qui beneficii participes sunt haec doce et exhortare"
+      la: "Qui autem fideles habent dominos, non contemnant, quia fratres sunt: sed magis serviant, quia fideles sunt et dilecti, qui beneficii participes sunt. Haec doce, et exhortare."
       en: "But they that have believing masters, let them not despise them, because they are brethren; but serve them the rather, because they are faithful and beloved, who are partakers of the benefit. These things teach and exhort."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "si quis aliter docet et non adquiescit sanis sermonibus Domini nostri Iesu Christi et ei quae secundum pietatem est doctrinae"
+      la: "Si quis aliter docet, et non acquiescit sanis sermonibus Domini nostri Jesu Christi, et ei, quae secundum pietatem est, doctrinae:"
       en: "If any man teach otherwise, and consent not to the sound words of our Lord Jesus Christ, and to that doctrine which is according to godliness,"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "superbus nihil sciens sed languens circa quaestiones et pugnas verborum ex quibus oriuntur invidiae contentiones blasphemiae suspiciones malae"
+      la: "superbus est, nihil sciens, sed languens circa quaestiones, et pugnas verborum: ex quibus oriuntur invidiae, contentiones, blasphemiae, suspiciones malae,"
       en: "He is proud, knowing nothing, but sick about questions and strifes of words; from which arise envies, contentions, blasphemies, evil suspicions,"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "conflictationes hominum mente corruptorum et qui veritate privati sunt existimantium quaestum esse pietatem"
+      la: "conflictationes hominum mente corruptorum, et qui veritate privati sunt, existimantium quaestum esse pietatem."
       en: "Conflicts of men corrupted in mind, and who are destitute of the truth, supposing gain to be godliness."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "est autem quaestus magnus pietas cum sufficientia"
+      la: "Est autem quaestus magnus pietas cum sufficientia."
       en: "But godliness with contentment is great gain."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "nihil enim intulimus in mundum haut dubium quia nec auferre quid possumus"
+      la: "Nihil enim intulimus in hunc mundum: haud dubium quod nec auferre quid possumus."
       en: "For we brought nothing into this world: and certainly we can carry nothing out."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "habentes autem alimenta et quibus tegamur his contenti sumus"
+      la: "Habentes autem alimenta, et quibus tegamur, his contenti simus."
       en: "But having food, and wherewith to be covered, with these we are content."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "nam qui volunt divites fieri incidunt in temptationem et laqueum et desideria multa inutilia et nociva quae mergunt homines in interitum et perditionem"
+      la: "Nam qui volunt divites fieri, incidunt in tentationem, et in laqueum diaboli, et desideria multa inutilia, et nociva, quae mergunt homines in interitum et perditionem."
       en: "For they that will become rich, fall into temptation, and into the snare of the devil, and into many unprofitable and hurtful desires, which drown men into destruction and perdition."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "radix enim omnium malorum est cupiditas quam quidam appetentes erraverunt a fide et inseruerunt se doloribus multis"
+      la: "Radix enim omnium malorum est cupiditas: quam quidam appetentes erraverunt a fide, et inseruerunt se doloribus malis."
       en: "For the desire of money is the root of all evils; which some coveting have erred from the faith, and have entangled themselves in many sorrows."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "tu autem o homo Dei haec fuge sectare vero iustitiam pietatem fidem caritatem patientiam mansuetudinem"
+      la: "Tu autem, o homo Dei, haec fuge: sectare vero justitiam, pietatem, fidem, caritatem, patientiam, mansuetudinem."
       en: "But thou, O man of God, fly these things: and pursue justice, godliness, faith, charity, patience, mildness."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "certa bonum certamen fidei adprehende vitam aeternam in qua vocatus es et confessus bonam confessionem coram multis testibus"
+      la: "Certa bonum certamen fidei, apprehende vitam aeternam, in qua vocatus es, et confessus bonam confessionem coram multis testibus."
       en: "Fight the good fight of faith: lay hold on eternal life, whereunto thou art called, and hast confessed a good confession before many witnesses."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "praecipio tibi coram Deo qui vivificat omnia et Christo Iesu qui testimonium reddidit sub Pontio Pilato bonam confessionem"
+      la: "Praecipio tibi coram Deo, qui vivificat omnia, et Christo Jesu, qui testimonium reddidit sub Pontio Pilato, bonam confessionem,"
       en: "I charge thee before God, who quickeneth all things, and before Christ Jesus, who gave testimony under Pontius Pilate, a good confession,"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "ut serves mandatum sine macula inreprehensibile usque in adventum Domini nostri Iesu Christi"
+      la: "ut serves mandatum sine macula, irreprehensibile usque in adventum Domini nostri Jesu Christi,"
       en: "That thou keep the commandment without spot, blameless, unto the coming of our Lord Jesus Christ,"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "quem suis temporibus ostendet beatus et solus potens rex regum et Dominus dominantium"
+      la: "quem suis temporibus ostendet beatus et solus potens, Rex regum, et Dominus dominantium:"
       en: "Which in his times he shall shew who is the Blessed and only Mighty, the King of kings, and Lord of lords;"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "qui solus habet inmortalitatem lucem habitans inaccessibilem quem vidit nullus hominum sed nec videre potest cui honor et imperium sempiternum amen"
+      la: "qui solus habet immortalitatem, et lucem inhabitat inaccessibilem: quem nullus hominum vidit, sed nec videre potest: cui honor, et imperium sempiternum. Amen."
       en: "Who only hath immortality, and inhabiteth light inaccessible, whom no man hath seen, nor can see: to whom be honour and empire everlasting. Amen."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "divitibus huius saeculi praecipe non sublime sapere neque sperare in incerto divitiarum sed in Deo qui praestat nobis omnia abunde ad fruendum"
+      la: "Divitibus hujus saeculi praecipe non sublime sapere, neque sperare in incerto divitiarum, sed in Deo vivo ( qui praestat nobis omnia abunde ad fruendum)"
       en: "Charge the rich of this world not to be highminded, nor to trust in the uncertainty of riches, but in the living God, (who giveth us abundantly all things to enjoy,)"
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "bene agere divites fieri in operibus bonis facile tribuere communicare"
+      la: "bene agere, divites fieri in bonis operibus, facile tribuere, communicare,"
       en: "To do good, to be rich in good works, to give easily, to communicate to others,"
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "thesaurizare sibi fundamentum bonum in futurum ut adprehendant veram vitam"
+      la: "thesaurizare sibi fundamentum bonum in futurum, ut apprehendant veram vitam."
       en: "To lay up in store for themselves a good foundation against the time to come, that they may lay hold on the true life."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "o Timothee depositum custodi devitans profanas vocum novitates et oppositiones falsi nominis scientiae"
+      la: "O Timothee, depositum custodi, devitans profanas vocum novitates, et oppositiones falsi nominis scientiae,"
       en: "O Timothy, keep that which is committed to thy trust, avoiding the profane novelties of words, and oppositions of knowledge falsely so called."
+    status: { la: verified, en: verified }
+  - n: 21
+    text:
+      la: "quam quidam promittentes, circa fidem exciderunt. Gratia tecum. Amen."
+      en: "Which some promising, have erred concerning the faith. Grace be with thee. Amen."
     status: { la: verified, en: verified }

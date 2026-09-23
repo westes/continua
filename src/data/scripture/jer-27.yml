@@ -1,117 +1,117 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: jer
 chapter: 27
 verses:
   - n: 1
     text:
-      la: "in principio regni Ioachim filii Iosiae regis Iuda factum est verbum istud ad Hieremiam a Domino dicens"
+      la: "In principio regni Joakim filii Josiae regis Juda, factum est verbum istud ad Jeremiam a Domino, dicens:"
       en: "In the beginning of the reign of Joakim the son of Josias king of Juda, this word came to Jeremias from the Lord, saying:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "haec dicit Dominus ad me fac tibi vincula et catenas et pones eas in collo tuo"
+      la: "Haec dicit Dominus ad me: Fac tibi vincula et catenas, et pones eas in collo tuo,"
       en: "Thus saith the Lord to me: Make thee bands, and chains: and thou shalt put them on thy neck."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et mittes eas ad regem Edom et ad regem Moab et ad regem filiorum Ammon et ad regem Tyri et ad regem Sidonis in manu nuntiorum qui venerunt Hierusalem ad Sedeciam regem Iuda"
-      en: "And thou shalt send them to the of Edom, and to the king of Moab, and to the king of the children of Ammon, and to the king of Tyre, and to the king of Sidon: by the hand of the messengers that are come to Jerusalem to Sedecias the king of Juda."
+      la: "et mittes eas ad regem Edom, et ad regem Moab, et ad regem filiorum Ammon, et ad regem Tyri, et ad regem Sidonis, in manu nuntiorum qui venerunt Jerusalem ad Sedeciam regem Juda."
+      en: "And thou shalt send them to the king of Edom, and to the king of Moab, and to the king of the children of Ammon, and to the king of Tyre, and to the king of Sidon: by the hand of the messengers that are come to Jerusalem to Sedecias the king of Juda."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et praecipies eis ut ad dominos suos loquantur haec dicit Dominus exercituum Deus Israhel haec dicetis ad dominos vestros"
+      la: "Et praecipies eis ut ad dominos suos loquantur: Haec dicit Dominus exercituum, Deus Israel: Haec dicetis ad dominos vestros:"
       en: "And thou shalt command them to speak to their masters: Thus saith the Lord of hosts the God of Israel: Thus shall you say to your masters:"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "ego feci terram et hominem et iumenta quae sunt super faciem terrae in fortitudine mea magna et in brachio meo extento et dedi eam ei qui placuit in oculis meis"
+      la: "Ego feci terram, et homines, et jumenta quae sunt super faciem terrae, in fortitudo mea magna, et in brachio meo extento, et dedi eam ei qui placuit in oculis meis."
       en: "I made the earth, and the men, and the beasts that are upon the face of the earth, by my great power, and by my stretched out arm: and I have given it to whom it seemed good in my eyes."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et nunc itaque ego dedi omnes terras istas in manu Nabuchodonosor regis Babylonis servi mei insuper et bestias agri dedi ei ut serviant illi"
+      la: "Et nunc itaque ego dedi omnes terras istas in manu Nabuchodonosor regis Babylonis servi mei: insuper et bestias agri dedi ei, ut serviant illi:"
       en: "And now I have given all these lands into the hand of Nabuchodonosor king of Babylon my servant: moreover also the beasts of the field I have given him to serve him."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et servient ei omnes gentes et filio eius et filio filii eius donec veniat tempus terrae eius et ipsius et servient ei gentes multae et reges magni"
+      la: "et servient ei omnes gentes, et filio ejus, et filio filii ejus, donec veniat tempus terrae ejus et ipsius: et servient ei gentes multae et reges magni."
       en: "And all nations shall serve him, and his son, and his son's son: till the time come for his land and himself: and many nations and great kings shall serve him."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "gens autem et regnum quod non servierit Nabuchodonosor regi Babylonis et quicumque non curvaverit collum suum sub iugo regis Babylonis in gladio et in fame et in peste visitabo super gentem illam ait Dominus donec consumam eos in manu eius"
+      la: "Gens autem et regnum quod non servierit Nabuchodonosor regi Babylonis, et quicumque non curvaverit collum suum sub jugo regis Babylonis, in gladio, et in fame, et in peste visitabo super gentem illam, ait Dominus, donec consumam eos in manu ejus."
       en: "But the nation and kingdom that will not serve Nabuchodonosor king of Babylon, and whosoever will not bend his neck under the yoke of the king of Babylon: I will visit upon that nation with the sword, and with famine, and with pestilence, saith the Lord: till I consume them by his hand."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "vos ergo nolite audire prophetas vestros et divinos et somniatores et augures et maleficos qui dicunt vobis non servietis regi Babylonis"
+      la: "Vos ergo, nolite audire prophetas vestros, et divinos, et somniatores, et augures, et maleficos, qui dicunt vobis: Non servietis regi Babylonis:"
       en: "Therefore hearken not to your prophets, and diviners, and dreamers, and soothsayers, and sorcerers, that say to you: You shall not serve the king Babylon."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "quia mendacium prophetant vobis ut longe faciant vos de terra vestra et eiciant vos et pereatis"
-      en: "For they prophesy lies to you: to remove you far from your country, and east you out, and to make you perish."
+      la: "quia mendacium prophetant vobis, ut longe vos faciant de terra vestra, et ejiciant vos, et pereatis."
+      en: "For they prophesy lies to you: to remove you far from your country, and cast you out, and to make you perish."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "porro gens quae subiecerit cervicem suam sub iugo regis Babylonis et servierit ei dimittam eam in terra sua dicit Dominus et colet eam et habitabit in ea"
-      en: "But the nation that shall bend down their neck under the yoke of the king Babylon, and shall serve him: Will let them remain in their own land, saith the Lord: and they shall till it, and dwell in it."
+      la: "Porro gens quae subjecerit cervicem suam sub jugo regis Babylonis, et servierit ei, dimittam eam in terra sua, dicit Dominus, et colet eam, et habitabit in ea."
+      en: "But the nation that shall bend down their neck under the yoke of the king Babylon, and shall serve him: I will let them remain in their own land, saith the Lord: and they shall till it, and dwell in it."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "et ad Sedeciam regem Iuda locutus sum secundum omnia verba haec dicens subicite colla vestra sub iugo regis Babylonis et servite ei et populo eius et vivetis"
+      la: "Et ad Sedeciam regem Juda locutus sum secundum omnia verba haec, dicens: Subjicite colla vestra sub jugo regis Babylonis, et servite ei, et populo ejus, et vivetis."
       en: "And I spoke to Sedecias the king of Juda according to all these words, saying: Bend down your necks under the yoke of the king of Babylon, and serve him, and his people, and you shall live."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "quare moriemini tu et populus tuus gladio fame et peste sicut locutus est Dominus ad gentem quae servire noluerit regi Babylonis"
+      la: "Quare moriemini, tu et populus tuus, gladio, et fame, et peste, sicut locutus est Dominus ad gentem quae servire noluerit regi Babylonis?"
       en: "Why will you die, thou and thy people by the sword, and by famine, and by the pestilence, as the Lord hath spoken against the nation that will not serve the king of Babylon?"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "nolite audire verba prophetarum dicentium vobis non servietis regi Babylonis quia mendacium ipsi loquuntur vobis"
+      la: "Nolite audire verba prophetarum dicentium vobis: Non servietis regi Babylonis: quia mendacium ipsi loquuntur vobis."
       en: "Hearken not to the words of the prophets that say to you: You shall not serve the king of Babylon: for they tell you a lie."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "quia non misi eos ait Dominus et ipsi prophetant in nomine meo mendaciter ut eiciant vos et pereatis tam vos quam prophetae qui vaticinantur vobis"
+      la: "Quia non misi eos, ait Dominus: et ipsi prophetant in nomine meo mendaciter, ut ejiciant vos, et pereatis, tam vos quam prophetae qui vaticinantur vobis."
       en: "For I have not sent them, saith the Lord: and they prophesy in my name falsely: to drive you out, and that you may perish, both you, and the prophets that prophesy to you."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "et ad sacerdotes et ad populum istum locutus sum dicens haec dicit Dominus nolite audire verba prophetarum vestrorum qui prophetant vobis dicentes ecce vasa Domini revertentur de Babylone nunc cito mendacium enim prophetant vobis"
+      la: "Et ad sacerdotes, et ad populum istum, locutus sum, dicens: Haec dicit Dominus: Nolite audire verba prophetarum vestrorum, qui prophetant vobis, dicentes: Ecce vasa Domini revertentur de Babylone nunc cito: mendacium enim prophetant vobis."
       en: "I spoke also to the priests, and to this people, saying: Thus saith the Lord: Hearken not to the words of your prophets, that prophesy to you, saying: Behold the vessels of the Lord shall now in a short time be brought again from Babylon: for they prophesy a lie unto you."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "nolite ergo audire eos sed servite regi Babylonis ut vivatis quare datur haec civitas in solitudinem"
+      la: "Nolite ergo audire eos: sed servite regi Babylonis, ut vivatis: quare datur haec civitas in solitudinem?"
       en: "Therefore hearken not to them, but serve the king of Babylon, that you may live. Why should this city be given up to desolation?"
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "et si prophetae sunt et est verbum Domini in eis occurrant Domino exercituum ut non veniant vasa quae derelicta fuerant in domum Domini et in domum regis Iuda et in Hierusalem in Babylonem"
+      la: "Et si prophetae sunt, et est verbum Domini in eis, occurrant Domino exercituum, ut non veniant vasa quae derelicta fuerant in domo Domini, et in domo regis Juda, et in Jerusalem, in Babylonem."
       en: "But if they be prophets, and the word of the Lord be in them: let them interpose themselves before the Lord of hosts, that the vessels which were left in the house of the Lord, and in the house of the king of Juda, and in Jerusalem, may not go to Babylon."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "quia haec dicit Dominus exercituum ad columnas et ad mare et ad bases et ad reliqua vasorum quae remanserunt in civitate hac"
-      en: "For thus saith the Lord of hosts d to the pillars, and to the sea, and to the bases, and to the rest of the vessels that remain in this city:"
+      la: "Quia haec dicit Dominus exercituum ad columnas, et ad mare, et ad bases, et ad reliqua vasorum, quae remanserunt in civitate hac,"
+      en: "For thus saith the Lord of hosts to the pillars, and to the sea, and to the bases, and to the rest of the vessels that remain in this city:"
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "quae non tulit Nabuchodonosor rex Babylonis cum transferret Iechoniam filium Ioachim regem Iuda de Hierusalem in Babylonem et omnes optimates Iuda et Hierusalem"
+      la: "quae non tulit Nabuchodonosor rex Babylonis, cum transferret Jechoniam filium Joakim regem Juda de Jerusalem in Babylonem, et omnes optimates Juda et Jerusalem:"
       en: "Which Nabuchodonosor the king of Babylon did not take, when he carried away Jechonias the son of Joakim the king of Juda, from Jerusalem to Babylon, and all the great men of Juda and Jerusalem."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "quia haec dicit Dominus exercituum Deus Israhel ad vasa quae derelicta sunt in domum Domini et in domum regis Iuda et Hierusalem"
+      la: "quia haec dicit Dominus exercituum, Deus Israel, ad vasa quae derelicta sunt in domo Domini, et in domo regis Juda et Jerusalem:"
       en: "For thus saith the Lord of hosts the God of Israel, to the vessels that are left in the house of the Lord, and in the house of the king of Juda and Jerusalem:"
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "in Babylonem transferentur et ibi erunt usque ad diem visitationis suae dicit Dominus et adferri faciam ea et restitui in loco isto"
-      en: "They shall be carried to Babylon, and there they shall be until the day of their visitation, saith the Lord: and I will cause them to be brought, and to be re- stored in this place."
+      la: "In Babylonem transferentur, et ibi erunt, usque ad diem visitationis suae, dicit Dominus, et afferri faciam ea, et restitui in loco isto."
+      en: "They shall be carried to Babylon, and there they shall be until the day of their visitation, saith the Lord: and I will cause them to be brought, and to be restored in this place."
     status: { la: verified, en: verified }

@@ -1,122 +1,122 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: jer
 chapter: 18
 verses:
   - n: 1
     text:
-      la: "verbum quod factum est ad Hieremiam a Domino dicens"
-      en: "The word that came from Jeremias to the Lord, saying:"
+      la: "Verbum quod factum est ad Jeremiam a Domino, dicens:"
+      en: "The word that came to Jeremias from the Lord, saying:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "surge et descende in domum figuli et ibi audies verba mea"
-      en: "Arise, and go down to the potter's house, and there thou shalt hear my words."
+      la: "Surge, et descende in domum figuli, et ibi audies verba mea."
+      en: "Arise, and go down into the potter's house, and there thou shalt hear my words."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et descendi in domum figuli et ecce ipse faciebat opus super rotam"
+      la: "Et descendi in domum figuli, et ecce ipse faciebat opus super rotam."
       en: "And I went down into the potter's house, and behold he was doing a work on the wheel."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et dissipatum est vas quod ipse faciebat e luto manibus suis conversusque fecit illud vas alterum sicut placuerat in oculis eius ut faceret"
-      en: "And the vessel was broken which he was making with clay with his hands: and turning he made another vessel, as it seemed good in his eyes to make it."
+      la: "Et dissipatum est vas quod ipse faciebat e luto manibus suis: conversusque fecit illud vas alterum, sicut placuerat in oculis ejus ut faceret."
+      en: "And the vessel was broken which he was making of clay with his hands: and turning he made another vessel, as it seemed good in his eyes to make it."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et factum est verbum Domini ad me dicens"
+      la: "Et factum est verbum Domini ad me, dicens:"
       en: "Then the word of the Lord came to me, saying:"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "numquid sicut figulus iste non potero facere vobis domus Israhel ait Dominus ecce sicut lutum in manu figuli sic vos in manu mea domus Israhel"
-      en: "Cannot I do with you as this potter, saith the Lord? behold as clay is in the hand of the potter, so are you in my hand, O house of Israel."
+      la: "Numquid sicut figulus iste, non potero vobis facere, domus Israel? ait Dominus: ecce sicut lutum in manu figuli, sic vos in manu mea, domus Israel."
+      en: "Cannot I do with you, as this potter, O house of Israel, saith the Lord? behold as clay is in the hand of the potter, so are you in my hand, O house of Israel."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "repente loquar adversum gentem et adversum regnum ut eradicem et destruam et disperdam illud"
+      la: "Repente loquar adversum gentem et adversus regnum, ut eradicem, et destruam, et disperdam illud:"
       en: "I will suddenly speak against a nation, and against a kingdom, to root out, and to pull down, and to destroy it."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "si paenitentiam egerit gens illa a malo suo quod locutus sum adversum eam agam et ego paenitentiam super malo quod cogitavi ut facerem ei"
+      la: "si poenitentiam egerit gens illa a malo suo, quod locutus sum adversus eam, agam et ego poenitentiam super malo quod cogitavi ut facerem ei."
       en: "If that nation against which I have spoken, shall repent of their evil, I also will repent of the evil that I have thought to do to them."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "et subito loquar de gente et regno ut aedificem et ut plantem illud"
+      la: "Et subito loquar de gente et de regno, ut aedificem et plantem illud,"
       en: "And I will suddenly speak of a nation and of a kingdom, to build up and plant it."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "si fecerit malum in oculis meis ut non audiat vocem meam paenitentiam agam super bono quod locutus sum ut facerem ei"
+      la: "si fecerit malum in oculis meis, ut non audiat vocem meam, poenitentiam agam super bono quod locutus sum ut facerem ei."
       en: "If it shall do evil in my sight, that it obey not my voice: I will repent of the good that I have spoken to do unto it."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "nunc ergo dic viro Iudae et habitatoribus Hierusalem dicens haec dicit Dominus ecce ego fingo contra vos malum et cogito contra vos cogitationem revertatur unusquisque a via sua mala et dirigite vias vestras et studia vestra"
+      la: "Nunc ergo dic viro Juda, et habitatoribus Jerusalem, dicens: Haec dicit Dominus: Ecce ego fingo contra vos malum, et cogito contra vos cogitationem: revertatur unusquisque a via sua mala, et dirigite vias vestras et studia vestra."
       en: "Now therefore tell the men of Juda, and the inhabitants of Jerusalem, saying: Thus saith the Lord: Behold I frame evil against you, and devise a device against you: let every man of you return from his evil way, and make ye your ways and your doings good."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "qui dixerunt desperavimus post cogitationes enim nostras ibimus et unusquisque pravitatem cordis sui mali faciemus"
+      la: "Qui dixerunt: Desperavimus: post cogitationes enim nostras ibimus, et unusquisque pravitatem cordis sui mali faciemus."
       en: "And they said: We have no hopes: for we will go after our own thoughts, and we will do every one according to the perverseness of his evil heart."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "ideo haec dicit Dominus interrogate gentes quis audivit talia horribilia quae fecit nimis virgo Israhel"
+      la: "Ideo haec dicit Dominus: Interrogate gentes: quis audivit talia horribilia, quae fecit nimis virgo Israel?"
       en: "Therefore thus saith the Lord: Ask among the nations: Who hath heard such horrible things, as the virgin of Israel hath done to excess?"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "numquid deficiet de petra agri nix Libani aut evelli possunt aquae erumpentes frigidae et defluentes"
-      en: "Shall now the snow of Libanus fail from the rock of the field? or can the cold waters that gush out and run down, be taken away?"
+      la: "Numquid deficiet de petra agri nix Libani? aut evelli possunt aquae erumpentes frigidae, et defluentes?"
+      en: "Shall the snow of Libanus fail from the rock of the field? or can the cold waters that gush out and run down, be taken away?"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "quia oblitus est mei populus meus frustra libantes et inpingentes in viis suis in semitis saeculi ut ambularent per eas in itinere non trito"
+      la: "Quia oblitus est mei populus meus, frustra libantes, et impingentes in viis suis, in semitis saeculi, ut ambularent per eas in itinere non trito,"
       en: "Because my people have forgotten me, sacrificing in vain, and stumbling in their ways, in ancient paths, to walk by them in a way not trodden:"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "ut fieret terra eorum in desolationem et in sibilum sempiternum omnis qui praeterit per eam obstupescet et movebit caput suum"
+      la: "ut fieret terra eorum in desolationem, et in sibilum sempiternum: omnis qui praeterierit per eam obstupescet, et movebit caput suum."
       en: "That their land might be given up to desolation, and to a perpetual hissing: every one that shall pass by it, shall be astonished, and wag his head."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "sicut ventus urens dispergam eos coram inimico dorsum et non faciem ostendam eis in die perditionis eorum"
+      la: "Sicut ventus urens dispergam eos coram inimico: dorsum, et non faciem, ostendam eis in die perditionis eorum."
       en: "As a burning will I scatter them before the enemy: I will shew them the back, and not the face, in the day of their destruction."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "et dixerunt venite et cogitemus contra Hieremiam cogitationes non enim peribit lex a sacerdote neque consilium a sapiente nec sermo a propheta venite et percutiamus eum lingua et non adtendamus ad universos sermones eius"
+      la: "Et dixerunt: Venite, et cogitemus contra Jeremiam cogitationes: non enim peribit lex a sacerdote, neque consilium a sapiente, nec sermo a propheta: venite, et percutiamus eum lingua, et non attendamus ad universos sermones ejus."
       en: "And they said: Come, and let us invent devices against Jeremias: for the law shall not perish from the priest, nor counsel from the wise, nor the word from the prophet: come, and let us strike him with the tongue, and let us give no heed to all his words."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "adtende Domine ad me et audi vocem adversariorum meorum"
+      la: "Attende, Domine, ad me, et audi vocem adversariorum meorum."
       en: "Give heed to me, O Lord, and hear the voice of my adversaries."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "numquid redditur pro bono malum quia foderunt foveam animae meae recordare quod steterim in conspectu tuo ut loquerer pro eis bonum et averterem indignationem tuam ab eis"
-      en: "Shall evil be rendered for good, because they have digged a pit for my soul? Remember that I have stood in thy sight, so speak good for them, and turn away thy indignation from them."
+      la: "Numquid redditur pro bono malum, quia foderunt foveam animae meae? Recordare quod steterim in conspectu tuo ut loquerer pro eis bonum, et averterem indignationem tuam ab eis."
+      en: "Shall evil be rendered for good, because they have digged a pit for my soul? Remember that I have stood in thy sight, to speak good for them, and to turn away thy indignation from them."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "propterea da filios eorum in famem et deduc eos in manus gladii fiant uxores eorum absque liberis et viduae et viri earum interficiantur morte iuvenes eorum confodiantur gladio in proelio"
+      la: "Propterea da filios eorum in famem, et deduc eos in manus gladii: fiant uxores eorum absque liberis, et viduae: et viri earum interficiantur morte: juvenes eorum confodiantur gladio in praelio:"
       en: "Therefore deliver up their children to famine, and bring them into the hands of the sword: let their wives be bereaved of children and widows: and let their husbands be slain by death: let their young men be stabbed with the sword in battle."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "audiatur clamor de domibus eorum adduces enim super eos latronem repente quia foderunt foveam ut caperent me et laqueos absconderunt pedibus meis"
+      la: "audiatur clamor de domibus eorum: adduces enim super eos latronem repente, quia foderunt foveam ut caperent me, et laqueos absconderunt pedibus meis."
       en: "Let a cry be heard out of their houses: for thou shalt bring the robber upon them suddenly: because they have digged a pit to take me, and have hid snares for my feet."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "tu autem Domine scis omne consilium eorum adversum me in mortem ne propitieris iniquitati eorum et peccatum eorum a facie tua non deleatur fiant corruentes in conspectu tuo in tempore furoris tui abutere eis"
+      la: "Tu autem, Domine, scis omne consilium eorum adversum me in mortem: ne propitieris iniquitati eorum, et peccatum eorum a facie tua non deleatur: fiant corruentes in conspectu tuo, in tempore furoris tui abutere eis."
       en: "But thou, O Lord, knowest all their counsel against me unto death: forgive not their iniquity, and let not their sin be blotted out from thy sight: let them be overthrown before thy eyes, in the time of thy wrath do thou destroy them."
     status: { la: verified, en: verified }

@@ -1,92 +1,92 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: apoc
 chapter: 6
 verses:
   - n: 1
     text:
-      la: "et vidi quod aperuisset agnus unum de septem signaculis et audivi unum de quattuor animalibus dicentem tamquam vocem tonitrui veni"
+      la: "Et vidi quod aperuisset Agnus unum de septem sigillis, et audivi unum de quatuor animalibus, dicens tamquam vocem tonitrui: Veni, et vide."
       en: "And I saw that the Lamb had opened one of the seven seals, and I heard one of the four living creatures, as it were the voice of thunder, saying: Come, and see."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et vidi et ecce equus albus et qui sedebat super illum habebat arcum et data est ei corona et exivit vincens ut vinceret"
+      la: "Et vidi: et ecce equus albus, et qui sedebat super illum, habebat arcum, et data est ei corona, et exivit vincens ut vinceret."
       en: "And I saw: and behold a white horse, and he that sat on him had a bow, and there was a crown given him, and he went forth conquering that he might conquer."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et cum aperuisset sigillum secundum audivi secundum animal dicens veni"
+      la: "Et cum aperuisset sigillum secundum, audivi secundum animal, dicens: Veni, et vide."
       en: "And when he had opened the second seal, I heard the second living creature, saying: Come, and see."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et exivit alius equus rufus et qui sedebat super illum datum est ei ut sumeret pacem de terra et ut invicem se interficiant et datus est illi gladius magnus"
+      la: "Et exivit alius equus rufus: et qui sedebat super illum, datum est ei ut sumeret pacem de terra, et ut invicem se interficiant, et datus est ei gladius magnus."
       en: "And there went out another horse that was red: and to him that sat thereon, it was given that he should take peace from the earth, and that they should kill one another, and a great sword was given to him."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et cum aperuisset sigillum tertium audivi tertium animal dicens veni et vidi et ecce equus niger et qui sedebat super eum habebat stateram in manu sua"
+      la: "Et cum aperuisset sigillum tertium, audivi tertium animal, dicens: Veni, et vide. Et ecce equus niger: et qui sedebat super illum, habebat stateram in manu sua."
       en: "And when he had opened the third seal, I heard the third living creature saying: Come, and see. And behold a black horse, and he that sat on him had a pair of scales in his hand."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et audivi tamquam vocem in medio quattuor animalium dicentem bilibris tritici denario et tres bilibres hordei denario et vinum et oleum ne laeseris"
+      la: "Et audivi tamquam vocem in medio quatuor animalium dicentium: Bilibris tritici denario et tres bilibres hordei denario, et vinum, et oleum ne laeseris."
       en: "And I heard as it were a voice in the midst of the four living creatures, saying: Two pounds of wheat for a penny, and thrice two pounds of barley for a penny, and see thou hurt not the wine and the oil."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et cum aperuisset sigillum quartum audivi vocem quarti animalis dicentis veni et vidi"
+      la: "Et cum aperuisset sigillum quartum, audivi vocem quarti animalis dicentis: Veni, et vide."
       en: "And when he had opened the fourth seal, I heard the voice of the fourth living creature, saying: Come, and see."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et ecce equus pallidus et qui sedebat desuper nomen illi Mors et inferus sequebatur eum et data est illi potestas super quattuor partes terrae interficere gladio fame et morte et bestiis terrae"
+      la: "Et ecce equus pallidus: et qui sedebat super eum, nomen illi Mors, et infernus sequebatur eum, et data est illi potestas super quatuor partes terrae, interficere gladio, fame, et morte, et bestiis terrae."
       en: "And behold a pale horse, and he that sat upon him, his name was Death, and hell followed him. And power was given to him over the four parts of the earth, to kill with sword, with famine, and with death, and with the beasts of the earth."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "et cum aperuisset quintum sigillum vidi subtus altare animas interfectorum propter verbum Dei et propter testimonium quod habebant"
+      la: "Et cum aperuisset sigillum quintum, vidi subtus altare animas interfectorum propter verbum Dei, et propter testimonium, quod habebant:"
       en: "And when he had opened the fifth seal, I saw under the altar the souls of them that were slain for the word of God, and for the testimony which they held."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et clamabant voce magna dicentes usquequo Domine sanctus et verus non iudicas et vindicas sanguinem nostrum de his qui habitant in terra"
+      la: "et clamabant voce magna, dicentes: Usquequo Domine ( sanctus et verus), non judicas, et non vindicas sanguinem nostrum de iis qui habitant in terra?"
       en: "And they cried with a loud voice, saying: How long, O Lord (holy and true) dost thou not judge and revenge our blood on them that dwell on the earth?"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et datae sunt illis singulae stolae albae et dictum est illis ut requiescerent tempus adhuc modicum donec impleantur conservi eorum et fratres eorum qui interficiendi sunt sicut et illi"
+      la: "Et datae sunt illis singulae stolae albae: et dictum est illis ut requiescerent adhuc tempus modicum donec compleantur conservi eorum, et fratres eorum, qui interficiendi sunt sicut et illi."
       en: "And white robes were given to every one of them one; and it was said to them, that they should rest for a little time, till their fellow servants, and their brethren, who are to be slain, even as they, should be filled up."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "et vidi cum aperuisset sigillum sextum et terraemotus factus est magnus et sol factus est niger tamquam saccus cilicinus et luna tota facta est sicut sanguis"
+      la: "Et vidi cum aperuisset sigillum sextum: et ecce terraemotus magnus factus est, et sol factus est niger tamquam saccus cilicinus: et luna tota facta est sicut sanguis:"
       en: "And I saw, when he had opened the sixth seal, and behold there was a great earthquake, and the sun became black as sackcloth of hair: and the whole moon became as blood:"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et stellae caeli ceciderunt super terram sicut ficus mittit grossos suos cum vento magno movetur"
+      la: "et stellae de caelo ceciderunt super terram, sicut ficus emittit grossos suos cum a vento magno movetur:"
       en: "And the stars from heaven fell upon the earth, as the fig tree casteth its green figs when it is shaken by a great wind:"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et caelum recessit sicut liber involutus et omnis mons et insulae de locis suis motae sunt"
+      la: "et caelum recessit sicut liber involutus: et omnis mons, et insulae de locis suis motae sunt:"
       en: "And the heaven departed as a book folded up: and every mountain, and the islands were moved out of their places."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "et reges terrae et principes et tribuni et divites et fortes et omnis servus et liber absconderunt se in speluncis et petris montium"
+      la: "et reges terrae, et principes, et tribuni, et divites, et fortes, et omnis servus, et liber absconderunt se in speluncis, et in petris montium:"
       en: "And the kings of the earth, and the princes, and tribunes, and the rich, and the strong, and every bondman, and every freeman, hid themselves in the dens and in the rocks of mountains:"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "et dicunt montibus et petris cadite super nos et abscondite nos a facie sedentis super thronum et ab ira agni"
+      la: "et dicunt montibus, et petris: Cadite super nos, et abscondite nos a facie sedentis super thronum, et ab ira Agni:"
       en: "And they say to the mountains and the rocks: Fall upon us, and hide us from the face of him that sitteth upon the throne and from the wrath of the Lamb:"
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "quoniam venit dies magnus irae ipsorum et quis poterit stare"
+      la: "quoniam venit dies magnus irae ipsorum: et quis poterit stare?"
       en: "For the great day of their wrath is come, and who shall be able to stand?"
     status: { la: verified, en: verified }

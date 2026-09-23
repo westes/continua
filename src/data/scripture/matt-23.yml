@@ -1,202 +1,202 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: matt
 chapter: 23
 verses:
   - n: 1
     text:
-      la: "tunc Iesus locutus est ad turbas et discipulos suos"
+      la: "Tunc Jesus locutus est ad turbas, et ad discipulos suos,"
       en: "Then Jesus spoke to the multitudes and to his disciples,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "dicens super cathedram Mosi sederunt scribae et Pharisaei"
+      la: "dicens: Super cathedram Moysi sederunt scribae et pharisaei."
       en: "Saying: The scribes and the Pharisees have sitten on the chair of Moses."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "omnia ergo quaecumque dixerint vobis servate et facite secundum opera vero eorum nolite facere dicunt enim et non faciunt"
+      la: "Omnia ergo quaecumque dixerint vobis, servate, et facite: secundum opera vero eorum nolite facere: dicunt enim, et non faciunt."
       en: "All things therefore whatsoever they shall say to you, observe and do: but according to their works do ye not; for they say, and do not."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "alligant autem onera gravia et inportabilia et inponunt in umeros hominum digito autem suo nolunt ea movere"
+      la: "Alligant enim onera gravia, et importabilia, et imponunt in humeros hominum: digito autem suo nolunt ea movere."
       en: "For they bind heavy and insupportable burdens, and lay them on men's shoulders; but with a finger of their own they will not move them."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "omnia vero opera sua faciunt ut videantur ab hominibus dilatant enim phylacteria sua et magnificant fimbrias"
+      la: "Omnia vero opera sua faciunt ut videantur ab hominibus: dilatant enim phylacteria sua, et magnificant fimbrias."
       en: "And all their works they do for to be seen of men. For they make their phylacteries broad, and enlarge their fringes."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "amant autem primos recubitus in cenis et primas cathedras in synagogis"
+      la: "Amant autem primos recubitus in coenis, et primas cathedras in synagogis,"
       en: "And they love the first places at feasts, and the first chairs in the synagogues,"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et salutationes in foro et vocari ab hominibus rabbi"
+      la: "et salutationes in foro, et vocari ab hominibus Rabbi."
       en: "And salutations in the market place, and to be called by men, Rabbi."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "vos autem nolite vocari rabbi unus enim est magister vester omnes autem vos fratres estis"
+      la: "Vos autem nolite vocari Rabbi: unus est enim magister vester, omnes autem vos fratres estis."
       en: "But be not you called Rabbi. For one is your master; and all you are brethren."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "et patrem nolite vocare vobis super terram unus enim est Pater vester qui in caelis est"
+      la: "Et patrem nolite vocare vobis super terram: unus est enim pater vester qui in caelis est."
       en: "And call none your father upon earth; for one is your father, who is in heaven."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "nec vocemini magistri quia magister vester unus est Christus"
-      en: "Neither be ye called masters; for one is you master, Christ."
+      la: "Nec vocemini magistri: quia magister vester unus est, Christus."
+      en: "Neither be ye called masters; for one is your master, Christ."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "qui maior est vestrum erit minister vester"
+      la: "Qui major est vestrum, erit minister vester."
       en: "He that is the greatest among you shall be your servant."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "qui autem se exaltaverit humiliabitur et qui se humiliaverit exaltabitur"
+      la: "Qui autem se exaltaverit, humiliabitur: et qui se humiliaverit, exaltabitur."
       en: "And whosoever shall exalt himself shall be humbled: and he that shall humble himself shall be exalted."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "vae autem vobis scribae et Pharisaei hypocritae quia clauditis regnum caelorum ante homines vos enim non intratis nec introeuntes sinitis intrare"
+      la: "Vae autem vobis scribae et pharisaei hypocritae, quia clauditis regnum caelorum ante homines! vos enim non intratis, nec introeuntes sinitis intrare."
       en: "But woe to you scribes and Pharisees, hypocrites; because you shut the kingdom of heaven against men, for you yourselves do not enter in; and those that are going in, you suffer not to enter."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "[]"
+      la: "Vae vobis scribae et pharisaei hypocritae, quia comeditis domos viduarum, orationes longas orantes! propter hoc amplius accipietis judicium."
       en: "Woe to you scribes and Pharisees, hypocrites: because you devour the houses of widows, praying long prayers. For this you shall receive the greater judgment."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "vae vobis scribae et Pharisaei hypocritae quia circuitis mare et aridam ut faciatis unum proselytum et cum fuerit factus facitis eum filium gehennae duplo quam vos"
+      la: "Vae vobis scribae et pharisaei hypocritae, quia circuitis mare, et aridam, ut faciatis unum proselytum, et cum fuerit factus, facitis eum filium gehennae duplo quam vos."
       en: "Woe to you scribes and Pharisees, hypocrites; because you go round about the sea and the land to make one proselyte; and when he is made, you make him the child of hell twofold more than yourselves."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "vae vobis duces caeci qui dicitis quicumque iuraverit per templum nihil est qui autem iuraverit in aurum templi debet"
+      la: "Vae vobis duces caeci, qui dicitis: Quicumque juraverit per templum, nihil est: qui autem juraverit in auro templo, debet."
       en: "Woe to you blind guides, that say, Whosoever shall swear by the temple, it is nothing; but he that shall swear by the gold of the temple, is a debtor."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "stulti et caeci quid enim maius est aurum an templum quod sanctificat aurum"
+      la: "Stulti et caeci: quid enim majus est? aurum, an templum, quod sanctificat aurum?"
       en: "Ye foolish and blind; for whether is greater, the gold, or the temple that sanctifieth the gold?"
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "et quicumque iuraverit in altari nihil est quicumque autem iuraverit in dono quod est super illud debet"
+      la: "Et quicumque juraverit in altari, nihil est: quicumque autem juraverit in dono, quod est super illud, debet."
       en: "And whosoever shall swear by the altar, it is nothing; but whosoever shall swear by the gift that is upon it, is a debtor."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "caeci quid enim maius est donum an altare quod sanctificat donum"
+      la: "Caeci: quid enim majus est, donum, an altare, quod sanctificat donum?"
       en: "Ye blind: for whether is greater, the gift, or the altar that sanctifieth the gift?"
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "qui ergo iurat in altare iurat in eo et in omnibus quae super illud sunt"
+      la: "Qui ergo jurat in altari, jurat in eo, et in omnibus quae super illud sunt."
       en: "He therefore that sweareth by the altar, sweareth by it, and by all things that are upon it:"
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "et qui iuraverit in templo iurat in illo et in eo qui inhabitat in ipso"
-      en: "And whosoever shall swear by temple, sweareth by it, and by him that dwelleth in it:"
+      la: "Et quicumque juraverit in templo, jurat in illo, et in eo qui habitat in ipso:"
+      en: "And whosoever shall swear by the temple, sweareth by it, and by him that dwelleth in it:"
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "et qui iurat in caelo iurat in throno Dei et in eo qui sedet super eum"
+      la: "et qui jurat in caelo, jurat in throno Dei, et in eo qui sedet super eum."
       en: "And he that sweareth by heaven, sweareth by the throne of God, and by him that sitteth thereon."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "vae vobis scribae et Pharisaei hypocritae quia decimatis mentam et anethum et cyminum et reliquistis quae graviora sunt legis iudicium et misericordiam et fidem haec oportuit facere et illa non omittere"
+      la: "Vae vobis scribae et pharisaei hypocritae, qui decimatis mentham, et anethum, et cyminum, et reliquistis quae graviora sunt legis, judicium, et misericordiam, et fidem! haec oportuit facere, et illa non omittere."
       en: "Woe to you scribes and Pharisees, hypocrites; because you tithe mint, and anise, and cummin, and have left the weightier things of the law; judgment, and mercy, and faith. These things you ought to have done, and not to leave those undone."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "duces caeci excolantes culicem camelum autem gluttientes"
+      la: "Duces caeci, excolantes culicem, camelum autem glutientes."
       en: "Blind guides, who strain out a gnat, and swallow a camel."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "vae vobis scribae et Pharisaei hypocritae quia mundatis quod de foris est calicis et parapsidis intus autem pleni sunt rapina et inmunditia"
+      la: "Vae vobis scribae et pharisaei hypocritae, quia mundatis quod deforis est calicis et paropsidis; intus autem pleni estis rapina et immunditia!"
       en: "Woe to you scribes and Pharisees, hypocrites; because you make clean the outside of the cup and of the dish, but within you are full of rapine and uncleanness."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "Pharisaee caece munda prius quod intus est calicis et parapsidis ut fiat et id quod de foris est mundum"
+      la: "Pharisaee caece, munda prius quod intus est calicis, et paropsidis, ut fiat id, quod deforis est, mundum."
       en: "Thou blind Pharisee, first make clean the inside of the cup and of the dish, that the outside may become clean."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "vae vobis scribae et Pharisaei hypocritae quia similes estis sepulchris dealbatis quae a foris parent hominibus speciosa intus vero plena sunt ossibus mortuorum et omni spurcitia"
+      la: "Vae vobis scribae et pharisaei hypocritae, quia similes estis sepulchris dealbatis, quae a foris parent hominibus speciosa, intus vero pleni sunt ossibus mortuorum, et omni spurcitia!"
       en: "Woe to you scribes and Pharisees, hypocrites; because you are like to whited sepulchres, which outwardly appear to men beautiful, but within are full of dead men's bones, and of all filthiness."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "sic et vos a foris quidem paretis hominibus iusti intus autem pleni estis hypocrisi et iniquitate"
+      la: "Sic et vos a foris quidem paretis hominibus justi: intus autem pleni estis hypocrisi et iniquitate."
       en: "So you also outwardly indeed appear to men just; but inwardly you are full of hypocrisy and iniquity."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "vae vobis scribae et Pharisaei hypocritae quia aedificatis sepulchra prophetarum et ornatis monumenta iustorum"
+      la: "Vae vobis scribae et pharisaei hypocritae, qui aedificatis sepulchra prophetarum, et ornatis monumenta justorum,"
       en: "Woe to you scribes and Pharisees, hypocrites; that build the sepulchres of the prophets, and adorn the monuments of the just,"
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "et dicitis si fuissemus in diebus patrum nostrorum non essemus socii eorum in sanguine prophetarum"
+      la: "et dicitis: Si fuissemus in diebus patrum nostrorum, non essemus socii eorum in sanguine prophetarum!"
       en: "And say: If we had been in the days of our Fathers, we would not have been partakers with them in the blood of the prophets."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "itaque testimonio estis vobismet ipsis quia filii estis eorum qui prophetas occiderunt"
+      la: "itaque testimonio estis vobismetipsis, quia filii estis eorum, qui prophetas occiderunt."
       en: "Wherefore you are witnesses against yourselves, that you are the sons of them that killed the prophets."
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "et vos implete mensuram patrum vestrorum"
+      la: "Et vos implete mensuram patrum vestrorum."
       en: "Fill ye up then the measure of your fathers."
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "serpentes genimina viperarum quomodo fugietis a iudicio gehennae"
+      la: "Serpentes genimina viperarum, quomodo fugietis a judicio gehennae?"
       en: "You serpents, generation of vipers, how will you flee from the judgment of hell?"
     status: { la: verified, en: verified }
   - n: 34
     text:
-      la: "ideo ecce ego mitto ad vos prophetas et sapientes et scribas ex illis occidetis et crucifigetis et ex eis flagellabitis in synagogis vestris et persequemini de civitate in civitatem"
+      la: "Ideo ecce ego mitto ad vos prophetas, et sapientes, et scribas, et ex illis occidetis, et crucifigetis, et ex eis flagellabitis in synagogis vestris, et persequemini de civitate in civitatem:"
       en: "Therefore behold I send to you prophets, and wise men, and scribes: and some of them you will put to death and crucify, and some you will scourge in your synagogues, and persecute from city to city:"
     status: { la: verified, en: verified }
   - n: 35
     text:
-      la: "ut veniat super vos omnis sanguis iustus qui effusus est super terram a sanguine Abel iusti usque ad sanguinem Zacchariae filii Barachiae quem occidistis inter templum et altare"
+      la: "ut veniat super vos omnis sanguis justus, qui effusus est super terram, a sanguine Abel justi usque ad sanguinem Zachariae, filii Barachiae, quem occidistis inter templum et altare."
       en: "That upon you may come all the just blood that hath been shed upon the earth, from the blood of Abel the just, even unto the blood of Zacharias the son of Barachias, whom you killed between the temple and the altar."
     status: { la: verified, en: verified }
   - n: 36
     text:
-      la: "amen dico vobis venient haec omnia super generationem istam"
+      la: "Amen dico vobis, venient haec omnia super generationem istam."
       en: "Amen I say to you, all these things shall come upon this generation."
     status: { la: verified, en: verified }
   - n: 37
     text:
-      la: "Hierusalem Hierusalem quae occidis prophetas et lapidas eos qui ad te missi sunt quotiens volui congregare filios tuos quemadmodum gallina congregat pullos suos sub alas et noluisti"
+      la: "Jerusalem, Jerusalem, quae occidis prophetas, et lapidas eos, qui ad te missi sunt, quoties volui congregare filios tuos, quemadmodum gallina congregat pullos suos sub alas, et noluisti?"
       en: "Jerusalem, Jerusalem, thou that killest the prophets, and stonest them that are sent unto thee, how often would I have gathered together thy children, as the hen doth gather her chickens under her wings, and thou wouldest not?"
     status: { la: verified, en: verified }
   - n: 38
     text:
-      la: "ecce relinquitur vobis domus vestra deserta"
-      en: "Behold, you house shall be left to you, desolate."
+      la: "Ecce relinquetur vobis domus vestra deserta."
+      en: "Behold, your house shall be left to you, desolate."
     status: { la: verified, en: verified }
   - n: 39
     text:
-      la: "dico enim vobis non me videbitis amodo donec dicatis benedictus qui venit in nomine Domini"
+      la: "Dico enim vobis, non me videbitis amodo, donec dicatis: Benedictus, qui venit in nomine Domini."
       en: "For I say to you, you shall not see me henceforth till you say: Blessed is he that cometh in the name of the Lord."
     status: { la: verified, en: verified }

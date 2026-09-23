@@ -1,92 +1,92 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: mal
 chapter: 2
 verses:
   - n: 1
     text:
-      la: "et nunc ad vos mandatum hoc o sacerdotes"
+      la: "Et nunc ad vos mandatum hoc, o sacerdotes."
       en: "And now, O ye priests, this commandment is to you."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "si nolueritis audire et si nolueritis ponere super cor ut detis gloriam nomini meo ait Dominus exercituum mittam in vos egestatem et maledicam benedictionibus vestris et maledicam illis quoniam non posuistis super cor"
+      la: "Si nolueritis audire, et si nolueritis ponere super cor, ut detis gloriam nomini meo, ait Dominus exercituum, mittam in vos egestatem, et maledicam benedictionibus vestris, et maledicam illis, quoniam non posuistis super cor."
       en: "If you will not hear, and if you will not lay it to heart, to give glory to my name, saith the Lord of hosts: I will send poverty upon you, and will curse your blessings, yea I will curse them, because you have not laid it to heart."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "ecce ego proiciam vobis brachium et dispergam super vultum vestrum stercus sollemnitatum vestrarum et adsumet vos secum"
+      la: "Ecce ego projiciam vobis brachium, et dispergam super vultum vestrum stercus solemnitatum vestrarum, et assumet vos secum."
       en: "Behold, I will cast the shoulder to you, and I will scatter upon your face the dung of your solemnities, and it shall take you away with it."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et scietis quia misi ad vos mandatum istud ut esset pactum meum cum Levi dicit Dominus exercituum"
+      la: "Et scietis quia misi ad vos mandatum istud, ut esset pactum meum cum Levi, dicit Dominus exercituum."
       en: "And you shall know that I sent you this commandment, that my covenant might be with Levi, saith the Lord of hosts."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "pactum meum fuit cum eo vitae et pacis et dedi ei timorem et timuit me et a facie nominis mei pavebat"
+      la: "Pactum meum fuit cum eo vitae et pacis: et dedi ei timorem, et timuit me, et a facie nominis mei pavebat."
       en: "My covenant was with him of life and peace: and I gave him fear: and he feared me, and he was afraid before my name."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "lex veritatis fuit in ore eius et iniquitas non est inventa in labiis eius in pace et in aequitate ambulavit mecum et multos avertit ab iniquitate"
+      la: "Lex veritatis fuit in ore ejus, et iniquitas non est inventa in labiis ejus: in pace et in aequitate ambulavit mecum, et multos avertit ab iniquitate."
       en: "The law of truth was in his mouth, and iniquity was not found in his lips: he walked with me in peace, and in equity, and turned many away from iniquity."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "labia enim sacerdotis custodient scientiam et legem requirent ex ore eius quia angelus Domini exercituum est"
+      la: "Labia enim sacerdotis custodient scientiam, et legem requirent ex ore ejus, quia angelus Domini exercituum est."
       en: "For the lips of the priest shall keep knowledge, and they shall seek the law at his mouth: because he is the angel of the Lord of hosts."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "vos autem recessistis de via et scandalizastis plurimos in lege irritum fecistis pactum Levi dicit Dominus exercituum"
+      la: "Vos autem recessistis de via, et scandalizastis plurimos in lege: irritum fecistis pactum Levi, dicit Dominus exercituum."
       en: "But you have departed out of the way, and have caused many to stumble at the law: you have made void the covenant of Levi, saith the Lord of hosts."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "propter quod et ego dedi vos contemptibiles et humiles omnibus populis sicut non servastis vias meas et accepistis faciem in lege"
+      la: "Propter quod et ego dedi vos contemptibiles, et humiles omnibus populis, sicut non servastis vias meas, et accepistis faciem in lege."
       en: "Therefore have I also made you contemptible, and base before all people, as you have not kept my ways, and have accepted persons in the law."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "numquid non pater unus omnium nostrum numquid non Deus unus creavit nos quare ergo despicit unusquisque nostrum fratrem suum violans pactum patrum nostrorum"
+      la: "Numquid non pater unus omnium nostrum? numquid non Deus unus creavit nos? quare ergo despicit unusquisque nostrum fratrem suum, violans pactum patrum nostrorum?"
       en: "Have we not all one father? hath not one God created us? why then doth every one of us despise his brother, violating the covenant of our fathers?"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "transgressus est Iuda et abominatio facta est in Israhel et in Hierusalem quia contaminavit Iudas sanctificationem Domini quam dilexit et habuit filiam dei alieni"
-      en: "Juda hath transgressed, and abomination hath been committed in Israel, and in Jerusalem: for Juda hath profaned the holiness of the Lord, which he loved, and hath married the daughter of a strange God."
+      la: "Transgressus est Juda, et abominatio facta est in Israel et in Jerusalem, quia contaminavit Juda sanctificationem Domini, quam dilexit, et habuit filiam dei alieni."
+      en: "Juda hath transgressed, and abomination hath been committed in Israel, and in Jerusalem: for Juda hath profaned the holiness of the Lord, which he loved, and hath married the daughter of a strange god."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "disperdat Dominus virum qui fecerit hoc magistrum et discipulum de tabernaculis Iacob et offerentem munus Domino exercituum"
+      la: "Disperdet Dominus virum qui fecerit hoc, magistrum et discipulum, de tabernaculis Jacob, et offerentem munus Domino exercituum."
       en: "The Lord will cut off the man that hath done this, both the master, and the scholar, out of the tabernacles of Jacob, and him that offereth an offering to the Lord of hosts."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et hoc rursum fecistis operiebatis lacrimis altare Domini fletu et mugitu ita ut ultra non respiciam ad sacrificium nec accipiam placabile quid de manu vestra"
+      la: "Et hoc rursum fecistis: operiebatis lacrimis altare Domini, fletu et mugitu, ita ut non respiciam ultra ad sacrificium, nec accipiam placabile quid de manu vestra."
       en: "And this again have you done, you have covered the altar of the Lord with tears, with weeping, and bellowing, so that I have no more a regard to sacrifice, neither do I accept any atonement at your hands."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et dixistis quam ob causam quia Dominus testificatus est inter te et uxorem pubertatis tuae quam tu despexisti et haec particeps tua et uxor foederis tui"
+      la: "Et dixistis: Quam ob causam? Quia Dominus testificatus est inter te et uxorem pubertatis tuae, quam tu despexisti: et haec particeps tua, et uxor foederis tui."
       en: "And you have said: For what cause? Because the Lord hath been witness between thee, and the wife of thy youth, whom thou hast despised: yet she was thy partner, and the wife of thy covenant."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "nonne unus fecit et residuum spiritus eius est et quid unus quaerit nisi semen Dei custodite ergo spiritum vestrum et uxorem adulescentiae tuae noli despicere"
+      la: "Nonne unus fecit, et residuum spiritus ejus est? et quid unus quaerit, nisi semen Dei? custodite ergo spiritum vestrum, et uxorem adolescentiae tuae noli despicere."
       en: "Did not one make her, and she is the residue of his spirit? And what doth one seek, but the seed of God? Keep then your spirit, and despise not the wife of thy youth."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "cum odio habueris dimitte dicit Dominus Deus Israhel operiet autem iniquitas vestimentum eius dicit Dominus exercituum custodite spiritum vestrum et nolite despicere"
+      la: "Cum odio habueris, dimitte, dicit Dominus Deus Israel: operiet autem iniquitas vestimentum ejus, dicit Dominus exercituum. Custodite spiritum vestrum, et nolite despicere."
       en: "When thou shalt hate her put her away, saith the Lord the God of Israel: but iniquity shall cover his garment, saith the Lord of hosts, keep your spirit, and despise not."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "laborare fecistis Dominum in sermonibus vestris et dixistis in quo eum fecimus laborare in eo cum diceretis omnis qui facit malum bonus est in conspectu Domini et tales ei placent aut certe ubi est Deus iudicii"
+      la: "Laborare fecistis Dominum in sermonibus vestris, et dixistis: In quo eum fecimus laborare? In eo quod dicitis: Omnis qui facit malum bonus est in conspectu Domini, et tales ei placent: aut certe ubi est Deus judicii?"
       en: "You have wearied the Lord with your words, and you said: Wherein have we wearied him? In that you say: Every one that doth evil, is good in the sight of the Lord, and such please him: or surely where is the God of judgment?"
     status: { la: verified, en: verified }

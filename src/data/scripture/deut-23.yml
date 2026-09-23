@@ -1,132 +1,132 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: deut
 chapter: 23
 verses:
   - n: 1
     text:
-      la: "non intrabit eunuchus adtritis vel amputatis testiculis et absciso veretro ecclesiam Domini"
+      la: "Non intravit eunuchus, attritis vel amputatis testiculis et abscisso veretro, ecclesiam Domini."
       en: "An eunuch, whose testicles are broken or cut away, or yard cut off, shall not enter into the church of the Lord."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "non ingredietur mamzer hoc est de scorto natus in ecclesiam Domini usque ad decimam generationem"
+      la: "Non ingredietur mamzer, hoc est, de scorto natus, in ecclesiam Domini, usque ad decimam generationem."
       en: "A mamzer, that is to say, one born of a prostitute, shall not enter into the church of the Lord, until the tenth generation."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "Ammanites et Moabites etiam post decimam generationem non intrabunt ecclesiam Domini in aeternum"
+      la: "Ammonites et Moabites etiam post decimam generationem non intrabunt ecclesiam Domini in aeternum:"
       en: "The Ammonite and the Moabite, even after the tenth generation shall not enter into the church of the Lord for ever:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "quia noluerunt vobis occurrere cum pane et aqua in via quando egressi estis de Aegypto et quia conduxerunt contra te Balaam filium Beor de Mesopotamiam Syriae ut malediceret tibi"
-      en: "Because they would not meet you with bread and water in the way, when you came out of Egypt: hand because they hired against thee Balaam, the son of Beer, from Mesopotamia in Syria, to curse thee."
+      la: "quia noluerunt vobis occurrere cum pane et aqua in via quando egressi estis de Aegypto: et quia conduxerunt contra te Balaam filium Beor de Mesopotamia Syriae, ut malediceret tibi:"
+      en: "Because they would not meet you with bread and water in the way, when you came out of Egypt: and because they hired against thee Balaam, the son of Beer, from Mesopotamia in Syria, to curse thee."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et noluit Dominus Deus tuus audire Balaam vertitque maledictionem eius in benedictionem tuam eo quod diligeret te"
+      la: "et noluit Dominus Deus tuus audire Balaam, vertitque maledictionem ejus in benedictionem tuam, eo quod diligeret te."
       en: "And the Lord thy God would not hear Balaam, and he turned his cursing into thy blessing, because he loved thee."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "non facies cum eis pacem nec quaeres eis bona cunctis diebus vitae tuae in sempiternum"
+      la: "Non facies cum eis pacem, nec quaeras eis bona cunctis diebus vitae tuae in sempiternum."
       en: "Thou shalt not make peace with them, neither shalt thou seek their prosperity all the days of thy life for ever."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "non abominaberis Idumeum quia frater tuus est nec Aegyptium quia advena fuisti in terra eius"
+      la: "Non abominaberis Idumaeum, quia frater tuus est: nec Aegyptium, quia advena fuisti in terra ejus."
       en: "Thou shalt not abhor the Edomite, because he is thy brother: nor the Egyptian, because thou wast a stranger in his land."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "qui nati fuerint ex eis tertia generatione intrabunt ecclesiam Domini"
+      la: "Qui nati fuerint ex eis, tertia generatione intrabunt in ecclesiam Domini."
       en: "They that are born of them, in the third generation shall enter into the church of the Lord."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "quando egressus fueris adversus hostes tuos in pugnam custodies te ab omni re mala"
+      la: "Quando egressus fueris adversus hostes tuos in pugnam, custodies te ab omni re mala."
       en: "When thou goest out to war against thy enemies, thou shalt keep thyself from every evil thing."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "si fuerit inter vos homo qui nocturno pollutus sit somnio egredietur extra castra"
+      la: "Si fuerit inter vos homo, qui nocturno pollutus sit somnio, egredietur extra castra,"
       en: "If there be among you any man, that is defiled in a dream by night, he shall go forth out of the camp."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et non revertetur priusquam ad vesperam lavetur aqua et post solis occasum regredietur in castra"
+      la: "et non revertetur, priusquam ad vesperam lavetur aqua: et post solis occasum regredietur in castra."
       en: "And shall not return, before he be washed with water in the evening: and after sunset he shall return into the camp."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "habebis locum extra castra ad quem egrediaris ad requisita naturae"
+      la: "Habebis locum extra castra, ad quem egrediaris ad requisita naturae,"
       en: "Thou shalt have a place without the camp, to which thou mayst go for the necessities of nature,"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "gerens paxillum in balteo cumque sederis fodies per circuitum et egesta humo operies"
+      la: "gerens paxillum in balteo: cumque sederis, fodies per circuitum, et egesta humo operies"
       en: "Carrying a paddle at thy girdle. And when thou sittest down, thou shalt dig round about, and with the earth that is dug up thou shalt cover"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "quo relevatus es Dominus enim Deus tuus ambulat in medio castrorum ut eruat te et tradat tibi inimicos tuos ut sint castra tua sancta et nihil in eis appareat foeditatis nec derelinquat te"
+      la: "quo revelatus es: Dominus enim Deus tuus ambulat in medio castrorum, ut eruat te, et tradat tibi inimicos tuos: et sint castra tua sancta, et nihil in eis appareat foeditatis, ne derelinquat te."
       en: "That which thou art eased of: (for the Lord thy God walketh in the midst of thy camp, to deliver thee, and to give up thy enemies to thee:) and let thy camp be holy, and let no uncleanness appear therein, lest he go away from thee."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "non trades servum domino suo qui ad te confugerit"
+      la: "Non trades servum domino suo, qui ad te confugerit."
       en: "Thou shalt not deliver to his master the servant that is fled to thee."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "habitabit tecum in loco qui ei placuerit et in una urbium tuarum requiescet nec contristes eum"
-      en: "He shall dwell with thee ill the place that shall please him, and shall rest, in one of thy cities: give him no trouble."
+      la: "Habitabit tecum in loco, qui ei placuerit, et in una urbium tuarum requiescet: ne contristes eum."
+      en: "He shall dwell with thee in the place that shall please him, and shall rest, in one of thy cities: give him no trouble."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "non erit meretrix de filiabus Israhel neque scortator de filiis Israhel"
+      la: "Non erit meretrix de filiabus Israel, nec scortator de filiis Israel."
       en: "There shall be no whore among the daughters of Israel, nor whoremonger among the sons of Israel."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "non offeres mercedem prostibuli nec pretium canis in domum Domini Dei tui quicquid illud est quod voverint quia abominatio est utrumque apud Dominum Deum tuum"
+      la: "Non offeres mercedem prostibuli, nec pretium canis in domo Domini Dei tui, quidquid illud est quod voveris: quia abominatio est utrumque apud Dominum Deum tuum."
       en: "Thou shalt not offer the hire of a strumpet, nor the price of a dog, in the house of the Lord thy God, whatsoever it be that thou hast vowed: because both these are an abomination to the Lord thy God."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "non fenerabis fratri tuo ad usuram pecuniam nec fruges nec quamlibet aliam rem"
+      la: "Non foenerabis fratri tuo ad usuram pecuniam, nec fruges, nec quamlibet aliam rem:"
       en: "Thou shalt not lend to thy brother money to usury, nor corn, nor any other thing:"
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "sed alieno fratri autem tuo absque usura id quod indiget commodabis ut benedicat tibi Dominus Deus tuus in omni opere tuo in terra ad quam ingredieris possidendam"
+      la: "sed alieno. Fratri autem tuo absque usura id quo indiget, commodabis: ut benedicat tibi Dominus Deus tuus in omni opere tuo in terra, ad quam ingredieris possidendam."
       en: "But to the stranger. To thy brother thou shalt lend that which he wanteth, without usury: that the Lord thy God may bless thee in all thy works in the land, which thou shalt go in to possess."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "cum voveris votum Domino Deo tuo non tardabis reddere quia requiret illud Dominus Deus tuus et si moratus fueris reputabit tibi in peccatum"
+      la: "Cum votum voveris Domino Deo tuo, non tardabis reddere: quia requiret illud Dominus Deus tuus, et si moratus fueris, reputabitur tibi in peccatum."
       en: "When thou hast made a vow to the Lord thy God, thou shalt not delay to pay it: because the Lord thy God will require it. And if thou delay, it shall be imputed to thee for a sin."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "si nolueris polliceri absque peccato eris"
+      la: "Si nolueris polliceri, absque peccato eris."
       en: "If thou wilt not promise, thou shalt be without sin."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "quod autem semel egressum est de labiis tuis observabis et facies sicut promisisti Domino Deo tuo et propria voluntate et ore tuo locutus es"
+      la: "Quod autem semel egressum est de labiis tuis, observabis, et facies sicut promisisti Domino Deo tuo, et propria voluntate et ore tuo locutus es."
       en: "But that which is once gone out of thy lips, thou shalt observe, and shalt do as thou hast promised to the Lord thy God, and hast spoken with thy own will and with thy own mouth."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "ingressus vineam proximi tui comede uvas quantum tibi placuerit foras autem ne efferas tecum"
+      la: "Ingressus vineam proximi tui, comede uvas, quantum tibi placuerit: foras autem ne efferas tecum."
       en: "Going into thy neighbour's vineyard, thou mayst eat as many grapes as thou pleasest: but must carry none out with thee:"
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "si intraveris in segetem amici tui franges spicas et manu conteres falce autem non metes"
+      la: "Si intraveris in segetem amici tui, franges spicas, et manu conteres: falce autem non metes."
       en: "If thou go into thy friend's corn, thou mayst break the ears, and rub them in thy hand: but not reap them with a sickle."
     status: { la: verified, en: verified }

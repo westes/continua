@@ -1,8 +1,7 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for sir 10 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: sir
 chapter: 10
 verses:
@@ -13,17 +12,17 @@ verses:
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "Secundum judicem populi, sic et ministri ejus : et qualis rector est civitatis, tales et inhabitantes in ea."
+      la: "Secundum judicem populi, sic et ministri ejus: et qualis rector est civitatis, tales et inhabitantes in ea."
       en: "As the judge of the people is himself, so also are his ministers: and what manner of man the ruler of a city is, such also are they that dwell therein."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "Rex insipiens perdet populum suum : et civitates inhabitabuntur per sensum potentium."
+      la: "Rex insipiens perdet populum suum: et civitates inhabitabuntur per sensum potentium."
       en: "An unwise king shall be the ruin of his people: and cities shall be inhabited through the prudence of the rulers."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "In manu Dei potestas terrae : et utilem rectorem suscitabit in tempus super illam."
+      la: "In manu Dei potestas terrae: et utilem rectorem suscitabit in tempus super illam."
       en: "The power of the earth is in the hand of God, and in his time he will raise up a profitable ruler over it."
     status: { la: verified, en: verified }
   - n: 5
@@ -53,7 +52,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "Nihil est iniquius quam amare pecuniam : hic enim et animam suam venalem habet, quoniam in vita sua projecit intima sua."
+      la: "Nihil est iniquius quam amare pecuniam: hic enim et animam suam venalem habet, quoniam in vita sua projecit intima sua."
       en: "There is not a more wicked thing than to love money: for such a one setteth even his own soul to sale: because while he liveth he hath cast away his bowels."
     status: { la: verified, en: verified }
   - n: 11
@@ -63,7 +62,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "Brevem languorem praecidit medicus : sic et rex hodie est, et cras morietur."
+      la: "Brevem languorem praecidit medicus: sic et rex hodie est, et cras morietur."
       en: "The physician cutteth off a short sickness: so also a king is today, and tomorrow he shall die."
     status: { la: verified, en: verified }
   - n: 13
@@ -73,7 +72,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "Initium superbiae hominis apostatare a Deo :"
+      la: "Initium superbiae hominis apostatare a Deo:"
       en: "The beginning of the pride of man, is to fall off from God:"
     status: { la: verified, en: verified }
   - n: 15
@@ -118,12 +117,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "Semen hominum honorabitur hoc, quod timet Deum : semen autem hoc exhonorabitur, quod praeterit mandata Domini."
+      la: "Semen hominum honorabitur hoc, quod timet Deum: semen autem hoc exhonorabitur, quod praeterit mandata Domini."
       en: "That seed of men shall be honoured, which feareth God: but that seed shall be dishonoured, which transgresseth the commandments of the Lord."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "In medio fratrum rector illorum in honore : et qui timent Dominum erunt in oculis illius."
+      la: "In medio fratrum rector illorum in honore: et qui timent Dominum erunt in oculis illius."
       en: "In the midst of brethren their chief is honourable: so shall they that fear the Lord, be in his eyes."
     status: { la: verified, en: verified }
   - n: 25
@@ -138,12 +137,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "Magnus, et judex, et potens est in honore : et non est major illo qui timet Deum."
+      la: "Magnus, et judex, et potens est in honore: et non est major illo qui timet Deum."
       en: "The great man, and the judge, and the mighty is in honour: and there is none greater than he that feareth God."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "Servo sensato liberi servient : et vir prudens et disciplinatus non murmurabit correptus, et inscius non honorabitur."
+      la: "Servo sensato liberi servient: et vir prudens et disciplinatus non murmurabit correptus, et inscius non honorabitur."
       en: "They that are free shall serve a servant that is wise: and a man that is prudent and well instructed will not murmur when he is reproved; and he that is ignorant, shall not be honoured."
     status: { la: verified, en: verified }
   - n: 29
@@ -168,7 +167,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "Pauper gloriatur per disciplinam et timorem suum : et est homo qui honorificatur propter substantiam suam."
+      la: "Pauper gloriatur per disciplinam et timorem suum: et est homo qui honorificatur propter substantiam suam."
       en: "The poor man is glorified by his discipline and fear: and there is a man that is honoured for his wealth."
     status: { la: verified, en: verified }
   - n: 34

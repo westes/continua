@@ -1,8 +1,7 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for esth 12 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: esth
 chapter: 12
 verses:
@@ -23,7 +22,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "Rex autem quod gestum erat, scripsit in commentariis : sed et Mardochaeus rei memoriam litteris tradidit."
+      la: "Rex autem quod gestum erat, scripsit in commentariis: sed et Mardochaeus rei memoriam litteris tradidit."
       en: "But the king made a record of what was done: and Mardochai also committed the memory of the thing to writing."
     status: { la: verified, en: verified }
   - n: 5

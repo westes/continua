@@ -1,62 +1,62 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 2par
 chapter: 19
 verses:
   - n: 1
     text:
-      la: "reversus est autem Iosaphat rex Iuda domum suam pacifice in Hierusalem"
+      la: "Reversus est autem Josaphat rex Juda in domum suam pacifice in Jerusalem."
       en: "And Josaphat king of Juda returned to his house in peace to Jerusalem."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "cui occurrit Hieu filius Anani videns et ait ad eum impio praebes auxilium et his qui oderunt Dominum amicitia iungeris et idcirco iram quidem Domini merebaris"
+      la: "Cui occurrit Jehu filius Henani videns, et ait ad eum: Impio praebes auxilium, et his qui oderunt Dominum amicitia jungeris, et idcirco iram quidem Domini merebaris:"
       en: "And Jehu the son of Hanani the seer met him, and said to him: Thou helpest the ungodly, and thou art joined in friendship with them that hate the Lord, and therefore thou didst deserve indeed the wrath of the Lord:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "sed bona opera inventa sunt in te eo quod abstuleris lucos de terra Iuda et praeparaveris cor tuum ut requireres Dominum"
+      la: "sed bona opera inventa sunt in te, eo quod abstuleris lucos de terra Juda, et praeparaveris cor tuum ut requireres Dominum Deum patrum tuorum."
       en: "But good works are found in thee, because thou hast taken away the groves out of the land of Juda, and hast prepared thy heart to seek the Lord the God of thy fathers."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "habitavit ergo Iosaphat in Hierusalem rursumque egressus est ad populum de Bersabee usque ad montem Ephraim et revocavit eos ad Dominum Deum patrum suorum"
+      la: "Habitavit ergo Josaphat in Jerusalem, rursumque egressus est ad populum de Bersabee usque ad montem Ephraim, et revocavit eos ad Dominum Deum patrum suorum."
       en: "And Josaphat dwelt at Jerusalem: and he went out again to the people from Bersabee to mount Ephraim, and brought them back to the Lord the God of their fathers."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "constituitque iudices terrae in cunctis civitatibus Iuda munitis per singula loca"
+      la: "Constituitque judices terrae in cunctis civitatibus Juda munitis per singula loca,"
       en: "And he set judges of the land in all the fenced cities of Juda, in every place."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et praecipiens iudicibus videte ait quid faciatis non enim hominis exercetis iudicium sed Domini et quodcumque iudicaveritis in vos redundabit"
+      la: "et praecipiens judicibus, Videte, ait, quid faciatis: non enim hominis exercetis judicium, sed Domini: et quodcumque judicaveritis, in vos redundabit."
       en: "And charging the judges, he said: Take heed what you do: for you exercise not the judgment of man, but of the Lord: and whatsoever you judge, it shall redound to you."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "sit timor Domini vobiscum et cum diligentia cuncta facite non est enim apud Dominum Deum nostrum iniquitas nec personarum acceptio nec cupido munerum"
-      en: "Let the fear of the Lord be with you, and do all things with diligence: for there is no iniquity with the Lord our God, a nor respect of persons, nor desire of gifts."
+      la: "Sit timor Domini vobiscum, et cum diligentia cuncta facite: non est enim apud Dominum Deum nostrum iniquitas, nec personarum acceptio, nec cupido munerum."
+      en: "Let the fear of the Lord be with you, and do all things with diligence: for there is no iniquity with the Lord our God, nor respect of persons, nor desire of gifts."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "in Hierusalem quoque constituit Iosaphat Levitas et sacerdotes et principes familiarum ex Israhel ut iudicium et causam Domini iudicarent habitatoribus eius"
+      la: "In Jerusalem quoque constituit Josaphat Levitas, et sacerdotes, et principes familiarum ex Israel, ut judicium et causam Domini judicarent habitatoribus ejus."
       en: "In Jerusalem also Josaphat appointed Levites, and priests and chiefs of the families of Israel, to judge the judgment and the cause of the Lord for the inhabitants thereof."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "praecepitque eis dicens sic agetis in timore Dei fideliter et corde perfecto"
+      la: "Praecepitque eis, dicens: Sic agetis in timore Domini fideliter et corde perfecto."
       en: "And he charged them, saying: Thus shall you do in the fear of the Lord faithfully, and with a perfect heart."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "omnem causam quae venerit ad vos fratrum vestrorum qui habitant in urbibus suis inter cognationem et cognationem ubicumque quaestio est de lege de mandato de caerimoniis de iustificationibus ostendite eis ut non peccent in Dominum et ne veniat ira super vos et super fratres vestros sic ergo agetis et non peccabitis"
+      la: "Omnem causam, quae venerit ad vos fratrum vestrorum, qui habitant in urbibus suis inter cognationem et cognationem, ubicumque quaestio est de lege, de mandato, de caeremoniis, de justificationibus: ostendite eis, ut non peccent in Dominum, et ne veniat ira super vos et super fratres vestros: sic ergo agentes non peccabitis."
       en: "Every cause that shall come to you of your brethren, that dwell in their cities, between kindred and kindred, wheresoever there is question concerning the law, the commandment, the ceremonies, the justifications: shew it them, that they may not sin against the Lord, and that wrath may not come upon you and your brethren: and so doing you shall not sin."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "Amarias autem sacerdos et pontifex vester in his quae ad Dominum pertinent praesidebit porro Zabadias filius Ismahel qui est dux in domo Iuda super ea opera erit quae ad regis officium pertinent habetisque magistros Levitas coram vobis confortamini et agite diligenter et erit Dominus cum bonis"
-      en: "And Amarias the priest your high priest shell be chief in the things which regard God: and Zabadias the son of Ismahel, who is ruler in the house of Juda, shall be over those matters which belong to the king's office : and you have before you the Levites for masters, take courage and do diligently, and the Lord will be with you in good things."
+      la: "Amarias autem sacerdos et pontifex vester in his, quae ad Deum pertinent, praesidebit: porro Zabadias filius Ismahel, qui est dux in domo Juda, super ea opera erit, quae ad regis officium pertinent: habetisque magistros Levitas coram vobis. Confortamini, et agite diligenter, et erit Dominus vobiscum in bonis."
+      en: "And Amarias the priest your high priest shall be chief in the things which regard God: and Zabadias the son of Ismahel, who is ruler in the house of Juda, shall be over those matters which belong to the king's office: and you have before you the Levites for masters, take courage and do diligently, and the Lord will be with you in good things."
     status: { la: verified, en: verified }

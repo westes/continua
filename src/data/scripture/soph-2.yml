@@ -1,82 +1,82 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: soph
 chapter: 2
 verses:
   - n: 1
     text:
-      la: "convenite congregamini gens non amabilis"
+      la: "Convenite, congregamini, gens non amabilis,"
       en: "Assemble yourselves together, be gathered together, O nation not worthy to be loved:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "priusquam pariat iussio quasi pulverem transeuntem diem antequam veniat super vos ira furoris Domini antequam veniat super vos dies furoris Domini"
+      la: "priusquam pariat jussio quasi pulverem transeuntem diem, antequam veniat super vos ira furoris Domini, antequam veniat super vos dies indignationis Domini."
       en: "Before the decree bring forth the day as dust passing away, before the fierce anger of the Lord come upon you, before the day of the Lord's indignation come upon you."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "quaerite Dominum omnes mansueti terrae qui iudicium eius estis operati quaerite iustum quaerite mansuetum si quo modo abscondamini in die furoris Domini"
+      la: "Quaerite Dominum, omnes mansueti terrae, qui judicium ejus estis operati; quaerite justum, quaerite mansuetum, si quomodo abscondamini in die furoris Domini."
       en: "Seek the Lord, all ye meek of the earth, you that have wrought his judgment: seek the just, seek the meek: if by any means you may be hid in the day of the Lord's indignation."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "quia Gaza destructa erit et Ascalon in desertum Azotum in meridie eicient et Accaron eradicabitur"
+      la: "Quia Gaza destructa erit, et Ascalon in desertum: Azotum in meridie ejicient, et Accaron eradicabitur."
       en: "For Gaza shall be destroyed, and Ascalon shall be a desert, they shall cast out Azotus at noonday, and Accaron shall be rooted up."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "vae qui habitatis funiculum maris gens perditorum verbum Domini super vos Chanaan terra Philisthinorum et disperdam te ita ut non sit inhabitator"
+      la: "Vae qui habitatis funiculum maris, gens perditorum! verbum Domini super vos, Chanaan, terra Philisthinorum; et disperdam te, ita ut non sit inhabitator."
       en: "Woe to you that inhabit the sea coast, O nation of reprobates: the word of the Lord upon you, O Chanaan, the land of the Philistines, and I will destroy thee, so that there shall not be an inhabitant."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et erit funiculus maris requies pastorum et caulae pecorum"
+      la: "Et erit funiculus maris requies pastorum, et caulae pecorum;"
       en: "And the sea coast shall be the resting place of shepherds, and folds for cattle:"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et erit funiculus eius qui remanserit de domo Iuda ibi pascentur in domibus Ascalonis ad vesperam requiescent quia visitabit eos Dominus Deus eorum et avertet captivitatem eorum"
+      la: "et erit funiculus ejus qui remanserit de domo Juda: ibi pascentur, in domibus Ascalonis ad vesperam requiescent, quia visitabit eos Dominus Deus eorum, et avertet captivitatem eorum."
       en: "And it shall be the portion of him that shall remain of the house of Juda, there they shall feed: in the houses of Ascalon they shall rest in the evening: because the Lord their God will visit them, and bring back their captivity."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "audivi obprobrium Moab et blasphemias filiorum Ammon quae exprobraverunt populo meo et magnificati sunt super terminos eorum"
+      la: "Audivi opprobrium Moab, et blasphemias filiorum Ammon, quae exprobraverunt populo meo, et magnificati sunt super terminos eorum."
       en: "I have heard the reproach of Moab, and the blasphemies of the children of Ammon, with which they reproached my people, and have magnified themselves upon their borders."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "propterea vivo ego dicit Dominus exercituum Deus Israhel quia Moab ut Sodoma erit et filii Ammon quasi Gomorra siccitas spinarum et acervi salis et desertum usque in aeternum reliquiae populi mei diripient illos residui gentis meae possidebunt eos"
+      la: "Propterea vivo ego, dicit Dominus exercituum, Deus Israel, quia Moab ut Sodoma erit, et filii Ammon quasi Gomorrha: siccitas spinarum, et acervi salis, et desertum usque in aeternum: reliquiae populi mei diripient eos, et residui gentis meae possidebunt illos."
       en: "Therefore as I live, saith the Lord of hosts the God of Israel, Moab shall be as Sodom, and the children of Ammon as Gomorrha, the dryness of thorns, and heaps of salt, and a desert even for ever: the remnant of my people shall make a spoil of them, and the residue of my nation shall possess them."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "hoc eis eveniet pro superbia sua quia blasphemaverunt et magnificati sunt super populum Domini exercituum"
+      la: "Hoc eis eveniet pro superbia sua, quia blasphemaverunt et magnificati sunt super populum Domini exercituum."
       en: "This shall befall them for their pride: because they have blasphemed, and have been magnified against the people of the Lord of hosts."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "horribilis Dominus super eos et adtenuabit omnes deos terrae et adorabunt eum vir de loco suo omnes insulae gentium"
+      la: "Horribilis Dominus super eos, et attenuabit omnes deos terrae: et adorabunt eum viri de loco suo, omnes insulae gentium."
       en: "The Lord shall be terrible upon them, and shall consume all the gods of the earth: and they shall adore him every man from his own place, all the islands of the Gentiles."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "sed et vos Aethiopes interfecti gladio meo eritis"
+      la: "Sed et vos, Aethiopes, interfecti gladio meo eritis."
       en: "You Ethiopians, also shall be slain with my sword."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et extendet manum suam super aquilonem et perdet Assur et ponet speciosam in solitudinem et in invium et quasi desertum"
+      la: "Et extendet manum suam super aquilonem, et perdet Assur, et ponet speciosam in solitudinem, et in invium, et quasi desertum."
       en: "And he will stretch out his hand upon the north, and will destroy Assyria: and he will make the beautiful city a wilderness, and as a place not passable, and as a desert."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et accubabunt in medio eius greges omnes bestiae gentium et onocrotalus et ericius in liminibus eius morabuntur vox cantantis in fenestra corvus in superliminari quoniam adtenuabo robur eius"
+      la: "Et accubabunt in medio ejus greges, omnes bestiae gentium; et onocrotalus et ericius in liminibus ejus morabuntur: vox cantantis in fenestra, corvus in superliminari, quoniam attenuabo robur ejus."
       en: "And flocks shall lie down in the midst thereof, all the beasts of the nations: and the bittern and the urchin shall lodge in the threshold thereof: the voice of the singing bird in the window, the raven on the upper post, for I will consume her strength."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "haec est civitas gloriosa habitans in confidentia quae dicebat in corde suo ego sum et extra me non est alia amplius quomodo facta est in desertum cubile bestiae omnis qui transit per eam sibilabit et movebit manum suam"
+      la: "Haec est civitas gloriosa habitans in confidentia, quae dicebat in corde suo: Ego sum, et extra me non est alia amplius: quomodo facta est in desertum cubile bestiae? omnis qui transit per eam sibilabit, et movebit manum suam."
       en: "This is the glorious city that dwelt in security: that said in her heart: I am, and there is none beside me: how is she become a desert, a place for beasts to lie down in? every one that passeth by her, shall hiss, and wag his hand."
     status: { la: verified, en: verified }

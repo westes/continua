@@ -1,72 +1,72 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: job
 chapter: 2
 verses:
   - n: 1
     text:
-      la: "factum est autem cum quadam die venissent filii Dei et starent coram Domino venisset quoque Satan inter eos et staret in conspectu eius"
+      la: "Factum est autem, cum quadam die venissent filii Dei, et starent coram Domino, venisset quoque Satan inter eos, et staret in conspectu ejus,"
       en: "And it came to pass, when on a certain day the sons of God came, and stood before the Lord, and Satan came among them, and stood in his sight,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "ut diceret Dominus ad Satan unde venis qui respondens ait circuivi terram et perambulavi eam"
-      en: "That the Lord said to Satan: Whence comest thou ? And he answered and said: I have gone round about the earth, and walked through it."
+      la: "ut diceret Dominus ad Satan: Unde venis? Qui respondens ait: Circuivi terram, et perambulavi eam."
+      en: "That the Lord said to Satan: Whence comest thou? And he answered and said: I have gone round about the earth, and walked through it."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et dixit Dominus ad Satan numquid considerasti servum meum Iob quod non sit ei similis in terra vir simplex et rectus timens Deum ac recedens a malo et adhuc retinens innocentiam tu autem commovisti me adversus eum ut adfligerem illum frustra"
-      en: "And the Lord said to Satan: Hast thou considered my servant Job, that there is none like him in the earth, a man simple, and upright, and fearing Cod, and avoiding evil, and still keeping his innocence ? But thou hast moved me against him, that I sho uld afflict him without cause."
+      la: "Et dixit Dominus ad Satan: Numquid considerasti servum meum Job, quod non sit ei similis in terra, vir simplex et rectus, ac timens Deum, et recedens a malo, et adhuc retinens innocentiam? Tu autem commovisti me adversus eum, ut affligerem eum frustra."
+      en: "And the Lord said to Satan: Hast thou considered my servant Job, that there is none like him in the earth, a man simple, and upright, and fearing God, and avoiding evil, and still keeping his innocence? But thou hast moved me against him, that I should afflict him without cause."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "cui respondens Satan ait pellem pro pelle et cuncta quae habet homo dabit pro anima sua"
+      la: "Cui respondens Satan, ait: Pellem pro pelle, et cuncta quae habet homo dabit pro anima sua;"
       en: "And Satan answered, and said: Skin for skin, and all that a man hath he will give for his life:"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "alioquin mitte manum tuam et tange os eius et carnem et tunc videbis quod in facie benedicat tibi"
-      en: "gut put forth thy hand, and touch his bone and his flesh, and then thou shalt gee that he will bless thee to thy face."
+      la: "alioquin mitte manum tuam, et tange os ejus et carnem; et tunc videbis quod in faciem benedicat tibi."
+      en: "But put forth thy hand, and touch his bone and his flesh, and then thou shalt see that he will bless thee to thy face."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "dixit ergo Dominus ad Satan ecce in manu tua est verumtamen animam illius serva"
-      en: "And the Lord said to Satan: Behold be is in thy hand, but yet save his life."
+      la: "Dixit ergo Dominus ad Satan: Ecce in manu tua est; verumtamen animam illius serva."
+      en: "And the Lord said to Satan: Behold he is in thy hand, but yet save his life."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "egressus igitur Satan a facie Domini percussit Iob ulcere pessimo a planta pedis usque ad verticem eius"
+      la: "Egressus igitur Satan a facie Domini, percussit Job ulcere pessimo, a planta pedis usque ad verticem ejus;"
       en: "So Satan went forth from the presence Of the Lord, and struck Job with a very grievous ulcer, from the sole of the foot even to the top of his head:"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "qui testa saniem deradebat sedens in sterquilinio"
+      la: "qui testa saniem radebat, sedens in sterquilinio."
       en: "And he took a potsherd and scraped the corrupt matter, sitting on a dunghill."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "dixit autem illi uxor sua adhuc tu permanes in simplicitate tua benedic Deo et morere"
+      la: "Dixit autem illi uxor sua: Adhuc tu permanes in simplicitate tua? Benedic Deo, et morere."
       en: "And his wife said to him: Dost thou still continue in thy simplicity? bless God and die."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "qui ait ad illam quasi una de stultis locuta es si bona suscepimus de manu Domini quare mala non suscipiamus in omnibus his non peccavit Iob labiis suis"
-      en: "And he said to her: Thou hast; spoken like one of the foolish women: if we have received good things at the hand of God, why should we not receive evil? In all these things Job did not sin with his lips."
+      la: "Qui ait ad illam: Quasi una de stultis mulieribus locuta es; si bona suscepimus de manu Dei, mala quare non suscipiamus? In omnibus his non peccavit Job labiis suis."
+      en: "And he said to her: Thou hast spoken like one of the foolish women: if we have received good things at the hand of God, why should we not receive evil? In all these things Job did not sin with his lips."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "igitur audientes tres amici Iob omne malum quod accidisset ei venerunt singuli de loco suo Eliphaz Themanites et Baldad Suites et Sophar Naamathites condixerant enim ut pariter venientes visitarent eum et consolarentur"
-      en: "Now when Job's three friends heard all the evil that had befallen him, they came every one from his own place, Alphas the Themanite, and Baldad the Suhite, and Sophar the Naamathite. For they had made an appointment to come together and visit him, a nd comfort him."
+      la: "Igitur audientes tres amici Job omne malum quod accidisset ei, venerunt singuli de loco suo, Eliphaz Themanites, et Baldad Suhites, et Sophar Naamathites. Condixerant enim ut pariter venientes visitarent eum, et consolarentur."
+      en: "Now when Job's three friends heard all the evil that had befallen him, they came every one from his own place, Alphas the Themanite, and Baldad the Suhite, and Sophar the Naamathite. For they had made an appointment to come together and visit him, and comfort him."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "cumque levassent procul oculos suos non cognoverunt eum et exclamantes ploraverunt scissisque vestibus sparserunt pulverem super caput suum in caelum"
+      la: "Cumque elevassent procul oculos suos, non cognoverunt eum, et exclamantes ploraverunt, scissisque vestibus, sparserunt pulverem super caput suum in caelum."
       en: "And when they had lifted up their eyes afar off, they knew him not, and crying out they wept, and rending their garments they sprinkled dust upon their heads towards heaven."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et sederunt cum eo in terram septem diebus et septem noctibus et nemo loquebatur ei verbum videbant enim dolorem esse vehementem"
+      la: "Et sederunt cum eo in terra septem diebus et septem noctibus; et nemo loquebatur ei verbum, videbant enim dolorem esse vehementem."
       en: "And they sat with him on the ground seven days and seven nights, and no man spoke to him a word: for they saw that his grief was very great."
     status: { la: verified, en: verified }

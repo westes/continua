@@ -1,67 +1,72 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: num
 chapter: 36
 verses:
   - n: 1
     text:
-      la: "accesserunt autem et principes familiarum Galaad filii Machir filii Manasse de stirpe filiorum Ioseph locutique sunt Mosi coram principibus Israhel atque dixerunt"
+      la: "Accesserunt autem et principes familiarum Galaad filii Machir filii Manasse, de stirpe filiorum Joseph: locutique sunt Moysi coram principibus Israel, atque dixerunt:"
       en: "And the princes of the families of Galaad, the son of Machir, the son of Manasses, of the stock Of the children of Joseph, came and spoke to Moses before the princes of Israel, and said:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "tibi domino nostro praecepit Dominus ut terram sorte divideres filiis Israhel et ut filiabus Salphaad fratris nostri dares possessionem debitam patri"
+      la: "Tibi domino nostro praecepit Dominus ut terram sorte divideres filiis Israel, et ut filiabus Salphaad fratris nostri dares possessionem debitam patri:"
       en: "The Lord hath commanded thee, my lord, that thou shouldst divide the land by lot to the children of Israel, and that thou shouldst give to the daughters of Salphaad our brother the possession due to their father:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "quas si alterius tribus homines uxores acceperint sequetur possessio sua et translata ad aliam tribum de nostra hereditate minuetur"
+      la: "quas si alterius tribus homines uxores acceperint, sequetur possessio sua, et translata ad aliam tribum, de nostra haereditate minuetur."
       en: "Now if men of another tribe take them to wives, their possession will follow them, and being transferred to another tribe, will be a diminishing of our inheritance."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "atque ita fiet ut cum iobeleus id est quinquagesimus annus remissionis advenerit confundatur sortium distributio et aliorum possessio ad alios transeat"
+      la: "Atque ita fiet, ut cum jubilaeus, id est, quinquagesimus annus remissionis advenerit, confundatur sortium distributio, et aliorum possessio ad alios transeat."
       en: "And so it shall come to pass, that when the jubilee, that is, the fiftieth year of remission, is come, the distribution made by the lots shall be confounded, and the possession of the one shall pass to the others."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "respondit Moses filiis Israhel et Domino praecipiente ait recte tribus filiorum Ioseph locuta est"
+      la: "Respondit Moyses filiis Israel et, Domino praecipiente, ait: Recte tribus filiorum Joseph locuta est."
       en: "Moses answered the children of Israel, and said by the command of the Lord: The tribe of the children of Joseph hath spoken rightly."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et haec lex super filiabus Salphaad a Domino promulgata est nubant quibus volunt tantum ut suae tribus hominibus"
+      la: "Et haec lex super filiabus Salphaad a Domino promulgata est: nubant quibus volunt, tantum ut suae tribus hominibus:"
       en: "And this is the law promulgated by the Lord touching the daughters of Salphaad: Let them marry to whom they will, only so that it be to men of their own tribe."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "ne commisceatur possessio filiorum Israhel de tribu in tribum omnes enim viri ducent uxores de tribu et cognatione sua"
+      la: "ne commisceatur possessio filiorum Israel de tribu in tribum. Omnes enim viri ducent uxores de tribu et cognatione sua:"
       en: "Lest the possession of the children of Israel be mingled from tribe to tribe. For all men shall marry wives of their own tribe and kindred:"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et cunctae feminae maritos de eadem tribu accipient ut hereditas permaneat in familiis"
+      la: "et cunctae feminae de eadem tribu maritos accipient: ut haereditas permaneat in familiis,"
       en: "And all women shall take husbands of the same tribe: that the inheritance may remain in the families,"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "nec sibi misceantur tribus sed ita maneant"
+      la: "nec sibi misceantur tribus, sed ita maneant"
       en: "And that the tribes be not mingled one with another, but remain so"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "ut a Domino separatae sunt feceruntque filiae Salphaad ut fuerat imperatum"
+      la: "ut a Domino separatae sunt. Feceruntque filiae Salphaad ut fuerat imperatum:"
       en: "As they were separated by the Lord. And the daughters of Salphaad did as was commanded:"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et nupserunt Maala et Thersa et Egla et Melcha et Noa filiis patrui sui"
-      en: "And Maala, and Thersa, and Hegla, and Melcha, and Noa were married to the sons of their uncle by their father"
+      la: "et nupserunt Maala, et Thersa, et Hegla, et Melcha, et Noa, filiis patrui sui"
+      en: "And Maala, and Thersa, and Hegla, and Melcha, and Noa were married to the sons of their uncle by their father,"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "de familia Manasse qui fuit filius Ioseph et possessio quae illis fuerat adtributa mansit in tribu et familia patris earum"
+      la: "de familia Manasse, qui fuit filius Joseph: et possessio, quae illis fuerat attributa, mansit in tribu et familia patris earum."
       en: "Of the family of Manasses, who was the son of Joseph: and the possession that had been allotted to them, remained in the tribe and family of their father."
+    status: { la: verified, en: verified }
+  - n: 13
+    text:
+      la: "Haec sunt mandata atque judicia, quae mandavit Dominus per manum Moysi ad filios Israel, in campestribus Moab supra Jordanem contra Jericho."
+      en: "These are the commandments and judgments, which the Lord commanded by the hand of Moses to the children of Israel, in the plains of Moab upon the Jordan over against Jericho."
     status: { la: verified, en: verified }

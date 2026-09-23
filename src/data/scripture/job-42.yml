@@ -1,82 +1,87 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: job
 chapter: 42
 verses:
   - n: 1
     text:
-      la: "respondens autem Iob Domino dixit"
-      en: "Then Job answered the Lord, and said :"
+      la: "Respondens autem Job Domino, dixit:"
+      en: "Then Job answered the Lord, and said:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "scio quia omnia potes et nulla te latet cogitatio"
+      la: "Scio quia omnia potes, et nulla te latet cogitatio."
       en: "I know that thou canst do all things, and no thought is hid from thee."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "quis est iste qui celat consilium absque scientia ideo insipienter locutus sum et quae ultra modum excederent scientiam meam"
+      la: "Quis est iste qui celat consilium absque scientia? ideo insipienter locutus sum, et quae ultra modum excederent scientiam meam."
       en: "Who is this that hideth counsel without knowledge? Therefore I have spoken unwisely, and things that above measure exceeded my knowledge."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "audi et ego loquar interrogabo et ostende mihi"
-      en: "Hear, and I will speak : I will ask thee, and do thou tell me."
+      la: "Audi, et ego loquar: interrogabo te, et responde mihi."
+      en: "Hear, and I will speak: I will ask thee, and do thou tell me."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "auditu auris audivi te nunc autem oculus meus videt te"
+      la: "Auditu auris audivi te: nunc autem oculus meus videt te."
       en: "With the hearing of the ear, I have heard thee, but now my eye seeth thee."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "idcirco ipse me reprehendo et ago paenitentiam in favilla et cinere"
+      la: "Idcirco ipse me reprehendo, et ago poenitentiam in favilla et cinere."
       en: "Therefore I reprehend myself, and do penance in dust and ashes."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "postquam autem locutus est Dominus verba haec ad Iob dixit ad Eliphaz Themaniten iratus est furor meus in te et in duos amicos tuos quoniam non estis locuti coram me rectum sicut servus meus Iob"
-      en: "And after the Lord had spoken these words to Job, he said to Eliphaz the Themanite : My wrath is kindled against thee, and against thy two friends, because you have not spoken the thing that is right before my, as my servant Job hath."
+      la: "Postquam autem locutus est Dominus verba haec ad Job, dixit ad Eliphaz Themanitem: Iratus est furor meus in te, et in duos amicos tuos, quoniam non estis locuti coram me rectum, sicut servus meus Job."
+      en: "And after the Lord had spoken these words to Job, he said to Eliphaz the Themanite: My wrath is kindled against thee, and against thy two friends, because you have not spoken the thing that is right before me, as my servant Job hath."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "sumite igitur vobis septem tauros et septem arietes et ite ad servum meum Iob et offerte holocaustum pro vobis Iob autem servus meus orabit pro vobis faciem eius suscipiam ut non vobis inputetur stultitia neque enim locuti estis ad me recta sicut servus meus Iob"
-      en: "Take unto you therefore seven oxen, and seven rams, and go to my servant Job, and offer for yourselves a holocaust : and my servant Job shall pray for you : his face I will accept, that folly be not imputed to you : for you have not spoken right things before me, as my servant Job hath."
+      la: "Sumite ergo vobis septem tauros et septem arietes, et ite ad servum meum Job, et offerte holocaustum pro vobis: Job autem servus meum orabit pro vobis. Faciem ejus suscipiam, ut non vobis imputetur stultitia: neque enim locuti estis ad me recta, sicut servus meus Job."
+      en: "Take unto you therefore seven oxen, and seven rams, and go to my servant Job, and offer for yourselves a holocaust: and my servant Job shall pray for you: his face I will accept, that folly be not imputed to you: for you have not spoken right things before me, as my servant Job hath."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "abierunt ergo Eliphaz Themanites et Baldad Suites et Sophar Naamathites et fecerunt sicut locutus fuerat ad eos Dominus et suscepit Dominus faciem Iob"
+      la: "Abierunt ergo Eliphaz Themanites, et Baldad Suhites, et Sophar Naamathites, et fecerunt sicut locutus fuerat Dominus ad eos, et suscepit Dominus faciem Job."
       en: "So Eliphaz the Themanite, and Baldad the Suhite, and Sophar the Naamathite went, and did as the Lord had spoken to them, and the Lord accepted the face of Job."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "Dominus quoque conversus est ad paenitentiam Iob cum oraret ille pro amicis suis et addidit Dominus omnia quaecumque fuerant Iob duplicia"
+      la: "Dominus quoque conversus est ad poenitentiam Job, cum oraret ille pro amicis suis: et addidit Dominus omnia quaecumque fuerant Job, duplicia."
       en: "The Lord also was turned at the penance of Job, when he prayed for his friends. And the Lord gave Job twice as much as he had before."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "venerunt autem ad eum omnes fratres sui et universae sorores suae et cuncti qui noverant eum prius et comederunt cum eo panem in domo eius et moverunt super eum caput et consolati sunt eum super omni malo quod intulerat Dominus super eum et dederunt ei unusquisque ovem unam et inaurem auream unam"
-      en: "And all his brethren came to him, and all his sisters, and all that knew him before, and they ate bread with him in his house : and bemoaned him, and comforted him upon all the evil that God had brought upon him. And every man gave him one ewe, and one earring of fold."
+      la: "Venerunt autem ad eum omnes fratres sui, et universae sorores suae, et cuncti qui noverant eum prius, et comederunt cum eo panem in domo ejus: et moverunt super eum caput, et consolati sunt eum super omni malo quod intulerat Dominus super eum, et dederunt ei unusquisque ovem unam, et inaurem auream unam."
+      en: "And all his brethren came to him, and all his sisters, and all that knew him before, and they ate bread with him in his house: and bemoaned him, and comforted him upon all the evil that God had brought upon him. And every man gave him one ewe, and one earring of gold."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "Dominus autem benedixit novissimis Iob magis quam principio eius et facta sunt ei quattuordecim milia ovium et sex milia camelorum et mille iuga boum et mille asinae"
+      la: "Dominus autem benedixit novissimis Job magis quam principio ejus: et facta sunt ei quatuordecim millia ovium, et sex millia camelorum, et mille juga boum, et mille asinae."
       en: "And the Lord blessed the latter end of Job more than his beginning. And he had fourteen thousand sheep, and six thousand camels, and a thousand yoke of oxen, and a thousand she asses."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et fuerunt ei septem filii et filiae tres"
+      la: "Et fuerunt ei septem filii, et tres filiae."
       en: "And he had seven sons, and three daughters."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et vocavit nomen unius Diem et nomen secundae Cassia et nomen tertiae Cornu stibii"
+      la: "Et vocavit nomen unius Diem, et nomen secundae Cassiam, et nomen tertiae Cornustibii."
       en: "And he called the names of one Dies, and the name of the second Cassia, and the name of the third Cornustibil."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "non sunt autem inventae mulieres speciosae sicut filiae Iob in universa terra deditque eis pater suus hereditatem inter fratres earum"
-      en: "And there were not found in all the earth women so beautiful as the daughters of Job : and their father gave them inheritance among their brethren."
+      la: "Non sunt autem inventae mulieres speciosae sicut filiae Job in universa terra: deditque eis pater suus haereditatem inter fratres earum."
+      en: "And there were not found in all the earth women so beautiful as the daughters of Job: and their father gave them inheritance among their brethren."
+    status: { la: verified, en: verified }
+  - n: 16
+    text:
+      la: "Vixit autem Job post haec centum quadraginta annis, et vidit filios suos, et filios filiorum suorum usque ad quartam generationem: et mortuus est senex et plenus dierum."
+      en: "And Job lived after these things, a hundred and forty years, and he saw his children, and his children's children, unto the fourth generation, and he died an old man, and full of days."
     status: { la: verified, en: verified }

@@ -1,177 +1,177 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 3reg
 chapter: 4
 verses:
   - n: 1
     text:
-      la: "erat autem rex Salomon regnans super omnem Israhel"
+      la: "Erat autem rex Salomon regnans super omnem Israel:"
       en: "And king Solomon reigned over all Israel:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et hii principes quos habebat Azarias filius Sadoc sacerdos"
+      la: "et hi principes quos habebat: Azarias filius Sadoc sacerdotis:"
       en: "And these were the princes which he had: Azarias the son of Sadoc the priest:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "Helioreph et Ahia filii Sesa scribae Iosaphat filius Ahilud a commentariis"
+      la: "Elihoreph et Ahia filii Sisa scribae: Josaphat filius Ahilud a commentariis:"
       en: "Elihoreph, and Ahia, the sons of Sisa, scribes: Josaphat the son of Ahilud, recorder:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "Banaias filius Ioiadae super exercitum Sadoc autem et Abiathar sacerdotes"
+      la: "Banaias filius Jojadae super exercitum: Sadoc autem et Abiathar sacerdotes."
       en: "Banaias the son of Joiada, over the army: and Sadoc and Abiathar priests."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "Azarias filius Nathan super eos qui adsistebant regi Zabud filius Nathan sacerdos amicus regis"
+      la: "Azarias filius Nathan super eos qui assistebant regi: Zabud filius Nathan sacerdos, amicus regis:"
       en: "Azarias the son of Nathan, over them that were about the king: Zabud, the son of Nathan the priest, the king's friend:"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et Ahisar praepositus domus et Adoniram filius Abda super tributa"
+      la: "et Ahisar praepositus domus: et Adoniram filius Abda super tributa."
       en: "And Ahisar governor of the house: and Adoniram the son of Abda over the tribute."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "habebat autem Salomon duodecim praefectos super omnem Israhel qui praebebant annonam regi et domui eius per singulos enim menses in anno singuli necessaria ministrabant"
+      la: "Habebat autem Salomon duodecim praefectos super omnem Israel, qui praebebant annonam regi et domui ejus: per singulos enim menses in anno, singuli necessaria ministrabant."
       en: "And Solomon had twelve governors over all Israel, who provided victuals for the king and for his household: for every one provided necessaries, each man his month in the year."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et haec nomina eorum Benhur in monte Ephraim"
+      la: "Et haec nomina eorum: Benhur, in monte Ephraim."
       en: "And these are their names: Benhur, in mount Ephraim,"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "Bendecar in Macces et in Salebbim et in Bethsemes et Helon Bethanan"
+      la: "Bendecar, in Macces, et in Salebim, et in Bethsames, et in Elon, et in Bathanan."
       en: "Bendecar, in Macces, and in Salebim, and in Bethsames, and in Elon, and in Bethanan."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "Benesed in Araboth ipsius erat Soccho et omnis terra Epher"
+      la: "Benhesed in Aruboth; ipsius erat Socho, et omnis terra Epher."
       en: "Benhesed in Aruboth: his was Socho, and all the land of Epher."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "Benabinadab cuius omnis Nepthad Dor Tapheth filiam Salomonis habebat uxorem"
+      la: "Benabinadab, cujus omnis Nephath Dor, Tapheth filiam Salomonis habebat uxorem."
       en: "Benabinadab, to whom belonged all Nephath-Dor, he had Tapheth the daughter of Solomon to wife."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "Bana filius Ahilud regebat Thanac et Mageddo et universam Bethsan quae est iuxta Sarthana subter Hiezrahel a Bethsan usque Abelmeula e regione Iecmaan"
+      la: "Bana filius Ahilud regebat Thanac et Mageddo, et universam Bethsan, quae est juxta Sarthana subter Jezrahel, a Bethsan usque Abelmehula e regione Jecmaan."
       en: "Bana the son of Ahilud, who governed Thanac and Mageddo, and all Bethsan, which is by Sarthana beneath Jezrael, from Bethsan unto Abelmehula over against Jecmaan."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "Bengaber in Ramoth Galaad habebat Avothiair filii Manasse in Galaad ipse praeerat in omni regione Argob quae est in Basan sexaginta civitatibus magnis atque muratis quae habebant seras aereas"
+      la: "Bengaber in Ramoth Galaad: habebat Avothiair filii Manasse in Galaad, ipse praeerat in omni regione Argob, quae est in Basan, sexaginta civitatibus magnis atque muratis, quae habebant seras aereas."
       en: "Bengaber in Ramoth Galaad: he had the towns of Jair the son of Manasses in Galaad, he was chief in all the country of Argob, which is in Basan, threescore great cities with walls, and brazen bolts."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "Ahinadab filius Addo praeerat in Manaim"
+      la: "Abinadab filius Addo praeerat in Manaim."
       en: "Abinadab the son of Addo was chief in Manaim."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "Ahimaas in Nepthali sed et ipse habebat Basmath filiam Salomonis in coniugio"
+      la: "Achimaas in Nephthali: sed et ipse habebat Basemath filiam Salomonis in conjugio."
       en: "Achimaas in Nephtali: he also had Basemath the daughter of Solomon to wife."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "Baana filius Usi in Aser et in Balod"
+      la: "Baana filius Husi, in Aser, et in Baloth."
       en: "Baana the son of Husi, in Aser and in Baloth."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "Iosaphat filius Pharue in Isachar"
+      la: "Josaphat filius Pharue, in Issachar."
       en: "Josaphat the son of Pharue, in Issachar."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "Semei filius Hela in Beniamin"
+      la: "Semei filius Ela, in Benjamin."
       en: "Semei the son of Ela in Benjamin."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "Gaber filius Uri in terra Galaad in terra Seon regis Amorrei et Og regis Basan super omnia quae erant in illa terra"
+      la: "Gaber filius Uri, in terra Galaad, in terra Sehon regis Amorrhaei et Og regis Basan, super omnia quae erant in illa terra."
       en: "Gaber the son of Uri, in the land of Galaad, in the land of Sehon the king of the Amorrhites and of Og the king of Basan, over all that were in that land."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "Iuda et Israhel innumerabiles sicut harena maris in multitudine comedentes et bibentes atque laetantes"
+      la: "Juda et Israel innumerabiles, sicut arena maris in multitudine: comedentes, et bibentes, atque laetantes."
       en: "Juda and Israel were innumerable, as the sand of the sea in multitude: eating and drinking, and rejoicing."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "Salomon autem erat in dicione sua habens omnia regna sicut a flumine terrae Philisthim usque ad terminum Aegypti offerentium sibi munera et servientium ei cunctis diebus vitae eius"
-      en: "And Solomon had under him all the kingdoms from the river to the land of the Philistines,. even to the border of Egypt: and they brought him presents, and served him, all the days of his life."
+      la: "Salomon autem erat in ditione sua, habens omnia regna a flumine terrae Philisthiim usque ad terminum Aegypti: offerentium sibi munera, et servientium ei cunctis diebus vitae ejus."
+      en: "And Solomon had under him all the kingdoms from the river to the land of the Philistines, even to the border of Egypt: and they brought him presents, and served him, all the days of his life."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "erat autem cibus Salomonis per dies singulos triginta chori similae et sexaginta chori farinae"
+      la: "Erat autem cibus Salomonis per dies singulos triginta cori similae, et sexaginta cori farinae,"
       en: "And the provision of Solomon for each day was thirty measures of fine flour, and threescore measures of meal,"
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "decem boves pingues et viginti boves pascuales et centum arietes excepta venatione cervorum caprearum atque bubalorum et avium altilium"
+      la: "decem boves pingues, et viginti boves pascuales, et centum arietes, excepta venatione cervorum, caprearum, atque bubalorum, et avium altilium."
       en: "Ten fat oxen and twenty out of the pastures, and a hundred rams, besides venison of harts, roes, and buffles, and fatted fowls."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "ipse enim obtinebat omnem regionem quae erat trans flumen quasi a Thapsa usque Gazam et cunctos reges illarum regionum et habebat pacem ex omni parte in circuitu"
+      la: "Ipse enim obtinebat omnem regionem quae erat trans flumen, a Taphsa usque ad Gazan, et cunctos reges illarum regionum: et habebat pacem ex omni parte in circuitu."
       en: "For he had all the country which was beyond the river, from Thaphsa to Gazan, and all the kings of those countries: and he had peace on every side round about."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "habitabatque Iudas et Israhel absque timore ullo unusquisque sub vite sua et sub ficu sua a Dan usque Bersabee cunctis diebus Salomonis"
+      la: "Habitabatque Juda et Israel absque timore ullo, unusquisque sub vite sua et sub ficu sua, a Dan usque Bersabee cunctis diebus Salomonis."
       en: "And Juda and Israel dwelt without any fear, every one under his vine, and under his fig tree, from Dan to Bersabee, all the days of Solomon."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "et habebat Salomon quadraginta milia praesepia equorum currulium et duodecim milia equestrium"
-      en: "And Solomon had forty thousand stalls of chariot horses, and twelve thou- sand for the saddle."
+      la: "Et habebat Salomon quadraginta millia praesepia equorum currilium, et duodecim millia equestrium."
+      en: "And Solomon had forty thousand stalls of chariot horses, and twelve thousand for the saddle."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "nutriebantque eos supradicti regis praefecti sed et necessaria mensae regis Salomonis cum ingenti cura praebebant in tempore suo"
+      la: "Nutriebantque eos supradicti regis praefecti: sed et necessaria mensae regis Salomonis cum ingenti cura praebebant in tempore suo."
       en: "And the foresaid governors of the king fed them: and they furnished the necessaries also for king Solomon's table, with great care in their time."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "hordeum quoque et paleas equorum et iumentorum deferebant in locum ubi erat rex iuxta constitutum sibi"
+      la: "Hordeum quoque, et paleas equorum, et jumentorum, deferebant in locum ubi erat rex, juxta constitutum sibi."
       en: "They brought barley also and straw for the horses, and beasts, to the place where the king was, according as it was appointed them."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "dedit quoque Deus sapientiam Salomoni et prudentiam multam nimis et latitudinem cordis quasi harenam quae est in litore maris"
+      la: "Dedit quoque Deus sapientiam Salomoni et prudentiam multam nimis, et latitudinem cordis quasi arenam quae est in littore maris."
       en: "And God gave to Solomon wisdom and understanding exceeding much, and largeness of heart as the sand that is on the sea shore."
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "et praecedebat sapientia Salomonis sapientiam omnium Orientalium et Aegyptiorum"
+      la: "Et praecedebat sapientia Salomonis sapientiam omnium Orientalium et Aegyptiorum,"
       en: "And the wisdom of Solomon surpassed the wisdom of all the Orientals, and of the Egyptians,"
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "et erat sapientior cunctis hominibus sapientior Aethan Ezraita et Heman et Chalcal et Dorda filiis Maol et erat nominatus in universis gentibus per circuitum"
+      la: "et erat sapientior cunctis hominibus: sapientior Ethan Ezrahita, et Heman, et Chalcol, et Dorda filiis Mahol: et erat nominatus in universis gentibus per circuitum."
       en: "And he was wiser than all men: wiser than Ethan the Ezrahite, and Heman, and Chalcol, and Dorda the sons of Mahol, and he was renowned in all nations round about."
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "locutus est quoque Salomon tria milia parabolas et fuerunt carmina eius quinque et mille"
+      la: "Locutus est quoque Salomon tria millia parabola: et fuerunt carmina ejus quinque et mille."
       en: "Solomon also spoke three thousand parables: and his poems were a thousand and five."
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "et disputavit super lignis a cedro quae est in Libano usque ad hysopum quae egreditur de pariete et disseruit de iumentis et volucribus et reptilibus et piscibus"
+      la: "Et disputavit super lignis a cedro quae est in Libano, usque ad hyssopum quae egreditur de pariete: et disseruit de jumentis, et volucribus, et reptilibus, et piscibus."
       en: "And he treated about trees from the cedar that is in Libanus, unto the hyssop that cometh out of the wall: and he discoursed of beasts, and of fowls, and of creeping things, and of fishes."
     status: { la: verified, en: verified }
   - n: 34
     text:
-      la: "et veniebant de cunctis populis ad audiendam sapientiam Salomonis et ab universis regibus terrae qui audiebant sapientiam eius"
+      la: "Et veniebant de cunctis populis ad audiendam sapientiam Salomonis, et ab universis regibus terrae, qui audiebant sapientiam ejus."
       en: "And they came from all nations to hear the wisdom of Solomon, and from all the kings of the earth, who heard of his wisdom."
     status: { la: verified, en: verified }

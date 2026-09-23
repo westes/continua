@@ -1,142 +1,142 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: sap
 chapter: 12
 verses:
   - n: 1
     text:
-      la: "bonus enim spiritus tuus est in omnibus"
+      la: "O quam bonus et suavis est, Domine, spiritus tuus in omnibus!"
       en: "O how good and sweet is thy spirit, O Lord, in all things!"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "propter quod hos qui exerrant partibus corripis et de quibus peccant admonens adloqueris ut relicta malitia credant in te Domine"
+      la: "Ideoque eos qui exerrant partibus corripis, et de quibus peccant admones et alloqueris, ut relicta malitia credant in te, Domine."
       en: "And therefore thou chastisest them that err, by little and little: and admonishest them, and speakest to them, concerning the things wherein they offend: that leaving their wickedness, they may believe in thee, O Lord."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et illos enim antiquos inhabitatores sanctae tuae terrae odiens"
+      la: "Illos enim antiquos inhabitatores terrae sanctae tuae, quos exhorruisti,"
       en: "For those ancient inhabitants of thy holy land, whom thou didst abhor,"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "quoniam odibilia tibi opera faciebant per medicamina et sacrificia iniusta"
+      la: "quoniam odibilia opera tibi faciebant per medicamina et sacrificia injusta,"
       en: "Because they did works hateful to thee by their sorceries, and wicked sacrifices,"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et filiorum necatores sine misericordia et comestores viscerum hominum devorationem et sanguinis a medio sacramento tuo"
+      la: "et filiorum suorum necatores sine misericordia, et comestores viscerum hominum, et devoratores sanguinis a medio sacramento tuo,"
       en: "And those merciless murderers of their own children, and eaters of men's bowels, and devourers of blood from the midst of thy consecration,"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et auctores parentes animarum inauxiliatarum voluisti perdere per manus parentum nostrorum"
+      la: "et auctores parentes animarum inauxiliatarum, perdere voluisti per manus parentum nostrorum;"
       en: "And those parents sacrificing with their own hands helpless souls, it was thy will to destroy by the hands of our parents,"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "ut dignam perciperent peregrinationem puerorum Dei quae tibi omnium carior est terra"
+      la: "ut dignam perciperent peregrinationem puerorum Dei, quae tibi omnium carior est terra."
       en: "That the land which of all is most dear to thee might receive a worthy colony of the children of God."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "sed et his tamquam hominibus pepercisti et misisti antecessores exercitus tui vespas ut illos paulatim exterminarent"
+      la: "Sed et his tamquam hominibus pepercisti, et misisti antecessores exercitus tui vespas, ut illos paulatim exterminarent."
       en: "Yet even those thou sparedst as men, and didst send wasps, forerunners of thy host, to destroy them by little and little."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "non quia inpotens eras in bello subicere impios iustis aut bestiis saevis aut verbo duro simul exterminare"
+      la: "Non quia impotens eras in bello subjicere impios justis, aut bestiis saevis, aut verbo duro simul exterminare;"
       en: "Not that thou wast unable to bring the wicked under the just by war, or by cruel beasts, or with one rough word to destroy them at once:"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "sed partibus iudicans dabas locum paenitentiae non ignorans quoniam nequa est natio illorum et naturalis malitia ipsorum et quoniam non poterat mutari cogitatio illorum in perpetuum"
+      la: "sed partibus judicans, dabas locum poenitentiae, non ignorans quoniam nequam est natio eorum, et naturalis malitia ipsorum, et quoniam non poterat mutari cogitatio illorum in perpetuum."
       en: "But executing thy judgments by degrees thou gavest them place of repentance, not being ignorant that they were a wicked generation, and their malice natural, and that their thought could never be changed."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "semen enim erat maledictum ab initio nec timens aliquem veniam dabas peccatis illorum"
+      la: "Semen enim erat maledictum ab initio; nec timens aliquem, veniam dabas peccatis illorum."
       en: "For it was a cursed seed from the beginning: neither didst thou for fear of any one give pardon to their sins."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "quis enim dicet tibi quid fecisti aut quis stabit contra iudicium tuum aut quis in conspectum tuum veniet vindex iniquorum hominum aut quis tibi inputabit si nationes perierint quas tu fecisti"
+      la: "Quis enim dicet tibi: Quid fecisti? aut quis stabit contra judicium tuum? aut quis in conspectu tuo veniet vindex iniquorum hominum? aut quis tibi imputabit, si perierint nationes quas tu fecisti?"
       en: "For who shall say to thee: What hast thou done? or who shall withstand thy judgment? or who shall come before thee to be a revenger of wicked men? or who shall accuse thee, if the nations perish, which thou hast made?"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "nec enim est alius Deus quam tu cuius cura est de omnibus ut ostendas quoniam non iniuste iudicasti"
+      la: "Non enim est alius Deus quam tu, cui cura est de omnibus, ut ostendas quoniam non injuste judicas judicium."
       en: "For there is no other God but thou, who hast care of all, that thou shouldst shew that thou dost not give judgment unjustly."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "neque rex neque tyrannus in conspectu tuo inquirent de his quos perdidisti"
+      la: "Neque rex neque tyrannus in conspectu tuo inquirent de his quos perdidisti."
       en: "Neither shall king, nor tyrant in thy sight inquire about them whom thou hast destroyed."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "cum sis ergo iustus iuste omnia disponis ipsum quoque qui non debet puniri condemnas exterum aestimas a tua virtute"
+      la: "Cum ergo sis justus, juste omnia disponis; ipsum quoque qui non debet puniri condemnare, exterum aestimas a tua virtute."
       en: "For so much then as thou art just, thou orderest all things justly: thinking it not agreeable to thy power, to condemn him who deserveth not to be punished."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "virtus enim tua iustitiae initium est et ob hoc quod omnium Dominus es omnibus te parcere facis"
+      la: "Virtus enim tua justitiae initium est, et ob hoc quod Dominus es, omnibus te parcere facis."
       en: "For thy power is the beginning of justice: and because thou art Lord of all, thou makest thyself gracious to all."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "virtutem enim ostendis tu qui non crederis esse in virtute consummatus et hos qui sciunt audaciam traducis"
+      la: "Virtutem enim ostendis tu, qui non crederis esse in virtute consummatus, et horum qui te nesciunt audaciam traducis."
       en: "For thou shewest thy power, when men will not believe thee to be absolute in power, and thou convincest the boldness of them that know thee not."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "tu autem dominator virtutis cum tranquillitate iudicas et cum magna reverentia disponis nos subest enim tibi cum voles posse"
+      la: "Tu autem dominator virtutis, cum tranquilitate judicas, et cum magna reverentia disponis nos: subest enim tibi, cum volueris posse."
       en: "But thou being master of power, judgest with tranquillity; and with great favour disposest of us: for thy power is at hand when thou wilt."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "docuisti autem populum tuum per talia opera quoniam oportet iustum esse et humanum et bonae spei fecisti filios tuos quoniam das locum in peccatis paenitentiae"
+      la: "Docuisti autem populum tuum, per talia opera, quoniam oportet justum esse et humanum; et bonae spei fecisti filios tuos, quoniam judicans das locum in peccatis poenitentiae."
       en: "But thou hast taught thy people by such works, that they must be just and humane, and hast made thy children to be of a good hope: because in judging thou givest place for repentance for sins."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "si enim inimicos servorum tuorum et debitos morti cum tanta cruciasti adtentione et liberasti dans tempus et locum per quae possint mutari a malitia"
+      la: "Si enim inimicos servorum tuorum, et debitos morti, cum tanta cruciasti attentione, dans tempus et locum per quae possent mutari a malitia:"
       en: "For if thou didst punish the enemies of thy servants, and that deserved to die, with so great deliberation, giving them time and place whereby they might be changed from their wickedness:"
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "cum quanta diligentia iudicasti filios tuos quorum parentibus iuramenta et conventiones dedisti bonarum promissionum"
+      la: "cum quanta diligentia judicasti filios tuos, quorum parentibus juramenta et conventiones dedisti bonarum promissionum!"
       en: "With what circumspection hast thou judged thy own children, to whose parents thou hast sworn and made covenants of good promises?"
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "cum ergo nobis disciplinam das inimicos nostros multipliciter flagellas ut bonitatem tuam cogitemus iudicantes et cum de nobis iudicatur speremus misericordiam"
+      la: "Cum ergo das nobis disciplinam, inimicos nostros multipliciter flagellas, ut bonitatem tuam cogitemus judicantes, et cum de nobis judicatur, speremus misericordiam tuam."
       en: "Therefore whereas thou chastisest us, thou scourgest our enemies very many ways, to the end that when we judge we may think on thy goodness: and when we are judged, we may hope for thy mercy."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "unde et illis qui in vita sua insensate et iniuste vixerunt per haec quae coluerunt dedisti summa tormenta"
+      la: "Unde et illis qui in vita sua insensate et injuste vixerunt, per haec quae coluerunt dedisti summa tormenta."
       en: "Wherefore thou hast also greatly tormented them who in their life have lived foolishly and unjustly, by the same things which they worshipped."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "etenim in erroris via diutius erraverunt deos aestimantes haec quae in animalibus sunt supervacua infantum insensatorum more viventes"
+      la: "Etenim in erroris via diutius erraverunt, deos aestimantes haec quae in animalibus sunt supervacua, infantium insensatorum more viventes."
       en: "For they went astray for a long time in the ways of error, holding those things for gods which are the most worthless among beasts, living after the manner of children without understanding."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "propter hoc tamquam pueris insensatis iudicium in derisum dedisti"
+      la: "Propter hoc tamquam pueris insensatis judicium in derisum dedisti."
       en: "Therefore thou hast sent a judgment upon them as senseless children to mock them."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "qui autem ludibriis increpationis non correpti sunt dignum Dei iudicium experti sunt"
+      la: "Qui autem ludibriis et increpationibus non sunt correcti, dignum Dei judicium experti sunt."
       en: "But they that were not amended by mockeries and reprehensions, experienced the worthy judgment of God."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "in his enim quae patiebantur moleste ferebant in quibus patientes indignabantur per haec quos putabant deos in ipsis cum exterminarentur videntes illum quem olim negabant se nosse Deum verum agnoverunt propter quod et finis condemnationis illis veniet"
+      la: "In quibus enim patientes indignabantur per haec quos putabant deos, in ipsis cum exterminarentur videntes, illum quem olim negabant se nosse, verum Deum agnoverunt; propter quod et finis condemnationis eorum venit super illos."
       en: "For seeing with indignation that they suffered by those very things which they took for gods, when they were destroyed by the same, they acknowledged him the true God, whom in time past they denied that they knew: for which cause the end also of their condemnation came upon them."
     status: { la: verified, en: verified }

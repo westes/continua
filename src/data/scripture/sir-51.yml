@@ -1,8 +1,7 @@
-# Douay-Rheims + Latin Vulgate, from drbo.org (Douay-Rheims Bible
-# Online) -- the "DR + LV" combined page keeps every verse's Latin
-# and English paired in the same block, avoiding the verse-
-# misalignment this project's first-pass "Unbound Bible" source had
-# for sir 51 specifically; see TODO.md's bulk scripture import entry.
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: sir
 chapter: 51
 verses:
@@ -18,12 +17,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et liberasti corpus meum a perditione : a laqueo linguae iniquae, et a labiis operantium mendacium : et in conspectu astantium factus es mihi adjutor."
+      la: "et liberasti corpus meum a perditione: a laqueo linguae iniquae, et a labiis operantium mendacium: et in conspectu astantium factus es mihi adjutor."
       en: "And hast preserved my body from destruction, from the snare of an unjust tongue, and from the lips of them that forge lies, and in the sight of them that stood by, thou hast been my helper."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "Et liberasti me, secundum multitudinem misericordiae nominis tui, a rugientibus praeparatis ad escam :"
+      la: "Et liberasti me, secundum multitudinem misericordiae nominis tui, a rugientibus praeparatis ad escam:"
       en: "And thou hast delivered me, according to the multitude of the mercy of thy name, from them that did roar, prepared to devour."
     status: { la: verified, en: verified }
   - n: 5
@@ -53,12 +52,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "Circumdederunt me undique, et non erat qui adjuvaret : respiciens eram ad adjutorium hominum, et non erat."
+      la: "Circumdederunt me undique, et non erat qui adjuvaret: respiciens eram ad adjutorium hominum, et non erat."
       en: "They compassed me on every side, and there was no one that would help me. I looked for the succour of men, and there was none."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "Memoratus sum misericordiae tuae Domine, et operationis tuae, quae a saeculo sunt :"
+      la: "Memoratus sum misericordiae tuae Domine, et operationis tuae, quae a saeculo sunt:"
       en: "I remembered thy mercy, O Lord, and thy works, which are from the beginning of the world."
     status: { la: verified, en: verified }
   - n: 12
@@ -78,7 +77,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "Laudabo nomen tuum assidue, et collaudabo illud in confessione : et exaudita est oratio mea,"
+      la: "Laudabo nomen tuum assidue, et collaudabo illud in confessione: et exaudita est oratio mea,"
       en: "I will praise thy name continually, and will praise it with thanksgiving, and my prayer was heard."
     status: { la: verified, en: verified }
   - n: 16
@@ -98,12 +97,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "Ante templum postulabam pro illis, et usque in novissimis inquiram eam : et effloruit tamquam praecox uva."
+      la: "Ante templum postulabam pro illis, et usque in novissimis inquiram eam: et effloruit tamquam praecox uva."
       en: "I prayed for her before the temple, and unto the very end I will seek after her, and she flourished as a grape soon ripe."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "Laetatum est cor meum in ea : ambulavit pes meus iter rectum : a juventute mea investigabam eam."
+      la: "Laetatum est cor meum in ea: ambulavit pes meus iter rectum: a juventute mea investigabam eam."
       en: "My heart delighted in her, my foot walked in the right way, from my youth up I sought after her."
     status: { la: verified, en: verified }
   - n: 21
@@ -118,7 +117,7 @@ verses:
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "Danti mihi sapientiam dabo gloriam :"
+      la: "Danti mihi sapientiam dabo gloriam:"
       en: "To him that giveth me wisdom, will I give glory."
     status: { la: verified, en: verified }
   - n: 24
@@ -143,12 +142,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "Possedi cum ipsa cor ab initio : propter hoc, non derelinquar."
+      la: "Possedi cum ipsa cor ab initio: propter hoc, non derelinquar."
       en: "I possessed my heart with her from the beginning: therefore I shall not be forsaken."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "Venter meus conturbatus est quaerendo illam : propterea bonam possidebo possessionem."
+      la: "Venter meus conturbatus est quaerendo illam: propterea bonam possidebo possessionem."
       en: "My entrails were troubled in seeking her: therefore shall I possess a good possession."
     status: { la: verified, en: verified }
   - n: 30
@@ -168,12 +167,12 @@ verses:
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "Aperui os meum, et locutus sum : Comparate vobis sine argento,"
+      la: "Aperui os meum, et locutus sum: Comparate vobis sine argento,"
       en: "I have opened my mouth, and have spoken: buy her for yourselves without silver,"
     status: { la: verified, en: verified }
   - n: 34
     text:
-      la: "et collum vestrum subjicite jugo : et suscipiat anima vestra disciplinam : in proximo est enim invenire eam."
+      la: "et collum vestrum subjicite jugo: et suscipiat anima vestra disciplinam: in proximo est enim invenire eam."
       en: "And submit your neck to the yoke, and let your soul receive discipline: for she is near at hand to be found."
     status: { la: verified, en: verified }
   - n: 35

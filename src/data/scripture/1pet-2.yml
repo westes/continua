@@ -1,132 +1,132 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 1pet
 chapter: 2
 verses:
   - n: 1
     text:
-      la: "deponentes igitur omnem malitiam et omnem dolum et simulationes et invidias et omnes detractiones"
+      la: "Deponentes igitur omnem malitiam, et omnem dolum, et simulationes, et invidias, et omnes detractiones,"
       en: "Wherefore laying away all malice, and all guile, and dissimulations, and envies, and all detractions,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "sicut modo geniti infantes rationale sine dolo lac concupiscite ut in eo crescatis in salutem"
+      la: "sicut modo geniti infantes, rationabile, sine dolo lac concupiscite: ut in eo crescatis in salutem:"
       en: "As newborn babes, desire the rational milk without guile, that thereby you may grow unto salvation:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "si gustastis quoniam dulcis Dominus"
+      la: "si tamen gustastis quoniam dulcis est Dominus."
       en: "If so be you have tasted that the Lord is sweet."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "ad quem accedentes lapidem vivum ab hominibus quidem reprobatum a Deo autem electum honorificatum"
+      la: "Ad quem accedentes lapidem vivum, ab hominibus quidem reprobatum, a Deo autem electum, et honorificatum:"
       en: "Unto whom coming, as to a living stone, rejected indeed by men, but chosen and made honourable by God:"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et ipsi tamquam lapides vivi superaedificamini domus spiritalis sacerdotium sanctum offerre spiritales hostias acceptabiles Deo per Iesum Christum"
+      la: "et ipsi tamquam lapides vivi superaedificamini, domus spiritualis, sacerdotium sanctum, offerre spirituales hostias, acceptabiles Deo per Jesum Christum."
       en: "Be you also as living stones built up, a spiritual house, a holy priesthood, to offer up spiritual sacrifices, acceptable to God by Jesus Christ."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "propter quod continet in scriptura ecce pono in Sion lapidem summum angularem electum pretiosum et qui crediderit in eo non confundetur"
+      la: "Propter quod continet Scriptura: Ecce pono in Sion lapidem summum angularem, electum, pretiosum: et qui crediderit in eum, non confundetur."
       en: "Wherefore it is said in the scripture: Behold, I lay in Sion a chief corner stone, elect, precious. And he that shall believe in him, shall not be confounded."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "vobis igitur honor credentibus non credentibus autem lapis quem reprobaverunt aedificantes hic factus est in caput anguli"
+      la: "Vobis igitur honor credentibus: non credentibus autem lapis, quem reprobaverunt aedificantes: hic factus est in caput anguli,"
       en: "To you therefore that believe, he is honour: but to them that believe not, the stone which the builders rejected, the same is made the head of the corner:"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et lapis offensionis et petra scandali qui offendunt verbo nec credunt in quod et positi sunt"
+      la: "et lapis offensionis, et petra scandali, his qui offendunt verbo, nec credunt in quo et positi sunt."
       en: "And a stone of stumbling, and a rock of scandal, to them who stumble at the word, neither do believe, whereunto also they are set."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "vos autem genus electum regale sacerdotium gens sancta populus adquisitionis ut virtutes adnuntietis eius qui de tenebris vos vocavit in admirabile lumen suum"
+      la: "Vos autem genus electum, regale sacerdotium, gens sancta, populus acquisitionis: ut virtutes annuntietis ejus qui de tenebris vos vocavit in admirabile lumen suum."
       en: "But you are a chosen generation, a kingly priesthood, a holy nation, a purchased people: that you may declare his virtues, who hath called you out of darkness into his marvellous light:"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "qui aliquando non populus nunc autem populus Dei qui non consecuti misericordiam nunc autem misericordiam consecuti"
+      la: "Qui aliquando non populus, nunc autem populus Dei: qui non consecuti misericordiam, nunc autem misericordiam consecuti."
       en: "Who in time past were not a people: but are now the people of God. Who had not obtained mercy; but now have obtained mercy."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "carissimi obsecro tamquam advenas et peregrinos abstinere vos a carnalibus desideriis quae militant adversus animam"
+      la: "Carissimi, obsecro vos tamquam advenas et peregrinos abstinere vos a carnalibus desideriis, quae militant adversus animam,"
       en: "Dearly beloved, I beseech you as strangers and pilgrims, to refrain yourselves from carnal desires which war against the soul,"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "conversationem vestram inter gentes habentes bonam ut in eo quod detractant de vobis tamquam de malefactoribus ex bonis operibus considerantes glorificent Deum in die visitationis"
+      la: "conversationem vestram inter gentes habentes bonam: ut in eo quod detrectant de vobis tamquam de malefactoribus, ex bonis operibus vos considerantes, glorificent Deum in die visitationis."
       en: "Having your conversation good among the Gentiles: that whereas they speak against you as evildoers, they may, by the good works, which they shall behold in you, glorify God in the day of visitation."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "subiecti estote omni humanae creaturae propter Dominum sive regi quasi praecellenti"
+      la: "Subjecti igitur estote omni humanae creaturae propter Deum: sive regi quasi praecellenti:"
       en: "Be ye subject therefore to every human creature for God's sake: whether it be to the king as excelling;"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "sive ducibus tamquam ab eo missis ad vindictam malefactorum laudem vero bonorum"
+      la: "sive ducibus tamquam ab eo missis ad vindictam malefactorum, laudem vero bonorum:"
       en: "Or to governors as sent by him for the punishment of evildoers, and for the praise of the good:"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "quia sic est voluntas Dei ut benefacientes obmutescere faciatis inprudentium hominum ignorantiam"
+      la: "quia sic est voluntas Dei, ut benefacientes obmutescere faciatis imprudentium hominum ignorantiam:"
       en: "For so is the will of God, that by doing well you may put to silence the ignorance of foolish men:"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "quasi liberi et non quasi velamen habentes malitiae libertatem sed sicut servi Dei"
+      la: "quasi liberi, et non quasi velamen habentes malitiae libertatem, sed sicut servi Dei."
       en: "As free, and not as making liberty a cloak for malice, but as the servants of God."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "omnes honorate fraternitatem diligite Deum timete regem honorificate"
+      la: "Omnes honorate: fraternitatem diligite: Deum timete: regem honorificate."
       en: "Honour all men. Love the brotherhood. Fear God. Honour the king."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "servi subditi in omni timore dominis non tantum bonis et modestis sed etiam discolis"
+      la: "Servi, subditi estote in omni timore dominis, non tantum bonis et modestis, sed etiam dyscolis."
       en: "Servants, be subject to your masters with all fear, not only to the good and gentle, but also to the froward."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "haec est enim gratia si propter conscientiam Dei sustinet quis tristitias patiens iniuste"
+      la: "Haec est enim gratia, si propter Dei conscientiam sustinet qui tristitias, patiens injuste."
       en: "For this is thankworthy, if for conscience towards God, a man endure sorrows, suffering wrongfully."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "quae enim gloria est si peccantes et colaphizati suffertis sed si benefacientes et patientes sustinetis haec est gratia apud Deum"
+      la: "Quae enim est gloria, si peccantes, et colaphizati suffertis? sed si bene facientes patienter sustinetis, haec est gratia apud Deum."
       en: "For what glory is it, if committing sin, and being buffeted for it, you endure? But if doing well you suffer patiently; this is thankworthy before God."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "in hoc enim vocati estis quia et Christus passus est pro vobis vobis relinquens exemplum ut sequamini vestigia eius"
+      la: "In hoc enim vocati estis: quia et Christus passus est pro nobis, vobis relinquens exemplum ut sequamini vestigia ejus:"
       en: "For unto this are you called: because Christ also suffered for us, leaving you an example that you should follow his steps."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "qui peccatum non fecit nec inventus est dolus in ore ipsius"
+      la: "qui peccatum non fecit, nec inventus est dolus in ore ejus:"
       en: "Who did no sin, neither was guile found in his mouth."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "qui cum malediceretur non maledicebat cum pateretur non comminabatur tradebat autem iudicanti se iniuste"
+      la: "qui cum malediceretur, non maledicebat: cum pateretur, non comminabatur: tradebat autem judicanti se injuste:"
       en: "Who, when he was reviled, did not revile: when he suffered, he threatened not: but delivered himself to him that judged him unjustly."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "qui peccata nostra ipse pertulit in corpore suo super lignum ut peccatis mortui iustitiae viveremus cuius livore sanati estis"
+      la: "qui peccata nostra ipse pertulit in corpore suo super lignum; ut peccatis mortui, justitiae vivamus: cujus livore sanatis estis."
       en: "Who his own self bore our sins in his body upon the tree: that we, being dead to sins, should live to justice: by whose stripes you were healed."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "eratis enim sicut oves errantes sed conversi estis nunc ad pastorem et episcopum animarum vestrarum"
+      la: "Eratis enim sicut oves errantes, sed conversi estis nunc ad pastorem, et episcopum animarum vestrarum."
       en: "For you were as sheep going astray; but you are now converted to the shepherd and bishop of your souls."
     status: { la: verified, en: verified }

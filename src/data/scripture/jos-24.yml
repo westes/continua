@@ -1,167 +1,172 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: jos
 chapter: 24
 verses:
   - n: 1
     text:
-      la: "congregavitque Iosue omnes tribus Israhel in Sychem et vocavit maiores natu ac principes et iudices et magistros steteruntque in conspectu Domini"
+      la: "Congregavitque Josue omnes tribus Israel in Sichem, et vocavit majores natu, ac principes, et judices, et magistros: steteruntque in conspectu Domini:"
       en: "And Josue gathered together all the tribes of Israel in Sichem, and called for the ancients, and the princes, and the judges, and the masters: and they stood in the sight of the Lord:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et ad populum sic locutus est haec dicit Dominus Deus Israhel trans fluvium habitaverunt patres vestri ab initio Thare pater Abraham et Nahor servieruntque diis alienis"
+      la: "et ad populum sic locutus est: Haec dicit Dominus Deus Israel: Trans fluvium habitaverunt patres vestri ab initio, Thare pater Abraham et Nachor: servieruntque diis alienis."
       en: "And he spoke thus to the people: Thus saith the Lord the God of Israel: Your fathers dwelt of old on the other side of the river, Thare the father of Abraham, and Nachor: and they served strange gods."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "tuli ergo patrem vestrum Abraham de Mesopotamiae finibus et adduxi eum in terram Chanaan multiplicavique semen eius"
+      la: "Tuli ergo patrem vestrum Abraham de Mesopotamiae finibus, et adduxi eum in terram Chanaan, multiplicavique semen ejus,"
       en: "And I took your father Abraham from the borders of Mesopotamia: and brought him into the land of Chanaan: and I multiplied his seed,"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et dedi ei Isaac illique rursum dedi Iacob et Esau e quibus Esau dedi montem Seir ad possidendum Iacob vero et filii eius descenderunt in Aegyptum"
+      la: "et dedi ei Isaac: illique rursum dedi Jacob et Esau. E quibus, Esau dedi montem Seir ad possidendum: Jacob vero et filii ejus descenderunt in Aegyptum."
       en: "And gave him Isaac: and to him again I gave Jacob and Esau. And I gave to Esau mount Seir for his possession: but Jacob and his children went down into Egypt."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "misique Mosen et Aaron et percussi Aegyptum multis signis atque portentis"
+      la: "Misique Moysen et Aaron, et percussi Aegyptum multis signis atque portentis."
       en: "And I sent Moses and Aaron, and I struck Egypt with many signs and wonders."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "eduxique vos et patres vestros de Aegypto et venistis ad mare persecutique sunt Aegyptii patres vestros cum curribus et equitatu usque ad mare Rubrum"
+      la: "Eduxique vos et patres vestros de Aegypto, et venistis ad mare: persecutique sunt Aegyptii patres vestros cum curribus et equitatu, usque ad mare Rubrum."
       en: "And I brought you and your fathers out of Egypt, and you came to the sea: and the Egyptians pursued your fathers with chariots and horsemen, as far as the Red Sea."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "clamaverunt autem ad Dominum filii Israhel qui posuit tenebras inter vos et Aegyptios et adduxit super eos mare et operuit illos viderunt oculi vestri cuncta quae in Aegypto fecerim et habitastis in solitudine multo tempore"
+      la: "Clamaverunt autem ad Dominum filii Israel: qui posuit tenebras inter vos et Aegyptios, et adduxit super eos mare, et operuit eos. Viderunt oculi vestri cuncta quae in Aegypto fecerim, et habitastis in solitudine multo tempore:"
       en: "And the children of Israel cried to the Lord: and he put darkness between you and the Egyptians, and brought the sea upon them, and covered them. Your eyes saw all that I did in Egypt, and you dwelt in the wilderness a long time:"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et introduxi vos ad terram Amorrei qui habitabat trans Iordanem cumque pugnarent contra vos tradidi eos in manus vestras et possedistis terram eorum atque interfecistis illos"
+      la: "et introduxi vos in terram Amorrhaei, qui habitabat trans Jordanem. Cumque pugnarent contra vos, tradidi eos in manus vestras, et possedistis terram eorum, atque interfecistis eos."
       en: "And I brought you into the land of the Amorrhite, who dwelt beyond the Jordan. And when they fought against you, I delivered them into your hands, and you possessed their land, and slew them."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "surrexit autem Balac filius Sepphor rex Moab et pugnavit contra Israhelem misitque et vocavit Balaam filium Beor ut malediceret vobis"
+      la: "Surrexit autem Balac filius Sephor rex Moab, et pugnavit contra Israelem. Misitque et vocavit Balaam filium Beor, ut malediceret vobis:"
       en: "And Balac son of Sephor king of Moab arose and fought against Israel. And he sent and called for Balaam son of Beor, to curse you:"
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et ego nolui audire eum sed e contrario per illum benedixi vobis et liberavi vos de manu eius"
+      la: "et ego nolui audire eum, sed e contrario per illum benedixi vobis, et liberavi vos de manu ejus."
       en: "And I would not hear him, but on the contrary I blessed you by him, and I delivered you out of his hand."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "transistisque Iordanem et venistis ad Hiericho pugnaveruntque contra vos viri civitatis eius Amorreus et Ferezeus et Chananeus et Hettheus et Gergeseus et Eveus et Iebuseus et tradidi illos in manus vestras"
+      la: "Transistisque Jordanem, et venistis ad Jericho. Pugnaveruntque contra vos viri civitatis ejus, Amorrhaeus et Pherezaeus, et Chananaeus, et Hethaeus, et Gergezaeus, et Hevaeus, et Jebusaeus: et tradidi illos in manus vestras."
       en: "And you passed over the Jordan, and you came to Jericho. And the men of that city fought against you, the Amorrhite, and the Pherezite, and the Chanaanite, and the Hethite, and the Gergesite, and the Hevite, and the Jebusite: and I delivered them into your hands."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "misique ante vos crabrones et eieci eos de locis suis duos reges Amorreorum non in gladio et arcu tuo"
+      la: "Misique ante vos crabrones: et ejeci eos de locis suis, duos reges Amorrhaeorum, non in gladio nec in arcu tuo."
       en: "And I sent before you hornets: and I drove them out from their places, the two kings of the Amorrhites, not with thy sword nor with thy bow."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "dedique vobis terram in qua non laborastis et urbes quas non aedificastis ut habitaretis in eis vineas et oliveta quae non plantastis"
+      la: "Dedique vobis terram, in qua non laborastis, et urbes quas non aedificastis, ut habitaretis in eis: vineas, et oliveta, quae non plantastis."
       en: "And I gave you a land, in which you had not laboured, and cities to dwell in which you built not, vineyards and oliveyards, which you planted not."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "nunc ergo timete Dominum et servite ei perfecto corde atque verissimo et auferte deos quibus servierunt patres vestri in Mesopotamia et in Aegypto ac servite Domino"
+      la: "Nunc ergo timete Dominum, et servite ei perfecto corde atque verissimo: et auferte deos quibus servierunt patres vestri in Mesopotamia et in Aegypto, ac servite Domino."
       en: "Now therefore fear the Lord, and serve him with a perfect and most sincere heart: and put away the gods which your fathers served in Mesopotamia and in Egypt, and serve the Lord."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "sin autem malum vobis videtur ut Domino serviatis optio vobis datur eligite hodie quod placet cui potissimum servire debeatis utrum diis quibus servierunt patres vestri in Mesopotamia an diis Amorreorum in quorum terra habitatis ego autem et domus mea serviemus Domino"
+      la: "Sin autem malum vobis videtur ut Domino serviatis, optio vobis datur: eligite hodie quod placet, cui servire potissimum debeatis: utrum diis, quibus servierunt patres vestri in Mesopotamia, an diis Amorrhaeorum, in quorum terra habitatis: ego autem et domus mea serviemus Domino."
       en: "But if it seem evil to you to serve the Lord, you have your choice: choose this day that which pleaseth you, whom you would rather serve, whether the gods which your fathers served in Mesopotamia, or the gods of the Amorrhites, in whose land you dwell: but as for me and my house we will serve the Lord."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "responditque populus et ait absit a nobis ut relinquamus Dominum et serviamus diis alienis"
+      la: "Responditque populus, et ait: Absit a nobis ut relinquamus Dominum, et serviamus diis alienis."
       en: "And the people answered, and said: God forbid we should leave the Lord, and serve strange gods."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "Dominus Deus noster ipse eduxit nos et patres nostros de terra Aegypti de domo servitutis fecitque videntibus nobis signa ingentia et custodivit nos in omni via per quam ambulavimus et in cunctis populis per quos transivimus"
+      la: "Dominus Deus noster ipse eduxit nos, et patres nostros, de terra Aegypti, de domo servitutis: fecitque videntibus nobis signa ingentia, et custodivit nos in omni via, per quam ambulavimus, et in cunctis populis, per quos transivimus."
       en: "The Lord our God he brought us and our fathers out of the land of Egypt, out of the house of bondage: and did very great signs in our sight, and preserved us in all the way by which we journeyed, and among all the people through whom we passed."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "et eiecit universas gentes Amorreum habitatorem terrae quam nos intravimus serviemus igitur Domino quia ipse est Deus noster"
+      la: "Et ejecit universas gentes, Amorrhaeum habitatorem terrae, quam nos intravimus. Serviemus igitur Domino, quia ipse est Deus noster."
       en: "And he hath cast out all the nations, the Amorrhite the inhabitant of the land into which we are come. Therefore we will serve the Lord, for he is our God."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "dixitque Iosue ad populum non poteritis servire Domino Deus enim sanctus et fortis aemulator est nec ignoscet sceleribus vestris atque peccatis"
+      la: "Dixitque Josue ad populum: Non poteritis servire Domino: Deus enim sanctus et fortis aemulator est, nec ignoscet sceleribus vestris atque peccatis."
       en: "And Josue said to the people: You will not be able to serve the Lord: for he is a holy God, and mighty and jealous, and will not forgive your wickedness and sins."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "si dimiseritis Dominum et servieritis diis alienis convertet se et adfliget vos atque subvertet postquam vobis praestiterit bona"
+      la: "Si dimiseritis Dominum, et servieritis diis alienis, convertet se, et affliget vos, atque subvertet postquam vobis praestiterit bona."
       en: "If you leave the Lord, and serve strange gods, he will turn, and will afflict you, and will destroy you after all the good he hath done you."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "dixitque populus ad Iosue nequaquam ita ut loqueris erit sed Domino serviemus"
+      la: "Dixitque populus ad Josue: Nequaquam ita ut loqueris erit, sed Domino serviemus."
       en: "And the people said to Josue: No, it shall not be so as thou sayest, but we will serve the Lord."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "et Iosue ad populum testes inquit vos estis quia ipsi elegeritis vobis Dominum ut serviatis ei responderuntque testes"
+      la: "Et Josue ad populum: Testes, inquit, vos estis, quia ipsi elegeritis vobis Dominum ut serviatis ei. Responderuntque: Testes."
       en: "And Josue said to the people: You are witnesses, that you yourselves have chosen you the Lord to serve him. And they answered: We are witnesses."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "nunc ergo ait auferte deos alienos de medio vestrum et inclinate corda vestra ad Dominum Deum Israhel"
+      la: "Nunc ergo, ait, auferte deos alienos de medio vestri, et inclinate corda vestra ad Dominum Deum Israel."
       en: "Now therefore, said he, put away strange gods from among you, and incline your hearts to the Lord the God of Israel."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "dixitque populus ad Iosue Domino Deo nostro serviemus oboedientes praeceptis eius"
+      la: "Dixitque populus ad Josue: Domino Deo nostro serviemus, et obedientes erimus praeceptis ejus."
       en: "And the people said to Josue: We will serve the Lord our God, and we will be obedient to his commandments."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "percussit igitur Iosue in die illo foedus et proposuit populo praecepta atque iudicia in Sychem"
+      la: "Percussit ergo Josue in die illo foedus, et proposuit populo praecepta atque judicia in Sichem."
       en: "Josue therefore on that day made a covenant, and set before the people commandments and judgments in Sichem."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "scripsitque omnia verba haec in volumine legis Dei et tulit lapidem pergrandem posuitque eum subter quercum quae erat in sanctuario Domini"
+      la: "Scripsit quoque omnia verba haec in volumine legis Domini: et tulit lapidem pergrandem, posuitque eum subter quercum, quae erat in sanctuario Domini:"
       en: "And he wrote all these things in the volume of the law of the Lord: and he took a great stone, and set it under the oak that was in the sanctuary of the Lord."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "et dixit ad omnem populum en lapis iste erit vobis in testimonium quod audierit omnia verba Domini quae locutus est vobis ne forte postea negare velitis et mentiri Domino Deo vestro"
+      la: "et dixit ad omnem populum: En lapis iste erit vobis in testimonium, quod audierit omnia verba Domini, quae locutus est vobis: ne forte postea negare velitis, et mentiri Domino Deo vestro."
       en: "And he said to all the people: Behold this stone shall be a testimony unto you, that it hath heard all the words of the Lord, which he hath spoken to you: lest perhaps hereafter you will deny it, and lie to the Lord your God."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "dimisitque populum singulos in possessionem suam"
+      la: "Dimisitque populum, singulos in possessionem suam."
       en: "And he sent the people away every one to their own possession."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "et post haec mortuus est Iosue filius Nun servus Domini centum decem annorum"
-      en: "And after these things Josue the son of Null the servant of the Lord died, being a hundred and ten years old:"
+      la: "Et post haec mortuus est Josue filius Nun servus Domini, centum et decem annorum:"
+      en: "And after these things Josue the son of Nun the servant of the Lord died, being a hundred and ten years old:"
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "sepelieruntque eum in finibus possessionis suae in Thamnathsare quae sita est in monte Ephraim a septentrionali parte montis Gaas"
+      la: "sepelieruntque eum in finibus possessionis suae in Thamnathsare, quae est sita in monte Ephraim, a septentrionali parte montis Gaas."
       en: "And they buried him in the border of his possession in Thamnathsare, which is situate in mount Ephraim, on the north side of mount Gaas."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "servivitque Israhel Domino cunctis diebus Iosue et seniorum qui longo vixerunt tempore post Iosue et qui noverant omnia opera Domini quae fecerat in Israhel"
+      la: "Servivitque Israel Domino cunctis diebus Josue et seniorum, qui longo vixerunt tempore post Josue, et qui noverunt omnia opera Domini quae fecerat in Israel."
       en: "And Israel served the Lord all the days of Josue, and of the ancients that lived a long time after Josue, and that had known all the works of the Lord which he had done in Israel."
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "ossa quoque Ioseph quae tulerant filii Israhel de Aegypto sepelierunt in Sychem in parte agri quem emerat Iacob a filiis Emmor patris Sychem centum novellis ovibus et fuit in possessione filiorum Ioseph"
+      la: "Ossa quoque Joseph, quae tulerant filii Israel de Aegypto, sepelierunt in Sichem, in parte agri quem emerat Jacob a filiis Hemor patris Sichem, centum novellis ovibus, et fuit in possessionem filiorum Joseph."
       en: "And the bones of Joseph which the children of Israel had taken out of Egypt, they buried in Sichem, in that part of the field which Jacob had bought of the sons of Hemor the father of Sichem, for a hundred young ewes, and it was in the possession of the sons of Joseph."
+    status: { la: verified, en: verified }
+  - n: 33
+    text:
+      la: "Eleazar quoque filius Aaron mortuus est: et sepelierunt eum in Gabaath Phinees filii ejus, quae data est ei in monte Ephraim."
+      en: "Eleazar also the son of Aaron died: and they buried him in Gabaath that belongeth to Phinees his son, which was given him in mount Ephraim."
     status: { la: verified, en: verified }

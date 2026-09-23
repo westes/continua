@@ -1,67 +1,67 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: mich
 chapter: 3
 verses:
   - n: 1
     text:
-      la: "et dixi audite principes Iacob et duces domus Israhel numquid non vestrum est scire iudicium"
+      la: "Et dixi: Audite, princeps Jacob, et duces domus Israel: numquid non vestrum est scire judicium,"
       en: "And I said: Hear, O ye princes of Jacob, and ye chiefs of the house of Israel: Is it not your part to know judgment,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "qui odio habetis bonum et diligitis malum qui violenter tollitis pelles eorum desuper eos et carnem eorum desuper ossibus eorum"
+      la: "qui odio habetis bonum, et diligitis malum; qui violenter tollitis pelles eorum desuper eis, et carnem eorum desuper ossibus eorum;"
       en: "You that hate good, and love evil: that violently pluck off their skins from them, and their flesh from their bones?"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "qui comederunt carnem populi mei et pellem eorum desuper excoriaverunt et ossa eorum confregerunt et conciderunt sicut in lebete et quasi carnem in medio ollae"
+      la: "qui comederunt carnem populi mei, et pellem eorum desuper excoriaverunt, et ossa eorum confregerunt, et conciderunt sicut in lebete, et quasi carnem in medio ollae?"
       en: "Who have eaten the flesh of my people, and have flayed their skin from off them: and have broken, and chopped their bones as for the kettle, and as flesh in the midst of the pot."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "tunc clamabunt ad Dominum et non exaudiet eos et abscondet faciem suam ab eis in tempore illo sicut nequiter egerunt in adinventionibus suis"
+      la: "Tunc clamabunt ad Dominum, et non exaudiet eos, et abscondet faciem suam ab eis in tempore illo, sicut nequiter egerunt in adinventionibus suis."
       en: "Then shall they cry to the Lord, and he will not hear them: and he will hide his face from them at that time, as they have behaved wickedly in their devices."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "haec dicit Dominus super prophetas qui seducunt populum meum qui mordent dentibus suis et praedicant pacem et si quis non dederit in ore eorum quippiam sanctificant super eum proelium"
+      la: "Haec dicit Dominus super prophetas, qui seducunt populum meum: qui mordent dentibus suis, et praedicant pacem; et si quis non dederit in ore eorum quippiam, sanctificant super eum praelium."
       en: "Thus saith the Lord concerning the prophets that make my people err: that bite with their teeth, and preach peace: and if a man give not something into their mouth, they prepare war against him."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "propterea nox vobis pro visione erit et tenebrae vobis pro divinatione et occumbet sol super prophetas et obtenebrabitur super eos dies"
+      la: "Propterea nox vobis pro visione erit, et tenebrae vobis pro divinatione; et occumbet sol super prophetas, et obtenebrabitur super eos dies."
       en: "Therefore night shall be to you instead of vision, and darkness to you instead of divination; and the sun shall go down upon the prophets, and the day shall be darkened over them."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et confundentur qui vident visiones et confundentur divini et operient vultus suos omnes quia non est responsum Dei"
+      la: "Et confundentur qui vident visiones, et confundentur divini; et operient omnes vultos suos, quia non est responsum Dei."
       en: "And they shall be confounded that see visions, and the diviners shall be confounded: and they shall all cover their faces, because there is no answer of God."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "verumtamen ego repletus sum fortitudine spiritus Domini iudicio et virtute ut adnuntiem Iacob scelus suum et Israhel peccatum suum"
+      la: "Verumtamen ego repletus sum fortitudine spiritus Domini, judicio, et virtute, ut annuntiem Jacob scelus suum, et Israel peccatum suum."
       en: "But yet I am filled with the strength of the spirit of the Lord, with judgment, and power: to declare unto Jacob his wickedness, and to Israel his sin."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "audite haec principes domus Iacob et iudices domus Israhel qui abominamini iudicium et omnia recta pervertitis"
+      la: "Audite hoc, principes domus Jacob, et judices domus Israel, qui abominamini judicium, et omnia recta pervertitis:"
       en: "Hear this, ye princes of the house of Jacob, and ye judges of the house of Israel: you that abhor judgment, and pervert all that is right."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "qui aedificatis Sion in sanguinibus et Hierusalem in iniquitate"
+      la: "qui aedificatis Sion in sanguinibus, et Jerusalem in iniquitate."
       en: "You that build up Sion with blood, and Jerusalem with iniquity."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "principes eius in muneribus iudicabant et sacerdotes eius in mercede docebant et prophetae eius in pecunia divinabant et super Dominum requiescebant dicentes numquid non Dominus in medio nostrum non venient super nos mala"
+      la: "Principes ejus in muneribus judicabant, et sacerdotes ejus in mercede docebant, et prophetae ejus in pecunia divinabant: et super Dominum requiescebant, dicentes: Numquid non Dominus in medio nostrum? non venient super nos mala."
       en: "Her princes have judged for bribes, and her priests have taught for hire, and her prophets divined for money: and they leaned upon the Lord, saying: Is not the Lord in the midst of us? no evil shall come upon us."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "propter hoc causa vestri Sion quasi ager arabitur et Hierusalem quasi acervus lapidum erit et mons templi in excelsa silvarum"
+      la: "Propter hoc, causa vestri, Sion quasi ager arabitur, et Jerusalem quasi acervus lapidum erit, et mons templi in excelsa silvarum."
       en: "Therefore, because of you, Sion shall be ploughed as a field, and Jerusalem shall be as a heap of stones, and the mountain of the temple as the high places of the forests."
     status: { la: verified, en: verified }

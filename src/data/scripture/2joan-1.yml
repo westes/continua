@@ -1,67 +1,72 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 2joan
 chapter: 1
 verses:
   - n: 1
     text:
-      la: "senior electae dominae et natis eius quos ego diligo in veritate et non ego solus sed et omnes qui cognoverunt veritatem"
+      la: "Senior Electae dominae, et natis ejus, quos ego diligo in veritate, et non ego solus, sed et omnes qui cognoverunt veritatem,"
       en: "The ancient to the lady Elect, and her children, whom I love in the truth, and not I only, but also all they that have known the truth,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "propter veritatem quae permanet in nobis et nobiscum erit in aeternum"
+      la: "propter veritatem, quae permanet in nobis, et nobiscum erit in aeternum."
       en: "For the sake of the truth which dwelleth in us, and shall be with us for ever."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "sit nobiscum gratia misericordia pax a Deo Patre et a Christo Iesu Filio Patris in veritate et caritate"
+      la: "Sit vobiscum gratia, misericordia, pax a Deo Patre, et a Christo Jesu Filio Patris in veritate, et caritate."
       en: "Grace be with you, mercy, and peace from God the Father, and from Christ Jesus the Son of the Father; in truth and charity."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "gavisus sum valde quoniam inveni de filiis tuis ambulantes in veritate sicut mandatum accepimus a Patre"
+      la: "Gavisus sum valde, quoniam inveni de filiis tuis ambulantes in veritate, sicut mandatum accepimus a Patre."
       en: "I was exceeding glad, that I found of thy children walking in truth, as we have received a commandment from the Father."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et nunc rogo te domina non tamquam mandatum novum scribens tibi sed quod habuimus ab initio ut diligamus alterutrum"
+      la: "Et nunc rogo te domina, non tamquam mandatum novum scribens tibi, sed quod habuimus ab initio, ut diligamus alterutrum."
       en: "And now I beseech thee, lady, not as writing a new commandment to thee, but that which we have had from the beginning, that we love one another."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et haec est caritas ut ambulemus secundum mandata eius hoc mandatum est ut quemadmodum audistis ab initio in eo ambuletis"
+      la: "Et haec est caritas, ut ambulemus secundum mandata ejus. Hoc est enim mandatum, ut quemadmodum audistis ab initio, in eo ambuletis."
       en: "And this is charity, that we walk according to his commandments. For this is the commandment, that, as you have heard from the beginning, you should walk in the same:"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "quoniam multi seductores exierunt in mundum qui non confitentur Iesum Christum venientem in carne hic est seductor et antichristus"
+      la: "Quoniam multi seductores exierunt in mundum, qui non confitentur Jesum Christum venisse in carnem: hic est seductor, et antichristus."
       en: "For many seducers are gone out into the world, who confess not that Jesus Christ is come in the flesh: this is a seducer and an antichrist."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "videte vosmet ipsos ne perdatis quae operati estis sed ut mercedem plenam accipiatis"
+      la: "Videte vosmetipsos, ne perdatis quae operati estis: sed ut mercedem plenam accipiatis."
       en: "Look to yourselves, that you lose not the things which you have wrought: but that you may receive a full reward."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "omnis qui praecedit et non manet in doctrina Christi Deum non habet qui permanet in doctrina hic et Filium et Patrem habet"
+      la: "Omnis qui recedit, et non permanet in doctrina Christi, Deum non habet: qui permanet in doctrina, hic et Patrem et Filium habet."
       en: "Whosoever revolteth, and continueth not in the doctrine of Christ, hath not God. He that continueth in the doctrine, the same hath both the Father and the Son."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "si quis venit ad vos et hanc doctrinam non adfert nolite recipere eum in domum nec have ei dixeritis"
+      la: "Si quis venit ad vos, et hanc doctrinam non affert, nolite recipere eum in domum, nec Ave ei dixeritis."
       en: "If any man come to you, and bring not this doctrine, receive him not into the house nor say to him, God speed you."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "qui enim dicit illi have communicat operibus illius malignis"
+      la: "Qui enim dicit illi Ave, communicat operibus ejus malignis."
       en: "For he that saith unto him, God speed you, communicateth with his wicked works."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "plura habens vobis scribere nolui per cartam et atramentum spero enim me futurum apud vos et os ad os loqui ut gaudium vestrum plenum sit"
+      la: "Plura habens vobis scribere, nolui per cartam et atramentum: spero enim me futurum apud vos, et os ad os loqui: ut gaudium vestrum plenum sit."
       en: "Having more things to write unto you, I would not by paper and ink: for I hope that I shall be with you, and speak face to face: that your joy may be full."
+    status: { la: verified, en: verified }
+  - n: 13
+    text:
+      la: "Salutant te filii sororis tuae Electae."
+      en: "The children of thy sister Elect salute thee."
     status: { la: verified, en: verified }

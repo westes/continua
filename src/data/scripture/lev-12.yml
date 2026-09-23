@@ -1,47 +1,47 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: lev
 chapter: 12
 verses:
   - n: 1
     text:
-      la: "locutus est Dominus ad Mosen dicens"
+      la: "Locutusque est Dominus ad Moysen, dicens:"
       en: "And the Lord spoke to Moses, saying:"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "loquere filiis Israhel et dices ad eos mulier si suscepto semine pepererit masculum inmunda erit septem diebus iuxta dies separationis menstruae"
+      la: "Loquere filiis Israel, et dices ad eos: Mulier, si suscepto semine pepererit masculum, immunda erit septem diebus juxta dies separationis menstruae."
       en: "Speak to the children of Israel, and thou shalt say to them: If a woman having received seed shall bear a man child, she shall be unclean seven days, according to the days of the separation of her flowers."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "et die octavo circumcidetur infantulus"
+      la: "Et die octavo circumcidetur infantulus:"
       en: "And on the eighth day the infant shall be circumcised:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "ipsa vero triginta tribus diebus manebit in sanguine purificationis suae omne sanctum non tanget nec ingredietur sanctuarium donec impleantur dies purificationis eius"
+      la: "ipsa vero triginta tribus diebus manebit in sanguine purificationis suae. Omne sanctum non tanget, nec ingredietur in sanctuarium, donec impleantur dies purificationis suae."
       en: "But she shall remain three and thirty days in the blood of her purification. She shall touch no holy thing, neither shall she enter into the sanctuary, until the days of her purification be fulfilled."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "sin autem feminam pepererit inmunda erit duabus ebdomadibus iuxta ritum fluxus menstrui et sexaginta ac sex diebus manebit in sanguine purificationis suae"
+      la: "Sin autem feminam pepererit, immunda erit duabus hebdomadibus juxta ritum fluxus menstrui, et sexaginta sex diebus manebit in sanguine purificationis suae."
       en: "But if she shall bear a maid child, she shall be unclean two weeks, according to the custom of her monthly courses, and she shall remain in the blood of her purification sixty-six days."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "cumque expleti fuerint dies purificationis eius pro filio sive pro filia deferet agnum anniculum in holocaustum et pullum columbae sive turturem pro peccato ad ostium tabernaculi testimonii et tradet sacerdoti"
+      la: "Cumque expleti fuerint dies purificationis suae, pro filio sive pro filia, deferet agnum anniculum in holocaustum, et pullum columbae sive turturem pro peccato, ad ostium tabernaculi testimonii, et tradet sacerdoti,"
       en: "And when the days of her purification are expired, for a son, or for a daughter, she shall bring to the door of the tabernacle of the testimony, a lamb of a year old for a holocaust, and a young pigeon or a turtle for sin, and shall deliver them to the priest:"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "qui offeret illa coram Domino et rogabit pro ea et sic mundabitur a profluvio sanguinis sui ista est lex parientis masculum ac feminam"
+      la: "qui offeret illa coram Domino, et orabit pro ea, et sic mundabitur a profluvio sanguinis sui: ista est lex parientis masculum aut feminam."
       en: "Who shall offer them before the Lord, and shall pray for her, and so she shall be cleansed from the issue of her blood. This is the law for her that beareth a man child or a maid child."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "quod si non invenerit manus eius nec potuerit offerre agnum sumet duos turtures vel duos pullos columbae unum in holocaustum et alterum pro peccato orabitque pro ea sacerdos et sic mundabitur"
+      la: "Quod si non invenerit manus ejus, nec potuerit offerre agnum, sumet duos turtures vel duos pullos columbarum, unum in holocaustum, et alterum pro peccato: orabitque pro ea sacerdos, et sic mundabitur."
       en: "And if her hand find not sufficiency, and she is not able to offer a lamb, she shall take two turtles, or two young pigeons, one for a holocaust, and another for sin: and the priest shall pray for her, and so she shall be cleansed."
     status: { la: verified, en: verified }

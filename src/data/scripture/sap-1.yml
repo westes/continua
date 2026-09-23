@@ -1,87 +1,87 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: sap
 chapter: 1
 verses:
   - n: 1
     text:
-      la: "diligite iustitiam qui iudicatis terram sentite de Domino in bonitate et in simplicitate cordis quaerite illum"
+      la: "Diligite justitiam, qui judicatis terram. Sentite de Domino in bonitate, et in simplicitate cordis quaerite illum;"
       en: "Love justice, you that are the judges of the earth. Think of the Lord in goodness, and seek him in simplicity of heart."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "quoniam invenitur ab his qui non temptant illum apparet autem eis qui fidem habent in illum"
+      la: "quoniam invenitur ab his qui non tentant illum, apparet autem eis qui fidem habent in illum."
       en: "For he is found by them that tempt him not: and he sheweth himself to them that have faith in him."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "perversae enim cogitationes separant a Deo probata autem virtus corripit insipientes"
-      en: "For perverse thoughts seperate from God: and his power, when it is tried, reproveth the unwise:"
+      la: "Perversae enim cogitationes separant a Deo; probata autem virtus corripit insipientes."
+      en: "For perverse thoughts separate from God: and his power, when it is tried, reproveth the unwise:"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "quoniam in malivolam animam non intrabit sapientia nec habitabit in corpore subdito peccatis"
+      la: "Quoniam in malevolam animam non introibit sapientia, nec habitabit in corpore subdito peccatis."
       en: "For wisdom will not enter into a malicious soul, nor dwell in a body subject to sins."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "sanctus enim spiritus disciplinae effugiet fictum et auferet se a cogitationibus quae sunt sine intellectu et corripietur superveniente iniquitate"
+      la: "Spiritus enim sanctus disciplinae effugiet fictum; et auferet se a cogitationibus quae sunt sine intellectu, et corripietur a superveniente iniquitate."
       en: "For the Holy Spirit of discipline will flee from the deceitful, and will withdraw himself from thoughts that are without understanding, and he shall not abide when iniquity cometh in."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "benignus est enim spiritus sapientiae et non liberabit maledictum a labiis suis quoniam renum illius testis est Deus et cordis eius scrutator est verus et linguae illius auditor"
+      la: "Benignus est enim spiritus sapientiae, et non liberabit maledicum a labiis suis; quoniam renum illius testis est Deus, et cordis illius scrutator est verus et linguae ejus auditor."
       en: "For the spirit of wisdom is benevolent, and will not acquit the evil speaker from his lips: for God is witness of his reins, and he is a true searcher of his heart, and a hearer of his tongue."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "quoniam spiritus Domini replevit orbem terrarum et hoc quod continet omnia scientiam habet vocis"
+      la: "Quoniam spiritus Domini replevit orbem terrarum; et hoc quod continet omnia, scientiam habet vocis."
       en: "For the spirit of the Lord hath filled the whole world: and that, which containeth all things, hath knowledge of the voice."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "propter hoc qui loquitur iniqua non potest latere nec praeteriet illum corripiens iudicium"
+      la: "Propter hoc qui loquitur iniqua non potest latere, nec praeteriet illum corripiens judicium."
       en: "Therefore he that speaketh unjust things cannot be hid, neither shall the chastising judgment pass him by."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "in cogitationibus enim impii interrogatio erit sermonum autem illius auditio ad Dominum veniet ad correptionem iniquitatum illius"
+      la: "In cogitationibus enim impii interrogatio erit; sermonum autem illius auditio ad Deum veniet, ad correptionem iniquitatum illius."
       en: "For inquisition shall be made into the thoughts of the ungodly: and the hearing of his words shall come to God, to the chastising of his iniquities."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "quoniam auris zeli audit omnia et tumultus murmurationum non abscondetur"
+      la: "Quoniam auris zeli audit omnia, et tumultus murmurationum non abscondetur."
       en: "For the ear of jealousy heareth all things, and the tumult of murmuring shall not be hid."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "custodite ergo vos a murmuratione quae nihil prodest et a detractione parcite linguae quoniam responsum obscurum in vacuum non ibit os autem quod mentitur occidit animam"
+      la: "Custodite ergo vos a murmuratione quae nihil prodest, et a detractione parcite linguae: quoniam sermo obscurus in vacuum non ibit, os autem quod mentitur occidit animam."
       en: "Keep yourselves therefore from murmuring, which profiteth nothing, and refrain your tongue from detraction, for an obscure speech shall not go for nought: and the mouth that belieth, killeth the soul."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "nolite zelare mortem in errore vitae vestrae neque adquiratis perditionem in operibus manuum vestrarum"
+      la: "Nolite zelare mortem in errore vitae vestrae, neque acquiratis perditionem in operibus manuum vestrarum."
       en: "Seek not death in the error of your life, neither procure ye destruction by the works of your hands."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "quoniam Deus mortem non fecit nec laetatur in perditione vivorum"
+      la: "Quoniam Deus mortem non fecit. Nec laetatur in perditione vivorum."
       en: "For God made not death, neither hath he pleasure in the destruction of the living."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "creavit enim ut essent omnia et sanabiles nationes orbis terrarum et non est in illis medicamentum exterminii nec inferorum regnum in terra"
+      la: "Creavit enim ut essent omnia; et sanabiles fecit nationes orbis terrarum, et non est in illis medicamentum exterminii, nec inferorum regnum in terra."
       en: "For he created all things that they might be: and he made the nations of the earth for health: and there is no poison of destruction in them, nor kingdom of hell upon the earth."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "iustitia enim inmortalis est"
+      la: "Justitia enim perpetua est, et immortalis."
       en: "For justice is perpetual and immortal."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "impii autem manibus et verbis arcessierunt illam et aestimantes illam amicam defluxerunt et sponsionem posuerunt ad illam quoniam digni sunt qui sunt ex parte illius"
+      la: "Impii autem manibus et verbis accersierunt illam, et aestimantes illam amicam, defluxerunt; et sponsiones posuerunt ad illam, quoniam digni sunt qui sint ex parte illius."
       en: "But the wicked with works and words have called it to them: and esteeming it a friend have fallen away, and have made a covenant with it: because they are worthy to be of the part thereof."
     status: { la: verified, en: verified }

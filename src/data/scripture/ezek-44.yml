@@ -1,162 +1,162 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: ezek
 chapter: 44
 verses:
   - n: 1
     text:
-      la: "et convertit me ad viam portae sanctuarii exterioris quae respiciebat ad orientem et erat clausa"
+      la: "Et convertit me ad viam portae sanctuarii exterioris, quae respiciebat ad orientem: et erat clausa."
       en: "And he brought me back to the way of the gate of the outward sanctuary, which looked towards the east: and it was shut."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et dixit Dominus ad me porta haec clausa erit non aperietur et vir non transiet per eam quoniam Dominus Deus Israhel ingressus est per eam eritque clausa"
+      la: "Et dixit Dominus ad me: Porta haec clausa erit: non aperietur, et vir non transibit per eam, quoniam Dominus Deus Israel ingressus est per eam: eritque clausa"
       en: "And the Lord said to me: This gate shall be shut, it shall not be opened, and no man shall pass through it: because the Lord the God of Israel hath entered in by it, and it shall be shut"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "principi princeps ipse sedebit in ea ut comedat panem coram Domino per viam vestibuli portae ingredietur et per viam eius egredietur"
+      la: "principi. Princeps ipse sedebit in ea, ut comedat panem coram Domino: per viam portae vestibuli ingredietur, et per viam ejus egredietur."
       en: "For the prince. The prince himself shall sit in it, to eat bread before the Lord: he shall enter in by the way of the porch of the gate, and shall go out by the same way."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et adduxit me per viam portae aquilonis in conspectu domus et vidi et ecce implevit gloria Domini domum Domini et cecidi in faciem meam"
+      la: "Et adduxit me per viam portae aquilonis in conspectu domus: et vidi, et ecce implevit gloria Domini domum Domini: et cecidi in faciem meam."
       en: "And he brought me by the way of the north gate, in the sight of the house: and I saw, and behold the glory of the Lord filled the house of the Lord: and I fell on my face."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et dixit ad me Dominus fili hominis pone cor tuum et vide oculis tuis et auribus tuis audi omnia quae ego loquor ad te de universis caerimoniis domus Domini et de cunctis legibus eius et pones cor tuum in viis templi per omnes exitus sanctuarii"
+      la: "Et dixit ad me Dominus: Fili hominis, pone cor tuum, et vide oculis tuis, et auribus tuis audi omnia quae ego loquor ad te de universis caeremoniis domus Domini, et de cunctis legibus ejus: et pones cor tuum in viis templi per omnes exitus sanctuarii."
       en: "And the Lord said to me: Son of man, attend with thy heart, and behold with thy eyes, and hear with thy ears, all that I say to thee concerning all the ceremonies of the house of the Lord, and concerning all the laws thereof: and mark well the ways of the temple, with all the goings out of the sanctuary."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et dices ad exasperantem me domum Israhel haec dicit Dominus Deus sufficiant vobis omnia scelera vestra domus Israhel"
-      en: "And thou shalt say to the house of Israel that provoketh me: Thus saith the Lord God: Let all your wicked doings suffice you, 0 house of Israel:"
+      la: "Et dices ad exasperantem me domum Israel: Haec dicit Dominus Deus: Sufficiant vobis omnia scelera vestra, domus Israel:"
+      en: "And thou shalt say to the house of Israel that provoketh me: Thus saith the Lord God: Let all your wicked doings suffice you, O house of Israel:"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "eo quod inducitis filios alienos incircumcisos corde et incircumcisos carne ut sint in sanctuario meo et polluant domum meam et offertis panes meos adipem et sanguinem et dissolvitis pactum meum in omnibus sceleribus vestris"
+      la: "eo quod inducitis filios alienos incircumcisos corde, et incircumcisos carne, ut sint in sanctuario meo, et polluant domum meam: et offertis panes meos, adipem et sanguinem, et dissolvitis pactum meum in omnibus sceleribus vestris."
       en: "In that you have brought in strangers uncircumcised in heart, and uncircumcised in flesh, to be in my sanctuary, and to defile my house: and you offer my bread, the fat, and the blood: and you have broken my covenant by all your wicked doings."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et non servastis praecepta sanctuarii mei et posuistis custodes observationum mearum in sanctuario meo vobismet ipsis"
+      la: "Et non servastis praecepta sanctuarii mei, et posuistis custodes observationum mearum in sanctuario meo vobismetipsis."
       en: "And you have not kept the ordinances of my sanctuary: but you have set keepers of my charge in my sanctuary for yourselves."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "haec dicit Dominus Deus omnis alienigena incircumcisus corde et incircumcisus carne non ingredietur sanctuarium meum omnis filius alienus qui est in medio filiorum Israhel"
+      la: "Haec dicit Dominus Deus: Omnis alienigena incircumcisus corde, et incircumcisus carne, non ingredietur sanctuarium meum: omnis filius alienus qui est in medio filiorum Israel."
       en: "Thus saith the Lord God: No stranger uncircumcised in heart, and uncircumcised in flesh, shall enter into my sanctuary, no stranger that is in the midst of the children of Israel."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "sed et Levitae qui longe recesserunt a me in errore filiorum Israhel et erraverunt a me post idola sua et portaverunt iniquitatem suam"
+      la: "Sed et Levitae qui longe recesserunt a me in errore filiorum Israel, et erraverunt a me post idola sua, et portaverunt iniquitatem suam,"
       en: "Moreover the Levites that went away far from me, when the children of Israel went astray, and have wandered from me after their idols, and have borne their iniquity:"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "erunt in sanctuario meo aeditui et ianitores portarum domus et ministri domus ipsi mactabunt holocaustosin et victimas populi et ipsi stabunt in conspectu eorum ut ministrent eis"
+      la: "erunt in sanctuario meo aeditui, et janitores portarum domus, et ministri domus: ipsi mactabunt holocausta et victimas populi, et ipsi stabunt in conspectu eorum ut ministrent eis."
       en: "They shall be officers in my sanctuary, and doorkeepers of the gates of the house, and ministers to the house: they shall slay the holocausts, and the victims of the people: and they shall stand in their sight, to minister to them."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "pro eo quod ministraverunt illis in conspectu idolorum suorum et facti sunt domui Israhel in offendiculum iniquitatis idcirco levavi manum meam super eos dicit Dominus Deus et portaverunt iniquitatem suam"
+      la: "Pro eo quod ministraverunt illis in conspectu idolorum suorum, et facti sunt domui Israel in offendiculum iniquitatis: idcirco levavi manum meam super eos, ait Dominus Deus, et portabunt iniquitatem suam."
       en: "Because they ministered to them before their idols, and were a stumblingblock of iniquity to the house of Israel: therefore have I lifted up my hand against them, saith the Lord God, and they shall bear their iniquity:"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et non adpropinquabunt ad me ut sacerdotio fungantur mihi neque accedent ad omne sanctuarium meum iuxta sancta sanctorum sed portabunt confusionem suam et scelera sua quae fecerunt"
+      la: "Et non appropinquabunt ad me ut sacerdotio fungantur mihi, neque accedent ad omne sanctuarium meum juxta Sancta sanctorum: sed portabunt confusionem suam, et scelera sua quae fecerunt."
       en: "And they shall not come near to me to do the office of priest to me, neither shall they come near to any of my holy things that are by the holy of holies: but they shall bear their shame, and their wickednesses which they have committed."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "et dabo eos ianitores domus in omni ministerio eius et universis quae fiunt in ea"
+      la: "Et dabo eos janitores domus in omni ministerio ejus, et in universis quae fient in ea."
       en: "And I will make them doorkeepers of the house, for all the service thereof, and for all that shall be done therein."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "sacerdotes autem Levitae filii Sadoc qui custodierunt caerimonias sanctuarii mei cum errarent filii Israhel a me ipsi accedent ad me ut ministrent mihi et stabunt in conspectu meo ut offerant mihi adipem et sanguinem ait Dominus Deus"
-      en: "But the priests, and Levites, the sons of Sadoc, who kept the ceremonies or my sanctuary, when the children of Israel went astray from me, they shall come near to me, to minister to me: and they shall stand before me, to offer me the fat, and the blood, saith the Lord God."
+      la: "Sacerdotes autem et Levitae, filii Sadoc, qui custodierunt caeremonias sanctuarii mei, cum errarent filii Israel a me, ipsi accedent ad me ut ministrent mihi: et stabunt in conspectu meo, ut offerant mihi adipem et sanguinem, ait Dominus Deus."
+      en: "But the priests, and Levites, the sons of Sadoc, who kept the ceremonies of my sanctuary, when the children of Israel went astray from me, they shall come near to me, to minister to me: and they shall stand before me, to offer me the fat, and the blood, saith the Lord God."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "ipsi ingredientur sanctuarium meum et ipsi accedent ad mensam meam ut ministrent mihi et custodiant caerimonias meas"
+      la: "Ipsi ingredientur sanctuarium meum, et ipsi accedent ad mensam meam, ut ministrent mihi, et custodiant caeremonias meas."
       en: "They shall enter into my sanctuary, and they shall come near to my table, to minister unto me, and to keep my ceremonies."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "cumque ingredientur portas atrii interioris vestibus lineis induentur nec ascendet super eos quicquam laneum quando ministrant in portis atrii interioris et intrinsecus"
+      la: "Cumque ingredientur portas atrii interioris, vestibus lineis induentur: nec ascendet super eos quidquam laneum, quando ministrant in portis atrii interioris et intrinsecus."
       en: "And when they shall enter in at the gates of the inner court, they shall be clothed with linen garments: neither shall any woollen come upon them, when they minister in the gates of the inner court and within."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "vittae lineae erunt in capitibus eorum et feminalia linea erunt in lumbis eorum et non accingentur in sudore"
+      la: "Vittae lineae erunt in capitibus eorum, et feminalia linea erunt in lumbis eorum, et non accingentur in sudore."
       en: "They shall have linen mitres on their heads, and linen breeches on their loins, and they shall not be girded with any thing that causeth sweat."
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "cumque egredientur atrium exterius ad populum exuent se vestimenta sua in quibus ministraverunt et reponent ea in gazofilacio sanctuarii et vestient se vestimentis aliis et non sanctificabunt populum in vestibus suis"
+      la: "Cumque egredientur atrium exterius ad populum, exuent se vestimentis suis, in quibus ministraverant, et reponent ea in gazophylacio sanctuarii: et vestient se vestimentis aliis, et non sanctificabunt populum in vestibus suis."
       en: "And when they shall go forth to the outward court to the people, they shall put off their garments wherein they ministered, and lay them up in the store chamber of the sanctuary, and they shall clothe themselves with other garments: and they shall not sanctify the people with their vestments."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "caput autem suum non radent neque comam nutrient sed tondentes adtondent capita sua"
-      en: "Neither shall they shave their heads, nor wear long heir: but they shall only poll their heads."
+      la: "Caput autem suum non radent neque comam nutrient: sed tondentes attondent capita sua."
+      en: "Neither shall they shave their heads, nor wear long hair: but they shall only poll their heads."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "et vinum non bibet omnis sacerdos quando ingressurus est atrium interius"
+      la: "Et vinum non bibet omnis sacerdos, quando ingressurus est atrium interius."
       en: "And no priest shall drink wine when he is to go into the inner court."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "et viduam et repudiatam non accipient uxores sed virgines de semine domus Israhel sed et viduam quae fuerit vidua a sacerdote accipient"
+      la: "Et viduam et repudiatam non accipient uxores, sed virgines de semine domus Israel: sed et viduam quae fuerit vidua a sacerdote, accipient."
       en: "Neither shall they take to wife a widow, nor one that is divorced, but they shall take virgins of the seed of the house of Israel: but they may take a widow also, that is, the widow of a priest."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "et populum meum docebunt quid sit inter sanctum et pollutum et inter mundum et inmundum ostendent eis"
+      la: "Et populum meum docebunt quid sit inter sanctum et pollutum, et inter mundum et immundum ostendent eis."
       en: "And they shall teach my people the difference between holy and profane, and shew them how to discern between clean and unclean."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "et cum fuerit controversia stabunt in iudiciis meis et iudicabunt leges meas et praecepta mea in omnibus sollemnitatibus meis custodient et sabbata mea sanctificabunt"
+      la: "Et cum fuerit controversia, stabunt in judiciis meis, et judicabunt: leges meas et praecepta mea in omnibus solemnitatibus meis custodient, et sabbata mea sanctificabunt."
       en: "And when there shall be a controversy, they shall stand in my judgments, and shall judge: they shall keep my laws, and my ordinances in all my solemnities, and sanctify my sabbaths."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "et ad mortuum hominem non ingredientur ne polluantur nisi ad patrem et matrem et filium et filiam et fratrem et sororem quae alterum virum non habuit in quibus contaminabuntur"
+      la: "Et ad mortuum hominem non ingredientur, ne polluantur, nisi ad patrem et matrem, et filium et filiam, et fratrem, et sororem quae alterum virum non habuerit: in quibus contaminabuntur."
       en: "And they shall come near no dead person, lest they be defiled, only their father and mother, and son and daughter, and brother and sister, that hath not had another husband: for whom they may become unclean."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "et postquam fuerit emundatus septem dies numerabuntur ei"
+      la: "Et postquam fuerit emundatus, septem dies numerabuntur ei."
       en: "And after one is cleansed, they shall reckon unto him seven days."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "et in die introitus sui in sanctuarium ad atrium interius ut ministret mihi in sanctuario offeret pro peccato suo ait Dominus Deus"
+      la: "Et in die introitus sui in sanctuarium ad atrium interius, ut ministret mihi in sanctuario, offeret pro peccato suo, ait Dominus Deus."
       en: "And in the day that he goeth into the sanctuary, to the inner court, to minister unto me in the sanctuary, he shall offer for his sin, saith the Lord God."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "erit autem eis hereditas ego hereditas eorum et possessionem non dabitis eis in Israhel ego enim possessio eorum"
+      la: "Non erit autem eis haereditas: ego haereditas eorum; et possessionem non dabitis eis in Israel: ego enim possessio eorum."
       en: "And they shall have no inheritance, I am their inheritance: neither shall you give them any possession in Israel, for I am their possession."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "victimam et pro peccato et pro delicto ipsi comedent et omne votum in Israhel ipsorum erit"
+      la: "Victimam et pro peccato et pro delicto ipsi comedent, et omne votum in Israel ipsorum erit."
       en: "They shall eat the victim both for sin and for trespass: and every vowed thing in Israel shall be theirs."
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "et primitiva omnium primogenitorum et omnia libamenta ex omnibus quae offeruntur sacerdotum erunt et primitiva ciborum vestrorum dabitis sacerdoti ut reponat benedictionem domui suae"
+      la: "Et primitiva omnium primogenitorum, et omnia libamenta ex omnibus quae offeruntur, sacerdotum erunt: et primitiva ciborum vestrorum dabitis sacerdoti, ut reponat benedictionem domui tuae."
       en: "And the firstfruits of all the firstborn, and all the libations of all things that are offered, shall be the priest's: and you shall give the firstfruits of your meats to the priest, that he may return a blessing upon thy house."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "omne morticinum et captum a bestia de avibus et de pecoribus non comedent sacerdotes"
+      la: "Omne morticinum, et captum a bestia, de avibus et de pecoribus, non comedent sacerdotes."
       en: "The priests shall not eat of any thing that is dead of itself or caught by a beast, whether it be fowl or cattle."
     status: { la: verified, en: verified }

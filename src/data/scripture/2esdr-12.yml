@@ -1,237 +1,237 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 2esdr
 chapter: 12
 verses:
   - n: 1
     text:
-      la: "hii autem sacerdotes et Levitae qui ascenderunt cum Zorobabel filio Salathihel et Iosue Saraia Hieremias Ezra"
+      la: "Hi sunt autem sacerdotes et Levitae, qui ascenderunt cum Zorobabel filio Salathiel, et Josue: Saraia, Jeremias, Esdras,"
       en: "Now these are the priests and the Levites, that went up with Zorobabel the son of Salathiel, and Josue: Saraia, Jeremias, Esdras,"
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "Amaria Melluch Attus"
+      la: "Amaria, Melluch, Hattus,"
       en: "Amaria, Melluch, Hattus,"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "Sechenia Reum Meremuth"
+      la: "Sebenias, Rheum, Merimuth,"
       en: "Sebenias, Rheum, Merimuth,"
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "Addo Genthon Abia"
+      la: "Addo, Genthon, Abia,"
       en: "Addo, Genthon, Abia,"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "Miamin Madia Belga"
+      la: "Miamin, Madia, Belga,"
       en: "Miamin, Madia, Belga,"
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "Semaia et Ioarib Idaia Sellum Amoc Elceia"
+      la: "Semeia, et Jojarib, Idaia, Sellum, Amoc, Helcias,"
       en: "Semeia, and Joiarib, Idaia, Sellum, Amoc, Helcias,"
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "Idaia isti principes sacerdotum et fratres eorum in diebus Iosue"
+      la: "Idaia. Isti principes sacerdotum, et fratres eorum in diebus Josue."
       en: "Idaia. These were the chief of the priests, and of their brethren in the days of Josue."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "porro Levitae Iesua Bennui Cedmihel Sarabia Iuda Mathanias super hymnos ipsi et fratres eorum"
+      la: "Porro Levitae, Jesua, Bennui, Cedmihel, Sarebia, Juda, Mathanias, super hymnos ipsi et fratres eorum:"
       en: "And the Levites, Jesua, Bennui, Cedmihel, Sarebia, Juda, Mathanias, they and their brethren were over the hymns:"
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "et Becbecia atque et Hanni fratres eorum unusquisque in officio suo"
+      la: "et Becbecia atque Hanni, et fratres eorum, unusquisque in officio suo."
       en: "And Becbecia, and Hanni, and their brethren every one in his office."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "Hiesue autem genuit Ioachim et Ioachim genuit Eliasib et Eliasib genuit Ioiada"
+      la: "Josue autem genuit Joacim, et Joacim genuit Eliasib, et Eliasib genuit Jojada,"
       en: "And Josue beget Joacim, and Joacim beget Eliasib, and Eliasib beget Joiada,"
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et Ioiada genuit Ionathan et Ionathan genuit Ieddoa"
+      la: "et Jojada genuit Jonathan, et Jonathan genuit Jeddoa."
       en: "And Joiada beget Jonathan, and Jonathan beget Jeddoa."
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "in diebus autem Ioachim erant sacerdotes principes familiarum Saraiae Amaria Hieremiae Anania"
-      en: "And in the days of Joacim the priests and heads of the families were : Of Saraia, Maraia: of Jeremias, Hanania:"
+      la: "In diebus autem Joacim erant sacerdotes et principes familiarum: Saraiae, Maraia: Jeremiae, Hanania:"
+      en: "And in the days of Joacim the priests and heads of the families were: Of Saraia, Maraia: of Jeremias, Hanania:"
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "Ezrae Mosollam Amariae Iohanan"
+      la: "Esdrae, Mosollam: Amariae, Johanan:"
       en: "Of Esdras, Mosollam: and of Amaria, Johanan:"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "Milico Ionathan Sebeniae Ioseph"
+      la: "Milicho, Jonathan: Sebeniae, Joseph:"
       en: "Of Milicho, Jonathan: of Sebenia, Joseph:"
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "Arem Edna Maraioth Elci"
+      la: "Haram, Edna: Maraioth, Helci:"
       en: "Of Haram, Edna: of Maraioth, Helci:"
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "Addaiae Zaccharia Genthon Mosollam"
+      la: "Adaiae, Zacharia: Genthon, Mosollam:"
       en: "Of Adaia, Zacharia: of Genthon, Mosollam:"
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "Abiae Zecheri Miamin et Moadiae Felti"
+      la: "Abiae, Zechri: Miamin et Moadiae, Phelti:"
       en: "Of Abia, Zechri: of Miamin and Moadia, Phelti:"
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "Belgae Sammua Semaiae Ionathan"
+      la: "Belgae, Sammua: Semaiae, Jonathan:"
       en: "Of Belga, Sammua of Semaia, Jonathan:"
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "Ioiarib Matthanai Iadaiae Azzi"
+      la: "Jojarib, Mathanai: Jodaiae, Azzi:"
       en: "Of Joiarib, Mathanai: of Jodaia, Azzi:"
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "Sellaiae Celai Amoc Eber"
+      la: "Sellai, Celai: Amoc, Heber:"
       en: "Of Sellai, Celai: of Amoc, Heber:"
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "Elciae Asebia Idaiae Nathanahel"
+      la: "Helciae, Hasebia: Idaiae, Nathanael."
       en: "Of Helcias, Hasebia: of Idaia, Nathanael."
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "Levitae in diebus Eliasib et Ioiada et Ionan et Ieddoa scripti principes familiarum et sacerdotes in regno Darii Persae"
+      la: "Levitae in diebus Eliasib, et Jojada, et Johanan, et Jeddoa, scripti principes familiarum, et sacerdotes in regno Darii Persae."
       en: "The Levites the chiefs of the families in the days of Eliasib, and Joiada, and Johanan, and Jeddoa, were recorded, and the priests in the reign of Darius the Persian."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "filii Levi principes familiarum scripti in libro verborum dierum et usque ad dies Ionathan filii Eliasib"
+      la: "Filii Levi principes familiarum, scripti in libro verborum dierum, et usque ad dies Jonathan, filii Eliasib."
       en: "The sons of Levi, heads of the families were written in the book of Chronicles, even unto the days of Jonathan the son of Eliasib."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "et principes Levitarum Asebia Serebia et Iesue filius Cedmihel et fratres eorum per vices suas ut laudarent et confiterentur iuxta praeceptum David viri Dei et observarent aeque per ordinem"
-      en: "Now the chief of the Levites were Hasebia, Serebia, and Josue the son of Cedmihel: and their brethren by their courses, to praise and to give thanks ac- cording to the commandment of David the man of God, and to wait equally in order."
+      la: "Et principes Levitarum, Hasebia, Serebia, et Josue filius Cedmihel: et fratres eorum per vices suas, ut laudarent et confiterentur juxta praeceptum David viri Dei, et observarent aeque per ordinem."
+      en: "Now the chief of the Levites were Hasebia, Serebia, and Josue the son of Cedmihel: and their brethren by their courses, to praise and to give thanks according to the commandment of David the man of God, and to wait equally in order."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "Matthania et Becbecia Obedia Mosollam Thelmon Accub custodes portarum et vestibulorum ante portas"
+      la: "Mathania, et Becbecia, Obedia, Mosollam, Telmon, Accub, custodes portarum et vestibulorum ante portas."
       en: "Mathania, and Becbecia, Obedia, and Mosollam, Telmon, Accub, were keepers of the gates and of the entrances before the gates."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "hii in diebus Ioachim filii Iesue filii Iosedech et in diebus Neemiae ducis et Ezrae sacerdotis scribaeque"
+      la: "Hi in diebus Joacim filii Josue, filii Josedec, et in diebus Nehemiae ducis, et Esdrae sacerdotis scribaeque."
       en: "These were in the days of Joacim the son of Josue, the son of Josedec, and in the days of Nehemias the governor, and of Esdras the priest and scribe."
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "in dedicatione autem muri Hierusalem requisierunt Levitas de omnibus locis suis ut adducerent eos in Hierusalem et facerent dedicationem et laetitiam in actione gratiarum et in cantico in cymbalis psalteriis et citharis"
+      la: "In dedicatione autem muri Jerusalem, requisierunt Levitas de omnibus locis suis ut adducerent eos in Jerusalem, et facerent dedicationem et laetitiam in actione gratiarum, et cantico, et in cymbalis, psalteriis, et citharis."
       en: "And at the dedication of the wall of Jerusalem they sought the Levites out of all their places, to bring them to Jerusalem, and to keep the dedication, and to rejoice with thanksgiving, and with singing, and with cymbals, and psalteries and harps."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "congregati sunt ergo filii cantorum et de campestribus circa Hierusalem et de villis Netuphati"
+      la: "Congregati sunt autem filii cantorum de campestribus circa Jerusalem, et de villis Nethuphathi,"
       en: "And the sons of the singing men were gathered together out of the plain country about Jerusalem, and out of the villages of Nethuphati,"
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "et de domo Galgal et de regionibus Geba et Azmaveth quoniam villas aedificaverunt sibi cantores in circuitu Hierusalem"
+      la: "et de domo Galgal, et de regionibus Geba et Azmaveth: quoniam villas aedificaverunt sibi cantores in circuitu Jerusalem."
       en: "And from the house of Galgal, and from the countries of Geba and Azmaveth: for the singing men had built themselves villages round about Jerusalem."
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "et mundati sunt sacerdotes et Levitae et mundaverunt populum et portas et murum"
+      la: "Et mundati sunt sacerdotes et Levitae, et mundaverunt populum, et portas, et murum."
       en: "And the priests and the Levites purified, and they purified the people, and the gates, and the wall."
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "ascendere autem feci principes Iuda super murum et statui duos choros laudantium magnos et ierunt ad dexteram super murum ad portam Sterquilinii"
+      la: "Ascendere autem feci principes Juda super murum, et statui duos magnos choros laudantium. Et ierunt ad dexteram super murum ad portam sterquilinii."
       en: "And I made the princes of Juda go up upon the wall, and I appointed two great choirs to give praise. And they went on the right hand upon the wall toward the dunghill gate."
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "et ivit post eos Osaias et media pars principum Iuda"
+      la: "Et ivit post eos Osaias, et media pars principum Juda,"
       en: "And after them went Osaias, and half of the princes of Juda,"
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "et Azarias Ezras et Mosollam Iuda et Beniamin et Semeia et Hieremia"
+      la: "et Azarias, Esdras, et Mosollam, Judas, et Benjamin, et Semeia, et Jeremias."
       en: "And Azarias, Esdras, and Mosollam, Judas, and Benjamin, and Semeia, and Jeremias."
     status: { la: verified, en: verified }
   - n: 34
     text:
-      la: "et de filiis sacerdotum in tubis Zaccharias filius Ionathan filius Semeiae filius Mathaniae filius Michaiae filius Zecchur filius Asaph"
+      la: "Et de filiis sacerdotum in tubis, Zacharias filius Jonathan, filius Semeiae, filius Mathaniae, filius Michaiae, filius Zechur, filius Asaph,"
       en: "And of the sons of the priests with trumpets, Zacharias the son of Jonathan. the son of Semeia, the son of Mathania; the son of Michaia, the son of Zechur, the son of Asaph,"
     status: { la: verified, en: verified }
   - n: 35
     text:
-      la: "et fratres eius Semeia et Azarel Malalai Galalai Maai Nathanel et Iuda et Anani in vasis cantici David viri Dei et Ezras scriba ante eos in porta Fontis"
+      la: "et fratres ejus Semeia, et Azareel, Malalai, Galalai, Maai, Nathanael, et Judas, et Hanani, in vasis cantici David viri Dei: et Esdras scriba ante eos in porta fontis."
       en: "And his brethren Semeia, and Azareel Malalai, Galalai, Maai, Nathanael, and Judas, and Hanani, with the musical instruments of David the man of God: and Esdras the scribe before them at the fountain gate."
     status: { la: verified, en: verified }
   - n: 36
     text:
-      la: "et contra eos ascenderunt in gradibus civitatis David in ascensu muri super domum David et usque ad portam Aquarum ad orientem"
+      la: "Et contra eos ascenderunt in gradibus civitatis David in ascensu muri super domum David, et usque ad portam aquarum ad orientem."
       en: "And they went up over against them by the stairs of the city of David, at the going up of the wall of the house of David, and to the water gate eastward:"
     status: { la: verified, en: verified }
   - n: 37
     text:
-      la: "et chorus secundus gratias referentium ibat ex adverso et ego post eum et media pars populi super murum et super turrem Furnorum et usque ad murum latissimum"
+      la: "Et chorus secundus gratias referentium ibat ex adverso, et ego post eum, et media pars populi super murum, et super turrim furnorum, et usque ad murum latissimum,"
       en: "And the second choir of them that gave thanks went on the opposite side, and I after them, and the half of the people upon the wall, and upon the tower of the furnaces, even to the broad wall,"
     status: { la: verified, en: verified }
   - n: 38
     text:
-      la: "et super portam Ephraim et super portam Antiquam et super portam Piscium et turrem Ananehel et turrem Ema et usque ad portam Gregis et steterunt in porta Custodiae"
+      la: "et super portam Ephraim, et super portam antiquam, et super portam piscium et turrim Hananeel, et turrim Emath, et usque ad portam gregis: et steterunt in porta custodiae,"
       en: "And above the gate of Ephraim, and above the old gate, and above the fish gate and the tower of Hananeel, and the tower of Emath, and even to the flock gate: and they stood still in the watch gate."
     status: { la: verified, en: verified }
   - n: 39
     text:
-      la: "steteruntque duo chori laudantium in domo Dei et ego et dimidia pars magistratuum mecum"
+      la: "steteruntque duo chori laudantium in domo Dei, et ego, et dimidia pars magistratuum mecum."
       en: "And the two choirs of them that gave praise stood still at the house of God, and I and the half of the magistrates with me."
     status: { la: verified, en: verified }
   - n: 40
     text:
-      la: "et sacerdotes Eliachim Maasia Miniamin Michea Elioenai Zaccharia Anania in tubis"
+      la: "Et sacerdotes, Eliachim, Maasia, Miamin, Michea, Elioenai, Zacharia, Hanania in tubis,"
       en: "And the priests, Eliachim, Maasia, Miamin, Michea, Elioenai, Zacharia, Hanania with trumpets,"
     status: { la: verified, en: verified }
   - n: 41
     text:
-      la: "et Maasia et Semea et Eleazar et Azi et Iohanan et Melchia et Elam et Ezer et clare cecinerunt cantores et Iezraia praepositus"
+      la: "et Maasia, et Semeia, et Eleazar, et Azzi, et Johanan, et Melchia, et Aelam, et Ezer. Et clare cecinerunt cantores, et Jezraia praepositus:"
       en: "And Maasia, and Semeia, and Eleazar, and Azzi, and Johanan, and Melchia, and Elam, and Ezer. And the singers sung loud, and Jezraia was their overseer:"
     status: { la: verified, en: verified }
   - n: 42
     text:
-      la: "et immolaverunt in die illa victimas magnas et laetati sunt Deus enim laetificaverat eos laetitia magna sed et uxores eorum et liberi gavisi sunt et audita est laetitia Hierusalem procul"
+      la: "et immolaverunt in die illa victimas magnas, et laetati sunt: Deus enim laetificaverat eos laetitia magna: sed et uxores eorum, et liberi gavisi sunt, et audita est laetitia Jerusalem procul."
       en: "And they sacrificed on that day great sacrifices, and they rejoiced: for God had made them joyful with great joy: their wives also and their children rejoiced, and the joy of Jerusalem was heard afar off."
     status: { la: verified, en: verified }
   - n: 43
     text:
-      la: "recensuerunt quoque in die illa viros super gazofilacia thesauri ad libamina et ad primitias et ad decimas ut introferrent per eos principes civitatis in decore gratiarum actionis sacerdotes et Levitas quia laetatus est Iuda in sacerdotibus et Levitis adstantibus"
+      la: "Recensuerunt quoque in die illa viros super gazophylacia thesauri ad libamina, et ad primitias, et ad decimas, ut introferrent per eos principes civitatis in decore gratiarum actionis, sacerdotes et Levitas: quia laetificatus est Juda in sacerdotibus et Levitis adstantibus."
       en: "They appointed also in that day men over the storehouses of the treasure, for the libations, and for the firstfruits, and for the tithes, that the rulers of the city might bring them in by them in honour of thanksgiving, for the priests and Levites: for Juda was joyful in the priests and Levites that assisted."
     status: { la: verified, en: verified }
   - n: 44
     text:
-      la: "et custodierunt observationem Dei sui et observationem expiationis et cantores et ianitores iuxta praeceptum David et Salomonis filii eius"
+      la: "Et custodierunt observationem Dei sui, et observationem expiationis, et cantores, et janitores juxta praeceptum David, et Salomonis filii ejus,"
       en: "And they kept the watch of their God, and the observance of expiation, and the singing men, and the porters, according to the commandment of David, and of Solomon his son."
     status: { la: verified, en: verified }
   - n: 45
     text:
-      la: "quia in diebus David et Asaph ab exordio erant principes constituti cantorum in carmine laudantium et confitentium Deo"
+      la: "quia in diebus David et Asaph ab exordio erant principes constituti cantorum in carmine laudantium et confitentium Deo."
       en: "For in the days of David and Asaph from the beginning there were chief singers appointed, to praise with canticles, and give thanks to God."
     status: { la: verified, en: verified }
   - n: 46
     text:
-      la: "et omnis Israhel in diebus Zorobabel et in diebus Neemiae dabat partes cantoribus et ianitoribus per dies singulos et sanctificabant Levitas et Levitae sanctificabant filios Aaron"
+      la: "Et omnis Israel, in diebus Zorobabel, et in diebus Nehemiae, dabant partes cantoribus et janitoribus per dies singulos, et sanctificabant Levitas, et Levitae sanctificabant filios Aaron."
       en: "And all Israel, in the days of Zorobabel, and in the days of Nehemias gave portions to the singing men, and to the porters, day by day, and they sanctified the Levites, and the Levites sanctified the sons of Aaron."
     status: { la: verified, en: verified }

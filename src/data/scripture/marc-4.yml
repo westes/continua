@@ -1,207 +1,207 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: marc
 chapter: 4
 verses:
   - n: 1
     text:
-      la: "et iterum coepit docere ad mare et congregata est ad eum turba multa ita ut in navem ascendens sederet in mari et omnis turba circa mare super terram erat"
+      la: "Et iterum coepit docere ad mare: et congregata est ad eum turba multa, ita ut navim ascendens sederet in mari, et omnis turba circa mare super terram erat:"
       en: "And again he began to teach by the sea side; and a great multitude was gathered together unto him, so that he went up into a ship, and sat in the sea; and all the multitude was upon the land by the sea side."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "et docebat eos in parabolis multa et dicebat illis in doctrina sua"
+      la: "et docebat eos in parabolis multa, et dicebat illis in doctrina sua:"
       en: "And he taught them many things in parables, and said unto them in his doctrine:"
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "audite ecce exiit seminans ad seminandum"
+      la: "Audite: ecce exiit seminans ad seminandum."
       en: "Hear ye: Behold, the sower went out to sow."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "et dum seminat aliud cecidit circa viam et venerunt volucres et comederunt illud"
+      la: "Et dum seminat, aliud cecidit circa viam, et venerunt volucres caeli, et comederunt illud."
       en: "And whilst he sowed, some fell by the way side, and the birds of the air came and ate it up."
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "aliud vero cecidit super petrosa ubi non habuit terram multam et statim exortum est quoniam non habebat altitudinem terrae"
+      la: "Aliud vero cecidit super petrosa, ubi non habuit terram multam: et statim exortum est, quoniam non habebat altitudinem terrae:"
       en: "And other some fell upon stony ground, where it had not much earth; and it shot up immediately, because it had no depth of earth."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "et quando exortus est sol exaestuavit et eo quod non haberet radicem exaruit"
+      la: "et quando exortus est sol, exaestuavit: et eo quod non habebat radicem, exaruit."
       en: "And when the sun was risen, it was scorched; and because it had no root, it withered away."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et aliud cecidit in spinas et ascenderunt spinae et offocaverunt illud et fructum non dedit"
+      la: "Et aliud cecidit in spinas: et ascenderunt spinae, et suffocaverunt illud, et fructum non dedit."
       en: "And some fell among thorns; and the thorns grew up, and choked it, and it yielded no fruit."
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "et aliud cecidit in terram bonam et dabat fructum ascendentem et crescentem et adferebat unum triginta et unum sexaginta et unum centum"
+      la: "Et aliud cecidit in terram bonam: et dabat fructum ascendentem et crescentem, et afferebat unum triginta, unum sexaginta, et unum centum."
       en: "And some fell upon good ground; and brought forth fruit that grew up, and increased and yielded, one thirty, another sixty, and another a hundred."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "et dicebat qui habet aures audiendi audiat"
+      la: "Et dicebat: Qui habet aures audiendi, audiat."
       en: "And he said: He that hath ears to hear, let him hear."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "et cum esset singularis interrogaverunt eum hii qui cum eo erant cum duodecim parabolas"
+      la: "Et cum esset singularis, interrogaverunt eum hi qui cum eo erant duodecim, parabolam."
       en: "And when he was alone, the twelve that were with him asked him the parable."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "et dicebat eis vobis datum est mysterium regni Dei illis autem qui foris sunt in parabolis omnia fiunt"
+      la: "Et dicebat eis: Vobis datum est nosse mysterium regni Dei: illis autem, qui foris sunt, in parabolis omnia fiunt:"
       en: "And he said to them: To you it is given to know the mystery of the kingdom of God: but to them that are without, all things are done in parables:"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "ut videntes videant et non videant et audientes audiant et non intellegant nequando convertantur et dimittantur eis peccata"
+      la: "ut videntes videant, et non videant: et audientes audiant, et non intelligant: nequando convertantur, et dimittantur eis peccata."
       en: "That seeing they may see, and not perceive; and hearing they may hear, and not understand: lest at any time they should be converted, and their sins should be forgiven them."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "et ait illis nescitis parabolam hanc et quomodo omnes parabolas cognoscetis"
+      la: "Et ait illis: Nescitis parabolam hanc? Et quomodo omnes parabolas cognoscetis?"
       en: "And he saith to them: Are you ignorant of this parable? and how shall you know all parables?"
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "qui seminat verbum seminat"
+      la: "Qui seminat, verbum seminat."
       en: "He that soweth, soweth the word."
     status: { la: verified, en: verified }
   - n: 15
     text:
-      la: "hii autem sunt qui circa viam ubi seminatur verbum et cum audierint confestim venit Satanas et aufert verbum quod seminatum est in corda eorum"
+      la: "Hi autem sunt, qui circa viam, ubi seminatur verbum, et cum audierint, confestim venit Satanas, et aufert verbum, quod seminatum est in cordibus eorum."
       en: "And these are they by the way side, where the word is sown, and as soon as they have heard, immediately Satan cometh and taketh away the word that was sown in their hearts."
     status: { la: verified, en: verified }
   - n: 16
     text:
-      la: "et hii sunt similiter qui super petrosa seminantur qui cum audierint verbum statim cum gaudio accipiunt illud"
-      en: "And these likewise are they that are sown on the stony ground: who when they have heard the word, immediately recieve it with joy."
+      la: "Et hi sunt similiter, qui super petrosa seminantur: qui cum audierint verbum, statim cum gaudio accipiunt illud:"
+      en: "And these likewise are they that are sown on the stony ground: who when they have heard the word, immediately receive it with joy."
     status: { la: verified, en: verified }
   - n: 17
     text:
-      la: "et non habent radicem in se sed temporales sunt deinde orta tribulatione et persecutione propter verbum confestim scandalizantur"
+      la: "et non habent radicem in se, sed temporales sunt: deinde orta tribulatione et persecutione propter verbum, confestim scandalizantur."
       en: "And they have no root in themselves, but are only for a time: and then when tribulation and persecution ariseth for the word they are presently scandalized."
     status: { la: verified, en: verified }
   - n: 18
     text:
-      la: "et alii sunt qui in spinis seminantur hii sunt qui verbum audiunt"
+      la: "Et alii sunt qui in spinas seminantur: hi sunt qui verbum audiunt,"
       en: "And others there are who are sown among thorns: these are they that hear the word,"
     status: { la: verified, en: verified }
   - n: 19
     text:
-      la: "et aerumnae saeculi et deceptio divitiarum et circa reliqua concupiscentiae introeuntes suffocant verbum et sine fructu efficitur"
+      la: "et aerumnae saeculi, et deceptio divitiarum, et circa reliqua concupiscentiae introeuntes suffocant verbum, et sine fructu efficitur."
       en: "And the cares of the world, and the deceitfulness of riches, and the lusts after other things entering in choke the word, and it is made fruitless."
     status: { la: verified, en: verified }
   - n: 20
     text:
-      la: "et hii sunt qui super terram bonam seminati sunt qui audiunt verbum et suscipiunt et fructificant unum triginta et unum sexaginta et unum centum"
+      la: "Et hi sunt qui super terram bonam seminati sunt, qui audiunt verbum, et suscipiunt, et fructificant, unum triginta, unum sexaginta, et unum centum."
       en: "And these are they who are sown upon the good ground, who hear the word, and receive it, and yield fruit, the one thirty, another sixty, and another a hundred."
     status: { la: verified, en: verified }
   - n: 21
     text:
-      la: "et dicebat illis numquid venit lucerna ut sub modio ponatur aut sub lecto nonne ut super candelabrum ponatur"
+      la: "Et dicebat illis: Numquid venit lucerna ut sub modo ponatur, aut sub lecto? nonne ut super candelabrum ponatur?"
       en: "And he said to them: Doth a candle come in to be put under a bushel, or under a bed? and not to be set on a candlestick?"
     status: { la: verified, en: verified }
   - n: 22
     text:
-      la: "non enim est aliquid absconditum quod non manifestetur nec factum est occultum sed ut in palam veniat"
+      la: "Non est enim aliquid absconditum, quod non manifestetur: nec factum est occultum, sed ut in palam veniat."
       en: "For there is nothing hid, which shall not be made manifest: neither was it made secret, but that it may come abroad."
     status: { la: verified, en: verified }
   - n: 23
     text:
-      la: "si quis habet aures audiendi audiat"
+      la: "Si quis habet aures audiendi, audiat."
       en: "If any man have ears to hear, let him hear."
     status: { la: verified, en: verified }
   - n: 24
     text:
-      la: "et dicebat illis videte quid audiatis in qua mensura mensi fueritis remetietur vobis et adicietur vobis"
+      la: "Et dicebat illis: Videte quid audiatis. In qua mensura mensi fueritis, remetietur vobis, et adjicietur vobis."
       en: "And he said to them: Take heed what you hear. In what measure you shall mete, it shall be measured to you again, and more shall be given to you."
     status: { la: verified, en: verified }
   - n: 25
     text:
-      la: "qui enim habet dabitur illi et qui non habet etiam quod habet auferetur ab illo"
+      la: "Qui enim habet, dabitur illi: et qui non habet, etiam quod habet auferetur ab eo."
       en: "For he that hath, to him shall be given: and he that hath not, that also which he hath shall be taken away from him."
     status: { la: verified, en: verified }
   - n: 26
     text:
-      la: "et dicebat sic est regnum Dei quemadmodum si homo iaciat sementem in terram"
+      la: "Et dicebat: Sic est regnum Dei, quemadmodum si homo jaciat sementem in terram,"
       en: "And he said: So is the kingdom of God, as if a man should cast seed into the earth,"
     status: { la: verified, en: verified }
   - n: 27
     text:
-      la: "et dormiat et exsurgat nocte ac die et semen germinet et increscat dum nescit ille"
+      la: "et dormiat, et exsurgat nocte et die, et semen germinet, et increscat dum nescit ille."
       en: "And should sleep, and rise, night and day, and the seed should spring, and grow up whilst he knoweth not."
     status: { la: verified, en: verified }
   - n: 28
     text:
-      la: "ultro enim terra fructificat primum herbam deinde spicam deinde plenum frumentum in spica"
+      la: "Ultro enim terra fructificat, primum herbam, deinde spicam, deinde plenum frumentum in spica."
       en: "For the earth of itself bringeth forth fruit, first the blade, then the ear, afterwards the full corn in the ear."
     status: { la: verified, en: verified }
   - n: 29
     text:
-      la: "et cum se produxerit fructus statim mittit falcem quoniam adest messis"
+      la: "Et cum producerit fructus, statim mittit falcem, quoniam adsit messis."
       en: "And when the fruit is brought forth, immediately he putteth in the sickle, because the harvest is come."
     status: { la: verified, en: verified }
   - n: 30
     text:
-      la: "et dicebat cui adsimilabimus regnum Dei aut cui parabolae conparabimus illud"
+      la: "Et dicebat: Cui assimilabimus regnum Dei? aut cui parabolae comparabimus illud?"
       en: "And he said: To what shall we liken the kingdom of God? or to what parable shall we compare it?"
     status: { la: verified, en: verified }
   - n: 31
     text:
-      la: "sicut granum sinapis quod cum seminatum fuerit in terra minus est omnibus seminibus quae sunt in terra"
+      la: "Sicut granum sinapis, quod cum seminatum fuerit in terra, minus est omnibus seminibus, quae sunt in terra:"
       en: "It is as a grain of mustard seed: which when it is sown in the earth, is less than all the seeds that are in the earth:"
     status: { la: verified, en: verified }
   - n: 32
     text:
-      la: "et cum seminatum fuerit ascendit et fit maius omnibus holeribus et facit ramos magnos ita ut possint sub umbra eius aves caeli habitare"
+      la: "et cum seminatum fuerit, ascendit, et fit majus omnibus oleribus, et facit ramos magnos, ita ut possint sub umbra ejus aves caeli habitare."
       en: "And when it is sown, it groweth up, and becometh greater than all herbs, and shooteth out great branches, so that the birds of the air may dwell under the shadow thereof."
     status: { la: verified, en: verified }
   - n: 33
     text:
-      la: "et talibus multis parabolis loquebatur eis verbum prout poterant audire"
+      la: "Et talibus multis parabolis loquebatur eis verbum, prout poterant audire:"
       en: "And with many such parables, he spoke to them the word, according as they were able to hear."
     status: { la: verified, en: verified }
   - n: 34
     text:
-      la: "sine parabola autem non loquebatur eis seorsum autem discipulis suis disserebat omnia"
+      la: "sine parabola autem non loquebatur eis: seorsum autem discipulis suis disserebat omnia."
       en: "And without parable he did not speak unto them; but apart, he explained all things to his disciples."
     status: { la: verified, en: verified }
   - n: 35
     text:
-      la: "et ait illis illa die cum sero esset factum transeamus contra"
+      la: "Et ait illis in illa die, cum sero esset factum: Transeamus contra."
       en: "And he saith to them that day, when evening was come: Let us pass over to the other side."
     status: { la: verified, en: verified }
   - n: 36
     text:
-      la: "et dimittentes turbam adsumunt eum ita ut erat in navi et aliae naves erant cum illo"
+      la: "Et dimittentes turbam, assumunt eum ita ut erat in navi: et aliae naves erant cum illo."
       en: "And sending away the multitude, they take him even as he was in the ship: and there were other ships with him."
     status: { la: verified, en: verified }
   - n: 37
     text:
-      la: "et facta est procella magna venti et fluctus mittebat in navem ita ut impleretur navis"
+      la: "Et facta est procella magna venti, et fluctus mittebat in navim, ita ut impleretur navis."
       en: "And there arose a great storm of wind, and the waves beat into the ship, so that the ship was filled."
     status: { la: verified, en: verified }
   - n: 38
     text:
-      la: "et erat ipse in puppi supra cervical dormiens et excitant eum et dicunt ei magister non ad te pertinet quia perimus"
+      la: "Et erat ipse in puppi super cervical dormiens: et excitant eum, et dicunt illi: Magister, non ad te pertinet, quia perimus?"
       en: "And he was in the hinder part of the ship, sleeping upon a pillow; and they awake him, and say to him: Master, doth it not concern thee that we perish?"
     status: { la: verified, en: verified }
   - n: 39
     text:
-      la: "et exsurgens comminatus est vento et dixit mari tace obmutesce et cessavit ventus et facta est tranquillitas magna"
+      la: "Et exsurgens comminatus est vento, et dixit mari: Tace, obmutesce. Et cessavit ventus: et facta est tranquillitas magna."
       en: "And rising up, he rebuked the wind, and said to the sea: Peace, be still. And the wind ceased: and there was made a great calm."
     status: { la: verified, en: verified }
   - n: 40
     text:
-      la: "et ait illis quid timidi estis necdum habetis fidem et timuerunt magno timore et dicebant ad alterutrum quis putas est iste quia et ventus et mare oboediunt ei"
+      la: "Et ait illis: Quid timidi estis? necdum habetis fidem? et timuerunt timore magno, et dicebant ad alterutrum: Quis, putas, est iste, quia et ventus et mare obediunt ei?"
       en: "And he said to them: Why are you fearful? have you not faith yet? And they feared exceedingly: and they said one to another: Who is this (thinkest thou) that both wind and sea obey him?"
     status: { la: verified, en: verified }

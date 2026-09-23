@@ -1,77 +1,77 @@
-# Douay-Rheims + Latin Vulgate, bulk-imported from a public-domain
-# "Unbound Bible" tab-format source (both texts, verse-count and
-# verse-numbering cross-checked to agree before import; see
-# TODO.md's bulk scripture import entry).
+# Douay-Rheims + Clementine Vulgate, from drbo.org's combined "DR + LV"
+# chapter page, which keeps each verse's Latin and English in the same
+# block. Replaced the earlier "Unbound Bible" import (critical-edition
+# Latin, OCR-damaged English) on 2026-09-23; see TODO.md.
 book: 2par
 chapter: 5
 verses:
   - n: 1
     text:
-      la: "intulit igitur Salomon omnia quae voverat David pater suus argentum et aurum et universa vasa posuit in thesauris domus Dei"
+      la: "Intulit igitur Salomon omnia, quae voverat David pater suus: argentum, et aurum, et universa vasa posuit in thesauris domus Dei."
       en: "Then Solomon brought in all the things that David his father had vowed, the silver, and the gold, and all the vessels he put among the treasures of the house of God."
     status: { la: verified, en: verified }
   - n: 2
     text:
-      la: "post quae congregavit maiores natu Israhel et cunctos principes tribuum et capita familiarum de filiis Israhel in Hierusalem ut adducerent arcam foederis Domini de civitate David quae est Sion"
+      la: "Post quae congregavit majores natu Israel, et cunctos principes tribuum, et capita familiarum de filiis Israel in Jerusalem, ut adducerent arcam foederis Domini de civitate David, quae est Sion."
       en: "And after this he gathered together the ancients of Israel, and all the princes of the tribes, and the heads of the families, of the children of Israel to Jerusalem, to bring the ark of the covenant of the Lord out of the city of David, which is Sion."
     status: { la: verified, en: verified }
   - n: 3
     text:
-      la: "venerunt igitur ad regem omnes viri Israhel in die sollemni mensis septimi"
+      la: "Venerunt itaque ad regem omnes viri Israel in die solemni mensis septimi."
       en: "And all the men of Israel came to the king in the solemn day of the seventh month."
     status: { la: verified, en: verified }
   - n: 4
     text:
-      la: "cumque venissent cuncti seniorum Israhel portaverunt Levitae arcam"
+      la: "Cumque venissent cuncti seniorum Israel, portaverunt Levitae arcam,"
       en: "And when all the ancients of Israel were come, the Levites took up the ark,"
     status: { la: verified, en: verified }
   - n: 5
     text:
-      la: "et intulerunt eam et omnem paraturam tabernaculi porro vasa sanctuarii quae erant in tabernaculo portaverunt sacerdotes cum Levitis"
+      la: "et intulerunt eam, et omnem paraturam tabernaculi. Porro vasa sanctuarii, quae erant in tabernaculo, portaverunt sacerdotes cum Levitis."
       en: "And brought it in, together with all the furniture of the tabernacle. And the priests with the Levites carried the vessels of the sanctuary, which were in the tabernacle."
     status: { la: verified, en: verified }
   - n: 6
     text:
-      la: "rex autem Salomon et universus coetus Israhel et omnes qui fuerant congregati ante arcam immolabant arietes et boves absque ullo numero tanta enim erat multitudo victimarum"
+      la: "Rex autem Salomon, et universus coetus Israel, et omnes, qui fuerunt congregati ante arcam, immolabant arietes, et boves absque ullo numero: tanta enim erat multitudo victimarum."
       en: "And king Solomon and all the assembly of Israel, and all that were gathered together before the ark, sacrificed rams, and oxen without number: so great was the multitude of the victims."
     status: { la: verified, en: verified }
   - n: 7
     text:
-      la: "et intulerunt sacerdotes arcam foederis Domini in locum suum id est ad oraculum templi in sancta sanctorum subter alas cherubin"
+      la: "Et intulerunt sacerdotes arcam foederis Domini in locum suum, id est, ad oraculum templi, in Sancta sanctorum subter alas cherubim:"
       en: "And the priests brought in the ark of the covenant of the Lord into its place, that is, to the oracle of the temple, into the holy of holies under the wings of the cherubims:"
     status: { la: verified, en: verified }
   - n: 8
     text:
-      la: "ita ut cherubin expanderent alas suas super locum in quo posita erat arca et ipsam arcam tegerent cum vectibus eius"
+      la: "ita ut cherubim expanderent alas suas super locum, in quo posita erat arca, et ipsam arcam tegerent cum vectibus suis."
       en: "So that the cherubims spread their wings over the place, in which the ark was set, and covered the ark itself and its staves."
     status: { la: verified, en: verified }
   - n: 9
     text:
-      la: "vectium autem quibus portabatur arca quia paululum longiores erant capita parebant ante oraculum si vero quis paululum fuisset extrinsecus eos videre non poterat fuit itaque arca ibi usque in praesentem diem"
+      la: "Vectium autem, quibus portabatur arca, quia paululum longiores erant, capita parebant ante oraculum: si vero quis paululum fuisset extrinsecus, eos videre non poterat. Fuit itaque arca ibi usque in praesentem diem."
       en: "Now the ends of the staves wherewith the ark was carried, because they were some thing longer, were seen before the oracle: but if a man were a little outward, he could not see them. So the ark has been there unto this day."
     status: { la: verified, en: verified }
   - n: 10
     text:
-      la: "nihilque erat aliud in arca nisi duae tabulae quas posuerat Moses in Horeb quando legem dedit Dominus filiis Israhel egredientibus ex Aegypto"
+      la: "Nihilque erat aliud in arca, nisi duae tabulae, quas posuerat Moyses in Horeb, quando legem dedit Dominus filiis Israel egredientibus ex Aegypto."
       en: "And there was nothing else in the ark but the two tables which Moses put there at Horeb when the Lord gave the law to the children of Israel, at their coming out of Egypt."
     status: { la: verified, en: verified }
   - n: 11
     text:
-      la: "egressis autem sacerdotibus de sanctuario omnes enim sacerdotes qui ibi potuerant inveniri sanctificati sunt nec adhuc illo tempore vices et ministeriorum ordo inter eos divisus erat"
-      en: "Now when the priests were come out of the sanctuary, (for all the priests that could be found there, mere sanctified: and as yet at that time the courses and orders of the ministries were not divided among them,)"
+      la: "Egressis autem sacerdotibus de sanctuario ( omnes enim sacerdotes qui ibi potuerant inveniri, sanctificati sunt: nec adhuc in illo tempore vices, et ministeriorum ordo inter eos divisus erat),"
+      en: "Now when the priests were come out of the sanctuary, (for all the priests that could be found there, were sanctified: and as yet at that time the courses and orders of the ministries were not divided among them,)"
     status: { la: verified, en: verified }
   - n: 12
     text:
-      la: "tam Levitae quam cantores id est et qui sub Asaph erant et qui sub Heman et qui sub Idithun filii et fratres eorum vestiti byssinis cymbalis et psalteriis et citharis concrepabant stantes ad orientalem plagam altaris cumque eis sacerdotes centum viginti canentes tubis"
+      la: "tam Levitae quam cantores, id est, et qui sub Asaph erant, et qui sub Eman, et qui sub Idithun, filii, et fratres eorum vestiti byssinis, cymbalis, et psalteriis, et citharis concrepabant, stantes ad orientalem plagam altaris, et cum eis sacerdotes centum viginti canentes tubis."
       en: "Both the Levites and the singing men, that is, both they that were under Asaph, and they that were under Heman, and they that were under Idithun, with their sons, and their brethren, clothed with fine linen, sounded with cymbals, and psalteries, and harps, standing on the east side of the altar, and with them a hundred and twenty priests, sounding with trumpets."
     status: { la: verified, en: verified }
   - n: 13
     text:
-      la: "igitur cunctis pariter et tubis et voce et cymbalis et organis et diversi generis musicorum concinentibus et vocem in sublime tollentibus longe sonitus audiebatur ita ut cum Dominum laudare coepissent et dicere confitemini Domino quoniam bonus quoniam in aeternum misericordia eius impleretur domus Domini nube"
-      en: "So when they all sounded together, both with trumpets, and voice, and cymbals, and organs, and with divers kind of musical instruments, and lifted up their voice on high : the sound was heard afar off, so that when they began to praise the Lord, and to say: Give glory to the Lord for he is good, for his mercy endureth for ever: the house of God was filled with a cloud."
+      la: "Igitur cunctis pariter, et tubis, et voce, et cymbalis, et organis, et diversi generis musicorum concinentibus, et vocem in sublime tollentibus, longe sonitus audiebatur, ita ut cum Dominum laudare coepissent et dicere: Confitemini Domino quoniam bonus, quoniam in aeternum misericordia ejus: impleretur domus Dei nube,"
+      en: "So when they all sounded together, both with trumpets, and voice, and cymbals, and organs, and with divers kind of musical instruments, and lifted up their voice on high: the sound was heard afar off, so that when they began to praise the Lord, and to say: Give glory to the Lord for he is good, for his mercy endureth for ever: the house of God was filled with a cloud."
     status: { la: verified, en: verified }
   - n: 14
     text:
-      la: "nec possent sacerdotes stare et ministrare propter caliginem conpleverat enim gloria Domini domum Dei"
+      la: "nec possent sacerdotes stare et ministrare propter caliginem. Compleverat enim gloria Domini domum Dei."
       en: "Nor could the priests stand and minister by reason of the cloud. For the glory of the Lord had filled the house of God."
     status: { la: verified, en: verified }
