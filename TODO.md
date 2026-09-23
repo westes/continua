@@ -8194,3 +8194,30 @@ no rank floor — confirming Lauds/Vespers genuinely differ and Terce still gets
 the direct in-app re-confirmation of the tier verification from (1).
 
 `tsc --noEmit`, `npm test` (4311 passed), and `vite build` all pass.
+
+### Scripture store: stray verse numbers glued into verse text (2026-09-23)
+
+Found via today's Matins Esther reading ("21That they should receive…", `esth-9:21`): the bulk
+"Unbound Bible" Douay-Rheims import sometimes left the source's verse number glued to the start of
+the English text. A scan for any scripture verse text starting with a digit turned up two kinds of
+problem (all in `en`, none in `la`):
+
+- **43 verses where the number was just glued on** and the text was otherwise right (checked
+  against each verse's Latin), e.g. `esth-4:11`, `esth-9:15/21`, `prov-13:21`, `lev-19:31`,
+  `sir-43:31`, `3reg-9:11`. Removed the number. Also fixed two scanning errors seen along the way:
+  `gen-49:11` "0 my son" → "O my son" and `2esdr-3:11` "Ha- sub" → "Hasub".
+- **12 chapters where a verse held another verse's English or a cut-off fragment**, e.g.
+  `2reg-5:1`/`jdc-6:1` holding verse 10's text ("1O And…", with the letter O in place of a zero),
+  `deut-1:4`/`jos-18:2`/`num-7:3` holding verse 41/21/31's text ("4l…", with the letter l in place
+  of a one), `deut-11:6` holding verse 32's text with `deut-11:32` reduced to just "32", and cut-off
+  fragments at `1par-21:8`, `2par-4:1`, `2par-30:1`, `ezek-43:8`, `2mach-13:18`. Re-fetched each
+  affected chapter from drbo.org's combined DR+LV page (the same source and page format as the
+  2026-09-03 re-sourcing) and compared every English verse in those chapters with it. That also
+  turned up the neighbouring verses that had lost text to the misplaced fragments
+  (`1par-21:15`, `2par-4:22`, `2par-30:10`, `ezek-43:20`, `2mach-13:8`, `prov-8:11`). Replaced
+  19 verses in total with drbo.org's text.
+
+New invariant in `tests/scripture/bulk-import.test.ts`: no verse's `la`/`en` text may start with
+a digit.
+
+`npm test` (5496 passed) and `npm run build` both pass.

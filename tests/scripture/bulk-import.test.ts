@@ -55,4 +55,18 @@ describe('src/data/scripture bulk import', () => {
       expect(numbers).toEqual([...numbers].sort((a, b) => a - b));
     },
   );
+
+  // The "Unbound Bible" source sometimes glued a verse number onto the start
+  // of the text ("21That they should…"), or put another verse's text or a
+  // truncated fragment under a verse ("1O And…", "8oor of Ornan…"). Both show
+  // up as a leading digit. No real verse text begins with one.
+  it.each(chapters.map((c) => [`${c.book} ${c.chapter}`, c] as const))(
+    '%s has no verse text starting with a stray verse number',
+    (_label, chapter) => {
+      for (const verse of chapter.verses) {
+        expect(verse.text.la ?? '', `${chapter.book}-${chapter.chapter}:${verse.n} la`).not.toMatch(/^\d/);
+        expect(verse.text.en ?? '', `${chapter.book}-${chapter.chapter}:${verse.n} en`).not.toMatch(/^\d/);
+      }
+    },
+  );
 });
