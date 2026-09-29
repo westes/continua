@@ -1,5 +1,5 @@
-# Transcribed directly from the reference engine's own source files
-# (Latin: web/www/horas/Latin/Sancti/09-29.txt, English:
+# Transcribed from the reference engine's own source files (Latin:
+# web/www/horas/Latin/Sancti/09-29.txt + SanctiM/09-29.txt, English:
 # web/www/horas/English/Sancti/09-29.txt), Monastic Tridentinum 1617
 # rubric. Companion file to ../apparition-of-st-michael.yml — see that
 # file's own header for the "Common-of-an-Angel doesn't exist" context.
@@ -7,22 +7,16 @@
 # **Correction to this saint's own calendar-file comment** (`src/data/
 # calendar/saints/st-michael.yml`, which says the two feasts' content is
 # "word-for-word identical" and that only the *collect* needed checking):
-# that claim holds for the Oratio (confirmed — 09-29.txt's own file has
-# no `[Oratio]` block at all, only `[Ant Matutinum]` and `[Lectio4]`
-# through `[Lectio9]` overrides, so the collect genuinely does fall back
-# to Apparition's via the file's own `ex Sancti/05-08` default), but the
-# Matins **psalmody antiphons are NOT shared** — 09-29.txt supplies its
-# own full set of 9 distinct proper antiphons (one per psalm, no repeats
-# across a group, unlike Apparition's grouped-repeat pattern), and
-# Lessons 4-9 are also this feast's own (St. Gregory's homily on the nine
-# choirs of Angels, not St. Bernard's). Only the Nocturn 1/2/3 **Versum**
-# (closing versicle) genuinely falls back unchanged to Apparition's own
-# (09-29.txt has no `[Nocturn N Versum]` override of its own) — reused
-# verbatim below, minus Apparition's Paschaltide alleluias, since Sept 29
-# is never in Paschaltide (Nocturn 2's third antiphon still keeps its own
-# built-in "allelúja, allelúja" — that's fixed text in the antiphon
-# itself, shared word-for-word with Apparition's own Nocturn 2 antiphon,
-# not a seasonal addition).
+# that claim holds for the Oratio (confirmed — 09-29.txt has no [Oratio]
+# block), but Matins psalmody is NOT shared — 09-29.txt supplies its own
+# 9 proper antiphons. Only the Versum blocks fall back to Apparition's.
+#
+# Monastic structure (SanctiM/09-29.txt): 12 lectiones → 6+6+3
+# (N1 = Ps 8,10,14,18,23,33; N2 = Ps 89,95,96,97,98,102; N3 = canticles
+# Isa 33:2-10, Isa 33:13-18, Sir 36:14-19). N2 is composed from
+# Sancti/09-29 lines 7-9 interleaved with 3 [AntMatutinumM] antiphons;
+# the line-7 psalm 95 antiphon ("Ángelus Archángelus...") retains its
+# own built-in "allelúja, allelúja" as fixed text, not a seasonal add.
 #
 # Per this app's own established note (`hours/matins.ts`'s
 # `getMatinsSaintOverride`/`getMatinsPsalmodyOverride`, keyed off the
@@ -69,6 +63,10 @@ nocturn1:
       en: "Having a golden censer in his hand."
 nocturn2:
   groups:
+    - psalms: [89]
+      antiphon:
+        la: "Sancte Míchaël Archángele, defénde nos in prœ́lio, * ut non pereámus in treméndo judício."
+        en: "Saint Michael the Archangel, defend us in battle, * that we may not perish at the dreadful judgment."
     - psalms: [95]
       antiphon:
         la: "Ángelus Archángelus Míchaël, * Dei núntius pro animábus justis, allelúja, allelúja."
@@ -77,10 +75,18 @@ nocturn2:
       antiphon:
         la: "Data sunt ei * incénsa multa, ut adoléret ea ante altáre áureum, quod est ante óculos Dómini."
         en: "There was given unto him * much incense, that he should offer it upon the golden altar which is before the eyes of the Lord."
-    - psalms: [102]
+    - psalms: [97]
       antiphon:
         la: "Multa magnália * de Michaéle Archángelo, qui, fortis in prǽlio, fecit victóriam."
         en: "Great things are spoken * of Michael the Archangel, who waxed valiant in fight, and won the victory."
+    - psalms: [98]
+      antiphon:
+        la: "Stetit Angelus juxta aram templi, * habens thuríbulum áureum in manu sua."
+        en: "An Angel stood before the altar of the temple, * having a golden censer in his hand."
+    - psalms: [102]
+      antiphon:
+        la: "Benedícite Dóminum, omnes Angeli ejus: * benedícite, minístri ejus, qui fácitis voluntátem ejus: Benedícite Dóminum."
+        en: "O bless the Lord, all His Angels; bless Him, His ministers; all those who do His will, bless the Lord."
   versicle:
     v:
       la: "Ascéndit fumus arómatum in conspéctu Dómini."
@@ -89,6 +95,16 @@ nocturn2:
       la: "De manu Angeli."
       en: "Out of the Angel's hand."
 nocturn3:
+  antiphon:
+    la: "Míchaël, Gábriel, * Chérubim et Séraphim, qui non cessant clamáre quotídie, dicéntes: Dignus es, Dómine, accípere glóriam."
+    en: "Michael, Gabriel, Cherubim and Seraphim, who never cease to proclaim daily, saying: Thou art worthy, O Lord, to receive glory."
+  canticles:
+    - refs:
+        - { book: isa, chapter: 33, verses: "2-10" }
+    - refs:
+        - { book: isa, chapter: 33, verses: "13-18" }
+    - refs:
+        - { book: sir, chapter: 36, verses: "14-19" }
   versicle:
     v:
       la: "In conspéctu Angelórum psallam tibi, Deus meus."

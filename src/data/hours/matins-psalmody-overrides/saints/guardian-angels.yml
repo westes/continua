@@ -1,20 +1,18 @@
-# Transcribed directly from the reference engine's own source files
-# (Latin: web/www/horas/Latin/Sancti/10-02.txt, English:
+# Transcribed from the reference engine's own source files (Latin:
+# web/www/horas/Latin/Sancti/10-02.txt + SanctiM/10-02.txt, English:
 # web/www/horas/English/Sancti/10-02.txt), Monastic Tridentinum 1617
 # rubric. Companion file to ../apparition-of-st-michael.yml — see that
 # file's own header for the "Common-of-an-Angel doesn't exist" context.
 #
-# This saint's own calendar file (`src/data/calendar/saints/guardian-
-# angels.yml`) already correctly flagged the key finding: the untagged
-# [Rank] block reads "Duplex majus;;4;;vide C4" (Common of a Confessor
-# Bishop), but that's a structural/lesson-count tag only — the feast's
-# own [Ant Matutinum] block supplies 9 fully distinct proper antiphons
-# (one per psalm, no repeats), confirming genuinely proper content, not
-# Common-of-a-Confessor-Bishop's own scheme. Nocturn 1/2/3's own Versum
-# fields all read `@Sancti/05-08` (a bare whole-section copy, no field
-# name given) -- these fall back unchanged to Apparition of St. Michael's
-# own Nocturn 1/2/3 versicles (see apparition-of-st-michael.yml), minus
-# her Paschaltide alleluias, since Oct 2 is never in Paschaltide.
+# The secular [Ant Matutinum] supplies 9 distinct proper antiphons.
+# Versum blocks fall back to Apparition of St. Michael (Sancti/05-08)
+# without Paschaltide alleluias, since Oct 2 is never in Paschaltide.
+#
+# Monastic structure (SanctiM/10-02.txt): 12 lectiones → 6+6+3
+# (N1 = Ps 8,10,14,18,23,33; N2 = Ps 89,95,96,97,98,102; N3 = canticles
+# Isa 33:2-10, Isa 33:13-18, Sir 36:14-19). N2 is composed from secular
+# line 7 (s/95/89/) + [AntMatutinumM]:1 (Ps 95) + line 8 + [AntMatutinumM]:2-3
+# (Ps 97, 98) + line 9 — same N2 psalm pool as st-michael.yml.
 id: guardian-angels
 nocturn1:
   groups:
@@ -51,14 +49,26 @@ nocturn1:
       en: "Having a golden censer in his hand."
 nocturn2:
   groups:
-    - psalms: [95]
+    - psalms: [89]
       antiphon:
         la: "Misit Dóminus * Angelum suum, qui percússit omnem virum robústum et bellatórem, et príncipem exércitus regis Assyriórum."
         en: "The Lord sent His Angel, which cut off all the mighty of valour, and the leaders and captains in the camp of the King of Assyria."
+    - psalms: [95]
+      antiphon:
+        la: "Stetit Angelus * juxta aram templi, habens thuríbulum áureum in manu sua."
+        en: "An Angel stood at the Altar of the Temple, having a golden censer in his hand."
     - psalms: [96]
       antiphon:
         la: "Adoráte Dóminum * omnes Angeli ejus: audívit, et lætáta est Sion."
         en: "Worship the Lord, all ye His Angels! Zion heard, and was glad."
+    - psalms: [97]
+      antiphon:
+        la: "Mitte, Dómine, * Angelum bonum ante nos in timóre bráchii tui, ut métuant qui odérunt nos."
+        en: "Send, O Lord, thy good Angel before us, in the fear of thine arm, that they who hate us may fear."
+    - psalms: [98]
+      antiphon:
+        la: "Angelus meus * vobíscum est, dicit Dóminus: ipse autem exquíret ánimas vestras."
+        en: "My Angel is with you, saith the Lord; but he shall also require your souls."
     - psalms: [102]
       antiphon:
         la: "Benedícite Dómino, * omnes Angeli ejus, poténtes virtúte, faciéntes verbum illíus, ad audiéndam vocem sermónum ejus."
@@ -71,6 +81,16 @@ nocturn2:
       la: "De manu Angeli."
       en: "Out of the Angel's hand."
 nocturn3:
+  antiphon:
+    la: "Ecce ego * mitto Angelum meum, qui præparábit viam meam ante fáciem tuam."
+    en: "Behold, I send my Angel before thee, who shall prepare my way before thy face."
+  canticles:
+    - refs:
+        - { book: isa, chapter: 33, verses: "2-10" }
+    - refs:
+        - { book: isa, chapter: 33, verses: "13-18" }
+    - refs:
+        - { book: sir, chapter: 36, verses: "14-19" }
   versicle:
     v:
       la: "In conspéctu Angelórum psallam tibi, Deus meus."
