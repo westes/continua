@@ -8262,3 +8262,34 @@ are cited as whole chapters, so those readings are now longer.
 `tests/scripture/bulk-import.test.ts` no longer tolerates isolated missing English. There are no
 `missing` verses left in the store. `npm test` (5496 passed) and `npm run build` pass. Checked in
 the app: 2026-09-23 Matins (Esther 9–10) and 2026-10-26 (full Daniel 3).
+
+
+### Matins psalmody overrides: secular 3+3+3 → Monastic 6+6+canticles (2026-09-29)
+
+Three saints' psalmody overrides were authored from the secular `Sancti/` track rather than the
+Monastic `SanctiM/` track. The secular track uses 9 antiphons across a 3+3+3 distribution; the
+Monastic track interleaves 3 `[AntMatutinumM]` antiphons into the secular set, yielding 12 psalms
+(6+6 across Nocturns 1 and 2), then replaces Nocturn 3 outright with 3 OT canticles under a single
+shared antiphon (`[Ant Matutinum 3N]`).
+
+**st-michael (Sep 29):** Also fixed feast name ("St. Michael the Archangel" → "Dedication of the
+Archbasilica of St. Michael the Archangel"; `nameLa` updated to match) and created
+`matins-invitatory-st-michael.yml` (was falling through to ferial default). Psalmody: N2 expanded
+3→6 groups (Ps 89/95/96/97/98/102 with 3 `AntMatutinumM` additions); N3 added with antiphon
+"Míchaël, Gábriel..." + canticles Isa 33:2-10, 33:13-18, Sir 36:14-19.
+
+**guardian-angels (Oct 2):** same structural fix; N2 expanded 3→6 (Ps 89/95/96/97/98/102, secular
+ant 7 moved from Ps 95→89, three new `AntMatutinumM` antiphons added); N3 added with antiphon
+"Ecce ego mitto Angelum meum..." + same Isa/Sir canticles.
+
+**all-saints (Nov 1):** fully restructured from secular 3+3+3 (Ps 1/4/8, 14/23/31, 33/60/96) to
+Monastic 6+6+canticles (N1=Ps 1/4/5/8/14/23, N2=Ps 30/31/33/60/83/96, N3=Sap 3:1-6, 3:7-9,
+10:17-21 under antiphon "Laudem dícite * Deo nostro..."). Canticle 255 uses Sap 10:17-21 (live-
+verified from St. Andrew's own N3 third canticle), not Sap 3:17-21 as `Monastic canticles.txt`
+labels it — consistent with the existing st-andrew.yml override which has the same live-verified
+discrepancy.
+
+Feasts already in correct Monastic 6+6+canticles form (no changes): st-lawrence, st-scholastica,
+finding-of-the-holy-cross, exaltation-of-the-holy-cross, nativity-of-john-baptist, st-andrew.
+
+`npm test` (5496 passed) and `npm run build` pass.
