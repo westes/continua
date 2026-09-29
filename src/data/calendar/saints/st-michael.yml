@@ -17,6 +17,9 @@
 # alternates. That's just this feast's real rank (3, fairly low) losing
 # every tested year, not an absence from the calendar.
 id: st-michael
+# Browser-tab title only (format.ts TITLE_CELEBRATION_MAX_LENGTH=40; the
+# full name is 59 chars and truncates before "Michael"). See assumption.yml.
+titleName: "Dedication of St. Michael's Basilica"
 name: "Dedication of the Archbasilica of St. Michael the Archangel"
 nameLa: "In Dedicatione Sancti Michaelis Archangeli"
 rank: duplex-1-classis
