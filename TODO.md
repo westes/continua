@@ -8293,3 +8293,32 @@ Feasts already in correct Monastic 6+6+canticles form (no changes): st-lawrence,
 finding-of-the-holy-cross, exaltation-of-the-holy-cross, nativity-of-john-baptist, st-andrew.
 
 `npm test` (5496 passed) and `npm run build` pass.
+
+### Common category field unification + minor-hour antiphon mechanism fix (2026-09-30)
+
+Three related fixes:
+
+**Mechanism:** `deriveMinorHourAntiphonFromLauds` was calling `getLaudsSaintOverride` (saint-specific
+only), bypassing the Common-category tier entirely, so all feast saints fell to ferial antiphons at
+Terce/Sext/None/Prime. Fixed by switching to `getLaudsPsalmodyOverride` (saint-specific first, then
+category-level fallback) — matches the DO source's `getanthoras()` behavior. Also wired
+`withPaschaltideAlleluia` onto the derived result (was already on the explicit Common fallback, not
+the derived path). Test updated: `common-of-several-martyrs` nocturn antiphon now receives the Lauds
+category's "allelúia" spelling rather than the explicit file's "allelúja" — same text, correct source.
+
+**Content:** authored Benedictus antiphon, Magnificat antiphon, and Terce/Sext/None capitulum files
+for four categories that lacked them: `confessor-doctor`, `confessor-pope`, `martyr-bishop`, `widow`.
+Content matches the category each previously cross-referenced. Notes: confessor-pope Magnificat is
+a distinct antiphon ("Dum esset Summus Póntifex..."), not the same as confessor-bishop. Doctor
+Magnificat ("O Doctor óptime, beáte N....") uses C4a's Ant 1 with standard "N." saint-name
+placeholder; English status `draft`.
+
+**Field unification:** every saint file's `common`, `benedictusCommon`, and `minorHoursCommon` fields
+now use the same real category ID throughout, not cross-referencing a different category for some
+hours. 22 Doctor saints → `confessor-doctor` (including Jerome, Thomas Aquinas, 15 bishop+Doctors
+that were all on `confessor-bishop`; Bernard stays on `abbot`). 8 inconsistent Virgin-Martyrs →
+`virgin-martyr` for `bened`/`minor`. 6 Widow saints → `widow` for all fields. 3 Pope-Confessor
+saints → `confessor-pope` for `bened`/`minor`. ~35 Martyr-Bishop saints → `martyr-bishop` for
+`bened`/`minor`.
+
+`npm test` (5496 passed).
