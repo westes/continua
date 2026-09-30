@@ -1,16 +1,11 @@
 # Verified against Divinum Officium (Monastic Tridentinum 1617), live kalendar
 # check (2033-03-07, no Sunday collision) -- winner outright, Duplex. Own
-# proper collect, no unique antiphon of his own. Not a bishop, so
-# "common-of-a-confessor" rather than the -bishop variant.
+# proper collect, no unique antiphon of his own.
 id: st-thomas-aquinas
 name: "St. Thomas Aquinas, Priest and Doctor of the Church"
 nameLa: "Sanctus Thomas de Aquino, Presbyter et Ecclesiæ Doctor"
 rank: duplex
-common: common-of-a-confessor
+common: common-of-a-confessor-doctor
 propers: "st-thomas-aquinas"
-# P/T/S/N: no [Ant Prima]/etc of its own in the source (03-07.txt) --
-# [Rule]/[Rank] point to Commune/C5a instead, the same C-number family
-# already live-query-verified for common-of-an-abbot.yml (see TODO.md's
-# 'minor hour content gaps' section).
-minorHoursCommon: common-of-an-abbot
-benedictusCommon: common-of-a-confessor
+minorHoursCommon: common-of-a-confessor-doctor
+benedictusCommon: common-of-a-confessor-doctor

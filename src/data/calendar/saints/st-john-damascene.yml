@@ -1,17 +1,12 @@
 # Read directly from the reference engine: untagged/default [Rank]
 # block of `web/www/horas/Latin/Sancti/03-27.txt` -- "vide C5a;;Duplex;;3;;"
-# ("Commune Doctoris non Pontificis" -- Common of a Doctor who is not a
-# Bishop, since John Damascene was a monk-priest, not a bishop). Own
-# proper [Oratio] and Nocturn 2-3 content. No [Ant 1] of its own; C5a's
-# own [Ant 1] is itself a cross-reference to C4a (Common of a Confessor
-# Bishop who is a Doctor) -- the underlying antiphon is shared
-# regardless of episcopal rank, so benedictusCommon points at the
-# already-authored `benedictus-antiphon-common-of-a-confessor-
-# bishop.yml` directly rather than duplicating it under a new id.
+# ("Commune Doctoris non Pontificis"). Own proper [Oratio] and Nocturn 2-3
+# content.
 id: st-john-damascene
 name: "St. John Damascene, Priest and Doctor of the Church"
 nameLa: "Sanctus Joannes Damascenus, Presbyter et Ecclesiæ Doctor"
 rank: duplex
 common: common-of-a-confessor-doctor
 propers: "st-john-damascene"
-benedictusCommon: common-of-a-confessor-bishop
+minorHoursCommon: common-of-a-confessor-doctor
+benedictusCommon: common-of-a-confessor-doctor

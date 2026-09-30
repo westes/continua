@@ -2,16 +2,12 @@
 # block of `web/www/horas/Latin/Sancti/05-13.txt` -- "Duplex;;3;;vide
 # C4a" (Commune Doctoris non Pontificis). Own real proper [Oratio] and
 # own Nocturn 2-3 content (Nocturn 3 is his own homily, not a
-# cross-reference). No [Ant 1] of his own; benedictusCommon points at
-# the already-authored `benedictus-antiphon-common-of-a-confessor-
-# bishop.yml` directly, same reasoning as st-john-damascene.yml/
-# st-peter-canisius.yml (C4a's own [Ant 1] is itself a cross-reference
-# to C4).
+# cross-reference).
 id: st-robert-bellarmine
 name: "St. Robert Bellarmine, Bishop, Confessor and Doctor of the Church"
 nameLa: "Sanctus Robertus Bellarminus, Episcopus, Confessor et Ecclesiæ Doctor"
 rank: duplex
 common: common-of-a-confessor-doctor
 propers: "st-robert-bellarmine"
-benedictusCommon: common-of-a-confessor-bishop
-minorHoursCommon: common-of-a-confessor-bishop
+minorHoursCommon: common-of-a-confessor-doctor
+benedictusCommon: common-of-a-confessor-doctor

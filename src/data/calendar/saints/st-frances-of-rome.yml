@@ -13,10 +13,10 @@ common: common-of-a-widow
 propers: "st-frances-of-rome"
 # No [Ant 1] of its own in the source (03-09.txt) -- [Rule]/[Rank] point to
 # Commune/C7a instead, the same C-number family already live-query-verified
-# for common-of-a-virgin.yml (see that section of TODO.md). Her file's own
+# for common-of-a-widow.yml (see that section of TODO.md). Her file's own
 # C7a is a whole-file inherit of C7 (just the [Officium] title relabeled
 # "Commune non Virginum non Martyrum" -- fitting, since she's a widow, not a
 # virgin) with no override of its own [Ant 1] either, so the same cross-
 # reference resolution applies unchanged.
-minorHoursCommon: common-of-a-virgin
-benedictusCommon: common-of-a-virgin
+minorHoursCommon: common-of-a-widow
+benedictusCommon: common-of-a-widow

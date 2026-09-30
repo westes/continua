@@ -621,7 +621,7 @@ describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunda
     const nocturnPsalms = psalmParts.filter((p) => ![3, 94].includes(p.psalmNumber));
     expect(nocturnPsalms[0]?.antiphon?.text.la).toBe('Ant. Cum palma * ad regna pervenérunt Sancti, corónas decóris meruérunt de manu Dei.');
     expect(nocturnPsalms[3]?.antiphon?.text.la).toBe('Ant. Córpora Sanctórum * in pace sepúlta sunt: et vivent nómina eórum in ætérnum.');
-    expect(nocturnPsalms[6]?.antiphon?.text.la).toBe('Ant. Mártyrum chorus * laudáte Dóminum de cælis, allelúja.');
+    expect(nocturnPsalms[6]?.antiphon?.text.la).toBe('Ant. Mártyrum chorus * laudáte Dóminum de cælis, allelúia.');
     expect(nocturnPsalms[6]?.antiphon?.status.la).toBe('verified');
     expect(nocturnPsalms[6]?.antiphon?.status.en).toBe('verified');
     expect(nocturnPsalms.slice(7).every((p) => p.antiphon === undefined)).toBe(true);

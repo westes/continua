@@ -11,7 +11,7 @@ import { isInTriduum } from '../calendar/temporal';
 import { isAllSouls, REQUIEM_GLORIA_PATRI } from './all-souls';
 import { temporalLabel, emberDayLabel, biName } from '../calendar/day-label';
 import { splitAntiphon, isDoubleOrHigher } from './antiphon';
-import { getLaudsSaintOverride } from './lauds-psalmody-overrides';
+import { getLaudsPsalmodyOverride } from './lauds-psalmody-overrides';
 import vespersMagnificatAntiphonsData from '../data/hours/vespers-magnificat-antiphons.yml';
 import vespersOAntiphonsData from '../data/hours/vespers-o-antiphons.yml';
 import laudsVigilCommemorationAntiphonsData from '../data/hours/lauds-vigil-commemoration-antiphons.yml';
@@ -636,7 +636,7 @@ function deriveMinorHourAntiphonFromLauds(hourId: string, overrideId: string): R
   if (index === undefined) {
     return undefined;
   }
-  const lauds = getLaudsSaintOverride(overrideId);
+  const lauds = getLaudsPsalmodyOverride(overrideId);
   if (!lauds) {
     return undefined;
   }
@@ -673,7 +673,8 @@ function deriveMinorHourAntiphonFromLauds(hourId: string, overrideId: string): R
 export function resolveMinorHourAntiphonCandidates(hourId: string, day: LiturgicalDay): (ResolvedText | undefined)[] {
   const overrideId = getMinorHourOverrideId(day);
   const proper = overrideId ? resolveCommon(`${hourId}-antiphon-${overrideId}`) : undefined;
-  const derived = overrideId ? deriveMinorHourAntiphonFromLauds(hourId, overrideId) : undefined;
+  const derivedRaw = overrideId ? deriveMinorHourAntiphonFromLauds(hourId, overrideId) : undefined;
+  const derived = derivedRaw ? withPaschaltideAlleluia(derivedRaw, day) : undefined;
   const commonId = overrideId ? getSaintRecord(overrideId)?.minorHoursCommon : undefined;
   const paschal =
     commonId && PASCHALTIDE_SEASONS.has(day.season) ? resolveCommon(`${hourId}-antiphon-${commonId}-paschaltide`) : undefined;
