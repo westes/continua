@@ -11,7 +11,9 @@ content in the same shape, not a design change. The dated log below is that pipe
 ## Open work, in priority order
 
 1. **Mechanism gaps**
-   - None open.
+   - Terce/Sext/None closing antiphon missing: `terce.ts` (and sext/none) only attaches the antiphon
+     to the first psalm (`i === 0`), so the closing repeat after the third psalm is never rendered.
+     Standard psalmody always frames the psalm group with opening and closing antiphon.
 
 2. **Minimal-proof-done, bulk content pending**
    - Prime's per-feast Lectio Brevis override (`getPrimeLectioBrevis`, `${propers}-lectio-prima`):
