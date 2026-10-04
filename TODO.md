@@ -8324,3 +8324,17 @@ saints → `confessor-pope` for `bened`/`minor`. ~35 Martyr-Bishop saints → `m
 `bened`/`minor`.
 
 `npm test` (5496 passed).
+
+### 2026-10-04 — Prime Lectio Brevis: missing Common-category files
+
+St. Francis (Oct 4) showed the per-annum default Short Reading: his `minorHoursCommon` is
+`common-of-an-abbot`, and no `prime-lectio-prima-common-of-an-abbot` file existed. Audit found the same
+gap for every category lacking one. Added five files, text/citation copied from the reference
+Commune files: abbot, confessor-not-bishop, and several-confessors (C5, Wis 10:10); plain martyr
+(C2, Sir 39:6); pope-martyrs (C3, Wis 3:7-8). Tests added for St. Francis and St. Wenceslaus.
+
+Still without a Common-tier Prime reading: vigil, angel, evangelist, St. Peter, several-women-martyrs,
+and the `proper-to-*` entries. Each either has no unambiguous Commune mapping or a `[Lectio Prima]` of
+its own in the source; check per category before authoring.
+
+`npm test` (5498 passed).

@@ -1,0 +1,17 @@
+# New file, 2026-10-04: the Common-category tier of Prime's Lectio
+# Brevis override (see hours/resolve-common.ts's getPrimeLectioBrevis) --
+# a saint with no proper Lectio Prima of her own, but who belongs to a
+# Common category, uses that category's own text rather than falling all
+# the way to the generic per-annum default. Sourced directly from
+# web/www/horas/Latin/Commune/C3.txt's own [Lectio Prima] tag and its
+# English counterpart.
+id: prime-lectio-prima-common-of-pope-martyrs
+text:
+  la: "Fulgébunt justi, et tamquam scintíllæ in arundinéto discúrrent. Judicábunt natiónes, et dominabúntur pópulis: et regnábit Dóminus illórum in perpétuum."
+  en: "The just shall shine, and shall run to and fro like sparks among the reeds. They shall judge nations, and rule over people, and their Lord shall reign for ever."
+citation:
+  la: "Sap 3:7-8"
+  en: "Wis 3:7-8"
+status:
+  la: verified
+  en: verified

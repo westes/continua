@@ -305,3 +305,18 @@ describe('resolveOrdo("prime", ...) opening versicle Triduum omission', () => {
     }
   });
 });
+
+describe('resolveOrdo("prime", ...) Common-category Lectio Brevis', () => {
+  // [date, opening words of the Latin short reading]. Dates are chosen so
+  // the saint wins outright; the Common-category tier of
+  // getPrimeLectioBrevis must supply the text, not the per-annum default.
+  it.each([
+    ['2026-10-04', 'Justum dedúxit', 'abbot (St. Francis)'],
+    ['2026-09-28', 'Justus cor suum', 'plain martyr (St. Wenceslaus)'],
+  ])('%s uses the Common reading beginning "%s" (%s)', (date, incipit) => {
+    const lesson = resolveOrdo('prime', date).parts.find(
+      (p) => p.kind === 'lesson' && p.label === 'Short Reading',
+    );
+    expect(lesson && lesson.kind === 'lesson' ? lesson.text.text.la : undefined).toContain(incipit);
+  });
+});
