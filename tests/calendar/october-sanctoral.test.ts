@@ -5,14 +5,14 @@ import { getDayCollect } from '../../src/hours/resolve-common';
 // Clean per-annum years for these dates (no Sunday collision) — see
 // data/calendar/saints/*.yml for per-saint source detail.
 describe('October sanctoral pull (first pass)', () => {
-  it('a monastic-calendar-specific addition (Ss. Placid and Companions, St. Benedict\'s own disciple) wins outright at Duplex II. classis', () => {
+  it('a monastic-calendar-specific addition (Ss. Placid and Companions, St. Benedict\'s own disciple) wins outright, deliberately lowered to Simplex', () => {
     const day = resolveDay('2026-10-05');
     expect(day.winner).toEqual({
       kind: 'sanctoral',
       id: 'ss-placid-and-companions',
       name: 'Ss. Placid and Companions, Martyrs',
       nameLa: 'Sanctus Placidus et Socii, Martyres',
-      rank: 'duplex-2-classis',
+      rank: 'simplex',
     });
     expect(day.commemorations).toEqual([]);
   });

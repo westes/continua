@@ -3,7 +3,9 @@
 # (M1617.txt) -- fittingly, since St. Placid is St. Benedict's own famous
 # disciple. Verified live (Monastic Tridentinum 1617, 2026-10-05 and
 # again 2032-10-05) -- winner outright, Duplex II. classis, alone; the
-# highest-ranked monastic-only addition found in this pull so far. No
+# highest-ranked monastic-only addition found in this pull so far.
+# DELIBERATE DEVIATION: rank lowered to simplex in Continua (2026-10-05,
+# user's own office design); the source rank above is historical. No
 # unique collect: the raw file's [Oratio] is a plain cross-reference to a
 # generic Common-of-several-martyrs formula (@Commune/C3a), not unique
 # text, so propers: null is correct (Common-of-Saints only), same
@@ -11,7 +13,7 @@
 id: ss-placid-and-companions
 name: "Ss. Placid and Companions, Martyrs"
 nameLa: "Sanctus Placidus et Socii, Martyres"
-rank: duplex-2-classis
+rank: simplex
 common: common-of-several-martyrs
 propers: null
 collectCommon: collect-c3a
