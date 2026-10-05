@@ -408,10 +408,13 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(psalmNumbers).toEqual([129, 130, 131, 132]);
   });
 
-  it("uses Common-of-Several-Martyrs' real office bundle on Ss. Placid and Companions' own day (Duplex II. classis, keeps own Vespers)", () => {
-    // Live-verified against Divinum Officium (Monastic Tridentinum 1617)
-    // votive=C3 -- see vespers-hymn-common-of-several-martyrs.yml's header.
-    const ordo = resolveOrdo('vespers', '2026-10-05');
+  it("uses Common-of-Several-Martyrs' real office bundle on a Simplex saint's own day (Ss. Faustinus and Jovita)", () => {
+    // Bundle eligibility is rank-agnostic (resolveOfficeBundle). Live-verified
+    // against Divinum Officium (Monastic Tridentinum 1617) votive=C3 -- see
+    // vespers-hymn-common-of-several-martyrs.yml's header. Ss. Placid
+    // (Oct 5, Simplex) no longer shows it: St. Bruno's first Vespers
+    // takes the evening.
+    const ordo = resolveOrdo('vespers', '2026-02-16');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
     expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Wis 3:1-3');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');

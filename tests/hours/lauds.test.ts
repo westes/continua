@@ -364,13 +364,13 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(numbers).toEqual([66, 92, 99, 62, 148, 149, 150]);
   });
 
-  it("uses Common-of-Several-Martyrs' own psalmody on Ss. Placid and Companions' own day, not the ferial default", () => {
-    // 2026-10-05, Duplex II. classis, common-of-several-martyrs, no
-    // per-feast Lauds psalmody override authored -- same date as
-    // vespers.test.ts's own office-bundle proof for this Common.
-    // Live-verified against Divinum Officium (Monastic Tridentinum 1617,
-    // votive=C3), 2026-08-28.
-    const ordo = resolveOrdo('lauds', '2026-10-05');
+  it("uses Common-of-Several-Martyrs' own psalmody on the Holy Innocents' own day, not the ferial default", () => {
+    // 2026-12-28, Duplex II. classis, common-of-several-martyrs, no
+    // per-feast Lauds psalmody override authored. Live-verified against
+    // Divinum Officium (Monastic Tridentinum 1617, votive=C3), 2026-08-28.
+    // (Ss. Placid, Oct 5, was the original date; now deliberately Simplex,
+    // below the duplex-majus+ psalmody threshold.)
+    const ordo = resolveOrdo('lauds', '2026-12-28');
     const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
     expect(numbers).toEqual([66, 92, 99, 62, 148, 149, 150]);
   });

@@ -194,12 +194,12 @@ describe('minorHoursCommon/benedictusCommon fallback (2026-08, the 94 propers:nu
   });
 
   it('a Duplex-II-classis saint with no proper minor-hour content of its own still resolves via the Common, not just below-majus saints', () => {
-    // Ss. Placid and Companions -- confirms the fallback isn't only
+    // Ss. Simon and Jude -- confirms the fallback isn't only
     // reached by low ranks; a real major feast with no *proper*
     // Prime/Terce/Sext/None file authored falls through to its
     // minorHoursCommon (common-of-several-martyrs) exactly the same way.
-    const day = resolveDay('2025-10-05');
-    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'ss-placid-and-companions' });
+    const day = resolveDay('2025-10-28');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'ss-simon-and-jude' });
     expect(resolveMinorHourAntiphon('none', day, {}).status.la).toBe('verified');
   });
 });
