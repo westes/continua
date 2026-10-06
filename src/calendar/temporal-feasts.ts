@@ -6,7 +6,7 @@
 // propers/index.ts's getTemporalProper); this only exists for the ones
 // that do.
 import type { FeastClass, OctaveConfig } from './types';
-import { easterOffsetOf } from './temporal';
+import { dateForAnchor } from './anchors';
 
 /** How to compute a movable feast's own date each year, for a feast that
  * ISN'T itself a Sunday (or, for `unconditional` feasts like Christ the
@@ -19,8 +19,8 @@ import { easterOffsetOf } from './temporal';
  * none of these three anchor kinds are reachable through that lookup no
  * matter what, so they need this separate mechanism instead. A feast
  * that *is* a Sunday itself (Pentecost) doesn't need this at all -- it's
- * already covered by the ordinary Sunday lookup, and by
- * EASTER_OFFSET_STARTS below if it also has an octave to start. */
+ * already covered by the ordinary Sunday lookup, and its octave start is
+ * given by `octaveStart` on its record. */
 export type MovableAnchor =
   | { kind: 'easter'; offset: number }
   | { kind: 'nth-sunday-of-month'; month: number; nth: number } // nth: 1-4, or -1 for "last"
@@ -44,6 +44,13 @@ export interface TemporalFeastRecord {
   octave?: OctaveConfig;
   rank?: FeastClass;
   anchor?: MovableAnchor;
+  /** Where this feast's octave begins, for a feast with an `octave` but no
+   * `anchor` (Pentecost is already found by the ordinary Sunday lookup;
+   * Christmas is a plain fixed date) -- giving either an `anchor` would
+   * make calendar/movable-feasts.ts treat it as a movable feast too. A
+   * feast with an `anchor` starts its octave there and needs no
+   * `octaveStart`. */
+  octaveStart?: MovableAnchor;
   /** Christ the King's own rule: always wins the day outright, no rank
    * contest at all (see calendar/movable-feasts.ts's applyMovableFeasts) --
    * every other movable feast instead loses to an equal-or-higher-ranked
@@ -91,30 +98,15 @@ export function movableTemporalFeasts(): TemporalFeastRecord[] {
   return [...temporalFeastsById.values()].filter((f) => f.anchor !== undefined);
 }
 
-/** Fixed-calendar-date starts (MM-DD -> temporal feast id). Only Christmas
- * so far; Epiphany/Candlemas would join here if they ever needed an
- * octave modeled too. */
-const FIXED_DATE_STARTS: [string, string][] = [['12-25', 'christmas-day']];
-
-/** Easter-offset starts (offset -> temporal feast id). */
-const EASTER_OFFSET_STARTS: [number, string][] = [
-  [17, 'patronage-of-st-joseph'],
-  [39, 'ascension'],
-  [49, 'pentecost-sunday'],
-  [60, 'corpus-christi'],
-  [68, 'sacred-heart'],
-];
-
 /** Which temporal feast(s), if any, have their own (day-1) octave start on this date. */
 export function temporalFeastIdsStartingOn(isoDate: string): string[] {
-  const monthDay = isoDate.slice(5);
+  const year = Number(isoDate.slice(0, 4));
   const ids: string[] = [];
-  for (const [md, id] of FIXED_DATE_STARTS) {
-    if (md === monthDay) ids.push(id);
-  }
-  const offset = easterOffsetOf(isoDate);
-  for (const [off, id] of EASTER_OFFSET_STARTS) {
-    if (off === offset) ids.push(id);
+  for (const feast of temporalFeastsById.values()) {
+    const start = feast.anchor ?? feast.octaveStart;
+    if (feast.octave?.enabled && start && dateForAnchor(year, start) === isoDate) {
+      ids.push(feast.id);
+    }
   }
   return ids;
 }

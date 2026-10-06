@@ -14,6 +14,9 @@ name: "Pentecost"
 # a nominative noun phrase, no adaptation needed.
 nameLa: "Dominica Pentecostes"
 rank: duplex-1-classis
+octaveStart:
+  kind: easter
+  offset: 49
 octave:
   enabled: true
   wins: duplex

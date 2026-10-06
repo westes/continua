@@ -17,5 +17,9 @@ name: "Christmas"
 # nominative-noun-phrase naming convention.
 nameLa: "Nativitas Domini"
 rank: duplex-1-classis
+octaveStart:
+  kind: fixed-date
+  month: 12
+  day: 25
 octave:
   enabled: true
