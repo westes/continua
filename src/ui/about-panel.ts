@@ -25,6 +25,12 @@ export function mountAboutPanel(container: HTMLElement): void {
       <h2>Continua <span class="about-version">${APP_VERSION}</span></h2>
       <p class="about-updated">Last updated <span class="about-updated-text">${formatRelativeTime(APP_VERSION_DATE)}</span></p>
       <p class="about-blurb">${ABOUT_BLURB}</p>
+      <h3 class="about-keys-heading">Keyboard shortcuts</h3>
+      <ul class="about-keys">
+        <li>Previous / next hour: Alt+Up / Alt+Down, or [ and ]</li>
+        <li>Previous / next day: Alt+Left / Alt+Right, or , and .</li>
+        <li>Now: Alt+N, or N</li>
+      </ul>
       <div class="about-actions">
         <button type="button" class="about-check-update">Check for Updates</button>
         <button type="button" class="about-close" autofocus>Close</button>

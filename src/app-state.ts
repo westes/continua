@@ -1,4 +1,4 @@
-import type { HourId } from './hours/types';
+import { HOUR_IDS, type HourId } from './hours/types';
 import type { LanguageCode } from './psalter/types';
 
 export interface AppState {
@@ -100,6 +100,25 @@ export function addDays(date: string, days: number): string {
 
 export function shiftDate(days: number): void {
   setDate(addDays(state.date, days));
+}
+
+/** Steps the selected hour forward/back through the day's order (Matins ->
+ * Compline), rolling over into the next/previous day's first/last hour at
+ * the ends. Unpins "following today" the same way any date change does. */
+export function shiftHour(delta: 1 | -1): void {
+  const index = HOUR_IDS.indexOf(state.selectedHour) + delta;
+  if (index < 0) {
+    followingToday = false;
+    state.date = addDays(state.date, -1);
+    state.selectedHour = HOUR_IDS[HOUR_IDS.length - 1]!;
+  } else if (index >= HOUR_IDS.length) {
+    followingToday = false;
+    state.date = addDays(state.date, 1);
+    state.selectedHour = HOUR_IDS[0]!;
+  } else {
+    state.selectedHour = HOUR_IDS[index]!;
+  }
+  notify();
 }
 
 export function setSelectedHour(hourId: HourId): void {
