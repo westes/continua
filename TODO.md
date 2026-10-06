@@ -8383,3 +8383,15 @@ readings" and "Sunday after Ascension Gospel exception" notes above.
 Same day: Judges 12 had never been read anywhere in the plan. Friday after Ascension now reads
 Judges 9-10 (was 8-9) and Saturday Judges 11-12 (was 10-11), so Sunday after Ascension's Judges 13-14
 follows on cleanly.
+
+### Lauds canticle citations corrected to real verse ranges (2026-10-06)
+
+The Lauds canticle files labeled each chant line with a running line count instead of its real
+Bible verse, so the displayed citations overran their chapters ("Deut 32:1-65" for a 52-verse
+chapter; Saturday's two Deuteronomy halves read "32:1-32"/"32:33-65"). Found while building the
+reground.org lead-magnet PDF. Each line of the Deuteronomy, Exodus, Ezechias, Anna and Isaias
+canticles was matched to its verse in `data/scripture` and relabeled; citations are now Deut
+32:1-43 (halves 32:1-21 and 32:22-43), Exod 15:1-19, Isa 38:10-20, 1 Sam/Reg 2:1-10 and Isa
+12:1-6. Several chant lines now share one verse number, as Habakkuk's already did. The Office of
+the Dead's own Hezekiah citation was corrected to match. Habakkuk and the Three Young Men were
+already right and are untouched.
