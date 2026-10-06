@@ -87,6 +87,6 @@ Issues are welcome — file them against this repo on [Gitea](https://gitea.regr
 (Account registration on this instance isn't open yet; reach out if you'd like an account in the
 meantime.)
 
-If you'd like occasional notes on how this and other Reground infrastructure is run (Ansible,
-backups, that kind of thing), there's an opt-in mailing list:
-[reground.org/devops-list](https://reground.org/devops-list/).
+If you'd like occasional notes on reading the Bible and praying the psalms through the church year,
+there's a PDF and an opt-in mailing list:
+[reground.org/lead-magnets/bible-and-church-year](https://reground.org/lead-magnets/bible-and-church-year/).
