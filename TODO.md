@@ -61,6 +61,16 @@ content in the same shape, not a design change. The dated log below is that pipe
      judgment call a user might want to make differently for their own calendar instead of
      vu holding one fixed answer. See `vu_future_user_editable_calendar` memory for other
      content already authored ahead of this feature existing.
+   - User-overridable feast ranks (mechanism built 2026-10-06, see Work Log): the editor
+     side is still open. (1) Where overrides are persisted and how they sync (feast id ->
+     `{rank?, octaveWins?}`, fed in via `setRankOverrides`). (2) Which feasts the editor
+     offers: Easter, the Triduum, Lenten ferias and `temporal-categories.yml` are not marked
+     non-overridable in code yet, and `unconditional` feasts (Christ the King) should not be.
+     (3) When suppress/move exist, a feast with a vigil (`vigilOf`) should take the vigil along
+     as a pair. (Rank overrides to or from `vigil` are already ignored in `rank-overrides.ts`.)
+     (4) Rank and `octaveWins` are separate
+     knobs: demoting a feast's `rank` alone leaves its octave strength, so the UI should set
+     or present both together.
 
 # Work Log
 
@@ -8338,3 +8348,25 @@ and the `proper-to-*` entries. Each either has no unambiguous Commune mapping or
 its own in the source; check per category before authoring.
 
 `npm test` (5498 passed).
+
+### 2026-10-06 — Feast rank override layer (mechanism)
+
+Shipped ranks stay in the saint and temporal-feast files; `src/calendar/rank-overrides.ts` holds a
+user override map (feast id -> `{rank?, octaveWins?}`) applied once in `getSaintRecord`,
+`getSanctoralCandidatesFor`, `getTemporalFeastRecord` and `movableTemporalFeasts`, so every consumer
+sees the effective rank. Empty map = no behavior change. Covers saints and temporal feasts; octave
+strength is overridable separately. Tests in `tests/calendar/rank-overrides.test.ts`. Editor-side
+work is listed under "User-editable calendar" in Open Work.
+
+`npm test` (5503 passed).
+
+### 2026-10-06 — Octave starts read from feast records, not a code table
+
+`temporalFeastIdsStartingOn` used two hardcoded tables in `calendar/temporal-feasts.ts`
+(`FIXED_DATE_STARTS`, `EASTER_OFFSET_STARTS`) that duplicated each feast's `anchor`. Both are gone:
+an octave now starts at the record's `anchor`, or at a new `octaveStart` field for the two octave
+feasts with no `anchor` (Pentecost, Easter+49; Christmas, Dec 25 — an `anchor` would make
+`movable-feasts.ts` treat them as movable feasts too). `dateForAnchor` moved to `calendar/anchors.ts`
+so both consumers share it. Needed before a user can move a movable feast: its octave now follows.
+
+`npm test` (5503 passed).
