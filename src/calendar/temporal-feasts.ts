@@ -6,6 +6,7 @@
 // propers/index.ts's getTemporalProper); this only exists for the ones
 // that do.
 import type { FeastClass, OctaveConfig } from './types';
+import { withRankOverride } from './rank-overrides';
 import { dateForAnchor } from './anchors';
 
 /** How to compute a movable feast's own date each year, for a feast that
@@ -85,7 +86,8 @@ for (const mod of Object.values(temporalFeastModules)) {
 }
 
 export function getTemporalFeastRecord(id: string): TemporalFeastRecord | undefined {
-  return temporalFeastsById.get(id);
+  const feast = temporalFeastsById.get(id);
+  return feast && withRankOverride(feast);
 }
 
 /** Every temporal feast record carrying its own `anchor` -- the table
@@ -95,7 +97,7 @@ export function getTemporalFeastRecord(id: string): TemporalFeastRecord | undefi
  * `data/calendar/temporal-feasts/<id>.yml` file with `rank` and `anchor`
  * set -- no new code. */
 export function movableTemporalFeasts(): TemporalFeastRecord[] {
-  return [...temporalFeastsById.values()].filter((f) => f.anchor !== undefined);
+  return [...temporalFeastsById.values()].filter((f) => f.anchor !== undefined).map(withRankOverride);
 }
 
 /** Which temporal feast(s), if any, have their own (day-1) octave start on this date. */

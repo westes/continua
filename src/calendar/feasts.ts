@@ -10,6 +10,7 @@
 // modeled here. If a day has more than one candidate, calendar/index.ts
 // just picks the highest-ranked as the day's sole sanctoral contender.
 import type { FeastClass, OctaveConfig } from './types';
+import { withRankOverride } from './rank-overrides';
 import sanctoralCalendarData from '../data/calendar/sanctoral-calendar.yml';
 
 export interface SaintRecord {
@@ -167,14 +168,15 @@ export interface SanctoralCandidate {
  * needed, e.g. hours/resolve-common.ts's getDayCollect looking up whether
  * a real collect has been authored for a winning saint. */
 export function getSaintRecord(id: string): SaintRecord | undefined {
-  return saintsById.get(id);
+  const saint = saintsById.get(id);
+  return saint && withRankOverride(saint);
 }
 
 export function getSanctoralCandidatesFor(isoDate: string): SanctoralCandidate[] {
   const monthDay = isoDate.slice(5);
   const ids = sanctoralCalendar.days[monthDay] ?? [];
   return ids.map((id) => {
-    const saint = saintsById.get(id);
+    const saint = getSaintRecord(id);
     if (!saint) {
       throw new Error(`sanctoral-calendar.yml references unknown saint id '${id}'`);
     }
