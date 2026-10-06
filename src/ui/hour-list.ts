@@ -1,6 +1,7 @@
 import { getState, setSelectedHour } from '../app-state';
 import { resolveOrdo, type HourId } from '../hours';
 import { hourLabel } from './format';
+import { mountDropdown } from './dropdown';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -23,31 +24,33 @@ export function renderHourList(container: HTMLElement): void {
     const isSelected = hourId === selectedHour;
     const isReady = !ordo.notImplemented;
     return `
-      <li>
-        <a
-          href="${BASE}${date}/${hourId}"
-          class="hour-item${isSelected ? ' is-selected' : ''}${isReady ? '' : ' is-pending'}"
-          data-hour="${hourId}"
-          aria-current="${isSelected ? 'true' : 'false'}"
-        >
-          <span class="hour-name">${hourLabel(hourId)}</span>
-          ${isReady ? '' : '<span class="hour-status">coming soon</span>'}
-        </a>
-      </li>
+      <a
+        href="${BASE}${date}/${hourId}"
+        class="dropdown-item hour-item${isSelected ? ' is-selected' : ''}${isReady ? '' : ' is-pending'}"
+        data-hour="${hourId}"
+        aria-current="${isSelected ? 'true' : 'false'}"
+      >
+        <span class="hour-name">${hourLabel(hourId)}</span>
+        ${isReady ? '' : '<span class="hour-status">coming soon</span>'}
+      </a>
     `;
   };
 
-  const separator = '<li class="hour-sep">&nbsp;</li>';
-  const rows = HOUR_ROWS.map(
+  const groups = HOUR_ROWS.map(
     ({ label, hours }) => `
-      <div class="hour-row">
-        <span class="hour-row-label">${label}</span>
-        <ul class="hour-list">${hours.map(renderItem).join(separator)}</ul>
+      <div class="hour-row" role="group" aria-label="${label}">
+        <span class="hour-row-label" aria-hidden="true">${label}</span>
+        ${hours.map(renderItem).join('')}
       </div>
     `
   ).join('');
 
-  container.innerHTML = rows;
+  mountDropdown(container, {
+    label: 'Hour',
+    current: hourLabel(selectedHour),
+    className: 'hour-dropdown',
+    panelHtml: groups,
+  });
 
   container.querySelectorAll<HTMLAnchorElement>('[data-hour]').forEach((link) => {
     link.addEventListener('click', (event) => {

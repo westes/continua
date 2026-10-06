@@ -1,5 +1,6 @@
 import { getState, setLanguages, type AppState } from '../app-state';
 import { urlFor } from '../router';
+import { mountDropdown } from './dropdown';
 
 // Hardcoded to en/la since those are the only languages with any data so
 // far. The two-language ceiling (never three+ columns) is the real
@@ -14,16 +15,18 @@ const OPTIONS: { label: string; languages: AppState['languages'] }[] = [
 export function renderLanguageToggle(container: HTMLElement): void {
   const { date, selectedHour, languages } = getState();
   const current = languages.join('+');
+  const currentLabel = OPTIONS.find((opt) => opt.languages.join('+') === current)?.label ?? current;
 
-  container.innerHTML = `
-    <div class="language-toggle" role="group" aria-label="Display language">
-      ${OPTIONS.map((opt) => {
-        const isActive = opt.languages.join('+') === current;
-        const url = urlFor(date, selectedHour, opt.languages);
-        return `<a href="${url}" class="lang-btn${isActive ? ' is-active' : ''}" data-langs="${opt.languages.join(',')}">${opt.label}</a>`;
-      }).join('')}
-    </div>
-  `;
+  mountDropdown(container, {
+    label: 'Display language',
+    current: currentLabel,
+    className: 'language-toggle',
+    panelHtml: OPTIONS.map((opt) => {
+      const isActive = opt.languages.join('+') === current;
+      const url = urlFor(date, selectedHour, opt.languages);
+      return `<a href="${url}" class="dropdown-item lang-btn${isActive ? ' is-active' : ''}" aria-current="${isActive ? 'true' : 'false'}" data-langs="${opt.languages.join(',')}">${opt.label}</a>`;
+    }).join(''),
+  });
 
   container.querySelectorAll<HTMLAnchorElement>('[data-langs]').forEach((link) => {
     link.addEventListener('click', (event) => {

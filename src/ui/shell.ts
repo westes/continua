@@ -7,6 +7,7 @@ import { renderHourList } from './hour-list';
 import { renderHourView } from './hour-view';
 import { renderLanguageToggle } from './bilingual-toggle';
 import { mountAboutPanel } from './about-panel';
+import { mountKeyboardShortcuts } from './keyboard';
 import { documentTitle, hourLabel } from './format';
 
 // The "C" glyph from EB Garamond 700 (the same font/weight as .site-title),
@@ -25,12 +26,15 @@ export function mountShell(root: HTMLElement): void {
         <div data-slot="language-toggle"></div>
         <div data-slot="about-panel"></div>
       </header>
-      <nav data-slot="hour-list" class="hour-list-nav" aria-label="Hours"></nav>
-      <div data-slot="day-nav-controls"></div>
+      <div class="nav-row">
+        <nav data-slot="hour-list" class="hour-list-nav" aria-label="Hours"></nav>
+        <div data-slot="day-nav-controls"></div>
+      </div>
       <div data-slot="day-celebration"></div>
-      <h2 data-slot="hour-title" class="hour-title"></h2>
     </div>
+    <div class="sr-only" aria-live="polite" data-slot="announcer"></div>
     <main id="main" class="app-main">
+      <h2 data-slot="hour-title" class="hour-title"></h2>
       <div data-slot="hour-view" class="hour-view-region"></div>
     </main>
   `;
@@ -42,10 +46,12 @@ export function mountShell(root: HTMLElement): void {
   const hourViewEl = root.querySelector<HTMLElement>('[data-slot="hour-view"]');
   const languageToggleEl = root.querySelector<HTMLElement>('[data-slot="language-toggle"]');
   const aboutPanelEl = root.querySelector<HTMLElement>('[data-slot="about-panel"]');
-  if (!dayNavControlsEl || !dayCelebrationEl || !hourTitleEl || !hourListEl || !hourViewEl || !languageToggleEl || !aboutPanelEl) {
+  const announcerEl = root.querySelector<HTMLElement>('[data-slot="announcer"]');
+  if (!announcerEl || !dayNavControlsEl || !dayCelebrationEl || !hourTitleEl || !hourListEl || !hourViewEl || !languageToggleEl || !aboutPanelEl) {
     throw new Error('shell markup is missing an expected slot');
   }
   mountAboutPanel(aboutPanelEl);
+  mountKeyboardShortcuts(announcerEl);
 
   function render(): void {
     renderHourList(hourListEl!);
