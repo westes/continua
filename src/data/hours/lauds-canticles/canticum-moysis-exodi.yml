@@ -1,8 +1,8 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query. Verse numbering is the breviary's own liturgical division for chant, not always identical to standard Bible chapter:verse numbering.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds live query. Each entry is one chant line, labeled with the real Bible verse it falls in (relabeled 2026-10 by matching each line to the chapter text in data/scripture; the breviary's own chant-line count used to stand in for verse numbers, which gave citations like "Deut 32:1-65" for a 52-verse chapter), so several lines can share one verse number.
 
 id: canticum-moysis-exodi
 name: Canticle of Moses
-citation: { la: "Exod 15:1-22", en: "Exod 15:1-22" }
+citation: { la: "Exod 15:1-19", en: "Exod 15:1-19" }
 verses:
   - n: "15:1"
     text:
@@ -18,21 +18,21 @@ verses:
     status:
       la: verified
       en: verified
-  - n: "15:3"
+  - n: "15:2"
     text:
       la: "Iste Deus meus, et glorificábo eum: * Deus patris mei, et exaltábo eum."
       en: "He is my God and I will glorify him: * the God of my father, and I will exalt him."
     status:
       la: verified
       en: verified
-  - n: "15:4"
+  - n: "15:3"
     text:
       la: "Dóminus quasi vir pugnátor, Omnípotens nomen ejus. * Currus Pharaónis et exércitum ejus projécit in mare."
       en: "The Lord is as a man of war, Almighty is his name. * Pharao’s chariots and his army he hath cast into the sea:"
     status:
       la: verified
       en: verified
-  - n: "15:5"
+  - n: "15:4"
     text:
       la: "Elécti príncipes ejus submérsi sunt in Mari Rubro: * abýssi operuérunt eos, descendérunt in profúndum quasi lapis."
       en: "His chosen captains are drowned in the Red Sea. * The depths have covered them, they are sunk to the bottom like a stone."
@@ -67,91 +67,91 @@ verses:
     status:
       la: verified
       en: verified
-  - n: "15:10"
+  - n: "15:9"
     text:
       la: "Evaginábo gládium meum, * interfíciet eos manus mea."
       en: "I will draw my sword, * my hand shall slay them."
     status:
       la: verified
       en: verified
-  - n: "15:11"
+  - n: "15:10"
     text:
       la: "Flavit spíritus tuus, et opéruit eos mare: * submérsi sunt quasi plumbum in aquis veheméntibus."
       en: "Thy wind blew and the sea covered them: * they sunk as lead in the mighty waters."
     status:
       la: verified
       en: verified
-  - n: "15:12"
+  - n: "15:11"
     text:
       la: "Quis símilis tui in fórtibus, Dómine? * quis símilis tui, magníficus in sanctitáte, terríbilis atque laudábilis, fáciens mirabília?"
       en: "Who is like to thee, among the strong, O Lord? * who is like to thee, glorious in holiness, terrible and praiseworthy, doing wonders?"
     status:
       la: verified
       en: verified
-  - n: "15:13"
+  - n: "15:12"
     text:
       la: "Extendísti manum tuam, et devorávit eos terra. * Dux fuísti in misericórdia tua pópulo quem redemísti:"
       en: "Thou stretchedst forth thy hand, and the earth swallowed them. * In thy mercy thou hast been a leader to the people which thou hast redeemed:"
     status:
       la: verified
       en: verified
-  - n: "15:14"
+  - n: "15:13"
     text:
       la: "Et portásti eum in fortitúdine tua, * ad habitáculum sanctum tuum."
       en: "And in thy strength thou hast carried them * to thy holy habitation."
     status:
       la: verified
       en: verified
-  - n: "15:15"
+  - n: "15:14"
     text:
       la: "Ascendérunt pópuli, et iráti sunt: * dolóres obtinuérunt habitatóres Philísthiim."
       en: "Nations rose up, and were angry: * sorrows took hold on the inhabitants of Philisthiim."
     status:
       la: verified
       en: verified
-  - n: "15:16"
+  - n: "15:15"
     text:
       la: "Tunc conturbáti sunt príncipes Edom, robústos Moab obtínuit tremor: * obriguérunt omnes habitatóres Chánaan."
       en: "Then were the princes of Edom troubled, trembling seized on the stout men of Moab: * all the inhabitants of Chanaan became stiff."
     status:
       la: verified
       en: verified
-  - n: "15:17"
+  - n: "15:16"
     text:
       la: "Írruat super eos formído et pavor, * in magnitúdine brácchii tui:"
       en: "Let fear and dread fall upon them, * in the greatness of thy arm:"
     status:
       la: verified
       en: verified
-  - n: "15:18"
+  - n: "15:16"
     text:
       la: "Fiant immóbiles quasi lapis, donec pertránseat pópulus tuus, Dómine, * donec pertránseat pópulus tuus iste, quem possedísti."
       en: "Let them become unmoveable as a stone, until thy people, O Lord, pass by: * until this thy people pass by, which thou hast possessed."
     status:
       la: verified
       en: verified
-  - n: "15:19"
+  - n: "15:17"
     text:
       la: "Introdúces eos, et plantábis in monte hereditátis tuæ, * firmíssimo habitáculo tuo quod operátus es, Dómine:"
       en: "Thou shalt bring them in, and plant them in the mountain of thy inheritance, * in thy most firm habitation which thou hast made, O Lord;"
     status:
       la: verified
       en: verified
-  - n: "15:20"
+  - n: "15:17"
     text:
       la: "Sanctuárium tuum, Dómine, quod firmavérunt manus tuæ. * Dóminus regnábit in ætérnum et ultra."
       en: "Thy sanctuary, O Lord, which thy hands have established. * The Lord shall reign for ever and ever."
     status:
       la: verified
       en: verified
-  - n: "15:21"
+  - n: "15:19"
     text:
       la: "Ingréssus est enim eques Phárao cum cúrribus et equítibus ejus in mare: * et redúxit super eos Dóminus aquas maris:"
       en: "For Pharao went in on horseback with his chariots and horsemen into the sea: * and the Lord brought back upon them the waters of the sea:"
     status:
       la: verified
       en: verified
-  - n: "15:22"
+  - n: "15:19"
     text:
       la: "Fílii autem Israël ambulavérunt per siccum * in médio ejus."
       en: "But the children of Israel walked on dry ground * in the midst thereof."

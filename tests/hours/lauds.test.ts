@@ -83,9 +83,9 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(part1?.kind === 'canticle' ? part1.text.text.la : undefined).toContain('Audíte, cæli');
     expect(part2?.kind === 'canticle' ? part2.text.text.la : undefined).toContain('Ignis succénsus est');
     // Regression test: each half must cite its own verse range, not the
-    // whole canticle's "Deut 32:1-65" on both pieces.
-    expect(part1?.kind === 'canticle' ? part1.text.citation?.la : undefined).toBe('Deut 32:1-32');
-    expect(part2?.kind === 'canticle' ? part2.text.citation?.la : undefined).toBe('Deut 32:33-65');
+    // whole canticle's "Deut 32:1-43" on both pieces.
+    expect(part1?.kind === 'canticle' ? part1.text.citation?.la : undefined).toBe('Deut 32:1-21');
+    expect(part2?.kind === 'canticle' ? part2.text.citation?.la : undefined).toBe('Deut 32:22-43');
     // Each part gets its own Gloria Patri.
     expect(part1?.kind === 'canticle' ? part1.gloriaPatri?.text.la : undefined).toContain('Glória Patri');
     expect(part2?.kind === 'canticle' ? part2.gloriaPatri?.text.la : undefined).toContain('Glória Patri');
