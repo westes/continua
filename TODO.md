@@ -8370,3 +8370,12 @@ feasts with no `anchor` (Pentecost, Easter+49; Christmas, Dec 25 — an `anchor`
 so both consumers share it. Needed before a user can move a movable feast: its octave now follows.
 
 `npm test` (5503 passed).
+
+### Ascension-week gospels reshuffled (2026-10-06)
+
+The one reading-plan row with no readings in the source (Ascension Thursday) now has John 15. The
+John 15-17 run was shifted to end on Saturday after Ascension: `easter-6` Thursday John 15, Friday
+John 16 (was 15), Saturday John 17 (was 16); other passages on those days untouched. John 17 was
+removed from `sunday-after-ascension` Saturday, which now carries only its own John 21 — the earlier
+move of John 17 there was a miscommunication, not intended. Supersedes the "Ascension Thursday has no
+readings" and "Sunday after Ascension Gospel exception" notes above.
