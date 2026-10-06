@@ -15,6 +15,7 @@ import {
   resolveOfficeWinner,
   resolveMinorHourAntiphon,
   resolveMinorHourChapter,
+  splitNamedAntiphon,
   substituteDoxology,
   isFerialOrVigil,
 } from './resolve-common';
@@ -47,10 +48,13 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'preces':
       if (part.ferialOnly && !isFerialOrVigil(day)) return [];
       return [{ kind: 'preces', text: resolveCommon(part.textRef.id), label: part.label }];
+    case 'closing-antiphon':
+      return [{ kind: 'antiphon', text: splitNamedAntiphon(resolveMinorHourAntiphon('sext', day, antiphons[day.weekday])).full }];
     case 'variable': {
       // Only 'by-weekday' applies here — one antiphon framing all three
-      // psalms, no closing repeat (unlike Prime): confirmed directly
-      // against the engine, Capitulum follows the third psalm immediately.
+      // psalms: incipit on the first, full repeat after the third (the
+      // 'closing-antiphon' part below), as the reference engine's
+      // antetpsalm does.
       const psalmRefs = getPsalmsFor('sext', day.weekday);
       const opening = openingAntiphon(resolveMinorHourAntiphon('sext', day, antiphons[day.weekday]), resolveOfficeWinner(day));
       return psalmRefs.map((ref, i) => {
@@ -76,7 +80,6 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
     case 'rule-reading':
     case 'by-day-kind':
     case 'creed':
-    case 'closing-antiphon':
     case 'nunc-dimittis':
     case 'marian-antiphon':
     case 'lauds-psalmody':

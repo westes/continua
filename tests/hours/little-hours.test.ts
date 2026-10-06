@@ -23,17 +23,21 @@ describe.each(LITTLE_HOURS)('resolveOrdo(%s, ...)', (hourId) => {
     expect(ordo.hourId).toBe(hourId);
   });
 
-  it('resolves three psalms from the gradual set on a plain weekday, framed by one antiphon', () => {
+  it('resolves three psalms from the gradual set on a plain weekday, framed by one antiphon (incipit, then full repeat)', () => {
     const ordo = resolveOrdo(hourId, TUESDAY);
     const psalmParts = ordo.parts.filter((p) => p.kind === 'psalm');
     expect(psalmParts.map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined))).toEqual(
       PSALMS_BY_HOUR[hourId],
     );
     expect(psalmParts[0]?.kind === 'psalm' ? psalmParts[0].antiphon?.status.en : undefined).toBe('verified');
-    // No closing repeat of the antiphon — confirmed against the real engine.
+    // Full antiphon repeated once after the third psalm, as in the engine's antetpsalm.
     expect(psalmParts[1]?.kind === 'psalm' ? psalmParts[1].antiphon : undefined).toBeUndefined();
     expect(psalmParts[2]?.kind === 'psalm' ? psalmParts[2].antiphon : undefined).toBeUndefined();
-    expect(ordo.parts.some((p) => p.kind === 'antiphon')).toBe(false);
+    const antiphonParts = ordo.parts.filter((p) => p.kind === 'antiphon');
+    expect(antiphonParts).toHaveLength(1);
+    const closing = antiphonParts[0];
+    expect(closing?.kind === 'antiphon' ? closing.text.status.en : undefined).toBe('verified');
+    expect(ordo.parts.indexOf(closing!)).toBe(ordo.parts.indexOf(psalmParts[2]!) + 1);
   });
 
   it('slices Psalm 118 by section on Sunday and Monday instead of the gradual set', () => {

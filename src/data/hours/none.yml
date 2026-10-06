@@ -8,6 +8,7 @@ parts:
     textRef: { source: common, id: none-hymn }
   - kind: variable
     resolve: by-weekday
+  - kind: closing-antiphon
   - kind: chapter
     textRef: { source: common, id: none-capitulum-per-annum }
   - kind: preces
