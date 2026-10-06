@@ -8379,3 +8379,7 @@ John 16 (was 15), Saturday John 17 (was 16); other passages on those days untouc
 removed from `sunday-after-ascension` Saturday, which now carries only its own John 21 — the earlier
 move of John 17 there was a miscommunication, not intended. Supersedes the "Ascension Thursday has no
 readings" and "Sunday after Ascension Gospel exception" notes above.
+
+Same day: Judges 12 had never been read anywhere in the plan. Friday after Ascension now reads
+Judges 9-10 (was 8-9) and Saturday Judges 11-12 (was 10-11), so Sunday after Ascension's Judges 13-14
+follows on cleanly.

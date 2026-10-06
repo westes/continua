@@ -1,10 +1,11 @@
 # Bulk-imported from the user's bible-plan TSV, row "Saturday after Ascension".
 # Gospel shifted from John 16 to John 17 (2026-10); see easter-6-thursday.yml.
+# Judges shifted from 10-11 to 11-12 (2026-10); Judges 12 was never read before.
 temporalId: easter-6
 weekday: saturday
 readings:
   - passages:
-      - { book: judg, chapter: 10 }
       - { book: judg, chapter: 11 }
+      - { book: judg, chapter: 12 }
   - passages:
       - { book: john, chapter: 17 }
