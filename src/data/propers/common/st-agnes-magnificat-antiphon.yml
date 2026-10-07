@@ -1,12 +1,16 @@
-# Second Vespers Magnificat antiphon, read directly from
-# web/www/horas/Latin/Sancti/01-21.txt's own [Ant 3] and its English
-# counterpart -- a real, proper antiphon of this feast, not a Common
-# substitution. (This feast's own Benedictus antiphon,
-# st-agnes-antiphon.yml, already correctly sourced [Ant 2].)
+# Magnificat antiphon for both Vespers of St. Agnes in the Monastic rite:
+# web/www/horas/Latin/SanctiM/01-21.txt's `[Ant 3] (nisi rubrica
+# cisterciensis)` is `@Sancti/01-21:Ant 1`, i.e. the Monastic Second Vespers
+# takes the plain [Ant 1] ("Beáta Agnes in médio flammárum"), and Sancti's
+# own [Ant 3] ("Stans beáta Agnes", the Roman rite's Second Vespers
+# antiphon) applies only to the Cistercian rubric. This file previously
+# held that Roman [Ant 3]; corrected 2026-10-07. First Vespers uses [Ant 1]
+# too, so no `-first` variant is needed. English from English/Sancti/
+# 01-21.txt's [Ant 1].
 id: st-agnes-magnificat-antiphon
 text:
-  la: "Stans beáta Agnes * in médio flammæ, expánsis mánibus orábat ad Dóminum: Omnípotens, adoránde, colénde, treménde, benedíco te, et glorífico nomen tuum in ætérnum."
-  en: "The blessed Agnes stood in the midst of the fire * and stretched forth her hands unto the Lord, and prayed, saying: O Thou Who Alone art Almighty! Who Alone art to be adored! Who Alone art to be worshipped! Who Alone art to be feared! I bless thee, and glorify thy Name for ever and ever!"
+  la: "Beáta Agnes * in médio flammárum expánsis mánibus orábat: Te déprecor, omnípotens, adoránde, colénde, Pater metuénde, quia per sanctum Fílium tuum evási minas sacrílegi tyránni, et carnis spurcítias immaculáto calle transívi: et ecce vénio ad te, quem amávi, quem quæsívi, quem semper optávi."
+  en: "The blessed Agnes * stood in the midst of the fire, and stretched forth her hands, and prayed, saying O Father! Who Alone art Almighty! Who Alone art to be adored! Who Alone art to be worshipped! Who Alone art to be feared! I thank thee because that through thy Holy Son Thou hast delivered me from the threatenings of the godless tyrant, and hast made me to walk with clean feet over the filthy slough of fleshly sin and now, behold, I come unto thee, unto thee Whom I have loved, Whom I have sought, Whom I have ever desired."
 status:
   la: verified
   en: verified

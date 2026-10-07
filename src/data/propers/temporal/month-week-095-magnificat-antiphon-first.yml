@@ -1,0 +1,8 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2026-09-26 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+id: month-week-095-magnificat-antiphon-first
+text:
+  la: "Dómine Rex omnípotens, * in dicióne tua cuncta sunt pósita, et non est qui possit tuæ resístere voluntáti."
+  en: "O my Lord, the King Almighty, * all things are in thy power, and there is no man that can gainsay thy will."
+status:
+  la: verified
+  en: verified

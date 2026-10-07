@@ -1,11 +1,13 @@
-# Read from web/www/horas/Latin/Sancti/01-01.txt's own [Versum 1] (a
-# cross-file reference to web/www/horas/Latin/Tempora/Nat1-0.txt's own
-# [Versum 1]) and its English counterpart. Also serves Lauds — the
-# source's own [Versum 2] is "@:Versum 1", the identical text reused.
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-01-01 circumcision second. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
 id: vespers-versicle-circumcision
 text:
-  la: "V. Verbum caro factum est, allelúja.\nR. Et habitávit in nobis, allelúja."
-  en: "V. The Word was made flesh, alleluia.\nR. And dwelt among us, alleluia."
+  la: |
+    V. Notum fecit Dóminus, allelúja.
+    R. Salutáre suum, allelúja.
+  en: |
+    V. The Lord hath made known, alleluia.
+    R. His salvation, alleluia.
 status:
   la: verified
   en: verified

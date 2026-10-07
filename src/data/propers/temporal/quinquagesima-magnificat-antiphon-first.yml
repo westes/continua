@@ -1,0 +1,8 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-03-01 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+id: quinquagesima-magnificat-antiphon-first
+text:
+  la: "Pater fídei nostræ * Abraham summus, óbtulit holocáustum super altáre pro fílio."
+  en: "The father of our faith, * the mighty Abraham, offered a burnt offering on the altar for his son."
+status:
+  la: verified
+  en: verified

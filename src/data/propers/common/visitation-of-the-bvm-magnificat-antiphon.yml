@@ -1,13 +1,10 @@
-# Vespers' Magnificat antiphon for the Visitation of the BVM -- genuinely
-# identical to visitation-of-the-bvm-antiphon.yml: the reference file
-# (web/www/horas/Latin/Sancti/07-02.txt) has only one Vespers antiphon
-# ([Ant 1], no separate [Ant 3]), reused for both First and Second
-# Vespers -- same pattern as exaltation-of-the-holy-cross-magnificat-
-# antiphon.yml's own header explains for that feast.
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 07-02
+# visitation-of-the-bvm (OVERWRITE: stored file held the first-Vespers antiphon). See hours/resolve-common.ts's
+# withVespersVariant.
 id: visitation-of-the-bvm-magnificat-antiphon
 text:
-  la: "Beáta es, * María, quæ credidísti: perficiéntur in te quæ dicta sunt tibi a Dómino, allelúja."
-  en: "O Mary * blessed art thou that didst believe, for there shall be a performance of those things which were told thee from the Lord. Alleluia."
+  la: "Beátam me dicent * omnes generatiónes, quia ancíllam húmilem respéxit Deus."
+  en: "All generations shall call me blessed, * for God hath regarded the lowliness of His hand-maiden."
 status:
   la: verified
   en: verified

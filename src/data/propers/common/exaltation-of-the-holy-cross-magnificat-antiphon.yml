@@ -1,16 +1,10 @@
-# Vespers' Magnificat antiphon for the Exaltation of the Holy Cross (Sept
-# 14) -- genuinely identical to finding-of-the-holy-cross-magnificat-
-# antiphon.yml (May 3): the Monastic reference file's own [Ant 1]
-# directive for Sept 14 is `@Sancti/05-03:Ant 1`, a real shared-text rule
-# (unlike the collect -- see exaltation-of-the-holy-cross-collect.yml).
-# Duplicated verbatim for the same reason as exaltation-of-the-holy-
-# cross-antiphon.yml (own `propers` id, no cross-id fallback for this
-# category). Text sourced from web/www/horas/Latin/Sancti/05-03.txt's own
-# [Ant 1] and its English counterpart.
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 09-14
+# exaltation-of-the-holy-cross (OVERWRITE: stored file held the first-Vespers antiphon). See
+# hours/resolve-common.ts's withVespersVariant.
 id: exaltation-of-the-holy-cross-magnificat-antiphon
 text:
-  la: "O Crux, * splendídior cunctis astris, mundo célebris, homínibus multum amábilis, sánctior univérsis: quæ sola fuísti digna portáre taléntum mundi, dulce lignum, dulces clavos, dúlcia ferens póndera; salva præséntem catérvam in tuis hódie láudibus congregátam."
-  en: "O Cross, * surpassing all the stars in splendour, exceeding dear to all Christian people and world-renowned, holiest of earth's treasures: which only wast counted worthy to hold aloft the Price of our Redemption: sweet is thy wood and sweet thine iron, but sweetest of all the Burden that hung on thee! O that all who come this day to celebrate thy praises may find in thee salvation."
+  la: "O Crux benedícta, * quæ sola fuísti digna portáre Regem cælórum et Dóminum, allelúja."
+  en: "O blessed art thou, O Cross * thou which wast counted the only tree worthy to bear the Lord and King of heaven. Alleluia."
 status:
   la: verified
   en: verified

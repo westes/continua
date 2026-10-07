@@ -1,0 +1,8 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-03-15 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+id: lent-2-magnificat-antiphon-first
+text:
+  la: "Visiónem quam vidístis, * némini dixéritis, donec a mórtuis resúrgat Fílius hóminis."
+  en: "Tell the vision that ye have seen to no man, * until the Son of man be risen again from the dead."
+status:
+  la: verified
+  en: verified

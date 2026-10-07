@@ -1,14 +1,14 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
-# `votive=C11` live query, 2026-08 -- distinct from the Lauds versicle
-# (see lauds-versicle-purification.yml).
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-02-02 purification second (continua had "dignaremelaudareteuirg"). Paschaltide Alleluia is left to
+# hours/paschal-alleluia.ts. See hours/resolve-common.ts's withVespersVariant.
 id: vespers-versicle-purification
 text:
   la: |
-    V. Dignáre me laudáre te, Virgo sacráta.
-    R. Da mihi virtútem contra hostes tuos.
+    V. Respónsum accépit Símeon a Spíritu Sancto.
+    R. Non visúrum se mortem, nisi vidéret Christum Dómini.
   en: |
-    V. Holy Virgin, my praise by thee accepted be.
-    R. Give me strength against thine enemies.
+    V. It was revealed unto Simeon by the Holy Ghost.
+    R. That he should not see death before he had seen the Lord's Christ.
 status:
   la: verified
   en: verified

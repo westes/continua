@@ -1,0 +1,8 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-03-08 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+id: lent-1-magnificat-antiphon-first
+text:
+  la: "Tunc invocábis, * et Dóminus exáudiet: clamábis, et dicet: Ecce adsum."
+  en: "Then shalt thou call, * and the Lord shall answer; thou shalt cry, and He shall say: Here I am."
+status:
+  la: verified
+  en: verified

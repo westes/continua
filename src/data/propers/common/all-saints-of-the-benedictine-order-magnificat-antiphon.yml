@@ -1,20 +1,10 @@
-# Second Vespers Magnificat antiphon, read directly from
-# web/www/horas/Latin/SanctiM/11-13M.txt's own [Ant 3] (Matt 19:28) --
-# a real, proper antiphon of this feast (own First Vespers [Ant 1]
-# already covers all-saints-of-the-benedictine-order-antiphon.yml, used
-# for the Benedictus; [Ant 2] there is a bare `@Commune/C1` cross-
-# reference, not this feast's own text). The reference engine's own
-# English/SanctiM/11-13M.txt has no English rendering of this antiphon at
-# all (an untranslated gap in the source itself), but this exact Latin
-# clause is quoted verbatim, word for word, in this app's own already-
-# verified nocturn-readings/ss-seven-founders-of-the-servite-order.yml
-# (nocturn 2's Gospel reading and nocturn 3's homily both carry it,
-# `status: verified` in both languages) -- English reused from there
-# rather than retranslated, so `verified` here too, not `draft`.
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 11-13
+# all-saints-of-the-benedictine-order (OVERWRITE: stored file "inregenerationecumsederitf" matches neither
+# engine evening). See hours/resolve-common.ts's withVespersVariant.
 id: all-saints-of-the-benedictine-order-magnificat-antiphon
 text:
-  la: "In regeneratióne, cum séderit Fílius hóminis in sede majestátis suæ, sedébitis et vos, super sedes duódecim, judicántes duódecim tribus Israël."
-  en: "In the regeneration, when the Son of Man shall sit in the throne of His glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Israel."
+  la: "Iste Sanctus * pro lege Dei sui certávit usque ad mortem, et a verbis impiórum non tímuit: fundátus enim erat supra firmam petram."
+  en: "This man is holy * for he hath striven for the law of his God even unto death, and hath not feared for the words of the ungodly; For he had his foundation upon a strong rock."
 status:
   la: verified
   en: verified

@@ -1,11 +1,13 @@
-# The Ascension's own versicle — identical at both Vespers and Lauds
-# (see lauds-versicle-ascension.yml). Live-verified against Divinum
-# Officium (Monastic Tridentinum 1617), Vespers live query, 2026-05-14
-# (Ascension Day itself).
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-05-14 ascension second. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
 id: vespers-versicle-ascension
 text:
-  la: "V. Dóminus in cælo, allelúja.\nR. Parávit sedem suam, allelúja."
-  en: "V. The Lord in heaven, alleluia.\nR. Hath prepared his throne, alleluia."
+  la: |
+    V. Dóminus in cælo.
+    R. Parávit sedem suam.
+  en: |
+    V. The Lord in heaven.
+    R. Hath prepared his throne.
 status:
   la: verified
   en: verified

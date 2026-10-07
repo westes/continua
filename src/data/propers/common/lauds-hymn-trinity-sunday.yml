@@ -1,69 +1,39 @@
-# Corrected 2026-09-10: this file previously duplicated the Vespers hymn
-# ("O lux beáta Trínitas"), based on an earlier live-query capture whose
-# premise ("Trinity Sunday's own Lauds hymn is identical to Vespers'") did
-# not hold up -- direct read of the reference source
-# (Tempora/Pent01-0.txt) shows a genuinely distinct proper Lauds hymn,
-# "Tu, Trinitátis Unitas", confirmed against both `[Hymnus Laudes]`
-# (secular) and `[HymnusM Laudes]` (Monastic, a substitution overlay on
-# the secular block -- applied by hand here, same convention used
-# elsewhere in this store for regex-derived Monastic text). No English
-# Monastic variant exists in the source; the secular English translation
-# is reused (also the existing convention elsewhere). Final stanza is
-# fixed/non-swappable -- no `*` marker anywhere in the source block.
+# Trinity Sunday's Lauds hymn, re-read from the live engine (Monastic Tridentinum 1617, command=prayLaudes, 2027-05-23): "O lux beáta Trínitas", the same as Vespers'.
+# An earlier version of this file read "Tu, Trinitátis Unitas" out of the static source's [HymnusM Laudes] overlay; the engine does not render that at Lauds.
 id: lauds-hymn-trinity-sunday
 text:
-  la: >-
-    Tu, Trinitátis Únitas,
+  la: |
+    O lux beáta Trínitas,
+    Et principális Únitas,
+    Jam sol recédit ígneus,
+    Infúnde lumen córdibus.
 
-    Orbem poténter quæ regis,
-
-    Atténde laudum cántica,
-
-    Quæ excubántes psállimus.
-
-
-    Ortus refúlget Lúcifer,
-
-    Sparsámque lucem núntiat:
-
-    Cadit calígo nóctium:
-
-    Lux sancta nos illúminet.
-
+    Te mane laudum cármine,
+    Te deprecémur véspere:
+    Te nostra supplex glória
+    Per cuncta laudet sǽcula.
 
     Deo Patri sit glória,
-
     Ejúsque soli Fílio,
-
     Cum Spíritu Paráclito,
+    Et nunc, et in perpétuum.
+    Amen.
+  en: |
+    O Trinity of blessed Light,
+    O Unity of sovereign might,
+    as now the fiery sun departs,
+    shed Thou Thy beams within our hearts.
 
-    Et nunc et in perpétuum. Amen.
-  en: >-
-    O thou, who dost all nature sway,
+    To Thee our morning song of praise,
+    to Thee our evening prayer we raise;
+    Thee may our glory evermore
+    in lowly reverence adore.
 
-    Dread Trinity in Unity,
-
-    Accept the trembling praise we pay
-
-    To thy eternal majesty.
-
-
-    The star that heralds in the dawn
-
-    Is slowly fading in the skies;
-
-    The darkness melts; O thou true light,
-
-    Upon our darkened souls arise.
-
-
-    To God the Father glory be,
-
-    And to the sole-begotten Son,
-
-    And Holy Ghost co-equally,
-
-    While everlasting ages run. Amen.
+    All laud to God the Father be;
+    all praise, Eternal Son, to Thee;
+    all glory, as is ever meet,
+    to God the Holy Paraclete.
+    Amen.
 status:
   la: verified
   en: verified

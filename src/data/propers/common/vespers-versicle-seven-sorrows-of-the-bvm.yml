@@ -1,17 +1,12 @@
-# No distinct Vespers versicle found for this feast in the reference
-# source; reusing common-of-the-bvm's own Vespers versicle. Authored to
-# make the feast's own bundle (needed for her own hymn, see lauds-
-# capitulum-seven-sorrows-of-the-bvm.yml -- Vespers falls back to the same Lauds capitulum
-# via vespersCapitulumForOverride) render a real versicle instead of an
-# unconditionally-rendered empty one.
+# Divino Afflatu 1954 engine render (2026-09-15, second Vespers; post-1617 feast, no Monastic render exists). Replaces a text that was either the Common BVM's versicle or the Apparition of St. Michael's with its Paschal Alleluia baked in. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
 id: vespers-versicle-seven-sorrows-of-the-bvm
 text:
   la: |
-    V. Dignáre me laudáre te, Virgo sacráta.
-    R. Da mihi virtútem contra hostes tuos.
+    V. Regína Mártyrum, ora pro nobis.
+    R. Quæ juxta crucem Jesu constitísti.
   en: |
-    V. Holy Virgin, my praise by thee accepted be.
-    R. Give me strength against thine enemies.
+    V. Pray for us, O Queen of Martyrs.
+    R. Who didst stand by the Cross of Jesus.
 status:
   la: verified
   en: verified

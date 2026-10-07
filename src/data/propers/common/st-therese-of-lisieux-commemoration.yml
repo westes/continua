@@ -1,17 +1,16 @@
-# Standard de-Communi commemoration for common-of-a-virgin (`[Ant 2]`+`[Versum 2]`
-# from the reference engine's Commune files -- the tags actually used for
-# a mere commemoration, confirmed against this exact category via an
-# independently live-verified precedent elsewhere in this app). st-therese-of-lisieux has
-# no proper antiphon of his/her own in the source (a plain "vide C..."
-# reference), so this reuses the Common's own text, same as every other
-# saint of this category with nothing proper. Collect is the saint's own
-# real proper (st-therese-of-lisieux-collect.yml), unchanged.
+# Her own [Ant 2] and [Versum 2] (web/www/horas/Latin/SanctiM/10-03b.txt),
+# the tags used for a mere commemoration, followed by her own collect
+# (st-therese-of-lisieux-collect.yml, unchanged). Updated 2026-10-07: this
+# previously reused common-of-a-virgin's antiphon/versicle because only
+# Sancti/10-03.txt (a bare `vide C6a`) had been read; SanctiM/10-03b.txt
+# carries her full proper office. English antiphon/versicle are direct
+# translations (the source has none), so the English is draft.
 id: st-therese-of-lisieux-commemoration
 text:
   la: |
-    Ant. Símile est regnum cælórum * hómini negotiatóri quærénti bonas margarítas: invénta una pretiósa, dedit ómnia sua, et comparávit eam.
-    V. Diffúsa est grátia in lábiis tuis.
-    R. Proptérea benedíxit te Deus in ætérnum.
+    Ant. Requiem tibi dabit * Dóminus semper, et implébit splendóribus ánimam tuam; et eris quasi hortus irríguus, et sicut fons aquárum, cujus non defícient aquæ.
+    V. Erit tibi Dóminus in lucem sempitérnam.
+    R. Et Deus tuus in glóriam tuam.
     Orémus.
     Dómine, qui dixísti: Nisi efficiámini sicut párvuli, non intrábitis in
     regnum cælórum: da nobis, quǽsumus: ita sanctæ Terésiæ Vírginis in
@@ -21,9 +20,9 @@ text:
     sæculórum.
     R. Amen.
   en: |
-    Ant. The kingdom of heaven is like unto a merchantman * seeking goodly pearls, who, when he had found one pearl of great price, went and sold all that he had, and bought it.
-    V. Grace is poured into thy lips.
-    R. Therefore God hath blessed thee for ever.
+    Ant. The Lord will give thee rest * always, and will fill thy soul with brightness; and thou shalt be like a watered garden, and like a fountain of water whose waters shall not fail.
+    V. The Lord shall be unto thee for an everlasting light.
+    R. And thy God for thy glory.
     Let us pray.
     O Lord, who hast said: Unless you become as little children you shall
     not enter the kingdom of heaven, grant us, we pray, so to follow, in
@@ -34,4 +33,4 @@ text:
     R. Amen.
 status:
   la: verified
-  en: verified
+  en: draft

@@ -1,0 +1,15 @@
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-02-01 purification first (continua had "dignaremelaudareteuirg"). First Vespers variant; the default is
+# the same id without "-first". Paschaltide Alleluia is left to hours/paschal-alleluia.ts. See
+# hours/resolve-common.ts's withVespersVariant.
+id: vespers-versicle-purification-first
+text:
+  la: |
+    V. Respónsum accépit Símeon a Spíritu Sancto.
+    R. Non visúrum se mortem, nisi vidéret Christum Dómini.
+  en: |
+    V. It was revealed unto Simeon by the Holy Ghost.
+    R. That he should not see death before he had seen the Lord's Christ.
+status:
+  la: verified
+  en: verified

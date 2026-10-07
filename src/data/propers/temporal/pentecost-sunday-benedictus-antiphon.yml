@@ -1,12 +1,8 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
-# live query, 2027-05-16 (a clean year/date for this temporal id -- see
-# TODO.md for the general method: each temporal-id's own Sunday, found
-# programmatically via calendar/index.ts's own resolveDay rather than
-# guessed at, then cross-checked live for a title with no saint collision).
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-05-16); Latin and English both taken from the page.
 id: pentecost-sunday-benedictus-antiphon
 text:
-  la: "Accípite Spíritum Sanctum: quorum remiséritis peccáta, remittúntur eis, allelúja."
-  en: "Receive ye the Holy Ghost; whoseoever sins ye remit, they are remitted unto them, alleluia."
+  la: "Accípite * Spíritum Sanctum: quorum remiséritis peccáta, remittúntur eis, allelúja."
+  en: "Receive ye the Holy Ghost; * whoseoever sins ye remit, they are remitted unto them, alleluia."
 status:
   la: verified
   en: verified

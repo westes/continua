@@ -1,0 +1,11 @@
+# First Vespers Magnificat antiphon for this Common: Latin/Commune/C4.txt (also the Pope Confessor Common, C4b, which has no [Ant 1] of its own)'s own
+# [Ant 1] (and its English counterpart), where it differs from [Ant 3]. Second
+# Vespers' [Ant 3] is magnificat-antiphon-common-of-a-confessor-bishop.yml (the default); see
+# hours/resolve-common.ts's withVespersVariant.
+id: magnificat-antiphon-common-of-a-confessor-pope-first
+text:
+  la: "Sacérdos et Póntifex, * et virtútum ópifex, pastor bone in pópulo, ora pro nobis Dóminum."
+  en: "O thou Priest and Bishop, * thou worker of mighty works, thou good shepherd over God’s people, pray for us unto the Lord."
+status:
+  la: verified
+  en: verified

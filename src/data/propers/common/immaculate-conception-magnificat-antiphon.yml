@@ -1,17 +1,10 @@
-# Second Vespers Magnificat antiphon, read directly from
-# web/www/horas/Latin/Sancti/12-08.txt's own [Ant 3] and its English
-# counterpart -- a real, proper antiphon of this feast, not a Common
-# substitution. (Not touching this feast's own Benedictus antiphon,
-# immaculate-conception-antiphon.yml, in this pass: its own header
-# claims a live Divinum Officium query showed different text than this
-# static source file's own [Ant 2] -- genuinely ambiguous without a
-# live query to re-check, and this Magnificat slot is a separate,
-# previously entirely-unauthored one with no such conflicting claim, so
-# safe to add on the static source alone.)
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 12-08
+# immaculate-conception (OVERWRITE: stored file "hodieegressaest" matches neither engine evening). See
+# hours/resolve-common.ts's withVespersVariant.
 id: immaculate-conception-magnificat-antiphon
 text:
-  la: "Hódie egréssa est * virga de radíce Jesse: hódie sine ulla peccáti labe concépta est María: hódie contrítum est ab ea caput serpéntis antíqui, allelúja."
-  en: "This day is a rod * sprung from the root of Jesse: this day is Mary conceived without any stain of sin: this day hath she bruised the head of the old serpent, alleluia."
+  la: "Conceptio tua, * Dei Genitrix Virgo, gaudium annuntiavit universo mundo: ex te enim ortus est sol justitiæ, Christus Deus noster: qui solvens maledictionem, dedit benedictionem, et confundens mortem, donavit nobis vitam sempiternam."
+  en: "Thy Birth * O Virgin Mother of God, was a message of joy to the whole world, for out of thee rose the Sun of righteousness, even Christ our God. Who hath taken away the curse and brought a blessing, confounded death, and given unto us everlasting life."
 status:
   la: verified
   en: verified

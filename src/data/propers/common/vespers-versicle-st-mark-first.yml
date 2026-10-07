@@ -1,0 +1,15 @@
+# First Vespers versicle of St. Mark (Paschal Common's [Versum 1]): engine render,
+# Monastic Tridentinum 1617, 2026-04-24. The stored second-Vespers file keeps its
+# baked-in Alleluia; this one leaves the Paschaltide Alleluia to
+# hours/paschal-alleluia.ts. See hours/resolve-common.ts's withVespersVariant.
+id: vespers-versicle-st-mark-first
+text:
+  la: |
+    V. Sancti et justi in Dómino gaudéte.
+    R. Vos elégit Deus in hereditátem sibi.
+  en: |
+    V. Saints and just, rejoice in the Lord.
+    R. The Lord has chosen you for his inheritance.
+status:
+  la: verified
+  en: verified

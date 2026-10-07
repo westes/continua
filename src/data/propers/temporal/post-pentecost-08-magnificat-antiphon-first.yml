@@ -1,0 +1,8 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2027-07-10 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+id: post-pentecost-08-magnificat-antiphon-first
+text:
+  la: "Exaudísti, Dómine, * oratiónem servi tui, ut ædificárem templum nómini tuo."
+  en: "O Lord, Thou hast hearkened unto the prayer of thy servant, * that I might build a temple unto thy Name."
+status:
+  la: verified
+  en: verified

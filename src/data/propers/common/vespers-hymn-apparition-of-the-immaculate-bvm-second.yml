@@ -1,0 +1,84 @@
+# Second Vespers hymn: web/www/horas/Latin/Sancti/02-11.txt's own [Hymnus
+# Vespera 3] ("Omnis expértem máculæ Maríam") and English/Sancti/02-11.txt's
+# translation. The source's final stanza is a fixed doxology that
+# SanctiM/02-11b.txt rewrites for the Monastic rite; here it is replaced by
+# this app's doxology marker instead (common-of-the-bvm sets Doxology=Nat),
+# same as every other BVM hymn. First Vespers has no own hymn in the
+# source (the plain [Hymnus Vespera] is empty), so
+# vespers-hymn-apparition-of-the-immaculate-bvm.yml stays the default; see
+# hours/resolve-common.ts's withVespersVariant.
+id: vespers-hymn-apparition-of-the-immaculate-bvm-second
+text:
+  la: |
+    Omnis expértem máculæ Maríam
+    Edocet summus fídei magíster;
+    Vírginis gaudens celébrat fidélis
+    Terra triúmphum.
+
+    Ipsa se præbens húmili puéllæ
+    Virgo spectándam, récreat pavéntem,
+    Seque concéptam sine labe, sancto
+    Prǽdicat ore.
+
+    O specus felix, decoráte divæ
+    Matris aspéctu! veneránda rupes,
+    Unde vitáles scatuére pleno
+    Gúrgite lymphæ!
+
+    Huc catervátim pia turba nostris,
+    Huc ab extérnis peregrína terris
+    Affluit supplex, et opem poténtis
+    Vírginis orat.
+
+    Excipit Mater lácrimas precántum,
+    Donat optátam míseris salútem;
+    Compos hinc voti pátrias ad oras
+    Turba revértit.
+
+    Súpplicum, Virgo, miseráta casus,
+    Semper o nostros réfove labóres,
+    Impetrans mæstis bona sempitérnæ
+    Gáudia vitæ.
+
+    * Glória tibi, Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  en: |
+    Lo! Mary is exempt from stain of sin,
+    Proclaims the Pontiff high;
+    And earth applauding celebrates with joy
+    Her triumph, far and nigh.
+
+    Unto a lowly timid maid she shows
+    Her form in beauty fair,
+    And the Immaculate Conception truth
+    Her sacred lips declare.
+
+    O honoured cave, by Mary's smile adorned!
+    O hallow'd rock, whence spring
+    The living waters of a gushing stream,
+    The gifts of life to bring.
+
+    And thither from the farmost bounds of earth
+    The pilgrims wend their way,
+    And suppliant around the Virgin's shrine
+    Her powerful help they pray.
+
+    The sufferers' cry the Mother fondly hears,
+    And grants the longed-for grace;
+    And health restored, the pilgrim throng returns
+    Unto its native place.
+
+    O Virgin! have compassion on our needs,
+    Refresh us labouring on;
+    Obtain for us the joys of heavenly life,
+    When sorrow all is gone.
+
+    * All honour, praise and glory be,
+    O Jesu, Virgin-Born, to thee;
+    All glory, as is ever meet,
+    To Father, and to Paraclete. Amen.
+status:
+  la: verified
+  en: verified

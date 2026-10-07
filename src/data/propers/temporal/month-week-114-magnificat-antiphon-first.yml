@@ -1,0 +1,8 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2030-11-16 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+id: month-week-114-magnificat-antiphon-first
+text:
+  la: "Qui cælórum * cóntines thronum, et abýssos intuéris, Dómine, Rex regum, montes pónderas, terram palmo conclúdis: exáudi nos, Dómine, in gemítibus nostris."
+  en: "O Lord, the King of kings, That containest the circuit of the heavens and beholdest the depths, That weighest the mountains, and holdest the earth in thine hand, * hear us, O Lord, when we cry unto thee."
+status:
+  la: verified
+  en: verified

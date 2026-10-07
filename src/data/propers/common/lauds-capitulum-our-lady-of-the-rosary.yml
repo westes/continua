@@ -1,0 +1,15 @@
+# Read from web/www/horas/Latin/Sancti/10-07.txt's own [Capitulum Laudes]
+# and its English counterpart. Vespers reuses this chapter (see
+# hours/vespers.ts's vespersCapitulumForOverride). Without it the feast's
+# own hymn would never be reached: resolveOfficeBundle is all-or-nothing
+# per id (see lauds-capitulum-apparition-of-the-immaculate-bvm.yml).
+id: lauds-capitulum-our-lady-of-the-rosary
+text:
+  la: "In me grátia omnis viæ et veritátis, in me omnis spes vitæ et virtútis. Ego, quasi rosa plantáta super rivos aquárum, fructificávi."
+  en: "In me is all grace of the way and of the truth; in me is all hope of life and virtue; I have flowered forth like a rose planted by the brooks of water."
+citation:
+  la: "Sir 24:25; 39:17"
+  en: "Sir 24:25; 39:17"
+status:
+  la: verified
+  en: verified

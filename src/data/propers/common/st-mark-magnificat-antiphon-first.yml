@@ -1,0 +1,10 @@
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 04-25
+# st-mark (new saint-level first). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+id: st-mark-magnificat-antiphon-first
+text:
+  la: "Lux perpétua * lucébit Sanctis tuis, Dómine, et ætérnitas témporum."
+  en: "Eternal light will shine * over your saints, O Lord, and the eternity of times."
+status:
+  la: verified
+  en: verified

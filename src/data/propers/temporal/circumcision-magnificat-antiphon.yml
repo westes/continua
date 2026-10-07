@@ -1,10 +1,10 @@
-# Read from web/www/horas/Latin/Sancti/01-01.txt's own [Ant 1] (the
-# antiphon slotted between the day's [Versum 1] and [Oratio], i.e. First
-# Vespers' own Magnificat antiphon) and its English counterpart.
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-01-01 circumcision second. Paschaltide Alleluia is left to hours/resolve-common.ts's
+# withPaschaltideAlleluia.
 id: circumcision-magnificat-antiphon
 text:
-  la: "Propter nímiam * caritátem suam, qua diléxit nos Deus, Fílium suum misit in similitúdinem carnis peccáti, allelúja."
-  en: "God, for his great love * wherewith he loved us, sent his own Son in the likeness of sinful flesh, alleluia."
+  la: "Magnum * hereditátis mystérium: templum Dei factus est úterus nesciéntis virum: non est pollútus ex ea carnem assúmens; omnes gentes vénient dicéntes: Glória tibi, Dómine."
+  en: "Herein is a great mystery * of heirship; the womb of her that knew not a man is become the temple of God; in taking of her flesh, He was not defiled; all nations shall come and say: Glory be to thee, O Lord!"
 status:
   la: verified
   en: verified

@@ -1,9 +1,12 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
-# live query, 2026-05-08, the same clean date already used for lauds-capitulum-st-gabriel-archangel.yml.
+# Divino Afflatu 1954 engine render (2026-10-02, second Vespers; post-1617 feast, no Monastic render exists). Replaces a text that was either the Common BVM's versicle or the Apparition of St. Michael's with its Paschal Alleluia baked in. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
 id: vespers-versicle-st-gabriel-archangel
 text:
-  la: "V. In conspéctu Angelórum psallam tibi, Deus meus, allelúja.\nR. Adorábo ad templum sanctum tuum, et confitébor nómini tuo, allelúja."
-  en: "V. Before the Angels will I sing praise unto thee, O my God, alleluia.\nR. I will worship toward thy holy Temple, and praise thy Name, alleluia."
+  la: |
+    V. In conspéctu Angelórum psallam tibi, Deus meus.
+    R. Adorábo ad templum sanctum tuum, et confitébor nómini tuo.
+  en: |
+    V. Before the Angels will I sing praise unto thee, O my God.
+    R. I will worship toward thy holy Temple, and praise thy Name.
 status:
   la: verified
   en: verified

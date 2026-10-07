@@ -1,0 +1,71 @@
+# First Vespers hymn: web/www/horas/Latin/Sancti/10-07.txt's own [Hymnus
+# Vespera] ("Cæléstis aulæ Núntius", the Joyful Mysteries) and English/
+# Sancti/10-07.txt's translation. Second Vespers' own [Hymnus Vespera 3]
+# is vespers-hymn-our-lady-of-the-rosary.yml (the default); see
+# hours/resolve-common.ts's withVespersVariant. Doxology: see
+# lauds-hymn-our-lady-of-the-rosary.yml.
+id: vespers-hymn-our-lady-of-the-rosary-first
+text:
+  la: |
+    Cæléstis aulæ Núntius,
+    Arcána pandens Núminis,
+    Plenam salútat grátia
+    Dei Paréntem Vírginem.
+
+    Virgo propínquam sánguine
+    Matrem Joánnis vísitat,
+    Qui, clausus alvo, géstiens
+    Adésse Christum núntiat.
+
+    Verbum, quod ante sǽcula
+    E mente Patris pródiit,
+    E Matris alvo Vírginis,
+    Mortális Infans, náscitur.
+
+    Templo puéllus sístitur,
+    Legíque paret Légifer,
+    Hic se Redémptor páupere
+    Prétio redémptus ímmolat.
+
+    Quem jam dolébat pérditum,
+    Mox læta Mater ínvenit
+    Ignóta doctis méntibus
+    Edisseréntem Fílium.
+
+    * Glória tibi, Dómine,
+    Qui natus es de Vírgine,
+    Cum Patre, et Sancto Spíritu,
+    In sempitérna sǽcula. Amen.
+  en: |
+    The messenger from God's high throne
+    His secret counsel making known
+    Hails Mary, child of David's race,
+    God's Virgin-Mother, full of grace.
+
+    The Mother-Maid with joyous feet
+    Her friend, John's mother, goes to greet;
+    He, stirring in the enclosing womb,
+    Declares that Christ his Lord has come.
+
+    The Word, who ere the worlds began,
+    From God the Father's thought forth ran,
+    Of Mary, Virgin undefiled,
+    For us is born a mortal child.
+
+    Christ to the temple courts they bring;
+    The King's own law subjects the King;
+    The world's Redeemer for a price
+    Is there redeemed, our sacrifice.
+
+    The joyful Mother finds once more
+    The Son she mourned as lost before;
+    While doctors by his speech were shown
+    The mysteries they had never known.
+
+    * All honour, praise and glory be,
+    O Jesu, Virgin-Born, to thee;
+    All glory, as is ever meet,
+    To Father, and to Paraclete. Amen.
+status:
+  la: verified
+  en: verified

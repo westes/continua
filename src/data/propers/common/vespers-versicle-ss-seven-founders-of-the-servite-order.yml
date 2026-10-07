@@ -1,11 +1,12 @@
-# No distinct Vespers versicle exists in the reference source for this
-# feast; reusing common-of-several-confessors' own Vespers versicle.
-# Authored to make their own bundle render a real versicle instead of an
-# unconditionally-rendered empty one.
+# Divino Afflatu 1954 engine render (2026-02-12, second Vespers; post-1617 feast, no Monastic render exists). Replaces a text that was either the Common BVM's versicle or the Apparition of St. Michael's with its Paschal Alleluia baked in. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
 id: vespers-versicle-ss-seven-founders-of-the-servite-order
 text:
-  la: "V. Amávit eum Dóminus, et ornávit eum.\nR. Stolam glóriæ índuit eum."
-  en: "V. The Lord loved him and beautified him.\nR. He clothed him with a robe of glory."
+  la: |
+    V. Hi viri misericórdiæ sunt, quorum pietátes non defuérunt.
+    R. Semen eórum et glória eórum non derelinquétur.
+  en: |
+    V. These were merciful men whose righteousness hath not been forgotten.
+    R. Their seed and their glory shall not be blotted out.
 status:
   la: verified
   en: verified
