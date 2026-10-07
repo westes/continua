@@ -11,9 +11,7 @@ content in the same shape, not a design change. The dated log below is that pipe
 ## Open work, in priority order
 
 1. **Mechanism gaps**
-   - Terce/Sext/None closing antiphon missing: `terce.ts` (and sext/none) only attaches the antiphon
-     to the first psalm (`i === 0`), so the closing repeat after the third psalm is never rendered.
-     Standard psalmody always frames the psalm group with opening and closing antiphon.
+   None open.
 
 2. **Minimal-proof-done, bulk content pending**
    - Prime's per-feast Lectio Brevis override (`getPrimeLectioBrevis`, `${propers}-lectio-prima`):
@@ -8571,3 +8569,11 @@ Still open:
   the ferial-number overlay below duplex-majus, St. Joseph, the Immaculate Conception's diacritics.
 - **Engine-calendar quirks not copied:** All Saints of the Benedictine Order's second-Vespers Magnificat
   weekday variation; St. Silvester I's Christmas-octave 4th antiphon (Ps 131).
+
+### Terce/Sext/None closing antiphon (2026-10-06)
+
+Closed the open mechanism gap: Terce, Sext and None attached the antiphon only to the first psalm, so
+the closing repeat after the third psalm never rendered. The reference engine's antetpsalm repeats the
+full antiphon after the last psalm, so the old "no closing repeat" comments were wrong. Added a
+`closing-antiphon` part to `terce.yml`, `sext.yml` and `none.yml` (commit 768e85b3) and flipped the
+test that had asserted its absence.
