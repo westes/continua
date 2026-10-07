@@ -90,6 +90,7 @@ import {
   resolveCommon,
   substituteDoxology,
   getDayCollect,
+  getMinorHourOverrideId,
   getOfficeOverrideId,
   resolveOfficeWinner,
   seasonalOfficeSuffix,
@@ -106,7 +107,7 @@ import { getBiblePlanReadings } from '../propers/bible-plan';
 import { getNocturnReadings, type NocturnReading } from '../propers/nocturn-readings';
 import { getOctaveReading } from '../propers/octave-readings';
 import { getResponsoryForCommon } from '../propers/matins-responsories';
-import { getGospelIncipitFromCitation } from '../propers/bible-book-incipits';
+import { getGospelIncipitFromCitation, getScriptureIncipitFromCitation } from '../propers/bible-book-incipits';
 import { getMatinsSaintOverride, getMatinsCommonOverride, type MatinsPsalmodyScheme } from './matins-psalmody-overrides';
 import matinsSundayAntiphonsData from '../data/hours/matins-sunday-antiphons.yml';
 import matinsSundayNocturn3OverridesData from '../data/hours/matins-sunday-nocturn3-overrides.yml';
@@ -119,9 +120,12 @@ import type { Weekday } from '../calendar/types';
 import { isAllSouls, buildMatinsParts } from './all-souls';
 
 type BilingualText = Partial<Record<string, string>>;
+type TextStatus = Partial<Record<string, 'verified' | 'draft' | 'missing'>>;
 interface SundayGroup {
   psalms: number[];
   antiphon: BilingualText;
+  /** Per-language status of `antiphon`; absent means verified. */
+  status?: TextStatus;
 }
 interface ScriptureRef {
   book: string;
@@ -138,7 +142,9 @@ interface SundayNocturn {
   // under one heading.
   canticles?: { refs: ScriptureRef[] }[];
   antiphon?: BilingualText;
-  versicle: { v: BilingualText; r: BilingualText };
+  /** Per-language status of `antiphon` (Nocturn 3's shared one); absent means verified. */
+  antiphonStatus?: TextStatus;
+  versicle: { v: BilingualText; r: BilingualText; status?: TextStatus };
 }
 interface MatinsSundayAntiphons {
   nocturn1: SundayNocturn;
@@ -262,11 +268,27 @@ const NOCTURN_NUMERAL = ['I', 'II', 'III'] as const;
  * nocturn versicle in this file goes through this (previously
  * `sundayPsalmNocturn`/`sundayCanticleNocturn` only rendered the V. line,
  * silently dropping the responsory; fixed here, 2026-08-21). */
-function versicleText(versicle: { v: BilingualText; r: BilingualText }): ResolvedText {
-  return verifiedText({
-    la: `V. ${versicle.v.la}\nR. ${versicle.r.la}`,
-    en: `V. ${versicle.v.en}\nR. ${versicle.r.en}`,
-  });
+function versicleText(versicle: { v: BilingualText; r: BilingualText; status?: TextStatus }): ResolvedText {
+  return withStatus(
+    {
+      la: `V. ${versicle.v.la}\nR. ${versicle.r.la}`,
+      en: `V. ${versicle.v.en}\nR. ${versicle.r.en}`,
+    },
+    versicle.status,
+  );
+}
+
+/** `verifiedText`, except any language named in `status` takes that
+ * status instead -- how an authored override marks a self-translated
+ * (`draft`) line without a separate file. */
+function withStatus(text: BilingualText, status: TextStatus | undefined): ResolvedText {
+  const base = verifiedText(text);
+  if (!status) return base;
+  const merged: Partial<Record<string, 'verified' | 'draft' | 'missing'>> = { ...base.status };
+  for (const lang of Object.keys(text)) {
+    merged[lang] = status[lang] ?? 'verified';
+  }
+  return { text, status: merged };
 }
 
 type PsalmPart = Extract<ResolvedPart, { kind: 'psalm' }>;
@@ -414,7 +436,7 @@ function invitatoryParts(day: LiturgicalDay): ResolvedPart[] {
 function sundayPsalmNocturn(group: SundayNocturn, day: LiturgicalDay): ResolvedPart[] {
   const parts: ResolvedPart[] = [];
   for (const g of group.groups ?? []) {
-    const antiphonText = verifiedText(g.antiphon);
+    const antiphonText = withStatus(g.antiphon, g.status);
     const opening = openingAntiphon(antiphonText, resolveOfficeWinner(day));
     const { full } = splitNamedAntiphon(antiphonText);
     g.psalms.forEach((n, i) => {
@@ -439,7 +461,7 @@ function sundayPsalmNocturn(group: SundayNocturn, day: LiturgicalDay): ResolvedP
  * exists, same "omit rather than render empty" convention as Vespers'
  * NO_VESPERS_RESPONSORY (see tests/hours/vespers.test.ts). */
 function sundayCanticleNocturn(group: SundayNocturn, day: LiturgicalDay): ResolvedPart[] {
-  const opening = group.antiphon ? openingAntiphon(verifiedText(group.antiphon), resolveOfficeWinner(day)) : undefined;
+  const opening = group.antiphon ? openingAntiphon(withStatus(group.antiphon, group.antiphonStatus), resolveOfficeWinner(day)) : undefined;
   const parts: ResolvedPart[] = (group.canticles ?? []).map((c, i) => {
     const verses = c.refs.flatMap((ref) => getScriptureVerses(ref.book, ref.chapter, ref.verses));
     const text: BilingualText = {
@@ -454,7 +476,7 @@ function sundayCanticleNocturn(group: SundayNocturn, day: LiturgicalDay): Resolv
     };
   });
   if (group.antiphon) {
-    const { full } = splitNamedAntiphon(verifiedText(group.antiphon));
+    const { full } = splitNamedAntiphon(withStatus(group.antiphon, group.antiphonStatus));
     parts.push({ kind: 'antiphon', text: full });
   }
   parts.push({ kind: 'versicle', text: versicleText(group.versicle) });
@@ -512,7 +534,11 @@ function renderOverrideNocturn3(group: SundayNocturn, day: LiturgicalDay): Resol
  * when nothing else contends and the octave tier would otherwise be
  * synthesizing the day's whole winner from scratch. */
 function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
-  const overrideId = getOfficeOverrideId(day);
+  // Rank-agnostic, like Lauds'/Vespers' own bundle (see resolve-common.ts's
+  // getMinorHourOverrideId): a lower-rank saint's authored proper Matins
+  // hymn (St. Martina, Semiduplex) is real content, not something only
+  // duplex-majus+ feasts are entitled to.
+  const overrideId = getMinorHourOverrideId(day);
   if (overrideId) {
     const proper = resolveCommon(`matins-hymn-${overrideId}`);
     if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
@@ -981,12 +1007,16 @@ function normalizeParagraphs<T extends Partial<Record<string, string>>>(text: T)
  * same convention as the per-book pool. Common-category fallback only
  * applies to a real saint id (`getSaintRecord(id)?.common`) — a temporal or
  * octave id has no Commune category to fall back to. */
+function scriptureLabel(r: NocturnReading): { la: string; en: string } | undefined {
+  return getScriptureIncipitFromCitation(r.citation);
+}
+
 function nocturnReadingPart(r: NocturnReading, id: string, index: number, day: LiturgicalDay): ResolvedPart {
   const responsoryText = r.responsory ?? getResponsoryForCommon(getSaintRecord(id)?.common, index);
   return {
     kind: 'lesson',
     text: { text: normalizeParagraphs(r.text), status: r.status, citation: r.citation },
-    label: withOccasion(r.source, id, day) ?? fallbackHagiographicLabel(id),
+    label: withOccasion(r.source, id, day) ?? scriptureLabel(r) ?? fallbackHagiographicLabel(id),
     responsory: responsoryText ? { text: responsoryText, status: { la: 'verified', en: 'verified' } } : undefined,
   };
 }
@@ -1288,7 +1318,11 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // drives the unrelated antiphon-doubling rule (full vs. incipit antiphon
   // before the psalms) and stays floored at Duplex; the two thresholds
   // only coincided before this change by accident, not by shared meaning.
-  const temporalNamedOverride = winner.kind === 'temporal' ? sundayNamedOverrides[temporalId] : undefined;
+  // A winner's own id wins over its governing week's (Christmas Day and the
+  // Epiphany are `christmas-day`/`epiphany`, while `temporalId` is the season
+  // catch-all `christmas-octave-sunday`/`post-epiphany-1`).
+  const namedKey = winner.kind === 'temporal' && sundayNamedOverrides[winner.id] ? winner.id : temporalId;
+  const temporalNamedOverride = winner.kind === 'temporal' ? sundayNamedOverrides[namedKey] : undefined;
   const hasTemporalNamedOverride =
     temporalNamedOverride !== undefined && (temporalNamedOverride.weekdays === undefined || temporalNamedOverride.weekdays.includes(day.weekday));
   const threeNocturns =
@@ -1345,13 +1379,13 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     parts.push({ kind: 'versicle', text: resolveCommon('te-decet-laus') });
   } else if (threeNocturns && (day.weekday === 'sunday' || hasTemporalNamedOverride)) {
     parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
-    parts.push(...sundayPsalmNocturn(sundayNocturnFor('nocturn1', day, temporalId), day));
+    parts.push(...sundayPsalmNocturn(sundayNocturnFor('nocturn1', day, namedKey), day));
     parts.push(...(nocturn1Readings ?? []));
     parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[1]}` });
-    parts.push(...sundayPsalmNocturn(sundayNocturnFor('nocturn2', day, temporalId), day));
+    parts.push(...sundayPsalmNocturn(sundayNocturnFor('nocturn2', day, namedKey), day));
     parts.push(...(nocturn2Readings ?? []));
     parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[2]}` });
-    parts.push(...sundayCanticleNocturn(sundayNocturnFor('nocturn3', day, temporalId), day));
+    parts.push(...sundayCanticleNocturn(sundayNocturnFor('nocturn3', day, namedKey), day));
     parts.push(...(nocturn3Readings ?? []));
     parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
     parts.push({ kind: 'versicle', text: resolveCommon('te-decet-laus') });

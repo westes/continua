@@ -1,3 +1,4 @@
+import { sharedOfficeId } from './office-source';
 import { resolveCommonCategoryId } from './psalmody-common-category';
 
 /** Same shape as data/hours/lauds-antiphons.yml's per-weekday entries
@@ -78,7 +79,8 @@ export function getLaudsPsalmodyOverride(id: string | undefined): LaudsPsalmodyO
 /** Saint-specific proper only, skipping the Common-category tier. */
 export function getLaudsSaintOverride(id: string | undefined): LaudsPsalmodyOverride | undefined {
   if (!id) return undefined;
-  return overrides.get(id);
+  const shared = sharedOfficeId(id);
+  return overrides.get(id) ?? (shared ? overrides.get(shared) : undefined);
 }
 
 /** Common-category lookup only, joining via `SaintRecord.common`. When

@@ -7,11 +7,13 @@ import { getSaintRecord } from '../calendar/feasts';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
-import { isInTriduum } from '../calendar/temporal';
+import { isInTriduum, easterOffsetOf } from '../calendar/temporal';
 import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { getVespersSaintOverride, getVespersCommonOverride } from './vespers-psalmody-overrides';
 import { applyFlexaMark } from './antiphon';
+import { paschalizeAntiphon, paschalizeResponsory, paschalizeVersicle, usesAlleluiaDismissal } from './paschal-alleluia';
 import {
+  isSeasonalProperSunday,
   resolveCommon,
   substituteDoxology,
   getDayCollects,
@@ -26,6 +28,8 @@ import {
   getPsalmodyNumbersOverrideId,
   resolveResponsory,
   resolveOfficeBundle,
+  withVespersVariant,
+  type VespersVariant,
   resolveSuffrages,
   isPaschaltide,
   overlayProperAntiphons,
@@ -61,7 +65,7 @@ function normalizePsalmRef(ref: PsalmRefLike): { number: number; verses?: string
  * in full once, after the last. Mirrors lauds.ts's psalmParts, extended
  * for verse-range entries (see PsalmRefLike). */
 function psalmParts(group: VespersGroup, day: LiturgicalDay): ResolvedPart[] {
-  const antiphonText = verifiedText(group.antiphon);
+  const antiphonText = verifiedText(isPaschaltide(day.season) ? paschalizeAntiphon(group.antiphon) : group.antiphon);
   const opening = openingAntiphon(antiphonText, resolveOfficeWinner(day));
   const { full } = splitNamedAntiphon(antiphonText);
   const refs = group.psalms.map(normalizePsalmRef);
@@ -100,12 +104,12 @@ function psalmParts(group: VespersGroup, day: LiturgicalDay): ResolvedPart[] {
  * own office. Falls back to `undefined` for an eligible feast with no
  * override authored in either tier, same honest incremental-content
  * convention as everywhere else. */
-function getPsalmodyOverrideFor(day: LiturgicalDay): VespersDay | undefined {
+function getPsalmodyOverrideFor(day: LiturgicalDay, variant: VespersVariant): VespersDay | undefined {
   const id = getPsalmodyNumbersOverrideId(day);
   if (!id) {
     return undefined;
   }
-  return getVespersSaintOverride(id) ?? getVespersCommonOverride(id, isPaschaltide(day.season));
+  return getVespersSaintOverride(id, variant) ?? getVespersCommonOverride(id, isPaschaltide(day.season), variant);
 }
 
 /** Below duplex-majus, mirrors hours/lauds.ts's identical
@@ -131,14 +135,16 @@ function mergeFerialNumbersWithProperAntiphons(ferial: VespersDay, proper: Vespe
  * fixed 6-day rotation regardless of whose office governs the evening's
  * propers. `day` is still threaded into psalmParts for antiphon-fullness
  * resolution, which does care who governs tonight. */
-function resolvePsalmody(day: LiturgicalDay, weekday: Weekday): ResolvedPart[] {
+function resolvePsalmody(day: LiturgicalDay, weekday: Weekday, variant: VespersVariant): ResolvedPart[] {
   const ferial = vespersAntiphons[weekday];
   let wd: VespersDay;
-  if (getPsalmodyNumbersOverrideId(day)) {
-    wd = getPsalmodyOverrideFor(day) ?? ferial;
+  if (getPsalmodyNumbersOverrideId(day) && !(variant === 'first' && day.weekday === 'sunday' && weekday === 'saturday' && isSeasonalProperSunday(day))) {
+    wd = getPsalmodyOverrideFor(day, variant) ?? ferial;
   } else {
     const properId = getPsalmodyProperOverrideId(day);
-    const proper = properId ? (getVespersSaintOverride(properId) ?? getVespersCommonOverride(properId, isPaschaltide(day.season))) : undefined;
+    const proper = properId
+      ? (getVespersSaintOverride(properId, variant) ?? getVespersCommonOverride(properId, isPaschaltide(day.season), variant))
+      : undefined;
     wd = proper ? mergeFerialNumbersWithProperAntiphons(ferial, proper) : ferial;
   }
   return wd.groups.flatMap((group) => psalmParts(group, day));
@@ -169,8 +175,8 @@ function vespersVersicleId(weekday: Weekday): string {
  * the ones checked. So no `vespers-capitulum-<id>.yml` files were
  * authored at all — this falls straight through to the Lauds one instead
  * of duplicating identical content into a second file per id. */
-function vespersCapitulumForOverride(id: string): ResolvedText {
-  const proper = resolveCommon(`vespers-capitulum-${id}`);
+function vespersCapitulumForOverride(id: string, variant?: VespersVariant): ResolvedText {
+  const proper = withVespersVariant(`vespers-capitulum-${id}`, variant, resolveCommon(`vespers-capitulum-${id}`));
   if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
     return proper;
   }
@@ -187,7 +193,7 @@ function vespersCapitulumForOverride(id: string): ResolvedText {
  * that one substitution uniformly, so this function itself just resolves
  * the right *body* text and returns it unchanged. See lauds.ts's identical
  * resolveLaudsHymn. */
-function resolveVespersHymn(day: LiturgicalDay, key: string): ResolvedText {
+function resolveVespersHymn(day: LiturgicalDay, key: string, variant?: VespersVariant): ResolvedText {
   // A temporal-feast-only octave (Ascension's own) still needs its own
   // hymn recognized directly here, bypassing octaveGoverningPrivilegedDay's
   // privileged-Sunday gate — see lauds.ts's identical resolveLaudsHymn for
@@ -201,7 +207,7 @@ function resolveVespersHymn(day: LiturgicalDay, key: string): ResolvedText {
       return octaveHymn;
     }
   }
-  return resolveCommon(`vespers-hymn-${key}`);
+  return withVespersVariant(`vespers-hymn-${key}`, variant, resolveCommon(`vespers-hymn-${key}`));
 }
 
 /** The chapter/responsory/hymn/versicle bundle following the psalmody —
@@ -220,10 +226,28 @@ function resolveVespersHymn(day: LiturgicalDay, key: string): ResolvedText {
  * seasonalOfficeSuffix), and only then the plain weekday default — a
  * feast's own override always wins over the season it happens to fall
  * in, same as everywhere else in this codebase. */
-function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
+function resolveOffice(day: LiturgicalDay, weekday: Weekday, variant: VespersVariant): ResolvedPart[] {
+  const parts = resolveOfficeParts(day, weekday, variant);
+  if (!isPaschaltide(day.season)) return parts;
+  return parts.map((p) =>
+    p.kind === 'responsory'
+      ? { ...p, text: paschalizeResponsory(p.text) }
+      : p.kind === 'versicle'
+        ? { ...p, text: paschalizeVersicle(p.text) }
+        : p,
+  );
+}
+
+function resolveOfficeParts(day: LiturgicalDay, weekday: Weekday, variant: VespersVariant): ResolvedPart[] {
   const hymnDoxologyOverrideId = getHymnDoxologyOverrideId(day);
   const hymnDoxologyOverride = hymnDoxologyOverrideId ? resolveCommon(hymnDoxologyOverrideId) : undefined;
-  const bundle = resolveOfficeBundle('vespers', day, vespersCapitulumForOverride);
+  // First Vespers of a Sunday is said on Saturday evening: the engine takes
+  // the Saturday's own (or the season's) responsory, hymn and versicle there,
+  // with only the Magnificat -- and, for the seasonal Sundays with a proper
+  // chapter, the chapter -- belonging to the Sunday.
+  const saturdayEvening = variant === 'first' && day.weekday === 'sunday' && weekday === 'saturday';
+  const seasonalSunday = isSeasonalProperSunday(day);
+  const bundle = saturdayEvening && seasonalSunday ? undefined : resolveOfficeBundle('vespers', day, (id) => vespersCapitulumForOverride(id, variant), variant);
   if (bundle) {
     const parts: ResolvedPart[] = [{ kind: 'chapter', text: bundle.chapter }];
     // The Sacred Heart's own Vespers genuinely has no responsory at all in
@@ -238,25 +262,28 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
     return parts;
   }
   const seasonSuffix = seasonalOfficeSuffix(day.season);
-  const key = seasonSuffix ?? day.weekday;
+  const officeWeekday = saturdayEvening ? weekday : day.weekday;
+  const key = seasonSuffix ?? officeWeekday;
+  const ownChapter = saturdayEvening && seasonalSunday ? vespersCapitulumForOverride(day.winner.id, variant) : undefined;
+  const chapter =
+    ownChapter && (ownChapter.status.la !== 'missing' || ownChapter.status.en !== 'missing')
+      ? ownChapter
+      : resolveCommon(seasonSuffix ? `vespers-capitulum-${key}` : vespersCapitulumId(officeWeekday));
   return [
-    {
-      kind: 'chapter',
-      text: resolveCommon(seasonSuffix ? `vespers-capitulum-${key}` : vespersCapitulumId(day.weekday)),
-    },
+    { kind: 'chapter', text: chapter },
     {
       kind: 'responsory',
-      text: resolveResponsory(resolveCommon(seasonSuffix ? `vespers-responsory-${key}` : vespersResponsoryId(day.weekday)), day),
+      text: resolveResponsory(resolveCommon(seasonSuffix ? `vespers-responsory-${key}` : vespersResponsoryId(officeWeekday)), day),
     },
-    { kind: 'hymn', text: substituteDoxology(resolveVespersHymn(day, key), hymnDoxologyOverride) },
+    { kind: 'hymn', text: substituteDoxology(resolveVespersHymn(day, key, variant), hymnDoxologyOverride) },
     {
       kind: 'versicle',
-      text: resolveCommon(seasonSuffix ? `vespers-versicle-${key}` : vespersVersicleId(day.weekday)),
+      text: resolveCommon(seasonSuffix ? `vespers-versicle-${key}` : vespersVersicleId(officeWeekday)),
     },
   ];
 }
 
-function resolvePart(part: HourPart, day: LiturgicalDay, weekday: Weekday): ResolvedPart[] {
+function resolvePart(part: HourPart, day: LiturgicalDay, weekday: Weekday, variant: VespersVariant, date: string): ResolvedPart[] {
   switch (part.kind) {
     case 'opening-versicle':
       // Real Tenebrae/Triduum rubric: this versicle's own baked-in Gloria
@@ -270,11 +297,11 @@ function resolvePart(part: HourPart, day: LiturgicalDay, weekday: Weekday): Reso
       }
       return [{ kind: 'versicle', text: resolveCommon(getOpeningVersicleId(day)) }];
     case 'vespers-psalmody':
-      return resolvePsalmody(day, weekday);
+      return resolvePsalmody(day, weekday, variant);
     case 'vespers-office':
-      return resolveOffice(day);
+      return resolveOffice(day, weekday, variant);
     case 'magnificat': {
-      const antiphonText = getMagnificatAntiphon(day);
+      const antiphonText = getMagnificatAntiphon(day, variant, date);
       const opening = openingAntiphon(antiphonText, resolveOfficeWinner(day));
       const { full } = splitNamedAntiphon(antiphonText);
       return [
@@ -296,8 +323,13 @@ function resolvePart(part: HourPart, day: LiturgicalDay, weekday: Weekday): Reso
       return getDayCollects(day, 'vespers');
     case 'suffrages':
       return resolveSuffrages(day, part.omitOnDouble, 'vespers');
-    case 'preces':
-      return [{ kind: 'preces', text: resolveCommon(part.textRef.id), label: part.label }];
+    case 'preces': {
+      const id =
+        part.textRef.id === 'lauds-conclusio' && usesAlleluiaDismissal('vespers', date, day.date)
+          ? 'lauds-conclusio-alleluia'
+          : part.textRef.id;
+      return [{ kind: 'preces', text: resolveCommon(id), label: part.label }];
+    }
     case 'versicle':
     case 'chapter':
     case 'responsory':
@@ -325,6 +357,35 @@ function resolvePart(part: HourPart, day: LiturgicalDay, weekday: Weekday): Reso
   }
 }
 
+/** Holy Saturday evening (engine: "Sabbato Sancto special Paschal Vespera"):
+ * a single psalm (116) under a triple Alleluia, the Magnificat, the Easter
+ * postcommunion as collect, and the double-Alleluia dismissal -- no opening
+ * versicle, chapter, hymn, responsory, versicle, Preces or suffrages. */
+function holySaturdayVespersParts(day: LiturgicalDay): ResolvedPart[] {
+  const magnificat = resolveCommon('holy-saturday-vespers-magnificat-antiphon');
+  const opening = openingAntiphon(magnificat, resolveOfficeWinner(day));
+  const { full } = splitNamedAntiphon(magnificat);
+  return [
+    ...psalmParts({ psalms: [116], antiphon: resolveCommon('holy-saturday-vespers-antiphon').text }, day),
+    { kind: 'canticle', canticleId: 'magnificat', text: resolveCommon('magnificat'), antiphon: opening },
+    { kind: 'antiphon', text: full },
+    { kind: 'preces', text: resolveCommon('holy-saturday-vespers-exaudi') },
+    { kind: 'prayer', text: resolveCommon('holy-saturday-vespers-collect') },
+    { kind: 'preces', text: resolveCommon('lauds-conclusio-alleluia') },
+  ];
+}
+
+/** Maundy Thursday / Good Friday Vespers: engine omits the chapter,
+ * responsory, hymn and versicle ("omittitur"), the Preces, the commemoration
+ * and suffrages, and the closing versicles; what remains is the psalmody,
+ * the Magnificat and the day's own silent-ending collect. */
+function triduumVespersParts(parts: ResolvedPart[]): ResolvedPart[] {
+  const drop = new Set(['chapter', 'responsory', 'hymn', 'versicle', 'preces']);
+  const kept = parts.filter((p) => !drop.has(p.kind));
+  const firstPrayer = kept.findIndex((p) => p.kind === 'prayer');
+  return kept.filter((p, i) => p.kind !== 'prayer' || i === firstPrayer);
+}
+
 export function resolveOrdo(date: string): ResolvedOrdo {
   // Only Nov 2's own (Second) Vespers is the Office of the Dead — Nov 1
   // evening stays First Vespers of All Saints unaffected (per user
@@ -345,6 +406,18 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // above — see resolvePsalmody's doc comment for why psalm selection
   // must not follow the evening's borrowed identity.
   const weekday = weekdayOf(date);
-  const parts = vespersDefinition.parts.flatMap((part) => resolvePart(part, day, weekday));
+  // `day` is tomorrow's identity exactly when tonight anticipates its
+  // First Vespers (resolveEveningDay), today's own otherwise -- so a date
+  // mismatch is the one reliable test, covering temporal feasts too (the
+  // `winner.vespersFrom` tag is only ever set on sanctoral winners).
+  const variant: VespersVariant = day.date === date ? 'second' : 'first';
+  const offset = easterOffsetOf(date);
+  if (offset === -1) {
+    return { hourId: 'vespers', date, parts: holySaturdayVespersParts(day), dayLabel: getDayLabel(day) };
+  }
+  const parts = vespersDefinition.parts.flatMap((part) => resolvePart(part, day, weekday, variant, date));
+  if (offset === -2 || offset === -3) {
+    return { hourId: 'vespers', date, parts: triduumVespersParts(parts), dayLabel: getDayLabel(day) };
+  }
   return { hourId: 'vespers', date, parts, dayLabel: getDayLabel(day) };
 }

@@ -11,6 +11,7 @@ import { isInTriduum } from '../calendar/temporal';
 import { getHymnDoxologyOverrideId } from './hymn-doxology';
 import { getMarianAntiphonId, getMarianAntiphonLabel } from './marian-antiphon';
 import { applyFlexaMark } from './antiphon';
+import { paschalizeAntiphon, paschalizeResponsory, paschalizeVersicle, usesAlleluiaDismissal } from './paschal-alleluia';
 import {
   resolveCommon,
   substituteDoxology,
@@ -238,7 +239,9 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
     wd = proper ? mergeFerialNumbersWithProperAntiphons(ferial, proper) : ferial;
   }
   const winner = resolveOfficeWinner(day);
-  const opening = (antiphon: BilingualText) => openingAntiphon(verifiedText(antiphon), winner);
+  const paschal = isPaschaltide(day.season);
+  const alleluia = (antiphon: BilingualText): BilingualText => (paschal ? paschalizeAntiphon(antiphon) : antiphon);
+  const opening = (antiphon: BilingualText) => openingAntiphon(verifiedText(alleluia(antiphon)), winner);
   const parts: ResolvedPart[] = [
     {
       kind: 'psalm',
@@ -247,11 +250,11 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
     },
   ];
   for (const group of wd.groups) {
-    parts.push(...psalmParts(group.psalms, group.antiphon, opening(group.antiphon)));
+    parts.push(...psalmParts(group.psalms, alleluia(group.antiphon), opening(group.antiphon)));
   }
   const canticle = getCanticle(wd.canticle.id);
   const canticleOpening = opening(wd.canticle.antiphon);
-  const canticleClosing = splitNamedAntiphon(verifiedText(wd.canticle.antiphon)).full;
+  const canticleClosing = splitNamedAntiphon(verifiedText(alleluia(wd.canticle.antiphon))).full;
   if (wd.canticle.split) {
     // Said in two pieces, own Gloria Patri each, one shared antiphon
     // framing both (opening before the first, full repeated only after
@@ -276,7 +279,7 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
     });
   }
   parts.push({ kind: 'antiphon', text: canticleClosing });
-  parts.push(...psalmParts([148, 149, 150], wd.laudate.antiphon, opening(wd.laudate.antiphon)));
+  parts.push(...psalmParts([148, 149, 150], alleluia(wd.laudate.antiphon), opening(wd.laudate.antiphon)));
   return parts;
 }
 
@@ -325,6 +328,18 @@ function resolveLaudsHymn(day: LiturgicalDay, key: string): ResolvedText {
  * feast's own override always wins over the season it happens to fall
  * in, same as everywhere else in this codebase. */
 function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
+  const parts = resolveOfficeParts(day);
+  if (!isPaschaltide(day.season)) return parts;
+  return parts.map((p) =>
+    p.kind === 'responsory'
+      ? { ...p, text: paschalizeResponsory(p.text) }
+      : p.kind === 'versicle'
+        ? { ...p, text: paschalizeVersicle(p.text) }
+        : p,
+  );
+}
+
+function resolveOfficeParts(day: LiturgicalDay): ResolvedPart[] {
   const hymnDoxologyOverrideId = getHymnDoxologyOverrideId(day);
   const hymnDoxologyOverride = hymnDoxologyOverrideId ? resolveCommon(hymnDoxologyOverrideId) : undefined;
   const bundle = resolveOfficeBundle('lauds', day);
@@ -378,8 +393,13 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
         { kind: 'antiphon', text: full },
       ];
     }
-    case 'preces':
-      return [{ kind: 'preces', text: resolveCommon(part.textRef.id), label: part.label }];
+    case 'preces': {
+      const id =
+        part.textRef.id === 'lauds-conclusio' && usesAlleluiaDismissal('lauds', day.date, day.date)
+          ? 'lauds-conclusio-alleluia'
+          : part.textRef.id;
+      return [{ kind: 'preces', text: resolveCommon(id), label: part.label }];
+    }
     case 'day-collects':
       return getDayCollects(day, 'lauds');
     case 'suffrages':

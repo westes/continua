@@ -40,9 +40,12 @@ import { resolveCommonCategoryId } from './psalmody-common-category';
  * `id` is looked up against `hours/resolve-common.ts`'s
  * `resolveOfficeWinner(day).id` when it's sanctoral, exactly like every
  * other per-feast/per-category content lookup in this app. */
+export type MatinsTextStatus = Partial<Record<string, 'verified' | 'draft' | 'missing'>>;
 export interface MatinsPsalmodyGroup {
   psalms: number[];
   antiphon: Partial<Record<string, string>>;
+  /** Per-language status of `antiphon`; absent means verified. */
+  status?: MatinsTextStatus;
 }
 export interface ScriptureCanticleRef {
   book: string;
@@ -53,7 +56,9 @@ export interface MatinsPsalmodyNocturn {
   groups?: MatinsPsalmodyGroup[];
   canticles?: { refs: ScriptureCanticleRef[] }[];
   antiphon?: Partial<Record<string, string>>;
-  versicle: { v: Partial<Record<string, string>>; r: Partial<Record<string, string>> };
+  /** Per-language status of the nocturn-level `antiphon`; absent means verified. */
+  antiphonStatus?: MatinsTextStatus;
+  versicle: { v: Partial<Record<string, string>>; r: Partial<Record<string, string>>; status?: MatinsTextStatus };
 }
 export interface MatinsPsalmodyScheme {
   nocturn1: MatinsPsalmodyNocturn;

@@ -19,6 +19,7 @@ const VESPERS_OFFICE_OVERRIDE_DATES: Record<string, string> = {
   'holy-innocents': '2029-12-28',
   'immaculate-conception': '2026-12-08',
   'nativity-bvm': '2026-09-08',
+  'our-lady-of-the-rosary': '2026-10-07',
   'nativity-of-st-john-the-baptist': '2026-06-24',
   'ss-peter-and-paul': '2026-06-29',
   'ss-philip-and-james': '2026-05-01',
@@ -177,7 +178,7 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(numbers).toEqual([134, 135, 136, 137]);
   });
 
-  it("uses Common-of-a-Confessor-Bishop's own psalmody for St. Martin of Tours's First Vespers", () => {
+  it("uses St. Martin of Tours's own First Vespers psalmody (engine-verified Sunday-Vespers numbers)", () => {
     // Not 2026-11-11 (his own day itself): St. Emilian (Nov 12, plain
     // Duplex, below this override's duplex-majus+ threshold) claims First
     // Vespers over Martin's own evening (Martin, Duplex Majus, falls
@@ -192,7 +193,12 @@ describe('resolveOrdo("vespers", ...)', () => {
     // categories/common-of-a-confessor-bishop.yml's own header.
     const ordo = resolveOrdo('vespers', '2026-11-10');
     const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
-    expect(numbers).toEqual([109, 111, 112, 131]);
+    // Corrected 2026-10-07 against the live engine's real First Vespers of
+    // St. Martin (2026-11-10 evening, "Vespera de sequenti"): Ps 109/110/111/
+    // 112, the Sunday-Vespers set, with his own proper antiphons. The earlier
+    // 109/111/112/131 came from a `votive=C4` Common-of-a-Confessor-Bishop
+    // query, i.e. the Common's *Second*-Vespers-style scheme, not his First.
+    expect(numbers).toEqual([109, 110, 111, 112]);
   });
 
   it("uses Guardian Angels' own proper psalmody on her First Vespers, same psalm numbers as Common-of-an-Angel", () => {
@@ -781,7 +787,7 @@ describe('resolveOrdo("vespers", ...) responsory Gloria omission', () => {
 });
 
 describe('resolveOrdo("vespers", ...) opening versicle Triduum omission', () => {
-  it('drops the opening "Deus in adiutorium" versicle on Maundy Thursday and Good Friday, but keeps it on Holy Saturday evening (already Easter\'s own First Vespers)', () => {
+  it('drops the opening "Deus in adiutorium" versicle on Maundy Thursday, Good Friday and Holy Saturday evening (engine: "Sabbato Sancto special Paschal Vespera")', () => {
     // Easter 2026 is Apr 5. Holy Saturday evening (Apr 4) already
     // anticipates Easter — see resolveEveningDay's isMajorFixedFeastOfTheLord
     // override, same exception as the Gloria Patri test above. Vespers
@@ -791,6 +797,6 @@ describe('resolveOrdo("vespers", ...) opening versicle Triduum omission', () => 
       resolveOrdo('vespers', date).parts.find((p) => p.kind === 'versicle' && p.text.text.la?.includes('adjutórium'));
     expect(opening('2026-04-02')).toBeUndefined();
     expect(opening('2026-04-03')).toBeUndefined();
-    expect(opening('2026-04-04')).toBeDefined();
+    expect(opening('2026-04-04')).toBeUndefined();
   });
 });

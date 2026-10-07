@@ -1,3 +1,4 @@
+import { sharedOfficeId } from './office-source';
 import { resolveCommonCategoryId } from './psalmody-common-category';
 
 /** Vespers' own analogue of hours/lauds-psalmody-overrides.ts (and, more
@@ -66,10 +67,22 @@ export function getVespersPsalmodyOverride(id: string | undefined): VespersPsalm
   return getVespersSaintOverride(id) ?? getVespersCommonOverride(id);
 }
 
-/** Saint-specific proper only, skipping the Common-category tier. */
-export function getVespersSaintOverride(id: string | undefined): VespersPsalmodyOverride | undefined {
+/** Saint-specific proper only, skipping the Common-category tier. With a
+ * `variant`, a `<id>-first` / `<id>-second` file (its own `id` field is the
+ * suffixed one) wins over the plain `<id>` for that evening only -- the
+ * source's separate `[Ant Vespera]` / `[Ant Vespera 3]` sets; see
+ * resolve-common.ts's VespersVariant. */
+export function getVespersSaintOverride(
+  id: string | undefined,
+  variant?: 'first' | 'second',
+): VespersPsalmodyOverride | undefined {
   if (!id) return undefined;
-  return overrides.get(id);
+  const shared = sharedOfficeId(id);
+  return (
+    (variant ? overrides.get(`${id}-${variant}`) : undefined) ??
+    overrides.get(id) ??
+    (shared ? ((variant ? overrides.get(`${shared}-${variant}`) : undefined) ?? overrides.get(shared)) : undefined)
+  );
 }
 
 /** Common-category lookup only, joining via `SaintRecord.common`. When
@@ -81,7 +94,12 @@ export function getVespersSaintOverride(id: string | undefined): VespersPsalmody
  * pattern as everywhere else. The id-derivation itself is shared with
  * Lauds'/Matins' own Common-override functions — see
  * psalmody-common-category.ts. */
-export function getVespersCommonOverride(id: string | undefined, paschaltide = false): VespersPsalmodyOverride | undefined {
+export function getVespersCommonOverride(
+  id: string | undefined,
+  paschaltide = false,
+  variant?: 'first' | 'second',
+): VespersPsalmodyOverride | undefined {
   const categoryId = resolveCommonCategoryId(id, paschaltide, (candidate) => categories.has(candidate));
-  return categoryId ? categories.get(categoryId) : undefined;
+  if (!categoryId) return undefined;
+  return (variant ? categories.get(`${categoryId}-${variant}`) : undefined) ?? categories.get(categoryId);
 }

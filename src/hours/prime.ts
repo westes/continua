@@ -20,6 +20,7 @@ import {
   resolveOfficeWinner,
   resolveMinorHourAntiphon,
   isSundayOrFeastOffice,
+  usesFeriaPrimeCapitulum,
   resolveResponsory,
   getPrimeLectioBrevis,
 } from './resolve-common';
@@ -133,7 +134,10 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
         return [];
       }
       const isVigil = winner.kind === 'sanctoral' && winner.rank === 'vigil';
-      const useFeastForm = isSundayOrFeastOffice(day) && !(part.vigilIsFerial && isVigil);
+      const useFeastForm =
+        part.resolvedKind === 'chapter'
+          ? !usesFeriaPrimeCapitulum(day)
+          : isSundayOrFeastOffice(day) && !(part.vigilIsFerial && isVigil);
       const ref = useFeastForm ? part.sundayOrFeastRef : part.ferialRef;
       if (part.resolvedKind === 'preces') {
         return [{ kind: 'preces', text: resolveCommon(ref.id), label: part.label }];

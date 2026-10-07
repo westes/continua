@@ -193,6 +193,14 @@ export interface OctaveConfig {
    * `strictestThreshold`) and octave-vs-octave precedence
    * (`resolveActiveOctave`) on that one day. */
   closingDayRank?: FeastClass;
+  /** The Epiphany octave's counting rule (reference engine, Monastic
+   * 1617): a Sunday falling inside the octave is not counted, so the
+   * weekdays after it take the day-numbers it would have held ("Quinta
+   * die" on the Monday after a Sunday that fell on the 5th). The closing
+   * day stays on the 8th. (The engine omits the seventh counted day on the
+   * Tridentine rubrics; we keep it as an ordinary octave day, a deliberate
+   * deviation that only shows in years when Epiphany itself is a Sunday.) */
+  skipsSunday?: boolean;
 }
 
 export type DayWinner =

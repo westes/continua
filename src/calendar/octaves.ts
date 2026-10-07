@@ -12,6 +12,7 @@ import type { FeastClass, LiturgicalDay, OctaveConfig } from './types';
 import { getSanctoralCandidatesFor, getSaintRecord } from './feasts';
 import { getTemporalFeastRecord, temporalFeastIdsStartingOn } from './temporal-feasts';
 import { addDays, daysBetween } from './date-math';
+import { weekdayOf } from './weekday';
 import { compareFeastClass, minimumOutrightWinningRank } from './commemorations';
 
 export interface ActiveOctave {
@@ -72,9 +73,18 @@ function considerCandidate(
   if (offset < 0 || offset >= days) {
     return;
   }
+  const closing = offset + 1 === days;
+  let dayNumber = offset + 1;
+  if (octave.skipsSunday && !closing && weekdayOf(isoDate) !== 'sunday') {
+    for (let i = 1; i < offset; i++) {
+      if (weekdayOf(addDays(startDate, i)) === 'sunday') {
+        dayNumber -= 1;
+        break;
+      }
+    }
+  }
   seen.add(id);
-  const dayNumber = offset + 1;
-  const isClosingDay = dayNumber === days;
+  const isClosingDay = closing;
   const wins = isClosingDay ? (octave.closingDayRank ?? DEFAULT_CLOSING_DAY_RANK) : (octave.wins ?? DEFAULT_WINS);
   active.push({ id, name, nameLa, titleName, titleNameLa, wins, dayNumber, isClosingDay });
 }
@@ -191,9 +201,15 @@ export function resolveActiveOctave(isoDate: string): ActiveOctave | undefined {
  * (`decideOccurrence`'s `ordinary-sunday` branch), but with no
  * Sunday-preserving carve-out the way that branch gets. */
 export function octaveGoverningPrivilegedDay(day: LiturgicalDay): ActiveOctave | undefined {
-  if (day.temporalCategory === 'ordinary-feria' || day.season === 'christmastide') {
+  if (day.temporalCategory === 'ordinary-feria') {
     return undefined;
   }
+  // Christmastide's stacked octaves are already that season's own content
+  // on their interior days, but each of the three "Comites Christi"
+  // octaves' own closing day (Jan 3 St. John, Jan 4 the Holy Innocents) is
+  // a real Duplex office in the engine, beating the Sunday or privileged
+  // feria it lands on.
+  const christmastide = day.season === 'christmastide';
   const minRank = minimumOutrightWinningRank(day.temporalCategory);
   if (!minRank) {
     return undefined;
@@ -202,7 +218,10 @@ export function octaveGoverningPrivilegedDay(day: LiturgicalDay): ActiveOctave |
   if (!octave) {
     return undefined;
   }
-  if (day.temporalCategory === 'ordinary-sunday' && !octave.isClosingDay) {
+  if ((day.temporalCategory === 'ordinary-sunday' || christmastide) && !octave.isClosingDay) {
+    return undefined;
+  }
+  if (christmastide && octave.id === 'christmas-day') {
     return undefined;
   }
   if (compareFeastClass(octave.wins, minRank) >= 0) {

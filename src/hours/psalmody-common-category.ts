@@ -21,7 +21,8 @@ export function resolveCommonCategoryId(
   hasVariant: (id: string) => boolean,
 ): string | undefined {
   if (!saintId) return undefined;
-  const common = getSaintRecord(saintId)?.common;
+  const record = getSaintRecord(saintId);
+  const common = record?.psalmodyCommon ?? record?.common;
   if (!common) return undefined;
   if (paschaltide) {
     const variant = `${common}-paschaltide`;

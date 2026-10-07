@@ -43,6 +43,15 @@ export interface TemporalFeastRecord {
   /** Latin form of `titleName`, when authored. */
   titleNameLa?: string;
   octave?: OctaveConfig;
+  /** Another office id whose authored Lauds/Vespers/minor-hour content this
+   * feast shares where it has none of its own (the days of Easter week share
+   * Easter Sunday's psalm antiphons, chapters and responsories). Used by
+   * hours/office-source.ts's `sharedOfficeId`. */
+  officeFrom?: string;
+  /** The id this feast displaces on its own day is only the governing-week
+   * catch-all (no office of its own): don't commemorate it (see
+   * calendar/movable-feasts.ts). */
+  suppressDisplacedCommemoration?: boolean;
   rank?: FeastClass;
   anchor?: MovableAnchor;
   /** Where this feast's octave begins, for a feast with an `octave` but no

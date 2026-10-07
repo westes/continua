@@ -3,11 +3,13 @@ import type { Commemoration, DayWinner, FeastClass, LiturgicalDay, Weekday } fro
 import type { ProperText } from '../propers';
 import { getCommonProper, getTemporalProper } from '../propers';
 import { getSaintRecord } from '../calendar/feasts';
-import { resolveActiveOctave, activeOctavesFor, octaveGoverningPrivilegedDay, isAtLeast, isSundayOrFeast } from '../calendar';
+import { resolveActiveOctave, activeOctavesFor, octaveGoverningPrivilegedDay, isAtLeast, isSundayOrFeast, monthWeekId } from '../calendar';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
+import { sharedOfficeId } from './office-source';
+import { ensureSingleAlleluia } from './paschal-alleluia';
 import { resolveTemporalId } from '../calendar/temporal-id';
 import { sortCommemorations } from '../calendar/commemoration-order';
-import { isInTriduum } from '../calendar/temporal';
+import { isInTriduum, easterOffsetOf } from '../calendar/temporal';
 import { isAllSouls, REQUIEM_GLORIA_PATRI } from './all-souls';
 import { temporalLabel, emberDayLabel, biName } from '../calendar/day-label';
 import { splitAntiphon, isDoubleOrHigher } from './antiphon';
@@ -101,6 +103,22 @@ export function resolveByChain(ids: (string | undefined)[], fallback: ResolvedTe
   );
 }
 
+/** Which of a feast's two Vespers tonight is, where it matters: `first`
+ * when the evening has adopted tomorrow's identity (see calendar/
+ * vespers.ts's resolveEveningDay), `second` when today's own office keeps
+ * its evening. Content ids are `<base>` (the default, used for both) plus
+ * optional `<base>-first` / `<base>-second` overrides for the source's
+ * separate `[Hymnus Vespera]` / `[Hymnus Vespera 3]` and `[Ant 1]` /
+ * `[Ant 3]` pairs -- see `withVespersVariant`. */
+export type VespersVariant = 'first' | 'second';
+
+/** `fallback` unless this Vespers' own `-first`/`-second` variant of `id`
+ * is authored, in which case that wins. Only ever *adds* content: a feast
+ * with no variant files behaves exactly as before. */
+export function withVespersVariant(id: string, variant: VespersVariant | undefined, fallback: ResolvedText): ResolvedText {
+  return variant ? firstAvailable([resolveCommon(`${id}-${variant}`)], fallback) : fallback;
+}
+
 /**
  * Below duplex-majus, a feast's own proper psalm *numbers* never
  * substitute for the ferial cycle — only a strong-enough feast gets
@@ -172,6 +190,12 @@ export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set([
   'patronage-of-st-joseph',
   'trinity-sunday',
   'circumcision',
+  'christmas-day',
+  'epiphany',
+  // Easter Day carries its own Lauds/Vespers/minor-hour office (the Octave's
+  // other six days share it through `officeFrom`).
+  'easter-sunday',
+  'low-sunday',
   'holy-name-of-jesus',
   'vigil-of-christmas',
   // Passiontide: every one of the 14 days from Passion Sunday through Holy
@@ -270,7 +294,11 @@ export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set([
  * same choice for the display label, for the same reason.
  */
 export function resolveOfficeWinner(day: LiturgicalDay): DayWinner {
-  if (day.winner.kind === 'sanctoral' || ALWAYS_OVERRIDE_TEMPORAL_IDS.has(day.winner.id)) {
+  // Christmastide's catch-all id is the one exception: the closing day of
+  // St. John's / the Holy Innocents' octave (Jan 3/4) takes the office.
+  const christmastideOctaveDay =
+    day.winner.kind === 'temporal' && day.winner.id === 'christmas-octave-sunday' && octaveGoverningPrivilegedDay(day) !== undefined;
+  if (day.winner.kind === 'sanctoral' || (ALWAYS_OVERRIDE_TEMPORAL_IDS.has(day.winner.id) && !christmastideOctaveDay)) {
     return day.winner;
   }
   // When more than one octave is active at once (St. Lawrence's and the
@@ -314,6 +342,31 @@ export function resolveOfficeWinner(day: LiturgicalDay): DayWinner {
  * either. */
 export function isSundayOrFeastOffice(day: LiturgicalDay): boolean {
   return day.weekday === 'sunday' || resolveOfficeWinner(day).kind === 'sanctoral';
+}
+
+/**
+ * Prime's capitulum (reference engine, specprima.pl capitulum_prima): the
+ * ferial text (Zach 8:19) is said only on a weekday whose office is a bare
+ * feria or a Vigil (not the Vigil of the Epiphany or Christmas), outside
+ * Easter-to-Pentecost-Saturday and not on Our Lady's Saturday; every other
+ * day -- Sundays, feasts, octave days, named temporal feasts -- takes the
+ * Sunday text (1 Tim 1:17).
+ */
+export function usesFeriaPrimeCapitulum(day: LiturgicalDay): boolean {
+  if (day.weekday === 'sunday') return false;
+  const offset = easterOffsetOf(day.date);
+  if (offset >= 0 && offset <= 55) return false;
+  const winner = resolveOfficeWinner(day);
+  if (winner.kind === 'sanctoral') {
+    return winner.rank === 'vigil' && winner.id !== 'vigil-of-the-epiphany';
+  }
+  if (winner.id === 'marian-saturday') return false;
+  // The interior days of Corpus Christi's octave are titled "Feria X infra
+  // Octavam" in the engine, so they take the ferial text.
+  const corpus = winner.id === 'corpus-christi' ? activeOctavesFor(day.date).find((o) => o.id === 'corpus-christi') : undefined;
+  if (corpus && corpus.dayNumber > 1 && !corpus.isClosingDay) return true;
+  const rank = getTemporalFeastRecord(winner.id)?.rank;
+  return !(rank && isAtLeast(rank, 'duplex'));
 }
 
 /**
@@ -448,9 +501,41 @@ export function officeWinnerEffectiveRank(day: LiturgicalDay, winner: DayWinner)
  * numbers (`getPsalmodyProperOverrideId`, `mergeFerialNumbersWithProperAntiphons`)
  * is untouched by this threshold.
  */
+/** The Sundays of Advent and of Septuagesima-Lent carry their own psalm
+ * antiphons at Lauds (Proper of the Time), replacing the per-annum Sunday
+ * set; they're keyed like any named feast so the same override tier serves
+ * them (a Sunday of these seasons is never a mere ferial default). */
+export const SEASONAL_SUNDAY_PSALMODY_IDS = new Set([
+  'advent-1',
+  'advent-2',
+  'advent-3',
+  'advent-4',
+  'septuagesima',
+  'sexagesima',
+  'quinquagesima',
+  'lent-1',
+  'lent-2',
+  'lent-3',
+  'lent-4',
+  'passion-sunday',
+  'palm-sunday',
+]);
+
+/** Whether `day`'s office is one of these seasonal Sundays' own. */
+export function isSeasonalProperSunday(day: LiturgicalDay): boolean {
+  const winner = resolveOfficeWinner(day);
+  return winner.kind === 'temporal' && day.weekday === 'sunday' && SEASONAL_SUNDAY_PSALMODY_IDS.has(winner.id);
+}
+
 export function getPsalmodyNumbersOverrideId(day: LiturgicalDay): string | undefined {
   const winner = resolveOfficeWinner(day);
-  if (winner.kind === 'temporal' && ALWAYS_OVERRIDE_TEMPORAL_IDS.has(winner.id)) {
+  if (winner.kind === 'temporal' && day.weekday === 'sunday' && SEASONAL_SUNDAY_PSALMODY_IDS.has(winner.id)) {
+    return winner.id;
+  }
+  if (winner.kind === 'temporal' && (ALWAYS_OVERRIDE_TEMPORAL_IDS.has(winner.id) || winner.id === 'easter-sunday')) {
+    // Easter Sunday is a plain privileged Sunday, not an ALWAYS_OVERRIDE id
+    // (its other hours come through the seasonal path), but its Vespers
+    // psalms and antiphons ("Angelus autem Dómini...") are its own.
     return winner.id;
   }
   if (winner.kind !== 'sanctoral') {
@@ -490,7 +575,7 @@ export function getPsalmodyNumbersOverrideId(day: LiturgicalDay): string | undef
  */
 export function getMinorHourOverrideId(day: LiturgicalDay): string | undefined {
   const winner = resolveOfficeWinner(day);
-  if (winner.kind === 'temporal' && ALWAYS_OVERRIDE_TEMPORAL_IDS.has(winner.id)) {
+  if (winner.kind === 'temporal' && (ALWAYS_OVERRIDE_TEMPORAL_IDS.has(winner.id) || isSeasonalProperSunday(day))) {
     return winner.id;
   }
   if (winner.kind === 'sanctoral') {
@@ -672,8 +757,11 @@ function deriveMinorHourAntiphonFromLauds(hourId: string, overrideId: string): R
  * by hand. */
 export function resolveMinorHourAntiphonCandidates(hourId: string, day: LiturgicalDay): (ResolvedText | undefined)[] {
   const overrideId = getMinorHourOverrideId(day);
-  const proper = overrideId ? resolveCommon(`${hourId}-antiphon-${overrideId}`) : undefined;
-  const derivedRaw = overrideId ? deriveMinorHourAntiphonFromLauds(hourId, overrideId) : undefined;
+  const sharedId = sharedOfficeId(overrideId);
+  const proper = overrideId
+    ? firstAvailable([resolveCommon(`${hourId}-antiphon-${overrideId}`)], sharedId ? resolveCommon(`${hourId}-antiphon-${sharedId}`) : resolveCommon(`${hourId}-antiphon-${overrideId}`))
+    : undefined;
+  const derivedRaw = overrideId ? (deriveMinorHourAntiphonFromLauds(hourId, overrideId) ?? (sharedId ? deriveMinorHourAntiphonFromLauds(hourId, sharedId) : undefined)) : undefined;
   const derived = derivedRaw ? withPaschaltideAlleluia(derivedRaw, day) : undefined;
   const commonId = overrideId ? getSaintRecord(overrideId)?.minorHoursCommon : undefined;
   const paschal =
@@ -701,7 +789,10 @@ export function resolveMinorHourAntiphon(
  * proper or shared-Common. */
 export function resolveMinorHourChapter(hourId: string, day: LiturgicalDay, fallbackId: string): ResolvedText {
   const overrideId = getMinorHourOverrideId(day);
-  const proper = overrideId ? resolveCommon(`${hourId}-capitulum-${overrideId}`) : undefined;
+  const sharedId = sharedOfficeId(overrideId);
+  const proper = overrideId
+    ? firstAvailable([resolveCommon(`${hourId}-capitulum-${overrideId}`)], sharedId ? resolveCommon(`${hourId}-capitulum-${sharedId}`) : resolveCommon(`${hourId}-capitulum-${overrideId}`))
+    : undefined;
   const commonId = overrideId ? getSaintRecord(overrideId)?.minorHoursCommon : undefined;
   const paschal =
     commonId && PASCHALTIDE_SEASONS.has(day.season) ? resolveCommon(`${hourId}-capitulum-${commonId}-paschaltide`) : undefined;
@@ -740,20 +831,49 @@ export interface OfficeBundle {
  * `vespers-capitulum-<id>.yml` exists — see vespersCapitulumForOverride)
  * instead of the plain `${hourId}-capitulum-${id}` default used here.
  */
+/** Commons whose Lauds/Vespers chapter, responsory, hymn and versicle are
+ * the engine's own byte-for-byte reuse of another Common's: a Confessor Pope
+ * takes the Confessor Bishop's (live-verified, St. Leo II, 2026-07-03). Tried
+ * after the Common's own files, so authoring a distinct bundle later wins. */
+const COMMON_BUNDLE_ALIAS: Record<string, string> = {
+  'common-of-a-confessor-pope': 'common-of-a-confessor-bishop',
+};
+
 export function resolveOfficeBundle(
   hourId: string,
   day: LiturgicalDay,
   resolveChapterFor: (id: string) => ResolvedText = (id) => resolveCommon(`${hourId}-capitulum-${id}`),
+  vespersVariant?: VespersVariant,
 ): OfficeBundle | undefined {
   const overrideId = getMinorHourOverrideId(day);
   if (!overrideId) {
     return undefined;
   }
-  const tryId = (id: string): OfficeBundle | undefined => {
-    const chapter = resolveChapterFor(id);
-    if (chapter.status.la === 'missing' && chapter.status.en === 'missing') {
-      return undefined;
+  const isReal = (t: ResolvedText): boolean => t.status.la !== 'missing' || t.status.en !== 'missing';
+  // `hasChapter` false means this id authored no chapter of its own: the
+  // returned bundle is then only its *other* real parts (hymn, responsory,
+  // versicle -- e.g. St. Martina's own hymns), each still `missing` where
+  // not authored, for `partialProper` below to fill from the Common.
+  const partsFor = (id: string): (OfficeBundle & { hasChapter: boolean }) => {
+    // A saint that borrows another feast's authored content through its
+    // `propers` id (St. Michael, Sept 29, shares the Apparition's chapter
+    // and hymns) falls back to that id part by part, after its own files.
+    const sharedId = sharedOfficeId(id);
+    const own = partsOf(id);
+    if (!sharedId) {
+      return own;
     }
+    const shared = partsOf(sharedId);
+    return {
+      hasChapter: own.hasChapter || shared.hasChapter,
+      chapter: own.hasChapter ? own.chapter : shared.chapter,
+      responsory: isReal(own.responsory) ? own.responsory : shared.responsory,
+      hymn: isReal(own.hymn) ? own.hymn : shared.hymn,
+      versicle: isReal(own.versicle) ? own.versicle : shared.versicle,
+    };
+  };
+  const partsOf = (id: string): (OfficeBundle & { hasChapter: boolean }) => {
+    const chapter = resolveChapterFor(id);
     // The bundle's own responsory/versicle base text is season-neutral;
     // a `-paschaltide` variant file (same convention as
     // resolveMinorHourChapter's Common tier) carries the Alleluia-bearing
@@ -764,13 +884,42 @@ export function resolveOfficeBundle(
       ? resolveCommon(`${hourId}-responsory-${id}-paschaltide`)
       : undefined;
     const paschalVersicle = PASCHALTIDE_SEASONS.has(day.season)
-      ? resolveCommon(`${hourId}-versicle-${id}-paschaltide`)
+      ? withVespersVariant(`${hourId}-versicle-${id}-paschaltide`, vespersVariant, resolveCommon(`${hourId}-versicle-${id}-paschaltide`))
       : undefined;
+    const baseResponsory = firstAvailable([paschalResponsory], resolveCommon(`${hourId}-responsory-${id}`));
+    const baseVersicle = firstAvailable([paschalVersicle], resolveCommon(`${hourId}-versicle-${id}`));
     return {
+      hasChapter: isReal(chapter),
       chapter,
-      responsory: resolveResponsory(firstAvailable([paschalResponsory], resolveCommon(`${hourId}-responsory-${id}`)), day),
-      hymn: resolveCommon(`${hourId}-hymn-${id}`),
-      versicle: firstAvailable([paschalVersicle], resolveCommon(`${hourId}-versicle-${id}`)),
+      responsory: resolveResponsory(withVespersVariant(`${hourId}-responsory-${id}`, vespersVariant, baseResponsory), day),
+      hymn: withVespersVariant(`${hourId}-hymn-${id}`, vespersVariant, resolveCommon(`${hourId}-hymn-${id}`)),
+      versicle: withVespersVariant(`${hourId}-versicle-${id}`, vespersVariant, baseVersicle),
+    };
+  };
+  const tryId = (id: string): OfficeBundle | undefined => {
+    const parts = partsFor(id);
+    return parts.hasChapter ? parts : undefined;
+  };
+  // A proper with no chapter of its own but at least one other real part
+  // (a hymn, say) still counts as a proper bundle: fill what it lacks from
+  // its Common's bundle instead of dropping the whole thing. Chapter-ful
+  // propers keep the older all-or-nothing behavior exactly (a feast with
+  // a chapter and deliberately no responsory, like the Apparition of the
+  // Immaculate BVM, must not inherit its Common's).
+  const partialProper = (id: string, commonId: string | undefined): OfficeBundle | undefined => {
+    const own = partsFor(id);
+    if (own.hasChapter || !(isReal(own.hymn) || isReal(own.responsory) || isReal(own.versicle))) {
+      return undefined;
+    }
+    const common = commonId ? tryId(commonId) : undefined;
+    if (!common) {
+      return undefined;
+    }
+    return {
+      chapter: common.chapter,
+      responsory: isReal(own.responsory) ? own.responsory : common.responsory,
+      hymn: isReal(own.hymn) ? own.hymn : common.hymn,
+      versicle: isReal(own.versicle) ? own.versicle : common.versicle,
     };
   };
   const proper = tryId(overrideId);
@@ -778,7 +927,12 @@ export function resolveOfficeBundle(
     return proper;
   }
   const commonId = getSaintRecord(overrideId)?.common;
-  return commonId ? tryId(commonId) : undefined;
+  const sharedCommonId = commonId ? COMMON_BUNDLE_ALIAS[commonId] : undefined;
+  return (
+    partialProper(overrideId, commonId) ??
+    (commonId ? tryId(commonId) : undefined) ??
+    (sharedCommonId ? tryId(sharedCommonId) : undefined)
+  );
 }
 
 /** Fills a Common collect template's literal `{N}` placeholders with a
@@ -885,6 +1039,67 @@ function combineCommemorationBundle(antiphon: ResolvedText, versicle: ResolvedTe
   return { text, status };
 }
 
+/** A saint's own Vespers versicle for one evening: their own file, a shared
+ * office id's, then their Common's (with the Confessor Pope-style bundle
+ * alias) -- the same chain `resolveOfficeBundle` follows. */
+function saintVespersVersicle(saintId: string, variant: VespersVariant): ResolvedText | undefined {
+  const saint = getSaintRecord(saintId);
+  const shared = sharedOfficeId(saintId);
+  const common = saint?.common;
+  const ids = [saintId, shared, common, common ? COMMON_BUNDLE_ALIAS[common] : undefined].filter((x): x is string => !!x);
+  for (const id of ids) {
+    const t = withVespersVariant(`vespers-versicle-${id}`, variant, resolveCommon(`vespers-versicle-${id}`));
+    if (t.status.la !== 'missing' || t.status.en !== 'missing') return t;
+  }
+  return undefined;
+}
+
+/** A saint's Magnificat antiphon for one evening (proper, then Common). */
+function saintMagnificat(saintId: string, variant: VespersVariant): ResolvedText | undefined {
+  const saint = getSaintRecord(saintId);
+  const candidates = [
+    saint?.propers ? withVespersVariant(`${saint.propers}-magnificat-antiphon`, variant, resolveCommon(`${saint.propers}-magnificat-antiphon`)) : undefined,
+    saint?.benedictusCommon
+      ? withVespersVariant(`magnificat-antiphon-${saint.benedictusCommon}`, variant, resolveCommon(`magnificat-antiphon-${saint.benedictusCommon}`))
+      : undefined,
+  ];
+  return candidates.find((t) => t && (t.status.la !== 'missing' || t.status.en !== 'missing'));
+}
+
+/** At Vespers the engine's commemoration takes the commemorated saint's
+ * Magnificat antiphon and Versum of that very evening (First Vespers for a
+ * feast that is tomorrow's, Second for today's), where Lauds takes Ant 2 /
+ * Versum 2. The stored combined bundle is Lauds-shaped, so swap its Ant and
+ * V/R lines for the evening's. */
+function forVespersEvening(text: ResolvedText, commemoration: Extract<Commemoration, { kind: 'sanctoral' }>, day: LiturgicalDay): ResolvedText {
+  const note = commemoration.vespersNote;
+  if (!note) return text;
+  const variant: VespersVariant = note === 'tomorrow' ? 'first' : 'second';
+  const ant = saintMagnificat(commemoration.id, variant);
+  const vers = saintVespersVersicle(commemoration.id, variant);
+  const paschal = PASCHALTIDE_SEASONS.has(day.season);
+  const out: Partial<Record<string, string>> = { ...text.text };
+  for (const lang of ['la', 'en'] as const) {
+    const t = out[lang];
+    if (!t) continue;
+    const lines = t.split('\n');
+    const ai = lines.findIndex((l) => l.startsWith('Ant.'));
+    const vi = lines.findIndex((l, i) => i > ai && l.startsWith('V.'));
+    if (ai < 0 || vi < 0 || !lines[vi + 1]?.startsWith('R.')) continue;
+    const newAnt = ant?.text[lang];
+    if (newAnt) lines[ai] = 'Ant. ' + (paschal ? ensureSingleAlleluia(newAnt, lang) : newAnt);
+    const newV = vers?.text[lang]?.split('\n').filter((l) => l.trim());
+    if (newV && newV.length >= 2) {
+      const v = paschal ? ensureSingleAlleluia(newV[0]!, lang) : newV[0]!;
+      const r = paschal ? ensureSingleAlleluia(newV[1]!, lang) : newV[1]!;
+      lines[vi] = v.startsWith('V.') ? v : 'V. ' + v;
+      lines[vi + 1] = r.startsWith('R.') ? r : 'R. ' + r;
+    }
+    out[lang] = lines.join('\n');
+  }
+  return { ...text, text: out };
+}
+
 /** A sanctoral commemoration's own rendering: the fuller Ant+V/R+collect
  * bundle (`${propers}-commemoration`, e.g. st-clare-commemoration.yml)
  * when authored — live-verified this is the real shape a commemoration
@@ -897,6 +1112,16 @@ function combineCommemorationBundle(antiphon: ResolvedText, versicle: ResolvedTe
  * case within this same fallback chain: see vigilCommemorationAntiphon's
  * own doc comment. */
 function sanctoralCommemorationPart(
+  commemoration: Extract<Commemoration, { kind: 'sanctoral' }>,
+  day: LiturgicalDay,
+  hour: 'lauds' | 'vespers',
+): ResolvedPart {
+  const weekday = day.weekday;
+  const part = sanctoralCommemorationBase(commemoration, weekday);
+  return hour === 'vespers' && part.kind === 'preces' ? { ...part, text: forVespersEvening(part.text, commemoration, day) } : part;
+}
+
+function sanctoralCommemorationBase(
   commemoration: Extract<Commemoration, { kind: 'sanctoral' }>,
   weekday: Weekday,
 ): ResolvedPart {
@@ -1075,7 +1300,7 @@ export function getDayCollects(day: LiturgicalDay, hour: 'lauds' | 'vespers'): R
     if (commemoration.kind === 'temporal') {
       parts.push(temporalCommemorationPart(commemoration, day, hour));
     } else if (commemoration.kind === 'sanctoral') {
-      parts.push(sanctoralCommemorationPart(commemoration, day.weekday));
+      parts.push(sanctoralCommemorationPart(commemoration, day, hour));
     } else if (commemoration.kind === 'octave' && commemoration.id !== substitutedOctaveId) {
       parts.push(octaveCommemorationPart(commemoration));
     }
@@ -1116,6 +1341,10 @@ export function resolveSuffrages(
   // "Suffragium{omittitur}" — the whole set drops, same as any other
   // Double-or-higher day.
   const isChristTheKing = day.winner.kind === 'temporal' && day.winner.id === 'christ-the-king';
+  // Any other named temporal feast with its own record rank of Duplex or
+  // higher (Epiphany, Ascension, Pentecost, ...) drops them the same way.
+  const temporalRank = day.winner.kind === 'temporal' ? getTemporalFeastRecord(day.winner.id)?.rank : undefined;
+  const isHighTemporal = temporalRank !== undefined && isAtLeast(temporalRank, 'duplex');
   // Confirmed live against Monastic Tridentinum 1617 directly (this
   // isn't a Tridentine-1906-only quirk -- the same exclusions hold
   // under the app's own primary rubric track): suffrages are omitted
@@ -1128,7 +1357,7 @@ export function resolveSuffrages(
   // below the Duplex+ rank threshold below.
   const isSeasonallyExcluded = day.season === 'advent' || day.season === 'christmastide' || day.season === 'passiontide';
   const isWithinAnOctave = activeOctavesFor(day.date).length > 0;
-  if (omitOnDouble && (isDoubleOrHigher(day.winner) || isChristTheKing || isSeasonallyExcluded || isWithinAnOctave)) {
+  if (omitOnDouble && (isDoubleOrHigher(day.winner) || isChristTheKing || isHighTemporal || isSeasonallyExcluded || isWithinAnOctave)) {
     return [];
   }
   // Throughout the rest of Paschaltide, the whole ordinary 5-suffrage set
@@ -1201,10 +1430,22 @@ export function resolveSuffrages(
  * *commemorated* saint's, which is a separate, weaker standing (see
  * getDayCollects/sanctoralCommemorationPart).
  */
+/** Per-day proper of an octave's interior day: `<id>-<kind>-d<N>` (N = the
+ * octave's day number, Pentecost = 1) when authored, else the feast's own.
+ * Only the Pentecost octave has such days in the source (Mon, Tue and Thu
+ * carry their own Benedictus and Magnificat antiphons). */
+function octaveDayProper(winnerId: string, kind: string, day: LiturgicalDay): ProperText | undefined {
+  const octave = activeOctavesFor(day.date).find((o) => o.id === winnerId);
+  if (!octave || octave.dayNumber < 2) return undefined;
+  const own = getTemporalProper(`${winnerId}-${kind}-d${octave.dayNumber}`);
+  return own.status.la !== 'missing' || own.status.en !== 'missing' ? own : undefined;
+}
+
 export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
   const winner = resolveOfficeWinner(day);
   if (winner.kind === 'temporal') {
-    return toResolvedText(getTemporalProperWithFallback(winner.id, 'benedictus-antiphon', day));
+    const perDay = octaveDayProper(winner.id, 'benedictus-antiphon', day);
+    return toResolvedText(perDay ?? getTemporalProperWithFallback(winner.id, 'benedictus-antiphon', day));
   }
   const saint = getSaintRecord(winner.id);
   const proper = saint?.propers ? withPaschaltideAlleluia(resolveCommon(`${saint.propers}-antiphon`), day) : undefined;
@@ -1329,18 +1570,41 @@ function magnificatWeekdayDefault(day: LiturgicalDay): ResolvedText | undefined 
   return withPaschaltideAlleluia(resolved, day);
 }
 
-export function getMagnificatAntiphon(day: LiturgicalDay): ResolvedText {
-  const oAntiphon = vespersOAntiphons[day.date.slice(5)];
+export function getMagnificatAntiphon(day: LiturgicalDay, vespersVariant?: VespersVariant, eveningDate?: string): ResolvedText {
+  // The O Antiphon belongs to the evening's own calendar date, which differs
+  // from `day.date` when this evening anticipates tomorrow's First Vespers
+  // (Saturday Dec 19 is "O radix Jesse" even though it opens Advent IV).
+  const oAntiphon = vespersOAntiphons[(eveningDate ?? day.date).slice(5)];
   if (oAntiphon) {
     return oAntiphon.status ? { text: oAntiphon.antiphon, status: oAntiphon.status } : verifiedText(oAntiphon.antiphon);
   }
   const winner = resolveOfficeWinner(day);
   if (winner.kind === 'temporal') {
-    const named = toResolvedText(getTemporalProperWithFallback(winner.id, 'magnificat-antiphon', day));
-    return firstAvailable([named, magnificatWeekdayDefault(day)], named);
+    const perDay = octaveDayProper(winner.id, 'magnificat-antiphon', day);
+    const named = toResolvedText(perDay ?? getTemporalProperWithFallback(winner.id, 'magnificat-antiphon', day));
+    // The engine keys the later post-Pentecost Sundays' First Vespers
+    // Magnificat by calendar month-week (Aug-Nov), not by Pentecost count
+    // (calendar/month-week-id.ts), so that id is tried before the Easter-
+    // offset one.
+    const monthWeek = vespersVariant === 'first' && day.weekday === 'sunday' ? monthWeekId(day.date) : undefined;
+    const monthWeekVariant = monthWeek ? toResolvedText(getTemporalProper(`month-week-${monthWeek}-magnificat-antiphon-first`)) : undefined;
+    const namedVariant = vespersVariant
+      ? toResolvedText(getTemporalProperWithFallback(winner.id, `magnificat-antiphon-${vespersVariant}`, day))
+      : undefined;
+    return firstAvailable([monthWeekVariant, namedVariant, named, magnificatWeekdayDefault(day)], named);
   }
   const saint = getSaintRecord(winner.id);
-  const proper = saint?.propers ? withPaschaltideAlleluia(resolveCommon(`${saint.propers}-magnificat-antiphon`), day) : undefined;
+  // A Paschaltide-only Second Vespers text ("-paschaltide") wins first where
+  // the source carries one (St. Benedict's Transitus; the Doctors' Common).
+  const paschalSecond = PASCHALTIDE_SEASONS.has(day.season) && vespersVariant !== 'first';
+  const paschalProper = saint?.propers && paschalSecond ? resolveCommon(`${saint.propers}-magnificat-antiphon-paschaltide`) : undefined;
+  const properBase = saint?.propers
+    ? withPaschaltideAlleluia(
+        withVespersVariant(`${saint.propers}-magnificat-antiphon`, vespersVariant, resolveCommon(`${saint.propers}-magnificat-antiphon`)),
+        day,
+      )
+    : undefined;
+  const proper = paschalProper && (paschalProper.status.la !== 'missing' || paschalProper.status.en !== 'missing') ? paschalProper : properBase;
   // A Vigil has no proper Magnificat antiphon of its own in the real rubric
   // -- its `[Rule]` block ("ex C1v; ... Laudes 2") always borrows whatever
   // the current ferial weekday's own antiphon is, live-verified across 4
@@ -1351,10 +1615,27 @@ export function getMagnificatAntiphon(day: LiturgicalDay): ResolvedText {
   // `magnificat-antiphon-common-of-a-vigil` (deliberately never authored --
   // there's no single fixed text to put there).
   const vigil = saint?.rank === 'vigil' ? magnificatWeekdayDefault(day) : undefined;
-  const common = saint?.benedictusCommon
-    ? withPaschaltideAlleluia(resolveCommon(`magnificat-antiphon-${saint.benedictusCommon}`), day)
+  const paschalCommon = saint?.benedictusCommon && paschalSecond ? resolveCommon(`magnificat-antiphon-${saint.benedictusCommon}-paschaltide`) : undefined;
+  const commonBase = saint?.benedictusCommon
+    ? withPaschaltideAlleluia(
+        withVespersVariant(`magnificat-antiphon-${saint.benedictusCommon}`, vespersVariant, resolveCommon(`magnificat-antiphon-${saint.benedictusCommon}`)),
+        day,
+      )
     : undefined;
-  return firstAvailable([proper, vigil, common], { text: {}, status: { la: 'missing', en: 'missing' } });
+  const common = paschalCommon && (paschalCommon.status.la !== 'missing' || paschalCommon.status.en !== 'missing') ? paschalCommon : commonBase;
+  const antiphon = firstAvailable([proper, vigil, common], { text: {}, status: { la: 'missing', en: 'missing' } });
+  return saint?.invocationName ? fillInvocationName(antiphon, saint.invocationName) : antiphon;
+}
+
+/** Replaces a Common antiphon's literal "N." with the saint's own name
+ * (`SaintRecord.invocationName`). */
+function fillInvocationName(text: ResolvedText, name: { la: string; en: string }): ResolvedText {
+  const filled: Partial<Record<string, string>> = { ...text.text };
+  for (const lang of ['la', 'en'] as const) {
+    const t = filled[lang];
+    if (t) filled[lang] = t.replace(/\bN\./g, name[lang]);
+  }
+  return { ...text, text: filled };
 }
 
 export function verifiedText(text: Partial<Record<string, string>>): ResolvedText {

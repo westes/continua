@@ -57,7 +57,13 @@ export function applyMovableFeasts(isoDate: string, winner: DayWinner, commemora
     }
     const rank = feast.rank ?? 'simplex';
     if (resolvedWinner.kind === 'temporal') {
-      commemorations.push({ kind: 'temporal', id: resolvedWinner.id });
+      // Not commemorated when the record says the displaced id is just the
+      // governing-week catch-all this feast replaces on its own day
+      // (Christmas Day over "Friday in Christmastide", the Epiphany over
+      // `post-epiphany-1`, Low Sunday over `easter-octave`).
+      if (!feast.suppressDisplacedCommemoration) {
+        commemorations.push({ kind: 'temporal', id: resolvedWinner.id });
+      }
       resolvedWinner = FEAST_WINNER;
     } else if (compareFeastClass(resolvedWinner.rank, rank) >= 0) {
       commemorations.push({ kind: 'temporal', id: feast.id });

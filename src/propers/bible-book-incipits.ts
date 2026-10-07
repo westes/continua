@@ -154,3 +154,26 @@ export function getGospelIncipitFromCitation(
   }
   return undefined;
 }
+
+// Non-Gospel scripture lessons hand-authored in nocturn-readings (a feast's
+// own Sirach/Acts lesson, say) carry only a formatted `citation`. Without
+// this they fell through to the saint-name fallback label ("On Our Lady of
+// the Rosary"), which is right for a vita but wrong for a bible reading.
+const SCRIPTURE_CITATION_PREFIXES: [RegExp, string][] = [
+  [/^sir/i, 'sir'],
+  [/^act/i, 'act'],
+];
+
+/** Incipit for a non-Gospel scripture citation string (e.g. "Sir 24:24-31"),
+ * or undefined when the prefix isn't one of the books authored here. */
+export function getScriptureIncipitFromCitation(
+  citation: Partial<Record<string, string>> | undefined,
+): { la: string; en: string } | undefined {
+  for (const candidate of [citation?.la, citation?.en]) {
+    if (!candidate) continue;
+    for (const [pattern, book] of SCRIPTURE_CITATION_PREFIXES) {
+      if (pattern.test(candidate)) return BOOK_INCIPITS[book];
+    }
+  }
+  return undefined;
+}

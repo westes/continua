@@ -10,6 +10,7 @@
 // corrections.
 import type { Commemoration, DayWinner, LiturgicalDay } from './types';
 import { resolveDay } from './index';
+import { resolveActiveOctave, octaveGoverningPrivilegedDay, type ActiveOctave } from './octaves';
 import { addDays } from './date-math';
 import { easterOffsetOf } from './temporal';
 import { compareFeastClass, isAtLeast, minimumOutrightWinningRank } from './commemorations';
@@ -33,6 +34,17 @@ function isMajorFixedFeastOfTheLord(isoDate: string): boolean {
   }
   const offset = easterOffsetOf(isoDate);
   return offset === 0 || offset === 39 || offset === 60 || offset === 68; // Easter, Ascension, Corpus Christi, Sacred Heart
+}
+
+/** The octave whose office governs a temporal day (an octave interior or
+ * closing day standing in for the season's feria), if any. An octave day
+ * competes at Vespers by its own `wins` rank, and only its closing day has
+ * First Vespers (engine: "No prima Vespera" on interior octave days). */
+function governingOctave(day: LiturgicalDay): ActiveOctave | undefined {
+  if (day.winner.kind === 'sanctoral') {
+    return undefined;
+  }
+  return day.temporalCategory === 'ordinary-feria' ? resolveActiveOctave(day.date) : octaveGoverningPrivilegedDay(day);
 }
 
 /** Does this day's evening claim First Vespers at all (for the day *after* it)? */
@@ -78,6 +90,14 @@ function hasFirstVespers(day: LiturgicalDay): boolean {
 function keepsOwnSecondVespers(today: LiturgicalDay, tomorrow: LiturgicalDay): boolean {
   if (isMajorFixedFeastOfTheLord(today.date)) {
     return true;
+  }
+  // A bare privileged feria (an Advent, Lent or Passion weekday, an Ember
+  // Saturday, Easter-octave Saturday...) has no claim against tomorrow's
+  // Sunday: Saturday evening is First Vespers of that Sunday (engine, e.g.
+  // 2026-12-05 "Dominica II Adventus", 2027-04-03 "Dominica in Albis",
+  // 2027-05-15 "Dominica Pentecostes", all "Vespera de sequenti").
+  if (today.winner.kind === 'temporal' && tomorrow.weekday === 'sunday' && today.temporalCategory !== 'privileged-sunday') {
+    return false;
   }
   if (today.temporalCategory !== 'ordinary-sunday') {
     return (
@@ -218,7 +238,11 @@ function isVigilOfTomorrow(today: LiturgicalDay, tomorrow: LiturgicalDay): boole
  * commemorations.ts), so it deliberately doesn't inherit this behavior. */
 function anticipated(today: LiturgicalDay, tomorrow: LiturgicalDay): LiturgicalDay {
   const tagged = tagVespersFrom(tomorrow);
-  const commemoration = isVigilOfTomorrow(today, tomorrow) ? undefined : commemorationOfDisplacedPredecessor(today);
+  // A plain temporal day yielding to tomorrow's Sunday (or other temporal
+  // feast) is not commemorated there (engine: Saturday Dec 5 -> "Dominica II
+  // Adventus", no commemoration line).
+  const temporalToTemporal = today.winner.kind === 'temporal' && tomorrow.winner.kind === 'temporal';
+  const commemoration = isVigilOfTomorrow(today, tomorrow) || temporalToTemporal ? undefined : commemorationOfDisplacedPredecessor(today);
   if (!commemoration) {
     return tagged;
   }
@@ -272,15 +296,36 @@ export function resolveEveningDay(isoDate: string): LiturgicalDay {
     return tagVespersFrom(tomorrow);
   }
 
+  // An octave day governing today competes by the octave's own rank: against
+  // another octave day tomorrow (ties stay with the incumbent), and, on its
+  // closing day, against tomorrow's Sunday at that Sunday's own threshold
+  // (engine: Aug 22 octave day of the Assumption keeps Second Vespers over
+  // the following Sunday, which is commemorated).
+  const todayOctave = governingOctave(today);
+  const tomorrowOctave = governingOctave(tomorrow);
+  let octaveDecision: boolean | undefined;
+  if (todayOctave && tomorrow.winner.kind !== 'sanctoral') {
+    if (tomorrowOctave) {
+      octaveDecision = compareFeastClass(todayOctave.wins, tomorrowOctave.wins) >= 0;
+    } else if (todayOctave.isClosingDay && tomorrow.weekday === 'sunday') {
+      const min = minimumOutrightWinningRank(tomorrow.temporalCategory);
+      octaveDecision = !!min && compareFeastClass(todayOctave.wins, min) >= 0;
+    }
+  }
+
   let todayWins: boolean;
-  if (keepsOwnSecondVespers(today, tomorrow)) {
+  if (octaveDecision !== undefined) {
+    todayWins = octaveDecision;
+  } else if (keepsOwnSecondVespers(today, tomorrow)) {
     todayWins = true;
   } else if (today.winner.kind === 'sanctoral' && tomorrow.winner.kind === 'sanctoral') {
     todayWins = compareFeastClass(today.winner.rank, tomorrow.winner.rank) > 0;
+  } else if (governingOctave(today) && tomorrow.winner.kind === 'sanctoral') {
+    todayWins = compareFeastClass(governingOctave(today)!.wins, tomorrow.winner.rank) > 0;
   } else if (today.winner.kind === 'sanctoral' && isAtLeast(today.winner.rank, 'duplex-2-classis')) {
     todayWins = true;
   } else {
-    todayWins = !hasFirstVespers(tomorrow);
+    todayWins = !(hasFirstVespers(tomorrow) || governingOctave(tomorrow)?.isClosingDay);
   }
 
   if (todayWins) {
@@ -289,7 +334,17 @@ export function resolveEveningDay(isoDate: string): LiturgicalDay {
     // commemorationOfDisplacedSuccessor's own doc comment for why this
     // direction doesn't exclude Simplex the way the reverse one does.
     const commemoration = commemorationOfDisplacedSuccessor(today.winner, tomorrow.winner);
-    return commemoration ? { ...today, commemorations: [...today.commemorations, commemoration] } : today;
+    if (commemoration) {
+      return { ...today, commemorations: [...today.commemorations, commemoration] };
+    }
+    if (octaveDecision && tomorrow.weekday === 'sunday' && tomorrow.winner.kind === 'temporal' && !tomorrowOctave) {
+      const label = temporalLabel(tomorrow);
+      return {
+        ...today,
+        commemorations: [...today.commemorations, { kind: 'temporal', id: tomorrow.winner.id, name: label.en, nameLa: label.la }],
+      };
+    }
+    return today;
   }
   return anticipated(today, tomorrow);
 }

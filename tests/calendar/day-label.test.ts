@@ -12,7 +12,8 @@ describe('getDayLabel — ordinal temporal label', () => {
     // this purely-temporal label case. 2027's Trinity Sunday is May 23,
     // so Trinity Monday is May 24 -- free of any sanctoral entry.
     expect(getDayLabel(resolveDay('2027-05-24')).en).toBe('Monday after Trinity Sunday (Feria)');
-    expect(getDayLabel(resolveDay('2026-01-07')).en).toBe('Wednesday after Epiphany (Feria)'); // Epiphany 2026 is a Tuesday
+    // (Epiphany's own partial week is now the Octave of the Epiphany, so it
+    // no longer produces this label.)
     // Latin: spelled-out ferial weekday name (not roman numerals) and the
     // "Feria" rank label, which is already the real Latin word.
     expect(getDayLabel(resolveDay('2027-05-24')).la).toBe('Feria Secunda post Dominica Sanctissimae Trinitatis (Feria)');

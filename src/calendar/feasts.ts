@@ -97,6 +97,24 @@ export interface SaintRecord {
    */
   benedictusCommon?: string;
   /**
+   * Common category whose psalmody (Matins/Lauds/Vespers psalm numbers and
+   * antiphons) this saint takes, when it differs from `common` -- the
+   * engine's own `[Rule]` for Ss. Jerome and Thomas Aquinas is "ex C5"
+   * (Confessor not a Bishop) although the app files both under
+   * `common-of-a-confessor-doctor`, whose psalmody is the Bishop-Doctors'
+   * ("Ecce sacerdos magnus"). Absent for every other saint: `common`
+   * governs, see hours/psalmody-common-category.ts.
+   */
+  psalmodyCommon?: string;
+  /**
+   * The saint's name as it falls into a Common text's literal "N."
+   * (the Doctors' Magnificat antiphon, "beáte N., divínæ legis amátor"):
+   * Latin in the vocative, English as plain name. The engine takes the
+   * Latin from the saint file's `Ant=` line and renders an unfilled "N."
+   * where a file lacks one (Basil, for one); here every doctor has one.
+   */
+  invocationName?: { la: string; en: string };
+  /**
    * The `{N}` substitution value(s) for the Matins invitatory antiphon's
    * own Common template (`hours/matins.ts`'s `resolveMatinsInvitatoryText`,
    * via `hours/resolve-common.ts`'s `substituteName` — the same helper

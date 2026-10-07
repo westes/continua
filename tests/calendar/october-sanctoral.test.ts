@@ -17,14 +17,14 @@ describe('October sanctoral pull (first pass)', () => {
     expect(day.commemorations).toEqual([]);
   });
 
-  it('a monastic-calendar-specific reassignment (St. Justina) displaces what the base Tridentine table gives to St. Marcus, Pope', () => {
+  it('Our Lady of the Rosary wins Oct 7 at Duplex II. classis, with St. Marcus commemorated (St. Justina is deliberately off-calendar)', () => {
     const day = resolveDay('2025-10-07');
     expect(day.winner).toEqual({
       kind: 'sanctoral',
-      id: 'st-justina',
-      name: 'St. Justina, Virgin and Martyr',
-      nameLa: 'Sancta Justina, Virgo et Martyr',
-      rank: 'duplex',
+      id: 'our-lady-of-the-rosary',
+      name: 'Our Lady of the Rosary',
+      nameLa: 'Beata Maria Virgo a Rosario',
+      rank: 'duplex-2-classis',
     });
     expect(day.commemorations).toEqual([
       { kind: 'sanctoral', id: 'st-marcus', name: 'St. Marcus, Pope and Confessor', nameLa: 'Sanctus Marcus, Papa et Confessor', rank: 'simplex' },
