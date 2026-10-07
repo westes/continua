@@ -1,0 +1,25 @@
+# The Epiphany of the Lord, Jan 6. Read from the reference engine:
+# web/www/horas/Latin/Sancti/01-06.txt, [Rank] "In Epiphania Domini;;Duplex I
+# classis". Like Christmas Day it used to resolve as its season's catch-all
+# id (`post-epiphany-1`), labelled "Epiphany" but carrying the ordinary
+# Epiphanytide ferial office; same `anchor: fixed-date` mechanism as
+# circumcision.yml and christmas-day.yml gives it a real identity.
+id: epiphany
+name: "The Epiphany of the Lord"
+nameLa: "Epiphania Domini"
+rank: duplex-1-classis
+anchor:
+  kind: fixed-date
+  month: 1
+  day: 6
+suppressDisplacedCommemoration: true
+# The Octave of the Epiphany (Jan 6-13), a real octave in the reference
+# engine's Monastic 1617 calendar: interior days Semiduplex, closing day
+# ("In Octava Epiphaniae") Duplex -- exactly the OctaveConfig defaults.
+octaveStart:
+  kind: fixed-date
+  month: 1
+  day: 6
+octave:
+  enabled: true
+  skipsSunday: true

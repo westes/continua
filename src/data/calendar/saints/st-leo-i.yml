@@ -1,3 +1,6 @@
+# A Confessor Pope, not a Doctor (user decision 2026-10-07): Sancti/04-11.txt's Common is C4b-2
+# (communi Summorum Pontificum) on the 1570/1617 rubrics and C4a (Doctor) only in the Cistercian
+# variant. Same Common as St. Leo II / Pius V.
 # Verified against Divinum Officium (Monastic Tridentinum 1617), live kalendar
 # check (2043-04-11, clear of the Easter Octave that usually overshadows
 # this date, and not a Sunday) -- winner outright, Duplex. Own proper
@@ -6,14 +9,15 @@
 # here regardless, matching how every other saint's own proper collect in
 # this set is preferred over a Common). No unique antiphon of his own.
 id: st-leo-i
-name: "St. Leo I, Pope, Confessor and Doctor of the Church"
-nameLa: "Sanctus Leo I, Papa, Confessor et Ecclesiæ Doctor"
+name: "St. Leo I, Pope and Confessor"
+nameLa: "Sanctus Leo I, Papa et Confessor"
 rank: duplex
-common: common-of-a-confessor-doctor
+common: common-of-a-confessor-pope
+invocationName: { la: "Leo", en: "Leo" }
 propers: "st-leo-i"
 # P/T/S/N: live-query-verified (2026-08) as byte-identical to common-of-a-
 # confessor-bishop.yml, despite his own [Rule] saying "vide C4a" (Doctor) --
 # unlike St. Gregory the Great, whose own live-rendered P/T/S/N really is
 # unique proper text (see his own prime-antiphon-st-gregory-the-great.yml).
-minorHoursCommon: common-of-a-confessor-doctor
-benedictusCommon: common-of-a-confessor-doctor
+minorHoursCommon: common-of-a-confessor-pope
+benedictusCommon: common-of-a-confessor-pope

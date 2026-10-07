@@ -10,6 +10,11 @@
 # itself keep showing up alongside them. `wins` left at the default
 # (semiduplex) deliberately, not yet independently verified for Christmas
 # specifically.
+#
+# `anchor: fixed-date` (added 2026-10): Christmas Day itself used to resolve as
+# the season's catch-all `christmas-octave-sunday` ("Friday in Christmastide",
+# a Feria), so none of its own Lauds/Vespers/Matins content could attach.
+# Same mechanism as circumcision.yml.
 id: christmas-day
 name: "Christmas"
 # Nominative form of the reference engine's own title ("In Nativitate
@@ -17,9 +22,14 @@ name: "Christmas"
 # nominative-noun-phrase naming convention.
 nameLa: "Nativitas Domini"
 rank: duplex-1-classis
+anchor:
+  kind: fixed-date
+  month: 12
+  day: 25
 octaveStart:
   kind: fixed-date
   month: 12
   day: 25
 octave:
   enabled: true
+suppressDisplacedCommemoration: true

@@ -6,8 +6,11 @@
 # saint (see memory vu-matins-pre1955-saints).
 # web/www/horas/Latin/Sancti/01-21.txt, English/Sancti/01-21.txt.
 # Lectio4-6 (St. Ambrose's sermon on virgins, discussing Agnes) combined
-# into one reading, one continuous excerpt. No responsory given in the
-# source for these lessons.
+# into one reading, one continuous excerpt. The source's own
+# Responsory4/5/6 follow these three lessons; the last (Responsory6, the
+# one with Gloria Patri that closes the nocturn's lessons) is attached to
+# the combined reading, the same one-responsory-per-combined-reading
+# convention the octave readings use (added 2026-10-07).
 #
 # Checked 2026-09-05 for a Gospel pairing: this reading (Ambrose's On
 # Virgins Bk. 1, Lectio4-6) is Nocturn 2 -- a panegyric on Agnes's
@@ -108,4 +111,7 @@ readings:
         her position, and all the while herself remain without fear. This one victim brought God a
         double offering, that of her purity, and that of her faith. She preserved virginity and
         achieved martyrdom.
+    responsory:
+      la: "R. Jam corpus ejus córpori meo sociátum est, et sanguis ejus ornávit genas meas: * Cujus mater virgo est, cujus pater féminam nescit.\nV. Ipsi sum desponsáta, cui Angeli serviunt, cujus pulchritúdinem sol et luna mirántur.\nR. Cujus mater virgo est, cujus pater féminam nescit."
+      en: "R. His holy Body is already united to me, and his Blood is red upon my cheeks: * He it is whose Mother is a virgin, and whose Father hath not known a woman.\nV. I am wedded to the Lord of Angels, at whose beauty the sun and the moon do wonder.\nR. He it is whose Mother is a virgin, and whose Father hath not known a woman."
     status: { la: verified, en: verified }

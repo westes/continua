@@ -1,0 +1,14 @@
+# Low Sunday, the Octave Day of Easter. Read from the reference engine:
+# web/www/horas/Latin/Tempora/Pasc1-0.txt, [Rank] "Dominica in Albis in Octava
+# Paschæ;;Duplex I classis". The Sunday used to resolve as the week's catch-all
+# id `easter-octave`, shared with the weekdays after it, so its own Lauds,
+# Vespers and minor-hour office could not attach. Same `anchor` mechanism as
+# the Easter-week days (easter-monday.yml and siblings).
+id: low-sunday
+name: "Low Sunday"
+nameLa: "Dominica in Albis"
+rank: duplex-1-classis
+anchor:
+  kind: easter
+  offset: 7
+suppressDisplacedCommemoration: true

@@ -1,0 +1,24 @@
+# Read directly from the reference engine: untagged/default [Rank]
+# block of `web/www/horas/Latin/Sancti/10-07.txt` -- "Sacratissimi
+# Rosarii Beatæ Mariæ Virginis;;Duplex 2 classis;;5.1;;ex C11". The
+# Monastic file `SanctiM/10-07.txt` is a plain `@Sancti/10-07` include
+# (its only own [Rank] is tagged rubrica 1963, i.e. not this app's
+# track), so everything below comes from the Sancti file itself plus
+# SanctiM's Monastic-only blocks (12-lesson reshuffle, 3 extra Matins
+# antiphons) where noted in each propers file.
+#
+# Replaces St. Justina (see st-justina.yml) on Oct 7. Historically this
+# is "Our Lady of Victory" (Pius V, after Lepanto, 7 Oct 1571), renamed
+# the Rosary by Gregory XIII (1573, first Sunday of October) and fixed to
+# Oct 7 by Clement XI / the 1913 reform -- the reference engine models
+# only this one Oct 7 office, so there is no separate Victory entry.
+#
+# No octave is configured: the source file has none.
+id: our-lady-of-the-rosary
+name: "Our Lady of the Rosary"
+nameLa: "Beata Maria Virgo a Rosario"
+rank: duplex-2-classis
+common: common-of-the-bvm
+propers: "our-lady-of-the-rosary"
+minorHoursCommon: common-of-the-bvm
+benedictusCommon: common-of-the-bvm

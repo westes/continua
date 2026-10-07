@@ -175,3 +175,149 @@ sunday-after-ascension:
     versicle:
       v: { la: "Ascéndo ad Patrem meum, et Patrem vestrum, allelúja.", en: "I ascend to my Father and to your Father, alleluia." }
       r: { la: "Deum meum, et Deum vestrum, allelúja.", en: "To my God and your God, alleluia." }
+
+# Christmas Day (Dec 25): engine render (Monastic Tridentinum 1617, prayMatutinum,
+# 2026-12-25): six individually-antiphoned psalms in each of Nocturns I and II
+# (Ps 2/18/23/44/47/71 and 84/88/95/96/97/98), three Isaiah canticles in III.
+christmas-day:
+  nocturn1:
+    groups:
+      - psalms: [2]
+        antiphon:
+          la: "Dóminus dixit * ad me: Fílius meus es tu, ego hódie génui te."
+          en: "The Lord hath said unto Me: * Thou art My Son, this day have I begotten thee."
+      - psalms: [18]
+        antiphon:
+          la: "Tamquam sponsus * Dóminus procédens de thálamo suo."
+          en: "The Lord is as a bridegroom * coming out of his chamber."
+      - psalms: [23]
+        antiphon:
+          la: "Elevámini, * portæ æternáles, † et introíbit Rex glóriæ."
+          en: "Be ye lifted up, * O eternal gates: and the King of Glory shall enter in."
+      - psalms: [44]
+        antiphon:
+          la: "Diffúsa est * grátia in lábiis tuis, proptérea benedíxit te Deus in ætérnum."
+          en: "Grace is poured into thy lips, * therefore God hath blessed thee for ever."
+      - psalms: [47]
+        antiphon:
+          la: "Suscépimus, * Deus, misericórdiam tuam in médio templi tui."
+          en: "We have drunk in thy loving-kindness, * O God, in the midst of thy temple."
+      - psalms: [71]
+        antiphon:
+          la: "Oriétur * in diébus Dómini abundántia pacis, et dominábitur."
+          en: "In the Lord's days * shall abundance of peace arise and flourish."
+    versicle:
+      v: { la: "Tamquam sponsus.", en: "The Lord is as a bridegroom." }
+      r: { la: "Dóminus procédens de thálamo suo.", en: "Coming out of his chamber." }
+  nocturn2:
+    groups:
+      - psalms: [84]
+        antiphon:
+          la: "Véritas de terra * orta est, et justítia de cælo prospéxit."
+          en: "Truth is sprung out of the earth, * and righteousness hath looked down from heaven."
+      - psalms: [88]
+        antiphon:
+          la: "Ipse invocábit * me, allelúja: Pater meus es tu, allelúja."
+          en: "He shall cry unto Me, alleluia, * Thou art My Father, alleluia."
+      - psalms: [95]
+        antiphon:
+          la: "Læténtur cæli, * et exsúltet terra ante fáciem Dómini, quóniam venit."
+          en: "Let the heavens rejoice, * and let the earth be glad before the Lord, for He cometh."
+      - psalms: [96]
+        antiphon:
+          la: "In princípio * et ante sǽcula Deus erat Verbum: † ipse natus est nobis Salvátor mundi."
+          en: "In the beginning, * and before the worlds, the Word was God, and this day is He born the Saviour of the world."
+      - psalms: [97]
+        antiphon:
+          la: "Notum fecit * Dóminus, allelúja, salutáre suum, allelúja."
+          en: "The Lord hath made known, alleluia, * His salvation, alleluia."
+      - psalms: [98]
+        antiphon:
+          la: "Nato * Dómino Angelórum chorus canébat, dicens: Salus Deo nostro, allelúja."
+          en: "When the Lord was born * the Angels sang together, saying Salvation to our God, Which sitteth upon the throne, and unto the Lamb. Alleluia."
+    versicle:
+      v: { la: "Speciósus forma præ fíliis hóminum.", en: "Thou art fairer than the children of men." }
+      r: { la: "Diffúsa est grátia in lábiis tuis.", en: "Grace is poured into thy lips." }
+  nocturn3:
+    canticles:
+      - refs: [{ book: isa, chapter: 9, verses: "2-7" }]
+      - refs: [{ book: isa, chapter: 26, verses: "1-12" }]
+      - refs: [{ book: isa, chapter: 66, verses: "10-16" }]
+    antiphon:
+      la: "Párvulus * fílius hódie natus est nobis: † et vocábitur Deus, Fortis, allelúja, allelúja."
+      en: "Unto us this day * a little Child is born, and His name shall be called the Mighty God. Alleluia, alleluia."
+    versicle:
+      v: { la: "Ipse invocábit me, allelúja.", en: "He shall cry unto Me, alleluia." }
+      r: { la: "Pater meus es tu, allelúja.", en: "Thou art My Father, alleluia." }
+
+# The Epiphany (Jan 6): engine render (Monastic Tridentinum 1617, prayMatutinum, 2027-01-06).
+epiphany:
+  nocturn1:
+    groups:
+      - psalms: [28]
+        antiphon:
+          la: "Afférte Dómino * fílii Dei, adoráte Dóminum in aula sancta ejus."
+          en: "Give unto the Lord, O ye sons of God, * worship the Lord in His holy courts."
+      - psalms: [45]
+        antiphon:
+          la: "Flúminis ímpetus * lætíficat, allelúja, civitátem Dei, allelúja."
+          en: "It is a river, the streams whereof make glad, * alleluia, the city of God, alleluia."
+      - psalms: [46]
+        antiphon:
+          la: "Psállite Deo nostro, * psállite: psállite Regi nostro, psállite sapiénter."
+          en: "Sing praises to our God, sing praises * sing praises unto our King, sing ye praises with understanding."
+      - psalms: [47]
+        antiphon:
+          la: "Suscépimus, * Deus, misericórdiam tuam, † in médio templi tui."
+          en: "We have received thy loving-kindness, * O God, in the midst of thy temple."
+      - psalms: [65]
+        antiphon:
+          la: "Omnis terra adóret te, * et psallat tibi: psalmum dicat nómini tuo, Dómine."
+          en: "Let all the earth worship thee, and sing unto thee * let them sing praises to thy name, O Lord."
+      - psalms: [71]
+        antiphon:
+          la: "Reges Tharsis * et ínsulæ múnera ófferent Regi Dómino."
+          en: "The kings of Tarshish and the isles shall bring presents * unto the Lord the King."
+    versicle:
+      v: { la: "Omnis terra adóret te, et psallat tibi.", en: "Let all the earth worship thee, and sing unto thee." }
+      r: { la: "Psalmum dicat nómini tuo, Dómine.", en: "Let them sing praises to thy Name, O Lord." }
+  nocturn2:
+    groups:
+      - psalms: [85]
+        antiphon:
+          la: "Omnes gentes * quascúmque fecísti, vénient, et adorábunt coram te, Dómine."
+          en: "All nations whom Thou hast made shall come * and worship before thee, O Lord."
+      - psalms: [86]
+        antiphon:
+          la: "Homo natus est * in ea, et ipse fundávit eam Altíssimus."
+          en: "This man was born in her, * and the Highest Himself hath established her."
+      - psalms: [95]
+        antiphon:
+          la: "Adoráte Dóminum, * allelúja: in aula sancta ejus, allelúja."
+          en: "O worship the Lord, * alleluia, in His holy temple, alleluia."
+      - psalms: [96]
+        antiphon:
+          la: "Adoráte Deum, * allelúja: omnes Angeli ejus, allelúja."
+          en: "Worship God, * alleluia, all ye His Angels, alleluia."
+      - psalms: [97]
+        antiphon:
+          la: "Notum * fecit Dóminus allelúja; † salutáre suum, allelúja."
+          en: "The Lord hath made known alleluia; his salvation, alleluia."
+      - psalms: [98]
+        antiphon:
+          la: "Tria sunt * múnera quæ obtulérunt Magi Dómino, aurum, thus et myrrham: † Fílio Dei, Regi magno, allelúja."
+          en: "There are three precious gifts which the wise men offered unto the Lord, Gold, frankincense, and myrrh: to the great King, the Son of God alleluia."
+    versicle:
+      v: { la: "Reges Tharsis et ínsulæ múnera ófferent.", en: "The kings of Tarshish and of the isles shall bring presents." }
+      r: { la: "Reges Arabum et Saba dona addúcent.", en: "The kings of Arabia and Saba shall offer gifts." }
+  nocturn3:
+    canticles:
+      - refs: [{ book: isa, chapter: 9, verses: "2-7" }]
+      - refs: [{ book: isa, chapter: 26, verses: "1-12" }]
+      - refs: [{ book: isa, chapter: 66, verses: "10-16" }]
+    antiphon:
+      la: "Vénient * ad te qui detrahébant tibi, † et adorábunt vestígia pedum tuórum."
+      en: "They that despised thee * shall come unto thee, and shall bow themselves down at the Soles of thy Feet."
+    versicle:
+      v: { la: "Adoráte Dóminum, allelúja.", en: "O worship the Lord, alleluia." }
+      r: { la: "In aula sancta ejus, allelúja.", en: "In His holy temple, alleluia." }

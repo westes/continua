@@ -348,13 +348,19 @@ days:
   # the base table gives to St. Marcus, Pope -- see st-justina.yml/
   # st-marcus.yml), and St. Gall (Oct 16, founder of St. Gallen). No
   # octave-gap exclusions this month.
+  #
+  # Oct 7 is Our Lady of the Rosary, not St. Justina: Justina has no
+  # Matins lessons of her own in the source (`vide C6` only) and this
+  # app has no Common-lesson mechanism, so her office rendered with no
+  # readings about her at all. Her saint file is kept (restorable);
+  # Rosary's complete proper office is in Sancti/10-07.txt.
   "10-01": [st-remigius]
   "10-02": [guardian-angels]
   "10-03": [st-therese-of-lisieux]
   "10-04": [st-francis]
   "10-05": [ss-placid-and-companions]
   "10-06": [st-bruno]
-  "10-07": [st-justina, st-marcus]
+  "10-07": [our-lady-of-the-rosary, st-marcus]
   "10-08": [st-bridget-of-sweden]
   "10-09": [ss-dionysius-and-companions]
   "10-10": [st-francis-borgia]
