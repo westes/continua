@@ -198,6 +198,7 @@ export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set([
   'low-sunday',
   'holy-name-of-jesus',
   'vigil-of-christmas',
+  'vigil-of-epiphany',
   // Passiontide: every one of the 14 days from Passion Sunday through Holy
   // Saturday has its own real identity now (see
   // calendar/movable-feasts.ts's anchor-based override for the 12 days in

@@ -1,0 +1,21 @@
+# Read from the reference engine: Sancti/01-05.txt's own [Rank] -- "In
+# Vigilia Epiphaniæ;;Semiduplex;;4.9;;ex Sancti/01-01". The reference
+# carries St. Telesphorus (Sancti/01-05cc.txt, Simplex) as a commemoration
+# of this day, which is how data/calendar/saints/st-telesphorus.yml already
+# resolves; this record gives the winning day its own identity (name, rank)
+# instead of the Sunday-within-the-Christmas-octave id it used to borrow.
+# The collect, Lauds antiphons, chapter and short reading are all
+# `@Tempora/Nat1-0` in the source, so they come from
+# christmas-octave-sunday's own files through the usual temporal-id
+# fallback (calendar/temporal-id.ts); only the Matins readings are its own
+# (data/propers/nocturn-readings/vigil-of-epiphany.yml).
+id: vigil-of-epiphany
+name: "Vigil of the Epiphany"
+nameLa: "Vigilia Epiphaniæ"
+rank: semiduplex
+anchor:
+  kind: fixed-date
+  month: 1
+  day: 5
+suppressDisplacedCommemoration: true
+officeFrom: christmas-octave-sunday

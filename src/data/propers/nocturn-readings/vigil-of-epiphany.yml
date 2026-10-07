@@ -1,0 +1,113 @@
+# Matins Nocturn 2-3 readings for the Vigil of the Epiphany (Jan 5). Sourced directly from
+# web/www/horas/Latin/Sancti/01-05.txt and English/Sancti/01-05.txt (Lectio4-9).
+# Nocturn 2: Lectio4-6, a sermon of St. Augustine on the Nativity, combined into one reading
+# per this project's condensed-Matins convention (see circumcision.yml). Nocturn 3: Lectio7-9,
+# the Gospel (Matt 2:19-23) and St. Jerome's homily on it.
+id: vigil-of-epiphany
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Augustine, Sermon 13 on the Season"
+    text:
+      la: >-
+        Dóminus noster Jesus Christus, fratres caríssimi, qui in ætérnum est cunctórum Creátor,
+        hódie de matre nascéndo factus est nobis Salvátor. Natus est nobis hódie in témpore per
+        voluntátem, ut nos perdúcat ad Patris æternitátem. Factus est Deus homo, ut homo fíeret
+        Deus: ut panem Angelórum manducáret homo, Dóminus Angelórum hódie factus est homo.
+
+
+        Hódie impléta est prophetía illa, quæ dicit: Roráte, cæli, désuper, et nubes pluant justum:
+        aperiátur terra, et gérminet Salvatórem. Factus est ígitur qui fécerat, ut invenirétur qui
+        períerat. Sic enim in Psalmis homo confitétur: Priúsquam humiliárer, ego peccávi. Peccávit
+        homo, et factus est reus: natus est homo Deus, ut liberarétur reus. Homo ígitur cécidit, sed
+        Deus descéndit. Cécidit homo miserabíliter, descéndit Deus misericórditer; cécidit homo per
+        supérbiam, descéndit Deus cum grátia.
+
+
+        O mirácula, o prodígia, fratres mei! Natúræ jura mutántur in hómine; Deus náscitur, virgo
+        sine viro gravidátur, viri nésciam sermo Dei marítat: simul facta est mater et virgo; mater
+        facta, sed incorrúpta; virgo habens fílium, nésciens virum; semper clausa, sed non
+        infœcúnda. Solus enim sine peccáto est natus, quem sine viríli compléxu non concupiscéntia
+        carnis, sed obediéntia génuit mentis.
+      en: >-
+        Our Lord Jesus Christ, dearest brethren, who in eternity is the Creator of all things, was
+        as at this time born of a mother and became our Saviour. It was as at this time that he
+        willed to be born for us in earthly time, so as to lead us to the Father's eternity. God is
+        made man, that man may be made as God. That man may eat Angels' food, the Lord of Angels was
+        as on this day made man.
+
+
+        Now is fulfilled that prophecy: Drop down, ye heavens, from above, and let the skies pour
+        down righteousness: let the earth open, and bring forth a Saviour. He who made all things is
+        therefore himself made, that those who are lost may be found. It is even as man is made to
+        testify of himself in the Psalms: Before I was humbled, I went wrong. Man sinned and became
+        guilty. God is born man, that the guilty may be delivered. Man fell, but God descended. Man
+        fell miserably, God descended mercifully. Man fell by pride, God descended with grace.
+
+
+        O my brethren, what a miracle! what a wonder! The laws of nature are changed concerning man:
+        God is born, a Virgin conceiveth without an husband; the Word of God is wedded to one who
+        knoweth no man; she is at once Mother and Virgin. A Mother, yet inviolate: a Virgin having a
+        Son; knowing no man, ever sealed, yet not unfruitful. For he alone was born without sin. He
+        alone was born without human embrace, begotten not of the will of the flesh, but of the
+        obedience of the mind.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 2:19-23", en: "Matt 2:19-23" }
+    text:
+      la: >-
+        In illo témpore: Defúncto Heróde, ecce Angelus Dómini appáruit in somnis Joseph in Ægýpto,
+        dicens: Surge, et áccipe púerum et matrem ejus, et vade in terram Israël. Et réliqua.
+      en: >-
+        In that time: When Herod was dead, behold an angel of the Lord appeared in sleep to Joseph
+        in Egypt, Saying: Arise, and take the child and his mother, and go into the land of Israel.
+        And so on.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Jerome, Commentary on Matthew, Book I"
+    text:
+      la: >-
+        Ex hoc loco intellígimus non solum Heródem, sed et sacerdótes et scribas eódem témpore necem
+        Dómini fuísse meditátos. Qui surgens accépit púerum, et matrem ejus. Non dixit: Accépit
+        fílium suum et uxórem suam, sed Púerum et matrem ejus; quasi nutrítius, non marítus.
+
+
+        Audiens autem quod Archeláus regnáret in Judǽa pro Heróde patre suo, tímuit illo ire. Multi
+        labúntur erróre propter ignorántiam históriæ, putántes eumdem esse Heródem, a quo in
+        passióne sua Dóminus irridétur, et qui nunc mórtuus esse referátur. Ergo Heródes ille qui
+        cum Piláto póstea amicítias fecit, hujus Heródis fílius est, frater Archelái.
+
+
+        Quóniam Nazarǽus vocábitur. Si fixum de Scriptúris posuísset exémplum, numquam díceret: Quod
+        dictum est per prophétas: sed simplíciter: Quod dictum est per prophétam. Nunc autem
+        pluráliter prophétas vocans, osténdit se non verba de Scriptúris sumpsísse, sed sensum.
+        Nazarǽus sanctus interpretátur; sanctum autem Dóminum futúrum omnis Scriptúra commémorat.
+      en: >-
+        From the words, they are dead, (in the Plural), which are used in this passage of the
+        Gospel, we may understand that there were others beside Herod which sought the young Child's
+        life probably the Priests and Scribes. And he Joseph arose, and took the young Child and His
+        Mother. It is not written, He took his wife and child, but he took the young Child and His
+        Mother; whence it is clear that the holy Evangelist willeth to imply that Joseph was not the
+        father, but the Guardian of Jesus, not the husband, but the Betrothed of Mary.
+
+
+        But when he heard that Archelaus did reign in Judea, in the room of his father Herod, he was
+        afraid to go thither. There are some persons so grossly ignorant of history that they
+        confuse themselves over the two Herods, as if the one mentioned here were the same who
+        afterwards set our Lord at nought during His Passion, and they cannot understand how he
+        should now be said to be dead. The Herod who was made friends with Pilate over Christ's
+        death, was the son of the Herod who massacred the infants of Bethlehem, and the brother of
+        Archelaus.
+
+
+        He shall be called a Nazarene. The Evangelist, in quoting these words, saith that they were
+        spoken by the Prophets, (Plural). If he had been citing any one precise passage he would
+        have said by the Prophet, in the Singular. But he is citing the sense of the Prophets, and
+        not any individual passage in any of their writings. He seemeth to refer to the fact that in
+        Hebrew the word Nazarene signifieth holy, and that Christ is the Holy One of God is the
+        common declaration of all the Scriptures.
+    status: { la: verified, en: verified }
