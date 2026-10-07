@@ -1,0 +1,22 @@
+# First Vespers of the Apostles' Common (also Evangelists outside Paschaltide).
+# Engine render (Monastic Tridentinum 1617, command=prayVespera), St. Matthias eve 2026-02-23;
+# identical on James/Bartholomew/Matthew/Simon and Jude/Luke eves. See hours/resolve-common.ts's VespersVariant.
+id: common-of-an-apostle-first
+aliases: [common-of-apostles-first,common-of-an-evangelist-first]
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Hoc est præcéptum meum, * ut diligátis ínvicem, sicut diléxi vos."
+      en: "This is my commandment * that you love one another, as I have loved you."
+  - psalms: [110]
+    antiphon:
+      la: "Majórem caritátem * nemo habet, ut ánimam suam ponat quis pro amícis suis."
+      en: "Greater love than this no man hath, * that a man lay down his life for his friends."
+  - psalms: [111]
+    antiphon:
+      la: "Vos amíci mei estis, * si fecéritis quæ præcípio vobis, dicit Dóminus."
+      en: "You are my friends * if you do the things that I command you, said the Lord."
+  - psalms: [112]
+    antiphon:
+      la: "In patiéntia vestra * possidébitis ánimas vestras."
+      en: "In your patience * you shall possess your souls."

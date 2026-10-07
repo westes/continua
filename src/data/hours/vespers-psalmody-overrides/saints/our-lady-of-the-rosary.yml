@@ -1,0 +1,24 @@
+# Sancti/10-07.txt's own [Ant Vespera] and English/Sancti/10-07.txt.
+# Same four psalm numbers as the BVM Common (109/112/121/126). The source
+# lists 5 antiphons (tagged 109/112/121/126/147); the Monastic four are
+# antiphons 1, 2, 3 and 5, dropping the 4th -- the same reduction every
+# other already-live-verified five-antiphon BVM feast here uses (see
+# nativity-bvm.yml, annunciation.yml, immaculate-conception.yml).
+id: our-lady-of-the-rosary
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Quæ est ista, * speciósa sicut colúmba, quasi rosa plantáta super rivos aquárum?"
+      en: "Who is this, * fair as a dove, like a rose-tree planted beside the rivers of waters?"
+  - psalms: [112]
+    antiphon:
+      la: "Virgo potens, * sicut turris David: mille clípei pendent ex ea, omnis armatúra fórtium."
+      en: "A virgin most mighty, * like the tower of David, whereon there hung a thousand bucklers, all the shields of valiant men."
+  - psalms: [121]
+    antiphon:
+      la: "Ave, María, * grátia plena; Dóminus tecum: benedícta tu in muliéribus."
+      en: "Hail Mary, * full of grace, the Lord is with thee, blessed art thou among women."
+  - psalms: [126]
+    antiphon:
+      la: "Vidérunt eam * fíliæ Sion vernántem in flóribus rosárum, et beatíssimam prædicavérunt."
+      en: "The daughters of Sion saw her * in her spring time, amidst the flowers of the roses, and called her most blessed."

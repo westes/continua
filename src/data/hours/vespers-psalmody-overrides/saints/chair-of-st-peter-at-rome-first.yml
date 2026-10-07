@@ -1,0 +1,21 @@
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 01-18
+# chair-of-st-peter-at-rome. First Vespers psalm antiphons; the other evening's set is
+# chair-of-st-peter-at-rome.yml. See vespers-psalmody-overrides.ts's getVespersSaintOverride.
+id: chair-of-st-peter-at-rome-first
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Ecce sacérdos magnus, * qui in diébus suis plácuit Deo, et invéntus est justus."
+      en: "Behold an high priest, * who in his days pleased God, and was found righteous."
+  - psalms: [110]
+    antiphon:
+      la: "Non est invéntus * símilis illi, qui conserváret legem Excélsi."
+      en: "None was found like unto him, * to keep the Law of the Most High."
+  - psalms: [111]
+    antiphon:
+      la: "Ideo jurejurándo * fecit illum Dóminus créscere in plebem suam."
+      en: "Therefore the Lord assured him * by an oath that He would multiply his seed among His people."
+  - psalms: [112]
+    antiphon:
+      la: "Serve bone * et fidélis, intra in gáudium Dómini tui."
+      en: "Good and faithful servant, * enter thou into the joy of thy Lord."

@@ -1,0 +1,24 @@
+# Engine (Monastic Tridentinum 1617, command=prayLaudes, 2027-02-28); source Tempora/Quad3-0.txt's [Ant Laudes] entries 1,2,7,8,9 in Latin and English. Antiphons for the Sunday's own psalm slots (Ps 66 first, no antiphon). Applies via the numbers-override path for this temporal Sunday (resolve-common.ts getPsalmodyNumbersOverrideId).
+id: lent-3
+groups:
+  - psalms: [50]
+    antiphon:
+      la: "Fac benígne * in bona voluntáte tua, ut ædificéntur, Dómine, muri Jerúsalem."
+      en: "O Lord, do good in thy good pleasure * unto Zion; to build the walls of Jerusalem."
+  - psalms: [117]
+    antiphon:
+      la: "Dóminus * mihi adjútor est, non timébo quid fáciat mihi homo."
+      en: "The Lord is on my side; * I will not fear what can man do unto me."
+  - psalms: [62]
+    antiphon:
+      la: "Lábia mea * laudábunt te in vita mea, Deus meus."
+      en: "My lips * shall praise, thee all my life long, my God."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Vim virtútis suæ * oblítus est ignis: ut púeri tui liberaréntur illǽsi."
+    en: "The fire forgot his strength * that thy children might be delivered therefrom."
+laudate:
+  antiphon:
+    la: "Sol et luna * laudáte Deum: quia exaltátum est nomen ejus solíus."
+    en: "Praise God, O ye sun and moon, * for His Name alone is exalted!"

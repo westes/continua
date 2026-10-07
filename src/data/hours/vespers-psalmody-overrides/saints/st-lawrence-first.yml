@@ -1,0 +1,21 @@
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 08-10
+# st-lawrence. First Vespers psalm antiphons; the other evening's set is st-lawrence.yml. See
+# vespers-psalmody-overrides.ts's getVespersSaintOverride.
+id: st-lawrence-first
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Lauréntius * ingréssus est Martyr, et conféssus est nomen Dómini Jesu Christi."
+      en: "Lawrence * went in to be a martyr, and acknowledged the name of our Lord Jesus Christ."
+  - psalms: [110]
+    antiphon:
+      la: "Lauréntius * bonum opus operátus est, qui per signum crucis cæcos illuminávit."
+      en: "Lawrence wrought a good work, * in that with the sign of the Cross he gave sight to the blind."
+  - psalms: [111]
+    antiphon:
+      la: "Adhǽsit * ánima mea post te, quia caro mea igne cremáta est pro te, Deus meus."
+      en: "O my God, my soul cleaveth * fast after thee, for my flesh hath been burnt with fire for thy sake."
+  - psalms: [112]
+    antiphon:
+      la: "Beátus Lauréntius * orábat, dicens: Grátias tibi ago, Dómine, quia jánuas tuas íngredi mérui."
+      en: "The blessed Lawrence prayed * and said: I give thee thanks, O Lord, that Thou hast made me worthy to enter within thy gates."

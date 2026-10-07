@@ -1,0 +1,24 @@
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-01-06); Latin and English both taken from the page. Antiphons only; the psalm numbers are the Monastic Sunday scheme (92/99/62, canticle, Laudate).
+id: epiphany
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Ante lucíferum génitus, * et ante sǽcula, Dóminus Salvátor noster hódie mundo appáruit."
+      en: "The Lord our Saviour, * begotten before the day-star, and before the ages, is this day made manifest in the world."
+  - psalms: [99]
+    antiphon:
+      la: "Venit lumen tuum * Jerúsalem, et glória Dómini super te orta est, et ambulábunt gentes in lúmine tuo, allelúja."
+      en: "O Jerusalem, * thy light is come, and the glory of the Lord is risen upon thee, and the Gentiles shall walk in thy light. Alleluia."
+  - psalms: [62]
+    antiphon:
+      la: "Apértis thesáuris suis * obtulérunt Magi Dómino aurum, thus, et myrrham, allelúja."
+      en: "When the wise men * had opened their treasures, they presented unto the Lord gold, frankincense, and myrrh. Alleluia."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Mária et flúmina * benedícite Dómino: hymnum dícite fontes Dómino, allelúja."
+    en: "O ye seas and floods, * bless ye the Lord. O ye wells, bless ye the Lord. Alleluia."
+laudate:
+  antiphon:
+    la: "Stella ista * sicut flamma corúscat, et Regem regum Deum demónstrat: Magi eam vidérunt, et magno Regi múnera obtulérunt."
+    en: "This star shineth * as a flame of fire, and pointeth out God, the King of kings: the Wise Men beheld it, and offered gifts unto the great King."

@@ -1,0 +1,24 @@
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2027-05-06); Latin and English both taken from the page. Antiphons only; the psalm numbers are the Monastic Sunday scheme (92/99/62, canticle, Laudate).
+id: ascension
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Viri Galilǽi, * quid aspícitis in cælum? Hic Jesus qui assúmptus est a vobis in cælum, sic véniet, allelúja."
+      en: "Ye men of Galilee, * why stand ye gazing up into heaven? This same Jesus, Which is taken up from you into heaven, shall so come in like manner, alleluia."
+  - psalms: [99]
+    antiphon:
+      la: "Cumque intueréntur * in cælum eúntem illum, dixérunt, allelúja."
+      en: "And while they looked * steadfastly towards heaven, as He went up, they said, alleluia."
+  - psalms: [62]
+    antiphon:
+      la: "Elevátis mánibus, * benedíxit eis, et ferebátur in cælum, allelúja."
+      en: "He lifted up His Hands, * and blessed them, and was carried up into heaven, alleluia."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Exaltáte Regem regum, * et hymnum dícite Deo, allelúja."
+    en: "Extol the King of kings, * and ascribe praise to God, alleluia."
+laudate:
+  antiphon:
+    la: "Vidéntibus illis, * elevátus est, et nubes suscépit eum in cælo, allelúja."
+    en: "While they beheld, * He was taken up, and a cloud received Him in heaven, alleluia."

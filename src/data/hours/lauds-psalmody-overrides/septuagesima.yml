@@ -1,0 +1,24 @@
+# Engine (Monastic Tridentinum 1617, command=prayLaudes, 2027-01-24); source Tempora/Quadp1-0.txt's [Ant Laudes] entries 1,2,3,4,5 in Latin and English. Antiphons for the Sunday's own psalm slots (Ps 66 first, no antiphon). Applies via the numbers-override path for this temporal Sunday (resolve-common.ts getPsalmodyNumbersOverrideId).
+id: septuagesima
+groups:
+  - psalms: [50]
+    antiphon:
+      la: "Miserére * mei, Deus, et a delícto meo munda me: quia tibi soli peccávi."
+      en: "Have mercy upon me, * O God, and cleanse me from my sin, for against thee only have I sinned."
+  - psalms: [117]
+    antiphon:
+      la: "Confitébor * tibi, quóniam exaudísti me."
+      en: "I will praise thee, * for thou hast heard me."
+  - psalms: [62]
+    antiphon:
+      la: "Deus, Deus meus, * ad te de luce vígilo, quia factus es adjútor meus."
+      en: "O God, Thou art my God, * early will I seek thee, because thou hast been my help."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Benedíctus es * in firmaménto cæli, et laudábilis in sǽcula, Deus noster."
+    en: "Blessed art thou, * O our God, in the firmament of heaven, and worthy to be praised above all for ever."
+laudate:
+  antiphon:
+    la: "Laudáte * Dóminum de cælis."
+    en: "Praise ye the Lord * from the heavens."

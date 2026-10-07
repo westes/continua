@@ -1,0 +1,24 @@
+# Engine render (Monastic Tridentinum 1617, command=prayLaudes, 2026-04-12); Latin and English both taken from the page. Antiphons only; the psalm numbers are the Monastic Sunday scheme (92/99/62, canticle, Laudate).
+id: low-sunday
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Allelúja, * allelúja, allelúja, allelúja, allelúja, allelúja, allelúja, allelúja, allelúja."
+      en: "Alleluia, * alleluia, alleluia, alleluia, alleluia, alleluia, alleluia, alleluia, alleluia."
+  - psalms: [99]
+    antiphon:
+      la: null
+      en: null
+  - psalms: [62]
+    antiphon:
+      la: null
+      en: null
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Surréxit Christus * de sepúlcro, qui liberávit tres púeros de camino ignis ardéntis, allelúja."
+    en: "Risen is Christ * from the grave, who freed the three young men from the burning furnace of fire, alleluia."
+laudate:
+  antiphon:
+    la: "Allelúja, * allelúja, allelúja."
+    en: "Alleluia, * alleluia, alleluia."

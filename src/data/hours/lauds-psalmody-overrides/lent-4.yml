@@ -1,0 +1,24 @@
+# Engine (Monastic Tridentinum 1617, command=prayLaudes, 2027-03-07); source Tempora/Quad4-0.txt's [Ant Laudes] entries 1,2,7,8,9 in Latin and English. Antiphons for the Sunday's own psalm slots (Ps 66 first, no antiphon). Applies via the numbers-override path for this temporal Sunday (resolve-common.ts getPsalmodyNumbersOverrideId).
+id: lent-4
+groups:
+  - psalms: [50]
+    antiphon:
+      la: "Tunc acceptábis * sacrifícium justítiæ, si avérteris fáciem tuam a peccátis meis."
+      en: "Then shalt Thou be pleased * with the sacrifices of righteousness, when Thou hast hidden thy face from my sins."
+  - psalms: [117]
+    antiphon:
+      la: "Bonum est * speráre in Dómino, quam speráre in princípibus."
+      en: "It is better to trust * in the Lord, than to trust in princes."
+  - psalms: [62]
+    antiphon:
+      la: "In matutínis, * Dómine, meditábor in te."
+      en: "In the morning * O Lord, I shall meditate upon thee."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Potens es, Dómine, * erípere nos de manu forti: líbera nos, Deus noster."
+    en: "O Lord, Thou art mighty * to save us; with a strong hand deliver us, O our God."
+laudate:
+  antiphon:
+    la: "Reges terræ * et omnes pópuli, laudáte Deum."
+    en: "Kings of the earth, * and all people, praise God."

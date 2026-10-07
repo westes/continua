@@ -1,3 +1,4 @@
+# Second Vespers (default). Fourth psalm is 125, not the Apostles' Common 138: engine May 1 renders Ps 109/112/115/125.
 # Live-verified against Divinum Officium (Monastic Tridentinum 1617,
 # command=prayVespera), 2026-05-01, own day. Same "permanently
 # Paschaltide" situation as their own Lauds antiphons (see lauds-
@@ -18,7 +19,7 @@ groups:
     antiphon:
       la: "Tanto témpore * vobíscum sum, et non cognovístis me? Philíppe, qui videt me, videt et Patrem meum, allelúja."
       en: "Have I been so long time with you, and yet hast thou not known Me? * Philip, he that hath seen Me hath seen the Father. Alleluia."
-  - psalms: [138]
+  - psalms: [125]
     antiphon:
       la: "Si dilígitis me, * mandáta mea serváte, allelúja, allelúja, allelúja."
       en: "If ye love Me, * keep My commandments. Alleluia, Alleluia, Alleluia."

@@ -1,0 +1,24 @@
+# Engine (Monastic Tridentinum 1617, command=prayLaudes, 2027-01-31); source Tempora/Quadp2-0.txt's [Ant Laudes] entries 1,2,3,4,7 in Latin and English. Antiphons for the Sunday's own psalm slots (Ps 66 first, no antiphon). Applies via the numbers-override path for this temporal Sunday (resolve-common.ts getPsalmodyNumbersOverrideId).
+id: sexagesima
+groups:
+  - psalms: [50]
+    antiphon:
+      la: "Secúndum magnam misericórdiam * tuam miserére mei, Deus."
+      en: "Have mercy upon me, O God, * after thy great mercy."
+  - psalms: [117]
+    antiphon:
+      la: "Si mihi Dóminus * salvátor fúerit, non timébo, quid fáciat mihi homo."
+      en: "If the Lord be my Saviour * I will not fear what man can do unto me."
+  - psalms: [62]
+    antiphon:
+      la: "In velaménto * clamávi valde dilúculo: Deus, Deus meus, ad te de luce vígilo."
+      en: "Within the veil I cried betimes: * O God, Thou art my God, early will I seek thee."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Hymnum dicámus * Dómino Deo nostro."
+    en: "Let us sing praises * to the Lord our God."
+laudate:
+  antiphon:
+    la: "In týmpano et choro, * in chordis et órgano, laudáte Deum."
+    en: "Praise the Lord with timbrel and choir * praise him with strings and organ."

@@ -1,0 +1,21 @@
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera):
+# 2026-06-04 corpus-christi second. Named temporal feast: the app had no Vespers psalm antiphons for it and fell
+# back to the ferial/Sunday set. Paschaltide Alleluia is left to hours/paschal-alleluia.ts.
+id: corpus-christi
+groups:
+  - psalms: [109]
+    antiphon:
+      la: "Sacérdos in ætérnum * Christus Dóminus secúndum órdinem Melchísedech, panem et vinum óbtulit."
+      en: "Christ the Lord, being made an High Priest for ever * after the order of Melchisedec, hath offered bread and wine."
+  - psalms: [110]
+    antiphon:
+      la: "Miserátor Dóminus * escam dedit timéntibus se in memóriam suórum mirabílium."
+      en: "He hath made His wonderful works to be remembered; * the Lord is gracious and full of compassion. He hath given meat unto them that fear Him."
+  - psalms: [115]
+    antiphon:
+      la: "Cálicem salutáris * accípiam: et sacrificábo hóstiam laudis."
+      en: "I will take the cup of salvation, * and offer the sacrifice of thanksgiving."
+  - psalms: [147]
+    antiphon:
+      la: "Qui pacem * ponit fines Ecclésiæ, fruménti ádipe sátiat nos Dóminus."
+      en: "The Lord, That maketh peace in the borders of the Church, * filleth her with the finest of the wheat."

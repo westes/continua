@@ -1,0 +1,24 @@
+# Engine (Monastic Tridentinum 1617, command=prayLaudes, 2027-02-21); source Tempora/Quad2-0.txt's [Ant Laudes] entries 1,2,3,4,5 in Latin and English. Antiphons for the Sunday's own psalm slots (Ps 66 first, no antiphon). Applies via the numbers-override path for this temporal Sunday (resolve-common.ts getPsalmodyNumbersOverrideId).
+id: lent-2
+groups:
+  - psalms: [50]
+    antiphon:
+      la: "Dómine, * lábia mea apéries, et os meum annuntiábit laudem tuam."
+      en: "O Lord, open Thou my lips, * and my mouth shall show forth thy praise."
+  - psalms: [117]
+    antiphon:
+      la: "Déxtera Dómini * fecit virtútem: déxtera Dómini exaltávit me."
+      en: "The right hand of the Lord * hath done valiantly, the right hand of the Lord hath exalted me."
+  - psalms: [62]
+    antiphon:
+      la: "Factus est * adjútor meus, Deus meus."
+      en: "My God * hath been my help."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Trium puerórum * cantémus hymnum, quem cantábant in camíno ignis, benedicéntes Dóminum."
+    en: "Let us sing the Song of the Three Children, * even the Song that they sang when they blessed the Lord in the burning fiery furnace."
+laudate:
+  antiphon:
+    la: "Státuit ea * in ætérnum, et in sǽculum sǽculi: præcéptum pósuit, et non præteríbit."
+    en: "He hath established them * for ever and ever: He hath made a decree which shall not pass."
