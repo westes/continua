@@ -14,18 +14,14 @@ content in the same shape, not a design change. The dated log below is that pipe
    None open.
 
 2. **Minimal-proof-done, bulk content pending**
-   - Prime's per-feast Lectio Brevis override (`getPrimeLectioBrevis`, `${propers}-lectio-prima`):
-     full 4-tier mechanism built (proper/Common/season/per-annum, all four proven live, 2026-09-15,
-     see Work Log). The reference engine's own `[Lectio Prima]` tag exists for ~36 saints/feasts
-     total in `Sancti/*.txt` -- Seven Sorrows, Most Precious Blood, and Christ the King authored
-     so far; the other ~33 fall through to their Common category or season, not wrong, just not
-     yet as specific as they could be. Same "sweep the rest" shape as every other per-saint proper
-     text family in this project.
-   - Prime's per-feast responsory override (`prime-chapter-responsory-by-feast.yml`'s `byFeastId`):
-     **done**, not pending -- checked all 36 `[Lectio Prima]`-bearing files for a paired
-     `[Versum Prima]`; only Most Precious Blood and Christ the King actually have one of their own
-     (everyone else redirects to the season or has no override at all). Both authored (see Work
-     Log, 2026-09-15).
+   - Prime Short Reading: author a `${propers}-lectio-prima` file (citation, Latin, English; model on
+     `most-precious-blood-lectio-prima.yml`) plus a test date for each reference `[Lectio Prima]`
+     file below. Files: 02-02, 03-25, 01-06, 05-01r, 05-01c, 03-24, 05-31, 01-25, 05-03, 05-08,
+     02-11, 06-30, 06-24, 03-19, 08-06, 08-10, 08-15, 10-24, 11-01, 12-25, 11-30, 10-02, 12-08,
+     12-24, 12-26, 12-28, 06-29, 12-27.
+   - Prime Short Reading, Common tier: add `prime-lectio-prima-common-of-*` for vigil, angel,
+     evangelist, St. Peter, several-women-martyrs, and the `proper-to-*` entries, where the
+     reference's Commune mapping gives one.
 
 3. **New features**
    - Date picker: `day-nav.ts` only steps a day at a time; no way to jump to an arbitrary
