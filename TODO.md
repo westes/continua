@@ -8395,3 +8395,179 @@ canticles was matched to its verse in `data/scripture` and relabeled; citations 
 12:1-6. Several chant lines now share one verse number, as Habakkuk's already did. The Office of
 the Dead's own Hezekiah citation was corrected to match. Habakkuk and the Three Young Men were
 already right and are untouched.
+
+### Oct 7: St. Justina removed, Our Lady of the Rosary added (2026-10-07)
+
+St. Justina won Oct 7 at Duplex but rendered no readings about her: her source entry
+(`SanctiM/10-07oM.txt`) is only `vide C6`, and this app has no Common-lesson mechanism for Matins
+(same gap as Ss. Ursula and Companions). Removed her from `sanctoral-calendar.yml`; her saint file
+is kept and restorable. Oct 7 is now Our Lady of the Rosary (Duplex II. classis, `ex C11`), authored
+in full from `Sancti/10-07.txt` over `SanctiM/10-07.txt`'s Monastic blocks: invitatory, three
+hymns, 12 Matins antiphons in a 6+6+3 scheme, Lauds/Vespers antiphons, chapters, responsories,
+versicles, collect and commemoration bundle, plus the Nocturn 3 Gospel (Luke 1:26-38), the
+Dominic/Lepanto/Clement XI/Leo XIII history lessons, and both St. Bernard homilies. It was
+historically "Our Lady of Victory" (Lepanto, 7 Oct 1571), renamed the Rosary by Gregory XIII (1573,
+first Sunday of October) and fixed to Oct 7 later; the reference engine models only the Oct 7
+office, so there is no separate Victory entry. The English for the three `AntMatutinumM` antiphons
+and for the Nocturn 3 versicle, Lauds responsory and None chapter versicle is a direct translation
+of the Latin (no SanctiM English file exists for Oct 7, and the source's own English for those
+versicles is out of step with its Latin); the Lauds responsory and None chapter are marked `draft`
+in English, and so are the three Matins antiphons and the Nocturn 3 versicle, via a new optional
+`status` on Matins override groups/versicles (`matins-psalmody-overrides.ts`; previously every
+override line was hardcoded verified).
+
+### First vs Second Vespers: hymn and Magnificat antiphon variants (2026-10-07)
+
+Vespers previously resolved one hymn and one Magnificat antiphon per feast, used for both its First
+and Second Vespers, though the source separates them (`[Hymnus Vespera]`/`[Hymnus Vespera 3]`,
+`[Ant 1]`/`[Ant 3]`). Now `hours/vespers.ts`'s `resolveOrdo` decides which evening it is (`day.date
+!== date` means tonight anticipates tomorrow's First Vespers, which also covers temporal feasts that
+carry no `vespersFrom` tag) and threads a `VespersVariant` to `resolveOfficeBundle`'s hymn and
+`getMagnificatAntiphon`. Convention: `<base>.yml` is the default for both evenings, and optional
+`<base>-first.yml` / `<base>-second.yml` override just that evening (`withVespersVariant` in
+`resolve-common.ts`). No variant files means unchanged behavior. Tests: `tests/hours/vespers-first-
+second.test.ts`.
+
+Audit against the source after building it:
+- **Hymns:** only a few reachable cases have a separate `[Hymnus Vespera 3]`: Our Lady of the Rosary
+  (both hymns), Apparition of the Immaculate BVM (`-second`: "Omnis expértem máculæ"), Seven
+  Founders of the Servite Order (`-second`: "Matris sub almæ númine"), St. Martina (Second Vespers
+  reuses her Lauds hymn) and St. Thérèse of Lisieux (both, see below). The Lent Sundays' second hymn
+  is tagged `rubrica 1570` only, so not this app's track.
+- **Verified against the live engine (2026-10-07; `Pofficium.pl`, Monastic Tridentinum 1617).** The first
+  pass above was read from static source files and was partly wrong, so every First/Second Vespers
+  variant was regenerated from what the engine actually renders (`command=prayVespera`, a clean pair of
+  evenings per feast: First = "Vespera de sequenti", Second = "Vespera de Officio occurente" or "de
+  præcedenti"; Latin and English both taken from the page). Two static-reading errors surfaced: the
+  Monastic engine does not honour `[Ant Vespera 3]`'s explicit psalm tags (St. Lawrence's Second Vespers
+  is Ps 109/111/112/115 with antiphons 1, 2, 3 and 5, First Vespers 109/110/111/112), and the Assumption's
+  First Vespers hymn is Ave maris stella, not `[Hymnus Vespera]`'s "O prima, Virgo".
+  - **Result:** 32 Magnificat antiphon files, 32 versicle files and 11 psalm-antiphon override files
+    written or corrected (most are `-first`; the engine's rule is that a feast's proper Ant 1 / Versum 1 /
+    own psalm set is First Vespers, and the stored file was already Second Vespers). Four stored files
+    were overwritten because they matched neither engine evening: Exaltation of the Holy Cross, Finding of
+    the Holy Cross and Visitation (held the First-Vespers antiphon as the default), Immaculate Conception
+    and All Saints of the Benedictine Order (their own `[Ant 3]` text, but the engine shows another).
+  - **St. Martin's First Vespers psalmody** is Ps 109/110/111/112, not 109/111/112/131: the earlier
+    "live-verified" value came from a `votive=C4` Common query (tests/hours/vespers.test.ts corrected).
+  - **Common-level `-first` Magnificat files** (BVM, Apostle, Martyr, Several Martyrs, Confessor,
+    Confessor-Bishop, Pope, Dedication, Abbot, Evangelist, Pope-Martyrs, ...) are static-derived where the
+    engine has no feast using that Common; the ones with a feast in the engine agree with it.
+  - **Follow-up on what this check left open: see "Vespers audit follow-up (2026-10-07)" below.**
+- **St. Agnes (Jan 21):** `SanctiM/01-21.txt` sets `[Ant 3] (nisi rubrica cisterciensis)` to
+  `@Sancti/01-21:Ant 1`, so the Monastic Second Vespers Magnificat is "Beáta Agnes" (the stored file
+  held the Roman "Stans beáta Agnes", now corrected, one antiphon for both evenings); second-Vespers
+  psalm antiphons are the explicit 109/111/112/126 set (engine-confirmed, 2026-01-21); also added her Monastic 6+6+3 Matins
+  antiphons (`matins-psalmody-overrides/saints/st-agnes.yml`, source tags Ps 1/2/4/5/8/10 and
+  14/44/45/47/84/86, not the generic Virgin set) and the Responsory6 that follows her Lectio4-6.
+- **St. Martina (Jan 30) and St. Thérèse (Oct 3):** built from `Sancti/01-30.txt` and
+  `SanctiM/10-03b.txt`. Martina: Matins hymn, Lauds hymn, Second Vespers hymn, her own Lectio4-6 vita.
+  Thérèse: full proper office (Benedictus/Magnificat antiphons with a First Vespers variant, three
+  hymns with a First/Second pair, chapters for Lauds/Terce/Sext/None, responsories, versicles with a
+  First/Second pair, Lauds and Vespers psalm antiphons), all English a draft translation because
+  `English/SanctiM/10-03b.txt` has none of it. Neither can govern an evening in practice (Martina
+  always yields to St. John Bosco; Thérèse to Guardian Angels' Second Vespers and St. Francis's
+  First), so their Vespers content is exercised in tests through `resolveOfficeBundle` directly. To
+  make a hymn-only proper reachable, `resolveOfficeBundle` now builds a partial proper bundle (chapter
+  from the Common, proper hymn/responsory/versicle where authored) when a proper has no chapter of its
+  own; a proper with a chapter keeps the old all-or-nothing behaviour. Matins' proper-hymn lookup is
+  also now rank-agnostic (`getMinorHourOverrideId`), matching Lauds/Vespers, so Martina's Matins hymn
+  appears at Semiduplex.
+
+
+### Vespers audit follow-up (2026-10-07)
+
+Prompted by the open items above; every comparison below is against the live engine (Monastic
+Tridentinum 1617, or Divino Afflatu 1954 for feasts that postdate 1617: Christ the King, Sacred
+Heart, Immaculate Heart, Seven Sorrows, Maternity, Guardian Angels, Raphael, Seven Founders, Lourdes,
+Rosary). Tests: `tests/hours/vespers-audit-engine.test.ts`.
+
+- **Visitation and St. Michael (Sept 29) fell through to the ferial chapter/hymn/versicle** at Lauds
+  and Vespers. Visitation's `common` was a fake `proper-to-the-visitation-of-the-bvm` (the source's rule
+  is `ex C11`); it is now `common-of-the-bvm`. St. Michael's own id has `propers: apparition-of-st-
+  michael`, so `resolveOfficeBundle` now falls back, part by part, to a saint's `propers` id after its
+  own files; he got his own no-Alleluia Lauds/Vespers responsories and Lauds versicle (the Apparition's
+  are Paschal).
+- **Joseph: no change.** The 1617 engine renders him as a plain Duplex confessor (Common C5); under
+  Divino Afflatu it renders his own hymn and "Constítuit eum", matching the app's merged track.
+- **Philip and James:** Second Vespers 4th psalm is 125, not the Apostles' Common 138; First Vespers is
+  Ps 109/110/111/112 (`ss-philip-and-james-first.yml`).
+- **First-Vespers sets for Commons:** Apostles/Evangelists (`common-of-an-apostle-first`, and
+  `-paschaltide-first` for Mark/John), Several Martyrs. Saint-level files for Peter and Paul, Octave of
+  Peter and Paul, Octave of All Saints, Purification, Stephen, John, Decollation (antiphons 1, 2, 3, 5 on
+  Ps 109-112), St. John before the Latin Gate, St. Anne, Seven Founders, Angels family, Maternity, Seven
+  Sorrows. Common Confessor-Bishop first versicle.
+- **Doctors:** Ss. Jerome and Thomas Aquinas are "ex C5" in the engine (Confessor not Bishop):
+  `SaintRecord.psalmodyCommon` routes their psalmody there. Every doctor's Magnificat antiphon had a
+  literal "N." ("beáte N."): `SaintRecord.invocationName` now fills it (22 doctors; the engine itself
+  leaves "N." for St. Basil).
+- **Paschaltide Alleluia (new generic mechanism, `hours/paschal-alleluia.ts`):** the engine's rule is
+  mechanical (horas.pl postprocess_ant/vr/short_resp): from Easter to the Saturday after Pentecost every
+  Lauds/Vespers antiphon ends in one Alleluia, the versicle and response each end in one, and a short
+  responsory takes the double-Alleluia form. Only the Apostles' Common had this by hand. Applied to
+  Lauds and Vespers psalm antiphons, offices' versicles and responsories (idempotent).
+- **Bundles that did not exist:** Common of a Dedication (chapter, both responsories, both hymns,
+  versicles; the Nov 18 Ss. Peter and Paul dedication is now `common-of-a-dedication` too, as its
+  source rule says "ex C8"), Common of Several Women Martyrs (Perpetua and Felicity), Confessor Pope
+  (aliased to the Bishop's bundle: St. Leo II, Pius V, Pius X), St. Mary Magdalene's three proper
+  hymns (pre-Urban, "Pater supérni lúminis", "Ætérne Patris Unice", "Nardo María pístico"; English for
+  the Matins/Lauds ones is the secular text's translation, draft).
+- **Sirach lesson heading:** a hand-written scripture lesson with no `source` was labelled with the
+  saint-name fallback ("On Our Lady of the Rosary"); it is now headed by its book ("A reading from the
+  book of Sirach"; same for the Acts lesson of the Finding of St. Stephen).
+- **Named temporal feasts had no Vespers psalm antiphons** (they fell back to the ferial set):
+  Circumcision, Ascension, Pentecost, Trinity, Corpus Christi, Christmas Day/octave, Easter Sunday
+  (needed a gate in `getPsalmodyNumbersOverrideId`) now carry the engine's. Post-1617 feasts (Christ the
+  King, Sacred Heart, Immaculate Heart) are from the Divino Afflatu render with the Monastic
+  "antiphons 1, 2, 3, 5" selection and Sunday psalm numbers, which no Monastic render can confirm.
+
+Resolved later the same day (sources: the raw files under `divinum-officium-reference`, with the live
+engine only for rendered results):
+- **Epiphany and Christmas Day** now win their own days (`anchor: fixed-date` temporal feasts) with
+  Matins, Lauds, the minor hours and Vespers; Epiphany has its real **octave** (Jan 6-13: per-day
+  Benedictus/Magnificat antiphons `epiphany-*-antiphon-d2..d6`, per-day readings
+  `epiphany-octave-day-2..6,8`, counting that skips a Sunday and omits the seventh day,
+  `OctaveConfig.skipsSunday`). Matins checked against the Monastic source: gospel plus homily and the
+  patristic sermon match; Nocturn I stays the project's own bible-plan reading by design.
+- **Easter week and Low Sunday** share Easter's office (`officeFrom`); Low Sunday is a real feast.
+- **Triduum Vespers:** Thursday/Friday drop chapter, responsory, hymn, versicle, Preces, commemoration
+  and suffrages; Holy Saturday evening is its own short Vespers (Ps 116, "Véspere autem sábbati",
+  "Spíritum nobis").
+- **Dismissal:** "Benedicámus Dómino, allelúja, allelúja" at Lauds/Vespers of Easter week and at Vespers
+  on the Saturday before Septuagesima (the engine's rule in `horasscripts.pl`; the Pentecost octave does
+  not have it).
+- **Stephen and the martyrs' First Vespers** (`-first` versicle and Magnificat; Common of a Martyr,
+  Apostles and Virgin First-Vespers versicles; Paschal apostle versicles).
+- **Octave days at Vespers:** an octave day competes by its own rank (closing day beats a following
+  Sunday or saint); the closing days of St. John's and the Holy Innocents' octaves (Jan 3/4) take the
+  office.
+- **Sundays of Advent and Septuagesima to Palm Sunday** now carry their own Lauds psalm antiphons,
+  chapters, responsories, hymns and versicles, minor-hour antiphons and chapters, and Advent's Vespers
+  psalm antiphons; First Vespers on Saturday evening takes the Saturday's (or the season's) responsory,
+  hymn and versicle, with the Sunday's chapter and Magnificat. Ordinary Sundays' Saturday evening likewise.
+- **Prime's capitulum** follows the engine rule (`specprima.pl`): ferial text only on a bare weekday or a
+  Vigil outside Easter to Pentecost Saturday; Sunday text on feasts, octave days and in Eastertide.
+- First Vespers of ordinary Sundays: month-week keyed Magnificat antiphons for August-November.
+- Circumcision's Terce/Sext/None chapters; Pentecost Terce hymn (engine doxology, both languages).
+
+Settled afterwards the same day:
+- **St. Leo I** is a Confessor Pope (Common C4b-2 on the 1570/1617 rubrics; Doctor only in the Cistercian
+  variant), same Common as Leo II and Pius V; no longer labelled a Doctor. His calendar placement differs
+  from the 1617 engine (the engine moves him off a Sunday; the app lets a Duplex win an ordinary Sunday),
+  a settled rule, not changed.
+- **Epiphany octave's seventh day** (years when Epiphany is a Sunday, e.g. 2030) is kept as an ordinary
+  octave day with its own Benedictus ("Maniféste magnum") and reading, a deliberate deviation: the engine
+  omits that day on the Tridentine rubrics.
+- **Octave interior days** (Ascension, Corpus Christi): nothing to add, the source has no per-day
+  antiphon/versicle sections for them; Sacred Heart and the Patronage of St. Joseph have no source in the
+  reference tree. **Transitus of St. Benedict** Paschal Magnificat already exists. The earlier note about
+  Gregory Nazianzen/Antoninus was a mis-diagnosis: on 2026-05-09 the engine keeps Gregory over the
+  following Sunday while the app's calendar gives that evening to Antoninus, a calendar difference.
+
+Still open:
+- **Saints the 1617 engine lacks** differ from it by design where the app's merged calendar has a saint
+  on a day the engine shows a feria; a year-wide engine comparison is therefore noisy.
+- **Deliberate, left alone:** All Saints' "Placáre" hymn split, O Antiphons over a saint's Magnificat,
+  the ferial-number overlay below duplex-majus, St. Joseph, the Immaculate Conception's diacritics.
+- **Engine-calendar quirks not copied:** All Saints of the Benedictine Order's second-Vespers Magnificat
+  weekday variation; St. Silvester I's Christmas-octave 4th antiphon (Ps 131).
