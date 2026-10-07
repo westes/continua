@@ -88,5 +88,4 @@ Issues are welcome — file them against this repo on [Gitea](https://gitea.regr
 meantime.)
 
 If you'd like occasional notes on reading the Bible and praying the psalms through the church year,
-there's a PDF and an opt-in mailing list:
-[reground.org/lead-magnets/bible-and-church-year](https://reground.org/lead-magnets/bible-and-church-year/).
+[sign up for the mailing list](https://reground.org/lead-magnets/bible-and-church-year/).
