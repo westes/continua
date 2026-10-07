@@ -14,14 +14,7 @@ content in the same shape, not a design change. The dated log below is that pipe
    None open.
 
 2. **Minimal-proof-done, bulk content pending**
-   - Prime Short Reading: author a `${propers}-lectio-prima` file (citation, Latin, English; model on
-     `most-precious-blood-lectio-prima.yml`) plus a test date for each reference `[Lectio Prima]`
-     file below. Files: 02-02, 03-25, 01-06, 05-01r, 05-01c, 03-24, 05-31, 01-25, 05-03, 05-08,
-     02-11, 06-30, 06-24, 03-19, 08-06, 08-10, 08-15, 10-24, 11-01, 12-25, 11-30, 10-02, 12-08,
-     12-24, 12-26, 12-28, 06-29, 12-27.
-   - Prime Short Reading, Common tier: add `prime-lectio-prima-common-of-*` for vigil, angel,
-     evangelist, St. Peter, several-women-martyrs, and the `proper-to-*` entries, where the
-     reference's Commune mapping gives one.
+   None open.
 
 3. **New features**
    - Date picker: `day-nav.ts` only steps a day at a time; no way to jump to an arbitrary
@@ -8573,3 +8566,37 @@ the closing repeat after the third psalm never rendered. The reference engine's 
 full antiphon after the last psalm, so the old "no closing repeat" comments were wrong. Added a
 `closing-antiphon` part to `terce.yml`, `sext.yml` and `none.yml` (commit 768e85b3) and flipped the
 test that had asserted its absence.
+
+### Prime Short Reading: own readings for 35 feasts, plus 3 Commons (2026-10-07)
+
+Added `${propers}-lectio-prima` files, sourced from each feast's `[Lectio Prima]` in the reference
+`Sancti/*.txt` and `Tempora/*.txt` (Latin and English): 24 in `propers/common/` (23 saint feasts, plus
+Finding of St. Stephen, whose reference file points at St. Stephen's) and 12 in `propers/temporal/`
+(Epiphany, Christmas Day, Vigil of Christmas, Patronage of St. Joseph, Christmas-octave Sunday, Holy Name,
+Pentecost, II Sunday after Pentecost, Sacred Heart, Ascension, Corpus Christi, Friday of Passion week).
+Also added three Common-tier files: `common-of-several-women-martyrs` (Ss. Perpetua and Felicity; Sancti/03-06
+chains C7b to C7 to C6), `common-of-st-peter` (Peter in Chains; its source points at Sancti/06-29), and
+`common-of-an-evangelist` (Mark, Luke; `ex C1a`, which is C1). The reference's English for Apparition of St.
+Michael (05-08) lacked its `v.` marker and had a typo ("The was"), fixed. Tests in
+`tests/hours/prime-proper-lectio.test.ts`.
+
+Not authored, by design: Holy Family (`Tempora/Epi1-0`) and St. Joseph the Worker (`Sancti/05-01r`) aren't
+modeled in this calendar; the vigil Common has no `[Lectio Prima]` in the reference, so it keeps the season or per-annum
+reading. The angel Common is this app's own category (`common-of-an-angel`); the reference has no angel
+Commune file, and St. Michael (Sept 29) has no `[Lectio Prima]`, so it also keeps the season or per-annum reading.
+The Vigil of the Epiphany (Jan 5) is a separate entry below.
+
+`npm test` (5625 passed).
+
+### Vigil of the Epiphany (2026-10-07)
+
+Jan 5 had no identity of its own: it borrowed `christmas-octave-sunday`, with St. Telesphorus as a
+commemoration. Added `temporal-feasts/vigil-of-epiphany.yml` (Semiduplex, `anchor: fixed-date` Jan 5, per
+`Sancti/01-05.txt`'s `[Rank]`), so the day is named "Vigil of the Epiphany (Semiduplex)" and Telesphorus is its
+only commemoration (`suppressDisplacedCommemoration`). The source takes the collect, Lauds antiphons, chapter and
+short reading from `@Tempora/Nat1-0`, so the feast uses `officeFrom: christmas-octave-sunday` (the Easter-week
+mechanism) rather than duplicating those files. Only the Matins readings are its own, in
+`nocturn-readings/vigil-of-epiphany.yml` (Augustine's sermon; Matt 2:19-23 with Jerome's homily). Added the id to
+`ALWAYS_OVERRIDE_TEMPORAL_IDS`. Tests: `tests/calendar/vigil-of-epiphany.test.ts`.
+
+`npm test` (5633 passed).
