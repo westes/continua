@@ -6,10 +6,13 @@
 # st-monica.yml/st-jane-frances-de-chantal.yml (no benedictus-antiphon-
 # common-of-a-widow.yml exists). No Lectio7-9 in her own file --
 # defers to the Common's own Nocturn 3, not transcribed here.
+#
+# Rank is deliberately semiduplex, one FeastClass tier below the
+# reference engine's Duplex (user's own office design, 2026-10-08).
 id: st-bridget-of-sweden
 name: "St. Bridget, Widow"
 nameLa: "Sancta Brigitta, Vidua"
-rank: duplex
+rank: semiduplex
 common: common-of-a-widow
 propers: "st-bridget-of-sweden"
 benedictusCommon: common-of-a-widow

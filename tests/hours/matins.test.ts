@@ -1291,7 +1291,10 @@ describe('resolveOrdo("matins", ...) octave reading vs. winner/commemoration pri
 // silently to the weekday's ferial antiphon (found 2026-10-08 on St. Bridget).
 describe('Matins invitatory for saints on a Common with no per-saint invitatory', () => {
   const cases: [string, string, string][] = [
-    ['2026-10-08', 'St. Bridget (widow)', 'In confessióne beátæ Birgíttæ.'],
+    // Semiduplex: the opening antiphon is only the intonation, not doubled.
+    ['2026-10-08', 'St. Bridget (widow)', 'Laudémus Deum nostrum'],
+    // Duplex: full antiphon, with the name template filled in.
+    ['2026-05-04', 'St. Monica (widow)', 'In confessióne beátæ Mónicæ.'],
     ['2026-03-06', 'Ss. Perpetua and Felicity (several women martyrs)', 'beatárum Perpétuæ et Felicitátis.'],
     ['2026-10-24', 'St. Raphael (angel)', 'Regem Archangelórum'],
     ['2026-10-18', 'St. Luke (evangelist)', 'Regem Apostolórum'],
