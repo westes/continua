@@ -1,0 +1,32 @@
+# Commune/C7b has no hymn of its own and inherits Commune/C7 ('@Commune/C7'); copy of matins-hymn-common-of-a-holy-woman.yml.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Matins
+# `votive=C7` live query, 2026-08 -- a genuinely shorter form than
+# Common-of-a-Virgin(-Martyr)'s own Matins hymn: just its closing two
+# stanzas (doxology included), not the full five-stanza "Vírginis
+# Proles." Confirmed identical across `C7`/`C7a`/`C7b` (the same three
+# sub-variants already seen for this category at Lauds/Vespers).
+id: matins-hymn-common-of-several-women-martyrs
+text:
+  la: |
+    Hujus obténtu, Deus alme, nostris
+    Parce jam culpis, vítia remíttens,
+    Quo tibi puri resonémus almum
+    Péctoris hymnum.
+
+    Glória Patri genitǽque Proli,
+    Et tibi compar utriúsque semper
+    Spíritus alme, Deus unus, omni
+    Témpore sæcli. Amen.
+  en: |
+    Fountain of mercy, hear the prayers she offers;
+    Purge our offences, pardon our transgressions,
+    So that hereafter we to thee may render
+    Praise with thanksgiving.
+
+    Thou, the All-Father, thou, the One-Begotten,
+    Thou, Holy Spirit, Three in One co-equal,
+    Glory be henceforth thine through all the ages,
+    World without ending. Amen.
+status:
+  la: verified
+  en: verified
