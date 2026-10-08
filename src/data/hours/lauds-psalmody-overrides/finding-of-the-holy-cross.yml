@@ -1,0 +1,24 @@
+# Sancti/05-03.txt [Ant Laudes] (both languages), the five Lauds antiphons by position: three psalm groups, the canticle, Laudate. Psalmody is the 'Psalmi Dominica' scheme these feasts' [Rule] names (Ps 92 / 99 / 62, the Three Young Men, Ps 148-150), the same shape as apparition-of-st-michael.yml. Before this file the psalm antiphons fell to the ferial ones.
+id: finding-of-the-holy-cross
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "O magnum pietátis opus: * mors mórtua tunc est, in ligno quando mórtua Vita fuit."
+      en: "O what a work of love was that * when Life and death died together upon the Tree."
+  - psalms: [99]
+    antiphon:
+      la: "Salva nos, * Christe Salvátor, per virtútem Crucis: qui salvásti Petrum in mari, miserére nobis."
+      en: "Save us, * O Christ the Saviour, save us through the might of thy Cross Thou Who didst save Peter when he was ready to sink in the sea, have mercy upon us."
+  - psalms: [62]
+    antiphon:
+      la: "Ecce Crucem Dómini, * fúgite, partes advérsæ, vicit leo de tribu Juda, radix David, allelúja."
+      en: "Behold, the Cross of the Lord! * fly, ye ranks of the adversary! The Lion of the tribe of Judah, the Root of David, hath prevailed. Alleluia."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Nos autem gloriári * opórtet in Cruce Dómini nostri Jesu Christi."
+    en: "But us it behoveth to glory * in the Cross of our Lord Jesus Christ."
+laudate:
+  antiphon:
+    la: "Per signum Crucis * de inimícis nostris líbera nos, Deus noster."
+    en: "By thy Cross' holy sign, * Jesus, guard this soul of mine from my ghostly enemy."
