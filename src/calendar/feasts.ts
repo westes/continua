@@ -50,8 +50,9 @@ export interface SaintRecord {
    * from the Common of a Confessor Bishop instead (Peter considered as
    * bishop, for that specific commemoration) — `minorHoursCommon:
    * common-of-a-confessor-bishop` captures that without corrupting the
-   * saint's real `common` field. Absent for saints with no shared-Common
-   * minor-hour content (either fully proper, or not yet authored).
+   * saint's real `common` field. Absent when the minor hours simply use
+   * the saint's own `common` (the lookup falls back to it, see
+   * minorHoursCommonOf in hours/resolve-common.ts).
    */
   minorHoursCommon?: string;
   /**

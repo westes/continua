@@ -750,6 +750,18 @@ function deriveMinorHourAntiphonFromLauds(hourId: string, overrideId: string): R
  * seasonal change in Paschaltide — see `withPaschaltideAlleluia`. (The
  * derived-from-Lauds tier does not get that treatment — see TODO.md.)
  */
+/** The Common a saint's Prime/Terce/Sext/None antiphon and chapter draw
+ * from: the explicit `minorHoursCommon` when the minor hours deliberately
+ * use a different Common than the saint's overall one, else the saint's
+ * own `common` -- never nothing, since a saint on a Common must not fall to
+ * the weekday's ferial text just for lacking the override field (found
+ * 2026-10-08: Ss. Perpetua and Felicity and the Servite founders had the
+ * ferial Terce chapter). Same field priority as getPrimeLectioBrevis. */
+function minorHoursCommonOf(saintId: string): string | undefined {
+  const saint = getSaintRecord(saintId);
+  return saint?.minorHoursCommon ?? saint?.common;
+}
+
 /** The proper -> derived -> paschal -> common candidate list itself, split
  * out from `resolveMinorHourAntiphon` so other callers needing this exact
  * chain (e.g. Matins' `ferialPsalmodyThreeNocturns`, which has its own
@@ -764,7 +776,7 @@ export function resolveMinorHourAntiphonCandidates(hourId: string, day: Liturgic
     : undefined;
   const derivedRaw = overrideId ? (deriveMinorHourAntiphonFromLauds(hourId, overrideId) ?? (sharedId ? deriveMinorHourAntiphonFromLauds(hourId, sharedId) : undefined)) : undefined;
   const derived = derivedRaw ? withPaschaltideAlleluia(derivedRaw, day) : undefined;
-  const commonId = overrideId ? getSaintRecord(overrideId)?.minorHoursCommon : undefined;
+  const commonId = overrideId ? minorHoursCommonOf(overrideId) : undefined;
   const paschal =
     commonId && PASCHALTIDE_SEASONS.has(day.season) ? resolveCommon(`${hourId}-antiphon-${commonId}-paschaltide`) : undefined;
   const common = commonId ? withPaschaltideAlleluia(resolveCommon(`${hourId}-antiphon-${commonId}`), day) : undefined;
@@ -794,7 +806,7 @@ export function resolveMinorHourChapter(hourId: string, day: LiturgicalDay, fall
   const proper = overrideId
     ? firstAvailable([resolveCommon(`${hourId}-capitulum-${overrideId}`)], sharedId ? resolveCommon(`${hourId}-capitulum-${sharedId}`) : resolveCommon(`${hourId}-capitulum-${overrideId}`))
     : undefined;
-  const commonId = overrideId ? getSaintRecord(overrideId)?.minorHoursCommon : undefined;
+  const commonId = overrideId ? minorHoursCommonOf(overrideId) : undefined;
   const paschal =
     commonId && PASCHALTIDE_SEASONS.has(day.season) ? resolveCommon(`${hourId}-capitulum-${commonId}-paschaltide`) : undefined;
   const common = commonId ? resolveCommon(`${hourId}-capitulum-${commonId}`) : undefined;
