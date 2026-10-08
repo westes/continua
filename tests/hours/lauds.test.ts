@@ -265,18 +265,18 @@ describe('resolveOrdo("lauds", ...)', () => {
     }
   });
 
-  it("resolves the Guardian Angels' and Archangels' own real chapter, reused from St. Michael's Apparition", () => {
-    // Their own saint files' [Rank] says "vide C4," but the Monastic
-    // source's own SanctiM/10-02.txt cross-references St. Michael's
-    // Apparition (Sancti/05-08) directly for the chapter/responsory at
-    // every hour -- real proper content, not a Common fallback. See
-    // lauds-capitulum-guardian-angels.yml's header. St. Gabriel is NOT
-    // part of this group (see below) -- his own chapter is genuinely
-    // proper, not shared.
-    for (const date of ['2026-10-02', '2026-10-24'] as const) {
+  it("resolves the Guardian Angels' and St. Raphael's own Lauds chapters from their own Sancti files", () => {
+    // Sancti/10-02.txt and Sancti/10-24.txt each carry their own
+    // [Capitulum Laudes] (Exod 23:20-21 and Tob 12:12); only the
+    // responsory breve, Versum 3 and hymns are shared from the Apparition
+    // (Sancti/05-08). These were once copies of the Apparition's chapter
+    // (Rev 1:1-2), which the reference does not use for either feast.
+    // St. Gabriel's own chapter is likewise proper (Dan 9:21-22).
+    const expected = { '2026-10-02': 'Exod 23:20-21', '2026-10-24': 'Tob 12:12' } as const;
+    for (const [date, citation] of Object.entries(expected)) {
       const ordo = resolveOrdo('lauds', date);
       const chapter = ordo.parts.find((p) => p.kind === 'chapter');
-      expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Rev 1:1-2');
+      expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe(citation);
     }
   });
 

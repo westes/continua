@@ -53,11 +53,11 @@ describe('resolveOrdo("prime", ...) proper Lectio Brevis', () => {
 });
 
 describe('resolveOrdo("prime", ...) several-women-martyrs Common Lectio Brevis', () => {
-  it('2026-03-06 (Ss. Perpetua and Felicity) uses the C6 reading', () => {
+  it('2026-03-06 (Ss. Perpetua and Felicity) uses the C7b->C7 reading (Sir 51:8)', () => {
     const lesson = resolveOrdo('prime', '2026-03-06').parts.find(
       (p) => p.kind === 'lesson' && p.label === 'Short Reading',
     );
-    expect(lesson && lesson.kind === 'lesson' ? lesson.text.text.la : undefined).toContain('Dómine, Deus meus, exaltásti');
+    expect(lesson && lesson.kind === 'lesson' ? lesson.text.text.la : undefined).toContain('Laudábit usque ad mortem');
   });
 });
 
