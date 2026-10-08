@@ -1,25 +1,11 @@
-# Duplicated verbatim from lauds-capitulum-apparition-of-st-michael.yml
-# (2026-08-26): Guardian Angels' own saint file already documented this
-# ("vide C4 (Common of a Confessor Bishop -- structural category only;
-# the feast's own content is fully proper throughout)") -- the reference
-# source's own Monastic-track file (SanctiM/10-02.txt) confirms this
-# directly, cross-referencing "@Sancti/05-08" (St. Michael's Apparition,
-# already fully authored in this app) for its chapter/responsory at every
-# hour. So this is proper content reused from a real textual inheritance
-# in the source, not a Common-category fallback at all -- no `common-of-
-# an-angel` category was authored, since the source itself shows no such
-# generic category exists for the Office bundle (`[Rank]`'s "vide C4" is
-# a Missal/Mass-propers designation, contradicted by the Monastic
-# breviary file's own explicit cross-references). Same reasoning applies
-# to St. Gabriel/St. Raphael the Archangels, whose own files say "ex
-# Sancti/05-08" wholesale.
+# Sancti/10-02.txt [Capitulum Laudes]. Replaces a copy of St. Michael's Apparition chapter (Apo 1:1-2), which this feast's own file does not use.
 id: lauds-capitulum-guardian-angels
 text:
-  la: "Significávit Deus, quæ opórtet fíeri cito, loquens per Angelum suum servo suo Joánni, qui testimónium perhíbuit verbo Dei, et testimónium Jesu Christi, quæcúmque vidit."
-  en: "God gave unto Jesus Christ to show unto His servants the things which must shortly come to pass and He sent and signified it by His Angel unto His servant John, who bare witness of the Word of God and of the testimony of Jesus Christ, of all the things which he saw."
+  la: "Ecce ego mittam Angelum meum, qui præcédat te, et custódiat in via, et introdúcat in locum, quem parávi. Obsérva eum et audi vocem ejus."
+  en: "Behold I will send my angel, who shall go before thee, and keep thee in thy journey, and bring thee into the place that I have prepared. Take notice of him, and hear his voice."
 citation:
-  la: "Apo 1:1-2"
-  en: "Rev 1:1-2"
+  la: "Exod 23:20-21"
+  en: "Exod 23:20-21"
 status:
   la: verified
   en: verified
