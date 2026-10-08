@@ -1286,3 +1286,23 @@ describe('resolveOrdo("matins", ...) octave reading vs. winner/commemoration pri
     expect(ezekielIndex).toBeLessThan(cyprianIndex);
   });
 });
+
+// Saints whose Common had no matins-invitatory-<common> file used to fall
+// silently to the weekday's ferial antiphon (found 2026-10-08 on St. Bridget).
+describe('Matins invitatory for saints on a Common with no per-saint invitatory', () => {
+  const cases: [string, string, string][] = [
+    ['2026-10-08', 'St. Bridget (widow)', 'In confessióne beátæ Birgíttæ.'],
+    ['2026-03-06', 'Ss. Perpetua and Felicity (several women martyrs)', 'beatárum Perpétuæ et Felicitátis.'],
+    ['2026-10-24', 'St. Raphael (angel)', 'Regem Archangelórum'],
+    ['2026-10-18', 'St. Luke (evangelist)', 'Regem Apostolórum'],
+    ['2026-02-07', 'St. Romuald (abbot)', 'Regem Confessórum'],
+    ['2026-02-12', 'Servite founders (several confessors)', 'Regem Confessórum'],
+  ];
+  it.each(cases)('%s %s', (date, _label, expected) => {
+    const ordo = resolveOrdo('matins', date);
+    const psalm94 = ordo.parts.find((p) => p.kind === 'psalm' && (p as { psalmNumber: number }).psalmNumber === 94) as
+      | { antiphon?: { text: Record<string, string> } }
+      | undefined;
+    expect(psalm94?.antiphon?.text.la).toContain(expected);
+  });
+});
