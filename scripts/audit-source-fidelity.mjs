@@ -627,6 +627,34 @@ function parsePlainCanticleFile(psalmNumber) {
 // Main
 // -------------------------------------------------------------------------
 
+
+// Files are now named {part}-{id}[-variant] (benedictus-antiphon-st-agatha,
+// collect-assumption, commemoration-st-clare...); the checks below were
+// written against the older {id}-{part} stems, so every stem read from disk
+// is translated back first, and expected paths are built in the new form.
+function legacyStem(stem) {
+  let m;
+  if ((m = /^commemoration-octave-(.+)$/.exec(stem))) return `${m[1]}-octave-commemoration`;
+  if ((m = /^commemoration-antiphon-(.+)$/.exec(stem))) return `${m[1]}-commemoration-antiphon`;
+  if ((m = /^commemoration-(.+)$/.exec(stem))) return `${m[1]}-commemoration`;
+  if ((m = /^magnificat-antiphon-(common-of-.+|proper-to-.+)$/.exec(stem))) return stem;
+  if ((m = /^magnificat-antiphon-(.+?)((?:-first|-paschaltide|-d\d+))?$/.exec(stem))) return `${m[1]}-magnificat-antiphon${m[2] ?? ''}`;
+  if (/^benedictus-antiphon-(common-of-|proper-to-)/.test(stem)) return stem;
+  if ((m = /^benedictus-antiphon-(.+)$/.exec(stem))) return `${m[1]}-antiphon`;
+  if (/^collect-c\d/.test(stem)) return stem;
+  if ((m = /^collect-(.+?)(-vespers)?$/.exec(stem))) return `${m[1]}-collect${m[2] ?? ''}`;
+  return stem;
+}
+
+/** The file stem for a propers id + legacy suffix, in the new naming. */
+function newStemFor(propers, suffix) {
+  if (suffix === '-antiphon') return `benedictus-antiphon-${propers}`;
+  if (suffix === '-magnificat-antiphon') return `magnificat-antiphon-${propers}`;
+  if (suffix === '-collect') return `collect-${propers}`;
+  if (suffix === '-commemoration') return `commemoration-${propers}`;
+  return `${propers}${suffix}`;
+}
+
 function stripPropersSuffix(stem) {
   for (const suffix of PROPERS_SUFFIXES) {
     if (stem.endsWith(suffix)) return stem.slice(0, -suffix.length);
@@ -910,7 +938,7 @@ const ANY_COMMON_OF_RE = /common-of-(.+?)(?:-commemoration-antiphon)?$/;
 function buildCommuneCategoryMap(files) {
   const categoryToCnumber = new Map();
   for (const filename of files) {
-    const stem = filename.slice(0, -4);
+    const stem = legacyStem(filename.slice(0, -4));
     const m = ANY_COMMON_OF_RE.exec(stem);
     if (!m) continue;
     const category = m[1];
@@ -956,7 +984,7 @@ function auditCommon(cache, byPropers, byId, idToDate, buckets, counts) {
     const filePath = path.join(COMMON_DIR, filename);
     const raw = readFileSync(filePath, 'utf8');
     const doc = loadYaml(filePath);
-    const stem = filename.slice(0, -4);
+    const stem = legacyStem(filename.slice(0, -4));
     const relPath = `src/data/propers/common/${filename}`;
     const comment = extractHeaderComment(raw);
     const flatComment = comment.replace(/\s+/g, ' ');
@@ -1141,10 +1169,10 @@ function auditCoverage(byPropers, idToDate, buckets, counts) {
     for (const [suffix, tag] of Object.entries(SUFFIX_TO_TAG)) {
       const hasTag = new RegExp(`^\\[${tag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\]`, 'm').test(srcText);
       if (!hasTag) continue;
-      const expectedPath = path.join(COMMON_DIR, `${propers}${suffix}.yml`);
+      const expectedPath = path.join(COMMON_DIR, `${newStemFor(propers, suffix)}.yml`);
       if (!existsSync(expectedPath)) {
         buckets['MISSING-FILE'].push({
-          file: `src/data/propers/common/${propers}${suffix}.yml`,
+          file: `src/data/propers/common/${newStemFor(propers, suffix)}.yml`,
           saintId: saint.id,
           date,
           tag,
@@ -1172,7 +1200,7 @@ function auditTemporal(cache, buckets, counts) {
     const filePath = path.join(TEMPORAL_DIR, filename);
     const raw = readFileSync(filePath, 'utf8');
     const doc = loadYaml(filePath);
-    const stem = filename.slice(0, -4);
+    const stem = legacyStem(filename.slice(0, -4));
     const id = stripPropersSuffix(stem) ?? stem.replace(/-benedictus-antiphon$/, '');
     const suffix = stem.slice(id.length);
     const tagFromSuffix = SUFFIX_TO_TAG[suffix] ?? (suffix === '-benedictus-antiphon' ? 'Ant 2' : null);
