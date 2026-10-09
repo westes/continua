@@ -1,0 +1,13 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-11-28 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+id: magnificat-antiphon-advent-1
+text:
+  la: "Ne tímeas, María, * invenísti enim grátiam apud Dóminum: ecce concípies, et páries fílium, allelúja."
+  en: "Fear not, Mary, * for thou hast found grace with the Lord; behold, thou shalt conceive in thy womb, and bring forth a son. Alleluia."
+status:
+  la: verified
+  en: verified

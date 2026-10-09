@@ -1,0 +1,8 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2027-07-03 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+id: magnificat-antiphon-post-pentecost-07-first
+text:
+  la: "Unxérunt Salomónem * Sadoc sacérdos et Nathan prophéta, regem in Gihon et ascendéntes læti dixérunt: Vivat rex in ætérnum."
+  en: "Nathan the Prophet * anointed Solomon King in Gihon, and they went up with joy, and cried, saying: May the King live for ever."
+status:
+  la: verified
+  en: verified

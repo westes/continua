@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-09-05 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: benedictus-antiphon-post-pentecost-16
+text:
+  la: "Cum intráret Jesus * in domum cujúsdam príncipis pharisæórum sábbato manducáre panem, ecce homo quidam hydrópicus erat ante illum: ipse vero apprehénsum sanávit eum, ac dimísit."
+  en: "As Jesus went into the house * of one of the chief Pharisees, to eat bread on the Sabbath Day, behold, there was a certain man before Him which had the dropsy and He took him, and healed him, and let him go."
+status:
+  la: verified
+  en: verified

@@ -1,8 +1,0 @@
-# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-08-30 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
-id: month-week-091-magnificat-antiphon-first
-text:
-  la: "Cum audísset Job * nuntiórum verba, sustínuit patiénter, et ait: Si bona suscépimus de manu Dómini, mala autem quare non sustineámus? In ómnibus his non peccávit Job lábiis suis, neque stultum áliquid contra Deum locútus est."
-  en: "When Job heard the words * of the messengers, he suffered it patiently, and said: What! shall we receive good at the hand of the Lord, and shall we not receive evil? In all this did not Job sin with his lips, nor charged God foolishly."
-status:
-  la: verified
-  en: verified

@@ -1,8 +1,0 @@
-# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-03-22 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
-id: lent-3-magnificat-antiphon-first
-text:
-  la: "Dixit autem pater * ad servos suos: Cito proférte stolam primam, et indúite illum, et date ánulum in manu ejus, et calceaménta in pédibus ejus."
-  en: "But the father said to his servants: * Bring forth the best robe, and put it on him, and put a ring on his hand, and shoes on his feet."
-status:
-  la: verified
-  en: verified

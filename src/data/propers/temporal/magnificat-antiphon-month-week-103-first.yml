@@ -1,0 +1,8 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2030-10-12 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+id: magnificat-antiphon-month-week-103-first
+text:
+  la: "Lugébat autem Judam * Israël planctu magno et dicébat: Quómodo cecidísti, potens in prǽlio, qui salvum faciébas pópulum Dómini?"
+  en: "Moreover, all Israel made great lamentation * for Judas, saying How art thou fallen, thou valiant man of war, that didst deliver the Lord's people."
+status:
+  la: verified
+  en: verified

@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2028-09-03 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: benedictus-antiphon-post-pentecost-13
+text:
+  la: "Cum transíret Jesus * quoddam castéllum, occurrérunt ei decem viri leprósi, qui stetérunt a longe et levavérunt vocem dicéntes: Jesu præcéptor, miserére nostri."
+  en: "As Jesus passed through * a certain village, there met Him ten men that were lepers, which stood afar off; and they lifted up their voices, and said: “Jesus, Master, have mercy on us.”"
+status:
+  la: verified
+  en: verified

@@ -1,0 +1,13 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-10-24 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+id: magnificat-antiphon-post-pentecost-23
+text:
+  la: "At Jesus convérsus * et videns eam dixit: Confíde, fília, fides tua te salvam fecit, allelúja."
+  en: "But Jesus turned Him about, * and when He saw her, He said: Daughter, be of good comfort; thy faith hath made thee whole, alleluia."
+status:
+  la: verified
+  en: verified

@@ -1,0 +1,13 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-02-21 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+id: magnificat-antiphon-lent-2
+text:
+  la: "Visiónem quam vidístis, * némini dixéritis, donec a mórtuis resúrgat Fílius hóminis."
+  en: "Tell the vision that ye have seen to no man, * until the Son of man be risen again from the dead."
+status:
+  la: verified
+  en: verified

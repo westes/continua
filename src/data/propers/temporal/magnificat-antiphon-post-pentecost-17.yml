@@ -1,0 +1,13 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-09-12 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+id: magnificat-antiphon-post-pentecost-17
+text:
+  la: "Quid vobis * vidétur de Christo? cujus fílius est? Dicunt ei omnes: David. Dicit eis Jesus: Quómodo David in spíritu vocat eum Dóminum dicens: Dixit Dóminus Dómino meo: Sede a dextris meis?"
+  en: "What think ye of Christ? Whose Son is He? * They say all unto Him: The Son of David. Jesus saith unto them: How then doth David in spirit call Him Lord, saying: The Lord said unto my Lord, Sit Thou at My right hand?"
+status:
+  la: verified
+  en: verified

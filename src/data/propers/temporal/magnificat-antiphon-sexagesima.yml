@@ -1,0 +1,13 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-01-31 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+id: magnificat-antiphon-sexagesima
+text:
+  la: "Vobis datum est * nosse mystérium regni Dei, céteris autem in parábolis, dixit Jesus discípulis suis."
+  en: "Jesus said to His disciples: * Unto you it is given to know the mysteries of the kingdom of God, but to others in parables."
+status:
+  la: verified
+  en: verified

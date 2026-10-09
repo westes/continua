@@ -1,0 +1,13 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-06-20 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+id: magnificat-antiphon-post-pentecost-05
+text:
+  la: "Si offers * munus tuum ad altáre et recordátus fúeris quia frater tuus habet áliquid advérsus te, relínque ibi munus tuum ante altáre, et vade prius reconciliári fratri tuo, et tunc véniens ófferes munus tuum, allelúja."
+  en: "If thou bring thy gift to the Altar, * and there rememberest that thy brother hath aught against thee, leave there thy gift before the Altar, and go thy way; first be reconciled to thy brother, and then come and offer thy gift. Alleluia."
+status:
+  la: verified
+  en: verified

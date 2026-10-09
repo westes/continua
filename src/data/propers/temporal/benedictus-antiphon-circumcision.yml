@@ -1,0 +1,14 @@
+# Read from web/www/horas/Latin/Sancti/01-01.txt's own [Ant 2] (the
+# antiphon slotted right after Lauds' [Capitulum Laudes]/[Versum 2], i.e.
+# Lauds' own Benedictus antiphon) and its English counterpart. The source
+# also carries a distinct [Ant 3] ("Magnum hereditátis mystérium...") for
+# Second Vespers' own Magnificat antiphon — not modeled here since this
+# project's magnificat-antiphon lookup doesn't distinguish First/Second
+# Vespers (see hours/resolve-common.ts's getMagnificatAntiphon).
+id: benedictus-antiphon-circumcision
+text:
+  la: "Mirábile mystérium * declarátur hódie: innovántur natúræ, Deus homo factus est: id quod fuit permánsit, et quod non erat assúmpsit; non commixtiónem passus, neque divisiónem."
+  en: "This day is set forth a wonderful mystery, * a new thing hath been created in the earth: God is made man. That which he was, he remaineth; and that which he was not, he taketh; suffering therein neither confusion nor division."
+status:
+  la: verified
+  en: verified

@@ -1,0 +1,8 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-07-19 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+id: magnificat-antiphon-post-pentecost-06-first
+text:
+  la: "Obsecro, Dómine, * aufer iniquitátem servi tui, quia insipiénter egi."
+  en: "I beseech thee, * O Lord, do away the iniquity of thy servant, for I have done very foolishly."
+status:
+  la: verified
+  en: verified

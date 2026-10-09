@@ -1,8 +1,0 @@
-# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2028-11-04 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
-id: month-week-112-magnificat-antiphon-first
-text:
-  la: "Aspice Dómine, * quia facta est desoláta cívitas plena divítiis, sedet in tristítia dómina Géntium: non est qui consolétur eam, nisi tu, Deus noster."
-  en: "Consider, O Lord, how that the city that was full with grace became desolate * she sedeth in great grief, there is none to comfort her: but you Lord, our God."
-status:
-  la: verified
-  en: verified

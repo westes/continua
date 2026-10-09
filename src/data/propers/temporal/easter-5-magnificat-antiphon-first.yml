@@ -1,8 +1,0 @@
-# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2028-05-13 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
-id: easter-5-magnificat-antiphon-first
-text:
-  la: "Vado ad eum * qui misit me: et nemo ex vobis intérrogat me: Quo vadis? allelúja, allelúja."
-  en: "I go My way to Him That sent Me, * and none of you asketh Me: Whither goest Thou? Alleluia, Alleluia."
-status:
-  la: verified
-  en: verified

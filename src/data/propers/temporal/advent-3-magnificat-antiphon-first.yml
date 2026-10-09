@@ -1,8 +1,0 @@
-# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2027-12-11 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
-id: advent-3-magnificat-antiphon-first
-text:
-  la: "Ante me * non est formátus Deus, et post me non erit: quia mihi curvábitur omne genu, et confitébitur omnis lingua."
-  en: "Before Me * there was no god formed, neither shall there be after Me; for unto Me every knee shall bow, and every tongue shall swear."
-status:
-  la: verified
-  en: verified

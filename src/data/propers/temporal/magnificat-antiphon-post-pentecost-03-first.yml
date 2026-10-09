@@ -1,0 +1,8 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2029-06-09 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+id: magnificat-antiphon-post-pentecost-03-first
+text:
+  la: "Cognovérunt omnes * a Dan usque Bersabée, quod fidélis Sámuel prophéta esset Dómini."
+  en: "And they all knew, * from Dan even unto Beersheba, that Samuel was established to be a Prophet of the Lord."
+status:
+  la: verified
+  en: verified

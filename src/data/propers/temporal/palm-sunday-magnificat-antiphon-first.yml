@@ -1,8 +1,0 @@
-# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-04-12 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
-id: palm-sunday-magnificat-antiphon-first
-text:
-  la: "Pater juste, * mundus te non cognóvit: ego autem novi te, quia tu me misísti."
-  en: "O just Father, * the world has not known thee: I however have known thee, for thou hast sent me."
-status:
-  la: verified
-  en: verified

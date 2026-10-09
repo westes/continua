@@ -1,0 +1,8 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-02-15 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+id: magnificat-antiphon-septuagesima-first
+text:
+  la: "Dixit Dóminus * ad Adam: De ligno quod est in médio paradísi, ne cómedas: in qua hora coméderis, morte moriéris."
+  en: "The Lord said unto Adam: * Of the tree which is in the midst of the garden, thou shalt not eat; in the hour that thou eatest thereof, thou shalt surely die."
+status:
+  la: verified
+  en: verified

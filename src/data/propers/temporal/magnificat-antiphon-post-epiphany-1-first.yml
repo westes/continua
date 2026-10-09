@@ -1,0 +1,8 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-01-11 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+id: magnificat-antiphon-post-epiphany-1-first
+text:
+  la: "Remánsit puer Jesus * in Jerúsalem, et non cognovérunt paréntes ejus existimántes illum esse in comitátu: et requirébant eum inter cognátos et notos."
+  en: "The child Jesus * remained in Jerusalem; and his parents knew it not. And thinking that he was in the company, they came a day's journey, and sought him among their kinsfolks and acquaintance."
+status:
+  la: verified
+  en: verified

@@ -167,12 +167,19 @@ export function overlayProperAntiphons<T extends { antiphon: Partial<Record<stri
  * `winner.kind === 'temporal'` lookups — a sanctoral winner's own
  * Common-category fallback chain is unrelated and untouched.
  */
+function temporalProperId(id: string, kind: string): string {
+  // Benedictus/Magnificat antiphons are named {part}-antiphon-{id}[-first];
+  // the other kinds (collect, lectio-prima...) still {id}-{kind}.
+  const m = /^(benedictus-antiphon|magnificat-antiphon)(-first|-second)?$/.exec(kind);
+  return m ? `${m[1]}-${id}${m[2] ?? ''}` : `${id}-${kind}`;
+}
+
 function getTemporalProperWithFallback(winnerId: string, kind: string, day: LiturgicalDay): ProperText {
-  const named = getTemporalProper(`${winnerId}-${kind}`);
+  const named = getTemporalProper(temporalProperId(winnerId, kind));
   if (named.status.la !== 'missing' || named.status.en !== 'missing') {
     return named;
   }
-  return getTemporalProper(`${resolveTemporalId(day.date)}-${kind}`);
+  return getTemporalProper(temporalProperId(resolveTemporalId(day.date), kind));
 }
 
 // Named temporal winners with real standing of their own, unconditionally
@@ -1083,7 +1090,7 @@ function temporalCommemorationPart(
   const label = `Commemoration of ${commemoration.name ?? idLabel.en}`;
   const collect = toResolvedText(getTemporalProper(`${commemoration.id}-collect`));
   const antiphon = toResolvedText(
-    getTemporalProper(`${commemoration.id}-${hour === 'lauds' ? 'benedictus' : 'magnificat'}-antiphon`),
+    getTemporalProper(`${hour === 'lauds' ? 'benedictus' : 'magnificat'}-antiphon-${commemoration.id}`),
   );
   if (antiphon.status.la !== 'missing' || antiphon.status.en !== 'missing') {
     const versicleId =
@@ -1287,7 +1294,7 @@ export function resolveSuffrages(
 function octaveDayProper(winnerId: string, kind: string, day: LiturgicalDay): ProperText | undefined {
   const octave = activeOctavesFor(day.date).find((o) => o.id === winnerId);
   if (!octave || octave.dayNumber < 2) return undefined;
-  const own = getTemporalProper(`${winnerId}-${kind}-d${octave.dayNumber}`);
+  const own = getTemporalProper(`${kind}-${winnerId}-d${octave.dayNumber}`);
   return own.status.la !== 'missing' || own.status.en !== 'missing' ? own : undefined;
 }
 
@@ -1436,7 +1443,7 @@ export function getMagnificatAntiphon(day: LiturgicalDay, vespersVariant?: Vespe
     // (calendar/month-week-id.ts), so that id is tried before the Easter-
     // offset one.
     const monthWeek = vespersVariant === 'first' && day.weekday === 'sunday' ? monthWeekId(day.date) : undefined;
-    const monthWeekVariant = monthWeek ? toResolvedText(getTemporalProper(`month-week-${monthWeek}-magnificat-antiphon-first`)) : undefined;
+    const monthWeekVariant = monthWeek ? toResolvedText(getTemporalProper(`magnificat-antiphon-month-week-${monthWeek}-first`)) : undefined;
     const namedVariant = vespersVariant
       ? toResolvedText(getTemporalProperWithFallback(winner.id, `magnificat-antiphon-${vespersVariant}`, day))
       : undefined;

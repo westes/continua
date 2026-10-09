@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-10-03 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: benedictus-antiphon-post-pentecost-20
+text:
+  la: "Erat quidam régulus, * cujus fílius infirmabátur Caphárnaum. Hic cum audísset quod Jesus veníret in Galilǽam, rogábat eum ut sanáret fílium ejus."
+  en: "There was a certain nobleman whose son was sick * at Capernaum. When he heard that Jesus was come into Galilee, he besought Him that He would heal his son."
+status:
+  la: verified
+  en: verified

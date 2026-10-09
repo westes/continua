@@ -1,0 +1,8 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2029-08-25 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+id: magnificat-antiphon-month-week-085-first
+text:
+  la: "Obsérva, fili, * præcépta patris tui, et ne dimíttas legem matris tuæ, sed liga eam semper in corde tuo."
+  en: "My son, keep thy fathers commandment * and forsake not the law of thy mother, but bind them continually upon thy heart."
+status:
+  la: verified
+  en: verified

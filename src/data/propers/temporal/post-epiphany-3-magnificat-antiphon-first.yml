@@ -1,8 +1,0 @@
-# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2028-01-22 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
-id: post-epiphany-3-magnificat-antiphon-first
-text:
-  la: "Suscépit Deus * Israël, púerum suum: sicut locútus est ad Ábraham, et semen ejus: exaltáre húmiles usque in sǽculum."
-  en: "God hath received * Israel his servant: as he spoke to our fathers, to Abraham and to his seed, and hath exalted the humble forever."
-status:
-  la: verified
-  en: verified

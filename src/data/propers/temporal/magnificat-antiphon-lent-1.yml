@@ -1,0 +1,13 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers
+# live query, 2027-02-14 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision;
+# same occasion as the sibling -benedictus-antiphon.yml).
+id: magnificat-antiphon-lent-1
+text:
+  la: "Ecce nunc tempus * acceptábile, ecce nunc dies salútis: in his ergo diébus exhibeámus nosmetípsos sicut Dei minístros in multa patiéntia, in jejúniis, in vigíliis, et in caritáte non ficta."
+  en: "Behold, now is the accepted time * behold, now is the day of salvation; in these days therefore let us approve ourselves as the ministers of God, in much patience, in fastings, in watchings, and in love unfeigned."
+status:
+  la: verified
+  en: verified

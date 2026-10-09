@@ -62,7 +62,7 @@ describe('Lent ordinary ferias: content completeness', () => {
     expect(collect.status.la).toBe('verified');
     expect(collect.status.en).toBe('verified');
 
-    const benedictus = getTemporalProper(`${id}-benedictus-antiphon`);
+    const benedictus = getTemporalProper(`benedictus-antiphon-${id}`);
     expect(benedictus.status.en).toBe('verified');
 
     const readings = getNocturnReadings(id);
@@ -83,11 +83,11 @@ describe('Lent ordinary ferias: content completeness', () => {
 
   it.each([...NO_VESPERS_VARIANT])('%s has no separate Vespers collect or Magnificat antiphon (the source has neither)', (id) => {
     expect(getTemporalProper(`${id}-collect-vespers`).status.en).toBe('missing');
-    expect(getTemporalProper(`${id}-magnificat-antiphon`).status.en).toBe('missing');
+    expect(getTemporalProper(`magnificat-antiphon-${id}`).status.en).toBe('missing');
   });
 
   it.each(LENT_FERIA_IDS.filter((id) => !NO_VESPERS_VARIANT.has(id)))('%s has a real, verified Magnificat antiphon', (id) => {
-    expect(getTemporalProper(`${id}-magnificat-antiphon`).status.en).toBe('verified');
+    expect(getTemporalProper(`magnificat-antiphon-${id}`).status.en).toBe('verified');
   });
 });
 

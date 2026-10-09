@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2028-08-13 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: benedictus-antiphon-post-pentecost-10
+text:
+  la: "Stans a longe * publicánus, nolébat óculos ad cælum leváre, sed percutiébat pectus suum dicens: Deus, propítius esto mihi peccatóri."
+  en: "The publican, standing afar off, * would not lift up so much as his eyes unto heaven, but smote upon his breast, saying: God, be merciful to me, a sinner."
+status:
+  la: verified
+  en: verified

@@ -1,0 +1,12 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2027-09-19 (a clean year/date for this temporal id -- see
+# TODO.md for the general method: each temporal-id's own Sunday, found
+# programmatically via calendar/index.ts's own resolveDay rather than
+# guessed at, then cross-checked live for a title with no saint collision).
+id: benedictus-antiphon-post-pentecost-18
+text:
+  la: "Dixit Dóminus * paralýtico: Confíde, fili, remittúntur tibi peccáta tua."
+  en: "The Lord said unto the sick * of the palsy: Son, be of good cheer, thy sins be forgiven thee."
+status:
+  la: verified
+  en: verified

@@ -1,0 +1,8 @@
+# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2027-07-17 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
+id: magnificat-antiphon-post-pentecost-09-first
+text:
+  la: "Dum tólleret Dóminus * Elíam per túrbinem in cælum, Eliséus clamábat: Pater mi, currus Israël et auríga ejus."
+  en: "When the Lord would take up * Elijah into heaven by a whirlwind, Elisha cried, and said: My father, my father, the chariot of Israel, and the horsemen thereof."
+status:
+  la: verified
+  en: verified

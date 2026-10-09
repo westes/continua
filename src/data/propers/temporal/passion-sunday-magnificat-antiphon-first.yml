@@ -1,8 +1,0 @@
-# First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-04-05 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
-id: passion-sunday-magnificat-antiphon-first
-text:
-  la: "Ego sum * qui testimónium perhíbeo de meípso: et testimónium pérhibet de me, qui misit me, Pater."
-  en: "I am One * That bear witness of Myself, and the Father That sent Me beareth witness of Me."
-status:
-  la: verified
-  en: verified
