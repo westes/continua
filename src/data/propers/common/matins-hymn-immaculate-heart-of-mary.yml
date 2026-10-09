@@ -1,0 +1,69 @@
+# The Immaculate Heart (Sancti/08-22.txt, `ex C11`) has no Matins hymn of its own;
+# it takes the Common of the BVM's, byte-identical to matins-hymn-common-of-the-bvm.yml
+# (same convention as this feast's existing lauds-/vespers-hymn files), but with
+# the secular default "sídera" in stanza 1 (C11.txt's own [Hymnus Matutinum]), matching
+# this feast's secular Lauds hymn, rather than the Monastic "ǽthera".
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Matins
+# `votive=C11` live query, 2026-08 -- "Quem terra, pontus, ǽthera," the
+# classic Common-of-the-BVM Matins hymn. Final stanza corrected 2026-09-10:
+# the live query had baked in the *Lauds* hymn's own ending ("Glória tibi,
+# Dómine... Cum Patre, et Sancto Spíritu"), not Matins' real default
+# ("Jesu, tibi sit glória... Cum Patre, et almo Spíritu" -- C11.txt's own
+# `[Hymnus Matutinum]`, marked with a leading `*` there and carried through
+# unaffected by `[HymnusM Matutinum]`'s `sídera`->`ǽthera` substitution).
+# English was already correct either way (same text either ending).
+id: matins-hymn-immaculate-heart-of-mary
+text:
+  la: |
+    Quem terra, pontus, sídera
+    Colunt, adórant, prædicant,
+    Trinam regéntem máchinam,
+    Claustrum Maríæ bájulat.
+
+    Cui luna, sol, et ómnia
+    Desérviunt per témpora,
+    Perfúsa cæli grátia,
+    Gestant puéllæ víscera.
+
+    Beáta Mater múnere,
+    Cujus supérnus ártifex
+    Mundum pugíllo cóntinens,
+    Ventris sub arca clausus est.
+
+    Beáta cæli núntio,
+    Fœcúnda sancto Spíritu,
+    Desiderátus géntibus,
+    Cujus per alvum fusus est.
+
+    * Jesu, tibi sit glória,
+    Qui natus es de Vírgine,
+    Cum Patre, et almo Spíritu
+    In sempitérna sǽcula. Amen.
+  en: |
+    The God whom earth, and sea, and sky
+    Adore, and laud, and magnify,
+    Who o'er their threefold fabric reigns,
+    The Virgin's spotless womb contains.
+
+    The God, whose will by moon and sun
+    And all things in due course is done,
+    Is borne upon a maiden's breast,
+    By fullest heavenly grace possest.
+
+    How blest that mother, in whose shrine
+    The great artificer divine,
+    Whose hand contains the earth and sky,
+    Vouchsafed, as in his ark, to lie.
+
+    Blest, in the message Gabriel brought;
+    Blest, by the work the Spirit wrought;
+    From whom the great desire of earth
+    Took human flesh and human birth.
+
+    * All honour, praise and glory be,
+    O Jesu, Virgin-Born, to thee;
+    All glory, as is ever meet,
+    To Father, and to Paraclete. Amen.
+status:
+  la: verified
+  en: verified
