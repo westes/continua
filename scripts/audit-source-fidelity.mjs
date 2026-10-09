@@ -1,4 +1,10 @@
 #!/usr/bin/env node
+// NOTE on what this is: an optional typo/transcription checker, not a
+// correctness test. It reports where our authored text differs from the
+// Divinum Officium file it was copied from. Continua is its own office design
+// and departs from that source on purpose in many places, so a "mismatch" here
+// means "differs from the reference", not "wrong". Not part of `npm test`/CI;
+// run it (`npm run audit:sources`) when you suspect a copy-paste error.
 // One-off audit: re-verify continua's own authored propers/nocturn/octave
 // content against ../divinum-officium-reference. Grew from a narrow v1
 // (re-verify every src/data/propers/common/*.yml file against its own
