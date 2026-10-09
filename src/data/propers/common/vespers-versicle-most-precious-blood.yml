@@ -2,7 +2,7 @@
 # positioned directly after [Hymnus Vespera] -- the Vespers closing
 # versicle. Authoring this was necessary once lauds-capitulum-most-
 # precious-blood.yml made the feast's own bundle reachable (Vespers falls
-# back to Lauds' own capitulum, see vespersCapitulumForOverride in
+# back to Lauds' own capitulum, see lookupPart (Vespers chapter, Lauds sibling) in
 # hours/vespers.ts): the bundle's versicle slot is unconditionally
 # rendered, not gated on missing status, so an unauthored one would
 # otherwise render empty.

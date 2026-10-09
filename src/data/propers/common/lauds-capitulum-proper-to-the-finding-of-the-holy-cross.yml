@@ -13,7 +13,7 @@
 # falls through to this `common` id specifically, which needed its own
 # copy of the bundle. Same chapter reused for Vespers -- no separate
 # vespers-capitulum-<id> file authored, per vespers.ts's
-# vespersCapitulumForOverride fallback.
+# lookupPart (Vespers chapter, Lauds sibling) fallback.
 id: lauds-capitulum-proper-to-the-finding-of-the-holy-cross
 text:
   la: "Fratres: Hoc enim sentíte in vobis, quod et in Christo Jesu: qui, cum in forma Dei esset, non rapínam arbitrátus est esse se æquálem Deo: sed semetípsum exinanívit, formam servi accípiens, in similitúdinem hóminum factus, et hábitu invéntus ut homo."

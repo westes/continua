@@ -11,7 +11,7 @@
 # carry through to this Office bundle -- both variants share one real
 # chapter/responsory/hymn/versicle here. Same chapter reused for Vespers
 # -- no separate vespers-capitulum-<id> file authored, per vespers.ts's
-# vespersCapitulumForOverride fallback.
+# lookupPart (Vespers chapter, Lauds sibling) fallback.
 id: lauds-capitulum-common-of-pope-martyrs
 text:
   la: "Justórum ánimæ in manu Dei sunt, et non tanget illos torméntum mortis. Visi sunt óculis insipiéntium mori: illi autem sunt in pace."

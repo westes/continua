@@ -1,6 +1,6 @@
 # Read from web/www/horas/Latin/Sancti/01-01.txt's own [Capitulum Laudes]
 # and its English counterpart. Also serves Vespers (see
-# hours/vespers.ts's vespersCapitulumForOverride: no distinct
+# hours/vespers.ts's lookupPart (Vespers chapter, Lauds sibling): no distinct
 # `vespers-capitulum-circumcision` file exists in the source either — the
 # reference engine reuses this same chapter at both hours, same pattern
 # already established for every other feast this project has authored).

@@ -8,7 +8,7 @@
 # Common of a Martyr), confirming TODO.md's earlier finding that these
 # categories share real content, not just their Matins psalmody. Same
 # chapter reused for Vespers -- no separate vespers-capitulum-<id> file
-# authored, per vespers.ts's vespersCapitulumForOverride fallback (see
+# authored, per vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback (see
 # its own doc comment) -- same convention as Common-of-a-Confessor-Not-
 # Bishop's identical Lauds/Vespers chapter.
 id: lauds-capitulum-common-of-a-martyr-bishop

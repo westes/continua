@@ -91,7 +91,7 @@ describe('genuinely unwinnable stubs still get a Benedictus antiphon (2026-08)',
 
   it('resolves via the same fallback for a saint from the *original*, pre-Kalendaria-table 109-saint pass', () => {
     // St. Frances of Rome and St. Bibiana predate the 94-saint batch's
-    // collectCommon/minorHoursCommon mechanism entirely, but the same
+    // collectCommon/common mechanism entirely, but the same
     // file-read method applies once a fileref is derived for them too --
     // Frances of Rome's own file points to C7a (a whole-file inherit of
     // C7, just relabeled "of a Widow"), resolving to the same
@@ -101,11 +101,11 @@ describe('genuinely unwinnable stubs still get a Benedictus antiphon (2026-08)',
   });
 });
 
-describe('minorHoursCommon for the *whole* calendar, not just the 94-saint batch (2026-08)', () => {
+describe('common for the *whole* calendar, not just the 94-saint batch (2026-08)', () => {
   it("reuses another saint's own proper P/T/S/N wholesale when [Rule] points at their file directly, not a Commune category", () => {
     // Finding of St. Stephen -- her own [Rule] is "vide Sancti/12-26"
     // (St. Stephen Protomartyr's own Dec 26 file), not a Commune
-    // reference at all, so minorHoursCommon is his own id
+    // reference at all, so common is his own id
     // (st-stephen-protomartyr) -- reuses his already-authored proper
     // files directly, same pattern as common-of-st-peter earlier.
     const day = resolveDay('2026-08-03');
@@ -169,7 +169,7 @@ describe('minorHoursCommon for the *whole* calendar, not just the 94-saint batch
     // ("st-michael" itself) rather than following propers the way
     // getDayCollect/getBenedictusAntiphon do -- a real gap a final
     // calendar-wide sweep caught, fixed the same way as Finding of St.
-    // Stephen: minorHoursCommon points directly at his delegate's id.
+    // Stephen: common points directly at his delegate's id.
     const day = resolveDay('2028-09-29');
     expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-michael' });
     const prime = resolveMinorHourAntiphon('prime', day, {});
@@ -177,7 +177,7 @@ describe('minorHoursCommon for the *whole* calendar, not just the 94-saint batch
   });
 });
 
-describe('minorHoursCommon/benedictusCommon fallback (2026-08, the 94 propers:null saints)', () => {
+describe('common fallback (2026-08, the 94 propers:null saints)', () => {
   it('a below-duplex-majus saint still gets a real Benedictus antiphon and P/T/S/N content via its Common category', () => {
     // St. Anacletus, Semiduplex -- below the duplex-majus+ threshold that
     // gates a *proper* psalmody override (hours/lauds.ts's
@@ -197,7 +197,7 @@ describe('minorHoursCommon/benedictusCommon fallback (2026-08, the 94 propers:nu
     // Ss. Simon and Jude -- confirms the fallback isn't only
     // reached by low ranks; a real major feast with no *proper*
     // Prime/Terce/Sext/None file authored falls through to its
-    // minorHoursCommon (common-of-several-martyrs) exactly the same way.
+    // common (common-of-an-apostle) exactly the same way.
     const day = resolveDay('2025-10-28');
     expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'ss-simon-and-jude' });
     expect(resolveMinorHourAntiphon('none', day, {}).status.la).toBe('verified');
@@ -205,11 +205,11 @@ describe('minorHoursCommon/benedictusCommon fallback (2026-08, the 94 propers:nu
 });
 
 describe('the 26 propers-set saints from the 94-saint batch (2026-08)', () => {
-  it('a saint with a genuine proper collect can still share its Benedictus antiphon with a Common category (benedictusCommon)', () => {
+  it('a saint with a genuine proper collect can still share its Benedictus antiphon with a Common category (common)', () => {
     // Ss. Dionysius and Companions -- own proper collect (propers is
     // set), but live-verified byte-identical to common-of-several-
     // martyrs's Benedictus antiphon, so getBenedictusAntiphon falls
-    // through to benedictusCommon rather than a nonexistent
+    // through to common rather than a nonexistent
     // ss-dionysius-and-companions-antiphon.yml.
     const day = resolveDay('2025-10-09');
     expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'ss-dionysius-and-companions' });

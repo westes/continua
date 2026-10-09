@@ -1,6 +1,6 @@
 # Read from web/www/horas/Latin/Sancti/10-07.txt's own [Capitulum Laudes]
 # and its English counterpart. Vespers reuses this chapter (see
-# hours/vespers.ts's vespersCapitulumForOverride). Without it the feast's
+# hours/vespers.ts's lookupPart (Vespers chapter, Lauds sibling)). Without it the feast's
 # own hymn would never be reached: resolveOfficeBundle is all-or-nothing
 # per id (see lauds-capitulum-apparition-of-the-immaculate-bvm.yml).
 id: lauds-capitulum-our-lady-of-the-rosary

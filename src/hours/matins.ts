@@ -56,7 +56,7 @@
 //     nocturn-readings.ts). A Common-of-Saints fallback Gospel is
 //     deliberately never used here — nocturn-readings.ts has no
 //     Common-fallback mechanism at all (unlike collectCommon/
-//     benedictusCommon elsewhere), so this exclusion falls out of the
+//     common elsewhere), so this exclusion falls out of the
 //     store's own shape rather than needing special-case code.
 //   - Every commemorated saint (not just the office winner) and every
 //     active octave contributes its own reading to the pool, when
@@ -580,7 +580,7 @@ function ferialNamedAntiphonedNocturn(day: LiturgicalDay, override: FerialNamedO
  * `./resolve-common`) — an active octave's own governing feast (whose id
  * `resolveOfficeWinner`/`getMinorHourOverrideId` already substitute in) is
  * therefore tried first via its own proper `{terce,sext,none}-antiphon-
- * ${id}` text, before falling to `SaintRecord.minorHoursCommon`'s shared
+ * ${id}` text, before falling to `SaintRecord.common`'s shared
  * Common antiphon (deliberately distinct from `common`, the psalm-numbers
  * Common id — a saint's minor-hour Common category isn't always the same
  * as their overall one, see `SaintRecord`'s own doc comment). Previously

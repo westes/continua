@@ -2,7 +2,7 @@
 # source; reusing common-of-the-bvm's own Vespers versicle. Authored to
 # make the feast's own bundle (needed for her own hymn, see lauds-
 # capitulum-apparition-of-the-immaculate-bvm.yml -- Vespers falls back to the same Lauds capitulum
-# via vespersCapitulumForOverride) render a real versicle instead of an
+# via lookupPart (Vespers chapter, Lauds sibling)) render a real versicle instead of an
 # unconditionally-rendered empty one.
 id: vespers-versicle-apparition-of-the-immaculate-bvm
 text:

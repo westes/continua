@@ -117,9 +117,7 @@ export function withVespersVariant(id: string, variant: VespersVariant | undefin
 /**
  * Below duplex-majus, a feast's own proper psalm *numbers* never
  * substitute for the ferial cycle — only a strong-enough feast gets
- * those (each hour's own getPsalmodyOverrideFor/getOfficeOverrideId gate
- * covers that separately, and deliberately does NOT extend the Common-
- * category tier down to this rank — see its own doc comment). But a
+ * those (`selectPsalmody` gates that by rank). But a
  * saint's own authored antiphon *text* for these same psalm slots is
  * real content at *any* rank (getPsalmodyProperOverrideId's "any rank"
  * eligibility), so it's layered onto the ferial numbers here — the
@@ -144,6 +142,40 @@ export function overlayProperAntiphons<T extends { antiphon: Partial<Record<stri
     const proper = properGroups?.[i]?.antiphon ? verifiedText(properGroups[i]!.antiphon) : undefined;
     return { ...g, antiphon: firstAvailable([proper], verifiedText(g.antiphon)).text };
   });
+}
+
+/**
+ * The psalmody a day's winner says at Lauds or Vespers, by the one rule
+ * every other part follows -- the first thing found wins, slot by slot:
+ *
+ * - the psalm numbers (and their antiphons together) come from the winner's
+ *   own scheme, then its Common's, but only at the rank that earns them
+ *   (`getPsalmodyNumbersOverrideId`); otherwise from the ferial cycle;
+ * - below that rank, the winner's own antiphons (its own scheme's, then its
+ *   Common's) are still laid over the ferial numbers, group by group
+ *   (`getPsalmodyProperOverrideId`, any rank).
+ *
+ * `lookup` finds an id's scheme (its own, then its Common's); `adopt` turns
+ * it into the block to say; `overlay` lays its antiphons over `ferial`.
+ * `skipNumbers`: the Saturday evening before a seasonal proper Sunday keeps
+ * the ferial psalms. Shared by hours/lauds.ts and hours/vespers.ts.
+ */
+export function selectPsalmody<Block, Scheme>(
+  day: LiturgicalDay,
+  ferial: Block,
+  lookup: (id: string) => Scheme | undefined,
+  adopt: (scheme: Scheme) => Block,
+  overlay: (ferial: Block, scheme: Scheme) => Block,
+  skipNumbers = false,
+): Block {
+  const numbersId = skipNumbers ? undefined : getPsalmodyNumbersOverrideId(day);
+  if (numbersId) {
+    const scheme = lookup(numbersId);
+    return scheme ? adopt(scheme) : ferial;
+  }
+  const properId = getPsalmodyProperOverrideId(day);
+  const proper = properId ? lookup(properId) : undefined;
+  return proper ? overlay(ferial, proper) : ferial;
 }
 
 /**
@@ -559,7 +591,7 @@ export function getPsalmodyNumbersOverrideId(day: LiturgicalDay): string | undef
  * confirmed a winning Simplex/Semiduplex saint's own minor hours *do*
  * carry proper/Common antiphons, not the plain ferial default — a real
  * liturgical fact, not an app gap. Any sanctoral winner is therefore
- * eligible here; it's `resolveMinorHourAntiphon`/`resolveMinorHourChapter`
+ * eligible here; it's `resolveMinorHourAntiphon` and the chapter lookup
  * that decide, per hour, whether anything's actually been authored for
  * that id (falling through to the weekday default when not). Until
  * 2026-08 this was gated at duplex-majus+ (the same threshold Lauds'
@@ -1288,7 +1320,7 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
 
 /**
  * Prime's Lectio Brevis (the short reading after the Rule of St. Benedict
- * reading, `data/hours/prime.yml`'s own `prime-lectio-brevis-per-annum`
+ * reading, `data/hours/prime.yml`'s own `prime-lectio-per-annum`
  * slot) — a real gap found live (2026-09-15, Seven Sorrows of the BVM):
  * this slot had no per-feast override at all, always showing the generic
  * ordinary-time default even on a real Duplex+ feast with its own proper
@@ -1302,14 +1334,14 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
  *    proper already uses. The reference engine's `[Lectio Prima]` tag is
  *    present for ~36 saints/feasts total across `Sancti/*.txt` (confirmed
  *    2026-09-15) — comparatively rare, not every Duplex+ feast has one.
- * 2. Her Common category's own `prime-lectio-prima-common-of-${common}`
+ * 2. Her Common category's own `prime-lectio-${common}`
  *    (13 of the ~14 numbered Commune files carry their own `[Lectio
  *    Prima]` too — confirmed 2026-09-15 while chasing why the old
  *    per-annum default text turned out to actually be Common-of-a-
  *    Confessor content that had been hardcoded as the universal default
  *    instead of properly scoped here). Keyed on `common`, like every
  *    other Common-tier lookup in this file.
- * 3. The day's own season (`prime-lectio-brevis-${adv,nat,epi,quad,
+ * 3. The day's own season (`prime-lectio-${adv,nat,epi,quad,
  *    quad5,pasch,asc,pent}`) — real, live season data
  *    (`calendar/temporal.ts`'s `resolveSeason`), NOT gated on any
  *    "milestone 4" (a stale claim corrected 2026-09-15 across every file
@@ -1318,7 +1350,7 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
  *    purpose: `Psalterium/Special/Prima Special.txt` genuinely has no
  *    Lectio-Brevis tag for those seasons, same "absence is the real
  *    answer" pattern as `prime-chapter-responsory-by-season.yml`.
- * 4. `prime-lectio-brevis-per-annum` (2 Thess 3:5, the source's own real
+ * 4. `prime-lectio-per-annum` (2 Thess 3:5, the source's own real
  *    `[Per Annum]` tag) as the final default.
  */
 const PRIME_LECTIO_BREVIS_SEASON: Partial<Record<string, string>> = {

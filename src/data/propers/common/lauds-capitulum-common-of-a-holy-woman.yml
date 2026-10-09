@@ -5,12 +5,12 @@
 # category's own (see lauds-responsory-common-of-a-holy-woman.yml and
 # lauds-versicle-common-of-a-holy-woman.yml). Same chapter reused for
 # Vespers -- no separate vespers-capitulum-<id> file authored, per
-# vespers.ts's vespersCapitulumForOverride fallback.
+# vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback.
 #
 # Also live-verified (St. Monica, May 4) that `common-of-a-widow`'s real
 # content is identical to this -- duplicated verbatim under that id too,
 # same no-alias-mechanism reasoning as `common-of-a-confessor`'s own
-# header. `minorHoursCommon` for both categories' saints already points
+# header. `common` for both categories' saints already points
 # to `common-of-a-virgin` (a separate, established choice for the minor
 # hours specifically, not touched here).
 id: lauds-capitulum-common-of-a-holy-woman

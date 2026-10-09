@@ -10,7 +10,7 @@
 # missing responsory/hymn/versicle under his own id would render blank,
 # not fall back to the Common). Same chapter reused for Vespers -- no
 # separate vespers-capitulum-<id> file authored, per vespers.ts's
-# vespersCapitulumForOverride fallback.
+# lookupPart (Vespers chapter, Lauds sibling) fallback.
 id: lauds-capitulum-commemoration-of-st-paul
 text:
   la: "Bonum certámen certávi, cursum consummávi, fidem servávi. In réliquo repósita est mihi coróna justítiæ, quam reddet mihi Dóminus in illa die justus judex."

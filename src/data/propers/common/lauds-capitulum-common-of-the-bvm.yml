@@ -6,7 +6,7 @@
 # Maternity), all of whose own `[Rank]`/`[Rule]` say plain "ex C11"/"vide
 # C11", settling the votive number with no calendar dependency. Same
 # chapter reused for Vespers -- no separate vespers-capitulum-<id> file
-# authored, per vespers.ts's vespersCapitulumForOverride fallback.
+# authored, per vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback.
 id: lauds-capitulum-common-of-the-bvm
 text:
   la: "Ab inítio et ante sǽcula creáta sum, et usque ad futúrum sǽculum non désinam, et in habitatióne sancta coram ipso ministrávi."

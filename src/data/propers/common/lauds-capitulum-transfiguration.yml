@@ -3,7 +3,7 @@
 # (Phil 3:20-21), own distinct responsory/hymn/versicle at each hour;
 # real Alleluias baked into the responsory text. Same chapter reused for
 # Vespers -- no separate vespers-capitulum-<id> file authored, per
-# vespers.ts's vespersCapitulumForOverride fallback.
+# vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback.
 id: lauds-capitulum-transfiguration
 text:
   la: "Salvatórem exspectámus Dóminum nostrum Jesum Christum, qui reformábit corpus humilitátis nostræ configurátum córpori claritátis suæ."

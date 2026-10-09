@@ -23,8 +23,7 @@ import {
   verifiedText,
   seasonalOfficeSuffix,
   isFerialOrVigil,
-  getPsalmodyProperOverrideId,
-  getPsalmodyNumbersOverrideId,
+  selectPsalmody,
   resolveResponsory,
   resolveSuffrages,
   isPaschaltide,
@@ -77,13 +76,6 @@ const laudsAntiphons = laudsAntiphonsData as Record<Weekday, PsalmodyBlock>;
  * it's not gated behind whether content exists, just behind whether it's
  * *eligible* to override at all.
  */
-function getPsalmodyOverrideFor(day: LiturgicalDay): LaudsPsalmodyOverride | undefined {
-  const id = getPsalmodyNumbersOverrideId(day);
-  if (!id) {
-    return undefined;
-  }
-  return getLaudsSaintOverride(id) ?? getLaudsCommonOverride(id, isPaschaltide(day.season));
-}
 
 /**
  * Below duplex-majus, a feast's own proper psalm *numbers* never
@@ -215,22 +207,18 @@ function canticleText(canticleId: string, slice?: [number, number]): ResolvedTex
  * (ferial numbers, a saint's own antiphon text layered on top). */
 function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
   const ferial = laudsAntiphons[day.weekday];
-  let wd: PsalmodyBlock;
-  if (getPsalmodyNumbersOverrideId(day)) {
-    const override = getPsalmodyOverrideFor(day);
-    wd = override
-      ? {
-          ...override,
-          canticle: override.canticle.id
-            ? { id: override.canticle.id, antiphon: override.canticle.antiphon, split: override.canticle.split }
-            : { ...ferial.canticle, antiphon: override.canticle.antiphon },
-        }
-      : ferial;
-  } else {
-    const properId = getPsalmodyProperOverrideId(day);
-    const proper = properId ? (getLaudsSaintOverride(properId) ?? getLaudsCommonOverride(properId, isPaschaltide(day.season))) : undefined;
-    wd = proper ? mergeFerialNumbersWithProperAntiphons(ferial, proper) : ferial;
-  }
+  const wd = selectPsalmody<PsalmodyBlock, LaudsPsalmodyOverride>(
+    day,
+    ferial,
+    (id) => getLaudsSaintOverride(id) ?? getLaudsCommonOverride(id, isPaschaltide(day.season)),
+    (override) => ({
+      ...override,
+      canticle: override.canticle.id
+        ? { id: override.canticle.id, antiphon: override.canticle.antiphon, split: override.canticle.split }
+        : { ...ferial.canticle, antiphon: override.canticle.antiphon },
+    }),
+    mergeFerialNumbersWithProperAntiphons,
+  );
   const winner = resolveOfficeWinner(day);
   const paschal = isPaschaltide(day.season);
   const alleluia = (antiphon: BilingualText): BilingualText => (paschal ? paschalizeAntiphon(antiphon) : antiphon);

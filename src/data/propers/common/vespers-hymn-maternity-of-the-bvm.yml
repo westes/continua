@@ -3,7 +3,7 @@
 # common-of-the-bvm's own Vespers hymn ("Ave maris stella") verbatim.
 # Authored to make the feast's own bundle (needed for her own Lauds
 # hymn, see lauds-capitulum-maternity-of-the-bvm.yml -- Vespers falls back to the same
-# Lauds capitulum via vespersCapitulumForOverride) render a real hymn
+# Lauds capitulum via lookupPart (Vespers chapter, Lauds sibling)) render a real hymn
 # instead of an unconditionally-rendered empty one.
 id: vespers-hymn-maternity-of-the-bvm
 text:

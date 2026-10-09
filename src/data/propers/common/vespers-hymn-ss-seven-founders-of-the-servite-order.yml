@@ -3,7 +3,7 @@
 # common-of-several-confessors' own Vespers hymn. Authored to make their
 # own bundle (needed for their genuinely proper Lauds hymn, see lauds-
 # hymn-ss-seven-founders-of-the-servite-order.yml -- Vespers falls back
-# to the same Lauds capitulum via vespersCapitulumForOverride) render a
+# to the same Lauds capitulum via lookupPart (Vespers chapter, Lauds sibling)) render a
 # real hymn instead of an unconditionally-rendered empty one.
 id: vespers-hymn-ss-seven-founders-of-the-servite-order
 text:

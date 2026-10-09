@@ -8,7 +8,7 @@
 # of-the-holy-cross"` in that saint's own file too) -- same real feast
 # content, reused by design, not duplicated separately. Same chapter
 # reused for Vespers -- no separate vespers-capitulum-<id> file
-# authored, per vespers.ts's vespersCapitulumForOverride fallback.
+# authored, per vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback.
 id: lauds-capitulum-finding-of-the-holy-cross
 text:
   la: "Fratres: Hoc enim sentíte in vobis, quod et in Christo Jesu: qui, cum in forma Dei esset, non rapínam arbitrátus est esse se æquálem Deo: sed semetípsum exinanívit, formam servi accípiens, in similitúdinem hóminum factus, et hábitu invéntus ut homo."

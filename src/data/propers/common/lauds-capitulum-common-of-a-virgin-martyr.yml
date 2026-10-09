@@ -6,7 +6,7 @@
 # all have real proper content of their own — so the votive view gets a
 # clean, unambiguous read of the category's real content). Same chapter
 # reused for Vespers -- no separate vespers-capitulum-<id> file
-# authored, per vespers.ts's vespersCapitulumForOverride fallback.
+# authored, per vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback.
 id: lauds-capitulum-common-of-a-virgin-martyr
 text:
   la: "Fratres: Qui gloriátur, in Dómino gloriétur. Non enim qui seípsum comméndat, ille probátus est; sed quem Deus comméndat."

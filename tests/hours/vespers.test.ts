@@ -5,7 +5,7 @@ import { getVespersCommonOverride } from '../../src/hours/vespers-psalmody-overr
 // Every id with an authored Vespers office override (2026-08 sweep) —
 // same ids, same clean per-saint dates already established for each
 // one's Lauds office-bundle override — see hours/vespers.ts's
-// vespersCapitulumForOverride. One live `command=prayVespera` query each,
+// lookupPart (Vespers chapter, Lauds sibling). One live `command=prayVespera` query each,
 // Monastic Tridentinum 1617 except christ-the-king (Monastic Divino
 // 1930, same as its Lauds counterpart).
 const VESPERS_OFFICE_OVERRIDE_DATES: Record<string, string> = {
@@ -283,7 +283,7 @@ describe('resolveOrdo("vespers", ...)', () => {
     // (vespers-{part}-assumption.yml, live-verified 2026-08) wins over the
     // plain Saturday default, same chapter text as her already-authored
     // lauds-capitulum-assumption.yml (see hours/vespers.ts's
-    // vespersCapitulumForOverride).
+    // lookupPart (Vespers chapter, Lauds sibling)).
     const ordo = resolveOrdo('vespers', '2026-08-15');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
     expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 24:11-12');
@@ -459,7 +459,7 @@ describe('resolveOrdo("vespers", ...)', () => {
     // St. Joseph (Mar 19, Duplex) claims First Vespers over Mar 18's own
     // evening. He now has his own real chapter/hymn (authored 2026-09-08,
     // sourced from Sancti/03-19.txt directly, Vespers falling back to the
-    // same Lauds capitulum via vespersCapitulumForOverride) -- his own
+    // same Lauds capitulum via lookupPart (Vespers chapter, Lauds sibling)) -- his own
     // proper content wins over common-of-a-confessor's generic bundle.
     const ordo = resolveOrdo('vespers', '2026-03-18');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
@@ -509,7 +509,7 @@ describe('resolveOrdo("vespers", ...)', () => {
     // votive=C2 -- see vespers-hymn-common-of-a-martyr.yml's header.
     // decollation-of-st-john-baptist.yml's own `common` field was
     // corrected from common-of-an-apostle to common-of-a-martyr (he
-    // isn't an apostle; his own `minorHoursCommon` already agreed).
+    // isn't an apostle; his own `common` already agreed).
     const ordo = resolveOrdo('vespers', '2026-08-28');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
     expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Jas 1:12');

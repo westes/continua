@@ -1,6 +1,6 @@
 # Read from web/www/horas/Latin/Tempora/Nat2-0.txt's own [Capitulum
 # Laudes] and its English counterpart. Also serves Vespers (see
-# hours/vespers.ts's vespersCapitulumForOverride) -- no distinct
+# hours/vespers.ts's lookupPart (Vespers chapter, Lauds sibling)) -- no distinct
 # `vespers-capitulum-holy-name-of-jesus` file exists in the source
 # either, same pattern as every other feast authored so far.
 id: lauds-capitulum-holy-name-of-jesus

@@ -2,7 +2,7 @@
 # `votive=C4` live query, 2026-08 -- same votive-office-view reasoning as
 # vespers-hymn-common-of-a-martyr-bishop.yml's header. Same chapter reused
 # for Vespers -- no separate vespers-capitulum-<id> file authored, per
-# vespers.ts's vespersCapitulumForOverride fallback.
+# vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback.
 id: lauds-capitulum-common-of-a-confessor-bishop
 text:
   la: "Ecce sacérdos magnus, qui in diébus suis plácuit Deo, et invéntus est justus: et in témpore iracúndiæ factus est reconciliátio."

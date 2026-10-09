@@ -24,8 +24,7 @@ import {
   verifiedText,
   seasonalOfficeSuffix,
   isFerialOrVigil,
-  getPsalmodyProperOverrideId,
-  getPsalmodyNumbersOverrideId,
+  selectPsalmody,
   resolveResponsory,
   type VespersVariant,
   resolveSuffrages,
@@ -102,13 +101,6 @@ function psalmParts(group: VespersGroup, day: LiturgicalDay): ResolvedPart[] {
  * own office. Falls back to `undefined` for an eligible feast with no
  * override authored in either tier, same honest incremental-content
  * convention as everywhere else. */
-function getPsalmodyOverrideFor(day: LiturgicalDay, variant: VespersVariant): VespersDay | undefined {
-  const id = getPsalmodyNumbersOverrideId(day);
-  if (!id) {
-    return undefined;
-  }
-  return getVespersSaintOverride(id, variant) ?? getVespersCommonOverride(id, isPaschaltide(day.season), variant);
-}
 
 /** Below duplex-majus, mirrors hours/lauds.ts's identical
  * mergeFerialNumbersWithProperAntiphons — real proper psalm numbers stay
@@ -135,16 +127,16 @@ function mergeFerialNumbersWithProperAntiphons(ferial: VespersDay, proper: Vespe
  * resolution, which does care who governs tonight. */
 function resolvePsalmody(day: LiturgicalDay, weekday: Weekday, variant: VespersVariant): ResolvedPart[] {
   const ferial = vespersAntiphons[weekday];
-  let wd: VespersDay;
-  if (getPsalmodyNumbersOverrideId(day) && !(variant === 'first' && day.weekday === 'sunday' && weekday === 'saturday' && isSeasonalProperSunday(day))) {
-    wd = getPsalmodyOverrideFor(day, variant) ?? ferial;
-  } else {
-    const properId = getPsalmodyProperOverrideId(day);
-    const proper = properId
-      ? (getVespersSaintOverride(properId, variant) ?? getVespersCommonOverride(properId, isPaschaltide(day.season), variant))
-      : undefined;
-    wd = proper ? mergeFerialNumbersWithProperAntiphons(ferial, proper) : ferial;
-  }
+  // The Saturday evening before a seasonal proper Sunday keeps the ferial psalms.
+  const skipNumbers = variant === 'first' && day.weekday === 'sunday' && weekday === 'saturday' && isSeasonalProperSunday(day);
+  const wd = selectPsalmody<VespersDay, VespersDay>(
+    day,
+    ferial,
+    (id) => getVespersSaintOverride(id, variant) ?? getVespersCommonOverride(id, isPaschaltide(day.season), variant),
+    (scheme) => scheme,
+    mergeFerialNumbersWithProperAntiphons,
+    skipNumbers,
+  );
   return wd.groups.flatMap((group) => psalmParts(group, day));
 }
 
@@ -163,7 +155,7 @@ function vespersVersicleKey(weekday: Weekday): string {
 /** The chapter/responsory/hymn/versicle bundle following the psalmody —
  * see hours/types.ts's 'vespers-office' doc comment. Any sanctoral
  * winner's (or named-temporal feast's) own proper bundle (chapter via
- * vespersCapitulumForOverride above, responsory/hymn/versicle via
+ * lookupPart (Vespers chapter, Lauds sibling) above, responsory/hymn/versicle via
  * `vespers-{part}-${id}`), else their Common's bundle, wins first when
  * authored — resolve-part.ts's lookupPart, deliberately
  * rank-agnostic (2026-08-25: matches Lauds' identical change, ditto for

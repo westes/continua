@@ -10,7 +10,7 @@
 # are the same Common-of-a-Virgin-Martyr content reused (byte-identical
 # at both Agatha's and Agnes's own days). Same chapter reused for
 # Vespers -- no separate vespers-capitulum-<id> file authored, per
-# vespers.ts's vespersCapitulumForOverride fallback.
+# vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback.
 id: lauds-capitulum-st-agnes
 text:
   la: "Confitébor tibi, Dómine, Rex, et collaudábo te Deum Salvatórem meum. Confitébor nómini tuo: quóniam adjútor et protéctor factus es mihi, et liberásti corpus meum a perditióne."

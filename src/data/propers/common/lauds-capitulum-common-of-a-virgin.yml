@@ -6,7 +6,7 @@
 # all have real proper content of their own — so the votive view gets a
 # clean, unambiguous read of the category's real content). Same chapter
 # reused for Vespers -- no separate vespers-capitulum-<id> file
-# authored, per vespers.ts's vespersCapitulumForOverride fallback.
+# authored, per vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback.
 #
 # Duplicated verbatim under this plain `common-of-a-virgin` id (2026-08-26):
 # live-verified (St. Praxedes, Jul 21) that this content is real and

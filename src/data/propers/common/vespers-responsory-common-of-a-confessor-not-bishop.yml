@@ -11,7 +11,7 @@
 # bishop.yml's header for the fuller note on this bundle's gap; the
 # chapter itself is byte-identical to the Lauds one (same Sir 31:8-9),
 # which is why no separate vespers-capitulum-<id> file was authored --
-# see vespers.ts's vespersCapitulumForOverride, which falls through to
+# see vespers.ts's lookupPart (Vespers chapter, Lauds sibling), which falls through to
 # the Lauds file automatically, same as St. Lawrence's own precedent.
 id: vespers-responsory-common-of-a-confessor-not-bishop
 text:

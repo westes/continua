@@ -8,7 +8,7 @@
 # fall through (resolveOfficeBundle resolves a whole bundle per id, not
 # per part). Same chapter reused for Vespers -- no separate vespers-
 # capitulum-<id> file authored, per vespers.ts's
-# vespersCapitulumForOverride fallback.
+# lookupPart (Vespers chapter, Lauds sibling) fallback.
 id: lauds-capitulum-st-agatha
 text:
   la: "Confitébor tibi, Dómine, Rex, et collaudábo te Deum Salvatórem meum. Confitébor nómini tuo: quóniam adjútor et protéctor factus es mihi, et liberásti corpus meum a perditióne."

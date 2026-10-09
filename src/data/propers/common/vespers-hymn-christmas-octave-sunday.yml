@@ -5,7 +5,7 @@
 # sunday.yml (a genuinely different hymn -- "Jesu, dulcis memoria", not
 # Lauds' "A solis ortus cardine"; Vespers does have its own hymn here,
 # unlike this id's chapter, which is byte-identical between the two
-# hours -- see vespersCapitulumForOverride's own doc comment). No `*`
+# hours -- see lookupPart (Vespers chapter, Lauds sibling)'s own doc comment). No `*`
 # doxology marker in the source -- a fixed, non-swappable ending, same
 # as the Lauds hymn.
 id: vespers-hymn-christmas-octave-sunday

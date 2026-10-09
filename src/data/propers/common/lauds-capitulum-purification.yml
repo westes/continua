@@ -6,7 +6,7 @@
 # her own id rather than left to fall through (resolveOfficeBundle
 # resolves a whole bundle per id, not per part). Same chapter reused for
 # Vespers -- no separate vespers-capitulum-<id> file authored, per
-# vespers.ts's vespersCapitulumForOverride fallback.
+# vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback.
 id: lauds-capitulum-purification
 text:
   la: "Ecce ego mitto Angelum meum, et præparábit viam ante fáciem meam. Et statim véniet ad templum sanctum suum Dominátor, quem vos quǽritis, et Angelus Testaménti, quem vos vultis."

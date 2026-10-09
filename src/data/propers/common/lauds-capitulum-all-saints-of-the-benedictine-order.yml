@@ -6,7 +6,7 @@
 # content -- duplicated under this id rather than left to fall through
 # (resolveOfficeBundle resolves a whole bundle per id, not per part).
 # Same chapter reused for Vespers -- no separate vespers-capitulum-<id>
-# file authored, per vespers.ts's vespersCapitulumForOverride fallback.
+# file authored, per vespers.ts's lookupPart (Vespers chapter, Lauds sibling) fallback.
 id: lauds-capitulum-all-saints-of-the-benedictine-order
 text:
   la: "Ecce ego et púeri mei quos dedit mihi Dóminus in signum, et in porténtum Israël a Dómino exercítuum, qui hábitat in monte Sion."

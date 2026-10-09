@@ -535,7 +535,7 @@ describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunda
     // Each nocturn's versicle is Common's own (getMatinsCommonOverride's
     // Common-of-a-Martyr-Bishop resolves via common-of-a-martyr.yml's
     // `aliases`); each nocturn's antiphon is his own SaintRecord.
-    // minorHoursCommon (common-of-a-martyr, live-verified identical
+    // common (common-of-a-martyr, live-verified identical
     // across the Bishop/non-Bishop split) own Terce/Sext/None antiphon --
     // real, verified, non-psalm-specific text, one distinct antiphon per
     // nocturn (user, 2026-08-27: "some antiphons from the feria and some
@@ -568,11 +568,11 @@ describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunda
     }
   });
 
-  it("uses ferial psalms with Common-of-an-Abbot's own Terce/Sext/None antiphons (St. Francis of Paola's own minorHoursCommon, distinct from his Matins-classification common) for a plain-Duplex weekday winner with no proper antiphon authored", () => {
+  it("uses ferial psalms with Common-of-an-Abbot's own Terce/Sext/None antiphons (St. Francis of Paola, whose single common supplies them) for a plain-Duplex weekday winner with no proper antiphon authored", () => {
     // St. Francis of Paola (Duplex, Common of a Confessor Not a Bishop
-    // for `common`, but `minorHoursCommon: common-of-an-abbot` -- his
-    // own P/T/S/N draw from the Abbot common instead, live-verified per
-    // his own saint-file comment) -- 2030-04-02, a Tuesday, confirmed
+    // for `common`; his P/T/S/N come from that same single common,
+    // identical in text to the Abbot's, live-verified per his own
+    // saint-file comment) -- 2030-04-02, a Tuesday, confirmed
     // clean (no Sunday collision, safely outside Holy Week/Easter octave
     // that year).
     const common = resolveOrdo('matins', '2030-04-02');
@@ -1095,7 +1095,7 @@ describe('resolveOrdo("matins", ...) invitatory antiphon doubling by rank', () =
     // used to be common-of-an-apostle (a mistaken placeholder -- he isn't
     // an apostle), which leaked into the Matins invitatory. Corrected to
     // common-of-a-martyr, matching the file's own already-correct
-    // `minorHoursCommon`.
+    // `common`.
     expect(openingAntiphonLatin('2026-08-29')).toContain('Regem Mártyrum Dóminum, * Veníte');
     expect(openingAntiphonLatin('2026-08-29')).not.toContain('Regem Apostolórum');
   });
