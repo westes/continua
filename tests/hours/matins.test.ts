@@ -778,14 +778,19 @@ describe('resolveOrdo("matins", ...) Assumption-octave hymn fallback (2026-08-22
     return hymn?.text.text.la;
   }
 
-  it("St. Bernard's own day (Aug 20, no hymn of his own authored) picks up the Assumption's octave hymn, not the plain ferial one", () => {
-    expect(hymnLatin('2026-08-20')).toContain('Surge');
+  it("a saint who wins an Assumption-octave day outright (St. Bernard Aug 20, St. Joachim Aug 16) takes his own Common's hymn, not the octave's -- the day's winner decides the hymn", () => {
+    expect(hymnLatin('2026-08-20')).toContain('Iste Conféssor');
+    expect(hymnLatin('2026-08-16')).toContain('Iste Conféssor');
   });
 
-  it('every other interior day governed by the Assumption octave (16, 19, 21 — none with a hymn of their own) also picks up the octave hymn', () => {
-    for (const date of ['2026-08-16', '2026-08-19', '2026-08-21']) {
+  it('interior octave days with no saint winning (19, 21) are governed by the Assumption and take its hymn', () => {
+    for (const date of ['2026-08-19', '2026-08-21']) {
       expect(hymnLatin(date)).toContain('Surge');
     }
+  });
+
+  it('Oct 9 (Ss. Dionysius and companions, several martyrs) takes the plural-martyrs hymn, not the single-martyr one', () => {
+    expect(hymnLatin('2026-10-09')).toContain('Ætérna Christi múnera');
   });
 
   it("Aug 17 is instead governed by St. Lawrence's own octave (its own elevated closing day, outranking the Assumption's ordinary day here) — resolves to the Common-of-a-Martyr Matins hymn (2026-09-10: this Common's own hymn file was authored, closing a real gap; previously fell to the plain ferial one instead)", () => {

@@ -102,6 +102,7 @@ import {
   resolveMinorHourAntiphonCandidates,
 } from './resolve-common';
 import { getSaintRecord } from '../calendar/feasts';
+import { sharedOfficeId } from './office-source';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { getBiblePlanReadings } from '../propers/bible-plan';
 import { getNocturnReadings, type NocturnReading } from '../propers/nocturn-readings';
@@ -495,64 +496,30 @@ function renderOverrideNocturn3(group: SundayNocturn, day: LiturgicalDay): Resol
   return group.groups ? sundayPsalmNocturn(group, day) : sundayCanticleNocturn(group, day);
 }
 
-/** The Matins hymn — a duplex-majus+ saint's or eligible named temporal
- * feast's own proper hymn (`matins-hymn-${overrideId}`, via the same
- * getOfficeOverrideId eligibility Lauds/Vespers' own resolveOffice uses),
- * when authored; else, on a day within an active octave whose own feast
- * has a hymn authored, that octave's hymn (`matins-hymn-${octave.id}`) —
- * see below; else the winner's Common-of-Saints hymn (`matins-hymn-
- * ${commonId}`, via `SaintRecord.common`, e.g. "Aeterna Christi munera"
- * for any Apostle with no proper hymn of his own — same category-lookup
- * pattern as matins-psalmody-overrides.ts's getMatinsPsalmodyOverride);
- * else falls to a *seasonal* default (Advent/Lent/Passiontide/
- * Paschaltide, none authored yet), else the plain year-round ferial hymn —
- * override > octave > Common > season > ferial. Common slots between
- * octave and season: an octave's own proper hymn is more specific than any
- * Common and must keep winning; a Common-of-Saints hymn is more specific
- * than a bare season and must win over it.
- *
- * Concrete motivating case (user, 2026-08-21/22): the Assumption's octave
- * (`Sancti/08-21bmv.txt`'s own `[Rule] ex Sancti/08-15`) genuinely keeps
- * the feast's own proper hymn all week — a claim this comment already
- * made before the octave tier below actually existed, which only ever
- * fired on Aug 15 itself (the one day `overrideId` literally *is*
- * `assumption`). Every other octave day (16, 17, 19, 20, 21, each with
- * its own named saint who has no Matins hymn of their own authored) fell
- * straight through to the plain ferial hymn instead. This is a deliberate
- * departure from the reference engine, which doesn't do this either
- * (Monastic 1617's own octave days have no `[Hymnus Matutinum]` override
- * at all, live-checked 2026-08-22) — not a restoration of source
- * behavior, just this project's own generous octave design (see
- * "Not a reconstruction" in the repo's design notes) applied to the hymn the
- * same way it's already applied to readings/commemorations elsewhere.
- *
- * Same two-job governing-octave gate as `resolveMatinsInvitatoryText`
- * (see its own doc comment for the full reasoning, 2026-09-13 fix): a raw
- * `resolveActiveOctave` bonus fallback when a real saint already won
- * outright (e.g. the Assumption-octave case this comment's own history
- * above is about), `octaveGoverningPrivilegedDay`'s own Sunday-aware gate
- * when nothing else contends and the octave tier would otherwise be
- * synthesizing the day's whole winner from scratch. */
+/** The Matins hymn, chosen by the day's office winner (`resolveOfficeWinner`,
+ * which already substitutes the governing feast on an octave's interior
+ * days -- so an octave day is just a day whose winner is that feast, with no
+ * separate octave tier): the winner's own proper hymn
+ * (`matins-hymn-${overrideId}`) when authored; else the winner's single
+ * Common's hymn (`matins-hymn-${SaintRecord.common}`, e.g. "Aeterna Christi
+ * munera" for any Apostle with no proper hymn of his own); else, for a
+ * ferial winner, the seasonal default (Advent/Lent/Passiontide/Paschaltide),
+ * else the plain year-round ferial hymn. Same winner -> proper -> Common ->
+ * ferial rule Lauds and Vespers follow. The one addition: a temporal-only
+ * octave (Ascension, Pentecost, ...) supplies its hymn when the winner (an
+ * Ember day, say) has none, as at Lauds. */
 function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
   // Rank-agnostic, like Lauds'/Vespers' own bundle (see resolve-common.ts's
   // getMinorHourOverrideId): a lower-rank saint's authored proper Matins
   // hymn (St. Martina, Semiduplex) is real content, not something only
   // duplex-majus+ feasts are entitled to.
   const overrideId = getMinorHourOverrideId(day);
-  if (overrideId) {
-    const proper = resolveCommon(`matins-hymn-${overrideId}`);
+  const sharedId = sharedOfficeId(overrideId);
+  for (const id of [overrideId, sharedId]) {
+    if (!id) continue;
+    const proper = resolveCommon(`matins-hymn-${id}`);
     if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
       return proper;
-    }
-  }
-  const octave =
-    day.winner.kind === 'sanctoral' || day.temporalCategory === 'ordinary-feria'
-      ? resolveActiveOctave(day.date)
-      : octaveGoverningPrivilegedDay(day);
-  if (octave) {
-    const octaveHymn = resolveCommon(`matins-hymn-${octave.id}`);
-    if (octaveHymn.status.la !== 'missing' || octaveHymn.status.en !== 'missing') {
-      return octaveHymn;
     }
   }
   // Common-of-Saints tier (2026-08): a winning saint with no proper hymn of
@@ -570,6 +537,18 @@ function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
     const commonHymn = resolveCommon(`matins-hymn-${commonId}`);
     if (commonHymn.status.la !== 'missing' || commonHymn.status.en !== 'missing') {
       return commonHymn;
+    }
+  }
+  // A temporal-feast-only octave (Ascension's, Pentecost's, Corpus Christi's,
+  // the Sacred Heart's -- no saint record, so resolveOfficeWinner can't
+  // substitute it) keeps its own hymn on days whose winner has none of its
+  // own (an Ember day inside the Pentecost octave): same tier Lauds'
+  // resolveLaudsHymn applies, after the winner's proper and Common.
+  const temporalOctave = resolveActiveOctave(day.date);
+  if (temporalOctave && !getSaintRecord(temporalOctave.id)) {
+    const octaveHymn = resolveCommon(`matins-hymn-${temporalOctave.id}`);
+    if (octaveHymn.status.la !== 'missing' || octaveHymn.status.en !== 'missing') {
+      return octaveHymn;
     }
   }
   // Septuagesima-tide checked directly by `day.season`, not folded into
