@@ -1,0 +1,17 @@
+# New file, 2026-09-15: the Common-category tier of Prime's Lectio
+# Brevis override (see hours/resolve-common.ts's getPrimeLectioBrevis) --
+# a saint with no proper Lectio Prima of her own, but who belongs to a
+# Common category, uses that category's own text rather than falling all
+# the way to the generic per-annum default. Sourced directly from
+# web/www/horas/Latin/Commune/C6a.txt's own [Lectio Prima] tag and its
+# English counterpart.
+id: prime-lectio-common-of-a-virgin
+text:
+  la: "O quam pulchra est casta generátio cum claritáte! Immortális est enim memória illíus, quóniam apud Deum nota est, et apud hómines."
+  en: "O how beautiful is the chaste generation with glory: for the memory thereof is immortal: because it is known both with God and with men."
+citation:
+  la: "Sap 4:1"
+  en: "Wis 4:1"
+status:
+  la: verified
+  en: verified

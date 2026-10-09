@@ -74,8 +74,6 @@ import {
   resolveTemporalId,
   monthWeekId,
   activeOctavesFor,
-  resolveActiveOctave,
-  octaveGoverningPrivilegedDay,
   isAtLeast,
 } from '../calendar';
 import { isInTriduum } from '../calendar/temporal';
@@ -90,7 +88,6 @@ import {
   resolveCommon,
   substituteDoxology,
   getDayCollect,
-  getOfficeOverrideId,
   resolveOfficeWinner,
   seasonalOfficeSuffix,
   verifiedText,
@@ -101,7 +98,7 @@ import {
   resolveMinorHourAntiphonCandidates,
 } from './resolve-common';
 import { getSaintRecord } from '../calendar/feasts';
-import { lookupPart } from './resolve-part';
+import { lookupPart, lookupPartTiered } from './resolve-part';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { getBiblePlanReadings } from '../propers/bible-plan';
 import { getNocturnReadings, type NocturnReading } from '../propers/nocturn-readings';
@@ -360,59 +357,21 @@ function psalmRefParts(refs: PsalmRef[]): ResolvedPart[] {
  * step applied to whichever tier's text wins here — never part of content
  * selection itself. */
 function resolveMatinsInvitatoryText(day: LiturgicalDay): ResolvedText {
-  const overrideId = getOfficeOverrideId(day);
-  if (overrideId) {
-    const proper = resolveCommon(`matins-invitatory-${overrideId}`);
-    if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
-      return proper;
-    }
-  }
-  const octave =
-    day.winner.kind === 'sanctoral' || day.temporalCategory === 'ordinary-feria'
-      ? resolveActiveOctave(day.date)
-      : octaveGoverningPrivilegedDay(day);
-  if (octave) {
-    const octaveInvitatory = resolveCommon(`matins-invitatory-${octave.id}`);
-    if (octaveInvitatory.status.la !== 'missing' || octaveInvitatory.status.en !== 'missing') {
-      return octaveInvitatory;
-    }
-  }
+  // The plain `{Antiphona ex Psalterio secundum tempora}` weekday cycle
+  // (Psalterium/Special/Matutinum Special.txt's "Invit Trid_" block); Monday's
+  // text lives at the unsuffixed `antiphon` key.
+  const seasonSuffix = seasonalOfficeSuffix(day.season);
+  const found = lookupPartTiered({
+    day,
+    hour: 'matins',
+    part: 'invitatory',
+    temporalKeys: [seasonSuffix, day.weekday === 'monday' ? 'antiphon' : `antiphon-${day.weekday}`].filter((k): k is string => !!k),
+  });
   const winner = resolveOfficeWinner(day);
   const saint = winner.kind === 'sanctoral' ? getSaintRecord(winner.id) : undefined;
-  const commonId = saint?.common;
-  if (commonId) {
-    const common = resolveCommon(`matins-invitatory-${commonId}`);
-    if (common.status.la !== 'missing' || common.status.en !== 'missing') {
-      // Common-of-a-Holy-Woman's own invitatory antiphon is a name
-      // template ("beátæ N..") -- the only Common invitatory antiphon
-      // currently in use that needs one (see matins-invitatory-common-
-      // of-a-holy-woman.yml's own header). Same substituteName idiom
-      // getDayCollect already uses for collectCommon/collectName.
-      return saint?.invitatoryName ? substituteName(common, saint.invitatoryName) : common;
-    }
-  }
-  const seasonSuffix = seasonalOfficeSuffix(day.season);
-  if (seasonSuffix) {
-    const seasonal = resolveCommon(`matins-invitatory-${seasonSuffix}`);
-    if (seasonal.status.la !== 'missing' || seasonal.status.en !== 'missing') {
-      return seasonal;
-    }
-  }
-  // The plain `{Antiphona ex Psalterio secundum tempora}` weekday cycle
-  // (Psalterium/Special/Matutinum Special.txt's "Invit Trid_" block) —
-  // same weekday-varying shape as `resolveMatinsHymn`'s own cycle, found
-  // missing the same way (user flagged 2026-09-06's Sunday rendering as
-  // suspect; it was silently reusing Monday's own text). Monday's text
-  // still lives at the unsuffixed `matins-invitatory-antiphon` id.
-  const weekdayInvitatoryIds: Partial<Record<Weekday, string>> = {
-    sunday: 'matins-invitatory-antiphon-sunday',
-    tuesday: 'matins-invitatory-antiphon-tuesday',
-    wednesday: 'matins-invitatory-antiphon-wednesday',
-    thursday: 'matins-invitatory-antiphon-thursday',
-    friday: 'matins-invitatory-antiphon-friday',
-    saturday: 'matins-invitatory-antiphon-saturday',
-  };
-  return resolveCommon(weekdayInvitatoryIds[day.weekday] ?? 'matins-invitatory-antiphon');
+  // Common-of-a-Holy-Woman's own invitatory antiphon is a name template
+  // ("beátæ N..") -- see matins-invitatory-common-of-a-holy-woman.yml.
+  return found && found.tier === 'common' && saint?.invitatoryName ? substituteName(found.text, saint.invitatoryName) : (found?.text ?? { text: {}, status: { la: 'missing', en: 'missing' } });
 }
 
 /** The Invitatory (Ps 94) — real practice interleaves its antiphon as a

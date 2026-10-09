@@ -1,0 +1,17 @@
+# New file, 2026-09-15: closes the seasonal-variant gap
+# `prime-lectio-brevis-per-annum.yml`'s own header already flagged, wrongly
+# attributed to "milestone 4" (that blocker was stale -- see the dated
+# TODO.md entry this sweep came out of; calendar/temporal.ts's resolveSeason
+# has been a complete, real implementation for a while). Sourced directly
+# from web/www/horas/Latin/Psalterium/Special/Prima Special.txt's own [Adv]
+# tag and its English counterpart.
+id: prime-lectio-adv
+text:
+  la: "Dómine, miserére nostri: te enim exspectávimus: esto brácchium nostrum in mane, et salus nostra in témpore tribulatiónis."
+  en: "O Lord, have mercy on us: for we have waited for thee: be thou our arm in the morning, and our salvation in the time of trouble."
+citation:
+  la: "Isa 33:2"
+  en: "Isa 33:2"
+status:
+  la: verified
+  en: verified

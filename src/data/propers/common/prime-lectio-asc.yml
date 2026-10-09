@@ -1,0 +1,17 @@
+# New file, 2026-09-15: closes the seasonal-variant gap
+# `prime-lectio-brevis-per-annum.yml`'s own header already flagged, wrongly
+# attributed to "milestone 4" (that blocker was stale -- see the dated
+# TODO.md entry this sweep came out of; calendar/temporal.ts's resolveSeason
+# has been a complete, real implementation for a while). Sourced directly
+# from web/www/horas/Latin/Psalterium/Special/Prima Special.txt's own [Asc]
+# tag and its English counterpart.
+id: prime-lectio-asc
+text:
+  la: "Viri Galilǽi, quid statis aspiciéntes in cælum? Hic Jesus, qui assúmptus est a vobis in cælum, sic véniet, quemádmodum vidístis eum eúntem in cælum."
+  en: "Ye men of Galilee, why stand you looking up to heaven? This Jesus who is taken up from you into heaven, shall so come, as you have seen him going into heaven."
+citation:
+  la: "Act. 1:11"
+  en: "Acts 1:11"
+status:
+  la: verified
+  en: verified

@@ -40,9 +40,11 @@ import {
  * and the Vespers file (`${id}-first`/`-second`) are tried before the base
  * file. Nothing authored anywhere returns `missing`: a gap shows as a gap.
  */
-export type PartKind = 'hymn' | 'chapter' | 'responsory' | 'versicle' | 'antiphon' | 'benedictus' | 'magnificat';
+export type PartKind = 'hymn' | 'chapter' | 'responsory' | 'versicle' | 'antiphon' | 'benedictus' | 'magnificat' | 'lectio' | 'invitatory';
 
 const FILE_PART: Record<PartKind, string> = {
+  lectio: 'lectio',
+  invitatory: 'invitatory',
   benedictus: 'benedictus-antiphon',
   magnificat: 'magnificat-antiphon',
   hymn: 'hymn',
@@ -79,6 +81,9 @@ export interface PartRequest {
   /** Inline default text (not a file) for a non-saint winner when nothing is
    * authored: the ferial Magnificat antiphons, the weekday antiphons. */
   fallback?: () => ResolvedText | undefined;
+  /** The slot falls to the season's text for a saint too, not only for a
+   * ferial day (Prime's short reading: the time's own when the feast has none). */
+  seasonalForSaints?: boolean;
 }
 
 /** Texts that win a slot on a calendar date whoever wins the day: key is
@@ -143,7 +148,7 @@ export function isFeastWinner(day: LiturgicalDay): boolean {
   return winner.kind === 'sanctoral' && winner.rank !== 'vigil';
 }
 
-export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignoreWinner, date, fallback }: PartRequest): FoundPart | undefined {
+export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignoreWinner, date, fallback, seasonalForSaints }: PartRequest): FoundPart | undefined {
   if (!ignoreWinner && isAbsentByDesign(day, hour, part)) {
     return undefined;
   }
@@ -181,7 +186,7 @@ export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignor
   // A temporal-only octave supplies its hymn alone: the Sunday within it
   // keeps its own chapter, responsory and versicle (Ascension's octave
   // Sunday's chapter genuinely differs from Ascension Day's).
-  const octave = part === 'hymn' ? resolveActiveOctave(day.date) : undefined;
+  const octave = part === 'hymn' || part === 'invitatory' ? resolveActiveOctave(day.date) : undefined;
   for (const id of ids.proper) {
     const found = find(hour, id, 'proper') ?? (sibling ? find(sibling, id, 'proper') : undefined);
     if (found) {
@@ -212,7 +217,7 @@ export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignor
   // A saint is not a ferial day (a Vigil is: it takes the weekday's text): if
   // nothing of its own or its Common is authored, that is a gap to show, not
   // a cue to borrow the weekday's text.
-  for (const key of isFeastWinner(day) && !ignoreWinner ? [] : temporalKeys) {
+  for (const key of isFeastWinner(day) && !ignoreWinner && !seasonalForSaints ? [] : temporalKeys) {
     const found = find(hour, key, 'temporal');
     if (found) {
       return found;

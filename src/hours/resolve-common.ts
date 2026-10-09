@@ -1347,22 +1347,19 @@ const PRIME_LECTIO_BREVIS_SEASON: Partial<Record<string, string>> = {
 
 export function getPrimeLectioBrevis(day: LiturgicalDay): ResolvedText {
   const seasonSuffix = PRIME_LECTIO_BREVIS_SEASON[day.season];
-  const seasonal = seasonSuffix ? resolveCommon(`prime-lectio-brevis-${seasonSuffix}`) : undefined;
-  const perAnnum = resolveCommon('prime-lectio-brevis-per-annum');
-
   const winner = resolveOfficeWinner(day);
-  if (winner.kind === 'temporal') {
-    // Christ the King (10-DU.txt) is the one temporal id with a real own
-    // [Lectio Prima] -- found in the same sweep, reached the same way as
-    // her other propers (getTemporalProperWithFallback).
-    const temporalProper = toResolvedText(getTemporalProperWithFallback(winner.id, 'lectio-prima', day));
-    return firstAvailable([temporalProper, seasonal], perAnnum);
-  }
-  const saint = getSaintRecord(winner.id);
-  const proper = saint?.propers ? resolveCommon(`${saint.propers}-lectio-prima`) : undefined;
-  const commonId = saint?.common;
-  const common = commonId ? resolveCommon(`prime-lectio-prima-${commonId}`) : undefined;
-  return firstAvailable([proper, common, seasonal], perAnnum);
+  // Christ the King (10-DU.txt) is the one temporal id with a real own
+  // [Lectio Prima]; a temporal winner is its own file, else the governing
+  // week's. A saint's own, then his Common's, then the time's own reading.
+  const temporal = winner.kind === 'temporal' ? [winner.id, resolveTemporalId(day.date)] : [];
+  const found = lookupPartTiered({
+    day,
+    hour: 'prime',
+    part: 'lectio',
+    seasonalForSaints: true,
+    temporalKeys: [...temporal, seasonSuffix, 'per-annum'].filter((k): k is string => !!k),
+  });
+  return found?.text ?? resolveCommon('prime-lectio-per-annum');
 }
 
 /**

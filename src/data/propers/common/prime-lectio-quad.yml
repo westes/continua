@@ -1,0 +1,17 @@
+# New file, 2026-09-15: closes the seasonal-variant gap
+# `prime-lectio-brevis-per-annum.yml`'s own header already flagged, wrongly
+# attributed to "milestone 4" (that blocker was stale -- see the dated
+# TODO.md entry this sweep came out of; calendar/temporal.ts's resolveSeason
+# has been a complete, real implementation for a while). Sourced directly
+# from web/www/horas/Latin/Psalterium/Special/Prima Special.txt's own [Quad]
+# tag and its English counterpart.
+id: prime-lectio-quad
+text:
+  la: "Quǽrite Dóminum dum inveníri potest: invocáte eum, dum prope est."
+  en: "Seek ye the Lord, while he may be found: call upon him, while he is near."
+citation:
+  la: "Isa 55:6"
+  en: "Isa 55:6"
+status:
+  la: verified
+  en: verified

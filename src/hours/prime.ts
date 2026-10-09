@@ -55,7 +55,7 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
       return [
         {
           kind: 'lesson',
-          text: part.textRef.id === 'prime-lectio-brevis-per-annum' ? getPrimeLectioBrevis(day) : resolveCommon(part.textRef.id),
+          text: part.textRef.id === 'prime-lectio-per-annum' ? getPrimeLectioBrevis(day) : resolveCommon(part.textRef.id),
           label: part.label,
         },
       ];
