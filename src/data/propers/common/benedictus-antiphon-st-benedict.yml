@@ -1,0 +1,17 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query (2025-03-21, winner outright) -- the Benedictus antiphon.
+# The source's own English page didn't render a translation (silently
+# duplicated the Latin, same gap as st-scholastica-antiphon.yml);
+# translated here in the same register as the rest of this project's
+# antiphons, so marked `draft` rather than `verified`. No embedded "*":
+# this feast is Duplex I. classis (double-or-higher), so its own query
+# shows the antiphon in full at both open and close with no separate
+# incipit marker, and there's no lower-rank saint sharing this text to
+# reconstruct the split from.
+id: benedictus-antiphon-st-benedict
+text:
+  la: "Sanctíssime Conféssor Dómini, Monachórum pater et dux, Benedícte, intercéde pro nostra omniúmque salúte."
+  en: "Most holy Confessor of the Lord, father and leader of monks, Benedict, intercede for our salvation and that of all."
+status:
+  la: verified
+  en: draft

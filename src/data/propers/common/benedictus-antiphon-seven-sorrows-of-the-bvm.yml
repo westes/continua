@@ -1,0 +1,18 @@
+# Lauds' Benedictus antiphon, read from web/www/horas/Latin/Sancti/
+# 09-15.txt's own [Ant 2] and its English counterpart -- corrected
+# 2026-09-14 (found while chasing a "ferial-antiphon"-looking Magnificat
+# antiphon report): this file previously held [Ant 1] instead, which is
+# this feast's own *First Vespers* Magnificat antiphon, not its
+# Benedictus -- same mis-tagging bug already found and fixed for the
+# Exaltation of the Holy Cross (TODO.md, 2026-09-13). [Ant 1] itself
+# ("Nolíte me consideráre * quod fusca sim...") is consequently unused
+# by this app (no First-vs-Second-Vespers distinction in
+# getMagnificatAntiphon), same as every other Common-category file here
+# only ever storing [Ant 2]/[Ant 3].
+id: benedictus-antiphon-seven-sorrows-of-the-bvm
+text:
+  la: "Veníte, * ascendámus ad montem Dómini, et vidéte, si est dolor, sicut dolor meus."
+  en: "Come ye, and let us go * up to the mountain of the Lord, and see if there be any sorrow like unto my sorrow."
+status:
+  la: verified
+  en: verified

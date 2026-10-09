@@ -292,11 +292,11 @@ function resolvePart(part: HourPart, day: LiturgicalDay, weekday: Weekday, varia
  * postcommunion as collect, and the double-Alleluia dismissal -- no opening
  * versicle, chapter, hymn, responsory, versicle, Preces or suffrages. */
 function holySaturdayVespersParts(day: LiturgicalDay): ResolvedPart[] {
-  const magnificat = resolveCommon('holy-saturday-vespers-magnificat-antiphon');
+  const magnificat = resolveCommon('magnificat-antiphon-holy-saturday-vespers');
   const opening = openingAntiphon(magnificat, resolveOfficeWinner(day));
   const { full } = splitNamedAntiphon(magnificat);
   return [
-    ...psalmParts({ psalms: [116], antiphon: resolveCommon('holy-saturday-vespers-antiphon').text }, day),
+    ...psalmParts({ psalms: [116], antiphon: resolveCommon('vespers-antiphon-holy-saturday').text }, day),
     { kind: 'canticle', canticleId: 'magnificat', text: resolveCommon('magnificat'), antiphon: opening },
     { kind: 'antiphon', text: full },
     { kind: 'preces', text: resolveCommon('holy-saturday-vespers-exaudi') },

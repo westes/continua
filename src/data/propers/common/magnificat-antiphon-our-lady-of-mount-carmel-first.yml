@@ -1,0 +1,15 @@
+# First Vespers Magnificat antiphon: web/www/horas/Latin/Sancti/07-16.txt's
+# own [Ant 1] (Commune/C11's [Ant 1] with "sanctam festivitátem" swapped for
+# "solémnem Commemoratiónem"). Second Vespers' [Ant 3] is
+# our-lady-of-mount-carmel-magnificat-antiphon.yml (the default); see
+# hours/resolve-common.ts's withVespersVariant. English/Sancti/07-16.txt has
+# no [Ant 1] of its own, so the English is English/Commune/C11.txt's [Ant 1]
+# with the same substitution applied by hand ("this thine holy Feast-day" ->
+# "this thy solemn Commemoration"), marked draft for that reason.
+id: magnificat-antiphon-our-lady-of-mount-carmel-first
+text:
+  la: "Sancta María, * succurre míseris, juva pusillánimes, réfove flébiles, ora pro pópulo, intérveni pro clero, intercéde pro devóto femíneo sexu: séntiant omnes tuum juvámen, quicúmque célebrant tuam solémnem Commemoratiónem."
+  en: "O Holy Mary, * be thou an help to the helpless, a strength to the fearful, a comfort to the sorrowful; pray for the people, plead for the clergy, make intercession for all women vowed to God: may all that are keeping this thy solemn Commemoration feel the might of thine assistance."
+status:
+  la: verified
+  en: draft

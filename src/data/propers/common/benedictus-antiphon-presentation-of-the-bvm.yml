@@ -1,0 +1,18 @@
+# Read directly from web/www/horas/Latin/Sancti/11-21.txt's own [Ant 1]
+# cross-reference and its English counterpart -- `@Commune/C10:Ant 2_`
+# (Common of the BVM on Saturday) with a feast-specific substitution
+# applied and computed by hand here: `s/Christo:.*/Christo, allelúja./`
+# (Latin) / `s/Christ;.*/Christ, alleluia./` (English) -- truncates the
+# Common's own antiphon after "...Jesu Christo"/"...Jesus Christ" and
+# appends ", allelúja."/", alleluia." instead of continuing with "ora
+# pro pópulo..."/"pray for the people...". Effectively proper to this
+# feast (the substitution isn't shared by any other saint using C10),
+# so authored as its own file via `propers` rather than as a reusable
+# Common template.
+id: benedictus-antiphon-presentation-of-the-bvm
+text:
+  la: "Beáta Dei Génetrix, María, * Virgo perpétua, templum Dómini, sacrárium Spíritus Sancti, sola sine exémplo placuísti Dómino nostro Jesu Christo, allelúja."
+  en: "O Blessed Mary, * Mother of God, Virgin for ever, temple of the Lord, sanctuary of the Holy Ghost, thou, without any example before thee, didst make thyself well-pleasing in the sight of our Lord Jesus Christ, alleluia."
+status:
+  la: verified
+  en: verified

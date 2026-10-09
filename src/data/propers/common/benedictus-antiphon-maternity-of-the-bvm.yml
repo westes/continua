@@ -1,0 +1,19 @@
+# Lauds' Benedictus antiphon, read from web/www/horas/Latin/Sancti/
+# 10-11.txt's own [Ant 2] and its English counterpart -- corrected
+# 2026-09-14: this file previously held [Ant 1] (this feast's own First
+# Vespers Magnificat antiphon, "Cum jucunditáte Maternitátem..."), the
+# same Ant1-for-Benedictus mis-tagging bug already found for several
+# other feasts this same day (TODO.md). [Ant 2] here is itself a
+# substitution rule, `@Commune/C11:Ant 1:s/sanctam festivitátem/
+# admirábilem Maternitátem/` -- Commune/C11.txt's own [Ant 1]
+# ("Sancta María, succúrre míseris...") with that one phrase swapped;
+# applied by hand below rather than left as an unresolved cross-
+# reference, matching the fully-substituted English already given in
+# the source's own English file.
+id: benedictus-antiphon-maternity-of-the-bvm
+text:
+  la: "Sancta María, * succúrre míseris, juva pusillánimes, réfove flébiles, ora pro pópulo, intérveni pro clero, intercéde pro devóto femíneo sexu: séntiant omnes tuum juvámen, quicúmque célebrant tuam admirábilem Maternitátem."
+  en: "Holy Mary * show thine aid to those in misery, strengthen the faint-hearted, comfort the sorrowful, pray for the people, mediate for the clergy, intercede for all women vowed to God; may all experience thy help who celebrate thy admirable Motherhood."
+status:
+  la: verified
+  en: verified

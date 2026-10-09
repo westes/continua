@@ -908,7 +908,7 @@ function saintVespersVersicle(saintId: string, variant: VespersVariant): Resolve
 function saintMagnificat(saintId: string, variant: VespersVariant): ResolvedText | undefined {
   const saint = getSaintRecord(saintId);
   const candidates = [
-    saint?.propers ? withVespersVariant(`${saint.propers}-magnificat-antiphon`, variant, resolveCommon(`${saint.propers}-magnificat-antiphon`)) : undefined,
+    saint?.propers ? withVespersVariant(`magnificat-antiphon-${saint.propers}`, variant, resolveCommon(`magnificat-antiphon-${saint.propers}`)) : undefined,
     saint?.common
       ? withVespersVariant(`magnificat-antiphon-${saint.common}`, variant, resolveCommon(`magnificat-antiphon-${saint.common}`))
       : undefined,
@@ -1298,7 +1298,7 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
     return toResolvedText(perDay ?? getTemporalProperWithFallback(winner.id, 'benedictus-antiphon', day));
   }
   const saint = getSaintRecord(winner.id);
-  const proper = saint?.propers ? withPaschaltideAlleluia(resolveCommon(`${saint.propers}-antiphon`), day) : undefined;
+  const proper = saint?.propers ? withPaschaltideAlleluia(resolveCommon(`benedictus-antiphon-${saint.propers}`), day) : undefined;
   const common = saint?.common
     ? withPaschaltideAlleluia(resolveCommon(`benedictus-antiphon-${saint.common}`), day)
     : undefined;
@@ -1446,10 +1446,10 @@ export function getMagnificatAntiphon(day: LiturgicalDay, vespersVariant?: Vespe
   // A Paschaltide-only Second Vespers text ("-paschaltide") wins first where
   // the source carries one (St. Benedict's Transitus; the Doctors' Common).
   const paschalSecond = PASCHALTIDE_SEASONS.has(day.season) && vespersVariant !== 'first';
-  const paschalProper = saint?.propers && paschalSecond ? resolveCommon(`${saint.propers}-magnificat-antiphon-paschaltide`) : undefined;
+  const paschalProper = saint?.propers && paschalSecond ? resolveCommon(`magnificat-antiphon-${saint.propers}-paschaltide`) : undefined;
   const properBase = saint?.propers
     ? withPaschaltideAlleluia(
-        withVespersVariant(`${saint.propers}-magnificat-antiphon`, vespersVariant, resolveCommon(`${saint.propers}-magnificat-antiphon`)),
+        withVespersVariant(`magnificat-antiphon-${saint.propers}`, vespersVariant, resolveCommon(`magnificat-antiphon-${saint.propers}`)),
         day,
       )
     : undefined;
