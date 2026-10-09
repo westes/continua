@@ -44,4 +44,11 @@ describe('lookupPart (hymn)', () => {
     const text = lookupPart({ day, hour: 'vespers', part: 'magnificat', temporalKeys: ['month-week-10-4'], variant: 'first' });
     expect(la(text)).toContain('Dabit illi');
   });
+
+  it("All Saints of the Benedictine Order (Nov 13) has its own Matins hymn, not a gap or a ferial one", () => {
+    const day = resolveDay('2026-11-13');
+    const text = lookupPart({ day, hour: 'matins', part: 'hymn', temporalKeys: ['ferial'] });
+    expect(la(text)).toBe('Jesu Salvátor sǽculi,');
+    expect(text.status.en).toBe('draft');
+  });
 });
