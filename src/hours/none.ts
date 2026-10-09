@@ -7,6 +7,7 @@ import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
 import { isInTriduum } from '../calendar/temporal';
 import { getHymnDoxologyOverrideId } from './hymn-doxology';
+import { lookupPart } from './resolve-part';
 import { applyFlexaMark } from './antiphon';
 import {
   resolveCommon,
@@ -14,7 +15,6 @@ import {
   openingAntiphon,
   resolveOfficeWinner,
   resolveMinorHourAntiphon,
-  resolveMinorHourChapter,
   splitNamedAntiphon,
   substituteDoxology,
   isFerialOrVigil,
@@ -42,7 +42,7 @@ function resolvePart(part: HourPart, day: LiturgicalDay): ResolvedPart[] {
       return [{ kind: 'hymn', text: substituteDoxology(hymn, overrideId ? resolveCommon(overrideId) : undefined) }];
     }
     case 'chapter':
-      return [{ kind: 'chapter', text: resolveMinorHourChapter('none', day, part.textRef.id) }];
+      return [{ kind: 'chapter', text: lookupPart({ day, hour: 'none', part: 'chapter', temporalKeys: [part.textRef.id.replace('none-capitulum-', '')] }) }];
     case 'day-collect':
       return [{ kind: 'prayer', text: getDayCollect(day) }];
     case 'preces':

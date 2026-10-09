@@ -1,3 +1,4 @@
+import { lookupPart } from '../../src/hours/resolve-part';
 import { describe, expect, it } from 'vitest';
 import { resolveDay } from '../../src/calendar';
 import {
@@ -5,7 +6,6 @@ import {
   getBenedictusAntiphon,
   getMagnificatAntiphon,
   resolveMinorHourAntiphon,
-  resolveMinorHourChapter,
   splitNamedAntiphon,
 } from '../../src/hours/resolve-common';
 import type { LiturgicalDay, Season } from '../../src/calendar/types';
@@ -190,7 +190,7 @@ describe('minorHoursCommon/benedictusCommon fallback (2026-08, the 94 propers:nu
     expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-anacletus' });
     expect(getBenedictusAntiphon(day).status).toEqual({ la: 'verified', en: 'verified' });
     expect(resolveMinorHourAntiphon('prime', day, {}).status.la).toBe('verified');
-    expect(resolveMinorHourChapter('terce', day, 'terce-capitulum-ferial').status.la).toBe('verified');
+    expect(lookupPart({ day, hour: 'terce', part: 'chapter', temporalKeys: ['ferial'] }).status.la).toBe('verified');
   });
 
   it('a Duplex-II-classis saint with no proper minor-hour content of its own still resolves via the Common, not just below-majus saints', () => {

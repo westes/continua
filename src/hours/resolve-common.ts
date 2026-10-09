@@ -1,4 +1,5 @@
-import type { ResolvedPart, ResolvedText } from './types';
+import type { HourId, ResolvedPart, ResolvedText } from './types';
+import { isFeastWinner, lookupPartTiered } from './resolve-part';
 import type { Commemoration, DayWinner, FeastClass, LiturgicalDay, Weekday } from '../calendar/types';
 import type { ProperText } from '../propers';
 import { getCommonProper, getTemporalProper } from '../propers';
@@ -717,7 +718,7 @@ function withPaschaltideAlleluia(resolved: ResolvedText, day: LiturgicalDay): Re
 // everywhere else in this codebase.
 const MINOR_HOUR_LAUDS_ANTIPHON_INDEX: Record<string, number> = { prime: 0, terce: 1, sext: 2, none: 4 };
 
-function deriveMinorHourAntiphonFromLauds(hourId: string, overrideId: string): ResolvedText | undefined {
+export function deriveMinorHourAntiphonFromLauds(hourId: string, overrideId: string): ResolvedText | undefined {
   const index = MINOR_HOUR_LAUDS_ANTIPHON_INDEX[hourId];
   if (index === undefined) {
     return undefined;
@@ -750,32 +751,17 @@ function deriveMinorHourAntiphonFromLauds(hourId: string, overrideId: string): R
  * seasonal change in Paschaltide — see `withPaschaltideAlleluia`. (The
  * derived-from-Lauds tier does not get that treatment — see TODO.md.)
  */
-/** A saint's single Common category (`SaintRecord.common`) -- the one id
- * every hour's Common-tier lookup (Prime/Terce/Sext/None, Lauds/Vespers
- * bundle, Benedictus/Magnificat, hymns) keys off. */
-function commonOf(saintId: string): string | undefined {
-  return getSaintRecord(saintId)?.common;
-}
-
-/** The proper -> derived -> paschal -> common candidate list itself, split
- * out from `resolveMinorHourAntiphon` so other callers needing this exact
- * chain (e.g. Matins' `ferialPsalmodyThreeNocturns`, which has its own
- * distinct "nothing authored" fallback instead of a weekday default) can
- * reuse it via `firstAvailable` rather than re-deriving proper/common ids
- * by hand. */
+/** A minor hour's antiphon for the day's winner through the one lookup
+ * (`lookupPartTiered`), or `undefined` when nothing is authored for it. The
+ * Paschaltide Alleluia is appended to a Common's or a derived antiphon, but
+ * not to a feast's own text or to a Paschaltide variant file. Shared with
+ * Matins' `ferialPsalmodyThreeNocturns`, which has its own fallback. */
 export function resolveMinorHourAntiphonCandidates(hourId: string, day: LiturgicalDay): (ResolvedText | undefined)[] {
-  const overrideId = getMinorHourOverrideId(day);
-  const sharedId = sharedOfficeId(overrideId);
-  const proper = overrideId
-    ? firstAvailable([resolveCommon(`${hourId}-antiphon-${overrideId}`)], sharedId ? resolveCommon(`${hourId}-antiphon-${sharedId}`) : resolveCommon(`${hourId}-antiphon-${overrideId}`))
-    : undefined;
-  const derivedRaw = overrideId ? (deriveMinorHourAntiphonFromLauds(hourId, overrideId) ?? (sharedId ? deriveMinorHourAntiphonFromLauds(hourId, sharedId) : undefined)) : undefined;
-  const derived = derivedRaw ? withPaschaltideAlleluia(derivedRaw, day) : undefined;
-  const commonId = overrideId ? commonOf(overrideId) : undefined;
-  const paschal =
-    commonId && PASCHALTIDE_SEASONS.has(day.season) ? resolveCommon(`${hourId}-antiphon-${commonId}-paschaltide`) : undefined;
-  const common = commonId ? withPaschaltideAlleluia(resolveCommon(`${hourId}-antiphon-${commonId}`), day) : undefined;
-  return [proper, derived, paschal, common];
+  const found = lookupPartTiered({ day, hour: hourId as HourId, part: 'antiphon', temporalKeys: [] });
+  if (!found) {
+    return [undefined];
+  }
+  return [found.tier === 'derived' || (found.tier === 'common' && !found.paschalFile) ? withPaschaltideAlleluia(found.text, day) : found.text];
 }
 
 export function resolveMinorHourAntiphon(
@@ -785,27 +771,10 @@ export function resolveMinorHourAntiphon(
 ): ResolvedText {
   // The plain weekday default (data/hours/{hour}-antiphons.yml) never
   // carries its own status field at all — always implicitly verified by
-  // the file's own live-checked convention, not a guess.
-  return firstAvailable(resolveMinorHourAntiphonCandidates(hourId, day), verifiedText(weekdayDefault));
-}
-
-/** Same idea as resolveMinorHourAntiphon, for the chapter
- * (`${hourId}-capitulum-${id}`, then `${hourId}-capitulum-
- * ${common}`, tried Paschaltide-variant-first the same way) —
- * falls back to `fallbackId` (the plain per-annum/per-weekday one already
- * in place for that hour) when nothing eligible is authored, either
- * proper or shared-Common. */
-export function resolveMinorHourChapter(hourId: string, day: LiturgicalDay, fallbackId: string): ResolvedText {
-  const overrideId = getMinorHourOverrideId(day);
-  const sharedId = sharedOfficeId(overrideId);
-  const proper = overrideId
-    ? firstAvailable([resolveCommon(`${hourId}-capitulum-${overrideId}`)], sharedId ? resolveCommon(`${hourId}-capitulum-${sharedId}`) : resolveCommon(`${hourId}-capitulum-${overrideId}`))
-    : undefined;
-  const commonId = overrideId ? commonOf(overrideId) : undefined;
-  const paschal =
-    commonId && PASCHALTIDE_SEASONS.has(day.season) ? resolveCommon(`${hourId}-capitulum-${commonId}-paschaltide`) : undefined;
-  const common = commonId ? resolveCommon(`${hourId}-capitulum-${commonId}`) : undefined;
-  return firstAvailable([proper, paschal, common], resolveCommon(fallbackId));
+  // the file's own live-checked convention, not a guess. A saint never
+  // borrows it.
+  const fallback = isFeastWinner(day) ? { text: {}, status: { la: 'missing', en: 'missing' } } as ResolvedText : verifiedText(weekdayDefault);
+  return firstAvailable(resolveMinorHourAntiphonCandidates(hourId, day), fallback);
 }
 
 /** Commons whose Lauds/Vespers chapter, responsory, hymn and versicle are

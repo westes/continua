@@ -6,6 +6,7 @@ import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { sharedOfficeId } from './office-source';
 import {
   COMMON_BUNDLE_ALIAS,
+  deriveMinorHourAntiphonFromLauds,
   PASCHALTIDE_SEASONS,
   getMinorHourOverrideId,
   resolveCommon,
@@ -37,13 +38,14 @@ import {
  * and the Vespers file (`${id}-first`/`-second`) are tried before the base
  * file. Nothing authored anywhere returns `missing`: a gap shows as a gap.
  */
-export type PartKind = 'hymn' | 'chapter' | 'responsory' | 'versicle';
+export type PartKind = 'hymn' | 'chapter' | 'responsory' | 'versicle' | 'antiphon';
 
 const FILE_PART: Record<PartKind, string> = {
   hymn: 'hymn',
   chapter: 'capitulum',
   responsory: 'responsory',
   versicle: 'versicle',
+  antiphon: 'antiphon',
 };
 
 /** A winner-keyed Vespers chapter reuses the Lauds file when it has none of
@@ -75,18 +77,18 @@ function isReal(t: ResolvedText): boolean {
   return t.status.la !== 'missing' || t.status.en !== 'missing';
 }
 
-/** The winner-keyed ids to try, most specific first. */
-function winnerIds(day: LiturgicalDay): string[] {
+/** The winner-keyed ids to try: the feast's own (and its shared office's),
+ * then its Common's. */
+function winnerIds(day: LiturgicalDay): { proper: string[]; common: string[] } {
   const overrideId = getMinorHourOverrideId(day);
   if (!overrideId) {
-    return [];
+    return { proper: [], common: [] };
   }
-  const ids = [overrideId, sharedOfficeId(overrideId)];
   const commonId = getSaintRecord(overrideId)?.common;
-  if (commonId) {
-    ids.push(commonId, COMMON_BUNDLE_ALIAS[commonId]);
-  }
-  return ids.filter((id): id is string => !!id);
+  return {
+    proper: [overrideId, sharedOfficeId(overrideId)].filter((id): id is string => !!id),
+    common: [commonId, commonId ? COMMON_BUNDLE_ALIAS[commonId] : undefined].filter((id): id is string => !!id),
+  };
 }
 
 /** Whether the day's winner deliberately has no such part (`noParts` in its
@@ -98,47 +100,86 @@ export function isAbsentByDesign(day: LiturgicalDay, hour: HourId, part: PartKin
   return !!noParts?.includes(`${hour}-${FILE_PART[part]}`);
 }
 
-export function lookupPart({ day, hour, part, temporalKeys, variant, ignoreWinner }: PartRequest): ResolvedText {
+/** Where a looked-up text came from: the feast's own file (or its shared
+ * office's, or a temporal octave's), the antiphon derived from its Lauds set,
+ * its Common's file, or the hour's temporal key. `paschalFile` is true when
+ * the text is a Paschaltide variant file, which needs no further Alleluia. */
+export type PartTier = 'proper' | 'derived' | 'common' | 'temporal';
+
+export interface FoundPart {
+  text: ResolvedText;
+  tier: PartTier;
+  paschalFile: boolean;
+}
+
+export function lookupPart(request: PartRequest): ResolvedText {
+  return lookupPartTiered(request)?.text ?? MISSING;
+}
+
+/** `isFeast`: a saint (other than a Vigil) never takes the weekday's text. */
+export function isFeastWinner(day: LiturgicalDay): boolean {
+  const winner = resolveOfficeWinner(day);
+  return winner.kind === 'sanctoral' && winner.rank !== 'vigil';
+}
+
+export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignoreWinner }: PartRequest): FoundPart | undefined {
   if (!ignoreWinner && isAbsentByDesign(day, hour, part)) {
-    return MISSING;
+    return undefined;
   }
   const paschal = PASCHALTIDE_SEASONS.has(day.season);
   const sibling = WINNER_SIBLING_HOUR[hour]?.[part];
-  const find = (h: HourId, id: string): ResolvedText | undefined => {
+  const find = (h: HourId, id: string, tier: PartTier): FoundPart | undefined => {
     const prefix = `${h}-${FILE_PART[part]}-`;
     const candidates = [paschal ? `${id}-paschaltide` : undefined, variant ? `${id}-${variant}` : undefined, id];
     for (const candidate of candidates) {
       if (!candidate) continue;
       const text = resolveCommon(prefix + candidate);
       if (isReal(text)) {
-        return text;
+        return { text, tier, paschalFile: candidate.endsWith('-paschaltide') };
       }
     }
     return undefined;
   };
-  const winnerKeyed = ignoreWinner ? [] : [...winnerIds(day)];
+  const ids = ignoreWinner ? { proper: [], common: [] } : winnerIds(day);
   // A temporal-only octave supplies its hymn alone: the Sunday within it
   // keeps its own chapter, responsory and versicle (Ascension's octave
   // Sunday's chapter genuinely differs from Ascension Day's).
   const octave = part === 'hymn' ? resolveActiveOctave(day.date) : undefined;
+  for (const id of ids.proper) {
+    const found = find(hour, id, 'proper') ?? (sibling ? find(sibling, id, 'proper') : undefined);
+    if (found) {
+      return found;
+    }
+  }
+  // A minor-hour antiphon can be derived from the feast's own Lauds set.
+  if (part === 'antiphon') {
+    for (const id of ids.proper) {
+      const derived = deriveMinorHourAntiphonFromLauds(hour, id);
+      if (derived) {
+        return { text: derived, tier: 'derived', paschalFile: false };
+      }
+    }
+  }
+  for (const id of ids.common) {
+    const found = find(hour, id, 'common') ?? (sibling ? find(sibling, id, 'common') : undefined);
+    if (found) {
+      return found;
+    }
+  }
   if (octave && !getSaintRecord(octave.id)) {
-    winnerKeyed.push(octave.id);
-  }
-  for (const id of winnerKeyed) {
-    const found = find(hour, id) ?? (sibling ? find(sibling, id) : undefined);
+    const found = find(hour, octave.id, 'proper');
     if (found) {
       return found;
     }
   }
-  // A saint is not a ferial day (a Vigil is: it takes the weekday's text): if nothing of its own or its Common is authored, that is a
-  // gap to show, not a cue to borrow the weekday's text.
-  const winner = resolveOfficeWinner(day);
-  const isFeast = winner.kind === 'sanctoral' && winner.rank !== 'vigil';
-  for (const key of isFeast && !ignoreWinner ? [] : temporalKeys) {
-    const found = find(hour, key);
+  // A saint is not a ferial day (a Vigil is: it takes the weekday's text): if
+  // nothing of its own or its Common is authored, that is a gap to show, not
+  // a cue to borrow the weekday's text.
+  for (const key of isFeastWinner(day) && !ignoreWinner ? [] : temporalKeys) {
+    const found = find(hour, key, 'temporal');
     if (found) {
       return found;
     }
   }
-  return MISSING;
+  return undefined;
 }
