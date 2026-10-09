@@ -39,6 +39,9 @@ export interface SaintRecord {
   rank: FeastClass;
   common: string;
   propers: string | null;
+  /** Parts this feast deliberately has none of (`lauds-responsory`, ...),
+   * so the lookup returns nothing instead of inheriting the Common's. */
+  noParts?: string[];
   /**
    * Fallback id for the day collect (`getDayCollect`) when this saint has
    * no proper collect of their own (`propers` may still be non-null —

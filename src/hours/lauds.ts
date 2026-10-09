@@ -1,7 +1,7 @@
 import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart, ResolvedText } from './types';
 import type { LiturgicalDay, Weekday } from '../calendar/types';
 import { resolveDay } from '../calendar';
-import { lookupPart } from './resolve-part';
+import { isAbsentByDesign, lookupPart } from './resolve-part';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getCanticle, type CanticleVerse } from './lauds-canticles';
@@ -26,7 +26,6 @@ import {
   getPsalmodyProperOverrideId,
   getPsalmodyNumbersOverrideId,
   resolveResponsory,
-  resolveOfficeBundle,
   resolveSuffrages,
   isPaschaltide,
   overlayProperAntiphons,
@@ -126,14 +125,8 @@ function mergeFerialNumbersWithProperAntiphons(ferial: PsalmodyBlock, proper: La
 // Mon-Fri share one capitulum verbatim (confirmed against the live engine
 // — see lauds-capitulum-ferial.yml); Sunday and Saturday each have their
 // own.
-function capitulumId(weekday: Weekday): string {
-  if (weekday === 'sunday') {
-    return 'lauds-capitulum-sunday';
-  }
-  if (weekday === 'saturday') {
-    return 'lauds-capitulum-saturday';
-  }
-  return 'lauds-capitulum-ferial';
+function capitulumKey(weekday: Weekday): string {
+  return weekday === 'sunday' || weekday === 'saturday' ? weekday : 'ferial';
 }
 
 function psalmParts(numbers: number[], antiphon: BilingualText, opening: ResolvedText): ResolvedPart[] {
@@ -286,7 +279,7 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
 /** Any sanctoral winner's (or named-temporal feast's) own capitulum/
  * responsory/hymn/versicle (data/propers/common/lauds-{part}-${id}.yml),
  * else their Common's (`${part}-${common}`), when authored — see
- * resolve-common.ts's resolveOfficeBundle for the eligibility/fallback
+ * resolve-part.ts's lookupPart for the eligibility/fallback
  * rule (deliberately rank-agnostic as of 2026-08-25: a simplex feast's
  * Common chapter/hymn is real content, not gated behind duplex-majus+
  * like the psalmody override above is). Falls to a *seasonal* default
@@ -309,31 +302,20 @@ function resolveOffice(day: LiturgicalDay): ResolvedPart[] {
 function resolveOfficeParts(day: LiturgicalDay): ResolvedPart[] {
   const hymnDoxologyOverrideId = getHymnDoxologyOverrideId(day);
   const hymnDoxologyOverride = hymnDoxologyOverrideId ? resolveCommon(hymnDoxologyOverrideId) : undefined;
-  const bundle = resolveOfficeBundle('lauds', day);
-  if (bundle) {
-    const parts: ResolvedPart[] = [{ kind: 'chapter', text: bundle.chapter }];
-    // The Sacred Heart's own Lauds genuinely has no responsory at all in
-    // the source (live-verified, Divino Afflatu 1954, 2026-06-12: straight
-    // from chapter to hymn, "Capitulum Hymnus Versus" with no
-    // "Responsorium" in between) — an intentionally missing part, not an
-    // unauthored one, so omitted from the page entirely rather than
-    // rendering an empty section.
-    if (bundle.responsory.status.la !== 'missing' || bundle.responsory.status.en !== 'missing') {
-      parts.push({ kind: 'responsory', text: bundle.responsory });
-    }
-    parts.push(
-      { kind: 'hymn', text: substituteDoxology(lookupPart({ day, hour: 'lauds', part: 'hymn', temporalKeys: [seasonalOfficeSuffix(day.season) ?? day.weekday] }), hymnDoxologyOverride) },
-      { kind: 'versicle', text: bundle.versicle },
-    );
-    return parts;
-  }
   const seasonSuffix = seasonalOfficeSuffix(day.season);
   const key = seasonSuffix ?? day.weekday;
+  const lookup = (part: 'chapter' | 'responsory' | 'hymn' | 'versicle', temporalKey: string) =>
+    lookupPart({ day, hour: 'lauds', part, temporalKeys: [temporalKey] });
+  // A feast can have no responsory on purpose (the Sacred Heart's Lauds runs
+  // straight from chapter to hymn): omitted, not rendered as an empty section.
+  const responsory: ResolvedPart[] = isAbsentByDesign(day, 'lauds', 'responsory')
+    ? []
+    : [{ kind: 'responsory', text: resolveResponsory(lookup('responsory', key), day) }];
   return [
-    { kind: 'chapter', text: resolveCommon(seasonSuffix ? `lauds-capitulum-${key}` : capitulumId(day.weekday)) },
-    { kind: 'responsory', text: resolveResponsory(resolveCommon(`lauds-responsory-${key}`), day) },
-    { kind: 'hymn', text: substituteDoxology(lookupPart({ day, hour: 'lauds', part: 'hymn', temporalKeys: [key] }), hymnDoxologyOverride) },
-    { kind: 'versicle', text: resolveCommon(`lauds-versicle-${key}`) },
+    { kind: 'chapter', text: lookup('chapter', seasonSuffix ?? capitulumKey(day.weekday)) },
+    ...responsory,
+    { kind: 'hymn', text: substituteDoxology(lookup('hymn', key), hymnDoxologyOverride) },
+    { kind: 'versicle', text: lookup('versicle', key) },
   ];
 }
 

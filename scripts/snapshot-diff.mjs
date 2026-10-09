@@ -36,14 +36,23 @@ for (const key of Object.keys(before)) {
   let kinds = new Set();
   if (before[key].startsWith('ERR') || after[key].startsWith('ERR')) kinds.add('ERROR');
   else {
-    const fb = flat(JSON.parse(before[key]));
-    const fa = flat(JSON.parse(after[key]));
-    for (let i = 0; i < Math.max(fb.length, fa.length); i++) {
-      const x = fb[i], y = fa[i];
-      if (JSON.stringify(x) === JSON.stringify(y)) continue;
-      const kind = (x ?? y)[0];
-      kinds.add(kind);
-      if (kind === detailKind) console.log(`${key}\n   before: ${x ? first(x[1]) : '-'}\n   after:  ${y ? first(y[1]) : '-'}`);
+    // Align per kind (the nth hymn with the nth hymn) so one part appearing or
+    // disappearing doesn't read as every later part changing.
+    const group = (list) => {
+      const m = new Map();
+      for (const e of list) m.set(e[0], [...(m.get(e[0]) ?? []), e]);
+      return m;
+    };
+    const gb = group(flat(JSON.parse(before[key])));
+    const ga = group(flat(JSON.parse(after[key])));
+    for (const kind of new Set([...gb.keys(), ...ga.keys()])) {
+      const lb = gb.get(kind) ?? [], la = ga.get(kind) ?? [];
+      for (let i = 0; i < Math.max(lb.length, la.length); i++) {
+        const x = lb[i], y = la[i];
+        if (JSON.stringify(x) === JSON.stringify(y)) continue;
+        kinds.add(!x ? `+${kind}` : !y ? `-${kind}` : kind);
+        if (kind === detailKind) console.log(`${key}\n   before: ${x ? first(x[1]) : '-'}\n   after:  ${y ? first(y[1]) : '-'}`);
+      }
     }
   }
   if (!byDay.has(day)) byDay.set(day, []);

@@ -1,9 +1,9 @@
-import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart, ResolvedText } from './types';
+import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart } from './types';
 import type { LiturgicalDay, Weekday } from '../calendar/types';
 import { resolveEveningDay } from '../calendar/vespers';
 import { weekdayOf } from '../calendar/weekday';
 import { resolveDay } from '../calendar';
-import { lookupPart } from './resolve-part';
+import { isAbsentByDesign, lookupPart } from './resolve-part';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getOpeningVersicleId } from './opening-versicle';
@@ -27,8 +27,6 @@ import {
   getPsalmodyProperOverrideId,
   getPsalmodyNumbersOverrideId,
   resolveResponsory,
-  resolveOfficeBundle,
-  withVespersVariant,
   type VespersVariant,
   resolveSuffrages,
   isPaschaltide,
@@ -150,37 +148,16 @@ function resolvePsalmody(day: LiturgicalDay, weekday: Weekday, variant: VespersV
   return wd.groups.flatMap((group) => psalmParts(group, day));
 }
 
-function vespersCapitulumId(weekday: Weekday): string {
-  return weekday === 'saturday' ? 'vespers-capitulum-saturday' : 'vespers-capitulum-sunday-ferial';
+function vespersCapitulumKey(weekday: Weekday): string {
+  return weekday === 'saturday' ? 'saturday' : 'sunday-ferial';
 }
 
-function vespersResponsoryId(weekday: Weekday): string {
-  if (weekday === 'sunday') return 'vespers-responsory-sunday';
-  if (weekday === 'saturday') return 'vespers-responsory-saturday';
-  return 'vespers-responsory-ferial';
+function vespersResponsoryKey(weekday: Weekday): string {
+  return weekday === 'sunday' || weekday === 'saturday' ? weekday : 'ferial';
 }
 
-function vespersVersicleId(weekday: Weekday): string {
-  return weekday === 'saturday' ? 'vespers-versicle-saturday' : 'vespers-versicle-sunday-ferial';
-}
-
-/** A per-feast override's chapter: `vespers-capitulum-${id}` when
- * authored, else the already-authored `lauds-capitulum-${id}` directly —
- * live-verified across all 30 duplex-majus+ saints/named-temporal ids
- * with a Vespers office override (2026-08 sweep, `command=prayVespera`,
- * each saint's own already-established clean date): the capitulum is
- * byte-identical between Lauds and Vespers for every one of them, a real
- * Monastic-rite fact (the reading doesn't change between the two hours,
- * only the responsory/hymn/versicle do), not a coincidence specific to
- * the ones checked. So no `vespers-capitulum-<id>.yml` files were
- * authored at all — this falls straight through to the Lauds one instead
- * of duplicating identical content into a second file per id. */
-function vespersCapitulumForOverride(id: string, variant?: VespersVariant): ResolvedText {
-  const proper = withVespersVariant(`vespers-capitulum-${id}`, variant, resolveCommon(`vespers-capitulum-${id}`));
-  if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
-    return proper;
-  }
-  return resolveCommon(`lauds-capitulum-${id}`);
+function vespersVersicleKey(weekday: Weekday): string {
+  return weekday === 'saturday' ? 'saturday' : 'sunday-ferial';
 }
 
 /** The chapter/responsory/hymn/versicle bundle following the psalmody —
@@ -188,7 +165,7 @@ function vespersCapitulumForOverride(id: string, variant?: VespersVariant): Reso
  * winner's (or named-temporal feast's) own proper bundle (chapter via
  * vespersCapitulumForOverride above, responsory/hymn/versicle via
  * `vespers-{part}-${id}`), else their Common's bundle, wins first when
- * authored — resolve-common.ts's resolveOfficeBundle, deliberately
+ * authored — resolve-part.ts's lookupPart, deliberately
  * rank-agnostic (2026-08-25: matches Lauds' identical change, ditto for
  * the same reason — a simplex feast's Common office is real content),
  * not gated at duplex-majus+ the way this hour's lack of its own
@@ -219,46 +196,20 @@ function resolveOfficeParts(day: LiturgicalDay, weekday: Weekday, variant: Vespe
   // with only the Magnificat -- and, for the seasonal Sundays with a proper
   // chapter, the chapter -- belonging to the Sunday.
   const saturdayEvening = variant === 'first' && day.weekday === 'sunday' && weekday === 'saturday';
-  const seasonalSunday = isSeasonalProperSunday(day);
+  const ferialEvening = saturdayEvening && isSeasonalProperSunday(day);
   const seasonSuffix = seasonalOfficeSuffix(day.season);
   const officeWeekday = saturdayEvening ? weekday : day.weekday;
   const key = seasonSuffix ?? officeWeekday;
-  // First Vespers of a seasonal proper Sunday takes the Saturday's own (or
-  // the season's) hymn, not the Sunday's.
-  const hymn = substituteDoxology(
-    lookupPart({ day, hour: 'vespers', part: 'hymn', temporalKeys: [key], variant, ignoreWinner: saturdayEvening && seasonalSunday }),
-    hymnDoxologyOverride,
-  );
-  const bundle = saturdayEvening && seasonalSunday ? undefined : resolveOfficeBundle('vespers', day, (id) => vespersCapitulumForOverride(id, variant), variant);
-  if (bundle) {
-    const parts: ResolvedPart[] = [{ kind: 'chapter', text: bundle.chapter }];
-    // The Sacred Heart's own Vespers genuinely has no responsory at all in
-    // the source, same as its own Lauds — see lauds.ts's identical check.
-    if (bundle.responsory.status.la !== 'missing' || bundle.responsory.status.en !== 'missing') {
-      parts.push({ kind: 'responsory', text: bundle.responsory });
-    }
-    parts.push(
-      { kind: 'hymn', text: hymn },
-      { kind: 'versicle', text: bundle.versicle },
-    );
-    return parts;
-  }
-  const ownChapter = saturdayEvening && seasonalSunday ? vespersCapitulumForOverride(day.winner.id, variant) : undefined;
-  const chapter =
-    ownChapter && (ownChapter.status.la !== 'missing' || ownChapter.status.en !== 'missing')
-      ? ownChapter
-      : resolveCommon(seasonSuffix ? `vespers-capitulum-${key}` : vespersCapitulumId(officeWeekday));
+  const lookup = (part: 'chapter' | 'responsory' | 'hymn' | 'versicle', temporalKey: string, ignoreWinner: boolean) =>
+    lookupPart({ day, hour: 'vespers', part, temporalKeys: [temporalKey], variant, ignoreWinner });
+  const responsory: ResolvedPart[] = isAbsentByDesign(day, 'vespers', 'responsory')
+    ? []
+    : [{ kind: 'responsory', text: resolveResponsory(lookup('responsory', seasonSuffix ?? vespersResponsoryKey(officeWeekday), ferialEvening), day) }];
   return [
-    { kind: 'chapter', text: chapter },
-    {
-      kind: 'responsory',
-      text: resolveResponsory(resolveCommon(seasonSuffix ? `vespers-responsory-${key}` : vespersResponsoryId(officeWeekday)), day),
-    },
-    { kind: 'hymn', text: hymn },
-    {
-      kind: 'versicle',
-      text: resolveCommon(seasonSuffix ? `vespers-versicle-${key}` : vespersVersicleId(officeWeekday)),
-    },
+    { kind: 'chapter', text: lookup('chapter', seasonSuffix ?? vespersCapitulumKey(officeWeekday), false) },
+    ...responsory,
+    { kind: 'hymn', text: substituteDoxology(lookup('hymn', key, ferialEvening), hymnDoxologyOverride) },
+    { kind: 'versicle', text: lookup('versicle', seasonSuffix ?? vespersVersicleKey(officeWeekday), ferialEvening) },
   ];
 }
 

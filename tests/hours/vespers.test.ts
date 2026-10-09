@@ -415,7 +415,7 @@ describe('resolveOrdo("vespers", ...)', () => {
   });
 
   it("uses Common-of-Several-Martyrs' real office bundle on a Simplex saint's own day (Ss. Faustinus and Jovita)", () => {
-    // Bundle eligibility is rank-agnostic (resolveOfficeBundle). Live-verified
+    // Bundle eligibility is rank-agnostic (lookupPart). Live-verified
     // against Divinum Officium (Monastic Tridentinum 1617) votive=C3 -- see
     // vespers-hymn-common-of-several-martyrs.yml's header. Ss. Placid
     // (Oct 5, Simplex) no longer shows it: St. Bruno's first Vespers

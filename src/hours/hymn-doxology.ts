@@ -48,7 +48,7 @@ function isAssumptionOctaveWindow(isoDate: string): boolean {
  * *Common* level instead of the feast's own — e.g. every Common of the BVM
  * sets `Doxology=Nat`, inherited by any saint using that Common regardless
  * of the saint's own id (`byCommonId`, keyed by `SaintRecord.common`,
- * mirroring resolveOfficeBundle's own `getSaintRecord(id)?.common`
+ * mirroring lookupPart's own `getSaintRecord(id)?.common`
  * fallback pattern in resolve-common.ts); (3) the Assumption-octave date
  * window above; (4) the season; (5) no override — the hymn's own marker-
  * delimited default stands.

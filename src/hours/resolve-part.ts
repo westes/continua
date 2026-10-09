@@ -2,12 +2,14 @@ import type { HourId, ResolvedText } from './types';
 import type { LiturgicalDay } from '../calendar/types';
 import { getSaintRecord } from '../calendar/feasts';
 import { resolveActiveOctave } from '../calendar';
+import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { sharedOfficeId } from './office-source';
 import {
   COMMON_BUNDLE_ALIAS,
   PASCHALTIDE_SEASONS,
   getMinorHourOverrideId,
   resolveCommon,
+  resolveOfficeWinner,
   type VespersVariant,
 } from './resolve-common';
 
@@ -25,18 +27,32 @@ import {
  * 1. the winner's own file, then the file of the feast it shares an office
  *    with (`sharedOfficeId`, e.g. the Octave Day of All Saints -> All Saints);
  * 2. for a saint, its single `common` (then that Common's bundle alias);
- * 3. a temporal-only octave's own file (Ascension's, Pentecost's: no saint
- *    record, so winner resolution can't substitute it);
- * 4. the hour's temporal keys (season, weekday...), most to least specific --
- *    what a ferial or Sunday winner is made of.
+ * 3. for a hymn, a temporal-only octave's own file (Ascension's, Pentecost's:
+ *    no saint record, so winner resolution can't substitute it);
+ * 4. for a ferial or Sunday winner, the hour's temporal keys (season,
+ *    weekday...), most to least specific. A saint or named feast never takes
+ *    these: with nothing authored it returns `missing`.
  *
  * At every step the Paschaltide file (`${id}-paschaltide`, in Paschaltide)
  * and the Vespers file (`${id}-first`/`-second`) are tried before the base
  * file. Nothing authored anywhere returns `missing`: a gap shows as a gap.
  */
-export type PartKind = 'hymn';
+export type PartKind = 'hymn' | 'chapter' | 'responsory' | 'versicle';
 
-const FILE_PART: Record<PartKind, string> = { hymn: 'hymn' };
+const FILE_PART: Record<PartKind, string> = {
+  hymn: 'hymn',
+  chapter: 'capitulum',
+  responsory: 'responsory',
+  versicle: 'versicle',
+};
+
+/** A winner-keyed Vespers chapter reuses the Lauds file when it has none of
+ * its own: the capitulum is byte-identical between the two hours for every
+ * feast with an office of its own (live-verified, 2026-08), so no
+ * `vespers-capitulum-<id>.yml` was authored for them. */
+const WINNER_SIBLING_HOUR: Partial<Record<HourId, Partial<Record<PartKind, HourId>>>> = {
+  vespers: { chapter: 'lauds' },
+};
 
 export interface PartRequest {
   day: LiturgicalDay;
@@ -73,16 +89,23 @@ function winnerIds(day: LiturgicalDay): string[] {
   return ids.filter((id): id is string => !!id);
 }
 
+/** Whether the day's winner deliberately has no such part (`noParts` in its
+ * feast record) -- as opposed to simply not having it authored yet. */
+export function isAbsentByDesign(day: LiturgicalDay, hour: HourId, part: PartKind): boolean {
+  const winner = resolveOfficeWinner(day);
+  const noParts =
+    winner.kind === 'sanctoral' ? getSaintRecord(winner.id)?.noParts : getTemporalFeastRecord(winner.id)?.noParts;
+  return !!noParts?.includes(`${hour}-${FILE_PART[part]}`);
+}
+
 export function lookupPart({ day, hour, part, temporalKeys, variant, ignoreWinner }: PartRequest): ResolvedText {
-  const prefix = `${hour}-${FILE_PART[part]}-`;
-  const ids = ignoreWinner ? [] : [...winnerIds(day)];
-  const octave = resolveActiveOctave(day.date);
-  if (octave && !getSaintRecord(octave.id)) {
-    ids.push(octave.id);
+  if (!ignoreWinner && isAbsentByDesign(day, hour, part)) {
+    return MISSING;
   }
-  ids.push(...temporalKeys);
   const paschal = PASCHALTIDE_SEASONS.has(day.season);
-  for (const id of ids) {
+  const sibling = WINNER_SIBLING_HOUR[hour]?.[part];
+  const find = (h: HourId, id: string): ResolvedText | undefined => {
+    const prefix = `${h}-${FILE_PART[part]}-`;
     const candidates = [paschal ? `${id}-paschaltide` : undefined, variant ? `${id}-${variant}` : undefined, id];
     for (const candidate of candidates) {
       if (!candidate) continue;
@@ -90,6 +113,31 @@ export function lookupPart({ day, hour, part, temporalKeys, variant, ignoreWinne
       if (isReal(text)) {
         return text;
       }
+    }
+    return undefined;
+  };
+  const winnerKeyed = ignoreWinner ? [] : [...winnerIds(day)];
+  // A temporal-only octave supplies its hymn alone: the Sunday within it
+  // keeps its own chapter, responsory and versicle (Ascension's octave
+  // Sunday's chapter genuinely differs from Ascension Day's).
+  const octave = part === 'hymn' ? resolveActiveOctave(day.date) : undefined;
+  if (octave && !getSaintRecord(octave.id)) {
+    winnerKeyed.push(octave.id);
+  }
+  for (const id of winnerKeyed) {
+    const found = find(hour, id) ?? (sibling ? find(sibling, id) : undefined);
+    if (found) {
+      return found;
+    }
+  }
+  // A saint is not a ferial day (a Vigil is: it takes the weekday's text): if nothing of its own or its Common is authored, that is a
+  // gap to show, not a cue to borrow the weekday's text.
+  const winner = resolveOfficeWinner(day);
+  const isFeast = winner.kind === 'sanctoral' && winner.rank !== 'vigil';
+  for (const key of isFeast && !ignoreWinner ? [] : temporalKeys) {
+    const found = find(hour, key);
+    if (found) {
+      return found;
     }
   }
   return MISSING;

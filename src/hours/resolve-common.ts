@@ -808,36 +808,6 @@ export function resolveMinorHourChapter(hourId: string, day: LiturgicalDay, fall
   return firstAvailable([proper, paschal, common], resolveCommon(fallbackId));
 }
 
-export interface OfficeBundle {
-  chapter: ResolvedText;
-  responsory: ResolvedText;
-  hymn: ResolvedText;
-  versicle: ResolvedText;
-}
-
-/**
- * The chapter/responsory/hymn/versicle bundle following Lauds'/Vespers'
- * psalmody (hours/lauds.ts's and hours/vespers.ts's own resolveOffice) —
- * a saint's own proper bundle (`${hourId}-{part}-${id}`) when authored,
- * else that saint's Common bundle (`${hourId}-{part}-${commonId}`,
- * SaintRecord's `common` field -- the saint's one classification).
- * Eligibility is deliberately rank-agnostic, `getMinorHourOverrideId`'s
- * test (any sanctoral winner, or a named ALWAYS_OVERRIDE_TEMPORAL_IDS
- * feast) rather than resolveOffice's old duplex-majus+-only gate: a
- * simplex feast's own or Common's chapter/hymn is real, distinct
- * liturgical content, not something only strong feasts are entitled to —
- * confirmed 2026-08-25 (St. Louis, King of France, simplex, was silently
- * falling all the way to the plain ferial default instead of his Common
- * of a Confessor Not Bishop). Same honest "eligible, not gated on whether
- * content exists" convention as everywhere else: returns `undefined` when
- * neither the proper nor the Common has this bundle authored yet, so the
- * caller falls through to its own seasonal/weekday default.
- *
- * `resolveChapterFor` lets Vespers reuse its own chapter lookup (which
- * itself falls back to the byte-identical Lauds capitulum file when no
- * `vespers-capitulum-<id>.yml` exists — see vespersCapitulumForOverride)
- * instead of the plain `${hourId}-capitulum-${id}` default used here.
- */
 /** Commons whose Lauds/Vespers chapter, responsory, hymn and versicle are
  * the engine's own byte-for-byte reuse of another Common's: a Confessor Pope
  * takes the Confessor Bishop's (live-verified, St. Leo II, 2026-07-03). Tried
@@ -845,102 +815,6 @@ export interface OfficeBundle {
 export const COMMON_BUNDLE_ALIAS: Record<string, string> = {
   'common-of-a-confessor-pope': 'common-of-a-confessor-bishop',
 };
-
-export function resolveOfficeBundle(
-  hourId: string,
-  day: LiturgicalDay,
-  resolveChapterFor: (id: string) => ResolvedText = (id) => resolveCommon(`${hourId}-capitulum-${id}`),
-  vespersVariant?: VespersVariant,
-): OfficeBundle | undefined {
-  const overrideId = getMinorHourOverrideId(day);
-  if (!overrideId) {
-    return undefined;
-  }
-  const isReal = (t: ResolvedText): boolean => t.status.la !== 'missing' || t.status.en !== 'missing';
-  // `hasChapter` false means this id authored no chapter of its own: the
-  // returned bundle is then only its *other* real parts (hymn, responsory,
-  // versicle -- e.g. St. Martina's own hymns), each still `missing` where
-  // not authored, for `partialProper` below to fill from the Common.
-  const partsFor = (id: string): (OfficeBundle & { hasChapter: boolean }) => {
-    // A saint that borrows another feast's authored content through its
-    // `propers` id (St. Michael, Sept 29, shares the Apparition's chapter
-    // and hymns) falls back to that id part by part, after its own files.
-    const sharedId = sharedOfficeId(id);
-    const own = partsOf(id);
-    if (!sharedId) {
-      return own;
-    }
-    const shared = partsOf(sharedId);
-    return {
-      hasChapter: own.hasChapter || shared.hasChapter,
-      chapter: own.hasChapter ? own.chapter : shared.chapter,
-      responsory: isReal(own.responsory) ? own.responsory : shared.responsory,
-      hymn: isReal(own.hymn) ? own.hymn : shared.hymn,
-      versicle: isReal(own.versicle) ? own.versicle : shared.versicle,
-    };
-  };
-  const partsOf = (id: string): (OfficeBundle & { hasChapter: boolean }) => {
-    const chapter = resolveChapterFor(id);
-    // The bundle's own responsory/versicle base text is season-neutral;
-    // a `-paschaltide` variant file (same convention as
-    // resolveMinorHourChapter's Common tier) carries the Alleluia-bearing
-    // form for feasts whose Common is genuinely tied to Paschaltide but
-    // gets reused outside it (e.g. Exaltation of the Holy Cross borrowing
-    // Finding of the Holy Cross's Common) — tried first, never assumed.
-    const paschalResponsory = PASCHALTIDE_SEASONS.has(day.season)
-      ? resolveCommon(`${hourId}-responsory-${id}-paschaltide`)
-      : undefined;
-    const paschalVersicle = PASCHALTIDE_SEASONS.has(day.season)
-      ? withVespersVariant(`${hourId}-versicle-${id}-paschaltide`, vespersVariant, resolveCommon(`${hourId}-versicle-${id}-paschaltide`))
-      : undefined;
-    const baseResponsory = firstAvailable([paschalResponsory], resolveCommon(`${hourId}-responsory-${id}`));
-    const baseVersicle = firstAvailable([paschalVersicle], resolveCommon(`${hourId}-versicle-${id}`));
-    return {
-      hasChapter: isReal(chapter),
-      chapter,
-      responsory: resolveResponsory(withVespersVariant(`${hourId}-responsory-${id}`, vespersVariant, baseResponsory), day),
-      hymn: withVespersVariant(`${hourId}-hymn-${id}`, vespersVariant, resolveCommon(`${hourId}-hymn-${id}`)),
-      versicle: withVespersVariant(`${hourId}-versicle-${id}`, vespersVariant, baseVersicle),
-    };
-  };
-  const tryId = (id: string): OfficeBundle | undefined => {
-    const parts = partsFor(id);
-    return parts.hasChapter ? parts : undefined;
-  };
-  // A proper with no chapter of its own but at least one other real part
-  // (a hymn, say) still counts as a proper bundle: fill what it lacks from
-  // its Common's bundle instead of dropping the whole thing. Chapter-ful
-  // propers keep the older all-or-nothing behavior exactly (a feast with
-  // a chapter and deliberately no responsory, like the Apparition of the
-  // Immaculate BVM, must not inherit its Common's).
-  const partialProper = (id: string, commonId: string | undefined): OfficeBundle | undefined => {
-    const own = partsFor(id);
-    if (own.hasChapter || !(isReal(own.hymn) || isReal(own.responsory) || isReal(own.versicle))) {
-      return undefined;
-    }
-    const common = commonId ? tryId(commonId) : undefined;
-    if (!common) {
-      return undefined;
-    }
-    return {
-      chapter: common.chapter,
-      responsory: isReal(own.responsory) ? own.responsory : common.responsory,
-      hymn: isReal(own.hymn) ? own.hymn : common.hymn,
-      versicle: isReal(own.versicle) ? own.versicle : common.versicle,
-    };
-  };
-  const proper = tryId(overrideId);
-  if (proper) {
-    return proper;
-  }
-  const commonId = getSaintRecord(overrideId)?.common;
-  const sharedCommonId = commonId ? COMMON_BUNDLE_ALIAS[commonId] : undefined;
-  return (
-    partialProper(overrideId, commonId) ??
-    (commonId ? tryId(commonId) : undefined) ??
-    (sharedCommonId ? tryId(sharedCommonId) : undefined)
-  );
-}
 
 /** Fills a Common collect template's literal `{N}` placeholders with a
  * saint's own name(s) per language (SaintRecord.collectName) — the same
@@ -1048,7 +922,7 @@ function combineCommemorationBundle(antiphon: ResolvedText, versicle: ResolvedTe
 
 /** A saint's own Vespers versicle for one evening: their own file, a shared
  * office id's, then their Common's (with the Confessor Pope-style bundle
- * alias) -- the same chain `resolveOfficeBundle` follows. */
+ * alias) -- the same chain `lookupPart` follows. */
 function saintVespersVersicle(saintId: string, variant: VespersVariant): ResolvedText | undefined {
   const saint = getSaintRecord(saintId);
   const shared = sharedOfficeId(saintId);
@@ -1665,7 +1539,7 @@ const STATUS_RANK = { verified: 0, draft: 1, missing: 2 } as const;
 // "*-doxology-per-annum.yml" file: that pushed a per-hymn authoring
 // decision ("does this file need splitting?") onto whoever wrote each
 // proper/Common hymn, and proved to actually just get skipped in practice
-// (resolveOfficeBundle's proper/Common hymns never split their doxology at
+// (lookupPart's proper/Common hymns never split their doxology at
 // all, silently baking in whatever ending happened to be correct on the one
 // date they were live-queried). One marker, one function, always called —
 // a hymn with no marker (a genuinely fixed ending, e.g. Ave Maris Stella,

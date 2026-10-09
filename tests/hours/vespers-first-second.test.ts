@@ -2,7 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { resolveDay } from '../../src/calendar';
 import { resolveOrdo } from '../../src/hours';
 import { resolveEveningDay } from '../../src/calendar/vespers';
-import { getMagnificatAntiphon, resolveCommon, resolveOfficeBundle } from '../../src/hours/resolve-common';
+import { getMagnificatAntiphon } from '../../src/hours/resolve-common';
+import { lookupPart } from '../../src/hours/resolve-part';
 
 // First vs Second Vespers: `<base>-first` / `<base>-second` content ids
 // override `<base>` for the matching evening only (see hours/resolve-
@@ -82,13 +83,16 @@ describe('First vs Second Vespers variants', () => {
 
   // St. Martina and St. Thérèse never govern an evening of their own (St. John
   // Bosco / Guardian Angels / St. Francis always outrank them), so their
-  // Vespers content is exercised through the bundle directly.
-  const bundle = (iso: string, variant: 'first' | 'second') =>
-    resolveOfficeBundle('vespers', resolveDay(iso), (id) => resolveCommon(`lauds-capitulum-${id}`), variant);
+  // Vespers content is exercised through the lookup directly.
+  const bundle = (iso: string, variant: 'first' | 'second') => {
+    const day = resolveDay(iso);
+    const part = (p: 'hymn' | 'versicle') => lookupPart({ day, hour: 'vespers', part: p, temporalKeys: [], variant });
+    return { hymn: part('hymn'), versicle: part('versicle') };
+  };
 
   it("St. Martina: her own hymn only at Second Vespers; First Vespers takes the Common's, with her own Lauds hymn", () => {
-    expect(bundle('2026-01-30', 'second')?.hymn.text.la).toContain('Tu natále solum');
-    expect(bundle('2026-01-30', 'first')?.hymn.text.la).not.toContain('Tu natále solum');
+    expect(bundle('2026-01-30', 'second').hymn.text.la).toContain('Tu natále solum');
+    expect(bundle('2026-01-30', 'first').hymn.text.la).not.toContain('Tu natále solum');
     expect(JSON.stringify(resolveOrdo('lauds', '2026-01-30'))).toContain('Tu natále solum');
     expect(JSON.stringify(resolveOrdo('matins', '2026-01-30'))).toContain('Martínæ célebri');
   });
@@ -96,10 +100,10 @@ describe('First vs Second Vespers variants', () => {
   it("St. Thérèse: First/Second Vespers hymn and versicle pairs differ", () => {
     const first = bundle('2026-10-03', 'first');
     const second = bundle('2026-10-03', 'second');
-    expect(first?.hymn.text.la).toContain('Nomen decúsque');
-    expect(second?.hymn.text.la).toContain('Luce divína');
-    expect(first?.versicle.text.la).toContain('Ego autem in Dómino gaudébo');
-    expect(second?.versicle.text.la).toContain('Manus Dómini confortávit te');
+    expect(first.hymn.text.la).toContain('Nomen decúsque');
+    expect(second.hymn.text.la).toContain('Luce divína');
+    expect(first.versicle.text.la).toContain('Ego autem in Dómino gaudébo');
+    expect(second.versicle.text.la).toContain('Manus Dómini confortávit te');
     expect(getMagnificatAntiphon(resolveDay('2026-10-03'), 'first').text.la).toContain('Ego Dóminus * sponsábo');
     expect(getMagnificatAntiphon(resolveDay('2026-10-03'), 'second').text.la).toContain('Benedíctus Dóminus, * quia hódie');
   });

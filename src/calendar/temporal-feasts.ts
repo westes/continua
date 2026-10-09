@@ -48,6 +48,9 @@ export interface TemporalFeastRecord {
    * Easter Sunday's psalm antiphons, chapters and responsories). Used by
    * hours/office-source.ts's `sharedOfficeId`. */
   officeFrom?: string;
+  /** Parts this feast deliberately has none of (`lauds-responsory`, ...),
+   * so the lookup returns nothing instead of falling to a shared office. */
+  noParts?: string[];
   /** The id this feast displaces on its own day is only the governing-week
    * catch-all (no office of its own): don't commemorate it (see
    * calendar/movable-feasts.ts). */
