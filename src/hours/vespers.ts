@@ -300,7 +300,7 @@ function holySaturdayVespersParts(day: LiturgicalDay): ResolvedPart[] {
     { kind: 'canticle', canticleId: 'magnificat', text: resolveCommon('magnificat'), antiphon: opening },
     { kind: 'antiphon', text: full },
     { kind: 'preces', text: resolveCommon('holy-saturday-vespers-exaudi') },
-    { kind: 'prayer', text: resolveCommon('holy-saturday-vespers-collect') },
+    { kind: 'prayer', text: resolveCommon('collect-holy-saturday-vespers') },
     { kind: 'preces', text: resolveCommon('lauds-conclusio-alleluia') },
   ];
 }

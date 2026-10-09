@@ -165,7 +165,7 @@ export function overlayProperAntiphons<T extends { antiphon: Partial<Record<stri
 function temporalProperId(id: string, kind: string): string {
   // Benedictus/Magnificat antiphons are named {part}-antiphon-{id}[-first];
   // the other kinds (collect, lectio-prima...) still {id}-{kind}.
-  const m = /^(benedictus-antiphon|magnificat-antiphon)(-first|-second)?$/.exec(kind);
+  const m = /^(benedictus-antiphon|magnificat-antiphon|collect)(-first|-second|-vespers)?$/.exec(kind);
   return m ? `${m[1]}-${id}${m[2] ?? ''}` : `${id}-${kind}`;
 }
 
@@ -850,7 +850,7 @@ export function getDayCollect(day: LiturgicalDay, hour?: 'lauds' | 'vespers'): R
     return toResolvedText(getTemporalProperWithFallback(winner.id, 'collect', day));
   }
   const saint = getSaintRecord(winner.id);
-  const proper = saint?.propers ? resolveCommon(`${saint.propers}-collect`) : undefined;
+  const proper = saint?.propers ? resolveCommon(`collect-${saint.propers}`) : undefined;
   const common =
     saint?.collectCommon && saint.collectName ? substituteName(resolveCommon(saint.collectCommon), saint.collectName) : undefined;
   return firstAvailable([proper, common], { text: {}, status: { la: 'missing', en: 'missing' } });
@@ -984,7 +984,7 @@ function sanctoralCommemorationBase(
     if (combined.status.la !== 'missing' || combined.status.en !== 'missing') {
       return { kind: 'preces', text: combined, label };
     }
-    const properCollect = resolveCommon(`${saint.propers}-collect`);
+    const properCollect = resolveCommon(`collect-${saint.propers}`);
     if (properCollect.status.la !== 'missing' || properCollect.status.en !== 'missing') {
       if (saint.common === 'common-of-a-vigil') {
         const antiphon = vigilCommemorationAntiphon(weekday);
@@ -1035,11 +1035,11 @@ export function octaveCommemorationPart(commemoration: Extract<Commemoration, { 
   if (combined.status.la !== 'missing' || combined.status.en !== 'missing') {
     return { kind: 'preces', text: combined, label };
   }
-  const commonCollect = resolveCommon(`${commemoration.id}-collect`);
+  const commonCollect = resolveCommon(`collect-${commemoration.id}`);
   if (commonCollect.status.la !== 'missing' || commonCollect.status.en !== 'missing') {
     return { kind: 'preces', text: commonCollect, label };
   }
-  const temporalCollect = toResolvedText(getTemporalProper(`${commemoration.id}-collect`));
+  const temporalCollect = toResolvedText(getTemporalProper(`collect-${commemoration.id}`));
   if (temporalCollect.status.la !== 'missing' || temporalCollect.status.en !== 'missing') {
     return { kind: 'preces', text: temporalCollect, label };
   }
@@ -1083,7 +1083,7 @@ function temporalCommemorationPart(
   const namedFeast = emberName ? undefined : getTemporalFeastRecord(commemoration.id);
   const idLabel = emberName ?? (namedFeast ? biName(namedFeast.name, namedFeast.nameLa) : undefined) ?? temporalLabel(day);
   const label = `Commemoration of ${commemoration.name ?? idLabel.en}`;
-  const collect = toResolvedText(getTemporalProper(`${commemoration.id}-collect`));
+  const collect = toResolvedText(getTemporalProper(`collect-${commemoration.id}`));
   const antiphon = toResolvedText(
     getTemporalProper(`${hour === 'lauds' ? 'benedictus' : 'magnificat'}-antiphon-${commemoration.id}`),
   );

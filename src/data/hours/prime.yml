@@ -80,7 +80,7 @@ parts:
     sundayOrFeastRef: { source: common, id: prime-preces-dominicales }
     ferialRef: { source: common, id: prime-preces-feriales }
   - kind: prayer
-    textRef: { source: common, id: prime-collect }
+    textRef: { source: common, id: collect-prime }
   - kind: martyrology
   - kind: preces
     textRef: { source: common, id: prime-chapter-office }

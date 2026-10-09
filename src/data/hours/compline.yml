@@ -62,7 +62,7 @@ parts:
     textRef: { source: common, id: compline-preces }
     omitOnDouble: true
   - kind: prayer
-    textRef: { source: common, id: compline-collect }
+    textRef: { source: common, id: collect-compline }
   - kind: preces
     textRef: { source: common, id: compline-conclusio }
     label: Conclusion

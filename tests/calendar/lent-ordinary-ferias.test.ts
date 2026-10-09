@@ -58,7 +58,7 @@ const NO_VESPERS_VARIANT = new Set(['saturday-after-ash-wednesday', 'lent-3-satu
 
 describe('Lent ordinary ferias: content completeness', () => {
   it.each(LENT_FERIA_IDS)('%s has a real, verified collect, Benedictus antiphon, and nocturn reading', (id) => {
-    const collect = getTemporalProper(`${id}-collect`);
+    const collect = getTemporalProper(`collect-${id}`);
     expect(collect.status.la).toBe('verified');
     expect(collect.status.en).toBe('verified');
 
@@ -74,15 +74,15 @@ describe('Lent ordinary ferias: content completeness', () => {
   });
 
   it.each(LENT_FERIA_IDS.filter((id) => !NO_VESPERS_VARIANT.has(id)))('%s has a distinct, verified Vespers collect', (id) => {
-    const lauds = getTemporalProper(`${id}-collect`);
-    const vespers = getTemporalProper(`${id}-collect-vespers`);
+    const lauds = getTemporalProper(`collect-${id}`);
+    const vespers = getTemporalProper(`collect-${id}-vespers`);
     expect(vespers.status.la).toBe('verified');
     expect(vespers.status.en).toBe('verified');
     expect(vespers.text.en).not.toBe(lauds.text.en);
   });
 
   it.each([...NO_VESPERS_VARIANT])('%s has no separate Vespers collect or Magnificat antiphon (the source has neither)', (id) => {
-    expect(getTemporalProper(`${id}-collect-vespers`).status.en).toBe('missing');
+    expect(getTemporalProper(`collect-${id}-vespers`).status.en).toBe('missing');
     expect(getTemporalProper(`magnificat-antiphon-${id}`).status.en).toBe('missing');
   });
 

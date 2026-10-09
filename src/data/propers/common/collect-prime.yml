@@ -1,0 +1,27 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), 2026-08-25 run.
+# On Sundays/feasts the Roman office substitutes the day's own collect here —
+# not modeled yet (milestone 4); this fixed ferial collect is used for now
+# regardless of day.
+id: collect-prime
+text:
+  la: |
+    Orémus.
+    Dómine Deus omnípotens, qui ad princípium hujus diéi nos perveníre fecísti: tua nos hódie salva virtúte; ut in hac die ad nullum declinémus peccátum, sed semper ad tuam justítiam faciéndam nostra procédant elóquia, dirigántur cogitatiónes et ópera. Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+    V. Benedicámus Dómino.
+    R. Deo grátias.
+  en: |
+    Let us pray.
+    O Lord, our heavenly Father, Almighty and everlasting God, who has safely brought us to the beginning of this day: defend us by thy mighty power; and grant that this day we fall into no sin, but that all our doings may be ordered by thy governance, to do always what is righteous in thy sight. Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+
+    V. O Lord, hear my prayer.
+    R. And let my cry come unto thee.
+    V. Let us bless the Lord.
+    R. Thanks be to God.
+status:
+  la: verified
+  en: verified

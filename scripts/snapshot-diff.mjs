@@ -30,6 +30,7 @@ const first = (j) => {
 const byDay = new Map();
 let slots = 0;
 for (const key of Object.keys(before)) {
+  if (!(key in after)) continue;
   if (before[key] === after[key]) continue;
   slots++;
   const [day, hour] = key.split('/');

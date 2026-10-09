@@ -1,0 +1,27 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617) -- read
+# directly from the reference engine's own real-date output (not
+# reconstructed from memory). Keyed Pentecost/offset-based
+# ("post-pentecost-N") rather than Trinity-counted deliberately: this is
+# content storage, kept scheme-agnostic, independent of whatever counting
+# convention calendar/day-label.ts shows on screen for the same Sunday.
+#
+# A real saint outranks this Sunday on every candidate year checked (2020-
+# 2060), so this was read directly from the Latin/English Tempora source
+# file plus the standard closing-formula macro
+# (Psalterium/Common/Prayers.txt's [Per Dominum]/[Per eumdem]) rather than
+# a live date query.
+id: collect-easter-3
+text:
+  la: |
+    Orémus.
+    Deus, qui in Fílii tui humilitáte jacéntem mundum erexísti: fidélibus tuis perpétuam concéde lætítiam; ut, quos perpétuæ mortis eripuísti cásibus, gáudiis fácias pérfrui sempitérnis.
+    Per eúmdem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Let us pray.
+    O God, Whose Son hath humbled Himself, and Who hast through Him raised up the whole world, grant to thy faithful people everlasting joy; and as Thou hast delivered them from the bitter pains of eternal death, make them to be glad for ever in thy presence.
+    Through the same Jesus Christ, thy Son, Our Lord, Who liveth and reigneth with thee in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified
