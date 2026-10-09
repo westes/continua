@@ -90,7 +90,6 @@ import {
   resolveCommon,
   substituteDoxology,
   getDayCollect,
-  getMinorHourOverrideId,
   getOfficeOverrideId,
   resolveOfficeWinner,
   seasonalOfficeSuffix,
@@ -102,7 +101,7 @@ import {
   resolveMinorHourAntiphonCandidates,
 } from './resolve-common';
 import { getSaintRecord } from '../calendar/feasts';
-import { sharedOfficeId } from './office-source';
+import { lookupPart } from './resolve-part';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { getBiblePlanReadings } from '../propers/bible-plan';
 import { getNocturnReadings, type NocturnReading } from '../propers/nocturn-readings';
@@ -509,106 +508,19 @@ function renderOverrideNocturn3(group: SundayNocturn, day: LiturgicalDay): Resol
  * octave (Ascension, Pentecost, ...) supplies its hymn when the winner (an
  * Ember day, say) has none, as at Lauds. */
 function resolveMatinsHymn(day: LiturgicalDay): ResolvedText {
-  // Rank-agnostic, like Lauds'/Vespers' own bundle (see resolve-common.ts's
-  // getMinorHourOverrideId): a lower-rank saint's authored proper Matins
-  // hymn (St. Martina, Semiduplex) is real content, not something only
-  // duplex-majus+ feasts are entitled to.
-  const overrideId = getMinorHourOverrideId(day);
-  const sharedId = sharedOfficeId(overrideId);
-  for (const id of [overrideId, sharedId]) {
-    if (!id) continue;
-    const proper = resolveCommon(`matins-hymn-${id}`);
-    if (proper.status.la !== 'missing' || proper.status.en !== 'missing') {
-      return proper;
-    }
-  }
-  // Common-of-Saints tier (2026-08): a winning saint with no proper hymn of
-  // his own (most of them) still often shares a real, generic hymn with
-  // every other saint of his Common (e.g. "Aeterna Christi munera" for any
-  // Apostle) — same getSaintRecord(id)?.common lookup already proven by
-  // matins-psalmody-overrides.ts's getMatinsPsalmodyOverride. Keyed off the
-  // actual winner, not `overrideId` above: `getOfficeOverrideId` only
-  // returns an id for duplex-majus+ winners (an eligibility gate for the
-  // per-saint-proper tier), so reusing it here would silently skip this
-  // tier for any lower-ranked sanctoral winner.
-  const winner = resolveOfficeWinner(day);
-  const commonId = winner.kind === 'sanctoral' ? getSaintRecord(winner.id)?.common : undefined;
-  if (commonId) {
-    const commonHymn = resolveCommon(`matins-hymn-${commonId}`);
-    if (commonHymn.status.la !== 'missing' || commonHymn.status.en !== 'missing') {
-      return commonHymn;
-    }
-  }
-  // A temporal-feast-only octave (Ascension's, Pentecost's, Corpus Christi's,
-  // the Sacred Heart's -- no saint record, so resolveOfficeWinner can't
-  // substitute it) keeps its own hymn on days whose winner has none of its
-  // own (an Ember day inside the Pentecost octave): same tier Lauds'
-  // resolveLaudsHymn applies, after the winner's proper and Common.
-  const temporalOctave = resolveActiveOctave(day.date);
-  if (temporalOctave && !getSaintRecord(temporalOctave.id)) {
-    const octaveHymn = resolveCommon(`matins-hymn-${temporalOctave.id}`);
-    if (octaveHymn.status.la !== 'missing' || octaveHymn.status.en !== 'missing') {
-      return octaveHymn;
-    }
-  }
-  // Septuagesima-tide checked directly by `day.season`, not folded into
-  // `seasonalOfficeSuffix` — that function is shared with Lauds/Vespers,
-  // which have no matching Septuagesima content authored yet; adding it
-  // there would silently blank their own chapter/hymn (resolveOfficeBundle
-  // requires all-or-nothing) instead of falling through to their current
-  // weekday default. Scoped to Matins alone until Lauds/Vespers' own
-  // Septuagesima content exists too (see TODO.md). Its own hymn ("Primo
-  // diérum ómnium") is a genuinely separate seasonal text from the plain
-  // Sunday/ferial one below, live-verified 2026-02-01.
-  if (day.season === 'septuagesima') {
-    const septuagesima = resolveCommon('matins-hymn-septuagesima');
-    if (septuagesima.status.la !== 'missing' || septuagesima.status.en !== 'missing') {
-      return septuagesima;
-    }
-  }
+  // The Monday-Saturday "week of hymns" (Somno reféctis ártubus, Consors
+  // patérni lúminis, Rerum Creátor óptime, Nox atra rerum, Tu Trinitátis
+  // Únitas, Summæ Deus cleméntiæ); Monday's own text lives at the unsuffixed
+  // `ferial` id. Septuagesima has its own hymn ("Primo diérum ómnium"),
+  // Sunday its own plain one ("Nocte surgéntes").
   const seasonSuffix = seasonalOfficeSuffix(day.season);
-  if (seasonSuffix) {
-    const seasonal = resolveCommon(`matins-hymn-${seasonSuffix}`);
-    if (seasonal.status.la !== 'missing' || seasonal.status.en !== 'missing') {
-      return seasonal;
-    }
-  }
-  // Sunday's own plain hymn ("Nocte surgéntes"), self-contained (own
-  // doxology baked in, unlike the shared weekday one below) — checked
-  // here, after every season/octave/Common tier above but before the
-  // Monday-Saturday ferial cycle, live-verified 2026-09-04.
-  if (day.weekday === 'sunday') {
-    const sunday = resolveCommon('matins-hymn-sunday');
-    if (sunday.status.la !== 'missing' || sunday.status.en !== 'missing') {
-      return sunday;
-    }
-  }
-  // The plain ferial hymn's own Monastic source (Day1-6 Hymnus, Psalterium/
-  // Special/Matutinum Special.txt) carries a real seasonal-doxology
-  // substitution marker (live-checked 2026-09-03), ported directly into
-  // this file's own text (see matins-hymn-ferial.yml) — the caller
-  // (resolveOrdo below) runs every tier's result through substituteDoxology
-  // universally, so no explicit doxology handling is needed in this
-  // function at all.
-  //
-  // Weekday-specific (2026-09-04): the source's plain Matins hymn genuinely
-  // varies Monday-Saturday (the classic "week of hymns" — Somno reféctis
-  // ártubus, Consors patérni lúminis, Rerum Creátor óptime, Nox atra rerum,
-  // Tu Trinitátis Únitas, Summæ Deus cleméntiæ), not one fixed year-round
-  // text — a real gap uncovered when the user noticed Friday showing
-  // Monday's own hymn, and Saturday's own gap found the same day by
-  // asking what actually renders on a real Ember Saturday (see
-  // matins-hymn-ferial.yml's header for why Monday alone still falls to
-  // the plain `matins-hymn-ferial` id, since Monday's own text simply
-  // lives there unsuffixed).
-  const weekdayFerialHymnIds: Partial<Record<Weekday, string>> = {
-    tuesday: 'matins-hymn-ferial-tuesday',
-    wednesday: 'matins-hymn-ferial-wednesday',
-    thursday: 'matins-hymn-ferial-thursday',
-    friday: 'matins-hymn-ferial-friday',
-    saturday: 'matins-hymn-ferial-saturday',
-  };
-  return resolveCommon(weekdayFerialHymnIds[day.weekday] ?? 'matins-hymn-ferial');
+  const temporalKeys = [
+    day.season === 'septuagesima' ? 'septuagesima' : undefined,
+    seasonSuffix,
+    day.weekday === 'sunday' ? 'sunday' : undefined,
+    day.weekday === 'monday' ? 'ferial' : `ferial-${day.weekday}`,
+  ].filter((k): k is string => !!k);
+  return lookupPart({ day, hour: 'matins', part: 'hymn', temporalKeys });
 }
 
 /** The plain ferial weekday nocturn's real antiphoned psalmody — a

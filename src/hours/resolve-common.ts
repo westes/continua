@@ -615,7 +615,7 @@ export function getMinorHourOverrideId(day: LiturgicalDay): string | undefined {
  * until someone authors their real wholesale text, which is a strictly
  * better approximation than rendering the bare non-Paschaltide default).
  */
-const PASCHALTIDE_SEASONS = new Set(['eastertide', 'ascensiontide', 'pentecost']);
+export const PASCHALTIDE_SEASONS = new Set(['eastertide', 'ascensiontide', 'pentecost']);
 
 /** Whether `season` falls within the same broad Paschaltide window
  * `PASCHALTIDE_SEASONS` already governs elsewhere in this file (Marian
@@ -842,7 +842,7 @@ export interface OfficeBundle {
  * the engine's own byte-for-byte reuse of another Common's: a Confessor Pope
  * takes the Confessor Bishop's (live-verified, St. Leo II, 2026-07-03). Tried
  * after the Common's own files, so authoring a distinct bundle later wins. */
-const COMMON_BUNDLE_ALIAS: Record<string, string> = {
+export const COMMON_BUNDLE_ALIAS: Record<string, string> = {
   'common-of-a-confessor-pope': 'common-of-a-confessor-bishop',
 };
 

@@ -1,7 +1,7 @@
 import type { HourDefinition, HourPart, ResolvedOrdo, ResolvedPart, ResolvedText } from './types';
 import type { LiturgicalDay, Weekday } from '../calendar/types';
-import { resolveDay, resolveActiveOctave } from '../calendar';
-import { getSaintRecord } from '../calendar/feasts';
+import { resolveDay } from '../calendar';
+import { lookupPart } from './resolve-part';
 import { getDayLabel } from '../calendar/day-label';
 import { getPsalmVerses } from '../psalter';
 import { getCanticle, type CanticleVerse } from './lauds-canticles';
@@ -283,39 +283,6 @@ function resolvePsalmody(day: LiturgicalDay): ResolvedPart[] {
   return parts;
 }
 
-/**
- * Every Lauds hymn (plain weekday/season default, octave, or — via
- * `resolveOffice` below — proper/Common) is a single self-contained text
- * whose own final stanza is marked with a leading `* ` where its doxology
- * varies (see `lauds-hymn-${key}.yml`'s own header, and
- * hours/resolve-common.ts's `substituteDoxology`) — `resolveOffice` runs
- * every hymn this function or `resolveOfficeBundle` can return through
- * that one substitution uniformly, so this function itself just resolves
- * the right *body* text and returns it unchanged.
- */
-function resolveLaudsHymn(day: LiturgicalDay, key: string): ResolvedText {
-  // A temporal-feast-only octave (Ascension's own — no saint record, so
-  // resolveOfficeWinner's own octave-synthesis can't help here on a
-  // privileged Sunday, whose `octaveGoverningPrivilegedDay` gate is
-  // correctly closed to a real *saint* overriding it but wrongly also
-  // closes the *octave's own* hymn — live-verified wrong: "Dominica infra
-  // Octavam Ascensionis" still uses Ascension's own hymn/responsory, just
-  // with its own distinct proper chapter) still needs its own hymn
-  // recognized here directly via resolveActiveOctave (no privileged-
-  // Sunday gate) — checked before the plain season/weekday fallback, but
-  // deliberately not touched at the chapter/responsory/versicle level:
-  // this Sunday's own chapter genuinely differs from Ascension Day's own,
-  // so folding the whole bundle through the octave id would be wrong.
-  const octave = resolveActiveOctave(day.date);
-  if (octave && !getSaintRecord(octave.id)) {
-    const octaveHymn = resolveCommon(`lauds-hymn-${octave.id}`);
-    if (octaveHymn.status.la !== 'missing' || octaveHymn.status.en !== 'missing') {
-      return octaveHymn;
-    }
-  }
-  return resolveCommon(`lauds-hymn-${key}`);
-}
-
 /** Any sanctoral winner's (or named-temporal feast's) own capitulum/
  * responsory/hymn/versicle (data/propers/common/lauds-{part}-${id}.yml),
  * else their Common's (`${part}-${common}`), when authored — see
@@ -355,7 +322,7 @@ function resolveOfficeParts(day: LiturgicalDay): ResolvedPart[] {
       parts.push({ kind: 'responsory', text: bundle.responsory });
     }
     parts.push(
-      { kind: 'hymn', text: substituteDoxology(bundle.hymn, hymnDoxologyOverride) },
+      { kind: 'hymn', text: substituteDoxology(lookupPart({ day, hour: 'lauds', part: 'hymn', temporalKeys: [seasonalOfficeSuffix(day.season) ?? day.weekday] }), hymnDoxologyOverride) },
       { kind: 'versicle', text: bundle.versicle },
     );
     return parts;
@@ -365,7 +332,7 @@ function resolveOfficeParts(day: LiturgicalDay): ResolvedPart[] {
   return [
     { kind: 'chapter', text: resolveCommon(seasonSuffix ? `lauds-capitulum-${key}` : capitulumId(day.weekday)) },
     { kind: 'responsory', text: resolveResponsory(resolveCommon(`lauds-responsory-${key}`), day) },
-    { kind: 'hymn', text: substituteDoxology(resolveLaudsHymn(day, key), hymnDoxologyOverride) },
+    { kind: 'hymn', text: substituteDoxology(lookupPart({ day, hour: 'lauds', part: 'hymn', temporalKeys: [key] }), hymnDoxologyOverride) },
     { kind: 'versicle', text: resolveCommon(`lauds-versicle-${key}`) },
   ];
 }
