@@ -32,4 +32,16 @@ describe('lookupPart (hymn)', () => {
     const text = lookupPart({ day, hour: 'compline', part: 'hymn', temporalKeys: [], ignoreWinner: true });
     expect(text.status).toEqual({ la: 'missing', en: 'missing' });
   });
+
+  it("a date override wins the Magnificat whoever wins the day (O Antiphon on St. Thomas, Dec 21)", () => {
+    const day = resolveDay('2026-12-21');
+    const text = lookupPart({ day, hour: 'vespers', part: 'magnificat', temporalKeys: [] });
+    expect(la(text)).toContain('O Oriens');
+  });
+
+  it("the winner's own First Vespers Magnificat beats the month-week one (Christ the King, Oct 24 eve)", () => {
+    const day = resolveDay('2026-10-25');
+    const text = lookupPart({ day, hour: 'vespers', part: 'magnificat', temporalKeys: ['month-week-10-4'], variant: 'first' });
+    expect(la(text)).toContain('Dabit illi');
+  });
 });

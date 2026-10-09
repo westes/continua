@@ -1,7 +1,8 @@
 import type { HourId, ResolvedText } from './types';
 import type { LiturgicalDay } from '../calendar/types';
 import { getSaintRecord } from '../calendar/feasts';
-import { resolveActiveOctave } from '../calendar';
+import { activeOctavesFor, resolveActiveOctave } from '../calendar';
+import vespersOAntiphonsData from '../data/hours/vespers-o-antiphons.yml';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
 import { sharedOfficeId } from './office-source';
 import {
@@ -11,6 +12,7 @@ import {
   getMinorHourOverrideId,
   resolveCommon,
   resolveOfficeWinner,
+  verifiedText,
   type VespersVariant,
 } from './resolve-common';
 
@@ -38,9 +40,11 @@ import {
  * and the Vespers file (`${id}-first`/`-second`) are tried before the base
  * file. Nothing authored anywhere returns `missing`: a gap shows as a gap.
  */
-export type PartKind = 'hymn' | 'chapter' | 'responsory' | 'versicle' | 'antiphon';
+export type PartKind = 'hymn' | 'chapter' | 'responsory' | 'versicle' | 'antiphon' | 'benedictus' | 'magnificat';
 
 const FILE_PART: Record<PartKind, string> = {
+  benedictus: 'benedictus-antiphon',
+  magnificat: 'magnificat-antiphon',
   hymn: 'hymn',
   chapter: 'capitulum',
   responsory: 'responsory',
@@ -69,7 +73,24 @@ export interface PartRequest {
    * Saturday evening before a seasonal proper Sunday takes the Saturday's
    * own hymn, not the Sunday's. */
   ignoreWinner?: boolean;
+  /** The calendar date the hour belongs to when it isn't `day.date` (an
+   * evening that anticipates tomorrow's First Vespers), for date overrides. */
+  date?: string;
+  /** Inline default text (not a file) for a non-saint winner when nothing is
+   * authored: the ferial Magnificat antiphons, the weekday antiphons. */
+  fallback?: () => ResolvedText | undefined;
 }
+
+/** Texts that win a slot on a calendar date whoever wins the day: key is
+ * `${hour}.${part}`, then `MM-DD`. The seven O Antiphons win the Vespers
+ * Magnificat on Dec 17-23 even where a saint wins the rest of the day. */
+export interface DateOverride {
+  antiphon: Partial<Record<string, string>>;
+  status?: Partial<Record<string, 'verified' | 'draft' | 'missing'>>;
+}
+const DATE_OVERRIDES: Record<string, Partial<Record<string, DateOverride>>> = {
+  'vespers.magnificat': vespersOAntiphonsData as Partial<Record<string, DateOverride>>,
+};
 
 const MISSING: ResolvedText = { text: {}, status: { la: 'missing', en: 'missing' } };
 
@@ -104,7 +125,7 @@ export function isAbsentByDesign(day: LiturgicalDay, hour: HourId, part: PartKin
  * office's, or a temporal octave's), the antiphon derived from its Lauds set,
  * its Common's file, or the hour's temporal key. `paschalFile` is true when
  * the text is a Paschaltide variant file, which needs no further Alleluia. */
-export type PartTier = 'proper' | 'derived' | 'common' | 'temporal';
+export type PartTier = 'dated' | 'proper' | 'derived' | 'common' | 'temporal' | 'fallback';
 
 export interface FoundPart {
   text: ResolvedText;
@@ -122,20 +143,36 @@ export function isFeastWinner(day: LiturgicalDay): boolean {
   return winner.kind === 'sanctoral' && winner.rank !== 'vigil';
 }
 
-export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignoreWinner }: PartRequest): FoundPart | undefined {
+export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignoreWinner, date, fallback }: PartRequest): FoundPart | undefined {
   if (!ignoreWinner && isAbsentByDesign(day, hour, part)) {
     return undefined;
   }
-  const paschal = PASCHALTIDE_SEASONS.has(day.season);
+  const override = DATE_OVERRIDES[`${hour}.${part}`]?.[(date ?? day.date).slice(5)];
+  if (override) {
+    const text = override.status
+      ? { text: override.antiphon, status: override.status as ResolvedText['status'] }
+      : verifiedText(override.antiphon);
+    return { text, tier: 'dated', paschalFile: false };
+  }
+  // The Paschaltide Second Vespers file of a Magnificat antiphon exists only
+  // for Second Vespers.
+  const paschal = PASCHALTIDE_SEASONS.has(day.season) && !(part === 'magnificat' && variant === 'first');
   const sibling = WINNER_SIBLING_HOUR[hour]?.[part];
   const find = (h: HourId, id: string, tier: PartTier): FoundPart | undefined => {
-    const prefix = `${h}-${FILE_PART[part]}-`;
-    const candidates = [paschal ? `${id}-paschaltide` : undefined, variant ? `${id}-${variant}` : undefined, id];
+    const prefix = part === 'benedictus' || part === 'magnificat' ? `${FILE_PART[part]}-` : `${h}-${FILE_PART[part]}-`;
+    // An octave's interior days can carry their own text (`<id>-d<N>`).
+    const octaveDay = activeOctavesFor(day.date).find((o) => o.id === id && o.dayNumber >= 2);
+    const candidates = [
+      octaveDay ? `${id}-d${octaveDay.dayNumber}` : undefined,
+      paschal ? `${id}-paschaltide` : undefined,
+      variant ? `${id}-${variant}` : undefined,
+      id,
+    ];
     for (const candidate of candidates) {
       if (!candidate) continue;
       const text = resolveCommon(prefix + candidate);
       if (isReal(text)) {
-        return { text, tier, paschalFile: candidate.endsWith('-paschaltide') };
+        return { text, tier, paschalFile: candidate.endsWith('-paschaltide') || /-d\d+$/.test(candidate) };
       }
     }
     return undefined;
@@ -181,5 +218,6 @@ export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignor
       return found;
     }
   }
-  return undefined;
+  const inline = isFeastWinner(day) && !ignoreWinner ? undefined : fallback?.();
+  return inline && isReal(inline) ? { text: inline, tier: 'fallback', paschalFile: false } : undefined;
 }

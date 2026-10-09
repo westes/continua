@@ -16,7 +16,6 @@ import { temporalLabel, emberDayLabel, biName } from '../calendar/day-label';
 import { splitAntiphon, isDoubleOrHigher } from './antiphon';
 import { getLaudsPsalmodyOverride } from './lauds-psalmody-overrides';
 import vespersMagnificatAntiphonsData from '../data/hours/vespers-magnificat-antiphons.yml';
-import vespersOAntiphonsData from '../data/hours/vespers-o-antiphons.yml';
 import laudsVigilCommemorationAntiphonsData from '../data/hours/lauds-vigil-commemoration-antiphons.yml';
 
 type BilingualText = Partial<Record<string, string>>;
@@ -30,10 +29,6 @@ interface MagnificatWeekdayDefault {
 const vespersMagnificatAntiphons = vespersMagnificatAntiphonsData as Partial<
   Record<Weekday, MagnificatWeekdayDefault>
 >;
-// Keyed by "MM-DD" (Dec 17-23) — see the data file's own header for why
-// these seven can't live in a per-Advent-week temporal-proper file the
-// way every other week's Magnificat antiphon does.
-const vespersOAntiphons = vespersOAntiphonsData as Partial<Record<string, MagnificatWeekdayDefault>>;
 // Monday-Saturday only — see lauds-vigil-commemoration-antiphons.yml's own
 // header for why Sunday has no entry (a Vigil never reaches a
 // commemoration on an ordinary Sunday in the first place).
@@ -1287,29 +1282,21 @@ export function resolveSuffrages(
  * *commemorated* saint's, which is a separate, weaker standing (see
  * getDayCollects/sanctoralCommemorationPart).
  */
-/** Per-day proper of an octave's interior day: `<id>-<kind>-d<N>` (N = the
- * octave's day number, Pentecost = 1) when authored, else the feast's own.
- * Only the Pentecost octave has such days in the source (Mon, Tue and Thu
- * carry their own Benedictus and Magnificat antiphons). */
-function octaveDayProper(winnerId: string, kind: string, day: LiturgicalDay): ProperText | undefined {
-  const octave = activeOctavesFor(day.date).find((o) => o.id === winnerId);
-  if (!octave || octave.dayNumber < 2) return undefined;
-  const own = getTemporalProper(`${kind}-${winnerId}-d${octave.dayNumber}`);
-  return own.status.la !== 'missing' || own.status.en !== 'missing' ? own : undefined;
-}
-
 export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
   const winner = resolveOfficeWinner(day);
-  if (winner.kind === 'temporal') {
-    const perDay = octaveDayProper(winner.id, 'benedictus-antiphon', day);
-    return toResolvedText(perDay ?? getTemporalProperWithFallback(winner.id, 'benedictus-antiphon', day));
+  const found = lookupPartTiered({
+    day,
+    hour: 'lauds',
+    part: 'benedictus',
+    // A temporal winner is its own file, else the governing week's.
+    temporalKeys: winner.kind === 'temporal' ? [winner.id, resolveTemporalId(day.date)] : [],
+  });
+  if (!found) {
+    return { text: {}, status: { la: 'missing', en: 'missing' } };
   }
-  const saint = getSaintRecord(winner.id);
-  const proper = saint?.propers ? withPaschaltideAlleluia(resolveCommon(`benedictus-antiphon-${saint.propers}`), day) : undefined;
-  const common = saint?.common
-    ? withPaschaltideAlleluia(resolveCommon(`benedictus-antiphon-${saint.common}`), day)
-    : undefined;
-  return firstAvailable([proper, common], { text: {}, status: { la: 'missing', en: 'missing' } });
+  return winner.kind === 'sanctoral' && !found.paschalFile && (found.tier === 'proper' || found.tier === 'common')
+    ? withPaschaltideAlleluia(found.text, day)
+    : found.text;
 }
 
 /**
@@ -1427,59 +1414,32 @@ function magnificatWeekdayDefault(day: LiturgicalDay): ResolvedText | undefined 
 }
 
 export function getMagnificatAntiphon(day: LiturgicalDay, vespersVariant?: VespersVariant, eveningDate?: string): ResolvedText {
-  // The O Antiphon belongs to the evening's own calendar date, which differs
-  // from `day.date` when this evening anticipates tomorrow's First Vespers
-  // (Saturday Dec 19 is "O radix Jesse" even though it opens Advent IV).
-  const oAntiphon = vespersOAntiphons[(eveningDate ?? day.date).slice(5)];
-  if (oAntiphon) {
-    return oAntiphon.status ? { text: oAntiphon.antiphon, status: oAntiphon.status } : verifiedText(oAntiphon.antiphon);
-  }
   const winner = resolveOfficeWinner(day);
-  if (winner.kind === 'temporal') {
-    const perDay = octaveDayProper(winner.id, 'magnificat-antiphon', day);
-    const named = toResolvedText(perDay ?? getTemporalProperWithFallback(winner.id, 'magnificat-antiphon', day));
-    // The engine keys the later post-Pentecost Sundays' First Vespers
-    // Magnificat by calendar month-week (Aug-Nov), not by Pentecost count
-    // (calendar/month-week-id.ts), so that id is tried before the Easter-
-    // offset one.
-    const monthWeek = vespersVariant === 'first' && day.weekday === 'sunday' ? monthWeekId(day.date) : undefined;
-    const monthWeekVariant = monthWeek ? toResolvedText(getTemporalProper(`magnificat-antiphon-month-week-${monthWeek}-first`)) : undefined;
-    const namedVariant = vespersVariant
-      ? toResolvedText(getTemporalProperWithFallback(winner.id, `magnificat-antiphon-${vespersVariant}`, day))
-      : undefined;
-    return firstAvailable([monthWeekVariant, namedVariant, named, magnificatWeekdayDefault(day)], named);
+  // The engine keys the later post-Pentecost Sundays' First Vespers
+  // Magnificat by calendar month-week (Aug-Nov), not by Pentecost count
+  // (calendar/month-week-id.ts), so that id is tried before the Easter-
+  // offset one.
+  const monthWeek = vespersVariant === 'first' && day.weekday === 'sunday' ? monthWeekId(day.date) : undefined;
+  const found = lookupPartTiered({
+    day,
+    hour: 'vespers',
+    part: 'magnificat',
+    variant: vespersVariant,
+    // The O Antiphon belongs to the evening's own calendar date, which differs
+    // from `day.date` when this evening anticipates tomorrow's First Vespers
+    // (Saturday Dec 19 is "O radix Jesse" even though it opens Advent IV).
+    date: eveningDate,
+    temporalKeys: winner.kind === 'temporal' ? [monthWeek ? `month-week-${monthWeek}` : undefined, winner.id, resolveTemporalId(day.date)].filter((k): k is string => !!k) : [],
+    // A ferial day, and a Vigil (whose `[Rule]` always borrows the weekday's
+    // own antiphon), take the weekday's Magnificat antiphon.
+    fallback: () => magnificatWeekdayDefault(day),
+  });
+  if (!found) {
+    return { text: {}, status: { la: 'missing', en: 'missing' } };
   }
-  const saint = getSaintRecord(winner.id);
-  // A Paschaltide-only Second Vespers text ("-paschaltide") wins first where
-  // the source carries one (St. Benedict's Transitus; the Doctors' Common).
-  const paschalSecond = PASCHALTIDE_SEASONS.has(day.season) && vespersVariant !== 'first';
-  const paschalProper = saint?.propers && paschalSecond ? resolveCommon(`magnificat-antiphon-${saint.propers}-paschaltide`) : undefined;
-  const properBase = saint?.propers
-    ? withPaschaltideAlleluia(
-        withVespersVariant(`magnificat-antiphon-${saint.propers}`, vespersVariant, resolveCommon(`magnificat-antiphon-${saint.propers}`)),
-        day,
-      )
-    : undefined;
-  const proper = paschalProper && (paschalProper.status.la !== 'missing' || paschalProper.status.en !== 'missing') ? paschalProper : properBase;
-  // A Vigil has no proper Magnificat antiphon of its own in the real rubric
-  // -- its `[Rule]` block ("ex C1v; ... Laudes 2") always borrows whatever
-  // the current ferial weekday's own antiphon is, live-verified across 4
-  // different years (2025-2028) at the Vigil of St. Andrew's own First
-  // Vespers: every one rendered "{Antiphona ex Proprio de Tempore}", never
-  // a fixed Common text. So a Vigil takes the same weekday-default fallback
-  // the plain temporal branch above uses, rather than falling through to
-  // `magnificat-antiphon-common-of-a-vigil` (deliberately never authored --
-  // there's no single fixed text to put there).
-  const vigil = saint?.rank === 'vigil' ? magnificatWeekdayDefault(day) : undefined;
-  const paschalCommon = saint?.common && paschalSecond ? resolveCommon(`magnificat-antiphon-${saint.common}-paschaltide`) : undefined;
-  const commonBase = saint?.common
-    ? withPaschaltideAlleluia(
-        withVespersVariant(`magnificat-antiphon-${saint.common}`, vespersVariant, resolveCommon(`magnificat-antiphon-${saint.common}`)),
-        day,
-      )
-    : undefined;
-  const common = paschalCommon && (paschalCommon.status.la !== 'missing' || paschalCommon.status.en !== 'missing') ? paschalCommon : commonBase;
-  const antiphon = firstAvailable([proper, vigil, common], { text: {}, status: { la: 'missing', en: 'missing' } });
+  const saint = winner.kind === 'sanctoral' ? getSaintRecord(winner.id) : undefined;
+  const antiphon =
+    saint && !found.paschalFile && (found.tier === 'proper' || found.tier === 'common') ? withPaschaltideAlleluia(found.text, day) : found.text;
   return saint?.invocationName ? fillInvocationName(antiphon, saint.invocationName) : antiphon;
 }
 

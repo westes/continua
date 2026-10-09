@@ -33,7 +33,10 @@ function resolve(store: Map<string, ProperText>, id: string): ProperText {
 }
 
 export function getCommonProper(id: string): ProperText {
-  return resolve(commonPropers, id);
+  // Ids are unique across both stores; a temporal proper (an Advent week's
+  // Benedictus antiphon...) is found through the same lookup as a Common's.
+  const temporal = commonPropers.has(id) ? undefined : temporalPropers.get(id);
+  return temporal ?? resolve(commonPropers, id);
 }
 
 /**
