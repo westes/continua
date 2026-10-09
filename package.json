@@ -9,7 +9,8 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "audit:sources": "node scripts/audit-source-fidelity.mjs"
+    "audit:sources": "node scripts/audit-source-fidelity.mjs",
+    "snapshot": "vitest run --config vitest.snapshot.config.ts"
   },
   "dependencies": {
     "@fontsource/eb-garamond": "^5.3.0",
