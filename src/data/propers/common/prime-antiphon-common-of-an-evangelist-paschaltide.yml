@@ -1,0 +1,23 @@
+# Same text as prime-antiphon-common-of-apostles-paschaltide (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against the reference engine's own source data files (not a
+# live query): web/www/horas/Latin/Commune/C1p.txt and English/Commune/
+# C1p.txt ("Commune Apostolorum tempore Paschali"), 2026-08. Cross-checked
+# against st-mark's already-authored, live-queried content (2026-04-25) --
+# identical except this source's own asterisk falls one word earlier
+# ("Sancti tui, * Dómine..." not "Sancti tui, Dómine, * ...") -- trusted
+# over the live-rendered incipit split, per resolveMinorHourAntiphon's own
+# Paschaltide-variant fallback (hours/resolve-common.ts) and
+# SaintRecord.minorHoursCommon (calendar/feasts.ts). See TODO.md for which
+# saints (st-mark, st-john-before-the-latin-gate, ss-philip-and-james)
+# reach this file and why only Apostles/Martyr-Bishop/Several-Martyrs
+# commons have a Paschaltide variant at all.
+id: prime-antiphon-common-of-an-evangelist-paschaltide
+text:
+  la: "Sancti tui, * Dómine, florébunt sicut lílium, allelúja: et sicut odor bálsami erunt ante te, allelúja."
+  en: "Your saints, O Lord, * flourish like lilies, alleluia: and like the smell of balsam are before you, alleluia."
+status:
+  la: verified
+  en: verified

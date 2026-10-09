@@ -1,0 +1,24 @@
+# Commune C3b (Summorum Pontificum Martyrum) inherits C3 wholesale for this
+# part (`@Commune/C3`); same text as lauds-capitulum-common-of-several-martyrs.yml.
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# `votive=C3` live query, 2026-08 -- same votive-office-view reasoning as
+# vespers-hymn-common-of-a-martyr-bishop.yml's header (this Common's real
+# saints are scattered across the calendar with no cheap guarantee of an
+# un-outranked day, so the votive view gets the category's true content
+# directly instead). Byte-identical to `votive=C3a`/`C3b`, confirming the
+# Missal-collect split TODO.md records (plain groups of martyrs vs.
+# Pope-martyr groups getting a distinct, more triumphal collect) doesn't
+# carry through to this Office bundle -- both variants share one real
+# chapter/responsory/hymn/versicle here. Same chapter reused for Vespers
+# -- no separate vespers-capitulum-<id> file authored, per vespers.ts's
+# vespersCapitulumForOverride fallback.
+id: lauds-capitulum-common-of-pope-martyrs
+text:
+  la: "Justórum ánimæ in manu Dei sunt, et non tanget illos torméntum mortis. Visi sunt óculis insipiéntium mori: illi autem sunt in pace."
+  en: "But the souls of the just are in the hand of God, and the torment of death shall not touch them. In the sight of the unwise they seemed to die, but they are in peace."
+citation:
+  la: "Sap 3:1-3"
+  en: "Wis 3:1-3"
+status:
+  la: verified
+  en: verified

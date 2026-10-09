@@ -1,0 +1,27 @@
+# Same text as terce-capitulum-common-of-apostles-paschaltide (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C1p.txt and English/Commune/C1p.txt, 2026-08
+# -- see prime-antiphon-common-of-apostles-paschaltide.yml's header (C1p's
+# own [Capitulum Laudes]/[Versum 1] sections -- Terce's chapter equals
+# Lauds' in the Monastic tradition).
+id: terce-capitulum-common-of-an-evangelist-paschaltide
+text:
+  la: |
+    Stabunt justi in magna constántia advérsus eos qui se angustiavérunt et qui abstulérunt labóres eórum.
+    R. Deo grátias.
+    V. Sancti et justi in Dómino gaudéte, allelúja.
+    R. Vos elégit Deus in hereditátem sibi, allelúja.
+  en: |
+    Then shall the just stand with great constancy against those that have afflicted them, and taken away their labours.
+    R. Thanks be to God.
+    V. Saints and just, rejoice in the Lord, alleluia.
+    R. The Lord has chosen you for his inheritance, alleluia.
+citation:
+  la: "Sap 5:1"
+  en: "Wis 5:1"
+status:
+  la: verified
+  en: verified

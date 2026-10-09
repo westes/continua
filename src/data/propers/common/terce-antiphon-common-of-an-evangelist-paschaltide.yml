@@ -1,0 +1,18 @@
+# Same text as terce-antiphon-common-of-apostles-paschaltide (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C1p.txt and English/Commune/C1p.txt, 2026-08
+# -- see prime-antiphon-common-of-apostles-paschaltide.yml's header. The
+# source's own English rendering has no asterisk at all for this line (a
+# real gap in that file, not a capture error) -- placed here to match the
+# Latin split's own sense, same as st-mark's already-authored terce
+# antiphon this matches exactly.
+id: terce-antiphon-common-of-an-evangelist-paschaltide
+text:
+  la: "In cæléstibus regnis * Sanctórum habitátio est, allelúja: et in ætérnum réquies eórum, allelúja."
+  en: "In the heavenly kingdom * is the habitation of the saints, alleluia: and they rest in the eternity, alleluia."
+status:
+  la: verified
+  en: verified

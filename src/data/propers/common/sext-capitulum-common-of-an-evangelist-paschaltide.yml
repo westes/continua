@@ -1,0 +1,26 @@
+# Same text as sext-capitulum-common-of-apostles-paschaltide (Commune C1a (Evangelists) takes the Apostles' minor-hour
+# antiphons and chapters in the reference); duplicated here so the Common's own
+# id resolves, per the one-`common`-per-saint rule (see
+# prime-antiphon-common-of-apostles.yml's header for provenance).
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C1p.txt and English/Commune/C1p.txt, 2026-08
+# -- see prime-antiphon-common-of-apostles-paschaltide.yml's header (C1p's
+# own [Capitulum Sexta]/[Nocturn 2 Versum] sections).
+id: sext-capitulum-common-of-an-evangelist-paschaltide
+text:
+  la: |
+    Ecce quómodo computáti sunt inter fílios Dei, et inter sanctos sors illórum est.
+    R. Deo grátias.
+    V. Lux perpétua lucébit Sanctis tuis, Dómine, allelúja.
+    R. Et ætérnitas témporum, allelúja.
+  en: |
+    Behold how they are numbered among the children of God, and their lot is among the saints.
+    R. Thanks be to God.
+    V. Eternal light will shine over your saints, O Lord, alleluia.
+    R. And the eternity of times, alleluia.
+citation:
+  la: "Sap 5:5"
+  en: "Wis 5:5"
+status:
+  la: verified
+  en: verified
