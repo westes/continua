@@ -1215,83 +1215,49 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // confirms a Common's own Matins psalmody should win over a Sunday's,
   // unlike a saint's own genuinely proper content.
   const sundaySanctoralProperOverride = day.weekday === 'sunday' && winner.kind === 'sanctoral' ? getMatinsSaintOverride(winner.id) : undefined;
+  const schemeBlocks = (scheme: MatinsPsalmodyScheme): [ResolvedPart[], ResolvedPart[], ResolvedPart[]] => [
+    sundayPsalmNocturn(scheme.nocturn1, day),
+    sundayPsalmNocturn(scheme.nocturn2, day),
+    renderOverrideNocturn3(scheme.nocturn3, day),
+  ];
+  // Each nocturn: its heading, its psalmody, then its readings; the Te Deum and
+  // its versicle close the third.
+  const nocturns = (blocks: [ResolvedPart[], ResolvedPart[], ResolvedPart[]]): ResolvedPart[] => {
+    const readings = [nocturn1Readings, nocturn2Readings, nocturn3Readings];
+    return [
+      ...blocks.flatMap((block, i) => [
+        { kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[i]}` } as ResolvedPart,
+        ...block,
+        ...(readings[i] ?? []),
+      ]),
+      { kind: 'te-deum', text: resolveCommon('te-deum') },
+      { kind: 'versicle', text: resolveCommon('te-decet-laus') },
+    ];
+  };
   if (sundaySanctoralProperOverride) {
-    parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
-    parts.push(...sundayPsalmNocturn(sundaySanctoralProperOverride.nocturn1, day));
-    parts.push(...(nocturn1Readings ?? []));
-    parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[1]}` });
-    parts.push(...sundayPsalmNocturn(sundaySanctoralProperOverride.nocturn2, day));
-    parts.push(...(nocturn2Readings ?? []));
-    parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[2]}` });
-    parts.push(...renderOverrideNocturn3(sundaySanctoralProperOverride.nocturn3, day));
-    parts.push(...(nocturn3Readings ?? []));
-    parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
-    parts.push({ kind: 'versicle', text: resolveCommon('te-decet-laus') });
+    parts.push(...nocturns(schemeBlocks(sundaySanctoralProperOverride)));
   } else if (threeNocturns && (day.weekday === 'sunday' || hasTemporalNamedOverride)) {
-    parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
-    parts.push(...sundayPsalmNocturn(sundayNocturnFor('nocturn1', day, namedKey), day));
-    parts.push(...(nocturn1Readings ?? []));
-    parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[1]}` });
-    parts.push(...sundayPsalmNocturn(sundayNocturnFor('nocturn2', day, namedKey), day));
-    parts.push(...(nocturn2Readings ?? []));
-    parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[2]}` });
-    parts.push(...sundayCanticleNocturn(sundayNocturnFor('nocturn3', day, namedKey), day));
-    parts.push(...(nocturn3Readings ?? []));
-    parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
-    parts.push({ kind: 'versicle', text: resolveCommon('te-decet-laus') });
+    parts.push(
+      ...nocturns([
+        sundayPsalmNocturn(sundayNocturnFor('nocturn1', day, namedKey), day),
+        sundayPsalmNocturn(sundayNocturnFor('nocturn2', day, namedKey), day),
+        sundayCanticleNocturn(sundayNocturnFor('nocturn3', day, namedKey), day),
+      ]),
+    );
   } else if (threeNocturns) {
-    // A Semiduplex+ weekday feast — genuinely different psalmody from a
-    // real Sunday's, not the same content reused.
-    //   - Saint-specific proper: use its own full scheme, any rank.
-    //   - No proper, rank duplex-majus+: Common's own full scheme (own
-    //     psalm numbers, canticles) if authored; else the fully bare
-    //     ferialPsalmodyThreeNocturns stand-in. Unaffected by the
-    //     below-duplex-majus carve-out below (user, 2026-08).
-    //   - No proper, rank Semiduplex or Duplex (below the floor of the
-    //     duplex-majus+ tier, but at or above the floor of 3-nocturn
-    //     eligibility itself, lowered to Semiduplex 2026-09-02): ferial
-    //     psalm numbers, not Common's own — but Common's per-nocturn
-    //     versicle, and each nocturn's own Terce/Sext/None antiphon for
-    //     that category, if authored (see ferialPsalmodyThreeNocturns's
-    //     own doc comment for why those three, not Common's own Matins
-    //     Nocturn antiphons).
+    // A Semiduplex+ weekday feast -- genuinely different psalmody from a real
+    // Sunday's. By the one first-found rule:
+    //   - the saint's own scheme, any rank;
+    //   - else its Common's own scheme (own psalm numbers, canticles) at
+    //     Duplex Majus and above;
+    //   - else the ferial psalm numbers (3-nocturn stand-in), with Common's
+    //     per-nocturn versicle and each nocturn's Terce/Sext/None antiphon for
+    //     that category (see ferialPsalmodyThreeNocturns).
     const properOverride = winner.kind === 'sanctoral' ? getMatinsSaintOverride(winner.id) : undefined;
     const isAboveDuplex = effectiveRank !== undefined && isAtLeast(effectiveRank, 'duplex-majus');
     const commonOverride = winner.kind === 'sanctoral' && !properOverride ? getMatinsCommonOverride(winner.id) : undefined;
-    if (properOverride) {
-      parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
-      parts.push(...sundayPsalmNocturn(properOverride.nocturn1, day));
-      parts.push(...(nocturn1Readings ?? []));
-      parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[1]}` });
-      parts.push(...sundayPsalmNocturn(properOverride.nocturn2, day));
-      parts.push(...(nocturn2Readings ?? []));
-      parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[2]}` });
-      parts.push(...renderOverrideNocturn3(properOverride.nocturn3, day));
-      parts.push(...(nocturn3Readings ?? []));
-    } else if (isAboveDuplex && commonOverride) {
-      parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
-      parts.push(...sundayPsalmNocturn(commonOverride.nocturn1, day));
-      parts.push(...(nocturn1Readings ?? []));
-      parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[1]}` });
-      parts.push(...sundayPsalmNocturn(commonOverride.nocturn2, day));
-      parts.push(...(nocturn2Readings ?? []));
-      parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[2]}` });
-      parts.push(...renderOverrideNocturn3(commonOverride.nocturn3, day));
-      parts.push(...(nocturn3Readings ?? []));
-    } else {
-      const [n1, n2, n3] = ferialPsalmodyThreeNocturns(day, isAboveDuplex ? undefined : commonOverride);
-      parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[0]}` });
-      parts.push(...n1);
-      parts.push(...(nocturn1Readings ?? []));
-      parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[1]}` });
-      parts.push(...n2);
-      parts.push(...(nocturn2Readings ?? []));
-      parts.push({ kind: 'section-heading', label: `Nocturn ${NOCTURN_NUMERAL[2]}` });
-      parts.push(...n3);
-      parts.push(...(nocturn3Readings ?? []));
-    }
-    parts.push({ kind: 'te-deum', text: resolveCommon('te-deum') });
-    parts.push({ kind: 'versicle', text: resolveCommon('te-decet-laus') });
+    const scheme = properOverride ?? (isAboveDuplex ? commonOverride : undefined);
+    parts.push(...nocturns(scheme ? schemeBlocks(scheme) : ferialPsalmodyThreeNocturns(day, isAboveDuplex ? undefined : commonOverride)));
   } else {
     parts.push(...ferialAntiphonedNocturn(day));
     parts.push(...(nocturn1Readings ?? []));

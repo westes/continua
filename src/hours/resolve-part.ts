@@ -40,9 +40,10 @@ import {
  * and the Vespers file (`${id}-first`/`-second`) are tried before the base
  * file. Nothing authored anywhere returns `missing`: a gap shows as a gap.
  */
-export type PartKind = 'hymn' | 'chapter' | 'responsory' | 'versicle' | 'antiphon' | 'benedictus' | 'magnificat' | 'lectio' | 'invitatory';
+export type PartKind = 'hymn' | 'chapter' | 'responsory' | 'versicle' | 'antiphon' | 'benedictus' | 'magnificat' | 'lectio' | 'invitatory' | 'collect';
 
 const FILE_PART: Record<PartKind, string> = {
+  collect: 'collect',
   lectio: 'lectio',
   invitatory: 'invitatory',
   benedictus: 'benedictus-antiphon',
@@ -87,6 +88,9 @@ export interface PartRequest {
   /** Look up for this feast instead of the day's winner: a commemoration
    * takes its own feast's text (at Vespers, of the commemorated evening). */
   winner?: DayWinner;
+  /** A further file tried before each base file (`<id>-<suffix>`): the
+   * Vespers collect some Lent days have of their own. */
+  suffix?: string;
 }
 
 /** Texts that win a slot on a calendar date whoever wins the day: key is
@@ -151,7 +155,7 @@ export function isFeastWinner(day: LiturgicalDay, given?: DayWinner): boolean {
   return winner.kind === 'sanctoral' && winner.rank !== 'vigil';
 }
 
-export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignoreWinner, date, fallback, seasonalForSaints, winner }: PartRequest): FoundPart | undefined {
+export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignoreWinner, date, fallback, seasonalForSaints, winner, suffix }: PartRequest): FoundPart | undefined {
   if (!ignoreWinner && isAbsentByDesign(day, hour, part, winner)) {
     return undefined;
   }
@@ -168,13 +172,14 @@ export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignor
   const paschal = PASCHALTIDE_SEASONS.has(day.season) && !(part === 'magnificat' && variant === 'first');
   const sibling = WINNER_SIBLING_HOUR[hour]?.[part];
   const find = (h: HourId, id: string, tier: PartTier): FoundPart | undefined => {
-    const prefix = part === 'benedictus' || part === 'magnificat' ? `${FILE_PART[part]}-` : `${h}-${FILE_PART[part]}-`;
+    const prefix = part === 'benedictus' || part === 'magnificat' || part === 'collect' ? `${FILE_PART[part]}-` : `${h}-${FILE_PART[part]}-`;
     // An octave's interior days can carry their own text (`<id>-d<N>`).
     const octaveDay = activeOctavesFor(day.date).find((o) => o.id === id && o.dayNumber >= 2);
     const candidates = [
       octaveDay ? `${id}-d${octaveDay.dayNumber}` : undefined,
       paschal ? `${id}-paschaltide` : undefined,
       variant ? `${id}-${variant}` : undefined,
+      suffix ? `${id}-${suffix}` : undefined,
       id,
     ];
     for (const candidate of candidates) {

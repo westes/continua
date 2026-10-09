@@ -178,36 +178,6 @@ export function selectPsalmody<Block, Scheme>(
   return proper ? overlay(ferial, proper) : ferial;
 }
 
-/**
- * A named temporal winner's own `${winner.id}-<kind>` proper, falling back
- * to the coarse governing-Sunday/weekday id (`resolveTemporalId(day.date)`
- * — what the id would have been without any override) when the winner's
- * own file hasn't been authored yet. Exists because a movable/override
- * temporal id (Corpus Christi, Maundy Thursday, ...) getting its own real
- * winner identity via `resolveOfficeWinner` doesn't guarantee every one of
- * its proper texts has actually been authored — without this, an
- * unauthored kind renders as bare `missing` instead of degrading to
- * whatever content the day would otherwise have shown (e.g. Corpus
- * Christi's own missing collect falling back to `post-pentecost-01`'s,
- * Maundy Thursday's falling back to `palm-sunday`'s). Only used for
- * `winner.kind === 'temporal'` lookups — a sanctoral winner's own
- * Common-category fallback chain is unrelated and untouched.
- */
-function temporalProperId(id: string, kind: string): string {
-  // Benedictus/Magnificat antiphons are named {part}-antiphon-{id}[-first];
-  // the other kinds (collect, lectio-prima...) still {id}-{kind}.
-  const m = /^(benedictus-antiphon|magnificat-antiphon|collect)(-first|-second|-vespers)?$/.exec(kind);
-  return m ? `${m[1]}-${id}${m[2] ?? ''}` : `${id}-${kind}`;
-}
-
-function getTemporalProperWithFallback(winnerId: string, kind: string, day: LiturgicalDay): ProperText {
-  const named = getTemporalProper(temporalProperId(winnerId, kind));
-  if (named.status.la !== 'missing' || named.status.en !== 'missing') {
-    return named;
-  }
-  return getTemporalProper(temporalProperId(resolveTemporalId(day.date), kind));
-}
-
 // Named temporal winners with real standing of their own, unconditionally
 // override-eligible — see hours/lauds.ts's getPsalmodyOverrideFor, which
 // shares this set (imported from here, not duplicated) since it's the
@@ -861,30 +831,27 @@ export function substituteName(text: ResolvedText, name: { la: string[]; en: str
  */
 export function getDayCollect(day: LiturgicalDay, hour?: 'lauds' | 'vespers'): ResolvedText {
   const winner = resolveOfficeWinner(day);
-  if (winner.kind === 'temporal') {
-    // A handful of temporal ids (Lent's own ordinary ferias, its Ember
-    // days, Ash Wednesday's week, Holy Week Monday) have a genuinely
-    // distinct Vespers collect in the source ([Oratio 3], vs. Lauds' own
-    // [Oratio 2]) — see data/propers/temporal/lent-2-monday-collect-vespers.yml
-    // for the schema. Every other hour (Lauds itself, Terce/Sext/None)
-    // keeps the base `-collect` id unchanged, matching the real rubric
-    // where the minor hours repeat Lauds', not Vespers', collect. Falls
-    // back to the base collect (which itself already falls back through
-    // getTemporalProperWithFallback) whenever no distinct Vespers text has
-    // been authored for this id.
-    if (hour === 'vespers') {
-      const vespers = getTemporalProperWithFallback(winner.id, 'collect-vespers', day);
-      if (vespers.status.la !== 'missing' || vespers.status.en !== 'missing') {
-        return toResolvedText(vespers);
-      }
-    }
-    return toResolvedText(getTemporalProperWithFallback(winner.id, 'collect', day));
+  // A handful of temporal ids (Lent's own ordinary ferias, its Ember days,
+  // Ash Wednesday's week, Holy Week Monday) have a genuinely distinct Vespers
+  // collect in the source ([Oratio 3], vs. Lauds' own [Oratio 2]); every
+  // other hour keeps the base collect, matching the real rubric where the
+  // minor hours repeat Lauds', not Vespers', collect. A temporal winner is
+  // its own file, else the governing week's.
+  const found = lookupPartTiered({
+    day,
+    hour: hour ?? 'lauds',
+    part: 'collect',
+    suffix: hour === 'vespers' ? 'vespers' : undefined,
+    temporalKeys: winner.kind === 'temporal' ? [winner.id, resolveTemporalId(day.date)] : [],
+  });
+  if (found) {
+    return found.text;
   }
-  const saint = getSaintRecord(winner.id);
-  const proper = saint?.propers ? resolveCommon(`collect-${saint.propers}`) : undefined;
-  const common =
-    saint?.collectCommon && saint.collectName ? substituteName(resolveCommon(saint.collectCommon), saint.collectName) : undefined;
-  return firstAvailable([proper, common], { text: {}, status: { la: 'missing', en: 'missing' } });
+  // No collect of its own: the Common's template with the saint's name.
+  const saint = winner.kind === 'sanctoral' ? getSaintRecord(winner.id) : undefined;
+  return saint?.collectCommon && saint.collectName
+    ? substituteName(resolveCommon(saint.collectCommon), saint.collectName)
+    : { text: {}, status: { la: 'missing', en: 'missing' } };
 }
 
 /** A Vigil (`common: common-of-a-vigil`) doesn't reuse its own antiphon
