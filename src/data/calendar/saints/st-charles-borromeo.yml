@@ -3,13 +3,11 @@
 # C4" (Common of a Confessor Bishop). Own real proper [Oratio] and own
 # Nocturn 2 content (Lectio4-6, one continuous vita). No [Lectio7] at
 # all in the source -- no Nocturn 3 of his own, defers entirely to the
-# Common's own. No [Ant 1] of his own either; benedictusCommon/
-# minorHoursCommon fall back to the plain Common of a Confessor Bishop.
+# Common's own. No [Ant 1] of his own either; Benedictus and minor-hour content
+# fall back to the plain Common of a Confessor Bishop.
 id: st-charles-borromeo
 name: "St. Charles Borromeo, Bishop and Confessor"
 nameLa: "Sanctus Carolus Borromæus, Episcopus et Confessor"
 rank: duplex
 common: common-of-a-confessor-bishop
 propers: "st-charles-borromeo"
-benedictusCommon: common-of-a-confessor-bishop
-minorHoursCommon: common-of-a-confessor-bishop

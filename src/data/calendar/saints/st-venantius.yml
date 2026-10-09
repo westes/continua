@@ -1,7 +1,7 @@
 # Read directly from the reference engine: untagged/default [Rank]
 # block of `web/www/horas/Latin/Sancti/05-18.txt` -- "Duplex;;3;;vide
 # C2a" (Common of a Martyr). Own real proper [Oratio]. No [Ant 1] of
-# his own -- benedictusCommon/minorHoursCommon fall back to the plain
+# his own -- Benedictus and minor-hour content fall back to the plain
 # Common of a Martyr, matching st-fidelis-of-sigmaringen.yml. No
 # Lectio7-9 in his own file -- defers to the Common's own Nocturn 3,
 # not transcribed here. Own proper Matins hymns (Hymnus Vespera/
@@ -13,5 +13,3 @@ nameLa: "Sanctus Venantius, Martyr"
 rank: duplex
 common: common-of-a-martyr
 propers: "st-venantius"
-benedictusCommon: common-of-a-martyr
-minorHoursCommon: common-of-a-martyr

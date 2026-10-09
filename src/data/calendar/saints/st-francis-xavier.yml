@@ -9,13 +9,11 @@
 # réliqua" with no full pericope given -- per the bare-incipit
 # convention, only the homily (St. Gregory the Great) is authored,
 # isGospel: false, no citation field. No [Ant 1] of his own; falls
-# back to the plain Common of a Confessor for benedictusCommon/
-# minorHoursCommon, same reasoning as st-hyacinth.yml.
+# back to the plain Common of a Confessor for Benedictus and minor-hour content
+#, same reasoning as st-hyacinth.yml.
 id: st-francis-xavier
 name: "St. Francis Xavier, Confessor"
 nameLa: "Sanctus Franciscus Xaverius, Confessor"
 rank: duplex-majus
 common: common-of-a-confessor
 propers: "st-francis-xavier"
-benedictusCommon: common-of-a-confessor
-minorHoursCommon: common-of-a-confessor

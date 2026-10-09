@@ -12,7 +12,7 @@
 # benedictus-antiphon-common-of-the-bvm.yml). No `propers` of her own:
 # unlike the other three BVM feasts (each of which has real unique
 # collect/antiphon text), her file has none, so `collectCommon`/
-# `benedictusCommon` is the correct mechanism here, same as any other
+# `common` is the correct mechanism here, same as any other
 # `propers: null` saint falling back to a shared Common.
 id: our-lady-of-the-snows
 name: "Our Lady of the Snows (Dedication of St. Mary Major)"
@@ -28,5 +28,3 @@ collectCommon: collect-c11
 collectName:
   la: []
   en: []
-minorHoursCommon: common-of-the-bvm
-benedictusCommon: common-of-the-bvm

@@ -1,7 +1,7 @@
 # Read directly from the reference engine: untagged/default [Rank]
 # block of `web/www/horas/Latin/Sancti/06-10.txt` -- "Semiduplex;;2.2;;
 # vide C7a" (Commune non Virginum non Martyrum). Own real proper
-# [Oratio]. No [Ant 1] of her own -- benedictusCommon/minorHoursCommon
+# [Oratio]. No [Ant 1] of her own -- Benedictus and minor-hour content
 # fall back to the Common of a Virgin, same C-number-family fallback
 # already established for st-monica.yml/st-frances-of-rome.yml (no
 # benedictus-antiphon-common-of-a-widow.yml exists). No Lectio7-9 in
@@ -13,8 +13,6 @@ nameLa: "Sancta Margarita, Regina et Vidua"
 rank: semiduplex
 common: common-of-a-widow
 propers: "st-margaret-of-scotland"
-benedictusCommon: common-of-a-widow
-minorHoursCommon: common-of-a-widow
 invitatoryName:
   la: ["Margarítæ"]
   en: ["Margaret"]

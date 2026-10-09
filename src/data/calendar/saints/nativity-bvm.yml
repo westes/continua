@@ -15,7 +15,6 @@ titleName: "Nativity of the BVM"
 rank: duplex-2-classis
 common: common-of-the-bvm
 propers: "nativity-bvm"
-minorHoursCommon: common-of-the-bvm
 # Has a real octave (Sep 8-15) -- see calendar/types.ts's OctaveConfig.
 # Strengthened to `wins: duplex` (2026-08 user decision), same pattern
 # as pentecost-sunday.yml's and assumption.yml's own overrides. Side
@@ -26,4 +25,3 @@ minorHoursCommon: common-of-the-bvm
 octave:
   enabled: true
   wins: duplex
-benedictusCommon: common-of-the-bvm

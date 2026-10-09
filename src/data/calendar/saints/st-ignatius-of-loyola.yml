@@ -1,7 +1,7 @@
 # Read directly from the reference engine: untagged/default [Rank]
 # block of `web/www/horas/Latin/Sancti/07-31.txt` -- "Duplex majus;;4;;
 # vide C5" (Common of a Confessor Not a Bishop). Own real proper
-# [Oratio]. No [Ant 1] of his own -- benedictusCommon/minorHoursCommon
+# [Oratio]. No [Ant 1] of his own -- Benedictus and minor-hour content
 # fall back to the plain Common of a Confessor. Nocturn 3 is a direct
 # `@Commune/C1a:LectioN` cross-reference (Common of Apostles variant),
 # not this saint's own content -- not transcribed, per the
@@ -12,5 +12,3 @@ nameLa: "Sanctus Ignatius de Loyola, Confessor"
 rank: duplex-majus
 common: common-of-a-confessor
 propers: "st-ignatius-of-loyola"
-benedictusCommon: common-of-a-confessor
-minorHoursCommon: common-of-a-confessor

@@ -1,7 +1,7 @@
 # Read directly from the reference engine: untagged/default [Rank]
 # block of `web/www/horas/Latin/Sancti/09-24.txt` -- "Beatæ Mariæ
 # Virginis de Mercede;;Duplex majus;;4;;ex C11". Own real [Oratio].
-# No [Ant 1] of her own in this file -- benedictusCommon falls back to
+# No [Ant 1] of her own in this file -- the Benedictus antiphon falls back to
 # the plain Common of the BVM. No Lectio7-9 -- defers to the Common's
 # own Nocturn 3, not transcribed here.
 id: our-lady-of-ransom
@@ -10,4 +10,3 @@ nameLa: "Beata Maria Virgo de Mercede"
 rank: duplex-majus
 common: common-of-the-bvm
 propers: "our-lady-of-ransom"
-benedictusCommon: common-of-the-bvm

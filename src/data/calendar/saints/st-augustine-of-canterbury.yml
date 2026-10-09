@@ -6,7 +6,7 @@
 # neither C4 nor C4-1's template collect is actually used). Own
 # Nocturn 2-3 content (Nocturn 3 is Pope St. Gregory the Great's own
 # homily on Luke 10:1-9, not a cross-reference). No [Ant 1] of his own
-# -- benedictusCommon/minorHoursCommon fall back to the plain Common of
+# -- Benedictus and minor-hour content fall back to the plain Common of
 # a Confessor Bishop. Officium name also carries a monastic variant
 # ("sed rubrica monastica ... O. N.") -- ignored per the untagged-block
 # convention, same as every other saint this pass.
@@ -16,5 +16,3 @@ nameLa: "Sanctus Augustinus Cantuariensis, Episcopus et Confessor"
 rank: duplex
 common: common-of-a-confessor-bishop
 propers: "st-augustine-of-canterbury"
-benedictusCommon: common-of-a-confessor-bishop
-minorHoursCommon: common-of-a-confessor-bishop

@@ -1,7 +1,7 @@
 # Read directly from the reference engine: untagged/default [Rank]
 # block of `web/www/horas/Latin/Sancti/08-31.txt` -- "Duplex;;3;;vide
 # C5" (Common of a Confessor Not a Bishop). Own real proper [Oratio].
-# No [Ant 1] of his own -- benedictusCommon/minorHoursCommon fall back
+# No [Ant 1] of his own -- Benedictus and minor-hour content fall back
 # to the plain Common of a Confessor. No Lectio7-9 in his own file
 # (only an `[Evangelium]` cross-reference to `@Commune/C5`) -- defers
 # to the Common's own Nocturn 3, not transcribed here.
@@ -20,5 +20,3 @@ nameLa: "Sanctus Raymundus Nonnatus, Confessor"
 rank: semiduplex
 common: common-of-a-confessor
 propers: "st-raymond-nonnatus"
-benedictusCommon: common-of-a-confessor
-minorHoursCommon: common-of-a-confessor

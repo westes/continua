@@ -1,7 +1,7 @@
 # Read directly from the reference engine: untagged/default [Rank]
 # block of `web/www/horas/Latin/Sancti/10-10.txt` -- "Semiduplex;;2.2;;
 # vide C5" (Common of a Confessor Not a Bishop). Own real proper
-# [Oratio]. No [Ant 1] of his own -- benedictusCommon/minorHoursCommon
+# [Oratio]. No [Ant 1] of his own -- Benedictus and minor-hour content
 # fall back to the plain Common of a Confessor. Nocturn 3 is a direct
 # `@Commune/C1:LectioN` cross-reference (Common of Apostles), not this
 # saint's own content -- not transcribed, per the bare-cross-reference
@@ -12,5 +12,3 @@ nameLa: "Sanctus Franciscus Borgia, Confessor"
 rank: semiduplex
 common: common-of-a-confessor
 propers: "st-francis-borgia"
-benedictusCommon: common-of-a-confessor
-minorHoursCommon: common-of-a-confessor

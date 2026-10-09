@@ -1,7 +1,7 @@
 # Read directly from the reference engine: untagged/default [Rank]
 # block of `web/www/horas/Latin/Sancti/05-10.txt` -- "Duplex;;3;;vide
 # C4" (Common of a Confessor Bishop). Own real proper [Oratio]. No
-# [Ant 1] of his own -- benedictusCommon/minorHoursCommon fall back to
+# [Ant 1] of his own -- Benedictus and minor-hour content fall back to
 # the plain Common of a Confessor Bishop, matching st-ambrose.yml.
 id: st-antoninus
 name: "St. Antoninus, Bishop and Confessor"
@@ -9,5 +9,3 @@ nameLa: "Sanctus Antoninus, Episcopus et Confessor"
 rank: duplex
 common: common-of-a-confessor-bishop
 propers: "st-antoninus"
-benedictusCommon: common-of-a-confessor-bishop
-minorHoursCommon: common-of-a-confessor-bishop

@@ -1,7 +1,7 @@
 # Read directly from the reference engine: untagged/default [Rank]
 # block of `web/www/horas/Latin/Sancti/10-08.txt` -- "Duplex;;3;;vide
 # C7a" (Commune non Virginum non Martyrum). Own real proper [Oratio].
-# benedictusCommon/minorHoursCommon fall back to the Common of a
+# Benedictus and minor-hour content fall back to the Common of a
 # Virgin, same C-number-family fallback already established for
 # st-monica.yml/st-jane-frances-de-chantal.yml (no benedictus-antiphon-
 # common-of-a-widow.yml exists). No Lectio7-9 in her own file --
@@ -15,8 +15,6 @@ nameLa: "Sancta Brigitta, Vidua"
 rank: semiduplex
 common: common-of-a-widow
 propers: "st-bridget-of-sweden"
-benedictusCommon: common-of-a-widow
-minorHoursCommon: common-of-a-widow
 invitatoryName:
   la: ["Birgíttæ"]
   en: ["Bridget"]

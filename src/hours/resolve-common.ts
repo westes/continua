@@ -551,7 +551,7 @@ export function getPsalmodyNumbersOverrideId(day: LiturgicalDay): string | undef
  * minor-hour content (antiphon + chapter) — `${hourId}-antiphon-${id}`/
  * `${hourId}-capitulum-${id}` first (a per-saint proper file, only ever
  * authored for duplex-majus+ saints in practice), then that saint's
- * `minorHoursCommon` fallback (see resolveMinorHourAntiphon/Chapter
+ * `common` fallback (see resolveMinorHourAntiphon/Chapter
  * below), tried regardless of rank: live-querying the reference engine
  * directly (2026-08, the 94 `propers: null` saints' P/T/S/N pass)
  * confirmed a winning Simplex/Semiduplex saint's own minor hours *do*
@@ -738,8 +738,8 @@ function deriveMinorHourAntiphonFromLauds(hourId: string, overrideId: string): R
  * authored, then by that saint's own Lauds/Vespers antiphon set (see
  * `deriveMinorHourAntiphonFromLauds` above — a real liturgical derivation,
  * not a guess), then by that saint's shared Common (`${hourId}-antiphon-
- * ${minorHoursCommon}`, see SaintRecord's own doc comment) — tried first
- * in its Paschaltide-variant form (`${minorHoursCommon}-paschaltide`)
+ * ${common}`, see SaintRecord's own doc comment) — tried first
+ * in its Paschaltide-variant form (`${common}-paschaltide`)
  * when the day falls in Paschaltide and that variant has been authored,
  * per PASCHALTIDE_SEASONS's own doc comment — when neither of the first
  * two has been authored — same honest "not gated behind whether content
@@ -750,16 +750,11 @@ function deriveMinorHourAntiphonFromLauds(hourId: string, overrideId: string): R
  * seasonal change in Paschaltide — see `withPaschaltideAlleluia`. (The
  * derived-from-Lauds tier does not get that treatment — see TODO.md.)
  */
-/** The Common a saint's Prime/Terce/Sext/None antiphon and chapter draw
- * from: the explicit `minorHoursCommon` when the minor hours deliberately
- * use a different Common than the saint's overall one, else the saint's
- * own `common` -- never nothing, since a saint on a Common must not fall to
- * the weekday's ferial text just for lacking the override field (found
- * 2026-10-08: Ss. Perpetua and Felicity and the Servite founders had the
- * ferial Terce chapter). Same field priority as getPrimeLectioBrevis. */
-function minorHoursCommonOf(saintId: string): string | undefined {
-  const saint = getSaintRecord(saintId);
-  return saint?.minorHoursCommon ?? saint?.common;
+/** A saint's single Common category (`SaintRecord.common`) -- the one id
+ * every hour's Common-tier lookup (Prime/Terce/Sext/None, Lauds/Vespers
+ * bundle, Benedictus/Magnificat, hymns) keys off. */
+function commonOf(saintId: string): string | undefined {
+  return getSaintRecord(saintId)?.common;
 }
 
 /** The proper -> derived -> paschal -> common candidate list itself, split
@@ -776,7 +771,7 @@ export function resolveMinorHourAntiphonCandidates(hourId: string, day: Liturgic
     : undefined;
   const derivedRaw = overrideId ? (deriveMinorHourAntiphonFromLauds(hourId, overrideId) ?? (sharedId ? deriveMinorHourAntiphonFromLauds(hourId, sharedId) : undefined)) : undefined;
   const derived = derivedRaw ? withPaschaltideAlleluia(derivedRaw, day) : undefined;
-  const commonId = overrideId ? minorHoursCommonOf(overrideId) : undefined;
+  const commonId = overrideId ? commonOf(overrideId) : undefined;
   const paschal =
     commonId && PASCHALTIDE_SEASONS.has(day.season) ? resolveCommon(`${hourId}-antiphon-${commonId}-paschaltide`) : undefined;
   const common = commonId ? withPaschaltideAlleluia(resolveCommon(`${hourId}-antiphon-${commonId}`), day) : undefined;
@@ -796,7 +791,7 @@ export function resolveMinorHourAntiphon(
 
 /** Same idea as resolveMinorHourAntiphon, for the chapter
  * (`${hourId}-capitulum-${id}`, then `${hourId}-capitulum-
- * ${minorHoursCommon}`, tried Paschaltide-variant-first the same way) —
+ * ${common}`, tried Paschaltide-variant-first the same way) —
  * falls back to `fallbackId` (the plain per-annum/per-weekday one already
  * in place for that hour) when nothing eligible is authored, either
  * proper or shared-Common. */
@@ -806,7 +801,7 @@ export function resolveMinorHourChapter(hourId: string, day: LiturgicalDay, fall
   const proper = overrideId
     ? firstAvailable([resolveCommon(`${hourId}-capitulum-${overrideId}`)], sharedId ? resolveCommon(`${hourId}-capitulum-${sharedId}`) : resolveCommon(`${hourId}-capitulum-${overrideId}`))
     : undefined;
-  const commonId = overrideId ? minorHoursCommonOf(overrideId) : undefined;
+  const commonId = overrideId ? commonOf(overrideId) : undefined;
   const paschal =
     commonId && PASCHALTIDE_SEASONS.has(day.season) ? resolveCommon(`${hourId}-capitulum-${commonId}-paschaltide`) : undefined;
   const common = commonId ? resolveCommon(`${hourId}-capitulum-${commonId}`) : undefined;
@@ -825,8 +820,7 @@ export interface OfficeBundle {
  * psalmody (hours/lauds.ts's and hours/vespers.ts's own resolveOffice) —
  * a saint's own proper bundle (`${hourId}-{part}-${id}`) when authored,
  * else that saint's Common bundle (`${hourId}-{part}-${commonId}`,
- * SaintRecord's main `common` field, not `minorHoursCommon` — this is the
- * saint's overall classification, the same one driving their day collect).
+ * SaintRecord's `common` field -- the saint's one classification).
  * Eligibility is deliberately rank-agnostic, `getMinorHourOverrideId`'s
  * test (any sanctoral winner, or a named ALWAYS_OVERRIDE_TEMPORAL_IDS
  * feast) rather than resolveOffice's old duplex-majus+-only gate: a
@@ -984,7 +978,7 @@ export function substituteName(text: ResolvedText, name: { la: string[]; en: str
  * verified), and honestly "missing" for the remaining days a saint wins
  * outright until either is authored. `collectCommon` is the *full*
  * `resolveCommon` id already (`collect-c2`, not `c2` — no suffix gets
- * appended, unlike `minorHoursCommon` above), matching how the
+ * appended, unlike `common` above), matching how the
  * `collect-c*.yml` files are actually named. Uses resolveOfficeWinner,
  * not the raw `day.winner` — see its own doc comment for why those two
  * differ on an octave day.
@@ -1072,8 +1066,8 @@ function saintMagnificat(saintId: string, variant: VespersVariant): ResolvedText
   const saint = getSaintRecord(saintId);
   const candidates = [
     saint?.propers ? withVespersVariant(`${saint.propers}-magnificat-antiphon`, variant, resolveCommon(`${saint.propers}-magnificat-antiphon`)) : undefined,
-    saint?.benedictusCommon
-      ? withVespersVariant(`magnificat-antiphon-${saint.benedictusCommon}`, variant, resolveCommon(`magnificat-antiphon-${saint.benedictusCommon}`))
+    saint?.common
+      ? withVespersVariant(`magnificat-antiphon-${saint.common}`, variant, resolveCommon(`magnificat-antiphon-${saint.common}`))
       : undefined,
   ];
   return candidates.find((t) => t && (t.status.la !== 'missing' || t.status.en !== 'missing'));
@@ -1426,7 +1420,7 @@ export function resolveSuffrages(
  * st-lawrence-antiphon.yml) for a sanctoral winner, `${id}-benedictus-
  * antiphon` (not authored yet for any temporal id — resolves "missing",
  * same pending convention as everywhere else) for a temporal one, then
- * `saint.benedictusCommon` (`benedictus-antiphon-${benedictusCommon}.yml`,
+ * `saint.common` (`benedictus-antiphon-${common}.yml`,
  * see SaintRecord's own doc comment) when neither exists — run through
  * `withPaschaltideAlleluia` on the way out, so both a Common-category
  * Benedictus antiphon and a saint's own unique `${propers}-antiphon` pick
@@ -1462,8 +1456,8 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
   }
   const saint = getSaintRecord(winner.id);
   const proper = saint?.propers ? withPaschaltideAlleluia(resolveCommon(`${saint.propers}-antiphon`), day) : undefined;
-  const common = saint?.benedictusCommon
-    ? withPaschaltideAlleluia(resolveCommon(`benedictus-antiphon-${saint.benedictusCommon}`), day)
+  const common = saint?.common
+    ? withPaschaltideAlleluia(resolveCommon(`benedictus-antiphon-${saint.common}`), day)
     : undefined;
   return firstAvailable([proper, common], { text: {}, status: { la: 'missing', en: 'missing' } });
 }
@@ -1489,9 +1483,8 @@ export function getBenedictusAntiphon(day: LiturgicalDay): ResolvedText {
  *    Prima]` too — confirmed 2026-09-15 while chasing why the old
  *    per-annum default text turned out to actually be Common-of-a-
  *    Confessor content that had been hardcoded as the universal default
- *    instead of properly scoped here). Tries `minorHoursCommon` then
- *    plain `common`, same field-priority as the capitulum/hymn Common
- *    fallback elsewhere in this file.
+ *    instead of properly scoped here). Keyed on `common`, like every
+ *    other Common-tier lookup in this file.
  * 3. The day's own season (`prime-lectio-brevis-${adv,nat,epi,quad,
  *    quad5,pasch,asc,pent}`) — real, live season data
  *    (`calendar/temporal.ts`'s `resolveSeason`), NOT gated on any
@@ -1530,7 +1523,7 @@ export function getPrimeLectioBrevis(day: LiturgicalDay): ResolvedText {
   }
   const saint = getSaintRecord(winner.id);
   const proper = saint?.propers ? resolveCommon(`${saint.propers}-lectio-prima`) : undefined;
-  const commonId = saint?.minorHoursCommon ?? saint?.common;
+  const commonId = saint?.common;
   const common = commonId ? resolveCommon(`prime-lectio-prima-${commonId}`) : undefined;
   return firstAvailable([proper, common, seasonal], perAnnum);
 }
@@ -1628,10 +1621,10 @@ export function getMagnificatAntiphon(day: LiturgicalDay, vespersVariant?: Vespe
   // `magnificat-antiphon-common-of-a-vigil` (deliberately never authored --
   // there's no single fixed text to put there).
   const vigil = saint?.rank === 'vigil' ? magnificatWeekdayDefault(day) : undefined;
-  const paschalCommon = saint?.benedictusCommon && paschalSecond ? resolveCommon(`magnificat-antiphon-${saint.benedictusCommon}-paschaltide`) : undefined;
-  const commonBase = saint?.benedictusCommon
+  const paschalCommon = saint?.common && paschalSecond ? resolveCommon(`magnificat-antiphon-${saint.common}-paschaltide`) : undefined;
+  const commonBase = saint?.common
     ? withPaschaltideAlleluia(
-        withVespersVariant(`magnificat-antiphon-${saint.benedictusCommon}`, vespersVariant, resolveCommon(`magnificat-antiphon-${saint.benedictusCommon}`)),
+        withVespersVariant(`magnificat-antiphon-${saint.common}`, vespersVariant, resolveCommon(`magnificat-antiphon-${saint.common}`)),
         day,
       )
     : undefined;

@@ -3,13 +3,11 @@
 # C4b" (Common of Confessor Popes, same category as st-pius-v.yml/
 # st-leo-ii.yml). Own real proper [Oratio] and own Nocturn 2-3 content
 # (Nocturn 3 is St. Augustine's own homily on John 21:15-17, not a
-# cross-reference). No [Ant 1] of his own -- benedictusCommon/
-# minorHoursCommon fall back to the plain Common of a Confessor Bishop.
+# cross-reference). No [Ant 1] of his own -- Benedictus and minor-hour content
+# fall back to the plain Common of a Confessor Bishop.
 id: st-pius-x
 name: "St. Pius X, Pope and Confessor"
 nameLa: "Sanctus Pius X, Papa et Confessor"
 rank: duplex
 common: common-of-a-confessor-pope
 propers: "st-pius-x"
-benedictusCommon: common-of-a-confessor-pope
-minorHoursCommon: common-of-a-confessor-pope

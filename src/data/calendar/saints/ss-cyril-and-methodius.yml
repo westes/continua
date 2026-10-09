@@ -3,8 +3,8 @@
 # C4-1" (a variant Oratio of the Common of a Confessor Bishop, C4 --
 # same non-distinct-category reasoning as st-augustine-of-canterbury.yml).
 # Own real proper [Oratio] and own Nocturn 2 content (Leo XIII's own
-# encyclical letter). No [Ant 1] of its own -- benedictusCommon/
-# minorHoursCommon fall back to the plain Common of a Confessor
+# encyclical letter). No [Ant 1] of its own -- Benedictus and minor-hour content
+# fall back to the plain Common of a Confessor
 # Bishop. Nocturn 3 is a direct `@Commune/C1a:LectioN` cross-reference
 # (Common of Apostles variant), not this saint's own content -- not
 # transcribed, per the bare-cross-reference convention.
@@ -14,5 +14,3 @@ nameLa: "Sancti Cyrillus et Methodius, Episcopi et Confessores"
 rank: duplex
 common: common-of-a-confessor-bishop
 propers: "ss-cyril-and-methodius"
-benedictusCommon: common-of-a-confessor-bishop
-minorHoursCommon: common-of-a-confessor-bishop

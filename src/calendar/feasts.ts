@@ -39,22 +39,6 @@ export interface SaintRecord {
   rank: FeastClass;
   common: string;
   propers: string | null;
-  /** Fallback id for Prime/Terce/Sext/None's antiphon/chapter when this
-   * saint has no proper file of their own for a given hour (see
-   * hours/resolve-common.ts's resolveMinorHourAntiphon/Chapter) — a
-   * *different* id than `common` above, deliberately: live-verified that
-   * the minor hours don't always draw from the same Common category as
-   * the saint's overall classification. E.g. both Chair of St. Peter
-   * feasts are `common: common-of-an-apostle` (Peter's own rank/collect
-   * classification), but their Prime/Terce/Sext/None content is drawn
-   * from the Common of a Confessor Bishop instead (Peter considered as
-   * bishop, for that specific commemoration) — `minorHoursCommon:
-   * common-of-a-confessor-bishop` captures that without corrupting the
-   * saint's real `common` field. Absent when the minor hours simply use
-   * the saint's own `common` (the lookup falls back to it, see
-   * minorHoursCommonOf in hours/resolve-common.ts).
-   */
-  minorHoursCommon?: string;
   /**
    * Fallback id for the day collect (`getDayCollect`) when this saint has
    * no proper collect of their own (`propers` may still be non-null —
@@ -83,20 +67,6 @@ export interface SaintRecord {
    * have two or more `{N}` placeholders for a group commemorated
    * together, one array entry per saint in the group. */
   collectName?: { la: string[]; en: string[] };
-  /**
-   * Fallback id for Lauds' Benedictus antiphon (`getBenedictusAntiphon`)
-   * when this saint has no proper `${propers}-antiphon` of their own —
-   * `data/propers/common/benedictus-antiphon-${id}.yml`. Unlike
-   * `collectCommon`, no name-substitution template: live-verified every
-   * Common category's Benedictus antiphon in current use is name-free
-   * text (the source's own `Commune/C4a.txt`, Doctor, is the one
-   * exception — has a `{N}`-shaped "beáte N." — but no saint on this
-   * calendar draws from it yet, so no substitution mechanism was built
-   * for this field; revisit if that changes). Often, but not always, the
-   * same category as `minorHoursCommon` below (both were live-verified
-   * independently per saint, not assumed identical).
-   */
-  benedictusCommon?: string;
   /**
    * Common category whose psalmody (Matins/Lauds/Vespers psalm numbers and
    * antiphons) this saint takes, when it differs from `common` -- the

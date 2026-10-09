@@ -9,17 +9,12 @@ id: ss-dionysius-and-companions
 name: "St. Dionysius, Bishop, and Companions, Martyrs"
 nameLa: "Sanctus Dionysius, Episcopus, et Socii, Martyres"
 rank: semiduplex
-common: common-of-a-martyr-bishop
+common: common-of-several-martyrs
 propers: "ss-dionysius-and-companions"
-# Benedictus antiphon live-verified (2026-08, Lauds query, 2025-10-09,
-# winner outright) as byte-identical to common-of-several-martyrs's own
-# ("Vestri capílli cápitis...") -- despite `common` above saying
-# martyr-*bishop*, not several-martyrs; the two fields aren't always the
-# same category (see calendar/feasts.ts's SaintRecord.benedictusCommon
-# doc comment).
-benedictusCommon: common-of-several-martyrs
+# Common is several martyrs (Sancti/10-09t.txt: `vide C3a`), not martyr-bishop:
+# Dionysius is commemorated with Rusticus and Eleutherius, so every hour --
+# hymn, Benedictus, minor hours -- takes the plural Common.
 # P/T/S/N: no [Ant Prima]/etc of its own in the source (10-09t.txt) --
 # [Rule]/[Rank] point to Commune/C3a instead, the same C-number family
 # already live-query-verified for common-of-several-martyrs.yml (see
 # TODO.md's 'minor hour content gaps' section).
-minorHoursCommon: common-of-several-martyrs

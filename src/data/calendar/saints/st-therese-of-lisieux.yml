@@ -2,8 +2,8 @@
 # block of `web/www/horas/Latin/Sancti/10-03.txt` -- "Duplex;;3;;vide
 # C6a" (Common of Virgins only). Own real proper [Oratio] and own
 # Nocturn 2-3 content (Nocturn 3 is Pope St. Leo the Great's own
-# homily, not a cross-reference). No [Ant 1] of her own -- benedictus
-# Common/minorHoursCommon fall back to the plain Common of a Virgin.
+# homily, not a cross-reference). No [Ant 1] of her own -- Benedictus
+# and minor-hour content fall back to the plain Common of a Virgin.
 #
 # 2026-10-07: her full proper office added from
 # `SanctiM/10-03b.txt` (Duplex;;5, 12 lessons -- the Monastic file the plain
@@ -17,5 +17,3 @@ nameLa: "Sancta Teresia a Jesu Infante, Virgo"
 rank: duplex
 common: common-of-a-virgin
 propers: "st-therese-of-lisieux"
-benedictusCommon: common-of-a-virgin
-minorHoursCommon: common-of-a-virgin

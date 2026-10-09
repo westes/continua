@@ -2,7 +2,7 @@
 # block of `web/www/horas/Latin/Sancti/07-03.txt` -- "Semiduplex;;2.2;;
 # vide C4b" (Common of Confessor Popes, same category as
 # st-pius-v.yml). Own real proper [Oratio]. No [Ant 1] of his own --
-# benedictusCommon/minorHoursCommon fall back to the plain Common of a
+# Benedictus and minor-hour content fall back to the plain Common of a
 # Confessor Bishop, same fallback reasoning as st-pius-v.yml. No
 # Lectio7-9 in his own file -- defers to the Common's own Nocturn 3,
 # not transcribed here.
@@ -12,5 +12,3 @@ nameLa: "Sanctus Leo II, Papa et Confessor"
 rank: semiduplex
 common: common-of-a-confessor-pope
 propers: "st-leo-ii"
-benedictusCommon: common-of-a-confessor-pope
-minorHoursCommon: common-of-a-confessor-pope

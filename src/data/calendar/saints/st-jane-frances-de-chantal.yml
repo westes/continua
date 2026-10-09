@@ -1,7 +1,7 @@
 # Read directly from the reference engine: untagged/default [Rank]
 # block of `web/www/horas/Latin/Sancti/08-21.txt` -- "Duplex;;3;;vide
 # C7a" (Commune non Virginum non Martyrum). Own real proper [Oratio].
-# benedictusCommon/minorHoursCommon fall back to the Common of a
+# Benedictus and minor-hour content fall back to the Common of a
 # Virgin, same C-number-family fallback already established for
 # st-monica.yml/st-margaret-of-scotland.yml/st-elizabeth-of-
 # portugal.yml (no benedictus-antiphon-common-of-a-widow.yml exists).
@@ -15,8 +15,6 @@ nameLa: "Sancta Joanna Francisca de Chantal, Vidua"
 rank: semiduplex
 common: common-of-a-widow
 propers: "st-jane-frances-de-chantal"
-benedictusCommon: common-of-a-widow
-minorHoursCommon: common-of-a-widow
 invitatoryName:
   la: ["Joánnæ Francíscæ"]
   en: ["Jane Frances"]
