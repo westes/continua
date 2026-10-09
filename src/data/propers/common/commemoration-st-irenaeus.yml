@@ -1,0 +1,42 @@
+# Ant+V/R+collect commemoration bundle, same combined-bundle shape as
+# ss-felix-and-adauctus-commemoration.yml/st-alphonsus-liguori-
+# commemoration.yml -- see hours/resolve-common.ts's
+# sanctoralCommemorationPart for how this renders, falling back to the
+# bare collect (st-irenaeus-collect.yml) when this file didn't exist.
+# June 28 has no active octave to demote him (see calendar/saints/
+# st-irenaeus.yml's own header), so this bundle isn't reachable under an
+# ordinary year, but is authored anyway per this project's established
+# practice of covering a winning saint's own commemoration path in the
+# same pass (a privileged Sunday could in principle still displace him).
+# Ant 2/Versum 2 are the standard de-Communi pairing for the Common of a
+# Martyr Bishop (C2, his own source common) -- common-of-a-martyr-bishop-
+# commemoration-antiphon.yml/lauds-versicle-common-of-a-martyr-bishop.yml,
+# both already verified elsewhere.
+id: commemoration-st-irenaeus
+text:
+  la: |
+    Ant. Qui odit * ánimam suam in hoc mundo, in vitam ætérnam custódit eam.
+    V. Justus ut palma florébit.
+    R. Sicut cedrus Líbani multiplicábitur.
+    Orémus.
+    Deus, qui beáto Irenǽo Mártyri tuo atque Pontífici tribuísti, ut et veritáte doctrínæ
+    expugnáret hǽreses, et pacem Ecclésiæ felíciter confirmáret: da, quǽsumus, plebi tuæ in
+    sancta religióne constántiam; et pacem tuam nostris concéde tempóribus.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Ant. He that hateth his life * in this world, shall keep it unto life eternal.
+    V. The righteous shall flourish like the palm-tree.
+    R. He shall grow like a cedar in Lebanon.
+    Let us pray.
+    O God, Who granted to blessed Irenaeus, thy Martyr and Bishop, both to overthrow
+    heresies by the truth of his teaching, and happily to confirm the peace of the Church:
+    grant, we beseech thee, steadfastness in holy religion to thy people; and give thy peace
+    in our days.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity
+    of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

@@ -1,5 +1,5 @@
 import type { HourId, ResolvedText } from './types';
-import type { LiturgicalDay } from '../calendar/types';
+import type { DayWinner, LiturgicalDay } from '../calendar/types';
 import { getSaintRecord } from '../calendar/feasts';
 import { activeOctavesFor, resolveActiveOctave } from '../calendar';
 import vespersOAntiphonsData from '../data/hours/vespers-o-antiphons.yml';
@@ -84,6 +84,9 @@ export interface PartRequest {
   /** The slot falls to the season's text for a saint too, not only for a
    * ferial day (Prime's short reading: the time's own when the feast has none). */
   seasonalForSaints?: boolean;
+  /** Look up for this feast instead of the day's winner: a commemoration
+   * takes its own feast's text (at Vespers, of the commemorated evening). */
+  winner?: DayWinner;
 }
 
 /** Texts that win a slot on a calendar date whoever wins the day: key is
@@ -105,8 +108,8 @@ function isReal(t: ResolvedText): boolean {
 
 /** The winner-keyed ids to try: the feast's own (and its shared office's),
  * then its Common's. */
-function winnerIds(day: LiturgicalDay): { proper: string[]; common: string[] } {
-  const overrideId = getMinorHourOverrideId(day);
+function winnerIds(day: LiturgicalDay, winner?: DayWinner): { proper: string[]; common: string[] } {
+  const overrideId = winner ? winner.id : getMinorHourOverrideId(day);
   if (!overrideId) {
     return { proper: [], common: [] };
   }
@@ -119,8 +122,8 @@ function winnerIds(day: LiturgicalDay): { proper: string[]; common: string[] } {
 
 /** Whether the day's winner deliberately has no such part (`noParts` in its
  * feast record) -- as opposed to simply not having it authored yet. */
-export function isAbsentByDesign(day: LiturgicalDay, hour: HourId, part: PartKind): boolean {
-  const winner = resolveOfficeWinner(day);
+export function isAbsentByDesign(day: LiturgicalDay, hour: HourId, part: PartKind, given?: DayWinner): boolean {
+  const winner = given ?? resolveOfficeWinner(day);
   const noParts =
     winner.kind === 'sanctoral' ? getSaintRecord(winner.id)?.noParts : getTemporalFeastRecord(winner.id)?.noParts;
   return !!noParts?.includes(`${hour}-${FILE_PART[part]}`);
@@ -143,16 +146,17 @@ export function lookupPart(request: PartRequest): ResolvedText {
 }
 
 /** `isFeast`: a saint (other than a Vigil) never takes the weekday's text. */
-export function isFeastWinner(day: LiturgicalDay): boolean {
-  const winner = resolveOfficeWinner(day);
+export function isFeastWinner(day: LiturgicalDay, given?: DayWinner): boolean {
+  const winner = given ?? resolveOfficeWinner(day);
   return winner.kind === 'sanctoral' && winner.rank !== 'vigil';
 }
 
-export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignoreWinner, date, fallback, seasonalForSaints }: PartRequest): FoundPart | undefined {
-  if (!ignoreWinner && isAbsentByDesign(day, hour, part)) {
+export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignoreWinner, date, fallback, seasonalForSaints, winner }: PartRequest): FoundPart | undefined {
+  if (!ignoreWinner && isAbsentByDesign(day, hour, part, winner)) {
     return undefined;
   }
-  const override = DATE_OVERRIDES[`${hour}.${part}`]?.[(date ?? day.date).slice(5)];
+  // A date override is the day's own slot; a commemoration keeps its feast's.
+  const override = winner ? undefined : DATE_OVERRIDES[`${hour}.${part}`]?.[(date ?? day.date).slice(5)];
   if (override) {
     const text = override.status
       ? { text: override.antiphon, status: override.status as ResolvedText['status'] }
@@ -182,7 +186,7 @@ export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignor
     }
     return undefined;
   };
-  const ids = ignoreWinner ? { proper: [], common: [] } : winnerIds(day);
+  const ids = ignoreWinner ? { proper: [], common: [] } : winnerIds(day, winner);
   // A temporal-only octave supplies its hymn alone: the Sunday within it
   // keeps its own chapter, responsory and versicle (Ascension's octave
   // Sunday's chapter genuinely differs from Ascension Day's).
@@ -217,12 +221,12 @@ export function lookupPartTiered({ day, hour, part, temporalKeys, variant, ignor
   // A saint is not a ferial day (a Vigil is: it takes the weekday's text): if
   // nothing of its own or its Common is authored, that is a gap to show, not
   // a cue to borrow the weekday's text.
-  for (const key of isFeastWinner(day) && !ignoreWinner && !seasonalForSaints ? [] : temporalKeys) {
+  for (const key of isFeastWinner(day, winner) && !ignoreWinner && !seasonalForSaints ? [] : temporalKeys) {
     const found = find(hour, key, 'temporal');
     if (found) {
       return found;
     }
   }
-  const inline = isFeastWinner(day) && !ignoreWinner ? undefined : fallback?.();
+  const inline = isFeastWinner(day, winner) && !ignoreWinner ? undefined : fallback?.();
   return inline && isReal(inline) ? { text: inline, tier: 'fallback', paschalFile: false } : undefined;
 }

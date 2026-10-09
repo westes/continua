@@ -1,0 +1,34 @@
+# Own proper antiphon (st-damasus-antiphon.yml), paired with the standard
+# de-Communi commemoration versicle for common-of-a-confessor-bishop (`[Versum 2]`, the tag
+# paired with `[Ant 2]` for a mere commemoration in every other verified
+# category checked this pass) -- not yet independently live-verified for
+# this specific category, so marked `draft` rather than `verified` per
+# this app's own "prefer draft over missing" convention. Collect is the
+# saint's own real proper (st-damasus-collect.yml), unchanged.
+#
+# 2026-09-12: `en` had never actually included the collect at all (it cut
+# off right after the V/R, before "Let us pray") -- st-damasus-collect.yml
+# itself had no English yet at the time this file was authored. Filled in
+# now that that collect has its own (draft) translation.
+id: commemoration-st-damasus
+text:
+  la: |
+    Ant. Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.
+    V. Justum dedúxit Dóminus per vias rectas.
+    R. Et osténdit illi regnum Dei.
+    Orémus.
+    Exáudi, Dómine, preces nostras: et interveniénte beáto Dámaso Confessóre tuo atque Pontífice, indulgéntiam nobis tríbue placátus et pacem.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Ant. Well done, thou good and faithful servant * thou hast been faithful over a few things, I will make thee ruler over many things, saith the Lord.
+    V. The Lord led the just through the right ways:
+    R. And showed him the kingdom of God.
+    Let us pray.
+    Hear, O Lord, our prayers: and, through the intercession of blessed Damasus, thy Confessor and Bishop, mercifully grant us pardon and peace.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+
+status:
+  la: draft
+  en: draft

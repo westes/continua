@@ -1,0 +1,31 @@
+# Antiphon is his own proper Lauds antiphon (decollation-of-st-john-
+# baptist-antiphon.yml, read from Sancti/08-29.txt's own [Ant 1]) --
+# a commemoration reuses a saint's own proper antiphon when he has one,
+# same pattern as st-clare-commemoration.yml. Versicle is the standard
+# "de Communi Unius Martyris" commemoration versicle (Commune/C2.txt's
+# own [Nocturn 2 Versum], Latin + English) -- his own file cites "vide
+# C2a" for the office generally (see decollation-of-st-john-baptist.yml),
+# and this versicle is the generic one shared by that whole Common
+# category, not unique to him. Collect is his own real proper
+# (decollation-of-st-john-baptist-collect.yml), unchanged.
+id: commemoration-decollation-of-st-john-baptist
+text:
+  la: |
+    Ant. Misso Heródes * spiculatóre, præcépit amputári caput Joánnis in cárcere. Quo audíto, discípuli ejus venérunt, et tulérunt corpus ejus, et posuérunt illud in monuménto.
+    V. Posuísti, Dómine, super caput ejus.
+    R. Corónam de lápide pretióso.
+    Orémus.
+    Sancti Joánnis Baptístæ Præcursóris et Mártyris tui, quǽsumus, Dómine, veneránda festívitas: salutáris auxílii nobis præstet efféctum:
+    Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Ant. Herod sent * an executioner, and commanded that John's head should be cut off in the prison. When they heard thereof, his disciples came and took up his body and laid it in a tomb.
+    V. O Lord, thou hast set a crown of precious stones.
+    R. Upon his head.
+    Let us pray.
+    Lord, we beseech thee, that the keeping of this honourable feastday in memory of the holy Baptist John, thy Fore-runner, and thy Martyr, may be a mean to draw upon us the effectual outpouring of thy saving help.
+    Who livest and reignest with God the Father in the unity of the Holy Spirit, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

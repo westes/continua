@@ -6,7 +6,6 @@ import { getCommonProper, getTemporalProper } from '../propers';
 import { getSaintRecord } from '../calendar/feasts';
 import { resolveActiveOctave, activeOctavesFor, octaveGoverningPrivilegedDay, isAtLeast, isSundayOrFeast, monthWeekId } from '../calendar';
 import { getTemporalFeastRecord } from '../calendar/temporal-feasts';
-import { sharedOfficeId } from './office-source';
 import { ensureSingleAlleluia } from './paschal-alleluia';
 import { resolveTemporalId } from '../calendar/temporal-id';
 import { sortCommemorations } from '../calendar/commemoration-order';
@@ -891,31 +890,19 @@ function combineCommemorationBundle(antiphon: ResolvedText, versicle: ResolvedTe
   return { text, status };
 }
 
-/** A saint's own Vespers versicle for one evening: their own file, a shared
- * office id's, then their Common's (with the Confessor Pope-style bundle
- * alias) -- the same chain `lookupPart` follows. */
-function saintVespersVersicle(saintId: string, variant: VespersVariant): ResolvedText | undefined {
+/** A commemorated saint's Vespers versicle / Magnificat antiphon for one
+ * evening, through the one lookup with the saint as the winner. */
+function saintVespersPart(saintId: string, part: 'versicle' | 'magnificat', variant: VespersVariant, day: LiturgicalDay): ResolvedText | undefined {
   const saint = getSaintRecord(saintId);
-  const shared = sharedOfficeId(saintId);
-  const common = saint?.common;
-  const ids = [saintId, shared, common, common ? COMMON_BUNDLE_ALIAS[common] : undefined].filter((x): x is string => !!x);
-  for (const id of ids) {
-    const t = withVespersVariant(`vespers-versicle-${id}`, variant, resolveCommon(`vespers-versicle-${id}`));
-    if (t.status.la !== 'missing' || t.status.en !== 'missing') return t;
-  }
-  return undefined;
-}
-
-/** A saint's Magnificat antiphon for one evening (proper, then Common). */
-function saintMagnificat(saintId: string, variant: VespersVariant): ResolvedText | undefined {
-  const saint = getSaintRecord(saintId);
-  const candidates = [
-    saint?.propers ? withVespersVariant(`magnificat-antiphon-${saint.propers}`, variant, resolveCommon(`magnificat-antiphon-${saint.propers}`)) : undefined,
-    saint?.common
-      ? withVespersVariant(`magnificat-antiphon-${saint.common}`, variant, resolveCommon(`magnificat-antiphon-${saint.common}`))
-      : undefined,
-  ];
-  return candidates.find((t) => t && (t.status.la !== 'missing' || t.status.en !== 'missing'));
+  if (!saint) return undefined;
+  return lookupPartTiered({
+    day,
+    hour: 'vespers',
+    part,
+    variant,
+    temporalKeys: [],
+    winner: { kind: 'sanctoral', id: saintId, name: saint.name, rank: saint.rank },
+  })?.text;
 }
 
 /** At Vespers the engine's commemoration takes the commemorated saint's
@@ -927,8 +914,8 @@ function forVespersEvening(text: ResolvedText, commemoration: Extract<Commemorat
   const note = commemoration.vespersNote;
   if (!note) return text;
   const variant: VespersVariant = note === 'tomorrow' ? 'first' : 'second';
-  const ant = saintMagnificat(commemoration.id, variant);
-  const vers = saintVespersVersicle(commemoration.id, variant);
+  const ant = saintVespersPart(commemoration.id, 'magnificat', variant, day);
+  const vers = saintVespersPart(commemoration.id, 'versicle', variant, day);
   const paschal = PASCHALTIDE_SEASONS.has(day.season);
   const out: Partial<Record<string, string>> = { ...text.text };
   for (const lang of ['la', 'en'] as const) {
@@ -980,7 +967,7 @@ function sanctoralCommemorationBase(
   const label = `Commemoration of ${commemoration.name}`;
   const saint = getSaintRecord(commemoration.id);
   if (saint?.propers) {
-    const combined = resolveCommon(`${saint.propers}-commemoration`);
+    const combined = resolveCommon(`commemoration-${saint.propers}`);
     if (combined.status.la !== 'missing' || combined.status.en !== 'missing') {
       return { kind: 'preces', text: combined, label };
     }
@@ -1000,7 +987,7 @@ function sanctoralCommemorationBase(
     const template = resolveCommon(saint.collectCommon);
     if (template.status.la !== 'missing' || template.status.en !== 'missing') {
       const collect = substituteName(template, saint.collectName);
-      const antiphon = resolveCommon(`${saint.common}-commemoration-antiphon`);
+      const antiphon = resolveCommon(`commemoration-antiphon-${saint.common}`);
       const versicle = resolveCommon(`lauds-versicle-${saint.common}`);
       if (antiphon.status.la !== 'missing' || antiphon.status.en !== 'missing') {
         return { kind: 'preces', text: combineCommemorationBundle(antiphon, versicle, collect), label };
@@ -1031,7 +1018,7 @@ function sanctoralCommemorationBase(
  * fully empty commemoration when a real collect exists to show. */
 export function octaveCommemorationPart(commemoration: Extract<Commemoration, { kind: 'octave' }>): ResolvedPart {
   const label = `Commemoration of the Octave of ${commemoration.name}`;
-  const combined = resolveCommon(`${commemoration.id}-octave-commemoration`);
+  const combined = resolveCommon(`commemoration-octave-${commemoration.id}`);
   if (combined.status.la !== 'missing' || combined.status.en !== 'missing') {
     return { kind: 'preces', text: combined, label };
   }

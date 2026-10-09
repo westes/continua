@@ -1,0 +1,31 @@
+# Verified against Divinum Officium (Monastic Tridentinum 1617), Lauds
+# live query, 2026-08-12 -- the "Commemoratio S. Claræ Virginis" block
+# that follows St. Lawrence's own collect on any ordinary day within his
+# octave (she's never the day's own winner in this app's calendar, always
+# commemorated -- see st-clare.yml). Antiphon + versicle/response + full
+# collect (with its own doxology and Amen, since this stands alone rather
+# than chaining into another suffrage the way lauds-suffrage-*.yml's do)
+# -- see hours/resolve-common.ts's getDayCollects for how a sanctoral
+# commemoration renders this whole bundle, falling back to just the bare
+# collect (st-clare-collect.yml) for a saint without one of these authored.
+id: commemoration-st-clare
+text:
+  la: |
+    Ant. Símile est regnum cælórum * hómini negotiatóri quærénti bonas margarítas: invénta una pretiósa, dedit ómnia sua, et comparávit eam.
+    V. Diffúsa est grátia in lábiis tuis.
+    R. Proptérea benedíxit te Deus in ætérnum.
+    Orémus.
+    Exáudi nos, Deus, salutáris noster: ut sicut de beátæ Claræ Vírginis tuæ festivitáte gaudémus; ita piæ devotiónis erudiámur afféctu.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Ant. The kingdom of heaven is like unto a merchantman * seeking goodly pearls, who, when he had found one pearl of great price, went and sold all that he had, and bought it.
+    V. Grace is poured into thy lips.
+    R. Therefore God hath blessed thee for ever.
+    Let us pray.
+    Graciously hear us, O God of our salvation; that as we rejoice in the festivity of blessed Clare thy Virgin, we may be instructed in the affections of a loving devotion.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

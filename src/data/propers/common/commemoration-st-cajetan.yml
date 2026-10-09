@@ -1,0 +1,36 @@
+# Standard de-Communi commemoration for common-of-a-confessor (`[Ant 2]`+
+# `[Versum 2]` from the reference engine's Commune files, same pattern
+# st-anthony-mary-zaccaria-commemoration.yml uses). St. Cajetan has no
+# proper antiphon of his own in the source (his file's [Ant 1] is a
+# cross-reference to a temporal Sunday antiphon this app doesn't model,
+# see st-cajetan.yml's own comment), so this reuses the Common's own
+# text, marked `draft` per this app's "prefer draft over missing"
+# convention. Collect is his own real proper (st-cajetan-collect.yml),
+# unchanged. Needed for the rare case Aug 7 falls on a day that outranks
+# him (e.g. a Sunday), demoting him to a commemoration alongside Donatus.
+id: commemoration-st-cajetan
+text:
+  la: |
+    Ant. Serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam: intra in gáudium Dómini Dei tui.
+    V. Os justi meditábitur sapiéntiam.
+    R. Et lingua ejus loquétur judícium.
+    Orémus.
+    Deus, qui beáto Cajetáno Confessóri tuo apostólicam vivéndi formam imitári tribuísti: da
+    nobis, ejus intercessióne et exémplo, in te semper confídere et sola cæléstia desideráre.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte
+    Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Ant. Well done, thou good * and faithful servant; thou hast been faithful over a few things, I will make thee ruler over many things; enter thou into the joy of the Lord thy God.
+    V. The mouth of the righteous speaketh wisdom.
+    R. And his tongue talketh judgment.
+    Let us pray.
+    O God, Who didst grant thy blessed Confessor Cajetan grace to pattern his life on that of
+    thine Apostles: grant us, through his intercession and example, ever to put our whole
+    trust in thee, and to desire heavenly things alone.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity
+    of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: draft
+  en: draft
