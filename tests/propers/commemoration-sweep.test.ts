@@ -54,7 +54,7 @@ const commemorationIds = [
   'commemoration-st-francis', 'commemoration-st-francis-de-sales', 'commemoration-st-francis-of-paola', 'commemoration-st-francis-xavier',
   'commemoration-st-gabriel-archangel', 'commemoration-st-gabriel-of-our-lady-of-sorrows', 'commemoration-st-george', 'commemoration-st-gertrude',
   'commemoration-st-gorgonius', 'commemoration-st-gregory-the-great', 'commemoration-st-henry', 'commemoration-st-hermenegild', 'commemoration-st-hermes', 'commemoration-st-hildegard',
-  'commemoration-st-hilary-of-poitiers', 'commemoration-stigmata-of-st-francis', 'commemoration-st-ignatius-of-loyola', 'commemoration-st-irenaeus', 'commemoration-st-james-the-greater',
+  'commemoration-st-hilary-of-poitiers', 'commemoration-stigmata-of-st-francis', 'commemoration-st-ignatius-of-loyola', 'commemoration-st-irenaeus', 'commemoration-st-isidore-the-farmer', 'commemoration-st-james-the-greater',
   'commemoration-st-jane-frances-de-chantal', 'commemoration-st-jerome', 'commemoration-st-joachim', 'commemoration-st-john-apostle',
   'commemoration-st-john-baptist-de-la-salle', 'commemoration-st-john-baptist-de-rossi', 'commemoration-st-john-before-the-latin-gate', 'commemoration-st-john-bosco',
   'commemoration-st-john-cantius', 'commemoration-st-john-capistrano', 'commemoration-st-john-chrysostom', 'commemoration-st-john-damascene',

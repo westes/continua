@@ -1,29 +1,34 @@
-# Read directly from the reference engine: `Sancti/10-25n.txt` --
-# "S. Isidori Agricolæ Confessoris;;Duplex;;2;;vide C5" -- an `n` (modern-
-# optional) file, found via the 2026-09 sweep of all `??-??n.txt` files
-# (memory vu-suffixed-file-sweep). Canonized 1622 (Pope Gregory XV, one
-# of the "four saints of 1622" alongside Ignatius Loyola/Francis
-# Xavier/Philip Neri) -- old enough that this project's late-canonization
-# deflation rule still applies (postdates ~1600), but not a modern
-# 20th-century figure; the feast's US-patronal declaration (Pope Pius
-# XII, mid-20th c., per the source's own Lectio94) is what put him in the
-# `n`/optional file at all, not a late cultus.
+# Read directly from the reference engine: `Sancti/aliquibus locis/
+# 05-15-Isidorus.txt` -- "S. Isidori Agricolæ Confessoris;;Duplex;;3;;vide
+# C5-1", the traditional May 15 office (dies natalis, 1172), 9 lectiones,
+# own proper collect, Lectio4-6 vita, Gospel (John 15) and Gregory homily.
+# Supersedes the earlier build from `Sancti/10-25n.txt` (the modern
+# US-patronal optional file, Oct 25), which carried only a one-paragraph
+# [Lectio94] summary.
+#
+# DATE AND RANK: May 15, and he wins the day -- user decision 2026-10-11
+# ("isidore should win and de la salle is commemorated"). May 15 is also
+# St. John Baptist de la Salle's day; the rank-deflation rule would take
+# both down a tier (Isidore canonized 1622, de la Salle 1900), which would
+# tie them, so Isidore is deliberately kept at his source rank `duplex`
+# here and de la Salle goes to `semiduplex` (st-john-baptist-de-la-salle.yml,
+# which is what the deflation rule gives a 1900 canonization anyway).
+# `resolveCollision` then makes de la Salle the commemoration, with his own
+# collect and Matins reading, same as any commemoration in this app.
 #
 # **Distinct from St. Isidore of Seville** (`st-isidore-of-seville.yml`,
-# the Bishop-Doctor, already modeled) -- this is Isidore the ploughman of
-# Madrid, patron of farmers. Name/id deliberately disambiguated.
+# the Bishop-Doctor, Apr 4, already modeled) -- this is Isidore the
+# ploughman of Madrid, patron of farmers. Name/id deliberately
+# disambiguated. Common of a Confessor Not a Pontiff (C5), per [Rule]
+# ("vide C5-1;mtv" -- the Common of a Confessor's own ploughman variant is
+# not separately modeled; `common-of-a-confessor` is used).
 #
-# "Duplex" deflated one tier to Semiduplex per the standing late-
-# canonization rule (see St. Rose of Lima precedent). Common of a
-# Confessor Not a Pontiff (C5), per [Rule].
-#
-# Own real proper collect, Lectio94 vita, and Lauds/Terce/Sext propers all
-# present in the source, both languages -- see propers/common/
-# st-isidore-the-farmer-collect.yml and propers/nocturn-readings/
-# st-isidore-the-farmer.yml.
+# Own real proper collect (collect-st-isidore-the-farmer.yml, unchanged --
+# the source's collect is the same text as the 10-25n file's) and Matins
+# readings (propers/nocturn-readings/st-isidore-the-farmer.yml).
 id: st-isidore-the-farmer
 name: "St. Isidore the Farmer, Confessor"
 nameLa: "Sanctus Isidorus Agricola, Confessor"
-rank: semiduplex
+rank: duplex
 common: common-of-a-confessor
 propers: "st-isidore-the-farmer"

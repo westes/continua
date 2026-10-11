@@ -83,6 +83,27 @@ Consequence: two same-rank Semiduplex saints sharing a date that falls on an ord
 leave the loser commemorated; it now lapses, matching the standing rule that an ordinary Sunday pushes
 Semiduplex off rather than downgrading it to a commemoration.
 
+### Regional-directory sweep started: Hildegard (Bavaria) and Isidore (aliquibus locis) placed on the calendar (2026-10-11)
+
+First pass over `Latin/Sancti/{aliquibus locis,Bavaria,Urbis,Brasilia,Neerlandia}/`, which no earlier
+sweep had touched (earlier ones covered top-level `Sancti/`/`SanctiM/` and their suffixed files). Finding
+that frames all of it: `English/Sancti/` is flat -- no regional subdirectory exists in English at all, so
+every file there is Latin-only here; English is this project's own translation, marked `draft`.
+
+- **St. Hildegard** rebuilt from `Sancti/Bavaria/09-17-Hildegardis.txt` (Duplex, nine lessons, own
+  Vespers hymn, three antiphons, proper responsories) instead of the Monastic stub. Placed on **Sep 25**
+  (her Sep 17 is the Stigmata of St. Francis; Sep 18-24 all occupied; first free date after).
+- **St. Isidore the Farmer** rebuilt from `aliquibus locis/05-15-Isidorus.txt`, placed on **May 15** and
+  made to win: Isidore `duplex`, de la Salle dropped to `semiduplex` (what the deflation rule gives a 1900
+  canonization anyway), so de la Salle is commemorated. Both were authored earlier but never on the calendar.
+- Decided, not yet done: the seven Lenten/pre-Lenten Passion feasts (`aliquibus locis/Quad*`), as movable
+  feasts that win with the Lenten feria commemorated (Column of the Flagellation skipped -- source has no
+  text); Marian/devotional feasts (Mediatrix on Oct 1, Holy House Dec 10, Betrothal Jan 23, Help of
+  Christians May 24, Redeemer Oct 23); Purest Heart dropped (duplicate of Immaculate Heart); Purity and
+  Patronage of the BVM deferred (Sunday-bound). Plan: `~/.claude/plans/i-see-that-in-keen-origami.md`.
+
+`npm test` (6032 tests) and `npx tsc --noEmit` pass.
+
 ### Prime chapter-responsory by-feast table: verified, not bulk-content -- only 2 of 36 needed it (2026-09-15)
 
 Follow-up to the Lectio Brevis entry below, same session. User pushed back on leaving
