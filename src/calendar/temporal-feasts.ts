@@ -85,6 +85,12 @@ export interface TemporalFeastRecord {
    * engine, so this flag is intentionally one-directional, not mirrored
    * onto most-precious-blood.yml. */
   forbidsSuccessorCommemoration?: true;
+  /** The feast claims First Vespers the evening before. A movable temporal
+   * feast has no such claim by default (only Sundays, sanctoral winners and the
+   * major feasts of the Lord listed in calendar/vespers.ts do); this opts a
+   * feast in. Set on the Lenten and pre-Lenten Passion feasts, whose source
+   * offices have their own First Vespers (Ant Vespera, Ant 1, Versum 1). */
+  firstVespers?: true;
 }
 
 const temporalFeastModules = import.meta.glob<{ default: TemporalFeastRecord }>(

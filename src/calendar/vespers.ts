@@ -63,6 +63,9 @@ function hasFirstVespers(day: LiturgicalDay): boolean {
   // keepsOwnSecondVespers question of whether the day *before* it
   // outranks the claim. Every FeastClass (including `vigil`, untested
   // directly but the same "lowest tier" logic) now qualifies.
+  if (day.winner.kind === 'temporal' && getTemporalFeastRecord(day.winner.id)?.firstVespers) {
+    return true;
+  }
   return day.winner.kind === 'sanctoral';
 }
 
@@ -147,6 +150,12 @@ function commemorationOfDisplacedPredecessor(today: LiturgicalDay): Commemoratio
       return undefined;
     }
     return { kind: 'sanctoral', id: loser.id, name: loser.name, nameLa: loser.nameLa, rank: loser.rank, vespersNote: 'today' };
+  }
+  const feast = getTemporalFeastRecord(loser.id);
+  if (feast?.firstVespers) {
+    // A named movable feast with its own Vespers (the Lenten Passion feasts)
+    // has real standing even though its day's category is a bare feria.
+    return { kind: 'temporal', id: loser.id, name: feast.name, nameLa: feast.nameLa };
   }
   if (today.temporalCategory === 'ordinary-feria') {
     return undefined;
@@ -314,6 +323,10 @@ export function resolveEveningDay(isoDate: string): LiturgicalDay {
     }
   }
 
+  const todayFeast = today.winner.kind === 'temporal' ? getTemporalFeastRecord(today.winner.id) : undefined;
+  const todayFeastRank = todayFeast?.firstVespers ? todayFeast.rank : undefined;
+  const tomorrowFeast = tomorrow.winner.kind === 'temporal' ? getTemporalFeastRecord(tomorrow.winner.id) : undefined;
+  const tomorrowFeastRank = tomorrowFeast?.firstVespers ? tomorrowFeast.rank : undefined;
   let todayWins: boolean;
   if (octaveDecision !== undefined) {
     todayWins = octaveDecision;
@@ -321,10 +334,18 @@ export function resolveEveningDay(isoDate: string): LiturgicalDay {
     todayWins = true;
   } else if (today.winner.kind === 'sanctoral' && tomorrow.winner.kind === 'sanctoral') {
     todayWins = compareFeastClass(today.winner.rank, tomorrow.winner.rank) > 0;
+  } else if (todayFeastRank && tomorrow.winner.kind === 'sanctoral') {
+    // A named movable feast with its own Vespers competes by its rank, a tie
+    // going to tomorrow, exactly as two saints do.
+    todayWins = compareFeastClass(todayFeastRank, tomorrow.winner.rank) > 0;
   } else if (governingOctave(today) && tomorrow.winner.kind === 'sanctoral') {
     todayWins = compareFeastClass(governingOctave(today)!.wins, tomorrow.winner.rank) > 0;
   } else if (today.winner.kind === 'sanctoral' && isAtLeast(today.winner.rank, 'duplex-2-classis')) {
     todayWins = true;
+  } else if (today.winner.kind === 'sanctoral' && tomorrowFeastRank) {
+    // Tomorrow is a named movable feast with its own First Vespers (a Lenten
+    // Passion feast): it competes by rank, a tie going to tomorrow.
+    todayWins = compareFeastClass(today.winner.rank, tomorrowFeastRank) > 0;
   } else {
     todayWins = !(hasFirstVespers(tomorrow) || governingOctave(tomorrow)?.isClosingDay);
   }

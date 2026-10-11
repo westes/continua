@@ -896,7 +896,10 @@ export function getDayLabelItems(day: LiturgicalDay): Bi[] {
     const primary = namedFeast.rank
       ? bi(`${name.en} (${formatRank(namedFeast.rank).en})`, `${name.la} (${formatRank(namedFeast.rank).la})`)
       : name;
-    const commemorations = collectCommemorations(day, { showOctaves: false });
+    // A named movable feast over a Lenten feria (the Passion feasts, which
+    // carry `firstVespers`) names the feria it displaces, as a saint winning
+    // over a feria does.
+    const commemorations = collectCommemorations(day, { showOctaves: false, includeTemporal: namedFeast.firstVespers === true });
     return withTransferNote(day, [primary, ...commemorations]);
   }
 

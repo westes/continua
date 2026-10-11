@@ -105,7 +105,8 @@ import { getNocturnReadings, type NocturnReading } from '../propers/nocturn-read
 import { getOctaveReading } from '../propers/octave-readings';
 import { getResponsoryForCommon } from '../propers/matins-responsories';
 import { getGospelIncipitFromCitation, getScriptureIncipitFromCitation } from '../propers/bible-book-incipits';
-import { getMatinsSaintOverride, getMatinsCommonOverride, type MatinsPsalmodyScheme } from './matins-psalmody-overrides';
+import { getMatinsSaintOverride, getMatinsCommonOverride, getMatinsPsalmodyOverride, type MatinsPsalmodyScheme } from './matins-psalmody-overrides';
+import { sharedOfficeId } from './office-source';
 import matinsSundayAntiphonsData from '../data/hours/matins-sunday-antiphons.yml';
 import matinsSundayNocturn3OverridesData from '../data/hours/matins-sunday-nocturn3-overrides.yml';
 import matinsSundayAdventOverridesData from '../data/hours/matins-sunday-advent-nocturn-overrides.yml';
@@ -1175,8 +1176,22 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   const temporalNamedOverride = winner.kind === 'temporal' ? sundayNamedOverrides[namedKey] : undefined;
   const hasTemporalNamedOverride =
     temporalNamedOverride !== undefined && (temporalNamedOverride.weekdays === undefined || temporalNamedOverride.weekdays.includes(day.weekday));
+  // A named movable feast that keeps its own First Vespers (the Lenten and
+  // pre-Lenten Passion feasts) keeps three nocturns, with its own authored Matins
+  // psalmody where there is one (data/hours/matins-psalmody-overrides/saints/,
+  // or its `officeFrom`'s); every other temporal feast stays as it was.
+  const temporalMatinsSource =
+    winner.kind === 'temporal'
+      ? (getMatinsSaintOverride(winner.id) ??
+          (getTemporalFeastRecord(winner.id)?.firstVespers ? getMatinsPsalmodyOverride(sharedOfficeId(winner.id)) : undefined))
+      : undefined;
+  const hasTemporalProperMatins =
+    temporalMatinsSource !== undefined || (winner.kind === 'temporal' && getTemporalFeastRecord(winner.id)?.firstVespers === true);
   const threeNocturns =
-    day.weekday === 'sunday' || (effectiveRank !== undefined && isAtLeast(effectiveRank, 'semiduplex')) || hasTemporalNamedOverride;
+    day.weekday === 'sunday' ||
+    (effectiveRank !== undefined && isAtLeast(effectiveRank, 'semiduplex')) ||
+    hasTemporalNamedOverride ||
+    hasTemporalProperMatins;
   const pool = buildReadingPool(day, temporalId, date, threeNocturns, hasTemporalNamedOverride);
   const [nocturn1Readings, nocturn2Readings, nocturn3Readings] = distributeIntoNocturns(pool, threeNocturns ? 3 : 1);
 
@@ -1253,7 +1268,9 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     //   - else the ferial psalm numbers (3-nocturn stand-in), with Common's
     //     per-nocturn versicle and each nocturn's Terce/Sext/None antiphon for
     //     that category (see ferialPsalmodyThreeNocturns).
-    const properOverride = winner.kind === 'sanctoral' ? getMatinsSaintOverride(winner.id) : undefined;
+    // A named temporal feast with its own authored Matins psalmody (the Lenten
+    // Passion feasts) takes it the same way a saint does.
+    const properOverride = winner.kind === 'temporal' ? temporalMatinsSource : getMatinsSaintOverride(winner.id);
     const isAboveDuplex = effectiveRank !== undefined && isAtLeast(effectiveRank, 'duplex-majus');
     const commonOverride = winner.kind === 'sanctoral' && !properOverride ? getMatinsCommonOverride(winner.id) : undefined;
     const scheme = properOverride ?? (isAboveDuplex ? commonOverride : undefined);

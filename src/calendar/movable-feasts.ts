@@ -41,7 +41,14 @@ import { dateForAnchor } from './anchors';
 export function applyMovableFeasts(isoDate: string, winner: DayWinner, commemorations: Commemoration[]): DayWinner {
   const year = Number(isoDate.slice(0, 4));
   let resolvedWinner = winner;
-  for (const feast of movableTemporalFeasts()) {
+  // Lowest rank first: a feast with a rank (a Lenten Friday's Passion feast)
+  // lands on the same date as the unranked feria record of that day, and must
+  // be applied after it so it displaces it and commemorates it, not the
+  // other way round. The sort is stable, so equal ranks keep file order.
+  const feasts = [...movableTemporalFeasts()].sort(
+    (a, b) => compareFeastClass(a.rank ?? 'simplex', b.rank ?? 'simplex'),
+  );
+  for (const feast of feasts) {
     if (isoDate !== dateForAnchor(year, feast.anchor!)) {
       continue;
     }
