@@ -15,7 +15,7 @@ describe('dropdowns', () => {
     setDate('2026-08-09');
     setSelectedHour('prime');
     setLanguages(['en']);
-    window.history.replaceState(null, '', '/continua/2026-08-09/prime');
+    window.history.replaceState(null, '', '/2026-08-09/prime');
     mountShell(document.getElementById('app')!);
   });
 
@@ -58,7 +58,7 @@ describe('keyboard shortcuts', () => {
     setDate('2026-08-09');
     setSelectedHour('prime');
     setLanguages(['en']);
-    window.history.replaceState(null, '', '/continua/2026-08-09/prime');
+    window.history.replaceState(null, '', '/2026-08-09/prime');
     mountShell(document.getElementById('app')!);
   });
 

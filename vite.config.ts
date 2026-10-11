@@ -4,11 +4,12 @@ import { VitePWA } from 'vite-plugin-pwa';
 import yaml from '@rollup/plugin-yaml';
 import { devGitInfoPlugin } from './vite-plugins/dev-git-info.ts';
 
-// Served under reground.org/continua (Caddy path_mount to the continua
-// container) — every asset URL and the service worker's registration scope
-// must be scoped to this path, or they'll resolve against the domain root
-// instead.
-const base = '/continua/';
+// Served from the root of its own host, continua.reground.org (Caddy
+// reverse_proxy to the continua container). It used to be path-mounted at
+// reground.org/continua with base '/continua/'; the hub's Caddy now redirects
+// that path here and replaces the old service worker with one that
+// unregisters itself.
+const base = '/';
 
 export default defineConfig({
   base,

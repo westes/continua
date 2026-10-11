@@ -59,7 +59,7 @@ jobs:
       - name: Build and smoke-test the container
         # Continua has no server-side logic, so there's nothing an integration
         # test would exercise beyond "does the built bundle actually get
-        # served correctly under the /continua/ base path" — this is that
+        # served correctly from the root path" — this is that
         # check, run against the exact image that ships.
         #
         # The runner shares the host's Docker daemon, so a hardcoded host

@@ -1,7 +1,7 @@
 import { getState, setDate, setSelectedHour, setLanguages, subscribe, type AppState } from './app-state';
 import { HOUR_IDS, type HourId } from './hours/types';
 
-// Real paths (reground.org/continua/2026-08-09/prime), not hash routing — the
+// Real paths (continua.reground.org/2026-08-09/prime), not hash routing — the
 // container's Caddy does SPA fallback via try_files, so there's no need to
 // avoid a rewrite rule the way a bare static docroot would have.
 const BASE = import.meta.env.BASE_URL;
