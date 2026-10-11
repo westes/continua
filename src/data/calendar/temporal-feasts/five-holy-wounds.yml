@@ -1,0 +1,16 @@
+# Movable feast: Friday of the third week of Lent (Easter -23).
+# Source: web/www/horas/Latin/Sancti/aliquibus locis/Quad3-5-QuinqueVulneraDNJC.txt
+# ([Rank] "Duplex majus;;4;;ex Commune/Votiva/V6"). The reference engine's English
+# tree has nothing for its regional directories, so the English of this office is
+# this project's own translation, marked draft, except where the source borrows a
+# text that continua already carries in English (the Passiontide hymns).
+# The Lenten feria it displaces (lent-3-friday) is commemorated by the ordinary
+# movable-feast rule.
+id: five-holy-wounds
+name: "The Five Holy Wounds of Our Lord Jesus Christ"
+nameLa: "Sacra Quinque Vulnera Domini Nostri Jesu Christi"
+rank: duplex-majus
+anchor:
+  kind: easter
+  offset: -23
+firstVespers: true

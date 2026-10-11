@@ -51,8 +51,8 @@ describe('proper bundles no longer fall through to the ferial chapter/hymn/versi
   });
 
   it("Ss. Perpetua and Felicity take the Several Women Martyrs bundle (Sir 51:1-3)", () => {
-    expect(partText('lauds', '2026-03-06', 'chapter')).toContain('Confitébor tibi, Dómine, Rex');
-    expect(partText('lauds', '2026-03-06', 'responsory')).toContain('Spécie tua');
+    expect(partText('lauds', '2027-03-06', 'chapter')).toContain('Confitébor tibi, Dómine, Rex');
+    expect(partText('lauds', '2027-03-06', 'responsory')).toContain('Spécie tua');
   });
 
   it("St. Mary Magdalene has her own Vespers, Lauds and Matins hymns", () => {
@@ -105,7 +105,7 @@ describe('First/Second Vespers psalmody the engine renders', () => {
   });
 
   it('St. Joseph keeps his own Common-proper versicle (the 1617 engine treats him as a plain confessor; Divino Afflatu agrees with this app)', () => {
-    expect(partText('vespers', '2026-03-19', 'versicle')).toContain('Constítuit eum dóminum domus suæ');
+    expect(partText('vespers', '2029-03-19', 'versicle')).toContain('Constítuit eum dóminum domus suæ');
   });
 });
 

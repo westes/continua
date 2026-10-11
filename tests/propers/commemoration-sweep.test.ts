@@ -106,7 +106,7 @@ describe('sanctoral commemoration bundles (bulk 2026-08 sweep)', () => {
 describe('Common-category commemoration antiphon fallback (propers: null saints, 2026-09 fix)', () => {
   const cases: Array<[string, string, string]> = [
     ['2026-09-05', 'Lawrence Justinian', 'common-of-a-confessor-bishop'], // the reported bug
-    ['2026-03-06', 'Perpetua', 'common-of-several-women-martyrs'],
+    ['2027-03-06', 'Perpetua', 'common-of-several-women-martyrs'],
     ['2026-08-05', 'Our Lady of the Snows', 'common-of-the-bvm'],
     // No `common-of-a-dedication` case: the Lateran Dedication (Nov 9,
     // Duplex II. classis) is the only saint whose main `common` is

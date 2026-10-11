@@ -131,7 +131,11 @@ describe('Ember days', () => {
 
   it('the day label names Lent/Pentecost Ember days too, including the Pentecost-octave-headline exception (2026-09-19 fix)', () => {
     expect(getDayLabel(resolveDay('2026-02-25')).en).toBe('Ember Wednesday in Lent (Feria)');
-    expect(getDayLabel(resolveDay('2025-03-14')).en).toBe('Ember Friday in Lent (Feria)');
+    // Ember Friday of Lent 1 now always yields to the Holy Lance and Nails
+    // (a Duplex majus movable feast, data/calendar/temporal-feasts), which is
+    // the winner; the Ember Friday rides along as a commemoration.
+    expect(getDayLabel(resolveDay('2025-03-14')).en).toContain('Holy Lance and Nails');
+    expect(getDayLabel(resolveDay('2025-03-14')).en).toContain('Ember Friday in Lent');
     expect(getDayLabel(resolveDay('2026-02-28')).en).toBe('Ember Saturday in Lent (Feria)');
     // The demoted-to-commemoration case, Lent's own mirror of the
     // September/Advent "saint wins, Ember commemorated" pattern above.
@@ -164,29 +168,27 @@ describe('Ember days', () => {
     }
   });
 
-  it('Lent Ember Friday 2025 (Mar 14): no competing saint, Ember wins outright', () => {
-    // 2026's own Lent Ember Friday (Feb 27) collides with St. Gabriel of
-    // Our Lady of Sorrows (Duplex, his native date) -- see the next test
-    // for that case -- so a different, clean year is used here instead.
+  it('Lent Ember Friday 2025 (Mar 14): the Holy Lance and Nails wins, Ember Friday commemorated', () => {
+    // The Friday of Lent 1 is always an Ember Friday and always the Lance and
+    // Nails (Easter -37), a Duplex majus feast that outranks the privileged
+    // Ember feria; the feria keeps its own commemoration (and Matins reading).
     const day = resolveDay('2025-03-14');
-    expect(day.winner).toEqual({ kind: 'temporal', id: 'ember-lent-friday' });
-    expect(getDayCollect(day).status.en).toBe('verified');
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'lance-and-nails' });
+    expect(day.commemorations).toContainEqual({ kind: 'temporal', id: 'ember-lent-friday' });
+    expect(getDayCollect(day).status.la).toBe('verified');
   });
 
-  it('Lent Ember Friday 2026 (Feb 27): St. Gabriel of Our Lady of Sorrows (Duplex, at the threshold) wins outright, Ember Friday commemorated', () => {
+  it('Lent Ember Friday 2026 (Feb 27): the Holy Lance and Nails wins, Ember Friday and St. Gabriel of Our Lady of Sorrows (Duplex) both commemorated', () => {
     // The mirror image of the September/Advent "saint wins, Ember
     // commemorated" case documented in calendar/ember-days.ts's own doc
     // comment (2026-09-19 fix) -- confirms the same id-relabeling-of-the-
-    // existing-commemoration behavior holds for Lent too.
+    // existing-commemoration behavior holds for Lent too. St. Gabriel
+    // (Duplex, his native date) used to win here; the Duplex majus feast
+    // outranks him.
     const day = resolveDay('2026-02-27');
-    expect(day.winner).toEqual({
-      kind: 'sanctoral',
-      id: 'st-gabriel-of-our-lady-of-sorrows',
-      name: 'St. Gabriel of Our Lady of Sorrows, Confessor',
-      nameLa: 'Sanctus Gabriel a Virgine Perdolente, Confessor',
-      rank: 'duplex',
-    });
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'lance-and-nails' });
     expect(day.commemorations).toContainEqual({ kind: 'temporal', id: 'ember-lent-friday' });
+    expect(day.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-gabriel-of-our-lady-of-sorrows')).toBe(true);
   });
 
   it('Pentecost Ember Wednesday/Friday/Saturday 2026 (May 27/29/30): Ember wins outright over a below-threshold saint, Pentecost Octave still commemorated alongside', () => {
@@ -216,7 +218,6 @@ describe('Ember days', () => {
   it("Lauds' Benedictus antiphon is proper for the 6 Lent/Pentecost Ember days too", () => {
     const cases: [string, string][] = [
       ['2026-02-25', 'Generátio'],
-      ['2025-03-14', 'Angelus Dómini'],
       ['2026-02-28', 'Assúmpsit Jesus'],
       ['2026-05-27', 'Ego sum panis vivus'],
       ['2026-05-29', 'Dixit Jesus'],
@@ -235,7 +236,7 @@ describe('Ember days', () => {
   it("Vespers' Magnificat antiphon is proper on Lent/Pentecost Ember Wednesday and Friday", () => {
     // Saturday excluded, same reason as the September/Advent case above
     // (Second Vespers always cedes to the following Sunday).
-    for (const date of ['2026-02-25', '2025-03-14', '2026-05-27', '2026-05-29']) {
+    for (const date of ['2026-02-25', '2026-05-27', '2026-05-29']) {
       const ordo = resolveOrdo('vespers', date);
       const idx = ordo.parts.findIndex((p) => p.kind === 'canticle' && p.canticleId === 'magnificat');
       const antiphon = ordo.parts[idx + 1] as { text: { status: { la?: string; en?: string } } };
@@ -244,7 +245,7 @@ describe('Ember days', () => {
     }
   });
 
-  it('Matins renders real, distinct, verified lessons+responsories for each of the 6 Ember days', () => {
+  it('Matins renders real, distinct, verified lessons+responsories for each of the Ember days that win their day', () => {
     // All 6 are now 1, not >=3, since 2026-09-04: every Ember day's own
     // nocturn-readings file was recombined into a single reading -- each
     // is one continuous, unbroken homily, split only to fill the fixed
@@ -262,7 +263,6 @@ describe('Ember days', () => {
       ['2026-12-18', 1],
       ['2026-12-19', 1],
       ['2026-02-25', 1],
-      ['2025-03-14', 1],
       ['2026-02-28', 1],
       ['2026-05-27', 1],
       ['2026-05-29', 1],

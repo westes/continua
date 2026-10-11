@@ -187,6 +187,15 @@ export const ALWAYS_OVERRIDE_TEMPORAL_IDS = new Set([
   'christ-the-king',
   'christmas-octave-sunday',
   'immaculate-heart-of-mary',
+  // Lenten and pre-Lenten Passion feasts (aliquibus locis/Quad*), each a
+  // movable feast on its own Easter offset over a Lenten feria.
+  'lance-and-nails',
+  'five-holy-wounds',
+  'holy-shroud',
+  'crown-of-thorns',
+  'prayer-on-the-mount-of-olives',
+  'commemoration-of-the-passion',
+  'precious-blood-in-lent',
   'ascension',
   'pentecost-sunday',
   'corpus-christi',

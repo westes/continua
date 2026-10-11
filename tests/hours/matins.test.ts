@@ -1300,7 +1300,7 @@ describe('Matins invitatory for saints on a Common with no per-saint invitatory'
     ['2026-10-08', 'St. Bridget (widow)', 'Laudémus Deum nostrum'],
     // Duplex: full antiphon, with the name template filled in.
     ['2026-05-04', 'St. Monica (widow)', 'In confessióne beátæ Mónicæ.'],
-    ['2026-03-06', 'Ss. Perpetua and Felicity (several women martyrs)', 'beatárum Perpétuæ et Felicitátis.'],
+    ['2027-03-06', 'Ss. Perpetua and Felicity (several women martyrs)', 'beatárum Perpétuæ et Felicitátis.'],
     ['2026-10-24', 'St. Raphael (angel)', 'Regem Archangelórum'],
     ['2026-10-18', 'St. Luke (evangelist)', 'Regem Apostolórum'],
     ['2026-02-07', 'St. Romuald (abbot)', 'Regem Confessórum'],

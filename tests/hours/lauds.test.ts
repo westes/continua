@@ -672,7 +672,7 @@ describe('resolveOrdo("lauds", ...)', () => {
   });
 
   it('shows the suffrages on an ordinary Lent feria (not Passiontide) -- only the last two weeks of Lent are excluded, not all of it', () => {
-    const ordo = resolveOrdo('lauds', '2026-02-20'); // Friday after Ash Wednesday, week 1 of Lent
+    const ordo = resolveOrdo('lauds', '2026-02-19'); // Thursday after Ash Wednesday, week 1 of Lent
     expect(ordo.parts.some((p) => p.kind === 'preces' && p.label === 'For Peace')).toBe(true);
   });
 

@@ -92,6 +92,9 @@ describe('Lent ordinary ferias: content completeness', () => {
 });
 
 describe('Lent ordinary ferias: per-hour collect resolution (real dates, 2027)', () => {
+  // The Fridays of Lent 2 and 3 (2027-02-26, 2027-03-05) are the Holy Shroud
+  // and the Five Holy Wounds now (data/calendar/temporal-feasts); their ferias
+  // are commemorated, which tests/calendar/lenten-passion-feasts.test.ts covers.
   // 2027's early Easter (March 28) puts a real sanctoral saint on most of
   // these dates (ordinary-feria has no rank floor -- see
   // calendar/types.ts's TemporalCategory doc comment), so only the days
@@ -103,11 +106,9 @@ describe('Lent ordinary ferias: per-hour collect resolution (real dates, 2027)',
     ['2027-02-10', 'ash-wednesday'],
     ['2027-02-16', 'lent-1-tuesday'],
     ['2027-02-25', 'lent-2-thursday'],
-    ['2027-02-26', 'lent-2-friday'],
     ['2027-03-01', 'lent-3-monday'],
     ['2027-03-02', 'lent-3-tuesday'],
     ['2027-03-03', 'lent-3-wednesday'],
-    ['2027-03-05', 'lent-3-friday'],
     ['2027-03-11', 'lent-4-thursday'],
     ['2027-03-13', 'lent-4-saturday'],
   ])('%s resolves to %s with distinct Lauds/Vespers collects, Terce unchanged', (date, id) => {

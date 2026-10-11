@@ -1,0 +1,18 @@
+# Movable feast: the Tuesday after Sexagesima Sunday (Easter -54).
+# Source: web/www/horas/Latin/Sancti/aliquibus locis/Quadp2-2-PassionisDNJC.txt
+# ([Rank] "Duplex majus;;4;;ex Commune/Votiva/V6"). The source carries only its
+# own Oratio and Lectio4-9; every other part is the votive office of the Passion,
+# web/www/horas/Latin/Commune/Votiva/V6.txt, which in turn borrows its antiphons
+# from Tempora/Quad6-4, Quad6-5 and Quad6-6. Those borrowed antiphons already
+# have English in the reference engine's English tree (used here); the
+# votive office's own hymns and the rest are this project's own translation,
+# marked draft. The ferial office it displaces is commemorated by the ordinary
+# movable-feast rule.
+id: commemoration-of-the-passion
+name: "The Commemoration of the Most Holy Passion of Our Lord Jesus Christ"
+nameLa: "Commemoratio Sanctissimae Passionis Domini Nostri Jesu Christi"
+rank: duplex-majus
+anchor:
+  kind: easter
+  offset: -54
+firstVespers: true

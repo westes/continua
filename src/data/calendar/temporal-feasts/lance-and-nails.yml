@@ -1,0 +1,14 @@
+# Movable feast: Friday of the first week of Lent (Easter -37, an Ember Friday).
+# Source: web/www/horas/Latin/Sancti/aliquibus locis/Quad1-5-LanceaDNJC.txt
+# ([Rank] "Duplex majus;;4"). The reference engine's English tree has nothing for
+# its regional directories, so the English of this office is this project's own
+# translation, marked draft. The Lenten feria it displaces is commemorated by
+# the ordinary movable-feast rule (calendar/movable-feasts.ts).
+id: lance-and-nails
+name: "The Holy Lance and Nails of Our Lord Jesus Christ"
+nameLa: "Sancta Lancea et Sancti Clavi Domini Nostri Jesu Christi"
+rank: duplex-majus
+anchor:
+  kind: easter
+  offset: -37
+firstVespers: true

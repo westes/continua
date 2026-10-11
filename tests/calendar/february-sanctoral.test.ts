@@ -7,7 +7,7 @@ import { getDayCollect } from '../../src/hours/resolve-common';
 // ferias too) — see data/calendar/saints/*.yml for per-saint source detail.
 describe('February sanctoral pull (first pass)', () => {
   it("St. Titus (Divino Afflatu's own occupant of this MM-DD slot, added alongside St. Dorothea) wins outright at Duplex over Dorothea's Simplex, commemorating her instead", () => {
-    const day = resolveDay('2029-02-06');
+    const day = resolveDay('2025-02-06');
     expect(day.winner).toEqual({
       kind: 'sanctoral',
       id: 'st-titus',

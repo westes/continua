@@ -1,0 +1,74 @@
+# Matins Nocturn 2 and 3 readings for the Holy Lance and Nails (Friday of Lent 1).
+# Sourced from web/www/horas/Latin/Sancti/aliquibus locis/Quad1-5-LanceaDNJC.txt.
+# Nocturn 2: Lectio4-6, Pope Innocent VI's decree instituting the feast, one
+# continuous reading, its closing responsory the source's Responsory6. Nocturn 3:
+# the Gospel (John 19:28-35, from the source's Mass Gospel via Commune/Votiva/V6)
+# and then St. Augustine's Tractate 120 on John (the source takes Lectio7-8 from
+# Tempora/Pent03-5: the homily of Lectio7, then Lectio8 cut at "Et qui vidit",
+# closed by the source's own Lectio8 in finis), its closing responsory the
+# source's Responsory8. Nocturn 1 (Zach 12-13) is not carried: continua's first
+# nocturn runs the Scripture course.
+#
+# The English of the Augustine homily is the reference engine's English of
+# Tempora/Pent03-5 (already used in octave-readings/sacred-heart-octave-day-8.yml),
+# trimmed the way the Latin is; everything else is this project's own translation,
+# marked draft.
+id: lance-and-nails
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "Pope Innocent VI, Decree on the Feast of the Lance and Nails"
+    text:
+      la: |
+          In Redemptóris nostri Domini Jesu Christi sacratíssima passióne sic nos gloriári opórtet, ut ipsíus passiónis cuncta mystéria dinumerántes et mérita, síngulis etiam ejus salutáribus instruméntis gloriémur. Inter quæ illud celébriter memorándum est, quod ipse Salvátor, emísso in cruce jam spíritu, sustínuit perforári láncea latus suum, ut inde sánguinis et aquae profluéntibus undis, formarétur única, et immaculáta, ac virgo sancta mater Ecclésia, sponsa sua. O beatíssima ipsíus sacri láteris apertúra, unde nobis tot et tanta divínae pietátis dona fluxérunt! O felix láncea, quæ tot bona nobis effícere, et ad tanti triúmphi glóriam méruit superáddi!
+
+          Hæc latus ipsum aperiéndo, sacratissimas jánuas nobis regni cœlestis apéruit. Hæc vulnerando jam mórtuum, vúlnera nostra sanávit, vitámque nobis réddidit et salútem. Hæc innoxium transfigendo, illíus sánguine culpas nostras abstersit: et demum ejúsdem sacratissimis undis irrigata, cæcitatis nostræ ténebras sústulit, et nos ipsíus divínæ pietátis fluviis mundavit. Illi étiam dulces clavi, quibus ipse Salvátor eídem cruci fuit affixus, quique non solum immaculáto respergi sánguine, et molem ferre tanti ponderis meruérunt, sed et nos étiam per ipsórum salutiferas plagas dulcedinem tantam ipsíus divínæ caritátis accépimus, ut manus nostræ a peccáti solutæ nexibus, pedesque nostri a mortis laqueis fúerint liberáti, sunt devotissime recolendi.
+
+          Quid enim vúlnere et plagis hujúsmodi sánctius? Quid eis salúbrius, ex quibus salus nostra procéssit, et in quibus assídue se possunt curare ánimæ devotorum? Licet ígitur láncea et clavi prædicti, aliáque ipsíus passiónis salutaria instrumenta sint a cunctis fidélibus Christi ubilibet veneránda, et de ipsa étiam passióne in eádem Ecclésia solémnia annis síngulis Offícia celebrentur et fiant; dignum tamen et conveniens reputamus, si de ipsíus passiónis specialibus instrumentis, et præsértim in pártibus, in quibus instrumenta ipsa dicúntur habéri, solémne ac speciale festum celebrétur et fiat, nosque illos fidéles Christi, qui áliqua ex instrumentis ipsíus habére se gaudent, in eórum devotióne divínis Offíciis atque munéribus specialiter foveamus.
+      en: |
+          In the most sacred Passion of our Redeemer, the Lord Jesus Christ, we ought so to glory that, numbering all the mysteries and merits of that Passion, we glory also in each of its saving instruments. Among these this is especially to be remembered: that the Saviour himself, when he had already given up the spirit upon the cross, suffered his side to be pierced with a lance, so that from the flowing streams of blood and water there might be formed the one, immaculate and virgin holy mother Church, his spouse. O most blessed opening of that sacred side, whence so many and so great gifts of divine love have flowed to us! O happy lance, which deserved to work so many good things for us, and to be added to the glory of so great a triumph!
+
+          This lance, by opening the side itself, opened to us the most sacred gates of the kingdom of heaven. By wounding one already dead, it healed our wounds and gave back to us life and salvation. By piercing the innocent, it washed away our faults with his blood; and at last, watered with his most sacred streams, it took away the darkness of our blindness and cleansed us in the rivers of his divine love. Those sweet nails also, with which the Saviour himself was fastened to the same cross, and which deserved not only to be sprinkled with his spotless blood and to bear the weight of so great a burden, but through whose saving wounds we have received so great a sweetness of his divine love, that our hands have been loosed from the bonds of sin and our feet freed from the snares of death — these are to be recalled most devoutly.
+
+          For what is holier than a wound and stripes of this kind? What is more wholesome than those from which our salvation came forth, and in which the souls of the devout can ever be healed? Although, therefore, the aforesaid lance and nails, and the other saving instruments of the same Passion, are to be venerated everywhere by all the faithful of Christ, and although offices of that same Passion are celebrated and held every year in the same Church, we judge it nevertheless fitting and proper that a solemn and special feast be celebrated and held for the particular instruments of that Passion, and especially in the places where those instruments are said to be kept; and that we foster specially, with divine offices and gifts, those faithful of Christ who rejoice to have any of its instruments, in their devotion to them.
+    responsory:
+      la: |
+          R. Dicetur ei: Quid sunt plagæ istæ in médio mánuum tuárum? Et dicet: * His plagatus sum in domo eórum qui diligebant me.
+          V. Nisi videro in mánibus ejus fixuram clavorum, non credam.
+          R. His plagatus sum in domo eórum qui diligebant me.
+      en: |
+          R. It shall be said to him: What are these wounds in the midst of thy hands? And he shall say: * With these I was wounded in the house of them that loved me.
+          V. Except I shall see in his hands the print of the nails, I will not believe.
+          R. With these I was wounded in the house of them that loved me.
+    status: { la: verified, en: draft }
+  - nocturn: 3
+    isGospel: true
+    citation:
+      la: "Joann 19:28-35"
+      en: "John 19:28-35"
+    text:
+      la: "In illo témpore: Sciens Jesus, quia ómnia consummáta sunt, ut consummarétur Scriptúra, dixit: Sítio. Vas ergo erat pósitum acéto plenum. Illi autem spóngiam plenam acéto, hyssópo circumponéntes, obtulérunt ori ejus. Cum ergo accepísset Jesus acétum, dixit: Consummátum est. Et inclináto cápite trádidit spíritum. Judǽi ergo (quóniam Parascéve erat), ut non remanérent in cruce córpora sábbato (erat enim magnus dies ille sábbati), rogavérunt Pilátum, ut frangeréntur eórum crura et tolleréntur. Venérunt ergo mílites: et primi quidem fregérunt crura et altérius, qui crucifíxus est cum eo. Ad Jesum autem cum veníssent, ut vidérunt eum jam mórtuum, non fregérunt ejus crura, sed unus mílitum láncea latus ejus apéruit, et contínuo exívit sanguis et aqua. Et qui vidit, testimónium perhíbuit: et verum est testimónium ejus."
+      en: "At that time: Jesus, knowing that all things were now accomplished, that the scripture might be fulfilled, said: I thirst. Now there was a vessel set there full of vinegar. And they, putting a sponge full of vinegar about hyssop, put it to his mouth. Jesus therefore, when he had taken the vinegar, said: It is consummated. And bowing his head, he gave up the ghost. Then the Jews (because it was the Parasceve), that the bodies might not remain upon the cross on the sabbath day (for that was a great sabbath day), besought Pilate that their legs might be broken, and that they might be taken away. The soldiers therefore came; and they broke the legs of the first, and of the other that was crucified with him. But after they were come to Jesus, when they saw that he was already dead, they did not break his legs; but one of the soldiers with a spear opened his side, and immediately there came out blood and water. And he that saw it hath given testimony: and his testimony is true."
+    status: { la: verified, en: draft }
+  - nocturn: 3
+    isGospel: false
+    source: "St. Augustine, Tractate 120 on John, nn. 2-3"
+    text:
+      la: |
+          Ad Jesum autem cum veníssent, ut vidérunt eum jam mórtuum, non fregérunt ejus crura, sed unus mílitum láncea latus ejus apéruit, et contínuo exívit sanguis et aqua. Vigilánti verbo Evangelísta usus est, ut non díceret: latus ejus percússit, aut vulnerávit, aut quid áliud, sed apéruit, ut illic quodámmodo vitæ óstium panderétur, unde Sacraménta Ecclésiæ manavérunt, sine quibus ad vitam, quæ vera vita est, non intrátur. Ille sanguis in remissiónem fusus est peccatórum. Aqua illa salutáre témperat póculum, hæc et lavácrum præstat et potum. Hoc prænuntiábat quod Noë in látere arcæ óstium fácere jussus est, qua intrárent animália quæ non erant dilúvio peritúra, quibus præfigurabátur Ecclésia.
+
+          Propter hoc prima múlier facta est de látere viri dormiéntis, et appelláta est vita matérque vivórum. Magnum quippe significávit bonum, ante magnum prævaricatiónis malum. Hic secúndus Adam, inclináto cápite, in cruce dormívit, ut inde formarétur ejus conjux, quæ de látere dormiéntis efflúxit. O mors unde mórtui revivíscunt! Quid isto sánguine múndius? Quid vúlnere isto salúbrius? Facta sunt enim hæc, inquit, ut Scriptúra implerétur: Os non comminuétis ex eo. Et íterum ália Scriptúra dicit: Vidébunt in quem transfixérunt.
+      en: |
+          But when they came to Jesus, and saw that He was dead already, they brake not His legs; but one of the soldiers with a spear opened His side, and forthwith came there out blood and water. Note that the Evangelist maketh use of a word of special significance: he saith not "pierced His side," nor "wounded," nor any other thing, but "opened," that thereby in a sense the door of life might be thrown open, from whence the Sacraments of the Church have flowed forth, without which there is no entrance into the life which is the only true life. For that blood was shed for the remission of sins; and that water hath brought into being the life-giving cup, which same is both the laver of Baptism and the drink that giveth refreshment to them that thirst. All this was announced long before, when Noah was commanded to make a door in the side of the ark, through which might enter all living creatures which were not destined to perish in the flood; and this same is a figure of the Church.
+
+          Another figure is also to be found in the first woman. For she was made out of the side of the first man whilst he slept a deep sleep, and she was called "Life," or, as it may be interpreted, "The Mother of all living." Thus was indicated the great good which was later to come to pass, even before the great evil of transgression had come into being. Here, in the Gospel, the second Adam is shewn bowing His head, and sleeping His deep sleep upon the Cross, that a bride might be formed for Him out of that which came forth from His side as He slept. O death, whereby the dead are raised anew to life! What is cleaner than this blood? What is more health-giving than this wound? For these things, he saith, were done, that the Scripture might be fulfilled: A bone of him shall not be broken. And again another Scripture saith: They shall look on him whom they pierced.
+    responsory:
+      la: |
+          R. Effúndam super domum David, et super habitatóres Jerúsalem spíritum grátiæ et precum: * Et aspicient ad me, quem confixerunt.
+          V. Et plangent eum planctu quasi super unigénitum.
+          R. Et aspicient ad me, quem confixerunt.
+      en: |
+          R. I will pour out upon the house of David, and upon the inhabitants of Jerusalem, the spirit of grace and of prayers: * And they shall look upon me whom they have pierced.
+          V. And they shall mourn for him as one mourneth for an only son.
+          R. And they shall look upon me whom they have pierced.
+    status: { la: verified, en: draft }

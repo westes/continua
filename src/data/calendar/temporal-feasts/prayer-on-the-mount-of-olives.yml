@@ -1,0 +1,15 @@
+# Movable feast: the Tuesday after Septuagesima Sunday (Easter -61).
+# Source: web/www/horas/Latin/Sancti/aliquibus locis/Quadp1-2-OratioDNJC.txt
+# ([Rank] "Duplex majus;;4"; the title is "Orationis Domini Nostri Jesu Christi
+# in Monte Oliveti"). The reference engine's English tree has nothing for its
+# regional directories, so the English of this office is this project's own
+# translation, marked draft. The ferial office it displaces is commemorated by
+# the ordinary movable-feast rule.
+id: prayer-on-the-mount-of-olives
+name: "The Prayer of Our Lord Jesus Christ on the Mount of Olives"
+nameLa: "Oratio Domini Nostri Jesu Christi in Monte Oliveti"
+rank: duplex-majus
+anchor:
+  kind: easter
+  offset: -61
+firstVespers: true
