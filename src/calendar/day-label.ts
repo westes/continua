@@ -752,6 +752,7 @@ const TEMPORAL_CATEGORY_RANK_LABELS: Record<TemporalCategory, Bi> = {
   'privileged-feria-advent': bi('Feria', 'Feria'),
   'privileged-feria': bi('Feria', 'Feria'),
   'privileged-feria-major': bi('Feria', 'Feria'),
+  'privileged-feria-major-commemorating': bi('Feria', 'Feria'),
 };
 
 /**

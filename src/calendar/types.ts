@@ -86,6 +86,12 @@ export type FeastClass =
 // for exactly which days fall in which tier — some of that split (e.g.
 // whether Pentecost's own Ember days share Lent's lesser tier or
 // Easter's major one) is still a reconstructed guess, not verified.
+// `privileged-feria-major-commemorating` is the same never-displaced
+// standing as `privileged-feria-major`, but a Duplex majus or higher
+// candidate is commemorated (lower ranks transfer): the Vigils of
+// Pentecost and Christmas, Corpus Christi and the Sacred Heart. The
+// "nothing is commemorated" rule covers Palm Sunday through Low Sunday
+// and Ash Wednesday, not these.
 // `privileged-feria-minor` is a third, weaker tier, added during the
 // December sanctoral pull after finding Christmastide's own ordinary
 // ferias have real standing of their own in the live engine — a Simplex
@@ -139,6 +145,7 @@ export type TemporalCategory =
   | 'privileged-feria-advent'
   | 'privileged-feria'
   | 'privileged-feria-major'
+  | 'privileged-feria-major-commemorating'
   | 'ordinary-sunday'
   | 'privileged-sunday';
 

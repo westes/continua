@@ -50,7 +50,34 @@ function resolveNativeOccurrence(isoDate: string): { temporalCategory: TemporalC
   }
 
   const result = decideOccurrence(temporalCategory, temporalId, topCandidate);
-  result.commemorations.push(...clashCommemorations);
+  // The losers of a same-date saint contest go through the day's own
+  // rule, exactly as a native candidate would: `decideOccurrence` above
+  // only ever saw the contest's winner, so appending them unconditionally
+  // let a loser be commemorated on a day whose rule forbids it (Palm
+  // Sunday through Low Sunday, Ash Wednesday, a privileged Sunday) or
+  // whose threshold it doesn't meet. When a sanctoral saint won the day
+  // outright, the losers are plain commemorations as before. A loser the
+  // day's rule would not commemorate simply lapses; only the contest's
+  // winner is carried forward as a transfer.
+  if (result.winner.kind === 'sanctoral') {
+    result.commemorations.push(...clashCommemorations);
+  } else {
+    for (const clash of clashCommemorations) {
+      if (clash.kind !== 'sanctoral') {
+        result.commemorations.push(clash);
+        continue;
+      }
+      const decided = decideOccurrence(temporalCategory, temporalId, {
+        id: clash.id,
+        name: clash.name,
+        nameLa: clash.nameLa,
+        rank: clash.rank,
+      });
+      if (decided.commemorations.some((c) => c.kind === 'sanctoral' && c.id === clash.id)) {
+        result.commemorations.push(clash);
+      }
+    }
+  }
   return { temporalCategory, result };
 }
 
@@ -61,7 +88,7 @@ function applyIncomingTransfer(
   commemorations: Commemoration[],
   fromDate: string,
 ): DayWinner {
-  if (temporalCategory === 'privileged-feria-major') {
+  if (temporalCategory === 'privileged-feria-major' || temporalCategory === 'privileged-feria-major-commemorating') {
     // Never a landing spot for any rank, and never even a bare
     // commemoration (commemorations.ts's own case already guarantees
     // this — a `winner.kind === 'sanctoral'` day never actually happens

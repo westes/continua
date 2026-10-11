@@ -145,15 +145,15 @@ bySeason:
   # data/calendar/easter-offsets.yml's `days:` table, both are single
   # fixed weekdays (Corpus Christi always a Thursday, Sacred Heart always
   # the following Friday), never a Sunday.
-  corpus-christi: { sunday: ordinary-sunday, feria: privileged-feria-major }
-  sacred-heart: { sunday: ordinary-sunday, feria: privileged-feria-major }
+  corpus-christi: { sunday: ordinary-sunday, feria: privileged-feria-major-commemorating }
+  sacred-heart: { sunday: ordinary-sunday, feria: privileged-feria-major-commemorating }
 
 offsets:
   -46: privileged-feria-major # Ash Wednesday
   -39: privileged-feria # Lent Ember Wednesday (Wed after 1st Sunday of Lent) — verified: Duplex wins outright here
   -37: privileged-feria # Lent Ember Friday
   -36: privileged-feria # Lent Ember Saturday — verified: Duplex wins outright here (St. Gregory the Great)
-  48: privileged-feria-major # Vigil of Pentecost — no live saint-collision test found/attempted (rare by construction), but corroborated 2026-09-01 by its own formal rank in the reference source (Sancti/Pentecost Vigil file's own [Rank]: "Semiduplex I classis" — a genuinely first-class day, consistent with the stricter tier)
+  48: privileged-feria-major-commemorating # Vigil of Pentecost
 
 offsetRanges:
   # Ferias of Passion week (Monday-Saturday before Palm Sunday) -- was
@@ -192,4 +192,4 @@ offsetRanges:
   # existing one, not introduced by this change.
 
 fixedDates:
-  "12-24": privileged-feria-major # Vigil of Christmas — no live saint-collision test found/attempted, but corroborated 2026-09-01 by its own formal rank in the reference source (Sancti/12-24.txt's own [Rank]: "Duplex I classis", consistent with the stricter tier)
+  "12-24": privileged-feria-major-commemorating # Vigil of Christmas

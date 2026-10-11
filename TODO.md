@@ -61,6 +61,28 @@ content in the same shape, not a design change. The dated log below is that pipe
 
 # Work Log
 
+### `privileged-feria-major`'s no-commemoration rule limited to Palm Sunday-Low Sunday and Ash Wednesday; same-date contest losers now obey the day's rule (2026-10-11)
+
+The 2026-09-01 instruction was "you dont commemorate -anything- from palm sunday through low sunday";
+Ash Wednesday was live-checked (Chair of St. Peter, 2034). `fc4ac339` applied it to every
+`privileged-feria-major` day, which also held the Vigil of Pentecost, the Vigil of Christmas, Corpus
+Christi and the Sacred Heart. Palm Sunday through Low Sunday does not include those.
+
+1. **New category `privileged-feria-major-commemorating`** (`calendar/types.ts`,
+   `temporal-categories.yml`): the Vigils of Pentecost and Christmas, Corpus Christi and the Sacred
+   Heart. Never displaced; Duplex majus and above is commemorated, lower ranks transfer (what
+   `privileged-feria-major` did before 2026-09-01).
+2. **Contest-loser leak**: `resolveNativeOccurrence` appended the loser of a same-date saint contest as a
+   commemoration after `decideOccurrence`, which only ever saw the contest's winner -- so the loser got
+   commemorated on days forbidding it (present since the occurrence engine, 2026-08-10). Losers now go
+   through `decideOccurrence` as a native candidate would; a loser the rule would not commemorate lapses.
+   Only the contest's winner is carried forward as a transfer. Where a saint won the day outright nothing
+   changes. Tests: `tests/calendar/clash-commemorations.test.ts`.
+
+Consequence: two same-rank Semiduplex saints sharing a date that falls on an ordinary Sunday used to
+leave the loser commemorated; it now lapses, matching the standing rule that an ordinary Sunday pushes
+Semiduplex off rather than downgrading it to a commemoration.
+
 ### Prime chapter-responsory by-feast table: verified, not bulk-content -- only 2 of 36 needed it (2026-09-15)
 
 Follow-up to the Lectio Brevis entry below, same session. User pushed back on leaving

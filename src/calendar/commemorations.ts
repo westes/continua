@@ -63,6 +63,7 @@ export function minimumOutrightWinningRank(category: TemporalCategory): FeastCla
     case 'ordinary-sunday':
       return 'duplex';
     case 'privileged-feria-major':
+    case 'privileged-feria-major-commemorating':
     case 'privileged-sunday':
       return undefined;
   }
@@ -172,9 +173,11 @@ export function decideOccurrence(
       };
 
     case 'privileged-feria-major':
-      // Ash Wednesday, Holy Week, the Easter Octave, Low Sunday, the
-      // Vigils of Christmas/Pentecost — never displaced, and never gives
-      // even a bare commemoration to any rank, same as privileged-sunday.
+      // Ash Wednesday, Holy Week, the Easter Octave, Low Sunday — never
+      // displaced, and never gives even a bare commemoration to any rank,
+      // same as privileged-sunday. (The Vigils of Christmas/Pentecost and
+      // Corpus Christi/Sacred Heart are not in this tier; see
+      // `privileged-feria-major-commemorating` below.)
       // The "duplex-majus+ still gets a nod" branch this case used to
       // have was wrong, not just unverified: the one case that seemed to
       // support it (St. Mark, Duplex II. classis, "merely commemorated"
@@ -188,6 +191,21 @@ export function decideOccurrence(
       // (2027/2032/2043), and Chair of St. Peter at Antioch (Duplex
       // majus) transfers off Ash Wednesday the same way (2034) — so the
       // exception was wrong for Ash Wednesday too, not just Holy Week.
+      return {
+        winner: temporalWinner,
+        commemorations: [],
+        transfer: { candidate: sanctoral, direction: transferDirectionOf(sanctoral.rank) },
+      };
+
+    case 'privileged-feria-major-commemorating':
+      // The Vigils of Pentecost and Christmas, Corpus Christi and the
+      // Sacred Heart: never displaced, like `privileged-feria-major`
+      // above, but the "nothing is commemorated" rule is for Palm Sunday
+      // through Low Sunday and Ash Wednesday only. Here Duplex majus and
+      // above gets a bare commemoration; anything lower transfers.
+      if (isAtLeast(sanctoral.rank, 'duplex-majus')) {
+        return { winner: temporalWinner, commemorations: [sanctoralCommemoration(sanctoral)] };
+      }
       return {
         winner: temporalWinner,
         commemorations: [],

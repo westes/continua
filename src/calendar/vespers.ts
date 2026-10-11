@@ -106,7 +106,8 @@ function keepsOwnSecondVespers(today: LiturgicalDay, tomorrow: LiturgicalDay): b
       today.temporalCategory === 'privileged-feria-ember' ||
       today.temporalCategory === 'privileged-feria-advent' ||
       today.temporalCategory === 'privileged-feria' ||
-      today.temporalCategory === 'privileged-feria-major'
+      today.temporalCategory === 'privileged-feria-major' ||
+      today.temporalCategory === 'privileged-feria-major-commemorating'
     );
   }
   if (today.winner.kind === 'sanctoral') {
