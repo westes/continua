@@ -61,6 +61,58 @@ content in the same shape, not a design change. The dated log below is that pipe
 
 # Work Log
 
+### Five Marian and devotional feasts added from the regional Sancti files (2026-10-11)
+
+Sources: `Latin/Sancti/aliquibus locis/` (05-31, 12-10, 01-23, 05-24, 10-23), all Duplex majus and nine
+lessons, none with English in the reference engine. Each is a fixed-date saint-style record with its own
+office, `status.en: draft` except where the reference's English or the Douay store covers it:
+
+- `mediatrix-of-all-graces`, Oct 1 (the source file is `05-31-BMVMediatrix`; the Brasilia file puts it
+  on Oct 1, where St. Remigius is commemorated; the fuller aliquibus text is used).
+- `translation-of-the-holy-house`, Dec 10 (St. Melchiades commemorated). Matins and Lauds hymns, and two
+  responsories, are the Common of a Dedication's (C8), copied from the existing files.
+- `betrothal-of-the-bvm`, Jan 23 (St. Emerentiana commemorated).
+- `our-lady-help-of-christians`, May 24. Own hymns, three antiphons, Lessons 4-9; the antiphons,
+  versicles and four responsories are the Common of the BVM's.
+- `most-holy-redeemer`, Oct 23. A feast of Our Lord, not Our Lady (filed with the Marian set by the plan
+  this came from); wholly proper, like the Most Precious Blood. Hymns are the source's `@` includes
+  (Creátor alme síderum, Rerum Creátor óptime, Salútis humánæ Sator) with the Nativity doxology.
+
+Latin is read from the source files by script, with obvious typos corrected and listed in each reading
+file's header. Each Matins reading is one entry per lesson with its own responsory (Nocturn 2: Lectio4-6;
+Nocturn 3: the Gospel, whose homily the matins code folds in, then Lectio8-9). The Vespers psalmody follows
+the engine's Monastic reduction: antiphons 1, 2, 3 under their own psalms, antiphon 5 under the fourth
+antiphon's psalm (this also corrected the Five Holy Wounds and Commemoration of the Passion, which had
+the fifth's own psalm).
+
+Not carried:
+- the Betrothal's commemoration of St. Joseph at Lauds and at each Vespers (the source's `[Oratio 2]`,
+  `[Oratio 3]`, `[Commemoratio4]`): no mechanism for a commemoration that belongs to a feast's own office;
+- the Mass propers, Nocturn 1 (Scripture course), and for the Holy House the Sext and None versicles
+  (the little-hour files pair a capitulum with its versicle and the source gives no capitulum for those
+  hours);
+- the Purity of the BVM (3rd Sunday of October) and the Patronage of the BVM (2nd Sunday of November),
+  Sunday-bound and needing their own mechanism decision; Purest Heart (08-22) is the Immaculate Heart's
+  office with a word swapped.
+
+Date consequences worth knowing: Ss. Jerome, Remigius and others lose Sep 30/Oct 1 evenings; Jerome's
+Second Vespers never happens now (Mediatrix's First Vespers, Duplex majus, outranks him). The Guardian
+Angels (Oct 2, equal rank) take the evening of Oct 1; the Archangel Raphael (Oct 24) takes the evening of
+Oct 23. In Advent the privileged feria keeps the evening of Dec 9 over the Holy House's First Vespers (the
+existing Advent-feria concurrence rule, not changed here).
+
+Also fixed on the way: a Doctor commemorated at Vespers read "beáte N." in the commemoration antiphon
+(the saint's own invocation name is now filled in there as it already was at the Magnificat).
+
+Observed, not changed: the Most Precious Blood (July 1) shows a missing Lauds and Vespers responsory
+(`responsory` part with status missing); `most-holy-redeemer` avoids that with
+`noParts: [lauds-responsory, vespers-responsory]`, as the Apparition of the Immaculate BVM does.
+
+Tests: `tests/calendar/marian-feasts.test.ts`. Existing tests pinned to dates now taken by these feasts
+moved: `vespers.test.ts` (Jan 22 -> Jul 29, St. Martha against Ss. Abdon and Sennen),
+`vespers-audit-engine.test.ts` (the Doctor cases use St. Peter Canisius and St. Albert; Jerome is checked
+as a commemoration), `day-label.test.ts` (2027-05-24 -> 2025-06-16; Pentecost 2026 -> 2025).
+
 ### Lenten and pre-Lenten Passion feasts added as movable feasts over their ferias (2026-10-11)
 
 Source: `Latin/Sancti/aliquibus locis/Quad*DNJC.txt`, the seven files Divinum Officium keeps for the
