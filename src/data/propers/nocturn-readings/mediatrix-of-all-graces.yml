@@ -1,0 +1,114 @@
+# Matins Nocturn 2 and 3 readings for Our Lady, Mediatrix of All Graces. Sourced from
+# web/www/horas/Latin/Sancti/aliquibus locis/05-31-BMVMediatrix.txt. One entry per
+# lesson, each with the source's own responsory: Lectio4 (St. Ephrem), Lectio5 (St.
+# Germanus), Lectio6 (St. Bernard) in Nocturn 2; in Nocturn 3 the Gospel (John
+# 19:25-27, the source gives only its incipit, so the pericope is the one already
+# carried for the Seven Sorrows) and then Lectio7-9, St. Bernardine of Siena on John
+# 19. Lectio9 has no responsory of its own (the Te Deum follows). Nocturn 1
+# (Lectio1-3) is not carried: continua's first nocturn runs the Scripture course.
+#
+# Latin: obvious typos corrected silently -- "ab iso primo Adam" -> "ab ipso", "in
+# exháustum" -> "inexháustum", "lápidem pretióso" -> "lápide pretióso" (Responsory2,
+# not carried), "opsa nepótem" -> "ipsa nepótem", "Bernadíni" -> "Bernardíni",
+# "confi rmávit" -> "confirmávit". Responsory4's closing repeat of the part after the
+# asterisk is supplied (the source gives only R./V.). Everything else is verbatim.
+# English is this project's own translation, marked draft; the Gospel's is the
+# existing Douay text.
+id: mediatrix-of-all-graces
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Ephrem the Syrian, Deacon, Prayer to the Mother of God"
+    text:
+      la: "Dómina mea, sanctíssima Dei Génetrix et grátia plena, pélagus inexháustum divinárum secretarúmque largitiónum ac múnerum, bonórum ómnium erogátio, ómnium post Trinitátem Dómina, post Paráclitum álius consolátor, et post Mediatórem Mediátrix totíus mundi, vide meam fidem meúmque desidérium divínitus datum. Ne despícias indígnum, neque meárum actiónum fœditátes tuam imménsam misericórdiam interrúmpant, Dei Génetrix, meum desiderabilíssimum nomen; nihil enim est fírmius trophǽum quam tuum auxílium. Tu enim abstulísti omnes lácrimas a fácie terræ; tu creatúram replésti omni génere benefícii, cæléstibus lætítiam attulísti, terréstria salvásti. Per te resurrectiónis nostræ tésseram certíssimam tenémus: per te cæléste regnum nos consecutúros esse sperámus; per te omnis glória, honor et sánctitas ab ipso primo Adam et usque ad consummatiónem sǽculi Apóstolis, Prophétis, iustis et humílibus corde, sola immaculáta, deriváta est, derivátur et derivábitur; atque in te gaudet, grátia plena, omnis creátura."
+      en: "My Lady, most holy Mother of God and full of grace, inexhaustible ocean of divine and hidden largesses and gifts, dispenser of all good things, Lady of all after the Trinity, another Consoler after the Paraclete, and after the Mediator Mediatrix of the whole world, behold my faith and my desire, divinely given. Despise not the unworthy one, and let not the foulness of my deeds interrupt thy immense mercy, Mother of God, my most desirable name; for there is no firmer trophy than thy help. For thou hast taken away all tears from the face of the earth; thou hast filled creation with every kind of benefit, hast brought joy to the heavenly beings, hast saved the things of earth. Through thee we hold the most certain pledge of our resurrection; through thee we hope to obtain the heavenly kingdom; through thee all glory, honour and holiness, from the first Adam himself even to the consummation of the world, has been derived, is derived and shall be derived to the Apostles, the Prophets, the just and the humble of heart, thou alone being immaculate; and in thee, full of grace, every creature rejoices."
+    responsory:
+      la: |
+          R. Ecce, Dóminus meus ómnia mihi trádidit, * Nec quidquam est quod non in mea sit potestáte, vel non tradíderit mihi.
+          V. Fecit mihi magna qui potens est, et sanctum nomen eius.
+          R. Nec quidquam est quod non in mea sit potestáte, vel non tradíderit mihi.
+      en: |
+          R. Behold, my lord hath delivered all things to me, * And there is nothing which is not in my power, or which he hath not delivered to me.
+          V. He that is mighty hath done great things to me, and holy is his name.
+          R. And there is nothing which is not in my power, or which he hath not delivered to me.
+    status: { la: verified, en: draft }
+  - nocturn: 2
+    isGospel: false
+    source: "St. Germanus, Bishop of Constantinople, Sermon (Oratio 9)"
+    text:
+      la: "Nos, qui divinórum óperum morúmque páuperes sumus, dum per te, o María, nobis exhíbitas benignitátis divítias cérnimus, propénse dicámus: Misericórdia Dómini plena est terra. Nos, in multitúdine peccatórum a Deo extórres, per te Deum quæsívimus et invenímus, inventóque salvi facti sumus. Igitur potens ad salútem præstándam auxílium tuum, o Dei Génetrix, ac eiúsmodi, ut nullum álium mediatórem necessárium hábeat ad Deum. Plane enim nullus tuæ magnificéntiæ finis; insatiábilis opitulátio tua. Nullus múnerum tuórum númerus est. Nullus enim, nisi per te, o sanctíssima, salútem conséquitur. Nullus, nisi per te, o immaculatíssima, qui a malis liberétur. Nullus, nisi per te, o castíssima, cui donum indulgeátur. Nullus, nisi per te, o honoratíssima, cui grátiæ munus misericórdia præstétur. Quam ob rem, quis te beátam non prædicábit? Te, inquam, gloriósam, te beatificándam, te, quæ ab ipso Fílio tuo ac Deo magnália nacta sis, uti magna et admiránda: quam ob rem te laudant omnes generatiónes."
+      en: "We who are poor in divine works and in virtues, while through thee, O Mary, we behold the riches of kindness shown to us, let us say with fervour: The earth is full of the mercy of the Lord. We, exiled from God by the multitude of our sins, have through thee sought God and found him, and having found him have been made safe. Mighty therefore to bring salvation is thy help, O Mother of God, and such that it needs no other mediator with God. For plainly there is no end to thy magnificence; thy succour is insatiable. There is no number to thy gifts. For no one, save through thee, O most holy, obtains salvation. No one, save through thee, O most immaculate, is delivered from evils. No one, save through thee, O most chaste, is granted pardon. No one, save through thee, O most honoured, is granted by mercy the gift of grace. Wherefore, who will not proclaim thee blessed? Thee, I say, glorious, thee worthy to be called blessed, who hast received from thy very Son and God great and wonderful things; wherefore all generations praise thee."
+    responsory:
+      la: |
+          R. Præpósita ómnibus, gubérnat créditam sibi domum et univérsa, quæ ei sunt trádita. * Absque eius império non movébit quisquam manum aut pedem in omni terra.
+          V. Benedictiónem ómnium géntium dedit illi Dóminus, et testaméntum suum confirmávit super caput eius.
+          R. Absque eius império non movébit quisquam manum aut pedem in omni terra.
+      en: |
+          R. Set over all, she governeth the house committed to her, and all things that are delivered to her. * Without her command no man shall move hand or foot in all the land.
+          V. The Lord gave her the blessing of all nations, and confirmed his covenant upon her head.
+          R. Without her command no man shall move hand or foot in all the land.
+    status: { la: verified, en: draft }
+  - nocturn: 2
+    isGospel: false
+    source: "St. Bernard, Abbot, Sermon on the Nativity of the Blessed Virgin Mary, n. 6"
+    text:
+      la: "Intuére, o homo, consílium Dei, agnósce consílium sapiéntiæ, consílium pietátis. Cælésti rore áream rigatúrus, totum vellus prius infúdit: redemptúrus humánum genus, prétium univérsum cóntulit in Maríam. Ut quid hoc? Forte ut excusarétur Heva per fíliam, et queréla viri advérsus féminam deínceps sopirétur. Ne díxeris ultra, o Adam: Múlier, quam dedísti mihi, dedit mihi de ligno vétito; dic pótius: Múlier, quam dedísti mihi, me cibávit fructu benedícto. Piíssimum sane consílium; sed latet fórsitan áliud, nec totum hoc est. Altius ergo intuémini quanto devotiónis afféctu a nobis eam volúerit honorári, qui totíus boni plenitúdinem pósuit in María; ut proínde, si quid spei in nobis est, si quid grátiæ, si quid salútis, ab ea novérimus redundáre. Totis ergo medúllis córdium, totis præcordiórum afféctibus et votis ómnibus Maríam hanc venerémur: quia sic est volúntas eius, qui totum nos habére vóluit per Maríam. Hæc, inquam, volúntas eius est, sed pro nobis."
+      en: "Behold, O man, the counsel of God; acknowledge the counsel of wisdom, the counsel of piety. About to water the threshing-floor with heavenly dew, he first poured the whole fleece; about to redeem the human race, he laid out the entire price in Mary. To what end? Perhaps that Eve might be excused through her daughter, and the man's complaint against the woman be henceforth quieted. Say no more, O Adam: The woman whom thou gavest me gave me of the forbidden tree; say rather: The woman whom thou gavest me fed me with the blessed fruit. A most pious counsel indeed; but perhaps there is another hidden, and this is not the whole. Look more deeply, therefore, with what devotion of heart he would have her honoured by us, who placed the fullness of all good in Mary; so that, accordingly, if there is any hope in us, any grace, any salvation, we may know that it overflows from her. With the whole marrow of our hearts, then, with all the affections of our breast and with all our vows, let us venerate this Mary: for such is the will of him who willed that we should have all through Mary. This, I say, is his will, but it is for our sake."
+    responsory:
+      la: |
+          R. Laudáte Dóminum, Deus nostrum, qui non deséruit sperántes in se: * Et in me, ancílla sua, adimplévit misericórdiam suam, quam promísit dómui Israel.
+          V. Deus exaltávit me, ut salvos fácerem multos pópulos.
+          R. Et in me, ancílla sua, adimplévit misericórdiam suam, quam promísit dómui Israel.
+      en: |
+          R. Praise the Lord our God, who hath not forsaken them that hope in him: * And by me his handmaid hath he fulfilled his mercy, which he promised to the house of Israel.
+          V. God hath exalted me, that I might save many peoples.
+          R. And by me his handmaid hath he fulfilled his mercy, which he promised to the house of Israel.
+    status: { la: verified, en: draft }
+  - nocturn: 3
+    isGospel: true
+    citation:
+      la: "Joann 19:25-27"
+      en: "John 19:25-27"
+    text:
+      la: "In illo témpore: Stabant juxta Crucem Jesu Mater ejus, et soror Matris ejus, María Cléophæ, et María Magdaléne. Cum vidísset ergo Jesus Matrem, et discípulum stantem, quem diligébat, dicit Matri suæ: Múlier, ecce fílius tuus. Deinde dicit discípulo: Ecce Mater tua. Et ex illa hora accépit eam discípulus in sua."
+      en: "At that time, there were standing by the Cross of Jesus His Mother and His Mother's sister, Mary of Cleophas, and Mary Magdalene. When Jesus, therefore, saw His Mother and the disciple standing by, whom He loved, He said to His Mother, Woman, behold your son. Then He said to the disciple, Behold your Mother. And from that hour the disciple took her into his home."
+    status: { la: verified, en: verified }
+  - nocturn: 3
+    isGospel: false
+    source: "St. Bernardine of Siena, Lenten sermons on Christian religion, Sermon 51 on the Passion of the Lord, part 2, art. 1, ch. 3"
+    text:
+      la: "Pulsántur admiratióne ómnium legéntium sive audiéntium mentes, scílicet quo motu, quo sensu, qua possibilitáte, qua vera auctoritáte, ista dicúntur quod discípulus tránseat in fílium Vírginis, et Virgo hábeat purum hóminem fílium, quem non génuit: sic nec quod sit fílius ex Vírgine, qui de corrúptis paréntibus natus erat ex sémine. Impossibília quidem vidéntur hæc, sed nihil impossíbile apud Deum. Pietáte quidem et oratióne opus est ad ingrediéndum tale mystérium. Múlier enim beáta Virgo vocátur a Christo, quam numquam appellávit ex vócibus matrem. Múlier, et non múlier: sed super ángelos, et hómines, et mulíeres superexcédens múlier. Accépit a Fílio, quem cum ætérno Patre únicum possidébat, fílium præter ventrem, quem ante in carne habébat ipsa nepótem."
+      en: "The minds of all who read or hear are struck with wonder, namely, by what motion, what sense, what possibility, what true authority these things are said: that the disciple passes over into the son of the Virgin, and that the Virgin has as her son a mere man whom she did not bear: just as it is not to be thought that he should be the son of a Virgin who had been born of corrupt parents from seed. These things indeed seem impossible, but nothing is impossible with God. Piety and prayer are needed to enter upon such a mystery. For the blessed Virgin is called Woman by Christ, whom he never addressed by the word mother. Woman, and not woman: but a woman surpassing angels, and men, and women. She received from the Son, whom with the eternal Father she possessed as the only one, a son apart from the womb, whom she before had in the flesh as her nephew."
+    responsory:
+      la: |
+          R. Facta est María refúgium páuperi, * Adiútrix in opportunitátibus, in tribulatióne.
+          V. Virgo potens sicut turris David: mille clýpei pendent ex ea, omnis armatúra fórtium.
+          R. Adiútrix in opportunitátibus, in tribulatióne.
+      en: |
+          R. Mary is made a refuge to the poor, * A helper in due time, in tribulation.
+          V. A powerful Virgin, like the tower of David: a thousand bucklers hang upon it, all the armour of valiant men.
+          R. A helper in due time, in tribulation.
+    status: { la: verified, en: draft }
+  - nocturn: 3
+    isGospel: false
+    source: "St. Bernardine of Siena, Lenten sermons on Christian religion, Sermon 51 on the Passion of the Lord, part 2, art. 1, ch. 3"
+    text:
+      la: "Sed in quo filiatiónis génere Ioánnes Vírginis factus est fílius, aut eius mater facta est Virgo? Non hoc natúra favet, non concéptus, non partus exséquitur, non ingréssus in úterum ut dénuo nascerétur, non adóptio pro hereditáte in temporálibus consequénda, nec ex imitatióne, aut ex proláta doctrína. Nec ista disserénda erant verbo Christi: nec facta est locútio ut sit quasi, sed sic a Christo légimus dictum: Múlier, ecce fílius tuus; ut, exclúsa omni superfluitáte verbórum, secrétum mystérii penetrémus. Mýstice ígitur intellígimus in Ioánne omnes ánimas electórum, quorum per dilectiónem beáta Virgo facta est mater: fílius enim in græco nomen amóris est. Omnis enim Christi amor in amórem Vírginis transit, ut mérito fílius, id est, amor Vírginis nuncupétur, magísque Vírginem hábeat matrem, quam illam, quæ illum ex peccáto damnátum mundo, suscépto sémine generávit."
+      en: "But in what kind of sonship was John made the son of the Virgin, or she his mother? Nature does not favour this; conception does not, nor birth follow, nor entrance into the womb to be born anew, nor adoption for obtaining an inheritance in temporal things, nor imitation, nor delivered teaching. Nor were these things to be explained by the word of Christ, nor was the saying made so as to be an \"as if\", but thus we read it said by Christ: Woman, behold thy son; so that, all superfluity of words excluded, we may penetrate the secret of the mystery. Mystically, therefore, we understand in John all the souls of the elect, of whom the blessed Virgin was made mother through love: for \"son\" in Greek is a name of love. For all the love of Christ passes into love of the Virgin, so that he is deservedly called son, that is, love of the Virgin, and has the Virgin more as mother than her who, having received seed, bore him, condemned by sin, to the world."
+    responsory:
+      la: |
+          R. Adeámus cum fidúcia ad thronum gratiæ, * Ut misericórdiam consequámur, et grátiam inveniámus in auxílio opportúno.
+          V. Ad te, Virgo, suspirámus, geméntes et flentes in hac lacrimárum valle.
+          R. Ut misericórdiam consequámur, et grátiam inveniámus in auxílio opportúno.
+      en: |
+          R. Let us go with confidence to the throne of grace, * That we may obtain mercy, and find grace in seasonable aid.
+          V. To thee, O Virgin, we sigh, mourning and weeping in this vale of tears.
+          R. That we may obtain mercy, and find grace in seasonable aid.
+    status: { la: verified, en: draft }
+  - nocturn: 3
+    isGospel: false
+    source: "St. Bernardine of Siena, Lenten sermons on Christian religion, Sermon 51 on the Passion of the Lord, part 2, art. 1, ch. 3"
+    text:
+      la: "Mutátur hæc matérnitas et filiátio ex auctoritáte verbórum Christi in cruce pendéntis. Proptérea natúra transit in grátiam, et grátia nobílitat profécto natúram; non quod una in álteram commutétur, sed quia natúra ex grátia perfícitur. Mala múlier Heva corruptióne naturæ: bona múlier María, mater grátiæ, mater misericórdiæ. Datur mater grátiæ pro matre natúræ; manet tamen mater natúra, manet étiam mater ex grátia. Erat enim Ioánni mater María Salóme in órdine succedéntis natúræ; est étiam sibi mater beáta Virgo in órdine grátiæ. Est mater Heva cunctórum per tráducem natúræ; est et Virgo María mater ómnium amántium Christum per infusiónem invisíbilis grátiæ."
+      en: "This motherhood and sonship is transferred by the authority of the words of Christ hanging on the cross. Therefore nature passes into grace, and grace surely ennobles nature; not that the one is changed into the other, but because nature is perfected by grace. The evil woman, Eve, by the corruption of nature: the good woman, Mary, mother of grace, mother of mercy. A mother of grace is given for the mother of nature; yet the mother by nature remains, and the mother by grace remains also. For John had Mary Salome as mother in the order of succeeding nature; and the blessed Virgin is also mother to him in the order of grace. Eve is the mother of all by the channel of nature; and the Virgin Mary is the mother of all who love Christ by the infusion of invisible grace."
+    status: { la: verified, en: draft }
