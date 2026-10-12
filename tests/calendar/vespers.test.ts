@@ -109,9 +109,9 @@ describe('resolveEveningDay', () => {
   });
 
   it('a higher-ranked today keeps its own Second Vespers against a lower-ranked tomorrow, even below the old duplex-2-classis floor', () => {
-    // Jan 22, 2026: Ss. Vincent and Anastasius (Semiduplex) vs. Jan 23's
-    // St. Emerentiana (Simplex). Vincent and Anastasius outrank
-    // Emerentiana, so they should keep their own evening even though
+    // Jul 29, 2026: St. Martha (Semiduplex) vs. Jul 30's Ss. Abdon and
+    // Sennen (Simplex). Martha outranks them, so she should keep her own
+    // evening even though
     // Semiduplex never cleared the old fixed duplex-2-classis floor -- the
     // real "De Concurrentia Officii" rule is a direct comparison against
     // tomorrow's rank, not a fixed threshold on today alone. Originally
@@ -120,11 +120,12 @@ describe('resolveEveningDay', () => {
     // St. Dorothea) once St. Giles was dropped from the Sept 1 calendar
     // (2026-09-01), then re-pointed again here once St. Titus was added
     // alongside St. Dorothea on Feb 6, outranking Agatha outright
-    // (2026-09-07).
-    const day = resolveEveningDay('2026-01-22');
-    expect(day.date).toBe('2026-01-22');
-    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'ss-vincent-and-anastasius' });
-    expect(day.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'st-emerentiana', vespersNote: 'tomorrow' }));
+    // (2026-09-07), and once more when the Betrothal of the BVM (Duplex
+    // majus) took Jan 23 (Emerentiana's day) from it.
+    const day = resolveEveningDay('2026-07-29');
+    expect(day.date).toBe('2026-07-29');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-martha' });
+    expect(day.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'ss-abdon-and-sennen', vespersNote: 'tomorrow' }));
   });
 
   it('an exact rank tie goes to tomorrow, per the rubric\'s tie-break', () => {

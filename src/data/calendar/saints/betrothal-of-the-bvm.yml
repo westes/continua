@@ -1,0 +1,23 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/aliquibus locis/
+# 01-23-Desponsatio.txt -- "Desponsationis Beatæ Mariæ Virginis cum S. Joseph", Duplex
+# majus (4), `ex C11`, nine lessons, "Proprium viz. 1888". Own Oratio, invitatory,
+# five Vespers antiphons (the Lauds antiphons are the same), Magnificat and Benedictus
+# antiphons, versicle, Lessons 4-9 with responsories. The Matins antiphons, hymns and
+# capitula are the Common of the BVM's. English is this project's own translation,
+# marked draft (the reference has none).
+#
+# DATE: Jan 23, where the reference engine's own Roman calendar also puts it (St.
+# Emerentiana, Simplex, is commemorated).
+#
+# Not carried: the source appends a commemoration of St. Joseph with its own antiphon
+# and versicle at Lauds and at each Vespers (Ant "Ipse Jesus erat incípiens...",
+# "Ecce fidélis servus...", "Exsúrgens Joseph..."); this app has no mechanism for a
+# commemoration that belongs to a feast's own office.
+#
+# Rank: source Duplex majus, taken at face value (a feast of Our Lady).
+id: betrothal-of-the-bvm
+name: "The Betrothal of the Blessed Virgin Mary"
+nameLa: "Desponsatio Beatæ Mariæ Virginis"
+rank: duplex-majus
+common: common-of-the-bvm
+propers: "betrothal-of-the-bvm"
