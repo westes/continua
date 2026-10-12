@@ -127,3 +127,16 @@ describe('Marian and devotional feasts', () => {
     expect(vespers).not.toContain('beáte N.');
   });
 });
+
+describe('Most Precious Blood: no Lauds or Vespers responsory', () => {
+  // The source (Sancti/07-01.txt) has short responsories only for Terce, Sext
+  // and None; the slot is absent by design, not missing.
+  it.each([
+    ['lauds', '2026-07-01'],
+    ['vespers', '2026-07-01'],
+    ['lauds', '2027-03-12'],
+    ['vespers', '2027-03-11'],
+  ] as const)('%s on %s has no responsory part', (hour, date) => {
+    expect(resolveOrdo(hour, date).parts.some((p) => p.kind === 'responsory')).toBe(false);
+  });
+});

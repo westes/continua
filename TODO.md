@@ -104,9 +104,10 @@ existing Advent-feria concurrence rule, not changed here).
 Also fixed on the way: a Doctor commemorated at Vespers read "beáte N." in the commemoration antiphon
 (the saint's own invocation name is now filled in there as it already was at the Magnificat).
 
-Observed, not changed: the Most Precious Blood (July 1) shows a missing Lauds and Vespers responsory
-(`responsory` part with status missing); `most-holy-redeemer` avoids that with
-`noParts: [lauds-responsory, vespers-responsory]`, as the Apparition of the Immaculate BVM does.
+Also: the Most Precious Blood (July 1, and its Lenten Friday) showed a missing Lauds and Vespers
+responsory (the slot with no text); the source has none for those hours, so both records now say
+`noParts: [lauds-responsory, vespers-responsory]`, as `most-holy-redeemer` and the Apparition of the
+Immaculate BVM do.
 
 Tests: `tests/calendar/marian-feasts.test.ts`. Existing tests pinned to dates now taken by these feasts
 moved: `vespers.test.ts` (Jan 22 -> Jul 29, St. Martha against Ss. Abdon and Sennen),
