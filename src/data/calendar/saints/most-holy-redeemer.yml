@@ -1,0 +1,27 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/aliquibus locis/
+# 10-23-Redemptor.txt -- "Ss. Redemptoris", Duplex majus (4), nine lessons, no Common.
+# A feast of Our Lord (not of Our Lady: the plan this came from filed it with the
+# Marian set), wholly proper like the Most Precious Blood: own Oratio, five Vespers
+# antiphons, invitatory, nine Matins antiphons and three Nocturn versicles, five
+# Lauds antiphons, capitula, Prime lesson and versicle, Benedictus and Magnificat
+# antiphons, proper Lessons 4-9 with responsories. The three hymns are the source's
+# `@` includes -- Creátor alme síderum (Vespers), Rerum Creátor óptime (Matins),
+# Salútis humánæ Sator (Lauds) -- each ending in the Nativity doxology, as the source's
+# `Doxology=Nat` says. English is this project's own translation, marked draft, except
+# the hymns and the two Leo lessons, which the reference's English already has.
+#
+# DATE: Oct 23, a free date in this calendar (the Redemptorist feast's date).
+#
+# No Lauds or Vespers responsory: the source has none and it names no Common to
+# take one from (same `noParts` as the Apparition of the Immaculate BVM).
+#
+# Rank: source Duplex majus, taken at face value. `common` is a fake `proper-to-*`
+# category like the Most Precious Blood's: nothing keys on it, every part is the
+# feast's own.
+id: most-holy-redeemer
+name: "Our Most Holy Redeemer"
+nameLa: "Sanctissimus Redemptor"
+rank: duplex-majus
+common: proper-to-the-most-holy-redeemer
+propers: "most-holy-redeemer"
+noParts: [lauds-responsory, vespers-responsory]

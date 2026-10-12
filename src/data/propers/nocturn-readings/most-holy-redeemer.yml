@@ -1,0 +1,117 @@
+# Matins Nocturn 2 and 3 readings for Our Most Holy Redeemer. Sourced from
+# web/www/horas/Latin/Sancti/aliquibus locis/10-23-Redemptor.txt. One entry per lesson,
+# each with its own responsory. Nocturn 2: St. Leo the Great, Sermon 1 on the fast of
+# the tenth month. The source builds Lectio4 from Tempora/Adv4-0.txt Lectio4 and the
+# part of Lectio5 before "Quod per sanctum Isaíam", and Lectio5 from Adv4-0's Lectio6
+# from "Diligéndo ítaque nos Deus" to its end followed by the feast's own "Lectio5
+# additio"; Lectio6 is its own. The English of Lectio4 and of the Adv4-0 part of
+# Lectio5 is the reference's English/Tempora/Adv4-0.txt. Nocturn 3: the Gospel (John
+# 3:13-18, the source's Mass Gospel, in the project's Douay text) and Lectio7-9, St.
+# Augustine, Tractate 12 on John 3. Responsory8 is the source's include of
+# Tempora/Pent01-0.txt Responsory8 (the file path in the source says "Tempore"). Lectio9
+# has no responsory (the Te Deum follows). Nocturn 1 (Lectio1-3, from Adv4-3 and
+# Isaiah 51) is not carried: continua's first nocturn runs the Scripture course.
+#
+# Latin: obvious typos corrected silently ("liberavitnos" -> "liberávit nos", "homovi
+# adactus" -> "homo vi adáctus", "hasreditas" -> "hæréditas", "totam quese" ->
+# "totamque se", "innoc6ntia" -> "innocéntia", "y." -> "V." in Responsory5). Everything
+# else is verbatim. English is this project's own translation, marked draft, except
+# as noted.
+id: most-holy-redeemer
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Leo the Great, Pope, Sermon 1 on the fast of the tenth month"
+    text:
+      la: "Si fidéliter, dilectíssimi, atque sapiénter creatiónis nostræ intelligámus exórdium, inveniémus hóminem ideo ad imáginem Dei cónditum, ut imitátor sui esset auctóris: et hanc esse naturálem nostri géneris dignitátem, si in nobis, quasi in quodam spéculo, divínæ benignitátis forma respléndeat. Ad quam quotídie nos útique réparat grátia Salvatóris, dum quod cécidit in Adam primo, erígitur in secúndo. Causa autem reparatiónis nostræ non est nisi misericórdia Dei: quem non diligerémus, nisi prius nos ipse dilígeret, et ténebras ignorántiæ nostræ, suæ veritátis luce discúteret."
+      en: "Dearly beloved brethren, if we study attentively the history of the creation of our race, we shall find that man was made in the image of God, that his ways also might be an imitation of the ways of his Maker. This is the natural, real, and highest dignity to which we are capable of attaining, that the goodness of the Divine nature should have a reflection in us, as in a glass. As a mean of reaching this dignity, we are daily offered the grace of our Saviour, for as in the first Adam all men are fallen, so in the Second Adam can all men be raised up again. Our restoration from the consequences of Adam's fall is sheer mercy of God, and nothing else; we should not have loved him unless he had first loved us, and scattered the darkness of our ignorance by the light of his truth."
+    responsory:
+      la: |
+          R. A dextris est mihi Dominus, ne commovear: * Propter hoc dilatatum est cor meum, et exsultavit lingua mea.
+          V. Dominus pars haereditatis meae, et calicis mei.
+          R. Propter hoc dilatatum est cor meum, et exsultavit lingua mea.
+      en: |
+          R. The Lord is at my right hand, that I be not moved: * Therefore my heart hath been glad, and my tongue hath rejoiced.
+          V. The Lord is the portion of my inheritance and of my cup.
+          R. Therefore my heart hath been glad, and my tongue hath rejoiced.
+    status: { la: verified, en: verified }
+  - nocturn: 2
+    isGospel: false
+    source: "St. Leo the Great, Pope, Sermon 1 on the fast of the tenth month"
+    text:
+      la: "Diligéndo ítaque nos Deus, ad imáginem suam nos réparat: et ut in nobis formam suæ bonitátis invéniat, dat unde ipsi quoque quod operátur operémur, accéndens scílicet méntium nostrárum lucérnas, et igne nos suæ caritátis inflámmans, ut non solum ipsum, sed étiam quidquid díligit, diligámus. Nam si inter hómines ea demum firma amicítia est, quam morum similitúdo sociarit, cum tamen parilitas voluntatum sæpe in reprobos tendat afféctus: quantum nobis optandum, atque nitendum est, ut in nullo ab iis, quæ Deo sunt placita, discrepemus? De quo dicit Prophéta: Quóniam ira in indignatióne ejus, et vita in voluntáte ejus, quia non áliter nobis erit dígnitas divínæ majestátis, nisi imitatio fúerit voluntátis."
+      en: "For his great love then wherewith he hath loved us, God reneweth his likeness in us. And, moreover, in order that he may find in us the reflection of his goodness, he giveth us that whereby to work along with himself, who worketh all in all, lighting, as it were, candles in our dark minds, and kindling in us the fire of his love, to make us love not himself only, but likewise, in him, whatsoever he loveth. For if among men that friendship alone is firm which likeness of character has joined, though equality of wills often tends toward the affections of the wicked: how greatly must we desire and strive that in nothing we differ from those things which are pleasing to God? Of whom the Prophet says: For wrath is in his indignation, and life in his will; because otherwise the dignity of the divine majesty shall not be ours, unless imitation of his will shall have been."
+    responsory:
+      la: |
+          R. Apud Dominum misericordia * Et copiosa apud eum redemptio.
+          V. Humiles spiritu salvabit.
+          R. Et copiosa apud eum redemptio.
+      en: |
+          R. With the Lord there is mercy, * And with him plentiful redemption.
+          V. The humble in spirit he will save.
+          R. And with him plentiful redemption.
+    status: { la: verified, en: draft }
+  - nocturn: 2
+    isGospel: false
+    source: "St. Leo the Great, Pope, Sermon 1 on the fast of the tenth month"
+    text:
+      la: "Dicénte ítaque Dómino: Diliges Dóminum Deum tuum ex toto corde tuo, et ex tota mente tua; et diliges próximum tuum sicut teípsum, suscípiat fidélis ánima auctoris sui atque rectoris immarcescíbilem caritátem, totamque se étiam ejus subjiciat voluntáti, in cujus opéribus atque judíciis nihil vacat a veritáte justítiæ, nihil a miseratióne clementiæ. Quóniam etsi magnis quis labóribus, et multis fatigetur incommodis, bona est illi causa tolerandi, qui se advérsis vel corrigi intélligit, vel probari."
+      en: "The Lord therefore saying: Thou shalt love the Lord thy God with thy whole heart, and with thy whole mind; and thou shalt love thy neighbour as thyself, let the faithful soul take up the unfading charity of its Author and Ruler, and subject itself wholly to his will, in whose works and judgments nothing is void of the truth of justice, nothing of the compassion of clemency. For even if one be wearied with great labours and many troubles, he has a good reason for enduring, who understands that by adversities he is either corrected or proved."
+    responsory:
+      la: |
+          R. Rememorati sunt, quia Deus adjútor est eorum: * Et Deus excelsus Redemptor eorum est.
+          V. Et pavit eos in innocóntia cordis sui.
+          R. Et Deus excelsus Redemptor eorum est.
+      en: |
+          R. They remembered that God is their helper: * And the most high God is their redeemer.
+          V. And he fed them in the innocence of his heart.
+          R. And the most high God is their redeemer.
+    status: { la: verified, en: draft }
+  - nocturn: 3
+    isGospel: true
+    citation:
+      la: "Joann 3:13-18"
+      en: "John 3:13-18"
+    text:
+      la: "In illo témpore: Dixit Jesus Nicodémo: Nemo ascéndit in cœlum, nisi qui descéndit de cœlo, Fílius hóminis, qui est in cœlo. Et sicut Moyses exaltávit serpéntem in desérto: ita exaltári opórtet Fílium hóminis, ut omnis, qui credit in ipsum, non péreat, sed hábeat vitam ætérnam. Sic enim Deus diléxit mundum, ut Fílium suum unigénitum daret: ut omnis, qui credit in eum, non pereat, sed habeat vitam ætérnam. Non enim misit Deus Fílium suum in mundum, ut júdicet mundum, sed ut salvétur mundus per ipsum. Qui credit in eum, non judicátur; qui autem non credit, jam judicátus est: quia non credit in nómine unigéniti Fílii Dei."
+      en: "At that time: Jesus said to Nicodemus: And no man hath ascended into heaven, but he that descended from heaven, the Son of man who is in heaven. And as Moses lifted up the serpent in the desert, so must the Son of man be lifted up: That whosoever believeth in him, may not perish; but may have life everlasting. For God so loved the world, as to give his only begotten Son; that whosoever believeth in him, may not perish, but may have life everlasting. For God sent not his Son into the world, to judge the world, but that the world may be saved by him. He that believeth in him is not judged. But he that doth not believe, is already judged: because he believeth not in the name of the only begotten Son of God."
+    status: { la: verified, en: verified }
+  - nocturn: 3
+    isGospel: false
+    source: "St. Augustine, Bishop, Tractate 12 on the Gospel of John, ch. 3"
+    text:
+      la: "Nemo ascéndit in cœlum, nisi qui de cœlo descéndit. Descéndit enim, et mórtuus est, et ipsa morte liberávit nos a morte. Morte occísus, mortem occídit. Et nostis fratres, quia mors ista per diáboli invídiam intrávit in mundum. Deus mortem non fecit, Scriptúra lóquitur: Nec lætátur, inquit, in perditióne vivórum; creávit enim, ut essent ómnia. Sed quid ibi ait? Invidia autem diáboli mors intrávit in orbem terrárum. Ad mortem a diábolo propinatam non veníret homo vi adáctus: non enim cogendi poténtiam diábolus habébat, sed persuadendi versutiam. Si non consentires, nihil invexerat diábolus; consensio tua, o homo, te perdúxit ad mortem. A mortali mortáles nati, et ex immortalibus mortáles facti. Ab Adam omnes hómines mortáles; Jesus autem Fílius Dei, Verbum Dei, per quod facta sunt ómnia, únicus, æquális Patri, mortalis factus est, quia Verbum caro factum est, et habitávit in nobis. Si ergo mortem suscépit, et mortem suspéndit in cruce, de ipsa morte liberantur mortáles. Quod in figúra factum est apud antíquos, commemoravit illud Dóminus."
+      en: "No man hath ascended into heaven, but he that came down from heaven. For he came down, and died, and by that very death delivered us from death. Slain by death, he slew death. And you know, brethren, that this death entered into the world through the envy of the devil. God made not death, Scripture saith: Neither doth he delight in the destruction of the living; for he created all things that they might be. But what does it say there? But by the envy of the devil, death entered into the world. Man would not have come to the death offered by the devil, driven by force: for the devil had not the power of compelling, but the craft of persuading. Hadst thou not consented, the devil would have brought in nothing; thy consent, O man, led thee to death. Mortals born of a mortal, and made mortal from immortal. From Adam all men are mortal; but Jesus the Son of God, the Word of God, by whom all things were made, the only one, equal to the Father, was made mortal, because the Word was made flesh and dwelt among us. If, therefore, he took death, and hung death upon the cross, mortals are delivered from death itself. Which was done in a figure among the ancients, the Lord recalled."
+    responsory:
+      la: |
+          R. Laudábilis populus, * Quem Dominus exercituum benedixit dicens: Opus manuum mearum tu es: hæréditas mea Israel.
+          V. Beata gens, cujus est Dominus Deus; populus eléctus in haereditatem.
+          R. Quem Dominus exercituum benedixit dicens: Opus manuum mearum tu es: hæréditas mea Israel.
+      en: |
+          R. A people to be praised, * Whom the Lord of hosts hath blessed, saying: The work of my hands art thou, Israel, my inheritance.
+          V. Blessed is the nation whose God is the Lord: the people whom he hath chosen for his inheritance.
+          R. Whom the Lord of hosts hath blessed, saying: The work of my hands art thou, Israel, my inheritance.
+    status: { la: verified, en: draft }
+  - nocturn: 3
+    isGospel: false
+    source: "St. Augustine, Bishop, Tractate 12 on the Gospel of John, ch. 3"
+    text:
+      la: "Et sicut, inquit, Móyses exaltávit serpentem in erémo, ita exaltari opórtet Fílium hóminis: Quis est serpens exaltátus? Mors Dómini in cruce. Quia enim a serpente mors, per serpéntis effígiem figurata est mors. Morsus serpentum lethalis, mors Dómini vitális. Attenditur serpens, ut nihil valeat serpens. Quid est hoc? Attenditur mors, ut nihil valeat mors. Sed cujus mors? Mors vitæ. None vita Christus? Et tamen mórtuus est Christus."
+      en: "And as Moses, he says, lifted up the serpent in the desert, so must the Son of man be lifted up. Who is the serpent lifted up? The death of the Lord on the cross. For because death was from the serpent, death was figured by the likeness of a serpent. The bite of serpents was deadly, the death of the Lord is life-giving. The serpent is gazed upon, that the serpent may avail nothing. What is this? Death is gazed upon, that death may avail nothing. But whose death? The death of Life. Is not Christ life? And yet Christ died."
+    responsory:
+      la: |
+          R. Duo Séraphim clamábant alter ad álterum: * Sanctus, sanctus, sanctus Dóminus Deus Sábaoth: * Plena est omnis terra glória ejus.
+          V. Tres sunt qui testimónium dant in cælo: Pater, Verbum, et Spíritus Sanctus: et hi tres unum sunt.
+          R. Sanctus, sanctus, sanctus Dóminus Deus Sábaoth.
+      en: |
+          R. One Seraph cried unto another: * Holy, Holy, Holy is the Lord God of hosts; the whole earth is full of his glory.
+          V. There are Three that bear record in heaven: the Father, the Word, and the Holy Ghost, and these Three are One.
+          R. Holy, Holy, Holy is the Lord God of hosts.
+    status: { la: verified, en: draft }
+  - nocturn: 3
+    isGospel: false
+    source: "St. Augustine, Bishop, Tractate 12 on the Gospel of John, ch. 3"
+    text:
+      la: "Ínterim modo fratres, ut a peccáto sanemur, Christum crucifíxum intueámur: quia sicut Móyses, inquit, exaltávit serpentem in erémo, ita exaltari opórtet Fílium hóminis; ut omnis, qui credit in eum, non pereat, sed hábeat vitam ætérnam. Quómodo, qui intuebantur illum serpentem, non peribant morsibus serpentum: sic, qui intuentur fide mortem Christi, sanantur a morsibus peccatórum. Sed illi sanabantur a morte ad vitam temporalem: hic autem ait, ut habeant vitam ætérnam. Hoc enim ínterest inter figurátam imáginem, et rem ipsam: figúra præstabat vitam temporalem; res ipsa, cujus illa figúra erat, præstat vitam ætérnam."
+      en: "Meanwhile, brethren, that we may be healed of sin, let us look upon Christ crucified: because as Moses, he says, lifted up the serpent in the desert, so must the Son of man be lifted up; that whosoever believeth in him may not perish, but may have life everlasting. As they who looked upon that serpent perished not by the bites of serpents, so they who gaze upon the death of Christ with faith are healed of the bites of sins. But they were healed from death to a temporal life: here he says, that they may have life everlasting. For this is the difference between the figured image and the thing itself: the figure afforded temporal life; the thing itself, of which that was the figure, affords life everlasting."
+    status: { la: verified, en: draft }
