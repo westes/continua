@@ -61,7 +61,7 @@ content in the same shape, not a design change. The dated log below is that pipe
 
 # Work Log
 
-### St. Benedict Joseph Labre and St. Felix of Cantalice added from `aliquibus locis` (2026-10-11)
+### St. Benedict Joseph Labre, St. Felix of Cantalice and St. Stanislaus Kostka added (2026-10-11)
 
 Sources: `Latin/Sancti/aliquibus locis/04-16-BenedictusJLabre.txt` and `05-21-Felix.txt`, both Semiduplex,
 `vide C5`, nine lessons, no antiphons of their own. Own Oratio and Lessons 4-6 (one continuous life per
@@ -74,14 +74,17 @@ Dates: Apr 16 and May 21, both free. Rank: Simplex, by DESIGN.md's late-canoniza
 source Semiduplex (canonized 1881 and 1712). Both often fall in an Easter or Ascension octave and are
 then commemorated, not the day's winner.
 
-Not done: St. Stanislaus Kostka. The reference's main Sancti files have no Kostka office; he exists
-only under `Sancti/Urbis` (`12-05-StanislausK.txt`, Duplex, nine lessons; `11-29-StanislausK-JoannisB`
-for Ss. Stanislaus and John Berchmans), i.e. the Rome-city calendar. Not added: Dec 5 is St. Sabbas in
-this calendar and the Urbis calendar is out of scope.
+St. Stanislaus Kostka, added afterwards from `Sancti/Urbis/12-05-StanislausK.txt` (the reference's main
+Sancti files have no Kostka office; the Urbis directory is the Rome-city calendar): Dec 5, nine lessons,
+St. Sabbas commemorated. Rank Duplex, the source's, not deflated: Dec 5 is always in Advent, where only a
+Duplex wins over the privileged feria (`privileged-feria-advent`; St. Nicholas was re-ranked for the same
+reason), so a deflated Semiduplex would never win its day. The Urbis file is badly OCR-damaged; the
+corrections are listed in its reading file's header. The joint Ss. Stanislaus and John Berchmans file
+(`Urbis/11-29`) is not used.
 
 Skipped on purpose (small files, local or order-only interest): Hyacintha Mariscotti, Margaret of
 Cortona, Ferdinand III, Veronica Giuliani, Rose of Viterbo, Galla, Rochus (a Simplex stub), Gaspar del
-Bufalo. Tests: `tests/calendar/labre-and-felix.test.ts`.
+Bufalo. Tests: `tests/calendar/tier-two-saints.test.ts`.
 
 ### Five Marian and devotional feasts added from the regional Sancti files (2026-10-11)
 

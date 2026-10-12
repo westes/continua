@@ -5,18 +5,21 @@ import { getDayCollect } from '../../src/hours/resolve-common';
 import type { HourId } from '../../src/hours';
 
 // St. Benedict Joseph Labre (Apr 16) and St. Felix of Cantalice (May 21), from
-// Sancti/aliquibus locis. Both are Semiduplex in the source and Simplex here
-// (DESIGN.md, rank deflation for late canonizations: 1881 and 1712).
+// Sancti/aliquibus locis, and St. Stanislaus Kostka (Dec 5), from Sancti/Urbis.
+// All are deflated one tier from the source rank (DESIGN.md, rank deflation for
+// late canonizations: 1881, 1712), Simplex each. Kostka keeps his source Duplex:
+// Dec 5 is in Advent, where only a Duplex wins over the privileged feria.
 const SAINTS = [
-  { id: 'st-benedict-joseph-labre', date: '2026-04-16', name: 'Benedict Joseph Labre', collect: 'Benedíctum Joséphum', life: 'Amettes' },
-  { id: 'st-felix-of-cantalice', date: '2025-05-21', name: 'Felix of Cantalice', collect: 'Fac nos, Dómine Jesu', life: 'Cantalício' },
+  { id: 'st-benedict-joseph-labre', date: '2026-04-16', rank: 'simplex', name: 'Benedict Joseph Labre', collect: 'Benedíctum Joséphum', life: 'Amettes' },
+  { id: 'st-felix-of-cantalice', date: '2025-05-21', rank: 'simplex', name: 'Felix of Cantalice', collect: 'Fac nos, Dómine Jesu', life: 'Cantalício' },
+  { id: 'st-stanislaus-kostka', date: '2028-12-05', rank: 'duplex', name: 'Stanislaus Kostka', collect: 'beáti Stanislai exémplo', life: 'Kostkarum' },
 ] as const;
 
 const HOURS: HourId[] = ['matins', 'lauds', 'prime', 'terce', 'sext', 'none', 'vespers'];
 
-describe('Labre and Felix of Cantalice', () => {
-  it.each(SAINTS)('$id wins $date as a Simplex', ({ id, date }) => {
-    expect(resolveDay(date).winner).toMatchObject({ kind: 'sanctoral', id, rank: 'simplex' });
+describe('Labre, Felix of Cantalice and Kostka', () => {
+  it.each(SAINTS)('$id wins $date as a $rank', ({ id, date, rank }) => {
+    expect(resolveDay(date).winner).toMatchObject({ kind: 'sanctoral', id, rank });
   });
 
   it.each(SAINTS)('$id: every hour resolves with no missing part and its own collect', ({ id, date, name, collect }) => {
@@ -41,6 +44,10 @@ describe('Labre and Felix of Cantalice', () => {
     const texts = JSON.stringify(parts.filter((p) => p.kind === 'lesson' || p.kind === 'gospel'));
     expect(texts).toContain(life);
     expect(parts.some((p) => p.kind === 'gospel')).toBe(true);
+  });
+
+  it('Kostka: St. Sabbas is commemorated on Dec 5', () => {
+    expect(resolveDay('2028-12-05').commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'st-sabbas' }));
   });
 
   it('on a day that outranks him, Labre is commemorated with his own collect (Apr 16, 2027, Octave of St. Joseph)', () => {

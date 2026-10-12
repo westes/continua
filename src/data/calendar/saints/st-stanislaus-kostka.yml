@@ -1,0 +1,21 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/Urbis/
+# 12-05-StanislausK.txt -- "S. Stanislai Kostkæ Confessoris", Duplex (3), `C5` (Common of
+# a Confessor not a Bishop), nine lessons. Own Oratio and Lessons 4-9 (St. Augustine on
+# Psalm 118 for Lessons 7-9, after the Gospel's incipit, Matt 19); every antiphon and the
+# rest is the Common's. The file is in the reference's `Urbis` directory (the calendar of
+# the city of Rome), not its main Sancti files: Kostka has no office there.
+#
+# DATE: Dec 5, the day the reference's Urbis file carries; St. Sabbas (Simplex) is
+# commemorated.
+#
+# Rank: Duplex, the source's rank taken at face value, NOT deflated by the
+# late-canonization rule (DESIGN.md; canonized 1726 would give Semiduplex). Dec 5 is
+# always in Advent, where a privileged feria is displaced only by a Duplex or higher
+# feast (calendar/commemorations.ts, `privileged-feria-advent`; St. Nicholas was
+# re-ranked Duplex for the same reason). At Semiduplex he would never win his own day.
+id: st-stanislaus-kostka
+name: "St. Stanislaus Kostka, Confessor"
+nameLa: "Sanctus Stanislaus Kostka, Confessor"
+rank: duplex
+common: common-of-a-confessor
+propers: "st-stanislaus-kostka"
