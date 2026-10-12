@@ -1,0 +1,117 @@
+# Matins Nocturn 2 and 3 readings for Our Lady, Help of Christians. Sourced from
+# web/www/horas/Latin/Sancti/aliquibus locis/05-24-Auxilium.txt. One entry per lesson,
+# each with its responsory: Lectio4-5 (St. Bernard, Sermon on the Twelve Stars) and
+# Lectio6 (the Office's own historical lesson, "Ex publicis Monumentis") in Nocturn 2;
+# in Nocturn 3 the Gospel (Luke 11:27-28, the source gives only its incipit, so the
+# text is the one already carried for the Presentation) and Lectio7-9 (St. Bernard,
+# Sermon on the Nativity of the Blessed Virgin Mary). The source has no responsories
+# of its own for Lectio4-6 and 8 and takes the Common of the BVM's (read from
+# Commune/C11.txt, Responsory4, 5, 6 and 8, English from the reference's English
+# C11); Responsory7 is the source's own. Lectio9 has no responsory (the Te Deum
+# follows). Nocturn 1 (Lectio1-3) is not carried: continua's first nocturn runs the
+# Scripture course.
+#
+# Latin: obvious typos corrected silently ("tólia" -> "fólia" in Lectio8 (Adam hiding
+# among the leaves), "religiónıs"/"votıs" dotless i, and in Responsory7 the garbled
+# "quicúmque célebrant tuam sanctum implórant" -> "quicúmque tuum sanctum implórant",
+# as in the source's own Ant 3). Everything else is verbatim. English is this
+# project's own translation, marked draft, except the Gospel (existing Douay) and the
+# four Common responsories.
+id: our-lady-help-of-christians
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Bernard, Abbot, Sermon on the Twelve Stars"
+    text:
+      la: "Veheménter quidem nobis, dilectíssimi, vir unus et múlier una nocuere: sed grátias Deo, per unum nihilóminus virum et mulíerem unam ómnia restaurántur, nec sine magno fœnore gratiárum. Et quidem sufficere póterat Christus: síquidem et nunc omnis sufficientia nostra ex eo est: sed nobis bonum non erat esse hóminem solum. Congruum magis ut adesset nostræ reparationi sexus utérque. Jam ítaque nec ipsa múlier benedícta in muliéribus vidébitur otiosa: inveniétur equidem locus ejus in hac reconciliatione.  Opus est enim mediatore ad mediatorem Christum: nec alter nobis utilior quam María. Crudelis nimium mediatrix Heva, per quam serpens antiquus pestiferum étiam ipsi viro virus infudit: sed fidélis María, quæ salútis antidotum et viris et muliéribus propinávit. Illa enim minístra seductionis, hæc propitiatiónis; illa suggéssit prævaricationem, hæc ingessit redemptiónem. Quid ad Maríam accedere trepidet humána fragilitas? Nihil austerum in ea, nihil terríbile; tota suávis est, ómnibus ófferens lac et lanam. Revolve diligentius evangelicæ historiæ sériem univérsam: et si quid forte increpatorium, si quid durum, si quod dénique signum vel levis indignatiónis occurrerit in María, de cetero suspectam hábeas, et accedere verearis."
+      en: "Vehemently indeed, beloved, did one man and one woman harm us: but thanks be to God, by one man and one woman all things are restored, and not without great interest of graces. And Christ indeed could have sufficed: for even now all our sufficiency is from him: but it was not good for us that man should be alone. It was more fitting that both sexes should be present at our restoration. Now, therefore, not even the woman, blessed among women, will be seen idle: her place will be found in this reconciliation. For there is need of a mediator to the Mediator Christ: and none is more useful to us than Mary. Too cruel a mediatrix was Eve, through whom the ancient serpent poured his deadly poison even into the man himself: but faithful is Mary, who gave the antidote of salvation to men and women alike. For the one was the minister of seduction, the other of propitiation; the one suggested transgression, the other brought in redemption. Why should human frailty tremble to approach Mary? Nothing austere in her, nothing terrible; she is all sweet, offering milk and wool to all. Go over more carefully the whole course of the evangelical history: and if by chance anything of rebuke, anything harsh, or any sign even of slight indignation shall be found in Mary, hold her henceforth suspect, and fear to approach."
+    responsory:
+      la: |
+          R. Sicut cedrus exaltáta sum in Líbano, et sicut cypréssus in monte Sion: quasi myrrha elécta, * Dedi suavitátem odóris.
+          V. Et sicut cinnamómum et bálsamum aromatízans.
+          R. Dedi suavitátem odóris.
+      en: |
+          R. I was exalted like a cedar in Lebanon, and as a cypress-tree upon Mount Zion. Like the best myrrh * I yielded a pleasant odour.
+          V. Like cinnamon and sweet balsam.
+          R. I yielded a pleasant odour.
+    status: { la: verified, en: draft }
+  - nocturn: 2
+    isGospel: false
+    source: "St. Bernard, Abbot, Sermon on the Twelve Stars"
+    text:
+      la: "Quod si, ut vere sunt, plena magis ómnia pietátis et grátiæ, plena mansuetúdinis et misericórdiæ, quæ ad eam pértinent, invéneris, age grátias ei, qui talem mediatrícem benigníssima miseratióne provídit, in qua nihil possit esse suspéctum. Dénique ómnibus ómnia facta est; sapiéntibus et insipiéntibus copiosíssima caritáte debitrícem se fecit. Omnibus misericórdiæ sinum áperit, ut de plenitúdine ejus accípiant univérsi, captívus redemptiónem, æger curatiónem, tristis consolatiónem, peccátor véniam, justus grátiam, Angelus lætítiam. Ipsa prætérita non díscutit mérita; sed ómnibus sese exorábilem, ómnibus clementíssimam præbet, ómnium dénique necessitátes amplíssimo quodam miserátur afféctu. Ipsa est quondam a Deo promíssa múlier serpéntis antíqui caput virtútis pede contritúra; cujus plane calcáneo in multis versútiis insidiátus est, sed sine causa. Sola enim contrívit univérsam hæréticam pravitátem. Contríti sunt insidiántes, conculcáti supplantatóres, confutáti derogatóres, et beátam eam dicunt omnes generatiónes. Jam si Ecclésia lunæ intelligénda vidétur vocábulo, habes mediatrícem evidénter expréssam: Múlier, inquit, amícta sole, et luna sub pédibus ejus. Amplectámur Maríæ vestígia, et devotíssima supplicatióne beátis illíus pédibus provolvámur. Teneámus eam, nec dimittámus, donec benedíxerit nobis: potens est enim."
+      en: "But if, as they truly are, thou shalt find all that pertains to her full rather of piety and grace, full of meekness and mercy, give thanks to him who in most kindly compassion provided such a mediatrix, in whom nothing can be suspect. Finally, she has been made all things to all; to the wise and to the foolish, with most abundant charity, she has made herself a debtor. To all she opens the bosom of mercy, that all may receive of her fullness: the captive redemption, the sick healing, the sad consolation, the sinner pardon, the just grace, the Angel gladness. She does not examine past merits; but to all she shows herself exorable, to all most clement, and the necessities of all she pities with a certain most ample affection. She is the woman once promised by God, who should crush the head of the ancient serpent with the foot of her virtue; whose heel indeed he lay in wait for in many wiles, but without cause. For she alone has crushed all heretical pravity. The plotters are crushed, the supplanters trampled down, the detractors confuted, and all generations call her blessed. Now if the Church seems to be understood by the word moon, thou hast a mediatrix plainly expressed: A woman, he says, clothed with the sun, and the moon under her feet. Let us embrace the footsteps of Mary, and with most devout supplication fall prostrate at her blessed feet. Let us hold her, and not let her go, until she shall have blessed us: for she is mighty."
+    responsory:
+      la: |
+          R. Quæ est ista quæ procéssit sicut sol, et formósa tamquam Jerúsalem? * Vidérunt eam fíliæ Sion, et beátam dixérunt, et regínæ laudavérunt eam.
+          V. Et sicut dies verni circúmdabant eam flores rosárum et lília convállium.
+          R. Vidérunt eam fíliæ Sion, et beátam dixérunt, et regínæ laudavérunt eam.
+      en: |
+          R. Who is this that cometh up like the sun? This, comely as Jerusalem? * The daughters of Zion saw her, and called her blessed: the queens also, and they praised her.
+          V. And about her it was as the flower of roses in the spring of the year, and lilies of the valleys.
+          R. The daughters of Zion saw her, and called her blessed: the queens also, and they praised her.
+    status: { la: verified, en: draft }
+  - nocturn: 2
+    isGospel: false
+    source: "From the public records"
+    text:
+      la: "Præsentíssimum Deiparæ auxilium ad religiónis hostes profligándos sæpe pópulus christiánus mirum in modum expértus est: ex quo factum, ut sanctissimus Póntifex Pius quintus post insignem victóriam, intercedénte beatíssima Virgine, a Christiánis de Turcárum tyránno apud Echínadas ínsulas reportátam, in litaníis Lauretánis eámdem Regínam cœlórum inter ália præcónia Auxílium Christianórum appellári constitúerit. Sed illud in primis memorábile est, atque exploráti miráculi loco habéndum, quod cum Románus Póntifex Pius séptimus, impiórum consíliis et armis ex Apostólica Petri Sede exturbátus, et arcta custódia, præsértim Savónæ per annos quinque eóque ámplius fuísset deténtus, viis ómnibus pénitus interclúsis, ne Dei Ecclésiam régere posset, nullo símilis persecutiónis in priscis annálibus exémplo, inopináto et præter ómnium exspectatiónem cóntigit, ut ingénti plausu, ac véluti univérsi orbis mánibus pontifício sólio restituerétur. Quod et secúndo áccidit, dum iterum commóto túrbine, ab Urbe discédens, sacro comitánte Cardinálium collégio, Ligúriam conténdit. Verum præsentissimo Dei benefício, cessánte procélla, qua grave minabátur excidium, Romam, plaudéntibus præ novo gaúdio populis, reversus est. Antea tamen, quod in votis habúerat, et captivitáte deténtus éxsequi nequiverat, aúrea coróna insignem Savónæ imáginem Deíparæ Virginis sub titulo Matris Misericórdiæ solémni ritu propriísque mánibus decorávit. Quam mirábilem rerum vicissitúdinem idem Póntifex Máximus Pius séptimus, totius evéntus íntime cónscius, cum intercessióne sanctíssimæ Dei Genitrícis, cujus poténtem opem, et ipse impénse imploráverat, et ab ómnibus Christi fidélibus implorári curáverat, accéptam mérito reférret, in ejúsdem Vírginis Matris honórem, sub appellatióne Auxílii Christianórum, solémne festum indixit perpétuo celebrándum die mensis Maji vigésimo quarto, faustíssimi sui in Urbem réditus anniversário, approbáto étiam Offício próprio, ut tanti beneficii distíncta et perénnis exstet memória, et gratiárum áctio."
+      en: "The Christian people has often experienced in a wonderful manner the most present help of the Mother of God for routing the enemies of religion: whence it came about that the most holy Pontiff Pius the Fifth, after the famous victory won by Christians over the tyrant of the Turks at the Echinades islands through the intercession of the most blessed Virgin, decreed that in the Litany of Loreto the same Queen of heaven should among her other titles be called Help of Christians. But this above all is memorable, and to be held in the place of a proven miracle: that when the Roman Pontiff Pius the Seventh, driven from the Apostolic See of Peter by the counsels and arms of the impious, had been held in strict custody, especially at Savona, for five years and more, every way being utterly shut, that he might not govern the Church of God, with no similar example of persecution in ancient annals, it happened unexpectedly and beyond the expectation of all that, with immense applause, and as it were by the hands of the whole world, he was restored to the pontifical throne. And this happened a second time, when, a storm again being stirred up, departing from the City with the sacred College of Cardinals in his company, he made for Liguria. But by the most present benefit of God, the tempest ceasing, by which grave ruin was threatened, he returned to Rome, the peoples applauding with new joy. Before this, however, what he had held in his vows and, detained in captivity, had been unable to perform, he adorned with his own hands, with solemn rite, with a golden crown the famous image of the Virgin Mother of God at Savona, under the title of Mother of Mercy. This marvellous vicissitude of affairs the same Supreme Pontiff Pius the Seventh, most intimately conscious of the whole event, rightly attributed to the intercession of the most holy Mother of God, whose powerful help he himself had earnestly implored, and had taken care to have implored by all the faithful of Christ; and in honour of the same Virgin Mother, under the title of Help of Christians, he appointed a solemn feast to be celebrated for ever on the twenty-fourth day of the month of May, the anniversary of his most happy return to the City, the proper Office also being approved, that of so great a benefit there might be a distinct and perpetual memorial and thanksgiving."
+    responsory:
+      la: |
+          R. Ornátam monílibus fíliam Jerúsalem Dóminus concupívit: * Et vidéntes eam fíliæ Sion, beatíssimam prædicavérunt, dicéntes: * Unguéntum effúsum nomen tuum.
+          V. Astitit regína a dextris tuis in vestítu deauráto, circúmdata varietáte.
+          R. Et vidéntes eam fíliæ Sion, beatíssimam prædicavérunt, dicéntes:
+      en: |
+          R. When the Lord beheld the daughter of Jerusalem adorned with her jewels, he greatly desired her beauty: * And when the daughters of Zion saw her, they cried out that she was most blessed, saying: * Thy name is as ointment poured forth.
+          V. Upon thy right hand did stand the Queen in a vesture of gold wrought about with divers colours.
+          R. And when the daughters of Zion saw her, they cried out that she was most blessed, saying:
+    status: { la: verified, en: draft }
+  - nocturn: 3
+    isGospel: true
+    citation:
+      la: "Luc 11:27-28"
+      en: "Luke 11:27-28"
+    text:
+      la: "In illo témpore: Loquénte Jesu ad turbas, extóllens vocem quædam múlier de turba, dixit illi: Beátus venter, qui te portávit, et úbera, quæ suxísti. At ille dixit: Quinímmo beáti, qui áudiunt verbum Dei, et custódiunt illud."
+      en: "At that time, as Jesus was speaking to the multitudes, a certain woman from the crowd lifted up her voice and said to Him, \"Blessed is the womb that bore You, and the breasts that nursed You.\" But He said, \"Rather, blessed are they who hear the word of God and keep it.\""
+    status: { la: verified, en: verified }
+  - nocturn: 3
+    isGospel: false
+    source: "St. Bernard, Abbot, Sermon on the Nativity of the Blessed Virgin Mary"
+    text:
+      la: "Intuére o homo, consílium Dei, agnósce consilium sapientiæ, consilium pietatis. Cœlésti rore áream rigatúrus, totum vellus prius infúdit; redemptúrus humánum genus, prétium univérsum cóntulit in Mariam. Altius ergo intuemini, quanto devotiónis afféctu a nobis eam volúerit honorári, qui totíus boni plenitúdinem pósuit in María: ut proínde si quid spei in nobis est, si quid grátiæ, si quid salútis, ab ea novérimus redundáre, quæ ascéndit delíciis áffluens. Totis ergo medúllis córdium, totis præcordiórum afféctibus, et votis ómnibus Mariam hanc venerémur, quia sic est volúntas ejus qui totum nos habére vóluit per Maríam. Hæc, inquam, volúntas ejus est, sed pro nobis."
+      en: "Behold, O man, the counsel of God; acknowledge the counsel of wisdom, the counsel of piety. About to water the threshing-floor with heavenly dew, he first poured the whole fleece; about to redeem the human race, he laid out the entire price in Mary. Look more deeply, therefore, with what devotion of heart he would have her honoured by us, who placed the fullness of all good in Mary; so that, accordingly, if there is any hope in us, any grace, any salvation, we may know that it overflows from her, who ascends abounding in delights. With the whole marrow of our hearts, then, with all the affections of our breast and with all our vows, let us venerate this Mary: for such is the will of him who willed that we should have all through Mary. This, I say, is his will, but it is for our sake."
+    responsory:
+      la: |
+          R. Felix namque es, sacra Virgo María, et omni laude digníssima: * Quia ex te ortus est sol justítiæ, Christus, Deus noster.
+          V. Ora pro pópulo, intérveni pro clero, intercéde pro devóto femíneo sexu: séntiant omnes tuum juvámen, quicúmque tuum sanctum implórant auxílium.
+          R. Quia ex te ortus est sol justítiæ, Christus, Deus noster.
+      en: |
+          R. O Holy Virgin Mary, happy indeed art thou, and right worthy of all praise: * For out of thee rose the Sun of righteousness, even Christ our God.
+          V. Pray for the people, plead for the clergy, make intercession for all women vowed to God: may all feel thy help who implore thy holy aid.
+          R. For out of thee rose the Sun of righteousness, even Christ our God.
+    status: { la: verified, en: draft }
+  - nocturn: 3
+    isGospel: false
+    source: "St. Bernard, Abbot, Sermon on the Nativity of the Blessed Virgin Mary"
+    text:
+      la: "In ómnibus síquidem et per ómnia próvidens miseris, trepidatiónem nostram solátur, fidem éxcitat, spem róborat, diffidéntiam ábigit, érigit pusillanimitátem. Ad Patrem verebáris accédere; solo audítu térritus, ad fólia fugiebas: Jesum tibi dedit mediatórem. Quid non apud talem Patrem Filius talis obtineat? Exaudiétur útique pro reveréntia sua: Pater enim díligit Filium. Sed fórsitan et in ipso majestátem vereáre divinam, quod licet factus sit homo, mánserit tamen Deus. Advocátum habére vis et ad ipsum? Ad Mariam recúrre. Pura síquidem humánitas in María, non modo pura ab omni contaminatióne, sed et pura singularitáte natúræ. Nec dúbius díxerim, exaudiétur et ipsa pro reveréntia sua. Exaúdiet útique Matrem Filius, et exaúdiet Fílium Pater."
+      en: "In all things indeed and through all, providing for the wretched, she consoles our trembling, stirs up faith, strengthens hope, drives away distrust, raises up faintheartedness. Thou wast afraid to approach the Father; terrified at the mere hearing, thou wast fleeing to the leaves: he gave thee Jesus as mediator. What would not such a Son obtain with such a Father? He will surely be heard for his reverence: for the Father loveth the Son. But perhaps in him also thou fearest the divine majesty, because, though he was made man, he remained God. Wouldst thou have an advocate to him also? Have recourse to Mary. For pure humanity is in Mary, not only pure from all contamination, but pure also in the singularity of her nature. And I would say without doubt that she too will be heard for her reverence. The Son will surely hear the Mother, and the Father will hear the Son."
+    responsory:
+      la: |
+          R. Beátam me dicent omnes generatiónes, * Quia fecit mihi Dóminus magna qui potens est, et sanctum nomen ejus.
+          V. Et misericórdia ejus a progénie in progénies timéntibus eum.
+          R. Quia fecit mihi Dóminus magna qui potens est, et sanctum nomen ejus.
+      en: |
+          R. All generations shall call me blessed. * For he that is mighty, even the Lord, hath done to me great things; and holy is his name.
+          V. And his mercy is on them that fear him, from generation to generation.
+          R. For he that is mighty, even the Lord, hath done to me great things; and holy is his name.
+    status: { la: verified, en: draft }
+  - nocturn: 3
+    isGospel: false
+    source: "St. Bernard, Abbot, Sermon on the Nativity of the Blessed Virgin Mary"
+    text:
+      la: "Filíoli, hæc peccatórum scala, hæc mea máxima fidúcia est, hæc tota rátio spei meæ. Quid enim? Potéstne Filius aut repéllere, aut sustinére repúlsam? Non audíre, aut non audíri Filius potest? Neutrum plane. Invenisti, ait Angelus, grátiam apud Deum: felíciter. Semper hæc invéniet grátiam, et sola est grátia qua egémus: nimírum sola est grátia qua salvámur. Quid nos ália concupíscimus, fratres? Quærámus grátiam, et per Maríam quærámus, quia quod quærit invenit, et frustrári non potest. Quærámus grátiam, sed grátiam apud Deum: nam apud hómines gratia fallax. Quærant álii méritum; nos inveníre grátiam studeámus. Quid enim? Non grátiæ est quod hic sumus? Profécto misericórdiæ Dómini est, quod non sumus consúmpti nos."
+      en: "My little children, this is the sinners' ladder, this is my greatest confidence, this is the whole reason of my hope. For what? Can the Son either reject, or bear to be rejected? Can the Son fail to hear, or fail to be heard? Neither plainly. Thou hast found, says the Angel, grace with God: happily. She will always find grace, and she is the only grace we need: she is, indeed, the only grace by which we are saved. Why do we desire other things, brethren? Let us seek grace, and let us seek it through Mary, because what she seeks she finds, and cannot be disappointed. Let us seek grace, but grace with God: for with men grace is deceitful. Let others seek merit; let us study to find grace. For what? Is it not of grace that we are here? Assuredly it is of the mercy of the Lord that we are not consumed."
+    status: { la: verified, en: draft }

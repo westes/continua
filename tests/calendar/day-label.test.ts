@@ -7,16 +7,17 @@ import type { LiturgicalDay } from '../../src/calendar/types';
 describe('getDayLabel — ordinal temporal label', () => {
   it("labels an anchor's own partial week as \"Weekday after {Anchor}\"", () => {
     // Not 2026 (Trinity Sunday May 31, so Trinity Monday June 1): that
-    // date is now St. Angela Merici's own fixed day (Duplex, added per
-    // the full-year sanctoral import), which would win outright and hide
-    // this purely-temporal label case. 2027's Trinity Sunday is May 23,
-    // so Trinity Monday is May 24 -- free of any sanctoral entry.
-    expect(getDayLabel(resolveDay('2027-05-24')).en).toBe('Monday after Trinity Sunday (Feria)');
+    // date is St. Angela Merici's own fixed day (Duplex), which would win
+    // outright and hide this purely-temporal label case. Not 2027 either
+    // (Trinity Monday May 24, Our Lady, Help of Christians). 2025's Trinity
+    // Sunday is June 15, so Trinity Monday is June 16 -- free of any
+    // sanctoral entry.
+    expect(getDayLabel(resolveDay('2025-06-16')).en).toBe('Monday after Trinity Sunday (Feria)');
     // (Epiphany's own partial week is now the Octave of the Epiphany, so it
     // no longer produces this label.)
     // Latin: spelled-out ferial weekday name (not roman numerals) and the
     // "Feria" rank label, which is already the real Latin word.
-    expect(getDayLabel(resolveDay('2027-05-24')).la).toBe('Feria Secunda post Dominica Sanctissimae Trinitatis (Feria)');
+    expect(getDayLabel(resolveDay('2025-06-16')).la).toBe('Feria Secunda post Dominica Sanctissimae Trinitatis (Feria)');
   });
 
   it('names the anchor day itself, not "day after itself"', () => {
@@ -392,7 +393,10 @@ describe('getDayLabel — named temporal feast rank', () => {
     // direct winner id) out of scope here. Pentecost Sunday's own id
     // *does* resolve as the direct winner (`temporal-id.ts`'s
     // EASTER_OFFSET_IDS), so it's a real, clean case for this branch.
-    expect(getDayLabel(resolveDay('2026-05-24')).en).toBe('Pentecost (Duplex I Class)');
+    // 2025's Pentecost (June 8) has no saint of its own to be "transferred
+    // away" in the label, unlike 2026's (May 24, Our Lady, Help of
+    // Christians).
+    expect(getDayLabel(resolveDay('2025-06-08')).en).toBe('Pentecost (Duplex I Class)');
   });
 });
 
