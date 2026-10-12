@@ -84,8 +84,11 @@ describe('First/Second Vespers psalmody the engine renders', () => {
     expect(text('vespers', '2027-03-28')).toContain('Angelus autem Dómini');
   });
 
-  it('Ss. Jerome and Thomas Aquinas take the Confessor-not-Bishop antiphons, not the Bishop-Doctors', () => {
-    const antiphons = ordo('vespers', '2026-09-30')
+  // The Doctor cases use St. Peter Canisius (Apr 27) and St. Albert the Great
+  // (Nov 15), not St. Jerome: his Sep 30 evening is not his own once Our
+  // Lady, Mediatrix of All Graces (Duplex majus, Oct 1) has First Vespers.
+  it('St. Peter Canisius takes the Confessor-not-Bishop antiphons, not the Bishop-Doctors', () => {
+    const antiphons = ordo('vespers', '2027-04-27')
       .parts.filter((p) => p.kind === 'psalm')
       .map((p) => JSON.stringify((p as { antiphon?: unknown }).antiphon ?? ''))
       .join(' ');
@@ -94,9 +97,17 @@ describe('First/Second Vespers psalmody the engine renders', () => {
   });
 
   it('a Doctor\'s Magnificat antiphon names the saint instead of a literal "N."', () => {
-    const j = text('vespers', '2026-09-30');
-    expect(j).toContain('beáte Hierónyme');
-    expect(j).not.toContain('beáte N.');
+    const t = text('vespers', '2027-11-15');
+    expect(t).toContain('beáte Alberte');
+    expect(t).not.toContain('beáte N.');
+  });
+
+  it('a Doctor commemorated at Vespers names the saint in the commemoration antiphon too', () => {
+    // St. John Chrysostom is commemorated at Vespers on Jan 26, 2027 (St.
+    // Polycarp's day); his antiphon used to read "beáte N." there.
+    const v = text('vespers', '2027-01-26');
+    expect(v).toContain('beáte Joánnes Chrysóstome');
+    expect(v).not.toContain('beáte N.');
   });
 
   it('Purification and the Octave of Ss. Peter and Paul have their own versicles', () => {

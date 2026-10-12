@@ -964,8 +964,14 @@ function sanctoralCommemorationPart(
   hour: 'lauds' | 'vespers',
 ): ResolvedPart {
   const weekday = day.weekday;
-  const part = sanctoralCommemorationBase(commemoration, weekday);
-  return hour === 'vespers' && part.kind === 'preces' ? { ...part, text: forVespersEvening(part.text, commemoration, day) } : part;
+  const base = sanctoralCommemorationBase(commemoration, weekday);
+  const evening = hour === 'vespers' && base.kind === 'preces' ? { ...base, text: forVespersEvening(base.text, commemoration, day) } : base;
+  // A Common antiphon's literal "N." names the saint here as it does at the
+  // Magnificat (getMagnificatAntiphon), where a Doctor commemorated at
+  // Vespers otherwise read "beáte N." -- after forVespersEvening, which
+  // swaps in the evening's own Magnificat antiphon, itself a Common's.
+  const invocationName = getSaintRecord(commemoration.id)?.invocationName;
+  return invocationName && evening.kind === 'preces' ? { ...evening, text: fillInvocationName(evening.text, invocationName) } : evening;
 }
 
 function sanctoralCommemorationBase(
