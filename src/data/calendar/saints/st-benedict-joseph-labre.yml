@@ -1,0 +1,19 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/aliquibus locis/
+# 04-16-BenedictusJLabre.txt -- "S. Benedictus Josephi Labre Confessoris", Semiduplex
+# (2.2), `vide C5` (Common of a Confessor not a Bishop), nine lessons ("Antiphonas
+# horas": every antiphon is the Common's). The file's own variants: Duplex under
+# `rubrica tridentina`, Simplex under 1960. Own Oratio and Lessons 4-6; Lessons 7-9
+# are the Common of a Martyr's second-place homily (Commune/C2, St. Gregory on Matt
+# 16:24-27), as the source includes them. English is this project's own translation,
+# marked draft, except St. Gregory's homily and the Gospel (the reference's English).
+#
+# DATE: Apr 16, his own day (d. 1783), a free date in this calendar.
+#
+# Rank: Simplex. The source's Semiduplex is deflated one tier by the late-canonization
+# rule (DESIGN.md, "Rank deflation for late canonizations"): canonized 1881.
+id: st-benedict-joseph-labre
+name: "St. Benedict Joseph Labre, Confessor"
+nameLa: "Sanctus Benedictus Josephus Labre, Confessor"
+rank: simplex
+common: common-of-a-confessor
+propers: "st-benedict-joseph-labre"

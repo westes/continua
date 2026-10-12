@@ -61,6 +61,28 @@ content in the same shape, not a design change. The dated log below is that pipe
 
 # Work Log
 
+### St. Benedict Joseph Labre and St. Felix of Cantalice added from `aliquibus locis` (2026-10-11)
+
+Sources: `Latin/Sancti/aliquibus locis/04-16-BenedictusJLabre.txt` and `05-21-Felix.txt`, both Semiduplex,
+`vide C5`, nine lessons, no antiphons of their own. Own Oratio and Lessons 4-6 (one continuous life per
+saint in Nocturn 2); Nocturn 3 is the Gospel and the homily of Lessons 7-9 (Labre: St. Gregory on Matt
+16:24-27 from `Commune/C2`, English from the reference; Felix: St. Augustine, Sermon 9 on the words of
+the Lord, with Matt 11:25-30 as already carried for St. Matthias). English of the lives and of the
+Augustine homily is this project's own translation, `status.en: draft`.
+
+Dates: Apr 16 and May 21, both free. Rank: Simplex, by DESIGN.md's late-canonization deflation of the
+source Semiduplex (canonized 1881 and 1712). Both often fall in an Easter or Ascension octave and are
+then commemorated, not the day's winner.
+
+Not done: St. Stanislaus Kostka. The reference's main Sancti files have no Kostka office; he exists
+only under `Sancti/Urbis` (`12-05-StanislausK.txt`, Duplex, nine lessons; `11-29-StanislausK-JoannisB`
+for Ss. Stanislaus and John Berchmans), i.e. the Rome-city calendar. Not added: Dec 5 is St. Sabbas in
+this calendar and the Urbis calendar is out of scope.
+
+Skipped on purpose (small files, local or order-only interest): Hyacintha Mariscotti, Margaret of
+Cortona, Ferdinand III, Veronica Giuliani, Rose of Viterbo, Galla, Rochus (a Simplex stub), Gaspar del
+Bufalo. Tests: `tests/calendar/labre-and-felix.test.ts`.
+
 ### Five Marian and devotional feasts added from the regional Sancti files (2026-10-11)
 
 Sources: `Latin/Sancti/aliquibus locis/` (05-31, 12-10, 01-23, 05-24, 10-23), all Duplex majus and nine
