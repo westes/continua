@@ -1,0 +1,115 @@
+# Matins Nocturn 2 and 3 readings for the Translation of the Holy House. Sourced from
+# web/www/horas/Latin/Sancti/aliquibus locis/12-10-Domus.txt. One entry per lesson,
+# each with its own responsory: Lectio4-6 (St. Bernard, Sermon 52; the sixth lesson
+# adds the Office's account of the Translation) in Nocturn 2, with Responsory4 from the
+# source and Responsory5 and 7 as it takes them from the Common of a Dedication
+# (Commune/C8.txt, Responsory2 and Responsory7, English from the reference's English
+# C8); in Nocturn 3 the Gospel (Luke 1:26-38, the source gives only its incipit, so
+# the pericope is the Annunciation's, already carried) and Lectio7-9 (St. Bernard,
+# Homilies 1-3 on "Missus est"), with the source's Responsory7 and 8. Lectio9 has no
+# responsory (the Te Deum follows). Nocturn 1 (Lectio1-3, 3 Kings 8) is not carried:
+# continua's first nocturn runs the Scripture course.
+#
+# Latin: obvious typos corrected silently ("Mriam" -> "Mariam", "pra.'dixísse" ->
+# "prædixísse", "sacculo" -> "sæculo", "siti præparatam" -> "sibi præparatam", "l'atrem"
+# -> "Patrem", "nec no viter" -> "nec novíter", "chros" -> "choros"); spaces before
+# ; : ? removed. Everything else is verbatim. English is this project's own
+# translation, marked draft, except the two Common responsories and the Gospel.
+id: translation-of-the-holy-house
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Bernard, Abbot, Sermon 52 on Various Subjects"
+    text:
+      la: "Sapiéntia, quæ Dei erat, et Deus erat, de sinu Patris ad nos véniens, ædificávit sibi domum, ipsam scílicet Matrem suam Vírginem Mariam, in qua septem colúmnas excidit. Quid est in ea septem colúmnas excidere, nisi ipsam dignum sibi habitáculum fide, et opéribus præparare? Nimírum ternarius númerus ad fidem propter sanctam Trinitátem, quaternarius pértinet ad mores propter quátuor principales virtútes. Quod autem in beáta María sancta Trínitas fúerit, fúerit dico per præséntiam majestátis; ubi solus Fílius erat per susceptionem humanitátis, testátur núntius cœlestis, qui ei arcána mystéria réserans, ait: Ave grátia plena. Dóminus tecum; et post pauca: Spíritus sanctus superveniet in te, et virtus Altíssimi obumbrábit tibi. Ecce habes Dóminum, habes virtútem Altíssimi, habes Spíritum sanctum, habes Patrem, Fílium, et Spíritum sanctum."
+      en: "Wisdom, which was God's and was God, coming to us from the bosom of the Father, built herself a house, namely her own Mother, the Virgin Mary, in which she hewed out seven pillars. What is it to hew out seven pillars in her, but to prepare for herself a dwelling worthy of her by faith and by works? The number three belongs to faith, doubtless, on account of the holy Trinity; the number four to morals, on account of the four cardinal virtues. And that in blessed Mary the holy Trinity was, I say was, by the presence of majesty, where the Son alone was by the assumption of humanity, the heavenly messenger bears witness, who, unfolding to her the secret mysteries, says: Hail, full of grace, the Lord is with thee; and a little after: The Holy Ghost shall come upon thee, and the power of the Most High shall overshadow thee. Behold, thou hast the Lord, thou hast the power of the Most High, thou hast the Holy Ghost, thou hast the Father, the Son, and the Holy Ghost."
+    responsory:
+      la: |
+          R. O quam metuendus est locus iste! * Vere non est hic aliud, nisi domus Dei, et porta cœli.
+          V. Hæc est domus Domini firmiter ædificata, bene fundata est supra firmam petram.
+          R. Vere non est hic aliud, nisi domus Dei, et porta cœli.
+      en: |
+          R. How dreadful is this place! * Surely this is none other but the house of God, and the gate of heaven.
+          V. This is the house of the Lord, stoutly builded, well founded upon a sure rock.
+          R. Surely this is none other but the house of God, and the gate of heaven.
+    status: { la: verified, en: draft }
+  - nocturn: 2
+    isGospel: false
+    source: "St. Bernard, Abbot, Sermon 52 on Various Subjects"
+    text:
+      la: "Utrum autem et quátuor principales virtútes, tamquam quátuor colúmnas possederit, inquisitione dignum vidétur. Primum ergo videámus, an fortitúdinem habúerit. Quæ nimírum virtus quómodo illi abesse pótuit, quæ abjéctis sæculáribus pompis, spretisque voluptatibus carnis, soli Deo in virginitáte vívere propósuit? Ni fallor, hæc Virgo est, quæ apud Salomónem légitur: Mulíerem fortem quis inveniet? procul, et de ultimis fínibus prétium ejus. Porro quod temperans et justa fúerit, ex Ángeli collocutione, et sui ipsíus responsione, luce clárius comprobamus. Salutata quippe tam venerabiliter ab Angelo: Ave, grátia plena. Dóminus tecum; non se éxtulit, quasi quæ ex singulári grátiæ privilégio benediceretur, sed siluit, et qualis esset insólita hæc salutatio secum cogitávit. Qua in re, quid nisi temperans fuit? At vero, cum de cœlestibus mystériis ab eódem Angelo doceretur, diligénter quæsívit, quómodo conciperet et pareret, quæ virum útique non cognósceret, et in hoc sine dúbio prudens éxstitit."
+      en: "But whether she also possessed the four cardinal virtues, as four pillars, seems worth inquiring. First, then, let us see whether she had fortitude. How could that virtue be wanting to her, who, casting away worldly pomps and despising the pleasures of the flesh, resolved to live for God alone in virginity? Unless I am mistaken, this is the Virgin of whom it is read in Solomon: Who shall find a valiant woman? Far and from the uttermost coasts is the price of her. Further, that she was temperate and just, we prove more clearly than light from her conversation with the Angel and her own answer. For being saluted so reverently by the Angel: Hail, full of grace, the Lord is with thee, she did not exalt herself, as one blessed by a singular privilege of grace, but was silent, and thought within herself what manner of salutation this was. In which what was she, if not temperate? But indeed, when she was taught by the same Angel concerning the heavenly mysteries, she diligently asked how she should conceive and bear, who certainly knew not man; and in this she undoubtedly showed herself prudent."
+    responsory:
+      la: |
+          R. Fundáta est domus Dómini supra vérticem móntium, et exaltáta est super omnes colles: * Et vénient ad eam omnes gentes, et dicent: Glória tibi, Dómine.
+          V. Veniéntes autem vénient cum exsultatióne, portántes manípulos suos.
+          R. Et vénient ad eam omnes gentes, et dicent: Glória tibi, Dómine.
+      en: |
+          R. The Lord's house is established in the top of the mountains, and exalted above the hills; * And all nations shall flow unto it, and shall say: Glory be to thee, O Lord!
+          V. They shall doubtless come again with rejoicing, bringing their sheaves with them.
+          R. And all nations shall flow unto it, and shall say: Glory be to thee, O Lord!
+    status: { la: verified, en: draft }
+  - nocturn: 2
+    isGospel: false
+    source: "St. Bernard, Abbot, Sermon 52 on Various Subjects, and the Office's own account of the Translation"
+    text:
+      la: "Justítiæ autem præ se fert insígne, ubi se ancíllam Dómini confitétur; nam quod justórum sit conféssio, testátur qui ait; Verúmtamen justi confitebúntur nómini tuo. Fuit ígitur beáta Virgo María fortis in propósito, temperans in siléntio, prudens in interrogatione, justa in confessióne. His ítaque quátuor morum columnis, et tribus fídei prædictis exstrúxit in ea sibi domum Sapiéntia cœlestis, quæ ádeo mentem ejus replevit, ut de plenitudine mentis fœcundaretur et caro. Ipsíus autem Vírginis natális domus divínis mystériis consecráta , Angelórum ministério ab infidélium potestáte in Dalmatiam prius, deínde in agrum Laurentanum Picenæ provínciæ transláta fuit, sedénte sancto Cœlestino Quinto: eamdémque ipsam esse, in qua Verbum caro factum est, et habitávit in nobis, tum pontifíciis diplomátibus, et celebérrima totíus orbis veneratióne, tum continua miraculórum virtúte et cœlestium beneficiórum grátia comprobátur. Quibus permótus Innocéntius Duodécimus, quo ferventius erga Matris amantissimæ cultum Fidélium memória excitaretur, ejúsdem sanctæ Domus Translationem anniversária solemnitáte in tota Piceni Provincia veneratam. Missa étiam et Offício próprio celebrári præcépit."
+      en: "She bears the mark of justice, moreover, when she confesses herself the handmaid of the Lord; for that confession belongs to the just, he witnesses who says: But the just shall give glory to thy name. The blessed Virgin Mary was therefore strong in purpose, temperate in silence, prudent in questioning, just in confession. With these four pillars of morals, then, and the three aforesaid of faith, heavenly Wisdom built herself a house in her, which so filled her mind that from the fullness of her mind the flesh also was made fruitful. The very natal house of the Virgin, consecrated by divine mysteries, was by the ministry of Angels carried from the power of unbelievers first into Dalmatia, then into the Laurentan field of the province of Picenum, in the time of Pope Celestine the Fifth: and that it is the very one in which the Word was made flesh and dwelt among us, is proved both by pontifical diplomas and by the most celebrated veneration of the whole world, and by the continual power of miracles and the grace of heavenly benefits. Moved by these things, Innocent the Twelfth, that the memory of the Faithful might be stirred up more fervently toward the worship of the most loving Mother, ordered the Translation of the same holy House, venerated with an annual solemnity in the whole province of Picenum, to be celebrated also with Mass and Office of its own."
+    responsory:
+      la: |
+          R. Domus mea, domus oratiónis vocábitur, dicit Dóminus: in ea omnis qui petit, áccipit; et qui quærit, ínvenit; * Et pulsánti aperiétur.
+          V. Pétite, et accipiétis; quǽrite, et inveniétis.
+          R. Et pulsánti aperiétur.
+      en: |
+          R. My house shall be called the house of prayer, saith the Lord. Therein, he that asketh, receiveth; he that seeketh, findeth; * And to him that knocketh, it shall be opened.
+          V. Ask, and ye shall receive; seek, and ye shall find.
+          R. And to him that knocketh, it shall be opened.
+    status: { la: verified, en: draft }
+  - nocturn: 3
+    isGospel: true
+    citation:
+      la: "Luc 1:26-38"
+      en: "Luke 1:26-38"
+    text:
+      la: "In illo témpore: Missus est Angelus Gábriel a Deo in civitátem Galilǽæ, cui nomen Názareth, ad Vírginem desponsátam viro, cui nomen erat Joseph, de domo David, et nomen Vírginis María. Et ingréssus Angelus ad eam, dixit: Ave, grátia plena; Dóminus tecum: benedícta tu in muliéribus. Quæ cum audísset, turbáta est in sermóne ejus: et cogitábat, qualis esset ista salutátio. Et ait Angelus ei: Ne tímeas, María, invenísti enim grátiam apud Deum: ecce, concípies in útero, et páries fílium, et vocábis nomen ejus Jesum. Hic erit magnus, et Fílius Altíssimi vocábitur, et dabit illi Dóminus Deus sedem David, patris ejus: et regnábit in domo Jacob in ætérnum, et regni ejus non erit finis. Dixit autem María ad Angelum: Quómodo fiet istud, quóniam virum non cognósco? Et respóndens Angelus, dixit ei: Spíritus Sanctus supervéniet in te, et virtus Altíssimi obumbrábit tibi. Ideóque et quod nascétur ex te Sanctum, vocábitur Fílius Dei. Et ecce, Elísabeth, cognáta tua, et ipsa concépit fílium in senectúte sua: et hic mensis sextus est illi, quæ vocátur stérilis: quia non erit impossíbile apud Deum omne verbum. Dixit autem María: Ecce ancílla Dómini, fiat mihi secúndum verbum tuum."
+      en: "At that time, the angel Gabriel was sent from God to a town of Galilee called Nazareth, to a virgin betrothed to a man named Joseph, of the house of David, and the virgin's name was Mary. And when the angel had come to her, he said, \"Hail, full of grace, the Lord is with you. Blessed are you among women.\" When she had heard him she was troubled at his word, and kept pondering what manner of greeting this might be. And the angel said to her, \"Do not be afraid, Mary, for you have found grace with God. Behold, you shall conceive in your womb and shall bring forth a son; and you shall call His name Jesus. He shall be great, and shall be called the Son of the most High; and the Lord God will give Him the throne of David His father, and He shall be king over the house of Jacob forever; and of His kingdom there shall be no end.\" But Mary said to the angel, \"How shall this happen, since I do not know man?\" And the angel answered and said to her, \"The Holy Spirit shall come upon you, and the power of the Most High shall overshadow you, and therefore the Holy One to be born shall be called the Son of God. And, behold, Elizabeth your kinswoman also has conceived a son in her old age, and she who was called barren is now in her sixth month; for nothing shall be impossible with God.\" But Mary said: \"Behold the handmaid of the Lord; be it done to me according to your word.\""
+    status: { la: verified, en: verified }
+  - nocturn: 3
+    isGospel: false
+    source: "St. Bernard, Abbot, Homily 1 on \"Missus est\""
+    text:
+      la: "Quæ est hæc Virgo tam venerábilis, ut salutetur ab Angelo? tam húmilis, ut desponsáta sit fabro? Pulchra permixtio virginitátis et humilitátis: nec mediocriter placet Deo illa ánima, in qua et humílitas comméndat virginitátem, et virgínitas exornat humilitátem. Sed quanta, putas veneratióne digna est, in qua humilitátem exáltat fœcunditas, et partus consecrat virginitátem? Audis vírginem, audis húmilem? Laudábilis virtus virgínitas, sed magis necessaria humílitas: illa consulitur ista præcipitur."
+      en: "Who is this Virgin, so venerable as to be saluted by an Angel? so humble as to be betrothed to a carpenter? A beautiful mingling of virginity and humility: and not moderately does that soul please God in which humility commends virginity, and virginity adorns humility. But how great, thinkest thou, must that one be held worthy of veneration, in whom fruitfulness exalts humility, and childbearing consecrates virginity? Thou hearest a virgin, thou hearest a humble one? Virginity is a praiseworthy virtue, but humility more necessary: the one is counselled, the other commanded."
+    responsory:
+      la: |
+          R. Diffúsa est grátia in lábiis tuis, * Proptérea benedíxit te Deus in ætérnum.
+          V. Myrrha, et gutta, et cásia a vestiméntis tuis, a dómibus ebúrneis, ex quibus te delectavérunt filiæ regum in honóre tuo.
+          R. Proptérea benedíxit te Deus in ætérnum.
+      en: |
+          R. Grace is poured abroad in thy lips, * Therefore hath God blessed thee for ever.
+          V. Myrrh, and stacte, and cassia from thy garments, from the ivory houses, whereby the daughters of kings have made thee glad in thy glory.
+          R. Therefore hath God blessed thee for ever.
+    status: { la: verified, en: draft }
+  - nocturn: 3
+    isGospel: false
+    source: "St. Bernard, Abbot, Homily 2 on \"Missus est\""
+    text:
+      la: "Missus est, inquit, Ángelus ad vírginem, vírginem carne, vírginem mente, vírginem professióne, vírginem dénique qualem describit Apóstolus, mente et córpore sanctam, nec novíter, nec fortúito inventam, sed a sæculo electam, ab Altíssimo præcognitam, et sibi præparatam, ab Ángelis servatam, a Pátribus præfiguratam, a Prophétis promíssam. Ut pauca loquar de plúribus, quam sibi áliam prædixísse Deus vidétur, quando ad serpentem ait; Inimicitias ponam inter te et mulíerem? Et si adhuc dubitas, an de María dixerit, audi quod séquitur: Ipsa cónteret caput tuum; cui hæc serváta victória est, nisi Maríæ?"
+      en: "An Angel, he says, was sent to a virgin: a virgin in body, a virgin in mind, a virgin by profession, a virgin finally such as the Apostle describes, holy in mind and body, found neither newly nor by chance, but chosen from of old, foreknown by the Most High, and prepared for himself, guarded by Angels, prefigured by the Fathers, promised by the Prophets. To say few things out of many: what other did God seem to have foretold, when he said to the serpent: I will put enmities between thee and the woman? And if thou doubtest still whether he spoke of Mary, hear what follows: She shall crush thy head; for whom was this victory reserved, if not for Mary?"
+    responsory:
+      la: |
+          R. Beáta es, Virgo María Dei Génitrix, quæ credidísti Dómino: perfécta sunt in te, quæ dicta sunt tibi: ecce exaltáta es super choros Angelórum: * Intercéde pro nobis ad Dóminum Deum nostrum.
+          V. Ave María, grátia plena: Dóminus tecum.
+          R. Intercéde pro nobis ad Dóminum Deum nostrum.
+      en: |
+          R. Blessed art thou, O Virgin Mary, Mother of God, who hast believed in the Lord: the things that were spoken to thee are accomplished in thee: behold, thou art exalted above the choirs of Angels: * Intercede for us with the Lord our God.
+          V. Hail, Mary, full of grace: the Lord is with thee.
+          R. Intercede for us with the Lord our God.
+    status: { la: verified, en: draft }
+  - nocturn: 3
+    isGospel: false
+    source: "St. Bernard, Abbot, Homily 3 on \"Missus est\""
+    text:
+      la: "Et ingréssus Ángelus ad eam, dixit: Ave grátia plena. Dóminus tecum. Quo ingréssus ad eam? Puto in sacrárium pudici cubículi, ubi illa fortassis, clauso super se ostio, orabat Patrem in abscóndito. Solent Ángeli adstare orantibus, et delectari in his, quos vident levare puras manus in oratióne. Holocáustum sanctæ devotiónis gaudent se offérre Deo in odórem suavitátis. Maríæ autem orationes, quantum placuerint in conspéctu Altíssimi, Ángelus indicávit, qui ingréssus ad eam tam reverénter salutavit."
+      en: "And the Angel being come in unto her, said: Hail, full of grace, the Lord is with thee. Where did he come in to her? I think into the shrine of her chaste chamber, where she, perhaps with the door shut upon her, was praying to the Father in secret. Angels are wont to stand by those who pray, and to delight in those whom they see lifting pure hands in prayer. They rejoice to offer to God the holocaust of holy devotion for an odour of sweetness. But how much the prayers of Mary pleased in the sight of the Most High, the Angel showed, who coming in to her saluted her so reverently."
+    status: { la: verified, en: draft }
