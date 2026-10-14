@@ -8,7 +8,7 @@ const CASES: [string, string, string][] = [
   ['2026-01-01', 'Nóminis Jesu', 'Holy Name (Jan 2)'],
   ['2026-02-17', 'Dies Cínerum', 'Ash Wednesday'],
   ['2026-03-26', 'Septem Dolórum', 'Seven Sorrows, Passion Friday'],
-  ['2026-04-05', 'Solémnitas solemnitátum', 'Easter, read on Easter Sunday'],
+  ['2026-04-04', 'Solémnitas solemnitátum', 'Easter, read on Holy Saturday'],
   ['2026-04-21', 'Solémnitas sancti Joseph', 'Patronage of St. Joseph'],
   ['2026-05-13', 'Ascénsio Dómini', 'Ascension'],
   ['2026-05-23', 'Dies Pentecóstes', 'Pentecost'],

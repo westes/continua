@@ -54,8 +54,10 @@ entries:
       la: "Cœna Domínica, quando Christus Jesus, die quam pro nostra salúte crucifigerétur, mystéria Córporis et Sánguinis sui discípulis trádidit celebránda."
       en: "The Lord's Supper, when Christ Jesus, the day before he was crucified for our salvation, gave to his disciples the mysteries of his Body and Blood, to be celebrated by them."
     status: { la: verified, en: verified }
+  # Announced on Holy Saturday under Easter Sunday's own date. The reference
+  # keys this to the Sunday evening (Monday's heading); that is not followed.
   - id: Pasc0-1
-    anchor: {kind: easter, offset: 1}
+    anchor: {kind: easter, offset: 0}
     text:
       la: "Hac die quam fecit Dóminus, Solémnitas solemnitátum et Pascha nostrum: Resurréctio Salvatóris nostri Jesu Christi secúndum carnem."
       en: "On this day, which the Lord hath made, is the Solemnity of Solemnities, and our Pasch;
