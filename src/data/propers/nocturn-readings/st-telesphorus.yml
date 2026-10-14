@@ -1,149 +1,67 @@
-# Matins Nocturn 2-3 readings for St. Telesphorus, Pope, Martyr
-# (Jan 5, commemorated — the day itself is absorbed into the Christmas
-# octave). SanctiM/01-05.txt inherits the whole day (`@Sancti/01-05`)
-# with no override, and Sancti/01-05.txt itself has **no proper vita
-# text for Telesphorus at all** — the whole Nocturn 2/3 is given over
-# to the octave's own Nativity homiletic content (see memory
-# vu-matins-sanctim-saints, "third finding"). Per direct instruction
-# (2026-08), that content is still worth pooling in rather than leaving
-# this commemoration silent: it's real, sourceable text for the day,
-# even though it isn't proper to this particular saint — flagged below,
-# not disguised as his own vita.
-# web/www/horas/Latin/Sancti/01-05.txt, English/Sancti/01-05.txt.
+# Matins Nocturn 2 reading for St. Telesphorus, Pope and Martyr (Jan 5,
+# commemorated -- the day itself is the Vigil of the Epiphany). The main
+# Sancti/01-05.txt has no vita for him at all (its Nocturn 2/3 is the
+# Christmas octave's own homiletic content, now carried by
+# vigil-of-epiphany.yml), which is why this file used to pool that
+# homily in. The Rome-city calendar has a real proper vita:
+# web/www/horas/Latin/Sancti/Urbis/01-05cc.txt (Duplex, nine lessons;
+# also reused for the combined Ss. Telesphorus and Hyginus office of
+# Urbis/01-19). Lectio4-6 combined into one reading, one continuous
+# vita, no genuine source break. No responsory given in the source.
 #
-# Nocturn 2: Lectio4-6, St. Augustine's Christmas sermon (not proper to
-# Telesphorus — the day's own octave homily) — one continuous piece.
-# Nocturn 3: Lectio7's Gospel citation (Matt 2:19-23) was a bare
-# incipit ("Et réliqua") with no full pericope text given; the full
-# pericope is now authored too (isGospel: true, immediately before the
-# homily) — this day's own Missale [Evangelium]
-# (`web/www/missa/Latin/Sancti/01-05.txt`, English/Sancti/01-05.txt)
-# genuinely does carry the full Holy Family/Flight-into-Egypt pericope
-# in full (not a bare incipit there), same as the octave homily itself
-# is not proper to St. Telesphorus (2026-09-05 update). The homily
-# portion remains St. Jerome's commentary (Lectio7's homily + Lectio8-9
-# combined, one continuous piece).
+# Latin typos in the Urbis file corrected here: "tortia" -> "tertia",
+# "sacrificiumter" -> "sacrificium ter", "quas ... attinent" -> "quae".
+# English/Sancti has no regional subdirectory, so there is no English
+# source; the English is this project's own translation, marked draft.
 id: st-telesphorus
 readings:
   - nocturn: 2
     isGospel: false
-    source: "St. Augustine of Hippo, Sermon 13 de Tempore (the Christmas octave's own homily, not proper to St. Telesphorus)"
     text:
       la: >-
-        Dóminus noster Jesus Christus, fratres caríssimi, qui in ætérnum est cunctórum
-        Creátor, hódie de matre nascéndo factus est nobis Salvátor. Natus est nobis hódie in
-        témpore per voluntátem, ut nos perdúcat ad Patris æternitátem. Factus est Deus homo,
-        ut homo fíeret Deus: ut panem Angelórum manducáret homo, Dóminus Angelórum hódie
-        factus est homo.
+        Telesphorus, natióne Græcus, pátria Thuriensis in magna Græcia, ex presbytero Románæ
+        Ecclésiæ (cujus dignum minístrum egerat) Póntifex Máximus creátus est. Hoc suprémum
+        munus ita óbiit, ut exímius Petri successor lectus esse viderétur. In ejus cáthedra
+        sedit sub imperatóre Antoníno Pio, fervente persecutionis æstu. Qui tamen non óbstitit,
+        ne sedulam óperam regendæ Christi Ecclésiæ sollícitus navarit.
 
 
-        Hódie impléta est prophetía illa, quæ dicit: Roráte, cæli, désuper, et nubes pluant
-        justum: aperiátur terra, et gérminet Salvatórem. Factus est ígitur qui fécerat, ut
-        invenirétur qui períerat. Sic enim in Psalmis homo confitétur: Priúsquam humiliárer,
-        ego peccávi. Peccávit homo, et factus est reus: natus est homo Deus, ut liberarétur
-        reus. Homo ígitur cécidit, sed Deus descéndit. Cécidit homo miserabíliter, descéndit
-        Deus misericórditer; cécidit homo per supérbiam, descéndit Deus cum grátia.
+        Hinc novis decrétis multa illum egrégie sancivisse legimus, quæ ad fidélium mores,
+        Ecclesiasticórum libertatem, et sacros ritus attinent: scílicet quadragesimale
+        jejúnium, jam olim ab Apóstolis traditum, novo edícto restaurasse; ac mandasse ut in
+        Natali Dómini sanctum Missæ sacrificium ter celebraretur, média nocte, illucescénte
+        aurora, hora demum tertia post solis ortum; et constituisse ut sacræ Liturgiæ hymnus
+        angélicus, Glória in excélsis Deo, adderetur.
 
 
-        O mirácula, o prodígia, fratres mei! Natúræ jura mutántur in hómine; Deus náscitur,
-        virgo sine viro gravidátur, viri nésciam sermo Dei marítat: simul facta est mater et
-        virgo; mater facta, sed incorrúpta; virgo habens fílium, nésciens virum; semper
-        clausa, sed non infœcúnda. Solus enim sine peccáto est natus, quem sine viríli
-        compléxu non concupiscéntia carnis, sed obediéntia génuit mentis.
+        Edixisse quoque ne sacerdótes a pópulo arguerentur, ut sublimis órdinis dignitati
+        consuleret. Ordinatióne quadruplici, mense Decémbri, creávit presbyteros duódecim,
+        diáconos octo, epíscopos trédecim per divérsa loca. Cum autem in propagánda fide
+        ardentissimus esset, ac proínde idolórum sacerdótibus invisus, captus tandem cápitis
+        abscissione martyrium consummávit Nonis Januárii, et ejus corpus in Vaticáno sepúltum
+        est.
       en: >-
-        Our Lord Jesus Christ, dearest brethren, who in eternity is the Creator of all things,
-        was as at this time born of a mother and became our Saviour. It was as at this time
-        that he willed to be born for us in earthly time, so as to lead us to the Father's
-        eternity. God is made man, that man may be made as God. That man may eat Angels' food,
-        the Lord of Angels was as on this day made man.
+        Telesphorus, a Greek by race and a native of Thurii in Magna Graecia, was made Supreme
+        Pontiff from being a priest of the Roman Church, of which he had been a worthy minister.
+        He discharged this highest office so well that he seemed to have been chosen an
+        outstanding successor of Peter. He sat in his chair under the Emperor Antoninus Pius,
+        in the fervent heat of persecution. Yet this did not prevent him from devoting careful
+        and anxious labour to the governance of Christ's Church.
 
 
-        Now is fulfilled that prophecy: Drop down, ye heavens, from above, and let the skies
-        pour down righteousness: let the earth open, and bring forth a Saviour. He who made
-        all things is therefore himself made, that those who are lost may be found. It is even
-        as man is made to testify of himself in the Psalms: Before I was humbled, I went
-        wrong. Man sinned and became guilty. God is born man, that the guilty may be
-        delivered. Man fell, but God descended. Man fell miserably, God descended mercifully.
-        Man fell by pride, God descended with grace.
+        We read that from this he established many things excellently by new decrees, touching
+        the morals of the faithful, the freedom of the clergy, and sacred rites: namely, that he
+        renewed by a new edict the Lenten fast, handed down long ago by the Apostles; and
+        commanded that on the Nativity of the Lord the holy sacrifice of the Mass be celebrated
+        three times, at midnight, at the dawning of the day, and at the third hour after
+        sunrise; and established that the angelic hymn of the sacred Liturgy, Glory be to God on
+        high, be added.
 
 
-        O my brethren, what a miracle! what a wonder! The laws of nature are changed
-        concerning man: God is born, a Virgin conceiveth without an husband; the Word of God
-        is wedded to one who knoweth no man; she is at once Mother and Virgin. A Mother, yet
-        inviolate: a Virgin having a Son; knowing no man, ever sealed, yet not unfruitful. For
-        he alone was born without sin. He alone was born without human embrace, begotten not
-        of the will of the flesh, but of the obedience of the mind.
-    status: { la: verified, en: verified }
-
-  - nocturn: 3
-    isGospel: true
-    citation: { la: "Matt 2:19-23", en: "Matt 2:19-23" }
-    text:
-      la: >-
-        In illo témpore: Defúncto Heróde, ecce, Angelus Dómini appáruit in somnis Joseph in
-        Ægýpto, dicens: Surge, et áccipe Púerum et Matrem ejus, et vade in terram Israël:
-        defúncti sunt enim, qui quærébant ánimam Pueri. Qui consúrgens, accépit Púerum et Matrem
-        ejus, et venit in terram Israël. Audiens autem, quod Archeláus regnáret in Judæa pro
-        Heróde patre suo, tímuit illo ire: et, admonítus in somnis, secéssit in partes Galilææ.
-        Et véniens habitávit in civitáte, quæ vocátur Názareth: ut adimplerétur quod dictum est
-        per Prophétas: Quóniam Nazaræus vocábitur.
-      en: >-
-        At that time, Herod being dead, behold an Angel of the Lord appeared in sleep to Joseph
-        in Egypt, saying, "Arise, and take the Child and His Mother, and go into the land of
-        Israel, for they are dead that sought the life of the Child." Who arose, and took the
-        Child and His Mother, and came into the land of Israel. But hearing that Archelaus
-        reigned in Judea in the room of Herod his father, he was afraid to go thither, and being
-        warned in sleep, retired into the quarters of Galilee. And coming he dwelt in a city
-        called Nazareth, that it might be fulfilled which was said by the Prophets, "That He
-        shall be called a Nazarene."
-    status: { la: verified, en: verified }
-
-  - nocturn: 3
-    isGospel: false
-    source: "St. Jerome, Commentary on Matthew, Book I, on Matt 2:19-23 (the day's own octave homily, not proper to St. Telesphorus)"
-    text:
-      la: >-
-        Ex hoc loco intellígimus non solum Heródem, sed et sacerdótes et scribas eódem témpore
-        necem Dómini fuísse meditátos. Qui surgens accépit púerum, et matrem ejus. Non dixit:
-        Accépit fílium suum et uxórem suam, sed Púerum et matrem ejus; quasi nutrítius, non
-        marítus.
-
-
-        Audiens autem quod Archeláus regnáret in Judǽa pro Heróde patre suo, tímuit illo ire.
-        Multi labúntur erróre propter ignorántiam históriæ, putántes eumdem esse Heródem, a
-        quo in passióne sua Dóminus irridétur, et qui nunc mórtuus esse referátur. Ergo
-        Heródes ille qui cum Piláto póstea amicítias fecit, hujus Heródis fílius est, frater
-        Archelái.
-
-
-        Quóniam Nazarǽus vocábitur. Si fixum de Scriptúris posuísset exémplum, numquam
-        díceret: Quod dictum est per prophétas: sed simplíciter: Quod dictum est per
-        prophétam. Nunc autem pluráliter prophétas vocans, osténdit se non verba de Scriptúris
-        sumpsísse, sed sensum. Nazarǽus sanctus interpretátur; sanctum autem Dóminum futúrum
-        omnis Scriptúra commémorat.
-      en: >-
-        From the words, they are dead, (in the Plural), which are used in this passage of the
-        Gospel, we may understand that there were others beside Herod which sought the young
-        Child's life probably the Priests and Scribes. And he Joseph arose, and took the young
-        Child and His Mother. It is not written, He took his wife and child, but he took the
-        young Child and His Mother; whence it is clear that the holy Evangelist willeth to
-        imply that Joseph was not the father, but the Guardian of Jesus, not the husband, but
-        the Betrothed of Mary.
-
-
-        But when he heard that Archelaus did reign in Judea, in the room of his father Herod,
-        he was afraid to go thither. There are some persons so grossly ignorant of history
-        that they confuse themselves over the two Herods, as if the one mentioned here were
-        the same who afterwards set our Lord at nought during His Passion, and they cannot
-        understand how he should now be said to be dead. The Herod who was made friends with
-        Pilate over Christ's death, was the son of the Herod who massacred the infants of
-        Bethlehem, and the brother of Archelaus.
-
-
-        He shall be called a Nazarene. The Evangelist, in quoting these words, saith that they
-        were spoken by the Prophets, (Plural). If he had been citing any one precise passage
-        he would have said by the Prophet, in the Singular. But he is citing the sense of the
-        Prophets, and not any individual passage in any of their writings. He seemeth to refer
-        to the fact that in Hebrew the word Nazarene signifieth holy, and that Christ is the
-        Holy One of God is the common declaration of all the Scriptures.
-    status: { la: verified, en: verified }
+        He also decreed that priests should not be accused by the people, so as to safeguard the
+        dignity of the exalted order. In four ordinations, in the month of December, he created
+        twelve priests, eight deacons, and thirteen bishops for various places. Since he was
+        most ardent in propagating the faith, and for that reason hateful to the priests of the
+        idols, he was at length seized and completed his martyrdom by beheading on the Nones of
+        January, and his body was buried in the Vatican.
+    status: { la: verified, en: draft }

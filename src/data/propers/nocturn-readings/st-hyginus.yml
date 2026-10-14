@@ -1,192 +1,78 @@
-# Matins Nocturn 2-3 readings for St. Hyginus, Pope, Martyr (Jan 11,
-# commemorated — the day itself is absorbed into the Epiphany octave).
-# SanctiM/01-11.txt inherits the whole day (`@Sancti/01-11`) with no
-# override, and Sancti/01-11.txt itself has **no proper vita text for
-# Hyginus at all** — the whole Nocturn 2/3 is given over to the
-# octave's own Epiphany homiletic content (see memory
-# vu-matins-sanctim-saints, "third finding"). Per direct instruction
-# (2026-08), that content is still worth pooling in rather than leaving
-# this commemoration silent: it's real, sourceable text for the day,
-# even though it isn't proper to this particular saint — flagged below,
-# not disguised as his own vita. Same treatment as st-telesphorus.yml
-# (Jan 5, Christmas octave).
-# web/www/horas/Latin/Sancti/01-11.txt, English/Sancti/01-11.txt.
+# Matins Nocturn 2 reading for St. Hyginus, Pope and Martyr (Jan 11,
+# commemorated -- the day itself is inside the Epiphany octave). The
+# main Sancti/01-11.txt has no vita for him at all (its Nocturn 2/3 is
+# the octave's own homiletic content, carried by
+# octave-readings/epiphany-octave-day-*.yml), which is why this file
+# used to pool the Epiphany homilies in. The Rome-city calendar has a
+# real proper vita: web/www/horas/Latin/Sancti/Urbis/01-11cc.txt
+# (Duplex, nine lessons; also reused for the combined Ss. Telesphorus
+# and Hyginus office of Urbis/01-19). Lectio4-6 combined into one
+# reading, one continuous vita, no genuine source break. No responsory
+# given in the source.
 #
-# Nocturn 2: Lectio4-6, St. Fulgentius's Epiphany sermon (not proper to
-# Hyginus — the day's own octave homily) — one continuous piece.
-# Nocturn 3: Lectio7's Gospel citation (Matt 2:1-12) is a bare incipit
-# ("Et réliqua") in the horas file, but this is the Epiphany's own
-# Missale Gospel (the Magi) — its full pericope is authored below
-# (isGospel: true, immediately before the homily), sourced from
-# web/www/missa/Latin+English/Sancti/01-06.txt (Epiphany's own Mass
-# Gospel; not found already authored in any other nocturn-readings
-# file, checked 2026-09-05). St. Ambrose's commentary (Lectio7's homily
-# + Lectio8-9 combined, one continuous piece) remains, as before, the
-# day's own octave homily, not proper to St. Hyginus.
-#
-# Update (2026-09-05): the Gospel pericope itself is now authored
-# (previously left unauthored per the "bare incipit, skip it"
-# convention) — sourced from the Epiphany's own Missale Evangelium
-# above, not guessed at.
+# Latin typos in the Urbis file corrected here: "primumPontifex" ->
+# "primum Pontifex", "lindecim" -> "undecim", "philosophuæt" ->
+# "philosophus et". English/Sancti has no regional subdirectory, so
+# there is no English source; the English is this project's own
+# translation, marked draft.
 id: st-hyginus
 readings:
   - nocturn: 2
     isGospel: false
-    source: "St. Fulgentius of Ruspe, Sermon 5 on the Epiphany (the day's own octave homily, not proper to St. Hyginus)"
     text:
       la: >-
-        Ipse Deus, qui sibi in véteri testaménto primítias offérri mandávit, homo natus
-        Géntium primítias suo cultui dedicávit. Pastóres fuérunt primítiæ Judæórum: Magi
-        facti sunt primítiæ Géntium. Illi de próximo addúcti, isti de longínquo redúcti. Ubi
-        est, ínquiunt, qui natus est Rex Judæórum? De Heróde rege Judæórum fílii jam fúerant
-        nati. Archeláus natus est in palátio, Christus in diversório. Archeláus natus, est in
-        lecto argénteo pósitus, Christus autem natus, in præsépio est brevíssimo collocátus:
-        et tamen ille natus in palátio contémnitur, iste natus in diversório quæritur: ille a
-        Magis nullátenus nominátur, iste invéntus supplíciter adorátur.
+        Hyginus Atheniénsis, philosopho patre, cum jam Románæ Ecclésiæ présbyter esset, cleri
+        suffrágiis, Telesphoro sufféctus est. Sedit in sancta Petri sede, imperatóre Antoníno
+        Pio Augusto, annos tres, menses undecim, dies vigínti octo. Ubi primum Pontifex
+        renuntiátus est, clericórum ordines in suos gradus distínxit, ac fecit, ut in iis
+        ecclésiis, quas Títulos vocant, tum primarii minístri, tum álii eísdem subjecti
+        adessent, qui fidélibus, cum res postularet, sacra ministrarent.
 
 
-        Quis est iste Rex Judæórum? Páuperet dives, húmilis et sublímis. Quis est iste Rex
-        Judæórum, qui portátur ut párvulus, adorátur ut Deus? Parvus in præsépio, imménsus in
-        cælo: vilis in pannis, pretiósus in stellis. Quid est quod sic turbáris, Heródes? Rex
-        iste, qui natus est, non venit reges pugnándo superáre, sed moriéndo mirabíliter
-        subjugáre. Nec ídeo natus est, ut tibi succédat, sed ut in eum mundus fidéliter
-        credat. Venit ergo, non ut pugnet vivus, sed ut triúmphet occísus.
+        Instítuit étiam ne absque celebratióne Missæ templa vel oratoria sacro ritu
+        consecrarentur: ne inconsulto epíscopo, vel nova construerentur, vel jam constructa
+        destruerentur, et ne materies ad sacrum illum usum congesta et destinata, in profanos
+        usus converteretur. Edixit prætérea, ut patrini baptísmo adessent, qui de sacro fonte
+        infantes levarent: ne quis epíscopus reus críminis damnaretur, nisi a comprovincialibus
+        epíscopis ejus causa probe discussa fuísset. Cuncta hæc ejus título ac nómine sancita
+        exstant. Tres ordinatiónes hábuit mense Decémbri, quibus creávit epíscopos sex,
+        presbyteros quíndecim, diáconos quinque.
 
 
-        Puer iste, qui nunc a Magis dícitur Rex Judæórum, idem Creátor est, et Dóminus
-        Angelórum. Quaprópter cujus times infántiam nascéntis, magis timére debes
-        omnipoténtiam judicántis. Noli eum timére regni tui successórem, sed time
-        infidelitátis tuæ justíssimum damnatórem. Ite, inquit, et renuntiáte mihi, ut et ego
-        véniens adórem eum. O callíditas ficta, o incredúlitas ímpia, o nequítia fraudulénta!
-        Sanguis Innocéntium, quem crudéliter effudísti, attestátur quid de hoc púero voluísti.
+        Cum autem paulo ante Justínus claríssimus philosophus et Christi Martyr scripsísset
+        apologiam pro religióne christiána ad imperatórem Antoninum Pium Augústum, obtínuit ut
+        persecutio desæviret. Hinc a Christianórum cæde, non quidem omníno, plúrimum tamen,
+        público príncipis edícto, temperatum est. Sanctíssimo tamen pastóri, cujus cura
+        Domínico gregi consultum fúerat, parcitum non fuit; nempe hic glorióso martyrio, ne
+        antecessoribus dissimilis esset, innocentissimam vitam terminavit, die undecima
+        Januárii, et sepúltus est in Vaticáno.
       en: >-
-        The same God Who in the Old Testament had commanded the first-fruits to be offered to
-        Himself, being born as a man, Himself consecrated to His own worship the firstfruits
-        of the nations. The Shepherds were the first-fruits of the Jews, and the wise men of
-        the Gentiles. The first came from near at hand, the second from afar. Where is He, say
-        they, that is born King of the Jews? Herod, the king of the Jews, had already had
-        children. Archelaus was born in a palace, Christ at an inn; Archelaus was laid in a
-        silver cradle, Christ in a manger. And yet the wise men sought, not Archelaus, but
-        Christ; they did not even name him that was born in a palace, but when they found Him
-        That lay in a manger, they fell down and worshipped Him.
+        Hyginus, an Athenian, the son of a philosopher, was already a priest of the Roman
+        Church when he was chosen by the votes of the clergy to succeed Telesphorus. He sat in
+        the holy see of Peter, under the Emperor Antoninus Pius Augustus, three years, eleven
+        months, and twenty-eight days. As soon as he was proclaimed Pontiff, he distinguished
+        the orders of clerics into their grades, and arranged that in those churches called
+        Titles there should be both principal ministers and others subject to them, to minister
+        the sacred things to the faithful when need required.
 
 
-        Who is the King of the Jews? The Poor and the Rich, the Lowly and the Exalted One. Who
-        is the King of the Jews? He Who, being carried at the breast, is adored as the
-        Eternal; He Who lieth tiny in the manger, and is He Whom the heavens cannot contain;
-        He Who is meanly wrapped in swaddling clothes, and is more glorious than all the
-        stars. Why art thou troubled, O Herod? He that is born King of the Jews cometh not by
-        carnal warfare to conquer other kings, but by a marvellous working, by dying, to
-        subdue them to Himself. He is not born to be thy successor, but that the world may
-        faithfully believe in Him. He cometh, not that He may fight in the flesh, but that He
-        may conquer through the suffering of death.
+        He also established that temples or oratories not be consecrated with sacred rite
+        without the celebration of Mass; that new ones not be built, nor existing ones
+        destroyed, without the bishop being consulted; and that the material gathered and set
+        apart for that sacred use not be turned to profane uses. He further decreed that
+        godparents be present at baptism to lift the infants from the sacred font; and that no
+        bishop be condemned as guilty of a crime unless his case had been properly examined by
+        the bishops of his province. All these things stand ratified under his title and name.
+        He held three ordinations in the month of December, in which he created six bishops,
+        fifteen priests, and five deacons.
 
 
-        The little Child, Whom the wise men call the King of the Jews, is the Maker and Lord
-        of Angels. If thou fearest Him at His birth, thou hast more reason to fear Him as the
-        Almighty Judge. Fear Him, not as a pretender to thy kingdom, but fear Him as Him Who
-        will pass a most just sentence of condemnation on thee because thou hast not believed
-        in Him. Go, said Herod, and bring me word again, that I may come and worship Him also.
-        We know thy cunning lying, thy godless unbelief, thine iniquitous treachery. The blood
-        of the innocents which thou didst cruelly shed, is witness to us of what thou wouldst
-        have done to Him.
-    status: { la: verified, en: verified }
-
-  - nocturn: 3
-    isGospel: true
-    citation: { la: "Matt 2:1-12", en: "Matthew 2:1-12" }
-    text:
-      la: >-
-        In illo témpore: Cum natus esset Jesus in Béthlehem Juda in diébus Heródis regis,
-        ecce, Magi ab Oriénte venerunt Jerosólymam, dicéntes: Ubi est, qui natus est rex
-        Judæórum? Vidimus enim stellam ejus in Oriénte, et vénimus adoráre eum. Audiens autem
-        Heródes rex, turbatus est, et omnis Jerosólyma cum illo. Et cóngregans omnes
-        principes sacerdotum et scribas pópuli, sciscitabátur ab eis, ubi Christus
-        nasceretur. At illi dixérunt ei: In Béthlehem Judæ: sic enim scriptum est per
-        Prophétam: Et tu, Béthlehem terra Juda, nequáquam mínima es in princípibus Juda; ex
-        te enim éxiet dux, qui regat pópulum meum Israël. Tunc Heródes, clam vocátis Magis,
-        diligénter dídicit ab eis tempus stellæ, quæ appáruit eis: et mittens illos in
-        Béthlehem, dixit: Ite, et interrogáte diligénter de púero: et cum invenéritis,
-        renuntiáte mihi, ut et ego véniens adórem eum. Qui cum audíssent regem, abiérunt. Et
-        ecce, stella, quam víderant in Oriénte, antecedébat eos, usque dum véniens staret
-        supra, ubi erat Puer. Vidéntes autem stellam, gavísi sunt gáudio magno valde. Et
-        intrántes domum, invenérunt Púerum cum María Matre ejus, et procidéntes adoravérunt
-        eum. Et, apértis thesáuris suis, obtulérunt ei múnera, aurum, thus et myrrham. Et
-        respónso accépto in somnis, ne redírent ad Heródem, per aliam viam revérsi sunt in
-        regiónem suam.
-      en: >-
-        At that time, when Jesus was born in Bethlehem of Judea, in the days of King Herod,
-        behold, Magi came from the East to Jerusalem, saying, Where is He that is born King
-        of the Jews? For we have seen His star in the east and have come to worship Him. But
-        when King Herod heard this, he was troubled, and so was all Jerusalem with him. And
-        gathering together all the chief priests and Scribes of the people, he inquired of
-        them where the Christ was to be born. And they said to him, In Bethlehem of Judea;
-        for thus it is written by the prophet, "And you, Bethlehem, of the land of Juda, are
-        by no means least among the princes of Juda; for from you shall come forth a leader
-        who shall rule My people Israel." Then Herod summoned the Magi secretly, and
-        carefully ascertained from them the time when the star had appeared to them. And
-        sending them to Bethlehem, he said, Go and make careful inquiry concerning the Child,
-        and when you have found Him, bring me word, that I too may go and worship Him. Now
-        they, having heard the king, went their way. And behold, the star that they had seen
-        in the East went before them, until it came and stood over the place where the Child
-        was. And when they saw the star they rejoiced exceedingly. And entering the house,
-        they found the Child with Mary His Mother, and falling down they worshipped Him. And
-        opening their treasures they offered Him gifts of gold, frankincense and myrrh. And
-        being warned in a dream not to return to Herod, they went back to their own country
-        by another way.
-    status: { la: verified, en: verified }
-
-  - nocturn: 3
-    isGospel: false
-    source: "St. Ambrose, Commentary on Luke, Book II (on Matt 2:1-12; the day's own octave homily, not proper to St. Hyginus)"
-    text:
-      la: >-
-        Quæ sunt ista veræ fídei múnera? Aurum Regi, thus Deo, myrrha defúncto. Aliud enim
-        Regis insígne, áliud divínæ sacraméntum potestátis, áliud honor est sepultúræ, quæ non
-        corrúmpat corpus mórtui, sed resérvet. Nos quoque, qui hæc audímus et légimus, de
-        thesáuris nostris tália, fratres, múnera proferámus. Habémus enim thesáurum in vasis
-        fictílibus. Si ígitur in teípso quod es, non ex te debes æstimáre, sed ex Christo:
-        quanto magis in Christo non tua debes æstimáre, sed Christi?
-
-
-        Ergo Magi de thesáuris suis ófferunt múnera. Vultis scire quam bonum méritum hábeant?
-        Stella ab his vidétur: ubi Heródes est, non vidétur; ubi Christus est, rursus vidétur,
-        et viam demónstrat. Ergo stella hæc via est, et via Christus: quia secúndum
-        incarnatiónis mystérium Christus est stella. Oriétur enim stella ex Jacob, et exsúrget
-        homo ex Israël. Dénique ubi Christus, et stella est. Ipse enim est stella spléndida et
-        matutína. Sua ígitur ipse luce se signat.
-
-
-        Accipe áliud documéntum. Alia venérunt via Magi, ália rédeunt. Qui enim Christum
-        víderant, Christum intelléxerant; melióres útique, quam vénerant, revertúntur. Duæ
-        quippe sunt viæ: una, quæ ducit ad intéritum; alia, quæ ducit ad regnum. Illa
-        peccatórum est, quæ ducit ad Heródem: hæc Christus est, qua redítur ad pátriam. Hic
-        enim temporális est incolátus, sicut scriptum est: Multum íncola facta est ánima mea.
-      en: >-
-        What are the gifts of the faithful and true? Gold to our King, frankincense to our
-        God, and myrrh to Him Who died for us. The first is that whereof are made the royal
-        honours of kings, the second is that mystic offering which is used in the worship of
-        the Divine Power, and the third is that wherewith we pay respect to the dead, whose
-        bodies it keepeth from corruption. My brethren, let us who hear and read these things,
-        make offering out of what treasures we have albeit we have it in earthen vessels. If
-        we confess that all that we have, we have, not from ourselves, but from Christ, how
-        much more should we confess that whatever we have is not our own, but Christ's?
-
-
-        The wise men out of their treasures presented unto Him gifts. Wilt thou know how
-        pleasing to Him they were? The star appeared to them, but disappeared when it came
-        near Herod. Then it appeareth to them again, leading them on the way that led to
-        Christ. This star then was the way, and we know that Christ calleth Himself the Way.
-        And truly also in the mystery of His Incarnation He is called a Star; as it is written
-        There shall come forth a Star out of Jacob, and a Man shall rise out of Israel. Where
-        Christ is, there is a Star; yea, He is Himself the bright and morning Star. And the
-        light that leadeth to Jesus is His own.
-
-
-        Remark another point. The wise men came by one way and departed by another. They that
-        had seen Christ, knew Christ, and they departed better than they came. There are two
-        ways, the one which leadeth to destruction, the other which leadeth to the kingdom;
-        the one is the way of sin, which leadeth to Herod; the other is Christ, the true Way,
-        Who leadeth us home to the fatherland, from that journeying here, whereof it is said
-        My soul hath long dwelt as an exile.
-    status: { la: verified, en: verified }
+        Now a little before this, Justin, a most illustrious philosopher and martyr of Christ,
+        had written an apology for the Christian religion, addressed to the Emperor Antoninus
+        Pius Augustus, and had obtained that the persecution should abate. Hence the slaughter
+        of Christians was restrained by a public edict of the prince, not indeed altogether,
+        yet very greatly. Nevertheless the most holy shepherd, by whose care the Lord's flock
+        had been provided for, was not spared; for he ended his most innocent life by a
+        glorious martyrdom, so as not to be unlike his predecessors, on the eleventh day of
+        January, and was buried in the Vatican.
+    status: { la: verified, en: draft }
