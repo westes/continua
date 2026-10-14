@@ -35,3 +35,18 @@ describe('martyrology moveable entries', () => {
     expect(getMartyrologyEntryFor('2026-02-10').text.la).not.toContain('Dies Cínerum');
   });
 });
+
+describe('martyrology entries', () => {
+  it('carry no stray "_" placeholder paragraph in either language', () => {
+    for (let month = 1; month <= 12; month++) {
+      const days = new Date(Date.UTC(2024, month, 0)).getUTCDate();
+      for (let day = 1; day <= days; day++) {
+        const today = new Date(Date.UTC(2025, month - 1, day)).toISOString().slice(0, 10);
+        const { text } = getMartyrologyEntryFor(today);
+        for (const body of [text.la, text.en]) {
+          expect((body ?? '').split('\n\n')).not.toContain('_');
+        }
+      }
+    }
+  });
+});
