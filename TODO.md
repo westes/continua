@@ -8779,3 +8779,67 @@ temporal id) is the first day the plan can't reach, so Thursday's row got no day
 spilled row landed one day after its own weekday. Fixed by starting the carryover on Dec 24
 itself. 2026 now runs Dec 24 = Isa 58-60, Dec 25 = 61-63, Dec 26 = 64-66; 2028 (longest spill)
 Dec 24-30. Tests in `tests/propers/bible-plan.test.ts` updated, plus a 2026 case.
+
+
+### Telesphorus and Hyginus given their own vitae, from the Urbis directory (2026-10-14)
+
+User noticed Telesphorus "did stuff" (Lenten fast, three Christmas Masses, Gloria in excelsis). The main
+`Sancti/01-05.txt` and `01-11.txt` have no vita for either, so `st-telesphorus.yml` and `st-hyginus.yml`
+were pooling the day's borrowed homilies. The Rome-city calendar has real ones
+(`Sancti/Urbis/01-05cc.txt`, `01-11cc.txt`, three lessons each), now authored as each saint's Nocturn 2
+reading and replacing the borrowed homilies (the Vigil of the Epiphany and the Epiphany octave files already
+carry those). Latin typos in the Urbis files corrected (listed in each file's header); English is this
+project's own translation, `draft`. Also wrote `papal-institutions.md` (institutions and feast-day/patronage
+acts attributed to popes in the Matins lessons and martyrology).
+
+Survey of `Sancti/Urbis/` for further own-vita files not in the app: 47 papal offices (Anterus, Vitalian,
+Felix IV, Dionysius, Zosimus, Gregory II, Agatho, Gregory X, Felix III, Simplicius, Zachary, Sixtus III,
+Sixtus I, Celestine I, Julius I, Leo IX, Anastasius IX, Benedict II, Alexander I, Paschal I, Boniface IV,
+Eugenius I, Leo III, Innocent V, Paul I, Benedict XI, Eugenius III, Leo IV, Symmachus, Felix II,
+Hormisdas, Hadrian III, Sergius I, Hilary, Agapitus I, Eusebius, Victor III, Boniface I, Evaristus,
+Siricius, Nicholas I, Deusdedit, Gregory III, Gelasius I, Eutychian, Urban V), none yet in the app; plus
+Philip of Jesus, Philomena, Emygdius, Gregory the Illuminator, Gaspar del Bufalo and the Transfiguration
+octave-day lessons.
+
+
+### Urbis hagiographies ported: 39 new saints and 2 gap-filling lessons (2026-10-14)
+
+User asked for every substantive `Sancti/Urbis/` vita the app lacked. Authored as saint file + Nocturn 2
+reading (the three Urbis lessons combined, one continuous vita) for 39 saints: martyr popes Anterus,
+Sixtus I, Eutychian, Eusebius, Felix II; confessor popes Dionysius through Urban V (32); Gregory the
+Illuminator; Philumena. Also added the missing Matins lesson for the existing `st-lucius-i` and
+`st-melchiades`. Popes use `common-of-a-confessor-pope` with a new `collect-c4b` template (Commune C4b,
+absent before), martyr popes `collect-c2b`, Gregory the Illuminator `collect-c2`, Philumena `collect-c6`.
+
+- English is this project's own translation (no English exists for the Urbis directory), `draft`.
+- Source OCR damage corrected in the Latin (headers list the kind of fix); two reconstructions worth
+  knowing: Gregory II "ad diaconátus tandem órdinem promótus" (garbled in source), Boniface I "mulier"
+  for the source's "militer", Hormisdas "summa" for "suiha".
+- **Not wired onto the calendar.** Same stance as the modern "n"-file saints: dates come from the Urbis
+  filenames, but 28 of the 41 dates already hold another saint, and these are all Duplex in the Urbis
+  file. Wiring needs a collision decision per date; list in `urbis-ported.md`.
+- Not ported: sermon lessons (Augustine, Cyprian, Maximus, Ambrose), Celestine I (lesson 4 truncated in
+  the source), Gregory X (file is a copy of Gregory II's text), and twelve files that are incipits only.
+- Mary of Egypt: the app has only the martyrology line (Apr 2) and Zosimus's burial note (Apr 4). The
+  Urbis file has a proper collect and lesson incipits ("María Ægyptíaca, quæ ..."), no lesson text; the
+  Sancti/ directory has nothing either, so there is no vita to port.
+
+`npm test` (6168 passed) and `npx tsc --noEmit` pass.
+
+
+### New Urbis popes set to Simplex and placed on the calendar (2026-10-14)
+
+All 37 new pope saints (5 martyr, 32 confessor) are `simplex` (Urbis has them Duplex; Simplex matches how
+the Roman books treat most of these popes and means none displaces an existing saint). 27 are placed on
+their Urbis filename date in `sanctoral-calendar.yml`: 10 on free days, the rest as an extra commemoration
+under a higher-ranked day (including Hormisdas on the Vigil of the Assumption, Agapitus on the Vigil of St.
+Matthew, Siricius on the Vigil of All Saints, Gelasius on the Vigil of St. Andrew). The 10 that tie with an
+existing Simplex are left unwired, as-is, for a decision: Eusebius (09-26), Dionysius (02-03), Zosimus
+(02-09), Agatho (02-14), Paschal I (05-14), Eugenius I (06-02), Leo III (06-12), Innocent V (06-22),
+Sergius I (09-09), Boniface I (10-25). Gregory the Illuminator and Philumena are not popes and stay
+Duplex and unwired.
+
+Where a Simplex now wins an ordinary Lenten feria (Felix III 02-25, Simplicius 03-02) or rides along as a
+commemoration, existing tests that pinned the exact commemoration list or a "clean" Lent date were
+re-pointed (`lent-ordinary-ferias`, `vespers`, `ember-days`, `marian-saturday`, and the Sept/Oct/Nov
+sanctoral tests). A three-year scan of every wired date across all eight hours found no `missing` status.
