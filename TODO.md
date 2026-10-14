@@ -8847,8 +8847,8 @@ sanctoral tests). A three-year scan of every wired date across all eight hours f
 
 ### Martyrology moveable entries (2026-10-14)
 
-The 25 moveable entries from the reference's `Martyrologium/Mobile.txt` are in
-`src/data/martyrology-mobile.yml`: Advent I, Holy Name, Septuagesima, Ash Wednesday, Passion Sunday, the
+The 24 moveable entries from the reference's `Martyrologium/Mobile.txt` are in
+`src/data/martyrology-mobile.yml`: Advent I, Septuagesima, Ash Wednesday, Passion Sunday, the
 Passion-week Friday of the Seven Sorrows, Palm Sunday, Maundy Thursday, Easter, Low Sunday, St. Joseph and
 its octave, the three Rogation days, the Ascension with its vigil and octave, the Vigil of Pentecost,
 Pentecost, Trinity, Corpus Christi and its octave, the Sacred Heart and its octave, Christ the King. Base
@@ -8859,11 +8859,15 @@ to the day it announces and inserted after the date heading, ahead of the fixed 
   evening, which puts it under Monday's heading; that is not followed.
 - Octave of St. Joseph (Pasc3-3): the reference has no English, so the English is this project's own and is
   marked `draft`.
-- Holy Name is announced on Jan 1 because the feast is fixed to Jan 2 here. In the reference the `Nat1-0` and
-  `Nat2-0` keys cannot match its week names (`Nat02`, `Nat26`...), so they never fire there at all.
+- Holy Name is fixed to Jan 2 here, so its line is a plain entry in `martyrology/01-02.yml`, not a moveable
+  one. In the reference the `Nat1-0` and `Nat2-0` keys cannot match its week names (`Nat02`, `Nat26`...), so
+  they never fire there at all.
 - Not carried over: `Nat2-0` Holy Family (the feast is not in this calendar, see the open question below),
   `Defuncti` (`hours/all-souls.ts` has its own introduction), `DefunctiM` (monastic Nov 14, not in this
   calendar), `Nativity` (already in `12-25.yml`).
+- Found while checking placement: 133 English martyrology paragraphs were a literal `_`, the reference's
+  placeholder for the moveable slot, shipped as visible text in 132 files. Removed, with a regression test
+  over every day of the year.
 
 Open: if the Feast of the Holy Family is ever added, its martyrology entry (Latin and English are in
 `Mobile.txt` under `Nat2-0`) belongs in the same file, anchored to the first Sunday after Epiphany.
