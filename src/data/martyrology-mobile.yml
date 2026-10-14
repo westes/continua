@@ -1,0 +1,160 @@
+# Moveable entries of the Martyrology, announced at Prime the day before the
+# feast (see martyrology/index.ts). Latin and English from the reference engine's
+# Martyrologium/Mobile.txt, base (Tridentine / Divino Afflatu) text -- the 1570,
+# 1955 and 1960 variants are deliberately not used. `anchor` is the *announced*
+# day, same shape as data/calendar/temporal-feasts/*.yml.
+# Not carried over: Nat2-0 (Holy Family -- not in this calendar), Defuncti
+# (hours/all-souls.ts has its own intro), DefunctiM, Nativity (12-25.yml).
+entries:
+  - id: Adv1-0
+    anchor: {kind: nth-sunday-of-advent, nth: 1}
+    text:
+      la: "Domínica prima Advéntus Dómini nostri Jesu Christi."
+      en: "The first Sunday of the Advent of our Lord Jesus Christ."
+    status: { la: verified, en: verified }
+  - id: Nat1-0
+    anchor: {kind: fixed-date, month: 1, day: 2}
+    text:
+      la: "Festum sanctísimi Nóminis Jesu."
+      en: "The Feast of the most holy Name of Jesus."
+    status: { la: verified, en: verified }
+  - id: Quadp1-0
+    anchor: {kind: easter, offset: -63}
+    text:
+      la: "Domínica Septuagésima, in qua depónitur Cánticum Dómini «Allelúja»."
+      en: "Septuagesima Sunday, on which the canticle of the Lord, Alleluia, ceaseth to be said."
+    status: { la: verified, en: verified }
+  - id: Quadp3-3
+    anchor: {kind: easter, offset: -46}
+    text:
+      la: "Dies Cínerum, et inítium jejúnii sacratíssimæ Quadragésimæ."
+      en: "Ash Wednesday, and the beginning of the most holy fast of Lent."
+    status: { la: verified, en: verified }
+  - id: Quad5-0
+    anchor: {kind: easter, offset: -14}
+    text:
+      la: "Domínica Passiónis."
+      en: "The Sunday of the Passion."
+    status: { la: verified, en: verified }
+  - id: Quad5-5
+    anchor: {kind: easter, offset: -9}
+    text:
+      la: "Festum Septem Dolórum Beatíssimæ Vírginis Maríæ."
+      en: "The Festival of the Seven Dolors of the Most Blessed Virgin Mary."
+    status: { la: verified, en: verified }
+  - id: Quad6-0
+    anchor: {kind: easter, offset: -7}
+    text:
+      la: "Domínica Palmárum, quando Dóminus noster Jesus Christus, juxta Zacharíæ prophetíam, sedens super pullum ásinæ, Hierosólymam intrávit; cui turba cum ramis palmárum óbviam venit."
+      en: "Palm Sunday, when our Lord Jesus Christ, according to the prophecy of Zacharias, entered into Jerusalem, seated upon the foal of an ass, and was met by the multitude bearing palms."
+    status: { la: verified, en: verified }
+  - id: Quad6-4
+    anchor: {kind: easter, offset: -3}
+    text:
+      la: "Cœna Domínica, quando Christus Jesus, die quam pro nostra salúte crucifigerétur, mystéria Córporis et Sánguinis sui discípulis trádidit celebránda."
+      en: "The Lord's Supper, when Christ Jesus, the day before he was crucified for our salvation, gave to his disciples the mysteries of his Body and Blood, to be celebrated by them."
+    status: { la: verified, en: verified }
+  - id: Pasc0-1
+    anchor: {kind: easter, offset: 1}
+    text:
+      la: "Hac die quam fecit Dóminus, Solémnitas solemnitátum et Pascha nostrum: Resurréctio Salvatóris nostri Jesu Christi secúndum carnem."
+      en: "On this day, which the Lord hath made, is the Solemnity of Solemnities, and our Pasch;
+
+the Resurrection of our Saviour Jesus Christ according to the flesh."
+    status: { la: verified, en: verified }
+  - id: Pasc1-0
+    anchor: {kind: easter, offset: 7}
+    text:
+      la: "Domínica in Albis in Octáva Paschæ."
+      en: "The Sunday in White, and the Octave of the Pasch."
+    status: { la: verified, en: verified }
+  - id: Pasc2-3
+    anchor: {kind: easter, offset: 17}
+    text:
+      la: "Solémnitas sancti Joseph, Sponsi beátæ Maríæ Vírginis, Confessóris et universális Ecclésiæ Patróni."
+      en: "The Solemnity of St. Joseph, spouse of the Blessed Virgin Mary, confessor, and patron of the Universal church."
+    status: { la: verified, en: verified }
+  - id: Pasc3-3
+    anchor: {kind: easter, offset: 24}
+    text:
+      la: "Octáva Solémnitas sancti Joseph, Sponsi beátæ Maríæ Vírginis, Confessóris et universális Ecclésiæ Patróni."
+      en: "The Octave of the Solemnity of St. Joseph, spouse of the Blessed Virgin Mary, confessor, and patron of the Universal church."
+    status: { la: verified, en: draft }
+  - id: Pasc5-1
+    anchor: {kind: easter, offset: 36}
+    text:
+      la: "Romæ Litaníæ minóres ad sanctam Maríam Majórem."
+      en: "At Rome, the Lesser Litanies in the church of St. Mary Major."
+    status: { la: verified, en: verified }
+  - id: Pasc5-2
+    anchor: {kind: easter, offset: 37}
+    text:
+      la: "Romæ Litaníæ minóres ad sanctum Joánnem in Lateráno."
+      en: "At Rome, the Lesser Litanies in the church of St. John Lateran."
+    status: { la: verified, en: verified }
+  - id: Pasc5-3
+    anchor: {kind: easter, offset: 38}
+    text:
+      la: "Vigília Ascensiónis Dómini nostri Jesu Christi.\n\nRomæ Litaníæ minóres ad sanctum Petrum."
+      en: "The Vigil of the Ascension of our Lord Jesus Christ.\n\nAt Rome, the Lesser Litanies in the church of St. Peter."
+    status: { la: verified, en: verified }
+  - id: Pasc5-4
+    anchor: {kind: easter, offset: 39}
+    text:
+      la: "In Monte Olivéti Ascénsio Dómini nostri Jesu Christi."
+      en: "On Mount Olivet, the Ascension of our Lord Jesus Christ."
+    status: { la: verified, en: verified }
+  - id: Pasc6-4
+    anchor: {kind: easter, offset: 46}
+    text:
+      la: "Octáva Ascensiónis Dómini nostri Jesu Christi."
+      en: "The Octave of the Ascension of our Lord Jesus Christ."
+    status: { la: verified, en: verified }
+  - id: Pasc6-6
+    anchor: {kind: easter, offset: 48}
+    text:
+      la: "Vigília Pentecóstes."
+      en: "The Vigil of Pentecost."
+    status: { la: verified, en: verified }
+  - id: Pasc7-0
+    anchor: {kind: easter, offset: 49}
+    text:
+      la: "Dies Pentecóstes, quando Spíritus sanctus Hierosólymis super discípulos ígneis linguis advénit."
+      en: "The day of Pentecost, when the Holy Ghost came down upon the disciples at Jerusalem in the form of fiery tongues."
+    status: { la: verified, en: verified }
+  - id: Pent01-0
+    anchor: {kind: easter, offset: 56}
+    text:
+      la: "Festum sacratíssimæ et indivíduæ Trinitátis, et Octáva Pentecóstes."
+      en: "The Feast of the most holy and undivided Trinity, and the Octave of Pentecost."
+    status: { la: verified, en: verified }
+  - id: Pent01-4
+    anchor: {kind: easter, offset: 60}
+    text:
+      la: "Festum sanctíssimi Córporis Christi."
+      en: "The Feast of the most Sacred Body of Christ."
+    status: { la: verified, en: verified }
+  - id: Pent02-4
+    anchor: {kind: easter, offset: 67}
+    text:
+      la: "Octáva sanctíssimi Córporis Christi."
+      en: "The Octave of the most Sacred Body of Christ."
+    status: { la: verified, en: verified }
+  - id: Pent02-5
+    anchor: {kind: easter, offset: 68}
+    text:
+      la: "Festum sacratíssimi Cordis Jesu."
+      en: "The Feast of the most Sacred Heart of Jesus."
+    status: { la: verified, en: verified }
+  - id: Pent03-5
+    anchor: {kind: easter, offset: 75}
+    text:
+      la: "Octáva sacratíssimi Cordis Jesu."
+      en: "The Octave of the most Sacred Heart of Jesus."
+    status: { la: verified, en: verified }
+  - id: 10-DU
+    anchor: {kind: nth-sunday-of-month, month: 10, nth: -1}
+    text:
+      la: "Festum Dómini nostri Jesu Christi Regis."
+      en: "The Feast of our Lord Jesus Christ the King."
+    status: { la: verified, en: verified }
