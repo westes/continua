@@ -51,32 +51,39 @@ describe('getBiblePlanReadings label uses the same book-alias normalization as v
 // from Nov 27 to Dec 3. Even the longest possible Advent (Nov 27) is 27
 // real days, one short of the full plan; the shortest (Dec 3) is 21, a
 // whole week short. Whatever doesn't land on its own natural date carries
-// forward one reading per day starting Christmas Day, pooled alongside
+// forward one reading per day starting on the Vigil (Dec 24), pooled alongside
 // whatever Christmastide's own calendar-dated rows already have. User
 // direction, 2026-09-05: "for advent only, we need to show all of those
 // chapters," accepting the spillover into Christmastide as the trade-off.
 describe('Advent reading-plan carryover into Christmastide', () => {
   it('a short Advent (2028: Advent 1 Sunday = Dec 3, latest possible) carries all 7 of week 4\'s readings forward, one per day', () => {
-    const isaiahCitations = [25, 26, 27, 28, 29, 30, 31].map(
+    const isaiahCitations = [24, 25, 26, 27, 28, 29, 30].map(
       (day) => getBiblePlanReadings('christmas-octave-sunday', 'monday', `2028-12-${day}`).find((r) => r.citation.la?.startsWith('Isa'))?.citation.la,
     );
     expect(isaiahCitations).toEqual(['Isa 46-48', 'Isa 49-51', 'Isa 52-54', 'Isa 55-57', 'Isa 58-60', 'Isa 61-63', 'Isa 64-66']);
   });
 
   it('a long Advent (2027: Advent 1 Sunday = Nov 28, near-earliest) carries only the last 2 readings forward', () => {
-    const isaiahCitations = [25, 26, 27, 28].map(
+    const isaiahCitations = [24, 25, 26, 27].map(
       (day) => getBiblePlanReadings('christmas-octave-sunday', 'monday', `2027-12-${day}`).find((r) => r.citation.la?.startsWith('Isa'))?.citation.la,
     );
     expect(isaiahCitations).toEqual(['Isa 61-63', 'Isa 64-66', undefined, undefined]);
   });
 
-  it('carried-over readings pool alongside Christmastide\'s own calendar-dated rows, never replacing them', () => {
-    const readings = getBiblePlanReadings('christmas-octave-sunday', 'friday', '2028-12-25');
-    expect(readings.map((r) => r.citation.la)).toEqual(['Cant 1', 'Isa 46-48']);
+  it('2026 (Advent 1 Sunday = Nov 29): Saturday Dec 26 gets Saturday of IV Advent\'s Isa 64-66', () => {
+    const cits = [24, 25, 26].map(
+      (day) => getBiblePlanReadings('christmas-octave-sunday', 'monday', `2026-12-${day}`).find((r) => r.citation.la?.startsWith('Isa'))?.citation.la,
+    );
+    expect(cits).toEqual(['Isa 58-60', 'Isa 61-63', 'Isa 64-66']);
   });
 
-  it('does not carry anything over before Christmas Day', () => {
-    const readings = getBiblePlanReadings('vigil-of-christmas', 'thursday', '2028-12-24');
+  it('carried-over readings pool alongside Christmastide\'s own calendar-dated rows, never replacing them', () => {
+    const readings = getBiblePlanReadings('christmas-octave-sunday', 'friday', '2028-12-25');
+    expect(readings.map((r) => r.citation.la)).toEqual(['Cant 1', 'Isa 49-51']);
+  });
+
+  it('does not carry anything over before the Vigil', () => {
+    const readings = getBiblePlanReadings('christmas-octave-sunday', 'saturday', '2028-12-23');
     expect(readings.find((r) => r.citation.la?.startsWith('Isa'))).toBeUndefined();
   });
 });

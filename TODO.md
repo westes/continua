@@ -8769,3 +8769,13 @@ mechanism) rather than duplicating those files. Only the Matins readings are its
 `ALWAYS_OVERRIDE_TEMPORAL_IDS`. Tests: `tests/calendar/vigil-of-epiphany.test.ts`.
 
 `npm test` (5633 passed).
+
+
+### Advent carryover started a day late (2026-10-14)
+
+User-flagged: Sat 2026-12-26 showed Isa 61-63 (Friday of IV Advent) instead of 64-66. Cause: the
+carryover in `propers/bible-plan.ts` began on Dec 25, but Dec 24 (the Vigil of Christmas, its own
+temporal id) is the first day the plan can't reach, so Thursday's row got no day at all and every
+spilled row landed one day after its own weekday. Fixed by starting the carryover on Dec 24
+itself. 2026 now runs Dec 24 = Isa 58-60, Dec 25 = 61-63, Dec 26 = 64-66; 2028 (longest spill)
+Dec 24-30. Tests in `tests/propers/bible-plan.test.ts` updated, plus a 2026 case.

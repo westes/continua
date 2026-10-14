@@ -190,8 +190,9 @@ const WEEKDAYS: Weekday[] = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursd
  * own natural date, and in the shortest (Advent 1 Sunday = Dec 3, 21 real
  * days) the entire last week's worth (7 readings) never does. Rather than
  * silently drop that content, whatever didn't land on its own natural date
- * carries forward one reading per day starting Christmas Day itself,
- * pooled alongside whatever Christmastide's own calendar-dated rows
+ * carries forward one reading per day starting on the Vigil itself (Dec 24,
+ * the first day the plan couldn't reach, so each row keeps its own weekday:
+ * starting Christmas Day shifted every spilled row a day late), pooled alongside whatever Christmastide's own calendar-dated rows
  * already have for that day (never replacing them) — same "every
  * contributing source pools, none override" design as everywhere else in
  * this file and in hours/matins.ts's own reading-pool assembly. User
@@ -203,11 +204,10 @@ const WEEKDAYS: Weekday[] = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursd
  * this is the one place in this file that computes real dates. */
 function adventCarryoverReadings(date: string): BiblePlanReading[] {
   const year = Number(date.slice(0, 4));
-  const christmasDay = `${year}-12-25`;
-  const daysAfterChristmas = daysBetween(christmasDay, date);
-  if (daysAfterChristmas < 0) return [];
-
   const vigilOfChristmas = `${year}-12-24`;
+  const daysAfterVigil = daysBetween(vigilOfChristmas, date);
+  if (daysAfterVigil < 0) return [];
+
   const start = adventStart(year);
   const skippedKeys: string[] = [];
   for (let i = 0; i < 28; i++) {
@@ -216,7 +216,7 @@ function adventCarryoverReadings(date: string): BiblePlanReading[] {
       skippedKeys.push(`advent-${week}-${WEEKDAYS[i % 7]}`);
     }
   }
-  const key = skippedKeys[daysAfterChristmas];
+  const key = skippedKeys[daysAfterVigil];
   return key ? (readingsByTemporalKey.get(key) ?? []) : [];
 }
 
