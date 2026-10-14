@@ -8843,3 +8843,42 @@ Where a Simplex now wins an ordinary Lenten feria (Felix III 02-25, Simplicius 0
 commemoration, existing tests that pinned the exact commemoration list or a "clean" Lent date were
 re-pointed (`lent-ordinary-ferias`, `vespers`, `ember-days`, `marian-saturday`, and the Sept/Oct/Nov
 sanctoral tests). A three-year scan of every wired date across all eight hours found no `missing` status.
+
+
+### Martyrology moveable entries (2026-10-14)
+
+The 25 moveable entries from the reference's `Martyrologium/Mobile.txt` are in
+`src/data/martyrology-mobile.yml`: Advent I, Holy Name, Septuagesima, Ash Wednesday, Passion Sunday, the
+Passion-week Friday of the Seven Sorrows, Palm Sunday, Maundy Thursday, Easter, Low Sunday, St. Joseph and
+its octave, the three Rogation days, the Ascension with its vigil and octave, the Vigil of Pentecost,
+Pentecost, Trinity, Corpus Christi and its octave, the Sacred Heart and its octave, Christ the King. Base
+(Tridentine / Divino Afflatu) wording only; the 1570, 1955 and 1960 variants are not used. Each is anchored
+to the day it announces and inserted after the date heading, ahead of the fixed entries.
+
+- Easter is announced on Holy Saturday under Easter Sunday's date. The reference keys it to Easter Sunday
+  evening, which puts it under Monday's heading; that is not followed.
+- Octave of St. Joseph (Pasc3-3): the reference has no English, so the English is this project's own and is
+  marked `draft`.
+- Holy Name is announced on Jan 1 because the feast is fixed to Jan 2 here. In the reference the `Nat1-0` and
+  `Nat2-0` keys cannot match its week names (`Nat02`, `Nat26`...), so they never fire there at all.
+- Not carried over: `Nat2-0` Holy Family (the feast is not in this calendar, see the open question below),
+  `Defuncti` (`hours/all-souls.ts` has its own introduction), `DefunctiM` (monastic Nov 14, not in this
+  calendar), `Nativity` (already in `12-25.yml`).
+
+Open: if the Feast of the Holy Family is ever added, its martyrology entry (Latin and English are in
+`Mobile.txt` under `Nat2-0`) belongs in the same file, anchored to the first Sunday after Epiphany.
+
+
+### St. Mary of Egypt authored from Paul the Deacon's Latin Life (2026-10-14)
+
+The app had only her martyrology line (Apr 2) and Zosimus's burial note (Apr 4). The Urbis file
+(`04-09-MariaAegyptiaca.txt`) gives her proper Oratio and nine lesson incipits with no body text, and the
+reference's `Sancti/` has nothing, so the vita comes from the text those incipits abridge: the Life ascribed
+to Sophronius of Jerusalem, in Paul the Deacon's Latin (Migne PL 73, 671-690; OCR scan via
+florianjanner.de/MaryOfEgypt). Authored `st-mary-of-egypt` (Simplex, `common-of-a-holy-woman`, own collect and
+commemoration) with Nocturn 2 as three excerpts of the Life (sin and the road to Jerusalem; the closed church
+door and the prayer before the Virgin's image; Zosimas and the lion at her burial) and Nocturn 3 reusing the
+Luke 15 Gospel and Gregory's Homily 34 from `post-pentecost-03.yml`. English is this project's own
+translation, `draft`. The OCR garbles two passages (a clause of Cap. XIII, the inscription in the sand);
+both are skipped, not reconstructed. Not wired onto the calendar: Apr 9 (her Urbis date) is free, Apr 2 is
+St. Francis of Paola.
