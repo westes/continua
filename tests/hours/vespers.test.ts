@@ -697,7 +697,7 @@ describe('resolveOrdo("vespers", ...)', () => {
     // dropped from this app's own text (2026-08) — 'Ego dixi' is the next
     // versicle after where the psalm used to sit, still unique to the
     // fuller ferial form vs. the short litany.
-    const ordo = resolveOrdo('vespers', '2033-09-06');
+    const ordo = resolveOrdo('vespers', '2026-10-26');
     const preces = ordo.parts.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
     expect(preces?.kind === 'preces' ? preces.text.text.la : undefined).toContain('Ego dixi: Dómine, miserére mei');
     expect(preces?.kind === 'preces' ? preces.text.text.en : undefined).toContain('I said: Lord, be merciful');

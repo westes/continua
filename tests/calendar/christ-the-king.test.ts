@@ -16,7 +16,7 @@ describe('Christ the King (applyChristTheKing)', () => {
     // already carrying (Ss. Chrysanthus and Daria, Simplex, per the next
     // test below) -- this app's day label now surfaces every commemorated
     // saint, not just the Sunday itself.
-    expect(getDayLabel(day).en).toBe('Christ the King (Duplex I Class) — Ss. Chrysanthus and Daria, Martyrs');
+    expect(getDayLabel(day).en).toBe('Christ the King (Duplex I Class) — Ss. Chrysanthus and Daria, Martyrs — St. Boniface I, Pope and Confessor');
   });
 
   it('preserves a nested commemoration: a Simplex saint already commemorated under the ordinary Sunday stays commemorated', () => {

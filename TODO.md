@@ -8886,3 +8886,21 @@ Luke 15 Gospel and Gregory's Homily 34 from `post-pentecost-03.yml`. English is 
 translation, `draft`. The OCR garbles two passages (a clause of Cap. XIII, the inscription in the sand);
 both are skipped, not reconstructed. Not wired onto the calendar: Apr 9 (her Urbis date) is free, Apr 2 is
 St. Francis of Paola.
+
+
+### Remaining Urbis saints placed; Mary of Egypt's OCR gaps filled (2026-10-14)
+
+- The 10 popes that tied with an existing Simplex are now on their Urbis dates too (Simplex). The saint
+  already on the day keeps it (first-listed wins ties, the existing rule) and the pope is commemorated:
+  Dionysius 02-03, Zosimus 02-09, Agatho 02-14, Paschal I 05-14, Eugenius I 06-02, Leo III 06-12, Innocent V
+  06-22, Sergius I 09-09, Eusebius 09-26, Boniface I 10-25.
+- Gregory the Illuminator (10-01) and Philumena (09-06) are Semiduplex and on their Urbis dates. Philumena
+  on a Sunday (2026-09-06) transfers to the Monday, like any Semiduplex.
+- St. Mary of Egypt is Semiduplex on Apr 9 (her Urbis date, free). Her two OCR gaps in the PL 73 scan (a
+  stretch of Cap. XIII and the inscription in the sand) are filled from the Latin facing the Old English
+  version in Magennis, The Old English Life of St Mary of Egypt (2002); the same text gives her death as
+  "die nona, id est quinto idus Aprilis" (April 9). The martyrology keeps her on Apr 2 (St. Francis of
+  Paola, Duplex, holds that day in the calendar).
+- Tests that used these dates as "plain ferial" days were re-pointed: very few clean ordinary ferias are
+  left (only 2026-09-01 and 2026-10-12 in Jun-Nov 2026), so `lauds`, `prime`, `little-hours` and `vespers`
+  now share 2026-10-12 / 2026-09-01.

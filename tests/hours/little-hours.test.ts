@@ -92,9 +92,9 @@ describe.each(LITTLE_HOURS)('resolveOrdo(%s, ...)', (hourId) => {
   });
 
   it('resolves the further Preces versicles only on a bare ferial day, not on Sunday or a sanctoral winner', () => {
-    // Plain ferial (post-Pentecost 15's own week, no sanctoral winner) —
+    // Plain ferial (post-Pentecost 21's own week, no sanctoral winner) —
     // see prime.test.ts's own use of this date for the same reason.
-    const feria = resolveOrdo(hourId, '2026-09-07');
+    const feria = resolveOrdo(hourId, '2026-10-12');
     const preces = feria.parts.find((p) => p.kind === 'preces' && p.label === 'Preces');
     expect(preces && preces.kind === 'preces' ? preces.text.status.en : undefined).toBe('verified');
     expect(preces && preces.kind === 'preces' ? preces.text.text.en : undefined).toContain(

@@ -6,8 +6,14 @@ import { getLaudsCommonOverride } from '../../src/hours/lauds-psalmody-overrides
 // and src/hours/lauds.ts's own generation-script provenance comments for
 // why these particular dates.
 const FERIAL_SUNDAY = '2026-06-21';
-const FERIAL_MONDAY = '2026-09-07'; // not 2026-06-08 -- that fell inside Corpus Christi's own octave once its own hymnody was modeled 2026-09-04, see TODO.md; not 08-31 either -- St. Raymond Nonnatus's own day (common-of-a-confessor)
-const FERIAL_TUESDAY = '2033-09-06'; // not 2026-06-16 -- that fell inside Sacred Heart's own octave once modeled 2026-08-26, see TODO.md
+// 2026-10-12 and 2026-09-01 are about the only plain ordinary ferias left in the
+// 2026 summer/autumn run (calendar/sanctoral-calendar.yml is dense): not
+// 2026-09-07/2033-09-06 any more (St. Philumena, Semiduplex, took Sept 6 in
+// 2026-10 and transfers off a Sunday onto the Monday), not 2026-06-08/06-16
+// (inside the Corpus Christi / Sacred Heart octaves), not 08-31 (St. Raymond
+// Nonnatus).
+const FERIAL_MONDAY = '2026-10-12';
+const FERIAL_TUESDAY = '2026-09-01';
 const LAWRENCE_OCTAVE_DAY = '2026-08-11'; // Semiduplex -- exercises isDoubleOrHigher's false branch differently than a plain feria only in rank, not in psalms (Commune override not modeled, see below)
 
 describe('resolveOrdo("lauds", ...)', () => {

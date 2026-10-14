@@ -45,6 +45,7 @@ describe('September sanctoral pull (first pass)', () => {
     const gorgoniusDay = resolveDay('2025-09-09');
     expect(gorgoniusDay.winner.kind).toBe('temporal');
     expect(gorgoniusDay.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'st-sergius-i', name: 'St. Sergius I, Pope and Confessor', nameLa: 'Sanctus Sérgius I, Papa et Confessor', rank: 'simplex' },
       { kind: 'sanctoral', id: 'st-gorgonius', name: 'St. Gorgonius, Martyr', nameLa: 'Sanctus Gorgonius, Martyr', rank: 'simplex' },
       { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary', nameLa: 'Nativitas Beatæ Mariæ Virginis' },
     ]);

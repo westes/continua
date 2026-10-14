@@ -1,6 +1,6 @@
 # Sancti/Urbis hagiographies ported into Continua (2026-10-14)
 
-Each is a saint file plus a Matins Nocturn 2 reading (the Urbis vita, three lessons combined). The 37 popes are Simplex; 27 are wired onto their Urbis date, the 10 tied with an existing Simplex are not (see TODO.md). Date is the Urbis filename date; "occupied" means another saint already sits on that day in sanctoral-calendar.yml.
+Each is a saint file plus a Matins Nocturn 2 reading (the Urbis vita, three lessons combined). The 37 popes are Simplex and all are wired onto their Urbis date (the 10 that tie with an existing Simplex are commemorated under it). Gregory the Illuminator and Philumena are Semiduplex and wired too. Date is the Urbis filename date; "occupied" means another saint already sits on that day in sanctoral-calendar.yml.
 
 - St. Anterus, Pope and Martyr -- 01-03 (free)
 - St. Sixtus I, Pope and Martyr -- 04-06 (free)

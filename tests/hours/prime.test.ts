@@ -11,7 +11,7 @@ import { getPsalm } from '../../src/psalter';
 // Placid and Companions — then 2026-11-16 itself, which the November
 // sanctoral pull claimed for St. Gertrude) — pick with care if it needs
 // to move again.
-const MONDAY = '2026-09-07';
+const MONDAY = '2026-10-12'; // was 2026-09-07 until St. Philumena (Sept 6, transferred off that Sunday) landed on it, 2026-10
 const SUNDAY = '2026-08-09';
 // A Sunday inside the Nativity of the BVM's octave (Sept 8-15, `wins:
 // duplex`, this is day 6 of 8 — not the closing day). An ordinary Sunday
