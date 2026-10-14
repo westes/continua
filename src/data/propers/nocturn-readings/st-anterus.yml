@@ -1,0 +1,26 @@
+# Matins Nocturn 2 reading for St. Anterus, Pope and Martyr (Rome-city calendar office).
+# Source: web/www/horas/Latin/Sancti/Urbis/01-03-Antherus.txt, [Lectio4], combined into one
+# reading (one continuous vita, no genuine source break). No English source
+# exists for the Urbis directory (English/Sancti/ is flat), so the English
+# is this project's own translation, marked draft. OCR damage in the Urbis
+# file's Latin corrected here (misspelt and run-together words).
+id: st-anterus
+readings:
+  - nocturn: 2
+    isGospel: false
+    text:
+      la: >-
+        Antherus, natióne Græcus, patre Romulo, post sanctum Pontianum Romæ ordinátus est Epíscopus.
+        Is gesta mártyrum diligénter a notáriis conquisivit ac in Ecclésia recondidit. Propter eam
+        causam a Máximo Præfécto martyrio coronátus est tértio Nonas Januárii, sepultúsque in
+        cœmetério Callísti via Appia Maximíno príncipe. Única ordinatióne, mense Decémbri, ordinávit
+        Epíscopum Fundanæ civitátis in Campánia. Sedit in Pontificátu mensem unum, dies duódecim.
+      en: >-
+        Anterus, a Greek by race, the son of Romulus, was ordained Bishop at Rome after holy
+        Pontian. He diligently had the acts of the martyrs sought out from the notaries and laid
+        them up in the Church. For this reason he was crowned with martyrdom by the Prefect Maximus
+        on the third day before the Nones of January, and was buried in the cemetery of Callistus on
+        the Appian Way, in the principate of Maximinus. In a single ordination, in the month of
+        December, he ordained a bishop for the city of Fundi in Campania. He sat in the pontificate
+        one month and twelve days.
+    status: { la: verified, en: draft }

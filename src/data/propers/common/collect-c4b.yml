@@ -1,0 +1,23 @@
+# Verified against the reference engine's own source data files:
+# web/www/horas/Latin/Commune/C4b.txt ("Commune unius Summi Pontificis
+# Confessoris") and web/www/horas/English/Commune/C4b.txt, 2026-10. A
+# Common-collect template -- `{N}` stands for the saint's own name,
+# substituted by getDayCollect (hours/resolve-common.ts) via
+# SaintRecord.collectCommon/collectName. Same shape as collect-c2b.yml,
+# minus the martyrdom clause. C4b-1 is a bare `@Commune/C4b` redirect, so
+# saints needing it point collectCommon here too.
+id: collect-c4b
+text:
+  la: |
+    Orémus.
+    Gregem tuum, Pastor ætérne, placátus inténde: et, per beátum {N} Summum Pontíficem, perpétua protectióne custódi; quem totíus Ecclésiæ præstitísti esse pastórem.
+    Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+    R. Amen.
+  en: |
+    Let us pray.
+    Look forgivingly on thy flock, Eternal Shepherd, and keep it in thy constant protection, by the intercession of blessed {N}, thy Sovereign Pontiff, whom thou didst constitute Shepherd of the whole Church.
+    Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.
+    R. Amen.
+status:
+  la: verified
+  en: verified

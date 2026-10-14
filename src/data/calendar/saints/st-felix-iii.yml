@@ -1,0 +1,15 @@
+# Authored from the Rome-city calendar (Sancti/Urbis/02-25-FelixIII.txt), Duplex there.
+# Rank is Simplex here (Duplex in the Urbis file). Placed on its Urbis date
+# 02-25 (TODO.md, 2026-10-14); Simplex, so it only ever wins an ordinary
+# feria and is otherwise commemorated. No unique Oratio in the source --
+# the Common's collect applies (collect-c4b).
+id: st-felix-iii
+name: "St. Felix III, Pope and Confessor"
+nameLa: "Sanctus Felix III, Papa et Confessor"
+rank: simplex
+common: common-of-a-confessor-pope
+propers: null
+collectCommon: collect-c4b
+collectName:
+  la: ["Felícem"]
+  en: ["Felix"]

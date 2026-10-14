@@ -44,6 +44,7 @@ describe('Marian Saturday (applyMarianSaturday)', () => {
     });
     expect(day.commemorations).toEqual([
       { kind: 'sanctoral', id: 'st-saturninus', name: 'St. Saturninus, Martyr', nameLa: 'Sanctus Saturninus, Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-gelasius-i', name: 'St. Gelasius I, Pope and Confessor', nameLa: 'Sanctus Gelásius I, Papa et Confessor', rank: 'simplex' },
     ]);
   });
 

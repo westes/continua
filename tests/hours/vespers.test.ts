@@ -364,13 +364,11 @@ describe('resolveOrdo("vespers", ...)', () => {
   });
 
   it("renders Lent's seasonal office", () => {
-    // 2026-03-02 is a Monday in Lent, before Passiontide -- deliberately
-    // not 03-03, whose own evening (as of the Common-of-a-Martyr-Bishop
-    // office-bundle authoring below) now correctly anticipates St. Lucius
-    // I's First Vespers on 03-04 instead of falling through to this
-    // seasonal default; 03-02's own evening has no adjacent sanctoral
-    // saint at all, so it stays a clean plain-Lent proof.
-    const ordo = resolveOrdo('vespers', '2026-03-02');
+    // 2027-02-16 is the Tuesday of Lent 1, before Passiontide: no sanctoral
+    // saint of its own or adjacent, so its evening can't anticipate a First
+    // Vespers and falls through to this seasonal default. (Was 2026-03-02
+    // until St. Simplicius, a Simplex, took that date in 2026-10.)
+    const ordo = resolveOrdo('vespers', '2027-02-16');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
     expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Joel 2:17');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');

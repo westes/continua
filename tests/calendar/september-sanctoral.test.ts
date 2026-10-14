@@ -69,6 +69,7 @@ describe('September sanctoral pull (first pass)', () => {
     const day = resolveDay('2025-09-10');
     expect(day.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-13' });
     expect(day.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'st-hilary-pope', name: 'St. Hilary, Pope and Confessor', nameLa: 'Sanctus Hilárus, Papa et Confessor', rank: 'simplex' },
       { kind: 'sanctoral', id: 'st-nicholas-of-tolentino', name: 'St. Nicholas of Tolentino, Priest', nameLa: 'Sanctus Nicolaus Tolentinas, Presbyter', rank: 'semiduplex' },
       { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary', nameLa: 'Nativitas Beatæ Mariæ Virginis' },
     ]);

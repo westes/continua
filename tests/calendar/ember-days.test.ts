@@ -123,14 +123,14 @@ describe('Ember days', () => {
     expect(getDayLabel(resolveDay('2026-09-19')).en).toContain('Ember Saturday in September');
     // Winning-outright cases: previously fell through to the plain
     // ordinal weekday label with no Ember mention at all.
-    expect(getDayLabel(resolveDay('2023-09-20')).en).toBe('Ember Wednesday in September (Feria) — Vigil of St. Matthew');
+    expect(getDayLabel(resolveDay('2023-09-20')).en).toBe('Ember Wednesday in September (Feria) — Vigil of St. Matthew — St. Agapitus I, Pope and Confessor');
     expect(getDayLabel(resolveDay('2026-12-16')).en).toBe('Ember Wednesday in Advent (Feria)');
     expect(getDayLabel(resolveDay('2026-12-18')).en).toBe('Ember Friday in Advent (Feria)');
     expect(getDayLabel(resolveDay('2026-12-19')).en).toContain('Ember Saturday in Advent (Feria)');
   });
 
   it('the day label names Lent/Pentecost Ember days too, including the Pentecost-octave-headline exception (2026-09-19 fix)', () => {
-    expect(getDayLabel(resolveDay('2026-02-25')).en).toBe('Ember Wednesday in Lent (Feria)');
+    expect(getDayLabel(resolveDay('2026-02-25')).en).toBe('Ember Wednesday in Lent (Feria) — St. Felix III, Pope and Confessor');
     // Ember Friday of Lent 1 now always yields to the Holy Lance and Nails
     // (a Duplex majus movable feast, data/calendar/temporal-feasts), which is
     // the winner; the Ember Friday rides along as a commemoration.

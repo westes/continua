@@ -54,7 +54,10 @@ describe('November sanctoral pull (first pass)', () => {
       nameLa: 'Omnes Sancti Ordinis Sancti Benedicti',
       rank: 'duplex-2-classis',
     });
-    expect(day.commemorations).toEqual([]);
+    // St. Nicholas I (Simplex, Urbis date 11-13) rides along as a commemoration.
+    expect(day.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'st-nicholas-i', name: 'St. Nicholas I, Pope and Confessor', nameLa: 'Sanctus Nicoláus I, Papa et Confessor', rank: 'simplex' },
+    ]);
   });
 
   it('St. Clement transfers forward into St. Chrysogonus\'s day whenever his own date falls on a Sunday -- a single-day transfer this app models correctly, unlike August\'s multi-day-skip case', () => {

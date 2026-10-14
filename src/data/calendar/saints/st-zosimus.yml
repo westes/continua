@@ -1,0 +1,15 @@
+# Authored from the Rome-city calendar (Sancti/Urbis/02-09-Zosimus.txt), Duplex there.
+# Rank is Simplex here (Duplex in the Urbis file). Deliberately not on the
+# sanctoral calendar: its Urbis date 02-09 already holds another Simplex, a
+# tie nobody has resolved yet (TODO.md, 2026-10-14). No unique Oratio in the
+# source -- the Common's collect applies (collect-c4b).
+id: st-zosimus
+name: "St. Zosimus, Pope and Confessor"
+nameLa: "Sanctus Zósimus, Papa et Confessor"
+rank: simplex
+common: common-of-a-confessor-pope
+propers: null
+collectCommon: collect-c4b
+collectName:
+  la: ["Zósimum"]
+  en: ["Zosimus"]

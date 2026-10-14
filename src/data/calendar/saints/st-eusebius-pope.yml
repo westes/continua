@@ -1,0 +1,15 @@
+# Authored from the Rome-city calendar (Sancti/Urbis/09-26-Eusebius.txt), Duplex there.
+# Rank is Simplex here (Duplex in the Urbis file). Deliberately not on the
+# sanctoral calendar: its Urbis date 09-26 already holds another Simplex, a
+# tie nobody has resolved yet (TODO.md, 2026-10-14). No unique Oratio in the
+# source -- the Common's collect applies (collect-c2b).
+id: st-eusebius-pope
+name: "St. Eusebius, Pope and Martyr"
+nameLa: "Sanctus Eusébius, Papa et Martyr"
+rank: simplex
+common: common-of-a-martyr-bishop
+propers: null
+collectCommon: collect-c2b
+collectName:
+  la: ["Eusébium"]
+  en: ["Eusebius"]

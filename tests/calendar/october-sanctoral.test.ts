@@ -31,7 +31,7 @@ describe('October sanctoral pull (first pass)', () => {
     ]);
   });
 
-  it('St. Gall, a monastic-calendar-specific addition, wins outright at Duplex, alone', () => {
+  it('St. Gall, a monastic-calendar-specific addition, wins outright at Duplex', () => {
     const day = resolveDay('2025-10-16');
     expect(day.winner).toEqual({
       kind: 'sanctoral',
@@ -40,7 +40,10 @@ describe('October sanctoral pull (first pass)', () => {
       nameLa: 'Sanctus Gallus, Abbas',
       rank: 'duplex',
     });
-    expect(day.commemorations).toEqual([]);
+    // Bl. Victor III (Simplex, Urbis date 10-16) rides along as a commemoration.
+    expect(day.commemorations).toEqual([
+      { kind: 'sanctoral', id: 'bl-victor-iii', name: 'Bl. Victor III, Pope and Confessor', nameLa: 'Beátus Victor III, Papa et Confessor', rank: 'simplex' },
+    ]);
   });
 
   it('St. Luke wins outright at Duplex II. classis with a real proper collect, alone', () => {
