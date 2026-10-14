@@ -3,7 +3,9 @@
 # Martyrologium/Mobile.txt, base (Tridentine / Divino Afflatu) text -- the 1570,
 # 1955 and 1960 variants are deliberately not used. `anchor` is the *announced*
 # day, same shape as data/calendar/temporal-feasts/*.yml.
-# Not carried over: Nat2-0 (Holy Family -- not in this calendar), Defuncti
+# Nat1-0 (Holy Name) is a fixed-date feast here (Jan 2), so it lives in
+# martyrology/01-02.yml instead. Not carried over: Nat2-0 (Holy Family -- not in
+# this calendar), Defuncti
 # (hours/all-souls.ts has its own intro), DefunctiM, Nativity (12-25.yml).
 entries:
   - id: Adv1-0
@@ -11,12 +13,6 @@ entries:
     text:
       la: "Domínica prima Advéntus Dómini nostri Jesu Christi."
       en: "The first Sunday of the Advent of our Lord Jesus Christ."
-    status: { la: verified, en: verified }
-  - id: Nat1-0
-    anchor: {kind: fixed-date, month: 1, day: 2}
-    text:
-      la: "Festum sanctísimi Nóminis Jesu."
-      en: "The Feast of the most holy Name of Jesus."
     status: { la: verified, en: verified }
   - id: Quadp1-0
     anchor: {kind: easter, offset: -63}
