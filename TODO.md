@@ -8955,3 +8955,21 @@ St. Francis of Paola.
   servulis". The Octave of Ss. Peter and Paul's responsory is "In omnem terram" there, "Constitues eos"
   here. About 145 of 318 sampled evenings differ in which office takes the evening (concurrence), which is
   a separate comparison from this sweep.
+
+
+### Older (pre-Urban VIII) hymn sweep (2026-10-15)
+
+- The reference tags its older hymn text `[HymnusM ...]` and its Monastic and 1570 versions take it over
+  `[Hymnus ...]` (`tryoldhymn` in specials.pl); the other text is Urban VIII's 1631 revision. Swept all 50
+  Sancti/SanctiM/Commune files where the two differ, against the authored hymn files here.
+- 42 of the 47 comparable hymns already carry the older text. The exceptions, now switched: All Saints'
+  Vespers (Christe Redemptor omnium), Lauds (Jesu Salvator saeculi) and Matins (kept Placare as a
+  "curatorial split" until now; its source is a redirect to Vespers). The old headers on those files
+  claimed the reverse, and have been rewritten.
+- Corrections to the 2026-10-14 sweep entry's hymn note: St. Michael ("Tibi Christe splendor Patris") and
+  Ss. Peter and Paul ("Aurea luce") are already the older texts; the engine's other differences there were
+  my misreading of which tag was which. Mary Magdalene's SanctiM/07-22b `[HymnusM Vespera]` ("Lauda mater
+  Ecclesia") belongs to a different calendar, not the 1617 one.
+- Not hymns of two recensions but proper hymns the app lacks (it falls to the Common): the Commemoration of
+  St. Paul's Vespers/Matins ("Doctor egregie Paule"), and a number of saints' own hymns (St. Anselm, St.
+  Bernard, St. Catherine of Siena, St. Gabriel, St. Raphael, St. John Cantius). Not authored here.
