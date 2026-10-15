@@ -1,11 +1,15 @@
-# Verified against Divinum Officium (Monastic Tridentinum 1617), Vespers,
-# `votive=C5` live query, 2026-08 -- see vespers-responsory-common-of-a-
-# confessor-not-bishop.yml's header for why the votive-office view was
-# used instead of a real saint's own (outranked) Second Vespers.
+# Second Vespers versicle of the Common of Confessors. Latin/Commune/C4.txt (and
+# C5/C5b/C5c, which inherit it): [Versum 3] is "@:Versum 2", i.e. "Justum
+# deduxit" (also the Lauds versicle); [Versum 1], First Vespers, is "Amavit eum"
+# -- see the matching -first file. Confirmed against the local reference engine
+# (Monastic Tridentinum 1617, command=prayVespera) on St. Francis (2024-10-03
+# First Vespers "Amavit eum", 2024-10-04 Second Vespers "Justum deduxit"),
+# St. Romuald and St. Bernard. The earlier `votive=` queries behind this file
+# showed the First Vespers versicle, because a votive Vespers is said as one.
 id: vespers-versicle-common-of-an-abbot
 text:
-  la: "V. Amávit eum Dóminus, et ornávit eum.\nR. Stolam glóriæ índuit eum."
-  en: "V. The Lord loved him and beautified him.\nR. He clothed him with a robe of glory."
+  la: "V. Justum dedúxit Dóminus per vias rectas.\nR. Et osténdit illi regnum Dei."
+  en: "V. The Lord guided the just in right paths.\nR. And showed him the kingdom of God."
 status:
   la: verified
   en: verified
