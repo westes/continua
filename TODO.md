@@ -8904,3 +8904,34 @@ St. Francis of Paola.
 - Tests that used these dates as "plain ferial" days were re-pointed: very few clean ordinary ferias are
   left (only 2026-09-01 and 2026-10-12 in Jun-Nov 2026), so `lauds`, `prime`, `little-hours` and `vespers`
   now share 2026-10-12 / 2026-09-01.
+
+
+### Sanctoral thinning pass and the Translation of St. Benedict (2026-10-14)
+
+- Goal: at least 2 free (ferial) civil dates in any rolling 7 dates, which the imported calendar had stopped
+  allowing. The author chose by hand from a spreadsheet (`calendar-thinning.xlsx`, one row per calendar
+  entry; universality first, then rank).
+- Removed from `sanctoral-calendar.yml`: 119 saint entries (saint files and propers kept, restorable). Of
+  those, 70 were Simplex, 20 Semiduplex, 27 Duplex, and two high-ranked: Our Most Holy Redeemer (10-23,
+  Duplex majus) and All Saints of the Order of St. Benedict (11-13, Duplex II. classis). The removed
+  Simplex popes with a distinctive liturgical custom were put back before applying (Sixtus I, Anicetus,
+  Soter and Caius, Cletus and Marcellinus, Victor I, Zephyrinus, Urban I, Stephen I, Zosimus, Anastasius I,
+  Alexander I, Felix I, Pius I, Sixtus III, Gregory II, Martin I, Hormisdas, Sergius I, Boniface IV).
+- Re-ranked: Marcellus I to Simplex; Fabian and Sebastian, Romuald, Perpetua and Felicity, John of God,
+  Peter Canisius, Isidore the Farmer, Peter Celestine, Rita of Cascia, Hildegard, Margaret Mary Alacoque and
+  Peter of Alcantara to Semiduplex; St. Joseph to Duplex majus (so he now enters the Easter-octave backlog
+  when impeded).
+- St. Sixtus II is on 08-06 as a commemoration under the Transfiguration (his file was authored earlier and
+  unwired).
+- Rows for Labre, Felix of Cantalice and Kostka left the calendar with their `tier-two-saints` test; their
+  saint files and propers remain.
+- Windows that still fail the 2-in-7 rule after the pass (Jan 21-Feb 12, Aug 5-11, Sep 17-26, ...) were left
+  as they are by choice.
+- New: The Translation of St. Benedict, Jul 11, Duplex II. classis (`st-benedict-translation`), from
+  `SanctiM/07-11M.txt` and `07-11b.txt`, with St. Pius I commemorated. Own collect, hymns, invitatory,
+  twelve Matins antiphons, five Lauds antiphons (reused at Vespers and the little hours), Magnificat
+  antiphon, own First Vespers hymn and Magnificat antiphon ("Claris conjúbila", from `07-11b.txt`), and
+  Matins readings (St. Bernard's sermon, Gospel and St. Bede's homily; Nocturn 1 comes from the bible plan). The capitula, responsories and versicles are St. Benedict's own March ones. English for the four
+  hymns, the Lauds and Magnificat antiphons and the Bede homily is this project's own, `draft`.
+- Tests re-pointed to surviving saints throughout `tests/calendar` and `tests/hours`; a Redeemer scenario and
+  the `tier-two-saints` file were removed with their saints.
