@@ -8935,3 +8935,23 @@ St. Francis of Paola.
   hymns, the Lauds and Magnificat antiphons and the Bede homily is this project's own, `draft`.
 - Tests re-pointed to surviving saints throughout `tests/calendar` and `tests/hours`; a Redeemer scenario and
   the `tier-two-saints` file were removed with their saints.
+
+
+### First/second Vespers sweep against the reference (2026-10-14)
+
+- The `-first` / `-second` variant lookup already covers every Vespers part (chapter, responsory, hymn,
+  versicle, Magnificat antiphon, psalm antiphons); the gaps were authored content, not mechanism.
+- Swept Latin/Commune and Latin/Sancti(M) for [Ant 1]/[Ant 3], [Versum 1]/[Versum 3], [Hymnus Vespera]/
+  [Hymnus Vespera 3], [Responsory Vespera 1] and [Ant Vespera]/[Ant Vespera 3], limited to the files the
+  Monastic 1617 kalendar names and to unconditional sections (a `(rubrica cisterciensis)` or `(rubrica
+  Barroux)` section is not ours), then checked every candidate against the local engine's own output.
+- Fixed: the Confessor family (not-bishop, plain, abbot, several confessors, pope) said "Amavit eum" at
+  Second Vespers; the source's [Versum 3] is "Justum deduxit" and "Amavit eum" belongs to First Vespers
+  (the old `votive=` queries showed the First Vespers versicle). Holy woman and widow gained their First
+  Vespers "Specie tua". Ss. John and Paul gained their own Second Vespers psalm antiphons.
+- Found, not changed: in the Christmas octave the Monastic office has no First Vespers for St. John or the
+  Holy Innocents ("Vespera de praecedenti"), so their [Ant 1]/[Versum 1] never surface. All Saints' Vespers
+  hymn is "Christe Redemptor omnium" in the Monastic 1617 output where this app has "Placare Christe
+  servulis". The Octave of Ss. Peter and Paul's responsory is "In omnem terram" there, "Constitues eos"
+  here. About 145 of 318 sampled evenings differ in which office takes the evening (concurrence), which is
+  a separate comparison from this sweep.
