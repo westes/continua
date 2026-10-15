@@ -1,0 +1,20 @@
+# First Vespers responsory: SanctiM/07-11b.txt's [Responsory Vespera 1] is
+# "@SanctiM/03-21:Responsory9" -- St. Benedict's own Matins responsory 9, said
+# in its long form at First Vespers. Second Vespers' [Responsory Vespera]
+# ("Sancte Pater Benedicte") is vespers-responsory-st-benedict-translation.yml
+# (the default); see hours/resolve-common.ts's withVespersVariant.
+id: vespers-responsory-st-benedict-translation-first
+text:
+  la: |
+    R. Sanctíssime Conféssor Christi Benedícte monachórum Pater et Dux:
+    * Intercéde pro nostra omniúmque salúte.
+    V. Devótæ plebi súbveni sancta intercessióne, † ut tuis adjúta précibus regna cæléstia consequátur.
+    R. Intercéde pro nostra omniúmque salúte.
+  en: |
+    R. O Benedict, most holy confessor of Christ, father and leader of monks:
+    * Intercede for us and the salvation of all.
+    V. Assist your devoted people with holy intercession so that with the help of your prayers they may reach the heavenly kingdom.
+    R. Intercede for us and the salvation of all.
+status:
+  la: verified
+  en: verified

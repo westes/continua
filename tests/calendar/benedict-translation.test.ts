@@ -64,5 +64,7 @@ describe('Translation of St. Benedict', () => {
     expect(first).toContain('Claris conjúbila Gállia');
     expect(first).not.toContain('Gemma cælestis');
     expect(first).toContain('celebrántes ejus Translatiónem');
+    expect(first).toContain('Sanctíssime Conféssor Christi Benedícte');
+    expect(JSON.stringify(resolveOrdo('vespers', DATE).parts)).toContain('Sancte Pater Benedícte');
   });
 });
