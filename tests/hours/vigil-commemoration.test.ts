@@ -13,12 +13,12 @@ import { resolveOrdo } from '../../src/hours';
 // data/hours/lauds-vigil-commemoration-antiphons.yml's own header for the
 // exact dates checked.
 describe('a Vigil\'s mere commemoration (not winning outright)', () => {
-  it('2027-08-09 (Monday): Vigil of St. Lawrence commemorated under Ss. Cyriacus etc., Monday\'s own Benedictus-verse antiphon', () => {
-    const lauds = resolveOrdo('lauds', '2027-08-09');
-    const commem = lauds.parts.find((p) => p.kind === 'preces' && p.label?.includes('Vigil of St. Lawrence'));
+  it('2028-08-14 (Monday): Vigil of the Assumption commemorated under the Sunday-cycle feria, Monday\'s own Benedictus-verse antiphon', () => {
+    const lauds = resolveOrdo('lauds', '2028-08-14');
+    const commem = lauds.parts.find((p) => p.kind === 'preces' && p.label?.includes('Vigil of the Assumption'));
     expect(commem?.kind === 'preces' ? commem.text.text.la : undefined).toContain('Benedíctus Dóminus, Deus Israël.');
     expect(commem?.kind === 'preces' ? commem.text.text.la : undefined).toContain('Repléti sumus mane misericórdia tua');
-    expect(commem?.kind === 'preces' ? commem.text.text.la : undefined).toContain('Adésto, Dómine'); // his own real collect, unchanged
+    expect(commem?.kind === 'preces' ? commem.text.text.la : undefined).toContain('Deus, qui virginálem aulam'); // its own real collect, unchanged
     expect(commem?.kind === 'preces' ? commem.text.status.la : undefined).toBe('verified');
   });
 

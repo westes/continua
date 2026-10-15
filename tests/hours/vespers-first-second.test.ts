@@ -23,11 +23,6 @@ describe('First vs Second Vespers variants', () => {
     expect(vespers('2026-02-10')).not.toContain('Omnis expértem máculæ');
   });
 
-  it('Seven Founders of the Servite Order: own hymn only at Second Vespers', () => {
-    expect(vespers('2026-02-12')).toContain('Matris sub almæ númine');
-    expect(vespers('2026-02-11')).not.toContain('Matris sub almæ númine');
-  });
-
   it("a proper feast's Magnificat antiphon follows the evening (Nativity of the BVM: Sept 7 first, Sept 8 second)", () => {
     expect(vespers('2026-09-07')).toContain('Gloriósæ');
     expect(vespers('2026-09-07')).not.toContain('Natívitas tua');

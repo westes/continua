@@ -20,12 +20,12 @@ describe('June sanctoral pull (first pass)', () => {
   });
 
   it('a saint normally blocked by the generic Saturday-of-Mary votive wins independently once the date falls on another weekday', () => {
-    const day = resolveDay('2026-06-02'); // a Tuesday
+    const day = resolveDay('2028-06-12'); // a Monday
     expect(day.winner).toEqual({
       kind: 'sanctoral',
-      id: 'ss-marcellinus-peter-and-erasmus',
-      name: 'Ss. Marcellinus, Peter, and Erasmus, Bishop, Martyrs',
-      nameLa: 'Sancti Marcellinus et Petrus, et Sanctus Erasmus, Episcopus, Martyres',
+      id: 'st-leo-iii',
+      name: 'St. Leo III, Pope and Confessor',
+      nameLa: 'Sanctus Leo III, Papa et Confessor',
       rank: 'simplex',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
@@ -52,21 +52,6 @@ describe('June sanctoral pull (first pass)', () => {
     });
     expect(day.commemorations).toEqual([]);
     expect(getDayCollect(day).status.en).toBe('verified');
-  });
-
-  it("St. Juliana Falconieri (Divino Afflatu's own occupant of this MM-DD slot, added alongside Ss. Gervase and Protase; her canonization postdates ~1600 so her source Duplex rank is deflated one tier to semiduplex per this project's design notes) still wins outright over their Simplex, commemorating them instead", () => {
-    const day = resolveDay('2035-06-19');
-    expect(day.winner).toEqual({
-      kind: 'sanctoral',
-      id: 'st-juliana-falconieri',
-      name: 'St. Juliana Falconieri, Virgin',
-      nameLa: 'Sancta Juliana de Falconeriis, Virgo',
-      rank: 'semiduplex',
-    });
-    expect(getDayCollect(day).status.en).toBe('verified');
-    expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'ss-gervase-and-protase', name: 'Ss. Gervase and Protase, Martyrs', nameLa: 'Sancti Gervasius et Protasius, Martyres', rank: 'simplex' },
-    ]);
   });
 
   it('the Nativity of St. John the Baptist wins outright at Duplex I. classis, distinct from his Vigil the day before', () => {

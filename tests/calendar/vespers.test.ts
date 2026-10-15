@@ -67,22 +67,22 @@ describe('resolveEveningDay', () => {
   // "commemoratio de præcedenti/sequenti" vs. "nihil de præcedenti" in
   // the raw output, not just inferred from the daytime rule.
   it('a Semiduplex loser is still commemorated when tomorrow claims First Vespers', () => {
-    // Aug 8, 2026 (Ss. Cyriacus/Largus/Smaragdus, Semiduplex) loses the
-    // evening to Aug 9 (Sunday); still commemorated.
-    const day = resolveEveningDay('2026-08-08');
-    expect(day.date).not.toBe('2026-08-08');
+    // Aug 7, 2027 (St. Cajetan, Semiduplex) loses the evening to Aug 8
+    // (Sunday); still commemorated.
+    const day = resolveEveningDay('2027-08-07');
+    expect(day.date).not.toBe('2027-08-07');
     expect(day.commemorations).toContainEqual(
-      expect.objectContaining({ kind: 'sanctoral', id: 'ss-cyriacus-largus-and-smaragdus' }),
+      expect.objectContaining({ kind: 'sanctoral', id: 'st-cajetan' }),
     );
   });
 
   it('a Simplex loser is not commemorated when tomorrow claims First Vespers', () => {
-    // Aug 7, 2026 (St. Donatus, Simplex) loses the evening to Aug 8
-    // (Ss. Cyriacus/Largus/Smaragdus, now Semiduplex-threshold-eligible
-    // for First Vespers — see hasFirstVespers); not commemorated.
-    const day = resolveEveningDay('2026-08-07');
-    expect(day.date).not.toBe('2026-08-07');
-    expect(day.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-donatus')).toBe(false);
+    // Aug 26, 2026 (St. Zephyrinus, Simplex) loses the evening to Aug 27
+    // (St. Joseph Calasanctius, Duplex, eligible for First Vespers — see
+    // hasFirstVespers); not commemorated.
+    const day = resolveEveningDay('2026-08-26');
+    expect(day.date).not.toBe('2026-08-26');
+    expect(day.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-zephyrinus')).toBe(false);
   });
 
   it('a winning day still commemorates a non-Simplex loser on the other side', () => {
@@ -109,8 +109,8 @@ describe('resolveEveningDay', () => {
   });
 
   it('a higher-ranked today keeps its own Second Vespers against a lower-ranked tomorrow, even below the old duplex-2-classis floor', () => {
-    // Jul 29, 2026: St. Martha (Semiduplex) vs. Jul 30's Ss. Abdon and
-    // Sennen (Simplex). Martha outranks them, so she should keep her own
+    // Oct 13, 2026: St. Edward the Confessor (Semiduplex) vs. Oct 14's
+    // St. Callistus I (Simplex). Edward outranks him, so he should keep his own
     // evening even though
     // Semiduplex never cleared the old fixed duplex-2-classis floor -- the
     // real "De Concurrentia Officii" rule is a direct comparison against
@@ -121,11 +121,12 @@ describe('resolveEveningDay', () => {
     // (2026-09-01), then re-pointed again here once St. Titus was added
     // alongside St. Dorothea on Feb 6, outranking Agatha outright
     // (2026-09-07), and once more when the Betrothal of the BVM (Duplex
-    // majus) took Jan 23 (Emerentiana's day) from it.
-    const day = resolveEveningDay('2026-07-29');
-    expect(day.date).toBe('2026-07-29');
-    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-martha' });
-    expect(day.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'ss-abdon-and-sennen', vespersNote: 'tomorrow' }));
+    // majus) took Jan 23 (Emerentiana's day) from it, and again in the
+    // 2026-10 thinning pass when Ss. Abdon and Sennen left the calendar.
+    const day = resolveEveningDay('2026-10-13');
+    expect(day.date).toBe('2026-10-13');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-edward-king' });
+    expect(day.commemorations).toContainEqual(expect.objectContaining({ kind: 'sanctoral', id: 'st-callistus', vespersNote: 'tomorrow' }));
   });
 
   it('an exact rank tie goes to tomorrow, per the rubric\'s tie-break', () => {

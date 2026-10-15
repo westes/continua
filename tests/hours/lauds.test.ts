@@ -320,19 +320,6 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Christe sanctórum decus Angelórum');
   });
 
-  it("uses Ss. Seven Founders' own real proper office bundle on their own day, not common-of-several-confessors's generic one", () => {
-    // Ss. Seven Founders (Feb 12) now have their own real chapter/hymn
-    // (authored 2026-09-08, sourced from Sancti/02-12.txt's own
-    // [Capitulum Laudes]/[Hymnus Laudes] directly, despite their [Rule]
-    // saying "vide C5" for the rest of the office) -- their own proper
-    // content wins over common-of-several-confessors's generic bundle.
-    const ordo = resolveOrdo('lauds', '2026-02-12');
-    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
-    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('1 Pet 4:13');
-    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
-    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Sic patres vitam péragunt in umbra');
-  });
-
   it("uses common-of-the-bvm's real office bundle on Our Lady of Mount Carmel's own day", () => {
     // Read directly from the source: Sancti/07-16.txt, 02-11.txt,
     // 05-31.txt, 09-24.txt, 10-11.txt (the 5 saints/feasts in this
@@ -532,17 +519,6 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Amor Jesu dulcíssime');
   });
 
-  it("resolves All Saints of the Benedictine Order's own proper chapter/hymn, with Common-of-Several-Martyrs's responsory", () => {
-    // Live-verified against Divinum Officium (Monastic Tridentinum
-    // 1617), 2025-11-13 (clean year). See lauds-capitulum-all-saints-
-    // of-the-benedictine-order.yml's header.
-    const ordo = resolveOrdo('lauds', '2025-11-13');
-    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
-    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Isa 8:18');
-    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
-    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Salvéte, cedri Líbani');
-  });
-
   it('includes the Kyrie + Our Father lead-in right after the Benedictus, before the day collect (either form)', () => {
     const ordo = resolveOrdo('lauds', FERIAL_TUESDAY);
     const litanyIndex = ordo.parts.findIndex((p) => p.kind === 'preces' && p.text.text.la?.includes('Kýrie, eléison'));
@@ -619,14 +595,6 @@ describe('resolveOrdo("lauds", ...)', () => {
     const clareCommemoration = ordo.parts.find((p) => p.kind === 'preces' && p.label?.includes('Clare'));
     expect(clareCommemoration?.kind === 'preces' ? clareCommemoration.text.text.en : undefined).toContain(
       'kingdom of heaven',
-    );
-  });
-
-  it('gives Ss. Felix and Adauctus their own commemoration antiphon+versicle on a Sunday, not just a bare collect (fixed 2026-08-30, ss-felix-and-adauctus-commemoration.yml live-verified against that date)', () => {
-    const ordo = resolveOrdo('lauds', '2026-08-30');
-    const felixCommemoration = ordo.parts.find((p) => p.kind === 'preces' && p.label?.includes('Felix'));
-    expect(felixCommemoration?.kind === 'preces' ? felixCommemoration.text.text.en : undefined).toContain(
-      'hairs of your head',
     );
   });
 

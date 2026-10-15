@@ -568,14 +568,14 @@ describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunda
     }
   });
 
-  it("uses ferial psalms with Common-of-an-Abbot's own Terce/Sext/None antiphons (St. Francis of Paola, whose single common supplies them) for a plain-Duplex weekday winner with no proper antiphon authored", () => {
-    // St. Francis of Paola (Duplex, Common of a Confessor Not a Bishop
+  it("uses ferial psalms with Common-of-a-Confessor's own Terce/Sext/None antiphons (St. Francis of Assisi, whose single common supplies them) for a plain-Duplex weekday winner with no proper antiphon authored", () => {
+    // St. Francis of Assisi (Duplex, Common of a Confessor Not a Bishop
     // for `common`; his P/T/S/N come from that same single common,
-    // identical in text to the Abbot's, live-verified per his own
-    // saint-file comment) -- 2030-04-02, a Tuesday, confirmed
-    // clean (no Sunday collision, safely outside Holy Week/Easter octave
-    // that year).
-    const common = resolveOrdo('matins', '2030-04-02');
+    // identical in text to the Abbot's) -- 2033-10-04, a Tuesday,
+    // confirmed clean (no Sunday collision). St. Francis of Paola, the
+    // earlier occupant of this test, left the calendar in the 2026-10
+    // thinning pass.
+    const common = resolveOrdo('matins', '2033-10-04');
     const psalms = common.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
     expect(psalms).toEqual([3, 94, 43, 44, 47, 48, 49, 54, 55, 58, 59]);
     expect(common.parts.some((p) => p.kind === 'te-deum')).toBe(true);
@@ -608,9 +608,10 @@ describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunda
   });
 
   it("uses ferial psalms with Common-of-Several-Martyrs's own Terce/Sext/None antiphons (one per nocturn) for a plain-Duplex weekday winner with no proper antiphon authored", () => {
-    // Ss. Fabian and Sebastian (Duplex, Common of Several Martyrs, no
-    // proper antiphon of their own) -- 2029-01-20, a Saturday, confirmed
-    // clean (no Sunday collision) per their own saint-file comment.
+    // Ss. Fabian and Sebastian (Common of Several Martyrs, no proper
+    // antiphon of their own; Semiduplex since the 2026-10 thinning pass,
+    // so the psalm antiphons are shown as incipits) -- 2029-01-20, a
+    // Saturday, confirmed clean (no Sunday collision).
     const common = resolveOrdo('matins', '2029-01-20');
     const psalms = common.parts.filter((p) => p.kind === 'psalm').map((p) => (p as { psalmNumber: number }).psalmNumber);
     expect(psalms).toEqual([3, 94, 96, 104, 104, 105, 105, 106, 106, 107, 108]);
@@ -619,9 +620,9 @@ describe('resolveOrdo("matins", ...) Duplex+ weekday-feast (3-nocturn, non-Sunda
 
     const psalmParts = common.parts.filter((p) => p.kind === 'psalm') as { psalmNumber: number; antiphon?: { text: Record<string, string>; status: Record<string, string> } }[];
     const nocturnPsalms = psalmParts.filter((p) => ![3, 94].includes(p.psalmNumber));
-    expect(nocturnPsalms[0]?.antiphon?.text.la).toBe('Ant. Cum palma * ad regna pervenérunt Sancti, corónas decóris meruérunt de manu Dei.');
-    expect(nocturnPsalms[3]?.antiphon?.text.la).toBe('Ant. Córpora Sanctórum * in pace sepúlta sunt: et vivent nómina eórum in ætérnum.');
-    expect(nocturnPsalms[6]?.antiphon?.text.la).toBe('Ant. Mártyrum chorus * laudáte Dóminum de cælis, allelúia.');
+    expect(nocturnPsalms[0]?.antiphon?.text.la).toBe('Ant. Cum palma');
+    expect(nocturnPsalms[3]?.antiphon?.text.la).toBe('Ant. Córpora Sanctórum');
+    expect(nocturnPsalms[6]?.antiphon?.text.la).toBe('Ant. Mártyrum chorus');
     expect(nocturnPsalms[6]?.antiphon?.status.la).toBe('verified');
     expect(nocturnPsalms[6]?.antiphon?.status.en).toBe('verified');
     expect(nocturnPsalms.slice(7).every((p) => p.antiphon === undefined)).toBe(true);
@@ -1170,9 +1171,9 @@ describe('resolveOrdo("matins", ...) remaining Common categories\' Matins hymns 
     return hymn?.text.text.la;
   }
 
-  it('Ss. Placid and Companions (common-of-several-martyrs) resolve to "Ætérna Christi múnera, Et Mártyrum victórias" -- distinct from the Apostle hymn\'s shared opening line', () => {
-    expect(hymnLatin('2026-10-05')).toContain('Ætérna Christi múnera');
-    expect(hymnLatin('2026-10-05')).toContain('Mártyrum victórias');
+  it('Ss. Cosmas and Damian (common-of-several-martyrs) resolve to "Ætérna Christi múnera, Et Mártyrum victórias" -- distinct from the Apostle hymn\'s shared opening line', () => {
+    expect(hymnLatin('2027-09-27')).toContain('Ætérna Christi múnera');
+    expect(hymnLatin('2027-09-27')).toContain('Mártyrum victórias');
   });
 
   it('St. Maurus (common-of-an-abbot) resolves to Common-of-a-Confessor-Not-Bishop\'s own hymn, same finding as the Lauds/Vespers pass', () => {
@@ -1298,13 +1299,12 @@ describe('Matins invitatory for saints on a Common with no per-saint invitatory'
   const cases: [string, string, string][] = [
     // Semiduplex: the opening antiphon is only the intonation, not doubled.
     ['2026-10-08', 'St. Bridget (widow)', 'Laudémus Deum nostrum'],
+    ['2027-03-06', 'Ss. Perpetua and Felicity (several women martyrs)', 'Laudémus Deum nostrum'],
     // Duplex: full antiphon, with the name template filled in.
     ['2026-05-04', 'St. Monica (widow)', 'In confessióne beátæ Mónicæ.'],
-    ['2027-03-06', 'Ss. Perpetua and Felicity (several women martyrs)', 'beatárum Perpétuæ et Felicitátis.'],
     ['2026-10-24', 'St. Raphael (angel)', 'Regem Archangelórum'],
     ['2026-10-18', 'St. Luke (evangelist)', 'Regem Apostolórum'],
     ['2026-02-07', 'St. Romuald (abbot)', 'Regem Confessórum'],
-    ['2026-02-12', 'Servite founders (several confessors)', 'Regem Confessórum'],
   ];
   it.each(cases)('%s %s', (date, _label, expected) => {
     const ordo = resolveOrdo('matins', date);

@@ -11,7 +11,7 @@ describe('November sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it('St. Martin of Tours wins outright at Duplex majus with a real proper collect and antiphon, over a genuinely unwinnable stub', () => {
+  it('St. Martin of Tours wins outright at Duplex majus with a real proper collect and antiphon, alone', () => {
     const day = resolveDay('2025-11-11');
     expect(day.winner).toEqual({
       kind: 'sanctoral',
@@ -20,21 +20,11 @@ describe('November sanctoral pull (first pass)', () => {
       nameLa: 'Sanctus Martinus Turonensis, Episcopus et Confessor',
       rank: 'duplex-majus',
     });
-    expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-menna', name: 'St. Menna, Martyr', nameLa: 'Sanctus Menna, Martyr', rank: 'simplex' },
-    ]);
+    expect(day.commemorations).toEqual([]);
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it('a monastic-calendar-specific reassignment (St. Emilian) displaces what the base Tridentine table gives to St. Martin I, Pope, who moves to a different date entirely', () => {
-    const emilianDay = resolveDay('2025-11-12');
-    expect(emilianDay.winner).toEqual({
-      kind: 'sanctoral',
-      id: 'st-emilian',
-      name: 'St. Emilian, Abbot',
-      nameLa: 'Sanctus Æmilianus, Abbas',
-      rank: 'duplex',
-    });
+  it('St. Martin I, Pope, holds the 14th (St. Emilian, who displaced him in the monastic table, has left the calendar)', () => {
     const martinIDay = resolveDay('2025-11-14');
     expect(martinIDay.winner).toEqual({
       kind: 'sanctoral',
@@ -45,42 +35,22 @@ describe('November sanctoral pull (first pass)', () => {
     });
   });
 
-  it('All Saints of the Benedictine Order, a monastic-calendar-only addition absent from the base Tridentine table, wins outright at Duplex II. classis', () => {
-    const day = resolveDay('2025-11-13');
-    expect(day.winner).toEqual({
-      kind: 'sanctoral',
-      id: 'all-saints-of-the-benedictine-order',
-      name: 'All Saints of the Order of St. Benedict',
-      nameLa: 'Omnes Sancti Ordinis Sancti Benedicti',
-      rank: 'duplex-2-classis',
-    });
-    // St. Nicholas I (Simplex, Urbis date 11-13) rides along as a commemoration.
-    expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-nicholas-i', name: 'St. Nicholas I, Pope and Confessor', nameLa: 'Sanctus Nicoláus I, Papa et Confessor', rank: 'simplex' },
-    ]);
-  });
-
-  it('St. Clement transfers forward into St. Chrysogonus\'s day whenever his own date falls on a Sunday -- a single-day transfer this app models correctly, unlike August\'s multi-day-skip case', () => {
+  it('St. Clement transfers forward to the next day whenever his own date falls on a Sunday -- a single-day transfer this app models correctly, unlike August\'s multi-day-skip case', () => {
     // Per direct instruction: a Semiduplex feast (St. Clement) on an
     // ordinary Sunday transfers to the next open day rather than being
-    // commemorated in place -- St. Felicitas (Simplex, also native to
-    // Nov 23) stays behind and is commemorated under the Sunday itself,
-    // since Simplex still gets the plain-commemoration treatment.
-    const clean = resolveDay('2032-11-24'); // Nov 23, 2032 is not a Sunday
+    // commemorated in place.
+    const clean = resolveDay('2032-11-23'); // Nov 23, 2032 is not a Sunday
     expect(clean.winner).toEqual({
       kind: 'sanctoral',
-      id: 'st-chrysogonus',
-      name: 'St. Chrysogonus, Martyr',
-      nameLa: 'Sanctus Chrysogonus, Martyr',
-      rank: 'simplex',
+      id: 'st-clement',
+      name: 'St. Clement I, Pope and Martyr',
+      nameLa: 'Sanctus Clemens I, Papa et Martyr',
+      rank: 'semiduplex',
     });
     const onceASunday = resolveDay('2025-11-23'); // a Sunday
     expect(onceASunday.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-24' });
-    expect(onceASunday.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-felicitas', name: 'St. Felicitas, Martyr', nameLa: 'Sancta Felicitas, Martyr', rank: 'simplex' },
-    ]);
-    // St. Clement transfers into Nov 24 and wins the collision against
-    // St. Chrysogonus (native there, Simplex).
+    expect(onceASunday.commemorations).toEqual([]);
+    // St. Clement transfers into the free Monday, Nov 24.
     const followingDay = resolveDay('2025-11-24');
     expect(followingDay.winner).toEqual({
       kind: 'sanctoral',
@@ -90,9 +60,7 @@ describe('November sanctoral pull (first pass)', () => {
       rank: 'semiduplex',
       transferredFrom: '2025-11-23',
     });
-    expect(followingDay.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-chrysogonus', name: 'St. Chrysogonus, Martyr', nameLa: 'Sanctus Chrysogonus, Martyr', rank: 'simplex' },
-    ]);
+    expect(followingDay.commemorations).toEqual([]);
   });
 
   it('St. Andrew wins outright at Duplex II. classis with a real proper collect and antiphon, commemorating the Advent feria itself in years his fixed date falls within Advent', () => {

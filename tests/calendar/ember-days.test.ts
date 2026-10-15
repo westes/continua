@@ -45,20 +45,20 @@ describe('Ember days', () => {
     expect(day.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-januarius')).toBe(true);
   });
 
-  it('September Ember Friday 2023 (Sept 22): Ss. Maurice and Companions (Simplex) loses outright, Ember wins with the saint commemorated', () => {
+  it('September Ember Saturday 2025 (Sept 20): St. Agapitus I (Simplex) loses outright, Ember wins with the saint commemorated', () => {
     // Below privileged-feria-ember's Duplex threshold same as the three
     // Semiduplex cases above, just at a lower rank still -- this is the one
-    // real below-threshold candidate found by scanning forward from 2015
-    // for a year where the Ember-Friday offset lands on Ss. Maurice and
-    // Companions' native Sept 22 date.
-    const day = resolveDay('2023-09-22');
+    // real Simplex candidate left after the 2026-10 thinning pass, where
+    // the September Ember Saturday offset lands on St. Agapitus I's native
+    // Sept 20 date.
+    const day = resolveDay('2025-09-20');
     expect(day.temporalCategory).toBe('privileged-feria-ember');
-    expect(day.winner).toEqual({ kind: 'temporal', id: 'ember-september-friday' });
+    expect(day.winner).toEqual({ kind: 'temporal', id: 'ember-september-saturday' });
     expect(day.commemorations).toContainEqual({
       kind: 'sanctoral',
-      id: 'ss-maurice-and-companions',
-      name: 'Ss. Maurice and Companions, Martyrs',
-      nameLa: 'Sanctus Mauritius et Socii, Martyres',
+      id: 'st-agapitus-i',
+      name: 'St. Agapitus I, Pope and Confessor',
+      nameLa: 'Sanctus Agapítus I, Papa et Confessor',
       rank: 'simplex',
     });
   });
@@ -130,7 +130,7 @@ describe('Ember days', () => {
   });
 
   it('the day label names Lent/Pentecost Ember days too, including the Pentecost-octave-headline exception (2026-09-19 fix)', () => {
-    expect(getDayLabel(resolveDay('2026-02-25')).en).toBe('Ember Wednesday in Lent (Feria) — St. Felix III, Pope and Confessor');
+    expect(getDayLabel(resolveDay('2026-02-25')).en).toBe('Ember Wednesday in Lent (Feria)');
     // Ember Friday of Lent 1 now always yields to the Holy Lance and Nails
     // (a Duplex majus movable feast, data/calendar/temporal-feasts), which is
     // the winner; the Ember Friday rides along as a commemoration.
@@ -197,19 +197,19 @@ describe('Ember days', () => {
     // Pentecost's own Octave every year, so `activeOctavesFor` always
     // reports it active there -- without the fix exempting the
     // Pentecost octave itself, these would never get relabeled at all.
-    // Below-Duplex saints (St. John I Simplex, St. Mary Magdalene de
-    // Pazzi Semiduplex, St. Felix I Simplex) are real 2026 collisions on
-    // these dates, same shape as the September Wednesday/Friday/Saturday
-    // 2026 cases above -- Ember wins, both the saint and the Octave are
-    // commemorated alongside.
+    // Below-Duplex saints (St. Boniface IV Simplex, St. Felix I Simplex)
+    // are real 2026 collisions on Friday and Saturday (the Wednesday has no
+    // saint left since the 2026-10 thinning pass), same shape as the
+    // September Wednesday/Friday/Saturday 2026 cases above -- Ember wins,
+    // both the saint and the Octave are commemorated alongside.
     for (const [date, id, saintId] of [
-      ['2026-05-27', 'ember-pentecost-wednesday', 'st-john-i'],
-      ['2026-05-29', 'ember-pentecost-friday', 'st-mary-magdalene-de-pazzi'],
+      ['2026-05-27', 'ember-pentecost-wednesday', null],
+      ['2026-05-29', 'ember-pentecost-friday', 'st-boniface-iv'],
       ['2026-05-30', 'ember-pentecost-saturday', 'st-felix-i'],
     ] as const) {
       const day = resolveDay(date);
       expect(day.winner).toEqual({ kind: 'temporal', id });
-      expect(day.commemorations.some((c) => c.kind === 'sanctoral' && c.id === saintId)).toBe(true);
+      if (saintId) expect(day.commemorations.some((c) => c.kind === 'sanctoral' && c.id === saintId)).toBe(true);
       expect(day.commemorations).toContainEqual({ kind: 'octave', id: 'pentecost-sunday', name: 'Pentecost', nameLa: 'Dominica Pentecostes' });
       expect(getDayCollect(day).status.en).toBe('verified');
     }

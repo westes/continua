@@ -35,7 +35,7 @@ describe('getDayLabel — ordinal temporal label', () => {
     // commemoration never carries a rank parenthetical, only the day's
     // own winner does.
     expect(getDayLabel(resolveDay('2026-05-31')).en).toBe(
-      'The Most Holy Trinity (Duplex II Class) — St. Petronilla, Virgin — The Queenship of the Blessed Virgin Mary',
+      'The Most Holy Trinity (Duplex II Class) — The Queenship of the Blessed Virgin Mary',
     );
     // St. Vincent Ferrer is only Duplex, below the Easter-octave backlog's
     // duplex-majus floor (calendar/index.ts's `EASTER_OCTAVE_BACKLOG_FLOOR`)
@@ -46,7 +46,7 @@ describe('getDayLabel — ordinal temporal label', () => {
       "Easter (Duplex I Class) — St. Vincent Ferrer, Priest (omitted this year)",
     );
     expect(getDayLabel(resolveDay('2026-02-18')).en).toBe(
-      "Ash Wednesday — St. Simeon, Bishop and Martyr (transferred away)",
+      "Ash Wednesday",
     );
     // Latin: the winner now has a real authored nameLa (see
     // calendar/data/calendar/saints/queenship-of-the-bvm.yml and
@@ -54,13 +54,13 @@ describe('getDayLabel — ordinal temporal label', () => {
     // so this is real Latin throughout — the rank label ("Duplex II.
     // Classis") was already real Latin before this.
     expect(getDayLabel(resolveDay('2026-05-31')).la).toBe(
-      'Sanctissima Trinitas (Duplex II. Classis) — Sancta Petronilla, Virgo — Beata Maria Virgo Regina',
+      'Sanctissima Trinitas (Duplex II. Classis) — Beata Maria Virgo Regina',
     );
     expect(getDayLabel(resolveDay('2026-04-05')).la).toBe(
       'Pascha (Duplex I. Classis) — Sanctus Vincentius Ferrerius, Presbyter (omissa hoc anno)',
     );
     expect(getDayLabel(resolveDay('2026-02-18')).la).toBe(
-      'Feria Quarta Cinerum — Sanctus Simeon, Episcopus et Martyr (translata alio)',
+      'Feria Quarta Cinerum',
     );
   });
 
@@ -137,7 +137,7 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // trailing after the Sunday's own winning label per this app's usual
     // winner-first display.
     expect(getDayLabel(resolveDay('2024-11-10')).en).toBe(
-      'The 5th Sunday after Epiphany, resumed (Semiduplex) — Ss. Tryphon, Respicius, and Nympha, Martyrs',
+      'The 5th Sunday after Epiphany, resumed (Semiduplex)',
     );
     // 2024-11-11 is St. Martin of Tours (Duplex, pre-existing content) --
     // an ordinary (non-privileged) Monday fully yields to a real winning
@@ -149,7 +149,7 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // Sunday pair is clean any more, now that Nov 4/8/15/16/20 are all
     // fixed real content).
     expect(getDayLabel(resolveDay('2024-11-11')).en).toBe(
-      'St. Martin of Tours, Bishop and Confessor (Duplex Majus) — St. Menna, Martyr',
+      'St. Martin of Tours, Bishop and Confessor (Duplex Majus)',
     );
     expect(getDayLabel(resolveDay('2024-11-17')).en).toBe(
       "The 6th Sunday after Epiphany, resumed (Semiduplex) — St. Gregory Thaumaturgus, Bishop and Confessor (transferred away)",
@@ -187,7 +187,7 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
       "The 23rd Sunday after Trinity (Semiduplex) — St. Cecilia, Virgin and Martyr (transferred away)",
     );
     expect(getDayLabel(resolveDay('2026-11-23')).en).toBe(
-      'St. Clement I, Pope and Martyr (Semiduplex) — St. Felicitas, Martyr — St. Cecilia, Virgin and Martyr (transferred)',
+      'St. Clement I, Pope and Martyr (Semiduplex) — St. Cecilia, Virgin and Martyr (transferred)',
     );
     // 1943-11-21 is also the Presentation of the BVM (Duplex Majus, added
     // 2026-08 — see presentation-of-the-bvm.yml). It's `ordinary-sunday`
@@ -301,10 +301,10 @@ describe('getDayLabel — active octave', () => {
     // is Aug 17 itself, more recent than the Assumption octave's Day 3
     // (whose governing start date is Aug 15), so he now sorts ahead of it.
     expect(getDayLabel(resolveDay('2026-08-17')).en).toBe(
-      'Octave of St. Lawrence, Deacon and Martyr (Duplex) — St. Hyacinth, Confessor — Octave of the Assumption of the Blessed Virgin Mary (3rd Day)',
+      'Octave of St. Lawrence, Deacon and Martyr (Duplex) — Octave of the Assumption of the Blessed Virgin Mary (3rd Day)',
     );
     expect(getDayLabel(resolveDay('2026-08-18')).en).toBe(
-      'Octave of the Assumption of the Blessed Virgin Mary (4th Day, Duplex) — St. Agapitus, Martyr',
+      'Octave of the Assumption of the Blessed Virgin Mary (4th Day, Duplex)',
     );
   });
 
@@ -351,7 +351,7 @@ describe('getDayLabel — active octave', () => {
     // resolveOfficeWinner for the actual office content, not just this
     // label).
     expect(getDayLabel(resolveDay('2026-12-15')).en).toBe(
-      'Octave of the Immaculate Conception of the Blessed Virgin Mary (Duplex) — St. Eusebius of Vercelli, Bishop and Martyr',
+      'Octave of the Immaculate Conception of the Blessed Virgin Mary (Duplex)',
     );
   });
 
@@ -455,7 +455,7 @@ describe('getDayLabel/getVespersStatusLabel — Vespers evening with a temporal 
     expect(day.date).toBe('2026-08-30');
     expect(day.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-14' });
     expect(getDayLabel(day).en).toBe(
-      "The 13th Sunday after Trinity (Semiduplex) — Ss. Felix and Adauctus, Martyrs — The Beheading of St. John the Baptist (of today) — St. Rose of Lima, Virgin (transferred away)",
+      "The 13th Sunday after Trinity (Semiduplex) — The Beheading of St. John the Baptist (of today) — St. Rose of Lima, Virgin (transferred away)",
     );
     expect(getVespersStatusLabel(day, '2026-08-29').en).toBe('First Vespers (of tomorrow)');
   });

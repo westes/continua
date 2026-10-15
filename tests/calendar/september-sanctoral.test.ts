@@ -35,9 +35,8 @@ describe('September sanctoral pull (first pass)', () => {
       nameLa: 'Nativitas Beatæ Mariæ Virginis',
       rank: 'duplex-2-classis',
     });
-    expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-hadrian', name: 'St. Hadrian, Martyr', nameLa: 'Sanctus Hadrianus, Martyr', rank: 'simplex' },
-    ]);
+    // St. Hadrian (Simplex) left the calendar in the 2026-10 thinning pass.
+    expect(day.commemorations).toEqual([]);
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
@@ -46,7 +45,6 @@ describe('September sanctoral pull (first pass)', () => {
     expect(gorgoniusDay.winner.kind).toBe('temporal');
     expect(gorgoniusDay.commemorations).toEqual([
       { kind: 'sanctoral', id: 'st-sergius-i', name: 'St. Sergius I, Pope and Confessor', nameLa: 'Sanctus Sérgius I, Papa et Confessor', rank: 'simplex' },
-      { kind: 'sanctoral', id: 'st-gorgonius', name: 'St. Gorgonius, Martyr', nameLa: 'Sanctus Gorgonius, Martyr', rank: 'simplex' },
       { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary', nameLa: 'Nativitas Beatæ Mariæ Virginis' },
     ]);
   });
@@ -61,7 +59,6 @@ describe('September sanctoral pull (first pass)', () => {
       rank: 'duplex-2-classis',
     });
     expect(nicomedesDay.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-nicomedes', name: 'St. Nicomedes, Martyr', nameLa: 'Sanctus Nicomedes, Martyr', rank: 'simplex' },
       { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary', nameLa: 'Nativitas Beatæ Mariæ Virginis' },
     ]);
   });
@@ -70,7 +67,6 @@ describe('September sanctoral pull (first pass)', () => {
     const day = resolveDay('2025-09-10');
     expect(day.winner).toEqual({ kind: 'temporal', id: 'post-pentecost-13' });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-hilary-pope', name: 'St. Hilary, Pope and Confessor', nameLa: 'Sanctus Hilárus, Papa et Confessor', rank: 'simplex' },
       { kind: 'sanctoral', id: 'st-nicholas-of-tolentino', name: 'St. Nicholas of Tolentino, Priest', nameLa: 'Sanctus Nicolaus Tolentinas, Presbyter', rank: 'semiduplex' },
       { kind: 'octave', id: 'nativity-bvm', name: 'The Nativity of the Blessed Virgin Mary', nameLa: 'Nativitas Beatæ Mariæ Virginis' },
     ]);

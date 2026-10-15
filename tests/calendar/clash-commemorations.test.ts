@@ -50,10 +50,10 @@ describe('same-date saint contest losers obey the day\'s own commemoration rule'
     expect(sanctoralCommemorationIds('2029-05-31')).toEqual(['queenship-of-the-bvm']);
   });
 
-  it('unaffected: simplex saints sharing an ordinary feria all still appear (St. Paschal I joined Boniface and Pachomius in 2026-10)', () => {
-    const day = resolveDay('2027-05-14');
-    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-boniface' });
-    expect(sanctoralCommemorationIds('2027-05-14')).toEqual(['st-pachomius', 'st-paschal-i']);
+  it('unaffected: simplex saints sharing an ordinary feria still appear (St. Dionysius with St. Blaise)', () => {
+    const day = resolveDay('2027-02-03');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-blaise' });
+    expect(sanctoralCommemorationIds('2027-02-03')).toEqual(['st-dionysius-pope']);
   });
 });
 

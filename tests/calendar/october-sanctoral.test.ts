@@ -5,18 +5,6 @@ import { getDayCollect } from '../../src/hours/resolve-common';
 // Clean per-annum years for these dates (no Sunday collision) — see
 // data/calendar/saints/*.yml for per-saint source detail.
 describe('October sanctoral pull (first pass)', () => {
-  it('a monastic-calendar-specific addition (Ss. Placid and Companions, St. Benedict\'s own disciple) wins outright, deliberately lowered to Simplex', () => {
-    const day = resolveDay('2026-10-05');
-    expect(day.winner).toEqual({
-      kind: 'sanctoral',
-      id: 'ss-placid-and-companions',
-      name: 'Ss. Placid and Companions, Martyrs',
-      nameLa: 'Sanctus Placidus et Socii, Martyres',
-      rank: 'simplex',
-    });
-    expect(day.commemorations).toEqual([]);
-  });
-
   it('Our Lady of the Rosary wins Oct 7 at Duplex II. classis, with St. Marcus commemorated (St. Justina is deliberately off-calendar)', () => {
     const day = resolveDay('2025-10-07');
     expect(day.winner).toEqual({
@@ -28,21 +16,6 @@ describe('October sanctoral pull (first pass)', () => {
     });
     expect(day.commemorations).toEqual([
       { kind: 'sanctoral', id: 'st-marcus', name: 'St. Marcus, Pope and Confessor', nameLa: 'Sanctus Marcus, Papa et Confessor', rank: 'simplex' },
-    ]);
-  });
-
-  it('St. Gall, a monastic-calendar-specific addition, wins outright at Duplex', () => {
-    const day = resolveDay('2025-10-16');
-    expect(day.winner).toEqual({
-      kind: 'sanctoral',
-      id: 'st-gall',
-      name: 'St. Gall, Abbot',
-      nameLa: 'Sanctus Gallus, Abbas',
-      rank: 'duplex',
-    });
-    // Bl. Victor III (Simplex, Urbis date 10-16) rides along as a commemoration.
-    expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'bl-victor-iii', name: 'Bl. Victor III, Pope and Confessor', nameLa: 'Beátus Victor III, Papa et Confessor', rank: 'simplex' },
     ]);
   });
 

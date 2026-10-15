@@ -15,28 +15,23 @@ describe('transfer mechanism (resolveDay integration)', () => {
   // rather than displacing him — real transfer+collision interaction, not
   // a data error, same class of finding as July's Apollinaris/Vigil-of-
   // St.-James case.
-  it('a vigil impeded by an ordinary Sunday transfers backward to Saturday and collides with the real feast already there', () => {
+  it('a vigil impeded by an ordinary Sunday transfers backward to Saturday', () => {
     const saturday = resolveDay('2026-08-08');
     const sunday = resolveDay('2026-08-09');
     const monday = resolveDay('2026-08-10');
 
+    // Ss. Cyriacus, Largus and Smaragdus (the real feast that used to be
+    // here for the vigil to collide with) left the calendar in the 2026-10
+    // thinning pass, so the vigil lands on a free Saturday.
     expect(saturday.winner).toEqual({
       kind: 'sanctoral',
-      id: 'ss-cyriacus-largus-and-smaragdus',
-      name: 'Ss. Cyriacus, Largus, and Smaragdus, Martyrs',
-      nameLa: 'Sancti Cyriacus, Largus et Smaragdus, Martyres',
-      rank: 'semiduplex',
+      id: 'vigil-of-st-lawrence',
+      name: 'Vigil of St. Lawrence',
+      nameLa: 'Vigilia Sancti Laurentii',
+      rank: 'vigil',
+      transferredFrom: '2026-08-09',
     });
-    expect(saturday.commemorations).toEqual([
-      {
-        kind: 'sanctoral',
-        id: 'vigil-of-st-lawrence',
-        name: 'Vigil of St. Lawrence',
-        nameLa: 'Vigilia Sancti Laurentii',
-        rank: 'vigil',
-        transferredFrom: '2026-08-09',
-      },
-    ]);
+    expect(saturday.commemorations).toEqual([]);
 
     // The Sunday's own winner is unaffected by the vigil, but St. Romanus
     // (the vigil's own stub secondary, see st-romanus.yml) still surfaces
@@ -105,7 +100,6 @@ describe('transfer mechanism (resolveDay integration)', () => {
     expect(sunday.winner).toEqual({ kind: 'temporal', id: 'trinity-sunday' });
     expect(sunday.commemorations).toEqual([
       { kind: 'temporal', id: 'post-pentecost-01' },
-      { kind: 'sanctoral', id: 'st-petronilla', name: 'St. Petronilla, Virgin', nameLa: 'Sancta Petronilla, Virgo', rank: 'simplex' },
       { kind: 'octave', id: 'pentecost-sunday', name: 'Pentecost', nameLa: 'Dominica Pentecostes' },
       { kind: 'sanctoral', id: 'queenship-of-the-bvm', name: 'The Queenship of the Blessed Virgin Mary', nameLa: 'Beata Maria Virgo Regina', rank: 'duplex-2-classis' },
     ]);
@@ -157,7 +151,7 @@ describe('the Easter-octave backlog (Palm Sunday through Low Sunday)', () => {
     }
   });
 
-  it('2035: three candidates clear the floor (St. Benedict, St. Gabriel the Archangel, the Annunciation) and land on the 1st/2nd/3rd day after Low Sunday, in native-date order, each demoting that day\'s own native winner to a commemoration', () => {
+  it('2035: four candidates clear the floor (St. Joseph, St. Benedict, St. Gabriel the Archangel, the Annunciation) and land on the 1st/2nd/3rd/4th day after Low Sunday, in native-date order, each demoting that day\'s own native winner to a commemoration', () => {
     // Easter 2035 is Mar 25 (the Annunciation's own fixed date), Low
     // Sunday Apr 1. St. Benedict (native Mar 21, Duplex I. classis),
     // St. Gabriel the Archangel (native Mar 24, Duplex majus), and the
@@ -178,16 +172,25 @@ describe('the Easter-octave backlog (Palm Sunday through Low Sunday)', () => {
     const day1 = resolveDay('2035-04-02');
     expect(day1.winner).toEqual({
       kind: 'sanctoral',
+      id: 'st-joseph',
+      name: 'St. Joseph, Spouse of the Blessed Virgin Mary, Confessor',
+      nameLa: 'Sanctus Josephus, Sponsus Beatæ Mariæ Virginis, Confessor',
+      rank: 'duplex-majus',
+      transferredFrom: '2035-03-19',
+    });
+
+    const day2 = resolveDay('2035-04-03');
+    expect(day2.winner).toEqual({
+      kind: 'sanctoral',
       id: 'st-benedict',
       name: 'St. Benedict, Abbot (Transitus)',
       nameLa: 'Sanctus Benedictus, Abbas (Transitus)',
       rank: 'duplex-1-classis',
       transferredFrom: '2035-03-21',
     });
-    expect(day1.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-francis-of-paola')).toBe(true);
 
-    const day2 = resolveDay('2035-04-03');
-    expect(day2.winner).toEqual({
+    const day3 = resolveDay('2035-04-04');
+    expect(day3.winner).toEqual({
       kind: 'sanctoral',
       id: 'st-gabriel-archangel',
       name: 'St. Gabriel the Archangel',
@@ -195,9 +198,10 @@ describe('the Easter-octave backlog (Palm Sunday through Low Sunday)', () => {
       rank: 'duplex-majus',
       transferredFrom: '2035-03-24',
     });
+    expect(day3.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-isidore-of-seville')).toBe(true);
 
-    const day3 = resolveDay('2035-04-04');
-    expect(day3.winner).toEqual({
+    const day4 = resolveDay('2035-04-05');
+    expect(day4.winner).toEqual({
       kind: 'sanctoral',
       id: 'annunciation',
       name: 'The Annunciation of the Blessed Virgin Mary',
@@ -205,11 +209,11 @@ describe('the Easter-octave backlog (Palm Sunday through Low Sunday)', () => {
       rank: 'duplex-1-classis',
       transferredFrom: '2035-03-25',
     });
-    expect(day3.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-isidore-of-seville')).toBe(true);
+    expect(day4.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-vincent-ferrer')).toBe(true);
 
-    // The backlog is exhausted after 3 days -- the 4th day after Low
+    // The backlog is exhausted after 4 days -- the 5th day after Low
     // Sunday resolves with no override at all.
-    const day4 = resolveDay('2035-04-05');
-    expect(day4.winner.kind === 'sanctoral' ? day4.winner.transferredFrom : undefined).toBeUndefined();
+    const day5 = resolveDay('2035-04-06');
+    expect(day5.winner.kind === 'sanctoral' ? day5.winner.transferredFrom : undefined).toBeUndefined();
   });
 });

@@ -98,7 +98,7 @@ describe('Lauds psalmody override (duplex-majus+ sanctoral, and Marian Saturday)
       'He hath made us',
     );
 
-    // The day's own single collect (Christ the King's) plus three labeled
+    // The day's own single collect (Christ the King's) plus two labeled
     // 'preces' commemoration bundles: the commemorated Sunday's own (a
     // temporal commemoration, now the fuller Ant+V/R+collect bundle since
     // post-pentecost-22 has a real Benedictus antiphon authored -- see
@@ -111,7 +111,7 @@ describe('Lauds psalmody override (duplex-majus+ sanctoral, and Marian Saturday)
     const commemorations = ordo.parts.filter(
       (p) => p.kind === 'preces' && p.label?.startsWith('Commemoration of'),
     );
-    expect(commemorations.length).toBe(3);
+    expect(commemorations.length).toBe(2);
 
     const SUFFRAGE_LABELS = new Set([
       'Commemoration of the Holy Cross',

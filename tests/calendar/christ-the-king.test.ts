@@ -13,22 +13,22 @@ describe('Christ the King (applyChristTheKing)', () => {
     expect(day.commemorations).toContainEqual({ kind: 'temporal', id: 'post-pentecost-22' });
     // Live-verified (Divino Afflatu 1954): the day's own commemoration
     // line also names whichever sanctoral entry the ordinary Sunday was
-    // already carrying (Ss. Chrysanthus and Daria, Simplex, per the next
+    // already carrying (St. Boniface I, Simplex, per the next
     // test below) -- this app's day label now surfaces every commemorated
     // saint, not just the Sunday itself.
-    expect(getDayLabel(day).en).toBe('Christ the King (Duplex I Class) — Ss. Chrysanthus and Daria, Martyrs — St. Boniface I, Pope and Confessor');
+    expect(getDayLabel(day).en).toBe('Christ the King (Duplex I Class) — St. Boniface I, Pope and Confessor');
   });
 
   it('preserves a nested commemoration: a Simplex saint already commemorated under the ordinary Sunday stays commemorated', () => {
-    // Ss. Chrysanthus and Daria, Simplex, land on 2026-10-25 -- already
+    // St. Boniface I, Simplex, lands on 2026-10-25 -- already
     // commemorated under the Sunday per the ordinary-sunday rule before
     // Christ the King further displaces that Sunday itself.
     const day = resolveDay('2026-10-25');
     expect(day.commemorations).toContainEqual({
       kind: 'sanctoral',
-      id: 'ss-chrysanthus-and-daria',
-      name: 'Ss. Chrysanthus and Daria, Martyrs',
-      nameLa: 'Sancti Chrysanthus et Daria, Martyres',
+      id: 'st-boniface-i',
+      name: 'St. Boniface I, Pope and Confessor',
+      nameLa: 'Sanctus Bonifátius I, Papa et Confessor',
       rank: 'simplex',
     });
   });

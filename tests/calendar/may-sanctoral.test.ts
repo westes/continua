@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { resolveDay } from '../../src/calendar';
-import { getDayCollect, getDayCollects } from '../../src/hours/resolve-common';
+import { getDayCollect } from '../../src/hours/resolve-common';
 
 // Clean per-annum years for these dates (no Sunday collision, and clear of
 // the movable Ascension/Pentecost/Trinity-adjacent observances that usually
@@ -59,14 +59,14 @@ describe('May sanctoral pull (first pass)', () => {
       id: 'st-peter-celestine',
       name: 'St. Peter Celestine, Pope and Confessor',
       nameLa: 'Sanctus Petrus Cœlestinus, Papa et Confessor',
-      rank: 'duplex',
+      rank: 'semiduplex',
     });
     expect(may19.commemorations).toEqual([
       { kind: 'sanctoral', id: 'st-pudentiana', name: 'St. Pudentiana, Virgin', nameLa: 'Sancta Pudentiana, Virgo', rank: 'simplex' },
     ]);
   });
 
-  it('St. Rita of Cascia wins May 22 outright (a 2026-09 explicit user override of the late-canonization deflation rule), demoting St. Romanus, whose commemoration still resolves via the Common of an Abbot fallback', () => {
+  it('St. Rita of Cascia wins May 22 outright, alone now that St. Romanus has left the calendar (2026-10 thinning pass, which also set her Semiduplex)', () => {
     // St. Romanus used to win this date outright and demonstrate the
     // collectCommon/Common-of-an-Abbot fallback mechanism as the day's own
     // winner. St. Rita of Cascia (found via the suffixed-file sweep,
@@ -82,14 +82,9 @@ describe('May sanctoral pull (first pass)', () => {
       id: 'st-rita-of-cascia',
       name: 'St. Rita of Cascia, Widow',
       nameLa: 'Sancta Rita de Cascia, Vidua',
-      rank: 'duplex',
+      rank: 'semiduplex',
     });
     expect(getDayCollect(day).status.en).toBe('draft');
-
-    const romanus = day.commemorations.find((c) => c.kind === 'sanctoral' && c.id === 'st-romanus-abbot');
-    expect(romanus).toBeDefined();
-    const romanusPart = getDayCollects(day, 'lauds').find((p) => p.kind === 'preces' && p.label === 'Commemoration of St. Romanus, Abbot');
-    expect(romanusPart).toBeDefined();
-    expect(romanusPart!.kind === 'preces' && romanusPart.text.status.en).toBe('verified');
+    expect(day.commemorations).toEqual([]);
   });
 });

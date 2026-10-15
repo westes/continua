@@ -47,7 +47,7 @@ describe('rank overrides', () => {
       'st-peter-celestine': { rank: 'vigil' },
       'vigil-of-st-matthew': { rank: 'duplex' },
     });
-    expect(getSaintRecord('st-peter-celestine')?.rank).toBe('duplex');
+    expect(getSaintRecord('st-peter-celestine')?.rank).toBe('semiduplex');
     expect(getSaintRecord('vigil-of-st-matthew')?.rank).toBe('vigil');
   });
 

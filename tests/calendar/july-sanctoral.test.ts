@@ -20,45 +20,23 @@ describe('July sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it('an earlier live-query pass mis-recorded St. Apollinaris under the wrong date (a transfer artifact) — his real date is the 23rd', () => {
-    const day = resolveDay('2026-07-23'); // a clean year, no Sunday collision
-    expect(day.winner).toEqual({
-      kind: 'sanctoral',
-      id: 'st-apollinaris',
-      name: 'St. Apollinaris, Bishop and Martyr',
-      nameLa: 'Sanctus Apollinaris, Episcopus et Martyr',
-      rank: 'semiduplex',
-    });
-    expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-liborius', name: 'St. Liborius, Bishop and Confessor', nameLa: 'Sanctus Liborius, Episcopus et Confessor', rank: 'simplex' },
-    ]);
-  });
-
-  it('the Vigil of St. James resolves alongside its own commemorated saint, distinct from St. James Day itself', () => {
+  it('the Vigil of St. James wins its own day, commemorating the Simplex saint who shares it', () => {
     const day = resolveDay('2028-07-24');
     expect(day.winner.kind).toBe('sanctoral');
-    // 2028's Jul 23 is a Sunday, so St. Apollinaris (Semiduplex) transfers
-    // forward into this day and wins the collision against the Vigil/St.
-    // Christina — per direct instruction, a Semiduplex feast on an
-    // ordinary Sunday transfers rather than being commemorated in place.
-    expect(day.commemorations.map((c) => (c.kind === 'sanctoral' ? c.id : null)).sort()).toEqual([
-      'st-christina',
-      'vigil-of-st-james',
-    ]);
+    expect(day.winner).toMatchObject({ id: 'vigil-of-st-james', rank: 'vigil' });
+    expect(day.commemorations.map((c) => (c.kind === 'sanctoral' ? c.id : null))).toEqual(['st-christina']);
   });
 
-  it("St. Camillus de Lellis (Divino Afflatu's own occupant of this MM-DD slot, added alongside Ss. Symphorosa and Her Seven Sons; his canonization postdates ~1600 so his source Duplex rank is deflated one tier to semiduplex per this project's design notes) still wins outright over their Simplex, commemorating them instead", () => {
+  it('Ss. Symphorosa and Her Seven Sons win their own day outright, alone since Camillus de Lellis left the calendar', () => {
     const day = resolveDay('2028-07-18'); // a Tuesday, no Sunday collision
     expect(day.winner).toEqual({
       kind: 'sanctoral',
-      id: 'st-camillus-de-lellis',
-      name: 'St. Camillus de Lellis, Confessor',
-      nameLa: 'Sanctus Camillus de Lellis, Confessor',
-      rank: 'semiduplex',
+      id: 'ss-symphorosa-and-seven-sons',
+      name: 'Ss. Symphorosa and Her Seven Sons, Martyrs',
+      nameLa: 'Sancta Symphorosa et Septem Filii Ejus, Martyres',
+      rank: 'simplex',
     });
-    expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'ss-symphorosa-and-seven-sons', name: 'Ss. Symphorosa and Her Seven Sons, Martyrs', nameLa: 'Sancta Symphorosa et Septem Filii Ejus, Martyres', rank: 'simplex' },
-    ]);
+    expect(day.commemorations).toEqual([]);
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 

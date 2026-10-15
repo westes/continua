@@ -22,7 +22,7 @@ const FEASTS: {
   collect: string;
 }[] = [
   {
-    id: 'mediatrix-of-all-graces', date: '2027-10-01', commemorated: 'st-remigius', label: 'Mediatrix of All Graces',
+    id: 'mediatrix-of-all-graces', date: '2027-10-01', label: 'Mediatrix of All Graces',
     eve: '2027-09-30', vespersDate: '2027-09-30', vespersPsalms: [109, 112, 121, 126], collect: 'noster apud Patrem mediátor',
   },
   {
@@ -36,10 +36,6 @@ const FEASTS: {
   {
     id: 'our-lady-help-of-christians', date: '2025-05-24', label: 'Help of Christians',
     eve: '2025-05-23', vespersDate: '2025-05-23', vespersPsalms: [109, 112, 121, 126], collect: 'perpétuum auxílium',
-  },
-  {
-    id: 'most-holy-redeemer', date: '2027-10-23', label: 'Most Holy Redeemer',
-    eve: '2027-10-22', vespersDate: '2027-10-22', vespersPsalms: [109, 110, 115, 129], collect: 'Unigénitum tuum mundi Redemptorem',
   },
 ];
 
@@ -102,17 +98,6 @@ describe('Marian and devotional feasts', () => {
     expect(hymn && 'text' in hymn ? hymn.text.text.la : '').toContain('Urbs beáta Jerúsalem');
     const vespers = JSON.stringify(resolveOrdo('vespers', '2026-12-10').parts.filter((p) => p.kind === 'psalm'));
     expect(vespers).toContain('Propter domum');
-  });
-
-  it('Redeemer: no Lauds or Vespers responsory, by design, and the three hymns end in the Nativity doxology', () => {
-    // Lauds that day, Vespers the evening before (its own First Vespers: the
-    // evening of Oct 23 itself is the Archangel Raphael's, equal rank, tomorrow)
-    expect(resolveOrdo('lauds', '2027-10-23').parts.some((p) => p.kind === 'responsory')).toBe(false);
-    expect(resolveOrdo('vespers', '2027-10-22').parts.some((p) => p.kind === 'responsory')).toBe(false);
-    for (const [hour, date] of [['matins', '2027-10-23'], ['lauds', '2027-10-23'], ['vespers', '2027-10-22']] as const) {
-      const hymn = resolveOrdo(hour, date).parts.find((p) => p.kind === 'hymn');
-      expect(hymn && 'text' in hymn ? hymn.text.text.la : '').toContain('Qui natus es de Vírgine');
-    }
   });
 
   it('Mediatrix, Oct 1 2026: the Guardian Angels (equal rank, tomorrow) take the evening and Mediatrix is commemorated', () => {

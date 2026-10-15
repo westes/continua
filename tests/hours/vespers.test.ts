@@ -412,13 +412,11 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(psalmNumbers).toEqual([129, 130, 131, 132]);
   });
 
-  it("uses Common-of-Several-Martyrs' real office bundle on a Simplex saint's own day (Ss. Faustinus and Jovita)", () => {
+  it("uses Common-of-Several-Martyrs' real office bundle on a Simplex saint's own day (Ss. Ursula and Companions)", () => {
     // Bundle eligibility is rank-agnostic (lookupPart). Live-verified
     // against Divinum Officium (Monastic Tridentinum 1617) votive=C3 -- see
-    // vespers-hymn-common-of-several-martyrs.yml's header. Ss. Placid
-    // (Oct 5, Simplex) no longer shows it: St. Bruno's first Vespers
-    // takes the evening.
-    const ordo = resolveOrdo('vespers', '2026-02-16');
+    // vespers-hymn-common-of-several-martyrs.yml's header.
+    const ordo = resolveOrdo('vespers', '2026-10-21');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
     expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Wis 3:1-3');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');
@@ -429,28 +427,6 @@ describe('resolveOrdo("vespers", ...)', () => {
         expect(part.text.status.en).toBe('verified');
       }
     }
-  });
-
-  it("no longer gives St. Ubald First Vespers now that Ascension's own octave is modeled", () => {
-    // Historically (live-verified against Divinum Officium, Monastic
-    // Tridentinum 1617, votive=C4) St. Ubald (May 16, Semiduplex,
-    // common-of-a-confessor-bishop) claims First Vespers over May 15's
-    // own evening -- a real Order-III-octave permissiveness this app's
-    // own `ascension.yml` (added 2026-08-26) doesn't reproduce: its
-    // `octave.wins: duplex` is deliberately borrowed from Pentecost's own
-    // (Order I) threshold rather than modeled per privilege-order, a
-    // known, accepted conflict with this specific live-verified case
-    // (see ascension.yml's own comment). Semiduplex Ubald now loses to
-    // the octave outright on his own day (May 16), so May 15's evening is
-    // just St. John Baptist de la Salle's (Duplex, wins May 15 itself
-    // outright) own kept Second Vespers -- his own Common-of-a-Confessor
-    // (not Bishop) bundle, not Ubald's Confessor-Bishop one -- with
-    // Ascension's octave merely commemorated alongside him.
-    const ordo = resolveOrdo('vespers', '2026-05-15');
-    const chapter = ordo.parts.find((p) => p.kind === 'chapter');
-    expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Sir 31:8-9');
-    const hymn = ordo.parts.find((p) => p.kind === 'hymn');
-    expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Iste Conféssor Dómini sacrátus');
   });
 
   it("uses St. Joseph's own real proper office bundle on his First Vespers, not common-of-a-confessor's generic one", () => {
@@ -478,11 +454,11 @@ describe('resolveOrdo("vespers", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Iste Conféssor Dómini sacrátus');
   });
 
-  it("uses common-of-a-virgin(-martyr)'s real office bundle for St. Praxedes's First Vespers, not the ferial default", () => {
-    // St. Praxedes (Jul 21, Simplex, plain common-of-a-virgin -- see
-    // lauds-capitulum-common-of-a-virgin.yml's header) claims First
-    // Vespers over Jul 20's own evening.
-    const ordo = resolveOrdo('vespers', '2026-07-20');
+  it("uses common-of-a-virgin(-martyr)'s real office bundle for St. Margaret Mary Alacoque's First Vespers, not the ferial default", () => {
+    // St. Margaret Mary Alacoque (Oct 17, Semiduplex, plain
+    // common-of-a-virgin -- see lauds-capitulum-common-of-a-virgin.yml's
+    // header) claims First Vespers over Oct 16's own evening.
+    const ordo = resolveOrdo('vespers', '2026-10-16');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
     expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('2 Cor 10:17-18');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');

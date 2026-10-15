@@ -58,45 +58,24 @@ describe('April sanctoral pull (first pass)', () => {
       rank: 'duplex-2-classis',
       transferredFrom: '2030-04-25',
     });
-    // St. Robert, native to this day, is demoted to a commemoration
-    // rather than winning or being skipped past.
-    expect(landing.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-robert')).toBe(true);
+    // St. Catherine of Siena (Simplex), native to this day, is demoted to
+    // a commemoration rather than winning or being skipped past.
+    expect(landing.commemorations.some((c) => c.kind === 'sanctoral' && c.id === 'st-catherine-of-siena')).toBe(true);
   });
 
-  it('St. Robert beats St. Catherine of Siena on their shared monastic-calendar date', () => {
+  it('St. Catherine of Siena wins her own day outright, now that Robert and the Cluny abbots are off the calendar', () => {
     const day = resolveDay('2043-04-29');
-    expect(day.winner).toEqual({ kind: 'sanctoral', id: 'st-robert', name: 'St. Robert, Abbot', nameLa: 'Sanctus Robertus, Abbas', rank: 'duplex' });
-    expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-catherine-of-siena', name: 'St. Catherine of Siena, Virgin', nameLa: 'Sancta Catharina Senensis, Virgo', rank: 'simplex' },
-      { kind: 'sanctoral', id: 'ss-odo-maiolus-odilo-and-hugh-of-cluny', name: 'Ss. Odo, Maiolus, Odilo, and Hugh, Abbots', nameLa: 'Sancti Odo, Maiolus, Odilo et Hugo, Abbates', rank: 'duplex' },
-    ]);
+    expect(day.winner).toEqual({ kind: 'sanctoral', id: 'st-catherine-of-siena', name: 'St. Catherine of Siena, Virgin', nameLa: 'Sancta Catharina Senensis, Virgo', rank: 'simplex' });
+    expect(day.commemorations).toEqual([]);
   });
 
-  it('an ordinary Eastertide Sunday (not Easter Day, not within its Octave) still lets St. Robert (plain Duplex) win outright, same as any weekday', () => {
-    // 2029: Apr 29 is an ordinary (not privileged) Sunday in Eastertide —
-    // live-verified 2026-09-01 (`eastertide`'s own `bySeason` entry, see
-    // data/calendar/temporal-categories.yml): "S. Roberti Abbatis ~
-    // Duplex" wins outright there, same as data/calendar/temporal-
+  it('an ordinary Eastertide Sunday (not Easter Day, not within its Octave) still lets a plain Duplex saint (St. Athanasius) win outright, same as any weekday', () => {
+    // 2027: May 2 is an ordinary (not privileged) Sunday in Eastertide —
+    // "Duplex" wins outright there, same as data/calendar/temporal-
     // categories.yml's `ordinary-sunday` rule for any other season, with
-    // the Sunday itself only noted as a `Scriptura` line, not primary.
-    const sunday = resolveDay('2029-04-29');
-    expect(sunday.winner).toEqual({ kind: 'sanctoral', id: 'st-robert', name: 'St. Robert, Abbot', nameLa: 'Sanctus Robertus, Abbas', rank: 'duplex' });
-    expect(sunday.commemorations).toEqual([
-      { kind: 'temporal', id: 'easter-5' },
-      { kind: 'sanctoral', id: 'st-catherine-of-siena', name: 'St. Catherine of Siena, Virgin', nameLa: 'Sancta Catharina Senensis, Virgo', rank: 'simplex' },
-      { kind: 'sanctoral', id: 'ss-odo-maiolus-odilo-and-hugh-of-cluny', name: 'Ss. Odo, Maiolus, Odilo, and Hugh, Abbots', nameLa: 'Sancti Odo, Maiolus, Odilo et Hugo, Abbates', rank: 'duplex' },
-    ]);
-
-    // Apr 30 resolves St. Peter Martyr cleanly on his own day — no
-    // transferred-Robert collision, since Robert already won on the 29th.
-    const monday = resolveDay('2029-04-30');
-    expect(monday.winner).toEqual({
-      kind: 'sanctoral',
-      id: 'st-peter-martyr',
-      name: 'St. Peter Martyr, Martyr',
-      nameLa: 'Sanctus Petrus Martyr, Martyr',
-      rank: 'semiduplex',
-    });
-    expect(monday.commemorations).toEqual([]);
+    // the Sunday itself only noted as a commemoration, not primary.
+    const sunday = resolveDay('2027-05-02');
+    expect(sunday.winner).toEqual({ kind: 'sanctoral', id: 'st-athanasius', name: 'St. Athanasius, Bishop, Confessor and Doctor of the Church', nameLa: 'Sanctus Athanasius, Episcopus, Confessor et Ecclesiæ Doctor', rank: 'duplex' });
+    expect(sunday.commemorations).toEqual([{ kind: 'temporal', id: 'easter-6' }]);
   });
 });

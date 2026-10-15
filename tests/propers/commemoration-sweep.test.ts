@@ -105,7 +105,7 @@ describe('sanctoral commemoration bundles (bulk 2026-08 sweep)', () => {
 // `propers: null` saint per category, end to end through resolveOrdo.
 describe('Common-category commemoration antiphon fallback (propers: null saints, 2026-09 fix)', () => {
   const cases: Array<[string, string, string]> = [
-    ['2026-09-05', 'Lawrence Justinian', 'common-of-a-confessor-bishop'], // the reported bug
+    ['2026-11-16', 'Gregory Thaumaturgus', 'common-of-a-confessor-bishop'],
     ['2027-03-06', 'Perpetua', 'common-of-several-women-martyrs'],
     ['2026-08-05', 'Our Lady of the Snows', 'common-of-the-bvm'],
     // No `common-of-a-dedication` case: the Lateran Dedication (Nov 9,
@@ -117,7 +117,6 @@ describe('Common-category commemoration antiphon fallback (propers: null saints,
     // calendar/vespers.ts's keepsOwnSecondVespers), so this Common's
     // commemoration-antiphon fallback has no real calendar date to exercise
     // it through resolveOrdo any more.
-    ['2026-11-18', 'Ss. Peter and Paul', 'common-of-an-apostle'],
   ];
 
   it.each(cases)('Vespers on %s (%s, %s) commemorates with a real antiphon, not a bare collect', (date, nameFragment) => {

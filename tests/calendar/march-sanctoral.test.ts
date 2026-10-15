@@ -13,7 +13,7 @@ describe('March sanctoral pull (first pass)', () => {
       id: 'st-joseph',
       name: 'St. Joseph, Spouse of the Blessed Virgin Mary, Confessor',
       nameLa: 'Sanctus Josephus, Sponsus Beatæ Mariæ Virginis, Confessor',
-      rank: 'duplex',
+      rank: 'duplex-majus',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
   });

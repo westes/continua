@@ -21,18 +21,18 @@ describe('Marian Saturday (applyMarianSaturday)', () => {
   });
 
   it('wins over a Simplex saint, who is commemorated instead of winning outright', () => {
-    const day = resolveDay('2026-06-20'); // St. Silverius, Pope and Martyr, Simplex
+    const day = resolveDay('2026-02-14'); // St. Valentine, Priest and Martyr, Simplex
     expect(day.winner).toEqual({ kind: 'temporal', id: 'marian-saturday' });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-silverius', name: 'St. Silverius, Pope and Martyr', nameLa: 'Sanctus Silverius, Papa et Martyr', rank: 'simplex' },
+      { kind: 'sanctoral', id: 'st-valentine', name: 'St. Valentine, Priest and Martyr', nameLa: 'Sanctus Valentinus, Presbyter et Martyr', rank: 'simplex' },
     ]);
   });
 
   it('loses to a Vigil, which keeps forcing its own primacy on a Saturday same as any other day -- Marian Saturday does not apply', () => {
-    // 2025-11-29: Vigil of St. Andrew collides with St. Saturninus
+    // 2025-11-29: Vigil of St. Andrew collides with St. Gelasius I
     // (Simplex) via calendar/collision.ts (Vigil outranks Simplex there)
     // before Marian Saturday even gets a look-in -- Vigil wins outright,
-    // Saturninus is commemorated as the collision's loser, not by Marian
+    // Gelasius is commemorated as the collision's loser, not by Marian
     // Saturday's own demotion rule.
     const day = resolveDay('2025-11-29');
     expect(day.winner).toEqual({
@@ -43,7 +43,6 @@ describe('Marian Saturday (applyMarianSaturday)', () => {
       rank: 'vigil',
     });
     expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'st-saturninus', name: 'St. Saturninus, Martyr', nameLa: 'Sanctus Saturninus, Martyr', rank: 'simplex' },
       { kind: 'sanctoral', id: 'st-gelasius-i', name: 'St. Gelasius I, Pope and Confessor', nameLa: 'Sanctus Gelásius I, Papa et Confessor', rank: 'simplex' },
     ]);
   });

@@ -124,18 +124,18 @@ describe('Lent ordinary ferias: per-hour collect resolution (real dates, 2027)',
     expect(terce.text.en).toBe(lauds.text.en);
   });
 
-  it('a real saint below the ordinary-feria threshold still wins outright inside Lent (St. Lucius I, Simplex, 2027-03-04)', () => {
+  it('a real saint below the ordinary-feria threshold still wins outright inside Lent (St. Frances of Rome, Simplex, 2027-03-09)', () => {
     // The concrete evidence behind calendar/types.ts's tier verification:
     // Lent's own ordinary ferias have no rank floor at all, unlike
     // Christmastide's privileged-feria-minor -- confirmed here inside the
     // app itself, not just against the reference engine directly.
-    const day = resolveDay('2027-03-04');
+    const day = resolveDay('2027-03-09');
     expect(day.temporalCategory).toBe('ordinary-feria');
     expect(day.winner).toEqual({
       kind: 'sanctoral',
-      id: 'st-lucius-i',
-      name: 'St. Lucius I, Pope and Martyr',
-      nameLa: 'Sanctus Lucius I, Papa et Martyr',
+      id: 'st-frances-of-rome',
+      name: 'St. Frances of Rome, Widow',
+      nameLa: 'Sancta Francisca Romana, Vidua',
       rank: 'simplex',
     });
   });

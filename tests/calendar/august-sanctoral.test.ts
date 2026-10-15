@@ -52,9 +52,9 @@ describe('August sanctoral pull (first pass)', () => {
         nameLa: 'Sanctus Cajetanus, Confessor',
         rank: 'semiduplex',
       });
-      expect(day.commemorations).toEqual([
-        { kind: 'sanctoral', id: 'st-donatus', name: 'St. Donatus, Bishop and Martyr', nameLa: 'Sanctus Donatus, Episcopus et Martyr', rank: 'simplex' },
-      ]);
+      // Donatus is off the calendar (2026-10 thinning pass), so nothing
+      // is left to commemorate beside Cajetan.
+      expect(day.commemorations).toEqual([]);
     }
   });
 
@@ -143,9 +143,8 @@ describe('August sanctoral pull (first pass)', () => {
       nameLa: 'Sancta Rosa Limana, Virgo',
       rank: 'semiduplex',
     });
-    expect(day.commemorations).toEqual([
-      { kind: 'sanctoral', id: 'ss-felix-and-adauctus', name: 'Ss. Felix and Adauctus, Martyrs', nameLa: 'Sancti Felix et Adauctus, Martyres', rank: 'simplex' },
-    ]);
+    // Felix and Adauctus are off the calendar (2026-10 thinning pass).
+    expect(day.commemorations).toEqual([]);
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 });

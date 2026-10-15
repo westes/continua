@@ -14,7 +14,7 @@ describe('January sanctoral pull (first pass)', () => {
       id: 'st-marcellus-i',
       name: 'St. Marcellus I, Pope and Martyr',
       nameLa: 'Sanctus Marcellus I, Papa et Martyr',
-      rank: 'semiduplex',
+      rank: 'simplex',
     });
     const collect = getDayCollect(day);
     expect(collect.status.en).toBe('verified');
@@ -22,13 +22,13 @@ describe('January sanctoral pull (first pass)', () => {
   });
 
   it('a saint with no unique propers (Common of Saints only) still wins outright, and resolves via the Common', () => {
-    const day = resolveDay('2026-01-17'); // St. Anthony Abbot
+    const day = resolveDay('2029-01-26'); // St. Polycarp
     expect(day.winner).toEqual({
       kind: 'sanctoral',
-      id: 'st-anthony-abbot',
-      name: 'St. Anthony, Abbot',
-      nameLa: 'Sanctus Antonius, Abbas',
-      rank: 'duplex',
+      id: 'st-polycarp',
+      name: 'St. Polycarp, Bishop and Martyr',
+      nameLa: 'Sanctus Polycarpus, Episcopus et Martyr',
+      rank: 'semiduplex',
     });
     const collect = getDayCollect(day);
     expect(collect.status.en).toBe('verified');

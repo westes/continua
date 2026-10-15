@@ -121,13 +121,12 @@ describe('First/Second Vespers psalmody the engine renders', () => {
 });
 
 describe('Paschaltide Alleluia on saints and Commons (engine rule: antiphons, versicle, short responsory)', () => {
-  it('St. Peter Celestine (May 19, Paschaltide): antiphon, versicle and responsory carry the Alleluia', () => {
-    const j = text('vespers', '2026-05-19');
+  it('St. Robert Bellarmine (May 12, Paschaltide): antiphon, versicle and responsory carry the Alleluia', () => {
+    const j = text('vespers', '2026-05-12');
     expect(j).toContain('iustus, allelúja.');
-    expect(partText('vespers', '2026-05-19', 'versicle')).toContain('per vias rectas, allelúja.');
-    expect(partText('vespers', '2026-05-19', 'versicle')).toContain('regnum Dei, allelúja.');
-    expect(partText('vespers', '2026-05-19', 'responsory')).toContain('* Allelúja, allelúja.');
-    expect(partText('lauds', '2026-05-19', 'responsory')).toContain('Amávit eum Dóminus, et ornávit eum, * Allelúja, allelúja.');
+    expect(partText('vespers', '2026-05-12', 'versicle')).toContain('Amávit eum Dóminus, et ornávit eum, allelúja.');
+    expect(partText('vespers', '2026-05-12', 'versicle')).toContain('Stolam glóriæ índuit eum, allelúja.');
+    expect(partText('vespers', '2026-05-12', 'responsory')).toContain('* Allelúja, allelúja.');
   });
 
   it('outside Paschaltide the same texts stay plain', () => {
