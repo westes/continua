@@ -8970,6 +8970,11 @@ St. Francis of Paola.
   Ss. Peter and Paul ("Aurea luce") are already the older texts; the engine's other differences there were
   my misreading of which tag was which. Mary Magdalene's SanctiM/07-22b `[HymnusM Vespera]` ("Lauda mater
   Ecclesia") belongs to a different calendar, not the 1617 one.
-- Not hymns of two recensions but proper hymns the app lacks (it falls to the Common): the Commemoration of
-  St. Paul's Vespers/Matins ("Doctor egregie Paule"), and a number of saints' own hymns (St. Anselm, St.
-  Bernard, St. Catherine of Siena, St. Gabriel, St. Raphael, St. John Cantius). Not authored here.
+- Proper hymns the app lacked (it fell to the Common): found by comparing the engine's Monastic 1617 hymn
+  at Matins, Lauds and Vespers for every calendar saint with the reference's unconditional sections. An
+  earlier version of this note also named St. Anselm, St. Bernard, St. Catherine of Siena, St. Gabriel, St.
+  Raphael and St. John Cantius; that came from a first pass that did not honour `(nisi rubrica 1617)`
+  conditions and the 1617 kalendar's own file choices, and the engine's output shows the Common is right
+  for them. The real gaps were four Matins hymns, now authored: the Commemoration of St. Paul ("Doctor
+  egregie Paule"), St. Peter's Chains and the Chair at Rome ("Quodcumque vinclis ..." / "Quodcumque in
+  orbe ..."), and St. Benedict ("Quidquid antiqui cecinere vates"). English is the reference's own.
