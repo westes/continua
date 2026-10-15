@@ -1,0 +1,96 @@
+# Matins readings for the Translation of St. Benedict (Jul 11), from
+# web/www/horas/Latin/SanctiM/07-11M.txt (English/SanctiM/07-11M.txt where it exists).
+#
+# Nocturn 1 is not authored here: the bible reading plan supplies it (sanctoral feasts carry
+# no proper scripture lessons outside their Gospel). Nocturn 2: Lectio5-8, one continuous sermon of St. Bernard, combined
+# into one reading with Responsory5 (the first of the group, this store's
+# convention). Nocturn 3: the full Matt 19:27-29 pericope (same text as the
+# Transitus's own reading) then St. Bede's homily, Lectio9 (after the Gospel
+# incipit) through Lectio12 combined, with Responsory9. The reference has no
+# English for Lectio9-12, so that English is a fresh translation, marked draft.
+# The source's own attribution reads "Hom. 17 in Natali S. Benedicti Bisc."
+id: st-benedict-translation
+readings:
+  - nocturn: 2
+    isGospel: false
+    source: "St. Bernard, Abbot, Sermon on the Birthday of St. Benedict"
+    text:
+      la: |
+        Gloriósi Patris nostri Benedícti dulcíssimum nomen cum omni vobis jucunditáte amplecténdum est et honorándum; quoniam ipse Dux noster, ipse Magíster et Légifer noster est. Refíciat vos sánctitas ejus, justítia ejus, píetas ejus. Arbor fuit beátus Benedíctus, grandis atque fructífera, tanquam lignum, quod plantátum est secus decúrsus aquárum. Sic fuit plantátus secus decúrsus aquárum, quóniam fructum suum dedit in témpore suo. De fructu ejus sunt illi tria, quæ supérius tétigi: sánctitas ejus, justítia ejus, píetas ejus. Sanctitátem mirácula probant, doctrína pietátem, vita justítiam.
+
+        Sed quómodo tibi appóno ejus mirácula? Numquid ut mirácula fácere velis? Nequáquam: sed ut miráculis ejus innitáris, vidélicet ut confídas et gáudeas, quod sub tali pósitus es pastóre, quod tantum meruísti habére Patrónum. Omníno enim valde potens est in cælis, qui tam potens éxstitit in terris: secúndum magnitúdinem grátiæ, magnitúdine glóriæ exaltátus. Nam et juxta radícum quantitátem rami prodíre noscúntur et quot radícibus arbor innítur, tot ramis, sicut ajunt, decorátur. Sic ergo, licet non habeámus nostra, consolátio magna nobis esse debent Patróni nostri mirácula.
+
+        Doctrína vero ínstruit nos, et dírigit gressus nostros in viam pacis. Porto vitæ justítia omníno róborat et ánimat nos, ut tanto magis accendámur ad agénda quæ dócuit, quanto certi sumus, eum non ália docuísse quam fécerit. Sermo quidem vivus et efficax exémplum óperis est, plúrimum fáciens suadíbile quod dícitur, dum monstrat factíbile quod suadétur. In hunc ergo modum sánctitas confórtat, píetas infórmat, justítia confírmat.  Quantæ enim pietátis fuit, quod non solum præséntibus prófuit, sed et pro futúris sollícitus fuit? Non solum his, qui tunc errant, fructum tulit hæc arbor, sed usque hódie fructus ejus et manet et crescit.
+
+        Diléctus plane Deo et homínibus, cujus non sola præséntia in benedictióne fuit, sicut sunt multi dilécti Deo soli, quia soli Deo jam cógniti: sed et memória ejus étiam nunc in benedictióne est. Nam et usque hódie in tríplicem amóris Dómini confessiónem, tríplici hoc fructu pascit Dómini gregem. Pascit vita, pascit doctrína, pascit et intercessióne. Per quem incessánter adjúti, fructificáte et vos, caríssimi, quóniam in hoc pósiti estis, ut eatis et fructum afferátis.
+      en: |
+        The most sweet name of our glorious Father, Benedict, ought to be embraced and honored by you with every sign of joy because he is your leader, your master, and your lawgiver. Let his sanctity, his piety, his justice refresh you. The blessed Benedict was a great and fruitful tree, like a tree which is planted near the running waters. He was so planted near the running waters that he brought forth his fruit in due season. To his fruit belong the three things whereof I have made mention above: his sanctity, his justice, his piety. Miracles prove his sanctity; his teaching, his piety; his life, his justice.
+
+        But why am I to propose his miracles to you? In order that you may want to perform miracles? By no means! But that you may lean on his miracles for support. In other words, that you may be confident and glad because you have merited such a great protector. For most certainly he who was so great and powerful on earth is very powerful in heaven, being exalted to a greatness of glory corresponding to the magnitude of his grace. For the branches are known to shoot forth according to the size of the roots, and with as many roots as the tree is supported, with so many branches, as they say, is it adorned. Thus, then, though we may not have the power to perform miracles, the miracles of our patron should be a great consolation to us.
+
+        His teaching, too, instructs us and guides our steps to the path of peace. Further, the justice of his life in every way strengthens and vivifies us, so that we are so much the more enkindled to do the things he has taught us as we are assured that he has not taught us otherwise than he acted. The example of his work is, indeed, a living and effective sermon, making what is said very pleasing to hear in that it shows that what is urged can be done. Consequently, in this manner his sanctity consoles us; his piety enlightens us; his justice strengthens us. Of what great piety was he that he not only benefited those present to him, but was also solicitous for those to come? Not only for those who lived then did this tree produce its fruit, but even today its fruit multiplies and remains.
+
+        Surely beloved of God and men is he whose presence was not only in benediction (for there are many who are beloved of God alone because they are now known to God alone), but his memory also is even now in benediction. For even until this day, as a threefold confession of his love for his Lord, he feeds the flock of the Lord with this three-fold fruit. He feeds it by his life; he feeds it by his teaching; he feeds it through his intercession. Being unceasingly aided by him, do you also, dearest brethren, bear fruit, because for this have you been appointed, “that you should go and bring forth fruit.”
+    responsory:
+      la: |
+        R. In aqua ex petra prodúcta, Moyses; in ferro vero, quod ex profúndo atque rédiit, Elisǽus; † in aquæ itínere, Petrus; in corvi obediéntia, Elías;
+        * In luctu autem mortis inimíci, David exhibétur.
+        V. Vir iste spíritu ómnium justórum plenus fuit.
+        R. In luctu autem mortis inimíci, David exhibétur.
+      en: |
+        R. In making the rock to yield forth water, Moses; in the iron, which came from the bottom of the lake, Eliseus; in the walking upon the water, Peter; in the obedience of the crow, Elias;
+        * In lamenting the death of his enemy, David is brought forth.
+        V. This one man was full of the spirit of all good men.
+        R. In lamenting the death of his enemy, David is brought forth.
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: true
+    citation: { la: "Matt 19:27-29", en: "Matt 19:27-29" }
+    text:
+      la: >-
+        In illo témpore: Dixit Petrus ad Jesum: Ecce, nos relíquimus ómnia, et secúti sumus te:
+        quid ergo erit nobis? Jesus autem dixit illis: Amen, dico vobis, quod vos, qui secúti
+        estis me, in regeneratióne, cum séderit Fílius hóminis in sede majestátis suæ, sedébitis
+        et vos super sedes duódecim, judicántes duódecim tribus Israël. Et omnis, qui relíquerit
+        domum, vel fratres, aut soróres, aut patrem, aut matrem, aut uxórem, aut fílios, aut
+        agros, propter nomen meum, céntuplum accípiet, et vitam ætérnam possidébit.
+      en: >-
+        At that time, Peter said to Jesus, "Behold, we have left all and followed You; what then
+        shall we have?" And Jesus said to them, "Amen I say to you that you who have followed
+        Me, in the regeneration when the Son of Man shall sit on the throne of His glory, shall
+        also sit on twelve thrones, judging the twelve tribes of Israel. And everyone who has
+        left house, or brothers, or sisters, or father, or mother, or wife, or children, or
+        lands, for My name's sake, shall receive a hundredfold, and shall possess life
+        everlasting."
+    status: { la: verified, en: verified }
+
+  - nocturn: 3
+    isGospel: false
+    source: "St. Bede the Venerable, Homily 17 on the Birthday of St. Benedict (Biscop)"
+    text:
+      la: |
+        Duo sunt órdines electórum in judício futúri : unus judicántium cum Dómino, de quibus hoc loco mémorat, qui reliquérunt ómnia, et secúti sunt illum: álius judicatórum a Dómino qui non quidem ómnia sua páriter reliquérunt, sed de his tamen quæ habébant, quotidiánas dare eleemósynas Christi paupéribus curábant; unde et auditúri sunt in judício : Veníte, benedícti Patris mei, possidéte præparátum vobis regnum a constitutióne mundi; esurívi enim, et dedístis mihi manducáre: sitívi, et dedístis mihi bíbere, et cétera, quorum et in superióribus hujus lectiónis Dóminus méminit, cum, príncipe quodam interrogánte, quid boni faciéndo vitam possidéret ætérnam: Si vis, inquit, ad vitam íngredi, serva mandáta. Ergo qui mandáta Dómini servat, ad vitam ingréditur ætérnam: qui autem etiam consílium Dómini, non tantum vitam ipse percípiet, sed etiam de vita aliórum cum Dómino judicábit.
+        Sed et reprobérum duos ibi futúros órdines Dómino narránte comperímus: unum eorum qui fidei christiánæ mystériis initiáte ópera fidei exercére contémnunt, quibus in judício testátur: Discédite a me maledícti in ignem ætérnum, qui præparátus est diábolo et ángelis ejus; esurívi enim, et non dedístis mihi manducáre. Alterum eórum, qui fidem et mystéria Christi vel nunquam suscepére, vel suscéptam per apostasíam deseruére, de quibus dicit: Qui autem non credit, jam judicátus est, quia non credit in nómine unigéniti Fílii Dei.
+        Verum his cure timóre et pavóre débite paulísper commemorátis, ad lætíssima pótius Dómini et Salvatòris nostri promíssa convertámus audítum. Videámus quæ tantæ gratim pietátis, non ætérnæ tantúmmodo vitæ prǽmia suis sequácibus, sed et præséntis múnera pollicétur exímia. Et omnis, inquit, qui relíquerit domum, vel fratres, aut soróres, aut patrem, aut matrem, aut uxórem, aut fílios, aut agros propter nomen meum ; céntuplum accípiet et vitam ætérnam possidébit.
+        Qui enim terrénis afféctibus sive possessiónibus pro Christi discipulátu renunciáverit, quo plus in ejus amórem profécerit, eo plures invéniet, qui se intérno suscípere afféctu, et suis gáudeant sustentáre substántiis: ejus nimírum professiónibus vitǽque consórtes, qui se pro Christo páuperem factum in suis dómibus agrísque recípere, et majóre prorsus quam uxor, parens, frater, aut fílius carnális devotióne caritátis refovére delecténtur.
+      en: |
+        There are two orders of the elect in the judgment to come: one of those who judge with the Lord, of whom he here makes mention, who have left all things and followed him; the other of those who are judged by the Lord, who did not indeed leave all their possessions at once, yet took care to give daily alms to Christ's poor out of what they had; wherefore they too are to hear in the judgment: Come, ye blessed of my Father, possess the kingdom prepared for you from the foundation of the world; for I was hungry, and you gave me to eat; I was thirsty, and you gave me to drink, and the rest; which the Lord also recalled earlier in this same reading, when a certain ruler asked what good he must do to possess eternal life: If thou wilt enter into life, keep the commandments. He, then, who keeps the commandments of the Lord enters into eternal life; but he who follows also the Lord's counsel will not only receive life himself, but will also judge with the Lord concerning the life of others.
+
+        But we learn, from the Lord's own account, that there will be two orders of the reprobate there as well: one of those who, initiated into the mysteries of the Christian faith, disdain to practise the works of faith, to whom he testifies in the judgment: Depart from me, ye cursed, into everlasting fire, which was prepared for the devil and his angels; for I was hungry, and you gave me not to eat. The other, of those who either never received the faith and the mysteries of Christ, or, having received them, abandoned them by apostasy, of whom he says: He that believeth not is already judged, because he believeth not in the name of the only-begotten Son of God.
+
+        But having briefly recalled these things with due fear and trembling, let us turn our hearing rather to the most joyful promises of our Lord and Saviour. Let us see what rewards, not of eternal life only but of present gifts as well, so great a kindness promises to its followers. And every one, he says, that hath left house, or brethren, or sisters, or father, or mother, or wife, or children, or lands, for my name's sake, shall receive an hundredfold, and shall possess life everlasting.
+
+        For whoever has renounced earthly affections or possessions for the discipleship of Christ, the more he has advanced in love of him, the more he will find who will receive him with inward affection and be glad to sustain him from their substance: partakers, that is, in his profession and his life, who delight to take him in, made poor for Christ's sake, into their houses and fields, and to cherish him with a charity of devotion greater than that of a wife, a parent, a brother, or a son according to the flesh.
+    responsory:
+      la: |
+        R. Quemádmodum Elías, cǽlitus imbres, o Pater, deduxísti oleúmque celériter efflúere fecísti,
+        * Mórtuos suscitásti, aliáque innúmera perpetrásti mirácula.
+        V. Idcírco memóriam tuam devóta mente celebrámus, o Benedícte.
+        R. Mórtuos suscitásti, aliáque innúmera perpetrásti mirácula.
+      en: |
+        R. In the same manner as Elias, you made rain come from heaven, O Father, you led oil to flow quickly
+        * You restored the dead to life and performed innumerable other miracles.
+        V. For that reason we celebrate your memory with devoted minds, O Benedict.
+        R. You restored the dead to life and performed innumerable other miracles.
+    status: { la: verified, en: draft }

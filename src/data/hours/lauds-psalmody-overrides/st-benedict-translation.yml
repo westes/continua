@@ -1,0 +1,27 @@
+# Own [Ant Laudes] of SanctiM/07-11M.txt (five antiphons, one per line, in order:
+# psalms 92, 99, 62 then the canticle then Laudate) -- the same 5-line layout
+# as St. Benedict's March file. The reference has no English for them, so the
+# English is a fresh translation. See the matching Vespers/minor-hours files.
+id: st-benedict-translation
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Vir Dei Benedictus * signum crucis edidit, et vas pestiferi potus ita confractum est, ac si pro signo lapidem dedisset."
+      en: "The man of God, Benedict, * made the sign of the cross, and the vessel of the poisoned drink was so shattered as if he had given it a stone instead of the sign."
+  - psalms: [99]
+    antiphon:
+      la: "Completa oratione, * tres petras in loco posuit; et omnipotens Deus in montis excelsa rupe aquam produxit."
+      en: "When his prayer was ended, * he set three stones in the place; and almighty God brought forth water on the high rock of the mountain."
+  - psalms: [62]
+    antiphon:
+      la: "Gloriosus * Confessor Domini, orationem faciens, benedictionem dedit; et lapis, super quem antiquus hostis sedebat, subito levatus est."
+      en: "The glorious * Confessor of the Lord, making prayer, gave his blessing; and the stone upon which the ancient enemy sat was suddenly lifted up."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Regrediente anima, * corpusculum pueri contremuit, et sub oculis omnium, qui aderant, vivus apparuit."
+    en: "As the soul returned, * the little body of the boy trembled, and before the eyes of all who were present he appeared alive."
+laudate:
+  antiphon:
+    la: "Cum Placidus * ex aqua traheretur, vidit super caput suum Abbatis melotem, qui eum ab unda reducebat."
+    en: "When Placid * was being drawn out of the water, he saw above his head the abbot's cloak, which was bringing him back from the wave."

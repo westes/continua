@@ -1,0 +1,92 @@
+# Own [Ant Matutinum] of SanctiM/07-11M.txt: twelve numbered antiphons on psalms
+# 1/2/4/5/8/10 (Nocturn 1) and 14/20/23/95/96/97 (Nocturn 2), then one antiphon for
+# the three Nocturn 3 canticles. English from English/SanctiM/07-11M.txt.
+# Versicles are the Common of a Confessor's ([Nocturn N Versum] in SanctiM/03-21.txt is "@Commune/C4:Versum N").
+# Canticles are the Common of a Confessor's (the source numbers them 256-258).
+id: st-benedict-translation
+nocturn1:
+  groups:
+    - psalms: [1]
+      antiphon:
+        la: "Vir Dei * frátribus dixit: † Caute vos ágite, quia ad vos malígnus spíritus venit."
+        en: "The man of God said to his brethren: Beware for the evil spirit is coming against you."
+    - psalms: [2]
+      antiphon:
+        la: "Vix, qui mandátum * detúlerat, verba compléverat, † et páries córruens puérulum oppréssit, et ruína contrívit."
+        en: "He who had given the warning had hardly finished speaking the words when the wall of the house fell, crushed the little boy, and was left as ruins."
+    - psalms: [4]
+      antiphon:
+        la: "Tunc cellam clausit, * et oratióni instántius quam solébat, incúbuit."
+        en: "Then he shut the door of his cell and, even more fervently than was his wont, prostrated himself in prayer."
+    - psalms: [5]
+      antiphon:
+        la: "Mira res! * Eádem hora puérulum incólumem atque ut prius valéntem ad labórem remísit."
+        en: "O wonder, from the hour he restored the boy to health, more fit for work than he was before."
+    - psalms: [8]
+      antiphon:
+        la: "Omnipoténtis * Dei fámulus, preces Jesu Christo Dómino fundens, † antíquum hostem de obsésso hómine prótinus éxpulit."
+        en: "The servant of Almighty God, pouring forth his prayer to the Lord Jesus Christ, vanished the ancient enemy from the possessed man."
+    - psalms: [10]
+      antiphon:
+        la: "Imprévit Deus, * quod fidéli fámulo Benedícto promíserat, † ut ánimas custodíret."
+        en: "God accomplished that which he had promised to his faithful servant Benedict, that he might guard souls."
+  versicle:
+    v:
+      la: "Amávit eum Dóminus, et ornávit eum."
+      en: "The Lord loved him and beautified him."
+    r:
+      la: "Stolam glóriæ índuit eum."
+      en: "He clothed him with a robe of glory."
+nocturn2:
+  groups:
+    - psalms: [14]
+      antiphon:
+        la: "Venerábilis * Benedíctus dixit: † Signa cor tuum, frater, signa cor tuum."
+        en: "Venerable Benedict said: Make the sign of the cross, brother, make the sign of the cross."
+    - psalms: [20]
+      antiphon:
+        la: "Hódie quidem * minus est, sed die crástina abundánter habébitis."
+        en: "Today there is little indeed, but tomorrow you shall have abundance."
+    - psalms: [23]
+      antiphon:
+        la: "Et sequénti die * ducénti farínæ módii ante fores cellæ invénti sunt."
+        en: "On the following day two hundred measures of meal were found outside the storehouse door."
+    - psalms: [95]
+      antiphon:
+        la: "Tanti mériti * apud Jesum Christum iste vir fuit, † ut corpus illíus terra proíceret, qui Benedícti grátiam non habéret."
+        en: "So great was the merit of Benedict with Jesus Christ, that the earth cast forth the body of him who possessed not his favour."
+    - psalms: [96]
+      antiphon:
+        la: "Nemo * de ejus promissiónibus dubitáre potest, † qui uno eodémque moménto, pro vítreo vase pene vácuo, plenum óleo dólium réddidit."
+        en: "Noone could doubt the promises of him who on an instant produced a full cask of oil in place of an almost empty vessel."
+    - psalms: [97]
+      antiphon:
+        la: "Benedíctus * in eo specu, in quo prius inhabitávit, † nunc usque, si peténtium fides éxigat, miráculis corúscat."
+        en: "Benedict now makes the cave where first he dwelt shine forth with miracles according to the faith of those who seek him."
+  versicle:
+    v:
+      la: "Os justi meditábitur sapiéntiam."
+      en: "The mouth of the righteous speaketh wisdom."
+    r:
+      la: "Et lingua ejus loquétur judícium."
+      en: "And his tongue talketh judgment."
+nocturn3:
+  antiphon:
+    la: "Monachórum * Patriárcham collaudémus cánticis, et Patrónum celebrémus gloriósum miráculis."
+    en: "Let us praise the Patriarch of monks with songs, and celebrate our patron glorious in miracles."
+  canticles:
+    - refs:
+        - { book: sir, chapter: 14, verses: "22" }
+        - { book: sir, chapter: 15, verses: "3-4" }
+        - { book: sir, chapter: 15, verses: "6" }
+    - refs:
+        - { book: jer, chapter: 17, verses: "7-8" }
+    - refs:
+        - { book: sir, chapter: 31, verses: "8-11" }
+  versicle:
+    v:
+      la: "Lex Dei ejus in corde ipsíus."
+      en: "The law of his God is in his heart."
+    r:
+      la: "Et non supplantabúntur gressus ejus."
+      en: "None of his steps shall slide."

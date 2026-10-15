@@ -1,0 +1,17 @@
+# Inherited unchanged: SanctiM/07-11M.txt opens with "@SanctiM/03-21", so this part is
+# St. Benedict's own (copied from vespers-versicle-st-benedict-first.yml).
+# --- original header follows ---
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 03-21
+# st-benedict (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+id: vespers-versicle-st-benedict-translation-first
+text:
+  la: |
+    V. Amávit eum Dóminus, et ornávit eum.
+    R. Stolam glóriæ índuit eum.
+  en: |
+    V. The Lord loved him and beautified him.
+    R. He clothed him with a robe of glory.
+status:
+  la: verified
+  en: verified

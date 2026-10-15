@@ -1,0 +1,15 @@
+# Inherited unchanged: SanctiM/07-11M.txt opens with "@SanctiM/03-21", so this part is
+# St. Benedict's own (copied from magnificat-antiphon-st-benedict-first.yml).
+# First Vespers: SanctiM/07-11b.txt's [Ant 1] is 03-21's with s/festa/Translatiónem/ (applied
+# here); the source's own English page repeated the Latin, so the English is a fresh translation.
+# --- original header follows ---
+# Content read from the reference engine's live render (Monastic Tridentinum 1617, command=prayVespera): 03-21
+# st-benedict (saint file = second). First Vespers variant; the default (second Vespers) file is the same id
+# without "-first". See hours/resolve-common.ts's withVespersVariant.
+id: magnificat-antiphon-st-benedict-translation-first
+text:
+  la: "Exsúltet ómnium * turba fidélium pro glória almi Patris Benedícti; læténtur præcípue catérvæ monachórum, celebrántes ejus Translatiónem in terris, de cujus societáte sancti congáudent in cælis."
+  en: "Let the whole multitude of the faithful exult * for the glory of our kindly Father Benedict; let the throngs of monks especially rejoice, celebrating his Translation on earth, in whose company the saints rejoice together in heaven."
+status:
+  la: verified
+  en: draft
