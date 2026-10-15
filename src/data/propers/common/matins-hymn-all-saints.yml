@@ -1,70 +1,46 @@
-# All Saints' own Matins hymn was falling through all the way to the
-# plain Sunday/ferial default ("Nocte surgéntes vigilémus omnes") because
-# this file didn't exist -- a real content gap, not a design choice.
-#
-# Corrected 2026-09-11: an earlier version of this header claimed the
-# Monastic engine independently produces "Placáre, Christe, sérvulis" here
-# as a text genuinely distinct from Vespers' own -- that doesn't hold up.
-# Sancti/11-01.txt's own tags collapse to just two real texts total across
-# all four Matins/Vespers x secular/Monastic slots: the Monastic track
-# (`[HymnusM Matutinum]`/`[HymnusM Vespera]`) uses "Christe Redémptor
-# ómnium" at *both* hours (Matins is a pure redirect to Vespers), and only
-# the secular track uses "Placáre, Christe, sérvulis" (also at both hours,
-# same redirect). So keeping "Placáre..." here is a deliberate curatorial
-# split, not a literal reproduction of what either engine track alone
-# actually renders -- same kind of on-purpose track-mixing as this
-# project's other hymn-variant choices.
-#
-# The split is kept because the two texts read differently and each suits
-# its hour: "Placáre..." centers on judgment and pleading -- the saints
-# addressed "apud sevérum Júdicem" (before the stern Judge), begging pardon
-# with "veris reórum flétibus" (the true tears of the guilty) -- a
-# penitential, watchful register that fits Matins' traditional
-# night-vigil character. "Christe Redémptor ómnium" (vespers-hymn-all-
-# saints.yml) has no judgment imagery at all -- each rank of saints is
-# simply invoked to "make us companions of Christ" against "past, present,
-# future evils" -- the warmer, festive close-of-day register Vespers
-# calls for. English translation is the classic "O Christ, thy guilty
-# people spare" rendering D.O. reuses across both Latin recensions of
-# this hymn family; checked stanza-by-stanza against this text's own
-# imagery (the "nine circling choirs of angels", "one shepherd, one
-# fold") and it holds up, not just carried over blind.
+# All Saints' Matins hymn: the older pre-Urban VIII text, same as Vespers'
+# (vespers-hymn-all-saints.yml) -- Latin/Sancti/11-01.txt's [HymnusM Matutinum]
+# is "@Sancti/11-01:HymnusM Vespera" ("Christe Redemptor omnium"), and the
+# Monastic and 1570 versions take [HymnusM ...] over [Hymnus ...]. Until
+# 2026-10 this file kept "Placare, Christe, servulis" (the Urban VIII
+# revision) as a deliberate split from Vespers; it now follows the standing
+# preference for the older recension.
 id: matins-hymn-all-saints
 text:
   la: |
-    Placáre, Christe, sérvulis,
-    Quibus Patris cleméntiam
-    Tuæ ad tribúnal grátiæ
-    Patróna Virgo póstulat.
+    Christe Redémptor ómnium,
+    Consérva tuos fámulos,
+    Beátæ semper Vírginis
+    Placátus sanctis précibus.
 
-    Et vos beáta, per novem
-    Distíncta gyros ágmina,
-    Antíqua cum præséntibus,
-    Futúra damna péllite.
+    Beáta quoque ágmina
+    Cæléstium Spirítuum,
+    Prætérita, præséntia,
+    Futúra mala péllite.
 
-    Apóstoli cum Vátibus,
-    Apud sevérum Júdicem,
-    Veris reórum flétibus
-    Expóscite indulgéntiam.
+    Vates ætérni Júdicis,
+    Apostolíque Dómini,
+    Supplíciter expóscimus
+    Salvári vestris précibus.
 
-    Vos, purpuráti mártyres,
-    Vos candidáti prǽmio
-    Confessiónis, éxsules
-    Vocáte nos in pátriam.
+    Mártyres Dei ínclyti,
+    Confessorésque lúcidi,
+    Vestris oratiónibus
+    Nos ferte in cæléstibus.
 
-    Choréa casta vírginum,
-    Et quos erémus íncolas
-    Transmísit astris, cǽlitum
-    Locáte nos in sédibus.
+    Chorus sanctárum Vírginum,
+    Monachorúmque ómnium,
+    Simul cum Sanctis ómnibus,
+    Consórtes Christi fácite.
 
-    Auférte gentem pérfidam
+    Gentem auférte pérfidam
     Credéntium de fínibus,
-    Ut unus omnes únicum
-    Ovíle nos Pastor regat.
+    Ut Christo laudes débitas
+    Persolvámus alácriter.
 
-    Deo Patri sit glória,
-    Natóque Patris único,
-    Sancto simul Paráclito,
+    * Glória Patri ingénito,
+    Ejúsque Unigénito,
+    Una cum Sancto Spíritu,
     In sempitérna sǽcula.
     Amen.
   en: |
@@ -93,12 +69,7 @@ text:
     With hermits whom the desert waste
     Sent up of old into the sky.
 
-    Drive from the flock, O Spirit blest!
-    The false and faithless race away;
-    That all within one fold may rest,
-    Secure beneath one shepherd's sway.
-
-    To God the Father glory be,
+    * To God the Father glory be,
     And to his sole-begotten Son;
     And glory, Holy Ghost, to thee,
     While everlasting ages run.

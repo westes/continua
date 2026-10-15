@@ -1,53 +1,47 @@
-# Re-verified against Divinum Officium (Monastic Tridentinum 1617),
-# Vespers live query, 2026-11-01, clean year -- correcting a real
-# transcription bug found 2026-09-05: the Latin text here was the 1631
-# Urban VIII revision ("Christe Redémptor ómnium, Consérva tuos
-# fámulos"), but the live Monastic engine actually renders the older
-# pre-Urban VIII text, "Placáre, Christe, sérvulis" (see this project's own
-# standing preference for that older recension -- a happy coincidence
-# here, not the reason for the fix: the live engine itself settles it).
-# Same hymn, word-for-word, as Matins' own (matins-hymn-all-saints.yml,
-# corrected the same day) -- confirmed by both live renders. The English
-# translation already on file is the same classic "O Christ, thy guilty
-# people spare" rendering D.O. reuses across both Latin recensions of
-# this hymn family; kept as-is, checked against this text's own imagery
-# and it holds up.
+# All Saints' Vespers hymn, the older pre-Urban VIII text: Latin/Sancti/11-01.txt's
+# [HymnusM Vespera] ("Christe Redemptor omnium"), which the Monastic and 1570
+# versions take in place of [Hymnus Vespera] ("Placare Christe servulis", the
+# Urban VIII revision) -- see tryoldhymn in the reference's specials.pl. Both
+# the local engine's 2027-11-01 output and English/Sancti/11-01.txt's own
+# translation ("O Christ, thy guilty people spare") are of this text. An
+# earlier version of this file carried "Placare" and a header claiming the
+# reverse; the English below was always this hymn's.
 id: vespers-hymn-all-saints
 text:
   la: |
-    Placáre, Christe, sérvulis,
-    Quibus Patris cleméntiam
-    Tuæ ad tribúnal grátiæ
-    Patróna Virgo póstulat.
+    Christe Redémptor ómnium,
+    Consérva tuos fámulos,
+    Beátæ semper Vírginis
+    Placátus sanctis précibus.
 
-    Et vos beáta, per novem
-    Distíncta gyros ágmina,
-    Antíqua cum præséntibus,
-    Futúra damna péllite.
+    Beáta quoque ágmina
+    Cæléstium Spirítuum,
+    Prætérita, præséntia,
+    Futúra mala péllite.
 
-    Apóstoli cum Vátibus,
-    Apud sevérum Júdicem,
-    Veris reórum flétibus
-    Expóscite indulgéntiam.
+    Vates ætérni Júdicis,
+    Apostolíque Dómini,
+    Supplíciter expóscimus
+    Salvári vestris précibus.
 
-    Vos, purpuráti mártyres,
-    Vos candidáti prǽmio
-    Confessiónis, éxsules
-    Vocáte nos in pátriam.
+    Mártyres Dei ínclyti,
+    Confessorésque lúcidi,
+    Vestris oratiónibus
+    Nos ferte in cæléstibus.
 
-    Choréa casta vírginum,
-    Et quos erémus íncolas
-    Transmísit astris, cǽlitum
-    Locáte nos in sédibus.
+    Chorus sanctárum Vírginum,
+    Monachorúmque ómnium,
+    Simul cum Sanctis ómnibus,
+    Consórtes Christi fácite.
 
-    Auférte gentem pérfidam
+    Gentem auférte pérfidam
     Credéntium de fínibus,
-    Ut unus omnes únicum
-    Ovíle nos Pastor regat.
+    Ut Christo laudes débitas
+    Persolvámus alácriter.
 
-    * Deo Patri sit glória,
-    Natóque Patris único,
-    Sancto simul Paráclito,
+    * Glória Patri ingénito,
+    Ejúsque Unigénito,
+    Una cum Sancto Spíritu,
     In sempitérna sǽcula.
     Amen.
   en: |
