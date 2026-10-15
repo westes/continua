@@ -8970,11 +8970,20 @@ St. Francis of Paola.
   Ss. Peter and Paul ("Aurea luce") are already the older texts; the engine's other differences there were
   my misreading of which tag was which. Mary Magdalene's SanctiM/07-22b `[HymnusM Vespera]` ("Lauda mater
   Ecclesia") belongs to a different calendar, not the 1617 one.
-- Proper hymns the app lacked (it fell to the Common): found by comparing the engine's Monastic 1617 hymn
-  at Matins, Lauds and Vespers for every calendar saint with the reference's unconditional sections. An
-  earlier version of this note also named St. Anselm, St. Bernard, St. Catherine of Siena, St. Gabriel, St.
-  Raphael and St. John Cantius; that came from a first pass that did not honour `(nisi rubrica 1617)`
-  conditions and the 1617 kalendar's own file choices, and the engine's output shows the Common is right
-  for them. The real gaps were four Matins hymns, now authored: the Commemoration of St. Paul ("Doctor
-  egregie Paule"), St. Peter's Chains and the Chair at Rome ("Quodcumque vinclis ..." / "Quodcumque in
-  orbe ..."), and St. Benedict ("Quidquid antiqui cecinere vates"). English is the reference's own.
+- Proper hymns the app lacked (it fell to the Common), two passes. First, the engine's Monastic 1617 output
+  against the 1617 kalendar's own files: four Matins hymns (the Commemoration of St. Paul, St. Peter's
+  Chains, the Chair at Rome, St. Benedict). That pass wrongly concluded the Common was right for St.
+  Anselm, St. Bernard, St. Catherine of Siena, St. Gabriel, St. Raphael and St. John Cantius: those saints
+  are not in the 1617 kalendar at all (or are conditioned `nisi rubrica 1617`), so the engine showed no
+  hymn for them, but the reference does carry their hymns. Second, every Sancti/SanctiM file for every
+  calendar saint, whatever kalendar names it: 20 more hymns authored (the Apparition, Immaculate
+  Conception, Maternity, Queenship and Seven Sorrows at Matins; Ss. Cyril and Methodius, Vespers and
+  Lauds; St. Anne, three hours; St. Anselm and St. Bernard, Vespers (and Bernard's Lauds); St. Elizabeth of
+  Portugal, Vespers and Lauds; St. Gertrude, Matins; St. John Cantius, three hours; St. Joseph, Matins).
+  English is the reference's where it has one; six are this project's own translation, `draft` (St. Anne
+  Vespers and Lauds, St. Anselm, St. Bernard Vespers and Lauds, St. Gertrude).
+- Left out on purpose, because the reference file is a different saint's: SanctiM/05-30b is St. Joan of
+  Arc (not St. Felix I), SanctiM/02-14b is Ss. Cyril and Methodius (not St. Valentine), SanctiM/05-13M is
+  the commemoration of relics (not St. Robert Bellarmine), SanctiM/04-29M is Ss. Odo and companions (not St.
+  Catherine of Siena), Sancti/05-01r is St. Joseph the Worker (not Ss. Philip and James). St. Catherine of
+  Siena and St. Gabriel/St. Raphael have no proper hymn file of their own in the reference.
