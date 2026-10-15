@@ -103,3 +103,30 @@ describe('First vs Second Vespers variants', () => {
     expect(getMagnificatAntiphon(resolveDay('2026-10-03'), 'second').text.la).toContain('Benedíctus Dóminus, * quia hódie');
   });
 });
+
+// Swept against the reference engine's own output (Monastic Tridentinum 1617,
+// 2026-10): a Confessor's First Vespers versicle is "Amavit eum" ([Versum 1])
+// and his Second Vespers' is "Justum deduxit" ([Versum 3] = "@:Versum 2").
+describe('First vs Second Vespers: swept Common and saint content', () => {
+  const versicle = (date: string) =>
+    JSON.stringify(
+      resolveOrdo('vespers', date)
+        .parts.slice(resolveOrdo('vespers', date).parts.findIndex((p) => p.kind === 'hymn') + 1)
+        .find((p) => p.kind === 'versicle'),
+    );
+
+  it('a Confessor (Not a Bishop) has "Amavit eum" at First Vespers and "Justum deduxit" at Second (St. Francis)', () => {
+    expect(versicle('2033-10-03')).toContain('Amávit eum Dóminus');
+    expect(versicle('2033-10-04')).toContain('Justum dedúxit Dóminus');
+  });
+
+  it('a holy woman has "Specie tua" at First Vespers and "Diffusa est gratia" at Second (St. Martha)', () => {
+    expect(versicle('2025-07-28')).toContain('Spécie tua et pulchritúdine tua');
+    expect(versicle('2025-07-29')).toContain('Diffúsa est grátia');
+  });
+
+  it("Ss. John and Paul have their own psalm antiphons at Second Vespers, the Common's at First", () => {
+    expect(vespers('2029-06-26')).toContain('Paulus et Joánnes');
+    expect(vespers('2029-06-25')).not.toContain('Paulus et Joánnes');
+  });
+});
