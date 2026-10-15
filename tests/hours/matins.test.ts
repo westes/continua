@@ -1205,8 +1205,8 @@ describe('resolveOrdo("matins", ...) remaining Common categories\' Matins hymns 
     expect(hymnLatin('2026-10-24')).toContain('Angelus nostræ médicus salútis');
   });
 
-  it('St. Anne (common-of-a-holy-woman) and St. Monica (common-of-a-widow) resolve to the same shorter "Hujus obténtu, Deus alme" form (just the closing two stanzas of the Virgin hymn)', () => {
-    expect(hymnLatin('2026-07-26')).toContain('Hujus obténtu, Deus alme');
+  it('St. Martha (common-of-a-holy-woman) and St. Monica (common-of-a-widow) resolve to the same shorter "Hujus obténtu, Deus alme" form (just the closing two stanzas of the Virgin hymn)', () => {
+    expect(hymnLatin('2025-07-29')).toContain('Hujus obténtu, Deus alme');
     expect(hymnLatin('2026-05-04')).toContain('Hujus obténtu, Deus alme');
   });
 

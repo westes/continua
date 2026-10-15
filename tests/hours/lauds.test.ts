@@ -259,13 +259,13 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Exsúltet cælum láudibus');
   });
 
-  it("uses common-of-a-holy-woman's real office bundle on St. Anne's own day, and common-of-a-widow's identical bundle on St. Monica's", () => {
+  it("uses common-of-a-holy-woman's real office bundle on St. Martha's own day, and common-of-a-widow's identical bundle on St. Monica's", () => {
     // Live-verified against Divinum Officium (Monastic Tridentinum 1617)
     // that the two categories share real content -- see lauds-capitulum-
     // common-of-a-holy-woman.yml's header.
-    const anne = resolveOrdo('lauds', '2026-07-26');
+    const martha = resolveOrdo('lauds', '2025-07-29');
     const monica = resolveOrdo('lauds', '2026-05-04');
-    for (const ordo of [anne, monica]) {
+    for (const ordo of [martha, monica]) {
       const chapter = ordo.parts.find((p) => p.kind === 'chapter');
       expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('Prov 31:10-11');
       const hymn = ordo.parts.find((p) => p.kind === 'hymn');
