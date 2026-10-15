@@ -17,7 +17,7 @@ const sanctoralCommemorationIds = (iso: string): string[] =>
     .map((c) => c.id);
 
 describe('same-date saint contest losers obey the day\'s own commemoration rule', () => {
-  it('Easter Thursday (Easter octave, nothing commemorated): Robert, Catherine of Siena and Odo all lapse', () => {
+  it('Easter Thursday (Easter octave, nothing commemorated): Catherine of Siena lapses', () => {
     const day = resolveDay('2038-04-29');
     expect(day.winner).toMatchObject({ kind: 'temporal', id: 'easter-thursday' });
     expect(sanctoralCommemorationIds('2038-04-29')).toEqual([]);
@@ -29,7 +29,7 @@ describe('same-date saint contest losers obey the day\'s own commemoration rule'
     expect(sanctoralCommemorationIds('2039-02-06')).toEqual([]);
   });
 
-  it('Advent I (privileged Sunday): the Vigil of St. Andrew and St. Saturninus are not commemorated', () => {
+  it('Advent I (privileged Sunday): the Vigil of St. Andrew and St. Gelasius I are not commemorated', () => {
     expect(sanctoralCommemorationIds('2026-11-29')).toEqual([]);
   });
 

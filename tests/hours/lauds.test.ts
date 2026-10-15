@@ -192,7 +192,8 @@ describe('resolveOrdo("lauds", ...)', () => {
     // Ubald now loses his own day outright to the octave (`octave.wins:
     // duplex`, and Semiduplex Ubald falls short of it), so his own
     // Common-of-a-Confessor-Bishop content no longer surfaces there at
-    // all. Bellarmine sits safely before the octave's own window (May
+    // all (Ubald has since left the calendar, 2026-10 thinning pass).
+    // Bellarmine sits safely before the octave's own window (May
     // 14-21) and has no proper Lauds content of his own either -- see
     // vespers-hymn-common-of-a-confessor-bishop.yml's header.
     const ordo = resolveOrdo('lauds', '2026-05-13');
@@ -223,9 +224,10 @@ describe('resolveOrdo("lauds", ...)', () => {
   });
 
   it("uses common-of-a-virgin-martyr's real office bundle on St. Apollonia's own clean day, not the ferial default", () => {
-    // 2026-02-09 collides (St. John of Matha wins outright, Apollonia
-    // merely commemorated), so this uses her own already-verified clean
-    // year (2029-02-09, per her saint file's own comment).
+    // 2026-02-09 used to collide (St. John of Matha, since removed, won
+    // outright, Apollonia merely commemorated), so this uses her own
+    // already-verified clean year (2029-02-09, per her saint file's own
+    // comment).
     const ordo = resolveOrdo('lauds', '2029-02-09');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
     expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('2 Cor 10:17-18');
@@ -732,9 +734,9 @@ describe('resolveOrdo("lauds", ...)', () => {
   });
 
   it('falls back to plain ferial Wednesday psalms on day 2 of the Nativity of the BVM\'s octave (2026-09-09), not the Nativity\'s own proper psalms', () => {
-    // St. Gorgonius (simplex) is the only real sanctoral candidate on
-    // Sept 9, but he loses the day to the Nativity's own octave (Sept
-    // 8-15). Before the 2026-09-09 fix, resolveOfficeWinner synthesized
+    // St. Sergius I (simplex) is the only real sanctoral candidate on
+    // Sept 9 (St. Gorgonius used to be, until the 2026-10 thinning pass),
+    // but he loses the day to the Nativity's own octave (Sept 8-15). Before the 2026-09-09 fix, resolveOfficeWinner synthesized
     // the Nativity's own full rank (duplex-2-classis) for every day of
     // its octave, so this day wrongly read as duplex-majus+ eligible and
     // pulled the Nativity's own proper psalms (see

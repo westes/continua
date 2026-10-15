@@ -119,10 +119,11 @@ describe('resolveOrdo("vespers", ...)', () => {
   it('splits Ps 138 into two verse-ranges under one shared antiphon on Thursday', () => {
     // Not 2026-08-20: that date's own first Vespers is now claimed by
     // St. Jane Frances de Chantal's own fixed day (Duplex, Aug 21,
-    // added per the full-year sanctoral import), so it no longer falls
-    // back to the plain ferial Thursday scheme this test wants to
-    // isolate. 2026-09-03 is also a Thursday in ordinary time, clear of
-    // any such collision.
+    // added per the full-year sanctoral import; she has since left the
+    // calendar, 2026-10 thinning pass), so it did not fall back to the
+    // plain ferial Thursday scheme this test wants to isolate.
+    // 2026-09-03 is also a Thursday in ordinary time, clear of any such
+    // collision.
     const ordo = resolveOrdo('vespers', '2026-09-03');
     const psalmParts = ordo.parts.filter((p) => p.kind === 'psalm');
     const numbers = psalmParts.map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
@@ -163,9 +164,9 @@ describe('resolveOrdo("vespers", ...)', () => {
   });
 
   it('falls back to plain ferial Wednesday psalms on day 2 of the Nativity of the BVM\'s octave (2026-09-09), not the Nativity\'s own proper psalms', () => {
-    // St. Gorgonius (simplex) is the only real sanctoral candidate on
-    // Sept 9, but he loses the day to the Nativity's own octave (Sept
-    // 8-15). Before the 2026-09-09 fix, resolveOfficeWinner synthesized
+    // St. Sergius I (simplex) is the only real sanctoral candidate on
+    // Sept 9 (St. Gorgonius used to be, until the 2026-10 thinning pass),
+    // but he loses the day to the Nativity's own octave (Sept 8-15). Before the 2026-09-09 fix, resolveOfficeWinner synthesized
     // the Nativity's own full rank (duplex-2-classis) for every day of
     // its octave, so this day wrongly read as duplex-majus+ eligible and
     // pulled the Nativity's own proper psalms ([92, 99, 62], see
@@ -180,14 +181,16 @@ describe('resolveOrdo("vespers", ...)', () => {
 
   it("uses St. Martin of Tours's own First Vespers psalmody (engine-verified Sunday-Vespers numbers)", () => {
     // Not 2026-11-11 (his own day itself): St. Emilian (Nov 12, plain
-    // Duplex, below this override's duplex-majus+ threshold) claims First
+    // Duplex, below this override's duplex-majus+ threshold; since removed
+    // from the calendar, 2026-10 thinning pass) claimed First
     // Vespers over Martin's own evening (Martin, Duplex Majus, falls
     // short of keepsOwnSecondVespers's duplex-2-classis+ floor) -- so
     // Nov 11's own evening resolves to Emilian's (below-threshold, plain
     // ferial) identity instead, not Martin's. 2026-11-10 anticipates
     // Martin's own First Vespers instead (Ss. Tryphon and Companions,
-    // Nov 10, plain Simplex, doesn't keep its own evening either), so
-    // that evening's governing day is Martin's, duplex-majus, eligible.
+    // Nov 10, plain Simplex, doesn't keep its own evening either; also
+    // since removed), so that evening's governing day is Martin's,
+    // duplex-majus, eligible.
     // Live-verified against Divinum Officium (Monastic Tridentinum 1617,
     // votive=C4), 2026-08-28 -- see data/hours/vespers-psalmody-overrides/
     // categories/common-of-a-confessor-bishop.yml's own header.
@@ -207,8 +210,8 @@ describe('resolveOrdo("vespers", ...)', () => {
     // Oct 3 (St. Therese of Lisieux, plain Duplex, below this override's
     // own threshold) claims First Vespers over her own evening, so Oct 2
     // itself resolves to the plain ferial Friday default instead. Oct 1
-    // (St. Remigius, Simplex, doesn't keep his own evening either)
-    // anticipates Guardian Angels' own First Vespers instead, which does
+    // (St. Remigius, Simplex, doesn't keep his own evening either; since
+    // removed from the calendar, 2026-10 thinning pass) anticipates Guardian Angels' own First Vespers instead, which does
     // carry the override.
     //
     // Correction (2026-09-08): an earlier note here claimed her real
@@ -227,7 +230,8 @@ describe('resolveOrdo("vespers", ...)', () => {
 
   it("uses Common-of-a-Dedication's own psalmody on the Dedication of the Basilica of the Most Holy Saviour's own day", () => {
     // Nov 9, Duplex II. classis -- keeps its own evening regardless of
-    // tomorrow (Ss. Tryphon and Companions, Simplex). Live-verified
+    // tomorrow (Ss. Tryphon and Companions, Simplex, since removed from the
+    // calendar). Live-verified
     // against Divinum Officium (Monastic Tridentinum 1617, votive=C8),
     // 2026-08-28 -- genuinely its own scheme, not shared with any other
     // Common (see the category file's own header).
@@ -265,13 +269,13 @@ describe('resolveOrdo("vespers", ...)', () => {
   });
 
   it('stays on the plain ferial default for a below-threshold feast (Semiduplex), even on its own kept evening', () => {
-    // 2026-08-08 (Ss. Cyriacus/Largus/Smaragdus, Semiduplex) is below the
+    // 2026-10-13 (St. Edward the Confessor, Semiduplex) is below the
     // duplex-majus+ override threshold -- confirmed live against Divinum
-    // Officium, which also keeps this date on the plain ferial Saturday
-    // set, not any Common's own psalmody.
-    const ordo = resolveOrdo('vespers', '2026-08-08');
+    // Officium, which also keeps such a date on the plain ferial set (Tuesday's), not
+    // any Common's own psalmody.
+    const ordo = resolveOrdo('vespers', '2026-10-13');
     const numbers = ordo.parts.filter((p) => p.kind === 'psalm').map((p) => (p.kind === 'psalm' ? p.psalmNumber : undefined));
-    expect(numbers).toEqual([144, 145, 146, 147]);
+    expect(numbers).toEqual([129, 130, 131, 132]);
   });
 
   it("uses the Assumption's own per-feast office override on her own Saturday, not the plain Saturday weekday default", () => {

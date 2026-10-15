@@ -6,15 +6,11 @@ describe('transfer mechanism (resolveDay integration)', () => {
   // added to exercise this — Aug 9, 2026 is a Sunday, so the vigil (rank
   // 'vigil') can't win or be commemorated there (see
   // commemorations.ts's ordinary-sunday rule) and must transfer backward.
-  // Since the August pull, Aug 8 is no longer an empty landing day — Ss.
-  // Cyriacus, Largus, and Smaragdus (Semiduplex, a fixed, non-movable
-  // date) natively occupy it every year, so the backward-transferred
-  // vigil runs into collision.ts's sanctoral-vs-sanctoral rules instead of
-  // landing untouched: Semiduplex outranks 'vigil' on the shared
-  // FeastClass scale, so Cyriacus wins and the vigil is commemorated
-  // rather than displacing him — real transfer+collision interaction, not
-  // a data error, same class of finding as July's Apollinaris/Vigil-of-
-  // St.-James case.
+  // Aug 8 used to be occupied by Ss. Cyriacus, Largus, and Smaragdus
+  // (Semiduplex), so the backward-transferred vigil ran into collision.ts's
+  // sanctoral-vs-sanctoral rules and was commemorated instead of landing.
+  // They left the calendar in the 2026-10 thinning pass, so Aug 8 is an
+  // empty landing day again and the vigil lands untouched.
   it('a vigil impeded by an ordinary Sunday transfers backward to Saturday', () => {
     const saturday = resolveDay('2026-08-08');
     const sunday = resolveDay('2026-08-09');
@@ -126,7 +122,8 @@ describe('the Easter-octave backlog (Palm Sunday through Low Sunday)', () => {
     // St. Hermenegild, Semiduplex; Ss. Tiburtius/Valerian/Maximus,
     // Simplex; St. Anselm, Duplex; Ss. Soter & Caius, Semiduplex;
     // St. George, Semiduplex; St. Fidelis of Sigmaringen, Duplex) is
-    // below duplex-majus.
+    // below duplex-majus. (Hermenegild, Tiburtius and companions, Anselm
+    // and Fidelis have since left the calendar, 2026-10 thinning pass.)
     const holyMonday = resolveDay('2033-04-11');
     // Monday of Holy Week now has its own real winner id (see
     // calendar/movable-feasts.ts's Passiontide-day override, 2026-09-06)

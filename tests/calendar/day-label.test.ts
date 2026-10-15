@@ -7,8 +7,8 @@ import type { LiturgicalDay } from '../../src/calendar/types';
 describe('getDayLabel — ordinal temporal label', () => {
   it("labels an anchor's own partial week as \"Weekday after {Anchor}\"", () => {
     // Not 2026 (Trinity Sunday May 31, so Trinity Monday June 1): that
-    // date is St. Angela Merici's own fixed day (Duplex), which would win
-    // outright and hide this purely-temporal label case. Not 2027 either
+    // date was St. Angela Merici's own fixed day (Duplex) when this was
+    // written (she left the calendar in the 2026-10 thinning pass). Not 2027 either
     // (Trinity Monday May 24, Our Lady, Help of Christians). 2025's Trinity
     // Sunday is June 15, so Trinity Monday is June 16 -- free of any
     // sanctoral entry.
@@ -110,8 +110,8 @@ describe('getDayLabel — ordinal temporal label', () => {
   });
 
   it('falls back to weekday + season name for seasons with no ordinal convention modeled', () => {
-    // 2026-05-15 is now St. John Baptist de la Salle's own fixed day
-    // (Duplex, added per the full-year sanctoral import); May 21 is now
+    // 2026-05-15 was St. John Baptist de la Salle's own fixed day
+    // (removed from the calendar in the 2026-10 thinning pass); May 21 is now
     // Ascension's own octave closing day (Ascension now modeled as a
     // real TemporalFeastRecord with an octave, Easter+39 through +46 —
     // see TODO.md's 2026-08-26 entry), and May 22/23 both carry a fixed
@@ -132,18 +132,17 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // several other months' collisions. 2024 is a clean overflow year
     // instead: post-epiphany-5 is Nov 10, post-epiphany-6 is Nov 17 (both
     // Sundays) -- see calendar/temporal-id.test.ts for the id-level
-    // coverage this label check builds on. Nov 10 itself also carries a
-    // Simplex commemoration (Ss. Tryphon, Respicius, and Nympha), shown
-    // trailing after the Sunday's own winning label per this app's usual
-    // winner-first display.
+    // coverage this label check builds on. Nov 10 itself carried a
+    // Simplex commemoration (Ss. Tryphon, Respicius, and Nympha) until the
+    // 2026-10 thinning pass removed them, so the label is the Sunday alone.
     expect(getDayLabel(resolveDay('2024-11-10')).en).toBe(
       'The 5th Sunday after Epiphany, resumed (Semiduplex)',
     );
     // 2024-11-11 is St. Martin of Tours (Duplex, pre-existing content) --
     // an ordinary (non-privileged) Monday fully yields to a real winning
-    // saint, so the label is just his name (plus St. Menna, Simplex, also
-    // real and commemorated alongside him -- live-verified, Divino
-    // Afflatu 1954), not the ferial fallback; see the 2035-10-29 assertion
+    // saint, so the label is just his name (St. Menna, Simplex, who used to be
+    // commemorated alongside him, left the calendar in the 2026-10 thinning
+    // pass), not the ferial fallback; see the 2035-10-29 assertion
     // below for that fallback format on a genuinely saint-free
     // overflow-week Monday instead (no single Nov-dated Monday near this
     // Sunday pair is clean any more, now that Nov 4/8/15/16/20 are all
@@ -182,7 +181,7 @@ describe('getDayLabel — resumed post-Epiphany Sunday (overflow years)', () => 
     // rather than being commemorated in place -- same rule as St. Gregory
     // Thaumaturgus above -- landing on 2026-11-23 instead, where St.
     // Clement already natively wins; Cecilia loses that tied collision
-    // (both Semiduplex) and joins St. Felicitas as a commemoration there.
+    // (both Semiduplex) and is commemorated there.
     expect(getDayLabel(resolveDay('2026-11-22')).en).toBe(
       "The 23rd Sunday after Trinity (Semiduplex) — St. Cecilia, Virgin and Martyr (transferred away)",
     );
@@ -235,8 +234,8 @@ describe('getDayLabel — active octave', () => {
   it('shows the octave day alone when nothing is separately commemorated that day', () => {
     // Not Aug 17 (day 8, the last day, of St. Lawrence's octave): that
     // date is also within the Assumption's own overlapping octave (day 3)
-    // and St. Hyacinth's own fixed day (Duplex) is commemorated there too
-    // — see the "picks the higher-ranked octave" case below for that
+    // and St. Hyacinth's own fixed day (Duplex) was commemorated there too
+    // until the 2026-10 thinning pass removed him — see the "picks the higher-ranked octave" case below for that
     // three-way combination. Not Nov 8 either
     // (day 8, the last day, of All Saints' own octave): the November
     // sanctoral pull gave that day its own real feast, the Octave Day of
@@ -252,7 +251,7 @@ describe('getDayLabel — active octave', () => {
   it("Trinity Sunday itself outranks Pentecost's own octave, which is technically still active on the same day (day 8)", () => {
     // Not 2026 (May 31, the Queenship of the Blessed Virgin Mary's own
     // fixed day, see tests/calendar/transfer.test.ts) and not 2023
-    // (June 4, now St. Francis Caracciolo's own fixed day) -- both would
+    // (June 4, St. Francis Caracciolo's own fixed day until the 2026-10 thinning pass) -- both would
     // muddy this specifically octave-vs-anchor-day check with a sanctoral
     // winner. 2030's Trinity Sunday (June 16) has no sanctoral entry at
     // all, isolating the octave interaction cleanly. Since 2026-09-04,
@@ -272,13 +271,15 @@ describe('getDayLabel — active octave', () => {
     expect(getDayLabel(day).en).toBe('Friday in Christmastide (Feria)');
   });
 
-  it("picks St. Lawrence's own elevated closing day (Aug 17) over the Assumption's ordinary day 3, both duplex now that Assumption's octave is strengthened, via the closing-day tie-break -- with St. Hyacinth (Duplex, tied with Lawrence's own elevated rank) commemorated rather than winning outright", () => {
+  it("picks St. Lawrence's own elevated closing day (Aug 17) over the Assumption's ordinary day 3, both duplex now that Assumption's octave is strengthened, via the closing-day tie-break", () => {
     // Live-verified against the reference engine directly (Monastic
     // Tridentinum 1617, command=prayMatutinum): Aug 17 is "In Octava S.
     // Laurentii Martyris ~ Duplex" -- Lawrence's own elevated closing day
     // wins outright, with Hyacinth's own alternate-rubric block titled
     // "Commemoratio S. Hyacinthi Confessoris" confirming he's the one
-    // merely commemorated there. A tie against an octave's own elevated
+    // merely commemorated there (he has since left this app's calendar, in
+    // the 2026-10 thinning pass, so nothing is commemorated beside the
+    // Assumption octave now). A tie against an octave's own elevated
     // closing day favors the octave (calendar/index.ts's applyOctaves),
     // unlike an ordinary mid-octave day's tie, which still favors an
     // occurring saint (see octaves.test.ts and the December/September
@@ -297,9 +298,10 @@ describe('getDayLabel — active octave', () => {
     // Beatæ Mariæ Virginis", not a bare "The Assumption of the Blessed
     // Virgin Mary".
     // Commemoration order is most-recent-date-first (2026-09-13 user
-    // decision, calendar/commemoration-order.ts): St. Hyacinth's own day
-    // is Aug 17 itself, more recent than the Assumption octave's Day 3
-    // (whose governing start date is Aug 15), so he now sorts ahead of it.
+    // decision, calendar/commemoration-order.ts): that used to put St.
+    // Hyacinth (his own day is Aug 17 itself, more recent than the
+    // Assumption octave's Day 3, whose governing start date is Aug 15)
+    // ahead of it, before he left the calendar.
     expect(getDayLabel(resolveDay('2026-08-17')).en).toBe(
       'Octave of St. Lawrence, Deacon and Martyr (Duplex) — Octave of the Assumption of the Blessed Virgin Mary (3rd Day)',
     );
@@ -345,7 +347,9 @@ describe('getDayLabel — active octave', () => {
     // st-eusebius-of-vercelli.yml -- Monastic Tridentinum 1617 places him
     // here via a same-day kalendar redirect, not Dec 16 like the general
     // Roman calendar) merely commemorated, not winning, since he's below
-    // the octave's own closing-day threshold. See
+    // the octave's own closing-day threshold. (He has since left the
+    // calendar in the 2026-10 thinning pass, so the label shows the octave
+    // alone.) See
     // calendar/octaves.ts's octaveGoverningPrivilegedDay for the shared
     // mechanism (also used by hours/resolve-common.ts's
     // resolveOfficeWinner for the actual office content, not just this
@@ -440,11 +444,12 @@ describe('getDayLabel — feast name combination', () => {
 });
 
 describe('getDayLabel/getVespersStatusLabel — Vespers evening with a temporal (Sunday) winner', () => {
-  it('2026-08-29 (Decollation of St. John Baptist, plain Duplex, below keepsOwnSecondVespers threshold) anticipates the following ordinary Sunday, which wins outright over Ss. Felix and Adauctus (Simplex) -- the Sunday must lead the label, with both real commemorations (Felix/Adauctus and the displaced Decollation) trailing, and the status must read First, not Second, Vespers', () => {
+  it('2026-08-29 (Decollation of St. John Baptist, plain Duplex, below keepsOwnSecondVespers threshold) anticipates the following ordinary Sunday, which wins outright -- the Sunday must lead the label, with the displaced Decollation trailing, and the status must read First, not Second, Vespers', () => {
     // Regression test: getDayLabel's temporal-fallback branch used to list
     // commemorations *before* the winner, so this read "Ss. Felix and
     // Adauctus, Martyrs -- The Beheading of St. John the Baptist (of
-    // today) -- The 13th Sunday after Trinity (Semiduplex)", making the
+    // today) -- The 13th Sunday after Trinity (Semiduplex)" (Felix and
+    // Adauctus have since left the calendar), making the
     // actual winner (the Sunday) look like an afterthought and the
     // Sunday's own rank label ("Semiduplex") look like it belonged to
     // Felix and Adauctus instead. And getVespersStatusLabel used to say

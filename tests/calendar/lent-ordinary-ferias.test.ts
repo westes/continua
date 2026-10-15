@@ -99,16 +99,18 @@ describe('Lent ordinary ferias: per-hour collect resolution (real dates, 2027)',
   // these dates (ordinary-feria has no rank floor -- see
   // calendar/types.ts's TemporalCategory doc comment), so only the days
   // below actually resolve to their own temporal identity that year.
-  // (2027-02-25 and 2027-03-02 dropped 2026-10 when St. Felix III and St.
-  // Simplicius, both Simplex, were placed on those dates -- the id-level
-  // content checks above still cover lent-2-thursday and lent-3-tuesday.)
+  // (2027-02-25 and 2027-03-02 were dropped 2026-10 when St. Felix III and
+  // St. Simplicius, both Simplex, were placed on those dates; the thinning
+  // pass later removed both saints, so the dates are back below.)
   // Each is live-verified (2026-09-19) to render genuinely different
   // Lauds/Vespers text through the new getDayCollect(day, hour) path,
   // while Terce still gets the Lauds text unchanged.
   it.each([
     ['2027-02-10', 'ash-wednesday'],
     ['2027-02-16', 'lent-1-tuesday'],
+    ['2027-02-25', 'lent-2-thursday'],
     ['2027-03-01', 'lent-3-monday'],
+    ['2027-03-02', 'lent-3-tuesday'],
     ['2027-03-03', 'lent-3-wednesday'],
     ['2027-03-11', 'lent-4-thursday'],
     ['2027-03-13', 'lent-4-saturday'],

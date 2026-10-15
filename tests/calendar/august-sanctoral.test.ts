@@ -34,14 +34,15 @@ describe('August sanctoral pull (first pass)', () => {
     ]);
   });
 
-  it('St. Cajetan (found hiding behind the same MM-DD slot as St. Donatus\'s own suffixed Monastic winner file) wins outright at Semiduplex over Donatus\'s Simplex, commemorating him instead', () => {
+  it('St. Cajetan (found hiding behind the same MM-DD slot as St. Donatus\'s own suffixed Monastic winner file) wins outright at Semiduplex, alone now that Donatus has left the calendar', () => {
     // St. Donatus previously won this slot outright every year in this
     // app -- see the app-simplification note still on st-donatus.yml
     // about the real reference engine's occasional Aug-3-Sunday transfer
     // this app doesn't model. Cajetan's own rank (Duplex in the source,
     // deflated one tier to Semiduplex per this project's late-canonization
-    // rule -- canonized 1671) still outranks Donatus's ancient Simplex in
-    // every year, so Cajetan wins here now instead.
+    // rule -- canonized 1671) still outranked Donatus's ancient Simplex in
+    // every year, so Cajetan won here instead; Donatus has since left the
+    // calendar (2026-10 thinning pass), leaving Cajetan alone.
     const ordinary = resolveDay('2026-08-07');
     const wouldHaveTransferredInReality = resolveDay('2031-08-07');
     for (const day of [ordinary, wouldHaveTransferredInReality]) {
@@ -130,7 +131,7 @@ describe('August sanctoral pull (first pass)', () => {
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 
-  it("St. Rose of Lima (rank deliberately deflated to semiduplex, see this project's design notes) wins outright over the ancient Ss. Felix and Adauctus, who keep their own commemoration rather than being suppressed", () => {
+  it("St. Rose of Lima (rank deliberately deflated to semiduplex, see this project's design notes) wins outright, alone now that Ss. Felix and Adauctus are off the calendar", () => {
     // On a Saturday this date is instead outranked by the generic
     // "Sanctae Mariae Sabbato" votive (see ss-felix-and-adauctus.yml) and
     // a Sunday produces a temporal winner instead -- 2027-08-30, a Monday,

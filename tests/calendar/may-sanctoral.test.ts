@@ -73,9 +73,10 @@ describe('May sanctoral pull (first pass)', () => {
     // memory vu-suffixed-file-sweep) was deliberately given Romanus's real
     // Duplex rank instead of this project's normal late-canonization
     // deflation (see saints/st-rita-of-cascia.yml's own header) so she'd
-    // win the day per the user's explicit instruction -- Romanus is now a
-    // commemoration instead, but still resolves his own collect the same
-    // way (no proper collect of his own, Common of an Abbot substitution).
+    // win the day per the user's explicit instruction -- Romanus was then
+    // a commemoration instead, resolving his own collect the same way (no
+    // proper collect of his own, Common of an Abbot substitution) until the
+    // 2026-10 thinning pass removed him from the calendar.
     const day = resolveDay('2038-05-22');
     expect(day.winner).toEqual({
       kind: 'sanctoral',

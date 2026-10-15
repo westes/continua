@@ -78,8 +78,9 @@ describe('shell', () => {
     // winner (see the equivalent calendar-level test in
     // tests/calendar/day-label.test.ts) -- 2026-08-29 (the Decollation of
     // St. John Baptist, Duplex) anticipates 2026-08-30's ordinary Sunday,
-    // which wins outright over Ss. Felix and Adauctus (Simplex), so
-    // tomorrow's winner is `temporal`, not `sanctoral`.
+    // which wins outright (over Ss. Felix and Adauctus, Simplex, until the
+    // 2026-10 thinning pass removed them), so tomorrow's winner is
+    // `temporal`, not `sanctoral`.
     setDate('2026-08-29');
     setSelectedHour('vespers');
     window.history.replaceState(null, '', '/2026-08-29/vespers');
