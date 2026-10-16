@@ -104,6 +104,12 @@ export interface SaintRecord {
   /** See calendar/types.ts's OctaveConfig doc comment. Absent for the vast
    * majority of saints — only ones with a real octave declare it. */
   octave?: OctaveConfig;
+  /** What the Martyrology announces ahead of this feast ("On the morrow we
+   * keep the feast of ...") — read the evening before, and only when this
+   * feast is that day's winner (hours/martyrology-announcement.ts). The
+   * announcement belongs to the feast, not the date, so it follows a
+   * transfer and vanishes with a feast the user's calendar doesn't keep. */
+  martyrologyAnnouncement?: Partial<Record<'la' | 'en', string>>;
   /** For a `rank: vigil` record only — the real id of the feast this is
    * the eve of (e.g. `st-andrew`, not derivable from this record's own id
    * by stripping a `vigil-of-` prefix: several vigils' ids don't match

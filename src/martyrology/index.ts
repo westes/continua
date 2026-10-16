@@ -50,6 +50,12 @@ const ENGLISH_MONTHS = [
   'December',
 ];
 
+function ordinal(n: number): string {
+  const tens = n % 100;
+  if (tens >= 11 && tens <= 13) return `${n}th`;
+  return `${n}${({ 1: 'st', 2: 'nd', 3: 'rd' } as Record<number, string>)[n % 10] ?? 'th'}`;
+}
+
 function dayFollowing(isoDate: string): { month: number; day: number; year: number; monthDay: string } {
   const date = new Date(`${isoDate}T00:00:00Z`);
   date.setUTCDate(date.getUTCDate() + 1);
@@ -77,7 +83,10 @@ function heading(month: number, day: number, year: number): { la: string; en: st
  * the next day's saints), not today's — this computes that offset so callers
  * just pass the ordo's own date.
  */
-export function getMartyrologyEntryFor(isoDate: string): MartyrologyEntry {
+export function getMartyrologyEntryFor(
+  isoDate: string,
+  announcement?: Partial<Record<'la' | 'en', string>>,
+): MartyrologyEntry {
   const { month, day, year, monthDay } = dayFollowing(isoDate);
   const entry = entries.get(monthDay);
   if (!entry) {
@@ -88,13 +97,24 @@ export function getMartyrologyEntryFor(isoDate: string): MartyrologyEntry {
   const tomorrow = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
   const mobile = mobileEntryFor(tomorrow);
   const join = (...parts: (string | undefined)[]) => parts.filter(Boolean).join('\n\n');
+  // The English lead-in to the day's list: "Upon the [same] Nth day of
+  // <Month>, were born into the better life:". "Same" refers back to
+  // whatever was announced just above it — the feast's own announcement
+  // or the feast's elogium leading the list. It sits after `leadEntries`
+  // paragraphs, then the rest of the list follows.
+  const leadEntries = entry.leadEntries ?? 0;
+  const formula = `Upon the ${announcement?.en || leadEntries > 0 ? 'same ' : ''}${ordinal(day)} day of ${ENGLISH_MONTHS[month - 1]}, were born into the better life:`;
+  const enParagraphs = entry.text.en?.split('\n\n');
+  const enList = enParagraphs
+    ? [...enParagraphs.slice(0, leadEntries), formula, ...enParagraphs.slice(leadEntries)].join('\n\n')
+    : undefined;
   const worse = (a: string | undefined, b: string | undefined) =>
     a === 'verified' && b === 'verified' ? 'verified' : a === 'missing' || b === 'missing' ? 'missing' : 'draft';
   return {
     monthDay,
     text: {
-      la: entry.text.la ? join(head.la, mobile?.text.la, entry.text.la) : entry.text.la,
-      en: entry.text.en ? join(head.en, mobile?.text.en, entry.text.en) : entry.text.en,
+      la: entry.text.la ? join(head.la, mobile?.text.la, announcement?.la, entry.text.la) : entry.text.la,
+      en: enList ? join(head.en, mobile?.text.en, announcement?.en, enList) : entry.text.en,
     },
     status: mobile
       ? { la: worse(entry.status.la, mobile.status.la), en: worse(entry.status.en, mobile.status.en) }

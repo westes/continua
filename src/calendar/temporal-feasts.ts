@@ -43,6 +43,8 @@ export interface TemporalFeastRecord {
   /** Latin form of `titleName`, when authored. */
   titleNameLa?: string;
   octave?: OctaveConfig;
+  /** See calendar/feasts.ts's SaintRecord.martyrologyAnnouncement. */
+  martyrologyAnnouncement?: Partial<Record<'la' | 'en', string>>;
   /** Another office id whose authored Lauds/Vespers/minor-hour content this
    * feast shares where it has none of its own (the days of Easter week share
    * Easter Sunday's psalm antiphons, chapters and responsories). Used by

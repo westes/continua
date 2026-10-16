@@ -5,6 +5,8 @@ import { getDayLabel } from '../calendar/day-label';
 import { getPsalmsFor } from '../psalter/distribution';
 import { getPsalmVerses } from '../psalter';
 import { getMartyrologyEntryFor } from '../martyrology';
+import { martyrologyAnnouncementFor } from './martyrology-announcement';
+import { addDays } from '../calendar/date-math';
 import { getRegulaReadingFor } from '../regula';
 import { getChapterResponsoryId } from './chapter-responsory';
 import { getHymnDoxologyOverrideId } from './hymn-doxology';
@@ -139,14 +141,15 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
           ? !usesFeriaPrimeCapitulum(day)
           : isSundayOrFeastOffice(day) && !(part.vigilIsFerial && isVigil);
       const ref = useFeastForm ? part.sundayOrFeastRef : part.ferialRef;
-      if (part.resolvedKind === 'preces') {
-        return [{ kind: 'preces', text: resolveCommon(ref.id), label: part.label }];
       const refs = Array.isArray(ref) ? ref : [ref];
+      if (part.resolvedKind === 'preces') {
+        return refs.map((r) => ({ kind: 'preces', text: resolveCommon(r.id), label: part.label }));
       }
-      return [{ kind: part.resolvedKind, text: resolveCommon(ref.id) }];
+      return refs.map((r) => ({ kind: part.resolvedKind, text: resolveCommon(r.id) }));
     }
     case 'martyrology': {
-      const entry = getMartyrologyEntryFor(date);
+      // Prime reads tomorrow's entry; the announcement is tomorrow's winner's.
+      const entry = getMartyrologyEntryFor(date, martyrologyAnnouncementFor(addDays(date, 1)));
       return [{ kind: 'lesson', text: { text: entry.text, status: entry.status }, label: 'Martyrology' }];
     }
     case 'rule-reading': {
