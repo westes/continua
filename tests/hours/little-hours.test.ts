@@ -1,5 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { resolveOrdo } from '../../src/hours';
+import terceAntiphons from '../../src/data/hours/terce-antiphons.yml';
+import sextAntiphons from '../../src/data/hours/sext-antiphons.yml';
+import noneAntiphons from '../../src/data/hours/none-antiphons.yml';
 
 // Clean per-annum dates, verified against Divinum Officium (Monastic
 // Tridentinum 1617) to have no sanctoral override — see
@@ -207,5 +210,27 @@ describe('Pentecost-week Terce hymn swap', () => {
         expect(hymn && hymn.kind === 'hymn' ? hymn.text.text.la : undefined).not.toContain('Veni Creátor Spíritus');
       }
     }
+  });
+});
+
+describe('ferial Terce/Sext/None antiphons are full, not bare incipits', () => {
+  const tables = {
+    terce: terceAntiphons,
+    sext: sextAntiphons,
+    none: noneAntiphons,
+  } as Record<string, Record<string, { la: string; en: string }>>;
+
+  it.each(Object.keys(tables))('%s: every weekday has a "*" split in both languages', (hour) => {
+    for (const [weekday, text] of Object.entries(tables[hour]!)) {
+      expect(text.la, `${hour} ${weekday} la`).toContain('*');
+      expect(text.en, `${hour} ${weekday} en`).toContain('*');
+    }
+  });
+
+  it('Friday Terce closes with the full Ps 69 verse, not a repeat of the opening versicle', () => {
+    const ordo = resolveOrdo('terce', '2026-10-16');
+    const closing = ordo.parts.find((p) => p.kind === 'antiphon');
+    expect(closing?.kind === 'antiphon' ? closing.text.text.la : '').toContain('ad adjuvándum me festína');
+    expect(closing?.kind === 'antiphon' ? closing.text.text.en : '').toContain('make haste to help me');
   });
 });
