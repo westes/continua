@@ -198,12 +198,13 @@ describe('Ember days', () => {
     // reports it active there -- without the fix exempting the
     // Pentecost octave itself, these would never get relabeled at all.
     // Below-Duplex saints (St. Boniface IV Simplex, St. Felix I Simplex)
-    // are real 2026 collisions on Friday and Saturday (the Wednesday has no
-    // saint left since the 2026-10 thinning pass), same shape as the
+    // are real 2026 collisions on Friday and Saturday. The Wednesday uses
+    // 2036-06-04 (no saint) instead, because St. Bede (Duplex) now holds
+    // 2026-05-27 and outranks the Ember day. Same shape as the
     // September Wednesday/Friday/Saturday 2026 cases above -- Ember wins,
     // both the saint and the Octave are commemorated alongside.
     for (const [date, id, saintId] of [
-      ['2026-05-27', 'ember-pentecost-wednesday', null],
+      ['2036-06-04', 'ember-pentecost-wednesday', null],
       ['2026-05-29', 'ember-pentecost-friday', 'st-boniface-iv'],
       ['2026-05-30', 'ember-pentecost-saturday', 'st-felix-i'],
     ] as const) {
@@ -219,7 +220,7 @@ describe('Ember days', () => {
     const cases: [string, string][] = [
       ['2026-02-25', 'Generátio'],
       ['2026-02-28', 'Assúmpsit Jesus'],
-      ['2026-05-27', 'Ego sum panis vivus'],
+      ['2036-06-04', 'Ego sum panis vivus'],
       ['2026-05-29', 'Dixit Jesus'],
       ['2026-05-30', 'Cáritas Dei'],
     ];
@@ -236,7 +237,7 @@ describe('Ember days', () => {
   it("Vespers' Magnificat antiphon is proper on Lent/Pentecost Ember Wednesday and Friday", () => {
     // Saturday excluded, same reason as the September/Advent case above
     // (Second Vespers always cedes to the following Sunday).
-    for (const date of ['2026-02-25', '2026-05-27', '2026-05-29']) {
+    for (const date of ['2026-02-25', '2036-06-04', '2026-05-29']) {
       const ordo = resolveOrdo('vespers', date);
       const idx = ordo.parts.findIndex((p) => p.kind === 'canticle' && p.canticleId === 'magnificat');
       const antiphon = ordo.parts[idx + 1] as { text: { status: { la?: string; en?: string } } };
@@ -264,7 +265,7 @@ describe('Ember days', () => {
       ['2026-12-19', 1],
       ['2026-02-25', 1],
       ['2026-02-28', 1],
-      ['2026-05-27', 1],
+      ['2036-06-04', 1],
       ['2026-05-29', 1],
       ['2026-05-30', 1],
     ];

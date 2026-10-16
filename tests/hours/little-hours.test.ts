@@ -180,7 +180,7 @@ describe.each(LITTLE_HOURS)('resolveOrdo(%s, ...)', (hourId) => {
 // hymn throughout the same week.
 describe('Pentecost-week Terce hymn swap', () => {
   const PENTECOST_SUNDAY = '2026-05-24';
-  const OCTAVE_INTERIOR_DAY = '2026-05-27';
+  const OCTAVE_INTERIOR_DAY = '2029-05-23';
   const TRINITY_SUNDAY = '2026-05-31'; // day after the octave closes
 
   it('swaps Terce to "Veni Creátor Spíritus" on Pentecost Sunday itself', () => {

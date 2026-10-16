@@ -1,0 +1,17 @@
+# St. Bede the Venerable (May 27), Priest, Confessor and Doctor of the Church.
+# Read directly from the reference engine: untagged/default [Rank] block of
+# web/www/horas/Latin/Sancti/05-27.txt -- "Duplex;;3;;vide C5a" (Common of a
+# Doctor who is not a Bishop). Own collect and Matins readings; the rest is
+# the Common. Declared a Doctor by Leo XIII (1899), which the office itself
+# records. Not carried over from the 2026-10 thinning, which had only removed
+# St. John I from this date.
+id: st-bede
+name: "St. Bede the Venerable, Priest, Confessor and Doctor of the Church"
+nameLa: "Sanctus Beda Venerabilis, Presbyter, Confessor et Ecclesiæ Doctor"
+rank: duplex
+common: common-of-a-confessor-doctor
+invocationName: { la: "Beda", en: "Bede" }
+propers: "st-bede"
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true
