@@ -36,7 +36,7 @@ describe('Translation of St. Benedict', () => {
     }
   });
 
-  it('Matins carries its own invitatory, three nocturns, the Gospel and Bede\'s homily', () => {
+  it('Matins carries its own invitatory, three nocturns, the Gospel and Peter Damian\'s sermon', () => {
     const ordo = resolveOrdo('matins', DATE);
     const invitatory = ordo.parts.find((p) => p.kind === 'psalm' && (p as { psalmNumber: number }).psalmNumber === 94) as
       | { antiphon?: { text: Record<string, string> } }
@@ -46,7 +46,7 @@ describe('Translation of St. Benedict', () => {
     expect(ordo.parts.some((p) => p.kind === 'gospel')).toBe(true);
     const readings = JSON.stringify(ordo.parts.filter((p) => p.kind === 'lesson' || p.kind === 'gospel'));
     expect(readings).toContain('Gloriósi Patris nostri Benedícti dulcíssimum nomen');
-    expect(readings).toContain('Duo sunt órdines electórum');
+    expect(readings).toContain('Solémne verbum, magna promíssio');
   });
 
   it('Lauds and Vespers carry its own hymns and antiphons', () => {
