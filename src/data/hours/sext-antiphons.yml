@@ -1,19 +1,19 @@
 # See terce-antiphons.yml for the full explanation of this table's shape,
 # sourcing, and the Friday/Saturday derivation caveat.
 sunday:
-  la: "Allelúja."
-  en: "Alleluia."
+  la: "Allelúja, * allelúja, allelúja (allelúja)."
+  en: "Alleluia, * alleluia, alleluia (alleluia)."
 monday:
-  la: "Áspice in me."
-  en: "Look upon me."
+  la: "Áspice in me, * et miserére mei, Dómine."
+  en: "Look upon me * and have mercy on me."
 tuesday: &gradual-sext-ant
-  la: "Qui hábitas."
-  en: "Who dwellest."
+  la: "Qui hábitas * in cælis, miserére nobis."
+  en: "Who dwellest * in heaven, have mercy on us."
 wednesday:
-  la: "Quid gloriáris in malítia."
-  en: "Why dost thou glory in malice."
+  la: "Quid gloriáris in malítia, * qui potens es in iniquitáte?"
+  en: "Why dost thou glory in malice, * thou that art mighty in iniquity?"
 thursday: *gradual-sext-ant
 friday:
-  la: "Fundaménta ejus in móntibus sanctis."
-  en: "The foundations thereof are in the holy mountains."
+  la: "Fundaménta ejus in móntibus sanctis: * díligit Dóminus portas Sion super ómnia tabernácula Jacob."
+  en: "The foundations thereof are in the holy mountains: * The Lord loveth the gates of Sion above all the tabernacles of Jacob."
 saturday: *gradual-sext-ant

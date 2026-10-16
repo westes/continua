@@ -1,19 +1,19 @@
 # See terce-antiphons.yml for the full explanation of this table's shape,
 # sourcing, and the Friday/Saturday derivation caveat.
 sunday:
-  la: "Allelúja."
-  en: "Alleluia."
+  la: "Allelúja, * allelúja, allelúja (allelúja)."
+  en: "Alleluia, * alleluia, alleluia (alleluia)."
 monday:
-  la: "Fiat manus tua."
-  en: "Let thy hand be with me to save me."
+  la: "Fiat manus tua, * Dómine, ut salvet me: quóniam mandáta tua elégi."
+  en: "Let thy hand be with me to save me; * for I have chosen thy precepts."
 tuesday: &gradual-none-ant
-  la: "Beáti omnes."
-  en: "Blessed are all they."
+  la: "Beáti omnes, * qui timent Dóminum."
+  en: "Blessed are all they * that fear the Lord."
 wednesday:
-  la: "Si vere útique justítiam loquímini."
-  en: "If in very deed you speak justice."
+  la: "Si vere útique justítiam loquímini: * recta judicáte, fílii hóminum."
+  en: "If in very deed you speak justice: * judge right things, ye sons of men."
 thursday: *gradual-none-ant
 friday:
-  la: "Dóminus regnávit."
-  en: "The Lord hath reigned."
+  la: "Dóminus regnávit, irascántur pópuli: * qui sedet super Chérubim, moveátur terra."
+  en: "The Lord hath reigned, let the people be angry: * he that sitteth on the cherubims: let the earth be moved."
 saturday: *gradual-none-ant

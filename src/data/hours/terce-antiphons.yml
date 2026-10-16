@@ -2,9 +2,8 @@
 # hours/terce.ts and psalter/distribution.ts's 'terce' table) — same shape
 # and convention as data/hours/prime-antiphons.yml (inline text, no
 # separate common-propers id, incipit/full split via an embedded "*" where
-# the source has one). None of these happen to have a "*" — each is a
-# short single-clause antiphon and splitAntiphon() already degrades
-# gracefully (incipit == full) when there isn't one.
+# the source has one). Each entry is a full antiphon, split at "*" by
+# splitAntiphon() (incipit before the psalms, full text after).
 #
 # Verified against Divinum Officium (Monastic Tridentinum 1617):
 #   - sunday/monday/tuesday: clean per-annum runs with no sanctoral
@@ -15,7 +14,7 @@
 #     redistributed (see psalter-distribution.yml's long comment on
 #     'terce'), so there's no real historical antiphon for this specific
 #     grouping. Per explicit decision, each is instead derived from the
-#     opening phrase of that day's first psalm (Ps 41 for Wednesday, Ps 69
+#     first verse of that day's first psalm (Ps 41 for Wednesday, Ps 69
 #     for Friday) — editorial, not independently verified against the
 #     reference engine as a real antiphon, same caveat as the
 #     redistribution itself.
@@ -24,19 +23,19 @@
 #     were swapped again the same day, per explicit correction — see git
 #     history for the prior arrangements.
 sunday:
-  la: "Allelúja."
-  en: "Alleluia."
+  la: "Allelúja, * allelúja, allelúja (allelúja)."
+  en: "Alleluia, * alleluia, alleluia (alleluia)."
 monday:
-  la: "Ádjuva me."
-  en: "Help me."
+  la: "Ádjuva me, * et salvus ero, Dómine."
+  en: "Help me * and I shall be saved, O Lord."
 tuesday: &gradual-terce-ant
-  la: "Clamávi."
-  en: "I cried unto the Lord."
+  la: "Clamávi, * et exaudívit me."
+  en: "I cried unto the Lord, * and He heard me."
 wednesday:
-  la: "Quemádmodum desíderat cervus."
-  en: "As the hart panteth."
+  la: "Quemádmodum desíderat cervus ad fontes aquárum: * ita desíderat ánima mea ad te, Deus."
+  en: "As the hart panteth after the fountains of water; * so my soul panteth after thee, O God."
 thursday: *gradual-terce-ant
 friday:
-  la: "Deus, in adjutórium meum inténde."
-  en: "O God, come to my assistance."
+  la: "Deus, in adjutórium meum inténde: * Dómine, ad adjuvándum me festína."
+  en: "O God, come to my assistance; * O Lord, make haste to help me."
 saturday: *gradual-terce-ant
