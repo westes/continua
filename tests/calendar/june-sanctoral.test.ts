@@ -41,7 +41,7 @@ describe('June sanctoral pull (first pass)', () => {
     expect(ids).toEqual(['conversion-of-st-paul', 'ss-peter-and-paul', 'commemoration-of-st-paul']);
   });
 
-  it('St. Irenaeus (a genuinely open calendar gap -- nothing previously won June 28) wins outright at Duplex with a real proper collect, no active octave nearby to contest him', () => {
+  it('St. Irenaeus (a genuinely open calendar gap -- nothing previously won June 28) wins outright at Duplex with a real proper collect, commemorating the Baptist\'s octave (which a Duplex saint outranks)', () => {
     const day = resolveDay('2035-06-28');
     expect(day.winner).toEqual({
       kind: 'sanctoral',
@@ -50,7 +50,9 @@ describe('June sanctoral pull (first pass)', () => {
       nameLa: 'Sanctus Irenæus, Episcopus et Martyr',
       rank: 'duplex',
     });
-    expect(day.commemorations).toEqual([]);
+    expect(day.commemorations.map((c) => (c.kind === 'octave' ? c.id : null))).toEqual([
+      'nativity-of-st-john-the-baptist',
+    ]);
     expect(getDayCollect(day).status.en).toBe('verified');
   });
 

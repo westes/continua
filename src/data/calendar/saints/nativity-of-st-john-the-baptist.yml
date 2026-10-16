@@ -22,8 +22,16 @@ nameLa: "Nativitas Sancti Joannis Baptistæ"
 rank: duplex-1-classis
 common: common-of-an-apostle
 propers: "nativity-of-st-john-the-baptist"
-# Read at Prime on the evening before, when this feast is the day's winner
-# (hours/martyrology-announcement.ts); text from the reference engine's
-# English Martyrologium Titulus.
-martyrologyAnnouncement:
-  en: "The morrow is the birthday of the holy Baptist John, the Forerunner of the Lord, the son of Zacharias and Elizabeth, who was filled with the Holy Ghost while yet he was in his mother's womb."
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true
+# Has a real octave (Jun 24 - Jul 1). Own readings on days 2, 4 and 8; the
+# other days read the feast's own lessons in the source. `wins` is the
+# default (only a Simplex loses to it); John and Paul (Jun 26), Irenaeus
+# (Jun 28) and the Commemoration of Paul (Jun 30) are Duplex and keep
+# their days. The octave day (Jul 1) falls on the Most Precious Blood
+# (Duplex I), which keeps it, so the octave day is normally commemorated
+# and not announced.
+octave:
+  enabled: true
+  closingDayAnnouncement: true
