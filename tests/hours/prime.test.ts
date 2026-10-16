@@ -21,6 +21,18 @@ const SUNDAY = '2026-08-09';
 // suppressed by checking for the active octave directly.
 const SUNDAY_IN_OCTAVE = '2026-09-13';
 
+/** A ferial day's Preces are three consecutive sets: Kyrie/Credo/"Et ego ad
+ * te", then the ferial "Éripe me" block, then the Confiteor/absolution close. */
+function expectAllThreeFerialPreces(ordo: { parts: { kind: string; text?: { text: { la?: string } } }[] }): void {
+  const la = ordo.parts.filter((p) => p.kind === 'preces').map((p) => p.text?.text.la ?? '');
+  const prelude = la.findIndex((t) => t.includes('Credo in Deum'));
+  const ferial = la.findIndex((t) => t.startsWith('V. Éripe me'));
+  const conclusion = la.findIndex((t) => t.includes('Confíteor Deo'));
+  expect(prelude).toBeGreaterThanOrEqual(0);
+  expect(ferial).toBe(prelude + 1);
+  expect(conclusion).toBe(ferial + 1);
+}
+
 describe('resolveOrdo("prime", ...)', () => {
   it('is implemented and resolves psalms from the weekday-variable slot', () => {
     const ordo = resolveOrdo('prime', MONDAY);
@@ -115,9 +127,7 @@ describe('resolveOrdo("prime", ...)', () => {
     expect(chapter && chapter.kind === 'chapter' ? chapter.text.text.en : undefined).toBe(
       'Love ye truth and peace, said the Almighty Lord.',
     );
-    const preces = ordo.parts.filter((p) => p.kind === 'preces');
-    const ferialPreces = preces.find((p) => p.kind === 'preces' && p.text.text.la?.startsWith('V. Éripe me'));
-    expect(ferialPreces).toBeDefined();
+    expectAllThreeFerialPreces(ordo);
   });
 
   it('uses the Sunday capitulum and the secular Preces (with Benedict kept in the Confiteor) on a Sunday', () => {
@@ -132,9 +142,10 @@ describe('resolveOrdo("prime", ...)', () => {
     expect(
       dominicalPreces && dominicalPreces.kind === 'preces' ? dominicalPreces.text.text.la : undefined,
     ).toContain('beáto Patri nostro Benedícto');
-    expect(
-      dominicalPreces && dominicalPreces.kind === 'preces' ? dominicalPreces.text.text.la : undefined,
-    ).toContain('Et ego ad te, Dómine, clamávi');
+    const la = preces.map((p) => (p.kind === 'preces' ? (p.text.text.la ?? '') : ''));
+    expect(la.some((t) => t.includes('Et ego ad te, Dómine, clamávi'))).toBe(true);
+    // Sunday gets prelude + conclusion only, not the ferial "Éripe me" block.
+    expect(la.some((t) => t.startsWith('V. Éripe me'))).toBe(false);
   });
 
   it('uses the ferial Preces and the ferial capitulum on a Vigil day', () => {
@@ -147,11 +158,7 @@ describe('resolveOrdo("prime", ...)', () => {
     // Reference engine (specprima.pl capitulum_prima): a Vigil's winner Rank
     // names "Vigilia", which selects the ferial text.
     expect(chapter && chapter.kind === 'chapter' ? chapter.text.text.la : undefined).toContain('Pacem et veritátem');
-    const preces = ordo.parts.filter((p) => p.kind === 'preces');
-    const ferialPreces = preces.find((p) => p.kind === 'preces' && p.text.text.la?.startsWith('V. Éripe me'));
-    expect(ferialPreces).toBeDefined();
-    const dominicalPreces = preces.find((p) => p.kind === 'preces' && p.text.text.la?.includes('Confíteor Deo'));
-    expect(dominicalPreces).toBeUndefined();
+    expectAllThreeFerialPreces(ordo);
   });
 
   it('gives the capitulum its scripture citation', () => {

@@ -1,0 +1,49 @@
+# Prime's Preces, part 2 of 2 (secular Tridentine; see
+# prime-preces-prelude.yml): Adjutorium, Confiteor, Misereatur, Indulgentiam,
+# "Dignare, Domine, die isto..." / "Miserere nostri..." and Domine exaudi.
+# [Preces Dominicales Prima 2] plus [Preces dominicales secundae].
+#
+# The Confiteor keeps "beato Patri nostro Benedicto" in the saint list —
+# real secular/Roman Confiteors omit this (it's a Monastic-only addition
+# naming St. Benedict), but vu keeps it by explicit choice.
+id: prime-preces-conclusion
+text:
+  la: |
+    V. Adjutórium nostrum ✠ in nómine Dómini.
+    R. Qui fecit cælum et terram.
+
+    Confíteor Deo omnipoténti, beátæ Maríæ semper Vírgini, beáto Michaéli Archángelo, beáto Joánni Baptístæ, sanctis Apóstolis Petro et Paulo, beáto Patri nostro Benedícto, et ómnibus Sanctis, quia peccávi nimis, cogitatióne, verbo et ópere: mea culpa, mea culpa, mea máxima culpa. Ídeo precor beátam Maríam semper Vírginem, beátum Michaélem Archángelum, beátum Joánnem Baptístam, sanctos Apóstolos Petrum et Paulum, beátum Patrem nostrum Benedíctum, et omnes Sanctos, oráre pro me ad Dóminum Deum nostrum.
+
+    Misereátur nostri omnípotens Deus, et dimíssis peccátis nostris, perdúcat nos ad vitam ætérnam. Amen.
+
+    Indulgéntiam, ✠ absolutiónem et remissiónem peccatórum nostrórum tríbuat nobis omnípotens et miséricors Dóminus. Amen.
+
+    V. Dignáre, Dómine, die isto.
+    R. Sine peccáto nos custodíre.
+    V. Miserére nostri, Dómine.
+    R. Miserére nostri.
+    V. Fiat misericórdia tua, Dómine, super nos.
+    R. Quemádmodum sperávimus in te.
+    V. Dómine, exáudi oratiónem meam.
+    R. Et clamor meus ad te véniat.
+  en: |
+    V. Our help is ✠ in the name of the Lord,
+    R. Who made heaven and earth.
+
+    I confess to almighty God, to blessed Mary ever Virgin, to blessed Michael the Archangel, to blessed John the Baptist, to the holy Apostles Peter and Paul, our holy Father Benedict, and to all the Saints, that I have sinned exceedingly in thought, word and deed: through my fault, through my fault, through my most grievous fault. Therefore I beseech blessed Mary ever Virgin, blessed Michael the Archangel, blessed John the Baptist, the holy Apostles Peter and Paul, our holy Father Benedict, and all the Saints, to pray for me to the Lord our God.
+
+    May almighty God have mercy on us, forgive us our sins, and bring us to everlasting life. Amen.
+
+    May the almighty ✠ and merciful Lord grant us pardon, absolution and remission of our sins. Amen.
+
+    V. Vouchsafe, O Lord,
+    R. To keep us this day without sin.
+    V. O Lord, have mercy upon us.
+    R. Have mercy upon us.
+    V. O Lord, let thy mercy lighten upon us,
+    R. As our trust is in thee.
+    V. O Lord, hear my prayer.
+    R. And let my cry come unto thee.
+status:
+  la: verified
+  en: verified

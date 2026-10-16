@@ -86,8 +86,11 @@ export type HourPart =
       // Vigils included, as a "feast"). Prime's Preces use this; its
       // capitulum doesn't.
       vigilIsFerial?: true;
-      sundayOrFeastRef: PropersRef;
-      ferialRef: PropersRef;
+      // A list is emitted in order as consecutive parts (Prime's Preces:
+      // the ferial form wraps its own block between the shared prelude and
+      // conclusion, while a Sunday/feast gets just the prelude + conclusion).
+      sundayOrFeastRef: PropersRef | PropersRef[];
+      ferialRef: PropersRef | PropersRef[];
     }
   // The Athanasian Creed — included on Sundays that aren't a Double-or-higher
   // feast and aren't inside any active octave (see calendar/isDoubleOrHigher,

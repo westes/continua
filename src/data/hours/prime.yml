@@ -41,17 +41,17 @@
 # feast, and (same fix as the Creed above) inside any active octave too,
 # checked directly rather than through resolveOfficeWinner alone.
 #
-# Preces deliberately use the *secular* Tridentine form
-# (propers/common/prime-preces-dominicales.yml), not Monastic Prime's own
-# shorter Dominicales form — chosen because the secular form keeps content
-# (the "Et ego ad te, Domine, clamavi..." versicle block; the fuller
-# "Miserere nostri, Domine... Fiat misericordia tua..." close) that
-# Monastic Prime drops. Under the live-verified secular Tridentine rubric
-# this same unified form is actually said on *every* day Preces are said
-# (Sunday and ferial alike, since Pius X's reform) — prime-preces-
-# feriales.yml's separate (older, pre-reform) ferial-only text is kept
-# wired up here anyway, by explicit choice, pending a future fix to gate
-# it to the narrower set of days it should actually apply to.
+# Preces deliberately use the *secular* Tridentine form, not Monastic
+# Prime's own shorter Dominicales form — chosen because the secular form
+# keeps content (the "Et ego ad te, Domine, clamavi..." versicle block; the
+# fuller "Miserere nostri, Domine... Fiat misericordia tua..." close) that
+# Monastic Prime drops. The text is two files, prime-preces-prelude (Kyrie,
+# Pater, Credo, "Et ego ad te") and prime-preces-conclusion (Adjutorium,
+# Confiteor, absolutions, "Dignare", "Miserere", Domine exaudi). A Sunday or
+# feast gets prelude + conclusion; a ferial day (Vigils included) gets all
+# three sets in the reference engine's order, with prime-preces-feriales's
+# "Eripe me" block between them. Said on *every* ferial day by explicit
+# choice, not just where later rubrics restricted them.
 #
 # The dead-commemoration psalm (129, De profundis) is dropped by explicit
 # choice — a deliberate time-saving cut, not an oversight. The intro/close
@@ -77,8 +77,13 @@ parts:
     resolvedKind: preces
     omitOnDouble: true
     vigilIsFerial: true
-    sundayOrFeastRef: { source: common, id: prime-preces-dominicales }
-    ferialRef: { source: common, id: prime-preces-feriales }
+    sundayOrFeastRef:
+      - { source: common, id: prime-preces-prelude }
+      - { source: common, id: prime-preces-conclusion }
+    ferialRef:
+      - { source: common, id: prime-preces-prelude }
+      - { source: common, id: prime-preces-feriales }
+      - { source: common, id: prime-preces-conclusion }
   - kind: prayer
     textRef: { source: common, id: collect-prime }
   - kind: martyrology

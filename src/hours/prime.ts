@@ -141,6 +141,7 @@ function resolvePart(part: HourPart, date: string, day: LiturgicalDay): Resolved
       const ref = useFeastForm ? part.sundayOrFeastRef : part.ferialRef;
       if (part.resolvedKind === 'preces') {
         return [{ kind: 'preces', text: resolveCommon(ref.id), label: part.label }];
+      const refs = Array.isArray(ref) ? ref : [ref];
       }
       return [{ kind: part.resolvedKind, text: resolveCommon(ref.id) }];
     }
