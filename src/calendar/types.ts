@@ -208,11 +208,11 @@ export interface OctaveConfig {
    * Tridentine rubrics; we keep it as an ordinary octave day, a deliberate
    * deviation that only shows in years when Epiphany itself is a Sunday.) */
   skipsSunday?: boolean;
-  /** What the Martyrology announces ahead of this octave's closing day
-   * ("The morrow is the Octave of ...") — printed only when the octave
+  /** Announce this octave's closing day in the Martyrology the evening
+   * before ("On the morrow is the octave day of ..."), only when the octave
    * actually wins that day (hours/martyrology-announcement.ts). Interior
    * octave days announce nothing. */
-  closingDayAnnouncement?: Partial<Record<'la' | 'en', string>>;
+  closingDayAnnouncement?: true;
 }
 
 export type DayWinner =

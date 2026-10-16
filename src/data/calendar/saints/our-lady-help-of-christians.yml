@@ -17,8 +17,6 @@ nameLa: "Beata Maria Virgo, Auxilium Christianorum"
 rank: duplex-majus
 common: common-of-the-bvm
 propers: "our-lady-help-of-christians"
-# Read at Prime on the evening before, when this feast is the day's winner
-# (hours/martyrology-announcement.ts); text from the reference engine's
-# English Martyrologium Titulus.
-martyrologyAnnouncement:
-  en: "On the morrow we keep the feast of the Blessed Virgin Mary, styled \"Help of Christians.\""
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true

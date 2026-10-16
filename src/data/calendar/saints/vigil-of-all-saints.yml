@@ -13,8 +13,6 @@ propers: "vigil-of-all-saints"
 # this calendar shares common-of-a-vigil (live-query-verified via the
 # Vigil of St. Andrew/St. Bartholomew, see that section of TODO.md) --
 # wired directly on that overwhelming precedent.
-# Read at Prime on the evening before, when this feast is the day's winner
-# (hours/martyrology-announcement.ts); text from the reference engine's
-# English Martyrologium Titulus.
-martyrologyAnnouncement:
-  en: "The morrow is the Eve of All the Saints."
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true

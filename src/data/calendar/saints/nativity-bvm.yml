@@ -24,4 +24,8 @@ propers: "nativity-bvm"
 # st-nicholas-of-tolentino.yml).
 octave:
   enabled: true
+  closingDayAnnouncement: true
   wins: duplex
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true

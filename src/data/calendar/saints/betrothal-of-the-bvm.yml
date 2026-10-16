@@ -21,8 +21,6 @@ nameLa: "Desponsatio Beatæ Mariæ Virginis"
 rank: duplex-majus
 common: common-of-the-bvm
 propers: "betrothal-of-the-bvm"
-# Read at Prime on the evening before, when this feast is the day's winner
-# (hours/martyrology-announcement.ts); text from the reference engine's
-# English Martyrologium Titulus.
-martyrologyAnnouncement:
-  en: "On the morrow we keep the feast of the Espousal of the Blessed Virgin Mary to holy Joseph."
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true
