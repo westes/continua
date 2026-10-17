@@ -1,0 +1,14 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/09-22.txt
+# ("Duplex;;3;;vide C4"; deflated one tier for a late canonization (canonized 1658)). Own collect, Matins readings; the rest is the Common. Ported
+# 2026-10-16 and deliberately left off the sanctoral calendar, available for
+# calendar editing.
+id: st-thomas-of-villanova
+name: "St. Thomas of Villanova, Bishop and Confessor"
+nameLa: "Sanctus Thomas a Villanova, Episcopus et Confessor"
+rank: semiduplex
+common: common-of-a-confessor-bishop
+invocationName: { la: "Thoma", en: "Thomas" }
+propers: "st-thomas-of-villanova"
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true

@@ -1,0 +1,14 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/05-25.txt
+# ("Duplex;;3;;vide C4b"; deflated one tier for a late canonization (canonized 1728)). Own collect, Matins readings; the rest is the Common. Ported
+# 2026-10-16 and deliberately left off the sanctoral calendar, available for
+# calendar editing.
+id: st-gregory-vii
+name: "St. Gregory VII, Pope and Confessor"
+nameLa: "Sanctus Gregorius Septimus, Papa et Confessor"
+rank: semiduplex
+common: common-of-a-confessor-pope
+invocationName: { la: "Gregori", en: "Gregory" }
+propers: "st-gregory-vii"
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true

@@ -1,0 +1,14 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/10-23r.txt
+# ("Duplex;;3;;vide C4-1"; deflated one tier for a late canonization (canonized 1950)). Own collect, Matins readings; the rest is the Common. Ported
+# 2026-10-16 and deliberately left off the sanctoral calendar, available for
+# calendar editing.
+id: st-anthony-mary-claret
+name: "St. Anthony Mary Claret, Bishop and Confessor"
+nameLa: "Sanctus Antonius Maria Claret, Episcopus et Confessor"
+rank: semiduplex
+common: common-of-a-confessor-bishop
+invocationName: { la: "Antóni", en: "Anthony" }
+propers: "st-anthony-mary-claret"
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true
