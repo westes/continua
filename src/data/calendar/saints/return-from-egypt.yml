@@ -1,0 +1,15 @@
+# The Return of the Child Jesus from Egypt (Jan 7). The reference engine has no
+# office for this day, only the Martyrology's lead line "Relatio pueri Jesu de
+# Aegypto" ("On the morrow we call to mind the return of the Child Jesus out of
+# Egypt"); added as a Simplex feast of the Lord on the user's instruction
+# (2026-10-16), with a small proper office authored from Matthew 2:19-23 and the
+# Holy Family collect. Jan 7 held no saint after the 2026-10 thinning.
+id: return-from-egypt
+name: "The Return of the Child Jesus from Egypt"
+nameLa: "Relatio Pueri Jesu de Ægypto"
+rank: simplex
+common: common-of-the-bvm
+propers: "return-from-egypt"
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true
