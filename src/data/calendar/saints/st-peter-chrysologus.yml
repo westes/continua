@@ -1,0 +1,14 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/12-04.txt
+# ("Duplex;;3;;vide C4a"). Own collect, Matins readings; the rest is the Common. Ported
+# 2026-10-16 and deliberately left off the sanctoral calendar, available for
+# calendar editing.
+id: st-peter-chrysologus
+name: "St. Peter Chrysologus, Bishop, Confessor and Doctor of the Church"
+nameLa: "Sanctus Petrus Chrysologus, Episcopus, Confessor et Ecclesiæ Doctor"
+rank: duplex
+common: common-of-a-confessor-doctor
+invocationName: { la: "Petre Chrysóloge", en: "Peter Chrysologus" }
+propers: "st-peter-chrysologus"
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true
