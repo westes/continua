@@ -1,11 +1,15 @@
 import { describe, it, expect } from 'vitest';
-import { getMartyrologyEntryFor } from '../../src/martyrology';
+import { getMartyrologyEntryFor as entryFor } from '../../src/martyrology';
+import { martyrologyAnnouncementFor } from '../../src/hours/martyrology-announcement';
+import { addDays } from '../../src/calendar/date-math';
+
+// What Prime shows: the next day's entry plus that day's announcement.
+const getMartyrologyEntryFor = (today: string) => entryFor(today, martyrologyAnnouncementFor(addDays(today, 1)));
 
 // Prime reads tomorrow's entry, so each `today` below is the eve of the
 // feast it announces. Easter 2026 is April 5.
 const CASES: [string, string, string][] = [
   ['2026-11-28', 'Domínica prima Advéntus', 'Advent I'],
-  ['2026-01-01', 'Nóminis Jesu', 'Holy Name (Jan 2)'],
   ['2026-02-17', 'Dies Cínerum', 'Ash Wednesday'],
   ['2026-03-26', 'Septem Dolórum', 'Seven Sorrows, Passion Friday'],
   ['2026-04-04', 'Solémnitas solemnitátum', 'Easter, read on Holy Saturday'],

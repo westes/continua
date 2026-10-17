@@ -1,10 +1,12 @@
-# Moveable entries of the Martyrology, announced at Prime the day before the
-# feast (see martyrology/index.ts). Latin and English from the reference engine's
+# Announcements of moveable days, read at Prime the day before (see
+# hours/martyrology-announcement.ts, which also generates the announcement of
+# every flagged fixed feast). Authored rather than generated, because the day
+# is not always a feast of its own (the Rogation Litanies, Advent I, Easter). Latin and English from the reference engine's
 # Martyrologium/Mobile.txt, base (Tridentine / Divino Afflatu) text -- the 1570,
-# 1955 and 1960 variants are deliberately not used. `anchor` is the *announced*
-# day, same shape as data/calendar/temporal-feasts/*.yml.
-# Nat1-0 (Holy Name) is a fixed-date feast here (Jan 2), so it lives in
-# martyrology/01-02.yml instead. Not carried over: Nat2-0 (Holy Family -- not in
+# 1955 and 1960 variants are deliberately not used. `anchor` is the announced
+# day (the day the text is *about*), same shape as data/calendar/temporal-feasts/*.yml.
+# Nat1-0 (Holy Name) is a fixed-date feast here (Jan 2), so it is the Holy
+# Name feast's own generated announcement instead. Not carried over: Nat2-0 (Holy Family -- not in
 # this calendar), Defuncti
 # (hours/all-souls.ts has its own intro), DefunctiM, Nativity (12-25.yml).
 entries:
@@ -75,7 +77,7 @@ the Resurrection of our Saviour Jesus Christ according to the flesh."
   - id: Pasc3-3
     anchor: {kind: easter, offset: 24}
     text:
-      la: "Octáva Solémnitas sancti Joseph, Sponsi beátæ Maríæ Vírginis, Confessóris et universális Ecclésiæ Patróni."
+      la: "Octáva Solemnitátis sancti Joseph, Sponsi beátæ Maríæ Vírginis, Confessóris et universális Ecclésiæ Patróni."
       en: "The Octave of the Solemnity of St. Joseph, spouse of the Blessed Virgin Mary, confessor, and patron of the Universal church."
     status: { la: verified, en: draft }
   - id: Pasc5-1

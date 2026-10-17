@@ -17,6 +17,11 @@ const CASES: [string, string][] = [
 ];
 
 describe('martyrology feast announcements', () => {
+  it('gives the Latin as a title line from nameLa', () => {
+    expect(martyrologyAnnouncementFor('2026-01-02')?.la).toMatch(/^Crástina die: .+\.$/);
+    expect(martyrologyAnnouncementFor('2026-01-13')?.la).toMatch(/^Crástina die, dies octáva: .+\.$/);
+  });
+
   it.each(CASES)('%s: %s', (date, text) => {
     expect(martyrologyAnnouncementFor(date)?.en).toBe(text);
   });
@@ -25,8 +30,10 @@ describe('martyrology feast announcements', () => {
     expect(martyrologyAnnouncementFor('2026-08-12')).toBeUndefined();
     expect(martyrologyAnnouncementFor('2026-10-15')).toBeUndefined();
     // The Baptist's octave day (Jul 1) falls on the Most Precious Blood,
-    // Duplex I, which keeps the day and does not opt in.
-    expect(martyrologyAnnouncementFor('2026-07-01')).toBeUndefined();
+    // Duplex I, which keeps the day, so that feast announces, not the octave.
+    expect(martyrologyAnnouncementFor('2026-07-01')?.en).toBe(
+      'On the morrow we celebrate the feast of the Most Precious Blood of Our Lord Jesus Christ.',
+    );
     expect(martyrologyAnnouncementFor('2026-06-27')).toBeUndefined();
   });
 
