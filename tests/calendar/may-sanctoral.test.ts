@@ -8,7 +8,9 @@ import { getDayCollect } from '../../src/hours/resolve-common';
 // per-saint source detail.
 describe('May sanctoral pull (first pass)', () => {
   it('Ss. Philip and James win outright with a real proper collect and antiphon', () => {
-    const day = resolveDay('2029-05-01');
+    // May 11, as in the reference's 1955-and-later calendars; May 1 is St.
+    // Joseph the Worker.
+    const day = resolveDay('2028-05-11');
     expect(day.winner).toEqual({
       kind: 'sanctoral',
       id: 'ss-philip-and-james',
@@ -17,6 +19,12 @@ describe('May sanctoral pull (first pass)', () => {
       rank: 'duplex-2-classis',
     });
     expect(getDayCollect(day).status.en).toBe('verified');
+  });
+
+  it('St. Joseph the Worker holds May 1', () => {
+    const day = resolveDay('2027-05-01');
+    expect(day.winner).toMatchObject({ kind: 'sanctoral', id: 'st-joseph-the-worker', rank: 'duplex-1-classis' });
+    expect(day.commemorations).toEqual([]);
   });
 
   it('genuinely unwinnable stubs correctly lose to their real competitor, now that both are modeled', () => {

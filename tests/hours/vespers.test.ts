@@ -22,7 +22,7 @@ const VESPERS_OFFICE_OVERRIDE_DATES: Record<string, string> = {
   'our-lady-of-the-rosary': '2026-10-07',
   'nativity-of-st-john-the-baptist': '2026-06-24',
   'ss-peter-and-paul': '2026-06-29',
-  'ss-philip-and-james': '2026-05-01',
+  'ss-philip-and-james': '2028-05-11',
   'ss-simon-and-jude': '2025-10-28',
   'st-andrew': '2026-11-30',
   'st-barnabas': '2035-06-11',

@@ -228,7 +228,7 @@ describe('ferial Terce/Sext/None antiphons are full, not bare incipits', () => {
   });
 
   it('Friday Terce closes with the full Ps 69 verse, not a repeat of the opening versicle', () => {
-    const ordo = resolveOrdo('terce', '2026-10-16');
+    const ordo = resolveOrdo('terce', '2026-10-23');
     const closing = ordo.parts.find((p) => p.kind === 'antiphon');
     expect(closing?.kind === 'antiphon' ? closing.text.text.la : '').toContain('ad adjuvándum me festína');
     expect(closing?.kind === 'antiphon' ? closing.text.text.en : '').toContain('make haste to help me');

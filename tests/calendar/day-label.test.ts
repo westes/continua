@@ -97,16 +97,17 @@ describe('getDayLabel — ordinal temporal label', () => {
     // temporal commemoration is dropped from the label whenever anything
     // else is already being celebrated — general, not Ember-specific).
     expect(getDayLabel(resolveDay('2025-12-01')).en).toBe('St. Andrew, Apostle (Duplex II Class, transferred)');
-    // Dec 4 (St. Barbara, merely commemorated, not high-ranked enough to
-    // win outright) is a clean example of the season-ordinal label itself.
+    // Dec 5 (no saint of its own) is a clean example of the season-ordinal
+    // label itself. (Dec 4 used to be, with St. Barbara commemorated; it now
+    // belongs to St. Peter Chrysologus.)
     // Advent drops the redundant leading weekday word now that the header
     // always shows the weekday on its own (see temporalLabel's
     // `dropWeekdayPrefix`).
-    expect(getDayLabel(resolveDay('2025-12-04')).en).toBe('In the 1st week of Advent (Feria) — St. Barbara, Virgin and Martyr');
+    expect(getDayLabel(resolveDay('2025-12-05')).en).toBe('In the 1st week of Advent (Feria)');
     // Latin: same weekday-drop, and the season-ordinal genitive
     // construction ("Hebdomada prima Adventus") needs no extra linking
     // word — 4th-declension "Adventus" has the same genitive form.
-    expect(getDayLabel(resolveDay('2025-12-04')).la).toBe('In hebdomada prima Adventus (Feria) — Sancta Barbara, Virgo et Martyr');
+    expect(getDayLabel(resolveDay('2025-12-05')).la).toBe('In hebdomada prima Adventus (Feria)');
   });
 
   it('falls back to weekday + season name for seasons with no ordinal convention modeled', () => {

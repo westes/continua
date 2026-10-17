@@ -223,12 +223,10 @@ describe('resolveOrdo("lauds", ...)', () => {
     expect(hymn?.kind === 'hymn' ? hymn.text.text.la : undefined).toContain('Jesu coróna célsior');
   });
 
-  it("uses common-of-a-virgin-martyr's real office bundle on St. Apollonia's own clean day, not the ferial default", () => {
-    // 2026-02-09 used to collide (St. John of Matha, since removed, won
-    // outright, Apollonia merely commemorated), so this uses her own
-    // already-verified clean year (2029-02-09, per her saint file's own
-    // comment).
-    const ordo = resolveOrdo('lauds', '2029-02-09');
+  it("uses common-of-a-virgin-martyr's real office bundle on St. Cecilia's own day, not the ferial default", () => {
+    // Feb 9 now belongs to St. Cyril of Alexandria (Apollonia is only
+    // commemorated), so this uses St. Cecilia, who has the same bundle.
+    const ordo = resolveOrdo('lauds', '2027-11-22');
     const chapter = ordo.parts.find((p) => p.kind === 'chapter');
     expect(chapter?.kind === 'chapter' ? chapter.text.citation?.en : undefined).toBe('2 Cor 10:17-18');
     const hymn = ordo.parts.find((p) => p.kind === 'hymn');

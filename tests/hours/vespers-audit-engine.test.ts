@@ -65,8 +65,8 @@ describe('proper bundles no longer fall through to the ferial chapter/hymn/versi
 
 describe('First/Second Vespers psalmody the engine renders', () => {
   it('Ss. Philip and James: Ps 109/110/111/112 at First, 109/112/115/125 at Second Vespers', () => {
-    expect(psalmNumbers('2026-04-30')).toEqual([109, 110, 111, 112]);
-    expect(psalmNumbers('2026-05-01')).toEqual([109, 112, 115, 125]);
+    expect(psalmNumbers('2028-05-10')).toEqual([109, 110, 111, 112]);
+    expect(psalmNumbers('2028-05-11')).toEqual([109, 112, 115, 125]);
   });
 
   it("the Apostles' Common has its own First Vespers antiphons (Hoc est præcéptum meum)", () => {

@@ -1180,8 +1180,8 @@ describe('resolveOrdo("matins", ...) remaining Common categories\' Matins hymns 
     expect(hymnLatin('2026-01-15')).toContain('Iste Conféssor Dómini sacrátus');
   });
 
-  it('St. Apollonia (common-of-a-virgin-martyr, her own clean year 2029-02-09) resolves to "Vírginis Proles"', () => {
-    expect(hymnLatin('2029-02-09')).toContain('Vírginis Proles');
+  it('St. Agatha (common-of-a-virgin-martyr, a clean year 2027-02-05) resolves to "Vírginis Proles"', () => {
+    expect(hymnLatin('2027-02-05')).toContain('Vírginis Proles');
   });
 
   it('St. Michael resolves to "Tibi Christe splendor Patris," reused from his own Apparition', () => {
