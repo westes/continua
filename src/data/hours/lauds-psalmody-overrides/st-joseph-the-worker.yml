@@ -1,0 +1,24 @@
+# Own [Ant Laudes] ("@:Ant Vespera"): the same five antiphons, on psalms 92, 99, 62, the canticle and Laudate.
+id: st-joseph-the-worker
+groups:
+  - psalms: [92]
+    antiphon:
+      la: "Deus, mundi ópifex, * pósuit hóminem ut operarétur et custodíret terram, allelúja."
+      en: "God, maker of the world, * has stationed man to dress and keep the earth, alleluia."
+  - psalms: [99]
+    antiphon:
+      la: "Christus, Dei Fílius, * mánibus suis operári dignátus est, allelúja."
+      en: "Christ, the Son of God, * deigned to work with his hands, alleluia."
+  - psalms: [62]
+    antiphon:
+      la: "Artem fabri * fidéliter exércens sanctus Joseph, labóris mirábile refúlget exémplar, allelúja."
+      en: "The craftsman, * holy Joseph, faithfully exercising his trade, shines forth as a marvellous example of work, alleluia."
+canticle:
+  id: canticum-trium-puerorum
+  antiphon:
+    la: "Fidélis servus * et prudens, quem constítuit Dóminus super famíliam suam, allelúja."
+    en: "Faithful servant, * and prudent, whom the Lord hath appointed over his family, alleluia."
+laudate:
+  antiphon:
+    la: "Joseph, ópifex sancte, * ópera nostra tuére, allelúja."
+    en: "O Joseph, holy workman, * defend our work, alleluia."

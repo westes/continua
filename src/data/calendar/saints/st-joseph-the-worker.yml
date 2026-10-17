@@ -1,0 +1,21 @@
+# Read directly from the reference engine: untagged/default [Rank] block of
+# web/www/horas/Latin/Sancti/05-01r.txt -- "S. Joseph Opificis;;Duplex I classis;;6;;"
+# (the "(sed rubrica innovata)" alternative, "Duplex optional", is not used). A
+# fully proper office of the Spouse of the Blessed Virgin as a workman: own
+# collect, Magnificat/Benedictus antiphons, five Lauds and Vespers antiphons,
+# hymns, capitula, nine Matins lessons. Instituted in 1955, so well outside this
+# app's own calendar design; ported on the user's instruction (2026-10-16) to
+# bring over every reference saint and left off the sanctoral calendar, available
+# for calendar editing. Rank is the reference's own, taken at face value.
+# Follows st-joseph.yml's bundle (same `Psalmi Dominica`/`Antiphonas horas` rule),
+# which also has no Matins antiphon override: the nine Matins antiphons of the
+# source are not carried.
+id: st-joseph-the-worker
+name: "St. Joseph the Worker"
+nameLa: "Sanctus Josephus Opifex"
+rank: duplex-1-classis
+common: common-of-a-confessor
+propers: "st-joseph-the-worker"
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true
