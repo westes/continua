@@ -1,0 +1,30 @@
+# Read directly from the reference engine: `Sancti/08-14n.txt` --
+# "S. Maximilian Mary Kolbe, priest and martyr;;Duplex memorial;;3;;vide C2b"
+# (English file only; the Latin file does not exist). An `n` (modern-optional)
+# file, canonized 1982, ported on the user's instruction (2026-10-16) to bring
+# over every reference saint and leave it off the sanctoral calendar for
+# calendar editing.
+#
+# "Duplex memorial" is a modern ranking, not a historical FeastClass tier:
+# mapped to Duplex, then deflated one tier to Semiduplex per the standing
+# late-canonization rule (same treatment as St. Pio of Pietrelcina). The source
+# says `vide C2b`, but C2b is the Common of Popes who were Martyrs; Kolbe was
+# a priest, so the Common of a Martyr (C2a) is used instead.
+#
+# The source file is a bare stub: no [Oratio] or [Lectio] in either language,
+# so no collect, commemoration or Matins readings could be authored; it
+# resolves entirely through the Common of a Martyr, as st-pio-of-pietrelcina.yml
+# does for the Common of a Confessor.
+id: st-maximilian-kolbe
+name: "St. Maximilian Mary Kolbe, Priest and Martyr"
+nameLa: "Sanctus Maximilianus Maria Kolbe, Presbyter et Martyr"
+rank: semiduplex
+common: common-of-a-martyr
+propers: null
+collectCommon: collect-c2a
+collectName:
+  la: ["Maximiliáni Maríæ"]
+  en: ["Maximilian Mary"]
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true
