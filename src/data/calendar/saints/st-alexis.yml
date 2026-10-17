@@ -1,0 +1,18 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/07-17.txt
+# ("Semiduplex;;2;;vide C5"). Own Matins readings; the rest is the Common. Ported
+# 2026-10-16 and deliberately left off the sanctoral calendar, available for
+# calendar editing.
+id: st-alexis
+name: "St. Alexis, Confessor"
+nameLa: "Sanctus Alexius, Confessor"
+rank: semiduplex
+common: common-of-a-confessor
+invocationName: { la: "Alexi", en: "Alexis" }
+propers: null
+collectCommon: collect-c5
+collectName:
+  la: ["Aléxii"]
+  en: ["Alexis"]
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true

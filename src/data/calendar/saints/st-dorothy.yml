@@ -1,0 +1,17 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/02-06o.txt
+# ("Simplex;;1.1;;vide C6-1"). Own Matins readings; the rest is the Common. Ported
+# 2026-10-16 and deliberately left off the sanctoral calendar, available for
+# calendar editing.
+id: st-dorothy
+name: "St. Dorothy, Virgin and Martyr"
+nameLa: "Sancta Dorothea, Virgo et Martyr"
+rank: simplex
+common: common-of-a-virgin-martyr
+propers: null
+collectCommon: collect-c6-1
+collectName:
+  la: ["Dorótheæ"]
+  en: ["Dorothy"]
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true
