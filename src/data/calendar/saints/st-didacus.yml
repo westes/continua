@@ -1,0 +1,14 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/11-13.txt
+# ("Semiduplex;;2;;vide C5-1"). Own collect, Matins readings; the rest is the Common. Ported
+# 2026-10-16 and deliberately left off the sanctoral calendar, available for
+# calendar editing.
+id: st-didacus
+name: "St. Didacus, Confessor"
+nameLa: "Sanctus Didacus, Confessor"
+rank: semiduplex
+common: common-of-a-confessor
+invocationName: { la: "Didace", en: "Didacus" }
+propers: "st-didacus"
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true

@@ -1,0 +1,14 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/07-20.txt
+# ("Duplex;;3;;vide C5"; deflated one tier for a late canonization (canonized 1767)). Own collect, Matins readings; the rest is the Common. Ported
+# 2026-10-16 and deliberately left off the sanctoral calendar, available for
+# calendar editing.
+id: st-jerome-emiliani
+name: "St. Jerome Emiliani, Confessor"
+nameLa: "Sanctus Hieronymus Æmilianus, Confessor"
+rank: semiduplex
+common: common-of-a-confessor
+invocationName: { la: "Hieronyme", en: "Jerome" }
+propers: "st-jerome-emiliani"
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true
