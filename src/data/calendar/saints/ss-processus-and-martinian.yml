@@ -1,0 +1,13 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/07-02cc.txt
+# ("Simplex;;1;;vide C3a"). Own collect, Matins readings; the rest is the Common. Ported
+# 2026-10-16 and deliberately left off the sanctoral calendar, available for
+# calendar editing.
+id: ss-processus-and-martinian
+name: "Ss. Processus and Martinian, Martyrs"
+nameLa: "Sancti Processus et Martinianus, Martyres"
+rank: simplex
+common: common-of-several-martyrs
+propers: "ss-processus-and-martinian"
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true

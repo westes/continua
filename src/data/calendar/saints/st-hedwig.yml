@@ -1,0 +1,16 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/10-16.txt
+# ("Semiduplex;;2;;vide C7a"). Own collect, Matins readings; the rest is the Common. Ported
+# 2026-10-16 and deliberately left off the sanctoral calendar, available for
+# calendar editing.
+id: st-hedwig
+name: "St. Hedwig, Widow"
+nameLa: "Sancta Hedwigis, Vidua"
+rank: semiduplex
+common: common-of-a-widow
+propers: "st-hedwig"
+invitatoryName:
+  la: ["Hedwígis"]
+  en: ["Hedwig"]
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true

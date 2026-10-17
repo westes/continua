@@ -1,0 +1,14 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/11-14.txt
+# ("Duplex;;3;;vide C2"; deflated one tier for a late canonization (canonized 1867)). Own collect, Matins readings; the rest is the Common. Ported
+# 2026-10-16 and deliberately left off the sanctoral calendar, available for
+# calendar editing.
+id: st-josaphat
+name: "St. Josaphat, Bishop and Martyr"
+nameLa: "Sanctus Josaphat, Episcopus et Martyr"
+rank: semiduplex
+common: common-of-a-martyr-bishop
+invocationName: { la: "Josaphat", en: "Josaphat" }
+propers: "st-josaphat"
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true

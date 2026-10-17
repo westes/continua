@@ -1,0 +1,14 @@
+# Read directly from the reference engine: web/www/horas/Latin/Sancti/11-09cc.txt
+# ("Simplex;;1;;vide C2a-1"). Own collect, Matins readings; the rest is the Common. Ported
+# 2026-10-16 and deliberately left off the sanctoral calendar, available for
+# calendar editing.
+id: st-theodore-martyr
+name: "St. Theodore, Martyr"
+nameLa: "Sanctus Theodorus, Martyr"
+rank: simplex
+common: common-of-a-martyr
+invocationName: { la: "Theódore", en: "Theodore" }
+propers: "st-theodore-martyr"
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true
