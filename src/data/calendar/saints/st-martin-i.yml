@@ -11,7 +11,9 @@
 id: st-martin-i
 name: "St. Martin I, Pope and Martyr"
 nameLa: "Sanctus Martinus I, Papa et Martyr"
-rank: semiduplex
+# Rank lowered from semiduplex to simplex (user decision, 2026-10-17) so that St. Josaphat
+# (Nov 14 in the reference) wins the day and Martin is commemorated.
+rank: simplex
 common: common-of-a-martyr-bishop
 propers: null
 collectCommon: collect-c2b
