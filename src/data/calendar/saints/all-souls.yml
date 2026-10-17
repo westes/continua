@@ -1,0 +1,22 @@
+# The Commemoration of All the Faithful Departed (Nov 2). The reference engine
+# ranks it Duplex (Sancti/11-02.txt: "Duplex;;3;;ex C9") but, when Nov 2 is a
+# Sunday, keeps the Sunday and moves the Office of the Dead to Monday Nov 3
+# (Tabulae/Transfer/e.txt, 11-03=11-03sec). Ranked Semiduplex here so the
+# ordinary-Sunday rule does exactly that through the usual transfer: it still
+# beats the second day of All Saints' octave, and an ordinary Sunday sends it
+# on to the next open day.
+#
+# The office itself (Office of the Dead, Matins Lessons from Augustine and
+# 1 Corinthians, the two day-specific collects, the Martyrology introduction) is
+# built in hours/all-souls.ts and engages whenever this feast is the day's
+# winner. `common` is a placeholder, never consulted: no part of that office
+# falls back to a Common.
+id: all-souls
+name: "The Commemoration of All the Faithful Departed"
+nameLa: "Commemoratio Omnium Fidelium Defunctorum"
+rank: semiduplex
+common: common-of-a-vigil
+propers: null
+# Announced at Prime the evening before, when this is the day's winner
+# (hours/martyrology-announcement.ts); the wording is generated from `name`.
+martyrologyAnnouncement: true

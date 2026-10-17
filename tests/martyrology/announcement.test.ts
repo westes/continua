@@ -13,6 +13,9 @@ const CASES: [string, string][] = [
   ['2026-07-06', 'On the morrow is the Octave Day of Ss. Peter and Paul, Apostles.'],
   ['2026-08-17', 'On the morrow is the octave day of St. Lawrence, Deacon and Martyr.'],
   ['2026-12-15', 'On the morrow is the octave day of the Immaculate Conception of the Blessed Virgin Mary.'],
+  ['2026-11-02', 'On the morrow we celebrate the feast of the Commemoration of All the Faithful Departed.'],
+  ['2025-11-03', 'On the morrow we celebrate the feast of the Commemoration of All the Faithful Departed.'],
+  ['2027-08-30', 'On the morrow we celebrate the feast of St. Rose of Lima, Virgin.'],
   ['2026-05-27', 'On the morrow we celebrate the feast of St. Bede the Venerable, Priest, Confessor and Doctor of the Church.'],
 ];
 
@@ -29,6 +32,8 @@ describe('martyrology feast announcements', () => {
   it('is silent for interior octave days and winners that do not opt in', () => {
     expect(martyrologyAnnouncementFor('2026-08-12')).toBeUndefined();
     expect(martyrologyAnnouncementFor('2026-10-15')).toBeUndefined();
+    // Nov 2, 2025 is a Sunday: the Sunday keeps it and All Souls moves to the Monday.
+    expect(martyrologyAnnouncementFor('2025-11-02')).toBeUndefined();
     // The Baptist's octave day (Jul 1) falls on the Most Precious Blood,
     // Duplex I, which keeps the day, so that feast announces, not the octave.
     expect(martyrologyAnnouncementFor('2026-07-01')?.en).toBe(

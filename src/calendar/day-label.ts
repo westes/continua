@@ -30,6 +30,7 @@ import { activeOctavesFor, octaveGoverningPrivilegedDay, resolveActiveOctave, ty
 import { resolveTemporalId } from './temporal-id';
 import { compareCommemorations } from './commemoration-order';
 import { getSaintRecord } from './feasts';
+import { resolveDay } from './index';
 
 export interface Bi {
   en: string;
@@ -173,14 +174,14 @@ function weekdayLabel(day: LiturgicalDay): Bi {
   return WEEKDAY_LABELS[day.weekday];
 }
 
-/** All Souls' Day (Nov 2) — the Office of the Dead. This is a pure
- * hour-level override (see hours/all-souls.ts), with no calendar-level
- * winner/octave of its own, so without the `getDayLabel` check that uses
- * this, Nov 2 falls through to the calendar's real answer — "Octave of
- * All Saints (2nd Day)" — which is calendar-accurate but not what's
- * actually being prayed that day. */
+/** All Souls' Day -- true when the commemoration of the faithful departed is
+ * the day's winner. It is an ordinary calendar feast (Nov 2, or Nov 3 when
+ * Nov 2 is a Sunday) whose office is the Office of the Dead (see
+ * hours/all-souls.ts), so it needs this check to be what's actually prayed
+ * rather than the Octave of All Saints that would otherwise be shown. */
 export function isAllSouls(date: string): boolean {
-  return date.slice(5) === '11-02';
+  const winner = resolveDay(date).winner;
+  return winner.kind === 'sanctoral' && winner.id === 'all-souls';
 }
 
 interface OrdinalSeason {
