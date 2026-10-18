@@ -455,6 +455,31 @@ function renderOverrideNocturn3(group: SundayNocturn, day: LiturgicalDay): Resol
   return group.groups ? sundayPsalmNocturn(group, day) : sundayCanticleNocturn(group, day);
 }
 
+/** A Sunday's own psalm numbers (Nocturns 1-2) and canticles (Nocturn 3)
+ * carrying a Common's antiphon text instead of the Sunday's own — for a
+ * saint who wins a Sunday below the rank at which his Common's whole
+ * psalmody applies. Psalmody follows the rank rule; antiphon content does
+ * not (user, 2026-10-18).
+ *
+ * Sunday's six psalms per nocturn sit under 3 pair-antiphons while a
+ * Common gives one antiphon per psalm, so the psalms are regrouped
+ * one-per-antiphon when the counts match; if they don't, the Sunday's own
+ * grouping is left alone rather than guessing at a mapping. The versicle
+ * is the Common's, as on the weekday path. */
+function sundayWithCommonAntiphons(sunday: SundayNocturn, common: SundayNocturn): SundayNocturn {
+  const psalms = (sunday.groups ?? []).flatMap((g) => g.psalms);
+  const commonGroups = common.groups ?? [];
+  if (sunday.groups) {
+    if (commonGroups.length !== psalms.length) return sunday;
+    return {
+      ...sunday,
+      groups: commonGroups.map((g, i) => ({ ...g, psalms: [psalms[i] as number] })),
+      versicle: common.versicle,
+    };
+  }
+  return { ...sunday, antiphon: common.antiphon ?? sunday.antiphon, antiphonStatus: common.antiphonStatus, versicle: common.versicle };
+}
+
 /** The Matins hymn, chosen by the day's office winner (`resolveOfficeWinner`,
  * which already substitutes the governing feast on an octave's interior
  * days -- so an octave day is just a day whose winner is that feast, with no
@@ -1225,11 +1250,19 @@ export function resolveOrdo(date: string): ResolvedOrdo {
   // 33/60/96), not the plain Sunday Nocturn psalms. Checked ahead of the
   // `day.weekday === 'sunday'` branch below, which otherwise unconditionally
   // wins regardless of who the day's winner is — silently making any
-  // saint's own proper Matins psalmody unreachable on a Sunday. Proper
-  // only (not Common-category) for now: no live-verified case yet
-  // confirms a Common's own Matins psalmody should win over a Sunday's,
-  // unlike a saint's own genuinely proper content.
-  const sundaySanctoralProperOverride = day.weekday === 'sunday' && winner.kind === 'sanctoral' ? getMatinsSaintOverride(winner.id) : undefined;
+  // saint's own proper Matins psalmody unreachable on a Sunday.
+  //
+  // A saint with no proper of his own falls to his Common, the same as on
+  // a weekday: the whole Common scheme at Duplex Majus and above
+  // (live-verified 2026-10-18, St. Luke, a Sunday that year — his
+  // Common-of-an-Evangelist psalms, antiphons and canticles, not the
+  // Sunday's); below that, the Sunday's psalm numbers carrying the Common's
+  // antiphon text (psalmody follows rank, antiphon content does not).
+  const sundaySanctoral = day.weekday === 'sunday' && winner.kind === 'sanctoral';
+  const sundaySanctoralProperOverride = sundaySanctoral ? getMatinsSaintOverride(winner.id) : undefined;
+  const sundaySanctoralCommon = sundaySanctoral && !sundaySanctoralProperOverride ? getMatinsCommonOverride(winner.id) : undefined;
+  const sundayCommonWholeScheme =
+    sundaySanctoralCommon !== undefined && effectiveRank !== undefined && isAtLeast(effectiveRank, 'duplex-majus') ? sundaySanctoralCommon : undefined;
   const schemeBlocks = (scheme: MatinsPsalmodyScheme): [ResolvedPart[], ResolvedPart[], ResolvedPart[]] => [
     sundayPsalmNocturn(scheme.nocturn1, day),
     sundayPsalmNocturn(scheme.nocturn2, day),
@@ -1249,14 +1282,18 @@ export function resolveOrdo(date: string): ResolvedOrdo {
       { kind: 'versicle', text: resolveCommon('te-decet-laus') },
     ];
   };
-  if (sundaySanctoralProperOverride) {
-    parts.push(...nocturns(schemeBlocks(sundaySanctoralProperOverride)));
+  if (sundaySanctoralProperOverride ?? sundayCommonWholeScheme) {
+    parts.push(...nocturns(schemeBlocks((sundaySanctoralProperOverride ?? sundayCommonWholeScheme) as MatinsPsalmodyScheme)));
   } else if (threeNocturns && (day.weekday === 'sunday' || hasTemporalNamedOverride)) {
+    const sundayNocturn = (key: 'nocturn1' | 'nocturn2' | 'nocturn3'): SundayNocturn => {
+      const base = sundayNocturnFor(key, day, namedKey);
+      return sundaySanctoralCommon ? sundayWithCommonAntiphons(base, sundaySanctoralCommon[key]) : base;
+    };
     parts.push(
       ...nocturns([
-        sundayPsalmNocturn(sundayNocturnFor('nocturn1', day, namedKey), day),
-        sundayPsalmNocturn(sundayNocturnFor('nocturn2', day, namedKey), day),
-        sundayCanticleNocturn(sundayNocturnFor('nocturn3', day, namedKey), day),
+        sundayPsalmNocturn(sundayNocturn('nocturn1'), day),
+        sundayPsalmNocturn(sundayNocturn('nocturn2'), day),
+        sundayCanticleNocturn(sundayNocturn('nocturn3'), day),
       ]),
     );
   } else if (threeNocturns) {
