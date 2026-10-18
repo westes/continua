@@ -727,6 +727,38 @@ describe('resolveOrdo("matins", ...) second Duplex+ weekday-feast proof — St. 
   });
 });
 
+describe('resolveOrdo("matins", ...) a saint with only a Common winning a Sunday', () => {
+  const closingAntiphons = (date: string): string[] =>
+    resolveOrdo('matins', date)
+      .parts.filter((p) => p.kind === 'antiphon')
+      .map((p) => (p as { text: { text: { la?: string } } }).text.text.la ?? '');
+  const psalmNumbers = (date: string): number[] =>
+    resolveOrdo('matins', date)
+      .parts.filter((p) => p.kind === 'psalm')
+      .map((p) => (p as { psalmNumber: number }).psalmNumber);
+
+  it("St. Luke (Duplex II. classis, 2026-10-18, a Sunday) takes the Common of an Evangelist's whole scheme, not the Sunday's", () => {
+    expect(psalmNumbers('2026-10-18')).toEqual([3, 94, 18, 33, 44, 46, 60, 63, 74, 95, 96, 97, 98, 100]);
+    expect(closingAntiphons('2026-10-18')[1]).toContain('In omnem terram');
+    const canticles = resolveOrdo('matins', '2026-10-18').parts.filter((p) => p.kind === 'canticle') as { canticleId: string }[];
+    expect(canticles.map((c) => c.canticleId)).toEqual(['isa-61-6-9', 'sap-3-7-9', 'sap-10-17-21']);
+  });
+
+  it("below Duplex Majus (St. Aloysius, 2026-06-21) the Sunday's psalm numbers carry the Common's antiphons, one per psalm", () => {
+    expect(psalmNumbers('2026-06-21')).toEqual([3, 94, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]);
+    const sunday = closingAntiphons('2026-09-06');
+    const aloysius = closingAntiphons('2026-06-21');
+    expect(aloysius).toHaveLength(sunday.length + 6);
+    expect(aloysius.slice(1, 13)).not.toEqual(sunday.slice(1, 7).flatMap((a) => [a, a]));
+    expect(aloysius.slice(1, 13).every((a) => a.length > 0)).toBe(true);
+  });
+
+  it('a plain Sunday keeps its own pair-framed Sunday antiphons', () => {
+    expect(psalmNumbers('2026-09-06')).toEqual([3, 94, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]);
+    expect(closingAntiphons('2026-09-06')).toHaveLength(8);
+  });
+});
+
 describe('resolveOrdo("matins", ...) Sacred Triduum', () => {
   // Tenebrae's real rubric drops the whole opening (versicle, Ps 3,
   // Invitatory, hymn) in favor of a silently-said Pater/Ave/Credo —
