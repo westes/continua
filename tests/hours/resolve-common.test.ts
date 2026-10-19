@@ -263,14 +263,14 @@ describe('Paschaltide alleluia suffix on Common-category antiphons (2026-08)', (
   // Live-query-verified (St. Athanasius/Confessor-Bishop, St. Robert/Abbot,
   // St. Catherine of Siena/Virgin): a Common category with no dedicated
   // wholesale-different Paschaltide text still gets a mechanical single
-  // ", allelúja"/", alleluia" appended to its otherwise-unchanged base text
+  // ", allelúia"/", alleluia" appended to its otherwise-unchanged base text
   // during Eastertide/Ascensiontide/Pentecost-octave-week. St. Ambrose
   // (common-of-a-confessor-bishop, propers: null) exercises the Common
   // fallback branch directly rather than a per-saint proper file.
   it("appends the seasonal alleluia to a Common Benedictus antiphon in Paschaltide", () => {
     const eastertide = getBenedictusAntiphon(syntheticSanctoralDay('st-ambrose', 'eastertide'));
     expect(eastertide.text.la).toBe(
-      'Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus, allelúja.',
+      'Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus, allelúia.',
     );
     expect(eastertide.text.en).toBe(
       'Well done, thou good and faithful servant * thou hast been faithful over a few things, I will make thee ruler over many things, saith the Lord, alleluia.',
@@ -283,13 +283,13 @@ describe('Paschaltide alleluia suffix on Common-category antiphons (2026-08)', (
     expect(ordinary.text.la).toBe(
       'Euge, serve bone * et fidélis, quia in pauca fuísti fidélis, supra multa te constítuam, dicit Dóminus.',
     );
-    expect(ordinary.text.la).not.toContain('allelúja');
+    expect(ordinary.text.la).not.toContain('allelúia');
   });
 
   it('appends the suffix on the minor-hour Common fallback too (ascensiontide, not just eastertide)', () => {
     const prime = resolveMinorHourAntiphon('prime', syntheticSanctoralDay('st-ambrose', 'ascensiontide'), {});
-    expect(prime.text.la?.endsWith('allelúja.')).toBe(true);
-    expect(prime.text.la).not.toMatch(/allelúja.*allelúja/); // never doubled for this category
+    expect(prime.text.la?.endsWith('allelúia.')).toBe(true);
+    expect(prime.text.la).not.toMatch(/allelúia.*allelúia/); // never doubled for this category
   });
 
   it("doesn't double up on a Common category whose stored text is already the (unavoidably Paschaltide-only) native text", () => {
@@ -297,14 +297,14 @@ describe('Paschaltide alleluia suffix on Common-category antiphons (2026-08)', (
     // were necessarily captured from a live query already inside
     // Paschaltide (see TODO.md: their fixed dates can only ever land in
     // real Eastertide or the Sacred Triduum, never elsewhere), so the
-    // text already ends "allelúja, allelúja." -- appending again would be
+    // text already ends "allelúia, allelúia." -- appending again would be
     // wrong.
     const day = syntheticSanctoralDay('ss-soter-and-caius', 'eastertide');
     const benedictus = getBenedictusAntiphon(day);
     expect(benedictus.text.la).toBe(
-      'Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúja, allelúja.',
+      'Fíliæ Jerúsalem, * veníte et vidéte Mártyres cum corónis, quibus coronávit eos Dóminus in die solemnitátis et lætítiæ, allelúia, allelúia.',
     );
-    expect(benedictus.text.la?.match(/allelúja/g)?.length).toBe(2);
+    expect(benedictus.text.la?.match(/allelúia/g)?.length).toBe(2);
   });
 });
 

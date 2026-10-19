@@ -28,7 +28,7 @@ describe('proper bundles no longer fall through to the ferial chapter/hymn/versi
   it("St. Michael (Sept 29) has his own Lauds responsory and Vespers hymn, first/second versicles", () => {
     expect(partText('lauds', '2026-09-29', 'chapter')).toContain('Significávit Deus');
     expect(partText('lauds', '2026-09-29', 'responsory')).toContain('In conspéctu Angelórum');
-    expect(partText('lauds', '2026-09-29', 'responsory')).not.toContain('Allelúja');
+    expect(partText('lauds', '2026-09-29', 'responsory')).not.toContain('Allelúia');
     expect(partText('vespers', '2026-09-29', 'hymn')).toContain('Tibi Christe splendor Patris');
     expect(partText('vespers', '2026-09-29', 'versicle')).toContain('In conspéctu Angelórum psallam tibi, Deus meus.');
     expect(partText('vespers', '2026-09-28', 'versicle')).toContain('Stetit Angelus juxta aram templi.');
@@ -123,15 +123,15 @@ describe('First/Second Vespers psalmody the engine renders', () => {
 describe('Paschaltide Alleluia on saints and Commons (engine rule: antiphons, versicle, short responsory)', () => {
   it('St. Robert Bellarmine (May 12, Paschaltide): antiphon, versicle and responsory carry the Alleluia', () => {
     const j = text('vespers', '2026-05-12');
-    expect(j).toContain('iustus, allelúja.');
-    expect(partText('vespers', '2026-05-12', 'versicle')).toContain('Amávit eum Dóminus, et ornávit eum, allelúja.');
-    expect(partText('vespers', '2026-05-12', 'versicle')).toContain('Stolam glóriæ índuit eum, allelúja.');
-    expect(partText('vespers', '2026-05-12', 'responsory')).toContain('* Allelúja, allelúja.');
+    expect(j).toContain('iustus, allelúia.');
+    expect(partText('vespers', '2026-05-12', 'versicle')).toContain('Amávit eum Dóminus, et ornávit eum, allelúia.');
+    expect(partText('vespers', '2026-05-12', 'versicle')).toContain('Stolam glóriæ índuit eum, allelúia.');
+    expect(partText('vespers', '2026-05-12', 'responsory')).toContain('* Allelúia, allelúia.');
   });
 
   it('outside Paschaltide the same texts stay plain', () => {
-    expect(partText('vespers', '2026-11-11', 'versicle')).not.toMatch(/allelúja/i);
-    expect(partText('vespers', '2026-11-11', 'responsory')).not.toMatch(/allelúja/i);
+    expect(partText('vespers', '2026-11-11', 'versicle')).not.toMatch(/allelúia/i);
+    expect(partText('vespers', '2026-11-11', 'responsory')).not.toMatch(/allelúia/i);
   });
 });
 
@@ -150,7 +150,7 @@ describe('scripture lessons proper to a feast are labelled by book, not as a sai
 
 describe('Easter-week and Septuagesima-eve dismissal takes the double alleluia', () => {
   const plain = 'Benedicámus Dómino.';
-  const dbl = 'Benedicámus Dómino, allelúja, allelúja.';
+  const dbl = 'Benedicámus Dómino, allelúia, allelúia.';
   it.each([
     ['lauds', '2026-04-06'],
     ['lauds', '2026-04-11'],
@@ -186,7 +186,7 @@ describe('Triduum Vespers follow the engine', () => {
     expect(psalmNumbers('2026-04-04')).toEqual([116]);
     expect(t).toContain('Véspere autem sábbati');
     expect(t).toContain('Spíritum nobis, Dómine');
-    expect(t).toContain('Benedicámus Dómino, allelúja, allelúja.');
+    expect(t).toContain('Benedicámus Dómino, allelúia, allelúia.');
     expect(kinds('2026-04-04')).not.toContain('hymn');
   });
 });

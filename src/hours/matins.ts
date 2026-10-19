@@ -153,7 +153,7 @@ const sundayAntiphons = matinsSundayAntiphonsData as unknown as MatinsSundayAnti
 
 // Septuagesima through Palm Sunday inclusive: Nocturn III takes a
 // per-Sunday antiphon (and, for some of these Sundays, its own canticles/
-// versicle too) instead of the plain-season "Allelúja" default — see
+// versicle too) instead of the plain-season "Allelúia" default — see
 // data/hours/matins-sunday-nocturn3-overrides.yml's own header.
 type SundayNocturn3Overrides = Record<string, Partial<SundayNocturn>>;
 const sundayNocturn3Overrides = matinsSundayNocturn3OverridesData as unknown as SundayNocturn3Overrides;

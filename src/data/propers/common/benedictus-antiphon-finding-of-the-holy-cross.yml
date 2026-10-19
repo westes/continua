@@ -12,12 +12,12 @@
 # finding-of-the-holy-cross-magnificat-antiphon.yml. `[Ant 2]` is what
 # Lauds (and Second Vespers, sharing the same tag) actually use.
 #
-# The source's own trailing "(Allelúja.)" is stripped here: it's only
+# The source's own trailing "(Allelúia.)" is stripped here: it's only
 # correct when this feast's own date is in Paschaltide (Finding of the Holy
 # Cross, May 3) but this same file is also reused verbatim by Exaltation of
 # the Holy Cross (Sept 14, not Paschaltide). Base text here is
 # season-neutral; `getBenedictusAntiphon` re-adds a Paschaltide-only
-# ", allelúja" suffix via `withPaschaltideAlleluia`.
+# ", allelúia" suffix via `withPaschaltideAlleluia`.
 id: benedictus-antiphon-finding-of-the-holy-cross
 text:
   la: "Super ómnia * ligna cedrórum tu sola excélsior, in qua Vita mundi pepéndit, in qua Christus triumphávit, et mors mortem superávit in ætérnum."

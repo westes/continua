@@ -48,7 +48,7 @@ describe('Common-sourced parts never fall back to ferial or a sibling Common', (
   it('Gabriel\'s Lauds versicle has no hard-coded Alleluia outside Paschaltide', () => {
     const ordo = resolveOrdo('lauds', '2026-03-24');
     const v = ordo.parts.filter((p) => p.kind === 'versicle').map((p) => (p as { text: { text: Record<string, string> } }).text.text.la ?? '');
-    expect(v.some((t) => t.includes('Stetit Angelus') && !/allelúja/i.test(t))).toBe(true);
+    expect(v.some((t) => t.includes('Stetit Angelus') && !/allelúia/i.test(t))).toBe(true);
   });
 
   it.each([

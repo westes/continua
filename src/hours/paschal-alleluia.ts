@@ -12,9 +12,9 @@ import type { ResolvedText } from './types';
  * Paschaltide feast's own) passes through unchanged.
  */
 
-const ALLELUIA = { la: 'allelúja', en: 'alleluia' } as const;
-const ENDS_IN_ALLELUIA = /allel(?:úja|uja|úia|uia)\p{P}?\)?\s*$/iu;
-const ENDS_IN_DOUBLE = /allel(?:úja|uja|úia|uia)[,.]\s+allel(?:úja|uja|úia|uia)\p{P}?\s*$/iu;
+const ALLELUIA = { la: 'allelúia', en: 'alleluia' } as const;
+const ENDS_IN_ALLELUIA = /allelú?ia\p{P}?\)?\s*$/iu;
+const ENDS_IN_DOUBLE = /allelú?ia[,.]\s+allelú?ia\p{P}?\s*$/iu;
 
 function capitalized(s: string): string {
   return s.charAt(0).toUpperCase() + s.slice(1);
@@ -27,7 +27,7 @@ export function ensureSingleAlleluia(text: string, lang: 'la' | 'en'): string {
 }
 
 /** A short responsory's refrain in its Paschal form: "X, * Y." becomes
- * "X, y, * Allelúja, allelúja." */
+ * "X, y, * Allelúia, allelúia." */
 export function ensureDoubleAlleluia(line: string, lang: 'la' | 'en'): string {
   if (ENDS_IN_DOUBLE.test(line)) return line;
   const moved = line.replace(/\s*\*\s*(.)/, (_m, c: string) => ` ${c.toLowerCase()}`);
@@ -92,7 +92,7 @@ export function paschalizeResponsory(text: ResolvedText): ResolvedText {
 
 /** Engine rule (horasscripts.pl Benedicamus_Domino): Lauds/Vespers of Easter
  * week, and Saturday Vespers before Septuagesima, say "Benedicámus Dómino,
- * allelúja, allelúja". `governingDate` is the date of the day whose office is
+ * allelúia, allelúia". `governingDate` is the date of the day whose office is
  * being said (an anticipated evening governs from the next day). */
 export function usesAlleluiaDismissal(hour: 'lauds' | 'vespers', date: string, governingDate: string): boolean {
   const inEasterWeek = (d: string) => easterOffsetOf(d) >= 0 && easterOffsetOf(d) <= 6;

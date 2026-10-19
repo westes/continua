@@ -97,7 +97,7 @@ export type HourPart =
   // calendar/octaves' activeOctavesFor, and hours/prime.ts's 'creed' case
   // for how far that's actually implemented today).
   | { kind: 'creed' }
-  // Resolved by season — Allelúja normally, Laus tibi Septuagesima through
+  // Resolved by season — Allelúia normally, Laus tibi Septuagesima through
   // Holy Saturday. See hours/opening-versicle.ts.
   | { kind: 'opening-versicle' }
   // The full antiphon, repeated after the whole psalm group (and the

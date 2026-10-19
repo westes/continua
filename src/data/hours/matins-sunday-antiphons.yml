@@ -22,7 +22,7 @@
 # project's own scripture-store convention), confirmed by the live query
 # ("Canticum Isaiæ" / "Canticum Isaiae" / "Canticum Ecclesiasticae").
 # Unlike nocturns 1-2 (each psalm pair under its own antiphon), all 3
-# canticles share a single antiphon ("Allelúja, allelúja, allelúja").
+# canticles share a single antiphon ("Allelúia, allelúia, allelúia").
 
 nocturn1:
   groups:
@@ -66,7 +66,7 @@ nocturn3:
     - refs: [{ book: isa, chapter: 33, verses: "13-18" }]
     - refs: [{ book: sir, chapter: 36, verses: "14-19" }]
   antiphon:
-    la: "Allelúja, allelúja, allelúja."
+    la: "Allelúia, allelúia, allelúia."
     en: "Alleluia, alleluia, alleluia."
   versicle:
     v: { la: "Exaltáre Dómine in virtúte tua.", en: "Be Thou exalted, O Lord, in Thine own strength." }

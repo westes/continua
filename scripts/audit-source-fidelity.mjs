@@ -366,7 +366,7 @@ function extractCitations(comment) {
 
 // The reference .txt corpus wraps an optional, Paschaltide-only "Alleluia"
 // clause in parens at the end of many antiphons (e.g. "...Fílium Dei.
-// (Allelúja, allelúja.)") -- a seasonal-addition convention, not part of
+// (Allelúia, allelúia.)") -- a seasonal-addition convention, not part of
 // the antiphon's own core text. continua handles the Paschaltide Alleluia
 // separately via its own withPaschaltideAlleluia mechanism (resolve-
 // common.ts) and its propers files store the plain, season-neutral text

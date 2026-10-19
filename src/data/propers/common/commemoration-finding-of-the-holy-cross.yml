@@ -1,7 +1,7 @@
 # Fully proper feast -- own real [Ant 2]/[Versum 2] read directly from the reference engine's own Sancti file (Latin + English), not a Common-category substitute. Collect is the saint's own real proper (finding-of-the-holy-cross-collect.yml), unchanged.
 #
 # KNOWN CAVEAT (2026-09-13, not fixed here): this file's own hardcoded
-# "Allelúja" is only correct when whichever feast this commemoration bundle
+# "Allelúia" is only correct when whichever feast this commemoration bundle
 # is rendering for (Finding of the Holy Cross, May 3, or Exaltation of the
 # Holy Cross, Sept 14, via their shared `propers`) is being commemorated on
 # a day actually within Paschaltide -- same bug class as the Vespers
@@ -16,7 +16,7 @@
 id: commemoration-finding-of-the-holy-cross
 text:
   la: |
-    Ant. Super ómnia * ligna cedrórum tu sola excélsior, in qua Vita mundi pepéndit, in qua Christus triumphávit, et mors mortem superávit in ætérnum. Allelúja.
+    Ant. Super ómnia * ligna cedrórum tu sola excélsior, in qua Vita mundi pepéndit, in qua Christus triumphávit, et mors mortem superávit in ætérnum. Allelúia.
     V. Adorámus te, Christe, et benedícimus tibi.
     R. Quia per Crucem tuam redemísti mundum.
     Orémus.

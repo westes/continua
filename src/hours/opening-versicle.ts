@@ -5,7 +5,7 @@ import bySeasonData from '../data/hours/opening-by-season.yml';
 
 const bySeason = bySeasonData as { perAnnum: string; bySeason: Record<string, string> };
 
-/** Resolves the common-propers id for the opening versicle's ending (Allelúja
+/** Resolves the common-propers id for the opening versicle's ending (Allelúia
  * vs. Laus tibi). Takes the whole `day` (not a bare `season`/`winner` pair)
  * so it always feeds `resolveOfficeWinner(day)` into the lookup — this
  * content is currently season-only (no `byFeastId` table exists here) so an

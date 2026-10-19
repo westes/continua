@@ -16,7 +16,7 @@
 # Isa 33:2-10, Isa 33:13-18, Sir 36:14-19). N2 is composed from
 # Sancti/09-29 lines 7-9 interleaved with 3 [AntMatutinumM] antiphons;
 # the line-7 psalm 95 antiphon ("Ángelus Archángelus...") retains its
-# own built-in "allelúja, allelúja" as fixed text, not a seasonal add.
+# own built-in "allelúia, allelúia" as fixed text, not a seasonal add.
 #
 # Per this app's own established note (`hours/matins.ts`'s
 # `getMatinsSaintOverride`/`getMatinsPsalmodyOverride`, keyed off the
@@ -69,7 +69,7 @@ nocturn2:
         en: "Saint Michael the Archangel, defend us in battle, * that we may not perish at the dreadful judgment."
     - psalms: [95]
       antiphon:
-        la: "Ángelus Archángelus Míchaël, * Dei núntius pro animábus justis, allelúja, allelúja."
+        la: "Ángelus Archángelus Míchaël, * Dei núntius pro animábus justis, allelúia, allelúia."
         en: "The Angel Michael the Archangel, * he is the messenger whom God sendeth to all the souls of the righteous. Alleluia, Alleluia."
     - psalms: [96]
       antiphon:

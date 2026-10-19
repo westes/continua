@@ -8,9 +8,9 @@
 #
 # KNOWN CAVEAT (carried over from finding-of-the-holy-cross-
 # commemoration.yml, not fixed here): this file's own hardcoded
-# "Allelúja" is only correct when this commemoration is rendering within
+# "Allelúia" is only correct when this commemoration is rendering within
 # Paschaltide, which Sept 14 never is -- so this feast's own bundle
-# should almost certainly drop the Allelúja outright rather than inherit
+# should almost certainly drop the Allelúia outright rather than inherit
 # a Paschaltide-only convention that can never apply on her own date.
 # Left as inherited text pending a real fix to `sanctoralCommemorationPart`
 # (resolve-common.ts) threading a `day`/season parameter through, same

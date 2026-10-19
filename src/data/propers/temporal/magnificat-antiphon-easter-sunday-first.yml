@@ -1,7 +1,7 @@
 # First Vespers (Saturday evening) Magnificat antiphon: reference engine, Monastic Tridentinum 1617, prayVespera 2025-04-19 ("Vespera de sequenti"). The default (Second Vespers) file is the same id without "-first". See hours/resolve-common.ts's getMagnificatAntiphon; keys of the form month-week-MMN are the engine's Aug-Nov calendar-month Sundays (calendar/month-week-id.ts).
 id: magnificat-antiphon-easter-sunday-first
 text:
-  la: "Véspere autem sábbati quæ lucéscit in prima sábbati, venit María Magdaléne et áltera María vidére sepúlcrum, allelúja *."
+  la: "Véspere autem sábbati quæ lucéscit in prima sábbati, venit María Magdaléne et áltera María vidére sepúlcrum, allelúia *."
   en: "And in the end of the sabbath, when it began to dawn towards the first day of the week, came Mary Magdalen and the other Mary, to see the sepulchre, alleluia *."
 status:
   la: verified

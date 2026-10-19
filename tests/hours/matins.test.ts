@@ -211,8 +211,8 @@ describe('resolveOrdo("matins", ...) Sunday (3-nocturn) branch', () => {
 });
 
 // Real bug (found 2026-09-01, see TODO.md/vu_ferial_matins_antiphons.md):
-// Sunday Matins Nocturn III's antiphon was hardcoded to "Allelúja, allelúja,
-// allelúja" year-round; Septuagesima through Palm Sunday inclusive each
+// Sunday Matins Nocturn III's antiphon was hardcoded to "Allelúia, allelúia,
+// allelúia" year-round; Septuagesima through Palm Sunday inclusive each
 // have their own Gospel-tied antiphon instead, live-verified against the
 // reference engine (Monastic Tridentinum 1617, 2026 calendar) — and for
 // Lent 1-4 the canticles and versicle differ too, not just the antiphon.
@@ -326,19 +326,19 @@ describe('resolveOrdo("matins", ...) Paschaltide Sunday Nocturns I-III seasonal 
 
       const antiphons = ordo.parts.filter((p) => p.kind === 'antiphon') as { text: { text: Record<string, string> } }[];
       // Nocturn III's antiphon is unchanged from the plain-season default.
-      expect(antiphons.at(-1)?.text.text.la).toBe('Ant. Allelúja, allelúja, allelúja.');
+      expect(antiphons.at(-1)?.text.text.la).toBe('Ant. Allelúia, allelúia, allelúia.');
       expect(antiphons.at(-2)?.text.text.la).toBe(
-        'Ant. Allelúja, quem quæris múlier? allelúja: vivéntem cum mórtuis? allelúja, allelúja.',
+        'Ant. Allelúia, quem quæris múlier? allelúia: vivéntem cum mórtuis? allelúia, allelúia.',
       );
       expect(antiphons.at(-3)?.text.text.la).toBe(
-        'Ant. Allelúja, lapis revolútus est, allelúja: ab óstio monuménti, allelúja, allelúja.',
+        'Ant. Allelúia, lapis revolútus est, allelúia: ab óstio monuménti, allelúia, allelúia.',
       );
 
       const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
       const [, , nocturn1, nocturn2, nocturn3] = versicles;
-      expect(nocturn1?.text.text.la).toBe('V. Surréxit Dóminus de sepúlcro, allelúja.\nR. Qui pro nobis pepéndit in ligno, allelúja.');
-      expect(nocturn2?.text.text.la).toBe('V. Surréxit Dóminus vere, allelúja.\nR. Et appáruit Simóni, allelúja.');
-      expect(nocturn3?.text.text.la).toBe('V. Gavísi sunt discípuli, allelúja.\nR. Viso Dómino, allelúja.');
+      expect(nocturn1?.text.text.la).toBe('V. Surréxit Dóminus de sepúlcro, allelúia.\nR. Qui pro nobis pepéndit in ligno, allelúia.');
+      expect(nocturn2?.text.text.la).toBe('V. Surréxit Dóminus vere, allelúia.\nR. Et appáruit Simóni, allelúia.');
+      expect(nocturn3?.text.text.la).toBe('V. Gavísi sunt discípuli, allelúia.\nR. Viso Dómino, allelúia.');
     }
 
     // Same content on every ordinary Paschaltide Sunday, not just individually correct.
@@ -375,16 +375,16 @@ describe('resolveOrdo("matins", ...) Sunday within the Octave of Ascension (2026
     expect(canticles.map((c) => c.canticleId)).toEqual(['isa-63-1-5', 'osee-6-1-6', 'soph-3-8-13']);
 
     const antiphons = ordo.parts.filter((p) => p.kind === 'antiphon') as { text: { text: Record<string, string> } }[];
-    expect(antiphons[1]?.text.text.la).toBe('Ant. Eleváta est magnificéntia tua super cælos, Deus, allelúja.');
+    expect(antiphons[1]?.text.text.la).toBe('Ant. Eleváta est magnificéntia tua super cælos, Deus, allelúia.');
     expect(antiphons.at(-1)?.text.text.la).toBe(
-      'Ant. Illi autem profécti prædicavérunt ubíque, Dómino cooperánte, et sermónem confirmánte sequéntibus signis, † allelúja, allelúja.',
+      'Ant. Illi autem profécti prædicavérunt ubíque, Dómino cooperánte, et sermónem confirmánte sequéntibus signis, † allelúia, allelúia.',
     );
 
     const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
     const [, , nocturn1, nocturn2, nocturn3] = versicles;
-    expect(nocturn1?.text.text.la).toBe('V. Ascéndit Deus in jubilatióne, allelúja.\nR. Et Dóminus in voce tubæ, allelúja.');
-    expect(nocturn2?.text.text.la).toBe('V. Ascéndens Christus in altum, allelúja.\nR. Captívam duxit captivitátem, allelúja.');
-    expect(nocturn3?.text.text.la).toBe('V. Ascéndo ad Patrem meum, et Patrem vestrum, allelúja.\nR. Deum meum, et Deum vestrum, allelúja.');
+    expect(nocturn1?.text.text.la).toBe('V. Ascéndit Deus in jubilatióne, allelúia.\nR. Et Dóminus in voce tubæ, allelúia.');
+    expect(nocturn2?.text.text.la).toBe('V. Ascéndens Christus in altum, allelúia.\nR. Captívam duxit captivitátem, allelúia.');
+    expect(nocturn3?.text.text.la).toBe('V. Ascéndo ad Patrem meum, et Patrem vestrum, allelúia.\nR. Deum meum, et Deum vestrum, allelúia.');
   });
 });
 
@@ -412,16 +412,16 @@ describe('resolveOrdo("matins", ...) Easter Sunday/Monday/Tuesday shared proper 
     expect(canticles.map((c) => c.canticleId)).toEqual(['isa-63-1-5', 'osee-6-1-6', 'soph-3-8-13']);
 
     const antiphons = ordo.parts.filter((p) => p.kind === 'antiphon') as { text: { text: Record<string, string> } }[];
-    expect(antiphons[1]?.text.text.la).toBe('Ant. Ego sum qui sum, * et consílium meum non est cum ímpiis, sed in lege Dómini volúntas mea est, allelúja.');
+    expect(antiphons[1]?.text.text.la).toBe('Ant. Ego sum qui sum, * et consílium meum non est cum ímpiis, sed in lege Dómini volúntas mea est, allelúia.');
     expect(antiphons.at(-1)?.text.text.la).toBe(
-      'Ant. Nolíte expavéscere: * Jesum quǽritis Nazarénum, crucifíxum: surréxit, non est hic, allelúja.',
+      'Ant. Nolíte expavéscere: * Jesum quǽritis Nazarénum, crucifíxum: surréxit, non est hic, allelúia.',
     );
 
     const versicles = ordo.parts.filter((p) => p.kind === 'versicle') as { text: { text: Record<string, string> } }[];
     const [, , nocturn1, nocturn2, nocturn3] = versicles;
-    expect(nocturn1?.text.text.la).toBe('V. Surréxit Dóminus de sepúlcro, allelúja.\nR. Qui pro nobis pepéndit in ligno, allelúja.');
-    expect(nocturn2?.text.text.la).toBe('V. Surréxit Dóminus vere, allelúja.\nR. Et appáruit Simóni, allelúja.');
-    expect(nocturn3?.text.text.la).toBe('V. Gavísi sunt discípuli, allelúja.\nR. Viso Dómino, allelúja.');
+    expect(nocturn1?.text.text.la).toBe('V. Surréxit Dóminus de sepúlcro, allelúia.\nR. Qui pro nobis pepéndit in ligno, allelúia.');
+    expect(nocturn2?.text.text.la).toBe('V. Surréxit Dóminus vere, allelúia.\nR. Et appáruit Simóni, allelúia.');
+    expect(nocturn3?.text.text.la).toBe('V. Gavísi sunt discípuli, allelúia.\nR. Viso Dómino, allelúia.');
   });
 
   it('Wednesday-Saturday of the Octave (own weekday winner.id, excluded by the Sunday-side `weekdays`) stay in the plain 1-nocturn ferial branch, same psalm numbers, no Te Deum', () => {
@@ -467,9 +467,9 @@ describe('resolveOrdo("matins", ...) Easter Octave Wednesday-Saturday ferial nam
     const antiphons = ordo.parts.filter((p) => p.kind === 'antiphon') as { text: { text: Record<string, string> } }[];
     const [, first, second] = antiphons;
     expect(first?.text.text.la).toBe(
-      'Ant. Jesum qui crucifíxus est quǽritis, allelúja; non est hic: surréxit enim, sicut dixit vobis, allelúja.',
+      'Ant. Jesum qui crucifíxus est quǽritis, allelúia; non est hic: surréxit enim, sicut dixit vobis, allelúia.',
     );
-    expect(second?.text.text.la).toBe('Ant. Veníte et vidéte locum ubi pósitus erat Dóminus, allelúja, allelúja.');
+    expect(second?.text.text.la).toBe('Ant. Veníte et vidéte locum ubi pósitus erat Dóminus, allelúia, allelúia.');
     expect(antiphons).toHaveLength(3);
 
     // No Te Deum -- still the 1-nocturn ferial branch, not promoted to 3.

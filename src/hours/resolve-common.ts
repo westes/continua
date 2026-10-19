@@ -609,7 +609,7 @@ export function getMinorHourOverrideId(day: LiturgicalDay): string | undefined {
  * RESOLVED (2026-08): the earlier version of this comment claimed only
  * Apostles/Martyr-Bishop/Several-Martyrs get a Paschaltide change at all,
  * and that Confessors/Virgins/Doctors never do. Live-querying settled
- * this more precisely, per the "St. Athanasius/allelúja" investigation
+ * this more precisely, per the "St. Athanasius/allelúia" investigation
  * (TODO.md): the reference source (Commune/C1p.txt, C2p.txt, C2bp.txt,
  * C3p.txt, C3bp.txt) really does give *some* categories — Apostles,
  * Martyr, Martyr-Bishop, Several Martyrs, Pope-Martyrs — their own
@@ -619,7 +619,7 @@ export function getMinorHourOverrideId(day: LiturgicalDay): string | undefined {
  * *without* one of those (Confessor-Bishop/Doctor, Abbot, Virgin — all
  * three live-verified this pass: St. Athanasius, St. Robert, St.
  * Catherine of Siena) still change during this same window: the engine
- * mechanically appends a single ", allelúja"/", alleluia" to the closing
+ * mechanically appends a single ", allelúia"/", alleluia" to the closing
  * clause of the otherwise-unchanged base text. `appendPaschaltideAlleluia`
  * below models that fallback; the dedicated-chain categories are still
  * handled the older way, by trying a same-id `-paschaltide` file first
@@ -661,7 +661,7 @@ export function seasonalOfficeSuffix(season: string): string | undefined {
 /**
  * The reference engine's mechanical Paschaltide fallback for a Common
  * antiphon with no dedicated wholesale-different text of its own: a
- * single ", allelúja."/", alleluia." tacked onto the closing clause,
+ * single ", allelúia."/", alleluia." tacked onto the closing clause,
  * text otherwise byte-identical to the non-Paschaltide default. Live-
  * verified across three unrelated categories (St. Athanasius/Confessor-
  * Bishop, St. Robert/Abbot, St. Catherine of Siena/Virgin) — never
@@ -673,7 +673,7 @@ export function seasonalOfficeSuffix(season: string): string | undefined {
  * never carries the suffix — only the closing, full-text rendering after
  * it does).
  *
- * Skips a language whose stored text already ends in "allelúja"/
+ * Skips a language whose stored text already ends in "allelúia"/
  * "alleluia" — `common-of-pope-martyrs` is the one category this
  * actually matters for: its own stored files were, unavoidably, captured
  * from a live query already inside Paschaltide (its only two members'
@@ -690,11 +690,11 @@ export function seasonalOfficeSuffix(season: string): string | undefined {
  * reproducing that safely wasn't attempted this pass — see TODO.md.
  */
 function appendPaschaltideAlleluia(resolved: ResolvedText): ResolvedText {
-  const suffixByLang: Partial<Record<string, string>> = { la: 'allelúja', en: 'alleluia' };
+  const suffixByLang: Partial<Record<string, string>> = { la: 'allelúia', en: 'alleluia' };
   const text: Partial<Record<string, string>> = { ...resolved.text };
   for (const [lang, suffix] of Object.entries(suffixByLang)) {
     const t = text[lang];
-    if (!t || /allel(?:úja|uia)\.?\s*$/i.test(t)) {
+    if (!t || /allelú?ia\.?\s*$/i.test(t)) {
       continue;
     }
     text[lang] = `${t.replace(/\.\s*$/, '')}, ${suffix}.`;

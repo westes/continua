@@ -4,10 +4,10 @@
 # with `exaltation-of-the-holy-cross.yml` (same Cross antiphons, both
 # feasts). Originally live-queried on 2026-05-03, but that date falls
 # inside Paschaltide (as it does most years, since Easter's range is
-# Mar 22-Apr 25) and the render added a seasonal "allelúja" to antiphons
+# Mar 22-Apr 25) and the render added a seasonal "allelúia" to antiphons
 # 1/2/4 that isn't part of their fixed text -- confirmed by cross-querying
 # `exaltation-of-the-holy-cross` (Sept 14, never in Paschaltide): only
-# antiphon 3 carries "allelúja" unconditionally, baked into its own proper
+# antiphon 3 carries "allelúia" unconditionally, baked into its own proper
 # text. Corrected here to match.
 id: finding-of-the-holy-cross
 groups:
@@ -21,7 +21,7 @@ groups:
       en: "Save us, * O Christ the Saviour, save us through the might of thy Cross Thou Who didst save Peter when he was ready to sink in the sea, have mercy upon us."
   - psalms: [111]
     antiphon:
-      la: "Ecce Crucem Dómini, * fúgite, partes advérsæ, vicit leo de tribu Juda, radix David, allelúja."
+      la: "Ecce Crucem Dómini, * fúgite, partes advérsæ, vicit leo de tribu Juda, radix David, allelúia."
       en: "Behold, the Cross of the Lord! * Fly, ye ranks of the adversary! The Lion of the tribe of Judah, the Root of David, hath prevailed. Alleluia."
   - psalms: [112]
     antiphon:
