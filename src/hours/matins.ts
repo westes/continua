@@ -95,7 +95,6 @@ import {
   openingAntiphon,
   substituteName,
   officeWinnerEffectiveRank,
-  resolveMinorHourAntiphonCandidates,
 } from './resolve-common';
 import { getSaintRecord } from '../calendar/feasts';
 import { lookupPart, lookupPartTiered } from './resolve-part';
@@ -378,7 +377,7 @@ function resolveMatinsInvitatoryText(day: LiturgicalDay): ResolvedText {
 /** The Invitatory (Ps 94) — real practice interleaves its antiphon as a
  * repeating refrain between verse groups; per direct instruction this app
  * frames it like any other psalm antiphon instead (one opening, one full
- * repeat after) — see data/propers/common/matins-invitatory-antiphon.yml's
+ * repeat after) — see the matins-invitatory section of data/<lang>/ordinary/matins.yml's
  * own header. */
 function invitatoryParts(day: LiturgicalDay): ResolvedPart[] {
   const text = resolveMatinsInvitatoryText(day);
@@ -580,50 +579,22 @@ function ferialNamedAntiphonedNocturn(day: LiturgicalDay, override: FerialNamedO
   return parts;
 }
 
-/** Fallback for a Semiduplex+ weekday feast with no matins-psalmody-overrides
- * entry authored for its winner yet: the plain ferial weekday table,
- * chunked into 3 nocturns instead of 1. Bare (no antiphons, no canticles)
- * when `common` isn't given — genuinely nothing authored at all for this
- * winner, still used as-is for a duplex-majus+ winner with no Common
- * category either.
+/** A Semiduplex+ weekday feast whose winner has no Matins psalmody scheme of
+ * its own to take the psalms from (its own, or at Duplex Majus and above its
+ * Common's): the plain ferial weekday psalms, chunked into 3 nocturns instead
+ * of 1.
  *
- * When `common`/`commonId` *are* given (a Semiduplex- or Duplex-rank
- * winner whose Common category exists — user, 2026-08, threshold lowered
- * to Semiduplex 2026-09-02), each nocturn borrows that category's
- * own `nocturn{N}.versicle`: the ferial table only ever authors one
- * versicle for the whole (normally 1-nocturn) day, so a 3-nocturn split
- * leaves 2 of the 3 nocturns with none at all — Common's own 3 real
- * versicles are an exact fit for that gap.
+ * Psalms and antiphons are chosen independently. The psalms are the ferial
+ * ones; the antiphons are, in order: the winner's own proper antiphons (a
+ * proper scheme never reaches here), else its Common's Matins antiphons
+ * (`common`, when given), else the ferial antiphon of each psalm. Never a
+ * mixture: a Common that supplies antiphons supplies all of them.
  *
- * For the antiphon: Common's own Matins Nocturn 1/2 are 6 individual
- * per-psalm antiphons each written as a paraphrase of *that* psalm's own
- * opening words (e.g. Ps 4's "Invocántem exaudívit Dóminus" echoing Ps 4's
- * own "Cum invocárem exaudívit me") — laid over a *different* ferial psalm
- * they'd misquote it, so they can't be borrowed. Instead, each nocturn is
- * given the same proper -> derived-from-Lauds -> Paschaltide-common ->
- * plain-common chain `resolveMinorHourAntiphon` itself resolves for the
- * real Terce/Sext/None hours (`resolveMinorHourAntiphonCandidates`,
- * `./resolve-common`) — an active octave's own governing feast (whose id
- * `resolveOfficeWinner`/`getMinorHourOverrideId` already substitute in) is
- * therefore tried first via its own proper `{terce,sext,none}-antiphon-
- * ${id}` text, before falling to `SaintRecord.common`'s shared
- * Common antiphon (deliberately distinct from `common`, the psalm-numbers
- * Common id — a saint's minor-hour Common category isn't always the same
- * as their overall one, see `SaintRecord`'s own doc comment). Previously
- * this only ever tried the plain-common tier directly, silently leaving a
- * feast/octave's own real proper antiphon unused whenever no matching
- * generic Common file existed (fixed 2026-09-10).
- * Real, verified, and already proven non-psalm-specific by the minor hours themselves (3
- * ferial psalms of arbitrary content under one thematic antiphon,
- * live-verified against the reference engine at any rank). Terce/Sext/
- * None each carry their own distinct text per category (confirmed,
- * 2026-08-27), so this gives Nocturns 1/2/3 three genuinely different
- * real antiphons instead of one borrowed Nocturn-3-only text — user,
- * 2026-08-27: "some antiphons from the feria and some from the commons
- * feels off... use those antiphons, one per nocturn." Falls back to bare
- * (no antiphon) per nocturn when nothing in that chain is authored yet
- * (most minor-hour proper/Common files only cover a handful of
- * feasts/categories so far) — never a mismatched substitute. */
+ * From a Common: Nocturns 1 and 2 give each of their three psalms the
+ * Common's matching antiphon in order (psalm n gets the nocturn's n-th), and
+ * Nocturn 3 puts the Common's single Nocturn 3 antiphon over its three
+ * psalms, as the Common itself puts it over its three canticles. Each
+ * nocturn also takes the Common's own versicle. */
 function ferialPsalmodyThreeNocturns(
   day: LiturgicalDay,
   common?: MatinsPsalmodyScheme,
@@ -635,24 +606,62 @@ function ferialPsalmodyThreeNocturns(
     refs.slice(size, size * 2),
     refs.slice(size * 2),
   ];
-  if (!common) {
-    return refChunks.map((chunk) => psalmRefParts(chunk)) as [ResolvedPart[], ResolvedPart[], ResolvedPart[]];
-  }
   const winner = resolveOfficeWinner(day);
-  const nocturnVersicles = [common.nocturn1.versicle, common.nocturn2.versicle, common.nocturn3.versicle];
-  const minorHours = ['terce', 'sext', 'none'] as const;
+  if (!common) {
+    return refChunks.map((chunk) => ferialAntiphonedPsalms(chunk, day, winner)) as [ResolvedPart[], ResolvedPart[], ResolvedPart[]];
+  }
+  const nocturns = [common.nocturn1, common.nocturn2, common.nocturn3];
   return refChunks.map((chunk, i) => {
-    const candidates = resolveMinorHourAntiphonCandidates(minorHours[i]!, day);
-    const antiphonText = candidates.find((c) => c && (c.status.la !== 'missing' || c.status.en !== 'missing'));
-    const psalms = antiphonText ? withSingleAntiphon(chunk, antiphonText, winner) : psalmRefParts(chunk);
-    return [...psalms, { kind: 'versicle', text: versicleText(nocturnVersicles[i]!) }];
+    const nocturn = nocturns[i]!;
+    const perPsalm = (nocturn.groups ?? []).map((g) => withStatus(g.antiphon as BilingualText, g.status));
+    const shared = nocturn.antiphon ? withStatus(nocturn.antiphon as BilingualText, nocturn.antiphonStatus) : undefined;
+    let psalms: ResolvedPart[];
+    if (shared) {
+      psalms = withSingleAntiphon(chunk, shared, winner);
+    } else if (perPsalm.length > 0) {
+      psalms = chunk.flatMap((ref, j) => (perPsalm[j] ? psalmWithOwnAntiphon(ref, perPsalm[j]!, winner) : ferialAntiphonedPsalms([ref], day, winner)));
+    } else {
+      psalms = ferialAntiphonedPsalms(chunk, day, winner);
+    }
+    return [...psalms, { kind: 'versicle', text: versicleText(nocturn.versicle) }];
   }) as [ResolvedPart[], ResolvedPart[], ResolvedPart[]];
+}
+
+/** One psalm framed by its own antiphon (opening before, full text after). */
+function psalmWithOwnAntiphon(ref: PsalmRef, antiphonText: ResolvedText, winner: DayWinner): ResolvedPart[] {
+  const opening = openingAntiphon(antiphonText, winner);
+  const { full } = splitNamedAntiphon(antiphonText);
+  const rawVerses = getPsalmVerses(ref.number, ref.verses).map((v): ResolvedVerse => ({ n: v.n, text: v.text, status: v.status }));
+  const { verses, antiphon } = applyFlexaMark(rawVerses, opening);
+  return [{ kind: 'psalm', psalmNumber: ref.number, verses, antiphon, verseRange: ref.verses }, { kind: 'antiphon', text: full }];
+}
+
+/** The weekday's own ferial antiphon for each of these psalms, from
+ * matins-ferial-antiphons.yml. A run of consecutive psalms that share one
+ * ferial antiphon (a psalm split by verse range) is framed by it once. A
+ * psalm the table doesn't list is left bare. */
+function ferialAntiphonedPsalms(refs: PsalmRef[], day: LiturgicalDay, winner: DayWinner): ResolvedPart[] {
+  const groups = day.weekday === 'sunday' ? [] : ferialAntiphons[day.weekday].groups;
+  const groupOf = (ref: PsalmRef) => groups.find((g) => g.psalms.some((p) => p.number === ref.number && p.verses === ref.verses));
+  const parts: ResolvedPart[] = [];
+  for (let i = 0; i < refs.length; ) {
+    const group = groupOf(refs[i]!);
+    let end = i + 1;
+    while (group && end < refs.length && groupOf(refs[end]!) === group) end++;
+    if (!group) {
+      parts.push(...psalmRefParts([refs[i]!]));
+    } else {
+      parts.push(...withSingleAntiphon(refs.slice(i, end), verifiedText(group.antiphon), winner));
+    }
+    i = end;
+  }
+  return parts;
 }
 
 /** Wraps a flat list of psalm refs in one opening/closing antiphon — the
  * shape `sundayCanticleNocturn` already uses for its own single antiphon
  * over several canticles, reused here for `ferialPsalmodyThreeNocturns`'s
- * borrowed Terce/Sext/None antiphon over ferial psalms. */
+ * antiphon over several ferial psalms. */
 function withSingleAntiphon(refs: PsalmRef[], antiphonText: ResolvedText, winner: DayWinner): ResolvedPart[] {
   const opening = openingAntiphon(antiphonText, winner);
   const { full } = splitNamedAntiphon(antiphonText);
@@ -852,7 +861,7 @@ function withOccasion(source: string | undefined, id: string, day: LiturgicalDay
 /** Normalizes reading text to one consistent paragraph-break convention
  * (a blank line, i.e. `\n\n`) regardless of which YAML block-scalar
  * style produced the raw string this pool entry came from. This app's
- * `data/propers/**` reading files use at least two different conventions
+ * `data/<lang>/{commons,propers,ordinary}` reading files use at least two different conventions
  * for the same intent (a folded `>-` scalar with a real blank line between
  * paragraphs, which YAML already folds to `\n\n`; and a literal `|` scalar
  * with one whole paragraph per physical line, which YAML preserves as a
@@ -951,7 +960,7 @@ function gospelReadingPart(
  * `distributeIntoNocturns`, so it doubles as reading priority: the user's
  * own scripture reading first, then each id's authored content in its own
  * file order (patristic commentary typically precedes a Gospel+homily —
- * see data/propers/nocturn-readings/*.yml), then active octaves. */
+ * see the nocturn-readings sections of data/<lang>/propers/*.yml), then active octaves. */
 function buildReadingPool(
   day: LiturgicalDay,
   temporalId: string,
@@ -1030,8 +1039,8 @@ function buildReadingPool(
     }
   });
   const byGroup = new Map<string, ResolvedPart[]>();
-  // An active octave's own Matins reading (`data/propers/octave-
-  // readings/*.yml`) is either a direct Scripture excerpt (authored via
+  // An active octave's own Matins reading (the octave-readings
+  // sections of `data/<lang>/propers/*.yml`) is either a direct Scripture excerpt (authored via
   // `passages:`, see octave-readings.ts's `isScripture`) or a patristic
   // homily/sermon (authored directly as `text:`) -- these two shapes sort
   // differently. A Scripture excerpt is the same kind of content as the
@@ -1203,7 +1212,7 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     temporalNamedOverride !== undefined && (temporalNamedOverride.weekdays === undefined || temporalNamedOverride.weekdays.includes(day.weekday));
   // A named movable feast that keeps its own First Vespers (the Lenten and
   // pre-Lenten Passion feasts) keeps three nocturns, with its own authored Matins
-  // psalmody where there is one (data/hours/matins-psalmody-overrides/saints/,
+  // psalmody where there is one (the matins-psalmody section of data/<lang>/propers/,
   // or its `officeFrom`'s); every other temporal feast stays as it was.
   const temporalMatinsSource =
     winner.kind === 'temporal'
@@ -1298,20 +1307,20 @@ export function resolveOrdo(date: string): ResolvedOrdo {
     );
   } else if (threeNocturns) {
     // A Semiduplex+ weekday feast -- genuinely different psalmody from a real
-    // Sunday's. By the one first-found rule:
-    //   - the saint's own scheme, any rank;
-    //   - else its Common's own scheme (own psalm numbers, canticles) at
-    //     Duplex Majus and above;
-    //   - else the ferial psalm numbers (3-nocturn stand-in), with Common's
-    //     per-nocturn versicle and each nocturn's Terce/Sext/None antiphon for
-    //     that category (see ferialPsalmodyThreeNocturns).
+    // Sunday's. Psalms and antiphons are decided separately:
+    //   - psalms: the saint's own scheme, any rank; else its Common's own
+    //     scheme (own psalm numbers, canticles) at Duplex Majus and above;
+    //     else the ferial psalms;
+    //   - antiphons: the saint's own; else its Common's; else the ferial
+    //     ones. With ferial psalms the Common's antiphons are laid over
+    //     them (see ferialPsalmodyThreeNocturns).
     // A named temporal feast with its own authored Matins psalmody (the Lenten
     // Passion feasts) takes it the same way a saint does.
     const properOverride = winner.kind === 'temporal' ? temporalMatinsSource : getMatinsSaintOverride(winner.id);
     const isAboveDuplex = effectiveRank !== undefined && isAtLeast(effectiveRank, 'duplex-majus');
     const commonOverride = winner.kind === 'sanctoral' && !properOverride ? getMatinsCommonOverride(winner.id) : undefined;
     const scheme = properOverride ?? (isAboveDuplex ? commonOverride : undefined);
-    parts.push(...nocturns(scheme ? schemeBlocks(scheme) : ferialPsalmodyThreeNocturns(day, isAboveDuplex ? undefined : commonOverride)));
+    parts.push(...nocturns(scheme ? schemeBlocks(scheme) : ferialPsalmodyThreeNocturns(day, commonOverride)));
   } else {
     parts.push(...ferialAntiphonedNocturn(day));
     parts.push(...(nocturn1Readings ?? []));
